@@ -18,10 +18,10 @@
     NSString *_referrer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *referrer; // @synthesize referrer=_referrer;
 @property(readonly, nonatomic) __weak id <NUExternalAnalyticsEventStreamObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) id <NSSNewsAnalyticsSessionManager> sessionManager; // @synthesize sessionManager=_sessionManager;
-- (void).cxx_destruct;
 - (void)_populateQueryParameters:(id)arg1 withVideoItem:(id)arg2;
 - (id)_videoPlaybackEventQueryParametersForVideoItem:(id)arg1 streamUserAction:(id)arg2;
 - (id)_articleViewEventWithQueryParametersForVideoItem:(id)arg1;

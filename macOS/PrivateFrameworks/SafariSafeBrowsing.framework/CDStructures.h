@@ -34,8 +34,6 @@ struct OptionSet<Backend::LookupResult::Type> {
     unsigned int m_storage;
 };
 
-struct SafeHashCache;
-
 struct ServiceStatus {
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> m_name;
     int m_pid;
@@ -71,12 +69,6 @@ struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>
 struct shared_ptr<SafeBrowsing::LookupContext> {
     struct LookupContext *__ptr_;
     struct __shared_weak_count *__cntrl_;
-};
-
-struct unique_ptr<SafeBrowsing::SafeHashCache, std::__1::default_delete<SafeBrowsing::SafeHashCache>> {
-    struct __compressed_pair<SafeBrowsing::SafeHashCache *, std::__1::default_delete<SafeBrowsing::SafeHashCache>> {
-        struct SafeHashCache *__value_;
-    } __ptr_;
 };
 
 struct vector<SafeBrowsing::DatabaseStatus::Database, std::__1::allocator<SafeBrowsing::DatabaseStatus::Database>> {

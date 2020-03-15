@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *__displayContexts;
 }
 
-@property(retain, nonatomic, setter=_setDisplayContexts:) NSMutableArray *_displayContexts; // @synthesize _displayContexts=__displayContexts;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setDisplayContexts:) NSMutableArray *_displayContexts; // @synthesize _displayContexts=__displayContexts;
 @property(readonly, copy, nonatomic) NSArray *displayContexts;
 @property(readonly, nonatomic) id <PUSlideshowDisplayContext> currentDisplayContext;
 - (_Bool)removeDisplayContext:(id)arg1;

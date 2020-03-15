@@ -42,6 +42,7 @@
 
 + (_Bool)isRecurrenceRuleOrdinal:(id)arg1;
 + (_Bool)_shouldForwardViewWillTransitionToSize;
+- (void).cxx_destruct;
 @property(copy) NSString *recurrenceSummaryString; // @synthesize recurrenceSummaryString=_recurrenceSummaryString;
 @property(retain) UISwitch *yearOrdinalSwitch; // @synthesize yearOrdinalSwitch=_yearOrdinalSwitch;
 @property(retain) EKUICustomRecurrenceIntervalViewController *intervalPickerViewController; // @synthesize intervalPickerViewController=_intervalPickerViewController;
@@ -56,7 +57,6 @@
 @property(retain) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property _Bool prohibitsYearlyRecurrenceInterval; // @synthesize prohibitsYearlyRecurrenceInterval=_prohibitsYearlyRecurrenceInterval;
-- (void).cxx_destruct;
 - (void)_setShowingIntervalPicker:(_Bool)arg1;
 - (void)_setShowingFrequencyPicker:(_Bool)arg1;
 - (void)_collapseAllPickers;

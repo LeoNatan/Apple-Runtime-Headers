@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSPredicate *attributesPredicate; // @synthesize attributesPredicate=_attributesPredicate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPredicate *attributesPredicate; // @synthesize attributesPredicate=_attributesPredicate;
 @property(retain, nonatomic) NSArray *usernames;
 @property(retain, nonatomic) NSArray<_SFServiceIdentifier> *serviceIdentifiers;
 @property(retain, nonatomic) NSDate *maximumModificationDate;

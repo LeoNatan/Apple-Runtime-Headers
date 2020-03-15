@@ -35,8 +35,8 @@
 + (void)downloadAttachments:(id)arg1 session:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)downloadedRecipeWithID:(id)arg1 recipeType:(id)arg2 baseURL:(id)arg3 protocolClass:(Class)arg4 error:(id *)arg5;
 + (void)initialize;
-@property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void)session:(id)arg1 didDeleteResource:(id)arg2;
 - (void)session:(id)arg1 didDownloadResource:(id)arg2;
 - (void)session:(id)arg1 bag:(id)arg2 didLoadWithError:(id)arg3;

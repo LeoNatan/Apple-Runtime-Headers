@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUBonjourBrowser, CUNANSubscriber, NSSet, NSString, SFDeviceDiscovery, SFService;
+@class CUBonjourBrowser, CUNANSubscriber, NSMutableDictionary, NSSet, NSString, SFDeviceDiscovery, SFService;
 @protocol OS_dispatch_queue;
 
 @interface CUNetServiceDiscovery : NSObject
@@ -14,14 +14,14 @@
     _Bool _activated;
     unsigned char _bleActionType;
     SFService *_bleAdvertiser;
-    struct NSMutableDictionary *_bleDevices;
+    NSMutableDictionary *_bleDevices;
     SFDeviceDiscovery *_bleDiscovery;
     NSString *_bleServiceIdentifier;
-    struct NSMutableDictionary *_endpoints;
+    NSMutableDictionary *_endpoints;
     CUBonjourBrowser *_infraBonjourBrowser;
-    struct NSMutableDictionary *_infraBonjourDevices;
+    NSMutableDictionary *_infraBonjourDevices;
     unsigned int _infraBonjourBrowserID;
-    struct NSMutableDictionary *_nanEndpoints;
+    NSMutableDictionary *_nanEndpoints;
     CUNANSubscriber *_nanSubscriber;
     unsigned int _nanSubscriberID;
     _Bool _invalidateCalled;
@@ -46,6 +46,7 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) CDUnknownBlockType endpointChangedHandler; // @synthesize endpointChangedHandler=_endpointChangedHandler;
@@ -60,7 +61,6 @@
 @property(copy, nonatomic) NSSet *blePeerFilter; // @synthesize blePeerFilter=_blePeerFilter;
 @property(nonatomic) unsigned int bleDiscoveryFlags; // @synthesize bleDiscoveryFlags=_bleDiscoveryFlags;
 @property(nonatomic) int awdlControl; // @synthesize awdlControl=_awdlControl;
-- (void).cxx_destruct;
 - (void)_nanEndpointChanged:(id)arg1 changes:(unsigned int)arg2;
 - (void)_nanEndpointLost:(id)arg1;
 - (void)_nanEndpointFound:(id)arg1;

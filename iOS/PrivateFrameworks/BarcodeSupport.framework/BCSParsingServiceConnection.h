@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSXPCConnection *_parsingServiceConnection;
 }
 
-@property(retain, nonatomic) NSXPCConnection *parsingServiceConnection; // @synthesize parsingServiceConnection=_parsingServiceConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *parsingServiceConnection; // @synthesize parsingServiceConnection=_parsingServiceConnection;
 - (void)parseQRCodeFeature:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)parseQRCodeMetadata:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)parseQRCodeString:(id)arg1 withReply:(CDUnknownBlockType)arg2;

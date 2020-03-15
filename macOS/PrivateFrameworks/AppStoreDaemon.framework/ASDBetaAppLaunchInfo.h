@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) ASDBetaAppVersion *version; // @synthesize version=_version;
 @property(copy) NSString *testerEmail; // @synthesize testerEmail=_testerEmail;
 @property(getter=hasSharedFeedback) BOOL sharedFeedback; // @synthesize sharedFeedback=_sharedFeedback;
@@ -37,7 +38,6 @@
 @property(copy) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy) ASDBetaAppDisplayNames *displayNames; // @synthesize displayNames=_displayNames;
 @property(copy) NSString *artistName; // @synthesize artistName=_artistName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

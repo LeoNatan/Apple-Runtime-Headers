@@ -26,11 +26,11 @@
 + (id)luxoReuseIdentifier;
 + (id)nonLuxoReuseIdentifier;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFontMetrics *fontMetrics; // @synthesize fontMetrics=_fontMetrics;
 @property(retain, nonatomic) UIImage *calloutImage; // @synthesize calloutImage=_calloutImage;
 @property(copy, nonatomic) NSString *calloutName; // @synthesize calloutName=_calloutName;
 @property(retain, nonatomic) NTKCFaceContainerView *faceContainerView; // @synthesize faceContainerView=_faceContainerView;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool active;
 - (void)_highlight;
 - (void)setSelected:(_Bool)arg1;

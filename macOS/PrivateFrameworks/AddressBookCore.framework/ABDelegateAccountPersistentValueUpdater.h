@@ -12,25 +12,28 @@
 {
     NSString *_dsid;
     NSRegularExpression *_regex;
-    struct NSDictionary *_homeInfo;
+    NSDictionary *_homeInfo;
 }
 
 + (void)absorbHomeInfoValuesFromCombinedHomeInfoDictionary:(id)arg1 intoHomeInfoDictionary:(id)arg2;
++ (id)bootstrappedNewHomeInfoGeneratedUsingCombinedDictionary:(id)arg1;
 + (id)delegateValuesToUpdateFromCombinedDictionary:(id)arg1 existingDelegateValues:(id)arg2;
 + (id)allowedHomeInfoKeys;
++ (id)homeInfoKeysToCopyFromParent;
 + (id)allowedKeys;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *homeInfo; // @synthesize homeInfo=_homeInfo;
 @property(readonly, copy, nonatomic) NSRegularExpression *regex; // @synthesize regex=_regex;
 @property(readonly, copy, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
-- (void).cxx_destruct;
-- (void)setAllowedHomeInfoDataInDictionary:(id)arg1;
+- (void)updateDictionary:(id)arg1 withReconstructedDelegatePath:(id)arg2 reconstructedDelegateInfo:(id)arg3;
+- (void)setAllowedHomeInfoDataInDictionary:(id)arg1 givenParentHomeInfo:(id)arg2;
 - (void)updateDictionary:(id)arg1 byReplacingDSIDInValueForKey:(id)arg2;
 - (void)updateServerRootPathInDictionary:(id)arg1;
 - (id)startByFilteringOutDisallowedDataFromParentDictionary:(id)arg1;
 - (id)combinedDictionaryWithDelegateValuesAndValuesInParentDictionary:(id)arg1;
 - (void)prepareRegex;
 - (id)stringByReplacingDSIDInString:(id)arg1;
-- (id)initWithDSID:(id)arg1 homeInfo:(struct NSDictionary *)arg2;
+- (id)initWithDSID:(id)arg1 homeInfo:(id)arg2;
 - (id)init;
 
 @end

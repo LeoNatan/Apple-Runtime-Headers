@@ -21,13 +21,13 @@
     UIImage *_placeholderImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDisplayingPlaceholder) _Bool displayingPlaceholder; // @synthesize displayingPlaceholder=_displayingPlaceholder;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(nonatomic) _Bool forcesAnimatedUnhighlighting; // @synthesize forcesAnimatedUnhighlighting=_forcesAnimatedUnhighlighting;
 @property(nonatomic) _Bool dimsWhenHighlighted; // @synthesize dimsWhenHighlighted=_dimsWhenHighlighted;
 @property(nonatomic) _Bool automaticallyApplyAspectConstraints; // @synthesize automaticallyApplyAspectConstraints=_automaticallyApplyAspectConstraints;
 @property(readonly, nonatomic) UIImage *_externalImage; // @synthesize _externalImage;
-- (void).cxx_destruct;
 - (void)_updateHighlightViewAnimated:(_Bool)arg1;
 - (_Bool)_shouldShowHighlightView;
 - (void)_setPlaceholderHidden:(_Bool)arg1;

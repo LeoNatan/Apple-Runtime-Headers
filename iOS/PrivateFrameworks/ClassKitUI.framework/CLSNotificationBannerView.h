@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 + (id)bannerMessageAttributes;
 + (id)bannerTitleAttributes;
 + (_Bool)_preventsAppearanceProxyCustomization;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) double preferredWidthPad; // @synthesize preferredWidthPad=_preferredWidthPad;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)callCompletionHandler;
 - (void)hideBanner;
 - (void)showWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -23,13 +23,13 @@
 
 + (id)bitmapWith2BitARGBPDFData:(id)arg1 pixelSize:(struct CGSize)arg2 scale:(double)arg3 colorSpace:(struct CGColorSpace *)arg4;
 + (id)bitmapWith32BitARGBPixelWidth:(long long)arg1 pixelHeight:(long long)arg2 colorSpace:(struct CGColorSpace *)arg3 byDrawingIntoContext:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly) unsigned int bitmapInfo; // @synthesize bitmapInfo=_bitmapInfo;
 @property(readonly) long long bitsPerComponent; // @synthesize bitsPerComponent=_bitsPerComponent;
 @property(readonly) long long componentsPerPixel; // @synthesize componentsPerPixel=_componentsPerPixel;
 @property(readonly) long long bytesPerRow; // @synthesize bytesPerRow=_bytesPerRow;
 @property(readonly) long long pixelHeight; // @synthesize pixelHeight=_pixelHeight;
 @property(readonly) long long pixelWidth; // @synthesize pixelWidth=_pixelWidth;
-- (void).cxx_destruct;
 - (struct CGImage *)imageRefWithColorSpace:(struct CGColorSpace *)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

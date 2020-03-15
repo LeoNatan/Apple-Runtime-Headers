@@ -22,6 +22,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *noteCount; // @synthesize noteCount=_noteCount;
 @property(retain, nonatomic) NSNumber *noteRank; // @synthesize noteRank=_noteRank;
 @property(retain, nonatomic) NSNumber *selectTime; // @synthesize selectTime=_selectTime;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSNumber *searchScope; // @synthesize searchScope=_searchScope;
 @property(retain, nonatomic) EDAMNoteFilter *noteFilter; // @synthesize noteFilter=_noteFilter;
 @property(retain, nonatomic) NSString *userQuery; // @synthesize userQuery=_userQuery;
-- (void).cxx_destruct;
 
 @end
 

@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 + (id)runActionWithResult:(struct __DDResult *)arg1 url:(id)arg2 textCheckingResult:(id)arg3 context:(id)arg4;
 + (id)controllerWithResult:(struct __DDResult *)arg1 url:(id)arg2 textCheckingResult:(id)arg3 context:(id)arg4;
 + (unsigned long long)customContentType;
-@property(retain) NSView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(retain) NSView *view; // @synthesize view=_view;
 - (BOOL)userDidModifyContent;
 - (void)closeAndReleaseBubble;
 

@@ -22,12 +22,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *modelId; // @synthesize modelId=_modelId;
 @property(retain, nonatomic) NSString *machineId; // @synthesize machineId=_machineId;
 @property(retain, nonatomic) NSData *encryptionPubKey; // @synthesize encryptionPubKey=_encryptionPubKey;
 @property(retain, nonatomic) NSData *signingPubKey; // @synthesize signingPubKey=_signingPubKey;
 @property(nonatomic) unsigned long long epoch; // @synthesize epoch=_epoch;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

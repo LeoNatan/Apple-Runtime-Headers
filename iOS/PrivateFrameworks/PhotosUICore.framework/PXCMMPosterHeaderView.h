@@ -26,9 +26,9 @@
 
 + (void)preheatSharedValuesForPresentationStyle:(long long)arg1;
 + (double)preferredHeightForWidth:(double)arg1 traitCollection:(id)arg2 screen:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(retain, nonatomic) PXCMMPosterHeaderViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (_Bool)test_showStatusCheckmark;

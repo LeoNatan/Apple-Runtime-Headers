@@ -21,7 +21,7 @@
 - (id)_initWithObserver:(id)arg1;
 
 // Remaining properties
-@property(nonatomic) __weak id <TVSSerialTransactionManagerObserver> observer;
+@property(nonatomic) __weak id <TVSSerialTransactionManagerObserver> observer; // @dynamic observer;
 
 @end
 

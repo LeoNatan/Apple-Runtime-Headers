@@ -8,14 +8,14 @@
 
 #import <PhotoFoundation/PFCanceler-Protocol.h>
 
-@class NSString;
-@protocol OS_dispatch_queue;
+@class NSString, PFAsyncDispatchMulticaster;
+@protocol OS_dispatch_queue, PFCancelerObserverMulticaster;
 
 @interface PFCanceler : NSObject <PFCanceler>
 {
     NSObject<OS_dispatch_queue> *_serializer;
     BOOL _isCanceled;
-    struct PFAsyncDispatchMulticaster *_multicaster;
+    PFAsyncDispatchMulticaster<PFCancelerObserverMulticaster> *_multicaster;
 }
 
 + (BOOL)supportsNotifyOnCancel;

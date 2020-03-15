@@ -63,6 +63,7 @@
 + (id)moviesFetchRequest;
 + (id)homeVideosFetchRequest;
 + (id)mediaEntityFetchRequestWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) CDUnknownBlockType groupingSortComparator; // @synthesize groupingSortComparator=_groupingSortComparator;
@@ -72,7 +73,6 @@
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(copy, nonatomic) NSSet *mediaEntityTypes; // @synthesize mediaEntityTypes=_mediaEntityTypes;
-- (void).cxx_destruct;
 - (id)_manualSortDescriptorsWithMediaEntityKind:(id)arg1 propertiesRequiredForSort:(id *)arg2;
 - (_Bool)_shouldGenerateGroupingSortIndexes;
 - (_Bool)_shouldGenerateSortIndexes;

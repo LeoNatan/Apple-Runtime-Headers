@@ -15,10 +15,10 @@
     id value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id value; // @synthesize value;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath;
 @property(readonly, nonatomic) id object; // @synthesize object;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)applyForSimulator;

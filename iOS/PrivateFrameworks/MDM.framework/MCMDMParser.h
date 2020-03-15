@@ -22,12 +22,12 @@
 + (id)_MCKeysToDMFKeys;
 + (id)errorChainFromError:(id)arg1;
 + (id)malformedRequestErrorResult;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CATOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSString *managingProfileIdentifier; // @synthesize managingProfileIdentifier=_managingProfileIdentifier;
 @property(nonatomic) _Bool isMDM; // @synthesize isMDM=_isMDM;
 @property(readonly, nonatomic) _Bool isChaperoned; // @synthesize isChaperoned=_isChaperoned;
 @property(nonatomic) __weak MCMDMServer *server; // @synthesize server=_server;
-- (void).cxx_destruct;
 - (id)_softwareUpdatesNotPermittedWithLoggedInUserError;
 - (void)_rejectSoftwareUpdateBecauseOfMalformedRequestCompletionBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_rejectSoftwareUpdateBecauseUserLoggedInCompletionBlock:(CDUnknownBlockType)arg1;
@@ -75,7 +75,11 @@
 - (id)_performSetGracePeriod:(id)arg1;
 - (id)_performSetAppAnalytics:(id)arg1;
 - (id)_performSetDiagnosticSubmission:(id)arg1;
+- (id)_performSetResidentUserQuotaSize:(id)arg1;
+- (id)_setResidentUsersNumber:(id)arg1;
 - (id)_performSetMaximumResidentUsers:(id)arg1;
+- (id)_performSetResidentUsers:(id)arg1;
+- (id)_performSetSharedDeviceConfiguration:(id)arg1;
 - (id)_performSetAppAttributes:(id)arg1 outAdditionalResponseKeys:(id *)arg2;
 - (id)_performSetAppConfig:(id)arg1 outAdditionalResponseKeys:(id *)arg2;
 - (id)_handleSetAppManagementInfoRequest:(id)arg1 outAdditionalResponseKeys:(id *)arg2 block:(CDUnknownBlockType)arg3;

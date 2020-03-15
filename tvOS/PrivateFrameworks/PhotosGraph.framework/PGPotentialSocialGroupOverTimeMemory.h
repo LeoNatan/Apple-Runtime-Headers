@@ -17,12 +17,12 @@
     NSString *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *uuid; // @synthesize uuid=_uuid;
 @property(retain) NSArray *facedAssets; // @synthesize facedAssets=_facedAssets;
 @property(retain) NSArray *curatedAssets; // @synthesize curatedAssets=_curatedAssets;
 @property(readonly) NSSet *personNodes; // @synthesize personNodes=_personNodes;
 @property(readonly) PGGraphSocialGroupNode *socialGroupNode; // @synthesize socialGroupNode=_socialGroupNode;
-- (void).cxx_destruct;
 - (id)initWithSocialGroupNode:(id)arg1 momentNodes:(id)arg2;
 
 @end

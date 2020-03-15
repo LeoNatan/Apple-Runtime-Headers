@@ -22,9 +22,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <HMDWACScannerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)wacBrowser:(id)arg1 didUpdateAirPlayDevice:(id)arg2;
 - (void)wacBrowser:(id)arg1 didRemoveAirPlayDevice:(id)arg2;
 - (void)wacBrowser:(id)arg1 didFindAirPlayDevice:(id)arg2;

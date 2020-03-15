@@ -13,8 +13,8 @@
     SKDisk *_skDisk;
 }
 
-@property(retain) SKDisk *skDisk; // @synthesize skDisk=_skDisk;
 - (void).cxx_destruct;
+@property(retain) SKDisk *skDisk; // @synthesize skDisk=_skDisk;
 - (double)estimatedTransferRate;
 - (id)accessibilityDescription;
 - (unsigned long long)systemType;

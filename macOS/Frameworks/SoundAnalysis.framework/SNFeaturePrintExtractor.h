@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     long long _featurePrintType;
 }
 
-@property(nonatomic) float overlapFactor; // @synthesize overlapFactor=_overlapFactor;
-@property(nonatomic) long long featurePrintType; // @synthesize featurePrintType=_featurePrintType;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) float overlapFactor; // @synthesize overlapFactor=_overlapFactor;
+@property(nonatomic) long long featurePrintType; // @synthesize featurePrintType=_featurePrintType;
 @property(readonly, nonatomic) struct Box *resultsBox;
 - (void)primeGraph;
 - (id)resultsFromBox:(struct Box *)arg1 renderedWithFrameCount:(int)arg2;

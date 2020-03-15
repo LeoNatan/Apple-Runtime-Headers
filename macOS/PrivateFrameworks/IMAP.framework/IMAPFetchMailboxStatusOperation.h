@@ -16,10 +16,10 @@
     unsigned long long _dataItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long dataItems; // @synthesize dataItems=_dataItems;
 @property(readonly, copy, nonatomic) NSArray *mailboxNames; // @synthesize mailboxNames=_mailboxNames;
 @property(readonly, nonatomic) __weak id <IMAPFetchMailboxStatusOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)_descriptionHidingPII:(BOOL)arg1;
 - (id)description;

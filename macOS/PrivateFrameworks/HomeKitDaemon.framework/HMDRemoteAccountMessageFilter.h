@@ -15,9 +15,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *whitelistedMessages; // @synthesize whitelistedMessages=_whitelistedMessages;
 @property(readonly) HMFMessageDestination *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (BOOL)__shouldCheckMessage:(id)arg1;
 - (BOOL)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id *)arg3;

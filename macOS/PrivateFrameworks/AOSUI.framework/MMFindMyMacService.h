@@ -20,10 +20,10 @@
 
 + (id)_errorWithFMMErroCode:(unsigned long long)arg1;
 + (id)_updateQueue;
+- (void).cxx_destruct;
 @property(retain) FMDUIFMMiCloudSettingsController *optionsController; // @synthesize optionsController=_optionsController;
 @property(retain) NSImage *warningIcon; // @synthesize warningIcon=_warningIcon;
 @property(retain) NSError *fmmError; // @synthesize fmmError=_fmmError;
-- (void).cxx_destruct;
 - (BOOL)preflightForSignoutWithWindow:(id)arg1;
 - (BOOL)hasPreflightAction;
 - (BOOL)deviceHasBridgeOS;

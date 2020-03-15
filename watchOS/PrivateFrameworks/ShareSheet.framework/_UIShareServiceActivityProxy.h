@@ -22,9 +22,9 @@
 
 + (void)forwardInvocation:(id)arg1;
 + (id)activityProxyForServiceActivityDataRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didFinishPerformingActivityHandler; // @synthesize didFinishPerformingActivityHandler=_didFinishPerformingActivityHandler;
 @property(copy, nonatomic) CDUnknownBlockType didFinishPreparingForExecution; // @synthesize didFinishPreparingForExecution=_didFinishPreparingForExecution;
-- (void).cxx_destruct;
 - (void)_willBePerformedOrPresented;
 - (struct CGSize)_thumbnailSize;
 - (_Bool)_activitySupportsPromiseURLs;

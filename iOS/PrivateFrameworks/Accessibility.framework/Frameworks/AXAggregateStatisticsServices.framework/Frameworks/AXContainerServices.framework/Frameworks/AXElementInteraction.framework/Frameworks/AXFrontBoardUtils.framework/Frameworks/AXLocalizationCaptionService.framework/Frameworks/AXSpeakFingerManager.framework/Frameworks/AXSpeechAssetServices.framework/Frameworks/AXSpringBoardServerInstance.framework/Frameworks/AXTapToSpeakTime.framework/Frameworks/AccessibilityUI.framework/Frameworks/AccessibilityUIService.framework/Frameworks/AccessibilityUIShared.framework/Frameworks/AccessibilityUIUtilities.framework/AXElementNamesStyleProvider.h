@@ -11,8 +11,8 @@
     CDUnknownBlockType _itemBackgroundViewCreationHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType itemBackgroundViewCreationHandler; // @synthesize itemBackgroundViewCreationHandler=_itemBackgroundViewCreationHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType itemBackgroundViewCreationHandler; // @synthesize itemBackgroundViewCreationHandler=_itemBackgroundViewCreationHandler;
 
 @end
 

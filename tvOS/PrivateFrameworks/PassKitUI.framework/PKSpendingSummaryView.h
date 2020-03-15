@@ -23,10 +23,10 @@
     _Bool _visible;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(retain, nonatomic) UIImage *downImage; // @synthesize downImage=_downImage;
 @property(retain, nonatomic) UIImage *upImage; // @synthesize upImage=_upImage;
-- (void).cxx_destruct;
 - (void)configureWithSummary:(id)arg1 presentationStyle:(unsigned long long)arg2;
 - (_Bool)_needsLayoutWithSummary:(id)arg1;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;

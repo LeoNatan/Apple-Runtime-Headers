@@ -20,6 +20,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isEvod; // @synthesize isEvod=_isEvod;
 @property(copy, nonatomic) NSString *imagesJSONContentPayload; // @synthesize imagesJSONContentPayload=_imagesJSONContentPayload;
 @property(copy, nonatomic) NSNumber *imageWidth; // @synthesize imageWidth=_imageWidth;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSString *URLFormatString; // @synthesize URLFormatString=_URLFormatString;
 @property(copy, nonatomic) NSString *UTSContentType; // @synthesize UTSContentType=_UTSContentType;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

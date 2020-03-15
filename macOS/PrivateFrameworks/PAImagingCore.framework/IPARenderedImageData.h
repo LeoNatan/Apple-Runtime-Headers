@@ -22,12 +22,12 @@
     NSData *_rasterData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL histogramCalculated; // @synthesize histogramCalculated=_histogramCalculated;
 @property(retain, nonatomic) NSData *rasterData; // @synthesize rasterData=_rasterData;
 @property(nonatomic) long long rowBytes; // @synthesize rowBytes=_rowBytes;
 @property(nonatomic) long long height; // @synthesize height=_height;
 @property(nonatomic) long long width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (long long)histogramBucketCount;
 - (unsigned long long *)histogramBlue;
 - (unsigned long long *)histogramGreen;

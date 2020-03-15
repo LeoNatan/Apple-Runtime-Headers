@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedFontManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *subtitleFontForTableLayout; // @synthesize subtitleFontForTableLayout=_subtitleFontForTableLayout;
 @property(retain, nonatomic) UIFont *titleFontForTableLayout; // @synthesize titleFontForTableLayout=_titleFontForTableLayout;
 @property(retain, nonatomic) UIFont *subtitleFontForGridLayout; // @synthesize subtitleFontForGridLayout=_subtitleFontForGridLayout;
 @property(retain, nonatomic) UIFont *titleFontForGridLayout; // @synthesize titleFontForGridLayout=_titleFontForGridLayout;
-- (void).cxx_destruct;
 - (void)cacheFonts;
 - (id)init;
 

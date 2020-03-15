@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_numberOfMediaItemsDownloading;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *numberOfMediaItemsDownloading; // @synthesize numberOfMediaItemsDownloading=_numberOfMediaItemsDownloading;
 @property(retain, nonatomic) NSNumber *numberOfMediaItems; // @synthesize numberOfMediaItems=_numberOfMediaItems;
 @property(retain, nonatomic) NSNumber *episodeNumber; // @synthesize episodeNumber=_episodeNumber;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<VUIMediaEntityIdentifier> *showIdentifier; // @synthesize showIdentifier=_showIdentifier;
 @property(nonatomic) long long downloadType; // @synthesize downloadType=_downloadType;
 @property(nonatomic) __weak id <VUIDownloadEntityDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)mediaEntityAssetController:(id)arg1 stateDidChange:(id)arg2;
 - (void)_configureWithMediaEntities:(id)arg1;

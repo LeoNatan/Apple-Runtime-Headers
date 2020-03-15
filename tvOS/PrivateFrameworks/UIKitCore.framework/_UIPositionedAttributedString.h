@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)attributedString:(id)arg1 atPosition:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITextPosition *position; // @synthesize position=_position;
 @property(readonly, copy, nonatomic) NSAttributedString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

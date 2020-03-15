@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (void)applySecondaryGlyphTintToView:(id)arg1;
 + (void)applyPrimaryGlyphTintToView:(id)arg1;
 + (void)removeAllFiltersFromView:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVCABackdropLayerView *backdropLayerView; // @synthesize backdropLayerView=_backdropLayerView;
 @property(nonatomic) _Bool disablesAutoLayout; // @synthesize disablesAutoLayout=_disablesAutoLayout;
 @property(retain, nonatomic) NSArray *secondaryMaterialOverlayViewConstraints; // @synthesize secondaryMaterialOverlayViewConstraints=_secondaryMaterialOverlayViewConstraints;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *targetViewForSecondaryMaterialOverlay; // @synthesize targetViewForSecondaryMaterialOverlay=_targetViewForSecondaryMaterialOverlay;
 @property(nonatomic) unsigned long long shapeStyle; // @synthesize shapeStyle=_shapeStyle;
 @property(readonly, nonatomic) long long axis; // @synthesize axis=_axis;
-- (void).cxx_destruct;
 - (void)_applyShapeStyle;
 - (id)_stackViewIfLoaded;
 - (void)updateConstraints;

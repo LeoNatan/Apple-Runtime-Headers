@@ -19,10 +19,10 @@
     NUColorSpace *_colorSpace;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NURegion *validRegion; // @synthesize validRegion=_validRegion;
 @property(readonly) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) NUImageLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (id)debugQuickLookObject;
 - (id)mutablePurgeableImageCopy;
 - (id)purgeableImageCopy;

@@ -15,8 +15,8 @@
     TUCallProviderManager *_callProviderManager;
 }
 
-@property(copy, nonatomic) TUCallProviderManager *callProviderManager; // @synthesize callProviderManager=_callProviderManager;
 - (void).cxx_destruct;
+@property(copy, nonatomic) TUCallProviderManager *callProviderManager; // @synthesize callProviderManager=_callProviderManager;
 - (id)thirdPartyCallProviderWithBundleIdentifier:(id)arg1;
 - (id)thirdPartyCallProvidersForActionType:(id)arg1;
 - (id)observableForCallProvidersChangedWithSchedulerProvider:(id)arg1;

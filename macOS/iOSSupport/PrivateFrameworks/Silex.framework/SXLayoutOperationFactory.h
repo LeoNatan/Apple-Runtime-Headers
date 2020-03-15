@@ -20,12 +20,12 @@
     id <SXUnitConverterFactory> _unitConverterFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXUnitConverterFactory> unitConverterFactory; // @synthesize unitConverterFactory=_unitConverterFactory;
 @property(readonly, nonatomic) id <SXLayoutContextFactory> layoutContextFactory; // @synthesize layoutContextFactory=_layoutContextFactory;
 @property(readonly, nonatomic) id <SXLayouterFactory> layouterFactory; // @synthesize layouterFactory=_layouterFactory;
 @property(readonly, nonatomic) id <SXLayoutBlueprintFactory> layoutBlueprintFactory; // @synthesize layoutBlueprintFactory=_layoutBlueprintFactory;
 @property(readonly, nonatomic) id <SXComponentSizerEngine> componentSizerEngine; // @synthesize componentSizerEngine=_componentSizerEngine;
-- (void).cxx_destruct;
 - (id)layoutOperationWithTask:(id)arg1 DOMObjectProvider:(id)arg2;
 - (id)initWithComponentSizerEngine:(id)arg1 layoutBlueprintFactory:(id)arg2 layouterFactory:(id)arg3 layoutContextFactory:(id)arg4 unitConverterFactory:(id)arg5;
 

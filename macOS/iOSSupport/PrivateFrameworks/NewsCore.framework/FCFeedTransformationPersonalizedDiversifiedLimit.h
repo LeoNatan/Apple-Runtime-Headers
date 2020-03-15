@@ -19,9 +19,9 @@
 
 + (id)transformationWithPersonalizer:(id)arg1 limit:(unsigned long long)arg2;
 + (id)transformationWithPersonalizer:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
-- (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1 withRespectToLimit:(unsigned long long)arg2;
 - (id)transformFeedItems:(id)arg1;
 

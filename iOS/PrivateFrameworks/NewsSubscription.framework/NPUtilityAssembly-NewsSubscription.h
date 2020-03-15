@@ -6,9 +6,7 @@
 
 #import <NewsSubscription/NPUtilityAssembly.h>
 
-#import <NewsSubscription/NFAssembly-Protocol.h>
-
-@interface NPUtilityAssembly (NewsSubscription) <NFAssembly>
+@interface NPUtilityAssembly (NewsSubscription)
 - (void)loadInRegistry:(id)arg1;
 @end
 

@@ -23,6 +23,7 @@
     BOOL _sortsElementsInLine;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL sortsElementsInLine; // @synthesize sortsElementsInLine=_sortsElementsInLine;
 @property(retain, nonatomic) IMKUICandidateLayoutTraits *layoutTraits; // @synthesize layoutTraits=_layoutTraits;
 @property(retain, nonatomic) NSMutableDictionary *indexToLineIndexMapping; // @synthesize indexToLineIndexMapping=_indexToLineIndexMapping;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) IMKCandidateList *currentCandidateList; // @synthesize currentCandidateList=_currentCandidateList;
 @property(retain, nonatomic) IMKUICandidateLineLayoutEntry *currentEntry; // @synthesize currentEntry=_currentEntry;
 @property(nonatomic) unsigned long long candidateIterationIndex; // @synthesize candidateIterationIndex=_candidateIterationIndex;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)exchangeLineAtIndex:(unsigned long long)arg1 withLine:(id)arg2;

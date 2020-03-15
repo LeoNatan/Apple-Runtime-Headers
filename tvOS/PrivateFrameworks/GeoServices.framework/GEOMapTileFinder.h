@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
 + (id)transitGeometryTileFinderForMap:(id)arg1 center:(CDStruct_c3b9c2ee)arg2 radius:(double)arg3;
 + (id)detailedTransitTileFinderForMap:(id)arg1 center:(CDStruct_c3b9c2ee)arg2 radius:(double)arg3;
 + (id)realisticTileFinderForMap:(id)arg1 center:(CDStruct_c3b9c2ee)arg2 radius:(double)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int tileStyle; // @synthesize tileStyle=_tileStyle;
 @property(readonly, nonatomic) int tileScale; // @synthesize tileScale=_tileScale;
 @property(readonly, nonatomic) int tileSize; // @synthesize tileSize=_tileSize;
 @property(readonly, nonatomic) unsigned long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(copy, nonatomic) CDUnknownBlockType tileHandler; // @synthesize tileHandler=_tileHandler;
-- (void).cxx_destruct;
 - (struct _GEOTileKey)_adjacentTileKey:(const struct _GEOTileKey *)arg1 dirX:(int)arg2 dirY:(int)arg3;
 - (void)findTiles:(CDUnknownBlockType)arg1;
 - (void)findTilesAdjacentToTile:(const struct _GEOTileKey *)arg1 containingPoint:(const Matrix_8746f91e *)arg2 tileHandler:(CDUnknownBlockType)arg3;

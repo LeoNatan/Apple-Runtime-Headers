@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)connectToAuthenticationSessionRequestClientWithEndpoint:(id)arg1;
 - (void)askDefaultBrowserToCancelAuthenticationSessionWithUUID:(id)arg1;
 - (void)askDefaultBrowserToBeginAuthenticationSessionWithUUID:(id)arg1 url:(id)arg2 callbackURLScheme:(id)arg3 usingEphemeralSession:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)askSafariToAddReadingListItemWithURL:(id)arg1 title:(id)arg2 previewText:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)launchSafariToURL:(id)arg1;
 
 // Remaining properties

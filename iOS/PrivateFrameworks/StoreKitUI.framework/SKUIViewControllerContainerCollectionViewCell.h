@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_indexPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(nonatomic) _Bool managesViewControllerContainerViewLayout; // @synthesize managesViewControllerContainerViewLayout=_managesViewControllerContainerViewLayout;
 @property(nonatomic) double maximumContentWidth; // @synthesize maximumContentWidth=_maximumContentWidth;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *viewControllerContainerView;
 @property(retain, nonatomic) UIViewController *viewController;
 - (void)applyLayoutAttributes:(id)arg1;

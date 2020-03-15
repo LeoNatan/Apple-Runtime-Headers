@@ -36,6 +36,7 @@
 + (BOOL)canDownloadWithResumeData:(id)arg1;
 + (BOOL)canDownloadInBackground;
 + (BOOL)canDownloadURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSData *chunklistResumeData; // @synthesize chunklistResumeData=_chunklistResumeData;
 @property(retain) NSData *fileResumeData; // @synthesize fileResumeData=_fileResumeData;
 @property(retain, nonatomic) NSData *chunklistHash; // @synthesize chunklistHash=_chunklistHash;
@@ -54,7 +55,6 @@
 @property(retain) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain) NSThread *delegateThread; // @synthesize delegateThread=_delegateThread;
 - (id)delegate;
-- (void).cxx_destruct;
 - (void)__runBlock:(CDUnknownBlockType)arg1;
 - (void)_runBlockOnThread:(id)arg1 withBlock:(CDUnknownBlockType)arg2 waitUntilDone:(BOOL)arg3;
 - (void)_runBlockOnDelegateThread:(CDUnknownBlockType)arg1 waitUntilDone:(BOOL)arg2;

@@ -29,6 +29,7 @@
 + (id)attachmentSummary:(unsigned int)arg1;
 + (id)fallbackFilenamePrefix;
 + (id)UTITypes;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isJellyfishInitialized; // @synthesize isJellyfishInitialized=_isJellyfishInitialized;
 @property(nonatomic) _Bool isAppleAutoloopVideoInitialized; // @synthesize isAppleAutoloopVideoInitialized=_isAppleAutoloopVideoInitialized;
 @property(nonatomic) _Bool isAutoloopVideoInitialized; // @synthesize isAutoloopVideoInitialized=_isAutoloopVideoInitialized;
@@ -40,7 +41,6 @@
 @property(nonatomic) struct CGSize pxSize; // @synthesize pxSize=_pxSize;
 @property(nonatomic) _Bool hasVideoTrack; // @synthesize hasVideoTrack=_hasVideoTrack;
 @property(retain, nonatomic) UIImage *thumbnail; // @synthesize thumbnail=_thumbnail;
-- (void).cxx_destruct;
 - (_Bool)validatePreviewFormat;
 - (void)updateVideoInfo;
 - (_Bool)hasNoVideoTrack;

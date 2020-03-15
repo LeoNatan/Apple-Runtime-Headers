@@ -44,6 +44,7 @@
 + (id)timeStampString;
 + (id)jarvisAudioLogDirectory;
 + (id)jarvisAudioLoggingFilePath;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long secondChanceHotTillMachTime; // @synthesize secondChanceHotTillMachTime=_secondChanceHotTillMachTime;
 @property(nonatomic) BOOL isSiriClientListening; // @synthesize isSiriClientListening=_isSiriClientListening;
 @property(nonatomic) BOOL isSecondPassRunning; // @synthesize isSecondPassRunning=_isSecondPassRunning;
@@ -66,7 +67,6 @@
 @property(retain, nonatomic) CSAudioStream *audioStream; // @synthesize audioStream=_audioStream;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CSVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)siriClientBehaviorMonitor:(id)arg1 willStopStream:(id)arg2;
 - (void)siriClientBehaviorMonitor:(id)arg1 willStartStreamWithContext:(id)arg2 option:(id)arg3;
 - (void)siriClientBehaviorMonitor:(id)arg1 didStopStream:(id)arg2;

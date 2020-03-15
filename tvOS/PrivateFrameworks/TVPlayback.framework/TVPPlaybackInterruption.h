@@ -17,10 +17,10 @@
     long long _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(copy, nonatomic) NSUUID *interruptionID; // @synthesize interruptionID=_interruptionID;
 @property(retain, nonatomic) TVPPlaybackInterruptionCenter *interruptionCenter; // @synthesize interruptionCenter=_interruptionCenter;
-- (void).cxx_destruct;
 - (void)interruptionDidEnd;
 - (void)interruptionWillEnd;
 - (void)interruptionDidBegin;

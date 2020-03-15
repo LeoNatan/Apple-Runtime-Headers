@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *_personaID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(nonatomic) __weak id <CKDSystemAvailabilityWatcher> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)performWithDelegate:(CDUnknownBlockType)arg1;

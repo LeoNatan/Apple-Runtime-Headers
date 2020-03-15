@@ -24,8 +24,8 @@
 + (id)_userNotificationForCFUserNotification:(struct __CFUserNotification *)arg1;
 + (void)_setUserNotification:(id)arg1 forCFUserNotification:(struct __CFUserNotification *)arg2;
 + (id)_userNotificationConversionAccessQueue;
-@property(readonly, nonatomic) struct __CFUserNotification *cfUserNotification; // @synthesize cfUserNotification=_cfUserNotification;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct __CFUserNotification *cfUserNotification; // @synthesize cfUserNotification=_cfUserNotification;
 - (void)_didReceiveResponseWithFlags:(unsigned long long)arg1;
 - (void)_cancelSynchronously:(_Bool)arg1;
 - (void)showWithCompletionHandler:(CDUnknownBlockType)arg1;

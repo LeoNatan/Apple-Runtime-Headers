@@ -17,10 +17,10 @@
 + (id)buildWithEcho:(id)arg1;
 + (id)allowedReasons;
 + (id)allowedStatusKeys;
-@property(copy, nonatomic) NSString *statusEcho; // @synthesize statusEcho=_statusEcho;
 - (void).cxx_destruct;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+@property(copy, nonatomic) NSString *statusEcho; // @synthesize statusEcho=_statusEcho;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

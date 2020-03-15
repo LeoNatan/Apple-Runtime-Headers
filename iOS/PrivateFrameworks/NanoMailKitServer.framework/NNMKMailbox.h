@@ -35,6 +35,7 @@
 + (unsigned long long)messageStateForMailboxFilterType:(unsigned long long)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)idsFromMailboxes:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool databaseContentVerified; // @synthesize databaseContentVerified=_databaseContentVerified;
 @property(nonatomic) _Bool hasSelection; // @synthesize hasSelection=_hasSelection;
 @property(retain, nonatomic) NSDate *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSString *mailboxId; // @synthesize mailboxId=_mailboxId;
 @property(nonatomic) unsigned long long filterType; // @synthesize filterType=_filterType;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)resetURL;
 - (id)description;
 - (unsigned long long)hash;

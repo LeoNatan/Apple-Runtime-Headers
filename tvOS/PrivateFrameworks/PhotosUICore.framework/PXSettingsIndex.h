@@ -15,8 +15,8 @@
 
 + (id)_entriesForSettingsController:(id)arg1 usingProgress:(id)arg2;
 + (id)createIndexForSettings:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (id)searchForText:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (id)_initWithEntries:(id)arg1;
 - (id)init;

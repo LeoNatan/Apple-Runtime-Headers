@@ -15,9 +15,9 @@
 }
 
 + (id)desiredKeys;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *recordItems; // @synthesize recordItems=_recordItems;
 @property(readonly, copy, nonatomic) NSArray *historyItems; // @synthesize historyItems=_historyItems;
-- (void).cxx_destruct;
 - (BOOL)mergeLocalRecord:(id)arg1 withRemoteRecord:(id)arg2;
 - (id)recordZoneName;
 - (id)initWithHistoryItems:(id)arg1 merge:(BOOL)arg2;

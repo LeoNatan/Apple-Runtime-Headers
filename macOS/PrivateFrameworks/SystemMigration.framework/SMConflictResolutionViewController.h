@@ -37,6 +37,7 @@
 + (id)keyPathsForValuesAffectingReplaceUserTitle;
 + (id)keyPathsForValuesAffectingKeepMessage;
 + (id)keyPathsForValuesAffectingSequenceLabel;
+- (void).cxx_destruct;
 @property BOOL allowConflictedOverwrite; // @synthesize allowConflictedOverwrite=_allowConflictedOverwrite;
 @property(retain) NSMutableDictionary *restoreState; // @synthesize restoreState=_restoreState;
 @property unsigned long long totalConflicts; // @synthesize totalConflicts=_totalConflicts;
@@ -57,7 +58,6 @@
 @property BOOL allowRename; // @synthesize allowRename=_allowRename;
 @property(retain) NSString *problem; // @synthesize problem=_problem;
 @property(retain) SMUser *currentUser; // @synthesize currentUser=_currentUser;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)control:(id)arg1 textShouldEndEditing:(id)arg2;
 - (void)pressedContinue:(id)arg1;

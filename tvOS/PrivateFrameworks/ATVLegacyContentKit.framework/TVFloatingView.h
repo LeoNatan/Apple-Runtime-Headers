@@ -33,6 +33,7 @@
 }
 
 + (struct CGSize)_scaledSizeForSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool roundContentWhenDeselected; // @synthesize roundContentWhenDeselected=_roundContentWhenDeselected;
 @property(nonatomic) _Bool scalesBackwards; // @synthesize scalesBackwards=_scalesBackwards;
 @property(nonatomic) struct CGPoint focusDirection; // @synthesize focusDirection=_focusDirection;
@@ -44,7 +45,6 @@
 @property(nonatomic) _Bool appliesContentFilters; // @synthesize appliesContentFilters=_appliesContentFilters;
 @property(nonatomic, getter=isContentOpaque) _Bool contentOpaque; // @synthesize contentOpaque=_contentOpaque;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (void)_updateContainerFilters;
 - (void)_updateScaleFactor;
 - (void)_updateShadowMask;

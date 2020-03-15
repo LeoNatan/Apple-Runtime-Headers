@@ -14,8 +14,8 @@
 }
 
 + (id)remoteInterface;
-@property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (id)diagnosticInformation;
 - (void)setCurrentSuppressionContexts:(id)arg1 suppressedContexts:(id)arg2;
 - (void)performFetchOfType:(int)arg1 accounts:(id)arg2;

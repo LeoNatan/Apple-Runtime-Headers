@@ -14,8 +14,8 @@
     _Bool _haveRegisteredForAccountsChanged;
 }
 
-@property(retain, nonatomic) DAAccount *daAccount; // @synthesize daAccount=_daAccount;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DAAccount *daAccount; // @synthesize daAccount=_daAccount;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)operationsHelper:(id)arg1 didRemoveAccount:(id)arg2 withSuccess:(_Bool)arg3 error:(id)arg4;
 - (_Bool)shouldVerifyBeforeAccountSave;

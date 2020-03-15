@@ -18,10 +18,10 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain) HMFTimer *periodicMobileCatalogUpdateTimer; // @synthesize periodicMobileCatalogUpdateTimer=_periodicMobileCatalogUpdateTimer;
 @property(nonatomic) __weak id <HMDMobileAssetManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)_resetPeriodicMobileCatalogUpdateTimer;
 - (void)_startPeriodicMobileCatalogUpdateTimer;

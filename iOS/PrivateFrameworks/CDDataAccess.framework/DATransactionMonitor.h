@@ -17,10 +17,10 @@
 }
 
 + (id)sharedTransactionMonitor;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DATransactionMonitorDelegate> transactionMonitorDelegate; // @synthesize transactionMonitorDelegate=_transactionMonitorDelegate;
 @property(retain, nonatomic) NSMutableArray *transactions; // @synthesize transactions=_transactions;
 @property(nonatomic) int transactionCount; // @synthesize transactionCount=_transactionCount;
-- (void).cxx_destruct;
 - (void)decrementTransactionCountForTransaction:(id)arg1;
 - (void)incrementTransactionCountForTransaction:(id)arg1;
 - (id)init;

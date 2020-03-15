@@ -14,8 +14,8 @@
 }
 
 + (id)copyTypeDescription;
-@property(retain) NEIKEv2Identifier *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(retain) NEIKEv2Identifier *identifier; // @synthesize identifier=_identifier;
 - (BOOL)parsePayloadData;
 - (BOOL)generatePayloadData;
 - (BOOL)hasRequiredFields;

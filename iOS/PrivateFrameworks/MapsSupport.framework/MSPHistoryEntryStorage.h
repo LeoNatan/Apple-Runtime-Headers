@@ -31,6 +31,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool tracksRAPRecordingOnly; // @synthesize tracksRAPRecordingOnly=_tracksRAPRecordingOnly;
 @property(retain, nonatomic) MSPRidesharingTrip *ridesharingTrip; // @synthesize ridesharingTrip=_ridesharingTrip;
 @property(retain, nonatomic) MSPTransitStorageLineItem *transitLineItem; // @synthesize transitLineItem=_transitLineItem;
@@ -40,7 +41,6 @@
 @property(nonatomic) double position; // @synthesize position=_position;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

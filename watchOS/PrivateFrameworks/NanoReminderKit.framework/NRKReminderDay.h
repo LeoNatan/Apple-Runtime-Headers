@@ -16,11 +16,11 @@
     NRKScheduledRemindersList *_parentList;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NRKScheduledRemindersList *parentList; // @synthesize parentList=_parentList;
 @property(retain, nonatomic) NRKReminderList *reminderList; // @synthesize reminderList=_reminderList;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)description;
 - (int)compareDayDate:(id)arg1;
 - (int)compareDateOfDay:(id)arg1;

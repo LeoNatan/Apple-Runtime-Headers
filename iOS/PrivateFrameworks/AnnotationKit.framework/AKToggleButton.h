@@ -17,11 +17,11 @@
 }
 
 + (id)colorImage:(id)arg1 withColor:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *templateImage; // @synthesize templateImage=_templateImage;
 @property(retain, nonatomic) UIColor *selectedColor; // @synthesize selectedColor=_selectedColor;
 @property(nonatomic) _Bool shouldTintNormalImage; // @synthesize shouldTintNormalImage=_shouldTintNormalImage;
 @property(nonatomic) _Bool showsBackgroundColor; // @synthesize showsBackgroundColor=_showsBackgroundColor;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)tintColorDidChange;
 - (void)_updateStateColors;

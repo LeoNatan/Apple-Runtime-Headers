@@ -18,12 +18,12 @@
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNUIUserActionDiscoveringEnvironment> discoveringEnvironment; // @synthesize discoveringEnvironment=_discoveringEnvironment;
 @property(retain, nonatomic) id <CNUIDefaultUserActionFetcher> defaultActionFetcher; // @synthesize defaultActionFetcher=_defaultActionFetcher;
 @property(retain, nonatomic) id <CNUIUserActionRanking> rankingHelper; // @synthesize rankingHelper=_rankingHelper;
 @property(retain, nonatomic) id <CNUIUserActionTargetDiscovering> targetDiscoveringHelper; // @synthesize targetDiscoveringHelper=_targetDiscoveringHelper;
 @property(nonatomic) BOOL tracksChanges; // @synthesize tracksChanges=_tracksChanges;
-- (void).cxx_destruct;
 - (id)thirdPartyActionsForContactProperty:(id)arg1;
 - (id)thirdPartyTargetsForActionTypes:(id)arg1;
 - (id)sortActionsOnModel:(id)arg1;

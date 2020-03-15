@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)naturalStatementWithSQL:(id)arg1 parameters:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) NSString *sql; // @synthesize sql=_sql;
-- (void).cxx_destruct;
 - (void)setParameter:(id)arg1 forPosition:(unsigned long long)arg2;
 - (id)init;
 

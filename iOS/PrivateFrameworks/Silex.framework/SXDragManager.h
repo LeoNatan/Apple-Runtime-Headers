@@ -19,11 +19,11 @@
     UIDragInteraction *_dragInteraction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIDragInteraction *dragInteraction; // @synthesize dragInteraction=_dragInteraction;
 @property(readonly, nonatomic) unsigned long long sharingPolicy; // @synthesize sharingPolicy=_sharingPolicy;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <SXDragManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)updateAccessibilityDragSourceDescriptorsForDraggableElement:(id)arg1;
 - (_Bool)dragSession:(id)arg1 containsDragItemWithIdentifier:(id)arg2;
 - (id)dragItemForObject:(id)arg1 withSession:(id)arg2;

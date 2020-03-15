@@ -24,10 +24,10 @@
 + (id)objectWithThreadSafeReference:(unique_ptr_d0e912ad)arg1 metadata:(id)arg2 realm:(id)arg3;
 + (id)emptyDetachedResults;
 + (id)resultsWithObjectInfo:(struct RLMClassInfo *)arg1 results:(struct Results *)arg2;
-@property(readonly, nonatomic) RLMRealm *realm; // @synthesize realm=_realm;
-@property(nonatomic, getter=isOptional) BOOL optional; // @synthesize optional=_optional;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RLMRealm *realm; // @synthesize realm=_realm;
+@property(nonatomic, getter=isOptional) BOOL optional; // @synthesize optional=_optional;
 @property(readonly, nonatomic) id objectiveCMetadata;
 - (unique_ptr_d0e912ad)makeThreadSafeReference;
 @property(readonly, nonatomic, getter=isAttached) BOOL attached;

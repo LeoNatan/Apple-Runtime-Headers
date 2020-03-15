@@ -15,8 +15,8 @@
     NSProgress *_parent;
 }
 
-@property(readonly, nonatomic) __weak NSProgress *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSProgress *parent; // @synthesize parent=_parent;
 - (void)completeAllProgress;
 - (void)modifyCompletedBy:(long long)arg1 forSlice:(long long)arg2;
 - (void)modifyTotalBy:(long long)arg1 forSlice:(long long)arg2;

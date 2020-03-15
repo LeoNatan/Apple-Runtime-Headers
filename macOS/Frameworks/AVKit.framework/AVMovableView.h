@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     BOOL _movable;
 }
 
-@property(getter=isMovable) BOOL movable; // @synthesize movable=_movable;
 - (void).cxx_destruct;
+@property(getter=isMovable) BOOL movable; // @synthesize movable=_movable;
 - (void)restoreStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)removeAutoresizingMaskLayoutConstraints;

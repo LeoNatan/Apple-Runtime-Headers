@@ -20,9 +20,9 @@
 + (id)serviceForValueDomain:(id)arg1;
 + (id)serviceForSyncDomain:(id)arg1;
 + (id)_serviceForPlaybackPositionDomain:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) _Bool usingPlaybackPositions; // @synthesize usingPlaybackPositions=_usingPlaybackPositions;
 @property(readonly, nonatomic) SBCPlaybackPositionDomain *playbackPositionDomain; // @synthesize playbackPositionDomain=_playbackPositionDomain;
-- (void).cxx_destruct;
 - (oneway void)pushPlaybackPositionEntity:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (oneway void)pullPlaybackPositionEntity:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (oneway void)pullLocalPlaybackPositionForEntityIdentifiers:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

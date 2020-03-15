@@ -9,7 +9,7 @@
 #import <CoreUtils/CBCentralManagerDelegate-Protocol.h>
 #import <CoreUtils/CBPeripheralManagerDelegate-Protocol.h>
 
-@class CBCentralManager, CBPeripheralManager, CUSystemMonitor, NSString;
+@class CBCentralManager, CBPeripheralManager, CUSystemMonitor, NSMutableDictionary, NSMutableSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -28,13 +28,13 @@ __attribute__((visibility("hidden")))
     CUSystemMonitor *_bleAddressMonitor;
     CBCentralManager *_centralManager;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    struct NSMutableDictionary *_devices;
+    NSMutableDictionary *_devices;
     NSObject<OS_dispatch_source> *_lingerTimer;
     CBPeripheralManager *_peripheralManager;
-    struct NSMutableSet *_providers;
+    NSMutableSet *_providers;
     _Bool _scannerStartCalled;
-    struct NSMutableSet *_seekers;
-    struct NSMutableSet *_sessions;
+    NSMutableSet *_seekers;
+    NSMutableSet *_sessions;
     struct LogCategory *_ucat;
     unsigned int _updateIDLast;
     _Bool _updatePending;

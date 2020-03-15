@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_accessQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL started; // @synthesize started=_started;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(retain, nonatomic) id <NAScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (void)willAddCompletionBlock;
 - (id)initWithBlock:(CDUnknownBlockType)arg1 scheduler:(id)arg2;
 

@@ -31,6 +31,7 @@
     CALayer *_leftShadow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *leftShadow; // @synthesize leftShadow=_leftShadow;
 @property(retain, nonatomic) CALayer *rightShadow; // @synthesize rightShadow=_rightShadow;
 @property(retain, nonatomic) SXTangierController *tangierController; // @synthesize tangierController=_tangierController;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) __weak id <SXTextComponentLayoutHosting> textComponentLayoutHosting; // @synthesize textComponentLayoutHosting=_textComponentLayoutHosting;
 @property(readonly, nonatomic) id <SXComponentActionHandler> componentActionHandler; // @synthesize componentActionHandler=_componentActionHandler;
 @property(readonly, nonatomic) id <SXImageViewFactory> imageViewFactory; // @synthesize imageViewFactory=_imageViewFactory;
-- (void).cxx_destruct;
 - (id)descriptorForIndexPath:(CDStruct_2fea82da)arg1;
 - (id)contentViewForBehavior:(id)arg1;
 - (void)updateShadowOpacity;

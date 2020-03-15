@@ -19,13 +19,13 @@
     NSTextField *_pageCountTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *pageCountTitle; // @synthesize pageCountTitle=_pageCountTitle;
 @property(retain) NSTextField *pageCountLabel; // @synthesize pageCountLabel=_pageCountLabel;
 @property(copy) NSString *accessibilityValueDescriptionFormatString; // @synthesize accessibilityValueDescriptionFormatString=_accessibilityValueDescriptionFormatString;
 @property(nonatomic) unsigned long long pageCount; // @synthesize pageCount=_pageCount;
 @property(retain) NSSlider *pageCountSlider; // @synthesize pageCountSlider=_pageCountSlider;
 @property __weak id <KHPageCountPickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)sliderUpdated:(id)arg1;
 - (void)loadView;
 

@@ -12,8 +12,8 @@
 }
 
 + (id)defaultContentColor;
-@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -17,9 +17,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long addressKind; // @synthesize addressKind=_addressKind;
 @property(readonly, copy, nonatomic) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

@@ -38,6 +38,7 @@
 - (void)_loadContentBlockersIfNecessary:(id)arg1;
 - (void)_findContentBlockerAppExtensions;
 - (void)_loadEnabledContentBlockers;
+- (id)_contentBlockerWithComposedIdentifier:(id)arg1;
 - (id)_contentBlockerWithUUID:(id)arg1;
 - (void)_setContentBlocker:(id)arg1 isEnabled:(BOOL)arg2 skipSavingToKeychain:(BOOL)arg3;
 - (void)_setContentBlocker:(id)arg1 isEnabled:(BOOL)arg2;

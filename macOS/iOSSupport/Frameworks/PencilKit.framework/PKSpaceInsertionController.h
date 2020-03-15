@@ -31,12 +31,12 @@
     PKSelectionController *_selectionController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL didMoveStrokes; // @synthesize didMoveStrokes=_didMoveStrokes;
 @property(readonly, nonatomic) __weak PKSelectionController *selectionController; // @synthesize selectionController=_selectionController;
 @property(retain, nonatomic) PKDrawing *drawing; // @synthesize drawing=_drawing;
 @property(retain, nonatomic) PKStroke *lassoStroke; // @synthesize lassoStroke=_lassoStroke;
 @property(nonatomic) BOOL isCurrentlyAddingSpace; // @synthesize isCurrentlyAddingSpace=_isCurrentlyAddingSpace;
-- (void).cxx_destruct;
 - (double)offsetInStrokeSpaceFromViewOffset:(double)arg1 inDrawing:(id)arg2;
 - (id)_visibleStrokesOnPage:(id)arg1;
 - (void)_blitStrokesToViewForSpaceInsertionType:(unsigned long long)arg1;

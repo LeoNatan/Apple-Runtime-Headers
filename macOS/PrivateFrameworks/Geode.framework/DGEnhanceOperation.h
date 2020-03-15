@@ -35,6 +35,7 @@
 + (id)inputKeys;
 + (id)attributes;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *inputBlackVOffset; // @synthesize inputBlackVOffset=_inputBlackVOffset;
 @property(copy, nonatomic) NSNumber *inputBlackUOffset; // @synthesize inputBlackUOffset=_inputBlackUOffset;
 @property(copy, nonatomic) NSNumber *inputGrayBrightness; // @synthesize inputGrayBrightness=_inputGrayBrightness;
@@ -50,7 +51,6 @@
 @property(nonatomic) int inputVibranceLegacyVersion; // @synthesize inputVibranceLegacyVersion=_vibranceLegacyVersion;
 @property(nonatomic) int inputSaturationLegacyVersion; // @synthesize inputSaturationLegacyVersion=_saturationLegacyVersion;
 @property(nonatomic) int inputContrastLegacyVersion; // @synthesize inputContrastLegacyVersion=_contrastLegacyVersion;
-- (void).cxx_destruct;
 - (void)_applyAutoSettings:(id)arg1;
 - (id)settingsDictionary;
 - (id)initWithOperation:(id)arg1;

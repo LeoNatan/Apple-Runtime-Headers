@@ -17,10 +17,10 @@
     NSMutableSet *_serviceLikeItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *serviceLikeItems; // @synthesize serviceLikeItems=_serviceLikeItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) unsigned long long maximumNumberOfItems; // @synthesize maximumNumberOfItems=_maximumNumberOfItems;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

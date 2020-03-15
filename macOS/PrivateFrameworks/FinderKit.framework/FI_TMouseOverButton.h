@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TInlineProgressView, void> _progressView;
 }
 
-@property(nonatomic) int mouseState; // @synthesize mouseState=_mouseState;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) int mouseState; // @synthesize mouseState=_mouseState;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (void)setHidden:(BOOL)arg1;

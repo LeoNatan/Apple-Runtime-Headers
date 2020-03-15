@@ -15,8 +15,8 @@
     _Bool _preservesBanners;
 }
 
-@property(nonatomic) _Bool preservesBanners; // @synthesize preservesBanners=_preservesBanners;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool preservesBanners; // @synthesize preservesBanners=_preservesBanners;
 - (unsigned long long)_dismissOverlaysOptions;
 - (void)_dismissOverlaysIfNeeded;
 - (void)_begin;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIView *_trackingView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wasOnScreen; // @synthesize wasOnScreen=_wasOnScreen;
 @property(nonatomic) __weak UIView *trackingView; // @synthesize trackingView=_trackingView;
 @property(nonatomic) __weak UIView *scrollingView; // @synthesize scrollingView=_scrollingView;
-- (void).cxx_destruct;
 
 @end
 

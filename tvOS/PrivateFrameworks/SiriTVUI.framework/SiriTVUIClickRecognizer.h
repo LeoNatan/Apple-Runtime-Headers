@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <SiriTVUIClickRecognizerDelegate> _clickDelegate;
 }
 
-@property(nonatomic) __weak id <SiriTVUIClickRecognizerDelegate> clickDelegate; // @synthesize clickDelegate=_clickDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SiriTVUIClickRecognizerDelegate> clickDelegate; // @synthesize clickDelegate=_clickDelegate;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;

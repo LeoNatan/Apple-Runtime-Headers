@@ -15,10 +15,10 @@
     ICAttachmentModel *_attachmentModel;
 }
 
+- (void).cxx_destruct;
 @property(retain) ICAttachmentModel *attachmentModel; // @synthesize attachmentModel=_attachmentModel;
 @property(retain) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(retain) NSManagedObjectID *attachmentID; // @synthesize attachmentID=_attachmentID;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)main;
 @property(readonly, nonatomic) unsigned long long type;

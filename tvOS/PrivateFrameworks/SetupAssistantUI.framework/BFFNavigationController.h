@@ -21,10 +21,10 @@
     _Bool _inBackground;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInBackground) _Bool inBackground; // @synthesize inBackground=_inBackground;
 @property(nonatomic) _Bool pushWithoutDeferringTransitionsWhileInBackground; // @synthesize pushWithoutDeferringTransitionsWhileInBackground=_pushWithoutDeferringTransitionsWhileInBackground;
 @property(readonly, nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
-- (void).cxx_destruct;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)removeDelegateObserver:(id)arg1;

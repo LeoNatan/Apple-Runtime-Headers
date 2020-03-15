@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)responseWithResponse:(id)arg1 transaction:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *conflictItemVersionAnchor; // @synthesize conflictItemVersionAnchor=_conflictItemVersionAnchor;
 @property(readonly) NSString *conflictItemKey; // @synthesize conflictItemKey=_conflictItemKey;
 @property(readonly) NSData *conflictItemValuePayload; // @synthesize conflictItemValuePayload=_conflictItemValuePayload;
 @property(readonly) NSString *domainVersion; // @synthesize domainVersion=_domainVersion;
-- (void).cxx_destruct;
 - (void)deserializeResponseBodyWithTransaction:(id)arg1;
 
 @end

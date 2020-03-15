@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
     int _hapticState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int hapticState; // @synthesize hapticState=_hapticState;
 @property(nonatomic, getter=isProminentHapticEnabled) _Bool prominentHapticEnabled; // @synthesize prominentHapticEnabled=_prominentHapticEnabled;
 @property(nonatomic, getter=isSystemMuted) _Bool systemMuted; // @synthesize systemMuted=_systemMuted;
 @property(nonatomic) float hapticIntensity; // @synthesize hapticIntensity=_hapticIntensity;
 @property(nonatomic) __weak id <NACVolumeControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_volumeDictionary;
 - (void)_persistVolumeValue:(id)arg1;
 - (void)_setNeedsVolumeReload;

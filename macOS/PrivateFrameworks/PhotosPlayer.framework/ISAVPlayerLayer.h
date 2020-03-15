@@ -15,8 +15,8 @@
     CDUnknownBlockType _readyForDisplayChangeHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType readyForDisplayChangeHandler; // @synthesize readyForDisplayChangeHandler=_readyForDisplayChangeHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType readyForDisplayChangeHandler; // @synthesize readyForDisplayChangeHandler=_readyForDisplayChangeHandler;
 - (void)setPlayer:(id)arg1;
 - (void)setWrappedPlayer:(id)arg1;
 - (void)deferredDealloc;

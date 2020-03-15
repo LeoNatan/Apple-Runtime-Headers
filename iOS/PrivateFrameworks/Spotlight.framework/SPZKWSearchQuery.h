@@ -15,8 +15,8 @@
 }
 
 + (void)initialize;
-@property unsigned long long queryID; // @synthesize queryID=_queryID;
 - (void).cxx_destruct;
+@property unsigned long long queryID; // @synthesize queryID=_queryID;
 - (id)unsafeSessionEntityString;
 - (id)unsafeSections;
 - (void)startAtUIPriority:(_Bool)arg1;

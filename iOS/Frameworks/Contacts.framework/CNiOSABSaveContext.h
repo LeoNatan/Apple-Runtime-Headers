@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     CNSaveRequest *_saveRequest;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNMutableSaveResponse *saveResponse; // @synthesize saveResponse=_saveResponse;
 @property(readonly, nonatomic) CNSaveRequest *saveRequest; // @synthesize saveRequest=_saveRequest;
 @property(retain, nonatomic) NSMutableDictionary *abAccountsByIdentifier; // @synthesize abAccountsByIdentifier=_abAccountsByIdentifier;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSMapTable *containerIndicesByInstance; // @synthesize containerIndicesByInstance=_containerIndicesByInstance;
 @property(readonly, nonatomic) NSMapTable *groupIndicesByInstance; // @synthesize groupIndicesByInstance=_groupIndicesByInstance;
 @property(readonly, nonatomic) NSMapTable *contactIndicesByInstance; // @synthesize contactIndicesByInstance=_contactIndicesByInstance;
-- (void).cxx_destruct;
 - (id)indexPathForContainerInstance:(id)arg1;
 - (id)indexPathForGroupInstance:(id)arg1;
 - (id)indexPathForContactInstance:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_suggestionsProviders;
 }
 
-@property(readonly, copy, nonatomic) NSArray *suggestionsProviders; // @synthesize suggestionsProviders=_suggestionsProviders;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *suggestionsProviders; // @synthesize suggestionsProviders=_suggestionsProviders;
 - (id)requestSuggestionForAsset:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
 - (_Bool)canProvideSuggestionForAsset:(id)arg1;
 - (id)initWithSuggestionsProviders:(id)arg1;

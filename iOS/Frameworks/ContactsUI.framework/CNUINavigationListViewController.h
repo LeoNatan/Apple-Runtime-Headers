@@ -29,6 +29,7 @@
 }
 
 + (_Bool)itemRequiresDetailCell:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreParentControllerResize; // @synthesize ignoreParentControllerResize=_ignoreParentControllerResize;
 @property(retain, nonatomic) CNUINavigationListItem *displayedExpandedItem; // @synthesize displayedExpandedItem=_displayedExpandedItem;
 @property(retain, nonatomic) CNUINavigationListViewCellHeightEstimator *cellHeightEstimator; // @synthesize cellHeightEstimator=_cellHeightEstimator;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) CNUINavigationListItem *expandedItem; // @synthesize expandedItem=_expandedItem;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) CNUINavigationListView *navigationListView; // @synthesize navigationListView=_navigationListView;
-- (void).cxx_destruct;
 - (void)navigationListView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)navigationListView:(id)arg1 shouldSelectRowAtIndexPath:(id)arg2;
 - (_Bool)navigationListView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _UIViewerRelativeDevicePose *_viewerRelativeDevicePose;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIViewerRelativeDevicePose *viewerRelativeDevicePose; // @synthesize viewerRelativeDevicePose=_viewerRelativeDevicePose;
 @property(readonly, nonatomic) _UIMotionAnalyzerSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)resetHysteresis;
 - (void)updateHistory;
 - (_Bool)applyHysteresisWithReceivedEventTimestamp:(double)arg1 timeSinceLastNewMotionEvent:(double)arg2 slowUpdatesEnabled:(_Bool)arg3 returningShouldToggleSlowUpdates:(_Bool *)arg4 logger:(id)arg5;

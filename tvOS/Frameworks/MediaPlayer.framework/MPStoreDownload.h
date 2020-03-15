@@ -30,9 +30,9 @@
 + (_Bool)_getEffectiveStoreDownloadAttributes:(id *)arg1 forPlaybackItemMetadata:(id)arg2 attributes:(id)arg3;
 + (id)storeDownloadForPlaybackItemMetadata:(id)arg1 type:(long long)arg2 attributes:(id)arg3;
 + (_Bool)canCreateStoreDownloadForPlaybackItemMetadata:(id)arg1 type:(long long)arg2 attributes:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (id)_valueForDownloadProperty:(id)arg1;
 - (id)_currentOverridePhaseIdentifier;
 - (void)_removeOverridePhaseIdentifier:(id)arg1;

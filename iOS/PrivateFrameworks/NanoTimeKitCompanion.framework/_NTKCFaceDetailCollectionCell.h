@@ -23,13 +23,13 @@
 
 + (double)outlineLineWidth;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) double outlineOutset; // @synthesize outlineOutset=_outlineOutset;
 @property(nonatomic) struct CGRect swatchFrame; // @synthesize swatchFrame=_swatchFrame;
-- (void).cxx_destruct;
 - (void)setActive:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

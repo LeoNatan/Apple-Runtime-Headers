@@ -45,6 +45,7 @@
     struct CGRect _remoteLandscapeContentRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *outFrequencyLevel; // @synthesize outFrequencyLevel=_outFrequencyLevel;
 @property(retain, nonatomic) NSData *inFrequencyLevel; // @synthesize inFrequencyLevel=_inFrequencyLevel;
 @property(nonatomic) _Bool hasReinitiateCapability; // @synthesize hasReinitiateCapability=_hasReinitiateCapability;
@@ -78,7 +79,6 @@
 @property(readonly, nonatomic) _Bool isSendingVideo; // @synthesize isSendingVideo=_sendingVideo;
 @property(readonly, nonatomic) _Bool isSendingAudio; // @synthesize isSendingAudio=_sendingAudio;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (struct CGSize)localAspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
 - (struct CGSize)aspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
 - (struct CGRect)contentRectForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;

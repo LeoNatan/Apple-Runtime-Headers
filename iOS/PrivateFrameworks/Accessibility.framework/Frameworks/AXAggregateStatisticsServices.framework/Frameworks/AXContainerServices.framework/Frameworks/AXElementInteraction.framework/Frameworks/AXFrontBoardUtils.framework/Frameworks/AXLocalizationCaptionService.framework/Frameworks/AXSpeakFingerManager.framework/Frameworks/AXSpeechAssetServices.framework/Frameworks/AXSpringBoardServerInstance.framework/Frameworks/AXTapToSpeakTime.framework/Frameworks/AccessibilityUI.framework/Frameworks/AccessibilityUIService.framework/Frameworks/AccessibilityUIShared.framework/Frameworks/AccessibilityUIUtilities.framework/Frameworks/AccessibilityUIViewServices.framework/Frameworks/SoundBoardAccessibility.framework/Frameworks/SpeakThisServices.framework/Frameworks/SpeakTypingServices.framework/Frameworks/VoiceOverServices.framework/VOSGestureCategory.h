@@ -35,9 +35,9 @@
 + (id)threeFingerTaps;
 + (id)twoFingerTaps;
 + (id)oneFingerTaps;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localizedCategoryName; // @synthesize localizedCategoryName=_localizedCategoryName;
 @property(retain, nonatomic) NSArray *gestures; // @synthesize gestures=_gestures;
-- (void).cxx_destruct;
 - (_Bool)containsGesture:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,8 +17,8 @@
 + (id)buildWithEcho:(id)arg1;
 + (id)allowedReasons;
 + (id)allowedReplyKeys;
-@property(copy, nonatomic) NSString *replyEcho; // @synthesize replyEcho=_replyEcho;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *replyEcho; // @synthesize replyEcho=_replyEcho;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 

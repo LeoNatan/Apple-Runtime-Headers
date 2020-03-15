@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
 + (double)categoryNameLabelDefaultFontSize;
 + (id)categoryNameLabelFont;
 + (id)categoryNameLabelWithText:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(retain, nonatomic) HKDisplayCategory *displayCategory; // @synthesize displayCategory=_displayCategory;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentSizeCategory;
 - (void)setSelected:(_Bool)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIColor *_color;
 }
 
-@property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 - (id)_parseDoseSpecifications:(id)arg1;
 - (id)initMedicationName:(id)arg1 specifications:(id)arg2 profile:(id)arg3 color:(id)arg4;
 - (id)initMedicationName:(id)arg1 dosages:(id)arg2 profile:(id)arg3 color:(id)arg4;

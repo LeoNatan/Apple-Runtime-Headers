@@ -19,9 +19,9 @@
 
 + (id)descriptorForRequiredKeysForActionTypes:(id)arg1;
 + (id)supportedActionTypes;
+- (void).cxx_destruct;
 @property(nonatomic) long long actionsOrder; // @synthesize actionsOrder=_actionsOrder;
 @property(nonatomic) __weak id <CNContactActionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stopTrackingRollover;
 - (void)startTrackingRolloverWithGestureRecognizer:(id)arg1;
 - (id)initWithDataSource:(id)arg1 actionTypes:(id)arg2;

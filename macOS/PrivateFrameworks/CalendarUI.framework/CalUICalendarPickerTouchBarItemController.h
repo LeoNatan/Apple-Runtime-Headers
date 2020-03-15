@@ -18,12 +18,12 @@
     NSButton *_selectedCalendarButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *selectedCalendarButton; // @synthesize selectedCalendarButton=_selectedCalendarButton;
 @property(retain) NSStackView *calendarPickerView; // @synthesize calendarPickerView=_calendarPickerView;
 @property __weak id <CalUICalendarPickerTouchBarItemControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSPopoverTouchBarItem *touchBarItem; // @synthesize touchBarItem=_touchBarItem;
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (void)calendarPickerButtonSelected:(id)arg1;
 - (id)_colorSwatchForCalendar:(id)arg1;
 - (void)_updateToSelectedCalendarButton:(id)arg1;

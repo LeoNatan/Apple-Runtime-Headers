@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (id)electrocardiogramPredicateForType:(long long)arg1;
 + (id)viewControllerTitleForType:(long long)arg1;
 + (id)cellTitleForType:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKSampleCountQuery *inconclusiveCountQuery; // @synthesize inconclusiveCountQuery=_inconclusiveCountQuery;
 @property(retain, nonatomic) HKSampleCountQuery *highLowHeartRateCountQuery; // @synthesize highLowHeartRateCountQuery=_highLowHeartRateCountQuery;
 @property(retain, nonatomic) HKSampleCountQuery *atrialFibrillationCountQuery; // @synthesize atrialFibrillationCountQuery=_atrialFibrillationCountQuery;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(nonatomic) __weak id <WDElectrocardiogramFilterDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak WDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)_rQueue_setCount:(long long)arg1 forType:(long long)arg2;
 - (long long)_rQueue_countForType:(long long)arg1;
 - (id)_filterSamples:(id)arg1 matchingAtrialFibrillationClassifications:(id)arg2;

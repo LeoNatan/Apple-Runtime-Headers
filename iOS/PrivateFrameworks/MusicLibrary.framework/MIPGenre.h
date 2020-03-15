@@ -18,10 +18,10 @@
     CDStruct_0ee5a09b _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long persistentId; // @synthesize persistentId=_persistentId;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long storeId; // @synthesize storeId=_storeId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

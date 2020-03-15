@@ -8,8 +8,8 @@
 
 #import <ARKit/ARInternalSessionObserver-Protocol.h>
 
-@class ARCoachingAnimationView, ARCoachingHeuristicCollection, ARCoachingMotionTracker, ARCoachingPillButton, ARCoachingState, ARSession, NSMutableArray, NSObject, NSString, UILabel;
-@protocol ARCoachingOverlayViewDelegate, ARSessionProviding;
+@class ARCoachingAnimationView, ARCoachingHeuristicCollection, ARCoachingMotionTracker, ARCoachingPillButton, ARCoachingSessionCache, ARCoachingState, ARSession, CADisplayLink, NSLayoutConstraint, NSMutableArray, NSObject, NSString, UILabel;
+@protocol ARCoachingOverlayViewDelegate, ARPrivateCoachingOverlayViewDelegate, ARSessionProviding;
 
 @interface ARCoachingOverlayView : UIView <ARInternalSessionObserver>
 {
@@ -25,33 +25,47 @@
     long long _nextCoachingMessageType;
     long long _nextCoachingAnimationState;
     double _lastCoachingUpdateTime;
+    long long _currentConstraintDeviceOrientation;
+    NSLayoutConstraint *_resetButtonBottomLayoutConstraint;
     ARCoachingAnimationView *_coachingAnimationView;
+    CADisplayLink *_displayLink;
     NSMutableArray *_uiAnimationQueue;
     _Bool _uiAnimationQueueRunning;
     _Bool _isSessionRelocalizingMap;
     _Bool _activatesAutomatically;
     _Bool _wasEverActivated;
     _Bool _trackingStateNormalOverride;
+    float _resetButtonLandscapeVerticalOffset;
+    float _resetButtonPortraitVerticalOffset;
     id <ARCoachingOverlayViewDelegate> _delegate;
     NSObject<ARSessionProviding> *_sessionProvider;
     ARSession *_session;
     long long _goal;
+    ARCoachingSessionCache *_coachingSessionCache;
     long long _trackingStateReasonOverride;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) float resetButtonPortraitVerticalOffset; // @synthesize resetButtonPortraitVerticalOffset=_resetButtonPortraitVerticalOffset;
+@property(nonatomic) float resetButtonLandscapeVerticalOffset; // @synthesize resetButtonLandscapeVerticalOffset=_resetButtonLandscapeVerticalOffset;
 @property(nonatomic) _Bool trackingStateNormalOverride; // @synthesize trackingStateNormalOverride=_trackingStateNormalOverride;
 @property(nonatomic) long long trackingStateReasonOverride; // @synthesize trackingStateReasonOverride=_trackingStateReasonOverride;
+@property(readonly, nonatomic) ARCoachingSessionCache *coachingSessionCache; // @synthesize coachingSessionCache=_coachingSessionCache;
 @property(readonly, nonatomic) _Bool wasEverActivated; // @synthesize wasEverActivated=_wasEverActivated;
 @property(nonatomic) _Bool activatesAutomatically; // @synthesize activatesAutomatically=_activatesAutomatically;
 @property(nonatomic) long long goal; // @synthesize goal=_goal;
 @property(retain, nonatomic) ARSession *session; // @synthesize session=_session;
 @property(nonatomic) __weak NSObject<ARSessionProviding> *sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(nonatomic) __weak id <ARCoachingOverlayViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (void)createConstraintsForDeviceOrientation:(long long)arg1;
+- (void)updateConstraints;
+- (long long)currentDeviceOrientation;
+- (void)layoutSubviews;
+- (void)orientationChanged;
 - (void)finishAllUIAnimations;
 - (void)killUIAnimations;
 - (void)updateUIAnimations;
-- (void)validateSessionGoal;
+- (void)displayLinkUpdate;
 - (void)buttonPress:(id)arg1;
 - (void)generateHeuristicsForActive:(_Bool)arg1;
 - (double)calcFadeDurationIn:(_Bool)arg1 withButton:(_Bool)arg2;
@@ -64,6 +78,8 @@
 - (void)resolveCoachingMessage;
 - (void)restartIfActive;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)session:(id)arg1 didAddAnchors:(id)arg2;
+- (void)session:(id)arg1 didRemoveAnchors:(id)arg2;
 - (void)session:(id)arg1 didFailWithError:(id)arg2;
 - (void)session:(id)arg1 willRunWithConfiguration:(id)arg2;
 - (void)session:(id)arg1 didUpdateFrame:(id)arg2;
@@ -73,8 +89,10 @@
 - (void)fadeInWithButton:(_Bool)arg1;
 - (void)teardown;
 - (void)startup;
+@property(readonly, nonatomic) __weak id <ARPrivateCoachingOverlayViewDelegate> privateDelegate;
 @property(readonly, nonatomic) _Bool isRelocalizing;
 @property(readonly, nonatomic) _Bool isUIAnimating;
+- (struct CGSize)intrinsicContentSize;
 - (void)setActive:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool isActive;
 - (void)setupView;

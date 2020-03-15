@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)canHandleURLComponents:(id)arg1;
 + (Class)plugInClasses;
+- (void).cxx_destruct;
 @property(retain) _LSAppLinkOpenState *state; // @synthesize state=_state;
 @property unsigned long long limit; // @synthesize limit=_limit;
 @property(retain) NSURLComponents *URLComponents; // @synthesize URLComponents=_URLComponents;
-- (void).cxx_destruct;
 - (id)appLinksWithContext:(struct LSContext *)arg1 error:(id *)arg2;
 
 @end

@@ -17,10 +17,10 @@
 
 + (id)variantKeysForKey:(id)arg1;
 + (void)_accessibilityPerformValidations:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cachedVariantKeys; // @synthesize cachedVariantKeys=_cachedVariantKeys;
 @property(nonatomic) _Bool changesOnShiftDown; // @synthesize changesOnShiftDown=_changesOnShiftDown;
 @property(retain, nonatomic) UIKBTree *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (_Bool)_accessibilitySetNativeFocus;
 - (unsigned long long)_accessibilityScanningBehaviorTraits;
 - (_Bool)accessibilityRespondsToUserInteraction;

@@ -17,8 +17,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) id <RCTimeController> timeController; // @synthesize timeController=_timeController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <RCTimeController> timeController; // @synthesize timeController=_timeController;
 - (void)_displayLinkDidUpdate:(id)arg1;
 - (void)removeDisplayLinkObserver:(id)arg1;
 - (void)addDisplayLinkObserver:(id)arg1;

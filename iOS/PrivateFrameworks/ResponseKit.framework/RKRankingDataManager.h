@@ -15,10 +15,10 @@
     NSPersistentStore *_persistentStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPersistentStore *persistentStore; // @synthesize persistentStore=_persistentStore;
 @property(retain, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
-- (void).cxx_destruct;
 - (void)flushRankingData;
 - (void)resetRankingData;
 - (void)pruneUserDatabase;

@@ -13,13 +13,23 @@
 @interface XCTAccessibilityFramework : NSObject <XCTAccessibilityFramework>
 {
     BOOL _allowsRemoteAccess;
+    int _processID;
+    struct __AXUIElement *_systemWideElement;
 }
 
-@property BOOL allowsRemoteAccess; // @synthesize allowsRemoteAccess=_allowsRemoteAccess;
+@property struct __AXUIElement *systemWideElement; // @synthesize systemWideElement=_systemWideElement;
+@property(readonly) int processID; // @synthesize processID=_processID;
+@property(readonly) BOOL allowsRemoteAccess; // @synthesize allowsRemoteAccess=_allowsRemoteAccess;
+- (id)_attributesForElement:(id)arg1 iOSAttributes:(id)arg2 error:(id *)arg3;
 - (id)parameterizedAttribute:(id)arg1 forElement:(struct __AXUIElement *)arg2 parameter:(id)arg3 error:(id *)arg4;
 - (id)attributes:(id)arg1 forElement:(struct __AXUIElement *)arg2 error:(id *)arg3;
 - (id)hierarchyForElement:(struct __AXUIElement *)arg1 attributes:(id)arg2 options:(id)arg3 error:(id *)arg4;
-- (id)init;
+- (id)attributesForElement:(id)arg1 attributes:(id)arg2 error:(id *)arg3;
+- (BOOL)_canAccessElement:(struct __AXUIElement *)arg1 withError:(id *)arg2;
+- (void)dealloc;
+- (id)initForLocalAccess;
+- (id)initForRemoteAccess;
+- (id)initAllowingRemoteAccess:(BOOL)arg1 processID:(int)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

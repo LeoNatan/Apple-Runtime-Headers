@@ -18,9 +18,9 @@
 
 + (void)initialize;
 + (BOOL)supportsRecyclingForCardSection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKLabel *suggestionLabel; // @synthesize suggestionLabel=_suggestionLabel;
 @property(retain, nonatomic) SearchUIImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (void)updateMargins;
 - (void)updateWithRowModel:(id)arg1;
 - (id)setupContentView;

@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, copy, nonatomic) NSPersistentHistoryToken *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

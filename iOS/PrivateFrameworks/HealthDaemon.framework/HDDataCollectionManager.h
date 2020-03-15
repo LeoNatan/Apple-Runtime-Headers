@@ -39,6 +39,7 @@
     NSObject<OS_dispatch_queue> *_dataCollectionQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dataCollectionQueue; // @synthesize dataCollectionQueue=_dataCollectionQueue;
 @property(retain, nonatomic) HDDemoManager *demoManager; // @synthesize demoManager=_demoManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *assertionQueue; // @synthesize assertionQueue=_assertionQueue;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) HDBTLEHeartRateDataCollector *blteHeartRateDataCollector; // @synthesize blteHeartRateDataCollector=_blteHeartRateDataCollector;
 @property(retain, nonatomic) NSMutableDictionary *observersByType; // @synthesize observersByType=_observersByType;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (id)_dataAggregatorsDiagnosticDescription;
 - (id)_dataCollectorsDiagnosticDescription;

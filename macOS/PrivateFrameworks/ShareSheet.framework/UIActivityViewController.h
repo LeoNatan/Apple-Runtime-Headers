@@ -48,6 +48,8 @@
 + (double)_asyncPresentationTimeout;
 + (id)_UINSActivitiesFromUIActivities:(id)arg1 activityItems:(id)arg2 activityViewController:(id)arg3;
 + (id)_macActivityItemsForiOSActivityItems:(id)arg1 activityViewController:(id)arg2;
++ (id)_UINSActivityItemsFromUIActivityItems:(id)arg1 activityViewController:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL configureForCloudSharing; // @synthesize configureForCloudSharing=_configureForCloudSharing;
 @property(nonatomic) BOOL configureForPhotosEdit; // @synthesize configureForPhotosEdit=_configureForPhotosEdit;
 @property(copy, nonatomic, getter=_photosAssetIdentifiers, setter=_setPhotosAssetIdentifiers:) NSSet *photosAssetIdentifiers; // @synthesize photosAssetIdentifiers=_photosAssetIdentifiers;
@@ -80,7 +82,6 @@
 @property(copy, nonatomic) NSArray *excludedActivityTypes; // @synthesize excludedActivityTypes=_excludedActivityTypes;
 @property(copy, nonatomic) CDUnknownBlockType completionWithItemsHandler; // @synthesize completionWithItemsHandler=_completionWithItemsHandler;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)_updateActivityItems:(id)arg1 applicationActivities:(id)arg2;
 - (id)_titleForActivity:(id)arg1;
 - (BOOL)_shouldShowSystemActivityType:(id)arg1;

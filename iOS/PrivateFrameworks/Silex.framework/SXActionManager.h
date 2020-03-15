@@ -18,10 +18,10 @@
     SXActionManagerPreview *_currentPreview;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXActionManagerPreview *currentPreview; // @synthesize currentPreview=_currentPreview;
 @property(readonly, nonatomic) id <SXActionViewManager> viewManager; // @synthesize viewManager=_viewManager;
 @property(readonly, nonatomic) id <SXActionActivityManager> activityManager; // @synthesize activityManager=_activityManager;
-- (void).cxx_destruct;
 - (void)notifyPostActionHandlers:(id)arg1 action:(id)arg2 state:(unsigned long long)arg3;
 - (void)commitPreviewViewController:(id)arg1;
 - (id)previewViewControllerForAction:(id)arg1;

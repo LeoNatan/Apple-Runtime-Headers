@@ -36,6 +36,7 @@
     _PXTreeTouchBarSegmentedControl *_rootSegmentedControl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PXTreeTouchBarSegmentedControl *rootSegmentedControl; // @synthesize rootSegmentedControl=_rootSegmentedControl;
 @property(retain, nonatomic) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(readonly, nonatomic) NSMutableArray *selectedItems; // @synthesize selectedItems=_selectedItems;
@@ -45,7 +46,6 @@
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSString *rootTouchBarItemIdentifier; // @synthesize rootTouchBarItemIdentifier=_rootTouchBarItemIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (void)_handleItemSegmentedControl:(id)arg1;
 - (void)_handleBackSegmentedControl:(id)arg1;

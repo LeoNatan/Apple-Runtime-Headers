@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
     GEOComposedRoute *_composedRoute;
 }
 
-@property(readonly, nonatomic) _Bool hasTransitIncidentComponent; // @synthesize hasTransitIncidentComponent=_hasTransitIncidentComponent;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasTransitIncidentComponent; // @synthesize hasTransitIncidentComponent=_hasTransitIncidentComponent;
 @property(readonly, nonatomic) GEOComposedRoute *composedRoute;
 @property(readonly, nonatomic) NSString *subtitle;
 @property(readonly, nonatomic) NSString *title;

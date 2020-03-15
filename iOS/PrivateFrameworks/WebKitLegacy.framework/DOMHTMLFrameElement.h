@@ -26,6 +26,7 @@
 @property(copy) NSString *longDesc;
 @property(copy) NSString *frameBorder;
 - (int)structuralComplexityContribution;
+- (int)structuralComplexityContribution;
 @property(readonly, nonatomic) WebFrame *contentFrame;
 
 @end

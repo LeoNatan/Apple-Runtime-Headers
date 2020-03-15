@@ -15,8 +15,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) _Bool keyboardPlaysSounds; // @synthesize keyboardPlaysSounds=_keyboardPlaysSounds;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool keyboardPlaysSounds; // @synthesize keyboardPlaysSounds=_keyboardPlaysSounds;
 - (id)init;
 
 @end

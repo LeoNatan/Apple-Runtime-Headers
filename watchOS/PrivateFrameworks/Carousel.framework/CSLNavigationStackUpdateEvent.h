@@ -13,8 +13,8 @@
     CSLNavigationStackUpdate *_update;
 }
 
-@property(retain, nonatomic) CSLNavigationStackUpdate *update; // @synthesize update=_update;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLNavigationStackUpdate *update; // @synthesize update=_update;
 
 @end
 

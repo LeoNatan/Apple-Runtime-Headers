@@ -14,9 +14,9 @@
     NSMutableArray *_positioningLayoutGuides;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *positioningLayoutGuides; // @synthesize positioningLayoutGuides=_positioningLayoutGuides;
 @property(retain, nonatomic) NSArray *itemConstraints; // @synthesize itemConstraints=_itemConstraints;
-- (void).cxx_destruct;
 - (void)_enableAutoLayoutForAllItems:(id)arg1;
 - (void)centerItems:(id)arg1 withView:(id)arg2;
 - (void)centerItems:(id)arg1;

@@ -26,9 +26,9 @@
     id <EDPersistenceDatabaseConnectionPoolDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int maxConcurrentBackgroundReaders; // @synthesize maxConcurrentBackgroundReaders=_maxConcurrentBackgroundReaders;
 @property(nonatomic) __weak id <EDPersistenceDatabaseConnectionPoolDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int writersWaiting;
 @property(readonly, nonatomic) unsigned int backgroundReadersWaiting;
 - (unsigned int)maxConcurrentReaders;

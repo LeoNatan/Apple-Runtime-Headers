@@ -20,13 +20,13 @@
 
 + (id)_legacyServiceKeyMapping;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useAutomaticInputType; // @synthesize useAutomaticInputType=_useAutomaticInputType;
 @property(retain, nonatomic) AMType *outputType; // @synthesize outputType=_outputType;
 @property(retain, nonatomic) AMType *inputType; // @synthesize inputType=_inputType;
 @property(nonatomic) BOOL processesInput; // @synthesize processesInput=_processesInput;
 @property(copy) NSArray *applicationPaths; // @synthesize applicationPaths=_applicationPaths;
 @property(copy) NSDictionary *applicationBundleIDsByPath; // @synthesize applicationBundleIDsByPath=_applicationBundleIDsByPath;
-- (void).cxx_destruct;
 - (id)headerInputType;
 @property(readonly, nonatomic) NSArray *orderedApplicationBundleIDs;
 - (id)metaData;

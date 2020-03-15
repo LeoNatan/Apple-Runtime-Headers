@@ -13,8 +13,8 @@
     PUAssetsDataSource *__reviewAssetsDataSource;
 }
 
-@property(readonly, nonatomic) PUAssetsDataSource *_reviewAssetsDataSource; // @synthesize _reviewAssetsDataSource=__reviewAssetsDataSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PUAssetsDataSource *_reviewAssetsDataSource; // @synthesize _reviewAssetsDataSource=__reviewAssetsDataSource;
 - (struct PXSimpleIndexPath)indexPathForObjectReference:(id)arg1;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;

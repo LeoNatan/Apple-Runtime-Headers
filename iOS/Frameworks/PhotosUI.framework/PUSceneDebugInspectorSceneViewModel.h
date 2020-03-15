@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     double _libraryCoverage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double libraryCoverage; // @synthesize libraryCoverage=_libraryCoverage;
 @property(nonatomic) unsigned long long highConfidenceCount; // @synthesize highConfidenceCount=_highConfidenceCount;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isIndexed; // @synthesize isIndexed=_isIndexed;
 @property(readonly, nonatomic) unsigned int sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(readonly, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;
-- (void).cxx_destruct;
 - (id)description;
 - (id)concatenatedSynonyms;
 - (id)initWithKeyword:(id)arg1 synonyms:(id)arg2 sceneIdentifier:(unsigned int)arg3 indexed:(_Bool)arg4 threshold:(double)arg5;

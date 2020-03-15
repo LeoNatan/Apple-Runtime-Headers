@@ -13,8 +13,8 @@
     UIImage *_uiImage;
 }
 
-@property(retain, nonatomic) UIImage *uiImage; // @synthesize uiImage=_uiImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *uiImage; // @synthesize uiImage=_uiImage;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

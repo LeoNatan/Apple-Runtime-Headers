@@ -56,10 +56,10 @@
     CSLHexLayout *_universeLayoutOverride;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLHexLayout *universeLayoutOverride; // @synthesize universeLayoutOverride=_universeLayoutOverride;
 @property(nonatomic) __weak id <CSLCrownInputEventHandler> crownInputHandler; // @synthesize crownInputHandler=_crownInputHandler;
 @property(nonatomic) float zoom; // @synthesize zoom=_zoom;
-- (void).cxx_destruct;
 - (void)setViewHidden:(_Bool)arg1;
 - (void)invalidateClockZoomSnapshot;
 - (id)snapshotProvider;

@@ -14,8 +14,8 @@
     MSMessage *_underlyingMessage;
 }
 
-@property(readonly, nonatomic) MSMessage *underlyingMessage; // @synthesize underlyingMessage=_underlyingMessage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MSMessage *underlyingMessage; // @synthesize underlyingMessage=_underlyingMessage;
 - (id)description;
 - (void)_updateLayoutContents;
 - (void)_updateSummaryText;

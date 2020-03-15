@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     double _keyboardHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) SKUIReportAConcernDetailsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) SKUIReportAConcernConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) SKUIReportAConcernMetadata *metadata; // @synthesize metadata=_metadata;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (double)_detailsCellHeight;

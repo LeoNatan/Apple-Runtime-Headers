@@ -14,9 +14,9 @@
     NSMutableArray *_queuedInputByURL;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *queuedInputByURL; // @synthesize queuedInputByURL=_queuedInputByURL;
 @property(retain) AMLocalRunnerController *runnerController; // @synthesize runnerController=_runnerController;
-- (void).cxx_destruct;
 - (void)exitOrContinueIfNeeded;
 - (void)executeNextQueuedInput;
 - (void)presentError:(id)arg1 terminating:(BOOL)arg2;

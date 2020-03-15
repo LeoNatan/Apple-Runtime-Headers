@@ -11,9 +11,10 @@
 }
 
 - (void)_setStyleProvider:(id)arg1;
+- (void)setPerson:(id)arg1 shouldShowLinkedPeople:(BOOL)arg2 shouldShowSuggestedFields:(BOOL)arg3;
 - (void)setPerson:(id)arg1 shouldShowLinkedPeople:(BOOL)arg2;
-- (id)person;
 - (void)setPerson:(id)arg1;
+- (id)person;
 
 @end
 

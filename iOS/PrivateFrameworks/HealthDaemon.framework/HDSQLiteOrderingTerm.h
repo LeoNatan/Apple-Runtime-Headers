@@ -17,9 +17,9 @@
 }
 
 + (id)orderingTermWithProperty:(id)arg1 entityClass:(Class)arg2 ascending:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool ascending; // @synthesize ascending=_ascending;
 @property(readonly, copy, nonatomic) NSString *expression; // @synthesize expression=_expression;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

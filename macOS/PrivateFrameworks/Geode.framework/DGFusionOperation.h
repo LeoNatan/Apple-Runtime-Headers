@@ -14,8 +14,8 @@
 }
 
 + (id)attributes;
-@property(copy, nonatomic) NSDictionary *alignmentParams; // @synthesize alignmentParams=_alignmentParams;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *alignmentParams; // @synthesize alignmentParams=_alignmentParams;
 - (id)settingsDictionary;
 - (BOOL)applySettingsDictionary:(id)arg1;
 - (id)initWithOperation:(id)arg1;

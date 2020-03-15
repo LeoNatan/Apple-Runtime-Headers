@@ -18,13 +18,13 @@
     SFColor *_text_color;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFColor *text_color; // @synthesize text_color=_text_color;
 @property(readonly, nonatomic) NSString *formatted_text_delimiter; // @synthesize formatted_text_delimiter=_formatted_text_delimiter;
 @property(nonatomic) BOOL bold; // @synthesize bold=_bold;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)initWithSFFormattedText:(id)arg1;
 
 @end

@@ -18,8 +18,8 @@
 
 + (_Bool)hasPassedBuddy;
 + (_Bool)isSetupUser;
-@property(copy, nonatomic) CDUnknownBlockType buddyDidFinishHandler; // @synthesize buddyDidFinishHandler=_buddyDidFinishHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType buddyDidFinishHandler; // @synthesize buddyDidFinishHandler=_buddyDidFinishHandler;
 - (void)buddyDidFinish;
 - (void)checkBuddyStatus;
 - (void)createPeriodicPollingTimer;

@@ -20,15 +20,16 @@
 }
 
 + (id)defaultURL;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BMManagedObjectConverter *converter; // @synthesize converter=_converter;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSPersistentContainer *container; // @synthesize container=_container;
 @property(copy, nonatomic) NSError *setupError; // @synthesize setupError=_setupError;
 @property(readonly, nonatomic) _Bool readOnly; // @synthesize readOnly=_readOnly;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)deleteAllWithError:(id *)arg1;
 - (void)saveRules:(id)arg1 error:(id *)arg2;
+- (id)fetchRulesWithSupport:(double)arg1 confidence:(double)arg2 filters:(id)arg3 limit:(unsigned long long)arg4 error:(id *)arg5;
 - (id)fetchRulesWithSupport:(double)arg1 confidence:(double)arg2 filters:(id)arg3 error:(id *)arg4;
 - (void)setupStorage;
 - (id)initWithURL:(id)arg1 readOnly:(_Bool)arg2;

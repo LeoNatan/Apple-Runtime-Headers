@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_type;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 - (_Bool)isSimilarToTextRun:(id)arg1;
 - (id)initWithGuid:(id)arg1 type:(id)arg2;
 

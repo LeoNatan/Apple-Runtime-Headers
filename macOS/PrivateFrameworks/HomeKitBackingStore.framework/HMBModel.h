@@ -45,6 +45,7 @@
 + (void)setHmbShouldLogPrivateInformation:(BOOL)arg1;
 + (BOOL)hmbShouldLogPrivateInformation;
 + (id)sort:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMBModelContainer *hmbModelContainer; // @synthesize hmbModelContainer=_hmbModelContainer;
 @property(retain, nonatomic) NSSet *hmbReadOnlyProperties; // @synthesize hmbReadOnlyProperties=_hmbReadOnlyProperties;
 @property(retain, nonatomic) NSSet *hmbUnavailableProperties; // @synthesize hmbUnavailableProperties=_hmbUnavailableProperties;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSUUID *hmbParentModelID; // @synthesize hmbParentModelID=_hmbParentModelID;
 @property(retain, nonatomic) NSUUID *hmbModelID; // @synthesize hmbModelID=_hmbModelID;
 @property(retain, nonatomic) NSMutableDictionary *hmbReserved; // @synthesize hmbReserved=_hmbReserved;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 @property(readonly, nonatomic) NSString *hmbDescription;
 - (void)dumpDebug;

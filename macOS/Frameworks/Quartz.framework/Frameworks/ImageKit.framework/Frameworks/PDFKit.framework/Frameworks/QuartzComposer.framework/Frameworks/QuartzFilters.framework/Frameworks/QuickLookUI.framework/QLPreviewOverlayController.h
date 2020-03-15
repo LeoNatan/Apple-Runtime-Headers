@@ -35,8 +35,8 @@ __attribute__((visibility("hidden")))
 + (double)overlayMinimumSupportedSize;
 + (double)_defaultRolloverActivationDelay;
 + (unsigned long long)overlayTrackingAreaOptions;
-@property(nonatomic) __weak NSObject<QLPreviewOverlayDataSource> *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<QLPreviewOverlayDataSource> *dataSource; // @synthesize dataSource=_dataSource;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)worksWhenModal;
 - (void)previewWindowDidResizeFrame:(id)arg1;

@@ -13,8 +13,8 @@
     NSArray *_calls;
 }
 
-@property(readonly, copy, nonatomic) NSArray *calls; // @synthesize calls=_calls;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *calls; // @synthesize calls=_calls;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 @property(readonly, nonatomic) int status;

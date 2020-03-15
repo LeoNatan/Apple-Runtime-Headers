@@ -28,9 +28,9 @@
 + (id)creationRequestForProjectCopyFromProject:(id)arg1;
 + (id)creationRequestForProjectWithDocumentType:(id)arg1 projectExtensionIdentifier:(id)arg2 assets:(id)arg3 title:(id)arg4;
 + (id)creationRequestForProjectWithDocumentType:(id)arg1 projectExtensionIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *keyAssetHelper; // @synthesize keyAssetHelper=_keyAssetHelper;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *assetsHelper; // @synthesize assetsHelper=_assetsHelper;
-- (void).cxx_destruct;
 - (void)didMutate;
 @property(readonly, nonatomic) NSManagedObjectID *objectID;
 - (id)uuid;

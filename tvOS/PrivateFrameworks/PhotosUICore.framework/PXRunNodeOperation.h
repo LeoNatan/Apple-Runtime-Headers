@@ -18,9 +18,9 @@
 + (id)keyPathsForValuesAffectingIsFinished;
 + (id)keyPathsForValuesAffectingIsExecuting;
 + (id)keyPathsForValuesAffectingIsReady;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLock *_stateLock; // @synthesize _stateLock=__stateLock;
 @property(readonly, nonatomic) PXRunNode *runNode; // @synthesize runNode=_runNode;
-- (void).cxx_destruct;
 - (_Bool)completeIfAble;
 - (_Bool)cancelIfAble;
 - (_Bool)_transitionToState:(unsigned long long)arg1;

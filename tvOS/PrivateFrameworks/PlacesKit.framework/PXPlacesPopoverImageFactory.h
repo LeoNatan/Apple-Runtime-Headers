@@ -16,9 +16,9 @@
 
 + (id)sharedInstance;
 + (struct CGSize)backgroundImageSizeForType:(unsigned long long)arg1 usingTraitCollection:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *defaultBackgroundColor; // @synthesize defaultBackgroundColor=_defaultBackgroundColor;
 @property(retain, nonatomic) NSCache *cachedBackgroundImages; // @synthesize cachedBackgroundImages=_cachedBackgroundImages;
-- (void).cxx_destruct;
 - (id)imageNamed:(id)arg1;
 - (id)_fetchAndCacheBackgroundImageWithName:(id)arg1;
 - (struct CGSize)thumbnailImageSizeForImageType:(unsigned long long)arg1 usingTraitCollection:(id)arg2 includeScale:(_Bool)arg3;

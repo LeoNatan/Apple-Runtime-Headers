@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *alarms; // @synthesize alarms=_alarms;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *alarms; // @synthesize alarms=_alarms;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)createResponse;

@@ -26,13 +26,13 @@
 
 + (id)createOnDemandRulesFromLegacyDictionary:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSURL *probeURL; // @synthesize probeURL=_probeURL;
 @property(copy) NSArray *SSIDMatch; // @synthesize SSIDMatch=_SSIDMatch;
 @property int interfaceTypeMatch; // @synthesize interfaceTypeMatch=_interfaceTypeMatch;
 @property(copy) NSArray *DNSServerAddressMatch; // @synthesize DNSServerAddressMatch=_DNSServerAddressMatch;
 @property(copy) NSArray *DNSSearchDomainMatch; // @synthesize DNSSearchDomainMatch=_DNSSearchDomainMatch;
 @property(readonly) int action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)description;

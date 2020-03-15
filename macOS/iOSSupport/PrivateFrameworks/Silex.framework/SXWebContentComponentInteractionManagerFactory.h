@@ -18,10 +18,10 @@
     id <SXWebContentComponentInteractionHandlerFactory> _componentInteractionHandlerFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXWebContentComponentInteractionHandlerFactory> componentInteractionHandlerFactory; // @synthesize componentInteractionHandlerFactory=_componentInteractionHandlerFactory;
 @property(readonly, nonatomic) id <SXComponentInteractionHandlerManager> interactionHandlerManager; // @synthesize interactionHandlerManager=_interactionHandlerManager;
 @property(readonly, nonatomic) id <SWInteractionProvider> interactionProvider; // @synthesize interactionProvider=_interactionProvider;
-- (void).cxx_destruct;
 - (id)interactionManagerForComponentView:(id)arg1;
 - (id)initWithInteractionProvider:(id)arg1 interactionHandlerManager:(id)arg2 componentInteractionHandlerFactory:(id)arg3;
 

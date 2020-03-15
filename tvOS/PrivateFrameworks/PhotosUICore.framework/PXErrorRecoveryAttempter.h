@@ -14,9 +14,9 @@
     long long _preferredRecoveryOptionIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long preferredRecoveryOptionIndex; // @synthesize preferredRecoveryOptionIndex=_preferredRecoveryOptionIndex;
 @property(copy, nonatomic) NSArray *recoveryOptions; // @synthesize recoveryOptions=_recoveryOptions;
-- (void).cxx_destruct;
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (long long)alertActionStyleForRecoveryOptionAtIndex:(unsigned long long)arg1;
 - (id)init;

@@ -17,9 +17,9 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) NSArray *existingConstraints; // @synthesize existingConstraints=_existingConstraints;
 @property(retain) NSMutableArray *proposedTimeGadgets; // @synthesize proposedTimeGadgets=_proposedTimeGadgets;
-- (void).cxx_destruct;
 - (void)proposedTimeChildView:(id)arg1 didDeclineInGadgetIndex:(unsigned long long)arg2 withProposingAttendee:(id)arg3;
 - (void)proposedTimeChildView:(id)arg1 didAcceptInGadgetIndex:(unsigned long long)arg2 withProposingAttendee:(id)arg3;
 - (double)preferredWidth;

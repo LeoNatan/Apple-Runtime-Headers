@@ -23,6 +23,7 @@
     NSDate *_requestDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *requestDate; // @synthesize requestDate=_requestDate;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) _Bool shouldFilter; // @synthesize shouldFilter=_shouldFilter;
 @property(readonly, nonatomic) id context; // @synthesize context=_context;
 @property(readonly, copy, nonatomic) NSSet *keys; // @synthesize keys=_keys;
-- (void).cxx_destruct;
 - (long long)comparePriority:(id)arg1;
 - (void)fireCompletion;
 - (id)initWithKeys:(id)arg1 context:(id)arg2 shouldFilter:(_Bool)arg3 qualityOfService:(long long)arg4 relativePriority:(long long)arg5 completionQueue:(id)arg6 completion:(CDUnknownBlockType)arg7;

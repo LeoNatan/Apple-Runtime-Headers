@@ -32,9 +32,9 @@ __attribute__((visibility("hidden")))
 + (id)_userMailAccounts;
 + (BOOL)_loadAccountsFramework;
 + (id)_equivalentEmailsForEmail:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL includeScreenames; // @synthesize includeScreenames;
 @property(readonly) ABAddressBook *addressBook; // @synthesize addressBook;
-- (void).cxx_destruct;
 - (int)recentTypeForSuggestion:(id)arg1;
 - (id)normalizedValueForAddress:(id)arg1 attributeValues:(id *)arg2 representedObject:(id *)arg3;
 - (id)normalizedValueForFullname:(id)arg1 address:(id)arg2 attributeValues:(id *)arg3 representedObject:(id *)arg4;

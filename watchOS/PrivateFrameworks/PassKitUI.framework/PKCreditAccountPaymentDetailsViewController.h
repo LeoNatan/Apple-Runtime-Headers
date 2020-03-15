@@ -35,8 +35,8 @@
     id <PKCreditAccountPaymentDetailsViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PKCreditAccountPaymentDetailsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKCreditAccountPaymentDetailsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_reportEventForPassIfNecessary:(id)arg1;
 - (void)_cancelPayment:(unsigned int)arg1;
 - (void)_configureLinkCell:(id)arg1;

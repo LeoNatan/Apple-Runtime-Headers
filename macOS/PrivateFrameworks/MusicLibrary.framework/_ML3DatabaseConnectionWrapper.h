@@ -16,11 +16,11 @@
     unsigned long long _useCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long useCount; // @synthesize useCount=_useCount;
 @property(retain, nonatomic) NSThread *borrowingThread; // @synthesize borrowingThread=_borrowingThread;
 @property(retain, nonatomic) NSThread *owningThread; // @synthesize owningThread=_owningThread;
 @property(retain, nonatomic) ML3DatabaseConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithConnection:(id)arg1;
 

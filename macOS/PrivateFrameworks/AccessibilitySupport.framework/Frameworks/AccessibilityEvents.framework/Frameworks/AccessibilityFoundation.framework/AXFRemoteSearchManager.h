@@ -19,13 +19,13 @@
 }
 
 + (BOOL)elementSupportsSearch:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPreviousStartElement:) AXFUIElement *_previousStartElement; // @synthesize _previousStartElement=__previousStartElement;
 @property(retain, nonatomic, setter=_setNextStartElement:) AXFUIElement *_nextStartElement; // @synthesize _nextStartElement=__nextStartElement;
 @property(readonly, nonatomic) __weak AXFUIElement *_containerElement; // @synthesize _containerElement=__containerElement;
 @property(readonly, nonatomic) BOOL _visibleOnly; // @synthesize _visibleOnly=__visibleOnly;
 @property(readonly, copy, nonatomic) NSString *_searchText; // @synthesize _searchText=__searchText;
 @property(readonly, nonatomic) NSArray *_searchKeys; // @synthesize _searchKeys=__searchKeys;
-- (void).cxx_destruct;
 - (id)_navigableElementFromElement:(id)arg1;
 - (id)_navigableResultInSearchDirection:(unsigned long long)arg1;
 - (void)_updateStartElements:(id)arg1;

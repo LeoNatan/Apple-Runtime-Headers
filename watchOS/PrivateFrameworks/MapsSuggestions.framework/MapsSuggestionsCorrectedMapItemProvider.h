@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *uniqueName;
 - (void)meCardReader:(id)arg1 didUpdateMeCard:(id)arg2;
-- (struct GEOMapItemStorage *)mapItemFormShortcutForCNIdentifier:(id)arg1;
+- (id)mapItemFormShortcutForCNIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)initWithUpdateHandler:(CDUnknownBlockType)arg1;
 

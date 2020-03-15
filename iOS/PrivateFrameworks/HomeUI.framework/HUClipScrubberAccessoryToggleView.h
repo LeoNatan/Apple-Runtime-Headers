@@ -15,10 +15,10 @@
     UIView *_backgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIButton *liveButton; // @synthesize liveButton=_liveButton;
 @property(retain, nonatomic) UIButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
-- (void).cxx_destruct;
 - (void)displayWithoutBackgroundVisualEffects;
 - (void)displayForTimelineState:(unsigned long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

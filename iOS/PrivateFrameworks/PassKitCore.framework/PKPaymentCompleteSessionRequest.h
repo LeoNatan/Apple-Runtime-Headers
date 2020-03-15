@@ -13,8 +13,8 @@
     PKPaymentMerchantSession *_merchantSession;
 }
 
-@property(retain, nonatomic) PKPaymentMerchantSession *merchantSession; // @synthesize merchantSession=_merchantSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPaymentMerchantSession *merchantSession; // @synthesize merchantSession=_merchantSession;
 - (id)bodyDictionary;
 - (id)endpointName;
 

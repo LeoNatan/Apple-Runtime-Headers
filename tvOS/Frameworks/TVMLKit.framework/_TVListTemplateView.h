@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     UIView *_previewView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAdjustPreviewForTabBar; // @synthesize shouldAdjustPreviewForTabBar=_shouldAdjustPreviewForTabBar;
 @property(nonatomic) _Bool shouldAdjustListForTabBar; // @synthesize shouldAdjustListForTabBar=_shouldAdjustListForTabBar;
 @property(nonatomic) _Bool floatingBanner; // @synthesize floatingBanner=_floatingBanner;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *listView; // @synthesize listView=_listView;
 @property(retain, nonatomic) UIView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) UIView *bgImageView; // @synthesize bgImageView=_bgImageView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) long long listAlignment;
 - (void)adjustScrollForListView:(id)arg1;

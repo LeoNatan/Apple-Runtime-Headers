@@ -25,10 +25,10 @@
 + (double)innerColorCircleInset:(BOOL)arg1;
 + (double)transparentSelectionRingInset:(BOOL)arg1;
 + (id)buttonWithColor:(id)arg1 isCompact:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isUsedOnDarkBackground; // @synthesize isUsedOnDarkBackground=_isUsedOnDarkBackground;
 @property(nonatomic) BOOL isCompact; // @synthesize isCompact=_isCompact;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (double)_swatchInset;
 - (struct CGRect)_swatchRect;
 - (BOOL)pointMostlyInside:(struct CGPoint)arg1 withEvent:(id)arg2;

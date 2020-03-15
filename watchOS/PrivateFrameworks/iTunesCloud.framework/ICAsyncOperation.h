@@ -17,8 +17,8 @@
     NSError *_error;
 }
 
-@property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
 - (void)_execute;
 - (void)finishWithError:(id)arg1;
 - (void)finish;

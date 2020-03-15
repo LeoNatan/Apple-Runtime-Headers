@@ -19,10 +19,10 @@
 }
 
 + (id)localizeSnippet:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *calculationQueue; // @synthesize calculationQueue=_calculationQueue;
 @property(readonly, nonatomic) MFQuoteParser *quoteParser; // @synthesize quoteParser=_quoteParser;
 @property __weak id <MFSnippetCalculatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_snippetFromAttachments:(id)arg1;
 - (id)_snippetForMessage:(id)arg1;
 - (void)_performSnippetCalculation;

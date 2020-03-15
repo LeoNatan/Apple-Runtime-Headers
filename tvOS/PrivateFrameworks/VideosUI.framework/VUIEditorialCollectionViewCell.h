@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureViewWithElement:(id)arg1 existingCell:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIEditorialCellLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) UIView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) _TVStackingPosterView *stackingPosterView; // @synthesize stackingPosterView=_stackingPosterView;
 @property(copy, nonatomic) NSArray *labelViews; // @synthesize labelViews=_labelViews;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) UIView<TVAuxiliaryViewSelecting> *selectingView; // @synthesize selectingView=_selectingView;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)selectionMarginsForSize:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

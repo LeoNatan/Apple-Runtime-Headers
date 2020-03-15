@@ -20,13 +20,13 @@
 
 + (void)_releaseCurrentDisplayLinkManager;
 + (id)currentDisplayLinkManager;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long warmUpModeRequirementsCount; // @synthesize warmUpModeRequirementsCount=_warmUpModeRequirementsCount;
 @property(nonatomic, getter=isHandlingDisplayRefresh) _Bool handlingDisplayRefresh; // @synthesize handlingDisplayRefresh=_handlingDisplayRefresh;
 @property(nonatomic) _Bool hasUpdatedTargetActions; // @synthesize hasUpdatedTargetActions=_hasUpdatedTargetActions;
 @property(retain, nonatomic) NSMutableSet *updatedTargetActions; // @synthesize updatedTargetActions=_updatedTargetActions;
 @property(retain, nonatomic) NSMutableSet *activeTargetActions; // @synthesize activeTargetActions=_activeTargetActions;
 @property(retain, nonatomic) CADisplayLink *storedDisplayLink; // @synthesize storedDisplayLink=_storedDisplayLink;
-- (void).cxx_destruct;
 - (void)_displayDidRefresh:(id)arg1;
 - (void)endRequiringWarmUpMode;
 - (void)beginRequiringWarmUpMode;

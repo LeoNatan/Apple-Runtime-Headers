@@ -20,9 +20,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAvailable) _Bool available; // @synthesize available=_available;
 @property(readonly, nonatomic, getter=isOverheated) _Bool overheated; // @synthesize overheated=_overheated;
-- (void).cxx_destruct;
 - (unsigned long long)_loadFlashlightLevel;
 - (void)_storeFlashlightLevel:(unsigned long long)arg1;
 - (void)_turnPowerOff;

@@ -16,11 +16,11 @@
     NSDictionary *_outgoingTransitions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *outgoingTransitions; // @synthesize outgoingTransitions=_outgoingTransitions;
 @property(copy, nonatomic) NSDictionary *incomingTransitions; // @synthesize incomingTransitions=_incomingTransitions;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) int index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithIndex:(int)arg1 label:(id)arg2;

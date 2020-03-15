@@ -14,9 +14,9 @@
     NSOutputStream *_outputStream;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(readonly, nonatomic) ML3MusicLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (id)exportPlaylistDeleted:(unsigned long long)arg1;
 - (id)exportPlaylistAdded:(unsigned long long)arg1;
 - (id)exportTrackDeleted:(unsigned long long)arg1;

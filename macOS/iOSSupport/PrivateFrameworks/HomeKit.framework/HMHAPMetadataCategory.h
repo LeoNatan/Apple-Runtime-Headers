@@ -15,10 +15,10 @@
     NSString *_categoryDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *categoryDescription; // @synthesize categoryDescription=_categoryDescription;
 @property(retain, nonatomic) NSString *categoryType; // @synthesize categoryType=_categoryType;
 @property(retain, nonatomic) NSNumber *categoryNumber; // @synthesize categoryNumber=_categoryNumber;
-- (void).cxx_destruct;
 
 @end
 

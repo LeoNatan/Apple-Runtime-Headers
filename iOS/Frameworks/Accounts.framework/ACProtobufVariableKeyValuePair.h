@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     ACProtobufVariableValue *_value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACProtobufVariableValue *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

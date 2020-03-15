@@ -6,15 +6,15 @@
 
 #import <NotesUI/NSObject-Protocol.h>
 
-@class NSArray, NSAttributedString, NSString;
+@class NSArray, NSAttributedString, NSString, UIView;
 
 @protocol ICAttachmentFindable <NSObject>
 - (struct _NSRange)selectedRangeWithinRange:(struct _NSRange)arg1 inFindableString:(NSAttributedString *)arg2;
 - (void)setSelectedRange:(struct _NSRange)arg1 inFindableString:(NSAttributedString *)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(NSString *)arg2 inFindableString:(NSAttributedString *)arg3;
-- (void)drawCharactersInRange:(struct _NSRange)arg1 inFindableString:(NSAttributedString *)arg2 forContentView:(struct UIView *)arg3;
+- (void)drawCharactersInRange:(struct _NSRange)arg1 inFindableString:(NSAttributedString *)arg2 forContentView:(UIView *)arg3;
 - (void)scrollToRange:(struct _NSRange)arg1 inFindableString:(NSAttributedString *)arg2;
 - (NSArray *)rectsForRange:(struct _NSRange)arg1 inFindableString:(NSAttributedString *)arg2;
-- (struct UIView *)viewForRange:(struct _NSRange)arg1 inFindableString:(NSAttributedString *)arg2;
+- (UIView *)viewForRange:(struct _NSRange)arg1 inFindableString:(NSAttributedString *)arg2;
 @end
 

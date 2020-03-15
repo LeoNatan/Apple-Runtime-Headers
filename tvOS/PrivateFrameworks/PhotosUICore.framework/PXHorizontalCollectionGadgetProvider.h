@@ -23,12 +23,12 @@
     NSDictionary *_columnSpanForTraitCollection;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *columnSpanForTraitCollection; // @synthesize columnSpanForTraitCollection=_columnSpanForTraitCollection;
 @property(nonatomic) long long defaultColumnSpan; // @synthesize defaultColumnSpan=_defaultColumnSpan;
 @property(nonatomic) unsigned long long gadgetType; // @synthesize gadgetType=_gadgetType;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSArray *contentGadgetProviders; // @synthesize contentGadgetProviders=_contentGadgetProviders;
-- (void).cxx_destruct;
 - (void)_updateHorizontalGadget;
 - (void)invalidateGadgets;
 - (void)horizontalCollectionGadgetDatasourceDidUpdate:(id)arg1;

@@ -16,11 +16,11 @@
     EDInteractionEventLogFile *_logFile;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDInteractionEventLogFile *logFile; // @synthesize logFile=_logFile;
 @property(retain, nonatomic) EDInteractionEventLogUploader *logUploader; // @synthesize logUploader=_logUploader;
 @property(readonly, nonatomic) EDDonationController *donationController; // @synthesize donationController=_donationController;
 @property(readonly, nonatomic) EDInteractionLogger *interactionLogger; // @synthesize interactionLogger=_interactionLogger;
-- (void).cxx_destruct;
 - (void)_schedulePETSubmissionActivityForLog:(id)arg1;
 - (id)initWithPersistence:(id)arg1 userProfileProvider:(id)arg2 vipManager:(id)arg3 sourceApplicationBundleIdentifier:(id)arg4;
 

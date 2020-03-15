@@ -31,6 +31,7 @@
     NSMutableDictionary *_zoneContentsByZoneID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *zoneContentsByZoneID; // @synthesize zoneContentsByZoneID=_zoneContentsByZoneID;
 @property(nonatomic) int accountInfoErrorMode; // @synthesize accountInfoErrorMode=_accountInfoErrorMode;
 @property(nonatomic) _Bool accountInfoSupportsDeviceToDeviceEncryption; // @synthesize accountInfoSupportsDeviceToDeviceEncryption=_accountInfoSupportsDeviceToDeviceEncryption;
@@ -48,7 +49,6 @@
 @property(readonly, copy, nonatomic) NSArray *modifyZonesSavedZones; // @synthesize modifyZonesSavedZones=_modifyZonesSavedZones;
 @property(readonly, nonatomic) unsigned int modifyZonesOperationCount; // @synthesize modifyZonesOperationCount=_modifyZonesOperationCount;
 @property(nonatomic) int modifyZonesErrorMode; // @synthesize modifyZonesErrorMode=_modifyZonesErrorMode;
-- (void).cxx_destruct;
 - (int)_ckErrorCodeForErrorMode:(int)arg1;
 - (id)_errorForErrorMode:(int)arg1 itemIDs:(id)arg2;
 - (id)_errorForErrorMode:(int)arg1;

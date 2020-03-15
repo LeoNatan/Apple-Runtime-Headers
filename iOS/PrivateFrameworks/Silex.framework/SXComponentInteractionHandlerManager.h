@@ -15,8 +15,8 @@
     NSMapTable *_interactionHandlers;
 }
 
-@property(readonly, nonatomic) NSMapTable *interactionHandlers; // @synthesize interactionHandlers=_interactionHandlers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMapTable *interactionHandlers; // @synthesize interactionHandlers=_interactionHandlers;
 - (void)updateUserInteractionForComponentView:(id)arg1;
 - (id)interactionsForComponentView:(id)arg1 type:(unsigned long long)arg2;
 - (id)interactionsForComponentView:(id)arg1;

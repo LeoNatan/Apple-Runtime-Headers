@@ -8,7 +8,7 @@
 
 #import <HealthDaemon/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class HDCodableMessageVersion, NSData, NSString;
 
 @interface HDCodableFHIRResource : PBCodable <NSCopying>
 {
@@ -20,6 +20,7 @@
     NSString *_accountIdentifier;
     NSString *_fhirVersion;
     NSString *_gatewayExternalID;
+    HDCodableMessageVersion *_messageVersion;
     NSString *_originVersionBuild;
     NSData *_rawContent;
     NSString *_receivedDateTimeZoneName;
@@ -35,6 +36,8 @@
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) HDCodableMessageVersion *messageVersion; // @synthesize messageVersion=_messageVersion;
 @property(retain, nonatomic) NSString *originVersionBuild; // @synthesize originVersionBuild=_originVersionBuild;
 @property(nonatomic) long long originVersionPatch; // @synthesize originVersionPatch=_originVersionPatch;
 @property(nonatomic) long long originVersionMinor; // @synthesize originVersionMinor=_originVersionMinor;
@@ -49,7 +52,6 @@
 @property(retain, nonatomic) NSData *rawContent; // @synthesize rawContent=_rawContent;
 @property(retain, nonatomic) NSString *resourceID; // @synthesize resourceID=_resourceID;
 @property(retain, nonatomic) NSString *gatewayExternalID; // @synthesize gatewayExternalID=_gatewayExternalID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -59,6 +61,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasMessageVersion;
 @property(readonly, nonatomic) _Bool hasOriginVersionBuild;
 @property(nonatomic) _Bool hasOriginVersionPatch;
 @property(nonatomic) _Bool hasOriginVersionMinor;

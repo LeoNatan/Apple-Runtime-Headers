@@ -19,9 +19,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)referralWithAlbumAdamID:(long long)arg1;
 + (id)referralWithPlaylistGlobalID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long albumAdamID; // @synthesize albumAdamID=_albumAdamID;
 @property(readonly, copy, nonatomic) NSString *playlistGlobalID; // @synthesize playlistGlobalID=_playlistGlobalID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

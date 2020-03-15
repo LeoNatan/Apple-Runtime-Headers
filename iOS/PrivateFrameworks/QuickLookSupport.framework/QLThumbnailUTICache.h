@@ -17,8 +17,8 @@
 
 + (id)_iWorkUTIs;
 + (id)sharedCache;
-@property(retain) NSMutableDictionary *itemTypeCache; // @synthesize itemTypeCache=_itemTypeCache;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *itemTypeCache; // @synthesize itemTypeCache=_itemTypeCache;
 - (_Bool)requestedBadgeType:(unsigned long long)arg1 isValidForContentType:(id)arg2;
 - (_Bool)_contentType:(id)arg1 isEqualToContentTypeInArray:(id)arg2;
 - (_Bool)_contentTypeIsIWorkType:(id)arg1;

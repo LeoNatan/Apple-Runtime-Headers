@@ -24,6 +24,7 @@
     double _ratioAssetClusters100mPlusFromCenter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double ratioAssetClusters100mPlusFromCenter; // @synthesize ratioAssetClusters100mPlusFromCenter=_ratioAssetClusters100mPlusFromCenter;
 @property(readonly, nonatomic) double ratioAssetClustersWithin100mOfCenter; // @synthesize ratioAssetClustersWithin100mOfCenter=_ratioAssetClustersWithin100mOfCenter;
 @property(readonly, nonatomic) double ratioAssetClustersWithin50mOfCenter; // @synthesize ratioAssetClustersWithin50mOfCenter=_ratioAssetClustersWithin50mOfCenter;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) double numberOfAssetClustersPerMomentStdDev; // @synthesize numberOfAssetClustersPerMomentStdDev=_numberOfAssetClustersPerMomentStdDev;
 @property(readonly, nonatomic) double numberOfAssetClustersPerMomentMean; // @synthesize numberOfAssetClustersPerMomentMean=_numberOfAssetClustersPerMomentMean;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *payload;
 - (void)gatherMetricsWithProgressBlock:(CDUnknownBlockType)arg1;
 - (id)initWithNumberOfAssetClustersPerMomentMean:(double)arg1 numberOfAssetClustersPerMomentStdDev:(double)arg2 numberOfAssetsPerClusterMean:(double)arg3 numberOfAssetsPerClusterStdDev:(double)arg4 ratioAssetClustersWithin10mOfCenter:(double)arg5 ratioAssetClustersWithin20mOfCenter:(double)arg6 ratioAssetClustersWithin50mOfCenter:(double)arg7 ratioAssetClustersWithin100mOfCenter:(double)arg8 ratioAssetClusters100mPlusFromCenter:(double)arg9;

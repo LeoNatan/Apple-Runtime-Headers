@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_verticalAxis;
 + (void)determineChartabilityOfConcept:(id)arg1 withApplicationItems:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC15HealthRecordsUI28MedicalRecordChartDataSource *noRangeDataSource; // @synthesize noRangeDataSource=_noRangeDataSource;
 @property(retain, nonatomic) _TtC15HealthRecordsUI28MedicalRecordChartDataSource *outOfRangeDataSource; // @synthesize outOfRangeDataSource=_outOfRangeDataSource;
 @property(copy, nonatomic) NSArray *seriesDataSources; // @synthesize seriesDataSources=_seriesDataSources;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <_TtP15HealthRecordsUI31MedicalRecordChartConfiguration_> configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) HKConcept *concept; // @synthesize concept=_concept;
 @property(readonly, nonatomic) _Bool hasChart; // @synthesize hasChart=_hasChart;
-- (void).cxx_destruct;
 - (id)createViewControllerForMode:(long long)arg1 displayDate:(id)arg2 applicationItems:(id)arg3;
 - (id)initialSelectedContextForMode:(long long)arg1;
 - (id)contextSectionsForMode:(long long)arg1 applicationItems:(id)arg2 overlayChartController:(id)arg3;

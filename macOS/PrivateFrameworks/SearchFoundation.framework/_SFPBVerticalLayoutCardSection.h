@@ -27,6 +27,7 @@
     _SFPBRichText *_footnote;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBRichText *footnote; // @synthesize footnote=_footnote;
 @property(retain, nonatomic) _SFPBRichText *title; // @synthesize title=_title;
 @property(retain, nonatomic) _SFPBImage *thumbnail; // @synthesize thumbnail=_thumbnail;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *punchoutPickerDismissText; // @synthesize punchoutPickerDismissText=_punchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerTitle; // @synthesize punchoutPickerTitle=_punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions; // @synthesize punchoutOptions=_punchoutOptions;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

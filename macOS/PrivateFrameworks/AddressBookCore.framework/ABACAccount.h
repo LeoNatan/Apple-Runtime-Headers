@@ -30,6 +30,7 @@
 + (id)altDSIDFromACAccount:(id)arg1;
 + (BOOL)isAccountEnabled:(id)arg1;
 + (id)accountPropertiesFromACAccount:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *childAccounts; // @synthesize childAccounts=_childAccounts;
 @property(readonly, copy) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(readonly, copy) NSNumber *dsid; // @synthesize dsid=_dsid;
@@ -38,7 +39,6 @@
 @property(readonly) ABACAccountType *accountType; // @synthesize accountType=_accountType;
 @property(readonly) NSString *accountDescription; // @synthesize accountDescription=_accountDescription;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;

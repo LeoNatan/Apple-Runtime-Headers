@@ -29,12 +29,12 @@
 }
 
 + (id)_currentCalendar;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *timeZoneRelativeStartDate; // @synthesize timeZoneRelativeStartDate=_timeZoneRelativeStartDate;
 @property(nonatomic) _Bool isTimestamp; // @synthesize isTimestamp=_isTimestamp;
 @property(nonatomic) long long labelType; // @synthesize labelType=_labelType;
 @property(nonatomic) __weak id <BSUIDateLabelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isAllDay) _Bool allDay; // @synthesize allDay=_allDay;
-- (void).cxx_destruct;
 - (void)stopCoalescingUpdates;
 - (void)startCoalescingUpdates;
 - (void)update;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _controlSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long controlSize; // @synthesize controlSize=_controlSize;
 @property(nonatomic) unsigned long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long segmentLocation; // @synthesize segmentLocation=_segmentLocation;
 @property(nonatomic) _Bool isSegmentViewHighlighted; // @synthesize isSegmentViewHighlighted=_isSegmentViewHighlighted;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_contentSizeCategoryDidChange;
 - (void)setTintColor:(id)arg1;

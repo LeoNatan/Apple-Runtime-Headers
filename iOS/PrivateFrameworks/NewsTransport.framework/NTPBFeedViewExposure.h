@@ -62,6 +62,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int rankInToc; // @synthesize rankInToc=_rankInToc;
 @property(retain, nonatomic) NSData *groupViewExposureId; // @synthesize groupViewExposureId=_groupViewExposureId;
 @property(nonatomic) long long previousArticlePublisherArticleVersion; // @synthesize previousArticlePublisherArticleVersion=_previousArticlePublisherArticleVersion;
@@ -86,7 +87,6 @@
 @property(retain, nonatomic) NSString *presentationReasonSearchString; // @synthesize presentationReasonSearchString=_presentationReasonSearchString;
 @property(nonatomic) _Bool isUserSubscribedToFeed; // @synthesize isUserSubscribedToFeed=_isUserSubscribedToFeed;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

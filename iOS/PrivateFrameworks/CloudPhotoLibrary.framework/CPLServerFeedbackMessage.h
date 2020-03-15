@@ -15,8 +15,8 @@
     NSMutableArray *_keysAndValues;
 }
 
-@property(retain, nonatomic) NSMutableArray *keysAndValues; // @synthesize keysAndValues=_keysAndValues;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *keysAndValues; // @synthesize keysAndValues=_keysAndValues;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

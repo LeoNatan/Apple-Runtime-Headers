@@ -15,9 +15,9 @@
     id <SBCollectionViewCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBCollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool protectDelayedUnhighlights; // @synthesize protectDelayedUnhighlights=_protectDelayedUnhighlights;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1 afterDelay:(double)arg2;

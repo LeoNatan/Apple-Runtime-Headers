@@ -15,8 +15,8 @@
 }
 
 + (id)keyFromState:(id)arg1 toState:(id)arg2;
-@property(retain, nonatomic) NSString *initialState; // @synthesize initialState=_initialState;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *initialState; // @synthesize initialState=_initialState;
 @property(retain, nonatomic) NSDictionary *stateChangeConfigurations; // @synthesize stateChangeConfigurations=_stateChangeConfigurations;
 - (id)feedbackKeyPaths;
 - (id)copyWithZone:(struct _NSZone *)arg1;

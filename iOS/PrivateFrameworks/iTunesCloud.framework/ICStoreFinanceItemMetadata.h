@@ -16,9 +16,9 @@
     NSNumber *_playlistID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *playlistID; // @synthesize playlistID=_playlistID;
 @property(readonly, copy, nonatomic) NSDictionary *metadataDictionary; // @synthesize metadataDictionary=_metadataDictionary;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSNumber *vendorID;
 @property(readonly, copy, nonatomic) NSNumber *storefrontID;

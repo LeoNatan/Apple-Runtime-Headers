@@ -21,11 +21,11 @@
 
 + (id)timestampDateFormatter;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) INInteraction *interaction; // @synthesize interaction=_interaction;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *sourceAppIdentifier; // @synthesize sourceAppIdentifier=_sourceAppIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id uniqueProperty;
 @property(readonly, copy, nonatomic) NSString *suggestedPhrase;
 @property(readonly, nonatomic) INShortcut *shortcut;

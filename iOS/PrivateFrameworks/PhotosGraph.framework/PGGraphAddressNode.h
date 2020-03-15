@@ -28,6 +28,7 @@
 - (id)cityNode;
 - (id)districtNode;
 - (id)streetNode;
+- (id)momentNodes;
 - (id)areaNodes;
 @property(readonly, nonatomic) PPLocationNamedEntities *pg_locationNamedEntity;
 

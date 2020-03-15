@@ -17,11 +17,11 @@
     CDUnknownBlockType _protobufValueToDictionaryValueTransformer;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType protobufValueToDictionaryValueTransformer; // @synthesize protobufValueToDictionaryValueTransformer=_protobufValueToDictionaryValueTransformer;
 @property(copy, nonatomic) CDUnknownBlockType dictionaryValueToProtobufValueTransformer; // @synthesize dictionaryValueToProtobufValueTransformer=_dictionaryValueToProtobufValueTransformer;
 @property(retain, nonatomic) Class protobufClass; // @synthesize protobufClass=_protobufClass;
 @property(copy, nonatomic) NSDictionary *dictionaryKeyToProtobufKeyMapping; // @synthesize dictionaryKeyToProtobufKeyMapping=_dictionaryKeyToProtobufKeyMapping;
-- (void).cxx_destruct;
 - (id)createProtobufFromDictionary:(id)arg1;
 - (id)createDictionaryFromProtobuf:(id)arg1;
 

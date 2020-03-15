@@ -15,9 +15,9 @@
 }
 
 + (void *)pointerValueForSymbolName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) JSOCType *type; // @synthesize type=_type;
 @property(readonly) void *pointerValue; // @synthesize pointerValue=_pointerValue;
-- (void).cxx_destruct;
 - (id)initWithPointerValue:(void *)arg1 type:(id)arg2;
 
 @end

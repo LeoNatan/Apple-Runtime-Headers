@@ -22,8 +22,8 @@
 + (id)_removeOperation:(long long)arg1;
 + (void)_registerOperation:(id)arg1 forRequestID:(long long)arg2;
 + (long long)nextRequestID;
-@property(retain) PHAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
 - (void).cxx_destruct;
+@property(retain) PHAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
 - (void)main;
 - (id)initWithURL:(id)arg1 cachingStrategy:(long long)arg2 useSharedDecoding:(_Bool)arg3;
 

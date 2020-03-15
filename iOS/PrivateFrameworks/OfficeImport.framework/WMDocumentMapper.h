@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *mFileName;
 }
 
+- (void).cxx_destruct;
 - (void)setFileName:(id)arg1;
 - (id)fileName;
-- (void).cxx_destruct;
 - (struct CGSize)contentSizeForDevice;
 - (struct CGSize)pageSizeForDevice;
 - (id)documentTitle;

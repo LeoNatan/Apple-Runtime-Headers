@@ -16,8 +16,8 @@
 + (void)triggerBrightnessCalculation:(id)arg1;
 + (_Bool)currentDeviceRequiresBrightnessCalculations;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)calculateBrightness:(id)arg1;
 - (void)dealloc;
 - (id)init;

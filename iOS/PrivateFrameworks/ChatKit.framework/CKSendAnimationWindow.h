@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CKGradientReferenceView *_gradientReferenceView;
 }
 
-@property(retain, nonatomic) CKGradientReferenceView *gradientReferenceView; // @synthesize gradientReferenceView=_gradientReferenceView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKGradientReferenceView *gradientReferenceView; // @synthesize gradientReferenceView=_gradientReferenceView;
 - (_Bool)_canAffectStatusBarAppearance;
 - (id)initWithWindowScene:(id)arg1 frame:(struct CGRect)arg2;
 

@@ -21,13 +21,13 @@
 }
 
 + (id)handlerWithItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) FLFollowUpActionHandler *handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain) iCloudFollowUpSuggestion *iCloudFollowUpSuggestionController; // @synthesize iCloudFollowUpSuggestionController=_iCloudFollowUpSuggestionController;
 @property(retain) iCloudHandleFLUI *followupUIController; // @synthesize followupUIController=_followupUIController;
 @property(nonatomic) __weak id <iCloudFollowUpActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 @property(retain, nonatomic) FLFollowUpItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)_deSerializedlaunchActionArguments:(id)arg1;
 - (BOOL)_isValidAction:(id)arg1;
 - (void)_deleteFollowup:(CDUnknownBlockType)arg1;

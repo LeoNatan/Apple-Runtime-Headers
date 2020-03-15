@@ -11,10 +11,13 @@
     BOOL _requiresEntitlement;
 }
 
++ (id)defaultPolicy;
 + (id)policyWithEntitlementRequirement:(BOOL)arg1;
 @property(readonly) BOOL requiresEntitlement; // @synthesize requiresEntitlement=_requiresEntitlement;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithEntitlementRequirement:(BOOL)arg1;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)__initWithEntitlementRequirement:(BOOL)arg1;
 - (id)init;
 
 @end

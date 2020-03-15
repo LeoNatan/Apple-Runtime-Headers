@@ -28,13 +28,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double startDelay; // @synthesize startDelay=_startDelay;
 @property(nonatomic) BOOL supportsPlaybackTimeOffsets; // @synthesize supportsPlaybackTimeOffsets=_supportsPlaybackTimeOffsets;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned int baseColor; // @synthesize baseColor=_baseColor;
 @property(retain, nonatomic) NSData *messageData; // @synthesize messageData=_messageData;
 @property(nonatomic) long long sendDate; // @synthesize sendDate=_sendDate;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

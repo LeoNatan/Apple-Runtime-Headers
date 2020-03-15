@@ -16,11 +16,11 @@
     UINavigationItem *_navigationItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hidesBackButton; // @synthesize hidesBackButton=_hidesBackButton;
 @property(retain, nonatomic) UINavigationItem *navigationItem; // @synthesize navigationItem=_navigationItem;
 @property(copy, nonatomic) NSArray *leftItems; // @synthesize leftItems=_leftItems;
 @property(copy, nonatomic) NSArray *rightItems; // @synthesize rightItems=_rightItems;
-- (void).cxx_destruct;
 
 @end
 

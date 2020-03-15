@@ -25,10 +25,10 @@
 
 + (id)titleString;
 + (id)placeServiceHoursWithMapItem:(id)arg1 type:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) __weak id <MKPlaceServiceHoursViewControllerProtocol> placeServiceDelegate; // @synthesize placeServiceDelegate=_placeServiceDelegate;
 @property(retain, nonatomic) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)captureCloseAnalytics;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;

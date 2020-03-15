@@ -13,8 +13,8 @@
     HKUnit *_distanceUnit;
 }
 
-@property(retain, nonatomic) HKUnit *distanceUnit; // @synthesize distanceUnit=_distanceUnit;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKUnit *distanceUnit; // @synthesize distanceUnit=_distanceUnit;
 - (int)indexForValue:(double)arg1;
 - (double)valueForIndex:(int)arg1;
 - (double)valueTranslatedFromDistanceUnit:(double)arg1;

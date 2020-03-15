@@ -28,6 +28,7 @@
 }
 
 + (id)protoMailboxFromMailbox:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool syncRequested; // @synthesize syncRequested=_syncRequested;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic) _Bool syncEnabled; // @synthesize syncEnabled=_syncEnabled;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSString *customName; // @synthesize customName=_customName;
 @property(retain, nonatomic) NSString *mailboxId; // @synthesize mailboxId=_mailboxId;
 @property(retain, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -18,12 +18,12 @@
 }
 
 + (id)defaultSpec;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *preferredNextTemplatesByCurrentTemplate; // @synthesize preferredNextTemplatesByCurrentTemplate=_preferredNextTemplatesByCurrentTemplate;
 @property(readonly, nonatomic) long long minNumberOfColumns; // @synthesize minNumberOfColumns=_minNumberOfColumns;
 @property(readonly, nonatomic) long long maxNumberOfRects; // @synthesize maxNumberOfRects=_maxNumberOfRects;
 @property(readonly, nonatomic) long long minNumberOfRects; // @synthesize minNumberOfRects=_minNumberOfRects;
 @property(readonly, nonatomic) NSArray *templates; // @synthesize templates=_templates;
-- (void).cxx_destruct;
 - (id)preferredNextTemplatesForTemplate:(id)arg1;
 - (void)prepareBuiltinSpec;
 - (id)_init;

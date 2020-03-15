@@ -31,6 +31,7 @@
 + (id)defaultTitleForActionInCategory:(id)arg1 context:(long long)arg2;
 + (id)possibleTitlesForActionsInCategories:(id)arg1 context:(long long)arg2;
 + (_Bool)reallyPerform;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactStyle *previousStyle; // @synthesize previousStyle=_previousStyle;
 @property(copy, nonatomic) CDUnknownBlockType performBlock; // @synthesize performBlock=_performBlock;
 @property(nonatomic) unsigned long long score; // @synthesize score=_score;
@@ -46,7 +47,6 @@
 @property(nonatomic) _Bool useDuetIfAvailable; // @synthesize useDuetIfAvailable=_useDuetIfAvailable;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (void)cancel;
 - (void)performWithCompletionBlock:(CDUnknownBlockType)arg1;

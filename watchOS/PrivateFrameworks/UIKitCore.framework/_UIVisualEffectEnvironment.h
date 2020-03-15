@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     UITraitCollection *_traitCollection;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(nonatomic) _Bool reducedTransperancy; // @synthesize reducedTransperancy=_reducedTransperancy;
 @property(nonatomic) _Bool useSimpleVibrancy; // @synthesize useSimpleVibrancy=_useSimpleVibrancy;
 @property(nonatomic) _Bool allowsBlurring; // @synthesize allowsBlurring=_allowsBlurring;
 @property(nonatomic) _Bool allowsDithering; // @synthesize allowsDithering=_allowsDithering;
 @property(readonly, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithHost:(id)arg1;

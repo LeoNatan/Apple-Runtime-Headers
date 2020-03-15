@@ -19,6 +19,7 @@
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(copy, nonatomic) NSString *usageNotice; // @synthesize usageNotice=_usageNotice;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSString *providerDescription; // @synthesize providerDescription=_providerDescription;
 @property(copy, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(copy, nonatomic) NSString *details; // @synthesize details=_details;
-- (void).cxx_destruct;
 
 @end
 

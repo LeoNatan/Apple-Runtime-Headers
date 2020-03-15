@@ -16,11 +16,11 @@
     CDUnknownBlockType _cnxHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cnxHandler; // @synthesize cnxHandler=_cnxHandler;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
-- (void).cxx_destruct;
 
 @end
 

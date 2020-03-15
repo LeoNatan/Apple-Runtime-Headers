@@ -36,6 +36,7 @@
     struct CGAffineTransform _strokeTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint previousPoint; // @synthesize previousPoint=_previousPoint;
 @property(readonly, nonatomic) NSUUID *drawingUUID; // @synthesize drawingUUID=_drawingUUID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) BOOL waitingForStrokeToEnd; // @synthesize waitingForStrokeToEnd=_waitingForStrokeToEnd;
 @property BOOL allowLiveInteraction; // @synthesize allowLiveInteraction=_allowLiveInteraction;
 @property(nonatomic) BOOL isDrawing; // @synthesize isDrawing=_isDrawing;
-- (void).cxx_destruct;
 - (void)drawingChanged:(id)arg1;
 - (void)setNeedsDrawingDisplay;
 - (void)metalRendererController:(id)arg1 didCommitRenderingIntoTexture:(id)arg2;

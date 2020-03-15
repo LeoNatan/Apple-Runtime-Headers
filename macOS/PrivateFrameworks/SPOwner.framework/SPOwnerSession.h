@@ -39,6 +39,7 @@
     NSDate *_fetchLimit;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *connectionExpiryDispatchTimer; // @synthesize connectionExpiryDispatchTimer=_connectionExpiryDispatchTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *locationFetchDispatchTimer; // @synthesize locationFetchDispatchTimer=_locationFetchDispatchTimer;
@@ -61,9 +62,7 @@
 @property(copy, nonatomic) CDUnknownBlockType beaconsChangedBlock; // @synthesize beaconsChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType beaconRemovedBlock; // @synthesize beaconRemovedBlock;
 @property(copy, nonatomic) CDUnknownBlockType beaconAddedBlock; // @synthesize beaconAddedBlock;
-- (void).cxx_destruct;
 - (void)removeBeacon:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)shareBeacon:(id)arg1 handles:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)unacceptedBeaconsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)allBeaconsWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSSet *allBeacons;
@@ -76,6 +75,7 @@
 - (void)addBeaconChangedListener:(id)arg1 beaconUUID:(id)arg2 taskName:(id)arg3 commandIdentifier:(id)arg4 commandIssueDate:(id)arg5;
 - (void)finishBeaconFuture:(id)arg1 beaconUUID:(id)arg2;
 - (id)executeCommand:(id)arg1;
+- (oneway void)forceUpdateKeyMapsForUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (oneway void)forceDistributeKeysWithCompletion:(CDUnknownBlockType)arg1;
 - (oneway void)beaconForUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)rawSearchResultsForBeacon:(id)arg1 dateInterval:(id)arg2 completion:(CDUnknownBlockType)arg3;

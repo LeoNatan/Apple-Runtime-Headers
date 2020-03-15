@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     struct CGSize _shortTitlePreferredSize;
 }
 
-@property(nonatomic) struct CGSize shortTitlePreferredSize; // @synthesize shortTitlePreferredSize=_shortTitlePreferredSize;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGSize shortTitlePreferredSize; // @synthesize shortTitlePreferredSize=_shortTitlePreferredSize;
 - (void)updateTitleTextField;
 - (void)updateProgressView;
 - (void)setProgressStatus:(const struct TNodeProgressStatus *)arg1;

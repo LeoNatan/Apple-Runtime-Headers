@@ -16,8 +16,8 @@
 }
 
 + (id)loadCredentialsFromAppDefaults;
-@property(retain, nonatomic) NSMutableDictionary *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *store; // @synthesize store=_store;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)clearAllCredentials;

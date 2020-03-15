@@ -7,6 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (AXExtras)
+- (id)ax_arrayByRemovingDuplicates;
 - (id)ax_flatMappedArrayUsingBlock:(CDUnknownBlockType)arg1;
 - (id)ax_mappedArrayUsingBlock:(CDUnknownBlockType)arg1;
 - (BOOL)ax_containsObjectUsingBlock:(CDUnknownBlockType)arg1;

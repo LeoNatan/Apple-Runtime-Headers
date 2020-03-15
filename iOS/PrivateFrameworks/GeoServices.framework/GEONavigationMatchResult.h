@@ -21,13 +21,13 @@
 + (id)matchResultWithRawLocation:(id)arg1;
 + (id)matchResultWithRoadMatch:(id)arg1 location:(id)arg2;
 + (id)matchResultWithRouteMatch:(id)arg1 location:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool locationUnreliable; // @synthesize locationUnreliable=_locationUnreliable;
 @property(readonly, nonatomic) GEONavigationMatchInfo *detailedMatchInfo; // @synthesize detailedMatchInfo=_detailedMatchInfo;
 @property(readonly, nonatomic) GEOLocation *rawLocation; // @synthesize rawLocation=_rawLocation;
 @property(readonly, nonatomic) GEORoadMatch *roadMatch; // @synthesize roadMatch=_roadMatch;
 @property(readonly, nonatomic) GEORouteMatch *routeMatch; // @synthesize routeMatch=_routeMatch;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)setLocationUnreliable:(_Bool)arg1;
 - (void)setDetailedMatchInfo:(id)arg1;
 - (void)setRouteMatch:(id)arg1;

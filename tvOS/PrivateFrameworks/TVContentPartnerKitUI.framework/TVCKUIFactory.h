@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) NSArray *factories; // @synthesize factories=_factories;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *factories; // @synthesize factories=_factories;
 - (void)_registerViewElements;
 - (void)setup;
 

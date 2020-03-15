@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)identifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIItemOfferButton *viewButton; // @synthesize viewButton=_viewButton;
 @property(retain, nonatomic) UIDateLabel *timestampLabel; // @synthesize timestampLabel=_timestampLabel;
 @property(retain, nonatomic) UILabel *stickerPackLabel; // @synthesize stickerPackLabel=_stickerPackLabel;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *stickerPackText; // @synthesize stickerPackText=_stickerPackText;
 @property(retain, nonatomic) NSString *senderText; // @synthesize senderText=_senderText;
 @property(retain, nonatomic) id stickerPreview; // @synthesize stickerPreview=_stickerPreview;
-- (void).cxx_destruct;
 - (void)didMoveToWindow;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIView *_associatedView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *associatedView; // @synthesize associatedView=_associatedView;
 @property(readonly, nonatomic) SEL initialAction; // @synthesize initialAction=_initialAction;
 @property(readonly, nonatomic) __weak id initialTarget; // @synthesize initialTarget=_initialTarget;
-- (void).cxx_destruct;
 - (void)setState:(long long)arg1;
 - (id)view;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

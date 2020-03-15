@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
     id <_UIScenePresenterOwnerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UIScenePresenterOwnerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_setActivePrioritizedPresenter:(id)arg1;
 - (void)_updateActivePrioritizedPresenterIfNecessary;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

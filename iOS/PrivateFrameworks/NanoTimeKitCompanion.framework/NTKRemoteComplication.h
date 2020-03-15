@@ -18,9 +18,9 @@
 + (id)_remoteStocksComplication;
 + (id)_allComplicationConfigurationsWithType:(unsigned long long)arg1;
 + (id)complicationWithClientIdentifier:(id)arg1 appBundleIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 @property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (id)_initWithComplicationType:(unsigned long long)arg1 JSONDictionary:(id)arg2;
 - (void)_addKeysToJSONDictionary:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSURL;
+
 @protocol PLDiagnosticsAgent
-- (void)captureCurrentAssetResourcesWithResultHandler:(void (^)(NSArray *))arg1;
-- (void)captureAndDumpLayerHierarchyWithResultHandler:(void (^)(NSArray *))arg1;
 - (void)captureDescriptionOfPhotoAnalysisWithResultHandler:(void (^)(NSString *))arg1;
 - (void)captureDescriptionOfCloudPhotoLibraryWithResultHandler:(void (^)(NSString *))arg1;
+- (void)dumpState:(int)arg1 toDirectoryURL:(NSURL *)arg2 resultHandler:(void (^)(NSString *))arg3;
 - (void)captureDescriptionOfUIState:(int)arg1 resultHandler:(void (^)(NSString *))arg2;
 @end
 

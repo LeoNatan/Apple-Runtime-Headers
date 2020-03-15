@@ -30,6 +30,7 @@
     struct UIEdgeInsets _avatarMargins;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *preloadedActionsManagers; // @synthesize preloadedActionsManagers=_preloadedActionsManagers;
 @property(retain) CNContactGridViewLayout *gridLayout; // @synthesize gridLayout=_gridLayout;
 @property(copy, nonatomic) NSDictionary *nameTextAttributes; // @synthesize nameTextAttributes=_nameTextAttributes;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(retain, nonatomic) NSObject<CNContactDataSource> *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <CNContactGridViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

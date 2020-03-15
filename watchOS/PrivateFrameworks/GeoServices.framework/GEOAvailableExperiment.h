@@ -15,10 +15,10 @@
     NSMutableArray *_branches;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *branches; // @synthesize branches=_branches;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_branchForLabel:(id)arg1;
 - (void)_addBranch:(id)arg1;
 - (id)description;

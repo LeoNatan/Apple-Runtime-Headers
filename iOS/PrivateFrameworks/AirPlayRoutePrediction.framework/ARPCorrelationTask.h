@@ -15,9 +15,9 @@
     id <_DKKnowledgeQuerying> _knowledgeStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 @property(readonly, copy, nonatomic) NSString *file; // @synthesize file=_file;
-- (void).cxx_destruct;
 - (id)longFormVideoAppBundleIDs;
 - (void)execute;
 - (id)initWithCorrelationsFile:(id)arg1 knowledgeStore:(id)arg2;

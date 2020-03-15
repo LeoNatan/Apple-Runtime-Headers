@@ -12,9 +12,9 @@
     Class _viewControllerClass;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class viewControllerClass; // @synthesize viewControllerClass=_viewControllerClass;
 @property(nonatomic) _Bool lastPage; // @synthesize lastPage=_lastPage;
-- (void).cxx_destruct;
 - (id)initWithViewControllerClass:(Class)arg1;
 
 @end

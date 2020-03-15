@@ -15,8 +15,8 @@
     SXSanFranciscoFontFamily *_family;
 }
 
-@property(readonly, nonatomic) SXSanFranciscoFontFamily *family; // @synthesize family=_family;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXSanFranciscoFontFamily *family; // @synthesize family=_family;
 - (id)fontFamilies;
 - (id)init;
 

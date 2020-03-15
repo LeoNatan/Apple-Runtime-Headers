@@ -9,8 +9,12 @@
 @interface UIImage (SFGraphicsUtilities)
 + (id)sf_imageFromMainBundleNamed:(id)arg1;
 + (id)ss_imageNamed:(id)arg1;
-+ (id)_sf_favoritesFaviconWithLightStyle:(_Bool)arg1;
-+ (id)_sf_fallbackFaviconWithLightStyle:(_Bool)arg1;
++ (id)_sf_favoritesFavicon;
++ (id)_sf_fallbackFavicon;
++ (id)_sf_faviconFromSystemImageNamed:(id)arg1;
+- (void)_sf_registerFaviconForDarkUserInterfaceStyle;
+@property(readonly, nonatomic) _Bool _sf_hasRegisteredFaviconForDarkUserInterfaceStyle;
+@property(readonly, nonatomic) _Bool _sf_shouldApplyBackingForDarkBackdrop;
 @property(readonly, nonatomic) int _sf_tabSnapshotEffectsVersion;
 - (id)_sf_initWithCGImage:(struct CGImage *)arg1 tabSnapshotEffectsVersion:(int)arg2;
 - (id)_sf_imageByResizingWithAccessibilityScale:(float)arg1;

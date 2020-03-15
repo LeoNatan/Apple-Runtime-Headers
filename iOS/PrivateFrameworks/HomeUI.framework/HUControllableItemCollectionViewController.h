@@ -26,6 +26,7 @@
     HFItem<NSCopying> *_selectedContextualMenuItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItem<NSCopying> *selectedContextualMenuItem; // @synthesize selectedContextualMenuItem=_selectedContextualMenuItem;
 @property(retain, nonatomic) UIGestureRecognizer *contextualTapGestureRecognizer; // @synthesize contextualTapGestureRecognizer=_contextualTapGestureRecognizer;
 @property(retain, nonatomic) NSMutableDictionary *actionSetExecutionFuturesKeyedByIdentifier; // @synthesize actionSetExecutionFuturesKeyedByIdentifier=_actionSetExecutionFuturesKeyedByIdentifier;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak UIViewController<HUQuickControlPresentationHost> *ancestorQuickControlHostAtPresentationTime; // @synthesize ancestorQuickControlHostAtPresentationTime=_ancestorQuickControlHostAtPresentationTime;
 @property(retain, nonatomic) HUQuickControlPresentationCoordinator *quickControlPresentationCoordinator; // @synthesize quickControlPresentationCoordinator=_quickControlPresentationCoordinator;
 @property(readonly, nonatomic) unsigned long long contentColorStyle; // @synthesize contentColorStyle=_contentColorStyle;
-- (void).cxx_destruct;
 - (void)_logUserMetricsAfterTapOfItem:(id)arg1;
 - (void)_showQuickControlsForSelectedMenuItem;
 - (void)_showSettingsForSelectedMenuItem;

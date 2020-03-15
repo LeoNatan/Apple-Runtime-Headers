@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 + (id)viewStateForActionRepresentationViewDescendantView:(id)arg1 action:(id)arg2;
 + (id)viewStateForActionRepresentationView:(id)arg1 action:(id)arg2;
 + (id)_nullViewStateForActionType:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int visualCornerPosition; // @synthesize visualCornerPosition=_visualCornerPosition;
 @property(readonly, nonatomic) id actionViewStateContext; // @synthesize actionViewStateContext=_actionViewStateContext;
 @property(readonly, nonatomic) _Bool isPreferred; // @synthesize isPreferred=_isPreferred;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isPressed; // @synthesize isPressed=_isPressed;
 @property(readonly, nonatomic) _Bool isHighlighted; // @synthesize isHighlighted=_isHighlighted;
 @property(readonly, nonatomic) UIInterfaceAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (_Bool)_stateEqualToActionViewState:(id)arg1;
 - (void)_collectStateFromActionViewState:(id)arg1;
 - (void)_collectStateFromAction:(id)arg1;

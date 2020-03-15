@@ -95,10 +95,10 @@
 + (id)defaultRestrictionFilePath;
 + (id)explicitlyRestrictedEphemeralMultiUserApps;
 + (id)explicitlyRestrictedAppsBySetting;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *memberQueueUserProfileRestrictions; // @synthesize memberQueueUserProfileRestrictions=_memberQueueUserProfileRestrictions;
 @property(retain, nonatomic) NSMutableDictionary *memberQueueSystemProfileRestrictions; // @synthesize memberQueueSystemProfileRestrictions=_memberQueueSystemProfileRestrictions;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
-- (void).cxx_destruct;
 - (int)appWhitelistState;
 - (_Bool)isUnionSettingLockedDownByRestrictions:(id)arg1;
 - (_Bool)isIntersectionSettingLockedDownByRestrictions:(id)arg1;

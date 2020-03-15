@@ -15,8 +15,8 @@
 
 + (id)alloc;
 + (Class)__class;
-@property(readonly, copy, nonatomic) IDSCKRecordZoneID *recordZoneID; // @synthesize recordZoneID=_recordZoneID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) IDSCKRecordZoneID *recordZoneID; // @synthesize recordZoneID=_recordZoneID;
 
 @end
 

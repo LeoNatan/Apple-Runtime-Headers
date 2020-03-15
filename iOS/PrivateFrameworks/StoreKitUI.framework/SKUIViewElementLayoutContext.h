@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 
 + (double)_calculateValueFromString:(id)arg1 withDefault:(double)arg2 coefficent:(double)arg3;
 + (double)itemWidthForElement:(id)arg1 withDefaultWidth:(double)arg2 fitWidth:(double)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double displayScale; // @synthesize displayScale=_displayScale;
 @property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(readonly, nonatomic) struct UIEdgeInsets largeScreenElementPadding; // @synthesize largeScreenElementPadding=_largeScreenElementPadding;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(nonatomic) __weak id <SKUIArtworkRequestDelegate> artworkRequestDelegate; // @synthesize artworkRequestDelegate=_artworkRequestDelegate;
 @property(nonatomic) double activePageWidth; // @synthesize activePageWidth=_activePageWidth;
-- (void).cxx_destruct;
 - (struct CGSize)_sizeForImageElement:(id)arg1 applyTransform:(_Bool)arg2;
 - (_Bool)_loadImageForURL:(id)arg1 cacheKey:(id)arg2 dataConsumer:(id)arg3 reason:(long long)arg4;
 - (void)_artworkRequestDidLoadImageNotification:(id)arg1;

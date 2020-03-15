@@ -17,9 +17,9 @@
 + (id)newMessageSetForIndexSet:(id)arg1;
 + (id)newMessageSetForNumbers:(id)arg1 range:(struct _NSRange)arg2;
 + (id)newMessageSetForRange:(CDStruct_f792af56)arg1;
+- (void).cxx_destruct;
 @property CDStruct_f792af56 range; // @synthesize range=_range;
 @property(copy) NSIndexSet *UIDs; // @synthesize UIDs=_UIDs;
-- (void).cxx_destruct;
 - (long long)minRequiredConnectionState;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;
 - (id)initWithMailboxName:(id)arg1;

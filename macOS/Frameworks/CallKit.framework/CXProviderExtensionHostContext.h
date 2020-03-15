@@ -17,8 +17,8 @@
     id <CXProviderHostProtocol> _delegate;
 }
 
-@property(nonatomic) __weak id <CXProviderHostProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CXProviderHostProtocol> delegate; // @synthesize delegate=_delegate;
 - (oneway void)actionCompleted:(id)arg1;
 - (oneway void)requestTransaction:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)reportCallWithUUID:(id)arg1 crossDeviceIdentifier:(id)arg2 changedBytesOfDataUsed:(long long)arg3;

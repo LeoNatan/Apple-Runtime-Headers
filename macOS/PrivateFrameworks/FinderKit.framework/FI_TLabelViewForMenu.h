@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 + (id)titleFieldFromMenuItem:(id)arg1;
 + (id)labelViewFromMenuItem:(id)arg1;
 + (id)labelViewForMenu:(id)arg1;
-@property(nonatomic) __weak FI_TFakeTagsMenuItemView *fakeTagsMenuItem; // @synthesize fakeTagsMenuItem=_fakeTagsMenuItem;
-@property(nonatomic) long long hoveredPart; // @synthesize hoveredPart=_hoveredPart;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak FI_TFakeTagsMenuItemView *fakeTagsMenuItem; // @synthesize fakeTagsMenuItem=_fakeTagsMenuItem;
+@property(nonatomic) long long hoveredPart; // @synthesize hoveredPart=_hoveredPart;
 - (void)gumdropValueChangedInMenu:(id)arg1;
 - (void)gumdropFavoriteTagChosenInMenu:(id)arg1;
 - (_Bool)favoriteTagWillRemove:(short)arg1;

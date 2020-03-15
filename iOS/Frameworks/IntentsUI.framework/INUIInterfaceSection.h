@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) unsigned long long interactiveBehavior; // @synthesize interactiveBehavior=_interactiveBehavior;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

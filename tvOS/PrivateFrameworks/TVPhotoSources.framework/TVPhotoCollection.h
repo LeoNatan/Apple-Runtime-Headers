@@ -22,12 +22,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *remoteURL; // @synthesize remoteURL=_remoteURL;
 @property(readonly, nonatomic) _Bool hasExternalURLs; // @synthesize hasExternalURLs=_hasExternalURLs;
 @property(retain, nonatomic) TVPhotoSource *photoSource; // @synthesize photoSource=_photoSource;
 @property(readonly, copy, nonatomic) NSString *collectionIdentifier; // @synthesize collectionIdentifier=_collectionIdentifier;
 @property(readonly, copy, nonatomic) NSString *collectionName; // @synthesize collectionName=_collectionName;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

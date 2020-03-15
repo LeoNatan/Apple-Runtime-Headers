@@ -14,8 +14,8 @@
     id <HMSettingsOwner> _owner;
 }
 
-@property(readonly) __weak id <HMSettingsOwner> owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
+@property(readonly) __weak id <HMSettingsOwner> owner; // @synthesize owner=_owner;
 @property __weak id <HMSettingsDelegate> delegate;
 @property(readonly, getter=isControllable) _Bool controllable;
 @property(readonly) HMSettingGroup *rootGroup;

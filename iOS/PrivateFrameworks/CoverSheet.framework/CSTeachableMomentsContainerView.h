@@ -28,6 +28,7 @@
     UIView *_homeAffordanceView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *homeAffordanceView; // @synthesize homeAffordanceView=_homeAffordanceView;
 @property(retain, nonatomic) UIView *homeAffordanceContainerView; // @synthesize homeAffordanceContainerView=_homeAffordanceContainerView;
 @property(retain, nonatomic) UIView *callToActionLabelContainerView; // @synthesize callToActionLabelContainerView=_callToActionLabelContainerView;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) UIView *controlCenterGrabberPositionPlaceholderView; // @synthesize controlCenterGrabberPositionPlaceholderView=_controlCenterGrabberPositionPlaceholderView;
 @property(retain, nonatomic) UIView *controlCenterGrabberView; // @synthesize controlCenterGrabberView=_controlCenterGrabberView;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
-- (void).cxx_destruct;
 - (_Bool)statusBarIsReady;
 - (id)_callToActionLabelFont;
 - (void)_preferredTextSizeChanged:(id)arg1;
@@ -55,6 +55,7 @@
 - (id)createCallToActionLabel;
 - (void)_updateViewsForLegibilitySettings;
 - (id)presentationRegions;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

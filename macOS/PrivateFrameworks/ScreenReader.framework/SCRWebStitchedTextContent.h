@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_lines;
 }
 
-@property(retain, nonatomic) NSMutableArray *lines; // @synthesize lines=_lines;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *lines; // @synthesize lines=_lines;
 - (void)addAttributedString:(id)arg1 atRect:(struct CGRect)arg2 forElement:(id)arg3;
 - (void)addString:(id)arg1 atRect:(struct CGRect)arg2;
 - (void)clearAll;

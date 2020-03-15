@@ -15,10 +15,10 @@
     NSString *_alertBody;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool resetLocationToHomeOnConfirmation; // @synthesize resetLocationToHomeOnConfirmation=_resetLocationToHomeOnConfirmation;
 @property(readonly, copy, nonatomic) NSString *alertBody; // @synthesize alertBody=_alertBody;
 @property(readonly, copy, nonatomic) NSString *alertTitle; // @synthesize alertTitle=_alertTitle;
-- (void).cxx_destruct;
 - (id)initWithAlertTitle:(id)arg1 alertBody:(id)arg2 resetLocationToHomeOnConfirmation:(_Bool)arg3;
 - (id)init;
 

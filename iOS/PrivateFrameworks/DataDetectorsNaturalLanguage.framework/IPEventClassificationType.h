@@ -64,6 +64,7 @@
 + (id)eventClassificationTypeFromMessageUnit:(id)arg1 features:(id)arg2;
 + (id)eventClassificationTypeFromMessageUnit:(id)arg1 keywordFeatures:(id)arg2 datafeatures:(id)arg3;
 + (id)fallbackEventTitleForMessageUnits:(id)arg1 subject:(id)arg2 checkForDateInSubject:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLowPriority) _Bool lowPriority; // @synthesize lowPriority=_lowPriority;
 @property(nonatomic, getter=isHighPriority) _Bool highPriority; // @synthesize highPriority=_highPriority;
 @property(retain, nonatomic) NSMutableDictionary *upperPriorityEventTypesIdentifiers; // @synthesize upperPriorityEventTypesIdentifiers=_upperPriorityEventTypesIdentifiers;
@@ -93,7 +94,6 @@
 @property(readonly, nonatomic, getter=isCultureRelated) _Bool cultureRelated; // @synthesize cultureRelated=_cultureRelated;
 @property(readonly, nonatomic, getter=isMealRelated) _Bool mealRelated; // @synthesize mealRelated=_mealRelated;
 @property(readonly, nonatomic, getter=isMovieRelated) _Bool movieRelated; // @synthesize movieRelated=_movieRelated;
-- (void).cxx_destruct;
 - (id)adjustedEventTitleForMessageUnits:(id)arg1 subject:(id)arg2 isDateInSubject:(_Bool)arg3;
 - (_Bool)isDateWithinRange:(id)arg1;
 - (id)_mealClassificationTypeUsingStartDate:(id)arg1;

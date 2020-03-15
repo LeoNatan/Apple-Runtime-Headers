@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *profileRestrictions; // @synthesize profileRestrictions=_profileRestrictions;
 @property(readonly, copy, nonatomic) NSDictionary *globalRestrictions; // @synthesize globalRestrictions=_globalRestrictions;
 @property(readonly, copy, nonatomic) NSDictionary *restrictions; // @synthesize restrictions=_restrictions;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

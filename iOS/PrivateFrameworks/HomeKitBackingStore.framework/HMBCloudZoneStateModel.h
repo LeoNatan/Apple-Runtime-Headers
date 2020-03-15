@@ -15,9 +15,9 @@
 }
 
 + (id)hmbProperties;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMBCloudZoneRebuilderStatus *rebuilderStatus; // @synthesize rebuilderStatus=_rebuilderStatus;
 @property __weak HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *subscriptions;
 - (id)initWithModelID:(id)arg1 parentModelID:(id)arg2;
 

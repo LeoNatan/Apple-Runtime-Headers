@@ -47,6 +47,7 @@
     id <AFAudioAnalyzerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AFAudioAnalyzerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double minimumDurationForEndpointer; // @synthesize minimumDurationForEndpointer=_minimumDurationForEndpointer;
 @property(nonatomic) double automaticEndpointingSuspensionEndTime; // @synthesize automaticEndpointingSuspensionEndTime=_automaticEndpointingSuspensionEndTime;
@@ -56,7 +57,6 @@
 @property double interspeechWaitTime; // @synthesize interspeechWaitTime=_interspeechWaitTime;
 @property double startWaitTime; // @synthesize startWaitTime=_startWaitTime;
 @property int endpointMode; // @synthesize endpointMode=_endpointMode;
-- (void).cxx_destruct;
 - (void)reset;
 - (int)getStatus:(struct AudioQueueBuffer *)arg1;
 - (void)_detectVoiceActivityInSamples:(float *)arg1 numSamples:(unsigned int)arg2;

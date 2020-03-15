@@ -43,6 +43,7 @@
 }
 
 + (void)launchMapsAtCoordinate:(struct CLLocationCoordinate2D)arg1 withTitle:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *showDebugMapRectColors; // @synthesize showDebugMapRectColors=_showDebugMapRectColors;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain) PXPlacesImageCache *cache; // @synthesize cache=_cache;
@@ -62,7 +63,6 @@
 @property __weak id <PXPlacesMapControllerFocusDelegate> focusDelegate; // @synthesize focusDelegate=_focusDelegate;
 @property __weak id <PXPlacesMapControllerChangeDelegate> changeDelegate; // @synthesize changeDelegate=_changeDelegate;
 @property __weak id <PXPlacesMapControllerSelectionDelegate> selectionDelegate; // @synthesize selectionDelegate=_selectionDelegate;
-- (void).cxx_destruct;
 - (void)mapContainerViewDidDisappear;
 - (void)mapContainerViewWillDisappear;
 - (void)mapContainerViewDidAppear;

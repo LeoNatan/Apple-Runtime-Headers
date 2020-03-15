@@ -19,12 +19,12 @@
     NSString *name;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool confirmedNotInPocket; // @synthesize confirmedNotInPocket;
 @property(nonatomic) _Bool wantsBiometricPresentation; // @synthesize wantsBiometricPresentation;
 @property(nonatomic) int intent; // @synthesize intent;
 @property(nonatomic) int source; // @synthesize source;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

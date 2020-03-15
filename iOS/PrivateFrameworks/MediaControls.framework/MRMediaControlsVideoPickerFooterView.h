@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_customTitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *customTitleLabel; // @synthesize customTitleLabel=_customTitleLabel;
 @property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateStyle;
 - (void)setHighlighted:(_Bool)arg1;

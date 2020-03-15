@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) REMObjectID *parentReminderID; // @synthesize parentReminderID=_parentReminderID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REMObjectID *parentReminderID; // @synthesize parentReminderID=_parentReminderID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

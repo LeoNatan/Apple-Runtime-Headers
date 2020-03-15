@@ -11,12 +11,12 @@
 @interface OBSplashBullet : NSObject
 {
     NSString *_text;
-    struct NSImage *_icon;
+    NSImage *_icon;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImage *icon; // @synthesize icon=_icon;
 @property(copy) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 
 @end
 

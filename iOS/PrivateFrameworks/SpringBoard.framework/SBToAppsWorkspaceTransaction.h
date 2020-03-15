@@ -34,9 +34,9 @@
 }
 
 + (_Bool)canInterruptTransaction:(id)arg1 forTransitionRequest:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFloatingDockBehaviorAssertion *floatingDockBehaviorAssertion; // @synthesize floatingDockBehaviorAssertion=_floatingDockBehaviorAssertion;
 @property(readonly, nonatomic) SBSceneLayoutWorkspaceTransaction *layoutTransaction; // @synthesize layoutTransaction=_layoutTransaction;
-- (void).cxx_destruct;
 - (void)_fireAndClearResultBlockIfNecessaryForFailure:(_Bool)arg1;
 - (id)animationController;
 - (void)animationControllerDidRevealApplication:(id)arg1;

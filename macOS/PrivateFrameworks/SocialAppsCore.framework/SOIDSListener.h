@@ -15,8 +15,8 @@
 }
 
 + (id)sharedListener;
-@property(readonly) NSString *listenerID; // @synthesize listenerID=_listenerID;
 - (void).cxx_destruct;
+@property(readonly) NSString *listenerID; // @synthesize listenerID=_listenerID;
 - (id)init;
 - (long long)queryKnownIDStatusForDestinations:(id)arg1 service:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)endListening;

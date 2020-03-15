@@ -14,8 +14,8 @@
     NSOperationQueue *_downloadQueue;
 }
 
-@property(readonly, nonatomic) NSOperationQueue *downloadQueue; // @synthesize downloadQueue=_downloadQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSOperationQueue *downloadQueue; // @synthesize downloadQueue=_downloadQueue;
 - (id)init;
 - (id)initWithAttachments:(id)arg1;
 

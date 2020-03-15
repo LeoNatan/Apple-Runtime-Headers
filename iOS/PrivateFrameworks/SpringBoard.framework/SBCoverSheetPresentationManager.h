@@ -80,6 +80,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBCoverSheetSlidingViewController *coverSheetSlidingViewController; // @synthesize coverSheetSlidingViewController=_coverSheetSlidingViewController;
 @property(copy, nonatomic) CDUnknownBlockType ppt_transitionEndsCallback; // @synthesize ppt_transitionEndsCallback=_ppt_transitionEndsCallback;
 @property(copy, nonatomic) CDUnknownBlockType ppt_transitionBeginsCallback; // @synthesize ppt_transitionBeginsCallback=_ppt_transitionBeginsCallback;
@@ -128,7 +129,6 @@
 @property(nonatomic) __weak id <SBCoverSheetPresentationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long scrollingStrategy; // @synthesize scrollingStrategy=_scrollingStrategy;
 @property(nonatomic) long long participantState; // @synthesize participantState=_participantState;
-- (void).cxx_destruct;
 - (void)_cleanupIconAnimator;
 - (void)_setTransitionProgress:(double)arg1 animated:(_Bool)arg2 gestureActive:(_Bool)arg3 coverSheetProgress:(double)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_animateForProgress:(double)arg1;

@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSArray *_inputGroups;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *inputGroups; // @synthesize inputGroups=_inputGroups;
 @property(copy, nonatomic) NSArray *inputs; // @synthesize inputs=_inputs;
 @property(nonatomic) long long singlePassMediaDataSize; // @synthesize singlePassMediaDataSize=_singlePassMediaDataSize;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property __weak id <AVAssetWriterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AVAssetWriterDataWritingDelegate> dataWritingDelegate; // @synthesize dataWritingDelegate=_dataWritingDelegate;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

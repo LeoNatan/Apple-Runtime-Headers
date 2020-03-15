@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *savedStateMap; // @synthesize savedStateMap=_savedStateMap;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *savedStateMap; // @synthesize savedStateMap=_savedStateMap;
 - (void)_dumpStateRestoration;
 - (void)clearStateForIdentifier:(id)arg1;
 - (void)saveStateForViewController:(id)arg1;

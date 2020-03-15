@@ -13,8 +13,8 @@
     CAMMomentCaptureSettings *__settings;
 }
 
-@property(readonly, nonatomic) CAMMomentCaptureSettings *_settings; // @synthesize _settings=__settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CAMMomentCaptureSettings *_settings; // @synthesize _settings=__settings;
 - (void)executeWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

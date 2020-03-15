@@ -20,10 +20,10 @@
 
 + (Class)conflictingReferenceExpressPassIdentifiersType;
 + (Class)conflictingExpressPassIdentifiersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *conflictingReferenceExpressPassIdentifiers; // @synthesize conflictingReferenceExpressPassIdentifiers=_conflictingReferenceExpressPassIdentifiers;
 @property(retain, nonatomic) NSMutableArray *conflictingExpressPassIdentifiers; // @synthesize conflictingExpressPassIdentifiers=_conflictingExpressPassIdentifiers;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

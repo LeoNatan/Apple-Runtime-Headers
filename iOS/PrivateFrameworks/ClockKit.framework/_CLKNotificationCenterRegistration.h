@@ -15,9 +15,9 @@
 
 + (id)recycledRegistrationWithIdentifier:(unsigned long long)arg1;
 + (void)recycleRegistration:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(nonatomic) __weak id observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)recycledCopy;

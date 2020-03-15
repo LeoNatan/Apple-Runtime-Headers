@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_overlayView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

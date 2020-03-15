@@ -22,11 +22,11 @@
 }
 
 + (id)makeNameForUser:(unsigned int)arg1 name:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<GSAdditionStoring> *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) NSString *nameSpace; // @synthesize nameSpace=_namespace;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)replaceItemAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)copyAdditionContentToURL:(id)arg1 error:(id *)arg2;
 - (_Bool)internalStat:(struct stat *)arg1;

@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
     NSString *_defaultListOriginalIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMObjectID *defaultListMigratedIdentifier; // @synthesize defaultListMigratedIdentifier=_defaultListMigratedIdentifier;
 @property(retain, nonatomic) NSString *defaultListOriginalIdentifier; // @synthesize defaultListOriginalIdentifier=_defaultListOriginalIdentifier;
 @property(readonly, nonatomic) id <CalReminderKitProvider> reminderKitProvider; // @synthesize reminderKitProvider=_reminderKitProvider;
-- (void).cxx_destruct;
 - (BOOL)finishMigrationWithSave:(BOOL)arg1;
 - (void)_didEndMigrationWithSuccess:(BOOL)arg1;
 - (void)recordMigrationFailureWithDescription:(id)arg1 inStage:(unsigned long long)arg2 underlyingError:(id)arg3;

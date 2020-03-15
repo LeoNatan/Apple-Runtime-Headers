@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSRecursiveLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableDictionary *relationshipsDictionary; // @synthesize relationshipsDictionary=_relationshipsDictionary;
-- (void).cxx_destruct;
 - (void)removeAllRelationshipsForItem:(id)arg1;
 - (void)addChildren:(id)arg1 forParent:(id)arg2;
 - (void)setChildren:(id)arg1 forParent:(id)arg2;

@@ -18,10 +18,10 @@
     long long _focusedPart;
 }
 
+- (void).cxx_destruct;
 @property BOOL allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
 @property unsigned long long imagePosition; // @synthesize imagePosition=_imagePosition;
 @property long long hoveredPart; // @synthesize hoveredPart=_hoveredPart;
-- (void).cxx_destruct;
 @property long long focusedPart; // @dynamic focusedPart;
 - (void)performClick:(id)arg1;
 @property long long numParts; // @dynamic numParts;

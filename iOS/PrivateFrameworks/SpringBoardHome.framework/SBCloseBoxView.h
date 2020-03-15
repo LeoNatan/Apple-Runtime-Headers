@@ -17,11 +17,12 @@
 }
 
 + (struct UIEdgeInsets)backgroundInsets;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SBIconListLayout> listLayout; // @synthesize listLayout=_listLayout;
 @property(nonatomic) __weak id <SBCloseBoxViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UITapGestureRecognizer *actionTapGestureRecognizer; // @synthesize actionTapGestureRecognizer=_actionTapGestureRecognizer;
-- (void).cxx_destruct;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+@property(readonly, nonatomic) struct UIEdgeInsets hitTestPadding;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)shouldTrack;
 

@@ -10,6 +10,7 @@
 
 @interface LSCodeEvaluation : NSObject
 {
+    BOOL _lostUIConnection;
     BOOL _haveProgress;
     LSCodeEvaluationInfo *_info;
     LSCodeEvaluationClientManager *_manager;
@@ -17,15 +18,18 @@
     CDUnknownBlockType _cancellationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType cancellationHandler; // @synthesize cancellationHandler=_cancellationHandler;
 @property BOOL haveProgress; // @synthesize haveProgress=_haveProgress;
 @property(retain) NSDate *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
 @property LSCodeEvaluationClientManager *manager; // @synthesize manager=_manager;
 @property(retain) LSCodeEvaluationInfo *info; // @synthesize info=_info;
-- (void).cxx_destruct;
+@property BOOL lostUIConnection; // @synthesize lostUIConnection=_lostUIConnection;
 @property(readonly) BOOL mayPresentUI;
 @property long long completedUnits;
 @property long long totalUnits;
+@property(copy) NSDate *notarizationDate;
+@property(getter=isNotarized) BOOL notarized;
 @property(copy) NSString *malwareName;
 @property(copy) NSString *responsibleTeamID;
 @property(copy) NSString *processTeamID;

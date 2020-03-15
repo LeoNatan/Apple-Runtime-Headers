@@ -30,12 +30,12 @@
 }
 
 + (_Bool)validateInitialMessage:(id)arg1 applicationData:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *observedAnnotations; // @synthesize observedAnnotations=_observedAnnotations;
 @property(retain) NSMutableSet *observedPageModelControllers; // @synthesize observedPageModelControllers=_observedPageModelControllers;
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak id <AKSidecarControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool shouldObserveEdits; // @synthesize shouldObserveEdits=_shouldObserveEdits;
-- (void).cxx_destruct;
 - (void)_sendDictionary:(id)arg1;
 - (void)_selectionChangedOnPageController:(id)arg1;
 - (void)_annotation:(id)arg1 modifiedInPageController:(unsigned long long)arg2 properties:(id)arg3;

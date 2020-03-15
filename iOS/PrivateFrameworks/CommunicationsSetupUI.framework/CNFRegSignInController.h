@@ -25,11 +25,11 @@
     _Bool _useSystemAccount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hideLearnMoreButton; // @synthesize hideLearnMoreButton=_hideLearnMoreButton;
 @property(nonatomic) unsigned long long signinFailureCount; // @synthesize signinFailureCount=_signinFailureCount;
 @property(copy, nonatomic) NSString *pendingPassword; // @synthesize pendingPassword=_pendingPassword;
 @property(copy, nonatomic) NSString *pendingUsername; // @synthesize pendingUsername=_pendingUsername;
-- (void).cxx_destruct;
 - (void)_setupEventHandlers;
 - (void)_setupAppearBlockForAccountAuthorizeWithAuthID:(id)arg1 token:(id)arg2;
 - (void)_showAccountNotAuthorizedSheetWithAuthID:(id)arg1 token:(id)arg2;

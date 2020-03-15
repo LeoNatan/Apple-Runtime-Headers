@@ -25,12 +25,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFImage *image; // @synthesize image=_image;
 @property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
 @property(copy, nonatomic) NSString *offerIdentifier; // @synthesize offerIdentifier=_offerIdentifier;
 @property(copy, nonatomic) NSString *sublabel; // @synthesize sublabel=_sublabel;
 @property(retain, nonatomic) SFActionItem *actionItem; // @synthesize actionItem=_actionItem;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
@@ -70,6 +70,7 @@
 @property(copy, nonatomic) NSArray *storeIdentifiers;
 @property(readonly) Class superclass;
 @property(copy, nonatomic) NSString *type;
+@property(copy, nonatomic) NSString *universalLibraryID;
 
 @end
 

@@ -17,11 +17,11 @@
     id <EMVIPManager> _vipManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <EMVIPManager> vipManager; // @synthesize vipManager=_vipManager;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 @property(readonly, nonatomic) EDMailboxPersistence *mailboxPersistence; // @synthesize mailboxPersistence=_mailboxPersistence;
 @property(readonly, nonatomic) id <EDAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
-- (void).cxx_destruct;
 - (id)simplifySingleSubpredicate:(id)arg1;
 - (id)simplifyNotPredicate:(id)arg1;
 - (id)simplifyOrPredicate:(id)arg1;

@@ -20,13 +20,13 @@
     NSObject<OS_dispatch_source> *_timeoutTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(readonly, nonatomic) _Bool requiresActiveScan; // @synthesize requiresActiveScan=_requiresActiveScan;
 @property(readonly, nonatomic) _Bool alwaysNotify; // @synthesize alwaysNotify=_alwaysNotify;
 @property(readonly, nonatomic) CBUUID *serviceUUID; // @synthesize serviceUUID=_serviceUUID;
 @property(readonly, nonatomic) CDUnknownBlockType discoveryHandler; // @synthesize discoveryHandler=_discoveryHandler;
 @property(nonatomic) unsigned int discoveryIdentifier; // @synthesize discoveryIdentifier=_discoveryIdentifier;
-- (void).cxx_destruct;
 - (_Bool)_addPeripheralUUID:(id)arg1;
 - (id)initWithHandler:(CDUnknownBlockType)arg1 serviceUUID:(id)arg2 alwaysNotify:(_Bool)arg3 requiresActiveScan:(_Bool)arg4;
 

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     AVPlayerController *_playerController;
 }
 
-@property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

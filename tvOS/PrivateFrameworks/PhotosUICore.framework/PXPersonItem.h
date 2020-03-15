@@ -17,12 +17,12 @@
     UIImage *_faceImage;
 }
 
+- (void).cxx_destruct;
 @property __weak UIImage *faceImage; // @synthesize faceImage=_faceImage;
 @property(copy) CDUnknownBlockType fastDisplayBlock; // @synthesize fastDisplayBlock=_fastDisplayBlock;
 @property(copy) CDUnknownBlockType faceImageLoadingCompletionBlock; // @synthesize faceImageLoadingCompletionBlock=_faceImageLoadingCompletionBlock;
 @property int faceImageRequestID; // @synthesize faceImageRequestID=_faceImageRequestID;
 @property(retain, nonatomic) PHPerson *modelObject; // @synthesize modelObject=_modelObject;
-- (void).cxx_destruct;
 - (void)updateWithModel:(id)arg1;
 - (id)initWithPerson:(id)arg1;
 

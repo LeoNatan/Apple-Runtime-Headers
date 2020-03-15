@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) INFlight *flight; // @synthesize flight=_flight;
 @property(readonly, copy, nonatomic) INSeat *reservedSeat; // @synthesize reservedSeat=_reservedSeat;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

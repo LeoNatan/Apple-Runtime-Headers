@@ -17,9 +17,9 @@
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int maxLines; // @synthesize maxLines=_maxLines;
 @property(copy) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

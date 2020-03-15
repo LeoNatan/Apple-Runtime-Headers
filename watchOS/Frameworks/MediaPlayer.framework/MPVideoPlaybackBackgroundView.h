@@ -17,9 +17,9 @@
     MPAVController *_player;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPAVController *player; // @synthesize player=_player;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
-- (void).cxx_destruct;
 - (void)_updateDisplay;
 - (id)_imageNamed:(id)arg1;
 - (void)_videoViewDidMoveToWindow:(id)arg1;

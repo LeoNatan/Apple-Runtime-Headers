@@ -61,6 +61,7 @@
 + (id)pauseMarkupString:(id)arg1;
 + (id)spellOutMarkupString:(id)arg1 string:(id)arg2;
 + (id)currentLanguageCode;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldHandleAudioInterruptions; // @synthesize shouldHandleAudioInterruptions=_shouldHandleAudioInterruptions;
 @property(nonatomic) double audioInterruptionStartedTime; // @synthesize audioInterruptionStartedTime=_audioInterruptionStartedTime;
 @property(nonatomic) _Bool didRequestResumeSpeakingDuringAudioInterruption; // @synthesize didRequestResumeSpeakingDuringAudioInterruption=_didRequestResumeSpeakingDuringAudioInterruption;
@@ -75,7 +76,6 @@
 @property(readonly, nonatomic) _Bool showControlCenterControls; // @synthesize showControlCenterControls=_showControlCenterControls;
 @property(retain, nonatomic) AXSpeechAction *requestedActionDuringAudioInterruption; // @synthesize requestedActionDuringAudioInterruption=_requestedActionDuringAudioInterruption;
 @property(nonatomic) _Bool speechEnabled; // @synthesize speechEnabled=_speechEnabled;
-- (void).cxx_destruct;
 - (void)_processWillSpeechRange:(id)arg1;
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange)arg2 forRequest:(id)arg3;
 - (void)_processDidContinueCallback:(id)arg1;

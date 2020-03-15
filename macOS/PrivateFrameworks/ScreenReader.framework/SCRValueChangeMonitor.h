@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double __pollInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setCurrentPollCount:) int _currentPollCount; // @synthesize _currentPollCount=__currentPollCount;
 @property(readonly, nonatomic) double _pollInterval; // @synthesize _pollInterval=__pollInterval;
 @property(nonatomic, setter=_setPollDelegate:) __weak id <SCRValueChangeMonitorDelegate> _pollDelegate; // @synthesize _pollDelegate=__pollDelegate;
 @property(readonly, nonatomic) double _pollDuration; // @synthesize _pollDuration=__pollDuration;
-- (void).cxx_destruct;
 - (void)_stopPolling;
 - (void)_continuePolling;
 - (void)invalidatePollDelegate;

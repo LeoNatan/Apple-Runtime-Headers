@@ -18,8 +18,8 @@
 + (id)titlesForLanguageIdentifiers:(id)arg1;
 + (id)assistantLanguageTitlesDictionary;
 + (id)outputLanguageIdentifiers;
-@property(retain, nonatomic) NSMutableDictionary *cachedAvailableVoices; // @synthesize cachedAvailableVoices=_cachedAvailableVoices;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *cachedAvailableVoices; // @synthesize cachedAvailableVoices=_cachedAvailableVoices;
 - (void)setOutputVoiceLanguage:(id)arg1 gender:(long long)arg2;
 - (id)dialectForLanguageIdentifier:(id)arg1;
 - (id)_regionForLanguageIdentifier:(id)arg1;

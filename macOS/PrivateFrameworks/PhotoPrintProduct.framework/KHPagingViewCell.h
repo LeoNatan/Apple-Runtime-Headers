@@ -42,6 +42,7 @@
 }
 
 + (struct CGSize)contentViewSizeForLayouts:(id)arg1 layoutScale:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UXView *documentView; // @synthesize documentView=_documentView;
 @property(readonly, nonatomic) NSMutableDictionary *contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) __weak UXViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
@@ -64,7 +65,6 @@
 @property(retain, nonatomic) NSArray *layouts; // @synthesize layouts=_layouts;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (id)accessibilityValueDescription;
 - (void)scrollViewDidEndLiveMagnify:(id)arg1;
 - (void)scrollViewWillStartLiveMagnify:(id)arg1;

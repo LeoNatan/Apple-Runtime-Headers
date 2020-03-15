@@ -14,9 +14,9 @@
     NSString *_channelID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isNewsAppPurchase; // @synthesize isNewsAppPurchase=_isNewsAppPurchase;
 @property(readonly, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
-- (void).cxx_destruct;
 - (id)initWithChannelID:(id)arg1 isNewsAppPurchase:(BOOL)arg2;
 
 @end

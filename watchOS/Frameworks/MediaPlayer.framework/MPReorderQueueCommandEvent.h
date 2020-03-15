@@ -14,9 +14,9 @@
     int _destinationOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int destinationOffset; // @synthesize destinationOffset=_destinationOffset;
 @property(readonly, nonatomic) NSString *insertAfterContextItemID; // @synthesize insertAfterContextItemID=_insertAfterContextItemID;
-- (void).cxx_destruct;
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 
 @end

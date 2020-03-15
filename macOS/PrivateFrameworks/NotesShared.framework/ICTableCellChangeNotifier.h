@@ -13,8 +13,8 @@
     NSHashTable *_observers;
 }
 
-@property(retain) NSHashTable *observers; // @synthesize observers=_observers;
 - (void).cxx_destruct;
+@property(retain) NSHashTable *observers; // @synthesize observers=_observers;
 - (void)notifyOfChangeAtColumnID:(id)arg1 rowID:(id)arg2 delta:(long long)arg3;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

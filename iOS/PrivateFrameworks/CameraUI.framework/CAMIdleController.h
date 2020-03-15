@@ -19,9 +19,9 @@
     NSTimer *_enableIdleTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_enableIdleTimer, setter=_setEnableIdleTimer:) NSTimer *enableIdleTimer; // @synthesize enableIdleTimer=_enableIdleTimer;
 @property(nonatomic, getter=isUpdatingIdleTimer, setter=_setUpdatingIdleTimer:) _Bool updatingIdleTimer; // @synthesize updatingIdleTimer=_updatingIdleTimer;
-- (void).cxx_destruct;
 - (void)_indefinitelyDisableApplicationIdleTimer;
 - (void)_immediatelyEnableApplicationIdleTimer;
 - (void)_teardownEnableIdleTimer;

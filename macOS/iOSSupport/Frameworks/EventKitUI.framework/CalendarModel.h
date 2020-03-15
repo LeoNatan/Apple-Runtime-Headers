@@ -18,9 +18,9 @@
 
 + (unsigned long long)errorForSource:(id)arg1;
 + (id)sortedEnabledDelegateSourcesFromStore:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(readonly, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
-- (void).cxx_destruct;
 - (id)refreshCalendarDataIfNeeded:(BOOL)arg1;
 - (id)refreshAccountListIfNeeded:(BOOL)arg1;
 - (void)_performCommonInitialization;

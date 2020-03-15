@@ -21,12 +21,12 @@
 
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) BOOL isTextExecSegment; // @synthesize isTextExecSegment=_isTextExecSegment;
 @property(readonly) NSString *path; // @synthesize path=_path;
 @property(readonly) NSUUID *imageUUID; // @synthesize imageUUID=_imageUUID;
 @property(readonly) unsigned long long size; // @synthesize size=_size;
 @property(readonly) unsigned long long loadAddress; // @synthesize loadAddress=_loadAddress;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)addNewInformationFromImageInfo:(id)arg1;
 - (id)initWithUUID:(id)arg1 andAddress:(unsigned long long)arg2 andSize:(unsigned long long)arg3 andPath:(id)arg4 isTextExecSegment:(BOOL)arg5;

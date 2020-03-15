@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_correctedText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *correctedText; // @synthesize correctedText=_correctedText;
 @property(nonatomic) int characterSubstitutionCount; // @synthesize characterSubstitutionCount=_characterSubstitutionCount;
 @property(nonatomic) int characterDeletionCount; // @synthesize characterDeletionCount=_characterDeletionCount;
 @property(nonatomic) int characterInsertionCount; // @synthesize characterInsertionCount=_characterInsertionCount;
 @property(nonatomic) int characterModificationCount; // @synthesize characterModificationCount=_characterModificationCount;
 @property(nonatomic) int alternativeSelectionCount; // @synthesize alternativeSelectionCount=_alternativeSelectionCount;
-- (void).cxx_destruct;
 
 @end
 

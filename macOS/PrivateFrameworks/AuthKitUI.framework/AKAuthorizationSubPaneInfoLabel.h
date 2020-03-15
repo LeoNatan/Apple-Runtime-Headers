@@ -15,10 +15,10 @@
     unsigned long long _internalInfoLabelType;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long internalInfoLabelType; // @synthesize internalInfoLabelType=_internalInfoLabelType;
 @property(readonly) NSTextField *infoLabel; // @synthesize infoLabel=_infoLabel;
 @property double marginInset; // @synthesize marginInset=_marginInset;
-- (void).cxx_destruct;
 @property unsigned long long infoLabelType;
 - (id)titleFont;
 - (id)messageFont;

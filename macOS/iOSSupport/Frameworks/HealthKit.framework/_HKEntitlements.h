@@ -22,8 +22,8 @@
 + (void)_setEntitlementsForCurrentTask:(id)arg1;
 + (id)_containerAppExtensionEntitlementsForCurrentTask;
 + (id)entitlementsForCurrentTaskWithError:(id *)arg1;
-@property(readonly, copy, nonatomic) NSDictionary *entitlementValues; // @synthesize entitlementValues=_entitlementValues;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *entitlementValues; // @synthesize entitlementValues=_entitlementValues;
 - (id)description;
 - (id)_typesFromIdentifierArray:(id)arg1;
 - (id)typesForReadAuthorizationOverride;

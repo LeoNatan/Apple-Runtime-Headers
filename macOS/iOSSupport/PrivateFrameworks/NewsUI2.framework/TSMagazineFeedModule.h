@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/TSMagazineFeedModuleType-Protocol.h>
-
-@interface TSMagazineFeedModule : NSObject <TSMagazineFeedModuleType>
+@interface TSMagazineFeedModule : NSObject
 {
     // Error parsing type: , name: resolver
     // Error parsing type: , name: tracker

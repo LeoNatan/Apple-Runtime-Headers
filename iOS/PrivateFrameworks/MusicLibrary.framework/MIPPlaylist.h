@@ -91,6 +91,7 @@
 
 + (Class)itemsType;
 + (Class)childIdentifiersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSMutableArray *childIdentifiers; // @synthesize childIdentifiers=_childIdentifiers;
 @property(retain, nonatomic) NSString *secondaryArtworkId; // @synthesize secondaryArtworkId=_secondaryArtworkId;
@@ -135,7 +136,6 @@
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) long long storeId; // @synthesize storeId=_storeId;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

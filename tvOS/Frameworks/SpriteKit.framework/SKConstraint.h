@@ -35,9 +35,9 @@
 + (id)positionY:(id)arg1;
 + (id)positionX:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKNode *referenceNode; // @synthesize referenceNode=_referenceNode;
 @property _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqualToConstraint:(id)arg1;

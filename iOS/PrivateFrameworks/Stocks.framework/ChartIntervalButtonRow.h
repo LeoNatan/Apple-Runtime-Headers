@@ -17,11 +17,11 @@
     long long _maxChartInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long maxChartInterval; // @synthesize maxChartInterval=_maxChartInterval;
 @property(nonatomic) __weak ChartIntervalButton *selectedButton; // @synthesize selectedButton=_selectedButton;
 @property(retain, nonatomic) NSArray *intervalButtons; // @synthesize intervalButtons=_intervalButtons;
 @property(nonatomic) __weak id <ChartIntervalButtonRowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateMaxChartInterval:(long long)arg1;
 - (void)selectChartIntervalButtonForInterval:(long long)arg1;
 - (void)intervalButtonsTapped:(id)arg1;

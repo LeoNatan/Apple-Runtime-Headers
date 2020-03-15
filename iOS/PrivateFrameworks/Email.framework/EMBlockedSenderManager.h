@@ -20,10 +20,10 @@
 + (_Bool)shouldMoveToTrashForMailboxType:(long long)arg1;
 + (void)setPromptForBlockedSender:(_Bool)arg1;
 + (_Bool)shouldPromptForBlockedSender;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 @property(retain, nonatomic) id <EFScheduler> resetScheduler; // @synthesize resetScheduler=_resetScheduler;
 @property(retain, nonatomic) NSSet *blockedSenderCache; // @synthesize blockedSenderCache=_blockedSenderCache;
-- (void).cxx_destruct;
 - (void)_unblockPhoneNumber:(id)arg1;
 - (void)_blockPhoneNumber:(id)arg1;
 - (_Bool)areAnyEmailAddressesBlocked:(id)arg1;

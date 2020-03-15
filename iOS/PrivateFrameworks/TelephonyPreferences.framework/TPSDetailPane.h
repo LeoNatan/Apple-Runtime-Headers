@@ -17,9 +17,9 @@
     UITableViewCell *_tableViewCell;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITableViewCell *tableViewCell; // @synthesize tableViewCell=_tableViewCell;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)setPreferenceValue:(id)arg1;
 - (id)preferenceValue;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

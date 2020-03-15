@@ -22,13 +22,13 @@
     NSMutableSet *_observingDomains;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSMutableSet *observingDomains; // @synthesize observingDomains=_observingDomains;
 @property(readonly, copy, nonatomic) NSSet *entitledDomains; // @synthesize entitledDomains=_entitledDomains;
 @property(readonly, nonatomic) BSMutableIntegerMap *dataByDomain; // @synthesize dataByDomain=_dataByDomain;
 @property(readonly, nonatomic) NSXPCConnection *clientXPCConnection; // @synthesize clientXPCConnection=_clientXPCConnection;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(readonly, nonatomic) __weak id <STStatusDomainServerHandle> serverHandle; // @synthesize serverHandle=_serverHandle;
-- (void).cxx_destruct;
 - (void)_internalQueue_observeData:(id)arg1 forDomain:(unsigned int)arg2 dataSendBlock:(CDUnknownBlockType)arg3 diffSendBlock:(CDUnknownBlockType)arg4;
 - (void)observeData:(id)arg1 forDomain:(unsigned int)arg2;
 - (void)stopObservingDomains:(id)arg1;

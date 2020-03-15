@@ -13,8 +13,8 @@
     UIVisualEffectView *_backdropView;
 }
 
-@property(readonly, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) UIView *contentView;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 + (BOOL)isMapsURL:(id)arg1;
 + (BOOL)isStandardGoogleMapsURL:(id)arg1;
 + (BOOL)isStandardAppleMapsURL:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *queryDictionary; // @synthesize queryDictionary=_queryDictionary;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)streetViewLocation;
 - (BOOL)showsBicycling;
 - (BOOL)showsStreetView;

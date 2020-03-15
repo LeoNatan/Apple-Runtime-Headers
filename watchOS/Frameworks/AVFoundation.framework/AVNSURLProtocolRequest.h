@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     struct __CFError *_error;
 }
 
-@property(nonatomic) __weak AVAssetCustomURLBridgeForNSURLProtocol *bridge; // @synthesize bridge=_bridge;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AVAssetCustomURLBridgeForNSURLProtocol *bridge; // @synthesize bridge=_bridge;
 @property(nonatomic) struct _CFURLConnection *connection;
 - (void)dealloc;
 

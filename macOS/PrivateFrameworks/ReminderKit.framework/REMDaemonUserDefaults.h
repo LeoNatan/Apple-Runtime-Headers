@@ -6,7 +6,7 @@
 
 #import <ReminderKit/REMUserDefaults.h>
 
-@class NSData, NSDate, NSDateComponents, NSNumber, NSString, REMObjectID;
+@class NSData, NSDate, NSDateComponents, NSNumber, NSString, NSURL, REMObjectID;
 
 @interface REMDaemonUserDefaults : REMUserDefaults
 {
@@ -27,8 +27,12 @@
 @property(copy, nonatomic) NSDate *lastPresentAlarmDate;
 @property(copy, nonatomic) NSDate *nextScheduledAlarmDate;
 @property(copy, nonatomic) NSNumber *spotlightIndexVersion;
+@property(retain, nonatomic) NSString *acAccountIdentifierToMigrateInactivatedCalDavData;
 @property(retain, nonatomic) NSString *acAccountIdentifierToMergeLocalDataIntoSyncData;
+- (void)_deletePreferredDefaultListObjectIDUrl;
+@property(retain, nonatomic) NSURL *preferredDefaultListObjectIDUrl;
 - (id)observePreferredDefaultListIDWithBlock:(CDUnknownBlockType)arg1;
+- (void)deletePreferredDefaultListID;
 @property(retain, nonatomic) REMObjectID *preferredDefaultListID;
 @property(nonatomic) BOOL cloudKitMigrationDisableCleanUp;
 @property(retain, nonatomic) NSNumber *cloudKitResultsLimitPerSyncOperation;

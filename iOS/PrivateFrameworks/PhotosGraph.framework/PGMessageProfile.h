@@ -24,6 +24,7 @@
 
 + (id)persistedMessageProfileWithManager:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *numberOfLoveEmojisByPersonLocalIdentifier; // @synthesize numberOfLoveEmojisByPersonLocalIdentifier=_numberOfLoveEmojisByPersonLocalIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *addressMentionsByContactIdentifier; // @synthesize addressMentionsByContactIdentifier=_addressMentionsByContactIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *numberOfMessagesPerChatIdentifier; // @synthesize numberOfMessagesPerChatIdentifier=_numberOfMessagesPerChatIdentifier;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSSet *groupChatIdentifiers; // @synthesize groupChatIdentifiers=_groupChatIdentifiers;
 @property(readonly, nonatomic) NSSet *personalChatIdentifiers; // @synthesize personalChatIdentifiers=_personalChatIdentifiers;
 @property(retain, nonatomic) PGManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (_Bool)persistOnDisk;
 - (void)registerMentionedLocation:(id)arg1 contactIdentifier:(id)arg2 onDate:(id)arg3;
 - (void)registerLoveEmoji:(unsigned long long)arg1 forPersonLocalIdentifier:(id)arg2;

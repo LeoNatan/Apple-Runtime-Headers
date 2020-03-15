@@ -13,8 +13,8 @@
     PHMediaFormatLivePhotoConversionRequest *_livePhotoConversionRequest;
 }
 
-@property(retain) PHMediaFormatLivePhotoConversionRequest *livePhotoConversionRequest; // @synthesize livePhotoConversionRequest=_livePhotoConversionRequest;
 - (void).cxx_destruct;
+@property(retain) PHMediaFormatLivePhotoConversionRequest *livePhotoConversionRequest; // @synthesize livePhotoConversionRequest=_livePhotoConversionRequest;
 - (void)postProcessSuccessfulCompositeRequest;
 - (void)enumerateSubrequests:(CDUnknownBlockType)arg1;
 - (void)enqueueSubrequestsOnConversionManager:(id)arg1;

@@ -28,12 +28,12 @@
 }
 
 + (Class)itemsType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeToTap; // @synthesize timeToTap=_timeToTap;
 @property(nonatomic) unsigned int engagedItem; // @synthesize engagedItem=_engagedItem;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) PREUMMessageMetadata *msgMetadata; // @synthesize msgMetadata=_msgMetadata;
 @property(retain, nonatomic) PREUMTrialExperiment *experiment; // @synthesize experiment=_experiment;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_pathToAppleDoubleRealFileCounterpart;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pathToAppleDoubleRealFileCounterpart; // @synthesize pathToAppleDoubleRealFileCounterpart=_pathToAppleDoubleRealFileCounterpart;
 @property(nonatomic) _Bool isAppleDoubleFile; // @synthesize isAppleDoubleFile=_isAppleDoubleFile;
 @property(nonatomic) _Bool fileSizeIsSet; // @synthesize fileSizeIsSet=_fileSizeIsSet;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSString *fileType; // @synthesize fileType=_fileType;
 @property(retain, nonatomic) NSString *pathInArchive; // @synthesize pathInArchive=_pathInArchive;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

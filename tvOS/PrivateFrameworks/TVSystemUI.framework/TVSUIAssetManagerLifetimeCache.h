@@ -19,10 +19,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 @property(retain, nonatomic) NSMutableDictionary *applicationIdentifierToActiveCacheKeys; // @synthesize applicationIdentifierToActiveCacheKeys=_applicationIdentifierToActiveCacheKeys;
 @property(retain, nonatomic) NSMutableDictionary *proxyCacheKeyToAssetManager; // @synthesize proxyCacheKeyToAssetManager=_proxyCacheKeyToAssetManager;
-- (void).cxx_destruct;
 - (void)_removeAllCacheDataForProxy:(id)arg1;
 - (void)_updateForUninstalledApplications:(id)arg1;
 - (void)_removeOldCacheDataForInstalledAppProxy:(id)arg1;

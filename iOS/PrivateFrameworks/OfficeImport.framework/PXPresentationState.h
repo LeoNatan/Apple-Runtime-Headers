@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)setPptChartGraphicPropertyDefaultBlock:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CXNamespace *PXPresentationMLNamespace; // @synthesize PXPresentationMLNamespace=mPXPresentationMLNamespace;
 @property(readonly, nonatomic) NSMutableDictionary *commentAuthorIdToIndexMap; // @synthesize commentAuthorIdToIndexMap=mCommentAuthorIdToIndexMap;
 @property(retain, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancel;
-- (void).cxx_destruct;
 - (void)setupNSForXMLFormat:(int)arg1;
 - (_Bool)isCancelled;
 - (void)setTgtPresentation:(id)arg1;

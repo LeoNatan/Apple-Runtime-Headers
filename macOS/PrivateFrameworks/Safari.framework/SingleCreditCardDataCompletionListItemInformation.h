@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     WBSSingleCreditCardData *_singleCreditCardData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSSingleCreditCardData *singleCreditCardData; // @synthesize singleCreditCardData=_singleCreditCardData;
 @property(readonly, copy, nonatomic) NSString *headerTextForFunctionBar; // @synthesize headerTextForFunctionBar=_headerTextForFunctionBar;
 @property(readonly, copy, nonatomic) NSString *headerTextForCompletionList; // @synthesize headerTextForCompletionList=_headerTextForCompletionList;
 @property(readonly, copy, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
-- (void).cxx_destruct;
 - (id)initWithSingleCreditCardData:(id)arg1 displayText:(id)arg2 headerTextForCompletionList:(id)arg3 headerTextForFunctionBar:(id)arg4;
 - (id)init;
 

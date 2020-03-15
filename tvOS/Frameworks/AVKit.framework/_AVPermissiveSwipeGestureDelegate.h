@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIGestureRecognizer *_parentGestureRecognizer;
 }
 
-@property(nonatomic) __weak UIGestureRecognizer *parentGestureRecognizer; // @synthesize parentGestureRecognizer=_parentGestureRecognizer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIGestureRecognizer *parentGestureRecognizer; // @synthesize parentGestureRecognizer=_parentGestureRecognizer;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceivePress:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

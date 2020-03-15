@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_vcsNeedingUpdateConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *vcsNeedingUpdateConstraints; // @synthesize vcsNeedingUpdateConstraints=_vcsNeedingUpdateConstraints;
 @property(retain) SiriUINavigationBarView *navigationBarView; // @synthesize navigationBarView=_navigationBarView;
 @property(retain) NSViewController *selectedVC; // @synthesize selectedVC=_selectedVC;
 @property(retain) NSMutableArray *mutableViewControllers; // @synthesize mutableViewControllers=_mutableViewControllers;
 @property __weak id <SiriUINavigationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateNavigationBarViewWithViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_sendDelegateDidLayoutViewController:(id)arg1;
 - (void)_willShowViewController:(id)arg1 animated:(BOOL)arg2;

@@ -16,11 +16,11 @@
     VSDevice *_currentDevice;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSDevice *currentDevice; // @synthesize currentDevice=_currentDevice;
 @property(retain, nonatomic) NSOperationQueue *subqueue; // @synthesize subqueue=_subqueue;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) VSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)init;
 

@@ -14,9 +14,9 @@
     NSString *_deviceId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 @property(readonly, nonatomic) unsigned long long vehicleConnectedState; // @synthesize vehicleConnectedState=_vehicleConnectedState;
-- (void).cxx_destruct;
 - (id)initWithVehicleConnectedState:(unsigned long long)arg1 deviceId:(id)arg2;
 
 @end

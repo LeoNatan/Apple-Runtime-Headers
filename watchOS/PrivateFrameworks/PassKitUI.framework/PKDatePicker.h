@@ -7,11 +7,11 @@
 #import <UIKit/UIView.h>
 
 @class NSCalendar, NSDate, NSLocale;
-@protocol PKDatePickerDelegate;
+@protocol PKDatePickerDelegate, PKDatePickerInternalImplementationProtocol;
 
 @interface PKDatePicker : UIView
 {
-    struct UIView *_internalPicker;
+    UIView<PKDatePickerInternalImplementationProtocol> *_internalPicker;
     _Bool _showsDay;
     _Bool _showsMonth;
     _Bool _showsYear;
@@ -24,6 +24,7 @@
 }
 
 + (_Bool)_preventsAppearanceProxyCustomization;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesDarkAppearance; // @synthesize usesDarkAppearance=_usesDarkAppearance;
 @property(nonatomic) id <PKDatePickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
@@ -33,9 +34,8 @@
 @property(readonly, nonatomic) _Bool showsYear; // @synthesize showsYear=_showsYear;
 @property(readonly, nonatomic) _Bool showsMonth; // @synthesize showsMonth=_showsMonth;
 @property(readonly, nonatomic) _Bool showsDay; // @synthesize showsDay=_showsDay;
-- (void).cxx_destruct;
 - (void)_forceReloadInternalPicker;
-- (void)_dateValueChanged:(struct UIView *)arg1;
+- (void)_dateValueChanged:(id)arg1;
 - (Class)_classForDay:(_Bool)arg1 month:(_Bool)arg2 year:(_Bool)arg3 style:(unsigned int)arg4;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

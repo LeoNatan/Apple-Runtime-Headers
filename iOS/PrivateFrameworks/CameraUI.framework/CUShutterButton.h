@@ -34,6 +34,7 @@
 + (id)shutterButtonWithSpec:(struct CAMShutterButtonSpec)arg1;
 + (id)shutterButton;
 + (id)smallShutterButton;
+- (void).cxx_destruct;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(retain, nonatomic) UIView *_spinnerView; // @synthesize _spinnerView=__spinnerView;
 @property(retain, nonatomic) UIView *_stopModeBackground; // @synthesize _stopModeBackground=__stopModeBackground;
@@ -50,7 +51,6 @@
 @property(nonatomic) struct CAMShutterButtonSpec spec; // @synthesize spec=_spec;
 @property(nonatomic) __weak id <CAMShutterButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)_updateSpinningAnimations;
 - (_Bool)_isSpinningSupportedForLayoutStyle:(long long)arg1;
 - (void)_performModeSwitchAnimationFromMode:(long long)arg1 toMode:(long long)arg2 animated:(_Bool)arg3;

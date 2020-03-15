@@ -23,10 +23,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PETRawMessage *rawMessage; // @synthesize rawMessage=_rawMessage;
 @property(nonatomic) double bucket; // @synthesize bucket=_bucket;
 @property(nonatomic) unsigned int datestamp; // @synthesize datestamp=_datestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

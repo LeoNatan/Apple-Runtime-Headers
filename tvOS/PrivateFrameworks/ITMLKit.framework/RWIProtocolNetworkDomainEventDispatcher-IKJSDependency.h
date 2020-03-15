@@ -8,6 +8,7 @@
 
 @interface RWIProtocolNetworkDomainEventDispatcher (IKJSDependency)
 - (void)safe_loadingFinishedWithRequestId:(id)arg1 timestamp:(double)arg2 sourceMapURL:(id *)arg3 metrics:(id *)arg4;
+- (void)safe_responseInterceptedWithRequestId:(id)arg1 response:(id)arg2;
 - (void)safe_dataReceivedWithRequestId:(id)arg1 timestamp:(double)arg2 dataLength:(int)arg3 encodedDataLength:(int)arg4;
 - (void)safe_loadingFailedWithRequestId:(id)arg1 timestamp:(double)arg2 errorText:(id)arg3 canceled:(_Bool *)arg4;
 - (void)safe_requestServedFromMemoryCacheWithRequestId:(id)arg1 frameId:(id)arg2 loaderId:(id)arg3 documentURL:(id)arg4 timestamp:(double)arg5 initiator:(id)arg6 resource:(id)arg7;

@@ -29,6 +29,7 @@
     struct _xmlNode *_xmlNode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _xmlNode *xmlNode; // @synthesize xmlNode=_xmlNode;
 @property(copy, nonatomic) NSDate *dateValue; // @synthesize dateValue=_dateValue;
 @property(copy, nonatomic) NSNumber *numberValue; // @synthesize numberValue=_numberValue;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
 @property(copy, nonatomic) NSString *rawXMLString; // @synthesize rawXMLString=_rawXMLString;
 @property(nonatomic) __weak ONOXMLDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

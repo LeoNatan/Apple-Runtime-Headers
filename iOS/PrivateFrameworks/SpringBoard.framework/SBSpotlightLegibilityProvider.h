@@ -20,8 +20,8 @@
     id <SBFLegibilitySettingsProviderDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBFLegibilitySettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBFLegibilitySettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (struct CGRect)_rectForSpotlightHeader;
 - (void)_calculateLegibilitySettings;
 - (void)wallpaperGeometryDidChangeForVariant:(long long)arg1;

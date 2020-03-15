@@ -17,10 +17,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=setACBSBarcodeInfo:) NSDictionary *acbsBarcodeInfo; // @synthesize acbsBarcodeInfo=_acbsBarcodeInfo;
 @property(readonly, nonatomic) CIBarcodeDescriptor *barcodeDescriptor; // @synthesize barcodeDescriptor=_barcodeDescriptor;
 @property(readonly, copy, nonatomic) NSString *symbology; // @synthesize symbology=_symbology;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *payloadStringValue;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

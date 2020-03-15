@@ -23,12 +23,12 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mResults; // @synthesize mResults=_mResults;
 @property(copy, nonatomic) NSString *range; // @synthesize range=_range;
 @property(copy, nonatomic) NSNumber *total; // @synthesize total=_total;
 @property(copy, nonatomic) NSNumber *status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (void)addResult:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) NSArray *results;

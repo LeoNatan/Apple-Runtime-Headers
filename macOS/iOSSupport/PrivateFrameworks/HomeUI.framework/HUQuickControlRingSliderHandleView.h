@@ -15,10 +15,10 @@
     CAShapeLayer *_circleLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *circleLayer; // @synthesize circleLayer=_circleLayer;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(nonatomic) unsigned long long handleViewStyle; // @synthesize handleViewStyle=_handleViewStyle;
-- (void).cxx_destruct;
 - (void)_updateCircleLayer;
 - (double)outerRadius;
 - (void)_setColor:(id)arg1;

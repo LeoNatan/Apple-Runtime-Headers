@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _dismissHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 @property(retain, nonatomic) VUITVDescriptiveAlertView *alertView; // @synthesize alertView=_alertView;
 @property(retain, nonatomic) NSString *descriptionString; // @synthesize descriptionString=_descriptionString;
 @property(retain, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
-- (void).cxx_destruct;
 - (id)preferredFocusEnvironments;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewDidLoad;

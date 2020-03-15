@@ -15,7 +15,7 @@
 + (id)contentCategories;
 + (id)outputTypes;
 + (id)ownedTypes;
-+ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3;
++ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3 contentSource:(id)arg4;
 + (id)propertyBuilders;
 - (BOOL)isContent;
 - (BOOL)canGenerateRepresentationForType:(id)arg1;

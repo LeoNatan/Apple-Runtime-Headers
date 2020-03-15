@@ -14,9 +14,9 @@
     NSString *_assetCollectionGUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *assetCollectionGUID; // @synthesize assetCollectionGUID=_assetCollectionGUID;
 @property(retain, nonatomic) NSString *albumGUID; // @synthesize albumGUID=_albumGUID;
-- (void).cxx_destruct;
 
 @end
 

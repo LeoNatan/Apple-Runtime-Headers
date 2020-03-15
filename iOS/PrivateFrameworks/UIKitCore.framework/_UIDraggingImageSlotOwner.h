@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     _UIDragManager *_dragManager;
 }
 
-@property(readonly, nonatomic) __weak _UIDragManager *dragManager; // @synthesize dragManager=_dragManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak _UIDragManager *dragManager; // @synthesize dragManager=_dragManager;
 - (unsigned int)uploadImage:(struct CGImage *)arg1;
 - (void)dealloc;
 - (id)initWithDragManager:(id)arg1;

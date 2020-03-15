@@ -16,11 +16,11 @@
     unsigned int _priority;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool whileActiveOnly; // @synthesize whileActiveOnly=_whileActiveOnly;
 @property(nonatomic) unsigned int priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, nonatomic) NSString *viewIdentifier; // @synthesize viewIdentifier=_viewIdentifier;
-- (void).cxx_destruct;
 
 @end
 

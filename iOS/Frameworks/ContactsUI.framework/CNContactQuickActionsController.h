@@ -31,6 +31,7 @@
 
 + (id)descriptorForRequiredKeys;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNUINavigationListStyle> navigationListStyle; // @synthesize navigationListStyle=_navigationListStyle;
 @property(readonly, nonatomic) CNContactQuickActionsDisambiguationMenuPresentation *disambiguationMenuPresentation; // @synthesize disambiguationMenuPresentation=_disambiguationMenuPresentation;
 @property(retain, nonatomic) UIViewController *disambiguationMenuViewController; // @synthesize disambiguationMenuViewController=_disambiguationMenuViewController;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) NSArray *actionTypes; // @synthesize actionTypes=_actionTypes;
 @property(nonatomic) __weak id <CNContactQuickActionsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak id <CNContactQuickActionViewContainer> contactQuickActionViewContainer; // @synthesize contactQuickActionViewContainer=_contactQuickActionViewContainer;
-- (void).cxx_destruct;
 - (void)contactActionsController:(id)arg1 didSelectAction:(id)arg2;
 - (void)disambiguationViewControllerDismissedExternally:(id)arg1;
 - (void)tearDownDisambiguationMenu;

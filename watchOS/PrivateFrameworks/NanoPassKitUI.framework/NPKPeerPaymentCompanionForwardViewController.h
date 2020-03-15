@@ -14,9 +14,9 @@
     NSString *_messageBody;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *messageBody; // @synthesize messageBody=_messageBody;
 @property(readonly, nonatomic) NSString *messageTitle; // @synthesize messageTitle=_messageTitle;
-- (void).cxx_destruct;
 - (void)loadView;
 - (id)initWithMessageTitle:(id)arg1 body:(id)arg2;
 

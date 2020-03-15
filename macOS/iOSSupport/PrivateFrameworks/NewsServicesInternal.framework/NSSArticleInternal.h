@@ -27,6 +27,7 @@
 + (id)imageWithURL:(id)arg1;
 + (void)articleFromNotificationUserInfo:(id)arg1 thumbnailFileURL:(id)arg2 publisherLogoFileURL:(id)arg3 publisherLogoMaskFileURL:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)articleFromNotification:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *publisherName; // @synthesize publisherName=_publisherName;
 @property(readonly, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
 @property(readonly, nonatomic) NSString *shortExcerpt; // @synthesize shortExcerpt=_shortExcerpt;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) UIImage *publisherLogoMaskImage; // @synthesize publisherLogoMaskImage=_publisherLogoMaskImage;
 @property(readonly, nonatomic) UIImage *publisherLogoImage; // @synthesize publisherLogoImage=_publisherLogoImage;
 @property(readonly, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithThumbnailImage:(id)arg1 title:(id)arg2 shortExcerpt:(id)arg3 publishDate:(id)arg4 publisherName:(id)arg5 publisherLogoImage:(id)arg6 publisherLogoMaskImage:(id)arg7;

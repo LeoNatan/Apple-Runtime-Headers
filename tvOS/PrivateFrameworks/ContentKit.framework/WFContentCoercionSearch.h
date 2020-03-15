@@ -21,13 +21,13 @@
 + (id)searchForCoercingItem:(id)arg1 toType:(id)arg2 options:(id)arg3;
 + (id)searchForCoercingItem:(id)arg1 toItemClasses:(id)arg2 options:(id)arg3;
 + (id)searchForCoercingItem:(id)arg1 toItemClass:(Class)arg2 options:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *agenda; // @synthesize agenda=_agenda;
 @property(readonly, nonatomic) NSMutableOrderedSet *visitedStates; // @synthesize visitedStates=_visitedStates;
 @property(readonly, nonatomic) WFType *goalType; // @synthesize goalType=_goalType;
 @property(readonly, nonatomic) NSArray *goalItemClasses; // @synthesize goalItemClasses=_goalItemClasses;
 @property(readonly, nonatomic) WFContentCoercionNode *startNode; // @synthesize startNode=_startNode;
 @property(readonly, nonatomic) WFCoercionOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)continueCoercionWithContentItems:(id)arg1 error:(id *)arg2;
 - (id)runCoercionSynchronouslyWithError:(id *)arg1;
 - (void)continueCoercionWithContentItems:(id)arg1 error:(id)arg2 handler:(CDUnknownBlockType)arg3;

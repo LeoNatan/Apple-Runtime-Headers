@@ -122,6 +122,11 @@ typedef struct {
 
 typedef struct {
     unsigned int _field1;
+    int _field2;
+} CDStruct_1e94be47;
+
+typedef struct {
+    unsigned int _field1;
 } CDStruct_6238c8e0;
 
 typedef struct {

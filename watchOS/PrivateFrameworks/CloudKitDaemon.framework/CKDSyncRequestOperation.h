@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _clientSyncCompletedBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clientSyncCompletedBlock; // @synthesize clientSyncCompletedBlock=_clientSyncCompletedBlock;
 @property(copy, nonatomic) CDUnknownBlockType clientSyncProgressedBlock; // @synthesize clientSyncProgressedBlock=_clientSyncProgressedBlock;
 @property(copy, nonatomic) CDUnknownBlockType clientSyncStartedBlock; // @synthesize clientSyncStartedBlock=_clientSyncStartedBlock;
 @property(copy, nonatomic) CDUnknownBlockType willBeginSyncRequestWithClientsBlock; // @synthesize willBeginSyncRequestWithClientsBlock=_willBeginSyncRequestWithClientsBlock;
-- (void).cxx_destruct;
 - (void)main;
 
 @end

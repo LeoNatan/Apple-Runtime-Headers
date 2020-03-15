@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_progressTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *progressTimer; // @synthesize progressTimer=_progressTimer;
 @property(retain, nonatomic) MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
-- (void).cxx_destruct;
 - (void)_notifyClientOfProgress:(float)arg1;
 - (void)_stopProgressTimer;
 - (void)_startProgressTimer;

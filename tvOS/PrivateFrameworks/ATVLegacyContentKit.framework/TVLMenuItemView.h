@@ -37,6 +37,7 @@
     struct UIEdgeInsets _imageInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *dimmedView; // @synthesize dimmedView=_dimmedView;
 @property(retain, nonatomic) UILabel *rightLabel; // @synthesize rightLabel=_rightLabel;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 @property(nonatomic) double imageAspectRatio; // @synthesize imageAspectRatio=_imageAspectRatio;
 @property(nonatomic) long long menuItemStyle; // @synthesize menuItemStyle=_menuItemStyle;
-- (void).cxx_destruct;
 - (id)rightAccessoryViewsForMenuItem:(id)arg1;
 - (id)centerAccessoryViewForMenuItem:(id)arg1;
 - (id)leftAccessoryViewForMenuItem:(id)arg1;

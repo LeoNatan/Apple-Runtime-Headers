@@ -7,12 +7,13 @@
 #import <UIKit/UIView.h>
 
 #import <SpringBoardHome/BSDescriptionProviding-Protocol.h>
+#import <SpringBoardHome/PTSettingsKeyObserver-Protocol.h>
 #import <SpringBoardHome/SBIconListModelObserver-Protocol.h>
 
 @class NSArray, NSMapTable, NSMutableArray, NSString, SBFolderIconImageCache, SBHIconImageCache, SBIconListModel, SBIconListViewDraggingDestinationDelegate, SBIconListViewIconLocationTransitionHandler, _UILegibilitySettings;
 @protocol SBIconListLayout, SBIconListLayoutDelegate, SBIconListLayoutProvider, SBIconListViewDragDelegate, SBIconViewProviding;
 
-@interface SBIconListView : UIView <SBIconListModelObserver, BSDescriptionProviding>
+@interface SBIconListView : UIView <PTSettingsKeyObserver, SBIconListModelObserver, BSDescriptionProviding>
 {
     NSMutableArray *_removedIcons;
     _Bool _needsLayout;
@@ -56,6 +57,7 @@
 + (struct CGRect)defaultFrameForOrientation:(long long)arg1;
 + (unsigned long long)defaultIconViewConfigurationOptions;
 + (long long)rotationAnchor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBIconListViewIconLocationTransitionHandler *currentIconLocationTransitionHandler; // @synthesize currentIconLocationTransitionHandler=_currentIconLocationTransitionHandler;
 @property(nonatomic) _Bool alignsIconsOnPixelBoundaries; // @synthesize alignsIconsOnPixelBoundaries=_alignsIconsOnPixelBoundaries;
 @property(retain, nonatomic) SBHIconImageCache *iconImageCache; // @synthesize iconImageCache=_iconImageCache;
@@ -81,7 +83,6 @@
 @property(nonatomic) double statusBarHeight; // @synthesize statusBarHeight=_statusBarHeight;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) id <SBIconListLayoutProvider> layoutProvider; // @synthesize layoutProvider=_layoutProvider;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -92,6 +93,7 @@
 - (void)iconList:(id)arg1 didRemoveIcon:(id)arg2;
 - (void)iconList:(id)arg1 didReplaceIcon:(id)arg2 withIcon:(id)arg3;
 - (void)iconList:(id)arg1 didAddIcon:(id)arg2;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (_Bool)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;
 - (void)willRotateWithTransitionCoordinator:(id)arg1;
 - (void)iconLocationTransitionHandler:(id)arg1 completeTransition:(_Bool)arg2;

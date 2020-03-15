@@ -15,9 +15,9 @@
     NSTrackingArea *__trackingArea;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTrackingArea:) NSTrackingArea *_trackingArea; // @synthesize _trackingArea=__trackingArea;
 @property(nonatomic) __weak id <AXVViewMouseEventDelegate> mouseEventDelegate; // @synthesize mouseEventDelegate=_mouseEventDelegate;
-- (void).cxx_destruct;
 - (id)imageRepresentation;
 - (void)updateTrackingAreas;
 - (void)mouseExited:(id)arg1;

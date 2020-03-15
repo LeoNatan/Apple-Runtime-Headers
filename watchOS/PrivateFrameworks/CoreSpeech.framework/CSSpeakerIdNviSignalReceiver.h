@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableArray *signalBuffer; // @synthesize signalBuffer=_signalBuffer;
-- (void).cxx_destruct;
 - (void)signalProvider:(id)arg1 hasSignalData:(id)arg2;
 - (id)initWithQueue:(id)arg1;
 

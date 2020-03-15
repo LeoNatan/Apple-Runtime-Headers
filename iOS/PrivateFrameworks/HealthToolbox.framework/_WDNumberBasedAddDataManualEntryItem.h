@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSNumberFormatter *_numberFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
 @property(nonatomic) unsigned long long manualEntryType; // @synthesize manualEntryType=_manualEntryType;
-- (void).cxx_destruct;
 - (void)setTitle:(id)arg1;
 - (void)manualDataEntryTableViewCell:(id)arg1 valueDidChangeToValue:(id)arg2;
 - (void)beginEditing;

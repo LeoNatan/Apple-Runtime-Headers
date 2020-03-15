@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) NSMutableArray *banners; // @synthesize banners=_banners;
-- (void).cxx_destruct;
 - (BOOL)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_setBanner:(id)arg1 visible:(BOOL)arg2 alongsideAnimations:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_dismissBanner:(id)arg1 alongsideAnimations:(id)arg2 completion:(CDUnknownBlockType)arg3;

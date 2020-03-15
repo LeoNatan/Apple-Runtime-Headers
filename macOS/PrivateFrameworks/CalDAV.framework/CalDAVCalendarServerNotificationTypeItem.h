@@ -15,10 +15,10 @@
     CoreDAVItemWithNoChildren *_resourceChanged;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *resourceChanged; // @synthesize resourceChanged=_resourceChanged;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *inviteReply; // @synthesize inviteReply=_inviteReply;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *inviteNotification; // @synthesize inviteNotification=_inviteNotification;
-- (void).cxx_destruct;
 - (BOOL)notificationNameIn:(id)arg1;
 - (BOOL)notificationNameMatches:(id)arg1;
 @property(readonly, nonatomic) BOOL isResourceChanged;

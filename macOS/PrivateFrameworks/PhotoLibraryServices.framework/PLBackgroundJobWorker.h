@@ -30,11 +30,11 @@
 }
 
 + (id)workerWithLibrary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) NSString *workerDetailedName; // @synthesize workerDetailedName=_workerDetailedName;
 @property(readonly, nonatomic) NSString *workerName; // @synthesize workerName=_workerName;
 @property(readonly, nonatomic) unsigned long long workerPriority; // @synthesize workerPriority=_workerPriority;
-- (void).cxx_destruct;
 - (void)stopWorkingOnManagedObjectID:(id)arg1;
 - (void)performWorkOnManagedObjectID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)managedObjectIDsNeedingProcessing;

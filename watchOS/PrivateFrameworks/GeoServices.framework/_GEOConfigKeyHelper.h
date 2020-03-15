@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)helperForGEOConfigKey:(CDStruct_065526f1)arg1;
-@property(readonly, nonatomic) CDStruct_065526f1 configKey; // @synthesize configKey;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDStruct_065526f1 configKey; // @synthesize configKey;
 - (id)description;
 - (_Bool)isEqualTo_GEOConfigKeyHelper:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

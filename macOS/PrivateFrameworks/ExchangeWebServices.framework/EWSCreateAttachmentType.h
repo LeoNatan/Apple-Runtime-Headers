@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *Attachments; // @synthesize Attachments=_Attachments;
 @property(retain, nonatomic) EWSItemIdType *ParentItemId; // @synthesize ParentItemId=_ParentItemId;
-- (void).cxx_destruct;
 
 @end
 

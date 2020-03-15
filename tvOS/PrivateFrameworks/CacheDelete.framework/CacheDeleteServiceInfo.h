@@ -15,9 +15,9 @@
 }
 
 + (id)serviceInfoWithExtensionContext:(id)arg1;
+- (void).cxx_destruct;
 @property _Bool doNotQuery; // @synthesize doNotQuery=_doNotQuery;
 @property(readonly, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
-- (void).cxx_destruct;
 - (id)initWithExtensionContext:(id)arg1;
 
 @end

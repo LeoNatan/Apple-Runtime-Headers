@@ -31,6 +31,7 @@
     NSDictionary *_psConfig;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *psConfig; // @synthesize psConfig=_psConfig;
 @property(retain, nonatomic) NSSet *cachedSupportedBundleIDs; // @synthesize cachedSupportedBundleIDs=_cachedSupportedBundleIDs;
 @property(retain, nonatomic) _PSInteractionAndContactMonitor *contactMonitor; // @synthesize contactMonitor=_contactMonitor;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) _CDInteractionCache *messageInteractionCache; // @synthesize messageInteractionCache=_messageInteractionCache;
 @property(retain, nonatomic) id <_DKKnowledgeQuerying><_DKKnowledgeSaving> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 @property(retain, nonatomic) _CDInteractionStore *interactionStore; // @synthesize interactionStore=_interactionStore;
-- (void).cxx_destruct;
 - (id)appExtensionSuggestionsFromContext:(id)arg1;
 - (id)rankedAutocompleteSuggestionsFromContext:(id)arg1 candidates:(id)arg2;
 - (id)rankedNameSuggestionsWithPredictionContext:(id)arg1 name:(id)arg2;

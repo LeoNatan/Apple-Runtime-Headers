@@ -13,8 +13,8 @@
     NSURL *_shareURL;
 }
 
-@property(readonly, nonatomic) NSURL *shareURL; // @synthesize shareURL=_shareURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *shareURL; // @synthesize shareURL=_shareURL;
 - (id)performActionWithSession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performMessageComposeActionWithSession:(id)arg1 shareURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 

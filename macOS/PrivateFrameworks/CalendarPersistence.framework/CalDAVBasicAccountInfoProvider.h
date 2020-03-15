@@ -34,6 +34,7 @@
 
 + (BOOL)_accountIsPartOfAppleAccount:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) AKAppleIDSession *appleIDSession; // @synthesize appleIDSession=_appleIDSession;
 @property BOOL shouldFailAllTasks; // @synthesize shouldFailAllTasks=_shouldFailAllTasks;
 @property(retain) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
@@ -47,7 +48,6 @@
 @property(retain) NSString *principalPath; // @synthesize principalPath=_principalPath;
 @property(retain) NSString *host; // @synthesize host=_host;
 @property(retain) NSString *scheme; // @synthesize scheme=_scheme;
-- (void).cxx_destruct;
 - (void)coreDAVTransmittedDataFinished;
 - (void)coreDAVLogResponseBody:(id)arg1;
 - (void)coreDAVLogRequestBody:(id)arg1;

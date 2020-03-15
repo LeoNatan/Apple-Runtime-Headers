@@ -21,11 +21,11 @@
 }
 
 + (_Bool)isValid;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLLockScreenPasscodeEntryViewController *passcodeViewController; // @synthesize passcodeViewController=_passcodeViewController;
 @property(retain, nonatomic) CSLUnlockCompanionViewController *unlockCompanionViewController; // @synthesize unlockCompanionViewController=_unlockCompanionViewController;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) __weak id <CSLUILockScreenStateTransitionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)passcodeViewController:(id)arg1 didComplete:(_Bool)arg2;
 - (id)initWithDelegate:(id)arg1;
 

@@ -17,11 +17,11 @@
 }
 
 + (id)animatorForEventViewController:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL runningAnimations; // @synthesize runningAnimations=_runningAnimations;
 @property(retain) NSMapTable *animations; // @synthesize animations=_animations;
 @property __weak EKViewController *viewController; // @synthesize viewController=_viewController;
 @property BOOL isAnimating; // @synthesize isAnimating=_isAnimating;
-- (void).cxx_destruct;
 - (id)_rangeForContainer:(id)arg1 withOriginOffset:(double)arg2 heightDifference:(double)arg3;
 - (double)_animationLength;
 - (BOOL)hasAnimations;

@@ -14,8 +14,8 @@
 }
 
 + (id)settingsControllerModule;
-@property(retain, nonatomic) SBFAnimationSettings *innerFolderFadeSettings; // @synthesize innerFolderFadeSettings=_innerFolderFadeSettings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBFAnimationSettings *innerFolderFadeSettings; // @synthesize innerFolderFadeSettings=_innerFolderFadeSettings;
 - (void)setDefaultValues;
 
 @end

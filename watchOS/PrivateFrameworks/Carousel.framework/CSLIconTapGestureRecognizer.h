@@ -18,10 +18,10 @@
     double _longPressDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool longPressEnabled; // @synthesize longPressEnabled=_longPressEnabled;
 @property(nonatomic) double longPressDuration; // @synthesize longPressDuration=_longPressDuration;
 @property(readonly, nonatomic) _Bool isLongPress; // @synthesize isLongPress=_isLongPress;
-- (void).cxx_destruct;
 - (void)_longPressTimerFired:(id)arg1;
 - (void)_cleanUpTimer;
 - (void)reset;

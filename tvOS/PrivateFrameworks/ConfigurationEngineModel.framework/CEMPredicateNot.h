@@ -20,8 +20,8 @@
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
-@property(copy, nonatomic) CEMPredicateBase *payloadPredicate; // @synthesize payloadPredicate=_payloadPredicate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CEMPredicateBase *payloadPredicate; // @synthesize payloadPredicate=_payloadPredicate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

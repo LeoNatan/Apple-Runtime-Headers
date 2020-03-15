@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     CNContactPropertyModel *_model;
 }
 
+- (void).cxx_destruct;
 @property(retain) CNContactPropertyModel *model; // @synthesize model=_model;
 @property(retain) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) CNContactViewHostViewController *remoteHostViewController; // @synthesize remoteHostViewController=_remoteHostViewController;
-- (void).cxx_destruct;
 - (void)_prepareViewController;
 - (void)_setupViewController;
 - (void)cancel:(id)arg1;

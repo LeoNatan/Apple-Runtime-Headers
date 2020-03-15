@@ -17,9 +17,9 @@
     id <WNUIClientContainerViewControllerDelegate> _wnuiClientContainerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <WNUIClientContainerViewControllerDelegate> wnuiClientContainerDelegate; // @synthesize wnuiClientContainerDelegate=_wnuiClientContainerDelegate;
 @property(retain, nonatomic) UIViewController *contentController; // @synthesize contentController=_contentController;
-- (void).cxx_destruct;
 - (void)_updateLayout;
 - (_Bool)shouldPerformDefaultActionOnView:(id)arg1;
 - (void)viewWillLayoutSubviews;

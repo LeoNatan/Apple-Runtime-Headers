@@ -16,11 +16,11 @@
     NSString *_messageID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool responseReceived; // @synthesize responseReceived=_responseReceived;
 @property(nonatomic) _Bool applicationACKReceived; // @synthesize applicationACKReceived=_applicationACKReceived;
 @property(nonatomic) _Bool deviceACKReceived; // @synthesize deviceACKReceived=_deviceACKReceived;
 @property(copy, nonatomic) NSString *messageID; // @synthesize messageID=_messageID;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 @property(readonly, nonatomic) _Bool isComplete;

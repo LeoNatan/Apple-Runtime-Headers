@@ -16,11 +16,11 @@
 }
 
 + (id)imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property struct CGSize size; // @synthesize size=_size;
 @property unsigned int orientation; // @synthesize orientation=_orientation;
 @property double scale; // @synthesize scale=_scale;
 @property(copy, nonatomic) CDUnknownBlockType cleanupDataBlock; // @synthesize cleanupDataBlock=_cleanupDataBlock;
-- (void).cxx_destruct;
 @property struct CGImage *CGImage;
 - (void)dealloc;
 

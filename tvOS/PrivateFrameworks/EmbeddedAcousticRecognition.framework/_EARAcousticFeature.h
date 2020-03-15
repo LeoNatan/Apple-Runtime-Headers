@@ -16,9 +16,9 @@
     double _frameDuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double frameDuration; // @synthesize frameDuration=_frameDuration;
 @property(readonly, copy, nonatomic) NSArray *acousticFeatureValuePerFrame; // @synthesize acousticFeatureValuePerFrame=_acousticFeatureValuePerFrame;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithAcousticFeatureValues:(id)arg1 frameDuration:(float)arg2;
 

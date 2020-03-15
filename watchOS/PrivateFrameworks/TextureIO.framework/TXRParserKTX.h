@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)exportTexture:(id)arg1 url:(id)arg2 error:(id *)arg3;
 + (_Bool)handlesData:(id)arg1;
-@property(readonly, nonatomic) TXRTextureInfo *textureInfo; // @synthesize textureInfo=_textureInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TXRTextureInfo *textureInfo; // @synthesize textureInfo=_textureInfo;
 - (id)parsedImageAtLevel:(unsigned int)arg1 element:(unsigned int)arg2 face:(unsigned int)arg3;
 - (unsigned int)determineFormatFromType:(unsigned int)arg1 format:(unsigned int)arg2 internalFormat:(unsigned int)arg3 baseInternalFormat:(unsigned int)arg4;
 - (void)parseImageData:(id)arg1 WithOptions:(id)arg2 bufferAllocator:(id)arg3;

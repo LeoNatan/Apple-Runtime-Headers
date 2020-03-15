@@ -22,6 +22,7 @@
     NSMutableDictionary *_notificationListCellsForRequests;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *notificationListCellsForRequests; // @synthesize notificationListCellsForRequests=_notificationListCellsForRequests;
 @property(retain, nonatomic) NSMutableSet *notificationListCoalescingControlsCache; // @synthesize notificationListCoalescingControlsCache=_notificationListCoalescingControlsCache;
 @property(retain, nonatomic) NSMutableSet *notificationListCoalescingHeaderCache; // @synthesize notificationListCoalescingHeaderCache=_notificationListCoalescingHeaderCache;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableDictionary *contentRevealedWithSummaryCellHeightCache; // @synthesize contentRevealedWithSummaryCellHeightCache=_contentRevealedWithSummaryCellHeightCache;
 @property(retain, nonatomic) NSMutableDictionary *contentRevealedCellHeightCache; // @synthesize contentRevealedCellHeightCache=_contentRevealedCellHeightCache;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (void)_clearAllHeightCaches;
 - (id)_cachedNotificationListCellForRequest:(id)arg1 viewControllerDelegate:(id)arg2 shouldConfigure:(_Bool)arg3;
 - (id)_cachedHeaderCellWithTitle:(id)arg1;

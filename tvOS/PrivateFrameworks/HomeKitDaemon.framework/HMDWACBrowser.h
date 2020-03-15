@@ -24,10 +24,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <HMDWACBrowserDelegate> delegate; // @synthesize delegate=_delegate;
 @property _Bool scanIsActive; // @synthesize scanIsActive=_scanIsActive;
-- (void).cxx_destruct;
 - (void)scannerDidStop:(id)arg1;
 - (void)scanner:(id)arg1 didError:(id)arg2;
 - (void)scanner:(id)arg1 didUpdateDevice:(id)arg2;

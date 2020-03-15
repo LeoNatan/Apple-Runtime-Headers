@@ -17,12 +17,12 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) NPTOPhoto *photo; // @synthesize photo=_photo;
-- (void).cxx_destruct;
 - (id)initWithPhoto:(id)arg1;
 
 @end

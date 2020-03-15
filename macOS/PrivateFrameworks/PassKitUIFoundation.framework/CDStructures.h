@@ -44,52 +44,11 @@ struct CGSize {
     double height;
 };
 
-struct NSColor {
-    Class _field1;
-};
-
 struct NSEdgeInsets {
     double top;
     double left;
     double bottom;
     double right;
-};
-
-struct NSImageView {
-    Class _field1;
-};
-
-struct NSView {
-    Class _field1;
-    struct CGRect _field2;
-    struct CGRect _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    struct __VFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :5;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :2;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :6;
-        unsigned int :1;
-        unsigned int :1;
-    } _field7;
 };
 
 struct os_unfair_lock_s {

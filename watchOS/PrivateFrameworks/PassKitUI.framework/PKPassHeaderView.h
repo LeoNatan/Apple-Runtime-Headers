@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class PKPass, PKPassFaceViewRendererState, PKPassView, PKPeerPaymentAccount, PKRemoteDataAccessor, PKTransitBalanceModel, UIColor, UIImageView, UILabel;
+@class PKPass, PKPassFaceViewRendererState, PKPassView, PKPeerPaymentAccount, PKRemoteDataAccessor, UIColor, UIImageView, UILabel;
 @protocol PKPassHeaderViewDelegate, PKPassLibraryDataProvider;
 
 @interface PKPassHeaderView : UIView
@@ -22,7 +22,6 @@
     _Bool _expiredPass;
     PKPass *_pass;
     PKPassView *_passView;
-    PKTransitBalanceModel *_transitBalanceModel;
     PKPeerPaymentAccount *_peerPaymentAccount;
     PKPassFaceViewRendererState *_rendererState;
     unsigned int _suppressedContent;
@@ -32,6 +31,7 @@
     id <PKPassLibraryDataProvider> _passLibraryOverride;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PKPassLibraryDataProvider> passLibraryOverride; // @synthesize passLibraryOverride=_passLibraryOverride;
 @property(nonatomic) __weak id <PKPassHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIColor *secondaryTextColor; // @synthesize secondaryTextColor=_secondaryTextColor;
@@ -41,11 +41,9 @@
 @property(nonatomic) unsigned int suppressedContent; // @synthesize suppressedContent=_suppressedContent;
 @property(retain, nonatomic) PKPassFaceViewRendererState *rendererState; // @synthesize rendererState=_rendererState;
 @property(retain, nonatomic) PKPeerPaymentAccount *peerPaymentAccount; // @synthesize peerPaymentAccount=_peerPaymentAccount;
-@property(retain, nonatomic) PKTransitBalanceModel *transitBalanceModel; // @synthesize transitBalanceModel=_transitBalanceModel;
 @property(nonatomic, getter=isSmall) _Bool small; // @synthesize small=_small;
 @property(readonly, nonatomic) PKPassView *passView; // @synthesize passView=_passView;
 @property(readonly, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (id)_secondaryTextColor;
 - (id)_primaryTextColor;
 - (void)_passLibraryDidChange:(id)arg1;

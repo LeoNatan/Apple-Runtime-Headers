@@ -16,11 +16,11 @@
     PXImageUIView *_imageContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXImageUIView *imageContentView; // @synthesize imageContentView=_imageContentView;
 @property(retain, nonatomic) UIView *avatarContentView; // @synthesize avatarContentView=_avatarContentView;
 @property(retain, nonatomic) NSArray *groupAvatarViews; // @synthesize groupAvatarViews=_groupAvatarViews;
 @property(retain, nonatomic) NSArray *people; // @synthesize people=_people;
-- (void).cxx_destruct;
 - (_Bool)canBecomeFocused;
 - (id)preferredFocusEnvironments;
 - (void)_layoutAvatarViewsInFrame:(struct CGRect)arg1;

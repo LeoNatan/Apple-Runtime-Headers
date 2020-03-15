@@ -8,34 +8,25 @@
 
 #import <VideosUI/TVApplicationControllerDelegate-Protocol.h>
 #import <VideosUI/UIGestureRecognizerDelegate-Protocol.h>
-#import <VideosUI/_TVInterfaceCreatingPrivate-Protocol.h>
 
 @class NSString, TVApplicationController, UINavigationController, VUIBootURLController;
 
-@interface VUIApplicationViewController : UIViewController <_TVInterfaceCreatingPrivate, TVApplicationControllerDelegate, UIGestureRecognizerDelegate>
+@interface VUIApplicationViewController : UIViewController <TVApplicationControllerDelegate, UIGestureRecognizerDelegate>
 {
     TVApplicationController *_applicationController;
     VUIBootURLController *_bootURLController;
     UINavigationController *_navigationController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) VUIBootURLController *bootURLController; // @synthesize bootURLController=_bootURLController;
 @property(retain, nonatomic) TVApplicationController *applicationController; // @synthesize applicationController=_applicationController;
-- (void).cxx_destruct;
 - (void)_startApplicationControllerWithBootURL:(id)arg1;
 - (id)_initialViewControllerWithAppContext:(id)arg1;
 - (void)_exposeObjectsInJSContext:(id)arg1;
 - (id)_launchOptions;
 - (Class)_applicationControllerClass;
-- (id)_styleSheetURLForTemplate:(id)arg1;
-- (id)_imageProxyForIKElement:(id)arg1 withLayout:(id)arg2;
-- (void)_parseAppConfigurationForIKElement:(id)arg1;
-- (Class)_collectionViewCellClassForIKElement:(id)arg1;
-- (id)_viewControllerForIKElement:(id)arg1 existingViewController:(id)arg2;
-- (id)_viewForIKElement:(id)arg1 existingView:(id)arg2;
-- (id)imageForResource:(id)arg1;
-- (id)URLForResource:(id)arg1;
 - (void)appController:(id)arg1 didFailWithError:(id)arg2;
 - (void)appController:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (void)appController:(id)arg1 evaluateAppJavaScriptInContext:(id)arg2;

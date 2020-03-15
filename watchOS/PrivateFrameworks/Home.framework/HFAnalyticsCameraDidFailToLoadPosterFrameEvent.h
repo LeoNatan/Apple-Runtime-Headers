@@ -18,13 +18,13 @@
     double _posterFrameTimeOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
 @property(retain, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
 @property(retain, nonatomic) NSDate *clipStartDate; // @synthesize clipStartDate=_clipStartDate;
 @property(nonatomic) double posterFrameTimeOffset; // @synthesize posterFrameTimeOffset=_posterFrameTimeOffset;
 @property(retain, nonatomic) NSUUID *cameraID; // @synthesize cameraID=_cameraID;
 @property(retain, nonatomic) NSUUID *clipID; // @synthesize clipID=_clipID;
-- (void).cxx_destruct;
 - (id)payload;
 - (id)initWithData:(id)arg1;
 

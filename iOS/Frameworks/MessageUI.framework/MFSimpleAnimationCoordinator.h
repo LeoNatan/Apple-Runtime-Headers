@@ -15,10 +15,10 @@
     NSMutableArray *_completions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completions; // @synthesize completions=_completions;
 @property(retain, nonatomic) NSMutableArray *animations; // @synthesize animations=_animations;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
-- (void).cxx_destruct;
 - (void)playCompletions:(_Bool)arg1;
 - (void)playAnimations;
 - (void)animateAlongsideAnimations:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

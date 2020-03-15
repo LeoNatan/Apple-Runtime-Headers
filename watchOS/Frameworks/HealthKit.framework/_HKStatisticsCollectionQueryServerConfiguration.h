@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int mergeStrategy; // @synthesize mergeStrategy=_mergeStrategy;
 @property(copy, nonatomic) NSDateComponents *intervalComponents; // @synthesize intervalComponents=_intervalComponents;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(copy, nonatomic) NSDate *anchorDate; // @synthesize anchorDate=_anchorDate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

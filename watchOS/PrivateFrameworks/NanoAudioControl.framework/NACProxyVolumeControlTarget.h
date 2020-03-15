@@ -21,9 +21,9 @@
 + (_Bool)_isValidOriginIdentifier:(id)arg1;
 + (id)volumeControlTargetWithOriginIdentifier:(id)arg1;
 + (id)volumeControlTargetWithCategory:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) NSNumber *originIdentifier; // @synthesize originIdentifier=_originIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

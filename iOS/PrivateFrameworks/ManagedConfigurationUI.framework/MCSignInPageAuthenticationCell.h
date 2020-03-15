@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *_authView;
 }
 
-@property(retain, nonatomic) UIView *authView; // @synthesize authView=_authView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *authView; // @synthesize authView=_authView;
 - (void)_addAuthView:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithAuthView:(id)arg1;

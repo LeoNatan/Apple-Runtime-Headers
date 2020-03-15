@@ -25,10 +25,10 @@
 }
 
 + (id)defaultProductManager;
+- (void).cxx_destruct;
 @property(retain) NSString *productPath; // @synthesize productPath=_productPath;
 @property(retain) SKDisk *productDisk; // @synthesize productDisk=_productDisk;
 @property(retain) NSString *seedingProgramForTarget; // @synthesize seedingProgramForTarget=_seedingProgramForTarget;
-- (void).cxx_destruct;
 - (BOOL)flushAttributesDictionary;
 - (id)attributesDictionary;
 - (BOOL)packageReferenceHasValidInstallDistance:(id)arg1;

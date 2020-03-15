@@ -14,15 +14,17 @@ __attribute__((visibility("hidden")))
 {
     HMMediaSession *_mediaSession;
     NSString *_routeUID;
+    unsigned long long _capability;
     id <_HMMediaProfileDelegate> _delegate;
 }
 
 + (BOOL)supportsSecureCoding;
-@property __weak id <_HMMediaProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <_HMMediaProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handleRuntimeStateUpdate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(nonatomic) unsigned long long capability; // @synthesize capability=_capability;
 - (void)setRouteUID:(id)arg1;
 @property(readonly) NSString *routeUID; // @synthesize routeUID=_routeUID;
 - (void)_notifyDelegateOfUpdatedMediaSession:(id)arg1;

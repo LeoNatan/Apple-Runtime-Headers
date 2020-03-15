@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long branchDepth; // @synthesize branchDepth=_branchDepth;
 @property(nonatomic) __weak MPSectionedIdentifierListEntry *previousEntry; // @synthesize previousEntry=_previousEntry;
 @property(copy, nonatomic) NSString *hostedSectionIdentifier; // @synthesize hostedSectionIdentifier=_hostedSectionIdentifier;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) MPSectionedIdentifierListEntryPositionKey *positionKey; // @synthesize positionKey=_positionKey;
 @property(readonly, nonatomic) NSArray *nextEntries; // @synthesize nextEntries=_nextEntries;
 @property(readonly, nonatomic, getter=isDataSourceRemoved) BOOL dataSourceRemoved; // @synthesize dataSourceRemoved=_dataSourceRemoved;
-- (void).cxx_destruct;
 - (void)setDataSourceRemoved;
 - (void)prepareForDealloc;
 - (void)addNextEntry:(id)arg1;

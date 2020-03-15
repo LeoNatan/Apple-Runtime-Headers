@@ -24,6 +24,7 @@
     NSMutableDictionary *_pendingReceiveOwnershipBlocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *pendingReceiveOwnershipBlocks; // @synthesize pendingReceiveOwnershipBlocks=_pendingReceiveOwnershipBlocks;
 @property(readonly, nonatomic) NSMutableDictionary *pendingLoseOwnershipBlocks; // @synthesize pendingLoseOwnershipBlocks=_pendingLoseOwnershipBlocks;
 @property(readonly, nonatomic) NSMutableDictionary *pendingVideoPlayerViewControllers; // @synthesize pendingVideoPlayerViewControllers=_pendingVideoPlayerViewControllers;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSURL *autoplayURL; // @synthesize autoplayURL=_autoplayURL;
 @property(readonly, nonatomic) SVVolumeProvider *volumeProvider; // @synthesize volumeProvider=_volumeProvider;
 @property(nonatomic) _Bool presentedAndAppeared; // @synthesize presentedAndAppeared=_presentedAndAppeared;
-- (void).cxx_destruct;
 - (void)configureAutoplayForVideoWithURL:(id)arg1 analyticsRouter:(id)arg2;
 - (void)registerExistingVideoPlayerViewController:(id)arg1 URL:(id)arg2 analyticsRouter:(id)arg3 videoPlayerVisibilityMonitor:(id)arg4 loseOwnershipBlock:(CDUnknownBlockType)arg5;
 - (id)videoPlayerViewControllerForURL:(id)arg1 receiveOwnershipBlock:(CDUnknownBlockType)arg2;

@@ -13,8 +13,8 @@
     NSArray *_colorCurveElements;
 }
 
-@property(readonly, nonatomic) NSArray *colorCurveElements; // @synthesize colorCurveElements=_colorCurveElements;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *colorCurveElements; // @synthesize colorCurveElements=_colorCurveElements;
 - (id)colorForFraction:(float)arg1;
 - (id)initWithColorCurveElements:(id)arg1;
 

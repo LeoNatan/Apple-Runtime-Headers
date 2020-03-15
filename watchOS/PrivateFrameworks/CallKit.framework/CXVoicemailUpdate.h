@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) struct CXVoicemailUpdateHasSet hasSet; // @synthesize hasSet=_hasSet;
 @property(nonatomic, getter=isTrashed) _Bool trashed; // @synthesize trashed=_trashed;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(copy, nonatomic) CXHandle *sender; // @synthesize sender=_sender;
 @property(readonly, copy, nonatomic) NSUUID *voicemailUUID; // @synthesize voicemailUUID=_voicemailUUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

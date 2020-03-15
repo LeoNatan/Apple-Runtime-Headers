@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _interactionCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setDisableToken:) id _disableToken; // @synthesize _disableToken=__disableToken;
 @property(retain, nonatomic, setter=_setPhotoPinchGestureRecognizer:) PUPhotoPinchGestureRecognizer *_photoPinchGestureRecognizer; // @synthesize _photoPinchGestureRecognizer=__photoPinchGestureRecognizer;
 @property(retain, nonatomic, setter=_setTransitionViewAnimator:) PUTransitionViewAnimator *_transitionViewAnimator; // @synthesize _transitionViewAnimator=__transitionViewAnimator;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PUStackedAlbumTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic, setter=ph_setPhotoCollection:) PHCollection *ph_photoCollection; // @synthesize ph_photoCollection=_ph_photoCollection;
 @property(retain, nonatomic) id <PLAssetContainer> photoCollection; // @synthesize photoCollection=_photoCollection;
-- (void).cxx_destruct;
 - (void)transitionViewAnimatorDidEnd:(id)arg1 finished:(BOOL)arg2;
 - (void)transitionViewAnimatorWillEnd:(id)arg1 withTargetTranslation:(inout struct CGPoint *)arg2;
 - (void)transitionViewAnimatorDidUpdate:(id)arg1;

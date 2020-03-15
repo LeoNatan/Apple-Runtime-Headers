@@ -17,11 +17,11 @@
 }
 
 + (id)configurationWithDataSourceClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long entityType; // @synthesize entityType=_entityType;
 @property(copy, nonatomic) CDUnknownBlockType defaultQueryCreationBlock; // @synthesize defaultQueryCreationBlock=_defaultQueryCreationBlock;
 @property(copy, nonatomic) NSString *dataSourceCachingKey; // @synthesize dataSourceCachingKey=_dataSourceCachingKey;
 @property(readonly, nonatomic) Class dataSourceClass; // @synthesize dataSourceClass=_dataSourceClass;
-- (void).cxx_destruct;
 - (id)initWithDataSourceClass:(Class)arg1;
 
 @end

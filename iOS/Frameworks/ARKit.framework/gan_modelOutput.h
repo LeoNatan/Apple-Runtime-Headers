@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     MLMultiArray *_output;
 }
 
-@property(retain, nonatomic) MLMultiArray *output; // @synthesize output=_output;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MLMultiArray *output; // @synthesize output=_output;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
 - (id)initWithOutput:(id)arg1;

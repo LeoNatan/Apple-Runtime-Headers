@@ -20,10 +20,10 @@
 
 + (id)logCategory;
 + (id)siriSessionForUI;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDActiveSiriSessionInfo *activeSessionInfo; // @synthesize activeSessionInfo=_activeSessionInfo;
 @property(nonatomic) __weak HMDSiriRemoteInputServer *server; // @synthesize server=_server;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_createArgsDictionaryWithError:(id)arg1;
 - (void)sendMsg:(const char *)arg1 args:(id)arg2;
 - (void)_stopStream;

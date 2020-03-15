@@ -6,28 +6,42 @@
 
 #import <MapKit/MKPlaceSectionRowView.h>
 
-@class NSLayoutConstraint, _MKUILabel;
+#import <MapKit/UIGestureRecognizerDelegate-Protocol.h>
+
+@class MKVibrantLabel, NSLayoutConstraint, NSString, UILongPressGestureRecognizer, _MKUILabel;
+@protocol NSItemProviderWriting;
 
 __attribute__((visibility("hidden")))
-@interface MKPlaceEncyclopedicFactoidView : MKPlaceSectionRowView
+@interface MKPlaceEncyclopedicFactoidView : MKPlaceSectionRowView <UIGestureRecognizerDelegate>
 {
+    UILongPressGestureRecognizer *_longPressRecognizer;
     NSLayoutConstraint *_baselineToTopConstraint;
     NSLayoutConstraint *_baselineToBottomConstraint;
     NSLayoutConstraint *_baselineToBaselineConstraint;
     BOOL _isStandAlone;
-    _MKUILabel *_keyLabel;
+    MKVibrantLabel *_keyLabel;
     _MKUILabel *_valueLabel;
 }
 
-@property(retain, nonatomic) _MKUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
-@property(retain, nonatomic) _MKUILabel *keyLabel; // @synthesize keyLabel=_keyLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MKUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
+@property(retain, nonatomic) MKVibrantLabel *keyLabel; // @synthesize keyLabel=_keyLabel;
+- (void)_menuDismissed:(id)arg1;
+- (void)_handleLongPress:(id)arg1;
+- (void)copy:(id)arg1;
+@property(readonly, nonatomic) id <NSItemProviderWriting> draggableContent;
 - (void)_contentSizeDidChange;
 - (id)_keyLabelFont;
 - (void)setUpConstraints;
 - (id)_valueLabelWithString:(id)arg1;
 - (id)_keyLabelWithString:(id)arg1;
 - (id)initWithTextItem:(id)arg1 isStandAloneFactoid:(BOOL)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

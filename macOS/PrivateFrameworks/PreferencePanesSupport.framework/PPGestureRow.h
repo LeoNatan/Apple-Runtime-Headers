@@ -23,11 +23,11 @@
     PPGestureMovieView *mMovieView;
 }
 
+- (void).cxx_destruct;
 @property(retain) PPGestureMovieView *movieView; // @synthesize movieView=mMovieView;
 @property(readonly) NSPopUpButton *choicesPopUp; // @synthesize choicesPopUp=mGestureChoices;
 @property(readonly) NSTextField *groupTitle; // @synthesize groupTitle=mGroupTitle;
 @property(retain) PPGesture *gesture; // @synthesize gesture=mGesture;
-- (void).cxx_destruct;
 - (void)setUIEnabled:(BOOL)arg1;
 @property(readonly) NSButton *enableGestureButton; // @dynamic enableGestureButton;
 @property(readonly) NSButton *optionsButton; // @dynamic optionsButton;

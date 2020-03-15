@@ -16,9 +16,9 @@
 
 + (id)newOptionsButton;
 + (id)newComposeButton;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *rightAccessoryButton; // @synthesize rightAccessoryButton=_rightAccessoryButton;
 @property(retain, nonatomic) UIButton *leftAccessoryButton; // @synthesize leftAccessoryButton=_leftAccessoryButton;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (void)layoutSubviews;

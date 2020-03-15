@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSArray *_subscriptionsToRemoveByBundleID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *subscriptionsToRemoveByBundleID; // @synthesize subscriptionsToRemoveByBundleID=_subscriptionsToRemoveByBundleID;
 @property(copy, nonatomic) NSArray *subscriptionsToAdd; // @synthesize subscriptionsToAdd=_subscriptionsToAdd;
 @property(copy, nonatomic) NSSet *accountChannelIDs; // @synthesize accountChannelIDs=_accountChannelIDs;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *responseString; // @synthesize responseString=_responseString;
 @property(copy, nonatomic) NSString *responseStatusCode; // @synthesize responseStatusCode=_responseStatusCode;
 @property(copy, nonatomic) NSString *authenticationScheme; // @synthesize authenticationScheme=_authenticationScheme;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

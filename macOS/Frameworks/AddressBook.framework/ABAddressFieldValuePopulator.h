@@ -13,8 +13,8 @@
     CNPostalAddress *_postalAddress;
 }
 
-@property(readonly) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
 - (void).cxx_destruct;
+@property(readonly) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
 - (void)populateAddressFields:(id)arg1;
 - (id)valueForComponentKeypath:(id)arg1;
 - (id)cardViewTagToValueKeypathMap;

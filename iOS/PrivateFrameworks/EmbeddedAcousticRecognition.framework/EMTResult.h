@@ -19,12 +19,12 @@
     NSString *_metaInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *metaInfo; // @synthesize metaInfo=_metaInfo;
 @property(readonly, nonatomic) _Bool lowConfidence; // @synthesize lowConfidence=_lowConfidence;
 @property(readonly, nonatomic) float confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

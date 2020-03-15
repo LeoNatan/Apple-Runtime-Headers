@@ -13,8 +13,8 @@
     CNContactProperty *_property;
 }
 
-@property(retain, nonatomic) CNContactProperty *property; // @synthesize property=_property;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNContactProperty *property; // @synthesize property=_property;
 - (void)_clearCellContent;
 - (id)_formattedPhoneNumber;
 - (void)prepareForReuse;

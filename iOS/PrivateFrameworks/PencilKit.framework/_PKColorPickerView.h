@@ -21,13 +21,13 @@
     PKColorMatrixView *_gridColorPicker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKColorMatrixView *gridColorPicker; // @synthesize gridColorPicker=_gridColorPicker;
 @property(retain, nonatomic) PKColorPickerCrosshairView *crosshairView; // @synthesize crosshairView=_crosshairView;
 @property(retain, nonatomic) UIPanGestureRecognizer *crosshairPanGR; // @synthesize crosshairPanGR=_crosshairPanGR;
 @property(retain, nonatomic) UIColor *initialColor; // @synthesize initialColor=_initialColor;
 @property(retain, nonatomic) UIColor *selectedColor; // @synthesize selectedColor=_selectedColor;
 @property(nonatomic) __weak id <_PKColorPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)colorPickerImplementationUserDidTouchUpInside:(id)arg1;
 - (void)colorPickerImplementationDidChangeSelectedColor:(id)arg1;
 - (_Bool)pointIsSignificantlyOutside:(struct CGPoint)arg1;

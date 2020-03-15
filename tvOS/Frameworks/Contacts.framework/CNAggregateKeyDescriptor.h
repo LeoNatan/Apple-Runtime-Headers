@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (id)keyDescriptorWithKeyDescriptors:(id)arg1 description:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactKeyVector *unauthorizedKeys; // @synthesize unauthorizedKeys=_unauthorizedKeys;
 @property(copy, nonatomic) NSString *privateDescription; // @synthesize privateDescription=_privateDescription;
 @property(copy, nonatomic) NSArray *keyDescriptors; // @synthesize keyDescriptors=_keyDescriptors;
-- (void).cxx_destruct;
 - (void)_cn_setUnauthorizedKeys:(id)arg1;
 - (id)_cn_unauthorizedKeys;
 - (void)_cn_executeGetterForRepresentedKeys:(CDUnknownBlockType)arg1;

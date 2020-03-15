@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *_allUsedVoicesSet; // @synthesize _allUsedVoicesSet=__allUsedVoicesSet;
 @property(nonatomic) unsigned long long _indexHighlighted; // @synthesize _indexHighlighted=__indexHighlighted;
 @property(retain, nonatomic) NSMutableArray *_voiceRotorItems; // @synthesize _voiceRotorItems=__voiceRotorItems;
-- (void).cxx_destruct;
 - (void)_addVoiceWithVoiceIdentifier:(id)arg1 voiceLanguage:(id)arg2 hasBeenSelected:(BOOL)arg3;
 - (id)description;
 @property(readonly, nonatomic) NSArray *voiceRotorItems;

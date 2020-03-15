@@ -19,11 +19,12 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <CXCallDirectoryHostDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)prepareStoreIfNecessary;
+- (oneway void)launchCallDirectorySettingsWithReply:(CDUnknownBlockType)arg1;
 - (oneway void)compactStoreWithReply:(CDUnknownBlockType)arg1;
 - (oneway void)synchronizeExtensionsWithReply:(CDUnknownBlockType)arg1;
 - (oneway void)setPrioritizedExtensionIdentifiers:(id)arg1 reply:(CDUnknownBlockType)arg2;

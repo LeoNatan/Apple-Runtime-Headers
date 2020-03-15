@@ -45,10 +45,10 @@ __attribute__((visibility("hidden")))
 + (id)givenName;
 + (id)descriptions;
 + (id)sharedDescriptions;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType valueTransform; // @synthesize valueTransform=_valueTransform;
 @property(copy) NSString *contactKey; // @synthesize contactKey=_contactKey;
 @property(copy) NSString *LDAPKey; // @synthesize LDAPKey=_LDAPKey;
-- (void).cxx_destruct;
 - (void)updateContact:(id)arg1 withLDAPValue:(id)arg2;
 
 @end

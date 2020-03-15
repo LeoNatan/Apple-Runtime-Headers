@@ -14,7 +14,6 @@
 @interface WPDaemonServer : NSObject <NSXPCListenerDelegate>
 {
     unsigned char _coreBluetoothState;
-    BOOL _isHomePod;
     BOOL _screenOff;
     BOOL _systemLocked;
     BOOL _isTesting;
@@ -42,7 +41,9 @@
 }
 
 + (void)initialize;
++ (BOOL)isAppleTV;
 + (BOOL)isHomePod;
+- (void).cxx_destruct;
 @property BOOL isTesting; // @synthesize isTesting=_isTesting;
 @property BOOL systemLocked; // @synthesize systemLocked=_systemLocked;
 @property BOOL screenOff; // @synthesize screenOff=_screenOff;
@@ -56,7 +57,6 @@
 @property(retain) NSMutableSet *privilegedClients; // @synthesize privilegedClients=_privilegedClients;
 @property(retain) NSMutableSet *testClients; // @synthesize testClients=_testClients;
 @property(retain) NSMutableDictionary *clients; // @synthesize clients=_clients;
-@property BOOL isHomePod; // @synthesize isHomePod=_isHomePod;
 @property(retain, nonatomic) WPDStatsManager *statsManager; // @synthesize statsManager=_statsManager;
 @property(retain, nonatomic) NSArray *managers; // @synthesize managers=_managers;
 @property(readonly) WPDClient *spObjectDiscoveryClient; // @synthesize spObjectDiscoveryClient=_spObjectDiscoveryClient;
@@ -69,7 +69,6 @@
 @property unsigned char coreBluetoothState; // @synthesize coreBluetoothState=_coreBluetoothState;
 @property(retain, nonatomic) WPDState *wpdState; // @synthesize wpdState=_wpdState;
 @property(nonatomic) long long cbState; // @synthesize cbState=_cbState;
-- (void).cxx_destruct;
 - (id)generateStateDump;
 - (void)dumpDaemonState;
 - (struct os_state_data_s *)dumpToLog:(BOOL)arg1 State:(BOOL)arg2;

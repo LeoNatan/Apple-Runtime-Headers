@@ -34,11 +34,11 @@
     _Bool _interfaceOrientationLocked;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool interfaceOrientationLocked; // @synthesize interfaceOrientationLocked=_interfaceOrientationLocked;
 @property(nonatomic) _Bool intentToTransitionFromSecureAppToFull; // @synthesize intentToTransitionFromSecureAppToFull=_intentToTransitionFromSecureAppToFull;
 @property(readonly, nonatomic) id <SBApplicationSceneStatusBarDescribing> statusBarDescriber; // @synthesize statusBarDescriber=_statusBarObserverProxy;
 @property(nonatomic) __weak id <SBDashBoardHostedAppViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)statusBarOrientation;
 - (_Bool)allowsConfiguringIndividualStatusBarParts;
 - (id)statusBarDescriberForStatusBarPart:(id)arg1;

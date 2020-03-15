@@ -17,10 +17,10 @@
 }
 
 + (id)queue;
+- (void).cxx_destruct;
 @property(nonatomic) int fd; // @synthesize fd=_fd;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 

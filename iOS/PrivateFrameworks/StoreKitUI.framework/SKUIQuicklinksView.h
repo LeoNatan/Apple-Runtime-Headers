@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
 }
 
-@property(retain, nonatomic) UIView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *collectionView; // @synthesize collectionView=_collectionView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;

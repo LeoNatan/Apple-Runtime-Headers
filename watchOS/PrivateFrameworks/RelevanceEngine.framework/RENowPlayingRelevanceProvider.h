@@ -16,10 +16,10 @@
 }
 
 + (id)relevanceSimulatorID;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *itemIdentifer; // @synthesize itemIdentifer=_itemIdentifer;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)_hash;
 - (_Bool)isEqual:(id)arg1;

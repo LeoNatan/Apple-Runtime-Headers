@@ -16,10 +16,10 @@
 }
 
 + (id)logWithData:(id)arg1 mimeType:(id)arg2 name:(id)arg3 attemptCompression:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 mimeType:(id)arg2 name:(id)arg3 attemptCompression:(_Bool)arg4;
 
 @end

@@ -34,13 +34,22 @@
     MTLToolsPointerArray *_argumentEncoders;
     MTLToolsPointerArray *_indirectCommandBuffers;
     MTLToolsPointerArray *_motionEstimationPipelines;
+    MTLToolsPointerArray *_rasterizationRateMaps;
+    MTLToolsPointerArray *_binaryLibraries;
+    MTLToolsPointerArray *_dynamicLibraries;
+    MTLToolsPointerArray *_binaryArchives;
     MTLToolsPointerArray *_counterSampleBuffers;
 }
 
 + (id)newTextureDescriptorFromIOSurface:(struct __IOSurface *)arg1;
 + (id)newTextureDescriptorFromIOSurfaceProperties:(id)arg1;
 + (void)registerDevices;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MTLToolsPointerArray *counterSampleBuffers; // @synthesize counterSampleBuffers=_counterSampleBuffers;
+@property(readonly, nonatomic) MTLToolsPointerArray *binaryArchives; // @synthesize binaryArchives=_binaryArchives;
+@property(readonly, nonatomic) MTLToolsPointerArray *dynamicLibraries; // @synthesize dynamicLibraries=_dynamicLibraries;
+@property(readonly, nonatomic) MTLToolsPointerArray *binaryLibraries; // @synthesize binaryLibraries=_binaryLibraries;
+@property(readonly, nonatomic) MTLToolsPointerArray *rasterizationRateMaps; // @synthesize rasterizationRateMaps=_rasterizationRateMaps;
 @property(readonly, nonatomic) MTLToolsPointerArray *motionEstimationPipelines; // @synthesize motionEstimationPipelines=_motionEstimationPipelines;
 @property(readonly, nonatomic) MTLToolsPointerArray *indirectCommandBuffers; // @synthesize indirectCommandBuffers=_indirectCommandBuffers;
 @property(readonly, nonatomic) MTLToolsPointerArray *argumentEncoders; // @synthesize argumentEncoders=_argumentEncoders;
@@ -61,7 +70,6 @@
 @property(readonly, nonatomic) MTLToolsPointerArray *heaps; // @synthesize heaps=_heaps;
 @property(readonly) unsigned long long memorySize; // @synthesize memorySize=_memorySize;
 @property(readonly, getter=isIntegrated) BOOL integrated; // @synthesize integrated=_integrated;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsFloat16BCubicFiltering;
 @property(readonly, nonatomic) BOOL supportsForceSeamsOnCubemaps;
 @property(readonly, nonatomic) BOOL supportsTexture2DMultisampleArray;
@@ -70,6 +78,7 @@
 @property(readonly, nonatomic) BOOL supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) BOOL supportsBlackOrWhiteSamplerBorderColors;
 @property(readonly) BOOL supportsShaderBarycentricCoordinates;
+@property(readonly, nonatomic) BOOL supportsVariableRateRasterization;
 @property(readonly, nonatomic) BOOL supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) BOOL supportsShaderMinLODClamp;
 @property(readonly, nonatomic) BOOL supportsSIMDGroup;
@@ -128,6 +137,9 @@
 @property(readonly, nonatomic) BOOL supportsSRGBwrites;
 @property(readonly, nonatomic) BOOL supportsPublicXR10Formats;
 @property(readonly, nonatomic) BOOL supportsASTCTextureCompression;
+@property(readonly, nonatomic) BOOL supportsBinaryLibraries;
+@property(readonly, nonatomic) BOOL supportsDynamicLibraries;
+@property(readonly, nonatomic) BOOL supportsBinaryArchives;
 @property(readonly, nonatomic) BOOL supportsGPUStatistics;
 @property(readonly, nonatomic) BOOL supportsSeparateDepthStencil;
 @property(readonly, nonatomic) BOOL supportsRelaxedTextureViewRequirements;
@@ -146,6 +158,7 @@
 @property(readonly, nonatomic) BOOL supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) BOOL supportsPlacementHeaps;
 @property(readonly, nonatomic) BOOL supportsSamplerReductionMode;
+@property(readonly, nonatomic) BOOL supportsVertexAmplification;
 @property(readonly, nonatomic) BOOL supportsQueryTextureLOD;
 @property(readonly, nonatomic) BOOL supports32bpcMSAATextures;
 @property(readonly, nonatomic) BOOL supportsSamplerAddressModeClampToHalfBorder;
@@ -158,6 +171,12 @@
 @property(readonly, nonatomic) BOOL supportsArgumentBuffersTier2;
 @property(readonly, nonatomic) BOOL supportsBufferlessClientStorageTexture;
 @property(readonly, nonatomic) BOOL supportsQuadReduction;
+- (BOOL)supportsVertexAmplificationCount:(unsigned long long)arg1;
+- (id)newDynamicLibrary:(id)arg1 error:(id *)arg2;
+- (id)newDynamicLibrary:(id)arg1 computeDescriptor:(id)arg2 error:(id *)arg3;
+- (id)newDynamicLibraryFromURL:(id)arg1 error:(id *)arg2;
+- (id)newBinaryLibraryWithOptions:(unsigned long long)arg1 url:(id)arg2 error:(id *)arg3;
+- (id)newBinaryArchiveWithDescriptor:(id)arg1 error:(id *)arg2;
 - (void)newPrecompiledComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 pipelineCache:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)newPrecompiledRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 pipelineCache:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 @property(readonly, getter=isPlacementHeapSupported) BOOL placementHeapSupported;
@@ -195,6 +214,8 @@
 @property(readonly) unsigned long long maxBufferLength;
 @property(readonly) unsigned long long maxComputeAttributes;
 @property(readonly) unsigned long long maxTextureBufferWidth;
+@property(readonly) unsigned long long maxVertexAmplificationCount;
+@property(readonly) unsigned long long maxVertexAmplificationFactor;
 @property(readonly) unsigned long long maxCustomSamplePositions;
 @property(readonly) unsigned long long maxViewportCount;
 @property(readonly) unsigned long long maxIndirectSamplersPerDevice;
@@ -243,7 +264,7 @@
 @property(readonly) unsigned long long maxColorAttachments;
 @property(readonly) BOOL supportPriorityBand;
 @property(readonly) unsigned int acceleratorPort;
-@property(readonly) const CDStruct_ba442ac5 *limits;
+@property(readonly) const CDStruct_210bae5a *limits;
 @property(readonly) unsigned long long featureProfile;
 @property(readonly) unsigned long long doubleFPConfig;
 @property(readonly) unsigned long long singleFPConfig;
@@ -259,6 +280,9 @@
 - (void)_removeRequested;
 - (id)_deviceWrapper;
 - (void)_setDeviceWrapper:(id)arg1;
+@property(readonly) unsigned long long maxRasterizationRateLayerCount;
+- (id)newRasterizationRateMapWithDescriptor:(id)arg1;
+- (BOOL)supportsRasterizationRateMapWithLayerCount:(unsigned long long)arg1;
 - (void)getDefaultSamplePositions:(CDStruct_b2fbf00d *)arg1 count:(unsigned long long)arg2;
 @property(readonly, getter=areProgrammableSamplePositionsSupported) BOOL programmableSamplePositionsSupported;
 - (unsigned long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;

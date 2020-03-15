@@ -16,10 +16,10 @@
     id <SBScreenshotManagerDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_persistenceCoordinator, setter=_setPersistenceCoordinator:) _SBScreenshotPersistenceCoordinator *persistenceCoordinator; // @synthesize persistenceCoordinator=_persistenceCoordinator;
 @property(retain, nonatomic, getter=_sceneManagerCoordinator, setter=_setSceneManagerCoordinator:) SBSceneManagerCoordinator *sceneManagerCoordinator; // @synthesize sceneManagerCoordinator=_sceneManagerCoordinator;
 @property(readonly, nonatomic) id <SBScreenshotManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_providerForScreen:(id)arg1;
 - (id)_fetchEligibleScreenshotProvidersForSnapshotting;
 - (void)saveScreenshotsWithCompletion:(CDUnknownBlockType)arg1;

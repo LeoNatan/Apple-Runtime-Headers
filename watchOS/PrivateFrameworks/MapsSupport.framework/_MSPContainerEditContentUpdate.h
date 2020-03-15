@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <MSPImmutableObject> _updatedImmutableObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MSPImmutableObject> updatedImmutableObject; // @synthesize updatedImmutableObject=_updatedImmutableObject;
 @property(readonly, nonatomic) id <MSPMutableObject> updatedObject; // @synthesize updatedObject=_updatedObject;
-- (void).cxx_destruct;
 - (void)useImmutableObjectsFromMap:(id)arg1 intermediateMutableObjectTransferBlock:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
 - (id)initWithUpdatedImmutableObject:(id)arg1;

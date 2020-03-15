@@ -13,7 +13,7 @@
 @interface HKChartDataCacheController : NSObject <HKSampleTypeUpdateControllerObserver>
 {
     NSArray *_chartCachesByTimeScopeAndDisplayTypeIdentifier;
-    struct NSMutableDictionary *_chartCachesByDisplayTypeIdentifier;
+    NSMutableDictionary *_chartCachesByDisplayTypeIdentifier;
     NSMutableArray *_chartCachesByCustomDisplayType;
     NSMutableDictionary *_currentValueDataProvidersByDisplayType;
     NSMutableDictionary *_alternateCurrentValueDataProvidersByDisplayType;
@@ -24,10 +24,10 @@
     HKUnitPreferenceController *_unitController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) HKSampleTypeUpdateController *updateController; // @synthesize updateController=_updateController;
-- (void).cxx_destruct;
 - (void)addCustomChartCache:(id)arg1 forDisplayType:(id)arg2;
 - (id)activitySummaryDataProviderWithHealthStore:(id)arg1 dateCache:(id)arg2 displayTypeController:(id)arg3 unitController:(id)arg4;
 - (id)_createAlternateCurrentValueDataProviderForDisplayType:(id)arg1 healthStore:(id)arg2 updateController:(id)arg3 dateCache:(id)arg4;
@@ -40,7 +40,7 @@
 - (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
 - (id)_generateChartCacheForDisplayType:(id)arg1 timeScope:(long long)arg2;
-- (id)_chartCacheForDisplayType:(id)arg1 timeScope:(long long)arg2 chartCachesByDisplayTypeIdentifier:(struct NSMutableDictionary *)arg3;
+- (id)_chartCacheForDisplayType:(id)arg1 timeScope:(long long)arg2 chartCachesByDisplayTypeIdentifier:(id)arg3;
 - (id)_timeScopeBasedChartCacheForDisplayType:(id)arg1 timeScope:(long long)arg2;
 - (id)allInteractiveChartsCaches;
 - (id)interactiveChartsCacheForDisplayType:(id)arg1 timeScope:(long long)arg2;

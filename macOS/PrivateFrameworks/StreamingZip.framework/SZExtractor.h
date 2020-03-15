@@ -30,6 +30,7 @@
 + (void)enableDebugLogging;
 + (BOOL)supportsSecureCoding;
 + (id)knownSZExtractorImplementations;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasHadPostSetupMethodsCalled; // @synthesize hasHadPostSetupMethodsCalled=_hasHadPostSetupMethodsCalled;
 @property(nonatomic) BOOL needsPreparation; // @synthesize needsPreparation=_needsPreparation;
 @property(readonly, nonatomic) BOOL isLocalExtractor; // @synthesize isLocalExtractor=_isLocalExtractor;
@@ -41,7 +42,6 @@
 @property(nonatomic) unsigned long long lastResumptionOffset; // @synthesize lastResumptionOffset=_lastResumptionOffset;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) NSString *extractionPath; // @synthesize extractionPath=_extractionPath;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setActiveExtractorDelegateMethods:(int)arg1;
 @property(nonatomic) __weak id <SZExtractorDelegate> extractorDelegate;

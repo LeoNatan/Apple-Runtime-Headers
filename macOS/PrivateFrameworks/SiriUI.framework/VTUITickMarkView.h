@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultAnimationForKey:(id)arg1;
-@property(nonatomic) int glyph; // @synthesize glyph=_glyph;
 - (void).cxx_destruct;
+@property(nonatomic) int glyph; // @synthesize glyph=_glyph;
 - (id)xMaskLayer;
 - (id)checkMaskLayer;
 - (void)cycleWithCompletion:(CDUnknownBlockType)arg1;

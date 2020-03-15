@@ -6,10 +6,15 @@
 
 #import <objc/NSObject.h>
 
+@protocol OS_dispatch_queue;
+
 @interface MPCAssistantPause : NSObject
 {
+    NSObject<OS_dispatch_queue> *deviceUIDsQueue;
 }
 
+- (void).cxx_destruct;
+- (void)pauseDevicesByUID:(id)arg1 withRefId:(id)arg2 audioRoutingInfo:(CDStruct_b2f7276a)arg3 source:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)pauseDevicesByUID:(id)arg1 withRefId:(id)arg2 audioRoutingInfo:(CDStruct_b2f7276a)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end

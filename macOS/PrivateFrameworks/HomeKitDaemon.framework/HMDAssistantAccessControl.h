@@ -30,9 +30,9 @@
 + (id)modelIDNamespace;
 + (id)accessControlWithMessage:(id)arg1 user:(id)arg2 error:(id *)arg3;
 + (BOOL)isAccessorySupported:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)logIdentifier;

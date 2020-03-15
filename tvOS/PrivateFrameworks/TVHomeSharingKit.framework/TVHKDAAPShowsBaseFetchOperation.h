@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     TVHKMediaEntityFetchCache *_fetchCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKMediaEntityFetchCache *fetchCache; // @synthesize fetchCache=_fetchCache;
 @property(retain, nonatomic) TVHKDAAPMediaItemFetchOperation *episodesFetchOperation; // @synthesize episodesFetchOperation=_episodesFetchOperation;
-- (void).cxx_destruct;
 - (id)_episodesFetchRequest;
 - (id)_mediaEntitiesWithFetchedEpisodes:(id)arg1 andMediaEntityCache:(id)arg2;
 - (id)_mediaEntityCacheWithFetchCache:(id)arg1;

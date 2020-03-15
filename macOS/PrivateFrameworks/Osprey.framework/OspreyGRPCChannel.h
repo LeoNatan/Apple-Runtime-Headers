@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType connectionMetricsHandler; // @synthesize connectionMetricsHandler=_connectionMetricsHandler;
 @property(nonatomic) BOOL forceHTTPv2; // @synthesize forceHTTPv2=_forceHTTPv2;
 @property(nonatomic) BOOL useCompression; // @synthesize useCompression=_useCompression;
-- (void).cxx_destruct;
 - (void)preconnect;
 - (void)URLSession:(id)arg1 betterRouteDiscoveredForStreamTask:(id)arg2;
 - (void)URLSession:(id)arg1 writeClosedForStreamTask:(id)arg2;

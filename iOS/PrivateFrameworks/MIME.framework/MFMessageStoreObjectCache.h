@@ -17,9 +17,9 @@
     CDUnknownBlockType _comparator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(copy, nonatomic) CDUnknownBlockType keyGenerator; // @synthesize keyGenerator=_keyGenerator;
-- (void).cxx_destruct;
 - (void)flush;
 - (id)objectForMessage:(id)arg1 kind:(long long)arg2;
 - (void)removeObjectForMessage:(id)arg1 kind:(long long)arg2;

@@ -16,11 +16,11 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) HUCircleView *circleView; // @synthesize circleView=_circleView;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
-- (void).cxx_destruct;
 - (void)setAlpha:(double)arg1;
 - (void)tintColorDidChange;
 - (void)_setupConstraints;

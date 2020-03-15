@@ -21,8 +21,8 @@
     id <PSYProgressObserverDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PSYProgressObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PSYProgressObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)supportsMigrationSync;
 - (void)syncSessionObserver:(id)arg1 didInvalidateSyncSession:(id)arg2;
 - (void)syncSessionObserver:(id)arg1 receivedSyncSession:(id)arg2;

@@ -17,8 +17,8 @@
     unsigned long long _inkVersion;
 }
 
-@property(readonly, nonatomic) unsigned long long inkVersion; // @synthesize inkVersion=_inkVersion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long inkVersion; // @synthesize inkVersion=_inkVersion;
 - (_Bool)lockPurgeableResourcesAddToSet:(id)arg1;
 - (_Bool)needsCompute;
 - (unsigned long long)cacheCost;

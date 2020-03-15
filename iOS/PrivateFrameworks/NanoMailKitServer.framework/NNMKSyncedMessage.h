@@ -31,6 +31,7 @@
     unsigned long long _isSpecialMailboxSpecific;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long isSpecialMailboxSpecific; // @synthesize isSpecialMailboxSpecific=_isSpecialMailboxSpecific;
 @property(nonatomic) _Bool isThreadSpecific; // @synthesize isThreadSpecific=_isThreadSpecific;
 @property(retain, nonatomic) NSString *mailboxId; // @synthesize mailboxId=_mailboxId;
@@ -50,7 +51,6 @@
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *sanitizedMessageId; // @synthesize sanitizedMessageId=_sanitizedMessageId;
 @property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
-- (void).cxx_destruct;
 - (_Bool)isContentCompletelySynced;
 - (id)init;
 - (id)initWithMessage:(id)arg1 useDefaultMailbox:(_Bool)arg2;

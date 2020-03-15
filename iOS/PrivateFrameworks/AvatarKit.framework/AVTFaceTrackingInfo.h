@@ -18,10 +18,10 @@
 }
 
 + (id)trackingInfoWrappingTrackingData:(CDStruct_32896d86 *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasFaceTrackingData; // @synthesize hasFaceTrackingData=_hasFaceTrackingData;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) ARFrame *arFrame; // @synthesize arFrame=_arFrame;
-- (void).cxx_destruct;
 - (CDStruct_32896d86 *)trackingData;
 - (void)dealloc;
 

@@ -36,6 +36,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)imageWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *keyColor; // @synthesize keyColor=_keyColor;
@@ -46,7 +47,6 @@
 @property(nonatomic) BOOL shouldCropToCircle; // @synthesize shouldCropToCircle=_shouldCropToCircle;
 @property(nonatomic) BOOL isTemplate; // @synthesize isTemplate=_isTemplate;
 @property(copy) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

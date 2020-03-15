@@ -25,10 +25,6 @@ struct Electrocardiogram {
     } _has;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct PtrVector<binarysample::ElectrocardiogramLead> {
     struct vector<std::__1::unique_ptr<binarysample::ElectrocardiogramLead, std::__1::default_delete<binarysample::ElectrocardiogramLead>>, std::__1::allocator<std::__1::unique_ptr<binarysample::ElectrocardiogramLead, std::__1::default_delete<binarysample::ElectrocardiogramLead>>>> _v;
 };

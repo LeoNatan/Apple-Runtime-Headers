@@ -25,6 +25,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)configurationFromSourceConfiguration:(id)arg1 userIdentity:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *familyMemberStoreID; // @synthesize familyMemberStoreID=_familyMemberStoreID;
 @property(nonatomic) long long requestReason; // @synthesize requestReason=_requestReason;
 @property(copy, nonatomic) NSString *purchaseClientIdentifier; // @synthesize purchaseClientIdentifier=_purchaseClientIdentifier;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(readonly, nonatomic) ICUserIdentityStore *userIdentityStore; // @synthesize userIdentityStore=_userIdentityStore;
 @property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

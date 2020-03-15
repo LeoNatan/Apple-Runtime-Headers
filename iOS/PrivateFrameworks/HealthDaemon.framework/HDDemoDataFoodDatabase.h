@@ -19,6 +19,7 @@
     NSArray *_dinnerFoods;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *dinnerFoods; // @synthesize dinnerFoods=_dinnerFoods;
 @property(copy, nonatomic) NSArray *snackFoods; // @synthesize snackFoods=_snackFoods;
 @property(copy, nonatomic) NSArray *lunchFoods; // @synthesize lunchFoods=_lunchFoods;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSArray *beverages; // @synthesize beverages=_beverages;
 @property(copy, nonatomic) NSDictionary *canonicalDietaryUnits; // @synthesize canonicalDietaryUnits=_canonicalDietaryUnits;
 @property(copy, nonatomic) NSDictionary *dietaryNutrientDailyValues; // @synthesize dietaryNutrientDailyValues=_dietaryNutrientDailyValues;
-- (void).cxx_destruct;
 - (id)randomFoodObjectFromArray:(id)arg1;
 - (id)oliveGardenChickenAndShrimpCarbonara;
 - (id)oliveGardenChickenScampi;

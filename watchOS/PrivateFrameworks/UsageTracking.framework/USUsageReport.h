@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSDate *lastEventDate; // @synthesize lastEventDate=_lastEventDate;
 @property(readonly, copy) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(readonly, copy) NSDateInterval *interval; // @synthesize interval=_interval;
@@ -31,7 +32,6 @@
 @property(readonly, copy) NSArray *categoryUsage; // @synthesize categoryUsage=_categoryUsage;
 @property(readonly, copy) NSDateInterval *longestSession; // @synthesize longestSession=_longestSession;
 @property(readonly) double screenTime; // @synthesize screenTime=_screenTime;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy) NSDictionary *pickupsByBundleIdentifier;
 @property(readonly, copy) NSDictionary *userNotificationsByBundleIdentifier;

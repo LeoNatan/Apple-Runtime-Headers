@@ -19,10 +19,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long InstanceIndex; // @synthesize InstanceIndex=_InstanceIndex;
 @property(copy, nonatomic) NSString *ChangeKey; // @synthesize ChangeKey=_ChangeKey;
 @property(copy, nonatomic) NSString *RecurringMasterId; // @synthesize RecurringMasterId=_RecurringMasterId;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

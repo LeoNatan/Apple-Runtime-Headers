@@ -16,10 +16,10 @@
     } __secondaryTarget;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_convergenceStartValue:) double _convergenceStartValue; // @synthesize _convergenceStartValue=__convergenceStartValue;
 @property(nonatomic, setter=_setSecondaryTarget:) CDStruct_c3b9c2ee _secondaryTarget; // @synthesize _secondaryTarget=__secondaryTarget;
 @property(retain, nonatomic, setter=_setSettlingSpring:) CAMSpring *_settleProgressSpring; // @synthesize _settleProgressSpring=__settleProgressSpring;
-- (void).cxx_destruct;
 - (void)updateForTimestamp:(double)arg1;
 - (void)resetToValue:(double)arg1 animated:(_Bool)arg2;
 - (void)resetToValue:(double)arg1;

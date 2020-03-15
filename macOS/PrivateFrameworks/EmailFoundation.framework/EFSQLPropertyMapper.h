@@ -14,8 +14,8 @@
 }
 
 + (id)emptyPropertyMapper;
-@property(retain, nonatomic) NSMutableDictionary *lookupValues; // @synthesize lookupValues=_lookupValues;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *lookupValues; // @synthesize lookupValues=_lookupValues;
 - (id)_findAllProtocolsOfClass:(Class)arg1 withProperty:(SEL)arg2;
 - (id)merge:(id)arg1;
 - (id)valueForLookupKey:(id)arg1 protocol:(id)arg2 property:(SEL)arg3;

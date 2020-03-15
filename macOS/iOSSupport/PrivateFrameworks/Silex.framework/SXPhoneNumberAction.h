@@ -15,8 +15,8 @@
     NSString *_phoneNumber;
 }
 
-@property(readonly, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(readonly, nonatomic) NSString *type;
 - (id)initWithPhoneNumber:(id)arg1;
 

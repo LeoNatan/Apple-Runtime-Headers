@@ -17,9 +17,9 @@
 
 + (id)enabledKey;
 + (id)autoKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUAdjustment *adjustment; // @synthesize adjustment=_adjustment;
 @property(retain, nonatomic) NUIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)_isDefault;
 @property(readonly, nonatomic) NSDictionary *settings;
 - (id)_primitiveValueForKey:(id)arg1;

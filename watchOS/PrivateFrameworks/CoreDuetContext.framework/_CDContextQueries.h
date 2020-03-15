@@ -151,6 +151,7 @@
 + (id)calleeContactIDKey;
 + (id)keyPathForActiveCall;
 + (id)nowPlayingCreationDateKey;
++ (id)nowPlayingMediaTypeKey;
 + (id)nowPlayingOutputDeviceIDsKey;
 + (id)nowPlayingTrackKey;
 + (id)nowPlayingBundleIdKey;

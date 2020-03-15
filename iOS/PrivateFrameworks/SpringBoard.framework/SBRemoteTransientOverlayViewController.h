@@ -28,10 +28,10 @@
 }
 
 + (void)requestViewControllerForAlertDefinition:(id)arg1 connectionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long wallpaperVariant; // @synthesize wallpaperVariant=_wallpaperVariant;
 @property(nonatomic) __weak id <SBRemoteTransientOverlayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long preferredDismissalAnimationStyle; // @synthesize preferredDismissalAnimationStyle=_preferredDismissalAnimationStyle;
-- (void).cxx_destruct;
 - (_Bool)_needsWallpaperEffectView;
 - (void)_configureWallpaperEffectViewWithAnimationSettings:(id)arg1;
 - (void)prepareForActivationWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;

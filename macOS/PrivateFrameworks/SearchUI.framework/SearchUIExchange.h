@@ -17,11 +17,11 @@
 }
 
 + (id)formattedExchangeNameForName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
 @property(nonatomic) double streamInterval; // @synthesize streamInterval=_streamInterval;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

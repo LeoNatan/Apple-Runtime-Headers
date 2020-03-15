@@ -14,9 +14,9 @@
     long long _setting;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long setting; // @synthesize setting=_setting;
 @property(readonly, nonatomic) MPNowPlayingInfoLanguageOption *languageOption; // @synthesize languageOption=_languageOption;
-- (void).cxx_destruct;
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 
 @end

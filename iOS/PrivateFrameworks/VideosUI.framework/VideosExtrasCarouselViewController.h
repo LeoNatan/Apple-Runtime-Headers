@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
     UICollectionViewLayout<VideosExtrasCarouselCollectionViewLayout> *_carouselCollectionViewLayout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRevealingNavigationBarDuringTransition) _Bool revealingNavigationBarDuringTransition; // @synthesize revealingNavigationBarDuringTransition=_revealingNavigationBarDuringTransition;
 @property(retain, nonatomic) UICollectionViewLayout<VideosExtrasCarouselCollectionViewLayout> *carouselCollectionViewLayout; // @synthesize carouselCollectionViewLayout=_carouselCollectionViewLayout;
 @property(retain, nonatomic) VideosExtrasCarouselCollectionView *carouselCollectionView; // @synthesize carouselCollectionView=_carouselCollectionView;
 @property(nonatomic) __weak id <VideosExtrasCarouselViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <VideosExtrasCarouselViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (_Bool)_isPhone;
 - (void)_updateWindowSizeForVisibleCells;
 - (void)_updateOpacityOfTextInVisibleCells;

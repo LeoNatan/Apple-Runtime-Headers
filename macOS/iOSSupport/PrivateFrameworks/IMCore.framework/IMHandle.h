@@ -86,6 +86,7 @@
 + (void)_loadStatusNames;
 + (BOOL)notificationsEnabled;
 + (void)setNotificationsEnabled:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasCheckedForSuggestions; // @synthesize hasCheckedForSuggestions=_hasCheckedForSuggestions;
 @property(copy, nonatomic) NSString *suggestedName; // @synthesize suggestedName=_suggestedName;
 @property(nonatomic) long long IDStatus; // @synthesize IDStatus=_IDStatus;
@@ -112,7 +113,6 @@
 @property(readonly, nonatomic) unsigned long long previousStatus; // @synthesize previousStatus=_prevStatus;
 @property(readonly, retain, nonatomic) NSDictionary *extraProperties; // @synthesize extraProperties=_extraProps;
 @property(readonly, retain, nonatomic) NSString *originalID; // @synthesize originalID=_uncanonicalID;
-- (void).cxx_destruct;
 - (void)_mapItemBannerImageDataFetchedWithResponse:(id)arg1 statusCode:(long long)arg2 resultData:(id)arg3 remoteURLConnectionError:(id)arg4;
 - (void)_fetchMapItemBannerImageDataForMapItem:(id)arg1;
 - (void)_mapItemImageDataFetchedWithResponse:(id)arg1 statusCode:(long long)arg2 resultData:(id)arg3 remoteURLConnectionError:(id)arg4;

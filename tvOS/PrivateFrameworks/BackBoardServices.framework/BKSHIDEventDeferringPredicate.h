@@ -20,10 +20,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) BKSHIDEventDeferringToken *token; // @synthesize token=_token;
 @property(readonly, copy, nonatomic) BKSHIDEventDisplay *display; // @synthesize display=_display;
 @property(readonly, nonatomic) BKSHIDEventDeferringEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

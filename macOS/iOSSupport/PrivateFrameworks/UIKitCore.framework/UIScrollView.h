@@ -15,13 +15,12 @@
 #import <UIKitCore/_UIScrollerImpDelegate-Protocol.h>
 #import <UIKitCore/_UIScrollerImpPairDelegate-Protocol.h>
 
-@class CADisplayLink, NSArray, NSHashTable, NSISVariable, NSMutableDictionary, NSString, NSTimer, UIGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRefreshControl, UIScrollViewDelayedTouchesBeganGestureRecognizer, UIScrollViewDirectionalPressGestureRecognizer, UIScrollViewPanGestureRecognizer, UIScrollViewPinchGestureRecognizer, UISwipeGestureRecognizer, _UIAutoScrollAssistant, _UIDragAutoScrollGestureRecognizer, _UIFocusFastScrollingController, _UIFocusFastScrollingIndexBarView, _UIFocusFastScrollingRequest, _UIScrollDynamics, _UIScrollViewScrollIndicator, _UIScrollerImpContainerView, _UIScrollerImpPair, _UIStaticScrollBar, _UIWorkIntervalProxy;
+@class CADisplayLink, NSArray, NSHashTable, NSISVariable, NSMutableDictionary, NSString, NSTimer, UIGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRefreshControl, UIScrollViewDelayedTouchesBeganGestureRecognizer, UIScrollViewDirectionalPressGestureRecognizer, UIScrollViewPanGestureRecognizer, UIScrollViewPinchGestureRecognizer, UISwipeGestureRecognizer, UIViewAnimationState, _UIAutoScrollAssistant, _UIDragAutoScrollGestureRecognizer, _UIFocusFastScrollingController, _UIFocusFastScrollingIndexBarView, _UIFocusFastScrollingRequest, _UIScrollDynamics, _UIScrollViewScrollIndicator, _UIScrollerImpContainerView, _UIScrollerImpPair, _UIStaticScrollBar;
 @protocol UICoordinateSpace, UIFocusItem, UIScrollViewDelegate, _UIScrollViewLayoutObserver, _UIScrollViewScrollableAncestor;
 
 @interface UIScrollView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelayedTouchesBeganGestureRecognizerClient, _UIScrollerImpDelegate, _UIScrollerImpPairDelegate, _UIScrollToTopView, UIIndexBarAccessoryViewDelegate, NSCoding, UIFocusItemScrollableContainer>
 {
     id _delegate;
-    _UIWorkIntervalProxy *_workIntervalProxy;
     struct CGSize _contentSize;
     struct UIEdgeInsets _contentInset;
     double _refreshControlContentInsetHeight;
@@ -49,10 +48,10 @@
     double _previousHorizontalVelocity;
     double _previousVerticalVelocity;
     CADisplayLink *_scrollHeartbeat;
-    CADisplayLink *_trackingHeartbeat;
     double _telemetryOffsetChangeTime;
-    struct CGPoint _telemetryOffsetChangeDistance;
-    double _telemetryZoomChangeDistance;
+    long long _telemetryOffsetChangeCount;
+    double _telemetryOffsetChangeHighRateDuration;
+    struct CGSize _telemetryOffsetChange;
     struct CGPoint _pageDecelerationTarget;
     struct CGSize _decelerationFactor;
     struct CGPoint _adjustedDecelerationTarget;
@@ -64,6 +63,7 @@
     double _contentOffsetAnimationDuration;
     id _animation;
     id _zoomAnimation;
+    UIViewAnimationState *_zoomAnimationState;
     UIScrollViewPinchGestureRecognizer *_pinch;
     UIScrollViewPanGestureRecognizer *_pan;
     id _swipe;
@@ -209,11 +209,13 @@
         unsigned int indicatorInsetAdjustmentBehavior:2;
         unsigned int observingBoundingPathChanges:1;
         unsigned int resetsBoundingPathForSubtree:1;
-        unsigned int scrubbing:3;
+        unsigned int scrubbing:4;
         unsigned int scrubbingKnobWithOption:1;
         unsigned int waitingForMacPagingScrollTimer:1;
         unsigned int alwaysAppliesKeyboardBottomInsetAdjustment:1;
         unsigned int shouldAdjustLayoutToMergeWithBar:1;
+        unsigned int focusFastScrollingDisabled:1;
+        unsigned int supportsPointerDragScrolling:1;
     } _scrollViewFlags;
     struct CGPoint _knobOptionScrubbingStartOffset;
     struct CGPoint _knobOptionScrubbingStartTranslation;
@@ -247,6 +249,7 @@
 + (SEL)_panGestureAction;
 + (unsigned long long)_defaultEdgesScrollingContentIntoSafeArea;
 + (id)_implicitAnimationCulprits;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIEdgeInsets accessoryInsets; // @synthesize accessoryInsets=_accessoryInsets;
 @property(copy, nonatomic, setter=_setAllowedTouchTypesForScrolling:) NSArray *_allowedTouchTypesForScrolling; // @synthesize _allowedTouchTypesForScrolling=__allowedTouchTypesForScrolling;
 @property(retain, nonatomic, getter=_macPagingScrollTimer, setter=_setMacPagingScrollTimer:) NSTimer *macPagingScrollTimer; // @synthesize macPagingScrollTimer=_macPagingScrollTimer;
@@ -270,7 +273,6 @@
 @property(readonly, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_pan;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIAutoScrollAssistant *_autoScrollAssistant;
 - (void)_adjustContentOffsetIfNecessary;
 - (void)_applyAutomaticAdjustedContentOffset:(struct CGPoint)arg1;
@@ -426,6 +428,7 @@
 - (void)_clearScrollBounceStatisticsTrackingState;
 - (void)_updateRubberbandingStatisticTrackingState;
 @property(readonly, nonatomic) struct CGSize visibleSize;
+- (id)_systemDefaultFocusGroupDescriptor;
 - (id)_overridingPreferredFocusEnvironment;
 - (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (struct UIEdgeInsets)_focusFastScrollingIndexBarInsets;
@@ -480,6 +483,7 @@
 - (void)_hideScrollIndicator:(id)arg1 afterDelay:(double)arg2 animated:(BOOL)arg3;
 - (void)_hideScrollIndicators;
 - (void)_updateScrollerImpsForcingReplacement:(BOOL)arg1;
+- (struct CGRect)_scrollIndicatorContainerRect;
 - (void)_layoutHorizontalScrollIndicatorWithBounds:(struct CGRect)arg1 effectiveInset:(struct UIEdgeInsets)arg2 contentOffset:(struct CGPoint)arg3 fraction:(double)arg4 additionalInset:(double)arg5 cornerAdjust:(double)arg6 showing:(BOOL)arg7 recalcSize:(BOOL)arg8 verticalIndicatorFrame:(struct CGRect)arg9;
 - (struct CGRect)_layoutVerticalScrollIndicatorWithBounds:(struct CGRect)arg1 effectiveInset:(struct UIEdgeInsets)arg2 contentOffset:(struct CGPoint)arg3 fraction:(double)arg4 additionalInset:(double)arg5 cornerAdjust:(double)arg6 showing:(BOOL)arg7 recalcSize:(BOOL)arg8;
 - (void)_adjustScrollerIndicators:(BOOL)arg1 alwaysShowingThem:(BOOL)arg2;
@@ -590,6 +594,8 @@
 - (void)_handleDirectionalScrollToOffset:(struct CGPoint)arg1 clampingToBounds:(BOOL)arg2;
 - (void)_handleDirectionalPress:(id)arg1;
 - (void)_handleDirectionalPageWithHorizontalVelocity:(double)arg1 verticalVelocity:(double)arg2;
+- (void)_setSupportsPointerDragScrolling:(BOOL)arg1;
+- (BOOL)_supportsPointerDragScrolling;
 - (void)_setAutoScrollTouchInsets:(struct UIEdgeInsets)arg1;
 - (struct UIEdgeInsets)_autoScrollTouchInsets;
 - (BOOL)_isAutoScrollEnabled;
@@ -629,7 +635,8 @@
 - (struct CGPoint)_clampScrollOffsetToBounds:(struct CGPoint)arg1;
 @property(readonly, nonatomic, getter=_isScrubbing) BOOL _scrubbing;
 - (BOOL)_canScrubWithTouch:(id)arg1;
-- (long long)_scrubbingForPoint:(struct CGPoint)arg1;
+- (long long)_scrubbingForPoint:(struct CGPoint)arg1 touchType:(long long)arg2;
+- (long long)_scrubbingForPoint:(struct CGPoint)arg1 touch:(id)arg2;
 - (void)setShowBackgroundShadow:(BOOL)arg1;
 - (BOOL)_showsBackgroundShadow;
 - (void)_setShowsBackgroundShadow:(BOOL)arg1;
@@ -643,6 +650,8 @@
 - (void)_enableOnlyGestureRecognizersForCurrentTouchLevel;
 - (void)_createGestureRecognizersForCurrentTouchLevel;
 - (void)delayed:(id)arg1;
+- (void)_setFocusFastScrollingDisabled:(BOOL)arg1;
+- (BOOL)_focusFastScrollingDisabled;
 - (double)_focusFastScrollingBarZPosition;
 @property(readonly, nonatomic, getter=_scrollHysteresis) double scrollHysteresis; // @dynamic scrollHysteresis;
 - (void)_setAllowedFocusBounceEdges:(unsigned long long)arg1;
@@ -778,7 +787,7 @@
 - (void)_updateUsesStaticScrollBar;
 - (BOOL)_usesLowFidelityPanning;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
-- (void)_flashScrollIndicatorsForAxes:(int)arg1 persistingPreviousFlashes:(BOOL)arg2;
+- (void)_flashScrollIndicatorsForAxes:(unsigned long long)arg1 persistingPreviousFlashes:(BOOL)arg2;
 - (void)_setUsesStaticScrollBar:(BOOL)arg1;
 @property(readonly, nonatomic) _UIStaticScrollBar *_staticScrollBar;
 - (void)dealloc;
@@ -794,7 +803,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_trackingDidEnd;
-- (void)_handleTrackingHeartbeat:(id)arg1;
 - (void)_trackingDidBegin;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)_autoScrollAssistantUpdateContentOffset:(struct CGPoint)arg1;
@@ -816,12 +824,12 @@
 - (void)_incrementForScrollTest:(id)arg1;
 - (id)_scrollTestExtraResults;
 - (void)_performScrollTestWithParameters:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5 extraResultsBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5 extraResultsBlock:(CDUnknownBlockType)arg6;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5;
-- (void)_performFullScreenScrollTest:(id)arg1 iterations:(int)arg2 scrollAxis:(int)arg3;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(unsigned long long)arg5 extraResultsBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(unsigned long long)arg5 extraResultsBlock:(CDUnknownBlockType)arg6;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(unsigned long long)arg5;
+- (void)_performFullScreenScrollTest:(id)arg1 iterations:(int)arg2 scrollAxis:(unsigned long long)arg3;
 - (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 scrollAxis:(int)arg4;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 scrollAxis:(unsigned long long)arg4;
 - (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3;
 - (BOOL)_isAnimatingScrollTest;
 - (void)_suppressImplicitAnimationsForScrollTest;

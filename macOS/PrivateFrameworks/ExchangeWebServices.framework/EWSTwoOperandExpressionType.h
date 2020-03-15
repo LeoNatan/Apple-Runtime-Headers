@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSFieldURIOrConstantType *FieldURIOrConstant; // @synthesize FieldURIOrConstant=_FieldURIOrConstant;
 @property(retain, nonatomic) EWSBasePathToElementType *Path; // @synthesize Path=_Path;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

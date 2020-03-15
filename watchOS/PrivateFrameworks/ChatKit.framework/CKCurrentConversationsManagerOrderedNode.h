@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_key;
 }
 
-@property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 
 @end
 

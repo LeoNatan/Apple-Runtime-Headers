@@ -22,10 +22,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *homeKitMultiUserSettingsValueData; // @synthesize homeKitMultiUserSettingsValueData=_homeKitMultiUserSettingsValueData;
 @property(nonatomic) long long homeKitMultiUserSettingsValueInteger; // @synthesize homeKitMultiUserSettingsValueInteger=_homeKitMultiUserSettingsValueInteger;
 @property(retain, nonatomic) NSString *homeKitMultiUserSettingsValueString; // @synthesize homeKitMultiUserSettingsValueString=_homeKitMultiUserSettingsValueString;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

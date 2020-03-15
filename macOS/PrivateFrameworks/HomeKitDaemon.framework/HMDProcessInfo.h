@@ -25,6 +25,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *connectionProxies; // @synthesize connectionProxies=_connectionProxies;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 @property(retain, nonatomic) NSArray *runningReasons; // @synthesize runningReasons=_runningReasons;
@@ -32,7 +33,6 @@
 @property(readonly) HMFLocationAuthorization *locationAuthorization; // @synthesize locationAuthorization=_locationAuthorization;
 @property(readonly, nonatomic) __weak HMDApplicationInfo *appInfo; // @synthesize appInfo=_appInfo;
 @property(readonly, nonatomic, getter=isViewService) BOOL viewService; // @synthesize viewService=_viewService;
-- (void).cxx_destruct;
 - (id)_activeRequestIdentifiers;
 - (void)initiateRefresh;
 - (void)removeConnectionProxy:(id)arg1;

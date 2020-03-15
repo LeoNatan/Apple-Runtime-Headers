@@ -33,6 +33,7 @@
     CDStruct_aca18c62 _bounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak VKMapView *currentMapView; // @synthesize currentMapView=_currentMapView;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *updates_queue; // @synthesize updates_queue=_updates_queue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *properties_queue; // @synthesize properties_queue=_properties_queue;
@@ -51,7 +52,6 @@
 @property(nonatomic) struct CGPoint explorationLastTouchPoint; // @synthesize explorationLastTouchPoint=_explorationLastTouchPoint;
 @property(nonatomic) float explorationZoomLevel; // @synthesize explorationZoomLevel=_explorationZoomLevel;
 @property(nonatomic) __weak id <VKMapViewAccessibilityElementManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)init;
 - (void)updateAccessibilityElementsForMapView:(id)arg1 isRetry:(_Bool)arg2;
 - (void)updateAccessibilityElementsForMapView:(id)arg1;

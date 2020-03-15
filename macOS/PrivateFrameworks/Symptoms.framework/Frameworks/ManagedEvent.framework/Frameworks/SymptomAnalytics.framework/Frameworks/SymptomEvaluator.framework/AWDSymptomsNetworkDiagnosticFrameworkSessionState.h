@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *symptomName; // @synthesize symptomName=_symptomName;
 @property(nonatomic) unsigned long long stateHeldForSecs; // @synthesize stateHeldForSecs=_stateHeldForSecs;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

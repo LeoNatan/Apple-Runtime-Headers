@@ -14,8 +14,8 @@
 }
 
 + (id)itemWithPath:(id)arg1;
-@property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 - (id)imageRepresentation;
 - (id)imageRepresentationType;
 - (id)imageUID;

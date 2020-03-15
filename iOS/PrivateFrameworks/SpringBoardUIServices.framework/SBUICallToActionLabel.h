@@ -22,6 +22,7 @@
     NSMutableArray *_animationCompletionBlocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *animationCompletionBlocks; // @synthesize animationCompletionBlocks=_animationCompletionBlocks;
 @property(retain, nonatomic) NSTimer *animationTimer; // @synthesize animationTimer=_animationTimer;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) SBUILegibilityLabel *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
-- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)animationDidStart:(id)arg1;
 - (void)_executePostAnimationCompletionBlocks;

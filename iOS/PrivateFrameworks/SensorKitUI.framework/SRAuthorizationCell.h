@@ -16,10 +16,10 @@
     id <SRAuthorizationCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SRAuthorizationCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) UISwitch *toggle; // @synthesize toggle=_toggle;
-- (void).cxx_destruct;
 - (void)switchChanged;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

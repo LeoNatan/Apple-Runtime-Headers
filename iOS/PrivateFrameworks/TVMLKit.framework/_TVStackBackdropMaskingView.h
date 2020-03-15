@@ -16,10 +16,10 @@
     double _gradientStop;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double gradientStop; // @synthesize gradientStop=_gradientStop;
 @property(nonatomic) double gradientScale; // @synthesize gradientScale=_gradientScale;
 @property(retain, nonatomic) _TVStackBackdropView *backdropView; // @synthesize backdropView=_backdropView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

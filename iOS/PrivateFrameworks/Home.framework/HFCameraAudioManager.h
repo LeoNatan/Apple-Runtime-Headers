@@ -15,10 +15,10 @@
     HFCharacteristicValueManager *_valueManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFCharacteristicValueManager *valueManager; // @synthesize valueManager=_valueManager;
 @property(retain, nonatomic) HMCameraStream *cameraStream; // @synthesize cameraStream=_cameraStream;
 @property(retain, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
-- (void).cxx_destruct;
 - (id)_writeValuesForCharacteristics:(id)arg1;
 - (id)_readValuesForCharacteristics:(id)arg1;
 - (id)_enableAudioIfNecessaryForAudioControl:(id)arg1 minVolume:(float)arg2;

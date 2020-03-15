@@ -28,6 +28,7 @@
     NSMutableArray *_deletedRecords;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *deletedRecords; // @synthesize deletedRecords=_deletedRecords;
 @property(retain, nonatomic) NSMutableSet *updatedRelationship; // @synthesize updatedRelationship=_updatedRelationship;
 @property(retain, nonatomic) NSMutableArray *suggestionChanges; // @synthesize suggestionChanges=_suggestionChanges;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSMutableSet *adjustedAssetUuids; // @synthesize adjustedAssetUuids=_adjustedAssetUuids;
 @property(retain, nonatomic) NSMutableArray *updatedAssets; // @synthesize updatedAssets=_updatedAssets;
 @property(retain, nonatomic) NSMutableArray *insertedAssets; // @synthesize insertedAssets=_insertedAssets;
-- (void).cxx_destruct;
 - (id)summaryDescription;
 - (BOOL)isEmpty;
 - (id)init;

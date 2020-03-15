@@ -18,10 +18,10 @@
     NSMutableDictionary *_cacheKeysByProperty;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cacheKeysByProperty; // @synthesize cacheKeysByProperty=_cacheKeysByProperty;
 @property(retain, nonatomic) NSCache *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) id <EDMailboxPredictor> predictor; // @synthesize predictor=_predictor;
-- (void).cxx_destruct;
 - (id)_propertyKeysForMessage:(id)arg1;
 - (void)_trackCacheKey:(id)arg1 forPropertyKey:(id)arg2;
 - (id)_cacheKeyForMessages:(id)arg1;

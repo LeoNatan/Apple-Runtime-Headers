@@ -19,11 +19,11 @@
     id <NSObject> _object;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> object; // @synthesize object=_object;
 @property(retain, nonatomic) NSString *albumGUID; // @synthesize albumGUID=_albumGUID;
 @property(retain, nonatomic) MSASAlbum *album; // @synthesize album=_album;
 @property(nonatomic) int errorCount; // @synthesize errorCount=_errorCount;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 

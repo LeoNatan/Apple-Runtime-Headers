@@ -28,6 +28,7 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *minimumHeightConstraint; // @synthesize minimumHeightConstraint=_minimumHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *labelsSpacingConstraint; // @synthesize labelsSpacingConstraint=_labelsSpacingConstraint;
 @property(retain, nonatomic) NSArray *valueTextFieldConstraints; // @synthesize valueTextFieldConstraints=_valueTextFieldConstraints;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(readonly, nonatomic) UITextField *valueTextField; // @synthesize valueTextField=_valueTextField;
-- (void).cxx_destruct;
 - (void)_updateTitle;
 - (void)_addValueTextField;
 - (void)_addTitleLabel;

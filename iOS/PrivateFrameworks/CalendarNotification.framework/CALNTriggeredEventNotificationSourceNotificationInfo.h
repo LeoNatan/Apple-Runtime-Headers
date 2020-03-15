@@ -37,6 +37,7 @@
     unsigned long long _travelAdvisoryTimelinessPeriod;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool forceDisplayOfNewTravelAdvisoryHypotheses; // @synthesize forceDisplayOfNewTravelAdvisoryHypotheses=_forceDisplayOfNewTravelAdvisoryHypotheses;
 @property(readonly, nonatomic) unsigned long long travelAdvisoryTimelinessPeriod; // @synthesize travelAdvisoryTimelinessPeriod=_travelAdvisoryTimelinessPeriod;
 @property(readonly, copy, nonatomic) EKTravelEngineHypothesis *hypothesis; // @synthesize hypothesis=_hypothesis;
@@ -62,7 +63,6 @@
 @property(readonly, copy, nonatomic) NSString *locationWithoutPrediction; // @synthesize locationWithoutPrediction=_locationWithoutPrediction;
 @property(readonly, copy, nonatomic) NSString *location; // @synthesize location=_location;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTitle:(id)arg1 location:(id)arg2 locationWithoutPrediction:(id)arg3 preferredLocation:(id)arg4 startDate:(id)arg5 endDate:(id)arg6 isAllDay:(_Bool)arg7 launchURL:(id)arg8 isLocationEvent:(_Bool)arg9 eventID:(id)arg10 eventObjectID:(id)arg11 eventRepresentationDictionary:(id)arg12 legacyIdentifier:(id)arg13 mapItemURL:(id)arg14 conferenceURL:(id)arg15 mailtoURL:(id)arg16 hasSuggestedLocation:(_Bool)arg17 eventHasAlarms:(_Bool)arg18 alarmID:(id)arg19 isOffsetFromTravelTimeStart:(_Bool)arg20 lastFireTimeOfAlertOffsetFromTravelTime:(id)arg21 allowsLocationAlerts:(_Bool)arg22 hypothesis:(id)arg23 travelAdvisoryTimelinessPeriod:(unsigned long long)arg24 forceDisplayOfNewTravelAdvisoryHypotheses:(_Bool)arg25;
 

@@ -74,6 +74,7 @@
 + (id)assetFileForURL:(id)arg1 source:(id)arg2;
 + (id)assetFileForURL:(id)arg1 source:(id)arg2 withUuid:(id)arg3;
 + (_Bool)isValidAsSidecar:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sidecarAssetsByType; // @synthesize sidecarAssetsByType=_sidecarAssetsByType;
 @property(nonatomic) unsigned short resourceSubType; // @synthesize resourceSubType=_resourceSubType;
 @property(nonatomic) long long resourceType; // @synthesize resourceType=_resourceType;
@@ -117,7 +118,6 @@
 @property(retain, nonatomic) NSMutableArray *relatedBurstAssets; // @synthesize relatedBurstAssets=_relatedBurstAssets;
 @property unsigned char duplicateStateConfidence; // @synthesize duplicateStateConfidence=_duplicateStateConfidence;
 @property(retain, nonatomic) id uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (_Bool)isEqualToImportAsset:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

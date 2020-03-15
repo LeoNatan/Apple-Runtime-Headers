@@ -17,8 +17,8 @@
 
 + (id)contextFromExtensionItem:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *activityItemValueExtensionMatchingDictionaries; // @synthesize activityItemValueExtensionMatchingDictionaries=_activityItemValueExtensionMatchingDictionaries;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *activityItemValueExtensionMatchingDictionaries; // @synthesize activityItemValueExtensionMatchingDictionaries=_activityItemValueExtensionMatchingDictionaries;
 - (id)newExtensionItem;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

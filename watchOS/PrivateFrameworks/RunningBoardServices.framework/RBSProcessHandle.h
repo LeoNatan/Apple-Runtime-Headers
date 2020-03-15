@@ -38,11 +38,11 @@
 + (id)handleForPredicate:(id)arg1 error:(out id *)arg2;
 + (id)handleForIdentifier:(id)arg1 error:(out id *)arg2;
 + (id)currentProcess;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BSMachPortTaskNameRight *lifePort; // @synthesize lifePort=_lifePort;
 @property(readonly, copy, nonatomic) RBSProcessInstance *instance; // @synthesize instance=_instance;
 @property(readonly, nonatomic) RBSProcessBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, nonatomic, getter=isReported) _Bool reported; // @synthesize reported=_reported;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;

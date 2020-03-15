@@ -24,6 +24,7 @@
     UIColor *_splitColor;
 }
 
++ (id)tritiumColor;
 + (id)paletteForColor:(unsigned int)arg1;
 + (id)noirSecondHandColor;
 + (id)noirHandStrokeColor;
@@ -49,6 +50,7 @@
 + (id)ambreColor;
 + (id)zeusSilverColor;
 + (id)zeusOrangeColor;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *splitColor; // @synthesize splitColor=_splitColor;
 @property(readonly, nonatomic) unsigned int bleed; // @synthesize bleed=_bleed;
 @property(readonly, nonatomic) float secondHandAlpha; // @synthesize secondHandAlpha=_secondHandAlpha;
@@ -60,7 +62,6 @@
 @property(readonly, nonatomic) UIColor *secondHandColor; // @synthesize secondHandColor=_secondHandColor;
 @property(readonly, nonatomic) UIColor *complicationColor; // @synthesize complicationColor=_complicationColor;
 @property(readonly, nonatomic) UIColor *dialColor; // @synthesize dialColor=_dialColor;
-- (void).cxx_destruct;
 - (id)paletteWithTritiumOnProgress:(float)arg1;
 @property(readonly, nonatomic) UIColor *tritium_handInlayColor;
 @property(readonly, nonatomic) UIColor *tritium_hourHandColor;

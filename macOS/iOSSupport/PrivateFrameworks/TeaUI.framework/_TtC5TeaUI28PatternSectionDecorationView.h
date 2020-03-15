@@ -6,9 +6,7 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-#import <TeaUI/TUGutterViewBoundsObserver-Protocol.h>
-
-@interface _TtC5TeaUI28PatternSectionDecorationView : UICollectionReusableView <TUGutterViewBoundsObserver>
+@interface _TtC5TeaUI28PatternSectionDecorationView : UICollectionReusableView
 {
     // Error parsing type: , name: patternView
     // Error parsing type: , name: model

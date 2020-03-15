@@ -15,10 +15,10 @@
     _TtC9Coherence9CRContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak _TtC9Coherence9CRContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) vector_4788519f *insertStrings; // @synthesize insertStrings=_insertStrings;
 @property(readonly, nonatomic) vector_4b213608 *deleteRanges; // @synthesize deleteRanges=_deleteRanges;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_applyToString:(id)arg1;
 - (void)applyToString:(id)arg1;

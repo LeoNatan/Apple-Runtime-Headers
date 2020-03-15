@@ -16,11 +16,11 @@
     LAContext *_myLAContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LAContext *myLAContext; // @synthesize myLAContext=_myLAContext;
 @property _Bool siteDiscoveryInProgress; // @synthesize siteDiscoveryInProgress=_siteDiscoveryInProgress;
 @property(retain, nonatomic) SORealmSettingManager *settingsManager; // @synthesize settingsManager=_settingsManager;
 @property(retain, nonatomic) NSString *realm; // @synthesize realm=_realm;
-- (void).cxx_destruct;
 - (unsigned long long)mapErrorToKnownError:(id)arg1;
 - (unsigned long long)findExistingCredentialUsingContext:(id)arg1 returningCredential:(struct gss_cred_id_t_desc_struct **)arg2 orError:(id *)arg3;
 - (unsigned long long)createNewCredentialUsingContext:(id)arg1 returningCredential:(struct gss_cred_id_t_desc_struct **)arg2 orError:(id *)arg3;

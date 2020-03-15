@@ -14,8 +14,8 @@
     HKCategoryType *_categoryType;
 }
 
-@property(retain, nonatomic) HKCategoryType *categoryType; // @synthesize categoryType=_categoryType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKCategoryType *categoryType; // @synthesize categoryType=_categoryType;
 - (_Bool)isHidden;
 - (void)updatePossibleStates;
 - (id)localizedLabelForPossibleState:(id)arg1;

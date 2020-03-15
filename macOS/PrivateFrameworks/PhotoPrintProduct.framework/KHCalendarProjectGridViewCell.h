@@ -14,9 +14,9 @@
     UXImageView *_holeImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UXImageView *holeImageView; // @synthesize holeImageView=_holeImageView;
 @property(retain, nonatomic) UXImageView *wireImageView; // @synthesize wireImageView=_wireImageView;
-- (void).cxx_destruct;
 - (double)selectedZPosition;
 - (double)unselectedZPosition;
 - (void)setLayoutObject:(id)arg1;

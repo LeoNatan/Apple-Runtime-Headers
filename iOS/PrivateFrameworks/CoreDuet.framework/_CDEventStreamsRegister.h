@@ -13,8 +13,8 @@
     NSArray *_eventStreams;
 }
 
-@property(readonly, copy, nonatomic) NSArray *eventStreams; // @synthesize eventStreams=_eventStreams;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *eventStreams; // @synthesize eventStreams=_eventStreams;
 - (id)getEventHandlerDictForStreams;
 - (id)getEventHandler:(id)arg1;
 - (id)initWithEventStreams:(id)arg1;

@@ -13,8 +13,8 @@
     SCKAsyncSerialQueue *_startupTaskQueue;
 }
 
-@property(retain, nonatomic) SCKAsyncSerialQueue *startupTaskQueue; // @synthesize startupTaskQueue=_startupTaskQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SCKAsyncSerialQueue *startupTaskQueue; // @synthesize startupTaskQueue=_startupTaskQueue;
 - (void)executeAfterStartup:(CDUnknownBlockType)arg1;
 - (void)enqueueStartupBlock:(CDUnknownBlockType)arg1;
 - (id)initWithDeferredStartup:(_Bool)arg1;

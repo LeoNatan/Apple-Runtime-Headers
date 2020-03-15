@@ -35,13 +35,13 @@
     id <NCRemoteViewHostViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool live; // @synthesize live=_live;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) __weak id <NCRemoteViewHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDictionary *additionalConfiguration; // @synthesize additionalConfiguration=_additionalConfiguration;
 @property(readonly) NSString *remotePlugInClientIdentifier; // @synthesize remotePlugInClientIdentifier=_remotePlugInClientIdentifier;
 @property(readonly, nonatomic) NCRemotePlugIn *remotePlugIn; // @synthesize remotePlugIn=_remotePlugIn;
-- (void).cxx_destruct;
 - (void)_updateSnapshot:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_clearSnapshot;
 - (void)_installSnapshot:(id)arg1;

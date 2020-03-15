@@ -22,8 +22,8 @@
     id <CSLSessionXPCServerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLSessionXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSessionXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)backgroundUpdatePolicyDidChange:(id)arg1 enabled:(id)arg2 disabled:(id)arg3 changed:(id)arg4;
 - (id)scheduledSessionsForBundleID:(id)arg1;
 - (void)_cancelScheduledSession:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;

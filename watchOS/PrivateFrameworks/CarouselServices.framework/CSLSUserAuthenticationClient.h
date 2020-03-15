@@ -19,10 +19,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSSoftwareUpdateStashHelper *suStashHelper; // @synthesize suStashHelper=_suStashHelper;
 @property(retain, nonatomic) CSLSSecureBackupHelper *secureBackupHelper; // @synthesize secureBackupHelper=_secureBackupHelper;
 @property(retain, nonatomic) CSLSUserAuthenticationModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)keybag:(id)arg1 extendedStateDidChange:(id)arg2;
 - (void)deviceLockStateMayHaveChangedForModel:(id)arg1;
 - (void)deviceLockModelRequestsDeviceWipe:(id)arg1;

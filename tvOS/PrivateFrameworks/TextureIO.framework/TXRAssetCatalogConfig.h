@@ -22,6 +22,7 @@
     unsigned long long _scaleFactor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(nonatomic) unsigned long long displayColorSpace; // @synthesize displayColorSpace=_displayColorSpace;
 @property(nonatomic) unsigned long long idiom; // @synthesize idiom=_idiom;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property(readonly, nonatomic) NSSet *fileAttributesList; // @synthesize fileAttributesList=_fileAttributesList;
 @property(retain, nonatomic) TXRAssetCatalogFileAttributes *baseFileAttributes; // @synthesize baseFileAttributes=_baseFileAttributes;
-- (void).cxx_destruct;
 - (void)addFileAttributesForLevel:(unsigned long long)arg1 face:(unsigned long long)arg2 fileFormat:(unsigned long long)arg3 colorSpace:(struct CGColorSpace *)arg4 exifOrientation:(unsigned char)arg5;
 - (void)addFileAttributesForLevel:(unsigned long long)arg1 fileFormat:(unsigned long long)arg2 colorSpace:(struct CGColorSpace *)arg3 exifOrientation:(unsigned char)arg4;
 - (void)addFileAttributesForLevel:(unsigned long long)arg1 face:(unsigned long long)arg2;

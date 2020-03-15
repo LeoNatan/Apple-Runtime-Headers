@@ -13,8 +13,8 @@
     NSString *_currency;
 }
 
-@property(copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 - (BOOL)supportsDeletion;
 
 @end

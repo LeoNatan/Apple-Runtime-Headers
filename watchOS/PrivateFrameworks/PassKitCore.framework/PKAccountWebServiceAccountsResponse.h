@@ -14,9 +14,9 @@
     NSString *_lastUpdated;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 @property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

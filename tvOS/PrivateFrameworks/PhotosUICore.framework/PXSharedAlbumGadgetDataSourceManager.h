@@ -13,8 +13,8 @@
     NSArray *_gadgetProviders;
 }
 
-- (id)gadgetProviders;
 - (void).cxx_destruct;
+- (id)gadgetProviders;
 - (CDUnknownBlockType)gadgetSortComparator;
 - (id)initWithGadgetProviders:(id)arg1;
 

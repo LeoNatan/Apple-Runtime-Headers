@@ -14,9 +14,9 @@
     unsigned int _reason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) CSLBulletinAlertItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)initWithItem:(id)arg1 dismissReason:(unsigned int)arg2;
 
 @end

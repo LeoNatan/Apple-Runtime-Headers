@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeStamp; // @synthesize timeStamp=m_timeStamp;
 @property(copy, nonatomic) NSString *additionalText; // @synthesize additionalText;
-- (void).cxx_destruct;
 - (void)addAffectedObject:(id)arg1;
 - (void)mergeEntries:(id)arg1;
 - (id)description;

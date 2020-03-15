@@ -18,8 +18,11 @@
     NSArray *_resultingPeople;
     ABMergeAndLinkPeopleActionPlanner *_planner;
     int _plannedActions;
+    BOOL _ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 @property(readonly) int plannedActions; // @synthesize plannedActions=_plannedActions;
 @property(readonly) NSArray *resultingPeople; // @synthesize resultingPeople=_resultingPeople;
 - (BOOL)shouldMerge;

@@ -16,8 +16,8 @@
 }
 
 + (CDUnknownBlockType)matchingIdentifierTest:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *puppetName; // @synthesize puppetName=_puppetName;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *puppetName; // @synthesize puppetName=_puppetName;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic, getter=isPuppet) _Bool puppet;

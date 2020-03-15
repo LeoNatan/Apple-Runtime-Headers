@@ -21,6 +21,7 @@
 @property BOOL shouldSave; // @synthesize shouldSave=_shouldSave;
 @property(readonly) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 - (id)build;
+- (void)visitUndoableSaveCNRequestCommand:(id)arg1;
 - (void)visitSaveCNRequestCommand:(id)arg1;
 - (void)visitSaveRequestCommand:(id)arg1;
 - (void)visitUndoableCommand:(id)arg1;

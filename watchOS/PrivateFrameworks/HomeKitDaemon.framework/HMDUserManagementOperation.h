@@ -42,6 +42,7 @@
 + (id)removeUserManagementOperationForUser:(id)arg1 accessory:(id)arg2 model:(id)arg3;
 + (id)addUserManagementOperationForUser:(id)arg1 accessory:(id)arg2 model:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *accessoryInvitationInformation; // @synthesize accessoryInvitationInformation=_accessoryInvitationInformation;
 @property(readonly, nonatomic) HMDAccessoryInvitation *accessoryInvitation; // @synthesize accessoryInvitation=_accessoryInvitation;
 @property(retain, nonatomic) HMFTimer *backoffTimer; // @synthesize backoffTimer=_backoffTimer;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) unsigned int operationType; // @synthesize operationType=_operationType;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <HMDUserManagementOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)modelObjectWithChangeType:(unsigned int)arg1;
 - (void)timerDidFire:(id)arg1;
 - (id)dictionaryEncoding;

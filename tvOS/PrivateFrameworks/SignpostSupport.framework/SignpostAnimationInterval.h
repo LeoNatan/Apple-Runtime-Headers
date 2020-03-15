@@ -32,6 +32,7 @@
 }
 
 + (id)serializationTypeNumber;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *longRenderServerRenders; // @synthesize longRenderServerRenders=_longRenderServerRenders;
 @property(readonly, nonatomic) NSArray *allRenderServerRenders; // @synthesize allRenderServerRenders=_allRenderServerRenders;
 @property(readonly, nonatomic) NSArray *longHIDLatencies; // @synthesize longHIDLatencies=_longHIDLatencies;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) NSArray *allSystemwideCommits; // @synthesize allSystemwideCommits=_allSystemwideCommits;
 @property(readonly, nonatomic) NSArray *longCommits; // @synthesize longCommits=_longCommits;
 @property(readonly, nonatomic) NSArray *allCommits; // @synthesize allCommits=_allCommits;
-- (void).cxx_destruct;
 - (double)durationToFirstEndSeconds:(id)arg1;
 - (double)durationToFirstBeginSeconds:(id)arg1;
 - (unsigned long long)durationToFirstEndMachContinuousTime:(id)arg1;

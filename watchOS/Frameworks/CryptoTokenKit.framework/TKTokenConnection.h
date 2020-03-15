@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     id _initialKeepAlive;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id initialKeepAlive; // @synthesize initialKeepAlive=_initialKeepAlive;
 @property(readonly, nonatomic) NSMapTable *sessions; // @synthesize sessions=_sessions;
 @property(readonly, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(readonly, nonatomic) TKToken *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)invalidate;

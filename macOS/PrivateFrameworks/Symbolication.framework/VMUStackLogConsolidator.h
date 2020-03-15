@@ -16,8 +16,8 @@
     VMUDebugTimer *_debugTimer;
 }
 
-@property(retain, nonatomic) VMUDebugTimer *debugTimer; // @synthesize debugTimer=_debugTimer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VMUDebugTimer *debugTimer; // @synthesize debugTimer=_debugTimer;
 - (id)callTreeWithOptions:(unsigned long long)arg1 nodeFilter:(CDUnknownBlockType)arg2;
 - (id)stackIDsToNodesWithFilter:(CDUnknownBlockType)arg1;
 - (id)initWithGraph:(id)arg1 stackLogReader:(id)arg2;

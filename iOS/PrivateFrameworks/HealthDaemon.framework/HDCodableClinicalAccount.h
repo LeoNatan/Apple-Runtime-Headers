@@ -8,7 +8,7 @@
 
 #import <HealthDaemon/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class HDCodableMessageVersion, NSData, NSString;
 
 @interface HDCodableClinicalAccount : PBCodable <NSCopying>
 {
@@ -18,6 +18,7 @@
     double _modificationDate;
     NSString *_accountIdentifier;
     NSString *_gatewayExternalID;
+    HDCodableMessageVersion *_messageVersion;
     NSString *_patientHash;
     NSData *_syncIdentifier;
     _Bool _userEnabled;
@@ -30,6 +31,8 @@
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) HDCodableMessageVersion *messageVersion; // @synthesize messageVersion=_messageVersion;
 @property(retain, nonatomic) NSString *patientHash; // @synthesize patientHash=_patientHash;
 @property(retain, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(nonatomic) double lastFullFetchDate; // @synthesize lastFullFetchDate=_lastFullFetchDate;
@@ -39,7 +42,6 @@
 @property(nonatomic) double creationDate; // @synthesize creationDate=_creationDate;
 @property(nonatomic) _Bool userEnabled; // @synthesize userEnabled=_userEnabled;
 @property(retain, nonatomic) NSString *gatewayExternalID; // @synthesize gatewayExternalID=_gatewayExternalID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -49,6 +51,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasMessageVersion;
 @property(readonly, nonatomic) _Bool hasPatientHash;
 @property(readonly, nonatomic) _Bool hasAccountIdentifier;
 @property(nonatomic) _Bool hasLastFullFetchDate;

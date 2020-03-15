@@ -15,9 +15,9 @@
 }
 
 + (id)discoveredAccessoryServerTupleWithAccessoryServer:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double lastSeen; // @synthesize lastSeen=_lastSeen;
 @property(readonly, nonatomic) HAPAccessoryServerBTLE *accessoryServer; // @synthesize accessoryServer=_accessoryServer;
-- (void).cxx_destruct;
 
 @end
 

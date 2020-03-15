@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <LAUIAuthenticationSheetWindowDelegate> _authenticationSheetWindowDelegate;
 }
 
-@property(nonatomic) __weak id <LAUIAuthenticationSheetWindowDelegate> authenticationSheetWindowDelegate; // @synthesize authenticationSheetWindowDelegate=_authenticationSheetWindowDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <LAUIAuthenticationSheetWindowDelegate> authenticationSheetWindowDelegate; // @synthesize authenticationSheetWindowDelegate=_authenticationSheetWindowDelegate;
 - (void)keyDown:(id)arg1;
 
 @end

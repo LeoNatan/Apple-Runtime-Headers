@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_underlyingDispatchQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *underlyingDispatchQueue; // @synthesize underlyingDispatchQueue=_underlyingDispatchQueue;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) long long scope; // @synthesize scope=_scope;
 @property(nonatomic) __weak CKContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)CKStatusReportArray;
 - (void)clearCacheEntriesForZone:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)clearCacheEntriesForRecord:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

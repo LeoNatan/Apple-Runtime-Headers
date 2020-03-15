@@ -24,6 +24,7 @@
 }
 
 + (id)initialState;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) WDRemoteElement *locationOriginElement; // @synthesize locationOriginElement=_locationOriginElement;
 @property(nonatomic) long long locationOriginType; // @synthesize locationOriginType=_locationOriginType;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *charKey; // @synthesize charKey=_charKey;
 @property(copy, nonatomic) NSSet *virtualKeys; // @synthesize virtualKeys=_virtualKeys;
 @property(copy, nonatomic) NSString *sourceId; // @synthesize sourceId=_sourceId;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToInputSourceState:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

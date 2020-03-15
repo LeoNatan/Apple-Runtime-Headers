@@ -18,14 +18,14 @@ __attribute__((visibility("hidden")))
 
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_a16f0967 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(retain) SAKernelCache *kernelCache; // @synthesize kernelCache=_kernelCache;
 @property(retain) SASharedCache *sharedCache32Bit; // @synthesize sharedCache32Bit=_sharedCache32Bit;
 @property(retain) SASharedCache *sharedCache64Bit; // @synthesize sharedCache64Bit=_sharedCache64Bit;
-- (void).cxx_destruct;
 - (void)populateReferencesUsingBuffer:(const CDStruct_a16f0967 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 
 @end
 

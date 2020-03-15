@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSMutableIndexSet *_dirtyIndexes;
 }
 
-@property BOOL dynamicSizes; // @synthesize dynamicSizes=_dynamicSizes;
 - (void).cxx_destruct;
+@property BOOL dynamicSizes; // @synthesize dynamicSizes=_dynamicSizes;
 - (void)invalidateItemsAtIndexes:(id)arg1;
 - (void)invalidateEverything;
 - (long long)_indexOfItemAtLocation:(double)arg1;

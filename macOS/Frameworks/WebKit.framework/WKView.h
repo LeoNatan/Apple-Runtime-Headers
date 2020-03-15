@@ -56,6 +56,7 @@
 @property(nonatomic, setter=_setThumbnailView:) _WKThumbnailView *_thumbnailView;
 - (id)initWithFrame:(struct CGRect)arg1 processPool:(struct WebProcessPool *)arg2 configuration:(Ref_1d7364d1 *)arg3;
 - (void)maybeInstallIconLoadingClient;
+- (void)_web_grantDOMPasteAccess;
 - (id)namesOfPromisedFilesDroppedAtDestination:(id)arg1;
 - (void)pasteboard:(id)arg1 provideDataForType:(id)arg2;
 - (void)pasteboardChangedOwner:(id)arg1;

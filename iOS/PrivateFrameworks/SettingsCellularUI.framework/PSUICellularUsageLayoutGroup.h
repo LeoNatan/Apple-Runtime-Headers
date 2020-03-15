@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     PSUIResetStatisticsGroup *_resetStatisticsGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSUIResetStatisticsGroup *resetStatisticsGroup; // @synthesize resetStatisticsGroup=_resetStatisticsGroup;
 @property(retain, nonatomic) PSUICallTimeGroup *callTimeGroup; // @synthesize callTimeGroup=_callTimeGroup;
 @property(retain, nonatomic) PSUITotalCellularUsageSubgroup *totalUsageSubgroup; // @synthesize totalUsageSubgroup=_totalUsageSubgroup;
@@ -34,11 +35,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *groupSpecifierTitle; // @synthesize groupSpecifierTitle=_groupSpecifierTitle;
 @property(nonatomic) __weak id <PSAppCellularUsageSpecifierDelegate> policySpecifierDelegate; // @synthesize policySpecifierDelegate=_policySpecifierDelegate;
 @property(nonatomic) __weak id <PSBillingPeriodSelectorSpecifierDelegate> billingCycleDelegate; // @synthesize billingCycleDelegate=_billingCycleDelegate;
-@property(retain, nonatomic) PSListController *hostController; // @synthesize hostController=_hostController;
+@property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
 @property(retain, nonatomic) PSUICarrierSpaceManager *carrierSpaceManager; // @synthesize carrierSpaceManager=_carrierSpaceManager;
 @property(retain, nonatomic) PSDataUsageStatisticsCache *statisticsCache; // @synthesize statisticsCache=_statisticsCache;
 @property(retain, nonatomic) PSCellularManagementCache *managementCache; // @synthesize managementCache=_managementCache;
-- (void).cxx_destruct;
 - (void)refreshOrderingOfContentSpecifiers;
 - (id)contentSpecifiers;
 - (id)headerSpecifiers;

@@ -18,9 +18,9 @@
 }
 
 + (id)requestWithMarshallableObjectPackage:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBMarshallableObjectPackage *objectPackage; // @synthesize objectPackage=_objectPackage;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)objectForObjectRepresentation:(id)arg1;
 - (id)objectRepresentationForObject:(id)arg1;
 - (void)didFinishEncodingWithBinaryArchiver:(id)arg1;

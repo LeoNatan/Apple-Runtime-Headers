@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     UIView *_opaqueView;
 }
 
-@property(readonly, nonatomic) UIView *opaqueView; // @synthesize opaqueView=_opaqueView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *opaqueView; // @synthesize opaqueView=_opaqueView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

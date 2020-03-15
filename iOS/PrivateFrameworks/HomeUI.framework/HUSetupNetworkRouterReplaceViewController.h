@@ -17,9 +17,9 @@
     HMSetupAccessoryDescription *_setupAccessoryDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMSetupAccessoryDescription *setupAccessoryDescription; // @synthesize setupAccessoryDescription=_setupAccessoryDescription;
 @property(readonly, nonatomic) __weak id <HFSetupPairingPopupDelegate> popupDelegate; // @synthesize popupDelegate=_popupDelegate;
-- (void).cxx_destruct;
 - (void)_cancelPressed:(id)arg1;
 - (void)_replacePressed:(id)arg1;
 - (void)viewDidLoad;

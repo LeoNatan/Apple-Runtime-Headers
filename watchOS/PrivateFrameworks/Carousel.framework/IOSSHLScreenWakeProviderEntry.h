@@ -14,9 +14,9 @@
     id <CSLSScreenWakeProvider> _screenWakeProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CSLSScreenWakeProvider> screenWakeProvider; // @synthesize screenWakeProvider=_screenWakeProvider;
 @property(readonly, nonatomic) int priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;

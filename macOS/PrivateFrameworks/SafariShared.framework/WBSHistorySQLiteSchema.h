@@ -21,7 +21,7 @@
 - (BOOL)migrateLegacyDatabaseCreatingRedirectChains:(id)arg1 urlsToItemAndLastVisitID:(id)arg2 visitsToUseForRedirectChains:(id)arg3;
 - (id)_migrateLegacyDatabaseCreatingItemsAndVisits:(id)arg1 outVisitsToUseForRedirectChains:(id)arg2;
 - (long long)_migrateLegacyVisitWithItemID:(long long)arg1 visitTime:(double)arg2 title:(id)arg3 score:(unsigned long long)arg4 loadSuccessful:(BOOL)arg5 httpNonGet:(BOOL)arg6 synthesized:(BOOL)arg7;
-- (long long)_migrateLegacyItem:(id)arg1 dailyVisitCounts:(Vector_3b5d2a9f *)arg2 weeklyVisitCounts:(Vector_3b5d2a9f *)arg3;
+- (long long)_migrateLegacyItem:(id)arg1 dailyVisitCounts:(Vector_b217f6ec *)arg2 weeklyVisitCounts:(Vector_b217f6ec *)arg3;
 @property(readonly, nonatomic) NSDictionary *legacyDatabase;
 - (int)_migrateToSchemaVersion_15;
 - (int)_migrateToSchemaVersion_14;

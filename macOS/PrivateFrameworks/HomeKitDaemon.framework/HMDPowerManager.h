@@ -20,8 +20,8 @@
     BOOL _started;
 }
 
-@property(nonatomic, getter=isNetworkAccessRequired) BOOL networkAccessRequired; // @synthesize networkAccessRequired=_networkAccessRequired;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isNetworkAccessRequired) BOOL networkAccessRequired; // @synthesize networkAccessRequired=_networkAccessRequired;
 - (void)_ensureNetworkInterfaceMonitorStopped;
 - (int)_ensureNetworkInterfaceMonitorStarted;
 - (void)_update;

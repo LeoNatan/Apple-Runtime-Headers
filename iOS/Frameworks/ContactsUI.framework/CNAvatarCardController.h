@@ -41,6 +41,7 @@
 + (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(_Bool)arg1;
 + (id)descriptorForRequiredKeys;
 + (_Bool)avatarCardEnabledForTraitCollection:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool bypassActionValidation; // @synthesize bypassActionValidation=_bypassActionValidation;
 @property(nonatomic) _Bool actionsNeedRefresh; // @synthesize actionsNeedRefresh=_actionsNeedRefresh;
 @property(retain, nonatomic) UIGestureRecognizer *rolloverGestureRecognizer; // @synthesize rolloverGestureRecognizer=_rolloverGestureRecognizer;
@@ -60,7 +61,6 @@
 @property(nonatomic) __weak id <CNAvatarCardControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *actionCategories; // @synthesize actionCategories=_actionCategories;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)preparedViewControllerForPresentationWithGestureRecognizer:(id)arg1;
 - (_Bool)clickPresentationInteractionShouldPresent:(id)arg1;

@@ -19,9 +19,9 @@
 + (id)na_identity;
 + (id)clipPositionWithDate:(id)arg1;
 + (id)livePosition;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *clipPlaybackDate; // @synthesize clipPlaybackDate=_clipPlaybackDate;
 @property(readonly, nonatomic) unsigned long long contentType; // @synthesize contentType=_contentType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

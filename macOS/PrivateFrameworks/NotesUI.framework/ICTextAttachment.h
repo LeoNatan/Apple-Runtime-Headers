@@ -25,9 +25,9 @@
 @property(readonly, nonatomic) NSString *viewIdentifier;
 - (Class)attachmentViewControllerClass;
 - (Class)attachmentViewClass;
-- (struct NSViewController *)newlyCreatedViewControllerForManualRendering:(BOOL)arg1 layoutManager:(id)arg2;
-- (struct NSView *)newlyCreatedViewForManualRendering;
-- (struct NSView *)newlyCreatedView;
+- (id)newlyCreatedViewControllerForManualRendering:(BOOL)arg1 layoutManager:(id)arg2;
+- (id)newlyCreatedViewForManualRendering;
+- (id)newlyCreatedView;
 @property(readonly, nonatomic) BOOL containsFindableText;
 - (BOOL)supportsMultipleThumbnailsOnSameLine;
 - (BOOL)supportsThumbnailView;

@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class CUBonjourAdvertiser, CUNANPublisher, NSDictionary, NSSet, NSString, SFDeviceDiscovery;
+@class CUBonjourAdvertiser, CUNANPublisher, NSDictionary, NSMutableDictionary, NSSet, NSString, SFDeviceDiscovery;
 @protocol OS_dispatch_queue;
 
 @interface CUNetServiceAdvertiser : NSObject
 {
     _Bool _activated;
     CUBonjourAdvertiser *_awdlBonjourAdvertiser;
-    struct NSMutableDictionary *_bleDevices;
+    NSMutableDictionary *_bleDevices;
     SFDeviceDiscovery *_bleDiscovery;
     unsigned long long _bleDiscoveryFlags;
     CUBonjourAdvertiser *_infraBonjourAdvertiser;
@@ -38,6 +38,7 @@
     NSString *_serviceType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) NSDictionary *serviceInfo; // @synthesize serviceInfo=_serviceInfo;
 @property(nonatomic) int port; // @synthesize port=_port;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSSet *blePeerFilter; // @synthesize blePeerFilter=_blePeerFilter;
 @property(nonatomic) int awdlControl; // @synthesize awdlControl=_awdlControl;
-- (void).cxx_destruct;
 - (void)_nanAdvertiserEnsureStopped;
 - (void)_nanAdvertiserEnsureStarted;
 - (void)_infraBonjourAdvertiserEnsureStopped;

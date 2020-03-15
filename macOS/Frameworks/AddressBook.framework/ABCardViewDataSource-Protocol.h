@@ -32,7 +32,7 @@
 @property(retain, nonatomic) id <ABCardViewMultiValue> birthday;
 @property(retain, nonatomic) id <ABCardViewMultiValue> emailAddresses;
 @property(retain, nonatomic) id <ABCardViewMultiValue> phoneNumbers;
-@property(getter=isTransient) BOOL transient;
+@property(readonly, getter=isTransient) BOOL transient;
 - (void)manuallyAddPropertyKey:(NSString *)arg1;
 - (BOOL)hasKeyBeenManuallyAdded:(NSString *)arg1;
 - (NSArray *)phoneticNameKeys;

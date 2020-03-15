@@ -16,9 +16,9 @@
     MPModelSocialPerson *_person;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPModelSocialPerson *person; // @synthesize person=_person;
 @property(readonly, nonatomic) int action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)queryItems;
 - (int)httpMethod;
 - (int)httpBodyType;

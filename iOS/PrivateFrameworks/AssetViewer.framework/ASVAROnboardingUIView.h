@@ -68,6 +68,7 @@
     double _minimumAnimationTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enableHapticFeedback; // @synthesize enableHapticFeedback=_enableHapticFeedback;
 @property(nonatomic) _Bool interceptARKitSensorData; // @synthesize interceptARKitSensorData=_interceptARKitSensorData;
 @property(nonatomic) _Bool showAnimatedUI; // @synthesize showAnimatedUI=_showAnimatedUI;
@@ -80,7 +81,6 @@
 @property(nonatomic) float resetButtonPortraitVerticalOffset; // @synthesize resetButtonPortraitVerticalOffset=_resetButtonPortraitVerticalOffset;
 @property(nonatomic) float resetButtonLandscapeVerticalOffset; // @synthesize resetButtonLandscapeVerticalOffset=_resetButtonLandscapeVerticalOffset;
 @property(nonatomic) __weak id <ASVAROnboardingUIViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_hasHomeButton;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

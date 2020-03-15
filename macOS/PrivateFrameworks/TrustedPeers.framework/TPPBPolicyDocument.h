@@ -26,13 +26,13 @@
 + (Class)introducersByCategoryType;
 + (Class)categoriesByViewType;
 + (Class)modelToCategoryType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *keyViewMappings; // @synthesize keyViewMappings=_keyViewMappings;
 @property(retain, nonatomic) NSMutableArray *redactions; // @synthesize redactions=_redactions;
 @property(retain, nonatomic) NSMutableArray *introducersByCategorys; // @synthesize introducersByCategorys=_introducersByCategorys;
 @property(retain, nonatomic) NSMutableArray *categoriesByViews; // @synthesize categoriesByViews=_categoriesByViews;
 @property(retain, nonatomic) NSMutableArray *modelToCategorys; // @synthesize modelToCategorys=_modelToCategorys;
 @property(nonatomic) unsigned long long policyVersion; // @synthesize policyVersion=_policyVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

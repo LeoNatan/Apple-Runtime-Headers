@@ -18,9 +18,9 @@
 }
 
 + (Class)accountsStatusType;
+- (void).cxx_destruct;
 @property(nonatomic) double requestTime; // @synthesize requestTime=_requestTime;
 @property(retain, nonatomic) NSMutableArray *accountsStatus; // @synthesize accountsStatus=_accountsStatus;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

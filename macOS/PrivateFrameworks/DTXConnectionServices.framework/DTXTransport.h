@@ -21,9 +21,9 @@
 
 + (BOOL)recognizesURL:(id)arg1;
 + (id)schemes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DTXResourceTracker *resourceTracker; // @synthesize resourceTracker=_tracker;
 @property unsigned int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (unsigned int)supportedDirections;
 - (id)permittedBlockCompressionTypes;
 @property(readonly) NSArray *localAddresses;

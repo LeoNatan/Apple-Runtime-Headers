@@ -8,13 +8,13 @@
 
 #import <CoreUtils/CBPeripheralManagerDelegate-Protocol.h>
 
-@class CBPeripheralManager, NSString;
+@class CBPeripheralManager, NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CUBLEServer : NSObject <CBPeripheralManagerDelegate>
 {
     CDUnknownBlockType _activateCompletion;
-    struct NSMutableSet *_connections;
+    NSMutableSet *_connections;
     _Bool _invalidateCalled;
     CBPeripheralManager *_peripheralManager;
     struct LogCategory *_ucat;
@@ -27,6 +27,7 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned short listeningPSM; // @synthesize listeningPSM=_listeningPSM;
 @property(nonatomic) unsigned short listenPSM; // @synthesize listenPSM=_listenPSM;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType connectionEndedHandler; // @synthesize connectionEndedHandler=_connectionEndedHandler;
 @property(copy, nonatomic) CDUnknownBlockType connectionStartedHandler; // @synthesize connectionStartedHandler=_connectionStartedHandler;
-- (void).cxx_destruct;
 - (void)_handleConnectionInvalidated:(id)arg1;
 - (void)peripheralManager:(id)arg1 didOpenL2CAPChannel:(id)arg2 error:(id)arg3;
 - (void)peripheralManager:(id)arg1 didUnpublishL2CAPChannel:(unsigned short)arg2 error:(id)arg3;

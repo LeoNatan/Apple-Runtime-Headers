@@ -22,12 +22,12 @@
 }
 
 + (id)sharedAppStatsServer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) CSLAppStatsProcessStateTransitionMonitor *processStateTransitionMonitor; // @synthesize processStateTransitionMonitor=_processStateTransitionMonitor;
 @property(retain, nonatomic) NSMutableArray *providers; // @synthesize providers=_providers;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) CSLSafeMutableSet *clientConnections; // @synthesize clientConnections=_clientConnections;
-- (void).cxx_destruct;
 - (id)_statsForBundleID:(id)arg1 dockIndex:(unsigned int)arg2 isComplication:(_Bool)arg3;
 - (void)_stateTransitionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_appEventsWithCompletion:(CDUnknownBlockType)arg1;

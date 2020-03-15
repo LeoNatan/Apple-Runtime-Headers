@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSAccountProviderResponse *accountProviderResponse; // @synthesize accountProviderResponse=_accountProviderResponse;
 @property(copy, nonatomic) NSData *verificationData; // @synthesize verificationData=_verificationData;
 @property(copy, nonatomic) NSDate *authenticationExpirationDate; // @synthesize authenticationExpirationDate=_authenticationExpirationDate;
 @property(copy, nonatomic) NSString *accountProviderIdentifier; // @synthesize accountProviderIdentifier=_accountProviderIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *SAMLAttributeQueryResponse;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

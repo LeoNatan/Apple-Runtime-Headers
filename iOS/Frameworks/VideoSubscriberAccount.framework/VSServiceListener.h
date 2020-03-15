@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_connectionHandlers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *connectionHandlers; // @synthesize connectionHandlers=_connectionHandlers;
 @property(retain, nonatomic) id exportedObject; // @synthesize exportedObject=_exportedObject;
 @property(retain, nonatomic) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
 @property(copy, nonatomic) NSArray *entitlementNames; // @synthesize entitlementNames=_entitlementNames;
-- (void).cxx_destruct;
 - (void)connectionHandlerDidFinish:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)_removeConnectionHandler:(id)arg1;

@@ -17,8 +17,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)bundledComplicationWithComplication:(id)arg1;
 + (id)bundledComplicationWithBundleIdentifier:(id)arg1 appBundleIdentifier:(id)arg2;
-@property(readonly, nonatomic) CLKCBundleComplication *complication; // @synthesize complication=_complication;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CLKCBundleComplication *complication; // @synthesize complication=_complication;
 - (void)_addKeysToJSONDictionary:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

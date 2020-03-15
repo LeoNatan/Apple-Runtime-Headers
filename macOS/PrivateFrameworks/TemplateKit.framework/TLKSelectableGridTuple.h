@@ -17,10 +17,10 @@
 
 + (id)tuplesForTitles:(id)arg1 subtitles:(id)arg2;
 + (id)tupleWithTitle:(id)arg1 subtitle:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double size; // @synthesize size=_size;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

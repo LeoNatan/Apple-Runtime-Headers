@@ -15,8 +15,8 @@
     NSURL *_url;
 }
 
-@property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void)loadWithLimit:(unsigned long long)arg1 dataPointReader:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 
 // Remaining properties

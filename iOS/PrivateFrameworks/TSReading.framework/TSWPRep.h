@@ -67,6 +67,7 @@
 @property(nonatomic) struct _NSRange dragRange; // @synthesize dragRange=_dragRange;
 @property(nonatomic, getter=isSelectionHighlightSuppressed) _Bool suppressSelectionHighlight; // @synthesize suppressSelectionHighlight=_suppressSelectionHighlight;
 @property(nonatomic) _Bool useKeyboardWhenEditing; // @synthesize useKeyboardWhenEditing=_useKeyboardWhenEditing;
+- (id)hyperlinkRegionsConstrainedToLineAtPoint:(struct CGPoint)arg1;
 - (id)imageForSearchReference:(id)arg1 forPath:(struct CGPath *)arg2 shouldPulsate:(_Bool)arg3;
 - (struct CGPath *)newPathForSearchReference:(id)arg1;
 - (void)p_updateHighlights;
@@ -162,6 +163,7 @@
 - (void)p_updateLayersForInsertionPointSelection:(id)arg1;
 - (struct CGRect)p_convertNaturalRectToRotated:(struct CGRect)arg1 repAngle:(double)arg2;
 - (struct _NSRange)rangeOfMisspelledWordAtCharIndex:(unsigned long long)arg1;
+- (_Bool)containsText;
 - (struct CGRect)glyphRectForRubyFieldAtCharIndex:(unsigned long long)arg1 glyphRange:(struct _NSRange)arg2;
 - (unsigned long long)glyphCountForRubyFieldAtCharIndex:(unsigned long long)arg1;
 - (unsigned long long)charCountOfGlyphStartingAtCharIndex:(unsigned long long)arg1;

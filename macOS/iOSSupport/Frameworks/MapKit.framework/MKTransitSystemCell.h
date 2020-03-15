@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     BOOL _expanded;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isExpanded) BOOL expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) BOOL showDisclosureButton; // @synthesize showDisclosureButton=_showDisclosureButton;
-- (void).cxx_destruct;
 - (struct CGAffineTransform)_transformForExpandedState:(BOOL)arg1 animating:(BOOL)arg2;
 - (void)setExpanded:(BOOL)arg1 insideAnimation:(BOOL)arg2;
 - (id)_disclosureButton;

@@ -14,8 +14,8 @@
     _Bool _completedRespond;
 }
 
-@property(nonatomic) _Bool completedRespond; // @synthesize completedRespond=_completedRespond;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool completedRespond; // @synthesize completedRespond=_completedRespond;
 - (void)dealloc;
 - (id)initWithBatchAssertion:(id)arg1;
 - (id)init;

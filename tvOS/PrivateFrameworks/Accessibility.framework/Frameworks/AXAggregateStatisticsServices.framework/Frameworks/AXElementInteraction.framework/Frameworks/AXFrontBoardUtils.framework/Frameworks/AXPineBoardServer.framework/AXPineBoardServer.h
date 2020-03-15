@@ -17,10 +17,9 @@
 }
 
 + (id)server;
-@property(nonatomic) __weak id <AXSystemAppServer> localServiceProvider; // @synthesize localServiceProvider=_localServiceProvider;
 - (void).cxx_destruct;
-- (_Bool)isNonExclusiveSystemUIVisible;
-- (_Bool)isNonExclusiveSystemUIFocusable;
+@property(nonatomic) __weak id <AXSystemAppServer> localServiceProvider; // @synthesize localServiceProvider=_localServiceProvider;
+- (_Bool)isNonExclusiveSystemUIFocusableIncludingPIPWindow:(_Bool)arg1;
 - (_Bool)isSystemSleeping;
 - (void)wakeUpDeviceIfNecessary;
 - (void)activeInterfaceOrientation:(CDUnknownBlockType)arg1;

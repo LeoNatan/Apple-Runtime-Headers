@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configForType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *typeString; // @synthesize typeString=_typeString;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) _Bool includePlatform; // @synthesize includePlatform=_includePlatform;
 @property(readonly, nonatomic) NSString *hostBagKey; // @synthesize hostBagKey=_hostBagKey;
-- (void).cxx_destruct;
 - (id)initWithType:(long long)arg1 typeString:(id)arg2 hostBagKey:(id)arg3 includePlatform:(_Bool)arg4;
 
 @end

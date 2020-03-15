@@ -23,11 +23,11 @@
 + (id)feedTitleViewUpdateForFeedImage:(id)arg1;
 + (id)feedTitleViewUpdateForFeedName:(id)arg1;
 + (id)feedTitleViewUpdateEmptyState;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *feedImage; // @synthesize feedImage=_feedImage;
 @property(copy, nonatomic) NSString *feedName; // @synthesize feedName=_feedName;
 @property(nonatomic) unsigned long long storyCount; // @synthesize storyCount=_storyCount;
 @property(readonly, nonatomic) unsigned long long updateType; // @synthesize updateType=_updateType;
-- (void).cxx_destruct;
 - (id)convertToTitleViewUpdateWithCompact:(_Bool)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

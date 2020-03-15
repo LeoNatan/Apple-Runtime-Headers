@@ -18,11 +18,11 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *includeNotesCounts; // @synthesize includeNotesCounts=_includeNotesCounts;
 @property(retain, nonatomic) NSNumber *includeNotebooks; // @synthesize includeNotebooks=_includeNotebooks;
 @property(retain, nonatomic) NSNumber *numExperts; // @synthesize numExperts=_numExperts;
 @property(retain, nonatomic) EDAMNoteFilter *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 
 @end
 

@@ -25,9 +25,9 @@
     CSLNavigationTransactionAnimatorHelper *_helper;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRestoreLauncherToListMode; // @synthesize shouldRestoreLauncherToListMode=_shouldRestoreLauncherToListMode;
 @property(readonly, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
-- (void).cxx_destruct;
 - (void)sequencer:(id)arg1 didCompleteAnimationForMode:(unsigned int)arg2;
 - (void)sequencer:(id)arg1 didChangeProgress:(float)arg2 forAnimationMode:(unsigned int)arg3;
 - (void)sequencerWillBegin:(id)arg1;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSFileProviderManager *_parentConnection;
 }
 
-@property __weak NSFileProviderManager *parentConnection; // @synthesize parentConnection=_parentConnection;
 - (void).cxx_destruct;
+@property __weak NSFileProviderManager *parentConnection; // @synthesize parentConnection=_parentConnection;
 - (void)observePresentedFilesDidChange:(id)arg1;
 
 @end

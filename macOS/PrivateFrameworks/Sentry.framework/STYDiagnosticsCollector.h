@@ -15,9 +15,9 @@
 }
 
 + (id)sharedDiagnosticsCollector;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *logger; // @synthesize logger=_logger;
 @property(retain) NSObject<OS_dispatch_queue> *serialUtilityQueue; // @synthesize serialUtilityQueue=_serialUtilityQueue;
-- (void).cxx_destruct;
 - (void)collectTailspinForScenarioReport:(id)arg1 tailspinFileDescriptor:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end

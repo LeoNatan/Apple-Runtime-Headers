@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <CNContactGroupPickerDelegate> _groupPickerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CNContactGroupPickerDelegate> groupPickerDelegate; // @synthesize groupPickerDelegate=_groupPickerDelegate;
 @property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
-- (void).cxx_destruct;
 - (void)performActionWithSender:(id)arg1;
 
 @end

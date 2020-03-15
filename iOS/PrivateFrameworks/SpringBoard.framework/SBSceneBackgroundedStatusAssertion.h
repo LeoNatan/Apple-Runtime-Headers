@@ -14,8 +14,8 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
-@property(readonly, copy, nonatomic) NSSet *scenes; // @synthesize scenes=_scenes;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSSet *scenes; // @synthesize scenes=_scenes;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithScenes:(id)arg1 invalidationHandler:(CDUnknownBlockType)arg2;

@@ -21,10 +21,10 @@
 }
 
 + (id)toolbarItemsContainerForToolbar:(id)arg1 items:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double baselineOffsetFromBottom; // @synthesize baselineOffsetFromBottom=_baselineOffsetFromBottom;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (double)lastBaselineOffsetFromBottom;
 - (void)updateConstraints;
 @property(readonly, nonatomic) BOOL hidesGlobalTrailingView;

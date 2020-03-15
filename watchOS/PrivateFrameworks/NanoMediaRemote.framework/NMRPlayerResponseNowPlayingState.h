@@ -15,8 +15,8 @@
     MPCPlayerResponse *_playerResponse;
 }
 
-@property(readonly, nonatomic) MPCPlayerResponse *playerResponse; // @synthesize playerResponse=_playerResponse;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MPCPlayerResponse *playerResponse; // @synthesize playerResponse=_playerResponse;
 - (id)_nowPlayingRadioStation;
 - (id)_nowPlayingSong;
 - (double)rewindTimeInterval;

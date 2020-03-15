@@ -26,9 +26,9 @@
 + (id)verticalContainerStackViewWithArrangedSubviews:(id)arg1;
 + (id)horizontalContainerStackViewWithArrangedSubviews:(id)arg1;
 + (id)containerStackViewWithAxis:(int)arg1 arrangedSubviews:(id)arg2;
-@property(nonatomic) float spacing; // @synthesize spacing=_spacing;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) float spacing; // @synthesize spacing=_spacing;
 - (id)debugDictionary;
 - (id)arrangedDescription;
 - (void)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;

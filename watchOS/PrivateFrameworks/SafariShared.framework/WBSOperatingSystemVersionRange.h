@@ -15,10 +15,10 @@
     CDStruct_4bb15e50 _maximumVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_4bb15e50 maximumVersion; // @synthesize maximumVersion=_maximumVersion;
 @property(readonly, nonatomic) CDStruct_4bb15e50 minimumVersion; // @synthesize minimumVersion=_minimumVersion;
 @property(readonly, nonatomic) NSString *family; // @synthesize family=_family;
-- (void).cxx_destruct;
 - (_Bool)includesOperatingSystemVersion:(CDStruct_4bb15e50)arg1 inFamily:(id)arg2;
 - (id)initWithFamily:(id)arg1 minimumVersion:(CDStruct_4bb15e50)arg2 maximumVersion:(CDStruct_4bb15e50)arg3;
 

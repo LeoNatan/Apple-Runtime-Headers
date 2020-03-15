@@ -20,8 +20,8 @@
 }
 
 + (id)internalResponseDelegateInterface;
-@property __weak id <CNContactPickerInternalResponseDelegate> responseDelegate; // @synthesize responseDelegate=_responseDelegate;
 - (void).cxx_destruct;
+@property __weak id <CNContactPickerInternalResponseDelegate> responseDelegate; // @synthesize responseDelegate=_responseDelegate;
 - (void)traceUsageStatistics;
 - (void)resetUsageStatistics;
 - (void)setSearchFieldVisible:(BOOL)arg1;

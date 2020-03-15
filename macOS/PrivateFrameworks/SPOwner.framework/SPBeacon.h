@@ -32,6 +32,7 @@
 
 + (id)SPOwner;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *correlationIdentifier; // @synthesize correlationIdentifier=_correlationIdentifier;
 @property(copy, nonatomic) NSDate *pairingDate; // @synthesize pairingDate=_pairingDate;
 @property(copy, nonatomic) NSString *stableIdentifier; // @synthesize stableIdentifier=_stableIdentifier;
@@ -47,7 +48,6 @@
 @property(nonatomic) BOOL accepted; // @synthesize accepted=_accepted;
 @property(copy, nonatomic) SPHandle *owner; // @synthesize owner=_owner;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

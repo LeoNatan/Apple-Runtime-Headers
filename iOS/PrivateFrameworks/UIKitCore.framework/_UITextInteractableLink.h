@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     LSAppLink *_appLink;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LSAppLink *appLink; // @synthesize appLink=_appLink;
 @property(retain, nonatomic) NSURL *link; // @synthesize link=_link;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isLink;
 

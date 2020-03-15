@@ -17,13 +17,13 @@
     optional_d968a044 outputStreamHints;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) optional_d968a044 outputStreamHints; // @synthesize outputStreamHints;
 @property(nonatomic) optional_d968a044 inputStreamHints; // @synthesize inputStreamHints;
 @property(nonatomic) optional_488f82df usbSection; // @synthesize usbSection;
 @property(nonatomic) optional_fcefa02e sampleRate; // @synthesize sampleRate;
 @property(nonatomic) __weak id <aura_Device> device; // @synthesize device;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 
 @end
 

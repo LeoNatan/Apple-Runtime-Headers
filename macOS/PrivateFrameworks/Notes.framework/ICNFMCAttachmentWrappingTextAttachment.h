@@ -13,8 +13,8 @@
     ICNFMCAttachment *_messageAttachment;
 }
 
-@property(readonly, nonatomic) ICNFMCAttachment *messageAttachment; // @synthesize messageAttachment=_messageAttachment;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ICNFMCAttachment *messageAttachment; // @synthesize messageAttachment=_messageAttachment;
 - (id)initWithFileWrapper:(id)arg1;
 - (id)initWithAttachment:(id)arg1;
 

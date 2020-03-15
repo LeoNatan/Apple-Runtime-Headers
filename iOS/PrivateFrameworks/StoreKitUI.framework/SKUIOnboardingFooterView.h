@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIButton *_rightButton;
 }
 
-@property(retain, nonatomic) SKUIOnboardingProgressView *progressView; // @synthesize progressView=_progressView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIOnboardingProgressView *progressView; // @synthesize progressView=_progressView;
 - (void)_showButton:(id)arg1 withTitle:(id)arg2 animation:(long long)arg3;
 - (id)_newButton;
 - (void)_hideButton:(id)arg1 withAnimation:(long long)arg2;

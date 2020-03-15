@@ -18,11 +18,11 @@
     id <EKUILayoutItem> _parentItem;
 }
 
+- (void).cxx_destruct;
 @property __weak id <EKUILayoutItem> parentItem; // @synthesize parentItem=_parentItem;
 @property(retain) NSString *uuid; // @synthesize uuid=_uuid;
 @property __weak EKViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain) EKUICompositeView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)enumerateSubitemsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)updateKeyViewLoop;
 - (BOOL)needsExpansion;

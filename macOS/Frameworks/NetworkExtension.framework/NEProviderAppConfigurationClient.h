@@ -25,6 +25,7 @@
     id <NEConfigurationCommandHandling> _remoteObject;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <NEConfigurationCommandHandling> remoteObject; // @synthesize remoteObject=_remoteObject;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property BOOL isServerMode; // @synthesize isServerMode=_isServerMode;
@@ -35,7 +36,6 @@
 @property(retain) NEFilterManager *filterManager; // @synthesize filterManager=_filterManager;
 @property(retain) NEVPNManager *currentManager; // @synthesize currentManager=_currentManager;
 @property(readonly) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (void)handleCommand:(int)arg1 forConfigWithName:(id)arg2 withParameters:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)loadConfigurationWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadAllWithCompletionHandler:(CDUnknownBlockType)arg1;

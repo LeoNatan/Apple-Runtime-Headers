@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     _UIPortalView *_portalView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldTakeOwnershipOfSourceView; // @synthesize shouldTakeOwnershipOfSourceView=_shouldTakeOwnershipOfSourceView;
 @property(retain, nonatomic) _UIPortalView *portalView; // @synthesize portalView=_portalView;
 @property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool matchesAlpha; // @synthesize matchesAlpha=_matchesAlpha;
 @property(nonatomic) _Bool forwardsHitTestingToSourceView; // @synthesize forwardsHitTestingToSourceView=_forwardsHitTestingToSourceView;
 @property(nonatomic) _Bool hidesSourceView; // @synthesize hidesSourceView=_hidesSourceView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateMinificationFilter;
 - (void)didMoveToWindow;

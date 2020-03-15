@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _returnBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType returnBlock; // @synthesize returnBlock=_returnBlock;
 @property(readonly, nonatomic) id <INIntentParameterOptionsProviding> optionsProvider; // @synthesize optionsProvider=_optionsProvider;
 @property(readonly, nonatomic) INIntentSlotDescription *intentSlotDescription; // @synthesize intentSlotDescription=_intentSlotDescription;
 @property(readonly, nonatomic) INIntent *intent; // @synthesize intent=_intent;
 @property(readonly, nonatomic) id <INIntentResolutionResultDataProviding> result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (_Bool)isExecuting;
 - (_Bool)isFinished;
 - (void)start;

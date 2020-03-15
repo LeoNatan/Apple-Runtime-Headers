@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *__axElementHistory;
 }
 
-@property(retain, nonatomic) NSMutableArray *_axElementHistory; // @synthesize _axElementHistory=__axElementHistory;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *_axElementHistory; // @synthesize _axElementHistory=__axElementHistory;
 - (id)description;
 - (id)parentVendor;
 - (void)_flushElementHistoryArray:(id)arg1;

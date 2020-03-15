@@ -14,9 +14,9 @@
     NSString *_svcDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *svcDescription; // @synthesize svcDescription=_svcDescription;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

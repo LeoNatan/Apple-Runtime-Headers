@@ -17,10 +17,10 @@
     NSError *_canceledAuthorizationError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *canceledAuthorizationError; // @synthesize canceledAuthorizationError=_canceledAuthorizationError;
 @property(retain, nonatomic) SOAuthorizationCredential *canceledAuthorizationCredential; // @synthesize canceledAuthorizationCredential=_canceledAuthorizationCredential;
 @property(nonatomic, getter=isAuthorizationCanceled) BOOL authorizationCanceled; // @synthesize authorizationCanceled=_authorizationCanceled;
-- (void).cxx_destruct;
 - (BOOL)_isUserInterfaceAllowed;
 - (id)_hostExtensionContext;
 @property(retain, nonatomic) NSDictionary *authorizationOptions;

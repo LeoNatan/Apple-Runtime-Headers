@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) _Bool shouldHideWebContent; // @synthesize shouldHideWebContent=_shouldHideWebContent;
 @property(nonatomic) _Bool alertControllerPresentsAsActionSheet; // @synthesize alertControllerPresentsAsActionSheet=_alertControllerPresentsAsActionSheet;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool canceledOnApplicationBackground; // @synthesize canceledOnApplicationBackground=_canceledOnApplicationBackground;
 @property(nonatomic) _Bool canceledOnCommittedNavigation; // @synthesize canceledOnCommittedNavigation=_canceledOnCommittedNavigation;
 @property(nonatomic) _Bool canceledOnProvisionalNavigation; // @synthesize canceledOnProvisionalNavigation=_canceledOnProvisionalNavigation;
-- (void).cxx_destruct;
 - (void)didCompleteWithResponse:(id)arg1;
 - (id)newViewControllerRepresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)newDialogViewRepresentation;

@@ -21,11 +21,11 @@
     unsigned long long _thumbnailBatchFetchSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long thumbnailBatchFetchSize; // @synthesize thumbnailBatchFetchSize=_thumbnailBatchFetchSize;
 @property(retain, nonatomic) NSMutableDictionary *existingOIDsByUUID; // @synthesize existingOIDsByUUID=_existingOIDsByUUID;
 @property(retain, nonatomic) NSMutableDictionary *existingUUIDsByUppercasePath; // @synthesize existingUUIDsByUppercasePath=_existingUUIDsByUppercasePath;
 @property(retain, nonatomic) NSMutableSet *existingUUIDs; // @synthesize existingUUIDs=_existingUUIDs;
-- (void).cxx_destruct;
 - (unsigned long long)nextThumbnailIndex;
 - (void)addAvailableThumbnailIndex:(unsigned long long)arg1;
 - (_Bool)_setupVideoAsset:(id)arg1 withURL:(id)arg2;

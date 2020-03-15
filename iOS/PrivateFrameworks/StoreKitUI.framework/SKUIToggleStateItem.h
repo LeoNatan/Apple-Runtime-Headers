@@ -19,12 +19,12 @@
     NSString *_toggledString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *toggledString; // @synthesize toggledString=_toggledString;
 @property(nonatomic) BOOL toggled; // @synthesize toggled=_toggled;
 @property(copy, nonatomic) NSString *nonToggleString; // @synthesize nonToggleString=_nonToggledString;
 @property(copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(nonatomic) long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

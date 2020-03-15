@@ -18,8 +18,8 @@
 }
 
 + (id)specifierForAppWithDescription:(id)arg1 target:(id)arg2 action:(SEL)arg3;
-@property(nonatomic) int installState; // @synthesize installState=_installState;
 - (void).cxx_destruct;
+@property(nonatomic) int installState; // @synthesize installState=_installState;
 - (void)_updateInstallButtonWithState:(int)arg1;
 - (void)_updateSubviewsWithInstallState:(int)arg1;
 - (id)_createInstallButton;

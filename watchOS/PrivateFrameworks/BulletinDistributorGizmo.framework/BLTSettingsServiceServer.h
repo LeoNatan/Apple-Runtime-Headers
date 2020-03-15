@@ -27,6 +27,7 @@
     BLTSectionIdentifierMapper *_sectionIdentifierMapper;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BLTSectionIdentifierMapper *sectionIdentifierMapper; // @synthesize sectionIdentifierMapper=_sectionIdentifierMapper;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) NSMutableSet *appInfoObserverConnections; // @synthesize appInfoObserverConnections=_appInfoObserverConnections;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSMutableDictionary *allowsNotificationsSectionIDsClients; // @synthesize allowsNotificationsSectionIDsClients=_allowsNotificationsSectionIDsClients;
 @property(nonatomic) __weak BLTMuteSync *muteSync; // @synthesize muteSync=_muteSync;
 @property(nonatomic) __weak BLTSectionInfoStore *sectionInfoStore; // @synthesize sectionInfoStore=_sectionInfoStore;
-- (void).cxx_destruct;
 - (void)applicationInfoForBundleID:(id)arg1 iconSize:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeApplicationInfoObserver;
 - (void)_removeApplicationInfoObserver:(id)arg1;

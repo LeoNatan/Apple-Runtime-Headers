@@ -26,11 +26,11 @@
 + (id)folderActionWithBookmark:(id)arg1 name:(id)arg2 enabled:(id)arg3 scripts:(id)arg4;
 + (BOOL)supportsSecureCoding;
 + (id)keyInContainer;
+- (void).cxx_destruct;
 @property BOOL hasBeenAddedToAFrontEnd; // @synthesize hasBeenAddedToAFrontEnd=_hasBeenAddedToAFrontEnd;
 @property BOOL propagateChangesToFolderActionsDispatcher; // @synthesize propagateChangesToFolderActionsDispatcher=_propagateChangesToFolderActionsDispatcher;
 @property(retain) NSMutableArray *scripts; // @synthesize scripts=_scripts;
 @property(retain) NSData *bookmark; // @synthesize bookmark=_bookmark;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)deleteVerb:(id)arg1;
 - (id)enableVerb:(id)arg1;

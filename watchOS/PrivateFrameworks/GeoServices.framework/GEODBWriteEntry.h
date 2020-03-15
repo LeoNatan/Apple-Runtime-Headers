@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_etag;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(readonly, nonatomic) unsigned int provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) unsigned int set; // @synthesize set=_set;
 @property(readonly, nonatomic) unsigned int edition; // @synthesize edition=_edition;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) struct _GEOTileKey key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(struct _GEOTileKey)arg1 data:(id)arg2 edition:(unsigned int)arg3 set:(unsigned int)arg4 provider:(unsigned int)arg5 etag:(id)arg6;
 
 @end

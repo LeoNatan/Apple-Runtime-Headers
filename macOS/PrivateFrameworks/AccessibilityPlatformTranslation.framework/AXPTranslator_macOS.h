@@ -13,9 +13,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType appNotificationTestingCallback; // @synthesize appNotificationTestingCallback=_appNotificationTestingCallback;
 @property(copy, nonatomic) CDUnknownBlockType zoomTriggerTestingCallback; // @synthesize zoomTriggerTestingCallback=_zoomTriggerTestingCallback;
-- (void).cxx_destruct;
 - (id)processApplicationObject:(id)arg1;
 - (id)processFrontMostApp:(id)arg1;
 - (id)processHitTest:(id)arg1;

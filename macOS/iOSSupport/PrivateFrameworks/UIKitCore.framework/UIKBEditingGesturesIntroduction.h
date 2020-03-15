@@ -15,10 +15,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)shouldShowEditingIntroduction;
-@property(retain, nonatomic) NSLayoutConstraint *topPaddingConstraint; // @synthesize topPaddingConstraint=_topPaddingConstraint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLayoutConstraint *topPaddingConstraint; // @synthesize topPaddingConstraint=_topPaddingConstraint;
 - (BOOL)presentsFullScreen;
-- (id)framedViewWithEmbeddedImageNamed:(id)arg1 ofType:(id)arg2;
+- (id)animatedTutorialViewNamed:(id)arg1 ofType:(id)arg2 needsFrame:(BOOL)arg3;
 - (id)mediaContents;
 - (double)pagingInterval;
 - (id)textBodyFont;

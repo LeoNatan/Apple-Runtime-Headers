@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_stringOnlyDictionaryFromJSONDictionary:(id)arg1;
 + (id)_jsonDictionaryFromJSONObject:(id)arg1 subElement:(id)arg2 error:(id *)arg3;
-@property(copy, nonatomic) NSString *accountFilename; // @synthesize accountFilename=_accountFilename;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *accountFilename; // @synthesize accountFilename=_accountFilename;
 - (id)_parseBatchesFromSampleAccountJSONDict:(id)arg1 error:(id *)arg2;
 - (id)_parseGatewayFromProviderJSONDict:(id)arg1 error:(id *)arg2;
 - (id)_parseProviderFromSampleAccountJSONDict:(id)arg1 error:(id *)arg2;

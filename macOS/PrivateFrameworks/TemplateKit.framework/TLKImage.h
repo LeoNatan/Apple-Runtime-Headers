@@ -18,13 +18,13 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useFastPathShadow; // @synthesize useFastPathShadow=_useFastPathShadow;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) BOOL shouldCropToCircle; // @synthesize shouldCropToCircle=_shouldCropToCircle;
 @property(nonatomic) BOOL isTemplate; // @synthesize isTemplate=_isTemplate;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) NSImage *uiImage; // @synthesize uiImage=_uiImage;
-- (void).cxx_destruct;
 - (id)initWithImage:(id)arg1;
 - (id)init;
 @property(readonly, nonatomic) NSImage *uiImageToRender;

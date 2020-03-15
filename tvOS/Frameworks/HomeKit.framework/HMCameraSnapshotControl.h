@@ -18,8 +18,8 @@
     _HMCameraSnapshotControl *_snapshotControl;
 }
 
-@property(retain, nonatomic) _HMCameraSnapshotControl *snapshotControl; // @synthesize snapshotControl=_snapshotControl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _HMCameraSnapshotControl *snapshotControl; // @synthesize snapshotControl=_snapshotControl;
 - (void)cameraSnapshotControlDidUpdateMostRecentSnapshot:(id)arg1;
 - (void)cameraSnapshotControl:(id)arg1 didTakeSnapshot:(id)arg2 error:(id)arg3;
 - (void)fetchCameraSnapshotForBulletinContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _cellSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *imageViews; // @synthesize imageViews=_imageViews;
 @property(copy, nonatomic) NSArray *imageProxies; // @synthesize imageProxies=_imageProxies;
 @property(nonatomic) struct CGSize cellSize; // @synthesize cellSize=_cellSize;
-- (void).cxx_destruct;
 - (void)_imageWithImages:(id)arg1 cellSize:(struct CGSize)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_stopAnimating;
 - (void)_startAnimating;

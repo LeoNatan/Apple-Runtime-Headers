@@ -10,7 +10,7 @@
 {
 }
 
-- (void)updateWithFrame:(id)arg1;
+- (void)updateWithFrame:(id)arg1 cache:(id)arg2;
 - (long long)requirements;
 
 @end

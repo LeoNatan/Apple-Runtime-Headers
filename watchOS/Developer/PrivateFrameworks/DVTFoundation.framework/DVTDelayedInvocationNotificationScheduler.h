@@ -18,10 +18,10 @@
 }
 
 + (id)schedulerWithNotificationName:(id)arg1 object:(id)arg2 priority:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) id object; // @synthesize object=_object;
 @property(readonly, copy, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
-- (void).cxx_destruct;
 - (void)unscheduleDelayedInvocation:(id)arg1;
 - (void)scheduleDelayedInvocation:(id)arg1;
 - (id)description;

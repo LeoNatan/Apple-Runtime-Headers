@@ -15,9 +15,9 @@
     long long _evaluatedForMode;
     unsigned long long _hashValue;
     BOOL _isGeometryNode;
-    struct NSDictionary *_inputs;
+    NSDictionary *_inputs;
     NSDictionary *_settings;
-    struct NSDictionary *_xforms;
+    NSDictionary *_xforms;
     CIImage *_cached_outputImage;
     NSMutableDictionary *_cached_auxiliaryImages;
     AVComposition *_cached_outputVideo;
@@ -33,6 +33,7 @@
 
 + (id)nodeFromCache:(id)arg1 cache:(id)arg2;
 + (id)nodeFromCache:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *spaceMapKey; // @synthesize spaceMapKey=_spaceMapKey;
 @property(readonly, nonatomic) NSString *dominantInputKey; // @synthesize dominantInputKey=_dominantInputKey;
 @property(retain) NUGeometrySpaceMap *cached_geometrySpaceMap; // @synthesize cached_geometrySpaceMap=_cached_geometrySpaceMap;
@@ -50,7 +51,6 @@
 @property(readonly) NSDictionary *inputs; // @synthesize inputs=_inputs;
 @property(nonatomic) long long evaluatedForMode; // @synthesize evaluatedForMode=_evaluatedForMode;
 @property(readonly, nonatomic) BOOL isCached; // @synthesize isCached=_cached;
-- (void).cxx_destruct;
 - (void)nu_updateDigest:(id)arg1;
 - (unsigned long long)hash;
 - (unsigned long long)_hash;
@@ -89,8 +89,8 @@
 - (id)_evaluateVideo:(out id *)arg1;
 - (id)outputVideo:(out id *)arg1;
 - (id)evaluateRenderDependenciesWithRequest:(id)arg1 error:(out id *)arg2;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
-- (id)placeholderNodeWithCachedInputs:(struct NSDictionary *)arg1;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)placeholderNodeWithCachedInputs:(id)arg1;
 - (id)evaluateSettings:(id)arg1 pipelineState:(id)arg2 error:(out id *)arg3;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;
 - (id)nodeByReplayingAgainstCache:(id)arg1 pipelineState:(id)arg2 error:(out id *)arg3;
@@ -100,7 +100,7 @@
 - (id)inputForKey:(id)arg1;
 - (id)_generateSpaceMapKey;
 @property(readonly) BOOL isPlaceholderNode;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 - (id)init;
 
 @end

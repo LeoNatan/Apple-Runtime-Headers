@@ -17,8 +17,8 @@
     id <SSRemoteAlertHandleProviderDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SSRemoteAlertHandleProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SSRemoteAlertHandleProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)screenshotServicesAlertHandle;
 - (id)_screenshotServicesServiceAlertDefinition;
 - (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;

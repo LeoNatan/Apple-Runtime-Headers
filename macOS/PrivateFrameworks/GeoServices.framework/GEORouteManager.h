@@ -16,9 +16,9 @@
 }
 
 + (void)setShouldRequestServerLatencyInfo:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(nonatomic) __weak id <GEORouteManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)fetchDirectionsForTicket:(id)arg1 networkActivity:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)didReceiveRoutes:(id)arg1 traffic:(id)arg2;
 - (id)refineErrorFromServerError:(id)arg1 directionsError:(id)arg2;

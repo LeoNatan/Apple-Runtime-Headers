@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     PUBrowsingViewModel *_viewModel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldSlideAccessory; // @synthesize shouldSlideAccessory=_shouldSlideAccessory;
 @property(nonatomic) _Bool shouldAnimateAccessory; // @synthesize shouldAnimateAccessory=_shouldAnimateAccessory;
 @property(nonatomic) _Bool shouldAnimateContent; // @synthesize shouldAnimateContent=_shouldAnimateContent;
 @property(retain, nonatomic) PUBrowsingViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (id)_layoutInfoWithDefaultDisappearance:(id)arg1;
 - (id)optionsForAnimatingTileController:(id)arg1 toLayoutInfo:(id)arg2 withAnimationType:(long long)arg3;
 

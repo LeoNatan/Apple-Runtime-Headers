@@ -28,6 +28,7 @@
 - (void)addStorePlaylistWithGlobalID:(NSString *)arg1 configuration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)sdk_addStoreItemWithOpaqueID:(NSString *)arg1 configuration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)addStoreItemWithAdamID:(long long)arg1 referral:(ICCloudAddReferral *)arg2 configuration:(ICConnectionConfiguration *)arg3 completion:(void (^)(NSDictionary *, NSError *))arg4;
+- (void)updatePinnedSubscribedPlaylistsWithConfiguration:(ICConnectionConfiguration *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)updateSubscribedPlaylistsWithSagaIDs:(NSArray *)arg1 ignoreMinRefreshInterval:(_Bool)arg2 configuration:(ICConnectionConfiguration *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)uploadArtworkForPlaylistWithPersistentID:(long long)arg1 configuration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)removePlaylistsWithSagaIDs:(NSArray *)arg1 configuration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *))arg3;
@@ -85,7 +86,7 @@
 - (void)updateSagaLibraryWithReason:(int)arg1 forConfiguration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)updateJaliscoLibraryWithReason:(int)arg1 forConfiguration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)isSagaAuthenticatedForConfiguration:(ICConnectionConfiguration *)arg1 completion:(void (^)(NSError *, _Bool))arg2;
-- (void)setConnectionConfiguration:(ICConnectionConfiguration *)arg1 preferredVideoQuality:(unsigned long long)arg2 completion:(void (^)(NSError *))arg3;
+- (void)setPreferredVideoQuality:(int)arg1 forConfiguration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)setupInitialJaliscoPoolingForConfiguration:(ICConnectionConfiguration *)arg1;
 - (void)setupInitialSagaPoolingForConfiguration:(ICConnectionConfiguration *)arg1;
 @end

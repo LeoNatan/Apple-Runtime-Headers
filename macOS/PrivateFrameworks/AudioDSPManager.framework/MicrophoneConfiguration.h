@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     AVAudioFormat *_format;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioFormat *format; // @synthesize format=_format;
 @property(retain, nonatomic) NSString *polarPattern; // @synthesize polarPattern=_polarPattern;
 @property(retain, nonatomic) NSString *orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) NSString *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 location:(id)arg2 orientation:(id)arg3 polarPattern:(id)arg4 channelCount:(int)arg5;
 
 // Remaining properties

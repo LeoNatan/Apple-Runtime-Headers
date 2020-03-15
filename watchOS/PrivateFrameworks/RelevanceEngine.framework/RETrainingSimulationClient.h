@@ -19,9 +19,9 @@
     id <RETrainingSimulationClientDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <RETrainingSimulationClientDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *targetProcessName; // @synthesize targetProcessName=_targetProcessName;
-- (void).cxx_destruct;
 - (void)availableRelevanceEnginesDidChange;
 - (id)relevanceEngine:(id)arg1 encodedObjectAtPath:(id)arg2;
 - (id)diagnosticLogFileForRelevanceEngine:(id)arg1;

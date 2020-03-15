@@ -23,6 +23,7 @@
 }
 
 + (void)_enumerateEnabledHierarchyForAssertion:(id)arg1 stop:(_Bool *)arg2 block:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) CSLClockAssertion *parentAssertion; // @synthesize parentAssertion=_parentAssertion;
 @property(nonatomic) unsigned int pauseReason; // @synthesize pauseReason=_pauseReason;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSArray *childAssertions; // @synthesize childAssertions=_childAssertions;
 @property(nonatomic) unsigned int assertionType; // @synthesize assertionType=_assertionType;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

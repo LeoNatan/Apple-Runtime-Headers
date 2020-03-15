@@ -22,9 +22,9 @@
 + (id)localMessageActionsTableSchema;
 + (id)tablesAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EDGmailLabelPersistence *gmailLabelPersistence; // @synthesize gmailLabelPersistence=_gmailLabelPersistence;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)removeMessageAction:(long long)arg1;
 - (_Bool)updateTransferUndownloadedMessageAction:(id)arg1 withResults:(id)arg2;
 - (id)_sourceRemoteIDListForCopyItems:(id)arg1;

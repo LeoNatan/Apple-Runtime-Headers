@@ -17,9 +17,9 @@
     id <_MSMessageComposeExtensionProtocol> _appContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_MSMessageComposeExtensionProtocol> appContext; // @synthesize appContext=_appContext;
 @property(nonatomic) __weak id <_MSMessageComposeHostProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removeAssetArchiveWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_stageAssetArchive:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_contentDidLoad;

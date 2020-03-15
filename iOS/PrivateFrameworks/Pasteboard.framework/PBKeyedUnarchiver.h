@@ -13,8 +13,8 @@
     NSSet *_allowedClasses;
 }
 
-@property(copy, nonatomic) NSSet *allowedClasses; // @synthesize allowedClasses=_allowedClasses;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *allowedClasses; // @synthesize allowedClasses=_allowedClasses;
 
 @end
 

@@ -50,6 +50,7 @@
 + (struct CGPoint)_pointForOffsetAngle:(double)arg1 dialCenter:(struct CGPoint)arg2 radius:(double)arg3;
 + (double)_offsetAngleForZoomFactor:(double)arg1 relativeToCurrentZoomFactor:(_Bool)arg2 currentZoomFactor:(double)arg3 min:(double)arg4 max:(double)arg5 signedAngleDeltaForZoomRange:(double)arg6;
 + (double)_normalizedValueForZoomFactor:(double)arg1 min:(double)arg2 max:(double)arg3;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setMaskImageJobIdentifier:) long long _maskImageJobIdentifier; // @synthesize _maskImageJobIdentifier=__maskImageJobIdentifier;
 @property(nonatomic, setter=_setTicksImageJobIdentifier:) long long _ticksImageJobIdentifier; // @synthesize _ticksImageJobIdentifier=__ticksImageJobIdentifier;
 @property(nonatomic, setter=_setBackgroundImageJobIdentifier:) long long _backgroundImageJobIdentifier; // @synthesize _backgroundImageJobIdentifier=__backgroundImageJobIdentifier;
@@ -81,7 +82,6 @@
 @property(nonatomic) double minAvailableZoomFactor; // @synthesize minAvailableZoomFactor=_minAvailableZoomFactor;
 @property(retain, nonatomic) NSArray *zoomFactors; // @synthesize zoomFactors=_zoomFactors;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (double)_labelRotationAngleForOrientation;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (id)_createDotImage;

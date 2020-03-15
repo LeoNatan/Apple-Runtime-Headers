@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id _protocolHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id protocolHandler; // @synthesize protocolHandler=_protocolHandler;
 @property(readonly, nonatomic) NSXPCInterface *clientInterface; // @synthesize clientInterface=_clientInterface;
-- (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)initWithClientInterface:(id)arg1 protocolHandler:(id)arg2;

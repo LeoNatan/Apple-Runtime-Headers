@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _cropRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didPersistImageToContact; // @synthesize didPersistImageToContact=_didPersistImageToContact;
 @property(nonatomic) unsigned long long sharingAudience; // @synthesize sharingAudience=_sharingAudience;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(copy, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(copy, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -13,8 +13,8 @@
     GEOPDRelatedSearchSuggestion *_relatedSearchSuggestion;
 }
 
-@property(retain, nonatomic) GEOPDRelatedSearchSuggestion *relatedSearchSuggestion; // @synthesize relatedSearchSuggestion=_relatedSearchSuggestion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOPDRelatedSearchSuggestion *relatedSearchSuggestion; // @synthesize relatedSearchSuggestion=_relatedSearchSuggestion;
 - (id)_suggestionEntryMetadata;
 @property(readonly, nonatomic) NSString *searchBarDisplayToken;
 @property(readonly, nonatomic) NSString *displayString;

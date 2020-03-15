@@ -48,8 +48,8 @@
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) NSString *lastSeenWatchKitExtension; // @synthesize lastSeenWatchKitExtension=_lastSeenWatchKitExtension;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *lastSeenWatchKitExtension; // @synthesize lastSeenWatchKitExtension=_lastSeenWatchKitExtension;
 - (void)remoteComplicationOperationScheduler:(id)arg1 didUpdateNextWakeUpDate:(id)arg2 forClientID:(id)arg3;
 - (void)remoteComplicationOperationScheduler:(id)arg1 didEndDeviceSwitchSessionWithClientID:(id)arg2;
 - (void)remoteComplicationOperationScheduler:(id)arg1 didEndSessionWithClientID:(id)arg2;

@@ -19,10 +19,10 @@
 }
 
 + (id)eventMetadataWithTitlesAndParticipants:(id)arg1 earliestStartTime:(double)arg2 shouldConsiderAlarms:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldConsiderAlarms; // @synthesize shouldConsiderAlarms=_shouldConsiderAlarms;
 @property(readonly, nonatomic) double earliestStartTime; // @synthesize earliestStartTime=_earliestStartTime;
 @property(readonly, nonatomic) NSDictionary *titlesAndParticipants; // @synthesize titlesAndParticipants=_titlesAndParticipants;
-- (void).cxx_destruct;
 - (id)init;
 - (unsigned long long)hash;
 - (unsigned long long)_hash;

@@ -23,12 +23,12 @@
 + (id)userActivityActionWithShortcut:(id)arg1 launchOrigin:(id)arg2 error:(id *)arg3;
 + (void)createActionWithIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)createActionWithUserActivity:(id)arg1 appBundleIdentifier:(id)arg2 launchOrigin:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *activitySubtitle; // @synthesize activitySubtitle=_activitySubtitle;
 @property(readonly, copy, nonatomic) NSData *activityImageData; // @synthesize activityImageData=_activityImageData;
 @property(readonly, copy, nonatomic) NSData *activityData; // @synthesize activityData=_activityData;
 @property(copy, nonatomic) NSString *launchOrigin; // @synthesize launchOrigin=_launchOrigin;
-- (void).cxx_destruct;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 - (id)appIdentifier;
 - (id)localizedSubtitle;

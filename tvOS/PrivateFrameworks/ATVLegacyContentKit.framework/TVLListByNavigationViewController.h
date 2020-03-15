@@ -22,13 +22,13 @@
     struct CGPoint _listViewScrollOffsetFromStateRestoration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(nonatomic) struct CGPoint listViewScrollOffsetFromStateRestoration; // @synthesize listViewScrollOffsetFromStateRestoration=_listViewScrollOffsetFromStateRestoration;
 @property(nonatomic) unsigned long long currentFocusedRowIndex; // @synthesize currentFocusedRowIndex=_currentFocusedRowIndex;
 @property(retain, nonatomic) NSIndexPath *currentFocusedIndexPath; // @synthesize currentFocusedIndexPath=_currentFocusedIndexPath;
 @property(retain, nonatomic) TVLPreviewFactory *previewFactory; // @synthesize previewFactory=_previewFactory;
 @property(retain, nonatomic) TVLListViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_loadNavigationItemFromURLString:(id)arg1;
 - (void)_evaluateOnNavigateScript:(id)arg1 navigationItem:(id)arg2;
 - (void)_evaluateJavascriptForEvent:(id)arg1 atIndexPath:(id)arg2;

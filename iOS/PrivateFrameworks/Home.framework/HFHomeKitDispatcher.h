@@ -57,6 +57,7 @@
 + (void)setConfiguration:(id)arg1;
 + (id)configuration;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *locationCoordinatorSetupFuture; // @synthesize locationCoordinatorSetupFuture=_locationCoordinatorSetupFuture;
 @property(retain, nonatomic) NSMutableArray *allHomesPromises; // @synthesize allHomesPromises=_allHomesPromises;
 @property(retain, nonatomic) NSMutableArray *firstHomeAddedPromises; // @synthesize firstHomeAddedPromises=_firstHomeAddedPromises;
@@ -90,7 +91,6 @@
 @property(nonatomic) _Bool hasLoadedHomes; // @synthesize hasLoadedHomes=_hasLoadedHomes;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
-- (void).cxx_destruct;
 - (void)stateRestorationSettings:(id)arg1 selectedHomeIdentifierDidUpdateExternally:(id)arg2;
 - (void)installStateArbiter:(id)arg1 installStateDidChange:(_Bool)arg2;
 - (void)settingsObserverTupleWasInvalidated:(id)arg1;

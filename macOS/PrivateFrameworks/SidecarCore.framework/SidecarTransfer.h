@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     long long _transferID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long transferID; // @synthesize transferID=_transferID;
 @property(readonly, nonatomic) long long requestID; // @synthesize requestID=_requestID;
 @property(nonatomic) __weak id <SidecarTransferDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_resumeMessage:(id)arg1;
 - (id)dataForType:(id)arg1;
 @property(readonly, nonatomic) SidecarSession *session;

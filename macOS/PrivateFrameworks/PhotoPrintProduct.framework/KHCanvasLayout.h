@@ -20,12 +20,12 @@
 
 + (struct CGSize)canvasSizeForLayouts:(id)arg1 layoutScale:(double)arg2 orientation:(long long)arg3;
 + (id)canvasLayoutWithLayouts:(id)arg1 scale:(double)arg2 insets:(struct NSEdgeInsets)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) long long layoutOrientation; // @synthesize layoutOrientation=_layoutOrientation;
 @property(nonatomic) struct NSEdgeInsets insets; // @synthesize insets=_insets;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(retain, nonatomic) NSArray *layouts; // @synthesize layouts=_layouts;
 @property(nonatomic) __weak id <KHCanvasLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)constraintsForCanvasView:(id)arg1;
 - (id)initWithLayouts:(id)arg1;
 

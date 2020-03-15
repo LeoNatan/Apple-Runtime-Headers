@@ -15,10 +15,11 @@
     HFTriggerActionsSetsUISummary *_actionSetsSummary;
 }
 
++ (void)setCachedHomes:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFTriggerActionsSetsUISummary *actionSetsSummary; // @synthesize actionSetsSummary=_actionSetsSummary;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)actionSetsFromTriggerActionSetsBuilders:(id)arg1;
 - (id)triggerActionSetsBuilders;

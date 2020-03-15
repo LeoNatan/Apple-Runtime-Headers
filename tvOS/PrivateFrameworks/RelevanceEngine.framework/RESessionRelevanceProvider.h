@@ -17,10 +17,10 @@
 
 + (id)_simulationDateFormatter;
 + (id)relevanceSimulatorID;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isHistoric) _Bool historic; // @synthesize historic=_historic;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)_hash;
 - (_Bool)isEqual:(id)arg1;

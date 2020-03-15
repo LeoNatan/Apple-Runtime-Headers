@@ -14,9 +14,9 @@
     WLKBasicContentRequestResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKBasicContentRequestResponse *response; // @synthesize response=_response;
 @property(readonly, copy, nonatomic) NSArray *contentIDs; // @synthesize contentIDs=_contentIDs;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKBasicContentMetadata *basicContentMetadata;
 - (void)processResponse;
 - (id)initWithContentIDs:(id)arg1 caller:(id)arg2;

@@ -14,9 +14,9 @@
     NSString *_attachmentID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *attachmentID; // @synthesize attachmentID=_attachmentID;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithName:(id)arg1 attachmentID:(id)arg2;

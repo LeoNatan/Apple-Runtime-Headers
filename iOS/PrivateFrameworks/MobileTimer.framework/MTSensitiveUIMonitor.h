@@ -18,12 +18,12 @@
 }
 
 + (id)sharedMonitor;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(nonatomic) _Bool needPrefsUpdate; // @synthesize needPrefsUpdate=_needPrefsUpdate;
 @property(nonatomic) _Bool hideSensitiveUI; // @synthesize hideSensitiveUI=_hideSensitiveUI;
 @property(nonatomic) int notifyToken; // @synthesize notifyToken=_notifyToken;
 @property(retain, nonatomic) MTObserverStore *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (_Bool)shouldHideForSensitivity:(long long)arg1;
 - (void)removeSensitiveUIObserver:(id)arg1;
 - (void)addSensitiveUIObserver:(id)arg1;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _proxySize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool failed; // @synthesize failed=_failed;
 @property(nonatomic) struct CGSize proxySize; // @synthesize proxySize=_proxySize;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

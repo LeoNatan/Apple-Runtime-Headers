@@ -73,6 +73,7 @@
 
 + (double)barToBarHorizontalDistanceIncludingBarWidth;
 + (id)aTextField;
+- (void).cxx_destruct;
 @property(nonatomic) double travelTimeHeight; // @synthesize travelTimeHeight=_travelTimeHeight;
 @property(nonatomic) double visibleHeight; // @synthesize visibleHeight=_visibleHeight;
 @property(retain) NSMutableArray *accountViewConstraintsInvolvingTitleField; // @synthesize accountViewConstraintsInvolvingTitleField=_accountViewConstraintsInvolvingTitleField;
@@ -129,7 +130,6 @@
 @property BOOL visibleHeightLocked; // @synthesize visibleHeightLocked=_visibleHeightLocked;
 @property struct CGSize singleLineTitleSize; // @synthesize singleLineTitleSize=_singleLineTitleSize;
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)_accessibilityTimeFromDate:(id)arg1;
 - (id)_accessibilityDateAndTimeFromDate:(id)arg1;
 - (id)_accessibilityDateOnlyForStart:(id)arg1 end:(id)arg2;

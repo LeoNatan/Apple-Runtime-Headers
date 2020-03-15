@@ -26,6 +26,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)nodeWithImageSlot:(id)arg1 labelSlot:(id)arg2 transportSlot:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRestricted) BOOL restricted; // @synthesize restricted=_restricted;
 @property(nonatomic, getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) BOOL hasSquareImage; // @synthesize hasSquareImage=_hasSquareImage;
@@ -36,7 +37,6 @@
 @property(retain) NSNumber *topLabelSlot; // @synthesize topLabelSlot=_topLabelSlot;
 @property(retain) NSNumber *mainLabelSlot; // @synthesize mainLabelSlot=_mainLabelSlot;
 @property(retain) NSNumber *imageSlot; // @synthesize imageSlot=_imageSlot;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

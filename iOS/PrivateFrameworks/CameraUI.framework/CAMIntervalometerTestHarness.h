@@ -17,14 +17,15 @@
     _Bool _performWarmupCapture;
     _Bool _hasOutstandingCapture;
     _Bool _nextCaptureIsMyLast;
+    long long _mode;
     NSMutableDictionary *_numberOfResponsesForRequest;
     NSNumber *_expectedNumberOfResponsesPerRequest;
     CAMCaptureRequestIntervalometer *_testIntervalometer;
 }
 
-+ (id)harnessWithTestName:(id)arg1 expectedNumberOfCapturesPerRequest:(id)arg2 captureController:(id)arg3 performingWarmupCapture:(_Bool)arg4;
-@property(retain, nonatomic) CAMCaptureRequestIntervalometer *testIntervalometer; // @synthesize testIntervalometer=_testIntervalometer;
++ (id)harnessWithTestName:(id)arg1 expectedNumberOfCapturesPerRequest:(id)arg2 captureController:(id)arg3 performingWarmupCapture:(_Bool)arg4 forCaptureMode:(long long)arg5;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CAMCaptureRequestIntervalometer *testIntervalometer; // @synthesize testIntervalometer=_testIntervalometer;
 - (_Bool)_hasReceivedExpectedNumberOfResponsesForRequests;
 - (void)intervalometerDidReachMaximumCount:(id)arg1;
 - (_Bool)intervalometer:(id)arg1 didGenerateCaptureRequest:(id)arg2;
@@ -32,7 +33,7 @@
 - (void)failedTestwithReason:(id)arg1;
 - (void)stopTesting;
 - (void)startTesting;
-- (id)initWithTestName:(id)arg1 expectedNumberOfCapturesPerRequest:(id)arg2 captureController:(id)arg3 performingWarmupCapture:(_Bool)arg4;
+- (id)initWithTestName:(id)arg1 expectedNumberOfCapturesPerRequest:(id)arg2 captureController:(id)arg3 performingWarmupCapture:(_Bool)arg4 forCaptureMode:(long long)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

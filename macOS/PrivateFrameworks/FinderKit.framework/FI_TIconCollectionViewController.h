@@ -36,6 +36,8 @@ __attribute__((visibility("hidden")))
     struct TNotificationCenterObserver _gridSpacingSliderDidChangeObserver;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUpdateLayoutControllerDirty; // @synthesize isUpdateLayoutControllerDirty=_isUpdateLayoutControllerDirty;
 @property(nonatomic) _Bool isUpdateLayoutControllerSuspended; // @synthesize isUpdateLayoutControllerSuspended=_isUpdateLayoutControllerSuspended;
 @property(nonatomic) int backgroundType; // @synthesize backgroundType=_backgroundType;
@@ -44,8 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isSnapToGrid) _Bool snapToGrid; // @synthesize snapToGrid=_isSnapToGrid;
 @property(nonatomic, getter=isKeepArranged) _Bool keepArranged; // @synthesize keepArranged=_isKeepArranged;
 @property(nonatomic) double gridSpacing; // @synthesize gridSpacing=_gridSpacing;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateSyncBadgeForIconView:(id)arg1 node:(const struct TFENode *)arg2;
 - (void)updateScreenTimeBadgeForIconView:(id)arg1 node:(const struct TFENode *)arg2;
 - (void)updateDimmedForIconView:(id)arg1 node:(const struct TFENode *)arg2;

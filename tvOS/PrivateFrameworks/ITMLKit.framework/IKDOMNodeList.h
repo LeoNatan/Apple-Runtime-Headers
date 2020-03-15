@@ -19,10 +19,10 @@
 }
 
 + (id)nodeListWithAppContext:(id)arg1 contextNode:(id)arg2 xpath:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *nodes; // @synthesize nodes=_nodes;
 @property(readonly, copy, nonatomic) CDUnknownBlockType evaluationBlock; // @synthesize evaluationBlock=_evaluationBlock;
 @property(retain, nonatomic) IKDOMNode *contextNode; // @synthesize contextNode=_contextNode;
-- (void).cxx_destruct;
 - (void)_updateNodes;
 - (void)domDidUpdateForContextNode:(id)arg1;
 - (id)item:(long long)arg1;

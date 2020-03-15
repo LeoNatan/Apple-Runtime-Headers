@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     _Bool _showInvalid;
 }
 
-@property(nonatomic) _Bool showInvalid; // @synthesize showInvalid=_showInvalid;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showInvalid; // @synthesize showInvalid=_showInvalid;
 - (Class)_viewClassForSettingsHeaderFooterDescription:(id)arg1;
 - (id)text;
 - (id)initWithClientContext:(id)arg1;

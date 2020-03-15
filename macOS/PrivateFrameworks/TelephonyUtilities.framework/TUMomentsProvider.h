@@ -16,11 +16,11 @@
     NSDictionary *_remoteIDSDestinations;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRemoteMomentsAvailable) BOOL remoteMomentsAvailable; // @synthesize remoteMomentsAvailable=_remoteMomentsAvailable;
 @property(readonly, copy, nonatomic) NSDictionary *remoteIDSDestinations; // @synthesize remoteIDSDestinations=_remoteIDSDestinations;
 @property(readonly, copy, nonatomic) NSString *requesterID; // @synthesize requesterID=_requesterID;
 @property(readonly, nonatomic) long long streamToken; // @synthesize streamToken=_streamToken;
-- (void).cxx_destruct;
 - (BOOL)isEqualToProvider:(id)arg1;
 - (id)initWithConversation:(id)arg1;
 - (id)initWithCall:(id)arg1;

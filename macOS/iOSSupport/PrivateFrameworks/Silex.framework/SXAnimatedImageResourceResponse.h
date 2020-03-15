@@ -13,8 +13,8 @@
     SXAnimatedImage *_animatedImage;
 }
 
-@property(retain, nonatomic) SXAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SXAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
 
 @end
 

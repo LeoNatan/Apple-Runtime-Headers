@@ -29,6 +29,9 @@
 + (id)keyPathsForValuesAffectingLoaded;
 + (id)keyPathsForValuesAffectingEditing;
 + (id)keyPathsForValuesAffectingContentSize;
++ (id)contactFromABPerson:(id)arg1;
++ (void)reflectUpdatesMadeToContacts:(id)arg1 onPersonsInAddressBook:(id)arg2;
+- (void).cxx_destruct;
 @property(getter=isLoaded) BOOL loaded; // @synthesize loaded=_loaded;
 @property(nonatomic) double contentHeight; // @synthesize contentHeight=_contentHeight;
 @property(retain) CNContactCardViewController *contactCardViewController; // @synthesize contactCardViewController=_contactCardViewController;
@@ -36,7 +39,6 @@
 @property __weak id <ABPersonViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) ABPerson *person; // @synthesize person=_person;
 @property(retain) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
-- (void).cxx_destruct;
 - (id)hostWindowForShareSheet;
 - (id)profilePhotoImage;
 - (struct CGRect)profilePhotoScreenRect;
@@ -44,12 +46,13 @@
 - (void)notifyDelegateActionWasPerformed;
 - (void)contactCardViewContollerDidLoad:(id)arg1;
 - (void)setPropertyKeysToDisplay:(id)arg1;
+- (void)setParentContainer:(id)arg1;
+- (void)setAuthorizedMode:(unsigned long long)arg1;
+- (void)setMode:(unsigned long long)arg1;
 - (void)set_quicklook_fetchAsynchronously:(BOOL)arg1;
 - (BOOL)_quicklook_fetchAsynchronously;
 - (void)setShowsShowInMapsButtons:(BOOL)arg1;
 - (BOOL)showsShowInMapsButtons;
-- (void)setPerson:(id)arg1 shouldShowLinkedPeople:(BOOL)arg2 shouldShowSuggestedFields:(BOOL)arg3;
-- (void)setPerson:(id)arg1 shouldShowLinkedPeople:(BOOL)arg2;
 @property BOOL shouldShowSuggestedFields;
 @property BOOL shouldShowLinkedPeople;
 - (void)addressBookWillReset:(id)arg1;
@@ -69,7 +72,6 @@
 - (long long)backgroundStyle;
 @property BOOL editing;
 - (id)defaultProperties;
-- (void)setPerson:(id)arg1 withSuggestedContact:(id)arg2;
 - (BOOL)hasChanges;
 - (BOOL)isSelectable;
 - (void)setSelectable:(BOOL)arg1;
@@ -80,6 +82,15 @@
 - (void)setDrawsBackground:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (void)configureForPeople;
+- (void)setPerson:(id)arg1 shouldShowLinkedPeople:(BOOL)arg2 shouldShowSuggestedFields:(BOOL)arg3;
+- (void)setPerson:(id)arg1 shouldShowLinkedPeople:(BOOL)arg2;
+- (void)setPerson:(id)arg1 withSuggestedContact:(id)arg2;
+- (void)configureForContacts;
+- (void)setContact:(id)arg1 shouldShowLinkedContacts:(BOOL)arg2 shouldShowSuggestedFields:(BOOL)arg3;
+- (void)setContact:(id)arg1 shouldShowLinkedContacts:(BOOL)arg2;
+- (void)setContact:(id)arg1;
+- (id)contact;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

@@ -23,6 +23,7 @@
     struct _NSRange _linkRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *textViewTrailingConstraint; // @synthesize textViewTrailingConstraint=_textViewTrailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *textViewLeadingConstraint; // @synthesize textViewLeadingConstraint=_textViewLeadingConstraint;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
@@ -31,7 +32,6 @@
 @property(nonatomic) struct _NSRange linkRange; // @synthesize linkRange=_linkRange;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)_accessibilitySetInterfaceStyleIntent:(unsigned long long)arg1;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
 - (double)preferredHeightForWidth:(double)arg1 inTableView:(id)arg2;

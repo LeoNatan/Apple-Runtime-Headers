@@ -26,9 +26,9 @@
 + (id)_modularSmallAlarmImageProvider;
 + (id)largeModuleViewForComplicationType:(unsigned int)arg1;
 + (id)smallModuleViewForComplicationType:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
-- (void).cxx_destruct;
 - (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
 - (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (void)_setTypographicTracking:(float)arg1 andFont:(id)arg2 onAttributedString:(id *)arg3 inRange:(struct _NSRange)arg4;

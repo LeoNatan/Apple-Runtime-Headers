@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *importData; // @synthesize importData=_importData;
 @property(retain, nonatomic) CSSearchContext *searchContext; // @synthesize searchContext=_searchContext;
 @property(retain, nonatomic) NSString *extensionBundleID; // @synthesize extensionBundleID=_extensionBundleID;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSArray *identifiersToReindex; // @synthesize identifiersToReindex=_identifiersToReindex;
 @property(nonatomic) int jobOptions; // @synthesize jobOptions=_jobOptions;
 @property(nonatomic) int jobType; // @synthesize jobType=_jobType;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

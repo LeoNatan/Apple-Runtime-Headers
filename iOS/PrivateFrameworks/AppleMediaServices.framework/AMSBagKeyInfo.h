@@ -6,21 +6,26 @@
 
 #import <objc/NSObject.h>
 
+#import <AppleMediaServices/NSSecureCoding-Protocol.h>
+
 @class NSString;
 @protocol NSObject;
 
 __attribute__((visibility("hidden")))
-@interface AMSBagKeyInfo : NSObject
+@interface AMSBagKeyInfo : NSObject <NSSecureCoding>
 {
     NSString *_bagKey;
     id <NSObject> _defaultValue;
     unsigned long long _valueType;
 }
 
++ (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long valueType; // @synthesize valueType=_valueType;
 @property(readonly, nonatomic) id <NSObject> defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(readonly, nonatomic) NSString *bagKey; // @synthesize bagKey=_bagKey;
-- (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

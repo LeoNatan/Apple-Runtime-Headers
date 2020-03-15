@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)infoPanelTransitioningAnimationFrom:(id)arg1 to:(id)arg2 containerView:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVInfoPanelContentViewController *toViewController; // @synthesize toViewController=_toViewController;
 @property(readonly, nonatomic) AVInfoPanelContentViewController *fromViewController; // @synthesize fromViewController=_fromViewController;
 @property(readonly, nonatomic) NSArray *animators; // @synthesize animators=_animators;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRunning) _Bool running;
 - (void)stop;
 - (id)initWithFrom:(id)arg1 to:(id)arg2 animators:(id)arg3;

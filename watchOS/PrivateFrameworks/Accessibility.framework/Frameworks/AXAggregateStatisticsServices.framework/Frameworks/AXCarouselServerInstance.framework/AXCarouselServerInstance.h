@@ -22,11 +22,11 @@
 + (id)domainAccessorForDomain:(id)arg1;
 + (id)sharedInstance;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool voiceOverIsEnabled; // @synthesize voiceOverIsEnabled=_voiceOverIsEnabled;
 @property(retain, nonatomic) AXIPCServer *server; // @synthesize server=_server;
 @property(nonatomic, getter=isSystemAppServerRunning) _Bool systemAppServerRunning; // @synthesize systemAppServerRunning=_systemAppServerRunning;
 @property(retain, nonatomic) AXCarouselServiceProvider *serviceProvider; // @synthesize serviceProvider=_serviceProvider;
-- (void).cxx_destruct;
 - (void)_handleTripleClickRequest:(int)arg1 show:(_Bool)arg2;
 - (id)_currentFaceClass:(id)arg1;
 - (id)_showControlCenter:(id)arg1;

@@ -16,10 +16,10 @@
     PHAJobConstraints *_currentConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHAJobConstraints *currentConstraints; // @synthesize currentConstraints=_currentConstraints;
 @property _Bool shutdownRequested; // @synthesize shutdownRequested=_shutdownRequested;
 @property(nonatomic) __weak id <PHAJobConstraintsObserverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)acceptConstraints:(id)arg1 mask:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)init;

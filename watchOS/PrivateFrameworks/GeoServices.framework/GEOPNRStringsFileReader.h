@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSData *_stringsFile;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSData *stringsFile; // @synthesize stringsFile=_stringsFile;
 @property(readonly, retain, nonatomic) NSDictionary *offsetForLang; // @synthesize offsetForLang=_offsetForLang;
 @property(readonly, retain, nonatomic) NSArray *supportedLanguages; // @synthesize supportedLanguages=_supportedLanguages;
-- (void).cxx_destruct;
 - (id)stringForLang:(id)arg1 withId:(unsigned int)arg2;
 - (id)initWithFile:(id)arg1;
 

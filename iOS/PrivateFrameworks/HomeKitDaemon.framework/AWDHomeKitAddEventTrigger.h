@@ -23,10 +23,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDHomeKitEventTrigger *eventTrigger; // @synthesize eventTrigger=_eventTrigger;
 @property(nonatomic) unsigned int resultErrorCode; // @synthesize resultErrorCode=_resultErrorCode;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

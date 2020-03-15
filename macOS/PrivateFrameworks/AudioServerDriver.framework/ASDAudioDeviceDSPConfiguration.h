@@ -17,12 +17,12 @@
     NSArray *_outputDSP;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputDSP; // @synthesize outputDSP=_outputDSP;
 @property(readonly, nonatomic) NSArray *inputDSP; // @synthesize inputDSP=_inputDSP;
 @property(readonly, nonatomic) NSSet *dspDeviceProperties; // @synthesize dspDeviceProperties=_dspDeviceProperties;
 @property(readonly, nonatomic) NSSet *underlyingDeviceProperties; // @synthesize underlyingDeviceProperties=_underlyingDeviceProperties;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithDictionary:(id)arg1 resourcePath:(id)arg2 name:(id)arg3;

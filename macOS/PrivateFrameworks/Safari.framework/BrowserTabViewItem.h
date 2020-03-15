@@ -11,7 +11,7 @@
 #import <Safari/TabBarViewItem-Protocol.h>
 #import <Safari/WBSOrderedTab-Protocol.h>
 
-@class BrowserTabViewController, BrowserViewController, BrowserWindowController, ContinuousReadingListViewController, DelayedPopUpRolloverImageButton, NSArray, NSColor, NSImage, NSMutableArray, NSSet, NSString, NSTimer, NSURL, NSUUID, SearchState, TabContentViewController, WBSPair;
+@class BrowserTabViewController, BrowserViewController, BrowserWindowController, ContinuousReadingListViewController, DelayedPopUpRolloverImageButton, NSArray, NSColor, NSImage, NSMutableArray, NSSet, NSString, NSTimer, NSURL, NSUUID, SearchState, TabContentViewController;
 @protocol VisualTabPickerThumbnailSnapshotProviding;
 
 __attribute__((visibility("hidden")))
@@ -19,10 +19,7 @@ __attribute__((visibility("hidden")))
 {
     BrowserViewController *_currentBrowserViewController;
     struct RefPtr<Safari::BrowserTab, WTF::DumbPtrTraits<Safari::BrowserTab>> _browserTab;
-    struct RefPtr<Safari::WebPageProxy, WTF::DumbPtrTraits<Safari::WebPageProxy>> _webPageProxy;
-    struct RefPtr<Safari::ReaderControllerProxy, WTF::DumbPtrTraits<Safari::ReaderControllerProxy>> _readerControllerProxy;
     BOOL _didFireOpenEvent;
-    BOOL _didFireCloseEvent;
     NSMutableArray *_accessoryViews;
     NSString *_urlFromScript;
     DelayedPopUpRolloverImageButton *_muteButton;
@@ -30,7 +27,6 @@ __attribute__((visibility("hidden")))
     id _templateIconRequestToken;
     id _faviconRequestToken;
     unsigned long long _currentIconType;
-    WBSPair *_currentURLToUsageState;
     BOOL _pinned;
     BOOL _showIcon;
     BOOL _prefersCachedTabSnapshotForTouchBar;
@@ -54,6 +50,8 @@ __attribute__((visibility("hidden")))
 
 + (id)findTabInAnyWindowWithUUID:(id)arg1;
 + (id)findTabForPage:(const struct Page *)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ContinuousReadingListViewController *continuousReadingListViewController; // @synthesize continuousReadingListViewController=_continuousReadingListViewController;
 @property(nonatomic) long long muteButtonState; // @synthesize muteButtonState=_muteButtonState;
 @property(nonatomic, getter=isShowingMuteButton) BOOL showingMuteButton; // @synthesize showingMuteButton=_showingMuteButton;
@@ -69,13 +67,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SearchState *lastSearchState; // @synthesize lastSearchState=_lastSearchState;
 @property(copy, nonatomic) NSString *editedUnifiedFieldString; // @synthesize editedUnifiedFieldString=_editedUnifiedFieldString;
 @property(copy, nonatomic) NSString *fullLabel; // @synthesize fullLabel=_fullLabel;
-@property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
+@property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) TabContentViewController *tabContentViewController; // @synthesize tabContentViewController=_tabContentViewController;
 @property(nonatomic) __weak BrowserWindowController *browserWindowController; // @synthesize browserWindowController=_browserWindowController;
 @property(nonatomic) BOOL showIcon; // @synthesize showIcon=_showIcon;
 @property(nonatomic, getter=isPinned) BOOL pinned; // @synthesize pinned=_pinned;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double lastActivationTime;
 @property(readonly, nonatomic, getter=isClosing) BOOL closing;
 @property(readonly, nonatomic) BOOL shouldSelectOriginatingTabWhenClosed;
@@ -128,9 +124,6 @@ __attribute__((visibility("hidden")))
 - (void)setLabel:(id)arg1;
 - (void)setToolTip:(id)arg1;
 - (void)dealloc;
-- (BOOL)isBrowserViewVisible;
-- (void)updateUsageTrackingInformationAfterShowingDigitalHealthOverlay;
-- (void)updateUsageTrackingInformationIfNecessaryGivenTabIsSelected:(BOOL)arg1 windowIsMainWindow:(BOOL)arg2;
 - (void)closeWithoutConfirming;
 - (void)_tryToClose;
 - (void)tryToCloseWhenReady;
@@ -140,15 +133,13 @@ __attribute__((visibility("hidden")))
 - (void)addAccessoryView:(id)arg1;
 - (BOOL)_shouldSuppressExtensionTabEvents;
 - (void)getVisibleContentsAsDataURLForContext:(struct OpaqueJSContext *)arg1 callback:(struct OpaqueJSValue *)arg2;
--     // Error parsing type: c24@0:8r^{ExtensionAPIExtension=^^?{HashSet<Safari::EventTarget *, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >={HashTable<Safari::EventTarget *, Safari::EventTarget *, WTF::IdentityExtractor, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >=^^{EventTarget}IIII}}{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}^^?}16, name: allowAccessFromExtensionToAnyAssociatedPage:
--     // Error parsing type: c24@0:8r^{ExtensionAPIExtension=^^?{HashSet<Safari::EventTarget *, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >={HashTable<Safari::EventTarget *, Safari::EventTarget *, WTF::IdentityExtractor, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >=^^{EventTarget}IIII}}{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}^^?}16, name: allowAccessFromExtension:
+-     // Error parsing type: c24@0:8r^{ExtensionAPIExtension=^^?{HashSet<Safari::EventTarget *, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >={HashTable<Safari::EventTarget *, Safari::EventTarget *, WTF::IdentityExtractor, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >=^^{EventTarget}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>={__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >=AC}}}}^^?}16, name: allowAccessFromExtensionToAnyAssociatedPage:
+-     // Error parsing type: c24@0:8r^{ExtensionAPIExtension=^^?{HashSet<Safari::EventTarget *, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >={HashTable<Safari::EventTarget *, Safari::EventTarget *, WTF::IdentityExtractor, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >=^^{EventTarget}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>={__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >=AC}}}}^^?}16, name: allowAccessFromExtension:
 - (void)loadURLFromExtension:(id)arg1 waitInQueue:(BOOL)arg2;
 - (void)activateFromExtension;
 @property(readonly, nonatomic, getter=isClosed) BOOL closed;
 @property(readonly, nonatomic) BOOL isPrivate;
 @property(readonly, nonatomic) NSURL *urlForExtensions;
-@property(readonly, nonatomic) struct ReaderControllerProxy *readerControllerProxy;
-@property(readonly, nonatomic) struct WebPageProxy *page;
 - (void)_showIconsInTabsPreferenceDidChange:(id)arg1;
 - (void)setDoesNotPreferCachedTabSnapshotForTouchBar;
 - (void)restoreFromBrowserTabState:(id)arg1 allowJavaScript:(BOOL)arg2;

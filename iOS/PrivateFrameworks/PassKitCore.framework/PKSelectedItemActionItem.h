@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool serviceProviderDataRequiresLocalBalance; // @synthesize serviceProviderDataRequiresLocalBalance=_serviceProviderDataRequiresLocalBalance;
 @property(readonly, copy, nonatomic) NSDictionary *serviceProviderData; // @synthesize serviceProviderData=_serviceProviderData;
 @property(readonly, copy, nonatomic) NSDate *newExpirationDate; // @synthesize newExpirationDate=_newExpirationDate;
@@ -29,7 +30,6 @@
 @property(readonly, copy, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)serviceProviderDataWithCurrentLocalBalance:(id)arg1;

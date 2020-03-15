@@ -21,6 +21,7 @@
     struct CGSize _boundingSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_image, setter=_setImage:) UIImage *image; // @synthesize image=_image;
 @property(nonatomic, setter=_setLastBaselineOffsetFromBottom:) double lastBaselineOffsetFromBottom; // @synthesize lastBaselineOffsetFromBottom=_lastBaselineOffsetFromBottom;
 @property(nonatomic, setter=_setFirstBaselineOffsetFromTop:) double firstBaselineOffsetFromTop; // @synthesize firstBaselineOffsetFromTop=_firstBaselineOffsetFromTop;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic, setter=_setStringDrawingContext:) NSStringDrawingContext *stringDrawingContext; // @synthesize stringDrawingContext=_stringDrawingContext;
 @property(copy, nonatomic, setter=_setAttributedText:) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(copy, nonatomic, setter=_setText:) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 
 @end
 

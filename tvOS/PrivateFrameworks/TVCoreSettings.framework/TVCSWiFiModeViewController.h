@@ -21,6 +21,7 @@
     UIStackView *_stackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UIButton *eapButton; // @synthesize eapButton=_eapButton;
 @property(retain, nonatomic) UIButton *automaticButton; // @synthesize automaticButton=_automaticButton;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <TVCSWiFiModeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *messageText; // @synthesize messageText=_messageText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
 - (void)viewDidLoad;
 

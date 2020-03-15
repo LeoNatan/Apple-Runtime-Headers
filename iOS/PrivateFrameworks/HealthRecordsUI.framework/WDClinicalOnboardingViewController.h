@@ -12,20 +12,21 @@
 #import <HealthRecordsUI/UISearchResultsUpdating-Protocol.h>
 #import <HealthRecordsUI/WDUserActivityResponder-Protocol.h>
 
-@class CLLocation, CLLocationManager, HRProfile, HRWDSpinnerView, NSIndexPath, NSMutableDictionary, NSMutableOrderedSet, NSString, NSTimer, UISearchController, WDClinicalOnboardingNoGeoView, WDClinicalSampleAccountsLoader, _UIContentUnavailableView;
+@class CLLocation, CLLocationManager, HRProfile, HRWDSpinnerView, NSIndexPath, NSMutableDictionary, NSMutableOrderedSet, NSString, NSTimer, UISearchController, UIView, UIViewController, WDClinicalGatewayProxy, WDClinicalOnboardingNoGeoView, WDClinicalSampleAccountsLoader, _UIContentUnavailableView;
 
 __attribute__((visibility("hidden")))
 @interface WDClinicalOnboardingViewController : HKTableViewController <CLLocationManagerDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, WDUserActivityResponder>
 {
-    HRProfile *_profile;
     long long _searchesInFlight;
     NSTimer *_searchTimer;
     UISearchController *_searchController;
     CLLocationManager *_locationManager;
     CLLocation *_location;
+    _Bool _showProviderNotFound;
     _Bool _searchInFlight;
     _Bool _hasCompletedAtLeastOneFetch;
     _Bool _locationEnabled;
+    HRProfile *_profile;
     NSMutableOrderedSet *_supportedSearchResults;
     NSMutableOrderedSet *_unsupportedSearchResults;
     NSString *_searchQuery;
@@ -33,14 +34,21 @@ __attribute__((visibility("hidden")))
     long long _nextFrom;
     _UIContentUnavailableView *_noContentView;
     WDClinicalOnboardingNoGeoView *_noGeoView;
+    UIView *_providerNotFoundView;
+    UIViewController *_dismissalViewController;
     NSIndexPath *_spinnerIndexPath;
     HRWDSpinnerView *_spinnerView;
     WDClinicalSampleAccountsLoader *_sampleAccountsLoader;
+    WDClinicalGatewayProxy *_pendingGatewayProxy;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) WDClinicalGatewayProxy *pendingGatewayProxy; // @synthesize pendingGatewayProxy=_pendingGatewayProxy;
 @property(retain, nonatomic) WDClinicalSampleAccountsLoader *sampleAccountsLoader; // @synthesize sampleAccountsLoader=_sampleAccountsLoader;
 @property(retain, nonatomic) HRWDSpinnerView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(retain, nonatomic) NSIndexPath *spinnerIndexPath; // @synthesize spinnerIndexPath=_spinnerIndexPath;
+@property(nonatomic) __weak UIViewController *dismissalViewController; // @synthesize dismissalViewController=_dismissalViewController;
+@property(retain, nonatomic) UIView *providerNotFoundView; // @synthesize providerNotFoundView=_providerNotFoundView;
 @property(retain, nonatomic) WDClinicalOnboardingNoGeoView *noGeoView; // @synthesize noGeoView=_noGeoView;
 @property(retain, nonatomic) _UIContentUnavailableView *noContentView; // @synthesize noContentView=_noContentView;
 @property(nonatomic) _Bool locationEnabled; // @synthesize locationEnabled=_locationEnabled;
@@ -51,7 +59,8 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 @property(retain, nonatomic) NSMutableOrderedSet *unsupportedSearchResults; // @synthesize unsupportedSearchResults=_unsupportedSearchResults;
 @property(retain, nonatomic) NSMutableOrderedSet *supportedSearchResults; // @synthesize supportedSearchResults=_supportedSearchResults;
-- (void).cxx_destruct;
+@property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
+@property(nonatomic) _Bool showProviderNotFound; // @synthesize showProviderNotFound=_showProviderNotFound;
 - (id)applyTransitionActivity:(id)arg1;
 - (void)applyChangeActivity:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -65,8 +74,7 @@ __attribute__((visibility("hidden")))
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (void)_suggestNewProviders;
 - (void)_presentError:(id)arg1;
-- (void)dismiss;
-- (void)_postAWDMetricForTappingIntoGatewayLocationDetail;
+- (void)dismiss:(id)arg1;
 - (void)_postAWDMetricForUsingSearch;
 - (void)_postAWDOnboardingMetricForType:(int)arg1;
 - (_Bool)_isSimulator;
@@ -101,14 +109,22 @@ __attribute__((visibility("hidden")))
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)_disableLocationAwareness;
 - (void)_configureLocationServices;
+- (void)_updateTableHeaderViewHeight;
+- (void)viewDidLayoutSubviews;
+- (void)_configureProviderNotFoundView;
 - (unsigned long long)supportedInterfaceOrientations;
+- (void)_loadGatewayProxyForDeeplinking:(id)arg1;
 - (void)_cacheFeaturedBrandLogos;
 - (void)_configureTableViewCells;
 - (void)_configureSearchController;
 - (void)_configureNavigationItems;
+- (void)_configureLeftNavigationItemAsCancel;
+- (void)configureLeftNavigationItemAsCancelAndDismissFromViewController:(id)arg1;
 - (void)didReceiveMemoryWarning;
+- (void)viewDidLoad;
 - (void)loadView;
 - (_Bool)definesPresentationContext;
+- (id)initWithProfile:(id)arg1 gatewayProxy:(id)arg2;
 - (id)initWithProfile:(id)arg1;
 
 // Remaining properties

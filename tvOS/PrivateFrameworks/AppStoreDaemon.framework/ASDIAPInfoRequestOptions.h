@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *adamIds; // @synthesize adamIds=_adamIds;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *adamIds; // @synthesize adamIds=_adamIds;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -16,9 +16,9 @@
     SBFluidSwitcherAnimationController *_tetheredAnimationController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SBFluidSwitcherAnimationController *tetheredAnimationController; // @synthesize tetheredAnimationController=_tetheredAnimationController;
 @property(copy, nonatomic) CDUnknownBlockType animationCompletion; // @synthesize animationCompletion=_animationCompletion;
-- (void).cxx_destruct;
 - (void)animationControllerDidFinishAnimation:(id)arg1;
 - (_Bool)isFluidSwitcherAnimationController;
 - (id)initWithWorkspaceTransitionRequest:(id)arg1 animationSettings:(id)arg2 animationBlock:(CDUnknownBlockType)arg3;

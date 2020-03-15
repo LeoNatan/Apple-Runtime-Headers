@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
 - (id)description;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

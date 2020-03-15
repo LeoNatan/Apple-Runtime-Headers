@@ -46,6 +46,7 @@
     CNCollectionViewTouchBar *_collectionViewTouchBar;
 }
 
+- (void).cxx_destruct;
 @property(retain) CNCollectionViewTouchBar *collectionViewTouchBar; // @synthesize collectionViewTouchBar=_collectionViewTouchBar;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property BOOL shouldHighlightLabel; // @synthesize shouldHighlightLabel=_shouldHighlightLabel;
@@ -65,7 +66,6 @@
 @property(retain) NSView *labelView; // @synthesize labelView=_labelView;
 @property(retain) NSView *valueView; // @synthesize valueView=_valueView;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (void)processControlTextDidEndEditing:(id)arg1;
 - (void)controlTextDidEndEditing:(id)arg1;

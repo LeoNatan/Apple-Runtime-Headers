@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 
 + (unsigned long long)_validateStyleMask:(unsigned long long)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property __weak NSPreviewTargetViewController *previewTargetViewController; // @synthesize previewTargetViewController=_previewTargetViewController;
 - (void).cxx_destruct;
+@property __weak NSPreviewTargetViewController *previewTargetViewController; // @synthesize previewTargetViewController=_previewTargetViewController;
 - (void)beginCriticalSheet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)beginSheet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_beginWindowBlockingModalSessionForShownService:(id)arg1;

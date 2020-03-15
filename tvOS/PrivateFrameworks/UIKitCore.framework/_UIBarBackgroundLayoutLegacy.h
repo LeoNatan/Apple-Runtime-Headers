@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     double _topInset;
 }
 
-@property(nonatomic) double topInset; // @synthesize topInset=_topInset;
 - (void).cxx_destruct;
+@property(nonatomic) double topInset; // @synthesize topInset=_topInset;
 - (void)describeInto:(id)arg1;
 - (void)configureWithoutShadow;
 - (void)configureShadowForBarStyle:(long long)arg1;

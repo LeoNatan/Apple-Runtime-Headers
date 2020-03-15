@@ -19,10 +19,10 @@
 }
 
 + (id)_plistName;
+- (void).cxx_destruct;
 @property(readonly) PGMoodGeneratorOptions *options; // @synthesize options=_options;
 @property(readonly) PGManager *graphManager; // @synthesize graphManager=_graphManager;
 @property(readonly) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
-- (void).cxx_destruct;
 @property(readonly) NSDictionary *moodSourceDictionary; // @synthesize moodSourceDictionary=_moodSourceDictionary;
 - (unsigned long long)_sourceInputCount;
 - (void)_combineMoodVectors;

@@ -21,11 +21,11 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HMDMRSetEndpointVolumeOperationExternalObjectInterface> externalObjectInterface; // @synthesize externalObjectInterface=_externalObjectInterface;
 @property(retain, nonatomic) MPCAssistantDiscovery *discovery; // @synthesize discovery=_discovery;
 @property(readonly, copy, nonatomic) NSArray *routeIDs; // @synthesize routeIDs=_routeIDs;
 @property(readonly, nonatomic) NSNumber *volume; // @synthesize volume=_volume;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *privateDescription;

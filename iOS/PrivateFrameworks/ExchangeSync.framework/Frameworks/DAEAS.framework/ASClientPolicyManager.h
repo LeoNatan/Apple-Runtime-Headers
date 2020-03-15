@@ -13,8 +13,8 @@
     NSString *_powerAssertionGroupIdentifier;
 }
 
-@property(retain, nonatomic) NSString *powerAssertionGroupIdentifier; // @synthesize powerAssertionGroupIdentifier=_powerAssertionGroupIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *powerAssertionGroupIdentifier; // @synthesize powerAssertionGroupIdentifier=_powerAssertionGroupIdentifier;
 - (void)setDelegate:(id)arg1;
 - (void)requestPolicyUpdate;
 - (void)policyFailedToUpdate;

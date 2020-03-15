@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     BRCUserDefaults *_defaults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BRCUserDefaults *defaults; // @synthesize defaults=_defaults;
 @property(retain, nonatomic) BRCSyncUpOperation *op; // @synthesize op=_op;
 @property(retain, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (float)addItem:(id)arg1;
 - (float)addEditOfSymlink:(id)arg1;
 - (float)addDeletionOfFinderBookmark:(id)arg1;
@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (float)addEditOfDirectory:(id)arg1;
 - (void)handleEditOfSharedItem:(id)arg1;
 - (void)handleDeletionOfSharedItem:(id)arg1;
-- (float)fakeSyncForItem:(id)arg1 inZone:(id)arg2;
+- (float)fakeSyncForItem:(id)arg1 serverItem:(id)arg2 inZone:(id)arg3;
 - (void)prepareAppLibraryRootSyncUpForItem:(id)arg1;
 - (float)addDeletionOfSharedTopLevelItem:(id)arg1;
 - (float)addEditOfSharedTopLevelItem:(id)arg1;

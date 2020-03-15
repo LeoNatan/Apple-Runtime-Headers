@@ -22,11 +22,11 @@
 
 + (id)homeScreenAppLayout;
 + (id)appLayoutWithProtobufRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *rolesToLayoutItemsMap; // @synthesize rolesToLayoutItemsMap=_rolesToLayoutItemsMap;
 @property(readonly, nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(readonly, nonatomic) long long environment; // @synthesize environment=_environment;
 @property(nonatomic) long long configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

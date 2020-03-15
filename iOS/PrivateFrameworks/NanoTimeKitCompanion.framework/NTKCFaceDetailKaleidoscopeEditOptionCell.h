@@ -14,9 +14,9 @@
     long long _userOptionIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long userOptionIndex; // @synthesize userOptionIndex=_userOptionIndex;
 @property(nonatomic) __weak id <NTKCFaceDetailKaleidoscopeEditOptionCellDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)selectUserOption;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;

@@ -16,10 +16,10 @@
     int _use_cvpixelbuffer;
 }
 
-@property(nonatomic) int use_cvpixelbuffer; // @synthesize use_cvpixelbuffer=_use_cvpixelbuffer;
-@property(retain) NSArray *outputMatchingBuffers; // @synthesize outputMatchingBuffers=_outputMatchingBuffers;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) int use_cvpixelbuffer; // @synthesize use_cvpixelbuffer=_use_cvpixelbuffer;
+@property(retain) NSArray *outputMatchingBuffers; // @synthesize outputMatchingBuffers=_outputMatchingBuffers;
 - (void)dealloc;
 - (void)freeTemporaryResources;
 - (int)bindOutputsFromFrame:(id)arg1 toNetwork:(CDStruct_2bc666a5)arg2 executionStatus:(int)arg3;

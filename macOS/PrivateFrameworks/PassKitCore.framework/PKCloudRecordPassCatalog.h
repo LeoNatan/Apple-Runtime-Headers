@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) PKCatalog *catalog; // @synthesize catalog=_catalog;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKCatalog *catalog; // @synthesize catalog=_catalog;
 - (id)_descriptionWithIncludeItem:(BOOL)arg1;
 - (id)description;
 - (id)descriptionWithItem:(BOOL)arg1;

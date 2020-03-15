@@ -22,12 +22,12 @@
     NSMutableArray *_changes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *changes; // @synthesize changes=_changes;
 @property(retain, nonatomic) SYLegacyStore *store; // @synthesize store=_store;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) NSDictionary *idsOptions; // @synthesize idsOptions=_idsOptions;
 @property(copy, nonatomic) NSDictionary *contextInfo; // @synthesize contextInfo=_contextInfo;
-- (void).cxx_destruct;
 - (void)_transactionDidComplete:(_Bool)arg1;
 - (void)rollback;
 - (void)commitBlocking:(_Bool)arg1 reportError:(CDUnknownBlockType)arg2;

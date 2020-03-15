@@ -20,6 +20,7 @@
     long long _radarReproducibility;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long radarReproducibility; // @synthesize radarReproducibility=_radarReproducibility;
 @property(nonatomic) long long radarClassification; // @synthesize radarClassification=_radarClassification;
 @property(copy, nonatomic) NSArray *radarAttachments; // @synthesize radarAttachments=_radarAttachments;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (id)_stringFromReproducibility:(long long)arg1;
 - (id)_stringFromClassification:(long long)arg1;
 - (void)_fileRadar;

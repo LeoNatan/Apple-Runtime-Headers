@@ -20,8 +20,8 @@
 + (id)messageForMethod:(SEL)arg1 varguments:(id)arg2;
 + (id)messageForMethod:(SEL)arg1 arguments:(id)arg2;
 + (id)messageWithEncoder:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) SEL method; // @synthesize method=_method;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SEL method; // @synthesize method=_method;
 - (id)decodeArgumentCollection:(Class)arg1 withClass:(Class)arg2 atIndex:(unsigned int)arg3 allowNil:(_Bool)arg4 error:(out id *)arg5;
 - (id)decodeArgumentWithClass:(Class)arg1 atIndex:(unsigned int)arg2 allowNil:(_Bool)arg3 error:(out id *)arg4;
 - (id)invokeOnConnection:(id)arg1 withReturnClass:(Class)arg2 error:(out id *)arg3;

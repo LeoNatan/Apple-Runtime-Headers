@@ -21,11 +21,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)quantityWithDouble:(double)arg1 type:(id)arg2;
 + (id)fromPBCodable:(id)arg1;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 cache:(id)arg3;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 excludedMetadataKeys:(id)arg3 cache:(id)arg4;
 + (id)entityName;
+- (void).cxx_destruct;
 @property(retain) _DKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 @property double doubleValue; // @synthesize doubleValue=_doubleValue;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)stringValue;
 - (id)primaryValue;

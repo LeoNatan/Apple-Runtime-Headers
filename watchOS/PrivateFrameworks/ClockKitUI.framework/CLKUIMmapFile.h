@@ -17,11 +17,11 @@
 }
 
 + (id)mmapFileWithPath:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) const void *bytes; // @synthesize bytes=_bytes;
 @property(readonly, nonatomic) unsigned int length; // @synthesize length=_length;
 @property(readonly, nonatomic) int descriptor; // @synthesize descriptor=_descriptor;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1 descriptor:(int)arg2 length:(unsigned int)arg3 bytes:(const void *)arg4;
 

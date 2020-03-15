@@ -24,10 +24,10 @@
 
 + (id)addressManager;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *imageCreationQueue; // @synthesize imageCreationQueue=_imageCreationQueue;
 @property(readonly, nonatomic) MCInvocationQueue *imageLoadingQueue; // @synthesize imageLoadingQueue=_imageLoadingQueue;
 @property(readonly, nonatomic) NSCache *imageCache; // @synthesize imageCache=_imageCache;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *groups;
 - (id)_addressBookRecordsForFirstName:(id)arg1 lastName:(id)arg2;
 - (id)addressBookPersonForEmail:(id)arg1;

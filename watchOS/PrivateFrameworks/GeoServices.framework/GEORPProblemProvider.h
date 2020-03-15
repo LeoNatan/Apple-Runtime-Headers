@@ -21,6 +21,7 @@
     CDUnknownBlockType _statusFinishedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType statusFinishedHandler; // @synthesize statusFinishedHandler=_statusFinishedHandler;
 @property(copy, nonatomic) CDUnknownBlockType statusErrorHandler; // @synthesize statusErrorHandler=_statusErrorHandler;
 @property(copy, nonatomic) CDUnknownBlockType submissionFinishedHandler; // @synthesize submissionFinishedHandler=_submissionFinishedHandler;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) GEOProtobufSessionTask *statusTask; // @synthesize statusTask=_statusTask;
 @property(retain, nonatomic) GEOProtobufSessionTask *submissionTask; // @synthesize submissionTask=_submissionTask;
 @property(readonly, nonatomic) GEOProtobufSession *protobufSession; // @synthesize protobufSession=_protobufSession;
-- (void).cxx_destruct;
 - (void)cancelRequest;
 - (void)startStatusRequest:(id)arg1 finished:(CDUnknownBlockType)arg2 error:(CDUnknownBlockType)arg3;
 - (void)startSubmissionRequest:(id)arg1 finished:(CDUnknownBlockType)arg2 error:(CDUnknownBlockType)arg3;

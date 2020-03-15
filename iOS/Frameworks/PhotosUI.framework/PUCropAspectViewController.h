@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _originalSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *aspectConstraints; // @synthesize aspectConstraints=_aspectConstraints;
 @property(retain, nonatomic) PUCropToolControllerSpec *spec; // @synthesize spec=_spec;
 @property(nonatomic) struct CGSize originalSize; // @synthesize originalSize=_originalSize;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PUCropAspectViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PUCropAspect *currentCropAspect; // @synthesize currentCropAspect=_currentCropAspect;
 @property(nonatomic) struct CGSize currentCropSize; // @synthesize currentCropSize=_currentCropSize;
-- (void).cxx_destruct;
 - (void)aspectButtonPressed:(id)arg1;
 - (void)updateAspectConstraints;
 - (void)updateAspectButtons;

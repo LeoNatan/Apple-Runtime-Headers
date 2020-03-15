@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _assetType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long assetType; // @synthesize assetType=_assetType;
 @property(retain, nonatomic) PUPhotoEditValuesCalculator *valuesCalculator; // @synthesize valuesCalculator=_valuesCalculator;
 @property(retain, nonatomic) PUAutoAdjustmentController *autoEnhanceController; // @synthesize autoEnhanceController=_autoEnhanceController;
 @property(retain, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
 @property(nonatomic) __weak id <PUAdjustmentsDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *adjustmentInfoSections; // @synthesize adjustmentInfoSections=_adjustmentInfoSections;
-- (void).cxx_destruct;
 - (void)compositionControllerDidChange;
 - (void)_resetEnabledStateForAutoEnhancedInfos;
 - (void)resetInfoAtIndexPath:(id)arg1;

@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     RBProcess *_process;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RBProcess *process; // @synthesize process=_process;
 @property(readonly, nonatomic) id <RBStateCaptureManaging> stateCaptureManager; // @synthesize stateCaptureManager=_stateCaptureManager;
 @property(readonly, nonatomic) id <RBProcessMonitoring> processMonitor; // @synthesize processMonitor=_processMonitor;
 @property(readonly, nonatomic) id <RBProcessManaging> processManager; // @synthesize processManager=_processManager;
 @property(readonly, nonatomic) id <RBEntitlementManaging> entitlementManager; // @synthesize entitlementManager=_entitlementManager;
 @property(readonly, nonatomic) id <RBAssertionManaging> assertionManager; // @synthesize assertionManager=_assertionManager;
-- (void).cxx_destruct;
 - (id)initWithAssertionManager:(id)arg1 entitlementManager:(id)arg2 processManager:(id)arg3 processMonitor:(id)arg4 stateCaptureManager:(id)arg5 process:(id)arg6;
 
 @end

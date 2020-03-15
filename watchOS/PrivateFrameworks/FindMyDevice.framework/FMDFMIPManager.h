@@ -17,10 +17,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) NSURL *needsLocateAckLostModeFileURL; // @synthesize needsLocateAckLostModeFileURL=_needsLocateAckLostModeFileURL;
 @property(retain, nonatomic) NSURL *managedLostModeFileURL; // @synthesize managedLostModeFileURL=_managedLostModeFileURL;
-- (void).cxx_destruct;
 - (void)stopSoundMessageWithCompletion:(CDUnknownBlockType)arg1;
 - (void)playSoundWithMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getNeedsLocateAckLostModeFileURL;

@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)didChooseColor:(id)arg1;
 - (void)windowWillClose:(id)arg1;
 - (void)invalidate;
-- (void)setAndShowPicker:(struct WebColorPickerMac *)arg1 withColor:(id)arg2 suggestions:(Vector_abdbc3db *)arg3;
+- (void)setAndShowPicker:(struct WebColorPickerMac *)arg1 withColor:(id)arg2 suggestions:(Vector_5cc906f5 *)arg3;
 - (id)initWithFrame:(const struct IntRect *)arg1 inView:(id)arg2;
 
 // Remaining properties

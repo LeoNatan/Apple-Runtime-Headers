@@ -31,6 +31,7 @@
 + (id)defaultManager;
 + (_Bool)userActivityContinuationSupported;
 + (_Bool)shouldSupportActivityContinuation;
+- (void).cxx_destruct;
 @property _Bool needToSendInitialMessage; // @synthesize needToSendInitialMessage=_needToSendInitialMessage;
 @property(retain) NSMapTable *activeUserActivitiesByUUID; // @synthesize activeUserActivitiesByUUID=_activeUserActivitiesByUUID;
 @property(retain) NSMapTable *userActivitiesByUUID; // @synthesize userActivitiesByUUID=_userActivitiesByUUID;
@@ -38,7 +39,6 @@
 @property(copy) NSUUID *activeUserActivityUUID; // @synthesize activeUserActivityUUID=_activeUserActivityUUID;
 @property(readonly) _Bool supportsActivityContinuation; // @synthesize supportsActivityContinuation=_supportsActivityContinuation;
 @property _Bool registeredForAppResignationMessages; // @synthesize registeredForAppResignationMessages=_registeredForAppResignationMessages;
-- (void).cxx_destruct;
 - (_Bool)registerAsProxyForApplication:(int)arg1 options:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)registerForApplicationDeactivateIfNecessary;
 - (void)sendCurrentActivityToIndexer:(id)arg1;

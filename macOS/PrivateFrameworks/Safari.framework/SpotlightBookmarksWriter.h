@@ -19,9 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak WBSSiriIntelligenceDonor *siriIntelligenceDonor; // @synthesize siriIntelligenceDonor=_siriIntelligenceDonor;
 @property(readonly, nonatomic) __weak BookmarksController *bookmarksController; // @synthesize bookmarksController=_bookmarksController;
-- (void).cxx_destruct;
+- (void)_removeCacheFileForBookmark:(id)arg1 inDirectory:(id)arg2;
+- (void)_writeCacheFileForBookmark:(id)arg1 inDirectory:(id)arg2;
 - (id)URLToVisitFromSpotlightCacheFile:(id)arg1 ofDataType:(id)arg2;
 - (id)fileExtensionForDataType:(id)arg1;
 - (void)addSpotlightCacheFilesForItems:(id)arg1 ofDataType:(id)arg2 inDirectory:(id)arg3;
@@ -32,8 +34,6 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithBookmarksController:(id)arg1 siriIntelligenceDonor:(id)arg2;
 - (id)init;
-- (void)_removeCacheFileForBookmark:(id)arg1 inDirectory:(id)arg2;
-- (void)_writeCacheFileForBookmark:(id)arg1 inDirectory:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

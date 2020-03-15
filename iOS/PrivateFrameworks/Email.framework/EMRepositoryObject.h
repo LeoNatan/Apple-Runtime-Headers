@@ -15,8 +15,8 @@
     EMRepository *_repository;
 }
 
-@property(retain, nonatomic) EMRepository *repository; // @synthesize repository=_repository;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EMRepository *repository; // @synthesize repository=_repository;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -20,6 +20,7 @@
     CDUnknownBlockType _userInfoCreationBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType userInfoCreationBlock; // @synthesize userInfoCreationBlock=_userInfoCreationBlock;
 @property(readonly, nonatomic) NSDate *specificEndDate; // @synthesize specificEndDate=_specificEndDate;
 @property(readonly, nonatomic) NSDate *specificStartDate; // @synthesize specificStartDate=_specificStartDate;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) long long contextStyle; // @synthesize contextStyle=_contextStyle;
 @property(readonly, nonatomic) HKUnit *unit; // @synthesize unit=_unit;
 @property(readonly, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
-- (void).cxx_destruct;
 - (id)_dataBlockFromHistograms:(id)arg1;
 - (id)queriesForStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)_quickDate:(id)arg1;

@@ -15,6 +15,7 @@
 + (id)safeCategoryTargetClassName;
 - (_Bool)_accessibilityContainsSportsGrid;
 - (id)_accessibilitySupplementaryFooterViews;
+- (_Bool)_accessibilityShouldSortTableViewCellChildren;
 - (_Bool)_accessibilityHasAccessibleSubviews;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)isAccessibilityElement;

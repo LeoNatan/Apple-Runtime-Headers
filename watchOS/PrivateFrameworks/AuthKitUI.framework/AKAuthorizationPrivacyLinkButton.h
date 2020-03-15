@@ -15,10 +15,10 @@
     UILabel *_iconInfoLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *iconInfoLabel; // @synthesize iconInfoLabel=_iconInfoLabel;
 @property(retain, nonatomic) UITextView *iconDescriptionView; // @synthesize iconDescriptionView=_iconDescriptionView;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (id)labelText;
 - (id)initWithFrame:(struct CGRect)arg1;
 

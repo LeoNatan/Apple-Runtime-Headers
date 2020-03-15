@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(nonatomic) double minimumBookmarkUpdateInterval; // @synthesize minimumBookmarkUpdateInterval=_minimumBookmarkUpdateInterval;
 - (void).cxx_destruct;
+@property(nonatomic) double minimumBookmarkUpdateInterval; // @synthesize minimumBookmarkUpdateInterval=_minimumBookmarkUpdateInterval;
 - (void)_loadAllBookmarksWithRemainingIdentifiers:(id)arg1 bookmarkTimes:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (_Bool)pushBookmarkForIdentifier:(id)arg1 bookmarkTime:(double)arg2 playedToNominalLength:(_Bool)arg3;
 - (_Bool)pushBookmarkForAsset:(id)arg1 bookmarkTime:(double)arg2 playedToNominalLength:(_Bool)arg3;

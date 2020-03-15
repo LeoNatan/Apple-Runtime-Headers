@@ -6,9 +6,12 @@
 
 #import <ClassKit/NSObject-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSString;
 
 @protocol CLSUtilityServerInterface <NSObject>
+- (oneway void)remote_setUserDefaultValue:(id)arg1 forDefaultNamed:(NSString *)arg2 completion:(void (^)(BOOL, NSError *))arg3;
+- (oneway void)remote_getUserDefaultForDefaultNamed:(NSString *)arg1 completion:(void (^)(id, NSError *))arg2;
+- (oneway void)remote_getUserDefaultsConfigurationDictionaryWithCompletion:(void (^)(id, NSError *))arg1;
 - (oneway void)remote_featureIsEnabled:(int)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (oneway void)remote_statusWithCompletion:(void (^)(id, NSError *))arg1;
 - (oneway void)remote_getDevModeWithCompletion:(void (^)(int, NSError *))arg1;
@@ -20,6 +23,7 @@
 - (oneway void)remote_syncFetchWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (oneway void)remote_syncPushWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (oneway void)remote_syncStatsWithCompletion:(void (^)(id, NSError *))arg1;
+- (oneway void)remote_recreateDatabase:(BOOL)arg1 andTerminateDaemonWithCompletion:(void (^)(BOOL, NSError *))arg2;
 - (oneway void)remote_recreateDatabaseWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (oneway void)remote_databasePathWithCompletion:(void (^)(id, NSError *))arg1;
 @end

@@ -24,6 +24,7 @@
     struct CGRect _labelFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *sendButton; // @synthesize sendButton=_sendButton;
 @property(retain, nonatomic) NSButton *previewButton; // @synthesize previewButton=_previewButton;
 @property(nonatomic) SEL action; // @synthesize action=_action;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic, getter=isActivated) BOOL activated; // @synthesize activated=_activated;
 @property(nonatomic) __weak id <SOEffectPickerButtonControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)createViewForPickerWithUnsentMessage:(id)arg1 effectIsDark:(BOOL)arg2;
 - (struct CGRect)buttonFrameInView:(id)arg1;
 - (void)addButtonsToView:(id)arg1;

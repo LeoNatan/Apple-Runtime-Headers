@@ -18,11 +18,11 @@
     unsigned long long _minPrecedingTopicGroups;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long minPrecedingTopicGroups; // @synthesize minPrecedingTopicGroups=_minPrecedingTopicGroups;
 @property(readonly, nonatomic) unsigned long long firstGroupMinPrecedingTopicGroups; // @synthesize firstGroupMinPrecedingTopicGroups=_firstGroupMinPrecedingTopicGroups;
 @property(readonly, copy, nonatomic) NSSet *precedingSourceIdentifiers; // @synthesize precedingSourceIdentifiers=_precedingSourceIdentifiers;
 @property(readonly, copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
-- (void).cxx_destruct;
 - (BOOL)wantsToInsertGroupInContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSourceIdentifier:(id)arg1 precedingSourceIdentifiers:(id)arg2 firstGroupMinPrecedingTopicGroups:(unsigned long long)arg3 minPrecedingTopicGroups:(unsigned long long)arg4;

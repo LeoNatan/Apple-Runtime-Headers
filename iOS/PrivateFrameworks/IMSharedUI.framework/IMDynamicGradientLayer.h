@@ -20,13 +20,13 @@
     struct CGRect _gradientFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CATransformLayer *trackingLayer; // @synthesize trackingLayer=_trackingLayer;
 @property(nonatomic) struct CGRect gradientFrame; // @synthesize gradientFrame=_gradientFrame;
 @property(retain, nonatomic) CALayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(copy, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(nonatomic) __weak id <IMDynamicGradientReferenceView> referenceView; // @synthesize referenceView=_referenceView;
 @property(nonatomic) double screenScale; // @synthesize screenScale=_screenScale;
-- (void).cxx_destruct;
 - (void)_updateGradientImage;
 - (double)_floorToPixels:(double)arg1;
 - (void)_updateAnimation;

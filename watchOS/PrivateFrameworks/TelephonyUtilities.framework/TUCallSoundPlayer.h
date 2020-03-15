@@ -14,9 +14,9 @@
     int _currentlyPlayingSoundType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int currentlyPlayingSoundType; // @synthesize currentlyPlayingSoundType=_currentlyPlayingSoundType;
 @property(retain, nonatomic) TUSoundPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPlaying) _Bool playing;
 - (void)stopPlaying;
 - (_Bool)attemptToPlayDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -20,12 +20,12 @@
     PHFetchResult *_fetchResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(nonatomic, getter=isHiddenWhenEmpty) _Bool hiddenWhenEmpty; // @synthesize hiddenWhenEmpty=_hiddenWhenEmpty;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) NSOperationQueue *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) PHCollection *collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)collectionFetchOperationDidComplete:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -18,6 +18,8 @@
 - (void)gestureEndedScaling:(ASVGesture *)arg1;
 - (void)gesture:(ASVGesture *)arg1 scaledAssetToScale:(float)arg2;
 - (void)gestureBeganScaling:(ASVGesture *)arg1;
+- (void)gestureEndedRotation:(ASVGesture *)arg1;
 - (void)gesture:(ASVGesture *)arg1 rotatedAssetByDeltaYaw:(float)arg2;
+- (void)gestureBeganRotation:(ASVGesture *)arg1;
 @end
 

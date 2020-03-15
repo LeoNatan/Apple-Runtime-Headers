@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSOperation *_imageLoadOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *imageLoadOperation; // @synthesize imageLoadOperation=_imageLoadOperation;
 @property(nonatomic) __weak id <TVHKContributorImageLoadOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
-- (void).cxx_destruct;
 - (void)_startURLImageLoadOperationWithTemplateURLString:(id)arg1;
 - (id)_contributorImageLoadParams;
 - (void)cancel;

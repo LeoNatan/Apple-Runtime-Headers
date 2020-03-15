@@ -51,6 +51,7 @@
     NSButton *_showMoreButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *showMoreButton; // @synthesize showMoreButton=_showMoreButton;
 @property(retain, nonatomic) NSButton *addTextButton; // @synthesize addTextButton=_addTextButton;
 @property(retain, nonatomic) NSButton *addButton; // @synthesize addButton=_addButton;
@@ -68,7 +69,6 @@
 @property BOOL hasDividerLines; // @synthesize hasDividerLines=_hasDividerLines;
 @property unsigned long long minimumVisibleRowCount; // @synthesize minimumVisibleRowCount=_minimumVisibleRowCount;
 @property __weak id <NCWidgetListViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)showMoreButtonAction:(id)arg1;
 - (void)addButtonAction:(id)arg1;
 - (void)_completeDrag:(_Bool)arg1;

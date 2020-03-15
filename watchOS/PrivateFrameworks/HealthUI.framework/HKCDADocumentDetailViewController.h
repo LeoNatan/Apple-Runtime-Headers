@@ -18,13 +18,13 @@
     HKBarButtonItemControl *_searchInSegmentControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKBarButtonItemControl *searchInSegmentControl; // @synthesize searchInSegmentControl=_searchInSegmentControl;
 @property(readonly, nonatomic) UIBarButtonItem *searchButton; // @synthesize searchButton=_searchButton;
 @property(readonly, nonatomic) HKLargePlainTextViewController *plainTextReportController; // @synthesize plainTextReportController=_plainTextReportController;
 @property(readonly, nonatomic) HKCDADocumentReportViewController *formattedReportController; // @synthesize formattedReportController=_formattedReportController;
 @property(readonly, nonatomic) _HKReportSegmentControl *reportSegmentControl; // @synthesize reportSegmentControl=_reportSegmentControl;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)searchButtonAction:(id)arg1;
 - (void)changeReportDisplayed:(id)arg1;

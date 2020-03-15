@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_importPropertiesDictFromImportMetadataDict:(id)arg1;
-@property(readonly, nonatomic) NSArray *importElements; // @synthesize importElements=_importElements;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *importElements; // @synthesize importElements=_importElements;
 - (id)_associatedElementForPropertyDict:(id)arg1;
 - (id)parsedStoreItemsImportProperties;
 - (id)initWithImportElements:(id)arg1;

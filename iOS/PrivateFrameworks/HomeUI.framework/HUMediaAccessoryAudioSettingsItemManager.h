@@ -14,9 +14,9 @@
     HFMediaSystemBuilder *_mediaSystemBuilder;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFMediaSystemBuilder *mediaSystemBuilder; // @synthesize mediaSystemBuilder=_mediaSystemBuilder;
 @property(readonly, nonatomic) HFItem *audioSettingsItem; // @synthesize audioSettingsItem=_audioSettingsItem;
-- (void).cxx_destruct;
 - (void)_unregisterForExternalUpdates;
 - (void)_registerForExternalUpdates;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;

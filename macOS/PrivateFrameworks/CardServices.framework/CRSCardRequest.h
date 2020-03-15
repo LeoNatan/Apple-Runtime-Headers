@@ -22,11 +22,11 @@
 
 + (void)initialize;
 + (void)registerService:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_excludedServiceIdentifiers, setter=_setExcludedServiceIdentifiers:) NSSet *excludedServiceIdentifiers; // @synthesize excludedServiceIdentifiers=_excludedServiceIdentifiers;
 @property(nonatomic) BOOL loadsBundleServices; // @synthesize loadsBundleServices=_loadsBundleServices;
 @property(nonatomic) unsigned long long format; // @synthesize format=_format;
 @property(retain, nonatomic) id <CRContent> content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (void)_tryRemainingCardServices:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)_loadAndRegisterBundleServices:(CDUnknownBlockType)arg1;
 - (void)startWithReply:(CDUnknownBlockType)arg1;

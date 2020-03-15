@@ -23,9 +23,9 @@
     long long _displayAssertions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBUIBannerContext *currentContext; // @synthesize currentContext=_currentContext;
 @property(nonatomic) __weak id <SBStarkBannerTargetObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (void)removeCachedBannerForContext:(id)arg1;
 - (void)cacheBannerForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)dismissCurrentBannerContextForSource:(id)arg1;

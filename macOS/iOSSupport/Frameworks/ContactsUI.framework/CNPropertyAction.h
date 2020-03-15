@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)performDefaultActionForItem:(id)arg1 sender:(id)arg2;
-@property(copy, nonatomic) NSArray *propertyItems; // @synthesize propertyItems=_propertyItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *propertyItems; // @synthesize propertyItems=_propertyItems;
 - (void)presentDisambiguationAlertWithSender:(id)arg1;
 - (void)performActionWithSender:(id)arg1;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;

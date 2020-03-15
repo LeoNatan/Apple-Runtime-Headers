@@ -25,15 +25,15 @@
     CNPublishingSubject *_enabledPersistentAccountsObservable;
 }
 
+- (void).cxx_destruct;
 @property(retain) CNAccountCollectionUpdateWatcher *updateWatcher; // @synthesize updateWatcher=_updateWatcher;
 @property(copy) NSString *tag; // @synthesize tag=_tag;
 @property(retain) CNPublishingSubject *enabledPersistentAccountsObservable; // @synthesize enabledPersistentAccountsObservable=_enabledPersistentAccountsObservable;
 @property(retain) CNPublishingSubject *enabledAccountsObservable; // @synthesize enabledAccountsObservable=_enabledAccountsObservable;
 @property(copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-@property(retain) NSArray *enabledPersistentAccounts; // @synthesize enabledPersistentAccounts=_enabledPersistentAccounts;
+@property(copy) NSArray *enabledPersistentAccounts; // @synthesize enabledPersistentAccounts=_enabledPersistentAccounts;
 @property(copy) NSArray *enabledAccounts; // @synthesize enabledAccounts=_enabledAccounts;
-@property(retain) NSArray *accounts; // @synthesize accounts=_accounts;
-- (void).cxx_destruct;
+@property(copy) NSArray *accounts; // @synthesize accounts=_accounts;
 @property(readonly, copy) NSArray *persistentAccounts;
 @property(readonly) BOOL includeLocalAccount;
 @property(readonly) id <CNAccountDescription> defaultAccount;

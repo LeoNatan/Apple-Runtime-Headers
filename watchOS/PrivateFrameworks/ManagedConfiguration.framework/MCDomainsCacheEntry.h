@@ -17,11 +17,11 @@
 }
 
 + (id)normalizedPatternString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *port; // @synthesize port=_port;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(nonatomic) _Bool subdomainsMatch; // @synthesize subdomainsMatch=_subdomainsMatch;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)matchesURL:(id)arg1;
 - (id)initWithPattern:(id)arg1;

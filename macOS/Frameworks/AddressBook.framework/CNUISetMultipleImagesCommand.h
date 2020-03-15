@@ -13,18 +13,18 @@
     CNUIUndoableCommand *_aggregateCommand;
 }
 
-+ (id)makeAggregateCommandWithContactStore:(id)arg1 contacts:(id)arg2 imageData:(id)arg3 largeImageData:(id)arg4 clippingRect:(struct CGRect)arg5 shouldSave:(BOOL)arg6;
++ (id)makeAggregateCommandWithContactStore:(id)arg1 contacts:(id)arg2 imageData:(id)arg3 largeImageData:(id)arg4 clippingRect:(struct CGRect)arg5 ignoresGuardianRestrictions:(BOOL)arg6 shouldSave:(BOOL)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIUndoableCommand *aggregateCommand; // @synthesize aggregateCommand=_aggregateCommand;
 @property(nonatomic) BOOL shouldSave; // @synthesize shouldSave=_shouldSave;
 @property(copy, nonatomic) CDUnknownBlockType didExecuteBlock; // @synthesize didExecuteBlock=_didExecuteBlock;
-- (void).cxx_destruct;
 - (id)actionName;
 - (void)executeRedo;
 - (void)executeUndo;
 - (void)execute;
 - (void)didExecute;
-- (id)initWithContactStore:(id)arg1 contacts:(id)arg2 imageData:(id)arg3 largeImageData:(id)arg4 clippingRect:(struct CGRect)arg5 shouldSave:(BOOL)arg6;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 contacts:(id)arg2 imageData:(id)arg3 largeImageData:(id)arg4 clippingRect:(struct CGRect)arg5 ignoresGuardianRestrictions:(BOOL)arg6 shouldSave:(BOOL)arg7;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

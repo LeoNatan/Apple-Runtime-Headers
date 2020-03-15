@@ -20,13 +20,13 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *sharerUserId; // @synthesize sharerUserId=_sharerUserId;
 @property(retain, nonatomic) EDAMShareRelationshipRestrictions *restrictions; // @synthesize restrictions=_restrictions;
 @property(retain, nonatomic) NSNumber *individualPrivilege; // @synthesize individualPrivilege=_individualPrivilege;
 @property(retain, nonatomic) NSNumber *bestPrivilege; // @synthesize bestPrivilege=_bestPrivilege;
 @property(retain, nonatomic) NSNumber *recipientUserId; // @synthesize recipientUserId=_recipientUserId;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 
 @end
 

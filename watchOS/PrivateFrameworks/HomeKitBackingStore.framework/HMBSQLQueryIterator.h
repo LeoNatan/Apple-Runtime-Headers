@@ -20,13 +20,13 @@
 
 + (void)setMaximumRowsPerSelect:(unsigned int)arg1;
 + (unsigned int)maximumRowsPerSelect;
+- (void).cxx_destruct;
 @property(nonatomic) int sequenceBindOffset; // @synthesize sequenceBindOffset=_sequenceBindOffset;
 @property(retain, nonatomic) NSNumber *currentSequence; // @synthesize currentSequence=_currentSequence;
 @property(retain, nonatomic) NSMutableArray *cachedResults; // @synthesize cachedResults=_cachedResults;
 @property(readonly, nonatomic) unsigned int maximumRowsPerQuery; // @synthesize maximumRowsPerQuery=_maximumRowsPerQuery;
 @property(readonly, nonatomic) HMBSQLQueryStatement *statement; // @synthesize statement=_statement;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (_Bool)bindPropertiesToStatement:(struct sqlite3_stmt *)arg1 error:(id *)arg2;
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)nextObject;

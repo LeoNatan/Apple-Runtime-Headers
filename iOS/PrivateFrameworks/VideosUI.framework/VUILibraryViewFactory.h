@@ -13,9 +13,8 @@ __attribute__((visibility("hidden")))
 
 + (id)tvPlaceholderImage;
 + (id)moviePlaceholderImage;
-+ (id)viewControllerForMediaEntity:(id)arg1 onlyShowLocalContent:(_Bool)arg2;
 + (id)viewControllerForMediaEntity:(id)arg1;
-+ (void)configureSeasonPickerCell:(id)arg1 withMedia:(id)arg2 traitCollection:(id)arg3;
++ (id)viewControllerForMediaEntity:(id)arg1 withFamilyMember:(id)arg2;
 
 @end
 

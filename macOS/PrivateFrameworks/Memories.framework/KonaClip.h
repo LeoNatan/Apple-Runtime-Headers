@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 + (Class)classForClipType:(int)arg1;
 + (id)clip;
 + (id)clipWithAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) id freezeInfo; // @synthesize freezeInfo=_freezeInfo;
 @property(nonatomic) __weak id suggestion; // @synthesize suggestion=_suggestion;
@@ -62,7 +63,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) unsigned int filterEffectSeed; // @synthesize filterEffectSeed=_filterEffectSeed;
 @property(retain, nonatomic) TitleDefinition *titleDefinition; // @synthesize titleDefinition=_titleDefinition;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PVEffect *titleEffect;
 @property(readonly, nonatomic) int rawSourceDuration;
 @property(nonatomic) int maxDuration;

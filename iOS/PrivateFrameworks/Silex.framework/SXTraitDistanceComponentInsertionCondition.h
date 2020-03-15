@@ -19,12 +19,12 @@
     struct _SXConvertibleValue _distance;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableIndexSet *otherTraitAreas; // @synthesize otherTraitAreas=_otherTraitAreas;
 @property(retain, nonatomic) NSMutableIndexSet *traitAreas; // @synthesize traitAreas=_traitAreas;
 @property(readonly, nonatomic) struct _SXConvertibleValue distance; // @synthesize distance=_distance;
 @property(readonly, nonatomic) unsigned long long otherComponentTrait; // @synthesize otherComponentTrait=_otherComponentTrait;
 @property(readonly, nonatomic) unsigned long long componentTrait; // @synthesize componentTrait=_componentTrait;
-- (void).cxx_destruct;
 - (void)inspectTraitAreasForComponents:(id)arg1 layoutProvider:(id)arg2;
 - (_Bool)validateMarker:(id)arg1 componentTraits:(unsigned long long)arg2 layoutProvider:(id)arg3;
 - (void)insertedComponent:(id)arg1 approximateLocation:(struct CGPoint)arg2;

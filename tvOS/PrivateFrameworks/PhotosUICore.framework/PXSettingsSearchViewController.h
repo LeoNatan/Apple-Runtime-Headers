@@ -23,6 +23,7 @@
     NSArray *_searchResults;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
 @property(readonly, nonatomic) PXInfoUpdater *resultsInfoUpdater; // @synthesize resultsInfoUpdater=_resultsInfoUpdater;
 @property(retain, nonatomic) PXSettingsIndex *index; // @synthesize index=_index;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) PXSettingsIndexer *indexer; // @synthesize indexer=_indexer;
 @property(readonly, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(readonly, nonatomic) PTUISettingsController *settingsController; // @synthesize settingsController=_settingsController;
-- (void).cxx_destruct;
 - (void)infoUpdaterDidUpdate:(id)arg1;
 - (long long)priorityForInfoRequestOfKind:(id)arg1;
 - (id)requestInfoOfKind:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;

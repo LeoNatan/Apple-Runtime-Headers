@@ -32,6 +32,7 @@
 + (id)stringForMetricType:(unsigned int)arg1;
 + (id)sharedAWDServerConnection;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *errorToCountMap; // @synthesize errorToCountMap=_errorToCountMap;
 @property(retain, nonatomic) NSMutableDictionary *reasonToCountMap; // @synthesize reasonToCountMap=_reasonToCountMap;
 @property(nonatomic) unsigned int homeZoneUploadCount; // @synthesize homeZoneUploadCount=_homeZoneUploadCount;
@@ -46,7 +47,6 @@
 @property(nonatomic) unsigned int uploadCount; // @synthesize uploadCount=_uploadCount;
 @property(nonatomic) unsigned int fetchCount; // @synthesize fetchCount=_fetchCount;
 @property(nonatomic) unsigned int pushCount; // @synthesize pushCount=_pushCount;
-- (void).cxx_destruct;
 - (void)dispatcher:(id)arg1 didReceiveEvent:(id)arg2;
 - (void)processCloudEvent:(id)arg1;
 - (id)getTop:(long long)arg1 dictionary:(id)arg2;

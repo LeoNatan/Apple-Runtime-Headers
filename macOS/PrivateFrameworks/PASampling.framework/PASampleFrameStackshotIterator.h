@@ -19,8 +19,8 @@
     BOOL _hideUserFrames;
 }
 
-@property(retain) PAStackshotThread *stackshotThread; // @synthesize stackshotThread=_stackshotThread;
 - (void).cxx_destruct;
+@property(retain) PAStackshotThread *stackshotThread; // @synthesize stackshotThread=_stackshotThread;
 - (void)iterateFrames:(CDUnknownBlockType)arg1;
 - (void)exposeAllFrames;
 - (void)exposeKernelFramesOnly;

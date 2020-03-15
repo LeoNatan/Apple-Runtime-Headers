@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_literal;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *literal; // @synthesize literal=_literal;
 @property(retain, nonatomic) IKDataBindingPropertyPath *propertyPath; // @synthesize propertyPath=_propertyPath;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)passesForDataItem:(id)arg1;
 
 @end

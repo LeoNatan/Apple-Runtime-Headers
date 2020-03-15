@@ -18,11 +18,11 @@
 
 + (long long)titleDateMatchingTypeForMemoryCategory:(unsigned long long)arg1;
 + (id)assetPropertySetsForMemories;
+- (void).cxx_destruct;
 @property BOOL isDebug; // @synthesize isDebug=_isDebug;
 @property(readonly) __weak PGMemoryController *controller; // @synthesize controller=_controller;
 @property unsigned long long precision; // @synthesize precision=_precision;
 @property unsigned long long duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (id)createMemoryWithPotentialMemory:(id)arg1;
 @property(readonly) BOOL canFallbackToDejunkAndDedupeForShowMore;
 - (void)_mergeCurationSetsIfNeededForMemory:(id)arg1;

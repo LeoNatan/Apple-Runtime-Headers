@@ -14,11 +14,11 @@
 {
 }
 
-- (struct NSObject *)_iCPLHasChangesToProcess;
-- (struct NSObject *)_iCPLLowDiskSpace;
-- (struct NSObject *)_iCPLExceedingQuota;
-- (struct NSObject *)_iCPLEnabled;
-- (struct NSObject *)getDynamicProperty:(id)arg1 forEventName:(id)arg2 withPayload:(id)arg3;
+- (id)_iCPLHasChangesToProcess;
+- (id)_iCPLLowDiskSpace;
+- (id)_iCPLExceedingQuota;
+- (id)_iCPLEnabled;
+- (id)getDynamicProperty:(id)arg1 forEventName:(id)arg2 payloadForSystemPropertyExtraction:(id)arg3;
 - (void)registerAndProvideUserPropertiesFor:(id)arg1;
 
 // Remaining properties

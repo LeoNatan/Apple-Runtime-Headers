@@ -17,12 +17,12 @@
     UILabel *__label;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *_label; // @synthesize _label=__label;
 @property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(nonatomic) _Bool useLeadingZero; // @synthesize useLeadingZero=_useLeadingZero;
 @property(nonatomic) _Bool showZoomFactorSymbol; // @synthesize showZoomFactorSymbol=_showZoomFactorSymbol;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
-- (void).cxx_destruct;
 - (void)_updateLabelText;
 - (void)layoutSubviews;
 - (struct UIEdgeInsets)_labelInsets;

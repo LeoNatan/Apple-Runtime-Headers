@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id <BCSCloudServerBodyProvider> _cloudServerBodyProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BCSCloudServerBodyProvider> cloudServerBodyProvider; // @synthesize cloudServerBodyProvider=_cloudServerBodyProvider;
 @property(retain, nonatomic) id <BCSCloudServerRouteProvider> cloudServerRouteProvider; // @synthesize cloudServerRouteProvider=_cloudServerRouteProvider;
-- (void).cxx_destruct;
 - (id)baseBusinessItemJSONPostRequestWithTimeout:(double)arg1 cloudServerRequestType:(long long)arg2;
 - (void)addEdgeCachingToRequest:(id)arg1 requestType:(id)arg2 requestIdentifier:(id)arg3;
 - (id)bloomFilterRequestWithStartIndex:(long long)arg1 shardCount:(long long)arg2 timeout:(double)arg3;

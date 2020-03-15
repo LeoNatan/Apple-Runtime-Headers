@@ -26,6 +26,7 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long swooshType; // @synthesize swooshType=_swooshType;
 @property(readonly, nonatomic) _Bool showsIndexNumbers; // @synthesize showsIndexNumbers=_showsIndexNumbers;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) struct SKUILockupStyle lockupStyle; // @synthesize lockupStyle=_lockupStyle;
 @property(readonly, nonatomic) NSArray *lockups; // @synthesize lockups=_lockups;
 @property(readonly, nonatomic) NSArray *bricks; // @synthesize bricks=_bricks;
-- (void).cxx_destruct;
 - (void)_updateLockup:(id)arg1 withItem:(id)arg2;
 - (void)_setSeeAllValuesWithLinkInfo:(id)arg1;
 - (void)_reloadMissingDataCount;

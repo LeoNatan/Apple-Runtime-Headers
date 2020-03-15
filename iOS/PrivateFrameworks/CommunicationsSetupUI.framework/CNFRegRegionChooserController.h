@@ -27,12 +27,12 @@
     UISearchController *_searchController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(retain, nonatomic) NSArray *filteredRegionList; // @synthesize filteredRegionList=_filteredRegionList;
 @property(nonatomic) id <CNFRegRegionChooserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *selectedRegionID; // @synthesize selectedRegionID=_selectedRegionID;
 @property(retain, nonatomic) NSArray *regionList; // @synthesize regionList=_regionList;
-- (void).cxx_destruct;
 - (void)statusBarWillAnimateByHeight:(double)arg1;
 - (void)didWake;
 - (void)didUnlock;

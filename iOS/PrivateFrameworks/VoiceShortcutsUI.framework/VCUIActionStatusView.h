@@ -18,10 +18,10 @@
     _VCUIActionStatusErrorView *_errorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _VCUIActionStatusErrorView *errorView; // @synthesize errorView=_errorView;
 @property(retain, nonatomic) UIView *activityView; // @synthesize activityView=_activityView;
 @property(nonatomic) __weak id <VCUIActionStatusViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateAcitivityViewSubviewWithDelegateProvidedView;
 - (void)_setUpViews;
 - (void)progressStateMachine:(id)arg1 ignoredEvent:(unsigned long long)arg2;

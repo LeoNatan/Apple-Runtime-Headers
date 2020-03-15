@@ -17,10 +17,10 @@
     double _impressionPrior;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double impressionPrior; // @synthesize impressionPrior=_impressionPrior;
 @property(nonatomic) double clickPrior; // @synthesize clickPrior=_clickPrior;
 @property(copy, nonatomic) FCPersonalizationFeature *personalizationFeature; // @synthesize personalizationFeature=_personalizationFeature;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

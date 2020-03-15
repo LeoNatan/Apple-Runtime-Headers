@@ -49,6 +49,7 @@
 + (id)_destructiveFocusedButtonBackgroundColor;
 + (id)_destructiveButtonBackgroundColor;
 + (id)_buttonBackgroundColor;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *headerImageView; // @synthesize headerImageView=_headerImageView;
 @property(readonly, nonatomic) NSLayoutConstraint *buttonCollectionViewHeightConstraint; // @synthesize buttonCollectionViewHeightConstraint=_buttonCollectionViewHeightConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *buttonCollectionViewWidthConstraint; // @synthesize buttonCollectionViewWidthConstraint=_buttonCollectionViewWidthConstraint;
@@ -76,7 +77,6 @@
 @property(nonatomic) _Bool shouldDismissAutomatically; // @synthesize shouldDismissAutomatically=_shouldDismissAutomatically;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIImage *headerImage; // @synthesize headerImage=_headerImage;
-- (void).cxx_destruct;
 - (_Bool)_hasFooters;
 - (_Bool)_hasButtons;
 - (double)_buttonAreaLongTextHeight;

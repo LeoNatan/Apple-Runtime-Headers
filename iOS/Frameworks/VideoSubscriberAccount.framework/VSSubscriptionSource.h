@@ -22,9 +22,9 @@
 + (id)subscriptionSourceForWebsiteWithDomainName:(id)arg1;
 + (id)subscriptionSourceForWebsiteWithURL:(id)arg1;
 + (id)currentSource;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

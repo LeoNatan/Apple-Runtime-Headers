@@ -30,6 +30,7 @@
     NSXPCListenerEndpoint *_testListenerEndpoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListenerEndpoint *testListenerEndpoint; // @synthesize testListenerEndpoint=_testListenerEndpoint;
 @property(nonatomic) _Bool targetUserSession; // @synthesize targetUserSession=_targetUserSession;
 @property(copy, nonatomic) CDUnknownBlockType pairedPeerChangedHandler; // @synthesize pairedPeerChangedHandler=_pairedPeerChangedHandler;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) CDUnknownBlockType identityDeletedHandler; // @synthesize identityDeletedHandler=_identityDeletedHandler;
 @property(copy, nonatomic) CDUnknownBlockType identityCreatedHandler; // @synthesize identityCreatedHandler=_identityCreatedHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)pairedPeerChanged:(id)arg1 options:(unsigned long long)arg2;
 - (void)pairedPeerRemoved:(id)arg1 options:(unsigned long long)arg2;
 - (void)pairedPeerAdded:(id)arg1 options:(unsigned long long)arg2;

@@ -16,9 +16,9 @@
 
 + (void)setShouldDeserializeCacheItems:(BOOL)arg1;
 + (BOOL)shouldDeserializeCacheItems;
+- (void).cxx_destruct;
 @property(nonatomic) __weak _MXExtensionProvider *provider; // @synthesize provider=_provider;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_iconWithFormat:(int)arg1;
 - (id)_iconForTableUI;
 - (id)_containingAppIdentifer;

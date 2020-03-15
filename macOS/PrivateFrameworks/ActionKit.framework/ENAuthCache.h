@@ -14,9 +14,9 @@
     ENAuthCacheEntry *_businessCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ENAuthCacheEntry *businessCache; // @synthesize businessCache=_businessCache;
 @property(retain, nonatomic) NSMutableDictionary *linkedCache; // @synthesize linkedCache=_linkedCache;
-- (void).cxx_destruct;
 - (id)authenticationResultForBusiness;
 - (void)setAuthenticationResultForBusiness:(id)arg1;
 - (id)authenticationResultForLinkedNotebookGuid:(id)arg1;

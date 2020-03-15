@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)URLWithMapsLink:(id)arg1;
-@property(readonly, nonatomic) DCMapsLink *mapsLink; // @synthesize mapsLink=_mapsLink;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DCMapsLink *mapsLink; // @synthesize mapsLink=_mapsLink;
 - (void)setString:(id)arg1 forQueryKey:(id)arg2;
 - (id)mapType;
 - (id)directionsMode;

@@ -18,10 +18,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *RoutingType; // @synthesize RoutingType=_RoutingType;
 @property(copy, nonatomic) NSString *Address; // @synthesize Address=_Address;
 @property(copy, nonatomic) NSString *Name; // @synthesize Name=_Name;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

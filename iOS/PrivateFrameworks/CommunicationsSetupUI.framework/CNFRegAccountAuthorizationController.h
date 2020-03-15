@@ -16,10 +16,10 @@
     id <CNFRegAccountAuthorizationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <CNFRegAccountAuthorizationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *authToken; // @synthesize authToken=_authToken;
 @property(copy, nonatomic) NSString *authID; // @synthesize authID=_authID;
-- (void).cxx_destruct;
 - (id)authTokenHeaderValue;
 - (id)authIdHeaderValue;
 - (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;

@@ -15,9 +15,9 @@
 }
 
 + (id)newWithSelectors:(vector_f9fd24f3)arg1;
-@property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

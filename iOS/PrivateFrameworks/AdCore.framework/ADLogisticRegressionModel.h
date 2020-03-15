@@ -14,9 +14,9 @@
     NSNumber *_appUsageSimilarity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *appUsageSimilarity; // @synthesize appUsageSimilarity=_appUsageSimilarity;
 @property(retain, nonatomic) NSNumber *pttr; // @synthesize pttr=_pttr;
-- (void).cxx_destruct;
 - (id)predictionWithWeights:(id)arg1;
 - (float)sigmoid:(float)arg1;
 - (id)initWithPTTR:(id)arg1 appUsageSimilarity:(id)arg2;

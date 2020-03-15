@@ -15,10 +15,10 @@
     UITableViewDataSource *_staticDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITableViewDataSource *staticDataSource; // @synthesize staticDataSource=_staticDataSource;
 @property(retain, nonatomic) UIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
 @property(nonatomic) _Bool clearsSelectionOnViewWillAppear; // @synthesize clearsSelectionOnViewWillAppear=_clearsSelectionOnViewWillAppear;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UITableView *tableView;
 - (void)encodeWithCoder:(id)arg1;
 

@@ -19,13 +19,13 @@
     NSDictionary *_analysisResult;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *analysisResult; // @synthesize analysisResult=_analysisResult;
 @property(readonly, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) _Bool succeeded; // @synthesize succeeded=_succeeded;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) PLLivePhotoEditSource *editSource; // @synthesize editSource=_editSource;
-- (void).cxx_destruct;
 - (void)main;
 - (void)cancel;
 - (void)_timeout;

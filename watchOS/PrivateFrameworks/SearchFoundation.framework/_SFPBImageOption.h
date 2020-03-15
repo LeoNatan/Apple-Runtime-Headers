@@ -18,10 +18,10 @@
     _SFPBStringDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBStringDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) NSString *defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

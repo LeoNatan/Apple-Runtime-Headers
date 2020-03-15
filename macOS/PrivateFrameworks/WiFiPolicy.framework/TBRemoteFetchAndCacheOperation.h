@@ -18,10 +18,10 @@
     TBRemoteFetchAndCacheDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TBRemoteFetchAndCacheDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) id <TBFetchRequest> fetchRequest; // @synthesize fetchRequest=_fetchRequest;
 @property(retain, nonatomic) id <TBFetchResponse> response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (id)name;
 - (void)finish;
 - (void)start;

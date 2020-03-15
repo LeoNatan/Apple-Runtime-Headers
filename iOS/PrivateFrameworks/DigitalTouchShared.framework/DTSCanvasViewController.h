@@ -50,6 +50,7 @@
 + (id)audioToggleOffImage;
 + (id)audioToggleOnImage;
 + (id)replayButtonFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ETMessage *messageForReplay; // @synthesize messageForReplay=_messageForReplay;
 @property(copy, nonatomic) CDUnknownBlockType balloonPlaybackCompletion; // @synthesize balloonPlaybackCompletion=_balloonPlaybackCompletion;
 @property(nonatomic) __weak ETBalloonPluginDataSource *dataSource; // @synthesize dataSource=_dataSource;
@@ -72,7 +73,6 @@
 @property(nonatomic, getter=isComposingCompositeMessage) _Bool composingCompositeMessage; // @synthesize composingCompositeMessage=_composingCompositeMessage;
 @property(nonatomic) unsigned short composingMessageType; // @synthesize composingMessageType=_composingMessageType;
 @property(nonatomic) __weak id <DTSCanvasViewControllerSendDelegate> sendDelegate; // @synthesize sendDelegate=_sendDelegate;
-- (void).cxx_destruct;
 - (double)minimumBottomMargin;
 - (void)dataSource:(id)arg1 didUpdateAttachmentURL:(id)arg2 forMessageWithIdentifier:(id)arg3;
 - (_Bool)dataSourceViewIsMostlyVisible:(id)arg1;

@@ -14,9 +14,9 @@
     OBImage *_icon;
 }
 
+- (void).cxx_destruct;
 @property(retain) OBImage *icon; // @synthesize icon=_icon;
 @property(copy) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 
 @end
 

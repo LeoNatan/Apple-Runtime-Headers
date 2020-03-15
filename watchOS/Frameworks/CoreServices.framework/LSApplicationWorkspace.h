@@ -19,9 +19,9 @@
 + (id)defaultWorkspace;
 + (id)callbackQueue;
 + (id)progressQueue;
+- (void).cxx_destruct;
 @property(readonly) LSInstallProgressList *observedInstallProgresses; // @synthesize observedInstallProgresses=_observedInstallProgresses;
 @property(readonly) NSMutableDictionary *createdInstallProgresses; // @synthesize createdInstallProgresses=_createdInstallProgresses;
-- (void).cxx_destruct;
 - (void)ls_resetTestingDatabase;
 - (_Bool)ls_injectUTTypeWithDeclaration:(id)arg1 inDatabase:(id)arg2 error:(id *)arg3;
 - (void *)ls_testWithCleanDatabaseWithError:(id *)arg1;

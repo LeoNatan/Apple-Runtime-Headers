@@ -30,6 +30,7 @@
 }
 
 + (id)toolViewWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewHeigthAnchorConstraint; // @synthesize imageViewHeigthAnchorConstraint=_imageViewHeigthAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewWidthAnchorConstraint; // @synthesize imageViewWidthAnchorConstraint=_imageViewWidthAnchorConstraint;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) NSString *toolIdentifier; // @synthesize toolIdentifier=_toolIdentifier;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (struct CGSize)intrinsicContentSize;

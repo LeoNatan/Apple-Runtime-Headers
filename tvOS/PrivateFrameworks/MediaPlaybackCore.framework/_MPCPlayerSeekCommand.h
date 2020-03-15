@@ -18,11 +18,11 @@
     NSArray *_preferredForwardJumpIntervals;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *preferredForwardJumpIntervals; // @synthesize preferredForwardJumpIntervals=_preferredForwardJumpIntervals;
 @property(copy, nonatomic) NSArray *preferredBackwardJumpIntervals; // @synthesize preferredBackwardJumpIntervals=_preferredBackwardJumpIntervals;
 @property(nonatomic) _Bool prefersNegativeBackwardSkipIntervals; // @synthesize prefersNegativeBackwardSkipIntervals=_prefersNegativeBackwardSkipIntervals;
 @property(readonly, nonatomic) unsigned long long seekSupport; // @synthesize seekSupport=_seekSupport;
-- (void).cxx_destruct;
 - (id)_seekCommandWithMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2;
 - (id)changePositionToElapsedInterval:(double)arg1;
 - (id)jumpByInterval:(double)arg1;

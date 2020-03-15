@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     _Bool _ignoreUnnamedFeatures;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreUnnamedFeatures; // @synthesize ignoreUnnamedFeatures=_ignoreUnnamedFeatures;
 @property(copy, nonatomic) CDUnknownBlockType polygonHandler; // @synthesize polygonHandler=_polygonHandler;
 @property(copy, nonatomic) CDUnknownBlockType pointHandler; // @synthesize pointHandler=_pointHandler;
 @property(copy, nonatomic) CDUnknownBlockType roadHandler; // @synthesize roadHandler=_roadHandler;
-- (void).cxx_destruct;
 - (void)findFeatures:(CDUnknownBlockType)arg1 pointHandler:(CDUnknownBlockType)arg2 polygonHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_pickRoadInTile:(id)arg1 tileRect:(const CDStruct_90e2a262 *)arg2 localPoint:(const Matrix_8746f91e *)arg3;
 @property(readonly, nonatomic) GEOMapAccess *map;

@@ -16,10 +16,10 @@
 }
 
 + (_Bool)_canEnableRecentPeakReset;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *metrics; // @synthesize metrics=_metrics;
 @property(readonly) _Bool measureRecentPeak; // @synthesize measureRecentPeak=_measureRecentPeak;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_evaluateEndedSession:(struct pc_session *)arg1 duration:(double)arg2;
 - (void)_addMetricWithKey:(id)arg1 name:(id)arg2 unit:(id)arg3 denominator:(double)arg4 pcMetricID:(unsigned long long)arg5;
 - (id)dictionary;

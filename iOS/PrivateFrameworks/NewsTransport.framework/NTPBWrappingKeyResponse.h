@@ -16,8 +16,8 @@
 }
 
 + (Class)wrappingKeyMapEntriesType;
-@property(retain, nonatomic) NSMutableArray *wrappingKeyMapEntries; // @synthesize wrappingKeyMapEntries=_wrappingKeyMapEntries;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *wrappingKeyMapEntries; // @synthesize wrappingKeyMapEntries=_wrappingKeyMapEntries;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,8 +16,8 @@
     id <FCHeadlineProviding> _headline;
 }
 
-@property(readonly, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 - (unsigned long long)loadingPolicy;
 - (id)initWithHeadline:(id)arg1;
 

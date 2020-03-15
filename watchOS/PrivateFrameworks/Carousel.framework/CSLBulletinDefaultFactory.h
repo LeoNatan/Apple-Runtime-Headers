@@ -21,9 +21,9 @@
 
 + (id)_userActivityWithBulletin:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldClearBulletinsAfterDismissal; // @synthesize shouldClearBulletinsAfterDismissal=_shouldClearBulletinsAfterDismissal;
 @property(nonatomic) _Bool shouldPresentActionMenu; // @synthesize shouldPresentActionMenu=_shouldPresentActionMenu;
-- (void).cxx_destruct;
 - (id)userActivity;
 - (void)addBulletin:(id)arg1 withSoundPolicy:(unsigned int)arg2;
 - (_Bool)wantsBulletin:(id)arg1;

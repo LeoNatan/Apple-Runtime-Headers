@@ -14,8 +14,8 @@
 }
 
 + (id)actionWithString:(id)arg1;
-@property(retain, nonatomic) NSString *charString; // @synthesize charString=_charString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *charString; // @synthesize charString=_charString;
 - (void)performWithEventSourceData:(id)arg1;
 - (id)paramDictionaryForSaving;
 - (void)_configureWithPlistDictionary:(id)arg1;

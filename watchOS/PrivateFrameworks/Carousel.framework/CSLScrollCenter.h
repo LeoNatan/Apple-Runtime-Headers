@@ -30,8 +30,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) CSLControlCenterViewController *controlCenterViewController; // @synthesize controlCenterViewController=_controlCenterViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLControlCenterViewController *controlCenterViewController; // @synthesize controlCenterViewController=_controlCenterViewController;
 - (void)_pptDismissControlCenterWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_pptSwipeToControlCenterWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_pptDismissNotificationCenterWithCompletion:(CDUnknownBlockType)arg1;

@@ -15,10 +15,10 @@
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int qos; // @synthesize qos=_qos;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)terminate;
 - (void)run;
 - (id)description;

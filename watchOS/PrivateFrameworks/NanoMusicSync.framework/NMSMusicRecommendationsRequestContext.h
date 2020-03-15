@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSArray *_importedObjects;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *importedObjects; // @synthesize importedObjects=_importedObjects;
 @property(retain, nonatomic) MPModelResponse *lookupResponse; // @synthesize lookupResponse=_lookupResponse;
 @property(retain, nonatomic) MPModelForYouRecommendationsResponse *forYouResponse; // @synthesize forYouResponse=_forYouResponse;
-- (void).cxx_destruct;
 - (void)_processResponsesIfNeeded;
 @property(readonly, nonatomic) NMSMutableMediaSyncInfo *importedStoreContainerItemMappings;
 @property(readonly, nonatomic) NSOrderedSet *recommendations;

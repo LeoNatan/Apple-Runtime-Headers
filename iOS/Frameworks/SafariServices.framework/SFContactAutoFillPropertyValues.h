@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_property;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *property; // @synthesize property=_property;
 @property(readonly, copy, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SFContactAutoFillValue *selectedValue;
 - (id)initWithValues:(id)arg1 property:(id)arg2;
 

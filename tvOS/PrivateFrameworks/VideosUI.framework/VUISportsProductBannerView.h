@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIFocusContainerGuide *_containerGuide;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFocusContainerGuide *containerGuide; // @synthesize containerGuide=_containerGuide;
 @property(retain, nonatomic) _TVImageView *availabilityImageView; // @synthesize availabilityImageView=_availabilityImageView;
 @property(retain, nonatomic) VUILabel *availabilityTextView; // @synthesize availabilityTextView=_availabilityTextView;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *rowLabels; // @synthesize rowLabels=_rowLabels;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUISportsProductBannerLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (double)_maxScoreWidthForColumn:(unsigned long long)arg1 availableWidth:(double)arg2;
 - (double)_totalMaxScoreWidthWithAvailableWidth:(double)arg1;
 - (void)_tvOS_layoutSubviews;

@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) EMThreadScope *threadScope; // @synthesize threadScope=_threadScope;
 @property(readonly, nonatomic) EMThreadCollectionItemID *collectionItemID; // @synthesize collectionItemID=_collectionItemID;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     UILabel *_resultHorizonLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *resultHorizonLabel; // @synthesize resultHorizonLabel=_resultHorizonLabel;
 @property(retain, nonatomic) UILabel *resultPerspectiveLabel; // @synthesize resultPerspectiveLabel=_resultPerspectiveLabel;
 @property(retain, nonatomic) UILabel *resultReframeLabel; // @synthesize resultReframeLabel=_resultReframeLabel;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *overcaptureLabel; // @synthesize overcaptureLabel=_overcaptureLabel;
 @property(retain, nonatomic) UILabel *pregatedLabel; // @synthesize pregatedLabel=_pregatedLabel;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
-- (void).cxx_destruct;
 - (void)showStatsForPhoto:(id)arg1;
 @property(copy, nonatomic) NSString *detailText;
 - (void)dealloc;

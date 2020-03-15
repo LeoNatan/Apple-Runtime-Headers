@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _transform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *string; // @synthesize string=_string;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *text;
 - (long long)compareTransformToTextContainer:(id)arg1;
 - (void)addOperator:(id)arg1;

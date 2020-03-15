@@ -24,6 +24,7 @@
 }
 
 + (BOOL)isTransitionSupportedWithMasterViewController:(id)arg1 detailViewController:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPinchTracker:) PXPinchTracker *_pinchTracker; // @synthesize _pinchTracker=__pinchTracker;
 @property(retain, nonatomic, setter=_setRegionOfInterest:) PXRegionOfInterest *_regionOfInterest; // @synthesize _regionOfInterest=__regionOfInterest;
 @property(retain, nonatomic, setter=_setDimmingView:) UIView *_dimmingView; // @synthesize _dimmingView=__dimmingView;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic, setter=_setTransitionContext:) id <UIViewControllerContextTransitioning> _transitionContext; // @synthesize _transitionContext=__transitionContext;
 @property(nonatomic, setter=_setState:) long long _state; // @synthesize _state=__state;
 @property(retain, nonatomic) UIPinchGestureRecognizer *pinchGestureRecognizer; // @synthesize pinchGestureRecognizer=_pinchGestureRecognizer;
-- (void).cxx_destruct;
 - (void)startInteractiveTransition:(id)arg1;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

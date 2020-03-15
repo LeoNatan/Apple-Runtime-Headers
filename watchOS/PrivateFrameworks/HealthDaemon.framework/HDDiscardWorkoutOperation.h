@@ -13,8 +13,8 @@
     NSUUID *_builderIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSUUID *builderIdentifier; // @synthesize builderIdentifier=_builderIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSUUID *builderIdentifier; // @synthesize builderIdentifier=_builderIdentifier;
 - (_Bool)performWithProfile:(id)arg1 transaction:(id)arg2 error:(id *)arg3;
 - (id)initWithBuilderIdentifier:(id)arg1;
 

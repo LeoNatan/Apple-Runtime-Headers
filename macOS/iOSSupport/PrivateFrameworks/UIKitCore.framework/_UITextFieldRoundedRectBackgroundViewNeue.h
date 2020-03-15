@@ -18,11 +18,11 @@
     double _cornerRadius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasFlexibleCornerRadius; // @synthesize hasFlexibleCornerRadius=_hasFlexibleCornerRadius;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
-- (void).cxx_destruct;
 - (void)setContentScaleFactor:(double)arg1;
 - (BOOL)_shouldInheritScreenScaleAsContentScaleFactor;
 - (void)setActive:(BOOL)arg1;

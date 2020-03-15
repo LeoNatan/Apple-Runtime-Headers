@@ -27,13 +27,13 @@
 + (id)activationHostnameURLOverride;
 + (id)activationCertificateHostnameURLOverride;
 + (id)serverBagURLForEnvironment:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool refreshing; // @synthesize refreshing=_refreshing;
 @property(readonly, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) unsigned long long environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_handleServerBagResponseData:(id)arg1 response:(id)arg2 error:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_synchronizeWithCompletion:(CDUnknownBlockType)arg1;

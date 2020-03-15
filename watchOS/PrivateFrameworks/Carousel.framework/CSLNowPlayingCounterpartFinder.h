@@ -18,8 +18,8 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly, nonatomic) __weak NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)applicationUpgradeMonitor:(id)arg1 installed:(id)arg2;
 - (void)applicationUpgradeMonitor:(id)arg1 removed:(id)arg2;
 - (id)counterpartForCompanionBundleIdentifier:(id)arg1 radioPlaying:(_Bool)arg2;

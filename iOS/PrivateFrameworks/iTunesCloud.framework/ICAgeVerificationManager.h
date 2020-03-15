@@ -17,10 +17,10 @@
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *ageVerificationStateInternal; // @synthesize ageVerificationStateInternal=_ageVerificationStateInternal;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (_Bool)_bagHasValidKeys:(id)arg1;
 - (_Bool)_processAgeVerificationState:(id)arg1 forDSID:(id)arg2;
 - (void)_runAgeVerificationForUserIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;

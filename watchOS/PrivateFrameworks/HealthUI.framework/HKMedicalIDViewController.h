@@ -44,6 +44,7 @@
 }
 
 + (_Bool)isSupportedOnThisDevice;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inEditMode; // @synthesize inEditMode=_inEditMode;
 @property(retain, nonatomic) NSArray *tableItems; // @synthesize tableItems=_tableItems;
 @property(nonatomic) __weak id <HKMedicalIDViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -54,7 +55,6 @@
 @property(nonatomic) _Bool showsDismissButton; // @synthesize showsDismissButton=_showsDismissButton;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(retain, nonatomic) _HKMedicalIDData *medicalID; // @synthesize medicalID=_medicalID;
-- (void).cxx_destruct;
 - (void)_forceDisableBiometricIfDeviceLocked;
 - (void)_showMedicalIDPreviewAsNext;
 - (void)_adjustTableViewContentOffsetForVisibleView:(id)arg1 visibleRect:(struct CGRect)arg2 animated:(_Bool)arg3;

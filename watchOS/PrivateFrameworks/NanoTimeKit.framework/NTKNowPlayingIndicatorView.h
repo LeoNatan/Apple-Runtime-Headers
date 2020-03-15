@@ -20,8 +20,8 @@
     UIColor *_overrideColor;
 }
 
-@property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 - (id)_createIndicatorView;
 @property(nonatomic) _Bool usesLegibility;
 @property(retain, nonatomic) UIColor *color;

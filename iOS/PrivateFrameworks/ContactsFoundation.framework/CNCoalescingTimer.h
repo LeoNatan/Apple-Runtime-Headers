@@ -23,6 +23,7 @@
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSomeoneWaiting) _Bool someoneWaiting; // @synthesize someoneWaiting=_someoneWaiting;
 @property(nonatomic) _Bool open; // @synthesize open=_open;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) CNUnfairLock *resourceLock; // @synthesize resourceLock=_resourceLock;
 @property(readonly, nonatomic) id <CNScheduler> downstreamScheduler; // @synthesize downstreamScheduler=_downstreamScheduler;
 @property(retain, nonatomic) id <CNCancelable> scheduledToken; // @synthesize scheduledToken=_scheduledToken;
-- (void).cxx_destruct;
 - (void)nts_closeDoor;
 - (void)nts_openDoor;
 - (void)nts_makeSomeoneWait;

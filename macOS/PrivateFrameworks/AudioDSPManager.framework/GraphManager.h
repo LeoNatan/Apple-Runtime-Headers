@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)supportsSecureCoding;
 + (void)registerInternalComponents;
-@property(nonatomic) __weak ADNotificationBusStation *busStation; // @synthesize busStation=_busStation;
-@property(nonatomic) __weak VolumeManager *volumeManager; // @synthesize volumeManager=_volumeManager;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ADNotificationBusStation *busStation; // @synthesize busStation=_busStation;
+@property(nonatomic) __weak VolumeManager *volumeManager; // @synthesize volumeManager=_volumeManager;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (expected_24968c28)getActiveMicrophoneConfigurationIDForPort:(unsigned long long)arg1 ioController:(unsigned long long)arg2;

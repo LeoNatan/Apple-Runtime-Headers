@@ -39,11 +39,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) AVPlayerControllerTimeResolver *timeResolver; // @synthesize timeResolver=_timeResolver;
 @property(retain) id <AVFunctionBarPlaybackControlsControllingInternal><AVFunctionBarScrubberControlling><AVFunctionBarTrackControlling><AVTimeControlling> playerController; // @synthesize playerController=_playerController;
 @property BOOL canCollapse; // @synthesize canCollapse=_canCollapse;
 @property __weak id <AVFunctionBarScrubberDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_deactivateBindings;
 - (void)_activateBindings;
 - (void)_unbindAllObjects;

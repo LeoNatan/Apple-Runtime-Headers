@@ -23,6 +23,7 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *pcQueue; // @synthesize pcQueue=_pcQueue;
 @property(retain, nonatomic) NSTimer *tokenRegistrationTimer; // @synthesize tokenRegistrationTimer=_tokenRegistrationTimer;
 @property(retain, nonatomic) NSMutableDictionary *apsConnections; // @synthesize apsConnections=_apsConnections;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSMutableDictionary *suspendedTopicWrappersByEnv; // @synthesize suspendedTopicWrappersByEnv=_suspendedTopicWrappersByEnv;
 @property(retain, nonatomic) NSMutableDictionary *enabledTopicWrappersByEnv; // @synthesize enabledTopicWrappersByEnv=_enabledTopicWrappersByEnv;
 @property(nonatomic) _Bool persistAPSAfterShutdown; // @synthesize persistAPSAfterShutdown=_persistAPSAfterShutdown;
-- (void).cxx_destruct;
 - (id)pushTokenForEnvironment:(id)arg1;
 - (void)retryRefreshForDelegate:(id)arg1 withCollections:(id)arg2 after:(double)arg3 originalRefreshReason:(int)arg4;
 - (void)delegateDidCompleteRefresh:(id)arg1;

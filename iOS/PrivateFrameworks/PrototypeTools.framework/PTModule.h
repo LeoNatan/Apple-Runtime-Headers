@@ -6,43 +6,59 @@
 
 #import <objc/NSObject.h>
 
-#import <PrototypeTools/PTSectionObserver-Protocol.h>
+#import <PrototypeTools/PTComponentObserver-Protocol.h>
+#import <PrototypeTools/PTModuleComponent-Protocol.h>
 #import <PrototypeTools/PTSettingsKeyPathObserver-Protocol.h>
 
-@class NSHashTable, NSMutableArray, NSString, PTSettings;
+@class NSArray, NSHashTable, NSPredicate, NSString, PTSettings;
+@protocol PTComponentObserver;
 
-@interface PTModule : NSObject <PTSettingsKeyPathObserver, PTSectionObserver>
+@interface PTModule : NSObject <PTSettingsKeyPathObserver, PTComponentObserver, PTModuleComponent>
 {
     NSHashTable *_observers;
-    NSMutableArray *_allSections;
-    NSMutableArray *_enabledSections;
+    NSArray *_components;
+    id <PTComponentObserver> _componentObserver;
     PTSettings *_settings;
+    NSArray *_allSections;
+    NSArray *_enabledSections;
+    NSPredicate *_appearancePredicate;
+    NSString *_childSettingsKeyPath;
     NSString *_title;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)moduleWithSettings:(id)arg1;
 + (id)submoduleWithModule:(id)arg1 childSettingsKeyPath:(id)arg2 condition:(id)arg3;
 + (id)submoduleWithModule:(id)arg1 childSettingsKeyPath:(id)arg2;
-+ (id)sectionWithRows:(id)arg1 title:(id)arg2 conditionFormat:(id)arg3;
++ (id)submoduleWithModule:(id)arg1;
 + (id)sectionWithRows:(id)arg1 title:(id)arg2 condition:(id)arg3;
++ (id)sectionWithRows:(id)arg1 title:(id)arg2 conditionFormat:(id)arg3;
 + (id)sectionWithRows:(id)arg1 title:(id)arg2;
 + (id)sectionWithRows:(id)arg1;
 + (id)moduleWithTitle:(id)arg1 contents:(id)arg2;
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-@property(retain, nonatomic) PTSettings *settings; // @synthesize settings=_settings;
-@property(retain, nonatomic) NSMutableArray *enabledSections; // @synthesize enabledSections=_enabledSections;
-@property(retain, nonatomic) NSMutableArray *allSections; // @synthesize allSections=_allSections;
 - (void).cxx_destruct;
-- (_Bool)_shouldEnableSection:(id)arg1;
-- (id)_settingsForSection:(id)arg1;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
+@property(retain, nonatomic) NSString *childSettingsKeyPath; // @synthesize childSettingsKeyPath=_childSettingsKeyPath;
+@property(retain, nonatomic) NSPredicate *appearancePredicate; // @synthesize appearancePredicate=_appearancePredicate;
+@property(readonly, nonatomic) NSArray *enabledSections; // @synthesize enabledSections=_enabledSections;
+@property(readonly, nonatomic) NSArray *allSections; // @synthesize allSections=_allSections;
+@property(retain, nonatomic) PTSettings *settings; // @synthesize settings=_settings;
+@property(nonatomic) __weak id <PTComponentObserver> componentObserver; // @synthesize componentObserver=_componentObserver;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)_remoteEditingWhitelistedModule;
+- (id)_settingsForComponent:(id)arg1;
+- (void)_reportSectionInsertsAndDeletesRelativeTo:(id)arg1;
+- (id)_computeEnabledSections;
 - (void)_updateEnabledSections;
-- (void)_addSubmodule:(id)arg1;
-- (void)_addSection:(id)arg1;
+- (void)enabledSectionsDidChange:(id)arg1;
 - (void)sectionDidReload:(id)arg1;
 - (void)section:(id)arg1 didInsertRows:(id)arg2 deleteRows:(id)arg3;
+- (id)_remoteEditingWhitelistedComponent;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
-- (void)enumerateEnabledRowsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)enumerateAllRowsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)indexPathForRow:(id)arg1;
@@ -55,7 +71,6 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

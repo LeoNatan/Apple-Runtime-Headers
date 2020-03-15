@@ -16,9 +16,9 @@
 }
 
 + (id)properties;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *configurationTracker; // @synthesize configurationTracker=_configurationTracker;
 @property(retain, nonatomic) NSString *configuredNetworkProtectionGroupUUIDString; // @synthesize configuredNetworkProtectionGroupUUIDString=_configuredNetworkProtectionGroupUUIDString;
-- (void).cxx_destruct;
 - (id)dependentUUIDs;
 
 // Remaining properties

@@ -26,6 +26,7 @@
 
 + (unsigned long long)maxNumberOfItems;
 + (double)itemWidth;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double currentLabelOutset; // @synthesize currentLabelOutset=_currentLabelOutset;
 @property(nonatomic) double centerAdjustmentAllowed; // @synthesize centerAdjustmentAllowed=_centerAdjustmentAllowed;
 @property(nonatomic) long long subtitleStyle; // @synthesize subtitleStyle=_subtitleStyle;
@@ -33,7 +34,6 @@
 @property(nonatomic) long long imageStyle; // @synthesize imageStyle=_imageStyle;
 @property(nonatomic) __weak id <NUIWidgetGridViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NUIWidgetGridViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_createGridViewIfNeeded;
 - (double)horizontalMargin;

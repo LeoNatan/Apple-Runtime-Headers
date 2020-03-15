@@ -19,13 +19,13 @@
     id <SUOSULaterDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <SUOSULaterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) SUOSUPowerEventObserver *powerEventObserver; // @synthesize powerEventObserver=_powerEventObserver;
 @property(retain) SUOSULaterObserver *armedObserver; // @synthesize armedObserver=_armedObserver;
 @property(retain) SUOSUAlarmObserver *oneHourObserver; // @synthesize oneHourObserver=_oneHourObserver;
 @property(retain) SUOSUTonightObserver *tonightObserver; // @synthesize tonightObserver=_tonightObserver;
 @property unsigned long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (id)estimatedFireDate;
 - (BOOL)isArmed;
 - (void)disarmLaterObserver;

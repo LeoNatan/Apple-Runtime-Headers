@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
 + (id)_currentFullScreenAlertPresenters;
 + (void)_cancelPendingTouchesIfAppropriateForWindow:(id)arg1;
 + (BOOL)_shouldPresentActionSheetsFullscreen;
+- (void).cxx_destruct;
 @property(nonatomic) UIAlertView *legacyAlert; // @synthesize legacyAlert=_legacyAlert;
 @property(nonatomic) __weak UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(readonly, nonatomic) _UIAlertControllerShimPresenterWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_createWindowIfNecessaryWithScene:(id)arg1;
 - (void)_tearDownInPopoverViewController;

@@ -16,9 +16,9 @@
     NPKProtoStandaloneRequestHeader *_requestHeader;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chosenFlowPickerItemIdentifier; // @synthesize chosenFlowPickerItemIdentifier=_chosenFlowPickerItemIdentifier;
 @property(retain, nonatomic) NPKProtoStandaloneRequestHeader *requestHeader; // @synthesize requestHeader=_requestHeader;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

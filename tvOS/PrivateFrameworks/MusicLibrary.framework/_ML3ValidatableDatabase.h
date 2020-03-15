@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_validationSerialQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *validationSerialQueue; // @synthesize validationSerialQueue=_validationSerialQueue;
 @property(nonatomic) unsigned long long validationState; // @synthesize validationState=_validationState;
 @property(copy, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
-- (void).cxx_destruct;
 - (_Bool)currentQueueIsValidationQueue;
 - (id)init;
 - (id)initWithDatabasePath:(id)arg1;

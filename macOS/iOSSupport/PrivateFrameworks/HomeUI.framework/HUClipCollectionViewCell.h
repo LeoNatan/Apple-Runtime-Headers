@@ -18,12 +18,12 @@
 }
 
 + (id)backgroundColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *dayBoundaryView; // @synthesize dayBoundaryView=_dayBoundaryView;
 @property(retain, nonatomic) UIView *posterFramesContainerView; // @synthesize posterFramesContainerView=_posterFramesContainerView;
 @property(retain, nonatomic) CALayer *badgeLayer; // @synthesize badgeLayer=_badgeLayer;
 @property(nonatomic) __weak HMCameraClip *clip; // @synthesize clip=_clip;
 @property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)preparePosterFrameViewsForReuse;
 - (void)_drawEventMarkers;

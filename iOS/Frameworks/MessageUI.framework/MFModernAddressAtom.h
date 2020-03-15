@@ -29,8 +29,8 @@
 }
 
 + (id)copyDisplayStringForAddress:(id)arg1 usingAddressBook:(void *)arg2 useAbbreviatedName:(_Bool)arg3;
-@property(nonatomic) double firstLineIndent; // @synthesize firstLineIndent=_firstLineIndent;
 - (void).cxx_destruct;
+@property(nonatomic) double firstLineIndent; // @synthesize firstLineIndent=_firstLineIndent;
 - (id)viewForLastBaselineLayout;
 - (void)performBuildInAnimationFromTextColor:(id)arg1 withDuration:(double)arg2;
 - (void)setOpaque:(_Bool)arg1;

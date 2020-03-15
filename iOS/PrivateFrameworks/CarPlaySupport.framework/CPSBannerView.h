@@ -16,9 +16,9 @@
     SBUIBannerContext *_bannerContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBUIBannerContext *bannerContext; // @synthesize bannerContext=_bannerContext;
 @property(retain, nonatomic) CPSBannerItem *bannerItem; // @synthesize bannerItem=_bannerItem;
-- (void).cxx_destruct;
 - (id)applicationIconImage;
 - (void)updateBannerWithBannerItem:(id)arg1;
 - (id)initWithContext:(id)arg1;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     BrowserViewController *_browserViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BrowserViewController *browserViewController; // @synthesize browserViewController=_browserViewController;
 @property(readonly, nonatomic) NSDictionary *sharingServiceParameters; // @synthesize sharingServiceParameters=_sharingServiceParameters;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) NSSharingService *sharingService; // @synthesize sharingService=_sharingService;
-- (void).cxx_destruct;
 - (id)initWithSharingService:(id)arg1 items:(id)arg2 sharingServiceParameters:(id)arg3 browserViewController:(id)arg4;
 
 @end

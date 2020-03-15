@@ -12,9 +12,9 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) BOOL blockCompleted; // @synthesize blockCompleted=_blockCompleted;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithMailboxName:(id)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1 mailboxName:(id)arg2;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)wantsHorizontalLayout;
 + (_Bool)wantsChevron;
-@property(retain, nonatomic) CNGeminiPickerController *geminiPicker; // @synthesize geminiPicker=_geminiPicker;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNGeminiPickerController *geminiPicker; // @synthesize geminiPicker=_geminiPicker;
 - (void)geminiDataSourceDidUpdate:(id)arg1;
 - (void)pickerDidCancel:(id)arg1;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;

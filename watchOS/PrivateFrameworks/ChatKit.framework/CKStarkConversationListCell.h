@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (float)starkCellMarginWidth;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDateLabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) UILabel *recipientsLabel; // @synthesize recipientsLabel=_recipientsLabel;
 @property(retain, nonatomic) UIImageView *unreadImageView; // @synthesize unreadImageView=_unreadImageView;
 @property(retain, nonatomic) UIImageView *chevronImageView; // @synthesize chevronImageView=_chevronImageView;
 @property(nonatomic) UIImage *monogramImage; // @synthesize monogramImage=_monogramImage;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateUserInterfaceStyle;
 @property(retain, nonatomic) NSString *recipientNames; // @dynamic recipientNames;

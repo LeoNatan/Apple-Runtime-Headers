@@ -17,8 +17,8 @@
 
 + (Class)replyClass;
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) GEOETARequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOETARequest *request; // @synthesize request=_request;
 - (BOOL)expectsReply;
 - (BOOL)isValid;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,10 +15,10 @@
     NSHTTPURLResponse *_redirectResponse;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHTTPURLResponse *redirectResponse; // @synthesize redirectResponse=_redirectResponse;
 @property(readonly, nonatomic) NSURLRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)loader:(id)arg1 didFinishLoadWithError:(id)arg2;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (id)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3;

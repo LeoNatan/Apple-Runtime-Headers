@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     BOOL _hasCoordinatesInfoWithoutContentDescription;
 }
 
-@property(nonatomic) BOOL hasCoordinatesInfoWithoutContentDescription; // @synthesize hasCoordinatesInfoWithoutContentDescription=_hasCoordinatesInfoWithoutContentDescription;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL hasCoordinatesInfoWithoutContentDescription; // @synthesize hasCoordinatesInfoWithoutContentDescription=_hasCoordinatesInfoWithoutContentDescription;
 - (id)dragDescription;
 - (BOOL)alwaysAllowDrag;
 - (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;

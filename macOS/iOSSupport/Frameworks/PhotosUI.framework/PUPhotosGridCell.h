@@ -31,6 +31,7 @@
 }
 
 + (Class)_contentViewClass;
+- (void).cxx_destruct;
 @property(nonatomic) long long dragState; // @synthesize dragState=_dragState;
 @property(nonatomic) int currentImageRequestID; // @synthesize currentImageRequestID=_currentImageRequestID;
 @property(nonatomic) BOOL transitionIsAppearing; // @synthesize transitionIsAppearing=_transitionIsAppearing;
@@ -43,7 +44,6 @@
 @property(nonatomic, getter=isSelectionBadgeVisible) BOOL selectionBadgeVisible; // @synthesize selectionBadgeVisible=_selectionBadgeVisible;
 @property(nonatomic, getter=isDraggable) BOOL draggable; // @synthesize draggable=_draggable;
 @property(readonly, nonatomic) UIView *transitionFillerView; // @synthesize transitionFillerView=_transitionFillerView;
-- (void).cxx_destruct;
 - (void)setProgress:(id)arg1 immediately:(BOOL)arg2;
 - (void)dragStateDidChange:(long long)arg1;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @dynamic highlighted;

@@ -14,9 +14,9 @@
     NSManagedObjectID *_calendarObjectID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSManagedObjectID *calendarObjectID; // @synthesize calendarObjectID=_calendarObjectID;
 @property int sharingStatus; // @synthesize sharingStatus=_sharingStatus;
-- (void).cxx_destruct;
 - (BOOL)isMarkedImmutableSharees;
 - (BOOL)isEditableForReply;
 - (BOOL)isEditable;

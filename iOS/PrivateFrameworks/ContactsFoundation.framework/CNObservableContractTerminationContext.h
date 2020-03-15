@@ -16,9 +16,9 @@
 
 + (unsigned long long)currentThreadId;
 + (id)currentContext;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long threadId; // @synthesize threadId=_threadId;
 @property(readonly, copy) NSArray *callStack; // @synthesize callStack=_callStack;
-- (void).cxx_destruct;
 - (id)initWithCallStack:(id)arg1 threadId:(unsigned long long)arg2;
 
 @end

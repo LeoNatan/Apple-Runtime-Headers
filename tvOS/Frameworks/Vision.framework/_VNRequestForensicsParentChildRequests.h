@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_orderedChildRequests;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *orderedChildRequests; // @synthesize orderedChildRequests=_orderedChildRequests;
 @property(readonly, nonatomic) VNRequest *parentRequest; // @synthesize parentRequest=_parentRequest;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

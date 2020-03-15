@@ -16,11 +16,11 @@
     NSCustomTouchBarItem *_textAttributesContentItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSCustomTouchBarItem *textAttributesContentItem; // @synthesize textAttributesContentItem=_textAttributesContentItem;
 @property(retain) AKDFRTextColorController *textColorPickerController; // @synthesize textColorPickerController=_textColorPickerController;
 @property(retain) NSColorPickerTouchBarItem *textColorPopoverItem; // @synthesize textColorPopoverItem=_textColorPopoverItem;
 @property(retain) NSPopoverTouchBarItem *textAttributesItem; // @synthesize textAttributesItem=_textAttributesItem;
-- (void).cxx_destruct;
 @property(readonly) AKDFRTextAttributesViewController *textAttributesViewController;
 - (void)colorPickerAction:(id)arg1;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;

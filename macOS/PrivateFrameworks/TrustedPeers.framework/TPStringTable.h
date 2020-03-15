@@ -9,6 +9,7 @@
 @class NSHashTable;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface TPStringTable : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
@@ -16,9 +17,9 @@
 }
 
 + (id)defaultTable;
+- (void).cxx_destruct;
 @property(retain) NSHashTable *table; // @synthesize table=_table;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)setWithArray:(id)arg1;
 - (id)stringWithString:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;

@@ -21,10 +21,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak CUISAlertTransitionContext *wrapperContext; // @synthesize wrapperContext=_wrapperContext;
 @property(retain, nonatomic) CUISAlertTransitionContext *originalContext; // @synthesize originalContext=_originalContext;
 @property(readonly, nonatomic) id <CUISAlertAnimatedTransitioning> animator; // @synthesize animator=_animator;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

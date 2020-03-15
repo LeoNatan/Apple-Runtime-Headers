@@ -20,10 +20,10 @@
 }
 
 + (id)array;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrayStore; // @synthesize arrayStore=_arrayStore;
 @property(retain, nonatomic) id obj1; // @synthesize obj1=_obj1;
 @property(retain, nonatomic) id obj0; // @synthesize obj0=_obj0;
-- (void).cxx_destruct;
 - (void)_setupWithNSArray:(id)arg1;
 - (id)toNSArray;
 - (id)objectAtIndexedSubscript:(long long)arg1;

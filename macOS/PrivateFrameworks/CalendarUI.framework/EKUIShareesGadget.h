@@ -38,6 +38,7 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType suggestionsUpdatedBlock; // @synthesize suggestionsUpdatedBlock=_suggestionsUpdatedBlock;
 @property(retain) NSMenuItem *viewAndEditMenuItem; // @synthesize viewAndEditMenuItem=_viewAndEditMenuItem;
 @property(retain) NSMenuItem *viewOnlyMenuItem; // @synthesize viewOnlyMenuItem=_viewOnlyMenuItem;
@@ -57,7 +58,6 @@
 @property(retain) EKUITokenField *shareesField; // @synthesize shareesField=_shareesField;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain) EKUIShareeControlContainer *controlContainer; // @synthesize controlContainer=_controlContainer;
-- (void).cxx_destruct;
 - (void)inviteAgain:(id)arg1;
 - (void)removeSharee:(id)arg1;
 - (void)updatedAutoComplete:(id)arg1;

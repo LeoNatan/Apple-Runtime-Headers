@@ -13,8 +13,8 @@
     NSArray *_containers;
 }
 
-@property(copy, nonatomic) NSArray *containers; // @synthesize containers=_containers;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *containers; // @synthesize containers=_containers;
 
 @end
 

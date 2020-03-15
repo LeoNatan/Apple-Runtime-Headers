@@ -18,10 +18,10 @@
     EKUIResizingTextField *_showMoreTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKUIResizingTextField *showMoreTextField; // @synthesize showMoreTextField=_showMoreTextField;
 @property(nonatomic) BOOL isWaitingForResults; // @synthesize isWaitingForResults=_isWaitingForResults;
 @property __weak id <EKUIShowMoreOptionViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (void)keyDown:(id)arg1;

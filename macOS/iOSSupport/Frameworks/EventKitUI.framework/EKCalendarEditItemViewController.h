@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     BOOL _onlyShowUnmanagedSources;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL onlyShowUnmanagedSources; // @synthesize onlyShowUnmanagedSources=_onlyShowUnmanagedSources;
 @property(nonatomic) BOOL limitToSource; // @synthesize limitToSource=_limitToSource;
-- (void).cxx_destruct;
 - (void)calendarChooserSelectionDidChange:(id)arg1;
 - (struct CGSize)preferredContentSize;
 @property(retain, nonatomic) EKCalendar *selectedCalendar;

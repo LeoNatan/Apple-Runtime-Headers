@@ -39,6 +39,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)nullIdentity;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int revisionID; // @synthesize revisionID=_revisionID;
 @property(nonatomic) _Bool present; // @synthesize present=_present;
 @property(nonatomic) _Bool disabled; // @synthesize disabled=_disabled;
@@ -62,7 +63,6 @@
 @property(copy, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;
 @property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 @property(copy, nonatomic) NSArray *accessGroups; // @synthesize accessGroups=_accessGroups;
-- (void).cxx_destruct;
 - (_Bool)verifySignaturePtr:(const void *)arg1 signatureLen:(unsigned long)arg2 dataPtr:(const void *)arg3 dataLen:(unsigned long)arg4 error:(id *)arg5;
 - (_Bool)verifySignature:(id)arg1 data:(id)arg2 error:(id *)arg3;
 - (_Bool)signDataPtr:(const void *)arg1 dataLen:(unsigned long)arg2 signatureBytes:(unsigned char [64])arg3 error:(id *)arg4;

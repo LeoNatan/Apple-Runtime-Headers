@@ -15,10 +15,10 @@
     HMDBackingStore *_store;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDBackingStore *store; // @synthesize store=_store;
 @property(readonly, nonatomic) NSUUID *operationUUID; // @synthesize operationUUID=_operationUUID;
 @property(copy, nonatomic) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
-- (void).cxx_destruct;
 - (id)description;
 - (void)main;
 - (id)mainReturningError;

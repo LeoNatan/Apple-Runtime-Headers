@@ -31,12 +31,12 @@
     CDStruct_e83c9415 _timeRange;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *outputURL; // @synthesize outputURL=_outputURL;
 @property(nonatomic) CDStruct_e83c9415 timeRange; // @synthesize timeRange=_timeRange;
 @property(retain, nonatomic) AVAssetWriterInput *metadataInput; // @synthesize metadataInput=_metadataInput;
 @property(copy, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
 @property(nonatomic) __weak id <PFAVReaderWriterAdjustDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)sampleBufferChannel:(id)arg1 didReadSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 andMadeWriteSampleBuffer:(struct __CVBuffer *)arg3;
 - (void)sampleBufferChannel:(id)arg1 didReadSampleBuffer:(struct opaqueCMSampleBuffer *)arg2;
 - (void)readingAndWritingDidFinishSuccessfully:(_Bool)arg1 withError:(id)arg2;

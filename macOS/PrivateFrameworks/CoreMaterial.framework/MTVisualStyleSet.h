@@ -18,9 +18,9 @@
     NSString *_visualStyleSetName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *visualStyleSetName; // @synthesize visualStyleSetName=_visualStyleSetName;
 @property(readonly, nonatomic) long long visualStyleSetVersion; // @synthesize visualStyleSetVersion=_visualStyleSetVersion;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)visualStylingForStyle:(id)arg1;
 - (id)initWithName:(id)arg1 visualStyleSetDescription:(id)arg2 andDescendantDescriptions:(id)arg3;

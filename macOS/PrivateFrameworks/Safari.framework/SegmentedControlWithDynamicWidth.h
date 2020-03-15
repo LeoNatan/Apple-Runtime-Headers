@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSIndexSet *_indexesOfSegmentsWithDynamicWidths;
 }
 
-@property(copy, nonatomic) NSIndexSet *indexesOfSegmentsWithDynamicWidths; // @synthesize indexesOfSegmentsWithDynamicWidths=_indexesOfSegmentsWithDynamicWidths;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSIndexSet *indexesOfSegmentsWithDynamicWidths; // @synthesize indexesOfSegmentsWithDynamicWidths=_indexesOfSegmentsWithDynamicWidths;
 - (void)_updateSegmentWidths;
 - (double)_endCapWidth;
 - (void)setFrameSize:(struct CGSize)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (long long)_matchLocationForString:(id)arg1 url:(id)arg2 title:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)userVisibleURLString;
 - (id)originalURLString;
 - (id)initWithUserTypedString:(id)arg1 url:(id)arg2 title:(id)arg3 forQueryID:(long long)arg4;

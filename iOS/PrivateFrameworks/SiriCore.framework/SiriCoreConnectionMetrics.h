@@ -54,6 +54,7 @@
     NSNumber *_simSubscriptions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *simSubscriptions; // @synthesize simSubscriptions=_simSubscriptions;
 @property(copy, nonatomic) NSString *tlsVersion; // @synthesize tlsVersion=_tlsVersion;
 @property(copy, nonatomic) NSNumber *idsLastSocketOpenError; // @synthesize idsLastSocketOpenError=_idsLastSocketOpenError;
@@ -96,7 +97,6 @@
 @property(copy, nonatomic) NSNumber *attemptCount; // @synthesize attemptCount=_attemptCount;
 @property(copy, nonatomic) NSNumber *timeUntilFirstByteRead; // @synthesize timeUntilFirstByteRead=_timeUntilFirstByteRead;
 @property(copy, nonatomic) NSNumber *timeUntilOpen; // @synthesize timeUntilOpen=_timeUntilOpen;
-- (void).cxx_destruct;
 - (id)getConnectionMetricsDescription;
 - (void)setConnectionMetricsForIDS:(double)arg1 messageDelay:(double)arg2 openErrorCode:(unsigned long long)arg3;
 - (void)setConnectionMetricsFromNWConnectionForPOP:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

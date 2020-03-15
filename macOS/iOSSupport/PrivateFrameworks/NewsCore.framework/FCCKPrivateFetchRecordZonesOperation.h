@@ -15,10 +15,10 @@
     NSDictionary *_resultRecordZonesByZoneID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *resultRecordZonesByZoneID; // @synthesize resultRecordZonesByZoneID=_resultRecordZonesByZoneID;
 @property(copy, nonatomic) CDUnknownBlockType fetchRecordZonesCompletionBlock; // @synthesize fetchRecordZonesCompletionBlock=_fetchRecordZonesCompletionBlock;
 @property(copy, nonatomic) NSArray *recordZoneIDs; // @synthesize recordZoneIDs=_recordZoneIDs;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

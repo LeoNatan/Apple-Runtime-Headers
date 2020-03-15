@@ -31,8 +31,8 @@
 + (id)_buildWithBinaryValue:(id)arg1 error:(id *)arg2;
 + (id)buildWithBinaryValue:(id)arg1 updateTime:(id)arg2 error:(id *)arg3;
 + (id)uuid;
-@property(readonly, nonatomic) NSDate *updateTime; // @synthesize updateTime=_updateTime;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *updateTime; // @synthesize updateTime=_updateTime;
 - (void)unitTest_setUpdateTime:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)getBinaryValueWithError:(id *)arg1;

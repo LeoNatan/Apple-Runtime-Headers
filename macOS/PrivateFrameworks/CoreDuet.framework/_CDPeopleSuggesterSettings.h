@@ -30,6 +30,7 @@
 }
 
 + (id)defaultSettings;
+- (void).cxx_destruct;
 @property(retain) NSSet *ignoreContactIdentifiers; // @synthesize ignoreContactIdentifiers=_ignoreContactIdentifiers;
 @property BOOL inferActiveInteractions; // @synthesize inferActiveInteractions=_inferActiveInteractions;
 @property BOOL useTitleToContrainKeywords; // @synthesize useTitleToContrainKeywords=_useTitleToContrainKeywords;
@@ -45,7 +46,6 @@
 @property(retain) NSSet *constrainBundleIds; // @synthesize constrainBundleIds=_constrainBundleIds;
 @property(retain) NSSet *constrainMechanisms; // @synthesize constrainMechanisms=_constrainMechanisms;
 @property unsigned long long maxNumberOfPeopleSuggested; // @synthesize maxNumberOfPeopleSuggested=_maxNumberOfPeopleSuggested;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

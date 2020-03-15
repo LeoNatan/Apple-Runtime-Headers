@@ -17,9 +17,9 @@
 }
 
 + (id)inputMethodWithAttachedKeyboard:(id)arg1 candidates:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *attachedTextDocumentWasShowingWithMarking; // @synthesize attachedTextDocumentWasShowingWithMarking=_attachedTextDocumentWasShowingWithMarking;
 @property(readonly, nonatomic) IMKCandidateList *candidateList; // @synthesize candidateList=_candidateList;
-- (void).cxx_destruct;
 - (void)reflectCandidatesInTouchBar;
 - (void)candidateMenuDidFinishInteracting:(id)arg1;
 - (void)candidateMenu:(id)arg1 didSelectCandidate:(id)arg2;

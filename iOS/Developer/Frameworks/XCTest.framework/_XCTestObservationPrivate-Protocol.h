@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <XCTest/NSObject-Protocol.h>
+#import <XCTest/XCTestObservation-Protocol.h>
 
 @class NSArray, NSNumber, NSString, XCActivityRecord, XCTestCase, XCTestRun;
 
-@protocol _XCTestObservationPrivate <NSObject>
+@protocol _XCTestObservationPrivate <XCTestObservation>
 
 @optional
 - (void)_testCase:(XCTestCase *)arg1 didFinishActivity:(XCActivityRecord *)arg2;
 - (void)_testCase:(XCTestCase *)arg1 willStartActivity:(XCActivityRecord *)arg2;
 - (void)_testCase:(XCTestRun *)arg1 didMeasureValues:(NSArray *)arg2 forPerformanceMetricID:(NSString *)arg3 name:(NSString *)arg4 unitsOfMeasurement:(NSString *)arg5 baselineName:(NSString *)arg6 baselineAverage:(NSNumber *)arg7 maxPercentRegression:(NSNumber *)arg8 maxPercentRelativeStandardDeviation:(NSNumber *)arg9 maxRegression:(NSNumber *)arg10 maxStandardDeviation:(NSNumber *)arg11 file:(NSString *)arg12 line:(unsigned long long)arg13;
+- (void)testCase:(XCTestCase *)arg1 wasSkippedWithDescription:(NSString *)arg2 inFile:(NSString *)arg3 atLine:(unsigned long long)arg4;
 @end
 

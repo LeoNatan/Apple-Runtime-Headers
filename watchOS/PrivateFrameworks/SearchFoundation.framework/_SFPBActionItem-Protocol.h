@@ -10,6 +10,7 @@
 
 @protocol _SFPBActionItem <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
+@property(copy, nonatomic) NSString *universalLibraryID;
 @property(nonatomic) int mediaEntityType;
 @property(copy, nonatomic) NSString *persistentID;
 @property(retain, nonatomic) _SFPBURL *messageURL;

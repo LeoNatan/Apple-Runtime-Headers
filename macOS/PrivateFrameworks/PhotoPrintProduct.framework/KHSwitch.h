@@ -17,9 +17,9 @@
     NSColor *_thumbTintColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
 @property(retain, nonatomic) NSColor *titleColor; // @synthesize titleColor=_titleColor;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
 @property(nonatomic, getter=isOn) BOOL on;
 @property(copy, nonatomic) NSString *title;

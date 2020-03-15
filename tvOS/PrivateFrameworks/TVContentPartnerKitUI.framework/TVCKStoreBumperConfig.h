@@ -17,12 +17,12 @@
     double _textDwellTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double textDwellTime; // @synthesize textDwellTime=_textDwellTime;
 @property(retain, nonatomic) NSString *logoURLTemplateString; // @synthesize logoURLTemplateString=_logoURLTemplateString;
 @property(retain, nonatomic) NSString *appleIDFormatString; // @synthesize appleIDFormatString=_appleIDFormatString;
 @property(retain, nonatomic) NSString *warningTextFormatString; // @synthesize warningTextFormatString=_warningTextFormatString;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

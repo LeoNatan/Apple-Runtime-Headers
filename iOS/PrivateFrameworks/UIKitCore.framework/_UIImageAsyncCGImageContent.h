@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     _UICGImageDecompressor *_decompressor;
 }
 
+- (void).cxx_destruct;
 @property _Bool finishedDecompressing; // @synthesize finishedDecompressing=_finishedDecompressing;
 @property(retain, setter=_setDecompressor:) _UICGImageDecompressor *_decompressor; // @synthesize _decompressor;
-- (void).cxx_destruct;
 @property(readonly) long long orientation;
 - (struct CGImage *)CGImage;
 - (_Bool)isDecompressing;

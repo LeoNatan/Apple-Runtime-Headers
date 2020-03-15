@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _insets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double textBaselineDescender; // @synthesize textBaselineDescender=_textBaselineDescender;
 @property(nonatomic) double textBaselineHeight; // @synthesize textBaselineHeight=_textBaselineHeight;
 @property(nonatomic) struct UIEdgeInsets insets; // @synthesize insets=_insets;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSDictionary *defaultFontAttributes; // @synthesize defaultFontAttributes=_defaultFontAttributes;
 @property(retain, nonatomic) NSString *textStyle; // @synthesize textStyle=_textStyle;
-- (void).cxx_destruct;
 
 @end
 

@@ -9,6 +9,7 @@
 @class CPManeuver, CPTravelEstimates, NSArray, NSString;
 
 @protocol CPNavigationSessionManaging <NSObject>
+- (void)updateTripTravelEstimates:(CPTravelEstimates *)arg1;
 - (void)updateTravelEstimates:(CPTravelEstimates *)arg1 forManeuver:(CPManeuver *)arg2;
 - (void)showManeuvers:(NSArray *)arg1 usingDisplayStyles:(NSArray *)arg2;
 - (void)cancelTrip;

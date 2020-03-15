@@ -15,11 +15,13 @@
     id <NMUArtworkLoaderDataSource> _dataSource;
 }
 
-@property(nonatomic) __weak id <NMUArtworkLoaderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NMUArtworkLoaderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id)_prerenderedPlaceholderWithName:(id)arg1 format:(id)arg2 inBundle:(id)arg3;
 - (void)_configureArtworkCatalog:(id)arg1 withFormat:(id)arg2 isPrefetching:(_Bool)arg3;
+- (void)setImageView:(id)arg1 artworkCatalog:(id)arg2 placeholderName:(id)arg3 placeholderBundle:(id)arg4 placeholderUsesArtworkStyle:(_Bool)arg5;
 - (void)setImageView:(id)arg1 artworkCatalog:(id)arg2 placeholderName:(id)arg3 placeholderBundle:(id)arg4;
+- (void)setImageView:(id)arg1 artworkCatalog:(id)arg2 placeholderName:(id)arg3 placeholderUsesArtworkStyle:(_Bool)arg4;
 - (void)setImageView:(id)arg1 artworkCatalog:(id)arg2 placeholderName:(id)arg3;
 - (void)cancelPrefetchingForItemsAtIndexPaths:(id)arg1;
 - (void)prefetchItemsAtIndexPaths:(id)arg1;

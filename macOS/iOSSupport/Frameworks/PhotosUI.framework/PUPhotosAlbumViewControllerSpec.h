@@ -9,17 +9,18 @@
 __attribute__((visibility("hidden")))
 @interface PUPhotosAlbumViewControllerSpec : PULegacyViewControllerSpec
 {
+    BOOL _shouldUseAspectItems;
     long long _fullMomentsSectionHeaderStyle;
 }
 
 + (id)padSpec;
 + (id)phoneSpec;
 @property(readonly, nonatomic) long long fullMomentsSectionHeaderStyle; // @synthesize fullMomentsSectionHeaderStyle=_fullMomentsSectionHeaderStyle;
+@property(readonly, nonatomic) BOOL shouldUseAspectItems; // @synthesize shouldUseAspectItems=_shouldUseAspectItems;
 @property(readonly, nonatomic) unsigned long long fullMomentsSectionHeaderBackgroundStyle;
 @property(readonly, nonatomic) struct UIEdgeInsets fullMomentsLevelSectionHeaderHighlightInset;
 - (void)configureCollectionViewGridLayout:(id)arg1;
 @property(readonly, nonatomic) double contentCornerRadius;
-@property(readonly, nonatomic) BOOL shouldUseAspectItems;
 - (long long)cellFillMode;
 - (id)gridSpec;
 

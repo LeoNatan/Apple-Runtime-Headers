@@ -62,6 +62,8 @@ __attribute__((visibility("hidden")))
     struct CGRect _bounds;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) long long numPages; // @synthesize numPages=_numPages;
 @property(nonatomic) _Bool allowWetComposite; // @synthesize allowWetComposite=_allowWetComposite;
 @property(nonatomic) _Bool drawingEnabled; // @synthesize drawingEnabled=_drawingEnabled;
@@ -73,9 +75,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double lineWidthScale; // @synthesize lineWidthScale=_lineWidthScale;
 @property(retain, nonatomic) UIColor *inkColor; // @synthesize inkColor=_inkColor;
 @property(nonatomic) __weak id <DKOpenGLRendererDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)snapshot;
+- (id)snapshotImage;
 - (void)updateVertexControllerWithData:(vector_b8c3c0c5)arg1 range:(struct _NSRange)arg2 allowWet:(_Bool)arg3;
 - (void)updateVertexControllerWithDataRange:(struct _NSRange)arg1 allowWet:(_Bool)arg2;
 - (void)didBeginNewStroke;

@@ -17,9 +17,9 @@
 }
 
 + (id)valueRangeWithMinValue:(id)arg1 maxValue:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) id maxValue; // @synthesize maxValue=_maxValue;
 @property(copy, nonatomic) id minValue; // @synthesize minValue=_minValue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate;
 @property(readonly, nonatomic) NSDate *startDate;
 - (id)description;

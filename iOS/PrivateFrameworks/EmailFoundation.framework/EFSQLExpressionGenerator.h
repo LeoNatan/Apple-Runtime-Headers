@@ -19,13 +19,13 @@
 }
 
 + (id)tableFromPreviousTable:(id)arg1 propertyMapper:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EFSQLExpressionGenerator *previousExpressionGenerator; // @synthesize previousExpressionGenerator=_previousExpressionGenerator;
 @property(copy, nonatomic) NSString *alias; // @synthesize alias=_alias;
 @property(nonatomic) _Bool includeSourceColumn; // @synthesize includeSourceColumn=_includeSourceColumn;
 @property(readonly, nonatomic) NSArray *additionalSelectColumns; // @synthesize additionalSelectColumns=_additionalSelectColumns;
 @property(readonly, nonatomic) NSArray *whereExpression; // @synthesize whereExpression=_whereExpression;
 @property(readonly, nonatomic) EFSQLGeneratorTableRelationship *tableRelationship; // @synthesize tableRelationship=_tableRelationship;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqualToEFSQLExpressionGenerator:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

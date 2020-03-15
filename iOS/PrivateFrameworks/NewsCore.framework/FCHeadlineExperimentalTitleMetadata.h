@@ -16,11 +16,11 @@
     NSString *_chosenTitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *chosenTitle; // @synthesize chosenTitle=_chosenTitle;
 @property(readonly, nonatomic) int treatmentState; // @synthesize treatmentState=_treatmentState;
 @property(readonly, nonatomic) long long arrayIndexUsedforTitle; // @synthesize arrayIndexUsedforTitle=_arrayIndexUsedforTitle;
 @property(readonly, nonatomic) _Bool isTitleExperimental; // @synthesize isTitleExperimental=_isTitleExperimental;
-- (void).cxx_destruct;
 - (id)initWithChosenTitle:(id)arg1 isTitleExperimental:(_Bool)arg2 arrayIndexUsedforTitle:(long long)arg3 treatmentState:(int)arg4;
 
 @end

@@ -17,9 +17,9 @@
 }
 
 + (struct CGImage *)cgImageFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) NSData *originalPhotoData; // @synthesize originalPhotoData=_originalPhotoData;
-- (void).cxx_destruct;
 - (struct CGImage *)renderRoundedRectImageForSize:(struct CGSize)arg1 scale:(float)arg2;
 - (struct CGImage *)renderCircularImageForSize:(struct CGSize)arg1 scale:(float)arg2;
 - (struct CGImage *)_cnui_roundedRectImageForSize:(struct CGSize)arg1 scale:(float)arg2;

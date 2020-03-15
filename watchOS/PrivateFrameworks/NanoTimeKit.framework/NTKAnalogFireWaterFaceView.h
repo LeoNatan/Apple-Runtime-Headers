@@ -15,10 +15,10 @@
     NSDictionary *_dataSources;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dataSources; // @synthesize dataSources=_dataSources;
 @property(nonatomic) unsigned int currentDialShape; // @synthesize currentDialShape=_currentDialShape;
 @property(nonatomic) unsigned int currentColor; // @synthesize currentColor=_currentColor;
-- (void).cxx_destruct;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (_Bool)_wantsConstantSpeedZoom;

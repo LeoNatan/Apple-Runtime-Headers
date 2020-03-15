@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     WKWebView<UIScrollViewDelegate> *_internalDelegate;
 }
 
-@property(nonatomic) WKWebView<UIScrollViewDelegate> *internalDelegate; // @synthesize internalDelegate=_internalDelegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) WKWebView<UIScrollViewDelegate> *internalDelegate; // @synthesize internalDelegate=_internalDelegate;
 - (struct CGPoint)_puic_contentOffsetForCrownInputSequencerOffset:(double)arg1;
 - (void)_configureDigitalCrownScrolling;
 - (void)addGestureRecognizer:(id)arg1;
@@ -43,6 +43,8 @@ __attribute__((visibility("hidden")))
 - (float)_rubberBandOffsetForOffset:(float)arg1 maxOffset:(float)arg2 minOffset:(float)arg3 range:(float)arg4 outside:(_Bool *)arg5;
 - (void)dealloc;
 - (void)_updateDelegate;
+- (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

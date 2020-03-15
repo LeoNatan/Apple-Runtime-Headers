@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     WKDataListSuggestionsControl *_control;
 }
 
-@property(nonatomic) __weak WKDataListSuggestionsControl *control; // @synthesize control=_control;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WKDataListSuggestionsControl *control; // @synthesize control=_control;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

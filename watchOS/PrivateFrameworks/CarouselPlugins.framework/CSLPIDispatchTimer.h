@@ -23,8 +23,8 @@
 }
 
 + (id)scheduledTimerWithFireInterval:(double)arg1 leewayInterval:(double)arg2 serviceIdentifier:(id)arg3 queue:(id)arg4 handler:(CDUnknownBlockType)arg5;
-@property(nonatomic, getter=isScheduled) _Bool scheduled; // @synthesize scheduled=_scheduled;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isScheduled) _Bool scheduled; // @synthesize scheduled=_scheduled;
 - (void)_fireTimer;
 - (void)cancel;
 - (void)scheduleWithFireTime:(unsigned long long)arg1;

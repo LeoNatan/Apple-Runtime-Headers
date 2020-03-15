@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSString, PKMerchant, PKPaymentPass;
+@class NSArray, NSDate, NSDictionary, NSString, PKInstallmentPlan, PKMerchant, PKPaymentPass;
 @protocol OS_dispatch_queue, PKDashboardTransactionFetcherDelegate, PKPaymentDataProvider;
 
 @interface PKDashboardTransactionFetcher : NSObject <PKPaymentDataProviderDelegate>
@@ -26,6 +26,7 @@
     NSString *_counterpartHandle;
     int _merchantCategory;
     int _transactionType;
+    PKInstallmentPlan *_installmentPlan;
     unsigned int _limit;
     NSString *_cashbackPassUniqueID;
     PKPaymentPass *_cashbackPass;
@@ -38,11 +39,11 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic) __weak id <PKDashboardTransactionFetcherDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(_Bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
@@ -61,6 +62,7 @@
 - (void)reloadTransactionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setLimit:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (void)_commonSetup;
+- (id)initWithInstallmentPlan:(id)arg1 paymentPass:(id)arg2 paymentDataProvider:(id)arg3;
 - (id)initWithTransactionType:(int)arg1 paymentPass:(id)arg2 paymentDataProvider:(id)arg3;
 - (id)initWithMerchantCategory:(int)arg1 paymentPass:(id)arg2 paymentDataProvider:(id)arg3;
 - (id)initWithCounterpartHandle:(id)arg1 paymentPass:(id)arg2 paymentDataProvider:(id)arg3;

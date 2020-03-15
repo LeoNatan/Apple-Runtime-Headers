@@ -24,12 +24,12 @@
 + (id)entryForNumbers;
 + (id)entryWithTitle:(id)arg1;
 + (id)entryWithType:(long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *shortTitle; // @synthesize shortTitle=_shortTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *effectiveShortTitle;
 - (id)description;
 

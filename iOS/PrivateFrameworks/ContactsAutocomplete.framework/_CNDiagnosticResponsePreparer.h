@@ -13,8 +13,8 @@
     id <CNFuture> _logFuture;
 }
 
-@property(readonly) id <CNFuture> logFuture; // @synthesize logFuture=_logFuture;
 - (void).cxx_destruct;
+@property(readonly) id <CNFuture> logFuture; // @synthesize logFuture=_logFuture;
 - (id)prepareResults:(id)arg1;
 - (id)initWithResponsePreparer:(id)arg1 delegate:(id)arg2 log:(CDUnknownBlockType)arg3;
 

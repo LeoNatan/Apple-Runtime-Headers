@@ -21,6 +21,7 @@
     HUAnimatableFilterImageView *_coloredBaseView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUAnimatableFilterImageView *coloredBaseView; // @synthesize coloredBaseView=_coloredBaseView;
 @property(retain, nonatomic) HUAnimatableFilterImageView *vibrantBaseView; // @synthesize vibrantBaseView=_vibrantBaseView;
 @property(retain, nonatomic) HUAnimatableFilterImageView *coloredBulbView; // @synthesize coloredBulbView=_coloredBulbView;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *lastUsedIconIdentifier; // @synthesize lastUsedIconIdentifier=_lastUsedIconIdentifier;
 @property(nonatomic, getter=isOn) _Bool on; // @synthesize on=_on;
 @property(nonatomic) double brightness; // @synthesize brightness=_brightness;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)setIconSize:(unsigned long long)arg1;

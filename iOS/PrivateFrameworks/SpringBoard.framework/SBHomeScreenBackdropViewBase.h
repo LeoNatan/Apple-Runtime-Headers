@@ -17,8 +17,8 @@
     id <SBHomeScreenBackdropViewBaseDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBHomeScreenBackdropViewBaseDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBHomeScreenBackdropViewBaseDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)backdropBlurSettings;
 - (_Bool)requiresLiveBackdropView;
 - (_Bool)requiresBackdropView;

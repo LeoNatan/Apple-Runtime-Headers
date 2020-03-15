@@ -15,8 +15,8 @@
     PXMemoriesDataSourceState *__state;
 }
 
-@property(readonly, nonatomic) PXMemoriesDataSourceState *_state; // @synthesize _state=__state;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXMemoriesDataSourceState *_state; // @synthesize _state=__state;
 - (struct PXSimpleIndexPath)indexPathForObjectReference:(id)arg1;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (long long)numberOfItemsInSection:(long long)arg1;

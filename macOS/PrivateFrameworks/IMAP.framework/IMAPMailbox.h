@@ -35,6 +35,7 @@
 + (BOOL)automaticallyNotifiesObserversOfQuotaUsage;
 + (BOOL)automaticallyNotifiesObserversOfAllegedHighestModificationSequence;
 + (BOOL)automaticallyNotifiesObserversOfExists;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *unprocessedResponses; // @synthesize unprocessedResponses=_unprocessedResponses;
 @property BOOL supportsModificationSequences; // @synthesize supportsModificationSequences=_supportsModificationSequences;
 @property unsigned int unseenCount; // @synthesize unseenCount=_unseenCount;
@@ -45,7 +46,6 @@
 @property BOOL readOnly; // @synthesize readOnly=_readOnly;
 @property(copy) NSString *referenceName; // @synthesize referenceName=_referenceName;
 @property(retain) id <MCMailbox> mailbox; // @synthesize mailbox=_mailbox;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateWithStatusEntries:(id)arg1;
 @property(nonatomic) unsigned int permanentFlags;

@@ -18,13 +18,13 @@
     struct _opaque_pthread_mutex_t _lock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _opaque_pthread_mutex_t lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) __weak CSLApplicationInfo *appInfo; // @synthesize appInfo=_appInfo;
 @property(nonatomic) _Bool crashedDuringLaunch; // @synthesize crashedDuringLaunch=_crashedDuringLaunch;
 @property(nonatomic) unsigned int exitCount; // @synthesize exitCount=_exitCount;
 @property(retain, nonatomic) NSDate *lastEventDate; // @synthesize lastEventDate=_lastEventDate;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic, getter=isNative) _Bool native;
 - (void)_withLock:(CDUnknownBlockType)arg1;

@@ -16,9 +16,9 @@
 }
 
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *memberQueueCache; // @synthesize memberQueueCache=_memberQueueCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
-- (void).cxx_destruct;
 - (void)memberQueueRereadCache;
 - (void)rereadCache;
 - (_Bool)isURLManaged:(id)arg1;

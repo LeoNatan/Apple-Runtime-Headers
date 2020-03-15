@@ -34,9 +34,11 @@
 
 + (void)initialize;
 + (id)stringFromGraphServiceState:(unsigned long long)arg1;
++ (id)facesAndScenesProcessingProgressPercentageDataForPhotoLibrary:(id)arg1;
 + (long long)applicationDataFolderIdentifier;
 + (short)workerType;
 + (void)configureXPCConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *graphWorkerWarmedUpTransaction; // @synthesize graphWorkerWarmedUpTransaction=_graphWorkerWarmedUpTransaction;
 @property(nonatomic) long long pendingRequestReferenceCount; // @synthesize pendingRequestReferenceCount=_pendingRequestReferenceCount;
 @property(retain, nonatomic) NSHashTable *pendingRequestReferences; // @synthesize pendingRequestReferences=_pendingRequestReferences;
@@ -46,12 +48,12 @@
 @property(retain, nonatomic) NSMutableDictionary *pendingGraphReadyCallbacks; // @synthesize pendingGraphReadyCallbacks=_pendingGraphReadyCallbacks;
 @property(retain, nonatomic) PGManager *graphManager; // @synthesize graphManager=_graphManager;
 @property(retain, nonatomic) NSProgress *currentGraphRebuildProgress; // @synthesize currentGraphRebuildProgress=_currentGraphRebuildProgress;
-- (void).cxx_destruct;
 - (void)graphUpdateMadeProgress:(double)arg1;
 - (void)graphUpdateIsConsistent;
 - (void)graphUpdateDidStop;
 - (_Bool)wantsGraphUpdateNotifications;
 - (_Bool)wantsLiveGraphUpdates;
+- (void)requestRunPFLWithAttachments:(id)arg1 recipeUserInfo:(id)arg2 context:(id)arg3 resultBlock:(CDUnknownBlockType)arg4;
 - (void)requestTextFeaturesForMomentLocalIdentifiers:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestEnrichmentWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestAssetRevGeocodingForAssetLocalIdentifiers:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
@@ -174,6 +176,10 @@
 - (id)pendingRequestReferenceForLabel:(id)arg1;
 @property(nonatomic) unsigned long long state;
 - (unsigned long long)synchronousOffQueueState;
+- (void)requestGenerateQuestionsWithOptions:(id)arg1 context:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)requestLastQuestionGenerationJobDateWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)requestGenerateQuestionsWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (id)questionGenerationJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reportMetricsWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)reportMetricsWithOptions:(id)arg1 context:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)metricReportingJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -202,9 +208,11 @@
 - (void)markLastBackgroundGraphConsistencyUpdateJobDate;
 - (void)markLastBackgroundGraphRebuildJobDate;
 - (id)nextAdditionalJobWithScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
-- (_Bool)didExceedtimeInterval:(double)arg1 forBackgroundJobUserDefaultsKey:(id)arg2;
+- (_Bool)didExceedTimeInterval:(double)arg1 forBackgroundJobUserDefaultsKey:(id)arg2;
 - (_Bool)hasAdditionalJobForDataModelEnrichmentInScenario:(unsigned long long)arg1;
 - (_Bool)hasAdditionalJobForGraphRebuildInScenario:(unsigned long long)arg1;
+- (_Bool)photosChallengeIsEnabled;
+- (_Bool)hasAdditionalJobForQuestionGenerationInScenario:(unsigned long long)arg1;
 - (_Bool)hasAdditionalJobForMetricsReportingInScenario:(unsigned long long)arg1;
 - (_Bool)hasAdditionalJobForBackgroundMemoryGenerationInScenario:(unsigned long long)arg1;
 - (_Bool)hasAdditionalJobsForScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;

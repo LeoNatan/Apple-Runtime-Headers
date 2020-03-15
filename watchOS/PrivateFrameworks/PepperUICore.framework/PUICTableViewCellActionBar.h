@@ -22,13 +22,13 @@
     unsigned int _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(readonly, nonatomic) float currentOffset; // @synthesize currentOffset=_currentOffset;
 @property(nonatomic) __weak id <PUICTableViewCellActionBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int direction; // @synthesize direction=_direction;
 @property _Bool fullyTransparentWhenHidden; // @synthesize fullyTransparentWhenHidden;
-- (void).cxx_destruct;
 - (void)_buttonHit:(id)arg1;
 - (void)moveToOffset:(float)arg1 animated:(_Bool)arg2 buttonsHidden:(_Bool)arg3 initialVelocity:(float)arg4;
 - (void)animateContentsForDestructiveActionForCell:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

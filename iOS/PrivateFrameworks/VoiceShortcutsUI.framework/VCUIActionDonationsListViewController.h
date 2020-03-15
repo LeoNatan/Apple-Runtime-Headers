@@ -21,13 +21,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VCUIActionDonationCell *prototypeCell; // @synthesize prototypeCell=_prototypeCell;
 @property(readonly, nonatomic) UITableView *activityTableView; // @synthesize activityTableView=_activityTableView;
 @property(readonly, nonatomic) VCUIUserActivityDonationDataSource *activityDataSource; // @synthesize activityDataSource=_activityDataSource;
 @property(readonly, nonatomic) UITableView *interactionTableView; // @synthesize interactionTableView=_interactionTableView;
 @property(readonly, nonatomic) VCUIInteractionDonationDataSource *interactionDataSource; // @synthesize interactionDataSource=_interactionDataSource;
 @property(readonly, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)segmentedControlChanged:(id)arg1;

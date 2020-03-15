@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) CNCache *cachedAccounts; // @synthesize cachedAccounts=_cachedAccounts;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(nonatomic) __weak CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNContainer *primaryiCloudContainer; // @synthesize primaryiCloudContainer=_primaryiCloudContainer;
-- (void).cxx_destruct;
 - (void)resetPrimaryiCloudContainer;
 - (void)resetAccountCache;
 - (id)cnAccountForContainer:(id)arg1;

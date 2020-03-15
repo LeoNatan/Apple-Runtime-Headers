@@ -23,13 +23,13 @@
 + (id)transientCollectionListWithCollectionsRelatedToPersons:(id)arg1 relationType:(unsigned long long)arg2 options:(id)arg3;
 + (id)transientCollectionListWithCollectionsRelatedToObject:(id)arg1 relationType:(unsigned long long)arg2 options:(id)arg3;
 + (id)_relatedCollectionsFromInfos:(id)arg1 relatedObject:(id)arg2 photoLibrary:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSArray *momentLocalIdentifiers; // @synthesize momentLocalIdentifiers=_momentLocalIdentifiers;
 @property(readonly, copy, nonatomic) NSString *highlightLocalIdentifier; // @synthesize highlightLocalIdentifier=_highlightLocalIdentifier;
 @property(readonly, nonatomic) PHObject *relatedObject; // @synthesize relatedObject=_relatedObject;
 @property(readonly, nonatomic) NSArray *debugInfo; // @synthesize debugInfo=_debugInfo;
 @property(readonly, nonatomic) unsigned long long relationType; // @synthesize relationType=_relationType;
-- (void).cxx_destruct;
 - (_Bool)canPerformEditOperation:(long long)arg1;
 - (long long)titleCategory;
 - (id)localizedSubtitle;

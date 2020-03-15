@@ -6,17 +6,20 @@
 
 #import <UIKit/UICollectionViewController.h>
 
+#import <HeadBoardUI/FBSDisplayObserving-Protocol.h>
 #import <HeadBoardUI/HBUITopShelfParadeContentCoordinatorDelegate-Protocol.h>
 #import <HeadBoardUI/TVCollectionViewDelegateFullScreenLayout-Protocol.h>
 #import <HeadBoardUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class HBUITopShelfParadePageControlsView, NSIndexPath, NSMapTable, NSString, NSTimer, UITapGestureRecognizer, UIView, __UIDiffableDataSource;
+@class FBSDisplayMonitor, HBUITopShelfParadePageControlsView, NSIndexPath, NSMapTable, NSString, NSTimer, UITapGestureRecognizer, UIView, __UIDiffableDataSource;
 @protocol HBUITopShelfParadeContent, HBUITopShelfParadeViewControllerDelegate;
 
-@interface HBUITopShelfParadeViewController : UICollectionViewController <TVCollectionViewDelegateFullScreenLayout, UIGestureRecognizerDelegate, HBUITopShelfParadeContentCoordinatorDelegate>
+@interface HBUITopShelfParadeViewController : UICollectionViewController <TVCollectionViewDelegateFullScreenLayout, UIGestureRecognizerDelegate, HBUITopShelfParadeContentCoordinatorDelegate, FBSDisplayObserving>
 {
     _Bool _contentOccluded;
     _Bool _didFinishFirstLoop;
+    _Bool _mainDisplayConnected;
+    _Bool _hasInitialMainDisplayState;
     id <HBUITopShelfParadeContent> _paradeContent;
     id <HBUITopShelfParadeViewControllerDelegate> _delegate;
     long long _contentStyle;
@@ -32,8 +35,13 @@
     NSTimer *_autoAdvanceTimer;
     UIView *_loopScrollSnapshotView;
     NSIndexPath *_loopScrollSnapshotIndexPath;
+    FBSDisplayMonitor *_displayMonitor;
 }
 
+- (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasInitialMainDisplayState; // @synthesize hasInitialMainDisplayState=_hasInitialMainDisplayState;
+@property(readonly, nonatomic) _Bool mainDisplayConnected; // @synthesize mainDisplayConnected=_mainDisplayConnected;
+@property(readonly, nonatomic) FBSDisplayMonitor *displayMonitor; // @synthesize displayMonitor=_displayMonitor;
 @property(readonly, nonatomic) NSIndexPath *loopScrollSnapshotIndexPath; // @synthesize loopScrollSnapshotIndexPath=_loopScrollSnapshotIndexPath;
 @property(readonly, nonatomic) UIView *loopScrollSnapshotView; // @synthesize loopScrollSnapshotView=_loopScrollSnapshotView;
 @property(readonly, nonatomic) NSTimer *autoAdvanceTimer; // @synthesize autoAdvanceTimer=_autoAdvanceTimer;
@@ -51,7 +59,9 @@
 @property(nonatomic) __weak id <HBUITopShelfParadeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isContentOccluded) _Bool contentOccluded; // @synthesize contentOccluded=_contentOccluded;
 @property(retain, nonatomic) id <HBUITopShelfParadeContent> paradeContent; // @synthesize paradeContent=_paradeContent;
-- (void).cxx_destruct;
+- (void)displayMonitor:(id)arg1 willDisconnectIdentity:(id)arg2;
+- (void)displayMonitor:(id)arg1 didUpdateIdentity:(id)arg2 withConfiguration:(id)arg3;
+- (void)displayMonitor:(id)arg1 didConnectIdentity:(id)arg2 withConfiguration:(id)arg3;
 - (void)paradeBackgroundViewControllerDidFinish:(id)arg1;
 - (void)paradeContentViewController:(id)arg1 didSelectAction:(id)arg2 forItem:(id)arg3;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 forTitle:(id)arg2;
 + (struct CGSize)_instanceLayoutSubviews:(id)arg1 forTitle:(id)arg2 inBounds:(struct CGRect)arg3;
 + (id)_newTitleLabel;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

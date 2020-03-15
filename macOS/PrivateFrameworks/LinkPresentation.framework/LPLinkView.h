@@ -79,6 +79,7 @@
     struct NSEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) struct NSEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(nonatomic) __weak id <LPLinkViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -96,7 +97,6 @@
 @property(nonatomic, setter=_setDisableTapGesture:) BOOL _disableTapGesture; // @synthesize _disableTapGesture;
 @property(nonatomic, setter=_setNeedsMessagesTranscriptPushCounterAnimation:) BOOL _needsMessagesTranscriptPushCounterAnimation; // @synthesize _needsMessagesTranscriptPushCounterAnimation;
 @property(nonatomic, setter=_setDisableAnimations:) BOOL _disableAnimations; // @synthesize _disableAnimations;
-- (void).cxx_destruct;
 - (id)accessibilityTitle;
 - (id)accessibilityRole;
 - (struct CGRect)menuItem:(id)arg1 itemFrameForPoint:(struct CGPoint)arg2;
@@ -156,7 +156,8 @@
 - (void)_setupView;
 - (void)setWantsLayer:(BOOL)arg1;
 - (void)_fetchMetadata;
-- (id)_fetchMetadataForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_fetchMetadataForURL:(id)arg1 withSubresources:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_configureWithoutLoadingMetadataFromURLs:(id)arg1;
 - (BOOL)_shouldClipAnimationView;
 - (BOOL)_shouldApplyCornerRadius;
 - (void)_commonInitWithURL:(id)arg1;

@@ -16,11 +16,11 @@
     CDUnknownBlockType _libraryCompressionCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType libraryCompressionCompletionHandler; // @synthesize libraryCompressionCompletionHandler=_libraryCompressionCompletionHandler;
 @property(retain, nonatomic) NSBackgroundActivityScheduler *libraryCompressionActivityScheduler; // @synthesize libraryCompressionActivityScheduler=_libraryCompressionActivityScheduler;
 @property(copy, nonatomic) CDUnknownBlockType mimeSnipActivityCompletionHandler; // @synthesize mimeSnipActivityCompletionHandler=_mimeSnipActivityCompletionHandler;
 @property(retain, nonatomic) NSBackgroundActivityScheduler *mimeSnipActivityScheduler; // @synthesize mimeSnipActivityScheduler=_mimeSnipActivityScheduler;
-- (void).cxx_destruct;
 - (BOOL)_libraryCompressionComplete;
 - (BOOL)_mimeSnipUpgraderComplete;
 - (void)_cleanupMessageXAttrsInAccountDirectories:(id)arg1;

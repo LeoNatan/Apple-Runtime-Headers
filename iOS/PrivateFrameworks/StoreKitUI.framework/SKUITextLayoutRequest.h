@@ -21,6 +21,7 @@
     double _width;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(nonatomic) unsigned char textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
@@ -28,7 +29,6 @@
 @property(nonatomic) long long fontWeight; // @synthesize fontWeight=_fontWeight;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) Class layoutClass;
 - (id)init;

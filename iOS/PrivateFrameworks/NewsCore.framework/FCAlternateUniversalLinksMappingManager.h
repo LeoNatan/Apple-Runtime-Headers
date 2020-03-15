@@ -13,8 +13,8 @@
     FCFetchedValueManager *_updateValueManager;
 }
 
-@property(readonly, nonatomic) FCFetchedValueManager *updateValueManager; // @synthesize updateValueManager=_updateValueManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FCFetchedValueManager *updateValueManager; // @synthesize updateValueManager=_updateValueManager;
 - (void)installMappingFilesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithMappingDirectoryFileURL:(id)arg1 contentContext:(id)arg2;
 - (id)init;

@@ -63,6 +63,7 @@
 
 + (id)cityContainingLocation:(id)arg1 expectedName:(id)arg2 fromCities:(id)arg3;
 + (id)_ISO8601Calendar;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(retain, nonatomic) NSHashTable *cityUpdateObservers; // @synthesize cityUpdateObservers=_cityUpdateObservers;
 @property(retain, nonatomic) WFGeocodeRequest *activeGeocodeRequest; // @synthesize activeGeocodeRequest=_activeGeocodeRequest;
@@ -108,7 +109,6 @@
 @property(nonatomic) _Bool isLocalWeatherCity; // @synthesize isLocalWeatherCity=_isLocalWeatherCity;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *updateTimeString; // @synthesize updateTimeString=_updateTimeString;
-- (void).cxx_destruct;
 - (_Bool)_dataIsValid;
 - (void)updateCityForModel:(id)arg1;
 - (void)_generateLocalizableStrings;

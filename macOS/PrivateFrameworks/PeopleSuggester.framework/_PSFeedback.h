@@ -20,6 +20,7 @@
 }
 
 + (id)feedbackForAction:(id)arg1 delay:(double)arg2 context:(id)arg3 suggestions:(id)arg4 numberOfVisibleSuggestions:(float)arg5 sessionIdentifier:(id)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL dryRun; // @synthesize dryRun=_dryRun;
 @property(readonly, copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly, nonatomic) float numberOfVisibleSuggestions; // @synthesize numberOfVisibleSuggestions=_numberOfVisibleSuggestions;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) _PSPredictionContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
 @property(readonly, nonatomic) _PSFeedbackAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)knowledgeEvent;
 - (id)feedbackPayload;
 @property(readonly, nonatomic) unsigned long long indexOfEngagedSuggestion;

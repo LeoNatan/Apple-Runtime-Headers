@@ -13,7 +13,9 @@
 - (void)_installSocResourcesFromSoc:(id)arg1 toPrimary:(id)arg2 referencedResourceURLs:(id)arg3;
 - (BOOL)_copyResourcesFromSoc:(id)arg1 toPrimary:(id)arg2 error:(id *)arg3;
 - (id)_mapResourcesFromSoc:(id)arg1 toPrimary:(id)arg2 error:(id *)arg3;
+- (id)ctmFetchRequestWithPredicate:(id)arg1;
 - (id)fetchRequestForSortedGroupIDs:(id)arg1;
+- (id)fetchRequestForLibrary;
 - (id)combinePairs:(id)arg1 error:(id *)arg2;
 - (id)firstGroupFromAssets:(id)arg1;
 - (id)groupIDForAsset:(id)arg1;

@@ -16,9 +16,9 @@
     NSMutableDictionary *_objects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *objects; // @synthesize objects=_objects;
 @property(readonly, nonatomic) NFCallbackStore *callbackStore; // @synthesize callbackStore=_callbackStore;
-- (void).cxx_destruct;
 - (id)mergeWithContext:(id)arg1;
 - (id)resolveForKey:(id)arg1;
 - (void)whenUnsafeResolvingWithKey:(id)arg1 scope:(id)arg2 callbackBlock:(CDUnknownBlockType)arg3;

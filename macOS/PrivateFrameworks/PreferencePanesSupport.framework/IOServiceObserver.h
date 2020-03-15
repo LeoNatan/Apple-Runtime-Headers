@@ -18,9 +18,9 @@
 + (id)observerForService:(struct __CFDictionary *)arg1 target:(id)arg2 selector:(SEL)arg3;
 + (void)_closeNotificationPort;
 + (struct IONotificationPort *)_openNotificationPort;
+- (void).cxx_destruct;
 @property(readonly) SEL selector; // @synthesize selector=mSelector;
 @property(readonly) id target; // @synthesize target=mTarget;
-- (void).cxx_destruct;
 - (void)armIterators;
 - (unsigned int)terminateIterator;
 - (unsigned int)connectIterator;

@@ -22,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) BOOL cachingEnabled; // @synthesize cachingEnabled=_cachingEnabled;
 @property(nonatomic) double height; // @synthesize height=_height;
@@ -29,7 +30,6 @@
 @property(nonatomic) double pitch; // @synthesize pitch=_pitch;
 @property(nonatomic) double altitude; // @synthesize altitude=_altitude;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *key;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

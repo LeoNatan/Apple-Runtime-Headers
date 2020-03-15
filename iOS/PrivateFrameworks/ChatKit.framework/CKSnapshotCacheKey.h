@@ -18,10 +18,10 @@
 }
 
 + (id)keyWithIdentifier:(id)arg1 interfaceStyle:(long long)arg2 bounds:(struct CGRect)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(nonatomic) long long interfaceStyle; // @synthesize interfaceStyle=_interfaceStyle;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *stringValue;
 - (id)copyWithZone:(struct _NSZone *)arg1;

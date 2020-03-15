@@ -25,6 +25,7 @@
     NSArray *_areasOfInterest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *areasOfInterest; // @synthesize areasOfInterest=_areasOfInterest;
 @property(retain, nonatomic) NSString *ocean; // @synthesize ocean=_ocean;
 @property(retain, nonatomic) NSString *inlandWater; // @synthesize inlandWater=_inlandWater;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *subLocality; // @synthesize subLocality=_subLocality;
 @property(retain, nonatomic) NSString *thoroughfare; // @synthesize thoroughfare=_thoroughfare;
 @property(retain, nonatomic) NSString *subThoroughfare; // @synthesize subThoroughfare=_subThoroughfare;
-- (void).cxx_destruct;
 
 @end
 

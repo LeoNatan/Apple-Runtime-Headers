@@ -16,9 +16,9 @@
     PXMemoriesFeedUIViewController *_memoriesFeedController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXMemoriesSpecManager *specManager; // @synthesize specManager=_specManager;
 @property(retain, nonatomic) PXMemoriesFeedUIViewController *memoriesFeedController; // @synthesize memoriesFeedController=_memoriesFeedController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIScrollView *ppt_scrollView;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_specDidChange:(id)arg1;

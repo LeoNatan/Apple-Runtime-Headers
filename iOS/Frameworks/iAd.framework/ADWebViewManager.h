@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) ADWebView *preallocatedWebView; // @synthesize preallocatedWebView=_preallocatedWebView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ADWebView *preallocatedWebView; // @synthesize preallocatedWebView=_preallocatedWebView;
 - (void)preallocateWebViewWithBackgroundPriority;
 - (id)creativeViewForVideo;
 - (id)creativeView;

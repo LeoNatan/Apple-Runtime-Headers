@@ -15,8 +15,8 @@
     _HMAccessoryProfile *_accessoryProfile;
 }
 
-@property(readonly, nonatomic) _HMAccessoryProfile *accessoryProfile; // @synthesize accessoryProfile=_accessoryProfile;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _HMAccessoryProfile *accessoryProfile; // @synthesize accessoryProfile=_accessoryProfile;
 - (void)handleRuntimeStateUpdate:(id)arg1;
 @property(readonly, copy, nonatomic) NSUUID *profileUniqueIdentifier; // @dynamic profileUniqueIdentifier;
 @property(readonly) unsigned int hash;

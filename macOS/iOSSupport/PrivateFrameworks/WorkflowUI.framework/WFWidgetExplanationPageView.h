@@ -18,12 +18,12 @@
     WFWidgetExplanationSettings *_settings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFWidgetExplanationSettings *settings; // @synthesize settings=_settings;
 @property(nonatomic) __weak UIButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(nonatomic) __weak UILabel *supplementaryLabel; // @synthesize supplementaryLabel=_supplementaryLabel;
 @property(nonatomic) __weak UILabel *sloganLabel; // @synthesize sloganLabel=_sloganLabel;
 @property(nonatomic) __weak id <WFWidgetExplanationPageViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)completedOnboarding;
 - (void)continueButtonPressed;
 - (void)layoutSubviews;

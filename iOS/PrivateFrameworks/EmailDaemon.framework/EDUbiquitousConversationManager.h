@@ -23,13 +23,13 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool initialized; // @synthesize initialized=_initialized;
 @property(retain, nonatomic) NSMutableSet *unmatchedKeys; // @synthesize unmatchedKeys=_unmatchedKeys;
 @property(retain, nonatomic) NSMutableDictionary *conversationIDsBySyncKey; // @synthesize conversationIDsBySyncKey=_conversationIDsBySyncKey;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <EDConversationRemoteStorage> cloudStorage; // @synthesize cloudStorage=_cloudStorage;
 @property(nonatomic) __weak id <EDUbiquitousConversationManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)performDailyExportForChangedConversations:(id)arg1;
 - (void)conversationRemoteStorage:(id)arg1 didChangeEntries:(id)arg2 reason:(long long)arg3;
 - (void)pruneDatabasePurgingOldestEntries:(_Bool)arg1;

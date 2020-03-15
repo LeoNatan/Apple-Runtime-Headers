@@ -20,13 +20,13 @@
     unsigned long long _parentActivityIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long parentActivityIdentifier; // @synthesize parentActivityIdentifier=_parentActivityIdentifier;
 @property(readonly, nonatomic) unsigned long long threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
 @property(readonly, nonatomic) NSString *sender; // @synthesize sender=_sender;
 @property(readonly, nonatomic) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(readonly, nonatomic) NSString *process; // @synthesize process=_process;
 @property(readonly, nonatomic) unsigned long long activityIdentifier; // @synthesize activityIdentifier=_activityIdentifier;
-- (void).cxx_destruct;
 - (id)initWithEventProxy:(id)arg1;
 
 @end

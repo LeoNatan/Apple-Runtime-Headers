@@ -16,9 +16,9 @@
     NSMutableDictionary *_dictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *lockQueue; // @synthesize lockQueue=_lockQueue;
-- (void).cxx_destruct;
 - (id)allKeys;
 - (unsigned long long)count;
 - (void)removeAllObjects;

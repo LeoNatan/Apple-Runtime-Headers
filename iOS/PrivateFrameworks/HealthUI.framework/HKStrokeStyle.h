@@ -21,13 +21,13 @@
 }
 
 + (id)strokeStyleWithColor:(id)arg1 lineWidth:(double)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int blendMode; // @synthesize blendMode=_blendMode;
 @property(nonatomic) long long dashStyle; // @synthesize dashStyle=_dashStyle;
 @property(nonatomic) int lineJoin; // @synthesize lineJoin=_lineJoin;
 @property(nonatomic) int lineCap; // @synthesize lineCap=_lineCap;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(copy, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
-- (void).cxx_destruct;
 - (void)applyToContext:(struct CGContext *)arg1;
 - (id)init;
 - (id)copyWithZone:(struct _NSZone *)arg1;

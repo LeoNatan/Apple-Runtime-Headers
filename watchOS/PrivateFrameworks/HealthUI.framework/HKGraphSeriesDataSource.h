@@ -15,10 +15,10 @@
     int _maximumZoom;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int maximumZoom; // @synthesize maximumZoom=_maximumZoom;
 @property(nonatomic) int minimumZoom; // @synthesize minimumZoom=_minimumZoom;
 @property(nonatomic) __weak id <HKGraphSeriesDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (CDStruct_48c31d0d)blockPathForX:(id)arg1 zoom:(int)arg2;
 - (void)invalidateCache;
 - (_Bool)hasAvailableBlocksBetweenStartPath:(CDStruct_48c31d0d)arg1 endPath:(CDStruct_48c31d0d)arg2;

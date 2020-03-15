@@ -43,6 +43,7 @@
     PUReviewScreenSpec *__spec;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUReviewScreenSpec *_spec; // @synthesize _spec=__spec;
 @property(readonly, nonatomic) unsigned long long _options; // @synthesize _options=__options;
 @property(retain, nonatomic, setter=_setFailedReviewAssetRequestAlertController:) UIAlertController *_failedReviewAssetRequestAlertController; // @synthesize _failedReviewAssetRequestAlertController=__failedReviewAssetRequestAlertController;
@@ -62,7 +63,6 @@
 @property(readonly, copy, nonatomic) NSSet *initialSelectedAssetUUIDs; // @synthesize initialSelectedAssetUUIDs=_initialSelectedAssetUUIDs;
 @property(readonly, copy, nonatomic) NSIndexPath *initialIndexPath; // @synthesize initialIndexPath=_initialIndexPath;
 @property(nonatomic) __weak id <PUAssetExplorerReviewScreenViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_presentConfidentialityAlertWithConfirmAction:(CDUnknownBlockType)arg1 abortAction:(CDUnknownBlockType)arg2;
 - (void)_performCompletionActionSteps:(unsigned long long)arg1;
 - (void)_performCompletionAction:(unsigned long long)arg1;

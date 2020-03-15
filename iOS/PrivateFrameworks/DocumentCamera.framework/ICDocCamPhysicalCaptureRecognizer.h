@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     long long _physicalButtonType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long physicalButtonType; // @synthesize physicalButtonType=_physicalButtonType;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(copy, nonatomic) NSArray *desiredButtons; // @synthesize desiredButtons=_desiredButtons;
 @property(nonatomic) long long activeButton; // @synthesize activeButton=_activeButton;
-- (void).cxx_destruct;
 - (long long)_captureButtonForPhysicalButtonType:(long long)arg1;
 - (void)reset;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;

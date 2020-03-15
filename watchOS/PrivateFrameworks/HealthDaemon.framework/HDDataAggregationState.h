@@ -14,9 +14,9 @@
     HKSample *_openSeries;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKSample *openSeries; // @synthesize openSeries=_openSeries;
 @property(readonly, nonatomic) NSMutableArray *unaggregatedSensorData; // @synthesize unaggregatedSensorData=_unaggregatedSensorData;
-- (void).cxx_destruct;
 - (id)initWithRemainingSensorData:(id)arg1 currentSeries:(id)arg2;
 - (id)initWithRemainingSensorData:(id)arg1;
 - (id)init;

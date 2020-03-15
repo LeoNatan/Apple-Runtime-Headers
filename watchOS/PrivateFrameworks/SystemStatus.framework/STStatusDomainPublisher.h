@@ -14,8 +14,8 @@
 }
 
 + (unsigned int)statusDomainName;
-@property(readonly, nonatomic) __weak id <STStatusDomainPublisherServerHandle> serverHandle; // @synthesize serverHandle=_serverHandle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <STStatusDomainPublisherServerHandle> serverHandle; // @synthesize serverHandle=_serverHandle;
 - (void)updateDataWithBlock:(CDUnknownBlockType)arg1;
 @property(copy, nonatomic) id <STStatusDomainData> data;
 - (id)initWithServerHandle:(id)arg1;

@@ -14,9 +14,9 @@
     WLKContinueWatchingResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKContinueWatchingResponse *response; // @synthesize response=_response;
 @property(nonatomic) _Bool allowAuthentication; // @synthesize allowAuthentication=_allowAuthentication;
-- (void).cxx_destruct;
 - (void)makeRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;
 

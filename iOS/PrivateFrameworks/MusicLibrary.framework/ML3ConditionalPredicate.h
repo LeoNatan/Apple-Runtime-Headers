@@ -15,10 +15,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)predicateWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) ML3Predicate *elsePredicate; // @synthesize elsePredicate=_elsePredicate;
 @property(readonly, copy, nonatomic) ML3Predicate *thenPredicate; // @synthesize thenPredicate=_thenPredicate;
 @property(readonly, copy, nonatomic) ML3Predicate *conditionPredicate; // @synthesize conditionPredicate=_conditionPredicate;
-- (void).cxx_destruct;
 - (id)spotlightPredicate;
 - (_Bool)isDynamicForEntityClass:(Class)arg1;
 - (id)databaseStatementParameters;

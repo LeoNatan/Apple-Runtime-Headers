@@ -34,6 +34,7 @@
     long long _storeValuesValidBeforeSummaryIndex;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACHDataStoreActivityProperties *previousValues; // @synthesize previousValues=_previousValues;
 @property(nonatomic) long long storeValuesValidBeforeSummaryIndex; // @synthesize storeValuesValidBeforeSummaryIndex=_storeValuesValidBeforeSummaryIndex;
 @property(nonatomic) unsigned int bestStepCount; // @synthesize bestStepCount=_bestStepCount;
@@ -56,7 +57,6 @@
 @property(nonatomic) unsigned int totalMoveGoalsMade; // @synthesize totalMoveGoalsMade=_totalMoveGoalsMade;
 @property(nonatomic) unsigned int bestMoveStreak; // @synthesize bestMoveStreak=_bestMoveStreak;
 @property(nonatomic) unsigned int currentMoveStreak; // @synthesize currentMoveStreak=_currentMoveStreak;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 @property(readonly, nonatomic) NSArray *dictionaryKeys;
 

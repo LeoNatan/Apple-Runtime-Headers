@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSOpenGLContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSOpenGLContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak SKView *skView; // @synthesize skView=_skView;
-- (void).cxx_destruct;
 - (void)drawInOpenGLContext:(id)arg1 pixelFormat:(id)arg2 forLayerTime:(double)arg3 displayTime:(const CDStruct_e50ab651 *)arg4;
 - (id)openGLPixelFormatForDisplayMask:(unsigned int)arg1;
 - (double)NS_suggestedContentsScale;

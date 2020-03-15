@@ -40,6 +40,7 @@
     struct CGAffineTransform _hostViewTransform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *requester; // @synthesize requester=_requester;
 @property(nonatomic) struct CGAffineTransform hostViewTransform; // @synthesize hostViewTransform=_hostViewTransform;
 @property(nonatomic, getter=isClippingDisabled) _Bool clippingDisabled; // @synthesize clippingDisabled=_clippingDisabled;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) NSSet *hiddenLayers; // @synthesize hiddenLayers=_hiddenLayers;
 @property(retain, nonatomic) FBSceneLayerHostContainerView *hostContainerView; // @synthesize hostContainerView=_hostContainerView;
 @property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

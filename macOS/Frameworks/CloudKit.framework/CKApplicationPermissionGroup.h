@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enabledPermissions; // @synthesize enabledPermissions=_enabledPermissions;
 @property(retain, nonatomic) NSArray *applicationBundleIDs; // @synthesize applicationBundleIDs=_applicationBundleIDs;
 @property(retain, nonatomic) NSArray *containerIDs; // @synthesize containerIDs=_containerIDs;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (void)encodeWithCoder:(id)arg1;

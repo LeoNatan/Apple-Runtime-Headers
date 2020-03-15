@@ -21,11 +21,11 @@
 + (void)modifyProject:(id)arg1 resourcePreparationOperations:(id)arg2 themeProviderConfig:(id)arg3 modalForWindow:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)createProjectWithInfo:(id)arg1 modalForWindow:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)openProjectBundle:(id)arg1 resourcePreparationOperations:(id)arg2 modalForWindow:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) double delayToOpenProgressModal; // @synthesize delayToOpenProgressModal=_delayToOpenProgressModal;
 @property(nonatomic) id <KHProjectLifecycleControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *initialMessage; // @synthesize initialMessage=_initialMessage;
 @property(retain, nonatomic) NSWindow *targetWindow; // @synthesize targetWindow=_targetWindow;
-- (void).cxx_destruct;
 - (void)removeResourceHydrationOperation:(id)arg1;
 - (void)addResourceHydrationOperation:(id)arg1;
 - (void)executeWithCompletionBlock:(CDUnknownBlockType)arg1;

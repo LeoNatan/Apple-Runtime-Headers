@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     SKUIGiftTheme *_theme;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIGiftTheme *theme; // @synthesize theme=_theme;
 @property(retain, nonatomic) SKUIGift *gift; // @synthesize gift=_gift;
 @property(retain, nonatomic) SKUIGiftConfiguration *giftConfiguration; // @synthesize giftConfiguration=_giftConfiguration;
-- (void).cxx_destruct;
 - (void)_setSenderName:(id)arg1;
 - (void)_setPrice:(id)arg1;
 - (void)_setMessage:(id)arg1;

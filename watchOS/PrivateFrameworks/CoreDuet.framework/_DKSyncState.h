@@ -17,12 +17,12 @@
     NSMutableArray *_replies;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *replies; // @synthesize replies=_replies;
 @property(retain) _DKKnowledgeSyncStorageAssertion *assertion; // @synthesize assertion=_assertion;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property _Bool needsCloudSyncUp; // @synthesize needsCloudSyncUp=_needsCloudSyncUp;
 @property _Bool needsCloudSyncDown; // @synthesize needsCloudSyncDown=_needsCloudSyncDown;
-- (void).cxx_destruct;
 - (void)finish;
 - (void)addReplyBlock:(CDUnknownBlockType)arg1;
 - (id)initWithSyncStorageAssertion:(id)arg1 reply:(CDUnknownBlockType)arg2;

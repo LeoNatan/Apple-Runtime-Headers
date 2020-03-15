@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     LAContext *_LAContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly) LAContext *LAContext; // @synthesize LAContext=_LAContext;
 @property(readonly) NSData *ACMContext; // @synthesize ACMContext=_ACMContext;
-- (void).cxx_destruct;
 - (BOOL)lifetimeControlKey:(id)arg1 lifetimeControlType:(long long)arg2 error:(id *)arg3;
 - (id)attestUsingKey:(id)arg1 attestedKey:(id)arg2 nonce:(id)arg3 error:(id *)arg4;
 - (id)keyForObjectID:(id)arg1 error:(id *)arg2;

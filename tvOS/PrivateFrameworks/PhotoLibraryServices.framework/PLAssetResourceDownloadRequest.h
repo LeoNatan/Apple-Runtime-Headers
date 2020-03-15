@@ -22,12 +22,12 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSString *cplTaskIdentifier; // @synthesize cplTaskIdentifier=_cplTaskIdentifier;
 @property(readonly, nonatomic) unsigned long long cloudResourceType; // @synthesize cloudResourceType=_cloudResourceType;
 @property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) int requestID; // @synthesize requestID=_requestID;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)main;
 - (id)initWithRequestID:(int)arg1 library:(id)arg2 queue:(id)arg3 cloudResourceType:(unsigned long long)arg4 managedObjectID:(id)arg5 progressHandler:(CDUnknownBlockType)arg6;

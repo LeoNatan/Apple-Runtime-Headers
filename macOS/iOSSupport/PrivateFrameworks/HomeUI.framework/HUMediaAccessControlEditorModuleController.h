@@ -17,8 +17,8 @@
     id <HUMediaAccessControlEditorModuleControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <HUMediaAccessControlEditorModuleControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HUMediaAccessControlEditorModuleControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)switchCell:(id)arg1 didTurnOn:(BOOL)arg2;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (unsigned long long)didSelectItem:(id)arg1;

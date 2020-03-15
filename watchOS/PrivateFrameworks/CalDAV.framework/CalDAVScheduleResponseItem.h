@@ -15,10 +15,10 @@
     NSMutableSet *_failedResponseItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *failedResponseItems; // @synthesize failedResponseItems=_failedResponseItems;
 @property(retain, nonatomic) NSMutableSet *successfulICS; // @synthesize successfulICS=_successfulICS;
 @property(retain, nonatomic) NSMutableSet *responses; // @synthesize responses=_responses;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addNewTopLevelItem:(id)arg1;
 - (id)copyParseRules;

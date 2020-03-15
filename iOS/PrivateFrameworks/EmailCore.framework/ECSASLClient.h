@@ -40,6 +40,7 @@
 
 + (id)installedMechanisms;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool lastResponseIncludesCredential; // @synthesize lastResponseIncludesCredential=_lastResponseIncludesCredential;
 @property(nonatomic) _Bool mechanismUsesPlainText; // @synthesize mechanismUsesPlainText=_mechanismUsesPlainText;
 @property(readonly, nonatomic) struct sasl_conn *saslConnection; // @synthesize saslConnection=_saslConnection;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) NSError *saslError; // @synthesize saslError=_saslError;
 @property(nonatomic) long long saslStatus; // @synthesize saslStatus=_saslStatus;
 @property(nonatomic) __weak id <ECAuthenticationCredentials> credentials; // @synthesize credentials=_credentials;
-- (void).cxx_destruct;
 - (void)_handleNeedsUserInteraction:(struct sasl_interact *)arg1;
 - (void)_handleStartFailure:(int)arg1;
 - (_Bool)_logGenericError:(int)arg1 saslConnection:(struct sasl_conn *)arg2 description:(id)arg3 error:(id *)arg4;

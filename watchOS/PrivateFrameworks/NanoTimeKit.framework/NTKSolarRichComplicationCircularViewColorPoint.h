@@ -21,6 +21,7 @@
 
 + (id)allPoints;
 + (id)pointWithColor1:(id)arg1 color2:(id)arg2 color3:(id)arg3 position1:(float)arg4 position2:(float)arg5 position3:(float)arg6 progress:(float)arg7;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) float position3; // @synthesize position3=_position3;
 @property(readonly, nonatomic) float position2; // @synthesize position2=_position2;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) UIColor *color3; // @synthesize color3=_color3;
 @property(readonly, nonatomic) UIColor *color2; // @synthesize color2=_color2;
 @property(readonly, nonatomic) UIColor *color1; // @synthesize color1=_color1;
-- (void).cxx_destruct;
 
 @end
 

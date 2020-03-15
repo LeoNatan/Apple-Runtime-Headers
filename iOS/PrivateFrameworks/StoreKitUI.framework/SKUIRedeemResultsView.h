@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     id <SKUIRedeemResultsViewDelegate> _resultsDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIRedeemResultsViewDelegate> resultsDelegate; // @synthesize resultsDelegate=_resultsDelegate;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

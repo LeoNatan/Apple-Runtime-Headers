@@ -20,8 +20,8 @@
     _Bool _allowIdentitySelectionForDisabledSwitch;
 }
 
-@property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
 - (void)_updateCell:(id)arg1 selected:(_Bool)arg2;
 - (_Bool)_allowIdentitySelection;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

@@ -17,9 +17,9 @@
     id <_SBUIWidgetHost> _widgetHost;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_SBUIWidgetHost> widgetHost; // @synthesize widgetHost=_widgetHost;
 @property(copy, nonatomic) NSString *widgetIdentifier; // @synthesize widgetIdentifier=_widgetIdentifier;
-- (void).cxx_destruct;
 - (void)invalidatePreferredViewSize;
 - (void)requestLaunchOfURL:(id)arg1;
 - (void)setVisibleWidgetsIDs:(id)arg1;

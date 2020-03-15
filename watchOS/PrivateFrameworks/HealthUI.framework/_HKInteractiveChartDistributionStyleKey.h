@@ -17,10 +17,10 @@
     NSString *_predicateName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *predicateName; // @synthesize predicateName=_predicateName;
 @property(nonatomic) int timeScope; // @synthesize timeScope=_timeScope;
 @property(nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

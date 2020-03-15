@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_childActivitiesQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *childActivitiesQueue; // @synthesize childActivitiesQueue=_childActivitiesQueue;
 @property(retain) NSMutableArray *childActivities; // @synthesize childActivities=_childActivities;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
@@ -29,7 +30,6 @@
 @property unsigned long long size; // @synthesize size=_size;
 @property(retain) NSString *detail; // @synthesize detail=_detail;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (double)activityLength;
 - (BOOL)hasFinished;

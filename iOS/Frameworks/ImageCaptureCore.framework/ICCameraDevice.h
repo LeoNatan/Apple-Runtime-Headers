@@ -17,6 +17,7 @@
     NSObject<OS_dispatch_queue> *_devNotificationQueue;
     NSXPCConnection *_devConnection;
     unsigned long long _contentCatalogPercentCompleted;
+    unsigned long long _estimatedCountOfMediafiles;
     _Bool _ejectable;
     _Bool _locked;
     _Bool _iCloudPhotosEnabled;
@@ -34,7 +35,6 @@
     double _timeOffset;
     unsigned long long _batteryLevel;
     CDUnknownBlockType _ptpEventHandler;
-    unsigned long long _estimatedCountOfMediafiles;
     long long _preflightCountOfObjects;
     double _downloadCancelTimestamp;
     NSMutableIndexSet *_enumeratedObjectIndexes;
@@ -52,7 +52,9 @@
     unsigned long long _mediaObjectCount;
     unsigned long long _estMediaObjectCount;
     NSString *_devProductType;
+    CDUnknownBlockType _devConnectionFailureBlock;
     NSXPCListenerEndpoint *_devEndpoint;
+    unsigned long long _deviceAccessRestriction;
     NSString *_buildVersion;
     NSString *_deviceClass;
     NSString *_deviceColor;
@@ -78,7 +80,9 @@
 @property(readonly) NSString *deviceClass; // @synthesize deviceClass=_deviceClass;
 @property(readonly) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(nonatomic) _Bool allowsSyncingClock; // @synthesize allowsSyncingClock=_allowsSyncingClock;
+@property unsigned long long deviceAccessRestriction; // @synthesize deviceAccessRestriction=_deviceAccessRestriction;
 @property(retain, nonatomic) NSXPCListenerEndpoint *devEndpoint; // @synthesize devEndpoint=_devEndpoint;
+@property(copy, nonatomic) CDUnknownBlockType devConnectionFailureBlock; // @synthesize devConnectionFailureBlock=_devConnectionFailureBlock;
 @property(retain, nonatomic) NSXPCConnection *devConnection; // @synthesize devConnection=_devConnection;
 @property(nonatomic, getter=isAccessRestrictedAppleDevice) _Bool accessRestrictedAppleDevice; // @synthesize accessRestrictedAppleDevice=_accessRestrictedAppleDevice;
 @property(nonatomic) _Bool ready; // @synthesize ready=_ready;
@@ -130,6 +134,7 @@
 - (void)requestOpenSession;
 - (id)cameraFileWithObjectID:(unsigned long long)arg1;
 - (id)cameraFolderWithObjectID:(unsigned long long)arg1;
+- (void)removeObjects:(id)arg1;
 - (void)handleImageCaptureEventNotification:(id)arg1;
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (id)filesOfType:(id)arg1;
@@ -147,6 +152,11 @@
 - (void)unlockMediaFiles;
 - (void)lockMediaFiles;
 - (_Bool)addMediaFiles:(id)arg1;
+- (void)storageAvailable;
+- (void)resetAccessRestriction;
+- (void)setAccessRestriction:(unsigned long long)arg1;
+- (void)updateAccessRestriction;
+- (_Bool)containsRestrictedStorage;
 - (void)discardCameraFiles:(id)arg1;
 - (_Bool)addMediaFile:(id)arg1;
 - (id)addCameraFiles:(id)arg1;
@@ -161,7 +171,7 @@
 @property(readonly, nonatomic) NSArray *contents; // @dynamic contents;
 - (void)notifyDelegateOfAddedItems:(id)arg1 progress:(id)arg2;
 - (void)notifyDelegateOfAddedItem:(id)arg1;
-- (unsigned long long)increaseDeviceFailureCount;
+- (void)setIsAccessRestrictedAppleDevice:(_Bool)arg1;
 - (_Bool)legacyDevice;
 - (_Bool)supportsMediaFormatCatalog;
 - (void)setProductType:(id)arg1;
@@ -179,6 +189,8 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *deviceNotificationQueue; // @dynamic deviceNotificationQueue;
 - (void)dealloc;
 - (id)description;
+- (void)executeConnectionFailureBlock;
+- (id)remoteCameraWithFailureBlock:(CDUnknownBlockType)arg1;
 - (id)remoteCamera;
 - (id)init;
 

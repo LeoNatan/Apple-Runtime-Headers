@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_itemIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(readonly, nonatomic) long long circleSize; // @synthesize circleSize=_circleSize;
-- (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 @property(readonly, nonatomic) SKUILabelViewElement *titleElement;
 @property(readonly, nonatomic) SKUIImageViewElement *imageElement;

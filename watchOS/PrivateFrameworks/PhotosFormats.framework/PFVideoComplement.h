@@ -20,9 +20,9 @@
 }
 
 + (id)currentFormatVersion;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;
 @property(readonly, copy, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
-- (void).cxx_destruct;
 - (_Bool)writeToBundleAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)linkOrCopyPath:(id)arg1 toPath:(id)arg2 forceCopy:(_Bool)arg3 error:(id *)arg4;
 - (id)propertyListRepresentation;

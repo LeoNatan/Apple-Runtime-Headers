@@ -16,8 +16,8 @@
 + (id)classificationStrategyForQuality:(unsigned int)arg1;
 + (id)classificationOfHandleStrings:(id)arg1 classificationQuality:(unsigned int)arg2;
 + (id)classificationOfHandleStrings:(id)arg1;
-@property(readonly, nonatomic) id <_CNHandleStringClassificationStrategy> classificationStrategy; // @synthesize classificationStrategy=_classificationStrategy;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <_CNHandleStringClassificationStrategy> classificationStrategy; // @synthesize classificationStrategy=_classificationStrategy;
 - (unsigned int)typeOfHandleString:(id)arg1;
 - (void)classifyHandleString:(id)arg1 builder:(id)arg2;
 - (id)description;

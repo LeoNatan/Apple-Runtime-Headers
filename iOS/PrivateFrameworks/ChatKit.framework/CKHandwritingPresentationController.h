@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     CKBrowserItemPayload *_cachedPluginPayload;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool foregrounded; // @synthesize foregrounded=_foregrounded;
 @property(nonatomic) _Bool suppressAppearanceCallbacksBecauseOfFirstInitialization; // @synthesize suppressAppearanceCallbacksBecauseOfFirstInitialization=_suppressAppearanceCallbacksBecauseOfFirstInitialization;
 @property(retain, nonatomic) CKBrowserItemPayload *cachedPluginPayload; // @synthesize cachedPluginPayload=_cachedPluginPayload;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long initialInterfaceOrientation; // @synthesize initialInterfaceOrientation=_initialInterfaceOrientation;
 @property(retain, nonatomic) CKDeviceOrientationManager *deviceOrientationManager; // @synthesize deviceOrientationManager=_deviceOrientationManager;
 @property(nonatomic) __weak NSObject<CKHandwritingPresentationControllerDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_loadCachedPayloadIntoBrowser;
 - (void)_doInitialization;
 - (void)_flushHandwritingWindowCacheIfNeeded;

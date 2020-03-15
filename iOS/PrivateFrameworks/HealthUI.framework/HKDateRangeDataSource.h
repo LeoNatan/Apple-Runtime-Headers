@@ -17,9 +17,9 @@
     NSMutableDictionary *_pathToDataBlock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pathToDataBlock; // @synthesize pathToDataBlock=_pathToDataBlock;
 @property(readonly, nonatomic) id <HKDateRangeDataSourceDelegate> sourceDelegate; // @synthesize sourceDelegate=_sourceDelegate;
-- (void).cxx_destruct;
 - (void)dateRangeDataUpdated;
 - (id)_fetchAndCacheDataForPath:(CDStruct_6ca94699)arg1;
 - (void)invalidateCache;

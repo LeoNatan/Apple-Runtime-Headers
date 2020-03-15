@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isKeyAsset) BOOL keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(nonatomic) long long position; // @synthesize position=_position;
 @property(copy, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)proposedIdentifierForItemIdentifier:(id)arg1;
 - (id)proposedScopedIdentifierForItemScopedIdentifier:(id)arg1;

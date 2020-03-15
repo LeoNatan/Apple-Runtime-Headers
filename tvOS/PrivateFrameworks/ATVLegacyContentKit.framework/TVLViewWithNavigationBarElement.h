@@ -15,10 +15,10 @@
     NSString *_onNavigate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *onNavigate; // @synthesize onNavigate=_onNavigate;
 @property(copy, nonatomic) NSArray *navigationItems; // @synthesize navigationItems=_navigationItems;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;

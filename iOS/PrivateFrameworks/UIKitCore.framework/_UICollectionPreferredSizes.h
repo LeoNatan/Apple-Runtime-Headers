@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     id <_UICollectionLayoutAuxillaryOffsets> _supplementaryBaseOffsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_UICollectionLayoutAuxillaryOffsets> supplementaryBaseOffsets; // @synthesize supplementaryBaseOffsets=_supplementaryBaseOffsets;
 @property(nonatomic) long long frameOffset; // @synthesize frameOffset=_frameOffset;
-- (void).cxx_destruct;
 - (id)preferredSizesApplyingFrameOffset:(long long)arg1 supplementaryBaseOffsets:(id)arg2;
 - (_Bool)containsSupplementaryOffsets:(id)arg1;
 - (void)addPreferredSize:(id)arg1 forSupplementaryWithElementKind:(id)arg2 atIndex:(long long)arg3;

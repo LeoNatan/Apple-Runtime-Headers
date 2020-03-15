@@ -24,6 +24,7 @@
     NSDate *_creationDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSString *viewHint; // @synthesize viewHint=_viewHint;
 @property(retain, nonatomic) NSData *genericData; // @synthesize genericData=_genericData;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSNumber *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *accessGroup; // @synthesize accessGroup=_accessGroup;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithQueryResult:(struct __CFDictionary *)arg1 shouldIncludeData:(_Bool)arg2;
 - (id)description;

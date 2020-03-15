@@ -25,6 +25,7 @@
 
 + (id)placementWithIdentifier:(id)arg1 priority:(long long)arg2;
 + (id)spacerPlacementWithSize:(struct CGSize)arg1 priority:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, copy, nonatomic) NSDictionary *itemInfo; // @synthesize itemInfo=_itemInfo;
 @property(readonly, copy, nonatomic) NSHashTable *anyRequiredPlacements; // @synthesize anyRequiredPlacements=_anyRequiredPlacements;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSHashTable *excludedPlacements; // @synthesize excludedPlacements=_excludedPlacements;
 @property(readonly, copy, nonatomic) _UIStatusBarIdentifier *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

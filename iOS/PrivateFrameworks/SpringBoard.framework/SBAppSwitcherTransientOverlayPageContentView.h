@@ -22,12 +22,12 @@
     id <SBAppSwitcherTransientOverlayPageContentViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBAppSwitcherTransientOverlayPageContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, copy, nonatomic) SBAppLayout *appLayout; // @synthesize appLayout=_appLayout;
-- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius;
 @property(nonatomic) long long orientation;
 @property(nonatomic) long long contentOrientation;

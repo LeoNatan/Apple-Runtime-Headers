@@ -32,6 +32,7 @@
 + (Class)accessoryLocationType;
 + (Class)appBundleIdsType;
 + (Class)locationType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *accessoryLocations; // @synthesize accessoryLocations=_accessoryLocations;
 @property(retain, nonatomic) CLPAccessoryMeta *accessoryMeta; // @synthesize accessoryMeta=_accessoryMeta;
 @property(retain, nonatomic) NSMutableArray *appBundleIds; // @synthesize appBundleIds=_appBundleIds;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSString *appBundleId; // @synthesize appBundleId=_appBundleId;
 @property(retain, nonatomic) NSMutableArray *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) CLPMeta *meta; // @synthesize meta=_meta;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

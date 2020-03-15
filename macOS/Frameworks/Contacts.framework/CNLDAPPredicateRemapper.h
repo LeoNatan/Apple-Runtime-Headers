@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <CNLDAPPredicateRemapping> _factory;
 }
 
-@property(retain) id <CNLDAPPredicateRemapping> factory; // @synthesize factory=_factory;
 - (void).cxx_destruct;
+@property(retain) id <CNLDAPPredicateRemapping> factory; // @synthesize factory=_factory;
 - (id)predicateForLeft:(id)arg1 betweenLowerBound:(id)arg2 upperBound:(id)arg3 error:(id *)arg4;
 - (id)predicateForLeft:(id)arg1 containsRight:(id)arg2 error:(id *)arg3;
 - (id)predicateForLeft:(id)arg1 inRight:(id)arg2 error:(id *)arg3;

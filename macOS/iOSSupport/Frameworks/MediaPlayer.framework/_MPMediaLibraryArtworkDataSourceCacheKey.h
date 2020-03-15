@@ -12,9 +12,9 @@
     struct CGSize _representationSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize representationSize; // @synthesize representationSize=_representationSize;
 @property(copy, nonatomic) id catalogIdentifier; // @synthesize catalogIdentifier=_catalogIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithArtworkCatalog:(id)arg1 representativeSize:(struct CGSize)arg2;

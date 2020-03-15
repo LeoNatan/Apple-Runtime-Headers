@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CCUICAPackageView *_packageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CCUICAPackageView *packageView; // @synthesize packageView=_packageView;
 @property(nonatomic, getter=isUserInterfaceStyleSwitchingEnabled) _Bool userInterfaceStyleSwitchingEnabled; // @synthesize userInterfaceStyleSwitchingEnabled=_userInterfaceStyleSwitchingEnabled;
 @property(nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(nonatomic) long long currentMode; // @synthesize currentMode=_currentMode;
-- (void).cxx_destruct;
 - (void)_updateGlyphState;
 - (void)_updateGlyphPackage;
 - (id)_glyphResource;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSValue *_textRange;
 }
 
-@property(readonly, nonatomic) NSValue *textRange; // @synthesize textRange=_textRange;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSValue *textRange; // @synthesize textRange=_textRange;
 - (id)initWithTitle:(id)arg1 key:(id)arg2 modifier:(unsigned long long)arg3 guide:(id)arg4 subguide:(id)arg5 target:(id)arg6 action:(id)arg7 tag:(long long)arg8 info:(id)arg9;
 - (id)initWithTitle:(id)arg1 textRange:(id)arg2 key:(id)arg3 modifier:(unsigned long long)arg4 guide:(id)arg5 subguide:(id)arg6 target:(id)arg7 action:(id)arg8 tag:(long long)arg9 info:(id)arg10;
 

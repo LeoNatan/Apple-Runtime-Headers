@@ -82,6 +82,7 @@
     struct CGRect _bottomContainerViewFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKPaymentStatusViewAnimationCoordinator *statusViewAnimationCoordinator; // @synthesize statusViewAnimationCoordinator=_statusViewAnimationCoordinator;
 @property(retain, nonatomic) PUICPageIndicatorView *pageIndicatorView; // @synthesize pageIndicatorView=_pageIndicatorView;
 @property(retain, nonatomic) NPKPaymentReadyView *readyView; // @synthesize readyView=_readyView;
@@ -145,17 +146,15 @@
 @property(retain, nonatomic) NSArray *passUniqueIDs; // @synthesize passUniqueIDs=_passUniqueIDs;
 @property(nonatomic) __weak id <NPKPaymentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NPKPaymentViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
-- (id)_holdNearReaderWithPendingBalanceViewForTransitProperties:(id)arg1;
+- (id)_holdNearReaderWithPendingBalanceViewWithFullBalanceString:(id)arg1;
 - (id)_accessPassIntructionLabel;
 - (id)_serviceModeInstructionLabel;
 - (id)_instructionLabelWithFirstLine:(id)arg1 coloredSecondLine:(id)arg2;
 - (id)_insufficientBalanceView;
-- (id)_instructionViewWithBalanceLabel:(id)arg1 valueString:(id)arg2;
+- (id)_instructionViewWithBalanceField:(id)arg1;
 - (id)_instructionViewWithBalanceString:(id)arg1;
 - (id)_instructionViewWithBalance:(id)arg1 currencyCode:(id)arg2;
 - (id)_instructionViewWithAvailableCredit:(id)arg1 currencyCode:(id)arg2;
-- (id)_instructionViewForTransitPassProperties:(id)arg1 pass:(id)arg2;
 - (id)_instructionLabelWithAttributedLabelText:(id)arg1 numberOfLines:(int)arg2;
 - (id)_instructionLabelWithAttributedLabelText:(id)arg1 numberOfLines:(int)arg2 shouldConstrainWidth:(_Bool)arg3;
 - (id)_baseInstructionLabelAttributedStringWithText:(id)arg1;

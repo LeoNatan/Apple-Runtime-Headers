@@ -27,6 +27,7 @@
     NSMutableData *_rxTotalDataWithLen;
 }
 
+- (void).cxx_destruct;
 @property BOOL rxWaitForMoreData; // @synthesize rxWaitForMoreData=_rxWaitForMoreData;
 @property(retain) NSMutableData *rxTotalDataWithLen; // @synthesize rxTotalDataWithLen=_rxTotalDataWithLen;
 @property(retain) NSMutableData *rxCurrentReceivedData; // @synthesize rxCurrentReceivedData=_rxCurrentReceivedData;
@@ -42,7 +43,6 @@
 @property unsigned short txTotalLenToSend; // @synthesize txTotalLenToSend=_txTotalLenToSend;
 @property unsigned char txSeqNum; // @synthesize txSeqNum=_txSeqNum;
 @property(retain) NSUUID *peerUUID; // @synthesize peerUUID=_peerUUID;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned char)generateSequenceNumber;
 - (void)resetRxTransfer;

@@ -18,8 +18,8 @@
 
 + (id)attributedStringWithFormat:(id)arg1 attributes:(id)arg2;
 + (void)initializeJSContext:(id)arg1;
-@property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 - (struct CGSize)size;
 - (void)deleteCharactersInRange:(struct _NSRange)arg1;
 - (void)appendAttributedString:(id)arg1;

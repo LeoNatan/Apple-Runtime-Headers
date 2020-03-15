@@ -20,20 +20,18 @@
 }
 
 + (id)server;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *reachabilityHandlers; // @synthesize reachabilityHandlers=_reachabilityHandlers;
 @property(nonatomic) _Bool shouldFocusNonExclusiveSystemUI; // @synthesize shouldFocusNonExclusiveSystemUI=_shouldFocusNonExclusiveSystemUI;
 @property(retain, nonatomic) NSMutableArray *actionHandlers; // @synthesize actionHandlers=_actionHandlers;
 @property(copy, nonatomic) CDUnknownBlockType currentAlertHandler; // @synthesize currentAlertHandler=_currentAlertHandler;
 @property(retain, nonatomic) AXAccessQueue *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (id)runningAppProcesses;
 - (id)focusedAppProcess;
 - (id)applicationWithIdentifier:(id)arg1;
 - (_Bool)isMagnifierVisible;
 - (void)didPotentiallyDismissNonExclusiveSystemUI;
-- (_Bool)isNonExclusiveSystemUIFocusable;
-- (void)setLockScreenDimTimerEnabled:(_Bool)arg1;
-- (void)userEventOccurred;
+- (_Bool)isNonExclusiveSystemUIFocusableIncludingPIPWindow:(_Bool)arg1;
 - (void)isMagnifierVisibleWithCompletion:(CDUnknownBlockType)arg1;
 - (void)launchMagnifierApp;
 - (void)reactivateInCallService;
@@ -69,6 +67,7 @@
 - (_Bool)isSiriTalkingOrListening;
 - (_Bool)isSiriVisible;
 - (_Bool)dismissSiri;
+- (_Bool)isPIPWindowVisible;
 - (_Bool)isSpotlightVisible;
 @property(readonly, nonatomic) _Bool isGuidedAccessActive;
 - (_Bool)toggleDarkMode;

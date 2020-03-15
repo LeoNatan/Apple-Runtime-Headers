@@ -26,6 +26,7 @@
     struct CGSize _unfocusedShadowCardSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pressCompletionBlock; // @synthesize pressCompletionBlock=_pressCompletionBlock;
 @property(nonatomic) struct CGSize unfocusedShadowCardSize; // @synthesize unfocusedShadowCardSize=_unfocusedShadowCardSize;
 @property(nonatomic) struct CGSize focusedShadowCardSize; // @synthesize focusedShadowCardSize=_focusedShadowCardSize;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UIImage *unfocusedShadowImage; // @synthesize unfocusedShadowImage=_unfocusedShadowImage;
 @property(nonatomic) double focusedShadowAlpha; // @synthesize focusedShadowAlpha=_focusedShadowAlpha;
 @property(nonatomic) double unfocusedShadowAlpha; // @synthesize unfocusedShadowAlpha=_unfocusedShadowAlpha;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)selectionMarginsForSize:(struct CGSize)arg1;
 - (void)floatingContentView:(id)arg1 didFinishTransitioningToState:(unsigned long long)arg2;
 - (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;

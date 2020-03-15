@@ -40,6 +40,7 @@
 }
 
 + (void)_setupLayoutSpec;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVAudioRecorderViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) double maximumDuration; // @synthesize maximumDuration=_maximumDuration;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) _Bool autorecord; // @synthesize autorecord=_autorecord;
 @property(readonly, copy, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
 @property(readonly, nonatomic) NSURL *outputURL; // @synthesize outputURL=_outputURL;
-- (void).cxx_destruct;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;
 - (void)audioRecorderDidFinishRecording:(id)arg1 successfully:(_Bool)arg2;
 - (float)waveformViewPowerForCurrentTime:(id)arg1;

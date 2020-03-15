@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 
 + (long long)_analyticsSectionForItem:(id)arg1;
 + (id)defaultPageTitle;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL usesCompactAppearance; // @synthesize usesCompactAppearance=_usesCompactAppearance;
 @property(nonatomic) BOOL usesPrivateBrowsing; // @synthesize usesPrivateBrowsing=_usesPrivateBrowsing;
 @property(retain, nonatomic) ForYouRecommendationMediator *mediator; // @synthesize mediator=_mediator;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) __weak StartPageViewController *startPageViewController; // @synthesize startPageViewController=_startPageViewController;
 @property(retain, nonatomic) NSView *externalCenteringView; // @synthesize externalCenteringView=_externalCenteringView;
-- (void).cxx_destruct;
 - (id)_itemForIdentifier:(id)arg1;
 - (void)siriSuggestionsStartPageItemViewDidSelectShowLess:(id)arg1;
 - (void)siriSuggestionsStartPageItemViewDidSelectShowMore:(id)arg1;

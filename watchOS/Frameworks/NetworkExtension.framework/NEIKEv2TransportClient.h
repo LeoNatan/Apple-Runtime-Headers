@@ -16,10 +16,10 @@
     id <NEIKEv2TransportDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <NEIKEv2TransportDelegate> delegate; // @synthesize delegate=_delegate;
 @property _Bool wildcard; // @synthesize wildcard=_wildcard;
 @property(retain) NEIKEv2IKESPI *clientSPI; // @synthesize clientSPI=_clientSPI;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

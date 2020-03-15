@@ -15,8 +15,8 @@
 
 + (id)new;
 + (id)allAuthorizationKeys;
-@property(retain, nonatomic) CNFAccessAuthorization *authorizer; // @synthesize authorizer=_authorizer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNFAccessAuthorization *authorizer; // @synthesize authorizer=_authorizer;
 - (id)authorizedKeysForContactKeys:(id)arg1;
 - (void)removeUnauthorizedKeysFromFetchRequest:(id)arg1;
 - (BOOL)authorizeFetchRequest:(id)arg1 accessError:(id *)arg2;

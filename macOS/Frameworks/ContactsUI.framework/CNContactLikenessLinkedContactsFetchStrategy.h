@@ -17,9 +17,9 @@
 }
 
 + (BOOL)canSaveImageToContact:(id)arg1 inContactStore:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)contactLikenessesModel;
 - (id)initWithContact:(id)arg1 contactStore:(id)arg2;

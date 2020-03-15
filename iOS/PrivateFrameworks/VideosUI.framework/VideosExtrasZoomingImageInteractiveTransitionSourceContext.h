@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long supportedZoomingImageTransitionDirections; // @synthesize supportedZoomingImageTransitionDirections=_supportedZoomingImageTransitionDirections;
 @property(nonatomic) unsigned long long itemIndex; // @synthesize itemIndex=_itemIndex;
 @property(retain, nonatomic) UIPinchGestureRecognizer *pinchGestureRecognizer; // @synthesize pinchGestureRecognizer=_pinchGestureRecognizer;
-- (void).cxx_destruct;
 
 @end
 

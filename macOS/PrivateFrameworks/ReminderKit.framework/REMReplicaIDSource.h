@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)crdtIDWithObjectID:(id)arg1 property:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *crdtID; // @synthesize crdtID=_crdtID;
 @property(readonly, nonatomic) REMObjectID *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

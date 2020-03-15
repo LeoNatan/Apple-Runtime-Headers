@@ -24,6 +24,7 @@
     NSArray *_currentConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *currentConstraints; // @synthesize currentConstraints=_currentConstraints;
 @property(nonatomic) _Bool shouldAddLayoutConstraints; // @synthesize shouldAddLayoutConstraints=_shouldAddLayoutConstraints;
 @property(readonly, nonatomic) NSDictionary *viewsByIdentifier; // @synthesize viewsByIdentifier=_viewsByIdentifier;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) MTUIDigitalClockLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)setLayoutMargins:(struct UIEdgeInsets)arg1;
 - (void)_loadFontsWithTextStyles;
 - (void)setName:(id)arg1 andRepeatText:(id)arg2 textColor:(id)arg3;

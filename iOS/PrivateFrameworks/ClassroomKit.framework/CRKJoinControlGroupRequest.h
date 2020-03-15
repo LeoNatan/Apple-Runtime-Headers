@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/CATTaskRequest.h>
 
 @class CRKCourseInvitation;
 
@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) CRKCourseInvitation *invitation; // @synthesize invitation=_invitation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CRKCourseInvitation *invitation; // @synthesize invitation=_invitation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

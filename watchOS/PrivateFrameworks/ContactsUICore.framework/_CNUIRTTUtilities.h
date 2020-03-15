@@ -15,8 +15,8 @@
     RTTTelephonyUtilities *_utilityProvider;
 }
 
-@property(retain, nonatomic) RTTTelephonyUtilities *utilityProvider; // @synthesize utilityProvider=_utilityProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RTTTelephonyUtilities *utilityProvider; // @synthesize utilityProvider=_utilityProvider;
 - (_Bool)relayIsSupported;
 - (_Bool)contactIsTTYContact:(id)arg1;
 - (id)nts_lazyUtilityProvider;

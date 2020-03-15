@@ -38,6 +38,7 @@
 + (id)userFromUMUser:(id)arg1;
 + (void)setAutogeneratesPhoneticNameWithLocale:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isAttemptedPhoneticTranscription; // @synthesize isAttemptedPhoneticTranscription=_isAttemptedPhoneticTranscription;
 @property(retain, nonatomic) NSString *tokenizedPhoneticDisplayName; // @synthesize tokenizedPhoneticDisplayName=_tokenizedPhoneticDisplayName;
 @property(nonatomic) _Bool isPhoneticInfoProvidedInConfiguration; // @synthesize isPhoneticInfoProvidedInConfiguration=_isPhoneticInfoProvidedInConfiguration;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSURL *largeImageURL; // @synthesize largeImageURL=_largeImageURL;
 @property(retain, nonatomic) NSURL *mediumImageURL; // @synthesize mediumImageURL=_mediumImageURL;
 @property(nonatomic) unsigned long long passwordType; // @synthesize passwordType=_passwordType;
-- (void).cxx_destruct;
 - (void)setDiffUMUserPropertiesFromUMUser:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

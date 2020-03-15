@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     long long _nsecsBeforeForgettingCounter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long nsecsBeforeForgettingCounter; // @synthesize nsecsBeforeForgettingCounter=_nsecsBeforeForgettingCounter;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)isBlocking;
 - (long long)nsecsToNextRetry:(long long)arg1 retryCount:(unsigned int *)arg2 now:(long long)arg3;
 - (long long)retryBackoff:(unsigned int)arg1;

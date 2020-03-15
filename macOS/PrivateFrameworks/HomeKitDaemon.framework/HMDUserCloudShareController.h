@@ -24,6 +24,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFTimer *pendingRequestTimer; // @synthesize pendingRequestTimer=_pendingRequestTimer;
 @property(readonly, nonatomic) double pendingRequestTimeoutInterval; // @synthesize pendingRequestTimeoutInterval=_pendingRequestTimeoutInterval;
 @property(readonly, nonatomic) NSMutableArray *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSHashTable *connectedClients; // @synthesize connectedClients=_connectedClients;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property __weak id <HMDUserCloudShareControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)invalidateXpcClient:(id)arg1;
 - (void)_invalidateXpcClient:(id)arg1;
 - (void)deregisterXpcClient:(id)arg1;

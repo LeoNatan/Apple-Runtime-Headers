@@ -16,9 +16,9 @@
     RTMapItemProviderMapsSupportParameters *_parameters;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) RTMapItemProviderMapsSupportParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) RTMapsSupportManager *mapsSupportManager; // @synthesize mapsSupportManager=_mapsSupportManager;
-- (void).cxx_destruct;
 - (double)confidenceFromMapItemSource:(unsigned long long)arg1;
 - (id)mapItemsWithOptions:(id)arg1 error:(id *)arg2;
 - (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 mapsSupportManager:(id)arg3 parameters:(id)arg4;

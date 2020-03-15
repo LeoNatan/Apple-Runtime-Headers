@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)isEmpty:(id)arg1;
 + (id)emptyMessage;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, getter=isEmpty) BOOL empty;

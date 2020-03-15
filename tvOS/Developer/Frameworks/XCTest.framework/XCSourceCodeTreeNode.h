@@ -40,6 +40,7 @@
 + (_Bool)_isContentEqualIgnoringSelection:(_Bool)arg1 childNodes:(id)arg2 childNodes:(id)arg3 toDistanceFromRoot:(long long)arg4;
 + (id)_nodesByMergingSimilarNodes:(id)arg1;
 + (void)_shareSourceCodeStringsForNodes:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, setter=_setElementType:) NSNumber *_elementType; // @synthesize _elementType=__elementType;
 @property(copy, setter=_setCalleeType:) NSNumber *_calleeType; // @synthesize _calleeType=__calleeType;
 @property(copy, setter=_setReturnType:) NSNumber *_returnType; // @synthesize _returnType=__returnType;
@@ -49,7 +50,6 @@
 @property __weak XCSourceCodeTreeNode *parentNode; // @synthesize parentNode=_parentNode;
 @property(copy) NSString *sourceCodeSuffix; // @synthesize sourceCodeSuffix=_sourceCodeSuffix;
 @property(copy) NSString *sourceCodePrefix; // @synthesize sourceCodePrefix=_sourceCodePrefix;
-- (void).cxx_destruct;
 - (void)_absorbOnlyChildrenIntoParents;
 - (id)_treeByPushingOutPrefix:(id *)arg1 error:(id *)arg2;
 - (id)copy;

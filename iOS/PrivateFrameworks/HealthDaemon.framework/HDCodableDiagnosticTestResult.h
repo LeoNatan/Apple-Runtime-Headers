@@ -29,6 +29,7 @@
     HDCodableInspectableValueCollection *_value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableStringList *performers; // @synthesize performers=_performers;
 @property(retain, nonatomic) HDCodableMedicalCodingList *methodCodings; // @synthesize methodCodings=_methodCodings;
 @property(retain, nonatomic) HDCodableMedicalCodingList *bodySiteCodings; // @synthesize bodySiteCodings=_bodySiteCodings;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) HDCodableInspectableValueCollection *value; // @synthesize value=_value;
 @property(retain, nonatomic) HDCodableMedicalCodingList *diagnosticTestCodings; // @synthesize diagnosticTestCodings=_diagnosticTestCodings;
 @property(retain, nonatomic) HDCodableMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

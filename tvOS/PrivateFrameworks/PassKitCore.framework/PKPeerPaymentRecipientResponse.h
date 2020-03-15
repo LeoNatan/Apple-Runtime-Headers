@@ -13,8 +13,8 @@
     PKPeerPaymentRecipient *_recipient;
 }
 
-@property(readonly, nonatomic) PKPeerPaymentRecipient *recipient; // @synthesize recipient=_recipient;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPeerPaymentRecipient *recipient; // @synthesize recipient=_recipient;
 - (id)initWithData:(id)arg1;
 
 @end

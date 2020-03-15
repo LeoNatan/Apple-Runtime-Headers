@@ -13,10 +13,10 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property long long interestedEvents; // @synthesize interestedEvents=_interestedEvents;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dispatchTrainingCompletionHandlerWithError:(id)arg1 onQueue:(id)arg2;
 - (void)dispatchTrainingCompletionHandlerWithMetrics:(id)arg1 parameters:(id)arg2 onQueue:(id)arg3;

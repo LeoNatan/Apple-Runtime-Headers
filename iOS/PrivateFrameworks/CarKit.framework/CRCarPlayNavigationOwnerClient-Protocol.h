@@ -6,7 +6,10 @@
 
 #import <CarKit/NSObject-Protocol.h>
 
+@class NSArray;
+
 @protocol CRCarPlayNavigationOwnerClient <NSObject>
+- (void)activeNavigationIdentifiersChangedTo:(NSArray *)arg1;
 - (void)navigationOwnershipChangedTo:(unsigned long long)arg1;
 @end
 

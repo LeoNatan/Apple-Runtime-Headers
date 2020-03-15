@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _requestCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestCount; // @synthesize requestCount=_requestCount;
 @property(retain, nonatomic) NSOperation<VUIImageLoadingOperation> *imageLoadOperation; // @synthesize imageLoadOperation=_imageLoadOperation;
-- (void).cxx_destruct;
 
 @end
 

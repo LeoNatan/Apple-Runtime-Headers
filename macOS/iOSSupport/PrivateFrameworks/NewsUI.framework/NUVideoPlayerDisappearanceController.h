@@ -20,12 +20,12 @@
     id <SVVideoQueueProviding> _queueProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <SVVideoQueueProviding> queueProvider; // @synthesize queueProvider=_queueProvider;
 @property(readonly, nonatomic) __weak id <SVVideoPlaybackAdvancing> playbackAdvancer; // @synthesize playbackAdvancer=_playbackAdvancer;
 @property(readonly, nonatomic) id <SVVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
 @property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 @property(readonly, nonatomic) NUVideoAdHistoryEventTracker *adHistoryEventTracker; // @synthesize adHistoryEventTracker=_adHistoryEventTracker;
-- (void).cxx_destruct;
 - (void)videoPlayerDidBecomeInvisible;
 - (id)initWithAdHistoryEventTracker:(id)arg1 videoViewControllerProvider:(id)arg2 playbackController:(id)arg3 playbackAdvancer:(id)arg4 queueProvider:(id)arg5;
 - (id)init;

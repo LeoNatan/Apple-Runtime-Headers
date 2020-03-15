@@ -32,6 +32,7 @@
 }
 
 + (id)sharedTextStorage;
+- (void).cxx_destruct;
 @property(nonatomic) long long truncationType; // @synthesize truncationType=_truncationType;
 @property(nonatomic) double titleLeadingEdge; // @synthesize titleLeadingEdge=_titleLeadingEdge;
 @property(copy, nonatomic) NSAttributedString *titleAttributedStringValue; // @synthesize titleAttributedStringValue=_titleAttributedStringValue;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) IMKCandidate *candidate; // @synthesize candidate=_candidate;
 @property(copy, nonatomic) NSAttributedString *annotationAttributedStringValue; // @synthesize annotationAttributedStringValue=_annotationAttributedStringValue;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect frame;
 @property(readonly, nonatomic) NSString *stringIdentifier;
 - (id)description;

@@ -17,12 +17,12 @@
     long long textureComponents;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long textureComponents; // @synthesize textureComponents;
 @property(nonatomic) unsigned long long mappingChannel; // @synthesize mappingChannel;
 @property(retain, nonatomic) MDLTransform *transform; // @synthesize transform;
 @property(retain, nonatomic) MDLTextureFilter *hardwareFilter; // @synthesize hardwareFilter;
 @property(retain, nonatomic) MDLTexture *texture; // @synthesize texture;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSString *composedMessageId; // @synthesize composedMessageId=_composedMessageId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

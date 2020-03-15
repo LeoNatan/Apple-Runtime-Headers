@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UITextField *_textField;
 }
 
-@property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void)textFieldChanged:(id)arg1;
 - (id)firstResponderItem;
 - (void)prepareForReuse;

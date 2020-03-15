@@ -13,8 +13,8 @@
     MTMetricsKitTemplate *_metricsKit;
 }
 
-@property(nonatomic) __weak MTMetricsKitTemplate *metricsKit; // @synthesize metricsKit=_metricsKit;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MTMetricsKitTemplate *metricsKit; // @synthesize metricsKit=_metricsKit;
 - (id)initWithMetricsKit:(id)arg1;
 
 @end

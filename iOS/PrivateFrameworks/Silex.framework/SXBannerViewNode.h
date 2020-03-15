@@ -15,9 +15,9 @@
 }
 
 + (id)nodeWithBannerView:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(readonly, nonatomic) ADBannerView *bannerView; // @synthesize bannerView=_bannerView;
-- (void).cxx_destruct;
 
 @end
 

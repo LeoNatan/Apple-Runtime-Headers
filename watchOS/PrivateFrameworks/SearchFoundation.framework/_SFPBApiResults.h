@@ -18,10 +18,10 @@
     NSArray *_flights;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *flights; // @synthesize flights=_flights;
 @property(nonatomic) int resultType; // @synthesize resultType=_resultType;
 @property(nonatomic) int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

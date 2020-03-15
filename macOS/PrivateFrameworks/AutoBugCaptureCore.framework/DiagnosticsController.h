@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 
 + (id)loggingStateCache;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *settingsDict; // @synthesize settingsDict=_settingsDict;
 @property(retain, nonatomic) NSMutableDictionary *actionsDict; // @synthesize actionsDict=_actionsDict;
 @property(retain, nonatomic) NSNumber *autoBugCaptureUID; // @synthesize autoBugCaptureUID=_autoBugCaptureUID;
 @property(retain, nonatomic) NSNumber *autoBugCaptureGID; // @synthesize autoBugCaptureGID=_autoBugCaptureGID;
 @property(retain, nonatomic) NSString *autoBugCapturePath; // @synthesize autoBugCapturePath=_autoBugCapturePath;
-- (void).cxx_destruct;
 - (unsigned long long)collectDignosticExtensionFilesForDiagnosticCase:(id)arg1 parameters:(id)arg2 options:(id)arg3 queue:(id)arg4 reply:(CDUnknownBlockType)arg5;
 - (id)diagnosticExtensionsForDiagnosticCase:(id)arg1 enableCommonActions:(id)arg2;
 - (void)lowerLoggingForDiagnosticCase:(id)arg1;

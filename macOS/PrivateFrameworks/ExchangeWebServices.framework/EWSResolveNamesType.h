@@ -17,11 +17,11 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property long long SearchScope; // @synthesize SearchScope=_SearchScope;
 @property BOOL ReturnFullContactData; // @synthesize ReturnFullContactData=_ReturnFullContactData;
 @property(copy) NSString *UnresolvedEntry; // @synthesize UnresolvedEntry=_UnresolvedEntry;
 @property(copy) NSArray *ParentFolderIds; // @synthesize ParentFolderIds=_ParentFolderIds;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

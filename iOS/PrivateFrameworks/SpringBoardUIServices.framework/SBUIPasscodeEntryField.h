@@ -22,9 +22,9 @@
 }
 
 + (_Bool)_usesTextFieldForFirstResponder;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(nonatomic) __weak id <SBUIPasscodeEntryFieldDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)textFieldDidResignFirstResponder:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;

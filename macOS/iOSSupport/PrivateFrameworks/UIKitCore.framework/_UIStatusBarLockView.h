@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) _UIStatusBarImageView *shackleView; // @synthesize shackleView=_shackleView;
 @property(retain, nonatomic) _UIStatusBarImageView *bodyView; // @synthesize bodyView=_bodyView;
-- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)jiggleWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)animateUnlockWithCompletionBlock:(CDUnknownBlockType)arg1;

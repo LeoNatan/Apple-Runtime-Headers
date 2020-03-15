@@ -18,9 +18,9 @@
     CDStruct_1769069f _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *gatewayURL; // @synthesize gatewayURL=_gatewayURL;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

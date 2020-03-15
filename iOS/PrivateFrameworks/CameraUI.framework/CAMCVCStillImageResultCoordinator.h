@@ -29,6 +29,7 @@
     NSMutableDictionary *__pendingAssetAdjustments;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_pendingAssetAdjustments; // @synthesize _pendingAssetAdjustments=__pendingAssetAdjustments;
 @property(readonly, nonatomic) NSMutableDictionary *_pendingVideoProperties; // @synthesize _pendingVideoProperties=__pendingVideoProperties;
 @property(readonly, nonatomic) NSMutableDictionary *_pendingPhotoProperties; // @synthesize _pendingPhotoProperties=__pendingPhotoProperties;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) NSSet *allExpectedResultSpecifiers; // @synthesize allExpectedResultSpecifiers=_allExpectedResultSpecifiers;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) __weak id <CAMCVCStillImageResultCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_errorWithDescription:(id)arg1 code:(long long)arg2;
 - (id)_errorForResultSpecifiers:(unsigned long long)arg1 allowMissingVideo:(_Bool)arg2;
 - (_Bool)_attemptDispatchForResultSpecifiers:(unsigned long long)arg1 forceRemainingDispatches:(_Bool)arg2;

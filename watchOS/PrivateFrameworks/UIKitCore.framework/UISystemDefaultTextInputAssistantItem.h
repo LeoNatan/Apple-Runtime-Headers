@@ -13,8 +13,8 @@
     id <UISystemDefaultTextInputAssistantItemDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <UISystemDefaultTextInputAssistantItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UISystemDefaultTextInputAssistantItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)performSystemButtonActionForStyle:(int)arg1;
 - (void)analyticsDispatchWithActionStyle:(int)arg1;
 - (_Bool)canPerformSystemButtonActionForStyle:(int)arg1;

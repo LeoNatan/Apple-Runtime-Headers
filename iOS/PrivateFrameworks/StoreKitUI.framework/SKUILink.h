@@ -20,12 +20,12 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_url;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *targetString; // @synthesize targetString=_target;
 @property(readonly, nonatomic) NSNumber *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(readonly, nonatomic) SKUIItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)_setItem:(id)arg1;
 - (id)valueForMetricsField:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *linkDictionary;

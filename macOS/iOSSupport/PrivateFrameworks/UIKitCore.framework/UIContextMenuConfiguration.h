@@ -16,10 +16,10 @@
 }
 
 + (id)configurationWithIdentifier:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 actionProvider:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionProvider; // @synthesize actionProvider=_actionProvider;
 @property(copy, nonatomic) CDUnknownBlockType previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(copy, nonatomic) id <NSCopying> identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

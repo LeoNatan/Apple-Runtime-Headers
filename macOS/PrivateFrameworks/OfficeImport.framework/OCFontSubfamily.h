@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fontSubfamilyWithName:(id)arg1 metadata:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) OCFontMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 metadata:(id)arg2;
 
 @end

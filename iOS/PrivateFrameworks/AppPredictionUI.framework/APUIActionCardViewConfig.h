@@ -23,6 +23,7 @@
     long long _maxLinesForFootnote;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fallbackToCustomResponseString; // @synthesize fallbackToCustomResponseString=_fallbackToCustomResponseString;
 @property(nonatomic) long long maxLinesForFootnote; // @synthesize maxLinesForFootnote=_maxLinesForFootnote;
 @property(nonatomic) long long maxLinesForSubtitle; // @synthesize maxLinesForSubtitle=_maxLinesForSubtitle;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool showThumbnailImage; // @synthesize showThumbnailImage=_showThumbnailImage;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

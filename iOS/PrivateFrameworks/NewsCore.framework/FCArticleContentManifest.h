@@ -17,12 +17,12 @@
     FCVideoManifest *_videoManifest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCVideoManifest *videoManifest; // @synthesize videoManifest=_videoManifest;
 @property(retain, nonatomic) FCFlintManifest *flintManifest; // @synthesize flintManifest=_flintManifest;
 @property(retain, nonatomic) FCWebManifest *webManifest; // @synthesize webManifest=_webManifest;
 @property(nonatomic) unsigned long long contentType; // @synthesize contentType=_contentType;
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithArticleID:(id)arg1 videoManifest:(id)arg2;

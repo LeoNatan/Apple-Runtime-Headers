@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) GEOLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTime:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithLocation:(id)arg1;

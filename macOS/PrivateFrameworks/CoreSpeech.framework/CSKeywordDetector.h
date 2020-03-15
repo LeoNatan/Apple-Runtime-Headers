@@ -25,6 +25,7 @@
     unsigned long long _decisionWaitSampleCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isRunningRecognizer; // @synthesize isRunningRecognizer=_isRunningRecognizer;
 @property(nonatomic) unsigned long long decisionWaitSampleCount; // @synthesize decisionWaitSampleCount=_decisionWaitSampleCount;
 @property(nonatomic) unsigned long long analyzedSampleCount; // @synthesize analyzedSampleCount=_analyzedSampleCount;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak CSSpeechManager *speechManager; // @synthesize speechManager=_speechManager;
 @property(nonatomic) __weak id <CSVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)keywordAnalyzerQuasar:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)speechManagerDidStopForwarding:(id)arg1 forReason:(long long)arg2;
 - (void)speechManagerDidStartForwarding:(id)arg1 successfully:(BOOL)arg2 error:(id)arg3;

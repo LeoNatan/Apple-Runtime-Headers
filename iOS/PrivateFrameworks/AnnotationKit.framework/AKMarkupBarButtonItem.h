@@ -16,10 +16,10 @@
 }
 
 + (id)markupBarButtonWithTarget:(id)arg1 action:(SEL)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *toggleButtonImage; // @synthesize toggleButtonImage=_toggleButtonImage;
 @property(retain, nonatomic) AKMarkupButtonContainerView *toggleView; // @synthesize toggleView=_toggleView;
 @property(retain, nonatomic) UIButton *toggleButton; // @synthesize toggleButton=_toggleButton;
-- (void).cxx_destruct;
 - (void)setEnabled:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (void)setAction:(SEL)arg1;

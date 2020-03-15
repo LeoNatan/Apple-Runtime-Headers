@@ -16,8 +16,8 @@
     double _maximumIntervalBetweenPresses;
 }
 
-@property(nonatomic) double maximumIntervalBetweenPresses; // @synthesize maximumIntervalBetweenPresses=_maximumIntervalBetweenPresses;
 - (void).cxx_destruct;
+@property(nonatomic) double maximumIntervalBetweenPresses; // @synthesize maximumIntervalBetweenPresses=_maximumIntervalBetweenPresses;
 - (BOOL)_allRequiredButtonsDown;
 - (void)_processPresses:(id)arg1;
 - (void)_fail;

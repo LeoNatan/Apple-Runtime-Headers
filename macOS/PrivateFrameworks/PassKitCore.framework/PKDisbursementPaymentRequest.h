@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long disbursementTarget; // @synthesize disbursementTarget=_disbursementTarget;
 @property(readonly, nonatomic) unsigned long long disbursementSource; // @synthesize disbursementSource=_disbursementSource;
 @property(readonly, nonatomic) PKDisbursementRequest *disbursementRequest; // @synthesize disbursementRequest=_disbursementRequest;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

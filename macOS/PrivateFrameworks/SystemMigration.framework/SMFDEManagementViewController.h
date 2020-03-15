@@ -25,6 +25,7 @@
 
 + (id)keyPathsForValuesAffectingCollectingDiskPassword;
 + (id)keyPathsForValuesAffectingInstructionText;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property __weak NSWindow *sheetWindow; // @synthesize sheetWindow=_sheetWindow;
 @property(retain) NSArray *incomingUsers; // @synthesize incomingUsers=_incomingUsers;
@@ -36,7 +37,6 @@
 @property(retain) NSArray *userList; // @synthesize userList=_userList;
 @property NSLayoutConstraint *userTableToButtonConstraint; // @synthesize userTableToButtonConstraint=_userTableToButtonConstraint;
 @property NSLayoutConstraint *diskPassToButtonConstraint; // @synthesize diskPassToButtonConstraint=_diskPassToButtonConstraint;
-- (void).cxx_destruct;
 - (void)pressedAuthorizeDiskPassword:(id)arg1;
 - (void)pressedPasswordButton:(id)arg1;
 - (void)pressedCancel:(id)arg1;

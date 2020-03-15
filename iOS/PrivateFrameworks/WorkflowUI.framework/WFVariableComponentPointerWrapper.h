@@ -13,8 +13,8 @@
     WFVariable *_variable;
 }
 
-@property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithVariable:(id)arg1;

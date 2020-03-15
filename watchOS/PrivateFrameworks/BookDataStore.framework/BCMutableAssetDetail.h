@@ -37,6 +37,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *readingPositionLocationUpdateDate; // @synthesize readingPositionLocationUpdateDate=_readingPositionLocationUpdateDate;
 @property(nonatomic) double bookmarkTime; // @synthesize bookmarkTime=_bookmarkTime;
 @property(copy, nonatomic) NSDate *datePlaybackTimeUpdated; // @synthesize datePlaybackTimeUpdated=_datePlaybackTimeUpdated;
@@ -57,7 +58,6 @@
 @property(nonatomic) _Bool notFinished; // @synthesize notFinished=_notFinished;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(copy, nonatomic) NSString *assetID; // @synthesize assetID=_assetID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAudiobook;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

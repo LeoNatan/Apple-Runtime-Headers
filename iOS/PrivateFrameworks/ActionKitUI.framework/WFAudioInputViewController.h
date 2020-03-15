@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
-- (void).cxx_destruct;
 - (_Bool)accessibilityPerformMagicTap;
 - (void)handleTap;
 - (void)loadView;

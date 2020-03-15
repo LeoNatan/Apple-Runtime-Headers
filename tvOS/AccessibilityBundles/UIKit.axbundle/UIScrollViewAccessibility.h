@@ -13,8 +13,9 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (id)preferredFocusEnvironments;
-- (_Bool)canBecomeFocused;
+- (_Bool)_accessibilityRemembersLastFocusedChild;
+- (_Bool)_accessibilityDrawsFocusRingWhenChildrenFocused;
+- (struct CGRect)_defaultFocusRegionFrame;
 - (id)accessibilityPath;
 - (id)_accessibilityUserTestingChildren;
 - (_Bool)_accessibilityIsScannerGroup;
@@ -26,6 +27,9 @@
 - (struct UIEdgeInsets)_accessibilityVisibleContentInset;
 - (void)_accessibilitySetStoredVisibleContentInset:(id)arg1;
 - (id)_accessibilityStoredVisibleContentInset;
+- (void)_accessibilitySetShouldUseFallbackForVisibleContentInset:(_Bool)arg1;
+- (void)_accessibilitySetStoredShouldUseFallbackForVisibleContentInset:(id)arg1;
+- (id)_accessibilityStoredShouldUseFallbackForVisibleContentInset;
 - (_Bool)_accessibilityShouldUseFallbackForVisibleContentInset;
 - (struct UIEdgeInsets)_accessibilityContentInset;
 - (struct CGRect)_accessibilityContentFrame;

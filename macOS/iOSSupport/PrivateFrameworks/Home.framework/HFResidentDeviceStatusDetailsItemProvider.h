@@ -15,10 +15,10 @@
     NSMutableSet *_residentDeviceItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *residentDeviceItems; // @synthesize residentDeviceItems=_residentDeviceItems;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)reloadItems;
 - (id)items;

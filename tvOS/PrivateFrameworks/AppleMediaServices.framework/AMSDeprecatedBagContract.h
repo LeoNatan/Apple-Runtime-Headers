@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     id <AMSBagProtocol> _bag;
 }
 
-@property(retain, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(readonly, nonatomic) AMSBagValue *trustedDomains;
 @property(readonly, nonatomic) AMSBagValue *TFOSamplingSessionDuration;
 @property(readonly, nonatomic) AMSBagValue *TFOSamplingPercentage;

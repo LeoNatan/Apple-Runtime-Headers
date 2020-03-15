@@ -19,10 +19,10 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) __weak id <AKIDPHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AKServerRequestConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_completeFlowWithError:(id)arg1;
 - (void)_completeWithACSPostRequestFromWebView:(id)arg1;
 - (void)webView:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

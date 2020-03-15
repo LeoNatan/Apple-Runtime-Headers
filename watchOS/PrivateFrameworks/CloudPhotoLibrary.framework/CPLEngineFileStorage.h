@@ -24,11 +24,11 @@
 }
 
 + (id)platformImplementationProtocol;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool deleteImmediately; // @synthesize deleteImmediately=_deleteImmediately;
 @property(nonatomic) _Bool keepOriginals; // @synthesize keepOriginals=_keepOriginals;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(readonly, nonatomic) CPLPlatformObject *platformObject; // @synthesize platformObject=_platformObject;
-- (void).cxx_destruct;
 - (_Bool)checkIsEmpty;
 - (id)fileEnumerator;
 - (id)fileEnumeratorIncludingPropertiesForKeys:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;

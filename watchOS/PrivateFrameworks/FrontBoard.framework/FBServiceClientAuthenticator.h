@@ -21,9 +21,9 @@
 + (id)sharedForegroundUIAppClientAuthenticator;
 + (id)sharedUIAppClientAuthenticator;
 + (id)sharedSystemClientAuthenticator;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int credentials; // @synthesize credentials=_credentials;
 @property(readonly, copy, nonatomic) NSString *entitlement; // @synthesize entitlement=_entitlement;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

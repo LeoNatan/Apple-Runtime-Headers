@@ -25,6 +25,7 @@
     KHInspectorTileViewController *_layoutOptionsTileController;
 }
 
+- (void).cxx_destruct;
 @property BOOL hideTreatmentPicker; // @synthesize hideTreatmentPicker=_hideTreatmentPicker;
 @property(retain, nonatomic) KHInspectorTileViewController *layoutOptionsTileController; // @synthesize layoutOptionsTileController=_layoutOptionsTileController;
 @property(retain, nonatomic) KHInspectorTileViewController *photoCountFilterTileController; // @synthesize photoCountFilterTileController=_photoCountFilterTileController;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) KHLayoutPickerController *layoutPicker; // @synthesize layoutPicker=_layoutPicker;
 @property(retain, nonatomic) KHTreatmentPickerController *treatmentPicker; // @synthesize treatmentPicker=_treatmentPicker;
 @property(retain, nonatomic) NSArray *layoutArray; // @synthesize layoutArray=_layoutArray;
-- (void).cxx_destruct;
 - (id)setupStackView;
 - (void)pickerRequiresInspectorRefresh:(id)arg1;
 - (void)loadView;

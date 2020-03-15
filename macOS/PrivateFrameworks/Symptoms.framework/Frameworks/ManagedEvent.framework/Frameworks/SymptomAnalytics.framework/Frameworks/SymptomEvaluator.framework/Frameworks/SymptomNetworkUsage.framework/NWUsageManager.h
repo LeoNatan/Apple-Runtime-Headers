@@ -34,6 +34,7 @@
     NWPollHandler *_activePoll;
 }
 
+- (void).cxx_destruct;
 @property(getter=isInvalidated) BOOL invalidated; // @synthesize invalidated=_invalidated;
 @property BOOL configured; // @synthesize configured=_configured;
 @property(retain) NWPollHandler *activePoll; // @synthesize activePoll=_activePoll;
@@ -49,7 +50,6 @@
 @property(retain) NSObject<OS_dispatch_source> *readSource; // @synthesize readSource=_readSource;
 @property(retain) NWUsageMonitor *usageMonitor; // @synthesize usageMonitor=_usageMonitor;
 @property(nonatomic) __weak id <NWUsageManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)enumerateChangedFlowsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)stateDictionary;
 - (void)ignoreFlow:(unsigned long long)arg1;

@@ -20,6 +20,7 @@
     double _currentInsideness;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double currentInsideness; // @synthesize currentInsideness=_currentInsideness;
 @property(nonatomic) double dismissalRectTopEdge; // @synthesize dismissalRectTopEdge=_dismissalRectTopEdge;
 @property(nonatomic) _Bool didDismiss; // @synthesize didDismiss=_didDismiss;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSHashTable *activeGestureRecognizers; // @synthesize activeGestureRecognizers=_activeGestureRecognizers;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <WFDrawerDismissalHelperDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dismissCardWithPanGestureRecognizer:(id)arg1;
 - (void)dismissCardWithVelocity:(double)arg1;
 - (double)insidenessForGestureRecognizer:(id)arg1;

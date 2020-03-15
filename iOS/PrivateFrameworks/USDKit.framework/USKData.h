@@ -15,10 +15,10 @@
     unsigned long long _arraySize;
 }
 
-@property(readonly, nonatomic) unsigned long long arraySize; // @synthesize arraySize=_arraySize;
-@property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long arraySize; // @synthesize arraySize=_arraySize;
+@property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 -     // Error parsing type: @32@0:8^{?=[4]}16Q24, name: initWithDouble4x4Array:count:
@@ -34,6 +34,7 @@
 - (id)initWithTokenArray:(id)arg1;
 - (id)initWithStringArray:(id)arg1;
 - (id)initWithQuatfArray:(struct *)arg1 count:(unsigned long long)arg2;
+- (id)initWithUIntArray:(unsigned int *)arg1 count:(unsigned long long)arg2;
 - (id)initWithIntArray:(int *)arg1 count:(unsigned long long)arg2;
 - (id)initWithQuatf:(struct)arg1;
 -     // Error parsing type: @144@0:8{?=[4]}16, name: initWithDouble4x4:
@@ -48,8 +49,10 @@
 - (id)initWithResourcePath:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithObjectPath:(id)arg1;
+- (id)initWithUInt:(unsigned int)arg1;
 - (id)initWithInt:(int)arg1;
 - (id)initWithBool:(_Bool)arg1;
+- (id)initWithTimeCode:(id)arg1;
 - (id)initWithString:(id)arg1;
 - (id)initWithToken:(id)arg1;
 -     // Error parsing type: v32@0:8^{?=[4]}16Q24, name: setDouble4x4Array:count:
@@ -65,6 +68,7 @@
 - (void)setTokenArray:(id)arg1;
 - (void)setStringArray:(id)arg1;
 - (void)setQuatfArray:(struct *)arg1 count:(unsigned long long)arg2;
+- (void)setUIntArray:(unsigned int *)arg1 count:(unsigned long long)arg2;
 - (void)setIntArray:(int *)arg1 count:(unsigned long long)arg2;
 - (void)setQuatfValue:(struct)arg1;
 -     // Error parsing type: v144@0:8{?=[4]}16, name: setDouble4x4Value:
@@ -79,8 +83,10 @@
 - (void)setResourcePath:(id)arg1;
 - (void)setURLValue:(id)arg1;
 - (void)setObjectPathValue:(id)arg1;
+- (void)setUIntValue:(unsigned int)arg1;
 - (void)setIntValue:(int)arg1;
 - (void)setBoolValue:(_Bool)arg1;
+- (void)setTimeCodeValue:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setTokenValue:(id)arg1;
 - (void)setValue:(struct VtValue)arg1;
@@ -99,6 +105,7 @@
 - (id)tokenArray;
 - (id)stringArray;
 - (unsigned long long)quatfArray:(struct *)arg1 maxCount:(unsigned long long)arg2;
+- (unsigned long long)uintArray:(unsigned int *)arg1 maxCount:(unsigned long long)arg2;
 - (unsigned long long)intArray:(int *)arg1 maxCount:(unsigned long long)arg2;
 - (id)resourcePath;
 - (id)urlValue;
@@ -114,8 +121,10 @@
 -     // Error parsing type: 16@0:8, name: float3Value
 -     // Error parsing type: 16@0:8, name: float2Value
 - (float)floatValue;
+- (unsigned int)uintValue;
 - (int)intValue;
 - (_Bool)boolValue;
+- (id)timeCodeValue;
 - (id)stringValue;
 - (id)tokenValue;
 @property(readonly, retain, nonatomic) NSData *dataNoCopy;

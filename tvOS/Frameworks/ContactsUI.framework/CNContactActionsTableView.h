@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     _CNContactActionsTableViewPermissiveGestureRecognizerDelegate *_selectionGestureRecognizerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _CNContactActionsTableViewPermissiveGestureRecognizerDelegate *selectionGestureRecognizerDelegate; // @synthesize selectionGestureRecognizerDelegate=_selectionGestureRecognizerDelegate;
 @property(retain, nonatomic) NSIndexPath *trackedElementIndexPath; // @synthesize trackedElementIndexPath=_trackedElementIndexPath;
 @property(retain, nonatomic) UIGestureRecognizer *additionalSelectionGestureRecognizer; // @synthesize additionalSelectionGestureRecognizer=_additionalSelectionGestureRecognizer;
 @property(retain, nonatomic) UILongPressGestureRecognizer *selectionGestureRecognizer; // @synthesize selectionGestureRecognizer=_selectionGestureRecognizer;
-- (void).cxx_destruct;
 - (void)clearAdditionalSelectionGestureRecognizer;
 - (void)startTrackingSelectionFromGestureRecognizer:(id)arg1;
 - (void)notifyDelegateWithSelectionEventAtPoint:(struct CGPoint)arg1 trackedElementIndexPath:(id)arg2;

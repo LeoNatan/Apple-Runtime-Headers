@@ -21,9 +21,9 @@
 }
 
 + (id)sharedGenericAlertProvider;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *presentedAlertItems; // @synthesize presentedAlertItems=_presentedAlertItems;
 @property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate=_alertProviderDelegate;
-- (void).cxx_destruct;
 - (void)requestUITriggerWithRegistration:(id)arg1 UITriggerName:(id)arg2 withDictionary:(id)arg3 withReason:(int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)_removePresentedItem:(id)arg1;
 - (void)alertViewControllerDidDeactivate:(id)arg1;

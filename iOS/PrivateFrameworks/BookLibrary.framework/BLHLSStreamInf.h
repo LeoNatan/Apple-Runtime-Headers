@@ -17,12 +17,12 @@
     NSString *_audio;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *audio; // @synthesize audio=_audio;
 @property(readonly, nonatomic) NSString *codecs; // @synthesize codecs=_codecs;
 @property(readonly, nonatomic) unsigned long long averageBandwidth; // @synthesize averageBandwidth=_averageBandwidth;
 @property(readonly, nonatomic) unsigned long long bandwidth; // @synthesize bandwidth=_bandwidth;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long averageBandwidthFallbackToPeak;
 - (id)description;
 - (void)setPropertiesFromAttributeList:(id)arg1;

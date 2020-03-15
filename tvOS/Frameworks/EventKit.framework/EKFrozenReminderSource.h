@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     REMAccount *_remAccount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMAccount *remAccount; // @synthesize remAccount=_remAccount;
 @property(readonly, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
-- (void).cxx_destruct;
 
 @end
 

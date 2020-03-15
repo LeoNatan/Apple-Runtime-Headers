@@ -20,8 +20,8 @@
     id <AXCharacterVoiceSynthesizerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AXCharacterVoiceSynthesizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AXCharacterVoiceSynthesizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)characterVoice:(id)arg1 finishedSpeakingUtterance:(id)arg2 finished:(_Bool)arg3;
 - (void)characterVoice:(id)arg1 continuedSpeakingUtterance:(id)arg2;
 - (void)characterVoice:(id)arg1 startedSpeakingUtterance:(id)arg2;

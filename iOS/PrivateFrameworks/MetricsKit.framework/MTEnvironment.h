@@ -13,8 +13,8 @@
     id <MTEnvironmentDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MTEnvironmentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MTEnvironmentDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)windowOuterWidth;
 - (id)windowOuterHeight;
 - (id)windowInnerWidth;

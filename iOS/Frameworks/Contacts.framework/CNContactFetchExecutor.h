@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactStore *store; // @synthesize store=_store;
 @property(readonly, copy, nonatomic) CNContactFetchRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)run:(id *)arg1;
 - (id)description;
 - (id)initWithRequest:(id)arg1 store:(id)arg2;

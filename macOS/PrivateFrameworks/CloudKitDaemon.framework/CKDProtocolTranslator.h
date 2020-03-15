@@ -22,6 +22,7 @@
 }
 
 + (id)translatorIgnoringUserIDsWithPackageStagingDirectory:(id)arg1 databaseScope:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *downloadPreauthorizationMap; // @synthesize downloadPreauthorizationMap=_downloadPreauthorizationMap;
 @property(copy, nonatomic) NSString *overriddenContainerScopedUserID; // @synthesize overriddenContainerScopedUserID=_overriddenContainerScopedUserID;
 @property(copy, nonatomic) NSString *containerScopedUserID; // @synthesize containerScopedUserID=_containerScopedUserID;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *orgAdminUserID; // @synthesize orgAdminUserID=_orgAdminUserID;
 @property(copy, nonatomic) NSString *packageStagingDirectory; // @synthesize packageStagingDirectory=_packageStagingDirectory;
 @property(nonatomic) BOOL dontCreateValidatingParentReferences; // @synthesize dontCreateValidatingParentReferences=_dontCreateValidatingParentReferences;
-- (void).cxx_destruct;
 - (id)identityFromPUser:(id)arg1;
 - (id)pAliasWithUserRecordID:(id)arg1;
 - (id)pAliasWithHashedStringID:(id)arg1 type:(int)arg2;

@@ -15,12 +15,12 @@
     double _velocity;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) int frameNumberToPlay; // @synthesize frameNumberToPlay=_frameNumberToPlay;
 @property(nonatomic) double velocity; // @synthesize velocity=_velocity;
 @property(nonatomic) int strength; // @synthesize strength=_strength;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(int)arg1 strength:(int)arg2 velocity:(double)arg3 frameNumberToPlay:(int)arg4 completion:(CDUnknownBlockType)arg5;
 
 @end

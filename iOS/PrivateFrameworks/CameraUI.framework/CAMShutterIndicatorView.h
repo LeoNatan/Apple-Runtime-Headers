@@ -13,8 +13,8 @@
     NSAttributedString *__indicatorText;
 }
 
-@property(readonly, nonatomic) NSAttributedString *_indicatorText; // @synthesize _indicatorText=__indicatorText;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSAttributedString *_indicatorText; // @synthesize _indicatorText=__indicatorText;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithCoder:(id)arg1;

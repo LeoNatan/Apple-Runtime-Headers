@@ -22,10 +22,10 @@
 + (id)_numberFormatter;
 + (id)codedQuantityWithValue:(id)arg1 unitCoding:(id)arg2;
 + (id)codedQuantityWithValue:(id)arg1 comparatorCoding:(id)arg2 unitCoding:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKMedicalCoding *unitCoding; // @synthesize unitCoding=_unitCoding;
 @property(readonly, copy, nonatomic) HKMedicalCoding *comparatorCoding; // @synthesize comparatorCoding=_comparatorCoding;
 @property(readonly, copy, nonatomic) NSString *rawValue; // @synthesize rawValue=_rawValue;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

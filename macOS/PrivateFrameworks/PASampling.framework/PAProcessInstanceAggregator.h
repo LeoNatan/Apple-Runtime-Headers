@@ -17,11 +17,11 @@
     BOOL _forceOneBasedTimeIndexes;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long timestampIndexWhenTransitionedToSamplingAllProcesses; // @synthesize timestampIndexWhenTransitionedToSamplingAllProcesses=_timestampIndexWhenTransitionedToSamplingAllProcesses;
 @property unsigned long long stackshotFrameAddress; // @synthesize stackshotFrameAddress=_stackshotFrameAddress;
 @property(copy) NSString *headerNote; // @synthesize headerNote=_headerNote;
 @property BOOL forceOneBasedTimeIndexes; // @synthesize forceOneBasedTimeIndexes=_forceOneBasedTimeIndexes;
-- (void).cxx_destruct;
 - (void)printFooterToOutputStream:(id)arg1;
 - (void)printHIDEventsToOutputStream:(id)arg1;
 - (void)printHIDEvent:(id)arg1 toOutputStream:(id)arg2;

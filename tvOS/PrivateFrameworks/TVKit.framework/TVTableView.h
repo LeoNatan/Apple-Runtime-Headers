@@ -19,8 +19,8 @@
     NSIndexPath *_indexPathForLastFocusedItem;
 }
 
-@property(readonly, copy, nonatomic) NSIndexPath *indexPathForLastFocusedItem; // @synthesize indexPathForLastFocusedItem=_indexPathForLastFocusedItem;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSIndexPath *indexPathForLastFocusedItem; // @synthesize indexPathForLastFocusedItem=_indexPathForLastFocusedItem;
 - (void)_performBlockWithFocusedCellIndexPath:(CDUnknownBlockType)arg1;
 - (void)_longPressAction:(id)arg1;
 - (void)_playButtonAction:(id)arg1;

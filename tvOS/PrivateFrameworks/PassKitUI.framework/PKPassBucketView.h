@@ -19,11 +19,11 @@
     NSArray *_bucket;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bucket; // @synthesize bucket=_bucket;
 @property(retain, nonatomic) PKPassBucketTemplate *bucketTemplate; // @synthesize bucketTemplate=_bucketTemplate;
 @property(retain, nonatomic) PKPassColorProfile *colorProfile; // @synthesize colorProfile=_colorProfile;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)_presentRecursiveDiff:(id)arg1 inView:(id)arg2 forSubviewAtIndex:(unsigned long long)arg3 withSubviews:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (long long)_backgroundForBucketTemplate:(id)arg1;

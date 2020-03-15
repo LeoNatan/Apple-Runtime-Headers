@@ -19,13 +19,13 @@
     NSDate *_lastProgressLogDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *lastProgressLogDate; // @synthesize lastProgressLogDate=_lastProgressLogDate;
 @property BOOL delegateQueueActivated; // @synthesize delegateQueueActivated=_delegateQueueActivated;
 @property BOOL controllerOperationInProgress; // @synthesize controllerOperationInProgress=_controllerOperationInProgress;
 @property(retain) NSObject<OS_dispatch_semaphore> *inProgressOperationComplete; // @synthesize inProgressOperationComplete=_inProgressOperationComplete;
 @property(retain) NSObject<OS_dispatch_semaphore> *controllerOperationComplete; // @synthesize controllerOperationComplete=_controllerOperationComplete;
 @property(readonly) int controllerEndingState; // @synthesize controllerEndingState=_controllerEndingState;
-- (void).cxx_destruct;
 - (void)_reportRateLimitedProgressWithPercentComplete:(double)arg1;
 - (void)_activateDelegateQueue;
 - (void)bridgeOSSoftwareUpdateController:(id)arg1 purgeComplete:(id)arg2;

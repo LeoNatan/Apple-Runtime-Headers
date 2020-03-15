@@ -15,8 +15,8 @@
     NSMutableArray *_queue;
 }
 
-@property(readonly, nonatomic) NSMutableArray *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *queue; // @synthesize queue=_queue;
 - (void)prefetchItemAfterCoordinatorIfPossible:(id)arg1;
 - (void)playbackCoordinator:(id)arg1 playbackFailedWithError:(id)arg2;
 - (void)playbackCoordinator:(id)arg1 timeElapsed:(double)arg2 duration:(double)arg3;

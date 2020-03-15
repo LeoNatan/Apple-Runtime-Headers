@@ -24,13 +24,13 @@
 + (id)mountPointForUUID:(id)arg1;
 + (id)volumeWithMountpoint:(id)arg1;
 + (id)volumeWithPath:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) unsigned int block_size; // @synthesize block_size=_block_size;
 @property(readonly) int dev; // @synthesize dev=_dev;
 @property(readonly) unsigned long long initialFreespace; // @synthesize initialFreespace=_initialFreespace;
 @property(readonly, nonatomic) NSString *mountPoint; // @synthesize mountPoint=_mountPoint;
 @property(readonly, nonatomic) NSString *fsType; // @synthesize fsType=_fsType;
 @property(readonly) BOOL isRoot; // @synthesize isRoot=_isRoot;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *thresholds;
 - (BOOL)isEqualTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

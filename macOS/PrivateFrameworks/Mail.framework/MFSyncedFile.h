@@ -27,9 +27,9 @@
 + (id)syncedFileForRelativePath:(id)arg1;
 + (void)initialize;
 + (id)log;
+- (void).cxx_destruct;
 @property long long syncState; // @synthesize syncState=_syncState;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)_handleIdentityChange:(id)arg1;
 - (void)_resolveConflicts;
 - (id)_ubiquitousFileForVersion:(long long)arg1;

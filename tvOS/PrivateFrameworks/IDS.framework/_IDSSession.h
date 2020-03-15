@@ -46,10 +46,10 @@
     NSMutableDictionary *_sessionConfig;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long initialLinkType; // @synthesize initialLinkType=_initialLinkType;
 @property(retain, nonatomic) id boostContext; // @synthesize boostContext=_boostContext;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)session:(id)arg1 didReceiveReport:(id)arg2;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;

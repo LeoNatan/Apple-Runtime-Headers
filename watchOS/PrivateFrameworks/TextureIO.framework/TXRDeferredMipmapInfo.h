@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_elements;
 }
 
-@property(readonly, nonatomic) NSMutableArray *elements; // @synthesize elements=_elements;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *elements; // @synthesize elements=_elements;
 - (id)initWithArrayLength:(unsigned int)arg1 cubemap:(_Bool)arg2;
 
 @end

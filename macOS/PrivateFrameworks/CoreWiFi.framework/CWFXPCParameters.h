@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *authorizationExternalFormData; // @synthesize authorizationExternalFormData=_authorizationExternalFormData;
 @property(nonatomic) unsigned int QOS; // @synthesize QOS=_QOS;
 @property(nonatomic) unsigned long long timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

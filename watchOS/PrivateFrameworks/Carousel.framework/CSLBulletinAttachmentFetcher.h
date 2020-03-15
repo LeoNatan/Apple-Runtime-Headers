@@ -18,10 +18,10 @@
     BBObserver *_observer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BBObserver *observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CSLBulletinPipelineStepActorDelegate> pipelineStep; // @synthesize pipelineStep=_pipelineStep;
-- (void).cxx_destruct;
 - (void)_bulletinAttachmentForBulletin:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)wantsBulletin:(id)arg1 feed:(unsigned int)arg2;
 - (void)addBulletin:(id)arg1 replaceBulletin:(id)arg2 feed:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;

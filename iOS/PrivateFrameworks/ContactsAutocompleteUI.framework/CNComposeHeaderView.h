@@ -25,6 +25,7 @@
 + (double)separatorHeight;
 + (double)preferredHeight;
 + (id)defaultFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightedBackgroundView; // @synthesize highlightedBackgroundView=_highlightedBackgroundView;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
 @property(nonatomic) struct NSDirectionalEdgeInsets separatorDirectionalEdgeInsets; // @synthesize separatorDirectionalEdgeInsets=_separatorDirectionalEdgeInsets;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool showsHighlightWhenTouched; // @synthesize showsHighlightWhenTouched=_showsHighlightWhenTouched;
 @property(retain, nonatomic) CNComposeHeaderLabelView *labelView; // @synthesize labelView=_labelView;
 @property(copy, nonatomic) NSString *navTitle; // @synthesize navTitle=_navTitle;
-- (void).cxx_destruct;
 - (struct CGRect)_exclusionRectForView:(id)arg1 alongEdge:(unsigned long long)arg2;
 - (struct UIEdgeInsets)_recipientViewEdgeInsets;
 - (id)_baseAttributes;

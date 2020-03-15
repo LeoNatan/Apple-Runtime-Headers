@@ -28,6 +28,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property BOOL invalidated; // @synthesize invalidated=_invalidated;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) EOSDevice *device; // @synthesize device=_device;
@@ -43,7 +44,6 @@
 @property unsigned int locationID; // @synthesize locationID=_locationID;
 @property(retain) NSArray *validDeviceTypes; // @synthesize validDeviceTypes=_validDeviceTypes;
 @property long long validDeviceModes; // @synthesize validDeviceModes=_validDeviceModes;
-- (void).cxx_destruct;
 - (void)_deviceDidChange:(void *)arg1 mode:(long long)arg2 connected:(BOOL)arg3;
 - (void)_stopDeviceNotificationsThread;
 - (void)_startListeningToDeviceNotifications;

@@ -40,6 +40,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadDisableScreenLockImmediate; // @synthesize payloadDisableScreenLockImmediate=_payloadDisableScreenLockImmediate;
 @property(copy, nonatomic) NSNumber *payloadLogOutDisabledWhileLoggedIn; // @synthesize payloadLogOutDisabledWhileLoggedIn=_payloadLogOutDisabledWhileLoggedIn;
 @property(copy, nonatomic) NSNumber *payloadPowerOffDisabledWhileLoggedIn; // @synthesize payloadPowerOffDisabledWhileLoggedIn=_payloadPowerOffDisabledWhileLoggedIn;
@@ -59,7 +60,6 @@
 @property(copy, nonatomic) NSNumber *payloadIncludeNetworkUser; // @synthesize payloadIncludeNetworkUser=_payloadIncludeNetworkUser;
 @property(copy, nonatomic) NSNumber *payloadHideLocalUsers; // @synthesize payloadHideLocalUsers=_payloadHideLocalUsers;
 @property(copy, nonatomic) NSNumber *payloadSHOWFULLNAME; // @synthesize payloadSHOWFULLNAME=_payloadSHOWFULLNAME;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

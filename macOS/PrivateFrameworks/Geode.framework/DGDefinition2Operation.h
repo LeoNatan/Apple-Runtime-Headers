@@ -17,8 +17,8 @@
 + (id)inputKeys;
 + (id)attributes;
 + (id)_stringsTableName;
-@property(copy, nonatomic) NSNumber *inputIntensity; // @synthesize inputIntensity=_inputIntensity;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *inputIntensity; // @synthesize inputIntensity=_inputIntensity;
 - (id)initWithOperation:(id)arg1;
 - (id)init;
 - (BOOL)isMigratable;

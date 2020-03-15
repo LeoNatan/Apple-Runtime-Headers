@@ -32,6 +32,7 @@
     UILabel *_outOfRangeLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *outOfRangeLabel; // @synthesize outOfRangeLabel=_outOfRangeLabel;
 @property(retain, nonatomic) UIFont *unitFont; // @synthesize unitFont=_unitFont;
 @property(retain, nonatomic) UIFont *overriddenValueFont; // @synthesize overriddenValueFont=_overriddenValueFont;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) HKReferenceRangeViewData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *multiValueSeparator; // @synthesize multiValueSeparator=_multiValueSeparator;
 @property(readonly, nonatomic) HKReferenceRangeViewConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)_outOfRangeColor;
 - (id)_configuredPreferredFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;
 - (id)_generateMultilineAttributedValueStringForOriginalString:(id)arg1;

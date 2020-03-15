@@ -36,10 +36,10 @@
     NSString *_lastBackedUpDefaultPaymentPassSerialNumber;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastBackedUpDefaultPaymentPassSerialNumber; // @synthesize lastBackedUpDefaultPaymentPassSerialNumber=_lastBackedUpDefaultPaymentPassSerialNumber;
 @property(nonatomic) _Bool hideSetupLaterButton; // @synthesize hideSetupLaterButton=_hideSetupLaterButton;
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
-- (void).cxx_destruct;
 - (id)paymentSetupMarker;
 - (void)_createPassSnapshotFromPaymentPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentSecurityCapabilitiesFlowWithFeature:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;

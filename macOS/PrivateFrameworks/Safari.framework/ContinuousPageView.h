@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)backgroundColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id previousPageItem; // @synthesize previousPageItem=_previousPageItem;
 @property(readonly, nonatomic, getter=isLoadingPageItem) BOOL loadingPageItem; // @synthesize loadingPageItem=_loadingPageItem;
 @property(readonly, nonatomic, getter=isHandlingPageTransition) BOOL handlingPageTransition; // @synthesize handlingPageTransition=_handlingPageTransition;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id nextPageItem; // @synthesize nextPageItem=_nextPageItem;
 @property(retain, nonatomic) id currentPageItem; // @synthesize currentPageItem=_currentPageItem;
 @property(readonly, nonatomic) __weak id <ContinuousPageViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_didTransitionToNextPage;
 - (void)_didTransitionToPreviousPage;
 - (void)_transitionToPageViewWasCanceled:(id)arg1 pageItem:(id)arg2;

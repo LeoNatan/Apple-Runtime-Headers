@@ -32,6 +32,7 @@
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(copy, nonatomic) NSArray *sectionCellLayoutAttributes; // @synthesize sectionCellLayoutAttributes=_sectionCellLayoutAttributes;
 @property(readonly, nonatomic) double showcaseFactor; // @synthesize showcaseFactor=_showcaseFactor;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) CDUnknownBlockType onPrepareLayout; // @synthesize onPrepareLayout=_onPrepareLayout;
 @property(copy, nonatomic) NSArray *supplementaryCellLayoutAttributes; // @synthesize supplementaryCellLayoutAttributes=_supplementaryCellLayoutAttributes;
 @property(nonatomic) long long supplementaryCellSection; // @synthesize supplementaryCellSection=_supplementaryCellSection;
-- (void).cxx_destruct;
 - (double)_computeShowcaseFactorForContentOffset:(struct CGPoint)arg1;
 - (void)_prepareSectionMetrics;
 - (id)_oldLayoutAttributesForItemAtIndexPath:(id)arg1;

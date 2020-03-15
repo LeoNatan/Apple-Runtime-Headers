@@ -13,8 +13,8 @@
     NSData *_hierarchyData;
 }
 
-@property(retain, nonatomic) NSData *hierarchyData; // @synthesize hierarchyData=_hierarchyData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *hierarchyData; // @synthesize hierarchyData=_hierarchyData;
 - (id)decodeHierarchyWithContainer:(id)arg1 error:(id *)arg2;
 - (id)initWithHierarchyData:(id)arg1;
 

@@ -16,8 +16,8 @@
     EFSQLColumnExpression *_columnExpression;
 }
 
-@property(readonly, nonatomic) EFSQLColumnExpression *columnExpression; // @synthesize columnExpression=_columnExpression;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EFSQLColumnExpression *columnExpression; // @synthesize columnExpression=_columnExpression;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

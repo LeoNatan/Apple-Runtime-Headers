@@ -25,11 +25,11 @@
 }
 
 + (id)sharedClockManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLClockAssertion *screenAssertion; // @synthesize screenAssertion=_screenAssertion;
 @property(readonly, nonatomic) CSLClockWindowManager *clockWindowManager; // @synthesize clockWindowManager=_clockWindowManager;
 @property(readonly, nonatomic, getter=isClockActive) _Bool clockActive; // @synthesize clockActive=_clockActive;
 @property(retain, nonatomic) id <CSLClockUpdating> clock; // @synthesize clock=_clock;
-- (void).cxx_destruct;
 - (void)clockActiveAssertionHierarchyDidUpdate:(id)arg1;
 - (unsigned int)_pauseReasonsForPausedAssertions:(id)arg1;
 - (void)_updateAssertionTypeIfNeeded;

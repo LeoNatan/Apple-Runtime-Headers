@@ -18,13 +18,13 @@
     UIView *_divider2;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *divider2; // @synthesize divider2=_divider2;
 @property(retain, nonatomic) UIView *divider1; // @synthesize divider1=_divider1;
 @property(retain, nonatomic) UIView *metadataView; // @synthesize metadataView=_metadataView;
 @property(readonly, nonatomic) UILabel *summaryLabel; // @synthesize summaryLabel=_summaryLabel;
 @property(nonatomic) _Bool showBottomDivider; // @synthesize showBottomDivider=_showBottomDivider;
 @property(nonatomic) _Bool showTopDivider; // @synthesize showTopDivider=_showTopDivider;
-- (void).cxx_destruct;
 - (id)_defaultDividerColor;
 - (void)_updateColors;
 - (void)traitCollectionDidChange:(id)arg1;

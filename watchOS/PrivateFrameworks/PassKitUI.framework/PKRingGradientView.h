@@ -28,6 +28,7 @@
     float _currentAngle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float currentAngle; // @synthesize currentAngle=_currentAngle;
 @property(nonatomic) float minimumAngle; // @synthesize minimumAngle=_minimumAngle;
 @property(copy, nonatomic) UIColor *gradientEndColor; // @synthesize gradientEndColor=_gradientEndColor;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(copy, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (struct CGPoint)_centerPointForMaskViewWithAngle:(float)arg1 adjustToCover:(_Bool)arg2;
 - (float)_maskRadius;
 - (struct CGPoint)_center;

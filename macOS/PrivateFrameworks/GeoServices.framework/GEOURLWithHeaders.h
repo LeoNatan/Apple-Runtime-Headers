@@ -14,9 +14,9 @@
     NSDictionary *_headerFields;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *headerFields; // @synthesize headerFields=_headerFields;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)initWithURL:(id)arg1 headerFields:(id)arg2;
 - (id)init;
 

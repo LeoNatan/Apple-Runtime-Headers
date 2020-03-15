@@ -21,8 +21,8 @@
 + (id)nullGPUMask;
 + (id)allSizeClassesMask;
 + (id)nullWidthNullHeightMask;
-@property(readonly) Class slotClass; // @synthesize slotClass=_slotClass;
 - (void).cxx_destruct;
+@property(readonly) Class slotClass; // @synthesize slotClass=_slotClass;
 - (void)ibic_generateAttributes:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *debugDescription;
 - (id)descriptionWithIndent:(long long)arg1;

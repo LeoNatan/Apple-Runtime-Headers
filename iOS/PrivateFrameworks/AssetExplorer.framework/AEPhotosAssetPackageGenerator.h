@@ -23,6 +23,7 @@
     PHAsset *__asset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHAsset *_asset; // @synthesize _asset=__asset;
 @property(retain, nonatomic, setter=_setIvarQueueLastError:) NSError *_ivarQueue_lastError; // @synthesize _ivarQueue_lastError=__ivarQueue_lastError;
 @property(retain, nonatomic, setter=_setIvarQueueCurrentPackage:) AEAssetPackage *_ivarQueue_currentPackage; // @synthesize _ivarQueue_currentPackage=__ivarQueue_currentPackage;
@@ -30,12 +31,11 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *_packagerWorkGroup; // @synthesize _packagerWorkGroup=__packagerWorkGroup;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_packagerIvarIsolationQueue; // @synthesize _packagerIvarIsolationQueue=__packagerIvarIsolationQueue;
 @property(readonly, copy, nonatomic) PXAssetReference *sourceAssetReference; // @synthesize sourceAssetReference=_sourceAssetReference;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PUDisplayAsset> sourceAsset;
 - (void)cancelReviewAssetRequest;
 - (void)requestReviewAssetWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_beginGeneratingWithResourceInfo:(id)arg1 error:(id)arg2 finalizer:(id)arg3;
-- (void)_downloadBeforeBeforeGeneratingWithFinalizer:(id)arg1;
+- (void)_ensureLocalAvailabilityBeforeBeforeGeneratingWithFinalizer:(id)arg1;
 - (void)_downloadIfNeededBeforeGeneratingWithFinalizer:(id)arg1;
 - (void)_callCompletionWithResult:(CDUnknownBlockType)arg1;
 @property(readonly) NSProgress *progress;

@@ -19,9 +19,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDismissOnUILock; // @synthesize shouldDismissOnUILock=_shouldDismissOnUILock;
 @property(readonly, nonatomic) BSProcessHandle *targetProcess; // @synthesize targetProcess=_targetProcess;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

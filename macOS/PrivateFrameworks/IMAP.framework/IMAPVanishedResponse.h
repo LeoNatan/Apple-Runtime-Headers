@@ -15,9 +15,9 @@
 }
 
 + (BOOL)handlesResponseWithName:(const char *)arg1 ofLength:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexSet *uids; // @synthesize uids=_uids;
 @property(nonatomic) BOOL earlier; // @synthesize earlier=_earlier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

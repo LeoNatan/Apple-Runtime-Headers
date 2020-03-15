@@ -25,13 +25,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *custodianName; // @synthesize custodianName=_custodianName;
 @property(retain, nonatomic) NSString *authorName; // @synthesize authorName=_authorName;
 @property(retain, nonatomic) NSString *patientName; // @synthesize patientName=_patientName;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSData *documentData; // @synthesize documentData=_documentData;
 @property(retain, nonatomic) HDCodableSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

@@ -29,6 +29,7 @@
     UIViewController *_mvpdInstallPromptPresentingViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *mvpdInstallPromptPresentingViewController; // @synthesize mvpdInstallPromptPresentingViewController=_mvpdInstallPromptPresentingViewController;
 @property(nonatomic) _Bool needsPresentationOfMVPDAppInstallPromptIfAvailable; // @synthesize needsPresentationOfMVPDAppInstallPromptIfAvailable=_needsPresentationOfMVPDAppInstallPromptIfAvailable;
 @property(retain, nonatomic) VSAppSettingsViewModel *mvpdAppSettingsViewModel; // @synthesize mvpdAppSettingsViewModel=_mvpdAppSettingsViewModel;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSArray *availableApps; // @synthesize availableApps=_availableApps;
 @property(copy, nonatomic) NSArray *decidedApps; // @synthesize decidedApps=_decidedApps;
 @property(retain, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;
-- (void).cxx_destruct;
 - (void)presentMVPDAppInstallPromptFromViewController:(id)arg1;
 - (_Bool)shouldShowMVPDAppInstallPrompt;
 - (_Bool)shouldShowMVPDAppInstallPromptFromViewController:(id)arg1;

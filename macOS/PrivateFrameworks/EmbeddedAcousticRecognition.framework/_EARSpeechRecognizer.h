@@ -46,6 +46,8 @@
 + (id)maximumSupportedConfigurationVersion;
 + (id)minimumSupportedConfigurationVersion;
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(copy, nonatomic) NSString *userId; // @synthesize userId=_userId;
 @property(copy, nonatomic) NSString *bluetoothDeviceId; // @synthesize bluetoothDeviceId=_bluetoothDeviceId;
@@ -64,8 +66,6 @@
 @property(nonatomic) BOOL detectUtterances; // @synthesize detectUtterances=_detectUtterances;
 @property(copy, nonatomic) NSData *jitProfileData; // @synthesize jitProfileData=_jitProfileData;
 @property(copy, nonatomic) NSData *userProfileData; // @synthesize userProfileData=_userProfileData;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setAlternateRawRecognitionTokenSausage:(id)arg1;
 - (void)getFormatterWithBlock:(CDUnknownBlockType)arg1;
 - (id)recognitionStatistics;

@@ -12,6 +12,7 @@
 @protocol XCUIEventSynthesizing <NSObject>
 @property(readonly) unsigned long long attachedForceCapableDeviceID;
 @property(readonly) unsigned long long currentKeyboardModifierFlags;
+@property double implicitEventConfirmationIntervalForCurrentContext;
 - (BOOL)requestPressureEventsSupportedOrError:(id *)arg1;
 - (id <XCUIEventSynthesisRequest>)synthesizeEvent:(XCSynthesizedEventRecord *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 @end

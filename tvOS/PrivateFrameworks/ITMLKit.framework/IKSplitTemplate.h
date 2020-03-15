@@ -16,10 +16,10 @@
 }
 
 + (id)supportedFeatures;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IKDOMFeatureNavigationDocument *rightNavigationDocument; // @synthesize rightNavigationDocument=_rightNavigationDocument;
 @property(readonly, nonatomic) IKDOMFeatureNavigationDocument *leftNavigationDocument; // @synthesize leftNavigationDocument=_leftNavigationDocument;
 @property(copy, nonatomic) NSString *displayMode; // @synthesize displayMode=_displayMode;
-- (void).cxx_destruct;
 - (id)_featureWithName:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 

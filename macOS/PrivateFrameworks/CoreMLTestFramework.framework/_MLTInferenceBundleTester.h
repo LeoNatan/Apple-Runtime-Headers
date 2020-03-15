@@ -19,6 +19,7 @@
     unsigned long long _failingTestsInBundle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long failingTestsInBundle; // @synthesize failingTestsInBundle=_failingTestsInBundle;
 @property(nonatomic) unsigned long long testInBundle; // @synthesize testInBundle=_testInBundle;
 @property(nonatomic) long long computeUnit; // @synthesize computeUnit=_computeUnit;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArray *extractedFiles; // @synthesize extractedFiles=_extractedFiles;
 @property(retain, nonatomic) NSString *extractedBundleDirectory; // @synthesize extractedBundleDirectory=_extractedBundleDirectory;
 @property(retain, nonatomic) NSString *errorString; // @synthesize errorString=_errorString;
-- (void).cxx_destruct;
 - (id)testsInBundle;
 - (id)errorForTest:(id)arg1 error:(id *)arg2;
 - (id)errorIfAny;

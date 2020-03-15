@@ -16,8 +16,8 @@
     PKDragIndicatorView *_dragIndicatorView;
 }
 
-@property(retain, nonatomic) PKDragIndicatorView *dragIndicatorView; // @synthesize dragIndicatorView=_dragIndicatorView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKDragIndicatorView *dragIndicatorView; // @synthesize dragIndicatorView=_dragIndicatorView;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
 @property(nonatomic) _Bool showsDragIndicator;
 - (id)initWithFrame:(struct CGRect)arg1;

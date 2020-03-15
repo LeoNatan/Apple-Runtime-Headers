@@ -16,10 +16,10 @@
 }
 
 + (id)commandForModifyingStrokes:(id)arg1 drawing:(id)arg2 inks:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *oldInks; // @synthesize oldInks=_oldInks;
 @property(readonly, nonatomic) NSArray *inks; // @synthesize inks=_inks;
 @property(readonly, nonatomic) NSArray *strokes; // @synthesize strokes=_strokes;
-- (void).cxx_destruct;
 - (id)description;
 - (void)applyToDrawing:(id)arg1;
 - (id)invertedInDrawing:(id)arg1;

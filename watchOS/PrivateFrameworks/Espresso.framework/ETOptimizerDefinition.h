@@ -14,9 +14,9 @@
     NSDictionary *_optimizationParameters;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *optimizationParameters; // @synthesize optimizationParameters=_optimizationParameters;
 @property(readonly) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithOptimizationAlgorithm:(int)arg1 parameters:(id)arg2 error:(id *)arg3;
 
 @end

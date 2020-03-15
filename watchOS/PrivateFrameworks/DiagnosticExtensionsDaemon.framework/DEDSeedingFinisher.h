@@ -29,6 +29,7 @@
 
 + (id)archivedClasses;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *promises; // @synthesize promises=_promises;
 @property(retain) DEDSeedingClient *client; // @synthesize client=_client;
 @property(retain) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
@@ -37,7 +38,6 @@
 @property unsigned long long totalUploadSize; // @synthesize totalUploadSize=_totalUploadSize;
 @property(retain) NSMutableSet *uploads; // @synthesize uploads=_uploads;
 @property(retain) DEDBugSessionConfiguration *config; // @synthesize config=_config;
-- (void).cxx_destruct;
 - (id)uploadItemForTask:(id)arg1;
 - (id)attachmentHandler;
 - (void)save;

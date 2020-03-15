@@ -17,9 +17,9 @@
 + (id)keyPathsForValuesAffectingBorderedFrameSize;
 + (id)keyPathsForValuesAffectingBorderedFrameCenter;
 + (id)keyPathsForValuesAffectingBorderedFrame;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXVBorderedView *_customBorderedView; // @synthesize _customBorderedView=__customBorderedView;
 @property(nonatomic) unsigned long long borderStyle; // @synthesize borderStyle=_borderStyle;
-- (void).cxx_destruct;
 - (struct CGRect)_borderedFrameFromWindowFrame:(struct CGRect)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor;

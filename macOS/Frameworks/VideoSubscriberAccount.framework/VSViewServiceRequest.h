@@ -18,20 +18,22 @@ __attribute__((visibility("hidden")))
     BOOL _requiresPrivacyUI;
     BOOL _canVetoAuthentication;
     BOOL _shouldInferFeaturedProviders;
+    BOOL _shouldReturnErrorOnTVProviderFeatureUnsupportedByStorefront;
     VSAccountMetadataRequest *_accountMetadataRequest;
     VSOptional *_requestingAppDisplayName;
     NSString *_requestingAppAdamID;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *requestingAppAdamID; // @synthesize requestingAppAdamID=_requestingAppAdamID;
 @property(retain, nonatomic) VSOptional *requestingAppDisplayName; // @synthesize requestingAppDisplayName=_requestingAppDisplayName;
+@property(nonatomic) BOOL shouldReturnErrorOnTVProviderFeatureUnsupportedByStorefront; // @synthesize shouldReturnErrorOnTVProviderFeatureUnsupportedByStorefront=_shouldReturnErrorOnTVProviderFeatureUnsupportedByStorefront;
 @property(nonatomic) BOOL shouldInferFeaturedProviders; // @synthesize shouldInferFeaturedProviders=_shouldInferFeaturedProviders;
 @property(copy, nonatomic) VSAccountMetadataRequest *accountMetadataRequest; // @synthesize accountMetadataRequest=_accountMetadataRequest;
 @property(nonatomic) BOOL canVetoAuthentication; // @synthesize canVetoAuthentication=_canVetoAuthentication;
 @property(nonatomic) BOOL requiresPrivacyUI; // @synthesize requiresPrivacyUI=_requiresPrivacyUI;
 @property(nonatomic) BOOL allowsPrivacyUI; // @synthesize allowsPrivacyUI=_allowsPrivacyUI;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPreAuthRequest) BOOL preAuthRequest;
 @property(readonly, copy, nonatomic) NSString *accountProviderAuthenticationToken;
 @property(readonly, copy, nonatomic) NSString *localizedVideoTitle;

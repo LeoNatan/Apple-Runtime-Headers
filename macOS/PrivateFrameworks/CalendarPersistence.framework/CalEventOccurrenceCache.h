@@ -35,6 +35,7 @@
 + (id)eventsBetweenStartDate:(id)arg1 endDate:(id)arg2 usingTimeZone:(id)arg3 localUIDs:(id)arg4 excludingLocalUIDs:(id)arg5 inCalendars:(id)arg6 prefetchAttendees:(BOOL)arg7 managedObjectContext:(id)arg8;
 + (id)fetchForEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 usingTimeZone:(id)arg3 localUIDs:(id)arg4 excludingLocalUIDs:(id)arg5 inCalendars:(id)arg6 managedObjectContext:(id)arg7;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL prefetchAttendees; // @synthesize prefetchAttendees=_prefetchAttendees;
 @property(retain) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property BOOL bestGuessCalendarIDs; // @synthesize bestGuessCalendarIDs=_bestGuessCalendarIDs;
@@ -44,7 +45,6 @@
 @property(copy) CalDateRange *bufferRange; // @synthesize bufferRange=_bufferRange;
 @property unsigned long long generationCounter; // @synthesize generationCounter=_generationCounter;
 @property BOOL foregroundResetCompleted; // @synthesize foregroundResetCompleted=_foregroundResetCompleted;
-- (void).cxx_destruct;
 - (unsigned long long)highWaterWeeksBuffer;
 - (unsigned long long)lowWaterWeeksBuffer;
 - (id)description;

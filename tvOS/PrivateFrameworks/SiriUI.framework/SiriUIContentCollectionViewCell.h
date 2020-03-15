@@ -34,6 +34,7 @@
 + (_Bool)chevronBlendEffectEnabled;
 + (double)chevronTrailingMargin;
 + (struct UIEdgeInsets)defaultInsets;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasChevron; // @synthesize hasChevron=_hasChevron;
 @property(nonatomic) long long keylineType; // @synthesize keylineType=_keylineType;
 @property(readonly, nonatomic) SiriUIKeyline *keyline; // @synthesize keyline=_keyline;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(nonatomic) struct UIEdgeInsets textAndAccessoryInsets; // @synthesize textAndAccessoryInsets=_textAndAccessoryInsets;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)setNeedsUpdateSubviewConstraints;
 @property(readonly, nonatomic) double chevronTrailingMargin;

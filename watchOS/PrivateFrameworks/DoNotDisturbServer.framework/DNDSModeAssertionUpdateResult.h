@@ -17,9 +17,9 @@
 }
 
 + (id)emptyResult;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *invalidations; // @synthesize invalidations=_invalidations;
 @property(readonly, copy, nonatomic) NSArray *assertions; // @synthesize assertions=_assertions;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)resultCombiningWithResult:(id)arg1;
 - (id)initWithAssertions:(id)arg1 invalidations:(id)arg2;

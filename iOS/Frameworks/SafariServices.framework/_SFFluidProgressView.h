@@ -23,11 +23,11 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) UIColor *progressBarFillColor; // @synthesize progressBarFillColor=_progressBarFillColor;
 @property(nonatomic) __weak id <_SFFluidProgressViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool progressAnimationSuppressed; // @synthesize progressAnimationSuppressed=_progressAnimationSuppressed;
-- (void).cxx_destruct;
 - (void)fluidProgressController:(id)arg1 setProgressToCurrentPosition:(id)arg2;
 - (void)fluidProgressControllerFinishProgressBar:(id)arg1 animateFillFade:(_Bool)arg2;
 - (void)fluidProgressController:(id)arg1 updateFluidProgressBar:(id)arg2;

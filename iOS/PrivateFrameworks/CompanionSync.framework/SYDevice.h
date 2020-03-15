@@ -32,6 +32,7 @@
 + (id)deviceForNRDevice:(id)arg1;
 + (id)targetableDevice;
 + (id)knownDevices;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NRDevice *nrDevice; // @synthesize nrDevice=_nrDevice;
 @property(nonatomic) _Bool cachedConnected; // @synthesize cachedConnected=_cachedConnected;
 @property(nonatomic) _Bool hasCachedConnected; // @synthesize hasCachedConnected=_hasCachedConnected;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) NSUUID *pairingID; // @synthesize pairingID=_pairingID;
 @property(readonly, copy, nonatomic) NSString *pairingStorePath; // @synthesize pairingStorePath=_pairingStorePath;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBCodable *stateForLogging;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

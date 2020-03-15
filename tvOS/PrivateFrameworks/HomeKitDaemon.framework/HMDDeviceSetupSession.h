@@ -24,13 +24,13 @@
 
 + (id)logCategory;
 + (_Bool)isRoleSupported:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isOpen) _Bool open; // @synthesize open=_open;
 @property(readonly, nonatomic) HMDDeviceSetupSessionInternal *internal; // @synthesize internal=_internal;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <HMDDeviceSetupSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (id)logIdentifier;

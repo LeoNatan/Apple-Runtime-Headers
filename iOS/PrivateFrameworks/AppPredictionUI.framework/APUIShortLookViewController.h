@@ -43,6 +43,7 @@
     UIViewController<CRKCardViewControlling> *_currentCardViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController<CRKCardViewControlling> *currentCardViewController; // @synthesize currentCardViewController=_currentCardViewController;
 @property(retain, nonatomic) CRKCardPresentation *cardPresentation; // @synthesize cardPresentation=_cardPresentation;
 @property(retain, nonatomic) INInteraction *interaction; // @synthesize interaction=_interaction;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) SFSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(readonly, nonatomic) PLClickPresentationInteractionManager *clickPresentationInteractionManager; // @synthesize clickPresentationInteractionManager=_clickPresentationInteractionManager;
-- (void).cxx_destruct;
 - (void)intentHandlingViewController:(id)arg1 didComplete:(_Bool)arg2;
 - (void)intentHandlingViewControllerDidFailAuthorizationCheck:(id)arg1;
 - (void)intentHandlingViewController:(id)arg1 willContinueInAppForIntent:(id)arg2 completion:(CDUnknownBlockType)arg3;

@@ -8,7 +8,7 @@
 
 #import <CoreUtils/NSXPCListenerDelegate-Protocol.h>
 
-@class CUHomeKitManager, NSData, NSString, NSXPCListener, NSXPCListenerEndpoint;
+@class CUHomeKitManager, NSData, NSMutableSet, NSString, NSXPCListener, NSXPCListenerEndpoint;
 @protocol OS_dispatch_queue;
 
 @interface CUPairingDaemon : NSObject <NSXPCListenerDelegate>
@@ -17,16 +17,16 @@
     int _rpIdentityNotifier;
     NSData *_rpSelfIRK;
     unsigned long long _stateHandle;
-    struct NSMutableSet *_xpcConnections;
+    NSMutableSet *_xpcConnections;
     NSXPCListener *_xpcListener;
     BOOL _testMode;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
 + (id)sharedPairingDaemon;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL testMode; // @synthesize testMode=_testMode;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (int)_removePairedPeer:(id)arg1 options:(unsigned long long)arg2 removeAdminAllowed:(BOOL)arg3;
 - (int)removePairedPeer:(id)arg1 options:(unsigned long long)arg2 removeAdminAllowed:(BOOL)arg3;
 - (int)removePairedPeer:(id)arg1 options:(unsigned long long)arg2;

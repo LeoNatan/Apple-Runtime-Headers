@@ -11,8 +11,8 @@
     CDUnknownBlockType _responseHandler;
 }
 
-@property(readonly, copy) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 - (void).cxx_destruct;
+@property(readonly, copy) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 - (id)description;
 - (BOOL)expectsResponse;
 - (id)initWithIdentifier:(id)arg1 responseHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;

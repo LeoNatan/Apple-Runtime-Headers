@@ -22,6 +22,7 @@
     PHPerson *_person;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHPerson *person; // @synthesize person=_person;
 @property(retain, nonatomic) UIImageView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) NSMutableArray *fetchResults; // @synthesize fetchResults=_fetchResults;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UIFont *nameFont; // @synthesize nameFont=_nameFont;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, nonatomic) UITextField *nameField; // @synthesize nameField=_nameField;
-- (void).cxx_destruct;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)_updateFieldPlaceholder;
 - (void)_updateFieldText;

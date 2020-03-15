@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSData *_wrappedInvocationKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *routingToken; // @synthesize routingToken=_routingToken;
 @property(retain, nonatomic) NSData *wrappedInvocationKey; // @synthesize wrappedInvocationKey=_wrappedInvocationKey;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

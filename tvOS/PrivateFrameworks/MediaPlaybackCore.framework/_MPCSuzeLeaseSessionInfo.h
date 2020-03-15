@@ -16,11 +16,11 @@
     MPCSuzeLeaseSession *_mpcLeaseSession;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldStopWhenFinished; // @synthesize shouldStopWhenFinished=_shouldStopWhenFinished;
 @property(readonly, nonatomic) MPCSuzeLeaseSession *mpcLeaseSession; // @synthesize mpcLeaseSession=_mpcLeaseSession;
 @property(readonly, nonatomic) ICSuzeLeaseSession *icLeaseSession; // @synthesize icLeaseSession=_icLeaseSession;
 @property(nonatomic) long long clientCount; // @synthesize clientCount=_clientCount;
-- (void).cxx_destruct;
 - (id)initWithICLeaseSession:(id)arg1;
 
 @end

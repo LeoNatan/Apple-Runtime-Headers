@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *mTemporaryDirectory;
 }
 
-@property(retain, nonatomic) NSString *temporaryDirectory; // @synthesize temporaryDirectory=mTemporaryDirectory;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *temporaryDirectory; // @synthesize temporaryDirectory=mTemporaryDirectory;
 - (id)defaultPassphrase;
 - (id)read;
 

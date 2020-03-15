@@ -20,11 +20,11 @@
     NSString *_serviceName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(nonatomic) __weak id <NNMKSyncServiceTransportDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int connectivityState; // @synthesize connectivityState=_connectivityState;
 @property(retain, nonatomic) IDSService *idsService; // @synthesize idsService=_idsService;
-- (void).cxx_destruct;
 - (double)_timeIntervalFromTimeoutCategory:(unsigned int)arg1;
 - (unsigned int)_connectivityState;
 - (void)_handleConnectivityChange;

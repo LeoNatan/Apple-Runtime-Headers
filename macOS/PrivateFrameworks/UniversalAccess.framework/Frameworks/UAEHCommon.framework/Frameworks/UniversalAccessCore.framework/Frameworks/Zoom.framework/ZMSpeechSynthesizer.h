@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
 + (id)_copyIdentifierStringForVoiceSpec:(struct VoiceSpec *)arg1;
 + (BOOL)_findVoiceByIdentifier:(id)arg1 returningCreator:(unsigned int *)arg2 returningID:(unsigned int *)arg3;
 + (BOOL)_makeVoiceForIdentifier:(struct __CFString *)arg1 voiceSpec:(struct VoiceSpec *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSArray *supportedCharacterRanges; // @synthesize supportedCharacterRanges=_supportedCharacterRanges;
 @property(readonly, nonatomic) __weak NSArray *supportedLiteralCharacterRanges; // @synthesize supportedLiteralCharacterRanges=_supportedLiteralCharacterRanges;
-- (void).cxx_destruct;
 - (void)_handleSpeechDone;
 - (unsigned int)_currentVoiceScriptCode;
 - (BOOL)_beginSpeakingString:(id)arg1;

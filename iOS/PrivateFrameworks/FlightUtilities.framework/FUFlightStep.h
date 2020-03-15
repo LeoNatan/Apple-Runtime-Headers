@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) FUStepTime *plannedTime; // @synthesize plannedTime=_plannedTime;
 @property _Bool departure; // @synthesize departure=_departure;
 @property(retain) FUStepTime *runwayTime; // @synthesize runwayTime=_runwayTime;
@@ -37,7 +38,6 @@
 @property(retain) NSString *terminal; // @synthesize terminal=_terminal;
 @property(retain) NSString *gate; // @synthesize gate=_gate;
 @property(retain) FUAirport *airport; // @synthesize airport=_airport;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

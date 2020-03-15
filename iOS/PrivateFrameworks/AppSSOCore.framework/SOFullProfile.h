@@ -14,9 +14,9 @@
     NSDictionary *_extensionData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extensionData; // @synthesize extensionData=_extensionData;
 @property(retain, nonatomic) NSString *extensionTeamIdentifier; // @synthesize extensionTeamIdentifier=_extensionTeamIdentifier;
-- (void).cxx_destruct;
 - (id)copyProfileForClient;
 - (id)copyProfile;
 - (id)copyWithZone:(struct _NSZone *)arg1;

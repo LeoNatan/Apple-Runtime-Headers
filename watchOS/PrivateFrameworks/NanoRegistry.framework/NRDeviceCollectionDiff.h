@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSDictionary *diffDeviceDiffs; // @synthesize diffDeviceDiffs=_diffDeviceDiffs;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *diffDeviceDiffs; // @synthesize diffDeviceDiffs=_diffDeviceDiffs;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

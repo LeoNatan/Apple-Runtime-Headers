@@ -27,9 +27,9 @@
     NSString *_securityCode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *securityCode; // @synthesize securityCode=_securityCode;
 @property(nonatomic) int securityCodeType; // @synthesize securityCodeType=_securityCodeType;
-- (void).cxx_destruct;
 - (void)cancelPressed;
 - (void)phoneSettingsFragment:(id)arg1 didChangePhoneNumber:(id)arg2 countryInfo:(id)arg3;
 - (void)_setShowsDoneButton:(_Bool)arg1;

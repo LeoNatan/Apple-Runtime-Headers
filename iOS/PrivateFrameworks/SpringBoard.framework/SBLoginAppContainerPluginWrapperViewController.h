@@ -16,8 +16,8 @@
     SBLoginAppContainerPluginWrapperView *_containerView;
 }
 
-@property(readonly, retain, nonatomic) SBLockScreenPlugin *plugin; // @synthesize plugin=_plugin;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) SBLockScreenPlugin *plugin; // @synthesize plugin=_plugin;
 - (_Bool)handleVolumeDownButtonPress;
 - (_Bool)handleVolumeUpButtonPress;
 - (void)loadView;

@@ -17,8 +17,8 @@
 }
 
 + (_Bool)cplShouldIgnorePropertyForCoding:(id)arg1;
-@property(copy, nonatomic) NSArray *containerRelations; // @synthesize containerRelations=_containerRelations;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *containerRelations; // @synthesize containerRelations=_containerRelations;
 - (id)containerRelationChangesComparedToRelationEnumerator:(id)arg1 error:(id *)arg2;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
 - (id)containerDescription;

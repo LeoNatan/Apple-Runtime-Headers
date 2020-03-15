@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) long long playlistRepeatMode; // @synthesize playlistRepeatMode=_playlistRepeatMode;
 @property(retain, nonatomic) id <TVPPlayback> player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_updatePlaylistWithDataItems:(id)arg1 isPlayNext:(_Bool)arg2;
 - (_Bool)isSongPlayingWithAdamID:(long long)arg1 persistentID:(long long)arg2;
 - (void)updatePlaylistWithDataBaseItem:(id)arg1 mediaItemsQuery:(id)arg2 isPlayNext:(_Bool)arg3;

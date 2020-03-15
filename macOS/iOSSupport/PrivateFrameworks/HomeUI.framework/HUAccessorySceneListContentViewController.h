@@ -21,12 +21,12 @@
 }
 
 + (id)computeNumberOfItemsToDisplayForContentSource:(unsigned long long)arg1 serviceLikeItem:(id)arg2 home:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL persistAddedSuggestions; // @synthesize persistAddedSuggestions=_persistAddedSuggestions;
 @property(nonatomic) BOOL includeTopMargin; // @synthesize includeTopMargin=_includeTopMargin;
 @property(readonly, copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
 @property(readonly, nonatomic) unsigned long long selectionType; // @synthesize selectionType=_selectionType;
 @property(readonly, nonatomic) unsigned long long contentSource; // @synthesize contentSource=_contentSource;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (BOOL)presentationCoordinator:(id)arg1 shouldBeginInteractivePresentationWithTouchLocation:(struct CGPoint)arg2;

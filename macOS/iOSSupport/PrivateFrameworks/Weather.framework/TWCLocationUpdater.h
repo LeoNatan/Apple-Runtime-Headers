@@ -15,9 +15,9 @@
 }
 
 + (id)sharedLocationUpdater;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLGeocoder *reverseGeocoder; // @synthesize reverseGeocoder=_reverseGeocoder;
 @property(retain, nonatomic) City *currentCity; // @synthesize currentCity=_currentCity;
-- (void).cxx_destruct;
 - (void)updateWeatherForCities:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_completeReverseGeocodeForLocation:(id)arg1 currentCity:(id)arg2 geocodeError:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_geocodeLocation:(id)arg1 currentCity:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

@@ -27,6 +27,7 @@
 
 + (id)serviceInterface;
 + (id)hostInterface;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect lastViewControllerSetNeedsLayoutFrame; // @synthesize lastViewControllerSetNeedsLayoutFrame=_lastViewControllerSetNeedsLayoutFrame;
 @property(retain, nonatomic) id <SPRemoteNotificationViewHost> strongHost; // @synthesize strongHost=_strongHost;
 @property(nonatomic) _Bool hasAppeared; // @synthesize hasAppeared=_hasAppeared;
@@ -34,7 +35,6 @@
 @property(copy) NSString *hostClientIdentifier; // @synthesize hostClientIdentifier=_hostClientIdentifier;
 @property(retain) SPRemoteNotificationHostedWindow *hostedWindow; // @synthesize hostedWindow=_hostedWindow;
 @property(retain) CAContext *layerContext; // @synthesize layerContext=_layerContext;
-- (void).cxx_destruct;
 - (id)underlyingUIHostingControllerForHostingViewController:(id)arg1;
 - (id)actionItemsForHostingViewController:(id)arg1;
 - (id)interfaceControllerForViewController:(id)arg1;

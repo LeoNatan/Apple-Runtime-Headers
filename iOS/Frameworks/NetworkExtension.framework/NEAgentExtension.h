@@ -32,6 +32,7 @@
     CDUnknownBlockType _pendingDisposeCompletion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAppExtensionHost; // @synthesize isAppExtensionHost=_isAppExtensionHost;
 @property(copy) CDUnknownBlockType pendingDisposeCompletion; // @synthesize pendingDisposeCompletion=_pendingDisposeCompletion;
 @property(readonly, nonatomic) NSArray *extensionUUIDs; // @synthesize extensionUUIDs=_extensionUUIDs;
@@ -47,7 +48,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NEExtensionProviderHostContext *sessionContext; // @synthesize sessionContext=_sessionContext;
 @property(readonly) __weak id <NEPluginManagerObjectFactory> managerObjectFactory; // @synthesize managerObjectFactory=_managerObjectFactory;
-- (void).cxx_destruct;
 - (_Bool)isSignedWithDeveloperID:(id)arg1;
 - (_Bool)shouldAllowUnentitledExtension:(id)arg1;
 @property(readonly) int requiredEntitlement;

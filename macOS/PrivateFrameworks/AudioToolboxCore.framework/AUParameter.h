@@ -22,13 +22,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int numRecordingObservers; // @synthesize numRecordingObservers=_numRecordingObservers;
 @property(nonatomic) int numUIObservers; // @synthesize numUIObservers=_numUIObservers;
 @property(nonatomic) BOOL _localValueStale; // @synthesize _localValueStale=__localValueStale;
 @property(retain, nonatomic) _AUStaticParameterInfo *info; // @synthesize info=_info;
 @property(readonly, copy) NSArray *dependentParameters; // @synthesize dependentParameters=_dependentParameters;
 @property unsigned long long address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (void)_observersChanged:(BOOL)arg1 deltaCount:(int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -23,12 +23,12 @@
 + (_Bool)supportsSecureCoding;
 + (Class)equalityClass;
 + (id)passPropertiesForPass:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *enrouteTransitTypes; // @synthesize enrouteTransitTypes=_enrouteTransitTypes;
 @property(copy, nonatomic) PKCurrencyAmount *balance; // @synthesize balance=_balance;
 @property(copy, nonatomic) NSString *appletFormat; // @synthesize appletFormat=_appletFormat;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(nonatomic, getter=isBlacklisted) _Bool blacklisted; // @synthesize blacklisted=_blacklisted;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isEnRoute;
 @property(readonly, nonatomic, getter=isInStation) _Bool inStation;
 @property(readonly, nonatomic) NSDecimalNumber *decimalTransitBalance;

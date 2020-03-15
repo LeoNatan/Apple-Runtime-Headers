@@ -19,10 +19,10 @@
 + (SEL)recoverSelectorForStage:(long long)arg1;
 + (SEL)runSelectorForStage:(long long)arg1;
 + (id)storageQueue;
+- (void).cxx_destruct;
 @property(retain) PLTimer *watchdog; // @synthesize watchdog=_watchdog;
 @property(retain) PLArchiveEntry *archiveEntry; // @synthesize archiveEntry=_archiveEntry;
 @property(retain) id <PLArchiveJobManager> manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (void)stopWatchdog;
 - (void)startWatchdog;
 - (void)recoverCompress;

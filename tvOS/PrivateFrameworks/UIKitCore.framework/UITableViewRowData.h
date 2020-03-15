@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
     double _draggedRowHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double draggedRowHeight; // @synthesize draggedRowHeight=_draggedRowHeight;
 @property(nonatomic) double gapRowHeight; // @synthesize gapRowHeight=_gapRowHeight;
 @property(readonly, nonatomic) double defaultSectionFooterHeight; // @synthesize defaultSectionFooterHeight=_defaultSectionFooterHeight;
@@ -56,7 +57,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double tableTopPadding; // @synthesize tableTopPadding=_tableTopPadding;
 @property(nonatomic) double rowSpacing; // @synthesize rowSpacing=_rowSpacing;
 @property(nonatomic) double minimumRowHeight; // @synthesize minimumRowHeight=_minimumRowHeight;
-- (void).cxx_destruct;
 - (long long)sectionForSectionRowData:(id)arg1;
 - (_Bool)ensureHeightsFaultedInForScrollToIndexPath:(id)arg1 withScrollPosition:(long long)arg2 boundsHeight:(double)arg3;
 - (void)_assertValidIndexPath:(id)arg1 allowEmptySection:(_Bool)arg2;

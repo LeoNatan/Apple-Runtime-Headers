@@ -18,9 +18,9 @@
 }
 
 + (id)sharedWeatherStore;
+- (void).cxx_destruct;
 @property(retain) id <WMWeatherStoreProtocol> remoteWeatherStore; // @synthesize remoteWeatherStore=_remoteWeatherStore;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)currentConditionsForCoordinate:(struct CLLocationCoordinate2D)arg1 result:(CDUnknownBlockType)arg2;
 - (void)currentHourlyForecastForCoordinate:(struct CLLocationCoordinate2D)arg1 result:(CDUnknownBlockType)arg2;
 - (void)currentDailyForecastForCoordinate:(struct CLLocationCoordinate2D)arg1 result:(CDUnknownBlockType)arg2;

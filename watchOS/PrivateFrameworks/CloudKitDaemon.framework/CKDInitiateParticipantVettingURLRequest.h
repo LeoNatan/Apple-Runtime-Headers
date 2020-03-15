@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_baseToken;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *baseToken; // @synthesize baseToken=_baseToken;
 @property(copy, nonatomic) NSString *participantID; // @synthesize participantID=_participantID;
 @property(copy, nonatomic) NSData *encryptedKey; // @synthesize encryptedKey=_encryptedKey;
 @property(copy, nonatomic) CKRecordID *shareRecordID; // @synthesize shareRecordID=_shareRecordID;
 @property(copy, nonatomic) CDUnknownBlockType vettingInitiationRequestCompletionBlock; // @synthesize vettingInitiationRequestCompletionBlock=_vettingInitiationRequestCompletionBlock;
-- (void).cxx_destruct;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)generateRequestOperations;

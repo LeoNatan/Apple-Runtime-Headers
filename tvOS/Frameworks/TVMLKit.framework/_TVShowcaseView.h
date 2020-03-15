@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     UIView *_lastFocusedView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *lastFocusedView; // @synthesize lastFocusedView=_lastFocusedView;
 @property(nonatomic) __weak UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIView *lockupInfoView; // @synthesize lockupInfoView=_lockupInfoView;
 @property(readonly, nonatomic) _TVCollectionView *carouselView; // @synthesize carouselView=_carouselView;
 @property(retain, nonatomic) UIView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) UIImage *bgImage; // @synthesize bgImage=_bgImage;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;

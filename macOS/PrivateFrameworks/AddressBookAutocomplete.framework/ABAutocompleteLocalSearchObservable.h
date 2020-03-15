@@ -23,10 +23,10 @@
 
 + (id)observableWithFetchRequest:(id)arg1 scheduler:(id)arg2 contactStore:(id)arg3 addressBook:(id)arg4;
 + (id)observableWithFetchRequest:(id)arg1 scheduler:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNAutocompleteFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
 @property(readonly, nonatomic) CNCancelationToken *cancelationToken; // @synthesize cancelationToken=_cancelationToken;
 @property(retain) CNAutocompleteResultTracing *tracer; // @synthesize tracer=_tracer;
-- (void).cxx_destruct;
 - (id)smartgroupsForRequest:(id)arg1 addressBook:(id)arg2;
 - (id)groupsForRequest:(id)arg1 contactStore:(id)arg2;
 - (id)peopleForRequest:(id)arg1 contactStore:(id)arg2;

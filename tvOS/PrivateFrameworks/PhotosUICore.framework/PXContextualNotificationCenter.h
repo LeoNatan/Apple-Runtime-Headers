@@ -22,6 +22,7 @@
 }
 
 + (id)defaultCenter;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 @property(retain, nonatomic) PXContextualNotification *pannedContextualNotification; // @synthesize pannedContextualNotification=_pannedContextualNotification;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) _PXContextualNotificationCenterUpdatingView *containerView; // @synthesize containerView=_containerView;
 @property(readonly, nonatomic) NSMutableSet *contextualNotificationsNeedingUpdate; // @synthesize contextualNotificationsNeedingUpdate=_contextualNotificationsNeedingUpdate;
 @property(readonly, nonatomic) NSMutableSet *contextualNotifications; // @synthesize contextualNotifications=_contextualNotifications;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

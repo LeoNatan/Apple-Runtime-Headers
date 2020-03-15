@@ -23,6 +23,7 @@
 }
 
 + (unsigned long long)requiredScannerState;
+- (void).cxx_destruct;
 @property(retain) id <TMVolumeStoreInfo> volumeStoreInfo; // @synthesize volumeStoreInfo=_volumeStoreInfo;
 @property(retain) id <TMMachineStoreInfo> machineStoreInfo; // @synthesize machineStoreInfo=_machineStoreInfo;
 @property(retain) TMSession *timeMachineSession; // @synthesize timeMachineSession=_timeMachineSession;
@@ -32,7 +33,6 @@
 @property BOOL isLiteBackup; // @synthesize isLiteBackup=_isLiteBackup;
 @property unsigned long long filesystemType; // @synthesize filesystemType;
 @property(getter=isCaseSensitive) BOOL caseSensitive; // @synthesize caseSensitive;
-- (void).cxx_destruct;
 - (id)accessibilityDescription;
 - (void)unmount;
 - (id)volumeIcon;

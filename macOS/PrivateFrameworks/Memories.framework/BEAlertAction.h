@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _actionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
 @property(nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)doActionHandler;
 - (id)initWithTitle:(id)arg1 style:(int)arg2 tag:(long long)arg3 action:(CDUnknownBlockType)arg4;
 

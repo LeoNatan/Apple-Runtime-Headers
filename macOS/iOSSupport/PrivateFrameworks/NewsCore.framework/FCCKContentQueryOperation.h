@@ -25,6 +25,7 @@
     CKQueryCursor *_resultCursor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKQueryCursor *resultCursor; // @synthesize resultCursor=_resultCursor;
 @property(copy, nonatomic) NSArray *networkEvents; // @synthesize networkEvents=_networkEvents;
 @property(copy, nonatomic) FCEdgeCacheHint *edgeCacheHint; // @synthesize edgeCacheHint=_edgeCacheHint;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) CKQueryCursor *cursor; // @synthesize cursor=_cursor;
 @property(retain, nonatomic) CKQuery *query; // @synthesize query=_query;
 @property(retain, nonatomic) FCCKContentDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)_ckCursorFromQueryResponse:(id)arg1;
 - (id)_ckRecordsFromQueryResponse:(id)arg1;
 - (id)_requestOperations;

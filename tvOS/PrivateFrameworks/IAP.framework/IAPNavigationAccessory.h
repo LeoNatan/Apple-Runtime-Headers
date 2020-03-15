@@ -15,10 +15,10 @@
     NSSet *_components;
 }
 
+- (void).cxx_destruct;
 @property _Bool _wasFoundInLastUpdate; // @synthesize _wasFoundInLastUpdate=__wasFoundInLastUpdate;
 @property(retain) NSSet *components; // @synthesize components=_components;
 @property unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)requestedSourceSupportsRouteGuidanceForAnyComponent;
 - (_Bool)requestedSourceNameForAnyComponent;
 - (id)description;

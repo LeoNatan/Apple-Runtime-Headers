@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     HKSleepPeriod *_sleepPeriod;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKSleepPeriod *sleepPeriod; // @synthesize sleepPeriod=_sleepPeriod;
 @property(readonly, nonatomic) HKSleepDay *sleepDay; // @synthesize sleepDay=_sleepDay;
 @property(readonly, nonatomic) HKSleepAnalysis *sleepAnalysis; // @synthesize sleepAnalysis=_sleepAnalysis;
-- (void).cxx_destruct;
 - (id)detailSectionForRow:(long long)arg1 column:(long long)arg2;
 - (id)mainSection;
 - (long long)numberOfColumnsForRow:(long long)arg1;

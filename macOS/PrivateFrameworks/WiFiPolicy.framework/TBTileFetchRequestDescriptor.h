@@ -19,11 +19,11 @@
     NSPredicate *_localFetchPredicate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPredicate *localFetchPredicate; // @synthesize localFetchPredicate=_localFetchPredicate;
 @property(retain, nonatomic) NSSet *tileItems; // @synthesize tileItems=_tileItems;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) TBLocalFetchRequestDescriptor *localFetchDescriptor; // @synthesize localFetchDescriptor=_localFetchDescriptor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) Class remoteRequestClass;
 @property(readonly, nonatomic) PBCodable *remoteRequest;

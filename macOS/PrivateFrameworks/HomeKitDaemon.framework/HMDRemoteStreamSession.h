@@ -19,10 +19,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long streamState; // @synthesize streamState=_streamState;
 @property(readonly, nonatomic) id <HMDCameraRemoteStreamReceiverProtocol> streamReceiver; // @synthesize streamReceiver=_streamReceiver;
 @property(readonly, nonatomic) id <HMDCameraRemoteStreamSenderProtocol> streamSender; // @synthesize streamSender=_streamSender;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)stateAsString;
 - (BOOL)containsState:(long long)arg1;

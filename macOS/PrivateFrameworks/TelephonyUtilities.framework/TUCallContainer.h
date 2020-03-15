@@ -16,8 +16,8 @@
     NSArray *_calls;
 }
 
-@property(copy, nonatomic) NSArray *calls; // @synthesize calls=_calls;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *calls; // @synthesize calls=_calls;
 - (id)_callGroupsFromCalls:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *callGroupsOnDefaultPairedDevice;
 @property(readonly, copy, nonatomic) NSArray *currentCallGroups;

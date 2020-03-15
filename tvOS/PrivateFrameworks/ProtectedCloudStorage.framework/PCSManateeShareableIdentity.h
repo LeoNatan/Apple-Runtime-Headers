@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     PCSManateePrivateKey *_signingPrivateKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PCSManateePrivateKey *signingPrivateKey; // @synthesize signingPrivateKey=_signingPrivateKey;
 @property(retain, nonatomic) PCSManateePrivateKey *encryptionPrivateKey; // @synthesize encryptionPrivateKey=_encryptionPrivateKey;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

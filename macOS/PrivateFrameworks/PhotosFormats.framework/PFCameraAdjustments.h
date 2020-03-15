@@ -22,12 +22,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(readonly, nonatomic, getter=isDepthEnabled) BOOL depthEnabled; // @synthesize depthEnabled=_depthEnabled;
 @property(readonly, nonatomic) AVApplePortraitMetadata *portraitMetadata; // @synthesize portraitMetadata=_portraitMetadata;
 @property(readonly, copy, nonatomic) NSString *portraitEffectFilterName; // @synthesize portraitEffectFilterName=_portraitEffectFilterName;
 @property(readonly, copy, nonatomic) NSString *effectFilterName; // @synthesize effectFilterName=_effectFilterName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasCrop;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

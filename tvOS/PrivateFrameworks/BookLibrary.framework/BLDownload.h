@@ -52,6 +52,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *thumbnailImageURL; // @synthesize thumbnailImageURL=_thumbnailImageURL;
 @property(copy, nonatomic) NSString *kind; // @synthesize kind=_kind;
 @property(copy, nonatomic) NSString *genre; // @synthesize genre=_genre;
@@ -88,7 +89,6 @@
 @property(copy, nonatomic) NSString *targetDownloadDirectory; // @synthesize targetDownloadDirectory=_targetDownloadDirectory;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *downloadID; // @synthesize downloadID=_downloadID;
-- (void).cxx_destruct;
 - (id)description;
 - (double)transferProgressFraction;
 - (id)copyWithZone:(struct _NSZone *)arg1;

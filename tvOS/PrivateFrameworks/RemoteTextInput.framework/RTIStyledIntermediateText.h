@@ -23,11 +23,11 @@
 + (id)intermediateTextWithInputString:(id)arg1 displayString:(id)arg2 selectionLocation:(unsigned long long)arg3;
 + (id)intermediateTextWithInputString:(id)arg1 displayString:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long cursorVisibility; // @synthesize cursorVisibility=_cursorVisibility;
 @property(readonly, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(readonly, nonatomic) NSAttributedString *displayString; // @synthesize displayString=_displayString;
 @property(readonly, nonatomic) NSString *inputString; // @synthesize inputString=_inputString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange selectedRange;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

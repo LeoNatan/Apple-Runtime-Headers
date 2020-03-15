@@ -19,13 +19,13 @@
     int state;
 }
 
+- (void).cxx_destruct;
 - (void)setCanRollback:(_Bool)arg1;
 - (_Bool)canRollback;
 - (void)setCanRestart:(_Bool)arg1;
 - (_Bool)canRestart;
 - (void)setState:(int)arg1;
 - (int)state;
-- (void).cxx_destruct;
 - (void)didCompleteSession;
 - (void)cancelWithError:(id)arg1;
 - (void)start:(CDUnknownBlockType)arg1;

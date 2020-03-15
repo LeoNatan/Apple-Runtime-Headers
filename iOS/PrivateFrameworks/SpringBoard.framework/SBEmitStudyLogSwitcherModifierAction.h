@@ -14,9 +14,9 @@
     NSDictionary *_payload;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)initWithStudyLogWithName:(id)arg1 payload:(id)arg2;
 - (long long)type;

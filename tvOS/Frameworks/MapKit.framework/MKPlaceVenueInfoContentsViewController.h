@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)isVisibleWithMapItem:(id)arg1;
 + (id)venueInfoContentsViewControllerWithMapItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 @property(retain, nonatomic) id <GEOMapItemVenueContents> venueContents; // @synthesize venueContents=_venueContents;
-- (void).cxx_destruct;
 - (void)infoCardThemeChanged;
 - (void)updateLabelsProperties;
 - (id)rowWithLeftLabel:(id)arg1 rightLabel:(id)arg2;

@@ -27,9 +27,9 @@
 }
 
 + (void)validateFormatIsPCM:(id)arg1;
-@property(readonly, nonatomic) BOOL shouldProduceResults; // @synthesize shouldProduceResults=_shouldProduceResults;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL shouldProduceResults; // @synthesize shouldProduceResults=_shouldProduceResults;
 - (id)detailedDescription;
 - (void)writeDSPGraphDotFilesToDirectory:(id)arg1;
 @property(readonly, nonatomic) double clientSampleRate;

@@ -24,6 +24,7 @@
 + (id)externalCodeSystems;
 + (BOOL)supportsSecureCoding;
 + (id)adHocConceptSystem;
++ (id)unknownSystem;
 + (id)textSystem;
 + (id)FHIRQuantityComparatorSystem;
 + (id)FHIRConditionVerificationStatus;
@@ -48,13 +49,13 @@
 + (id)LOINCCodeSystem;
 + (id)systemWithSystemDefinition:(CDStruct_b04166ad)arg1;
 + (id)codeSystemWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasDisplayStrings; // @synthesize hasDisplayStrings=_hasDisplayStrings;
 @property(copy, nonatomic) NSArray *synonyms; // @synthesize synonyms=_synonyms;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *OID; // @synthesize OID=_OID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -19,11 +19,11 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *communicationServiceRules; // @synthesize communicationServiceRules=_communicationServiceRules;
 @property(readonly, retain, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(readonly, retain, nonatomic) NSString *accountName; // @synthesize accountName=_accountName;
 @property(readonly, retain, nonatomic) NSString *accountDescription; // @synthesize accountDescription=_accountDescription;
-- (void).cxx_destruct;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)title;

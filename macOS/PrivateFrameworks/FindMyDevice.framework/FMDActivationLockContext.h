@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long activationLockOperationType; // @synthesize activationLockOperationType=_activationLockOperationType;
 @property(nonatomic) unsigned long long activationLockAuthType; // @synthesize activationLockAuthType=_activationLockAuthType;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)description;
 - (id)validateContext;
 - (void)encodeWithCoder:(id)arg1;

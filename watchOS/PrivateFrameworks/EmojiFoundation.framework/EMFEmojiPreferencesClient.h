@@ -16,9 +16,9 @@
 }
 
 + (id)serviceInterface;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(retain, nonatomic) NSString *machName; // @synthesize machName=_machName;
-- (void).cxx_destruct;
 - (void)didDisplaySkinToneHelp;
 - (void)didViewEmojiIndex:(int)arg1 forCategory:(id)arg2;
 - (void)didUseEmoji:(id)arg1 usageMode:(id)arg2 typingName:(id)arg3;

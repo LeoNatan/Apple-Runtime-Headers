@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) __weak id <UICoordinateSpace> coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UICoordinateSpace> coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
 - (id)debugQuickLookObject;
 - (id)_imageRepresentation;
 - (struct CGRect)_rectTuckedAgainstEdge:(unsigned long long)arg1 ofBoundingRect:(struct CGRect)arg2 withSize:(double)arg3 minimumPadding:(double)arg4;

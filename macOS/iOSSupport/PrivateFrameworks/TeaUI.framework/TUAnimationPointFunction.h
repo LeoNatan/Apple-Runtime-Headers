@@ -18,13 +18,13 @@
     struct CGPoint _endValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TUAnimationFloatFunction *yFunction; // @synthesize yFunction=_yFunction;
 @property(retain, nonatomic) TUAnimationFloatFunction *xFunction; // @synthesize xFunction=_xFunction;
 @property(nonatomic) double speed; // @synthesize speed=_speed;
 @property(nonatomic) struct CGPoint endValue; // @synthesize endValue=_endValue;
 @property(nonatomic) struct CGPoint startValue; // @synthesize startValue=_startValue;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
-- (void).cxx_destruct;
 - (void)_reloadFunctions;
 - (struct CGPoint)solveForTime:(double)arg1;
 - (id)initWithTimingFunction:(id)arg1 startRect:(struct CGPoint)arg2 endRect:(struct CGPoint)arg3 speed:(double)arg4;

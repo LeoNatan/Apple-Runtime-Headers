@@ -18,10 +18,10 @@
     id <HKGraphSeriesBlockCoordinateInfo> _userInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) double xValue; // @synthesize xValue=_xValue;
 @property(readonly, nonatomic) NSArray *yValues; // @synthesize yValues=_yValues;
-- (void).cxx_destruct;
 - (id)copyWithTransform:(struct CGAffineTransform)arg1 roundToViewScale:(_Bool)arg2;
 @property(readonly, nonatomic) double endXValue;
 @property(readonly, nonatomic) double startXValue;

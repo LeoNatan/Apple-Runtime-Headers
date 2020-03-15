@@ -20,6 +20,7 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *minimumHeightConstraint; // @synthesize minimumHeightConstraint=_minimumHeightConstraint;
 @property(nonatomic) double lineHeight; // @synthesize lineHeight=_lineHeight;
@@ -28,7 +29,6 @@
 @property(nonatomic) long long numberOfLines; // @synthesize numberOfLines=_numberOfLines;
 @property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (void)updateText;
 - (void)textDidChange:(id)arg1;
 - (void)updatePreferredMaxLayoutWidth:(id)arg1;

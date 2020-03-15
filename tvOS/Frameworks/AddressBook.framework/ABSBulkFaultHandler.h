@@ -22,13 +22,13 @@
 + (long long)batchSize;
 + (long long)interestThreshold;
 + (double)interestWindow;
+- (void).cxx_destruct;
 @property(nonatomic) double lastRequestTimeStamp; // @synthesize lastRequestTimeStamp=_lastRequestTimeStamp;
 @property(nonatomic) long long interest; // @synthesize interest=_interest;
 @property(readonly, nonatomic) NSMutableSet *keyDescriptorOfInterests; // @synthesize keyDescriptorOfInterests=_keyDescriptorOfInterests;
 @property(readonly, nonatomic) CNFuture *contactStoreFuture; // @synthesize contactStoreFuture=_contactStoreFuture;
 @property(readonly, nonatomic) id <CNScheduler> inlineScheduler; // @synthesize inlineScheduler=_inlineScheduler;
 @property(readonly, nonatomic) ABSAddressBookContextStorage *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (void)refetchContacts:(id)arg1 keysToFetch:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)completePeople:(id)arg1 withKeysToFetch:(id)arg2;
 - (id)batchOfPeopleInStorageMissingKeysIncluding:(id)arg1;

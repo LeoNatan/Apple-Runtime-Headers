@@ -12,8 +12,8 @@
 }
 
 + (id)loaderWithBlock:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) CDUnknownBlockType loadBlock; // @synthesize loadBlock=_loadBlock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType loadBlock; // @synthesize loadBlock=_loadBlock;
 - (void)load;
 
 @end

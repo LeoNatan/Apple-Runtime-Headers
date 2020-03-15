@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *actionViewsByType; // @synthesize actionViewsByType=_actionViewsByType;
 @property(retain, nonatomic) NSMutableDictionary *actionItemsByType; // @synthesize actionItemsByType=_actionItemsByType;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
 @property(nonatomic) __weak NSObject<CNActionsViewProtocol> *actionsDelegate; // @synthesize actionsDelegate=_actionsDelegate;
 @property(retain, nonatomic) NSArray *sortedActionTypes; // @synthesize sortedActionTypes=_sortedActionTypes;
-- (void).cxx_destruct;
 - (void)didPressActionView:(id)arg1 longPress:(_Bool)arg2;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateConstraints;

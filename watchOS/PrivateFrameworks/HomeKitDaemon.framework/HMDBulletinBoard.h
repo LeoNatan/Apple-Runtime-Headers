@@ -32,11 +32,11 @@
 + (id)_supportedSecureServices;
 + (id)_targetCurrentCharacteristicTypeMap;
 + (id)sharedBulletinBoard;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(retain, nonatomic) NSMutableDictionary *characteristicTuples; // @synthesize characteristicTuples=_characteristicTuples;
 @property(retain, nonatomic) HMDUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)insertCameraAccessModeChangedBulletin:(id)arg1;
 - (id)notificationUUIDsForClipBulletinWithIdentifier:(id)arg1;
 - (void)insertCameraSignificantEventBulletin:(id)arg1;
@@ -47,7 +47,7 @@
 - (id)_requestWithRecordID:(id)arg1;
 - (id)_lookupRequestForCharacteristic:(id)arg1;
 - (void)_removeBulletinsUsingPredicate:(id)arg1;
-- (id)_insertRequestWithTitle:(id)arg1 snapshotData:(id)arg2 message:(id)arg3 requestIdentifier:(id)arg4 bulletinType:(unsigned int)arg5 actionURL:(id)arg6 bulletinContext:(struct NSDictionary *)arg7 actionContext:(struct NSDictionary *)arg8;
+- (id)_insertRequestWithTitle:(id)arg1 snapshotData:(id)arg2 message:(id)arg3 requestIdentifier:(id)arg4 bulletinType:(unsigned int)arg5 actionURL:(id)arg6 bulletinContext:(id)arg7 actionContext:(id)arg8;
 - (id)_insertImageBulletinsForChangedCharacteristics:(id)arg1 snapshotData:(id)arg2;
 - (void)archive;
 - (void)removeAllBulletins;

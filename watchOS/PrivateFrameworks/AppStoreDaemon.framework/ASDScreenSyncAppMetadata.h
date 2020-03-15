@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *vendorName; // @synthesize vendorName=_vendorName;
 @property(copy) NSNumber *storeFront; // @synthesize storeFront=_storeFront;
 @property(copy) NSNumber *purchaserDSID; // @synthesize purchaserDSID=_purchaserDSID;
@@ -33,7 +34,6 @@
 @property(copy) NSNumber *externalVersionIdentifier; // @synthesize externalVersionIdentifier=_externalVersionIdentifier;
 @property(readonly) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy) NSString *accountName; // @synthesize accountName=_accountName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

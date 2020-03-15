@@ -6,12 +6,12 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class PXBasicTileAnimationOptions, PXExtendedTraitCollection, PXScrollViewController;
-@protocol PXWidget;
+@class NSObject, PXBasicTileAnimationOptions, PXExtendedTraitCollection, PXScrollViewController;
+@protocol PXAnonymousView, PXAnonymousViewController, PXWidget;
 
 @protocol PXWidgetDelegate <NSObject>
 - (_Bool)widget:(id <PXWidget>)arg1 requestViewControllerDismissalAnimated:(_Bool)arg2;
-- (_Bool)widget:(id <PXWidget>)arg1 transitionToViewController:(struct NSObject *)arg2 withTransitionType:(long long)arg3;
+- (_Bool)widget:(id <PXWidget>)arg1 transitionToViewController:(NSObject<PXAnonymousViewController> *)arg2 withTransitionType:(long long)arg3;
 - (long long)widgetDefaultContentViewAnchoringTypeForDisclosureHeightChange:(id <PXWidget>)arg1;
 - (void)widgetInvalidateContentLayoutStyle:(id <PXWidget>)arg1;
 - (void)widgetInvalidateContentViewAnchoringType:(id <PXWidget>)arg1;
@@ -24,8 +24,8 @@
 - (void)widgetLocalizedTitleDidChange:(id <PXWidget>)arg1;
 - (void)widget:(id <PXWidget>)arg1 animateChanges:(void (^)(void))arg2 withAnimationOptions:(PXBasicTileAnimationOptions *)arg3;
 - (PXExtendedTraitCollection *)widgetExtendedTraitCollection:(id <PXWidget>)arg1;
-- (struct NSObject *)widgetViewControllerHostingWidget:(id <PXWidget>)arg1;
+- (NSObject<PXAnonymousViewController> *)widgetViewControllerHostingWidget:(id <PXWidget>)arg1;
 - (PXScrollViewController *)widgetScrollViewControllerHostingWidget:(id <PXWidget>)arg1;
-- (struct NSObject *)widgetViewHostingGestureRecognizers:(id <PXWidget>)arg1;
+- (NSObject<PXAnonymousView> *)widgetViewHostingGestureRecognizers:(id <PXWidget>)arg1;
 @end
 

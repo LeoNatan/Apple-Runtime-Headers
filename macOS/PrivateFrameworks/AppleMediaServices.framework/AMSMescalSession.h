@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sessionWithType:(long long)arg1;
-@property BOOL primed; // @synthesize primed=_primed;
 - (void).cxx_destruct;
+@property BOOL primed; // @synthesize primed=_primed;
 - (BOOL)_verifyPrimeResponse:(id)arg1 error:(id *)arg2;
 - (BOOL)_verifyEntitlements;
 - (BOOL)_shouldRetryFairPlayForError:(id)arg1;

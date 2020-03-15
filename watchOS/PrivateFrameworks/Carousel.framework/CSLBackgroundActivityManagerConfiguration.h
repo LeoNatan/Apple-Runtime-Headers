@@ -18,11 +18,11 @@
 }
 
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _DASActivityGroup *activityGroup; // @synthesize activityGroup=_activityGroup;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) CSLDuetBackgroundBudgetController *budgetController; // @synthesize budgetController=_budgetController;
 @property(retain, nonatomic) id <_DASActivityGroupScheduler> scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 
 @end
 

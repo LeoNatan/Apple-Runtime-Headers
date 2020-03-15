@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 + (double)largestIconSizeInPoints;
 + (id)regularTheme;
 + (void)invalidateThemeCache;
+- (void).cxx_destruct;
 @property(nonatomic) double widthFractionForTallMedia; // @synthesize widthFractionForTallMedia=_widthFractionForTallMedia;
 @property(retain, nonatomic) LPPointUnit *maximumIntrinsicHeight; // @synthesize maximumIntrinsicHeight=_maximumIntrinsicHeight;
 @property(retain, nonatomic) LPPointUnit *maximumWidth; // @synthesize maximumWidth=_maximumWidth;
@@ -54,7 +55,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) LPCaptionBarStyle *captionBar; // @synthesize captionBar=_captionBar;
 @property(retain, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)CSSTextForProperty:(id)arg1 withValue:(id)arg2 allowsAlternateProperties:(BOOL)arg3;
 - (id)CSSTextForThemeProperty:(id)arg1 allowsAlternateProperties:(BOOL)arg2;
 - (id)valueForThemeProperty:(id)arg1;

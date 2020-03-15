@@ -19,9 +19,9 @@
 + (id)payloadWithData:(id)arg1 version:(unsigned long long)arg2;
 + (id)payloadWithData:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)init;

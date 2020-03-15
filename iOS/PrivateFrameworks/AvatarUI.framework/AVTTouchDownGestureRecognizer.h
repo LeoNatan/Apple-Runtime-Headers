@@ -16,9 +16,9 @@
     NSHashTable *_recognizersRequiredToFail;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *recognizersRequiredToFail; // @synthesize recognizersRequiredToFail=_recognizersRequiredToFail;
 @property(nonatomic) _Bool allowsTouchesToPassThrough; // @synthesize allowsTouchesToPassThrough=_allowsTouchesToPassThrough;
-- (void).cxx_destruct;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

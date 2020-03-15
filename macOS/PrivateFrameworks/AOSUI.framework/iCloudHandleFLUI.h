@@ -20,6 +20,7 @@
     NSView *_followupView;
 }
 
+- (void).cxx_destruct;
 @property NSView *followupView; // @synthesize followupView=_followupView;
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -28,7 +29,6 @@
 @property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property __weak NSButton *verifyButton; // @synthesize verifyButton=_verifyButton;
 @property(retain) NSWindow *followUpUISheet; // @synthesize followUpUISheet=_followUpUISheet;
-- (void).cxx_destruct;
 - (void)dismissFollowUpUI;
 - (BOOL)isShowingSheet;
 - (void)dismiss;

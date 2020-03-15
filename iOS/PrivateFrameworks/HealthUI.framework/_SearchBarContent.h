@@ -21,13 +21,13 @@
     _SearchEntryWithMatchDisplay *_searchEntry;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _SearchEntryWithMatchDisplay *searchEntry; // @synthesize searchEntry=_searchEntry;
 @property(readonly, nonatomic) HKBarButtonItemControl *doneBarButton; // @synthesize doneBarButton=_doneBarButton;
 @property(readonly, nonatomic) HKBarButtonItemControl *downBarButton; // @synthesize downBarButton=_downBarButton;
 @property(readonly, nonatomic) HKBarButtonItemControl *upBarButton; // @synthesize upBarButton=_upBarButton;
 @property(readonly, nonatomic) __weak HKIncrementalSearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(nonatomic) __weak id <HKIncrementalSearchBarDelegate> searchBarDelegate; // @synthesize searchBarDelegate=_searchBarDelegate;
-- (void).cxx_destruct;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)downAction:(id)arg1;

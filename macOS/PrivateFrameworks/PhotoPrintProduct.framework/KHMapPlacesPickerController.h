@@ -25,6 +25,7 @@
     NSMutableArray *_observedMarkers;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *observedMarkers; // @synthesize observedMarkers=_observedMarkers;
 @property(retain) KHPlusMinusFooterView *tableFooter; // @synthesize tableFooter=_tableFooter;
 @property(retain) NSButton *showLabelsButton; // @synthesize showLabelsButton=_showLabelsButton;
@@ -34,7 +35,6 @@
 @property(retain) NSScrollView *placesTableContainer; // @synthesize placesTableContainer=_placesTableContainer;
 @property(retain) NSTableView *placesTable; // @synthesize placesTable=_placesTable;
 @property(retain, nonatomic) KHMapView *mapView; // @synthesize mapView=_mapView;
-- (void).cxx_destruct;
 - (BOOL)control:(id)arg1 textShouldEndEditing:(id)arg2;
 - (void)markerButtonClicked:(id)arg1;
 - (void)setMarkersHidden:(id)arg1;

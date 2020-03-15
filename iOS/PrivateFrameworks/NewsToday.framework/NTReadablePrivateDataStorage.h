@@ -16,9 +16,9 @@
     FCFileCoordinatedTodayPrivateDataTransactionQueue *_transactionQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCFileCoordinatedTodayPrivateDataTransactionQueue *transactionQueue; // @synthesize transactionQueue=_transactionQueue;
 @property(retain, nonatomic) FCFileCoordinatedTodayDropbox *dropbox; // @synthesize dropbox=_dropbox;
-- (void).cxx_destruct;
 - (void)readPrivateDataWithAccessor:(CDUnknownBlockType)arg1;
 - (id)initWithDropbox:(id)arg1 transactionQueue:(id)arg2;
 - (id)init;

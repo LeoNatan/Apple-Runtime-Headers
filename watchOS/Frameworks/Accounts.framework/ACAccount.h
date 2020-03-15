@@ -54,12 +54,14 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType accountPropertiesTransformer; // @synthesize accountPropertiesTransformer=_accountPropertiesTransformer;
 @property(readonly, nonatomic) _Bool wasEnabledDataclassesReset; // @synthesize wasEnabledDataclassesReset=_wasEnabledDataclassesReset;
 @property(copy, nonatomic) ACTrackedSet *trackedEnabledDataclasses; // @synthesize trackedEnabledDataclasses=_trackedEnabledDataclasses;
 @property(readonly, nonatomic) _Bool wasProvisionedDataclassesReset; // @synthesize wasProvisionedDataclassesReset=_wasProvisionedDataclassesReset;
 @property(copy, nonatomic) ACTrackedSet *trackedProvisionedDataclasses; // @synthesize trackedProvisionedDataclasses=_trackedProvisionedDataclasses;
-- (void).cxx_destruct;
+- (void)setChildCardDAVAccountIdentifier:(id)arg1;
+- (id)childCardDAVAccountIdentifier;
 - (_Bool)correctPersonaScopedForAccount;
 - (id)personaIdentifier;
 - (_Bool)isDataSeparatedAccount;

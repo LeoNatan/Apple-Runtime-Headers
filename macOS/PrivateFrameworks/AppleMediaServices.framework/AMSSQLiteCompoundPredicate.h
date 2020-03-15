@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (id)predicateWithProperty:(id)arg1 values:(id)arg2 comparisonType:(long long)arg3;
 + (id)predicateMatchingAnyPredicates:(id)arg1;
 + (id)predicateMatchingAllPredicates:(id)arg1;
-@property(readonly, nonatomic) NSArray *predicates; // @synthesize predicates=_predicates;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *predicates; // @synthesize predicates=_predicates;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;
 - (id)SQLForEntityClass:(Class)arg1;
 - (BOOL)isEqual:(id)arg1;

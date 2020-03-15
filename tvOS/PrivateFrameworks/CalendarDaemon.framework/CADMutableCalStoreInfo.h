@@ -20,13 +20,13 @@
     NSString *_delegatedAccountOwnerAccountIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *delegatedAccountOwnerAccountIdentifier; // @synthesize delegatedAccountOwnerAccountIdentifier=_delegatedAccountOwnerAccountIdentifier;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(copy, nonatomic) NSString *storeName; // @synthesize storeName=_storeName;
 @property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
 @property(nonatomic) _Bool isLocalStore; // @synthesize isLocalStore=_isLocalStore;
 @property(nonatomic) int rowID; // @synthesize rowID=_rowID;
-- (void).cxx_destruct;
 
 @end
 

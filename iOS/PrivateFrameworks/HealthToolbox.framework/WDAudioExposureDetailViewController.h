@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     HKGraphSeries *_LEQSeries;
 }
 
-@property(retain, nonatomic) HKGraphSeries *LEQSeries; // @synthesize LEQSeries=_LEQSeries;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKGraphSeries *LEQSeries; // @synthesize LEQSeries=_LEQSeries;
 - (void)configureDisplayTypes:(id)arg1 timeScope:(long long)arg2 stackOffset:(long long)arg3;
 - (id)_buildLEQDataSourceWithUnitController:(id)arg1 displayType:(id)arg2 healthStore:(id)arg3;
 - (id)_buildLEQChartCacheWithUnitPreferenceController:(id)arg1 displayType:(id)arg2 healthStore:(id)arg3;

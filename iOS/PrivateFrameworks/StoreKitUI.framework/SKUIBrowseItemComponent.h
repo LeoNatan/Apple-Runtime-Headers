@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     _Bool _showTopBorder;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIImageViewElement *decorationImage; // @synthesize decorationImage=_decorationImage;
 @property(nonatomic) _Bool showTopBorder; // @synthesize showTopBorder=_showTopBorder;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (long long)componentType;
 - (id)initWithViewElement:(id)arg1;
 

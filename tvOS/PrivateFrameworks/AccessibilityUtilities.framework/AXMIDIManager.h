@@ -20,13 +20,13 @@
     NSMutableSet *_devices;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int midiInputPortRef; // @synthesize midiInputPortRef=_midiInputPortRef;
 @property(nonatomic) unsigned int midiClientRef; // @synthesize midiClientRef=_midiClientRef;
 @property(retain, nonatomic) NSMutableSet *devices; // @synthesize devices=_devices;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain, nonatomic) AXMIDIParser *parser; // @synthesize parser=_parser;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
-- (void).cxx_destruct;
 - (void)device:(id)arg1 entity:(id)arg2 didRemoveDestination:(id)arg3;
 - (void)device:(id)arg1 entity:(id)arg2 didAddDestination:(id)arg3;
 - (void)device:(id)arg1 entity:(id)arg2 didRemoveSource:(id)arg3;

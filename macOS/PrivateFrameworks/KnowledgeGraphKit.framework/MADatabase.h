@@ -37,11 +37,11 @@
 + (BOOL)hasMarker:(id)arg1;
 + (id)persistentStoreCoordinatorOptions;
 + (id)persistentStoreFileExtension;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(retain, nonatomic) NSManagedObjectModel *managedObjectModel; // @synthesize managedObjectModel=_managedObjectModel;
-- (void).cxx_destruct;
 - (void)_setLocalLabelStrings:(id)arg1;
 - (unsigned int)_labelForString:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)_stringForLabel:(unsigned int)arg1;

@@ -25,17 +25,18 @@ __attribute__((visibility("hidden")))
     double _maximumWidth;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double maximumWidth; // @synthesize maximumWidth=_maximumWidth;
 @property(readonly) NSArray *previewLayers; // @synthesize previewLayers=_previewLayers;
 @property double minTime; // @synthesize minTime=_minTime;
 @property double contentDurationWithinEndTimes; // @synthesize contentDurationWithinEndTimes=_contentDurationWithinEndTimes;
 @property double normalizedCurrentValue; // @synthesize normalizedCurrentValue=_normalizedCurrentValue;
-- (void).cxx_destruct;
 - (struct CGPath *)_createPathWithRightCornersRoundedInRect:(struct CGRect)arg1 cornerRadius:(double)arg2;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 @property BOOL hasRoundedCorners;
 - (void)updatePreviewLayerContent;
+- (struct CGSize)sizeForPreviewLayerWithIndex:(long long)arg1;
 - (struct CGPoint)positionForPreviewLayerWithIndex:(long long)arg1;
 - (long long)numberOfPreviewLayersForWidth:(double)arg1;
 @property(readonly) BOOL allPreviewLayersHaveContent;

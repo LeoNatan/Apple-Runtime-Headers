@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     TVHKMediaEntityFetchResponse *_albumArtistsResponse;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKMediaEntityFetchResponse *albumArtistsResponse; // @synthesize albumArtistsResponse=_albumArtistsResponse;
 @property(retain, nonatomic) TVHKMediaEntityFetchResponse *albumsResponse; // @synthesize albumsResponse=_albumsResponse;
 @property(retain, nonatomic) TVHKMediaEntityFetchResponse *mediaItemsResponse; // @synthesize mediaItemsResponse=_mediaItemsResponse;
 @property(nonatomic) unsigned long long toRevision; // @synthesize toRevision=_toRevision;
 @property(nonatomic) unsigned long long fromRevision; // @synthesize fromRevision=_fromRevision;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

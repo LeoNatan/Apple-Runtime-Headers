@@ -17,12 +17,12 @@
     HFReorderableHomeKitItemList *_clientReorderableActionSetList;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFReorderableHomeKitItemList *clientReorderableActionSetList; // @synthesize clientReorderableActionSetList=_clientReorderableActionSetList;
 @property(retain, nonatomic) HFActionSetItemProvider *actionSetItemProvider; // @synthesize actionSetItemProvider=_actionSetItemProvider;
 @property(readonly, nonatomic) unsigned long long actionSetStyle; // @synthesize actionSetStyle=_actionSetStyle;
 @property(nonatomic) BOOL onlyShowsFavorites; // @synthesize onlyShowsFavorites=_onlyShowsFavorites;
 @property(retain, nonatomic) HMRoom *room; // @synthesize room=_room;
-- (void).cxx_destruct;
 - (void)_updateFilters;
 - (BOOL)_requiresNotificationsForCharacteristic:(id)arg1;
 - (void)_didFinishUpdateTransactionWithAffectedItems:(id)arg1;

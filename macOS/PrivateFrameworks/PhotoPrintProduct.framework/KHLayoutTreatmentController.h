@@ -15,9 +15,9 @@
     NSArray *_themeConfigurations;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *themeConfigurations; // @synthesize themeConfigurations=_themeConfigurations;
 @property(readonly, nonatomic) KHLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (id)treatmentAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfTreatments;
 - (unsigned long long)thumbnailType;

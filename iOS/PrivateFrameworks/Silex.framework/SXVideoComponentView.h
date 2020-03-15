@@ -37,6 +37,7 @@
     CDUnknownBlockType _presentationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType presentationBlock; // @synthesize presentationBlock=_presentationBlock;
 @property(nonatomic) __weak ADBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(readonly, nonatomic) id <SXBookmarkManager> bookmarkManager; // @synthesize bookmarkManager=_bookmarkManager;
@@ -53,7 +54,6 @@
 @property(readonly, nonatomic) id <SXResourceDataSource> resourceDataSource; // @synthesize resourceDataSource=_resourceDataSource;
 @property(readonly, nonatomic) SXAdController *adController; // @synthesize adController=_adController;
 @property(retain, nonatomic) SXVideoPlayerViewController *videoPlayerViewController; // @synthesize videoPlayerViewController=_videoPlayerViewController;
-- (void).cxx_destruct;
 - (_Bool)allowHierarchyRemoval;
 - (void)reachabilityChanged:(_Bool)arg1;
 - (unsigned long long)analyticsVideoType;

@@ -18,12 +18,12 @@
     NSMutableDictionary *_inFlightMessages;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *inFlightMessages; // @synthesize inFlightMessages=_inFlightMessages;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain) NSMutableArray *messageQueue; // @synthesize messageQueue=_messageQueue;
 @property _Bool messageOutstanding; // @synthesize messageOutstanding=_messageOutstanding;
 @property _Bool canSend; // @synthesize canSend=_canSend;
-- (void).cxx_destruct;
 - (void)onqueue_clearQueuedMessages;
 - (void)onqueue_dequeueMessage;
 - (id)onqueue_peekMessage;

@@ -24,6 +24,7 @@
     // Error parsing type: , name: _recordedTranslation
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property recordedTranslation:
 // Property attributes: T,R,N,V_recordedTranslation
 
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) id <MTLBuffer> patchUserDataBuffer; // @synthesize patchUserDataBuffer=_patchUserDataBuffer;
 @property(readonly, nonatomic) id <MTLBuffer> controlPointIndicesBuffer; // @synthesize controlPointIndicesBuffer=_controlPointIndicesBuffer;
 @property(readonly, nonatomic) id <MTLBuffer> controlPointsBuffer; // @synthesize controlPointsBuffer=_controlPointsBuffer;
-- (void).cxx_destruct;
 - (void)computeInstanceTransformTranslate:(int)arg1 index: /* Error: Ran out of types for this method. */;
 - (void)computeInstanceTransformTranslate:(float)arg1 x1:(int)arg2 t:index: /* Error: Ran out of types for this method. */;
 - (void)computeInstanceTransformTranslate:(float)arg1 t:(int)arg2 index: /* Error: Ran out of types for this method. */;

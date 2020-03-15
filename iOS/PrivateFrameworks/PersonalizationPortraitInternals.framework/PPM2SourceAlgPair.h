@@ -16,9 +16,9 @@
     NSString *_source;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *algorithm; // @synthesize algorithm=_algorithm;
 @property(retain, nonatomic) NSString *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

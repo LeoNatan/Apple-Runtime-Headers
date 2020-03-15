@@ -16,10 +16,10 @@
 }
 
 + (id)entryWithPath:(id)arg1 count:(id)arg2 percentage:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *entityPercentage; // @synthesize entityPercentage=_entityPercentage;
 @property(retain, nonatomic) NSNumber *entityCount; // @synthesize entityCount=_entityCount;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

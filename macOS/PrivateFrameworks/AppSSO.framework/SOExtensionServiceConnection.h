@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSXPCListenerEndpoint *_serviceXpcEndpoint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSXPCListenerEndpoint *serviceXpcEndpoint; // @synthesize serviceXpcEndpoint=_serviceXpcEndpoint;
 @property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (void)beginAuthorizationWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)_connectToService;
 - (id)initWithListenerEndpoint:(id)arg1;

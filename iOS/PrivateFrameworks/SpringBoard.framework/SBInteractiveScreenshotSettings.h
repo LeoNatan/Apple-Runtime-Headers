@@ -36,6 +36,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *cropLinesAlphaAnimationSettings; // @synthesize cropLinesAlphaAnimationSettings=_cropLinesAlphaAnimationSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *cropsAnimationSettings; // @synthesize cropsAnimationSettings=_cropsAnimationSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *disabledGestureContentAnimationSettings; // @synthesize disabledGestureContentAnimationSettings=_disabledGestureContentAnimationSettings;
@@ -59,7 +60,6 @@
 @property(nonatomic) double cornerVerticalEdgeLength; // @synthesize cornerVerticalEdgeLength=_cornerVerticalEdgeLength;
 @property(nonatomic) double cornerHorizontalEdgeLength; // @synthesize cornerHorizontalEdgeLength=_cornerHorizontalEdgeLength;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

@@ -19,10 +19,10 @@
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 + (Class)class;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *methodSignituresBySelector; // @synthesize methodSignituresBySelector=_methodSignituresBySelector;
 @property(readonly, nonatomic) UXCollectionViewLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) __weak id <KHCollectionViewLayoutProxyDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

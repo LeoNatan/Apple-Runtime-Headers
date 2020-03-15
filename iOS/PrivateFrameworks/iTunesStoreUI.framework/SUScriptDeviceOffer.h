@@ -15,8 +15,8 @@
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
-@property(retain, nonatomic) AMSDeviceOffer *offer; // @synthesize offer=_offer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AMSDeviceOffer *offer; // @synthesize offer=_offer;
 - (id)scriptAttributeKeys;
 - (id)attributeKeys;
 - (void)setSubscribed:(id)arg1;

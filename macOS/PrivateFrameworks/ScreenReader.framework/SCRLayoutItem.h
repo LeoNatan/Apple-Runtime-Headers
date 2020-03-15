@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSString *_lastSizeDescription;
 }
 
-@property(retain, nonatomic) NSString *lastSizeDescription; // @synthesize lastSizeDescription=_lastSizeDescription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *lastSizeDescription; // @synthesize lastSizeDescription=_lastSizeDescription;
 - (void)addAdditionalElementSummaryToRequest:(id)arg1;
 - (BOOL)isPartOfSelection;
 - (id)overlappingSiblings;

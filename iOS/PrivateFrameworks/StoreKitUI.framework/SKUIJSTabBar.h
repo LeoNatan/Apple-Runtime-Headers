@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     SKUIJSTabBarItem *_transientTab;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIJSTabBarItem *transientTab; // @synthesize transientTab=_transientTab;
 @property(readonly, nonatomic) NSArray *tabs; // @synthesize tabs=_tabs;
-- (void).cxx_destruct;
 - (id)_selectedTabBarItemForIndex:(long long)arg1;
 - (void)_reloadTabBarItemsWithPreludeMainThreadWork:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) SKUIJSTabBarItem *selectedTab;

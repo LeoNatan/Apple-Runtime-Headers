@@ -25,6 +25,7 @@
 + (id)blankVersionInfo;
 + (id)versionInfoFromDefaultSystem;
 + (id)versionInfoFromContainerDirectory:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSURL *diskLocation; // @synthesize diskLocation=_diskLocation;
 @property(retain) NSNumber *shouldAlertAll; // @synthesize shouldAlertAll=_shouldAlertAll;
 @property(retain) NSDictionary *alertZones; // @synthesize alertZones=_alertZones;
@@ -32,7 +33,6 @@
 @property(retain) NSString *icuTZSchemaVersion; // @synthesize icuTZSchemaVersion=_icuTZSchemaVersion;
 @property(retain) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(retain) NSString *tzDataVersion; // @synthesize tzDataVersion=_tzDataVersion;
-- (void).cxx_destruct;
 - (BOOL)isBlank;
 - (id)description;
 - (long long)compare:(id)arg1;

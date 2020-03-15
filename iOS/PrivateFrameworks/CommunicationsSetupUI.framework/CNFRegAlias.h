@@ -18,12 +18,12 @@
     NSString *_deviceAliasIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSString *deviceAliasIdentifier; // @synthesize deviceAliasIdentifier=_deviceAliasIdentifier;
 @property(nonatomic, getter=isSelectedDeviceAlias) _Bool selectedDeviceAlias; // @synthesize selectedDeviceAlias=_selectedDeviceAlias;
 @property(nonatomic) long long givenAliasType; // @synthesize givenAliasType=_givenAliasType;
 @property(retain, nonatomic) IMAccount *account; // @synthesize account=_account;
 @property(copy, nonatomic) NSString *alias; // @synthesize alias=_alias;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isLocalPhoneNumberAlias;

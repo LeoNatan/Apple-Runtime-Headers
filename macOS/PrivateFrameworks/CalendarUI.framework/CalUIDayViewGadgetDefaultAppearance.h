@@ -20,10 +20,10 @@
 }
 
 + (id)_fontWithFontSize:(double)arg1 bold:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(retain, nonatomic) NSFont *locationFont; // @synthesize locationFont=_locationFont;
 @property(retain, nonatomic) NSFont *timelineFont; // @synthesize timelineFont=_timelineFont;
-- (void).cxx_destruct;
 - (id)fontForEventOccurrencesWithWeight:(int)arg1;
 - (BOOL)shouldShowTime;
 - (long long)backgroundStyle;

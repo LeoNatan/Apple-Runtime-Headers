@@ -27,13 +27,13 @@
 }
 
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *dPID; // @synthesize dPID=_dPID;
 @property(nonatomic) float timezone; // @synthesize timezone=_timezone;
 @property(nonatomic) double statusChangeTimestamp; // @synthesize statusChangeTimestamp=_statusChangeTimestamp;
 @property(nonatomic) double transmitTimestamp; // @synthesize transmitTimestamp=_transmitTimestamp;
 @property(nonatomic) _Bool optedOutStatus; // @synthesize optedOutStatus=_optedOutStatus;
 @property(retain, nonatomic) NSData *iAdID; // @synthesize iAdID=_iAdID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UNNotificationSourceSettings *sourceSettings; // @synthesize sourceSettings=_sourceSettings;
 @property(readonly, copy, nonatomic) UNNotificationIcon *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) _Bool isHiddenFromSettings; // @synthesize isHiddenFromSettings=_isHiddenFromSettings;
 @property(readonly, copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

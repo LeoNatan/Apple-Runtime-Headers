@@ -18,10 +18,10 @@
     id <NAScheduler> _serializer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(readonly, nonatomic) NSMutableDictionary *alarmsByID; // @synthesize alarmsByID=_alarmsByID;
 @property(readonly, nonatomic) MTAlarmStorage *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (void)source:(id)arg1 didChangeNextAlarm:(id)arg2;
 - (void)source:(id)arg1 didFireAlarm:(id)arg2 triggerType:(unsigned long long)arg3;
 - (void)source:(id)arg1 didDismissAlarm:(id)arg2 dismissAction:(unsigned long long)arg3;

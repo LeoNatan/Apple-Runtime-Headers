@@ -13,9 +13,9 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType brightnessChangedExternally; // @synthesize brightnessChangedExternally=_brightnessChangedExternally;
 @property(copy, nonatomic) CDUnknownBlockType isTracking; // @synthesize isTracking=_isTracking;
-- (void).cxx_destruct;
 
 @end
 

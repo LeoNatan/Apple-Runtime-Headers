@@ -18,10 +18,12 @@
     UIViewController<SRRemoteAuthorizationPromptViewController> *_viewController;
     CDUnknownBlockType _completionHandler;
     NSError *_error;
+    long long _reason;
 }
 
 + (id)sharedInstance;
 + (void)initialize;
+@property(nonatomic) long long reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool hostNavigationBarHidden; // @synthesize hostNavigationBarHidden=_hostNavigationBarHidden;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -45,7 +47,7 @@
 - (void)presentAppsAndStudiesPromptViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)presentPendingAuthorizationPromptViewController:(id)arg1 withDesiredServices:(id)arg2 bundlePath:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)presentPromptViewController:(id)arg1 withDesiredServices:(id)arg2 bundleIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (_Bool)presentAnyViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)presentAnyViewController:(id)arg1 reason:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 
 // Remaining properties

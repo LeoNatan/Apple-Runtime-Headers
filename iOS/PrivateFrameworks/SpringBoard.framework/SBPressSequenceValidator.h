@@ -13,8 +13,8 @@
     SBPressSequenceSettings *_settings;
 }
 
-@property(readonly, nonatomic) SBPressSequenceSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBPressSequenceSettings *settings; // @synthesize settings=_settings;
 - (long long)_modeForDesiredIndex:(unsigned long long)arg1 isDownEvent:(_Bool)arg2;
 - (struct _SBPressSequenceValidatorBounds)_pressUpBoundsForDesiredIndex:(unsigned long long)arg1 sequence:(id)arg2;
 - (struct _SBPressSequenceValidatorBounds)_pressDownBoundsForDesiredIndex:(unsigned long long)arg1 sequence:(id)arg2;

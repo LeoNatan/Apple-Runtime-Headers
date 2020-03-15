@@ -15,10 +15,10 @@
     id _value;
 }
 
+- (void).cxx_destruct;
 @property(readonly) short comparisonOperation; // @synthesize comparisonOperation=_comparisonOperation;
 @property(readonly) id value; // @synthesize value=_value;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSString *sqlWhereClause;
 @property(readonly) NSString *comparisonOperationString;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) struct CGPoint startLocation; // @synthesize startLocation=_startLocation;
 @property(retain, nonatomic) UITouch *firstTouch; // @synthesize firstTouch=_firstTouch;
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (_Bool)_hasActiveTouchesInEvent:(id)arg1;

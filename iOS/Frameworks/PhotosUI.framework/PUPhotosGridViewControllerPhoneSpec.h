@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)shouldUseAspectItems;
 - (struct UIEdgeInsets)gridContentInsets;
 - (_Bool)shouldPlaceSelectAllButtonInRightNavigationBar;
 - (_Bool)canDisplaySlideshowButton;

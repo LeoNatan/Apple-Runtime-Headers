@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     double _touchDownTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double touchDownTime; // @synthesize touchDownTime=_touchDownTime;
 @property(nonatomic) double holdThreshold; // @synthesize holdThreshold=_holdThreshold;
 @property(retain, nonatomic) UIButton *stopButton; // @synthesize stopButton=_stopButton;
 @property(retain, nonatomic) UIButton *startButton; // @synthesize startButton=_startButton;
 @property(nonatomic) __weak id <CKInlineAudioReplyButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isStarted) _Bool started; // @synthesize started=_started;
-- (void).cxx_destruct;
 - (void)touchDragExit:(id)arg1;
 - (void)touchDragEnter:(id)arg1;
 - (void)touchUpInStopButton:(id)arg1;

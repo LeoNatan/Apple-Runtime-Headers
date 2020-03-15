@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) HKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) HKSourceDataModel *sourceModel; // @synthesize sourceModel=_sourceModel;
-- (void).cxx_destruct;
 - (id)initWithSource:(id)arg1 device:(id)arg2;
 
 @end

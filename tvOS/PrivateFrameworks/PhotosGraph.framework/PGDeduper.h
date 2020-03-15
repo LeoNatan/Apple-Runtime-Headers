@@ -13,8 +13,8 @@
     NSSet *_identifiersOfRequiredItems;
 }
 
-@property(copy, nonatomic) NSSet *identifiersOfRequiredItems; // @synthesize identifiersOfRequiredItems=_identifiersOfRequiredItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *identifiersOfRequiredItems; // @synthesize identifiersOfRequiredItems=_identifiersOfRequiredItems;
 - (id)requiredItemsInItems:(id)arg1;
 - (_Bool)itemIsRequired:(id)arg1;
 - (id)deduplicatedItemsWithItems:(id)arg1 debugInfo:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;

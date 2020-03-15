@@ -19,11 +19,11 @@
     _Bool _wantsSettingsUpdates;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool wantsSettingsUpdates; // @synthesize wantsSettingsUpdates=_wantsSettingsUpdates;
 @property(readonly, nonatomic) _Bool wantsStateUpdates; // @synthesize wantsStateUpdates=_wantsStateUpdates;
 @property(readonly, copy, nonatomic) NSSet *assertionUpdateClientIdentifiers; // @synthesize assertionUpdateClientIdentifiers=_assertionUpdateClientIdentifiers;
 @property(readonly, copy, nonatomic) NSUUID *interruptionInvalidationAssertionUUID; // @synthesize interruptionInvalidationAssertionUUID=_interruptionInvalidationAssertionUUID;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithInterruptionInvalidationAssertionUUID:(id)arg1 assertionUpdateClientIdentifiers:(id)arg2 wantsStateUpdates:(_Bool)arg3 wantsSettingsUpdates:(_Bool)arg4;

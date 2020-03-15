@@ -16,10 +16,10 @@
 }
 
 + (id)configurationTupleForCharacteristic:(id)arg1 broadcastEnable:(BOOL)arg2 broadcastInterval:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long broadcastInterval; // @synthesize broadcastInterval=_broadcastInterval;
 @property(nonatomic) BOOL broadcastEnable; // @synthesize broadcastEnable=_broadcastEnable;
 @property(retain, nonatomic) HAPCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (void).cxx_destruct;
 
 @end
 

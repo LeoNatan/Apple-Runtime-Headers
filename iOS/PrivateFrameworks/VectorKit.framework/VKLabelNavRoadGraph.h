@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _firstPOIAligningRouteSegment;
 }
 
-@property(retain, nonatomic) NSMutableArray *junctions; // @synthesize junctions=_junctions;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *junctions; // @synthesize junctions=_junctions;
 - (id)_nextIntersectionForRoad:(id)arg1;
 - (id)nextRoadSegmentForRoad:(id)arg1;
 - (id)_findInterTileJunctionForJunction:(id)arg1;

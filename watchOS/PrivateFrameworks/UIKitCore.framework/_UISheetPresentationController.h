@@ -38,6 +38,7 @@
 }
 
 + (int)_initialMode;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAllowsTearOff:) _Bool _allowsTearOff; // @synthesize _allowsTearOff=__allowsTearOff;
 @property(nonatomic, setter=_setPresentsAtStandardHalfHeight:) _Bool _presentsAtStandardHalfHeight; // @synthesize _presentsAtStandardHalfHeight=__presentsAtStandardHalfHeight;
 @property(nonatomic, setter=_setIsRemote:) _Bool _isRemote; // @synthesize _isRemote=__isRemote;
@@ -59,8 +60,8 @@
 @property(readonly, nonatomic) UIDimmingView *_confinedDimmingView; // @synthesize _confinedDimmingView=__confinedDimmingView;
 @property(readonly, nonatomic) _UISheetLayoutInfo *_layoutInfo; // @synthesize _layoutInfo=__layoutInfo;
 @property(nonatomic) struct CGRect frameOfPresentedViewInContainerView; // @synthesize frameOfPresentedViewInContainerView=_frameOfPresentedViewInContainerView;
-- (void).cxx_destruct;
-- (_Bool)sheetInteraction:(id)arg1 shouldBeginHorizontalRubberBandingAtPoint:(struct CGPoint)arg2;
+- (_Bool)sheetInteraction:(id)arg1 shouldAllowVerticalRubberBandingWithEvent:(id)arg2;
+- (_Bool)sheetInteraction:(id)arg1 shouldBeginHorizontalRubberBandingWithGestureRecognizer:(id)arg2;
 - (void)_completeInteractiveTransitionFromRemote:(_Bool)arg1 offset:(float)arg2 duration:(double)arg3 timingCurve:(id)arg4;
 - (void)_updateInteractiveTransitionFromRemoteWithProgress:(float)arg1 offset:(float)arg2;
 - (void)_startInteractiveTransitionFromRemoteWithProgress:(float)arg1 offset:(float)arg2;

@@ -17,9 +17,9 @@
     int _signature;
 }
 
-@property(readonly, retain, nonatomic) NSArray *objects; // @synthesize objects=_objects;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSArray *objects; // @synthesize objects=_objects;
 -     // Error parsing type: @48@0:8r^{RTCamera=^^?QQffi^f^^@{?=[4]}{?=[4]}^{RTRaySegment}ffffffffff}16@24@3240, name: raytraceSceneWithCamera:reflection:irradiance:size:
 - (void)clear;
 - (void)addObject:(id)arg1;

@@ -15,8 +15,8 @@
     NSMutableDictionary *_keychainItemsByPersistentID;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *keychainItemsByPersistentID; // @synthesize keychainItemsByPersistentID=_keychainItemsByPersistentID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *keychainItemsByPersistentID; // @synthesize keychainItemsByPersistentID=_keychainItemsByPersistentID;
 - (id)addItem:(id)arg1 toAccessGroup:(id)arg2;
 - (id)makePrivateKeyWithData:(id)arg1;
 - (id)makeIdentityWithCertificate:(id)arg1 privateKey:(id)arg2;

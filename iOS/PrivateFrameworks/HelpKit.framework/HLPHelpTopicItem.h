@@ -16,11 +16,11 @@
     NSArray *_categories;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(copy, nonatomic) NSString *glossaryIdentifierString; // @synthesize glossaryIdentifierString=_glossaryIdentifierString;
 @property(copy, nonatomic) NSString *hrefID; // @synthesize hrefID=_hrefID;
 @property(copy, nonatomic) NSString *anchor; // @synthesize anchor=_anchor;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic, getter=isPassionPoints) _Bool passionPoints; // @dynamic passionPoints;
 @property(readonly, nonatomic, getter=isCopyright) _Bool copyright; // @dynamic copyright;

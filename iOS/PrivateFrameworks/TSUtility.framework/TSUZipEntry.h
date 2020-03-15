@@ -20,6 +20,7 @@
     unsigned long long _offset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned short extraFieldLength; // @synthesize extraFieldLength=_extraFieldLength;
 @property(nonatomic) unsigned short nameLength; // @synthesize nameLength=_nameLength;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned int CRC; // @synthesize CRC=_CRC;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -27,6 +27,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *openInTrunk; // @synthesize openInTrunk=_openInTrunk;
 @property(retain, nonatomic) NSNumber *displayFrequency; // @synthesize displayFrequency=_displayFrequency;
 @property(retain, nonatomic) NSString *html; // @synthesize html=_html;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSNumber *height; // @synthesize height=_height;
 @property(retain, nonatomic) NSNumber *width; // @synthesize width=_width;
 @property(retain, nonatomic) NSNumber *id; // @synthesize id=_id;
-- (void).cxx_destruct;
 
 @end
 

@@ -26,6 +26,7 @@
     MPChangeDetails *_changeDetails;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPChangeDetails *changeDetails; // @synthesize changeDetails=_changeDetails;
 @property(readonly, nonatomic) MPModelStoreBrowseContentItemBuilder *contentItemBuilder; // @synthesize contentItemBuilder=_contentItemBuilder;
 @property(readonly, nonatomic) MPModelStoreBrowseSectionBuilder *sectionBuilder; // @synthesize sectionBuilder=_sectionBuilder;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) MPModelStoreBrowseResponseParser *previousParser; // @synthesize previousParser=_previousParser;
 @property(readonly, nonatomic) CDStruct_12f05b9c options; // @synthesize options=_options;
 @property(readonly, nonatomic) id rawResponseOutput; // @synthesize rawResponseOutput=_rawResponseOutput;
-- (void).cxx_destruct;
 - (BOOL)_storeItemMetadataIsAvailableForContentIdentifier:(id)arg1;
 - (id)_storeItemMetadataForContentIdentifier:(id)arg1;
 - (void)_populateUnavailableContentIdentifiersFromPageDataDictionary:(id)arg1;

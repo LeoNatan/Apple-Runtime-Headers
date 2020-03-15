@@ -18,8 +18,8 @@
 
 + (id)errorWithEnum:(unsigned int)arg1;
 + (id)errorStringWithEnum:(unsigned int)arg1;
-@property(readonly, nonatomic) id <NRTermsAcknowledgementRegistry> proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NRTermsAcknowledgementRegistry> proxy; // @synthesize proxy=_proxy;
 - (void)checkForAcknowledgement:(id)arg1 forDeviceID:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)add:(id)arg1 forDeviceID:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)proxyWithErrorHandler:(CDUnknownBlockType)arg1;

@@ -19,11 +19,11 @@
     TVLMenuListDataSource *_listDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLMenuListDataSource *listDataSource; // @synthesize listDataSource=_listDataSource;
 @property(retain, nonatomic) TVTableView *listView; // @synthesize listView=_listView;
 @property(retain, nonatomic) UILabel *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (_Bool)tableView:(id)arg1 shouldHandleLongPressForItemAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didReceiveLongPressForItemAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didReceivePhysicalPlayForItemAtIndexPath:(id)arg2;

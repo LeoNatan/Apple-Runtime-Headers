@@ -33,13 +33,13 @@
 + (long long)approximateByteSizeForMode:(int)arg1 duration:(double)arg2;
 + (double)maximumDurationForTrimMode:(int)arg1;
 + (long long)fileLengthLimitForRemakerMode:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) PFVideoAVObjectBuilder *_videoAVObjectBuilder; // @synthesize _videoAVObjectBuilder=__videoAVObjectBuilder;
 @property(copy, nonatomic) NSString *customAccessibilityLabel; // @synthesize customAccessibilityLabel=_customAccessibilityLabel;
 @property(copy, nonatomic) NSString *exportPresetOverride; // @synthesize exportPresetOverride=_exportPresetOverride;
 @property(nonatomic) BOOL shouldExportToPhotoDataDirectory; // @synthesize shouldExportToPhotoDataDirectory=_shouldExportToPhotoDataDirectory;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic) __weak NSObject<PLVideoRemakerDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_exportCompletedWithSuccess:(BOOL)arg1;
 - (void)cancel;
 - (void)_didEndRemakingWithTemporaryPath:(id)arg1;

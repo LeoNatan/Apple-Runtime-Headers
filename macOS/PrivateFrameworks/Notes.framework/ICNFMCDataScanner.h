@@ -15,8 +15,8 @@
 }
 
 + (id)scannerWithData:(id)arg1;
-@property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (BOOL)scanUpToBytesFromSet:(id)arg1 intoData:(id *)arg2;
 - (BOOL)_scanUpToBytes:(const void *)arg1 length:(unsigned long long)arg2 intoData:(id *)arg3;
 - (BOOL)scanUpToCString:(const char *)arg1 intoData:(id *)arg2;

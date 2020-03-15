@@ -13,8 +13,8 @@
     NSArray *_cardSectionRowModels;
 }
 
-@property(retain, nonatomic) NSArray *cardSectionRowModels; // @synthesize cardSectionRowModels=_cardSectionRowModels;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *cardSectionRowModels; // @synthesize cardSectionRowModels=_cardSectionRowModels;
 - (Class)cellViewClass;
 - (BOOL)isDraggable;
 - (id)dragSubtitle;

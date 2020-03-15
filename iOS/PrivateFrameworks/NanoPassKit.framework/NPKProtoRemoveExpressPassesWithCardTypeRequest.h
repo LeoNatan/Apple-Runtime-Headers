@@ -15,8 +15,8 @@
     NSString *_cardType;
 }
 
-@property(retain, nonatomic) NSString *cardType; // @synthesize cardType=_cardType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *cardType; // @synthesize cardType=_cardType;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

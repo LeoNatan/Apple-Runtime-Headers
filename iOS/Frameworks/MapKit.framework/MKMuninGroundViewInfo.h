@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     GEOLocationInfo *_locationInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOLocationInfo *locationInfo; // @synthesize locationInfo=_locationInfo;
 @property(readonly, nonatomic) double endHeading; // @synthesize endHeading=_endHeading;
 @property(readonly, nonatomic) double startHeading; // @synthesize startHeading=_startHeading;
-- (void).cxx_destruct;
 - (_Bool)isHeadingInRange:(double)arg1;
 - (id)initWithStartHeading:(double)arg1 endHeading:(double)arg2 localityName:(id)arg3 locationName:(id)arg4 secondaryLocationName:(id)arg5;
 

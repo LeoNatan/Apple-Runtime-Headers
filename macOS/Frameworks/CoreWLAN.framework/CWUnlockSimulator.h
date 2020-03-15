@@ -8,8 +8,8 @@
 
 #import <CoreWLAN/CWEventDelegate-Protocol.h>
 
-@class CWInterface, CWWiFiClient, NSDate, NSError, NSLock, NSNumber, NSString;
-@protocol OS_dispatch_queue;
+@class CWInterface, CWWiFiClient, NSDate, NSError, NSNumber, NSString;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface CWUnlockSimulator : NSObject <CWEventDelegate>
 {
@@ -23,7 +23,7 @@
     NSNumber *_secChannel;
     NSNumber *_measurements;
     struct ether_addr _peerAddr;
-    NSLock *_completion;
+    NSObject<OS_dispatch_semaphore> *_completion;
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _isRanging;
     BOOL _isAwdlUp;

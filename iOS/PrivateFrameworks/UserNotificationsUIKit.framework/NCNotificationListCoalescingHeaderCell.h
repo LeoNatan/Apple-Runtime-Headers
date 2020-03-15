@@ -30,6 +30,7 @@
 + (struct CGSize)_coalescingControlsViewPreferredSize;
 + (void)_contentSizeCategoryDidChange:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) NCNotificationListHeaderTitleView *headerTitleView; // @synthesize headerTitleView=_headerTitleView;
 @property(retain, nonatomic) NCNotificationListCoalescingControlsView *coalescingControlsView; // @synthesize coalescingControlsView=_coalescingControlsView;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 @property(nonatomic) __weak id <NCNotificationListCoalescingControlsHandlerDelegate> handlerDelegate; // @synthesize handlerDelegate=_handlerDelegate;
-- (void).cxx_destruct;
 - (void)_layoutHeaderTitleView;
 - (void)_layoutCoalescingControlsView;
 - (struct CGRect)_coalescingControlsViewFrameForBounds:(struct CGRect)arg1;

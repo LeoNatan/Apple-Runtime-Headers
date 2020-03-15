@@ -19,11 +19,11 @@
     unsigned long long _totalBytesReceived;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long totalBytesReceived; // @synthesize totalBytesReceived=_totalBytesReceived;
 @property _Bool outputFinished; // @synthesize outputFinished=_outputFinished;
 @property unsigned long long currentBlobSizeIndex; // @synthesize currentBlobSizeIndex=_currentBlobSizeIndex;
 @property(readonly) NSObject<OS_nw_context> *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)notifyInputHandler;
 - (void)handleOutputFrame:(id)arg1;
 - (void)handleOutputFinished;

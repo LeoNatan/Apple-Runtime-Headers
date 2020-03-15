@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     SCRCUserDefaults *__userDefaults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(retain, nonatomic, setter=_setEnabledObserver:) id _enabledObserverWrite; // @synthesize _enabledObserverWrite=__enabledObserverWrite;
 @property(retain, nonatomic, setter=_setEnabledObserver:) id _enabledObserverRead; // @synthesize _enabledObserverRead=__enabledObserverRead;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setCaptionWindow:) AXVCaptionWindow *_captionWindow; // @synthesize _captionWindow=__captionWindow;
 @property(nonatomic) BOOL temporarilyCenteredAtBottomOfScreen; // @synthesize temporarilyCenteredAtBottomOfScreen=_temporarilyCenteredAtBottomOfScreen;
 @property(nonatomic) BOOL temporarilyHidden; // @synthesize temporarilyHidden=_temporarilyHidden;
-- (void).cxx_destruct;
 - (struct CGRect)_savedWindowFrame;
 - (void)_loadSavedWindowFrame;
 - (void)_windowFrameChanged;

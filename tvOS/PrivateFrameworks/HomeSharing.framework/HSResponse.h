@@ -20,13 +20,13 @@
 
 + (id)responseWithResponse:(id)arg1;
 + (id)responseWithCode:(unsigned long long)arg1 headerFields:(id)arg2 data:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSURL *responseDataFileURL; // @synthesize responseDataFileURL=_responseDataFileURL;
 @property(readonly, nonatomic) NSData *responseData; // @synthesize responseData=_responseData;
 @property(readonly, nonatomic) NSDictionary *responseHeaderFields; // @synthesize responseHeaderFields=_responseHeaderFields;
 @property(readonly, nonatomic) unsigned long long responseCode; // @synthesize responseCode=_responseCode;
 @property(readonly, nonatomic) NSString *MIMEType; // @synthesize MIMEType=_MIMEType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCode:(unsigned long long)arg1 headerFields:(id)arg2 data:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
 

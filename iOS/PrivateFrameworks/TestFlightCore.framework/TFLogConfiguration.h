@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalLoggerAccessQueue; // @synthesize internalLoggerAccessQueue=_internalLoggerAccessQueue;
 @property(retain, nonatomic) NSObject<OS_os_log> *internalLogger; // @synthesize internalLogger=_internalLogger;
 @property(readonly, copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(readonly, copy, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_log> *generatedLogger;
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2;
 

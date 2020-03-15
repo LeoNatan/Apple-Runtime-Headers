@@ -25,6 +25,7 @@
     CDUnknownBlockType _continueActionHandler;
 }
 
+- (void).cxx_destruct;
 @property _Bool preloadLearnMoreWebView; // @synthesize preloadLearnMoreWebView=_preloadLearnMoreWebView;
 @property(copy, nonatomic) CDUnknownBlockType continueActionHandler; // @synthesize continueActionHandler=_continueActionHandler;
 @property(copy, nonatomic) CDUnknownBlockType learnMorePresentationHandler; // @synthesize learnMorePresentationHandler=_learnMorePresentationHandler;
@@ -33,7 +34,6 @@
 @property(nonatomic) id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(nonatomic) long long context; // @synthesize context=_context;
 @property(nonatomic) long long reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)handleDone:(id)arg1;
 - (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;

@@ -15,8 +15,8 @@
 
 + (Class)controlItemClass;
 + (id)controlItemPredicate;
-@property(retain, nonatomic) HUQuickControlIconView *quickControlIconView; // @synthesize quickControlIconView=_quickControlIconView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUQuickControlIconView *quickControlIconView; // @synthesize quickControlIconView=_quickControlIconView;
 - (id)createViewProfile;
 - (id)createInteractionCoordinator;
 

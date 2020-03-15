@@ -16,9 +16,9 @@
     NSArray *_bundleIAPs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *bundleIAPs; // @synthesize bundleIAPs=_bundleIAPs;
 @property(readonly, nonatomic, getter=isBundleSubscriber) _Bool bundleSubscriber; // @synthesize bundleSubscriber=_bundleSubscriber;
-- (void).cxx_destruct;
 - (id)adContextValueForKeyPath:(id)arg1;
 - (id)initWithBundleSubscriber:(_Bool)arg1 bundleIAPs:(id)arg2;
 

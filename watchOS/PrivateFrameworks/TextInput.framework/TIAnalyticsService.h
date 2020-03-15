@@ -17,9 +17,9 @@
 
 + (void)setMockInstance:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <TIAnalyticsServiceProvider> provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) NSMutableDictionary *eventSpecs; // @synthesize eventSpecs=_eventSpecs;
-- (void).cxx_destruct;
 - (void)sendCoreAnalyticsEventWithName:(id)arg1 payload:(id)arg2;
 - (void)logDispatchErrorsForEventWithName:(id)arg1 errors:(id)arg2;
 - (void)appendToErrors:(id)arg1 code:(int)arg2 message:(id)arg3;

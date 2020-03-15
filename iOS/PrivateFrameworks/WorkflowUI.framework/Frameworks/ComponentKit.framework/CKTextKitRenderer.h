@@ -21,14 +21,14 @@
     struct CKTextKitAttributes _attributes;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) struct CGSize constrainedSize; // @synthesize constrainedSize=_constrainedSize;
 @property(readonly, nonatomic) struct CKTextKitAttributes attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) CKTextKitShadower *shadower; // @synthesize shadower=_shadower;
 @property(readonly, nonatomic) id <CKTextKitTruncating> truncater; // @synthesize truncater=_truncater;
 @property(readonly, nonatomic) CKTextKitContext *context; // @synthesize context=_context;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (vector_b5e32e34)visibleRanges;
 - (unsigned long long)lineCount;
 - (void)drawInContext:(struct CGContext *)arg1 bounds:(struct CGRect)arg2;

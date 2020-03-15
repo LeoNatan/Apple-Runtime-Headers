@@ -21,6 +21,7 @@
     NSError *_firstError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *firstError; // @synthesize firstError=_firstError;
 @property(nonatomic) _Bool succeeded; // @synthesize succeeded=_succeeded;
 @property(copy, nonatomic) CDUnknownBlockType processResultsBlock; // @synthesize processResultsBlock=_processResultsBlock;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSManagedObjectContext *originalContext; // @synthesize originalContext=_originalContext;
 @property(retain, nonatomic) PLModelMigrator *migrator; // @synthesize migrator=_migrator;
 @property(retain, nonatomic) NSString *operationName; // @synthesize operationName=_operationName;
-- (void).cxx_destruct;
 - (_Bool)processObjectsWithError:(id *)arg1;
 - (void)_runOperationWithObjectIDs:(id)arg1;
 - (id)initWithName:(id)arg1 fetchRequest:(id)arg2 context:(id)arg3 modelMigrator:(id)arg4 concurrent:(_Bool)arg5 processResultBlock:(CDUnknownBlockType)arg6;

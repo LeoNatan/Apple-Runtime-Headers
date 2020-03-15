@@ -19,9 +19,9 @@
 }
 
 + (id)daemonProxy;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSURL *broadcastURL; // @synthesize broadcastURL=_broadcastURL;
-- (void).cxx_destruct;
 - (void)appAudioCaptureStopWithHandler:(CDUnknownBlockType)arg1;
 - (void)appAudioCaptureResumeWithHandler:(CDUnknownBlockType)arg1;
 - (void)appAudioCaptureStartWithAudioStreamDescription:(struct AudioStreamBasicDescription)arg1 didStartHandler:(CDUnknownBlockType)arg2;

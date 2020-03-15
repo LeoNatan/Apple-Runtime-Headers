@@ -15,8 +15,8 @@
     NSString *_inputModeLevel;
 }
 
-@property(readonly, nonatomic) NSString *inputModeLevel; // @synthesize inputModeLevel=_inputModeLevel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *inputModeLevel; // @synthesize inputModeLevel=_inputModeLevel;
 - (_Bool)isEmpty;
 - (void)removeEmptyAssets;
 - (_Bool)purgeAsset:(id)arg1;

@@ -18,10 +18,10 @@
 }
 
 + (Class)appLocationType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSMutableArray *appLocations; // @synthesize appLocations=_appLocations;
 @property(retain, nonatomic) CLPMeta *meta; // @synthesize meta=_meta;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

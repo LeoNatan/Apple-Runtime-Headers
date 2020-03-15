@@ -17,9 +17,9 @@
     id <CSLSBackgroundServiceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSLSBackgroundServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id synchronousRemoteObjectProxy;
 @property(readonly, nonatomic) id asynchronousRemoteObjectProxy;
 - (void)_attemptReconnect;

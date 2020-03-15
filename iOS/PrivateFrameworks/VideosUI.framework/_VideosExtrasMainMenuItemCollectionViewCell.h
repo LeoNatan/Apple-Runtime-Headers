@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_createLabelInCell:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) NSLayoutConstraint *textLabelConstraint; // @synthesize textLabelConstraint=_textLabelConstraint;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1;
 - (void)_dynamicTypeChanged;
 - (void)safeAreaInsetsDidChange;

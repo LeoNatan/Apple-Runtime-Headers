@@ -29,6 +29,7 @@
     FCThreadSafeMutableSet *_readingListAvailableForOfflineReading;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCThreadSafeMutableSet *readingListAvailableForOfflineReading; // @synthesize readingListAvailableForOfflineReading=_readingListAvailableForOfflineReading;
 @property(nonatomic) BOOL hasBeenEnabled; // @synthesize hasBeenEnabled=_hasBeenEnabled;
 @property(retain, nonatomic) NSMutableSet *fetchResults; // @synthesize fetchResults=_fetchResults;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSArray *articleIDsOfInterest; // @synthesize articleIDsOfInterest=_articleIDsOfInterest;
 @property(copy, nonatomic) NSArray *articleIDsAvailableForOfflineReading; // @synthesize articleIDsAvailableForOfflineReading=_articleIDsAvailableForOfflineReading;
 @property(nonatomic) __weak id <FCReadingListContentControllerObserving> observer; // @synthesize observer;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *readingListForOfflineReading;
 - (void)_fetchHoldInterestTokensForArticleIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateInterestsIfNeeded;

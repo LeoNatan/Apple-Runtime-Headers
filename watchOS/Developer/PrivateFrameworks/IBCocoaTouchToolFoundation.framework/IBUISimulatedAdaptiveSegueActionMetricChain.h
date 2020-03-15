@@ -15,10 +15,10 @@
     long long _presentationStyleWhenModal;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long presentationStyleWhenModal; // @synthesize presentationStyleWhenModal=_presentationStyleWhenModal;
 @property(readonly, nonatomic) long long actionType; // @synthesize actionType=_actionType;
 @property(readonly, nonatomic) IBUISimulatedNavigationItemMetrics *navigationItemMetrics; // @synthesize navigationItemMetrics=_navigationItemMetrics;
-- (void).cxx_destruct;
 - (id)singleLinkPrettyDescription;
 - (id)copyWithPrecedingMetric:(id)arg1;
 - (_Bool)isEqualToMetricChain:(id)arg1;

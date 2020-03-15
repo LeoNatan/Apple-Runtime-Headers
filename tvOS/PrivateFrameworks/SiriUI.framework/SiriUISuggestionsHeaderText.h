@@ -17,10 +17,10 @@
     long long _textAlignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(copy, nonatomic) NSString *compactString; // @synthesize compactString=_compactString;
 @property(copy, nonatomic) NSString *regularString; // @synthesize regularString=_regularString;
-- (void).cxx_destruct;
 - (id)_attributedStringWithString:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSAttributedString *attributedStringForMainScreenTraitCollection;

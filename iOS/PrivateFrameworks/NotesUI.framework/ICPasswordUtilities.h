@@ -38,14 +38,14 @@
 + (_Bool)biometricIDIsEnrolled;
 + (_Bool)deviceHasPasscode;
 + (_Bool)biometricIDHardwareIsAvailable;
-+ (struct UIImage *)imageForCurrentDecryptedStatusForNote:(id)arg1;
++ (id)imageForCurrentDecryptedStatusForNote:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *divergedAccountPassword; // @synthesize divergedAccountPassword=_divergedAccountPassword;
 @property(nonatomic) __weak UIAlertController *displayedAlertController; // @synthesize displayedAlertController=_displayedAlertController;
 @property(nonatomic) _Bool authenticationInProgress; // @synthesize authenticationInProgress=_authenticationInProgress;
-- (void).cxx_destruct;
 - (void)accessibilityAnnounceAuthSuccessForIntent:(unsigned long long)arg1 withNote:(id)arg2;
-- (void)authenticateUsingAlternateMethodForDeletingNotes:(id)arg1 displayWindow:(struct UIWindow *)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)authenticateUsingAlternateMethodForDeletingNotes:(id)arg1 displayWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_authenticatePasswordForDeletingNotes:(id)arg1 incorrectAttempts:(long long)arg2 displayWindow:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)authenticatePasswordForDeletingNotes:(id)arg1 displayWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)authenticateForDeletingNotes:(id)arg1 displayWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

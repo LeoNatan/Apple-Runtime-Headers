@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _geodesicDistance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double geodesicDistance; // @synthesize geodesicDistance=_geodesicDistance;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDate:(id)arg1 geodesicDistance:(double)arg2;
 @property(readonly) double timeIntervalSinceReferenceDate;

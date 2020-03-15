@@ -13,8 +13,8 @@
     PXCMMContext *_sendBackContext;
 }
 
-@property(retain, nonatomic) PXCMMContext *sendBackContext; // @synthesize sendBackContext=_sendBackContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PXCMMContext *sendBackContext; // @synthesize sendBackContext=_sendBackContext;
 - (void)_completeSendBackActionWithSuccess:(_Bool)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)performSendBackActionWithSession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 

@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSNumber *numberOfUpdates; // @synthesize numberOfUpdates=_numberOfUpdates;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *numberOfUpdates; // @synthesize numberOfUpdates=_numberOfUpdates;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

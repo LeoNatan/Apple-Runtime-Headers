@@ -17,10 +17,10 @@
     long long _version;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) BOOL hasEndTimeRef; // @synthesize hasEndTimeRef=_hasEndTimeRef;
-- (void).cxx_destruct;
 - (BOOL)repairTimesyncDB:(id *)arg1;
 - (BOOL)checkTimesyncDB:(char *)arg1 error:(id *)arg2;
 - (BOOL)performDestructiveUpdates:(id *)arg1;

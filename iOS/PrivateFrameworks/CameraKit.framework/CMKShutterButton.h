@@ -25,6 +25,7 @@
 + (id)tinyShutterButton;
 + (id)smallShutterButton;
 + (id)shutterButton;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIActivityIndicatorView *_progressActivityIndicatorView; // @synthesize _progressActivityIndicatorView=__progressActivityIndicatorView;
 @property(readonly, nonatomic) UIView *_innerView; // @synthesize _innerView=__innerView;
 @property(readonly, nonatomic) UIImageView *_outerImageView; // @synthesize _outerImageView=__outerImageView;
@@ -34,7 +35,6 @@
 @property(nonatomic, getter=isPulsing) _Bool pulsing; // @synthesize pulsing=_pulsing;
 @property(nonatomic, setter=_setSpec:) struct CMKShutterButtonSpec spec; // @synthesize spec=_spec;
 @property(nonatomic) long long buttonMode; // @synthesize buttonMode=_buttonMode;
-- (void).cxx_destruct;
 - (void)_updateSpinningAnimations;
 - (void)_performModeSwitchAnimationFromMode:(long long)arg1 toMode:(long long)arg2 animated:(_Bool)arg3;
 - (void)_performHighlightAnimation;

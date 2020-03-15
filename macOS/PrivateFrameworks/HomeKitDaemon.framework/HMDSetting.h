@@ -26,6 +26,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)logCategory;
 + (id)settingValueWithModel:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) HMSettingValue *internalValue; // @synthesize internalValue=_internalValue;
 @property(copy) NSNumber *properties; // @synthesize properties=_properties;
 @property(copy) NSNumber *type; // @synthesize type=_type;
@@ -36,7 +37,6 @@
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSUUID *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)wouldValueUpdate:(id)arg1;

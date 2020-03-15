@@ -17,8 +17,8 @@
     id <XPCNSClientConnectionDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) id <XPCNSClientConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <XPCNSClientConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)XPCClientConnection:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)shutDownCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)sendMessageReliably:(id)arg1 data:(id)arg2 maxRetryCount:(int)arg3 withHandler:(CDUnknownBlockType)arg4;

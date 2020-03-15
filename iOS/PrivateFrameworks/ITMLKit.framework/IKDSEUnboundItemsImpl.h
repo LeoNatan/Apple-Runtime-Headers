@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     IKChangeSet *_itemsChangeSet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKChangeSet *itemsChangeSet; // @synthesize itemsChangeSet=_itemsChangeSet;
 @property(copy, nonatomic) NSArray *itemElements; // @synthesize itemElements=_itemElements;
 @property(readonly, nonatomic) __weak IKDataSourceElement *dataSourceElement; // @synthesize dataSourceElement=_dataSourceElement;
-- (void).cxx_destruct;
 - (void)resetUpdates;
 - (void)updateStylesUsingUpdater:(CDUnknownBlockType)arg1;
 - (void)applyUpdatesWithImplementation:(id)arg1 usingUpdater:(CDUnknownBlockType)arg2;

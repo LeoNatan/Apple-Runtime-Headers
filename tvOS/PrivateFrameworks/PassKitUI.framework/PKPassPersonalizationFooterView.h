@@ -17,8 +17,8 @@
     id <PKPassPersonalizationFooterViewDelegate> _delegate;
 }
 
-@property(nonatomic) id <PKPassPersonalizationFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <PKPassPersonalizationFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

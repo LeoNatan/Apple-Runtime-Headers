@@ -14,9 +14,9 @@
     VUICollectionChangeSet *_groupingChangeSet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUICollectionChangeSet *groupingChangeSet; // @synthesize groupingChangeSet=_groupingChangeSet;
 @property(retain, nonatomic) VUICollectionChangeSet *mediaEntitiesChangeSet; // @synthesize mediaEntitiesChangeSet=_mediaEntitiesChangeSet;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMediaEntitiesChangeSet:(id)arg1;
 - (id)init;

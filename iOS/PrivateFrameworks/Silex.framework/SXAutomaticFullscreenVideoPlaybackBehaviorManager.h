@@ -18,10 +18,10 @@
     struct CGRect _videoBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SXAutomaticFullscreenVideoPlaybackBehaviorManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long behavior; // @synthesize behavior=_behavior;
 @property(nonatomic) struct CGRect videoBounds; // @synthesize videoBounds=_videoBounds;
-- (void).cxx_destruct;
 - (void)conditionsChanged;
 - (_Bool)fullscreenPlaybackRequiredForCurrentConditions;
 - (void)playbackCoordinatorResumedPlayback:(id)arg1;

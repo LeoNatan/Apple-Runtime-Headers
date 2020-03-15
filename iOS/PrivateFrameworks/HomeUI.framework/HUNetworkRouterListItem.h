@@ -13,8 +13,8 @@
     HMHome *_home;
 }
 
-@property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithHome:(id)arg1;
 - (id)init;

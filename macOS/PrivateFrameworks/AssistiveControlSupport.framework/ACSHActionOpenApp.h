@@ -17,9 +17,9 @@
 }
 
 + (id)actionBundleID:(id)arg1 absolutePath:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *absolutePath; // @synthesize absolutePath=_absolutePath;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)_resetDisplayValues;
 - (id)resolvedPath;
 - (id)name;

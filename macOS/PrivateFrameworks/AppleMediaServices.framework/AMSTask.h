@@ -20,12 +20,12 @@
 
 + (id)taskCacheAccessQueue;
 + (id)taskCache;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *promiseAccessQueue; // @synthesize promiseAccessQueue=_promiseAccessQueue;
 @property(retain) AMSPromise *promise; // @synthesize promise=_promise;
 @property(readonly) NSObject<OS_dispatch_queue> *performTaskQueue; // @synthesize performTaskQueue=_performTaskQueue;
 @property long long runMode; // @synthesize runMode=_runMode;
 @property(readonly, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
-- (void).cxx_destruct;
 - (id)performTaskWithBlock:(CDUnknownBlockType)arg1;
 - (id)performBinaryTaskWithBlock:(CDUnknownBlockType)arg1;
 - (BOOL)cancel;

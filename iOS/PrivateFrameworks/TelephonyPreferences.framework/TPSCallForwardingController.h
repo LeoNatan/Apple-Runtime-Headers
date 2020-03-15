@@ -30,6 +30,7 @@
     CTCallForwardingValue *_unconditionalServiceValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CTCallForwardingValue *unconditionalServiceValue; // @synthesize unconditionalServiceValue=_unconditionalServiceValue;
 @property(retain, nonatomic) CTCallForwardingValue *conditionalServiceUnreachableValue; // @synthesize conditionalServiceUnreachableValue=_conditionalServiceUnreachableValue;
 @property(retain, nonatomic) CTCallForwardingValue *conditionalServiceUnansweredValue; // @synthesize conditionalServiceUnansweredValue=_conditionalServiceUnansweredValue;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) TPSCarrierBundleController *carrierBundleController; // @synthesize carrierBundleController=_carrierBundleController;
 @property(nonatomic) __weak id <TPSCallForwardingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isUnloading) _Bool unloading; // @synthesize unloading=_unloading;
-- (void).cxx_destruct;
 - (void)requestController:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)sendEnableSetRequestForValue:(id)arg1;
 - (void)sendSetRequestForValue:(id)arg1;

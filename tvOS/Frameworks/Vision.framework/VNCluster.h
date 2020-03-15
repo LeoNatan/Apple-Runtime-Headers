@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *representativenessById; // @synthesize representativenessById=_representativenessById;
 @property(retain, nonatomic) NSArray *suggestedIdsForRepresentative; // @synthesize suggestedIdsForRepresentative=_suggestedIdsForRepresentative;
 @property(nonatomic) _Bool shouldUpdateRepresentative; // @synthesize shouldUpdateRepresentative=_shouldUpdateRepresentative;
 @property(nonatomic) unsigned long long totalObjectCount; // @synthesize totalObjectCount=_totalObjectCount;
 @property(nonatomic) unsigned long long clusterId; // @synthesize clusterId=_clusterId;
 @property(retain, nonatomic) NSArray *objects; // @synthesize objects=_objects;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

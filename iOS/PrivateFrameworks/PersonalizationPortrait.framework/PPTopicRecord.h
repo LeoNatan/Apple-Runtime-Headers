@@ -29,6 +29,7 @@
 
 + (id)describeAlgorithm:(unsigned long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PPTopicMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) unsigned long long extractionAssetVersion; // @synthesize extractionAssetVersion=_extractionAssetVersion;
 @property(readonly, nonatomic) NSString *extractionOsBuild; // @synthesize extractionOsBuild=_extractionOsBuild;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) unsigned long long algorithm; // @synthesize algorithm=_algorithm;
 @property(readonly, nonatomic) PPSource *source; // @synthesize source=_source;
 @property(readonly, nonatomic) PPTopic *topic; // @synthesize topic=_topic;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double sentimentScore; // @dynamic sentimentScore;
 - (_Bool)isEqualToTopicRecord:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

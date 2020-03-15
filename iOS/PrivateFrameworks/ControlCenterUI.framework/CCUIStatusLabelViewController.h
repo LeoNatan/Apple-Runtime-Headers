@@ -19,8 +19,8 @@
     id <CCUIStatusLabelViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CCUIStatusLabelViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CCUIStatusLabelViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_notifyDelegateDidFinishStatusUpdates;
 - (void)_notifyDelegateWillBeginStatusUpdates;
 - (void)_fadeOutStatusLabel:(id)arg1;

@@ -42,6 +42,7 @@
 + (void)test_setUseMaxSpeechRate:(_Bool)arg1;
 + (id)actionWithAttributedString:(id)arg1 shouldQueue:(_Bool)arg2;
 + (id)actionWithString:(id)arg1 shouldQueue:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *emojiRangeReplacements; // @synthesize emojiRangeReplacements=_emojiRangeReplacements;
 @property(retain, nonatomic) NSString *processedString; // @synthesize processedString=_processedString;
 @property(retain, nonatomic) NSString *finalSpokenString; // @synthesize finalSpokenString=_finalSpokenString;
@@ -69,7 +70,6 @@
 @property(nonatomic) _Bool shouldDetectLanguage; // @synthesize shouldDetectLanguage=_shouldDetectLanguage;
 @property(nonatomic) _Bool cannotInterrupt; // @synthesize cannotInterrupt=_cannotInterrupt;
 @property(nonatomic) _Bool shouldQueue; // @synthesize shouldQueue=_shouldQueue;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_detectLanguageFromContent;
 - (void)preprocessAction;

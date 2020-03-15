@@ -18,7 +18,7 @@
 - (id)stateByReplacingValueAtIndex:(unsigned long long)arg1 withValue:(id)arg2;
 - (id)stateByTogglingValue:(id)arg1;
 - (void)finishProcessingWithContent:(id)arg1 error:(id)arg2 forParameterStateClass:(Class)arg3 valueHandler:(CDUnknownBlockType)arg4;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
 - (id)containedVariables;
 
 @end

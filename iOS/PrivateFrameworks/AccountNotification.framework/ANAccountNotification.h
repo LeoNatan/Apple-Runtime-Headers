@@ -29,6 +29,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *callbackMachService; // @synthesize callbackMachService=_callbackMachService;
 @property(nonatomic) long long sectionSubtype; // @synthesize sectionSubtype=_sectionSubtype;
 @property(nonatomic) long long destinations; // @synthesize destinations=_destinations;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *accountTypeID; // @synthesize accountTypeID=_accountTypeID;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

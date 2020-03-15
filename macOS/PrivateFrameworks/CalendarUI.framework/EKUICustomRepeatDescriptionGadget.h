@@ -13,8 +13,8 @@
     EKUICustomRepeatDescriptionField *_repeatDescriptionField;
 }
 
-@property(retain) EKUICustomRepeatDescriptionField *repeatDescriptionField; // @synthesize repeatDescriptionField=_repeatDescriptionField;
 - (void).cxx_destruct;
+@property(retain) EKUICustomRepeatDescriptionField *repeatDescriptionField; // @synthesize repeatDescriptionField=_repeatDescriptionField;
 - (double)pixelsBetweenLabelAndControl;
 - (void)updateWithChanges:(id)arg1;
 - (BOOL)shouldDisplay;

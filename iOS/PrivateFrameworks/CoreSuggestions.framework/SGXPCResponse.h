@@ -18,8 +18,8 @@
 + (id)responseWithError:(id)arg1;
 + (id)response;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithError:(id)arg1;

@@ -16,11 +16,11 @@
     unsigned long long _height;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long height; // @synthesize height=_height;
 @property(readonly) unsigned long long width; // @synthesize width=_width;
 @property(readonly) double offset; // @synthesize offset=_offset;
 @property(readonly, copy) NSString *resourcePath; // @synthesize resourcePath=_resourcePath;
-- (void).cxx_destruct;
 - (id)initWithPosterFrameMetadata:(id)arg1;
 
 @end

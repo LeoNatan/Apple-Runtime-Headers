@@ -15,8 +15,8 @@
 }
 
 + (id)createWithAssertion:(id)arg1;
-@property(nonatomic) __weak CSLSBacklightAssertionBase *assertion; // @synthesize assertion=_assertion;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CSLSBacklightAssertionBase *assertion; // @synthesize assertion=_assertion;
 - (id)debugDescription;
 - (id)description;
 - (id)initWithAssertion:(id)arg1;

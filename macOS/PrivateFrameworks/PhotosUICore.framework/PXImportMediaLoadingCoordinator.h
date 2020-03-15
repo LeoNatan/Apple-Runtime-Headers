@@ -24,13 +24,13 @@
     unsigned long long _completedDataSourceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long completedDataSourceIdentifier; // @synthesize completedDataSourceIdentifier=_completedDataSourceIdentifier;
 @property(retain, nonatomic) PXImportAssetsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSMutableArray *thumbnailWorkItemUuids; // @synthesize thumbnailWorkItemUuids=_thumbnailWorkItemUuids;
 @property(readonly, nonatomic) PXImportAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(readonly, nonatomic) __weak PXImportController *importController; // @synthesize importController=_importController;
 @property(nonatomic, setter=setPaused:) BOOL paused; // @synthesize paused=_paused;
-- (void).cxx_destruct;
 - (void)mediaProviderThumbnailingBecameIdle;
 - (void)_processItemIfPossible;
 - (id)dequeueNextThumbnailWorkItem;

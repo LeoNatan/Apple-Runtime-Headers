@@ -9,7 +9,7 @@
 #import <TVPlayback/UIGestureRecognizerDelegate-Protocol.h>
 
 @class MPAVRoute, MPRouteLabel, NSArray, NSIndexPath, NSString, TVPCollectionView, TVPFloatingButton, TVPMusicNowPlayingBackgroundContainerView, TVPMusicNowPlayingCollectionViewFlowLayout, TVPRoundButton, UIFocusGuide, UILabel, UILayoutGuide, UIStackView, UITapGestureRecognizer, _TVPMusicArtworkImageView;
-@protocol TVPMusicNowPlayingImage, TVPMusicNowPlayingSnapshotBackgroundViewDelegate, TVPMusicNowPlayingViewDelegate;
+@protocol TVPMusicNowPlayingBackgroundProvider, TVPMusicNowPlayingImage, TVPMusicNowPlayingViewDelegate;
 
 @interface TVPMusicNowPlayingView : UIView <UIGestureRecognizerDelegate>
 {
@@ -41,22 +41,21 @@
     TVPFloatingButton *_routePickerControl;
     MPAVRoute *_audioRoute;
     long long _repeatMode;
-    id <TVPMusicNowPlayingSnapshotBackgroundViewDelegate> _snapshotBackgroundViewDelegate;
-    TVPMusicNowPlayingBackgroundContainerView *_backgroundView;
     id <TVPMusicNowPlayingImage> _backgroundImage;
+    TVPMusicNowPlayingBackgroundContainerView *_backgroundView;
     TVPRoundButton *_contextMenuButton;
     NSArray *_controls;
     UIView *_coverArtPlaceholder;
     UITapGestureRecognizer *_playPauseGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITapGestureRecognizer *playPauseGestureRecognizer; // @synthesize playPauseGestureRecognizer=_playPauseGestureRecognizer;
 @property(retain, nonatomic) UIView *coverArtPlaceholder; // @synthesize coverArtPlaceholder=_coverArtPlaceholder;
 @property(retain, nonatomic) NSArray *controls; // @synthesize controls=_controls;
 @property(readonly, nonatomic) TVPRoundButton *contextMenuButton; // @synthesize contextMenuButton=_contextMenuButton;
-@property(retain, nonatomic) id <TVPMusicNowPlayingImage> backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain, nonatomic) TVPMusicNowPlayingBackgroundContainerView *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(nonatomic) __weak id <TVPMusicNowPlayingSnapshotBackgroundViewDelegate> snapshotBackgroundViewDelegate; // @synthesize snapshotBackgroundViewDelegate=_snapshotBackgroundViewDelegate;
+@property(retain, nonatomic) id <TVPMusicNowPlayingImage> backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(nonatomic, getter=isShuffleEnabled) _Bool shuffleEnabled; // @synthesize shuffleEnabled=_shuffleEnabled;
 @property(nonatomic) _Bool shuffleVisible; // @synthesize shuffleVisible=_shuffleVisible;
 @property(nonatomic) long long repeatMode; // @synthesize repeatMode=_repeatMode;
@@ -72,7 +71,6 @@
 @property(readonly, nonatomic) UILayoutGuide *artworkLayoutGuide; // @synthesize artworkLayoutGuide=_artworkLayoutGuide;
 @property(readonly, nonatomic) UIView *idleContentView; // @synthesize idleContentView=_idleContentView;
 @property(nonatomic) __weak id <TVPMusicNowPlayingViewDelegate> nowPlayingDelegate; // @synthesize nowPlayingDelegate=_nowPlayingDelegate;
-- (void).cxx_destruct;
 - (void)_updateControlsVisibility;
 - (_Bool)_shouldShowRoutePickerControl;
 - (id)_addLabel;
@@ -80,9 +78,7 @@
 - (void)_selectedContextMenu;
 - (_Bool)_isNothingPlaying;
 - (void)_playPausePressedGestureRecognized:(id)arg1;
-- (void)_reloadBackgroundImageWithImage:(id)arg1;
-- (void)setBackgroundSnapshotView:(id)arg1;
-- (void)setAnimatedBackgroundImage:(id)arg1;
+@property(retain, nonatomic) id <TVPMusicNowPlayingBackgroundProvider> backgroundProvider;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)shuffleButtonAction;
@@ -113,6 +109,7 @@
 - (void)_updateRoutePickerTextColorForCurrentFocusState;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateRoutePickerLabel;
+- (void)_updateForNothingPlayingState:(_Bool)arg1;
 - (void)willMoveToWindow:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 layout:(long long)arg2;

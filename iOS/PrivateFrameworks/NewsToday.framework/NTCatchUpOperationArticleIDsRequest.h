@@ -18,10 +18,10 @@
     NSDictionary *_overrideHeadlineMetadataByArticleID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *overrideHeadlineMetadataByArticleID; // @synthesize overrideHeadlineMetadataByArticleID=_overrideHeadlineMetadataByArticleID;
 @property(copy, nonatomic) NSOrderedSet *articleIDs; // @synthesize articleIDs=_articleIDs;
 @property(copy, nonatomic) NSObject<NSCopying><NSSecureCoding> *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithArticleIDs:(id)arg1 overrideHeadlineMetadataByArticleID:(id)arg2;
 - (id)init;

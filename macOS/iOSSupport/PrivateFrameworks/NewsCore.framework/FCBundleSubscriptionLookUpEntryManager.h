@@ -14,9 +14,9 @@
     FCKeyValueStore *_localStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCKeyValueStore *localStore; // @synthesize localStore=_localStore;
 @property(retain, nonatomic) FCBundleSubscriptionLookUpEntry *bundleSubscriptionLookUpEntry; // @synthesize bundleSubscriptionLookUpEntry=_bundleSubscriptionLookUpEntry;
-- (void).cxx_destruct;
 - (void)cleanupStaleExpiredEntry;
 - (void)updateEntry:(id)arg1;
 - (void)addBundleChannelIDs:(id)arg1 purchaseID:(id)arg2 inTrialPeriod:(BOOL)arg3 isPurchaser:(BOOL)arg4 isAmplifyUser:(BOOL)arg5;

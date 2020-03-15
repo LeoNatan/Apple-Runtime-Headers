@@ -16,9 +16,9 @@
 
 + (id)counter;
 + (id)masterCounts;
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *signatures; // @synthesize signatures=_signatures;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

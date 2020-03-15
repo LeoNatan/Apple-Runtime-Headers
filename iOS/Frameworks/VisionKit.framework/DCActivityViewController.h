@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     ICDocCamImageCache *_imageCache;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreAttachmentsForCopyToPasteboard; // @synthesize ignoreAttachmentsForCopyToPasteboard=_ignoreAttachmentsForCopyToPasteboard;
 @property(retain, nonatomic) ICDocCamImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain, nonatomic) ICDocCamDocumentInfoCollection *documentInfoCollection; // @synthesize documentInfoCollection=_documentInfoCollection;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (id)activityTypesThatInhibitPDFGeneration;
 - (_Bool)writeGalleryPDFDataToPasteboardIfNecessaryForActivity:(id)arg1 documentInfoCollection:(id)arg2;

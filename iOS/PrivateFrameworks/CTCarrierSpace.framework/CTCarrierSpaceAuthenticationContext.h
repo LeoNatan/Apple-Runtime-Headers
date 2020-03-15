@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceApplicationAccountIdentifier; // @synthesize sourceApplicationAccountIdentifier=_sourceApplicationAccountIdentifier;
 @property(nonatomic) _Bool supportsState; // @synthesize supportsState=_supportsState;
 @property(retain, nonatomic) NSString *scope; // @synthesize scope=_scope;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *tokenURL; // @synthesize tokenURL=_tokenURL;
 @property(retain, nonatomic) NSString *authURL; // @synthesize authURL=_authURL;
 @property(retain, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

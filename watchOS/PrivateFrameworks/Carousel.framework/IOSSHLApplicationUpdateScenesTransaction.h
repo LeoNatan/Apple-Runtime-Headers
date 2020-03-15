@@ -18,11 +18,11 @@
     NSString *_sceneIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(retain, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 @property(nonatomic) _Bool activateSuspended; // @synthesize activateSuspended=_activateSuspended;
 @property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (void)transactionWatchdogImminent;
 - (id)_customizedDescriptionProperties;
 - (void)addSynchronizedTransaction:(id)arg1;

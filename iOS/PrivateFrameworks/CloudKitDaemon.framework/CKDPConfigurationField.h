@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CKDPConfigurationFieldValue *_value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPConfigurationFieldValue *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -15,21 +15,21 @@
     int _scrollLength;
     float _startOffset;
     NSString *_currentTest;
-    int _axis;
+    unsigned long long _axis;
     CADisplayLink *_displayLink;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) NSString *currentTest; // @synthesize currentTest=_currentTest;
-@property(nonatomic) int axis; // @synthesize axis=_axis;
+@property(nonatomic) unsigned long long axis; // @synthesize axis=_axis;
 @property(nonatomic) float startOffset; // @synthesize startOffset=_startOffset;
 @property(nonatomic) int scrollLength; // @synthesize scrollLength=_scrollLength;
 @property(nonatomic) int delta; // @synthesize delta=_delta;
 @property(nonatomic) int iterations; // @synthesize iterations=_iterations;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float endOffset;
 - (void)dealloc;
-- (id)initWithName:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 startOffset:(float)arg5 scrollAxis:(int)arg6;
+- (id)initWithName:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 startOffset:(float)arg5 scrollAxis:(unsigned long long)arg6;
 
 @end
 

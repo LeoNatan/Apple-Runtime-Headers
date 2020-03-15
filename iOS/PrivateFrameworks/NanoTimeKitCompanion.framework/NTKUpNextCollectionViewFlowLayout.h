@@ -41,6 +41,7 @@
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *dwellIndexPathes; // @synthesize dwellIndexPathes=_dwellIndexPathes;
 @property(nonatomic) double snappingOffset; // @synthesize snappingOffset=_snappingOffset;
 @property(retain, nonatomic) NSIndexPath *indexPathToSnapTo; // @synthesize indexPathToSnapTo=_indexPathToSnapTo;
@@ -61,7 +62,6 @@
 @property(nonatomic) double topItemsShift; // @synthesize topItemsShift=_topItemsShift;
 @property(nonatomic) double headerAlpha; // @synthesize headerAlpha=_headerAlpha;
 @property(nonatomic) double topItemsAlpha; // @synthesize topItemsAlpha=_topItemsAlpha;
-- (void).cxx_destruct;
 - (_Bool)_hasHeaderForSection:(long long)arg1;
 - (void)_updateContentInsetsIfNeeded;
 - (void)_updateSectionHeaderListIfNeeded;

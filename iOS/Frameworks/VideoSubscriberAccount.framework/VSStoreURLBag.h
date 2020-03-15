@@ -13,8 +13,8 @@
     SSURLBag *_bag;
 }
 
-@property(retain, nonatomic) SSURLBag *bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SSURLBag *bag; // @synthesize bag=_bag;
 - (void)invalidateCache;
 - (void)loadValueForKey:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)init;

@@ -19,12 +19,12 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool userIsThreadInitiator; // @synthesize userIsThreadInitiator=_userIsThreadInitiator;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSArray *peopleIdentifiers; // @synthesize peopleIdentifiers=_peopleIdentifiers;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) _Bool userIsSender; // @synthesize userIsSender=_userIsSender;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

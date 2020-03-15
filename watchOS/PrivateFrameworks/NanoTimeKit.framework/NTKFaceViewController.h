@@ -6,20 +6,20 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <NanoTimeKit/CLKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/NTKClockHardwareInput-Protocol.h>
 #import <NanoTimeKit/NTKClockIconZoomAnimator-Protocol.h>
 #import <NanoTimeKit/NTKComplicationPickerViewDataSource-Protocol.h>
 #import <NanoTimeKit/NTKFaceEditViewDelegate-Protocol.h>
 #import <NanoTimeKit/NTKFaceObserver-Protocol.h>
 #import <NanoTimeKit/NTKFaceViewDelegate-Protocol.h>
-#import <NanoTimeKit/NTKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/NTKTritiumAnimationControllerViewProvider-Protocol.h>
 #import <NanoTimeKit/NTKTritiumFaceAnimatorDelegate-Protocol.h>
 
 @class CADisplayLink, NSCache, NSDate, NSMutableDictionary, NSObject, NSString, NTKColorCodeTimeView, NTKComplicationController, NTKComplicationDisplayWrapperView, NTKDelayedBlock, NTKFace, NTKFaceEditView, NTKFaceView, PUICClientSideAnimation, UIView;
 @protocol NTKClockStatusBarViewController, NTKFaceViewControllerDelegate, OS_dispatch_source;
 
-@interface NTKFaceViewController : UIViewController <NTKFaceEditViewDelegate, NTKComplicationPickerViewDataSource, NTKSensitiveUIStateObserver, NTKTritiumFaceAnimatorDelegate, NTKClockIconZoomAnimator, NTKClockHardwareInput, NTKFaceViewDelegate, NTKFaceObserver, NTKTritiumAnimationControllerViewProvider>
+@interface NTKFaceViewController : UIViewController <NTKFaceEditViewDelegate, NTKComplicationPickerViewDataSource, CLKSensitiveUIStateObserver, NTKTritiumFaceAnimatorDelegate, NTKClockIconZoomAnimator, NTKClockHardwareInput, NTKFaceViewDelegate, NTKFaceObserver, NTKTritiumAnimationControllerViewProvider>
 {
     NTKFaceView *_faceView;
     struct os_unfair_lock_s _normalComplicationControllersLock;
@@ -73,6 +73,7 @@
 + (float)_complicationPickerAlphaForTransitionFraction:(float)arg1;
 + (id)_createNormalDisplayForComplicationController:(id)arg1 slot:(id)arg2 face:(id)arg3 faceView:(id)arg4;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NTKFaceView *faceView; // @synthesize faceView=_faceView;
 @property(readonly, nonatomic) NTKFace *face; // @synthesize face=_face;
 @property(retain, nonatomic) UIViewController<NTKClockStatusBarViewController> *statusBarViewController; // @synthesize statusBarViewController=_statusBarViewController;
@@ -85,7 +86,6 @@
 @property(nonatomic) _Bool supressesNonSnapshotUI; // @synthesize supressesNonSnapshotUI=_supressesNonSnapshotUI;
 @property(nonatomic) _Bool shouldShowSnapshot; // @synthesize shouldShowSnapshot=_shouldShowSnapshot;
 @property(nonatomic) __weak id <NTKFaceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_unadornedSnapshot;
 - (id)_dailySnapshot;
 - (_Bool)shouldLoadLiveFaceAtNextScreenOff;

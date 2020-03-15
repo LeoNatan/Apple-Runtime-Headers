@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)pairType;
-@property(retain, nonatomic) NSMutableArray *pairs; // @synthesize pairs=_pairs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *pairs; // @synthesize pairs=_pairs;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -13,8 +13,8 @@
     NPKPaymentReadyDotsView *_dotsView;
 }
 
-@property(retain, nonatomic) NPKPaymentReadyDotsView *dotsView; // @synthesize dotsView=_dotsView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NPKPaymentReadyDotsView *dotsView; // @synthesize dotsView=_dotsView;
 - (void)layoutSubviews;
 - (id)initWithAnimationCoordinator:(id)arg1;
 

@@ -36,6 +36,7 @@
     struct UIEdgeInsets _margins;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setConstraints:) NSArray *_constraints; // @synthesize _constraints=__constraints;
 @property(nonatomic, getter=_isSubtitleVisible, setter=_setSubtitleVisible:) _Bool _subtitleVisible; // @synthesize _subtitleVisible=__subtitleVisible;
 @property(readonly, nonatomic) UILabel *_subtitleLabel; // @synthesize _subtitleLabel=__subtitleLabel;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long verticalSizeClass; // @synthesize verticalSizeClass=_verticalSizeClass;
-- (void).cxx_destruct;
 - (void)_updateSizeIfNeeded;
 - (void)_invalidateSize;
 - (void)_updateConstraintsIfNeeded;

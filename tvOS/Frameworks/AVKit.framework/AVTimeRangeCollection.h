@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _combinedDuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double combinedDuration; // @synthesize combinedDuration=_combinedDuration;
 @property(readonly) NSArray *timeRanges; // @synthesize timeRanges=_timeRanges;
-- (void).cxx_destruct;
 - (id)displayTimeRangeTrimmedToTimeRange:(id)arg1;
 - (double)timeFromDisplayTime:(double)arg1;
 - (double)displayTimeFromTime:(double)arg1;

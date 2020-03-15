@@ -14,9 +14,9 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) RMAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)initWithAsset:(id)arg1 error:(id)arg2;
 
 @end

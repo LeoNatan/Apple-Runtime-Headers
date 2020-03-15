@@ -9,6 +9,6 @@
 @class NSString;
 
 @protocol PLXPCPhotoLibraryStorePolicy <NSObject>
-- (_Bool)shouldUseXPCStoreForDatabasePath:(NSString *)arg1;
+- (_Bool)shouldUseXPCStoreForDatabasePath:(NSString *)arg1 auditToken:(CDStruct_4c969caf)arg2;
 @end
 

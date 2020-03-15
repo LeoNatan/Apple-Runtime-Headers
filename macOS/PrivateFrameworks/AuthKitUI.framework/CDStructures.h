@@ -25,17 +25,6 @@ struct CGSize {
     double height;
 };
 
-struct NSWindow {
-    Class _field1;
-    struct CGRect _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    int _field8;
-};
-
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;

@@ -16,10 +16,10 @@
     TVSUIBulletinView *_bulletinView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSUIBulletinView *bulletinView; // @synthesize bulletinView=_bulletinView;
 @property(retain, nonatomic) id <AXUIAlertStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) unsigned long long alertType; // @synthesize alertType=_alertType;
-- (void).cxx_destruct;
 - (void)addToContainerView:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithType:(unsigned long long)arg1 text:(id)arg2 subtitleText:(id)arg3 iconImage:(id)arg4 styleProvider:(id)arg5 userInfo:(id)arg6;

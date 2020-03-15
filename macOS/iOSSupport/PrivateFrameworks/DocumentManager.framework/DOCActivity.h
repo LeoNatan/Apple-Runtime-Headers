@@ -22,12 +22,12 @@
 + (id)_titleForActivityIdentifier:(id)arg1;
 + (id)_imageNameForActivityIdentifier:(id)arg1;
 + (id)activityWithIdentifier:(id)arg1 actionPerformerProxy:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly) id <DOCItemActivityPerformer> actionPerformerProxy; // @synthesize actionPerformerProxy=_actionPerformerProxy;
-- (void).cxx_destruct;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (BOOL)canPerformWithActivityItems:(id)arg1;

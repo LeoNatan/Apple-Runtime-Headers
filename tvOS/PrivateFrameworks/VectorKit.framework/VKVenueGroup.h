@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     int _layer;
 }
 
-@property(readonly, nonatomic) int layer; // @synthesize layer=_layer;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int layer; // @synthesize layer=_layer;
 - (void)updateTextures:(unsigned char)arg1 textureManager:(shared_ptr_f2399894 *)arg2;
 - (void)addStrokeForSection:(const struct PolygonSection *)arg1 paddedCount:(unsigned int)arg2 key:(pair_1503616b)arg3 attributes:(id)arg4 styles:(vector_0496561e *)arg5 cullingMask:(unsigned int)arg6 accessor:(struct ResourceAccessor *)arg7;
 - (void)addWallStrokesForSection:(const struct PolygonSection *)arg1 edges:(const vector_304c695f *)arg2 attributes:(id)arg3 styles:(vector_0496561e *)arg4 cullingMask:(unsigned int)arg5 accessor:(struct ResourceAccessor *)arg6;

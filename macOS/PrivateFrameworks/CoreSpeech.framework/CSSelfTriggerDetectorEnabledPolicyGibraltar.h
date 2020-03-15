@@ -11,8 +11,8 @@
     CSPolicy *_voiceTriggerEnabledPolicy;
 }
 
-@property(retain, nonatomic) CSPolicy *voiceTriggerEnabledPolicy; // @synthesize voiceTriggerEnabledPolicy=_voiceTriggerEnabledPolicy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSPolicy *voiceTriggerEnabledPolicy; // @synthesize voiceTriggerEnabledPolicy=_voiceTriggerEnabledPolicy;
 - (void)_addSelfTriggerDetectorEnabledConditions;
 - (void)_subscribeEventMonitors;
 - (id)init;

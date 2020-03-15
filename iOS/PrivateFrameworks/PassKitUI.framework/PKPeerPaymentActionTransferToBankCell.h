@@ -21,11 +21,11 @@
     NSString *_feeText;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showCheckmark; // @synthesize showCheckmark=_showCheckmark;
 @property(copy, nonatomic) NSString *feeText; // @synthesize feeText=_feeText;
 @property(copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithReuseIdentifier:(id)arg1;

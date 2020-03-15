@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     PUReviewScreenTopBar *__topBar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTopBar:) PUReviewScreenTopBar *_topBar; // @synthesize _topBar=__topBar;
 @property(retain, nonatomic) PUReviewScreenBarsModel *barsModel; // @synthesize barsModel=_barsModel;
 @property(retain, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateVisibilityAnimated:(_Bool)arg1;

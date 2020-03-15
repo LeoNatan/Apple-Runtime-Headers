@@ -12,9 +12,9 @@
     NSView *_lastKeyView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSView *lastKeyView; // @synthesize lastKeyView=_lastKeyView;
 @property(retain) NSView *firstKeyView; // @synthesize firstKeyView=_firstKeyView;
-- (void).cxx_destruct;
 
 @end
 

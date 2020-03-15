@@ -17,12 +17,12 @@
     double _conversionElapsedTime;
 }
 
+- (void).cxx_destruct;
 @property BOOL didRunTimer; // @synthesize didRunTimer=_didRunTimer;
 @property float currentProgress; // @synthesize currentProgress=_currentProgress;
 @property double conversionElapsedTime; // @synthesize conversionElapsedTime=_conversionElapsedTime;
 @property double timeSinceLastUpdate; // @synthesize timeSinceLastUpdate=_timeSinceLastUpdate;
 @property(retain) NSTimer *conversionTimer; // @synthesize conversionTimer=_conversionTimer;
-- (void).cxx_destruct;
 - (double)estimatedTimeToComplete;
 - (id)operationName;
 - (BOOL)copyAPFSPreBootFiles:(id)arg1 destFolder:(id)arg2 apfsUUID:(id)arg3;

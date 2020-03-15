@@ -18,11 +18,11 @@
 }
 
 + (void)_prewarmForDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double maxZoomingIconDiameter; // @synthesize maxZoomingIconDiameter=_maxZoomingIconDiameter;
 @property(nonatomic) __weak UIView *handsView; // @synthesize handsView=_handsView;
 @property(nonatomic) __weak UIView *circleView; // @synthesize circleView=_circleView;
 @property(retain, nonatomic) NTKAnalogScene *analogScene; // @synthesize analogScene=_analogScene;
-- (void).cxx_destruct;
 - (void)_setupSceneHostViewIfNecessary;
 - (void)_setContentViewsOpaque:(_Bool)arg1;
 @property(nonatomic) _Bool shouldRasterizeBackground;

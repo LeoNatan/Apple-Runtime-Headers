@@ -32,6 +32,7 @@
 + (id)entryWithEntryKey:(id)arg1 withRawData:(id)arg2;
 + (void)registerEntry:(Class)arg1;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *sem; // @synthesize sem=_sem;
 @property(nonatomic) long long entryID; // @synthesize entryID=_entryID;
 @property(retain, nonatomic) NSString *entryKey; // @synthesize entryKey=_entryKey;
@@ -41,7 +42,6 @@
 @property BOOL isErrorEntry; // @synthesize isErrorEntry=_isErrorEntry;
 @property BOOL existsInDB; // @synthesize existsInDB=_existsInDB;
 @property(retain) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)serializedForJSON;
 - (id)serialized;
 - (id)debugDescription;

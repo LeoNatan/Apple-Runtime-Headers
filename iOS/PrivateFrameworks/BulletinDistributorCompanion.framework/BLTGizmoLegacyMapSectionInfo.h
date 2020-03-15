@@ -15,9 +15,9 @@
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) BBSectionIcon *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *mappedParentSectionID;
 @property(readonly, copy, nonatomic) NSString *mappedSectionID;
 - (id)initWithNotificationMap:(id)arg1;

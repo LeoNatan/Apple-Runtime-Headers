@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)recordVersionsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *recordVersions; // @synthesize recordVersions=_recordVersions;
 @property(nonatomic) _Bool isDeleted; // @synthesize isDeleted=_isDeleted;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

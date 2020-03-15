@@ -20,10 +20,10 @@
     SBSearchGesture *_searchGesture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBSearchGesture *searchGesture; // @synthesize searchGesture=_searchGesture;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *dockAnimationSettings; // @synthesize dockAnimationSettings=_dockAnimationSettings;
 @property(nonatomic) _Bool isAnimatingInFloatingDock; // @synthesize isAnimatingInFloatingDock=_isAnimatingInFloatingDock;
-- (void).cxx_destruct;
 - (void)searchGesture:(id)arg1 startedShowing:(_Bool)arg2;
 - (void)searchGesture:(id)arg1 changedPercentComplete:(double)arg2;
 - (_Bool)_forceSquareZoomDimension;

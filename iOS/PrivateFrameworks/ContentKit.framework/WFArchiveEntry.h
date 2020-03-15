@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)archiveEntriesWithTopLevelFileRepresentation:(id)arg1 usedFilenames:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(readonly, nonatomic) struct archive_entry *entry; // @synthesize entry=_entry;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithFilename:(id)arg1 fileType:(unsigned short)arg2 filePermission:(unsigned short)arg3 fileSize:(long long)arg4 modificationDate:(id)arg5 creationDate:(id)arg6 dataProvider:(CDUnknownBlockType)arg7;
 - (id)initWithFilename:(id)arg1 fileRepresentation:(id)arg2;

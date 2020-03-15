@@ -18,9 +18,9 @@
 
 + (id)snapshotWithIndexPaths:(id)arg1 dataSource:(id)arg2 dateIntervalGranularity:(unsigned long long)arg3 dateType:(unsigned long long)arg4;
 + (id)snapshotWithIndexPaths:(id)arg1 dataSource:(id)arg2 dateIntervalGranularity:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *locationNames; // @synthesize locationNames=_locationNames;
 @property(readonly, nonatomic) unsigned long long dateIntervalGranularity; // @synthesize dateIntervalGranularity=_dateIntervalGranularity;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDateInterval *dateInterval;
 - (id)init;
 - (id)initWithDateIntervalGranularity:(unsigned long long)arg1;

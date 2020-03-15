@@ -43,6 +43,7 @@
 
 + (BOOL)supportsFeatures:(unsigned long long)arg1;
 + (long long)authorizationStatus;
+- (void).cxx_destruct;
 @property unsigned long long attributeIDGenerator; // @synthesize attributeIDGenerator=_attributeIDGenerator;
 @property(readonly, retain, nonatomic) NSHashTable *l2capChannels; // @synthesize l2capChannels=_l2capChannels;
 @property(retain, nonatomic) NSNumber *multipleAdvertisingSupported; // @synthesize multipleAdvertisingSupported=_multipleAdvertisingSupported;
@@ -54,7 +55,6 @@
 @property(readonly, retain, nonatomic) NSMapTable *centrals; // @synthesize centrals=_centrals;
 @property(nonatomic) BOOL isAdvertising; // @synthesize isAdvertising=_isAdvertising;
 @property(nonatomic) __weak id <CBPeripheralManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleMsg:(unsigned short)arg1 args:(id)arg2;
 - (BOOL)isMsgAllowedAlways:(unsigned short)arg1;
 - (BOOL)isMsgAllowedWhenOff:(unsigned short)arg1;

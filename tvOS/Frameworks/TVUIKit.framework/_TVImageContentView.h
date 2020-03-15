@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)_imageViewForImage:(id)arg1;
 - (void)updateAppearanceForLockupViewState:(unsigned long long)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;

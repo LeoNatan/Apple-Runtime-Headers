@@ -14,9 +14,9 @@
     NSString *_abConstraintsPlistPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *abConstraintsPlistPath; // @synthesize abConstraintsPlistPath=_abConstraintsPlistPath;
 @property(retain, nonatomic) NSString *calConstraintsPlistPath; // @synthesize calConstraintsPlistPath=_calConstraintsPlistPath;
-- (void).cxx_destruct;
 - (_Bool)supportsDraftFolderSync;
 - (_Bool)supportsFreeBusyLookup;
 - (_Bool)supportsConversations;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_sportsTeamName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sportsTeamName; // @synthesize sportsTeamName=_sportsTeamName;
 @property(copy, nonatomic) NSString *sportsLeagueID; // @synthesize sportsLeagueID=_sportsLeagueID;
 @property(nonatomic) __weak IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (_Bool)isAccountRequired;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithContextData:(id)arg1 viewElement:(id)arg2;

@@ -24,10 +24,13 @@
     NSArray *_feedItems;
     NSDictionary *_resultTodayItemsBySectionDescriptor;
     NSDictionary *_resultAssetFileURLsByRemoteURL;
+    NSObject *_resultRecordsHoldToken;
     NSObject *_resultAssetsHoldToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *resultAssetsHoldToken; // @synthesize resultAssetsHoldToken=_resultAssetsHoldToken;
+@property(retain, nonatomic) NSObject *resultRecordsHoldToken; // @synthesize resultRecordsHoldToken=_resultRecordsHoldToken;
 @property(retain, nonatomic) NSDictionary *resultAssetFileURLsByRemoteURL; // @synthesize resultAssetFileURLsByRemoteURL=_resultAssetFileURLsByRemoteURL;
 @property(retain, nonatomic) NSDictionary *resultTodayItemsBySectionDescriptor; // @synthesize resultTodayItemsBySectionDescriptor=_resultTodayItemsBySectionDescriptor;
 @property(copy, nonatomic) NSArray *feedItems; // @synthesize feedItems=_feedItems;
@@ -41,7 +44,6 @@
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(copy, nonatomic) id <FCNewsAppConfiguration> appConfiguration; // @synthesize appConfiguration=_appConfiguration;
 @property(copy, nonatomic) NSDictionary *catchUpOperationResultsBySectionDescriptor; // @synthesize catchUpOperationResultsBySectionDescriptor=_catchUpOperationResultsBySectionDescriptor;
-- (void).cxx_destruct;
 - (void)_fetchProtoitemsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_extractFeedItemsFromInputs;
 - (void)operationWillFinishWithError:(id)arg1;

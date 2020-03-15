@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_indicator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIProductPageHeaderViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
 @property(nonatomic) __weak id <SKUIProductPageChildViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_addHeaderView;
 @property(readonly, nonatomic) UIScrollView *scrollView;
 - (void)scrollViewDidScroll:(id)arg1;

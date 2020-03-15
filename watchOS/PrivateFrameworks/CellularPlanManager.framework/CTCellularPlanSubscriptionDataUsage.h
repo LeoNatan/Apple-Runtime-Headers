@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *dataCategory; // @synthesize dataCategory=_dataCategory;
 @property(readonly, nonatomic) double dataCapacity; // @synthesize dataCapacity=_dataCapacity;
 @property(readonly, nonatomic) double dataUsed; // @synthesize dataUsed=_dataUsed;
 - (id)description;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

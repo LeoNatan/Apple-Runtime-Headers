@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int syncState; // @synthesize syncState=_syncState;
 @property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(retain, nonatomic) NSString *contentId; // @synthesize contentId=_contentId;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

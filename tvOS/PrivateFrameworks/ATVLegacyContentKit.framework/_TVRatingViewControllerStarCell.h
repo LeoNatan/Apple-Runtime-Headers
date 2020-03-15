@@ -20,11 +20,11 @@
     unsigned long long _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) UIColor *starSuggestionColor; // @synthesize starSuggestionColor=_starSuggestionColor;
 @property(retain, nonatomic) UIColor *starOutlineColor; // @synthesize starOutlineColor=_starOutlineColor;
 @property(retain, nonatomic) UIColor *starFillColor; // @synthesize starFillColor=_starFillColor;
-- (void).cxx_destruct;
 - (id)_baseImageForState:(unsigned long long)arg1;
 - (id)_starImageForState:(unsigned long long)arg1;
 - (void)layoutSubviews;

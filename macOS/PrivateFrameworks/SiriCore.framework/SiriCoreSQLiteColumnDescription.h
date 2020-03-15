@@ -19,10 +19,10 @@
 
 + (id)uniqueTextColumnWithName:(id)arg1;
 + (id)integerPrimaryKeyColumnWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithName:(id)arg1 type:(id)arg2 constraintsProvider:(CDUnknownBlockType)arg3;
 - (id)initWithName:(id)arg1 type:(id)arg2 constraints:(id)arg3;

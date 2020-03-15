@@ -13,8 +13,8 @@
 
 + (id)optionalWithValue:(id)arg1;
 + (id)optionalWithNil;
-@property(readonly, nonatomic) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id value; // @synthesize value=_value;
 - (id)initWithValue:(id)arg1;
 - (id)init;
 

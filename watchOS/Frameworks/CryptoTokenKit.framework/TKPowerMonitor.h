@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultMonitor;
+- (void).cxx_destruct;
 @property _Bool awaken; // @synthesize awaken=_awaken;
 @property unsigned int kernelPort; // @synthesize kernelPort=_kernelPort;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

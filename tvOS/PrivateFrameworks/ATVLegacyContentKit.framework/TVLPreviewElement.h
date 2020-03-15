@@ -14,8 +14,8 @@
     TVLElement *_preview;
 }
 
-@property(retain, nonatomic) TVLElement *preview; // @synthesize preview=_preview;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVLElement *preview; // @synthesize preview=_preview;
 - (id)feedDocument;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;

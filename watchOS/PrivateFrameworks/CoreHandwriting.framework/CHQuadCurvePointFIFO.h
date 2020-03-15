@@ -23,6 +23,8 @@
 }
 
 +     // Error parsing type: 60@0:482440f56, name: interpolateFromPoint:toPoint:controlPoint:time:
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CHPointFIFODrawingTarget> drawingTarget; // @synthesize drawingTarget=_drawingTarget;
 // Error parsing type for property lastPoint:
 // Property attributes: T,N,V_lastPoint
@@ -35,8 +37,6 @@
 @property(copy) CDUnknownBlockType emissionHandler; // @synthesize emissionHandler=_emissionHandler;
 @property(nonatomic) _Bool emitInterpolatedPoints; // @synthesize emitInterpolatedPoints=_emitInterpolatedPoints;
 @property(nonatomic) float unitScale; // @synthesize unitScale=_unitScale;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)flush;
 - (void)addPoint: /* Error: Ran out of types for this method. */;

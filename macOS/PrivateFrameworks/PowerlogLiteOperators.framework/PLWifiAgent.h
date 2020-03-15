@@ -61,6 +61,7 @@
 + (id)entryEventPointDefinitionWake;
 + (id)entryEventPointDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool powerStateLastOnInit; // @synthesize powerStateLastOnInit=_powerStateLastOnInit;
 @property(nonatomic) _Bool powerStateLastOn; // @synthesize powerStateLastOn=_powerStateLastOn;
 @property(retain, nonatomic) CWInterface *iface; // @synthesize iface=_iface;
@@ -90,7 +91,6 @@
 @property(nonatomic) void *wifiDevice; // @synthesize wifiDevice=_wifiDevice;
 @property(nonatomic) void *wifiManager; // @synthesize wifiManager=_wifiManager;
 @property(readonly) PLCFNotificationOperatorComposition *notificationWiFiChanged; // @synthesize notificationWiFiChanged=_notificationWiFiChanged;
-- (void).cxx_destruct;
 - (void)powerStateDidChangeForWiFiInterfaceWithName:(id)arg1;
 - (void)modelWiFiPower:(id)arg1;
 - (id)wifiManufacturerQuery;

@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_queue> *_concurrentQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *concurrentQueue; // @synthesize concurrentQueue=_concurrentQueue;
 @property(retain, nonatomic) NSMutableArray *array; // @synthesize array=_array;
-- (void).cxx_destruct;
 - (void)enqueue:(id)arg1;
 - (id)dequeue;
 - (unsigned long long)count;

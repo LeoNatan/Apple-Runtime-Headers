@@ -19,11 +19,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(readonly) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly) DVTBroadcastChannel *channel; // @synthesize channel=_channel;
 @property(readonly) DVTBroadcastCenter *center; // @synthesize center=_center;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)initWithBroadcastCenter:(id)arg1 channel:(id)arg2 queue:(id)arg3 handler:(CDUnknownBlockType)arg4;
 

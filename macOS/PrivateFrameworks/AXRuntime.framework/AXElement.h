@@ -36,6 +36,7 @@
 + (id)elementsWithUIElements:(id)arg1;
 + (id)elementWithUIElement:(id)arg1;
 + (id)elementWithAXUIElement:(struct __AXUIElement *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect cachedVisibleFrame; // @synthesize cachedVisibleFrame=_cachedVisibleFrame;
 @property(nonatomic) struct CGRect cachedFrame; // @synthesize cachedFrame=_cachedFrame;
 @property(retain, nonatomic) struct CGPath *cachedPath; // @synthesize cachedPath=_cachedPath;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) NSString *localizedStringKey; // @synthesize localizedStringKey=_localizedStringKey;
 @property(nonatomic) AXElementGroup *parentGroup; // @synthesize parentGroup=_parentGroup;
 @property(retain, nonatomic) AXUIElement *uiElement; // @synthesize uiElement=_uiElement;
-- (void).cxx_destruct;
 - (void)_updateLabel;
 - (id)_axElementsForAXUIElements:(id)arg1;
 @property(readonly, nonatomic) NSArray *parent;
@@ -110,6 +110,7 @@
 - (BOOL)canScrollInAtLeastOneDirection;
 - (BOOL)scrollToVisible;
 - (BOOL)showContextMenu;
+- (BOOL)_showContextMenuWithTargetPointValue:(id)arg1;
 - (BOOL)canPerformTrackingDetail;
 @property(readonly, nonatomic) BOOL canPerformZoom;
 - (id)_remoteParentForContextID;
@@ -134,6 +135,7 @@
 - (id)_objectForRange:(struct _NSRange)arg1 withParameterizedAttribute:(long long)arg2;
 @property(nonatomic) struct _NSRange selectedTextRange;
 @property(readonly, nonatomic) BOOL required;
+@property(readonly, nonatomic) BOOL isComboBox;
 @property(readonly, nonatomic) NSString *textualContext;
 @property(readonly, nonatomic) struct _NSRange rowRange;
 @property(readonly, nonatomic) NSString *roleDescription;
@@ -235,6 +237,7 @@
 - (id)elementsForAttribute:(long long)arg1 parameter:(id)arg2;
 - (id)elementForAttribute:(long long)arg1 parameter:(id)arg2;
 - (id)_elementForAttribute:(long long)arg1 shouldUpdateCache:(BOOL)arg2 shouldFetchAttributes:(BOOL)arg3;
+- (id)elementForAttribute:(long long)arg1 shouldFetchAttributes:(BOOL)arg2;
 - (id)elementForAttribute:(long long)arg1;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;

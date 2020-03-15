@@ -32,6 +32,7 @@
     long long _textAlignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
@@ -42,7 +43,6 @@
 @property(nonatomic) long long truncationMode; // @synthesize truncationMode=_truncationMode;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) long long minimumEndCharacterCount; // @synthesize minimumEndCharacterCount=_minimumEndCharacterCount;
-- (void).cxx_destruct;
 - (long long)_compareLength:(id)arg1 with:(id)arg2;
 - (void)_routeDidChangeNotification:(id)arg1;
 - (id)_marketingNames;

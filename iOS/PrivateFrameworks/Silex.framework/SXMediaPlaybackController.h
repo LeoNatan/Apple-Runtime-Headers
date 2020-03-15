@@ -17,9 +17,9 @@
     SXViewport *_viewport;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 @property(nonatomic) __weak id <SXMediaPlaybackDelegate> mediaPlaybackDelegate; // @synthesize mediaPlaybackDelegate=_mediaPlaybackDelegate;
-- (void).cxx_destruct;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;
 - (void)registerMediaPlayBack:(id)arg1;
 - (id)initWithViewport:(id)arg1;

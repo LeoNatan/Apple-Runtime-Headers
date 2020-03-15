@@ -23,9 +23,9 @@
 }
 
 + (id)defaultIconCache;
+- (void).cxx_destruct;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly) NSString *cacheName; // @synthesize cacheName=_cacheName;
-- (void).cxx_destruct;
 - (void)generateImageWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)generateImageWithRequest:(id)arg1;
 @property(readonly, copy) NSString *description;

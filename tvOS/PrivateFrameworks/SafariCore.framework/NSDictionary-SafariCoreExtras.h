@@ -14,6 +14,8 @@
 - (id)_safari_sortedTupleArray;
 - (id)safari_mapAndFilterKeysAndObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)safari_mapTableForKey:(id)arg1;
+- (id)safari_dictionaryWithLowercaseKeys;
+- (id)safari_dictionaryByMergingWithDictionary:(id)arg1;
 - (id)safari_userActivityForKey:(id)arg1;
 - (id)safari_setForKey:(id)arg1;
 - (id)safari_UUIDForKey:(id)arg1;

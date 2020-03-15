@@ -11,17 +11,17 @@
 @interface AMSUIAlertDialogTask : AMSTask
 {
     AMSDialogRequest *_request;
-    struct UIViewController *_presentingViewController;
+    UIViewController *_presentingViewController;
 }
 
 + (long long)_keyboardTypeFromType:(long long)arg1;
-+ (struct UITextField *)_convertTextField:(id)arg1;
++ (id)_convertTextField:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(readonly, nonatomic) AMSDialogRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)_createIOSViewControllerFromRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)present;
-- (id)initWithRequest:(id)arg1 presentingViewController:(struct UIViewController *)arg2;
+- (id)initWithRequest:(id)arg1 presentingViewController:(id)arg2;
 
 @end
 

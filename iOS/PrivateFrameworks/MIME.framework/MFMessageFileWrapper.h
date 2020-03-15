@@ -20,8 +20,8 @@
     int _type;
 }
 
-@property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 - (id)description;
 - (void)dealloc;
 - (id)fileAttributes;

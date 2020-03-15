@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_hyperlinks;
 }
 
-@property __weak EDSheet *currentSheet; // @synthesize currentSheet=_currentSheet;
 - (void).cxx_destruct;
+@property __weak EDSheet *currentSheet; // @synthesize currentSheet=_currentSheet;
 - (void)setHyperlink:(id)arg1 forRow:(unsigned long long)arg2 column:(unsigned long long)arg3;
 - (id)hyperlinkForRow:(unsigned long long)arg1 column:(unsigned long long)arg2;
 

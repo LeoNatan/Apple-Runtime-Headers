@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)finishWritingToURL:(id)arg1 byMovingOrCopyingItemAtURL:(id)arg2 addingAttributes:(id)arg3 error:(id *)arg4;
 + (void)writeAttributes:(id)arg1 toURL:(id)arg2;
-@property(readonly, nonatomic) NSURL *writeURL; // @synthesize writeURL=_writeURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *writeURL; // @synthesize writeURL=_writeURL;
 - (_Bool)endSaveWithSuccess:(_Bool)arg1 toURL:(id)arg2 addingAttributes:(id)arg3 error:(id *)arg4;
 - (_Bool)endSaveWithSuccess:(_Bool)arg1 addingAttributes:(id)arg2 error:(id *)arg3;
 - (id)initForSavingToURL:(id)arg1 error:(id *)arg2;

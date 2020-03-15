@@ -28,7 +28,7 @@
         _Bool userInterfaceLevel;
     } _needsUpdateFlags;
     _Bool _enabled;
-    struct NSObject *_traitCollection;
+    NSObject<PXAnonymousTraitCollection> *_traitCollection;
     long long _layoutSizeClass;
     long long _layoutSizeSubclass;
     long long _layoutOrientation;
@@ -39,7 +39,7 @@
     double _displayScale;
     long long _userInterfaceStyle;
     long long _userInterfaceLevel;
-    struct NSObject *_viewController;
+    NSObject<PXAnonymousViewController> *_viewController;
     struct CGSize _layoutReferenceSize;
     struct CGSize __viewSize;
     struct CGSize __pendingViewTransitionSize;
@@ -47,6 +47,7 @@
     struct UIEdgeInsets _layoutMargins;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) __weak NSObject<PXAnonymousViewController> *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic, setter=_setPendingViewTransitionSize:) struct CGSize _pendingViewTransitionSize; // @synthesize _pendingViewTransitionSize=__pendingViewTransitionSize;
@@ -65,7 +66,6 @@
 @property(nonatomic, setter=_setLayoutSizeSubclass:) long long layoutSizeSubclass; // @synthesize layoutSizeSubclass=_layoutSizeSubclass;
 @property(nonatomic, setter=_setLayoutSizeClass:) long long layoutSizeClass; // @synthesize layoutSizeClass=_layoutSizeClass;
 @property(retain, nonatomic, setter=_setTraitCollection:) NSObject<PXAnonymousTraitCollection> *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 - (void)_updateLayoutMarginsIfNeeded;
 - (void)invalidateLayoutMargins;
 - (void)_updateSafeAreaInsetsIfNeeded;
@@ -79,7 +79,7 @@
 - (void)_updateLayoutDirectionIfNeeded;
 - (void)_invalidateLayoutDirection;
 - (void)_updateUserInterfaceFeatureIfNeeded;
-- (long long)userInterfaceFeatureForViewController:(struct NSObject *)arg1;
+- (long long)userInterfaceFeatureForViewController:(id)arg1;
 - (void)_invalidateUserInterfaceFeature;
 - (void)_updateUserInterfaceLevelIfNeeded;
 - (void)_invalidateUserInterfaceLevel;
@@ -100,7 +100,7 @@
 - (_Bool)_needsUpdate;
 - (void)didPerformChanges;
 - (id)mutableChangeObject;
-- (void)viewControllerDidMoveToParentViewController:(struct NSObject *)arg1;
+- (void)viewControllerDidMoveToParentViewController:(id)arg1;
 - (void)viewControllerViewLayoutMarginsDidChange;
 - (void)viewControllerViewSafeAreaInsetsDidChange;
 - (void)viewControllerLayoutOrientationDidChange;
@@ -112,18 +112,18 @@
 - (void)viewControllerViewWillAppear;
 - (void)viewControllerViewDidLoad;
 - (void)dealloc;
-- (id)initWithViewController:(struct NSObject *)arg1;
+- (id)initWithViewController:(id)arg1;
 - (id)init;
 - (void)unregisterObservations;
 - (void)registerObservations;
-- (double)displayScaleFromTraitCollection:(struct NSObject *)arg1;
+- (double)displayScaleFromTraitCollection:(id)arg1;
 - (void)getContentSizeCategory:(out long long *)arg1;
 - (void)getSizeClass:(out long long *)arg1 sizeSubclass:(out long long *)arg2;
 - (void)getUserInterfaceLevel:(out long long *)arg1;
 - (void)getUserInterfaceStyle:(out long long *)arg1;
 - (void)getLayoutDirection:(out long long *)arg1;
 - (void)getUserInterfaceIdiom:(out long long *)arg1;
-- (struct NSObject *)createTraitCollection;
+- (id)createTraitCollection;
 
 @end
 

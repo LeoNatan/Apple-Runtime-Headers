@@ -18,11 +18,11 @@
 
 + (id)futuresFromWrappers:(id)arg1;
 + (id)wrapperWithFuture:(id)arg1 item:(id)arg2 isInternal:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItemUpdateOutcome *outcome; // @synthesize outcome=_outcome;
 @property(nonatomic) BOOL isInternal; // @synthesize isInternal=_isInternal;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) NAFuture *future; // @synthesize future=_future;
-- (void).cxx_destruct;
 
 @end
 

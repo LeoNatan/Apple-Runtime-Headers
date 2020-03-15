@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <TableViewPlusScrollDelegate> _scrollDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TableViewPlusScrollDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 @property BOOL preservesSelectionWhenDisplayingContextMenu; // @synthesize preservesSelectionWhenDisplayingContextMenu=_preservesSelectionWhenDisplayingContextMenu;
-- (void).cxx_destruct;
 - (id)accessibilityActionNames;
 - (void)_notifyDelegateAboutSelectionChangeIfNeeded:(id)arg1;
 - (void)selectAll:(id)arg1;

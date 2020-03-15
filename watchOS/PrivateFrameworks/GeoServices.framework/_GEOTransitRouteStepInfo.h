@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     struct _NSRange _maneuverPointRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange maneuverPointRange; // @synthesize maneuverPointRange=_maneuverPointRange;
 @property(retain, nonatomic) GEOStep *walkingStep; // @synthesize walkingStep=_walkingStep;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) GEOTransitStep *transitStep; // @synthesize transitStep=_transitStep;
 @property(nonatomic) struct _NSRange pointRange; // @synthesize pointRange=_pointRange;
 @property(nonatomic) int routeLegType; // @synthesize routeLegType=_routeLegType;
-- (void).cxx_destruct;
 
 @end
 

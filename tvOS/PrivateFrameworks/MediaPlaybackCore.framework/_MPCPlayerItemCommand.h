@@ -13,8 +13,8 @@
     NSString *_contentItemID;
 }
 
-@property(copy, nonatomic) NSString *contentItemID; // @synthesize contentItemID=_contentItemID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *contentItemID; // @synthesize contentItemID=_contentItemID;
 
 @end
 

@@ -13,8 +13,8 @@
     SFService *_service;
 }
 
-@property(nonatomic) __weak SFService *service; // @synthesize service=_service;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SFService *service; // @synthesize service=_service;
 - (void)invalidate;
 - (void)sendResponse:(id)arg1;
 - (void)sendRequest:(id)arg1;

@@ -12,7 +12,9 @@
 @class NSString;
 
 @interface NSObject (Readable) <INCodableAttributeRelationComparing, INEnumerable>
-- (id)_intents_localizedCopyForLanguage:(id)arg1;
+- (id)_intents_localizedCopyWithLocalizer:(id)arg1;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1;
 - (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
 - (id)_intents_readableDescriptionForLanguage:(id)arg1;
 - (BOOL)_intents_isValidKey:(id)arg1;

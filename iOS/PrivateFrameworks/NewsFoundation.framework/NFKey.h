@@ -17,10 +17,10 @@
     id _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned long long address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

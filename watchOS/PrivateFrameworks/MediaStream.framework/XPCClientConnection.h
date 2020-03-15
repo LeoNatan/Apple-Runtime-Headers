@@ -17,8 +17,8 @@
     id <XPCClientConnectionDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) id <XPCClientConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <XPCClientConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)shutDownCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithServiceName:(id)arg1 delegate:(id)arg2;
 - (void)sendMessage:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

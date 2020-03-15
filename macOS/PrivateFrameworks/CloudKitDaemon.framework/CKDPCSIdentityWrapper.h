@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *_primaryServiceName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *primaryServiceName; // @synthesize primaryServiceName=_primaryServiceName;
 @property(readonly, nonatomic) struct _PCSIdentitySetData *identitySet; // @synthesize identitySet=_identitySet;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identityString; // @synthesize identityString=_identityString;
 - (void)dealloc;
 - (id)initWithIdentitySet:(struct _PCSIdentitySetData *)arg1 withPrimaryServiceName:(id)arg2;

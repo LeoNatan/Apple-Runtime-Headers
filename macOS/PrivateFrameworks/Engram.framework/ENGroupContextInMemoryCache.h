@@ -18,10 +18,10 @@
     NSMutableDictionary *_latestStableGroupIDToGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *latestStableGroupIDToGroup; // @synthesize latestStableGroupIDToGroup=_latestStableGroupIDToGroup;
 @property(retain, nonatomic) NSMutableDictionary *groupIDtoGroup; // @synthesize groupIDtoGroup=_groupIDtoGroup;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)groupContext:(id)arg1 fetchAllKnownGroups:(CDUnknownBlockType)arg2;
 - (void)groupContext:(id)arg1 latestCachedGroupWithStableID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)groupContext:(id)arg1 cachedGroupWithID:(id)arg2 completion:(CDUnknownBlockType)arg3;

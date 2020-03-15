@@ -14,9 +14,9 @@
     int _assertType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int assertType; // @synthesize assertType=_assertType;
 @property(retain, nonatomic) NSUUID *assertionUUID; // @synthesize assertionUUID=_assertionUUID;
-- (void).cxx_destruct;
 
 @end
 

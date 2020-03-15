@@ -10,7 +10,7 @@
 #import <MediaPlayer/MPAVQueueControllerDelegate-Protocol.h>
 #import <MediaPlayer/MPAVRoutingControllerDelegate-Protocol.h>
 
-@class AVAudioSessionMediaPlayerOnly, AVPictureInPictureController, AVPlayerLayer, MPAVItem, MPAVPolicyEnforcer, MPAVRoute, MPAVRoutingController, MPQueueFeeder, MPQueuePlayer, MPVideoView, NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSNotification, NSString;
+@class AVPictureInPictureController, AVPlayerLayer, MPAVItem, MPAVPolicyEnforcer, MPAVRoute, MPAVRoutingController, MPQueueFeeder, MPQueuePlayer, MPVideoView, NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSNotification, NSString;
 @protocol MPAVQueueController, MPAVQueueCoordinating, OS_dispatch_source;
 
 @interface MPAVController : NSObject <MPAVRoutingControllerDelegate, MPAVQueueControllerDelegate, AVAudioSessionDelegateMediaPlayerOnly>
@@ -139,6 +139,7 @@
 + (id)keyPathsForValuesAffectingCurrentItem;
 + (_Bool)isNetworkSupportedPath:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVPictureInPictureController *pictureInPictureController; // @synthesize pictureInPictureController=_pictureInPictureController;
 @property(nonatomic) _Bool wantsPictureInPicture; // @synthesize wantsPictureInPicture=_wantsPictureInPicture;
 @property(nonatomic) _Bool automaticallyHidesVideoLayersForMusicVideosWhenApplicationBackgrounds; // @synthesize automaticallyHidesVideoLayersForMusicVideosWhenApplicationBackgrounds=_automaticallyHidesVideoLayersForMusicVideosWhenApplicationBackgrounds;
@@ -161,9 +162,9 @@
 @property(readonly, nonatomic) _Bool muted; // @synthesize muted=_muted;
 @property(readonly, nonatomic) long long lastDirection; // @synthesize lastDirection=_lastDirection;
 @property(nonatomic) long long displayOverridePlaybackState; // @synthesize displayOverridePlaybackState=_displayOverridePlaybackState;
-- (void).cxx_destruct;
 - (void)removeTimeObserver:(id)arg1;
 - (id)addPeriodicTimeObserverForInterval:(double)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)_itemDidSignificantlyChangeElapsedTime:(double)arg1 rate:(float)arg2;
 - (void)_queueDidEndWithReason:(id)arg1 lastItem:(id)arg2;
 - (void)_updateDirectionForChangeDelta:(long long)arg1;
 - (void)_updateCurrentItemDurationSnapshotWithPlayerTime:(CDStruct_1b6d18a9)arg1;
@@ -320,11 +321,12 @@
 - (void)_setLastSetTime:(double)arg1;
 - (void)setUsesAudioOnlyModeForExternalPlayback:(_Bool)arg1 shouldIgnorePlaybackQueueTransactions:(_Bool)arg2;
 - (void)setUsesAudioOnlyModeForExternalPlayback:(_Bool)arg1;
+- (void)setCurrentTime:(double)arg1 options:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setCurrentTime:(double)arg1 options:(long long)arg2;
 @property(copy, nonatomic) NSString *externalPlaybackVideoGravity;
 - (_Bool)becomeActiveWithError:(id *)arg1;
 - (void)setActive:(_Bool)arg1;
-@property(readonly, nonatomic) AVAudioSessionMediaPlayerOnly *_playerAVAudioSession;
+- (id)_playerAVAudioSession;
 - (id)preferredLanguages;
 @property(readonly, nonatomic) long long externalPlaybackType;
 - (id)_expectedAssetTypesForPlaybackMode:(long long)arg1;
@@ -339,8 +341,8 @@
 @property(nonatomic) _Bool stopAtEnd;
 @property(nonatomic) float volume;
 @property(readonly, nonatomic) _Bool hasVolumeControl;
-- (_Bool)_setRate:(float)arg1 forScanning:(_Bool)arg2 withItem:(id)arg3;
-- (_Bool)_setRate:(float)arg1 forScanning:(_Bool)arg2;
+- (_Bool)_setRate:(float)arg1 forScanning:(_Bool)arg2 withItem:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)setRate:(float)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)setRate:(float)arg1;
 - (void)setDisableAirPlayMirroringDuringPlayback:(_Bool)arg1 shouldIgnorePlaybackQueueTransactions:(_Bool)arg2;
 @property(nonatomic) _Bool disableAirPlayMirroringDuringPlayback;
@@ -375,6 +377,7 @@
 - (double)currentTimeForBookmarking;
 - (_Bool)isSeekingOrScrubbing;
 - (void)endSeek;
+- (_Bool)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2 ignoreElapsedTime:(_Bool)arg3 force:(_Bool)arg4 error:(id *)arg5;
 - (_Bool)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2 ignoreElapsedTime:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2 ignoreElapsedTime:(_Bool)arg3;
 - (_Bool)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2;

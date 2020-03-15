@@ -13,8 +13,8 @@
     SONativeTranscriptBalloonView *_bubbleView;
 }
 
-@property(retain, nonatomic) SONativeTranscriptBalloonView *bubbleView; // @synthesize bubbleView=_bubbleView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SONativeTranscriptBalloonView *bubbleView; // @synthesize bubbleView=_bubbleView;
 - (void)addForegroundEffectView:(id)arg1;
 
 @end

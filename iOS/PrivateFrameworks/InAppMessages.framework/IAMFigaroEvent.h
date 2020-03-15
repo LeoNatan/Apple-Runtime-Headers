@@ -16,9 +16,9 @@
     NSDictionary *_payload;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)serializeFigaroEventProperties:(id)arg1 withPrefix:(id)arg2;
 - (id)decomposeKey:(id)arg1;
 - (_Bool)matchesWithKey:(id)arg1;

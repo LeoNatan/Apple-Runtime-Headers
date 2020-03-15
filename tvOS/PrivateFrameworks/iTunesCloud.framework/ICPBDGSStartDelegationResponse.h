@@ -19,11 +19,11 @@
 }
 
 + (Class)playerInfoContextTokenType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *playerUserAgent; // @synthesize playerUserAgent=_playerUserAgent;
 @property(retain, nonatomic) NSMutableArray *playerInfoContextTokens; // @synthesize playerInfoContextTokens=_playerInfoContextTokens;
 @property(retain, nonatomic) NSData *playerDeviceGUID; // @synthesize playerDeviceGUID=_playerDeviceGUID;
 @property(retain, nonatomic) NSData *playerAnisetteMID; // @synthesize playerAnisetteMID=_playerAnisetteMID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

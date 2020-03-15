@@ -13,8 +13,8 @@
     NSPredicate *_locatedInUsersPhotoLibrary;
 }
 
-@property(retain, nonatomic) NSPredicate *locatedInUsersPhotoLibrary; // @synthesize locatedInUsersPhotoLibrary=_locatedInUsersPhotoLibrary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPredicate *locatedInUsersPhotoLibrary; // @synthesize locatedInUsersPhotoLibrary=_locatedInUsersPhotoLibrary;
 - (void)_deleteResourceOfType:(unsigned int)arg1 forAsset:(id)arg2 verifyInserted:(BOOL)arg3 deleteFile:(BOOL)arg4;
 - (BOOL)updatePrimaryAsset:(id)arg1 andRemoveAssetIfPossible:(id)arg2;
 - (BOOL)_copyFromURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
@@ -22,8 +22,9 @@
 - (id)combinePairs:(id)arg1 error:(id *)arg2;
 - (id)firstGroupFromAssets:(id)arg1;
 - (id)fetchRequestForSortedGroupIDs:(id)arg1;
+- (id)fetchRequestForLibrary;
 - (id)groupIDForAsset:(id)arg1;
-- (id)processPairingForGroupIDs:(id)arg1 duplicateDetection:(BOOL)arg2 inContext:(id)arg3 error:(id *)arg4;
+- (BOOL)processPairingForFetchRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)init;
 
 @end

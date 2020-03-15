@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_defaultFormat;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *defaultFormat; // @synthesize defaultFormat=_defaultFormat;
 @property(readonly, nonatomic) NSArray *supportedFormats; // @synthesize supportedFormats=_supportedFormats;
-- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone *)arg1 usingConcreteClass:(Class)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

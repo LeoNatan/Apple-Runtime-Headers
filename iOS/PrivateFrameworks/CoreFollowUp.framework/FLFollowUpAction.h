@@ -24,6 +24,7 @@
 
 + (id)actionWithLabel:(id)arg1 url:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sqlID; // @synthesize sqlID=_sqlID;
 @property(nonatomic) unsigned long long eventSource; // @synthesize eventSource=_eventSource;
 @property(copy, nonatomic) NSData *launchActionArguments; // @synthesize launchActionArguments=_launchActionArguments;
@@ -32,7 +33,6 @@
 @property(copy) NSURL *url; // @synthesize url=_url;
 @property(copy) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_loadActionURL;
 @property(retain, nonatomic) NSData *_userInfoData;

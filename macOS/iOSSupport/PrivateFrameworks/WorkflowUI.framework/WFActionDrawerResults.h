@@ -13,8 +13,8 @@
     NSArray *_sections;
 }
 
-@property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (id)initWithSections:(id)arg1;
 
 @end

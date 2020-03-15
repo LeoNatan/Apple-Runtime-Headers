@@ -31,6 +31,7 @@
 }
 
 + (_Bool)isBARActivity:(id)arg1;
+- (void).cxx_destruct;
 @property _Bool persistAll; // @synthesize persistAll=_persistAll;
 @property(retain, nonatomic) CSLSBackgroundTaskRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSMutableDictionary *intervalsByReason; // @synthesize intervalsByReason=_intervalsByReason;
@@ -45,7 +46,6 @@
 @property(nonatomic) __weak id <CSLBackgroundActivityControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak CSLBackgroundService *backgroundService; // @synthesize backgroundService=_backgroundService;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

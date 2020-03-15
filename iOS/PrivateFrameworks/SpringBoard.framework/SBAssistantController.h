@@ -51,11 +51,11 @@
 + (_Bool)shouldBreadcrumbLaunchedApplicationWithBundleIdentifier:(id)arg1;
 + (id)sharedInstanceIfExists;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> suspendWallpaperAnimationAssertion; // @synthesize suspendWallpaperAnimationAssertion=_suspendWallpaperAnimationAssertion;
 @property(nonatomic, getter=_idleTimerCoordinator, setter=_setIdleTimerCoordinator:) __weak id <SBIdleTimerCoordinating> idleTimerCoordinator; // @synthesize idleTimerCoordinator=_idleTimerCoordinator;
 @property(readonly, nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(readonly, nonatomic) _Bool unlockedDevice; // @synthesize unlockedDevice=_unlockedDevice;
-- (void).cxx_destruct;
 - (void)siriPresentation:(id)arg1 requestsPunchout:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)siriPresentation:(id)arg1 isEnabledDidChange:(_Bool)arg2;
 - (void)siriPresentation:(id)arg1 requestsDismissalWithOptions:(id)arg2 withHandler:(CDUnknownBlockType)arg3;

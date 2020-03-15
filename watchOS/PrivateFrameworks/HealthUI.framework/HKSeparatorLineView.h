@@ -18,12 +18,12 @@
 }
 
 + (id)_hkecg_separatorView;
+- (void).cxx_destruct;
 @property(nonatomic) float trailingMargin; // @synthesize trailingMargin=_trailingMargin;
 @property(nonatomic) float leadingMargin; // @synthesize leadingMargin=_leadingMargin;
 @property(nonatomic) int dashStyle; // @synthesize dashStyle=_dashStyle;
 @property(nonatomic) float separatorThickness; // @synthesize separatorThickness=_separatorThickness;
 @property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)_applyStyleToContext:(struct CGContext *)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (_Bool)isOpaque;

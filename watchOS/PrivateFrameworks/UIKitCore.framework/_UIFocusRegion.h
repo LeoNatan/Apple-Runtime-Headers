@@ -21,10 +21,10 @@
 + (id)__regionsByEvaluatingOcclusionsForBaseRegions:(id)arg1 occludingRegions:(id)arg2 baseRegionsCanOccludeEachOther:(_Bool)arg3;
 + (id)_regionsByOccludingRegions:(id)arg1 beneathRegions:(id)arg2;
 + (id)_regionsByEvaluatingOcclusionsForRegions:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_originalRegion, setter=_setOriginRegion:) _UIFocusRegion *originalRegion; // @synthesize originalRegion=_originalRegion;
 @property(nonatomic, setter=_setFrame:) struct CGRect frame; // @synthesize frame=_frame;
 @property(retain, nonatomic, getter=_mutableOccludingRegions, setter=_setMutableOccludingRegions:) NSMutableArray *mutableOccludingRegions; // @synthesize mutableOccludingRegions=_mutableOccludingRegions;
-- (void).cxx_destruct;
 - (void)_drawDebugQuickLookImageWithInfo:(id)arg1 inContext:(struct CGContext *)arg2;
 - (_Bool)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
 @property(readonly, nonatomic, getter=_debugAssociatedObject) __weak id debugAssociatedObject;

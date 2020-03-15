@@ -10,7 +10,7 @@
 
 @interface PVRendererBase : NSObject
 {
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _frameCount
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _frameCount
     struct vector<HGRef<PVRenderJob>, std::__1::allocator<HGRef<PVRenderJob>>> _inFlightRenderJobs;
     NSLock *_inFlightRenderJobsLock;
     struct HGSynchronizable *_perfStatsLock;
@@ -20,10 +20,10 @@
     NSString *_name;
 }
 
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-@property(retain, nonatomic) PVVideoCompositingContext *compositingContext; // @synthesize compositingContext=_compositingContext;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(retain, nonatomic) PVVideoCompositingContext *compositingContext; // @synthesize compositingContext=_compositingContext;
 - (void)printAndClearStats:(BOOL)arg1;
 - (void)trackStats:(BOOL)arg1;
 - (void)addFrameStats:(struct FrameStats *)arg1;

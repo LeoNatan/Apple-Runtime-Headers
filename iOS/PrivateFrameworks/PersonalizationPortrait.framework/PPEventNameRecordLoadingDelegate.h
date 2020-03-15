@@ -17,6 +17,7 @@
     CDUnknownBlockType _resetEventNameRecordData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resetEventNameRecordData; // @synthesize resetEventNameRecordData=_resetEventNameRecordData;
 @property(copy, nonatomic) CDUnknownBlockType recentEventNameRecordsCompletion; // @synthesize recentEventNameRecordsCompletion=_recentEventNameRecordsCompletion;
 @property(copy, nonatomic) CDUnknownBlockType recentEventNameRecordsHandler; // @synthesize recentEventNameRecordsHandler=_recentEventNameRecordsHandler;
@@ -24,7 +25,6 @@
 @property(copy, nonatomic) CDUnknownBlockType eventNameRecordsCompletion; // @synthesize eventNameRecordsCompletion=_eventNameRecordsCompletion;
 @property(copy, nonatomic) CDUnknownBlockType eventNameRecordsHandler; // @synthesize eventNameRecordsHandler=_eventNameRecordsHandler;
 @property(copy, nonatomic) CDUnknownBlockType eventNameRecordsSetup; // @synthesize eventNameRecordsSetup=_eventNameRecordsSetup;
-- (void).cxx_destruct;
 - (void)resetRecordData;
 - (void)recentRecordLoadingCompletion;
 - (unsigned char)recentRecordLoadingHandler:(id)arg1;

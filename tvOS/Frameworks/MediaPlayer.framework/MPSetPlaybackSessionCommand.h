@@ -15,10 +15,10 @@
     NSArray *_supportedSessionTypes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *supportedSessionTypes; // @synthesize supportedSessionTypes=_supportedSessionTypes;
 @property(copy, nonatomic) NSArray *exportableSessionTypes; // @synthesize exportableSessionTypes=_exportableSessionTypes;
 @property(copy, nonatomic) NSString *currentPlaybackSessionIdentifier; // @synthesize currentPlaybackSessionIdentifier=_currentPlaybackSessionIdentifier;
-- (void).cxx_destruct;
 - (id)_mediaRemoteCommandInfoOptions;
 
 @end

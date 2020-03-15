@@ -38,13 +38,13 @@
 
 + (id)sharedVisualAlertManager;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AXCameraTorchManagerBackgroundAdapter *_asyncManagerAdapter; // @synthesize _asyncManagerAdapter;
 @property(readonly, nonatomic, getter=_isTorchDeviceOn) BOOL _torchDeviceOn; // @synthesize _torchDeviceOn;
 @property(readonly, nonatomic, getter=_isTorchDeviceOpen) BOOL _torchDeviceOpen; // @synthesize _torchDeviceOpen;
 @property(nonatomic, setter=_setTypeToUseForVisualAlertAfterCaptureSessionStopsRunning:) unsigned long long _typeToUseForVisualAlertAfterCaptureSessionStopsRunning; // @synthesize _typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
 @property(retain, nonatomic, setter=_setActivePattern:) NSDictionary *_activePattern; // @synthesize _activePattern;
 @property(nonatomic) int ringerStateNotifyToken; // @synthesize ringerStateNotifyToken=_ringerStateNotifyToken;
-- (void).cxx_destruct;
 - (BOOL)_isTorchEnabledInControlCenter;
 - (BOOL)_shouldHandleVisualAlertsForVideoConferenceCallsInConferenceFramework;
 - (BOOL)_supportsVisualAlertsForVideoConferenceCalls;

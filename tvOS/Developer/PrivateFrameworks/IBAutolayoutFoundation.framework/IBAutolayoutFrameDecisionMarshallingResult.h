@@ -17,11 +17,11 @@
     IBAutolayoutStatus *_autolayoutStatus;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBAutolayoutStatus *autolayoutStatus; // @synthesize autolayoutStatus=_autolayoutStatus;
 @property(copy, nonatomic) id <IBCollection> constraintsRemoved; // @synthesize constraintsRemoved=_constraintsRemoved;
 @property(copy, nonatomic) id <IBCollection> constraintsAdded; // @synthesize constraintsAdded=_constraintsAdded;
 @property(copy, nonatomic) NSDictionary *framesByItem; // @synthesize framesByItem=_framesByItem;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 

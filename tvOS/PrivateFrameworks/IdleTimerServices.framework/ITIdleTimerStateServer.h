@@ -22,8 +22,8 @@
     id <ITIdleTimerStateServerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ITIdleTimerStateServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ITIdleTimerStateServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_removeConnection:(id)arg1;
 - (void)_addConnection:(id)arg1;
 - (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;

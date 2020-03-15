@@ -18,10 +18,10 @@
     PKLinkedApplication *_linkedApplication;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKLinkedApplication *linkedApplication; // @synthesize linkedApplication=_linkedApplication;
 @property(copy, nonatomic) UIColor *disabledTextColor; // @synthesize disabledTextColor=_disabledTextColor;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
 - (void)linkedApplicationDidChangeState:(id)arg1;
 @property(copy, nonatomic) NSURL *appLaunchURL;
 @property(copy, nonatomic) NSArray *storeIDs;

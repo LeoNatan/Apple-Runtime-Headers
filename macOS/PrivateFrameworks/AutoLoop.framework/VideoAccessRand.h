@@ -20,6 +20,7 @@
     CDStruct_1b6d18a9 _frameTime2x;
 }
 
+- (void).cxx_destruct;
 @property struct __CFDictionary *currentChunk; // @synthesize currentChunk=_currentChunk;
 @property unsigned int recurs; // @synthesize recurs=_recurs;
 @property CDStruct_1b6d18a9 frameTime2x; // @synthesize frameTime2x=_frameTime2x;
@@ -28,7 +29,6 @@
 @property(retain) AVSampleBufferGenerator *sampBufGen; // @synthesize sampBufGen=_sampBufGen;
 @property(readonly) AVAssetTrack *videoTrack; // @synthesize videoTrack;
 @property(readonly) AVAsset *asset; // @synthesize asset;
-- (void).cxx_destruct;
 - (int)getFrameAtTime:(CDStruct_1b6d18a9)arg1 pixBuf:(struct __CVBuffer **)arg2 actualTime:(CDStruct_1b6d18a9 *)arg3;
 - (CDStruct_1b6d18a9)currPresTime;
 - (int)decodeFrame:(struct __CVBuffer **)arg1;

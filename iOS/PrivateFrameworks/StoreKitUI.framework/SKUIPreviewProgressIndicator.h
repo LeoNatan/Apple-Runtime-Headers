@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     float _progress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic, getter=isIndeterminate) _Bool indeterminate; // @synthesize indeterminate=_isIndeterminate;
-- (void).cxx_destruct;
 - (id)_newShapeViewWithBounds:(struct CGRect)arg1 lineWidth:(double)arg2;
 - (void)_beginIndeterminateAnimation;
 - (void)tintColorDidChange;

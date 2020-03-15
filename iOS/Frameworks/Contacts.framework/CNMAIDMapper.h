@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)os_log;
-@property(readonly, nonatomic) CLSDataStore *dataStore; // @synthesize dataStore=_dataStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CLSDataStore *dataStore; // @synthesize dataStore=_dataStore;
 - (id)defaultContainerIdentifier;
 - (id)subgroupsOfGroupWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)groupsMatchingPredicate:(id)arg1 error:(id *)arg2;

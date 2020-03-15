@@ -20,8 +20,8 @@
     _Bool _usesLongSideTicks;
 }
 
-@property(nonatomic) _Bool usesLongSideTicks; // @synthesize usesLongSideTicks=_usesLongSideTicks;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool usesLongSideTicks; // @synthesize usesLongSideTicks=_usesLongSideTicks;
 - (void)applyToTritiumTransitionFraction:(float)arg1;
 - (float)_innerDialRadiusAtLargeTick:(int)arg1 verticalLength:(float)arg2 horizontalLength:(float)arg3;
 - (float)_outerDialRadiusAtMediumTick:(int)arg1 verticalLength:(float)arg2 horizontalLength:(float)arg3;

@@ -18,13 +18,13 @@
     NSString *_version;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *version; // @synthesize version=_version;
 @property(readonly) NSString *product; // @synthesize product=_product;
 @property(readonly) NSString *appIcon; // @synthesize appIcon=_appIcon;
 @property(readonly) NSString *framework; // @synthesize framework=_framework;
 @property(readonly) NSString *contentType; // @synthesize contentType=_contentType;
 @property(readonly) NSString *buildDate; // @synthesize buildDate=_buildDate;
-- (void).cxx_destruct;
 
 @end
 

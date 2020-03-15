@@ -16,10 +16,10 @@
 }
 
 + (id)_mailDropZone;
+- (void).cxx_destruct;
 @property(nonatomic) long long mailDropState; // @synthesize mailDropState=_mailDropState;
 @property(retain, nonatomic) EMMailDropMetadata *imageArchiveMetadata; // @synthesize imageArchiveMetadata=_imageArchiveMetadata;
 @property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
-- (void).cxx_destruct;
 - (void)_recordZoneIDInDatabase:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_uploadAttachmentsViaCloudKit:(id)arg1 zone:(id)arg2 records:(id)arg3 zippedPhotos:(id)arg4 attachmentRecords:(id)arg5 images:(id)arg6;
 - (id)publishRecord:(id)arg1 database:(id)arg2 attachmentRecords:(id)arg3 images:(id)arg4 allowsCellularAccess:(_Bool)arg5;

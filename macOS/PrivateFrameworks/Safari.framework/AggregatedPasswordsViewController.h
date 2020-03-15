@@ -7,6 +7,7 @@
 #import <AppKit/NSViewController.h>
 
 #import <Safari/AggregatedPasswordsAuditingTableCellViewDelegate-Protocol.h>
+#import <Safari/NSMenuItemValidation-Protocol.h>
 #import <Safari/NSSharingServiceDelegate-Protocol.h>
 #import <Safari/PasswordsAuditingHandler-Protocol.h>
 #import <Safari/PasswordsDetailSheetControllerDecisionHandler-Protocol.h>
@@ -19,7 +20,7 @@
 @protocol AggregatedPasswordsViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface AggregatedPasswordsViewController : NSViewController <NSSharingServiceDelegate, AggregatedPasswordsAuditingTableCellViewDelegate, PasswordsDetailSheetControllerDecisionHandler, PasswordsAuditingHandler, TableViewPlusDelegate, TableViewPlusDataSource, TableViewPlusScrollDelegate, PreferencesViewController>
+@interface AggregatedPasswordsViewController : NSViewController <NSSharingServiceDelegate, AggregatedPasswordsAuditingTableCellViewDelegate, PasswordsDetailSheetControllerDecisionHandler, PasswordsAuditingHandler, TableViewPlusDelegate, TableViewPlusDataSource, TableViewPlusScrollDelegate, NSMenuItemValidation, PreferencesViewController>
 {
     WBSSavedPasswordStore *_passwordsStore;
     NSArray *_savedPasswords;
@@ -45,14 +46,13 @@ __attribute__((visibility("hidden")))
     NSButton *_addButton;
     NSButton *_removeButton;
     NSButton *_detailsButton;
-    NSButton *_autoFillUserNamesAndPasswordsCheckbox;
     NSImageView *_passwordWarningLegendIcon;
     NSTextField *_passwordWarningLegendLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *passwordWarningLegendLabel; // @synthesize passwordWarningLegendLabel=_passwordWarningLegendLabel;
 @property(nonatomic) __weak NSImageView *passwordWarningLegendIcon; // @synthesize passwordWarningLegendIcon=_passwordWarningLegendIcon;
-@property(nonatomic) __weak NSButton *autoFillUserNamesAndPasswordsCheckbox; // @synthesize autoFillUserNamesAndPasswordsCheckbox=_autoFillUserNamesAndPasswordsCheckbox;
 @property(nonatomic) __weak NSButton *detailsButton; // @synthesize detailsButton=_detailsButton;
 @property(nonatomic) __weak NSButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(nonatomic) __weak NSButton *addButton; // @synthesize addButton=_addButton;
@@ -60,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSSearchField *searchField; // @synthesize searchField=_searchField;
 @property(nonatomic) __weak NSTextField *emptyTablePlaceholderText; // @synthesize emptyTablePlaceholderText=_emptyTablePlaceholderText;
 @property(nonatomic) __weak id <AggregatedPasswordsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_window;
 - (BOOL)_isWeakPassword:(id)arg1;
 - (BOOL)_isDuplicatedPassword:(id)arg1;
@@ -68,7 +67,7 @@ __attribute__((visibility("hidden")))
 - (void)_copySelectedPassword;
 - (void)_copySelectedUserName;
 - (void)_copySelectedDomain;
-- (void)_copyStringToPasteboard:(id)arg1;
+- (void)_copyStringToPasteboard:(id)arg1 isSensitive:(BOOL)arg2;
 - (id)_savedPasswordForSelectedRow;
 - (void)_removeSelectedIndexesAfterConfirmation:(id)arg1;
 - (void)_removePasswordsAtIndexes:(id)arg1;
@@ -81,7 +80,6 @@ __attribute__((visibility("hidden")))
 - (void)_rowDoubleClicked:(id)arg1;
 - (void)_showHelpPage:(id)arg1;
 - (id)_highLegibilityAttributedStringForString:(id)arg1 font:(id)arg2;
-- (void)_didToggleAutoFillUserNamesAndPasswords:(id)arg1;
 - (void)_selectAndScrollToSavedPasswords:(id)arg1;
 - (id)_selectedSavedPasswords;
 - (void)_updateDisplayedPasswords;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fontForLabel;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKPlaceAttributionCellDelegate> cellDelegate; // @synthesize cellDelegate=_cellDelegate;
 @property(retain, nonatomic) NSLayoutConstraint *labelLastBaselineToBottom; // @synthesize labelLastBaselineToBottom=_labelLastBaselineToBottom;
 @property(retain, nonatomic) NSLayoutConstraint *labelBaselineToTop; // @synthesize labelBaselineToTop=_labelBaselineToTop;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (void)setHighlighted:(_Bool)arg1;
 - (_Bool)isHighlighted;
 @property(retain, nonatomic) _MKUILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)attributionCellButton:(id)arg1 isHighighted:(_Bool)arg2 executeAction:(_Bool)arg3;
 - (double)currentHeight;
 - (void)setAttributionString:(id)arg1;

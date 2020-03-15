@@ -33,6 +33,7 @@
 }
 
 + (id)keyValueStoreItemIdentifierForItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain) NSDate *dateToFireNextTimer; // @synthesize dateToFireNextTimer=_dateToFireNextTimer;
 @property(retain) SBKRequestHandler *currentTaskRequestHandler; // @synthesize currentTaskRequestHandler=_currentTaskRequestHandler;
@@ -40,7 +41,6 @@
 @property(retain) SBKAsynchronousTask *lookupDomainVersionTask; // @synthesize lookupDomainVersionTask=_lookupDomainVersionTask;
 @property(retain) SBKAsynchronousTask *currentTask; // @synthesize currentTask=_currentTask;
 @property(readonly) __weak id <SBKUniversalPlaybackPositionDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_onQueueStartNewTimerWithTimeIntervalSinceNow:(double)arg1;
 - (void)_onQueueStartNewTimer;
 - (void)_onQueueStopTimer;

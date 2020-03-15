@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     FULabel *_errorLabel;
 }
 
-@property(retain) FULabel *errorLabel; // @synthesize errorLabel=_errorLabel;
 - (void).cxx_destruct;
+@property(retain) FULabel *errorLabel; // @synthesize errorLabel=_errorLabel;
 - (void)setStyleProvider:(id)arg1;
 - (id)init;
 

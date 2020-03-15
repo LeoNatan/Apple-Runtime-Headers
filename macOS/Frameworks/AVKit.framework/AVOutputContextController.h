@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingExternalOutputDevicePicked;
-@property(readonly) AVOutputContext *outputContext; // @synthesize outputContext=_outputContext;
 - (void).cxx_destruct;
+@property(readonly) AVOutputContext *outputContext; // @synthesize outputContext=_outputContext;
 - (void)_updateCachedValues;
 - (void)_outputDeviceChangedNotification:(id)arg1;
 - (BOOL)setOutputDevice:(id)arg1 forFeature:(unsigned long long)arg2;

@@ -56,10 +56,10 @@
 }
 
 + (Class)invalidationContextClass;
+- (void).cxx_destruct;
 @property(nonatomic) struct NSEdgeInsets sectionInset; // @synthesize sectionInset=_sectionInset;
 @property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_interitemSpacing;
 @property(nonatomic) double minimumLineSpacing; // @synthesize minimumLineSpacing=_lineSpacing;
-- (void).cxx_destruct;
 - (struct NSEdgeInsets)_fastScrollingIndexBarInsets;
 - (BOOL)_shouldScrollToContentBeginningInRightToLeft;
 @property BOOL sectionFootersPinToVisibleBounds;

@@ -13,8 +13,8 @@
     IMFullScreenEffectManager *_fullScreenEffectManager;
 }
 
-@property(retain, nonatomic) IMFullScreenEffectManager *fullScreenEffectManager; // @synthesize fullScreenEffectManager=_fullScreenEffectManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IMFullScreenEffectManager *fullScreenEffectManager; // @synthesize fullScreenEffectManager=_fullScreenEffectManager;
 - (void)previewFullScreenMoment:(id)arg1;
 - (void)viewWillDisappear;
 - (void)viewDidLoad;

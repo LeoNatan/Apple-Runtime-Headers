@@ -19,6 +19,7 @@
     BLHLSKey *_currentKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BLHLSKey *currentKey; // @synthesize currentKey=_currentKey;
 @property(retain, nonatomic) NSMutableArray *mutableStreamInfs; // @synthesize mutableStreamInfs=_mutableStreamInfs;
 @property(retain, nonatomic) BLHLSStreamInf *currentStreamInf; // @synthesize currentStreamInf=_currentStreamInf;
@@ -26,7 +27,6 @@
 @property(nonatomic) double currentDuration; // @synthesize currentDuration=_currentDuration;
 @property(retain, nonatomic) BLHLSMap *currentMap; // @synthesize currentMap=_currentMap;
 @property(retain, nonatomic) NSMutableDictionary *mutableGroups; // @synthesize mutableGroups=_mutableGroups;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

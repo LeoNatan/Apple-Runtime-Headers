@@ -7,7 +7,7 @@
 #import <PhotosUICore/PXGLayout.h>
 
 @class NSMutableIndexSet;
-@protocol PXGAssetBadgeDecorationSource, PXGCaptionDecorationSource, PXGDebugDecorationSource, PXGDragDecorationSource, PXGHighlightDecorationSource, PXGLayoutContentSource, PXGSelectionDecorationSource;
+@protocol PXGAssetBadgeDecorationSource, PXGCaptionDecorationSource, PXGDebugDecorationSource, PXGDragDecorationSource, PXGHighlightDecorationSource, PXGLayoutContentSource, PXGSelectionDecorationSource, PXGShadowSource;
 
 @interface PXGDecoratingLayout : PXGLayout
 {
@@ -16,6 +16,8 @@
     NSMutableIndexSet *_invalidatedDecoratedSpriteIndexes;
     _Bool _wantsCaptionDecorations;
     long long _selectionDecorationStyle;
+    unsigned long long _selectionDecorationAdditions;
+    id <PXGShadowSource> _shadowSource;
     unsigned int _numberOfDecoratingSpritesPerDecoratedSprite;
     PXGLayout *_decoratedLayout;
     id <PXGLayoutContentSource> _decorationSource;
@@ -27,6 +29,7 @@
     id <PXGDebugDecorationSource> _debugDecorationSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <PXGDebugDecorationSource> debugDecorationSource; // @synthesize debugDecorationSource=_debugDecorationSource;
 @property(readonly, nonatomic) __weak id <PXGDragDecorationSource> dragDecorationSource; // @synthesize dragDecorationSource=_dragDecorationSource;
 @property(readonly, nonatomic) __weak id <PXGHighlightDecorationSource> highlightDecorationSource; // @synthesize highlightDecorationSource=_highlightDecorationSource;
@@ -36,7 +39,6 @@
 @property(readonly, nonatomic) unsigned int numberOfDecoratingSpritesPerDecoratedSprite; // @synthesize numberOfDecoratingSpritesPerDecoratedSprite=_numberOfDecoratingSpritesPerDecoratedSprite;
 @property(nonatomic) __weak id <PXGLayoutContentSource> decorationSource; // @synthesize decorationSource=_decorationSource;
 @property(retain, nonatomic) PXGLayout *decoratedLayout; // @synthesize decoratedLayout=_decoratedLayout;
-- (void).cxx_destruct;
 - (_Bool)canHandleVisibleRectRejection;
 - (id)itemsLayout;
 - (_Bool)isSpriteIndex:(unsigned int)arg1 decoratingSpriteWithIndex:(out unsigned int *)arg2;
@@ -63,6 +65,7 @@
 - (void)_updateDecorationSources;
 - (void)_updateDecoratedLayout;
 - (void)update;
+- (void)setContentSource:(id)arg1;
 - (void)insertSublayout:(id)arg1 atIndex:(long long)arg2;
 - (id)description;
 - (id)initWithDecoratedLayout:(id)arg1;

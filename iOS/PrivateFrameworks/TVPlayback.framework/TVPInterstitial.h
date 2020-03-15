@@ -13,8 +13,8 @@
     TVPTimeRange *_timeRange;
 }
 
-@property(retain, nonatomic) TVPTimeRange *timeRange; // @synthesize timeRange=_timeRange;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVPTimeRange *timeRange; // @synthesize timeRange=_timeRange;
 - (id)description;
 
 @end

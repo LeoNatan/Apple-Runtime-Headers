@@ -18,10 +18,10 @@
     NSTimer *_noHysterisisCancellationTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *noHysterisisCancellationTimer; // @synthesize noHysterisisCancellationTimer=_noHysterisisCancellationTimer;
 @property(nonatomic) double maximumPressDuration; // @synthesize maximumPressDuration=_maximumPressDuration;
 @property(nonatomic) _Bool failsPastMaximumPressDurationWithoutHysteresis; // @synthesize failsPastMaximumPressDurationWithoutHysteresis=_failsPastMaximumPressDurationWithoutHysteresis;
-- (void).cxx_destruct;
 - (void)invalidateNoHysterisisCancellationTimer;
 - (void)setupNoHysterisisCancellationTimerIfNeeded;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

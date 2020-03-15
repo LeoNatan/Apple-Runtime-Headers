@@ -21,11 +21,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long identifierKind; // @synthesize identifierKind=_identifierKind;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property long long mode; // @synthesize mode=_mode;
 @property long long position; // @synthesize position=_position;
-- (void).cxx_destruct;
 @property(readonly) NSUUID *resourceFingerprint;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSUUID *uuid;

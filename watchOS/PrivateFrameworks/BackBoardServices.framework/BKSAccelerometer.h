@@ -27,6 +27,7 @@
     float _zThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool orientationEventsEnabled; // @synthesize orientationEventsEnabled=_orientationEventsEnabled;
 @property(nonatomic) _Bool passiveOrientationEvents; // @synthesize passiveOrientationEvents=_passiveOrientationEvents;
 @property(nonatomic) float zThreshold; // @synthesize zThreshold=_zThreshold;
@@ -34,7 +35,6 @@
 @property(nonatomic) float xThreshold; // @synthesize xThreshold=_xThreshold;
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(nonatomic) __weak id <BKSAccelerometerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_orientationDidChange;
 - (id)_orientationEventsThread;
 - (int)currentDeviceOrientation;

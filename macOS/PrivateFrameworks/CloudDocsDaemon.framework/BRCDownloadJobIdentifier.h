@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_etag;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int kind; // @synthesize kind=_kind;
 @property(readonly, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(readonly, nonatomic) unsigned long long itemDBRowID; // @synthesize itemDBRowID=_itemDBRowID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDownloadJobIdentifier:(id)arg1;

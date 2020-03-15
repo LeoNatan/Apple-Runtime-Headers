@@ -13,8 +13,8 @@
     NSArray *_columns;
 }
 
-@property(retain, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

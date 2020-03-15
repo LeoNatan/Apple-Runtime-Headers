@@ -18,6 +18,8 @@
 @property(nonatomic) _Bool disableStudyLogGyroLogging; // @synthesize disableStudyLogGyroLogging=_disableStudyLogGyroLogging;
 @property(nonatomic) _Bool disableStudyLogALSLogging; // @synthesize disableStudyLogALSLogging=_disableStudyLogALSLogging;
 @property(nonatomic) _Bool disableStudyLogAccelerometerLogging; // @synthesize disableStudyLogAccelerometerLogging=_disableStudyLogAccelerometerLogging;
+- (id)valueForKey:(id)arg1 defaultValueProvider:(CDUnknownBlockType)arg2;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)migrateDefaultsIfNecessary;
 - (void)_bindAndRegisterDefaults;
 - (id)init;

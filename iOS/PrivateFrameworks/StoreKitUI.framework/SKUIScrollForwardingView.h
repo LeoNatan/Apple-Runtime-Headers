@@ -13,8 +13,8 @@
     UIScrollView *_scrollView;
 }
 
-@property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end

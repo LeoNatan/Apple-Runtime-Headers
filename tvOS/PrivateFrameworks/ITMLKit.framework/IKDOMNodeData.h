@@ -24,6 +24,7 @@
 
 + (id)jsNodeDataForNode:(struct _xmlNode *)arg1 create:(_Bool)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *featuresMap; // @synthesize featuresMap=_featuresMap;
 @property(nonatomic, getter=isDataResolved) _Bool dataResolved; // @synthesize dataResolved=_dataResolved;
 @property(nonatomic, getter=arePrototypesResolved) _Bool prototypesResolved; // @synthesize prototypesResolved=_prototypesResolved;
@@ -34,7 +35,6 @@
 @property(nonatomic, getter=isChildrenUpdated) _Bool childrenUpdated; // @synthesize childrenUpdated=_childrenUpdated;
 @property(nonatomic, getter=isUpdated) _Bool updated; // @synthesize updated=_updated;
 @property(nonatomic) __weak IKDOMNode *ownerJSNode; // @synthesize ownerJSNode=_ownerJSNode;
-- (void).cxx_destruct;
 - (id)featureForName:(id)arg1;
 - (void)setFeature:(id)arg1 forName:(id)arg2;
 @property(readonly, nonatomic) _Bool containsUpdates;

@@ -33,6 +33,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadCertificateIdentifier; // @synthesize payloadCertificateIdentifier=_payloadCertificateIdentifier;
 @property(copy, nonatomic) NSNumber *payloadDeferDontAskAtUserLogout; // @synthesize payloadDeferDontAskAtUserLogout=_payloadDeferDontAskAtUserLogout;
 @property(copy, nonatomic) NSNumber *payloadDeferForceAtUserLoginMaxBypassAttempts; // @synthesize payloadDeferForceAtUserLoginMaxBypassAttempts=_payloadDeferForceAtUserLoginMaxBypassAttempts;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) NSNumber *payloadUserEntersMissingInfo; // @synthesize payloadUserEntersMissingInfo=_payloadUserEntersMissingInfo;
 @property(copy, nonatomic) NSNumber *payloadDefer; // @synthesize payloadDefer=_payloadDefer;
 @property(copy, nonatomic) NSString *payloadEnable; // @synthesize payloadEnable=_payloadEnable;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

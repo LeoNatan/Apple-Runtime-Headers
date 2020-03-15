@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableIndexSet *existingGIDs; // @synthesize existingGIDs=_existingGIDs;
 @property(retain) NSObject<OS_dispatch_queue> *tableAccessQueue; // @synthesize tableAccessQueue=_tableAccessQueue;
 @property(retain) NSMutableDictionary *gidTranslationTable; // @synthesize gidTranslationTable=_gidTranslationTable;
@@ -31,7 +32,6 @@
 @property(retain) NSArray *overwriteUsernames; // @synthesize overwriteUsernames=_overwriteUsernames;
 @property(retain) NSMutableIndexSet *existingUIDs; // @synthesize existingUIDs=_existingUIDs;
 @property(retain) SMMigrationRequest *migrationRequest; // @synthesize migrationRequest=_migrationRequest;
-- (void).cxx_destruct;
 - (void)deletedUIDFromSystem:(unsigned int)arg1;
 - (BOOL)translatedUID:(unsigned int *)arg1 andGID:(unsigned int *)arg2 forOldUID:(unsigned int)arg3 andOldGID:(unsigned int)arg4 ofType:(long long)arg5;
 - (BOOL)translatedUID:(unsigned int *)arg1 andGID:(unsigned int *)arg2 forOldUID:(unsigned int)arg3 andOldGID:(unsigned int)arg4;

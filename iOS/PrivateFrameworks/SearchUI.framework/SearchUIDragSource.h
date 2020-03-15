@@ -21,11 +21,11 @@
 }
 
 + (id)dragSourceForView:(id)arg1 dragObject:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property __weak UIView *dragSourceView; // @synthesize dragSourceView=_dragSourceView;
 @property(retain, nonatomic) UIView *overrideDragPreviewView; // @synthesize overrideDragPreviewView=_overrideDragPreviewView;
 @property(retain, nonatomic) SearchUIRowModel *dragObject; // @synthesize dragObject=_dragObject;
-- (void).cxx_destruct;
 - (_Bool)_shouldPerformHitTestingForDragSessionInView:(id)arg1;
 - (id)_requiredContextIDsForDragSessionInView:(id)arg1;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;

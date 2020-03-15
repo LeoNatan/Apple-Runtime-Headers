@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSArray *_servicesOfInterest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *servicesOfInterest; // @synthesize servicesOfInterest=_servicesOfInterest;
 @property(retain) NSMutableDictionary *peerList; // @synthesize peerList=_peerList;
 @property unsigned long long pollCount; // @synthesize pollCount=_pollCount;
 @property(retain) id <AWDLPeerProbeDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stopTest;
 - (void)startAWDLPeerPollingForServices:(id)arg1 withCount:(unsigned long long)arg2 interval:(unsigned long long)arg3;
 - (void)periodicTimerFired:(id)arg1;

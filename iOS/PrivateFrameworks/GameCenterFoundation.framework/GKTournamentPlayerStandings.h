@@ -13,8 +13,8 @@
     GKTournamentPlayerStandingsInternal *_internal;
 }
 
-@property(retain) GKTournamentPlayerStandingsInternal *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+@property(retain) GKTournamentPlayerStandingsInternal *internal; // @synthesize internal=_internal;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)init;

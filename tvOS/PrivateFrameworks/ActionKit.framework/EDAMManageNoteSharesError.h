@@ -18,11 +18,11 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMNotFoundException *notFoundException; // @synthesize notFoundException=_notFoundException;
 @property(retain, nonatomic) EDAMUserException *userException; // @synthesize userException=_userException;
 @property(retain, nonatomic) NSNumber *userID; // @synthesize userID=_userID;
 @property(retain, nonatomic) NSNumber *identityID; // @synthesize identityID=_identityID;
-- (void).cxx_destruct;
 
 @end
 

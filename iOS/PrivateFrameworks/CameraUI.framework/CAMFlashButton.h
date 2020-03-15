@@ -18,11 +18,11 @@
     UIImageView *__warningIndicatorView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *_warningIndicatorView; // @synthesize _warningIndicatorView=__warningIndicatorView;
 @property(readonly, nonatomic) UIImageView *_glyphView; // @synthesize _glyphView=__glyphView;
 @property(nonatomic, getter=isUnavailable) _Bool unavailable; // @synthesize unavailable=_unavailable;
 @property(nonatomic) _Bool allowsAutomaticFlash; // @synthesize allowsAutomaticFlash=_allowsAutomaticFlash;
-- (void).cxx_destruct;
 - (id)imageForAccessibilityHUD;
 - (double)collapsedSelectedLabelHorizontalMargin;
 - (_Bool)shouldIgnoreMenuInteraction;

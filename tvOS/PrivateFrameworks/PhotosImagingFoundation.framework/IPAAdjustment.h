@@ -17,10 +17,10 @@
     NSDictionary *_settings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
 @property(retain, nonatomic) IPAAdjustmentVersion *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_debugDescriptionSuffix;
 - (id)debugDescription;
 - (id)description;

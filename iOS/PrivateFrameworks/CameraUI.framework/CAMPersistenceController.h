@@ -45,6 +45,7 @@
 + (id)clientVideoMetadataForRequest:(id)arg1 withCreationDate:(id)arg2 isEV0ForHDR:(_Bool)arg3 livePhotoIdentifierOverride:(id)arg4;
 + (id)clientVideoMetadataForLocation:(id)arg1 withCreationDate:(id)arg2;
 + (id)videoMetadataDateFormatter;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_coordinationQueue_videoPersistenceCoordinators; // @synthesize _coordinationQueue_videoPersistenceCoordinators=__coordinationQueue_videoPersistenceCoordinators;
 @property(readonly, nonatomic) NSMutableDictionary *_coordinationQueue_stillImagePersistenceCoordinators; // @synthesize _coordinationQueue_stillImagePersistenceCoordinators=__coordinationQueue_stillImagePersistenceCoordinators;
 @property(readonly, nonatomic) NSMapTable *_coordinationQueueGroupsByIdentifier; // @synthesize _coordinationQueueGroupsByIdentifier=__coordinationQueueGroupsByIdentifier;
@@ -59,7 +60,6 @@
 @property(readonly, nonatomic) CAMThumbnailGenerator *_localPersistenceThumbnailGenerator; // @synthesize _localPersistenceThumbnailGenerator=__localPersistenceThumbnailGenerator;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_remotePersistenceQueue; // @synthesize _remotePersistenceQueue=__remotePersistenceQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_localPersistenceQueue; // @synthesize _localPersistenceQueue=__localPersistenceQueue;
-- (void).cxx_destruct;
 - (id)_jobDictionaryForTimelapsePlaceholderResult:(id)arg1;
 - (void)persistPlaceholderTimelapseVideoWithResult:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)persistBurstWithIdentifier:(id)arg1 result:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

@@ -69,11 +69,11 @@
     id <PKBillPaymentRingViewDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isSmall; // @synthesize isSmall=_isSmall;
 @property(nonatomic) id <PKBillPaymentRingViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) id <PKBillPaymentRingViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)_createSuggestedAmountRingColorStops;
 - (void)_createStandardColors;
 - (void)_createSuggestedAmountAngles;

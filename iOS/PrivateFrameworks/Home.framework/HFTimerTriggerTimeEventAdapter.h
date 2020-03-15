@@ -15,8 +15,8 @@
 }
 
 + (id)adapterWithEventBuilder:(id)arg1;
-@property(readonly, nonatomic) HFEventBuilder<HFTimeEventBuilder> *eventBuilder; // @synthesize eventBuilder=_eventBuilder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFEventBuilder<HFTimeEventBuilder> *eventBuilder; // @synthesize eventBuilder=_eventBuilder;
 - (id)updateTrigger:(id)arg1;
 - (id)createTriggerWithName:(id)arg1 timeZone:(id)arg2 recurrences:(id)arg3;
 - (id)initWithEventBuilder:(id)arg1;

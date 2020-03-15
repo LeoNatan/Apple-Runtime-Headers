@@ -16,8 +16,8 @@
 }
 
 + (Class)_configurationClass;
-@property(retain, nonatomic) _UIFeedback<_UIFeedbackContinuousPlayable> *playingContinuousFeedback; // @synthesize playingContinuousFeedback=_playingContinuousFeedback;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIFeedback<_UIFeedbackContinuousPlayable> *playingContinuousFeedback; // @synthesize playingContinuousFeedback=_playingContinuousFeedback;
 - (id)_stats_key;
 - (void)deactivate;
 - (void)activateWithInitialValue:(double)arg1 completionBlock:(CDUnknownBlockType)arg2;

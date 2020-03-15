@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CAShapeLayer *_actionsMaskLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *actionsMaskLayer; // @synthesize actionsMaskLayer=_actionsMaskLayer;
 @property(nonatomic) __weak CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool masksToAvatar;
 - (void)layoutSubviews;
 

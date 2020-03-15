@@ -35,6 +35,7 @@
     BOOL _requiresAuthorization;
     BOOL _parentGroupContainsDiscoverableLeader;
     BOOL _volumeControlAvailable;
+    BOOL _supportsHAP;
     unsigned int _deviceType;
     unsigned int _deviceSubtype;
     float _batteryLevel;
@@ -58,7 +59,9 @@
 
 + (id)localDeviceLocalizedName;
 + (id)localDeviceUID;
+- (void).cxx_destruct;
 @property(nonatomic) __weak MRAVEndpoint *endpoint; // @synthesize endpoint=_endpoint;
+@property(readonly, nonatomic) BOOL supportsHAP; // @synthesize supportsHAP=_supportsHAP;
 @property(readonly, nonatomic) NSArray *availableBluetoothListeningModes; // @synthesize availableBluetoothListeningModes=_availableBluetoothListeningModes;
 @property(readonly, nonatomic) NSString *currentBluetoothListeningMode; // @synthesize currentBluetoothListeningMode=_currentBluetoothListeningMode;
 @property(readonly, nonatomic) NSString *bluetoothID; // @synthesize bluetoothID=_bluetoothID;
@@ -102,7 +105,6 @@
 @property(readonly, nonatomic) NSString *modelID; // @synthesize modelID=_modelID;
 @property(readonly, nonatomic) NSString *uid; // @synthesize uid=_uid;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *debugName;
 @property(readonly, nonatomic) BOOL isPersonalRoute;
 @property(readonly, nonatomic) unsigned int volumeCapabilities;

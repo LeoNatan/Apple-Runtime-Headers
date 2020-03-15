@@ -15,10 +15,10 @@
     CSSearchConnection *_savedConnection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSSearchConnection *savedConnection; // @synthesize savedConnection=_savedConnection;
 @property(retain, nonatomic) NSString *resolvedIndexPath; // @synthesize resolvedIndexPath=_resolvedIndexPath;
 @property(retain, nonatomic) NSString *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (void)start;
 - (id)connection;
 - (id)initWithPath:(id)arg1 queryString:(id)arg2 context:(id)arg3 attributes:(id)arg4;

@@ -14,8 +14,8 @@
 }
 
 + (id)relevanceSimulatorID;
-@property(readonly, nonatomic) NSString *bulletinSectionIdentifier; // @synthesize bulletinSectionIdentifier=_bulletinSectionIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *bulletinSectionIdentifier; // @synthesize bulletinSectionIdentifier=_bulletinSectionIdentifier;
 - (id)description;
 - (unsigned int)_hash;
 - (_Bool)isEqual:(id)arg1;

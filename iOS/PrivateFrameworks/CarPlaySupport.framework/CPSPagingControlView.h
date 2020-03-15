@@ -22,6 +22,7 @@
     NSNumberFormatter *_numberFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
 @property(retain, nonatomic) UILabel *positionLabel; // @synthesize positionLabel=_positionLabel;
 @property(nonatomic) __weak id <CPSPageControlling> pagingDelegate; // @synthesize pagingDelegate=_pagingDelegate;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UIButton *previousButton; // @synthesize previousButton=_previousButton;
 @property(nonatomic) unsigned long long pageCount; // @synthesize pageCount=_pageCount;
 @property(nonatomic) unsigned long long pageIndex; // @synthesize pageIndex=_pageIndex;
-- (void).cxx_destruct;
 - (id)_linearFocusItems;
 - (void)_invokeDelegateForPageIndex:(unsigned long long)arg1;
 - (void)_handleNextButton:(id)arg1;

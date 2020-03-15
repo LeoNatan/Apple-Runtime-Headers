@@ -43,6 +43,7 @@
 }
 
 + (id)keysToObserve;
+- (void).cxx_destruct;
 @property BOOL isObserving; // @synthesize isObserving=_isObserving;
 @property BOOL apfsConvertible; // @synthesize apfsConvertible=_apfsConvertible;
 @property BOOL canSupportRecoveryPartition; // @synthesize canSupportRecoveryPartition=_canSupportRecoveryPartition;
@@ -73,7 +74,6 @@
 @property(retain) NSString *type; // @synthesize type=_type;
 @property(retain) NSString *role; // @synthesize role=_role;
 @property(retain) SKDisk *representedDisk; // @synthesize representedDisk=_representedDisk;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stopObserving;
 - (void)dealloc;

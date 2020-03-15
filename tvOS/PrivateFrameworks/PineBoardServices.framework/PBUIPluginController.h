@@ -16,10 +16,10 @@
 }
 
 + (void)pbUIPluginDidLoad;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic, getter=isListening) _Bool listening; // @synthesize listening=_listening;
 @property(readonly, nonatomic) id <PBUIPluginHost> pluginHost; // @synthesize pluginHost=_pluginHost;
-- (void).cxx_destruct;
 - (void)setNextAssistantRecognitionStrings:(id)arg1;
 - (void)setNextVoiceRecognitionAudioInputPaths:(id)arg1;
 - (void)stopSiriWithContext:(id)arg1;

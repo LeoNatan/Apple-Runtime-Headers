@@ -18,10 +18,10 @@
     CDUnknownBlockType _onWindowDidClose;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onWindowDidClose; // @synthesize onWindowDidClose=_onWindowDidClose;
 @property(nonatomic) BOOL willSave; // @synthesize willSave=_willSave;
 @property(readonly, nonatomic) PXSModuleController *rootModuleController; // @synthesize rootModuleController=_rootModuleController;
-- (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (void)_save;

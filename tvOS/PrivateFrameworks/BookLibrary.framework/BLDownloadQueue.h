@@ -22,11 +22,11 @@
 
 + (void)cancelAllActiveDownloads;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *currentAccountNumber; // @synthesize currentAccountNumber=_currentAccountNumber;
 @property(retain, nonatomic) NSMutableDictionary *activeDownloads; // @synthesize activeDownloads=_activeDownloads;
 @property(retain, nonatomic) BLServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (id)_purchaseResponseFromDictionary:(id)arg1;
 - (void)_purchaseFailed:(id)arg1;
 - (void)_purchaseSucceeded:(id)arg1;

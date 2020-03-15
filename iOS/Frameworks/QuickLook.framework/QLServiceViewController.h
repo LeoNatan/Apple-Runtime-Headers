@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_getServiceWithUUID:(id)arg1;
 + (id)_serviceViewControllers;
-@property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+@property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void)_registerServiceViewController;
 - (void)configureAsAccessoryViewContainerForPreviewCollection:(id)arg1;
 - (void)invalidateService;

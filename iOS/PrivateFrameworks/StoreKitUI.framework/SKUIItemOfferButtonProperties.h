@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     double _alpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool restores; // @synthesize restores=_restores;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 @property(nonatomic) _Bool cancelRecognizer; // @synthesize cancelRecognizer=_cancelRecognizer;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(retain, nonatomic) UIColor *borderBackgroundColor; // @synthesize borderBackgroundColor=_borderBackgroundColor;
 @property(nonatomic) _Bool hasBorderView; // @synthesize hasBorderView=_hasBorderView;
-- (void).cxx_destruct;
 
 @end
 

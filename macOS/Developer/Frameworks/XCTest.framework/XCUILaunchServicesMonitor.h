@@ -20,11 +20,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) id <XCUILaunchServicesFramework> launchServicesFramework; // @synthesize launchServicesFramework=_launchServicesFramework;
 @property void *notificationID; // @synthesize notificationID=_notificationID;
 @property __weak id <XCUIApplicationPlatformServicesProviderDelegate> platformApplicationServicesProviderDelegate; // @synthesize platformApplicationServicesProviderDelegate;
-- (void).cxx_destruct;
 - (void)launchApplicationWithPath:(id)arg1 bundleID:(id)arg2 arguments:(id)arg3 environment:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)terminateApplicationWithBundleID:(id)arg1 pid:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestApplicationSpecifierForPID:(int)arg1 reply:(CDUnknownBlockType)arg2;

@@ -13,10 +13,10 @@ __attribute__((visibility("hidden")))
     function_ce22cfb2 _canModifyGetter;
 }
 
-@property(nonatomic) function_ce22cfb2 canModifyGetter; // @synthesize canModifyGetter=_canModifyGetter;
-@property(nonatomic) function_9c771ac6 valueApplicator; // @synthesize valueApplicator=_valueApplicator;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) function_ce22cfb2 canModifyGetter; // @synthesize canModifyGetter=_canModifyGetter;
+@property(nonatomic) function_9c771ac6 valueApplicator; // @synthesize valueApplicator=_valueApplicator;
 - (_Bool)canModifyNodes:(const struct TFENodeVector *)arg1;
 - (int)applyValue:(id)arg1 toNodes:(const struct TFENodeVector *)arg2;
 

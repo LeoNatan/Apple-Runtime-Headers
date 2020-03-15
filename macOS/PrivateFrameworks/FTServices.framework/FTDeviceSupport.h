@@ -23,6 +23,7 @@
     BOOL _supportsMMS;
     BOOL _mmsConfigured;
     long long _supportsApplePayState;
+    long long _supportsKeySharingState;
     BOOL _supportsHandoff;
     BOOL _supportsTethering;
     BOOL _supportsFT;
@@ -46,6 +47,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL commCenterDead; // @synthesize commCenterDead=_commCenterDead;
 @property(readonly, nonatomic) BOOL mmsConfigured; // @synthesize mmsConfigured=_mmsConfigured;
 @property(readonly, nonatomic) BOOL supportsMMS; // @synthesize supportsMMS=_supportsMMS;
@@ -58,11 +60,11 @@
 @property(readonly, nonatomic) BOOL supportsTethering; // @synthesize supportsTethering=_supportsTethering;
 @property(readonly, nonatomic) BOOL supportsHandoff; // @synthesize supportsHandoff=_supportsHandoff;
 @property(readonly, nonatomic) BOOL isGreenTea; // @synthesize isGreenTea=_isGreenTea;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsFunCam;
 @property(readonly, nonatomic) BOOL lowRAMDevice;
 - (int)cpuFamily;
 @property(readonly, nonatomic) BOOL slowCPUDevice;
+@property(readonly, nonatomic) BOOL supportsKeySharing;
 @property(readonly, nonatomic) BOOL supportsApplePay;
 @property(readonly, nonatomic) BOOL isInMultiUserMode;
 @property(readonly, nonatomic) BOOL nonWifiCallingAvailable;

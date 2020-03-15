@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 
 + (id)defaultAnotation;
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *viewAddedBlock; // @synthesize viewAddedBlock=_viewAddedBlock;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
-- (void).cxx_destruct;
 - (void)notifyWhenIsVisibleWithBlock:(CDUnknownBlockType)arg1;
 - (void)didMoveToSuperview;
 - (void)setPlaneImage:(id)arg1;

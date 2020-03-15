@@ -9,7 +9,7 @@
 #import <Rapport/NSSecureCoding-Protocol.h>
 #import <Rapport/RPMessageable-Protocol.h>
 
-@class CUBonjourAdvertiser, CUBonjourBrowser, CUBonjourDevice, CUCoalescer, CUTCPServer, CUWiFiManager, NSData, NSMutableArray, NSString, NSURL, RPConnection, RPFileTransferProgress, RPIdentity;
+@class CUBonjourAdvertiser, CUBonjourBrowser, CUBonjourDevice, CUCoalescer, CUTCPServer, CUWiFiManager, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL, RPConnection, RPFileTransferProgress, RPIdentity;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface RPFileTransferSession : NSObject <NSSecureCoding, RPMessageable>
@@ -20,7 +20,7 @@
     CUCoalescer *_bonjourCoalescer;
     CUBonjourDevice *_bonjourDevice;
     unsigned int _cnxIDLast;
-    struct NSMutableSet *_connections;
+    NSMutableSet *_connections;
     RPConnection *_controlCnx;
     NSObject<OS_dispatch_source> *_controlRetryTimer;
     int _controlState;
@@ -31,23 +31,23 @@
     _Bool _lockedInterface;
     RPIdentity *_peerIdentity;
     _Bool _peerInfraWiFiDisabled;
-    struct NSMutableDictionary *_registeredEvents;
-    struct NSMutableDictionary *_registeredRequests;
+    NSMutableDictionary *_registeredEvents;
+    NSMutableDictionary *_registeredRequests;
     RPIdentity *_selfIdentity;
     CUTCPServer *_tcpServer;
     struct LogCategory *_ucat;
     CUWiFiManager *_wifiManager;
-    struct NSMutableSet *_addedItems;
+    NSMutableSet *_addedItems;
     _Bool _compressionEnabled;
     unsigned long long _fileIDLastReceive;
     unsigned long long _fileIDLastSend;
     NSMutableArray *_ioQueues;
     NSString *_receiveFileParentPath;
     unsigned long long _taskIDLast;
-    struct NSMutableDictionary *_smallFilesReceiveTasks;
-    struct NSMutableSet *_smallFilesSendTasks;
-    struct NSMutableDictionary *_largeFileReceiveTasks;
-    struct NSMutableSet *_largeFileSendTasks;
+    NSMutableDictionary *_smallFilesReceiveTasks;
+    NSMutableSet *_smallFilesSendTasks;
+    NSMutableDictionary *_largeFileReceiveTasks;
+    NSMutableSet *_largeFileSendTasks;
     unsigned int _fileWritesOutstanding;
     _Bool _prefCompress;
     unsigned int _prefLargeFileBufferBytes;
@@ -94,6 +94,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *selfSecretKey; // @synthesize selfSecretKey=_selfSecretKey;
 @property(copy, nonatomic) NSURL *temporaryDirectoryURL; // @synthesize temporaryDirectoryURL=_temporaryDirectoryURL;
 @property(copy, nonatomic) NSString *targetID; // @synthesize targetID=_targetID;
@@ -110,7 +111,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned long long debugFlags; // @synthesize debugFlags=_debugFlags;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (_Bool)_writeFD:(int)arg1 buffer:(const char *)arg2 size:(unsigned long long)arg3 error:(id *)arg4;
 - (_Bool)_readFD:(int)arg1 buffer:(char *)arg2 size:(unsigned long long)arg3 error:(id *)arg4;
 - (id)_readFD:(int)arg1 size:(unsigned long long)arg2 error:(id *)arg3;

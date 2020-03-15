@@ -34,6 +34,7 @@
     UINavigationController *_retainedNavigationController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _shouldInlineButtontray; // @synthesize _shouldInlineButtontray=__shouldInlineButtontray;
 @property(retain, nonatomic) UINavigationController *retainedNavigationController; // @synthesize retainedNavigationController=_retainedNavigationController;
 @property(retain, nonatomic) OBNavigationBarDisplayState *cachedBarState; // @synthesize cachedBarState=_cachedBarState;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) OBButtonTray *buttonTray; // @synthesize buttonTray=_buttonTray;
 @property(retain, nonatomic) OBContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) OBHeaderView *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (void)_scrollViewDidLayoutSubviews:(id)arg1;
 - (void)restoreNavigationBarAppearance;
 - (void)setCurrentNavigationBarDisplayState:(id)arg1;

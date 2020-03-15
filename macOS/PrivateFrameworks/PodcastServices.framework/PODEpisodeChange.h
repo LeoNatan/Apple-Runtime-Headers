@@ -21,8 +21,8 @@
 + (id)updateWithPlayMetadata:(id)arg1;
 + (id)updateWithEpisodeEntityData:(id)arg1;
 + (id)insertWithEpisodeEntityData:(id)arg1;
-@property(retain, nonatomic) PODEpisodePlayMetadata *playMetadata; // @synthesize playMetadata=_playMetadata;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PODEpisodePlayMetadata *playMetadata; // @synthesize playMetadata=_playMetadata;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_episodePlayMetadata;

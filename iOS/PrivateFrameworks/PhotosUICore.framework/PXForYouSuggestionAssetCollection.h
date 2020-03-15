@@ -30,6 +30,7 @@
     long long _px_highlightKind;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long px_highlightKind; // @synthesize px_highlightKind=_px_highlightKind;
 @property(readonly, nonatomic) unsigned short px_highlightEnrichmentState; // @synthesize px_highlightEnrichmentState=_px_highlightEnrichmentState;
 @property(readonly, nonatomic) unsigned long long estimatedAssetCount; // @synthesize estimatedAssetCount=_estimatedAssetCount;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) NSString *localizedSmartDescription; // @synthesize localizedSmartDescription=_localizedSmartDescription;
 @property(readonly, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(readonly, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
-- (void).cxx_destruct;
 - (id)localizedDateDescriptionWithOptions:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;

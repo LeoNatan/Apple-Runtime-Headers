@@ -16,9 +16,9 @@
     RLMArray *__rlmArray;
 }
 
-@property(retain, nonatomic) RLMArray *_rlmArray; // @synthesize _rlmArray=__rlmArray;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RLMArray *_rlmArray; // @synthesize _rlmArray=__rlmArray;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void *)arg4;
 - (id)objectsAtIndexes:(id)arg1;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;

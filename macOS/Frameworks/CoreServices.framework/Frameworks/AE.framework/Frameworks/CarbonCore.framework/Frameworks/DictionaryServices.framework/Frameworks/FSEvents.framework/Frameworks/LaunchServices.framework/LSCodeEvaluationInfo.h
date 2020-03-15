@@ -8,10 +8,11 @@
 
 #import <LaunchServices/NSSecureCoding-Protocol.h>
 
-@class NSString, NSURL, NSUUID;
+@class NSDate, NSString, NSURL, NSUUID;
 
 @interface LSCodeEvaluationInfo : NSObject <NSSecureCoding>
 {
+    BOOL _notarized;
     unsigned int _uid;
     NSUUID *_identifier;
     NSURL *_url;
@@ -26,13 +27,17 @@
     NSString *_teamID;
     NSString *_processTeamID;
     NSString *_responsibleTeamID;
+    NSDate *_notarizationDate;
     long long _totalUnits;
     long long _completedUnits;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long completedUnits; // @synthesize completedUnits=_completedUnits;
 @property long long totalUnits; // @synthesize totalUnits=_totalUnits;
+@property(copy) NSDate *notarizationDate; // @synthesize notarizationDate=_notarizationDate;
+@property(getter=isNotarized) BOOL notarized; // @synthesize notarized=_notarized;
 @property(copy) NSString *responsibleTeamID; // @synthesize responsibleTeamID=_responsibleTeamID;
 @property(copy) NSString *processTeamID; // @synthesize processTeamID=_processTeamID;
 @property(copy) NSString *teamID; // @synthesize teamID=_teamID;
@@ -47,7 +52,6 @@
 @property unsigned int uid; // @synthesize uid=_uid;
 @property(copy) NSURL *url; // @synthesize url=_url;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(copy) NSURL *responsibleBundleURL;
 @property(readonly) BOOL isDeterminate;
 - (BOOL)isEqual:(id)arg1;

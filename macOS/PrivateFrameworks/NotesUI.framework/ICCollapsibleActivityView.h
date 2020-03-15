@@ -13,8 +13,8 @@
     NSProgressIndicator *_activityIndicator;
 }
 
-@property(retain, nonatomic) NSProgressIndicator *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSProgressIndicator *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(readonly, nonatomic) BOOL isAnimating;
 - (void)performSetup;
 - (void)setCollapsed:(BOOL)arg1;

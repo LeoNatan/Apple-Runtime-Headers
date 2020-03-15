@@ -18,10 +18,10 @@
     NSMutableDictionary *_timestamps;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *timestamps; // @synthesize timestamps=_timestamps;
 @property(readonly, nonatomic) id <CNTimeProvider> timeProvider; // @synthesize timeProvider=_timeProvider;
 @property(readonly, nonatomic) double ttl; // @synthesize ttl=_ttl;
-- (void).cxx_destruct;
 - (_Bool)shouldEvictKey:(id)arg1;
 - (void)willAccessKey:(id)arg1;
 - (void)willUpdateCacheBy:(unsigned long long)arg1 forKey:(id)arg2 keysToEvict:(id *)arg3;

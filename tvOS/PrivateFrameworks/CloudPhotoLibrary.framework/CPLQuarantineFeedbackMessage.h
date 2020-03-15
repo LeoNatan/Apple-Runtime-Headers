@@ -15,9 +15,9 @@
 }
 
 + (id)feedbackType;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class recordClass; // @synthesize recordClass=_recordClass;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)serverMessage;
 - (id)initWithClass:(Class)arg1 reason:(id)arg2;
 

@@ -11,9 +11,9 @@
     shared_ptr_ae8b808b _ctx;
 }
 
-@property(readonly) shared_ptr_ae8b808b ctx; // @synthesize ctx=_ctx;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) shared_ptr_ae8b808b ctx; // @synthesize ctx=_ctx;
 - (void)set_priority:(_Bool)arg1 low_priority_max_ms_per_command_buffer:(float)arg2 gpu_priority:(unsigned int)arg3;
 @property(readonly) int platform;
 - (id)initWithNetworkContext:(id)arg1;

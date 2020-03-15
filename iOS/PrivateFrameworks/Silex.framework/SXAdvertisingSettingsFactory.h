@@ -17,9 +17,9 @@
     id <SXAdControllerProvider> _adControllerProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXAdControllerProvider> adControllerProvider; // @synthesize adControllerProvider=_adControllerProvider;
 @property(readonly, nonatomic) id <SXDocumentProviding> documentProvider; // @synthesize documentProvider=_documentProvider;
-- (void).cxx_destruct;
 - (id)createAdvertisingSettingsWithDOMObjectProvider:(id)arg1;
 - (id)initWithDocumentProvider:(id)arg1 adControllerProvider:(id)arg2;
 

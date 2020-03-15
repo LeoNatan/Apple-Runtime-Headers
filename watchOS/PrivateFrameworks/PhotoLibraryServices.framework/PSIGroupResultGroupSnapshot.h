@@ -23,6 +23,7 @@
     unsigned long long _owningGroupId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long owningGroupId; // @synthesize owningGroupId=_owningGroupId;
 @property(readonly, nonatomic) unsigned long long groupId; // @synthesize groupId=_groupId;
 @property(readonly, nonatomic) short category; // @synthesize category=_category;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSString *contentString; // @synthesize contentString=_contentString;
 @property(readonly, nonatomic) NSArray *matchRanges; // @synthesize matchRanges=_matchRanges;
 @property(readonly, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
-- (void).cxx_destruct;
 - (_Bool)isDateFilterFromImplicitToken;
 - (_Bool)isDateFilterPartiallyFromFullSearchText;
 - (_Bool)isDateFilterFromFullSearchText;

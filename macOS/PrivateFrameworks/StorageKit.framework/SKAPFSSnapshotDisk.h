@@ -13,8 +13,8 @@
     NSString *_snapshotName;
 }
 
-@property(retain) NSString *snapshotName; // @synthesize snapshotName=_snapshotName;
 - (void).cxx_destruct;
+@property(retain) NSString *snapshotName; // @synthesize snapshotName=_snapshotName;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

@@ -16,11 +16,11 @@
     NSData *_viewElementID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *viewElementID; // @synthesize viewElementID=_viewElementID;
 @property(retain, nonatomic) SISchemaViewContainer *viewContainer; // @synthesize viewContainer=_viewContainer;
 @property(copy, nonatomic) NSString *urlScheme; // @synthesize urlScheme=_urlScheme;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

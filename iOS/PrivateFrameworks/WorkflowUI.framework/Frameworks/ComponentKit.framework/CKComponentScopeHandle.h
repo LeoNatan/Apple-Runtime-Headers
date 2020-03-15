@@ -23,10 +23,10 @@
 }
 
 + (id)handleForComponent:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int globalIdentifier; // @synthesize globalIdentifier=_globalIdentifier;
 @property(readonly, nonatomic) id state; // @synthesize state=_state;
 @property(readonly, nonatomic) Class componentClass; // @synthesize componentClass=_componentClass;
-- (void).cxx_destruct;
 - (id)responder;
 - (void)resolve;
 - (_Bool)acquireFromComponent:(id)arg1;

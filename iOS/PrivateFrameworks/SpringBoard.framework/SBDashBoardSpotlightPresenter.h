@@ -21,8 +21,8 @@
     CSPageViewController *_todayPageViewController;
 }
 
-@property(nonatomic) __weak CSPageViewController *todayPageViewController; // @synthesize todayPageViewController=_todayPageViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CSPageViewController *todayPageViewController; // @synthesize todayPageViewController=_todayPageViewController;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
 - (void)dismissSearchView;
 - (id)createSpotlightLegiblitySettingsProvider;

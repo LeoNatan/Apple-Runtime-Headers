@@ -17,12 +17,12 @@
     NSArray *_pinnedConstraintGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pinnedConstraintGroup; // @synthesize pinnedConstraintGroup=_pinnedConstraintGroup;
 @property(retain, nonatomic) NSArray *floatingConstraintGroup; // @synthesize floatingConstraintGroup=_floatingConstraintGroup;
 @property(nonatomic) double contentViewMaxHeight; // @synthesize contentViewMaxHeight=_contentViewMaxHeight;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewOptionalHeightAnchor; // @synthesize contentViewOptionalHeightAnchor=_contentViewOptionalHeightAnchor;
 @property(retain, nonatomic) UIView *centerContentView; // @synthesize centerContentView=_centerContentView;
-- (void).cxx_destruct;
 - (void)recalculateLayoutForTraitCollectionChange;
 - (void)traitCollectionDidChange:(id)arg1;
 - (double)_availablePreScrollContentHeight;

@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     _UIBackdropView *_backdropView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) CNComposeRecipientTextView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 conversation:(id)arg2;
 - (void)dealloc;

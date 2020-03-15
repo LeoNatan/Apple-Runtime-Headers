@@ -6,34 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class ArouetRecognitionManager, EAGLContext, NSString;
+@class ArouetRecognitionManager, NSString;
+@protocol MTLCommandQueue, MTLDevice, MTLRenderPipelineState;
 
 @interface ArouetPrewarmer : NSObject
 {
     ArouetRecognitionManager *_recognitionManager;
-    EAGLContext *_eaglContext;
-    unsigned int _updateProg;
-    unsigned int _inputProg;
-    _Bool _canUseGL;
+    id <MTLDevice> _metalDevice;
+    id <MTLCommandQueue> _metalCommandQueue;
+    id <MTLRenderPipelineState> _updatePipelineState;
+    id <MTLRenderPipelineState> _inputPipelineState;
     NSString *_language;
     NSString *_textContentType;
 }
 
-+ (id)_glPrewarmingQueue;
++ (id)_metalPrewarmingQueue;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
-- (void)handleUIApplicationDidEnterBackgroundNotification:(id)arg1;
-- (void)handleUIApplicationWillEnterForegroundNotification:(id)arg1;
-- (void)_loadGLContextIfNeededCheckBackgroundState:(_Bool)arg1;
+- (void)dealloc;
+- (void)_loadMTLQueueIfNeeded;
 - (void)_loadRecognitionManagerIfNeeded;
 - (void)prewarmIfNeeded;
-- (void)_schedulePrewarmGLIfNeeded;
+- (void)prewarmMetal;
+- (void)postcoolMetal;
 - (void)prewarmRecognizer;
 - (void)prewarm;
 - (id)initWithLanguage:(id)arg1;
 - (id)initWithLanguage:(id)arg1 textContentType:(id)arg2;
-- (void)getPrewarmedGLContext:(CDUnknownBlockType)arg1;
+- (void)getPrewarmedMTLQueue:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) ArouetRecognitionManager *recognitionManager;
 
 @end

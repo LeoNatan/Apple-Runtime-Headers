@@ -21,12 +21,12 @@
     struct UIEdgeInsets _textContainerInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) struct UIEdgeInsets textContainerInset; // @synthesize textContainerInset=_textContainerInset;
 @property(retain, nonatomic) NSTextContainer *textContainer; // @synthesize textContainer=_textContainer;
 @property(nonatomic) __weak id <WFTextAttachmentInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)handleTextTap:(id)arg1;

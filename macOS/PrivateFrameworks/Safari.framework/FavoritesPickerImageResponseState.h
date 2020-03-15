@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSURL *_originalRequestURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *originalRequestURL; // @synthesize originalRequestURL=_originalRequestURL;
 @property(retain, nonatomic) WBSTemplateIconResponse *templateIconResponse; // @synthesize templateIconResponse=_templateIconResponse;
 @property(retain, nonatomic) WBSTouchIconResponse *touchIconResponse; // @synthesize touchIconResponse=_touchIconResponse;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *deferredUpdateDispatchSource; // @synthesize deferredUpdateDispatchSource=_deferredUpdateDispatchSource;
 @property(nonatomic) long long deferredUpdateImageSource; // @synthesize deferredUpdateImageSource=_deferredUpdateImageSource;
 @property(nonatomic) BOOL atLeastOneResponseServed; // @synthesize atLeastOneResponseServed=_atLeastOneResponseServed;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *allRequestTokens;
 
 @end

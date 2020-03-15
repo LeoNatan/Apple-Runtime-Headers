@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIEdgeInsets tomatoMeterMargin; // @synthesize tomatoMeterMargin=_tomatoMeterMargin;
 @property(readonly, nonatomic) struct UIEdgeInsets commonSenseMargin; // @synthesize commonSenseMargin=_commonSenseMargin;
 @property(readonly, nonatomic) TVImageLayout *badgeImageLayout; // @synthesize badgeImageLayout=_badgeImageLayout;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VUITextLayout *rentalExpirationTextLayout; // @synthesize rentalExpirationTextLayout=_rentalExpirationTextLayout;
 @property(readonly, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned long long)arg1;
 - (id)init;
 

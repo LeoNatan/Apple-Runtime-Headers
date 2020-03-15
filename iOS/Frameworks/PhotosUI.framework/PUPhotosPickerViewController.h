@@ -23,11 +23,11 @@
     PHPhotosPickerOptions *_photosPickerOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHPhotosPickerOptions *photosPickerOptions; // @synthesize photosPickerOptions=_photosPickerOptions;
 @property(retain, nonatomic, setter=_setTabbedLibraryViewController:) PUTabbedLibraryViewController *_tabbedLibraryViewController; // @synthesize _tabbedLibraryViewController=__tabbedLibraryViewController;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) int currentContentMode; // @synthesize currentContentMode=_currentContentMode;
-- (void).cxx_destruct;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (void)sessionInfoStatusDidChange:(id)arg1;
 - (void)assetContainerListDidChange:(id)arg1;
@@ -37,10 +37,10 @@
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (void)dealloc;
-- (id)_initWithSpec:(id)arg1 targetAlbum:(struct NSObject *)arg2 orTargetAlbumName:(id)arg3 options:(id)arg4;
+- (id)_initWithSpec:(id)arg1 targetAlbum:(id)arg2 orTargetAlbumName:(id)arg3 options:(id)arg4;
 - (id)initWithSpec:(id)arg1 targetAlbumName:(id)arg2 options:(id)arg3;
 - (id)initWithSpec:(id)arg1 targetAlbumName:(id)arg2;
-- (id)initWithSpec:(id)arg1 targetAlbum:(struct NSObject *)arg2;
+- (id)initWithSpec:(id)arg1 targetAlbum:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

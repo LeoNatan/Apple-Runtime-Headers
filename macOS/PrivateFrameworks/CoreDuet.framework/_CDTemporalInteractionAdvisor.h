@@ -17,11 +17,11 @@
     NSMutableDictionary *_consumerToModelMap;
 }
 
+- (void).cxx_destruct;
 @property int settingsNotifyToken; // @synthesize settingsNotifyToken=_settingsNotifyToken;
 @property(retain, nonatomic) NSMutableDictionary *consumerToModelMap; // @synthesize consumerToModelMap=_consumerToModelMap;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dataQueue; // @synthesize dataQueue=_dataQueue;
 @property(retain) _CDInteractionStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (id)rankContacts:(id)arg1 usingSettings:(id)arg2;
 - (id)adviseInteractionsForDate:(id)arg1 usingSettings:(id)arg2;
 - (id)rankerForDate:(id)arg1 settings:(id)arg2;

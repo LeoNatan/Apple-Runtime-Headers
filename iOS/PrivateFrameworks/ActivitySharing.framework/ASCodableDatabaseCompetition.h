@@ -18,10 +18,10 @@
     CDStruct_f953fb60 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASCodableCloudKitCompetition *competition; // @synthesize competition=_competition;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSData *friendUUID; // @synthesize friendUUID=_friendUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

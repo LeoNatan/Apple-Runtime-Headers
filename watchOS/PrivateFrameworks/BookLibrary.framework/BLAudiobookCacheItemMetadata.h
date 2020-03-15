@@ -23,6 +23,7 @@
 }
 
 + (id)metaDataForMediaItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *monitorSource; // @synthesize monitorSource=_monitorSource;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) BLHLSPlaylist *mediaPlaylist; // @synthesize mediaPlaylist=_mediaPlaylist;
@@ -30,7 +31,6 @@
 @property(nonatomic) unsigned int startingIndex; // @synthesize startingIndex=_startingIndex;
 @property(retain, nonatomic) NSMutableDictionary *metaDataDictionary; // @synthesize metaDataDictionary=_metaDataDictionary;
 @property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (void)_load;
 - (void)_notifyObservers;
 - (void)_stopMonitoringFileChanges;

@@ -15,8 +15,8 @@
     NSIndexPath *_currentFocusedIndexPath;
 }
 
-@property(retain, nonatomic) NSIndexPath *currentFocusedIndexPath; // @synthesize currentFocusedIndexPath=_currentFocusedIndexPath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSIndexPath *currentFocusedIndexPath; // @synthesize currentFocusedIndexPath=_currentFocusedIndexPath;
 - (_Bool)tableView:(id)arg1 shouldHandleLongPressForItemAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didReceiveLongPressForItemAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didReceivePhysicalPlayForItemAtIndexPath:(id)arg2;

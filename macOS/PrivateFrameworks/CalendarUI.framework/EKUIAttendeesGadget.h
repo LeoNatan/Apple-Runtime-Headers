@@ -43,6 +43,7 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *availabilityRequestsQueue; // @synthesize availabilityRequestsQueue=_availabilityRequestsQueue;
 @property(copy) CDUnknownBlockType suggestionsUpdatedBlock; // @synthesize suggestionsUpdatedBlock=_suggestionsUpdatedBlock;
 @property(readonly, nonatomic) CUIKPhoneNumberDescriptionGenerator *phoneNumberDescriptionGenerator; // @synthesize phoneNumberDescriptionGenerator=_phoneNumberDescriptionGenerator;
@@ -67,7 +68,6 @@
 @property(retain) EKUITokenField *attendeesField; // @synthesize attendeesField=_attendeesField;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain) EKUIAttendeesControlContainer *controlContainer; // @synthesize controlContainer=_controlContainer;
-- (void).cxx_destruct;
 - (void)_inviteAttendeeAgain:(id)arg1;
 - (void)_commitAttendeesPreservingTokenSelection;
 - (void)_previewAttendee:(id)arg1;

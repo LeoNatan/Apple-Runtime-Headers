@@ -46,12 +46,12 @@
 }
 
 + (id)_mostCompatibleRecognizerFromConfigured:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *_dynamicFailureDependents; // @synthesize _dynamicFailureDependents;
 @property(readonly, nonatomic) NSMutableSet *_dynamicFailureRequirements; // @synthesize _dynamicFailureRequirements;
 @property(readonly, nonatomic) NSMutableSet *_failureDependents; // @synthesize _failureDependents;
 @property(readonly, nonatomic) NSMutableSet *_failureRequirements; // @synthesize _failureRequirements;
 @property SEL action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (struct CGPoint)locationInView:(id)arg1;
 - (BOOL)_affectedByGesture:(id)arg1;
 - (void)_invalidate;

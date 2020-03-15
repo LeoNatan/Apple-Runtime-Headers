@@ -8,7 +8,7 @@
 
 #import <Rapport/RPAuthenticatable-Protocol.h>
 
-@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSDictionary, NSError, NSString, NSUUID, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon;
+@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSString, NSUUID, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon;
 @protocol CUReadWriteRequestable, OS_dispatch_queue, OS_dispatch_source;
 
 @interface RPConnection : NSObject <RPAuthenticatable>
@@ -43,9 +43,9 @@
     id <CUReadWriteRequestable> _requestable;
     _Bool _receivingHeader;
     _Bool _readRequested;
-    struct NSMutableDictionary *_requests;
+    NSMutableDictionary *_requests;
     int _retryCount;
-    struct NSMutableArray *_sendArray;
+    NSMutableArray *_sendArray;
     _Bool _showPasswordCalled;
     struct LogCategory *_ucat;
     unsigned int _xidLast;
@@ -107,6 +107,7 @@
     unsigned long long _statusFlags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(retain, nonatomic) CUTCPConnection *tcpConnection; // @synthesize tcpConnection=_tcpConnection;
 @property(readonly, nonatomic) unsigned long long statusFlags; // @synthesize statusFlags=_statusFlags;
@@ -161,7 +162,6 @@
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(nonatomic) unsigned int pairVerifyFlags; // @synthesize pairVerifyFlags=_pairVerifyFlags;
 @property(nonatomic) unsigned int pairSetupFlags; // @synthesize pairSetupFlags=_pairSetupFlags;
-- (void).cxx_destruct;
 - (id)_systeminfo;
 - (void)_receivedSystemInfo:(id)arg1 xid:(id)arg2;
 - (void)_idleTimerFired;

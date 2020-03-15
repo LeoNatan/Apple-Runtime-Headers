@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIView *_dataContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *dataContentView; // @synthesize dataContentView=_dataContentView;
 @property(retain, nonatomic) VUIEpisodeLockupFloatingContentView *floatingContentView; // @synthesize floatingContentView=_floatingContentView;
 @property(retain, nonatomic) _TVAnimatedLabel *animatedTitleLabel; // @synthesize animatedTitleLabel=_animatedTitleLabel;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUILabel *episodeLabel; // @synthesize episodeLabel=_episodeLabel;
 @property(retain, nonatomic) VUITVEpisodeInformationLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)prepareForCellReuse;
 - (_Bool)canBecomeFocused;
 - (void)traitCollectionDidChange:(id)arg1;

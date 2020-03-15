@@ -18,9 +18,9 @@
 + (id)parametersFromFile:(id)arg1;
 + (id)algorithmParametersForKey:(id)arg1;
 + (id)algorithmParametersFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *parameterDictionary; // @synthesize parameterDictionary=_parameterDictionary;
 @property(readonly, copy, nonatomic) NSString *serverAlgorithmString; // @synthesize serverAlgorithmString=_serverAlgorithmString;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;

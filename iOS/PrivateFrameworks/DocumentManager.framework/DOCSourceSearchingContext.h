@@ -11,8 +11,8 @@
     id _monitoringContext;
 }
 
-@property(retain) id monitoringContext; // @synthesize monitoringContext=_monitoringContext;
 - (void).cxx_destruct;
+@property(retain) id monitoringContext; // @synthesize monitoringContext=_monitoringContext;
 - (id)initWithMonitoringContext:(id)arg1;
 
 @end

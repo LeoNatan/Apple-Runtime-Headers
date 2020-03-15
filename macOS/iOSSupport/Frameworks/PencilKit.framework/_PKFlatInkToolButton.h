@@ -25,6 +25,7 @@
 
 + (struct CGSize)_toolBaseImageSizeForIdentifier:(id)arg1 sizeState:(unsigned long long)arg2;
 + (id)buttonWithIdentifier:(id)arg1 color:(id)arg2 sizeState:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PKInkToolOpacityLabel *opacityLabel; // @synthesize opacityLabel=_opacityLabel;
 @property(retain, nonatomic) UIImageView *nibOutlineImageView; // @synthesize nibOutlineImageView=_nibOutlineImageView;
 @property(retain, nonatomic) UIImageView *nibImageView; // @synthesize nibImageView=_nibImageView;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned long long sizeState; // @synthesize sizeState=_sizeState;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)imageNameForIdentifier:(id)arg1;
 - (id)nibStrokeImageName;
 - (id)identifiersWithoutNibImages;

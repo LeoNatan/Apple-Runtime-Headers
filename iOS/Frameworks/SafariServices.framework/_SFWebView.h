@@ -24,11 +24,11 @@
     struct UIEdgeInsets _hitTestInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *clippingView; // @synthesize clippingView=_clippingView;
 @property(nonatomic) __weak id <_SFWebViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long navigationGesturePolicy; // @synthesize navigationGesturePolicy=_navigationGesturePolicy;
 @property(nonatomic) struct UIEdgeInsets hitTestInsets; // @synthesize hitTestInsets=_hitTestInsets;
-- (void).cxx_destruct;
 - (void)safariKillWebContentProcessUIActivityKillWebProcess:(id)arg1;
 - (void)dismissDialogView:(id)arg1 withAdditionalAnimations:(CDUnknownBlockType)arg2 forDialogController:(id)arg3;
 - (void)presentDialogView:(id)arg1 withAdditionalAnimations:(CDUnknownBlockType)arg2 forDialogController:(id)arg3;

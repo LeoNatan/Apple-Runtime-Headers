@@ -24,10 +24,10 @@
     struct CGSize _videoDialSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize videoDialSize; // @synthesize videoDialSize=_videoDialSize;
 @property(retain, nonatomic) NTKColorCircularUtilitarianFaceViewComplicationFactory *faceViewComplicationFactory; // @synthesize faceViewComplicationFactory=_faceViewComplicationFactory;
 @property(retain, nonatomic) NTKVideoPlayerView *videoPlayerView; // @synthesize videoPlayerView=_videoPlayerView;
-- (void).cxx_destruct;
 - (void)tritium_fakeActiveStateWithPosterImage:(id)arg1;
 - (float)_complicationAlphaForEditMode:(int)arg1;
 - (float)_contentAlphaForEditMode:(int)arg1;

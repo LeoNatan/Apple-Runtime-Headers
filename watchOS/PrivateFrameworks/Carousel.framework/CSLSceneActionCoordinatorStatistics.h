@@ -18,12 +18,12 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) unsigned int failureType; // @synthesize failureType=_failureType;
 @property(nonatomic) _Bool failed; // @synthesize failed=_failed;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)setCPUStatistics:(id)arg1 forProcessType:(unsigned int)arg2;
 - (id)cpuStatisticsForProcessType:(unsigned int)arg1;
 - (id)init;

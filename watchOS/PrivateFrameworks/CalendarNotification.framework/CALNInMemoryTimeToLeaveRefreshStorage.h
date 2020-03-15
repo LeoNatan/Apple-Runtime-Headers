@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSMutableDictionary *refreshDateMap; // @synthesize refreshDateMap=_refreshDateMap;
-- (void).cxx_destruct;
 - (void)removeRefreshDates;
 - (void)removeRefreshDateWithIdentifier:(id)arg1;
 - (id)refreshDateWithIdentifier:(id)arg1;

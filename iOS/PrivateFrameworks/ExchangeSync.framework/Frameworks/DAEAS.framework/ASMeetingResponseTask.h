@@ -13,8 +13,8 @@
     NSArray *_responseItems;
 }
 
-@property(retain, nonatomic) NSArray *responseItems; // @synthesize responseItems=_responseItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *responseItems; // @synthesize responseItems=_responseItems;
 - (long long)taskStatusForExchangeStatus:(int)arg1;
 - (void)finishWithError:(id)arg1;
 - (_Bool)processContext:(id)arg1;

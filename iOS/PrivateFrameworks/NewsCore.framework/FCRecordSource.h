@@ -38,6 +38,7 @@
 + (id)canaryRecordName;
 + (_Bool)supportsDeletions;
 + (id)defaultCachePolicy;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *activeTreatmentID; // @synthesize activeTreatmentID=_activeTreatmentID;
 @property(readonly, nonatomic) NSString *experimentalizableFieldsPostfix; // @synthesize experimentalizableFieldsPostfix=_experimentalizableFieldsPostfix;
 @property(readonly, nonatomic) FCThreadSafeMutableDictionary *fetchErrorsByKey; // @synthesize fetchErrorsByKey=_fetchErrorsByKey;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) NSString *contentDirectory; // @synthesize contentDirectory=_contentDirectory;
 @property(readonly, nonatomic) FCCKContentDatabase *contentDatabase; // @synthesize contentDatabase=_contentDatabase;
 @property(retain, nonatomic) NFUnfairLock *initializationLock; // @synthesize initializationLock=_initializationLock;
-- (void).cxx_destruct;
 - (id)jsonEncodableObject;
 - (void)t_stopOverridingExperimentalizableFieldsPostfixAndTreatmentID;
 - (void)t_startOverridingExperimentalizableFieldsPostfix:(id)arg1 treatmentID:(id)arg2;
@@ -91,6 +91,7 @@
 @property(readonly, nonatomic) NSArray *localizableLanguageSpecificKeys;
 @property(readonly, nonatomic) NSArray *localizableExperimentalizableKeys;
 @property(readonly, nonatomic) NSArray *experimentalizableKeys;
+@property(readonly, nonatomic) NSArray *alwaysLocalizedKeys;
 @property(readonly, nonatomic) NSArray *localizableKeys;
 @property(readonly, nonatomic) NSArray *nonLocalizableKeys;
 - (id)keyValueRepresentationOfRecord:(id)arg1;

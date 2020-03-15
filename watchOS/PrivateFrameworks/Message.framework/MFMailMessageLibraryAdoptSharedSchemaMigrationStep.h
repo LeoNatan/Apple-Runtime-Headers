@@ -15,9 +15,9 @@
 }
 
 + (void)cleanUpAfterMigrationWithConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *protectedDatabaseName; // @synthesize protectedDatabaseName=_protectedDatabaseName;
 @property(retain, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (_Bool)_cleanupOldSchema;
 - (_Bool)_createIndexes;
 - (_Bool)_migrateMessages;

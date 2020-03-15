@@ -14,8 +14,8 @@
 }
 
 + (id)fetchRequest;
-@property(retain, nonatomic) PARCategory *usageCategory; // @synthesize usageCategory;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PARCategory *usageCategory; // @synthesize usageCategory;
 
 @end
 

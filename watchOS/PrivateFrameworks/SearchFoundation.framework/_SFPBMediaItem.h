@@ -26,6 +26,7 @@
     _SFPBImage *_contentAdvisoryImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBImage *contentAdvisoryImage; // @synthesize contentAdvisoryImage=_contentAdvisoryImage;
 @property(copy, nonatomic) NSString *contentAdvisory; // @synthesize contentAdvisory=_contentAdvisory;
 @property(copy, nonatomic) NSArray *buyOptions; // @synthesize buyOptions=_buyOptions;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) _SFPBImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(retain, nonatomic) _SFPBText *subtitleText; // @synthesize subtitleText=_subtitleText;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

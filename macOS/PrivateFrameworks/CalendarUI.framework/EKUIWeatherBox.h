@@ -13,8 +13,8 @@
     EKUIMapGadget *_gadget;
 }
 
-@property __weak EKUIMapGadget *gadget; // @synthesize gadget=_gadget;
 - (void).cxx_destruct;
+@property __weak EKUIMapGadget *gadget; // @synthesize gadget=_gadget;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

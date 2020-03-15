@@ -19,8 +19,8 @@
     BOOL _isMe;
 }
 
-@property unsigned long long resultType; // @synthesize resultType=_resultType;
 - (void).cxx_destruct;
+@property unsigned long long resultType; // @synthesize resultType=_resultType;
 - (id)pickerPropertyObjectsForAllRecords:(id)arg1;
 - (id)searchStringForAllRecords:(id)arg1;
 - (id)peoplePickerSubrowObjectBuilderForRecords:(id)arg1;

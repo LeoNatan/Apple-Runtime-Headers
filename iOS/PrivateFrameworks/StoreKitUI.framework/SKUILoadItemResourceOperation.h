@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SSVPlatformRequestOperation *_underlyingOperation;
 }
 
-@property __weak SSVPlatformRequestOperation *underlyingOperation; // @synthesize underlyingOperation=_underlyingOperation;
 - (void).cxx_destruct;
+@property __weak SSVPlatformRequestOperation *underlyingOperation; // @synthesize underlyingOperation=_underlyingOperation;
 - (void)cancel;
 - (void)main;
 - (id)initWithResourceRequest:(id)arg1;

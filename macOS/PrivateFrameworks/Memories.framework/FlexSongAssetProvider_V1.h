@@ -16,9 +16,9 @@
     NSString *_audioFileExtension;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *audioFileExtension; // @synthesize audioFileExtension=_audioFileExtension;
 @property(retain, nonatomic) NSString *rootFolderPath; // @synthesize rootFolderPath=_rootFolderPath;
-- (void).cxx_destruct;
 - (id)urlToAudioForSegment:(id)arg1;
 - (id)urlToAudioContainerForSegmentType:(unsigned long long)arg1;
 - (id)urlToRoot;

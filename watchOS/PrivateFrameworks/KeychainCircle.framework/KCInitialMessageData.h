@@ -15,8 +15,8 @@
     NSData *_prepareMessage;
 }
 
-@property(retain, nonatomic) NSData *prepareMessage; // @synthesize prepareMessage=_prepareMessage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *prepareMessage; // @synthesize prepareMessage=_prepareMessage;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

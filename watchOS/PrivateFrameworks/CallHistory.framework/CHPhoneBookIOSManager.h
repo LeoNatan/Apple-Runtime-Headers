@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)get;
-@property(retain, nonatomic) CNContactStore *fContactsStore; // @synthesize fContactsStore=_fContactsStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNContactStore *fContactsStore; // @synthesize fContactsStore=_fContactsStore;
 - (void)fetchAndCacheContactIdentifiersForCalls:(id)arg1;
 - (_Bool)isABContactASuggestion;
 - (id)getLocalizedCallerIdLabelForContact:(id)arg1 forCallerId:(id)arg2 withCallerIdIsEmail:(_Bool)arg3;

@@ -15,10 +15,10 @@
     UIColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL dashedLines; // @synthesize dashedLines=_dashedLines;
 @property(nonatomic) BOOL hasRoundedCorners; // @synthesize hasRoundedCorners=_hasRoundedCorners;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 
 @end
 

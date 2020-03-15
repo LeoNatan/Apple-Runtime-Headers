@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) CSLSUnblankingSynchronizer *unblankingSychronizer; // @synthesize unblankingSychronizer=_unblankingSychronizer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLSUnblankingSynchronizer *unblankingSychronizer; // @synthesize unblankingSychronizer=_unblankingSychronizer;
 - (void)unblankTimedOut:(unsigned int)arg1;
 - (void)prepareForUnblank:(unsigned int)arg1;
 - (void)readyForUnblank:(unsigned int)arg1;

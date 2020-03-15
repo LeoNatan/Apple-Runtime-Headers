@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) CATTaskProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CATTaskProgress *progress; // @synthesize progress=_progress;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTaskUUID:(id)arg1 progress:(id)arg2;

@@ -20,6 +20,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id forwardedAttendeeUUIDs; // @synthesize forwardedAttendeeUUIDs=_forwardedAttendeeUUIDs;
 @property(retain, nonatomic) id forwardedAttendees; // @synthesize forwardedAttendees=_forwardedAttendees;
 @property(nonatomic) int changeId; // @synthesize changeId=_changeId;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) id instanceId; // @synthesize instanceId=_instanceId;
 @property(retain, nonatomic) id serverId; // @synthesize serverId=_serverId;
 @property(nonatomic) unsigned long long itemChangeType; // @synthesize itemChangeType=_itemChangeType;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

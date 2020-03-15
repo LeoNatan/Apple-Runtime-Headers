@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) REMObjectID *listID; // @synthesize listID=_listID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REMObjectID *listID; // @synthesize listID=_listID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

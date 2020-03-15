@@ -24,6 +24,7 @@
 }
 
 + (id)customizeEventsListenerInterface;
+- (void).cxx_destruct;
 @property(retain) id <SMDPCustomizeProtocol> daemonProxy; // @synthesize daemonProxy=_daemonProxy;
 @property(retain) SMSystem_Client *customizeSystem; // @synthesize customizeSystem=_customizeSystem;
 @property(retain) NSXPCConnection *daemonConnection; // @synthesize daemonConnection=_daemonConnection;
@@ -31,7 +32,6 @@
 @property(retain) NSXPCInterface *daemonInterface; // @synthesize daemonInterface=_daemonInterface;
 @property(retain) NSString *pathingProgressMessage; // @synthesize pathingProgressMessage=_pathingProgressMessage;
 @property __weak id <SMCustomize_Client_Delegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)submitRequest:(id)arg1;
 - (void)cancelSizingForSystem:(id)arg1;

@@ -30,6 +30,7 @@
 }
 
 + (id)_sanitizeViewport:(id)arg1 context:(id)arg2 feedDescriptor:(id)arg3 configuration:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCFeedViewportDiff *resultDiff; // @synthesize resultDiff=_resultDiff;
 @property(retain, nonatomic) FCFeedViewport *resultViewport; // @synthesize resultViewport=_resultViewport;
 @property(retain, nonatomic) FCFeedViewport *sanitizedViewport; // @synthesize sanitizedViewport=_sanitizedViewport;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) FCFeedViewport *viewport; // @synthesize viewport=_viewport;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_fetchAssetsForInsertedGroup:(id)arg1 cachedOnly:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

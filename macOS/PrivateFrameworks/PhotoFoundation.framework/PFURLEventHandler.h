@@ -16,10 +16,10 @@
     long long _suspendCount;
 }
 
+- (void).cxx_destruct;
 @property long long suspendCount; // @synthesize suspendCount=_suspendCount;
 @property(retain) NSHashTable *urlHandlingSubsystems; // @synthesize urlHandlingSubsystems=_urlHandlingSubsystems;
 @property(retain) NSDate *applicationLaunchDate; // @synthesize applicationLaunchDate=_applicationLaunchDate;
-- (void).cxx_destruct;
 - (BOOL)didLaunchRecently;
 - (double)timeIntervalSinceLaunch;
 - (void)retryPendingURLs;

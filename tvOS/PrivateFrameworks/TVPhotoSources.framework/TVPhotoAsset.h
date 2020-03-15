@@ -22,11 +22,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isTemporaryFile; // @synthesize isTemporaryFile=_isTemporaryFile;
 @property(readonly, copy, nonatomic) NSDictionary *HTTPHeaderFields; // @synthesize HTTPHeaderFields=_HTTPHeaderFields;
 @property(readonly, copy, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(readonly, copy, nonatomic) NSURL *fullResolutionURL; // @synthesize fullResolutionURL=_fullResolutionURL;
-- (void).cxx_destruct;
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

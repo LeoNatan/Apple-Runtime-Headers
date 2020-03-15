@@ -17,10 +17,10 @@
 
 + (id)_identifierForObject:(id)arg1;
 + (id)_objectMapForObjects:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) CalDefaultDictionary *spawnedObjectIdentifiers; // @synthesize spawnedObjectIdentifiers=_spawnedObjectIdentifiers;
 @property(retain) NSMutableDictionary *objectMap; // @synthesize objectMap=_objectMap;
 @property(retain) NSDictionary *originalObjectMap; // @synthesize originalObjectMap=_originalObjectMap;
-- (void).cxx_destruct;
 - (id)description;
 - (id)originalObjects;
 - (id)objects;

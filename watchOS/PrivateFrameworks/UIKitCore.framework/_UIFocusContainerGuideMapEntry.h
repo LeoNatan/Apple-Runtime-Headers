@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGRect _focusContainmentFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float axisAlignedDistanceFromFocusedRect; // @synthesize axisAlignedDistanceFromFocusedRect=_axisAlignedDistanceFromFocusedRect;
 @property(nonatomic) struct CGRect focusContainmentFrame; // @synthesize focusContainmentFrame=_focusContainmentFrame;
 @property(nonatomic) __weak UIFocusContainerGuide *focusContainerGuide; // @synthesize focusContainerGuide=_focusContainerGuide;
-- (void).cxx_destruct;
 - (id)description;
 - (void)drawVisualRepresentationInContext:(struct CGContext *)arg1 imageFrame:(struct CGRect)arg2;
 - (id)visualRepresentationColor;

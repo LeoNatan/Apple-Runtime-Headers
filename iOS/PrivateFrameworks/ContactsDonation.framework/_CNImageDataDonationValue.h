@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 - (void)acceptDonationValueVisitor:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

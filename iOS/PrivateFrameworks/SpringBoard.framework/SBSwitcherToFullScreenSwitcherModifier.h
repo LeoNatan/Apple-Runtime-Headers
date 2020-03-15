@@ -16,10 +16,10 @@
     long long _direction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
 @property(readonly, nonatomic) SBSwitcherModifier *multitaskingModifier; // @synthesize multitaskingModifier=_multitaskingModifier;
 @property(readonly, nonatomic) SBAppLayout *fullScreenAppLayout; // @synthesize fullScreenAppLayout=_fullScreenAppLayout;
-- (void).cxx_destruct;
 - (id)appLayoutToScrollToDuringTransition;
 - (_Bool)isEffectivelyFullScreen;
 - (_Bool)wantsMinificationFilter;

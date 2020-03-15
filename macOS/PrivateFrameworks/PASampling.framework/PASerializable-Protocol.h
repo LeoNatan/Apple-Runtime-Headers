@@ -6,15 +6,15 @@
 
 #import <PASampling/NSObject-Protocol.h>
 
-@class NSString;
+@class NSMutableDictionary, NSString;
 @protocol PASerializable;
 
 @protocol PASerializable <NSObject>
 + (id <PASerializable>)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (NSString *)classDictionaryKey;
-- (void)populateReferencesUsingBufferPosition:(const void *)arg1 andDeserializationDictionary:(struct NSMutableDictionary *)arg2 andDataBufferDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBufferPosition:(const void *)arg1 andDeserializationDictionary:(NSMutableDictionary *)arg2 andDataBufferDictionary:(NSMutableDictionary *)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
-- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg2;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
+- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(NSMutableDictionary *)arg2;
+- (void)addSelfToSerializationDictionary:(NSMutableDictionary *)arg1;
 @end
 

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *__cachedVisibleString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *_cachedVisibleString; // @synthesize _cachedVisibleString=__cachedVisibleString;
 @property(copy, nonatomic, setter=_setPrompt:) NSString *_prompt; // @synthesize _prompt=__prompt;
 @property(nonatomic, setter=_setRegisteredTerminalLineReplacedNotification:) BOOL _registeredTerminalLineReplacedNotification; // @synthesize _registeredTerminalLineReplacedNotification=__registeredTerminalLineReplacedNotification;
 @property(nonatomic, setter=_setRegisteredTerminalNewPromptLineNotification:) BOOL _registeredTerminalNewPromptLineNotification; // @synthesize _registeredTerminalNewPromptLineNotification=__registeredTerminalNewPromptLineNotification;
-- (void).cxx_destruct;
 - (BOOL)_shouldOutputAsLogging:(id)arg1;
 - (void)handleTextSelectionChange;
 - (id)_diffBetweenString:(id)arg1 newText:(id)arg2 foward:(BOOL)arg3;

@@ -18,10 +18,10 @@
     NSArray *_progressMarkers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *progressMarkers; // @synthesize progressMarkers=_progressMarkers;
 @property(readonly, copy, nonatomic) id currentValue; // @synthesize currentValue=_currentValue;
 @property(nonatomic) SpringSolver_fe820e75 *solver; // @synthesize solver=_solver;
-- (void).cxx_destruct;
 - (void)_appendDescription:(id)arg1 debug:(BOOL)arg2;
 - (BOOL)_advance:(id)arg1 currentTime:(double)arg2 elapsedTime:(double)arg3;
 - (id)debugDescription;

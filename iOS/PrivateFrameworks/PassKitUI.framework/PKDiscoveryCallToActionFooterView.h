@@ -28,10 +28,10 @@
     id <PKDiscoveryCardViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long displayType; // @synthesize displayType=_displayType;
 @property(nonatomic) __weak id <PKDiscoveryCardViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool showActivityIndicator; // @synthesize showActivityIndicator=_showActivityIndicator;
-- (void).cxx_destruct;
 - (void)_loadImageData;
 - (struct CGSize)_iconSize;
 - (double)_buttonWidthForLabelWidth:(double)arg1;

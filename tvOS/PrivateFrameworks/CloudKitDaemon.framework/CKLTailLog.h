@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) _Bool continueToReturnResults; // @synthesize continueToReturnResults=_continueToReturnResults;
 @property(nonatomic) _Bool stillReadingFromArchive; // @synthesize stillReadingFromArchive=_stillReadingFromArchive;
 @property(retain, nonatomic) NSMutableArray *results; // @synthesize results=_results;
 @property(retain, nonatomic) OSActivityStream *activityStream; // @synthesize activityStream=_activityStream;
 @property(retain, nonatomic) OSLogPersistence *logPersistence; // @synthesize logPersistence=_logPersistence;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (void)startFromStartDate:(id)arg1;

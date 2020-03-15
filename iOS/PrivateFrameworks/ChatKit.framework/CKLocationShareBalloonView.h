@@ -23,6 +23,7 @@
     UIImageView *_chevron;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *chevron; // @synthesize chevron=_chevron;
 @property(retain, nonatomic) UIView *verticalSeparator; // @synthesize verticalSeparator=_verticalSeparator;
 @property(retain, nonatomic) UIView *horizontalSeparator; // @synthesize horizontalSeparator=_horizontalSeparator;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *locationString; // @synthesize locationString=_locationString;
 @property(copy, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 @property(nonatomic) long long offerState; // @synthesize offerState=_offerState;
-- (void).cxx_destruct;
 - (void)_ignoreButtonHit:(id)arg1;
 - (void)_shareButtonHit:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;

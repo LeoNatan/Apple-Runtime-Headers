@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     LPFileMetadata *_fileMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPFileMetadata *fileMetadata; // @synthesize fileMetadata=_fileMetadata;
 @property(retain, nonatomic) LPLinkMetadata *linkMetadata; // @synthesize linkMetadata=_linkMetadata;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)activityViewController:(id)arg1 attachmentNameForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize)arg3;

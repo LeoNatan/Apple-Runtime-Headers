@@ -9,25 +9,27 @@
 #import <SafariServices/_SFBarCommon-Protocol.h>
 #import <SafariServices/_SFBarRegistrationObserving-Protocol.h>
 
-@class NSString, UIView, _SFBarTheme, _UIBackdropView, _UIBackdropViewSettings;
+@class NSString, UIBlurEffect, UIView, UIVisualEffectView, _SFBarTheme;
 @protocol _SFBarRegistrationToken;
 
 @interface _SFToolbar : UIToolbar <_SFBarCommon, _SFBarRegistrationObserving>
 {
-    _UIBackdropView *_backgroundView;
-    _UIBackdropViewSettings *_customBackdropSettings;
+    UIVisualEffectView *_backgroundView;
+    UIBlurEffect *_customBackdropEffect;
     UIView *_separator;
+    _Bool _usesLegacyDarkBackdrop;
     int _placement;
     _SFBarTheme *_theme;
     id <_SFBarRegistrationToken> _barRegistration;
     UIView *_superviewOwningLayout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *superviewOwningLayout; // @synthesize superviewOwningLayout=_superviewOwningLayout;
 @property(nonatomic) __weak id <_SFBarRegistrationToken> barRegistration; // @synthesize barRegistration=_barRegistration;
+@property(nonatomic) _Bool usesLegacyDarkBackdrop; // @synthesize usesLegacyDarkBackdrop=_usesLegacyDarkBackdrop;
 @property(retain, nonatomic) _SFBarTheme *theme; // @synthesize theme=_theme;
 @property(readonly, nonatomic) int placement; // @synthesize placement=_placement;
-- (void).cxx_destruct;
 - (void)didChangeArrangedBarItems:(id)arg1;
 - (void)didCompleteBarRegistrationWithToken:(id)arg1;
 - (id)popoverSourceInfoForBarItem:(int)arg1;
@@ -39,6 +41,7 @@
 @property(copy, nonatomic) NSString *backdropGroupName;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) float baselineOffsetAdjustment;
+- (void)_updateBackgroundViewEffects;
 - (void)setItems:(id)arg1 animated:(_Bool)arg2;
 - (void)dealloc;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

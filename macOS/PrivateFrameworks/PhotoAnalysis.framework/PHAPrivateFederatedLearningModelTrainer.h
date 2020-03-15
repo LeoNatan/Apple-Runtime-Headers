@@ -25,6 +25,7 @@
 }
 
 + (BOOL)_generateError:(id *)arg1 withCode:(long long)arg2 andMessage:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ETOptimizerDefinition *optimizerDefinition; // @synthesize optimizerDefinition=_optimizerDefinition;
 @property(retain, nonatomic) ETLossDefinition *lossDefinition; // @synthesize lossDefinition=_lossDefinition;
 @property(retain, nonatomic) NSString *optimizerName; // @synthesize optimizerName=_optimizerName;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSArray *layersToTrain; // @synthesize layersToTrain=_layersToTrain;
 @property(readonly, nonatomic) NSURL *espressoFileURL; // @synthesize espressoFileURL=_espressoFileURL;
 @property(readonly, nonatomic) id <ETDataProvider> trainingData; // @synthesize trainingData=_trainingData;
-- (void).cxx_destruct;
 - (id)_averageLossAndAccuracyForBatchResults:(id)arg1 error:(id *)arg2;
 - (int)_argmax:(float *)arg1 size:(int)arg2;
 - (id)_getParamsFromTask:(id)arg1 forLayers:(id)arg2;

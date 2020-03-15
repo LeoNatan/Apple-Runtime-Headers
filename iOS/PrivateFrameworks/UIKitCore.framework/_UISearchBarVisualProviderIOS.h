@@ -82,6 +82,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentInsetPrivateMinOrOverride;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UISearchBarTransitionerBase *transitioner; // @synthesize transitioner=_transitioner;
 @property(retain, nonatomic) _UISearchBarLayout *prospectiveLayout; // @synthesize prospectiveLayout=_prospectiveLayout;
 @property(retain, nonatomic) _UISearchBarLayout *currentLayout; // @synthesize currentLayout=_currentLayout;
@@ -113,7 +114,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UISearchBarBackground *searchBarBackground; // @synthesize searchBarBackground=_searchBarBackground;
 @property(retain, nonatomic) UISearchBarTextField *searchField; // @synthesize searchField=_searchField;
 @property(nonatomic) UIView<_UISearchBarVisualProvidingDelegate><_UINavigationBarAugmentedTitleView><UITextInputTraits_Private> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setUpSearchNavigationItem;
 @property(readonly, nonatomic) UINavigationItem *searchNavigationItem;
 @property(nonatomic) __weak id searchDisplayController;

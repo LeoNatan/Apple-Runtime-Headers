@@ -14,9 +14,9 @@
     NSDictionary *_cachedMergedFields;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *cachedMergedFields; // @synthesize cachedMergedFields=_cachedMergedFields;
 @property(retain, nonatomic) NSArray *eventData; // @synthesize eventData=_eventData;
-- (void).cxx_destruct;
 - (id)mergedFields;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)valueForCallerSuppliedField:(id)arg1;

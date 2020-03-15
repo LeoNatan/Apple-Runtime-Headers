@@ -59,6 +59,7 @@
     double _cumulativeDowntime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double cumulativeDowntime; // @synthesize cumulativeDowntime=_cumulativeDowntime;
 @property(nonatomic) double cumulativeUptime; // @synthesize cumulativeUptime=_cumulativeUptime;
 @property(nonatomic) double lastAggTime; // @synthesize lastAggTime=_lastAggTime;
@@ -95,7 +96,6 @@
 @property(retain, nonatomic) CSAudioStream *audioStream; // @synthesize audioStream=_audioStream;
 @property(retain, nonatomic) CSPolicy *listeningStartPolicy; // @synthesize listeningStartPolicy=_listeningStartPolicy;
 @property(nonatomic) __weak id <CSVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_analyzerReset:(id)arg1 withCause:(unsigned long long)arg2;
 - (void)_setStartAnalyzeTime:(unsigned long long)arg1;
 - (void)_resetStartAnalyzeTime;

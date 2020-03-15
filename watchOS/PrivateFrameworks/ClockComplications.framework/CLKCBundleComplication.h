@@ -15,9 +15,9 @@
 }
 
 + (id)complicationWithBundleIdentifier:(id)arg1 appBundleIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

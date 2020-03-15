@@ -15,10 +15,10 @@
     id <AXKElementTraversalStrategy> __elementTraversalStrategy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AXKElementTraversalStrategy> _elementTraversalStrategy; // @synthesize _elementTraversalStrategy=__elementTraversalStrategy;
 @property(readonly, nonatomic) id <AXKElementFilterStrategy> elementFilterStrategy; // @synthesize elementFilterStrategy=_elementFilterStrategy;
 @property(nonatomic) unsigned long long searchStyle; // @synthesize searchStyle=_searchStyle;
-- (void).cxx_destruct;
 - (BOOL)_meetsCriteriaForSearchType:(unsigned long long)arg1 element:(id)arg2;
 - (id)_deepestDescendantOfElement:(id)arg1 direction:(unsigned long long)arg2;
 - (id)_searchDecendantFromElement:(id)arg1 direction:(unsigned long long)arg2 type:(unsigned long long)arg3;

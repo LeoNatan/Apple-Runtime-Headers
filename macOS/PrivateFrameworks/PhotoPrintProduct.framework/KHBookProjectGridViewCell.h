@@ -14,9 +14,9 @@
     UXImageView *_overlayImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UXImageView *overlayImageView; // @synthesize overlayImageView=_overlayImageView;
 @property(retain, nonatomic) UXImageView *gutterImageView; // @synthesize gutterImageView=_gutterImageView;
-- (void).cxx_destruct;
 - (void)setLayoutObject:(id)arg1;
 - (void)layout;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -19,10 +19,10 @@
 
 + (id)headerPickerForPairableModelCategory:(id)arg1 isPaired:(_Bool)arg2 avatarUpdaterOnPair:(CDUnknownBlockType)arg3;
 + (id)headerPickerFromEditorSection:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool alwaysPresentAlert; // @synthesize alwaysPresentAlert=_alwaysPresentAlert;
 @property(readonly, copy, nonatomic) NSArray *choices; // @synthesize choices=_choices;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 choices:(id)arg2 alwaysPresentAlert:(_Bool)arg3;
 
 // Remaining properties

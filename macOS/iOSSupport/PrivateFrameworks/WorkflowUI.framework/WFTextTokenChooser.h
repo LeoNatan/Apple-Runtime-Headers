@@ -28,6 +28,7 @@
     id <WFUIKitUserInterface> _userInterface;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <WFUIKitUserInterface> userInterface; // @synthesize userInterface=_userInterface;
 @property(copy, nonatomic) NSArray *auxiliaryButtons; // @synthesize auxiliaryButtons=_auxiliaryButtons;
 @property(retain, nonatomic) WFAlert *presentedAlert; // @synthesize presentedAlert=_presentedAlert;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSString *noChoicesMessage; // @synthesize noChoicesMessage=_noChoicesMessage;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)alertButtonForVariable:(id)arg1 selected:(BOOL)arg2;
 - (void)updateButtonsInAlert:(id)arg1;
 - (void)dismissWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -27,8 +27,8 @@
     _Bool _frozen;
 }
 
-@property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 - (void)endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_endScrubbing;
 - (void)scrubToDate:(id)arg1;

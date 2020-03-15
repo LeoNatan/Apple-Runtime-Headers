@@ -28,11 +28,11 @@
     id <CDPDDeviceSecretValidatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CDPDDeviceSecretValidatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType validSecretHandler; // @synthesize validSecretHandler=_validSecretHandler;
 @property(nonatomic) BOOL isUsingMultipleICSC; // @synthesize isUsingMultipleICSC=_isUsingMultipleICSC;
 @property(nonatomic) unsigned long long supportedEscapeOfferMask; // @synthesize supportedEscapeOfferMask;
-- (void).cxx_destruct;
 - (unsigned long long)failedAttempts;
 - (BOOL)isAttemptingRecovery;
 - (BOOL)_isInvalidICSCError:(id)arg1;

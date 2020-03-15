@@ -11,17 +11,17 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)contactMatchAndContactLabelForNonNameFieldAutoFillCommand:(struct CompletionListAddressBookNonNameFieldAutoFillCommand *)arg1;
-- (id)addressBookDataWillBeFilledOrOmittedStringForRecentlyUsedAutoFillCommand:(struct CompletionListAddressBookRecentlyUsedAutoFillCommand *)arg1;
-- (id)voiceOverAnnouncementForRecentlyUsedAutoFillCommand:(struct CompletionListAddressBookRecentlyUsedAutoFillCommand *)arg1;
-- (id)contactNameAndContactLabelForRecentlyUsedAutoFillCommand:(struct CompletionListAddressBookRecentlyUsedAutoFillCommand *)arg1;
+-     // Error parsing type: @24@0:8^{CompletionListAddressBookNonNameFieldAutoFillCommand=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@^{CommandTarget}i{Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{pair<NSString *, NSString *>}II}@@@@@}16, name: contactMatchAndContactLabelForNonNameFieldAutoFillCommand:
+-     // Error parsing type: @24@0:8^{CompletionListAddressBookRecentlyUsedAutoFillCommand=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@^{CommandTarget}i{Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{pair<NSString *, NSString *>}II}@@@@@@}16, name: addressBookDataWillBeFilledOrOmittedStringForRecentlyUsedAutoFillCommand:
+-     // Error parsing type: @24@0:8^{CompletionListAddressBookRecentlyUsedAutoFillCommand=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@^{CommandTarget}i{Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{pair<NSString *, NSString *>}II}@@@@@@}16, name: voiceOverAnnouncementForRecentlyUsedAutoFillCommand:
+-     // Error parsing type: @24@0:8^{CompletionListAddressBookRecentlyUsedAutoFillCommand=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@^{CommandTarget}i{Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{pair<NSString *, NSString *>}II}@@@@@@}16, name: contactNameAndContactLabelForRecentlyUsedAutoFillCommand:
 - (void)_registerAddressBookAutoFillTableViewCellClasses;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (double)widthOfWidestCell;
 - (void)completionWindowDidShow;
--     // Error parsing type: @24@0:8^{FormCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@QB^{SafeAutoFillConfirmationController}@@{Frame={WKRetainPtr<const void *>=^v}}@@BBB@BBB@}16, name: initWithCompletionController:
+-     // Error parsing type: @24@0:8^{FormCompletionController=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@QB^{SafeAutoFillConfirmationController}@@{Frame={WKRetainPtr<const void *>=^v}}@@BBB@BBB@}16, name: initWithCompletionController:
 
 @end
 

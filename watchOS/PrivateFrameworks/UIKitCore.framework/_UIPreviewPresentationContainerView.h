@@ -20,6 +20,7 @@
     struct CGSize _preferredContentSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIPreviewPresentationEffectView *platterView; // @synthesize platterView=_platterView;
 @property(retain, nonatomic) UIView *contentTransformView; // @synthesize contentTransformView=_contentTransformView;
 @property(retain, nonatomic) UIView *platterShadowView; // @synthesize platterShadowView=_platterShadowView;
@@ -28,7 +29,6 @@
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) struct CGSize preferredContentSize; // @synthesize preferredContentSize=_preferredContentSize;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (struct CGSize)_standardPreferredContentSize;
 - (struct CGRect)_preferredPlatterRectForContainerRect:(struct CGRect)arg1;
 - (void)initPlatterViewsIfNeeded;

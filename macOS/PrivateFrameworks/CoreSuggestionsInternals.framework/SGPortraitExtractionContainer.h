@@ -23,6 +23,7 @@
     double _sentimentScore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double sentimentScore; // @synthesize sentimentScore=_sentimentScore;
 @property(nonatomic) double decayRate; // @synthesize decayRate=_decayRate;
 @property(nonatomic) BOOL cloudSync; // @synthesize cloudSync=_cloudSync;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSMutableDictionary *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) NSMutableArray *topics; // @synthesize topics=_topics;
 @property(retain, nonatomic) NSMutableArray *entities; // @synthesize entities=_entities;
-- (void).cxx_destruct;
 - (void)flushWrites;
 - (void)writeWithEntityStore:(id)arg1;
 - (void)writeSynchronous;

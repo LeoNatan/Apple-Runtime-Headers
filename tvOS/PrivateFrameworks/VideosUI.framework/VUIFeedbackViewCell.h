@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureViewWithElement:(id)arg1 existingCell:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIFeedbackView *cardView; // @synthesize cardView=_cardView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)_setupElements:(id)arg1 inCardView:(id)arg2;
 - (void)_updateBackgroundAndHighlightColor;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

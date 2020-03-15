@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _errorHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(copy, nonatomic) CDUnknownBlockType finishedHandler; // @synthesize finishedHandler=_finishedHandler;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
-- (void).cxx_destruct;
 - (void)providerDidCancel;
 - (void)providerReceivedErrorCode:(long long)arg1 userInfo:(id)arg2;
 - (void)providerReceivedResponse:(id)arg1 userInfo:(id)arg2;

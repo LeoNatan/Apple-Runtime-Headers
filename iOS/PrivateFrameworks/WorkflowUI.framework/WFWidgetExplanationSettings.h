@@ -22,6 +22,7 @@
 }
 
 + (id)defaultSettings;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *completedButtonText; // @synthesize completedButtonText=_completedButtonText;
 @property(copy, nonatomic) NSString *completedDetailText; // @synthesize completedDetailText=_completedDetailText;
 @property(copy, nonatomic) NSString *completedSloganText; // @synthesize completedSloganText=_completedSloganText;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *navigationBarText; // @synthesize navigationBarText=_navigationBarText;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(copy, nonatomic) NSString *campaignIdentifier; // @synthesize campaignIdentifier=_campaignIdentifier;
-- (void).cxx_destruct;
 
 @end
 

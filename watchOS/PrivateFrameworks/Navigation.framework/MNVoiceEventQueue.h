@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id <MNVoiceEventQueueDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MNVoiceEventQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MNVoiceEventQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_removeEventsMatching:(id)arg1 includeEventToMatch:(_Bool)arg2;
 - (void)removeAllEvents;
 - (id)dequeueNextEvent;

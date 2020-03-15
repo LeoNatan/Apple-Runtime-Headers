@@ -18,10 +18,10 @@
     HDQueryServerClientState *_clientState;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) HDQueryServerClientState *clientState; // @synthesize clientState=_clientState;
 @property(readonly, copy, nonatomic) NSString *processBundleIdentifier; // @synthesize processBundleIdentifier=_processBundleIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)queue_cancelStateChangeTimer;
 - (void)queue_startStateChangeTimerWithInterval:(double)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)removeQueryServer:(id)arg1;

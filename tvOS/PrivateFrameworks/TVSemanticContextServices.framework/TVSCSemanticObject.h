@@ -14,9 +14,9 @@
     NSMutableDictionary *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableDictionary *metadata; // @synthesize metadata=_metadata;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)linkedDataDictionary;
 - (void)removeMetadataForProperty:(id)arg1;
 - (void)setMetadata:(id)arg1 forProperty:(id)arg2;

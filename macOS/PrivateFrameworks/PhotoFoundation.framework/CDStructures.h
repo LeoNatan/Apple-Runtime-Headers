@@ -25,14 +25,6 @@ struct CGSize {
     double _field2;
 };
 
-struct NSObject {
-    Class _field1;
-};
-
-struct PFAsyncDispatchMulticaster {
-    Class _field1;
-};
-
 struct PFChecksumBytes {
     unsigned char data[16];
 };

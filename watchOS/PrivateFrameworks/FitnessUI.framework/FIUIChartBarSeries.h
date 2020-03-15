@@ -27,6 +27,7 @@
     NSArray *_barLabels;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *barLabels; // @synthesize barLabels=_barLabels;
 @property(retain, nonatomic) NSArray *plotPoints; // @synthesize plotPoints=_plotPoints;
 @property(retain, nonatomic) NSArray *labelAttributes; // @synthesize labelAttributes=_labelAttributes;
@@ -42,7 +43,6 @@
 @property(nonatomic) float roundedCornerRadius; // @synthesize roundedCornerRadius=_roundedCornerRadius;
 @property(nonatomic) float barSpacing; // @synthesize barSpacing=_barSpacing;
 @property(nonatomic) float barWidth; // @synthesize barWidth=_barWidth;
-- (void).cxx_destruct;
 - (void)_translateColorThresholds;
 - (void)_strokeRect:(struct CGRect)arg1 context:(struct CGContext *)arg2 color:(struct CGColor *)arg3 width:(float)arg4;
 - (id)_chartColorForChartYValue:(float)arg1;

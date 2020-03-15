@@ -20,13 +20,13 @@
     _HKWheelchairUseCharacteristicCache *_wheelchairUseCharacteristicCache;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool currentValueViewContext; // @synthesize currentValueViewContext=_currentValueViewContext;
 @property(retain, nonatomic) _HKWheelchairUseCharacteristicCache *wheelchairUseCharacteristicCache; // @synthesize wheelchairUseCharacteristicCache=_wheelchairUseCharacteristicCache;
 @property(retain, nonatomic) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
 @property(retain, nonatomic) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
 @property(nonatomic) long long timeScope; // @synthesize timeScope=_timeScope;
 @property(retain, nonatomic) HKActivitySummary *activitySummary; // @synthesize activitySummary=_activitySummary;
-- (void).cxx_destruct;
 - (id)_valueWithTitle:(id)arg1 attributedValue:(id)arg2 valueAsNumber:(id)arg3;
 - (id)descriptionsForActivitySummary;
 - (id)_bodyColor;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)mapperIdentifier;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNDonationStore *donationStore; // @synthesize donationStore=_donationStore;
 @property(readonly, nonatomic) CNContactsEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (id)defaultContainerIdentifier;
 - (id)subgroupsOfGroupWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)groupsMatchingPredicate:(id)arg1 error:(id *)arg2;

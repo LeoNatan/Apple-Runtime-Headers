@@ -30,6 +30,7 @@
 + (id)imageProviderWithImageViewCreationHandler:(CDUnknownBlockType)arg1;
 + (id)imageProviderWithOnePieceImage:(id)arg1 twoPieceImageBackground:(id)arg2 twoPieceImageForeground:(id)arg3;
 + (id)imageProviderWithOnePieceImage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isForegroundAccentImageTinted) _Bool foregroundAccentImageTinted; // @synthesize foregroundAccentImageTinted=_foregroundAccentImageTinted;
 @property(retain, nonatomic) UIColor *foregroundAccentImageColor; // @synthesize foregroundAccentImageColor=_foregroundAccentImageColor;
 @property(retain, nonatomic) UIImage *foregroundAccentImage; // @synthesize foregroundAccentImage=_foregroundAccentImage;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) UIImage *twoPieceImageBackground; // @synthesize twoPieceImageBackground=_twoPieceImageBackground;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIImage *onePieceImage; // @synthesize onePieceImage=_onePieceImage;
-- (void).cxx_destruct;
 - (void)_resizeImagesIfNecessaryWithCornerRadius:(double)arg1;
 - (void)_resizeImagesIfNecessaryAndMaskToCircle:(_Bool)arg1;
 - (id)JSONObjectRepresentationWritingResourcesToBundlePath:(id)arg1;

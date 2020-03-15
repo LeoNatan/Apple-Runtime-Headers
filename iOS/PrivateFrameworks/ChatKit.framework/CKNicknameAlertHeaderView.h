@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UILabel *_handleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *handleLabel; // @synthesize handleLabel=_handleLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) CKAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) IMNickname *nickname; // @synthesize nickname=_nickname;
-- (void).cxx_destruct;
 - (id)handleText;
 - (id)nameText;
 - (void)_updateAvatarView;

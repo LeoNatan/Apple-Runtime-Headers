@@ -46,6 +46,7 @@
 + (long long)_contentTypeForAsset:(id)arg1;
 + (CDStruct_fd7332cd)optionsForAsset:(id)arg1;
 + (double)HDRValueForAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double requestedEDRHeadroomFactor; // @synthesize requestedEDRHeadroomFactor=_requestedEDRHeadroomFactor;
 @property(readonly, nonatomic) double imageModulationIntensity; // @synthesize imageModulationIntensity=_imageModulationIntensity;
 @property(readonly, nonatomic) double HDRFocus; // @synthesize HDRFocus=_HDRFocus;
@@ -60,7 +61,6 @@
 @property(readonly, nonatomic) PXRequestedEDRHeadroomFactorFilter *requestedEDRHeadroomFactorFilter; // @synthesize requestedEDRHeadroomFactorFilter=_requestedEDRHeadroomFactorFilter;
 @property(readonly, nonatomic) NSHashTable *imageLayerModulators; // @synthesize imageLayerModulators=_imageLayerModulators;
 @property(readonly, nonatomic) PXImageModulationSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)preferencesDidChange;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

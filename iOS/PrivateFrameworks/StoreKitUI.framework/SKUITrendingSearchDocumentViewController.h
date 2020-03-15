@@ -17,10 +17,10 @@
     UIViewController *_privacyViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *privacyViewController; // @synthesize privacyViewController=_privacyViewController;
 @property(retain, nonatomic) SKUITrendingSearchTemplateElement *template; // @synthesize template=_template;
 @property(retain, nonatomic) SKUITrendingSearchView *resultsView; // @synthesize resultsView=_resultsView;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)_resultsViewContentInset;
 - (void)_reloadResultsView;
 - (void)searchResultButtonTapped:(id)arg1;

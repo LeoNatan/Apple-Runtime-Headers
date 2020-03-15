@@ -57,6 +57,7 @@
 + (id)userIDForAccountHandle:(id)arg1;
 + (id)ownerWithUserID:(id)arg1 home:(id)arg2 pairingIdentity:(id)arg3 homeManager:(id)arg4;
 + (id)currentUserWithPrivilege:(unsigned int)arg1 forHome:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) HMDCloudShareTrustManager *cloudShareTrustManager; // @synthesize cloudShareTrustManager=_cloudShareTrustManager;
 @property(retain) HMDUserDataController *userDataController; // @synthesize userDataController=_userDataController;
 @property(retain) HMDUserSettingsBackingStoreController *privateBackingStoreController; // @synthesize privateBackingStoreController=_privateBackingStoreController;
@@ -69,7 +70,6 @@
 @property(readonly) NAFuture *cloudShareIDFuture; // @synthesize cloudShareIDFuture=_cloudShareIDFuture;
 @property(retain) HMBShareUserID *cloudShareID; // @synthesize cloudShareID=_cloudShareID;
 @property(copy, setter=setUUID:) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)cloudShareTrustManager:(id)arg1 didRemoveUserWithUUID:(id)arg2;
 - (void)didRemoveTrustZoneInCloudShareTrustManager:(id)arg1;
 - (void)didFinishConfiguringForCloudShareTrustManager:(id)arg1;

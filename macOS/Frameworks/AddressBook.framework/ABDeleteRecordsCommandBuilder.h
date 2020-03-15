@@ -14,9 +14,10 @@
     ABAddressBook *_legacyAddressBook;
     CNContactStore *_contactStore;
     NSMutableDictionary *_removeMemberBuilders;
+    BOOL _ignoresGuardianRestrictions;
 }
 
-+ (id)builderWithAddressBook:(id)arg1;
++ (id)builderWithAddressBook:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 - (void).cxx_destruct;
 - (void)_deleteGroupsWithBuilder:(id)arg1;
 - (void)_buildDeleteCommandsForPeopleUIDs:(id)arg1 withBuilder:(id)arg2;
@@ -28,7 +29,7 @@
 - (id)_makeBuilder;
 - (id)build;
 - (void)deleteRecord:(id)arg1;
-- (id)initWithAddressBook:(id)arg1;
+- (id)initWithAddressBook:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

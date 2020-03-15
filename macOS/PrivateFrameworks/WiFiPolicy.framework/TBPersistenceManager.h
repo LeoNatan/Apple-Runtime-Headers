@@ -17,11 +17,11 @@
 }
 
 + (BOOL)isStoreCompatibleAtURL:(id)arg1 withModel:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TBPersistenceRemoteStoreServer *remoteStoreServer; // @synthesize remoteStoreServer=_remoteStoreServer;
 @property(retain, nonatomic) NSManagedObjectModel *managedObjectModel; // @synthesize managedObjectModel=_managedObjectModel;
 @property(retain, nonatomic) NSPersistentStoreCoordinator *persistenceCoordinator; // @synthesize persistenceCoordinator=_persistenceCoordinator;
 @property(retain, nonatomic) NSManagedObjectContext *persistenceContext; // @synthesize persistenceContext=_persistenceContext;
-- (void).cxx_destruct;
 - (id)initWithManagedObjectModel:(id)arg1 storeDescriptor:(id)arg2;
 
 @end

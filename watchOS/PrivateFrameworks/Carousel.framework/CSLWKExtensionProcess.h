@@ -21,10 +21,10 @@
     int _backgroundTaskSupport;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int backgroundTaskSupport; // @synthesize backgroundTaskSupport=_backgroundTaskSupport;
 @property(readonly, nonatomic) FBProcess *process; // @synthesize process=_process;
 @property(readonly, nonatomic, getter=isWorkoutExtension) _Bool workoutExtension; // @synthesize workoutExtension=_workoutExtension;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

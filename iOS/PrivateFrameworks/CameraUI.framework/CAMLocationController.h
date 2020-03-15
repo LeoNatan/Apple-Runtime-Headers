@@ -27,6 +27,7 @@
 + (id)locationMetadataForLocation:(id)arg1 heading:(id)arg2 device:(long long)arg3;
 + (id)_sharedGPSDatestampFormatter;
 + (id)_sharedGPSTimestampFormatter;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDidRequestLocation:) _Bool _didRequestLocation; // @synthesize _didRequestLocation=__didRequestLocation;
 @property(readonly, nonatomic) NSMutableArray *_enqueuedAssetsWaitingForLocation; // @synthesize _enqueuedAssetsWaitingForLocation=__enqueuedAssetsWaitingForLocation;
 @property(readonly, nonatomic) CLLocationManager *_locationManager; // @synthesize _locationManager=__locationManager;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
 @property(nonatomic, getter=isHeadingEnabled) _Bool headingEnabled; // @synthesize headingEnabled=_headingEnabled;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)enqueueAssetForLocationUpdates:(id)arg1;
 - (void)_updateAssetsWaitingOnLocation;
 - (id)headingForOrientation:(long long)arg1;

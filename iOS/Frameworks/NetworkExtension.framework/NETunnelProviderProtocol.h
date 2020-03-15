@@ -22,6 +22,7 @@
 
 + (_Bool)isLegacyPluginType:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property int reassertTimeout; // @synthesize reassertTimeout=_reassertTimeout;
 @property long long authenticationMethod; // @synthesize authenticationMethod=_authenticationMethod;
 @property(copy) NSDictionary *vendorInfo; // @synthesize vendorInfo=_vendorInfo;
@@ -30,7 +31,6 @@
 @property(readonly) NSString *pluginType; // @synthesize pluginType=_pluginType;
 @property(copy) NSString *providerBundleIdentifier; // @synthesize providerBundleIdentifier=_providerBundleIdentifier;
 @property(copy) NSDictionary *providerConfiguration; // @synthesize providerConfiguration=_providerConfiguration;
-- (void).cxx_destruct;
 - (void)syncWithKeychainInDomain:(long long)arg1 configuration:(id)arg2 suffix:(id)arg3;
 - (void)removeKeychainItemsInDomain:(long long)arg1 keepIdentity:(_Bool)arg2;
 - (void)copyPasswordsFromKeychainInDomain:(long long)arg1;

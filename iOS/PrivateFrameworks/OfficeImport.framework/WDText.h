@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     WDTableCell *mTableCell;
 }
 
-@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
 - (void).cxx_destruct;
+@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
 - (id)description;
 - (id)content;
 - (_Bool)isEmpty;

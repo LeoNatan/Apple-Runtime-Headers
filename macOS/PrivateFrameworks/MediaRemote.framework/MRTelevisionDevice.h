@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_hiliteModeCallbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *hiliteModeCallbackQueue; // @synthesize hiliteModeCallbackQueue=_hiliteModeCallbackQueue;
 @property(copy, nonatomic) CDUnknownBlockType hiliteModeCallback; // @synthesize hiliteModeCallback=_hiliteModeCallback;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *rtiCallbackQueue; // @synthesize rtiCallbackQueue=_rtiCallbackQueue;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int gameControllerInputMode; // @synthesize gameControllerInputMode=_gameControllerInputMode;
 @property(copy, nonatomic) CDUnknownBlockType gameControllerInputModeCallback; // @synthesize gameControllerInputModeCallback=_gameControllerInputModeCallback;
 @property(readonly, nonatomic) BOOL hiliteMode; // @synthesize hiliteMode=_hiliteMode;
-- (void).cxx_destruct;
 - (void)_handleHiliteModeMessage:(id)arg1;
 - (void)_callClientRTICallback:(id)arg1;
 - (void)_handleRemoteTextInputMessage:(id)arg1;

@@ -26,12 +26,12 @@
 + (id)ageVerificationStateNotRequiredForUserIdentity:(id)arg1 withTreatment:(long long)arg2;
 + (id)ageVerificationStateNotRequiredForUserIdentity:(id)arg1 withError:(id)arg2;
 + (id)ageVerificationStateNotRequiredForUserIdentity:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) ICAgeVerifier *ageVerifier; // @synthesize ageVerifier=_ageVerifier;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, copy, nonatomic) NSURL *verificationURL; // @synthesize verificationURL=_verificationURL;
 @property(readonly, nonatomic) long long treatment; // @synthesize treatment=_treatment;
 @property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentationWithDSID:(id)arg1;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
 - (id)description;

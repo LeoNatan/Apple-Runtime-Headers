@@ -13,8 +13,8 @@
     CalUINewFeaturesContinueButton *_continueButton;
 }
 
-@property(retain) CalUINewFeaturesContinueButton *continueButton; // @synthesize continueButton=_continueButton;
 - (void).cxx_destruct;
+@property(retain) CalUINewFeaturesContinueButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(copy, nonatomic) CDUnknownBlockType removalBlock;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)_viewForIconWithName:(id)arg1;

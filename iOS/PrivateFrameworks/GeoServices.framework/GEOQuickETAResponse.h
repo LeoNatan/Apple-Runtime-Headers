@@ -22,6 +22,7 @@
     NSMutableArray *_sortedETAs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *sortedETAs; // @synthesize sortedETAs=_sortedETAs;
 @property(readonly, nonatomic) double walkingDurationToDepartureStop; // @synthesize walkingDurationToDepartureStop=_walkingDurationToDepartureStop;
 @property(readonly, nonatomic) double distanceToDepartureStop; // @synthesize distanceToDepartureStop=_distanceToDepartureStop;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) unsigned int responseETASeconds; // @synthesize responseETASeconds=_responseETASeconds;
 @property(readonly, nonatomic) GEOLocation *destinationLocation; // @synthesize destinationLocation=_destinationLocation;
 @property(readonly, nonatomic) GEOLocation *sourceLocation; // @synthesize sourceLocation=_sourceLocation;
-- (void).cxx_destruct;
 - (id)initWithDirectionsResponse:(id)arg1 fromRequest:(id)arg2;
 - (id)initWithETAResult:(id)arg1 fromRequest:(id)arg2;
 

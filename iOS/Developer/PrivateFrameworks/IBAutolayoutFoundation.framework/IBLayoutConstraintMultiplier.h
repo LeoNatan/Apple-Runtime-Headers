@@ -19,9 +19,9 @@
 
 + (id)multiplierWithString:(id)arg1;
 + (id)multiplierWithValue:(double)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly, nonatomic) double effectiveValue; // @synthesize effectiveValue=_value;
-- (void).cxx_destruct;
 - (id)multiplierBySimplifyingExpression;
 - (id)multiplierByIncrementing;
 - (id)multiplierByDecrementing;

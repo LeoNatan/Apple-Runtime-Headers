@@ -20,13 +20,13 @@
     UISwitch *_smartRepliesSwitch;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISwitch *smartRepliesSwitch; // @synthesize smartRepliesSwitch=_smartRepliesSwitch;
 @property(nonatomic) _Bool showSmartRepliesSection; // @synthesize showSmartRepliesSection=_showSmartRepliesSection;
 @property(retain, nonatomic) PUICQuickboardMessageViewController *quickboardMessageViewController; // @synthesize quickboardMessageViewController=_quickboardMessageViewController;
 @property(retain, nonatomic) NSMutableArray *cannedReplies; // @synthesize cannedReplies=_cannedReplies;
 @property(retain, nonatomic) WRCannedRepliesStore *repliesStore; // @synthesize repliesStore=_repliesStore;
 @property(readonly, nonatomic) unsigned int category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (void)_removeReplyRowAt:(int)arg1;
 - (void)_insertReplyRowAt:(int)arg1;
 - (id)_cannedReplyWithText:(id)arg1;

@@ -18,8 +18,8 @@
     UIViewController *_remoteViewController;
 }
 
-@property(nonatomic) __weak MPMediaPickerController *mediaPickerController; // @synthesize mediaPickerController=_mediaPickerController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MPMediaPickerController *mediaPickerController; // @synthesize mediaPickerController=_mediaPickerController;
 - (id)serviceController;
 - (void)dealloc;
 - (void)synchronizeSettings;

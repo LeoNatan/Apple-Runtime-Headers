@@ -21,6 +21,7 @@
     unsigned int _options;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(retain, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(copy, nonatomic) NSString *defaultKey; // @synthesize defaultKey=_defaultKey;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) Class classType; // @synthesize classType=_classType;
 @property(copy, nonatomic) NSString *typeString; // @synthesize typeString=_typeString;
 @property(nonatomic) BOOL type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool removeIfCollectionSetEmpty;
 @property(readonly, nonatomic) _Bool removeIfSettingDefaultValue;

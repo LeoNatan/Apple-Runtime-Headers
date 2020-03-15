@@ -24,6 +24,7 @@
 }
 
 + (id)_logStringWithFetchControllers:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pauseCount; // @synthesize pauseCount=_pauseCount;
 @property(nonatomic) unsigned long long mediaLibraryRevision; // @synthesize mediaLibraryRevision=_mediaLibraryRevision;
 @property(retain, nonatomic) NSOperation *fetchOperation; // @synthesize fetchOperation=_fetchOperation;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *logName; // @synthesize logName=_logName;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) VUIMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
-- (void).cxx_destruct;
 - (void)_enqueueSyncProcessingQueueBlock:(CDUnknownBlockType)arg1;
 - (void)_enqueueAsyncProcessingQueueBlock:(CDUnknownBlockType)arg1;
 - (void)_enqueueProcessingQueueBlock:(CDUnknownBlockType)arg1 synchronous:(_Bool)arg2;

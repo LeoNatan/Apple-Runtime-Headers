@@ -47,10 +47,10 @@
 
 + (id)playerItemWithAsset:(id)arg1 targetSize:(struct CGSize)arg2;
 + (long long)currentClientVersion;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isLoadingCancelled, setter=_setLoadingCancelled:) _Bool _loadingCancelled; // @synthesize _loadingCancelled=__loadingCancelled;
 @property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 @property(readonly, nonatomic) ISAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_assertOnIvarQueue;
 - (void)_assertOnWorkQueue;
 - (_Bool)_isOnWorkQueue;

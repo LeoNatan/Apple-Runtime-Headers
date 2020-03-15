@@ -35,6 +35,7 @@
     NSDictionary *_currentTaskingIDByRouting;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *currentTaskingIDByRouting; // @synthesize currentTaskingIDByRouting=_currentTaskingIDByRouting;
 @property(readonly) NSString *automatedContextURL; // @synthesize automatedContextURL=_automatedContextURL;
 @property(readonly) NSString *automatedDeviceGroup; // @synthesize automatedDeviceGroup=_automatedDeviceGroup;
@@ -55,7 +56,6 @@
 @property(readonly) NSString *modelCode; // @synthesize modelCode=_modelCode;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSString *logPath; // @synthesize logPath=_logPath;
-- (void).cxx_destruct;
 - (BOOL)isFile:(id)arg1 validForSubmission:(id)arg2 reasonableSize:(long long)arg3 to:(id)arg4 internalTypes:(id)arg5 result:(const char **)arg6;
 - (BOOL)isConfigEnabled:(id)arg1;
 - (BOOL)usesLegacySubmission:(id)arg1;

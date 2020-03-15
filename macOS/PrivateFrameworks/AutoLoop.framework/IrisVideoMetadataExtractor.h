@@ -19,6 +19,7 @@
     NSArray *_framesMetadataArray;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *framesMetadataArray; // @synthesize framesMetadataArray=_framesMetadataArray;
 @property BOOL processedFile; // @synthesize processedFile;
 @property(readonly) NSDictionary *allMetadata; // @synthesize allMetadata;
@@ -26,7 +27,6 @@
 @property(retain) NSMutableArray *desiredIrisKeysArray; // @synthesize desiredIrisKeysArray;
 @property(retain) AVAsset *inMovieAsset; // @synthesize inMovieAsset;
 @property(readonly) NSMutableDictionary *videoTrackMetadataDict; // @synthesize videoTrackMetadataDict;
-- (void).cxx_destruct;
 - (int)processFile;
 - (int)processStillFrameTimeForAsset:(id)arg1 toDictionary:(id)arg2;
 - (int)processVideoTrack:(id)arg1;

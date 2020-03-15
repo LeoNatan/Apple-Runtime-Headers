@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned long long)_sizeForItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *trackingID; // @synthesize trackingID=_trackingID;
 @property(retain, nonatomic) NSMapTable *completedBytesByItems; // @synthesize completedBytesByItems=_completedBytesByItems;
 @property(nonatomic) unsigned long long cachedCompletedBytes; // @synthesize cachedCompletedBytes=_cachedCompletedBytes;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasCachedCompletedBytes; // @synthesize hasCachedCompletedBytes=_hasCachedCompletedBytes;
 @property(nonatomic) _Bool hasCachedTotalBytes; // @synthesize hasCachedTotalBytes=_hasCachedTotalBytes;
 @property(nonatomic) double lastItemPercentage; // @synthesize lastItemPercentage=_lastItemPercentage;
-- (void).cxx_destruct;
 - (double)updateProgressWithItem:(id)arg1 progress:(double)arg2;
 - (unsigned long long)_updateTotalCompletedBytes;
 - (unsigned long long)_updateTotalBytes;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSArray *_links;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *links; // @synthesize links=_links;
 @property(readonly, nonatomic) struct CGSize totalSize; // @synthesize totalSize=_totalSize;
-- (void).cxx_destruct;
 - (struct CGSize)sizeForLinkAtIndex:(long long)arg1;
 - (void)enumerateLinesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)dealloc;

@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) CSLBackgroundServiceConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLBackgroundServiceConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)resubmitLastRequest:(id)arg1;
 - (void)startBackgroundActivity:(id)arg1 startBlock:(CDUnknownBlockType)arg2;
 - (void)cancelBackgroundTaskRequestForBundleID:(id)arg1;

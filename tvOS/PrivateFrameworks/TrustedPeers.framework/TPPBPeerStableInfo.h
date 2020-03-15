@@ -13,31 +13,36 @@
 @interface TPPBPeerStableInfo : PBCodable <NSCopying>
 {
     unsigned long long _clock;
-    unsigned long long _policyVersion;
+    unsigned long long _flexiblePolicyVersion;
+    unsigned long long _frozenPolicyVersion;
     NSString *_deviceName;
+    NSString *_flexiblePolicyHash;
+    NSString *_frozenPolicyHash;
     NSString *_osVersion;
-    NSString *_policyHash;
     NSMutableArray *_policySecrets;
     NSData *_recoveryEncryptionPublicKey;
     NSData *_recoverySigningPublicKey;
     NSString *_serialNumber;
     struct {
         unsigned int clock:1;
-        unsigned int policyVersion:1;
+        unsigned int flexiblePolicyVersion:1;
+        unsigned int frozenPolicyVersion:1;
     } _has;
 }
 
 + (Class)policySecretsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *policySecrets; // @synthesize policySecrets=_policySecrets;
+@property(retain, nonatomic) NSString *flexiblePolicyHash; // @synthesize flexiblePolicyHash=_flexiblePolicyHash;
+@property(nonatomic) unsigned long long flexiblePolicyVersion; // @synthesize flexiblePolicyVersion=_flexiblePolicyVersion;
 @property(retain, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(retain, nonatomic) NSData *recoveryEncryptionPublicKey; // @synthesize recoveryEncryptionPublicKey=_recoveryEncryptionPublicKey;
 @property(retain, nonatomic) NSData *recoverySigningPublicKey; // @synthesize recoverySigningPublicKey=_recoverySigningPublicKey;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(retain, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
-@property(retain, nonatomic) NSString *policyHash; // @synthesize policyHash=_policyHash;
-@property(nonatomic) unsigned long long policyVersion; // @synthesize policyVersion=_policyVersion;
+@property(retain, nonatomic) NSString *frozenPolicyHash; // @synthesize frozenPolicyHash=_frozenPolicyHash;
+@property(nonatomic) unsigned long long frozenPolicyVersion; // @synthesize frozenPolicyVersion=_frozenPolicyVersion;
 @property(nonatomic) unsigned long long clock; // @synthesize clock=_clock;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -51,13 +56,15 @@
 - (unsigned long long)policySecretsCount;
 - (void)addPolicySecrets:(id)arg1;
 - (void)clearPolicySecrets;
+@property(readonly, nonatomic) _Bool hasFlexiblePolicyHash;
+@property(nonatomic) _Bool hasFlexiblePolicyVersion;
 @property(readonly, nonatomic) _Bool hasSerialNumber;
 @property(readonly, nonatomic) _Bool hasRecoveryEncryptionPublicKey;
 @property(readonly, nonatomic) _Bool hasRecoverySigningPublicKey;
 @property(readonly, nonatomic) _Bool hasDeviceName;
 @property(readonly, nonatomic) _Bool hasOsVersion;
-@property(readonly, nonatomic) _Bool hasPolicyHash;
-@property(nonatomic) _Bool hasPolicyVersion;
+@property(readonly, nonatomic) _Bool hasFrozenPolicyHash;
+@property(nonatomic) _Bool hasFrozenPolicyVersion;
 @property(nonatomic) _Bool hasClock;
 
 @end

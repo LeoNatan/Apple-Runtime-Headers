@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKDashboardItem-Protocol.h>
 
-@class CNContact, NSString, PKMerchant, PKPaymentTransactionGroup;
+@class CNContact, NSString, PKInstallmentPlanProduct, PKMerchant, PKPaymentTransactionGroup;
 
 @interface PKTransactionHistoryHeaderItem : NSObject <PKDashboardItem>
 {
@@ -18,15 +18,17 @@
     CNContact *_contact;
     PKPaymentTransactionGroup *_transactionGroup;
     int _transactionType;
+    PKInstallmentPlanProduct *_installmentProduct;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) PKInstallmentPlanProduct *installmentProduct; // @synthesize installmentProduct=_installmentProduct;
 @property(nonatomic) int transactionType; // @synthesize transactionType=_transactionType;
 @property(retain, nonatomic) PKPaymentTransactionGroup *transactionGroup; // @synthesize transactionGroup=_transactionGroup;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(copy, nonatomic) NSString *peerPaymentCounterpartHandle; // @synthesize peerPaymentCounterpartHandle=_peerPaymentCounterpartHandle;
 @property(retain, nonatomic) PKMerchant *merchant; // @synthesize merchant=_merchant;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned int)arg1;
 
 // Remaining properties

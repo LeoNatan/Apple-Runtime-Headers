@@ -16,11 +16,11 @@
     NSString *_mirroredSectionID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mirroredSectionID; // @synthesize mirroredSectionID=_mirroredSectionID;
 @property(copy, nonatomic) NSString *universalSectionID; // @synthesize universalSectionID=_universalSectionID;
 @property(copy, nonatomic) NSString *remoteSectionID; // @synthesize remoteSectionID=_remoteSectionID;
 @property(copy, nonatomic) NSSet *localSectionIDs; // @synthesize localSectionIDs=_localSectionIDs;
-- (void).cxx_destruct;
 - (void)addLocalSectionID:(id)arg1;
 - (id)description;
 - (id)copy;

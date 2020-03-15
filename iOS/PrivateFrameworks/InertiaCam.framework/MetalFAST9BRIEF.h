@@ -49,9 +49,9 @@
 
 + (id)_createMTLBufferFromRectRegionsDesiredKeypoints:(id)arg1 device:(id)arg2 storageMode:(unsigned long long)arg3 maxAllowedDescriptors:(unsigned long long *)arg4;
 + (id)_createMTLBufferFromRects:(id)arg1 device:(id)arg2 storageMode:(unsigned long long)arg3 maxRectWidth:(unsigned long long *)arg4 maxRectHeight:(unsigned long long *)arg5;
+- (void).cxx_destruct;
 @property(readonly, retain) id <MTLCommandQueue> queue; // @synthesize queue=_queue;
 @property(readonly, retain) id <MTLDevice> device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)_gaussianishBlur_metal:(id)arg1 inputTexture:(id)arg2 outputTexture:(id)arg3 offset:(struct CGPoint)arg4;
 - (void)ORBDescriptorsFromPixelBuffer_metal:(id)arg1 inputBuffer:(struct __CVBuffer *)arg2 descriptorBuffer:(id)arg3 refinedKeypointsBuffer:(id)arg4 responseBuffer:(id)arg5 cumulativeKeypointsPerRegionBuffer:(id)arg6 intermediateBuffers:(id)arg7;
 - (void)_ORBDescriptorsFromTextures_part2_metal:(id)arg1 inputTexture_RGBA8Uint:(id)arg2 inputTexture_R8Unorm:(id)arg3 descriptorBuffer:(id)arg4 refinedKeypointsBuffer:(id)arg5 cumulativeKeypointsPerRegionBuffer:(id)arg6 intermediateBuffers:(id)arg7 keypointCount:(int)arg8;

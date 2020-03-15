@@ -21,8 +21,8 @@
 + (void)_setupDiskCache;
 + (id)sharedInstance;
 + (void)registerDefaults;
-@property(retain) PAImageCache *masterImageCache; // @synthesize masterImageCache=_masterImageCache;
 - (void).cxx_destruct;
+@property(retain) PAImageCache *masterImageCache; // @synthesize masterImageCache=_masterImageCache;
 - (id)submitURLRequest:(id)arg1 canceler:(id)arg2;
 - (id)newLoader;
 - (id)init;

@@ -12,9 +12,9 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsGroundLocation; // @synthesize wantsGroundLocation=_wantsGroundLocation;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (id)initWithWantsGroundLocation:(_Bool)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)initWithHandler:(CDUnknownBlockType)arg1;
 

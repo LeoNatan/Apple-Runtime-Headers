@@ -16,6 +16,9 @@
 - (id)_accessibilityUserTestingChildren;
 - (id)accessibilityCustomActions;
 - (_Bool)_accessibilityPerformCallToAction:(id)arg1;
+- (id)_axDescriptionLabel;
+- (id)_axTitleLabel;
+- (id)_axBadgeLabel;
 - (id)_axCallToActionButton;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;

@@ -20,11 +20,11 @@
     id <IMKTextInput> _textInput;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <IMKTextInput> textInput; // @synthesize textInput=_textInput;
 @property(retain, nonatomic) IMKCandidateList *candidateList; // @synthesize candidateList=_candidateList;
 @property(readonly, nonatomic) IMKCandidates *candidateController; // @synthesize candidateController=_candidateController;
 @property(nonatomic) __weak id <IMKCandidateMenuDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)selectedCandidateForProposedCandidate:(id)arg1 candidateController:(id)arg2;
 - (unsigned long long)firstVisibleLineForCandidateController:(id)arg1;
 - (void)didFinishInteracting:(id)arg1;

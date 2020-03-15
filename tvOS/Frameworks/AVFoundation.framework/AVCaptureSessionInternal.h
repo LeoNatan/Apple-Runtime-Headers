@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
     struct OpaqueCMClock *masterClock;
     _Bool notifiesOnMainThread;
     _Bool adjustingVideoDeviceHDREnabled;
-    _Bool resetVideoZoomFactorAndMinMaxFrameDurations;
+    NSMutableArray *devicesToResetVideoZoomFactorAndMinMaxFrameDurations;
     _Bool authorizedToUseCameraInMultipleForegroundAppLayout;
 }
 

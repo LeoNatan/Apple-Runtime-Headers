@@ -20,6 +20,7 @@
     _Bool _reducedMotion;
     struct {
         unsigned int delegateIsRadioSection:1;
+        unsigned int delegateRowSpacing:1;
         unsigned int delegateHeightForHeader:1;
         unsigned int delegateHeightForFooter:1;
         unsigned int delegateHeightForItem:1;
@@ -40,6 +41,7 @@
 + (float)defaultRowSpacing;
 + (void)initialize;
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic) float estimatedFooterHeight; // @synthesize estimatedFooterHeight=_estimatedFooterHeight;
 @property(nonatomic) float estimatedHeaderHeight; // @synthesize estimatedHeaderHeight=_estimatedHeaderHeight;
 @property(nonatomic) float estimatedRowHeight; // @synthesize estimatedRowHeight=_estimatedRowHeight;
@@ -47,7 +49,6 @@
 @property(nonatomic) float headerHeight; // @synthesize headerHeight=_headerHeight;
 @property(nonatomic) float rowSpacing; // @synthesize rowSpacing=_rowSpacing;
 @property(nonatomic) float rowHeight; // @synthesize rowHeight=_rowHeight;
-- (void).cxx_destruct;
 - (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (float)scrollOffsetForEllipticScrollingLayoutProvider:(id)arg1;
@@ -68,6 +69,7 @@
 - (void)setForceCurvesBottom:(_Bool)arg1;
 - (void)setForceCurvesTop:(_Bool)arg1;
 - (int)_totalElementCount;
+- (float)_rowSpacing:(int)arg1;
 - (_Bool)_isRadioSection:(int)arg1;
 - (id)_updateAttributesForCustomAttributes:(id)arg1;
 - (void)finalizeCollectionViewUpdates;

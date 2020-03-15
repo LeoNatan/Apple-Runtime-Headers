@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSDate *_dateM5Ends;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *dateM5Ends; // @synthesize dateM5Ends=_dateM5Ends;
 @property(retain, nonatomic) NSDate *dateM5Starts; // @synthesize dateM5Starts=_dateM5Starts;
 @property(retain) NSArray *observers; // @synthesize observers=_observers;
@@ -32,12 +33,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSSet *moodIDSet; // @synthesize moodIDSet=_moodIDSet;
 @property(readonly, nonatomic) FMSongLibrary *library; // @synthesize library=_library;
 @property(nonatomic) BOOL allowsDownloads; // @synthesize allowsDownloads=_allowsDownloads;
-- (void).cxx_destruct;
 - (id)allSongsScoredForKeywords:(id)arg1 musicGenreDistribution:(id)arg2 moodID:(id)arg3 excludingSongs:(id)arg4 localOptions:(int)arg5;
 - (id)recommendSongUIDForKeywords:(id)arg1 musicGenreDistribution:(id)arg2 moodID:(id)arg3 excludingSongs:(id)arg4;
 - (id)bestLocalSongUIDForKeywords:(id)arg1 musicGenreDistribution:(id)arg2 moodID:(id)arg3 excludingSongs:(id)arg4;
 - (BOOL)hasEnoughLocalSongsForMoodID:(id)arg1;
 - (id)bestSongToDownloadForMoodID:(id)arg1;
+- (id)nextFeaturedSongToDownload;
 - (double)scoreSong:(id)arg1 withDateLastSelected:(double)arg2;
 - (double)scoreSong:(id)arg1 withMusicGenreDistribution:(id)arg2;
 - (double)scoreSong:(id)arg1 withRegionID:(id)arg2;
@@ -51,6 +52,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)songHasSpecialKeyword:(id)arg1;
 - (id)genreIDsForSong:(id)arg1;
 - (id)moodIDForSong:(id)arg1;
+- (id)_featuredSongSortDescriptor;
+- (id)_featuredSongPredicate;
+- (id)_featuredSongPredicateForMoodTag:(id)arg1;
+- (id)fetchFeaturedSongsForMoodTag:(id)arg1;
 - (id)fetchAllSongs;
 - (id)fetchSongWithUID:(id)arg1;
 - (id)_moodIDforSongUID:(id)arg1;

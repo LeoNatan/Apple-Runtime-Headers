@@ -24,9 +24,9 @@
     id <MKZoomingCrownSequencerDelegate> _zoomingDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKZoomingCrownSequencerDelegate> zoomingDelegate; // @synthesize zoomingDelegate=_zoomingDelegate;
 @property(copy, nonatomic) id <MKZoomingGestureControlConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_crownInputSequencer:(id)arg1 offsetDidChangeByDelta:(double)arg2;
 - (void)crownInputSequencerIdleDidChange:(id)arg1;
 @property(readonly, nonatomic) float velocity;

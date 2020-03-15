@@ -18,12 +18,12 @@
 }
 
 + (unsigned long long)sortOrderForUsage:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL updateInProgress; // @synthesize updateInProgress=_updateInProgress;
 @property(readonly, copy, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
 @property(readonly, nonatomic) unsigned long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(readonly, nonatomic) unsigned long long usage; // @synthesize usage=_usage;
 @property(readonly, nonatomic) unsigned long long presence; // @synthesize presence=_presence;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly, nonatomic) NSString *privacyDescription;
 - (id)initWithPresence:(unsigned long long)arg1 cameraUsage:(unsigned long long)arg2 cameraProfiles:(id)arg3;

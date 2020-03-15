@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
     UILongPressGestureRecognizer *_twoFingerLongPressGestureRecognizer;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     UIPanGestureRecognizer *_panGestureRecognizer;
-    UIPanGestureRecognizer *_verticalPanGestureRecognizer;
     _MKOneHandedZoomGestureRecognizer *_oneHandedZoomGestureRecognizer;
     _MKDirectionalArrowRecognizer *_arrowZoomGestureRecognizer;
     VKTimedAnimation *_currentArrowAnimation;
@@ -60,7 +59,7 @@ __attribute__((visibility("hidden")))
     UIPanGestureRecognizer *_rightSidePanZoomGestureRecognizer;
 }
 
-@property(readonly, nonatomic) UIPanGestureRecognizer *verticalPanGestureRecognizer; // @synthesize verticalPanGestureRecognizer=_verticalPanGestureRecognizer;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool panWithMomentum; // @synthesize panWithMomentum=_panWithMomentum;
 @property(retain, nonatomic) MKRotationFilter *rotationFilter; // @synthesize rotationFilter=_rotationFilter;
 @property(retain, nonatomic) MKCompassView *compassView; // @synthesize compassView=_compassView;
@@ -73,9 +72,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILongPressGestureRecognizer *twoFingerLongPressGestureRecognizer; // @synthesize twoFingerLongPressGestureRecognizer=_twoFingerLongPressGestureRecognizer;
 @property(readonly, nonatomic) UITapGestureRecognizer *twoFingerTapGestureRecognizer; // @synthesize twoFingerTapGestureRecognizer=_twoFingerTapGestureRecognizer;
 @property(readonly, nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer; // @synthesize doubleTapGestureRecognizer=_doubleTapGestureRecognizer;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (_Bool)tiltGestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleArrowZoom:(id)arg1;
 - (void)handleZoomArrowMask:(long long)arg1 speed:(double)arg2;

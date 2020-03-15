@@ -29,6 +29,7 @@
     UIViewFloatAnimatableProperty *_feedbackViewVisibilityAnimatableProperty;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *feedbackViewVisibilityAnimatableProperty; // @synthesize feedbackViewVisibilityAnimatableProperty=_feedbackViewVisibilityAnimatableProperty;
 @property(nonatomic, getter=isPencilInteractionFeedbackViewVisible) _Bool pencilInteractionFeedbackViewVisible; // @synthesize pencilInteractionFeedbackViewVisible=_pencilInteractionFeedbackViewVisible;
 @property(retain, nonatomic) NSLayoutConstraint *pencilInteractionFeedbackViewCenterYConstraint; // @synthesize pencilInteractionFeedbackViewCenterYConstraint=_pencilInteractionFeedbackViewCenterYConstraint;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSTimer *pencilInteractionFeedbackViewAutodismissTimer; // @synthesize pencilInteractionFeedbackViewAutodismissTimer=_pencilInteractionFeedbackViewAutodismissTimer;
 @property(retain, nonatomic) PKPalettePencilInteractionFeedbackView *pencilInteractionFeedbackView; // @synthesize pencilInteractionFeedbackView=_pencilInteractionFeedbackView;
 @property(nonatomic) __weak id <PKPalettePencilInteractionFeedbackHostViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateLayoutGuideConstraints;
 - (void)_animatePencilInteractionFeedbackViewToVisible:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)hideFeedbackView;

@@ -15,10 +15,10 @@
     Class _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *namespaceURI; // @synthesize namespaceURI=_namespaceURI;
 @property(readonly, copy, nonatomic) NSString *elementName; // @synthesize elementName=_elementName;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithElementName:(id)arg1 namespaceURI:(id)arg2 type:(Class)arg3;
 

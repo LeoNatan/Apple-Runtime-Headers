@@ -36,13 +36,13 @@
     CDUnknownBlockType _pickedContactHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pickedContactHandler; // @synthesize pickedContactHandler=_pickedContactHandler;
 @property(copy, nonatomic) CDUnknownBlockType pickedContactPropertyHandler; // @synthesize pickedContactPropertyHandler=_pickedContactPropertyHandler;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSArray *preferences; // @synthesize preferences=_preferences;
-- (void).cxx_destruct;
 - (id)_requiredKeysForPreference:(id)arg1 contact:(id)arg2;
 - (_Bool)_isPaymentStyle;
 - (void)addressEditorViewControllerDidCancel:(id)arg1;

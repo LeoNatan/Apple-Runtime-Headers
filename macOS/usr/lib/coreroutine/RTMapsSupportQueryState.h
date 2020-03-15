@@ -17,11 +17,11 @@
 }
 
 + (id)queryTypeToString:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NewMSPQuery *query; // @synthesize query=_query;
 @property(nonatomic) BOOL loaded; // @synthesize loaded=_loaded;
 @property(readonly, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithType:(unsigned long long)arg1 dispatcher:(id)arg2;
 - (id)init;

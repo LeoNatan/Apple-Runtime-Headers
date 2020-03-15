@@ -12,20 +12,20 @@
 
 @interface PXGGradient : NSObject <NSCopying>
 {
-    struct NSColor *_startingColor;
-    struct NSColor *_endingColor;
+    NSColor *_startingColor;
+    NSColor *_endingColor;
     long long _direction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long direction; // @synthesize direction=_direction;
 @property(readonly, copy, nonatomic) NSColor *endingColor; // @synthesize endingColor=_endingColor;
 @property(readonly, copy, nonatomic) NSColor *startingColor; // @synthesize startingColor=_startingColor;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithStartingColor:(struct NSColor *)arg1 endingColor:(struct NSColor *)arg2 direction:(long long)arg3;
+- (id)initWithStartingColor:(id)arg1 endingColor:(id)arg2 direction:(long long)arg3;
 - (id)init;
 
 @end

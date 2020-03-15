@@ -23,6 +23,7 @@
     NSMutableArray *_lookupQueue_loadedProviders;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needsToLoadAllProviders; // @synthesize needsToLoadAllProviders=_needsToLoadAllProviders;
 @property(nonatomic) BOOL loadingInitialGadgets; // @synthesize loadingInitialGadgets=_loadingInitialGadgets;
 @property(nonatomic) BOOL hasLoadedPriorities; // @synthesize hasLoadedPriorities=_hasLoadedPriorities;
@@ -30,18 +31,17 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *lookupQueue; // @synthesize lookupQueue=_lookupQueue;
 @property(copy, nonatomic) NSArray *cachedProviders; // @synthesize cachedProviders=_cachedProviders;
 @property(nonatomic) __weak id <PXGadgetDelegate> nextGadgetResponder; // @synthesize nextGadgetResponder=_nextGadgetResponder;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_log> *gadgetDataSourceManagerLog;
-- (struct NSObject *)gadgetViewControllerHostingGadget:(id)arg1;
+- (id)gadgetViewControllerHostingGadget:(id)arg1;
 - (void)gadget:(id)arg1 animateChanges:(CDUnknownBlockType)arg2;
 - (void)gadget:(id)arg1 didChange:(unsigned long long)arg2;
 @property(readonly, nonatomic) PXGadgetNavigationHelper *rootNavigationHelper;
 @property(readonly, nonatomic) id <PXGadgetTransition> gadgetTransition;
 - (void)dismissAlert:(id)arg1;
 - (void)presentAlert:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)dismissGadgetViewController:(struct NSObject *)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)presentGadgetViewController:(struct NSObject *)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (BOOL)gadget:(id)arg1 transitionToViewController:(struct NSObject *)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)dismissGadgetViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)presentGadgetViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)gadget:(id)arg1 transitionToViewController:(id)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)invalidateGadgets;
 - (id)_sortedGadgets;
 - (id)_dataSourceSnapshot;

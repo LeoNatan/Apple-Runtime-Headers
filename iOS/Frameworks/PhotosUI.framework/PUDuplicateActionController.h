@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (void)_presentDuplicationWasInterruptedWithItemCount:(long long)arg1 hasPhotos:(_Bool)arg2 hasVideos:(_Bool)arg3;
 + (_Bool)canPerformDuplicateActionOnAssets:(id)arg1 orAssetsByAssetCollection:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setOnFinishDownloadCompletionHandler:) CDUnknownBlockType _onFinishDownloadCompletionHandler; // @synthesize _onFinishDownloadCompletionHandler=__onFinishDownloadCompletionHandler;
 @property(retain, nonatomic, setter=_setProgressController:) PUActivityProgressController *_progressController; // @synthesize _progressController=__progressController;
 @property(retain, nonatomic, setter=_setDuplicatingProgress:) NSProgress *_duplicatingProgress; // @synthesize _duplicatingProgress=__duplicatingProgress;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setOverallProgress:) NSProgress *_overallProgress; // @synthesize _overallProgress=__overallProgress;
 @property(nonatomic, setter=_setDidCheckDuplicateCapabilities:) _Bool _didCheckDuplicateCapabilities; // @synthesize _didCheckDuplicateCapabilities=__didCheckDuplicateCapabilities;
 @property(readonly, copy, nonatomic) NSDictionary *_assetsByAssetCollection; // @synthesize _assetsByAssetCollection=__assetsByAssetCollection;
-- (void).cxx_destruct;
 - (void)_checkHasPhotos:(_Bool *)arg1 hasVideos:(_Bool *)arg2;
 - (void)_handleProgressUserCancellation;
 - (void)_finishedDuplicationWithSuccess:(_Bool)arg1;

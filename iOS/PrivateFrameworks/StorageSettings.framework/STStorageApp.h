@@ -35,6 +35,7 @@
 + (void)notifyAppsUpdated;
 + (void)_notifyAppsUpdated:(id)arg1;
 + (void)setLaunchDatesNeedUpdating;
+- (void).cxx_destruct;
 @property _Bool isPseudoApp; // @synthesize isPseudoApp=_isPseudoApp;
 @property long long coreMLDataSize; // @synthesize coreMLDataSize=_coreMLDataSize;
 @property long long specialSize; // @synthesize specialSize=_specialSize;
@@ -51,7 +52,6 @@
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) FPProviderDomain *fpDomain; // @synthesize fpDomain=_fpDomain;
 @property(retain) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
-- (void).cxx_destruct;
 - (void)updateSpecialSize;
 @property(readonly) NSDate *installDate;
 @property(readonly) NSDate *lastUsedDate;

@@ -13,8 +13,8 @@
     NSArray *_addedSprings;
 }
 
-@property(retain, nonatomic) NSArray *addedSprings; // @synthesize addedSprings=_addedSprings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *addedSprings; // @synthesize addedSprings=_addedSprings;
 - (void)updateForTimestamp:(double)arg1;
 
 @end

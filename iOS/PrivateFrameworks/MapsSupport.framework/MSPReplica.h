@@ -18,9 +18,9 @@
 
 + (void)_switchForEdit:(id)arg1 caseIsInsertRecord:(CDUnknownBlockType)arg2 caseIsEditContents:(CDUnknownBlockType)arg3;
 + (id)allowedEditClasses;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *records; // @synthesize records=_records;
 @property(readonly, copy, nonatomic) NSUUID *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (id)tombstoneRecordForRecord:(id)arg1;

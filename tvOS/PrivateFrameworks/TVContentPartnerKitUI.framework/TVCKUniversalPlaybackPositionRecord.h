@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     TVCKPodcastGUID *_podcastGUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVCKPodcastGUID *podcastGUID; // @synthesize podcastGUID=_podcastGUID;
 @property(retain, nonatomic) NSURL *podcastURL; // @synthesize podcastURL=_podcastURL;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *bookmarkTime; // @synthesize bookmarkTime=_bookmarkTime;
 @property(retain, nonatomic) TVCKDataType *mediaType; // @synthesize mediaType=_mediaType;
 @property(copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)_uppDictionary;
 - (void)markAsUnwatched;

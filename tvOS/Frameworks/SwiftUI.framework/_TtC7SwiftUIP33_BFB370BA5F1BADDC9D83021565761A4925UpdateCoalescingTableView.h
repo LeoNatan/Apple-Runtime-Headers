@@ -9,10 +9,16 @@
 @interface _TtC7SwiftUIP33_BFB370BA5F1BADDC9D83021565761A4925UpdateCoalescingTableView : UITableView
 {
     // Error parsing type: , name: visibleCellsUpdate
+    // Error parsing type: , name: previousHorizontalMargin
+    // Error parsing type: , name: bridgedState
+    // Error parsing type: , name: viewGraph
 }
 
+- (void).cxx_destruct;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)layoutSubviews;
+- (void)layoutMarginsDidChange;
+@property(nonatomic) struct CGRect frame;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 style:(long long)arg2;
 

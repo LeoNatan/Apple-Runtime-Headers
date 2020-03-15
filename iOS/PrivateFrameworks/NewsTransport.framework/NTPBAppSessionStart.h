@@ -75,6 +75,7 @@
 + (Class)notificationChannelIdsType;
 + (Class)paidSubscriptionChannelIdsType;
 + (Class)visibleViewsType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMarketingNotificationEnabled; // @synthesize isMarketingNotificationEnabled=_isMarketingNotificationEnabled;
 @property(nonatomic) _Bool isNewIssuesNotificationEnabled; // @synthesize isNewIssuesNotificationEnabled=_isNewIssuesNotificationEnabled;
 @property(nonatomic) int internalAutoSubscribeFeedCount; // @synthesize internalAutoSubscribeFeedCount=_internalAutoSubscribeFeedCount;
@@ -106,7 +107,6 @@
 @property(nonatomic) int channelSubscriptionCount; // @synthesize channelSubscriptionCount=_channelSubscriptionCount;
 @property(retain, nonatomic) NSMutableArray *visibleViews; // @synthesize visibleViews=_visibleViews;
 @property(nonatomic) long long lastAppSessionTimestamp; // @synthesize lastAppSessionTimestamp=_lastAppSessionTimestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

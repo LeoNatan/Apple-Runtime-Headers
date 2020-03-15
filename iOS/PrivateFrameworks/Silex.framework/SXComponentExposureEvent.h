@@ -16,11 +16,11 @@
     NSDictionary *_metaData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *metaData; // @synthesize metaData=_metaData;
 @property(readonly, nonatomic) NSString *componentRole; // @synthesize componentRole=_componentRole;
 @property(readonly, nonatomic) NSString *componentType; // @synthesize componentType=_componentType;
 @property(readonly, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithComponent:(id)arg1;
 

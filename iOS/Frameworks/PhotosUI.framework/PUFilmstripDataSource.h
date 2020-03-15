@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSArray *_indicatorInfos;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *indicatorInfos; // @synthesize indicatorInfos=_indicatorInfos;
 @property(readonly, nonatomic) long long numberOfIndexes; // @synthesize numberOfIndexes=_numberOfIndexes;
 @property(readonly, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)indexPathForAsset:(id)arg1;
 - (id)assetAtIndexPath:(id)arg1;
 - (double)_normalizedTimeForIndexPath:(id)arg1;

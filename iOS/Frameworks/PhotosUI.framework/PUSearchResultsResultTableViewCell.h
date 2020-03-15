@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UILabel *_resultAuxSubtitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *resultAuxSubtitleLabel; // @synthesize resultAuxSubtitleLabel=_resultAuxSubtitleLabel;
 @property(retain, nonatomic) UILabel *resultSubtitleLabel; // @synthesize resultSubtitleLabel=_resultSubtitleLabel;
 @property(retain, nonatomic) UILabel *resultTitleLabel; // @synthesize resultTitleLabel=_resultTitleLabel;
 @property(retain, nonatomic) UIImageView *resultImageView; // @synthesize resultImageView=_resultImageView;
 @property(nonatomic) unsigned long long imageCropStyle; // @synthesize imageCropStyle=_imageCropStyle;
-- (void).cxx_destruct;
 - (void)_preferredContentSizeChanged:(id)arg1;
 - (void)setAttributedTitle:(id)arg1 subtitle:(id)arg2 auxSubtitle:(id)arg3;
 - (void)setImage:(id)arg1;

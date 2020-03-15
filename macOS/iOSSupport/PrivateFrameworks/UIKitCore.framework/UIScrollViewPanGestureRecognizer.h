@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
     UIScrollViewDirectionalPressGestureRecognizer *_directionalPressGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIScrollViewDirectionalPressGestureRecognizer *directionalPressGestureRecognizer; // @synthesize directionalPressGestureRecognizer=_directionalPressGestureRecognizer;
 @property(nonatomic) double translationScaleFactor; // @synthesize translationScaleFactor=_translationScaleFactor;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (BOOL)_allowsBounce;
 - (long long)_modifierFlags;
 - (void)_scrollingChangedWithEvent:(id)arg1;
@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
+- (BOOL)_isParentScrollView:(id)arg1 consideringEvent:(id)arg2;
 - (void)_handleCaughtDeceleratingScrollViewWithEvent:(id)arg1;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (struct CGPoint)velocityInView:(id)arg1;

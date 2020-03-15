@@ -13,7 +13,10 @@
 
 @interface EKPersistentObject : NSObject <EKProtocolObject, EKFrozenMeltedPair>
 {
-    struct _opaque_pthread_mutex_t _lock;
+    struct _opaque_pthread_mutex_t {
+        long long __sig;
+        char __opaque[56];
+    } _lock;
     EKEventStore *_eventStore;
     EKObjectID *_objectID;
     NSMutableSet *_dirtyProperties;
@@ -30,8 +33,8 @@
 + (Class)alternateUniverseClass;
 + (id)relations;
 + (id)defaultPropertiesToLoad;
-@property(retain, nonatomic) NSMutableDictionary *committedProperties; // @synthesize committedProperties=_committedProperties;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *committedProperties; // @synthesize committedProperties=_committedProperties;
 - (id)dump;
 - (void)_loadDefaultPropertiesIfNeeded;
 - (void)_takeValuesForDefaultPropertyKeys:(id)arg1 values:(id)arg2;
@@ -104,7 +107,7 @@
 - (_Bool)isEqual:(id)arg1 ignoringProperties:(id)arg2;
 - (_Bool)isCompletelyEqual:(id)arg1;
 - (id)meltedObjectInStore:(id)arg1;
-- (struct EKPersistentObject *)frozenObject;
+- (id)frozenObject;
 - (Class)frozenClass;
 - (id)existingMeltedObject;
 - (id)changeSet;
@@ -119,7 +122,7 @@
 @property(readonly, nonatomic) _Bool canBeConvertedToFullObject;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)initWithAlternateUniverseObject:(struct EKPersistentObject *)arg1 inEventStore:(id)arg2 withUpdatedChildObjects:(id)arg3;
+- (id)initWithAlternateUniverseObject:(id)arg1 inEventStore:(id)arg2 withUpdatedChildObjects:(id)arg3;
 - (id)init;
 
 // Remaining properties

@@ -20,9 +20,9 @@
 + (unsigned long long)predictedResultLimit;
 + (void)configureSettings:(id)arg1 withFetchRequest:(id)arg2;
 + (void)configureContext:(id)arg1 withFetchRequest:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly, nonatomic) CDUnknownBlockType peopleSuggesterFactory; // @synthesize peopleSuggesterFactory=_peopleSuggesterFactory;
-- (void).cxx_destruct;
 - (id)resultValueForCDContact:(id)arg1;
 - (long long)addressTypeForCDContact:(id)arg1;
 - (id)autocompleteResultsFromSuggesterResults:(id)arg1 factory:(id)arg2;

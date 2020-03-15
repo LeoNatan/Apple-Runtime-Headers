@@ -30,9 +30,9 @@
     id _context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(nonatomic) __weak id <UIActionSheetDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_titleLabel;
 - (id)_alertController;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;

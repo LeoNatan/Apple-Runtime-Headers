@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     GraphState *_adaptedState;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GraphState *adaptedState; // @synthesize adaptedState=_adaptedState;
 @property(retain, nonatomic) GraphState *originalState; // @synthesize originalState=_originalState;
 @property(readonly, nonatomic) unsigned long long transactionNumber; // @synthesize transactionNumber=_transactionNumber;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (const struct MutateGraph *)mutateGraph;
 - (void)logTransaction;
 - (id)initWithOriginalState:(id)arg1 adaptedState:(id)arg2 graphBuilder:(const struct GraphBuilder *)arg3;

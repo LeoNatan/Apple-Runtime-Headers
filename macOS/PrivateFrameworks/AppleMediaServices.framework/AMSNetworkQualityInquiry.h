@@ -27,11 +27,11 @@
 + (id)reportForTask:(id)arg1 fromReports:(id)arg2;
 + (id)lastConnectionReport;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *knownNetworksReadyHandlers; // @synthesize knownNetworksReadyHandlers=_knownNetworksReadyHandlers;
 @property(readonly, nonatomic) NSMutableSet *knownNetworks; // @synthesize knownNetworks=_knownNetworks;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NWNetworkOfInterestManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (void)didStopTrackingAllNOIs:(id)arg1;
 - (void)didStopTrackingNOI:(id)arg1;
 - (void)didStartTrackingNOI:(id)arg1;

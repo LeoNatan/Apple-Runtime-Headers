@@ -82,6 +82,7 @@
 }
 
 + (double)defaultIconLayoutAnimationDuration;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isResettingRootIconLists) _Bool resettingRootIconLists; // @synthesize resettingRootIconLists=_resettingRootIconLists;
 @property(retain, nonatomic) UIViewController<SBHSidebarProvider> *sidebarViewController; // @synthesize sidebarViewController=_sidebarViewController;
 @property(readonly, nonatomic) SBHomeScreenDefaults *homeScreenDefaults; // @synthesize homeScreenDefaults=_homeScreenDefaults;
@@ -117,7 +118,6 @@
 @property(retain, nonatomic) SBRootFolder *rootFolder; // @synthesize rootFolder=_rootFolder;
 @property(retain, nonatomic) SBHIconModel *iconModel; // @synthesize iconModel=_iconModel;
 @property(nonatomic) __weak id <SBHIconManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)URLBagContext;
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *cachePath; // @synthesize cachePath=_cachePath;
 @property(readonly, nonatomic) NSDictionary *existingDictionary; // @synthesize existingDictionary=_existingDictionary;
 @property(readonly, nonatomic) SSURLBag *urlBag; // @synthesize urlBag=_urlBag;
-- (void).cxx_destruct;
 - (void)checkTrustStatusForURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)isTrustedURL:(id)arg1;
 - (void)loadValueForKey:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -32,12 +32,12 @@
 + (id)doneWithDuplicateCheckerForLibrary:(id)arg1 forClient:(id)arg2;
 + (id)duplicateCheckerForClient:(id)arg1 andLibrary:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *generatedPPTData; // @synthesize generatedPPTData=_generatedPPTData;
 @property(retain, nonatomic) NSMutableDictionary *notFoundPPTData; // @synthesize notFoundPPTData=_notFoundPPTData;
 @property(retain, nonatomic) NSMutableDictionary *foundPPTData; // @synthesize foundPPTData=_foundPPTData;
 @property(retain, nonatomic) PHPhotoLibrary *library; // @synthesize library=_library;
 @property(retain) PFDispatchQueue *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)generatePPTData;
 - (void)photoLibraryDidChange:(id)arg1;
 - (id)getAssetObjectIdsFromObjectIds:(id)arg1;

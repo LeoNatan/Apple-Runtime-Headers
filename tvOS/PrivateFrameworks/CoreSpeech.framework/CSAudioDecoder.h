@@ -17,8 +17,8 @@
 }
 
 + (id)opusDecoder;
-@property __weak id <CSAudioDecoderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <CSAudioDecoderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)addPackets:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 remoteVAD:(id)arg3 timestamp:(unsigned long long)arg4 receivedNumChannels:(unsigned int)arg5;
 - (id)initWithInASBD:(struct AudioStreamBasicDescription)arg1 outASBD:(struct AudioStreamBasicDescription)arg2;
 

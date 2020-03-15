@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long operationGroupQuantity; // @synthesize operationGroupQuantity=_operationGroupQuantity;
 @property(retain, nonatomic) NSString *operationGroupName; // @synthesize operationGroupName=_operationGroupName;
 @property(retain, nonatomic) NSString *operationGroupId; // @synthesize operationGroupId=_operationGroupId;
 @property(retain, nonatomic) NSString *operationId; // @synthesize operationId=_operationId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

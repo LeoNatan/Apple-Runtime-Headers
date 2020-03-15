@@ -23,8 +23,8 @@
 }
 
 + (void)clearStore;
-@property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (_Bool)_stateLock_truncateIfNeeded:(id)arg1;
 - (void)_saveQueue_save;
 - (void)_stateLock_markDirty;

@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)auxiliaryUserInfoType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *auxiliaryUserInfos; // @synthesize auxiliaryUserInfos=_auxiliaryUserInfos;
 @property(nonatomic) int auxiliaryCode; // @synthesize auxiliaryCode=_auxiliaryCode;
 @property(retain, nonatomic) NSString *auxiliaryDomain; // @synthesize auxiliaryDomain=_auxiliaryDomain;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

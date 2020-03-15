@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *iconDataCarPlay; // @synthesize iconDataCarPlay=_iconDataCarPlay;
 @property(retain, nonatomic) NSData *iconData; // @synthesize iconData=_iconData;
 @property(copy, nonatomic) NSNumber *engineType; // @synthesize engineType=_engineType;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 engineType:(id)arg3;

@@ -32,12 +32,12 @@ __attribute__((visibility("hidden")))
     NSPointerArray *_itemViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPointerArray *itemViews; // @synthesize itemViews=_itemViews;
 @property(nonatomic) unsigned long long dropOffGradientModes; // @synthesize dropOffGradientModes=_dropOffGradientModes;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) __weak id <VisualScrubberViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <VisualScrubberViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)accessibilityDescriptionForVisualScrubberItemView:(id)arg1;
 - (double)minimumWidthForAccordionHost:(id)arg1;
 - (BOOL)shouldExpandWhenClickedForAccordionHost:(id)arg1;

@@ -18,9 +18,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
 @property(retain) NSPointerArray *xpcClients; // @synthesize xpcClients=_xpcClients;
-- (void).cxx_destruct;
 - (void)xpcRequestUITriggerWithName:(id)arg1 withDictionary:(id)arg2 withReason:(int)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)xpcUIProvidersWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

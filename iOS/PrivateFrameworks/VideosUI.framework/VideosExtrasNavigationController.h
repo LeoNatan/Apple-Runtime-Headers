@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     _Bool _showsBuiltInNavControls;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak VideosExtrasContext *context; // @synthesize context=_context;
 @property(nonatomic) _Bool showsBuiltInNavControls; // @synthesize showsBuiltInNavControls=_showsBuiltInNavControls;
-- (void).cxx_destruct;
 - (void)_installBackButtonOnNavigationItem:(id)arg1 withTitle:(id)arg2;
 - (void)_popViewControllerFromBackButton;
 - (void)_installDoneButtonOnNavigationItem:(id)arg1;

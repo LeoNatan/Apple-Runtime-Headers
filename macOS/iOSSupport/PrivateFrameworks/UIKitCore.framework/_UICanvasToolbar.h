@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_sceneIdentifier;
 }
 
-@property(retain) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 - (void).cxx_destruct;
+@property(retain) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 - (void)_doCommonToolbarInit;
 - (id)initWithFrame:(struct CGRect)arg1 sceneIdentifier:(id)arg2;
 - (BOOL)forUseInMacToolbar;

@@ -14,8 +14,8 @@
     CDUnknownBlockType _shortTokenCompletionBlock;
 }
 
-@property(copy) CDUnknownBlockType shortTokenCompletionBlock; // @synthesize shortTokenCompletionBlock=_shortTokenCompletionBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType shortTokenCompletionBlock; // @synthesize shortTokenCompletionBlock=_shortTokenCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithURL:(id)arg1;

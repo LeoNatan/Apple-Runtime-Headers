@@ -16,8 +16,8 @@
 }
 
 + (Class)scoresType;
-@property(retain, nonatomic) NSMutableArray *scores; // @synthesize scores=_scores;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *scores; // @synthesize scores=_scores;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

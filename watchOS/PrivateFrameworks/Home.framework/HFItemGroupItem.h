@@ -13,8 +13,8 @@
     NSSet *_items;
 }
 
-@property(readonly, nonatomic) NSSet *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *items; // @synthesize items=_items;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (void)setItems:(id)arg1;
 - (id)initWithItems:(id)arg1;

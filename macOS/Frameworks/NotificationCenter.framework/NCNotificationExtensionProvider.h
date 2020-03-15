@@ -17,9 +17,9 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) NSString *extensionPointType; // @synthesize extensionPointType=_extensionPointType;
-- (void).cxx_destruct;
 - (void)_setupConnection;
 - (id)initWithExtensionPoint:(id)arg1 userInfo:(id)arg2 endPoint:(id)arg3;
 

@@ -18,12 +18,12 @@
     UIColor *_shadowColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(copy, nonatomic) CDUnknownBlockType timeTravelYAdjustmentProviderBlock; // @synthesize timeTravelYAdjustmentProviderBlock=_timeTravelYAdjustmentProviderBlock;
 @property(copy, nonatomic) CDUnknownBlockType shadowColorProviderBlock; // @synthesize shadowColorProviderBlock=_shadowColorProviderBlock;
 @property(nonatomic) _Bool usesLegibility; // @synthesize usesLegibility=_usesLegibility;
 @property(retain, nonatomic) NSArray *supportedComplicationSlots; // @synthesize supportedComplicationSlots=_supportedComplicationSlots;
-- (void).cxx_destruct;
 - (void)setAlpha:(double)arg1 faceView:(id)arg2;
 - (void)setUsesLegibility:(_Bool)arg1 faceView:(id)arg2;
 - (void)setShadowColor:(id)arg1 faceView:(id)arg2;

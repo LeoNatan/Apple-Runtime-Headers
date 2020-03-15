@@ -28,9 +28,9 @@
     id <CDPUIDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceInlinePresentation; // @synthesize forceInlinePresentation=_forceInlinePresentation;
 @property(nonatomic) __weak id <CDPUIDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_showResetKeychainConfirmationAlertWithViewController:(id)arg1;
 - (void)_setupDevicePickerController:(CDUnknownBlockType)arg1;
@@ -69,7 +69,7 @@
 - (void)_presentRemoteSecretControllerWithNewestDevice:(id)arg1;
 - (id)_remoteSecretControllerForDevice:(id)arg1;
 - (id)_remoteSecretControllerForNewestDevice:(id)arg1;
-- (void)cdpContext:(id)arg1 promptForLocalSecretWithHandler:(id)arg2;
+- (void)cdpContext:(id)arg1 promptForLocalSecretWithCompletion:(CDUnknownBlockType)arg2;
 - (void)_presentRootController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_dismissCDPUIWithReason:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelTapped:(id)arg1;

@@ -54,6 +54,7 @@
     struct UIEdgeInsets _knobInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIVibrantSettings *vibrantSettings; // @synthesize vibrantSettings=_vibrantSettings;
 @property(readonly, nonatomic, getter=_knobView) UIView *knobView; // @synthesize knobView=_knobView;
 @property(nonatomic) float cachedTrackMaskWidth; // @synthesize cachedTrackMaskWidth=_cachedTrackMaskWidth;
@@ -80,7 +81,6 @@
 @property(nonatomic) unsigned int dragStyle; // @synthesize dragStyle=_dragStyle;
 @property(nonatomic) int textStyle; // @synthesize textStyle=_textStyle;
 @property(nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)setEnabled:(_Bool)arg1;
 - (float)trackTextXOffset;
 @property(readonly, nonatomic) struct CGRect trackTextRect;

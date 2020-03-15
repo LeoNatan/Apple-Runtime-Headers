@@ -16,8 +16,8 @@
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)_fontSizeDidChange;
 - (id)_fontDescriptor;

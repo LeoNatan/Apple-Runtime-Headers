@@ -14,8 +14,8 @@
 }
 
 + (double)defaultHeight;
-@property(readonly, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 - (void)setHeight:(double)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -24,13 +24,13 @@
 
 + (id)sharedToolPickerForWindow:(id)arg1;
 + (id)activeToolPickerForWindow:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKToolPickerPrivateDelegate> _delegate; // @synthesize _delegate=__delegate;
 @property(nonatomic) __weak UIResponder *_previousFirstResponder; // @synthesize _previousFirstResponder=__previousFirstResponder;
 @property(nonatomic) _Bool _paletteWasCompact; // @synthesize _paletteWasCompact=__paletteWasCompact;
 @property(retain, nonatomic) PKPaletteViewInteraction *_interaction; // @synthesize _interaction=__interaction;
 @property(retain, nonatomic) NSHashTable *_firstRespondersForVisibleUI; // @synthesize _firstRespondersForVisibleUI=__firstRespondersForVisibleUI;
 @property(retain, nonatomic) NSHashTable *_observers; // @synthesize _observers=__observers;
-- (void).cxx_destruct;
 - (_Bool)_internalClassWantsToolPickerVisibleForResponder:(id)arg1;
 - (id)_internalClassesAcceptingFirstResponder;
 - (void)_updatePaletteTraitCollection:(id)arg1;

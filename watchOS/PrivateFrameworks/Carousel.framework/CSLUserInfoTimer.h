@@ -11,8 +11,8 @@
     id _userInfo;
 }
 
-@property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 
 @end
 

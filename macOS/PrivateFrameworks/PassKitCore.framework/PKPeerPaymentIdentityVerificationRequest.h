@@ -15,10 +15,10 @@
     NSString *_prerequisiteIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *prerequisiteIdentifier; // @synthesize prerequisiteIdentifier=_prerequisiteIdentifier;
 @property(nonatomic) BOOL devSigned; // @synthesize devSigned=_devSigned;
 @property(copy, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2 deviceIdentifier:(id)arg3 deviceScore:(id)arg4 deviceMetadata:(id)arg5;
 
 @end

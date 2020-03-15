@@ -32,6 +32,7 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(nonatomic) __weak ASEvent *parentEvent; // @synthesize parentEvent=_parentEvent;
 @property(retain, nonatomic) NSNumber *calendarType; // @synthesize calendarType=_calendarType;
 @property(retain, nonatomic) NSNumber *firstDayOfWeek; // @synthesize firstDayOfWeek=_firstDayOfWeek;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSNumber *dayOfWeek; // @synthesize dayOfWeek=_dayOfWeek;
 @property(retain, nonatomic) NSNumber *interval; // @synthesize interval=_interval;
 @property(retain, nonatomic) NSNumber *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setUntilString:(id)arg1;

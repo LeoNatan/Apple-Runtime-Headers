@@ -27,10 +27,6 @@ struct CGSize {
     double height;
 };
 
-struct NSMapTable {
-    Class _field1;
-};
-
 struct _MSVSignedRange {
     long long location;
     long long length;

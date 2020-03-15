@@ -15,10 +15,10 @@
     SGMicrodataItem *_itemValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SGMicrodataItem *itemValue; // @synthesize itemValue=_itemValue;
 @property(readonly, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly, nonatomic) NSString *propertyName; // @synthesize propertyName=_propertyName;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 value:(id)arg2;
 
 @end

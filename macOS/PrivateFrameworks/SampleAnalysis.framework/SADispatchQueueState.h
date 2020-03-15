@@ -19,15 +19,15 @@
 + (id)stateWithThread:(id)arg1 threadStateIndex:(unsigned long long)arg2;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_b1ad6422 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property unsigned long long threadStateIndex; // @synthesize threadStateIndex=_threadStateIndex;
 @property(readonly) SAThread *thread; // @synthesize thread=_thread;
-- (void).cxx_destruct;
 - (id)debugDescriptionWithDispatchQueue:(id)arg1;
 @property(readonly) SAThreadState *threadState;
 - (id)initWithThread:(id)arg1 threadStateIndex:(unsigned long long)arg2;
-- (void)populateReferencesUsingBuffer:(const CDStruct_b1ad6422 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_b1ad6422 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBuffer:(const CDStruct_b1ad6422 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_b1ad6422 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

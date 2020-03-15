@@ -23,6 +23,7 @@
 + (unsigned long long)sectionTypeForCategoryMask:(unsigned long long)arg1 isMomentSection:(_Bool)arg2 isTopAssetSection:(_Bool)arg3;
 + (id)_stringForCategory:(unsigned long long)arg1;
 + (id)sectionTitleForCategoryMask:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *mutableSearchResultUUIDs; // @synthesize mutableSearchResultUUIDs=_mutableSearchResultUUIDs;
 @property(nonatomic, getter=isSorted) _Bool sorted; // @synthesize sorted=_sorted;
 @property(readonly, nonatomic) NSMutableArray *mutableSearchResults; // @synthesize mutableSearchResults=_mutableSearchResults;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSDictionary *debugDictionary;
 @property(readonly, nonatomic) unsigned long long totalCount;

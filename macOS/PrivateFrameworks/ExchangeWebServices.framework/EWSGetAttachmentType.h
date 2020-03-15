@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *AttachmentIds; // @synthesize AttachmentIds=_AttachmentIds;
 @property(retain, nonatomic) EWSAttachmentResponseShapeType *AttachmentShape; // @synthesize AttachmentShape=_AttachmentShape;
-- (void).cxx_destruct;
 
 @end
 

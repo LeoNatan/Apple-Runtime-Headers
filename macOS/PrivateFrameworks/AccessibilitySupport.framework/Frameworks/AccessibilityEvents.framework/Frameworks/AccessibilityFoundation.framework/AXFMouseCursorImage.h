@@ -16,11 +16,11 @@
     struct CGPoint _displayHotSpot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *_images; // @synthesize _images=__images;
 @property(readonly, nonatomic) double maxCursorScale; // @synthesize maxCursorScale=_maxCursorScale;
 @property(readonly, nonatomic) struct CGPoint displayHotSpot; // @synthesize displayHotSpot=_displayHotSpot;
 @property(readonly, nonatomic) struct CGSize displaySize; // @synthesize displaySize=_displaySize;
-- (void).cxx_destruct;
 - (id)bestImageForCurrentCursorScale;
 - (id)bestImageForCursorScale:(double)arg1;
 @property(readonly, nonatomic) struct CGSize sizeAtCurrentCursorScale;

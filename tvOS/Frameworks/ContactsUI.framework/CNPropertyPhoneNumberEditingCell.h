@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_previousValue;
 }
 
-@property(retain, nonatomic) NSArray *previousValue; // @synthesize previousValue=_previousValue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *previousValue; // @synthesize previousValue=_previousValue;
 - (CDStruct_856ef1b3)suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

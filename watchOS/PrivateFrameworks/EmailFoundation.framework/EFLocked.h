@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) struct os_unfair_lock_s *unfairLockForTesting;
+- (void)setObject:(id)arg1;
 - (void)performWhileLocked:(CDUnknownBlockType)arg1;
 - (id)debugDescription;
 - (id)description;

@@ -31,6 +31,7 @@
     SKUICategoryTableViewController *_tableViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *selectedURL; // @synthesize selectedURL=_selectedURL;
 @property(nonatomic) long long segmentedControlLength; // @synthesize segmentedControlLength=_segmentedControlLength;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSURL *defaultURL; // @synthesize defaultURL=_defaultURL;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(retain, nonatomic) SKUICategory *category; // @synthesize category=_rootCategory;
-- (void).cxx_destruct;
 - (id)_tableViewControllerWithCategory:(id)arg1;
 - (void)_setResponse:(id)arg1 error:(id)arg2;
 - (id)_rootMetricsLocations;

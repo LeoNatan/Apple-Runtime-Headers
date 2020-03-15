@@ -22,6 +22,7 @@
     NSMutableSet *_overlaysToRemoveImmediately;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableSet *overlaysToRemoveImmediately; // @synthesize overlaysToRemoveImmediately=_overlaysToRemoveImmediately;
 @property(readonly) NSMutableSet *overlaysToAddImmediately; // @synthesize overlaysToAddImmediately=_overlaysToAddImmediately;
 @property(readonly) NSMutableSet *annotationsWithUpdatedIndex; // @synthesize annotationsWithUpdatedIndex=_annotationsWithUpdatedIndex;
@@ -30,7 +31,6 @@
 @property(readonly) NSMutableSet *annotationsToRemoveAfterAnimationHasStarted; // @synthesize annotationsToRemoveAfterAnimationHasStarted=_annotationsToRemoveAfterAnimationHasStarted;
 @property(readonly) NSMutableSet *annotationsToRemoveImmediately; // @synthesize annotationsToRemoveImmediately=_annotationsToRemoveImmediately;
 @property(readonly) NSMutableSet *annotationsToAddImmediately; // @synthesize annotationsToAddImmediately=_annotationsToAddImmediately;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)init;
 

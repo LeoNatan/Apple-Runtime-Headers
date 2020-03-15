@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) GEOImageServiceResponse *response; // @synthesize response=_response;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOImageServiceResponse *response; // @synthesize response=_response;
 - (_Bool)isValid;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

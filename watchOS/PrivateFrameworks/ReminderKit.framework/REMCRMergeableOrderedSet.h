@@ -14,15 +14,15 @@
 @interface REMCRMergeableOrderedSet : NSObject <NSCopying, NSSecureCoding>
 {
     REMReplicaIDSource *_replicaIDSource;
-    struct CRDocument *_document;
+    CRDocument *_document;
     NSMutableArray *_undos;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *undos; // @synthesize undos=_undos;
 @property(retain, nonatomic) CRDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) REMReplicaIDSource *replicaIDSource; // @synthesize replicaIDSource=_replicaIDSource;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -38,8 +38,8 @@
 - (id)description;
 - (id)initWithReplicaIDSource:(id)arg1 serializedData:(id)arg2 error:(id *)arg3;
 - (id)initWithReplicaIDSource:(id)arg1 orderedSet:(id)arg2;
-- (id)initWithReplicaIDSource:(id)arg1 document:(struct CRDocument *)arg2 undos:(id)arg3;
-- (id)initWithReplicaIDSource:(id)arg1 document:(struct CRDocument *)arg2;
+- (id)initWithReplicaIDSource:(id)arg1 document:(id)arg2 undos:(id)arg3;
+- (id)initWithReplicaIDSource:(id)arg1 document:(id)arg2;
 
 @end
 

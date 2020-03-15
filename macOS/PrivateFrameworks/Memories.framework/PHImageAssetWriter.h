@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSData *_data;
 }
 
-@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (unsigned long long)estimatedOutputSizeWithError:(id *)arg1;
 - (id)transfer;
 - (id)request;

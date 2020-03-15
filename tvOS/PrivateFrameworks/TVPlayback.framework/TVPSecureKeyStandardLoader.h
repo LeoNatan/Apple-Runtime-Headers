@@ -28,6 +28,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *rentalPlaybackStartDate; // @synthesize rentalPlaybackStartDate=_rentalPlaybackStartDate;
 @property(retain, nonatomic) NSDate *rentalExpirationDate; // @synthesize rentalExpirationDate=_rentalExpirationDate;
 @property(retain, nonatomic) NSMutableArray *pendingKeyResponses; // @synthesize pendingKeyResponses=_pendingKeyResponses;
@@ -42,7 +43,6 @@
 @property(nonatomic) _Bool holdKeyResponses; // @synthesize holdKeyResponses=_holdKeyResponses;
 @property(retain, nonatomic) id <TVPSecureKeyStandardLoaderConnectionHandling> connectionHandler; // @synthesize connectionHandler=_connectionHandler;
 @property(retain, nonatomic) id <TVPSecureKeyStandardLoaderRequestGenerating> requestGenerator; // @synthesize requestGenerator=_requestGenerator;
-- (void).cxx_destruct;
 - (void)sendStopRequest;
 - (void)startLoadingKeyResponseDataForRequest:(id)arg1;
 - (void)startLoadingContentIdentifierDataForRequest:(id)arg1;

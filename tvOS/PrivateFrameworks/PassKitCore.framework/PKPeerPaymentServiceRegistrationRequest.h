@@ -14,9 +14,9 @@
     PKPeerPaymentDeviceRegistrationData *_deviceData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPeerPaymentDeviceRegistrationData *deviceData; // @synthesize deviceData=_deviceData;
 @property(copy, nonatomic) NSString *pushToken; // @synthesize pushToken=_pushToken;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2 deviceIdentifier:(id)arg3 deviceScore:(id)arg4 deviceMetadata:(id)arg5;
 
 @end

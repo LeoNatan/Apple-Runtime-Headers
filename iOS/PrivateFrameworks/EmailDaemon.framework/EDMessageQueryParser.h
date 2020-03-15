@@ -17,11 +17,11 @@
 }
 
 + (id)performSearchableIndexQueryPredicate:(id)arg1 propertyMapper:(id)arg2 searchableIndex:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EDMessageQueryTransformer *transformer; // @synthesize transformer=_transformer;
 @property(readonly, nonatomic) EFSearchableIndexObjectPropertyMapper *searchableIndexMapper; // @synthesize searchableIndexMapper=_searchableIndexMapper;
 @property(readonly, nonatomic) EFSQLObjectPropertyMapper *sqlPropertyMapper; // @synthesize sqlPropertyMapper=_sqlPropertyMapper;
 @property(readonly, nonatomic) EDSearchableIndex *searchableIndex; // @synthesize searchableIndex=_searchableIndex;
-- (void).cxx_destruct;
 - (id)sqlQueryForQuery:(id)arg1 predicate:(id)arg2;
 - (id)sqlQueryForQuery:(id)arg1;
 - (id)initWithSchema:(id)arg1 protectedSchema:(id)arg2 searchableIndex:(id)arg3 accountsProvider:(id)arg4 vipManager:(id)arg5 messagePersistence:(id)arg6 mailboxPersistence:(id)arg7;

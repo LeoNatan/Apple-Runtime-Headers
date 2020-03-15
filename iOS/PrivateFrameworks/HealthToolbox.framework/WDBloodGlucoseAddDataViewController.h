@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     WDAddDataManualEntrySpinner *_mealTimeEntryItem;
 }
 
-@property(retain, nonatomic) WDAddDataManualEntrySpinner *mealTimeEntryItem; // @synthesize mealTimeEntryItem=_mealTimeEntryItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WDAddDataManualEntrySpinner *mealTimeEntryItem; // @synthesize mealTimeEntryItem=_mealTimeEntryItem;
 - (id)manualEntrySpinner:(id)arg1 titleForRow:(long long)arg2;
 - (long long)numberOfRowsInManualEntrySpinner:(id)arg1;
 - (id)manualEntryItemsForSection:(long long)arg1;

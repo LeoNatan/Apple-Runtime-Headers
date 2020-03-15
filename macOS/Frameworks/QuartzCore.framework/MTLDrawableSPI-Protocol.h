@@ -7,6 +7,7 @@
 #import <QuartzCore/MTLDrawable-Protocol.h>
 
 @protocol MTLDrawableSPI <MTLDrawable>
+@property(readonly, nonatomic) unsigned long long status;
 - (void)addPresentScheduledHandler:(void (^)(id <MTLDrawable>))arg1;
 @end
 

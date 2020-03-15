@@ -13,8 +13,8 @@
     NSMutableArray *_searchableItems;
 }
 
-@property(retain, nonatomic) NSMutableArray *searchableItems; // @synthesize searchableItems=_searchableItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *searchableItems; // @synthesize searchableItems=_searchableItems;
 - (id)_escapedStringForString:(id)arg1;
 - (id)_stringKeyForString:(id)arg1;
 - (_Bool)writeToPlistAndStringsFilesAtURL:(id)arg1 error:(id *)arg2;

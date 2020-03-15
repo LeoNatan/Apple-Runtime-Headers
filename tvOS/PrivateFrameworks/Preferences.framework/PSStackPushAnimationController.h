@@ -30,6 +30,7 @@
 + (id)_animationParametersForPreset:(long long)arg1;
 + (id)_snapshotOfViewController:(id)arg1 withNavigationBar:(id)arg2 prevViewController:(id)arg3;
 + (id)controllerWithViewControllerStack:(id)arg1 navigationController:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double springDamping; // @synthesize springDamping=_springDamping;
 @property(nonatomic) double pushDuration; // @synthesize pushDuration=_pushDuration;
 @property(nonatomic) double completionStagger; // @synthesize completionStagger=_completionStagger;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (void)_loadDefaultValues;
 - (id)_valueForAnimationParameter:(id)arg1;
 - (void)animationEnded:(_Bool)arg1;

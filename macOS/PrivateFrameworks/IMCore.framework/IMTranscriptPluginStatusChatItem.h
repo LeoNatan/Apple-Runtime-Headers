@@ -13,8 +13,8 @@
     IMBalloonPluginDataSource *_dataSource;
 }
 
-@property(readonly, nonatomic) IMBalloonPluginDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IMBalloonPluginDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (id)_initWithItem:(id)arg1 dataSource:(id)arg2;
 
 @end

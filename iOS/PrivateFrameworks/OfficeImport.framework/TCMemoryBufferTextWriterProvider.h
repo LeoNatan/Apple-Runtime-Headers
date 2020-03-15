@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableData *_memoryBuffer;
 }
 
-@property(readonly, retain, nonatomic) NSMutableData *memoryBuffer; // @synthesize memoryBuffer=_memoryBuffer;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSMutableData *memoryBuffer; // @synthesize memoryBuffer=_memoryBuffer;
 - (_Bool)setUp;
 - (id)initWithMemoryBuffer:(id)arg1;
 

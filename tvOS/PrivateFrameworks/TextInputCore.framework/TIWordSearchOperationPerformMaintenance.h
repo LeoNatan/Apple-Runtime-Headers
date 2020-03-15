@@ -13,8 +13,8 @@
     TIMecabraWrapper *_mecabraWrapper;
 }
 
-@property(retain, nonatomic) TIMecabraWrapper *mecabraWrapper; // @synthesize mecabraWrapper=_mecabraWrapper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TIMecabraWrapper *mecabraWrapper; // @synthesize mecabraWrapper=_mecabraWrapper;
 - (void)perform;
 - (id)initWithMecabraWrapper:(id)arg1;
 

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIPrinterSetupPINView *PINView; // @synthesize PINView=_PINView;
 @property(retain, nonatomic) UIPrinterSetupConnectingView *connectingView; // @synthesize connectingView=_connectingView;
 @property(retain, nonatomic) PKPrinter *printer; // @synthesize printer=_printer;
-- (void).cxx_destruct;
 - (void)connectToPrinter;
 - (void)connected:(_Bool)arg1;
 - (void)showFailure;

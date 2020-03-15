@@ -13,8 +13,8 @@
     SFPunchout *_punchout;
 }
 
-@property(retain) SFPunchout *punchout; // @synthesize punchout=_punchout;
 - (void).cxx_destruct;
+@property(retain) SFPunchout *punchout; // @synthesize punchout=_punchout;
 - (void)mouseDown:(id)arg1;
 
 @end

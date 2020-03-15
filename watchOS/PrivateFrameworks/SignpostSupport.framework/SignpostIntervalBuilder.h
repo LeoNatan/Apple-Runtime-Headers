@@ -28,6 +28,7 @@
 
 + (id)_framerateCalculationWhitelist;
 + (_Bool)_filterPassesRequiredSCForFramerate:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SignpostCAInstrumentationProcessor *caInstrumentationProcessor; // @synthesize caInstrumentationProcessor=_caInstrumentationProcessor;
 @property(nonatomic) unsigned long long previousMCT; // @synthesize previousMCT=_previousMCT;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSMutableDictionary *processwideDictionary; // @synthesize processwideDictionary=_processwideDictionary;
 @property(readonly, nonatomic) NSMutableDictionary *systemwideDictionary; // @synthesize systemwideDictionary=_systemwideDictionary;
 @property(nonatomic) _Bool buildAnimationCompositeIntervalTimelines; // @synthesize buildAnimationCompositeIntervalTimelines=_buildAnimationCompositeIntervalTimelines;
-- (void).cxx_destruct;
 - (id)doneProcessing;
 - (id)processEndEvent:(id)arg1 isAnimation:(_Bool *)arg2;
 - (id)_animationWithBegin:(id)arg1 endEvent:(id)arg2;

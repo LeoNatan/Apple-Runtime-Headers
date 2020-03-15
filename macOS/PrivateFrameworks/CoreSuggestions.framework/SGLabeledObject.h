@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SGExtractionInfo *extractionInfo; // @synthesize extractionInfo=_extractionInfo;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long extractionType;
 - (BOOL)isEqualToLabeledObject:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

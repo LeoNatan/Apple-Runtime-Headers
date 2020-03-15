@@ -22,8 +22,8 @@
 + (_Bool)_isAppRestrictedForRegion;
 + (_Bool)shouldAppBeInstalled;
 + (id)sharedInstance;
-@property(nonatomic) _Bool appIsInstalled; // @synthesize appIsInstalled=_appIsInstalled;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool appIsInstalled; // @synthesize appIsInstalled=_appIsInstalled;
 - (void)_clearUserData;
 - (void)_clearUserDataIfNecessary;
 - (void)_updateCompanionWithAppIsInstalled:(_Bool)arg1;

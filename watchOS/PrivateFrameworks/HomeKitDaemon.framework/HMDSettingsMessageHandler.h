@@ -24,6 +24,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property _Bool isCurrentUser; // @synthesize isCurrentUser=_isCurrentUser;
 @property(retain) HMDUserMessagePolicy *anyUserAllowedPolicy; // @synthesize anyUserAllowedPolicy=_anyUserAllowedPolicy;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -31,7 +32,6 @@
 @property __weak id <HMDSettingsMessageController> messageController; // @synthesize messageController=_messageController;
 @property(retain) NSMapTable *settingGroupMessageMap; // @synthesize settingGroupMessageMap=_settingGroupMessageMap;
 @property(retain) NSMapTable *settingMessageMap; // @synthesize settingMessageMap=_settingMessageMap;
-- (void).cxx_destruct;
 - (void)_handleUpdatedConstraints:(id)arg1 setting:(id)arg2;
 - (void)_handleReplaceConstraints:(id)arg1 setting:(id)arg2;
 - (void)_handleRemoveConstraint:(id)arg1 setting:(id)arg2;

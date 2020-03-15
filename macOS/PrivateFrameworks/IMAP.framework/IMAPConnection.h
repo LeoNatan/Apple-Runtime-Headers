@@ -40,11 +40,11 @@
 + (id)capabilityNameForCapability:(unsigned long long)arg1;
 + (BOOL)_defaultsToBackground;
 + (id)log;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *selectedMailboxNameForLogging; // @synthesize selectedMailboxNameForLogging=_selectedMailboxNameForLogging;
 @property BOOL sentID; // @synthesize sentID=_sentID;
 @property(nonatomic) BOOL canStartIdle; // @synthesize canStartIdle=_canStartIdle;
 @property __weak id <IMAPConnectionResponseDelegate> responseDelegate; // @synthesize responseDelegate=_responseDelegate;
-- (void).cxx_destruct;
 - (BOOL)_readDataWithRemainingByteCount:(long long)arg1 intoData:(id)arg2 error:(id *)arg3;
 - (BOOL)_recordMailboxResponse:(id)arg1 forCommand:(id)arg2 exists:(unsigned long long *)arg3 receivedExists:(char *)arg4 fromIDLE:(BOOL)arg5;
 - (BOOL)_recordMailboxResponse:(id)arg1 forCommand:(id)arg2;

@@ -26,6 +26,7 @@
 + (void)_handleRegistryDidLoadNotification:(id)arg1;
 + (void)initialize;
 + (id)sharedConversationList;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool holdingWasKnownSenderUpdates; // @synthesize holdingWasKnownSenderUpdates=_holdingWasKnownSenderUpdates;
 @property(nonatomic) unsigned int filteredConversationCount; // @synthesize filteredConversationCount=_filteredConversationCount;
 @property(retain, nonatomic) NSMutableDictionary *conversationsDictionary; // @synthesize conversationsDictionary=_conversationsDictionary;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) _Bool loadedConversations; // @synthesize loadedConversations=_loadedConversations;
 @property(readonly, nonatomic) _Bool loadingConversations; // @synthesize loadingConversations=_loadingConversations;
 @property(retain, nonatomic) CKConversation *pendingConversation; // @synthesize pendingConversation=_pendingConversation;
-- (void).cxx_destruct;
 - (_Bool)_shouldShowInboxView;
 - (_Bool)_messageSpamFilteringEnabled;
 - (_Bool)_messageUnknownFilteringEnabled;

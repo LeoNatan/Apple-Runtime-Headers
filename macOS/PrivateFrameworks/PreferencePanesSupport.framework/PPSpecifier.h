@@ -35,6 +35,7 @@
 + (id)specifierWithViewController:(id)arg1 searchKeywords:(id)arg2;
 + (id)specifierWithViewController:(id)arg1;
 + (id)labelSpecifierWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSView *tableCellView; // @synthesize tableCellView=_tableCellView;
 @property(retain) NSViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain) NSDictionary *extensionPersonaity; // @synthesize extensionPersonaity=_extensionPersonaity;
@@ -49,7 +50,6 @@
 @property unsigned long long titleLineBreakMode; // @synthesize titleLineBreakMode;
 @property __weak id <PPSpecifierDelegate> delegate; // @synthesize delegate;
 @property(retain) NSArray *searchKeywords; // @synthesize searchKeywords;
-- (void).cxx_destruct;
 @property BOOL allowsTruncation; // @dynamic allowsTruncation;
 - (void)revealElementForKey:(id)arg1;
 - (BOOL)hasElementForKey:(id)arg1;

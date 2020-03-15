@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_properties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *properties; // @synthesize properties=_properties;
 @property(copy, nonatomic) NSString *friendlyName; // @synthesize friendlyName=_friendlyName;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

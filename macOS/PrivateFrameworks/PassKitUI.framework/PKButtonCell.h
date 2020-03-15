@@ -13,8 +13,8 @@
     NSColor *_textColor;
 }
 
-@property(retain) NSColor *textColor; // @synthesize textColor=_textColor;
 - (void).cxx_destruct;
+@property(retain) NSColor *textColor; // @synthesize textColor=_textColor;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 
 @end

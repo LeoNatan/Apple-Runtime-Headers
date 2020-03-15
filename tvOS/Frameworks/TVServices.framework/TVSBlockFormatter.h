@@ -12,9 +12,9 @@
     CDUnknownBlockType _reverseFormattingBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reverseFormattingBlock; // @synthesize reverseFormattingBlock=_reverseFormattingBlock;
 @property(copy, nonatomic) CDUnknownBlockType formattingBlock; // @synthesize formattingBlock=_formattingBlock;
-- (void).cxx_destruct;
 - (_Bool)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)stringForObjectValue:(id)arg1;
 - (id)initWithFormattingBlock:(CDUnknownBlockType)arg1;

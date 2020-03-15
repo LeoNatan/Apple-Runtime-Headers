@@ -15,9 +15,9 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) id <NUPage> page; // @synthesize page=_page;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithPageID:(id)arg1;

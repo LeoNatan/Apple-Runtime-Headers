@@ -22,9 +22,9 @@
 
 + (id)analyzerWithVCPAsset:(id)arg1 withExistingAnalysis:(id)arg2 forAnalysisTypes:(unsigned long long)arg3;
 + (BOOL)canAnalyzeUndegraded:(id)arg1 withResources:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) long long status; // @synthesize status=_status;
 @property(nonatomic) BOOL allowStreaming; // @synthesize allowStreaming=_allowStreaming;
-- (void).cxx_destruct;
 - (int)generateKeyFrameResource:(id)arg1;
 - (id)analyzeAsset:(CDUnknownBlockType)arg1;
 - (int)analyzeVideoTrack:(id)arg1 start:(CDStruct_1b6d18a9)arg2 cancel:(CDUnknownBlockType)arg3;

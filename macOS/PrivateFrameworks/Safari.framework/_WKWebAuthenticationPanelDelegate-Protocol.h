@@ -11,6 +11,7 @@
 @protocol _WKWebAuthenticationPanelDelegate <NSObject>
 
 @optional
+- (void)panel:(_WKWebAuthenticationPanel *)arg1 requestPINWithRemainingRetries:(unsigned long long)arg2 completionHandler:(void (^)(NSString *))arg3;
 - (void)panel:(_WKWebAuthenticationPanel *)arg1 dismissWebAuthenticationPanelWithResult:(long long)arg2;
 - (void)panel:(_WKWebAuthenticationPanel *)arg1 updateWebAuthenticationPanel:(long long)arg2;
 @end

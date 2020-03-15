@@ -19,8 +19,8 @@
 }
 
 + (id)sharedInstance;
-@property int setupStatus; // @synthesize setupStatus=_setupStatus;
 - (void).cxx_destruct;
+@property int setupStatus; // @synthesize setupStatus=_setupStatus;
 - (_Bool)isOrShouldBeRunning;
 - (void)applicationDidFinishLaunching;
 - (_Bool)_queue_isInSetup_uncached;

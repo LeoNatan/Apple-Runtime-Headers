@@ -21,11 +21,11 @@
 }
 
 + (id)defaultContext;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBSSceneIdentityToken *defaultSceneToken; // @synthesize defaultSceneToken=_defaultSceneToken;
 @property(readonly, nonatomic) NSSet *persistedSceneIdentifiers; // @synthesize persistedSceneIdentifiers=_persistedSceneIdentifiers;
 @property(readonly, nonatomic) UISDeviceContext *deviceContext; // @synthesize deviceContext=_deviceContext;
 @property(readonly, nonatomic) UISDisplayContext *displayContext; // @synthesize displayContext=_displayContext;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

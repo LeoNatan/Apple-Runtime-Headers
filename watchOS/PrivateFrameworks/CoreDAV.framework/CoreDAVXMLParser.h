@@ -19,11 +19,11 @@
 }
 
 + (_Bool)canHandleContentType:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(retain, nonatomic) NSSet *parseHints; // @synthesize parseHints=_parseHints;
 @property(retain, nonatomic) CoreDAVXMLElementGenerator *rootErrorGenerator; // @synthesize rootErrorGenerator=_rootErrorGenerator;
 @property(retain, nonatomic) CoreDAVXMLElementGenerator *rootElementGenerator; // @synthesize rootElementGenerator=_rootElementGenerator;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CoreDAVErrorItem *rootError;
 @property(readonly, nonatomic) CoreDAVItem *rootElement;
 - (_Bool)processData:(id)arg1 forTask:(id)arg2;

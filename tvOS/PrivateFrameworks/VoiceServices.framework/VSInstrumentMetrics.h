@@ -25,6 +25,7 @@
     NSString *_voiceAssetKey;
     NSString *_voiceResourceAssetKey;
     NSString *_audioOutputRoute;
+    NSString *_clientBundleIdentifier;
     long long _requestCreatedTimestamp;
     long long _eagerRequestCreatedTimeStampDiffs;
     long long _synthesisBeginTimestamp;
@@ -41,6 +42,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool isCacheHitFromMemory; // @synthesize isCacheHitFromMemory=_isCacheHitFromMemory;
 @property _Bool isCacheHitFromDisk; // @synthesize isCacheHitFromDisk=_isCacheHitFromDisk;
 @property long long waitForSynthesisToFinishTimeDelay; // @synthesize waitForSynthesisToFinishTimeDelay=_waitForSynthesisToFinishTimeDelay;
@@ -63,16 +65,17 @@
 @property long long synthesisBeginTimestamp; // @synthesize synthesisBeginTimestamp=_synthesisBeginTimestamp;
 @property long long eagerRequestCreatedTimeStampDiffs; // @synthesize eagerRequestCreatedTimeStampDiffs=_eagerRequestCreatedTimeStampDiffs;
 @property long long requestCreatedTimestamp; // @synthesize requestCreatedTimestamp=_requestCreatedTimestamp;
+@property(copy) NSString *clientBundleIdentifier; // @synthesize clientBundleIdentifier=_clientBundleIdentifier;
 @property(copy) NSString *audioOutputRoute; // @synthesize audioOutputRoute=_audioOutputRoute;
 @property(copy) NSString *voiceResourceAssetKey; // @synthesize voiceResourceAssetKey=_voiceResourceAssetKey;
 @property(copy) NSString *voiceAssetKey; // @synthesize voiceAssetKey=_voiceAssetKey;
 @property(copy) NSString *utterance; // @synthesize utterance=_utterance;
-- (void).cxx_destruct;
 - (double)synthesisToSpeechTime;
 - (double)waitForSynthesisToFinishTime;
 - (double)ttsTotalLatency;
 - (double)synthesisLatency;
 - (id)dictionaryMetrics;
+- (double)realTimeFactor;
 - (double)eagerRequestTimeGap;
 - (_Bool)isSynthesisCached;
 - (double)ttsSynthesisLatency;

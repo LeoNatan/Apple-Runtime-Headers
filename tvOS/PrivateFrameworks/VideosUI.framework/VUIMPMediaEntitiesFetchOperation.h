@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     VUIMPMediaLibrary *_mediaLibrary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIMPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSArray *responses; // @synthesize responses=_responses;
 @property(copy, nonatomic) NSArray *requests; // @synthesize requests=_requests;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithMediaLibrary:(id)arg1 requests:(id)arg2;
 - (id)init;

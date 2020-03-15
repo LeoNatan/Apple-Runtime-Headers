@@ -20,11 +20,11 @@
 
 + (id)delayOperationWithFireDate:(id)arg1;
 + (id)delayOperationWithDelay:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldIgnoreTolerance; // @synthesize shouldIgnoreTolerance=_shouldIgnoreTolerance;
 @property(readonly, copy, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(readonly, nonatomic) double tolerance; // @synthesize tolerance=_tolerance;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (void)_cancelTimer;

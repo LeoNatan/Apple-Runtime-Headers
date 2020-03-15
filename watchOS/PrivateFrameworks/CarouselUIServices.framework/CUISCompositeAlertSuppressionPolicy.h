@@ -13,8 +13,8 @@
     NSMutableArray *_policies;
 }
 
-@property(retain, nonatomic) NSMutableArray *policies; // @synthesize policies=_policies;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *policies; // @synthesize policies=_policies;
 - (_Bool)hasSuppressionRuleForAlertItem:(id)arg1;
 - (unsigned int)suppressionRuleForAlertItem:(id)arg1;
 - (unsigned int)suppressionRuleForAlertItem:(id)arg1 applicableToTopPresentedAlert:(_Bool *)arg2;

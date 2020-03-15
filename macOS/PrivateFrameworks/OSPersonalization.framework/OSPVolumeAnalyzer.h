@@ -14,9 +14,9 @@
     OSPDevice *_device;
 }
 
+- (void).cxx_destruct;
 @property(retain) OSPDevice *device; // @synthesize device=_device;
 @property(retain) NSURL *mountPointURL; // @synthesize mountPointURL=_mountPointURL;
-- (void).cxx_destruct;
 - (id)_personalizedFilePathsForRecommendedSecureBundleForManifestRootType:(id)arg1;
 - (BOOL)_rootDirectoryURLContainsRequiredPersonalizedManifests:(id)arg1 forManifestRootType:(id)arg2;
 - (BOOL)personalizationRequiredForInstallRoot:(id)arg1;

@@ -22,12 +22,12 @@
 
 + (id)nonEditingReplicaUUID;
 + (id)replicaUUIDForCreation;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <REMReplicaManagerProviding> lazilyCachedReplicaManagerProvider; // @synthesize lazilyCachedReplicaManagerProvider=_lazilyCachedReplicaManagerProvider;
 @property(retain, nonatomic) NSUUID *acquiredReplicaUUID; // @synthesize acquiredReplicaUUID=_acquiredReplicaUUID;
 @property(nonatomic) __weak id <REMReplicaIDHelperOwner> owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) REMReplicaIDSource *replicaIDSource; // @synthesize replicaIDSource=_replicaIDSource;
 @property(retain, nonatomic) id <REMReplicaClockProviding> replicaClockProvider; // @synthesize replicaClockProvider=_replicaClockProvider;
-- (void).cxx_destruct;
 - (id)clockElementListForReplicaUUID:(id)arg1;
 @property(readonly, nonatomic) NSUUID *replicaUUID;
 @property(readonly, nonatomic) NSString *crdtID;

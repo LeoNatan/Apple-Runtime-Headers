@@ -22,8 +22,8 @@
 + (id)defaultsWithDefaultSymbols:(id)arg1;
 + (id)defaultsFromCarrierBundle;
 + (id)defaultsForCurrentCountry;
-@property(readonly, copy, nonatomic) NSArray *defaultSymbols; // @synthesize defaultSymbols=_defaultSymbols;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *defaultSymbols; // @synthesize defaultSymbols=_defaultSymbols;
 - (id)defaultsByAppendingDefaults:(id)arg1;
 - (id)initWithDefaultSymbols:(id)arg1;
 

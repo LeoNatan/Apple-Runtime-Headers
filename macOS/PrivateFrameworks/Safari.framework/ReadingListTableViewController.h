@@ -33,11 +33,11 @@ __attribute__((visibility("hidden")))
     id <ReadingListTableViewContentProvider> _contentProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ReadingListTableViewContentProvider> contentProvider; // @synthesize contentProvider=_contentProvider;
 @property(nonatomic) __weak id <ReadingListTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL showAsOffline; // @synthesize showAsOffline=_showAsOffline;
 @property(nonatomic) BOOL showsSearchFieldWrapperView; // @synthesize showsSearchFieldWrapperView=_showsSearchFieldWrapperView;
-- (void).cxx_destruct;
 - (long long)_rowIndexOfItem:(id)arg1;
 - (id)_adjustedIndexSetAccountingForDummyRow:(id)arg1;
 - (BOOL)_isValidRowIndex:(long long)arg1;

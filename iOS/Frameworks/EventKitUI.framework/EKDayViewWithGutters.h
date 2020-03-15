@@ -20,12 +20,12 @@
     double _allDayHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double allDayHeight; // @synthesize allDayHeight=_allDayHeight;
 @property(nonatomic) double gutterWidth; // @synthesize gutterWidth=_gutterWidth;
 @property(retain, nonatomic) EKDayView *dayView; // @synthesize dayView=_dayView;
 @property(readonly, nonatomic) UIView *rightGutter; // @synthesize rightGutter=_rightGutter;
 @property(readonly, nonatomic) UIView *leftGutter; // @synthesize leftGutter=_leftGutter;
-- (void).cxx_destruct;
 - (id)_createAllDayView;
 - (id)initWithFrame:(struct CGRect)arg1 dayView:(id)arg2 sizeClass:(long long)arg3;
 

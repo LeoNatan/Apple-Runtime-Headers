@@ -13,6 +13,7 @@
 - (void)execute;
 
 @optional
+@property(nonatomic) BOOL ignoresGuardianRestrictions;
 - (void)didExecute;
 - (void)willExecute;
 @end

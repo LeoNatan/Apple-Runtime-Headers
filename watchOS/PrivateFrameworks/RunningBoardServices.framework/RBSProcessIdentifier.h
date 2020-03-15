@@ -24,8 +24,8 @@
 + (id)identifierForIdentifier:(id)arg1;
 + (id)identifierForCurrentProcess;
 + (id)identifierWithPid:(int)arg1;
-@property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;

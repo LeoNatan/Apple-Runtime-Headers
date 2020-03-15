@@ -14,8 +14,8 @@
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void)setStyle:(id)arg1;
 
 @end

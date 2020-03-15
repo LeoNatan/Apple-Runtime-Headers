@@ -19,11 +19,11 @@
     BOOL _vibrantHeaders;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL vibrantHeaders; // @synthesize vibrantHeaders=_vibrantHeaders;
 @property(nonatomic) unsigned long long numberOfMeCards; // @synthesize numberOfMeCards=_numberOfMeCards;
 @property(nonatomic) unsigned long long countLabelThreshold; // @synthesize countLabelThreshold=_countLabelThreshold;
 @property(nonatomic) long long sectioningThreshold; // @synthesize sectioningThreshold=_sectioningThreshold;
-- (void).cxx_destruct;
 - (void)addEntriesToArray:(id)arg1 forHeader:(id)arg2 withBuckets:(id)arg3 rules:(id)arg4;
 - (id)bucketsForSortedEntries:(id)arg1;
 - (id)bucketForKey:(id)arg1 inBuckets:(id)arg2;

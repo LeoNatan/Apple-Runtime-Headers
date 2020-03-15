@@ -15,10 +15,10 @@
     NSLayoutConstraint *_secondaryFirstBaselineToPrimaryBottomConstraint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutConstraint *secondaryFirstBaselineToPrimaryBottomConstraint; // @synthesize secondaryFirstBaselineToPrimaryBottomConstraint=_secondaryFirstBaselineToPrimaryBottomConstraint;
 @property(readonly, nonatomic) UIButton *secondaryButton; // @synthesize secondaryButton=_secondaryButton;
 @property(readonly, nonatomic) UIButton *primaryButton; // @synthesize primaryButton=_primaryButton;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentContentSizeCategory;
 - (void)_setUpConstraints;

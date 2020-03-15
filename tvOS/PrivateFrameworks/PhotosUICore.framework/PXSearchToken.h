@@ -10,23 +10,23 @@
 
 @interface PXSearchToken : NSObject
 {
-    struct UISearchToken *_searchObject;
+    UISearchToken *_searchObject;
     PXSearchTokenRepresentedObject *_representedObject;
-    struct UIImage *_image;
+    UIImage *_image;
     NSString *_text;
     NSAttributedString *_attributedText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) PXSearchTokenRepresentedObject *representedObject; // @synthesize representedObject=_representedObject;
 @property(retain, nonatomic) UISearchToken *searchObject; // @synthesize searchObject=_searchObject;
-- (void).cxx_destruct;
 - (id)textValue;
-- (id)initWithText:(id)arg1 searchObject:(struct UISearchToken *)arg2 representedObject:(id)arg3;
-- (id)initWithAttributedText:(id)arg1 searchObject:(struct UISearchToken *)arg2 representedObject:(id)arg3;
-- (id)initWithText:(id)arg1 image:(struct UIImage *)arg2 representedObject:(id)arg3;
+- (id)initWithText:(id)arg1 searchObject:(id)arg2 representedObject:(id)arg3;
+- (id)initWithAttributedText:(id)arg1 searchObject:(id)arg2 representedObject:(id)arg3;
+- (id)initWithText:(id)arg1 image:(id)arg2 representedObject:(id)arg3;
 
 @end
 

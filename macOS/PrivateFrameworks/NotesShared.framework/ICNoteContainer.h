@@ -17,9 +17,9 @@
 }
 
 + (id)keyPathsForValuesAffectingCloudAccount;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSubFolderOrderMergeableDataDirty) BOOL subFolderOrderMergeableDataDirty; // @synthesize subFolderOrderMergeableDataDirty=_subFolderOrderMergeableDataDirty;
 @property(retain, nonatomic) ICCRDTIdentifierOrderedSetVersionedDocument *subFolderIdentifiersOrderedSetDocument; // @synthesize subFolderIdentifiersOrderedSetDocument=_subFolderIdentifiersOrderedSetDocument;
-- (void).cxx_destruct;
 - (void)updateSubFolderMergeableDataChangeCount;
 - (void)writeSubFolderMergeableData;
 - (BOOL)mergeWithSubFolderMergeableData:(id)arg1;

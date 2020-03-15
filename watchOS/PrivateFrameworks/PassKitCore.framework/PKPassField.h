@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
 @class NSDictionary, NSString;
 
-@interface PKPassField : NSObject <NSSecureCoding>
+@interface PKPassField : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_value;
     int _type;
@@ -28,6 +29,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *foreignReferenceIdentifier; // @synthesize foreignReferenceIdentifier=_foreignReferenceIdentifier;
 @property(nonatomic) int foreignReferenceType; // @synthesize foreignReferenceType=_foreignReferenceType;
 @property(copy, nonatomic) NSDictionary *semantics; // @synthesize semantics=_semantics;
@@ -40,10 +42,11 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
+- (id)asDictionary;
 - (void)flushCachedValue;
 @property(readonly) __weak NSString *value;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

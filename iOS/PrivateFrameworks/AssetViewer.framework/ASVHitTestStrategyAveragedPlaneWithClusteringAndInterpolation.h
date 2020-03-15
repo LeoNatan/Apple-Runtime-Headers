@@ -20,7 +20,9 @@
 - (id)interpolatedDecisionForDecision:(id)arg1;
 - (id)decisionForMovementFromOriginalResult:(id)arg1 atImagePoint:(id)arg2 inFrame:(struct CGSize)arg3 withViewportSize:(float)arg4 assetPosition:maxDistance: /* Error: Ran out of types for this method. */;
 - (id)decisionForPlacementFromOriginalResult:(id)arg1 afterPlacementTimeout:(_Bool)arg2 atImagePoint:(id)arg3 inFrame:(struct CGSize)arg4 withViewportSize:(float)arg5 assetPosition:maxDistance: /* Error: Ran out of types for this method. */;
+- (id)decisionForHitTestOfType:(long long)arg1 originalResult:(id)arg2 atImagePoint:(id)arg3 inFrame:(struct CGSize)arg4 withViewportSize:(float)arg5 assetPosition:maxDistance: /* Error: Ran out of types for this method. */;
 - (id)decisionForHitTestOfType:(long long)arg1 atScreenPoint:(id)arg2 inFrame:(struct CGSize)arg3 withViewportSize:(float)arg4 assetPosition:maxDistance: /* Error: Ran out of types for this method. */;
+- (id)decisionForHitTestOfType:(long long)arg1 atScreenPoint:(id)arg2 inSession:(struct CGSize)arg3 withViewportSize:(float)arg4 assetPosition:maxDistance: /* Error: Ran out of types for this method. */;
 - (void)clearHistory;
 - (id)init;
 

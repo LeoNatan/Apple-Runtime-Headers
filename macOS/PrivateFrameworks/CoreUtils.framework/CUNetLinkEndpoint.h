@@ -19,11 +19,11 @@
     BOOL _client;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType stateChangedHandler; // @synthesize stateChangedHandler=_stateChangedHandler;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(readonly, nonatomic, getter=isClient) BOOL client; // @synthesize client=_client;
 @property(nonatomic) CDUnion_fab80606 ipAddr; // @synthesize ipAddr=_ipAddr;
-- (void).cxx_destruct;
 - (id)descriptionWithLevel:(int)arg1;
 - (id)description;
 

@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     NSString *_pendingActiveSystemRouteUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *pendingActiveSystemRouteUID; // @synthesize pendingActiveSystemRouteUID=_pendingActiveSystemRouteUID;
 @property(readonly, copy, nonatomic) NSString *activeSystemRouteUID; // @synthesize activeSystemRouteUID=_activeSystemRouteUID;
 @property(readonly, nonatomic) MPAVRoutingController *routingController; // @synthesize routingController=_routingController;
@@ -42,10 +43,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long discoveryMode; // @synthesize discoveryMode=_discoveryMode;
 @property(readonly, copy, nonatomic) MPMediaControlsConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) MPAVEndpointRoute *resolvedActiveSystemRoute; // @synthesize resolvedActiveSystemRoute=_resolvedActiveSystemRoute;
-- (void).cxx_destruct;
 - (id)_createSectionedCollectionFromRoutes:(id)arg1;
 - (void)_updateWithRoutes:(id)arg1;
-- (void)_updateActiveRoute;
+- (void)_updateActiveRouteWithReason:(id)arg1;
 - (void)_setRoutes:(id)arg1 withChangeDetails:(id)arg2;
 - (_Bool)_homeHasRoute:(id)arg1;
 - (id)_endpointControllerContainingOutputDevice:(id)arg1 endpointWrapper:(id *)arg2;
@@ -56,7 +56,8 @@ __attribute__((visibility("hidden")))
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 @property(readonly, nonatomic) _Bool isActiveSystemEndpointEqualToLocalEndpoint;
 - (id)endpointControllerForRoute:(id)arg1;
-@property(retain, nonatomic) MPAVEndpointRoute *activeSystemRoute;
+@property(readonly, nonatomic) MPAVEndpointRoute *activeSystemRoute;
+- (void)setActiveSystemRoute:(id)arg1 reason:(id)arg2;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1;
 

@@ -15,9 +15,9 @@
     _Bool _showHighlight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showHighlight; // @synthesize showHighlight=_showHighlight;
 @property(nonatomic) _Bool showBezelInTouch; // @synthesize showBezelInTouch=_showBezelInTouch;
-- (void).cxx_destruct;
 - (_Bool)shouldUpdateButtonOpacityForKnobUnfocused;
 - (id)colorForKnobFocused;
 - (id)colorForKnobFocusLayerSelected;

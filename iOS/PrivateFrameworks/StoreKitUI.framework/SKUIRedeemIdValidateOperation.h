@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_dictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(copy) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
-- (void).cxx_destruct;
 - (void)_logResultsForSuccess:(_Bool)arg1 failureReason:(id)arg2 failureMessage:(id)arg3 error:(id)arg4;
 - (id)_subOperation;
 - (void)operation:(id)arg1 selectedButton:(id)arg2;

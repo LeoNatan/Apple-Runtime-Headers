@@ -15,9 +15,9 @@
     _Bool _masksCorners;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool masksCorners; // @synthesize masksCorners=_masksCorners;
 @property(nonatomic) _Bool performsTrueCrossfade; // @synthesize performsTrueCrossfade=_performsTrueCrossfade;
-- (void).cxx_destruct;
 - (double)_appSnapshotCornerRadiusForFraction:(double)arg1;
 - (struct CGPoint)_zoomedIconCenter;
 - (struct CGRect)_zoomedFrame;

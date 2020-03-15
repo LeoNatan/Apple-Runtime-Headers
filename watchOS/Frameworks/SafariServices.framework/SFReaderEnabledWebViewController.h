@@ -18,14 +18,16 @@ __attribute__((visibility("hidden")))
     _SFReaderController *_readerController;
 }
 
-@property(readonly, nonatomic) _SFReaderController *readerController; // @synthesize readerController=_readerController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _SFReaderController *readerController; // @synthesize readerController=_readerController;
 - (void)readerController:(id)arg1 contentDidBecomeReadyWithDetectedLanguage:(id)arg2;
 - (void)createReaderWebViewForReaderController:(id)arg1;
 - (void)readerController:(id)arg1 didClickLinkInReaderWithRequest:(id)arg2;
 - (void)readerController:(id)arg1 didClickLinkRequestingNewWindowInReaderWithRequest:(id)arg2;
 - (void)readerController:(id)arg1 didDetermineReaderAvailability:(_Bool)arg2 dueTo:(int)arg3;
 - (void)webView:(id)arg1 didCommitNavigation:(id)arg2;
+- (void)_updateDarkModeEnabled;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)setUpReaderWithReaderWebView:(id)arg1;
 - (void)loadView;
 - (void)dealloc;

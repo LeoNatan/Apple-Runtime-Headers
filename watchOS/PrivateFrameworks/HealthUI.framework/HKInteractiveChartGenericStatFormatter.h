@@ -18,11 +18,11 @@
 }
 
 + (int)mapSingleItemToStatisticsType:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *configuredStatItems; // @synthesize configuredStatItems=_configuredStatItems;
 @property(retain, nonatomic) id <HKInteractiveChartRangeProvider> chartRangeProvider; // @synthesize chartRangeProvider=_chartRangeProvider;
 @property(nonatomic) int context; // @synthesize context=_context;
 @property(retain, nonatomic) NSArray *overrideStatFormatterItemOptions; // @synthesize overrideStatFormatterItemOptions=_overrideStatFormatterItemOptions;
-- (void).cxx_destruct;
 - (id)formattedValueStringForChartData:(id)arg1 options:(int)arg2;
 - (id)formattedUnitStringForChartData:(id)arg1;
 - (id)formattedSelectedRangeLabelDataWithChartData:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_abbreviation;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *abbreviation; // @synthesize abbreviation=_abbreviation;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 

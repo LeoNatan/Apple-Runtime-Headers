@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
     double _progressAlertDelay;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIWindow *progressAlertWindow; // @synthesize progressAlertWindow=_progressAlertWindow;
 @property __weak UIWindowScene *hostingWindowScene; // @synthesize hostingWindowScene=_hostingWindowScene;
 @property double progressAlertDelay; // @synthesize progressAlertDelay=_progressAlertDelay;
 @property double lastPageUpdate; // @synthesize lastPageUpdate=_lastPageUpdate;
 @property _Bool creatingPDF; // @synthesize creatingPDF=_creatingPDF;
-- (void).cxx_destruct;
 - (double)nextPrintDelay;
 - (void)setPage:(int)arg1 ofPage:(int)arg2;
 - (void)setPrintInfoState:(int)arg1;

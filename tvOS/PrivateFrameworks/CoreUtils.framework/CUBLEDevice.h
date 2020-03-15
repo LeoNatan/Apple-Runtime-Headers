@@ -16,6 +16,7 @@
     unsigned char _objectSetupColorCode;
     unsigned short _objectDiscoveryProductID;
     unsigned short _proximityPairingProductID;
+    unsigned int _changeFlags;
     unsigned int _lgFlags;
     int _nearbyActionType;
     unsigned int _nearbyFlags;
@@ -38,6 +39,7 @@
     NSString *_objectSetupMessage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int scanFlags; // @synthesize scanFlags=_scanFlags;
 @property(readonly, nonatomic) int rawRSSI; // @synthesize rawRSSI=_rawRSSI;
 @property(readonly, nonatomic) int proximityPairingSubType; // @synthesize proximityPairingSubType=_proximityPairingSubType;
@@ -62,9 +64,9 @@
 @property(readonly, copy, nonatomic) NSData *lgDeviceID; // @synthesize lgDeviceID=_lgDeviceID;
 @property(readonly, copy, nonatomic) NSData *lgBTAddress; // @synthesize lgBTAddress=_lgBTAddress;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
 @property(readonly, copy, nonatomic) NSData *appleManufacturerData; // @synthesize appleManufacturerData=_appleManufacturerData;
 @property(readonly, copy, nonatomic) NSData *addressData; // @synthesize addressData=_addressData;
-- (void).cxx_destruct;
 - (void)_parseLGManufacturerPtr:(const char *)arg1 end:(const char *)arg2 fields:(id)arg3;
 - (void)_parseAppleProximityPairingObjectSetupPtr:(const char *)arg1 end:(const char *)arg2;
 - (void)_parseAppleProximityPairingPtr:(const char *)arg1 end:(const char *)arg2;

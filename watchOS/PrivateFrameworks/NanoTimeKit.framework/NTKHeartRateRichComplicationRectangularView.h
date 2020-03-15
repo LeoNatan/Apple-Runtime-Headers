@@ -18,13 +18,13 @@
     NSDateInterval *_measurementDateDayInterval;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateInterval *measurementDateDayInterval; // @synthesize measurementDateDayInterval=_measurementDateDayInterval;
 @property(retain, nonatomic) NSDate *measurementDate; // @synthesize measurementDate=_measurementDate;
 @property(nonatomic) NSNumber *lowBPM; // @synthesize lowBPM=_lowBPM;
 @property(nonatomic) NSNumber *highBPM; // @synthesize highBPM=_highBPM;
 @property(retain, nonatomic) NSArray *chartPoints; // @synthesize chartPoints=_chartPoints;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (void)_updateDailyLabel:(id)arg1 withBPM:(id)arg2;
 - (float)_yValueForPointFromChartPointValue:(id)arg1 betweenHigh:(id)arg2 andLow:(id)arg3 inRect:(struct CGRect)arg4;
 - (float)_xValueForPointFromChartPoint:(id)arg1 inRect:(struct CGRect)arg2;

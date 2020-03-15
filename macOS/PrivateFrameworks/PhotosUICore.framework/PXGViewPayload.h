@@ -16,9 +16,9 @@
     id <PXGViewUserData> _userData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id <PXGViewUserData> userData; // @synthesize userData=_userData;
 @property(readonly, nonatomic) Class viewClass; // @synthesize viewClass=_viewClass;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithViewClass:(Class)arg1 userData:(id)arg2;
 

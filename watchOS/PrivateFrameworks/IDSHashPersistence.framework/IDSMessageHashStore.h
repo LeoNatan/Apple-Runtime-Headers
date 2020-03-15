@@ -20,13 +20,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *recentlySeenHashes; // @synthesize recentlySeenHashes=_recentlySeenHashes;
 @property(nonatomic) double databaseLastUpdateTime; // @synthesize databaseLastUpdateTime=_databaseLastUpdateTime;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *databaseCloseTimer; // @synthesize databaseCloseTimer=_databaseCloseTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *ivarQueue; // @synthesize ivarQueue=_ivarQueue;
 @property(nonatomic) unsigned long long initialServerTime; // @synthesize initialServerTime=_initialServerTime;
 @property(nonatomic) unsigned long long initialProcessTime; // @synthesize initialProcessTime=_initialProcessTime;
-- (void).cxx_destruct;
 - (void)_runCleanup;
 - (void)_startCleanupTimer;
 - (void)closeDatabase;

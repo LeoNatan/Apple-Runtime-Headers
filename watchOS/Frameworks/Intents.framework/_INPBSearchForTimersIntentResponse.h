@@ -25,11 +25,11 @@
 + (Class)unmatchedTimersType;
 + (Class)timersType;
 + (Class)matchedTimersType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *unmatchedTimers; // @synthesize unmatchedTimers=_unmatchedTimers;
 @property(copy, nonatomic) NSArray *timers; // @synthesize timers=_timers;
 @property(copy, nonatomic) NSArray *matchedTimers; // @synthesize matchedTimers=_matchedTimers;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

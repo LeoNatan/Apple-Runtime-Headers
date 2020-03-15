@@ -29,13 +29,13 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingVideoGravity;
 + (Class)layerClass;
 + (id)keyPathsForValuesAffectingVideoScaled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) UIMotionEffectGroup *highlightMotionEffects; // @synthesize highlightMotionEffects=_highlightMotionEffects;
 @property(retain, nonatomic) UIMotionEffectGroup *stackMotionEffects; // @synthesize stackMotionEffects=_stackMotionEffects;
 @property(copy, nonatomic) CDUnknownBlockType selectionAction; // @synthesize selectionAction=_selectionAction;
 @property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(nonatomic) _Bool acceptsFocus; // @synthesize acceptsFocus=_acceptsFocus;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)canBecomeFocused;
 - (void)didLoseFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

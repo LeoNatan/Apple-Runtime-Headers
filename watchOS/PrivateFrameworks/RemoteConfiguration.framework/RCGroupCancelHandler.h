@@ -16,8 +16,8 @@
 }
 
 + (id)groupCancelHandlerWithCancelHandlers:(id)arg1;
-@property(copy, nonatomic) NSArray *cancelHandlers; // @synthesize cancelHandlers=_cancelHandlers;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *cancelHandlers; // @synthesize cancelHandlers=_cancelHandlers;
 - (void)cancel;
 - (id)initWithCancelHandlers:(id)arg1;
 

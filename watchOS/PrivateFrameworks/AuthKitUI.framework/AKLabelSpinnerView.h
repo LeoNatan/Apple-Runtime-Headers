@@ -14,9 +14,9 @@
     UILabel *_textLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) PUICActivityIndicatorView *activtiyIndicatorView; // @synthesize activtiyIndicatorView=_activtiyIndicatorView;
-- (void).cxx_destruct;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (id)initWithText:(id)arg1;

@@ -18,12 +18,14 @@
     NSString *_resolvedNetworkAttributionBundleId;
     geo_isolater *_isolater;
     _Bool _proxiedExternalBundleId;
+    NSString *_secondaryIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(readonly, copy, nonatomic, getter=_secondaryIdentifier) NSString *secondaryIdentifier; // @synthesize secondaryIdentifier=_secondaryIdentifier;
 @property(readonly, nonatomic, getter=isProxiedExternalBundleId) _Bool proxiedExternalBundleId; // @synthesize proxiedExternalBundleId=_proxiedExternalBundleId;
 @property(readonly, nonatomic) NSString *proxiedBundleId; // @synthesize proxiedBundleId=_proxiedBundleId;
-- (void).cxx_destruct;
 - (id)_bundleIdForAuditToken;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -33,6 +35,7 @@
 - (id)init;
 - (id)publicLogDescription;
 - (id)description;
+- (id)initWithSecondaryIdentifier:(id)arg1;
 - (id)initWithProxiedExternalApplicationBundleId:(id)arg1;
 - (id)initWithProxiedApplicationBundleId:(id)arg1;
 - (id)initWithAuditTokenData:(id)arg1;

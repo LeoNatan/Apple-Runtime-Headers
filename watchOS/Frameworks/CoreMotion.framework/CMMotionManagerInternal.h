@@ -21,11 +21,11 @@
     NSString *_fDeviceMotionLitePhysicalDeviceID;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fDeviceMotionLitePhysicalDeviceID; // @synthesize fDeviceMotionLitePhysicalDeviceID=_fDeviceMotionLitePhysicalDeviceID;
 @property(copy, nonatomic) CDUnknownBlockType fDeviceMotionLiteFusedHandler; // @synthesize fDeviceMotionLiteFusedHandler=_fDeviceMotionLiteFusedHandler;
 @property(retain, nonatomic) NSOperationQueue *fDeviceMotionLiteClientQueue; // @synthesize fDeviceMotionLiteClientQueue=_fDeviceMotionLiteClientQueue;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

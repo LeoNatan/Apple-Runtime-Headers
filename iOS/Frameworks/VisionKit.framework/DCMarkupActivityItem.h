@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     ICDocCamImageCache *_imageCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICDocCamImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain, nonatomic) ICDocCamDocumentInfo *documentInfo; // @synthesize documentInfo=_documentInfo;
-- (void).cxx_destruct;
 - (id)initWithDocumentInfo:(id)arg1 imageCache:(id)arg2;
 
 @end

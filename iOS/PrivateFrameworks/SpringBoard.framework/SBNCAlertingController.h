@@ -22,6 +22,7 @@
     NSMutableSet *_realertTimers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *realertTimers; // @synthesize realertTimers=_realertTimers;
 @property(retain, nonatomic) NCNotificationRequest *activeRequestWithRealerts; // @synthesize activeRequestWithRealerts=_activeRequestWithRealerts;
 @property(retain, nonatomic) SBCommunicationPolicyManager *communicationPolicyManager; // @synthesize communicationPolicyManager=_communicationPolicyManager;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) SBLockScreenManager *lockScreenManager; // @synthesize lockScreenManager=_lockScreenManager;
 @property(retain, nonatomic) SBNCScreenController *screenController; // @synthesize screenController=_screenController;
 @property(retain, nonatomic) SBNCSoundController *soundController; // @synthesize soundController=_soundController;
-- (void).cxx_destruct;
 - (void)_scheduleRealertsForNotificationRequest:(id)arg1;
 - (void)_realertTimerFired:(id)arg1;
 - (void)_killRealertsForNotificationRequest:(id)arg1;

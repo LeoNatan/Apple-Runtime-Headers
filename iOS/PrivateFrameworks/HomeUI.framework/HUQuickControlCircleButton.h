@@ -15,10 +15,10 @@
     UIColor *_standardBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *standardBackgroundColor; // @synthesize standardBackgroundColor=_standardBackgroundColor;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIColor *selectedColor; // @synthesize selectedColor=_selectedColor;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_controlStateChanged;
 - (void)_adjustTitleColor;

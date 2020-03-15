@@ -24,6 +24,7 @@
     NSButton *_changeProductButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *changeProductButton; // @synthesize changeProductButton=_changeProductButton;
 @property(retain, nonatomic) NSButton *changeThemeButton; // @synthesize changeThemeButton=_changeThemeButton;
 @property(retain, nonatomic) KHStackView *stackView; // @synthesize stackView=_stackView;
@@ -36,7 +37,6 @@
 @property(nonatomic) BOOL allowsAutoLayoutButton; // @synthesize allowsAutoLayoutButton=_allowsAutoLayoutButton;
 @property BOOL allowsPageNumberControl; // @synthesize allowsPageNumberControl=_allowsPageNumberControl;
 @property BOOL allowsAppleLogoButton; // @synthesize allowsAppleLogoButton=_allowsAppleLogoButton;
-- (void).cxx_destruct;
 - (id)_setupSwitchButton;
 - (void)enableAutoFillButtonPressed:(id)arg1;
 - (void)enableAutoLayoutAction:(id)arg1;

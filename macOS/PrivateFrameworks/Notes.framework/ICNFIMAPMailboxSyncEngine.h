@@ -60,13 +60,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL forceSyncOfAllMessages; // @synthesize forceSyncOfAllMessages=_forceSyncOfAllMessages;
 @property BOOL connectionSupportsUIDPLUS; // @synthesize connectionSupportsUIDPLUS=_connectionSupportsUIDPLUS;
 @property unsigned int uidNext; // @synthesize uidNext=_uidNext;
 @property unsigned long long computedHighestModificationSequence; // @synthesize computedHighestModificationSequence=_computedHighestModificationSequence;
 @property unsigned long long numberOfMessagesOnServer; // @synthesize numberOfMessagesOnServer=_numMessagesOnServer;
 @property BOOL messageListIsSynchronized; // @synthesize messageListIsSynchronized=_synchronizedOldMessages;
-- (void).cxx_destruct;
 - (id)suffixArrayOfArray:(id)arg1 ofLength:(unsigned long long)arg2 fullLength:(unsigned long long *)arg3;
 @property(readonly, copy, nonatomic) NSString *stateStringForDiagnostics;
 - (BOOL)_handleFailedFetchResponseForOperation:(id)arg1;

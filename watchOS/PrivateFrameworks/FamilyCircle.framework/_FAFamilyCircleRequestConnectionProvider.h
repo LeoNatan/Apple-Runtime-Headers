@@ -20,10 +20,10 @@
 
 + (id)createResumedConnectionWithFactory:(id)arg1 provider:(id)arg2;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) id <FAFamilyCircleRequestConnectionFactory> factory; // @synthesize factory=_factory;
-- (void).cxx_destruct;
 - (id)serviceConnection;
 - (void)connectionWasInvalidated:(id)arg1;
 - (void)connectionWasInterrupted:(id)arg1;

@@ -30,10 +30,10 @@
 }
 
 + (id)defaultAnimationForKey:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL isToolbarAccessoryView; // @synthesize isToolbarAccessoryView=_isToolbarAccessoryView;
 @property BOOL inFullScreen; // @synthesize inFullScreen=_inFullScreen;
 @property long long layoutAttribute; // @synthesize layoutAttribute=_layoutAttribute;
-- (void).cxx_destruct;
 - (id)animationForKey:(id)arg1;
 @property(copy) NSDictionary *animations;
 - (id)animator;

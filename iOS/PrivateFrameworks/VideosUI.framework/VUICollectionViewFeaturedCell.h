@@ -18,10 +18,11 @@ __attribute__((visibility("hidden")))
 
 + (id)featuredCellWithElement:(id)arg1 existingCell:(id)arg2;
 + (struct CGSize)lockupSizeForElement:(id)arg1;
++ (double)_iOSLockupWidthWithWindowWidth:(double)arg1 safeAreaInsets:(struct UIEdgeInsets)arg2 showsPageControl:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
 @property(retain, nonatomic) VUICollectionViewFeaturedView *featuredView; // @synthesize featuredView=_featuredView;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

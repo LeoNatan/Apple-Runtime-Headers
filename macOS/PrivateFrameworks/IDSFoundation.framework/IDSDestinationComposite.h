@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *destinations; // @synthesize destinations=_destinations;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *destinations; // @synthesize destinations=_destinations;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)groupID;

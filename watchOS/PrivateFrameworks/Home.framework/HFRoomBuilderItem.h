@@ -13,8 +13,8 @@
     HFRoomBuilder *_roomBuilder;
 }
 
-@property(readonly, nonatomic) HFRoomBuilder *roomBuilder; // @synthesize roomBuilder=_roomBuilder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFRoomBuilder *roomBuilder; // @synthesize roomBuilder=_roomBuilder;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithRoomBuilder:(id)arg1;
 

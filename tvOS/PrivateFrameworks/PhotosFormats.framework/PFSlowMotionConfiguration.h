@@ -16,11 +16,11 @@
     PFSlowMotionRampConfiguration *_rampUp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) PFSlowMotionRampConfiguration *rampUp; // @synthesize rampUp=_rampUp;
 @property(readonly, retain, nonatomic) PFSlowMotionRampConfiguration *rampDown; // @synthesize rampDown=_rampDown;
 @property(readonly, nonatomic) float volumeDuringRampToSlowMotion; // @synthesize volumeDuringRampToSlowMotion=_volumeDuringRampToSlowMotion;
 @property(readonly, nonatomic) float volumeDuringSlowMotion; // @synthesize volumeDuringSlowMotion=_volumeDuringSlowMotion;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

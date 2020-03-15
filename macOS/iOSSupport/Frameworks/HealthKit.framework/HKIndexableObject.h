@@ -16,9 +16,9 @@
 + (id)indexableObjectWithObject:(id)arg1 compoundIndex:(unsigned long long)arg2;
 + (id)indexableObjectWithObject:(id)arg1 index:(unsigned char)arg2 error:(id *)arg3;
 + (id)indexableObjectWithObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long compoundIndex; // @synthesize compoundIndex=_compoundIndex;
 @property(readonly, copy, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char outermostIndex;
 - (id)indexableObjectCollectingPushingIndex:(unsigned char)arg1 error:(id *)arg2;
 - (id)indexableObjectPoppingIndexWithError:(id *)arg1;

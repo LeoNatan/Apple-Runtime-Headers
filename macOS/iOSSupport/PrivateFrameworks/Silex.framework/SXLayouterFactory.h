@@ -18,10 +18,10 @@
     id <SXUnitConverterFactory> _unitConverterFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXUnitConverterFactory> unitConverterFactory; // @synthesize unitConverterFactory=_unitConverterFactory;
 @property(readonly, nonatomic) id <SXLayoutContextFactory> layoutContextFactory; // @synthesize layoutContextFactory=_layoutContextFactory;
 @property(readonly, nonatomic) id <SXColumnCalculator> columnCalculator; // @synthesize columnCalculator=_columnCalculator;
-- (void).cxx_destruct;
 - (id)layouterForContainerComponentBlueprint:(id)arg1 delegate:(id)arg2;
 - (id)createColumnLayouterWithDelegate:(id)arg1;
 - (id)initWithColumnCalculator:(id)arg1 layoutContextFactory:(id)arg2 unitConverterFactory:(id)arg3;

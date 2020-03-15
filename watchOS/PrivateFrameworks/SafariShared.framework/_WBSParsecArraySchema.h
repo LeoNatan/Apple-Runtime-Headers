@@ -11,8 +11,8 @@
     WBSParsecSchema *_elementSchema;
 }
 
-@property(retain, nonatomic) WBSParsecSchema *elementSchema; // @synthesize elementSchema=_elementSchema;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WBSParsecSchema *elementSchema; // @synthesize elementSchema=_elementSchema;
 - (_Bool)_validateChild:(id)arg1 ofParent:(id)arg2 withParentAssociatedError:(id)arg3 errorHandler:(CDUnknownBlockType)arg4;
 - (id)initWithElementSchema:(id)arg1 associatedError:(id)arg2 isOptional:(_Bool)arg3;
 

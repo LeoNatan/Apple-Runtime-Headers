@@ -26,6 +26,7 @@
 }
 
 + (id)activeConversation;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MSConversationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *recipientAddresses; // @synthesize recipientAddresses=_recipientAddresses;
 @property(readonly, nonatomic) NSString *iMessageLoginID; // @synthesize iMessageLoginID=_iMessageLoginID;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSData *engramID; // @synthesize engramID=_engramID;
 @property(readonly, nonatomic) NSString *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)stageMessage:(id)arg1 localizedChangeDescription:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)recipientIdentifiers;
 - (id)senderIdentifier;

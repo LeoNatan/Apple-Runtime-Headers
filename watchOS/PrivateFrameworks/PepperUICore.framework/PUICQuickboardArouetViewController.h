@@ -61,6 +61,7 @@
 
 + (_Bool)supportsLanguage:(id)arg1;
 + (_Bool)supportsLanguage:(id)arg1 textContentType:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType recognitionCompletion; // @synthesize recognitionCompletion=_recognitionCompletion;
 @property(nonatomic) __weak UIView *punchoutView; // @synthesize punchoutView=_punchoutView;
 @property(nonatomic) _Bool longDeleteInProgress; // @synthesize longDeleteInProgress=_longDeleteInProgress;
@@ -98,7 +99,6 @@
 @property(retain, nonatomic) ArouetRecognitionManager *recognitionManager; // @synthesize recognitionManager=_recognitionManager;
 @property(retain, nonatomic) ArouetInputView *inkView; // @synthesize inkView=_inkView;
 @property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
-- (void).cxx_destruct;
 - (unsigned int)inputType;
 - (float)relativeTextCursorPosition;
 - (id)recentDeletionsAtLocation:(int)arg1;
@@ -120,6 +120,7 @@
 - (_Bool)candidateManager:(id)arg1 shouldExcludeCandidate:(id)arg2;
 - (void)updateTextInputModel;
 - (void)_updateConfigurationForCurrentTypeAndLanguage;
+- (void)_logInputLength;
 - (void)setInputText:(id)arg1 selectionRange:(struct _NSRange)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -177,6 +178,7 @@
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_commonArouetViewControllerInit;
+- (void)drawAndRecognizeSingleStrokeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)drawAndRecognizeTestInputWithCompletion:(CDUnknownBlockType)arg1;
 
 // Remaining properties

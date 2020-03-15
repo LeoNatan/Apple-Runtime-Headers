@@ -32,11 +32,11 @@
 + (void)fetchChangesToOwnerIDProvidingObjectsOfTypes:(id)arg1 inCalendar:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 + (void)fetchChangesToOwnerIDProvidingObjectsOfTypes:(id)arg1 inSource:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 + (void)fetchChangesToOwnerIDProvidingObjectsOfTypes:(id)arg1 inStore:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, nonatomic) long long changeID; // @synthesize changeID=_changeID;
 @property(readonly, nonatomic) int changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) EKObjectID *changedObjectID; // @synthesize changedObjectID=_changedObjectID;
-- (void).cxx_destruct;
 - (id)serializedPropertiesForConsumingChange;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -18,8 +18,8 @@
 + (void)presentViewControllerAnimatedFromController:(id)arg1 reason:(int)arg2 bulletin:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)_handleSetNotificationsLevelActionItemWithLevel:(unsigned int)arg1 localSectionID:(id)arg2 mirror:(_Bool)arg3;
 + (id)sharedInstance;
-@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void)actionContentControllerCancel:(id)arg1;
 
 // Remaining properties

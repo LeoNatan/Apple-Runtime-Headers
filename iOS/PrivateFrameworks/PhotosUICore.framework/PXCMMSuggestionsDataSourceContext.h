@@ -17,12 +17,12 @@
     long long _fetchLimit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(nonatomic) _Bool shouldShowAccepted; // @synthesize shouldShowAccepted=_shouldShowAccepted;
 @property(nonatomic) unsigned long long matchingStrategy; // @synthesize matchingStrategy=_matchingStrategy;
 @property(retain, nonatomic) PHSuggestionMessageContext *messageContext; // @synthesize messageContext=_messageContext;
 @property(readonly, nonatomic) unsigned char type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)supportsMatching;
 - (id)description;
 - (id)initWithType:(unsigned char)arg1;

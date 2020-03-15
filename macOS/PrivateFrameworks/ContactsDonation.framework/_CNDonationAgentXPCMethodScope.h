@@ -15,9 +15,9 @@
     CNPromise *_promise;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNPromise *promise; // @synthesize promise=_promise;
 @property(readonly, nonatomic) id <DonationAgentProtocol> proxy; // @synthesize proxy=_proxy;
-- (void).cxx_destruct;
 - (id)initWithPromise:(id)arg1 proxy:(id)arg2;
 - (id)initWithConnection:(id)arg1 promise:(id)arg2 proxy:(id)arg3;
 - (id)init;

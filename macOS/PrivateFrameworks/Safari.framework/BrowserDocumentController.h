@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 - (id)_URLToVisitFromURL:(id)arg1;
 - (id)_URLFromShortcutFile:(id)arg1;
 - (id)_openDocumentWithContentsOfRequest:(id)arg1 behind:(BOOL)arg2 display:(BOOL)arg3 browsingMode:(unsigned long long)arg4;
-- (id)_goToEachRequest:(id)arg1 tabLabels:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4 forSearch:(BOOL)arg5 canceled:(_Bool *)arg6 inNewProcess:(BOOL)arg7;
-- (id)_goToRequest:(id)arg1 tabLabel:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4 forSearch:(BOOL)arg5 canceled:(_Bool *)arg6 inNewProcess:(BOOL)arg7;
+- (id)_goToEachRequest:(id)arg1 tabLabels:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4 forSearch:(BOOL)arg5 inNewProcess:(BOOL)arg6;
+- (id)_goToRequest:(id)arg1 tabLabel:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4 forSearch:(BOOL)arg5 inNewProcess:(BOOL)arg6;
 - (id)_frontmostBrowserDocumentIfAvailableUsingWindowPolicy:(long long)arg1;
 - (id)_frontmostNonPopupBrowserDocumentIfAvailableUsingWindowPolicy:(long long)arg1 browsingMode:(unsigned long long)arg2;
 - (id)_createEmptyBrowserDocumentAndDisplay:(BOOL)arg1 behind:(BOOL)arg2 loadWindow:(BOOL)arg3 suppressSidebar:(BOOL)arg4 isPopupWindow:(BOOL)arg5 browsingMode:(unsigned long long)arg6 websiteDataStore:(id)arg7 restoringFromLastSession:(BOOL)arg8 initialSize:(struct CGSize)arg9;
@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)newTabAtEndFromFileMenu:(id)arg1;
 - (void)newTabFromFileMenu:(id)arg1;
 - (id)goToCloudTab:(id)arg1 tabLabel:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4;
-- (id)goToURL:(id)arg1 windowPolicy:(long long)arg2 tabPlacementHint:(const struct TabPlacementHint *)arg3 forSearch:(BOOL)arg4 canceled:(_Bool *)arg5;
+- (id)goToURL:(id)arg1 windowPolicy:(long long)arg2 tabPlacementHint:(const struct TabPlacementHint *)arg3 forSearch:(BOOL)arg4;
 - (id)goToURL:(id)arg1 windowPolicy:(long long)arg2 tabPlacementHint:(const struct TabPlacementHint *)arg3;
 - (id)goToURL:(id)arg1 windowPolicy:(long long)arg2;
 - (id)goToURLFromExternalApplication:(id)arg1 forcingHTMLMIMEType:(BOOL)arg2 openInNewPrivateWindowIfNecessary:(BOOL)arg3 preferSelectingExistingTabWithoutReloading:(BOOL)arg4;

@@ -20,8 +20,8 @@
 + (id)defaultPlatform;
 + (void)setDefaultPlatform:(id)arg1;
 + (void)setProxyImplementationForPlatform:(id)arg1;
-@property(copy, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
 - (id)description;
 - (id)newPlatformImplementationForObject:(id)arg1;
 - (Class)implementationClassForAbstractClass:(Class)arg1;

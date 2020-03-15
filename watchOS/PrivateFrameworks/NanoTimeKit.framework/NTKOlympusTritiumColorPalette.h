@@ -14,9 +14,9 @@
     UIColor *_dimmedOutlineTextColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *dimmedOutlineTextColor; // @synthesize dimmedOutlineTextColor=_dimmedOutlineTextColor;
 @property(retain, nonatomic) UIColor *dimmedTextColor; // @synthesize dimmedTextColor=_dimmedTextColor;
-- (void).cxx_destruct;
 - (_Bool)isBlackBackground;
 - (id)secondaryOutlineTextColor;
 - (id)primaryOutlineTextColor;

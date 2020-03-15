@@ -17,9 +17,9 @@
 }
 
 + (id)sockPuppetMessageWithSubMessage:(id)arg1 setterSelector:(SEL)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SPProtoAudioFilePlayerMessage *audioFilePlayerMessage; // @synthesize audioFilePlayerMessage=_audioFilePlayerMessage;
 @property(retain, nonatomic) SPProtoSockPuppetPlist *plist; // @synthesize plist=_plist;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

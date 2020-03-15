@@ -16,8 +16,8 @@
     TRSession *_session;
 }
 
-@property(retain, nonatomic) TRSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TRSession *session; // @synthesize session=_session;
 - (void)legacyAnisetteDataForDSID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchAnisetteDataAndProvisionIfNecessary:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)eraseAnisetteWithCompletion:(CDUnknownBlockType)arg1;

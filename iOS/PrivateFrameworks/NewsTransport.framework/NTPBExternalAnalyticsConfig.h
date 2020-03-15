@@ -25,13 +25,13 @@
 
 + (Class)proxyHostNamesType;
 + (Class)queryParameterConfigType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *proxyHostNames; // @synthesize proxyHostNames=_proxyHostNames;
 @property(nonatomic) _Bool usesProxyProfile; // @synthesize usesProxyProfile=_usesProxyProfile;
 @property(retain, nonatomic) NSMutableArray *queryParameterConfigs; // @synthesize queryParameterConfigs=_queryParameterConfigs;
 @property(retain, nonatomic) NSString *eventQueryParameterName; // @synthesize eventQueryParameterName=_eventQueryParameterName;
 @property(retain, nonatomic) NSString *analyticsId; // @synthesize analyticsId=_analyticsId;
 @property(retain, nonatomic) NSString *analyticsBaseUrl; // @synthesize analyticsBaseUrl=_analyticsBaseUrl;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

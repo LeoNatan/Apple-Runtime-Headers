@@ -14,9 +14,9 @@
     NSMutableArray *_buffer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *buffer; // @synthesize buffer=_buffer;
 @property(readonly, nonatomic) int size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)addSample:(double)arg1;
 @property(readonly, nonatomic) double latterMax;

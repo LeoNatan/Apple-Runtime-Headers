@@ -15,8 +15,8 @@
     CSLWeakLinkedList *_observerList;
 }
 
-@property(retain, nonatomic) CSLWeakLinkedList *observerList; // @synthesize observerList=_observerList;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLWeakLinkedList *observerList; // @synthesize observerList=_observerList;
 - (void)updateObservers:(id)arg1 what:(id)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

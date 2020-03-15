@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mLevelOverrides;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int listDefinitionId; // @synthesize listDefinitionId=mListDefinitionId;
 @property(readonly, nonatomic) int listId; // @synthesize listId=mListId;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDocument:(id)arg1 listId:(int)arg2 listDefinitionId:(int)arg3;
 - (_Bool)isAnyListLevelOverridden;

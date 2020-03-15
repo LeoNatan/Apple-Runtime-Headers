@@ -19,8 +19,8 @@
 }
 
 + (id)logFileWithPath:(id)arg1;
-@property(readonly, nonatomic) NSString *filePath; // @synthesize filePath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *filePath; // @synthesize filePath;
 - (long long)reverseCompareByModificationDate:(id)arg1;
 - (long long)reverseCompareByCreationDate:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

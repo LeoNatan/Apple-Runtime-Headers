@@ -20,11 +20,11 @@
     id <SXContextMenuProviding> _activeProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SXContextMenuProviding> activeProvider; // @synthesize activeProvider=_activeProvider;
 @property(readonly, nonatomic) NSMutableArray *providers; // @synthesize providers=_providers;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 @property(nonatomic) __weak id <SXContextMenuManagerDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)didEndPreviewing;
 - (void)willStartPreviewing;
 - (BOOL)shouldStartPreviewing;

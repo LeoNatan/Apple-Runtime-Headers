@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_subExpressionValidators;
 }
 
-@property(retain, nonatomic) NSArray *subExpressionValidators; // @synthesize subExpressionValidators=_subExpressionValidators;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *subExpressionValidators; // @synthesize subExpressionValidators=_subExpressionValidators;
 - (id)CKPropertiesDescription;
 - (BOOL)validate:(id)arg1 error:(id *)arg2;
 - (id)initWithValidators:(id)arg1;

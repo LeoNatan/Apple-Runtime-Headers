@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     id <_TVListViewCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAppearSelected; // @synthesize shouldAppearSelected=_shouldAppearSelected;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) __weak id <_TVListViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) _UIFloatingContentView *floatingView; // @synthesize floatingView=_floatingView;
 @property(nonatomic) _Bool visualEffectViewBackgroundEnabled; // @synthesize visualEffectViewBackgroundEnabled=_visualEffectViewBackgroundEnabled;
-- (void).cxx_destruct;
 - (void)_updateSelectedBackgroundColor;
 - (unsigned long long)_floatingViewControlState;
 - (void)prepareForReuse;

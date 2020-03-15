@@ -26,6 +26,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool capturingCurrentFrame; // @synthesize capturingCurrentFrame=_capturingCurrentFrame;
 @property(nonatomic) _Bool capturingLastFrame; // @synthesize capturingLastFrame=_capturingLastFrame;
 @property(retain, nonatomic) HMFTimer *lastDecodedFrameTimer; // @synthesize lastDecodedFrameTimer=_lastDecodedFrameTimer;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) id <HMDCameraStreamSnapshotCaptureDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMDVideoStreamInterface *videoStreamInterface; // @synthesize videoStreamInterface=_videoStreamInterface;
-- (void).cxx_destruct;
 - (void)_callDidGetLastSnapshot:(id)arg1;
 - (void)_callDidGetNewSnapshot:(id)arg1;
 - (void)_callSnapshotDelegate:(id)arg1;

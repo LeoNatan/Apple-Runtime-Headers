@@ -17,8 +17,8 @@
 + (Class)classForListWithIdentifier:(id)arg1;
 + (id)listIdentifiers;
 + (id)sharedInstance;
-@property(readonly) NSMapTable *setByIdentifier; // @synthesize setByIdentifier=_cache;
 - (void).cxx_destruct;
+@property(readonly) NSMapTable *setByIdentifier; // @synthesize setByIdentifier=_cache;
 - (id)sharePoints;
 - (id)recentDocumentsForBundleIdentifier:(id)arg1;
 - (id)recentServers;

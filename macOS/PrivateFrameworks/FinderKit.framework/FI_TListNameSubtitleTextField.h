@@ -9,14 +9,14 @@
 __attribute__((visibility("hidden")))
 @interface FI_TListNameSubtitleTextField : FI_TListTextField
 {
-    struct TNSRef<NSLayoutConstraint, void> _shortStringWidthConstraint;
+    struct TNSRef<NSLayoutConstraint, void> _minWidthConstraint;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)updateTextColor;
 - (void)setStringSet:(const unordered_set_66d0470b *)arg1 extraContentInsets:(const struct NSEdgeInsets *)arg2;
-- (void)stringSelector:(struct FI_TBestFitStringSelector *)arg1 didChangeMinStringWidth:(double)arg2 maxStringWidth:(double)arg3;
+- (void)setFont:(id)arg1;
 - (void)initCommon;
 
 @end

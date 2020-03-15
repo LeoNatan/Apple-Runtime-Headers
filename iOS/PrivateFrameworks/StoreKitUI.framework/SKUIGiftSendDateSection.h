@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     long long _sendDateStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long sendDateStyle; // @synthesize sendDateStyle=_sendDateStyle;
 @property(copy, nonatomic) NSDate *sendDate; // @synthesize sendDate=_sendDate;
 @property(retain, nonatomic) SKUIItem *giftItem; // @synthesize giftItem=_giftItem;
-- (void).cxx_destruct;
 - (void)_createFormattedDateString:(_Bool)arg1;
 - (id)_headerView;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;

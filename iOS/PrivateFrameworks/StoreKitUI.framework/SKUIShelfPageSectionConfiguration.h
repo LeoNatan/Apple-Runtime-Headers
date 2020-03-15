@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     double _zoomingShelfLayoutScaledItemWidth;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double zoomingShelfLayoutScaledItemWidth; // @synthesize zoomingShelfLayoutScaledItemWidth=_zoomingShelfLayoutScaledItemWidth;
 @property(readonly, nonatomic) double zoomingShelfLayoutItemWidth; // @synthesize zoomingShelfLayoutItemWidth=_zoomingShelfLayoutItemWidth;
 @property(readonly, nonatomic) double zoomingShelfLayoutInterItemSpacing; // @synthesize zoomingShelfLayoutInterItemSpacing=_zoomingShelfLayoutInterItemSpacing;
@@ -54,7 +55,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool needsShelfCollectionViewReload; // @synthesize needsShelfCollectionViewReload=_needsShelfCollectionViewReload;
 @property(nonatomic) __weak id <SKUIShelfPageSectionConfigurationDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) SKUIViewElementLayoutContext *cellLayoutContext; // @synthesize cellLayoutContext=_cellLayoutContext;
-- (void).cxx_destruct;
 - (void)_updateShelfLayoutDataContentInset;
 - (id)_styledShelfCollectionViewLayoutForExistingLayout:(id)arg1;
 - (id)_shelfItemViewElementAtIndex:(long long)arg1;

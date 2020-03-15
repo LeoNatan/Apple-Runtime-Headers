@@ -65,6 +65,7 @@
 }
 
 + (id)itemPropertiesFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL reminderMinutesBeforeStartSpecified; // @synthesize reminderMinutesBeforeStartSpecified=_reminderMinutesBeforeStartSpecified;
 @property(nonatomic) long long reminderMinutesBeforeStart; // @synthesize reminderMinutesBeforeStart=_reminderMinutesBeforeStart;
 @property(readonly, nonatomic) BOOL reminderDueBySpecified; // @synthesize reminderDueBySpecified=_reminderDueBySpecified;
@@ -117,7 +118,6 @@
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
 @property(readonly, nonatomic) BOOL subjectSpecified; // @synthesize subjectSpecified=_subjectSpecified;
 @property(retain, nonatomic) NSString *subject; // @synthesize subject=_subject;
-- (void).cxx_destruct;
 - (void)populateFromPropertiesDictionary:(id)arg1;
 - (id)buildPropertiesDictionary;
 - (id)dataFromProperties;

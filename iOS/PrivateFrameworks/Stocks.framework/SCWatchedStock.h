@@ -20,12 +20,12 @@
 }
 
 + (id)watchedStockWithSymbol:(id)arg1 name:(id)arg2 exchange:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *displaySymbol; // @synthesize displaySymbol=_displaySymbol;
 @property(readonly, copy, nonatomic) NSString *exchange; // @synthesize exchange=_exchange;
 @property(readonly, copy, nonatomic) NSString *symbol; // @synthesize symbol=_symbol;
 @property(readonly, copy, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

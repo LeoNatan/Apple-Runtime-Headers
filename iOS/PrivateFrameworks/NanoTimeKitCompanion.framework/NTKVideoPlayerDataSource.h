@@ -14,9 +14,9 @@
     NTKVideoPlayerListing *_currentListing;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKVideoPlayerListing *currentListing; // @synthesize currentListing=_currentListing;
 @property(retain, nonatomic) UIImage *posterImage; // @synthesize posterImage=_posterImage;
-- (void).cxx_destruct;
 - (id)listingToQueueOncePlaybackStarts;
 - (id)listingsToQueueAfterCurrent;
 - (void)advanceToNextListing:(unsigned long long)arg1;

@@ -19,9 +19,9 @@
     struct CGRect _liveStrokeDestinationFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect liveStrokeDestinationFrame; // @synthesize liveStrokeDestinationFrame=_liveStrokeDestinationFrame;
 @property(retain, nonatomic) id <MTLTexture> liveStrokeDestinationTexture; // @synthesize liveStrokeDestinationTexture=_liveStrokeDestinationTexture;
-- (void).cxx_destruct;
 - (_Bool)lockPurgeableResourcesAddToSet:(id)arg1;
 - (unsigned long long)inkVersion;
 - (_Bool)needsCompute;

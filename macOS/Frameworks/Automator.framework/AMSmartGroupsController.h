@@ -18,13 +18,13 @@
     BOOL _predicateEditorEnabled;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMSmartGroupsPredicateViewController *_predicateViewController; // @synthesize _predicateViewController;
 @property __weak NSView *_predicateEditorSuperView; // @synthesize _predicateEditorSuperView;
 @property __weak NSPopUpButton *orderedByPopup; // @synthesize orderedByPopup;
 @property BOOL predicateEditorEnabled; // @synthesize predicateEditorEnabled=_predicateEditorEnabled;
 @property(retain, nonatomic) AMSmartGroup *tempSmartGroup; // @synthesize tempSmartGroup=_tempGroup;
 @property(retain, nonatomic) AMSmartGroup *smartGroup; // @synthesize smartGroup=_group;
-- (void).cxx_destruct;
 - (void)ok:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)prepareToShowGroup;

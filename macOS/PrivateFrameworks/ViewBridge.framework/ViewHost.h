@@ -27,16 +27,16 @@ __attribute__((visibility("hidden")))
     NSString *_serviceViewControllerIdentifier;
 }
 
-+ (id)ultimateAncestor:(struct NSMutableDictionary *)arg1 forProcessIdentifier:(int)arg2;
-+ (id)ultimateAncestorOfWindow:(unsigned int)arg1 inDictionaryOfHostsAndServices:(struct NSMutableDictionary *)arg2;
-+ (id)ultimateAncestorOfWindow:(unsigned int)arg1 inDictionaryOfHostsAndServices:(struct NSMutableDictionary *)arg2 consideringEachViewHost:(CDUnknownBlockType)arg3;
++ (id)ultimateAncestor:(id)arg1 forProcessIdentifier:(int)arg2;
++ (id)ultimateAncestorOfWindow:(unsigned int)arg1 inDictionaryOfHostsAndServices:(id)arg2;
++ (id)ultimateAncestorOfWindow:(unsigned int)arg1 inDictionaryOfHostsAndServices:(id)arg2 consideringEachViewHost:(CDUnknownBlockType)arg3;
 @property(copy) NSString *serviceViewControllerIdentifier; // @synthesize serviceViewControllerIdentifier=_serviceViewControllerIdentifier;
 @property struct CGRect frameInScreenCoords; // @synthesize frameInScreenCoords=_frameInScreenCoords;
 @property(readonly) unsigned char hostWindowBase; // @synthesize hostWindowBase=_hostWindowBase;
 @property(readonly) unsigned char hostWindowKind; // @synthesize hostWindowKind=_hostWindowKind;
 - (void)dealloc;
 - (struct __LSASN *)ultimateHostAppSerialNumber;
-- (void)invalidate:(struct NSMutableDictionary *)arg1;
+- (void)invalidate:(id)arg1;
 - (void)forwardEventToAccessoryView:(struct __CGEvent *)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)potentialCommandEquivalentHitRemoteView:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)potentialCommandEquivalentHitServiceApp:(struct __CGEvent *)arg1 from:(id)arg2 reply:(CDUnknownBlockType)arg3;

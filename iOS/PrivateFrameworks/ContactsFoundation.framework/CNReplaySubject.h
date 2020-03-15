@@ -20,12 +20,12 @@
     CNObservableContractEnforcement *_enforcement;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNObservableContractEnforcement *enforcement; // @synthesize enforcement=_enforcement;
 @property(readonly, nonatomic) id <CNScheduler> resourceLock; // @synthesize resourceLock=_resourceLock;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(retain, nonatomic) _CNObservableEventBufferingStrategy *recentEventStrategy; // @synthesize recentEventStrategy=_recentEventStrategy;
 @property(readonly, nonatomic) NSMutableArray *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)resourceLock_swapBufferingStrategiesGivenNewTerminatingEvent:(id)arg1;
 - (void)observerDidFailWithError:(id)arg1;
 - (void)observerDidComplete;

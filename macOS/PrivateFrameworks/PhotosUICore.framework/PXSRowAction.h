@@ -13,8 +13,8 @@
 
 + (id)actionWithHandler:(CDUnknownBlockType)arg1;
 + (id)action;
-@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (id)initWithHandler:(CDUnknownBlockType)arg1;
 - (id)init;
 

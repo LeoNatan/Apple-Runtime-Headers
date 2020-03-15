@@ -34,6 +34,7 @@
 + (long long)ITMLIDForITMLIDString:(id)arg1;
 + (id)ITMLIDStringforITMLID:(unsigned long long)arg1;
 + (id)nodeWithAppContext:(id)arg1 nodePtr:(struct _xmlNode *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, retain, nonatomic) JSManagedValue *managedSelf; // @synthesize managedSelf=_managedSelf;
 @property(nonatomic) long long ITMLID; // @synthesize ITMLID=_ITMLID;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) JSManagedValue *managedChildNodeList; // @synthesize managedChildNodeList=_managedChildNodeList;
 @property(retain, nonatomic) JSManagedValue *managedParent; // @synthesize managedParent=_managedParent;
 @property(retain, nonatomic) JSManagedValue *managedOwnerDocument; // @synthesize managedOwnerDocument=_managedOwnerDocument;
-- (void).cxx_destruct;
 - (_Bool)_enumerateNodesWithBlock:(CDUnknownBlockType)arg1;
 - (void)_markSubtreeUpdatesForAncestorsOfNode:(id)arg1;
 - (void)_childrenUpdatedWithUpdatedChildNodes:(id)arg1 withDocument:(id)arg2;

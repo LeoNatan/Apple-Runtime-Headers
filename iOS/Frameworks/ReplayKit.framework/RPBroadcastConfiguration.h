@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *videoCompressionProperties; // @synthesize videoCompressionProperties=_videoCompressionProperties;
 @property(nonatomic) double clipDuration; // @synthesize clipDuration=_clipDuration;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

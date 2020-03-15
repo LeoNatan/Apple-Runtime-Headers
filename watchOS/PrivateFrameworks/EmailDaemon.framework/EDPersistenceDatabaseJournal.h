@@ -16,9 +16,9 @@
     EDPersistenceDatabaseJournalManager *_journalManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EDPersistenceDatabaseJournalManager *journalManager; // @synthesize journalManager=_journalManager;
 @property(readonly, nonatomic) unsigned int number; // @synthesize number=_number;
-- (void).cxx_destruct;
 @property(readonly) unsigned int referenceCount;
 - (void)checkIn;
 - (void)checkOut;

@@ -48,6 +48,7 @@
 + (id)newDataBufferWithVertexAttributes:(id)arg1 quadParticleCount:(unsigned long long)arg2 device:(id)arg3;
 + (id)newDataBufferWithVertexAttributes:(id)arg1 meshSize:(struct CGSize)arg2 device:(id)arg3;
 + (id)newDataBufferWithVertexAttributes:(id)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 device:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long centerAttributeIndex; // @synthesize centerAttributeIndex=_centerAttributeIndex;
 @property(readonly) unsigned long long texCoordAttributeIndex; // @synthesize texCoordAttributeIndex=_texCoordAttributeIndex;
 @property(readonly) unsigned long long positionAttributeIndex; // @synthesize positionAttributeIndex=_positionAttributeIndex;
@@ -56,7 +57,6 @@
 @property(nonatomic) unsigned int drawMode; // @synthesize drawMode=_drawMode;
 @property(readonly) NSArray *vertexAttributes; // @synthesize vertexAttributes=_vertexAttributes;
 @property(readonly) unsigned long long vertexCount; // @synthesize vertexCount=_vertexCount;
-- (void).cxx_destruct;
 - (_Bool)p_setAttributeUpdateData:(CDStruct_64113493 *)arg1 fromAttribute:(id)arg2;
 - (void)updateDataBufferAttributes:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)initWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 includeCenterAttribute:(_Bool)arg5;

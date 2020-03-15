@@ -21,8 +21,8 @@
     UIView *_contentView;
 }
 
-@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void)updateMaxLayoutWidth;
 - (void)setFrame:(struct CGRect)arg1;
 - (double)rightMarginForTimeViewWidth:(double)arg1;

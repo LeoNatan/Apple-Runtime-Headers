@@ -20,11 +20,11 @@
 
 + (void)performDaemonControllerTask:(CDUnknownBlockType)arg1;
 + (id)weakSharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *syncCollaboratorDictionary; // @synthesize syncCollaboratorDictionary=_syncCollaboratorDictionary;
 @property(retain, nonatomic) NSMutableDictionary *collaboratorPromiseDictionary; // @synthesize collaboratorPromiseDictionary=_collaboratorPromiseDictionary;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) IDSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)_sync_collaboratorWithIdentifier:(id)arg1 errorHandler:(CDUnknownBlockType)arg2 resolverBlock:(CDUnknownBlockType)arg3;
 - (id)_collaboratorWithIdentifier:(id)arg1 interface:(id)arg2 timeout:(double)arg3 errorHandler:(CDUnknownBlockType)arg4 resolverBlock:(CDUnknownBlockType)arg5;
 - (id)_timingOutDaemonProxyWithTimeout:(double)arg1 errorHandler:(CDUnknownBlockType)arg2;

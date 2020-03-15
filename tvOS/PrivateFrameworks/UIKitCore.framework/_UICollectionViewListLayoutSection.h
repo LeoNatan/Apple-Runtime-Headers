@@ -17,8 +17,8 @@
     id <NSCollectionLayoutEnvironment_Private> _layoutEnvironment;
 }
 
-@property(readonly, nonatomic, getter=_layoutEnvironment) id <NSCollectionLayoutEnvironment_Private> layoutEnvironment; // @synthesize layoutEnvironment=_layoutEnvironment;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_layoutEnvironment) id <NSCollectionLayoutEnvironment_Private> layoutEnvironment; // @synthesize layoutEnvironment=_layoutEnvironment;
 - (void)_enrichLayoutAttributes:(id)arg1;
 - (id)_callback;
 - (_Bool)__insetTopAndBottomSeparator;

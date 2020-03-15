@@ -17,11 +17,11 @@
 }
 
 + (id)headerText;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *tableViewHeightConstraint; // @synthesize tableViewHeightConstraint=_tableViewHeightConstraint;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) OBBoldTrayButton *confirmButton; // @synthesize confirmButton=_confirmButton;
-- (void).cxx_destruct;
 - (void)handleConfirmButtonTapped;
 - (void)didTapDoneButton:(id)arg1;
 - (id)confirmButtonTitle;

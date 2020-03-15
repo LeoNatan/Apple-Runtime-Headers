@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_isHostedInRemoteViewService;
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (id)preferredFocusEnvironments;
 - (id)cappedTraitCollection;
 - (id)_watchListAppIcon;

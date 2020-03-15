@@ -17,12 +17,12 @@
     long long _dualSIMCapability;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long dualSIMCapability; // @synthesize dualSIMCapability=_dualSIMCapability;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) CTXPCServiceSubscriptionContext *selectedContext; // @synthesize selectedContext=_selectedContext;
 @property(retain, nonatomic) CTXPCContexts *activeSubscriptionInfo; // @synthesize activeSubscriptionInfo=_activeSubscriptionInfo;
 @property(retain, nonatomic) CTXPCServiceSubscriptionInfo *subscriptionInfo; // @synthesize subscriptionInfo=_subscriptionInfo;
-- (void).cxx_destruct;
 - (id)debugDescription;
 
 @end

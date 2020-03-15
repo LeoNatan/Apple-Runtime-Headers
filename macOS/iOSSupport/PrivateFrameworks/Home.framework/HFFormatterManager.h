@@ -6,16 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSFormatter;
-@protocol HFTemperatureFormatter;
+@class HFTemperatureFormatter;
 
 @interface HFFormatterManager : NSObject
 {
-    NSFormatter<HFTemperatureFormatter> *_temperatureFormatter;
+    HFTemperatureFormatter *_temperatureFormatter;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HFTemperatureFormatter *temperatureFormatter; // @synthesize temperatureFormatter=_temperatureFormatter;
 - (id)emptyStringFormatter;
 - (id)identityFormatter;
 - (id)booleanFormatter;
@@ -23,7 +23,7 @@
 - (id)arcDegreeFormatter;
 - (id)timeIntervalFormatter;
 - (id)percentFormatter;
-- (id)temperatureFormatter;
+- (id)init;
 - (void)registerTemperatureFormatter:(id)arg1;
 
 @end

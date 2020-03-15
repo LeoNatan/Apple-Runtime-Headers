@@ -17,11 +17,14 @@
     unsigned char _originalWifiFlag;
     unsigned char _originalCellFlag;
     PSSpecifier *_gmailSpecifier;
-    NSString *_filteredDataclass;
     ACAccountStore *_accountStore;
+    NSString *_filteredDataclass;
 }
 
 - (void).cxx_destruct;
+@property(retain) NSString *filteredDataclass; // @synthesize filteredDataclass=_filteredDataclass;
+- (void)_alertIfAccountTypePreventsMultiples:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)nonModalDataclassConfigurationControllerDidCompleteWithSuccess:(_Bool)arg1;
 - (void)setupViewControllerDidDismiss:(id)arg1;
 - (id)giantSpecifierWithName:(id)arg1 forAccountTypeID:(id)arg2;
 - (id)specifierForOtherAccounts;
@@ -30,8 +33,8 @@
 - (id)_specifierForOutlookAccount;
 - (id)_specifierForAOLAccount;
 - (id)_specifierForYahooAccount;
-- (void)nonModalDataclassConfigurationControllerDidCompleteWithSuccess:(_Bool)arg1;
 - (void)_createCustomControlledAccountTapped:(id)arg1;
+- (void)_addAccountSpecifierWasTapped:(id)arg1;
 - (id)_specifierForCustomControlledAccountWithName:(id)arg1 accountTypeID:(id)arg2;
 - (id)_specifierForGmailAccount;
 - (id)_specifierForExchangeAccount;

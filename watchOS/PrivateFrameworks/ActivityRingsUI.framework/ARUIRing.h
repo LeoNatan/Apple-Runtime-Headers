@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: {?="color1""color2""center""startPosition""endPosition""ringValues""blendingValues""trigResults"}, name: _uniforms
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property contrastColorVector:
 // Property attributes: T,R,N,V_contrastColorVector
 
@@ -83,7 +84,6 @@ __attribute__((visibility("hidden")))
 // Error parsing type for property vertexAttributes:
 // Property attributes: T{?=[2{?=[4]}]},R,N,V_vertexAttributes
 
-- (void).cxx_destruct;
 - (void)updateCelebrationWithColors:(id)arg1;
 - (void)updateCelebrationsWithColors;
 - (void)_updateCalculatedUniforms;

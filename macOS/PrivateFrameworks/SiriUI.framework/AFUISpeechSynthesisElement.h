@@ -28,6 +28,7 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(setter=_setDurationHasElapsed:) BOOL durationHasElapsed; // @synthesize durationHasElapsed=_durationHasElapsed;
 @property(setter=_setPreparationBlockCompleted:) BOOL preprationBlockCompleted; // @synthesize preprationBlockCompleted=_preprationBlockCompleted;
 @property(readonly, nonatomic, getter=_completion) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) SAUIAudioData *audioData; // @synthesize audioData=_audioData;
 @property(copy, nonatomic, setter=_setText:) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)_updateSynthesisEligibility;
 - (void)executeCompletion;
 - (id)description;

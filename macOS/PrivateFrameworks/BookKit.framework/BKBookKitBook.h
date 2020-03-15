@@ -62,6 +62,7 @@
 + (id)dateFromMetadataDate:(id)arg1;
 + (long long)contentTypeForExtension:(id)arg1;
 + (long long)contentTypeForPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSURL *permlink; // @synthesize permlink=_permlink;
 @property(retain) NSString *pageProgressionDirection; // @synthesize pageProgressionDirection=_pageProgressionDirection;
 @property(retain) NSString *sequenceDisplayName; // @synthesize sequenceDisplayName=_sequenceDisplayName;
@@ -103,7 +104,6 @@
 @property(retain) NSString *author; // @synthesize author=_author;
 @property(retain) NSString *storeID; // @synthesize storeID=_storeID;
 @property(retain) NSString *assetID; // @synthesize assetID=_assetID;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithBookMetadata:(id)arg1 error:(id *)arg2;

@@ -12,8 +12,8 @@
 }
 
 + (id)reverseValueTransformerWithValueTransformer:(id)arg1;
-@property(retain, nonatomic) NSValueTransformer *valueTransformer; // @synthesize valueTransformer=_valueTransformer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSValueTransformer *valueTransformer; // @synthesize valueTransformer=_valueTransformer;
 - (id)reverseTransformedValue:(id)arg1;
 - (id)transformedValue:(id)arg1;
 - (id)initWithValueTransformer:(id)arg1;

@@ -19,6 +19,7 @@
     // Error parsing type: , name: _forwardBackRotation
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property forwardBackRotation:
 // Property attributes: T,N,V_forwardBackRotation
 
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) SCNNode *drivingNode; // @synthesize drivingNode=_drivingNode;
 @property(retain, nonatomic) SCNNode *referenceNode; // @synthesize referenceNode=_referenceNode;
 @property(nonatomic) float simulationFactor; // @synthesize simulationFactor=_simulationFactor;
-- (void).cxx_destruct;
 
 @end
 

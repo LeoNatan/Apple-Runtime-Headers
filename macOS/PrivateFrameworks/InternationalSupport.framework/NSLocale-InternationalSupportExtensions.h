@@ -26,6 +26,7 @@
 + (id)matchedLanguagesFromAvailableLanguages:(id)arg1 forPreferredLanguages:(id)arg2;
 + (id)_displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 context:(long long)arg3 short:(BOOL)arg4;
 + (id)_displayNameForLanguage:(id)arg1 displayLanguage:(id)arg2 context:(long long)arg3;
++ (id)minimizedLanguagesFromLanguages:(id)arg1;
 + (id)languageFromLanguage:(id)arg1 byReplacingRegion:(id)arg2;
 + (id)scriptCodeFromLanguage:(id)arg1;
 + (id)baseLanguageFromLanguage:(id)arg1;
@@ -33,6 +34,7 @@
 + (id)supportedRegions;
 + (id)exemplarForLanguage:(id)arg1;
 + (id)supportedLanguages;
++ (id)deviceLanguages;
 + (id)baseSystemLanguages;
 + (id)_globalPreferredLanguages;
 + (id)deviceLanguage;

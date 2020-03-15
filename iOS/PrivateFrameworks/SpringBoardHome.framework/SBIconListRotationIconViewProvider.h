@@ -15,8 +15,8 @@
     SBIconListView *_listView;
 }
 
-@property(readonly, nonatomic) __weak SBIconListView *listView; // @synthesize listView=_listView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak SBIconListView *listView; // @synthesize listView=_listView;
 - (void)configureIconView:(id)arg1 forIcon:(id)arg2;
 - (_Bool)isIconViewRecycled:(id)arg1;
 - (void)recycleIconView:(id)arg1;

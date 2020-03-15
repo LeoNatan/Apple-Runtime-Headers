@@ -14,8 +14,8 @@
     NSString *_previousETag;
 }
 
-@property(retain, nonatomic) NSString *previousETag; // @synthesize previousETag=_previousETag;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *previousETag; // @synthesize previousETag=_previousETag;
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (id)additionalHeaderValues;
 - (id)httpMethod;

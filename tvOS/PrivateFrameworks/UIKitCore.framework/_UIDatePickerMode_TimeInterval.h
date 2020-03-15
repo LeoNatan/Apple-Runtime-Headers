@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (long long)numberOfRowsForCalendarUnit:(unsigned long long)arg1;
 - (void)resetComponentWidths;
 - (double)rowHeight;
-- (void)takeExtremesFromMinimumDate:(id)arg1 maximumDate:(id)arg2;
+- (void)updateDateForNewDateRange;
 - (id)localizedFormatString;
 - (_Bool)isTimeIntervalMode;
 

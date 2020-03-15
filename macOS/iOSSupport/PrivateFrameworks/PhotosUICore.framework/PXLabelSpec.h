@@ -12,8 +12,8 @@
 {
     BOOL _adjustsFontSizeToFitWidth;
     BOOL _allowTruncation;
-    struct UIColor *_textColor;
-    struct UIFont *_font;
+    UIColor *_textColor;
+    UIFont *_font;
     NSDictionary *_textAttributes;
     NSDictionary *_fallbackTextAttributes;
     long long _textAlignment;
@@ -26,6 +26,7 @@
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minimumTruncatedScaleFactor; // @synthesize minimumTruncatedScaleFactor=_minimumTruncatedScaleFactor;
 @property(nonatomic) BOOL allowTruncation; // @synthesize allowTruncation=_allowTruncation;
 @property(nonatomic) double minimumScaleFactor; // @synthesize minimumScaleFactor=_minimumScaleFactor;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
 @property(copy, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

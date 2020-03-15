@@ -21,10 +21,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)requestParametersForDestination:(unsigned long long)arg1 withSinceDate:(id)arg2 maximumCount:(long long)arg3 enabledSectionIDs:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *enabledSectionIDs; // @synthesize enabledSectionIDs=_enabledSectionIDs;
 @property(retain, nonatomic) NSDate *sinceDate; // @synthesize sinceDate=_sinceDate;
 @property(readonly, nonatomic) unsigned long long publisherDestination; // @synthesize publisherDestination=_publisherDestination;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) unsigned long long maximumCount;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSDictionary *dict; // @synthesize dict=_dict;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *dict; // @synthesize dict=_dict;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

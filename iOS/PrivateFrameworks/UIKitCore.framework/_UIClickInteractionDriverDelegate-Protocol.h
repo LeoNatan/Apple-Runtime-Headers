@@ -11,7 +11,7 @@
 
 @protocol _UIClickInteractionDriverDelegate <NSObject>
 - (void)clickDriver:(id <_UIClickInteractionDriving>)arg1 didPerformEvent:(unsigned long long)arg2;
-- (void)clickDriver:(id <_UIClickInteractionDriving>)arg1 shouldBegin:(void (^)(_Bool))arg2;
+- (void)clickDriver:(id <_UIClickInteractionDriving>)arg1 shouldBegin:(void (^)(unsigned long long))arg2;
 
 @optional
 - (_Bool)clickDriver:(id <_UIClickInteractionDriving>)arg1 shouldDelayGestureRecognizer:(UIGestureRecognizer *)arg2;

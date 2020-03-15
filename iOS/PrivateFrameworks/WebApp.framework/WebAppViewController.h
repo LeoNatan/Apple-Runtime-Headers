@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     UIWebClip *_webClip;
 }
 
-@property(readonly, nonatomic) UIWebClip *webClip; // @synthesize webClip=_webClip;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIWebClip *webClip; // @synthesize webClip=_webClip;
 - (void)webAppViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
 - (void)webAppViewControllerDidFinishInitialLoad:(id)arg1;
 - (void)webAppViewController:(id)arg1 didChangeLoadingState:(_Bool)arg2;

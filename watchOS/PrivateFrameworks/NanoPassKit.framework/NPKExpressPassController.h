@@ -28,27 +28,28 @@
     PKFieldDetector *_fieldDetector;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKFieldDetector *fieldDetector; // @synthesize fieldDetector=_fieldDetector;
 @property(retain, nonatomic) PKExpressPassInformation *currentTransactionExpressPassInformation; // @synthesize currentTransactionExpressPassInformation=_currentTransactionExpressPassInformation;
 @property(retain) NSDictionary *expressPasses; // @synthesize expressPasses=_expressPasses;
 @property(retain) NSSet *expressPassesInformation; // @synthesize expressPassesInformation=_expressPassesInformation;
 @property(retain, nonatomic) PKPass *currentTransactionPass; // @synthesize currentTransactionPass=_currentTransactionPass;
 @property __weak id <NPKExpressPassControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)fieldDetectorDidEnterField:(id)arg1 withProperties:(id)arg2;
 - (void)_stopFieldDetector;
 - (void)_startFieldDetector;
+- (void)_parseExpressNotificationObject:(id)arg1 outApplicationIdentifier:(id *)arg2 outApplicationKeyIdentifier:(id *)arg3;
 - (id)_expressPassesInformationWithTCIs:(id)arg1;
 - (id)_expressPassesInformationWithAutomaticSelectionTechnologyType:(int)arg1;
 - (void)_queue_updateExpressPasses;
 - (void)updateExpressPasses;
-- (id)_queue_expressPassForTransactionApplicationIdentifier:(id)arg1;
+- (id)_queue_expressPassForTransactionApplicationIdentifier:(id)arg1 transactionApplicationKeyIdentifier:(id)arg2;
 - (_Bool)_hasNoTransactionStartOrEndNotificationForTechnologyType:(int)arg1;
 - (void)_handlePassesLibraryChangedNotification:(id)arg1;
 - (void)_handleExitNearFieldNotification:(id)arg1;
-- (void)_onqueue_transactionFailedWithApplicationIdentifier:(id)arg1;
-- (void)_onqueue_transactionEndedWithApplicationIdentifier:(id)arg1;
-- (void)_onqueue_transactionStartedWithApplicationIdentifier:(id)arg1;
+- (void)_onqueue_transactionFailedWithApplicationIdentifier:(id)arg1 applicationKeyIdentifier:(id)arg2;
+- (void)_onqueue_transactionEndedWithApplicationIdentifier:(id)arg1 applicationKeyIdentifier:(id)arg2;
+- (void)_onqueue_transactionStartedWithApplicationIdentifier:(id)arg1 applicationKeyIdentifier:(id)arg2;
 - (void)_handleExpressTransactionFailedNotification:(id)arg1;
 - (void)_handleExpressTransactionEndNotification:(id)arg1;
 - (void)_handleExpressTransactionTimeOutNotification:(id)arg1;

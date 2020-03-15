@@ -20,12 +20,12 @@
 + (struct CGRect)_zoomRegionFrameWithZoomOrigin:(struct CGPoint)arg1 zoomFactor:(double)arg2 zoomDisplayID:(int)arg3;
 + (BOOL)automaticallyNotifiesObserversOfZoomFactor;
 + (id)keyPathsForValuesAffectingIsZoomed;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint _realMouseLocation; // @synthesize _realMouseLocation=__realMouseLocation;
 @property(retain, nonatomic) AXVCGFullscreenZoomController *_legacyCGFullscreenZoomController; // @synthesize _legacyCGFullscreenZoomController=__legacyCGFullscreenZoomController;
 @property(nonatomic) BOOL smoothImages; // @synthesize smoothImages=_smoothImages;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
 @property(nonatomic) unsigned long long zoomPanningMode; // @synthesize zoomPanningMode=_zoomPanningMode;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect _zoomRegionFrame;
 - (void)_repositionZoomRegionFrameWithRealMouseLocation:(struct CGPoint)arg1 movementDelta:(struct CGPoint)arg2 warped:(BOOL)arg3 animate:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)handleRealMouseLocationWarpedTo:(struct CGPoint)arg1 animate:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;

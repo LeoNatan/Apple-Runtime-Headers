@@ -21,12 +21,12 @@
     id <_SBUIPopoverExtensionRemoteInterface> _remoteService;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_SBUIPopoverExtensionRemoteInterface> remoteService; // @synthesize remoteService=_remoteService;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(readonly, nonatomic) SBUIPopoverExtensionHostViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 @property(retain, nonatomic) _SBHRecentsDocumentExtensionWrappingViewController *wrappingViewController; // @synthesize wrappingViewController=_wrappingViewController;
 @property(nonatomic) __weak id <SBHRecentsDocumentExtensionProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_teardownHostViewController;
 - (void)_setupHostViewController:(id)arg1;
 - (void)_loadRemoteViewControllerWithBundleIdentifer:(id)arg1;

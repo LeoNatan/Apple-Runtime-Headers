@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIPickerView *_pickerView;
 }
 
-@property(nonatomic) __weak UIPickerView *pickerView; // @synthesize pickerView=_pickerView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIPickerView *pickerView; // @synthesize pickerView=_pickerView;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

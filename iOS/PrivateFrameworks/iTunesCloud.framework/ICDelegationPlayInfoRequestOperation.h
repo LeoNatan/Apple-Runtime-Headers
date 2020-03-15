@@ -16,10 +16,10 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain, nonatomic) ICStoreRequestContext *storeRequestContext; // @synthesize storeRequestContext=_storeRequestContext;
 @property(copy, nonatomic) ICDelegationPlayInfoRequest *playInfoRequest; // @synthesize playInfoRequest=_playInfoRequest;
-- (void).cxx_destruct;
 - (void)_finishWithResult:(_Bool)arg1 tokens:(id)arg2 error:(id)arg3;
 - (void)finishWithError:(id)arg1;
 - (void)execute;

@@ -14,9 +14,9 @@
     NSPointerArray *_internalDates;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPointerArray *internalDates; // @synthesize internalDates=_internalDates;
 @property(retain, nonatomic) NSMutableArray *messageIds; // @synthesize messageIds=_messageIds;
-- (void).cxx_destruct;
 - (void)_deserializeOpSpecificValuesFromData:(id)arg1 cursor:(unsigned long long *)arg2;
 - (unsigned char)_magic;
 - (void)serializeIntoData:(id)arg1;

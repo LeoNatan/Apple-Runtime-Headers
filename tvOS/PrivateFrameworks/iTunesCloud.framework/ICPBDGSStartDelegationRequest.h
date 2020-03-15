@@ -16,8 +16,8 @@
 }
 
 + (Class)playerInfoContextRequestTokenType;
-@property(retain, nonatomic) NSMutableArray *playerInfoContextRequestTokens; // @synthesize playerInfoContextRequestTokens=_playerInfoContextRequestTokens;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *playerInfoContextRequestTokens; // @synthesize playerInfoContextRequestTokens=_playerInfoContextRequestTokens;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

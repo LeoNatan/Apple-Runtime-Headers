@@ -14,8 +14,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) NSDictionary *authResults; // @synthesize authResults=_authResults;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *authResults; // @synthesize authResults=_authResults;
 - (void)_authenticate;
 - (void)authenticate;
 - (int)loginType;

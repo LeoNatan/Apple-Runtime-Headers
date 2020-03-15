@@ -21,12 +21,12 @@
     TVRCKeyboardAttributes *_currentAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVRCKeyboardAttributes *currentAttributes; // @synthesize currentAttributes=_currentAttributes;
 @property(retain, nonatomic) RTIInputSystemSourceSession *currentSession; // @synthesize currentSession=_currentSession;
 @property(nonatomic) BOOL editing; // @synthesize editing=_editing;
 @property(retain, nonatomic) _TVRCRPCompanionLinkClientWrapper *companionLinkWrapper; // @synthesize companionLinkWrapper=_companionLinkWrapper;
 @property(nonatomic) __weak _TVRXKeyboardController *keyboardController; // @synthesize keyboardController=_keyboardController;
-- (void).cxx_destruct;
 - (void)_receivedInputSourceSession:(id)arg1;
 - (void)_stopObservingTelevisionEditingSession;
 - (void)handleTextActionPayload:(id)arg1;

@@ -14,9 +14,9 @@
     NSDate *_loadRecordsDetectedSince;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *loadRecordsDetectedSince; // @synthesize loadRecordsDetectedSince=_loadRecordsDetectedSince;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)resetRecordData;
 - (void)recentRecordLoadingCompletion;
 - (unsigned char)recentRecordLoadingHandler:(id)arg1;

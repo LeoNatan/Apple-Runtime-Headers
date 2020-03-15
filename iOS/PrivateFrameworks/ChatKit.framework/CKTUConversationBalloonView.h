@@ -23,6 +23,7 @@
 
 + (id)facetimeImageForSize:(struct CGSize)arg1;
 + (struct CGSize)facetimeIconSize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *joinButtonText_TestingOverride; // @synthesize joinButtonText_TestingOverride=_joinButtonText_TestingOverride;
 @property(nonatomic) _Bool animating; // @synthesize animating=_animating;
 @property(retain, nonatomic) UIButton *joinButton; // @synthesize joinButton=_joinButton;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSUUID *tuConversationUUID; // @synthesize tuConversationUUID=_tuConversationUUID;
-- (void).cxx_destruct;
 - (_Bool)joinButtonIsShowingTextContent;
 - (_Bool)joinButtonIsShowingImageContent;
 - (id)_joinButtonText;

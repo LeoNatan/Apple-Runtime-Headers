@@ -13,9 +13,9 @@
 + (struct CGSize)sizeOfSubAttachment:(id)arg1 forHeight:(double)arg2;
 + (double)requiredWidthForAttachment:(id)arg1 viewHeight:(double)arg2 maxWidth:(double)arg3;
 + (struct CGSize)sizeOfViewForAttachment:(id)arg1 textViewContentWidth:(double)arg2;
-+ (struct NSImage *)imageForSubAttachment:(id)arg1 rotateForMacImageGallery:(BOOL)arg2 allowCached:(BOOL)arg3;
-+ (struct NSImage *)imageForSubAttachment:(id)arg1 allowCached:(BOOL)arg2;
-+ (struct NSImage *)imageForSubAttachment:(id)arg1;
++ (id)imageForSubAttachment:(id)arg1 rotateForMacImageGallery:(BOOL)arg2 allowCached:(BOOL)arg3;
++ (id)imageForSubAttachment:(id)arg1 allowCached:(BOOL)arg2;
++ (id)imageForSubAttachment:(id)arg1;
 
 @end
 

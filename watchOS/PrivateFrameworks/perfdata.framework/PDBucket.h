@@ -17,12 +17,12 @@
     double _upperBound;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
 @property(nonatomic) _Bool hasInclusiveUpperBound; // @synthesize hasInclusiveUpperBound=_hasInclusiveUpperBound;
 @property(nonatomic) double upperBound; // @synthesize upperBound=_upperBound;
 @property(nonatomic) double lowerInclusiveBound; // @synthesize lowerInclusiveBound=_lowerInclusiveBound;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1 error:(id *)arg2;
 
 @end

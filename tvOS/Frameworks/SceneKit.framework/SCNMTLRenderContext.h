@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
     unsigned int _reverseZ:1;
     id <MTLCommandQueue> _ownedCommandQueue;
     NSObject<OS_dispatch_semaphore> *_inFlightSemaphore;
-    // Error parsing type: {atomic<int>="__a_"Ai}, name: _pendingGPUFrameCount
+    // Error parsing type: {atomic<int>="__a_"{__cxx_atomic_impl<int, std::__1::__cxx_atomic_base_impl<int> >="__a_value"Ai}}, name: _pendingGPUFrameCount
     id <MTLTexture> _textureTarget;
     CAMetalLayer *_layerTarget;
     id <CAMetalDrawable> _drawable;
@@ -145,6 +145,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)registerBindings;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *generatedTexturePath; // @synthesize generatedTexturePath=_generatedTexturePath;
 @property(nonatomic) double superSamplingFactor; // @synthesize superSamplingFactor=_superSamplingFactor;
 @property(retain, nonatomic) id <MTLCommandQueue> clientCommandQueue; // @synthesize clientCommandQueue=_clientCommandQueue;
@@ -158,8 +160,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <MTLCommandBuffer> clientCommandBuffer; // @synthesize clientCommandBuffer=_clientCommandBuffer;
 @property(retain, nonatomic) id <MTLRenderCommandEncoder> clientRenderCommandEncoder; // @synthesize clientRenderCommandEncoder=_clientRenderCommandEncoder;
 @property(retain, nonatomic) MTLRenderPassDescriptor *clientRenderPassDescriptor; // @synthesize clientRenderPassDescriptor=_clientRenderPassDescriptor;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (unsigned long long)cubeArrayTypeIfSupported;
 - (struct __C3DMaterial *)getCurrentPassMaterial;
 - (unsigned long long)getCurrentPassHash;

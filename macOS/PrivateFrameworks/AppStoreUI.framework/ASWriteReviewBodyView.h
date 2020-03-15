@@ -20,12 +20,12 @@
     CDUnknownBlockType _bodyDidChangeCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType bodyDidChangeCallback; // @synthesize bodyDidChangeCallback=_bodyDidChangeCallback;
 @property(copy, nonatomic) CDUnknownBlockType titleDidChangeCallback; // @synthesize titleDidChangeCallback=_titleDidChangeCallback;
 @property(readonly, nonatomic) ASTextField *bodyTextField; // @synthesize bodyTextField=_bodyTextField;
 @property(readonly, nonatomic) ASTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(readonly, nonatomic) ASRatingControl *ratingControl; // @synthesize ratingControl=_ratingControl;
-- (void).cxx_destruct;
 - (void)applyConfiguration:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;

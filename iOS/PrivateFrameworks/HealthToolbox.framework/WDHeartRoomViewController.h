@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NSDate *_displayDate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *displayDate; // @synthesize displayDate=_displayDate;
 @property(nonatomic) long long currentSelectedContextIndex; // @synthesize currentSelectedContextIndex=_currentSelectedContextIndex;
 @property(copy, nonatomic) NSDateInterval *currentHeartChartDateInterval; // @synthesize currentHeartChartDateInterval=_currentHeartChartDateInterval;
@@ -35,8 +36,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *heartRateContextItems; // @synthesize heartRateContextItems=_heartRateContextItems;
 @property(retain, nonatomic) NSArray *heartRateContextResults; // @synthesize heartRateContextResults=_heartRateContextResults;
 @property(nonatomic) long long preferredSelectedContext; // @synthesize preferredSelectedContext=_preferredSelectedContext;
-- (void).cxx_destruct;
-- (void)sampleTypeDateRangeController:(id)arg1 didUpdateDateRanges:(struct NSDictionary *)arg2;
+- (void)sampleTypeDateRangeController:(id)arg1 didUpdateDateRanges:(id)arg2;
 - (void)didUpdateVisibleValueRange:(id)arg1 changeContext:(long long)arg2;
 - (void)didUpdateFromDateZoom:(long long)arg1 toDateZoom:(long long)arg2 newVisibleRange:(id)arg3;
 - (void)contextView:(id)arg1 didTapOnInfoButtonAtIndex:(long long)arg2;

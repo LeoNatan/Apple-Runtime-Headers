@@ -17,8 +17,8 @@
 + (id)keyPathsForValuesAffectingPlayedState;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)_mediaItemWithMPMediaItem:(id)arg1;
-@property(readonly, copy, nonatomic) NSNumber *isPlayable; // @synthesize isPlayable=_isPlayable;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSNumber *isPlayable; // @synthesize isPlayable=_isPlayable;
 - (id)description;
 @property(readonly, nonatomic) MPMediaItem *mediaPlayerMediaItem;
 @property(readonly, copy, nonatomic) NSDate *downloadExpirationDate;
@@ -29,6 +29,7 @@
 @property(readonly, copy, nonatomic) NSNumber *rentalPlaybackDuration;
 @property(readonly, copy, nonatomic) VUIMediaItemCredits *credits;
 @property(readonly, copy, nonatomic) NSString *studio;
+@property(readonly, copy, nonatomic) NSNumber *episodeIndexInSeries;
 @property(readonly, copy, nonatomic) NSNumber *episodeNumber;
 @property(readonly, copy, nonatomic) NSObject<VUIMediaEntityIdentifier> *seasonIdentifier;
 @property(readonly, copy, nonatomic) NSString *seasonTitle;

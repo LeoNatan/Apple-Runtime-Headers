@@ -13,8 +13,8 @@
     HRSimulatedAtrialFibrillationScreenView *_screenView;
 }
 
-@property(retain, nonatomic) HRSimulatedAtrialFibrillationScreenView *screenView; // @synthesize screenView=_screenView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HRSimulatedAtrialFibrillationScreenView *screenView; // @synthesize screenView=_screenView;
 - (void)layoutSubviews;
 - (void)_setUpUI;
 - (id)init;

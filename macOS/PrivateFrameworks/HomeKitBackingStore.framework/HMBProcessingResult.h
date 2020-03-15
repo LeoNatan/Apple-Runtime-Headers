@@ -15,10 +15,10 @@
     NAFuture *_mirrorOutputResult;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NAFuture *mirrorOutputResult; // @synthesize mirrorOutputResult=_mirrorOutputResult;
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(readonly, nonatomic) HMBProcessingOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)initWithOptions:(id)arg1 actions:(id)arg2 mirrorOutputResult:(id)arg3;
 
 @end

@@ -33,12 +33,12 @@
 + (id)allContactsWithSortOrder:(long long)arg1;
 + (id)allContactsWithSortOrder:(long long)arg1 passingTest:(CDUnknownBlockType)arg2;
 + (Class)preferredConcreteSubclass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *socialProfiles; // @synthesize socialProfiles=_socialProfiles;
 @property(readonly, nonatomic) _Bool hasImageData; // @synthesize hasImageData=_hasImageData;
 @property(readonly, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(readonly, nonatomic) long long multivalueIndex; // @synthesize multivalueIndex=_multivalueIndex;
 @property(readonly, nonatomic) int propertyID; // @synthesize propertyID=_propertyID;
-- (void).cxx_destruct;
 - (id)wfSerializedRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

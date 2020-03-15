@@ -22,8 +22,8 @@
 + (id)descriptionForSubtype:(long long)arg1;
 + (id)descriptionForType:(long long)arg1;
 + (_Bool)supportsSecureCoding;
-@property(retain) NSObject<OS_nw_interface> *internalInterface; // @synthesize internalInterface=_internalInterface;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_nw_interface> *internalInterface; // @synthesize internalInterface=_internalInterface;
 - (id)createProtocolBufferObject;
 @property(readonly, nonatomic) NSString *typeString;
 - (_Bool)isDeepEqual:(id)arg1;

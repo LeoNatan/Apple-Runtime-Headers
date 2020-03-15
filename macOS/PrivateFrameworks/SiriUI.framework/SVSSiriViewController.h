@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
     NSString *_utteranceToSpeakAfterClearScreenCommand;
 }
 
+- (void).cxx_destruct;
 @property(retain, getter=_utteranceToSpeakAfterClearScreenCommand, setter=_setUtteranceToSpeakAfterClearScreenCommand:) NSString *utteranceToSpeakAfterClearScreenCommand; // @synthesize utteranceToSpeakAfterClearScreenCommand=_utteranceToSpeakAfterClearScreenCommand;
 @property(retain, getter=_repeatablePhrases, setter=_setRepeatablePhrases:) NSMutableArray *repeatablePhrases; // @synthesize repeatablePhrases=_repeatablePhrases;
 @property(getter=_isRequestActive, setter=_setRequestActive:) BOOL requestActive; // @synthesize requestActive=_requestActive;
@@ -79,7 +80,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_conversationStore) AFConversationStore *conversationStore; // @synthesize conversationStore=_conversationStore;
 @property __weak AFUISiriViewController *host; // @synthesize host=_host;
 @property(readonly, nonatomic, getter=_session) id <AFUISiriSession> session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (id)_punchoutMetricsAceCommandIdForItemWithIdentifier:(id)arg1;
 - (void)_listenAfterSpeakingWithResult:(long long)arg1 recordedRequestCount:(unsigned long long)arg2;
 - (void)_audioSessionRouteDidChange:(id)arg1;

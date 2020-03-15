@@ -20,11 +20,11 @@
     UIImageView *_badgeImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *badgeImageView; // @synthesize badgeImageView=_badgeImageView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property(nonatomic) __weak id <CNUIObjectViewControllerDelegate> objectViewControllerDelegate; // @synthesize objectViewControllerDelegate;
-- (void).cxx_destruct;
 - (id)hostingViewControllerForController:(id)arg1;
 @property(retain, nonatomic) UIImage *badgeImage;
 - (void)setupContainerViewIfNeeded;

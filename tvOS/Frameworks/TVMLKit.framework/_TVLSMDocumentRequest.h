@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_prefixForString:(id)arg1;
 + (id)_cachePath;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSMutableArray *tasks; // @synthesize tasks=_tasks;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) NSURL *previewURL; // @synthesize previewURL=_previewURL;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)_cachePathForCacheKey:(id)arg1;
 - (id)_cacheKeyForFileName:(id)arg1;
 - (id)_lsmDocumentWithContentsInCache;

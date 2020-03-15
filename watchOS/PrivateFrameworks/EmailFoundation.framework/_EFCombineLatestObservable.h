@@ -13,8 +13,8 @@
     NSArray *_observables;
 }
 
-@property(copy, nonatomic) NSArray *observables; // @synthesize observables=_observables;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *observables; // @synthesize observables=_observables;
 - (id)subscribe:(id)arg1;
 - (id)initWithObservables:(id)arg1;
 

@@ -21,10 +21,10 @@
     ICNFMCMimePart *_topLevelPart;
 }
 
+- (void).cxx_destruct;
 @property BOOL writesCacheFile; // @synthesize writesCacheFile=_writesCacheFile;
 @property BOOL allowsPartialDownloads; // @synthesize allowsPartialDownloads=_allowsPartialDownloads;
 @property(retain) ICNFMCMimePart *topLevelPart; // @synthesize topLevelPart=_topLevelPart;
-- (void).cxx_destruct;
 - (void)addCommandsToPipeline:(id)arg1 withCache:(id)arg2;
 - (void)_addMimeSubdownloadsToPipeline:(id)arg1 withCache:(id)arg2;
 - (void)processResults;

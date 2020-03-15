@@ -19,12 +19,12 @@
 }
 
 + (id)multiPartWithName:(id)arg1 payload:(id)arg2 type:(id)arg3 multiPartBoundary:(id)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *multiPartBoundary; // @synthesize multiPartBoundary=_multiPartBoundary;
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSData *payload; // @synthesize payload=_payload;
-- (void).cxx_destruct;
 - (unsigned long long)length;
 - (id)payloadEpilogue;
 - (id)payloadPreamble;

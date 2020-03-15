@@ -18,8 +18,8 @@
     double _mobileGestaltOrientation;
 }
 
-@property(nonatomic) double mobileGestaltOrientation; // @synthesize mobileGestaltOrientation=_mobileGestaltOrientation;
 - (void).cxx_destruct;
+@property(nonatomic) double mobileGestaltOrientation; // @synthesize mobileGestaltOrientation=_mobileGestaltOrientation;
 - (long long)_discreteOrientationForOrientation:(double)arg1;
 - (id)_displayPropertiesFromMobileGestalt;
 @property(readonly, nonatomic) AXMDisplay *coreAnimationMainDisplay;

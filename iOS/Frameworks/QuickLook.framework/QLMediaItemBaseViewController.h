@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     double _mediaDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double mediaDuration; // @synthesize mediaDuration=_mediaDuration;
 @property(readonly, nonatomic) _Bool isVisible; // @synthesize isVisible=_isVisible;
 @property(readonly, nonatomic) _Bool isFullScreen; // @synthesize isFullScreen=_isFullScreen;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(readonly, nonatomic) UIView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (_Bool)_assetIsDecodable:(id)arg1;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setupPlayerWithMediaAsset:(id)arg1;

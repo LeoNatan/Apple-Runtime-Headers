@@ -21,6 +21,7 @@
 
 + (id)keyPathsForValuesAffectingInstructionText;
 + (id)keyPathsForValuesAffectingHasRecommendations;
+- (void).cxx_destruct;
 @property BOOL discloseRecommendations; // @synthesize discloseRecommendations=_discloseRecommendations;
 @property NSArrayController *recommendationsArrayController; // @synthesize recommendationsArrayController=_recommendationsArrayController;
 @property NSCollectionView *recommendationCollectionView; // @synthesize recommendationCollectionView=_recommendationCollectionView;
@@ -28,7 +29,6 @@
 @property NSTextField *statusMessageField; // @synthesize statusMessageField=_statusMessageField;
 @property NSProgressIndicator *progressBar; // @synthesize progressBar=_progressBar;
 @property(retain) SMSystem_Daemon_Network *system; // @synthesize system=_system;
-- (void).cxx_destruct;
 @property(readonly) NSString *instructionText;
 - (id)typeOfDongleNeeded:(unsigned long long)arg1;
 @property(readonly) BOOL hasRecommendations;

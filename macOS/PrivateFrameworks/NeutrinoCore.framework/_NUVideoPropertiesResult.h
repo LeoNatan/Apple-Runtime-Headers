@@ -16,8 +16,8 @@
     id <NUVideoProperties> _properties;
 }
 
-@property(retain) id <NUVideoProperties> properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+@property(retain) id <NUVideoProperties> properties; // @synthesize properties=_properties;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

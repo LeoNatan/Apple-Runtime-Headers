@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface SFKeyPair_Ivars : NSObject
 {
     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}, name: secKey
-    struct NSString *privateKeyDomain;
+    NSString *privateKeyDomain;
 }
 
 - (void).cxx_destruct;

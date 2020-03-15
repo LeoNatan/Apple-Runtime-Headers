@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_ranges;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *ranges; // @synthesize ranges=_ranges;
 @property double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property unsigned long long bytesUploaded; // @synthesize bytesUploaded=_bytesUploaded;
 @property double executing; // @synthesize executing=_executing;
 @property double queueing; // @synthesize queueing=_queueing;
-- (void).cxx_destruct;
 - (double)absoluteStop;
 - (long long)compareExecutingStartTime:(id)arg1;
 - (long long)compareStartTime:(id)arg1;

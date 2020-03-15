@@ -43,6 +43,7 @@
     SBCameraHardwareButtonDefaults *_defaults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBCameraHardwareButtonDefaults *defaults; // @synthesize defaults=_defaults;
 @property(retain, nonatomic) SBCameraHardwareButtonSettings *settings; // @synthesize settings=_settings;
 @property(retain, nonatomic) SBSceneManager *mainDisplaySceneManager; // @synthesize mainDisplaySceneManager=_mainDisplaySceneManager;
@@ -69,7 +70,6 @@
 @property(retain, nonatomic) id <BSInvalidatable> deferringRuleAssertion; // @synthesize deferringRuleAssertion=_deferringRuleAssertion;
 @property(retain, nonatomic) id <BSInvalidatable> dispatchingRuleAssertion; // @synthesize dispatchingRuleAssertion=_dispatchingRuleAssertion;
 @property(nonatomic) _Bool disableDeferringToApplications; // @synthesize disableDeferringToApplications=_disableDeferringToApplications;
-- (void).cxx_destruct;
 - (void)sceneManager:(id)arg1 didRemoveExternalForegroundApplicationSceneHandle:(id)arg2;
 - (void)sceneManager:(id)arg1 didAddExternalForegroundApplicationSceneHandle:(id)arg2;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;

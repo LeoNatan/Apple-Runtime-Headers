@@ -14,9 +14,9 @@
     unsigned int _priority;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) PLBackgroundJobWorker *worker; // @synthesize worker=_worker;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithWorker:(id)arg1 priority:(unsigned int)arg2;
 

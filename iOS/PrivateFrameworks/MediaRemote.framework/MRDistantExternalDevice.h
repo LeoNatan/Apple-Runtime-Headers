@@ -35,6 +35,7 @@
 + (id)_notificationSerialQueue;
 + (id)clientInterface;
 + (id)serviceInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *volumeCallbackQueue; // @synthesize volumeCallbackQueue=_volumeCallbackQueue;
 @property(copy, nonatomic) CDUnknownBlockType volumeCallback; // @synthesize volumeCallback=_volumeCallback;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *customDataCallbackQueue; // @synthesize customDataCallbackQueue=_customDataCallbackQueue;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionStateCallbackQueue; // @synthesize connectionStateCallbackQueue=_connectionStateCallbackQueue;
 @property(copy, nonatomic) CDUnknownBlockType connectionStateCallback; // @synthesize connectionStateCallback=_connectionStateCallback;
 @property(readonly, nonatomic) _Bool hasEverAttemptedToConnect; // @synthesize hasEverAttemptedToConnect=_hasEverAttemptedToConnect;
-- (void).cxx_destruct;
 - (void)_updateHostedDeviceDesiredNotifications;
 - (void)_updateHostedDeviceDesiredCallbacks;
 - (void)_onSerialQueue_synchronousLoadExternalDeviceMetadataIfNecessary;

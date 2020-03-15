@@ -19,9 +19,9 @@
 }
 
 + (id)sharedDownloadQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDownloadQueueClient *sharedObserver; // @synthesize sharedObserver=_sharedObserver;
 @property(retain, nonatomic) NSMutableDictionary *downloadQueueObservers; // @synthesize downloadQueueObservers=_downloadQueueObservers;
-- (void).cxx_destruct;
 - (BOOL)cacheReceiptDataForDownload:(id)arg1;
 - (void)checkStoreDownloadQueueForAccount:(id)arg1;
 - (void)lockedApplicationTriedToLaunchAtPath:(id)arg1;

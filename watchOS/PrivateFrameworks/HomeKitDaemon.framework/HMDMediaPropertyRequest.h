@@ -18,10 +18,10 @@
 + (id)deserializeReadRequests:(id)arg1 mediaProfile:(id)arg2;
 + (id)serializeReadRequests:(id)arg1;
 + (id)requestWithProperty:(id)arg1 mediaProfile:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id previousValue; // @synthesize previousValue=_previousValue;
 @property(readonly, nonatomic) HMDMediaProfile *mediaProfile; // @synthesize mediaProfile=_mediaProfile;
 @property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithProperty:(id)arg1 mediaProfile:(id)arg2;
 

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(nonatomic) __weak _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak _UIFloatingContentView *floatingView; // @synthesize floatingView=_floatingView;
-- (void).cxx_destruct;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;

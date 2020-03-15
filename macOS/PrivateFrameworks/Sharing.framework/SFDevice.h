@@ -28,6 +28,7 @@
     unsigned char _osVersion;
     BOOL _paired;
     BOOL _testMode;
+    int _audioRoutingScore;
     unsigned int _deviceFlags;
     unsigned int _hotspotInfo;
     unsigned int _systemPairState;
@@ -49,6 +50,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL testMode; // @synthesize testMode=_testMode;
 @property(nonatomic) BOOL paired; // @synthesize paired=_paired;
 @property(nonatomic) unsigned char osVersion; // @synthesize osVersion=_osVersion;
@@ -82,8 +84,8 @@
 @property(copy, nonatomic) NSArray *batteryInfo; // @synthesize batteryInfo=_batteryInfo;
 @property(nonatomic) BOOL autoUnlockWatch; // @synthesize autoUnlockWatch=_autoUnlockWatch;
 @property(nonatomic) BOOL autoUnlockEnabled; // @synthesize autoUnlockEnabled=_autoUnlockEnabled;
+@property(nonatomic) int audioRoutingScore; // @synthesize audioRoutingScore=_audioRoutingScore;
 @property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (void)updateWithRPIdentity:(id)arg1;
 - (void)updateWithPairedPeer:(id)arg1;
 - (void)updateWithBLEDevice:(id)arg1;

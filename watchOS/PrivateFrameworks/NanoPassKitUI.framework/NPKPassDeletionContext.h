@@ -14,9 +14,9 @@
     UIViewController *_presentingViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (id)_unableToDeleteAlertSheetController;
 - (id)_confirmDeletionAlertSheetControllerWithMessage:(id)arg1;
 - (id)_confirmDeletionAlertSheetController;

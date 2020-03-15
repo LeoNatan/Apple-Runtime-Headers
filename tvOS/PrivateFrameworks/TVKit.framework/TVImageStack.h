@@ -32,10 +32,10 @@
 + (id)_loadingOperationQueue;
 + (id)_imageRepresentationsForImageStackSpecification:(id)arg1 fromURL:(id)arg2;
 + (id)_imageRepresentationsForUIImage:(id)arg1 outFlatImage:(out id *)arg2 outFlatImageCornerRadius:(out double *)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool legacy; // @synthesize legacy=_legacy;
 @property(retain, nonatomic) id flatImage; // @synthesize flatImage=_flatImage;
 @property(retain, nonatomic) id placeholderImage; // @synthesize placeholderImage=_placeholderImage;
-- (void).cxx_destruct;
 - (void)_loadImagesAtSize:(struct CGSize)arg1 scaledSize:(struct CGSize)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_loadLayeredImageProxy;
 - (void)loadImagesAtSize:(struct CGSize)arg1 completion:(CDUnknownBlockType)arg2;

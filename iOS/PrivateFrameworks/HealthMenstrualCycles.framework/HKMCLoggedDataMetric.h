@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)eventName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *dayIndexLoggingOffset; // @synthesize dayIndexLoggingOffset=_dayIndexLoggingOffset;
 @property(readonly, nonatomic) NSString *method; // @synthesize method=_method;
 @property(copy, nonatomic) NSDictionary *eventPayload; // @synthesize eventPayload=_eventPayload;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMethod:(id)arg1;
 

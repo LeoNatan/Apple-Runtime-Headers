@@ -9,13 +9,13 @@
 #import <MapsSuggestions/MapsSuggestionsPreloadableSource-Protocol.h>
 #import <MapsSuggestions/MapsSuggestionsSource-Protocol.h>
 
-@class MapsSuggestionsRoutine, NSObject, NSString;
+@class MapsSuggestionsRoutine, NSArray, NSObject, NSString;
 @protocol MapsSuggestionsSourceDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 @interface MapsSuggestionsRoutineSource : MapsSuggestionsBaseSource <MapsSuggestionsSource, MapsSuggestionsPreloadableSource>
 {
     MapsSuggestionsRoutine *_routine;
-    struct NSArray *_previouslyAddedEntries;
+    NSArray *_previouslyAddedEntries;
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _running;
     NSObject<OS_dispatch_source> *_updateTimer;
@@ -27,7 +27,7 @@
 - (void)_requestTouristInfoFromRoutineIfNeededForLocation:(id)arg1;
 - (_Bool)removeEntry:(id)arg1 behavior:(int)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)canProduceEntriesOfType:(int)arg1;
-- (_Bool)suggestionsEntriesAtLocation:(id)arg1 period:(struct NSDateInterval *)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)suggestionsEntriesAtLocation:(id)arg1 period:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)start;

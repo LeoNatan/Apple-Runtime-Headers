@@ -15,9 +15,9 @@
     id <HKFitnessMachineConnectionClientInterface> _client;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HKFitnessMachineConnectionClientInterface> client; // @synthesize client=_client;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)initWithUUID:(id)arg1 client:(id)arg2;
 
 @end

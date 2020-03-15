@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableRoutineLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
 @property(nonatomic) unsigned long long triggerTypes; // @synthesize triggerTypes=_triggerTypes;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

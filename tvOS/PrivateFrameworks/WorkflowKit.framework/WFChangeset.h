@@ -19,11 +19,11 @@
 }
 
 + (id)changesetFromStart:(id)arg1 toEnd:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *movedIndexes; // @synthesize movedIndexes=_movedIndexes;
 @property(readonly, copy, nonatomic) NSOrderedSet *insertedObjects; // @synthesize insertedObjects=_insertedObjects;
 @property(readonly, copy, nonatomic) NSIndexSet *insertedIndexes; // @synthesize insertedIndexes=_insertedIndexes;
 @property(readonly, copy, nonatomic) NSIndexSet *deletedIndexes; // @synthesize deletedIndexes=_deletedIndexes;
-- (void).cxx_destruct;
 - (id)endResultByApplyingToStart:(id)arg1;
 @property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 - (id)copyWithZone:(struct _NSZone *)arg1;

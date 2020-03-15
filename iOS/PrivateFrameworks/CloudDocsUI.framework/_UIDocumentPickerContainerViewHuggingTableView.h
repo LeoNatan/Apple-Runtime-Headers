@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *_ancestralContainerView;
 }
 
-@property(nonatomic) __weak UIView *ancestralContainerView; // @synthesize ancestralContainerView=_ancestralContainerView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *ancestralContainerView; // @synthesize ancestralContainerView=_ancestralContainerView;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 

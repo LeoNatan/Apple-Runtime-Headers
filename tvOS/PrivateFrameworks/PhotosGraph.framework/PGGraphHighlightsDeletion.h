@@ -13,8 +13,8 @@
     NSSet *_highlightLocalIdentifiers;
 }
 
-@property(readonly, nonatomic) NSSet *highlightLocalIdentifiers; // @synthesize highlightLocalIdentifiers=_highlightLocalIdentifiers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *highlightLocalIdentifiers; // @synthesize highlightLocalIdentifiers=_highlightLocalIdentifiers;
 - (id)description;
 - (unsigned long long)changeCount;
 - (unsigned long long)type;

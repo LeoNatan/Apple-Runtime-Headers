@@ -16,11 +16,11 @@
     CDUnknownBlockType _logger;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType logger; // @synthesize logger=_logger;
 @property(readonly, copy, nonatomic) CDUnknownBlockType argumentFormatter; // @synthesize argumentFormatter=_argumentFormatter;
 @property(readonly, nonatomic) unsigned char logType; // @synthesize logType=_logType;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (id)formattedDescriptionForArgument:(id)arg1;
 - (id)initWithLog:(id)arg1 logType:(unsigned char)arg2 argumentFormatter:(CDUnknownBlockType)arg3;
 - (id)init;

@@ -16,9 +16,9 @@
     unsigned int _processType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxSharedSubitemsBeforeFailure; // @synthesize maxSharedSubitemsBeforeFailure=_maxSharedSubitemsBeforeFailure;
 @property(copy) CDUnknownBlockType processSubitemsCompletionBlock; // @synthesize processSubitemsCompletionBlock=_processSubitemsCompletionBlock;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithURL:(id)arg1 processType:(unsigned int)arg2;

@@ -14,9 +14,9 @@
     MTAlarm *_sleepAlarm;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTAlarm *sleepAlarm; // @synthesize sleepAlarm=_sleepAlarm;
 @property(retain, nonatomic) NSMutableArray *alarms; // @synthesize alarms=_alarms;
-- (void).cxx_destruct;
 - (void)cleanUpOldNotifications;
 - (void)removeFromOldStorage;
 - (void)migrateFromOldStorage;

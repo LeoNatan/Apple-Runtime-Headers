@@ -17,12 +17,12 @@
     struct _os_timesync_db_s *_tsdb;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _os_timesync_db_s *tsdb; // @synthesize tsdb=_tsdb;
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *oldestTimeRef; // @synthesize oldestTimeRef=_oldestTimeRef;
 @property(readonly, nonatomic) _OSLogEventStoreMetadata *lesm; // @synthesize lesm=_lesm;
 @property(readonly, nonatomic) _OSLogCollectionReference *lcr; // @synthesize lcr=_lcr;
 @property(retain, nonatomic) NSMutableArray *_fileRefs; // @synthesize _fileRefs;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *newestDate;
 @property(readonly, nonatomic) NSDate *oldestDate;
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *newestTimeRef;

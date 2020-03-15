@@ -93,6 +93,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onNextViewLayout; // @synthesize onNextViewLayout=_onNextViewLayout;
 @property(readonly, nonatomic) NSMutableSet *imageCellsPlayingVideo; // @synthesize imageCellsPlayingVideo=_imageCellsPlayingVideo;
 @property(nonatomic) _Bool observingPopoverContentSizeChange; // @synthesize observingPopoverContentSizeChange=_observingPopoverContentSizeChange;
@@ -151,7 +152,6 @@
 @property(readonly, nonatomic) PHCachingImageManager *_cachingImageManager; // @synthesize _cachingImageManager=__cachingImageManager;
 @property(readonly, nonatomic) PXFeedSectionInfosManager *_feedSectionInfosManager; // @synthesize _feedSectionInfosManager=__feedSectionInfosManager;
 @property(readonly, nonatomic) long long contentType; // @synthesize contentType=_contentType;
-- (void).cxx_destruct;
 - (id)_collectionView:(id)arg1 itemsForAddingToDragSession:(id)arg2 atIndexPath:(id)arg3 point:(struct CGPoint)arg4;
 - (id)_collectionView:(id)arg1 itemsForBeginningDragSession:(id)arg2 atIndexPath:(id)arg3;
 - (id)_dragItemsForIndexPath:(id)arg1;
@@ -179,7 +179,7 @@
 - (void)_handleTap:(id)arg1;
 - (void)_openiCloudSettings;
 - (void)_showOutOfNetworkInvitationMessageForSharedAlbum:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_navigateToRevealPhoto:(id)arg1 inAlbum:(struct NSObject *)arg2 animated:(_Bool)arg3;
+- (void)_navigateToRevealPhoto:(id)arg1 inAlbum:(id)arg2 animated:(_Bool)arg3;
 - (void)_restoreScrollPositionInCollectionView:(id)arg1 fromRestorableState:(id)arg2;
 - (void)_enumerateCenterAssetsInRestorableState:(id)arg1 inCollectionView:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)_currentRestorableState;

@@ -19,12 +19,12 @@
     NSString *_passUniqueIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isClearingAttempt; // @synthesize isClearingAttempt=_isClearingAttempt;
 @property(nonatomic) BOOL useBackgroundLocation; // @synthesize useBackgroundLocation=_useBackgroundLocation;
 @property(nonatomic) BOOL foundOptimalLocation; // @synthesize foundOptimalLocation=_foundOptimalLocation;
 @property(retain, nonatomic) NSString *passUniqueIdentifier; // @synthesize passUniqueIdentifier=_passUniqueIdentifier;
 @property(retain, nonatomic) PKPaymentApplication *paymentApplication; // @synthesize paymentApplication=_paymentApplication;
-- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentTransaction *paymentTransaction; // @synthesize paymentTransaction=_paymentTransaction;
 - (id)init;
 

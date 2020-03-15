@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     XCTElementFilteringTransformer *_filteringTransformer;
 }
 
-@property(readonly) XCTElementFilteringTransformer *filteringTransformer; // @synthesize filteringTransformer=_filteringTransformer;
 - (void).cxx_destruct;
+@property(readonly) XCTElementFilteringTransformer *filteringTransformer; // @synthesize filteringTransformer=_filteringTransformer;
 - (id)nextMatch;
 - (id)initWithInput:(id)arg1 filteringTransformer:(id)arg2;
 

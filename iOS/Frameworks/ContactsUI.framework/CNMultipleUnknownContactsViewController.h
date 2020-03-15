@@ -22,12 +22,12 @@
 
 + (id)descriptorForRequiredKeys;
 + (id)contactFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactFormatter *formatter; // @synthesize formatter=_formatter;
 @property(retain, nonatomic) NSMutableSet *createdContactIdentifiers; // @synthesize createdContactIdentifiers=_createdContactIdentifiers;
 @property(copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(nonatomic) __weak id <CNMultipleUnknownContactsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (_Bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContactProperty:(id)arg2;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

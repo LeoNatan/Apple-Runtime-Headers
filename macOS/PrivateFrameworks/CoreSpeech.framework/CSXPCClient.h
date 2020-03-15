@@ -27,6 +27,7 @@
     id <CSAudioStreamProvidingDelegate> _audioStreamProvidingDelegate;
     id <CSAudioAlertProvidingDelegate> _audioAlertProvidingDelegate;
     id <CSXPCClientDelegate> _delegate;
+    NSString *_UUID;
     NSObject<OS_xpc_object> *_xpcConnection;
     CSAudioStream *_audioStream;
     NSMutableSet *_activationAssertions;
@@ -34,16 +35,18 @@
     unsigned long long _xpcClientType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long xpcClientType; // @synthesize xpcClientType=_xpcClientType;
 @property(retain, nonatomic) NSHashTable *audioSessionInfoObservers; // @synthesize audioSessionInfoObservers=_audioSessionInfoObservers;
 @property(retain, nonatomic) NSMutableSet *activationAssertions; // @synthesize activationAssertions=_activationAssertions;
 @property(retain, nonatomic) CSAudioStream *audioStream; // @synthesize audioStream=_audioStream;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) __weak id <CSXPCClientDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CSAudioAlertProvidingDelegate> audioAlertProvidingDelegate; // @synthesize audioAlertProvidingDelegate=_audioAlertProvidingDelegate;
 @property(nonatomic) __weak id <CSAudioStreamProvidingDelegate> audioStreamProvidingDelegate; // @synthesize audioStreamProvidingDelegate=_audioStreamProvidingDelegate;
 @property(nonatomic) __weak id <CSAudioSessionProvidingDelegate> audioSessionProvidingDelegate; // @synthesize audioSessionProvidingDelegate=_audioSessionProvidingDelegate;
-- (void).cxx_destruct;
+- (void)_handleStreamProvidingDelegateTwoShotDetected:(id)arg1;
 - (void)_handleStreamProvidingDelegateHardwareConfigChange:(id)arg1;
 - (void)_handleStreamProvidingDelegateChunkForTVAvailable:(id)arg1;
 - (void)_handleStreamProvidingDelegateChunkAvailable:(id)arg1;

@@ -23,8 +23,8 @@
     NSArray *__searchResults;
 }
 
-@property(retain, nonatomic, setter=_setSearchResults:) NSArray *_searchResults; // @synthesize _searchResults=__searchResults;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setSearchResults:) NSArray *_searchResults; // @synthesize _searchResults=__searchResults;
 - (void)_finishedCreatingRecipientSearchResults:(id)arg1 forSearchTaskID:(id)arg2;
 - (void)_creationQueue_creatingRecipientSearchResultsForResults:(id)arg1 forSearchTaskID:(id)arg2;
 - (void)finishedSearchingForAutocompleteResults;

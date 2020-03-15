@@ -18,10 +18,10 @@
     struct CCUILayoutSize _prototypeModuleSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CCUILayoutSize prototypeModuleSize; // @synthesize prototypeModuleSize=_prototypeModuleSize;
 @property(readonly, nonatomic) id <CCUIContentModule> module; // @synthesize module=_module;
 @property(readonly, nonatomic) CCSModuleMetadata *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMetadata:(id)arg1 module:(id)arg2 prototypeModuleSize:(struct CCUILayoutSize)arg3;
 

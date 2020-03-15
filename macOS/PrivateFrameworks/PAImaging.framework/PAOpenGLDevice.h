@@ -36,9 +36,9 @@
 + (struct _CGLPixelFormatObject *)sharedPixelFormat;
 + (id)discreteDevice;
 + (id)integratedDevice;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int virtualScreen; // @synthesize virtualScreen=_virtualScreen;
 @property(readonly, nonatomic) unsigned long long rendererID; // @synthesize rendererID=_rendererID;
-- (void).cxx_destruct;
 - (BOOL)isTextureFormatSupported:(int)arg1;
 - (BOOL)isExtensionSupported:(id)arg1;
 - (id)shadingLanguageVersion;

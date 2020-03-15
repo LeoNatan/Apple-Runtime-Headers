@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) int minuteOfHour; // @synthesize minuteOfHour=_minuteOfHour;
 @property(nonatomic) int hourOfDay; // @synthesize hourOfDay=_hourOfDay;
 @property(nonatomic) int daysOfWeek; // @synthesize daysOfWeek=_daysOfWeek;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

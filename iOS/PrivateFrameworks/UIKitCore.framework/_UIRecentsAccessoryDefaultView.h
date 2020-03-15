@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_subheadLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subheadLabel; // @synthesize subheadLabel=_subheadLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_updateLabelTextColors;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;

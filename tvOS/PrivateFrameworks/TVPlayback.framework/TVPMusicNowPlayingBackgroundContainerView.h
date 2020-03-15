@@ -6,23 +6,28 @@
 
 #import <UIKit/UIView.h>
 
-@class UIVisualEffectView;
+@class NSObject, UIVisualEffectView;
+@protocol TVPMusicNowPlayingBackgroundProvider;
 
 @interface TVPMusicNowPlayingBackgroundContainerView : UIView
 {
-    UIView *_contentView;
+    _Bool _blurAllowed;
+    _Bool _shouldBlur;
+    NSObject<TVPMusicNowPlayingBackgroundProvider> *_backgroundProvider;
     UIView *_containerView;
     UIVisualEffectView *_blurView;
 }
 
+- (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool shouldBlur; // @synthesize shouldBlur=_shouldBlur;
 @property(retain, nonatomic) UIVisualEffectView *blurView; // @synthesize blurView=_blurView;
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
-@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<TVPMusicNowPlayingBackgroundProvider> *backgroundProvider; // @synthesize backgroundProvider=_backgroundProvider;
+@property(nonatomic, getter=isBlurAllowed) _Bool blurAllowed; // @synthesize blurAllowed=_blurAllowed;
 - (void)_updateForBackgroundContrastState;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
-@property(nonatomic, getter=isBlurred) _Bool blurred;
+- (void)_updateBlurEffect;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *peerContextList; // @synthesize peerContextList=_peerContextList;
 @property(nonatomic) unsigned long long secondaryPreferredChannel; // @synthesize secondaryPreferredChannel=_secondaryPreferredChannel;
 @property(nonatomic) unsigned long long preferredChannel; // @synthesize preferredChannel=_preferredChannel;
@@ -32,7 +33,6 @@
 @property(nonatomic) int sessionFlags; // @synthesize sessionFlags=_sessionFlags;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

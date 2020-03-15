@@ -17,10 +17,10 @@
 }
 
 + (id)urlRequestRewriteRuleWithMatchPattern:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSRegularExpression *matchPattern; // @synthesize matchPattern=_matchPattern;
 @property(nonatomic) float priority; // @synthesize priority=_priority;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)rewriteURLRequest:(id)arg1;
 - (id)initWithMatchExpression:(id)arg1 block:(CDUnknownBlockType)arg2;
 

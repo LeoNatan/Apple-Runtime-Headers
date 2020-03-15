@@ -7,15 +7,15 @@
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 #import <MapsSuggestions/NSObject-Protocol.h>
 
-@class MapsSuggestionsEntry;
+@class GEOMapItemStorage, MapsSuggestionsEntry;
 
 @protocol MapsSuggestionsPredictor <NSObject, MapsSuggestionsObject>
-- (BOOL)predictedTransportModeForDestinationEntry:(MapsSuggestionsEntry *)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(void (^)(struct NSArray *, NSError *))arg3;
-- (BOOL)predictedTransportModeForDestinationMapItem:(struct GEOMapItemStorage *)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(void (^)(struct NSArray *, NSError *))arg3;
+- (BOOL)predictedTransportModeForDestinationEntry:(MapsSuggestionsEntry *)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(void (^)(NSArray *, NSError *))arg3;
+- (BOOL)predictedTransportModeForDestinationMapItem:(GEOMapItemStorage *)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(void (^)(NSArray *, NSError *))arg3;
 
 @optional
 - (void)cancelCapturingAnalytics;
 - (void)capturePredictedTransportationMode:(int)arg1;
-- (void)captureActualTransportationMode:(int)arg1 originMapItem:(struct GEOMapItemStorage *)arg2 destinationMapItem:(struct GEOMapItemStorage *)arg3;
+- (void)captureActualTransportationMode:(int)arg1 originMapItem:(GEOMapItemStorage *)arg2 destinationMapItem:(GEOMapItemStorage *)arg3;
 @end
 

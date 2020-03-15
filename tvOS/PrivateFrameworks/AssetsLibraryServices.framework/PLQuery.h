@@ -22,11 +22,11 @@
 }
 
 + (Class)singleQueriesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *singleQueries; // @synthesize singleQueries=_singleQueries;
 @property(retain, nonatomic) PLQuery *second; // @synthesize second=_second;
 @property(retain, nonatomic) PLQuery *first; // @synthesize first=_first;
 @property(nonatomic) int conjunction; // @synthesize conjunction=_conjunction;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long anchorHostTime; // @synthesize anchorHostTime=_anchorHostTime;
 @property(nonatomic) unsigned long long anchorSampleCount; // @synthesize anchorSampleCount=_anchorSampleCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (unsigned long long)sampleCountFromHostTime:(unsigned long long)arg1;
 - (unsigned long long)hostTimeFromSampleCount:(unsigned long long)arg1;
 - (void)processSampleCount:(unsigned long long)arg1 hostTime:(unsigned long long)arg2;

@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)changedZonesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *syncContinuationToken; // @synthesize syncContinuationToken=_syncContinuationToken;
 @property(retain, nonatomic) NSMutableArray *changedZones; // @synthesize changedZones=_changedZones;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

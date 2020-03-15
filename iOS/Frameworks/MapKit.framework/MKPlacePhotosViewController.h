@@ -9,18 +9,21 @@
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
 #import <MapKit/MKMuninContainerViewDelegate-Protocol.h>
 #import <MapKit/MKMuninViewProvider-Protocol.h>
+#import <MapKit/MKPhotoGalleryTransitionAnimator-Protocol.h>
 #import <MapKit/MKPlaceAttributionCellDelegate-Protocol.h>
-#import <MapKit/MKPlacePhotosViewDelegate-Protocol.h>
+#import <MapKit/MKPlacePhotoGalleryViewControllerDelegate-Protocol.h>
 #import <MapKit/UIScrollViewDelegate-Protocol.h>
+#import <MapKit/UIViewControllerTransitioningDelegate-Protocol.h>
 #import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
-@class MKMapItem, MKMuninContainerView, MKMuninView, MKPhotoSmallAttributionView, MKPlaceAttributionCell, MKPlacePhotosView, NSArray, NSLayoutConstraint, NSString, UIScrollView, UIView, _MKPlaceViewController;
+@class MKMapItem, MKMuninContainerView, MKMuninView, MKPhotoBigAttributionView, MKPhotoSmallAttributionView, MKPlaceAttributionCell, NSArray, NSLayoutConstraint, NSString, UIImageView, UIScrollView, UIView, _MKPlaceViewController;
 @protocol MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate;
 
-@interface MKPlacePhotosViewController : UIViewController <MKPlaceAttributionCellDelegate, MKPlacePhotosViewDelegate, UIScrollViewDelegate, MKMuninContainerViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol, MKMuninViewProvider>
+@interface MKPlacePhotosViewController : UIViewController <MKPlaceAttributionCellDelegate, UIScrollViewDelegate, MKPlacePhotoGalleryViewControllerDelegate, UIViewControllerTransitioningDelegate, MKPhotoGalleryTransitionAnimator, MKMuninContainerViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol, MKMuninViewProvider>
 {
-    MKPlacePhotosView *_currentPhotoViewer;
     UIView *_bottomHairline;
+    UIImageView *_imageViewForTransition;
+    MKPhotoBigAttributionView *_attributionView;
     NSArray *_photoViews;
     UIScrollView *_photosContainerScrollView;
     UIView *_photosContainer;
@@ -29,7 +32,6 @@
     _Bool _photoScrollViewScrollingLeft;
     _Bool _photoScrollViewScrollingRight;
     _Bool _canUseFullscreenViewer;
-    _Bool _canUseGallery;
     _Bool _photoLoaded;
     _Bool _loadAppImageCanceledOrFailed;
     _Bool _isRTL;
@@ -50,20 +52,30 @@
     id <MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate> _photosControllerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsBottomHairline; // @synthesize showsBottomHairline=_showsBottomHairline;
 @property(nonatomic) __weak id <MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate> photosControllerDelegate; // @synthesize photosControllerDelegate=_photosControllerDelegate;
 @property(nonatomic) __weak _MKPlaceViewController *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (void)viewDidLayoutSubviews;
 - (void)viewLayoutMarginsDidChange;
 - (void)setContentVisibility:(long long)arg1;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)muninContainerView:(id)arg1 didAddMuninView:(id)arg2;
-- (void)placePhotoViewerWillClose:(id)arg1 photo:(id)arg2 onIndex:(unsigned long long)arg3;
-- (void)placePhotoViewerAttributionTappedForPhotoAtIndex:(unsigned long long)arg1 photo:(id)arg2;
-- (id)placePhotoViewerViewForPhotoAtIndex:(unsigned long long)arg1;
-- (void)_callPhotoDelegateForPhotoAt:(unsigned long long)arg1;
+- (id)animationControllerForDismissedController:(id)arg1;
+- (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (void)photoGalleryTransitionAnimatorDidFinishAnimation;
+- (_Bool)dismissPhotoGalleryIfNecessary:(id)arg1;
+- (void)placePhotoGalleryDidScrollToIndex:(unsigned long long)arg1;
+- (void)placePhotoGalleryDidScrollRightToIndex:(unsigned long long)arg1;
+- (void)placePhotoGalleryDidScrollLeftToIndex:(unsigned long long)arg1;
+- (void)placePhotoGallery:(id)arg1 openButtonTappedAtIndex:(unsigned long long)arg2;
+- (void)placePhotoGalleryDidCloseAtIndex:(unsigned long long)arg1;
+- (void)placePhotoGallery:(id)arg1 willCloseAtIndex:(unsigned long long)arg2;
+- (void)placePhotoGalleryAdditionalViewTapped:(id)arg1;
+- (void)placePhotoGallery:(id)arg1 attributionViewTappedAtIndex:(unsigned long long)arg2;
+- (id)placePhotoGalleryImageViewForPhotoAtIndex:(unsigned long long)arg1;
+- (void)didTapAttributionViewWithPresentingViewController:(id)arg1;
 - (void)_photoTappedAtIndex:(unsigned long long)arg1;
 - (void)_photoSelected:(id)arg1;
 - (void)_loadPhotos;
@@ -94,6 +106,9 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithMapItem:(id)arg1 mode:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (_Bool)isSafariProcess;
+- (_Bool)isParsecProcess;
+- (_Bool)isSiriProcess;
 - (_Bool)_canShowWhileLocked;
 
 // Remaining properties

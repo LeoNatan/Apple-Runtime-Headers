@@ -86,6 +86,7 @@
 }
 
 + (id)candidatePairWithLocalCandidate:(id)arg1 remoteCandidate:(id)arg2 sessionID:(id)arg3 delegate:(id)arg4 sendMsgBlock:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL serverIsDegraded; // @synthesize serverIsDegraded=_serverIsDegraded;
 @property(readonly) NSDictionary *participantIDMap; // @synthesize participantIDMap=_participantIDMap;
 @property(readonly) NSData *hmacKey; // @synthesize hmacKey=_hmacKey;
@@ -144,7 +145,6 @@
 @property(readonly) IDSStunCandidate *remote; // @synthesize remote=_remote;
 @property(readonly) IDSStunCandidate *local; // @synthesize local=_local;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_notifyQREventAdded:(id)arg1;
 - (void)_notifySessionStreamInfoReceived:(id)arg1 withParticipants:(id)arg2 sentBytes:(unsigned long long)arg3 receivedBytes:(unsigned long long)arg4 offlineRequest:(BOOL)arg5 streamInfoRequest:(BOOL)arg6 success:(BOOL)arg7;
 - (void)processSessionInfoRequestTimeout:(id)arg1;

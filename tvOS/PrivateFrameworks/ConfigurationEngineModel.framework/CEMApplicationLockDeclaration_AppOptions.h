@@ -27,6 +27,7 @@
 + (id)buildRequiredOnly;
 + (id)buildWithDisableTouch:(id)arg1 withDisableDeviceRotation:(id)arg2 withDisableVolumeButtons:(id)arg3 withDisableRingerSwitch:(id)arg4 withDisableSleepWakeButton:(id)arg5 withDisableAutoLock:(id)arg6 withEnableVoiceOver:(id)arg7 withEnableZoom:(id)arg8 withEnableInvertColors:(id)arg9 withEnableAssistiveTouch:(id)arg10 withEnableSpeakSelection:(id)arg11 withEnableMonoAudio:(id)arg12;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadEnableMonoAudio; // @synthesize payloadEnableMonoAudio=_payloadEnableMonoAudio;
 @property(copy, nonatomic) NSNumber *payloadEnableSpeakSelection; // @synthesize payloadEnableSpeakSelection=_payloadEnableSpeakSelection;
 @property(copy, nonatomic) NSNumber *payloadEnableAssistiveTouch; // @synthesize payloadEnableAssistiveTouch=_payloadEnableAssistiveTouch;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSNumber *payloadDisableVolumeButtons; // @synthesize payloadDisableVolumeButtons=_payloadDisableVolumeButtons;
 @property(copy, nonatomic) NSNumber *payloadDisableDeviceRotation; // @synthesize payloadDisableDeviceRotation=_payloadDisableDeviceRotation;
 @property(copy, nonatomic) NSNumber *payloadDisableTouch; // @synthesize payloadDisableTouch=_payloadDisableTouch;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

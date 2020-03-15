@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <CUISEcoModeConfirmationAlertManager> manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CUISEcoModeConfirmationAlertManager> manager; // @synthesize manager=_manager;
 
 @end
 

@@ -10,7 +10,7 @@
 {
 }
 
-+ (struct NSArray *)ftsTokenize:(id)arg1;
++ (id)ftsTokenize:(id)arg1;
 + (id)ftsPrefix:(id)arg1;
 + (id)tokenize:(id)arg1;
 + (void)enumerateTokensInString:(id)arg1 withRange:(struct _NSRange)arg2 block:(CDUnknownBlockType)arg3;

@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSNumber *_playedDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *playedDate; // @synthesize playedDate=_playedDate;
 @property(retain, nonatomic) NSNumber *addedDate; // @synthesize addedDate=_addedDate;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithPersistentID:(id)arg1 name:(id)arg2 type:(unsigned int)arg3;
 
 @end

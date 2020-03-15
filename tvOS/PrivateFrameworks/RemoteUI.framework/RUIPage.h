@@ -20,6 +20,7 @@
     RUISpinnerView *_spinnerViewOM;
     NSString *_validationFunction;
     NSString *_navTitle;
+    NSString *_navSubTitle;
     _Bool _hidesBackButton;
     UIToolbar *_toolbar;
     UIBarButtonItem *_leftToolbarItem;
@@ -30,6 +31,7 @@
     NSMutableArray *_childPages;
     NSMutableArray *_didAppearCallbacks;
     _Bool _showsTitlesAsHeaderViews;
+    _Bool _useModernHeaderView;
     _Bool _loading;
     NSDictionary *_attributes;
     RUIPageElement *_pageElement;
@@ -48,8 +50,10 @@
     struct UIEdgeInsets _customEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(copy, nonatomic) NSString *loadingTitle; // @synthesize loadingTitle=_loadingTitle;
+@property(nonatomic) _Bool useModernHeaderView; // @synthesize useModernHeaderView=_useModernHeaderView;
 @property(nonatomic) struct UIEdgeInsets customEdgeInsets; // @synthesize customEdgeInsets=_customEdgeInsets;
 @property(nonatomic) double customMargin; // @synthesize customMargin=_customMargin;
 @property(readonly, nonatomic) __weak RUIPage *parentPage; // @synthesize parentPage=_parentPage;
@@ -67,6 +71,7 @@
 @property(nonatomic) _Bool hidesBackButton; // @synthesize hidesBackButton=_hidesBackButton;
 @property(nonatomic) _Bool showsTitlesAsHeaderViews; // @synthesize showsTitlesAsHeaderViews=_showsTitlesAsHeaderViews;
 @property(copy, nonatomic) NSString *backButtonTitle; // @synthesize backButtonTitle=_backButtonTitle;
+@property(copy, nonatomic) NSString *navSubTitle; // @synthesize navSubTitle=_navSubTitle;
 @property(copy, nonatomic) NSString *navTitle; // @synthesize navTitle=_navTitle;
 @property(copy, nonatomic) NSString *validationFunction; // @synthesize validationFunction=_validationFunction;
 @property(retain, nonatomic) RUIStyle *style; // @synthesize style=_style;
@@ -75,7 +80,8 @@
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(copy, nonatomic) NSString *pageID; // @synthesize pageID=_pageID;
 @property(copy, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
+- (void)_setCompressedHeightForView:(id)arg1;
+- (_Bool)_shouldShowMultiChoiceElement;
 - (void)addDidAppearBlock:(CDUnknownBlockType)arg1;
 - (id)preferredFocusEnvironments;
 - (void)viewDidLayoutSubviews;

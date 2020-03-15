@@ -27,11 +27,11 @@
     CSLDuetApplicationProcessState *_processState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLDuetApplicationProcessState *processState; // @synthesize processState=_processState;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)appendTaskSet:(id)arg1 toBuilder:(id)arg2 withName:(id)arg3;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

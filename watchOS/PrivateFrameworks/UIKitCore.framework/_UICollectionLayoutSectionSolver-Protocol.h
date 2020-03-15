@@ -18,12 +18,12 @@
 @property(readonly, nonatomic) struct CGSize contentSize;
 @property(readonly, nonatomic) struct CGRect effectiveContentFrame;
 @property(readonly, nonatomic) int frameCount;
-@property(readonly, nonatomic) int layoutAxis;
+@property(readonly, nonatomic) unsigned int layoutAxis;
 @property(readonly, nonatomic) _Bool layoutRTL;
 @property(readonly, nonatomic) UITraitCollection *traitCollection;
 @property(readonly, nonatomic) id <NSCollectionLayoutContainer> container;
 @property(readonly, nonatomic) NSCollectionLayoutSection *layoutSection;
-- (float)_dimensionForRootGroupAlongAxis:(int)arg1;
+- (float)_dimensionForRootGroupAlongAxis:(unsigned int)arg1;
 - (void)_setOrthogonalOffset:(struct CGPoint)arg1;
 - (NSString *)visualDescription;
 - (NSSet *)supplementaryKeysAssociatedWithItemAtIndex:(int)arg1;
@@ -37,8 +37,8 @@
 - (NSArray *)queryFramesIntersectingRect:(struct CGRect)arg1;
 - (void)updatePinnedSupplementaryItemsWithVisibleBounds:(struct CGRect)arg1;
 - (id <_UICollectionLayoutSolveResult>)resolveWithParameters:(_UICollectionLayoutSolveParameters *)arg1 preferredSizes:(id <_UICollectionPreferredSizes>)arg2;
-- (void)solveForContainer:(id <NSCollectionLayoutContainer>)arg1 traitCollection:(UITraitCollection *)arg2 layoutAxis:(int)arg3 frameCount:(int)arg4 preferredSizes:(id <_UICollectionPreferredSizes>)arg5 layoutRTL:(_Bool)arg6;
-- (void)solveForContainer:(id <NSCollectionLayoutContainer>)arg1 traitCollection:(UITraitCollection *)arg2 layoutAxis:(int)arg3 frameCount:(int)arg4 preferredSizes:(id <_UICollectionPreferredSizes>)arg5;
-- (void)solveForContainer:(id <NSCollectionLayoutContainer>)arg1 traitCollection:(UITraitCollection *)arg2 layoutAxis:(int)arg3 frameCount:(int)arg4;
+- (void)solveForContainer:(id <NSCollectionLayoutContainer>)arg1 traitCollection:(UITraitCollection *)arg2 layoutAxis:(unsigned int)arg3 frameCount:(int)arg4 preferredSizes:(id <_UICollectionPreferredSizes>)arg5 layoutRTL:(_Bool)arg6;
+- (void)solveForContainer:(id <NSCollectionLayoutContainer>)arg1 traitCollection:(UITraitCollection *)arg2 layoutAxis:(unsigned int)arg3 frameCount:(int)arg4 preferredSizes:(id <_UICollectionPreferredSizes>)arg5;
+- (void)solveForContainer:(id <NSCollectionLayoutContainer>)arg1 traitCollection:(UITraitCollection *)arg2 layoutAxis:(unsigned int)arg3 frameCount:(int)arg4;
 @end
 

@@ -21,6 +21,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) id <HMCameraClipFetchAssetContextOperationDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(copy) CDUnknownBlockType fetchVideoAssetContextCompletionBlock; // @synthesize fetchVideoAssetContextCompletionBlock=_fetchVideoAssetContextCompletionBlock;
 @property(copy) CDUnknownBlockType downloadProgressHandler; // @synthesize downloadProgressHandler=_downloadProgressHandler;
@@ -28,7 +29,6 @@
 @property(copy) NSURL *clipDestinationFileURL; // @synthesize clipDestinationFileURL=_clipDestinationFileURL;
 @property(readonly) HMCameraClip *clip; // @synthesize clip=_clip;
 @property(readonly) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)writeHLSPlaylistForVideoAssetContext:(id)arg1;
 - (id)decryptData:(id)arg1;

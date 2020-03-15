@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _count;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(readonly, nonatomic) OITSUReadWriteQueue *readWriteQueue; // @synthesize readWriteQueue=_readWriteQueue;
-- (void).cxx_destruct;
 - (void)performSyncWriteWithUnderlyingDictionary:(CDUnknownBlockType)arg1;
 - (void)enumerateKeysAndObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;

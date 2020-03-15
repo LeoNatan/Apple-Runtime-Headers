@@ -21,11 +21,11 @@
 + (id)editableAreaForObject:(id)arg1 probingInternalKeyPaths:(id)arg2;
 + (id)editableAreaForLabel:(id)arg1;
 + (id)emptyArea;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wraps; // @synthesize wraps=_wraps;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(copy, nonatomic) IBUIFontDescription *fontDescription; // @synthesize fontDescription=_fontDescription;
 @property(nonatomic) struct CGRect sceneRect; // @synthesize sceneRect=_sceneRect;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 

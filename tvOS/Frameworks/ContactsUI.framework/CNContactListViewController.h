@@ -49,6 +49,7 @@
     CNContactListViewController *_searchResultsController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDisplayGroupsGrid; // @synthesize shouldDisplayGroupsGrid=_shouldDisplayGroupsGrid;
 @property(retain, nonatomic) CNContactListViewController *searchResultsController; // @synthesize searchResultsController=_searchResultsController;
 @property(retain, nonatomic) NSArray *tableViewHeaderConstraints; // @synthesize tableViewHeaderConstraints=_tableViewHeaderConstraints;
@@ -69,7 +70,6 @@
 @property(nonatomic) _Bool shouldAutoHideMeContactBanner; // @synthesize shouldAutoHideMeContactBanner=_shouldAutoHideMeContactBanner;
 @property(nonatomic) __weak id <CNContactListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool shouldRefreshMeContact; // @synthesize shouldRefreshMeContact=_shouldRefreshMeContact;
-- (void).cxx_destruct;
 - (void)cancelSearch:(id)arg1;
 - (void)beginSearch:(id)arg1;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;

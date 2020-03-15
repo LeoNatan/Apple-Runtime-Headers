@@ -15,8 +15,8 @@
     NSArray *_loggers;
 }
 
-@property(copy) NSArray *loggers; // @synthesize loggers=_loggers;
 - (void).cxx_destruct;
+@property(copy) NSArray *loggers; // @synthesize loggers=_loggers;
 - (void)didReturnCacheFalsePositives:(id)arg1;
 - (void)didReturnCacheFalseNegatives:(id)arg1;
 - (id)initWithLoggers:(id)arg1;

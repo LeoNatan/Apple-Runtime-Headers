@@ -25,12 +25,12 @@
 
 + (Class)manifestHashesType;
 + (Class)uniqueIDsType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int resyncID; // @synthesize resyncID=_resyncID;
 @property(nonatomic) _Bool fullResyncNeeded; // @synthesize fullResyncNeeded=_fullResyncNeeded;
 @property(retain, nonatomic) NSMutableArray *manifestHashes; // @synthesize manifestHashes=_manifestHashes;
 @property(retain, nonatomic) NSMutableArray *uniqueIDs; // @synthesize uniqueIDs=_uniqueIDs;
 @property(retain, nonatomic) NPKProtoHash *expectedHash; // @synthesize expectedHash=_expectedHash;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

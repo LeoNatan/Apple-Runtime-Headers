@@ -19,13 +19,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(copy, nonatomic) NSString *deviceToken; // @synthesize deviceToken=_deviceToken;
 @property(copy, nonatomic) NSString *userID; // @synthesize userID=_userID;
 @property(copy, nonatomic) NSArray *channelIDsToRemove; // @synthesize channelIDsToRemove=_channelIDsToRemove;
 @property(copy, nonatomic) NSArray *paidChannelIDsToAdd; // @synthesize paidChannelIDsToAdd=_paidChannelIDsToAdd;
 @property(copy, nonatomic) NSArray *channelIDsToAdd; // @synthesize channelIDsToAdd=_channelIDsToAdd;
-- (void).cxx_destruct;
 - (void)coalesceWithCommand:(id)arg1;
 - (BOOL)canCoalesceWithCommand:(id)arg1;
 - (void)executeWithContext:(id)arg1 delegate:(id)arg2 qualityOfService:(long long)arg3;

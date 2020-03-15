@@ -21,9 +21,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableEntityIdentifier *entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
 @property(nonatomic) long long anchor; // @synthesize anchor=_anchor;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

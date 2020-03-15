@@ -15,10 +15,10 @@
     NSMutableArray *_visitedSuggestions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *visitedSuggestions; // @synthesize visitedSuggestions=_visitedSuggestions;
 @property(retain, nonatomic) NSMutableArray *unvisitedSuggestions; // @synthesize unvisitedSuggestions=_unvisitedSuggestions;
 @property(copy, nonatomic) NSArray *currentSuggestions; // @synthesize currentSuggestions=_currentSuggestions;
-- (void).cxx_destruct;
 - (void)removeAllSuggestions;
 - (void)removeSuggestions:(id)arg1;
 - (void)appendSuggestionArray:(id)arg1;

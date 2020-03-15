@@ -14,5 +14,8 @@
 @property(readonly, nonatomic) UIColor *logoColor;
 @property(readonly, nonatomic) UIColor *numbersColor;
 @property(readonly, nonatomic) UIColor *backgroundColor;
+- (UIColor *)colorForLogoWithStyle:(unsigned long long)arg1;
+- (UIColor *)colorForNumberVictoryAnalogTimeElement:(unsigned long long)arg1;
+- (UIColor *)colorForDotVictoryAnalogTimeElement:(unsigned long long)arg1;
 @end
 

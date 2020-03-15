@@ -16,9 +16,9 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *gcmRegistrationId; // @synthesize gcmRegistrationId=_gcmRegistrationId;
 @property(retain, nonatomic) NSData *iosDeviceToken; // @synthesize iosDeviceToken=_iosDeviceToken;
-- (void).cxx_destruct;
 
 @end
 

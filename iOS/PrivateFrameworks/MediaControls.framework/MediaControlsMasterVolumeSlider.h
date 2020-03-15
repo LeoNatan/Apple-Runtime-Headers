@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     UILongPressGestureRecognizer *_gestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(retain, nonatomic) UINotificationFeedbackGenerator *negativeFeedbackGenerator; // @synthesize negativeFeedbackGenerator=_negativeFeedbackGenerator;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *positiveFeedbackGenerator; // @synthesize positiveFeedbackGenerator=_positiveFeedbackGenerator;
 @property(nonatomic) long long syncState; // @synthesize syncState=_syncState;
 @property(nonatomic) __weak id <MediaControlsMasterVolumeSliderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isSyncingEnabled) _Bool syncingEnabled; // @synthesize syncingEnabled=_syncingEnabled;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

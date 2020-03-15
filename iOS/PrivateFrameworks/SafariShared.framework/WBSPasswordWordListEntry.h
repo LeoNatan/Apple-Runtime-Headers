@@ -16,11 +16,11 @@
     unsigned long long _guessesRequired;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long guessesRequired; // @synthesize guessesRequired=_guessesRequired;
 @property(readonly, copy, nonatomic) NSString *wordListIdentifier; // @synthesize wordListIdentifier=_wordListIdentifier;
 @property(readonly, nonatomic, getter=isSensitive) _Bool sensitive; // @synthesize sensitive=_sensitive;
 @property(readonly, copy, nonatomic) NSString *word; // @synthesize word=_word;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithWord:(id)arg1 isSensitive:(_Bool)arg2 wordListIdentifier:(id)arg3 guessesRequired:(unsigned long long)arg4;
 

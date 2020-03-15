@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedController;
 + (void)tearDownSharedController;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowLibraryFolder; // @synthesize shouldShowLibraryFolder=_shouldShowLibraryFolder;
 @property(nonatomic) _Bool shouldShowLibraryFolderButton; // @synthesize shouldShowLibraryFolderButton=_shouldShowLibraryFolderButton;
 @property(nonatomic) int viewStyleForViewOptions; // @synthesize viewStyleForViewOptions=_viewStyleForViewOptions;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowPreviewPane; // @dynamic shouldShowPreviewPane;
 @property(retain, nonatomic) FI_TNodeViewSettings *targetedViewOptionsSettings; // @dynamic targetedViewOptionsSettings;
 - (id)_init;

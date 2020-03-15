@@ -30,6 +30,7 @@
     struct CGAffineTransform _accumulatedTransform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *actualTouchStartLocations; // @synthesize actualTouchStartLocations=_actualTouchStartLocations;
 @property(retain, nonatomic) NSMapTable *touchStartLocations; // @synthesize touchStartLocations=_touchStartLocations;
 @property(nonatomic) struct CGAffineTransform accumulatedTransform; // @synthesize accumulatedTransform=_accumulatedTransform;
@@ -48,7 +49,6 @@
 @property(nonatomic) double cancelThreshold; // @synthesize cancelThreshold=_cancelThreshold;
 @property(nonatomic) double scaleThreshold; // @synthesize scaleThreshold=_scaleThreshold;
 @property(nonatomic) double startThreshold; // @synthesize startThreshold=_startThreshold;
-- (void).cxx_destruct;
 - (void)clearTouches;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

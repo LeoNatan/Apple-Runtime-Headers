@@ -6,9 +6,10 @@
 
 #import <CarPlayUIServices/NSObject-Protocol.h>
 
-@class CRSDashboardFocusableItem;
+@class CRSDashboardFocusableItem, NSArray;
 
 @protocol CRSUIDashboardWidgetWindowClient <NSObject>
+- (void)hostSetWidgetSizes:(NSArray *)arg1;
 - (void)hostFocusableItem:(CRSDashboardFocusableItem *)arg1 focused:(_Bool)arg2;
 - (void)hostSelectedFocusableItem:(CRSDashboardFocusableItem *)arg1;
 - (void)hostFocusableItem:(CRSDashboardFocusableItem *)arg1 pressed:(_Bool)arg2;

@@ -14,8 +14,8 @@
     UIPickerView *_pickerView;
 }
 
-@property(readonly, nonatomic) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(nonatomic) __weak id <UIPickerViewDelegate><UIPickerViewDataSource> delegate;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

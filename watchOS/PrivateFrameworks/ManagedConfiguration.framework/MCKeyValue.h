@@ -15,10 +15,10 @@
     unsigned int _valueType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int valueType; // @synthesize valueType=_valueType;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)setValue:(id)arg1 localizedKey:(id)arg2;
 - (void)setLocalizedString:(id)arg1 localizedKey:(id)arg2;
 - (void)setLocalizedArray:(id)arg1 localizedKey:(id)arg2;

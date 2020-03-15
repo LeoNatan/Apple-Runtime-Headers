@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *passManifestHash; // @synthesize passManifestHash=_passManifestHash;
 @property(copy, nonatomic) NSString *passUniqueID; // @synthesize passUniqueID=_passUniqueID;
-- (void).cxx_destruct;
 - (unsigned long long)_hunkIndexForKey:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

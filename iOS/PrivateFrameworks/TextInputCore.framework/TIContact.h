@@ -25,6 +25,7 @@
     NSArray *_cities;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float relevancyScore; // @synthesize relevancyScore=_relevancyScore;
 @property(nonatomic) _Bool hasRelevancyScore; // @synthesize hasRelevancyScore=_hasRelevancyScore;
 @property(retain, nonatomic) NSArray *cities; // @synthesize cities=_cities;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
 @property(retain, nonatomic) NSString *phoneticFamilyName; // @synthesize phoneticFamilyName=_phoneticFamilyName;
 @property(retain, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
-- (void).cxx_destruct;
 - (id)flatten;
 
 @end

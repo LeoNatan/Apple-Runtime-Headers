@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     int _routeType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int routeType; // @synthesize routeType=_routeType;
 @property(retain, nonatomic) id routeContext; // @synthesize routeContext=_routeContext;
-- (void).cxx_destruct;
 
 @end
 

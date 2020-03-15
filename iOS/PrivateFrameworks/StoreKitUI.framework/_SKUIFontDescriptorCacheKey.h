@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_sizeCategory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sizeCategory; // @synthesize sizeCategory=_sizeCategory;
 @property(readonly, nonatomic) const struct __CFString *textStyle; // @synthesize textStyle=_textStyle;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithTextStyle:(const struct __CFString *)arg1 sizeCategory:(id)arg2;

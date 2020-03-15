@@ -16,11 +16,11 @@
     UIView *_containerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) float paddingBetweenTitleAndAccessory; // @synthesize paddingBetweenTitleAndAccessory=_paddingBetweenTitleAndAccessory;
 @property(retain, nonatomic) UIView *titleAccessoryView; // @synthesize titleAccessoryView=_titleAccessoryView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

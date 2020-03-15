@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_attachQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *attachQueue; // @synthesize attachQueue=_attachQueue;
 @property(retain) NSDictionary *mountInfo; // @synthesize mountInfo=_mountInfo;
 @property void *diskImage; // @synthesize diskImage=_diskImage;
 @property(copy) NSURL *mountPoint; // @synthesize mountPoint=_mountPoint;
-- (void).cxx_destruct;
 - (void)_updateProperties;
 - (void)detachWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)attachWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;

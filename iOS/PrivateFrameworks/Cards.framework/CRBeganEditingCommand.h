@@ -16,8 +16,8 @@
     NSDictionary *userInfo;
 }
 
-@property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo;
 @property(nonatomic) unsigned long long commandDirection;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

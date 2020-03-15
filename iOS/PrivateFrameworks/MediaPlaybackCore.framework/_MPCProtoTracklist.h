@@ -23,10 +23,10 @@
 
 + (Class)containerType;
 + (Class)accountInfoType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MPCProtoTracklistIndexPath *startingItemIndexPath; // @synthesize startingItemIndexPath=_startingItemIndexPath;
 @property(retain, nonatomic) NSMutableArray *containers; // @synthesize containers=_containers;
 @property(retain, nonatomic) NSMutableArray *accountInfos; // @synthesize accountInfos=_accountInfos;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

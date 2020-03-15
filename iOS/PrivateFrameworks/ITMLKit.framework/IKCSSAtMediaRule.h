@@ -16,8 +16,8 @@
     struct _NSRange _queryRange;
 }
 
-@property(nonatomic) struct _NSRange queryRange; // @synthesize queryRange=_queryRange;
 - (void).cxx_destruct;
+@property(nonatomic) struct _NSRange queryRange; // @synthesize queryRange=_queryRange;
 - (id)description;
 - (id)mediaQuery;
 - (id)copyWithZone:(struct _NSZone *)arg1;

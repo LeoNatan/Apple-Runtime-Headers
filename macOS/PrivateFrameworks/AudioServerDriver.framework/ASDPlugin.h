@@ -36,10 +36,10 @@
     NSString *_bundleID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int transportType; // @synthesize transportType=_transportType;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) struct AudioServerPlugInDriverInterface **driverRef; // @synthesize driverRef=_driverRef;
-- (void).cxx_destruct;
 - (id)driverClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
 - (BOOL)deregisterForSystemSleepNotifications;

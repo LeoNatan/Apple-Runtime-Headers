@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CKDMarkAssetBrokenURLRequest *_urlRequest;
 }
 
-@property(retain, nonatomic) CKDMarkAssetBrokenURLRequest *urlRequest; // @synthesize urlRequest=_urlRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDMarkAssetBrokenURLRequest *urlRequest; // @synthesize urlRequest=_urlRequest;
 - (void)main;
 - (_Bool)shouldCheckAppVersion;
 - (id)activityCreate;

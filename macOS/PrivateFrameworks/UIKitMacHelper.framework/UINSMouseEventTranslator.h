@@ -25,11 +25,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _lastModifiers;
     struct CGPoint _lastSceneLoc;
     BOOL _dragAndDropDragging;
+    unsigned long long _gesturePhase;
     UINSSceneView *_sceneView;
 }
 
-@property(nonatomic) __weak UINSSceneView *sceneView; // @synthesize sceneView=_sceneView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UINSSceneView *sceneView; // @synthesize sceneView=_sceneView;
 - (void)_handleChangeModeEvent:(id)arg1;
 - (void)_sendDragAndDropEvent:(id)arg1 isInsideApp:(BOOL)arg2 isDragging:(BOOL)arg3;
 - (void)_handlePinchEvent:(id)arg1;

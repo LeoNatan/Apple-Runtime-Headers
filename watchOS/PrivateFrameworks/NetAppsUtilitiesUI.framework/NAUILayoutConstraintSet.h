@@ -15,10 +15,10 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly, copy, nonatomic) CDUnknownBlockType builder; // @synthesize builder=_builder;
 @property(readonly, nonatomic) __weak UIView *owningView; // @synthesize owningView=_owningView;
-- (void).cxx_destruct;
 - (void)updateConstraintConstants;
 - (void)invalidate;
 - (void)activateIfNeeded;

@@ -18,10 +18,10 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) HPDListenerBridgeClient *listenerBridgeClient; // @synthesize listenerBridgeClient=_listenerBridgeClient;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (void)currentEnvironmentWithReply:(CDUnknownBlockType)arg1;
 - (void)_connectAndExecuteBlock:(CDUnknownBlockType)arg1;
 - (void)_connectToEndPoint:(id)arg1;

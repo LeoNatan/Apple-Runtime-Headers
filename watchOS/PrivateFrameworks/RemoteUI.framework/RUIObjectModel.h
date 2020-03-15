@@ -50,6 +50,7 @@
 
 + (id)objectModelForXMLNamed:(id)arg1;
 + (void)_enableTestMode;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *alert; // @synthesize alert=_alert;
 @property(copy, nonatomic) NSString *identifierMarkingStackRemovalAfterPush; // @synthesize identifierMarkingStackRemovalAfterPush=_identifierMarkingStackRemovalAfterPush;
 @property(retain, nonatomic) RUIStyle *style; // @synthesize style=_style;
@@ -68,7 +69,6 @@
 @property(readonly, nonatomic) NSDictionary *namedPages; // @synthesize namedPages=_namedPages;
 @property(readonly, nonatomic) NSArray *defaultPages; // @synthesize defaultPages=_defaultPages;
 @property(nonatomic) __weak id <RUIObjectModelDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned int)supportedInterfaceOrientationsForRUIPage:(id)arg1;
 - (void)RUIPage:(id)arg1 toggledEditing:(_Bool)arg2;
 - (void)RUIPage:(id)arg1 pressedNavBarButton:(id)arg2;

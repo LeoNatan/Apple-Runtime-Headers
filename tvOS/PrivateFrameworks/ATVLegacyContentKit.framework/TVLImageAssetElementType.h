@@ -16,11 +16,11 @@
     NSString *_src;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *src; // @synthesize src=_src;
 @property(nonatomic) float height; // @synthesize height=_height;
 @property(nonatomic) float width; // @synthesize width=_width;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

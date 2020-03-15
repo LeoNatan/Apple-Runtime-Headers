@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFromMicrosoft) BOOL fromMicrosoft; // @synthesize fromMicrosoft=_fromMicrosoft;
 @property(readonly, copy, nonatomic) NSString *bodyHTML; // @synthesize bodyHTML=_bodyHTML;
 @property(readonly, copy, nonatomic) NSString *headersHTML; // @synthesize headersHTML=_headersHTML;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHeadersHTML:(id)arg1 bodyHTML:(id)arg2 isFromMicrosoft:(BOOL)arg3;

@@ -24,11 +24,11 @@
 + (long long)adjustmentBaseVersionFromImageRequestVersion:(long long)arg1;
 + (long long)imageRequestVersionFromAdjustmentBaseVersion:(long long)arg1;
 + (id)opaqueAdjustmentData;
+- (void).cxx_destruct;
 @property(nonatomic) long long baseVersion; // @synthesize baseVersion=_baseVersion;
 @property(readonly) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *formatVersion; // @synthesize formatVersion=_formatVersion;
 @property(copy, nonatomic) NSString *formatIdentifier; // @synthesize formatIdentifier=_formatIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

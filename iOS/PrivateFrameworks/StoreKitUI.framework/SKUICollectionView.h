@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     SKUIIndexBarControl *_indexBarControl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIIndexBarControl *indexBarControl; // @synthesize indexBarControl=_indexBarControl;
 @property(retain, nonatomic) UIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
 @property(nonatomic) double overrideBoundsWidth; // @synthesize overrideBoundsWidth=_overrideBoundsWidth;
-- (void).cxx_destruct;
 - (void)_updateShowsScrollIndicators;
 - (void)_updateIndexBarControlFrame;
 - (void)setContentInset:(struct UIEdgeInsets)arg1;

@@ -23,6 +23,7 @@
     NSDictionary *_initializationMessage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *initializationMessage; // @synthesize initializationMessage=_initializationMessage;
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(nonatomic, getter=isRegisteredWithServer) _Bool registeredWithServer; // @synthesize registeredWithServer=_registeredWithServer;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) AXUIMessageSender *messageSender; // @synthesize messageSender=_messageSender;
 @property(copy, nonatomic) NSString *serviceBundleName; // @synthesize serviceBundleName=_serviceBundleName;
 @property(nonatomic) __weak id <AXUIClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)clientConnection:(id)arg1 didChangeConnectedState:(_Bool)arg2;
 - (void)_requestInitializationMessageFromDelegateIfNeeded;

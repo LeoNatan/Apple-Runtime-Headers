@@ -49,12 +49,12 @@
 + (id)fetchRequestWithPredicate:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)entityName;
 + (id)sharedCalendarInvitesForClass:(Class)arg1 principals:(id)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSString *cachedClosestOccurrenceID; // @synthesize cachedClosestOccurrenceID=_cachedClosestOccurrenceID;
 @property BOOL notify; // @synthesize notify=_notify;
 @property BOOL isIntentionallyReplyToAll; // @synthesize isIntentionallyReplyToAll=_isIntentionallyReplyToAll;
 @property BOOL isIntentionallyDetached; // @synthesize isIntentionallyDetached=_isIntentionallyDetached;
 @property(retain) NSString *eventServerFilename; // @synthesize eventServerFilename=_eventServerFilename;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *proposedEndDateUnadjustedFromUTC;
 @property(readonly, nonatomic) NSDate *proposedStartDateUnadjustedFromUTC;
 @property(readonly, nonatomic) NSString *principalName;

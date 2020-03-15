@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _conflictResolver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType conflictResolver; // @synthesize conflictResolver=_conflictResolver;
 @property(readonly, nonatomic) NSString *keyPrefix; // @synthesize keyPrefix=_keyPrefix;
-- (void).cxx_destruct;
 - (id)initWithKeyPrefix:(id)arg1 conflictResolver:(CDUnknownBlockType)arg2;
 
 @end

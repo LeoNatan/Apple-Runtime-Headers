@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
     UIViewController *_previewViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
 @property(retain, nonatomic) _TVListViewController *listViewController; // @synthesize listViewController=_listViewController;
 @property(retain, nonatomic) UIViewController *focusedController; // @synthesize focusedController=_focusedController;
-- (void).cxx_destruct;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
 - (long long)_blurEffectStyle;

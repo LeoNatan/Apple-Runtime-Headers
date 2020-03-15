@@ -16,10 +16,10 @@
     PKPaymentSetupViewController *_childViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentSetupViewController *childViewController; // @synthesize childViewController=_childViewController;
 @property(readonly, nonatomic) PKPaymentSetupRequest *paymentSetupRequest; // @synthesize paymentSetupRequest=_paymentSetupRequest;
 @property(nonatomic) __weak id <SUPaymentSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;

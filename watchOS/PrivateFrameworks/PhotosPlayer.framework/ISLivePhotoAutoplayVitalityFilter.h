@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     double _targetVisibilityOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setState:) int _state; // @synthesize _state=__state;
 @property(nonatomic, setter=setDecelerating:) _Bool isDecelerating; // @synthesize isDecelerating=_isDecelerating;
 @property(nonatomic, setter=setScrolling:) _Bool isScrolling; // @synthesize isScrolling=_isScrolling;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasTargetVisibilityOffset; // @synthesize hasTargetVisibilityOffset=_hasTargetVisibilityOffset;
 @property(nonatomic) double visibilityOffset; // @synthesize visibilityOffset=_visibilityOffset;
 @property(nonatomic, setter=setVisible:) _Bool isVisible; // @synthesize isVisible=_isVisible;
-- (void).cxx_destruct;
 - (void)_startAutoplay;
 - (void)updateOutput;
 

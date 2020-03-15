@@ -15,10 +15,10 @@
     NSObject<OS_dispatch_queue> *_clientQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(copy, nonatomic) CDUnknownBlockType clientCompletion; // @synthesize clientCompletion=_clientCompletion;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

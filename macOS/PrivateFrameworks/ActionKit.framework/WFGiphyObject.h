@@ -26,12 +26,12 @@
 + (id)imagesJSONTransformer;
 + (id)urlJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *images; // @synthesize images=_images;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSString *caption; // @synthesize caption=_caption;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *objectId; // @synthesize objectId=_objectId;
-- (void).cxx_destruct;
 - (id)wfSerializedRepresentation;
 @property(readonly, copy, nonatomic) NSString *wfName;
 - (id)smallestImage;

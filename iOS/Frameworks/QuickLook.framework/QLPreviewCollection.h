@@ -11,13 +11,13 @@
 #import <QuickLook/QLPreviewCollectionProtocol-Protocol.h>
 #import <QuickLook/QLPreviewItemViewControllerDelegate-Protocol.h>
 #import <QuickLook/QLTransitionControllerProtocol-Protocol.h>
-#import <QuickLook/UIGestureRecognizerDelegate-Protocol.h>
+#import <QuickLook/UIGestureRecognizerDelegatePrivate-Protocol.h>
 
 @class NSString, QLAppearance, QLItemViewController, QLPageViewController, QLPinchRotationTracker, QLPreviewItemStore, QLSwipeDownTracker, QLTransitionContext, QLTransitionDriver, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UISwipeGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol QLPreviewControllerStateProtocol, QLTransitionControllerProtocol;
 
 __attribute__((visibility("hidden")))
-@interface QLPreviewCollection : UIViewController <QLTransitionControllerProtocol, QLPageViewControllerDataSource, QLPageViewControllerDelegate, QLPreviewItemViewControllerDelegate, UIGestureRecognizerDelegate, QLPreviewCollectionProtocol>
+@interface QLPreviewCollection : UIViewController <QLTransitionControllerProtocol, QLPageViewControllerDataSource, QLPageViewControllerDelegate, QLPreviewItemViewControllerDelegate, UIGestureRecognizerDelegatePrivate, QLPreviewCollectionProtocol>
 {
     struct _NSRange _previewItemRange;
     long long _currentItemIndex;
@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 + (void)previewCollectionUsingRemoteViewController:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)remotePreviewCollectionWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)quickLookExtension;
+- (void).cxx_destruct;
 @property _Bool hasTriggeredInteractiveTransitionAnimation; // @synthesize hasTriggeredInteractiveTransitionAnimation=_hasTriggeredInteractiveTransitionAnimation;
 @property(copy, nonatomic) NSString *hostApplicationBundleIdentifier; // @synthesize hostApplicationBundleIdentifier=_hostApplicationBundleIdentifier;
 @property(retain) QLTransitionDriver *transitionDriver; // @synthesize transitionDriver=_transitionDriver;
@@ -74,7 +75,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isAvailable; // @synthesize isAvailable=_isAvailable;
 @property(retain) id <QLPreviewControllerStateProtocol> stateManager; // @synthesize stateManager=_stateManager;
 @property(retain) QLPageViewController *pageViewController; // @synthesize pageViewController=_pageViewController;
-- (void).cxx_destruct;
 - (_Bool)_itemViewControllerIsCurrentlyPresentedItemViewController:(id)arg1;
 - (id)_sandboxExtensionForEditedFileAtURL:(id)arg1;
 - (void)_updateCanChangeCurrentPage;

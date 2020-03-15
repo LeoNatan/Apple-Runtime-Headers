@@ -13,8 +13,8 @@
     PSSystemPolicyForApp *_systemPolicy;
 }
 
-@property(retain, nonatomic) PSSystemPolicyForApp *systemPolicy; // @synthesize systemPolicy=_systemPolicy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PSSystemPolicyForApp *systemPolicy; // @synthesize systemPolicy=_systemPolicy;
 - (id)bundle;
 - (id)loadSpecifiers;
 - (void)viewWillAppear:(_Bool)arg1;

@@ -14,8 +14,8 @@
     NSImage *_cachedImage;
 }
 
-@property(retain, nonatomic) NSImage *cachedImage; // @synthesize cachedImage=_cachedImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSImage *cachedImage; // @synthesize cachedImage=_cachedImage;
 @property(readonly, nonatomic) unsigned long long imageDataFormat;
 @property(readonly, retain, nonatomic) NSData *imageData;
 @property(readonly, retain, nonatomic) NSImage *image;

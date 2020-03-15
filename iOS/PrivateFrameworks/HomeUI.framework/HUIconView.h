@@ -23,6 +23,7 @@
     HUIconContentView *_currentIconContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUIconContentView *currentIconContentView; // @synthesize currentIconContentView=_currentIconContentView;
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(readonly, nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
@@ -30,7 +31,6 @@
 @property(nonatomic) unsigned long long displayContext; // @synthesize displayContext=_displayContext;
 @property(nonatomic) unsigned long long iconSize; // @synthesize iconSize=_iconSize;
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
-- (void).cxx_destruct;
 - (void)iconContentView:(id)arg1 didChangeAspectRatio:(double)arg2;
 @property(readonly, nonatomic) id <HFIconDescriptor> iconDescriptor;
 - (void)_updateVisualEffectStateForVibrancyEffectChange:(_Bool)arg1;

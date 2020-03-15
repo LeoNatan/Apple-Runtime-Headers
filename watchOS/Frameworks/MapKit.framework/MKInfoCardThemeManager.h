@@ -25,9 +25,9 @@
 + (void)setTheme:(unsigned int)arg1;
 + (id)themeWithThemeType:(unsigned int)arg1;
 + (id)currentTheme;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useSmallFont; // @synthesize useSmallFont=_useSmallFont;
 @property(readonly, nonatomic) unsigned int themeType; // @synthesize themeType=_themeType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *javaScriptName;
 @property(readonly, nonatomic) UIColor *tintColor;
 @property(readonly, nonatomic) UIColor *normalBackgroundColor;

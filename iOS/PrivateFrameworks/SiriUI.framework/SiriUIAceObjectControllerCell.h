@@ -21,11 +21,11 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *replacedView; // @synthesize replacedView=_replacedView;
 @property(nonatomic) long long replacementAnimationType; // @synthesize replacementAnimationType=_replacementAnimationType;
 @property(nonatomic) long long insertionAnimationType; // @synthesize insertionAnimationType=_insertionAnimationType;
 @property(retain, nonatomic) SiriUIAceObjectViewController *aceViewController; // @synthesize aceViewController=_aceViewController;
-- (void).cxx_destruct;
 - (void)setTopPadding:(double)arg1;
 - (id)_flyInAnimationForAceViewController:(id)arg1;
 - (void)_animateInsertionFlyIn;

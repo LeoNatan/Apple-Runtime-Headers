@@ -13,8 +13,8 @@
     UIView *_dividerView;
 }
 
-@property(retain, nonatomic) UIView *dividerView; // @synthesize dividerView=_dividerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *dividerView; // @synthesize dividerView=_dividerView;
 - (id)_labelColor;
 - (id)_labelFont;
 - (void)layoutSubviews;

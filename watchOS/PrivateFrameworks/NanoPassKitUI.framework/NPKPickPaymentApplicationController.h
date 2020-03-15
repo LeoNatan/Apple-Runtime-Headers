@@ -21,12 +21,12 @@
 }
 
 + (id)pickPaymentApplicationControllerWithPaymentPass:(id)arg1 delegate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSArray *paymentApplications; // @synthesize paymentApplications=_paymentApplications;
 @property(retain, nonatomic) PKPaymentApplication *currentlySelectedApplication; // @synthesize currentlySelectedApplication=_currentlySelectedApplication;
 @property(retain, nonatomic) PUICActionSheetController *actionSheetController; // @synthesize actionSheetController=_actionSheetController;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(nonatomic) __weak id <NPKPickPaymentApplicationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)actionSheetController:(id)arg1 willDismissWithActionAtIndexPath:(id)arg2;
 - (void)_handleSelectPaymentApplication:(id)arg1 dismiss:(_Bool)arg2;
 - (void)dealloc;

@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *records; // @synthesize records=_records;
 @property(readonly, copy, nonatomic) NSArray *domains; // @synthesize domains=_domains;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDomains:(id)arg1 records:(id)arg2;

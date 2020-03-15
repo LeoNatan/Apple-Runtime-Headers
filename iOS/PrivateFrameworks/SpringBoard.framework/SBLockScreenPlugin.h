@@ -30,6 +30,7 @@
 
 + (id)pluginWithName:(id)arg1 activationContext:(id)arg2;
 + (id)_pluginBundleForPluginWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBLockScreenPluginAgent> pluginAgent; // @synthesize pluginAgent=_agent;
 @property(copy, nonatomic) CDUnknownBlockType auxiliaryDeactivationAnimationBlock; // @synthesize auxiliaryDeactivationAnimationBlock=_auxiliaryDeactivationAnimationBlock;
 @property(copy, nonatomic) CDUnknownBlockType auxiliaryActivationAnimationBlock; // @synthesize auxiliaryActivationAnimationBlock=_auxiliaryActivationAnimationBlock;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) SBLockOverlayContext *overlay; // @synthesize overlay=_overlay;
 @property(readonly, nonatomic) id <SBLockScreenPluginController> controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak id <SBLockScreenPluginDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

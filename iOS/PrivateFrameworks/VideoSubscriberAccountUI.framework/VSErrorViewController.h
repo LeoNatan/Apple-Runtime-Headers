@@ -18,13 +18,13 @@
     VSFontCenter *_fontCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIButton *recoveryButton; // @synthesize recoveryButton=_recoveryButton;
 @property(nonatomic, getter=isRecoveryDestructive) _Bool recoveryDestructive; // @synthesize recoveryDestructive=_recoveryDestructive;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_recoveryButtonPressed:(id)arg1;

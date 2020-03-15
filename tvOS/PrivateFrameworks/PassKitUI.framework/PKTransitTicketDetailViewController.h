@@ -16,10 +16,10 @@
     id <PKTransitTicketDetailDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKTransitTicketDetailDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UIColor *secondaryTextColor; // @synthesize secondaryTextColor=_secondaryTextColor;
 @property(retain, nonatomic) UIColor *primaryTextColor; // @synthesize primaryTextColor=_primaryTextColor;
-- (void).cxx_destruct;
 - (void)_applyDefaultStaticStylingToCell:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

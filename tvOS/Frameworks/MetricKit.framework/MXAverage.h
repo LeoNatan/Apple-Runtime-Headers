@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) double standardDeviation; // @synthesize standardDeviation=_standardDeviation;
 @property(readonly) long long sampleCount; // @synthesize sampleCount=_sampleCount;
 @property(readonly) NSMeasurement *averageMeasurement; // @synthesize averageMeasurement=_averageMeasurement;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

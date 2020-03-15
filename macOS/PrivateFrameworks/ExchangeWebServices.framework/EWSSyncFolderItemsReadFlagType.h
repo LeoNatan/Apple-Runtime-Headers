@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL IsRead; // @synthesize IsRead=_IsRead;
 @property(retain, nonatomic) EWSItemIdType *ItemId; // @synthesize ItemId=_ItemId;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

@@ -21,6 +21,7 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain, nonatomic) NSMutableArray *pendingResponseCredentialRequests; // @synthesize pendingResponseCredentialRequests=_pendingResponseCredentialRequests;
 @property(retain, nonatomic) NSMutableArray *pendingPropertyLoadCredentialRequests; // @synthesize pendingPropertyLoadCredentialRequests=_pendingPropertyLoadCredentialRequests;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMapTable *delegationCredentialRequestToSpecificUserIdentity; // @synthesize delegationCredentialRequestToSpecificUserIdentity=_delegationCredentialRequestToSpecificUserIdentity;
 @property(readonly, copy, nonatomic) NSArray *credentialRequests; // @synthesize credentialRequests=_credentialRequests;
 @property(copy, nonatomic) ICUserIdentityProperties *activeICloudAccountProperties; // @synthesize activeICloudAccountProperties=_activeICloudAccountProperties;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ICUserIdentityStore *identityStore;
 @property(readonly, nonatomic) _Bool hasPendingResponses;
 - (id)initWithCredentialRequests:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;

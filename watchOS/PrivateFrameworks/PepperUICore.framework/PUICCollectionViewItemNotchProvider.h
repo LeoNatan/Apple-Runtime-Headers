@@ -19,13 +19,13 @@
     struct UIEdgeInsets _effectiveInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUICCollectionViewItemNotchProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct UIEdgeInsets effectiveInsets; // @synthesize effectiveInsets=_effectiveInsets;
 @property(nonatomic) float restingPosition; // @synthesize restingPosition=_restingPosition;
 @property(copy, nonatomic) CDUnknownBlockType restingPositionBlock; // @synthesize restingPositionBlock=_restingPositionBlock;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *itemAttributes; // @synthesize itemAttributes=_itemAttributes;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (int)_notchOffsetCalculationMethod;
 - (float)_calculateRestingPositionForPosition:(float)arg1;
 - (float)_calculateRestingPosition;

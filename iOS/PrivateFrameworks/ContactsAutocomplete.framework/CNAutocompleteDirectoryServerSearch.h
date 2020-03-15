@@ -15,8 +15,8 @@
     CNContactStore *_contactStore;
 }
 
-@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (id)autocompleteResultsForContacts:(id)arg1 request:(id)arg2;
 - (id)fetchContactsForFetchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)executeRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

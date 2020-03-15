@@ -20,6 +20,7 @@
     NSLayoutConstraint *_additionalHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *additionalHeightConstraint; // @synthesize additionalHeightConstraint=_additionalHeightConstraint;
 @property __weak NSTextField *trailingTextField; // @synthesize trailingTextField=_trailingTextField;
 @property __weak NSTextField *leadingTextField; // @synthesize leadingTextField=_leadingTextField;
@@ -27,7 +28,6 @@
 @property __weak NSButton *playButton; // @synthesize playButton=_playButton;
 @property(nonatomic) BOOL playing; // @synthesize playing=_playing;
 @property(nonatomic) BOOL clickable; // @synthesize clickable=_clickable;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)cursorUpdate:(id)arg1;
 - (void)_removeTrackingAreas;

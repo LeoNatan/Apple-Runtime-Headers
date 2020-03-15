@@ -58,10 +58,10 @@
 
 + (void)setUsesInternalTrackingPipeline:(_Bool)arg1;
 + (_Bool)usesInternalTrackingPipeline;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRecording) _Bool recording; // @synthesize recording=_recording;
 @property(nonatomic) __weak id <AVTRecordViewDelegate> recordDelegate; // @synthesize recordDelegate=_recordDelegate;
 @property(nonatomic) _Bool mute; // @synthesize mute=_mute;
-- (void).cxx_destruct;
 - (double)currentAudioTime;
 - (_Bool)isDoubleBuffered;
 - (void)stopPlayingAudio;

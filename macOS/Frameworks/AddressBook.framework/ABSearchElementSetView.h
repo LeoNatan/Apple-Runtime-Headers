@@ -13,8 +13,8 @@
     NSColor *_backgroundColor;
 }
 
-@property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateLayer;
 - (BOOL)isFlipped;

@@ -17,11 +17,11 @@
 }
 
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLBackgroundTaskRequestClientBootstrapper *clientBootstrapper; // @synthesize clientBootstrapper=_clientBootstrapper;
 @property(retain, nonatomic) CSLComplicationObserver *complicationObserver; // @synthesize complicationObserver=_complicationObserver;
 @property(retain, nonatomic) CSLBackgroundTaskRequestServiceEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(retain, nonatomic) CSLBackgroundActivityManager *activityManager; // @synthesize activityManager=_activityManager;
-- (void).cxx_destruct;
 
 @end
 

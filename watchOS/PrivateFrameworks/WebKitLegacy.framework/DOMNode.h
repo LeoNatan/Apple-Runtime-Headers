@@ -57,6 +57,14 @@
 @property(copy) NSString *nodeValue;
 @property(readonly, copy) NSString *nodeName;
 - (void)dealloc;
+- (id)findExplodedTextNodeAtPoint:(struct CGPoint)arg1;
+- (float)textHeight;
+- (id)rangeOfContainingParagraph;
+- (_Bool)isSelectableBlock;
+- (_Bool)containsOnlyInlineObjects;
+- (id)borderRadii;
+- (id)absoluteQuads;
+- (id)boundingBoxes;
 - (struct RootObject *)_rootObject;
 @property(readonly, copy) NSString *description;
 - (id)previousFocusNode;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     id <_MKInfoCardAnalyticsDelegate> _analyticsDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_MKInfoCardAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
 @property(retain, nonatomic) _MKMapItemAttribution *attribution; // @synthesize attribution=_attribution;
 @property(nonatomic) BOOL resizableViewsDisabled; // @synthesize resizableViewsDisabled=_resizableViewsDisabled;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSAttributedString *attributionString; // @synthesize attributionString=_attributionString;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(copy, nonatomic) NSArray *urlStrings; // @synthesize urlStrings=_urlStrings;
-- (void).cxx_destruct;
 - (void)openURL;
 - (id)infoAttributionString;
 - (void)infoCardThemeChanged;

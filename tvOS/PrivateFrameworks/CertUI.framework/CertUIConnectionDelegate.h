@@ -20,9 +20,9 @@
 }
 
 + (id)defaultServiceForProtocol:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *connectionDisplayName; // @synthesize connectionDisplayName=_connectionDisplayName;
 @property(nonatomic) __weak id forwardingDelegate; // @synthesize forwardingDelegate=_forwardingDelegate;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)_continueConnectionWithResponse:(int)arg1 challenge:(id)arg2 service:(id)arg3;
 - (_Bool)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;

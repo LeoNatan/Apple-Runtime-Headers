@@ -115,6 +115,7 @@
 + (id)activeChat;
 + (id)connectedChat;
 + (id)chatList;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setMetadataFinalized:) BOOL metadataFinalized; // @synthesize metadataFinalized=_metadataFinalized;
 @property(nonatomic, setter=_setAirplaneModeEnabled:) BOOL airplaneModeEnabled; // @synthesize airplaneModeEnabled=_airplaneModeEnabled;
 @property(nonatomic, setter=_setDidRemotePause:) BOOL didRemotePause; // @synthesize didRemotePause=_didRemotePause;
@@ -164,7 +165,6 @@
 @property(retain, nonatomic, setter=_setCallStatisticsGUID:) NSString *_callStatisticsGUID; // @synthesize _callStatisticsGUID;
 @property(nonatomic, setter=_setConnectionType:) int _connectionType; // @synthesize _connectionType;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_conferenceQueue; // @synthesize _conferenceQueue;
-- (void).cxx_destruct;
 - (BOOL)_cachedBoolForKey:(id)arg1;
 - (BOOL)_hasCachedBoolForKey:(id)arg1;
 - (void)_cacheBool:(BOOL)arg1 forKey:(id)arg2;

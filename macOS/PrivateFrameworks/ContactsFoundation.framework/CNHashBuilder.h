@@ -17,6 +17,7 @@
 + (unsigned long long)unsignedIntegerHash:(unsigned long long)arg1;
 + (unsigned long long)integerHash:(long long)arg1;
 + (unsigned long long)boolHash:(BOOL)arg1;
++ (unsigned long long)dictionaryHash:(id)arg1;
 + (unsigned long long)orderedSetHash:(id)arg1;
 + (unsigned long long)setHash:(id)arg1;
 + (unsigned long long)arrayHash:(id)arg1;

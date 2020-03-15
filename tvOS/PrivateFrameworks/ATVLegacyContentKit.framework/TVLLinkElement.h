@@ -13,8 +13,8 @@
     NSString *_url;
 }
 
-@property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     id <SKUIArtworkProviding> _endArtworkProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SKUIArtworkProviding> endArtworkProvider; // @synthesize endArtworkProvider=_endArtworkProvider;
 @property(retain, nonatomic) id <SKUIArtworkProviding> artworkProvider; // @synthesize artworkProvider=_artworkProvider;
 @property(nonatomic, getter=isFlapped) _Bool flapped; // @synthesize flapped=_flapped;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)isLoaded;
 - (void)updateWithDictionary:(id)arg1;
 - (id)initWithCountdownDictionary:(id)arg1;

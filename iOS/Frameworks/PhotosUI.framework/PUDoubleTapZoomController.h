@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *__doubleTapGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setDoubleTapGestureRecognizer:) UITapGestureRecognizer *_doubleTapGestureRecognizer; // @synthesize _doubleTapGestureRecognizer=__doubleTapGestureRecognizer;
 @property(nonatomic, setter=_setNeedsUpdateGestureRecognizers:) _Bool _needsUpdateGestureRecognizers; // @synthesize _needsUpdateGestureRecognizers=__needsUpdateGestureRecognizers;
 @property(nonatomic) __weak id <PUDoubleTapZoomControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)_userTransformViewAtLocationFromProvider:(id)arg1;

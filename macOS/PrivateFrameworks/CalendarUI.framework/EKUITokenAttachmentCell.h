@@ -21,6 +21,7 @@
 }
 
 + (id)displayAttributedStringForDisplayString:(id)arg1 withImage:(id)arg2;
+- (void).cxx_destruct;
 @property float attributedStringWidth; // @synthesize attributedStringWidth=_attributedStringWidth;
 @property struct CGRect boundsForCellSize; // @synthesize boundsForCellSize=_boundsForCellSize;
 @property struct CGSize cachedCellSize; // @synthesize cachedCellSize=_cachedCellSize;
@@ -29,7 +30,6 @@
 @property(retain) NSAttributedString *cachedAttributedString; // @synthesize cachedAttributedString=_cachedAttributedString;
 @property struct CGRect cachedCellFrame; // @synthesize cachedCellFrame=_cachedCellFrame;
 @property(retain) EKUITokenField *tokenField; // @synthesize tokenField=_tokenField;
-- (void).cxx_destruct;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;

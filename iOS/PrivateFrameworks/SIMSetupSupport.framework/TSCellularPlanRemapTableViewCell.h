@@ -13,8 +13,8 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+@property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

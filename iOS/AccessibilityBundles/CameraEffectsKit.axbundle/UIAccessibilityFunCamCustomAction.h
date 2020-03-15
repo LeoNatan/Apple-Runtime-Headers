@@ -15,10 +15,10 @@
     UIViewController *_vc;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *vc; // @synthesize vc=_vc;
 @property(nonatomic) __weak UIAccessibilityElement *axElement; // @synthesize axElement=_axElement;
 @property(nonatomic) __weak id effect; // @synthesize effect=_effect;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 target:(id)arg2 selector:(SEL)arg3 effect:(id)arg4 axElement:(id)arg5 vc:(id)arg6;
 
 @end

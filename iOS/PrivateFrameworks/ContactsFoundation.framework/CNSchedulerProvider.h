@@ -25,6 +25,7 @@
 + (id)providerWithBackgroundConcurrencyLimit:(long long)arg1;
 + (id)makeDefaultProvider;
 + (id)defaultProvider;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType readerWriterSchedulerProvider; // @synthesize readerWriterSchedulerProvider=_readerWriterSchedulerProvider;
 @property(readonly, copy, nonatomic) CDUnknownBlockType synchronousSerialSchedulerProvider; // @synthesize synchronousSerialSchedulerProvider=_synchronousSerialSchedulerProvider;
 @property(readonly, copy, nonatomic) CDUnknownBlockType serialSchedulerProvider; // @synthesize serialSchedulerProvider=_serialSchedulerProvider;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) id <CNScheduler> inlineScheduler; // @synthesize inlineScheduler=_inlineScheduler;
 @property(readonly, nonatomic) id <CNScheduler> mainThreadScheduler; // @synthesize mainThreadScheduler=_mainThreadScheduler;
 @property(readonly, nonatomic) id <CNScheduler> backgroundScheduler; // @synthesize backgroundScheduler=_backgroundScheduler;
-- (void).cxx_destruct;
 - (id)backgroundSchedulerWithQualityOfService:(unsigned long long)arg1;
 - (id)newReaderWriterSchedulerWithName:(id)arg1;
 - (id)newSynchronousSerialSchedulerWithName:(id)arg1;

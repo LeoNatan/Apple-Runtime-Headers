@@ -17,12 +17,12 @@
     TVPDateRange *_dateRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 @property(retain, nonatomic) TVPDateRange *dateRange; // @synthesize dateRange=_dateRange;
 @property(retain, nonatomic) TVPTimeRange *timeRange; // @synthesize timeRange=_timeRange;
 @property(copy, nonatomic) NSString *chapterDescription; // @synthesize chapterDescription=_chapterDescription;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 
 @end
 

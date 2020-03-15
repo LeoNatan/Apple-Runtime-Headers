@@ -29,9 +29,9 @@
 + (void)_setMostRecentWeeklySummaryAlertDate:(id)arg1 profile:(id)arg2;
 + (id)_mostRecentWeeklySummaryAlertDateWithProfile:(id)arg1;
 + (id)submanagerIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate;
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel;
-- (void).cxx_destruct;
 - (_Bool)_hasDeepBreathingAppBeenInstalled;
 - (void)_setDeepBreathingAppInstalled:(_Bool)arg1;
 - (void)triggerScheduleTask;

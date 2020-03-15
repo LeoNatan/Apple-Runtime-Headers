@@ -21,10 +21,10 @@
     id <PXCuratedLibraryInlineHeadersLayoutGeometrySource> _geometrySource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXCuratedLibraryInlineHeadersLayoutGeometrySource> geometrySource; // @synthesize geometrySource=_geometrySource;
 @property(retain, nonatomic) PXCuratedLibraryInlineHeadersLayoutSpec *spec; // @synthesize spec=_spec;
 @property(readonly, nonatomic) PXCuratedLibraryInlineHeadersDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateSublayouts;
 - (void)update;

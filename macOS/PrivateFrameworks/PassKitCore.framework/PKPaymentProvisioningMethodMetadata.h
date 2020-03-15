@@ -23,6 +23,7 @@
     NSDecimalNumber *_minimumReaderModeBalance;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDecimalNumber *minimumReaderModeBalance; // @synthesize minimumReaderModeBalance=_minimumReaderModeBalance;
 @property(readonly, copy, nonatomic) NSDictionary *readerModeResources; // @synthesize readerModeResources=_readerModeResources;
 @property(readonly, nonatomic) PKPaymentDigitalIssuanceMetadata *digitalIssuanceMetadata; // @synthesize digitalIssuanceMetadata=_digitalIssuanceMetadata;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) unsigned long long depositType; // @synthesize depositType=_depositType;
 @property(readonly, copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(readonly, copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

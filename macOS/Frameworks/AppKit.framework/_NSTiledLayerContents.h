@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     struct CGSize _tileSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CGRect presentationRect; // @synthesize presentationRect=_presentationRect;
 @property(readonly) struct CGSize tileSize; // @synthesize tileSize=_tileSize;
 @property(readonly) struct CGRect coverageRect; // @synthesize coverageRect=_coverageRect;
 @property(readonly) struct CGRect activeRect; // @synthesize activeRect=_activeRect;
-- (void).cxx_destruct;
 - (void *)CA_copyRenderValue;
 - (void)CA_prepareRenderValue;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;

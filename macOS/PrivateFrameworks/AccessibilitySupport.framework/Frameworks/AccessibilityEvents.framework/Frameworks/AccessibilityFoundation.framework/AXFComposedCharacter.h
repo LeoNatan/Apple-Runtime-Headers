@@ -20,6 +20,7 @@
     unsigned long long __normalizationFormKCLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long _normalizationFormKCLength; // @synthesize _normalizationFormKCLength=__normalizationFormKCLength;
 @property(nonatomic) int *_normalizationFormKC; // @synthesize _normalizationFormKC=__normalizationFormKC;
 @property(nonatomic) unsigned long long _normalizationFormDLength; // @synthesize _normalizationFormDLength=__normalizationFormDLength;
@@ -28,7 +29,6 @@
 @property(nonatomic) int *_original; // @synthesize _original=__original;
 @property(nonatomic) unsigned long long _originalCombinedCharacterLength; // @synthesize _originalCombinedCharacterLength=__originalCombinedCharacterLength;
 @property(copy, nonatomic) NSString *_originalCombinedCharacter; // @synthesize _originalCombinedCharacter=__originalCombinedCharacter;
-- (void).cxx_destruct;
 - (BOOL)_normalizationFormDContainsUpperCase;
 - (BOOL)_normalizationFormKCContainsUpperCase;
 - (void)_buildNormalizationFormKCIfNeeded;

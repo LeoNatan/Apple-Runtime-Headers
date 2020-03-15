@@ -25,6 +25,7 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain) NSWindow *window; // @synthesize window=_window;
 @property(retain) NSAlert *alert; // @synthesize alert=_alert;
@@ -38,7 +39,6 @@
 @property(retain) NSMutableSet *appsToTerminate; // @synthesize appsToTerminate=_appsToTerminate;
 @property(retain) NSArray *customAppSortDescriptors; // @synthesize customAppSortDescriptors=_customAppSortDescriptors;
 @property BOOL ignoreOtherUsers; // @synthesize ignoreOtherUsers=_ignoreOtherUsers;
-- (void).cxx_destruct;
 - (void)_removeObserversFromApp:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_didReturnToConsoleAfterSwitchUser:(id)arg1;

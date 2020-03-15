@@ -20,12 +20,12 @@
     UIActivityIndicatorView *_activityIndicator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *recognitionQueue; // @synthesize recognitionQueue=_recognitionQueue;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) NSArray *drawings; // @synthesize drawings=_drawings;
 @property(nonatomic) __weak id <ICHandwritingDebugDelegate> handwritingDebugDelegate; // @synthesize handwritingDebugDelegate=_handwritingDebugDelegate;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)visualizationManagerDidUpdateRecognitionStatus:(id)arg1;
 - (void)close;

@@ -6,13 +6,14 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <GameCenterUI/UIScrollViewDelegate-Protocol.h>
 #import <GameCenterUI/UIViewControllerAnimatedTransitioning-Protocol.h>
 #import <GameCenterUI/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class GKBubbleFlowContainerView, NSMutableDictionary, NSString, OBBoldTrayButton, OBPrivacyLinkController, UILabel, UIView;
+@class GKBubbleFlowContainerView, NSMutableDictionary, NSString, OBBoldTrayButton, OBPrivacyLinkController, UILabel, UIScrollView, UIView, UIVisualEffectView;
 @protocol GKOnboardingFlowDelegate;
 
-@interface GKOnboardingViewController : UIViewController <UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate>
+@interface GKOnboardingViewController : UIViewController <UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate, UIScrollViewDelegate>
 {
     _Bool _presenting;
     id <GKOnboardingFlowDelegate> _delegate;
@@ -23,6 +24,9 @@
     UIView *_bubblePlaceholder;
     UIView *_buttonContainer;
     OBBoldTrayButton *_nextButton;
+    UIView *_privacyContentView;
+    UIScrollView *_scrollView;
+    UIVisualEffectView *_visualEffectView;
     GKBubbleFlowContainerView *_bubblesContainerView;
     UIView *_bubblesAnchorView;
     UILabel *_mainTitle;
@@ -31,6 +35,7 @@
     double _transitionDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double transitionDuration; // @synthesize transitionDuration=_transitionDuration;
 @property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 @property(retain, nonatomic) OBPrivacyLinkController *privacyLink; // @synthesize privacyLink=_privacyLink;
@@ -38,6 +43,9 @@
 @property(retain, nonatomic) UILabel *mainTitle; // @synthesize mainTitle=_mainTitle;
 @property(retain, nonatomic) UIView *bubblesAnchorView; // @synthesize bubblesAnchorView=_bubblesAnchorView;
 @property(retain, nonatomic) GKBubbleFlowContainerView *bubblesContainerView; // @synthesize bubblesContainerView=_bubblesContainerView;
+@property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
+@property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(retain, nonatomic) UIView *privacyContentView; // @synthesize privacyContentView=_privacyContentView;
 @property(retain, nonatomic) OBBoldTrayButton *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain, nonatomic) UIView *buttonContainer; // @synthesize buttonContainer=_buttonContainer;
 @property(retain, nonatomic) UIView *bubblePlaceholder; // @synthesize bubblePlaceholder=_bubblePlaceholder;
@@ -46,7 +54,6 @@
 @property(nonatomic) unsigned long long lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
 @property(retain, nonatomic) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property(nonatomic) __weak id <GKOnboardingFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)removeConstraintsForView:(id)arg1;
 - (id)basicAnimationWithKeyPath:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
 - (void)animateTransition:(id)arg1;
@@ -60,6 +67,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)didDisplayPrivacyNotice;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)viewSafeAreaInsetsDidChange;
 - (void)showSignOutAlert;
 - (void)presentPersonalizationScreen;

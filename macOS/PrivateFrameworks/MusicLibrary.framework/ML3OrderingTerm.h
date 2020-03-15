@@ -22,10 +22,10 @@
 + (id)orderingTermWithProperty:(id)arg1 direction:(int)arg2;
 + (id)orderingTermWithProperty:(id)arg1;
 + (id)reversedTerms:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *collation; // @synthesize collation=_collation;
 @property(readonly, nonatomic) int direction; // @synthesize direction=_direction;
 @property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 - (id)description;
 - (id)initWithCoder:(id)arg1;

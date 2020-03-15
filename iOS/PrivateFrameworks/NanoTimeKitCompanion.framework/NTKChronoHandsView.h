@@ -21,6 +21,7 @@
 }
 
 + (long long)preferredCountOfInstancesToCache;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool minuteHandUsesManualTime; // @synthesize minuteHandUsesManualTime=_minuteHandUsesManualTime;
 @property(readonly, nonatomic) NTKHandView *chronoFlybackMinuteHandView; // @synthesize chronoFlybackMinuteHandView=_chronoFlybackMinuteHandView;
 @property(readonly, nonatomic) NTKHandView *chronoMinuteHandView; // @synthesize chronoMinuteHandView=_chronoMinuteHandView;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NTKHandView *chronoSecondHandView; // @synthesize chronoSecondHandView=_chronoSecondHandView;
 @property(retain, nonatomic) NTKChronoPalette *palette; // @synthesize palette=_palette;
 @property(nonatomic) unsigned long long timeScale; // @synthesize timeScale=_timeScale;
-- (void).cxx_destruct;
 - (double)secondsAnimationFPS;
 - (double)upperDuration;
 - (double)chronoDuration;

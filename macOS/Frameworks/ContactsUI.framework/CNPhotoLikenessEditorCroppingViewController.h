@@ -16,11 +16,11 @@
     struct CGPoint _center;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(nonatomic) double zoom; // @synthesize zoom=_zoom;
 @property(retain, nonatomic) NSView *hostView; // @synthesize hostView=_hostView;
 @property(retain, nonatomic) CNPhotoLikenessEditorCroppingView *croppingView; // @synthesize croppingView=_croppingView;
-- (void).cxx_destruct;
 - (void)reloadData;
 - (void)setCornerRadius:(double)arg1;
 - (void)setZoomPosition:(double)arg1;

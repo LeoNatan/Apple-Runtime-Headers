@@ -34,6 +34,7 @@
 + (id)entryEventNoneDefinitions;
 + (id)railDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) PLEventForwardPowerStateEntry *lastWakeEntry; // @synthesize lastWakeEntry=_lastWakeEntry;
 @property(retain) PLEventForwardPowerStateEntry *lastSleepEntry; // @synthesize lastSleepEntry=_lastSleepEntry;
 @property struct __IOPMConnection *pmConnection; // @synthesize pmConnection=_pmConnection;
@@ -43,7 +44,6 @@
 @property struct IONotificationPort *systemPowerPortRef; // @synthesize systemPowerPortRef=_systemPowerPortRef;
 @property unsigned int pmNotifier; // @synthesize pmNotifier=_pmNotifier;
 @property unsigned int rootDomainConnect; // @synthesize rootDomainConnect=_rootDomainConnect;
-- (void).cxx_destruct;
 - (void)logEventNonePowerNapConfig;
 - (id)getSleepStatisticsApps;
 - (id)getLastWakeEntry;
@@ -54,17 +54,17 @@
 - (unsigned long long)getSleepSubclassKey;
 - (unsigned int)getIOPMRootDomain;
 - (void)registerForUserIdleNotification;
-- (void)registerForDarkwakeEvent;
+- (void)registerForCapabilitiesChange;
 - (id)wakeReasonsAsNSString;
 - (id)wakeReasons;
-- (void)logWakeEntries:(id)arg1 withCurrentTime:(unsigned long long)arg2 withIsDarkwake:(_Bool)arg3 withCapabilities:(unsigned int)arg4;
+- (void)logWakeEntries:(id)arg1 withCurrentTime:(unsigned long long)arg2;
 - (id)getPostWakeEntry:(unsigned long long)arg1;
-- (id)getThisWakeEntry:(id)arg1 withCurrentWakeTime:(unsigned long long)arg2 withCapabilities:(unsigned int)arg3 withIsDarkwake:(_Bool)arg4 withDidSleep:(_Bool)arg5;
+- (id)getThisWakeEntry:(id)arg1 withCurrentWakeTime:(unsigned long long)arg2 withIsDarkwake:(_Bool)arg3 withDidSleep:(_Bool)arg4;
 - (id)getCurrentWakeTimeKey;
 - (unsigned long long)getCurrentWakeTime;
 - (void)logSleepEntries:(id)arg1;
-- (void)systemPoweredOn:(_Bool)arg1 withCapabilities:(unsigned int)arg2;
-- (void)systemPoweredOn:(_Bool)arg1;
+- (void)capabilitiesChanged:(unsigned int)arg1;
+- (void)systemPoweredOn;
 - (short)getSleepState;
 - (void)logEventForwardUserIdle:(BOOL)arg1;
 - (void)logEventPointKernelState;

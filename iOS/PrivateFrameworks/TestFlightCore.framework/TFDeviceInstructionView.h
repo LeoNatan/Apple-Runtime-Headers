@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (struct UIEdgeInsets)imageLayoutInsets;
 + (id)backgroundColor;
 + (double)cornerRadius;
-@property(readonly, nonatomic) UIImageView *deviceImageView; // @synthesize deviceImageView=_deviceImageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageView *deviceImageView; // @synthesize deviceImageView=_deviceImageView;
 - (void)layoutSubviews;
 - (void)updateCurrentDeviceImageToOrientation:(long long)arg1;
 - (void)displayDeviceImage:(id)arg1 inOrientation:(long long)arg2;

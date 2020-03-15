@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)exclamationMark;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *warningText; // @synthesize warningText=_warningText;
 @property(nonatomic) _Bool shouldDisplayWarningIcon; // @synthesize shouldDisplayWarningIcon=_shouldDisplayWarningIcon;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (id)warningAttributedText;
 

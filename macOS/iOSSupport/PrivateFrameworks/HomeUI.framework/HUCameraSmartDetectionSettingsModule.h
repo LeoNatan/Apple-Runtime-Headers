@@ -23,6 +23,7 @@
     HFCameraSmartDetectionCondition *_condition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFCameraSmartDetectionCondition *condition; // @synthesize condition=_condition;
 @property(readonly, nonatomic) unsigned long long settingsContext; // @synthesize settingsContext=_settingsContext;
 @property(readonly, nonatomic) HFItemProvider *motionDetectionOffOnItemProvider; // @synthesize motionDetectionOffOnItemProvider=_motionDetectionOffOnItemProvider;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) HFStaticItem *anyMotionDetectedItem; // @synthesize anyMotionDetectedItem=_anyMotionDetectedItem;
 @property(readonly, nonatomic) HFConditionCollection *conditionCollection; // @synthesize conditionCollection=_conditionCollection;
 @property(readonly, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
-- (void).cxx_destruct;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;
 - (void)_dispatchUpdateForCameraProfile:(id)arg1;

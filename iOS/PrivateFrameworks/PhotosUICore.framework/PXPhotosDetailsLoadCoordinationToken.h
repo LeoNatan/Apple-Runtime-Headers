@@ -14,8 +14,8 @@
     PXPhotosDetailsLoadCoordinator *__loadCoordinator;
 }
 
-@property(readonly, nonatomic) __weak PXPhotosDetailsLoadCoordinator *_loadCoordinator; // @synthesize _loadCoordinator=__loadCoordinator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PXPhotosDetailsLoadCoordinator *_loadCoordinator; // @synthesize _loadCoordinator=__loadCoordinator;
 - (void)_timeout;
 - (void)complete;
 - (void)dealloc;

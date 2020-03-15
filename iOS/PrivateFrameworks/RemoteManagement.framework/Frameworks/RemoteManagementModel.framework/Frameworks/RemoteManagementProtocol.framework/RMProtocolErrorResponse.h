@@ -16,13 +16,13 @@
 }
 
 + (id)requestWithCode:(id)arg1 description:(id)arg2 details:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) RMModelAnyPayload *responseDetails; // @synthesize responseDetails=_responseDetails;
 @property(copy, nonatomic) NSString *responseDescription; // @synthesize responseDescription=_responseDescription;
 @property(copy, nonatomic) NSString *responseCode; // @synthesize responseCode=_responseCode;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

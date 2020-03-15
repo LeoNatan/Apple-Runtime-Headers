@@ -27,6 +27,7 @@
     double _currentKeyboardHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double currentKeyboardHeight; // @synthesize currentKeyboardHeight=_currentKeyboardHeight;
 @property(readonly, nonatomic) UIColor *otherSelectionBackground; // @synthesize otherSelectionBackground=_otherSelectionBackground;
 @property(readonly, nonatomic) UIColor *currentSelectionBackground; // @synthesize currentSelectionBackground=_currentSelectionBackground;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(readonly, nonatomic) NSString *dataAsString; // @synthesize dataAsString=_dataAsString;
 @property(readonly) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)searchBarChangeSearch:(id)arg1 searchString:(id)arg2;
 - (void)searchBarDoneAction:(id)arg1;
 - (void)searchBarDownAction:(id)arg1;

@@ -22,12 +22,12 @@
 + (id)shortDescription;
 + (id)platformImplementationProtocol;
 + (id)stateDescriptionForState:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) CPLLibraryManager *libraryManager; // @synthesize libraryManager=_libraryManager;
 @property(readonly, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly, nonatomic) NSProgress *sessionProgress; // @synthesize sessionProgress=_sessionProgress;
 @property(readonly, nonatomic) CPLPlatformObject *platformObject; // @synthesize platformObject=_platformObject;
-- (void).cxx_destruct;
 - (id)redactedDescription;
 @property(readonly, copy) NSString *description;
 - (void)tearDownWithCompletionHandler:(CDUnknownBlockType)arg1;

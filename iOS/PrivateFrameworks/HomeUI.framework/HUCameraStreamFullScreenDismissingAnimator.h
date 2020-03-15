@@ -16,9 +16,9 @@
     UIView *_cameraOverlaySnapshot;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *cameraOverlaySnapshot; // @synthesize cameraOverlaySnapshot=_cameraOverlaySnapshot;
 @property(readonly, nonatomic) UIView *cameraViewSnapshot; // @synthesize cameraViewSnapshot=_cameraViewSnapshot;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (id)initWithSourceCameraCell:(id)arg1 cameraViewSnapshot:(id)arg2 cameraOverlaySnapshot:(id)arg3;

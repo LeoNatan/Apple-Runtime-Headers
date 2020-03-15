@@ -13,8 +13,8 @@
     NSArray *mailboxList;
 }
 
-@property(copy) NSArray *mailboxList; // @synthesize mailboxList;
 - (void).cxx_destruct;
+@property(copy) NSArray *mailboxList; // @synthesize mailboxList;
 - (void)setInput:(id)arg1;
 
 @end

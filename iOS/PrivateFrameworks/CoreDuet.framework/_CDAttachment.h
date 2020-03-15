@@ -26,6 +26,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)attachmentWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5 contentURL:(id)arg6 contentText:(id)arg7;
 + (id)attachmentWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5;
+- (void).cxx_destruct;
 @property(retain) NSString *contentText; // @synthesize contentText=_contentText;
 @property(retain) NSURL *contentURL; // @synthesize contentURL=_contentURL;
 @property(retain) NSNumber *size; // @synthesize size=_size;
@@ -34,7 +35,6 @@
 @property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(retain) NSString *uti; // @synthesize uti=_uti;
 @property(retain) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

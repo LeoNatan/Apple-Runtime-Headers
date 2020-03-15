@@ -24,6 +24,7 @@
     NSString *_variantIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *variantIdentifier; // @synthesize variantIdentifier=_variantIdentifier;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) long long mediaCategory; // @synthesize mediaCategory=_mediaCategory;
@@ -34,7 +35,6 @@
 @property(nonatomic) float downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(copy, nonatomic) NSString *downloadPhase; // @synthesize downloadPhase=_downloadPhase;
 @property(nonatomic) unsigned long long downloadContentFlags; // @synthesize downloadContentFlags=_downloadContentFlags;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 @property(readonly, nonatomic) unsigned long long allContentFlags;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSView *_draggedColumnView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *draggedColumnView; // @synthesize draggedColumnView=_draggedColumnView;
 @property(nonatomic) double dragImageInset; // @synthesize dragImageInset=_dragImageInset;
 @property(nonatomic) double dragYPos; // @synthesize dragYPos=_dragYPos;
 @property(retain, nonatomic) NSImage *bodyDragImage; // @synthesize bodyDragImage=_bodyDragImage;
-- (void).cxx_destruct;
 
 @end
 

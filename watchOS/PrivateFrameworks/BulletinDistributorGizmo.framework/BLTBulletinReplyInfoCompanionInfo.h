@@ -22,6 +22,7 @@
     NSString *_contactIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasGizmoWillPlayLightsAndSirens; // @synthesize hasGizmoWillPlayLightsAndSirens=_hasGizmoWillPlayLightsAndSirens;
 @property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(nonatomic) _Bool overridesDND; // @synthesize overridesDND=_overridesDND;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) _Bool gizmoWillPlayLightsAndSirens; // @synthesize gizmoWillPlayLightsAndSirens=_gizmoWillPlayLightsAndSirens;
 @property(copy, nonatomic) NSString *matchID; // @synthesize matchID=_matchID;
 @property(retain, nonatomic) NSDate *expiration; // @synthesize expiration=_expiration;
-- (void).cxx_destruct;
 - (void)_computeGizmoWillPlayLightsAndSirensWithShouldPlayLightsAndSirens:(unsigned int)arg1 isConnected:(_Bool)arg2 isWristDetectDisabled:(_Bool)arg3 isAlertable:(_Bool)arg4;
 - (id)init;
 

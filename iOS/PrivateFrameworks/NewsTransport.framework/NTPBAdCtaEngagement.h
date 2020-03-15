@@ -49,6 +49,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *feedViewExposureId; // @synthesize feedViewExposureId=_feedViewExposureId;
 @property(retain, nonatomic) NSString *sourceChannelId; // @synthesize sourceChannelId=_sourceChannelId;
 @property(retain, nonatomic) NSData *articleViewingSessionId; // @synthesize articleViewingSessionId=_articleViewingSessionId;
@@ -62,7 +63,6 @@
 @property(retain, nonatomic) NSString *iadAd; // @synthesize iadAd=_iadAd;
 @property(retain, nonatomic) NSString *iadLine; // @synthesize iadLine=_iadLine;
 @property(retain, nonatomic) NSString *iadCampaign; // @synthesize iadCampaign=_iadCampaign;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

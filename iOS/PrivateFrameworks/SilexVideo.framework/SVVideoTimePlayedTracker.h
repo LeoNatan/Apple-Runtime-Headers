@@ -21,13 +21,13 @@
     double _timePlayed;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timePlayed; // @synthesize timePlayed=_timePlayed;
 @property(readonly, nonatomic) id <SVVideoTimeJumpObserving> timeJumpObserver; // @synthesize timeJumpObserver=_timeJumpObserver;
 @property(readonly, nonatomic) id <SVVideoPlaybackStateObserving> playbackStateObserver; // @synthesize playbackStateObserver=_playbackStateObserver;
 @property(readonly, nonatomic) id <SVVideoTimeProviding> timeProvider; // @synthesize timeProvider=_timeProvider;
 @property(readonly, nonatomic) id <SVVideoPeriodicTimeObserving> timeObserver; // @synthesize timeObserver=_timeObserver;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock;
-- (void).cxx_destruct;
 - (id)initWithTimeObserver:(id)arg1 timeProvider:(id)arg2 playbackStateObserver:(id)arg3 timeJumpObserver:(id)arg4;
 
 // Remaining properties

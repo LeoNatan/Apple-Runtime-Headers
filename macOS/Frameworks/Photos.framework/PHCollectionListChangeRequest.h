@@ -25,8 +25,8 @@
 + (id)changeRequestForCollectionList:(id)arg1 childCollections:(id)arg2;
 + (id)changeRequestForCollectionList:(id)arg1;
 + (id)_changeRequestForCollectionList:(id)arg1 optionalChildCollections:(id)arg2;
-@property(readonly, nonatomic) PHRelationshipChangeRequestHelper *collectionsHelper; // @synthesize collectionsHelper=_collectionsHelper;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHRelationshipChangeRequestHelper *collectionsHelper; // @synthesize collectionsHelper=_collectionsHelper;
 @property(readonly, copy) NSString *description;
 - (BOOL)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id *)arg3;
 - (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id *)arg2;

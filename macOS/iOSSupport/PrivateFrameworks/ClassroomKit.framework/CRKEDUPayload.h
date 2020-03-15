@@ -30,6 +30,7 @@
     NSArray *_deviceGroups;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *deviceGroups; // @synthesize deviceGroups=_deviceGroups;
 @property(retain, nonatomic) NSArray *users; // @synthesize users=_users;
 @property(retain, nonatomic) NSArray *groups; // @synthesize groups=_groups;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSString *organizationUUID; // @synthesize organizationUUID=_organizationUUID;
 @property(retain, nonatomic) NSString *payloadDescriptionName; // @synthesize payloadDescriptionName=_payloadDescriptionName;
 @property(retain, nonatomic) NSString *payloadDisplayName; // @synthesize payloadDisplayName=_payloadDisplayName;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSDictionary *configuration;
 - (id)parseDeviceGroupFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id *)arg3;

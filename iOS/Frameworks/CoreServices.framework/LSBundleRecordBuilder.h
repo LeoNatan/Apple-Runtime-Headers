@@ -102,6 +102,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_directoryClass;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *directoryClass; // @synthesize directoryClass=_directoryClass;
 @property(readonly, nonatomic) NSArray *managedPersonas; // @synthesize managedPersonas=_managedPersonas;
 @property(readonly, nonatomic) NSDictionary *unlocalizedNamesWithContext; // @synthesize unlocalizedNamesWithContext=_unlocalizedNamesWithContext;
@@ -177,7 +178,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(nonatomic) unsigned int installationType; // @synthesize installationType=_installationType;
 @property(nonatomic) unsigned char retries; // @synthesize retries=_retries;
-- (void).cxx_destruct;
 - (unsigned int)registerBundleRecord:(id)arg1 error:(id *)arg2;
 - (int)activateBindings:(id)arg1 unitID:(unsigned int)arg2 bundleData:(const struct LSBundleData *)arg3;
 - (struct LSBundleData)buildBundleData:(id)arg1 error:(id *)arg2;

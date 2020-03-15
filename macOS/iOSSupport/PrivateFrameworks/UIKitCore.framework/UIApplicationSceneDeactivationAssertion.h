@@ -18,11 +18,11 @@
     BOOL _acquired;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIApplicationSceneDeactivationManager *manager; // @synthesize manager=_manager;
 @property(readonly, nonatomic, getter=isAcquired) BOOL acquired; // @synthesize acquired=_acquired;
 @property(readonly, copy, nonatomic) CDUnknownBlockType predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) long long reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UILabel *_textBody;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useAlertStyle; // @synthesize useAlertStyle=_useAlertStyle;
 @property(retain, nonatomic) UILabel *textBody; // @synthesize textBody=_textBody;
 @property(retain, nonatomic) UILabel *textTitle; // @synthesize textTitle=_textTitle;
 @property(retain, nonatomic) UIView *visualDisplayView; // @synthesize visualDisplayView=_visualDisplayView;
-- (void).cxx_destruct;
 - (void)configPageView;
 - (void)layoutSubviews;
 - (id)initWithImageView:(id)arg1;

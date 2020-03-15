@@ -191,10 +191,10 @@
 - (void)keyEventHitServiceAccessoryView:(id)arg1 eventOwner:(unsigned int)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)cancel:(id)arg1;
 - (BOOL)_wantsKeyDownForEvent:(id)arg1;
-- (struct NSObject *)_viewServiceMarshalProxy:(const char *)arg1 withErrorHandler:(CDUnknownBlockType)arg2;
-- (struct NSObject *)_viewServiceMarshalProxy:(const char *)arg1 withDetailedErrorHandler:(CDUnknownBlockType)arg2;
+- (id)_viewServiceMarshalProxy:(const char *)arg1 withErrorHandler:(CDUnknownBlockType)arg2;
+- (id)_viewServiceMarshalProxy:(const char *)arg1 withDetailedErrorHandler:(CDUnknownBlockType)arg2;
 - (id)wrapProxyForAnimationFencing:(id)arg1;
-- (struct NSObject *)_viewServiceMarshalProxy:(const char *)arg1;
+- (id)_viewServiceMarshalProxy:(const char *)arg1;
 - (void)_advanceToConfigPhaseLegacy;
 - (void)_signalAndClearLegacyAdvanceSemaphores;
 - (void)_copyFromBootstrapParameters:(const CDStruct_4172db96 *)arg1;
@@ -299,7 +299,7 @@
 - (void)setTrustsServiceKeyEvents:(BOOL)arg1;
 - (BOOL)trustsServiceKeyEvents;
 @property NSObject<NSRemoteViewDelegate> *delegate;
-- (void)_setDelegate:(struct NSObject *)arg1;
+- (void)_setDelegate:(id)arg1;
 @property(copy, nonatomic) NSString *serviceSubclassName;
 @property(copy, nonatomic) NSString *serviceName;
 - (void)setServiceListenerEndpoint:(id)arg1;

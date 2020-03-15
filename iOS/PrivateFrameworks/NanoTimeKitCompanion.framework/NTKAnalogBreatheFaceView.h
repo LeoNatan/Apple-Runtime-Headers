@@ -15,8 +15,8 @@
     unsigned long long _currentVideoStyle;
 }
 
-@property(nonatomic) unsigned long long currentVideoStyle; // @synthesize currentVideoStyle=_currentVideoStyle;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long currentVideoStyle; // @synthesize currentVideoStyle=_currentVideoStyle;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 - (void)_releaseBacklightAssertion;
 - (void)_takeBacklightAssertion;

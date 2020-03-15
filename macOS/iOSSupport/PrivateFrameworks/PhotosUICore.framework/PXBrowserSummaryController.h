@@ -68,6 +68,7 @@
     NSString *_noFilteringResultsPlaceholderText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *noFilteringResultsPlaceholderText; // @synthesize noFilteringResultsPlaceholderText=_noFilteringResultsPlaceholderText;
 @property(retain, nonatomic) PXSelectedItemsStack *selectedAssetsStack; // @synthesize selectedAssetsStack=_selectedAssetsStack;
 @property(nonatomic, getter=isFilteringContainerContent) BOOL filteringContainerContent; // @synthesize filteringContainerContent=_filteringContainerContent;
@@ -97,7 +98,6 @@
 @property(copy, nonatomic) NSDictionary *selectionAttributes; // @synthesize selectionAttributes=_selectionAttributes;
 @property(copy, nonatomic) NSDictionary *emphasizedAttributes; // @synthesize emphasizedAttributes=_emphasizedAttributes;
 @property(copy, nonatomic) NSDictionary *defaultAttributes; // @synthesize defaultAttributes=_defaultAttributes;
-- (void).cxx_destruct;
 - (long long)priorityForInfoRequestOfKind:(id)arg1;
 - (id)requestInfoOfKind:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
 - (void)infoUpdaterDidUpdate:(id)arg1;

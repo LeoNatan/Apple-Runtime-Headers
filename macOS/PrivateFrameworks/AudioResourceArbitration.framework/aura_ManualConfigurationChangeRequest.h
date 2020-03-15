@@ -18,13 +18,13 @@
 }
 
 + (id)manualConfigurationChangeRequestWithSessionToken:(unsigned int)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) optional_cfbf477b boxAcquisitionPreferences; // @synthesize boxAcquisitionPreferences;
 @property(nonatomic) optional_2c7815ee masterVirtualPort; // @synthesize masterVirtualPort;
 @property(nonatomic) struct IOControllerTopology outputIOControllerTopology; // @synthesize outputIOControllerTopology;
 @property(nonatomic) struct IOControllerTopology inputIOControllerTopology; // @synthesize inputIOControllerTopology;
 @property(nonatomic) optional_f9b20518 hints; // @synthesize hints;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init:(unsigned int)arg1;
 

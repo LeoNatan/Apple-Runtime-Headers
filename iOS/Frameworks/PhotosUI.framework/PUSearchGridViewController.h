@@ -19,15 +19,14 @@ __attribute__((visibility("hidden")))
     NSString *_emptyPlaceholderText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *emptyPlaceholderText; // @synthesize emptyPlaceholderText=_emptyPlaceholderText;
 @property(retain, nonatomic) PUSearchGridDataSource *searchGridDataSource; // @synthesize searchGridDataSource=_searchGridDataSource;
-- (void).cxx_destruct;
 - (void)searchGridDataSourceHasPendingChanges:(id)arg1;
 - (long long)oneUpPresentationOrigin;
 - (_Bool)pu_handleSecondTabTap;
 - (_Bool)allowSlideshowButton;
 - (id)newEmptyPlaceholderView;
-- (_Bool)updateSpec;
 - (id)newGridLayout;
 - (long long)_titleViewVerticalSizeClassForExtendedTraitCollection:(id)arg1;
 - (id)_subtitle;

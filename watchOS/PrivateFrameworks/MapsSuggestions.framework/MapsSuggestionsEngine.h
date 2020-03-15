@@ -22,9 +22,9 @@
 }
 
 + (id)defaultCachePath;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
 @property(nonatomic) int mapType; // @synthesize mapType=_mapType;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)startDemoMode;
 - (void)setFakeSource:(id)arg1;
@@ -44,9 +44,9 @@
 - (void)hintRefreshOfType:(int)arg1;
 - (void)removeAdditionalFilter:(id)arg1 forSink:(id)arg2;
 - (void)addAdditionalFilter:(id)arg1 forSink:(id)arg2;
-- (struct NSArray *)topSuggestionsFromStorageFile:(id)arg1 sink:(id)arg2 count:(unsigned long)arg3 transportType:(int)arg4;
+- (id)topSuggestionsFromStorageFile:(id)arg1 sink:(id)arg2 count:(unsigned long)arg3 transportType:(int)arg4;
 - (_Bool)topSuggestionsFromStorageFile:(id)arg1 sink:(id)arg2 count:(unsigned long)arg3 transportType:(int)arg4 callback:(CDUnknownBlockType)arg5 onQueue:(id)arg6;
-- (struct NSArray *)topSuggestionsForSink:(id)arg1 count:(unsigned long)arg2 transportType:(int)arg3;
+- (id)topSuggestionsForSink:(id)arg1 count:(unsigned long)arg2 transportType:(int)arg3;
 - (_Bool)topSuggestionsForSink:(id)arg1 count:(unsigned long)arg2 transportType:(int)arg3 callback:(CDUnknownBlockType)arg4 onQueue:(id)arg5;
 - (_Bool)detachSink:(id)arg1;
 - (void)attachSink:(id)arg1;

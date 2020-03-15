@@ -13,7 +13,7 @@
 #import <NanoPassKitUI/PKPaymentAuthorizationControllerPrivateDelegate-Protocol.h>
 
 @class NPKAccountPassManager, NPKPassView, NPKTransitPassInfo, NPKTransitTopUpValueSelectionViewController, NPSDomainAccessor, NSArray, NSDecimalNumber, NSString, PKPass, PKPaymentAuthorizationController;
-@protocol UIScrollViewDelegate;
+@protocol NPKBalanceField, NPKPassDetailTableViewControllerDelegate, UIScrollViewDelegate;
 
 @interface NPKPassDetailTableViewController : PUICTableViewController <NPKAccountPassManagerDelegate, NPKTransitTopUpValueSelectionViewControllerDelegate, NPKTransitRenewalTableViewControllerDelegate, PKPaymentAuthorizationControllerDelegate, PKPaymentAuthorizationControllerPrivateDelegate>
 {
@@ -22,41 +22,39 @@
     _Bool _purchaseSuccessful;
     PKPass *_pass;
     NPKTransitPassInfo *_transitPassinfo;
+    id <NPKPassDetailTableViewControllerDelegate> _delegate;
     id <UIScrollViewDelegate> _scrollViewDelegate;
     NPKPassView *_passView;
     NPKAccountPassManager *_accountPassManager;
-    NSArray *_transitDetails;
-    NSArray *_transitBalances;
-    NSArray *_transitCommutePlans;
-    NSArray *_topUpActions;
-    NSArray *_renewalActions;
+    NSArray *_accountBalances;
+    NSArray *_transitFields;
     PKPaymentAuthorizationController *_presentingPaymentAuthorizationController;
     NPKTransitTopUpValueSelectionViewController *_currentValueSelectorController;
     NSDecimalNumber *_topUpAmount;
+    id <NPKBalanceField> _topUpBalanceField;
     NPSDomainAccessor *_domainAccessor;
 }
 
 + (_Bool)canPerformAction:(id)arg1 onPass:(id)arg2 reason:(id *)arg3;
 + (id)errorAlertControllerWithLocalizedFailureReason:(id)arg1 forPassAction:(id)arg2 alertActionHandler:(CDUnknownBlockType)arg3;
 + (_Bool)passRequiresDetailTableView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool purchaseSuccessful; // @synthesize purchaseSuccessful=_purchaseSuccessful;
 @property(retain, nonatomic) NPSDomainAccessor *domainAccessor; // @synthesize domainAccessor=_domainAccessor;
+@property(retain, nonatomic) id <NPKBalanceField> topUpBalanceField; // @synthesize topUpBalanceField=_topUpBalanceField;
 @property(retain, nonatomic) NSDecimalNumber *topUpAmount; // @synthesize topUpAmount=_topUpAmount;
 @property(nonatomic) _Bool hideCellBackgrounds; // @synthesize hideCellBackgrounds=_hideCellBackgrounds;
 @property(nonatomic) _Bool hidePassActions; // @synthesize hidePassActions=_hidePassActions;
 @property(nonatomic) __weak NPKTransitTopUpValueSelectionViewController *currentValueSelectorController; // @synthesize currentValueSelectorController=_currentValueSelectorController;
 @property(retain, nonatomic) PKPaymentAuthorizationController *presentingPaymentAuthorizationController; // @synthesize presentingPaymentAuthorizationController=_presentingPaymentAuthorizationController;
-@property(retain, nonatomic) NSArray *renewalActions; // @synthesize renewalActions=_renewalActions;
-@property(retain, nonatomic) NSArray *topUpActions; // @synthesize topUpActions=_topUpActions;
-@property(retain, nonatomic) NSArray *transitCommutePlans; // @synthesize transitCommutePlans=_transitCommutePlans;
-@property(retain, nonatomic) NSArray *transitBalances; // @synthesize transitBalances=_transitBalances;
-@property(retain, nonatomic) NSArray *transitDetails; // @synthesize transitDetails=_transitDetails;
+@property(readonly, nonatomic) NSArray *transitFields; // @synthesize transitFields=_transitFields;
+@property(retain, nonatomic) NSArray *accountBalances; // @synthesize accountBalances=_accountBalances;
 @property(retain, nonatomic) NPKAccountPassManager *accountPassManager; // @synthesize accountPassManager=_accountPassManager;
 @property(retain, nonatomic) NPKPassView *passView; // @synthesize passView=_passView;
 @property(nonatomic) __weak id <UIScrollViewDelegate> scrollViewDelegate; // @synthesize scrollViewDelegate=_scrollViewDelegate;
+@property(nonatomic) __weak id <NPKPassDetailTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NPKTransitPassInfo *transitPassinfo; // @synthesize transitPassinfo=_transitPassinfo;
 @property(readonly, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)paymentAuthorizationController:(id)arg1 didAuthorizePurchase:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationControllerDidFinish:(id)arg1;
 - (void)paymentAuthorizationController:(id)arg1 didAuthorizePayment:(id)arg2 handler:(CDUnknownBlockType)arg3;
@@ -69,23 +67,25 @@
 - (void)transitRenewalTableViewController:(id)arg1 didSelectItem:(id)arg2;
 - (void)accountPassManager:(id)arg1 didUpdateAccount:(id)arg2;
 - (void)topUpValueSelectionViewController:(id)arg1 didEnterAmount:(id)arg2;
-- (void)_updateTransitDetailsDataSource;
+- (void)_updateDataSource;
 - (id)_reusableTransitPropertyCellForTableView:(id)arg1;
 - (id)_topUpActions;
 - (id)_renewalActions;
-- (id)_transitCommutePlans;
-- (id)_transitBalances;
-- (int)_renewalActionsSection;
-- (int)_topUpActionsSection;
-- (int)_transitCommutePlansSection;
-- (int)_transitBalancesSection;
-- (int)_transitDetailsSection;
+- (id)_accountBalances;
+- (int)_transitFieldIndexForSection:(int)arg1;
+- (_Bool)_isTransitFieldsSection:(int)arg1;
+- (int)_lastTransitFieldSection;
+- (int)_firstTransitFieldSection;
+- (int)_accountBalancesSection;
 - (int)_passViewSection;
-- (id)_tableView:(id)arg1 cellForTransitBalancesOrCommutePlansWithIndexPath:(id)arg2;
 - (_Bool)_showPassActions;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (id)_tableView:(id)arg1 cellForTransitFieldAtIndexPath:(id)arg2;
+- (id)_tableView:(id)arg1 cellForAccountBalanceWithIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (_Bool)tableView:(id)arg1 wantsHeaderForSection:(int)arg2;

@@ -18,9 +18,9 @@
 }
 
 + (unsigned int)statusDomainName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dataChangedBlock; // @synthesize dataChangedBlock=_dataChangedBlock;
 @property(readonly, nonatomic) __weak id <STStatusDomainServerHandle> serverHandle; // @synthesize serverHandle=_serverHandle;
-- (void).cxx_destruct;
 - (void)observeData:(id)arg1 forDomain:(unsigned int)arg2;
 - (void)observeDataWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) id <STStatusDomainData> data;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     AMSBiometricsSignatureRequest *_request;
 }
 
-@property(readonly) AMSBiometricsSignatureRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(readonly) AMSBiometricsSignatureRequest *request; // @synthesize request=_request;
 - (id)performSignature;
 - (id)initWithRequest:(id)arg1;
 

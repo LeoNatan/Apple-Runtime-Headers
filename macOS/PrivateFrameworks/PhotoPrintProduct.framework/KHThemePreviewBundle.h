@@ -15,9 +15,9 @@
 }
 
 + (id)bundleWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHThemePreviewManifest *manifest; // @synthesize manifest=_manifest;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)themePreviewsForProductCodes:(id)arg1;
 - (id)allThemePreviews;
 - (id)themePreviewForIdentifier:(id)arg1;

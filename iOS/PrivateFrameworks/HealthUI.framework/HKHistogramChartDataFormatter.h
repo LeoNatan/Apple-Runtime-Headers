@@ -13,8 +13,8 @@
     HKUnit *_unit;
 }
 
-@property(readonly, nonatomic) HKUnit *unit; // @synthesize unit=_unit;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKUnit *unit; // @synthesize unit=_unit;
 - (id)_formattedStringWithValue:(double)arg1 unit:(id)arg2 showUnit:(_Bool)arg3;
 - (id)formattedValueStringForChartData:(id)arg1 options:(long long)arg2;
 - (id)formattedUnitStringForChartData:(id)arg1;

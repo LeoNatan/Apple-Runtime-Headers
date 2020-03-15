@@ -27,6 +27,7 @@
     BOOL _capRightSide;
 }
 
+- (void).cxx_destruct;
 @property BOOL capRightSide; // @synthesize capRightSide=_capRightSide;
 @property BOOL capLeftSide; // @synthesize capLeftSide=_capLeftSide;
 @property(copy) NSArray *icons; // @synthesize icons=_icons;
@@ -42,7 +43,6 @@
 @property(retain) NSIndexSet *titleMetrics; // @synthesize titleMetrics=_titleMetrics;
 @property(retain) NSIndexSet *eventTimeMetrics; // @synthesize eventTimeMetrics=_eventTimeMetrics;
 @property double hourHeight; // @synthesize hourHeight=_hourHeight;
-- (void).cxx_destruct;
 - (double)borderSize;
 - (void)drawRect;
 - (struct CGColor *)createCurrentTextColor;

@@ -18,10 +18,10 @@
     id <RPMessageable> _messenger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <RPMessageable> messenger; // @synthesize messenger=_messenger;
 @property(copy, nonatomic) CDUnknownBlockType mediaControlFlagsChangedHandler; // @synthesize mediaControlFlagsChangedHandler=_mediaControlFlagsChangedHandler;
 @property(readonly, nonatomic) unsigned long long mediaControlFlags; // @synthesize mediaControlFlags=_mediaControlFlags;
-- (void).cxx_destruct;
 - (void)mediaSetVolume:(double)arg1 destinationID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)mediaGetVolumeFromDestinationID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)mediaSkipBySeconds:(double)arg1 destinationID:(id)arg2 completion:(CDUnknownBlockType)arg3;

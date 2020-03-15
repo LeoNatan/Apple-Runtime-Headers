@@ -21,6 +21,7 @@
     NSString *_jsonDir;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *jsonDir; // @synthesize jsonDir=_jsonDir;
 @property(readonly) MontrealNNModelQuantization *quantization; // @synthesize quantization=_quantization;
 @property(readonly) NSData *weightData; // @synthesize weightData=_weightData;
@@ -28,7 +29,6 @@
 @property(readonly) NSArray *dimension; // @synthesize dimension=_dimension;
 @property(readonly) NSNumber *index; // @synthesize index=_index;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)createConvertArrayToData:(id)arg1 quantization:(id)arg2;
 - (id)createflattenWeightsHierarchy:(id)arg1;
 - (id)createflattenWeightsFile:(id)arg1;

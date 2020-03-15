@@ -22,6 +22,7 @@
     struct CGRect _referenceBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long backingType; // @synthesize backingType=_backingType;
 @property(nonatomic) _Bool supportsDeepColor; // @synthesize supportsDeepColor=_supportsDeepColor;
 @property(nonatomic) struct CGRect referenceBounds; // @synthesize referenceBounds=_referenceBounds;
@@ -30,7 +31,6 @@
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (struct CGRect)convertRectToDisplay:(struct CGRect)arg1;
 - (struct CGPoint)convertPointToDisplay:(struct CGPoint)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

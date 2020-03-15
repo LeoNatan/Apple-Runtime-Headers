@@ -24,6 +24,7 @@
     WFFileRepresentation *iconFile;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFFileRepresentation *iconFile; // @synthesize iconFile;
 @property(retain, nonatomic) WFFileRepresentation *shortcutFile; // @synthesize shortcutFile;
 @property(copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *shortDescription; // @synthesize shortDescription;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
 @property(copy, nonatomic) CKRecordID *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WFWorkflowIcon *icon; // @dynamic icon;
 
 @end

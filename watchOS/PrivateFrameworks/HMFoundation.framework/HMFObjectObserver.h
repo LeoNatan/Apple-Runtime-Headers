@@ -16,11 +16,11 @@
     unsigned int _cachedHash;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int cachedHash; // @synthesize cachedHash=_cachedHash;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy) CDUnknownBlockType deallocationBlock; // @synthesize deallocationBlock=_deallocationBlock;
 @property(readonly) __weak id observedObject; // @synthesize observedObject=_observedObject;
-- (void).cxx_destruct;
 - (void)_stopObserving;
 - (void)_startObserving;
 - (id)observerKey;

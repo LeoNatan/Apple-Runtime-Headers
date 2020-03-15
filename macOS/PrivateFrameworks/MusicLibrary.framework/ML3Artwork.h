@@ -21,11 +21,11 @@
     NSURL *_originalFileURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *originalFileURL; // @synthesize originalFileURL=_originalFileURL;
 @property(readonly, nonatomic) NSString *relativePath; // @synthesize relativePath=_relativePath;
 @property(readonly, nonatomic) NSString *artworkToken; // @synthesize artworkToken=_artworkToken;
 @property(readonly, nonatomic) ML3MusicLibrary *musicLibrary; // @synthesize musicLibrary=_musicLibrary;
-- (void).cxx_destruct;
 - (id)_interestDataFromInterestDictionary:(id)arg1;
 - (id)_interestDictionaryFromInterestData:(id)arg1;
 - (void)_onSerialQueue_faultInProperties;

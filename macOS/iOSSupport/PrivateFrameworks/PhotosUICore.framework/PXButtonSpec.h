@@ -10,11 +10,11 @@
 
 @interface PXButtonSpec : PXLabelSpec
 {
-    struct UIColor *_highlightedTextColor;
+    UIColor *_highlightedTextColor;
 }
 
-@property(copy, nonatomic) UIColor *highlightedTextColor; // @synthesize highlightedTextColor=_highlightedTextColor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIColor *highlightedTextColor; // @synthesize highlightedTextColor=_highlightedTextColor;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

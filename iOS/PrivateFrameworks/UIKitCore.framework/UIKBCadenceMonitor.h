@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIDelayedAction *_touchLogTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDelayedAction *touchLogTimer; // @synthesize touchLogTimer=_touchLogTimer;
 @property(nonatomic) int touchCount; // @synthesize touchCount=_touchCount;
 @property(nonatomic) double prevTouchDown; // @synthesize prevTouchDown=_prevTouchDown;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float confidence; // @synthesize confidence=_confidence;
 @property(nonatomic) float cadence; // @synthesize cadence=_cadence;
 @property(nonatomic) _Bool isUserTyping; // @synthesize isUserTyping=_isUserTyping;
-- (void).cxx_destruct;
 - (id)init;
 - (void)reset;
 - (void)addTypingTouchTime:(double)arg1;

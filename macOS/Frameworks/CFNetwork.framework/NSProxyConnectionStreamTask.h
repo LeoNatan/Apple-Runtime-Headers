@@ -24,11 +24,11 @@
     NSOutputStream *_outputStream;
 }
 
+- (void).cxx_destruct;
 @property BOOL dataAvailableForReading; // @synthesize dataAvailableForReading=_dataAvailableForReading;
 @property(retain) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(retain) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
 @property(retain) NSURLSessionStreamTask *streamTask; // @synthesize streamTask=_streamTask;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)cancel;
 - (void)write:(id)arg1 handler:(CDUnknownBlockType)arg2;

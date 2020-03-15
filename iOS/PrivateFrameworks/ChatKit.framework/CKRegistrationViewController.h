@@ -8,20 +8,22 @@
 
 #import <ChatKit/AKTapToSignInViewControllerDelegate-Protocol.h>
 
-@class AKTapToSignInViewController, NSString;
+@class AKTapToSignInViewController, NSString, OBPrivacyLinkController;
 
 @interface CKRegistrationViewController : UIViewController <AKTapToSignInViewControllerDelegate>
 {
     CDUnknownBlockType _completionBlock;
     AKTapToSignInViewController *_akSignInVC;
+    OBPrivacyLinkController *_privacyLinkController;
 }
 
 + (id)_inProgressRegisteringNonPhoneAccount;
 + (_Bool)_shouldShowAuthKitSignIn;
 + (_Bool)shouldShowRegistration;
+- (void).cxx_destruct;
+@property(retain, nonatomic) OBPrivacyLinkController *privacyLinkController; // @synthesize privacyLinkController=_privacyLinkController;
 @property(retain, nonatomic) AKTapToSignInViewController *akSignInVC; // @synthesize akSignInVC=_akSignInVC;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (_Bool)canBecomeFirstResponder;
 - (void)setErrorPresentationViewController:(id)arg1;
 - (void)_handleRegistrarCompletion:(_Bool)arg1 errorAlertController:(id)arg2;

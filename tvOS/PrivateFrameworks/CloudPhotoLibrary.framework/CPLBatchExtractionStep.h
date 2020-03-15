@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *_scopeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *scopeIdentifier; // @synthesize scopeIdentifier=_scopeIdentifier;
 @property(readonly, nonatomic) id <CPLBatchExtractionStrategyStorage> storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (id)description;
 - (id)shortDescription;
 - (void)resetConditionallyFromNewIncomingChange:(id)arg1;

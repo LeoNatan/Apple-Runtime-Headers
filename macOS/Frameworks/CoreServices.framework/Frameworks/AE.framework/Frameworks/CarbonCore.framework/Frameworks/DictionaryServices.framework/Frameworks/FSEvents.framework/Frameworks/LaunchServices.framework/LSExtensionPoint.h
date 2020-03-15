@@ -24,10 +24,10 @@
 + (id)identifierForCurrentProcess;
 + (id)extensionPointForIdentifier:(id)arg1 platform:(id)arg2;
 + (id)extensionPointForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

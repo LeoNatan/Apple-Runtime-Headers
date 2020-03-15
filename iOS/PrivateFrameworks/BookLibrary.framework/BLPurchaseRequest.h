@@ -27,6 +27,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)requestWithPermlink:(id)arg1 title:(id)arg2;
 + (id)requestWithBuyParameters:(id)arg1 storeIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRestore) _Bool restore; // @synthesize restore=_restore;
 @property(retain, nonatomic) NSDictionary *analyticsInfo; // @synthesize analyticsInfo=_analyticsInfo;
 @property(copy, nonatomic) NSNumber *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
@@ -36,7 +37,6 @@
 @property(nonatomic, getter=isPreOrder) _Bool preOrder; // @synthesize preOrder=_preOrder;
 @property(nonatomic, getter=isAudiobook) _Bool audiobook; // @synthesize audiobook=_audiobook;
 @property(copy, nonatomic) NSString *buyParameters; // @synthesize buyParameters=_buyParameters;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

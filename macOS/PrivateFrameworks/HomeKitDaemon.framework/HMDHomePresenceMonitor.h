@@ -21,11 +21,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDBackgroundTaskAgentTimer *btaAuditTimer; // @synthesize btaAuditTimer=_btaAuditTimer;
 @property(retain, nonatomic) HMDHomePresenceUpdate *homePresenceUpdate; // @synthesize homePresenceUpdate=_homePresenceUpdate;
 @property(retain, nonatomic) HMDHomePresence *currentHomePresence; // @synthesize currentHomePresence=_currentHomePresence;
 @property(readonly, nonatomic) NSMutableDictionary *presenceMap; // @synthesize presenceMap=_presenceMap;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_submitPresenceReportMetricWithPayload:(id)arg1 error:(id)arg2;

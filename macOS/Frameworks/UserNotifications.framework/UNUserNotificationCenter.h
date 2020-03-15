@@ -22,11 +22,11 @@
 
 + (BOOL)supportsContentExtensions;
 + (id)currentNotificationCenter;
+- (void).cxx_destruct;
 @property __weak id <UNUserNotificationCenterDelegatePrivate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property __weak id <UNUserNotificationCenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)notificationSettingsForTopics;
 - (void)getNotificationSettingsForTopicsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)notificationTopics;

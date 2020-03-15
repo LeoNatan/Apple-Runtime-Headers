@@ -22,10 +22,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)dataStringType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *dataStrings; // @synthesize dataStrings=_dataStrings;
 @property(retain, nonatomic) _INPBCondition *conditionType; // @synthesize conditionType=_conditionType;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

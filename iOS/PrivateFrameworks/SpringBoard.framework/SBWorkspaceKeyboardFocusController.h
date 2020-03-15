@@ -24,6 +24,7 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) int keyboardFocusPID; // @synthesize keyboardFocusPID=_keyboardFocusPID;
 @property(retain, nonatomic) BKSHIDEventDeferringToken *keyboardFocusToken; // @synthesize keyboardFocusToken=_keyboardFocusToken;
 @property(retain, nonatomic) id <BSInvalidatable> compatibilityKeyboardFocusRule; // @synthesize compatibilityKeyboardFocusRule=_compatibilityKeyboardFocusRule;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSMutableArray *redirections; // @synthesize redirections=_redirections;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) SBMainWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (void)_notifyObserversDidUpdateKeyboardFocusPID:(int)arg1 token:(id)arg2;
 - (_Bool)_getSceneKeyboardFocusOverridePID:(int *)arg1 token:(id *)arg2;
 - (void)processManager:(id)arg1 didSelectKeyboardFocusProcess:(id)arg2 deferringToken:(id)arg3;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSArray *_toolbarItems;
 }
 
-@property(copy, nonatomic) NSArray *toolbarItems; // @synthesize toolbarItems=_toolbarItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *toolbarItems; // @synthesize toolbarItems=_toolbarItems;
 
 // Remaining properties
 @property(copy, nonatomic) id <UINSAccessibilityInfo> accessibilityInfo;

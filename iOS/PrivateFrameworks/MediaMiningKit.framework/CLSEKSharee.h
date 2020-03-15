@@ -19,12 +19,12 @@
     NSString *_UUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool isCurrentUserForScheduling; // @synthesize isCurrentUserForScheduling=_isCurrentUserForScheduling;
 @property(readonly) _Bool isCurrentUserForSharing; // @synthesize isCurrentUserForSharing=_isCurrentUserForSharing;
 @property(readonly) NSString *UUID; // @synthesize UUID=_UUID;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

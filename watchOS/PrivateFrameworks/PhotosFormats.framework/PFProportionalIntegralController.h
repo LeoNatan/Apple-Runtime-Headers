@@ -23,6 +23,7 @@
     double _integralGain;
 }
 
+- (void).cxx_destruct;
 @property _Bool outputReady; // @synthesize outputReady=_outputReady;
 @property(retain) NSMutableArray *statistics; // @synthesize statistics=_statistics;
 @property int outputMax; // @synthesize outputMax=_outputMax;
@@ -34,7 +35,6 @@
 @property int integralErrorMin; // @synthesize integralErrorMin=_integralErrorMin;
 @property int integralError; // @synthesize integralError=_integralError;
 @property int setPoint; // @synthesize setPoint=_setPoint;
-- (void).cxx_destruct;
 - (id)statisticsDescription;
 - (void)enumerateStatisticsMeasurementsWithHandler:(CDUnknownBlockType)arg1;
 - (void)addStatisticsSampleForTimestamp:(double)arg1 error:(int)arg2 feedback:(int)arg3;

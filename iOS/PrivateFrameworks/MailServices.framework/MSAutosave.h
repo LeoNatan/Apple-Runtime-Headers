@@ -15,8 +15,8 @@
 
 + (id)autosave;
 + (id)log;
-@property(retain, nonatomic) NSHashTable *activeAutosaveSessions; // @synthesize activeAutosaveSessions=_activeAutosaveSessions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSHashTable *activeAutosaveSessions; // @synthesize activeAutosaveSessions=_activeAutosaveSessions;
 - (void)_getRemoteAutosaveSessionForIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleInterruptedConnection;
 - (id)newConnectionForInterface:(id)arg1;

@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     struct TNotificationCenterObserver _forceTokenFieldToCommitObserver;
 }
 
-@property(getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
 - (void)applyTagsToNodes;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesChanged:(const vector_614ab7ad *)arg2 inObservedNode:(const struct TFENode *)arg3;
 @property(copy, nonatomic) NSArray *tags; // @dynamic tags;

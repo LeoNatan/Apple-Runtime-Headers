@@ -15,10 +15,10 @@
     NPKPeerPayment3DValueView *_valueView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NPKPeerPayment3DValueView *valueView; // @synthesize valueView=_valueView;
 @property(readonly, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(readonly, nonatomic) NSDecimalNumber *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)loadView;
 - (id)initWithValue:(id)arg1 currency:(id)arg2;
 

@@ -20,11 +20,11 @@
 }
 
 + (void)instantiateViewControllerWithExtension:(id)arg1 inputItems:(id)arg2 connectionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RPBroadcastActivityViewServiceExtensionHostContext *hostContext; // @synthesize hostContext=_hostContext;
 @property(retain, nonatomic) NSArray *inputItems; // @synthesize inputItems=_inputItems;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) __weak id <RPBroadcastActivityHostRemoteNSViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (oneway void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 cancelled:(BOOL)arg4;
 - (oneway void)presentBroadcastActivitySheet;
 - (void)viewDidLoad;

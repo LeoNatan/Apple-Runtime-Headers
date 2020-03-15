@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     _Bool _isPad;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *ratingColor; // @synthesize ratingColor=_ratingColor;
 @property(retain, nonatomic) NSArray *secondaryContentRatingImages; // @synthesize secondaryContentRatingImages=_secondaryContentRatingImages;
 @property(nonatomic) _Bool isPad; // @synthesize isPad=_isPad;
 @property(retain, nonatomic) NSString *contentRating; // @synthesize contentRating=_contentRating;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)_textAttributes;
 - (struct __CTFramesetter *)_newTextFramesetter;
 - (id)_imageForContentRating:(id)arg1;

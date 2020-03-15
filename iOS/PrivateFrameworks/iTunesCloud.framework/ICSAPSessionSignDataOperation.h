@@ -14,9 +14,9 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)finishWithSAPContextPreparationError:(id)arg1;
 - (void)executeWithSAPContext:(id)arg1;
 

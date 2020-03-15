@@ -36,6 +36,7 @@
     UIViewController *_internalPresentingViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasLoadedFirstAd; // @synthesize hasLoadedFirstAd=_hasLoadedFirstAd;
 @property(nonatomic) BOOL canLoadMoreThanOnce; // @synthesize canLoadMoreThanOnce=_canLoadMoreThanOnce;
 @property(nonatomic) __weak UIViewController *internalPresentingViewController; // @synthesize internalPresentingViewController=_internalPresentingViewController;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) NSString *adResponseId; // @synthesize adResponseId=_adResponseId;
 @property(nonatomic, getter=isLoaded) BOOL loaded; // @synthesize loaded=_loaded;
 @property(readonly, nonatomic) long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)currentAdIdentifier;
 @property(readonly, nonatomic) BOOL requiresMRAID;
 - (void)creativeControllerViewWasTappedAtPoint:(struct CGPoint)arg1 withMRAIDAction:(id)arg2;

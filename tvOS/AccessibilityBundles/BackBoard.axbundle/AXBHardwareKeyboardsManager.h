@@ -18,9 +18,9 @@
 }
 
 + (void)initializeMonitor;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldNotUpdateHIDClientForNextStickyKeysEnabledChange; // @synthesize shouldNotUpdateHIDClientForNextStickyKeysEnabledChange=_shouldNotUpdateHIDClientForNextStickyKeysEnabledChange;
 @property(copy, nonatomic) NSString *eventTapIdentifier; // @synthesize eventTapIdentifier=_eventTapIdentifier;
-- (void).cxx_destruct;
 - (void)connectionWithServiceWasInterruptedForUserInterfaceClient:(id)arg1;
 - (void)_notifyServerStickyKeyUpdatedForKeycode:(unsigned short)arg1 usagePage:(unsigned int)arg2 down:(_Bool)arg3 up:(_Bool)arg4 locked:(_Bool)arg5;
 - (void)_notifyServerStickyKeysDisabled;

@@ -29,6 +29,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) SUOSUServiceClient *activeMDMClient; // @synthesize activeMDMClient=_activeMDMClient;
 @property(retain) NSProgress *installProgress; // @synthesize installProgress=_installProgress;
 @property(retain) NSArray *availableUpdates; // @synthesize availableUpdates=_availableUpdates;
@@ -39,7 +40,6 @@
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain) NSMutableArray *clients; // @synthesize clients=_clients;
 @property(retain) SUOSUScheduler *scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)postAndProceedWithAutoUpdateNotification:(CDUnknownBlockType)arg1;
 - (void)mdmMajorOSUpdateStatusWithCompletion:(CDUnknownBlockType)arg1;

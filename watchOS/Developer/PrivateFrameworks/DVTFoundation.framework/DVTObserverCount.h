@@ -14,9 +14,9 @@
     long long _count;
 }
 
+- (void).cxx_destruct;
 @property long long count; // @synthesize count=_count;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1;
 
 @end

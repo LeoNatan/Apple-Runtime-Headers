@@ -21,6 +21,7 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) CDUnknownBlockType finalSetup; // @synthesize finalSetup=_finalSetup;
 @property(copy, nonatomic) CDUnknownBlockType initialSetup; // @synthesize initialSetup=_initialSetup;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
-- (void).cxx_destruct;
 - (id)init;
 
 // Remaining properties

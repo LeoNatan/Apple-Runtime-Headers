@@ -14,7 +14,6 @@
 - (void)migratePasswordForAccount:(id)arg1;
 - (BOOL)removePasswordForAccount:(id)arg1 withPersistentUUID:(id)arg2;
 - (BOOL)setPassword:(id)arg1 forAccount:(id)arg2 withPersistentUUID:(id)arg3 withAccessibility:(int)arg4;
-- (void)removePersistentCredentials;
 - (id)passwordForAccountWithPersistentUUID:(id)arg1 expectedAccessibility:(int)arg2 shouldSetAccessibility:(BOOL)arg3 passwordExpected:(BOOL)arg4;
 - (struct __CFDictionary *)_DACopyMutableAttributesForAccountWithPersistentUUID:(id)arg1 accessibility:(int)arg2;
 - (struct __CFDictionary *)_DACopyMutableQueryForAccountWithPersistentUUID:(id)arg1;

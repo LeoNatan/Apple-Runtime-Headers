@@ -26,6 +26,7 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *playPauseMediaButtonColor; // @synthesize playPauseMediaButtonColor=_playPauseMediaButtonColor;
 @property(nonatomic) struct CGRect playPauseMediaButtonFrame; // @synthesize playPauseMediaButtonFrame=_playPauseMediaButtonFrame;
 @property(nonatomic) unsigned long long playPauseMediaButtonType; // @synthesize playPauseMediaButtonType=_playPauseMediaButtonType;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) id <NSCopying> extensionRequestIdentifier; // @synthesize extensionRequestIdentifier=_extensionRequestIdentifier;
 @property(nonatomic) __weak NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) __weak id <_UNNotificationExtensionHostDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_extensionSetUserNotificationActions:(id)arg1;
 - (void)_extensionSetTitle:(id)arg1;
 - (void)_extensionRequestsDismiss;

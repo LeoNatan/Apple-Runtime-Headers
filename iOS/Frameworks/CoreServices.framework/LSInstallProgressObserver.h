@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSXPCConnection *_connection;
 }
 
-@property(nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (void)installationFailedForApplication:(id)arg1 reply:(CDUnknownBlockType)arg2;

@@ -31,6 +31,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDVideoCodec *selectedCodecType; // @synthesize selectedCodecType=_selectedCodecType;
 @property(retain, nonatomic) HMDCameraVideoTier *selectedVideoTier; // @synthesize selectedVideoTier=_selectedVideoTier;
 @property(retain, nonatomic) NSNumber *selectedFramerate; // @synthesize selectedFramerate=_selectedFramerate;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) NSNumber *syncSource; // @synthesize syncSource=_syncSource;
 @property(readonly, nonatomic) HMDSupportedRTPConfiguration *rtpConfiguration; // @synthesize rtpConfiguration=_rtpConfiguration;
 @property(readonly, nonatomic) HMDSupportedVideoStreamConfiguration *supportedVideoStreamConfiguration; // @synthesize supportedVideoStreamConfiguration=_supportedVideoStreamConfiguration;
-- (void).cxx_destruct;
 - (void)_generateAllCombinations;
 - (id)createReselectedVideoParameters:(id)arg1;
 - (id)createSelectedVideoParameters;

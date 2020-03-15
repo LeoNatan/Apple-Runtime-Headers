@@ -15,8 +15,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)sortDescriptorWithKeyPath:(id)arg1 ascending:(_Bool)arg2;
-@property(copy, nonatomic) NSArray *keyPath; // @synthesize keyPath=_keyPath;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *keyPath; // @synthesize keyPath=_keyPath;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

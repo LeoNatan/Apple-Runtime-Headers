@@ -27,11 +27,11 @@
 
 + (id)_relevantHTTPStatusCodes;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AARemoteServer *remoteServer; // @synthesize remoteServer=_remoteServer;
 @property(retain, nonatomic) AAAttestationSigner *attestationSigner; // @synthesize attestationSigner=_attestationSigner;
 @property(retain, nonatomic) AAAbsintheSigner *absintheSigner; // @synthesize absintheSigner=_absintheSigner;
 @property(readonly, nonatomic) _Bool requiresSigning; // @synthesize requiresSigning=_requiresSigning;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 getAppleIDHeadersForResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)relevantHTTPStatusCodes;
 - (id)copyWithZone:(struct _NSZone *)arg1;

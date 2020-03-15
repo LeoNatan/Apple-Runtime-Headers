@@ -13,8 +13,8 @@
     id <ASVTurntableSingleFingerGestureDelegate> _turntableDelegate;
 }
 
-@property(nonatomic) __weak id <ASVTurntableSingleFingerGestureDelegate> turntableDelegate; // @synthesize turntableDelegate=_turntableDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ASVTurntableSingleFingerGestureDelegate> turntableDelegate; // @synthesize turntableDelegate=_turntableDelegate;
 - (void)finishGesture;
 - (void)updatePan;
 - (void)updateGesture;

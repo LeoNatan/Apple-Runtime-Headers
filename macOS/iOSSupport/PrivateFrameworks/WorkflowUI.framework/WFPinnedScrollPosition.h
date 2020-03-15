@@ -15,10 +15,10 @@
     struct CGPoint _center;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) __weak WFScrollPositionPinningCollectionView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (struct CGRect)adjustedBounds:(struct CGRect)arg1 contentSize:(struct CGSize)arg2;
 - (id)initWithScrollView:(id)arg1 view:(id)arg2;
 

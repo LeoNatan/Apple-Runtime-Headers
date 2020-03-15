@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property struct CGRect frame; // @synthesize frame=_frame;
 @property(readonly, copy) NSString *stringKey; // @synthesize stringKey=_stringKey;
 @property(readonly, copy) NSString *tableName; // @synthesize tableName=_tableName;
 @property(readonly, copy) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(readonly, copy) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

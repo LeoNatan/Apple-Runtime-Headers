@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NSString *_footerText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *footerText; // @synthesize footerText=_footerText;
 @property(retain, nonatomic) VSMessageQueue *regenerateCodeEventQueue; // @synthesize regenerateCodeEventQueue=_regenerateCodeEventQueue;
 @property(copy, nonatomic) NSString *regenerateCodeButtonTitle; // @synthesize regenerateCodeButtonTitle=_regenerateCodeButtonTitle;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *logoAccessibilityLabel; // @synthesize logoAccessibilityLabel=_logoAccessibilityLabel;
 @property(retain, nonatomic) UIImage *logo; // @synthesize logo=_logo;
 @property(retain, nonatomic) NSItemProvider *logoProvider; // @synthesize logoProvider=_logoProvider;
-- (void).cxx_destruct;
 - (void)configureWithRequest:(id)arg1;
 - (id)init;
 

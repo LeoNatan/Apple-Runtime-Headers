@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) FPSandboxingURLWrapper *directoryURLWrapper; // @synthesize directoryURLWrapper=_directoryURLWrapper;
 @property(retain, nonatomic) FPSandboxingURLWrapper *urlWrapper; // @synthesize urlWrapper=_urlWrapper;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSString *outputURLContentType;

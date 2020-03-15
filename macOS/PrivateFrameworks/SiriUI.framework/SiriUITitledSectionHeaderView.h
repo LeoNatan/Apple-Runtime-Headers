@@ -19,8 +19,8 @@
 + (id)elementKind;
 + (id)reuseIdentifier;
 + (double)defaultHeight;
-@property __weak NSTextField *headerTextField; // @synthesize headerTextField=_headerTextField;
 - (void).cxx_destruct;
+@property __weak NSTextField *headerTextField; // @synthesize headerTextField=_headerTextField;
 - (void)prepareForReuse;
 - (void)setStringValue:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;

@@ -25,10 +25,10 @@
     CDUnknownBlockType _labelResizedBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType labelResizedBlock; // @synthesize labelResizedBlock=_labelResizedBlock;
 @property(nonatomic) unsigned long long numberOfLinesWhenCollapsed; // @synthesize numberOfLinesWhenCollapsed=_numberOfLinesWhenCollapsed;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (_Bool)_canShowAllText;

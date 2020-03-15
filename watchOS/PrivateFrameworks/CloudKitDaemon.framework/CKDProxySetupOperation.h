@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)operationWithProxy:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak CKDClientContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak CKDClientProxy *proxy; // @synthesize proxy=_proxy;
 @property(nonatomic) _Bool isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
-- (void).cxx_destruct;
 - (void)_markFinished;
 - (void)_setIsFinished:(_Bool)arg1;
 - (void)_setIsExecuting:(_Bool)arg1;

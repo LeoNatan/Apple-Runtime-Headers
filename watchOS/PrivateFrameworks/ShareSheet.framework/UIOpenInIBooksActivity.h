@@ -9,7 +9,7 @@
 #import <ShareSheet/LSOpenResourceOperationDelegate-Protocol.h>
 #import <ShareSheet/UIManagedConfigurationRestrictableActivity-Protocol.h>
 
-@class LSApplicationProxy, NSOperation, NSString, NSURL;
+@class LSApplicationProxy, NSOperation, NSString, NSURL, UIPrintInteractionController;
 
 @interface UIOpenInIBooksActivity : UIActivity <LSOpenResourceOperationDelegate, UIManagedConfigurationRestrictableActivity>
 {
@@ -20,6 +20,7 @@
     NSString *_applicationIdentifier;
     LSApplicationProxy *_applicationProxy;
     NSOperation *_operation;
+    UIPrintInteractionController *_printInteractionController;
 }
 
 + (id)bestJobNameForActivityItems:(id)arg1;
@@ -27,6 +28,8 @@
 + (id)defaultJobName;
 + (int)activityCategory;
 + (unsigned int)_xpcAttributes;
+- (void).cxx_destruct;
+@property(retain, nonatomic) UIPrintInteractionController *printInteractionController; // @synthesize printInteractionController=_printInteractionController;
 @property(retain, nonatomic) NSOperation *operation; // @synthesize operation=_operation;
 @property(retain, nonatomic) LSApplicationProxy *applicationProxy; // @synthesize applicationProxy=_applicationProxy;
 @property(retain, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
@@ -34,7 +37,6 @@
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
 @property(nonatomic) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
-- (void).cxx_destruct;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)_cleanup;
 - (void)performActivity;
@@ -44,7 +46,6 @@
 - (void)openResourceOperation:(id)arg1 didFinishCopyingResource:(id)arg2;
 - (void)_openDocumentWithApplication;
 - (id)_loadedApplicationProxy;
-- (id)printInteractionController;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (_Bool)_appIsDocumentTypeOwner;
 - (id)activityTitle;

@@ -20,12 +20,12 @@
     NSDate *_timestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy, nonatomic) NSArray *elements; // @synthesize elements=_elements;
 @property(nonatomic) long long displayBacklightLevel; // @synthesize displayBacklightLevel=_backlightLevel;
 @property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(retain, nonatomic) FBSDisplayConfiguration *displayConfiguration; // @synthesize displayConfiguration=_displayConfiguration;
-- (void).cxx_destruct;
 - (struct CGRect)referenceBounds;
 - (id)display;
 - (long long)displayType;

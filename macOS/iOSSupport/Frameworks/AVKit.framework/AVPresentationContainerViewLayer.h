@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     AVPresentationContainerViewAppearanceProxy *_appearanceProxy;
 }
 
-@property(nonatomic) BOOL wantsAppearanceConfigValues; // @synthesize wantsAppearanceConfigValues=_wantsAppearanceConfigValues;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL wantsAppearanceConfigValues; // @synthesize wantsAppearanceConfigValues=_wantsAppearanceConfigValues;
 - (void)setContinuousCorners:(BOOL)arg1;
 - (BOOL)continuousCorners;
 - (void)setCornerRadius:(double)arg1;

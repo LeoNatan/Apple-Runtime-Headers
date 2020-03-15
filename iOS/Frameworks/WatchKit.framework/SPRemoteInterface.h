@@ -73,6 +73,7 @@
 + (id)startRemoteInterfaceWithBundle:(id)arg1;
 + (id)startRemoteInterface;
 + (id)sharedRemoteInterface;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType addPassesCompletion; // @synthesize addPassesCompletion=_addPassesCompletion;
 @property(retain, nonatomic) NSBundle *extensionBundle; // @synthesize extensionBundle=_extensionBundle;
 @property(retain, nonatomic) NSMutableArray *openParentRequests; // @synthesize openParentRequests=_openParentRequests;
@@ -90,7 +91,6 @@
 @property(retain, nonatomic) id runLoopObserver; // @synthesize runLoopObserver=_runLoopObserver;
 @property(retain, nonatomic) NSMutableArray *activeComplicationsConnections; // @synthesize activeComplicationsConnections=_activeComplicationsConnections;
 @property(retain, nonatomic) id <SPRemoteInterfaceDataDelegateProtocol> dataDelegate; // @synthesize dataDelegate=_dataDelegate;
-- (void).cxx_destruct;
 - (id)controllerMethods:(id)arg1;
 - (void)_fillDataWithRandom:(id)arg1 length:(long long)arg2;
 - (void)getComplicationData:(id)arg1;

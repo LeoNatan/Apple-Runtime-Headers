@@ -37,6 +37,7 @@
     struct CGRect _visibleContentRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize cachedMaxHeightForColumnWidth; // @synthesize cachedMaxHeightForColumnWidth=_cachedMaxHeightForColumnWidth;
 @property(nonatomic) long long currentColumnSpan; // @synthesize currentColumnSpan=_currentColumnSpan;
 @property(retain, nonatomic) PXGadgetOrbContext *previewOrbContext; // @synthesize previewOrbContext=_previewOrbContext;
@@ -58,7 +59,6 @@
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
-- (void).cxx_destruct;
 - (void)updateIfNeeded;
 - (void)_updateColumnSettings;
 - (long long)_columnSpanForTraitCollection:(id)arg1;
@@ -68,14 +68,14 @@
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
-- (_Bool)gadget:(id)arg1 transitionToViewController:(struct NSObject *)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)gadget:(id)arg1 transitionToViewController:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)gadget:(id)arg1 didChange:(unsigned long long)arg2;
 - (_Bool)navigateToGadget:(id)arg1 animated:(_Bool)arg2;
 - (void)prefetchDuringScrollingForWidth:(double)arg1;
-- (struct NSObject *)targetPreviewViewForLocation:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
+- (id)targetPreviewViewForLocation:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(_Bool)arg2;
 - (void)commitPreviewViewController:(id)arg1;
-- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2;
+- (id)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(id)arg2;
 - (void)gadgetControllerFinishedUpdatingDataSourceWithChange:(id)arg1;
 - (void)gadgetControllerHasDisappeared;
 - (void)gadgetControllerHasAppeared;
@@ -84,13 +84,14 @@
 - (void)_updateCollectionViewPaging;
 - (void)contentViewDidDisappear;
 - (void)contentViewWillAppear;
-- (struct NSObject *)contentViewController;
+- (id)contentViewController;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)userDidSelectAccessoryButton:(struct NSObject *)arg1;
+- (void)userDidSelectAccessoryButton:(id)arg1;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
 @property(readonly, nonatomic) NSString *localizedTitle;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 - (void)setCollectionHeight:(double)arg1;
 - (void)setCollectionAccessoryButtonTitle:(id)arg1;
 - (void)setCollectionAccessoryButtonType:(unsigned long long)arg1;
@@ -111,9 +112,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 
 @end
 

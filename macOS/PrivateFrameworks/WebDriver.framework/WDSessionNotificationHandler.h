@@ -16,10 +16,10 @@
 }
 
 + (id)handlerForNotification:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long registrationID; // @synthesize registrationID=_registrationID;
-- (void).cxx_destruct;
 
 @end
 

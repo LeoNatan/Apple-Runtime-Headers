@@ -16,11 +16,11 @@
     NSMutableArray *_relationshipValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *relationshipValues; // @synthesize relationshipValues=_relationshipValues;
 @property(retain, nonatomic) NSMutableArray *attributeValues; // @synthesize attributeValues=_attributeValues;
 @property(nonatomic) struct __CFArray *hashes; // @synthesize hashes=_hashes;
 @property(nonatomic) struct __CFArray *uris; // @synthesize uris=_uris;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isUpdate;
 @property(readonly, nonatomic) unsigned long long count;
 - (id)description;

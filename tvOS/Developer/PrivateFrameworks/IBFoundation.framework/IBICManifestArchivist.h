@@ -16,10 +16,10 @@
 }
 
 + (id)manifestArchivistForSlottedAsset:(id)arg1 childrenManifestKey:(id)arg2;
+- (void).cxx_destruct;
 @property __weak IBICAbstractCatalogItem *delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *childrenManifestKey; // @synthesize childrenManifestKey=_childrenManifestKey;
 @property(readonly) NSString *manifestFileName; // @synthesize manifestFileName=_manifestFileName;
-- (void).cxx_destruct;
 - (id)manifestContent;
 - (id)infoDictionary;
 - (void)replaceChildrenFromFileSystemSnapshot:(id)arg1 results:(id)arg2;
@@ -31,7 +31,7 @@
 - (_Bool)validateManifestChildEntries:(id)arg1 results:(id)arg2;
 - (_Bool)validateManifestTags:(id)arg1 results:(id)arg2;
 - (_Bool)validateManifestVersion:(id)arg1 results:(id)arg2;
-- (id)parseManifestFromSnapshot:(id)arg1 results:(id)arg2;
+- (id)parseManifestFromSnapshot:(id)arg1 results:(id)arg2 returningFileData:(id *)arg3;
 - (id)initWithDelegate:(id)arg1;
 - (id)jsonRepresentationOfSize:(struct CGSize)arg1;
 - (id)jsonRepresentationOfPoint:(struct CGPoint)arg1;

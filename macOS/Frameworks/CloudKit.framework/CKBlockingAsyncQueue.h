@@ -16,11 +16,11 @@
     NSObject<OS_dispatch_semaphore> *_queueSema;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *queueSema; // @synthesize queueSema=_queueSema;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) unsigned int qosClass; // @synthesize qosClass=_qosClass;
 @property(nonatomic) unsigned long long width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (void)performBarrierBlock:(CDUnknownBlockType)arg1;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 - (id)initWithWidth:(unsigned long long)arg1;

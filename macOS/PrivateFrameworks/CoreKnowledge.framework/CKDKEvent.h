@@ -14,9 +14,9 @@
     INInteraction *interaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) INInteraction *interaction; // @synthesize interaction;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid;
-- (void).cxx_destruct;
 
 @end
 

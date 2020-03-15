@@ -16,11 +16,11 @@
     NSObject<OS_tcp_connection> *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_tcp_connection> *connection; // @synthesize connection=_connection;
 @property _Bool doCleanupWhenWritesCompleted; // @synthesize doCleanupWhenWritesCompleted=_doCleanupWhenWritesCompleted;
 @property long long pendingWrites; // @synthesize pendingWrites=_pendingWrites;
 @property __weak id <NSProxyConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)cancel;
 - (void)write:(id)arg1 handler:(CDUnknownBlockType)arg2;

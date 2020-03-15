@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)sortDescriptorWithRelatedProperties:(id)arg1 ascending:(BOOL)arg2;
-@property(copy, nonatomic) NSDictionary *relatedProperties; // @synthesize relatedProperties=_relatedProperties;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *relatedProperties; // @synthesize relatedProperties=_relatedProperties;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

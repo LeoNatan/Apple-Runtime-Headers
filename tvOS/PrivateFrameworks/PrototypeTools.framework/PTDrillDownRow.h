@@ -14,10 +14,16 @@
     NSString *_childKeyPath;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)rowWithTitleKeyPath:(id)arg1 childSettingsKeyPath:(id)arg2;
 + (id)rowWithTitle:(id)arg1 childSettingsKeyPath:(id)arg2;
-@property(readonly, nonatomic) NSString *childKeyPath; // @synthesize childKeyPath=_childKeyPath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *childKeyPath; // @synthesize childKeyPath=_childKeyPath;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)value;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (void)setSettings:(id)arg1;

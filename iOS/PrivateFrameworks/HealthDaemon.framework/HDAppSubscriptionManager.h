@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_launchTimerQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldScheduleLaunches; // @synthesize shouldScheduleLaunches=_shouldScheduleLaunches;
 @property(nonatomic) int backgroundAppRefreshNotifyToken; // @synthesize backgroundAppRefreshNotifyToken=_backgroundAppRefreshNotifyToken;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *launchTimerQueue; // @synthesize launchTimerQueue=_launchTimerQueue;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) HDBackgroundTaskScheduler *backgroundTaskScheduler; // @synthesize backgroundTaskScheduler=_backgroundTaskScheduler;
 @property(retain, nonatomic) HDAppAssertionManager *appAssertionManager; // @synthesize appAssertionManager=_appAssertionManager;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)unitTesting_synchronizeWithQueue;
 - (_Bool)areSubscriptionsSupportedForDataTypeCode:(long long)arg1;
 - (void)ackForBundleID:(id)arg1 dataCode:(long long)arg2 anchor:(id)arg3 ackTime:(id)arg4;

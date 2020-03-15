@@ -17,12 +17,12 @@
     NSArray *_isUpdatedBoolsArray;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *isUpdatedBoolsArray; // @synthesize isUpdatedBoolsArray=_isUpdatedBoolsArray;
 @property(copy, nonatomic) NSArray *isEqualBoolsArray; // @synthesize isEqualBoolsArray=_isEqualBoolsArray;
 @property(copy, nonatomic) NSArray *updatedRoutes; // @synthesize updatedRoutes=_updatedRoutes;
 @property(copy, nonatomic) NSArray *oldRoutes; // @synthesize oldRoutes=_oldRoutes;
 @property(copy, nonatomic) NSNumber *version; // @synthesize version=_version;
-- (void).cxx_destruct;
 
 @end
 

@@ -20,10 +20,10 @@
 + (id)_allApps;
 + (id)allAppsForDevice:(id)arg1;
 + (id)appForBundleIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;
 @property(nonatomic) unsigned long long complicationType; // @synthesize complicationType=_complicationType;
 - (void)setIcon:(id)arg1;
-- (void).cxx_destruct;
 - (id)icon;
 - (id)initWithAppInfo:(struct _NTKCompanion1stPartyInfo)arg1;
 - (id)complication;

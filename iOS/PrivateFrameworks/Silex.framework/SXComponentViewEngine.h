@@ -17,9 +17,9 @@
     id <SXComponentViewPostProcessorManager> _postProcessorManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXComponentViewPostProcessorManager> postProcessorManager; // @synthesize postProcessorManager=_postProcessorManager;
 @property(readonly, nonatomic) SXComponentTypeMatching *factoryMatching; // @synthesize factoryMatching=_factoryMatching;
-- (void).cxx_destruct;
 - (void)removeFactory:(id)arg1;
 - (void)addFactory:(id)arg1;
 - (id)componentViewForComponent:(id)arg1;

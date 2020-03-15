@@ -22,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=shouldDismissWhenBackgrounded) BOOL dismissWhenBackgrounded; // @synthesize dismissWhenBackgrounded=_dismissWhenBackgrounded;
 @property(copy, nonatomic) NSSet *typesRequiringShareAuthorization; // @synthesize typesRequiringShareAuthorization=_typesRequiringShareAuthorization;
 @property(copy, nonatomic) NSSet *typesRequiringReadAuthorization; // @synthesize typesRequiringReadAuthorization=_typesRequiringReadAuthorization;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *shareUsageDescription; // @synthesize shareUsageDescription=_shareUsageDescription;
 @property(copy, nonatomic) NSString *readUsageDescription; // @synthesize readUsageDescription=_readUsageDescription;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

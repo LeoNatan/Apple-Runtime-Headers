@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
-@property(readonly, nonatomic) ReadingListItem *readingListItem; // @synthesize readingListItem=_readingListItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ReadingListItem *readingListItem; // @synthesize readingListItem=_readingListItem;
 - (BOOL)hasDefaultSiteIcon;
 - (id)secondaryIcon;
 - (id)icon;

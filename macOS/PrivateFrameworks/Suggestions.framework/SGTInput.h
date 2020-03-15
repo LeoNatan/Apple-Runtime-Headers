@@ -34,6 +34,7 @@
     NSString *substringOfInterest;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *substringOfInterest; // @synthesize substringOfInterest;
 @property long long typingScope; // @synthesize typingScope;
 @property(readonly) NSIndexSet *validatedSuggestionScopes; // @synthesize validatedSuggestionScopes;
@@ -43,7 +44,6 @@
 @property(copy) CDUnknownBlockType suggestersAreReadyBlock; // @synthesize suggestersAreReadyBlock;
 @property __weak id <SGTInputDelegate> delegate; // @synthesize delegate;
 @property(readonly) unsigned long long userTypedStringLength; // @synthesize userTypedStringLength;
-- (void).cxx_destruct;
 - (id)description;
 - (struct _NSRange)searchFieldRangeForInputRange:(struct _NSRange)arg1;
 - (id)infoForSuggester:(id)arg1;

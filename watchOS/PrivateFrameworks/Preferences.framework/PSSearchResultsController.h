@@ -21,9 +21,9 @@
     id <PSSearchResultsControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PSSearchResultsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PSSearchResults *searchResults; // @synthesize searchResults=_searchResults;
-- (void).cxx_destruct;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_updateIconViews:(_Bool)arg1;

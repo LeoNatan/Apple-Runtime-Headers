@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
     id <ARUIBlurRendering> _blurRenderer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ARUIBlurRendering> blurRenderer; // @synthesize blurRenderer=_blurRenderer;
 @property(nonatomic) __weak id <ARUICompositeRendering> compositeRenderer; // @synthesize compositeRenderer=_compositeRenderer;
-- (void).cxx_destruct;
 - (int)_smallBlurRadiusForSize:(float)arg1;
 - (int)_largeBlurRadiusForSize:(float)arg1;
 - (void)_renderWithCommandEncoder:(id)arg1 ring:(id)arg2 sparksCelebration:(id)arg3 uniformsType:(unsigned int)arg4;

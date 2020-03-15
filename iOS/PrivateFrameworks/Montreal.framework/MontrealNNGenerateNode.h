@@ -16,11 +16,11 @@
     CDStruct_96916c69 _parameters;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long weightDataFormat; // @synthesize weightDataFormat=_weightDataFormat;
 @property(readonly) MontrealNNModelNode *node; // @synthesize node=_node;
 @property(readonly) unsigned long long weightIter; // @synthesize weightIter=_weightIter;
 @property(readonly) CDStruct_96916c69 parameters; // @synthesize parameters=_parameters;
-- (void).cxx_destruct;
 - (void)setInput:(id)arg1 inputIndex:(long long)arg2;
 - (void)setInputs:(id)arg1;
 - (unsigned long long)generateNode:(id)arg1 node:(id)arg2 weightIter:(unsigned long long)arg3 inputs:(id)arg4 outputs:(id)arg5;

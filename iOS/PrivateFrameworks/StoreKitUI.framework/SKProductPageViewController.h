@@ -50,6 +50,7 @@
 + (id)_defaultClientIdentifier;
 + (id)_defaultClientInterface;
 + (void)getCanLoadWithURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cancelButtonTitle; // @synthesize cancelButtonTitle=_cancelButtonTitle;
 @property(nonatomic) _Bool askToBuy; // @synthesize askToBuy=_askToBuy;
 @property(nonatomic) long long URLBagType; // @synthesize URLBagType=_urlBagType;
@@ -62,7 +63,6 @@
 @property(nonatomic) __weak id <SKProductPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *affiliateIdentifier; // @synthesize affiliateIdentifier=_affiliateIdentifier;
 @property(copy, nonatomic) NSString *additionalPurchaseParameters; // @synthesize additionalPurchaseParameters=_additionalPurchaseParameters;
-- (void).cxx_destruct;
 - (void)_showProductPage:(id)arg1 pageEvent:(id)arg2;
 - (void)_showPreviewOverlayAnimated:(_Bool)arg1;
 - (void)_sendDidFailLoadWithError:(id)arg1;

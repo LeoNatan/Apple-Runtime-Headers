@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (void)notifyTotalSpaceUsedDidChange:(long long)arg1;
 - (void)notifyTipsDidChange:(id)arg1;
 - (void)notifyResourcesDidChange:(id)arg1;

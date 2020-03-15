@@ -14,8 +14,8 @@
 }
 
 + (id)supportedFeatures;
-@property(readonly, nonatomic) IKAppPlayerBridge *playerBridge; // @synthesize playerBridge=_playerBridge;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IKAppPlayerBridge *playerBridge; // @synthesize playerBridge=_playerBridge;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

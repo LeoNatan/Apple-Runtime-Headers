@@ -17,8 +17,8 @@
 }
 
 + (void)initialize;
-@property(retain, nonatomic) UNNotificationServiceExtension *extensionInstance; // @synthesize extensionInstance=_extensionInstance;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UNNotificationServiceExtension *extensionInstance; // @synthesize extensionInstance=_extensionInstance;
 - (id)_stageAttachmentsForNotificationContent:(id)arg1;
 - (void)serviceExtensionPerformCleanup;
 - (void)serviceExtensionTimeWillExpire;

@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 
 + (id)configureClass:(id)arg1;
 + (id)objectWithName:(id)arg1;
-@property(retain, nonatomic) NSString *signatureName; // @synthesize signatureName=_signatureName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *signatureName; // @synthesize signatureName=_signatureName;
 - (void)evaluateSignatureForEvent:(id)arg1;
 - (int)configureInstance:(id)arg1;
 - (int)read:(id)arg1 returnedValues:(id)arg2;

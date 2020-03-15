@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_alternativesButtons;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *alternativesButtons; // @synthesize alternativesButtons=_alternativesButtons;
 @property(retain, nonatomic) UIView *horizontalDivider; // @synthesize horizontalDivider=_horizontalDivider;
 @property(retain, nonatomic) UIView *verticalDivider; // @synthesize verticalDivider=_verticalDivider;
-- (void).cxx_destruct;
 - (void)highlightButtonAtIndex:(long long)arg1;
 - (long long)indexOfButtonForPoint:(struct CGPoint)arg1;
 - (void)setButtonLabels:(id)arg1;

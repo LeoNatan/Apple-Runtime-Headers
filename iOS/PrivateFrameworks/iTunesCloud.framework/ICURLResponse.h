@@ -18,11 +18,11 @@
     NSURL *_bodyDataURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *bodyDataURL; // @synthesize bodyDataURL=_bodyDataURL;
 @property(readonly, nonatomic) NSData *bodyData; // @synthesize bodyData=_bodyData;
 @property(readonly, nonatomic) NSURLResponse *urlResponse; // @synthesize urlResponse=_urlResponse;
 @property(readonly, nonatomic) NSURLRequest *urlRequest; // @synthesize urlRequest=_urlRequest;
-- (void).cxx_destruct;
 - (void)_prepareParsedBodyResponse;
 - (id)parsedBody;
 - (id)parsedBodyDictionary;

@@ -21,10 +21,10 @@
 }
 
 + (id)nameForOwner:(id)arg1 UUID:(id)arg2 tag:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKStateMachineState *currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) __weak id <HKStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)graphDescription;
 - (void)_dequeueEvent;
 - (void)_handleEvent:(long long)arg1 date:(id)arg2 error:(id)arg3 completion:(CDUnknownBlockType)arg4;

@@ -25,6 +25,7 @@
     NSString *_watchCountryCodeOverride;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *watchCountryCodeOverride; // @synthesize watchCountryCodeOverride=_watchCountryCodeOverride;
 @property(retain, nonatomic) NSDate *currentDateOverride; // @synthesize currentDateOverride=_currentDateOverride;
 @property(nonatomic) __weak ACHWorkoutUtility *workoutUtility; // @synthesize workoutUtility=_workoutUtility;
@@ -33,7 +34,6 @@
 @property(nonatomic) __weak ACHAchievementProgressEngine *progressProvider; // @synthesize progressProvider=_progressProvider;
 @property(nonatomic) __weak ACHEarnedInstanceAwardingEngine *engine; // @synthesize engine=_engine;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)watchCountryCode;
 - (id)currentDate;
 - (_Bool)_handlesTemplate:(id)arg1;

@@ -19,14 +19,13 @@
 
 + (void)provideCapabilitiesToBuilder:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL stopsOnFirstMatch; // @synthesize stopsOnFirstMatch=_stopsOnFirstMatch;
 @property(copy) NSString *transformationDescription; // @synthesize transformationDescription=_transformationDescription;
-- (void).cxx_destruct;
 - (id)requiredKeyPathsOrError:(id *)arg1;
 - (id)iteratorForInput:(id)arg1;
 - (id)transform:(id)arg1 relatedElements:(id *)arg2;
 @property(readonly) BOOL supportsAttributeKeyPathAnalysis;
-@property(readonly) BOOL supportsRemoteEvaluation;
 - (BOOL)canBeRemotelyEvaluatedWithCapabilities:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

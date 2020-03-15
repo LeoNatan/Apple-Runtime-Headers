@@ -41,6 +41,7 @@
 + (id)sidebarIconWithName:(id)arg1;
 + (id)frameworkBundle;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned short familyID; // @synthesize familyID=_familyID;
 @property(retain, nonatomic) NSString *enclosureColor; // @synthesize enclosureColor=_enclosureColor;
 @property(retain, nonatomic) NSString *color; // @synthesize color=_color;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic) NSString *deviceClass; // @synthesize deviceClass=_deviceClass;
 @property(retain, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isClassicIPodDeviceType;
 @property(readonly, nonatomic) BOOL isIOSDeviceType;
 - (BOOL)isEqual:(id)arg1;

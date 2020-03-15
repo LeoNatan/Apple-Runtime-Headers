@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
     double _maxTitleWidthPercentage;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowWrappingTitle; // @synthesize allowWrappingTitle=_allowWrappingTitle;
 @property(nonatomic) double maxTitleWidthPercentage; // @synthesize maxTitleWidthPercentage=_maxTitleWidthPercentage;
 @property(retain, nonatomic) NSView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) double valueViewBottomInset; // @synthesize valueViewBottomInset=_valueViewBottomInset;
 @property(nonatomic) double valueViewTopInset; // @synthesize valueViewTopInset=_valueViewTopInset;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateValueViewAXTitle;
 - (void)_updateInternalConstraints;
 @property(nonatomic) double titleAndValueGap; // @dynamic titleAndValueGap;

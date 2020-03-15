@@ -26,6 +26,7 @@
     UIColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
 @property(nonatomic) float animationDuration; // @synthesize animationDuration=_animationDuration;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UIColor *startTextColor; // @synthesize startTextColor=_startTextColor;
 @property(nonatomic) float hyphenationFactor; // @synthesize hyphenationFactor=_hyphenationFactor;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
-- (void).cxx_destruct;
 - (id)_createGlyphImage:(struct CGRect)arg1 glyphRange:(struct _NSRange)arg2 layoutManager:(id)arg3;
 - (id)_glyphImageForWord:(id)arg1 frame:(struct CGRect)arg2 glyphRange:(struct _NSRange)arg3 textColor:(id)arg4;
 - (void)_resetState;

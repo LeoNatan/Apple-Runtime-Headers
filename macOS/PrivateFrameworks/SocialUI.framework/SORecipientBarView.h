@@ -18,12 +18,12 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *recipientActionsLeadingLock; // @synthesize recipientActionsLeadingLock=_recipientActionsLeadingLock;
 @property(retain, nonatomic) NSView *displayedRecipientActionsView; // @synthesize displayedRecipientActionsView=_displayedRecipientActionsView;
 @property(retain) SOAdjustableLayoutView *recipientActionsView; // @synthesize recipientActionsView=_recipientActionsView;
 @property(retain) SOTokenField *recipientTokenField; // @synthesize recipientTokenField=_recipientTokenField;
 @property(retain) SOFlexibleScrollView *recipientScrollView; // @synthesize recipientScrollView=_recipientScrollView;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

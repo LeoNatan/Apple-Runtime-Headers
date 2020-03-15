@@ -16,9 +16,9 @@
     CSLStackshotAndSysdiagnoseWriter *_diagnosticWriter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLStackshotAndSysdiagnoseWriter *diagnosticWriter; // @synthesize diagnosticWriter=_diagnosticWriter;
 @property(retain, nonatomic) CSLStuckTransactionDialog *dialog; // @synthesize dialog=_dialog;
-- (void).cxx_destruct;
 - (void)stuckTransactionDialogDidTapButton:(id)arg1;
 - (void)stuckTransactionDialogDidDismiss:(id)arg1;
 - (void)_showStuckPrelaunchProviderDialogIfInternal:(id)arg1;

@@ -14,9 +14,9 @@
     NSArray *_prefetchedProperties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *prefetchedProperties; // @synthesize prefetchedProperties=_prefetchedProperties;
 @property(readonly, copy, nonatomic) NSString *entityTypeString; // @synthesize entityTypeString=_entityTypeString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUISortDescriptorListViewElement *sortDescriptorListViewElement;
 @property(readonly, nonatomic) SKUIPredicateListViewElement *predicateListViewElement;
 @property(readonly, nonatomic) SKUILimitListViewElement *limitListViewElement;

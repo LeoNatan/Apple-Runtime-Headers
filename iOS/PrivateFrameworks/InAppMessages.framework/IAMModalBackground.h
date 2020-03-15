@@ -17,9 +17,9 @@
 + (id)background3;
 + (id)background2;
 + (id)background1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
-- (void).cxx_destruct;
 - (id)initWithStartingColor:(id)arg1 endingColor:(id)arg2;
 - (id)initWithColors:(id)arg1 atLocations:(id)arg2;
 

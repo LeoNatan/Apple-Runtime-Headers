@@ -26,6 +26,7 @@
 }
 
 + (id)controllerWithOptions:(id)arg1 schedulerProvider:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNCancelable> contactStoreDidChangeToken; // @synthesize contactStoreDidChangeToken=_contactStoreDidChangeToken;
 @property(retain, nonatomic) CNFuture *deleteContactsFromWhitelistFuture; // @synthesize deleteContactsFromWhitelistFuture=_deleteContactsFromWhitelistFuture;
 @property(retain, nonatomic) CNFuture *updateContactsInWhitelistFuture; // @synthesize updateContactsInWhitelistFuture=_updateContactsInWhitelistFuture;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) id <CNUICoreContactStoreFacade> mainContactStoreFacade; // @synthesize mainContactStoreFacade=_mainContactStoreFacade;
 @property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsModelFetching> modelFetcher; // @synthesize modelFetcher=_modelFetcher;
 @property(nonatomic) __weak id <CNUICoreFamilyMemberContactsObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (void)finishWhitelistedContactsTasks;
 - (id)contactRepresentingItem:(id)arg1;
 - (void)updateWhitelistByRemovingContacts:(id)arg1;

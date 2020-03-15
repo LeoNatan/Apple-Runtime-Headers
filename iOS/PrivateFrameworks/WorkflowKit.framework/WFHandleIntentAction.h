@@ -24,12 +24,12 @@
 
 + (id)bundleIdentifierForIntent:(id)arg1;
 + (id)appIdentifierForIntent:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) INCExtensionConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerCompletionHandler; // @synthesize viewControllerCompletionHandler=_viewControllerCompletionHandler;
 @property(retain, nonatomic) UIViewController<WFIntentViewController> *intentViewController; // @synthesize intentViewController=_intentViewController;
 @property(retain, nonatomic) WFIntentExecutor *executor; // @synthesize executor=_executor;
 @property(readonly, nonatomic) NSString *inputParameterName; // @synthesize inputParameterName=_inputParameterName;
-- (void).cxx_destruct;
 - (_Bool)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2;
 - (void)intentExecutor:(id)arg1 showConfirmationForInteraction:(id)arg2 confirmationRequired:(_Bool)arg3 authenticationRequired:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)intentExecutorRequestsContinueInApp:(id)arg1;

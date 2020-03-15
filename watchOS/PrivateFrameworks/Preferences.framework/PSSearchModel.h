@@ -40,6 +40,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *rootEntries; // @synthesize rootEntries=_rootEntries;
 @property(nonatomic) _Bool showSectionInDetailText; // @synthesize showSectionInDetailText=_showSectionInDetailText;
 @property(retain) PSSearchOperation *activeSearchOperation; // @synthesize activeSearchOperation=_activeSearchOperation;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic, getter=isIndexing) _Bool indexing; // @synthesize indexing=_indexing;
 @property(copy) NSString *currentQuery; // @synthesize currentQuery=_currentQuery;
 @property(nonatomic) __weak id <PSSearchModelDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)recursiveDescription;
 - (void)invalidateSpecifiersForDataSource:(id)arg1;
 - (void)dataSource:(id)arg1 performUpdates:(id)arg2;

@@ -20,10 +20,10 @@
 + (id)configurationProfiles;
 + (id)sharedInstance;
 + (_Bool)isForPairedDevice;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPSDomainAccessor *nanoDomainAccessor; // @synthesize nanoDomainAccessor=_nanoDomainAccessor;
 @property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
 @property(nonatomic) __weak PSListController *parentController; // @synthesize parentController=_parentController;
-- (void).cxx_destruct;
 - (void)_unpairedNotification:(id)arg1;
 - (void)updateUI:(id)arg1;
 - (id)specifiersWithSpecifier:(id)arg1;

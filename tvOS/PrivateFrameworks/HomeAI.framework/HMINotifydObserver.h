@@ -20,11 +20,11 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) int token; // @synthesize token=_token;
 @property(readonly, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) const char *notificationName; // @synthesize notificationName=_notificationName;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)publishInitialValue;
 - (void)publishValueForToken:(int)arg1;

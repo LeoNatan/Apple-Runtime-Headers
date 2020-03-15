@@ -8,12 +8,11 @@
 
 @interface ABCDInfo (AddressBook)
 + (id)nts_CreateInfoWithAddressBook:(id)arg1 inPersistentStoreAtURL:(id)arg2;
-+ (id)_generateSerialNumber;
 + (id)metadataType;
 + (void)addMappedKeysToDictionary:(id)arg1 mappedEntities:(id)arg2 mappedEntitiesMainKeys:(id)arg3 entityWithValueConverter:(struct __CFDictionary *)arg4 valueWithEntityConverter:(struct __CFDictionary *)arg5;
 - (id)copyMultiValueWithRecord:(id)arg1 withProperty:(id)arg2;
 - (BOOL)applyMultiValue:(id)arg1 withProperty:(id)arg2 toRecord:(id)arg3;
-- (id)fetchedAddressBookSourceWithAddressBook:(id)arg1 store:(id)arg2;
+- (id)fetchedContainerWithAddressBook:(id)arg1 store:(id)arg2;
 - (id)initWithUniqueId:(id)arg1 addressBook:(id)arg2;
 @end
 

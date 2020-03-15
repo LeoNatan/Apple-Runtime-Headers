@@ -17,10 +17,10 @@
     DAOofParams *_responseParams;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DAOofParams *responseParams; // @synthesize responseParams=_responseParams;
 @property(retain, nonatomic) DAOofParams *requestParams; // @synthesize requestParams=_requestParams;
 @property(nonatomic) _Bool isUpdate; // @synthesize isUpdate=_isUpdate;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)disable;
 - (void)settingsRequestFinishedWithResults:(id)arg1 status:(long long)arg2 error:(id)arg3;

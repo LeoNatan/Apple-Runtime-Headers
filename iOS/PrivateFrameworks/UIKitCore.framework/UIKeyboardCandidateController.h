@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 
 + (double)candidateViewAnimationDuration;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(retain, nonatomic) NSDictionary *opacities; // @synthesize opacities=_opacities;
@@ -82,7 +83,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *inlineText; // @synthesize inlineText=_inlineText;
 @property(retain, nonatomic) TIKeyboardCandidateResultSet *candidateResultSet; // @synthesize candidateResultSet=_candidateResultSet;
 @property(nonatomic) __weak id <UIKeyboardCandidateControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dimKeys:(id)arg1;
 - (void)_setRenderConfig:(id)arg1;
 - (void)candidateView:(id)arg1 didAcceptCandidate:(id)arg2 atIndexPath:(id)arg3 inGridType:(long long)arg4 generateFeedback:(_Bool)arg5;

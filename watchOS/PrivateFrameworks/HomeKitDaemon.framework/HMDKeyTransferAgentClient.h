@@ -30,6 +30,7 @@
 
 + (id)logCategory;
 + (void)twoFactorAuthenticationEnabledForAccount:(id)arg1 altDSID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) int tfaState; // @synthesize tfaState=_tfaState;
 @property(nonatomic) _Bool haveCulledPlist; // @synthesize haveCulledPlist=_haveCulledPlist;
 @property(retain, nonatomic) HMFNetMonitor *netMonitor; // @synthesize netMonitor=_netMonitor;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSMutableDictionary *idsKeys; // @synthesize idsKeys=_idsKeys;
 @property(retain, nonatomic) HMFNetServiceBrowser *serviceBrowser; // @synthesize serviceBrowser=_serviceBrowser;
 @property(nonatomic) unsigned int residentProvisioningStatus; // @synthesize residentProvisioningStatus=_residentProvisioningStatus;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)netServiceBrowser:(id)arg1 didAddService:(id)arg2;
 - (void)netService:(id)arg1 didUpdateTXTRecord:(id)arg2;

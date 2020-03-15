@@ -16,9 +16,9 @@
     unsigned long long _visibleSectionConfigsLimit;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long visibleSectionConfigsLimit; // @synthesize visibleSectionConfigsLimit=_visibleSectionConfigsLimit;
 @property(readonly, copy, nonatomic) NSArray *sectionDescriptors; // @synthesize sectionDescriptors=_sectionDescriptors;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithQueueConfig:(id)arg1 appConfiguration:(id)arg2 todayData:(id)arg3 supplementalFeedFilterOptions:(long long)arg4 respectsWidgetVisibleSectionsLimit:(_Bool)arg5;
 - (id)init;

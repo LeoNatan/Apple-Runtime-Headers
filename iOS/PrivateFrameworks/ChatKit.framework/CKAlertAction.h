@@ -12,8 +12,8 @@
 }
 
 + (id)actionWithTitle:(id)arg1 style:(long long)arg2 handler:(CDUnknownBlockType)arg3;
-@property(copy, nonatomic) CDUnknownBlockType __ck_handler; // @synthesize __ck_handler=___ck_handler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType __ck_handler; // @synthesize __ck_handler=___ck_handler;
 
 @end
 

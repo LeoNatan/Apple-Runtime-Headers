@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSArray *_activatedConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activatedConstraints; // @synthesize activatedConstraints=_activatedConstraints;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showBackgroundPlatter; // @synthesize showBackgroundPlatter=_showBackgroundPlatter;
 @property(nonatomic) _Bool showTitle; // @synthesize showTitle=_showTitle;
 @property(retain, nonatomic) CNQuickAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)onLongPress:(id)arg1;
 - (void)performAction;
 - (void)updateConstraints;

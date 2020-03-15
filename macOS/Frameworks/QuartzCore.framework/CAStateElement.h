@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (void)CAMLParserStartElement:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAStateElement *source; // @synthesize source=_source;
 @property(nonatomic) __weak CALayer *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)CAMLTypeSupportedForKey:(id)arg1;

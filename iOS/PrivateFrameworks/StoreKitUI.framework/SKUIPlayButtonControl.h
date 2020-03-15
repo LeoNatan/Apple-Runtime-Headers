@@ -49,6 +49,7 @@
 + (CDStruct_afa449f9)_calculateStatistics:(struct CGImage *)arg1 withSize:(struct CGSize)arg2;
 + (id)blurColorForImage:(id)arg1 forButtonSize:(struct CGSize)arg2 withOffsetRight:(float)arg3 withOffsetBottom:(float)arg4;
 + (id)blurColorForColor:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIButtonViewElement *element; // @synthesize element=_element;
 @property(nonatomic, getter=isDisabledButSelectable) _Bool disabledButSelectable; // @synthesize disabledButSelectable=_disabledButSelectable;
 @property(nonatomic) __weak UIImage *backgroundImageForBlurring; // @synthesize backgroundImageForBlurring=_backgroundImageForBlurring;
@@ -64,7 +65,6 @@
 @property(retain, nonatomic) UIImage *customPlayImage; // @synthesize customPlayImage=_customPlayImage;
 @property(readonly, nonatomic) UIColor *controlForeGroundColor; // @synthesize controlForeGroundColor=_controlForeGroundColor;
 @property(readonly, nonatomic) long long backgroundType; // @synthesize backgroundType=_backgroundType;
-- (void).cxx_destruct;
 - (void)_updateEnabledState;
 - (void)_updateInnerProgressLayerStroke;
 - (void)_useBlurredBackground:(_Bool)arg1;

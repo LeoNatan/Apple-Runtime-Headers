@@ -13,9 +13,10 @@
     NSString *_intentName;
 }
 
-@property(readonly, nonatomic) NSString *intentName; // @synthesize intentName=_intentName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *intentName; // @synthesize intentName=_intentName;
 - (id)localizedLabelForPossibleState:(id)arg1;
+- (_Bool)parameterStateIsValid:(id)arg1;
 - (_Bool)alwaysShowsButton;
 - (void)possibleStatesDidChange;
 - (id)initWithDefinition:(id)arg1;

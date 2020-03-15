@@ -13,8 +13,8 @@
     id <UINSActivityItemsConfigurationReading> _activityItemsConfiguration;
 }
 
-@property(retain, nonatomic, setter=_setActivityItemsConfiguration:) id <UINSActivityItemsConfigurationReading> _activityItemsConfiguration; // @synthesize _activityItemsConfiguration;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setActivityItemsConfiguration:) id <UINSActivityItemsConfigurationReading> _activityItemsConfiguration; // @synthesize _activityItemsConfiguration;
 - (void)_share:(id)arg1;
 - (void)setAction:(SEL)arg1;
 - (void)setTarget:(id)arg1;

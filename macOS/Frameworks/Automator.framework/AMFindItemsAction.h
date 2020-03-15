@@ -21,6 +21,7 @@
     NSMutableArray *_whoseItems;
 }
 
+- (void).cxx_destruct;
 @property(retain) AMApplicationDefinition *applicationDefinition; // @synthesize applicationDefinition=_applicationDefinition;
 @property(retain, nonatomic) NSArray *findingNames; // @synthesize findingNames=_findingNames;
 @property(retain) NSMutableArray *whoseItems; // @synthesize whoseItems=_whoseItems;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak NSBox *_whoseBox; // @synthesize _whoseBox;
 @property(nonatomic) __weak NSTextField *_findingLabel; // @synthesize _findingLabel;
 @property(nonatomic) __weak NSPopUpButton *_findingPopUpButton; // @synthesize _findingPopUpButton;
-- (void).cxx_destruct;
 - (void)removeWhoseItem:(id)arg1;
 - (void)addWhoseItem:(id)arg1;
 - (void)changeFinding:(id)arg1;

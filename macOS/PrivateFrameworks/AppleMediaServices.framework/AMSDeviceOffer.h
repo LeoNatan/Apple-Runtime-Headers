@@ -25,13 +25,14 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
++ (id)offersSetFromArray:(id)arg1;
+- (void).cxx_destruct;
 @property(getter=isSubscribed) BOOL subscribed; // @synthesize subscribed=_subscribed;
 @property(copy) NSString *offerIdentifier; // @synthesize offerIdentifier=_offerIdentifier;
 @property(getter=isDowngrading) BOOL downgrading; // @synthesize downgrading=_downgrading;
 @property(readonly) NSSet *serialNumbers; // @synthesize serialNumbers=_serialNumbers;
 @property(copy) NSString *description; // @synthesize description=_description;
 @property(copy) NSNumber *adamId; // @synthesize adamId=_adamId;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly) unsigned long long offerType;

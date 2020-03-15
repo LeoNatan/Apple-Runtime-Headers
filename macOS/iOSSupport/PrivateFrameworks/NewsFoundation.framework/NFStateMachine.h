@@ -19,6 +19,7 @@
     long long _statusToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long statusToken; // @synthesize statusToken=_statusToken;
 @property(retain, nonatomic) NFMutexLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableDictionary *events; // @synthesize events=_events;
@@ -26,7 +27,6 @@
 @property(nonatomic) __weak id owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NFStateMachineState *state; // @synthesize state=_state;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)fireEventWithName:(id)arg1 withContext:(id)arg2;
 - (void)addEvent:(id)arg1;
 - (void)addState:(id)arg1;

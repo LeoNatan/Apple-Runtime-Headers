@@ -22,12 +22,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)registeredDeviceFromDependentRegistrationDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *publicDeviceIdentity; // @synthesize publicDeviceIdentity=_publicDeviceIdentity;
 @property(readonly, nonatomic) NSArray *URIs; // @synthesize URIs=_URIs;
 @property(readonly, nonatomic) NSData *pushToken; // @synthesize pushToken=_pushToken;
 @property(readonly, nonatomic) NSString *hardwareVersion; // @synthesize hardwareVersion=_hardwareVersion;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long uploadURLExpirationTimeSeconds; // @synthesize uploadURLExpirationTimeSeconds=_uploadURLExpirationTimeSeconds;
 @property(retain, nonatomic) NSString *uploadURL; // @synthesize uploadURL=_uploadURL;
 @property(nonatomic) long long reservedSize; // @synthesize reservedSize=_reservedSize;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

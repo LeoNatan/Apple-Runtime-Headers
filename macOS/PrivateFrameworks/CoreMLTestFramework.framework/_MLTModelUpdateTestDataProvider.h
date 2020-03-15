@@ -16,9 +16,9 @@
     _MLTJSONReader *_jsonReader;
 }
 
+- (void).cxx_destruct;
 @property BOOL forTraining; // @synthesize forTraining=_forTraining;
 @property(retain, nonatomic) _MLTJSONReader *jsonReader; // @synthesize jsonReader=_jsonReader;
-- (void).cxx_destruct;
 - (id)featuresAtIndex:(long long)arg1;
 @property(readonly, nonatomic) long long count;
 - (id)initWithRecipePath:(id)arg1 forTraining:(BOOL)arg2 error:(id *)arg3;

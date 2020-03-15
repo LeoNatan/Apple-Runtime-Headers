@@ -16,8 +16,8 @@
 }
 
 + (id)_backgroundColor;
-@property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(readonly, nonatomic) BOOL hasSuggestedLocationResult;
 - (BOOL)shouldAppearWithVisibility:(int)arg1;
 - (BOOL)editor:(id)arg1 shouldClearSelectionFromSubitem:(unsigned long long)arg2;

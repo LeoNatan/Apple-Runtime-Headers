@@ -16,10 +16,10 @@
     CDUnknownBlockType _deallocationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deallocationHandler; // @synthesize deallocationHandler=_deallocationHandler;
 @property(readonly, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(readonly, nonatomic) int blurStyle; // @synthesize blurStyle=_blurStyle;
-- (void).cxx_destruct;
 - (void)didMoveToWindow;
 - (void)updateMatchMove;
 @property(retain, nonatomic) UIImage *blurImage;

@@ -15,9 +15,9 @@
     CDUnknownBlockType _menuDismissalHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType menuDismissalHandler; // @synthesize menuDismissalHandler=_menuDismissalHandler;
 @property(retain, nonatomic) RUIStyle *style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)_menuButtonPressed:(id)arg1;

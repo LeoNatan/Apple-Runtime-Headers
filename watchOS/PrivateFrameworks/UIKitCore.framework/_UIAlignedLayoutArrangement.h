@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)_configurationHistoryClass;
-@property(nonatomic) unsigned int alignment; // @synthesize alignment=_alignment;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int alignment; // @synthesize alignment=_alignment;
 - (void)_clearAllConstraintsArrays;
 - (void)_updateArrangementConstraints;
 - (void)_addConstraintGroupsAsNecessary;

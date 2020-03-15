@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     id _textFieldTextDidChangeObserver;
     VSFontCenter *_fontCenter;
     UITapGestureRecognizer *_menuRecognizer;
+    UITapGestureRecognizer *_doneRecognizer;
     UIButton *_continueButton;
     NSArray *_bottomButtons;
     NSLayoutConstraint *_continueButtonCenterYConstraint;
@@ -47,6 +48,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_gridLayoutSpacingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *gridLayoutSpacingConstraint; // @synthesize gridLayoutSpacingConstraint=_gridLayoutSpacingConstraint;
 @property(retain, nonatomic) UIView *gridLayoutContainer; // @synthesize gridLayoutContainer=_gridLayoutContainer;
 @property(retain, nonatomic) UIStackView *buttonContainer; // @synthesize buttonContainer=_buttonContainer;
@@ -60,6 +62,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool rebuildingTextField; // @synthesize rebuildingTextField=_rebuildingTextField;
 @property(nonatomic) _Bool recentsOverride; // @synthesize recentsOverride=_recentsOverride;
 @property(nonatomic) _Bool menuOverride; // @synthesize menuOverride=_menuOverride;
+@property(retain, nonatomic) UITapGestureRecognizer *doneRecognizer; // @synthesize doneRecognizer=_doneRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
 @property(nonatomic) __weak id textFieldTextDidChangeObserver; // @synthesize textFieldTextDidChangeObserver=_textFieldTextDidChangeObserver;
@@ -77,7 +80,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *buttonModels; // @synthesize buttonModels=_buttonModels;
 @property(retain, nonatomic) VSCredentialEntryField *credentialEntryField; // @synthesize credentialEntryField=_credentialEntryField;
 @property(nonatomic) __weak id <VSCredentialEntryFieldViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)systemInputViewControllerDidAcceptRecentInput:(id)arg1;
 - (void)systemInputViewController:(id)arg1 didChangeAccessoryVisibility:(_Bool)arg2;
 - (void)layoutBottomButtonForGridKeyboard;
@@ -92,11 +94,14 @@ __attribute__((visibility("hidden")))
 - (void)textFieldDidEndEditing:(id)arg1 reason:(long long)arg2;
 - (void)bottomButtonPressed:(id)arg1;
 - (void)menuPressed:(id)arg1;
+- (void)handleButtonPress;
 - (void)continueButtonPressed:(id)arg1;
+- (void)remoteContinueButtonPressed:(id)arg1;
 - (void)replaceButtonConstraints:(id)arg1;
 - (void)didSelectRecentAccount;
 - (void)showViewElementsAfterRecents;
 - (void)rebuildUIAfterRecents;
+- (void)_addRemoteAppSupportFor:(id)arg1;
 - (void)addSystemInputViewController;
 - (void)replaceInputViewManagedConstraintsWith:(id)arg1;
 - (void)buildAndSetGridLayoutContainer;

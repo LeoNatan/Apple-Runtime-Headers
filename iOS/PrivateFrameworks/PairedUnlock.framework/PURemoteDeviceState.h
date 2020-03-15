@@ -8,6 +8,8 @@
 
 #import <PairedUnlock/NSSecureCoding-Protocol.h>
 
+@class PURemotePasscodePolicy;
+
 @interface PURemoteDeviceState : NSObject <NSSecureCoding>
 {
     _Bool _passcodeSet;
@@ -15,9 +17,12 @@
     _Bool _unlockOnly;
     _Bool _wristDetectEnabled;
     unsigned int _version;
+    PURemotePasscodePolicy *_passcodePolicy;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(retain, nonatomic) PURemotePasscodePolicy *passcodePolicy; // @synthesize passcodePolicy=_passcodePolicy;
 @property(nonatomic, getter=isWristDetectEnabled) _Bool wristDetectEnabled; // @synthesize wristDetectEnabled=_wristDetectEnabled;
 @property(nonatomic, getter=isUnlockOnly) _Bool unlockOnly; // @synthesize unlockOnly=_unlockOnly;
 @property(nonatomic, getter=isPasscodeLocked) _Bool passcodeLocked; // @synthesize passcodeLocked=_passcodeLocked;

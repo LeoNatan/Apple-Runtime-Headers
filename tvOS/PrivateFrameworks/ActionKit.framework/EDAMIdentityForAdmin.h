@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *stateChanged; // @synthesize stateChanged=_stateChanged;
 @property(retain, nonatomic) NSNumber *state; // @synthesize state=_state;
 @property(retain, nonatomic) EDAMIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 
 @end
 

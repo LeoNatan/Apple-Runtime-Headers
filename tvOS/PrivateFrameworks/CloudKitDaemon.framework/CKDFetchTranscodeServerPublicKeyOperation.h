@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct __SecPolicy *)createTranscodeServerTrustPolicy;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *transcodeServerPublicKeyURL; // @synthesize transcodeServerPublicKeyURL=_transcodeServerPublicKeyURL;
 @property(readonly, nonatomic) NSString *transcodeServerHostname; // @synthesize transcodeServerHostname=_transcodeServerHostname;
 @property(retain) CKPublicKey *transcodeServerPublicKey; // @synthesize transcodeServerPublicKey=_transcodeServerPublicKey;
-- (void).cxx_destruct;
 - (id)nameForState:(unsigned long long)arg1;
 - (_Bool)makeStateTransition;
 - (void)fetchRemoteTranscodePublicKey;

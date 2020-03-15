@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSDate *_captureDate;
 }
 
-@property(readonly, copy, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;
 - (void)_releaseSlotIdentifier;
 - (void)dealloc;
 - (id)initWithSessionID:(id)arg1 slotIdentifier:(id)arg2 context:(id)arg3 profileUniqueIdentifier:(id)arg4 aspectRatio:(id)arg5 captureDate:(id)arg6;

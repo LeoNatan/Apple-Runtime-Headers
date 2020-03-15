@@ -25,6 +25,7 @@
     struct CGRect _imageFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double newDataTransitionDuration; // @synthesize newDataTransitionDuration=_newDataTransitionDuration;
 @property(nonatomic) double transitionDuration; // @synthesize transitionDuration=_transitionDuration;
 @property(nonatomic) double cycleInterval; // @synthesize cycleInterval=_cycleInterval;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(nonatomic) struct CGRect imageFrame; // @synthesize imageFrame=_imageFrame;
 @property(copy, nonatomic) NSArray *imageProxies; // @synthesize imageProxies=_imageProxies;
-- (void).cxx_destruct;
 - (unsigned long long)_viewTypeForNumberOfImages:(long long)arg1;
 - (void)_displayPlaceholderView;
 - (void)_fadeToBlack;

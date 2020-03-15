@@ -19,8 +19,8 @@
 
 + (id)dismissActions;
 + (id)existingOverlayForDisplay:(id)arg1;
-@property(readonly, nonatomic, getter=_descriptor) BKSDisplayRenderOverlayDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_descriptor) BKSDisplayRenderOverlayDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

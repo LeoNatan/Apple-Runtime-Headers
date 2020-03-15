@@ -16,11 +16,11 @@
     VSDevice *_device;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSDevice *device; // @synthesize device=_device;
 @property(retain, nonatomic) NSUserDefaults *globalUserDefaults; // @synthesize globalUserDefaults=_globalUserDefaults;
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
-- (void).cxx_destruct;
 - (id)metricUserIDLastGenerated;
 - (void)setMetricUserID:(id)arg1;
 - (id)metricUserID;

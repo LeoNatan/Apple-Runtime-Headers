@@ -19,10 +19,10 @@
 }
 
 + (id)eventFeatureScoreWithFeatureValues:(id)arg1 weightedScore:(double)arg2 prominentFeature:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int prominentFeature; // @synthesize prominentFeature=_prominentFeature;
 @property(readonly, nonatomic) double weightedScore; // @synthesize weightedScore=_weightedScore;
 @property(readonly, nonatomic) NSArray *featureValues; // @synthesize featureValues=_featureValues;
-- (void).cxx_destruct;
 - (id)init;
 - (unsigned int)hash;
 - (unsigned int)_hash;

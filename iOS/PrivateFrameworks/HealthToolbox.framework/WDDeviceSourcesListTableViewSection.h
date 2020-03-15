@@ -16,11 +16,11 @@
     NSMutableSet *_identifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *identifiers; // @synthesize identifiers=_identifiers;
 @property(copy, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(copy, nonatomic) NSArray *sources; // @synthesize sources=_sources;
 @property(copy, nonatomic) NSArray *list; // @synthesize list=_list;
-- (void).cxx_destruct;
 - (void)didSelectRow:(unsigned long long)arg1 representedByCell:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)willSelectRow:(id)arg1;
 - (void)_handleReturnedImage:(id)arg1 forSource:(id)arg2 cell:(id)arg3 tableView:(id)arg4 fetchError:(id)arg5;

@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     VSActivityIndicatorViewController *_signingInIndicatorViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSActivityIndicatorViewController *signingInIndicatorViewController; // @synthesize signingInIndicatorViewController=_signingInIndicatorViewController;
 @property(retain, nonatomic) UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
 @property(retain, nonatomic) VSAutoAuthenticationView *autoAuthenticationView; // @synthesize autoAuthenticationView=_autoAuthenticationView;
 @property(readonly, nonatomic) VSViewModel *viewModel;
 @property(nonatomic) __weak id <VSAuthenticationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isCancellationAllowed) _Bool cancellationAllowed; // @synthesize cancellationAllowed=_cancellationAllowed;
-- (void).cxx_destruct;
 - (void)_showAutoAuthenticationView;
 - (void)_hideAutoAuthenticationView;
 - (void)_hideSigningInIndicatorViewController;

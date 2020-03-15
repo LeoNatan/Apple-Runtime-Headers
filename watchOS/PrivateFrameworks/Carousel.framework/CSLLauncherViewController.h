@@ -27,9 +27,9 @@
     int _viewMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLLauncherTableViewController *launcherTableViewController; // @synthesize launcherTableViewController=_launcherTableViewController;
 @property(nonatomic) int viewMode; // @synthesize viewMode=_viewMode;
-- (void).cxx_destruct;
 - (void)pptPanAround:(id)arg1 panDistance:(float)arg2 panCount:(int)arg3;
 - (void)pptSetClockOffCenter;
 - (void)transitionCoordinatorDidCompleteTransition:(id)arg1;

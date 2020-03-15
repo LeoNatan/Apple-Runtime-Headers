@@ -19,9 +19,9 @@
 + (id)bundleIdentifierFromInfoPlistForAuditToken:(CDStruct_4c969caf *)arg1;
 + (id)bundleIdentifierFromEntitlementForAuditToken:(CDStruct_4c969caf *)arg1;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNManagedProfileConnection> profileConnection; // @synthesize profileConnection=_profileConnection;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)accountForIdentifier:(id)arg1;
 - (id)readableAccountsFromAccounts:(id)arg1;
 - (id)writableAccountsFromAccounts:(id)arg1;

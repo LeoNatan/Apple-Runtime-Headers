@@ -20,11 +20,11 @@
 
 + (id)deviceOptimizerWithParams:(id)arg1;
 + (id)deviceOptimizerWithKernel:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sgdFields; // @synthesize sgdFields=_sgdFields;
 @property(nonatomic) void *BNNSFilter; // @synthesize BNNSFilter=_BNNSFilter;
 @property(readonly, nonatomic) NSData *params; // @synthesize params=_params;
 @property(readonly, nonatomic) id kernel; // @synthesize kernel=_kernel;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)initWithParams:(id)arg1;

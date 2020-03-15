@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
     id <PUSlideshowThemeDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNeedsUpdateTableView:) _Bool _needsUpdateTableView; // @synthesize _needsUpdateTableView=__needsUpdateTableView;
 @property(nonatomic, setter=_setNeedsUpdateBackgroundView:) _Bool _needsUpdateBackgroundView; // @synthesize _needsUpdateBackgroundView=__needsUpdateBackgroundView;
 @property(nonatomic, setter=_setNeedsUpdateSpec:) _Bool _needsUpdateSpec; // @synthesize _needsUpdateSpec=__needsUpdateSpec;
 @property(nonatomic) __weak id <PUSlideshowThemeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) OKProducerPreset *currentPreset; // @synthesize currentPreset=_currentPreset;
-- (void).cxx_destruct;
 - (_Bool)pu_wantsNavigationBarVisible;
 - (void)viewControllerSpec:(id)arg1 didChange:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

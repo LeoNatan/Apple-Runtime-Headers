@@ -11,8 +11,14 @@
 @interface PXGItemsLayout : PXGLayout
 {
     _Bool _loadedItemsNeedUpdate;
+    CDStruct_d97c9657 _updateFlags;
     unsigned long long _delegateRespondsTo;
     long long _applyingItemChangesCount;
+    long long *_currentStylableItems;
+    long long *_pendingStylableItems;
+    _Bool *_pendingAnimations;
+    long long *_styleableAnimations;
+    double *_stylablePaddings;
     _Bool _lazy;
     id <PXGItemsLayoutDelegate> _delegate;
     id <PXGItemsGeometry> _itemsGeometry;
@@ -20,18 +26,27 @@
     struct _NSRange _loadedItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLazy) _Bool lazy; // @synthesize lazy=_lazy;
 @property(nonatomic) long long _numberOfItems; // @synthesize _numberOfItems=__numberOfItems;
 @property(readonly, nonatomic) id <PXGItemsGeometry> itemsGeometry; // @synthesize itemsGeometry=_itemsGeometry;
 @property(nonatomic) struct _NSRange loadedItems; // @synthesize loadedItems=_loadedItems;
 @property(nonatomic) __weak id <PXGItemsLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (void)_handleFocusChangeWithUserInfo:(id)arg1;
+- (void)axGroup:(id)arg1 didChange:(unsigned long long)arg2 userInfo:(id)arg3;
+- (id)axSpriteIndexesInRect:(struct CGRect)arg1;
+- (unsigned int)axSpriteIndexClosestToSpriteIndex:(unsigned int)arg1 inDirection:(unsigned long long)arg2;
+- (id)axVisibleSpriteIndexes;
+- (id)axSpriteIndexes;
+- (struct CGSize)sizeForItem:(long long)arg1;
 - (struct _NSRange)itemsToLoad;
 - (long long)itemForObjectReference:(id)arg1;
 - (_Bool)delegateRespondsTo:(unsigned long long)arg1;
 - (void)endApplyingItemChanges;
 - (void)beginApplyingItemChanges;
 @property(readonly, nonatomic) _Bool isApplyingItemChanges;
+- (void)_updateStylableType:(long long)arg1;
+- (void)invalidateStylableType:(long long)arg1;
 - (void)_updateLoadedItems;
 - (void)updateLoadedItemsIfNeeded;
 - (void)invalidateLoadedItems;
@@ -43,6 +58,8 @@
 - (id)itemsForSpriteIndexes:(id)arg1;
 - (unsigned int)spriteIndexForItem:(long long)arg1;
 - (long long)itemForSpriteIndex:(unsigned int)arg1;
+- (void)setAnimationParameters:(CDStruct_7f320dbc)arg1 forStylableType:(long long)arg2;
+- (void)setItem:(long long)arg1 forStylableType:(long long)arg2 animated:(_Bool)arg3;
 - (void)setNumberOfItems:(long long)arg1 withChangeDetails:(id)arg2 changeMediaVersionHandler:(CDUnknownBlockType)arg3;
 - (void)setNumberOfItems:(long long)arg1 withChangeDetails:(id)arg2;
 @property(nonatomic) long long numberOfItems;

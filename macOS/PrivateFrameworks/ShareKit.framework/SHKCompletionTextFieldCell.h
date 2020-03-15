@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     SHKCompletionItem *_completion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SHKCompletionItem *completion; // @synthesize completion=_completion;
 @property double afterMargin; // @synthesize afterMargin=_afterMargin;
 @property double beforeMargin; // @synthesize beforeMargin=_beforeMargin;
-- (void).cxx_destruct;
 - (struct CGRect)expansionFrameWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)_adjustFrameToVerticallyCenterText:(struct CGRect)arg1 inView:(id)arg2;

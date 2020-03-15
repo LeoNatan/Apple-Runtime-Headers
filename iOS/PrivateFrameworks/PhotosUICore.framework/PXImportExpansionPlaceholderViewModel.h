@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id placeholderUUID; // @synthesize placeholderUUID=_placeholderUUID;
 @property(readonly, nonatomic) NSDate *placeholderDate; // @synthesize placeholderDate=_placeholderDate;
-- (void).cxx_destruct;
 - (long long)badgeType;
 - (id)fileCreationDate;
 - (id)fileName;

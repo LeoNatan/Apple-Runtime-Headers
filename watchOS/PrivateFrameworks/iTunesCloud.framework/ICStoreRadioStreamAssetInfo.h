@@ -14,8 +14,8 @@
     _Bool _iTunesStoreStream;
 }
 
-@property(nonatomic, getter=isiTunesStoreStream) _Bool iTunesStoreStream; // @synthesize iTunesStoreStream=_iTunesStoreStream;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isiTunesStoreStream) _Bool iTunesStoreStream; // @synthesize iTunesStoreStream=_iTunesStoreStream;
 - (int)ICStoreRadioStreamProtocolWithString:(id)arg1;
 - (int)ICStoreRadioStreamFlavorWithString:(id)arg1;
 @property(readonly, copy, nonatomic) NSURL *keyServerURL;

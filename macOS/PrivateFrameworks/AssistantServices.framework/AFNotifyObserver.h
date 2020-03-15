@@ -25,8 +25,8 @@
     NSString *_name;
 }
 
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)_invalidate;
 - (void)_updateStateWithToken:(int)arg1;
 - (void)_handleNotificationWithToken:(int)arg1;

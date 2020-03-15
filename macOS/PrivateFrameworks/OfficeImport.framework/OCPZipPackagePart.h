@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     OISFUZipEntry *mEntry;
 }
 
-@property(readonly, nonatomic) OISFUZipEntry *zipEntry; // @synthesize zipEntry=mEntry;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) OISFUZipEntry *zipEntry; // @synthesize zipEntry=mEntry;
 - (struct _xmlTextReader *)xmlReader;
 - (struct _xmlDoc *)xmlDocument;
 - (void)copyToFile:(id)arg1;

@@ -16,11 +16,11 @@
     int _redownloadableItemCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int redownloadableItemCount; // @synthesize redownloadableItemCount=_redownloadableItemCount;
 @property(nonatomic) int nonPurgeableItemCount; // @synthesize nonPurgeableItemCount=_nonPurgeableItemCount;
 @property(nonatomic) int downloadEnabledItemCount; // @synthesize downloadEnabledItemCount=_downloadEnabledItemCount;
 @property(copy, nonatomic) NSArray *pendingItemIdentifiers; // @synthesize pendingItemIdentifiers=_pendingItemIdentifiers;
-- (void).cxx_destruct;
 
 @end
 

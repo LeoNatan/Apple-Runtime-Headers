@@ -20,6 +20,7 @@
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double interitemSpacingAXLarge; // @synthesize interitemSpacingAXLarge=_interitemSpacingAXLarge;
 @property(nonatomic) double interitemSpacingAXSmall; // @synthesize interitemSpacingAXSmall=_interitemSpacingAXSmall;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSString *ratingStyleAXSmall; // @synthesize ratingStyleAXSmall=_ratingStyleAXSmall;
 @property(retain, nonatomic) NSString *ratingStyle; // @synthesize ratingStyle=_ratingStyle;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
-- (void).cxx_destruct;
 
 @end
 

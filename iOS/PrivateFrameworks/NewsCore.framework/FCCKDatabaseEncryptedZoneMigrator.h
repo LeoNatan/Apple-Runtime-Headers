@@ -19,11 +19,11 @@
     NSSet *_sourceZoneNames;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *sourceZoneNames; // @synthesize sourceZoneNames=_sourceZoneNames;
 @property(copy, nonatomic) CDUnknownBlockType deprecatedBlock; // @synthesize deprecatedBlock=_deprecatedBlock;
 @property(retain, nonatomic) id <FCCKDatabaseRecordMiddleware> recordEncryptionMiddleware; // @synthesize recordEncryptionMiddleware=_recordEncryptionMiddleware;
 @property(retain, nonatomic) FCCKPrivateDatabaseSchema *sourceSchema; // @synthesize sourceSchema=_sourceSchema;
-- (void).cxx_destruct;
 - (_Bool)_isEnabledForDatabase:(id)arg1;
 - (_Bool)_shouldMigrateRecord:(id)arg1 database:(id)arg2;
 - (void)databaseMigrationDidFinishForDatabase:(id)arg1 result:(long long)arg2;

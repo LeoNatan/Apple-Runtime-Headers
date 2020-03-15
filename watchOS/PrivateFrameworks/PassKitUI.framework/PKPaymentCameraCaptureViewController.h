@@ -28,12 +28,12 @@
     UIColor *_capturedTextColor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *capturedTextColor; // @synthesize capturedTextColor=_capturedTextColor;
 @property(copy, nonatomic) UIColor *placementTextColor; // @synthesize placementTextColor=_placementTextColor;
 @property(copy, nonatomic) UIColor *maskOutlineColor; // @synthesize maskOutlineColor=_maskOutlineColor;
 @property(copy, nonatomic) UIColor *maskColor; // @synthesize maskColor=_maskColor;
 @property(nonatomic) _Bool hideSetupLaterButton; // @synthesize hideSetupLaterButton=_hideSetupLaterButton;
-- (void).cxx_destruct;
 - (void)_pushManualEntryViewController;
 - (void)_setupLater:(id)arg1;
 - (void)_manualEntryButtonPressed:(id)arg1;

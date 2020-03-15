@@ -16,13 +16,15 @@
     unsigned int _preferredAlternative:16;
     unsigned int _numAlternatives:16;
     int _encryptedDescendantState;
+    _Bool _isEncrypted;
     NSArray *_signers;
 }
 
 + (id)copyNewMimeBoundary;
 + (id)versionString;
-@property(retain, nonatomic) NSArray *signers; // @synthesize signers=_signers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *signers; // @synthesize signers=_signers;
+@property(nonatomic) _Bool isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 - (id)textHtmlPart;
 - (id)preferredBodyPart;
 - (int)preferredAlternative;

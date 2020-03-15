@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSArray *_centeredConstraints;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *centeredConstraints; // @synthesize centeredConstraints=_centeredConstraints;
 @property(copy, nonatomic) NSArray *leftAlignedConstraints; // @synthesize leftAlignedConstraints=_leftAlignedConstraints;
 @property(retain, nonatomic) UIButton *listModeToggle; // @synthesize listModeToggle=_listModeToggle;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool listModeToggleHidden; // @synthesize listModeToggleHidden=_listModeToggleHidden;
 @property(nonatomic) long long listMode; // @synthesize listMode=_listMode;
 @property(nonatomic) id <_UIDocumentPickerViewServiceViewController> serviceViewController; // @synthesize serviceViewController=_serviceViewController;
-- (void).cxx_destruct;
 - (void)_toggleListMode:(id)arg1;
 - (void)valueChanged:(id)arg1;
 @property(nonatomic) int value;

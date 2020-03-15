@@ -18,10 +18,10 @@
     id <SXActionManager> _actionManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <SXActionManager> actionManager; // @synthesize actionManager=_actionManager;
 @property(readonly, nonatomic) id <SXViewControllerPresenting> viewControllerPresenting; // @synthesize viewControllerPresenting=_viewControllerPresenting;
 @property(readonly, nonatomic) id <SXSubscribeActionHandler> handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (id)activityGroupForAction:(id)arg1;
 - (id)initWithHandler:(id)arg1 viewControllerPresenting:(id)arg2 actionManager:(id)arg3;
 

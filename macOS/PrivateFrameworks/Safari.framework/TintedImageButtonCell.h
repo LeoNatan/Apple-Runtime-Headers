@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _imageAlpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double imageAlpha; // @synthesize imageAlpha=_imageAlpha;
 @property(retain, nonatomic) NSColor *tintColor; // @synthesize tintColor=_tintColor;
-- (void).cxx_destruct;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 
 @end

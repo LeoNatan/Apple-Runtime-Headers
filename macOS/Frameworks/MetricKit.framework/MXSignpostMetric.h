@@ -17,11 +17,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long totalCount; // @synthesize totalCount=_totalCount;
 @property(readonly) MXSignpostIntervalData *signpostIntervalData; // @synthesize signpostIntervalData=_signpostIntervalData;
 @property(readonly) NSString *signpostCategory; // @synthesize signpostCategory=_signpostCategory;
 @property(readonly) NSString *signpostName; // @synthesize signpostName=_signpostName;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

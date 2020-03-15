@@ -29,6 +29,7 @@
 + (id)createIKEAuthResponse:(id)arg1 ikeSA:(id)arg2 childSA:(id)arg3;
 + (id)createEAPForInitiatorIKESA:(id)arg1 childSA:(id)arg2 lastResponderPacket:(id)arg3;
 + (id)createIKEAuthForInitiatorIKESA:(id)arg1 childSA:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSArray *vendorIDs; // @synthesize vendorIDs=_vendorIDs;
 @property(retain) NEIKEv2ResponderTrafficSelectorPayload *tsr; // @synthesize tsr=_tsr;
 @property(retain) NEIKEv2InitiatorTrafficSelectorPayload *tsi; // @synthesize tsi=_tsi;
@@ -40,7 +41,6 @@
 @property(retain) NEIKEv2ResponderIdentifierPayload *idr; // @synthesize idr=_idr;
 @property(retain) NEIKEv2InitiatorIdentifierPayload *idi; // @synthesize idi=_idi;
 @property(retain) NEIKEv2ChildSAPayload *sa; // @synthesize sa=_sa;
-- (void).cxx_destruct;
 - (void)filloutPayloads;
 - (void)gatherPayloads;
 - (id)validateEAPOnlyAuthentication:(id)arg1;

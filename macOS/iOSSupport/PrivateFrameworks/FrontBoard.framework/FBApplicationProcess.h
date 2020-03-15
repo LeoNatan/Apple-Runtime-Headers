@@ -27,10 +27,10 @@
     BOOL _connectedToExternalAccessory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isConnectedToExternalAccessory) BOOL connectedToExternalAccessory; // @synthesize connectedToExternalAccessory=_connectedToExternalAccessory;
 @property(nonatomic, getter=isNowPlayingWithAudio) BOOL nowPlayingWithAudio; // @synthesize nowPlayingWithAudio=_nowPlayingWithAudio;
 @property(nonatomic, getter=isRecordingAudio) BOOL recordingAudio; // @synthesize recordingAudio=_recordingAudio;
-- (void).cxx_destruct;
 - (id)_watchdog:(id)arg1 terminationRequestForViolatedProvision:(id)arg2 error:(id)arg3;
 - (BOOL)_watchdog:(id)arg1 shouldTerminateWithDeclineReason:(out id *)arg2;
 - (void)_watchdogStopped:(id)arg1;

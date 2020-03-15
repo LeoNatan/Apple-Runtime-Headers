@@ -20,9 +20,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)topicRequestWithIdentifier:(id)arg1 displayName:(id)arg2 priority:(unsigned int)arg3 sortIdentifier:(id)arg4 options:(unsigned int)arg5;
 + (id)topicRequestWithIdentifier:(id)arg1 displayName:(id)arg2 options:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) UNNotificationTopic *topic; // @synthesize topic=_topic;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

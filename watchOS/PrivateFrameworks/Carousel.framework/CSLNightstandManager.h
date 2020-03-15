@@ -19,10 +19,10 @@
     CSLNightstandSuspensionServiceEndpoint *_suspensionService;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLNightstandSuspensionServiceEndpoint *suspensionService; // @synthesize suspensionService=_suspensionService;
 @property(readonly, nonatomic) __weak NSObject<CSLNightstandDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(getter=isNightstandEnabled) _Bool nightstandEnabled; // @synthesize nightstandEnabled=_nightstandEnabled;
-- (void).cxx_destruct;
 - (void)resumeNightstand;
 - (void)suspendNightstand;
 - (void)_removePreferencesObserver;

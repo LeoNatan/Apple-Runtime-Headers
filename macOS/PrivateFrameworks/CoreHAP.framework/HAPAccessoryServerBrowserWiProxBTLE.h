@@ -25,6 +25,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *trackedPeripherals; // @synthesize trackedPeripherals=_trackedPeripherals;
 @property(readonly, nonatomic) NSMutableSet *trackedIdentifiers; // @synthesize trackedIdentifiers=_trackedIdentifiers;
 @property(nonatomic) BOOL scanInBackground; // @synthesize scanInBackground=_scanInBackground;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly) __weak id <HAPAccessoryServerBrowserWiProxBTLEDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)_reportHAPPeripheral:(id)arg1;
 - (void)_removeTrackedPeripheral:(id)arg1;
 - (id)_getTrackedPeripheralWithIdentifier:(id)arg1;

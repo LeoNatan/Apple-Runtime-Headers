@@ -19,12 +19,12 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool validated; // @synthesize validated=_validated;
 @property(retain, nonatomic) NSMutableSet *usedKeysSet; // @synthesize usedKeysSet=_usedKeysSet;
 @property(retain, nonatomic) NSSet *allowedKeysSet; // @synthesize allowedKeysSet=_allowedKeysSet;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (void)visitPredicateOperator:(id)arg1;
 - (void)visitPredicate:(id)arg1;
 - (void)resetUsedKeys;

@@ -16,11 +16,11 @@
     NSArray *_recordSchemas;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *recordSchemas; // @synthesize recordSchemas=_recordSchemas;
 @property(readonly, nonatomic, getter=isAtomic) _Bool atomic; // @synthesize atomic=_atomic;
 @property(readonly, copy, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(readonly, copy, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
-- (void).cxx_destruct;
 - (id)validateRecords:(id)arg1;
 - (_Bool)isValidRecord:(id)arg1;
 - (id)schemaForRecordType:(id)arg1;

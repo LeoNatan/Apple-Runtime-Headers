@@ -17,13 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
-@property(nonatomic) BOOL shouldMakeSafariDefaultBrowserOnQuit; // @synthesize shouldMakeSafariDefaultBrowserOnQuit=_shouldMakeSafariDefaultBrowserOnQuit;
-@property(nonatomic) int promptingState; // @synthesize promptingState=_promptingState;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_hideDefaultBrowserBanner;
-- (void)_testDriveWillPromptOrAttemptedToSetSafariAsDefaultBrowser:(id)arg1;
-- (void)_registerForTestDriveNotifications;
+@property(nonatomic) BOOL shouldMakeSafariDefaultBrowserOnQuit; // @synthesize shouldMakeSafariDefaultBrowserOnQuit=_shouldMakeSafariDefaultBrowserOnQuit;
+@property(nonatomic) int promptingState; // @synthesize promptingState=_promptingState;
 - (void)_advancePromptingState;
 - (void)_setDateOfLastPromptToNow;
 - (void)_willPowerOff:(id)arg1;
@@ -33,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (double)_intervalToWaitBeforeFourthPrompt;
 - (double)_intervalToWaitBeforeThirdPrompt;
 - (void)_intializePromptingStateFromUserDefaults;
-- (void)scheduleMakingSafariDefaultBrowserOnQuitFromTestDriveEnding;
 - (void)willHideDefaultBrowserBanner;
 - (void)makeSafariDefaultBrowserOnQuitIfNecessary;
 - (void)performDelayedLaunchOperations;

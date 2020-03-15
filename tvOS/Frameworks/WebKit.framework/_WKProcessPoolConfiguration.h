@@ -14,21 +14,18 @@
 @interface _WKProcessPoolConfiguration : NSObject <WKObject, NSCopying>
 {
     struct ObjectStorage<API::ProcessPoolConfiguration> _processPoolConfiguration;
-    _Bool _configureJSCForTesting;
 }
 
-@property(nonatomic) _Bool configureJSCForTesting; // @synthesize configureJSCForTesting=_configureJSCForTesting;
 @property(readonly) struct Object *_apiObject;
+@property(nonatomic) _Bool configureJSCForTesting;
 @property(copy, nonatomic) NSString *customWebContentServiceBundleIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool shouldTakeUIBackgroundAssertion;
 @property(nonatomic) _Bool alwaysRunsAtBackgroundPriority;
-@property(copy, nonatomic) NSString *CTDataConnectionServiceType;
-@property(nonatomic) _Bool suppressesConnectionTerminationOnSystemChange;
-@property(nonatomic) unsigned long long downloadMonitorSpeedMultiplierForTesting;
 @property(copy, nonatomic, setter=setHSTSStorageDirectory:) NSURL *hstsStorageDirectory;
 @property(nonatomic, getter=isJITEnabled) _Bool JITEnabled;
+@property(nonatomic) _Bool suppressesConnectionTerminationOnSystemChange;
 @property(nonatomic) _Bool usesSingleWebProcess;
 @property(nonatomic) _Bool pageCacheEnabled;
 @property(nonatomic) _Bool processSwapsOnWindowOpenWithOpener;

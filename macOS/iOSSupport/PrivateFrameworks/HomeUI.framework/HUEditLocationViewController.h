@@ -38,6 +38,7 @@
     UIBarButtonItem *_savedButtonBarItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *savedButtonBarItem; // @synthesize savedButtonBarItem=_savedButtonBarItem;
 @property(readonly, nonatomic) HUWallpaperPickerInlineViewController *wallpaperPickerViewController; // @synthesize wallpaperPickerViewController=_wallpaperPickerViewController;
 @property(retain, nonatomic) NSString *editedNotes; // @synthesize editedNotes=_editedNotes;
@@ -50,7 +51,6 @@
 @property(nonatomic) __weak id <HUEditLocationViewControllerAddLocationDelegate> addLocationDelegate; // @synthesize addLocationDelegate=_addLocationDelegate;
 @property(readonly, nonatomic) HFHomeBuilder *homeBuilder; // @synthesize homeBuilder=_homeBuilder;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (void)updateWallpaper:(id)arg1 image:(id)arg2;
 - (void)homeManager:(id)arg1 didRemoveHome:(id)arg2;
 - (void)addPeopleViewControllerDidCancel:(id)arg1;

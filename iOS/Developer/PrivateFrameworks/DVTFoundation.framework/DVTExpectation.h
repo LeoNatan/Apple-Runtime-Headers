@@ -20,12 +20,12 @@
     DVTStackBacktrace *_creationBacktrace;
 }
 
+- (void).cxx_destruct;
 @property __weak DVTExpectation *parentExpectation; // @synthesize parentExpectation=_parentExpectation;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 @property _Bool isDelegate; // @synthesize isDelegate=_isDelegate;
 @property _Bool didFulFill; // @synthesize didFulFill=_didFulFill;
 @property(readonly) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (_Bool)waitWithTimeout:(double)arg1;
 - (void)wait;
 - (void)fulfill;

@@ -14,9 +14,9 @@
     NSDictionary *_accessibilitySpans;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *accessibilitySpans; // @synthesize accessibilitySpans=_accessibilitySpans;
 @property(readonly, nonatomic) NSArray *accessibilityPointData; // @synthesize accessibilityPointData=_accessibilityPointData;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithPointData:(id)arg1 accessibilitySpans:(id)arg2;
 

@@ -25,12 +25,12 @@
     SBHomeGrabberView *_homeAffordanceView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBHomeGrabberView *homeAffordanceView; // @synthesize homeAffordanceView=_homeAffordanceView;
 @property(nonatomic) _Bool ownsHomeGesture; // @synthesize ownsHomeGesture=_ownsHomeGesture;
 @property(retain, nonatomic) SiriPresentationSpringBoardMainScreenViewController *assistantController; // @synthesize assistantController=_assistantViewController;
 @property(retain, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)_keyboardWillHideNotification:(id)arg1;
 - (void)_keyboardWillShowNotification:(id)arg1;
 - (void)_updateKeyboardForHomeGesture;

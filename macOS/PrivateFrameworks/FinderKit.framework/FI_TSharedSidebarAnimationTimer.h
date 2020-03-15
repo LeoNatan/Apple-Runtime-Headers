@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     FI_TSharedSidebarAnimationTimer *_selfReference;
 }
 
-@property(retain, nonatomic) FI_TSharedSidebarAnimationTimer *selfReference; // @synthesize selfReference=_selfReference;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FI_TSharedSidebarAnimationTimer *selfReference; // @synthesize selfReference=_selfReference;
 - (void)remove:(id)arg1;
 - (void)add:(id)arg1;
 - (void)next;

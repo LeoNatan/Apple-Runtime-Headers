@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIImage *_focusedShadowImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *focusedShadowImage; // @synthesize focusedShadowImage=_focusedShadowImage;
 @property(retain, nonatomic) UIImage *unfocusedShadowImage; // @synthesize unfocusedShadowImage=_unfocusedShadowImage;
 @property(retain, nonatomic) UIView *focusedShadowView; // @synthesize focusedShadowView=_focusedShadowView;
 @property(retain, nonatomic) UIView *unfocusedShadowView; // @synthesize unfocusedShadowView=_unfocusedShadowView;
 @property(retain, nonatomic) _UIFloatingContentView *floatingContentView; // @synthesize floatingContentView=_floatingContentView;
-- (void).cxx_destruct;
 - (void)_createShadowViews;
 - (void)_createFloatingContentView;
 - (void)updateAppearanceForLockupViewState:(unsigned long long)arg1;

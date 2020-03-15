@@ -16,6 +16,7 @@
     unsigned long long _timestamp;
     int _direction;
     NSString *_identifier;
+    NSString *_messageName;
     int _messageType;
     NSString *_transactionID;
     int _transport;
@@ -30,12 +31,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *messageName; // @synthesize messageName=_messageName;
 @property(nonatomic) _Bool isSecure; // @synthesize isSecure=_isSecure;
 @property(retain, nonatomic) NSString *transactionID; // @synthesize transactionID=_transactionID;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long payloadSize; // @synthesize payloadSize=_payloadSize;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -45,6 +47,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasMessageName;
 - (int)StringAsDirection:(id)arg1;
 - (id)directionAsString:(int)arg1;
 @property(nonatomic) _Bool hasDirection;

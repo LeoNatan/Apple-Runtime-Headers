@@ -6,9 +6,9 @@
 
 #import <CalendarUIKit/NSObject-Protocol.h>
 
-@class NSCalendar, NSDate;
+@class NSCalendar, NSDateComponents;
 
 @protocol CUIKIconGenerator <NSObject>
-- (struct CGImage *)iconImageWithDate:(NSDate *)arg1 calendar:(NSCalendar *)arg2 format:(long long)arg3 size:(struct CGSize)arg4 scale:(double)arg5;
+- (struct CGImage *)iconImageWithDateComponents:(NSDateComponents *)arg1 calendar:(NSCalendar *)arg2 format:(long long)arg3 size:(struct CGSize)arg4 scale:(double)arg5;
 @end
 

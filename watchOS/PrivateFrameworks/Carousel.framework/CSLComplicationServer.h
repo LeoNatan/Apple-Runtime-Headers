@@ -18,9 +18,9 @@
 }
 
 + (id)sharedComplicationServer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) CSLSafeMutableSet *clientConnections; // @synthesize clientConnections=_clientConnections;
-- (void).cxx_destruct;
 - (void)isComplicationBundleIDActive:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)activeComplicationBundleIDsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_activeBundleIDs;

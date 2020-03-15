@@ -13,9 +13,9 @@
 }
 
 + (id)eventWithTrigger:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id context; // @synthesize context=_context;
 @property(readonly, nonatomic) id trigger; // @synthesize trigger=_trigger;
-- (void).cxx_destruct;
 - (id)initWithEventTrigger:(id)arg1 context:(id)arg2;
 - (id)description;
 

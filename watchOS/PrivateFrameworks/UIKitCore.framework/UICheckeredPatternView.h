@@ -15,8 +15,8 @@
     UIColor *_checkerColor;
 }
 
-@property(retain, nonatomic) UIColor *checkerColor; // @synthesize checkerColor=_checkerColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *checkerColor; // @synthesize checkerColor=_checkerColor;
 - (void)updatePatternColor;
 - (void)didMoveToWindow;
 - (_Bool)_canDrawContent;

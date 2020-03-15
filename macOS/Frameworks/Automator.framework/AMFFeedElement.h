@@ -17,12 +17,12 @@
     NSMutableDictionary *_children;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *children; // @synthesize children=_children;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 @property(copy, nonatomic) NSString *namespaceURI; // @synthesize namespaceURI=_namespaceURI;
 @property(copy, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)textOfChildWithName:(id)arg1 namespace:(id)arg2;
 - (id)textOfChildWithName:(id)arg1;

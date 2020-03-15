@@ -31,12 +31,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLModalAppManager *demoAppManager; // @synthesize demoAppManager=_demoAppManager;
 @property(readonly, nonatomic) NSString *demoBundleIdentifier; // @synthesize demoBundleIdentifier=_demoBundleIdentifier;
 @property(readonly, nonatomic) _Bool wantsRelaunchForEnrollment; // @synthesize wantsRelaunchForEnrollment=_wantsRelaunchForEnrollment;
 @property(nonatomic) _Bool shouldActivateDemoApp; // @synthesize shouldActivateDemoApp=_shouldActivateDemoApp;
 @property(nonatomic) __weak CSLIconPositionsStore *iconPositionsStore; // @synthesize iconPositionsStore=_iconPositionsStore;
-- (void).cxx_destruct;
 - (void)backlightDidChange:(id)arg1 from:(int)arg2 to:(int)arg3;
 - (void)_handleDemoSettingsChanged;
 - (int)_pmuChargeLimitVoltage;

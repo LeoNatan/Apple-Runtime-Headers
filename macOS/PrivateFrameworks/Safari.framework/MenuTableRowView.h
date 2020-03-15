@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSView *_accessoryView;
 }
 
-@property(nonatomic) __weak NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 - (void)_setDefaultKeyViewLoop;
 - (long long)interiorBackgroundStyle;
 - (BOOL)isEmphasized;

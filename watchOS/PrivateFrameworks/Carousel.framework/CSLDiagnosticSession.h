@@ -16,8 +16,8 @@
     _Bool _open;
 }
 
-@property(readonly, nonatomic, getter=isOpen) _Bool open; // @synthesize open=_open;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isOpen) _Bool open; // @synthesize open=_open;
 - (void)close;
 - (void)captureDiagnosticsWithReason:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 delegate:(id)arg2;

@@ -15,9 +15,9 @@
 }
 
 + (void)generateWatchListReponseForWatchListIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *watchListIdentifier; // @synthesize watchListIdentifier=_watchListIdentifier;
 @property(nonatomic) _Bool isWatchListed; // @synthesize isWatchListed=_isWatchListed;
-- (void).cxx_destruct;
 - (void)toggleWatchListWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithIdentifier:(id)arg1 watchListed:(_Bool)arg2;
 - (id)initWithResponse:(id)arg1;

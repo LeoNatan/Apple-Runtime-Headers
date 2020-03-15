@@ -18,10 +18,10 @@
     SBSoundController *_soundController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) SBSoundController *soundController; // @synthesize soundController=_soundController;
 @property(readonly, nonatomic) SBHUDController *HUDController; // @synthesize HUDController=_HUDController;
-- (void).cxx_destruct;
 - (void)ringerHUDViewControllerWantsToBeDismissed:(id)arg1;
 - (id)existingRingerHUDViewController;
 - (void)setVolume:(float)arg1 forKeyPress:(_Bool)arg2;

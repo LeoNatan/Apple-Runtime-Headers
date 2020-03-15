@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void)_showPickableDiagnostic;
 - (void)updateThumbnail;
 - (void)updateContents;
 - (void)reloadItem:(_Bool)arg1;

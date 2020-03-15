@@ -25,6 +25,7 @@
     long long _computeUnit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL verbose; // @synthesize verbose=_verbose;
 @property(nonatomic) long long computeUnit; // @synthesize computeUnit=_computeUnit;
 @property(retain, nonatomic) NSString *modelType; // @synthesize modelType=_modelType;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *recipePath; // @synthesize recipePath=_recipePath;
 @property(retain, nonatomic) NSString *updateableModelPath; // @synthesize updateableModelPath=_updateableModelPath;
 @property(retain) NSError *testError; // @synthesize testError=_testError;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_completionHandlerBlock;
 - (CDUnknownBlockType)_progressHandlerBlock;
 - (BOOL)runModelUpdateGradientTest:(id *)arg1;

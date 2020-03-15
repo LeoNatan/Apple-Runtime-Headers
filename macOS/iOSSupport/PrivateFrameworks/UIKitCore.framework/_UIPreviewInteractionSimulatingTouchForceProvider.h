@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     BOOL _active;
 }
 
-@property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 - (void)cancelInteraction;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 @property(readonly, nonatomic) double touchForce;

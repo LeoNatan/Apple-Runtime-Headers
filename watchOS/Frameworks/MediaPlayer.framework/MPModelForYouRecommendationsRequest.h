@@ -18,10 +18,10 @@
 + (id)allSupportedSectionProperties;
 + (id)allSupportedItemProperties;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *customForYouURL; // @synthesize customForYouURL=_customForYouURL;
 @property(nonatomic) int requestEndpoint; // @synthesize requestEndpoint=_requestEndpoint;
 @property(nonatomic) int filteringPolicy; // @synthesize filteringPolicy=_filteringPolicy;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

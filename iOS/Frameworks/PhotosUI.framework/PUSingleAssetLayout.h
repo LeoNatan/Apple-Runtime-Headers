@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _contentsRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect contentsRect; // @synthesize contentsRect=_contentsRect;
 @property(nonatomic) struct UIEdgeInsets cropInsets; // @synthesize cropInsets=_cropInsets;
 @property(nonatomic) struct CGRect assetRect; // @synthesize assetRect=_assetRect;
 @property(retain, nonatomic) PUAssetReference *assetReference; // @synthesize assetReference=_assetReference;
-- (void).cxx_destruct;
 - (struct CGRect)visibleRectForScrollingToItemAtIndexPath:(id)arg1 scrollPosition:(long long)arg2;
 - (id)layoutInfoForTileWithIndexPath:(id)arg1 kind:(id)arg2;
 - (id)layoutInfosForTilesInRect:(struct CGRect)arg1;

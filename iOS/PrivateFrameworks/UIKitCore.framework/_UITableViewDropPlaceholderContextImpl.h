@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIDragItem *_dragItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDragItem *dragItem; // @synthesize dragItem=_dragItem;
 @property(nonatomic) __weak id <_UITableViewPlaceholderContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic, getter=_shadowUpdateIdentifier, setter=_setShadowUpdateIdentifier:) NSUUID *shadowUpdateIdentifier; // @synthesize shadowUpdateIdentifier=_shadowUpdateIdentifier;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType cellUpdateHandler; // @synthesize cellUpdateHandler=_cellUpdateHandler;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
 @property(retain, nonatomic) NSString *reuseIdentifier; // @synthesize reuseIdentifier=_reuseIdentifier;
-- (void).cxx_destruct;
 - (_Bool)deletePlaceholder;
 - (_Bool)commitInsertionWithDataSourceUpdates:(CDUnknownBlockType)arg1;
 - (void)addCompletion:(CDUnknownBlockType)arg1;

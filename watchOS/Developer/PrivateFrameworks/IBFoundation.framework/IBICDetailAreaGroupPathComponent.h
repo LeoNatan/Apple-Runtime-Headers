@@ -16,8 +16,8 @@
     NSSet *_slotComponents;
 }
 
-@property(readonly) NSSet *slotComponents; // @synthesize slotComponents=_slotComponents;
 - (void).cxx_destruct;
+@property(readonly) NSSet *slotComponents; // @synthesize slotComponents=_slotComponents;
 - (id)componentForClass:(Class)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSString *fallbackTitle;

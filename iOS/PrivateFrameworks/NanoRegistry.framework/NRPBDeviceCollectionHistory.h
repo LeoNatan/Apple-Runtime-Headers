@@ -21,10 +21,10 @@
 }
 
 + (Class)historyType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NRPBSwitchRecordCollection *switchRecords; // @synthesize switchRecords=_switchRecords;
 @property(retain, nonatomic) NSMutableArray *historys; // @synthesize historys=_historys;
 @property(nonatomic) long long startIndex; // @synthesize startIndex=_startIndex;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

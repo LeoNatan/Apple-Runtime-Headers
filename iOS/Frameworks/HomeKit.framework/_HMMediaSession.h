@@ -29,19 +29,20 @@ __attribute__((visibility("hidden")))
     id <_HMMediaSessionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_HMMediaSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) HMAudioControl *audioControl; // @synthesize audioControl=_audioControl;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (void)_handleSessionRouteUIDUpdated:(id)arg1;
 - (void)_notifyDelegateOfUpdatedRouteUID:(id)arg1;
+- (void)updateMediaState:(id)arg1;
 - (void)updatePlaybackState:(id)arg1;
 - (void)_updateMediaState:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleSessionPlaybackUpdated:(id)arg1;
-- (void)_notifyDelegateOfUpdatedMediaState:(id)arg1;
+- (void)_notifyDelegateOfUpdatedMediaState;
 - (void)_notifyDelegateOfUpdatedPlaybackState:(long long)arg1;
 - (void)refreshPlaybackStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setPlaybackState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -62,7 +63,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 - (void)setUuid:(id)arg1;
 - (void)_registerNotificationHandlers;
-- (id)initWithUUID:(id)arg1 routeUID:(id)arg2 playbackState:(long long)arg3 audioControl:(id)arg4;
+- (id)initWithUUID:(id)arg1 routeUID:(id)arg2 playbackState:(long long)arg3 shuffleState:(long long)arg4 repeatState:(long long)arg5 audioControl:(id)arg6 mediaUniqueIdentifier:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

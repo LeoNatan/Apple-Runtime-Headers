@@ -18,13 +18,13 @@
     struct CGPoint __atomicLocation;
 }
 
+- (void).cxx_destruct;
 @property BOOL _atomicKeepCursorImageSynchronizedWithSystem; // @synthesize _atomicKeepCursorImageSynchronizedWithSystem=__atomicKeepCursorImageSynchronizedWithSystem;
 @property double _atomicCursorScale; // @synthesize _atomicCursorScale=__atomicCursorScale;
 @property struct CGPoint _atomicLocation; // @synthesize _atomicLocation=__atomicLocation;
 @property(retain) AXFMouseCursorImage *_atomicCursorImage; // @synthesize _atomicCursorImage=__atomicCursorImage;
 @property(retain, nonatomic) CALayer *_imageLayer; // @synthesize _imageLayer=__imageLayer;
 @property(retain, nonatomic) AXVOverlayWindow *_overlayWindow; // @synthesize _overlayWindow=__overlayWindow;
-- (void).cxx_destruct;
 - (void)_updateImageLayerFrame;
 - (void)_updateCursorScale;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

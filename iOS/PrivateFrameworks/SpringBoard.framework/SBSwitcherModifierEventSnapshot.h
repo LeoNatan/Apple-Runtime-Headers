@@ -14,9 +14,9 @@
     NSString *_eventDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *eventDescription; // @synthesize eventDescription=_eventDescription;
 @property(retain, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
-- (void).cxx_destruct;
 
 @end
 

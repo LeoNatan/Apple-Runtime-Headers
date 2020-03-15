@@ -14,9 +14,9 @@
     NSVisualEffectView *_effectView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(retain, nonatomic) NSViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
-- (void).cxx_destruct;
 - (void)transitionToViewController:(id)arg1;
 - (void)viewWillLayout;
 - (void)viewDidLoad;

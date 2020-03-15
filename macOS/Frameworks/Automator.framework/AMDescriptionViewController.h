@@ -19,6 +19,7 @@
     AMDescriptionViewItem *_descriptionViewItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMDescriptionViewItem *descriptionViewItem; // @synthesize descriptionViewItem=_descriptionViewItem;
 @property(nonatomic) __weak NSStackView *itemsContainer; // @synthesize itemsContainer=_itemsContainer;
 @property(nonatomic) __weak NSTextField *summaryTextField; // @synthesize summaryTextField=_summaryTextField;
@@ -26,7 +27,6 @@
 @property(nonatomic) __weak NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak NSBox *contentBox; // @synthesize contentBox=_contentBox;
 @property(nonatomic) __weak NSArrayController *itemsController; // @synthesize itemsController=_itemsController;
-- (void).cxx_destruct;
 - (void)scrollToTop;
 - (void)loadView;
 - (void)dealloc;

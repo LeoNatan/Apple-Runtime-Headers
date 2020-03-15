@@ -20,6 +20,7 @@
     NSLayoutConstraint *_rightLayoutMarginConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *rightLayoutMarginConstraint; // @synthesize rightLayoutMarginConstraint=_rightLayoutMarginConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *leftLayoutMarginConstraint; // @synthesize leftLayoutMarginConstraint=_leftLayoutMarginConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *bottomLayoutMarginConstraint; // @synthesize bottomLayoutMarginConstraint=_bottomLayoutMarginConstraint;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIButton *resetButton; // @synthesize resetButton=_resetButton;
 @property(copy, nonatomic) CDUnknownBlockType resetHandler; // @synthesize resetHandler=_resetHandler;
-- (void).cxx_destruct;
 - (void)layoutMarginsDidChange;
 @property(readonly, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 - (void)_didPressReset:(id)arg1;

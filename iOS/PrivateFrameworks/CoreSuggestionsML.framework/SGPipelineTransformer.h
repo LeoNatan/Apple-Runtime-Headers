@@ -16,8 +16,8 @@
 }
 
 + (id)withTransformers:(id)arg1;
-@property(retain) NSArray *transformers; // @synthesize transformers=_transformers;
 - (void).cxx_destruct;
+@property(retain) NSArray *transformers; // @synthesize transformers=_transformers;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToPipelineTransformer:(id)arg1;

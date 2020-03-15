@@ -20,13 +20,13 @@
 }
 
 + (long long)maxBatchSize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *countOfJobsGeneratedByWorkerType; // @synthesize countOfJobsGeneratedByWorkerType=_countOfJobsGeneratedByWorkerType;
 @property(nonatomic) long long generatedJobCountGoal; // @synthesize generatedJobCountGoal=_generatedJobCountGoal;
 @property(readonly, nonatomic) NSMutableDictionary *workInfoReadersByMode; // @synthesize workInfoReadersByMode=_workInfoReadersByMode;
 @property(readonly, nonatomic) PHAWorkerHealthMonitor *healthMonitor; // @synthesize healthMonitor=_healthMonitor;
 @property(readonly, nonatomic) PHPhotoLibrary *library; // @synthesize library=_library;
 @property _Bool graphIncompatibleWorkersAreInhibited; // @synthesize graphIncompatibleWorkersAreInhibited=_graphIncompatibleWorkersAreInhibited;
-- (void).cxx_destruct;
 - (id)generateJobWithCurrentConstraints:(id)arg1 workersByType:(id)arg2;
 - (id)initWithHealthMonitor:(id)arg1 library:(id)arg2;
 - (id)_produceAssetAnalysisOrAdditionalJobWithForWorkerType:(id)arg1 workInfoReaderMode:(id)arg2 scenario:(unsigned long long)arg3 allowLoadBalanceSkip:(_Bool)arg4 additionalStatesToExclude:(id)arg5 askAboutAdditionalJobs:(_Bool)arg6 canUseNetwork:(_Bool)arg7 defaultsDisabledKey:(id)arg8 failureReason:(id *)arg9;

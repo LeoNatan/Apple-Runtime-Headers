@@ -24,11 +24,11 @@
 }
 
 + (void)applicationDidEnterBackground;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _SFDialog *presentedDialog; // @synthesize presentedDialog=_presentedDialog;
 @property(nonatomic) __weak id <_SFDialogViewControllerPresenting> viewControllerPresenter; // @synthesize viewControllerPresenter=_viewControllerPresenter;
 @property(nonatomic) __weak id <_SFDialogViewPresenting> dialogPresenter; // @synthesize dialogPresenter=_dialogPresenter;
 @property(nonatomic) __weak id <_SFDialogControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dialogView:(id)arg1 didSelectActionAtIndex:(unsigned int)arg2 withInputText:(id)arg3 passwordText:(id)arg4;
 - (void)_dismissCurrentDialogWithResponse:(id)arg1;
 - (void)_dismissDialogWithAdditionalAnimations:(CDUnknownBlockType)arg1;

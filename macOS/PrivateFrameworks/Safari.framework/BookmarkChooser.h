@@ -32,11 +32,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)bookmarkChooser;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <BookmarkChooserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL canChooseBookmarkCollections; // @synthesize canChooseBookmarkCollections=_canChooseBookmarkCollections;
 @property(nonatomic) BOOL canChooseBookmarkLeaves; // @synthesize canChooseBookmarkLeaves=_canChooseBookmarkLeaves;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)_visibleSheetIsBlockingPropertyChanges;
 - (void)_updatePrompt;
 - (void)_updateConfirmButton;

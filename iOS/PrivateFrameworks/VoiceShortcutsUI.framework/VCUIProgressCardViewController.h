@@ -24,11 +24,11 @@
     SUICProgressStateMachine *_progressStateMachine;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_progressStateMachine, setter=_setProgressStateMachine:) SUICProgressStateMachine *progressStateMachine; // @synthesize progressStateMachine=_progressStateMachine;
 @property(retain, nonatomic, getter=_hairlineView, setter=_setHairlineView:) UIView *hairlineView; // @synthesize hairlineView=_hairlineView;
 @property(retain, nonatomic, getter=_progressIndicatorViewController, setter=_setProgressIndicatorViewController:) SUICProgressIndicatorViewController *progressIndicatorViewController; // @synthesize progressIndicatorViewController=_progressIndicatorViewController;
 @property(retain, nonatomic, getter=_statusView, setter=_setStatusView:) VCUIActionStatusView *statusView; // @synthesize statusView=_statusView;
-- (void).cxx_destruct;
 - (id)progressViewController;
 @property(readonly) NSProgress *progress;
 - (_Bool)shouldAnimateTransitionToState:(unsigned long long)arg1 fromState:(unsigned long long)arg2 forProgressIndicatorViewController:(id)arg3;

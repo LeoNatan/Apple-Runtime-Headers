@@ -13,8 +13,8 @@
     NSMutableDictionary *_photoLibrariesByPath;
 }
 
-@property(retain) NSMutableDictionary *photoLibrariesByPath; // @synthesize photoLibrariesByPath=_photoLibrariesByPath;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *photoLibrariesByPath; // @synthesize photoLibrariesByPath=_photoLibrariesByPath;
 - (void)enumeratePhotoLibrariesWithBlock:(CDUnknownBlockType)arg1;
 - (void)removeAllPhotoLibraries;
 - (void)removePhotoLibraryAtURL:(id)arg1;

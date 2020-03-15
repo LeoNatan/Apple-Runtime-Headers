@@ -22,6 +22,7 @@
 }
 
 + (id)sharedSceneManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *disabledAssertions; // @synthesize disabledAssertions=_disabledAssertions;
 @property(readonly, nonatomic) NSMapTable *cancelableTransactionToAssertionMap; // @synthesize cancelableTransactionToAssertionMap=_cancelableTransactionToAssertionMap;
 @property(readonly, nonatomic) NSMapTable *assertionToCancelableTransactionMap; // @synthesize assertionToCancelableTransactionMap=_assertionToCancelableTransactionMap;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) CSLTransactionQueue *transactionQueue; // @synthesize transactionQueue=_transactionQueue;
 @property(readonly, nonatomic) NSMutableArray *pendingBlocks; // @synthesize pendingBlocks=_pendingBlocks;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)transactionDidComplete:(id)arg1;
 - (void)transactionWillBegin:(id)arg1;
 - (void)removeCancelableTransaction:(id)arg1;

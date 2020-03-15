@@ -16,10 +16,10 @@
 }
 
 + (id)itemWithSource:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMSourceNode *source; // @synthesize source=_source;
 @property(retain, nonatomic) AXMVisionPipelineContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithSource:(id)arg1 context:(id)arg2;
 
 @end

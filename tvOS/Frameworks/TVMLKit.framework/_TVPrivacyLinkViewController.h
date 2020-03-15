@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     OBPrivacyLinkController *_impl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OBPrivacyLinkController *impl; // @synthesize impl=_impl;
 @property(readonly, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)loadView;
 - (void)updateWithViewElement:(id)arg1;
 

@@ -21,10 +21,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)motionActivityConfidenceToString:(unsigned int)arg1;
 + (id)motionActivityTypeToString:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) unsigned int confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

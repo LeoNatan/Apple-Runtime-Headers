@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 
 + (void)completeTimingInfoInResult:(id)arg1 usingBox:(struct Box *)arg2 modelBlockSize:(int)arg3;
 + (id)new;
-@property(readonly) int primeFrameCount; // @synthesize primeFrameCount=_primeFrameCount;
-@property double overlapFactor; // @synthesize overlapFactor=_overlapFactor;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) int primeFrameCount; // @synthesize primeFrameCount=_primeFrameCount;
+@property double overlapFactor; // @synthesize overlapFactor=_overlapFactor;
 - (id)sharedProcessorConfiguration;
 - (_Bool)adaptToSystemConfiguration:(id)arg1 error:(id *)arg2;
 - (id)resultsFromBox:(struct Box *)arg1 renderedWithFrameCount:(int)arg2;

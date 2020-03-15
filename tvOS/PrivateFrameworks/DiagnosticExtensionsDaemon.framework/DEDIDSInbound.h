@@ -18,9 +18,9 @@
 }
 
 + (id)archivedClasses;
+- (void).cxx_destruct;
 @property __weak DEDController *delegate; // @synthesize delegate=_delegate;
 @property __weak DEDIDSConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 didSwitchActivePairedDevice:(id)arg2 acknowledgementBlock:(CDUnknownBlockType)arg3;
 - (void)serviceAllowedTrafficClassifiersDidReset:(id)arg1;
 - (void)serviceSpaceDidBecomeAvailable:(id)arg1;

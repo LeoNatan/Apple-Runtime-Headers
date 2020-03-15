@@ -28,13 +28,13 @@
 + (BOOL)avatarsAreHidden;
 + (double)additionalSeparatorInset;
 + (id)identifier;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
 @property(readonly, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(nonatomic) BOOL shouldHighlightCompleteMatches; // @synthesize shouldHighlightCompleteMatches=_shouldHighlightCompleteMatches;
 @property __weak id <CNComposeRecipientTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)actionButtonTapped;
 - (double)trailingButtonWidth;

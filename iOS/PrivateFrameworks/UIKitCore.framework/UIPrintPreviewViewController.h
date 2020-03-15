@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
     long long _initialPageIndexToCenter;
 }
 
+- (void).cxx_destruct;
 @property _Bool presentingDocumentInteractionController; // @synthesize presentingDocumentInteractionController=_presentingDocumentInteractionController;
 @property(readonly) long long numPages; // @synthesize numPages=_numPages;
 @property long long initialPageIndexToCenter; // @synthesize initialPageIndexToCenter=_initialPageIndexToCenter;
@@ -61,7 +62,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSURL *quickLookPDFURL; // @synthesize quickLookPDFURL=_quickLookPDFURL;
 @property(retain) NSArray *arrayOfCellSizes; // @synthesize arrayOfCellSizes=_arrayOfCellSizes;
 @property(retain) NSMutableArray *arrayOfPageImages; // @synthesize arrayOfPageImages=_arrayOfPageImages;
-- (void).cxx_destruct;
 - (id)indexPathNearestToPointInCollectionView:(struct CGPoint)arg1;
 @property(readonly) long long currentCenterPageIndex;
 - (_Bool)accessibilityScroll:(long long)arg1;

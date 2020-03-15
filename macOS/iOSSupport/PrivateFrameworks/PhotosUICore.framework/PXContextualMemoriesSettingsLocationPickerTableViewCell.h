@@ -13,8 +13,8 @@
     PXPlacesMapView *_mapView;
 }
 
-@property(readonly, nonatomic) PXPlacesMapView *mapView; // @synthesize mapView=_mapView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXPlacesMapView *mapView; // @synthesize mapView=_mapView;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

@@ -15,7 +15,7 @@
 #import <AvatarUI/UICollectionViewDelegate-Protocol.h>
 #import <AvatarUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class AVTAvatarRecordDataSource, AVTUIEnvironment, AVTUIStickerGeneratorPool, NSArray, NSIndexPath, NSMutableDictionary, NSString, UICollectionView, UIView, _AVTAvatarRecordImageProvider;
+@class AVTAvatarRecordDataSource, AVTStickerConfigurationProvider, AVTUIEnvironment, AVTUIStickerGeneratorPool, NSArray, NSIndexPath, NSMutableDictionary, NSString, UICollectionView, UIView, _AVTAvatarRecordImageProvider;
 @protocol AVTAvatarPickerDelegate, AVTPresenterDelegate, AVTResourceCache, AVTStickerDisclosureValidationDelegate, AVTStickerPagingControllerDelegate, AVTTaskScheduler, OS_dispatch_queue;
 
 @interface AVTStickerPagingController : NSObject <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, AVTStickerSheetControllerDelegate, AVTNotifyingContainerViewDelegate, AVTAvatarActionsViewControllerDelegate, AVTObjectViewController, AVTAvatarPicker>
@@ -34,6 +34,7 @@
     id <AVTTaskScheduler> _taskScheduler;
     id <AVTResourceCache> _cache;
     _AVTAvatarRecordImageProvider *_imageProvider;
+    AVTStickerConfigurationProvider *_stickerConfigurationProvider;
     NSArray *_memojiStickerConfigurations;
     UIView *_view;
     UICollectionView *_collectionView;
@@ -44,11 +45,13 @@
 }
 
 + (id)stickerCacheWithEnvironment:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *pageIndexBeforeSizeChange; // @synthesize pageIndexBeforeSizeChange=_pageIndexBeforeSizeChange;
 @property(nonatomic) struct CGPoint endDraggingTargetContentOffset; // @synthesize endDraggingTargetContentOffset=_endDraggingTargetContentOffset;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(retain, nonatomic) NSArray *memojiStickerConfigurations; // @synthesize memojiStickerConfigurations=_memojiStickerConfigurations;
+@property(readonly, nonatomic) AVTStickerConfigurationProvider *stickerConfigurationProvider; // @synthesize stickerConfigurationProvider=_stickerConfigurationProvider;
 @property(readonly, nonatomic) _AVTAvatarRecordImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(readonly, nonatomic) id <AVTResourceCache> cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) id <AVTTaskScheduler> taskScheduler; // @synthesize taskScheduler=_taskScheduler;
@@ -65,7 +68,6 @@
 @property(nonatomic) struct UIEdgeInsets pageContentInsets; // @synthesize pageContentInsets=_pageContentInsets;
 @property(nonatomic) __weak id <AVTAvatarPickerDelegate> avatarPickerDelegate; // @synthesize avatarPickerDelegate;
 @property(nonatomic) __weak id <AVTPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate;
-- (void).cxx_destruct;
 - (struct CGPoint)collectionView:(id)arg1 targetContentOffsetForProposedContentOffset:(struct CGPoint)arg2;
 - (void)notifyingContainerViewDidChangeSize:(struct CGSize)arg1;
 - (void)notifyingContainerViewWillChangeSize:(struct CGSize)arg1;
@@ -102,7 +104,7 @@
 - (id)sheetControllerForRecord:(id)arg1;
 - (void)reloadData;
 - (void)loadView;
-- (id)initWithRecordDataSource:(id)arg1 recordImageProvider:(id)arg2 environment:(id)arg3 allowsPeel:(_Bool)arg4;
+- (id)initWithRecordDataSource:(id)arg1 recordImageProvider:(id)arg2 stickerConfigurationProvider:(id)arg3 environment:(id)arg4 allowsPeel:(_Bool)arg5;
 - (long long)pageIndexForAvatarRecordIdentifierForPPT:(id)arg1;
 - (id)collectionViewForPPT;
 

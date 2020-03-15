@@ -13,8 +13,8 @@
     CNContactStore *_contactStore;
 }
 
-@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void)handleInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (id)attributeForIntent:(id)arg1 direction:(long long)arg2;
 - (id)interestingContactIdentifiersFromIntent:(id)arg1;

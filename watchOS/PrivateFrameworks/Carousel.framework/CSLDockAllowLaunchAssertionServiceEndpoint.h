@@ -21,11 +21,11 @@
     NSMutableDictionary *_assertionsByProcess;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *assertionsByProcess; // @synthesize assertionsByProcess=_assertionsByProcess;
 @property(nonatomic) __weak id <CSLDockAllowLaunchAssertionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CSLClientConnections *clients; // @synthesize clients=_clients;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (void)connect:(CDUnknownBlockType)arg1;
 - (void)releaseDockLaunchAssertion:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)takeDockLaunchAssertion:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -20,6 +20,7 @@
     NSUUID *_deviceID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isMe; // @synthesize isMe=_isMe;
 @property(nonatomic) unsigned char tieBreaker; // @synthesize tieBreaker=_tieBreaker;
 @property(nonatomic) unsigned char deviceClass; // @synthesize deviceClass=_deviceClass;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned short pHash; // @synthesize pHash=_pHash;
 @property(nonatomic) unsigned char userConfidence; // @synthesize userConfidence=_userConfidence;
 @property(nonatomic) unsigned char goodness; // @synthesize goodness=_goodness;
-- (void).cxx_destruct;
 - (id)description;
 - (id)asAdvertisementData;
 - (int)slowdownDelay;

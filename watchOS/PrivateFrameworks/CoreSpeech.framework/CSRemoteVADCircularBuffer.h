@@ -15,11 +15,11 @@
     unsigned long long _beginSampleCount;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long beginSampleCount; // @synthesize beginSampleCount=_beginSampleCount;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(readonly, nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)copySamplesFrom:(unsigned int)arg1 to:(unsigned int)arg2;
 - (id)copySamplesFromAudioSampleCount:(unsigned int)arg1 toAudioSampleCount:(unsigned int)arg2;
 - (unsigned int)remoteVADSampleCount;

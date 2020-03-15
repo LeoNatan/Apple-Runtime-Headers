@@ -18,9 +18,9 @@
     _Bool _animating;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) _Bool hasPriorityLayout; // @synthesize hasPriorityLayout;
-- (void).cxx_destruct;
 - (void)reloadData;
 - (id)preferredFocusEnvironments;
 - (_Bool)canBecomeFocused;

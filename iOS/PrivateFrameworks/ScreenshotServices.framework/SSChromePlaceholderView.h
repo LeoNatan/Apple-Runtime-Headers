@@ -29,8 +29,8 @@
     double _contentAlpha;
 }
 
-@property(nonatomic) double contentAlpha; // @synthesize contentAlpha=_contentAlpha;
 - (void).cxx_destruct;
+@property(nonatomic) double contentAlpha; // @synthesize contentAlpha=_contentAlpha;
 - (long long)positionForBar:(id)arg1;
 - (void)_layoutTopBar;
 - (void)_updateBarButtonItemPositionsAnimated:(_Bool)arg1;

@@ -15,10 +15,10 @@
     NSArray *changedObjects;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *changedObjects; // @synthesize changedObjects;
 @property(retain, nonatomic) NSArray *destroyedObjects; // @synthesize destroyedObjects;
 @property(retain, nonatomic) NSArray *createdObjects; // @synthesize createdObjects;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

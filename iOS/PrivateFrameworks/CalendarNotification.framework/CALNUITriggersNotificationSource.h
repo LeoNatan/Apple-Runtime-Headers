@@ -25,6 +25,7 @@
 }
 
 + (id)_launchURL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALNCalendarResourceChangedNotificationSource *calendarResourceChangedNotificationSource; // @synthesize calendarResourceChangedNotificationSource=_calendarResourceChangedNotificationSource;
 @property(readonly, nonatomic) CALNSharedCalendarInvitationResponseNotificationSource *sharedCalendarInvitationResponseNotificationSource; // @synthesize sharedCalendarInvitationResponseNotificationSource=_sharedCalendarInvitationResponseNotificationSource;
 @property(readonly, nonatomic) CALNSharedCalendarInvitationNotificationSource *sharedCalendarInvitationNotificationSource; // @synthesize sharedCalendarInvitationNotificationSource=_sharedCalendarInvitationNotificationSource;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) CALNTriggeredEventNotificationSource *triggeredEventNotificationSource; // @synthesize triggeredEventNotificationSource=_triggeredEventNotificationSource;
 @property(readonly, nonatomic) id <EKEventStoreProvider> eventStoreProvider; // @synthesize eventStoreProvider=_eventStoreProvider;
 @property(readonly, nonatomic) id <CALNNotificationManager> notificationManager; // @synthesize notificationManager=_notificationManager;
-- (void).cxx_destruct;
 - (id)_fakeNextEventNotificationInfoNextEvent:(id *)arg1;
 - (id)_fakeCalendarResourceChangedNotificationInfoWithDictionary:(id)arg1 sourceClientIdentifier:(id)arg2 notificationType:(long long)arg3 resourceChangeType:(unsigned int)arg4;
 - (id)_fakeSharedCalendarInviteReplyNotificationInfoWithDictionary:(id)arg1;

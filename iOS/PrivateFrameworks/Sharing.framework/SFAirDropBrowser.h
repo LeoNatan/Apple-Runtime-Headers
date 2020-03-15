@@ -25,6 +25,7 @@
     NSMutableDictionary *_nodeIDToNode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *nodeIDToNode; // @synthesize nodeIDToNode=_nodeIDToNode;
 @property __weak id <SFAirDropBrowserDiffableDelegate> diffableDelegate; // @synthesize diffableDelegate=_diffableDelegate;
 @property(copy, nonatomic) NSArray *photosAssetIDs; // @synthesize photosAssetIDs=_photosAssetIDs;
@@ -34,7 +35,6 @@
 @property __weak id <SFAirDropBrowserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *people; // @synthesize people=_people;
 @property(copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (void)getChangedIndexesForClientPeopleList:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)updateDiscoveredPeople;
 - (void)handleBrowserCallBack;

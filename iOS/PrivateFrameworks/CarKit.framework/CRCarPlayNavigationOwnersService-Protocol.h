@@ -9,8 +9,10 @@
 @class NSString;
 
 @protocol CRCarPlayNavigationOwnersService <NSObject>
+- (void)fetchNavigationIdentifiersWithReply:(void (^)(NSArray *))arg1;
 - (void)fetchNavigationIdentifierWithReply:(void (^)(NSString *))arg1;
 - (void)fetchNavigationOwnerWithReply:(void (^)(unsigned long long))arg1;
+- (void)beginObserving;
 - (void)removeNavigationOwnerWithIdentifier:(NSString *)arg1;
 - (void)addNavigationOwnerWithIdentifier:(NSString *)arg1;
 @end

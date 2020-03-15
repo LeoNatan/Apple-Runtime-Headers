@@ -23,12 +23,12 @@
     NSArray *_tools;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *tools; // @synthesize tools=_tools;
 @property(readonly, nonatomic) UIButton *dismissButton; // @synthesize dismissButton=_dismissButton;
 @property(readonly, nonatomic) UILabel *doNotFileBugsLabel; // @synthesize doNotFileBugsLabel=_doNotFileBugsLabel;
 @property(readonly, nonatomic) UICollectionView *toolCollectionView; // @synthesize toolCollectionView=_toolCollectionView;
 @property(nonatomic) __weak PKTiledView *tiledView; // @synthesize tiledView=_tiledView;
-- (void).cxx_destruct;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)inkAttributesPickerDidChangeSelectedInk:(id)arg1;
 - (void)_showInkAttributesPickerFromView:(id)arg1 frame:(struct CGRect)arg2 ink:(id)arg3 shouldHideArrow:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;

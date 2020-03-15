@@ -20,9 +20,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *whitelist; // @synthesize whitelist=_whitelist;
 @property(retain, nonatomic) NSSet *portraitDisabledTagIDs; // @synthesize portraitDisabledTagIDs=_portraitDisabledTagIDs;
-- (void).cxx_destruct;
 - (id)jsonEncodableObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

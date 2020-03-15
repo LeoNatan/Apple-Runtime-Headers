@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 
 + (id)keyPathsForValuesAffectingRequestingAccess;
 + (_Bool)shouldAutomaticallyValidateForThisClient;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVObservationController *kvo; // @synthesize kvo=_kvo;
 @property(nonatomic) double requestedRateForBlockedPlayer; // @synthesize requestedRateForBlockedPlayer=_requestedRateForBlockedPlayer;
 @property(retain, nonatomic) AVPlayer *blockedPlayer; // @synthesize blockedPlayer=_blockedPlayer;
 @property(retain, nonatomic) id requestToken; // @synthesize requestToken=_requestToken;
 @property(nonatomic, getter=isContentConcealed) _Bool contentConcealed; // @synthesize contentConcealed=_contentConcealed;
-- (void).cxx_destruct;
 - (void)validateCurrentItemForPlayer:(id)arg1;
 - (void)_cancelPlaybackForPlayerItem:(id)arg1;
 - (void)validateMediaContentRating:(id)arg1 allowInteraction:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

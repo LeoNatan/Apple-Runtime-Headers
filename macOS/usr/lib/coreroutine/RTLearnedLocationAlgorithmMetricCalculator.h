@@ -21,9 +21,9 @@
 + (void)updateAlgorithmInstance:(id)arg1 byComparingInferredMapItem:(id)arg2 withTruthfulMapItem:(id)arg3 withDistanceCalculator:(id)arg4;
 + (id)newAlgorithmInstanceWithInference:(id)arg1 distanceCalculator:(id)arg2;
 + (void)submitMetricsForInferredPlaces:(id)arg1 existingPlaces:(id)arg2 rottedPlaces:(id)arg3 distanceCalculator:(id)arg4 metricManager:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
 @property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
-- (void).cxx_destruct;
 - (void)submitMetricsForInferredPlaces:(id)arg1 existingPlaces:(id)arg2 rottedPlaces:(id)arg3;
 - (id)initWithDistanceCalculator:(id)arg1 metricManager:(id)arg2;
 - (id)init;

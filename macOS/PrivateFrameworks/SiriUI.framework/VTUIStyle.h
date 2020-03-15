@@ -21,10 +21,10 @@
 }
 
 + (id)sharedStyle;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isHeySiriAlwaysOn; // @synthesize isHeySiriAlwaysOn=_isHeySiriAlwaysOn;
 @property(nonatomic) BOOL isBuddy; // @synthesize isBuddy=_isBuddy;
 @property(nonatomic) long long enrollmentMode; // @synthesize enrollmentMode=_enrollmentMode;
-- (void).cxx_destruct;
 - (id)deviceSetupImage;
 - (id)deviceDoneImage;
 - (id)_deviceImageForBaseImageName:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     EKAvailabilitySpan *_span;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKAvailabilitySpan *span; // @synthesize span=_span;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSpan:(id)arg1;
 

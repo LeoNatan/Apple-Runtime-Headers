@@ -22,10 +22,10 @@
 + (double)cornerRadiusToInsetContent;
 + (struct CGSize)folderBackgroundSize;
 + (void)warmupIfNecessary;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentEffect; // @synthesize currentEffect=_currentEffect;
 @property(nonatomic) unsigned long long effect; // @synthesize effect=_effect;
 @property(nonatomic) __weak id <SBFolderBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_tintViewBackgroundColorAtFullAlpha;
 - (_Bool)_hasLowQualityBackground;
 - (void)updateTintEffectColor;

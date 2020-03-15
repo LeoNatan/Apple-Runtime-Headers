@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIColor *_darkColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool customizedBackgroundColor; // @synthesize customizedBackgroundColor=_customizedBackgroundColor;
 @property(nonatomic) _Bool aboveHeaderLayout; // @synthesize aboveHeaderLayout=_aboveHeaderLayout;
 @property(retain, nonatomic) UIColor *darkColor; // @synthesize darkColor=_darkColor;
 @property(retain, nonatomic) UIColor *lightColor; // @synthesize lightColor=_lightColor;
 @property(nonatomic) __weak UIView *bleedView; // @synthesize bleedView=_bleedView;
-- (void).cxx_destruct;
 - (_Bool)_colorIsDefault:(id)arg1;
 - (id)_defaultColorForCurrentTraitCollection;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -24,12 +24,12 @@
 }
 
 + (double)coalescingControlsCellHeightShowingCoalescingControls:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NCNotificationListCoalescingControlsView *coalescingControlsView; // @synthesize coalescingControlsView=_coalescingControlsView;
 @property(nonatomic) _Bool shouldShowCoalescingControls; // @synthesize shouldShowCoalescingControls=_shouldShowCoalescingControls;
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 @property(nonatomic) __weak id <NCNotificationListCoalescingControlsHandlerDelegate> handlerDelegate; // @synthesize handlerDelegate=_handlerDelegate;
-- (void).cxx_destruct;
 - (void)_layoutCoalescingControlsView;
 - (void)_configureCoalescingControlsViewIfNecessary;
 - (_Bool)adjustForContentSizeCategoryChange;

@@ -25,13 +25,13 @@
 + (id)counterForName:(id)arg1;
 + (id)activeTimings;
 + (id)allTimings;
+- (void).cxx_destruct;
 @property(nonatomic) double timeTally; // @synthesize timeTally=_timeTally;
 @property(nonatomic) double longestTime; // @synthesize longestTime=_longestTime;
 @property(nonatomic) BOOL isActive; // @synthesize isActive=_isActive;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSMutableArray *times; // @synthesize times=_times;
 @property(nonatomic) double lastStartTime; // @synthesize lastStartTime=_lastStartTime;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (id)description;

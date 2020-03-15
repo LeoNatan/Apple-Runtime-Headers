@@ -22,12 +22,12 @@
 + (id)openURL:(id)arg1 clientInfo:(id)arg2 bag:(id)arg3;
 + (void)openURL:(id)arg1 account:(id)arg2 preferredClient:(id)arg3;
 + (BOOL)openStandardURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(readonly) NSURL *URL; // @synthesize URL=_URL;
 @property(retain) NSMutableSet *attemptedTargets; // @synthesize attemptedTargets=_attemptedTargets;
-- (void).cxx_destruct;
-- (BOOL)_shouldAttemptUsingInfo:(id)arg1;
+- (BOOL)_shouldOpenURL:(id)arg1;
 - (BOOL)_openURL:(id)arg1 bundleInfo:(id)arg2;
 - (id)_performOpen;
 - (id)initWithURL:(id)arg1 clientInfo:(id)arg2 bag:(id)arg3;

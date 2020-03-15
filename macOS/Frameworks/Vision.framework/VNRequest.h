@@ -53,11 +53,11 @@
 + (Class)configurationClass;
 + (void)recordDefaultOptionsInDictionary:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(retain) NSObject<OS_dispatch_semaphore> *cancellationSemaphore; // @synthesize cancellationSemaphore=_cancellationSemaphore;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, copy, nonatomic) NSArray *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (unsigned long long)compatibleRevisionForDependentRequest:(id)arg1;
 - (unsigned long long)resolvedRevision;

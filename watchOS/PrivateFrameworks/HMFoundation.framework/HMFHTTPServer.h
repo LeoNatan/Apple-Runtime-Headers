@@ -30,13 +30,13 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) HMFMutableNetService *netService; // @synthesize netService=_netService;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property __weak id <HMFHTTPServerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2;
 - (id)logIdentifier;
 - (void)server:(id)arg1 didCloseConnection:(id)arg2;

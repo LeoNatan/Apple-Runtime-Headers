@@ -15,10 +15,10 @@
     long long _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) id <PXPlacesMapLayoutItem> targetLayoutItem; // @synthesize targetLayoutItem=_targetLayoutItem;
 @property(readonly, nonatomic) id <PXPlacesMapLayoutItem> sourceLayoutItem; // @synthesize sourceLayoutItem=_sourceLayoutItem;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSourceLayoutItem:(id)arg1 targetLayoutItem:(id)arg2 type:(long long)arg3;
 

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CKDPZoneCapabilities *_capabilities;
 }
 
-@property(retain, nonatomic) CKDPZoneCapabilities *capabilities; // @synthesize capabilities=_capabilities;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDPZoneCapabilities *capabilities; // @synthesize capabilities=_capabilities;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

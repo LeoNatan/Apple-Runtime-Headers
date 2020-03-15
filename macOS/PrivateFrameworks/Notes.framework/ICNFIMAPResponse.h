@@ -17,10 +17,10 @@
 
 + (BOOL)handlesResponseWithName:(const char *)arg1 ofLength:(unsigned long long)arg2;
 + (id)newIMAPResponseWithConnection:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICNFMCError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
 @property(nonatomic) BOOL wasHandled; // @synthesize wasHandled=_wasHandled;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) BOOL isUntagged;
 

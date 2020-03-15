@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CNContact *displayContact; // @synthesize displayContact=_displayContact;
 @property(readonly, copy, nonatomic) CKRecordID *userRecordID; // @synthesize userRecordID=_userRecordID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *lastName;

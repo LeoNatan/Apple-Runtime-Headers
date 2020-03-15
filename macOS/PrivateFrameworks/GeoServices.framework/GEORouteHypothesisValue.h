@@ -27,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long rowId; // @synthesize rowId=_rowId;
 @property(nonatomic) double valueRefreshTimeStamp; // @synthesize valueRefreshTimeStamp=_valueRefreshTimeStamp;
 @property(nonatomic) int transportType; // @synthesize transportType=_transportType;
@@ -39,7 +40,6 @@
 @property(nonatomic) BOOL prediction; // @synthesize prediction=_prediction;
 @property(retain, nonatomic) GEORouteHypothesis *currentHypothesis; // @synthesize currentHypothesis=_currentHypothesis;
 @property(readonly, nonatomic) GEORouteHypothesisMonitor *monitor; // @synthesize monitor=_monitor;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)canBePersistedToDisk;
 @property(readonly, nonatomic) BOOL isStaleToPurgeFromDisk;

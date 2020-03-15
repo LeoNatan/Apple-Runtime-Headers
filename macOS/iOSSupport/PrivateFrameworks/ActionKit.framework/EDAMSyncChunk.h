@@ -32,6 +32,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *expungedLinkedAccounts; // @synthesize expungedLinkedAccounts=_expungedLinkedAccounts;
 @property(retain, nonatomic) NSArray *linkedAccounts; // @synthesize linkedAccounts=_linkedAccounts;
 @property(retain, nonatomic) NSArray *notesNoLongerSharedWithMe; // @synthesize notesNoLongerSharedWithMe=_notesNoLongerSharedWithMe;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSNumber *updateCount; // @synthesize updateCount=_updateCount;
 @property(retain, nonatomic) NSNumber *chunkHighUSN; // @synthesize chunkHighUSN=_chunkHighUSN;
 @property(retain, nonatomic) NSNumber *currentTime; // @synthesize currentTime=_currentTime;
-- (void).cxx_destruct;
 
 @end
 

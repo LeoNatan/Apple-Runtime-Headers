@@ -25,8 +25,8 @@
     GCController *_controller;
 }
 
-@property(readonly, nonatomic) __weak GCController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak GCController *controller; // @synthesize controller=_controller;
 - (void)_pauseMotionUpdates:(_Bool)arg1;
 - (void)setStateFromMotion:(id)arg1;
 - (void)setRotationRate:(CDStruct_39925896)arg1;

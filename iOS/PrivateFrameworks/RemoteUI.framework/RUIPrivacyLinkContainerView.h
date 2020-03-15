@@ -16,8 +16,8 @@
     OBPrivacyLinkController *_linkController;
 }
 
-@property(readonly) OBPrivacyLinkController *linkController; // @synthesize linkController=_linkController;
 - (void).cxx_destruct;
+@property(readonly) OBPrivacyLinkController *linkController; // @synthesize linkController=_linkController;
 - (double)footerHeightForWidth:(double)arg1 inView:(id)arg2;
 - (void)layoutSubviews;
 - (void)configureInPage:(id)arg1;

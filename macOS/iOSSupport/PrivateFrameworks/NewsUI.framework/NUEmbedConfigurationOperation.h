@@ -17,11 +17,11 @@
     NUEmbedConfigurationOperationResult *_result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUEmbedConfigurationOperationResult *result; // @synthesize result=_result;
 @property(retain, nonatomic) FCFlintResourceManager *flintResourceManager; // @synthesize flintResourceManager=_flintResourceManager;
 @property(retain, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id)initWithAppConfigManager:(id)arg1 flintResourceManager:(id)arg2;

@@ -8,8 +8,10 @@
 
 @interface CAMCTMDescriptionOverlayView : CAMDescriptionOverlayView
 {
+    _Bool __spatialOverCaptureSupported;
 }
 
+@property(readonly, nonatomic, getter=_isSpatialOverCaptureSupported) _Bool _spatialOverCaptureSupported; // @synthesize _spatialOverCaptureSupported=__spatialOverCaptureSupported;
 - (double)additionalSpacing;
 - (double)_additionalSpacingForContentSize:(id)arg1;
 - (id)_currentContentSize;
@@ -21,6 +23,7 @@
 - (id)descriptionTitleTextUsingNarrowWidth:(_Bool)arg1;
 - (id)acknowledgmentTextUsingNarrowWidth:(_Bool)arg1;
 - (id)titleTextUsingNarrowWidth:(_Bool)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

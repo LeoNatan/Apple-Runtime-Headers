@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)subscribedStreamWithStreamID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ctag; // @synthesize ctag=_ctag;
 @property(retain, nonatomic) NSString *streamID; // @synthesize streamID=_streamID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

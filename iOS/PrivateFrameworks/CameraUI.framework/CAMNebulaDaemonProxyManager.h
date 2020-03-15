@@ -23,12 +23,12 @@
 
 + (id)_clientProtocolInterface;
 + (id)_daemonProtocolInterface;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long _connectionCount; // @synthesize _connectionCount=__connectionCount;
 @property(readonly, nonatomic) NSXPCConnection *_connection; // @synthesize _connection=__connection;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue=__queue;
 @property(nonatomic) __weak id <CAMNebulaDaemonIrisClientProtocol> irisClientDelegate; // @synthesize irisClientDelegate=_irisClientDelegate;
 @property(nonatomic) __weak id <CAMNebulaDaemonTimelapseClientProtocol> timelapseClientDelegate; // @synthesize timelapseClientDelegate=_timelapseClientDelegate;
-- (void).cxx_destruct;
 - (void)performCrashRecoveryIfNeededForceEndLastTimelapseSession:(_Bool)arg1;
 - (void)nebulaDaemonDidCompleteLocalVideoPersistenceWithResult:(id)arg1;
 - (void)performIrisCrashRecovery;

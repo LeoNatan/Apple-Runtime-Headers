@@ -16,6 +16,7 @@
     NSNumber *_primaryJSBLSequenceCounter;
     NSString *_secureElementIdentifier;
     NSString *_uniqueDeviceIdentifier;
+    NSNumber *_uniqueChipIdentifier;
     NSString *_serialNumber;
     NSString *_phoneNumber;
     NSString *_signedPhoneNumber;
@@ -24,16 +25,17 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSString *signedPhoneNumberVersion; // @synthesize signedPhoneNumberVersion=_signedPhoneNumberVersion;
 @property(copy, nonatomic) NSString *signedPhoneNumber; // @synthesize signedPhoneNumber=_signedPhoneNumber;
 @property(copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
+@property(copy, nonatomic) NSNumber *uniqueChipIdentifier; // @synthesize uniqueChipIdentifier=_uniqueChipIdentifier;
 @property(copy, nonatomic) NSString *uniqueDeviceIdentifier; // @synthesize uniqueDeviceIdentifier=_uniqueDeviceIdentifier;
 @property(copy, nonatomic) NSString *secureElementIdentifier; // @synthesize secureElementIdentifier=_secureElementIdentifier;
 @property(copy, nonatomic) NSNumber *primaryJSBLSequenceCounter; // @synthesize primaryJSBLSequenceCounter=_primaryJSBLSequenceCounter;
 @property(copy, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
-- (void).cxx_destruct;
 - (BOOL)isEqualToPaymentDeviceMetadata:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

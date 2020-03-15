@@ -17,8 +17,8 @@
     int _compatibilityVersion;
 }
 
-@property(nonatomic) int compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 - (void).cxx_destruct;
+@property(nonatomic) int compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)count;
 - (id)initWithSYObjectDataArray:(id)arg1 typeArray:(id)arg2 decoder:(id)arg3;

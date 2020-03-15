@@ -23,6 +23,7 @@
 }
 
 + (id)interactionControllerWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
 @property(retain, nonatomic) id annotation; // @synthesize annotation=_annotation;
 @property(readonly, nonatomic) NSArray *icons; // @synthesize icons=_icons;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *UTI; // @synthesize UTI=_UTI;
 @property(retain) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) __weak id <UIDocumentInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)openDocumentWithDefaultApplication;
 - (void)dismissMenuAnimated:(_Bool)arg1;
 - (void)dismissPreviewAnimated:(_Bool)arg1;

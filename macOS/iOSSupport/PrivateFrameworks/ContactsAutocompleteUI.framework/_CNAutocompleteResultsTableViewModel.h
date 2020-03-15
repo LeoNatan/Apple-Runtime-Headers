@@ -14,8 +14,8 @@
     unsigned long long _numberOfSections;
 }
 
-@property(nonatomic) unsigned long long numberOfSections; // @synthesize numberOfSections=_numberOfSections;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long numberOfSections; // @synthesize numberOfSections=_numberOfSections;
 - (id)computeDiffForModel:(id)arg1;
 - (void)setSection:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)sectionAtIndex:(unsigned long long)arg1;

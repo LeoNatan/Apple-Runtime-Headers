@@ -26,6 +26,7 @@
     NSURLSessionConfiguration *_config;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURLSessionConfiguration *config; // @synthesize config=_config;
 @property(copy) NSObject<OS_dispatch_semaphore> *sema; // @synthesize sema=_sema;
 @property(copy) NSURLSession *session; // @synthesize session=_session;
@@ -36,7 +37,6 @@
 @property BOOL doNotProvideCreds; // @synthesize doNotProvideCreds=_doNotProvideCreds;
 @property BOOL receivedChallenge; // @synthesize receivedChallenge=_receivedChallenge;
 @property BOOL takeRedirect; // @synthesize takeRedirect=_takeRedirect;
-- (void).cxx_destruct;
 - (void)setconfig:(id)arg1;
 - (void)startTaskWithSemaphore:(id)arg1 request:(id)arg2;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;

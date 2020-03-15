@@ -21,6 +21,7 @@
 
 @optional
 @property(nonatomic) __weak NSObject<ACHTemplateSourceDelegate> *delegate;
+- (long long)mobileAssetVersionForTemplate:(ACHTemplate *)arg1;
 - (NSString *)textureFilenameForTemplate:(ACHTemplate *)arg1;
 - (NSDictionary *)customPlaceholderValuesForTemplate:(ACHTemplate *)arg1;
 - (void)templatesForDate:(NSDate *)arg1 databaseContext:(HDDatabaseTransactionContext *)arg2 completion:(void (^)(NSSet *, NSSet *, NSError *))arg3;

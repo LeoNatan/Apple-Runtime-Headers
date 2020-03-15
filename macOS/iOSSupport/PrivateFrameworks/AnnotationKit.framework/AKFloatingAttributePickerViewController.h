@@ -24,6 +24,7 @@
     long long _tag;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
 @property(retain, nonatomic) NSArray *rightButtonItems; // @synthesize rightButtonItems=_rightButtonItems;
 @property(retain, nonatomic) NSArray *staticItems; // @synthesize staticItems=_staticItems;
@@ -34,7 +35,6 @@
 @property(nonatomic) long long colorAttributeTag; // @synthesize colorAttributeTag=_colorAttributeTag;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
-- (void).cxx_destruct;
 - (void)syncTextAttributesToUI:(id)arg1;
 - (id)convertTextAttributes:(id)arg1;
 - (void)viewDidLayoutSubviews;

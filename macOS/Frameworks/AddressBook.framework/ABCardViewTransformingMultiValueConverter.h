@@ -17,9 +17,9 @@
     NSArray *_multiValueTransformers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *multiValueTransformers; // @synthesize multiValueTransformers=_multiValueTransformers;
 @property(retain, nonatomic) id <ABCardViewMultiValueConverter> basicConverter; // @synthesize basicConverter=_basicConverter;
-- (void).cxx_destruct;
 - (id)multiValueFromValue:(id)arg1;
 - (id)valueFromMultiValue:(id)arg1;
 

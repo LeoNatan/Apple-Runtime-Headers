@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)identityPropertySetFromRequestContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) ICUserIdentityProperties *delegatedIdentityProperties; // @synthesize delegatedIdentityProperties=_delegatedIdentityProperties;
 @property(copy, nonatomic) ICUserIdentityProperties *identityProperties; // @synthesize identityProperties=_identityProperties;
-- (void).cxx_destruct;
 - (id)initWithIdentityProperties:(id)arg1 delegatedIdentityProperties:(id)arg2;
 
 @end

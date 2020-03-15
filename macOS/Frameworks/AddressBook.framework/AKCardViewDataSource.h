@@ -14,8 +14,8 @@
 
 @interface AKCardViewDataSource : NSObject <ABCardViewDataSource, ABCardViewDataSourceProvider>
 {
-    BOOL _transient;
     BOOL _hasSingleValuePropertyChanges;
+    BOOL _ignoresGuardianRestrictions;
     id <ABCardViewDataSourceDelegate> _delegate;
     id <AKCardViewDataSourceSupport> _cardView;
     CNContact *_contact;
@@ -40,6 +40,8 @@
 
 + (id)allMultiValueKeys;
 + (id)trueMultiValueKeys;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 @property(retain, nonatomic) NSMutableSet *manuallyAddedPropertyKeys; // @synthesize manuallyAddedPropertyKeys=_manuallyAddedPropertyKeys;
 @property(retain, nonatomic) NSString *linkIdentifier; // @synthesize linkIdentifier=_linkIdentifier;
 @property(retain, nonatomic) NSMutableArray *unlinkedContacts; // @synthesize unlinkedContacts=_unlinkedContacts;
@@ -61,8 +63,6 @@
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) __weak id <AKCardViewDataSourceSupport> cardView; // @synthesize cardView=_cardView;
 @property(readonly, nonatomic) __weak id <ABCardViewDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-@property(getter=isTransient) BOOL transient; // @synthesize transient=_transient;
-- (void).cxx_destruct;
 - (id)identifierOfPersonPreferredForPhoto;
 - (void)setPersonWithIdentifierPreferredForPhoto:(id)arg1;
 - (id)makeSetImageCommandWithImage:(id)arg1 forLinkedContactWithIdentifier:(id)arg2;
@@ -158,6 +158,7 @@
 - (BOOL)isDirectoryResult;
 - (BOOL)isEmpty;
 - (BOOL)isReadOnly;
+@property(readonly, getter=isTransient) BOOL transient;
 - (BOOL)isMe;
 @property(retain, nonatomic) id <ABCardViewMultiValue> textAlert;
 @property(retain, nonatomic) id <ABCardViewMultiValue> callAlert;

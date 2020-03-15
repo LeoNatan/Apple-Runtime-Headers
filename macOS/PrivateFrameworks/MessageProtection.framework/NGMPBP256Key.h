@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     int _keystore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *keyData; // @synthesize keyData=_keyData;
 @property(nonatomic) int keystore; // @synthesize keystore=_keystore;
 @property(retain, nonatomic) NSString *keychainTag; // @synthesize keychainTag=_keychainTag;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

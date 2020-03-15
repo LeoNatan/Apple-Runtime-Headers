@@ -16,11 +16,11 @@
     NSArray *_suggestions;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 @property(retain) _CDPeopleSuggesterSettings *settings; // @synthesize settings=_settings;
 @property(retain) _CDPeopleSuggesterContext *context; // @synthesize context=_context;
 @property(retain) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (_Bool)isValidForContext:(id)arg1 settings:(id)arg2 timeoutSeconds:(double)arg3;
 - (_Bool)isValidForSettings:(id)arg1;
 - (_Bool)isValidForContext:(id)arg1;

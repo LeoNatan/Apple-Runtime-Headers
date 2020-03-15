@@ -17,8 +17,8 @@
     id <FCHeadlineProviding> _headline;
 }
 
-@property(readonly, copy, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 @property(readonly, nonatomic, getter=isPaid) BOOL paid;
 @property(readonly, nonatomic, getter=isBoundToContext) BOOL boundToContext;
 @property(readonly, nonatomic, getter=isHiddenFromFeeds) BOOL hiddenFromFeeds;

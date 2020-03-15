@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSMutableDictionary *viewControllerClassesByIdentifier; // @synthesize viewControllerClassesByIdentifier=_viewControllerClassesByIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *viewControllerClassesByIdentifier; // @synthesize viewControllerClassesByIdentifier=_viewControllerClassesByIdentifier;
 - (void)registerViewControllerClass:(Class)arg1 forIdentifier:(id)arg2;
 - (Class)viewControllerClassForIdentifier:(id)arg1;
 - (id)init;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSString *_lockupTitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *lockupTitle; // @synthesize lockupTitle=_lockupTitle;
 @property(readonly, nonatomic) NSString *lockupLearnMoreLinkTitle; // @synthesize lockupLearnMoreLinkTitle=_lockupLearnMoreLinkTitle;
 @property(readonly, nonatomic) NSString *lockupDescription; // @synthesize lockupDescription=_lockupDescription;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *learnMoreExplanation; // @synthesize learnMoreExplanation=_learnMoreExplanation;
 @property(readonly, nonatomic) NSString *learnMoreDoneButtonTitle; // @synthesize learnMoreDoneButtonTitle=_learnMoreDoneButtonTitle;
 @property(readonly, nonatomic) NSString *learnMoreAddPassButtonTitle; // @synthesize learnMoreAddPassButtonTitle=_learnMoreAddPassButtonTitle;
-- (void).cxx_destruct;
 - (id)learnMoreAlertView;
 - (id)initWithITunesPassDictionary:(id)arg1 clientContext:(id)arg2;
 

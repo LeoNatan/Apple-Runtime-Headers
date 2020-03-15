@@ -14,22 +14,23 @@
 #import <XCTest/XCUIPlatformApplicationServicesProviding-Protocol.h>
 #import <XCTest/XCUIRemoteAccessibilityInterface-Protocol.h>
 #import <XCTest/XCUIRemoteSiriInterface-Protocol.h>
+#import <XCTest/XCUIResetAuthorizationStatusOfProtectedResourcesInterface-Protocol.h>
 #import <XCTest/XCUIScreenDataSource-Protocol.h>
 
 @class NSString, XCTCapabilities;
 @protocol OS_dispatch_queue, XCTDaemonProxy, XCTDaemonProxyProviding, XCUIAXNotificationHandling, XCUIApplicationPlatformServicesProviderDelegate, XCUIDeviceRemoteAutomationSessionDelegate, XCUIDeviceRemoteDaemonConnectionProviding;
 
-@interface XCUIDeviceRemoteAutomationSession : NSObject <XCTDRemoteAutomationClient, XCTRemoteApplicationAutomationClient, XCUIPlatformApplicationServicesProviding, XCUIRemoteAccessibilityInterface, XCUIEventSynthesizing, XCUIDeviceEventAndStateInterface, XCUIRemoteSiriInterface, XCUIScreenDataSource, XCUIApplicationAutomationSessionProviding>
+@interface XCUIDeviceRemoteAutomationSession : NSObject <XCTDRemoteAutomationClient, XCTRemoteApplicationAutomationClient, XCUIPlatformApplicationServicesProviding, XCUIRemoteAccessibilityInterface, XCUIEventSynthesizing, XCUIDeviceEventAndStateInterface, XCUIRemoteSiriInterface, XCUIScreenDataSource, XCUIApplicationAutomationSessionProviding, XCUIResetAuthorizationStatusOfProtectedResourcesInterface>
 {
     BOOL _isConnected;
     BOOL _valid;
-    id <XCUIApplicationPlatformServicesProviderDelegate> platformApplicationServicesProviderDelegate;
+    XCTCapabilities *_remoteInterfaceCapabilities;
+    id <XCUIApplicationPlatformServicesProviderDelegate> _platformApplicationServicesProviderDelegate;
+    double _implicitEventConfirmationIntervalForCurrentContext;
     id <XCTDaemonProxy> _daemonProxy;
     id <XCTDaemonProxyProviding> _proxyProvider;
-    XCTCapabilities *_remoteCapabilities;
     id <XCUIDeviceRemoteDaemonConnectionProviding> _connectionProvider;
     NSObject<OS_dispatch_queue> *_queue;
-    XCTCapabilities *_remoteInterfaceCapabilities;
     id <XCUIDeviceRemoteAutomationSessionDelegate> _delegate;
     id <XCUIAXNotificationHandling> _axNotificationHandler;
 }
@@ -39,18 +40,18 @@
 + (id)capabilities;
 + (void)requestCapabilitiesFromDaemonProxy:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)requestSessionWithDaemonConnectionProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain) id <XCUIAXNotificationHandling> axNotificationHandler; // @synthesize axNotificationHandler=_axNotificationHandler;
 @property __weak id <XCUIDeviceRemoteAutomationSessionDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain) XCTCapabilities *remoteInterfaceCapabilities; // @synthesize remoteInterfaceCapabilities=_remoteInterfaceCapabilities;
 @property(getter=isValid) BOOL valid; // @synthesize valid=_valid;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property BOOL isConnected; // @synthesize isConnected=_isConnected;
 @property(readonly) id <XCUIDeviceRemoteDaemonConnectionProviding> connectionProvider; // @synthesize connectionProvider=_connectionProvider;
-@property(readonly) XCTCapabilities *remoteCapabilities; // @synthesize remoteCapabilities=_remoteCapabilities;
 @property(readonly) id <XCTDaemonProxyProviding> proxyProvider; // @synthesize proxyProvider=_proxyProvider;
 @property(readonly) id <XCTDaemonProxy> daemonProxy; // @synthesize daemonProxy=_daemonProxy;
-@property __weak id <XCUIApplicationPlatformServicesProviderDelegate> platformApplicationServicesProviderDelegate; // @synthesize platformApplicationServicesProviderDelegate;
-- (void).cxx_destruct;
+@property __weak id <XCUIApplicationPlatformServicesProviderDelegate> platformApplicationServicesProviderDelegate; // @synthesize platformApplicationServicesProviderDelegate=_platformApplicationServicesProviderDelegate;
+@property(readonly) XCTCapabilities *remoteInterfaceCapabilities; // @synthesize remoteInterfaceCapabilities=_remoteInterfaceCapabilities;
+- (BOOL)resetAuthorizationStatusForBundleIdentifier:(id)arg1 resourceIdentifier:(id)arg2 error:(id *)arg3;
 - (void)requestAutomationSessionBlacklist:(CDUnknownBlockType)arg1;
 - (void)requestAutomationSessionForTestTargetWithPID:(int)arg1 preferredBackendPath:(id)arg2 reply:(CDUnknownBlockType)arg3;
 @property(readonly) long long applicationAutomationSessionSupport;
@@ -70,6 +71,7 @@
 - (void)updateDeviceOrientation:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performDeviceEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)requestPressureEventsSupportedOrError:(id *)arg1;
+@property double implicitEventConfirmationIntervalForCurrentContext; // @synthesize implicitEventConfirmationIntervalForCurrentContext=_implicitEventConfirmationIntervalForCurrentContext;
 - (id)synthesizeEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly) unsigned long long attachedForceCapableDeviceID;
 @property(readonly) unsigned long long currentKeyboardModifierFlags;
@@ -97,7 +99,7 @@
 - (id)remoteAutomationServer;
 - (void)invalidate;
 - (void)setDelegate:(id)arg1 axNotificationHandler:(id)arg2;
-- (id)initWithDaemonProxy:(id)arg1 proxyProvider:(id)arg2 remoteCapabilities:(id)arg3 connectionProvider:(id)arg4;
+- (id)initWithDaemonProxy:(id)arg1 proxyProvider:(id)arg2 remoteInterfaceCapabilities:(id)arg3 connectionProvider:(id)arg4;
 - (void)dealloc;
 
 // Remaining properties

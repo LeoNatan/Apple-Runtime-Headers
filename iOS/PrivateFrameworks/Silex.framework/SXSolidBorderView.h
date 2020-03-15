@@ -13,8 +13,8 @@
     SXStrokeStyle *_strokeStyle;
 }
 
-@property(readonly, nonatomic) SXStrokeStyle *strokeStyle; // @synthesize strokeStyle=_strokeStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXStrokeStyle *strokeStyle; // @synthesize strokeStyle=_strokeStyle;
 - (id)initWithStrokeStyle:(id)arg1;
 
 @end

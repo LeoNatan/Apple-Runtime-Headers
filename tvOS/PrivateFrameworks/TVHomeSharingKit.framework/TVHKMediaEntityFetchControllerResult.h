@@ -17,12 +17,12 @@
     NSDictionary *_groupingsResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *groupingsResult; // @synthesize groupingsResult=_groupingsResult;
 @property(retain, nonatomic) TVHKMediaQueryResult *unplayedMediaEntitiesResult; // @synthesize unplayedMediaEntitiesResult=_unplayedMediaEntitiesResult;
 @property(retain, nonatomic) TVHKMediaQueryResult *recentlyAddedMediaEntitiesResult; // @synthesize recentlyAddedMediaEntitiesResult=_recentlyAddedMediaEntitiesResult;
 @property(retain, nonatomic) TVHKMediaQueryResult *mediaEntitiesResult; // @synthesize mediaEntitiesResult=_mediaEntitiesResult;
 @property(nonatomic) long long queryReason; // @synthesize queryReason=_queryReason;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithQueryReason:(long long)arg1 mediaEntities:(id)arg2;
 - (id)init;

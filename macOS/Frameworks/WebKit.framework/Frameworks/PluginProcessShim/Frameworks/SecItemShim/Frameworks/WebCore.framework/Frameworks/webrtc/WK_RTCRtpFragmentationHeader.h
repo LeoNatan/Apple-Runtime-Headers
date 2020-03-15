@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_fragmentationPlType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *fragmentationPlType; // @synthesize fragmentationPlType=_fragmentationPlType;
 @property(retain, nonatomic) NSArray *fragmentationTimeDiff; // @synthesize fragmentationTimeDiff=_fragmentationTimeDiff;
 @property(retain, nonatomic) NSArray *fragmentationLength; // @synthesize fragmentationLength=_fragmentationLength;
 @property(retain, nonatomic) NSArray *fragmentationOffset; // @synthesize fragmentationOffset=_fragmentationOffset;
-- (void).cxx_destruct;
 - (unique_ptr_91070b9b)createNativeFragmentationHeader;
 - (id)initWithNativeFragmentationHeader:(const struct RTPFragmentationHeader *)arg1;
 

@@ -21,9 +21,9 @@
 + (id)tokenWithPersistentHistoryToken:(id)arg1;
 + (id)currentTokenForContext:(id)arg1;
 + (int)currentVersion;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSPersistentHistoryToken *persistentHistoryToken; // @synthesize persistentHistoryToken=_persistentHistoryToken;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

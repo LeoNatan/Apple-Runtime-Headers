@@ -30,6 +30,9 @@
 + (id)decodeFromXPCArchive:(id)arg1 withContext:(id)arg2;
 @property(copy) NSArray *objectsToInsert; // @synthesize objectsToInsert=_objectsToInsert;
 - (void)_resolveEntityWithSQLCore:(id)arg1;
+- (void)_resolveEntityWithContext:(id)arg1;
+- (BOOL)_secureOperation;
+- (void)_setSecureOperation:(BOOL)arg1;
 @property unsigned long long resultType;
 - (unsigned long long)requestType;
 @property(readonly) NSEntityDescription *entity;

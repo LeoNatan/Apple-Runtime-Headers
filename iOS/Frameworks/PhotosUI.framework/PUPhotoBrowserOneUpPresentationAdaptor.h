@@ -28,10 +28,10 @@ __attribute__((visibility("hidden")))
     NSSet *__photoTokensForHiddenAssetReferences;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShouldDisableScroll:) _Bool _shouldDisableScroll; // @synthesize _shouldDisableScroll=__shouldDisableScroll;
 @property(copy, nonatomic, setter=_setPhotoTokensForHiddenAssetReferences:) NSSet *_photoTokensForHiddenAssetReferences; // @synthesize _photoTokensForHiddenAssetReferences=__photoTokensForHiddenAssetReferences;
 @property(nonatomic) __weak id <PUPhotoBrowserZoomTransitionDelegate> zoomTransitionDelegate; // @synthesize zoomTransitionDelegate=_zoomTransitionDelegate;
-- (void).cxx_destruct;
 - (void)oneUpPresentationHelper:(id)arg1 shouldDisableScroll:(_Bool)arg2;
 - (void)oneUpPresentationHelper:(id)arg1 scrollAssetReferenceToVisible:(id)arg2;
 - (void)oneUpPresentationHelper:(id)arg1 shouldHideAssetReferences:(id)arg2;

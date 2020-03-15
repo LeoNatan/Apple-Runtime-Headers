@@ -42,6 +42,7 @@
 + (id)writableTypeIdentifiersForItemProvider;
 + (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 + (id)readableTypeIdentifiersForItemProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 @property(retain, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 @property(copy, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
@@ -60,7 +61,6 @@
 @property(readonly, nonatomic) unsigned long long kind; // @synthesize kind=_kind;
 @property(copy, nonatomic) NSString *address; // @synthesize address=_address;
 @property(retain, nonatomic) CNComposeRecipientOriginContext *originContext; // @synthesize originContext=_originContext;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

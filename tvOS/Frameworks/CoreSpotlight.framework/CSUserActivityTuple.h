@@ -17,10 +17,10 @@
     NSString *_protectionClass;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *protectionClass; // @synthesize protectionClass=_protectionClass;
 @property(retain) CSSearchableItem *item; // @synthesize item=_item;
 @property(retain) CSUserAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)searchableItem;
 - (id)initWithAction:(id)arg1 item:(id)arg2;
 

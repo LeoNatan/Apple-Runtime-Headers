@@ -27,12 +27,12 @@
 
 + (Class)endEventsType;
 + (Class)triggerEventsType;
+- (void).cxx_destruct;
 @property(nonatomic) int resultErrorCode; // @synthesize resultErrorCode=_resultErrorCode;
 @property(retain, nonatomic) NSMutableArray *endEvents; // @synthesize endEvents=_endEvents;
 @property(retain, nonatomic) NSMutableArray *triggerEvents; // @synthesize triggerEvents=_triggerEvents;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

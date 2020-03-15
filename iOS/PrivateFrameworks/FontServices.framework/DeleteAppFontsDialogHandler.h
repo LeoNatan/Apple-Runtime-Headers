@@ -17,9 +17,9 @@
     NSXPCListener *_listener;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)showDialogWithUserInfo:(id)arg1;
 - (void)doneWithDeleteAppFonts:(_Bool)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

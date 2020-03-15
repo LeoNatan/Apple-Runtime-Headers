@@ -17,12 +17,12 @@
     unsigned long long _height;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) PXNewMagazineRectArray *rectsArray; // @synthesize rectsArray=_rectsArray;
 @property(readonly, nonatomic) unsigned long long numOfRects; // @synthesize numOfRects=_numOfRects;
 @property(readonly, nonatomic) long long startY; // @synthesize startY=_startY;
 @property(readonly, nonatomic) long long startIndexOfInputs; // @synthesize startIndexOfInputs=_startIndexOfInputs;
-- (void).cxx_destruct;
 - (id)initWithStartY:(long long)arg1 startIndexOfInputs:(long long)arg2 rectsArray:(id)arg3;
 
 @end

@@ -23,6 +23,7 @@
     NSMutableDictionary *_statusBarAssertions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool asynchronousRenderingTemporarilyDisabled; // @synthesize asynchronousRenderingTemporarilyDisabled=_asynchronousRenderingTemporarilyDisabled;
 @property(readonly, nonatomic) _Bool wantsMinificationFilter; // @synthesize wantsMinificationFilter=_wantsMinificationFilter;
 @property(retain, nonatomic) NSMutableDictionary *statusBarAssertions; // @synthesize statusBarAssertions=_statusBarAssertions;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) __weak SBMainDisplaySceneLayoutViewController *sceneLayoutViewController; // @synthesize sceneLayoutViewController=_sceneLayoutViewController;
 @property(readonly, nonatomic) long long rasterizationStyle; // @synthesize rasterizationStyle=_rasterizationStyle;
 @property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
-- (void).cxx_destruct;
 - (void)_evaluateAsynchronousRenderingEnablement;
 - (void)disableAsynchronousRenderingForNextCommit;
 - (void)setRasterizationStyle:(long long)arg1 withMinificationFilterEnabled:(_Bool)arg2;

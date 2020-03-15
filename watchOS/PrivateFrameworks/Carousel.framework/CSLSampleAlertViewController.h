@@ -21,13 +21,13 @@
     id _policyAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id policyAssertion; // @synthesize policyAssertion=_policyAssertion;
 @property(nonatomic) _Bool needsBackgroundUpdate; // @synthesize needsBackgroundUpdate=_needsBackgroundUpdate;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) __weak id <CSLSampleAlertViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)endBorrowingBackgroundView;
 - (id)borrowBackgroundView;
 - (void)transitionOutToNotification;

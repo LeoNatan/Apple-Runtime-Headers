@@ -6,11 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableSet, NSXPCConnection;
+#import <AppleMediaServices/AMSDServiceBrokerProtocol-Protocol.h>
+
+@class NSMutableArray, NSMutableSet, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface AMSDaemonConnection : NSObject
+@interface AMSDaemonConnection : NSObject <AMSDServiceBrokerProtocol>
 {
     NSXPCConnection *_sharedConnection;
     NSObject<OS_dispatch_queue> *_sharedConnectionAccessQueue;
@@ -18,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_interruptionHandlers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *interruptionHandlers; // @synthesize interruptionHandlers=_interruptionHandlers;
 @property(readonly, nonatomic) NSMutableSet *activePromises; // @synthesize activePromises=_activePromises;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *sharedConnectionAccessQueue; // @synthesize sharedConnectionAccessQueue=_sharedConnectionAccessQueue;
 @property(retain, nonatomic) NSXPCConnection *sharedConnection; // @synthesize sharedConnection=_sharedConnection;
-- (void).cxx_destruct;
 - (void)_handleInvalidation;
 - (void)_handleInterruption;
 - (id)_connectionProxyForAsync:(_Bool)arg1 accessBlock:(CDUnknownBlockType)arg2;
@@ -32,6 +34,12 @@ __attribute__((visibility("hidden")))
 - (void)addInterruptionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

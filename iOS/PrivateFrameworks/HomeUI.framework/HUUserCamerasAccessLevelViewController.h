@@ -14,9 +14,9 @@
     HUUserCamerasAccessLevelItemManager *_camerasAccessLevelItemManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HUUserCamerasAccessLevelItemManager *camerasAccessLevelItemManager; // @synthesize camerasAccessLevelItemManager=_camerasAccessLevelItemManager;
 @property(readonly, copy, nonatomic) HFUserItem *userItem; // @synthesize userItem=_userItem;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(_Bool)arg4;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;

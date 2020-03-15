@@ -26,9 +26,9 @@
 }
 
 + (id)_filteredAttributes;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAliasOf:) __weak IKDOMElement *_aliasOf; // @synthesize _aliasOf=__aliasOf;
 @property(retain, nonatomic) IKViewElementStyleComposer *styleComposer; // @synthesize styleComposer;
-- (void).cxx_destruct;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *elementName;

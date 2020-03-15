@@ -15,10 +15,10 @@
     CDUnknownBlockType _removalAction;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType removalAction; // @synthesize removalAction=_removalAction;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, nonatomic) __weak CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 - (void)removeAnimationIfPossible;
 - (id)initWithLayer:(id)arg1 key:(id)arg2;
 - (id)init;

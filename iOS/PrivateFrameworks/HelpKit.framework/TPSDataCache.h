@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *updatedDate; // @synthesize updatedDate=_updatedDate;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(retain, nonatomic) NSString *lastModified; // @synthesize lastModified=_lastModified;
@@ -30,7 +31,6 @@
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(nonatomic) long long maxAge; // @synthesize maxAge=_maxAge;
 @property(nonatomic) unsigned long long cacheType; // @synthesize cacheType=_cacheType;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) _Bool expired; // @dynamic expired;
 - (void)encodeWithCoder:(id)arg1;

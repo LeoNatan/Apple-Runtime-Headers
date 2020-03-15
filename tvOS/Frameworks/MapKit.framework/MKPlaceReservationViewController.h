@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     _MKPlaceReservationInfo *_reservationInfo;
 }
 
-@property(retain, nonatomic) _MKPlaceReservationInfo *reservationInfo; // @synthesize reservationInfo=_reservationInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MKPlaceReservationInfo *reservationInfo; // @synthesize reservationInfo=_reservationInfo;
 - (void)_updateReservationInfoAnimated:(_Bool)arg1;
 - (void)viewDidLoad;
 - (_Bool)_canShowWhileLocked;

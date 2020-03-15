@@ -18,11 +18,11 @@
     SearchUIMovieCardSectionView *_cardSectionView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SearchUIMovieCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
 @property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
 @property(retain, nonatomic) SearchUIOfferButtonView *button; // @synthesize button=_button;
 @property(retain, nonatomic) SearchUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)buttonPressed;
 - (id)accessibilityRole;

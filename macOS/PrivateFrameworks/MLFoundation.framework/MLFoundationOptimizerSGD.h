@@ -19,10 +19,10 @@
 }
 
 + (id)optimizerWithDescriptor:(id)arg1 momentumScale:(float)arg2 useNestrovMomentum:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MLFoundationOptimizerDescriptor *optimizerDescriptor; // @synthesize optimizerDescriptor=_optimizerDescriptor;
 @property(readonly, nonatomic) BOOL useNestrovMomentum; // @synthesize useNestrovMomentum=_useNestrovMomentum;
 @property(readonly, nonatomic) float momentumScale; // @synthesize momentumScale=_momentumScale;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (BOOL)compileForDevice:(id)arg1;

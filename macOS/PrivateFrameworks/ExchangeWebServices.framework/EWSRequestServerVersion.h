@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSString *Version; // @synthesize Version=_Version;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *Version; // @synthesize Version=_Version;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

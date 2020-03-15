@@ -15,9 +15,9 @@
 }
 
 + (id)representedType;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *transientTitle; // @synthesize transientTitle=_transientTitle;
 @property(readonly, copy, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
-- (void).cxx_destruct;
 - (id)_transientCollectionInLibrary:(id)arg1;
 @property(readonly, nonatomic) _Bool transient;
 - (id)dictionaryForReferenceType:(id)arg1;

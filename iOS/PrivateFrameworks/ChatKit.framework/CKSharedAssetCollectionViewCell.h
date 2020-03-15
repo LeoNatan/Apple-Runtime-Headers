@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *previewTitleContainerView; // @synthesize previewTitleContainerView=_previewTitleContainerView;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) UILabel *previewTitleLabel; // @synthesize previewTitleLabel=_previewTitleLabel;
 @property(retain, nonatomic) UIView *previewView; // @synthesize previewView=_previewView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)formattedTitleFromPreviewTitle:(id)arg1;
 - (double)cornerRadius;

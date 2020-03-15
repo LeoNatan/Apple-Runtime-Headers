@@ -13,8 +13,8 @@
     HFHomeBuilder *_homeBuilder;
 }
 
-@property(readonly, nonatomic) HFHomeBuilder *homeBuilder; // @synthesize homeBuilder=_homeBuilder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFHomeBuilder *homeBuilder; // @synthesize homeBuilder=_homeBuilder;
 - (CDUnknownBlockType)_comparatorForSectionIdentifier:(id)arg1;
 - (id)_sectionIdentifierForItem:(id)arg1;
 - (id)_identifierForSection:(unsigned long long)arg1;

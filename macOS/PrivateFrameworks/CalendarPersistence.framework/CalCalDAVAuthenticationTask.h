@@ -14,8 +14,8 @@
     CalCalDAVTaskManager *_taskManager;
 }
 
-@property(retain, nonatomic) CalDAVBasicAccountInfoProvider *accountInfoProvider; // @synthesize accountInfoProvider=_accountInfoProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CalDAVBasicAccountInfoProvider *accountInfoProvider; // @synthesize accountInfoProvider=_accountInfoProvider;
 - (void)dealloc;
 - (void)authenticateSynchronously;
 - (id)initWithBasicAccountInfoProvider:(id)arg1;

@@ -14,8 +14,8 @@
     RBSAssertion *_assertion;
 }
 
-@property(readonly, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (void)dealloc;
 - (id)initWithScene:(id)arg1 requests:(id)arg2 expirationInterval:(double)arg3 responseHandler:(CDUnknownBlockType)arg4;
 

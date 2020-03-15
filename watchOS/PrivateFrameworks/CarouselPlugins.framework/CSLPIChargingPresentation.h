@@ -19,13 +19,13 @@
     int _iomfbPhase;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int iomfbPhase; // @synthesize iomfbPhase=_iomfbPhase;
 @property(nonatomic) __weak id <CSLPIChargingPresentationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSDate *animationCompletionDate; // @synthesize animationCompletionDate=_animationCompletionDate;
 @property(readonly, nonatomic) unsigned int imageID; // @synthesize imageID=_imageID;
 @property(readonly, nonatomic) CSLPIChargingAlertOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) unsigned int stage; // @synthesize stage=_stage;
-- (void).cxx_destruct;
 - (void)dismissed;
 - (void)finishingAnimation;
 - (void)animatingAfterStaticImage;

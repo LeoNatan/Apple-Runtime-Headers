@@ -49,6 +49,7 @@
 + (id)thirdPartyCallActionItemForHandle:(id)arg1 contactProperty:(id)arg2 actionType:(id)arg3 bundleIdentifier:(id)arg4 callProviderManager:(id)arg5;
 + (id)actionItemForContactProperty:(id)arg1 actionType:(id)arg2 bundleIdentifier:(id)arg3 callProviderManager:(id)arg4;
 + (id)actionItemForContactProperty:(id)arg1 actionType:(id)arg2 bundleIdentifier:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *associatedRecentContactMetadata; // @synthesize associatedRecentContactMetadata=_associatedRecentContactMetadata;
 @property(copy, nonatomic) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
@@ -57,7 +58,6 @@
 @property(readonly, nonatomic) CNContactProperty *contactProperty; // @synthesize contactProperty=_contactProperty;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

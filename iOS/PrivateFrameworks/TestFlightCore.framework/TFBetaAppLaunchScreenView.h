@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     TFBetaAppLaunchScreenViewSpecification *_specification;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TFBetaAppLaunchScreenViewSpecification *specification; // @synthesize specification=_specification;
 @property(retain, nonatomic) UIView *snapshot; // @synthesize snapshot=_snapshot;
 @property(readonly, nonatomic) UIVisualEffectView *buttonBackgroundEffectView; // @synthesize buttonBackgroundEffectView=_buttonBackgroundEffectView;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) TFAppLockupView *lockupView; // @synthesize lockupView=_lockupView;
-- (void).cxx_destruct;
 - (void)_layoutScrollViewWithLayoutMetrics:(id)arg1 accomodatingPinnedBottomView:(id)arg2;
 - (void)_layoutButtonModuleWithLayoutMetrics:(id)arg1;
 - (void)_prepareForDisplayWithTraitCollection:(id)arg1;

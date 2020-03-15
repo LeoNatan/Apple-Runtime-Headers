@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstanceForPregenerate;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain) VEKProgressWatcher *watcherProperty; // @synthesize watcherProperty=_watcherProperty;
 @property double playbackStartedTimePPT; // @synthesize playbackStartedTimePPT=_playbackStartedTimePPT;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property long long remainingAssetsToDownload; // @synthesize remainingAssetsToDownload=_remainingAssetsToDownload;
 @property(retain) Project *project; // @synthesize project=_project;
 @property(retain, nonatomic) MiroMemory *memory; // @synthesize memory=_memory;
-- (void).cxx_destruct;
 - (void)updateMovieController:(id)arg1;
 - (void)updateProgress:(float)arg1;
 - (void)updateDownloadProgress:(float)arg1;

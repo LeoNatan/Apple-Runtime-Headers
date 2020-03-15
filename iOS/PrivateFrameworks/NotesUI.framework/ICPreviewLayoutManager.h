@@ -12,7 +12,7 @@
 
 - (id)linkAttributesForLink:(id)arg1 forCharacterAtIndex:(unsigned long long)arg2;
 - (void)drawTodoItemForListRange:(struct _NSRange)arg1 paragraphStyle:(id)arg2 atOrigin:(struct CGPoint)arg3;
-- (struct UIImage *)todoImageForParagraphStyle:(id)arg1;
+- (id)todoImageForParagraphStyle:(id)arg1;
 - (void)drawTodosForCharacterRange:(struct _NSRange)arg1 atOrigin:(struct CGPoint)arg2;
 - (void)drawGlyphsForGlyphRange:(struct _NSRange)arg1 atPoint:(struct CGPoint)arg2;
 

@@ -24,8 +24,8 @@
 }
 
 + (void)initialize;
-@property(nonatomic) __weak id <PSYSyncSessionObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PSYSyncSessionObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (oneway void)invalidateSyncSession:(id)arg1;
 - (oneway void)updateSyncSession:(id)arg1;
 - (oneway void)syncSessionWillStart:(id)arg1;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)changesetWithDownloadID:(id)arg1 state:(long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *timeRemaining; // @synthesize timeRemaining=_timeRemaining;
 @property(copy, nonatomic) NSNumber *progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSNumber *downloadID; // @synthesize downloadID=_downloadID;
 @property(copy, nonatomic) NSURL *contentURL; // @synthesize contentURL=_contentURL;
 @property(copy, nonatomic) NSNumber *contentLength; // @synthesize contentLength=_contentLength;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;

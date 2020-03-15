@@ -18,12 +18,12 @@
     NSArray *_sharedNamespaces;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *sharedNamespaces; // @synthesize sharedNamespaces=_sharedNamespaces;
 @property(copy, nonatomic) NSArray *publicNamespaces; // @synthesize publicNamespaces=_publicNamespaces;
 @property(copy, nonatomic) NSArray *privateNamespaces; // @synthesize privateNamespaces=_privateNamespaces;
 @property(copy, nonatomic) NSString *separatorChar; // @synthesize separatorChar=_separatorChar;
 @property(retain, nonatomic) id <ICNFIMAPAccount> account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (long long)maxAllowedConnectionState;
 - (long long)minRequiredConnectionState;
 - (BOOL)executeOnConnection:(id)arg1;

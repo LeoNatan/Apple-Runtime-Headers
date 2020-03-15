@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int expectedReceiveSize; // @synthesize expectedReceiveSize=_expectedReceiveSize;
 @property(nonatomic) int expectedSendSize; // @synthesize expectedSendSize=_expectedSendSize;
 @property(retain, nonatomic) NSDictionary *networkServiceTypePerConfig; // @synthesize networkServiceTypePerConfig=_networkServiceTypePerConfig;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

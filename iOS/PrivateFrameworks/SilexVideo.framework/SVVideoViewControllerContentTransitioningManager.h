@@ -28,6 +28,7 @@
     id <SVVisiblePercentageReporting> _visibilityReporterForDisappearingVideo;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SVVisiblePercentageReporting> visibilityReporterForDisappearingVideo; // @synthesize visibilityReporterForDisappearingVideo=_visibilityReporterForDisappearingVideo;
 @property(nonatomic) __weak id <SVVisiblePercentageReporting> visibilityReporterForAppearingVideo; // @synthesize visibilityReporterForAppearingVideo=_visibilityReporterForAppearingVideo;
 @property(retain, nonatomic) id <SVVideoPlaybackSeeking> seeker; // @synthesize seeker=_seeker;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) id <SVPlayerProviding> playerProvider; // @synthesize playerProvider=_playerProvider;
 @property(readonly, nonatomic) id <SVVideoQueueProviding> queueProvider; // @synthesize queueProvider=_queueProvider;
 @property(readonly, nonatomic) __weak id <SVVisibilityReporting> visibilityReporter; // @synthesize visibilityReporter=_visibilityReporter;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)videoForContentTransitionType:(long long)arg1;
 - (id)playerViewController:(id)arg1 playerForContentTransitionType:(long long)arg2;

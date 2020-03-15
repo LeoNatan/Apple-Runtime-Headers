@@ -16,8 +16,8 @@
 }
 
 + (id)prunerClientWithPruner:(id)arg1;
-@property __weak SRSensorPruner *pruner; // @synthesize pruner=_pruner;
 - (void).cxx_destruct;
+@property __weak SRSensorPruner *pruner; // @synthesize pruner=_pruner;
 - (void)resetDatastoreFiles:(id)arg1;
 - (id)initWithPruner:(id)arg1;
 

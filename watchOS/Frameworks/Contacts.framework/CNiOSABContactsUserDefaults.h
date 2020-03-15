@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CNiOSABContactsUserDefaultsABWrapper *_abWrapper;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNiOSABContactsUserDefaultsABWrapper *abWrapper; // @synthesize abWrapper=_abWrapper;
 @property(retain, nonatomic) NSCache *valueCache; // @synthesize valueCache=_valueCache;
 @property(retain, nonatomic) NSMutableDictionary *observerCountPerKey; // @synthesize observerCountPerKey=_observerCountPerKey;
-- (void).cxx_destruct;
 - (void)setFilteredGroupAndContainerIDs:(id)arg1;
 - (id)filteredGroupAndContainerIDs;
 - (id)countryCode;

@@ -20,11 +20,11 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HFIconDescriptor> iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;
 @property(readonly, copy, nonatomic) NSString *topicName; // @synthesize topicName=_topicName;
 @property(readonly, copy, nonatomic) NSSet *accessoryCategoryTypes; // @synthesize accessoryCategoryTypes=_accessoryCategoryTypes;
 @property(readonly, copy, nonatomic) NSSet *serviceTypes; // @synthesize serviceTypes=_serviceTypes;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *identifier;

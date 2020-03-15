@@ -19,8 +19,8 @@
 
 + (id)supportedServices;
 + (id)serviceOwnerBundles;
-@property(copy, nonatomic) NSDictionary *serviceOwners; // @synthesize serviceOwners=_serviceOwners;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *serviceOwners; // @synthesize serviceOwners=_serviceOwners;
 - (void)signOutService:(id)arg1 withContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)signInService:(id)arg1 withContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)nameComponentsForAccount:(id)arg1 service:(id)arg2;

@@ -24,6 +24,7 @@
     double __startTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double _startTime; // @synthesize _startTime=__startTime;
 @property(nonatomic) BOOL _repeats; // @synthesize _repeats=__repeats;
 @property(nonatomic) SEL _selector; // @synthesize _selector=__selector;
@@ -33,7 +34,6 @@
 @property(nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) __weak id <AXEMockTimerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (void)invalidate;
 - (void)fire;

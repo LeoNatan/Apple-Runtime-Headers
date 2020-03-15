@@ -20,6 +20,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsSOSWhenDisabled; // @synthesize showsSOSWhenDisabled=_showsSOSWhenDisabled;
 @property(nonatomic) _Bool callForwardingEnabled; // @synthesize callForwardingEnabled=_callForwardingEnabled;
 @property(nonatomic) _Bool wifiCallingEnabled; // @synthesize wifiCallingEnabled=_wifiCallingEnabled;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSString *crossfadeString; // @synthesize crossfadeString=_crossfadeString;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_ui_descriptionBuilder;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

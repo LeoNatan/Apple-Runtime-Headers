@@ -15,9 +15,9 @@
     NSObject<OS_xpc_object> *_activity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *activity; // @synthesize activity=_activity;
 @property(readonly, nonatomic) ML3MusicLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithLibrary:(id)arg1 activity:(id)arg2;
 

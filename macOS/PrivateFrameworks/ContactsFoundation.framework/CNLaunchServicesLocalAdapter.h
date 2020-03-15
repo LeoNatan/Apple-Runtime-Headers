@@ -16,8 +16,8 @@
 }
 
 + (id)lsApplicationWorkspaceForBundleId:(id)arg1;
-@property(retain, nonatomic) LSApplicationWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+@property(retain, nonatomic) LSApplicationWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void)openSensitiveURLInBackground:(id)arg1 withOptions:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)openUserActivityData:(id)arg1 inApplication:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)applicationForBundleIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;

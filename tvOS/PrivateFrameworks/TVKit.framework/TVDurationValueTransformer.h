@@ -17,9 +17,9 @@
 + (_Bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponentsFormatter *secondsFormatter; // @synthesize secondsFormatter=_secondsFormatter;
 @property(retain, nonatomic) NSDateComponentsFormatter *minutesFormatter; // @synthesize minutesFormatter=_minutesFormatter;
-- (void).cxx_destruct;
 - (id)transformedValue:(id)arg1;
 - (id)init;
 

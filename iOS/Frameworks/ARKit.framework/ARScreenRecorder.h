@@ -23,6 +23,7 @@
 }
 
 + (id)sharedRecorder;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *writerQueue; // @synthesize writerQueue=_writerQueue;
@@ -32,7 +33,6 @@
 @property(nonatomic) double previousFrameTime; // @synthesize previousFrameTime=_previousFrameTime;
 @property(nonatomic) double firstFrameTime; // @synthesize firstFrameTime=_firstFrameTime;
 @property(nonatomic) _Bool isRecording; // @synthesize isRecording=_isRecording;
-- (void).cxx_destruct;
 - (void)_finishRecordingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_appendFrame:(id)arg1 forTime:(double)arg2;
 - (_Bool)_appendImageData:(id)arg1 forTime:(double)arg2;

@@ -15,9 +15,9 @@
     CDPContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CDPContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) id <CDPProtectedCloudStorageProxy> pcsProxy; // @synthesize pcsProxy=_pcsProxy;
-- (void).cxx_destruct;
 - (id)_contextSetupDictionary;
 - (void)_disableCDPWithCompletion:(CDUnknownBlockType)arg1;
 - (void)disableCDPWithCompletion:(CDUnknownBlockType)arg1;

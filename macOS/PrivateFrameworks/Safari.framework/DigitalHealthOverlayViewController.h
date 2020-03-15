@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <DigitalHealthOverlayViewControllerDelegate> _digitalHealthOverlayViewControllerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DigitalHealthOverlayViewControllerDelegate> digitalHealthOverlayViewControllerDelegate; // @synthesize digitalHealthOverlayViewControllerDelegate=_digitalHealthOverlayViewControllerDelegate;
 @property(readonly, nonatomic) STLockoutViewController *associatedLockoutViewController; // @synthesize associatedLockoutViewController=_associatedLockoutViewController;
 @property(readonly, nonatomic) NSURL *currentURL; // @synthesize currentURL=_currentURL;
-- (void).cxx_destruct;
 - (void)lockoutViewControllerDidFinishDismissing:(id)arg1;
 - (void)viewDidLoad;
 - (void)loadView;

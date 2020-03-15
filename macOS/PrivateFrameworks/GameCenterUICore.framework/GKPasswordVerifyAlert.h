@@ -22,6 +22,7 @@
     NSButton *_forgotPasswordButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *forgotPasswordButton; // @synthesize forgotPasswordButton=_forgotPasswordButton;
 @property(retain) NSButton *createAccountButton; // @synthesize createAccountButton=_createAccountButton;
 @property(retain) NSTextField *passwordField; // @synthesize passwordField=_passwordField;
@@ -30,7 +31,6 @@
 @property(retain) NSTextField *accountLabel; // @synthesize accountLabel=_accountLabel;
 @property(retain) NSView *loginView; // @synthesize loginView=_loginView;
 @property(nonatomic) long long environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (void)invokeIForgot:(id)arg1;
 - (void)createAppleID:(id)arg1;
 - (void)dismiss;

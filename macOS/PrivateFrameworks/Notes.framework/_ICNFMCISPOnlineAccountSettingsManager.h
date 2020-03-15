@@ -14,8 +14,8 @@
     NSString *_ispAccountsXQuery;
 }
 
-@property(readonly, copy, nonatomic) NSString *ispAccountsXQuery; // @synthesize ispAccountsXQuery=_ispAccountsXQuery;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *ispAccountsXQuery; // @synthesize ispAccountsXQuery=_ispAccountsXQuery;
 - (void)emptyCache;
 - (id)_deliveryAccountsSettingsForDomain:(id)arg1 fetchIfNecessary:(BOOL)arg2;
 - (id)_receivingAccountSettingsForDomain:(id)arg1 fetchIfNecessary:(BOOL)arg2;

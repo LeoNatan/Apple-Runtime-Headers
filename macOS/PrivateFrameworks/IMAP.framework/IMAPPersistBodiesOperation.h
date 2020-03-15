@@ -15,9 +15,9 @@
     id <IMAPPersistBodiesOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <IMAPPersistBodiesOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSOrderedSet *downloads; // @synthesize downloads=_downloads;
-- (void).cxx_destruct;
 - (void)main;
 - (id)description;
 - (id)initWithDataSource:(id)arg1;

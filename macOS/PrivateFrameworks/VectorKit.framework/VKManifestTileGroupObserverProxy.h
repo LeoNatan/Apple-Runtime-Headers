@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     function_d50775c7 _experimentConfigurationDidChange;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property function_d50775c7 experimentConfigurationDidChange; // @synthesize experimentConfigurationDidChange=_experimentConfigurationDidChange;
 @property function_3dbef162 didChangeActiveTileGroup; // @synthesize didChangeActiveTileGroup=_didChangeActiveTileGroup;
 @property function_288b8140 willChangeActiveTileGroup; // @synthesize willChangeActiveTileGroup=_willChangeActiveTileGroup;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)experimentConfigurationDidChange:(id)arg1;
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;

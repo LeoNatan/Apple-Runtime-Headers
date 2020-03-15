@@ -18,12 +18,12 @@
 }
 
 + (id)responseTupleForCharacteristic:(id)arg1 error:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSDate *valueUpdatedTime; // @synthesize valueUpdatedTime=_valueUpdatedTime;
 @property(retain, nonatomic) NSNumber *stateNumber; // @synthesize stateNumber=_stateNumber;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(retain, nonatomic) HAPCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (void).cxx_destruct;
 
 @end
 

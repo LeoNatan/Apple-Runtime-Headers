@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsBSXPCSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RBSTerminateContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) RBSProcessIdentity *processIdentity; // @synthesize processIdentity=_processIdentity;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic) _Bool targetsAllManagedProcesses; // @synthesize targetsAllManagedProcesses=_targetsAllManagedProcesses;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

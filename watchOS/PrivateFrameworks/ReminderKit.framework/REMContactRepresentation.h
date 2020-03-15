@@ -18,9 +18,9 @@
 
 + (id)representationFromData:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *emails; // @synthesize emails=_emails;
 @property(copy, nonatomic) NSArray *phones; // @synthesize phones=_phones;
-- (void).cxx_destruct;
 - (id)archivedData;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

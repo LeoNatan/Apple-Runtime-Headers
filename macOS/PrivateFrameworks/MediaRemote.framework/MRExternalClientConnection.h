@@ -19,6 +19,7 @@
     MRCryptoPairingSession *_cryptoSession;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL cryptoEnabled; // @synthesize cryptoEnabled=_cryptoEnabled;
 @property(retain, nonatomic) MRCryptoPairingSession *cryptoSession; // @synthesize cryptoSession=_cryptoSession;
 @property(nonatomic) unsigned int voiceRecordingState; // @synthesize voiceRecordingState=_voiceRecordingState;
@@ -26,7 +27,6 @@
 @property(nonatomic) BOOL registeredKeyboardUpdates; // @synthesize registeredKeyboardUpdates=_registeredKeyboardUpdates;
 @property(nonatomic) BOOL registeredToVolumeUpdates; // @synthesize registeredToVolumeUpdates=_registeredToVolumeUpdates;
 @property(nonatomic) BOOL registeredToNowPlayingUpdates; // @synthesize registeredToNowPlayingUpdates=_registeredToNowPlayingUpdates;
-- (void).cxx_destruct;
 - (id)decryptData:(id)arg1 error:(id *)arg2;
 - (id)encryptDataForMessage:(id)arg1;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2 runLoop:(id)arg3;

@@ -13,8 +13,8 @@
     WFRichContentItemCellView *_cellView;
 }
 
-@property(readonly, nonatomic) __weak WFRichContentItemCellView *cellView; // @synthesize cellView=_cellView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak WFRichContentItemCellView *cellView; // @synthesize cellView=_cellView;
 - (id)accessibilityLabel;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

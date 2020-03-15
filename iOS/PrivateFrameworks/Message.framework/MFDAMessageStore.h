@@ -14,8 +14,8 @@
     _Bool _backedByVirtualAllSearchMailbox;
 }
 
-@property(nonatomic) _Bool backedByVirtualAllSearchMailbox; // @synthesize backedByVirtualAllSearchMailbox=_backedByVirtualAllSearchMailbox;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool backedByVirtualAllSearchMailbox; // @synthesize backedByVirtualAllSearchMailbox=_backedByVirtualAllSearchMailbox;
 - (id)storeData:(id)arg1 forMimePart:(id)arg2 isComplete:(_Bool)arg3;
 - (_Bool)messageCanBeTriaged:(id)arg1;
 - (unsigned long long)growFetchWindow;

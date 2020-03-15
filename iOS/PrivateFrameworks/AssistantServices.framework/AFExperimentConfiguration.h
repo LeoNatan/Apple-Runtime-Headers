@@ -23,13 +23,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *salt; // @synthesize salt=_salt;
 @property(readonly, copy, nonatomic) NSArray *experimentGroups; // @synthesize experimentGroups=_experimentGroups;
 @property(readonly, copy, nonatomic) AFExperimentGroup *controlGroup; // @synthesize controlGroup=_controlGroup;
 @property(readonly, copy, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

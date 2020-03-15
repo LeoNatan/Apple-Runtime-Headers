@@ -14,9 +14,9 @@
     NSMutableDictionary *_leftContextToWordMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *leftContextToWordMap; // @synthesize leftContextToWordMap=_leftContextToWordMap;
 @property(retain, nonatomic) NSMutableArray *inDocumentWordsStack; // @synthesize inDocumentWordsStack=_inDocumentWordsStack;
-- (void).cxx_destruct;
 - (id)lastWord;
 - (id)description;
 - (unsigned long long)wordsCount;

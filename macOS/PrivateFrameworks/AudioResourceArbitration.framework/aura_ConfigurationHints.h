@@ -13,11 +13,11 @@
     vector_4a68c4d4 ioControllerHints;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) vector_4a68c4d4 ioControllerHints; // @synthesize ioControllerHints;
 @property(nonatomic) vector_99647c4e deviceHints; // @synthesize deviceHints;
 @property(nonatomic) vector_df3b7805 virtualPortHints; // @synthesize virtualPortHints;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 
 @end
 

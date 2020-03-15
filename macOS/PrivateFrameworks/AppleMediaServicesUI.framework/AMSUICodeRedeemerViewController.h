@@ -19,10 +19,10 @@
 }
 
 + (BOOL)isSupported;
+- (void).cxx_destruct;
 @property(retain) NSButton *dismissButton; // @synthesize dismissButton=_dismissButton;
 @property(retain) CRCodeRedeemerView *codeRedeemView; // @synthesize codeRedeemView=_codeRedeemView;
 @property __weak id <AMSUICodeRedeemerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)codeRedeemerViewWillFadeStatus:(id)arg1;
 - (void)codeRedeemerViewDidFindBox:(id)arg1;
 - (void)codeRedeemerViewDidFadeStatus:(id)arg1;

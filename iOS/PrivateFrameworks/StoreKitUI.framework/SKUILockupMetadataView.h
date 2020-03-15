@@ -29,12 +29,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)maximumHeightWithVisibleFields:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long visibleFields; // @synthesize visibleFields=_visibleFields;
 @property(nonatomic) float userRating; // @synthesize userRating=_userRating;
 @property(readonly, nonatomic) UIColor *primaryTextColor; // @synthesize primaryTextColor=_textColor;
 @property(nonatomic) long long numberOfUserRatings; // @synthesize numberOfUserRatings=_numberOfUserRatings;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_reloadUserRatingViews;
 - (id)_newDefaultLabel;
 - (id)_decimalNumberFormatter;

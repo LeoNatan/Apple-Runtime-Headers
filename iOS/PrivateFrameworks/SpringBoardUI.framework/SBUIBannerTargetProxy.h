@@ -18,9 +18,9 @@
     id <SBUIBannerTargetImplementation> _implementation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long bannerTargetIdiom; // @synthesize bannerTargetIdiom=_idiom;
 @property(readonly, nonatomic) void *bannerTargetIdentifier; // @synthesize bannerTargetIdentifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)removeCachedBannerForContext:(id)arg1;
 - (void)cacheBannerForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

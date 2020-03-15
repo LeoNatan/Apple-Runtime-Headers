@@ -27,6 +27,7 @@
 }
 
 + (id)optionsFromPreferences;
+- (void).cxx_destruct;
 @property(copy) NSArray *availableEncodings; // @synthesize availableEncodings=_availableEncodings;
 @property unsigned long long outputVersion; // @synthesize outputVersion=_outputVersion;
 @property(copy) NSArray *treatAsUnknownProperties; // @synthesize treatAsUnknownProperties=_treatAsUnknownProperties;
@@ -41,7 +42,6 @@
 @property BOOL includeUserSettings; // @synthesize includeUserSettings=_includeUserSettings;
 @property BOOL includePrivateBundleIdentifiers; // @synthesize includePrivateBundleIdentifiers=_includePrivateBundleIdentifiers;
 @property BOOL includePrivateFields; // @synthesize includePrivateFields=_includePrivateFields;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

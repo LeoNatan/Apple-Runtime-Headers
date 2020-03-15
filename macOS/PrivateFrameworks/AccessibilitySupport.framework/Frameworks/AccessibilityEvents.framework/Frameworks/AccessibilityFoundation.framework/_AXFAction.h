@@ -17,9 +17,9 @@
 }
 
 + (id)newActionWithTarget:(id)arg1 name:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *_name; // @synthesize _name=__name;
 @property(copy, nonatomic) AXFUIElement *_target; // @synthesize _target=__target;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)accessibilityPerformAction;
 @property(readonly, copy, nonatomic) NSString *accessibilityActionDescription;

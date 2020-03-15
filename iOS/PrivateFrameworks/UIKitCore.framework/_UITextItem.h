@@ -22,17 +22,17 @@ __attribute__((visibility("hidden")))
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextAttachment *attachment; // @synthesize attachment=_attachment;
 @property(retain, nonatomic) NSURL *link; // @synthesize link=_link;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(retain, nonatomic) NSArray *rects; // @synthesize rects=_rects;
 @property(retain, nonatomic) id <UICoordinateSpace> coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
-- (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

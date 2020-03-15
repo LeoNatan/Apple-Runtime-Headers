@@ -63,14 +63,6 @@ struct UIOffset {
     double _field2;
 };
 
-struct UIView {
-    Class _field1;
-};
-
-struct UIViewController {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;

@@ -31,6 +31,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAutoJoin) BOOL autoJoin; // @synthesize autoJoin=_autoJoin;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSDate *IPv6AssignedAt; // @synthesize IPv6AssignedAt=_IPv6AssignedAt;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) CWFScanResult *scanResult; // @synthesize scanResult=_scanResult;
 @property(copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

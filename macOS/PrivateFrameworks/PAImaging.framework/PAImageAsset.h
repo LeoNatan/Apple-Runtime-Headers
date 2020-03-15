@@ -24,11 +24,11 @@
 }
 
 + (id)imageAssetWithType:(id)arg1 asset:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSArray *assetClients; // @synthesize assetClients=_assetClients;
 @property(copy) CDUnknownBlockType compositionReplacedFilter; // @synthesize compositionReplacedFilter=_compositionReplacedFilter;
 @property(readonly, nonatomic) PAImageAssetType *assetType; // @synthesize assetType=_assetType;
 @property(retain) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (BOOL)_removeImageAssetClient:(id)arg1;
 - (void)_addImageAssetClient:(id)arg1;
 - (BOOL)removeImageAssetClient:(id)arg1;

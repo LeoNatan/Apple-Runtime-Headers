@@ -27,11 +27,11 @@
 
 + (Class)failuresType;
 + (Class)successesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *failures; // @synthesize failures=_failures;
 @property(retain, nonatomic) NSMutableArray *successes; // @synthesize successes=_successes;
 @property(retain, nonatomic) NSString *respondingPop; // @synthesize respondingPop=_respondingPop;
 @property(nonatomic) _Bool wifiReachabilityStatus; // @synthesize wifiReachabilityStatus=_wifiReachabilityStatus;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

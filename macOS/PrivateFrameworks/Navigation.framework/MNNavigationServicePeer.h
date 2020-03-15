@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (const char *)logCategory;
 + (id)peerForConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(readonly, nonatomic) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(readonly, nonatomic) NSString *peerIdentifier; // @synthesize peerIdentifier=_peerIdentifier;
-- (void).cxx_destruct;
 - (const char *)logCategory;
 - (void)dealloc;
 - (void)clearConnectionHandlers;

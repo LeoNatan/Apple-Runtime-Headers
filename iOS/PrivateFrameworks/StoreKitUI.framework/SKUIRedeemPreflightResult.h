@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     long long _resultType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long resultType; // @synthesize resultType=_resultType;
 @property(retain, nonatomic) SKUIRedeemConfiguration *redeemConfiguration; // @synthesize redeemConfiguration=_redeemConfiguration;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) SSVRedeemCodeMetadata *codeMetadata; // @synthesize codeMetadata=_codeMetadata;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(retain, nonatomic) SSAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 
 @end
 

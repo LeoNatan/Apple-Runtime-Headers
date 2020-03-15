@@ -16,12 +16,12 @@
     NSString *_path;
 }
 
-+ (struct NSArray *)_entriesFromFileAtPath:(id)arg1;
-+ (struct NSArray *)_entriesFromMultilineString:(id)arg1;
++ (id)_entriesFromFileAtPath:(id)arg1;
++ (id)_entriesFromMultilineString:(id)arg1;
 + (unsigned long long)disposition;
 + (BOOL)isEnabled;
-@property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 - (BOOL)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (BOOL)canProduceEntriesOfType:(long long)arg1;
 - (double)updateSuggestionEntries;

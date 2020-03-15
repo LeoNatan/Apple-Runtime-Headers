@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     SystemStateAdaptTransaction *_systemStateTransaction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SystemStateAdaptTransaction *systemStateTransaction; // @synthesize systemStateTransaction=_systemStateTransaction;
 @property(readonly, nonatomic) GraphManagerAdaptTransaction *graphManagerTransaction; // @synthesize graphManagerTransaction=_graphManagerTransaction;
-- (void).cxx_destruct;
 - (BOOL)applyCurrentTransaction;
 - (BOOL)hasCompleteTransaction;
 - (id)initWithGraphMananger:(id)arg1 andSystemStateManager:(id)arg2;

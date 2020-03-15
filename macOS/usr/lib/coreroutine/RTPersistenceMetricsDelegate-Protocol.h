@@ -6,12 +6,12 @@
 
 #import <coreroutine/NSObject-Protocol.h>
 
-@class NSCloudKitMirroringDelegateOptions, NSDictionary, NSError, NSManagedObjectContext, RTPersistenceDriver, RTPersistenceMigrator, RTPersistenceStore;
+@class NSDictionary, NSError, NSManagedObjectContext, NSNotification, RTPersistenceDriver, RTPersistenceMigrator, RTPersistenceStore;
 @protocol RTPersistenceModelProvider;
 
 @protocol RTPersistenceMetricsDelegate <NSObject>
 - (void)persistenceStoreResetSyncWithUserInfo:(NSDictionary *)arg1;
-- (void)persistenceDriver:(RTPersistenceDriver *)arg1 persistenceStore:(RTPersistenceStore *)arg2 willBeginMirroringWithOptions:(NSCloudKitMirroringDelegateOptions *)arg3;
+- (void)onDailyMetricsNotification:(NSNotification *)arg1;
 - (void)persistenceStoreFailedWithError:(NSError *)arg1;
 - (void)persistenceStore:(RTPersistenceStore *)arg1 didPrepareWithContext:(NSManagedObjectContext *)arg2;
 - (void)persistenceDriver:(RTPersistenceDriver *)arg1 persistenceMigrator:(RTPersistenceMigrator *)arg2 didFinishMigratingStore:(RTPersistenceStore *)arg3 withModelProvider:(id <RTPersistenceModelProvider>)arg4;

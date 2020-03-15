@@ -19,10 +19,10 @@
 }
 
 + (id)newWithVariable:(id)arg1 variableUIDelegate:(id)arg2 resultType:(unsigned long long)arg3 editable:(BOOL)arg4 updateBlock:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(readonly, nonatomic) __weak WFCustomButtonComponent *buttonComponent; // @synthesize buttonComponent=_buttonComponent;
 @property(readonly, nonatomic) __weak id <WFVariableUIDelegate> variableUIDelegate; // @synthesize variableUIDelegate=_variableUIDelegate;
-- (void).cxx_destruct;
 - (void)variableDidChange:(id)arg1;
 - (void)variableDidClear:(id)arg1;
 - (void)variableDidUpdate:(id)arg1;

@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: urlSession
     // Error parsing type: , name: accounts
     // Error parsing type: , name: requestEncoder
-    // Error parsing type: , name: requestInterceptor
 }
 
 - (void).cxx_destruct;

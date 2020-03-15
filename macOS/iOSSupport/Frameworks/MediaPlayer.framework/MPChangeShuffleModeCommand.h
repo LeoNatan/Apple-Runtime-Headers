@@ -14,8 +14,8 @@
     long long _currentShuffleType;
 }
 
-@property(nonatomic) long long currentShuffleType; // @synthesize currentShuffleType=_currentShuffleType;
 - (void).cxx_destruct;
+@property(nonatomic) long long currentShuffleType; // @synthesize currentShuffleType=_currentShuffleType;
 - (id)newCommandEventWithType:(long long)arg1 preservesShuffleMode:(BOOL)arg2;
 - (id)newCommandEventWithType:(long long)arg1;
 - (id)_mediaRemoteCommandInfoOptions;

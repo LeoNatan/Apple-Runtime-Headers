@@ -17,9 +17,9 @@
 }
 
 + (id)timerForItemCount:(unsigned long long)arg1 atEnd:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property unsigned long long itemCount; // @synthesize itemCount=_itemCount;
-- (void).cxx_destruct;
 - (double)duration;
 - (void)reset;
 - (void)stop;

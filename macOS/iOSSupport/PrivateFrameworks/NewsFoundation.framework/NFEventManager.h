@@ -14,9 +14,9 @@
     NSMutableDictionary *_triggers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *triggers; // @synthesize triggers=_triggers;
 @property(readonly, nonatomic) NSMutableSet *events; // @synthesize events=_events;
-- (void).cxx_destruct;
 - (void)handleAlwaysTrigger:(id)arg1 event:(id)arg2;
 - (void)handleOnceTrigger:(id)arg1 event:(id)arg2;
 - (void)attemptTriggersForCurrentEvent:(id)arg1;

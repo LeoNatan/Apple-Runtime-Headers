@@ -17,10 +17,10 @@
 }
 
 + (id)repairRecordToMetadata:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
 @property(nonatomic) BOOL firstInvocation; // @synthesize firstInvocation=_firstInvocation;
 @property(retain, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
-- (void).cxx_destruct;
 - (id)allData;
 - (void)readWriteDatabase:(CDUnknownBlockType)arg1 async:(BOOL)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (id)unarchivedObjectOfClass:(Class)arg1 fromData:(id)arg2 error:(id *)arg3;

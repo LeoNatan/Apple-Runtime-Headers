@@ -42,6 +42,7 @@
 + (double)heifToJPEGFactorWithImageDimensions:(struct CGSize)arg1 fileLength:(unsigned long long)arg2;
 + (id)requestForSource:(id)arg1 destinationCapabilities:(id)arg2 error:(id *)arg3;
 + (id)stringForRequestStatus:(long long)arg1;
+- (void).cxx_destruct;
 @property BOOL preflighted; // @synthesize preflighted=_preflighted;
 @property(nonatomic) long long passthroughConversionAdditionalByteCount; // @synthesize passthroughConversionAdditionalByteCount=_passthroughConversionAdditionalByteCount;
 @property BOOL requiresSinglePassVideoConversion; // @synthesize requiresSinglePassVideoConversion=_requiresSinglePassVideoConversion;
@@ -64,7 +65,6 @@
 @property BOOL forceFormatConversion; // @synthesize forceFormatConversion=_forceFormatConversion;
 @property(copy) NSString *livePhotoPairingIdentifier; // @synthesize livePhotoPairingIdentifier=_livePhotoPairingIdentifier;
 @property long long livePhotoPairingIdentifierBehavior; // @synthesize livePhotoPairingIdentifierBehavior=_livePhotoPairingIdentifierBehavior;
-- (void).cxx_destruct;
 - (void)updateSinglePassVideoConversionStatus:(long long)arg1 addedRange:(struct _NSRange)arg2 error:(id)arg3;
 - (void)enableSinglePassVideoEncodingWithUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)didFinishProcessing;

@@ -19,8 +19,8 @@
 + (id)readWriteDispatchLockWithDebugName:(id)arg1;
 + (id)recursiveDispatchLockWithDebugName:(id)arg1;
 + (id)dispatchLockWithDebugName:(id)arg1;
-@property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)performLockedBlockAsyncUnlessRecursing:(CDUnknownBlockType)arg1;
 - (void)setQualityOfService:(long long)arg1;
 - (void)afterTimeInterval:(double)arg1 asyncPerformLockedBlock:(CDUnknownBlockType)arg2;

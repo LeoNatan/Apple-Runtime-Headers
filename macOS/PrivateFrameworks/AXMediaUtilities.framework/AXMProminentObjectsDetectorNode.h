@@ -16,8 +16,8 @@
 + (id)title;
 + (BOOL)isSupported;
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) VNGenerateAttentionBasedSaliencyImageRequest *_imageSaliencyRequest; // @synthesize _imageSaliencyRequest=__imageSaliencyRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VNGenerateAttentionBasedSaliencyImageRequest *_imageSaliencyRequest; // @synthesize _imageSaliencyRequest=__imageSaliencyRequest;
 - (void)evaluate:(id)arg1;
 - (BOOL)validateVisionKitSoftLinkSymbols;
 - (BOOL)requiresVisionFramework;

@@ -14,11 +14,11 @@
     _Bool _ignoresGuardianRestrictions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 @property(retain, nonatomic) id changeContext; // @synthesize changeContext=_changeContext;
 @property(readonly, nonatomic) id context; // @synthesize context=_context;
 @property(readonly, nonatomic) int action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAction:(int)arg1 context:(id)arg2;
 

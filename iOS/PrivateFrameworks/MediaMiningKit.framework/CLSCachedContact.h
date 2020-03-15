@@ -16,11 +16,11 @@
     double _updateTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double updateTimestamp; // @synthesize updateTimestamp=_updateTimestamp;
 @property(retain, nonatomic) NSString *classifiedPersonLocalIdentifierWithFaceModelID; // @synthesize classifiedPersonLocalIdentifierWithFaceModelID=_classifiedPersonLocalIdentifierWithFaceModelID;
 @property(nonatomic) _Bool hasPicture; // @synthesize hasPicture=_hasPicture;
 @property(retain, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

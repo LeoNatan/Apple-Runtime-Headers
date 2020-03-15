@@ -26,9 +26,9 @@
     id <_TVStackCollectionViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_TVStackCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (struct CGSize)_maxContentSize;
 - (void)_updateBackgroundTintViewEffects;
 - (void)_updateBackgroundTintView;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     double _timestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(readonly, nonatomic) DHPublicKey *dhKey; // @synthesize dhKey=_dhKey;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isValidlySignedBy:(id)arg1 error:(id *)arg2;
 - (id)initWithPublicKey:(id)arg1 signature:(id)arg2 timestamp:(double)arg3;

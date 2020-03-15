@@ -12,7 +12,7 @@
 {
     JSVirtualMachine *m_virtualMachine;
     struct OpaqueJSContext *m_context;
-    struct Strong<JSC::JSObject> m_exception;
+    struct Strong<JSC::JSObject, JSC::ShouldStrongDestructorGrabLock::No> m_exception;
     struct WeakObjCPtr<id<JSModuleLoaderDelegate>> m_moduleLoaderDelegate;
     CDUnknownBlockType _exceptionHandler;
 }
@@ -22,9 +22,9 @@
 + (id)currentThis;
 + (id)currentContext;
 + (id)contextWithJSGlobalContextRef:(struct OpaqueJSContext *)arg1;
-@property(copy) CDUnknownBlockType exceptionHandler; // @synthesize exceptionHandler=_exceptionHandler;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType exceptionHandler; // @synthesize exceptionHandler=_exceptionHandler;
 - (void)setModuleLoaderDelegate:(id)arg1;
 - (id)moduleLoaderDelegate;
 - (void)_setDebuggerRunLoop:(struct __CFRunLoop *)arg1;

@@ -19,11 +19,11 @@
 }
 
 + (id)eventFrom:(int)arg1 to:(int)arg2 on:(int)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int event; // @synthesize event=_event;
 @property(readonly, nonatomic) int to; // @synthesize to=_to;
 @property(readonly, nonatomic) int from; // @synthesize from=_from;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithFrom:(int)arg1 to:(int)arg2 on:(int)arg3;
 

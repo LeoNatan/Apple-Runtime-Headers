@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CKDKeyValueDiskCache *_cache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDKeyValueDiskCache *cache; // @synthesize cache=_cache;
 @property(nonatomic) __weak CKDClientContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)removeCacheForLookupInfos:(id)arg1;
 - (void)configureRequest:(id)arg1 parentOperation:(id)arg2;
 - (void)scheduleRequest:(id)arg1 forOperation:(id)arg2;

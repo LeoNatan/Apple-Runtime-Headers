@@ -14,9 +14,9 @@
     NSString *_artworkMIMEType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *artworkMIMEType; // @synthesize artworkMIMEType=_artworkMIMEType;
 @property(retain, nonatomic) NSData *artworkData; // @synthesize artworkData=_artworkData;
-- (void).cxx_destruct;
 
 @end
 

@@ -15,8 +15,8 @@
     PGGraphNamingProcessor *_processor;
 }
 
-@property(readonly, nonatomic) __weak PGGraphNamingProcessor *processor; // @synthesize processor=_processor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PGGraphNamingProcessor *processor; // @synthesize processor=_processor;
 - (id)_keyFaceByPersonLocalIdentifierForPersonNodes:(id)arg1;
 - (void)runAnalysisWithProgressBlock:(CDUnknownBlockType)arg1;
 - (id)initWithNamingProcessor:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)curvesKernel;
+- (void).cxx_destruct;
 @property(retain) CIImage *inputTableImage; // @synthesize inputTableImage=_inputTableImage;
 @property(retain) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 
 @end

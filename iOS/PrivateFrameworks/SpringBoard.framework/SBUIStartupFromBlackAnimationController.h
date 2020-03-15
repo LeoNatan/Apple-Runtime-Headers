@@ -17,9 +17,9 @@
     SBSceneLayoutAnimationWrapperView *_layoutWrapperView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool waitsForAppActivation; // @synthesize waitsForAppActivation=_waitsForAppActivation;
 @property(retain, nonatomic) BSAnimationSettings *animationSettings; // @synthesize animationSettings=_animationSettings;
-- (void).cxx_destruct;
 - (void)_showBlackView;
 - (void)_cleanupAnimation;
 - (void)_startAnimation;

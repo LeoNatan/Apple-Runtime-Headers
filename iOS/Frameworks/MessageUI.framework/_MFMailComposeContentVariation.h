@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *attachmentIdentifiers; // @synthesize attachmentIdentifiers=_attachmentIdentifiers;
 @property(nonatomic) _Bool bodyIsHTML; // @synthesize bodyIsHTML=_bodyIsHTML;
 @property(copy, nonatomic) NSString *body; // @synthesize body=_body;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

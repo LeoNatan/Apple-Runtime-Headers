@@ -14,9 +14,9 @@
     NSString *_externalContentID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *externalContentID; // @synthesize externalContentID=_externalContentID;
 @property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
-- (void).cxx_destruct;
 - (id)initWithChannelID:(id)arg1 externalContentID:(id)arg2;
 
 @end

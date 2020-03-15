@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 + (long long)imageOrientationForEXIFOrientation:(unsigned long long)arg1;
 + (unsigned long long)exifOrientationForUIImageOrientation:(long long)arg1;
 + (unsigned long long)exifOrientationForVideoTrack:(id)arg1;
-@property(nonatomic) long long projectNaturalFrameRate; // @synthesize projectNaturalFrameRate=_projectNaturalFrameRate;
 - (void).cxx_destruct;
+@property(nonatomic) long long projectNaturalFrameRate; // @synthesize projectNaturalFrameRate=_projectNaturalFrameRate;
 - (void)processAVAsset:(id)arg1 options:(unsigned long long)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)processUIImage:(id)arg1 options:(unsigned long long)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)_makeColorAnalysisDictionary:(id)arg1 forImageBounds:(struct CGRect)arg2;

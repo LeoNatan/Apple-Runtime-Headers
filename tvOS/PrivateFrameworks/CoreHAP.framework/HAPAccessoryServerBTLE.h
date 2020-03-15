@@ -22,6 +22,7 @@
 }
 
 + (id)hapUUIDFromBTLEUUID:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char connectionIdleTime; // @synthesize connectionIdleTime=_connectionIdleTime;
 @property(readonly, nonatomic) __weak HAPAccessoryServerBrowserBTLE *browser; // @synthesize browser=_browser;
 @property(readonly, nonatomic) unsigned long long resumeSessionID; // @synthesize resumeSessionID=_resumeSessionID;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) CBPeripheral *peripheral; // @synthesize peripheral=_peripheral;
 @property(nonatomic) _Bool notifyingCharacteristicUpdated; // @synthesize notifyingCharacteristicUpdated=_notifyingCharacteristicUpdated;
 @property(nonatomic) _Bool stateChanged; // @synthesize stateChanged=_stateChanged;
-- (void).cxx_destruct;
 - (void)generateBroadcastKey:(unsigned char)arg1 queue:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)configureCharacteristics:(id)arg1 queue:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)updateConnectionIdleTime:(unsigned char)arg1;

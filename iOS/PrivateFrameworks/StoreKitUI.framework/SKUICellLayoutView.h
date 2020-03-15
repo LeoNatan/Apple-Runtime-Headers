@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SKUICellLayout *_layout;
 }
 
-@property(retain, nonatomic) SKUICellLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUICellLayout *layout; // @synthesize layout=_layout;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;
 

@@ -22,10 +22,10 @@
 + (id)newWithLabel:(id)arg1 labelsToAlignTo:(id)arg2 selectionAction:(CKTypedComponentAction_789af415)arg3 selectionEnabled:(_Bool)arg4 style:(const struct WFParameterLayoutComponentStyle *)arg5 accessibility:(const struct WFParameterLayoutComponentAccessibility *)arg6 controlResistance:(const struct WFCompressionResistance *)arg7 controlComponent:(id)arg8;
 + (id)newWithView:(const struct CKComponentViewConfiguration *)arg1 size:(const struct CKComponentSize *)arg2;
 + (struct UIEdgeInsets)edgeInsets;
-@property(readonly, nonatomic) CKTypedComponentAction_789af415 selectionAction; // @synthesize selectionAction=_selectionAction;
-@property(readonly, nonatomic) CKComponent *controlComponent; // @synthesize controlComponent=_controlComponent;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKTypedComponentAction_789af415 selectionAction; // @synthesize selectionAction=_selectionAction;
+@property(readonly, nonatomic) CKComponent *controlComponent; // @synthesize controlComponent=_controlComponent;
 - (struct CKComponentLayout)computeLayoutThatFits:(struct CKSizeRange)arg1;
 - (void)handleParameterLayoutPressed;
 

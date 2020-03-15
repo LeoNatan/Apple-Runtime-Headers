@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSArray *contactItems; // @synthesize contactItems=_contactItems;
-- (void).cxx_destruct;
 - (id)initWithContactItems:(id)arg1 title:(id)arg2;
 
 @end

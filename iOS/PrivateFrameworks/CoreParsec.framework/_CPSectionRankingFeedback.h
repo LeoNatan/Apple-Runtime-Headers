@@ -21,12 +21,12 @@
     double _personalizationScore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double personalizationScore; // @synthesize personalizationScore=_personalizationScore;
 @property(nonatomic) unsigned int localSectionPosition; // @synthesize localSectionPosition=_localSectionPosition;
 @property(retain, nonatomic) _CPResultSectionForFeedback *section; // @synthesize section=_section;
 @property(copy, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

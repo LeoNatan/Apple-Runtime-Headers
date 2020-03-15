@@ -31,12 +31,12 @@
     NSObject<OS_dispatch_queue> *_alarmQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *alarmQueue; // @synthesize alarmQueue=_alarmQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) NSArray *modules; // @synthesize modules=_modules;
 @property(retain, nonatomic) CDBDataProtectionObserver *dataProtectionObserver; // @synthesize dataProtectionObserver=_dataProtectionObserver;
-- (void).cxx_destruct;
 - (void)_enableICloudBackups;
 - (void)_dumpState;
 - (void)_exitWithStatus:(int)arg1;

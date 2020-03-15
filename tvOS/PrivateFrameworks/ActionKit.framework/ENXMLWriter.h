@@ -29,12 +29,12 @@
     unsigned long long _openElementCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long openElementCount; // @synthesize openElementCount=_openElementCount;
 @property(retain, nonatomic) ENXMLDTD *dtd; // @synthesize dtd=_dtd;
 @property(readonly, nonatomic) NSString *contents; // @synthesize contents=_contents;
 @property(nonatomic) __weak id <ENXMLWriterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *currentElementName; // @synthesize currentElementName=_currentElementName;
-- (void).cxx_destruct;
 - (_Bool)writeElement:(id)arg1 withAttributes:(id)arg2 content:(id)arg3;
 - (_Bool)startElement:(id)arg1 withAttributes:(id)arg2;
 - (void)endCDATA;

@@ -36,6 +36,7 @@
         unsigned int needsAppearanceUpdate:1;
         unsigned int plainAppearanceChanged:1;
         unsigned int doneAppearanceChanged:1;
+        unsigned int needsUpdateHitRects:1;
     } _buttonBarFlags;
     _Bool _itemsInGroupUseSameSize;
     _Bool _compact;
@@ -51,6 +52,7 @@
 }
 
 + (float)optionalConstraintsPriority;
+- (void).cxx_destruct;
 @property(copy, nonatomic) _UIButtonBarButtonVisualProvider *visualProvider; // @synthesize visualProvider=_visualProvider;
 @property(nonatomic, getter=_compact, setter=_setCompact:) _Bool compact; // @synthesize compact=_compact;
 @property(retain, nonatomic) _UIBarButtonItemData *doneItemAppearance; // @synthesize doneItemAppearance=_doneItemAppearance;
@@ -62,7 +64,6 @@
 @property(nonatomic) __weak id <_UIButtonBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double minimumInterItemSpace; // @synthesize minimumInterItemSpace=_minimumInterItemSpace;
 @property(copy, nonatomic) NSArray *barButtonGroups; // @synthesize barButtonGroups=_barButtonGroups;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_groupDidChangePriority:(id)arg1;
 - (void)_groupDidChangeGeometry:(id)arg1;
@@ -85,6 +86,7 @@
 @property(readonly, nonatomic) UIBarButtonItem *ultimateFallbackItem;
 - (id)_updatedViewForBarButtonItem:(id)arg1 withView:(id)arg2;
 - (void)_updateForTraitCollectionChange:(id)arg1;
+- (void)_updateHitRects;
 - (void)_layoutBar;
 - (id)_newGroupLayout:(id)arg1;
 - (void)_setNeedsVisualUpdateAndNotify:(_Bool)arg1;
@@ -92,6 +94,8 @@
 - (id)_layoutForGroup:(id)arg1;
 - (id)_targetActionForBarButtonItem:(id)arg1;
 - (void)_setVisualProvider:(id)arg1;
+@property(nonatomic) struct NSDirectionalEdgeInsets hitTestDirectionalInsets;
+@property(nonatomic) struct UIEdgeInsets hitTestInsets;
 @property(nonatomic) long long itemDistribution;
 @property(nonatomic) _Bool allowsViewWrappers;
 @property(nonatomic) _Bool createsPopoverLayoutGuides;

@@ -18,11 +18,11 @@
     RCComposition *_composition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL canSaveCompositionMetadata; // @synthesize canSaveCompositionMetadata=_canSaveCompositionMetadata;
 @property(nonatomic) BOOL canGenerateWaveformByProcessingAVURL; // @synthesize canGenerateWaveformByProcessingAVURL=_canGenerateWaveformByProcessingAVURL;
 @property(nonatomic) BOOL canGenerateWaveform; // @synthesize canGenerateWaveform=_canGenerateWaveform;
 @property(readonly, nonatomic) RCComposition *composition; // @synthesize composition=_composition;
-- (void).cxx_destruct;
 - (void)_writeCompositionWaveformForFinalizedAssetWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_writeCompositionWaveformForFinalizedAssetFromFragmentsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_writeCompositionWithCompletionHandler:(CDUnknownBlockType)arg1;

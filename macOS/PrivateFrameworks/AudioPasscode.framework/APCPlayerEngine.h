@@ -29,11 +29,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)playerWithAssetURL:(id)arg1 codecConfig:(id)arg2 payload:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType stopEngineCompletion; // @synthesize stopEngineCompletion=_stopEngineCompletion;
 @property(copy, nonatomic) CDUnknownBlockType beginningCallback; // @synthesize beginningCallback=_beginningCallback;
 @property(retain, nonatomic) APCPlayerEmbedInfo *embeddingInfo; // @synthesize embeddingInfo=_embeddingInfo;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)stopEngineAfterMinimumLoops:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)stopEngineWithFadeOut:(float)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)stopEngine:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;

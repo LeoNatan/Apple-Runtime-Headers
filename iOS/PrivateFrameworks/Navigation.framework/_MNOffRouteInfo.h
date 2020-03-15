@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     double _penalty;
 }
 
-@property(readonly, nonatomic) double penalty; // @synthesize penalty=_penalty;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double penalty; // @synthesize penalty=_penalty;
 - (id)description;
 - (CDStruct_c3b9c2ee)_coordinateFromWaypoint:(id)arg1;
 - (void)updateWithCurrentDate:(id)arg1 location:(id)arg2 isMostRecentReroute:(_Bool)arg3 throttledReroutesCount:(unsigned long long)arg4;

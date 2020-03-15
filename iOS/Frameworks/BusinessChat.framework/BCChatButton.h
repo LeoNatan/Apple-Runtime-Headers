@@ -18,13 +18,13 @@
     UIView *_centeredView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *centeredView; // @synthesize centeredView=_centeredView;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) UILabel *smallLabel; // @synthesize smallLabel=_smallLabel;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) _Bool isInverted; // @synthesize isInverted=_isInverted;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (void)layoutSubviews;

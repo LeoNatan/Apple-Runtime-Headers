@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fontForLabelViewElement:(id)arg1 context:(id)arg2;
-@property(readonly, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 - (void)sizeColumnsToFitWidth:(double)arg1 context:(id)arg2;
 - (id)initWithLockup:(id)arg1 context:(id)arg2;
 

@@ -15,9 +15,9 @@
 }
 
 + (id)groupWithName:(id)arg1 maxConcurrent:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int maxConcurrent; // @synthesize maxConcurrent=_maxConcurrent;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

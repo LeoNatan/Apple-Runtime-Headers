@@ -17,10 +17,10 @@
     NSArray *_entries;
 }
 
-@property(copy, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (float)topSitesScoreForPageTitleAtIndex:(unsigned long long)arg1 atTime:(double)arg2;
+@property(copy, nonatomic) NSArray *entries; // @synthesize entries=_entries;
+- (float)topSitesScoreForPageTitleAtTime:(double)arg1;
 - (float)topSitesScoreForURLStringAtIndex:(unsigned long long)arg1 atTime:(double)arg2;
 - (BOOL)matchesAutocompleteTrigger:(id)arg1;
 - (id)pageTitleForUserVisibleURLStringAtIndex:(unsigned long long)arg1;
@@ -33,6 +33,7 @@
 - (id)matchDataByMergingWithMatchData:(id)arg1;
 - (void)setAutocompleteTriggers:(const void *)arg1 length:(unsigned long long)arg2;
 @property(nonatomic) long long visitCount;
+@property(readonly, nonatomic) BOOL shouldPreload;
 @property(nonatomic) double lastVisitedTimeInterval;
 @property(readonly, nonatomic) BOOL lastVisitWasFailure;
 @property(readonly, nonatomic) BOOL containsBookmark;

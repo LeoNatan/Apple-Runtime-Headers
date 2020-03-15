@@ -36,6 +36,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) int scanState; // @synthesize scanState=_scanState;
 @property(retain, nonatomic) NSMapTable *identifersWithReachabilityScanTuples; // @synthesize identifersWithReachabilityScanTuples=_identifersWithReachabilityScanTuples;
 @property(retain, nonatomic) NSMutableArray *targetedScanAccessoryIdentifiers; // @synthesize targetedScanAccessoryIdentifiers=_targetedScanAccessoryIdentifiers;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <HAPAccessoryServerBrowserBTLEDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int qosLimits; // @synthesize qosLimits=_qosLimits;
-- (void).cxx_destruct;
 - (void)_handleTargetedScanTimeout;
 - (void)_updateTargetedScanTimer;
 - (_Bool)_shouldCreateHAPAccessoryServerWithIdentifier:(id)arg1 statusFlags:(id)arg2 stateNumber:(id)arg3 category:(id)arg4 configNumber:(id)arg5 forPeripheral:(id)arg6 advertisementFormat:(unsigned int)arg7 setupHash:(id)arg8 stateChanged:(_Bool *)arg9 connectReason:(unsigned char *)arg10;

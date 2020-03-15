@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     UIViewController *__slideshowSettingsViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSlideshowSettingsViewController:) UIViewController *_slideshowSettingsViewController; // @synthesize _slideshowSettingsViewController=__slideshowSettingsViewController;
 @property(retain, nonatomic, setter=_setSlideshowPlaceHolderView:) PHPlaceholderView *_slideshowPlaceholderView; // @synthesize _slideshowPlaceholderView=__slideshowPlaceholderView;
 @property(nonatomic, setter=_setNeedsUpdateSpec:) _Bool _needsUpdateSpec; // @synthesize _needsUpdateSpec=__needsUpdateSpec;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PUSlideshowViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) PUSlideshowSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)slideshowSession:(id)arg1 stopDisplayingPresentationViewController:(id)arg2;
 - (void)slideshowSession:(id)arg1 startDisplayingPresentationViewController:(id)arg2;
 - (void)airPlayControllerRouteAvailabilityChanged:(id)arg1;

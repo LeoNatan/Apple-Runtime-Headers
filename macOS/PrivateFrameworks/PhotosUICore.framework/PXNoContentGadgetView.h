@@ -18,12 +18,12 @@
     NSArray *_layoutConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(retain, nonatomic) NSTextField *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)_initializeContraints;
 - (void)updateConstraints;
 - (void)_updateMessageIfNeeded;

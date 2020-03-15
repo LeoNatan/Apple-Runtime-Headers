@@ -8,11 +8,19 @@
 
 #import <XCTest/NSSecureCoding-Protocol.h>
 
-@class NSData, NSDate, NSDictionary, NSString, _XCTAttachmentImplementation;
+@class NSData, NSDate, NSDictionary, NSString;
 
 @interface XCTAttachment : NSObject <NSSecureCoding>
 {
-    id _internalImplementation;
+    _Bool _hasPayload;
+    NSString *_uniformTypeIdentifier;
+    NSString *_name;
+    NSDictionary *_userInfo;
+    CDUnknownBlockType _serializationBlock;
+    long long _internalLifetime;
+    NSDate *_timestamp;
+    NSString *_fileNameOverride;
+    NSData *_payload;
 }
 
 + (id)attachmentWithXCTImage:(id)arg1 quality:(long long)arg2;
@@ -38,8 +46,16 @@
 + (id)attachmentWithData:(id)arg1;
 + (id)attachmentWithData:(id)arg1 uniformTypeIdentifier:(id)arg2;
 + (id)_attachmentWithData:(id)arg1 uniformTypeIdentifier:(id)arg2;
-@property(readonly) _XCTAttachmentImplementation *internalImplementation; // @synthesize internalImplementation=_internalImplementation;
 - (void).cxx_destruct;
+@property(readonly) _Bool hasPayload; // @synthesize hasPayload=_hasPayload;
+@property(readonly, copy) NSData *payload; // @synthesize payload=_payload;
+@property(copy) NSString *fileNameOverride; // @synthesize fileNameOverride=_fileNameOverride;
+@property(copy) NSDate *timestamp; // @synthesize timestamp=_timestamp;
+@property long long internalLifetime; // @synthesize internalLifetime=_internalLifetime;
+@property(copy) CDUnknownBlockType serializationBlock; // @synthesize serializationBlock=_serializationBlock;
+@property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property(copy) NSString *name; // @synthesize name=_name;
+@property(readonly, copy) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
 - (id)debugQuickLookObject;
 - (void)makeSystem;
 - (id)debugDescription;
@@ -47,15 +63,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)prepareForEncoding;
-@property(readonly) _Bool hasPayload;
-@property(copy) NSString *fileNameOverride;
-@property(readonly, copy) NSData *payload;
-@property(copy) NSDictionary *userInfo;
-@property(copy) NSDate *timestamp;
-@property(copy) NSString *name;
 @property long long lifetime;
-@property long long internalLifetime;
-@property(readonly, copy) NSString *uniformTypeIdentifier;
 - (id)initWithUniformTypeIdentifier:(id)arg1 name:(id)arg2 serializationBlock:(CDUnknownBlockType)arg3;
 - (id)initWithUniformTypeIdentifier:(id)arg1 name:(id)arg2 payload:(id)arg3 userInfo:(id)arg4;
 

@@ -22,8 +22,8 @@
     UNUserNotificationCenter *_userNotificationCenter;
 }
 
-@property(retain, nonatomic) UNUserNotificationCenter *userNotificationCenter; // @synthesize userNotificationCenter=_userNotificationCenter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UNUserNotificationCenter *userNotificationCenter; // @synthesize userNotificationCenter=_userNotificationCenter;
 - (id)diagnosticDescription;
 - (void)_postBadgesDidUpdateNotification;
 - (CDUnknownBlockType)_objectCompletionOnClientQueue:(CDUnknownBlockType)arg1;

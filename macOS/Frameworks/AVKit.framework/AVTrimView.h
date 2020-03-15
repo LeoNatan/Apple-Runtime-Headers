@@ -55,13 +55,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *stopTrackingTimer; // @synthesize stopTrackingTimer=_stopTrackingTimer;
 @property(nonatomic) unsigned long long trackedPart; // @synthesize trackedPart=_trackedPart;
 @property(nonatomic) double offset; // @synthesize offset=_offset;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
 @property(nonatomic) double nominalFrameRate; // @synthesize nominalFrameRate=_nominalFrameRate;
 @property(nonatomic) double maximumSelectionDuration; // @synthesize maximumSelectionDuration=_maximumSelectionDuration;
-- (void).cxx_destruct;
 - (double)_trimHandleWidth;
 - (struct CGRect)_timeIndicatorPopoverPositioningRectForValue:(double)arg1;
 - (double)displayedMaxValue;

@@ -33,13 +33,13 @@ __attribute__((visibility("hidden")))
     UIPrintPaper *_paper;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIPrintPaper *paper; // @synthesize paper=_paper;
 @property(retain) PKPrinter *printer; // @synthesize printer=_printer;
 @property(retain) NSMutableSet *previewStates; // @synthesize previewStates=_previewStates;
 @property int pageCountWithRanges; // @synthesize pageCountWithRanges=_pageCountWithRanges;
 @property(retain) NSArray *pageRanges; // @synthesize pageRanges=_pageRanges;
 @property int pageCount; // @synthesize pageCount=_pageCount;
-- (void).cxx_destruct;
 @property(retain) NSURL *tempPreviewFileURL;
 - (id)init;
 

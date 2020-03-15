@@ -21,12 +21,12 @@
     CDUnknownBlockType _priorityBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType priorityBlock; // @synthesize priorityBlock=_priorityBlock;
 @property(copy, nonatomic) NSString *longOperationDescription; // @synthesize longOperationDescription=_longOperationDescription;
 @property(copy, nonatomic) NSString *shortOperationDescription; // @synthesize shortOperationDescription=_shortOperationDescription;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(nonatomic) long long relativePriority; // @synthesize relativePriority=_relativePriority;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithCancelBlock:(CDUnknownBlockType)arg1 priorityBlock:(CDUnknownBlockType)arg2;
 - (id)initWithCancelBlock:(CDUnknownBlockType)arg1 priorityBlock:(CDUnknownBlockType)arg2 shortDescription:(id)arg3 longDescription:(id)arg4;

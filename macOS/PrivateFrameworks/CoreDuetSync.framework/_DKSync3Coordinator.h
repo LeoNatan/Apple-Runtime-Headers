@@ -19,8 +19,8 @@
     id <_DKSyncRemoteContextStorage> _transportMDCSRapport;
 }
 
-@property(retain, nonatomic) id <_DKSyncRemoteContextStorage> transportMDCSRapport; // @synthesize transportMDCSRapport=_transportMDCSRapport;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <_DKSyncRemoteContextStorage> transportMDCSRapport; // @synthesize transportMDCSRapport=_transportMDCSRapport;
 - (void)handleContextChangedNotification:(id)arg1;
 - (void)handleStatusChangeForPeer:(id)arg1 previousTransports:(long long)arg2;
 - (id)multiDeviceContextStoreDevices;

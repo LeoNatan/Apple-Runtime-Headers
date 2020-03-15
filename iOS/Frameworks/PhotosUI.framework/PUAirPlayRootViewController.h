@@ -14,9 +14,9 @@
     NSArray *__childViewConstraints;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setChildViewConstraints:) NSArray *_childViewConstraints; // @synthesize _childViewConstraints=__childViewConstraints;
 @property(retain, nonatomic) UIViewController *childViewController; // @synthesize childViewController=_childViewController;
-- (void).cxx_destruct;
 - (void)setChildViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)updateViewConstraints;
 - (void)viewDidLoad;

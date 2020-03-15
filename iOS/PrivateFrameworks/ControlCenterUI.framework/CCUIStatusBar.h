@@ -20,11 +20,14 @@
     unsigned long long _trailingState;
     double _maxCompactScaleFactor;
     double _verticalSecondaryServiceDelta;
+    double _expandedStatusBarTranslation;
     struct UIEdgeInsets _compactEdgeInsets;
     struct UIEdgeInsets _expandedEdgeInsets;
     struct CGAffineTransform _compactScaleTransform;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) double expandedStatusBarTranslation; // @synthesize expandedStatusBarTranslation=_expandedStatusBarTranslation;
 @property(readonly, nonatomic) double verticalSecondaryServiceDelta; // @synthesize verticalSecondaryServiceDelta=_verticalSecondaryServiceDelta;
 @property(readonly, nonatomic) double maxCompactScaleFactor; // @synthesize maxCompactScaleFactor=_maxCompactScaleFactor;
 @property(nonatomic) struct UIEdgeInsets expandedEdgeInsets; // @synthesize expandedEdgeInsets=_expandedEdgeInsets;
@@ -32,7 +35,6 @@
 @property(nonatomic) unsigned long long trailingState; // @synthesize trailingState=_trailingState;
 @property(nonatomic) unsigned long long leadingState; // @synthesize leadingState=_leadingState;
 @property(nonatomic) __weak id <CCUIStatusBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateCompactTrailingStatusBarStyleRequestAndAvoidanceFrame;
 - (void)controlCenterApplyPrimaryContentShadow;
 - (void)_updateShadow;
@@ -40,6 +42,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
+@property(readonly, nonatomic) double expandedStatusBarBaseline;
 @property(nonatomic) struct CGAffineTransform compactScaleTransform; // @synthesize compactScaleTransform=_compactScaleTransform;
 @property(nonatomic) long long orientation; // @dynamic orientation;
 @property(nonatomic) double expandedTrailingAlpha; // @dynamic expandedTrailingAlpha;

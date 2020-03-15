@@ -19,13 +19,13 @@
     ADProgressView *_progressView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) ADPrerollButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
 @property(nonatomic) _Bool layoutForExpandedSize; // @synthesize layoutForExpandedSize=_layoutForExpandedSize;
 @property(nonatomic) _Bool isFullscreen; // @synthesize isFullscreen=_isFullscreen;
 @property(nonatomic) __weak id <ADPrerollTopBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_doneButtonTapped:(id)arg1;
 - (void)_scaleToFitButtonTapped:(id)arg1;
 - (void)_scaleToFillButtonTapped:(id)arg1;

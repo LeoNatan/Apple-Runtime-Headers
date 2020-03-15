@@ -16,9 +16,9 @@
     UILabel *_subtextLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subtextLabel; // @synthesize subtextLabel=_subtextLabel;
 @property(retain, nonatomic) UIView *descriptionView; // @synthesize descriptionView=_descriptionView;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)selectionMarginsForSize:(struct CGSize)arg1;
 - (void)didSelect;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;

@@ -11,8 +11,8 @@
     UIView *_contentView;
 }
 
-@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)_centeringReferenceView;
 - (void)layoutSubviews;

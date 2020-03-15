@@ -15,9 +15,9 @@
 }
 
 + (id)seasonsWithDictionaries:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *canonicalShowID; // @synthesize canonicalShowID=_canonicalShowID;
 @property(readonly, nonatomic) NSNumber *seasonNumber; // @synthesize seasonNumber=_seasonNumber;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

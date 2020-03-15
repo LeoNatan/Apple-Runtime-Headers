@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     SKUIEmbeddedMediaView *_mediaView;
 }
 
-@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (void).cxx_destruct;
+@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) SKUIEmbeddedMediaView *mediaView;

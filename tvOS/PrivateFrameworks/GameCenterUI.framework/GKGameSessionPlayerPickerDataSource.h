@@ -23,6 +23,7 @@
     NSMutableArray *_selectedPlayersStack;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didLoad; // @synthesize didLoad=_didLoad;
 @property(retain, nonatomic) NSMutableArray *selectedPlayersStack; // @synthesize selectedPlayersStack=_selectedPlayersStack;
 @property(retain, nonatomic) NSArray *hiddenPlayers; // @synthesize hiddenPlayers=_hiddenPlayers;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSArray *recentPlayers; // @synthesize recentPlayers=_recentPlayers;
 @property(retain, nonatomic) NSArray *friendPlayers; // @synthesize friendPlayers=_friendPlayers;
 @property(nonatomic) long long maxSelectable; // @synthesize maxSelectable=_maxSelectable;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;

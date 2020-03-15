@@ -50,6 +50,7 @@
 + (id)explicitLayoutConstraintWithFirstItem:(id)arg1 firstAttribute:(unsigned long long)arg2 relation:(long long)arg3 secondItem:(id)arg4 secondAttribute:(unsigned long long)arg5 constant:(id)arg6;
 + (id)systemRequiredLayoutConstraintWithItem:(id)arg1 attribute:(unsigned long long)arg2 constant:(id)arg3;
 + (id)systemRequiredLayoutConstraintWithFirstItem:(id)arg1 firstAttribute:(unsigned long long)arg2 relation:(long long)arg3 secondItem:(id)arg4 secondAttribute:(unsigned long long)arg5 constant:(id)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isUsingLayoutAnchorEngineVariables; // @synthesize isUsingLayoutAnchorEngineVariables=_isUsingLayoutAnchorEngineVariables;
 @property(nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -65,7 +66,6 @@
 @property(nonatomic) long long relation; // @synthesize relation=_relation;
 @property(nonatomic) unsigned long long firstAttribute; // @synthesize firstAttribute=_firstAttribute;
 @property(nonatomic) NSObject<IBAutolayoutItem> *firstItem; // @synthesize firstItem=_firstItem;
-- (void).cxx_destruct;
 - (Class)classForArchiver;
 - (void)ibVerifyAfterUnarchivingWithLayoutInfo:(id)arg1;
 - (id)convertConstantToView:(id)arg1;

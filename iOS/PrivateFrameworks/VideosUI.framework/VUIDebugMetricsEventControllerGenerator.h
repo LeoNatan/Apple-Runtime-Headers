@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIViewController *_viewController;
 }
 
-@property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (id)initWithMetrics:(id)arg1;
 
 @end

@@ -14,9 +14,9 @@
     UIImageView *_checkmarkView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (void)setSelected:(_Bool)arg1;

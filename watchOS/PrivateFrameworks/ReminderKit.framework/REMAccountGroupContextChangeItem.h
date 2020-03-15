@@ -13,8 +13,8 @@
     REMAccountChangeItem *_accountChangeItem;
 }
 
-@property(retain, nonatomic) REMAccountChangeItem *accountChangeItem; // @synthesize accountChangeItem=_accountChangeItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMAccountChangeItem *accountChangeItem; // @synthesize accountChangeItem=_accountChangeItem;
 - (id)initWithAccountChangeItem:(id)arg1;
 
 @end

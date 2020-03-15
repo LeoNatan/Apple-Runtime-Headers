@@ -20,11 +20,11 @@
 + (_Bool)isPermittedOnUserConnection;
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *details; // @synthesize details=_details;
 @property(copy, nonatomic) NSString *eventType; // @synthesize eventType=_eventType;
 @property(copy, nonatomic) NSString *inReplyTo; // @synthesize inReplyTo=_inReplyTo;
 @property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSArray *_nowPlayingClients;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *nowPlayingClients; // @synthesize nowPlayingClients=_nowPlayingClients;
 @property(readonly, nonatomic) _MRNowPlayingClientProtobuf *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)restoreNowPlayingClientState;
 - (void)removePlayer:(id)arg1;
 - (id)existingNowPlayingPlayerClientRequestsForPlayerPath:(id)arg1;

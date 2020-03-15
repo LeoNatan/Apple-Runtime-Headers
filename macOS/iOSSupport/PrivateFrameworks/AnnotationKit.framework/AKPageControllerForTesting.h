@@ -18,13 +18,13 @@
     UIView *_testingOverlayView;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIView *testingOverlayView; // @synthesize testingOverlayView=_testingOverlayView;
 @property(retain) AKGeometryHelper *testingGeometryHelper; // @synthesize testingGeometryHelper=_testingGeometryHelper;
 @property(retain) AKLayerPresentationManager *testingLayerPresentationManager; // @synthesize testingLayerPresentationManager=_testingLayerPresentationManager;
 @property(retain) AKPageModelController *testingPageModelController; // @synthesize testingPageModelController=_testingPageModelController;
 @property unsigned long long testingPageIndex; // @synthesize testingPageIndex=_testingPageIndex;
 @property(retain) AKController *testingController; // @synthesize testingController=_testingController;
-- (void).cxx_destruct;
 - (double)modelBaseScaleFactor;
 - (struct CGRect)maxPageRect;
 - (struct CGRect)convertRectFromModelToOverlay:(struct CGRect)arg1;

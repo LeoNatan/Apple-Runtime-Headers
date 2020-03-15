@@ -23,10 +23,10 @@
 + (id)_logStringForCarouselContentStyle:(long long)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)new;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic, setter=_setPromotionItem:) TVTopShelfPromotionCarouselItem *_promotionItem; // @synthesize _promotionItem;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)succinctDescriptionBuilder;

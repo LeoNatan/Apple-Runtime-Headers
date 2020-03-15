@@ -21,8 +21,8 @@
 + (BOOL)__shouldHostRemoteTextEffectsWindow;
 + (id)requestCardViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
 + (id)requestInlineViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak id <UIKeyboardMediaServiceRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UIKeyboardMediaServiceRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)draggedStickerToPoint:(struct CGPoint)arg1;
 - (void)requestInsertionPointCompletion:(CDUnknownBlockType)arg1;
 - (void)stageStickerWithFileHandle:(id)arg1 url:(id)arg2 accessibilityLabel:(id)arg3;

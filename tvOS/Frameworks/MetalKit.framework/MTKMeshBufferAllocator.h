@@ -16,8 +16,8 @@
     id <MTLDevice> _device;
 }
 
-@property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 - (id)newBufferFromZone:(id)arg1 data:(id)arg2 type:(unsigned long long)arg3;
 - (id)newBufferFromZone:(id)arg1 length:(unsigned long long)arg2 type:(unsigned long long)arg3;
 - (id)newBufferWithData:(id)arg1 type:(unsigned long long)arg2;

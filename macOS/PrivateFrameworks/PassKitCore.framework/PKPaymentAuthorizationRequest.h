@@ -15,10 +15,10 @@
     PKPaymentRequest *_paymentRequest;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPaymentRequest *paymentRequest; // @synthesize paymentRequest=_paymentRequest;
 @property(retain, nonatomic) NSData *nonceData; // @synthesize nonceData=_nonceData;
 @property(retain, nonatomic) NSData *credential; // @synthesize credential=_credential;
-- (void).cxx_destruct;
 - (id)initWithPaymentRequest:(id)arg1;
 
 @end

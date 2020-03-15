@@ -16,9 +16,9 @@
     double _setupDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double setupDuration; // @synthesize setupDuration=_setupDuration;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (unsigned long long)reportingEventType;
 - (_Bool)isValidReportingEvent;
 @property(readonly, copy) NSString *description;

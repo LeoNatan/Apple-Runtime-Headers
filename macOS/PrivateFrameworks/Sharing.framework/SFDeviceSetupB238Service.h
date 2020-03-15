@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class APCPlayer, CUAudioPlayer, NSDate, NSString, SFClient, SFDeviceOperationHandlerCDPSetup, SFDeviceOperationHandlerWiFiSetup, SFService, SFSession, SFSiriClient;
+@class APCPlayer, CUAudioPlayer, NSData, NSDate, NSString, SFClient, SFDeviceOperationHandlerCDPSetup, SFDeviceOperationHandlerWiFiSetup, SFService, SFSession, SFSiriClient;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFDeviceSetupB238Service : NSObject
 {
     BOOL _activateCalled;
     BOOL _advertiseFast;
-    struct NSData *_apcCapData;
+    NSData *_apcCapData;
     APCPlayer *_apcPlayer;
     NSObject<OS_dispatch_source> *_finishApplyTimer;
     NSObject<OS_dispatch_source> *_finishTimeoutTimer;
@@ -56,9 +56,9 @@
     CDUnknownBlockType _progressHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_setSystemName:(id)arg1 hostname:(id)arg2;
 - (void)_setSiriInfo;
 - (void)_speakLocalizedKey:(id)arg1 event:(unsigned int)arg2;

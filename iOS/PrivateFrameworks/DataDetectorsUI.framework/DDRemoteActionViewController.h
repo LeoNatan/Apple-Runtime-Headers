@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
 + (id)prepareViewController:(id)arg1 forAction:(id)arg2 actionController:(id)arg3;
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
+- (void).cxx_destruct;
 @property(nonatomic) __weak DDActionController *actionController; // @synthesize actionController=_actionController;
 @property(nonatomic) __weak DDAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)getIsBeingPresentedInPopover:(CDUnknownBlockType)arg1;
 - (void)actionDidFinish;

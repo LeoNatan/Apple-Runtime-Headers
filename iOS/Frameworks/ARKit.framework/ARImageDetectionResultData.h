@@ -22,12 +22,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *detectedImages; // @synthesize detectedImages=_detectedImages;
 @property(copy, nonatomic) ARCamera *currentCamera; // @synthesize currentCamera=_currentCamera;
 @property(nonatomic) _Bool providesWorldTrackingCameraPose; // @synthesize providesWorldTrackingCameraPose=_providesWorldTrackingCameraPose;
 @property(nonatomic) _Bool predicted; // @synthesize predicted=_predicted;
 @property(nonatomic) _Bool detectionOnly; // @synthesize detectionOnly=_detectionOnly;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

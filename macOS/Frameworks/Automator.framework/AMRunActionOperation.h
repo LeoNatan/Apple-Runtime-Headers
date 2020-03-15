@@ -16,9 +16,9 @@
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property double startTime; // @synthesize startTime=_startTime;
 @property(retain) AMAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)main;
 @property(readonly, nonatomic) double duration;

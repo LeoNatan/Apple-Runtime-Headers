@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_fileDownloadPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileDownloadPath; // @synthesize fileDownloadPath=_fileDownloadPath;
 @property(retain, nonatomic) NSString *fileStagingPath; // @synthesize fileStagingPath=_fileStagingPath;
 @property(retain, nonatomic) NSString *assetDbPath; // @synthesize assetDbPath=_assetDbPath;
 @property(retain, nonatomic) NSString *mmcsWorkingDirectory; // @synthesize mmcsWorkingDirectory=_mmcsWorkingDirectory;
-- (void).cxx_destruct;
 
 @end
 

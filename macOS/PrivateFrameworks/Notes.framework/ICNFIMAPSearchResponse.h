@@ -14,8 +14,8 @@
 }
 
 + (BOOL)handlesResponseWithName:(const char *)arg1 ofLength:(unsigned long long)arg2;
-@property(copy, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
 - (id)description;
 - (id)debugDescription;
 

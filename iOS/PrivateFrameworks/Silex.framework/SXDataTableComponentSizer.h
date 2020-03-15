@@ -19,11 +19,11 @@
     id <SXLayoutContext> _currentLayoutContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SXLayoutContext> currentLayoutContext; // @synthesize currentLayoutContext=_currentLayoutContext;
 @property(retain, nonatomic) SXDataTableComponentController *dataTableComponentController; // @synthesize dataTableComponentController=_dataTableComponentController;
 @property(retain, nonatomic) SXDataTableLayouter *layouter; // @synthesize layouter=_layouter;
 @property(readonly, nonatomic) __weak id <SXTextComponentLayoutHosting> textComponentLayoutHosting; // @synthesize textComponentLayoutHosting=_textComponentLayoutHosting;
-- (void).cxx_destruct;
 - (id)tableStyleForComponent:(id)arg1;
 - (id)unitConverterForDataTableComponentController:(id)arg1;
 - (id)textComponentLayoutHostingForDataTableComponentController:(id)arg1;

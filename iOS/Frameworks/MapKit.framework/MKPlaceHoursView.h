@@ -30,12 +30,12 @@ __attribute__((visibility("hidden")))
     id <MKPlaceHoursViewDelegate> _hoursDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKPlaceHoursViewDelegate> hoursDelegate; // @synthesize hoursDelegate=_hoursDelegate;
 @property(retain, nonatomic) GEOBusinessHours *businessHours; // @synthesize businessHours=_businessHours;
 @property(retain, nonatomic) NSDictionary *formattedHoursData; // @synthesize formattedHoursData=_formattedHoursData;
 @property(retain, nonatomic) _MKLocalizedHoursBuilder *hoursBuilder; // @synthesize hoursBuilder=_hoursBuilder;
 @property(nonatomic) unsigned long long placeHoursViewOptions; // @synthesize placeHoursViewOptions=_placeHoursViewOptions;
-- (void).cxx_destruct;
 - (_Bool)_shouldCollapseTopMessageLabel;
 - (void)_collapseAllLabelsFromOptions;
 - (void)_updateHoursView;

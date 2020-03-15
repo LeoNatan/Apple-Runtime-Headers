@@ -17,10 +17,10 @@
     CSLMainUITransitionContext *_mainUITransitionContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLMainUITransitionContext *mainUITransitionContext; // @synthesize mainUITransitionContext=_mainUITransitionContext;
 @property(copy, nonatomic) NSArray *actionGroups; // @synthesize actionGroups=_actionGroups;
 @property(retain, nonatomic) CSLUIState *state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

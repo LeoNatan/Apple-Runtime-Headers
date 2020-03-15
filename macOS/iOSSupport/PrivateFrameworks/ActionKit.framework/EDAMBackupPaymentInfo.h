@@ -19,12 +19,12 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *paymentMethodId; // @synthesize paymentMethodId=_paymentMethodId;
 @property(retain, nonatomic) NSNumber *unitPrice; // @synthesize unitPrice=_unitPrice;
 @property(retain, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(retain, nonatomic) NSString *premiumServiceSKU; // @synthesize premiumServiceSKU=_premiumServiceSKU;
 @property(retain, nonatomic) NSString *premiumCommerceService; // @synthesize premiumCommerceService=_premiumCommerceService;
-- (void).cxx_destruct;
 
 @end
 

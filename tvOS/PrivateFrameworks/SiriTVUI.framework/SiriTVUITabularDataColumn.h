@@ -14,9 +14,9 @@
     NSNumber *_rightMargin;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *rightMargin; // @synthesize rightMargin=_rightMargin;
 @property(copy, nonatomic) NSNumber *minimumWidth; // @synthesize minimumWidth=_minimumWidth;
-- (void).cxx_destruct;
 
 @end
 

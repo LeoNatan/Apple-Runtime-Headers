@@ -25,12 +25,12 @@
     _SBFVibrantSettings *_vibrantSettings;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVibrancyAllowed) _Bool vibrancyAllowed; // @synthesize vibrancyAllowed=_vibrancyAllowed;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings;
 @property(nonatomic) double strength; // @synthesize strength=_strength;
 @property(retain, nonatomic) _SBFVibrantSettings *vibrantSettings; // @synthesize vibrantSettings=_vibrantSettings;
 @property(readonly, nonatomic) struct UIEdgeInsets hitTestEdgeInsets; // @synthesize hitTestEdgeInsets=_hitTestEdgeInsets;
-- (void).cxx_destruct;
 - (id)_lazyLegibilityView;
 - (void)setBackgroundView:(id)arg1;
 - (_Bool)_shouldUseVibrancy;

@@ -46,6 +46,7 @@
 + (id)fontDescriptorWithTextStyle:(int)arg1 leadingAdjustment:(int)arg2;
 + (id)fontDescriptorWithTextStyle:(int)arg1 weight:(int)arg2;
 + (id)fontDescriptorWithTextStyle:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool wantsMonospaceNumbers; // @synthesize wantsMonospaceNumbers=_wantsMonospaceNumbers;
 @property(readonly, nonatomic) _Bool usesCondensedMetrics; // @synthesize usesCondensedMetrics=_usesCondensedMetrics;
 @property(readonly, nonatomic) _Bool usesItalic; // @synthesize usesItalic=_usesItalic;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) int weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) float systemFontSize; // @synthesize systemFontSize=_systemFontSize;
 @property(readonly, nonatomic) int textStyle; // @synthesize textStyle=_textStyle;
-- (void).cxx_destruct;
 - (void)_resetToDefaultValues;
 - (id)_preferredFontDescriptorForTextStyle:(int)arg1;
 - (id)_fontPointSizeLayoutInterpolator;

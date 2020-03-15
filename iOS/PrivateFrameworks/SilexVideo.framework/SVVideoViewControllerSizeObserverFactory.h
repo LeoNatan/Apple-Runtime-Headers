@@ -16,8 +16,8 @@
     id <SVVideoViewControllerProviding> _videoViewControllerProvider;
 }
 
-@property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 - (id)createViewControllerSizeObserver;
 - (id)initWithVideoViewControllerProvider:(id)arg1;
 

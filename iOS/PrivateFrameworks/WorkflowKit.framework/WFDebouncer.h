@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_source> *_maximumDelayTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *maximumDelayTimer; // @synthesize maximumDelayTimer=_maximumDelayTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *delayTimer; // @synthesize delayTimer=_delayTimer;
 @property(readonly, nonatomic) NSMapTable *targetTable; // @synthesize targetTable=_targetTable;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) double maximumDelay; // @synthesize maximumDelay=_maximumDelay;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
-- (void).cxx_destruct;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (void)fire;

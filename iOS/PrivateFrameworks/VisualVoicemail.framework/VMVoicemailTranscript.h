@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long confidenceRating; // @synthesize confidenceRating=_confidenceRating;
 @property(readonly, nonatomic) float confidence; // @synthesize confidence=_confidence;
 @property(readonly, copy, nonatomic) NSArray *segments; // @synthesize segments=_segments;
 @property(readonly, copy, nonatomic) NSString *transcriptionString; // @synthesize transcriptionString=_transcriptionString;
-- (void).cxx_destruct;
 - (id)archivedData;
 - (id)debugDescription;
 - (id)description;

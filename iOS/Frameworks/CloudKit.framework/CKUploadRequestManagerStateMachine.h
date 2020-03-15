@@ -22,13 +22,13 @@
 + (id)nameFromStateEvent:(long long)arg1;
 + (id)nameFromFunction:(long long)arg1;
 + (id)nameFromState:(long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType internalActionHandler; // @synthesize internalActionHandler=_internalActionHandler;
 @property(retain, nonatomic) CUStateEvent *eventCausingTransition; // @synthesize eventCausingTransition=_eventCausingTransition;
 @property(retain, nonatomic) CUStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(copy, nonatomic) CDUnknownBlockType exitStateHandler; // @synthesize exitStateHandler=_exitStateHandler;
 @property(copy, nonatomic) CDUnknownBlockType enterStateHandler; // @synthesize enterStateHandler=_enterStateHandler;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
-- (void).cxx_destruct;
 - (void)transitionToState:(id)arg1 withEvent:(id)arg2;
 - (CDUnknownBlockType)eventHandlerForState:(id)arg1 withEnterBlock:(CDUnknownBlockType)arg2 exitBlock:(CDUnknownBlockType)arg3 eventBlock:(CDUnknownBlockType)arg4;
 - (_Bool)canPerformFunction:(long long)arg1;

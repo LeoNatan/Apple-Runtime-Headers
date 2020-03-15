@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PKPrinter *_printer;
 }
 
-@property(retain, nonatomic) PKPrinter *printer; // @synthesize printer=_printer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPrinter *printer; // @synthesize printer=_printer;
 - (void)enterPIN;
 - (void)viewDidAppear:(_Bool)arg1;
 - (unsigned int)supportedInterfaceOrientations;

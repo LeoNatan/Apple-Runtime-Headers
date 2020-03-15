@@ -25,6 +25,7 @@
 }
 
 + (id)makeFeatureJSObjectForFeature:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_source, setter=_setSource:) NSString *source; // @synthesize source=_source;
 @property(nonatomic, setter=setJSKeyboard:) __weak IKJSKeyboard *jsKeyboard; // @synthesize jsKeyboard=_jsKeyboard;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(copy, nonatomic, setter=setJSSource:) NSString *jsSource; // @synthesize jsSource=_jsSource;
 @property(copy, nonatomic, setter=setJSText:) NSString *jsText; // @synthesize jsText=_jsText;
-- (void).cxx_destruct;
 - (id)initWithDOMNode:(id)arg1 featureName:(id)arg2;
 
 // Remaining properties

@@ -16,9 +16,9 @@
     double _opacity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(copy, nonatomic) NSString *colorSelectorName; // @synthesize colorSelectorName=_colorSelectorName;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;

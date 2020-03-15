@@ -20,11 +20,11 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float humanScore; // @synthesize humanScore=_humanScore;
 @property(nonatomic) float relativeScore; // @synthesize relativeScore=_relativeScore;
 @property(nonatomic) float absoluteScore; // @synthesize absoluteScore=_absoluteScore;
 @property(retain, nonatomic) VCPProtoTimeRange *timeRange; // @synthesize timeRange=_timeRange;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

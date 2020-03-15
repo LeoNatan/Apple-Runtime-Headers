@@ -13,8 +13,8 @@
     NSString *_rating;
 }
 
-@property(copy, nonatomic) NSString *rating; // @synthesize rating=_rating;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *rating; // @synthesize rating=_rating;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

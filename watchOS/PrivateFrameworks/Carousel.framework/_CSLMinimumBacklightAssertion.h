@@ -16,10 +16,10 @@
 }
 
 + (id)assertionWithReason:(id)arg1 nits:(float)arg2 fadeDuration:(float)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) float fadeDuration; // @synthesize fadeDuration=_fadeDuration;
 @property(nonatomic) float nits; // @synthesize nits=_nits;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 
 @end
 

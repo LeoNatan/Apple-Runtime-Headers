@@ -23,13 +23,13 @@
     unsigned long long _previousQueryId;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long previousQueryId; // @synthesize previousQueryId=_previousQueryId;
 @property(retain) SFResultSection *searchThroughSection; // @synthesize searchThroughSection=_searchThroughSection;
 @property _Bool hasResultsWaitingToUpdate; // @synthesize hasResultsWaitingToUpdate=_hasResultsWaitingToUpdate;
 @property(retain) SFResultSection *suggestionsSection; // @synthesize suggestionsSection=_suggestionsSection;
 @property(retain) NSArray *resultSections; // @synthesize resultSections=_resultSections;
 @property(copy, nonatomic) CDUnknownBlockType didFinishGettingAllResultsHandler; // @synthesize didFinishGettingAllResultsHandler;
-- (void).cxx_destruct;
 - (void)_pushSectionsUpdate;
 - (_Bool)_hasRealSuggestions;
 - (void)clearSuggestionSection;

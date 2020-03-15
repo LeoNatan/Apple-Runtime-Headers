@@ -24,13 +24,13 @@
     UIImageView *_lockupImageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *lockupImageView; // @synthesize lockupImageView=_lockupImageView;
 @property(readonly, nonatomic) UIView *contentDimmingView; // @synthesize contentDimmingView=_contentDimmingView;
 @property(readonly, nonatomic) UIView *contentBorderView; // @synthesize contentBorderView=_contentBorderView;
 @property(copy, nonatomic) CDUnknownBlockType onLoadData; // @synthesize onLoadData=_onLoadData;
 @property(retain, nonatomic) _TVAppDocumentRequestController *documentController; // @synthesize documentController=_documentController;
 @property(retain, nonatomic) id lockupImageProxy; // @synthesize lockupImageProxy=_lockupImageProxy;
-- (void).cxx_destruct;
 - (void)_loadDataConditionally:(_Bool)arg1;
 - (void)normalizedPositionDidChange;
 - (void)layoutSubviews;

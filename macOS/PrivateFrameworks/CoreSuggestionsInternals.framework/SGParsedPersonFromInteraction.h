@@ -27,6 +27,7 @@
 + (id)intentClassWhitelist;
 + (id)parseInteraction:(id)arg1 bundleId:(id)arg2;
 + (id)_peopleFromInteraction:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(readonly, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(readonly, nonatomic) NSString *socialProfile; // @synthesize socialProfile=_socialProfile;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSString *interactionIdentifier; // @synthesize interactionIdentifier=_interactionIdentifier;
 @property(readonly, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
 @property(readonly, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (id)pipelineEntity;
 - (void)grabNameIfNeededFromContactStore:(id)arg1;
 - (void)_harvestInstantMessageAddress:(id)arg1;

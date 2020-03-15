@@ -29,11 +29,11 @@
 + (void)loadStyleSheets;
 + (void)registerStyleSheetURL:(id)arg1 parentStyleSheets:(id)arg2 forTemplateName:(id)arg3;
 + (void)registerStyleSheetURL:(id)arg1 forTemplateName:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *templateName; // @synthesize templateName=_templateName;
 @property(readonly, retain, nonatomic) NSMutableDictionary *styleComposersByKeypath; // @synthesize styleComposersByKeypath=_styleComposersByKeypath;
 @property(readonly, copy, nonatomic) NSDictionary *templateTree; // @synthesize templateTree=_templateTree;
 @property(readonly, retain, nonatomic) IKStyleFactory *styleFactory; // @synthesize styleFactory=_styleFactory;
-- (void).cxx_destruct;
 - (id)_styleComposerForNode:(id)arg1;
 - (id)_initWithXMLDoc:(struct _xmlDoc *)arg1 templateName:(id)arg2 error:(id *)arg3;
 - (void)setViewElementStylesDirty;

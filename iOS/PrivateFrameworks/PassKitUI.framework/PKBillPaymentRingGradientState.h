@@ -14,9 +14,9 @@
     UIColor *_endColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UIColor *endColor; // @synthesize endColor=_endColor;
 @property(readonly, copy, nonatomic) UIColor *startColor; // @synthesize startColor=_startColor;
-- (void).cxx_destruct;
 - (id)initWithStartColor:(id)arg1 endColor:(id)arg2;
 
 @end

@@ -33,6 +33,7 @@
     NSObject<OS_dispatch_semaphore> *_sema;
 }
 
+- (void).cxx_destruct;
 @property BOOL completionHandlerCalled; // @synthesize completionHandlerCalled=_completionHandlerCalled;
 @property(readonly) NSObject<OS_dispatch_semaphore> *sema; // @synthesize sema=_sema;
 @property(nonatomic) long long currentEpoch; // @synthesize currentEpoch=_currentEpoch;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSString *updateableModelPath; // @synthesize updateableModelPath=_updateableModelPath;
 @property(retain) NSError *testError; // @synthesize testError=_testError;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (BOOL)writeUpdatedModelToPath:(id)arg1 error:(id *)arg2;
 - (CDUnknownBlockType)_completionHandlerBlock;
 - (CDUnknownBlockType)_progressHandlerBlock;

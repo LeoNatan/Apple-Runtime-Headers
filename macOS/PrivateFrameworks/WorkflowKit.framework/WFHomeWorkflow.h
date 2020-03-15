@@ -14,9 +14,10 @@
     WFWorkflow *_workflow;
 }
 
++ (void)setCachedHomes:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) BOOL requiresDeviceUnlock;
 @property(readonly, copy, nonatomic) NSArray *summaryIconDescriptors;

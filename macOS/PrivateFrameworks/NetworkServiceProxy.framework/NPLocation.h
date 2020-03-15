@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property double longtitude; // @synthesize longtitude=_longtitude;
 @property double latitude; // @synthesize latitude=_latitude;
-- (void).cxx_destruct;
 @property(readonly) BOOL isValid;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

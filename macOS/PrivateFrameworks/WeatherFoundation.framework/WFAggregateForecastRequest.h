@@ -14,9 +14,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) WFLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (void)cleanup;
 - (void)handleCancellation;
 - (void)handleResponse:(id)arg1;

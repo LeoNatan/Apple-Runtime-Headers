@@ -28,6 +28,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)actionsType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int reservationStatus; // @synthesize reservationStatus=_reservationStatus;
 @property(copy, nonatomic) NSString *reservationNumber; // @synthesize reservationNumber=_reservationNumber;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) _INPBDataString *itemReference; // @synthesize itemReference=_itemReference;
 @property(retain, nonatomic) _INPBTimestamp *bookingTime; // @synthesize bookingTime=_bookingTime;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

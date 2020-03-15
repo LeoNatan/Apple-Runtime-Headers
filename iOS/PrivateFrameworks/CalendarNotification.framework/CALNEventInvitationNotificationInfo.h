@@ -22,6 +22,7 @@
     NSString *_sourceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(readonly, copy, nonatomic) NSString *sourceTitle; // @synthesize sourceTitle=_sourceTitle;
 @property(readonly, nonatomic) _Bool isDelegate; // @synthesize isDelegate=_isDelegate;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, copy, nonatomic) NSURL *launchURL; // @synthesize launchURL=_launchURL;
 @property(readonly, copy, nonatomic) NSString *sourceClientIdentifier; // @synthesize sourceClientIdentifier=_sourceClientIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSourceClientIdentifier:(id)arg1 launchURL:(id)arg2 expirationDate:(id)arg3 conflictDetails:(id)arg4 eventInvitationNotification:(id)arg5 eventRepresentationDictionary:(id)arg6 eventURI:(id)arg7 isDelegate:(_Bool)arg8 sourceTitle:(id)arg9 sourceIdentifier:(id)arg10;
 

@@ -32,9 +32,9 @@ __attribute__((visibility("hidden")))
     NSPopUpButton *_popUpButton;
 }
 
+- (void).cxx_destruct;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)_updatePullDownDisplayItem;
 - (void)_configureAsPullDownButton;
 - (void)_configureAsPopUpButton;

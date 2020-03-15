@@ -16,8 +16,8 @@
     id <_NCWidgetPreferencesDelegate> _delegate;
 }
 
-@property __weak id <_NCWidgetPreferencesDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <_NCWidgetPreferencesDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)widgetPrefsStateChanged;
 - (void)_setupConnection;
 - (void)_disconnected;

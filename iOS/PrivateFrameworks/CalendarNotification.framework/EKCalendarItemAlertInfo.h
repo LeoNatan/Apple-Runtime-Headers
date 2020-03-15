@@ -51,6 +51,7 @@
     struct CLLocationCoordinate2D _geoLocationCoordinates;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(nonatomic) unsigned long long currentRouteHypothesizerNotificationType; // @synthesize currentRouteHypothesizerNotificationType=_currentRouteHypothesizerNotificationType;
 @property(nonatomic) _Bool hasDisplayedRunningLateMessage; // @synthesize hasDisplayedRunningLateMessage=_hasDisplayedRunningLateMessage;
@@ -88,7 +89,6 @@
 @property(readonly, nonatomic) NSString *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *publisherBulletinID; // @synthesize publisherBulletinID=_publisherBulletinID;
-- (void).cxx_destruct;
 - (void)resetTimeToLeaveDisplayState;
 @property(readonly, nonatomic) _Bool isPurelyATimeToLeaveAlert;
 @property(readonly, nonatomic) NSString *recordID;

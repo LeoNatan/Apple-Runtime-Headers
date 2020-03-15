@@ -17,11 +17,11 @@
 }
 
 + (id)extrasLaunchContextForURL:(id)arg1 adamID:(id)arg2 actionParams:(id)arg3 previewURL:(id)arg4 loadingImage:(id)arg5 lightTheme:(_Bool)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIActivityIndicatorView *loadingSpinnerView; // @synthesize loadingSpinnerView=_loadingSpinnerView;
 @property(readonly, nonatomic) UIVisualEffectView *loadingVisualEffectView; // @synthesize loadingVisualEffectView=_loadingVisualEffectView;
 @property(readonly, nonatomic) _TVImageView *loadingImageView; // @synthesize loadingImageView=_loadingImageView;
 @property(readonly, nonatomic) _Bool extrasDidPushRoot; // @synthesize extrasDidPushRoot=_extrasDidPushRoot;
-- (void).cxx_destruct;
 - (void)_controllerDidDisplay:(id)arg1;
 - (void)_hideSpinner;
 - (void)_showSpinner;

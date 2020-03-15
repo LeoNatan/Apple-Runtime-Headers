@@ -19,6 +19,7 @@
     long long _indentationLevel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) long long indentationLevel; // @synthesize indentationLevel=_indentationLevel;
 @property(readonly, nonatomic) PHCollectionList *collection; // @synthesize collection=_collection;
@@ -26,7 +27,6 @@
 - (_Bool)isRenamable;
 - (_Bool)isDraggable;
 - (id)glyphImageName;
-- (void).cxx_destruct;
 - (id)representedObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCollectionList:(id)arg1 itemCount:(long long)arg2;

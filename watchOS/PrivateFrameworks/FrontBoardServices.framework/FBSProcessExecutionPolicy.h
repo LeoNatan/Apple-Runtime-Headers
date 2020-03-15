@@ -18,9 +18,9 @@
 }
 
 + (id)policyForStrategy:(id)arg1 withProvisions:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *provisions; // @synthesize provisions=_provisions;
 @property(copy, nonatomic) FBSProcessExecutionStrategy *strategy; // @synthesize strategy=_strategy;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

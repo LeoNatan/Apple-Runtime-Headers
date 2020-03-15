@@ -51,6 +51,7 @@
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic, setter=tritium_setBottomElementTritiumProgress:) float tritium_bottomElementTritiumProgress; // @synthesize tritium_bottomElementTritiumProgress=_tritium_bottomElementTritiumProgress;
 @property(nonatomic, setter=tritium_setTopElementTritiumProgress:) float tritium_topElementTritiumProgress; // @synthesize tritium_topElementTritiumProgress=_tritium_topElementTritiumProgress;
 @property(nonatomic, setter=tritium_setBottomOverlayElementAlpha:) float tritium_bottomOverlayElementAlpha; // @synthesize tritium_bottomOverlayElementAlpha=_tritium_bottomOverlayElementAlpha;
@@ -77,7 +78,6 @@
 @property(nonatomic) float topItemsShift; // @synthesize topItemsShift=_topItemsShift;
 @property(nonatomic) float headerAlpha; // @synthesize headerAlpha=_headerAlpha;
 @property(nonatomic) float topItemsAlpha; // @synthesize topItemsAlpha=_topItemsAlpha;
-- (void).cxx_destruct;
 - (_Bool)_hasHeaderForSection:(int)arg1;
 - (void)_updateContentInsetsIfNeeded;
 - (void)_updateSectionHeaderListIfNeeded;

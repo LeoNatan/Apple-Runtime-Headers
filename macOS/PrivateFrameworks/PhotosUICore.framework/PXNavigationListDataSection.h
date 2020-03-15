@@ -20,12 +20,12 @@
     NSArray *_sectionRangeMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *sectionRangeMap; // @synthesize sectionRangeMap=_sectionRangeMap;
 @property(readonly, nonatomic) PXCollectionsDataSection *collectionsDataSection; // @synthesize collectionsDataSection=_collectionsDataSection;
 @property(readonly, copy, nonatomic) NSDictionary *childIndexHints; // @synthesize childIndexHints=_childIndexHints;
 @property(readonly, copy, nonatomic) NSDictionary *childDataSections; // @synthesize childDataSections=_childDataSections;
 @property(readonly, nonatomic) long long indentationLevel; // @synthesize indentationLevel=_indentationLevel;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)parentOfListItemAtIndex:(long long)arg1 localIndex:(long long *)arg2;
 - (long long)indexInCollectionsDataSectionOfListItem:(id)arg1 hintIndex:(long long)arg2;

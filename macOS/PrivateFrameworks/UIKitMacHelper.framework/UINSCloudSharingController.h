@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSSharingService *sharingService; // @synthesize sharingService=_sharingService;
 @property(retain, nonatomic) CKContainer *container; // @synthesize container=_container;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long availablePermissions; // @synthesize availablePermissions=_availablePermissions;
 @property(nonatomic) __weak id <UINSWindow> window; // @synthesize window=_window;
 @property(nonatomic) __weak id <UINSCloudSharingControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)sharingService:(id)arg1 didStopSharing:(id)arg2;
 - (void)sharingService:(id)arg1 didSaveShare:(id)arg2;
 - (unsigned long long)optionsForSharingService:(id)arg1 shareProvider:(id)arg2;

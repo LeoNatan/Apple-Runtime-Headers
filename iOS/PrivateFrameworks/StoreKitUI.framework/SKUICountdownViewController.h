@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     SKUIClientContext *_clientContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUICountdownComponent *countdownComponent; // @synthesize countdownComponent=_countdownComponent;
 @property(readonly, nonatomic) SKUIResourceLoader *artworkLoader; // @synthesize artworkLoader=_artworkLoader;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)loadView;
 - (void)viewDidDisappear:(_Bool)arg1;

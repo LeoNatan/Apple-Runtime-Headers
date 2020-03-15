@@ -18,10 +18,10 @@
     AIDAAccountManager *_accountManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AIDAAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 @property(copy, nonatomic) NSArray *specifiers; // @synthesize specifiers=_specifiers;
 @property(nonatomic) __weak id <AAUISpecifierProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)isAccountInGrayMode;
 - (_Bool)locationServicesDisabledByRestrictions;
 - (_Bool)shouldShowLocationSharingSpecifier;

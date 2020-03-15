@@ -14,7 +14,7 @@
 {
 }
 
-- (struct NSObject *)recentEventForAddress:(id)arg1 kind:(id)arg2 metadata:(id)arg3;
+- (id)recentEventForAddress:(id)arg1 kind:(id)arg2 metadata:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

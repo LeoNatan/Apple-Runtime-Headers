@@ -21,10 +21,10 @@
 
 + (id)ratingDotImage;
 + (id)ratingStarImage;
+- (void).cxx_destruct;
 @property(nonatomic) double rating; // @synthesize rating=_rating;
 @property(nonatomic) struct UIEdgeInsets hitTestEdgeInsets; // @synthesize hitTestEdgeInsets=_hitTestEdgeInsets;
 @property(nonatomic) __weak id <MPURatingControlDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateImageViewsForRatingAnimated:(_Bool)arg1;
 - (void)_updateImageView:(id)arg1 proposedImage:(id)arg2 filled:(_Bool)arg3;
 - (void)viewDidMoveToSuperview;

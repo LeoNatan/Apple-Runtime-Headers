@@ -33,6 +33,7 @@
 + (id)_namesToRedactWithProfile:(id)arg1 error:(id *)arg2;
 + (id)_SSNRegularExpressionWithError:(id *)arg1;
 + (id)redactorWithProfile:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSRegularExpression *longNumberRegex; // @synthesize longNumberRegex=_longNumberRegex;
 @property(readonly, nonatomic) NSRegularExpression *SSNRegex; // @synthesize SSNRegex=_SSNRegex;
 @property(readonly, nonatomic) NSRegularExpression *fullWordRegex; // @synthesize fullWordRegex=_fullWordRegex;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSDataDetector *dataDetectorSkipLink; // @synthesize dataDetectorSkipLink=_dataDetectorSkipLink;
 @property(readonly, nonatomic) NSDataDetector *dataDetectorAll; // @synthesize dataDetectorAll=_dataDetectorAll;
 @property(readonly, nonatomic) NSSet *names; // @synthesize names=_names;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

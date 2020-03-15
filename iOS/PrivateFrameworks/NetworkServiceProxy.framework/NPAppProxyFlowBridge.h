@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property int currentState; // @synthesize currentState=_currentState;
 @property(retain) NSError *connectionError; // @synthesize connectionError=_connectionError;
 @property(retain) NSObject<OS_nw_connection> *connection; // @synthesize connection=_connection;
 @property(retain) NWEndpoint *remoteEndpoint; // @synthesize remoteEndpoint=_remoteEndpoint;
 @property(retain) NEAppProxyFlow *flow; // @synthesize flow=_flow;
-- (void).cxx_destruct;
 - (void)startConnection;
 - (void)readDataFromClient;
 - (void)readMultipleFromClient;

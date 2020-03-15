@@ -37,10 +37,10 @@
 + (id)preferredNameForPerson:(void *)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)sharedMetadataQueue;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsSave; // @synthesize needsSave=_needsSave;
 @property(retain, nonatomic) NSString *preferredReplyAs; // @synthesize preferredReplyAs=_preferredReplyAs;
 @property(readonly, nonatomic) _Bool hasUnreadMessages; // @synthesize hasUnreadMessages=_hasUnreadMessages;
-- (void).cxx_destruct;
 - (void *)_bestRecordMatchFromDictionary:(id)arg1 addressBook:(void *)arg2;
 - (float)_allValuesMatchScore:(id)arg1;
 - (id)_recordMatchDictionaryFromCFArray:(struct __CFArray *)arg1 followLinks:(_Bool)arg2 addressBook:(void *)arg3;

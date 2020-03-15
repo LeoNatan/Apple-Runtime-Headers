@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *storeAddress; // @synthesize storeAddress=_storeAddress;
 @property(copy, nonatomic) NSString *storeName; // @synthesize storeName=_storeName;
 @property(copy, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
@@ -38,7 +39,6 @@
 @property(nonatomic) int availabilityStatus; // @synthesize availabilityStatus=_availabilityStatus;
 @property(copy, nonatomic) NSString *storeId; // @synthesize storeId=_storeId;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

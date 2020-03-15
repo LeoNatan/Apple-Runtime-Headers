@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DCSandboxExtension *cachesDirectorySandboxExtension; // @synthesize cachesDirectorySandboxExtension=_cachesDirectorySandboxExtension;
 @property(readonly, nonatomic) NSString *appName; // @synthesize appName=_appName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

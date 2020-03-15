@@ -15,10 +15,10 @@
     NSString *_callerIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) NSString *callerIdentifier; // @synthesize callerIdentifier=_callerIdentifier;
 @property(readonly, nonatomic) PHFace *face; // @synthesize face=_face;
-- (void).cxx_destruct;
 - (id)initWithCallerIdentifier:(id)arg1 face:(id)arg2 andConfidence:(float)arg3;
 
 @end

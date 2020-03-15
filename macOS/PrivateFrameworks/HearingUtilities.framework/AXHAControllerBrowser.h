@@ -25,11 +25,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *updateDeviceBlocks; // @synthesize updateDeviceBlocks=_updateDeviceBlocks;
 @property(retain, nonatomic) RPCompanionLinkDevice *pairedCompanionDevice; // @synthesize pairedCompanionDevice=_pairedCompanionDevice;
 @property(retain, nonatomic) RPCompanionLinkClient *client; // @synthesize client=_client;
 @property(retain, nonatomic) AXHearingSlaveController *slaveController; // @synthesize slaveController=_slaveController;
-- (void).cxx_destruct;
 - (id)responseForRequest:(id)arg1;
 - (void)sendConnectionToCompanionIfPossible;
 - (void)mediaServerDied;

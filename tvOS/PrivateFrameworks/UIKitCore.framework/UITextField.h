@@ -23,7 +23,7 @@
 #import <UIKitCore/_UITextFieldVisualStyleSubject-Protocol.h>
 #import <UIKitCore/_UITextItemDiscoverable-Protocol.h>
 
-@class CUICatalog, CUIStyleEffectConfiguration, NSArray, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutConstraint, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, NSUUID, UIButton, UIColor, UIFieldEditor, UIFont, UIImage, UIImageView, UIInputContextHistory, UILabel, UISystemInputViewController, UITapGestureRecognizer, UITextFieldAtomBackgroundView, UITextFieldBackgroundView, UITextFieldBorderView, UITextFieldLabel, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIVisualEffectView, _UIBaselineLayoutStrut, _UICascadingTextStorage, _UIDetachedFieldEditorBackgroundView, _UIFieldEditorLayoutManager, _UIFloatingContentView, _UIFullFontSize, _UITextFieldCanvasView, _UITextFieldVisualStyle, _UITextItemDiscoverer;
+@class CUICatalog, CUIStyleEffectConfiguration, NSArray, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutConstraint, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, NSUUID, UIColor, UIFieldEditor, UIFont, UIImage, UIImageView, UIInputContextHistory, UILabel, UISystemInputViewController, UITapGestureRecognizer, UITextFieldAtomBackgroundView, UITextFieldBackgroundView, UITextFieldBorderView, UITextFieldLabel, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIVisualEffectView, _UIBaselineLayoutStrut, _UICascadingTextStorage, _UIDetachedFieldEditorBackgroundView, _UIFieldEditorLayoutManager, _UIFloatingContentView, _UIFullFontSize, _UITextFieldCanvasView, _UITextFieldClearButton, _UITextFieldVisualStyle, _UITextItemDiscoverer;
 @protocol UICoordinateSpace, UITextFieldDelegate, UITextInputDelegate, UITextInputTokenizer;
 
 @interface UITextField : UIControl <UIKeyboardInput, _UILayoutBaselineUpdating, _UIFloatingContentViewDelegate, UIGestureRecognizerDelegate, _UITextFieldVisualStyleSubject, UIViewGhostedRangeSupporting, _UIDrawsTextInRect, UITextInputTraits_Private, UIPopoverControllerDelegate, _UITextFieldCanvasViewContext, UIKeyInputPrivate, UITextFieldContent, _UITextItemDiscoverable, UITextInput, NSCoding, UIContentSizeCategoryAdjusting>
@@ -47,7 +47,7 @@
     _UIFullFontSize *_fullFontSize;
     struct UIEdgeInsets _padding;
     float _progress;
-    UIButton *_clearButton;
+    _UITextFieldClearButton *_clearButton;
     struct CGSize _clearButtonOffset;
     struct CGSize _leftViewOffset;
     struct CGSize _rightViewOffset;
@@ -134,6 +134,7 @@
 + (Class)_fieldEditorClass;
 + (_Bool)_wantsFadedEdges;
 + (_Bool)_isCompatibilityTextField;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UITextFieldVisualStyle *visualStyle; // @synthesize visualStyle=_visualStyle;
 @property(retain) UIView *inputView; // @synthesize inputView=_inputView;
 @property(nonatomic) long long clearButtonMode; // @synthesize clearButtonMode=_clearButtonMode;
@@ -149,7 +150,6 @@
 @property(retain, nonatomic, setter=_setBaselineLayoutLabel:) _UIBaselineLayoutStrut *_baselineLayoutLabel; // @synthesize _baselineLayoutLabel;
 @property(retain, nonatomic, setter=_setBaselineLayoutConstraint:) NSLayoutConstraint *_baselineLayoutConstraint; // @synthesize _baselineLayoutConstraint;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (void)_setPasscodeStyleAlpha:(double)arg1;
 - (double)_passcodeStyleAlpha;
 - (void)_updateForPasscodeAppearance;
@@ -610,6 +610,7 @@
 - (void)_ensureClearButtonImageForControlState:(unsigned long long)arg1;
 - (id)_clearButton;
 - (id)clearButton;
+- (_Bool)_hasCustomClearButtonImage;
 - (id)_clearButtonImageForState:(unsigned long long)arg1;
 - (float)_marginTopForBounds:(struct CGRect)arg1;
 - (float)_marginTop;
@@ -643,6 +644,7 @@
 - (void)_activateSelectionView;
 - (void)_stopObservingFieldEditorScroll;
 - (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
+- (id)_systemDefaultFocusGroupDescriptor;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)canBecomeFocused;
 - (void)_setForegroundViewsAlpha:(double)arg1;

@@ -24,11 +24,11 @@
 }
 
 + (struct _xpc_type_s *)type;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *saveTokens; // @synthesize saveTokens=_saveTokens;
 @property(readonly, nonatomic) NSOrderedSet *deletes; // @synthesize deletes=_deletes;
 @property(readonly, nonatomic) NSOrderedSet *updates; // @synthesize updates=_updates;
 @property(readonly, nonatomic) NSOrderedSet *inserts; // @synthesize inserts=_inserts;
-- (void).cxx_destruct;
 - (void)decodeWithService:(id)arg1 clientAuthorization:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;

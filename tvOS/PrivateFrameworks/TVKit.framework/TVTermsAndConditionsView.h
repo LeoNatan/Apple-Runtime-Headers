@@ -23,9 +23,9 @@
     id <TVTermsAndConditionsViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <TVTermsAndConditionsViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_didSelectButton:(id)arg1;
 - (struct CGAffineTransform)_buttonDisappearTransform;
 - (struct CGAffineTransform)_buttonInitialTransform;

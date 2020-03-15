@@ -16,9 +16,9 @@
     NSIndexPath *_indexPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, nonatomic) SBFolder *folder; // @synthesize folder=_folder;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

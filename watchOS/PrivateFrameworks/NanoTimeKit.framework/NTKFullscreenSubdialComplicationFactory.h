@@ -16,9 +16,9 @@
     struct CGPoint _circularComplicationDistanceFromCenter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NTKFaceView *faceView; // @synthesize faceView=_faceView;
 @property(nonatomic) struct CGPoint circularComplicationDistanceFromCenter; // @synthesize circularComplicationDistanceFromCenter=_circularComplicationDistanceFromCenter;
-- (void).cxx_destruct;
 - (_Bool)_convertCircularSlot:(id)arg1 toPosition:(int *)arg2;
 - (struct CGPoint)_circularComplicationCenterForSlot:(id)arg1 inFaceBounds:(struct CGRect)arg2;
 - (id)newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;

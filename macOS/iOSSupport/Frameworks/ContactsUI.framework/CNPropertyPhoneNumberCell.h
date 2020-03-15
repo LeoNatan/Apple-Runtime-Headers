@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIImageView *_emergencyImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *emergencyImageView; // @synthesize emergencyImageView=_emergencyImageView;
 @property(nonatomic, getter=isEmergencyPhoneNumber) BOOL emergencyPhoneNumber; // @synthesize emergencyPhoneNumber=_emergencyPhoneNumber;
-- (void).cxx_destruct;
 - (void)copy:(id)arg1;
 - (void)updateTransportButtons;
 - (void)buildEmergencyImageView;

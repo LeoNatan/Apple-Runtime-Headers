@@ -16,9 +16,9 @@
     NSMapTable *_timestamps;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *timestamps; // @synthesize timestamps=_timestamps;
 @property(retain, nonatomic) CRSet *set; // @synthesize set=_set;
-- (void).cxx_destruct;
 - (id)tombstone;
 - (void)realizeLocalChangesIn:(id)arg1;
 - (void)setDocument:(id)arg1;

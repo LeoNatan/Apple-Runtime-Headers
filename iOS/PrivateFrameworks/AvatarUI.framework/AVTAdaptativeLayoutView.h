@@ -14,9 +14,9 @@
     UIView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) id <AVTAdaptativeLayout> layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 contentView:(id)arg2;
 

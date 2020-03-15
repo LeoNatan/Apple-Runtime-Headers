@@ -23,13 +23,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) TUThumperCTCapabilitiesState *thumperCallingCapabilitiesState; // @synthesize thumperCallingCapabilitiesState=_thumperCallingCapabilitiesState;
 @property(copy, nonatomic) TUCTCapabilitiesState *wiFiCallingCapabilitiesState; // @synthesize wiFiCallingCapabilitiesState=_wiFiCallingCapabilitiesState;
 @property(copy, nonatomic) TUCTCapabilitiesState *voLTECallingCapabilitiesState; // @synthesize voLTECallingCapabilitiesState=_voLTECallingCapabilitiesState;
 @property(copy, nonatomic) TUCTCapabilitiesState *csCallingCapabilitiesState; // @synthesize csCallingCapabilitiesState=_csCallingCapabilitiesState;
 @property(nonatomic) _Bool supportsSimultaneousVoiceAndData; // @synthesize supportsSimultaneousVoiceAndData=_supportsSimultaneousVoiceAndData;
 @property(readonly, copy, nonatomic) NSUUID *senderIdentityUUID; // @synthesize senderIdentityUUID=_senderIdentityUUID;
-- (void).cxx_destruct;
 - (id)publiclyAccessibleCopyWithZone:(struct _NSZone *)arg1;
 - (id)publiclyAccessibleCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;

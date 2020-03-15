@@ -19,13 +19,13 @@
     long long _externalStartIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long externalStartIndex; // @synthesize externalStartIndex=_externalStartIndex;
 @property(readonly, nonatomic) long long expandedIndex; // @synthesize expandedIndex=_expandedIndex;
 @property(readonly, nonatomic) long long indexDelta; // @synthesize indexDelta=_indexDelta;
 @property(readonly, nonatomic) long long indentationLevel; // @synthesize indentationLevel=_indentationLevel;
 @property(readonly, nonatomic) PXNavigationListDataSection *listDataSection; // @synthesize listDataSection=_listDataSection;
 @property(readonly, nonatomic) PXDataSection *dataSection; // @synthesize dataSection=_dataSection;
-- (void).cxx_destruct;
 - (id)description;
 - (id)listItemAtExternalIndex:(long long)arg1;
 - (id)initWithDataSection:(id)arg1 indexDelta:(long long)arg2 expandedIndex:(long long)arg3 indentationLevel:(long long)arg4 externalStartIndex:(long long)arg5;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultReuseIdentifier;
-@property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (id)description;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

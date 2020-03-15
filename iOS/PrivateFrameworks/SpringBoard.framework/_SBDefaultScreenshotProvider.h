@@ -16,9 +16,9 @@
     SBScreenFlash *_flasher;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 @property(readonly, nonatomic) SBScreenFlash *flasher; // @synthesize flasher=_flasher;
-- (void).cxx_destruct;
 - (id)captureScreenshot;
 - (id)initWithScreen:(id)arg1;
 

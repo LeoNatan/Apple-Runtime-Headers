@@ -35,6 +35,7 @@
 + (void)reloadRootControllersWithNames:(id)arg1 contexts:(id)arg2;
 + (struct CGRect)screenBounds;
 + (float)screenScale;
+- (void).cxx_destruct;
 @property(nonatomic) struct NSDirectionalEdgeInsets contentSystemMinimumLayoutMargins; // @synthesize contentSystemMinimumLayoutMargins=_contentSystemMinimumLayoutMargins;
 @property(nonatomic) struct UIEdgeInsets contentSafeAreaInsets; // @synthesize contentSafeAreaInsets=_contentSafeAreaInsets;
 @property(nonatomic) _Bool isInAlertActionHandler; // @synthesize isInAlertActionHandler=_isInAlertActionHandler;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSArray *topLevelObjects; // @synthesize topLevelObjects=_topLevelObjects;
 @property(nonatomic, getter=isTableScrollingHapticFeedbackEnabled) _Bool tableScrollingHapticFeedbackEnabled; // @synthesize tableScrollingHapticFeedbackEnabled=_tableScrollingHapticFeedbackEnabled;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
-- (void).cxx_destruct;
 - (void)_setFullScreen:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(int)arg2 tintColor:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_presentTimerSupportInterfaceWithControllerClass:(Class)arg1 presentCompletion:(CDUnknownBlockType)arg2 dismissCompletion:(CDUnknownBlockType)arg3;
@@ -55,7 +55,7 @@
 - (id)_timerSupportActionItems;
 - (id)_timerSupportUnderlyingHostingController;
 - (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5 extraResultsBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(unsigned int)arg5 extraResultsBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
 - (id)underlyingUIHostingController;
 - (id)actionItems;
 - (void)forceRenderAllSpriteKitAndSceneKitScenes;

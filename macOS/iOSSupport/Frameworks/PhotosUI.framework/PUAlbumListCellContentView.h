@@ -38,6 +38,7 @@
     PXUIButton *__deleteButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesLabelForTitle; // @synthesize usesLabelForTitle=_usesLabelForTitle;
 @property(retain, nonatomic, setter=_setDeleteButton:) PXUIButton *_deleteButton; // @synthesize _deleteButton=__deleteButton;
 @property(retain, nonatomic, setter=_setSubtitleLabel:) UILabel *_subtitleLabel; // @synthesize _subtitleLabel=__subtitleLabel;
@@ -60,7 +61,6 @@
 @property(nonatomic) BOOL combinesPhotoDecorations; // @synthesize combinesPhotoDecorations=_combinesPhotoDecorations;
 @property(retain, nonatomic, setter=_setStackView:) PUStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic) __weak id <PUAlbumListCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateSubtitleLabelStyle;
 - (void)_updateTitleStyle;
 - (void)handleLabelTap:(id)arg1;

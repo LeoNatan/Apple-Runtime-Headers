@@ -29,6 +29,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *clientPreviewOptions; // @synthesize clientPreviewOptions=_clientPreviewOptions;
 @property(retain) QLItem *item; // @synthesize item=_item;
 @property long long processIdentifier; // @synthesize processIdentifier=_processIdentifier;
@@ -42,7 +43,6 @@
 @property(retain) NSString *contentType; // @synthesize contentType=_contentType;
 @property(retain) NSString *previewTitle; // @synthesize previewTitle=_previewTitle;
 @property(retain) id <QLItemThumbnailGeneratorProtocolInternal> thumbnailGenerator; // @synthesize thumbnailGenerator=_thumbnailGenerator;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

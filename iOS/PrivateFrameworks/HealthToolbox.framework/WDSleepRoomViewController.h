@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     WDSleepRoomViewControllerState *_state;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WDSleepRoomViewControllerState *state; // @synthesize state=_state;
 @property(retain, nonatomic) NSDate *displayDate; // @synthesize displayDate=_displayDate;
 @property(nonatomic) unsigned long long selectedContextIndex; // @synthesize selectedContextIndex=_selectedContextIndex;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *tableSections; // @synthesize tableSections=_tableSections;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)applyTransitionActivity:(id)arg1;
 - (void)applyChangeActivity:(id)arg1;
 - (void)_addActivityForAction:(long long)arg1 newResponder:(id)arg2;

@@ -9,12 +9,19 @@
 __attribute__((visibility("hidden")))
 @interface HBUITopShelfParadeButtonIndeterminateProgressView : UIView
 {
+    _Bool _animating;
 }
 
-- (void)_updateRotationAnimation;
+@property(readonly, nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
+- (void)_applicationWillEnterForeground;
+- (void)_applicationDidEnterBackground;
+- (void)_removeRotationAnimation;
+- (void)_addRotationAnimationIfNeeded;
 - (struct CGRect)_contentRect;
-- (void)didMoveToSuperview;
+- (void)stopAnimating;
+- (void)startAnimating;
 - (void)didMoveToWindow;
+- (void)willMoveToWindow:(id)arg1;
 - (void)tintColorDidChange;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

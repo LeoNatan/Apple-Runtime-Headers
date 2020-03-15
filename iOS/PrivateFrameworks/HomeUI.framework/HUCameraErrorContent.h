@@ -15,9 +15,9 @@
 }
 
 + (id)errorWithTitle:(id)arg1 description:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 
 @end
 

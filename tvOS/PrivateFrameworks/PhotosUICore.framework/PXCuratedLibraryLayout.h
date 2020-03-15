@@ -46,6 +46,7 @@
     struct CGRect _presentedVisibleRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXCuratedLibraryLayoutSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) id dominantHeroPreferencesBeforeTransition; // @synthesize dominantHeroPreferencesBeforeTransition=_dominantHeroPreferencesBeforeTransition;
 @property(retain, nonatomic) PXAssetCollectionReference *lastPresentedDayAssetCollectionReference; // @synthesize lastPresentedDayAssetCollectionReference=_lastPresentedDayAssetCollectionReference;
@@ -57,7 +58,6 @@
 @property(readonly, nonatomic) long long presentedZoomLevel; // @synthesize presentedZoomLevel=_presentedZoomLevel;
 @property(readonly, nonatomic) PXCuratedLibraryAllPhotosLayout *allPhotosLayout; // @synthesize allPhotosLayout=_allPhotosBodyLayout;
 @property(readonly, nonatomic) PXCuratedLibrarySectionedLayout *libraryBodyLayout; // @synthesize libraryBodyLayout=_libraryBodyLayout;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (_Bool)canSelectAccessibilityGroupElementsChildren;
 - (_Bool)canSelectAccessibilityGroupElements;

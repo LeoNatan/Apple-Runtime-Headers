@@ -17,8 +17,8 @@
     NSMutableArray *_transformReasonAssociations;
 }
 
-@property(readonly, copy, nonatomic) NSArray *transforms; // @synthesize transforms=_transforms;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *transforms; // @synthesize transforms=_transforms;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

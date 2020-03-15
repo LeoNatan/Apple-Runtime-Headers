@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedCopier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *writeQueue; // @synthesize writeQueue=_writeQueue;
 @property(retain, nonatomic) NSMutableArray *buffers; // @synthesize buffers=_buffers;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *bufferLimitSemaphore; // @synthesize bufferLimitSemaphore=_bufferLimitSemaphore;
 @property(nonatomic) long long numberOfInflightCopies; // @synthesize numberOfInflightCopies=_numberOfInflightCopies;
-- (void).cxx_destruct;
 - (void)endOperation;
 - (void)beginOperation;
 - (BOOL)finishReading:(int)arg1 writing:(int)arg2 error:(id *)arg3;

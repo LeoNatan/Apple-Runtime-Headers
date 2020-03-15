@@ -32,11 +32,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool mruBasedDockLayout; // @synthesize mruBasedDockLayout=_mruBasedDockLayout;
 @property(readonly, nonatomic) int maximumFavorites; // @synthesize maximumFavorites=_maximumFavorites;
 @property(copy, nonatomic) NSString *launcherBundleID; // @synthesize launcherBundleID=_launcherBundleID;
 @property(copy, nonatomic) NSString *ephemeralBundleID; // @synthesize ephemeralBundleID=_ephemeralBundleID;
-- (void).cxx_destruct;
 - (id)applicationDisplayNameFor:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

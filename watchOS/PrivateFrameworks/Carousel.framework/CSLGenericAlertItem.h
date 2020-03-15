@@ -13,8 +13,8 @@
     CSLUIAlertControllerAlert *_alert;
 }
 
-@property(readonly, nonatomic) CSLUIAlertControllerAlert *alert; // @synthesize alert=_alert;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLUIAlertControllerAlert *alert; // @synthesize alert=_alert;
 - (void)didDismiss;
 - (void)didDeactive;
 - (void)didAppear;

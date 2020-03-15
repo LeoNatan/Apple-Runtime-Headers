@@ -25,6 +25,7 @@
     float _titleLabelTrailingAnchorLayoutConstraintConstant;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float titleLabelTrailingAnchorLayoutConstraintConstant; // @synthesize titleLabelTrailingAnchorLayoutConstraintConstant=_titleLabelTrailingAnchorLayoutConstraintConstant;
 @property(nonatomic) float titleLabelLeadingAnchorLayoutConstraintConstant; // @synthesize titleLabelLeadingAnchorLayoutConstraintConstant=_titleLabelLeadingAnchorLayoutConstraintConstant;
 @property(nonatomic) float heightAnchorLayoutConstraintConstantFontMultiplier; // @synthesize heightAnchorLayoutConstraintConstantFontMultiplier=_heightAnchorLayoutConstraintConstantFontMultiplier;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned int theme; // @synthesize theme=_theme;
 @property(nonatomic) unsigned int sizeCategory; // @synthesize sizeCategory=_sizeCategory;
-- (void).cxx_destruct;
 - (float)scaledLayoutValueForBaseValue:(float)arg1 shouldLowerBound:(_Bool)arg2;
 - (float)scaledLayoutValueForBaseValue:(float)arg1;
 - (void)updateActiveHorizontalConstraints;

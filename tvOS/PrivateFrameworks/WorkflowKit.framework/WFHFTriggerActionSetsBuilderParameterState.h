@@ -16,10 +16,10 @@
     NSArray *_serializedActionSets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *serializedActionSets; // @synthesize serializedActionSets=_serializedActionSets;
 @property(readonly, copy, nonatomic) NSString *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
-- (void).cxx_destruct;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
 - (id)containedVariables;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

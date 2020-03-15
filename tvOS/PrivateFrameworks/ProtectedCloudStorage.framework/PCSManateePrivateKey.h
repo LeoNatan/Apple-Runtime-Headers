@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSData *_publicKeyInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *publicKeyInfo; // @synthesize publicKeyInfo=_publicKeyInfo;
 @property(retain, nonatomic) NSData *privateKey; // @synthesize privateKey=_privateKey;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

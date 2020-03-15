@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSUUID *taskUUID; // @synthesize taskUUID=_taskUUID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSUUID *taskUUID; // @synthesize taskUUID=_taskUUID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -18,8 +18,8 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-@property(retain) id <ARViewerHostProtocol> arviewerDelegate; // @synthesize arviewerDelegate=_arviewerDelegate;
 - (void).cxx_destruct;
+@property(retain) id <ARViewerHostProtocol> arviewerDelegate; // @synthesize arviewerDelegate=_arviewerDelegate;
 - (oneway void)setStatusBarOrientation:(long long)arg1;
 - (oneway void)statusBarOrientation:(CDUnknownBlockType)arg1;
 - (oneway void)isIgnoringInteractionEvents:(CDUnknownBlockType)arg1;

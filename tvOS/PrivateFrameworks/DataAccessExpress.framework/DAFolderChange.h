@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DAFolderChangeConsumer> consumer; // @synthesize consumer=_consumer;
 @property(nonatomic) _Bool renameOnCollision; // @synthesize renameOnCollision=_renameOnCollision;
 @property(nonatomic) unsigned int taskId; // @synthesize taskId=_taskId;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *parentFolderId; // @synthesize parentFolderId=_parentFolderId;
 @property(retain, nonatomic) NSString *folderId; // @synthesize folderId=_folderId;
 @property(nonatomic) unsigned long long changeType; // @synthesize changeType=_changeType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

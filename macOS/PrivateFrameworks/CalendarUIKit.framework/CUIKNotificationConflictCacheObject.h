@@ -15,9 +15,9 @@
 }
 
 + (id)keyForNotification:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) EKConflictDetails *conflictInfo; // @synthesize conflictInfo=_conflictInfo;
 @property unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 
 @end
 

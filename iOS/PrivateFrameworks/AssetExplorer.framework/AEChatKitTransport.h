@@ -19,11 +19,11 @@
     AEChatKitStatisticsManager *__statisticsManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AEChatKitStatisticsManager *_statisticsManager; // @synthesize _statisticsManager=__statisticsManager;
 @property(readonly, nonatomic) NSMutableDictionary *_alternateURLsByIdentifier; // @synthesize _alternateURLsByIdentifier=__alternateURLsByIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_urlSidetableIsolationQueue; // @synthesize _urlSidetableIsolationQueue=__urlSidetableIsolationQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *_packagePreparationGroup; // @synthesize _packagePreparationGroup=__packagePreparationGroup;
-- (void).cxx_destruct;
 - (id)orderedStagedPayloads;
 - (void)unstagePackagesWithIdentifiers:(id)arg1;
 - (void)unstagePackagesWithIdentifiers:(id)arg1 evictFiles:(_Bool)arg2;

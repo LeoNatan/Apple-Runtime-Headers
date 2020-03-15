@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requireActiveConnection; // @synthesize requireActiveConnection=_requireActiveConnection;
 @property(nonatomic) double updateCoalescenceInterval; // @synthesize updateCoalescenceInterval=_updateCoalescenceInterval;
 @property(copy, nonatomic) NSString *reachableHostName; // @synthesize reachableHostName=_reachableHostName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

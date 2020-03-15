@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 
 + (id)stitchedTextForElement:(id)arg1 textChildUIElement:(id)arg2 index:(unsigned long long *)arg3;
 + (id)stitchedTextForElement:(id)arg1 textChildUIElement:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRWebStitchedTextContent *_stitchedTextContent; // @synthesize _stitchedTextContent=__stitchedTextContent;
 @property(copy, nonatomic) NSAttributedString *_stitchedAttributedValueDescription; // @synthesize _stitchedAttributedValueDescription=__stitchedAttributedValueDescription;
 @property(copy, nonatomic) NSString *_stitchedTextValueDescription; // @synthesize _stitchedTextValueDescription=__stitchedTextValueDescription;
-- (void).cxx_destruct;
 - (BOOL)moveToPreviousParagraphWithOutputRequest:(id)arg1 event:(id)arg2;
 - (BOOL)moveToNextParagraphWithOutputRequest:(id)arg1 event:(id)arg2;
 - (BOOL)moveToPreviousSentenceWithOutputRequest:(id)arg1 event:(id)arg2;

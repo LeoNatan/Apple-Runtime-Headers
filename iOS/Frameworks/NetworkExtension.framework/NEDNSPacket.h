@@ -28,6 +28,7 @@
     unsigned long long _endOfQueriesOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long endOfQueriesOffset; // @synthesize endOfQueriesOffset=_endOfQueriesOffset;
 @property(readonly) unsigned short flags; // @synthesize flags=_flags;
 @property(readonly) NSData *data; // @synthesize data=_data;
@@ -44,7 +45,6 @@
 @property(readonly) long long messageType; // @synthesize messageType=_messageType;
 @property(readonly) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)createResponse;
 @property(readonly) NSString *responseCodeString;
 - (id)initFromData:(id)arg1;

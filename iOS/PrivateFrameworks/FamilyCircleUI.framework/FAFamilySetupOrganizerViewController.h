@@ -16,8 +16,8 @@
     id <FAFamilySetupPageDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <FAFamilySetupPageDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FAFamilySetupPageDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)continueButtonWasTapped:(id)arg1;
 - (void)_cancelButtonWasTapped:(id)arg1;
 - (id)_createCancelButton;

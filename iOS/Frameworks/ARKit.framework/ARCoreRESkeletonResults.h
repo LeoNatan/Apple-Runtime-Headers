@@ -15,11 +15,17 @@
 {
     NSArray *_retargetedSkeletons;
     double _timestamp;
+    struct CGSize _imageResolution;
+    // Error parsing type: {?="columns"[3]}, name: _cameraIntrinsics
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSArray *retargetedSkeletons; // @synthesize retargetedSkeletons=_retargetedSkeletons;
-- (void).cxx_destruct;
+@property(nonatomic) struct CGSize imageResolution; // @synthesize imageResolution=_imageResolution;
+// Error parsing type for property cameraIntrinsics:
+// Property attributes: T{?=[3]},N,V_cameraIntrinsics
+
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 -     // Error parsing type: @160@0:8{?=[4]}16{?=[4]}80@144@152, name: anchorsForCameraWithTransform:referenceOriginTransform:existingAnchors:anchorsToRemove:

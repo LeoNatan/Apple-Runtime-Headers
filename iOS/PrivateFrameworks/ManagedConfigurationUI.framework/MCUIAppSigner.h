@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 + (id)_uppProfilesBySignerIDWithOutFreeDevProfilesBySignerID:(id *)arg1;
 + (void)_addProfile:(id)arg1 toSignerIdentity:(id)arg2 inDictionary:(id)arg3;
 + (id)enterpriseAppSignersWithOutDeveloperAppSigners:(id *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfAppsRequiringVerificationSoon; // @synthesize numberOfAppsRequiringVerificationSoon=_numberOfAppsRequiringVerificationSoon;
 @property(nonatomic) _Bool appsRequireVerificationSoon; // @synthesize appsRequireVerificationSoon=_appsRequireVerificationSoon;
 @property(nonatomic) _Bool hasUniversalProvisioningProfile; // @synthesize hasUniversalProvisioningProfile=_hasUniversalProvisioningProfile;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *applications; // @synthesize applications=_applications;
 @property(retain, nonatomic) NSString *identity; // @synthesize identity=_identity;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (_Bool)isTrusted;
 - (void)removeApplications:(id)arg1;
 - (void)removeApplication:(id)arg1;

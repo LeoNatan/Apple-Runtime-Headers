@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <CSLSButtonHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSButtonHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)removeHandlerForButtons:(unsigned int)arg1 event:(unsigned int)arg2 token:(id)arg3;
 - (id)setHandlerForButtons:(unsigned int)arg1 event:(unsigned int)arg2 handler:(CDUnknownBlockType)arg3;
 

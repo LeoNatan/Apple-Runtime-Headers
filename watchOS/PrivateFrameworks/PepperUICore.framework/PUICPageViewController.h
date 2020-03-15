@@ -26,6 +26,7 @@
     PUICStatusBarCubicTitleView *_verticalModeCubicTitleView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool initialLayout; // @synthesize initialLayout=_initialLayout;
 @property(retain, nonatomic) PUICStatusBarCubicTitleView *verticalModeCubicTitleView; // @synthesize verticalModeCubicTitleView=_verticalModeCubicTitleView;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecongizer; // @synthesize panGestureRecongizer=_panGestureRecongizer;
@@ -35,7 +36,6 @@
 @property(nonatomic) int currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(readonly, nonatomic) unsigned int navigationOrientation; // @synthesize navigationOrientation=_navigationOrientation;
-- (void).cxx_destruct;
 - (_Bool)_canEndAppearanceTransitionForController:(id)arg1;
 - (_Bool)_canBeginAppearanceTransitionForController:(id)arg1 isAppearing:(_Bool)arg2;
 - (void)_pageViewControllerWill:(_Bool)arg1 appear:(_Bool)arg2 animated:(_Bool)arg3;
@@ -53,6 +53,7 @@
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (void)_updateCubicTitleIfNeeded;
 - (void)_scrollToIndex:(int)arg1 animated:(_Bool)arg2;
 - (struct UIEdgeInsets)_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(_Bool *)arg2;
 - (void)viewDidLayoutSubviews;

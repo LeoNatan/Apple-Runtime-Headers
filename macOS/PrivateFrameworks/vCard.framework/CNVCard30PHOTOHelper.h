@@ -16,10 +16,10 @@
     unsigned long long _maxBytes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long maxBytes; // @synthesize maxBytes=_maxBytes;
 @property(readonly, nonatomic) CNVCardWritingOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) id <CNVCardPerson> person; // @synthesize person=_person;
-- (void).cxx_destruct;
 - (id)compressImage:(id)arg1 allowableCompressions:(id)arg2;
 - (id)scaleImage:(id)arg1 toFit:(struct CGSize)arg2 allowableCompressionQuality:(id)arg3;
 - (id)scaleImage:(id)arg1 toFitSizes:(id)arg2 allowableCompressionQuality:(id)arg3;

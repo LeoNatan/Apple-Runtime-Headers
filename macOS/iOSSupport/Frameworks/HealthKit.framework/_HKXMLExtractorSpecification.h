@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_specificationElements;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *specificationElements; // @synthesize specificationElements=_specificationElements;
 @property(readonly) NSString *specificationString; // @synthesize specificationString=_specificationString;
-- (void).cxx_destruct;
 - (BOOL)matchesElementStack:(id)arg1;
 - (id)initWithSpecificationString:(id)arg1;
 

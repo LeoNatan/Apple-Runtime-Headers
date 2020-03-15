@@ -29,6 +29,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (unsigned long long)confidenceTypeForRevision:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property long long distanceMode; // @synthesize distanceMode=_distanceMode;
 @property(copy) NSString *version; // @synthesize version=_version;
 @property(readonly, nonatomic) unsigned long long confidenceScoreType; // @synthesize confidenceScoreType=_confidenceScoreType;
@@ -36,7 +37,6 @@
 @property unsigned long long lengthInBytes; // @synthesize lengthInBytes=_lengthInBytes;
 @property unsigned long long elementCount; // @synthesize elementCount=_elementCount;
 @property(retain) NSData *descriptorData; // @synthesize descriptorData=_descriptorData;
-- (void).cxx_destruct;
 - (id)computeDistance:(id)arg1 withDistanceFunction:(unsigned long long)arg2 error:(id *)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -20,12 +20,12 @@
     UIWindow *_window;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didPresent; // @synthesize didPresent=_didPresent;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(retain, nonatomic) UIWindow *savedKeyWindow; // @synthesize savedKeyWindow=_savedKeyWindow;
 @property(retain, nonatomic) HKHealthPrivacyHostDocumentPickerViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 @property(retain, nonatomic) _UIAsyncInvocation *requestCancellationInvocation; // @synthesize requestCancellationInvocation=_requestCancellationInvocation;
-- (void).cxx_destruct;
 - (void)healthPrivacyHostDocumentPickerViewController:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_didFinishDismissing;
 - (void)_dismissViewControllerAnimated:(_Bool)arg1;

@@ -13,8 +13,8 @@
     EKUIDividedGridViewController *_viewController;
 }
 
-@property __weak EKUIDividedGridViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property __weak EKUIDividedGridViewController *viewController; // @synthesize viewController=_viewController;
 - (struct CGSize)intrinsicContentSize;
 
 @end

@@ -23,13 +23,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *errorButtonText; // @synthesize errorButtonText=_errorButtonText;
 @property(readonly, copy, nonatomic) NSString *errorBody; // @synthesize errorBody=_errorBody;
 @property(readonly, copy, nonatomic) NSString *errorTitle; // @synthesize errorTitle=_errorTitle;
 @property(readonly, copy, nonatomic) NSString *successButtonText; // @synthesize successButtonText=_successButtonText;
 @property(readonly, copy, nonatomic) NSString *successBody; // @synthesize successBody=_successBody;
 @property(readonly, copy, nonatomic) NSString *successTitle; // @synthesize successTitle=_successTitle;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

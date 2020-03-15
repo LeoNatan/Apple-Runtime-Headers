@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *deviceOrCloseRequestDictionary; // @synthesize deviceOrCloseRequestDictionary=_deviceOrCloseRequestDictionary;
 @property(readonly, copy, nonatomic) NSString *uuidString; // @synthesize uuidString=_uuidString;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUUIDString:(id)arg1 deviceOrCloseRequestDictionary:(id)arg2;

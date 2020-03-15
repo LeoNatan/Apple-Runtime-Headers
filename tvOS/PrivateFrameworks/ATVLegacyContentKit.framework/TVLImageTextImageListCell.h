@@ -15,8 +15,8 @@
     TVLImageTextImageView *_imageTextImageView;
 }
 
-@property(readonly, nonatomic) TVLImageTextImageView *imageTextImageView; // @synthesize imageTextImageView=_imageTextImageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TVLImageTextImageView *imageTextImageView; // @synthesize imageTextImageView=_imageTextImageView;
 - (void)layoutSubviews;
 - (void)configureWithMenuItemElement:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

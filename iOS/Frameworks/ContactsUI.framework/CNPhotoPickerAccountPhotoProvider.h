@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     CNContactViewCache *_contactViewCache;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool includeUnifiedContactImages; // @synthesize includeUnifiedContactImages=_includeUnifiedContactImages;
 @property(readonly, nonatomic) CNContactViewCache *contactViewCache; // @synthesize contactViewCache=_contactViewCache;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 - (id)loadItemsForSize:(struct CGSize)arg1 scale:(double)arg2 RTL:(_Bool)arg3 renderingQueue:(id)arg4 callbackQueue:(id)arg5 itemDelegate:(id)arg6;
 - (id)initWithContact:(id)arg1;
 - (id)initWithContact:(id)arg1 contactViewCache:(id)arg2 includeUnifiedContactImages:(_Bool)arg3;

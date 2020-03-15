@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     IKAppMediaItemBridge *_mediaItemBridge;
 }
 
-@property(readonly, nonatomic) __weak IKAppMediaItemBridge *mediaItemBridge; // @synthesize mediaItemBridge=_mediaItemBridge;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IKAppMediaItemBridge *mediaItemBridge; // @synthesize mediaItemBridge=_mediaItemBridge;
 - (void)startLoadingKeyResponseDataForRequest:(id)arg1;
 - (void)startLoadingContentIdentifierDataForRequest:(id)arg1;
 - (void)startLoadingCertificateDataForRequest:(id)arg1;

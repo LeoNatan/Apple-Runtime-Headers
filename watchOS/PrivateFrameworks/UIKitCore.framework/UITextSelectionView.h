@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     _Bool m_activeCaret;
     _Bool m_isSuspended;
     int m_showingCommandsCounterForRotate;
+    unsigned int _activeGrabberSuppressionAssertions;
     _Bool m_forceRangeView;
     _Bool m_isInstalledInSelectionContainerView;
     _Bool _isIndirectFloatingCaret;
@@ -40,6 +41,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _previousGhostCaretRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect previousGhostCaretRect; // @synthesize previousGhostCaretRect=_previousGhostCaretRect;
 @property(nonatomic) _Bool isIndirectFloatingCaret; // @synthesize isIndirectFloatingCaret=_isIndirectFloatingCaret;
 @property(nonatomic) struct CGRect stashedCaretRect; // @synthesize stashedCaretRect=_stashedCaretRect;
@@ -48,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool forceRangeView; // @synthesize forceRangeView=m_forceRangeView;
 @property(readonly, nonatomic) __weak UITextInteractionAssistant *interactionAssistant; // @synthesize interactionAssistant=m_interactionAssistant;
 @property(readonly, nonatomic) UIView *floatingCaretView; // @synthesize floatingCaretView=m_floatingCaretView;
-- (void).cxx_destruct;
 - (struct CGRect)clippedTargetRect:(struct CGRect)arg1;
 - (id)scrollView;
 - (void)updateSelectionWithDocumentPoint:(struct CGPoint)arg1;
@@ -66,6 +67,9 @@ __attribute__((visibility("hidden")))
 - (void)updateDocumentHasContent:(_Bool)arg1;
 - (id)dynamicCaretList;
 - (id)dynamicCaret;
+- (void)releaseGrabberHandleSuppressionAssertion:(id)arg1;
+- (_Bool)shouldSuppressSelectionHandles;
+- (id)obtainGrabberSuppressionAssertion;
 - (void)endFloatingCursor;
 - (void)endFloatingCaretView;
 - (void)animateCaret:(id)arg1 toPosition:(struct CGPoint)arg2 withSize:(struct CGSize)arg3;
@@ -104,6 +108,7 @@ __attribute__((visibility("hidden")))
 - (void)showReplacementsWithGenerator:(id)arg1 forDictation:(_Bool)arg2 afterDelay:(double)arg3;
 - (void)calculateReplacementsWithGenerator:(id)arg1 andShowAfterDelay:(double)arg2;
 - (void)_showSelectionCommandsForContextMenu:(_Bool)arg1;
+- (void)updateRangeViewForSelectionMode;
 - (void)showSelectionCommands;
 - (void)showSelectionCommandsAfterDelay:(double)arg1;
 - (void)showCalloutBarAfterDelay:(double)arg1;
@@ -127,7 +132,9 @@ __attribute__((visibility("hidden")))
 - (void)tintColorDidChange;
 - (void)updateSelectionRects;
 - (void)selectionChanged;
+- (id)_actingParentViewForGestureRecognizers;
 - (void)installIfNecessary;
+- (id)_customSelectionContainerView;
 - (void)clearRangeAnimated:(_Bool)arg1;
 - (void)removeFromSuperview;
 - (void)textSelectionViewActivated:(id)arg1;

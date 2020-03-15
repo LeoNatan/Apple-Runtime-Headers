@@ -31,6 +31,7 @@
     XCSourceCodeTreeNode *_simpleClickEventNode;
 }
 
+- (void).cxx_destruct;
 @property(retain) XCSourceCodeTreeNode *simpleClickEventNode; // @synthesize simpleClickEventNode=_simpleClickEventNode;
 @property(retain) XCUIRecorderUtilities *utilities; // @synthesize utilities=_utilities;
 @property(retain) NSMutableArray *excludedProccessPIDs; // @synthesize excludedProccessPIDs=_excludedProccessPIDs;
@@ -39,7 +40,6 @@
 @property(retain) NSMutableArray *nodes; // @synthesize nodes=_nodes;
 @property(copy) CDUnknownBlockType fetchSourceCodeTreeNodesReply; // @synthesize fetchSourceCodeTreeNodesReply=_fetchSourceCodeTreeNodesReply;
 @property(copy) CDUnknownBlockType startRecordingReply; // @synthesize startRecordingReply=_startRecordingReply;
-- (void).cxx_destruct;
 - (id)applicationSnapshot;
 - (id)_elementForLocation:(struct CGPoint)arg1 inRootElementSnapshot:(id *)arg2 error:(id *)arg3;
 - (BOOL)_really_recordEvent:(struct __CGEvent *)arg1 withType:(unsigned int)arg2 proxy:(struct __CGEventTapProxy *)arg3;

@@ -21,6 +21,7 @@
     unsigned long long _harvestMask;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long harvestMask; // @synthesize harvestMask=_harvestMask;
 @property(readonly, nonatomic) double poiDistanceThreshold; // @synthesize poiDistanceThreshold=_poiDistanceThreshold;
 @property(readonly, nonatomic) double aoiDistanceThreshold; // @synthesize aoiDistanceThreshold=_aoiDistanceThreshold;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) double locationLookupWindowMaxMinutes; // @synthesize locationLookupWindowMaxMinutes=_locationLookupWindowMaxMinutes;
 @property(readonly, nonatomic) NSString *injectedPlistPath; // @synthesize injectedPlistPath=_injectedPlistPath;
 @property(readonly, nonatomic) double baseDuration; // @synthesize baseDuration=_baseDuration;
-- (void).cxx_destruct;
 - (id)initWithDefaultsManager:(id)arg1;
 - (id)initWithBaseDuration:(double)arg1 injectedPlistPath:(id)arg2 locationLookupWindowMaxMinutes:(double)arg3 locationLookupWindowMinMinutes:(double)arg4 maxLocationsPerFingerprint:(unsigned long long)arg5 locationUncertaintyThreshold:(double)arg6 aoiDistanceThreshold:(double)arg7 poiDistanceThreshold:(double)arg8 harvestMask:(unsigned long long)arg9;
 - (id)init;

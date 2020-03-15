@@ -14,9 +14,9 @@
     STKSessionBehavior *_behavior;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) STKSessionBehavior *behavior; // @synthesize behavior=_behavior;
 @property(readonly, nonatomic) long long event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (void)remoteAlertHandleDidActivate:(id)arg1;
 - (void)sendSuccessWithSelectedIndex:(unsigned long long)arg1;
 - (void)sendResponse:(long long)arg1 withBOOLResult:(_Bool)arg2;

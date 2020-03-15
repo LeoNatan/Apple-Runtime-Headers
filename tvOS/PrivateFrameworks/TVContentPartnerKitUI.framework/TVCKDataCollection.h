@@ -16,9 +16,9 @@
     TVCKDataClient *_dataClient;
 }
 
+- (void).cxx_destruct;
 @property __weak TVCKDataClient *dataClient; // @synthesize dataClient=_dataClient;
 @property(retain) NSMutableDictionary *metadataDict; // @synthesize metadataDict=_metadataDict;
-- (void).cxx_destruct;
 - (id)concreteValueForProperty:(id)arg1;
 - (_Bool)isDataItem;
 - (id)objectForKey:(id)arg1;

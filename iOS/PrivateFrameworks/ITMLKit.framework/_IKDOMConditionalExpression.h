@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)expressionFromString:(id)arg1;
 + (id)parseExpressionsFromString:(id)arg1;
-@property(readonly, copy, nonatomic) NSSet *dependentPathStrings; // @synthesize dependentPathStrings=_dependentPathStrings;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSSet *dependentPathStrings; // @synthesize dependentPathStrings=_dependentPathStrings;
 - (_Bool)passesForDataItem:(id)arg1;
 - (id)initWithOperations:(id)arg1 dependentPathStrings:(id)arg2 isNegated:(_Bool)arg3;
 

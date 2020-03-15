@@ -20,9 +20,9 @@
     id <TVIPEntryViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TVIPEntryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
-- (void).cxx_destruct;
 - (id)_ipEntryView;
 - (void)ipEntryViewDidFinishEditing:(id)arg1;
 @property(copy, nonatomic) NSString *ipAddress;

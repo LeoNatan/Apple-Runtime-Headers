@@ -30,6 +30,7 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(nonatomic) __weak id <WFComponentNavigationContext> navigationContext; // @synthesize navigationContext=_navigationContext;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSSet *allowedValueTypes; // @synthesize allowedValueTypes=_allowedValueTypes;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak id <WFListEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)accessibilityElements;
 - (BOOL)isAccessibilityElement;
 - (void)keyboardWillChangeFrame:(id)arg1;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <SVSSuggestionsViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SVSSuggestionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SVSSuggestionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (double)textContentHeight;
 - (void)suggestionsView:(id)arg1 didHideVibrantView:(id)arg2;
 - (double)statusViewHeightForSuggestionsView:(id)arg1;

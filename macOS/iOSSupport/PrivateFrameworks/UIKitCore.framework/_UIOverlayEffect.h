@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _alpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 @property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *filterType; // @synthesize filterType=_filterType;
-- (void).cxx_destruct;
 - (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(long long)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

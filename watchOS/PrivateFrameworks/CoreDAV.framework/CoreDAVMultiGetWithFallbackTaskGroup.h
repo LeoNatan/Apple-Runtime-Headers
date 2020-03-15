@@ -21,8 +21,8 @@
     NSMutableSet *_parsedContents;
 }
 
-@property(nonatomic) _Bool shouldIgnoreResponseErrors; // @synthesize shouldIgnoreResponseErrors=_shouldIgnoreResponseErrors;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldIgnoreResponseErrors; // @synthesize shouldIgnoreResponseErrors=_shouldIgnoreResponseErrors;
 @property(readonly, nonatomic) NSSet *parsedContents;
 @property(readonly, nonatomic) NSSet *deletedURLs;
 @property(readonly, nonatomic) NSSet *missingURLs;

@@ -21,10 +21,10 @@
     MFSQLiteConnectionConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) MFSQLiteConnectionConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) struct sqlite3 *db; // @synthesize db=_db;
 @property(nonatomic) __weak MFSQLiteConnectionPool *pool; // @synthesize pool=_pool;
-- (void).cxx_destruct;
 - (int)rollbackTransaction;
 - (int)commitTransaction;
 - (int)beginTransactionWithType:(long long)arg1;

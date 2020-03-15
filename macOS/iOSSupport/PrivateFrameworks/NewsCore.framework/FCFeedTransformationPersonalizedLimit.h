@@ -19,9 +19,9 @@
 
 + (id)transformationWithPersonalizer:(id)arg1 timeInterval:(double)arg2;
 + (id)transformationWithPersonalizer:(id)arg1 dateRange:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
-- (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1;
 
 // Remaining properties

@@ -71,6 +71,7 @@
 + (id)_dateWithContinuousTime:(unsigned long long)arg1;
 + (double)_referenceIntervalWithContinuousTime:(unsigned long long)arg1;
 + (double)_intervalWithContinuousTime:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property BOOL snapshotScreenStateOn; // @synthesize snapshotScreenStateOn=_snapshotScreenStateOn;
 @property unsigned int snapshotAppState; // @synthesize snapshotAppState=_snapshotAppState;
 @property BOOL startScreenStateOn; // @synthesize startScreenStateOn=_startScreenStateOn;
@@ -121,7 +122,6 @@
 @property(readonly) unsigned long long flowStartContinuousTime; // @synthesize flowStartContinuousTime=_flowStartContinuousTime;
 @property(readonly) NSDate *flowSnapshotTimestamp; // @synthesize flowSnapshotTimestamp=_flowSnapshotTimestamp;
 @property(readonly) NSDate *flowStartTimestamp; // @synthesize flowStartTimestamp=_flowStartTimestamp;
-- (void).cxx_destruct;
 @property(readonly) BOOL attributedEntityIsProcessName;
 @property(readonly) BOOL attributedEntityIsBundleName;
 @property(readonly) NSString *attributionReasonString;

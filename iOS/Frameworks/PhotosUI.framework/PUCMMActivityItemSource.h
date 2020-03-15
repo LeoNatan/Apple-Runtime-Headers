@@ -28,6 +28,7 @@
     NSObject<OS_dispatch_queue> *_externalIsolationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *externalIsolationQueue; // @synthesize externalIsolationQueue=_externalIsolationQueue;
 @property(retain, nonatomic) NSError *preparationError; // @synthesize preparationError=_preparationError;
 @property(copy, nonatomic) NSArray *individuallyPreparedItems; // @synthesize individuallyPreparedItems=_individuallyPreparedItems;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <PUCMMActivityItemSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak PUActivityItemSourceController *itemSourceController; // @synthesize itemSourceController=_itemSourceController;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)setState:(unsigned long long)arg1;
 - (void)cancel;

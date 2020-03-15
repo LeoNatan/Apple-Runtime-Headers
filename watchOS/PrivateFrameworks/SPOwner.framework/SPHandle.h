@@ -21,9 +21,9 @@
 + (id)handleWithEmailAddress:(id)arg1;
 + (id)handleWithString:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *destination; // @synthesize destination=_destination;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)initWithCoder:(id)arg1;

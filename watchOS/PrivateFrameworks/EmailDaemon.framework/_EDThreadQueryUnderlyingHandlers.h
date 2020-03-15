@@ -17,12 +17,12 @@
     EDThreadMigrator *_threadMigrator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDThreadMigrator *threadMigrator; // @synthesize threadMigrator=_threadMigrator;
 @property(retain, nonatomic) EDPrecomputedThreadQueryHandler *precomputedQueryHandler; // @synthesize precomputedQueryHandler=_precomputedQueryHandler;
 @property(retain, nonatomic) EDInMemoryThreadQueryHandler *inMemoryQueryHandler; // @synthesize inMemoryQueryHandler=_inMemoryQueryHandler;
 @property(retain, nonatomic) EMObjectID *precomputedObservationID; // @synthesize precomputedObservationID=_precomputedObservationID;
 @property(retain, nonatomic) EMObjectID *inMemoryObservationID; // @synthesize inMemoryObservationID=_inMemoryObservationID;
-- (void).cxx_destruct;
 - (_Bool)_isCurrentObservationToken:(id)arg1;
 
 @end

@@ -20,13 +20,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL mixToTelephonyUplink; // @synthesize mixToTelephonyUplink=_mixToTelephonyUplink;
 @property(nonatomic) BOOL usesApplicationAudioSession; // @synthesize usesApplicationAudioSession=_usesApplicationAudioSession;
 @property(retain, nonatomic) NSArray *outputChannels; // @synthesize outputChannels=_outputChannels;
 @property(readonly, nonatomic, getter=isPaused) BOOL paused; // @synthesize paused=_paused;
 @property(readonly, nonatomic, getter=isSpeaking) BOOL speaking; // @synthesize speaking=_speaking;
 @property(nonatomic) __weak id <AVSpeechSynthesizerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)continueSpeaking;
 - (BOOL)pauseSpeakingAtBoundary:(long long)arg1;
 - (BOOL)stopSpeakingAtBoundary:(long long)arg1;

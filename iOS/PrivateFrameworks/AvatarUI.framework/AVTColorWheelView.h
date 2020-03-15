@@ -17,9 +17,9 @@
 + (id)colorItemsFrom:(id)arg1 excluding:(id)arg2;
 + (_Bool)colorItems:(id)arg1 containColorItem:(id)arg2;
 + (id)buildCircleViewWithDiameter:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *circleViews; // @synthesize circleViews=_circleViews;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)updateWithPrimaryItems:(id)arg1 extendedItems:(id)arg2;
 - (struct CGPoint)rotatePoint:(struct CGPoint)arg1 aroundCenter:(struct CGPoint)arg2 withAngle:(double)arg3;
 - (id)buildAllCircleViews;

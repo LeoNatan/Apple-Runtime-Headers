@@ -20,9 +20,9 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType terminationHandler; // @synthesize terminationHandler=_terminationHandler;
 @property(copy, nonatomic) CDUnknownBlockType dismissResultHandler; // @synthesize dismissResultHandler=_dismissResultHandler;
-- (void).cxx_destruct;
 - (void)_parentViewControllerDismissAnimated:(_Bool)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)dismissWithResult:(id)arg1;

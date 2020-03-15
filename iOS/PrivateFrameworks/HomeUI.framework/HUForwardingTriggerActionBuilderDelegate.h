@@ -16,8 +16,8 @@
     id <HUTriggerActionBuilderEditorDelegate> _triggerActionBuilderEditorDelegate;
 }
 
-@property(nonatomic) __weak id <HUTriggerActionBuilderEditorDelegate> triggerActionBuilderEditorDelegate; // @synthesize triggerActionBuilderEditorDelegate=_triggerActionBuilderEditorDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HUTriggerActionBuilderEditorDelegate> triggerActionBuilderEditorDelegate; // @synthesize triggerActionBuilderEditorDelegate=_triggerActionBuilderEditorDelegate;
 - (_Bool)triggerEditor:(id)arg1 shouldCommitTriggerBuilder:(id)arg2;
 - (void)triggerEditor:(id)arg1 didFinishWithTriggerBuilder:(id)arg2;
 - (id)initWithTriggerActionBuilderEditorDelegate:(id)arg1;

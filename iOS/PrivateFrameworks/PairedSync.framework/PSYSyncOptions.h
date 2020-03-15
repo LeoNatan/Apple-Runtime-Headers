@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long syncSessionType; // @synthesize syncSessionType=_syncSessionType;
 @property(retain, nonatomic) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(retain, nonatomic) NSUUID *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
 @property(retain, nonatomic) PSYTestInput *testInput; // @synthesize testInput=_testInput;
 @property(nonatomic) _Bool terminateDuringDryRun; // @synthesize terminateDuringDryRun=_terminateDuringDryRun;
 @property(nonatomic) _Bool dryRun; // @synthesize dryRun=_dryRun;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

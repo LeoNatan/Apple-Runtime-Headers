@@ -17,9 +17,9 @@
     SVWeakObjectCache *_visiblePercentageProviders;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVWeakObjectCache *visiblePercentageProviders; // @synthesize visiblePercentageProviders=_visiblePercentageProviders;
 @property(readonly, nonatomic) id <SVVideoVisiblePercentageProviderFactory> visiblePercentageProviderFactory; // @synthesize visiblePercentageProviderFactory=_visiblePercentageProviderFactory;
-- (void).cxx_destruct;
 - (id)_visiblePercentageProviderForVideo:(id)arg1;
 - (id)visiblePercentageReporterForVideo:(id)arg1;
 - (id)visiblePercentageProviderForVideo:(id)arg1;

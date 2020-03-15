@@ -25,8 +25,8 @@
 + (_Bool)sb_autorotates;
 + (_Bool)sb_disableStatusBarHeightChanges;
 + (id)defaultLayoutStrategy;
-@property(readonly, nonatomic) id <SBWindowLayoutStrategy> layoutStrategy; // @synthesize layoutStrategy=_layoutStrategy;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SBWindowLayoutStrategy> layoutStrategy; // @synthesize layoutStrategy=_layoutStrategy;
 @property(readonly, copy, nonatomic) NSString *orientationSourceDescription;
 @property(readonly, nonatomic) double orientationSourceLevel;
 @property(readonly, nonatomic, getter=isActive) _Bool active;

@@ -15,10 +15,10 @@
     NSString *_principalPath;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *principalPath; // @synthesize principalPath=_principalPath;
 @property(retain, nonatomic) NSString *preferredAddress; // @synthesize preferredAddress=_preferredAddress;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 @property(readonly) NSDictionary *userInfo;
 - (id)description;
 

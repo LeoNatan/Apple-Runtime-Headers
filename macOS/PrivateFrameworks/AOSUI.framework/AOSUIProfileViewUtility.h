@@ -21,12 +21,12 @@
 
 + (id)sharedProfileViewUtility;
 + (void)requestProfileViewController:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain) AOSUIProfileViewCacheController *cacheController; // @synthesize cacheController=_cacheController;
 @property(retain) AOSUIProfileViewRootViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
 @property(retain) NSViewController *cacheViewController; // @synthesize cacheViewController=_cacheViewController;
 @property(retain) NSRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(copy) CDUnknownBlockType updateOverlayPrefPaneBlock; // @synthesize updateOverlayPrefPaneBlock=_updateOverlayPrefPaneBlock;
-- (void).cxx_destruct;
 - (void)_updateImageCache;
 - (void)profileRemoteViewController_updateOverlayPrefPane:(BOOL)arg1 prefPanesToHide:(id)arg2;
 - (void)updateOverlay:(CDUnknownBlockType)arg1;

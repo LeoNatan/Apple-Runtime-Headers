@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_content;
 }
 
-@property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 - (id)latexMathModeDescription;
 - (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;
 - (id)speakableDescriptionWithSpeakingStyle:(long long)arg1 arePausesAllowed:(_Bool)arg2;

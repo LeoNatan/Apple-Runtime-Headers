@@ -27,6 +27,7 @@
     struct NSDirectionalEdgeInsets _hostContentSizeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _NSRTree *supplementaryItemGeometricIndexer; // @synthesize supplementaryItemGeometricIndexer=_supplementaryItemGeometricIndexer;
 @property(retain, nonatomic) NSDictionary *supplementaryFramesKeyedByKindIndex; // @synthesize supplementaryFramesKeyedByKindIndex=_supplementaryFramesKeyedByKindIndex;
 @property(retain, nonatomic) NSDictionary *enrolledSupplementaryFramesDict; // @synthesize enrolledSupplementaryFramesDict=_enrolledSupplementaryFramesDict;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) struct CGPoint hostContentOffset; // @synthesize hostContentOffset=_hostContentOffset;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) NSIndexSet *pinnedSupplementaryIndexes; // @synthesize pinnedSupplementaryIndexes=_pinnedSupplementaryIndexes;
-- (void).cxx_destruct;
 - (id)_effectiveBoundarySupplementrayItem:(id)arg1 forLayoutAxis:(int)arg2;
 @property(readonly, nonatomic) NSArray *memoizedSupplementaryItems;
 @property(readonly, nonatomic) long long memoizedSupplementaryKind;

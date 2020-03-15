@@ -25,7 +25,7 @@
 }
 
 - (void).cxx_destruct;
-- (struct NSDictionary *)auxData;
+- (id)auxData;
 - (BOOL)_isAlive;
 - (void)_gatherImageData;
 - (void)_gatherLedgers;

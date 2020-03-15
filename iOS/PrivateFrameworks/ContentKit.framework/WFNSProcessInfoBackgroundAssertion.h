@@ -15,8 +15,8 @@
 }
 
 + (id)backgroundAssertionWithName:(id)arg1 expirationHandler:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 - (void)end;
 - (id)initWithName:(id)arg1 expirationHandler:(CDUnknownBlockType)arg2;
 

@@ -15,8 +15,8 @@
     NSMutableData *_mutablePhoneNumberData;
 }
 
-@property(retain, nonatomic) NSMutableData *mutablePhoneNumberData; // @synthesize mutablePhoneNumberData=_mutablePhoneNumberData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableData *mutablePhoneNumberData; // @synthesize mutablePhoneNumberData=_mutablePhoneNumberData;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)appendPhoneNumber:(long long)arg1;
 - (id)init;

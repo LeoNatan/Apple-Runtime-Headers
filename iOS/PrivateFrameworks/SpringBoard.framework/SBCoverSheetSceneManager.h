@@ -16,11 +16,11 @@
     UIApplicationSceneDeactivationAssertion *_systemAnimationAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIApplicationSceneDeactivationAssertion *systemAnimationAssertion; // @synthesize systemAnimationAssertion=_systemAnimationAssertion;
 @property(retain, nonatomic) UIApplicationSceneDeactivationAssertion *notificationCenterAssertion; // @synthesize notificationCenterAssertion=_notificationCenterAssertion;
 @property(retain, nonatomic) FBDisplayLayoutElement *displayLayoutElement; // @synthesize displayLayoutElement=_displayLayoutElement;
 @property(nonatomic) __weak UIWindow *coverSheetWindow; // @synthesize coverSheetWindow=_coverSheetWindow;
-- (void).cxx_destruct;
 - (void)_updateForegroundScenesForNotificationCenter:(_Bool)arg1;
 - (void)_setSceneBackgrounded:(_Bool)arg1 suspendUnderLockEnvironment:(_Bool)arg2;
 - (void)_setDisplayLayoutElementActive:(_Bool)arg1;

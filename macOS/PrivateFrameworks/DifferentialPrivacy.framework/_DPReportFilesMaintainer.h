@@ -19,8 +19,8 @@
 + (BOOL)removeFilesFrom:(id)arg1 olderThanSecond:(double)arg2;
 + (id)retiredReportsPath:(id)arg1;
 + (id)reportsInDirectory:(id)arg1;
-@property(copy, nonatomic) NSString *reportsDirectoryPath; // @synthesize reportsDirectoryPath=_reportsDirectoryPath;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *reportsDirectoryPath; // @synthesize reportsDirectoryPath=_reportsDirectoryPath;
 - (void)scheduleMaintenanceWithName:(id)arg1 database:(id)arg2;
 - (BOOL)doMaintenance;
 - (id)init;

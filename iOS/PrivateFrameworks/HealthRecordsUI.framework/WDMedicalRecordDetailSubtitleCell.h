@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 + (id)_subtitleLabelFont;
 + (double)_titleLabelTopToFirstBaseline;
 + (id)_titleLabelFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subtitle;
 @property(copy, nonatomic) NSString *title;
 - (void)setupSubviews;

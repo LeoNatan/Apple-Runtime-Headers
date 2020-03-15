@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *shortVersion; // @synthesize shortVersion=_shortVersion;
 @property(readonly) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(readonly) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

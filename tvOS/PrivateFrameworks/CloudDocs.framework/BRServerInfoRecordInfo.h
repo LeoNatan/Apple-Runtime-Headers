@@ -25,6 +25,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *zoneProtectionInfo; // @synthesize zoneProtectionInfo=_zoneProtectionInfo;
 @property(retain, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(retain, nonatomic) NSData *recordProtectionInfo; // @synthesize recordProtectionInfo=_recordProtectionInfo;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSData *encryptedBasename; // @synthesize encryptedBasename=_encryptedBasename;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(retain, nonatomic) NSString *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

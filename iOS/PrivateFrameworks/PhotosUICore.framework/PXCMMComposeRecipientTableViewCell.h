@@ -30,6 +30,7 @@
     struct CGSize _faceImageViewSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isChecked) _Bool checked; // @synthesize checked=_checked;
 @property(nonatomic) int currentRequestID; // @synthesize currentRequestID=_currentRequestID;
 @property(retain, nonatomic) UIView *popoverSourceView; // @synthesize popoverSourceView=_popoverSourceView;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSString *transport; // @synthesize transport=_transport;
 @property(nonatomic) _Bool emphasizeLocalizedName; // @synthesize emphasizeLocalizedName=_emphasizeLocalizedName;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 - (void)_updateAccessoryImageView;
 - (void)_updateTransportLabel;
 - (void)_updateLocalizedNameLabel;

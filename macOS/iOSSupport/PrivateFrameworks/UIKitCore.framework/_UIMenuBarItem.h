@@ -37,6 +37,7 @@
 }
 
 + (id)separatorItem;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) BOOL remainsVisibleWhenDisabled; // @synthesize remainsVisibleWhenDisabled=_remainsVisibleWhenDisabled;
 @property(retain, nonatomic) UICommandAlternate *altCmd; // @synthesize altCmd=_altCmd;
@@ -58,7 +59,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) id <UIRVPresenterHighlightDelegate> rvHighlighter; // @synthesize rvHighlighter=_rvHighlighter;
 @property(retain, nonatomic) RVItem *rvItem; // @synthesize rvItem=_rvItem;
-- (void).cxx_destruct;
 - (id)_stringForFlags:(unsigned long long)arg1;
 - (id)_stringForState:(long long)arg1;
 - (id)description;

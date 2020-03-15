@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_faces;
 }
 
-@property(readonly, nonatomic) NSMutableArray *faces; // @synthesize faces=_faces;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *faces; // @synthesize faces=_faces;
 - (id)initAsCubemap:(BOOL)arg1;
 
 @end

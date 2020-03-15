@@ -11,8 +11,8 @@
     CDUnknownBlockType _unregisterBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType unregisterBlock; // @synthesize unregisterBlock=_unregisterBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType unregisterBlock; // @synthesize unregisterBlock=_unregisterBlock;
 - (void)dealloc;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 

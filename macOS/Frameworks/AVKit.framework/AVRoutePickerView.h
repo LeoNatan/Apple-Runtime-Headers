@@ -34,10 +34,10 @@
     id <AVRoutePickerViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVRoutePickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
 @property(nonatomic, getter=isRoutePickerButtonBordered) BOOL routePickerButtonBordered; // @synthesize routePickerButtonBordered=_routePickerButtonBordered;
-- (void).cxx_destruct;
 - (void)_setAirPlayActive:(BOOL)arg1;
 - (BOOL)_isAirPlayActive;
 - (void)_outputContextDevicesDidChange:(id)arg1;

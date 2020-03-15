@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _overrideTransformForProminentPlayButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIView *volumeButtonContainer; // @synthesize volumeButtonContainer=_volumeButtonContainer;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long preferredUnobscuredArea; // @synthesize preferredUnobscuredArea=_preferredUnobscuredArea;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 @property(retain, nonatomic) AVStyleSheet *styleSheet; // @synthesize styleSheet=_styleSheet;
-- (void).cxx_destruct;
 - (id)_makeProminentPlayButtonAndContainer;
 - (void)_makeProminentPlayButtonAndContainerIfNeeded;
 - (id)_makeVolumeButtonAndContainer;

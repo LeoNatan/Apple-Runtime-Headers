@@ -17,9 +17,9 @@
     HMNetworkRouterProfile *_profile;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMNetworkRouterProfile *profile; // @synthesize profile=_profile;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateNetworkProtection:(long long)arg1 andFinishWithActionResult:(unsigned long long)arg2;
 - (void)_learnMorePressed:(id)arg1;
 - (void)_disablePressed:(id)arg1;

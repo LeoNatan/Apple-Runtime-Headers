@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     FPDExtension *_provider;
 }
 
-@property(readonly, nonatomic) __weak FPDExtension *provider; // @synthesize provider=_provider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak FPDExtension *provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) unsigned long long level;
 - (id)init;
 - (id)initWithURL:(id)arg1 connection:(id)arg2 manager:(id)arg3;

@@ -21,6 +21,7 @@
     NSArray *_associatedAmbiguousLanguages;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRTL) BOOL rtl; // @synthesize rtl=_rtl;
 @property(retain, nonatomic) NSArray *associatedAmbiguousLanguages; // @synthesize associatedAmbiguousLanguages=_associatedAmbiguousLanguages;
 @property(retain, nonatomic) NSArray *alternateLanguageIDs; // @synthesize alternateLanguageIDs=_alternateLanguageIDs;
@@ -29,7 +30,6 @@
 @property(nonatomic, getter=isAmbiguous) BOOL ambiguous; // @synthesize ambiguous=_ambiguous;
 @property(nonatomic, getter=isWestern) BOOL western; // @synthesize western=_western;
 @property(retain, nonatomic) NSArray *dialects; // @synthesize dialects=_dialects;
-- (void).cxx_destruct;
 - (id)dialectWithLocaleIdentifier:(id)arg1;
 @property(readonly, nonatomic) AXDialectMap *defaultDialect;
 @property(readonly, nonatomic) AXDialectMap *userLocaleDialect; // @synthesize userLocaleDialect;

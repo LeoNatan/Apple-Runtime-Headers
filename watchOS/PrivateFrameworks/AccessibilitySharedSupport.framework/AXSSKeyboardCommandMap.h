@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *transientCommands; // @synthesize transientCommands=_transientCommands;
 @property(readonly, nonatomic) NSDictionary *userDefinedCommandsToKeyChords; // @synthesize userDefinedCommandsToKeyChords=_userDefinedCommandsToKeyChords;
 @property(readonly, nonatomic) NSDictionary *commandsToArraysOfKeyChords; // @synthesize commandsToArraysOfKeyChords=_commandsToArraysOfKeyChords;
 @property(readonly, nonatomic) NSDictionary *keyChordsToCommands; // @synthesize keyChordsToCommands=_keyChordsToCommands;
 @property(retain, nonatomic) NSSet *availableCommands; // @synthesize availableCommands=_availableCommands;
-- (void).cxx_destruct;
 - (void)removeTransientKeyChordsForIdentifier:(id)arg1;
 - (id)addCommandsForTransientKeyChords:(id)arg1;
 - (id)commandMapWithKeyChord:(id)arg1 forCommand:(id)arg2;

@@ -28,6 +28,7 @@
 + (id)deletionChangeSetEntityName;
 + (id)additionChangeSetEntityName;
 + (id)dataFromCompressedChangeSet:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSUUID *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(retain, nonatomic) NSArray *eventIDsToDelete; // @synthesize eventIDsToDelete=_eventIDsToDelete;
 @property(retain, nonatomic) NSArray *eventsToAdd; // @synthesize eventsToAdd=_eventsToAdd;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)asData;
 - (id)initWithEventsToAdd:(id)arg1 eventIDsToDelete:(id)arg2 deviceIdentifier:(id)arg3 sequenceNumber:(unsigned long long)arg4 startDate:(id)arg5 endDate:(id)arg6 type:(id)arg7;

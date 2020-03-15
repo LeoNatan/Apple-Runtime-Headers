@@ -20,10 +20,10 @@
 + (id)contentCategories;
 + (id)outputTypes;
 + (id)ownedTypes;
-+ (id)itemsWithPropertyListObject:(id)arg1 preferredDictionaryType:(id)arg2 topLevelName:(id)arg3;
-+ (id)itemsWithPropertyListObject:(id)arg1 preferredDictionaryType:(id)arg2;
-+ (id)itemsWithPlistFileRepresentation:(id)arg1;
-+ (id)itemsWithJSONFileRepresentation:(id)arg1;
++ (id)itemsWithPropertyListObject:(id)arg1 preferredDictionaryType:(id)arg2 topLevelName:(id)arg3 contentSource:(id)arg4;
++ (id)itemsWithPropertyListObject:(id)arg1 preferredDictionaryType:(id)arg2 contentSource:(id)arg3;
++ (id)itemsWithPlistFileRepresentation:(id)arg1 contentSource:(id)arg2;
++ (id)itemsWithJSONFileRepresentation:(id)arg1 contentSource:(id)arg2;
 + (id)propertyBuilders;
 - (id)generateFileRepresentationForType:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)generateObjectRepresentationForClass:(Class)arg1 options:(id)arg2 error:(id *)arg3;

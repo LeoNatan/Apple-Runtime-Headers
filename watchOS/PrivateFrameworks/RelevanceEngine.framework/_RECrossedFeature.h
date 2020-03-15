@@ -18,8 +18,8 @@
     NSArray *_features;
 }
 
-@property(readonly, nonatomic) NSArray *features; // @synthesize features=_features;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *features; // @synthesize features=_features;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_computeHash;
 - (void)_updateFeaturesArray;

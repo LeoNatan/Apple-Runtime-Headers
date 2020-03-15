@@ -20,12 +20,12 @@
     NSMutableString *_debugLog;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *debugLog; // @synthesize debugLog=_debugLog;
 @property(retain, nonatomic) NSCache *mailboxIDCache; // @synthesize mailboxIDCache=_mailboxIDCache;
 @property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) id <EDMailboxPredictionQueryAdapter> library; // @synthesize library=_library;
 @property(retain, nonatomic) id <EMUserProfileProvider> userProfileProvider; // @synthesize userProfileProvider=_userProfileProvider;
-- (void).cxx_destruct;
 - (id)_allowedRecipientsForMessage:(id)arg1;
 - (_Bool)_isAllowedRecipient:(id)arg1;
 - (id)_normalizedTermFrequencyTopHitFromDictionary:(id)arg1 withThreshold:(double)arg2;

@@ -17,11 +17,11 @@
     long long _verticalAlignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL canScrollDocumentViewVertically; // @synthesize canScrollDocumentViewVertically=_canScrollDocumentViewVertically;
 @property(nonatomic) BOOL canScrollDocumentViewHorizontally; // @synthesize canScrollDocumentViewHorizontally=_canScrollDocumentViewHorizontally;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) long long horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
-- (void).cxx_destruct;
 - (void)layout;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;

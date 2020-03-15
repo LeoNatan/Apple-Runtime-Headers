@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_sqlQueryToStatements;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sqlQueryToStatements; // @synthesize sqlQueryToStatements=_sqlQueryToStatements;
 @property(nonatomic) struct sqlite3 *database; // @synthesize database=_database;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (BOOL)performTransactionWithBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)namesOfColumnsInTableWithName:(id)arg1 error:(id *)arg2;
 - (BOOL)selectSQL:(id)arg1 withBindings:(id)arg2 expectedColumnCount:(long long)arg3 transient:(BOOL)arg4 resultRowHandler:(CDUnknownBlockType)arg5 error:(id *)arg6;

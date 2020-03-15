@@ -9,10 +9,6 @@
 @interface UIViewController (Utilities)
 + (void)presentViewControllerOnTopmostViewController:(id)arg1 fromViewController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)topmostViewControllerForViewController:(id)arg1;
-+ (void)_replaceMethodImplementation:(Class)arg1 originalSelector:(SEL)arg2 swizzledSelector:(SEL)arg3;
-+ (void)replaceViewMethodsImplementation;
 - (void)dismissAnimated;
-- (void)iam_viewWillDisappear:(_Bool)arg1;
-- (void)iam_viewDidAppear:(_Bool)arg1;
 @end
 

@@ -21,12 +21,12 @@
     UICollectionViewCompositionalLayout *_collectionViewLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionViewCompositionalLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(retain, nonatomic) _UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) CKNicknameUpdatesCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSArray *nicknameUpdates; // @synthesize nicknameUpdates=_nicknameUpdates;
 @property(nonatomic) id <CKNicknameUpdatesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateCell:(id)arg1 ignoreButtonTappedForBannerView:(id)arg2;
 - (void)updateCell:(id)arg1 updateButtonTappedForBannerView:(id)arg2;
 - (void)_doneButtonTapped:(id)arg1;

@@ -18,9 +18,9 @@
 }
 
 + (Class)_configurationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_playingContinuousFeedback, setter=_setPlayingContinuousFeedback:) _UIFeedback<_UIFeedbackContinuousPlayable> *playingContinuousFeedback; // @synthesize playingContinuousFeedback=_playingContinuousFeedback;
 @property(nonatomic, getter=_state, setter=_setState:) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)_stats_key;
 - (void)_stopPlayingContinuousFeedback;
 - (void)_startPlayingContinuousFeedbackNow;

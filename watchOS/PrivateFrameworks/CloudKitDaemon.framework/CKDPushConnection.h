@@ -18,11 +18,11 @@
 }
 
 + (id)sharedConnectionForAPSEnvironmentString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) APSConnection *apsConnection; // @synthesize apsConnection=_apsConnection;
 @property(retain, nonatomic, setter=setAPSEnvironmentString:) NSString *apsEnvironmentString; // @synthesize apsEnvironmentString=_apsEnvironmentString;
-- (void).cxx_destruct;
 - (void)connectionDidReconnect:(id)arg1;
 - (void)connection:(id)arg1 didChangeConnectedStatus:(_Bool)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;

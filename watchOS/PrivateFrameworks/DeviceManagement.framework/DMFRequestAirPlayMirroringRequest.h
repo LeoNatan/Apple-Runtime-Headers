@@ -22,12 +22,12 @@
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
+- (void).cxx_destruct;
 @property(nonatomic) double scanWaitInterval; // @synthesize scanWaitInterval=_scanWaitInterval;
 @property(nonatomic) _Bool force; // @synthesize force=_force;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) NSString *destinationDeviceID; // @synthesize destinationDeviceID=_destinationDeviceID;
 @property(copy, nonatomic) NSString *destinationName; // @synthesize destinationName=_destinationName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

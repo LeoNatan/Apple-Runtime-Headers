@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_serialOperationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *serialOperationQueue; // @synthesize serialOperationQueue=_serialOperationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
 @property(retain, nonatomic) VUIPlistMediaDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)_enqueueProcessingBlock:(CDUnknownBlockType)arg1;
 - (void)_handleMediaDatabaseContentsDidChangeNotification:(id)arg1;
 - (id)_imageLoadOperationWithParams:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3;

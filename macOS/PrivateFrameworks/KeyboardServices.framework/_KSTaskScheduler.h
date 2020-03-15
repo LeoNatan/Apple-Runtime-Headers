@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *allTasks; // @synthesize allTasks=_allTasks;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *allTasks; // @synthesize allTasks=_allTasks;
 - (void)unregisterTask:(id)arg1;
 - (void)registerTask:(id)arg1;
 - (id)init;

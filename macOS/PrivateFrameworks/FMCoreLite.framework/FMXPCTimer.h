@@ -20,6 +20,7 @@
     NSObject<OS_xpc_object> *_duetActivitySchedulerData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *duetActivitySchedulerData; // @synthesize duetActivitySchedulerData=_duetActivitySchedulerData;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
@@ -27,7 +28,6 @@
 @property(nonatomic) double gracePeriod; // @synthesize gracePeriod=_gracePeriod;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)handleActivity;
 - (CDUnknownBlockType)activityHandler;
 - (void)invalidate;

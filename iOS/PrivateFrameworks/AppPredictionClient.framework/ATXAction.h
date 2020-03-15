@@ -42,6 +42,7 @@
 + (unsigned long long)_userActivityHashForUserInfoDict:(id)arg1 activityType:(id)arg2 webpageURL:(id)arg3;
 + (_Bool)_isTVIntent:(id)arg1 bundleId:(id)arg2;
 + (_Bool)_isTVWhiteListedLongFormMediaIntent:(id)arg1 bundleId:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ATXAVRouteInfo *routeInfo; // @synthesize routeInfo=_routeInfo;
 @property(readonly, nonatomic) CSSearchableItemAttributeSet *contentAttributeSet; // @synthesize contentAttributeSet=_contentAttributeSet;
 @property(readonly, nonatomic) NSString *userActivityString; // @synthesize userActivityString=_userActivityString;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) NSUUID *actionUUID; // @synthesize actionUUID=_actionUUID;
 @property(readonly, nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
 @property(readonly, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

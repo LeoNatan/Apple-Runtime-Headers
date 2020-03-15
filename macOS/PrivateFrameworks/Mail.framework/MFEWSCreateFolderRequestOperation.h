@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int mailboxType; // @synthesize mailboxType=_mailboxType;
 @property(readonly, copy, nonatomic) NSString *folderName; // @synthesize folderName=_folderName;
 @property(readonly, copy, nonatomic) NSString *parentEWSFolderIdString; // @synthesize parentEWSFolderIdString=_parentEWSFolderIdString;
 @property(copy) NSString *offlineCreatedEWSFolderIdString; // @synthesize offlineCreatedEWSFolderIdString=_offlineCreatedEWSFolderIdString;
-- (void).cxx_destruct;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;
 @property(retain, nonatomic) MFEWSCreateFolderResponseOperation *responseOperation;
 - (void)_createdFolderIdString:(id)arg1 didChangeForOperation:(id)arg2;

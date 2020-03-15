@@ -39,6 +39,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *timeZone; // @synthesize timeZone=_timeZone;
 @property unsigned int screenWidth; // @synthesize screenWidth=_screenWidth;
 @property unsigned int screenHeight; // @synthesize screenHeight=_screenHeight;
@@ -63,7 +64,6 @@
 @property(copy) NSArray *imagesData; // @synthesize imagesData=_imagesData;
 @property(copy) NSString *email; // @synthesize email=_email;
 @property(copy) NSString *comments; // @synthesize comments=_comments;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

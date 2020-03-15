@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSPopover *_popover;
 }
 
-@property(readonly, nonatomic) NSPopover *popover; // @synthesize popover=_popover;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSPopover *popover; // @synthesize popover=_popover;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)loadView;
 - (id)initWithPlaceholderString:(id)arg1 didEndEditingBlock:(CDUnknownBlockType)arg2;

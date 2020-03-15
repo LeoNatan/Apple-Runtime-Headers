@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     SKUILayoutCache *_textLayoutCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUILayoutCache *textLayoutCache; // @synthesize textLayoutCache=_textLayoutCache;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) SKUIProductPageHeaderViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(nonatomic) __weak id <SKUIProductPageChildViewController> delegateSender; // @synthesize delegateSender=_delegateSender;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (id)_textLayoutRequestWithText:(id)arg1;
 - (id)_tableView;
 - (void)_addHeaderView;

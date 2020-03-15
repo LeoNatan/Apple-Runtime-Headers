@@ -15,10 +15,10 @@
     id _object;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(copy, nonatomic) NSString *notification; // @synthesize notification=_notification;
-- (void).cxx_destruct;
 - (void)observeNotification:(id)arg1;
 - (void)setup;
 - (void)dealloc;

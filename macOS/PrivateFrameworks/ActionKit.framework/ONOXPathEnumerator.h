@@ -17,10 +17,10 @@
     ONOXMLDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ONOXMLDocument *document; // @synthesize document=_document;
 @property(nonatomic) unsigned long long cursor; // @synthesize cursor=_cursor;
 @property(nonatomic) struct _xmlXPathObject *xmlXPath; // @synthesize xmlXPath=_xmlXPath;
-- (void).cxx_destruct;
 - (id)nextObject;
 - (id)allObjects;
 - (id)objectAtIndex:(long long)arg1;

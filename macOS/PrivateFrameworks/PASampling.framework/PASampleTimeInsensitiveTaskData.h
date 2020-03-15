@@ -45,6 +45,7 @@
 
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) BOOL workQueueExceededTotalThreadLimit; // @synthesize workQueueExceededTotalThreadLimit=_workQueueExceededTotalThreadLimit;
 @property(readonly) BOOL workQueueExceededConstrainedThreadLimit; // @synthesize workQueueExceededConstrainedThreadLimit=_workQueueExceededConstrainedThreadLimit;
 @property(readonly) BOOL isDirty; // @synthesize isDirty=_isDirty;
@@ -69,7 +70,6 @@
 @property(readonly) int rpid; // @synthesize rpid=_rpid;
 @property(readonly) int ppid; // @synthesize ppid=_ppid;
 @property(readonly) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)addImageInfos:(id)arg1;
 - (BOOL)correspondsToUniquePid:(unsigned long long)arg1 withName:(const char *)arg2 withLoadInfos:(const struct dyld_uuid_info_64 *)arg3 numLoadInfos:(unsigned int)arg4;
@@ -92,7 +92,7 @@
 - (void)populateReferencesUsingBufferPosition:(const void *)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (id)_initWithSerializedTimeInsensitiveTaskData:(const CDStruct_837e78c1 *)arg1;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg2;
+- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

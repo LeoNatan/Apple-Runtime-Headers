@@ -17,8 +17,8 @@
 
 + (id)volatileNamedLayerStackWithNamedLayerStack:(id)arg1 fromAssetManager:(id)arg2;
 + (id)volatileNamedLayerStackWithNamedLayerStack:(id)arg1;
-@property(readonly, nonatomic) NSObject<UINamedLayerStack> *namedLayerStack; // @synthesize namedLayerStack=_namedLayerStack;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<UINamedLayerStack> *namedLayerStack; // @synthesize namedLayerStack=_namedLayerStack;
 - (id)_init;
 - (id)init;
 

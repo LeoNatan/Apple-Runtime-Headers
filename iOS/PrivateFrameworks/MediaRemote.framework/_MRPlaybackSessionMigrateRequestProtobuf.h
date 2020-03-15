@@ -32,6 +32,7 @@
 }
 
 + (Class)eventsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MRPlaybackSessionRequestProtobuf *playbackSessionRequest; // @synthesize playbackSessionRequest=_playbackSessionRequest;
 @property(nonatomic) double playbackRate; // @synthesize playbackRate=_playbackRate;
 @property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
@@ -39,7 +40,6 @@
 @property(nonatomic) double playbackPosition; // @synthesize playbackPosition=_playbackPosition;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(retain, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

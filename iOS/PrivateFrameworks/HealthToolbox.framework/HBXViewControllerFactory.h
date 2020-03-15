@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKHealthChartFactory *chartFactory; // @synthesize chartFactory=_chartFactory;
 @property(retain, nonatomic) HBXUnitSupport *unitSupport; // @synthesize unitSupport=_unitSupport;
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)unitStringForType:(id)arg1;
 - (void)fetchUserDefaultForKey:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
 - (id)localizedUnitDisplayNameForDisplayType:(id)arg1;
@@ -45,6 +45,7 @@
 - (id)createResearchStudySourcesViewControllerUsingInsetStyling:(_Bool)arg1 restorationStudyBundleIdentifier:(id)arg2;
 - (id)createContactConsolidationControllerInViewController:(id)arg1;
 - (id)createDeviceSourcesViewControllerUsingInsetStyling:(_Bool)arg1;
+- (id)createSingleAppAuthorizationViewControllerUsingInsetStyling:(_Bool)arg1 restorationApplicationBundleIdentifier:(id)arg2;
 - (id)createAppSourcesViewControllerUsingInsetStyling:(_Bool)arg1;
 - (id)createSourcesViewControllerUsingInsetStyling:(_Bool)arg1;
 - (id)createBuddyViewController;

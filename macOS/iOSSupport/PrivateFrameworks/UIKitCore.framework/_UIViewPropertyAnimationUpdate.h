@@ -20,6 +20,7 @@
     double _delay;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isImplicit) BOOL implicit; // @synthesize implicit=_implicit;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSValue *fromValue; // @synthesize fromValue=_fromValue;
 @property(readonly, nonatomic, getter=isAdditive) BOOL additive; // @synthesize additive=_additive;
 @property(readonly, nonatomic) NSString *propertyName; // @synthesize propertyName=_propertyName;
-- (void).cxx_destruct;
 - (id)initWithPropertyName:(id)arg1 implicit:(BOOL)arg2 additive:(BOOL)arg3;
 - (id)init;
 

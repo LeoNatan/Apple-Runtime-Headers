@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *precedingSymbol; // @synthesize precedingSymbol=_precedingSymbol;
 @property(readonly, copy, nonatomic) NSString *symbol; // @synthesize symbol=_symbol;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)executeWithZone:(id)arg1;

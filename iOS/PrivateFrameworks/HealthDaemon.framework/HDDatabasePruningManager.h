@@ -23,12 +23,12 @@
     unsigned long long _prunedObjectTransactionLimit;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long prunedObjectTransactionLimit; // @synthesize prunedObjectTransactionLimit=_prunedObjectTransactionLimit;
 @property unsigned long long prunedObjectLimit; // @synthesize prunedObjectLimit=_prunedObjectLimit;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timerSource; // @synthesize timerSource=_timerSource;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)_setLastAttemptDate:(id)arg1 completed:(_Bool)arg2;
 - (id)_lastAttemptDateWithCompleted:(_Bool *)arg1;

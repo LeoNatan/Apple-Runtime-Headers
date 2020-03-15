@@ -31,9 +31,15 @@
     NSString *_typeName;
     NSDictionary *_attributes;
     NSOrderedSet *_displayOrderedAttributes;
+    NSString *_semanticRoot;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)_codableDescriptionForTypedObject:(id)arg1 inDictionary:(id)arg2;
++ (id)_calculateReferencedCodableDescriptionsFromAttributes:(id)arg1 usingTypes:(id)arg2;
++ (id)_calculateReferencedCodableDescriptionsFromAttributes:(id)arg1 usingTypes:(id)arg2 foundAttributes:(id)arg3;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *semanticRoot; // @synthesize semanticRoot=_semanticRoot;
 @property(copy, nonatomic) NSOrderedSet *displayOrderedAttributes; // @synthesize displayOrderedAttributes=_displayOrderedAttributes;
 @property(copy, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(copy, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
@@ -43,7 +49,6 @@
 @property(retain, nonatomic) NSMutableDictionary *_dictionaryKeysForCacheGroup; // @synthesize _dictionaryKeysForCacheGroup;
 @property(copy, nonatomic, setter=_setCustomLocalizationTable:) INCodableLocalizationTable *_customLocalizationTable; // @synthesize _customLocalizationTable;
 @property(copy, nonatomic, setter=_setLocalizationTable:) INCodableLocalizationTable *_localizationTable; // @synthesize _localizationTable;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *referencedCodableEnums;
 - (unsigned long long)highestAttributeTag;
 - (id)attributeByName:(id)arg1;
@@ -52,8 +57,9 @@
 @property(readonly) unsigned long long hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)_nullable_schema;
 - (void)_updateAttributesByName;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
 - (id)_dictionaryKeyForKeyPath:(id)arg1 object:(id)arg2;

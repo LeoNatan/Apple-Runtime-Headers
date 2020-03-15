@@ -28,6 +28,7 @@
 
 + (long long)_protocolResourceTypeForType:(long long)arg1;
 + (long long)_responseSourceTypeForCacheType:(long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *responseBodyData; // @synthesize responseBodyData=_responseBodyData;
 @property(copy, nonatomic, getter=urlResponse) NSURLResponse *URLResponse; // @synthesize URLResponse=_URLResponse;
 @property(copy, nonatomic, getter=urlRequest) NSURLRequest *URLRequest; // @synthesize URLRequest=_URLRequest;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) long long resourceType; // @synthesize resourceType=_resourceType;
 @property(nonatomic) __weak _IKJSInspectorNetworkLoader *loader; // @synthesize loader=_loader;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)didCompleteLoadingFromMemoryWithRequest:(id)arg1 response:(id)arg2 withResponseBodyBlock:(CDUnknownBlockType)arg3;
 - (void)_didCompleteLoadingFromCache:(long long)arg1 mimeType:(id)arg2 withResponseBody:(id)arg3 timestamp:(double)arg4;
 - (void)didCompleteLoadingFromCache:(long long)arg1 withResponseBodyBlock:(CDUnknownBlockType)arg2;

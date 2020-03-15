@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_defaultIssuePrefix;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *defaultIssuePrefix; // @synthesize defaultIssuePrefix=_defaultIssuePrefix;
 @property(copy, nonatomic) NSString *noIssuesDescription; // @synthesize noIssuesDescription=_noIssuesDescription;
 @property(copy, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(copy, nonatomic) NSString *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (id)stringFromReport:(id)arg1;
 - (id)_componentsFromReport:(id)arg1;
 - (id)init;

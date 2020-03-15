@@ -62,6 +62,7 @@
 @property(nonatomic) _Bool hasImpendingCursorLocation; // @synthesize hasImpendingCursorLocation=_hasImpendingCursorLocation;
 @property(nonatomic) long long keyboardIdiom; // @synthesize keyboardIdiom=m_idiom;
 - (void)_didChangeKeyplaneWithContext:(id)arg1;
+- (void)_didChangeCandidateList;
 @property(nonatomic) _Bool showsCandidatesInline;
 - (_Bool)canDismiss;
 - (void)implBoundsHeightChangeDone:(double)arg1 suppressNotification:(_Bool)arg2;

@@ -15,9 +15,9 @@
 }
 
 + (id)interfaceWithClient:(id)arg1 interfaceName:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(retain, nonatomic) CWFClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (id)performRangingWithPeerList:(id)arg1 timeout:(unsigned long long)arg2 error:(id *)arg3;
 - (id)performRangingWithPeerList:(id)arg1 timeout:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;
 - (BOOL)setRangeable:(BOOL)arg1 peerList:(id)arg2 error:(id *)arg3;

@@ -16,8 +16,8 @@
 }
 
 + (Class)passSyncStateItemsType;
-@property(retain, nonatomic) NSMutableArray *passSyncStateItems; // @synthesize passSyncStateItems=_passSyncStateItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *passSyncStateItems; // @synthesize passSyncStateItems=_passSyncStateItems;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

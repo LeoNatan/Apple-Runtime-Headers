@@ -18,10 +18,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *AdditionalProperties; // @synthesize AdditionalProperties=_AdditionalProperties;
 @property(nonatomic) long long BodyType; // @synthesize BodyType=_BodyType;
 @property(nonatomic) BOOL IncludeMimeContent; // @synthesize IncludeMimeContent=_IncludeMimeContent;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

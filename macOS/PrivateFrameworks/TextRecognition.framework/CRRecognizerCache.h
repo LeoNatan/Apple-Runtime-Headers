@@ -15,10 +15,10 @@
     NSMutableDictionary *_indexedSubRegions;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *indexedSubRegions; // @synthesize indexedSubRegions=_indexedSubRegions;
 @property(retain) NSMutableDictionary *initialSubRegions; // @synthesize initialSubRegions=_initialSubRegions;
 @property(retain) CRImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)subFeatureForRegion:(struct CGRect)arg1;
 - (void)addRegion:(struct CGRect)arg1 withSwt:(id)arg2;
 - (id)initWithImage:(id)arg1 initialTextFeatures:(id)arg2;

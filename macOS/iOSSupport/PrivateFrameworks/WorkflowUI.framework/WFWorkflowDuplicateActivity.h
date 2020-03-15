@@ -15,9 +15,9 @@
 }
 
 + (id)workflowFromActivityItems:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(copy, nonatomic) CDUnknownBlockType dismissToHomeHandler; // @synthesize dismissToHomeHandler=_dismissToHomeHandler;
-- (void).cxx_destruct;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (BOOL)canPerformWithActivityItems:(id)arg1;

@@ -45,9 +45,9 @@
 + (id)_tvmlResourceMap;
 + (id)sharedInterfaceFactory;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVStyleSheetRegistry *styleSheetRegistry; // @synthesize styleSheetRegistry=_styleSheetRegistry;
 @property(retain, nonatomic) id <TVInterfaceCreating> extendedInterfaceCreator; // @synthesize extendedInterfaceCreator=_extendedInterfaceCreator;
-- (void).cxx_destruct;
 - (void)_willParseAppDocument:(id)arg1 forImplicitUpdates:(_Bool)arg2;
 - (id)_getImageFromURLorBundle:(id)arg1;
 - (id)_resourceImageNamed:(id)arg1;

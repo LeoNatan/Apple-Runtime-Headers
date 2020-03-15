@@ -24,6 +24,7 @@
     NSObject<OS_dispatch_source> *_source;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *source; // @synthesize source=_source;
 @property(nonatomic) const char *ptyTerminalName; // @synthesize ptyTerminalName=_ptyTerminalName;
 @property(nonatomic) struct _LIBSSH2_CHANNEL *channel; // @synthesize channel=_channel;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak id <NMSSHChannelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long bufferSize; // @synthesize bufferSize=_bufferSize;
 @property(retain, nonatomic) NMSSHSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (_Bool)downloadFile:(id)arg1 to:(id)arg2 progress:(CDUnknownBlockType)arg3;
 - (_Bool)downloadFile:(id)arg1 to:(id)arg2;
 - (_Bool)uploadFile:(id)arg1 to:(id)arg2 progress:(CDUnknownBlockType)arg3;

@@ -23,6 +23,7 @@
 
 + (id)syncRecordWithKey:(id)arg1 identifier:(id)arg2;
 + (id)syncRecordWithKey:(id)arg1 identifier:(id)arg2 priority:(int)arg3 debugValue:(id)arg4 dataValue:(id)arg5 addedValue:(id)arg6 appMeta:(id)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *checkHash; // @synthesize checkHash=_checkHash;
 @property(nonatomic) double updateTime; // @synthesize updateTime=_updateTime;
 @property(retain, nonatomic) NSData *metaValue; // @synthesize metaValue=_metaValue;
@@ -32,7 +33,6 @@
 @property(nonatomic) int itemPriority; // @synthesize itemPriority=_itemPriority;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setUpdateTimeToNow;
 - (void)updateHash;

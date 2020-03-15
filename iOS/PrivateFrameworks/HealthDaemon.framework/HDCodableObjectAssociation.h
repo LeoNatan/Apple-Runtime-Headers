@@ -16,9 +16,9 @@
     NSData *_objectUuids;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *objectUuids; // @synthesize objectUuids=_objectUuids;
 @property(retain, nonatomic) NSData *associationUuid; // @synthesize associationUuid=_associationUuid;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

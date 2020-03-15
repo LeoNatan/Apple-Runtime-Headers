@@ -15,10 +15,10 @@
     struct _NSRange _numChannelRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange numChannelRange; // @synthesize numChannelRange=_numChannelRange;
 @property(readonly, nonatomic) NSArray *supportedSampleRates; // @synthesize supportedSampleRates=_supportedSampleRates;
 @property(readonly, copy, nonatomic) NSString *algorithmName; // @synthesize algorithmName=_algorithmName;
-- (void).cxx_destruct;
 - (id)initWithAlgorithmName:(id)arg1;
 - (id)init;
 

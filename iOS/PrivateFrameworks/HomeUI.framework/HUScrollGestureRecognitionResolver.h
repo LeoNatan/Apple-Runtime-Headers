@@ -15,10 +15,10 @@
     NSMutableSet *_conflictingGestureStates;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *conflictingGestureStates; // @synthesize conflictingGestureStates=_conflictingGestureStates;
 @property(readonly, nonatomic) NSMutableSet *mutablePanGestureReocgnizers; // @synthesize mutablePanGestureReocgnizers=_mutablePanGestureReocgnizers;
 @property(nonatomic) double conflictingGestureActivationDelay; // @synthesize conflictingGestureActivationDelay=_conflictingGestureActivationDelay;
-- (void).cxx_destruct;
 - (void)_clearSimultaenouslyRecognizedGestures;
 - (void)_cancelConflictingGestures;
 - (void)_handleConflictingGesture:(id)arg1;

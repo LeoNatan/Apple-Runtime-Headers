@@ -14,9 +14,9 @@
     NSURL *_URL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, copy, nonatomic) LPLinkMetadata *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) LPImage *previewImage;
 @property(readonly, copy, nonatomic) NSString *previewSummary;
 - (id)initWithMetadata:(id)arg1 URL:(id)arg2;

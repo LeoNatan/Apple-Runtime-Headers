@@ -14,8 +14,8 @@
     id <_TVRCMediaRemoteDeviceQueryDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_TVRCMediaRemoteDeviceQueryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_TVRCMediaRemoteDeviceQueryDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)_shouldUseMediaRemoteForConnection:(void *)arg1;
 - (void)_removedTelevision:(void *)arg1;
 - (void)_discoveredTelevision:(void *)arg1;

@@ -20,8 +20,8 @@
     id <SKTermsPageViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SKTermsPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKTermsPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_markupTermsWithHTML:(id)arg1;
 - (void)_loadSubviews;
 - (void)_dismissViewControllerAnimated:(_Bool)arg1 withAcceptance:(_Bool)arg2;

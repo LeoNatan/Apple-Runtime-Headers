@@ -27,7 +27,6 @@
     BOOL _allowsSimultaneousRecognitionDuringLift;
     BOOL _cancellationTimerEnabled;
     BOOL _competingLongPressOnLift;
-    BOOL _acceleratedDragGestureEnabled;
     BOOL _automaticallyAddsFailureRelationships;
     BOOL _allowsMultipleSessions;
     BOOL _additionalTouchesCancelLift;
@@ -46,12 +45,12 @@
 
 + (BOOL)isEnabledByDefault;
 + (void)_cancelAllDrags;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_allowedTouchTypes, setter=_setAllowedTouchTypes:) NSArray *allowedTouchTypes; // @synthesize allowedTouchTypes=_allowedTouchTypes;
 @property(nonatomic, getter=_additionalTouchesCancelLift, setter=_setAdditionalTouchesCancelLift:) BOOL additionalTouchesCancelLift; // @synthesize additionalTouchesCancelLift=_additionalTouchesCancelLift;
 @property(nonatomic, getter=_addItemsGestureConfiguration, setter=_setAddItemsGestureConfiguration:) long long addItemsGestureConfiguration; // @synthesize addItemsGestureConfiguration=_addItemsGestureConfiguration;
 @property(nonatomic, getter=_allowsMultipleSessions, setter=_setAllowsMultipleSessions:) BOOL allowsMultipleSessions; // @synthesize allowsMultipleSessions=_allowsMultipleSessions;
 @property(nonatomic, getter=_automaticallyAddsFailureRelationships, setter=_setAutomaticallyAddsFailureRelationships:) BOOL automaticallyAddsFailureRelationships; // @synthesize automaticallyAddsFailureRelationships=_automaticallyAddsFailureRelationships;
-@property(nonatomic, getter=_isAcceleratedDragGestureEnabled, setter=_setAcceleratedDragGestureEnabled:) BOOL acceleratedDragGestureEnabled; // @synthesize acceleratedDragGestureEnabled=_acceleratedDragGestureEnabled;
 @property(nonatomic, getter=_liftMoveHysteresis, setter=_setLiftMoveHysteresis:) double liftMoveHysteresis; // @synthesize liftMoveHysteresis=_liftMoveHysteresis;
 @property(nonatomic, getter=_competingLongPressDelay, setter=_setCompetingLongPressDelay:) double competingLongPressDelay; // @synthesize competingLongPressDelay=_competingLongPressDelay;
 @property(nonatomic, getter=_competingLongPressOnLift, setter=_setCompetingLongPressOnLift:) BOOL competingLongPressOnLift; // @synthesize competingLongPressOnLift=_competingLongPressOnLift;
@@ -65,7 +64,6 @@
 @property(nonatomic) BOOL allowsSimultaneousRecognitionDuringLift; // @synthesize allowsSimultaneousRecognitionDuringLift=_allowsSimultaneousRecognitionDuringLift;
 @property(readonly, nonatomic) __weak id <UIDragInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=_isContextualSharingAllowed, setter=_setContextualSharingAllowed:) BOOL _contextualSharingAllowed; // @synthesize _contextualSharingAllowed;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
 - (BOOL)dragDriver:(id)arg1 competingGestureRecognizerShouldDelayLift:(id)arg2;
 - (BOOL)dragDriver:(id)arg1 canExcludeCompetingGestureRecognizer:(id)arg2;

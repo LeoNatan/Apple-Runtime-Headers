@@ -15,8 +15,8 @@
     BOOL _isMissingData;
 }
 
-@property(nonatomic) BOOL isMissingData; // @synthesize isMissingData=_isMissingData;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL isMissingData; // @synthesize isMissingData=_isMissingData;
 - (void)performIOChannelReadWithAccessor:(CDUnknownBlockType)arg1;
 - (void)performReadWithAccessor:(CDUnknownBlockType)arg1;
 - (void)dealloc;

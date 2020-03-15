@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     MKMapItem *_mapItem;
 }
 
-@property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (id)initWithMapItem:(id)arg1;
 @property(readonly, nonatomic) NSArray *factoids;
 @property(readonly, nonatomic) _Bool hasStandAloneFactoids;

@@ -17,12 +17,12 @@
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) double _lastUpdateTime; // @synthesize _lastUpdateTime=__lastUpdateTime;
 @property(readonly, nonatomic) CAAnimationGroup *_animationGroup; // @synthesize _animationGroup=__animationGroup;
 @property(readonly, nonatomic) long long _type; // @synthesize _type=__type;
 @property(readonly, nonatomic) float torchLevel; // @synthesize torchLevel=_torchLevel;
-- (void).cxx_destruct;
 - (void)updateAtTime:(double)arg1;
 - (void)_updateAnimationGroup;
 - (id)_doubleBlinkAnimationGroup;

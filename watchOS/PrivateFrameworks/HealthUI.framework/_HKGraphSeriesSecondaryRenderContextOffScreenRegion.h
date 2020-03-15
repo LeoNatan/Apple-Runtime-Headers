@@ -15,10 +15,10 @@
     UIColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) float end; // @synthesize end=_end;
 @property(nonatomic) float start; // @synthesize start=_start;
-- (void).cxx_destruct;
 
 @end
 

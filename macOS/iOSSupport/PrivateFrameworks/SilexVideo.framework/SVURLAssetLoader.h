@@ -18,10 +18,10 @@
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, nonatomic) id <SVVideoURLProviding> URLProvider; // @synthesize URLProvider=_URLProvider;
 @property(readonly, nonatomic) id <SVURLAssetFactory> URLAssetFactory; // @synthesize URLAssetFactory=_URLAssetFactory;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)URLAssetWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithURLAssetFactory:(id)arg1 URLProvider:(id)arg2 options:(id)arg3;
 

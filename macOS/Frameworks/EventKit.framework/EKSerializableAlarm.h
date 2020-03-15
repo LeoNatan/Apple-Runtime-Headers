@@ -17,11 +17,11 @@
 }
 
 + (id)classesForKey;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isTimeToLeaveAlarm; // @synthesize isTimeToLeaveAlarm=_isTimeToLeaveAlarm;
 @property(nonatomic) BOOL isAbsolute; // @synthesize isAbsolute=_isAbsolute;
 @property(copy, nonatomic) NSDate *absoluteDate; // @synthesize absoluteDate=_absoluteDate;
 @property(nonatomic) double relativeOffset; // @synthesize relativeOffset=_relativeOffset;
-- (void).cxx_destruct;
 - (id)createAlarm:(id *)arg1;
 - (id)initWithAlarm:(id)arg1;
 

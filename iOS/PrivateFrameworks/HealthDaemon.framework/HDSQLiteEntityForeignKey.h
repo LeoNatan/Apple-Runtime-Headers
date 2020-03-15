@@ -15,10 +15,10 @@
     long long _deletionAction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long deletionAction; // @synthesize deletionAction=_deletionAction;
 @property(readonly, copy, nonatomic) NSString *property; // @synthesize property=_property;
 @property(readonly, nonatomic) Class entityClass; // @synthesize entityClass=_entityClass;
-- (void).cxx_destruct;
 - (id)creationSQL;
 - (id)initWithEntityClass:(Class)arg1 property:(id)arg2 deletionAction:(long long)arg3;
 

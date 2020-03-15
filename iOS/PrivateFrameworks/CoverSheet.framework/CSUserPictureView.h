@@ -20,11 +20,11 @@
 }
 
 + (id)_monogrammerForLegibilitySettings:(id)arg1 diameter:(double)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double diameter; // @synthesize diameter=_diameter;
 @property(nonatomic) double strength; // @synthesize strength=_legibilityStrength;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings;
 @property(copy, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)_regenerateImage;
 - (id)presentationRegions;
 - (void)layoutSubviews;

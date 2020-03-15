@@ -23,9 +23,9 @@
     double _manualPageCurlMaxDAngle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setManualPageCurlMaxDAngle:) double _manualPageCurlMaxDAngle; // @synthesize _manualPageCurlMaxDAngle;
 @property(readonly, nonatomic) long long _spineLocation; // @synthesize _spineLocation;
-- (void).cxx_destruct;
 - (void)_pageCurlAnimationDidStop:(id)arg1 withState:(id)arg2;
 - (void)_abortManualCurlAtLocation:(struct CGPoint)arg1 withSuggestedVelocity:(double)arg2;
 - (void)_completeManualCurlAtLocation:(struct CGPoint)arg1 withSuggestedVelocity:(double)arg2;

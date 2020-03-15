@@ -30,12 +30,12 @@
 
 + (void)loadAppWithIdentifierIfNeeded:(id)arg1;
 + (void)disableAutomaticAppDiscovery;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKBrowserSwitcherViewController *switcherViewController; // @synthesize switcherViewController=_switcherViewController;
 @property(nonatomic) _Bool hidesCompactAppForStickerDrag; // @synthesize hidesCompactAppForStickerDrag=_hidesCompactAppForStickerDrag;
 @property(nonatomic) _Bool alwaysPresentAppsExpanded; // @synthesize alwaysPresentAppsExpanded=_alwaysPresentAppsExpanded;
 @property(nonatomic) double compactHeight; // @synthesize compactHeight=_compactHeight;
 @property(nonatomic) __weak id <IMAAppPresenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)switcherViewControllerShouldShowIconAndTitleWhenCompact:(id)arg1;
 - (void)switcherViewControllerDidCollapse:(id)arg1;
 - (void)switcherViewControllerDidFinishSwitching:(id)arg1 toViewController:(id)arg2;

@@ -15,8 +15,8 @@
 
 + (_Bool)defaultAllowsNegativeNumbers;
 + (_Bool)defaultAllowsDecimalNumbers;
-@property(copy, nonatomic) NSArray *possibleUnits; // @synthesize possibleUnits=_possibleUnits;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *possibleUnits; // @synthesize possibleUnits=_possibleUnits;
 - (id)defaultSerializedRepresentation;
 - (id)localizedLabelForPossibleUnit:(id)arg1 magnitude:(id)arg2 style:(unsigned int)arg3;
 - (id)initWithDefinition:(id)arg1;

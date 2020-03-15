@@ -18,13 +18,13 @@
     HMDBackingStoreModelObject *_objectChange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL incrementGeneration; // @synthesize incrementGeneration=_incrementGeneration;
 @property(readonly, nonatomic) HMDBackingStoreModelObject *objectChange; // @synthesize objectChange=_objectChange;
 @property(readonly, nonatomic) unsigned long long saveOptions; // @synthesize saveOptions=_saveOptions;
 @property(readonly, nonatomic) NSDictionary *information; // @synthesize information=_information;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) HMDHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)initWithReason:(id)arg1 information:(id)arg2 saveOptions:(unsigned long long)arg3;
 - (void)_updateSaveOptions:(BOOL)arg1 reason:(id)arg2;
 - (id)initWithReason:(id)arg1 information:(id)arg2 postSyncNotification:(BOOL)arg3;

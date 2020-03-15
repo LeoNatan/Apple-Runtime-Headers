@@ -17,11 +17,11 @@
 }
 
 + (id)safariIcon;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickAction; // @synthesize clickAction=_clickAction;
 @property(nonatomic) int image_size; // @synthesize image_size=_image_size;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(nonatomic) BOOL title_nowrap; // @synthesize title_nowrap=_title_nowrap;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 

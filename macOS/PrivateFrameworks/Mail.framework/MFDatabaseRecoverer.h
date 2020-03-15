@@ -18,10 +18,10 @@
 
 + (BOOL)moveDatabaseFromPath:(id)arg1 toPath:(id)arg2;
 + (id)moveDatabaseToUniquePath:(id)arg1;
+- (void).cxx_destruct;
 @property long long analysisResult; // @synthesize analysisResult=_analysisResult;
 @property long long type; // @synthesize type=_type;
 @property(copy) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)_moveToOriginalPath:(id)arg1;
 - (id)_moveToUniquePath;
 - (void)_removeLocks;

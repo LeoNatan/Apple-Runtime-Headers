@@ -16,6 +16,8 @@
 - (id)_accessibilityNanoNavViewController;
 - (_Bool)_accessibilityScrollToVisible;
 - (id)accessibilityHint;
+- (id)accessibilityLabel;
+- (_Bool)isAccessibilityElement;
 
 @end
 

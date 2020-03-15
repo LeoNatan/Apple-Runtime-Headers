@@ -17,10 +17,10 @@
     NSArray *_geometry;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *geometry; // @synthesize geometry=_geometry;
 @property(readonly, nonatomic) NSData *properties; // @synthesize properties=_properties;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_initWithProperties:(id)arg1 geometry:(id)arg2 identifier:(id)arg3;
 - (id)_initWithGeoJSONObject:(id)arg1 error:(id *)arg2;
 

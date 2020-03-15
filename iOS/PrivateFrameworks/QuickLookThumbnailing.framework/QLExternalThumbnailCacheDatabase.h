@@ -14,10 +14,10 @@
     PQLConnection *_db;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PQLConnection *db; // @synthesize db=_db;
 @property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
-- (void).cxx_destruct;
-- (struct NSObject *)whereClauseForItem:(id)arg1;
+- (id)whereClauseForItem:(id)arg1;
 - (_Bool)removeAllThumbnails:(id *)arg1;
 - (id)oldestThumbnailsToFreeAtLeastSpace:(unsigned long long)arg1 error:(id *)arg2;
 - (id)pathExtensionForItem:(id)arg1 error:(id *)arg2;

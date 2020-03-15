@@ -14,9 +14,9 @@
     id <EWSAutodiscoverV2BindingDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL logsActivity; // @synthesize logsActivity=_logsActivity;
 @property(readonly, nonatomic) __weak id <EWSAutodiscoverV2BindingDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)sendMessage:(id)arg1 withProtocol:(id)arg2 retrieveAuthURI:(BOOL)arg3;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;

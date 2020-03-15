@@ -29,6 +29,7 @@
 + (id)engineForFeedback:(id)arg1;
 + (id)sharedEngine;
 + (id)_internalQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_suspensionState) long long suspensionState; // @synthesize suspensionState=_suspensionState;
 @property(nonatomic, getter=_backgroundTaskIdentifier, setter=_setBackgroundTaskIdentifier:) unsigned long long backgroundTaskIdentifier; // @synthesize backgroundTaskIdentifier=_backgroundTaskIdentifier;
 @property(retain, nonatomic, getter=_playerDequeueBlocks, setter=_setPlayerDequeueBlocks:) NSMapTable *playerDequeueBlocks; // @synthesize playerDequeueBlocks=_playerDequeueBlocks;
@@ -36,7 +37,6 @@
 @property(nonatomic, getter=_state, setter=_setState:) long long state; // @synthesize state=_state;
 @property(nonatomic, getter=isEnabled, setter=_setEnabled:) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) long long prewarmCount; // @synthesize prewarmCount=_prewarmCount;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *_stats_key;
 - (void)_internal_teardownBackgroundTask;
 - (void)_internal_setupBackgroundTask;

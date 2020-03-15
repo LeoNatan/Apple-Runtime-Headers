@@ -21,7 +21,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)arg1;
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)arg1;
 - (void)scrollViewDidEndDragging:(UIScrollView *)arg1 willDecelerate:(_Bool)arg2;
-- (void)scrollViewWillEndDragging:(UIScrollView *)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
+- (void)scrollViewWillEndDragging:(UIScrollView *)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(struct CGPoint *)arg3;
 - (void)scrollViewWillBeginDragging:(UIScrollView *)arg1;
 - (void)scrollViewDidZoom:(UIScrollView *)arg1;
 - (void)scrollViewDidScroll:(UIScrollView *)arg1;

@@ -4,42 +4,40 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Safari/SafariExtensionsController.h>
 
-#import <Safari/ExtensionResourceVerifier-Protocol.h>
 #import <Safari/SFSafariExtensionHostDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSString;
-@protocol OS_dispatch_queue;
+@class NSMutableDictionary;
 
 __attribute__((visibility("hidden")))
-@interface SafariAppExtensionsController : NSObject <ExtensionResourceVerifier, SFSafariExtensionHostDelegate>
+@interface SafariAppExtensionsController : SafariExtensionsController <SFSafariExtensionHostDelegate>
 {
-    id _extensionMatchingContext;
-    NSMutableSet *_enabledExtensions;
-    NSMutableSet *_blockedExtensions;
-    NSMutableDictionary *_extensionIdentifierToStateMap;
-    NSMutableDictionary *_extensionUniqueIdentifierToExtensionDataMap;
     NSMutableDictionary *_contentBlockerToAssociatedAppExtensionMap;
-    NSObject<OS_dispatch_queue> *_appBundleValidationQueue;
     id _keyBagLockStatusObservationToken;
     BOOL _shouldReadFromKeychainAfterKeyBagIsUnlocked;
-    BOOL _allowUnsignedExtensions;
-    NSArray *_extensions;
-    NSDictionary *_extensionIdentifierToBaseURIMap;
-    NSString *_crashReporterMessage;
 }
 
 + (id)_styleSheetsFromExtensionDictionary:(id)arg1;
 + (id)_contentScriptsFromExtensionDictionary:(id)arg1;
 + (id)_extensionWebsiteAccessForExtensionDictionary:(id)arg1;
++ (id)_baseURIForExtension:(id)arg1;
++ (void)_reportEnabledExtensionsCountToMessageTracer:(unsigned int)arg1 disabledExtensionCount:(unsigned int)arg2;
++ (void)_reportExtensionToMessageTracer:(id)arg1 enabled:(BOOL)arg2;
++ (id)_extensionsStateWithoutUnsignedExtensions:(id)arg1;
++ (id)_extensionsFromExtensionsState:(id)arg1;
++ (id)_composedIdentifierForStateOfExtensionWithBundleIdentifier:(id)arg1 developerIdentifier:(id)arg2;
++ (id)_extensionStateEnabledKey;
++ (id)extensionsCrashReporterMessageBundleParameterKey;
++ (id)_extensionsCrashReporterMessageTitle;
++ (id)extensionIdentifierToBaseURIMapBundleParameterKey;
++ (id)extensionURLScheme;
++ (id)_extensionPointIdentifier;
++ (id)_skipLoadingEnabledExtensionsAtLaunchPreferenceKey;
++ (BOOL)_initializeExtensionData:(id)arg1 forExtension:(id)arg2;
++ (id)_extensionDataClass;
 + (id)sharedController;
-@property(nonatomic) BOOL allowUnsignedExtensions; // @synthesize allowUnsignedExtensions=_allowUnsignedExtensions;
-@property(readonly, copy, nonatomic) NSString *crashReporterMessage; // @synthesize crashReporterMessage=_crashReporterMessage;
-@property(readonly, copy, nonatomic) NSDictionary *extensionIdentifierToBaseURIMap; // @synthesize extensionIdentifierToBaseURIMap=_extensionIdentifierToBaseURIMap;
-@property(readonly, copy, nonatomic) NSArray *extensions; // @synthesize extensions=_extensions;
 - (void).cxx_destruct;
-- (BOOL)canToggleAllowUnsignedExtensions;
 - (void)_handleKeyBagUnlock;
 - (void)_listenForKeyBagUnlockEvent;
 - (void)getBaseURIOfExtensionWithUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -69,7 +67,6 @@ __attribute__((visibility("hidden")))
 - (void)getPropertiesOfPage:(id)arg1 forExtensionWithUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)reloadPage:(id)arg1;
 - (void)dispatchMessageWithName:(id)arg1 fromExtensionWithUUID:(id)arg2 toPage:(id)arg3 userInfo:(id)arg4;
-- (void)verifyExtensionResourceAtExtensionURL:(id)arg1 fileURL:(id)arg2;
 - (void)pageWithUUID:(id)arg1 willNavigateToURL:(id)arg2;
 - (void)contentBlockerWithIdentifier:(id)arg1 blockedResourceWithURL:(id)arg2 inPageWithUUID:(id)arg3;
 - (void)getExtensionHeadersForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -87,7 +84,6 @@ __attribute__((visibility("hidden")))
 - (void)dispatchToolbarItemClickedInWindow:(id)arg1 toExtensionWithUUID:(id)arg2;
 - (void)dispatchMessage:(id)arg1 userInfo:(id)arg2 fromPageWithUUID:(id)arg3 toExtensionWithUUID:(id)arg4;
 - (void)_connectToExtension:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)completeRequestToExtensionWithUUID:(id)arg1 withRequestIdentifier:(id)arg2;
 - (void)loadPopoverForExtensionWithUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_loadAssociatedContentBlockersForExtension:(id)arg1;
 - (id)_localizedContextMenuItemLabelForLocalizedInfoDictionary:(id)arg1 withCommand:(id)arg2;
@@ -98,53 +94,22 @@ __attribute__((visibility("hidden")))
 - (void)_loadToolbarItemForExtension:(id)arg1 withCodeRef:(struct __SecCode *)arg2;
 - (id)_toolbarItemForExtensionDictionary:(id)arg1 localizedInfoDictionary:(id)arg2 extensionIdentifier:(id)arg3 extensionUUID:(id)arg4 imagePathForName:(CDUnknownBlockType)arg5 validateResourceHandler:(CDUnknownBlockType)arg6;
 - (void)_loadContentScriptsAndStylesheetsForExtension:(id)arg1 withCodeRef:(struct __SecCode *)arg2;
-- (BOOL)_validateResourceWithURL:(id)arg1 resourceData:(id)arg2 inExtension:(id)arg3 codeRef:(struct __SecCode *)arg4;
-- (void)_loadExtensions:(id)arg1;
 - (void)_connectContextToSessionWithRequestIdentifier:(id)arg1 remoteViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_extensionHasPopover:(id)arg1;
-- (void)_validateAndLoadExtensionIfNecessary:(id)arg1 attemptRetryOnFailure:(BOOL)arg2;
-- (void)_replaceLegacyExtensionsWithAppExtension:(id)arg1 andDeveloperIdentifier:(id)arg2;
-- (void)_updateExtensionStateIfWebsiteAccessIncreased:(id)arg1;
 - (id)_cdHashForCodeSigningDictionary:(id)arg1;
-- (id)enabledExtensions;
 - (void)setContextMenuEventUserInfo:(id)arg1 forPageWithUUID:(id)arg2 forExtensionWithUUID:(id)arg3;
 - (void)invalidateContextMenuUserInfoForPageWithUUID:(id)arg1;
 - (id)contextMenuItemsForEnabledExtensionsForPageWithUUID:(id)arg1 withCurrentURL:(id)arg2;
 - (id)toolbarItemForIdentifier:(id)arg1 browserWindowController:(id)arg2;
 - (id)toolbarItemIdentifiers;
-- (id)appExtensionDataForExtension:(id)arg1;
-- (id)userVisibleWebsiteAccessForExtension:(id)arg1;
-- (id)extensionWithUUID:(id)arg1;
-- (void)_updateAppExtensionsCrashReporterMessage;
-- (void)_retryExtensionValidation:(id)arg1;
-- (void)_unloadExtensionIfNecessary:(id)arg1;
-- (void)_disableAndBlockExtension:(id)arg1;
-- (BOOL)_extensionShouldBeEnabled:(id)arg1 withCodeSigningDictionary:(id)arg2;
-- (void)_setExtension:(id)arg1 isEnabled:(BOOL)arg2 skipSavingToKeychain:(BOOL)arg3;
-- (void)setExtension:(id)arg1 isEnabled:(BOOL)arg2;
-- (BOOL)extensionIsEnabled:(id)arg1;
-- (void)_setExtensionIdentifierToStateMap:(id)arg1 forExtensionWithComposedIdentifier:(id)arg2;
-- (void)messageTraceAppExtensions;
-- (id)_composedIdentifierForExtensionStateForExtension:(id)arg1;
-- (void)_extensionsWereGloballyDisabled;
-- (void)_extensionsWereGloballyEnabled;
-- (BOOL)_extensionsEnabled;
-- (void)resetExtensionsState;
-- (void)disableUnsignedExtensionsIfNecessary;
-- (void)_writeExtensionsStateToKeychain;
-@property(readonly, nonatomic) BOOL hasAnyEnabledExtensions;
-- (BOOL)_hasAnyEnabledExtensionsInKeychain;
-- (void)appExtensionBlacklistDidChange;
-- (void)findExtensions;
-- (void)loadEnabledExtensions;
-- (void)dealloc;
-- (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)extensionDataForExtension:(id)arg1;
+- (void)_loadEnabledExtension:(id)arg1;
+- (void)_unloadPreviouslyEnabledExtension:(id)arg1;
+- (id)_readExtensionsStateFromStorage;
+- (void)_saveExtensionsStateToStorage;
+- (void)_connectToExtensionForValidation:(id)arg1 untrustedCodeSigningDictionary:(id)arg2 attemptRetryOnFailure:(BOOL)arg3;
+- (void)_deferAccessToExtensionsDataInStorageDuringLoad:(BOOL)arg1;
+- (BOOL)_canAccessExtensionsDataInStorage;
 
 @end
 

@@ -18,8 +18,8 @@
     NSObject<OS_xpc_object> *_listener;
 }
 
-@property(readonly, nonatomic) NSSet *peers; // @synthesize peers=_peers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *peers; // @synthesize peers=_peers;
 - (id)description;
 - (void)_localeChanged:(id)arg1;
 - (void)dealloc;

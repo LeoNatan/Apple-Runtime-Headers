@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)archivedMessageFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_4c969caf auditToken; // @synthesize auditToken=_auditToken;
 @property(nonatomic) unsigned int clientPort; // @synthesize clientPort=_clientPort;
 @property(copy, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 @property(nonatomic) int key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *senderBundleId;
 - (void)encodeWithCoder:(id)arg1;

@@ -24,11 +24,13 @@ __attribute__((visibility("hidden")))
     unsigned int _readerMarkLength;
     struct os_unfair_lock_s _readerLock;
     _Bool _displayFullPhotoInline;
+    _Bool _displayFullScreenPhotoGallery;
     _Bool _highQuality;
     _Bool _isBusinessOwned;
     _Bool _useGallery;
     struct {
         unsigned int has_displayFullPhotoInline:1;
+        unsigned int has_displayFullScreenPhotoGallery:1;
         unsigned int has_highQuality:1;
         unsigned int has_isBusinessOwned:1;
         unsigned int has_useGallery:1;
@@ -45,6 +47,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_licenseUrl:1;
         unsigned int wrote_photo:1;
         unsigned int wrote_displayFullPhotoInline:1;
+        unsigned int wrote_displayFullScreenPhotoGallery:1;
         unsigned int wrote_highQuality:1;
         unsigned int wrote_isBusinessOwned:1;
         unsigned int wrote_useGallery:1;
@@ -66,6 +69,8 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasDisplayFullScreenPhotoGallery;
+@property(nonatomic) _Bool displayFullScreenPhotoGallery;
 @property(nonatomic) _Bool hasIsBusinessOwned;
 @property(nonatomic) _Bool isBusinessOwned;
 @property(nonatomic) _Bool hasHighQuality;

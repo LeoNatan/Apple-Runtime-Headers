@@ -14,9 +14,12 @@
     PKPaymentSetupProduct *_product;
 }
 
++ (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsReaderModeEntry; // @synthesize allowsReaderModeEntry=_allowsReaderModeEntry;
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
-- (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

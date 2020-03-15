@@ -15,10 +15,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) VSOptional *destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) VSOptional *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)init;
 

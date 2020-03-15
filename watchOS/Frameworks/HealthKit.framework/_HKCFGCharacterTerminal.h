@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSCharacterSet *_characterSet;
 }
 
-@property(copy, nonatomic) NSCharacterSet *characterSet; // @synthesize characterSet=_characterSet;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSCharacterSet *characterSet; // @synthesize characterSet=_characterSet;
 - (unsigned int)_minimumLength;
 - (id)_label;
 - (_Bool)_scanValue:(id *)arg1 withScanner:(id)arg2;

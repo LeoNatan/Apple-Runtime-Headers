@@ -20,10 +20,10 @@
 
 + (id)persistentIdentifierForRecordData:(id)arg1;
 + (id)persistentIdentifierPrefixForRecordWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool includeAvatarData; // @synthesize includeAvatarData=_includeAvatarData;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) id <AVTAvatarRecord> record; // @synthesize record=_record;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)tokenForObservingChangesWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)requiresEncryption;

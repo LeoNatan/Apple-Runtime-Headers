@@ -14,9 +14,9 @@
     NSDictionary *_recipe;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *recipe; // @synthesize recipe=_recipe;
 @property(retain, nonatomic) AVAsset *videoSource; // @synthesize videoSource=_videoSource;
-- (void).cxx_destruct;
 - (id)result;
 - (_Bool)render:(out id *)arg1;
 - (_Bool)prepare:(out id *)arg1;

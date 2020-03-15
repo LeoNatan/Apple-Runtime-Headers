@@ -22,11 +22,11 @@
 + (id)_formattedDecimalStringForNumber:(id)arg1;
 + (id)itemWithBulletins:(id)arg1;
 + (id)itemWithSeedBulletin:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLBulletinPresentation *presentation; // @synthesize presentation=_presentation;
 @property(retain, nonatomic) CUISNotificationCenterIcon *ncIcon; // @synthesize ncIcon=_ncIcon;
 @property(nonatomic) float ncCellHeight; // @synthesize ncCellHeight=_ncCellHeight;
 @property(nonatomic) _Bool shouldPlayLightsAndSirens; // @synthesize shouldPlayLightsAndSirens=_shouldPlayLightsAndSirens;
-- (void).cxx_destruct;
 - (id)alertServiceName;
 - (_Bool)isEqual:(id)arg1;
 - (id)removeBulletinPassingTest:(CDUnknownBlockType)arg1 shouldInvalidateItem:(_Bool *)arg2;

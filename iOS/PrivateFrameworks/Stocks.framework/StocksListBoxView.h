@@ -13,8 +13,8 @@
     UIColor *_imageMaskColor;
 }
 
-@property(retain, nonatomic) UIColor *imageMaskColor; // @synthesize imageMaskColor=_imageMaskColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *imageMaskColor; // @synthesize imageMaskColor=_imageMaskColor;
 - (id)initWithBackgroundMask:(id)arg1;
 
 @end

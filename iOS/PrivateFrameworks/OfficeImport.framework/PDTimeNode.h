@@ -43,8 +43,8 @@ __attribute__((visibility("hidden")))
     NSDictionary *attributeMap;
 }
 
-@property(retain, nonatomic) NSDictionary *attributeMap; // @synthesize attributeMap;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *attributeMap; // @synthesize attributeMap;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

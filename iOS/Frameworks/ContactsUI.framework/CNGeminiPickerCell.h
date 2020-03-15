@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIView *_badgeView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *badgeView; // @synthesize badgeView=_badgeView;
 @property(readonly, nonatomic) NSString *badgeText; // @synthesize badgeText=_badgeText;
 @property(readonly, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(readonly, nonatomic) UILabel *labelLabel; // @synthesize labelLabel=_labelLabel;
-- (void).cxx_destruct;
 - (id)variableConstraints;
 - (void)tintColorDidChange;
 - (id)valueView;

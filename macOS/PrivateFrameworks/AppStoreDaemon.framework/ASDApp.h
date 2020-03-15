@@ -38,6 +38,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) ASDProgress *remoteProgress; // @synthesize remoteProgress=_remoteProgress;
 @property long long status; // @synthesize status=_status;
 @property long long extensions; // @synthesize extensions=_extensions;
@@ -60,7 +61,6 @@
 @property(retain) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(readonly) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain) NSString *artistName; // @synthesize artistName=_artistName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

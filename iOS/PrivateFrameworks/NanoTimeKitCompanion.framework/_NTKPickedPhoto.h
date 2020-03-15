@@ -15,10 +15,10 @@
     unsigned long long _subsampleFactor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long subsampleFactor; // @synthesize subsampleFactor=_subsampleFactor;
 @property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) NTKPhoto *photo; // @synthesize photo=_photo;
-- (void).cxx_destruct;
 
 @end
 

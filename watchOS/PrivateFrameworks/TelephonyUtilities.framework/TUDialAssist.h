@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int dialAssistUserSettingsChangedToken; // @synthesize dialAssistUserSettingsChangedToken=_dialAssistUserSettingsChangedToken;
 @property(readonly, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
-- (void).cxx_destruct;
 - (void)operatorBundleChange:(id)arg1;
 - (void)carrierBundleChange:(id)arg1;
 - (void)dealloc;

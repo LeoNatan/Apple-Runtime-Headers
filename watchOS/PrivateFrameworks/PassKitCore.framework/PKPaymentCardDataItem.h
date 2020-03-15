@@ -15,9 +15,9 @@
 }
 
 + (int)dataType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKCurrencyAmount *peerPaymentBalance; // @synthesize peerPaymentBalance=_peerPaymentBalance;
 @property(nonatomic) _Bool showPeerPaymentBalance; // @synthesize showPeerPaymentBalance=_showPeerPaymentBalance;
-- (void).cxx_destruct;
 - (_Bool)isValidWithError:(id *)arg1;
 @property(readonly, nonatomic) _Bool shouldShowCardArt;
 - (int)status;

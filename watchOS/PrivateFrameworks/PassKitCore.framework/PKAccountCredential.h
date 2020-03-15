@@ -15,10 +15,10 @@
     PKAccountWebServicePassDetailsResponse *_passDetailsResponse;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKAccountWebServicePassDetailsResponse *passDetailsResponse; // @synthesize passDetailsResponse=_passDetailsResponse;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ownershipTokenIdentifier;
 - (id)longDescription;
 - (unsigned int)hash;

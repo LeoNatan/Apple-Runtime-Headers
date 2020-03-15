@@ -19,11 +19,11 @@
     id <HFCharacteristicReadPolicy> _readPolicy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HFCharacteristicReadPolicy> readPolicy; // @synthesize readPolicy=_readPolicy;
 @property(retain, nonatomic) HFUpdateLogger *logger; // @synthesize logger=_logger;
 @property(copy, nonatomic) NSDictionary *updateOptions; // @synthesize updateOptions=_updateOptions;
 @property(nonatomic) SEL senderSelector; // @synthesize senderSelector=_senderSelector;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

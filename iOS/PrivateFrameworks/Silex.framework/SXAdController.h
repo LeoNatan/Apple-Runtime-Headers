@@ -27,6 +27,7 @@
     NSMutableDictionary *_bannerViews;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didLoadFirstBannerView; // @synthesize didLoadFirstBannerView=_didLoadFirstBannerView;
 @property(retain, nonatomic) NSMutableDictionary *bannerViews; // @synthesize bannerViews=_bannerViews;
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *bannerViewsSemaphore; // @synthesize bannerViewsSemaphore=_bannerViewsSemaphore;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) id <SXAdvertisingSettings> debugAdvertisementSettings; // @synthesize debugAdvertisementSettings=_debugAdvertisementSettings;
 @property(nonatomic, getter=isInteractivityDebuggingEnabled) _Bool interactivityDebuggingEnabled; // @synthesize interactivityDebuggingEnabled=_interactivityDebuggingEnabled;
 @property(nonatomic, getter=isDebuggingEnabled) _Bool debuggingEnabled; // @synthesize debuggingEnabled=_debuggingEnabled;
-- (void).cxx_destruct;
 - (_Bool)isRect:(struct CGRect)arg1 withinMinimumDistanceOfRect:(struct CGRect)arg2 viewport:(struct CGSize)arg3;
 - (_Bool)isDisplayingAdsWithinScreenfullOfComponentView:(id)arg1;
 - (_Bool)component:(id)arg1 isLastComponentInComponents:(id)arg2;

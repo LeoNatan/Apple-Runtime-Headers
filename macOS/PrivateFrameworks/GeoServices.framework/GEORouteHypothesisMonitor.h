@@ -49,13 +49,13 @@
 + (void)setUserPreferencesProvider:(id)arg1;
 + (id)userPreferencesProvider;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEORouteHypothesis *hypothesis; // @synthesize hypothesis=_hypothesis;
 @property(readonly, nonatomic) NSDate *arrivalDate; // @synthesize arrivalDate=_arrivalDate;
 @property(readonly, nonatomic) int transportType; // @synthesize transportType=_transportType;
 @property(readonly, nonatomic) GEOComposedWaypoint *destination; // @synthesize destination=_destination;
 @property(readonly, nonatomic) GEOComposedWaypoint *source; // @synthesize source=_source;
 @property(retain, nonatomic) GEODirectionsRequestFeedback *feedback; // @synthesize feedback=_feedback;
-- (void).cxx_destruct;
 - (id)routeMatchForLocation:(id)arg1;
 - (void)travelStateChanged;
 - (void)checkRouteForLocation:(id)arg1;

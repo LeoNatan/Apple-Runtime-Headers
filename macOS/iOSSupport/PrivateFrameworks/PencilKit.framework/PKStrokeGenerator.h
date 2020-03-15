@@ -59,6 +59,8 @@
 + (vector_58517711)inputPointsFromPath:(struct CGPath *)arg1 velocityForDistanceFunction:(CDUnknownBlockType)arg2;
 + (vector_58517711)inputPointsFromPoints:(vector_e1abc270)arg1 velocityForDistanceFunction:(CDUnknownBlockType)arg2;
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double inputScale; // @synthesize inputScale=_inputScale;
 @property double eraserIndicatorAlpha; // @synthesize eraserIndicatorAlpha=_eraserIndicatorAlpha;
 @property BOOL isSnappedToRuler; // @synthesize isSnappedToRuler=_isSnappedToRuler;
@@ -86,8 +88,6 @@
 @property(nonatomic) double rulerWidth; // @synthesize rulerWidth=_rulerWidth;
 @property(nonatomic) BOOL useRuler; // @synthesize useRuler=_useRuler;
 @property(nonatomic) struct CGAffineTransform rulerTransform; // @synthesize rulerTransform=_rulerTransform;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)strokeFromPoints:(struct CGPoint *)arg1 count:(unsigned long long)arg2 ink:(id)arg3 inputScale:(double)arg4;
 - (id)strokeFromPath:(struct CGPath *)arg1 ink:(id)arg2 inputScale:(double)arg3 velocityForDistanceFunction:(CDUnknownBlockType)arg4;
 - (id)strokeFromInputPoints:(vector_58517711 *)arg1 inputType:(long long)arg2 ink:(id)arg3 inputScale:(double)arg4;

@@ -13,8 +13,8 @@
     NSArray *_images;
 }
 
-@property(readonly, nonatomic) NSArray *images; // @synthesize images=_images;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *images; // @synthesize images=_images;
 - (id)initWithJSONData:(id)arg1;
 - (id)initWithJSONString:(id)arg1;
 

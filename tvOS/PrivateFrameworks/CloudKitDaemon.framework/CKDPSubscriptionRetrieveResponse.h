@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)subscriptionsType;
-@property(retain, nonatomic) NSMutableArray *subscriptions; // @synthesize subscriptions=_subscriptions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *subscriptions; // @synthesize subscriptions=_subscriptions;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

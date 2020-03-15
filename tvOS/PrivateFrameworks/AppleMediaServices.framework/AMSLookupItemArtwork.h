@@ -13,8 +13,8 @@
     NSDictionary *_artworkDictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *artworkDictionary; // @synthesize artworkDictionary=_artworkDictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *artworkDictionary; // @synthesize artworkDictionary=_artworkDictionary;
 - (id)URLWithHeight:(long long)arg1 width:(long long)arg2 cropStyle:(id)arg3 format:(id)arg4;
 @property(readonly, nonatomic) NSString *URLString;
 @property(readonly, nonatomic) double height;

@@ -48,6 +48,7 @@
 + (_Bool)_applicationWillTerminate;
 + (id)sharedController;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType prewarmingBlock; // @synthesize prewarmingBlock=_prewarmingBlock;
 @property(retain, nonatomic) NSMutableDictionary *requestQOSClassCompletionBlocks; // @synthesize requestQOSClassCompletionBlocks=_requestQOSClassCompletionBlocks;
 @property(readonly, nonatomic, getter=isRequestingConnection) _Bool requestingConnection; // @synthesize requestingConnection=_requestingConnection;
@@ -60,7 +61,6 @@
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setBlocksConnectionAtResume:) _Bool _blocksConnectionAtResume; // @synthesize _blocksConnectionAtResume;
 @property(readonly, nonatomic) IMDaemonListener *listener; // @synthesize listener=_daemonListener;
-- (void).cxx_destruct;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationWillEnterForeground;
 - (void)systemApplicationDidEnterBackground;

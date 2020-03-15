@@ -17,8 +17,8 @@
     _Bool _manualListener;
 }
 
-@property(readonly, copy, nonatomic) SBSceneHandle *sceneHandle; // @synthesize sceneHandle=_sceneHandle;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) SBSceneHandle *sceneHandle; // @synthesize sceneHandle=_sceneHandle;
 - (void)_noteSceneContentReadinessDidChange:(_Bool)arg1;
 - (void)sceneHandle:(id)arg1 didDestroyScene:(id)arg2;
 - (void)sceneHandle:(id)arg1 didUpdateContentState:(long long)arg2;

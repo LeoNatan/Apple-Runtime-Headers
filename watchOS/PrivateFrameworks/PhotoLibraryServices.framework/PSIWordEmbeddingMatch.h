@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) double score; // @synthesize score=_score;
 @property(readonly) NSString *extendedWord; // @synthesize extendedWord=_extendedWord;
 @property(readonly) NSString *word; // @synthesize word=_word;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

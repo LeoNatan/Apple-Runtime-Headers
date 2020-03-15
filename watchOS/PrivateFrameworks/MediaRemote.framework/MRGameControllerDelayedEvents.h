@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
+
 __attribute__((visibility("hidden")))
 @interface MRGameControllerDelayedEvents : NSObject
 {
-    struct NSMutableDictionary *_events;
+    NSMutableDictionary *_events;
 }
 
 - (void).cxx_destruct;

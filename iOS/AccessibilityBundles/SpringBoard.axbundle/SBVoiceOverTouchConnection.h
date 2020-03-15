@@ -17,9 +17,9 @@
 }
 
 + (id)defaultConnection;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inVoiceOverPassthroughMode; // @synthesize inVoiceOverPassthroughMode;
 @property(nonatomic) _Bool screenCurtainEnabled; // @synthesize screenCurtainEnabled=_screenCurtainEnabled;
-- (void).cxx_destruct;
 - (_Bool)voiceOverTouchLabelElementAlertItem:(id)arg1 textFieldShouldReturn:(id)arg2;
 - (void)voiceOverTouchLabelElementAlertItemDidCancel:(id)arg1;
 - (void)voiceOverTouchLabelElementAlertItemDidAccept:(id)arg1 withTextField:(id)arg2;

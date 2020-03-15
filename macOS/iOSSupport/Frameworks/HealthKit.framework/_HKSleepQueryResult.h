@@ -23,9 +23,9 @@
 + (id)_preferredSourceFromSources:(id)arg1 sourceOrder:(id)arg2;
 + (id)samplesForSamplesBySource:(id)arg1;
 + (id)dateIntervalForSamples:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *samplesBySource; // @synthesize samplesBySource=_samplesBySource;
 @property(readonly, nonatomic) NSDateInterval *resultInterval; // @synthesize resultInterval=_resultInterval;
-- (void).cxx_destruct;
 - (id)endDate;
 - (id)startDate;
 - (void)encodeWithCoder:(id)arg1;

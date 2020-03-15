@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSColor *_strokeColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) double arrowOffset; // @synthesize arrowOffset=_arrowOffset;
 @property(nonatomic) long long arrowPosition; // @synthesize arrowPosition=_arrowPosition;
-- (void).cxx_destruct;
 - (void)layoutSublayers;
 - (void)setContentsScale:(double)arg1;
 - (void)dealloc;

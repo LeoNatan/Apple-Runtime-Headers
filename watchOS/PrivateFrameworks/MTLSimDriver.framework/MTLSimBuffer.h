@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _deallocator;
     unsigned long long _length;
     struct __IOSurface *_iosurface;
+    unsigned long long _gpuAddress;
 }
 
 @property(readonly) struct __IOSurface *iosurface; // @synthesize iosurface=_iosurface;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)newTextureWithDescriptor:(id)arg1 offset:(unsigned int)arg2 bytesPerRow:(unsigned int)arg3;
 - (id)newRemoteBufferViewForDevice:(id)arg1;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) unsigned long long gpuAddress; // @synthesize gpuAddress=_gpuAddress;
 - (id)formattedDescription:(unsigned int)arg1;
 @property(readonly) unsigned int bufferRef;
 @property(readonly) unsigned int length; // @dynamic length;

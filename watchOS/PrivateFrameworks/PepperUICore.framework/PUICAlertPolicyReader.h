@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *lostModePolicyDictionary; // @synthesize lostModePolicyDictionary=_lostModePolicyDictionary;
 @property(retain, nonatomic) NSDictionary *alertSuppressionDictionary; // @synthesize alertSuppressionDictionary=_alertSuppressionDictionary;
 @property(retain, nonatomic) NSDictionary *alertPolicyDictionary; // @synthesize alertPolicyDictionary=_alertPolicyDictionary;
-- (void).cxx_destruct;
 
 @end
 

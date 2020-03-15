@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_toSnapshotView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *toSnapshotView; // @synthesize toSnapshotView=_toSnapshotView;
 @property(retain, nonatomic) UIView *fromSnapshotView; // @synthesize fromSnapshotView=_fromSnapshotView;
-- (void).cxx_destruct;
 
 @end
 

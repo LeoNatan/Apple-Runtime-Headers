@@ -27,6 +27,7 @@
     double _accountKeyOperationTimeInterval;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double accountKeyOperationTimeInterval; // @synthesize accountKeyOperationTimeInterval=_accountKeyOperationTimeInterval;
 @property(readonly, nonatomic) long long accountKeyUnderlyingErrorCode; // @synthesize accountKeyUnderlyingErrorCode=_accountKeyUnderlyingErrorCode;
 @property(readonly, nonatomic) NSString *accountKeyUnderlyingErrorDomain; // @synthesize accountKeyUnderlyingErrorDomain=_accountKeyUnderlyingErrorDomain;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) NSString *cloudKitErrorDomain; // @synthesize cloudKitErrorDomain=_cloudKitErrorDomain;
 @property(readonly, nonatomic) _Bool cloudKitSuccess; // @synthesize cloudKitSuccess=_cloudKitSuccess;
 @property(readonly, nonatomic) unsigned long long keyTransparencyVersion; // @synthesize keyTransparencyVersion=_keyTransparencyVersion;
-- (void).cxx_destruct;
 @property(readonly) unsigned short rtcType;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 @property(readonly) NSString *name;

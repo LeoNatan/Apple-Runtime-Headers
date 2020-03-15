@@ -18,11 +18,11 @@
     SMSystem_Daemon_Network *_system;
 }
 
+- (void).cxx_destruct;
 @property(getter=isFileSystemReady) BOOL fileSystemReady; // @synthesize fileSystemReady=_fileSystemReady;
 @property(retain) SMSystem_Daemon_Network *system; // @synthesize system=_system;
 @property(retain) NSURL *localStorageArea; // @synthesize localStorageArea=_localStorageArea;
 @property(retain) NSMutableDictionary *cachedPaths; // @synthesize cachedPaths=_cachedPaths;
-- (void).cxx_destruct;
 - (void)cleanup;
 - (id)bundleInformationAtPaths:(id)arg1;
 - (id)resourceValuesForKeys:(id)arg1 onPaths:(id)arg2 error:(id *)arg3;

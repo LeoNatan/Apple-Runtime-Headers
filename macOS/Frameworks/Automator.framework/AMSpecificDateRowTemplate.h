@@ -15,10 +15,10 @@
     NSDatePicker *datePicker;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDatePicker *datePicker; // @synthesize datePicker;
 @property(retain) NSPopUpButton *datePopUpButton; // @synthesize datePopUpButton;
 @property BOOL hasCreatedViews; // @synthesize hasCreatedViews;
-- (void).cxx_destruct;
 - (double)matchForPredicate:(id)arg1;
 @property(readonly) NSArray *matchingLeftExpressions;
 - (id)predicateWithSubpredicates:(id)arg1;

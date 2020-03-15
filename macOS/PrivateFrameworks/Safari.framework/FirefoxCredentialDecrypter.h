@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_masterPassword;
 }
 
-@property(copy, nonatomic) NSString *masterPassword; // @synthesize masterPassword=_masterPassword;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *masterPassword; // @synthesize masterPassword=_masterPassword;
 - (void)_test_getKeyId:(id *)arg1 initializationVector:(id *)arg2 cipherText:(id *)arg3 fromEncryptedCredentialData:(id)arg4;
 - (id)_test_dataByDecryptingData:(id)arg1 rawKey:(id)arg2 initializationVector:(id)arg3;
 - (void)_test_getRawKey:(id *)arg1 andInitializationVector:(id *)arg2 fromPassword:(id)arg3 globalSalt:(id)arg4 entrySalt:(id)arg5;

@@ -27,6 +27,7 @@
 + (id)_blueVideoImage;
 + (id)_blueAudioImage;
 + (id)_blueScreenSharingImage;
+- (void).cxx_destruct;
 @property(retain) NSArray *stackedLabelsConstraints; // @synthesize stackedLabelsConstraints=_stackedLabelsConstraints;
 @property(retain) SOAVPopUpButtonViewController *screenSharingPopUpButtonViewController; // @synthesize screenSharingPopUpButtonViewController=_screenSharingPopUpButtonViewController;
 @property(retain) SOAVPopUpButtonViewController *videoPopUpButtonViewController; // @synthesize videoPopUpButtonViewController=_videoPopUpButtonViewController;
@@ -36,7 +37,6 @@
 @property(retain) NSTextField *locationLabel; // @synthesize locationLabel=_locationLabel;
 @property(retain) NSStackView *horizontalLayoutStackView; // @synthesize horizontalLayoutStackView=_horizontalLayoutStackView;
 @property(nonatomic) BOOL hideAVButtonsOnRollover; // @synthesize hideAVButtonsOnRollover=_hideAVButtonsOnRollover;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_setVerifiedBusinessImageView;
 - (void)setObjectValue:(id)arg1;

@@ -17,10 +17,10 @@
     NSString *_URLString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *URLString; // @synthesize URLString=_URLString;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *alternateTitle; // @synthesize alternateTitle=_alternateTitle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *cacheRepresentation;
 - (id)initWithCacheRepresentation:(id)arg1;
 - (id)initWithCompletionDictionary:(id)arg1;

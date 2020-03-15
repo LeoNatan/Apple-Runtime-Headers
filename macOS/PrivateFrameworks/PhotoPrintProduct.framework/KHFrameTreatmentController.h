@@ -15,9 +15,9 @@
     KHTheme *_theme;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) KHTheme *theme; // @synthesize theme=_theme;
 @property(readonly, nonatomic) KHFrame *frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (id)treatmentAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfTreatments;
 - (unsigned long long)thumbnailType;

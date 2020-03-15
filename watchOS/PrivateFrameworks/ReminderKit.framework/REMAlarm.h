@@ -24,12 +24,12 @@
 + (id)cdEntityName;
 + (id)objectIDWithUUID:(id)arg1;
 + (id)newObjectID;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originalAlarmUID; // @synthesize originalAlarmUID=_originalAlarmUID;
 @property(retain, nonatomic) NSString *alarmUID; // @synthesize alarmUID=_alarmUID;
 @property(retain, nonatomic) NSDate *acknowledgedDate; // @synthesize acknowledgedDate=_acknowledgedDate;
 @property(retain, nonatomic) REMObjectID *objectID; // @synthesize objectID=_objectID;
 @property(retain, nonatomic) REMAlarmTrigger *trigger; // @synthesize trigger=_trigger;
-- (void).cxx_destruct;
 - (_Bool)isSnooze;
 - (_Bool)isOriginal;
 - (_Bool)isAcknowledged;

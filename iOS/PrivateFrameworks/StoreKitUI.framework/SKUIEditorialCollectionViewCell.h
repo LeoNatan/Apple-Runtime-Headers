@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     _Bool _layoutNeedsLayout;
 }
 
-@property(readonly, nonatomic) SKUIEditorialCellLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIEditorialCellLayout *layout; // @synthesize layout=_layout;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

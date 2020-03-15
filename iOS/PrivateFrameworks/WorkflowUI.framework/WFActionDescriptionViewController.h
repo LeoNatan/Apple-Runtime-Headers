@@ -24,13 +24,13 @@
     UIVisualEffectView *_blurView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIVisualEffectView *blurView; // @synthesize blurView=_blurView;
 @property(readonly, nonatomic) WFActionDocumentationView *documentationView; // @synthesize documentationView=_documentationView;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) UIButton *dismissButton; // @synthesize dismissButton=_dismissButton;
 @property(readonly, nonatomic) WFActionDescriptionTitleView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) __weak id <WFActionDescriptionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

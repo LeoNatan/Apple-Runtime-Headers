@@ -20,8 +20,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) _Bool shouldSkipiTunesPlugin; // @synthesize shouldSkipiTunesPlugin=_shouldSkipiTunesPlugin;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldSkipiTunesPlugin; // @synthesize shouldSkipiTunesPlugin=_shouldSkipiTunesPlugin;
 - (id)_loadPluginsLimitedToBundleIDs:(id)arg1;
 - (void)unstashLoginResponse;
 @property(nonatomic) _Bool shouldStashLoginResponse;

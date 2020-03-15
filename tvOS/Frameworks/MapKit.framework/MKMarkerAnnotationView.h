@@ -34,6 +34,7 @@
 
 + (float)_defaultDisplayPriority;
 + (Class)_mapkitLeafClass;
+- (void).cxx_destruct;
 @property(nonatomic) double markerStrokeWidth; // @synthesize markerStrokeWidth=_markerStrokeWidth;
 @property(copy, nonatomic) UIColor *markerStrokeTintColor; // @synthesize markerStrokeTintColor=_markerStrokeTintColor;
 @property(nonatomic) _Bool animatesWhenAdded; // @synthesize animatesWhenAdded=_animatesWhenAdded;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) UIColor *glyphTintColor; // @synthesize glyphTintColor=_glyphTintColor;
 @property(copy, nonatomic) UIColor *markerTintColor; // @synthesize markerTintColor=_markerTintColor;
 @property(retain, nonatomic, getter=_styleAttributes, setter=_setStyleAttributes:) GEOFeatureStyleAttributes *styleAttributes; // @synthesize styleAttributes=_customStyleAttributes;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)_defaultCollisionAlignmentRectInsets;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (id)_effectiveSubtitlesIsCollidable:(_Bool *)arg1;

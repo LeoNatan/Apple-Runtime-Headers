@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _dellocHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType dellocHandler; // @synthesize dellocHandler=_dellocHandler;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *doneOrCancelGroup; // @synthesize doneOrCancelGroup=_doneOrCancelGroup;
 @property(readonly, nonatomic) CDUnknownBlockType taskHandler; // @synthesize taskHandler=_taskHandler;
 @property(readonly, nonatomic) int requestID; // @synthesize requestID=_requestID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isCancelled;
 - (void)markAsCompletedOrCancelled:(BOOL)arg1;
 - (void)markAsQueued;

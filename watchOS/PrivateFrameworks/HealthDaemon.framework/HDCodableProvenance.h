@@ -28,6 +28,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int originPatchVersion; // @synthesize originPatchVersion=_originPatchVersion;
 @property(nonatomic) int originMinorVersion; // @synthesize originMinorVersion=_originMinorVersion;
 @property(nonatomic) int originMajorVersion; // @synthesize originMajorVersion=_originMajorVersion;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSData *deviceUUID; // @synthesize deviceUUID=_deviceUUID;
 @property(retain, nonatomic) NSData *sourceUUID; // @synthesize sourceUUID=_sourceUUID;
 @property(retain, nonatomic) NSString *originBuild; // @synthesize originBuild=_originBuild;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

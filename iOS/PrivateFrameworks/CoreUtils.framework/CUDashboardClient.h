@@ -20,8 +20,8 @@
     NSString *_server;
 }
 
-@property(copy, nonatomic) NSString *server; // @synthesize server=_server;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *server; // @synthesize server=_server;
 - (int)_setupSocket;
 - (int)_logCStr:(const char *)arg1 length:(unsigned long long)arg2;
 - (int)logv:(const char *)arg1 args:(struct __va_list_tag [1])arg2;

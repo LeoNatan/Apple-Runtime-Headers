@@ -22,10 +22,10 @@
 
 + (Class)credentialsType;
 + (Class)remoteCredentialsType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsManualEntry; // @synthesize allowsManualEntry=_allowsManualEntry;
 @property(retain, nonatomic) NSMutableArray *credentials; // @synthesize credentials=_credentials;
 @property(retain, nonatomic) NSMutableArray *remoteCredentials; // @synthesize remoteCredentials=_remoteCredentials;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

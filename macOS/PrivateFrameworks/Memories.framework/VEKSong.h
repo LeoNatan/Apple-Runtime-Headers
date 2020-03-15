@@ -18,11 +18,12 @@
 }
 
 + (void)initialize;
++ (id)featuredSmartSongsForMood:(long long)arg1;
 + (id)availableSmartSongs;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FMSong *fmSong; // @synthesize fmSong=_fmSong;
 @property(retain, nonatomic) MPMediaItem *iTunesMediaItem; // @synthesize iTunesMediaItem=_iTunesMediaItem;
 @property(nonatomic) unsigned long long iTunesID; // @synthesize iTunesID=_iTunesID;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

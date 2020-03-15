@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSMeasurement *cumulativeBackgroundLocationTime; // @synthesize cumulativeBackgroundLocationTime=_cumulativeBackgroundLocationTime;
 @property(readonly) NSMeasurement *cumulativeBackgroundAudioTime; // @synthesize cumulativeBackgroundAudioTime=_cumulativeBackgroundAudioTime;
 @property(readonly) NSMeasurement *cumulativeBackgroundTime; // @synthesize cumulativeBackgroundTime=_cumulativeBackgroundTime;
 @property(readonly) NSMeasurement *cumulativeForegroundTime; // @synthesize cumulativeForegroundTime=_cumulativeForegroundTime;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

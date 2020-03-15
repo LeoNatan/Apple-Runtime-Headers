@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_failedAssetBatches;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int sizeUpperBound; // @synthesize sizeUpperBound=_sizeUpperBound;
 @property(retain, nonatomic) NSMutableSet *failedAssetBatches; // @synthesize failedAssetBatches=_failedAssetBatches;
 @property(nonatomic) unsigned int size; // @synthesize size=_size;
 @property(retain, nonatomic) NSMutableArray *assetBatches; // @synthesize assetBatches=_assetBatches;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (_Bool)isEmpty;

@@ -16,10 +16,10 @@
     NSXPCConnection *_xpcConnection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(nonatomic) __weak id <CSLSPasscodePromptDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cancelPrompt;
 - (void)showPromptWithSettings:(id)arg1 failureHandler:(CDUnknownBlockType)arg2;
 - (void)showDismissablePrompt:(_Bool)arg1 withFailureHandler:(CDUnknownBlockType)arg2;

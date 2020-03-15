@@ -13,8 +13,8 @@
     CTXPCServiceSubscriptionContext *_subscriptionContext;
 }
 
-@property(retain, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 - (void)setSpecifier:(id)arg1;
 
 @end

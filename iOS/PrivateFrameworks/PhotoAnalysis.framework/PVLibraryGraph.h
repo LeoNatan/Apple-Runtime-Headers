@@ -23,9 +23,9 @@
 + (id)graphForLibrary:(id)arg1 ingestPeople:(_Bool)arg2;
 + (Class)edgeClassForLabel:(id)arg1 domain:(unsigned short)arg2;
 + (Class)nodeClassForLabel:(id)arg1 domain:(unsigned short)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *distanceIdentityDictionary; // @synthesize distanceIdentityDictionary=_distanceIdentityDictionary;
 @property(retain, nonatomic) NSDictionary *faceprintDictionary; // @synthesize faceprintDictionary=_faceprintDictionary;
-- (void).cxx_destruct;
 - (_Bool)_saveDictionary:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 - (id)_insertFaceGroupNodeForFaceGroup:(id)arg1;
 - (id)_insertPeopleNodeForPerson:(id)arg1 withType:(unsigned long long)arg2;

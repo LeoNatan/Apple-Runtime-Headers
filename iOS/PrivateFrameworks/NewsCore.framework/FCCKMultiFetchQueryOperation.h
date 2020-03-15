@@ -18,12 +18,13 @@
     NSArray *_networkEvents;
     CDUnknownBlockType _queryCompletionHandler;
     NSDictionary *_recordSpecsByType;
-    NSMutableSet *_missingRecordIDs;
-    NSMutableArray *_fetchedRecords;
+    NSMutableArray *_resultFetchedRecords;
+    NSMutableSet *_resultMissingRecordIDs;
 }
 
-@property(retain, nonatomic) NSMutableArray *fetchedRecords; // @synthesize fetchedRecords=_fetchedRecords;
-@property(retain, nonatomic) NSMutableSet *missingRecordIDs; // @synthesize missingRecordIDs=_missingRecordIDs;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *resultMissingRecordIDs; // @synthesize resultMissingRecordIDs=_resultMissingRecordIDs;
+@property(retain, nonatomic) NSMutableArray *resultFetchedRecords; // @synthesize resultFetchedRecords=_resultFetchedRecords;
 @property(retain, nonatomic) NSDictionary *recordSpecsByType; // @synthesize recordSpecsByType=_recordSpecsByType;
 @property(copy, nonatomic) CDUnknownBlockType queryCompletionHandler; // @synthesize queryCompletionHandler=_queryCompletionHandler;
 @property(copy, nonatomic) NSArray *networkEvents; // @synthesize networkEvents=_networkEvents;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSArray *recordSpecs; // @synthesize recordSpecs=_recordSpecs;
 @property(retain, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 @property(retain, nonatomic) FCCKContentDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)_desiredKeys;
 - (id)_constructQuery;
 - (void)operationWillFinishWithError:(id)arg1;

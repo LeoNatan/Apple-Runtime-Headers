@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *FolderChanges; // @synthesize FolderChanges=_FolderChanges;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *FolderChanges; // @synthesize FolderChanges=_FolderChanges;
 
 @end
 

@@ -13,8 +13,8 @@
     PKDiscoveryArticleLayout *_discoveryArticleLayout;
 }
 
-@property(readonly, nonatomic) PKDiscoveryArticleLayout *discoveryArticleLayout; // @synthesize discoveryArticleLayout=_discoveryArticleLayout;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKDiscoveryArticleLayout *discoveryArticleLayout; // @synthesize discoveryArticleLayout=_discoveryArticleLayout;
 - (id)initWithData:(id)arg1;
 
 @end

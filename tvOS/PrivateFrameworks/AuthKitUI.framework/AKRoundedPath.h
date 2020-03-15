@@ -17,9 +17,9 @@
 + (id)pathWithRoundedRect:(struct CGRect)arg1 cornerRadius:(double)arg2;
 + (id)pathWithEllipseInRect:(struct CGRect)arg1;
 + (id)pathWithRect:(struct CGRect)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *points; // @synthesize points=_points;
 @property(retain) struct CGPath *CGPath; // @synthesize CGPath=_CGPath;
-- (void).cxx_destruct;
 - (void)addContinuousCornerToPath:(struct CGPath *)arg1 trueCorner:(struct CGPoint)arg2 cornerRadius:(struct CGSize)arg3 corners:(unsigned long long)arg4 portion:(unsigned long long)arg5 clockwise:(_Bool)arg6 fullRadius:(_Bool)arg7;
 - (id)initWithRect:(struct CGRect)arg1 cornerRadii:(id)arg2 smoothPillShapes:(_Bool)arg3;
 - (struct CGRect)boundingRect;

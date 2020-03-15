@@ -23,8 +23,8 @@
 
 + (id)unarchiveTokentWithData:(id)arg1;
 + (id)archivedDataWithToken:(id)arg1;
-@property(nonatomic) __weak id <PLCloudChangeTrackerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PLCloudChangeTrackerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_updateLastKnownDeletionTokenToToken:(id)arg1;
 - (void)updateLastKnownDeletionTokenToResult:(id)arg1;
 - (void)_updateLastKnownTokensToToken:(id)arg1;

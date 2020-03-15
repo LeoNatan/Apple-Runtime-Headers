@@ -8,13 +8,13 @@
 
 #import <PAImaging/PAUnadjustedCompositionProvider-Protocol.h>
 
-@class IPAVideoPlaybackSettings, NSObject, PLVideoEditSource;
-@protocol DGDescriptionCompositionProvider, OS_dispatch_queue;
+@class IPAVideoPlaybackSettings, NSObject, PFAsyncDispatchMulticaster, PLVideoEditSource;
+@protocol DGDescriptionCompositionProvider, OS_dispatch_queue, PAPlaybackSettingsEditMulticaster;
 
 @interface PAAVItemController : PAItemController <PAUnadjustedCompositionProvider>
 {
     NSObject<OS_dispatch_queue> *_queue;
-    struct PFAsyncDispatchMulticaster *_multicaster;
+    PFAsyncDispatchMulticaster<PAPlaybackSettingsEditMulticaster> *_multicaster;
     IPAVideoPlaybackSettings *_playbackSettings;
     PLVideoEditSource *_source;
     long long _sourceOrientation;
@@ -24,7 +24,7 @@
 
 + (Class)itemClass;
 - (void).cxx_destruct;
-- (void)addPlaybackSettingsEditReceiver:(struct NSObject *)arg1;
+- (void)addPlaybackSettingsEditReceiver:(id)arg1;
 - (void)_setPlaybackSettings:(id)arg1 sourceChanged:(BOOL)arg2;
 - (void)setPlaybackSettings:(id)arg1;
 - (void)setCurrentContentEditingInput:(id)arg1 orientation:(long long)arg2 playbackSettings:(id)arg3;

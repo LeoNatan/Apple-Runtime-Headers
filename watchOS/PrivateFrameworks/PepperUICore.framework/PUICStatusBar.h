@@ -34,11 +34,11 @@
 + (struct CGRect)_frameInSceneReferenceSpaceForStyle:(int)arg1 orientation:(int)arg2 inSceneWithReferenceSize:(struct CGSize)arg3;
 + (void)_newAppContextCreated:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) _Bool shouldAnimateOnTitleContextChanges; // @synthesize shouldAnimateOnTitleContextChanges=_shouldAnimateOnTitleContextChanges;
 @property(retain, nonatomic) PUICStatusBarAppContextView *appContextView; // @synthesize appContextView=_appContextView;
 @property(nonatomic) __weak UIViewController *keyViewController; // @synthesize keyViewController=_keyViewController;
-- (void).cxx_destruct;
 - (void)_handleCubicTitleViewUpdate:(id)arg1;
 - (void)_handleResignKeyWindow:(id)arg1;
 - (void)_handleBecomeKeyWindow:(id)arg1;

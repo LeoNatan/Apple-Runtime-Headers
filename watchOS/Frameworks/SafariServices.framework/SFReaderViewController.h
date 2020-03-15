@@ -9,18 +9,19 @@
 #import <SafariServices/WKUIDelegate-Protocol.h>
 
 @class NSString, WKWebView, _SFBrowserContentViewController;
+@protocol SFReaderViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface SFReaderViewController : UIViewController <WKUIDelegate>
 {
     WKWebView *_originalWebView;
     _SFBrowserContentViewController *_containerViewController;
+    id <SFReaderViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak _SFBrowserContentViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
 - (void).cxx_destruct;
-- (void)_webView:(id)arg1 commitPreviewedViewController:(id)arg2;
-- (id)_webView:(id)arg1 previewViewControllerForURL:(id)arg2 defaultActions:(id)arg3 elementInfo:(id)arg4;
+@property(nonatomic) __weak id <SFReaderViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak _SFBrowserContentViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
 @property(readonly, nonatomic) WKWebView *readerWebView;
 - (void)loadView;
 - (id)initWithOriginalWebView:(id)arg1;

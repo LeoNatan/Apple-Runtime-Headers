@@ -22,6 +22,7 @@
     id <SVVideo> _visibleVideo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SVVideo> visibleVideo; // @synthesize visibleVideo=_visibleVideo;
 @property(retain, nonatomic) SVPlaybackTransition *activeTransition; // @synthesize activeTransition=_activeTransition;
 @property(readonly, nonatomic) NSMutableArray *transitionObservers; // @synthesize transitionObservers=_transitionObservers;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) id <SVVideoQueueProviding> queueProvider; // @synthesize queueProvider=_queueProvider;
 @property(readonly, nonatomic) id <SVVideoVisibilityMonitorProviding> visibilityMonitorProviding; // @synthesize visibilityMonitorProviding=_visibilityMonitorProviding;
 @property(readonly, nonatomic) id <SVPlaybackTransitionCoordinatorFactory> transitionCoordinatorFactory; // @synthesize transitionCoordinatorFactory=_transitionCoordinatorFactory;
-- (void).cxx_destruct;
 - (void)performNextTransition;
 - (void)removeTransitionObserver:(id)arg1;
 - (void)addTransitionObserver:(id)arg1;

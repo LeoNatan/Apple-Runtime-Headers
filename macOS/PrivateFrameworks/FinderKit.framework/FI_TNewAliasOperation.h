@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)operationWithNodes:(const struct TFENodeVector *)arg1 properties:(const vector_d50fdf79 *)arg2 destinationNode:(const struct TFENode *)arg3 allowInteraction:(_Bool)arg4 addAliasSuffix:(_Bool)arg5 allowRedirection:(_Bool)arg6 delegate:(id)arg7;
-@property(readonly, nonatomic, getter=isRedirectedToDesktop) _Bool redirectedToDesktop; // @synthesize redirectedToDesktop=_redirectedToDesktop;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isRedirectedToDesktop) _Bool redirectedToDesktop; // @synthesize redirectedToDesktop=_redirectedToDesktop;
 - (int)handleSuboperationCompleted:(unsigned int)arg1 targetNode:(const struct TFENode *)arg2;
 - (int)createNewAlias:(const struct TFENode *)arg1 properties:(const struct TFENodePropertyList *)arg2 addAliasSuffix:(_Bool)arg3;
 - (_Bool)isDoneCreatingAliases;

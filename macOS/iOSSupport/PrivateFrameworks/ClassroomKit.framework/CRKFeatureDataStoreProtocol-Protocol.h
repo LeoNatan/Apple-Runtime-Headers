@@ -6,13 +6,14 @@
 
 #import <ClassroomKit/NSObject-Protocol.h>
 
-@class NSString;
+@class NSSet, NSString;
 @protocol CRKFeatureDataStoreProtocol;
 
 @protocol CRKFeatureDataStoreProtocol <NSObject>
 + (id <CRKFeatureDataStoreProtocol>)sharedDataStore;
 @property(nonatomic, getter=isClassroomInstructorRoleEnabled) BOOL classroomInstructorRoleEnabled;
 @property(nonatomic, getter=isClassroomStudentRoleEnabled) BOOL classroomStudentRoleEnabled;
+@property(readonly, copy, nonatomic) NSSet *activeClassroomRoles;
 @property(readonly, nonatomic, getter=isClassroomRequestPermissionToLeaveClassesForced) BOOL classroomRequestPermissionToLeaveClassesForced;
 @property(readonly, nonatomic, getter=isClassroomAutomaticClassJoiningForced) BOOL classroomAutomaticClassJoiningForced;
 @property(readonly, nonatomic, getter=isClassroomUnpromptedScreenObservationForced) BOOL classroomUnpromptedScreenObservationForced;

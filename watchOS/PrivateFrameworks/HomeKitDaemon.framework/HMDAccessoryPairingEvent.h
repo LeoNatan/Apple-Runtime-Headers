@@ -8,7 +8,7 @@
 
 #import <HomeKitDaemon/HMDAWDLogEvent-Protocol.h>
 
-@class HMDAccessory, NSString;
+@class HMDAccessory, HMDHome, NSString, NSUUID;
 
 @interface HMDAccessoryPairingEvent : HMDLogEvent <HMDAWDLogEvent>
 {
@@ -24,6 +24,11 @@
     int _certificationStatus;
     unsigned int _authMethod;
     NSString *_identifier;
+    HMDHome *_home;
+    NSUUID *_accessoryUUID;
+    NSString *_appIdentifier;
+    NSString *_accessoryModel;
+    NSString *_accessoryCategory;
 }
 
 + (id)removingAccessory:(id)arg1 hapAccessory:(id)arg2;
@@ -31,6 +36,12 @@
 + (id)pairingAccessoryWithDescription:(id)arg1 home:(id)arg2;
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *accessoryCategory; // @synthesize accessoryCategory=_accessoryCategory;
+@property(copy, nonatomic) NSString *accessoryModel; // @synthesize accessoryModel=_accessoryModel;
+@property(copy, nonatomic) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
+@property(copy, nonatomic) NSUUID *accessoryUUID; // @synthesize accessoryUUID=_accessoryUUID;
+@property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic, getter=isNetworkRouterReplace) _Bool networkRouterReplace; // @synthesize networkRouterReplace=_networkRouterReplace;
 @property(nonatomic, getter=isNetworkRouterAdd) _Bool networkRouterAdd; // @synthesize networkRouterAdd=_networkRouterAdd;
@@ -43,14 +54,14 @@
 @property(readonly, nonatomic, getter=isAddOperation) _Bool addOperation; // @synthesize addOperation=_addOperation;
 @property(nonatomic) int linkType; // @synthesize linkType=_linkType;
 @property(retain, nonatomic) HMDAccessory *pairedAccessory; // @synthesize pairedAccessory=_pairedAccessory;
-- (void).cxx_destruct;
 - (void)pairedAccessory:(id)arg1;
-- (void)pairedToServer:(id)arg1 certificationStatus:(int)arg2;
+- (void)pairedToServer:(id)arg1 certificationStatus:(int)arg2 addedViaWAC:(_Bool)arg3 legacyWAC:(_Bool)arg4;
 - (void)setAuthenticationMethod:(unsigned int)arg1;
 - (void)setAddedViaWAC:(_Bool)arg1;
 - (id)initWithAccessoryDescription:(id)arg1 home:(id)arg2;
 - (id)initWithUnpairedAccessory:(id)arg1 pairedAccessory:(id)arg2 hapAccessory:(id)arg3 home:(id)arg4 isAddOperation:(_Bool)arg5;
 - (id)metricForAWD;
+- (id)vendorDetails;
 - (unsigned int)AWDMessageType;
 
 // Remaining properties

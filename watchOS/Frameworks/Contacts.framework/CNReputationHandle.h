@@ -20,9 +20,9 @@
 + (id)handleWithPhoneNumber:(id)arg1;
 + (id)handleWithEmailAddress:(id)arg1;
 + (id)handleWithStringValue:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (void)configureBuilder:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

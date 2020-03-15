@@ -36,6 +36,7 @@
 
 + (double)rowHeightForCollection:(id)arg1;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allSnapshotsLoaded; // @synthesize allSnapshotsLoaded=_allSnapshotsLoaded;
 @property(retain, nonatomic) _NTKCAddNewFace *addNewFace; // @synthesize addNewFace=_addNewFace;
 @property(retain, nonatomic) UILabel *footer; // @synthesize footer=_footer;
@@ -54,7 +55,6 @@
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) __weak id <NTKCGalleryCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NTKCGalleryCollection *collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (void)_fontSizeDidChange;
 - (_Bool)shouldShowFooterTextInCollectionView;
 - (_Bool)hasFooterText;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) __weak BrowserWindowController *browserWindowController; // @synthesize browserWindowController=_browserWindowController;
 @property(readonly, nonatomic) __weak AppExtensionToolbarItem *appExtensionToolbarItem; // @synthesize appExtensionToolbarItem=_appExtensionToolbarItem;
-- (void).cxx_destruct;
 - (void)showPopover;
 - (void)_performClickAction:(id)arg1;
 - (void)validate;

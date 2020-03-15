@@ -16,11 +16,11 @@
     NSString *_pushMode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pushMode; // @synthesize pushMode=_pushMode;
 @property(retain, nonatomic) NSString *obfuscatedNumber; // @synthesize obfuscatedNumber=_obfuscatedNumber;
 @property(retain, nonatomic) NSString *numberWithDialCode; // @synthesize numberWithDialCode=_numberWithDialCode;
 @property(retain, nonatomic) NSNumber *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithJSONDictionary:(id)arg1;
 

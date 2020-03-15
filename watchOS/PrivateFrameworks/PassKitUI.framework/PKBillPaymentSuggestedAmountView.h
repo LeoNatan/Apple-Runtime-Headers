@@ -14,8 +14,8 @@
     PKBillPaymentSuggestedAmount *_suggestedAmount;
 }
 
-@property(readonly, nonatomic) PKBillPaymentSuggestedAmount *suggestedAmount; // @synthesize suggestedAmount=_suggestedAmount;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKBillPaymentSuggestedAmount *suggestedAmount; // @synthesize suggestedAmount=_suggestedAmount;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

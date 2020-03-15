@@ -129,7 +129,6 @@
 - (id)_accessibilityUserTestingVisibleCells;
 - (struct CGPoint)_accessibilityMaxScrubberPosition;
 - (struct CGPoint)_accessibilityMinScrubberPosition;
-- (float)_accessibilityNumberValue;
 - (_Bool)_accessibilityDismissAlternativeKeyPicker;
 - (_Bool)_accessibilityDispatchKeyboardAction:(id)arg1;
 - (_Bool)_accessibilityActivateKeyboardDeleteKey;
@@ -289,6 +288,7 @@
 - (_Bool)_accessibilityPerformCustomActionWithIdentifier:(id)arg1;
 - (_Bool)accessibilityPerformCustomAction:(int)arg1;
 - (void)_accessibilitySetCurrentGesture:(id)arg1;
+- (_Bool)_accessibilityResetBannerTimer;
 - (_Bool)_accessibilityEndUndoableTextInsertion;
 - (_Bool)_accessibilityBeginUndoableTextInsertion;
 - (id)_accessibilityTextViewTextOperationResponder;
@@ -296,6 +296,7 @@
 - (id)accessibilityMenuActions;
 - (void)_accessibilitySetApplicationOrientation:(int)arg1;
 - (int)_accessibilityApplicationOrientation;
+- (_Bool)_accessibilityFKAShouldBeProcessed;
 - (_Bool)_accessibilityIsFrameOutOfBoundsConsideringScrollParents:(_Bool)arg1;
 - (struct CGRect)_axFrameForBoundsCheck:(_Bool)arg1;
 - (id)_axOutermostScrollParent;
@@ -313,6 +314,7 @@
 - (_Bool)_accessibilityOnlyComparesByXAxis;
 - (struct CGRect)_accessibilityContentFrame;
 - (void)_accessibilitySetVisibleContentInset:(struct UIEdgeInsets)arg1;
+- (void)_accessibilitySetShouldUseFallbackForVisibleContentInset:(_Bool)arg1;
 - (_Bool)_accessibilityShouldUseFallbackForVisibleContentInset;
 - (struct UIEdgeInsets)_accessibilityVisibleContentInset;
 - (struct CGAffineTransform)_accessibilityJailTransform;
@@ -355,6 +357,7 @@
 - (id)_accessibilityFindSubviewDescendantsPassingTest:(CDUnknownBlockType)arg1;
 - (id)_accessibilityFindSubviewDescendant:(CDUnknownBlockType)arg1;
 - (id)_accessibilityFindDescendant:(CDUnknownBlockType)arg1;
+- (id)_accessibilityFindAncestor:(CDUnknownBlockType)arg1 startWithSelf:(_Bool)arg2 findTopmostAncestor:(_Bool)arg3;
 - (id)_accessibilityFindAncestor:(CDUnknownBlockType)arg1 startWithSelf:(_Bool)arg2;
 - (void)accessibilityEnumerateAncestorsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)_accessibilityFindAXDescendants:(CDUnknownBlockType)arg1 byAddingElements:(CDUnknownBlockType)arg2;
@@ -429,15 +432,22 @@
 - (long)_accessibilityDataSeriesType;
 - (id)_accessibilityDataSeriesValuesForAxis:(long)arg1;
 - (id)_accessibilityDataSeriesName;
+- (id)_accessibilityFocusRingAncestor;
 - (id)_accessibilityElementToFocusForAppearanceScreenChange;
 - (void)_fkaMoveRight;
 - (void)_fkaMoveLeft;
 - (void)_fkaMoveDown;
 - (void)_fkaMoveUp;
+- (id)_accessibilityFKAArrowKeysHandled;
 - (_Bool)_accessibilityHandlesTabKey;
 - (_Bool)_accessibilityShouldIncludeArrowKeyCommandsForDirectionalFocusMovement;
 - (_Bool)_accessibilityKeyCommandsShouldOverrideKeyCommands;
 - (id)_accessibilityKeyCommands;
+- (_Bool)_accessibilityIsVerticalAdjustableElement;
+- (id)_focusGroupDescriptor;
+- (id)_accessibilityDefaultFocusGroupDescriptor;
+- (void)_axSetStoredDefaultFocusGroupDescriptor:(id)arg1;
+- (id)_axGetStoredDefaultFocusGroupDescriptor;
 - (_Bool)_accessibilityIsFKARunningForFocusItem;
 - (int)_accessibilityInterfaceOrientationForScreenCoordinates;
 - (_Bool)_accessibilityIsUsingRemoteParentActivateAction;
@@ -476,6 +486,7 @@
 - (_Bool)_accessibilityCanDismissPopoverController:(id)arg1;
 - (id)_accessibilityNotificationSummary:(unsigned int)arg1;
 - (unsigned int)_accessibilityNotificationCount;
+- (_Bool)_accessibilityIsBannerNotificationElement;
 - (_Bool)_accessibilityIsAwayAlertElementNew;
 - (_Bool)_accessibilityIsAwayAlertElement;
 - (void)_accessibilitySwitchOrderedChildrenFrom:(id)arg1;
@@ -599,6 +610,7 @@
 - (id)_accessibilityFirstElementsForSpeakThis;
 - (id)_accessibilityFirstElement;
 - (id)_accessibilityFirstElementForFocus;
+- (id)_accessibilityFirstElementForReadFromTop;
 - (void)_setAccessibilityIsNotFirstElement:(_Bool)arg1;
 - (_Bool)_accessibilityIsNotFirstElement;
 - (void)_setAccessibilityServesAsFirstElement:(_Bool)arg1;
@@ -709,6 +721,8 @@
 - (_Bool)__accessibilitySupportsActivateAction;
 - (void)_accessibilitySetShouldPreventOpaqueScrolling:(_Bool)arg1;
 - (_Bool)_accessibilityShouldPreventOpaqueScrolling;
+- (_Bool)accessibilityParentDiscardsChildrenContainerGroupingBehavior;
+- (_Bool)accessibilityChildrenContainerGroupingBehaviorHasOverridingParentDelegate;
 - (id)_accessibilitySwipeIslandIdentifier;
 - (id)_accessibilitySwipeIsland;
 - (void)_accessibilityUpdateContainerElementReferencesIfNeededForNewElements:(id)arg1;
@@ -764,6 +778,7 @@
 - (_Bool)_accessibilityCanScrollInAtLeastOneDirection;
 - (id)_accessibilityTabBarAncestor;
 - (id)_accessibililtyLabelForTabBarButton:(id)arg1;
+- (void)_accessibilityDidMoveToTabBar;
 - (_Bool)_accessibilityIsInTabBar;
 - (void)_axSetCachedHasTabBarAncestor:(id)arg1;
 - (id)_axCachedHasTabBarAncestor;
@@ -884,17 +899,17 @@
 - (id)_accessibilityNativeFocusElement;
 - (id)_accessibilityRetrieveHeaderElements;
 - (void)_accessibilityShowEditingHUD;
+- (int)_accessibilityHostPid;
 - (int)_accessibilityRemotePid;
 - (_Bool)_accessibilityHandlesRemoteFocusMovement;
 - (void)_accessibilitySetFocusOnElement:(_Bool)arg1;
 - (_Bool)_accessibilityMoveFocusWithHeading:(unsigned int)arg1 toElementMatchingQuery:(id)arg2;
-- (_Bool)_accessibilityHandleDefaultActionForNativeFocusedElement;
 - (_Bool)_accessibilityMoveFocusWithHeading:(unsigned int)arg1;
-- (_Bool)_accesibilityIsTopMostDrawsFocusRingWhenChildrenFocused;
 - (_Bool)_drawsFocusRingWhenChildrenFocused;
-- (_Bool)_accessibilityAllowsFocusToLeaveViaHeading:(unsigned int)arg1;
+- (float)_axScaleTransformForFocusLayerLineWidth;
 - (void)_axSetLastFocusedChild:(id)arg1;
 - (id)_axGetLastFocusedChild;
+- (_Bool)_accessibilityRemembersLastFocusedChild;
 - (_Bool)_accessibilityDrawsFocusRingWhenChildrenFocused;
 - (id)_accessibilityNativeFocusAncestor;
 - (_Bool)_accessibilityShouldSpeakExplorerElementsAfterFocus;

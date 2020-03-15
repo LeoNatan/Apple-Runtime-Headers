@@ -15,9 +15,9 @@
 }
 
 + (id)groupWithChildren:(id)arg1 previewViewController:(id)arg2 previewHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType previewHandler; // @synthesize previewHandler=_previewHandler;
 @property(retain, nonatomic) UIViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

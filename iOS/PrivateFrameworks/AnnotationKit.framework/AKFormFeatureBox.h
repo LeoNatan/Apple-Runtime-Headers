@@ -19,13 +19,13 @@
 }
 
 + (id)boxWithRect:(struct CGRect)arg1 onPage:(id)arg2 flags:(unsigned long long)arg3 baseline:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect enclosingRegionRect; // @synthesize enclosingRegionRect=_enclosingRegionRect;
 @property(retain, nonatomic) AKFormFeatureLine *baseline; // @synthesize baseline=_baseline;
 @property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic, getter=isMultiline) _Bool multiline; // @synthesize multiline=_multiline;
 @property(nonatomic) _Bool widthExpands; // @synthesize widthExpands=_widthExpands;
 @property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;
-- (void).cxx_destruct;
 - (id)initWithRect:(struct CGRect)arg1 onPage:(id)arg2 flags:(unsigned long long)arg3 baseline:(id)arg4;
 
 @end

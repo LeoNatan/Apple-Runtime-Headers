@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_signature;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) AMSBiometricsSignatureRequest *originalRequest; // @synthesize originalRequest=_originalRequest;
-- (void).cxx_destruct;
 
 @end
 

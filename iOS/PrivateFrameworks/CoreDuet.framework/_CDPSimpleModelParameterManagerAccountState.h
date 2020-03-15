@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _CDPModelTuningState *lastTuningState; // @synthesize lastTuningState=_lastTuningState;
 @property(retain, nonatomic) NSMutableArray *tuningValues; // @synthesize tuningValues=_tuningValues;
 @property(retain, nonatomic) _CDPSimpleModelParameterManagerTuningValue *previousBestTuningValue; // @synthesize previousBestTuningValue=_previousBestTuningValue;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

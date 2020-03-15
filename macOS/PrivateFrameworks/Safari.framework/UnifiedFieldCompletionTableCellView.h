@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_trailingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *trailingConstraint; // @synthesize trailingConstraint=_trailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *leadingConstraint; // @synthesize leadingConstraint=_leadingConstraint;
-- (void).cxx_destruct;
 - (void)_configureTextFieldForUseInCompletionList:(id)arg1;
 - (void)_setUpTextField;
 @property(nonatomic) double trailingSpace;

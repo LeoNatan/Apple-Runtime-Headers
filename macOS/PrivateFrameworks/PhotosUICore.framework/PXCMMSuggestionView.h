@@ -25,9 +25,9 @@
 }
 
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 viewModel:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXCMMSuggestionViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) __weak id <PXCMMSuggestionViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (BOOL)test_selected;
 - (id)test_subtitle;

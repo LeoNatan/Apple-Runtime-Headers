@@ -17,8 +17,8 @@
 
 + (Class)changesType;
 + (id)changeSetWithChanges:(id)arg1;
-@property(retain, nonatomic) NSMutableArray *changes; // @synthesize changes=_changes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *changes; // @synthesize changes=_changes;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

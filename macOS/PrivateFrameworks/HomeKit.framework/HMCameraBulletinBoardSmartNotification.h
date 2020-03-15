@@ -16,8 +16,8 @@
 
 + (id)predicateForCameraSignificantEvent:(unsigned long long)arg1;
 + (id)notificationEventTriggersInPredicate:(id)arg1;
-@property __weak HMCameraUserSettings *cameraUserSettings; // @synthesize cameraUserSettings=_cameraUserSettings;
 - (void).cxx_destruct;
+@property __weak HMCameraUserSettings *cameraUserSettings; // @synthesize cameraUserSettings=_cameraUserSettings;
 - (id)targetUUID;
 - (void)commitWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned long long notificationEventTriggers;

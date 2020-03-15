@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     _UIInterfaceActionSeparatableSequenceView *_separatedContentSequenceView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIInterfaceActionSeparatableSequenceView *separatedContentSequenceView; // @synthesize separatedContentSequenceView=_separatedContentSequenceView;
 @property(readonly, nonatomic) NSLayoutConstraint *minimumHeightConstraint; // @synthesize minimumHeightConstraint=_minimumHeightConstraint;
 @property(nonatomic) _Bool visualCornerForcedOverride; // @synthesize visualCornerForcedOverride=_visualCornerForcedOverride;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int actionLayoutAxis; // @synthesize actionLayoutAxis=_actionLayoutAxis;
 @property(retain, nonatomic) NSArray *arrangedActionRepresentationViews; // @synthesize arrangedActionRepresentationViews=_arrangedActionRepresentationViews;
 @property(retain, nonatomic) UIInterfaceActionVisualStyle *visualStyle; // @synthesize visualStyle=_visualStyle;
-- (void).cxx_destruct;
 - (_Bool)_isHorizontalLayout;
 - (void)_applyVisualStyleToSeparatedContentSequenceView;
 - (void)_applyVisualStyle;

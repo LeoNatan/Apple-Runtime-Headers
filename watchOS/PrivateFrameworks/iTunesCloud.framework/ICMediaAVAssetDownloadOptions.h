@@ -31,6 +31,7 @@
 + (id)_mediaKindFromResponseItemMetadata:(id)arg1;
 + (void)getMediaAVAssetDownloadOptionsWithRequestContext:(id)arg1 storeMediaResponseItem:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)getMediaAVAssetDownloadOptionsWithRequestContext:(id)arg1 redownloadResponse:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowDownloadOnConstrainedNetworks; // @synthesize allowDownloadOnConstrainedNetworks=_allowDownloadOnConstrainedNetworks;
 @property(nonatomic) _Bool canUseCellularData; // @synthesize canUseCellularData=_canUseCellularData;
 @property(copy, nonatomic) NSString *mediaKind; // @synthesize mediaKind=_mediaKind;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) NSString *secondaryClientIdentifier; // @synthesize secondaryClientIdentifier=_secondaryClientIdentifier;
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, copy, nonatomic) NSDictionary *httpHeaderFields; // @synthesize httpHeaderFields=_httpHeaderFields;
-- (void).cxx_destruct;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (id)valueForHTTPHeaderField:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *optionsDictionary;

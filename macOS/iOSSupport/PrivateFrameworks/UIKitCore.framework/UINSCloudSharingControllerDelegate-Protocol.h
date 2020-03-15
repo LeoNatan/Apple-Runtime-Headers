@@ -16,5 +16,6 @@
 - (NSData *)itemThumbnailDataForCloudSharingController:(id <UINSCloudSharingController>)arg1;
 - (NSString *)itemTitleForCloudSharingController:(id <UINSCloudSharingController>)arg1;
 - (void)cloudSharingController:(id <UINSCloudSharingController>)arg1 failedToSaveShareWithError:(NSError *)arg2;
+- (void)cloudSharingControllerDidCompleteShare:(id <UINSCloudSharingController>)arg1;
 @end
 

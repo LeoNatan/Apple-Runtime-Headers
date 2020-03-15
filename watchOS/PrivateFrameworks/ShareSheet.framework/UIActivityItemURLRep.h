@@ -15,10 +15,10 @@
     int _attachmentURLType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int attachmentURLType; // @synthesize attachmentURLType=_attachmentURLType;
 @property(retain, nonatomic) UIImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)scheme;
 - (_Bool)isFileURL;
 

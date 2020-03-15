@@ -22,8 +22,8 @@
     UIView<CSLClockHosting> *_aotClockHostView;
 }
 
-@property(retain, nonatomic) UIView<CSLClockHosting> *aotClockHostView; // @synthesize aotClockHostView=_aotClockHostView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView<CSLClockHosting> *aotClockHostView; // @synthesize aotClockHostView=_aotClockHostView;
 - (void)animationCoordinator:(id)arg1 updateBlankingViewScale:(float)arg2 blankingViewAlpha:(float)arg3 contentViewAlpha:(float)arg4 contentViewScale:(float)arg5;
 - (void)animationCoordinator:(id)arg1 prepareAnimationIsOn:(_Bool)arg2;
 - (void)_cleanUpContentContainerView;

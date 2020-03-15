@@ -58,6 +58,8 @@
 @property double borderWidth;
 @property struct CGColor *borderColor;
 @property(copy) NSDictionary *actions;
+@property(copy) NSDictionary *separatedOptions;
+@property(getter=isSeparated) BOOL separated;
 @property(copy) NSDictionary *style;
 @property(copy) NSString *name;
 @property(retain) id compositingFilter;

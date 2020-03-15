@@ -20,8 +20,8 @@
     id <SBSoftLockoutControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBSoftLockoutControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBSoftLockoutControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_clearPasscodeRequiredAssertion;
 - (void)_createPasscodeRequiredAssertion;
 - (void)coverSheetViewControllerDidDismissPasscodeLockView:(id)arg1;

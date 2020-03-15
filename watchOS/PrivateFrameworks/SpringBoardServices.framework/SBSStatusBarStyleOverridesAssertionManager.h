@@ -23,13 +23,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *coordinatorCalloutQueue; // @synthesize coordinatorCalloutQueue=_coordinatorCalloutQueue;
 @property(nonatomic) __weak SBSStatusBarStyleOverridesCoordinator *internalQueue_styleOverrideCoordinator; // @synthesize internalQueue_styleOverrideCoordinator=_internalQueue_styleOverrideCoordinator;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSXPCConnection *sbXPCConnection; // @synthesize sbXPCConnection=_sbXPCConnection;
 @property(retain, nonatomic) NSMutableDictionary *acquisitionHandlerEntriesByIdentifier; // @synthesize acquisitionHandlerEntriesByIdentifier=_acquisitionHandlerEntriesByIdentifier;
 @property(retain, nonatomic) NSMapTable *assertionsByIdentifier; // @synthesize assertionsByIdentifier=_assertionsByIdentifier;
-- (void).cxx_destruct;
 - (void)_reactivateAssertions;
 - (void)_handleXPCConnectionInvalidation;
 - (void)unregisterCoordinator;

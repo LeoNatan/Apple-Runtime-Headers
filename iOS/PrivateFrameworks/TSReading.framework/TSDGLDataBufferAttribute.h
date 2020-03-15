@@ -22,6 +22,7 @@
 }
 
 + (id)attributeWithName:(id)arg1 bufferUsage:(unsigned int)arg2 dataType:(long long)arg3 normalized:(_Bool)arg4 componentCount:(unsigned long long)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) TSDGLDataBuffer *dataBuffer; // @synthesize dataBuffer=_dataBuffer;
 @property(nonatomic) TSDGLDataArrayBuffer *dataArrayBuffer; // @synthesize dataArrayBuffer=_dataArrayBuffer;
 @property(nonatomic) unsigned long long bufferOffset; // @synthesize bufferOffset=_bufferOffset;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) long long dataType; // @synthesize dataType=_dataType;
 @property(readonly, nonatomic) unsigned int bufferUsage; // @synthesize bufferUsage=_bufferUsage;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setComponentCount:(int)arg1;
 - (void)setBufferUsage:(unsigned int)arg1;

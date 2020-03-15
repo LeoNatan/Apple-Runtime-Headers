@@ -21,9 +21,9 @@
 }
 
 + (id)sharedRateLimiter;
+- (void).cxx_destruct;
 @property(readonly) long long count; // @synthesize count=_count;
 @property(readonly) double period; // @synthesize period=_period;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)resetRateLimitWithTimeStamp:(id)arg1;
 - (void)recordTimeAndRefillIfNeeded;

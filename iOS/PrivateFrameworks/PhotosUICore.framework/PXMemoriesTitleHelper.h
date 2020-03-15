@@ -17,11 +17,11 @@
 }
 
 + (id)defaultHelper;
+- (void).cxx_destruct;
 @property(nonatomic) double minimumScaleFactor; // @synthesize minimumScaleFactor=_minimumScaleFactor;
 @property(nonatomic) long long preferredLineLength; // @synthesize preferredLineLength=_preferredLineLength;
 @property(copy, nonatomic) NSString *truncationToken; // @synthesize truncationToken=_truncationToken;
 @property(copy, nonatomic) NSString *softLineBreak; // @synthesize softLineBreak=_softLineBreak;
-- (void).cxx_destruct;
 - (_Bool)_isTextLongerThanPreferredLine:(id)arg1 range:(struct _NSRange)arg2 minimumScaleFactor:(double)arg3;
 - (id)titleForDisplayableText:(id)arg1 titleCategory:(long long)arg2 options:(unsigned long long)arg3;
 - (id)displayableTextForTitle:(id)arg1 intent:(long long)arg2;

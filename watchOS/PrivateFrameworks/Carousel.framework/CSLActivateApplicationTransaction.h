@@ -17,8 +17,8 @@
     CSLActivateApplicationRequest *_request;
 }
 
-@property(readonly, nonatomic) CSLActivateApplicationRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLActivateApplicationRequest *request; // @synthesize request=_request;
 - (_Bool)shouldWatchdog:(id *)arg1;
 - (void)transaction:(id)arg1 didCommitSceneUpdate:(id)arg2;
 - (void)transaction:(id)arg1 willCommitSceneUpdate:(id)arg2;

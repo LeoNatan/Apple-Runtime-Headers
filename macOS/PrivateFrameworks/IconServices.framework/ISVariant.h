@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)resourceTypes;
+- (void).cxx_destruct;
 @property int sizeSet; // @synthesize sizeSet=_sizeSet;
 @property(retain) ISVariant *selectedVariant; // @synthesize selectedVariant=_selectedVariant;
 @property(readonly) NSMutableDictionary *resources; // @synthesize resources=_resources;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) __weak ISIconset *iconset; // @synthesize iconset=_iconset;
 @property unsigned int type; // @synthesize type=_type;
 @property(retain) NSDictionary *assetCatalogReference; // @synthesize assetCatalogReference=_assetCatalogReference;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)icnsWithFlags:(long long)arg1;
 - (struct CGImage *)imageForSize:(unsigned long long)arg1 scale:(unsigned long long)arg2 errors:(id *)arg3;

@@ -19,12 +19,12 @@
     NSArray *_itemsToDelete;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *itemsToDelete; // @synthesize itemsToDelete=_itemsToDelete;
 @property(copy, nonatomic) NSString *oldestPersistedRemoteID; // @synthesize oldestPersistedRemoteID=_oldestPersistedRemoteID;
 @property(retain, nonatomic) NSURL *destinationMailboxURL; // @synthesize destinationMailboxURL=_destinationMailboxURL;
 @property(retain, nonatomic) NSURL *sourceMailboxURL; // @synthesize sourceMailboxURL=_sourceMailboxURL;
 @property(nonatomic) long long transferType; // @synthesize transferType=_transferType;
-- (void).cxx_destruct;
 - (void)updateWithCompletedCopyItems:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithBuilder:(CDUnknownBlockType)arg1;

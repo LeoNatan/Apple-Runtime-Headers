@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 
-@class NSString, NTKColoringLabel, NTKRichComplicationDialView, UIImageView;
+@class NSNumber, NSString, NTKColoringLabel, NTKRichComplicationDialView, UIImageView;
 @protocol CLKMonochromeFilterProvider;
 
 @interface NTKStopwatchRichComplicationCircularView : NTKRichComplicationCircularBaseView <CLKMonochromeComplicationView>
@@ -17,7 +17,7 @@
     NTKColoringLabel *_timeLabel;
     NTKRichComplicationDialView *_frontDial;
     NTKRichComplicationDialView *_backDial;
-    struct NSNumber *_updateToken;
+    NSNumber *_updateToken;
     struct {
         float timeLabelFontSize;
         float timeLabelMaxWidth;

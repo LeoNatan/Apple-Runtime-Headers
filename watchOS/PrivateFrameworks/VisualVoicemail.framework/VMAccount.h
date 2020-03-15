@@ -26,6 +26,7 @@
 + (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
 + (id)unarchivedObjectClasses;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isProvisioned) _Bool provisioned; // @synthesize provisioned=_provisioned;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *abbreviatedAccountDescription; // @synthesize abbreviatedAccountDescription=_abbreviatedAccountDescription;
 @property(copy, nonatomic) NSString *accountDescription; // @synthesize accountDescription=_accountDescription;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)archivedDataWithError:(id *)arg1;
 - (_Bool)isEqualToAccount:(id)arg1;
 - (void)copyPropertiesWithZone:(struct _NSZone *)arg1 toAccount:(id)arg2;

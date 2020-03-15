@@ -16,9 +16,9 @@
 
 + (id)backgroundWithBlurEffect:(id)arg1;
 + (id)backgroundWithFillColor:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(retain, nonatomic) UIBlurEffect *blurEffect; // @synthesize blurEffect=_blurEffect;
-- (void).cxx_destruct;
 
 @end
 

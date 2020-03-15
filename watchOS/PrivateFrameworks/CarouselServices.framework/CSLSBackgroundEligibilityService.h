@@ -18,8 +18,8 @@
 }
 
 + (id)sharedEligibilityService;
-@property(readonly, nonatomic) CSLSBackgroundServiceConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLSBackgroundServiceConnection *connection; // @synthesize connection=_connection;
 - (void)isBundleIDEligibleForBackgroundWork:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_init;
 - (id)init;

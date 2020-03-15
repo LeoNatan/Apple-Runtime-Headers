@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_shareItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *shareItem; // @synthesize shareItem=_shareItem;
 @property(nonatomic) _Bool hasFetchedSourceString; // @synthesize hasFetchedSourceString=_hasFetchedSourceString;
 @property(readonly, nonatomic) UITextView *sourceView; // @synthesize sourceView=_sourceView;
 @property(readonly, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
 @property(readonly, copy, nonatomic) HKMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)displaySourceString:(id)arg1;
 - (void)_fetchAndDisplaySourceStringIfNecessary;
 - (void)_tapToRadar:(id)arg1;

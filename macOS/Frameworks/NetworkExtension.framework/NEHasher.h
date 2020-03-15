@@ -16,9 +16,9 @@
 
 + (id)hashObject:(id)arg1 withClassPrefixWhitelist:(id)arg2;
 + (id)hashObject:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *classPrefixWhitelist; // @synthesize classPrefixWhitelist=_classPrefixWhitelist;
 @property struct CC_SHA1state_st *sha1Context; // @synthesize sha1Context=_sha1Context;
-- (void).cxx_destruct;
 - (struct CGSize)decodeSizeForKey:(id)arg1;
 - (struct CGRect)decodeRectForKey:(id)arg1;
 - (struct CGPoint)decodePointForKey:(id)arg1;

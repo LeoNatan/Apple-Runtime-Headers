@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id <PUPhotoEditBaseAdjustmentCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDisplayValueLabel; // @synthesize shouldDisplayValueLabel=_shouldDisplayValueLabel;
 @property(nonatomic) __weak id <PUPhotoEditBaseAdjustmentCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleButton:(id)arg1;
 @property(nonatomic) _Bool displayMappedValue;
 - (void)_updateValueLabelVisibility;

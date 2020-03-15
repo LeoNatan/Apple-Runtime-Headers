@@ -43,6 +43,7 @@
 + (void)_stopPlayingBBSoundForBulletin:(id)arg1 alertController:(id)arg2;
 + (id)_realertTimerKeyForBulletin:(id)arg1;
 + (id)sharedAlertProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *idleCompletions; // @synthesize idleCompletions=_idleCompletions;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *idlingActionQueue; // @synthesize idlingActionQueue=_idlingActionQueue;
 @property(retain, nonatomic) NSMutableArray *additionalActiveControllers; // @synthesize additionalActiveControllers=_additionalActiveControllers;
@@ -54,7 +55,6 @@
 @property(nonatomic) __weak id <CSLBulletinPipelineStepActor> pipelineProxyActor; // @synthesize pipelineProxyActor=_pipelineProxyActor;
 @property(nonatomic) __weak id <CSLBulletinPipelineStepActorDelegate> pipelineStep; // @synthesize pipelineStep=_pipelineStep;
 @property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate;
-- (void).cxx_destruct;
 - (void)_updateBulletinsOrReplacementsForBulletin:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)_markBulletinsAsClearedForBulletins:(id)arg1;
 - (void)_markBulletinsAsAlertedForBulletins:(id)arg1;

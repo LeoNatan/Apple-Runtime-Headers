@@ -21,11 +21,12 @@
 
 + (id)clientInterface;
 + (id)serverInterface;
++ (id)heartRhythmDefaultsDomainWithhealthStore:(id)arg1;
 + (id)healthAppDefaultsDomainWithHealthStore:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(readonly, copy, nonatomic) NSString *domainName; // @synthesize domainName=_domainName;
 @property(readonly, nonatomic) int category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;

@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _platterContentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL platterContentSizeDidChange; // @synthesize platterContentSizeDidChange=_platterContentSizeDidChange;
 @property(nonatomic) struct CGSize platterContentSize; // @synthesize platterContentSize=_platterContentSize;
 @property(copy, nonatomic) _UIContextMenuStyle *currentStyle; // @synthesize currentStyle=_currentStyle;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL isAnimatingPresentation; // @synthesize isAnimatingPresentation=_isAnimatingPresentation;
 @property(retain, nonatomic) _UIFulfilledContextMenuConfiguration *displayedConfiguration; // @synthesize displayedConfiguration=_displayedConfiguration;
 @property(readonly, nonatomic) _UIContextMenuActionsListView *actionsView; // @synthesize actionsView=_actionsView;
-- (void).cxx_destruct;
 - (void)_testing_tapAnAction;
 - (void)_testing_dismissByTappingOutside;
 @property(readonly, nonatomic) NSArray *accessoryViews; // @synthesize accessoryViews=_accessoryViews;
@@ -88,12 +88,13 @@ __attribute__((visibility("hidden")))
 - (void)presentationTransitionWillBegin;
 - (struct UIEdgeInsets)_baseContentInsetsWithLeftMargin:(double *)arg1 rightMargin:(double *)arg2;
 - (long long)presentationStyle;
+- (BOOL)_shouldRestoreFirstResponder;
+- (BOOL)_shouldKeepCurrentFirstResponder;
+- (BOOL)_shouldPreserveFirstResponder;
 - (BOOL)_shouldOccludeDuringPresentation;
 - (BOOL)_shouldDisableInteractionDuringTransitions;
 - (struct CGRect)frameOfPresentedViewInContainerView;
 - (id)initWithPresentingViewController:(id)arg1 configuration:(id)arg2 sourcePreview:(id)arg3 style:(id)arg4;
-- (BOOL)_shouldRestoreFirstResponder;
-- (BOOL)_shouldKeepCurrentFirstResponder;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

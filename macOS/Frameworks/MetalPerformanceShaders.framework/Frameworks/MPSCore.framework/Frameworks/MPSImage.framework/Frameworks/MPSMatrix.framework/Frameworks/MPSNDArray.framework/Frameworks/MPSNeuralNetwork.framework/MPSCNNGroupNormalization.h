@@ -10,8 +10,8 @@
 
 @interface MPSCNNGroupNormalization : MPSCNNKernel
 {
-    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>=A^v}Q@@{?=QQ}}, name: _gamma
-    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>=A^v}Q@@{?=QQ}}, name: _beta
+    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Q@@{?=QQ}}, name: _gamma
+    // Error parsing type: ^{MPSAutoBuffer={atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Q@@{?=QQ}}, name: _beta
     id <MPSCNNGroupNormalizationDataSource> _dataSource;
     unsigned long long _numberOfFeatureChannels;
     unsigned long long _numberOfGroups;

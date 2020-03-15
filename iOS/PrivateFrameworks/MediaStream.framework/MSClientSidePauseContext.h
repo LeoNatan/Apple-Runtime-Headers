@@ -17,10 +17,10 @@
     MSTimerGate *_gate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSTimerGate *gate; // @synthesize gate=_gate;
 @property(retain, nonatomic) NSXPCConnection *server; // @synthesize server=_server;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *timerQueue; // @synthesize timerQueue=_timerQueue;
-- (void).cxx_destruct;
 - (void)timerQueuePing;
 - (void)timerQueueTimerFired;
 - (void)resume;

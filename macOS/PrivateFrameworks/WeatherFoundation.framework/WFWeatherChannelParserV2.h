@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (id)componentsForCurrentForecast;
 + (unsigned long long)expectedDailyForecastCount;
 + (unsigned long long)expectedHourlyForecastCount;
-@property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (id)parseAirQualityData:(id)arg1 location:(id)arg2 error:(id *)arg3;
 - (void)parseCommonComponents:(id)arg1 data:(id)arg2;
 - (id)parseCurrentCondition:(id)arg1 high:(id)arg2 low:(id)arg3;

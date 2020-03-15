@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *accessPoints; // @synthesize accessPoints=_accessPoints;
 @property(readonly, nonatomic) NSDate *start; // @synthesize start=_start;
 @property(readonly, nonatomic) unsigned int settledState; // @synthesize settledState=_settledState;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)encodeWithCoder:(id)arg1;

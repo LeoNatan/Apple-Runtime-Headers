@@ -17,9 +17,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
 + (id)filterWithOperatorType:(unsigned int)arg1 comparisonValue:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *comparisonValue; // @synthesize comparisonValue=_comparisonValue;
 @property(readonly, nonatomic) unsigned int operatorType; // @synthesize operatorType=_operatorType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

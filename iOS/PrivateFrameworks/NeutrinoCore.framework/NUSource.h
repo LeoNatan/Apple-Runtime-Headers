@@ -15,8 +15,8 @@
     NSString *_assetIdentifier;
 }
 
-@property(copy, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
 - (id)sourceDefinition:(out id *)arg1;
 - (_Bool)isEqualToSource:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

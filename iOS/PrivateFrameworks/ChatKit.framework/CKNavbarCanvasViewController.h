@@ -37,6 +37,7 @@
     CKDetailsContactsManager *_contactsManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDetailsContactsManager *contactsManager; // @synthesize contactsManager=_contactsManager;
 @property(retain, nonatomic) CNContactStore *suggestionsEnabledContactStore; // @synthesize suggestionsEnabledContactStore=_suggestionsEnabledContactStore;
 @property(nonatomic) long long indicatorType; // @synthesize indicatorType=_indicatorType;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) CKNavigationBarCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property(retain, nonatomic) UIButton *callButton; // @synthesize callButton=_callButton;
 @property(nonatomic) __weak id <CKNavbarCanvasViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct NSDirectionalEdgeInsets)systemMinimumLayoutMarginsForView:(id)arg1;
 - (void)contactsManager:(id)arg1 didRequestCallTypeForEntity:(id)arg2 addresses:(id)arg3 abLabels:(id)arg4 faceTimeAudioEnabled:(_Bool)arg5;
 - (void)contactsManagerViewModelsDidChange:(id)arg1;

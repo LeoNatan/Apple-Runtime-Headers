@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned long long)maximumDailyConditionCount;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *horizontalStackView; // @synthesize horizontalStackView=_horizontalStackView;
 @property(retain, nonatomic) NSArray *dailyForecastViews; // @synthesize dailyForecastViews=_dailyForecastViews;
 @property(retain, nonatomic) NWCDailyForecastRangeView *dailyForecastRangeView; // @synthesize dailyForecastRangeView=_dailyForecastRangeView;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) Class dailyForecastViewClass;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;

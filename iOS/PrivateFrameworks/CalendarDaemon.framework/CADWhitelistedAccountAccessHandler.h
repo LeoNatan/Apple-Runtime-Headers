@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id <CADACAccountsProvider> _accountsProvider;
 }
 
-@property(readonly, nonatomic) id <CADACAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CADACAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
 - (void)reset;
 - (id)restrictedCalendarRowIDsForAction:(unsigned long long)arg1;
 - (_Bool)isActionAllowed:(unsigned long long)arg1 forAccountIdentifier:(id)arg2;

@@ -13,8 +13,8 @@
     NSSet *_personLocalIdentifiers;
 }
 
-@property(readonly, nonatomic) NSSet *personLocalIdentifiers; // @synthesize personLocalIdentifiers=_personLocalIdentifiers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *personLocalIdentifiers; // @synthesize personLocalIdentifiers=_personLocalIdentifiers;
 - (id)description;
 - (unsigned long long)changeCount;
 - (unsigned long long)type;

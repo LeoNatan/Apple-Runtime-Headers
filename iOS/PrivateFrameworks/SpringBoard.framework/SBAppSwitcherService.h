@@ -15,9 +15,9 @@
 }
 
 + (id)switcherServiceWithName:(id)arg1 viewServiceClassName:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *viewServiceClassName; // @synthesize viewServiceClassName=_viewServiceClassName;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 
 @end
 

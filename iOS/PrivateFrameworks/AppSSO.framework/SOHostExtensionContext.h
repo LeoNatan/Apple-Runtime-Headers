@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
-@property __weak SOExtension *contextExtension; // @synthesize contextExtension=_contextExtension;
 - (void).cxx_destruct;
+@property __weak SOExtension *contextExtension; // @synthesize contextExtension=_contextExtension;
 - (void)authorizationDidCompleteWithCredential:(id)arg1 error:(id)arg2;
 - (void)presentAuthorizationViewControllerWithHints:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)canOpenURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

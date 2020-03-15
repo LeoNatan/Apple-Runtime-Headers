@@ -20,9 +20,9 @@
 + (id)_urlStringForKey:(id)arg1 inBag:(id)arg2;
 + (id)_stringRepresentationForHTTPMethod:(int)arg1;
 + (id)_stringRepresentationForHTTPBodyType:(int)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(readonly, nonatomic) id <MPStoreSocialRequestOperationDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_requestURLFromBagDictionary:(id)arg1;
 - (void)execute;
 - (void)cancel;

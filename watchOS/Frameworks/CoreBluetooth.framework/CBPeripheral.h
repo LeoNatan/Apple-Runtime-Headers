@@ -44,6 +44,7 @@
     NSString *_BDAddress;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isConnectedToSystem) _Bool connectedToSystem; // @synthesize connectedToSystem=_connectedToSystem;
 @property(readonly) _Bool visibleInSettings; // @synthesize visibleInSettings=_visibleInSettings;
 @property(retain) NSString *BDAddress; // @synthesize BDAddress=_BDAddress;
@@ -56,7 +57,6 @@
 @property(retain) NSNumber *RSSI; // @synthesize RSSI=_RSSI;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(nonatomic) __weak id <CBPeripheralDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleDescriptorValueWritten:(id)arg1;
 - (void)handleDescriptorValueUpdated:(id)arg1;
 - (void)handleCharacteristicDescriptorsDiscovered:(id)arg1;

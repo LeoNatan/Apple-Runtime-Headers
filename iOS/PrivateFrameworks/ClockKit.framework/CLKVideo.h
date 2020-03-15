@@ -21,8 +21,8 @@
 + (id)videoWithName:(id)arg1 forDevice:(id)arg2 url:(id)arg3;
 + (id)videoNamed:(id)arg1 forDevice:(id)arg2 inBundle:(id)arg3;
 + (id)_videoNamed:(id)arg1 device:(id)arg2 bundle:(id)arg3 modifier:(id)arg4;
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSURL *url; // @dynamic url;

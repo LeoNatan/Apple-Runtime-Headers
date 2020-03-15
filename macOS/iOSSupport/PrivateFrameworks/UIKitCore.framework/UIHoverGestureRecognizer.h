@@ -12,12 +12,15 @@
 {
     UIHoverEvent *_currentHoverEvent;
     UITouch *_currentTouch;
+    BOOL _pausesWhilePanning;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic, getter=_pausesWhilePanning, setter=_setPausesWhilePanning:) BOOL pausesWhilePanning; // @synthesize pausesWhilePanning=_pausesWhilePanning;
 - (BOOL)_paused;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
+- (BOOL)_affectedByGesture:(id)arg1;
 - (struct CGPoint)locationInView:(id)arg1;
 - (void)_hoverCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_hoverExited:(id)arg1 withEvent:(id)arg2;
@@ -27,7 +30,6 @@
 - (BOOL)_shouldReceiveTouch:(id)arg1 forEvent:(id)arg2 recognizerView:(id)arg3;
 - (void)reset;
 - (BOOL)_wantsHoverEvents;
-- (void)setView:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 
 @end

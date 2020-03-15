@@ -15,10 +15,10 @@
     NSString *_panelUUID;
 }
 
+- (void).cxx_destruct;
 @property BOOL customizeToolbarOrdering; // @synthesize customizeToolbarOrdering=_customizeToolbarOrdering;
 @property(retain) NSString *panelUUID; // @synthesize panelUUID=_panelUUID;
 @property(retain) NSURL *panelCollectionURL; // @synthesize panelCollectionURL=_panelCollectionURL;
-- (void).cxx_destruct;
 - (void)performWithEventSourceData:(id)arg1;
 - (id)dictionaryForSaving;
 - (id)init;

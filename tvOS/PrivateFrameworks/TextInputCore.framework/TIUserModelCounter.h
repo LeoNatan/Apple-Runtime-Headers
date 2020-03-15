@@ -17,10 +17,10 @@
     NSDate *_lastUpdateDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)add:(int)arg1;
 @property(readonly, nonatomic) NSNumber *count;
 - (void)doPersist:(id)arg1 forDate:(id)arg2;

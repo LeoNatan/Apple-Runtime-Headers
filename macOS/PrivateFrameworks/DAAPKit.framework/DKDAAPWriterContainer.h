@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableData *_childData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableData *childData; // @synthesize childData=_childData;
 @property(readonly, nonatomic) unsigned int code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (id)formattedOutputData;
 - (id)initWithCode:(unsigned int)arg1;
 

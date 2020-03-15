@@ -15,15 +15,16 @@
     NSString *_accountIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(nonatomic) BOOL personInserted; // @synthesize personInserted=_personInserted;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)executeUndoWithCNSaveRequest:(id)arg1;
 - (void)executeRedoWithCNSaveRequest:(id)arg1;
 - (void)executeWithCNSaveRequest:(id)arg1;
 - (id)actionName;
-- (id)initWithContact:(id)arg1 contactStore:(id)arg2 accountIdentifier:(id)arg3 personInserted:(BOOL)arg4;
+- (id)initWithContact:(id)arg1 contactStore:(id)arg2 accountIdentifier:(id)arg3 personInserted:(BOOL)arg4 ignoresGuardianRestrictions:(BOOL)arg5;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

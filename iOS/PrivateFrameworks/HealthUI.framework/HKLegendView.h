@@ -24,11 +24,11 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(retain, nonatomic) UIColor *topBorderColor; // @synthesize topBorderColor=_topBorderColor;
 @property(readonly, nonatomic) NSArray *rightEntries; // @synthesize rightEntries=_rightEntries;
 @property(readonly, nonatomic) NSArray *leftEntries; // @synthesize leftEntries=_leftEntries;
-- (void).cxx_destruct;
 - (void)_updateLegendLeftEntries:(id)arg1 rightEntries:(id)arg2;
 - (void)_rebuildStackStructure;
 - (void)setLeftEntries:(id)arg1 rightEntries:(id)arg2;

@@ -6,9 +6,9 @@
 
 #import <NewsSubscription/NSObject-Protocol.h>
 
-@class AIDAAccountManager;
+@class AIDAAccountManager, NSDictionary;
 
 @protocol AIDAAccountManagerDelegate <NSObject>
-- (struct NSDictionary *)accountsForAccountManager:(AIDAAccountManager *)arg1;
+- (NSDictionary *)accountsForAccountManager:(AIDAAccountManager *)arg1;
 @end
 

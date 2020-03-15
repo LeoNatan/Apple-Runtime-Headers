@@ -8,6 +8,8 @@
 
 @interface NSString (RCAdditions)
 + (id)rc_stringWithPersistentID:(long long)arg1;
+@property(readonly, copy) NSString *rc_stringFromRealPath;
+@property(readonly, copy) NSString *rc_reversedString;
 - (id)rc_intentionallyNonLocalizedString;
 - (long long)rc_persistentIDValue;
 - (id)rc_stringByReplacingBreakingWithNonBreakingSpaces;

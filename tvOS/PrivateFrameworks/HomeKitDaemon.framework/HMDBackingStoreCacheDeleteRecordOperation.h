@@ -15,10 +15,10 @@
     NSArray *_recordNames;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *recordNames; // @synthesize recordNames=_recordNames;
 @property(retain, nonatomic) HMDBackingStoreCacheShareGroup *share; // @synthesize share=_share;
 @property(retain, nonatomic) HMDBackingStoreCacheGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithShareGroup:(id)arg1 recordNames:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;
 - (id)initWithGroup:(id)arg1 recordNames:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;

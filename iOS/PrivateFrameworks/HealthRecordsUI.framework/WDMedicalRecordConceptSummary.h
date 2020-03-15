@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_resourceQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resourceQueue; // @synthesize resourceQueue=_resourceQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *summaryQueue; // @synthesize summaryQueue=_summaryQueue;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) HKConceptStore *conceptStore; // @synthesize conceptStore=_conceptStore;
 @property(retain, nonatomic) HKHealthRecordsStore *healthRecordsStore; // @synthesize healthRecordsStore=_healthRecordsStore;
 @property(nonatomic) __weak id <WDMedicalRecordSummaryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updatePlacementForDisplayItems:(id)arg1 ofRecord:(id)arg2;
 - (void)_displayItemsForGenericMedicalRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_displayItemsForObservation:(id)arg1 completion:(CDUnknownBlockType)arg2;

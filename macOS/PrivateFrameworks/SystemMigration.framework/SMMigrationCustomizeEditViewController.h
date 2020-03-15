@@ -15,10 +15,10 @@
     NSWindow *sheetWindow;
 }
 
+- (void).cxx_destruct;
 @property NSWindow *sheetWindow; // @synthesize sheetWindow;
 @property(retain) NSMutableSet *nodesWhichWereOff; // @synthesize nodesWhichWereOff;
 @property(retain) SMCustomizeTreeNode_Client *treeNode; // @synthesize treeNode;
-- (void).cxx_destruct;
 - (void)pressedOk:(id)arg1;
 - (void)pressedCancel:(id)arg1;
 - (void)dismissWindow;

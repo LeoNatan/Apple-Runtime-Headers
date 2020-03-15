@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (id)postModeBannerLayout;
 + (id)preModeBannerLayout;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
 @property(readonly, nonatomic) VUITextLayout *subtitleLayout; // @synthesize subtitleLayout=_subtitleLayout;
 @property(readonly, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct UIEdgeInsets margin; // @synthesize margin=_margin;
 @property(readonly, nonatomic) struct TVCornerRadii borderRadii; // @synthesize borderRadii=_borderRadii;
 @property(readonly, nonatomic) _Bool isPreModeBanner; // @synthesize isPreModeBanner=_isPreModeBanner;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long bannerStyle;
 - (id)initWithBannerType:(_Bool)arg1;
 

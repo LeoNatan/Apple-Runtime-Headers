@@ -47,10 +47,11 @@
     PUPhotoMarkupViewController *__photoMarkupViewController;
     PUFunEffectsViewController *__funEffectsViewController;
     PUAssetReference *__stashedAssetReference;
-    struct NSHashTable *__presentedViewControllers;
+    NSHashTable *__presentedViewControllers;
     PUActivitySharingController *_activitySharingController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUActivitySharingController *activitySharingController; // @synthesize activitySharingController=_activitySharingController;
 @property(nonatomic, setter=_setNeedsUpdatePresentedViewControllers:) _Bool _needsUpdatePresentedViewControllers; // @synthesize _needsUpdatePresentedViewControllers=__needsUpdatePresentedViewControllers;
 @property(retain, nonatomic, setter=_setPresentedViewControllers:) NSHashTable *_presentedViewControllers; // @synthesize _presentedViewControllers=__presentedViewControllers;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic, setter=_setSharingViewController:) PUPhotosSharingViewController *_sharingViewController; // @synthesize _sharingViewController=__sharingViewController;
 @property(nonatomic) __weak id <PUOverOneUpPresentationSessionBarsDelegate> barsDelegate; // @synthesize barsDelegate=_barsDelegate;
 @property(nonatomic) __weak id <PUOverOneUpPresentationSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)ppt_presentPhotoEditor;
 - (void)ppt_cancelActivity;
 - (void)ppt_shareUsingActivityOfType:(id)arg1;

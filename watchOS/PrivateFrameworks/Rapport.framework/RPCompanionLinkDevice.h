@@ -38,6 +38,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool uiTriggered; // @synthesize uiTriggered=_uiTriggered;
 @property(nonatomic) int serversChangedState; // @synthesize serversChangedState=_serversChangedState;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) NSUUID *homeKitIdentifier; // @synthesize homeKitIdentifier=_homeKitIdentifier;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) NSString *deviceColor; // @synthesize deviceColor=_deviceColor;
-- (void).cxx_destruct;
 - (unsigned int)updateWithSFDevice:(id)arg1;
 - (unsigned int)updateWithBonjourDevice:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *effectiveIdentifier;

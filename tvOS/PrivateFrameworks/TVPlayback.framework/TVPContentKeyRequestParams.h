@@ -14,9 +14,9 @@
     NSArray *_keyFormatVersions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *keyFormatVersions; // @synthesize keyFormatVersions=_keyFormatVersions;
 @property(retain, nonatomic) NSString *keyIdentifier; // @synthesize keyIdentifier=_keyIdentifier;
-- (void).cxx_destruct;
 
 @end
 

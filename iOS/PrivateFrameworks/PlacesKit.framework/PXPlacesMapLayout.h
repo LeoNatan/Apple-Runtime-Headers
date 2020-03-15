@@ -17,9 +17,9 @@
     id <PXPlacesMapPipelineComponentProvider> pipelineComponentProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXPlacesMapPipelineComponentProvider> pipelineComponentProvider; // @synthesize pipelineComponentProvider;
 @property(readonly) id <PXPlacesGeotaggedItemDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)reset;
 - (id)layoutItemForGeotaggable:(id)arg1;
 - (id)layoutForViewPort:(id)arg1 andDataSourceChange:(id)arg2;

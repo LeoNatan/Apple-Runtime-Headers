@@ -35,13 +35,13 @@
     MKTransitDeparturesDataProvider *_dataProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MKTransitDeparturesDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(nonatomic, getter=allowsTransitLineSelection) BOOL allowTransitLineSelection; // @synthesize allowTransitLineSelection=_allowTransitLineSelection;
 @property(nonatomic, getter=hasLimitedInteraction) BOOL limitInteraction; // @synthesize limitInteraction=_limitInteraction;
 @property(nonatomic) __weak id <_MKInfoCardAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
 @property(nonatomic) __weak id <MKTransitDeparturesDataSourceHosting> host; // @synthesize host=_host;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (long long)_departureSequenceFrequencyTypeForAllDeparturesSections;
 - (int)_transitCategoryForSequence:(id)arg1;
 - (int)transitCategoryForFrequencyType:(long long)arg1;

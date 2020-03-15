@@ -17,11 +17,11 @@
 }
 
 + (id)emptyModel;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *foundOnDeviceActions; // @synthesize foundOnDeviceActions=_foundOnDeviceActions;
 @property(copy, nonatomic) NSArray *directoryServiceActions; // @synthesize directoryServiceActions=_directoryServiceActions;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) CNUIUserActionItem *defaultAction; // @synthesize defaultAction=_defaultAction;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool isEmpty;
 - (id)allActions;

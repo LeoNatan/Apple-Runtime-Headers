@@ -26,9 +26,9 @@
 }
 
 + (id)ejectionOperationWithQueue:(id)arg1 andCompletion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;
 - (void)_handleAudioSessionInterruptionNotification:(id)arg1;
 - (void)_deactivateAudioSession;

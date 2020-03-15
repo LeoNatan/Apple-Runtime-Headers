@@ -23,9 +23,9 @@
 + (id)targetForDeferringEnvironment:(id)arg1;
 + (id)keyboardFocusTarget;
 + (id)systemTarget;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, copy, nonatomic) BKSHIDEventDeferringEnvironment *deferringEnvironment; // @synthesize deferringEnvironment=_environment;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

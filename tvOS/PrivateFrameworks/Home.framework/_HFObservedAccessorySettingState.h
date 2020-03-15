@@ -19,10 +19,10 @@
 
 + (id)na_identity;
 + (id)stateWithSettings:(id)arg1 forSetting:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *selectionOptions; // @synthesize selectionOptions=_selectionOptions;
 @property(readonly, nonatomic) HMSetting *setting; // @synthesize setting=_setting;
 @property(readonly, nonatomic) HMSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithSettings:(id)arg1 setting:(id)arg2;

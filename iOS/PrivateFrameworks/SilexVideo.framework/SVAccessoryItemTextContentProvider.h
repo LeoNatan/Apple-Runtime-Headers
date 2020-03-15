@@ -18,10 +18,10 @@
     NSString *_headerText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
 @property(readonly, nonatomic) id <SVVideoTitleProviding> titleProvider; // @synthesize titleProvider=_titleProvider;
 @property(readonly, nonatomic) SVAccessoryItemButton *accessoryItemButton; // @synthesize accessoryItemButton=_accessoryItemButton;
-- (void).cxx_destruct;
 - (void)updateAccessoryItemForVideo:(id)arg1 animated:(_Bool)arg2;
 - (id)initWithAccessoryItemButton:(id)arg1 titleProvider:(id)arg2 headerText:(id)arg3;
 

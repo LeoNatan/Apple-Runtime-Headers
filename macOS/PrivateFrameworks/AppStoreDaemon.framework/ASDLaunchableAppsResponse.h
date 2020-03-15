@@ -13,8 +13,8 @@
     NSArray *_bundleIDs;
 }
 
-@property(readonly, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 - (id)initWithBundleIDs:(id)arg1;
 - (id)init;
 

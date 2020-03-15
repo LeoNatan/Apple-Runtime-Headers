@@ -21,11 +21,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)activityWithType:(long long)arg1 reason:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -35,13 +35,13 @@
     id <SKUIModalDocumentDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIModalDocumentDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
 @property(nonatomic) __weak id <UINavigationControllerDelegate> navigationControllerDelegate; // @synthesize navigationControllerDelegate=_navigationControllerDelegate;
 @property(nonatomic) __weak id <SKUIModalSourceViewProvider> modalSourceViewProvider; // @synthesize modalSourceViewProvider=_modalSourceViewProvider;
 @property(nonatomic) __weak id <SKUIModalDocumentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_unloadDocumentForViewController:(id)arg1;
 - (void)_unloadDocumentForPopoverController:(id)arg1;
 - (id)_showOverlayContainerViewController;

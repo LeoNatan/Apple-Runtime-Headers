@@ -26,6 +26,7 @@
     NSString *_streetViewLocation;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *streetViewLocation; // @synthesize streetViewLocation=_streetViewLocation;
 @property(nonatomic) BOOL showsBicycling; // @synthesize showsBicycling=_showsBicycling;
 @property(nonatomic) BOOL showsStreetView; // @synthesize showsStreetView=_showsStreetView;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *searchLocation; // @synthesize searchLocation=_searchLocation;
 @property(copy, nonatomic) NSString *searchNearQuery; // @synthesize searchNearQuery=_searchNearQuery;
 @property(copy, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
-- (void).cxx_destruct;
 
 @end
 

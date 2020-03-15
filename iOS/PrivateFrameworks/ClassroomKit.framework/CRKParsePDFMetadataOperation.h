@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "CATOperation.h"
+#import <DeviceManagement/CATOperation.h>
 
 @class CRKBook, NSString;
 
@@ -15,10 +15,10 @@
     NSString *_filePath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool parseImage; // @synthesize parseImage=_parseImage;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly, nonatomic) CRKBook *book; // @synthesize book=_book;
-- (void).cxx_destruct;
 - (id)fileName;
 - (id)titleFromDictionaryRef:(struct CGPDFDictionary *)arg1;
 - (void)updateTitleWithDictionaryRef:(struct CGPDFDictionary *)arg1;

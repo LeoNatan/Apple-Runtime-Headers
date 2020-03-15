@@ -91,6 +91,7 @@ __attribute__((visibility("hidden")))
 + (id)_randomMoodID;
 + (id)backstopEditValuesForPacing:(id)arg1;
 + (id)sharedMoodManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *titleStylesForTitlePicker; // @synthesize titleStylesForTitlePicker=_titleStylesForTitlePicker;
 @property(retain, nonatomic) NSDictionary *rawTransitionDetailsList; // @synthesize rawTransitionDetailsList=_rawTransitionDetailsList;
 @property(retain, nonatomic) NSArray *editStylesList; // @synthesize editStylesList=_editStylesList;
@@ -99,7 +100,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDictionary *rawTitlesList; // @synthesize rawTitlesList=_rawTitlesList;
 @property(retain, nonatomic) NSArray *songList; // @synthesize songList=_songList;
 @property(retain, nonatomic) NSDictionary *rawSongList; // @synthesize rawSongList=_rawSongList;
-- (void).cxx_destruct;
 - (void)_dumpProjectFiltersForMood:(id)arg1;
 - (void)_dumpPartList:(id)arg1 forMood:(id)arg2;
 - (id)_allMoodIDsForMoodPart:(id)arg1 prioritizingMood:(id)arg2;

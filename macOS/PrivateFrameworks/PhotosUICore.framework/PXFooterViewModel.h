@@ -26,6 +26,7 @@
     UXView *_accessoryView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UXView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly, copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(readonly, nonatomic) NSString *actionConfirmationAlertButtonTitle; // @synthesize actionConfirmationAlertButtonTitle=_actionConfirmationAlertButtonTitle;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) NSString *extendedTitle; // @synthesize extendedTitle=_extendedTitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long animatedIconMode; // @synthesize animatedIconMode=_animatedIconMode;
-- (void).cxx_destruct;
 - (void)setAnimatedIconMode:(long long)arg1;
 - (void)setAccessoryView:(id)arg1;
 - (void)setAction:(CDUnknownBlockType)arg1;

@@ -16,11 +16,11 @@
     CPLEngineStore *_store;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CPLEngineStore *store; // @synthesize store=_store;
 @property(readonly, nonatomic) NSData *transportScope; // @synthesize transportScope=_transportScope;
 @property(readonly, nonatomic) CPLEngineScope *scope; // @synthesize scope=_scope;
 @property(readonly, nonatomic) NSString *clientCacheIdentifier; // @synthesize clientCacheIdentifier=_clientCacheIdentifier;
-- (void).cxx_destruct;
 - (_Bool)checkScopeIsValidInTransaction:(id)arg1;
 - (id)initWithEngineLibrary:(id)arg1 session:(id)arg2 clientCacheIdentifier:(id)arg3 scope:(id)arg4 transportScope:(id)arg5;
 

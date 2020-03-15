@@ -35,11 +35,11 @@
 }
 
 + (int)maxNumberOfEmailsSupported;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requireOutgoingInteraction; // @synthesize requireOutgoingInteraction=_requireOutgoingInteraction;
 @property(readonly, nonatomic) float w0; // @synthesize w0=_w0;
 @property(readonly, nonatomic) float lambda; // @synthesize lambda=_lambda;
 @property(retain, nonatomic) id <_CDPDataHarvester> harvester; // @synthesize harvester=_harvester;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *people;
 - (id)peopleWithID:(unsigned int)arg1;
 - (void)_printPrediction:(struct _cdp_prediction_result *)arg1;

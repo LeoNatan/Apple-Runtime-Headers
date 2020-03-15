@@ -30,10 +30,10 @@ __attribute__((visibility("hidden")))
     NSArray *_lastUsedPrinterArray;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *lastUsedPrinterArray; // @synthesize lastUsedPrinterArray=_lastUsedPrinterArray;
 @property(readonly, nonatomic) _Bool contentLargerThanRollPaper; // @synthesize contentLargerThanRollPaper=_contentLargerThanRollPaper;
 @property(retain, nonatomic) PKPrinter *printer; // @synthesize printer=_printer;
-- (void).cxx_destruct;
 - (void)lookupLastUsedPrinter;
 - (id)localizedPageRangeText;
 - (_Bool)filtersPrinters;
@@ -67,6 +67,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long pageCount;
 @property(nonatomic) _Bool grayscale;
 @property(nonatomic) _Bool duplex;
+- (id)printInfo;
 - (void)printMoreOptionsViewDidDisappear;
 - (void)printRangeViewDidDisappear;
 - (void)printPaperViewDidDisappear;

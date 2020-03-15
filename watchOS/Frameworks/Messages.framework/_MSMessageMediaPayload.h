@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isSticker; // @synthesize isSticker=_isSticker;
 @property(copy, nonatomic) NSDictionary *attributionInfo; // @synthesize attributionInfo=_attributionInfo;
 @property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSData *mediaData; // @synthesize mediaData=_mediaData;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSString *mediaType; // @synthesize mediaType=_mediaType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSURL *mediaURL; // @synthesize mediaURL=_mediaURL;
 - (id)init;

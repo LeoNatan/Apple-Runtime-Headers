@@ -43,6 +43,7 @@
     SORealmSettingManager *_settingsManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requestStarted; // @synthesize requestStarted=_requestStarted;
 @property(retain, nonatomic) SORealmSettingManager *settingsManager; // @synthesize settingsManager=_settingsManager;
 @property(retain) NSObject<OS_dispatch_group> *dispatchGroup; // @synthesize dispatchGroup=_dispatchGroup;
@@ -73,7 +74,6 @@
 @property(retain, nonatomic) NSString *realm; // @synthesize realm=_realm;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSString *userPrincipalName; // @synthesize userPrincipalName=_userPrincipalName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SOKerberosRealmSettings *currentSettings;
 - (void)presentAuthorizationViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)completeRequestWithDoNotHandle;
@@ -85,6 +85,7 @@
 - (void)cancelRequest:(_Bool)arg1;
 - (void)cancelRequest;
 - (void)waitForCompletion;
+- (void)finishRequest;
 - (void)startRequest;
 - (void)setUserPrincipalNameAfterAuth:(id)arg1;
 - (id)initWithRequest:(id)arg1 extensionData:(id)arg2 settingsManager:(id)arg3;

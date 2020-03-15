@@ -36,6 +36,7 @@
 }
 
 + (void)phoneNumberSupportedWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canEditUsername; // @synthesize canEditUsername=_canEditUsername;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(nonatomic) _Bool showServiceIcons; // @synthesize showServiceIcons=_showServiceIcons;
@@ -43,7 +44,6 @@
 @property(nonatomic) __weak id <AAUISignInViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setShouldAnticipatePiggybacking:) _Bool _shouldAnticipatePiggybacking; // @synthesize _shouldAnticipatePiggybacking;
 @property(nonatomic, setter=_setAkServiceType:) long long _akServiceType; // @synthesize _akServiceType;
-- (void).cxx_destruct;
 - (void)_updateConstraintsForTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;

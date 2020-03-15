@@ -25,11 +25,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NMRNowPlayingController *nowPlayingController; // @synthesize nowPlayingController=_nowPlayingController;
 @property(readonly, nonatomic) AXTapticTimeManager *tapticTimeManager; // @synthesize tapticTimeManager=_tapticTimeManager;
 @property(readonly, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(readonly, nonatomic) VSSpeechSynthesizer *vsSpeechSynthesizer; // @synthesize vsSpeechSynthesizer=_vsSpeechSynthesizer;
-- (void).cxx_destruct;
 - (void)backlightDidTurnOff:(id)arg1 forReason:(unsigned int)arg2;
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange)arg2 forRequest:(id)arg3;
 - (void)speechSynthesizer:(id)arg1 didContinueSpeakingRequest:(id)arg2;

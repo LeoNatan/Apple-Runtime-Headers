@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 
 + (void)fetchFreeSpaceNow;
 + (id)singleton;
-@property(nonatomic) long long freeSpace; // @synthesize freeSpace=_freeSpace;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) long long freeSpace; // @synthesize freeSpace=_freeSpace;
 - (void)stopObserving;
 - (void)startObserving;
 - (void)fetchFreeSpace;

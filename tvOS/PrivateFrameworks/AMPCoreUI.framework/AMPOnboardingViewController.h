@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_metricsQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *metricsQueue; // @synthesize metricsQueue=_metricsQueue;
 @property(retain, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) AMSUIOnboardingViewController *onboardingController; // @synthesize onboardingController=_onboardingController;
 @property(copy, nonatomic) CDUnknownBlockType primaryButtonCallback; // @synthesize primaryButtonCallback=_primaryButtonCallback;
 @property(readonly, nonatomic) OBPrivacyLinkController *privacyLinkController; // @synthesize privacyLinkController=_privacyLinkController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPresentedInFormSheet;
 - (void)didTapPrimaryButton:(id)arg1;
 @property(readonly, nonatomic) UIImage *headerImage;

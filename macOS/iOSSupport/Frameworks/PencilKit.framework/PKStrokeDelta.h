@@ -15,10 +15,10 @@
     NSUUID *_strokeUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *_strokeUUID; // @synthesize _strokeUUID;
 @property(retain, nonatomic) _PKStrokeData *deltaStrokeData; // @synthesize deltaStrokeData=_deltaStrokeData;
 @property(retain, nonatomic) PKStroke *deltaStroke; // @synthesize deltaStroke=_deltaStroke;
-- (void).cxx_destruct;
 - (id)description;
 - (void)saveToArchive:(struct StrokeDelta *)arg1;
 - (id)dataRepresentation;

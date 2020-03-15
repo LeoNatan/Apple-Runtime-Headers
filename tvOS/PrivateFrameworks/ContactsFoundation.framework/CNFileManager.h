@@ -13,8 +13,8 @@
     NSFileManager *_fileManager;
 }
 
-@property(readonly, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 - (id)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(_Bool)arg2 attributes:(id)arg3;
 - (id)initWithFileManager:(id)arg1;
 - (id)init;

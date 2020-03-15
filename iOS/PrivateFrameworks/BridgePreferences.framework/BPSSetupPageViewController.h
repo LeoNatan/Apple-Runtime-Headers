@@ -18,9 +18,9 @@
     id <BPSBuddyControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <BPSBuddyControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)removeFollowupForPageWithCompletion:(CDUnknownBlockType)arg1;
 - (void)addFollowUpForPageWithCompletion:(CDUnknownBlockType)arg1;
 - (void)addFollowUpForPageAndDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

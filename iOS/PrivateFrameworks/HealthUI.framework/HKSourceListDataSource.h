@@ -35,6 +35,7 @@
 + (CDUnknownBlockType)_builtinIconFetchTransformer;
 + (CDUnknownBlockType)_builtinInstallationStatusTransformer;
 + (void)fetchIconForSource:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool deliverUpdates; // @synthesize deliverUpdates=_deliverUpdates;
 @property(nonatomic) _Bool shouldIncludeSpecialSources; // @synthesize shouldIncludeSpecialSources=_shouldIncludeSpecialSources;
 @property(nonatomic) _Bool shouldFetchPurposeStrings; // @synthesize shouldFetchPurposeStrings=_shouldFetchPurposeStrings;
@@ -42,7 +43,6 @@
 @property(nonatomic) _Bool shouldFetchAppInstallationStatus; // @synthesize shouldFetchAppInstallationStatus=_shouldFetchAppInstallationStatus;
 @property(readonly, nonatomic) HKSourceListDataModel *sources; // @synthesize sources=_sources;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (void)_fakeSourceForInstalledAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_specialAppBundleIdentifiers;
 - (void)_throttledNotificationOfDataSourceUpdate;

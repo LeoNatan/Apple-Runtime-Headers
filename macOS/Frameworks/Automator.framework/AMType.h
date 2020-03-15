@@ -22,6 +22,7 @@
 }
 
 + (BOOL)headerInputTypes:(id)arg1 haveConnectionToActionInputTypes:(id)arg2 conservativeConversionOnly:(BOOL)arg3 returningLength:(unsigned long long *)arg4;
+- (void).cxx_destruct;
 @property(copy) NSArray *headerInputTypes; // @synthesize headerInputTypes=_headerInputTypes;
 @property(copy) NSArray *applicationBundleIDs; // @synthesize applicationBundleIDs=_applicationBundleIDs;
 @property(copy) NSString *category; // @synthesize category=_category;
@@ -31,7 +32,6 @@
 @property(copy) NSString *fileType; // @synthesize fileType=_fileType;
 @property(copy) NSArray *utiTypes; // @synthesize utiTypes=_utiTypes;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isCustomApplicationType;
 - (void)addApplicationBundleID:(id)arg1;
 - (id)description;

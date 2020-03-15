@@ -22,13 +22,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *shareeAddress; // @synthesize shareeAddress=_shareeAddress;
 @property(readonly, nonatomic) NSString *shareeDisplayName; // @synthesize shareeDisplayName=_shareeDisplayName;
 @property(readonly, nonatomic) NSUUID *shareeOwningListIdentifier; // @synthesize shareeOwningListIdentifier=_shareeOwningListIdentifier;
 @property(readonly, nonatomic) NSNumber *daIsEventOnlyContainer; // @synthesize daIsEventOnlyContainer=_daIsEventOnlyContainer;
 @property(readonly, nonatomic) NSString *externalIdentifier; // @synthesize externalIdentifier=_externalIdentifier;
 @property(readonly, nonatomic) NSUUID *objectIdentifier; // @synthesize objectIdentifier=_objectIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

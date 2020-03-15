@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSArray *textfieldValues; // @synthesize textfieldValues=_textfieldValues;
 @property(copy, nonatomic) NSString *selectedActionIdentifier; // @synthesize selectedActionIdentifier=_selectedActionIdentifier;
 @property(readonly, nonatomic) AMSDialogRequest *originalRequest; // @synthesize originalRequest=_originalRequest;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithOriginalRequest:(id)arg1 selectedActionIdentifier:(id)arg2;

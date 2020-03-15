@@ -14,9 +14,9 @@
     CDStruct_b7cb895d _boundingRegion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_b7cb895d boundingRegion; // @synthesize boundingRegion=_boundingRegion;
 @property(readonly, nonatomic) NSArray *mapItems; // @synthesize mapItems=_mapItems;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_dictionaryRepresentation;
 - (id)_initWithMapItems:(id)arg1 boundingRegion:(id)arg2;

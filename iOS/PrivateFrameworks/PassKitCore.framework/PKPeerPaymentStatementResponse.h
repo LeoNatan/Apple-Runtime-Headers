@@ -13,8 +13,8 @@
     NSString *_emailAddress;
 }
 
-@property(readonly, copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 - (id)initWithData:(id)arg1;
 
 @end

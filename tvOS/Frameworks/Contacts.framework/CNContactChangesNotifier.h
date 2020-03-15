@@ -24,13 +24,13 @@
 + (id)createProxyForObserver:(id)arg1 keysToFetch:(id)arg2;
 + (id)os_log;
 + (id)sharedNotifier;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isObservingNotification) _Bool observingNotification; // @synthesize observingNotification=_observingNotification;
 @property(readonly, nonatomic) CNMutableMultiDictionary *registeredObservers; // @synthesize registeredObservers=_registeredObservers;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly, nonatomic) id <CNScheduler> downstream; // @synthesize downstream=_downstream;
 @property(readonly, nonatomic) id <CNScheduler> workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) id <CNScheduler> resourceLock; // @synthesize resourceLock=_resourceLock;
-- (void).cxx_destruct;
 - (void)workQueue_updateObservers;
 - (void)workQueue_updateObserving;
 - (void)registerProxy:(id)arg1 identifier:(id)arg2;

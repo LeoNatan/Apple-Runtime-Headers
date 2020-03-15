@@ -21,13 +21,13 @@
     unsigned long long _stateHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stateHandler; // @synthesize stateHandler=_stateHandler;
 @property(retain, nonatomic) NSDate *lastRefresh; // @synthesize lastRefresh=_lastRefresh;
 @property(readonly, nonatomic) NSCountedSet *history; // @synthesize history=_history;
 @property(nonatomic) __weak id <CSLDuetActivityBudgetDataSourceProtocol> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSMutableDictionary *subBudgetsByClass; // @synthesize subBudgetsByClass=_subBudgetsByClass;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

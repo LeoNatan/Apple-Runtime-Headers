@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     UIFont *_bodyFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *bodyFont; // @synthesize bodyFont=_bodyFont;
 @property(nonatomic) _Bool requiresChangeConfirmation; // @synthesize requiresChangeConfirmation=_requiresChangeConfirmation;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

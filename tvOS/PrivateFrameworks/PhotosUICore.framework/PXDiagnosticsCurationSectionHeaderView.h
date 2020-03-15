@@ -19,11 +19,11 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) NSString *agentAndStage; // @synthesize agentAndStage=_agentAndStage;
 @property(retain, nonatomic) NSString *state; // @synthesize state=_state;
 @property(retain, nonatomic) NSDictionary *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

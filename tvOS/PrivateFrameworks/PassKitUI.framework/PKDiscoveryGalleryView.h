@@ -46,10 +46,10 @@
 + (id)passWelcomeCardMessageAttributedString;
 + (_Bool)isVisibileForPKPGSVLayoutState:(CDStruct_d8808cea)arg1 dataSource:(id)arg2;
 + (_Bool)paymentWelcomeCardIsAvailable;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKDiscoveryDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic, getter=isAnimatingCard) _Bool animatingCard; // @synthesize animatingCard=_animatingCard;
 @property(readonly, nonatomic) __weak PKDiscoveryCardView *pressedDiscoveryCardView; // @synthesize pressedDiscoveryCardView=_pressedDiscoveryCardView;
-- (void).cxx_destruct;
 - (void)_appStorePressed;
 - (void)_scanCodePressed;
 - (id)_createPassWelcomeCardView;

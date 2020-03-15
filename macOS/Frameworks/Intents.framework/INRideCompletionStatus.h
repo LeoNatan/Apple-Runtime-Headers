@@ -33,6 +33,7 @@
 + (id)completedWithOutstandingPaymentAmount:(id)arg1;
 + (id)completedWithSettledPaymentAmount:(id)arg1;
 + (id)completed;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCanceledByService) BOOL canceledByService; // @synthesize canceledByService=_canceledByService;
 @property(retain) NSSet *defaultTippingOptions; // @synthesize defaultTippingOptions=_defaultTippingOptions;
 @property(readonly, getter=isOutstanding) BOOL outstanding; // @synthesize outstanding=_outstanding;
@@ -41,7 +42,6 @@
 @property(readonly, getter=isMissedPickup) BOOL missedPickup; // @synthesize missedPickup=_missedPickup;
 @property(readonly, getter=isCompleted) BOOL completed; // @synthesize completed=_completed;
 @property(retain) NSUserActivity *completionUserActivity; // @synthesize completionUserActivity=_completionUserActivity;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

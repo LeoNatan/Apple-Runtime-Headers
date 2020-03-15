@@ -18,10 +18,10 @@
     id <SXComponentInteractionHandlerManager> _interactionHandlerManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXComponentInteractionHandlerManager> interactionHandlerManager; // @synthesize interactionHandlerManager=_interactionHandlerManager;
 @property(readonly, nonatomic) id <SXActionComponentInteractionHandlerFactory> factory; // @synthesize factory=_factory;
 @property(readonly, nonatomic) id <SXActionProvider> actionProvider; // @synthesize actionProvider=_actionProvider;
-- (void).cxx_destruct;
 - (void)processComponent:(id)arg1 view:(id)arg2;
 - (id)initWithActionProvider:(id)arg1 interactionHandlerFactory:(id)arg2 interactionHandlerManager:(id)arg3;
 

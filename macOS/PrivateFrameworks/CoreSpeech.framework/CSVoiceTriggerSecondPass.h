@@ -17,7 +17,7 @@
 #import <CoreSpeech/CSVoiceTriggerEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVolumeMonitorDelegate-Protocol.h>
 
-@class CSAsset, CSAudioCircularBuffer, CSAudioStream, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpIdVTTextDependentSpeakerRecognizer, CSSpeakerDetectorNDAPI, CSSpeakerModel, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString, NSUUID;
+@class CSAsset, CSAudioCircularBuffer, CSAudioStream, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSShadowMicScoreCreator, CSSpIdVTTextDependentSpeakerRecognizer, CSSpeakerDetectorNDAPI, CSSpeakerModel, CSVTSecondPassScorer, NSData, NSDate, NSDictionary, NSMutableData, NSMutableDictionary, NSString, NSUUID;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
 @interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSAudioStreamProvidingDelegate, CSMediaPlayingMonitorDelegate, CSVolumeMonitorDelegate, CSSpIdVTTextDependentSpeakerRecognizerDelegate, CSSelfTriggerDetectorDelegate>
@@ -36,6 +36,7 @@
     BOOL _skipTdsrProc;
     BOOL _tdsrResultPending;
     BOOL _kwdRejectCleanupPending;
+    unsigned char _hasReceivedEarlyDetectNDEAPIResult;
     float _referenceKeywordThreshold;
     float _keywordThreshold;
     float _keywordThresholdSecondChance;
@@ -51,6 +52,7 @@
     float _firstPassOnsetScore;
     float _twoShotFeedbackDelay;
     float _mediaVolume;
+    float _shadowMicScoreThresholdForVAD;
     NSString *_UUID;
     id <CSVoiceTriggerDelegate> _delegate;
     unsigned long long _secondChanceHotTillMachTime;
@@ -102,11 +104,22 @@
     unsigned long long _kwdRejectCleanupSecondPassResult;
     NSUUID *_kwdRejectCleanupToken;
     NSUUID *_tdsrTimeoutToken;
+    CSShadowMicScoreCreator *_shadowMicScoreCreator;
+    NSMutableData *_dataBufferNDEAPI;
+    unsigned long long _dataBufferPositionNDEAPI;
+    CSVTSecondPassScorer *_secondPassScorer;
 }
 
 + (id)timeStampString;
 + (id)secondPassAudioLogDirectory;
 + (id)secondPassAudioLoggingFilePath;
+- (void).cxx_destruct;
+@property(retain, nonatomic) CSVTSecondPassScorer *secondPassScorer; // @synthesize secondPassScorer=_secondPassScorer;
+@property(nonatomic) float shadowMicScoreThresholdForVAD; // @synthesize shadowMicScoreThresholdForVAD=_shadowMicScoreThresholdForVAD;
+@property(nonatomic) unsigned char hasReceivedEarlyDetectNDEAPIResult; // @synthesize hasReceivedEarlyDetectNDEAPIResult=_hasReceivedEarlyDetectNDEAPIResult;
+@property(nonatomic) unsigned long long dataBufferPositionNDEAPI; // @synthesize dataBufferPositionNDEAPI=_dataBufferPositionNDEAPI;
+@property(retain, nonatomic) NSMutableData *dataBufferNDEAPI; // @synthesize dataBufferNDEAPI=_dataBufferNDEAPI;
+@property(retain, nonatomic) CSShadowMicScoreCreator *shadowMicScoreCreator; // @synthesize shadowMicScoreCreator=_shadowMicScoreCreator;
 @property(retain, nonatomic) NSUUID *tdsrTimeoutToken; // @synthesize tdsrTimeoutToken=_tdsrTimeoutToken;
 @property(retain, nonatomic) NSUUID *kwdRejectCleanupToken; // @synthesize kwdRejectCleanupToken=_kwdRejectCleanupToken;
 @property(nonatomic) unsigned long long kwdRejectCleanupSecondPassResult; // @synthesize kwdRejectCleanupSecondPassResult=_kwdRejectCleanupSecondPassResult;
@@ -187,7 +200,11 @@
 @property(nonatomic) unsigned long long secondChanceHotTillMachTime; // @synthesize secondChanceHotTillMachTime=_secondChanceHotTillMachTime;
 @property(nonatomic) __weak id <CSVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
+- (id)_mpGetVoiceTriggerEventInfoForPhrase:(id)arg1;
+- (void)_mpHandleTDSRFailure;
+- (void)_mpProcessTDSRScore:(float)arg1;
+- (void)_mpVerifySATWithAnalyzer:(id)arg1 voiceTriggerEventInfo:(id)arg2;
+- (void)_mpAnalyzeForTriggerDetection:(id)arg1 forceMaximized:(BOOL)arg2;
 - (void)textDependentSpeakerRecognizer:(id)arg1 failedWithError:(id)arg2;
 - (void)textDependentSpeakerRecognizer:(id)arg1 hasSatScore:(float)arg2;
 - (void)_handleResultCompletion:(unsigned long long)arg1 voiceTriggerInfo:(id)arg2 error:(id)arg3;
@@ -232,6 +249,7 @@
 - (void)cancelCurrentRequest;
 - (void)handleVoiceTriggerSecondPassFrom:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_handleVoiceTriggerFirstPassFromJarvis:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_handleVoiceTriggerFirstPassFromHearstAP:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_handleVoiceTriggerFirstPassFromHearst:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_handleVoiceTriggerFirstPassFromAP:(id)arg1 audioProviderUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_requestStartAudioStreamWitContext:(id)arg1 audioProviderUUID:(id)arg2 startStreamOption:(id)arg3 completion:(CDUnknownBlockType)arg4;

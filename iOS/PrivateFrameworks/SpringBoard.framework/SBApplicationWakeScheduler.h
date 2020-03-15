@@ -20,9 +20,9 @@
     id <BSTimer> _wakeSuspendTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSTimer> wakeSuspendTimer; // @synthesize wakeSuspendTimer=_wakeSuspendTimer;
 @property(retain, nonatomic) id <BSTimer> wakeTimer; // @synthesize wakeTimer=_wakeTimer;
-- (void).cxx_destruct;
 - (void)_applicationProcessStateDidChange:(id)arg1;
 - (id)_createPersistentTimerWithFireDate:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)_createTimerWithFireDate:(id)arg1 handler:(CDUnknownBlockType)arg2;

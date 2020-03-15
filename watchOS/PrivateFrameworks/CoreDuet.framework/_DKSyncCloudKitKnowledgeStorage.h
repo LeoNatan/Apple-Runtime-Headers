@@ -41,9 +41,9 @@
 + (void)setMySyncZoneID:(id)arg1;
 + (id)mySyncZoneID;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(getter=isAvailable) _Bool available; // @synthesize available=_available;
 @property(retain) id <_DKSyncRemoteKnowledgeStorageFetchDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)executionCriteriaForUpdateSourceDeviceIdentifiersPeriodicJob;
 - (void)runUpdateSourceDeviceIdentifiersPeriodicJobWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unregisterUpdateSourceDeviceIdentifiersPeriodicJob;

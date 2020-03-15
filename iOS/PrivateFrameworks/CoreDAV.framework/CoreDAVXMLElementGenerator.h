@@ -26,6 +26,7 @@
     NSURL *_baseURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(nonatomic) _Bool checkedElementValidityIfRootElement; // @synthesize checkedElementValidityIfRootElement=_checkedElementValidityIfRootElement;
 @property(retain, nonatomic) NSDictionary *cachedElementParseRules; // @synthesize cachedElementParseRules=_cachedElementParseRules;
@@ -37,7 +38,6 @@
 @property(nonatomic) SEL parentElementSetter; // @synthesize parentElementSetter=_parentElementSetter;
 @property(nonatomic) int parsingState; // @synthesize parsingState=_parsingState;
 @property(nonatomic) _Bool isUnrecognized; // @synthesize isUnrecognized=_isUnrecognized;
-- (void).cxx_destruct;
 - (void)resumeParsingWithParser:(id)arg1;
 - (void)noteChildCascadingFailure;
 - (void)parserDidEndDocument:(id)arg1;

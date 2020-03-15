@@ -22,9 +22,9 @@
 + (void)_deregisterInstance:(id)arg1;
 + (void)_registerInstance:(id)arg1;
 + (void)_registerForApplicationLifecycleNotifications;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _BRObservableFilePresenter *presenter; // @synthesize presenter=_presenter;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)_presenterDidChange;
 - (void)dealloc;
 - (id)addObserverBlock:(CDUnknownBlockType)arg1;

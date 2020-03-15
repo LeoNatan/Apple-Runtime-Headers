@@ -17,11 +17,11 @@
     PLFrequentLocationManager *_frequentLocationManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PLFrequentLocationManager *frequentLocationManager; // @synthesize frequentLocationManager=_frequentLocationManager;
 @property(readonly, nonatomic) PLLocalCreationDateCreator *localCreationDateCreator; // @synthesize localCreationDateCreator=_localCreationDateCreator;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(nonatomic) __weak id <PLLibraryClustererDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)momentClustersForMomentsSortedByDate:(id)arg1;
 - (id)_momentsWithLocationClusteredByPossibleSource:(id)arg1;
 - (id)_momentsGroupedByDayWithMomentsSortedByDate:(id)arg1;

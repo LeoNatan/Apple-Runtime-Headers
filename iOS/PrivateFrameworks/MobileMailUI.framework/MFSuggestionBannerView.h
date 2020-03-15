@@ -14,9 +14,9 @@
     NSArray *_bannerConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bannerConstraints; // @synthesize bannerConstraints=_bannerConstraints;
 @property(retain, nonatomic) SGBanner *banner; // @synthesize banner=_banner;
-- (void).cxx_destruct;
 - (void)setSeparatorDrawsFlushWithTrailingEdge:(_Bool)arg1;
 - (void)setSeparatorDrawsFlushWithLeadingEdge:(_Bool)arg1;
 - (void)updateConstraints;

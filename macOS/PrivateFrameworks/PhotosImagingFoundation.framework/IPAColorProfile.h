@@ -62,6 +62,7 @@
 + (id)newP3Profile;
 + (id)newLinearSRGBProfile;
 + (id)newLinearAdobeRGBProfile;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *colorSpaceType; // @synthesize colorSpaceType=_colorSpaceType;
 @property(readonly, nonatomic) NSString *profileClass; // @synthesize profileClass=_profileClass;
 @property(readonly, nonatomic) BOOL needsGamutMapping; // @synthesize needsGamutMapping=_needsGamutMapping;
@@ -69,7 +70,6 @@
 @property(readonly, nonatomic) PFChecksum *checksum; // @synthesize checksum=_checksum;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

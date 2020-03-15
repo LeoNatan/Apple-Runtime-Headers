@@ -28,13 +28,13 @@
 + (id)sharedInstance;
 + (BOOL)shouldBoostProcess;
 + (Class)proxyClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *waitingForRegistryUpdateBlocks; // @synthesize waitingForRegistryUpdateBlocks=_waitingForRegistryUpdateBlocks;
 @property(nonatomic) unsigned short lastCompatibilityState; // @synthesize lastCompatibilityState=_lastCompatibilityState;
 @property(nonatomic) unsigned long long lastStatus; // @synthesize lastStatus=_lastStatus;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *legacyDevicesQueueFirst; // @synthesize legacyDevicesQueueFirst=_legacyDevicesQueueFirst;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *legacyDevicesQueue; // @synthesize legacyDevicesQueue=_legacyDevicesQueue;
 @property(retain, nonatomic) NSMutableDictionary *legacyDevices; // @synthesize legacyDevices=_legacyDevices;
-- (void).cxx_destruct;
 - (void)isPhoneReadyToMigrateDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (BOOL)isAssertionActive:(id)arg1;
 - (unsigned long long)migrationCountForPairingID:(id)arg1;

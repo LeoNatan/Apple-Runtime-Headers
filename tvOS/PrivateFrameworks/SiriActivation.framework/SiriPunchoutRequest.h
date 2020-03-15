@@ -17,10 +17,10 @@
     long long _punchoutStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long punchoutStyle; // @synthesize punchoutStyle=_punchoutStyle;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

@@ -18,12 +18,12 @@
     double _lastTargetChangeTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasUpdatedProgress; // @synthesize hasUpdatedProgress=_hasUpdatedProgress;
 @property(nonatomic) double lastTargetChangeTime; // @synthesize lastTargetChangeTime=_lastTargetChangeTime;
 @property(nonatomic) double preInterpolatedProgress; // @synthesize preInterpolatedProgress=_preInterpolatedProgress;
 @property(nonatomic) double targetProgress; // @synthesize targetProgress=_targetProgress;
 @property(nonatomic) double initialProgress; // @synthesize initialProgress=_initialProgress;
-- (void).cxx_destruct;
 - (double)effectiveInputProgressForBlock:(CDUnknownBlockType)arg1;
 - (void)updateProgress:(double)arg1;
 - (BOOL)start;

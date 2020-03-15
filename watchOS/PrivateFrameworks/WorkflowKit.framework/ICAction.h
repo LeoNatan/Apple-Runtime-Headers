@@ -18,11 +18,11 @@
     NSArray *_outputMapping;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputMapping; // @synthesize outputMapping=_outputMapping;
 @property(readonly, nonatomic) NSArray *inputMapping; // @synthesize inputMapping=_inputMapping;
 @property(readonly, nonatomic) ICApp *app; // @synthesize app=_app;
 @property(readonly, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
-- (void).cxx_destruct;
 - (void)performActionWithInput:(id)arg1 parameters:(id)arg2 userInterface:(id)arg3 successHandler:(CDUnknownBlockType)arg4 errorHandler:(CDUnknownBlockType)arg5;
 - (void)processInput:(id)arg1 parameters:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)description;
@@ -39,6 +39,7 @@
 @property(readonly, nonatomic) _Bool inputsMultipleItems;
 @property(readonly, nonatomic) _Bool inputRequired;
 @property(readonly, nonatomic) NSDictionary *descriptionDictionary;
+@property(readonly, nonatomic, getter=isDiscoverable) _Bool discoverable;
 @property(readonly, nonatomic, getter=isDiscontinued) _Bool discontinued;
 @property(readonly, nonatomic) NSDate *lastModifiedDate;
 @property(readonly, nonatomic) NSDate *creationDate;

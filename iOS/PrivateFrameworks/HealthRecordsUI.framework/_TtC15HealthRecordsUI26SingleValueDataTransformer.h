@@ -6,9 +6,7 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <HealthRecordsUI/_TtP15HealthRecordsUI33MedicalRecordChartDataTransformer_-Protocol.h>
-
-@interface _TtC15HealthRecordsUI26SingleValueDataTransformer : _TtCs12_SwiftObject <_TtP15HealthRecordsUI33MedicalRecordChartDataTransformer_>
+@interface _TtC15HealthRecordsUI26SingleValueDataTransformer : _TtCs12_SwiftObject
 {
 }
 

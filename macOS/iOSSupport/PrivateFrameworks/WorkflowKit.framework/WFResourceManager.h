@@ -23,13 +23,13 @@
     NSObject<OS_dispatch_queue> *_stateAccessQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateAccessQueue; // @synthesize stateAccessQueue=_stateAccessQueue;
 @property(readonly, nonatomic) BOOL didEvaluateAvailabilityOfNodes; // @synthesize didEvaluateAvailabilityOfNodes=_didEvaluateAvailabilityOfNodes;
 @property(retain, nonatomic) NSMapTable *targetSelectorTable; // @synthesize targetSelectorTable=_targetSelectorTable;
 @property(retain, nonatomic) NSArray *resourceNodes; // @synthesize resourceNodes=_resourceNodes;
 @property(retain, nonatomic) NSMutableOrderedSet *unavailableResources; // @synthesize unavailableResources=_unavailableResources;
 @property(nonatomic) BOOL resourcesRequiredForDisplayAvailable; // @synthesize resourcesRequiredForDisplayAvailable=_resourcesRequiredForDisplayAvailable;
-- (void).cxx_destruct;
 - (void)addResource:(id)arg1 withRequiredResources:(id)arg2;
 - (void)addResource:(id)arg1;
 - (void)removeTarget:(id)arg1 selector:(SEL)arg2;

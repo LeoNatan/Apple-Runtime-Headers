@@ -21,9 +21,9 @@
 + (id)backgroundProviderWithWindows:(id)arg1;
 + (id)backgroundProviderWithScreen:(id)arg1;
 + (id)carouselBackgroundProviderIncludingAlertWindow:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIBackdropViewSettings *backdropViewSettings; // @synthesize backdropViewSettings=_backdropViewSettings;
 @property(nonatomic) __weak CUISAlertBackground *background; // @synthesize background=_background;
-- (void).cxx_destruct;
 - (id)image;
 - (id)view;
 

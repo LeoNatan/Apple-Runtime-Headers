@@ -15,9 +15,9 @@
     NSData *_credentialSet;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *credentialSet; // @synthesize credentialSet=_credentialSet;
 @property(retain, nonatomic) BKIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(nonatomic) __weak id <BKExtendEnrollTouchIDOperationDelegate> delegate; // @dynamic delegate;

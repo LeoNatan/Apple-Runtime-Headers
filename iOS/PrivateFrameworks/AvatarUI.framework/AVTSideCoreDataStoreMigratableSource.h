@@ -17,9 +17,9 @@
     AVTCoreEnvironment *_environment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTCoreEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) id <AVTCoreDataPersistentStoreLocalConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (_Bool)migrationNeeded;
 - (id)migratedRecordFromRecord:(id)arg1 index:(unsigned long long)arg2 totalCount:(unsigned long long)arg3;
 - (_Bool)finalizeMigration:(id *)arg1;

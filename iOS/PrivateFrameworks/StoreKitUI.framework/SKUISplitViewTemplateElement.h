@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)supportedFeatures;
-@property(readonly, nonatomic) long long preferredDisplayMode; // @synthesize preferredDisplayMode=_preferredDisplayMode;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long preferredDisplayMode; // @synthesize preferredDisplayMode=_preferredDisplayMode;
 - (id)_splitElementForIndex:(long long)arg1;
 - (id)applyUpdatesWithElement:(id)arg1;
 @property(readonly, nonatomic) _Bool usesInlineSplitContent;

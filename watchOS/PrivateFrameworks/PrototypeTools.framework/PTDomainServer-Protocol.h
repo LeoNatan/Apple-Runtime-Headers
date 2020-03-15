@@ -6,9 +6,10 @@
 
 #import <PrototypeTools/NSObject-Protocol.h>
 
-@class PTDomainInfo, PTTestRecipeInfo;
+@class NSString, PTDomainInfo, PTProxySettingsDefinition, PTTestRecipeInfo;
 
 @protocol PTDomainServer <NSObject>
+- (void)registerRootSettingsProxyDefinition:(PTProxySettingsDefinition *)arg1 forDomainID:(NSString *)arg2;
 - (void)registerTestRecipeWithInfo:(PTTestRecipeInfo *)arg1;
 - (void)registerDomainWithInfo:(PTDomainInfo *)arg1;
 @end

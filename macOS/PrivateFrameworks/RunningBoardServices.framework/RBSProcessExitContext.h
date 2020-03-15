@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsBSXPCSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RBSTerminateContext *terminationContext; // @synthesize terminationContext=_terminationContext;
 @property(retain, nonatomic) RBSProcessExitStatus *status; // @synthesize status=_status;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

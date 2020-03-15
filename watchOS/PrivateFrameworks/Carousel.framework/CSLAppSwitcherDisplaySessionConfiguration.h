@@ -16,11 +16,11 @@
     IOSSHLApplicationsManager *_applicationsManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak IOSSHLApplicationsManager *applicationsManager; // @synthesize applicationsManager=_applicationsManager;
 @property(nonatomic) __weak FBProcessManager *processManager; // @synthesize processManager=_processManager;
 @property(nonatomic) __weak FBSceneManager *sceneManager; // @synthesize sceneManager=_sceneManager;
 @property(nonatomic) __weak CSLAppSwitcherViewController *appSwitcherViewController; // @synthesize appSwitcherViewController=_appSwitcherViewController;
-- (void).cxx_destruct;
 
 @end
 

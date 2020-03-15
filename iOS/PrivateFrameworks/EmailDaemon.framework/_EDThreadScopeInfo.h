@@ -15,10 +15,10 @@
     NSDate *_lastViewedDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastViewedDate; // @synthesize lastViewedDate=_lastViewedDate;
 @property(nonatomic) _Bool needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(readonly, nonatomic) long long databaseID; // @synthesize databaseID=_databaseID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDatabaseID:(long long)arg1 needsUpdate:(_Bool)arg2 lastViewedDate:(id)arg3;
 

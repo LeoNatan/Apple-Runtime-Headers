@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *__coalescingQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_coalescingQueue; // @synthesize _coalescingQueue=__coalescingQueue;
 @property(readonly, nonatomic) NSMutableDictionary *_previousValues; // @synthesize _previousValues=__previousValues;
 @property(readonly, nonatomic) NSMutableDictionary *_values; // @synthesize _values=__values;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *coalescingTimer; // @synthesize coalescingTimer=_coalescingTimer;
 @property(readonly, copy, nonatomic) CDUnknownBlockType _handler; // @synthesize _handler=__handler;
 @property(readonly, nonatomic) double _interval; // @synthesize _interval=__interval;
-- (void).cxx_destruct;
 - (void)_pushCoalescedValues;
 - (void)flush;
 - (void)coalesceValue:(id)arg1 forKeyPath:(id)arg2;

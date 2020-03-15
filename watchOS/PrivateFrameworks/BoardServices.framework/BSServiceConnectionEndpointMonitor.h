@@ -27,8 +27,8 @@
 }
 
 + (id)monitorForService:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *service; // @synthesize service=_service;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *service; // @synthesize service=_service;
 @property(readonly, copy) NSString *description;
 - (void)serialCallOut_didUpdateEndpointEnvironments:(id)arg1;
 - (id)endpointsForEnvironment:(id)arg1;

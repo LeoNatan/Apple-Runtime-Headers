@@ -15,8 +15,8 @@
     id _color;
 }
 
-@property(retain, nonatomic) id color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id color; // @synthesize color=_color;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

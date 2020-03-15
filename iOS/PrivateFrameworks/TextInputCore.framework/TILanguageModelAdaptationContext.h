@@ -18,11 +18,11 @@
     NSDictionary *_recipientContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isOnline; // @synthesize isOnline=_isOnline;
 @property(readonly, nonatomic) NSDictionary *recipientContext; // @synthesize recipientContext=_recipientContext;
 @property(readonly, nonatomic) NSString *recipientNameDigest; // @synthesize recipientNameDigest=_recipientNameDigest;
 @property(readonly, nonatomic) NSString *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSString *identifierForResponseKit;
 @property(readonly, nonatomic) NSString *identifier;

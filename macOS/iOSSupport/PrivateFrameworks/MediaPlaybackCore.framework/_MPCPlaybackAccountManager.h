@@ -12,16 +12,19 @@
 {
     struct os_unfair_lock_s _lock;
     NSMutableDictionary *_accounts;
+    BOOL _needsRefreshDueToTimeout;
+    BOOL _hasLoadedInitialAccounts;
     MPCPlaybackEngine *_playbackEngine;
 }
 
-@property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 - (void)_updateAccounts;
 - (void)_userIdentityStoreChangedNotification:(id)arg1;
 - (void)_subscriptionStatusChangedNotification:(id)arg1;
 - (id)accountForHashedDSID:(id)arg1;
 - (id)accountForDSID:(id)arg1;
+@property(readonly, nonatomic) BOOL hasLoadedInitialAccounts; // @synthesize hasLoadedInitialAccounts=_hasLoadedInitialAccounts;
 @property(readonly, copy, nonatomic) NSArray *accounts;
 - (id)initWithPlaybackEngine:(id)arg1;
 

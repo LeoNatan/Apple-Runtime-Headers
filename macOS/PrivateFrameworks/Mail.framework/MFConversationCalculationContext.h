@@ -106,6 +106,7 @@
 }
 
 + (void)addMessagesInDictionary:(id)arg1 toDictionary:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EFSQLPreparedStatement *conversationPositionOfClosestAncestorStatement; // @synthesize conversationPositionOfClosestAncestorStatement=_conversationPositionOfClosestAncestorStatement;
 @property(retain, nonatomic) EFSQLPreparedStatement *conversationPositionOfClosestDescendantStatement; // @synthesize conversationPositionOfClosestDescendantStatement=_conversationPositionOfClosestDescendantStatement;
 @property(retain, nonatomic) EFSQLPreparedStatement *countOfDistinctAutomatedConversationTypesForConversationIDStatement; // @synthesize countOfDistinctAutomatedConversationTypesForConversationIDStatement=_countOfDistinctAutomatedConversationTypesForConversationIDStatement;
@@ -198,7 +199,6 @@
 @property(nonatomic) long long subjectID; // @synthesize subjectID=_subjectID;
 @property(retain, nonatomic) MFLibraryMessage *message; // @synthesize message=_message;
 @property(nonatomic) long long rowID; // @synthesize rowID=_rowID;
-- (void).cxx_destruct;
 - (id)summaryForConversation:(long long)arg1;
 - (BOOL)automatedConversationTypeIsConsistentForConversation:(long long)arg1;
 - (int)automatedConversationTypeForRowID:(long long)arg1;

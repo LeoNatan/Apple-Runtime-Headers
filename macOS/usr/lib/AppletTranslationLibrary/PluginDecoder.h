@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 + (id)decoderWithData:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (shared_ptr_af209044)classChecker;
 - (const map_99c78d5b *)globals;
 - (id)processEndOfTransaction:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
 - (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;

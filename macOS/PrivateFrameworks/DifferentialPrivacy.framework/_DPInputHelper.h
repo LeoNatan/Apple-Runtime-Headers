@@ -13,8 +13,8 @@
     NSNumberFormatter *_fmt;
 }
 
-@property(readonly, nonatomic) NSNumberFormatter *fmt; // @synthesize fmt=_fmt;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumberFormatter *fmt; // @synthesize fmt=_fmt;
 - (id)numberFromString:(id)arg1;
 - (id)numbersFromFileAtPath:(id)arg1;
 - (id)nonEmptyNonWhitespaceStringsFromFileAtPath:(id)arg1;

@@ -29,6 +29,7 @@
     HFUpdateLogger *_logger;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool loggerIsExternal; // @synthesize loggerIsExternal=_loggerIsExternal;
 @property(retain, nonatomic) HFUpdateLogger *logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) NSMutableArray *clientReasonsStack; // @synthesize clientReasonsStack=_clientReasonsStack;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSMutableSet *writeCharacteristicRequests; // @synthesize writeCharacteristicRequests=_writeCharacteristicRequests;
 @property(retain, nonatomic) NSMutableSet *characteristicsToRead; // @synthesize characteristicsToRead=_characteristicsToRead;
 @property(retain, nonatomic) HFMutableAggregatedCharacteristicReadPolicy *readPolicy; // @synthesize readPolicy=_readPolicy;
-- (void).cxx_destruct;
 - (id)executionErrorForActionSet:(id)arg1;
 - (id)init;
 

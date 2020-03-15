@@ -9,7 +9,7 @@
 #import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDecimalNumber, NSString, PKFelicaPassProperties, PKTransitPassProperties;
+@class NSArray, NSDecimalNumber, NSSet, NSString, PKFelicaPassProperties, PKTransitPassProperties;
 
 @interface PKPaymentApplication : NSObject <NSSecureCoding, NSCopying>
 {
@@ -40,10 +40,13 @@
     NSString *_appletDataFormat;
     PKTransitPassProperties *_transitProperties;
     NSArray *_supportedTransitNetworkIdentifiers;
+    NSSet *_subcredentials;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)applicationWithProtobuf:(id)arg1;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *subcredentials; // @synthesize subcredentials=_subcredentials;
 @property(copy, nonatomic) NSArray *supportedTransitNetworkIdentifiers; // @synthesize supportedTransitNetworkIdentifiers=_supportedTransitNetworkIdentifiers;
 @property(copy, nonatomic) PKTransitPassProperties *transitProperties; // @synthesize transitProperties=_transitProperties;
 @property(copy, nonatomic) NSString *appletDataFormat; // @synthesize appletDataFormat=_appletDataFormat;
@@ -71,7 +74,7 @@
 @property(copy, nonatomic, setter=setSanitizedDPAN:) NSString *sanitizedDPAN; // @synthesize sanitizedDPAN=_sanitizedDPAN;
 @property(copy, nonatomic, setter=setDPANSuffix:) NSString *dpanSuffix; // @synthesize dpanSuffix=_dpanSuffix;
 @property(copy, nonatomic, setter=setDPANIdentifier:) NSString *dpanIdentifier; // @synthesize dpanIdentifier=_dpanIdentifier;
-- (void).cxx_destruct;
+- (id)asDictionary;
 @property(readonly, nonatomic) NSString *stationCodeProvider;
 @property(readonly, nonatomic) _Bool supportsTransitHistory;
 @property(readonly, nonatomic) _Bool generatesLocalTransactions;

@@ -18,11 +18,11 @@
     NSURL *_contentURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *contentURL; // @synthesize contentURL=_contentURL;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) LPImage *linkPresentationImage; // @synthesize linkPresentationImage=_linkPresentationImage;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (double)deviceScreenScaleFromPotentialBackgroundThread;
 - (id)urlFromHeadline:(id)arg1;
 - (id)linkPresentationImageFromHeadline:(id)arg1;

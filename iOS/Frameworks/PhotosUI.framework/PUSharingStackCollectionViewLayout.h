@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSArray *_stackedItemsLayoutAttributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *stackedItemsLayoutAttributes; // @synthesize stackedItemsLayoutAttributes=_stackedItemsLayoutAttributes;
 @property(nonatomic) __weak id <PUSharingStackCollectionViewLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_layoutItemInputAtIndexPath:(id)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

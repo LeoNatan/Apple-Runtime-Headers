@@ -21,10 +21,10 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) unsigned long long sizeLimit; // @synthesize sizeLimit=_sizeLimit;
-- (void).cxx_destruct;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)cache:(id)arg1 willEvictObject:(id)arg2;
 - (void)cacheThumbnailData:(id)arg1 specification:(const struct PHAssetResourceTableDataSpecification *)arg2 forAsset:(id)arg3;

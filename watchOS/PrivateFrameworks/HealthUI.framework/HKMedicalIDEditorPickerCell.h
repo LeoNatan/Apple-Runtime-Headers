@@ -18,9 +18,9 @@
     NSArray *_possibleValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *possibleValues; // @synthesize possibleValues=_possibleValues;
 @property(nonatomic) int chosenValueIndex; // @synthesize chosenValueIndex=_chosenValueIndex;
-- (void).cxx_destruct;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;

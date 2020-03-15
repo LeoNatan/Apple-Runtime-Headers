@@ -23,12 +23,12 @@
     UXView *_stackLineTwo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UXView *stackLineTwo; // @synthesize stackLineTwo=_stackLineTwo;
 @property(readonly, nonatomic) UXView *stackLineOne; // @synthesize stackLineOne=_stackLineOne;
 @property(readonly, nonatomic) KHLayoutView *layoutView; // @synthesize layoutView=_layoutView;
 @property(nonatomic) __weak id <KHLayoutViewDelegate> layoutViewDelegate; // @synthesize layoutViewDelegate=_layoutViewDelegate;
 @property(nonatomic, getter=isEditing) BOOL editing; // @synthesize editing=_editing;
-- (void).cxx_destruct;
 - (BOOL)isAccessibilitySelected;
 - (void)setAccessibilitySelected:(BOOL)arg1;
 - (id)accessibilityValueDescription;

@@ -20,10 +20,10 @@
 }
 
 + (id)localIPAddress;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *rtpPort; // @synthesize rtpPort=_rtpPort;
 @property(nonatomic) _Bool ipv6; // @synthesize ipv6=_ipv6;
 @property(retain, nonatomic) NSString *ipAddress; // @synthesize ipAddress=_ipAddress;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithAddress:(id)arg1 ipv6:(_Bool)arg2 rtpPort:(id)arg3;

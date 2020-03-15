@@ -26,9 +26,9 @@
     id <RESectionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <RESectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) REMLElementComparator *comparator; // @synthesize comparator=_comparator;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *elements;
 - (id)section:(id)arg1 groupForIdentifier:(id)arg2;
 - (void)sectionDidUpdateContentOrder:(id)arg1;

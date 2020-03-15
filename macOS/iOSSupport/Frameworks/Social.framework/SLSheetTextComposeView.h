@@ -15,10 +15,10 @@
     double _textRightInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double textRightInset; // @synthesize textRightInset=_textRightInset;
 @property(retain, nonatomic) UILabel *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)restoreKeyboard;
 - (void)layoutSubviews;

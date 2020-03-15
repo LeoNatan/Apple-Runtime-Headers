@@ -15,10 +15,10 @@
     UIControl *_rightControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIControl *rightControl; // @synthesize rightControl=_rightControl;
 @property(readonly, nonatomic) UIView *dividerView; // @synthesize dividerView=_dividerView;
 @property(readonly, nonatomic) UISegmentedControl *segmentControl; // @synthesize segmentControl=_segmentControl;
-- (void).cxx_destruct;
 - (_Bool)isOpaque;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;

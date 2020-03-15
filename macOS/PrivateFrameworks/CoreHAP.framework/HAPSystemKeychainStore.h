@@ -20,9 +20,9 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)systemStore;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *activeControllerIdentifier; // @synthesize activeControllerIdentifier=_activeControllerIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (int)_deleteAllPeripheralIdentifiers;
 - (BOOL)deleteAllPeripheralIdentifiers:(id *)arg1;
 - (id)getPeripherialIdentifiersAndAccessoryNames;

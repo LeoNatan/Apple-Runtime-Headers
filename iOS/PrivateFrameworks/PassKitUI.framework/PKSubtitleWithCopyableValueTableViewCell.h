@@ -14,8 +14,8 @@
     _Bool _subtitleIsCopyable;
 }
 
-@property(nonatomic) _Bool subtitleIsCopyable; // @synthesize subtitleIsCopyable=_subtitleIsCopyable;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool subtitleIsCopyable; // @synthesize subtitleIsCopyable=_subtitleIsCopyable;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)copy:(id)arg1;
 - (id)_copyableText;

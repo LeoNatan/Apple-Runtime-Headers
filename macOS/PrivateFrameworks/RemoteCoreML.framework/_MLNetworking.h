@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_q;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *q; // @synthesize q=_q;
 @property(readonly, nonatomic) NSObject<OS_os_log> *logType; // @synthesize logType=_logType;
 @property(readonly, nonatomic) BOOL isClient; // @synthesize isClient=_isClient;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) _MLNetworkOptions *nwOptions; // @synthesize nwOptions=_nwOptions;
 @property(readonly, nonatomic) NSObject<OS_nw_listener> *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) NSObject<OS_nw_connection> *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)receiveLoop:(CDUnknownBlockType)arg1;
 - (void)sendData:(id)arg1;

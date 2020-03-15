@@ -27,8 +27,8 @@
 }
 
 + (id)nsxpcInterface;
-@property __weak id <NSPreviewHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <NSPreviewHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)targetDidStealKeyboardFocus:(CDUnknownBlockType)arg1;
 - (void)targetWillStealKeyboardFocus:(CDUnknownBlockType)arg1;
 - (void)_invalidateLocalEventMonitor:(const char *)arg1;

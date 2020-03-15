@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *applicationBuildVersion; // @synthesize applicationBuildVersion=_applicationBuildVersion;
 @property(readonly) NSString *deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly) NSString *regionFormat; // @synthesize regionFormat=_regionFormat;
-- (void).cxx_destruct;
 - (id)DictionaryRepresentation;
 - (id)JSONRepresentation;
 - (id)toDictionary;

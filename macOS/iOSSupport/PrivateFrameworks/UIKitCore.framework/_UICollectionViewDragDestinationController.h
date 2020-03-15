@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)controllerForCollectionView:(id)arg1 delegate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIDragDestinationControllerDropProposalState *dropProposalState; // @synthesize dropProposalState=_dropProposalState;
 @property(retain, nonatomic) _UIDragDestinationControllerReorderingState *reorderingState; // @synthesize reorderingState=_reorderingState;
 @property(retain, nonatomic) _UIDragDestinationControllerSessionState *sessionState; // @synthesize sessionState=_sessionState;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <_UICollectionViewDragDestinationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)applyingRebasingUpdatesWithUpdateMap:(id)arg1;
 - (BOOL)_hasGapLargeEnoughToRequireDropActionCallForCurrentItemAttributes:(id)arg1 proposedNextItemAttributes:(id)arg2;
 - (id)_computeNextItemAttributesStartingFromItemAttributes:(id)arg1 withCurrentDragLocation:(struct CGPoint)arg2;

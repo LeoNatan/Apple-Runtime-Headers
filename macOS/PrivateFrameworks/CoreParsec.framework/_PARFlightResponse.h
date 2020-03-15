@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSData *_apiData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(copy, nonatomic) NSData *apiData; // @synthesize apiData=_apiData;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

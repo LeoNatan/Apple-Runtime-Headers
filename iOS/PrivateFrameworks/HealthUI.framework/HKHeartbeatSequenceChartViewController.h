@@ -17,12 +17,12 @@
     double _initialXAxisOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double initialXAxisOffset; // @synthesize initialXAxisOffset=_initialXAxisOffset;
 @property(retain, nonatomic) HKAxis *commonVerticalAxis; // @synthesize commonVerticalAxis=_commonVerticalAxis;
 @property(retain, nonatomic) NSMutableArray *graphSeries; // @synthesize graphSeries=_graphSeries;
 @property(retain, nonatomic) NSMutableArray *sequenceDataSources; // @synthesize sequenceDataSources=_sequenceDataSources;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)graphViewSizeChanged:(id)arg1;
 - (id)graphView:(id)arg1 graphSeriesForZoom:(long long)arg2 stackOffset:(long long)arg3;
 - (long long)stackCountForGraphView:(id)arg1;

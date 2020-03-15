@@ -23,13 +23,13 @@
 
 + (id)remoteInterface;
 + (id)log;
+- (void).cxx_destruct;
 @property _Bool appLaunched; // @synthesize appLaunched=_appLaunched;
 @property(nonatomic) struct _NSRange messageListVisibleRows; // @synthesize messageListVisibleRows=_messageListVisibleRows;
 @property(retain, nonatomic) NSMutableDictionary *messageListMessages; // @synthesize messageListMessages=_messageListMessages;
 @property(retain, nonatomic) NSMutableDictionary *viewedMessages; // @synthesize viewedMessages=_viewedMessages;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateTrackingQueue; // @synthesize stateTrackingQueue=_stateTrackingQueue;
 @property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_appDidEnterBackground;
 - (void)_appWillEnterForeground;
 - (void)applicationLaunched;

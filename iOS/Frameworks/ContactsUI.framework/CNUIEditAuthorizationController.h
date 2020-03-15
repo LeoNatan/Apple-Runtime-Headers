@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     UIViewController *_guardedViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *guardedViewController; // @synthesize guardedViewController=_guardedViewController;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
 @property(nonatomic) __weak id sender; // @synthesize sender=_sender;
 @property(nonatomic) __weak id <CNUIEditAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didNotAuthorize;
 - (void)didAutorize;
 - (void)dealloc;

@@ -29,11 +29,11 @@ __attribute__((visibility("hidden")))
 + (id)nameForContact:(id)arg1;
 + (id)namesForContact:(id)arg1;
 + (id)readingOptionsWithContactLimit:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *avatarContacts; // @synthesize avatarContacts=_avatarContacts;
 @property(readonly, nonatomic) unsigned long long contactCount; // @synthesize contactCount=_contactCount;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *descriptiveLabel;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

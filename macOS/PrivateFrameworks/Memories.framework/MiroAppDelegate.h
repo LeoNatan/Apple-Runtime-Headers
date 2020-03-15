@@ -15,8 +15,8 @@
     NSWindow *_window;
 }
 
-@property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
 - (void)applicationDidReceiveMemoryWarning:(id)arg1;
 - (void)applicationWillTerminate:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;

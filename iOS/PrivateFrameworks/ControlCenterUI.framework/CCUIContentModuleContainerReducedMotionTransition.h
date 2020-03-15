@@ -15,10 +15,10 @@
     struct CGAffineTransform _snapshotCorrectiveTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform snapshotCorrectiveTransform; // @synthesize snapshotCorrectiveTransform=_snapshotCorrectiveTransform;
 @property(retain, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(nonatomic) __weak UIWindow *snapshotHostWindow; // @synthesize snapshotHostWindow=_snapshotHostWindow;
-- (void).cxx_destruct;
 - (id)customAnimator;
 - (void)performTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 

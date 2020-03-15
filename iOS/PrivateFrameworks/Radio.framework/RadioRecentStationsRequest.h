@@ -17,9 +17,9 @@
     unsigned long long _stationCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stationCount; // @synthesize stationCount=_stationCount;
 @property(nonatomic) _Bool shouldGroupResponses; // @synthesize shouldGroupResponses=_shouldGroupResponses;
-- (void).cxx_destruct;
 - (id)_recentStationsResponseWithConnectionResponse:(id)arg1 returningError:(id *)arg2;
 - (id)_newRecentStationsURLRequestPropertiesWithBaseURL:(id)arg1;
 - (void)_configureRequestPropertiesForCaching:(id)arg1 returningCacheKey:(id *)arg2;

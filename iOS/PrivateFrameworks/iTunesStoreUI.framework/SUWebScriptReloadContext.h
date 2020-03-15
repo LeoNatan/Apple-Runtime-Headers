@@ -17,10 +17,10 @@
     NSURL *_referrerURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *referrerURL; // @synthesize referrerURL=_referrerURL;
 @property(copy, nonatomic) NSString *referringUserAgent; // @synthesize referringUserAgent=_referringUserAgent;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)_copyScriptDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

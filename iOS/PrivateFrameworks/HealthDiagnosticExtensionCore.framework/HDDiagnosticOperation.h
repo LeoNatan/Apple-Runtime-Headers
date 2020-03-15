@@ -19,11 +19,11 @@
 }
 
 + (id)operationWithAttachmentDirectoryURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *reportContents; // @synthesize reportContents=_reportContents;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, copy, nonatomic) NSURL *attachmentDirectoryURL; // @synthesize attachmentDirectoryURL=_attachmentDirectoryURL;
 @property(nonatomic) __weak id <HDDiagnosticOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_copyDatabase:(struct sqlite3 *)arg1 toDatabase:(struct sqlite3 *)arg2;
 - (unsigned long long)getFileStatisticsForDirectoryWithURL:(id)arg1 earliestModificationDate:(double *)arg2 totalFileSize:(long long *)arg3 maxFileSize:(long long *)arg4;
 - (id)prettyPrintFileSize:(long long)arg1;

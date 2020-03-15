@@ -26,9 +26,9 @@ __attribute__((visibility("hidden")))
     NSArray *_childViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *defaultFocusView; // @synthesize defaultFocusView=_defaultFocusView;
 @property(retain, nonatomic) NSArray *childViews; // @synthesize childViews=_childViews;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)preferredFocusEnvironments;

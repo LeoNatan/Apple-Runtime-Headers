@@ -33,6 +33,7 @@
 + (id)commentAppearance;
 + (id)lightAppearance;
 + (id)defaultAppearance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *headingButtonColor; // @synthesize headingButtonColor=_headingButtonColor;
 @property(readonly, nonatomic) UIColor *parametersHighlightedColor; // @synthesize parametersHighlightedColor=_parametersHighlightedColor;
 @property(readonly, nonatomic) UIColor *parametersBackgroundColor; // @synthesize parametersBackgroundColor=_parametersBackgroundColor;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) UIColor *progressShadowColor; // @synthesize progressShadowColor=_progressShadowColor;
 @property(readonly, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 

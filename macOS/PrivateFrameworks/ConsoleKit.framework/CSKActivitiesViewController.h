@@ -19,10 +19,10 @@
     CSKActivitiesOutlineView *_outlineView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSKActivitiesOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 @property(nonatomic) BOOL allowsActivitiesInsertion; // @synthesize allowsActivitiesInsertion=_allowsActivitiesInsertion;
 @property(nonatomic) __weak id <CSKActivitiesViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_removeActivitiesAtIndexes:(id)arg1 parentActivity:(id)arg2;
 - (void)_insertActivitiesAtIndexes:(id)arg1 parentActivity:(id)arg2;
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;

@@ -13,8 +13,8 @@
     HMPresenceEvent *_presenceEvent;
 }
 
-@property(retain, nonatomic) HMPresenceEvent *presenceEvent; // @synthesize presenceEvent=_presenceEvent;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMPresenceEvent *presenceEvent; // @synthesize presenceEvent=_presenceEvent;
 - (id)initWithPresenceEvent:(id)arg1;
 - (id)initWithPredicate:(id)arg1;
 

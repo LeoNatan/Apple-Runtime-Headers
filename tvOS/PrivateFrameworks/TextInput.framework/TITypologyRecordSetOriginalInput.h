@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *originalInput; // @synthesize originalInput=_originalInput;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *originalInput; // @synthesize originalInput=_originalInput;
 - (id)shortDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

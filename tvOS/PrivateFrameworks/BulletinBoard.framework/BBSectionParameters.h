@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(retain, nonatomic) BBSectionIcon *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
@@ -35,7 +36,6 @@
 @property(nonatomic) _Bool usesVariableLayout; // @synthesize usesVariableLayout=_usesVariableLayout;
 @property(nonatomic) unsigned long long messageNumberOfLines; // @synthesize messageNumberOfLines=_messageNumberOfLines;
 @property(nonatomic) _Bool showsSubtitle; // @synthesize showsSubtitle=_showsSubtitle;
-- (void).cxx_destruct;
 - (id)replacementObjectForCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

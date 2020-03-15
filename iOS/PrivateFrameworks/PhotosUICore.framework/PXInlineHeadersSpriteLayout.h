@@ -26,12 +26,12 @@
     id <PXCuratedLibraryInlineHeadersLayoutGeometrySource> _geometrySource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXCuratedLibraryInlineHeadersLayoutGeometrySource> geometrySource; // @synthesize geometrySource=_geometrySource;
 @property(retain, nonatomic) PXCuratedLibraryInlineHeadersDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) PXCuratedLibraryInlineHeadersLayoutSpec *spec; // @synthesize spec=_spec;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) unsigned long long level; // @synthesize level=_level;
-- (void).cxx_destruct;
 - (id)viewUserDataForSpriteAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (Class)viewClassForSpriteAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (void)_updateSprites;

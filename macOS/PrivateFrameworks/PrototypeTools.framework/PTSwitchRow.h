@@ -10,5 +10,7 @@
 {
 }
 
++ (BOOL)supportsSecureCoding;
+
 @end
 

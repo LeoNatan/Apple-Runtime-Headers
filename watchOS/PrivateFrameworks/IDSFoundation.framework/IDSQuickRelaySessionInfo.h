@@ -36,6 +36,7 @@
     unsigned char _maxConcurrentStreams;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned char maxConcurrentStreams; // @synthesize maxConcurrentStreams=_maxConcurrentStreams;
 @property(readonly) unsigned int generationCounter; // @synthesize generationCounter=_generationCounter;
 @property(readonly) NSArray *subscribedStreams; // @synthesize subscribedStreams=_subscribedStreams;
@@ -58,7 +59,6 @@
 @property(readonly) NSString *allocateRequestID; // @synthesize allocateRequestID=_allocateRequestID;
 @property(readonly) double allocateTime; // @synthesize allocateTime=_allocateTime;
 @property(readonly) int allocateType; // @synthesize allocateType=_allocateType;
-- (void).cxx_destruct;
 - (int)parseSessionInfo:(id)arg1;
 @property(readonly) const struct sockaddr_storage *serverAddressIPv6;
 @property(readonly) const struct sockaddr_storage *serverAddress;

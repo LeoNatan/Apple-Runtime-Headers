@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng;
+@class NSString;
 
 @interface GEOLogMsgEventPredExTrainingData : PBCodable <NSCopying>
 {
@@ -16,15 +16,15 @@
     double _chanceOfRain;
     double _chanceOfSnow;
     double _dayOfWeek;
+    double _durationUntilEventEnd;
+    double _durationUntilEventStart;
     double _endTime;
     double _isTourist;
-    double _secondsUntilEnd;
-    double _secondsUntilStart;
     double _startTime;
     double _temperature;
     double _timeOfDay;
     double _timeSinceBackgrounded;
-    GEOLatLng *_userLocation;
+    NSString *_userLocationGeohash4;
     int _actualTransportMode;
     int _distanceFromHereToHome;
     int _distanceFromHereToOrigin;
@@ -36,6 +36,8 @@
     int _mapType;
     int _predictedTransportMode;
     int _preferredTransportMode;
+    int _weatherType;
+    BOOL _isCarplayConnected;
     BOOL _isInBasemode;
     BOOL _isTransitPossible;
     BOOL _routePlanningScreenPresented;
@@ -44,10 +46,10 @@
         unsigned int has_chanceOfRain:1;
         unsigned int has_chanceOfSnow:1;
         unsigned int has_dayOfWeek:1;
+        unsigned int has_durationUntilEventEnd:1;
+        unsigned int has_durationUntilEventStart:1;
         unsigned int has_endTime:1;
         unsigned int has_isTourist:1;
-        unsigned int has_secondsUntilEnd:1;
-        unsigned int has_secondsUntilStart:1;
         unsigned int has_startTime:1;
         unsigned int has_temperature:1;
         unsigned int has_timeOfDay:1;
@@ -63,6 +65,8 @@
         unsigned int has_mapType:1;
         unsigned int has_predictedTransportMode:1;
         unsigned int has_preferredTransportMode:1;
+        unsigned int has_weatherType:1;
+        unsigned int has_isCarplayConnected:1;
         unsigned int has_isInBasemode:1;
         unsigned int has_isTransitPossible:1;
         unsigned int has_routePlanningScreenPresented:1;
@@ -81,8 +85,14 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(retain, nonatomic) GEOLatLng *userLocation;
-@property(readonly, nonatomic) BOOL hasUserLocation;
+- (int)StringAsWeatherType:(id)arg1;
+- (id)weatherTypeAsString:(int)arg1;
+@property(nonatomic) BOOL hasWeatherType;
+@property(nonatomic) int weatherType;
+@property(nonatomic) BOOL hasIsCarplayConnected;
+@property(nonatomic) BOOL isCarplayConnected;
+@property(retain, nonatomic) NSString *userLocationGeohash4;
+@property(readonly, nonatomic) BOOL hasUserLocationGeohash4;
 - (int)StringAsDistanceFromHereToParkedCar:(id)arg1;
 - (id)distanceFromHereToParkedCarAsString:(int)arg1;
 @property(nonatomic) BOOL hasDistanceFromHereToParkedCar;
@@ -149,10 +159,10 @@
 @property(nonatomic) double endTime;
 @property(nonatomic) BOOL hasStartTime;
 @property(nonatomic) double startTime;
-@property(nonatomic) BOOL hasSecondsUntilEnd;
-@property(nonatomic) double secondsUntilEnd;
-@property(nonatomic) BOOL hasSecondsUntilStart;
-@property(nonatomic) double secondsUntilStart;
+@property(nonatomic) BOOL hasDurationUntilEventEnd;
+@property(nonatomic) double durationUntilEventEnd;
+@property(nonatomic) BOOL hasDurationUntilEventStart;
+@property(nonatomic) double durationUntilEventStart;
 - (int)StringAsEntryType:(id)arg1;
 - (id)entryTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasEntryType;

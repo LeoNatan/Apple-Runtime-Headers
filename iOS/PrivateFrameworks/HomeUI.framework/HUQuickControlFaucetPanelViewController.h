@@ -18,8 +18,8 @@
 + (id)_primaryStatePredicate;
 + (id)_childValvesPredicate;
 + (id)_temperaturePredicate;
-@property(readonly, nonatomic) HUQuickControlCollectionViewController *collectionViewController; // @synthesize collectionViewController=_collectionViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUQuickControlCollectionViewController *collectionViewController; // @synthesize collectionViewController=_collectionViewController;
 @property(readonly, nonatomic) HFChildServiceControlItem *childValvesControlItem;
 @property(readonly, nonatomic) HFTemperatureThresholdControlItem *temperatureControlItem;
 @property(readonly, nonatomic) HFControlItem<HFPrimaryStateWriter> *primaryStateControlItem;

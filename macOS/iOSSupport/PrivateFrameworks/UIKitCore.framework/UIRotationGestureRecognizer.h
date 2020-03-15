@@ -27,6 +27,11 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)_shouldDefaultToTouches;
 - (void).cxx_destruct;
+- (void)_endOrFail;
+- (void)_cancelOrFail;
+- (struct CGPoint)locationInView:(id)arg1;
+- (void)_transformChangedWithEvent:(id)arg1;
+- (BOOL)_shouldReceiveTransformEvent:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

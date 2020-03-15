@@ -13,8 +13,8 @@
     NSString *_path;
 }
 
-@property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 - (id)readDictionary;
 - (void)writeDictionary:(id)arg1;
 - (id)init;

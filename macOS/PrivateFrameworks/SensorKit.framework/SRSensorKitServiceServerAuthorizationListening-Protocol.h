@@ -11,9 +11,6 @@
 - (void)legacyResearchStudyBundleIDs:(void (^)(NSArray *))arg1;
 - (void)setServiceStartTimeForService:(NSString *)arg1;
 - (void)serviceStartTimeForService:(NSString *)arg1 reply:(void (^)(NSNumber *))arg2;
-- (void)removeBundleIdentifierFromPathMap:(NSString *)arg1 reply:(void (^)(void))arg2;
-- (void)addBundlePath:(NSString *)arg1 forBundleIdentifier:(NSString *)arg2 reply:(void (^)(void))arg3;
-- (void)fetchBundlePathMap:(void (^)(NSDictionary *))arg1;
 - (void)removeBundleIdentifier:(NSString *)arg1 fromPendingAuthorizations:(NSSet *)arg2 reply:(void (^)(void))arg3;
 - (void)addBundleIdentifier:(NSString *)arg1 toPendingAuthorizations:(NSSet *)arg2 reply:(void (^)(void))arg3;
 - (void)fetchBundleIdentifiersWithPendingAuthorizations:(void (^)(NSDictionary *))arg1;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UILabel *warningLabel; // @synthesize warningLabel=_warningLabel;
-- (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_setup;

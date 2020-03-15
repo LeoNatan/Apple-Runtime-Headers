@@ -27,9 +27,9 @@
 
 + (id)archivedDataArrayWithRootObject:(id)arg1 context:(id)arg2;
 + (id)archiveDataArrayWithContext:(id)arg1 byRunningBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(readonly) NSArray *archiveDataArray; // @synthesize archiveDataArray=_archiveDataArray;
-- (void).cxx_destruct;
 - (void)encodeObjectReferenceIfPossible:(id)arg1;
 - (void)encodeObject:(id)arg1;
 - (void)encodeClass:(Class)arg1;

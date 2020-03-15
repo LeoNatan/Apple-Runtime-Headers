@@ -17,12 +17,12 @@
     long long _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long duration; // @synthesize duration=_duration;
 @property(nonatomic) long long offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) long long barsUsed; // @synthesize barsUsed=_barsUsed;
 @property(retain, nonatomic) FlexSegment *segment; // @synthesize segment=_segment;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 

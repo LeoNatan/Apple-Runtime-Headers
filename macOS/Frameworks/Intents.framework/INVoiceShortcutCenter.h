@@ -15,8 +15,8 @@
 
 + (id)sharedCenter;
 + (void)initialize;
-@property(retain, nonatomic, setter=_setVoiceShortcutClient:) id <INVCVoiceShortcutClient> voiceShortcutClient; // @synthesize voiceShortcutClient=_voiceShortcutClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setVoiceShortcutClient:) id <INVCVoiceShortcutClient> voiceShortcutClient; // @synthesize voiceShortcutClient=_voiceShortcutClient;
 - (void)setShortcutSuggestions:(id)arg1;
 - (void)getVoiceShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getAllVoiceShortcutsWithCompletion:(CDUnknownBlockType)arg1;

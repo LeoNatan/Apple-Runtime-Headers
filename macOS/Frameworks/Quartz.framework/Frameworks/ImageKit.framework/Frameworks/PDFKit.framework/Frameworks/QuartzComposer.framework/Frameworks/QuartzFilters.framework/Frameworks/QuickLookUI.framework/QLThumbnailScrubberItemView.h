@@ -16,11 +16,11 @@
     NSArray *_fitConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *fitConstraints; // @synthesize fitConstraints=_fitConstraints;
 @property(retain) NSLayoutConstraint *aspectRatioConstraint; // @synthesize aspectRatioConstraint=_aspectRatioConstraint;
 @property(retain) NSView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(retain) NSView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)setContentAspectRatio:(double)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

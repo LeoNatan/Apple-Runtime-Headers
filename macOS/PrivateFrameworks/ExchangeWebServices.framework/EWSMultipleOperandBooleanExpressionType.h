@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *SearchExpressions; // @synthesize SearchExpressions=_SearchExpressions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *SearchExpressions; // @synthesize SearchExpressions=_SearchExpressions;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

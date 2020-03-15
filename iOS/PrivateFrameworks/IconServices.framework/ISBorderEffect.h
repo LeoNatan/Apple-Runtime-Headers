@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     double _lineWidth;
 }
 
+- (void).cxx_destruct;
 @property double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain) ISColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (id)filterWithBackgroundImage:(id)arg1 inputImage:(id)arg2;
 - (id)initWithLineWidth:(double)arg1 color:(id)arg2;
 

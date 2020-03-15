@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
     MKTransitDeparturesDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MKTransitDeparturesDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) BOOL isInSiri; // @synthesize isInSiri=_isInSiri;
 @property(nonatomic) __weak id <MKTransitDepaturesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (int)currentTransitCategory;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;

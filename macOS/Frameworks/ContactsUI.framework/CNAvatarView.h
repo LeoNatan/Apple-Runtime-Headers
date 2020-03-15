@@ -23,6 +23,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain) NSTrackingArea *editOverlayTrackingArea; // @synthesize editOverlayTrackingArea=_editOverlayTrackingArea;
 @property(retain) NSView *editOverlayView; // @synthesize editOverlayView=_editOverlayView;
 @property(retain) NSMutableArray *iconViews; // @synthesize iconViews=_iconViews;
@@ -30,7 +31,6 @@
 @property(retain) CNContactIconViewModel *templateIconViewModel; // @synthesize templateIconViewModel=_templateIconViewModel;
 @property(retain) CNAvatarViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property __weak CNAvatarViewController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (BOOL)performDragOperation:(id)arg1;
 - (BOOL)prepareForDragOperation:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;

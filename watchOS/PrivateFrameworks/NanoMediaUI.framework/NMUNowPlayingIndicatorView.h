@@ -22,6 +22,7 @@
     unsigned int _animationType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int animationType; // @synthesize animationType=_animationType;
 @property(readonly, nonatomic) unsigned int numberOfLevels; // @synthesize numberOfLevels=_numberOfLevels;
 @property(nonatomic) _Bool showsIdealizedLevelPositionsWhenStopped; // @synthesize showsIdealizedLevelPositionsWhenStopped=_showsIdealizedLevelPositionsWhenStopped;
@@ -31,7 +32,6 @@
 @property(nonatomic) float levelCornerRadius; // @synthesize levelCornerRadius=_levelCornerRadius;
 @property(nonatomic) float levelWidth; // @synthesize levelWidth=_levelWidth;
 @property(nonatomic) float interLevelSpacing; // @synthesize interLevelSpacing=_interLevelSpacing;
-- (void).cxx_destruct;
 - (id)_barAnimationForBarIndex:(unsigned int)arg1;
 - (void)_invalidateCachedLevelHeights;
 - (void)_updateLevelAnimations;

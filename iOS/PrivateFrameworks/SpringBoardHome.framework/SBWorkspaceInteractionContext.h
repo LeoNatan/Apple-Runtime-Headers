@@ -14,9 +14,9 @@
     UIGestureRecognizer *_gestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(readonly, nonatomic) UIInteractionProgress *interactionProgress; // @synthesize interactionProgress=_interactionProgress;
-- (void).cxx_destruct;
 - (id)initWithGestureRecognizer:(id)arg1;
 - (id)initWithInteractionProgress:(id)arg1;
 

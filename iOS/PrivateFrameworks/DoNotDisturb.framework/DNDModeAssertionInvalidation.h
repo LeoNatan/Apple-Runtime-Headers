@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long reasonOverride; // @synthesize reasonOverride=_reasonOverride;
 @property(readonly, nonatomic) unsigned long long reason; // @synthesize reason=_reason;
 @property(readonly, copy, nonatomic) DNDModeAssertionSource *source; // @synthesize source=_source;
 @property(readonly, copy, nonatomic) DNDModeAssertionInvalidationDetails *details; // @synthesize details=_details;
 @property(readonly, copy, nonatomic) NSDate *invalidationDate; // @synthesize invalidationDate=_invalidationDate;
 @property(readonly, copy, nonatomic) DNDModeAssertion *assertion; // @synthesize assertion=_assertion;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

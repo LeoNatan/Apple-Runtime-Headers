@@ -24,6 +24,7 @@
     FPRangeList *_rangeList;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FPRangeList *rangeList; // @synthesize rangeList=_rangeList;
 @property(retain, nonatomic) NSMutableDictionary *processMemoryRegions; // @synthesize processMemoryRegions=_processMemoryRegions;
 @property(nonatomic) int ownerPid; // @synthesize ownerPid=_ownerPid;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) unsigned long long totalReclaimableSize; // @synthesize totalReclaimableSize=_totalReclaimableSize;
 @property(readonly, nonatomic) unsigned long long totalCleanSize; // @synthesize totalCleanSize=_totalCleanSize;
 @property(readonly, nonatomic) unsigned long long totalDirtySize; // @synthesize totalDirtySize=_totalDirtySize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *fullName;
 @property(readonly, nonatomic) NSString *detailedName;
 @property(readonly, nonatomic) NSString *name;

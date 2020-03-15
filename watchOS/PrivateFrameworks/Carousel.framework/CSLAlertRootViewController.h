@@ -25,10 +25,10 @@
     id <CSLAlertRootViewControllerNavigationDelegate> _navigationDelegate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(nonatomic) __weak id <CSLAlertRootViewControllerNavigationDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
 @property(nonatomic) __weak id <CSLAlertRootViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)layerWasFrozen:(id)arg1;
 - (_Bool)handleButton:(unsigned int)arg1 eventType:(unsigned int)arg2;
 - (void)alertTransitionAnimator:(id)arg1 willBeginDisplayingAppearingAlert:(id)arg2;

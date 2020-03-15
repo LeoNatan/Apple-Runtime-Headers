@@ -46,6 +46,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *photoSharingSettings; // @synthesize photoSharingSettings=_photoSharingSettings;
 @property(retain, nonatomic) NSSet *photosFolderSelectedNames; // @synthesize photosFolderSelectedNames=_photosFolderSelectedNames;
 @property(retain, nonatomic) NSArray *photosFolderNames; // @synthesize photosFolderNames=_photosFolderNames;
@@ -76,7 +77,6 @@
 @property(nonatomic) int photoSyncMode; // @synthesize photoSyncMode=_photoSyncMode;
 @property(nonatomic) int photoSyncSource; // @synthesize photoSyncSource=_photoSyncSource;
 @property(nonatomic) BOOL syncPhotos; // @synthesize syncPhotos=_syncPhotos;
-- (void).cxx_destruct;
 - (id)initWithPhotoSharingSettings:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -14,9 +14,9 @@
     UIView *_futureEnclosingView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *futureEnclosingView; // @synthesize futureEnclosingView=_futureEnclosingView;
 @property(nonatomic) unsigned int minorDetentsBehavior; // @synthesize minorDetentsBehavior=_minorDetentsBehavior;
-- (void).cxx_destruct;
 - (void)generateNotches;
 - (_Bool)ignoreView:(id)arg1;
 - (id)orderedSubviewsSpecifyingNotches:(id)arg1;

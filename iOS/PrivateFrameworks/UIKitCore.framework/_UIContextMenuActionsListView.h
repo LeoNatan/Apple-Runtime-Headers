@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 {
     UIFont *_labelFont;
     _Bool _surfacesActionRadius;
+    _Bool _showsShadow;
     _Bool _showsTitle;
     _Bool _reversesActionOrder;
     id <_UIContextMenuActionsListViewDelegate> _delegate;
@@ -21,13 +22,14 @@ __attribute__((visibility("hidden")))
     UIInterfaceActionGroupView *_currentActionGroupView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIInterfaceActionGroupView *currentActionGroupView; // @synthesize currentActionGroupView=_currentActionGroupView;
 @property(copy, nonatomic) UIMenu *displayedMenu; // @synthesize displayedMenu=_displayedMenu;
 @property(nonatomic) _Bool reversesActionOrder; // @synthesize reversesActionOrder=_reversesActionOrder;
 @property(nonatomic) _Bool showsTitle; // @synthesize showsTitle=_showsTitle;
+@property(nonatomic) _Bool showsShadow; // @synthesize showsShadow=_showsShadow;
 @property(nonatomic) _Bool surfacesActionRadius; // @synthesize surfacesActionRadius=_surfacesActionRadius;
 @property(nonatomic) __weak id <_UIContextMenuActionsListViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_testing_tapAnAction;
 - (double)_clampedCornerRadiusForGroupView:(id)arg1;
 - (void)_performActionForPreviewAction:(id)arg1;

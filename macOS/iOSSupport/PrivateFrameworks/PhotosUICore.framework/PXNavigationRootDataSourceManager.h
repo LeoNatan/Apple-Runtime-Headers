@@ -15,9 +15,9 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) id <PXNavigationRoot> navigationRoot; // @synthesize navigationRoot=_navigationRoot;
-- (void).cxx_destruct;
 - (id)createDataSection;
 - (id)initWithChildDataSectionManagers:(id)arg1;
 - (id)initWithNavigationRoot:(id)arg1 photoLibrary:(id)arg2;

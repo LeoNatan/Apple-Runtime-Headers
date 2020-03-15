@@ -23,8 +23,8 @@
 + (id)storeWithMailbox:(id)arg1;
 + (id)storeWithCriterion:(id)arg1;
 + (unsigned int)defaultLoadOptions;
-@property(retain, nonatomic) NSDate *earliestReceivedDate; // @synthesize earliestReceivedDate=_earliestReceivedDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *earliestReceivedDate; // @synthesize earliestReceivedDate=_earliestReceivedDate;
 - (_Bool)hasCompleteDataForMimePart:(id)arg1;
 - (void)_queueMessagesWereCompacted:(id)arg1;
 - (void)_queueMessagesWillBeCompacted:(id)arg1;

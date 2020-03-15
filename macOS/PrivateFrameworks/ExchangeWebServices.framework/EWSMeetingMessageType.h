@@ -23,6 +23,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *ProposedEnd; // @synthesize ProposedEnd=_ProposedEnd;
 @property(retain, nonatomic) NSDateComponents *ProposedStart; // @synthesize ProposedStart=_ProposedStart;
 @property(retain, nonatomic) NSDateComponents *DateTimeStamp; // @synthesize DateTimeStamp=_DateTimeStamp;
@@ -33,7 +34,6 @@
 @property(nonatomic) BOOL IsOutOfDate; // @synthesize IsOutOfDate=_IsOutOfDate;
 @property(nonatomic) BOOL IsDelegated; // @synthesize IsDelegated=_IsDelegated;
 @property(retain, nonatomic) EWSItemIdType *AssociatedCalendarItemId; // @synthesize AssociatedCalendarItemId=_AssociatedCalendarItemId;
-- (void).cxx_destruct;
 
 @end
 

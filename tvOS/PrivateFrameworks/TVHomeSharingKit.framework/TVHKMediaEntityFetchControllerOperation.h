@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     NSOperation *_currentSubOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *currentSubOperation; // @synthesize currentSubOperation=_currentSubOperation;
 @property(retain, nonatomic) TVHKMediaEntityServer *mediaEntityServer; // @synthesize mediaEntityServer=_mediaEntityServer;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *fetchedMediaEntities; // @synthesize fetchedMediaEntities=_fetchedMediaEntities;
 @property(copy, nonatomic) TVHKMediaEntityFetchRequest *request; // @synthesize request=_request;
 @property(nonatomic) long long queryReason; // @synthesize queryReason=_queryReason;
-- (void).cxx_destruct;
 - (id)_groupingsForMediaEntities:(id)arg1;
 - (id)_recentlyAddedMediaEntitiesForMediaEntities:(id)arg1 mediaEntitySubtype:(unsigned long long)arg2;
 - (id)_resultWithResponse:(id)arg1;

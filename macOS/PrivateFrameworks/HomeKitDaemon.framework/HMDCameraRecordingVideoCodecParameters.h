@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *iFrameInterval; // @synthesize iFrameInterval=_iFrameInterval;
 @property(readonly, copy, nonatomic) NSNumber *bitRate; // @synthesize bitRate=_bitRate;
 @property(readonly, copy, nonatomic) NSArray *levels; // @synthesize levels=_levels;
 @property(readonly, copy, nonatomic) NSArray *profiles; // @synthesize profiles=_profiles;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)description:(id)arg1 indent:(id)arg2;

@@ -16,8 +16,8 @@
 }
 
 + (id)writableTypeIdentifiersForItemProvider;
-@property(retain) SearchUIRowModel *dragObject; // @synthesize dragObject=_dragObject;
 - (void).cxx_destruct;
+@property(retain) SearchUIRowModel *dragObject; // @synthesize dragObject=_dragObject;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSArray *writableTypeIdentifiersForItemProvider;
 - (_Bool)shouldShareDragURL;

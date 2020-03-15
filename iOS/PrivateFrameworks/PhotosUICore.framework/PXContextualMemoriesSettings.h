@@ -17,12 +17,12 @@
     NSArray *_settings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) PXContextualMemoriesPeopleSetting *peopleSetting; // @synthesize peopleSetting=_peopleSetting;
 @property(readonly, nonatomic) PXContextualMemoriesLocationSetting *locationSetting; // @synthesize locationSetting=_locationSetting;
 @property(readonly, nonatomic) PXContextualMemoriesTimeSetting *timeSetting; // @synthesize timeSetting=_timeSetting;
 @property(copy, nonatomic) NSDictionary *extraParameters; // @synthesize extraParameters=_extraParameters;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *peopleNames;
 @property(readonly, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) NSDate *date;

@@ -20,10 +20,10 @@
 }
 
 + (id)sharedWatchKitAppMonitor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
 @property(retain, nonatomic) CSLObserverSet *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)processDidExit:(id)arg1;
 - (void)processManager:(id)arg1 didRemoveProcess:(id)arg2;
 - (void)processManager:(id)arg1 didAddProcess:(id)arg2;

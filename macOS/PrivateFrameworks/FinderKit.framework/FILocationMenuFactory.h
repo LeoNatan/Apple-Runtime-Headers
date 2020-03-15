@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     _Bool _tornDown;
 }
 
-@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_tornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_tornDown;
 - (void)addMenuItemsForCloudMetadataOnMainThread:(id)arg1 targetOnly:(_Bool)arg2;
 - (void)insertSeparatorAndSectionTitleOnMainThread:(id)arg1 atIndex:(long long *)arg2;
 - (void)addSeparatorAndSectionTitleOnMainThread:(id)arg1;

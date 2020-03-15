@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)ratioValueWithNumerator:(id)arg1 andDenominator:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKCodedQuantity *denominator; // @synthesize denominator=_denominator;
 @property(readonly, copy, nonatomic) HKCodedQuantity *numerator; // @synthesize numerator=_numerator;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

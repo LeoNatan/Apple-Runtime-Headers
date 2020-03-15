@@ -14,9 +14,9 @@
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(readonly, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
-- (void).cxx_destruct;
 - (void)onLongPress:(id)arg1;
 - (void)onTap:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;

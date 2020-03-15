@@ -15,8 +15,8 @@
     AVRoutePickerView *_avRoutePickerView;
 }
 
-@property(retain, nonatomic) AVRoutePickerView *avRoutePickerView; // @synthesize avRoutePickerView=_avRoutePickerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVRoutePickerView *avRoutePickerView; // @synthesize avRoutePickerView=_avRoutePickerView;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)dealloc;
 - (id)init;

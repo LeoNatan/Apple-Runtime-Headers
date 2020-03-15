@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIActionSheetiOSDismissActionView *_dismissActionView;
 }
 
-@property(retain, nonatomic) UIActionSheetiOSDismissActionView *dismissActionView; // @synthesize dismissActionView=_dismissActionView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIActionSheetiOSDismissActionView *dismissActionView; // @synthesize dismissActionView=_dismissActionView;
 @property(readonly) double cornerRadius;
 @property(readonly) UIColor *dimmingViewColor;
 @property(readonly) double dismissToContentSpacing;

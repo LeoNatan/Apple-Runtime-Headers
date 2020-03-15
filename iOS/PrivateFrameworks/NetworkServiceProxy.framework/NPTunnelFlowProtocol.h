@@ -20,9 +20,9 @@
     struct nw_protocol *_inputProtocol;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool waitingForOutput; // @synthesize waitingForOutput=_waitingForOutput;
 @property(readonly, nonatomic) struct nw_protocol *inputProtocol; // @synthesize inputProtocol=_inputProtocol;
-- (void).cxx_destruct;
 - (void)handleAppData:(id)arg1;
 - (void)handleOutputFrame:(id)arg1 send:(_Bool)arg2;
 - (unsigned int)addOutputFramesToArray:(struct nw_frame_array_s *)arg1 limitMinimumBytes:(unsigned int)arg2 limitMaximumBytes:(unsigned int)arg3 limitMaximumFrames:(unsigned int)arg4;

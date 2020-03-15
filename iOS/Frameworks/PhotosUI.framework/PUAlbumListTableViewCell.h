@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <PUAlbumListTableViewCellDelegate> _stateChangeDelegate;
 }
 
-@property(nonatomic) __weak id <PUAlbumListTableViewCellDelegate> stateChangeDelegate; // @synthesize stateChangeDelegate=_stateChangeDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUAlbumListTableViewCellDelegate> stateChangeDelegate; // @synthesize stateChangeDelegate=_stateChangeDelegate;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)willTransitionToState:(unsigned long long)arg1;
 

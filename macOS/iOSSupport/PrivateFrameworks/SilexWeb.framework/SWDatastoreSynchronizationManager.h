@@ -22,12 +22,12 @@
     id <SWLogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) id <SWSessionManager> sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(readonly, nonatomic) id <SWScriptsManager> scriptsManager; // @synthesize scriptsManager=_scriptsManager;
 @property(readonly, nonatomic) id <SWDatastoreFactory> settingsFactory; // @synthesize settingsFactory=_settingsFactory;
 @property(readonly, nonatomic) id <SWDatastoreManager> datastoreManager; // @synthesize datastoreManager=_datastoreManager;
-- (void).cxx_destruct;
 - (void)datastoreManager:(id)arg1 didChangeFromDatastore:(id)arg2 originatingSession:(id)arg3;
 - (void)didReceiveMessage:(id)arg1 securityOrigin:(id)arg2;
 - (void)dealloc;

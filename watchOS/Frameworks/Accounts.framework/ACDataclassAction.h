@@ -23,10 +23,10 @@
 + (id)destructiveActionWithType:(int)arg1;
 + (id)actionWithType:(int)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *affectedContainers; // @synthesize affectedContainers=_affectedContainers;
 @property(readonly, nonatomic) _Bool isDestructive; // @synthesize isDestructive=_isDestructive;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, getter=_isError) _Bool _error;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

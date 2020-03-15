@@ -20,10 +20,10 @@
 }
 
 + (id)shared;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *_devices; // @synthesize _devices=__devices;
 @property(nonatomic) BOOL detectDevices; // @synthesize detectDevices=_detectDevices;
 @property(nonatomic) __weak id <AXEHIDDeviceManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)device:(id)arg1 didPostEvent:(id)arg2;
 - (void)device:(id)arg1 didUnload:(BOOL)arg2;
 - (void)deviceDetector:(id)arg1 didFindDevice:(struct __IOHIDDevice *)arg2;

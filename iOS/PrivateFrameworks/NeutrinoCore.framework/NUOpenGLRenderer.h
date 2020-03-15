@@ -15,8 +15,8 @@
     NUGLContext *_glContext;
 }
 
-@property(readonly, nonatomic) NUGLContext *glContext; // @synthesize glContext=_glContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NUGLContext *glContext; // @synthesize glContext=_glContext;
 - (id)_textureForSurface:(id)arg1 owner:(id)arg2;
 - (id)renderDestinationForSurface:(id)arg1 owner:(id)arg2;
 - (id)imageForSurface:(id)arg1 options:(id)arg2 owner:(id)arg3;

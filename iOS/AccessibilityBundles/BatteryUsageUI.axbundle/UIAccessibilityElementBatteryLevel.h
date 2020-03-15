@@ -14,9 +14,9 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) double batteryLevel; // @synthesize batteryLevel=_batteryLevel;
-- (void).cxx_destruct;
 
 @end
 

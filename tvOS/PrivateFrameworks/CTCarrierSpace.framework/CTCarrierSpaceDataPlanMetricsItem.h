@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
 @property(nonatomic) long long units; // @synthesize units=_units;
 @property(nonatomic) _Bool capacityValid; // @synthesize capacityValid=_capacityValid;
 @property(retain, nonatomic) NSNumber *capacityBytes; // @synthesize capacityBytes=_capacityBytes;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

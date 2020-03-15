@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSSet *resolutions; // @synthesize resolutions=_resolutions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *resolutions; // @synthesize resolutions=_resolutions;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

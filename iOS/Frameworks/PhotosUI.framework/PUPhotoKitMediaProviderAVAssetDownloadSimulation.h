@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *__resultInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setResultInfo:) NSDictionary *_resultInfo; // @synthesize _resultInfo=__resultInfo;
 @property(retain, nonatomic, setter=_setResultAudioMix:) AVAudioMix *_resultAudioMix; // @synthesize _resultAudioMix=__resultAudioMix;
 @property(retain, nonatomic, setter=_setResultAVAsset:) AVAsset *_resultAVAsset; // @synthesize _resultAVAsset=__resultAVAsset;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType externalResultHandler; // @synthesize externalResultHandler=_externalResultHandler;
 @property(readonly, copy, nonatomic) CDUnknownBlockType internalProgressHandler; // @synthesize internalProgressHandler=_internalProgressHandler;
 @property(copy, nonatomic) CDUnknownBlockType externalProgressHandler; // @synthesize externalProgressHandler=_externalProgressHandler;
-- (void).cxx_destruct;
 - (void)endSimulationWithError:(id)arg1;
 - (void)updateSimulationWithProgress:(double)arg1;
 - (void)_handleResultAVAsset:(id)arg1 audioMix:(id)arg2 info:(id)arg3;

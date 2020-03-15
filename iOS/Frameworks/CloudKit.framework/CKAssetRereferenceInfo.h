@@ -22,6 +22,7 @@
     NSString *_destinationFieldName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *destinationFieldName; // @synthesize destinationFieldName=_destinationFieldName;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned long long downloadTokenExpiration; // @synthesize downloadTokenExpiration=_downloadTokenExpiration;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSURL *contentBaseURL; // @synthesize contentBaseURL=_contentBaseURL;
 @property(retain, nonatomic) CKRecordZoneID *sourceZoneID; // @synthesize sourceZoneID=_sourceZoneID;
-- (void).cxx_destruct;
 - (_Bool)validateAndSetRecordFetchPropertiesWithAsset:(id)arg1 assetReference:(id)arg2 useEncryption:(_Bool)arg3 useClearAssetEncryption:(_Bool)arg4;
 - (void)clearRecordFetchProperties;
 - (id)description;

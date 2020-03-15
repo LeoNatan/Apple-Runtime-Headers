@@ -14,9 +14,9 @@
     NSString *_failureReasonIfImageIsNil;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *failureReasonIfImageIsNil; // @synthesize failureReasonIfImageIsNil=_failureReasonIfImageIsNil;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

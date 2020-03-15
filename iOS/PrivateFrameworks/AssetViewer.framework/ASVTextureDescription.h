@@ -23,6 +23,7 @@
 + (long long)pixelEncodingForBitsPerComponent:(unsigned long long)arg1;
 + (unsigned long long)bytesPerComponentForPixelEncoding:(long long)arg1;
 + (unsigned long long)bytesPerComponentForColorModel:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool generateMipmaps; // @synthesize generateMipmaps=_generateMipmaps;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) long long fileType; // @synthesize fileType=_fileType;
@@ -32,7 +33,6 @@
 // Error parsing type for property originalSize:
 // Property attributes: T,R,N,V_originalSize
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool requiresDownsampling;
 - (id)debugDescription;
 // Error parsing type for property destinationSize:

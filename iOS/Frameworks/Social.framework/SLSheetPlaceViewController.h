@@ -35,11 +35,11 @@
     NSObject<SLPlaceDataSource> *_placeDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<SLPlaceDataSource> *placeDataSource; // @synthesize placeDataSource=_placeDataSource;
 @property(retain) ACAccount *account; // @synthesize account=_account;
 @property(nonatomic) _Bool searchEnabled; // @synthesize searchEnabled=_searchEnabled;
 @property __weak NSObject<SLSheetPlaceViewControllerDelegate> *selectionDelegate; // @synthesize selectionDelegate=_selectionDelegate;
-- (void).cxx_destruct;
 - (_Bool)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayControllerDidEndSearch:(id)arg1;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;

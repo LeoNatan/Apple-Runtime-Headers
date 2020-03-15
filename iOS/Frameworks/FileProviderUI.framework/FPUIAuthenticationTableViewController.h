@@ -20,10 +20,10 @@
 }
 
 + (id)defaultTitle;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *rowDescriptors; // @synthesize rowDescriptors=_rowDescriptors;
 @property(copy, nonatomic) NSArray *sectionDescriptors; // @synthesize sectionDescriptors=_sectionDescriptors;
 @property(nonatomic) __weak id <FPUIAuthenticationDelegate> authenticationDelegate; // @synthesize authenticationDelegate=_authenticationDelegate;
-- (void).cxx_destruct;
 - (void)authenticationDelegate:(id)arg1 didFinishWithError:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)authenticationDelegate:(id)arg1 didEncounterError:(id)arg2;
 - (void)authenticationDelegate:(id)arg1 didReceiveVolumeMountRepresentations:(id)arg2;

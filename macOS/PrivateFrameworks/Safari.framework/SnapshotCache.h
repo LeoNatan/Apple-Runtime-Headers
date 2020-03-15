@@ -22,8 +22,8 @@
 
 + (id)_imageDirectoryURL;
 + (id)sharedCache;
-@property(nonatomic) __weak id <WBSSiteMetadataProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WBSSiteMetadataProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 - (id)_scaleSnapshot:(id)arg1 scaleFactor:(double)arg2;
 - (id)_lowFidelitySnapshotFromHighFidelitySnapshot:(id)arg1;
 - (void)siteMetadataImageCacheDidEmptyCache:(id)arg1;

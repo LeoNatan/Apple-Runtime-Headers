@@ -31,6 +31,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char keepAliveCounter; // @synthesize keepAliveCounter=_keepAliveCounter;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *socketReceiveSource; // @synthesize socketReceiveSource=_socketReceiveSource;
 @property(retain, nonatomic) HMFTimer *keepAliveByteReceiveTimeoutTimer; // @synthesize keepAliveByteReceiveTimeoutTimer=_keepAliveByteReceiveTimeoutTimer;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) HMDCameraStreamSessionID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *highPriorityQueue; // @synthesize highPriorityQueue=_highPriorityQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)callSessionEnded:(id)arg1;
 - (void)_callSessionEnded:(id)arg1;
 - (void)_socketOpened:(id)arg1;

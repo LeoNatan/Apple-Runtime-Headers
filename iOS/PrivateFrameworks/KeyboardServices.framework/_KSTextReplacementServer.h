@@ -27,10 +27,10 @@
 
 + (_Bool)isBlackListed:(unsigned int)arg1;
 + (id)textReplacementServer;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *directoryPath; // @synthesize directoryPath=_directoryPath;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) APSConnection *pushConnection; // @synthesize pushConnection=_pushConnection;
-- (void).cxx_destruct;
 - (void)buddySetupDidFinish;
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;

@@ -77,6 +77,7 @@
 + (BOOL)isDerivedRelationship;
 + (BOOL)isWeakRelationship;
 + (unsigned long long)_numberOfSharedLocksForUnitTesting;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKBatchChangeInfo *batchChangeInfo; // @synthesize batchChangeInfo=_batchChangeInfo;
 @property(retain, nonatomic) EKFrozenObject *backingObject; // @synthesize backingObject=_backingObject;
 @property(retain, nonatomic) NSString *eventStoreIdentifier; // @synthesize eventStoreIdentifier=_eventStoreIdentifier;
@@ -89,7 +90,6 @@
 @property(nonatomic) unsigned long long cachedHash; // @synthesize cachedHash=_cachedHash;
 - (void)setManagedObjectID:(id)arg1;
 @property(readonly, nonatomic) NSManagedObjectID *managedObjectID;
-- (void).cxx_destruct;
 - (BOOL)isPropertyUnavailable:(id)arg1;
 @property(readonly, nonatomic) BOOL isPartialObject;
 @property(readonly, nonatomic) BOOL canBeConvertedToFullObject;

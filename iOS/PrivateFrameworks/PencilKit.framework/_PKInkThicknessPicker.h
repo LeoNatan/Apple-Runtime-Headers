@@ -21,10 +21,10 @@
 + (struct CGRect)_buttonFrameForWeight:(double)arg1;
 + (double)_weightForButtonIndex:(long long)arg1;
 + (long long)_nearestButtonIndexForWeight:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *thicknessButtons; // @synthesize thicknessButtons=_thicknessButtons;
 @property(nonatomic) double weight; // @synthesize weight=_weight;
 @property(retain, nonatomic) NSString *inkIdentifier; // @synthesize inkIdentifier=_inkIdentifier;
-- (void).cxx_destruct;
 - (void)buttonTapped:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

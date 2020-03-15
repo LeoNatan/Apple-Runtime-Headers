@@ -17,10 +17,10 @@
 
 + (id)emptyDiff;
 + (id)diffWithAddedRecords:(id)arg1 removedRecords:(id)arg2 modifiedRecords:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *modifiedRecords; // @synthesize modifiedRecords=_modifiedRecords;
 @property(readonly, copy, nonatomic) NSArray *removedRecords; // @synthesize removedRecords=_removedRecords;
 @property(readonly, copy, nonatomic) NSArray *addedRecords; // @synthesize addedRecords=_addedRecords;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAddedRecords:(id)arg1 removedRecords:(id)arg2 modifiedRecords:(id)arg3;
 

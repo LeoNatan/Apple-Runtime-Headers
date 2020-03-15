@@ -21,13 +21,13 @@
     NSArray *_imageQualityDiagnosticFileURLs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *imageQualityDiagnosticFileURLs; // @synthesize imageQualityDiagnosticFileURLs=_imageQualityDiagnosticFileURLs;
 @property(retain, nonatomic) PXFeedbackLikeItOrNotComboUIViewController *feedbackController; // @synthesize feedbackController=_feedbackController;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) NSDictionary *negativeFeedback; // @synthesize negativeFeedback=_negativeFeedback;
 @property(readonly, nonatomic) __weak id <PXFeedbackImageQualityUIViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (id)_generateURLsForAssetsDBGFiles:(id)arg1;
 - (id)_keywordIDForComponent:(long long)arg1;
 - (id)_componentNameForComponent:(long long)arg1;

@@ -22,8 +22,8 @@
 + (id)bagForProfile:(id)arg1 profileVersion:(id)arg2 processInfo:(id)arg3;
 + (id)bagForProfile:(id)arg1 profileVersion:(id)arg2;
 + (id)internalBag;
-@property(retain, nonatomic) id <AMSBagDataSourceProtocol> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <AMSBagDataSourceProtocol> dataSource; // @synthesize dataSource=_dataSource;
 - (id)dictionaryForKey:(id)arg1;
 - (id)URLForKey:(id)arg1 account:(id)arg2;
 - (id)URLForKey:(id)arg1;

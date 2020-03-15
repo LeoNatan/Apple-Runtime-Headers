@@ -17,9 +17,9 @@
     CDStruct_d58201db _imageSize;
 }
 
+- (void).cxx_destruct;
 @property CDStruct_912cb5d2 imageSize; // @synthesize imageSize=_imageSize;
 @property(retain) NSArray *faces; // @synthesize faces=_faces;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

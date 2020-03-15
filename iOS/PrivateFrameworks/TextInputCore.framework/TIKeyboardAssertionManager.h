@@ -24,13 +24,13 @@
 + (id)singletonInstance;
 + (id)sharedAssertionManager;
 + (void)setSharedAssertionManager:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long backgroundActivityAssertions; // @synthesize backgroundActivityAssertions=_backgroundActivityAssertions;
 @property(nonatomic) _Bool hasBackgroundActivityAssertions; // @synthesize hasBackgroundActivityAssertions=_hasBackgroundActivityAssertions;
 @property(readonly, nonatomic) NSHashTable *assertions; // @synthesize assertions=_assertions;
 @property(nonatomic) _Bool pendingUpdate; // @synthesize pendingUpdate=_pendingUpdate;
 @property(nonatomic) _Bool hasAssertions; // @synthesize hasAssertions=_hasAssertions;
 @property(nonatomic) id <TIKeyboardAssertionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)releaseBackgroundActivityAssertion;
 - (void)retainBackgroundActivityAssertion;
 - (void)removeAssertionForObject:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_SQL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *SQL; // @synthesize SQL=_SQL;
 @property(readonly, nonatomic) const void *connectionPointer; // @synthesize connectionPointer=_connectionPointer;
-- (void).cxx_destruct;
 - (id)initWithConnection:(const void *)arg1 SQL:(id)arg2;
 
 @end

@@ -22,8 +22,8 @@
 + (void)deleteFaces:(id)arg1;
 + (id)changeRequestForFace:(id)arg1;
 + (id)creationRequestForFace;
-@property(nonatomic) BOOL shouldClearFaceCropGenerationState; // @synthesize shouldClearFaceCropGenerationState=_shouldClearFaceCropGenerationState;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldClearFaceCropGenerationState; // @synthesize shouldClearFaceCropGenerationState=_shouldClearFaceCropGenerationState;
 @property(retain, nonatomic) PHFaceprint *faceprint;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
 - (BOOL)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id *)arg3;

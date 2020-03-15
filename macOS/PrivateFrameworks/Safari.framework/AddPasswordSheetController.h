@@ -6,10 +6,12 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class NSButton, NSTextField, WBSSavedPasswordStore;
+#import <Safari/NSControlTextEditingDelegate-Protocol.h>
+
+@class NSButton, NSString, NSTextField, WBSSavedPasswordStore;
 
 __attribute__((visibility("hidden")))
-@interface AddPasswordSheetController : NSWindowController
+@interface AddPasswordSheetController : NSWindowController <NSControlTextEditingDelegate>
 {
     WBSSavedPasswordStore *_passwordStore;
     BOOL _preservePendingTextFieldStrings;
@@ -20,12 +22,12 @@ __attribute__((visibility("hidden")))
     NSButton *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(nonatomic) __weak NSButton *addButton; // @synthesize addButton=_addButton;
 @property(nonatomic) __weak NSTextField *passwordTextField; // @synthesize passwordTextField=_passwordTextField;
 @property(nonatomic) __weak NSTextField *userNameTextField; // @synthesize userNameTextField=_userNameTextField;
 @property(nonatomic) __weak NSTextField *websiteTextField; // @synthesize websiteTextField=_websiteTextField;
-- (void).cxx_destruct;
 - (void)controlTextDidChange:(id)arg1;
 - (void)hideSheetAndPrepareForReinstall;
 - (void)_hideSheet;
@@ -38,6 +40,12 @@ __attribute__((visibility("hidden")))
 - (id)initWithPasswordStore:(id)arg1;
 - (void)awakeFromNib;
 - (id)windowNibName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

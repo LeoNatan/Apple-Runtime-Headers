@@ -17,12 +17,12 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSOrderedSet *objectIDs; // @synthesize objectIDs=_objectIDs;
 @property(readonly) NSArray *objects; // @synthesize objects=_objects;
 @property(readonly, copy) PHFetchOptions *options; // @synthesize options=_options;
 @property(readonly, copy) CDUnknownBlockType fetchBlock; // @synthesize fetchBlock=_fetchBlock;
-- (void).cxx_destruct;
 - (id)description;
 - (id)fetchResultWithChangeHandlingValue:(id)arg1;
 - (unsigned int)possibleChangesForChange:(id)arg1;

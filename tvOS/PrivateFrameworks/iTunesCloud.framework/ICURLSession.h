@@ -27,8 +27,8 @@
 }
 
 + (unsigned long long)defaultMaximumConcurrentRequests;
-@property(readonly, nonatomic) unsigned long long maxConcurrentRequests; // @synthesize maxConcurrentRequests=_maxConcurrentRequests;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long maxConcurrentRequests; // @synthesize maxConcurrentRequests=_maxConcurrentRequests;
 - (void)_updateProgressForRequest:(id)arg1 withTotalBytesWritten:(long long)arg2 totalBytesExpectedToWrite:(long long)arg3;
 - (double)_timeoutForRequest:(id)arg1;
 - (void)_scheduleNextRequestTimeoutCheck;

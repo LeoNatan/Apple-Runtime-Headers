@@ -29,6 +29,7 @@
 - (_Bool)_isInvalidRemoteChangeEvent:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)publishRemoteChangeEvent:(id)arg1 delayedSaveActionsDetail:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)photoLibrary;
+- (void)invalidate;
 - (void)dealloc;
 - (id)initWithLibraryURL:(id)arg1 changeMerger:(id)arg2 changePublisher:(id)arg3 libraryServicesManager:(id)arg4;
 

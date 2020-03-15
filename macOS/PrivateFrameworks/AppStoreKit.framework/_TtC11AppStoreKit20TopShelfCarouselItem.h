@@ -8,7 +8,6 @@
 
 @interface _TtC11AppStoreKit20TopShelfCarouselItem : _TtC11AppStoreKit12TopShelfItem
 {
-    // Error parsing type: , name: title
     // Error parsing type: , name: genre
     // Error parsing type: , name: summary
     // Error parsing type: , name: previewVideoUrl

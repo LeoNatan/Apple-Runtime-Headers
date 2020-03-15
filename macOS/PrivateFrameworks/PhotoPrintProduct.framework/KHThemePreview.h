@@ -21,6 +21,7 @@
     NSURL *_localizablePreviewURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *localizablePreviewURL; // @synthesize localizablePreviewURL=_localizablePreviewURL;
 @property(retain, nonatomic) NSURL *dictionaryURL; // @synthesize dictionaryURL=_dictionaryURL;
 @property(retain, nonatomic) KHThemePreviewLocalizableFile *localizableFile; // @synthesize localizableFile=_localizableFile;
@@ -30,7 +31,6 @@
 @property(nonatomic) unsigned long long previewImageVersion; // @synthesize previewImageVersion=_previewImageVersion;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (BOOL)_loadTextStyleForFrame:(id)arg1 countryCode:(id)arg2;
 - (id)generatePreviewImageForCountryCode:(id)arg1;
 - (id)generatePreviewImage;

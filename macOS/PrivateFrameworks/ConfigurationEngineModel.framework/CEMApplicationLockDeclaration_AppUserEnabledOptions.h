@@ -19,11 +19,11 @@
 + (id)buildRequiredOnly;
 + (id)buildWithVoiceOver:(id)arg1 withZoom:(id)arg2 withInvertColors:(id)arg3 withAssistiveTouch:(id)arg4;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAssistiveTouch; // @synthesize payloadAssistiveTouch=_payloadAssistiveTouch;
 @property(copy, nonatomic) NSNumber *payloadInvertColors; // @synthesize payloadInvertColors=_payloadInvertColors;
 @property(copy, nonatomic) NSNumber *payloadZoom; // @synthesize payloadZoom=_payloadZoom;
 @property(copy, nonatomic) NSNumber *payloadVoiceOver; // @synthesize payloadVoiceOver=_payloadVoiceOver;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

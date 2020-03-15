@@ -17,9 +17,9 @@
 }
 
 + (id)sharedFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *percentageFormatter; // @synthesize percentageFormatter=_percentageFormatter;
 @property(retain, nonatomic) NSNumberFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *percentSymbol;
 - (double)value:(id)arg1;
 - (id)formattedChanceOfPrecipitation:(id)arg1 style:(unsigned long long)arg2 shouldIncludePercentSymbol:(_Bool)arg3;

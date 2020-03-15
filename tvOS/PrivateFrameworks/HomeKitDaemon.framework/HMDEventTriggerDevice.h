@@ -14,9 +14,9 @@
     HMDDevice *_device;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCurrentDevice) _Bool currentDevice; // @synthesize currentDevice=_currentDevice;
 @property(readonly, nonatomic) HMDDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

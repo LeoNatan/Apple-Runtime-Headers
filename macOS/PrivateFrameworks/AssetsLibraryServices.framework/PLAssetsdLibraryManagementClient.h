@@ -13,6 +13,7 @@
 - (void)getPhotoLibraryURLsWithReply:(CDUnknownBlockType)arg1;
 - (id)activePhotoLibraries:(id *)arg1;
 - (BOOL)overrideSystemPhotoLibraryURL:(id)arg1 error:(id *)arg2;
+- (BOOL)closeAndDeletePhotoLibraryAtURL:(id)arg1 error:(id *)arg2;
 - (BOOL)removePhotoLibraryURL:(id)arg1 error:(id *)arg2;
 - (BOOL)setSystemPhotoLibraryURL:(id)arg1 error:(id *)arg2;
 

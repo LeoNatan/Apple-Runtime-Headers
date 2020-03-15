@@ -17,6 +17,7 @@
     SCNNode *_node;
     NSArray *_palettesDescriptions;
     NSArray *_shaderModifiers;
+    NSArray *_adjustments;
     struct SCNVector3 _position;
     struct SCNVector3 _rotation;
     struct SCNVector3 _scale;
@@ -25,6 +26,7 @@
 
 + (void)applyPalettesForAvatar:(id)arg1 toNode:(id)arg2 palettesDescriptions:(id)arg3;
 + (id)propFromDictionary:(id)arg1 assetsPath:(id)arg2;
++ (id)adjustmentFromDictionary:(id)arg1 presetCategory:(id)arg2;
 + (struct SCNVector3)getScaleInDictionary:(id)arg1;
 + (struct SCNVector3)getRotationInDictionary:(id)arg1;
 + (struct SCNVector3)getPositionInDictionary:(id)arg1;
@@ -33,6 +35,8 @@
 + (_Bool)getOrientToCameraInDictionary:(id)arg1;
 + (id)cacheKeyForSize:(struct CGSize)arg1 position:(struct SCNVector3)arg2 rotation:(struct SCNVector3)arg3 scale:(struct SCNVector3)arg4 palettesDescriptions:(id)arg5 filePath:(id)arg6;
 + (id)stickerPropCache;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *adjustments; // @synthesize adjustments=_adjustments;
 @property(copy, nonatomic) NSArray *shaderModifiers; // @synthesize shaderModifiers=_shaderModifiers;
 @property(readonly, nonatomic) NSArray *palettesDescriptions; // @synthesize palettesDescriptions=_palettesDescriptions;
 @property(readonly, nonatomic) _Bool renderLast; // @synthesize renderLast=_renderLast;
@@ -42,7 +46,6 @@
 @property(readonly, nonatomic) struct SCNVector3 position; // @synthesize position=_position;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) SCNNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (void)stickerGenerationDidEnd;
 - (void)updateNode:(id)arg1 withContentAtTime:(CDStruct_1b6d18a9)arg2;
 - (void)stickerGenerationWillBegin;
@@ -51,7 +54,7 @@
 - (id)nodeName;
 - (id)cloneWithShaderModifiers:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithSize:(struct CGSize)arg1 scale:(struct SCNVector3)arg2 position:(struct SCNVector3)arg3 renderLast:(_Bool)arg4 orientToCamera:(_Bool)arg5 rotation:(struct SCNVector3)arg6 palettesDescriptions:(id)arg7 shaderModifiers:(id)arg8;
+- (id)initWithSize:(struct CGSize)arg1 scale:(struct SCNVector3)arg2 position:(struct SCNVector3)arg3 renderLast:(_Bool)arg4 orientToCamera:(_Bool)arg5 rotation:(struct SCNVector3)arg6 palettesDescriptions:(id)arg7 shaderModifiers:(id)arg8 adjustments:(id)arg9;
 
 @end
 

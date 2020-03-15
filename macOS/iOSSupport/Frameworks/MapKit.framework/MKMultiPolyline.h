@@ -17,9 +17,9 @@
     CDStruct_02837cd9 _boundingMapRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_02837cd9 boundingMapRect; // @synthesize boundingMapRect=_boundingMapRect;
 @property(readonly, copy, nonatomic) NSArray *polylines; // @synthesize polylines=_polylines;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate;
 - (id)init;
 - (id)initWithPolylines:(id)arg1;

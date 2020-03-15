@@ -21,11 +21,11 @@
 
 + (id)modelWithLocation:(id)arg1;
 + (id)autoupdatingLocationModelWithPreferences:(id)arg1 effectiveBundleIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPendingUpdates; // @synthesize hasPendingUpdates=_hasPendingUpdates;
 @property(nonatomic) struct ct_green_tea_logger_s *greenTeaLogger; // @synthesize greenTeaLogger=_greenTeaLogger;
 @property(retain, nonatomic) WFServiceConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
-- (void).cxx_destruct;
 - (void)_persistStateWithModel:(id)arg1;
 - (void)performDelayedUpdatesForObserver:(id)arg1;
 - (void)_fireTodayModelForecastWasUpdated:(id)arg1;

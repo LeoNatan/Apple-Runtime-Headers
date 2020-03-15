@@ -16,9 +16,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) id <WBSSandboxExtensionStore> store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (void)_createTokenWithExtensions:(id)arg1 requestURL:(id)arg2 includeRequestURL:(BOOL)arg3 isRequestURLSecurityScoped:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_createFileExtensionForURL:(id)arg1 permissions:(long long)arg2 error:(id *)arg3;
 - (id)_createGenericExtensionForURL:(id)arg1 extension:(id)arg2 error:(id *)arg3;

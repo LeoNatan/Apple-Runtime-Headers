@@ -17,11 +17,11 @@
     NSURL *_publicMessageURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *publicMessageURL; // @synthesize publicMessageURL=_publicMessageURL;
 @property(retain, nonatomic) id <EFInvocable> cleanupInvocable; // @synthesize cleanupInvocable=_cleanupInvocable;
 @property(retain, nonatomic) NSArray *relatedContentItems; // @synthesize relatedContentItems=_relatedContentItems;
 @property(retain, nonatomic) NSURL *contentURL; // @synthesize contentURL=_contentURL;
-- (void).cxx_destruct;
 
 @end
 

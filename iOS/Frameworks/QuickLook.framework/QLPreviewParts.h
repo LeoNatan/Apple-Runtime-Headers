@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 + (id)safeURLScheme;
 + (void)unregisterPreview:(id)arg1;
 + (void)registerPreview:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRemoveURLAfterGeneration; // @synthesize shouldRemoveURLAfterGeneration=_shouldRemoveURLAfterGeneration;
 @property(nonatomic) _Bool progressive; // @synthesize progressive=_progressive;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) long long pageCount; // @synthesize pageCount=_pageCount;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSURLConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)mimeTypeForAttachmentURL:(id)arg1;
 - (unsigned int)cfEncodingForAttachmentURL:(id)arg1;
 @property(readonly, nonatomic) NSSet *attachmentURLs;

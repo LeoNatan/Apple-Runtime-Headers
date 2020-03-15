@@ -13,9 +13,9 @@
 }
 
 + (id)requestWithEnabler:(CDUnknownBlockType)arg1 disabler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType disabler; // @synthesize disabler=_disabler;
 @property(copy, nonatomic) CDUnknownBlockType enabler; // @synthesize enabler=_enabler;
-- (void).cxx_destruct;
 - (void)dispatchDisablerOnQueue:(id)arg1;
 - (void)dispatchEnablerOnQueue:(id)arg1;
 

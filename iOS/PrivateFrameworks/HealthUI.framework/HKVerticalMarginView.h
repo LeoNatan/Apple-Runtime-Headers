@@ -15,10 +15,10 @@
     double _currentKeyboardHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double currentKeyboardHeight; // @synthesize currentKeyboardHeight=_currentKeyboardHeight;
 @property(retain, nonatomic) id <HKVerticalMarginDelegate> marginDelegate; // @synthesize marginDelegate=_marginDelegate;
 @property(nonatomic) unsigned long long offsetOptions; // @synthesize offsetOptions=_offsetOptions;
-- (void).cxx_destruct;
 - (id)_findViewController;
 - (double)_findTabBarHeightWithController:(id)arg1;
 - (double)_bottomOffsetWithController:(id)arg1;

@@ -19,11 +19,11 @@
 + (id)buildRequiredOnly;
 + (id)buildWithRealm:(id)arg1 withRole:(id)arg2 withGroup:(id)arg3 withLoginGroupOrDomain:(id)arg4;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadLoginGroupOrDomain; // @synthesize payloadLoginGroupOrDomain=_payloadLoginGroupOrDomain;
 @property(copy, nonatomic) NSString *payloadGroup; // @synthesize payloadGroup=_payloadGroup;
 @property(copy, nonatomic) NSString *payloadRole; // @synthesize payloadRole=_payloadRole;
 @property(copy, nonatomic) NSString *payloadRealm; // @synthesize payloadRealm=_payloadRealm;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

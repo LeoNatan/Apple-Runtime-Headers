@@ -19,10 +19,10 @@
     CDStruct_7c66fec0 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableRoutineScenarioTriggeredRequest *scenarioTriggeredRequest; // @synthesize scenarioTriggeredRequest=_scenarioTriggeredRequest;
 @property(retain, nonatomic) HDCodableRoutineLocationRequest *fetchLocationRequest; // @synthesize fetchLocationRequest=_fetchLocationRequest;
 @property(retain, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

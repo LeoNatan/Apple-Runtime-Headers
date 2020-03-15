@@ -15,8 +15,8 @@
     NSMutableOrderedSet *_stringsSet;
 }
 
-@property(retain, nonatomic) NSMutableOrderedSet *stringsSet; // @synthesize stringsSet=_stringsSet;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableOrderedSet *stringsSet; // @synthesize stringsSet=_stringsSet;
 @property(readonly, nonatomic) NSArray *strings;
 - (id)stringForReference:(int)arg1;
 - (int)referenceForStringReadOnly:(id)arg1;

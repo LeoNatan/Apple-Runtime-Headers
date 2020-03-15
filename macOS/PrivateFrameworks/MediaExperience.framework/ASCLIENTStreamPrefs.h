@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)virtualPortUIDsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *virtualPortUIDs; // @synthesize virtualPortUIDs=_virtualPortUIDs;
 @property(nonatomic) double scalarVolume; // @synthesize scalarVolume=_scalarVolume;
 @property(retain, nonatomic) ASStreamFormat *streamFormat; // @synthesize streamFormat=_streamFormat;
 @property(nonatomic) unsigned int dSPFlavor; // @synthesize dSPFlavor=_dSPFlavor;
 @property(nonatomic) unsigned int streamToken; // @synthesize streamToken=_streamToken;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

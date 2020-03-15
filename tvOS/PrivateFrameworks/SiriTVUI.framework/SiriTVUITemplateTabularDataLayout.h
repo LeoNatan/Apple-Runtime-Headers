@@ -24,6 +24,7 @@
     struct UIEdgeInsets _horizontalContentInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexSet *highlightedRowIndices; // @synthesize highlightedRowIndices=_highlightedRowIndices;
 @property(nonatomic) _Bool adjustLayoutForWidthChanges; // @synthesize adjustLayoutForWidthChanges=_adjustLayoutForWidthChanges;
 @property(nonatomic) _Bool hasTitleColumn; // @synthesize hasTitleColumn=_hasTitleColumn;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) SiriTVUIRowStyle *titleStyle; // @synthesize titleStyle=_titleStyle;
 @property(retain, nonatomic) SiriTVUIViewStyleCollection *rowStyles; // @synthesize rowStyles=_rowStyles;
 @property(retain, nonatomic) SiriTVUIViewStyleCollection *columnStyles; // @synthesize columnStyles=_columnStyles;
-- (void).cxx_destruct;
 - (struct CGSize)collectionViewContentSize;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

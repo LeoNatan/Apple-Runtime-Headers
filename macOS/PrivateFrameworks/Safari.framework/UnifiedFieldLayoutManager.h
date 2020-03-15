@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <UnifiedFieldLayoutManagerDelegate> _unifiedFieldDelegate;
 }
 
-@property(nonatomic) __weak id <UnifiedFieldLayoutManagerDelegate> unifiedFieldDelegate; // @synthesize unifiedFieldDelegate=_unifiedFieldDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UnifiedFieldLayoutManagerDelegate> unifiedFieldDelegate; // @synthesize unifiedFieldDelegate=_unifiedFieldDelegate;
 - (void)fillBackgroundRectArray:(const struct CGRect *)arg1 count:(unsigned long long)arg2 forCharacterRange:(struct _NSRange)arg3 color:(id)arg4;
 
 @end

@@ -21,6 +21,8 @@
     // Error parsing type: , name: useCAMetalLayer
     // Error parsing type: , name: pauseEngineOnLeaveForeground
     // Error parsing type: , name: __renderGraphEmitter
+    // Error parsing type: , name: __forceLocalizedProbes
+    // Error parsing type: , name: __parallaxBackgroundProbe
     // Error parsing type: , name: layerHandle
     // Error parsing type: , name: updateSubscription
     // Error parsing type: , name: renderSubscription

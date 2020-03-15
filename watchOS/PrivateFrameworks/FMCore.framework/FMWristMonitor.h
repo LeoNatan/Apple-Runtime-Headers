@@ -17,9 +17,9 @@
 }
 
 + (id)sharedMonitor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSOnWristMonitor *monitor; // @synthesize monitor=_monitor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-- (void).cxx_destruct;
 - (int)wristMonitorStateForCSLOnWristState:(int)arg1;
 - (void)fetchWristState;
 - (void)registerWristMonitorLaunchEvent:(_Bool)arg1;

@@ -26,9 +26,9 @@
     SKCloudServiceSetupConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) SKCloudServiceSetupConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <SKCloudServiceSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_remoteViewControllerExtensionWasInterrupted;
 - (void)_dismissCloudServiceSetupViewControllerWithAnimation:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_reloadWithActiveCloudServiceSetupReloadContext;

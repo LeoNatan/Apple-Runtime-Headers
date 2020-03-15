@@ -37,6 +37,8 @@
     CDStruct_5f3a0cd7 _scissorRect;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long height; // @synthesize height=_height;
 @property(readonly) unsigned long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) float blendColorAlpha; // @synthesize blendColorAlpha=_blendColorAlpha;
@@ -53,8 +55,6 @@
 @property(readonly, nonatomic) float depthBiasSlopeScale; // @synthesize depthBiasSlopeScale=_depthBiasSlopeScale;
 @property(readonly, nonatomic) float depthBias; // @synthesize depthBias=_depthBias;
 @property(readonly, copy, nonatomic) MTLRenderPassDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)filterCounterRangeWithFirstBatch:(unsigned int)arg1 lastBatch:(unsigned int)arg2 filterIndex:(unsigned int)arg3;
 - (void)_resourceTrackingRecordBoundResourceAccesses;
 - (void)_resourceTrackingRecordDrawAccesses;

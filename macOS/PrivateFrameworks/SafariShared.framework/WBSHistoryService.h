@@ -22,9 +22,9 @@
     WBSHistoryURLCompletionDataStore *_urlCompletionDataStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSHistoryURLCompletionDataStore *urlCompletionDataStore; // @synthesize urlCompletionDataStore=_urlCompletionDataStore;
 @property(readonly, nonatomic) WBSHistoryDatabaseAccessBroker *databaseAccessBroker; // @synthesize databaseAccessBroker=_databaseAccessBroker;
-- (void).cxx_destruct;
 - (void)disconnectDatabase:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)connectWithOptions:(id)arg1 connection:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_openOrReuseExistingDatabaseWithOptions:(id)arg1 error:(id *)arg2;

@@ -7,10 +7,11 @@
 #import <PhotosUICore/PXObservable.h>
 
 #import <PhotosUICore/PXSectionedDataSourceManagerObserver-Protocol.h>
+#import <PhotosUICore/PXUIKeyCommandNamespace-Protocol.h>
 
 @class NSString, PXMutableIndexPathSet, PXSectionedDataSource, PXSectionedDataSourceManager, PXSelectionSnapshot;
 
-@interface PXSectionedSelectionManager : PXObservable <PXSectionedDataSourceManagerObserver>
+@interface PXSectionedSelectionManager : PXObservable <PXUIKeyCommandNamespace, PXSectionedDataSourceManagerObserver>
 {
     struct {
         char selectionSnapshot;
@@ -20,16 +21,19 @@
     PXSectionedDataSource *_dataSource;
     PXMutableIndexPathSet *_selectedIndexPaths;
     struct PXSimpleIndexPath _cursorIndexPath;
+    struct PXSimpleIndexPath _pendingIndexPath;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic, setter=_setPendingIndexPath:) struct PXSimpleIndexPath pendingIndexPath; // @synthesize pendingIndexPath=_pendingIndexPath;
 @property(nonatomic, setter=_setCursorIndexPath:) struct PXSimpleIndexPath cursorIndexPath; // @synthesize cursorIndexPath=_cursorIndexPath;
 @property(retain, nonatomic, setter=_setSelectedIndexPaths:) PXMutableIndexPathSet *selectedIndexPaths; // @synthesize selectedIndexPaths=_selectedIndexPaths;
 @property(retain, nonatomic, setter=_setDataSource:) PXSectionedDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic, setter=_setSelectionSnapshot:) PXSelectionSnapshot *selectionSnapshot; // @synthesize selectionSnapshot=_selectionSnapshot;
 @property(readonly, nonatomic) PXSectionedDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)sectionedDataSourceManagerInterestingObjectReferences:(id)arg1;
+- (void)setPendingIndexPath:(struct PXSimpleIndexPath)arg1;
 - (void)setCursorIndexPath:(struct PXSimpleIndexPath)arg1;
 - (void)setSelectedIndexPath:(struct PXSimpleIndexPath)arg1;
 - (void)setSelectedIndexPaths:(id)arg1;
@@ -47,6 +51,13 @@
 - (id)mutableChangeObject;
 - (id)init;
 - (id)initWithDataSourceManager:(id)arg1;
+- (void)_performUnselectAll;
+- (void)_performSelectAll;
+- (void)_performExtendInDirection:(unsigned long long)arg1 withDelegate:(id)arg2;
+- (BOOL)_performCommand:(long long)arg1 withDelegate:(id)arg2;
+- (BOOL)performKeyCommand:(id)arg1 withDelegate:(id)arg2;
+- (id)uiKeyCommandsWithDelegate:(id)arg1;
+@property(readonly, nonatomic) NSString *namespaceIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

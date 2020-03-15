@@ -19,13 +19,13 @@
 }
 
 + (id)instantiateViewController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFShareAudioConnectingViewController *vcConnecting; // @synthesize vcConnecting=_vcConnecting;
 @property(retain, nonatomic) UIStoryboard *mainStoryboard; // @synthesize mainStoryboard=_mainStoryboard;
 @property(retain, nonatomic) NSBundle *mainBundle; // @synthesize mainBundle=_mainBundle;
 @property(retain, nonatomic) SFShareAudioSessionClient *shareAudioSession; // @synthesize shareAudioSession=_shareAudioSession;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)_transitionToViewController:(id)arg1 animate:(_Bool)arg2;
 - (void)_showConnecting:(id)arg1;
 - (void)_showPairInstructions:(id)arg1;
@@ -37,7 +37,6 @@
 - (void)reportUserCancelled;
 - (void)reportError:(id)arg1;
 - (void)_reportCompletion:(id)arg1 mediaRouteID:(id)arg2;
-- (id)_imageForPID:(unsigned int)arg1 colorCode:(unsigned int)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)_canShowWhileLocked;

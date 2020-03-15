@@ -18,10 +18,10 @@
 }
 
 + (id)testWithName:(id)arg1 beginSignpost:(unsigned long long)arg2 endSignpost:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long endSignpost; // @synthesize endSignpost=_endSignpost;
 @property(readonly, nonatomic) unsigned long long beginSignpost; // @synthesize beginSignpost=_beginSignpost;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithName:(id)arg1 beginSignpost:(unsigned long long)arg2 endSignpost:(unsigned long long)arg3;
 

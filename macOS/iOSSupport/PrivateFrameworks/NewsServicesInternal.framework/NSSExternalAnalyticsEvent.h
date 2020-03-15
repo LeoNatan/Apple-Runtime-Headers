@@ -16,9 +16,9 @@
     NTPBSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NTPBSession *session; // @synthesize session=_session;
 @property(readonly, copy, nonatomic) NSDictionary *requestQueryParameters; // @synthesize requestQueryParameters=_requestQueryParameters;
-- (void).cxx_destruct;
 - (id)requestMetadataWithExternalAnalyticsIdentifier:(id)arg1;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone *)arg1;

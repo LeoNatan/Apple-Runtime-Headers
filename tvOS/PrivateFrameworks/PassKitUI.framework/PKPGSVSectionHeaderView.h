@@ -24,9 +24,9 @@
     unsigned long long _passType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showActivityIndicator; // @synthesize showActivityIndicator=_showActivityIndicator;
 @property(readonly, nonatomic) unsigned long long passType; // @synthesize passType=_passType;
-- (void).cxx_destruct;
 - (_Bool)needsUpdate;
 - (id)trailingView;
 - (id)leadingView;

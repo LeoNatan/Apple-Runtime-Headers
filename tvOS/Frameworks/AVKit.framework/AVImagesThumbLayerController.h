@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     AVFrame *_currentFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVFrame *currentFrame; // @synthesize currentFrame=_currentFrame;
 @property(retain, nonatomic) AVFrameSet *frameSet; // @synthesize frameSet=_frameSet;
 @property(copy, nonatomic) CDUnknownBlockType actualTimeUpdateBlock; // @synthesize actualTimeUpdateBlock=_actualTimeUpdateBlock;
 @property(readonly) double toleranceAfter; // @synthesize toleranceAfter=_toleranceAfter;
 @property(readonly) double toleranceBefore; // @synthesize toleranceBefore=_toleranceBefore;
 @property(nonatomic) double desiredTimeInterval; // @synthesize desiredTimeInterval=_desiredTimeInterval;
-- (void).cxx_destruct;
 - (void)prefetchForTimes:(id)arg1;
 - (void)prefetchForTime:(double)arg1;
 - (void)setExactTimeInterval:(double)arg1;

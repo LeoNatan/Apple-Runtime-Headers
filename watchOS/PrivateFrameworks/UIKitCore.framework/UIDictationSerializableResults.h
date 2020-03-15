@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool allowsAlternatives; // @synthesize allowsAlternatives=_allowsAlternatives;
 @property(retain, nonatomic) NSIndexPath *indexPathOfInterpretations; // @synthesize indexPathOfInterpretations=_indexPathOfInterpretations;
 @property(nonatomic) _Bool addTrailingSpace; // @synthesize addTrailingSpace=_addTrailingSpace;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool fromKeyboard; // @synthesize fromKeyboard=_fromKeyboard;
 @property(copy, nonatomic) NSArray *multilingualAlternatives; // @synthesize multilingualAlternatives=_multilingualAlternatives;
 @property(copy, nonatomic) NSArray *phrases; // @synthesize phrases=_phrases;
-- (void).cxx_destruct;
 - (id)description;
 - (id)singleLineResult;
 - (id)bestResults;

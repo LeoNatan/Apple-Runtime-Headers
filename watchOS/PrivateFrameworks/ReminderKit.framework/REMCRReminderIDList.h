@@ -25,11 +25,11 @@
 + (id)objectIDWithUUID:(id)arg1;
 + (id)newObjectID;
 + (id)listFromSerializedData:(id)arg1 replica:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) REMObjectID *remObjectID; // @synthesize remObjectID=_remObjectID;
 @property(retain, nonatomic) CRDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) NSUUID *replica; // @synthesize replica=_replica;
 @property(nonatomic) __weak NSObject<REMCRReminderIDListDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)wantsUndoCommands;
 - (void)addUndoCommandsForObject:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)_orderedSet;

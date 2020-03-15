@@ -53,14 +53,14 @@
     CSLHexLayout *_layout;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint contentOffset; // @synthesize contentOffset=_contentOffset;
 @property(retain, nonatomic) CSLHexLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) NSString *targetBundleIdentifier; // @synthesize targetBundleIdentifier=_targetBundleIdentifier;
 @property(nonatomic) __weak id <CSLUIHexIconActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 @property(readonly, nonatomic) CSLHexAppNode *lastTouchedNode; // @synthesize lastTouchedNode=_lastTouchedNode;
 @property(readonly, nonatomic) float defaultPixelDiameter; // @synthesize defaultPixelDiameter=_defaultPixelDiameter;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)PPTPanAround:(id)arg1 panDistance:(float)arg2 panCount:(int)arg3;
 - (void)updatePPT:(id)arg1;
 - (struct Hex)closestIconHexToPoint:(struct CGPoint)arg1;

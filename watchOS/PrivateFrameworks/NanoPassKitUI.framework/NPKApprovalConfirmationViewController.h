@@ -20,12 +20,12 @@
 
 + (id)approvalConfirmationViewControllerWithInstructionText:(id)arg1 viewToPinToContentView:(id)arg2 withContentInsets:(struct UIEdgeInsets)arg3 rightStatusBarItemView:(id)arg4;
 + (id)approvalConfirmationViewController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICApplicationStatusBarItem *leftStatusBarItem; // @synthesize leftStatusBarItem=_leftStatusBarItem;
 @property(retain, nonatomic) NPKApprovalConfirmationView *approvalConfirmationView; // @synthesize approvalConfirmationView=_approvalConfirmationView;
 @property(retain, nonatomic) UIView *rightStatusBarItemView; // @synthesize rightStatusBarItemView=_rightStatusBarItemView;
 @property(copy, nonatomic) NSString *leftStatusBarItemTitle; // @synthesize leftStatusBarItemTitle=_leftStatusBarItemTitle;
 @property(nonatomic) __weak id <NPKApprovalConfirmationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleLeftStatusBarItemTappedNotification:(id)arg1;
 - (void)_pinView:(id)arg1 toParentView:(id)arg2 withContentInsets:(struct UIEdgeInsets)arg3;
 - (void)_setUpApprovalConfirmationViewWithInstructionText:(id)arg1 viewToPinToContentView:(id)arg2 withContentInsets:(struct UIEdgeInsets)arg3;

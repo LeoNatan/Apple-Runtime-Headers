@@ -31,6 +31,7 @@
     _Bool _shouldCancelBiometricTokenUpdate;
     _Bool _shouldSuppressUserInfo;
     _Bool _shouldSendAKClientInfoHeaders;
+    _Bool _shouldSendAKPRKRequestHeader;
     _Bool _shouldSendDSIDHeader;
     SSBiometricAuthenticationContext *_biometricAuthenticationContext;
     id <ISBiometricSessionDelegate> _biometricSessionDelegate;
@@ -58,8 +59,10 @@
 + (id)itemPingOperationWithIdentifier:(unsigned long long)arg1 urlBagKey:(id)arg2;
 + (void)handleITunesStoreResponseHeaders:(id)arg1 request:(id)arg2 withAccountIdentifier:(id)arg3 shouldRetry:(_Bool *)arg4;
 + (void)addITunesStoreHeadersToRequest:(id)arg1 withAccountIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SSBag *bag; // @synthesize bag=_bag;
 @property _Bool shouldSendDSIDHeader; // @synthesize shouldSendDSIDHeader=_shouldSendDSIDHeader;
+@property _Bool shouldSendAKPRKRequestHeader; // @synthesize shouldSendAKPRKRequestHeader=_shouldSendAKPRKRequestHeader;
 @property _Bool shouldSendAKClientInfoHeaders; // @synthesize shouldSendAKClientInfoHeaders=_shouldSendAKClientInfoHeaders;
 @property _Bool shouldSuppressUserInfo; // @synthesize shouldSuppressUserInfo=_shouldSuppressUserInfo;
 @property long long machineDataStyle; // @synthesize machineDataStyle=_machineDataStyle;
@@ -75,7 +78,6 @@
 @property _Bool needsAuthentication; // @synthesize needsAuthentication=_needsAuthentication;
 @property(retain) SSBiometricAuthenticationContext *biometricAuthenticationContext; // @synthesize biometricAuthenticationContext=_biometricAuthenticationContext;
 @property(retain) NSNumber *authenticatedDSID; // @synthesize authenticatedDSID=_authenticatedDSID;
-- (void).cxx_destruct;
 - (id)_urlBagForContext:(id)arg1;
 - (_Bool)_shouldRetryForTouchIDChallengeWithError:(id)arg1;
 - (_Bool)_shouldRetryForAbsintheWithResponse:(id)arg1;

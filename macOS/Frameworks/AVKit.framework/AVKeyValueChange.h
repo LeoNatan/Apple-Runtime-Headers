@@ -16,11 +16,11 @@
     id _observationToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id observationToken; // @synthesize observationToken=_observationToken;
 @property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, nonatomic) id oldValue; // @synthesize oldValue=_oldValue;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)initWithValue:(id)arg1 oldValue:(id)arg2 keyPath:(id)arg3 observationToken:(id)arg4;
 
 @end

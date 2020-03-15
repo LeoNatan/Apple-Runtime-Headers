@@ -15,9 +15,9 @@
     PXCuratedLibraryActionManager *_actionManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXCuratedLibraryActionManager *actionManager; // @synthesize actionManager=_actionManager;
 @property(nonatomic) __weak PXGLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)_presentToUserOptionsFromActionPerformers:(id)arg1;
 - (BOOL)presentsMenu;
 - (void)performUserInteractionTask;

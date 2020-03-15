@@ -48,6 +48,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *flattenedChapterData; // @synthesize flattenedChapterData=_flattenedChapterData;
 @property(nonatomic) long long rentalStartedDateTime; // @synthesize rentalStartedDateTime=_rentalStartedDateTime;
 @property(nonatomic) long long rentalPlaybackStartedDateTime; // @synthesize rentalPlaybackStartedDateTime=_rentalPlaybackStartedDateTime;
@@ -66,7 +67,6 @@
 @property(nonatomic) _Bool rental; // @synthesize rental=_rental;
 @property(nonatomic) int videoQuality; // @synthesize videoQuality=_videoQuality;
 @property(retain, nonatomic) MIPArtist *artist; // @synthesize artist=_artist;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

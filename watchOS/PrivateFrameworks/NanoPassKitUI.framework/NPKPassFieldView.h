@@ -25,6 +25,7 @@
     UILabel *_labelLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *labelLabel; // @synthesize labelLabel=_labelLabel;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(nonatomic) float maxWidth; // @synthesize maxWidth=_maxWidth;
@@ -38,7 +39,6 @@
 @property(nonatomic) int textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(copy, nonatomic) NSDictionary *labelAttributes; // @synthesize labelAttributes=_labelAttributes;
 @property(copy, nonatomic) NSDictionary *valueAttributes; // @synthesize valueAttributes=_valueAttributes;
-- (void).cxx_destruct;
 - (_Bool)overrideValueParagraphStyle;
 - (_Bool)overrideLabelParagraphStyle;
 - (_Bool)hasLabel;

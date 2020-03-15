@@ -16,9 +16,7 @@
 + (unsigned long long)_scanFilesInPhotoLibrary:(id)arg1 fromCloudSharingCacheDataDirectoryShouldFreeSpace:(_Bool)arg2 bytesToPurge:(unsigned long long)arg3;
 + (unsigned long long)_scanFilesInPhotoLibrary:(id)arg1 fromReimportPhotoCloudSharingDataDirectoryShouldFreeSpace:(_Bool)arg2 bytesToPurge:(unsigned long long)arg3;
 + (unsigned long long)purgeExpiredOutboundSharingAssetsFromPhotoLibrary:(id)arg1;
-+ (unsigned long long)_performCloudSharingSpaceManagementWithBytesToPurge:(unsigned long long)arg1 shouldFreeSpace:(_Bool)arg2 fromPhotoLibrary:(id)arg3 keepRecentlyViewedAssets:(_Bool)arg4;
-+ (unsigned long long)performCloudSharingSpaceManagementWithBytesToPurge:(unsigned long long)arg1 shouldFreeSpace:(_Bool)arg2 fromPhotoLibrary:(id)arg3;
-+ (unsigned long long)purgeCloudSharingAssetsIfNotRecentlyViewedFromPhotoLibrary:(id)arg1;
++ (unsigned long long)performCloudSharingSpaceManagementWithBytesToPurge:(unsigned long long)arg1 shouldFreeSpace:(_Bool)arg2 shouldKeepRecentlyViewedAssets:(_Bool)arg3 fromPhotoLibrary:(id)arg4;
 
 @end
 

@@ -21,12 +21,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)recipientForINPerson:(id)arg1 contactResolver:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *senderHandle; // @synthesize senderHandle=_senderHandle;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

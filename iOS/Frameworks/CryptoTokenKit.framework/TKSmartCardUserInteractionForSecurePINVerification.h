@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long PINByteOffset; // @synthesize PINByteOffset=_PINByteOffset;
 @property(retain) NSData *APDU; // @synthesize APDU=_APDU;
 @property(retain) TKSmartCardPINFormat *PINFormat; // @synthesize PINFormat=_PINFormat;
 @property __weak TKSmartCardSlot *slot; // @synthesize slot=_slot;
-- (void).cxx_destruct;
 - (void)runWithReply:(CDUnknownBlockType)arg1;
 - (void)setSlot:(id)arg1 PINFormat:(id)arg2 APDU:(id)arg3 PINByteOffset:(long long)arg4;
 - (void)encodeWithCoder:(id)arg1;

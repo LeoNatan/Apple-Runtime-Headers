@@ -16,16 +16,17 @@
     _Bool _isHandleViewVisible;
     _Bool _hasOffState;
     _Bool _shouldShowSupplementaryValue;
-    _Bool _shouldShowGradationMarking;
     unsigned long long _handleViewStyle;
     HFNumberValueConstraints *_primaryValueConstraints;
     HFNumberValueConstraints *_secondaryValueConstraints;
     unsigned long long _style;
     NSArray *_gradationMarkingValues;
+    unsigned long long _gradationMarkingViewStyle;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) unsigned long long gradationMarkingViewStyle; // @synthesize gradationMarkingViewStyle=_gradationMarkingViewStyle;
 @property(retain, nonatomic) NSArray *gradationMarkingValues; // @synthesize gradationMarkingValues=_gradationMarkingValues;
-@property(nonatomic) _Bool shouldShowGradationMarking; // @synthesize shouldShowGradationMarking=_shouldShowGradationMarking;
 @property(nonatomic) _Bool shouldShowSupplementaryValue; // @synthesize shouldShowSupplementaryValue=_shouldShowSupplementaryValue;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) HFNumberValueConstraints *secondaryValueConstraints; // @synthesize secondaryValueConstraints=_secondaryValueConstraints;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned long long handleViewStyle; // @synthesize handleViewStyle=_handleViewStyle;
 @property(nonatomic) _Bool isHandleViewVisible; // @synthesize isHandleViewVisible=_isHandleViewVisible;
 @property(nonatomic) _Bool hasSecondaryValue; // @synthesize hasSecondaryValue=_hasSecondaryValue;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

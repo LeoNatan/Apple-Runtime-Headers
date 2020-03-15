@@ -21,9 +21,9 @@
 }
 
 + (double)diameter;
+- (void).cxx_destruct;
 @property(nonatomic) double mapHeading; // @synthesize mapHeading=_mapHeading;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

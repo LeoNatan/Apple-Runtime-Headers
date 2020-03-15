@@ -29,13 +29,13 @@ __attribute__((visibility("hidden")))
     id <SiriSuggestionsStartPageLinkRecommendationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesCompactAppearance; // @synthesize usesCompactAppearance=_usesCompactAppearance;
 @property(nonatomic) BOOL allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(nonatomic) __weak id <SiriSuggestionsStartPageLinkRecommendationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSTextField *descriptionTextField; // @synthesize descriptionTextField=_descriptionTextField;
 @property(readonly, nonatomic) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(readonly, nonatomic) GridViewImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)_endEditing;
 - (void)_unregisterForEditingTermination;

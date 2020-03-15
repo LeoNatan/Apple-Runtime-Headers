@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *loadedHostViewControllerCache; // @synthesize loadedHostViewControllerCache=_loadedHostViewControllerCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *loadedHostViewControllerCache; // @synthesize loadedHostViewControllerCache=_loadedHostViewControllerCache;
 - (void)_loadViewControllerForExtension:(id)arg1 notificationRequest:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)_loadViewControllerForNotificationRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)clearCacheForNotificationRequest:(id)arg1;

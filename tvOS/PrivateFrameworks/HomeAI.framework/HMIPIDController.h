@@ -27,9 +27,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly) HMFTimer *tick; // @synthesize tick=_tick;
 @property(readonly) long long controlEffort; // @synthesize controlEffort=_controlEffort;
-- (void).cxx_destruct;
 - (void)suspendMonitoring;
 - (void)resumeMonitoring;
 - (void)timerDidFire:(id)arg1;

@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
     SKUISearchBarViewElement *_viewElement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsResultsForEmptyField; // @synthesize showsResultsForEmptyField=_showsResultsForEmptyField;
 @property(retain, nonatomic) SKUISearchBarViewElement *searchBarViewElement; // @synthesize searchBarViewElement=_viewElement;
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(nonatomic) _Bool displaysSearchBarInNavigationBar; // @synthesize displaysSearchBarInNavigationBar=_displaysSearchBarInNavigationBar;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (id)_searchFieldController;
 - (void)_removeCancelTouchGestureRecognizer;
 - (id)_newSearchFieldController;

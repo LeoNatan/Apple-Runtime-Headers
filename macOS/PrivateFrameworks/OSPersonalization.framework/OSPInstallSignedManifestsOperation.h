@@ -14,9 +14,9 @@
     NSURL *_apTicketURL;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURL *apTicketURL; // @synthesize apTicketURL=_apTicketURL;
 @property(retain) NSURL *sandboxURL; // @synthesize sandboxURL=_sandboxURL;
-- (void).cxx_destruct;
 - (BOOL)_installSandbox;
 - (BOOL)_copySignedManifestsToSandbox;
 - (BOOL)_findAPTicket;

@@ -17,8 +17,8 @@
     CDStruct_d58201db _aspectMatchedPixelSize;
 }
 
-@property(retain) NUCGImageSourceNode *sourceNode; // @synthesize sourceNode=_sourceNode;
 - (void).cxx_destruct;
+@property(retain) NUCGImageSourceNode *sourceNode; // @synthesize sourceNode=_sourceNode;
 - (id)_evaluateImagePropertiesWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
 - (BOOL)canPropagateOriginalAuxiliaryData;

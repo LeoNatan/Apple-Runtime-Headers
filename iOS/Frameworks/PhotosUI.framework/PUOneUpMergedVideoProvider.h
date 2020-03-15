@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     PUMergedLivePhotosVideoRequest *_currentRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUMergedLivePhotosVideoRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) ISLivePhotoPlayer *livePhotoPlayer; // @synthesize livePhotoPlayer=_livePhotoPlayer;
 @property(retain, nonatomic) PUMergedLivePhotosVideo *mergedVideo; // @synthesize mergedVideo=_mergedVideo;
 @property(readonly, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
-- (void).cxx_destruct;
 - (void)_updateLivePhotoPlayerItem;
 - (void)setError:(id)arg1;
 - (void)_handleRequestChanges:(id)arg1;

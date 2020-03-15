@@ -27,6 +27,7 @@
 
 + (Class)layoutOptionsClass;
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *headlineCellConstraints; // @synthesize headlineCellConstraints=_headlineCellConstraints;
 @property(retain, nonatomic) UIImageView *editingChevronImageView; // @synthesize editingChevronImageView=_editingChevronImageView;
 @property(retain, nonatomic) UIView *editingBackgroundDarkeningView; // @synthesize editingBackgroundDarkeningView=_editingBackgroundDarkeningView;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) HUGridHeadlineCellLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(nonatomic, getter=areCellContentsHidden) BOOL cellContentsHidden; // @synthesize cellContentsHidden=_cellContentsHidden;
-- (void).cxx_destruct;
 - (void)_updateHeadlineLabel;
 - (void)updateUIWithAnimation:(BOOL)arg1;
 - (void)applyLayoutAttributes:(id)arg1;

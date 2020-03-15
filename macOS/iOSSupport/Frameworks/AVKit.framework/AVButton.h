@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)buttonWithAccessibilityIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *backgroundEffectView; // @synthesize backgroundEffectView=_backgroundEffectView;
 @property(retain, nonatomic) AVUserInteractionObserverGestureRecognizer *userInteractionGestureRecognizer; // @synthesize userInteractionGestureRecognizer=_userInteractionGestureRecognizer;
 @property(nonatomic) __weak NSTimer *longPressTimer; // @synthesize longPressTimer=_longPressTimer;
@@ -80,7 +81,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isIncluded) BOOL included; // @synthesize included=_included;
 @property(nonatomic, getter=isCollapsed) BOOL collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic) struct CGSize extrinsicContentSize; // @synthesize extrinsicContentSize=_extrinsicContentSize;
-- (void).cxx_destruct;
 - (double)_imageViewAlpha;
 - (id)_preferredImageName;
 - (void)_updateBackgroundEffectViewIsHidden;

@@ -22,6 +22,7 @@
     NSDictionary *_styleKeyValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *styleKeyValues; // @synthesize styleKeyValues=_styleKeyValues;
 @property(retain, nonatomic) TVLStarRatingElement *starRating; // @synthesize starRating=_starRating;
 @property(retain, nonatomic) TVLMediaBadgesElement *mediaBadges; // @synthesize mediaBadges=_mediaBadges;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *footnote; // @synthesize footnote=_footnote;
 @property(copy, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) UIColor *metadataColor;
 @property(readonly, nonatomic) UIColor *titleColor;

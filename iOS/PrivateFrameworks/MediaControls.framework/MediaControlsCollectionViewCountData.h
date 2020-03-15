@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     long long _numberOfItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPendingChanges; // @synthesize hasPendingChanges=_hasPendingChanges;
 @property(nonatomic) long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
-- (void).cxx_destruct;
 - (_Bool)validateCountForNumberOfItems:(long long)arg1;
 - (void)applyChanges;
 - (void)reloadItemsAtIndexes:(id)arg1;

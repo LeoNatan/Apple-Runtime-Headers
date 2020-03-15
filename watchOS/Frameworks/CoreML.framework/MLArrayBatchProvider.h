@@ -15,8 +15,8 @@
     NSArray *_array;
 }
 
-@property(readonly, nonatomic) NSArray *array; // @synthesize array=_array;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *array; // @synthesize array=_array;
 - (id)featuresAtIndex:(int)arg1;
 @property(readonly, nonatomic) int count;
 - (id)initWithDictionary:(id)arg1 error:(id *)arg2;

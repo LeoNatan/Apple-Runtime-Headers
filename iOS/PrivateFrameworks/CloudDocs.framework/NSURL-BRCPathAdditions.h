@@ -23,6 +23,9 @@
 @property(readonly, nonatomic) NSPersonNameComponents *br_lastEditorNameComponents;
 @property(readonly, nonatomic) NSString *br_lastEditorName;
 @property(readonly, nonatomic) NSString *br_lastEditorDeviceName;
+- (id)br_creatorNameComponentsWithError:(id *)arg1;
+- (_Bool)br_isModifiedSinceShared;
+- (_Bool)br_isTopLevelSharedItem;
 - (unsigned short)br_capabilityToMoveToURL:(id)arg1 error:(id *)arg2;
 - (_Bool)br_isPCSChained;
 - (_Bool)br_isSymLink;

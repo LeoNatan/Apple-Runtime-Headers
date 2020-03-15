@@ -27,6 +27,7 @@
 + (id)_actionButtonFont;
 + (id)_subheadlineFont;
 + (id)_headlineBoldFont;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionButtonAction; // @synthesize actionButtonAction=_actionButtonAction;
 @property(retain, nonatomic) NSString *actionButtonTitle; // @synthesize actionButtonTitle=_actionButtonTitle;
 @property(retain, nonatomic) NSButton *actionButton; // @synthesize actionButton=_actionButton;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSArray *localizedNamesForHeadline; // @synthesize localizedNamesForHeadline=_localizedNamesForHeadline;
 @property(copy, nonatomic) NSString *subheadline; // @synthesize subheadline=_subheadline;
 @property(copy, nonatomic) NSString *headline; // @synthesize headline=_headline;
-- (void).cxx_destruct;
 - (id)_attributedStringWithString:(id)arg1 boldRange:(struct _NSRange)arg2;
 - (id)_headlineStringAttributes;
 - (void)_actionButtonTapped:(id)arg1;

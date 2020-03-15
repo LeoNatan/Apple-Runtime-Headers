@@ -17,11 +17,11 @@
     NSDictionary *__representativeAssetsByBurstIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *_representativeAssetsByBurstIdentifier; // @synthesize _representativeAssetsByBurstIdentifier=__representativeAssetsByBurstIdentifier;
 @property(readonly, nonatomic) NSDictionary *_assetsByUUID; // @synthesize _assetsByUUID=__assetsByUUID;
 @property(readonly, nonatomic) NSArray *_assetUUIDs; // @synthesize _assetUUIDs=__assetUUIDs;
 @property(readonly, nonatomic) id <PUDisplayAssetCollection> _transientAssetCollection; // @synthesize _transientAssetCollection=__transientAssetCollection;
-- (void).cxx_destruct;
 - (id)_uuidAtIndexPath:(id)arg1;
 - (_Bool)isEmpty;
 - (id)startingAssetReference;

@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     NSArray *_supplyData;
 }
 
-@property(retain, nonatomic) NSArray *supplyData; // @synthesize supplyData=_supplyData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *supplyData; // @synthesize supplyData=_supplyData;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

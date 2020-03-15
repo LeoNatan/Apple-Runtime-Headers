@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     LPTheme *_theme;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool generateEmailCompatibleMarkup; // @synthesize generateEmailCompatibleMarkup=_generateEmailCompatibleMarkup;
 @property(nonatomic) _Bool includeDarkInterfaceInlineStyles; // @synthesize includeDarkInterfaceInlineStyles=_includeDarkInterfaceInlineStyles;
 @property(nonatomic) _Bool includeClassNamesWhenUsingInlineStyles; // @synthesize includeClassNamesWhenUsingInlineStyles=_includeClassNamesWhenUsingInlineStyles;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) LPTheme *theme; // @synthesize theme=_theme;
 @property(readonly, nonatomic) NSMutableSet *pendingVariables; // @synthesize pendingVariables=_pendingVariables;
 @property(readonly, nonatomic) NSMutableDictionary *localVariables; // @synthesize localVariables=_localVariables;
-- (void).cxx_destruct;
 - (id)themeVariablesAsCSSVariables;
 - (id)localVariablesAsCSSVariables;
 - (void)registerAlternateStyle:(id)arg1 inComponent:(id)arg2;

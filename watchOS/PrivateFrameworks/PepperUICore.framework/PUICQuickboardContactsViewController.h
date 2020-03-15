@@ -14,9 +14,9 @@
     unsigned int _contactFilter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int contactFilter; // @synthesize contactFilter=_contactFilter;
 @property(retain, nonatomic) NSArray *recentContacts; // @synthesize recentContacts=_recentContacts;
-- (void).cxx_destruct;
 - (void)addPhoneNumberButtonTapped:(id)arg1;
 - (void)addContactButtonTapped:(id)arg1;
 - (id)contentUnavailableMessage;

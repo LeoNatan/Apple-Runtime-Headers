@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     id <AXVAMenuWindowInterface> __menuAgent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShowContent:) BOOL _showContent; // @synthesize _showContent=__showContent;
 @property(nonatomic, setter=_setMenuTitleUpdated:) BOOL _menuTitleUpdated; // @synthesize _menuTitleUpdated=__menuTitleUpdated;
 @property(nonatomic, setter=_setMenuItemsReplaced:) BOOL _menuItemsReplaced; // @synthesize _menuItemsReplaced=__menuItemsReplaced;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property long long rowCountToShow; // @synthesize rowCountToShow=_rowCountToShow;
 @property(retain, nonatomic) SCRGuide *guideForMenu; // @synthesize guideForMenu=_guideForMenu;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)mouseDownOnMenuItem:(id)arg1 atRowIndex:(long long)arg2;
 - (void)_refreshDisplayedMenuItems:(id)arg1;
 - (void)refreshMenuIfNeeded;

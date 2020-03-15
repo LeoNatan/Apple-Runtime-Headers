@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_literal;
 }
 
-@property(readonly, nonatomic) NSString *literal; // @synthesize literal=_literal;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *literal; // @synthesize literal=_literal;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithLiteral:(id)arg1;

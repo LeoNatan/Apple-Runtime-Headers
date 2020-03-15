@@ -14,9 +14,9 @@
     NSString *_routingContextUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool multipleBuiltInDevices; // @synthesize multipleBuiltInDevices=_multipleBuiltInDevices;
 @property(readonly, nonatomic) NSString *routingContextUID; // @synthesize routingContextUID=_routingContextUID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithRoutingContextUID:(id)arg1 multipleBuiltInDevices:(_Bool)arg2;

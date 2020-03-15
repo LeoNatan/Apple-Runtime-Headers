@@ -16,9 +16,9 @@
     NSArray *_locales;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *locales; // @synthesize locales=_locales;
 @property(retain, nonatomic) NSArray *preferredLanguagesOverride; // @synthesize preferredLanguagesOverride=_preferredLanguagesOverride;
-- (void).cxx_destruct;
 - (id)currentLocale;
 - (id)localeWithPreferredLanguages:(id)arg1;
 - (id)englishLocale;

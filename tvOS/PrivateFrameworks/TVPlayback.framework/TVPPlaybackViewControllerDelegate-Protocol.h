@@ -12,6 +12,7 @@
 @protocol TVPPlaybackViewControllerDelegate <NSObject>
 
 @optional
+- (_Bool)playbackViewController:(UIViewController *)arg1 handleControlGesture:(long long)arg2;
 - (void)userDidFinishInteractionAfterErrorWasPresented:(TVPPlaybackViewController *)arg1;
 - (long long)currentEndpointDeviceTypeForPlaybackViewController:(UIViewController *)arg1;
 - (void)playbackViewControllerUserWillInitiatePlayback:(UIViewController *)arg1;

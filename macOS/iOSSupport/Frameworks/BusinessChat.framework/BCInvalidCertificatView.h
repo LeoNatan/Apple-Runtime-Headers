@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *insecureIcon; // @synthesize insecureIcon=_insecureIcon;
 @property(retain, nonatomic) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (void)setupConstraints;
 - (void)setupSubviews;
 - (id)initWithHost:(id)arg1;

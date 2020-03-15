@@ -15,10 +15,10 @@
     NSDate *_time;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *time; // @synthesize time=_time;
 @property(readonly, nonatomic) NSString *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (BOOL)isEqualToQRMessage:(id)arg1;
 - (id)initWithMessage:(id)arg1 forContext:(id)arg2 time:(id)arg3;
 

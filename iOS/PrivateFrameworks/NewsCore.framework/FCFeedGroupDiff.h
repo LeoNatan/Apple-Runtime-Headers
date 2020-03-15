@@ -19,6 +19,7 @@
     NSArray *_modifiedHeadlines;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *modifiedHeadlines; // @synthesize modifiedHeadlines=_modifiedHeadlines;
 @property(readonly, copy, nonatomic) NSArray *deletedHeadlines; // @synthesize deletedHeadlines=_deletedHeadlines;
 @property(readonly, copy, nonatomic) NSArray *insertedHeadlines; // @synthesize insertedHeadlines=_insertedHeadlines;
@@ -26,7 +27,6 @@
 @property(readonly, copy, nonatomic) NSArray *deletedElements; // @synthesize deletedElements=_deletedElements;
 @property(readonly, copy, nonatomic) NSArray *insertedElements; // @synthesize insertedElements=_insertedElements;
 @property(readonly, copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isEmpty;
 - (id)initWithGroupIdentifier:(id)arg1 insertedElements:(id)arg2 deletedElements:(id)arg3 modifiedElements:(id)arg4;
 - (id)init;

@@ -52,6 +52,8 @@
 @property(nonatomic) int addMediaIntentMediaDestinationUnsupportedReason;
 @property(nonatomic) BOOL hasCreateTimerIntentLabelUnsupportedReason;
 @property(nonatomic) int createTimerIntentLabelUnsupportedReason;
+@property(nonatomic) BOOL hasFindDeviceAndPlaySoundIntentDeviceUnsupportedReason;
+@property(nonatomic) int findDeviceAndPlaySoundIntentDeviceUnsupportedReason;
 @property(nonatomic) BOOL hasCustomUnsupportedReason;
 @property(nonatomic) unsigned int customUnsupportedReason;
 @property(nonatomic) BOOL hasSendPaymentIntentCurrencyAmountUnsupportedReason;
@@ -110,6 +112,8 @@
 - (NSString *)addMediaIntentMediaDestinationUnsupportedReasonAsString:(int)arg1;
 - (int)StringAsCreateTimerIntentLabelUnsupportedReason:(NSString *)arg1;
 - (NSString *)createTimerIntentLabelUnsupportedReasonAsString:(int)arg1;
+- (int)StringAsFindDeviceAndPlaySoundIntentDeviceUnsupportedReason:(NSString *)arg1;
+- (NSString *)findDeviceAndPlaySoundIntentDeviceUnsupportedReasonAsString:(int)arg1;
 - (int)StringAsSendPaymentIntentCurrencyAmountUnsupportedReason:(NSString *)arg1;
 - (NSString *)sendPaymentIntentCurrencyAmountUnsupportedReasonAsString:(int)arg1;
 - (int)StringAsRequestPaymentIntentCurrencyAmountUnsupportedReason:(NSString *)arg1;

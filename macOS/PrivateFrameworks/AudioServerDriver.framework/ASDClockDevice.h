@@ -44,6 +44,7 @@
     id <ASDDeviceConfigurationChangeDelegate> _configurationChangeDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ASDDeviceConfigurationChangeDelegate> configurationChangeDelegate; // @synthesize configurationChangeDelegate=_configurationChangeDelegate;
 @property(copy, nonatomic) CDUnknownBlockType endIOOperationBlock; // @synthesize endIOOperationBlock=_endIOOperationBlock;
 @property(copy, nonatomic) CDUnknownBlockType beginIOOperationBlock; // @synthesize beginIOOperationBlock=_beginIOOperationBlock;
@@ -54,7 +55,6 @@
 @property(copy, nonatomic) NSString *manufacturerName; // @synthesize manufacturerName=_manufacturerName;
 @property(copy, nonatomic) NSString *modelUID; // @synthesize modelUID=_modelUID;
 @property(readonly, copy, nonatomic) NSString *deviceUID; // @synthesize deviceUID=_deviceUID;
-- (void).cxx_destruct;
 - (id)driverClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
 - (void)dealloc;

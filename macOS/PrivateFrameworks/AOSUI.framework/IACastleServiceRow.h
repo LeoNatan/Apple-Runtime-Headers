@@ -29,9 +29,9 @@
 }
 
 + (id)createFromNib;
+- (void).cxx_destruct;
 @property(nonatomic, setter=setRowEnabled:) BOOL isRowEnabled; // @synthesize isRowEnabled=_isRowEnabled;
 @property(retain, nonatomic) MMService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 - (void)optionsButtonPressed:(id)arg1;
 - (void)enableServicePressed:(id)arg1;
@@ -43,6 +43,7 @@
 - (void)stopSpinner:(id)arg1;
 - (void)updateOptionsButton;
 - (BOOL)isRTL;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

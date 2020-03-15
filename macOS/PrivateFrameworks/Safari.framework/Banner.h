@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 + (BOOL)bannerHasBottomBorder;
 + (int)bannerSortOrder;
 + (id)bannerBackgroundImage;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) BarBackground *bannerView; // @synthesize bannerView=_bannerView;
 @property(nonatomic) __weak id <BannerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_populateBannerViewFromNib:(id)arg1;
 - (id)_createBannerView;
 - (void)willUninstallBannerView;

@@ -20,12 +20,12 @@
 }
 
 + (id)withTargetMapping:(id)arg1 phoneMapping:(id)arg2 emailMapping:(id)arg3 addressMapping:(id)arg4 andDateMapping:(id)arg5;
+- (void).cxx_destruct;
 @property(retain) NSString *dateMapping; // @synthesize dateMapping=_dateMapping;
 @property(retain) NSString *addressMapping; // @synthesize addressMapping=_addressMapping;
 @property(retain) NSString *emailMapping; // @synthesize emailMapping=_emailMapping;
 @property(retain) NSString *phoneMapping; // @synthesize phoneMapping=_phoneMapping;
 @property(retain) NSString *targetMapping; // @synthesize targetMapping=_targetMapping;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToEntityMatchingTransformer:(id)arg1;

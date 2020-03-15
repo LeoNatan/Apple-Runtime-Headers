@@ -27,6 +27,7 @@
     PRSRankingServerKnobs *_serverKnobs;
 }
 
+- (void).cxx_destruct;
 @property BOOL cook_sqf_topdown; // @synthesize cook_sqf_topdown=_cook_sqf_topdown;
 @property BOOL useBagOverride; // @synthesize useBagOverride=_useBagOverride;
 @property float numAppsDeduped; // @synthesize numAppsDeduped=_numAppsDeduped;
@@ -42,7 +43,6 @@
 @property(retain) NSMutableDictionary *queryDependentCategoryProbabilities; // @synthesize queryDependentCategoryProbabilities=_queryDependentCategoryProbabilities;
 @property(retain) NSArray *rankingQueries; // @synthesize rankingQueries=_rankingQueries;
 @property(retain) NSMutableDictionary *categoryEngagements; // @synthesize categoryEngagements=_categoryEngagements;
-- (void).cxx_destruct;
 - (double)queryIndependentProbabilityForCategory:(id)arg1;
 - (double)queryDependentProbabilityForCategory:(id)arg1;
 - (float)engagementProbabilityForCategory:(id)arg1;

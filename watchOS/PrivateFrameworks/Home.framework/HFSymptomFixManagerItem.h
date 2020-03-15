@@ -15,10 +15,10 @@
     HMAccessory *_accessory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) HMSymptomFixSession *fixSession; // @synthesize fixSession=_fixSession;
 @property(readonly, nonatomic) HMSymptom *symptom; // @synthesize symptom=_symptom;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSymptom:(id)arg1 fixSession:(id)arg2 accessory:(id)arg3;
 

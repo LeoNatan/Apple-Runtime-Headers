@@ -28,6 +28,7 @@
 + (id)changeDetailsWithCountBeforeChanges:(long long)arg1 anchorIndexBeforeChanges:(long long)arg2 headerIndexesBeforeChanges:(id)arg3 countAfterChanges:(long long)arg4 anchorIndexAfterChanges:(long long)arg5 headerIndexesAfterChanges:(id)arg6 anchorFan:(long long)arg7 anchorReload:(long long)arg8;
 + (id)changeDetailsWithCountBeforeChanges:(long long)arg1 anchorIndexBeforeChanges:(long long)arg2 countAfterChanges:(long long)arg3 anchorIndexAfterChanges:(long long)arg4 anchorFan:(long long)arg5;
 + (id)changeDetailsWithCountBeforeChanges:(long long)arg1 anchorIndexBeforeChanges:(long long)arg2 countAfterChanges:(long long)arg3 anchorIndexAfterChanges:(long long)arg4 anchorFan:(long long)arg5 anchorReload:(long long)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long anchorBodyIndexAfterChanges; // @synthesize anchorBodyIndexAfterChanges=_anchorBodyIndexAfterChanges;
 @property(readonly, nonatomic) long long anchorBodyIndexBeforeChanges; // @synthesize anchorBodyIndexBeforeChanges=_anchorBodyIndexBeforeChanges;
 @property(readonly, nonatomic) NSIndexSet *headerIndexesAfterChanges; // @synthesize headerIndexesAfterChanges=_headerIndexesAfterChanges;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSIndexSet *headerIndexesBeforeChanges; // @synthesize headerIndexesBeforeChanges=_headerIndexesBeforeChanges;
 @property(readonly, nonatomic) long long anchorIndexBeforeChanges; // @synthesize anchorIndexBeforeChanges=_anchorIndexBeforeChanges;
 @property(readonly, nonatomic) long long countBeforeChanges; // @synthesize countBeforeChanges=_countBeforeChanges;
-- (void).cxx_destruct;
 - (id)arrayChangeDetailsWithItemsChanged:(_Bool)arg1;
 - (CDStruct_b8f58034)bodyVisualPositionAfterRevertingChangesFromBodyIndex:(long long)arg1;
 - (CDStruct_b8f58034)bodyVisualPositionAfterApplyingChangesToBodyIndex:(long long)arg1;

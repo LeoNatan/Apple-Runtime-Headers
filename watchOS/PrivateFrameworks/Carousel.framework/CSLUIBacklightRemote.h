@@ -18,9 +18,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) NSPointerArray *clients; // @synthesize clients=_clients;
-- (void).cxx_destruct;
 - (void)carouselBlank:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)carouselCoverGestureWithCompletion:(CDUnknownBlockType)arg1;
 - (void)carouselSetBacklight:(_Bool)arg1 isWakeGesture:(_Bool)arg2 timeoutSeconds:(double)arg3 completion:(CDUnknownBlockType)arg4;

@@ -26,11 +26,11 @@
 
 + (id)sharedManagerWithURL:(id)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *applicationDataURL; // @synthesize applicationDataURL=_applicationDataURL;
 @property(retain, nonatomic) NSDateInterval *validDateInterval; // @synthesize validDateInterval=_validDateInterval;
 @property(readonly, nonatomic) NSObject *routineServiceLockObject; // @synthesize routineServiceLockObject=_routineServiceLockObject;
 @property(retain, nonatomic) CLSPerson *mePerson; // @synthesize mePerson=_mePerson;
-- (void).cxx_destruct;
 - (void)flushSocialServicesAtURL:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (unsigned long long)relationshipHintForPerson:(id)arg1 usingLocales:(id)arg2;
@@ -77,6 +77,7 @@
 @property(readonly, nonatomic) CLSSocialServiceCalendar *calendarService; // @synthesize calendarService=_calendarService;
 @property(readonly, nonatomic) CLSSocialServiceCoreDuet *coreDuetService; // @synthesize coreDuetService=_coreDuetService;
 @property(readonly, nonatomic) CLSSocialServiceContacts *contactsService; // @synthesize contactsService=_contactsService;
+- (BOOL)shutdownForPhotoLibraryURL:(id)arg1;
 - (id)init;
 - (double)pinningVisitsRatio;
 - (unsigned long long)numberOfMatchRequests;

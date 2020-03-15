@@ -15,9 +15,9 @@
     id <PSYSyncClientStateObserver> _observer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PSYSyncClientStateObserver> observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) NSMutableDictionary *syncStateForActivity; // @synthesize syncStateForActivity=_syncStateForActivity;
-- (void).cxx_destruct;
 - (void)setSyncState:(int)arg1 forActivity:(id)arg2;
 @property(readonly, nonatomic) NSArray *activityLabels;
 - (void)removeActivity:(id)arg1;

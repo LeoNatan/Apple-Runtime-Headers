@@ -20,10 +20,10 @@
 + (void)reportRuntimeIssue:(id)arg1;
 + (void)captureIssuesWithContext:(id)arg1 inScope:(CDUnknownBlockType)arg2;
 + (id)currentContext;
+- (void).cxx_destruct;
 @property(retain) NSMutableOrderedSet *mutableRuntimeIssues; // @synthesize mutableRuntimeIssues=_mutableRuntimeIssues;
 @property(readonly) __weak Class reportingDelegate; // @synthesize reportingDelegate=_reportingDelegate;
 @property(readonly, copy) XCTCapabilities *capabilities; // @synthesize capabilities=_capabilities;
-- (void).cxx_destruct;
 @property(readonly, copy) NSOrderedSet *runtimeIssues;
 - (void)reportRuntimeIssue:(id)arg1;
 - (id)init;

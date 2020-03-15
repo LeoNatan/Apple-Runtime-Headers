@@ -20,13 +20,13 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(retain, nonatomic) NSString *imageURL; // @synthesize imageURL=_imageURL;
 @property(retain, nonatomic) NSString *linkURL; // @synthesize linkURL=_linkURL;
 @property(retain, nonatomic) NSString *linkText; // @synthesize linkText=_linkText;
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -37,10 +37,10 @@
 
 + (_Bool)isDictationModeEnabled:(int)arg1;
 + (_Bool)_isAirplaneModeEnabled;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool startDictationAutomatically; // @synthesize startDictationAutomatically=_startDictationAutomatically;
 @property(nonatomic) int dictationMode; // @synthesize dictationMode=_dictationMode;
 @property(nonatomic) __weak id <PUICDictationViewControllerDelegate> dictationDelegate; // @synthesize dictationDelegate=_dictationDelegate;
-- (void).cxx_destruct;
 - (unsigned int)inputType;
 - (void)_showDisambiguationResultsControllerForQuery:(id)arg1 transcribedObjects:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_dictationResultsView;

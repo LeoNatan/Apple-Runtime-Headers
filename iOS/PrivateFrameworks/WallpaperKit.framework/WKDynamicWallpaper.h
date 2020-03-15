@@ -16,9 +16,9 @@
     UIImage *__thumbnailImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *_thumbnailImage; // @synthesize _thumbnailImage=__thumbnailImage;
 @property(retain, nonatomic) NSDictionary *_dynamicDictionary; // @synthesize _dynamicDictionary=__dynamicDictionary;
-- (void).cxx_destruct;
 - (id)wallpaperValue;
 - (id)thumbnailImage;
 @property(readonly, nonatomic) unsigned long long type;

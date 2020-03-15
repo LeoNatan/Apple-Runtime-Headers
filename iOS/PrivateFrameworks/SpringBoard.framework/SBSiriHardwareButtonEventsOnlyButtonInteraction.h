@@ -17,9 +17,9 @@
 }
 
 + (id)hardwareButtonInteractionForHomeButtonForwardingToInteraction:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SBSiriHardwareButtonInteraction *parentSiriInteraction; // @synthesize parentSiriInteraction=_parentSiriInteraction;
 @property(nonatomic) long long siriButtonIdentifier; // @synthesize siriButtonIdentifier=_siriButtonIdentifier;
-- (void).cxx_destruct;
 - (_Bool)consumeSinglePressUp;
 
 // Remaining properties

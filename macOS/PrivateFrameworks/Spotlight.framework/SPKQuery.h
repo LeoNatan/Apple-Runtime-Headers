@@ -30,6 +30,7 @@
 
 + (BOOL)isQuerySupported:(unsigned long long)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSString *internalUnmodifiedUserQueryString; // @synthesize internalUnmodifiedUserQueryString=_internalUnmodifiedUserQueryString;
 @property(copy) CDUnknownBlockType clientResponseHandler; // @synthesize clientResponseHandler=_clientResponseHandler;
 @property(readonly, getter=isExtensionQuery) BOOL extensionQuery; // @synthesize extensionQuery=_extensionQuery;
@@ -43,7 +44,6 @@
 @property(readonly) unsigned long long queryGroupId; // @synthesize queryGroupId=_queryGroupId;
 @property(readonly) unsigned long long queryId; // @synthesize queryId=_queryId;
 @property unsigned long long queryOptions; // @synthesize queryOptions=_queryOptions;
-- (void).cxx_destruct;
 @property(readonly, getter=isDictionaryQuery) BOOL dictionaryQuery;
 @property(readonly) BOOL supportsRefinement;
 @property(readonly, getter=isCalculatorQuery) BOOL calculatorQuery;

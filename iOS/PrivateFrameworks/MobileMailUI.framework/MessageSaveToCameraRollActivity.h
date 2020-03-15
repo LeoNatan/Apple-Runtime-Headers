@@ -14,9 +14,9 @@
     long long _context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long context; // @synthesize context=_context;
 @property(nonatomic) __weak id <ContentRepresentationHandlingDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)_prepareWithActivityItems:(id)arg1;
 - (id)_beforeActivity;

@@ -34,6 +34,7 @@
 + (void)setSharedFeedbackListener:(id)arg1;
 + (id)getSharedInstance;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSArray *parsecCategoryOrder; // @synthesize parsecCategoryOrder=_parsecCategoryOrder;
 @property(retain) NSDictionary *sqfData; // @synthesize sqfData=_sqfData;
 @property(retain) NSMutableArray *_updateChangedBlocks; // @synthesize _updateChangedBlocks=__updateChangedBlocks;
@@ -45,7 +46,6 @@
 @property(retain) PRSSearchSession *searchSession; // @synthesize searchSession=_searchSession;
 @property long long nextQueryId; // @synthesize nextQueryId=_nextQueryId;
 @property BOOL parsecEnabled; // @synthesize parsecEnabled=_parsecEnabled;
-- (void).cxx_destruct;
 - (void)unitConversion:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)deactivate;
 - (void)connectionChanged:(CDUnknownBlockType)arg1;

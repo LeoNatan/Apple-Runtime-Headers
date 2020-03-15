@@ -14,9 +14,9 @@
     PGGraphMomentNode *_moment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL interestingForMeaningInference; // @synthesize interestingForMeaningInference=_interestingForMeaningInference;
 @property(readonly, nonatomic) PGGraphMomentNode *moment; // @synthesize moment=_moment;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (double)_calculateMatchingScoreForPartOfDayWithMatchingTrait:(id)arg1 requiredTrait:(id)arg2 requiresStrictMatching:(BOOL)arg3;
 - (void)_calculateMatchingScoreForLocationsWithMatchingTrait:(id)arg1 requiredTrait:(id)arg2 result:(CDUnknownBlockType)arg3;

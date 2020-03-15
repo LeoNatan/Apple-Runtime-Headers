@@ -18,10 +18,10 @@
 
 + (id)sharedDonator;
 + (id)new;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *locationDescriptionsByAssetLocalIdentifiers; // @synthesize locationDescriptionsByAssetLocalIdentifiers=_locationDescriptionsByAssetLocalIdentifiers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *backgroundQueue; // @synthesize backgroundQueue=_backgroundQueue;
 @property(retain, nonatomic) NSCountedSet *locationDescriptions; // @synthesize locationDescriptions=_locationDescriptions;
-- (void).cxx_destruct;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)_notifyWhenDonationIsComplete:(CDUnknownBlockType)arg1;
 - (void)donate:(id)arg1;

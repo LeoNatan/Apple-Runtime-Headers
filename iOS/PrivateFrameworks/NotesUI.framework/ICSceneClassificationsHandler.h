@@ -15,9 +15,9 @@
 }
 
 + (id)sharedHandler;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *cachedRequestContextDictionary; // @synthesize cachedRequestContextDictionary=_cachedRequestContextDictionary;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (id)requestContextDictionaryWithOperationId:(_Bool)arg1;
 - (id)requestContextDictionary;
 - (id)searchResultNodesForSceneClassifications:(id)arg1 error:(id *)arg2;

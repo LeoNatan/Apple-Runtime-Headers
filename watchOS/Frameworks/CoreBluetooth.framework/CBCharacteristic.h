@@ -22,6 +22,7 @@
     unsigned long long _valueTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *valueHandle; // @synthesize valueHandle=_valueHandle;
 @property(readonly, nonatomic) NSNumber *handle; // @synthesize handle=_handle;
 @property(readonly, nonatomic) CBPeripheral *peripheral; // @synthesize peripheral=_peripheral;
@@ -32,7 +33,6 @@
 @property(retain) NSData *value; // @synthesize value=_value;
 @property(nonatomic) unsigned int properties; // @synthesize properties=_properties;
 @property(nonatomic) CBService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (id)handleDescriptorsDiscovered:(id)arg1;
 - (id)handleValueNotifying:(id)arg1;
 - (id)handleValueBroadcasted:(id)arg1;

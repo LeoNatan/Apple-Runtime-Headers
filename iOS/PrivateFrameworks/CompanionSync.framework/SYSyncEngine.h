@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) __weak SYService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) NSObject<OS_os_activity> *transportActivity; // @synthesize transportActivity=_transportActivity;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBCodable *stateForLogging;
 - (id)cancelMessagesReturningFailures:(id)arg1;
 - (id)outputStreamWithMetadata:(id)arg1 priority:(long long)arg2 options:(id)arg3 context:(id)arg4 error:(id *)arg5;

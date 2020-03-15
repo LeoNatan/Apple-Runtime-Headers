@@ -18,13 +18,13 @@
     CDStruct_1b6d18a9 _time;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *metadataObjects; // @synthesize metadataObjects=_metadataObjects;
 @property(copy, nonatomic) NSDictionary *effectProperties; // @synthesize effectProperties=_effectProperties;
 @property(retain, nonatomic) NSMutableArray *effects; // @synthesize effects=_effects;
 @property(nonatomic) BOOL mirrored; // @synthesize mirrored=_mirrored;
 @property(nonatomic) CDStruct_1b6d18a9 time; // @synthesize time=_time;
 @property(nonatomic) struct opaqueCMSampleBuffer *sampleBuffer; // @synthesize sampleBuffer=_sampleBuffer;
-- (void).cxx_destruct;
 - (oneway void)dealloc;
 
 @end

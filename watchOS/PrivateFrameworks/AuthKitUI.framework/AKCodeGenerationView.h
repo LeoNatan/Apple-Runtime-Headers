@@ -15,8 +15,8 @@
 }
 
 + (id)_generatorLabelFont;
-@property(readonly, copy, nonatomic) NSString *generatedCode; // @synthesize generatedCode=_generatedCode;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *generatedCode; // @synthesize generatedCode=_generatedCode;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (void)_updateFonts:(id)arg1;

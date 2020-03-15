@@ -24,6 +24,7 @@
 
 + (id)resultFromResponse:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSURL *overrideBaseURL; // @synthesize overrideBaseURL=_overrideBaseURL;
 @property(retain) NSArray *cuAddresses; // @synthesize cuAddresses=_cuAddresses;
 @property(retain) NSString *principalPath; // @synthesize principalPath=_principal;
@@ -32,7 +33,6 @@
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, retain) NSString *emailAddress;
 @property(readonly, retain) NSString *preferredCUAddress;

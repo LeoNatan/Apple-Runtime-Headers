@@ -40,13 +40,13 @@
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) UIColor *actionTintColor; // @synthesize actionTintColor=_actionTintColor;
 @property(nonatomic) float actionCornerRadius; // @synthesize actionCornerRadius=_actionCornerRadius;
 @property(nonatomic) int actionStyle; // @synthesize actionStyle=_actionStyle;
 @property(nonatomic) float horizontalMargin; // @synthesize horizontalMargin=_horizontalMargin;
 @property(nonatomic) float actionButtonSpacing; // @synthesize actionButtonSpacing=_actionButtonSpacing;
-- (void).cxx_destruct;
 - (id)invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPaths:(id)arg1 previousIndexPaths:(id)arg2 movementCancelled:(_Bool)arg3;
 - (id)invalidationContextForInteractivelyMovingItems:(id)arg1 withTargetPosition:(struct CGPoint)arg2 previousIndexPaths:(id)arg3 previousPosition:(struct CGPoint)arg4;
 - (id)layoutAttributesForInteractivelyMovingItemAtIndexPath:(id)arg1 withTargetPosition:(struct CGPoint)arg2;

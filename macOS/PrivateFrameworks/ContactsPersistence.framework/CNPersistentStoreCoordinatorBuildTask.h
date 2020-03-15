@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)isLocalAccountIdentifier:(id)arg1;
 + (id)urlForAccountWithIdentifier:(id)arg1 baseURL:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL didMigrate; // @synthesize didMigrate=_didMigrate;
 @property(readonly, nonatomic) BOOL isPristineDatabase; // @synthesize isPristineDatabase=_isPristineDatabase;
 @property(readonly, nonatomic) NSArray *urls; // @synthesize urls=_urls;
 @property(readonly, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
 @property(readonly, nonatomic) CNPersistentStoreBuilder *storeBuilder; // @synthesize storeBuilder=_storeBuilder;
 @property(readonly, nonatomic) id <CNAccountCollection> accountCollection; // @synthesize accountCollection=_accountCollection;
-- (void).cxx_destruct;
 - (void)addPersistentStores;
 - (void)makeAccountURLs;
 - (void)addLocalAccountIdentifierIfRequested;

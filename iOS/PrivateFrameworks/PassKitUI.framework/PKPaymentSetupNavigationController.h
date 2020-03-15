@@ -24,12 +24,12 @@
 }
 
 + (id)viewControllerForPresentingPaymentError:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long paymentSetupMode; // @synthesize paymentSetupMode=_paymentSetupMode;
 @property(nonatomic) _Bool allowsManualEntry; // @synthesize allowsManualEntry=_allowsManualEntry;
 @property(nonatomic) _Bool showsWelcomeViewController; // @synthesize showsWelcomeViewController=_showsWelcomeViewController;
 @property(nonatomic) id <PKPaymentSetupDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(readonly, retain, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
-- (void).cxx_destruct;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;

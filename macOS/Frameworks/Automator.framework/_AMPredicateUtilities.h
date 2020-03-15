@@ -23,9 +23,9 @@
 + (unsigned long long)typeForPredicate:(id)arg1;
 + (unsigned long long)_typeByInspectionForPredicate:(id)arg1;
 + (id)predicateUtilities;
+- (void).cxx_destruct;
 @property(retain) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(retain) NSCalendar *calendar; // @synthesize calendar=_calendar;
-- (void).cxx_destruct;
 - (id)predicateForBytesWithKeyPath:(id)arg1 type:(unsigned long long)arg2 count:(unsigned long long)arg3 unit:(unsigned long long)arg4;
 - (id)predicateForTimeIntervalWithKeyPath:(id)arg1 type:(unsigned long long)arg2 count:(unsigned long long)arg3;
 - (id)predicateWithKeyPath:(id)arg1 type:(unsigned long long)arg2 value:(id)arg3;

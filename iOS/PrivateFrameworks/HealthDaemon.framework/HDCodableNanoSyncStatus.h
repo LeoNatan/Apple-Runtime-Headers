@@ -26,8 +26,8 @@
 + (id)statusWithStatusCode:(int)arg1;
 + (id)persistentUserInfoKey;
 + (id)retreiveFromPersistentUserInfo:(id)arg1;
-@property(retain, nonatomic) NSMutableArray *anchors; // @synthesize anchors=_anchors;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *anchors; // @synthesize anchors=_anchors;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

@@ -25,6 +25,7 @@
 + (id)fontWithStyle:(id)arg1 adjustedForMaxSizeCategory:(id)arg2;
 + (id)orderedContentSizeCategories;
 + (id)sharedBehaviors;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double waveformMaxWidth; // @synthesize waveformMaxWidth=_waveformMaxWidth;
 @property(readonly, nonatomic) UIImage *dismissButtonImage; // @synthesize dismissButtonImage=_dismissButtonImage;
 @property(readonly, nonatomic) UIImage *orbShareLocationImage; // @synthesize orbShareLocationImage=_orbShareLocationImage;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) UIImage *unDNDActionImage; // @synthesize unDNDActionImage=_unDNDActionImage;
 @property(readonly, nonatomic) UIImage *dndActionImage; // @synthesize dndActionImage=_dndActionImage;
 @property(nonatomic) long long HUDStyle; // @synthesize HUDStyle=_HUDStyle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *carplayComposeButtonImage;
 @property(readonly, nonatomic) UIImage *carplayChevronImage;
 @property(readonly, nonatomic) UIFont *searchIndexingSubtitleFont;

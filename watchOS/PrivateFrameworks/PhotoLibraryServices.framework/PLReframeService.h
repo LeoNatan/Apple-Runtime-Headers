@@ -19,8 +19,8 @@
     NSObject<OS_dispatch_queue> *_serializationQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serializationQueue; // @synthesize serializationQueue=_serializationQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serializationQueue; // @synthesize serializationQueue=_serializationQueue;
 - (id)photoLibrary;
 - (id)initWithLibraryBundle:(id)arg1;
 

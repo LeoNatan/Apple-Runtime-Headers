@@ -20,13 +20,14 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long size; // @synthesize size=_size;
 @property(readonly, nonatomic) long long nextFrom; // @synthesize nextFrom=_nextFrom;
 @property(readonly, nonatomic) long long from; // @synthesize from=_from;
 @property(readonly, copy, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)copyWithSearchResults:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSearchResults:(id)arg1 from:(long long)arg2 nextFrom:(long long)arg3 size:(long long)arg4;
 

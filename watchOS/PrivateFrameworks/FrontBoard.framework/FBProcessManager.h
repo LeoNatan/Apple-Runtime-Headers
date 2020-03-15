@@ -33,9 +33,9 @@
 + (id)_sharedInstanceCreateIfNeeded:(_Bool)arg1;
 + (id)sharedInstanceIfExists;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) FBApplicationProcessWatchdogPolicy *defaultWatchdogPolicy; // @synthesize defaultWatchdogPolicy=_noDirectAccess_defaultWatchdogPolicy;
 @property(readonly, nonatomic) FBApplicationProcess *systemApplicationProcess; // @synthesize systemApplicationProcess=_systemAppProcess;
-- (void).cxx_destruct;
 - (void)_queue_evaluateForegroundEventRouting;
 - (void)_queue_notifyObserversUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_queue_removeProcess:(id)arg1 withPID:(int)arg2;

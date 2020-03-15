@@ -23,13 +23,13 @@
 + (id)threadWithId:(unsigned long long)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_bc1efd6c *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property BOOL isMainThread; // @synthesize isMainThread=_isMainThread;
 @property BOOL isGlobalForcedIdle; // @synthesize isGlobalForcedIdle=_isGlobalForcedIdle;
 @property(retain) SATimestamp *exitTimestamp; // @synthesize exitTimestamp=_exitTimestamp;
 @property(retain) SATimestamp *creationTimestamp; // @synthesize creationTimestamp=_creationTimestamp;
 @property(readonly) unsigned long long threadId; // @synthesize threadId=_threadId;
 @property(readonly) NSArray *threadStates; // @synthesize threadStates=_threadStates;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) BOOL isProcessorIdleThread;
 - (void)insertState:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -42,9 +42,9 @@
 - (unsigned long long)indexOfFirstThreadStateOnOrAfterTime:(id)arg1 withSampleIndex:(BOOL)arg2;
 - (unsigned long long)addState:(id)arg1;
 - (id)initWithId:(unsigned long long)arg1;
-- (void)populateReferencesUsingBuffer:(const CDStruct_bc1efd6c *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_bc1efd6c *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBuffer:(const CDStruct_bc1efd6c *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_bc1efd6c *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

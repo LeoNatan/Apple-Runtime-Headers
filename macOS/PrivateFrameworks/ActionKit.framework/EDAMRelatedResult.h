@@ -23,6 +23,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *cacheExpires; // @synthesize cacheExpires=_cacheExpires;
 @property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(retain, nonatomic) NSArray *relatedContent; // @synthesize relatedContent=_relatedContent;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(retain, nonatomic) NSArray *notebooks; // @synthesize notebooks=_notebooks;
 @property(retain, nonatomic) NSArray *notes; // @synthesize notes=_notes;
-- (void).cxx_destruct;
 
 @end
 

@@ -22,6 +22,7 @@
     NSArray *_sectionHeadlinesGroups;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *sectionHeadlinesGroups; // @synthesize sectionHeadlinesGroups=_sectionHeadlinesGroups;
 @property(readonly, nonatomic) id <FCChannelProviding> channel; // @synthesize channel=_channel;
 @property(readonly, nonatomic) double sectionsCacheTimeToLive; // @synthesize sectionsCacheTimeToLive=_sectionsCacheTimeToLive;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(readonly, nonatomic) FCCloudContext *cloudContext; // @synthesize cloudContext=_cloudContext;
 @property(copy) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
-- (void).cxx_destruct;
 - (id)_feedItemsTransformationWithConfiguration:(id)arg1;
 - (id)_headlinesAssembledBySectionFromFeedItemMap:(id)arg1 sectionIDsByFeedID:(id)arg2 sectionsByID:(id)arg3;
 - (id)_createFeedRequestWithFeedID:(id)arg1 feedRange:(id)arg2;

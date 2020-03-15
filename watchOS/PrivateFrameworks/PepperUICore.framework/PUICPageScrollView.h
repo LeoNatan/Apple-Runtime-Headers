@@ -53,6 +53,7 @@
     struct UIEdgeInsets _touchInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didAnimatePageDeletionHandler; // @synthesize didAnimatePageDeletionHandler=_didAnimatePageDeletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType isAnimatingPageDeletionHandler; // @synthesize isAnimatingPageDeletionHandler=_isAnimatingPageDeletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType willAnimatePageDeletionHandler; // @synthesize willAnimatePageDeletionHandler=_willAnimatePageDeletionHandler;
@@ -83,7 +84,6 @@
 @property(nonatomic) unsigned int prefetchBuffer; // @synthesize prefetchBuffer=_prefetchBuffer;
 @property(nonatomic) struct UIEdgeInsets touchInsets; // @synthesize touchInsets=_touchInsets;
 @property(nonatomic) struct UIEdgeInsets visualInsets; // @synthesize visualInsets=_visualInsets;
-- (void).cxx_destruct;
 - (void)_sendAppearanceEventsForScrollStop;
 - (void)_sendAppearanceEventsForScrollStart;
 - (struct CGRect)_touchInsetBounds;

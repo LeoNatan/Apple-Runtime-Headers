@@ -12,6 +12,7 @@
 {
     NSString *_name;
     NSString *_identifier;
+    BOOL _isRestricted;
 }
 
 + (id)sectionEntryWithIdentifier:(id)arg1 name:(id)arg2;
@@ -25,9 +26,10 @@
 + (id)groupEntryWithAccount:(id)arg1 addressBook:(id)arg2 group:(id)arg3;
 + (id)accountEntryWithName:(id)arg1 account:(id)arg2 addressBook:(id)arg3;
 + (id)headerEntryWithName:(id)arg1 account:(id)arg2 children:(id)arg3;
+- (void).cxx_destruct;
+@property(readonly) BOOL isRestricted; // @synthesize isRestricted=_isRestricted;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)nameWithStyleProvider:(id)arg1;
 - (id)iconWithStyleProvider:(id)arg1;
 - (BOOL)canShowStatusForAccountWithIdentifier:(id)arg1;

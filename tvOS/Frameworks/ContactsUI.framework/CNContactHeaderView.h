@@ -30,6 +30,7 @@
 + (_Bool)requiresConstraintBasedLayout;
 + (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(_Bool)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool alwaysShowsMonogram; // @synthesize alwaysShowsMonogram=_alwaysShowsMonogram;
 @property(readonly, nonatomic) CNContactPhotoView *photoView; // @synthesize photoView=_photoView;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
@@ -40,7 +41,6 @@
 @property(nonatomic) __weak id <CNPresenterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDictionary *nameTextAttributes; // @synthesize nameTextAttributes=_nameTextAttributes;
 @property(nonatomic) struct UIEdgeInsets contentMargins; // @synthesize contentMargins=_contentMargins;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (id)contactStoreForPhotoView:(id)arg1;
 - (id)viewControllerForPhotoView:(id)arg1;

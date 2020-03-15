@@ -23,6 +23,7 @@
     PXAssetCollectionActionManager *_assetCollectionActionManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXAssetCollectionActionManager *assetCollectionActionManager; // @synthesize assetCollectionActionManager=_assetCollectionActionManager;
 @property(readonly, nonatomic) id <PXPeopleFetchResult> peopleFetchResult; // @synthesize peopleFetchResult=_peopleFetchResult;
 @property(readonly, nonatomic) id <PXUIImageProvider> posterMediaProvider; // @synthesize posterMediaProvider=_posterMediaProvider;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long aggregateMediaType;
 - (double)scoreForSuggestionMatchingType:(long long)arg1;
 - (void)registerMatchingType:(long long)arg1;

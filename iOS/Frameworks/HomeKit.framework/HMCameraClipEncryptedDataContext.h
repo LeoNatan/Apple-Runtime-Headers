@@ -17,10 +17,10 @@
     NSData *_tag;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSData *tag; // @synthesize tag=_tag;
 @property(readonly, copy) NSData *ciphertext; // @synthesize ciphertext=_ciphertext;
 @property(readonly, copy) NSData *initializationVector; // @synthesize initializationVector=_initializationVector;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

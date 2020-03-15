@@ -25,8 +25,8 @@
 + (_Bool)supportsSecureCoding;
 + (Class)copyClassForEndpointType:(int)arg1;
 + (unsigned int)endpointType;
-@property(retain, nonatomic) NSObject<OS_nw_endpoint> *internalEndpoint; // @synthesize internalEndpoint=_internalEndpoint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_nw_endpoint> *internalEndpoint; // @synthesize internalEndpoint=_internalEndpoint;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)createProtocolBufferObject;

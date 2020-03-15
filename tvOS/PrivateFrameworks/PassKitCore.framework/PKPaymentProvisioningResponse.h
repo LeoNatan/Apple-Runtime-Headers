@@ -17,12 +17,12 @@
     NSString *_ownershipTokenIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ownershipTokenIdentifier; // @synthesize ownershipTokenIdentifier=_ownershipTokenIdentifier;
 @property(readonly, copy, nonatomic) NSString *ownershipToken; // @synthesize ownershipToken=_ownershipToken;
 @property(readonly, nonatomic) _Bool willProvisionWithAuthenticationDisabled; // @synthesize willProvisionWithAuthenticationDisabled=_willProvisionWithAuthenticationDisabled;
 @property(readonly, copy, nonatomic) NSArray *moreInfoURLs; // @synthesize moreInfoURLs=_moreInfoURLs;
 @property(copy, nonatomic) NSURL *passURL; // @synthesize passURL=_passURL;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

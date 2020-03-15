@@ -17,10 +17,10 @@
     CDUnknownBlockType _completionHanlder;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType completionHanlder; // @synthesize completionHanlder=_completionHanlder;
 @property(retain, nonatomic) TPSURLSessionTask *sessionTask; // @synthesize sessionTask=_sessionTask;
 @property(nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
-- (void).cxx_destruct;
 - (void)URLSessionSessionTask:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)notifyWithSessionTask:(id)arg1 error:(id)arg2;
 - (void)cancel;

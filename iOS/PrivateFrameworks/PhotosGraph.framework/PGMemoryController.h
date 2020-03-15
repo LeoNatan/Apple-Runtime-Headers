@@ -68,6 +68,7 @@
 + (void)computeMinimumNumbersOfAssetsWithCompletionBlock:(CDUnknownBlockType)arg1;
 + (unsigned long long)minimumNumberOfCuratedAssetsForMemories;
 + (double)computeBetaWithManager:(id)arg1;
+- (void).cxx_destruct;
 @property _Bool probabilityAlwaysPasses; // @synthesize probabilityAlwaysPasses=_probabilityAlwaysPasses;
 @property _Bool isDryTesting; // @synthesize isDryTesting=_isDryTesting;
 @property _Bool skipsBlacklistedFeatureCheck; // @synthesize skipsBlacklistedFeatureCheck=_skipsBlacklistedFeatureCheck;
@@ -94,7 +95,6 @@
 @property(readonly) unsigned long long minimumNumberOfAssetsForMomentMemory; // @synthesize minimumNumberOfAssetsForMomentMemory=_minimumNumberOfAssetsForMomentMemory;
 @property unsigned long long numberOfNewMemoriesForUserRequest; // @synthesize numberOfNewMemoriesForUserRequest=_numberOfNewMemoriesForUserRequest;
 @property unsigned long long numberOfNewMemoriesForPeriodicity; // @synthesize numberOfNewMemoriesForPeriodicity=_numberOfNewMemoriesForPeriodicity;
-- (void).cxx_destruct;
 - (void)resetIgnoresAndSkips;
 - (id)_doDirectModeWithLocalDate:(id)arg1 location:(id)arg2 peopleNames:(id)arg3 parameters:(id)arg4 progress:(CDUnknownBlockType)arg5;
 - (id)createMemoriesWithOptions:(id)arg1 progress:(CDUnknownBlockType)arg2;

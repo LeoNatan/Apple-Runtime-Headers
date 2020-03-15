@@ -34,6 +34,7 @@
     NSArray *_lePipeDevices;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *lePipeDevices; // @synthesize lePipeDevices=_lePipeDevices;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType advertiseStateChangedHandler; // @synthesize advertiseStateChangedHandler=_advertiseStateChangedHandler;
 @property(nonatomic) long long advertiseRate; // @synthesize advertiseRate=_advertiseRate;
-- (void).cxx_destruct;
 - (void)nearby:(id)arg1 didConnectToPeer:(id)arg2 transport:(long long)arg3 error:(id)arg4;
 - (void)nearby:(id)arg1 didFailToStartAdvertisingOfType:(long long)arg2 withError:(id)arg3;
 - (void)nearby:(id)arg1 didDeferAdvertisingType:(long long)arg2;

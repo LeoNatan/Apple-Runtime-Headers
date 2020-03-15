@@ -17,9 +17,9 @@
 + (vector_2f7ba0dc)convertStringsToQuasarTokens:(id)arg1;
 + (_Bool)supportedByQuasarConfig:(id)arg1;
 + (void)initialize;
-@property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 - (id)formattedRecognitionWithNBestList:(id)arg1;
 - (id)formattedStringWithStrings:(id)arg1 preToPostItnArray:(id)arg2 task:(id)arg3;
 - (id)formattedStringWithStrings:(id)arg1 preToPostItnArray:(id)arg2;

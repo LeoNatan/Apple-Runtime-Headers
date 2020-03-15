@@ -16,9 +16,9 @@
 
 + (id)alloc;
 + (Class)__class;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldSendContentAvailable; // @synthesize shouldSendContentAvailable=_shouldSendContentAvailable;
 @property(copy, nonatomic) NSString *alertLocalizationKey; // @synthesize alertLocalizationKey=_alertLocalizationKey;
-- (void).cxx_destruct;
 
 @end
 

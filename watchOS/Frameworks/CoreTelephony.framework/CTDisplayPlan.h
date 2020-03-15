@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) int status; // @synthesize status=_status;
 @property(readonly, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(readonly, nonatomic) NSString *carrierName; // @synthesize carrierName=_carrierName;
 @property(readonly, nonatomic) CTPlan *plan; // @synthesize plan=_plan;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

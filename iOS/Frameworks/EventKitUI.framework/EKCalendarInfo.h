@@ -19,13 +19,13 @@
     EKGroupInfo *_group;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int customGroupType; // @synthesize customGroupType=_customGroupType;
 @property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
 @property(nonatomic) __weak EKGroupInfo *group; // @synthesize group=_group;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) EKCalendar *calendar; // @synthesize calendar=_calendar;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *highlightedIcon;
 @property(readonly, nonatomic) UIImage *icon;
 - (id)description;

@@ -12,9 +12,9 @@
     CDUnknownBlockType _condition;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType condition; // @synthesize condition=_condition;
 @property(readonly, nonatomic) unsigned long long rowType; // @synthesize rowType=_rowType;
-- (void).cxx_destruct;
 - (_Bool)evaluateWithWorkout:(id)arg1 supportedMetrics:(id)arg2;
 - (id)initWithRowType:(unsigned long long)arg1 condition:(CDUnknownBlockType)arg2;
 

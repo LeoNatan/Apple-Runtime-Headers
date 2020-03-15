@@ -26,6 +26,7 @@
     NSString *_localizedDescription;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(copy, nonatomic) NSDate *relevantDate; // @synthesize relevantDate=_relevantDate;
 @property(copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSSet *attributes; // @synthesize attributes;
 @property(copy, nonatomic) NSString *password; // @synthesize password;
 @property(copy, nonatomic) NSString *SSID; // @synthesize SSID;
-- (void).cxx_destruct;
 - (BOOL)containsAccessPointMatchingBSSIDs:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) long long source;

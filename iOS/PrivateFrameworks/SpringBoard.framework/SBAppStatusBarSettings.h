@@ -17,8 +17,8 @@
     BSMutableSettings *_settings;
 }
 
-@property(readonly, nonatomic, getter=_BSSettings) BSSettings *BSSettings; // @synthesize BSSettings=_settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_BSSettings) BSSettings *BSSettings; // @synthesize BSSettings=_settings;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 - (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

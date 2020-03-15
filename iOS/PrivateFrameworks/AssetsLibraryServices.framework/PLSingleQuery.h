@@ -26,13 +26,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int unit; // @synthesize unit=_unit;
 @property(nonatomic) int comparator; // @synthesize comparator=_comparator;
 @property(retain, nonatomic) NSData *secondValue; // @synthesize secondValue=_secondValue;
 @property(retain, nonatomic) NSData *firstValue; // @synthesize firstValue=_firstValue;
 @property(nonatomic) int valueType; // @synthesize valueType=_valueType;
 @property(nonatomic) int key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

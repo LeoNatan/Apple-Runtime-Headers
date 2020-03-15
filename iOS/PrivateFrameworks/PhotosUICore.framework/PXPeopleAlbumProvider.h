@@ -31,6 +31,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *imageCache; // @synthesize imageCache=_imageCache;
 // Error parsing type for property currentRequestId:
 // Property attributes: TAi,V_currentRequestId
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) PXPeopleProgressManager *progressMgr; // @synthesize progressMgr=_progressMgr;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(readonly, nonatomic) PXPeopleSectionedDataSource *peopleDataSource; // @synthesize peopleDataSource=_peopleDataSource;
-- (void).cxx_destruct;
 - (void)_appWillEnterForeground;
 - (void)_invalidateCache;
 - (void)imageCacheDidChanged:(id)arg1;

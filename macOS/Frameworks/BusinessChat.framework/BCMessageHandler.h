@@ -24,13 +24,13 @@
 
 + (id)appIconForWindow:(id)arg1;
 + (id)appIcon;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *recipientID; // @synthesize recipientID=_recipientID;
 @property(retain, nonatomic) BCApplePayManager *applePayManager; // @synthesize applePayManager=_applePayManager;
 @property(retain, nonatomic) BCInternalAuthenticationManager *internalAuthManager; // @synthesize internalAuthManager=_internalAuthManager;
 @property(retain, nonatomic) BCAuthenticationManager *authManager; // @synthesize authManager=_authManager;
 @property(nonatomic) __weak id <BCMessageHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) BCMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)showHandoffAlert:(id)arg1;
 - (void)sendAuthenticationMessage:(id)arg1;
 - (BOOL)recipientIsWhitelistedForInternalAuthentication;

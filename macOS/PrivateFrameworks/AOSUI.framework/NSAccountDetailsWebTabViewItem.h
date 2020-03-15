@@ -15,9 +15,9 @@
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property NSView *generalView; // @synthesize generalView=_generalView;
 @property(retain) iCloudAccountDetailsWebTabView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 @property struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 
 @end

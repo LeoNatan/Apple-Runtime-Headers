@@ -20,12 +20,12 @@
     NSSet *_unavailableItemIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *unavailableItemIdentifiers; // @synthesize unavailableItemIdentifiers=_unavailableItemIdentifiers;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *seeAllURLString; // @synthesize seeAllURLString=_seeAllURLString;
 @property(copy, nonatomic) NSString *seeAllTitle; // @synthesize seeAllTitle=_seeAllTitle;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSMutableDictionary *cacheRepresentation;
 - (id)initWithCacheRepresentation:(id)arg1;

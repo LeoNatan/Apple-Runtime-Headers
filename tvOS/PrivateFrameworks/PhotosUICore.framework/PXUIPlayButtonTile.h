@@ -39,6 +39,7 @@
 }
 
 + (struct CGSize)preferredSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setBackgroundImage:) UIImage *_backgroundImage; // @synthesize _backgroundImage=__backgroundImage;
 @property(nonatomic, setter=_setAnimationCount:) unsigned long long _animationCount; // @synthesize _animationCount=__animationCount;
 @property(nonatomic, getter=_isAnimatingGeometry, setter=_setAnimatingGeometry:) _Bool _animatingGeometry; // @synthesize _animatingGeometry=__animatingGeometry;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) long long playButtonStyle; // @synthesize playButtonStyle=_playButtonStyle;
 @property(readonly, nonatomic) struct CGSize playButtonSize; // @synthesize playButtonSize=_playButtonSize;
 @property(nonatomic) __weak id <PXUIPlayButtonTileDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didAnimateToGeometry:(struct PXTileGeometry)arg1 toUserData:(id)arg2 withOptions:(id)arg3;
 - (void)willAnimateToGeometry:(struct PXTileGeometry)arg1 toUserData:(id)arg2 withOptions:(id)arg3;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;

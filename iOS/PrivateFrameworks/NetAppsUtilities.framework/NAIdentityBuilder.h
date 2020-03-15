@@ -20,9 +20,9 @@
 + (id)na_identity;
 + (id)builderWithIdentity:(id)arg1;
 + (id)builder;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAIdentity *builtIdentity; // @synthesize builtIdentity=_builtIdentity;
 @property(retain, nonatomic) NSMutableArray *characteristics; // @synthesize characteristics=_characteristics;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)build;

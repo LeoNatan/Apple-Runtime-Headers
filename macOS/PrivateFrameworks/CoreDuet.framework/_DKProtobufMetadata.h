@@ -17,8 +17,8 @@
 
 + (id)createFromData:(id)arg1;
 + (id)fromPBCodable:(id)arg1;
-@property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (id)asData;
 - (id)initWithDictionary:(id)arg1;
 - (id)toPBCodable;

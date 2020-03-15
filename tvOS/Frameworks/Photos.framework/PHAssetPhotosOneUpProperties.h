@@ -17,10 +17,10 @@
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long variationSuggestionStates; // @synthesize variationSuggestionStates=_variationSuggestionStates;
 @property(readonly, nonatomic) NSData *reverseLocationData; // @synthesize reverseLocationData=_reverseLocationData;
 @property(readonly, nonatomic) _Bool reverseLocationDataIsValid; // @synthesize reverseLocationDataIsValid=_reverseLocationDataIsValid;
-- (void).cxx_destruct;
 - (id)placeNamesForLocalizedDetailedDescriptionIsHome:(_Bool *)arg1;
 - (id)localizedGeoDescriptionIsHome:(_Bool *)arg1;
 - (id)_locationInfo;

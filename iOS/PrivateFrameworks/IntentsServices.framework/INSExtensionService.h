@@ -24,9 +24,9 @@
     id <INSExtensionServiceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <INSExtensionServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)completionHandlerForAppLaunchCommand:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)analytics:(id)arg1 contextDictionaryForError:(id)arg2;
 - (id)analytics:(id)arg1 contextDictionaryForCommand:(id)arg2;

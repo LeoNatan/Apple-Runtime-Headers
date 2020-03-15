@@ -13,8 +13,8 @@
 
 + (_Bool)isNetworkReachable;
 + (_Bool)isAirplaneModeActiveWithoutWifi;
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void)dealloc;
 - (void)_reachabilityChanged:(id)arg1;
 - (void)disableAirplaneModeAndWaitForNetworkWithCompletionHandler:(CDUnknownBlockType)arg1;

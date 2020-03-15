@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)icmpIPv4OffsetInPacket:(id)arg1;
 + (void)initialize;
 + (BOOL)loadStringUtils;
+- (void).cxx_destruct;
 @property(nonatomic) struct __CFRunLoopSource *rls; // @synthesize rls=_rls;
 @property(nonatomic) struct _opaque_pthread_t *pingThread; // @synthesize pingThread=_pingThread;
 @property(nonatomic) struct __CFRunLoop *pingRunLoop; // @synthesize pingRunLoop=_pingRunLoop;
@@ -63,7 +64,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *hostName; // @synthesize hostName=_hostName;
 @property(retain, nonatomic) NSString *ipAddress; // @synthesize ipAddress=_ipAddress;
 @property(retain, nonatomic) id <ICMPPingProbeDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stopRunLoop;
 - (BOOL)startRunLoop;
 - (void)startThePinging;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)actionWhenIdleWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
-@property(retain, nonatomic) NSInvocation *invocation; // @synthesize invocation=_invocation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSInvocation *invocation; // @synthesize invocation=_invocation;
 - (void)addObserverToRunLoop;
 - (void)invoke;
 - (void)invalidate;

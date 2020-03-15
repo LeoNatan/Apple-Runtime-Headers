@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     AXMVoiceOverVisionEngine *_engine;
 }
 
-@property(retain, nonatomic) AXMVoiceOverVisionEngine *engine; // @synthesize engine=_engine;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXMVoiceOverVisionEngine *engine; // @synthesize engine=_engine;
 - (id)analyzeElement:(id)arg1;
 - (id)init;
 

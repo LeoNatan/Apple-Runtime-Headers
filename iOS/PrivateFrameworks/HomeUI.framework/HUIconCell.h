@@ -33,6 +33,7 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILayoutGuide *iconSpacingLayoutGuide; // @synthesize iconSpacingLayoutGuide=_iconSpacingLayoutGuide;
 @property(retain, nonatomic) HUIconView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
@@ -49,7 +50,6 @@
 @property(nonatomic) _Bool hideIcon; // @synthesize hideIcon=_hideIcon;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)_updateIcon;
 - (void)_createIconView;
 - (void)_invalidateDynamicConstraints;

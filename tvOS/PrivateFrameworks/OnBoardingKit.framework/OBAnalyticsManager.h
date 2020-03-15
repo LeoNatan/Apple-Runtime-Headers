@@ -15,9 +15,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *stagedMetrics; // @synthesize stagedMetrics=_stagedMetrics;
 @property _Bool shouldStashMetrics; // @synthesize shouldStashMetrics=_shouldStashMetrics;
-- (void).cxx_destruct;
 - (void)logTapOnPrivacyLinkWithIdentifier:(id)arg1;
 - (void)logPresentationOfPrivacyLinkWithIdentifier:(id)arg1;
 - (void)logPresentationOfPrivacySplashWithIdentifier:(id)arg1;

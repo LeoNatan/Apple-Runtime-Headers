@@ -30,11 +30,11 @@
     CLSilo *fSilo;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CLLocationManager *manager; // @synthesize manager=fManager;
 @property(nonatomic) __weak id <CLLocationManagerDelegate> delegate; // @synthesize delegate=fDelegate;
 @property(readonly, nonatomic) NSMutableSet *rangedConstraints; // @synthesize rangedConstraints=fRangedConstraints;
 @property(readonly, nonatomic) NSMutableSet *rangedRegions; // @synthesize rangedRegions=fRangedRegions;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)invalidate;
 - (void)performCourtesyPromptIfNeeded;

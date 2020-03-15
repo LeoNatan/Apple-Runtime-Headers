@@ -23,11 +23,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleCategory; // @synthesize bundleCategory=_bundleCategory;
 @property(nonatomic) int workoutType; // @synthesize workoutType=_workoutType;
 @property(nonatomic) _Bool isDriving; // @synthesize isDriving=_isDriving;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

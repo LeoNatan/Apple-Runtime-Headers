@@ -19,6 +19,7 @@
     double _elapsedTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(retain, nonatomic) NSString *currentAppBundleID; // @synthesize currentAppBundleID=_currentAppBundleID;
 @property(retain, nonatomic) NSString *sessionAppBundleID; // @synthesize sessionAppBundleID=_sessionAppBundleID;
@@ -26,7 +27,6 @@
 @property(nonatomic) int timeoutSeconds; // @synthesize timeoutSeconds=_timeoutSeconds;
 @property(nonatomic) unsigned int currentPolicy; // @synthesize currentPolicy=_currentPolicy;
 @property(nonatomic) unsigned int currentLocation; // @synthesize currentLocation=_currentLocation;
-- (void).cxx_destruct;
 - (id)evaluateActionToGetToClockWithTimeout;
 - (id)evaluateActionToGetToClockFromCarousel;
 - (id)evaluateActionToGetToSessionApp;

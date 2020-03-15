@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     OCCDecryptor *mDecryptor;
 }
 
-@property(readonly, nonatomic) OCCDecryptor *decryptor; // @synthesize decryptor=mDecryptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) OCCDecryptor *decryptor; // @synthesize decryptor=mDecryptor;
 - (_Bool)retainDecryptorWithErrorCode:(int *)arg1;
 - (void)useUnencryptedDocument;
 - (id)defaultPassphrase;

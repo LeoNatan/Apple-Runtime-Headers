@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _Bool _onlyShowUserSelected;
 }
 
-@property(nonatomic) _Bool onlyShowUserSelected; // @synthesize onlyShowUserSelected=_onlyShowUserSelected;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool onlyShowUserSelected; // @synthesize onlyShowUserSelected=_onlyShowUserSelected;
 - (void)updateFilters;
 @property(retain, nonatomic) FI_TPreviewOptions *previewOptions; // @dynamic previewOptions;
 @property(readonly, retain, nonatomic) FI_TSpotlightMetaDataStackView *stackView; // @dynamic stackView;

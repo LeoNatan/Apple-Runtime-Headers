@@ -13,8 +13,8 @@
     id <TUPageViewControllerScrollViewAccessibilityDelegate> _accessibilityDelegate;
 }
 
-@property(nonatomic) __weak id <TUPageViewControllerScrollViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TUPageViewControllerScrollViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (_Bool)accessibilityScroll:(long long)arg1;
 
 @end

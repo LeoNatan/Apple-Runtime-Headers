@@ -19,10 +19,10 @@
 + (id)newEffectNodeToOverlayInputs:(id)arg1 inputIDs:(id)arg2 effect:(id)arg3;
 + (id)newEffectNodeToTransitionFrom:(id)arg1 to:(id)arg2 effect:(id)arg3;
 + (id)newEffectNodeToFilterInput:(id)arg1 effect:(id)arg2;
-@property(nonatomic) BOOL bypassOutOfRangeEffects; // @synthesize bypassOutOfRangeEffects=_bypassOutOfRangeEffects;
-@property(retain, nonatomic) PVEffect *effect; // @synthesize effect=_effect;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL bypassOutOfRangeEffects; // @synthesize bypassOutOfRangeEffects=_bypassOutOfRangeEffects;
+@property(retain, nonatomic) PVEffect *effect; // @synthesize effect=_effect;
 - (void)addDotTreeLinks:(HGRef_6bae45d3)arg1;
 - (id)instructionGraphNodeDescription;
 - (id)dotTreeLabel:(HGRef_6bae45d3)arg1;

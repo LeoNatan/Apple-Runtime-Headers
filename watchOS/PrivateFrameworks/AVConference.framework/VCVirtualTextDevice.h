@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_mediaStreamDelegateQueue;
 }
 
-- (void)didReceiveText:(struct NSString *)arg1;
-- (void)sendText:(struct NSString *)arg1;
+- (void)didReceiveText:(id)arg1;
+- (void)sendText:(id)arg1;
 - (void)sendCharacter:(unsigned short)arg1;
 - (void)setPause:(_Bool)arg1;
 - (void)resume;

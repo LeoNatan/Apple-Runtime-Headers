@@ -19,11 +19,12 @@ __attribute__((visibility("hidden")))
     PSSpecifier *_groupSpecifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool popViewControllerOnPlanRemoval; // @synthesize popViewControllerOnPlanRemoval=_popViewControllerOnPlanRemoval;
 @property(nonatomic) __weak PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 @property(nonatomic) __weak PSSpecifier *parentSpecifier; // @synthesize parentSpecifier=_parentSpecifier;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
-- (void).cxx_destruct;
+- (id)createRoamingSpecifiersSubgroup;
 - (id)createLowDataModeSubgroup;
 - (id)createCellularPlanManager;
 - (id)createCellularPlanManagerCache;

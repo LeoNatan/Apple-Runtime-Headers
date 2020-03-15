@@ -29,11 +29,11 @@
 }
 
 + (id)sharedRemoteSearchViewController;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActiveDelegate) _Bool activeDelegate; // @synthesize activeDelegate=_activeDelegate;
 @property(nonatomic) __weak id <SPUIRemoteSearchViewDelegate> spotlightDelegate; // @synthesize spotlightDelegate=_spotlightDelegate;
 @property(nonatomic) unsigned long long searchViewPresentationSourceForNextTransition; // @synthesize searchViewPresentationSourceForNextTransition=_searchViewPresentationSourceForNextTransition;
 @property(copy, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
-- (void).cxx_destruct;
 - (unsigned long long)remoteSearchViewPresentationSource;
 - (void)_unregisterStatusBarScrollToTopViewWithWindow:(id)arg1;
 - (void)_unregisterStatusBarScrollToTopView;

@@ -14,9 +14,9 @@
     TSSStylesheet *_aStylesheet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TSSStylesheet *aStylesheet; // @synthesize aStylesheet=_aStylesheet;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)stylesheet;
 - (id)initWithContext:(id)arg1;
 - (id)init;

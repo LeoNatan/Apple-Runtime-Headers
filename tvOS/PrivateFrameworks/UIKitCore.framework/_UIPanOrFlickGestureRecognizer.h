@@ -27,6 +27,7 @@
     struct CGPoint _initialCentroidLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint initialCentroidLocation; // @synthesize initialCentroidLocation=_initialCentroidLocation;
 @property(retain, nonatomic) UIDelayedAction *responsivenessAction; // @synthesize responsivenessAction=_responsivenessAction;
 @property(retain, nonatomic) UIDelayedAction *elapsedAction; // @synthesize elapsedAction=_elapsedAction;
@@ -40,7 +41,6 @@
 @property(nonatomic) double maximumFlickDuration; // @synthesize maximumFlickDuration=_maximumFlickDuration;
 @property(nonatomic) unsigned long long allowedFlickDirections; // @synthesize allowedFlickDirections=_allowedFlickDirections;
 @property(nonatomic) _Bool longPressOnly; // @synthesize longPressOnly=_longPressOnly;
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

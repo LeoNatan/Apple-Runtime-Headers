@@ -30,6 +30,7 @@
 + (id)URLForHost:(id)arg1;
 + (id)connectToHost:(id)arg1 withUsername:(id)arg2;
 + (id)connectToHost:(id)arg1 port:(long long)arg2 withUsername:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NMSFTP *sftp; // @synthesize sftp=_sftp;
 @property(retain, nonatomic) NMSSHChannel *channel; // @synthesize channel=_channel;
 @property(copy, nonatomic) CDUnknownBlockType kbAuthenticationBlock; // @synthesize kbAuthenticationBlock=_kbAuthenticationBlock;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSString *host; // @synthesize host=_host;
 @property(retain, nonatomic) NMSSHHostConfig *hostConfig; // @synthesize hostConfig=_hostConfig;
 @property(nonatomic) __weak id <NMSSHSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)keyboardInteractiveRequest:(id)arg1;
 - (BOOL)addKnownHostName:(id)arg1 port:(long long)arg2 toFile:(id)arg3 withSalt:(id)arg4;
 - (long long)knownHostStatusWithFile:(id)arg1;

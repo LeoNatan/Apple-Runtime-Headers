@@ -13,8 +13,8 @@
     id _objectToExport;
 }
 
-@property(nonatomic) __weak id objectToExport; // @synthesize objectToExport=_objectToExport;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id objectToExport; // @synthesize objectToExport=_objectToExport;
 - (BOOL)view:(id)arg1 shouldResize:(struct CGSize)arg2;
 - (id)serviceSubclassName;
 - (id)serviceName;

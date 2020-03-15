@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct PUDisplayVelocity _currentVelocity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUTileController *trackedTileController; // @synthesize trackedTileController=_trackedTileController;
 @property(retain, nonatomic, setter=_setTileHider:) PUTileHider *_tileHider; // @synthesize _tileHider=__tileHider;
 @property(nonatomic, setter=_setState:) long long _state; // @synthesize _state=__state;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic) __weak id <PUInteractiveTileTrackerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PUTilingView *tilingView; // @synthesize tilingView=_tilingView;
-- (void).cxx_destruct;
 - (void)_setTrackedTileController:(id)arg1;
 - (void)_updateTrackedTileController;
 - (id)tileControllerToTrack;

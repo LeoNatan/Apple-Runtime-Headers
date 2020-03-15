@@ -80,6 +80,7 @@ __attribute__((visibility("hidden")))
     BOOL _handlingTrackpadScroll;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKCompassView *compassView; // @synthesize compassView=_compassView;
 @property(retain, nonatomic) MKScaleView *scaleView; // @synthesize scaleView=_scaleView;
 @property(nonatomic, getter=isRotationSnappingEnabled) BOOL rotationSnappingEnabled; // @synthesize rotationSnappingEnabled=_rotationSnappingEnabled;
@@ -90,7 +91,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSClickGestureRecognizer *doubleClickGestureRecognizer; // @synthesize doubleClickGestureRecognizer=_doubleClickGestureRecognizer;
 @property(retain, nonatomic) MKRotationFilter *rotationFilter; // @synthesize rotationFilter=_rotationFilter;
 @property(nonatomic) __weak id <MKMapGestureControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;

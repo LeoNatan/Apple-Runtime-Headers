@@ -11,6 +11,10 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)singleSIMUIServiceDescriptor;
++ (id)singleSIMUISubscriptionContext;
++ (_Bool)isUISingleSIM;
++ (_Bool)isUIDualSIM;
 + (_Bool)supportsWiFiCalling:(id)arg1;
 + (id)formattedPhoneNumber:(id)arg1;
 

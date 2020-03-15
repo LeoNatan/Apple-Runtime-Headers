@@ -15,10 +15,10 @@
     double _score;
 }
 
+- (void).cxx_destruct;
 @property double score; // @synthesize score=_score;
 @property unsigned long long inputMethod; // @synthesize inputMethod=_inputMethod;
 @property(retain) NSString *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (id)initWithResponse:(id)arg1 inputMethod:(unsigned long long)arg2 score:(double)arg3;
 
 @end

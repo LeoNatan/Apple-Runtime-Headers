@@ -40,6 +40,7 @@
 + (id)segmentBackgroundImage;
 + (id)segmentFirstBackgroundImage;
 + (id)handleBackgroundColor;
+- (void).cxx_destruct;
 @property(retain) NSDate *zeroIndexDate; // @synthesize zeroIndexDate=_zeroIndexDate;
 @property(retain) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(retain) NSLayoutConstraint *selectorWidthConstraint; // @synthesize selectorWidthConstraint=_selectorWidthConstraint;
@@ -59,7 +60,6 @@
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property __weak id <CalUIEventTimeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)positionMultiplierFromLevel:(long long)arg1 toLevel:(long long)arg2;
 - (id)viewOverlayAtIndex:(long long)arg1 level:(long long)arg2;
 - (id)viewAtIndex:(long long)arg1 level:(long long)arg2;

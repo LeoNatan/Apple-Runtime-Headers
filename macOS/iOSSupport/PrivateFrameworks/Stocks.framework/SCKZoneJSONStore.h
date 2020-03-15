@@ -20,13 +20,13 @@
     NSString *_zoneName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(copy, nonatomic) CKServerChangeToken *serverChangeToken; // @synthesize serverChangeToken=_serverChangeToken;
 @property(copy, nonatomic) NSDate *lastDirtyDate; // @synthesize lastDirtyDate=_lastDirtyDate;
 @property(copy, nonatomic) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
 @property(copy, nonatomic) NSArray *pendingCommands; // @synthesize pendingCommands=_pendingCommands;
 @property(copy, nonatomic) NSArray *serverRecords; // @synthesize serverRecords=_serverRecords;
-- (void).cxx_destruct;
 - (void)clearPendingCommandsUpToCount:(unsigned long long)arg1;
 - (void)addPendingCommands:(id)arg1;
 - (void)applyServerRecordsDiff:(id)arg1;

@@ -21,6 +21,7 @@
     NSLayoutConstraint *_calendarGadgetPreferredWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *calendarGadgetPreferredWidthConstraint; // @synthesize calendarGadgetPreferredWidthConstraint=_calendarGadgetPreferredWidthConstraint;
 @property(retain) NSLayoutConstraint *calendarGadgetMaxWidthConstraint; // @synthesize calendarGadgetMaxWidthConstraint=_calendarGadgetMaxWidthConstraint;
 @property(retain) NSLayoutConstraint *calendarGadgetCollapsedWidthConstraint; // @synthesize calendarGadgetCollapsedWidthConstraint=_calendarGadgetCollapsedWidthConstraint;
@@ -30,7 +31,6 @@
 @property(retain) EKUIHeaderImageView *headerImageView; // @synthesize headerImageView=_headerImageView;
 @property(retain) EKUICalendarGadget *calendarGadget; // @synthesize calendarGadget=_calendarGadget;
 @property(retain) EKUITitleGadget *titleGadget; // @synthesize titleGadget=_titleGadget;
-- (void).cxx_destruct;
 - (BOOL)performDragOperation:(id)arg1;
 - (id)claimedPboardTypes;
 - (BOOL)shouldBeFullWidth;

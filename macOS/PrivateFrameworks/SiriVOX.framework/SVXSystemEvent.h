@@ -23,13 +23,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int audioSessionID; // @synthesize audioSessionID=_audioSessionID;
 @property(readonly, copy, nonatomic) NSArray *orderedAlarmAndTimerIDs; // @synthesize orderedAlarmAndTimerIDs=_orderedAlarmAndTimerIDs;
 @property(readonly, copy, nonatomic) SVXStoreDemo *storeDemo; // @synthesize storeDemo=_storeDemo;
 @property(readonly, copy, nonatomic) SVXDeviceSetupFlowScene *deviceSetupFlowScene; // @synthesize deviceSetupFlowScene=_deviceSetupFlowScene;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

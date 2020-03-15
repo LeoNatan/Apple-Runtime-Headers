@@ -17,21 +17,21 @@
     NSDictionary *_dedupedUUIDToMapItemMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dedupedUUIDToMapItemMap; // @synthesize dedupedUUIDToMapItemMap=_dedupedUUIDToMapItemMap;
 @property(retain, nonatomic) NSDictionary *intermediateUUIDToInferredMapItemMap; // @synthesize intermediateUUIDToInferredMapItemMap=_intermediateUUIDToInferredMapItemMap;
 @property(retain, nonatomic) NSMutableDictionary *intermediateUUIDToInferredMapItemsMap; // @synthesize intermediateUUIDToInferredMapItemsMap=_intermediateUUIDToInferredMapItemsMap;
 @property(retain, nonatomic) NSMutableArray *uniqueInferredMapItems; // @synthesize uniqueInferredMapItems=_uniqueInferredMapItems;
 @property(nonatomic) BOOL canIngest; // @synthesize canIngest=_canIngest;
-- (void).cxx_destruct;
 - (id)allUniqueMapItemsWithError:(id *)arg1;
 - (BOOL)enumerateDedupedUUIDToMapItemMapUsingBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)allDedupedUUIDsWithError:(id *)arg1;
 - (id)mapItemForDedupedUUID:(id)arg1 error:(id *)arg2;
-- (id)inferredMapItemFromInferredMapItemWithIntermediateUUID:(struct RTPair *)arg1 error:(id *)arg2;
+- (id)inferredMapItemFromInferredMapItemWithIntermediateUUID:(id)arg1 error:(id *)arg2;
 - (id)mapItemForIntermediateUUID:(id)arg1 error:(id *)arg2;
 - (BOOL)finalizeState:(id *)arg1;
 - (id)combinedInferredMapItemFromInferredMapItems:(id)arg1 error:(id *)arg2;
-- (BOOL)ingestInferredMapItemWithIntermediateUUID:(struct RTPair *)arg1 error:(id *)arg2;
+- (BOOL)ingestInferredMapItemWithIntermediateUUID:(id)arg1 error:(id *)arg2;
 - (void)resetState;
 - (id)init;
 

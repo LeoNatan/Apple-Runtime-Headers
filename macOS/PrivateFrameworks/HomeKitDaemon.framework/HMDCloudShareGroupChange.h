@@ -17,11 +17,11 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *changedRecordNames; // @synthesize changedRecordNames=_changedRecordNames;
 @property(retain, nonatomic) NSMutableSet *changedObjectIDs; // @synthesize changedObjectIDs=_changedObjectIDs;
 @property(readonly, nonatomic) __weak HMDCloudShareGroup *cloudShareGroup; // @synthesize cloudShareGroup=_cloudShareGroup;
 @property(readonly, nonatomic) __weak HMDCloudGroupChange *cloudGroupChange; // @synthesize cloudGroupChange=_cloudGroupChange;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *objectChanges;
 - (BOOL)isRootRecord:(id)arg1;
 - (BOOL)isRootRecordName:(id)arg1;

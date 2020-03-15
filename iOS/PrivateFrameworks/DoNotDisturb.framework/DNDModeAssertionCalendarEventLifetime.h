@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isOnlyDuringEvent) _Bool onlyDuringEvent; // @synthesize onlyDuringEvent=_onlyDuringEvent;
 @property(readonly, copy, nonatomic) NSDate *occurrenceDate; // @synthesize occurrenceDate=_occurrenceDate;
 @property(readonly, copy, nonatomic) NSString *eventUniqueID; // @synthesize eventUniqueID=_eventUniqueID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)lifetimeType;

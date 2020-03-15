@@ -57,6 +57,7 @@
 + (id)queryStringByJoiningQueries:(id)arg1 withOperand:(int)arg2;
 + (id)_modifierStringFromModifiers:(unsigned int)arg1;
 + (id)_operandStringForOperand:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSSearchQuery *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSError *simulatedFailedQueryError; // @synthesize simulatedFailedQueryError=_simulatedFailedQueryError;
 @property(nonatomic) int count; // @synthesize count=_count;
@@ -80,7 +81,6 @@
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType resultsBlock; // @synthesize resultsBlock=_resultsBlock;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (void)_logSignpostForSearchQueryDidFinishWithStatus:(id)arg1;
 - (void)_logSignpostForSearchQueryDidReceiveFirstResultsWithItemCount:(unsigned int)arg1;
 - (void)_logSignpostForSearchQueryStart;

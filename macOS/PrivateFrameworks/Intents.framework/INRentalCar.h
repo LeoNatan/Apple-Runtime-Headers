@@ -23,12 +23,12 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *rentalCarDescription; // @synthesize rentalCarDescription=_rentalCarDescription;
 @property(readonly, copy) NSString *model; // @synthesize model=_model;
 @property(readonly, copy) NSString *make; // @synthesize make=_make;
 @property(readonly, copy) NSString *type; // @synthesize type=_type;
 @property(readonly, copy) NSString *rentalCompanyName; // @synthesize rentalCompanyName=_rentalCompanyName;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

@@ -15,10 +15,10 @@
     id _playerStateDidChangeObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id playerStateDidChangeObserver; // @synthesize playerStateDidChangeObserver=_playerStateDidChangeObserver;
 @property(nonatomic) double effectiveRate; // @synthesize effectiveRate=_effectiveRate;
 @property(readonly, nonatomic) NSObject<TVPPlayback> *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_updateEffectiveRate;
 - (double)_effectiveRateForPlaybackRate:(double)arg1 inState:(id)arg2 withInterstitial:(id)arg3;
 - (id)_playbackState;

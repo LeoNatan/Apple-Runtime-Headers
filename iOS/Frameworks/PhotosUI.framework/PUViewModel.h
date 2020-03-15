@@ -20,9 +20,9 @@
     NSHashTable *__changeObservers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *_changeObservers; // @synthesize _changeObservers=__changeObservers;
 @property(nonatomic, getter=_isPublishingChanges, setter=_setPublishingChanges:) _Bool _publishingChanges; // @synthesize _publishingChanges=__publishingChanges;
-- (void).cxx_destruct;
 - (id)debugDetailedDescription;
 - (void)unregisterChangeObserver:(id)arg1;
 - (void)registerChangeObserver:(id)arg1;

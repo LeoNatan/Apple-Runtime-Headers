@@ -21,6 +21,7 @@
 }
 
 + (_Bool)pointSelectionContextsHaveUserInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastFirstLollipopDate; // @synthesize lastFirstLollipopDate=_lastFirstLollipopDate;
 @property(copy, nonatomic) NSArray *lastSelectionLocation; // @synthesize lastSelectionLocation=_lastSelectionLocation;
 @property(retain, nonatomic) NSMutableArray *extensionViews; // @synthesize extensionViews=_extensionViews;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) UIView *parentView; // @synthesize parentView=_parentView;
 @property(readonly, nonatomic) __weak id <HKLollipopDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HKInteractiveChartAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
-- (void).cxx_destruct;
 - (void)_setAlpha:(float)arg1;
 - (void)_setHidden:(_Bool)arg1;
 - (void)_bringViewsToFront;

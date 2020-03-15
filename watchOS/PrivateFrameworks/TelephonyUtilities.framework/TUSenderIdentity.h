@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedShortName; // @synthesize localizedShortName=_localizedShortName;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, nonatomic) TUHandle *handle; // @synthesize handle=_handle;
 @property(readonly, nonatomic) NSUUID *accountUUID; // @synthesize accountUUID=_accountUUID;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (_Bool)isEqualToSenderIdentity:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

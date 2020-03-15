@@ -15,10 +15,12 @@ __attribute__((visibility("hidden")))
     CNContact *_unifiedContact;
 }
 
++ (unsigned long long)instanceSortOrder;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContact *unifiedContact; // @synthesize unifiedContact=_unifiedContact;
 @property(readonly, nonatomic) CNContact *preferredContact; // @synthesize preferredContact=_preferredContact;
-- (void).cxx_destruct;
+- (long long)comparisonResultWithinSameClass:(id)arg1;
 - (void)acceptEventVisitor:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

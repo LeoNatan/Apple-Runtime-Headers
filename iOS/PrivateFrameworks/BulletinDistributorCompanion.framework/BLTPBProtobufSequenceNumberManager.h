@@ -22,11 +22,11 @@
     NSUUID *_recvSessionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *recvSessionIdentifier; // @synthesize recvSessionIdentifier=_recvSessionIdentifier;
 @property(readonly, nonatomic) NSUUID *currentSessionIdentifier; // @synthesize currentSessionIdentifier=_currentSessionIdentifier;
 @property(readonly, copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(nonatomic) unsigned long long sessionState; // @synthesize sessionState=_sessionState;
-- (void).cxx_destruct;
 - (_Bool)_writeSequenceNumbersToStore;
 - (void)_readSequenceNumbersFromStoreWithInitialDuplicateCapacity:(unsigned long long)arg1;
 - (id)_sequenceNumbersURL;

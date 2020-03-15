@@ -38,6 +38,7 @@
     SBAppLayout *_selectedAppLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBAppLayout *selectedAppLayout; // @synthesize selectedAppLayout=_selectedAppLayout;
 @property(readonly, nonatomic) NSUUID *gestureID; // @synthesize gestureID=_gestureID;
 @property(readonly, nonatomic) _Bool hasCompletedAtLeastOneGesture; // @synthesize hasCompletedAtLeastOneGesture=_hasCompletedAtLeastOneGesture;
@@ -54,10 +55,10 @@
 @property(nonatomic) __weak id <SBFluidSwitcherGestureWorkspaceTransactionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool shouldCancelGestureUponInterruption; // @synthesize shouldCancelGestureUponInterruption=_shouldCancelGestureUponInterruption;
 @property(nonatomic) __weak SBFluidSwitcherViewController *switcherViewController; // @synthesize switcherViewController=_switcherViewController;
-- (void).cxx_destruct;
 - (void)_updatePPTsForAnimationEndedWithFinalLayoutState:(id)arg1;
 - (void)_updatePPTsForGestureEnded;
 - (void)_updatePPTsForGestureTransactionBegan;
+- (void)_updateDigitizerSurfaceDimensions;
 - (void)_addWaitForSceneLayoutTransitionTransaction:(id)arg1 forLeafAnimationControllers:(id)arg2;
 - (id)_transitionRequestForApplicationTransitionContext:(id)arg1 eventLabel:(id)arg2;
 - (id)_createWorkspaceTransientOverlayForAppLayout:(id)arg1;

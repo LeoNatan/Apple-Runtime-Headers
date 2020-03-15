@@ -21,9 +21,9 @@
     CDUnknownBlockType _prepareBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BundleData *bundle; // @synthesize bundle=_bundle;
 @property(readonly, nonatomic) BundleData *stagedBundle; // @synthesize stagedBundle=_stagedBundle;
-- (void).cxx_destruct;
 - (void)access:(CDUnknownBlockType)arg1;
 - (void)handleReload;
 - (id)initWithURL:(id)arg1 withStagedURL:(id)arg2 withReloadBlock:(CDUnknownBlockType)arg3 withPrepareBlock:(CDUnknownBlockType)arg4;

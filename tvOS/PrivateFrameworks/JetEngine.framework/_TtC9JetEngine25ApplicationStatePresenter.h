@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: isEnabled
     // Error parsing type: , name: delegate
+    // Error parsing type: , name: onActiveDidChange
 }
 
 - (void)applicationDidResignActive;

@@ -22,12 +22,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *pluginControllerQueue; // @synthesize pluginControllerQueue=_pluginControllerQueue;
 @property BOOL isSuspended; // @synthesize isSuspended=_isSuspended;
 @property(retain) NSMutableArray *loadedConnections; // @synthesize loadedConnections=_loadedConnections;
 @property(retain) NSMutableDictionary *plugInNameToController; // @synthesize plugInNameToController=_plugInNameToController;
 @property(retain) NSMutableDictionary *plugInNameToBundle; // @synthesize plugInNameToBundle=_plugInNameToBundle;
-- (void).cxx_destruct;
 - (void)reconnect;
 - (void)suspendConnections;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

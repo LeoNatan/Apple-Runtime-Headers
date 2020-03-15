@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     UIPressesEvent *_event;
 }
 
+- (void).cxx_destruct;
 @property _Bool cloneForSecondDelivery; // @synthesize cloneForSecondDelivery=_cloneForSecondDelivery;
 @property(retain, nonatomic) UIPressesEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) UIPress *stateWhenDelivered; // @synthesize stateWhenDelivered=_stateWhenDelivered;
 @property(retain, nonatomic) UIPress *stateWhenDelayed; // @synthesize stateWhenDelayed=_stateWhenDelayed;
 @property(retain, nonatomic) UIPress *press; // @synthesize press=_press;
-- (void).cxx_destruct;
 - (id)description;
 - (double)timestampForDelivery;
 - (int)phaseForDelivery;

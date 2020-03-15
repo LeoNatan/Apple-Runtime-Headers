@@ -25,6 +25,7 @@
 
 + (id)defaultCellReuseIdentifier;
 + (Class)defaultCellClass;
+- (void).cxx_destruct;
 @property(nonatomic) long long cellSelectionStyle; // @synthesize cellSelectionStyle=_cellSelectionStyle;
 @property(copy, nonatomic) CDUnknownBlockType cellWillDisplayHandler; // @synthesize cellWillDisplayHandler=_cellWillDisplayHandler;
 @property(copy, nonatomic) CDUnknownBlockType cellCustomizationHandler; // @synthesize cellCustomizationHandler=_cellCustomizationHandler;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 @property(nonatomic) double shouldHighlight; // @synthesize shouldHighlight=_shouldHighlight;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

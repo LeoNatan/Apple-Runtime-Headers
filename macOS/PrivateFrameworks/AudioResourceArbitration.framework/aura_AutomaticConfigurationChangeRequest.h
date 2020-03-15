@@ -30,6 +30,8 @@
 }
 
 + (id)automaticConfigurationChangeRequestWithSessionToken:(unsigned int)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) optional_9c576aeb virtualPortTypeRoutingPolicies; // @synthesize virtualPortTypeRoutingPolicies;
 @property(nonatomic) optional_bb3d55d3 virtualPortRoutingPolicies; // @synthesize virtualPortRoutingPolicies;
 @property(nonatomic) optional_69f94aa5 unroutableVirtualPorts; // @synthesize unroutableVirtualPorts;
@@ -47,8 +49,6 @@
 @property(nonatomic) optional_cd8a9b08 category; // @synthesize category;
 @property(nonatomic) optional_d2ff5826 cameraDirection; // @synthesize cameraDirection;
 @property(nonatomic) optional_cfbf477b boxAcquisitionPreferences; // @synthesize boxAcquisitionPreferences;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init:(unsigned int)arg1;

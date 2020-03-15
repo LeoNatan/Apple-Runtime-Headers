@@ -26,9 +26,9 @@
 }
 
 + (BOOL)_verboseMode;
+- (void).cxx_destruct;
 @property(readonly) __weak id <PKInstallOperationControllerDelegate><NSObject> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)_markEndOfCancellableOperations;
 - (BOOL)_isCancelled;
 - (id)_currentOperation;

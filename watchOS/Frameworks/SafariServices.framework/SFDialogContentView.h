@@ -32,9 +32,9 @@ __attribute__((visibility("hidden")))
     NSArray *_actions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) __weak _SFDialogView *dialogView; // @synthesize dialogView=_dialogView;
-- (void).cxx_destruct;
 - (void)_invokeDelegateWithSelectedIndex:(unsigned int)arg1;
 - (void)_escapeAction:(id)arg1;
 - (void)_optionReturnAction:(id)arg1;

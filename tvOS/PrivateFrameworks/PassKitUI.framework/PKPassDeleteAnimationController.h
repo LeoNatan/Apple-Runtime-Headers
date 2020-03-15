@@ -18,10 +18,10 @@
 }
 
 + (void)performPassbookDeleteWithView:(id)arg1 inSuperview:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) PKPassGroupView *groupView; // @synthesize groupView=_groupView;
 @property(readonly, retain, nonatomic) PKPassView *passView; // @synthesize passView=_passView;
 @property(nonatomic) __weak id <PKPassDeleteAnimationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_unregisterForEnterBackgroundNotification;
 - (void)_registerForEnterBackgroundNotification;

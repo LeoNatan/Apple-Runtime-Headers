@@ -17,9 +17,9 @@
     id <SVVideoViewControllerSizeObserverFactory> _videoViewControllerSizeObserverFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoViewControllerSizeObserverFactory> videoViewControllerSizeObserverFactory; // @synthesize videoViewControllerSizeObserverFactory=_videoViewControllerSizeObserverFactory;
 @property(readonly, nonatomic) id <SVVideoPresentationSizeObserverFactory> presentationSizeObserverFactory; // @synthesize presentationSizeObserverFactory=_presentationSizeObserverFactory;
-- (void).cxx_destruct;
 - (id)createVideoGravityProviderForVideo:(id)arg1;
 - (id)initWithPresentationSizeObserverFactory:(id)arg1 videoViewControllerSizeObserverFactory:(id)arg2;
 

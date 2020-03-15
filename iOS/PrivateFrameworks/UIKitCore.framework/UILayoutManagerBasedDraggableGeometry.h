@@ -20,10 +20,10 @@
     NSLayoutManager *_layoutManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 @property(readonly, nonatomic) __weak UIView<UITextDragSupporting><UITextDropSupporting> *view; // @synthesize view=_view;
 @property(nonatomic) long long geometryOptions; // @synthesize geometryOptions=_geometryOptions;
-- (void).cxx_destruct;
 - (struct CGRect)_textRectForRange:(struct _NSRange)arg1 inView:(id)arg2;
 - (struct CGPoint)_textOriginOffsetForRange:(struct _NSRange)arg1 inView:(id)arg2;
 - (void)_renderTextInRange:(struct _NSRange)arg1 image:(out id *)arg2 boundingRectangles:(out id *)arg3 forLifting:(_Bool)arg4;

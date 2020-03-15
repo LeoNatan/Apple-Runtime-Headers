@@ -16,9 +16,9 @@
     NSArray *_interpretationIndices;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *interpretationIndices; // @synthesize interpretationIndices=_interpretationIndices;
 @property(readonly, copy, nonatomic) NSArray *tokenSausage; // @synthesize tokenSausage=_tokenSausage;
-- (void).cxx_destruct;
 - (id)description;
 - (id)granularizedRecognition;
 - (pair_a60b4d2a)_tokenPhraseChoiceList;

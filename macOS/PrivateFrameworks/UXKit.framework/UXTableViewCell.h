@@ -38,6 +38,7 @@
     struct NSEdgeInsets _separatorInset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSeparatorColor:) NSColor *_separatorColor; // @synthesize _separatorColor=__separatorColor;
 @property(nonatomic, setter=_setSeparatorHeight:) double _separatorHeight; // @synthesize _separatorHeight=__separatorHeight;
 @property(nonatomic, setter=_setSeparatorStyle:) long long _separatorStyle; // @synthesize _separatorStyle=__separatorStyle;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) UXView *selectedBackgroundView; // @synthesize selectedBackgroundView=_selectedBackgroundView;
 @property(retain, nonatomic) UXView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (long long)_detailTextAlignment;
 - (void)_configureInternalAccessoryViewForType:(long long)arg1;

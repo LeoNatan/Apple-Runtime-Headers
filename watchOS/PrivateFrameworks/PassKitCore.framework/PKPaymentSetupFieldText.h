@@ -25,6 +25,7 @@
     NSArray *_paddingCharacters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *paddingCharacters; // @synthesize paddingCharacters=_paddingCharacters;
 @property(retain, nonatomic) NSMutableCharacterSet *allowedCharacters; // @synthesize allowedCharacters=_allowedCharacters;
 @property(copy, nonatomic) NSString *displayFormatPlaceholder; // @synthesize displayFormatPlaceholder=_displayFormatPlaceholder;
@@ -36,7 +37,6 @@
 @property(nonatomic, getter=isSecureText) _Bool secureText; // @synthesize secureText=_secureText;
 @property(nonatomic) unsigned int maxLength; // @synthesize maxLength=_maxLength;
 @property(nonatomic) unsigned int minLength; // @synthesize minLength=_minLength;
-- (void).cxx_destruct;
 - (unsigned int)fieldType;
 - (void)updateWithConfiguration:(id)arg1;
 - (void)updateDisplayFormat:(id)arg1;

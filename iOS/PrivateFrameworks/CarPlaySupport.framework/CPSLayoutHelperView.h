@@ -13,8 +13,8 @@
     id <CPSLayoutHelperViewDelegate> _layoutDelegate;
 }
 
-@property(nonatomic) __weak id <CPSLayoutHelperViewDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CPSLayoutHelperViewDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
 - (void)layoutSubviews;
 - (id)init;
 

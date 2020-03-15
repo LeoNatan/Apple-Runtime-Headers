@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *secondaryTextContentType; // @synthesize secondaryTextContentType=_secondaryTextContentType;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) NSString *initialText; // @synthesize initialText=_initialText;
@@ -34,7 +35,6 @@
 @property(nonatomic) int minimumLength; // @synthesize minimumLength=_minimumLength;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
 @property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -15,10 +15,10 @@
     NSMutableSet *_deleted;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *deleted; // @synthesize deleted=_deleted;
 @property(retain, nonatomic) NSMutableSet *updated; // @synthesize updated=_updated;
 @property(retain, nonatomic) NSMutableSet *inserted; // @synthesize inserted=_inserted;
-- (void).cxx_destruct;
 - (void)cleanupState;
 
 @end

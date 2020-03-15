@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     BOOL m_isSuspended;
     BOOL m_wasBlinking;
     int m_showingCommandsCounterForRotate;
+    unsigned long long _activeGrabberSuppressionAssertions;
     BOOL m_forceRangeView;
     BOOL m_isInstalledInSelectionContainerView;
     BOOL _isIndirectFloatingCaret;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _previousGhostCaretRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RVItem *rvItem; // @synthesize rvItem=_rvItem;
 @property(nonatomic) struct CGRect previousGhostCaretRect; // @synthesize previousGhostCaretRect=_previousGhostCaretRect;
 @property(nonatomic) BOOL isIndirectFloatingCaret; // @synthesize isIndirectFloatingCaret=_isIndirectFloatingCaret;
@@ -51,7 +53,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL forceRangeView; // @synthesize forceRangeView=m_forceRangeView;
 @property(readonly, nonatomic) __weak UITextInteractionAssistant *interactionAssistant; // @synthesize interactionAssistant=m_interactionAssistant;
 @property(readonly, nonatomic) UIView *floatingCaretView; // @synthesize floatingCaretView=m_floatingCaretView;
-- (void).cxx_destruct;
 - (struct CGRect)clippedTargetRect:(struct CGRect)arg1;
 - (id)scrollView;
 - (void)updateSelectionWithDocumentPoint:(struct CGPoint)arg1;
@@ -69,6 +70,9 @@ __attribute__((visibility("hidden")))
 - (void)updateDocumentHasContent:(BOOL)arg1;
 - (id)dynamicCaretList;
 - (id)dynamicCaret;
+- (void)releaseGrabberHandleSuppressionAssertion:(id)arg1;
+- (BOOL)shouldSuppressSelectionHandles;
+- (id)obtainGrabberSuppressionAssertion;
 - (void)endFloatingCursor;
 - (void)endFloatingCaretView;
 - (void)animateCaret:(id)arg1 toPosition:(struct CGPoint)arg2 withSize:(struct CGSize)arg3;
@@ -109,6 +113,7 @@ __attribute__((visibility("hidden")))
 - (void)showReplacementsWithGenerator:(id)arg1 forDictation:(BOOL)arg2 afterDelay:(double)arg3;
 - (void)calculateReplacementsWithGenerator:(id)arg1 andShowAfterDelay:(double)arg2;
 - (void)_showSelectionCommandsForContextMenu:(BOOL)arg1;
+- (void)updateRangeViewForSelectionMode;
 - (void)showSelectionCommandsForContextMenuWithRVItem:(id)arg1 atLocationInView:(struct CGPoint)arg2;
 - (void)showSelectionCommands;
 - (void)showSelectionCommandsAfterDelay:(double)arg1;
@@ -133,7 +138,9 @@ __attribute__((visibility("hidden")))
 - (void)tintColorDidChange;
 - (void)updateSelectionRects;
 - (void)selectionChanged;
+- (id)_actingParentViewForGestureRecognizers;
 - (void)installIfNecessary;
+- (id)_customSelectionContainerView;
 - (void)clearRangeAnimated:(BOOL)arg1;
 - (void)removeFromSuperview;
 - (void)textSelectionViewActivated:(id)arg1;

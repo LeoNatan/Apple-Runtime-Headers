@@ -56,6 +56,7 @@
 + (void)cacheCalendarUID:(int)arg1 forCalendarURLString:(id)arg2;
 + (id)calURLToUIDCache;
 + (id)calendarWithCalCalendar:(void *)arg1 principal:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *URLToEtagMap; // @synthesize URLToEtagMap=_URLToEtagMap;
 @property(retain, nonatomic) NSMutableDictionary *URLToRecordIDMap; // @synthesize URLToRecordIDMap=_URLToRecordIDMap;
 @property(retain, nonatomic) NSMutableDictionary *uniqueIdentifierToRecordIDMap; // @synthesize uniqueIdentifierToRecordIDMap=_uniqueIdentifierToRecordIDMap;
@@ -81,7 +82,6 @@
 @property(nonatomic) _Bool isScheduleOutbox; // @synthesize isScheduleOutbox=_isScheduleOutbox;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
 @property(retain, nonatomic) NSString *calendarURLString; // @synthesize calendarURLString=_calendarURLString;
-- (void).cxx_destruct;
 - (Class)appSpecificCalendarItemClass;
 - (void)syncDidFinishWithError:(id)arg1;
 - (void)flushCaches;

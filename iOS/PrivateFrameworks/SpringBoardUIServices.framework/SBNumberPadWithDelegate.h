@@ -13,8 +13,8 @@
     id <SBNumberPadDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBNumberPadDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBNumberPadDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)buttonForPoint:(struct CGPoint)arg1 forEvent:(id)arg2;
 - (void)buttonCancelled:(id)arg1;

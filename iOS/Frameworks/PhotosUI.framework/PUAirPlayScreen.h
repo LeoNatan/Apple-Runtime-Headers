@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setWindow:) UIWindow *_window; // @synthesize _window=__window;
 @property(retain, nonatomic) UIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
 @property(nonatomic, setter=_setSize:) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic, setter=_setType:) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic, setter=_setIdentifier:) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic, setter=_setScreen:) UIScreen *screen; // @synthesize screen=_screen;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_updateWindow;
 @property(readonly, nonatomic) NSString *_typeName;

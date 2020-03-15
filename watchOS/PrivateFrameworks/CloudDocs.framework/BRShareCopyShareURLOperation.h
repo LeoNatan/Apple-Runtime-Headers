@@ -17,11 +17,11 @@
     CDUnknownBlockType _copyShareURLCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType copyShareURLCompletionBlock; // @synthesize copyShareURLCompletionBlock=_copyShareURLCompletionBlock;
 @property(copy) CDUnknownBlockType shareCopyURLCompletionBlock; // @synthesize shareCopyURLCompletionBlock=_shareCopyURLCompletionBlock;
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(retain, nonatomic) CKShare *share; // @synthesize share=_share;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithFileURL:(id)arg1 documentType:(id)arg2;

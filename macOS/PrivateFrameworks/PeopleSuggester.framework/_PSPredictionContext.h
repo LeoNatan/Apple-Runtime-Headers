@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *photoSuggestedPeople; // @synthesize photoSuggestedPeople=_photoSuggestedPeople;
 @property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(copy, nonatomic) NSDictionary *appBundleIdsToShareExtensionBundleIdsMapping; // @synthesize appBundleIdsToShareExtensionBundleIdsMapping=_appBundleIdsToShareExtensionBundleIdsMapping;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSArray *locationUUIDs; // @synthesize locationUUIDs=_locationUUIDs;
 @property(copy, nonatomic) NSUUID *locationUUID; // @synthesize locationUUID=_locationUUID;
 @property(copy, nonatomic) NSDate *suggestionDate; // @synthesize suggestionDate=_suggestionDate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     long long _defaultBackgroundMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long defaultBackgroundMode; // @synthesize defaultBackgroundMode=_defaultBackgroundMode;
 @property(readonly, nonatomic) _SFSettingsAlertItemBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) _Bool hidesSeparator; // @synthesize hidesSeparator=_hidesSeparator;
 @property(nonatomic) __weak _SFSettingsAlertItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long backgroundMode;
 - (void)_updateBackgroundView;
 - (void)setHighlighted:(_Bool)arg1;

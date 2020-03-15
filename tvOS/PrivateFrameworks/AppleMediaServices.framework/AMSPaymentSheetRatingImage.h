@@ -16,11 +16,12 @@ __attribute__((visibility("hidden")))
     NSString *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *URLString; // @synthesize URLString=_URLString;
 @property(readonly, nonatomic) long long ratingType; // @synthesize ratingType=_ratingType;
-- (void).cxx_destruct;
 - (long long)_ratingTypeForType:(id)arg1;
+@property(readonly, nonatomic) _Bool tint;
 @property(readonly, copy, nonatomic) NSString *localAssetName;
 @property(readonly, nonatomic, getter=isServerSupplied) _Bool serverSupplied;
 - (id)initWithDictionary:(id)arg1;

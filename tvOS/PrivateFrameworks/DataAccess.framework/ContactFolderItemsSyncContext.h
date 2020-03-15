@@ -15,10 +15,10 @@
     CNChangeHistoryAnchor *_cnChangeAnchor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNChangeHistoryAnchor *cnChangeAnchor; // @synthesize cnChangeAnchor=_cnChangeAnchor;
 @property(nonatomic) int abGroupChangeId; // @synthesize abGroupChangeId=_abGroupChangeId;
 @property(nonatomic) int abPersonChangeId; // @synthesize abPersonChangeId=_abPersonChangeId;
-- (void).cxx_destruct;
 
 @end
 

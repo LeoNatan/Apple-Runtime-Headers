@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *donationValidationURL; // @synthesize donationValidationURL=_donationValidationURL;
 @property(readonly, nonatomic) NSURL *donationPurchaseURL; // @synthesize donationPurchaseURL=_donationPurchaseURL;
 @property(readonly, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(readonly, nonatomic) NSArray *allCharities; // @synthesize allCharities=_charities;
-- (void).cxx_destruct;
 - (void)_setLogoImage:(id)arg1 forCharity:(id)arg2;
 - (void)_finishLoadWithResponse:(id)arg1 error:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)removeObserver:(id)arg1;

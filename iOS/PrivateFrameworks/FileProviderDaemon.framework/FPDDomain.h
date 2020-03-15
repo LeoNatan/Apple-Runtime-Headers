@@ -50,6 +50,7 @@
     NSData *_fpfsRootBookmarkData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceNoFPFSForTesting; // @synthesize forceNoFPFSForTesting=_forceNoFPFSForTesting;
 @property(retain, nonatomic) NSData *fpfsRootBookmarkData; // @synthesize fpfsRootBookmarkData=_fpfsRootBookmarkData;
 @property(retain, nonatomic) FPDDomainIndexer *indexer; // @synthesize indexer=_indexer;
@@ -72,7 +73,6 @@
 @property(nonatomic) _Bool started; // @synthesize started=_started;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <FPDDomainIndexChangeDelegate> indexChangeDelegate; // @synthesize indexChangeDelegate=_indexChangeDelegate;
-- (void).cxx_destruct;
 - (void)dumpStateTo:(id)arg1 limitNumberOfItems:(_Bool)arg2;
 - (void)dumpInternalStateTo:(id)arg1 request:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (long long)nonEvictableSpace;

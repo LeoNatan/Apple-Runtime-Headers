@@ -17,7 +17,7 @@
 - (void)activityDidFinish:(_Bool)arg1;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)_activityBundleImageConfiguration;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
 - (id)initWithFindOnPageView:(id)arg1;

@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     UINSWindow *_backingWindow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UINSWindow *backingWindow; // @synthesize backingWindow=_backingWindow;
 @property(nonatomic) BOOL autoHidesToolbarInFullScreen; // @synthesize autoHidesToolbarInFullScreen=_autoHidesToolbarInFullScreen;
-- (void).cxx_destruct;
 - (id)toolbarDefaultItemIdentifiers:(id)arg1;
 - (id)toolbarAllowedItemIdentifiers:(id)arg1;
 - (id)toolbar:(id)arg1 itemForItemIdentifier:(id)arg2 willBeInsertedIntoToolbar:(BOOL)arg3;

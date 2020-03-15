@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     int _hapticState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int hapticState; // @synthesize hapticState=_hapticState;
 @property(nonatomic, getter=isProminentHapticEnabled) _Bool prominentHapticEnabled; // @synthesize prominentHapticEnabled=_prominentHapticEnabled;
 @property(nonatomic, getter=isSystemMuted) _Bool systemMuted; // @synthesize systemMuted=_systemMuted;
@@ -52,7 +53,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isVolumeWarningEnabled) _Bool volumeWarningEnabled; // @synthesize volumeWarningEnabled=_volumeWarningEnabled;
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
 @property(nonatomic) __weak id <NACVolumeControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_cancelSetHapticStateTimer;

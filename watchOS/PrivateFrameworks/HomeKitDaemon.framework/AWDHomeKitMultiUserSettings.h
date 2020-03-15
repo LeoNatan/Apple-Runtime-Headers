@@ -20,9 +20,9 @@
 }
 
 + (Class)homeKitMultiUserSettingsValuesByKeyPathType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *homeKitMultiUserSettingsValuesByKeyPaths; // @synthesize homeKitMultiUserSettingsValuesByKeyPaths=_homeKitMultiUserSettingsValuesByKeyPaths;
 @property(nonatomic) _Bool isOwner; // @synthesize isOwner=_isOwner;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

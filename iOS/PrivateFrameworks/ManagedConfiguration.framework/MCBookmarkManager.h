@@ -18,11 +18,11 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) int notificationToken; // @synthesize notificationToken=_notificationToken;
 @property(retain, nonatomic) NSDictionary *memberQueueStashedBookmarksByLabel; // @synthesize memberQueueStashedBookmarksByLabel=_memberQueueStashedBookmarksByLabel;
 @property(retain, nonatomic) NSArray *memberQueueCurrentUserBookmarks; // @synthesize memberQueueCurrentUserBookmarks=_memberQueueCurrentUserBookmarks;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
-- (void).cxx_destruct;
 - (void)unstashUserBookmarksFromLabel:(id)arg1;
 - (void)stashUserBookmarksWithLabel:(id)arg1 newUserBookmarks:(id)arg2;
 - (void)memberQueueStashUserBookmarksWithLabel:(id)arg1 newUserBookmarks:(id)arg2;

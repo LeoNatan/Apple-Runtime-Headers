@@ -35,13 +35,13 @@
 + (void)_setManagedObjectContextMomentarilyBlessed:(id)arg1;
 + (void)setManagerMomentarilyBlessed:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PLPhotoLibrary *momentGenerationLibrary; // @synthesize momentGenerationLibrary=_momentGenerationLibrary;
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(readonly, nonatomic) PLCameraAppWatcher *cameraWatcher; // @synthesize cameraWatcher=_cameraWatcher;
 @property(nonatomic) _Bool previousValidationSucceeded; // @synthesize previousValidationSucceeded=_previousValidationSucceeded;
 @property(nonatomic) int previousValidatedModelVersion; // @synthesize previousValidatedModelVersion=_previousValidatedModelVersion;
 @property(nonatomic) _Bool shouldPerformLightweightValidation; // @synthesize shouldPerformLightweightValidation=_shouldPerformLightweightValidation;
-- (void).cxx_destruct;
 - (void)runPeriodicMaintenanceTasks:(unsigned int)arg1 withTransaction:(id)arg2;
 - (void)fetchLocationsOfInterestIfNeeded;
 - (_Bool)cameraIsActive;

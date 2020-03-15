@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     VTKFileStoreManager *_fileStoreManager;
 }
 
-@property(readonly, nonatomic) VTKFileStoreManager *fileStoreManager; // @synthesize fileStoreManager=_fileStoreManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) VTKFileStoreManager *fileStoreManager; // @synthesize fileStoreManager=_fileStoreManager;
 @property(copy, nonatomic) NSString *itemsDirectory;
 - (id)saveItems:(id)arg1 withID:(id)arg2 testCase:(id)arg3;
 - (id)init;

@@ -18,10 +18,10 @@
     NSMutableDictionary *_itemMetadataItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *itemMetadataItems; // @synthesize itemMetadataItems=_itemMetadataItems;
 @property(retain, nonatomic) NSMutableDictionary *itemCompletedBlocks; // @synthesize itemCompletedBlocks=_itemCompletedBlocks;
 @property(retain, nonatomic) id <BLHLSSegmentCaching> segmentCacher; // @synthesize segmentCacher=_segmentCacher;
-- (void).cxx_destruct;
 - (void)removeCacheForMediaItem:(id)arg1;
 - (void)segmentCacher:(id)arg1 didUpdateItem:(id)arg2 error:(id)arg3;
 - (void)updateItems:(id)arg1 itemsProgress:(id)arg2 itemCompletedBlock:(CDUnknownBlockType)arg3;

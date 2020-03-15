@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)sizeWithContactMatchAndContactLabel:(id)arg1;
+- (void).cxx_destruct;
 @property __weak NSTextField *contactMatchAndContactLabelTextField; // @synthesize contactMatchAndContactLabelTextField=_contactMatchAndContactLabelTextField;
 @property(copy, nonatomic) NSString *contactMatchAndContactLabel; // @synthesize contactMatchAndContactLabel=_contactMatchAndContactLabel;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 
 @end

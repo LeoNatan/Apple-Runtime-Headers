@@ -20,12 +20,12 @@
     NSMutableArray *_undoCommands;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *undoCommands; // @synthesize undoCommands=_undoCommands;
 @property(nonatomic) unsigned long long editingCount; // @synthesize editingCount=_editingCount;
 @property(readonly, nonatomic) NSUUID *rowID; // @synthesize rowID=_rowID;
 @property(readonly, nonatomic) NSUUID *columnID; // @synthesize columnID=_columnID;
 @property(readonly, nonatomic) __weak id <ICTableCellMergeableStringObserving> changeObserver; // @synthesize changeObserver=_changeObserver;
-- (void).cxx_destruct;
 - (_Bool)wantsUndoCommands;
 - (void)addUndoCommand:(id)arg1;
 - (void)edited:(unsigned long long)arg1 range:(struct _NSRange)arg2 changeInLength:(long long)arg3;

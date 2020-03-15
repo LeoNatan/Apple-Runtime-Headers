@@ -14,9 +14,9 @@
     NSString *_transportType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *transportType; // @synthesize transportType=_transportType;
 @property(retain, nonatomic) NSKeyedArchiver *archiver; // @synthesize archiver=_archiver;
-- (void).cxx_destruct;
 - (id)encodedData;
 - (void)finishEncoding;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;

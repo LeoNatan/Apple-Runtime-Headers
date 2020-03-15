@@ -13,8 +13,8 @@
     NSData *_a;
 }
 
-@property(copy, nonatomic) NSData *a; // @synthesize a=_a;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *a; // @synthesize a=_a;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

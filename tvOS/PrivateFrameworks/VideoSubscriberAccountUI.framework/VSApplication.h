@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSError *_failureToStart;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *failureToStart; // @synthesize failureToStart=_failureToStart;
 @property(retain, nonatomic) NSHTTPCookieStorage *cookieStorage; // @synthesize cookieStorage=_cookieStorage;
 @property(retain, nonatomic) VSAppDeviceConfig *appDeviceConfig; // @synthesize appDeviceConfig=_appDeviceConfig;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VSApplicationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(readonly, copy, nonatomic) NSURL *bootURL; // @synthesize bootURL=_bootURL;
-- (void).cxx_destruct;
 - (id)viewElementRegistry;
 - (id)activeDocument;
 - (id)appLaunchParams;

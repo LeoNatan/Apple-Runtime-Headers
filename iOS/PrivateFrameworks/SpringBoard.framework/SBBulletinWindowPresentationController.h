@@ -15,10 +15,10 @@
     struct CGRect _counterRotatedOriginalBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_counterRotatedOriginalBounds, setter=_setCounterRotatedOriginalBounds:) struct CGRect counterRotatedOriginalBounds; // @synthesize counterRotatedOriginalBounds=_counterRotatedOriginalBounds;
 @property(nonatomic, getter=_counterRotatedAngle, setter=_setCounterRotatedAngle:) double counterRotatedAngle; // @synthesize counterRotatedAngle=_counterRotatedAngle;
 @property(retain, nonatomic, getter=_counterRotatedView, setter=_setCounterRotatedView:) UIView *counterRotatedView; // @synthesize counterRotatedView=_counterRotatedView;
-- (void).cxx_destruct;
 - (void)dismissalTransitionDidEnd:(_Bool)arg1;
 - (void)presentationTransitionDidEnd:(_Bool)arg1;
 - (void)_removeCounterRotationIfNecessary;

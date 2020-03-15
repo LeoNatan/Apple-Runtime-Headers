@@ -14,8 +14,8 @@
 }
 
 + (id)eventForPayload:(id)arg1 error:(id *)arg2;
-@property(copy, nonatomic) NSString *payloadType; // @synthesize payloadType=_payloadType;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *payloadType; // @synthesize payloadType=_payloadType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -30,6 +30,7 @@
     NSLayoutConstraint *_titleTextPasswordConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *titleTextPasswordConstraint; // @synthesize titleTextPasswordConstraint=_titleTextPasswordConstraint;
 @property __weak NSLayoutConstraint *usernamePasswordConstraint; // @synthesize usernamePasswordConstraint=_usernamePasswordConstraint;
 @property __weak NSLayoutConstraint *titleTextUsernameConstraint; // @synthesize titleTextUsernameConstraint=_titleTextUsernameConstraint;
@@ -47,7 +48,6 @@
 @property(copy) NSImage *sheetIcon; // @synthesize sheetIcon=_sheetIcon;
 @property(copy) NSString *userFullName; // @synthesize userFullName=_userFullName;
 @property __weak id <IASLocalSecretDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)validatePasswordPrompt:(id)arg1;
 - (void)cancelPasswordPrompt:(id)arg1;
 - (void)_updateLayout;

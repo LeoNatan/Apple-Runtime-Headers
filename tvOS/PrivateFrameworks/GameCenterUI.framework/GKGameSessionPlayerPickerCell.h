@@ -21,6 +21,7 @@
     double _selectionInitialVerticalConstant;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double selectionInitialVerticalConstant; // @synthesize selectionInitialVerticalConstant=_selectionInitialVerticalConstant;
 @property(nonatomic) double selectionInitialHorizontalConstant; // @synthesize selectionInitialHorizontalConstant=_selectionInitialHorizontalConstant;
 @property(nonatomic) double nameInitialConstant; // @synthesize nameInitialConstant=_nameInitialConstant;
@@ -30,7 +31,6 @@
 @property(nonatomic) __weak UIButton *selectionButton; // @synthesize selectionButton=_selectionButton;
 @property(nonatomic) __weak UIImageView *selectionView; // @synthesize selectionView=_selectionView;
 @property(nonatomic, getter=isSelectable) _Bool selectable; // @synthesize selectable=_selectable;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)setSelected:(_Bool)arg1;
 - (void)awakeFromNib;

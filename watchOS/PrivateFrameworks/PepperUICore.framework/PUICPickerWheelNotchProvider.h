@@ -16,11 +16,11 @@
     int _notchStrength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int notchStrength; // @synthesize notchStrength=_notchStrength;
 @property(retain, nonatomic) UIView *enclosingView; // @synthesize enclosingView=_enclosingView;
 @property(nonatomic) float itemRowHeight; // @synthesize itemRowHeight=_itemRowHeight;
 @property(nonatomic) int itemCount; // @synthesize itemCount=_itemCount;
-- (void).cxx_destruct;
 - (void)configureMinorDetentsBasedOnResultingNotches;
 - (void)generateNotches;
 - (id)initWithNotchStrength:(int)arg1;

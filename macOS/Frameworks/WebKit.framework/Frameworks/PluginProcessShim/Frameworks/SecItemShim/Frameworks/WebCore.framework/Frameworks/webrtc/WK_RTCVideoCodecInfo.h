@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_parameters;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

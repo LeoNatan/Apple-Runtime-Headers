@@ -15,8 +15,8 @@
     id _delegate;
 }
 
-@property(readonly) __weak id <ISIconObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) __weak id <ISIconObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)iconManager:(id)arg1 didInvalidateIcons:(id)arg2;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;

@@ -17,9 +17,9 @@
     UIViewController *_contraption;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *contraption; // @synthesize contraption=_contraption;
 @property(readonly, nonatomic) HUQuickControlViewProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithViewController:(id)arg1 profile:(id)arg2;

@@ -32,6 +32,7 @@
     struct UIEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IKNetworkRequestLoader> requestLoader; // @synthesize requestLoader=_requestLoader;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
@@ -49,7 +50,6 @@
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly, copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 - (unsigned long long)preferedMonogramType;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

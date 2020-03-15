@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_participantsInArray:(id)arg1 thatAreNotInArray:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool prohibitCallingSearcherStateChanged; // @synthesize prohibitCallingSearcherStateChanged=_prohibitCallingSearcherStateChanged;
 @property(retain, nonatomic) EKInviteeAlternativeTimeSearcher *availabilitySearcher; // @synthesize availabilitySearcher=_availabilitySearcher;
 @property(retain, nonatomic) EKUIInviteesViewAllInviteesCanAttendSection *allInviteesCanAttendSection; // @synthesize allInviteesCanAttendSection=_allInviteesCanAttendSection;
@@ -62,7 +63,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *selectedEndDate; // @synthesize selectedEndDate=_selectedEndDate;
 @property(retain, nonatomic) NSDate *selectedStartDate; // @synthesize selectedStartDate=_selectedStartDate;
 @property(nonatomic) __weak EKUIEventInviteesEditViewController *parentController; // @synthesize parentController=_parentController;
-- (void).cxx_destruct;
 - (void)_searcherStateChanged:(long long)arg1;
 - (void)_requestDismissal;
 - (void)_refreshIfNeeded;

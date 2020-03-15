@@ -20,10 +20,10 @@
     BOOL _isLastInBatch;
 }
 
+- (void).cxx_destruct;
 @property BOOL isLastInBatch; // @synthesize isLastInBatch=_isLastInBatch;
 @property BOOL isUserRequested; // @synthesize isUserRequested=_isUserRequested;
 @property(retain) NSFileHandle *destFileHandle; // @synthesize destFileHandle=_destFileHandle;
-- (void).cxx_destruct;
 - (void)finishOperation;
 - (BOOL)_isLowPriority;
 - (void)performOperation;

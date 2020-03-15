@@ -18,10 +18,10 @@
     UIFont *_emojiOverrideFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *emojiOverrideFont; // @synthesize emojiOverrideFont=_emojiOverrideFont;
 @property(retain, nonatomic) UIView *inputHintView; // @synthesize inputHintView=_inputHintView;
 @property(nonatomic) BOOL clearsZeroWhenTyping; // @synthesize clearsZeroWhenTyping=_clearsZeroWhenTyping;
-- (void).cxx_destruct;
 - (struct CGRect)accessibilityFrame;
 - (void)wf_applyEmojiOverrideFont;
 - (void)paste:(id)arg1;

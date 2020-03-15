@@ -16,11 +16,11 @@
     ICDrawingUndoCheckPoint *_checkPoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICDrawingUndoCheckPoint *checkPoint; // @synthesize checkPoint=_checkPoint;
 @property(nonatomic) BOOL hide; // @synthesize hide=_hide;
 @property(retain, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(retain, nonatomic) NSArray *commands; // @synthesize commands=_commands;
-- (void).cxx_destruct;
 - (id)undoCommandHidden:(BOOL)arg1;
 - (double)renderCost;
 @property(readonly, nonatomic) NSArray *visibleCommands;

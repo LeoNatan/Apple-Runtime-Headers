@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType __animationCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setAnimationCompletionHandler:) CDUnknownBlockType _animationCompletionHandler; // @synthesize _animationCompletionHandler=__animationCompletionHandler;
 @property(nonatomic, setter=_setAnimatingStackView:) _Bool _animatingStackView; // @synthesize _animatingStackView=__animatingStackView;
 @property(retain, nonatomic, setter=_setStackView:) PUStackView *_stackView; // @synthesize _stackView=__stackView;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSArray *images; // @synthesize images=_images;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)animateImagesOntoView:(id)arg1 inContainerView:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_updateLabel;

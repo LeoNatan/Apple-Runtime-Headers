@@ -15,8 +15,8 @@
     RadioStation *_station;
 }
 
-@property(readonly, nonatomic) RadioStation *station; // @synthesize station=_station;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RadioStation *station; // @synthesize station=_station;
 - (id)rsep_stationName;
 - (id)rsep_stationDescription;
 - (id)rsep_coreSeedName;

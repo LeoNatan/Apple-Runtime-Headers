@@ -28,10 +28,10 @@
     NSLayoutConstraint *_zoomButtonHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long buttonOrientation; // @synthesize buttonOrientation=_buttonOrientation;
 @property(readonly, retain, nonatomic) SBDeviceApplicationSceneHandle *sceneHandle; // @synthesize sceneHandle=_sceneHandle;
 @property(nonatomic) __weak id <SBDeviceApplicationSceneClassicAccessoryViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setupPositioningAndRotationForInterfaceOrientation:(long long)arg1 offscreen:(_Bool)arg2;
 - (void)_updateZoomButton;
 - (void)_updateOrientationFrom:(long long)arg1 toOrientation:(long long)arg2 animationSettings:(id)arg3;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     double _progressWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double progressWidth; // @synthesize progressWidth=_progressWidth;
 @property(retain, nonatomic) CAShapeLayer *progressBackgroundLayer; // @synthesize progressBackgroundLayer=_progressBackgroundLayer;
 @property(retain, nonatomic) CAShapeLayer *progressLayer; // @synthesize progressLayer=_progressLayer;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *progressFillColor; // @synthesize progressFillColor=_progressFillColor;
 @property(nonatomic, getter=isIndeterminate) _Bool indeterminate; // @synthesize indeterminate=_indeterminate;
 @property(nonatomic) double indeterminateWidth; // @synthesize indeterminateWidth=_indeterminateWidth;
-- (void).cxx_destruct;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_removeIndeterminateLayer;
 - (void)_startIndeterminateAnimation;

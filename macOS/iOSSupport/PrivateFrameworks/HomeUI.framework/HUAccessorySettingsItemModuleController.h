@@ -20,10 +20,10 @@
     NSMutableSet *_registeredButtonFutures;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *registeredButtonFutures; // @synthesize registeredButtonFutures=_registeredButtonFutures;
 @property(retain) NSMapTable *cellToItemMap; // @synthesize cellToItemMap=_cellToItemMap;
 @property(nonatomic) __weak id <HUAccessorySettingsItemModuleControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setupCellAccessoryType:(id)arg1 forItem:(id)arg2 withKey:(id)arg3;
 - (void)_registerButtonActionHandler:(id)arg1 item:(id)arg2;
 - (void)_handleButtonPress:(id)arg1;

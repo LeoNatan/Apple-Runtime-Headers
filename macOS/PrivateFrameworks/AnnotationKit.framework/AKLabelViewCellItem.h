@@ -14,9 +14,9 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *label; // @synthesize label=_label;
 @property(retain) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

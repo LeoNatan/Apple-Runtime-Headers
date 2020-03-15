@@ -21,13 +21,13 @@
 }
 
 + (id)displayNameForLanguageIdentifier:(id)arg1 forSorting:(_Bool)arg2;
+- (void).cxx_destruct;
 @property _Bool isTTYDictionary; // @synthesize isTTYDictionary=_isTTYDictionary;
 @property _Bool isAppleDictionary; // @synthesize isAppleDictionary=_isAppleDictionary;
 @property float progress; // @synthesize progress=_progress;
 @property(nonatomic) _Bool activated; // @synthesize activated=_activated;
 @property(readonly) NSString *definitionLanguage; // @synthesize definitionLanguage=_definitionLanguage;
 @property(readonly) MAAsset *rawAsset; // @synthesize rawAsset=_rawAsset;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) struct __DCSDictionary *dictionaryRef;
 @property(readonly) _Bool needsDownloadNewerVersion;

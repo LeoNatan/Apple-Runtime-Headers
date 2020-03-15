@@ -27,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSArray *signpostMetrics; // @synthesize signpostMetrics=_signpostMetrics;
 @property(retain) MXDisplayMetric *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
 @property(retain) MXMemoryMetric *memoryMetrics; // @synthesize memoryMetrics=_memoryMetrics;
@@ -41,7 +42,6 @@
 @property(retain) MXGPUMetric *gpuMetrics; // @synthesize gpuMetrics=_gpuMetrics;
 @property(retain) MXCPUMetric *cpuMetrics; // @synthesize cpuMetrics=_cpuMetrics;
 @property BOOL includesMultipleApplicationVersions; // @synthesize includesMultipleApplicationVersions=_includesMultipleApplicationVersions;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initPayloadDataWithMutipleAppVersions:(BOOL)arg1 withTimeStampBegin:(id)arg2 withTimeStampEnd:(id)arg3 withMetrics:(id)arg4;

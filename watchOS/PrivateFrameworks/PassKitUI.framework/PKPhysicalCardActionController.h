@@ -25,9 +25,9 @@
     int _state;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)_transitionToState:(int)arg1 withError:(id)arg2;
 - (_Bool)_canPerformActionWithState:(int)arg1;
 - (void)_presentApplePayTrustWithPaymentRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;

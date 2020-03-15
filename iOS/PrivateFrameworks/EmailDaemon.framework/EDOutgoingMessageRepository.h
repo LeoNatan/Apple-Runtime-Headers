@@ -20,9 +20,9 @@
 
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDMessageChangeManager *messageChangeManager; // @synthesize messageChangeManager=_messageChangeManager;
 @property(retain, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
-- (void).cxx_destruct;
 - (id)messagesForDocumentID:(id)arg1 mailboxID:(id)arg2;
 - (void)suspendDeliveryQueue;
 - (void)resumeDeliveryQueue;

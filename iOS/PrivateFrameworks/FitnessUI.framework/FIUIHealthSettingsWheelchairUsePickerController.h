@@ -11,8 +11,8 @@
     CDUnknownBlockType _wheelchairUseUpdateHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType wheelchairUseUpdateHandler; // @synthesize wheelchairUseUpdateHandler=_wheelchairUseUpdateHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType wheelchairUseUpdateHandler; // @synthesize wheelchairUseUpdateHandler=_wheelchairUseUpdateHandler;
 - (void)setWheelchairUse:(long long)arg1;
 - (long long)_wheelchairUseForRow:(long long)arg1;
 - (id)pickerView:(id)arg1 attributedTitleForRow:(long long)arg2 forComponent:(long long)arg3;

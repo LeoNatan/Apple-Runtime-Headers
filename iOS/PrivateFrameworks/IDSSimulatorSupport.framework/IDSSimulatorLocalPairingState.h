@@ -18,11 +18,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSUUID *pendingQuickSwitchAcknowledgementID; // @synthesize pendingQuickSwitchAcknowledgementID=_pendingQuickSwitchAcknowledgementID;
 @property(copy, nonatomic) CDUnknownBlockType didSwitchActivePairedDeviceCallback; // @synthesize didSwitchActivePairedDeviceCallback=_didSwitchActivePairedDeviceCallback;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *didSwitchActivePairedDeviceCallbackQueue; // @synthesize didSwitchActivePairedDeviceCallbackQueue=_didSwitchActivePairedDeviceCallbackQueue;
 @property(retain) NSUUID *activePairedDeviceSimulatorID; // @synthesize activePairedDeviceSimulatorID=_activePairedDeviceSimulatorID;
-- (void).cxx_destruct;
 
 @end
 

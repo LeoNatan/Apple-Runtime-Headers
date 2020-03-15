@@ -18,10 +18,10 @@
     long long _originatorVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long originatorVersion; // @synthesize originatorVersion=_originatorVersion;
 @property(readonly, nonatomic) long long originatorType; // @synthesize originatorType=_originatorType;
 @property(readonly, copy, nonatomic) NSArray *containerItems; // @synthesize containerItems=_containerItems;
-- (void).cxx_destruct;
 - (id)contextByRemovingContainerItem:(id)arg1;
 - (id)contextByInsertingContainerItem:(id)arg1 afterContainerItem:(id)arg2;
 - (id)containerItemFollowingContainerItem:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UISceneSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISceneSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) UIScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 
 @end
 

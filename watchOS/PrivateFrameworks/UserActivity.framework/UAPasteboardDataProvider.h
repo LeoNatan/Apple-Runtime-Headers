@@ -17,10 +17,10 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)getDataWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithData:(id)arg1 type:(id)arg2;
 

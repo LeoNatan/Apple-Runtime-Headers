@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     IKChangeSet *_itemsChangeSet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKChangeSet *itemsChangeSet; // @synthesize itemsChangeSet=_itemsChangeSet;
 @property(retain, nonatomic) NSDictionary *usedAppPrototypesByIdentifier; // @synthesize usedAppPrototypesByIdentifier=_usedAppPrototypesByIdentifier;
 @property(copy, nonatomic) NSIndexSet *autoHighlightedIndexes; // @synthesize autoHighlightedIndexes=_autoHighlightedIndexes;
-- (void).cxx_destruct;
 - (void)_reevaluateVisibleIndexRange;
 - (id)_appDataItemFromDataItem:(id)arg1 binding:(id)arg2 prototypeIdentifier:(id)arg3 autoHighlighted:(_Bool *)arg4;
 - (void)_updateChildDOMElements;

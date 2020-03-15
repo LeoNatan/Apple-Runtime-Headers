@@ -25,6 +25,7 @@
 + (id)tertiaryLabel;
 + (id)secondaryLabel;
 + (id)primaryLabel;
+- (void).cxx_destruct;
 @property _Bool attributedTextUpdateSkipped; // @synthesize attributedTextUpdateSkipped=_attributedTextUpdateSkipped;
 @property _Bool attributedTextUpdateDisabled; // @synthesize attributedTextUpdateDisabled=_attributedTextUpdateDisabled;
 @property _Bool attributedTextExplicitelySet; // @synthesize attributedTextExplicitelySet=_attributedTextExplicitelySet;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool supportsColorGlyphs; // @synthesize supportsColorGlyphs=_supportsColorGlyphs;
 @property(retain, nonatomic) TLKRichText *richText; // @synthesize richText=_richText;
 @property(nonatomic) unsigned long long prominence; // @synthesize prominence=_prominence;
-- (void).cxx_destruct;
 - (void)updateWithString:(id)arg1;
 - (void)updateWithAttributedString:(id)arg1;
 - (void)updateAttributedText;

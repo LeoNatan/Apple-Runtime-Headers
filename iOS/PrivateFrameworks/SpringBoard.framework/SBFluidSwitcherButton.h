@@ -20,11 +20,11 @@
     struct UIEdgeInsets _extendedEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long buttonStyle; // @synthesize buttonStyle=_buttonStyle;
 @property(retain, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(nonatomic) struct UIEdgeInsets extendedEdgeInsets; // @synthesize extendedEdgeInsets=_extendedEdgeInsets;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_configureGlyphImageViewIfNecessaryForStyle:(long long)arg1;
 - (void)_configureXPlusDViewIfNecessaryForStyle:(long long)arg1;
 - (void)_invalidateXPlusDView;

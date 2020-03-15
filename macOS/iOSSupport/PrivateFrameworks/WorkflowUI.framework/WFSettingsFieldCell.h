@@ -14,9 +14,9 @@
     double _offsetX;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double offsetX; // @synthesize offsetX=_offsetX;
 @property(readonly, nonatomic) __weak UITextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

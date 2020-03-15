@@ -22,13 +22,13 @@
     NSArray *_categories;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property long long bytesUsed; // @synthesize bytesUsed=_bytesUsed;
 @property long long capacity; // @synthesize capacity=_capacity;
 @property int sortStyle; // @synthesize sortStyle=_sortStyle;
 @property _Bool hideTinyCategories; // @synthesize hideTinyCategories=_hideTinyCategories;
 @property long long categoryLimit; // @synthesize categoryLimit=_categoryLimit;
-- (void).cxx_destruct;
 @property(readonly) NSArray *adjustedCategories;
 @property(readonly) NSArray *orderedCategories;
 - (id)copyWithZone:(struct _NSZone *)arg1;

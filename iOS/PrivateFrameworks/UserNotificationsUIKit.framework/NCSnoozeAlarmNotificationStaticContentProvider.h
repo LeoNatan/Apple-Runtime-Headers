@@ -15,10 +15,10 @@
     NSTimer *_tickTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *tickTimer; // @synthesize tickTimer=_tickTimer;
 @property(nonatomic) double fireTime; // @synthesize fireTime=_fireTime;
 @property(retain, nonatomic) NCNotificationViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)_tickTimerFired:(id)arg1;
 - (id)_formatDuration:(double)arg1;
 - (id)secondaryText;

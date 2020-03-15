@@ -13,14 +13,14 @@
     BOOL _vibrant;
     BOOL _disableVibrancy;
     double _lineHeight;
-    struct NSColor *_defaultTextColor;
+    NSColor *_defaultTextColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disableVibrancy; // @synthesize disableVibrancy=_disableVibrancy;
 @property(nonatomic) BOOL vibrant; // @synthesize vibrant=_vibrant;
 @property(retain, nonatomic) NSColor *defaultTextColor; // @synthesize defaultTextColor=_defaultTextColor;
 @property(nonatomic) double lineHeight; // @synthesize lineHeight=_lineHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ic_stringValue;
 @property(retain, nonatomic) NSAttributedString *ic_attributedStringValue;
 - (void)textDidChange:(id)arg1;

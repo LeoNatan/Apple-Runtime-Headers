@@ -19,17 +19,20 @@ __attribute__((visibility("hidden")))
     double m_lastGlobeKeyUpTime;
     NSString *_newMode;
     BOOL _isGlobeKeyDown;
+    BOOL _usingCapsLockLanguageSwitch;
     NSString *_loadedIdentifier;
 }
 
 + (id)activeInstance;
 + (id)sharedInstance;
+@property(nonatomic) BOOL usingCapsLockLanguageSwitch; // @synthesize usingCapsLockLanguageSwitch=_usingCapsLockLanguageSwitch;
 @property(nonatomic) BOOL isGlobeKeyDown; // @synthesize isGlobeKeyDown=_isGlobeKeyDown;
 @property(copy, nonatomic) NSString *loadedIdentifier; // @synthesize loadedIdentifier=_loadedIdentifier;
 - (BOOL)handleModifiersChangedEvent:(id)arg1;
 - (BOOL)handleSwitchingKeyEvent:(id)arg1;
 - (void)updateHardwareLayout;
 - (BOOL)switchMode:(id)arg1 withHUD:(BOOL)arg2 withDelay:(BOOL)arg3;
+- (BOOL)switchMode:(id)arg1 withHUD:(BOOL)arg2 withDelay:(BOOL)arg3 fromCapsLock:(BOOL)arg4;
 - (BOOL)handleSwitchCommand:(BOOL)arg1 withHUD:(BOOL)arg2 withDelay:(BOOL)arg3;
 - (BOOL)handleSwitchCommand:(BOOL)arg1;
 - (id)inputModeIdentifierWithNextFlag:(BOOL)arg1;

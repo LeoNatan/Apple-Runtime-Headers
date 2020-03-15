@@ -35,10 +35,10 @@
     double _finishSpeed;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double finishSpeed; // @synthesize finishSpeed=_finishSpeed;
 @property(nonatomic) _Bool adjustsDurationForLongestAnimation; // @synthesize adjustsDurationForLongestAnimation=_adjustsDurationForLongestAnimation;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

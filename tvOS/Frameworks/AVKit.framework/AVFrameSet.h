@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 
 + (id)keyPathsForValuesAffectingCanFetchFrames;
 + (id)imageFetchingQueue;
+- (void).cxx_destruct;
 @property double earliestAllowedFetchTime; // @synthesize earliestAllowedFetchTime=_earliestAllowedFetchTime;
 @property CDStruct_1b6d18a9 assetDuration; // @synthesize assetDuration=_assetDuration;
 @property(retain) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) double frameInterval; // @synthesize frameInterval=_frameInterval;
 @property(readonly) NSURL *assetURL; // @synthesize assetURL=_assetURL;
 @property(readonly) AVAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_mediaServicesReset:(id)arg1;
 - (void)_handleMemoryWarning:(id)arg1;
 - (unsigned long long)_estimatedImageMemoryFootprint;

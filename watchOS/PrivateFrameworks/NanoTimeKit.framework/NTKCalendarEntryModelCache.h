@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(copy, nonatomic) CalDateRange *dateRange; // @synthesize dateRange=_dateRange;
 @property(retain, nonatomic) NSMutableArray *entryModels; // @synthesize entryModels=_entryModels;
-- (void).cxx_destruct;
 - (void)logEntryModels;
 - (void)flush;
 - (id)timelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 family:(int)arg3;

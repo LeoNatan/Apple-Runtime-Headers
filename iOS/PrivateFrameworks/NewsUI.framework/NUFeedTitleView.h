@@ -19,11 +19,11 @@
     NSMutableArray *_titleViewUpdateStack;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *titleViewUpdateStack; // @synthesize titleViewUpdateStack=_titleViewUpdateStack;
 @property(retain, nonatomic) NUTitleViewUpdate *lastQueuedTitleViewUpdate; // @synthesize lastQueuedTitleViewUpdate=_lastQueuedTitleViewUpdate;
 @property(readonly, nonatomic) NUTitleView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) __weak id <NUFeedTitleViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)titleViewAnimationForAnimation:(unsigned long long)arg1;
 - (id)titleViewUpdateForFeedTitleViewUpdate:(id)arg1 force:(_Bool)arg2;
 - (void)applyTitleViewUpdate:(id)arg1 animation:(unsigned long long)arg2;

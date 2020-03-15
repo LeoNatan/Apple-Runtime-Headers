@@ -26,6 +26,7 @@
 + (id)createWithLearnedLocationOfInterestVisitMO:(id)arg1;
 + (id)createWithLearnedVisitMO:(id)arg1;
 + (id)createWithManagedObject:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long placeSource; // @synthesize placeSource=_placeSource;
 @property(nonatomic) double placeConfidence; // @synthesize placeConfidence=_placeConfidence;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSDate *entryDate; // @synthesize entryDate=_entryDate;
 @property(readonly, nonatomic) RTLearnedLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

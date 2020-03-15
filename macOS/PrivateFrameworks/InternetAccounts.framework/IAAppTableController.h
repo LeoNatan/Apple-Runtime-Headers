@@ -23,12 +23,12 @@
     NSDictionary *_pluginProperties;
 }
 
+- (void).cxx_destruct;
 @property BOOL spinOnSelection; // @synthesize spinOnSelection=_spinOnSelection;
 @property(retain) id <IAAppTableControllerDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSMutableArray *pairedServices; // @synthesize pairedServices=_pairedServices;
 @property(retain) NSMutableArray *apps; // @synthesize apps=_apps;
 @property(retain, nonatomic) IAAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

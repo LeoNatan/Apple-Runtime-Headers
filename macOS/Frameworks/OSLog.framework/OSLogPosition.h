@@ -15,10 +15,10 @@
     double _offset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) long long precision; // @synthesize precision=_precision;
-- (void).cxx_destruct;
 - (id)initWithTimeIntervalSinceLatestBoot:(double)arg1;
 - (id)initWithEventSource:(id)arg1 timeIntervalSinceEnd:(double)arg2;
 - (id)initWithDate:(id)arg1;

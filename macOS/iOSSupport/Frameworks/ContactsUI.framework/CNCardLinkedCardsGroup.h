@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_linkedContacts;
 }
 
-@property(retain, nonatomic) NSArray *linkedContacts; // @synthesize linkedContacts=_linkedContacts;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *linkedContacts; // @synthesize linkedContacts=_linkedContacts;
 - (id)editingItems;
 - (id)displayItems;
 - (id)title;

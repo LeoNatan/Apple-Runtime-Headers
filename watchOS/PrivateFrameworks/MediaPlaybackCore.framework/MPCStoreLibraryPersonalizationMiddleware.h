@@ -17,9 +17,9 @@
     MPSectionedCollection *_personalizedModelObjects;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPSectionedCollection *personalizedModelObjects; // @synthesize personalizedModelObjects=_personalizedModelObjects;
 @property(retain, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
-- (void).cxx_destruct;
 - (id)operationsForPlayerRequest:(id)arg1;
 - (id)operationsForRequest:(id)arg1;
 - (id)playerModelObject:(id)arg1 propertySet:(id)arg2 atIndexPath:(id)arg3 chain:(id)arg4;

@@ -23,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CBPeripheral *peripheral; // @synthesize peripheral=_peripheral;
 @property(retain, nonatomic) NSData *advertisementData; // @synthesize advertisementData=_advertisementData;
 @property(copy, nonatomic) NSString *serviceId; // @synthesize serviceId=_serviceId;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_localizedHealthServiceType;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

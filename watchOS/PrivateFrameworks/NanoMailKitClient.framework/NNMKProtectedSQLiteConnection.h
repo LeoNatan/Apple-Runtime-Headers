@@ -15,10 +15,10 @@
     NSString *_protectedDatabaseName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *protectedDatabaseName; // @synthesize protectedDatabaseName=_protectedDatabaseName;
 @property(retain, nonatomic) NSString *protectedDatabasePath; // @synthesize protectedDatabasePath=_protectedDatabasePath;
 @property(readonly, nonatomic) _Bool protectedDatabaseAttached; // @synthesize protectedDatabaseAttached=_protectedDatabaseAttached;
-- (void).cxx_destruct;
 - (id)_vfsModuleName;
 - (void)dettachProtectedDatabase;
 - (int)attachProtectedDatabase;

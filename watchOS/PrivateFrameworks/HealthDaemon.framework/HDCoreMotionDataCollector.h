@@ -23,9 +23,9 @@
     HDProfile *_profile;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)_migrateDataCollectionContextForType:(id)arg1 error:(id *)arg2;
 - (Class)sensorDatumClassForAggregator:(id)arg1;
 - (id)identifierForDataAggregator:(id)arg1;

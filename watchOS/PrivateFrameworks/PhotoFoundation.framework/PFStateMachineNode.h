@@ -16,8 +16,8 @@
 }
 
 + (id)nodeWithName:(id)arg1;
-@property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly) NSString *name; // @synthesize name=_name;
 - (id)description;
 - (id)dot:(id)arg1 prefix:(id)arg2 graph:(id)arg3;
 - (id)_dotReachableNodes:(id)arg1 graph:(id)arg2;

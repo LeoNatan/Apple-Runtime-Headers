@@ -31,9 +31,9 @@ __attribute__((visibility("hidden")))
     MCQuestionPane *_ownerPane;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isInitialQuestion; // @synthesize isInitialQuestion=_isInitialQuestion;
 @property(nonatomic) __weak MCQuestionPane *ownerPane; // @synthesize ownerPane=_ownerPane;
-- (void).cxx_destruct;
 - (void)_textFieldValueChanged:(id)arg1;
 - (void)_configureQuestionField;
 - (void)_setStylesOnLabelBelowField;

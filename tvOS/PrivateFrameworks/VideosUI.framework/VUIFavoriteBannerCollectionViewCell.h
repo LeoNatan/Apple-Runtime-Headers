@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureCellWithElement:(id)arg1 existingCell:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(retain, nonatomic) VUIFavoriteBannerLayout *bannerLayout; // @synthesize bannerLayout=_bannerLayout;
 @property(retain, nonatomic) VUIFavoriteBannerView *bannerView; // @synthesize bannerView=_bannerView;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)_updateBackgroundAndHighlightColor;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

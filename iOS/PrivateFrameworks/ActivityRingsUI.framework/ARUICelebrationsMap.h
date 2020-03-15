@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _celebrationCount;
 }
 
-@property(readonly, nonatomic) unsigned long long celebrationCount; // @synthesize celebrationCount=_celebrationCount;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long celebrationCount; // @synthesize celebrationCount=_celebrationCount;
 - (void)storeWavesCelebration:(id)arg1 withRing:(id)arg2;
 - (void)storeSparksCelebration:(id)arg1 withRing:(id)arg2;
 - (id)wavesCelebrationMap;

@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _separatorLayoutFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UISearchBarSearchContainerLayout *searchContainerLayout; // @synthesize searchContainerLayout=_searchContainerLayout;
 @property(retain, nonatomic) _UISearchBarScopeContainerLayout *scopeContainerLayout; // @synthesize scopeContainerLayout=_scopeContainerLayout;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee heightRange; // @synthesize heightRange=_heightRange;
@@ -62,7 +63,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) UIView *searchBarBackdrop; // @synthesize searchBarBackdrop=_searchBarBackdrop;
 @property(retain, nonatomic) UIView *searchBarBackground; // @synthesize searchBarBackground=_searchBarBackground;
-- (void).cxx_destruct;
 - (void)setDelegateSearchFieldFrameManipulationBlock:(CDUnknownBlockType)arg1;
 - (void)cleanUpLayout;
 - (void)applyScopeContainerSublayout;

@@ -15,10 +15,10 @@
     CDStruct_e83c9415 _loopTimeRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_e83c9415 loopTimeRange; // @synthesize loopTimeRange=_loopTimeRange;
 @property(readonly, nonatomic) double loopCrossFadeDuration; // @synthesize loopCrossFadeDuration=_loopCrossFadeDuration;
 - (id)contentIdentifier;
-- (void).cxx_destruct;
 - (id)postprocessPlayerItem:(id)arg1;
 - (_Bool)needsPostprocessing;
 - (id)initWithAsset:(id)arg1 mediaProvider:(id)arg2;

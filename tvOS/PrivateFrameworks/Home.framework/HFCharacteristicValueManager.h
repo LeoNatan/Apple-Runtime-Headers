@@ -33,6 +33,7 @@
 
 + (id)na_identity;
 + (_Bool)_shouldTrackReadsCompleteForPerformanceTesting;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NAFuture *firstReadCompleteFuture; // @synthesize firstReadCompleteFuture=_firstReadCompleteFuture;
 @property(retain, nonatomic) HFCharacteristicReadLogger *readsCompleteLogger; // @synthesize readsCompleteLogger=_readsCompleteLogger;
 @property(retain, nonatomic) NACancelationToken *inFlightReadCancelationToken; // @synthesize inFlightReadCancelationToken=_inFlightReadCancelationToken;
@@ -49,7 +50,6 @@
 @property(nonatomic) long long _debug_totalNumberOfIssuedBatchReadRequests; // @synthesize _debug_totalNumberOfIssuedBatchReadRequests=__debug_totalNumberOfIssuedBatchReadRequests;
 @property(retain, nonatomic) id <HFCharacteristicValueWriter> valueWriter; // @synthesize valueWriter=_valueWriter;
 @property(retain, nonatomic) id <HFCharacteristicValueReader> valueReader; // @synthesize valueReader=_valueReader;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) id <HFCharacteristicOperationContextProviding> contextProvider;

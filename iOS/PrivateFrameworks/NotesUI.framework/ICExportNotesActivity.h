@@ -14,9 +14,9 @@
     UIWindow *_window;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(retain, nonatomic) NSArray *noteObjectIDs; // @synthesize noteObjectIDs=_noteObjectIDs;
-- (void).cxx_destruct;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)activityType;

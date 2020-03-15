@@ -20,11 +20,11 @@
 }
 
 + (id)timeSortDescriptors;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PLHighlightItem> parentHighlightItem; // @synthesize parentHighlightItem=_parentHighlightItem;
 @property(readonly, nonatomic) NSMutableSet *internalRemovedHighlightItems; // @synthesize internalRemovedHighlightItems=_internalRemovedHighlightItems;
 @property(readonly, nonatomic) NSMutableSet *internalAddedHighlightItems; // @synthesize internalAddedHighlightItems=_internalAddedHighlightItems;
 @property(readonly, nonatomic) NSMutableOrderedSet *internalHighlightItems; // @synthesize internalHighlightItems=_internalHighlightItems;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)mergeWithHighlightItemList:(id)arg1;
 - (id)description;

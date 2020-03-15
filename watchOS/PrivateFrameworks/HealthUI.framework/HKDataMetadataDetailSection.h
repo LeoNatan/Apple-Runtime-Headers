@@ -19,10 +19,10 @@
     HKUnitPreferenceController *_unitController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
 @property(readonly, nonatomic) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
 @property(readonly, nonatomic) NSObject<HKDataMetadataObject> *object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)_loadMetadataValues;
 - (id)initWithWorkoutEvent:(id)arg1;
 - (id)initWithSample:(id)arg1 displayTypeController:(id)arg2 unitController:(id)arg3;

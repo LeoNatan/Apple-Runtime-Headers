@@ -15,10 +15,10 @@
     NSSet *_indices;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *indices; // @synthesize indices=_indices;
 @property(retain, nonatomic) NSDictionary *columns; // @synthesize columns=_columns;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

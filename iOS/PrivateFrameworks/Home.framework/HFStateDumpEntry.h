@@ -16,11 +16,11 @@
     HFStateDumpBuilderContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) HFStateDumpBuilderContext *context; // @synthesize context=_context;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSIndexSet *_mailboxIDs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexSet *mailboxIDs; // @synthesize mailboxIDs=_mailboxIDs;
 @property(retain, nonatomic) id <EDSearchableCriterion> criterion; // @synthesize criterion=_criterion;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

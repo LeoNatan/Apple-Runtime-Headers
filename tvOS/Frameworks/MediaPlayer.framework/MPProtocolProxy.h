@@ -16,9 +16,9 @@
 
 + (id)proxyForObjects:(id)arg1 protocol:(id)arg2;
 + (id)proxyForObject:(id)arg1 protocol:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *objects; // @synthesize objects=_objects;
 @property(retain, nonatomic) Protocol *protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 

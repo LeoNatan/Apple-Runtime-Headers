@@ -20,12 +20,12 @@
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool buyable; // @synthesize buyable=_buyable;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) _SFPBURL *availabilityURL; // @synthesize availabilityURL=_availabilityURL;
 @property(copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

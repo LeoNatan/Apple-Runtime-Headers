@@ -25,11 +25,11 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowEnterpriseBookMetadataSync; // @synthesize payloadAllowEnterpriseBookMetadataSync=_payloadAllowEnterpriseBookMetadataSync;
 @property(copy, nonatomic) NSNumber *payloadAllowEnterpriseBookBackup; // @synthesize payloadAllowEnterpriseBookBackup=_payloadAllowEnterpriseBookBackup;
 @property(copy, nonatomic) NSNumber *payloadAllowBookstoreErotica; // @synthesize payloadAllowBookstoreErotica=_payloadAllowBookstoreErotica;
 @property(copy, nonatomic) NSNumber *payloadAllowBookstore; // @synthesize payloadAllowBookstore=_payloadAllowBookstore;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

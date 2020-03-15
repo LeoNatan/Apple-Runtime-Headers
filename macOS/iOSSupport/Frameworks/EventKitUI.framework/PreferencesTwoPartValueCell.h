@@ -19,10 +19,10 @@
     id <EKCellShortener> _shortener;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL strikeThroughLargePart2TextLabel; // @synthesize strikeThroughLargePart2TextLabel=_strikeThroughLargePart2TextLabel;
 @property(nonatomic) BOOL strikeThroughLargeDetailTextLabel; // @synthesize strikeThroughLargeDetailTextLabel=_strikeThroughLargeDetailTextLabel;
 @property(nonatomic) __weak id <EKCellShortener> shortener; // @synthesize shortener=_shortener;
-- (void).cxx_destruct;
 - (void)checkValueWidths;
 - (void)shorten;
 - (void)layoutSubviews;

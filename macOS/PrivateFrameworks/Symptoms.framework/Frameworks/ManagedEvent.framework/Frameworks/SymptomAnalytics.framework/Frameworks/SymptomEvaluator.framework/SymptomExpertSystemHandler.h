@@ -88,6 +88,7 @@
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
 + (id)libtraceInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL customerSeedBuild; // @synthesize customerSeedBuild=_customerSeedBuild;
 @property(nonatomic) BOOL internalOrCarrierSeedBuild; // @synthesize internalOrCarrierSeedBuild=_internalOrCarrierSeedBuild;
 @property(nonatomic) BOOL carrierSeedBuild; // @synthesize carrierSeedBuild=_carrierSeedBuild;
@@ -117,7 +118,6 @@
 @property(retain, nonatomic) NSMutableArray *incomingSymptoms; // @synthesize incomingSymptoms=_incomingSymptoms;
 @property(retain, nonatomic) NSNumber *apSleep; // @synthesize apSleep=_apSleep;
 @property unsigned long long stepper; // @synthesize stepper=_stepper;
-- (void).cxx_destruct;
 - (void)startLoadDefaultRulesTimer:(double)arg1;
 - (id)obfuscatedSubcomponent:(id)arg1 fromPrimaryEntry:(id)arg2 withKey:(id)arg3 obfuscation:(id)arg4;
 - (id)primaryComponent:(id)arg1 obfuscationType:(id)arg2;
@@ -199,6 +199,9 @@
 - (void)processRelayStateChange:(id)arg1 key:(id)arg2 relay:(id)arg3 scalar:(BOOL)arg4;
 - (void)_dumpState;
 - (void)fileCleanupComplete;
+- (void)setValue:(id)arg1 forKey:(id)arg2 toEBFProfiles:(id)arg3;
+- (BOOL)didInstallProfileForKey:(id)arg1;
+- (void)_performSeedCleanup;
 - (void)_removeDebuggabilityFolder;
 - (void)dealloc;
 - (void)_removeExternalRelayObservers;

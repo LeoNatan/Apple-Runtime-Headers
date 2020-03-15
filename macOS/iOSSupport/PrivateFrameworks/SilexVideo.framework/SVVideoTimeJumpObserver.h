@@ -18,10 +18,10 @@
     id <SVVideoTimeProviding> _timeProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoTimeProviding> timeProvider; // @synthesize timeProvider=_timeProvider;
 @property(readonly, nonatomic) id <SVPlayerItemObserving> itemObserver; // @synthesize itemObserver=_itemObserver;
 @property(copy, nonatomic, setter=onJump:) CDUnknownBlockType jumpBlock; // @synthesize jumpBlock;
-- (void).cxx_destruct;
 - (void)jumped:(id)arg1;
 - (id)initWithItemObserver:(id)arg1 timeProvider:(id)arg2;
 

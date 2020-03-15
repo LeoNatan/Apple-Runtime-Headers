@@ -21,9 +21,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)data;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *tagsToSampleSets; // @synthesize tagsToSampleSets=_tagsToSampleSets;
 @property(retain) NSArray *enumSet; // @synthesize enumSet=_enumSet;
-- (void).cxx_destruct;
 - (id)dataMatchingFilter:(id)arg1;
 - (id)_dataMatchingFilter:(id)arg1;
 - (void)_appendData:(id)arg1;

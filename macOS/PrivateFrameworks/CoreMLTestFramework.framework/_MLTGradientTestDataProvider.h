@@ -15,8 +15,8 @@
     NSDictionary *_data;
 }
 
-@property(retain) NSDictionary *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *data; // @synthesize data=_data;
 @property(readonly, nonatomic) long long count;
 - (id)featuresAtIndex:(long long)arg1;
 - (id)initWithDataSample:(id)arg1;

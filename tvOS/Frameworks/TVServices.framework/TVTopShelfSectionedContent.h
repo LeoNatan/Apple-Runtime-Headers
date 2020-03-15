@@ -21,8 +21,8 @@
 + (_Bool)supportsSecureCoding;
 + (struct CGSize)imageSizeForImageShape:(long long)arg1;
 + (id)new;
-@property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (unsigned long long)_itemsCount;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

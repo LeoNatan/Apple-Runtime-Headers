@@ -16,11 +16,11 @@
     UILabel *_textLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic) __weak UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)updateColors;
 - (void)tintColorDidChange;

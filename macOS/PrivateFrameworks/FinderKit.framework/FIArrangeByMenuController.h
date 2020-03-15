@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     _Bool _inSavePanel;
 }
 
-@property(nonatomic) _Bool inSavePanel; // @synthesize inSavePanel=_inSavePanel;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool inSavePanel; // @synthesize inSavePanel=_inSavePanel;
 - (id)sortByMenu;
 - (id)arrangeByMenu;
 - (void)configureMenu:(id)arg1 forArrange:(_Bool)arg2;

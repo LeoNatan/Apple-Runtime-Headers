@@ -18,8 +18,8 @@
     _Bool _dirty;
 }
 
-@property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
 - (void)_cancelSave;
 - (void)_enqueueSave;
 - (void)_save;

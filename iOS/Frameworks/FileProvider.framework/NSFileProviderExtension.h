@@ -27,11 +27,11 @@
 + (id)_resourceIDOfURL:(id)arg1 outError:(id *)arg2;
 + (id)placeholderURLForURL:(id)arg1;
 + (_Bool)writePlaceholderAtURL:(id)arg1 withMetadata:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFileProviderDomain *domain; // @synthesize domain=_domain;
 @property(copy, nonatomic) NSString *memberQueueProviderIdentifier; // @synthesize memberQueueProviderIdentifier=_memberQueueProviderIdentifier;
 @property(retain, nonatomic) NSURL *memberQueueDocumentStorageURL; // @synthesize memberQueueDocumentStorageURL=_memberQueueDocumentStorageURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
-- (void).cxx_destruct;
 - (id)currentRequest;
 - (void)_withRequest:(id)arg1 execute:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;

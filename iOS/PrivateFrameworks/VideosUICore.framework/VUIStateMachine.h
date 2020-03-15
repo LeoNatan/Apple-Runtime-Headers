@@ -32,6 +32,7 @@
 + (id)stateMachineWithName:(id)arg1;
 + (void)registerStateMachine:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool callsStateChangeHandlerSynchronously; // @synthesize callsStateChangeHandlerSynchronously=_callsStateChangeHandlerSynchronously;
 @property(copy) NSArray *ignorableEvents; // @synthesize ignorableEvents=_ignorableEvents;
 @property(retain, nonatomic) NSObject<OS_os_log> *logObject; // @synthesize logObject=_logObject;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) long long mode; // @synthesize mode=_mode;
 @property(copy) NSString *currentState; // @synthesize currentState=_currentState;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)logUnhandledEvents;
 - (void)deregisterHandlers;
 - (void)executeBlockAfterCurrentStateTransition:(CDUnknownBlockType)arg1;

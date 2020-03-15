@@ -23,6 +23,7 @@
 + (id)indexSectionsFromPropertyList:(id)arg1;
 + (id)defaultSortCollatorIdentifier;
 + (id)sectionURL;
+- (void).cxx_destruct;
 @property(readonly) _Bool indexExtraTokenizations; // @synthesize indexExtraTokenizations=_indexExtraTokenizations;
 @property(readonly) NSString *sortCollatorIdentifier; // @synthesize sortCollatorIdentifier=_sortCollatorIdentifier;
 @property(readonly) NSString *searchCollatorIdentifier; // @synthesize searchCollatorIdentifier=_searchCollatorIdentifier;
@@ -30,7 +31,6 @@
 @property(readonly) NSString *searchTransform; // @synthesize searchTransform=_searchTransform;
 @property(readonly) NSArray *indexSections; // @synthesize indexSections=_indexSections;
 @property(readonly) NSArray *headerLanguages; // @synthesize headerLanguages=_headerLanguages;
-- (void).cxx_destruct;
 - (id)initWithCollator:(struct UCollator *)arg1 URL:(id)arg2;
 - (id)initWithCollator:(struct UCollator *)arg1;
 - (id)init;

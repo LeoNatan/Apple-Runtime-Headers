@@ -19,9 +19,9 @@
     NSURL *_requestURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *requestURL; // @synthesize requestURL=_requestURL;
 @property(readonly, nonatomic) BOOL stopAccessingRequestURLWhenDone; // @synthesize stopAccessingRequestURLWhenDone=_stopAccessingRequestURLWhenDone;
-- (void).cxx_destruct;
 - (id)copy;
 - (void)dealloc;
 - (void)invalidate;

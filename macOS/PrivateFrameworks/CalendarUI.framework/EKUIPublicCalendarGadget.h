@@ -14,9 +14,9 @@
     NSView *_publicLinkDescriptionContainer;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSView *publicLinkDescriptionContainer; // @synthesize publicLinkDescriptionContainer=_publicLinkDescriptionContainer;
 @property(retain) NSButton *publicCalendarCheckbox; // @synthesize publicCalendarCheckbox=_publicCalendarCheckbox;
-- (void).cxx_destruct;
 - (BOOL)shouldDisplay;
 - (void)updateWithChanges:(id)arg1;
 - (void)publicURLBoxClicked:(id)arg1;

@@ -12,9 +12,9 @@
     CDUnknownBlockType _reverseTransformationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reverseTransformationBlock; // @synthesize reverseTransformationBlock=_reverseTransformationBlock;
 @property(copy, nonatomic) CDUnknownBlockType transformationBlock; // @synthesize transformationBlock=_transformationBlock;
-- (void).cxx_destruct;
 - (id)reverseTransformedValue:(id)arg1;
 - (id)transformedValue:(id)arg1;
 - (id)init;

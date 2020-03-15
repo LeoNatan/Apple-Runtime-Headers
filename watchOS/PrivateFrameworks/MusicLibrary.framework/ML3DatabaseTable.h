@@ -18,10 +18,10 @@
     NSArray *_foreignKeyConstraints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *foreignKeyConstraints; // @synthesize foreignKeyConstraints=_foreignKeyConstraints;
 @property(readonly, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone *)arg1 concreteClass:(Class)arg2;
 - (id)createTableSQLWithExistenceClause:(_Bool)arg1;
 - (id)columnDefinitionsSQL;

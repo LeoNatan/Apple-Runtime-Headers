@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 + (id)_parametersFromContext:(id)arg1 error:(id *)arg2;
 + (int)_anisetteTypeFromAccount:(id)arg1;
 + (void)configureRequest:(id)arg1 context:(id)arg2 bag:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *purchaseRequestQueue; // @synthesize purchaseRequestQueue=_purchaseRequestQueue;
 @property(readonly, nonatomic) AMSPurchaseContext *context; // @synthesize context=_context;
 - (void)setBag:(id)arg1;
 - (id)bag;
-- (void).cxx_destruct;
 - (id)_bagURL;
 - (id)encodeRequest;
 - (id)initWithContext:(id)arg1 bag:(id)arg2;

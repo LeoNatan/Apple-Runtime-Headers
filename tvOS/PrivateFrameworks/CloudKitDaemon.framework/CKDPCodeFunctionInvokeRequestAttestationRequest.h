@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSData *_entropy;
 }
 
-@property(retain, nonatomic) NSData *entropy; // @synthesize entropy=_entropy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *entropy; // @synthesize entropy=_entropy;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

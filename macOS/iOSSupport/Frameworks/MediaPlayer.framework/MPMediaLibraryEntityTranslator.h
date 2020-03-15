@@ -18,9 +18,9 @@
 
 + (id)translatorForTransientMPModelClass:(Class)arg1;
 + (id)translatorForMPModelClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isTransient) BOOL transient; // @synthesize transient=_transient;
 @property(readonly, nonatomic) Class MPModelClass; // @synthesize MPModelClass=_MPModelClass;
-- (void).cxx_destruct;
 - (Class)classForRelationshipKey:(id)arg1;
 
 @end

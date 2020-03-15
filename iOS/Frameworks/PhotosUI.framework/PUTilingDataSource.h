@@ -14,9 +14,9 @@
     NSHashTable *__changeObservers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *_changeObservers; // @synthesize _changeObservers=__changeObservers;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)enumerateIndexPathsStartingAtIndexPath:(id)arg1 reverseDirection:(_Bool)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

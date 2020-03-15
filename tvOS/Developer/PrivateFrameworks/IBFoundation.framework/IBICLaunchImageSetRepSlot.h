@@ -23,13 +23,13 @@
 + (id)slotWithIdiom:(id)arg1 subtype:(id)arg2 scale:(id)arg3 deviceOrientation:(id)arg4 extent:(id)arg5 minimumSystemVersion:(id)arg6;
 + (Class)assetRepClass;
 + (Class)assetSetClass;
+- (void).cxx_destruct;
 @property(readonly) IBICExtent *extent; // @synthesize extent=_extent;
 @property(readonly) IBICSystemVersion *minimumSystemVersion; // @synthesize minimumSystemVersion=_minimumSystemVersion;
 @property(readonly) IBICScale *scale; // @synthesize scale=_scale;
 @property(readonly) IBICSubtype *subtype; // @synthesize subtype=_subtype;
 @property(readonly) IBICDeviceOrientation *deviceOrientation; // @synthesize deviceOrientation=_deviceOrientation;
 @property(readonly) IBICIdiom *idiom; // @synthesize idiom=_idiom;
-- (void).cxx_destruct;
 - (id)requiredPixelSize;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (id)baseFileNameForVersionedInfoPlistEntryForSlottedAssetSetName:(id)arg1;

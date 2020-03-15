@@ -22,10 +22,10 @@
     struct UIEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(retain, nonatomic) PKStackedTextItemGroup *content; // @synthesize content=_content;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)setContent:(id)arg1 animated:(_Bool)arg2;
 - (void)_updateSubviewsAnimated:(_Bool)arg1;
 - (void)layoutIfNeededAnimated:(_Bool)arg1;

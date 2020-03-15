@@ -70,13 +70,13 @@
 + (id)scanGraphConstraintString:(id)arg1 error:(id *)arg2;
 + (_Bool)scanGraphElementString:(id)arg1 type:(unsigned long long *)arg2 optionalName:(id *)arg3 label:(id *)arg4 optionalDomains:(id *)arg5 optionalProperties:(id *)arg6 error:(id *)arg7;
 + (id)graphWithMergedGraphs:(id)arg1 strictNodes:(_Bool)arg2 strictEdges:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCountedSet *registeredDomainCounts; // @synthesize registeredDomainCounts=_registeredDomainCounts;
 @property(readonly, nonatomic) NSCountedSet *transactionDomainCounts; // @synthesize transactionDomainCounts=_transactionDomainCounts;
 @property(readonly, nonatomic) id <MAPersistentStoreProtocol> persistentStore; // @synthesize persistentStore=_persistentStore;
 @property(readonly, nonatomic) long long persistenceCacheMode; // @synthesize persistenceCacheMode=_persistenceCacheMode;
 @property(readonly, nonatomic) long long persistenceOptions; // @synthesize persistenceOptions=_persistenceOptions;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)waitUntilQuiescentUsingBlock:(CDUnknownBlockType)arg1;
 - (void)readUsingBlock:(CDUnknownBlockType)arg1;
 - (void)writeUsingBlock:(CDUnknownBlockType)arg1;

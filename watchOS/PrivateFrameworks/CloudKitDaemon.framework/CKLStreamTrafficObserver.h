@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_printQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *printQueue; // @synthesize printQueue=_printQueue;
 @property(retain) NSMutableDictionary *requestDictionary; // @synthesize requestDictionary=_requestDictionary;
 @property(copy, nonatomic) CDUnknownBlockType requestParsedBlock; // @synthesize requestParsedBlock=_requestParsedBlock;
-- (void).cxx_destruct;
 - (id)parserFromConfigurationMessage:(id)arg1;
 - (void)finish;
 - (void)parseRequestArrayAndPrint:(id)arg1;

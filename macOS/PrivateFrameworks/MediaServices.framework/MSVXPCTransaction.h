@@ -15,8 +15,8 @@
 }
 
 + (id)activeTransactions;
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)_identifier;
 - (void)endTransactionOnDate:(id)arg1;
 - (void)endTransaction;

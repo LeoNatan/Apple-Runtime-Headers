@@ -21,9 +21,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)descriptorWithSubscriptionContext:(id)arg1;
 + (id)telephonyDescriptorWithInstance:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *instance; // @synthesize instance=_instance;
 @property(nonatomic) long long domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

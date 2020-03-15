@@ -30,6 +30,7 @@
 }
 
 + (id)wrapperWithDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL textInputSessionActivated; // @synthesize textInputSessionActivated=_textInputSessionActivated;
 @property(nonatomic) BOOL hidTouchSessionActivated; // @synthesize hidTouchSessionActivated=_hidTouchSessionActivated;
 @property(nonatomic) BOOL hidSessionActivated; // @synthesize hidSessionActivated=_hidSessionActivated;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) RPCompanionLinkClient *companionClient; // @synthesize companionClient=_companionClient;
 @property(retain, nonatomic) _TVRCRapportMediaEventsManager *mediaManager; // @synthesize mediaManager=_mediaManager;
 @property(nonatomic) __weak id <_TVRCCompanionLinkClientWrapperDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_launchApplicationOrURL:(id)arg1;
 - (void)_updateConnectedState;
 - (void)_handleSideEffectsForEvent:(id)arg1;

@@ -23,9 +23,9 @@
     id <ARSensorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(nonatomic) __weak id <ARSensorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_requestInitialCollaborationData;
 - (void)pushCollaborationData:(id)arg1;
 - (void)stop;

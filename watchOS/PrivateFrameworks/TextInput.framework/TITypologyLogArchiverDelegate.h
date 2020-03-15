@@ -15,8 +15,8 @@
     NSMutableSet *_objects;
 }
 
-@property(readonly, nonatomic) NSMutableSet *objects; // @synthesize objects=_objects;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableSet *objects; // @synthesize objects=_objects;
 - (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
 - (id)init;
 

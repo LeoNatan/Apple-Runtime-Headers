@@ -9,7 +9,7 @@
 @class NSImage;
 
 @interface ICAttachmentDrawingModel (PreviewGeneration)
-- (struct NSImage *)generateImageUsingFullscreenRenderer;
+- (id)generateImageUsingFullscreenRenderer;
 - (BOOL)generatePreviewsInOperation:(id)arg1;
 - (BOOL)needToGeneratePreviews;
 - (BOOL)generatePreviewsDuringCloudActivity;
@@ -25,7 +25,7 @@
 @property(readonly, nonatomic) NSImage *imageForActivityItem;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
-- (void)saveDrawing:(id)arg1 withImage:(struct NSImage *)arg2 forImageDrawing:(id)arg3;
+- (void)saveDrawing:(id)arg1 withImage:(id)arg2 forImageDrawing:(id)arg3;
 - (CDUnknownBlockType)genericBrickThumbnailCreator;
 - (CDUnknownBlockType)genericListThumbnailCreator;
 @end

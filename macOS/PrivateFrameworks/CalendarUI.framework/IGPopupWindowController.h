@@ -15,8 +15,8 @@
     NSView *_initialFirstResponder;
 }
 
-@property(retain) NSView *initialFirstResponder; // @synthesize initialFirstResponder=_initialFirstResponder;
 - (void).cxx_destruct;
+@property(retain) NSView *initialFirstResponder; // @synthesize initialFirstResponder=_initialFirstResponder;
 - (void)windowMouseDown:(id)arg1;
 - (void)openWithAnimation:(BOOL)arg1;
 - (struct CGRect)frameForDeltaHeight:(double)arg1;

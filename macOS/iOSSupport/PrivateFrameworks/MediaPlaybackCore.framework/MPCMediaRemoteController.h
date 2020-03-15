@@ -50,11 +50,11 @@
 + (void)sendCommand:(unsigned int)arg1 options:(id)arg2 toPlayerPath:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)controllerForPlayerPath:(id)arg1;
 + (id)mediaRemoteReplyQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id invalidationToken; // @synthesize invalidationToken=_invalidationToken;
 @property(retain, nonatomic) MPCPlayerPath *resolvedPlayerPath; // @synthesize resolvedPlayerPath=_resolvedPlayerPath;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (void)_onQueue_setOptimisticReorderedPlaybackQueueWithMovingContentItemIdentifier:(id)arg1 afterContentItemIdentifier:(id)arg2;
 - (CDUnknownBlockType)_onQueue_setOptimisticPlayingItemIdentifier:(id)arg1;
 - (CDUnknownBlockType)_onQueue_setOptimisticPlaybackState:(unsigned int)arg1 withOptions:(id)arg2;

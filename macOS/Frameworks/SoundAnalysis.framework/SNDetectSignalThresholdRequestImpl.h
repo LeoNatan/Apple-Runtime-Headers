@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     double _magnitudeThreshold;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double magnitudeThreshold; // @synthesize magnitudeThreshold=_magnitudeThreshold;
 @property(nonatomic) unsigned int blockSize; // @synthesize blockSize=_blockSize;
 @property(nonatomic) double sampleRate; // @synthesize sampleRate=_sampleRate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)sharedProcessorConfiguration;
 @property(readonly, nonatomic) struct Box *resultsBox;
 - (BOOL)adaptToSystemConfiguration:(id)arg1 error:(id *)arg2;

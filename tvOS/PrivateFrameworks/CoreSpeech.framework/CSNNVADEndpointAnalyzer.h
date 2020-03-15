@@ -26,6 +26,7 @@
     id <CSEndpointAnalyzerImplDelegate> implDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSEndpointAnalyzerImplDelegate> implDelegate; // @synthesize implDelegate;
 @property(nonatomic) double startWaitTime; // @synthesize startWaitTime;
 @property(nonatomic) double minimumDurationForEndpointer; // @synthesize minimumDurationForEndpointer;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) _Bool canProcessCurrentRequest; // @synthesize canProcessCurrentRequest;
 @property(nonatomic) double automaticEndpointingSuspensionEndTime; // @synthesize automaticEndpointingSuspensionEndTime;
 @property(nonatomic) unsigned long long activeChannel; // @synthesize activeChannel;
-- (void).cxx_destruct;
 - (double)trailingSilenceDurationAtEndpoint;
 - (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2 recordSettings:(id)arg3;
 - (void)stopEndpointer;

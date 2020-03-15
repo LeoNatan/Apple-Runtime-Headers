@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_ratingURLString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *ratingURLString; // @synthesize ratingURLString=_ratingURLString;
 @property(readonly, nonatomic) NSString *pageNumberQueryParameter; // @synthesize pageNumberQueryParameter=_pageNumberQueryParameter;
 @property(readonly, nonatomic) NSString *currentVersionURLString; // @synthesize currentVersionURLString=_currentVersionURLString;
 @property(readonly, nonatomic) NSString *allVersionsURLString; // @synthesize allVersionsURLString=_allVersionsURLString;
-- (void).cxx_destruct;
 - (id)initWithConfigurationDictionary:(id)arg1;
 
 @end

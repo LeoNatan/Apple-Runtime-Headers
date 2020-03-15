@@ -23,12 +23,12 @@
 }
 
 + (id)_fontForAppearance:(int)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tritiumColor; // @synthesize tritiumColor=_tritiumColor;
 @property(retain, nonatomic) UIColor *outlineBackgroundColor; // @synthesize outlineBackgroundColor=_outlineBackgroundColor;
 @property(nonatomic) int appearance; // @synthesize appearance=_appearance;
 @property(nonatomic) float scale; // @synthesize scale=_scale;
 @property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)applyTransitionTritiumOnWithFraction:(float)arg1;
 - (id)_createLabel;
 - (void)_updateFonts;

@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsBSXPCSecureCoding;
-@property(readonly, nonatomic) RBSLaunchContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RBSLaunchContext *context; // @synthesize context=_context;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

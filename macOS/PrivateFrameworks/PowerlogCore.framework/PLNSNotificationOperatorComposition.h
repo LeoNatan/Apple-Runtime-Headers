@@ -19,13 +19,13 @@
     NSMutableArray *_notificationObservers;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *notificationObservers; // @synthesize notificationObservers=_notificationObservers;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property __weak PLOperator *operator; // @synthesize operator=_operator;
 @property(copy, nonatomic) CDUnknownBlockType operatorBlock; // @synthesize operatorBlock=_operatorBlock;
 @property(retain) NSArray *notificationNames; // @synthesize notificationNames=_notificationNames;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)listenForNotifications:(BOOL)arg1;
 @property(readonly) NSString *notificationName;

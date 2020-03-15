@@ -14,9 +14,9 @@
     id <GKAvatarContainerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isDisplayingDeleteAvatarAlert; // @synthesize isDisplayingDeleteAvatarAlert=_isDisplayingDeleteAvatarAlert;
 @property(nonatomic) __weak id <GKAvatarContainerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didSelectToDeleteAvatar;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

@@ -19,12 +19,12 @@
     struct CGRect _thumbRect;
 }
 
+- (void).cxx_destruct;
 @property(retain) UXView *selectionView; // @synthesize selectionView=_selectionView;
 @property struct CGRect thumbRect; // @synthesize thumbRect=_thumbRect;
 @property BOOL leftFacing; // @synthesize leftFacing=_leftFacing;
 @property(retain) KHTreatment *treatment; // @synthesize treatment=_treatment;
 @property(retain, nonatomic) KHLayout *layoutObject; // @synthesize layoutObject=_layoutObject;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (void)renderImage;
 - (void)thumbnailerCompleted:(id)arg1;

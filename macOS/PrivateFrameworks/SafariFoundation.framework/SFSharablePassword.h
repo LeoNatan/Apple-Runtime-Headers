@@ -24,12 +24,12 @@
 + (id)sharablePasswordFromURL:(id)arg1;
 + (id)sharablePasswordFromData:(id)arg1;
 + (id)sharablePasswordFromEncryptedData:(id)arg1 encryptionKeyReference:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *protectionSpaces; // @synthesize protectionSpaces=_protectionSpaces;
 @property(readonly, copy, nonatomic) NSString *highLevelDomain; // @synthesize highLevelDomain=_highLevelDomain;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, copy, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)_encryptionInformationWithNewKey;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

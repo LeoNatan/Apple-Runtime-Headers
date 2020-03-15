@@ -18,10 +18,10 @@
 }
 
 + (id)delegateInfoForFamilyMembers:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNPromise *familyCirclePromise; // @synthesize familyCirclePromise=_familyCirclePromise;
 @property(retain, nonatomic) ACAccountType *accountsType; // @synthesize accountsType=_accountsType;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)retryFamilyCircleFetch;
 - (_Bool)isGuardianAccount:(id)arg1;
 - (id)adultsInFamily;

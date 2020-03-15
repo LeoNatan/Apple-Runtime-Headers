@@ -21,10 +21,10 @@
 + (_Bool)supportsSecureCoding;
 + (unsigned short)defaultGlyphCharacter;
 + (long long)randomBackgroundColor;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *customImageData; // @synthesize customImageData=_customImageData;
 @property(readonly, nonatomic) unsigned short glyphCharacter; // @synthesize glyphCharacter=_glyphCharacter;
 @property(readonly, nonatomic) long long backgroundColorValue; // @synthesize backgroundColorValue=_backgroundColorValue;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) WFColor *backgroundColor;

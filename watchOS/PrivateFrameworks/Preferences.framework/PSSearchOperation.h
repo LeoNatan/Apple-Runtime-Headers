@@ -19,12 +19,12 @@
 }
 
 + (struct __CFStringTokenizer *)_wordBoundaryTokenizer;
+- (void).cxx_destruct;
 @property __weak id <PSSearchOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isNewQuery) _Bool newQuery; // @synthesize newQuery=_newQuery;
 @property(readonly, copy) PSSearchResults *currentResults; // @synthesize currentResults=_currentResults;
 @property(readonly, copy, nonatomic) NSSet *rootEntries; // @synthesize rootEntries=_rootEntries;
 @property(readonly, copy, nonatomic) NSString *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)_filterEntriesMatchingQuery:(id)arg1 forQuery:(id)arg2;

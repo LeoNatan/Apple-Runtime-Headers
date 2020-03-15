@@ -16,11 +16,11 @@
     NSString *_function_name;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *function_name; // @synthesize function_name=_function_name;
 @property(retain) NSMutableDictionary *groundTruthAttachments; // @synthesize groundTruthAttachments=_groundTruthAttachments;
 @property(retain) NSMutableDictionary *outputAttachments; // @synthesize outputAttachments=_outputAttachments;
 @property(retain) NSMutableDictionary *inputAttachments; // @synthesize inputAttachments=_inputAttachments;
-- (void).cxx_destruct;
 - (void)loadFromDict:(id)arg1 frameStorage:(id)arg2;
 @property(readonly) NSArray *outputAttachmentNames;
 @property(readonly) NSArray *groundTruthAttachmentNames;

@@ -20,9 +20,9 @@
 
 + (id)numberKeyWithData:(id)arg1;
 + (id)stringKeyWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long assetVersion; // @synthesize assetVersion=_assetVersion;
 @property(readonly, nonatomic) NSString *abGroup; // @synthesize abGroup=_abGroup;
-- (void).cxx_destruct;
 - (void)enumerateApps:(CDUnknownBlockType)arg1;
 - (id)init;
 - (id)initWithData:(id)arg1 predictedItemKeyClass:(Class)arg2;

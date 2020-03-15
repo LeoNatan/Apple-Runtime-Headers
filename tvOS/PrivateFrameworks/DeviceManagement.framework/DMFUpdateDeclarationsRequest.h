@@ -20,11 +20,11 @@
 + (_Bool)isPermittedOnUserConnection;
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *removeDeclarations; // @synthesize removeDeclarations=_removeDeclarations;
 @property(copy, nonatomic) NSArray *upsertDeclarations; // @synthesize upsertDeclarations=_upsertDeclarations;
 @property(copy, nonatomic) NSString *syncToken; // @synthesize syncToken=_syncToken;
 @property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

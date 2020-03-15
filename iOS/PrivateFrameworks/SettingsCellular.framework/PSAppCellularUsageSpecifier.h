@@ -24,12 +24,12 @@
 + (id)watchOnlyAppSpecifierWithBundleID:(id)arg1 statisticsCache:(id)arg2;
 + (id)appSpecifierWithBundleID:(id)arg1 statisticsCache:(id)arg2;
 + (id)_specifierWithCellTitle:(id)arg1 bundleID:(id)arg2 shouldShowUsage:(_Bool)arg3 icon:(id)arg4 statisticsCache:(id)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSDataUsageStatisticsCache *statisticsCache; // @synthesize statisticsCache=_statisticsCache;
 @property(nonatomic) __weak id <PSAppCellularUsageSpecifierDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <PSBillingPeriodSource> billingPeriodSource; // @synthesize billingPeriodSource=_billingPeriodSource;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) _Bool shouldShowUsage; // @synthesize shouldShowUsage=_shouldShowUsage;
-- (void).cxx_destruct;
 - (_Bool)isRestricted;
 - (void)setCellularUsagePolicy:(id)arg1;
 - (id)cellularUsagePolicy;

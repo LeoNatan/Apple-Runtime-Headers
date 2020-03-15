@@ -18,9 +18,9 @@
 }
 
 + (id)hostingInfoForWindowScene:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *perSceneOptions; // @synthesize perSceneOptions=_perSceneOptions;
 @property(retain, nonatomic) UIWindowScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useHostedInstance;
 @property(readonly) NSDictionary *_options;
 @property(readonly) UIWindowScene *_intendedCanvas;

@@ -21,12 +21,12 @@
 
 + (_Bool)vibrant;
 + (float)rowSeparatorThickness;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets separatorInset; // @synthesize separatorInset=_separatorInset;
 @property(nonatomic) _Bool usesInsetMargin; // @synthesize usesInsetMargin=_usesInsetMargin;
 @property(retain, nonatomic) UIVisualEffect *rowSeparatorVisualEffect; // @synthesize rowSeparatorVisualEffect=_rowSeparatorVisualEffect;
 @property(retain, nonatomic) UIColor *rowSeparatorColor; // @synthesize rowSeparatorColor=_rowSeparatorColor;
 @property(nonatomic) _Bool drawsOwnRowSeparators; // @synthesize drawsOwnRowSeparators=_drawsOwnRowSeparators;
-- (void).cxx_destruct;
 - (void)_setMarginWidth:(float)arg1;
 - (void)_setMarginExtendsToFullWidth:(_Bool)arg1;
 - (void)_layoutSeparator;

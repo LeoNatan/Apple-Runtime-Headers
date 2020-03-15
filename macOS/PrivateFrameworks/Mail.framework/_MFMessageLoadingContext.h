@@ -22,6 +22,7 @@
     long long _countOfMessagesProcessed;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long countOfMessagesProcessed; // @synthesize countOfMessagesProcessed=_countOfMessagesProcessed;
 @property(nonatomic) struct sqlite3 *database; // @synthesize database=_database;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
@@ -31,7 +32,6 @@
 @property(nonatomic) unsigned long long chunkSize; // @synthesize chunkSize=_chunkSize;
 @property(retain, nonatomic) id <MFMessageConsumer> target; // @synthesize target=_target;
 @property(retain, nonatomic) NSMutableArray *messages; // @synthesize messages=_messages;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

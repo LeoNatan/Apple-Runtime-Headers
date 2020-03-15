@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     UIView *_footerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIButton *nextButton; // @synthesize nextButton=_nextButton;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) HKClinicalAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (_Bool)tableView:(id)arg1 shouldDrawBottomSeparatorForSection:(long long)arg2;
 - (_Bool)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

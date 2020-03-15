@@ -15,12 +15,14 @@
     NSString *_identifier;
     NSData *_imageData;
     NSString *_imageHash;
+    NSString *_imageURL;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *imageURL; // @synthesize imageURL=_imageURL;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(retain, nonatomic) NSString *imageHash; // @synthesize imageHash=_imageHash;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -30,6 +32,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasImageURL;
 @property(readonly, nonatomic) _Bool hasImageData;
 @property(readonly, nonatomic) _Bool hasImageHash;
 

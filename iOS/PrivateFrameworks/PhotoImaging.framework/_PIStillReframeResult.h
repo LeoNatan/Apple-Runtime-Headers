@@ -19,11 +19,11 @@
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *ANODSubjects; // @synthesize ANODSubjects=_ANODSubjects;
 @property(retain, nonatomic) VNSaliencyImageObservation *saliencyObservation; // @synthesize saliencyObservation=_saliencyObservation;
 @property(nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

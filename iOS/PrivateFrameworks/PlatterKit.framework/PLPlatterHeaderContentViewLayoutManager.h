@@ -16,8 +16,8 @@
 + (double)_titleLabelBaselineOffsetWithFont:(id)arg1;
 + (double)contentBaselineToBoundsBottomWithFont:(id)arg1 boundsWidth:(double)arg2 scale:(double)arg3;
 + (double)_headerHeightWithFont:(id)arg1 forWidth:(double)arg2;
-@property(readonly, nonatomic) __weak PLPlatterHeaderContentView *headerContentView; // @synthesize headerContentView=_headerContentView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PLPlatterHeaderContentView *headerContentView; // @synthesize headerContentView=_headerContentView;
 - (struct CGRect)_titleLabelBoundsForSize:(struct CGSize)arg1 withNumberOfLines:(double)arg2;
 - (struct CGSize)_measuringSizeForWidth:(double)arg1;
 - (double)_titleLabelBaselineOffset;

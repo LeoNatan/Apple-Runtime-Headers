@@ -19,6 +19,7 @@
     FCIntroductoryOffer *_introOffer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCIntroductoryOffer *introOffer; // @synthesize introOffer=_introOffer;
 @property(copy, nonatomic) NSNumber *appAdamID; // @synthesize appAdamID=_appAdamID;
 @property(copy, nonatomic) NSNumber *price; // @synthesize price=_price;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSString *subscriptionPeriodInISO_8601; // @synthesize subscriptionPeriodInISO_8601=_subscriptionPeriodInISO_8601;
 @property(copy, nonatomic) NSString *offerName; // @synthesize offerName=_offerName;
 @property(copy, nonatomic) NSString *purchaseID; // @synthesize purchaseID=_purchaseID;
-- (void).cxx_destruct;
 
 @end
 

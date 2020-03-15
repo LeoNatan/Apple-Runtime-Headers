@@ -25,12 +25,12 @@
 + (id)directStoreDescriptor;
 + (id)serverStoreDescriptor;
 + (id)clientStoreDescriptor;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSPersistentStoreDescription *storeDescription; // @synthesize storeDescription=_storeDescription;
 @property(retain, nonatomic) NSDictionary *storeOptions; // @synthesize storeOptions=_storeOptions;
 @property(retain, nonatomic) NSURL *modelURL; // @synthesize modelURL=_modelURL;
 @property(retain, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned long long)arg1 storeURL:(id)arg2 modelURL:(id)arg3;
 
 @end

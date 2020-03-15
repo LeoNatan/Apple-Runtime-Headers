@@ -9,7 +9,7 @@
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
-@class CLKTextProviderCache, NSMutableArray, NSMutableDictionary, NSString, UIColor;
+@class CLKTextProviderCache, NSMutableArray, NSMutableDictionary, NSNumber, NSString, UIColor;
 
 @interface CLKTextProvider : NSObject <NSSecureCoding, NSCopying>
 {
@@ -18,9 +18,9 @@
     NSMutableArray *_recentCacheKeys;
     unsigned long long _nextUpdateToken;
     NSMutableDictionary *_updateHandlersByToken;
-    struct NSNumber *_secondTimerToken;
-    struct NSNumber *_minuteTimerToken;
-    struct NSNumber *_30fpsTimerToken;
+    NSNumber *_secondTimerToken;
+    NSNumber *_minuteTimerToken;
+    NSNumber *_30fpsTimerToken;
     _Bool _finalized;
     _Bool _ignoreUppercaseStyle;
     _Bool _paused;
@@ -40,6 +40,7 @@
 + (id)localizableTextProviderWithStringsFileFormatKey:(id)arg1 textProviders:(id)arg2;
 + (id)localizableTextProviderWithStringsFileTextKey:(id)arg1 shortTextKey:(id)arg2;
 + (id)localizableTextProviderWithStringsFileTextKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long timeTravelUpdateFrequency; // @synthesize timeTravelUpdateFrequency=_timeTravelUpdateFrequency;
 @property(nonatomic) _Bool useMonospacedNumbersForTimeTravel; // @synthesize useMonospacedNumbersForTimeTravel=_useMonospacedNumbersForTimeTravel;
 @property(nonatomic) long long shrinkTextPreference; // @synthesize shrinkTextPreference=_shrinkTextPreference;
@@ -49,7 +50,6 @@
 @property(nonatomic) _Bool ignoreUppercaseStyle; // @synthesize ignoreUppercaseStyle=_ignoreUppercaseStyle;
 @property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
-- (void).cxx_destruct;
 - (id)JSONObjectRepresentation;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -77,8 +77,8 @@
 - (id)_timeFormatByRemovingDesignatorOfTimeFormat:(id)arg1;
 - (id)_timeFormatByRemovingWhitespaceAroundDesignatorOfTimeFormat:(id)arg1 designatorExists:(_Bool *)arg2;
 - (id)description;
-- (void)stopUpdatesForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
+- (void)stopUpdatesForToken:(id)arg1;
+- (id)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (id)finalizedCopy;
 - (void)finalize;
 - (void)validate;

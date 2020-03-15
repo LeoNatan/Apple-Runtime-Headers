@@ -13,8 +13,8 @@
     UIWebClip *_webClip;
 }
 
-@property(retain, nonatomic) UIWebClip *webClip; // @synthesize webClip=_webClip;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIWebClip *webClip; // @synthesize webClip=_webClip;
 - (id)uniqueIdentifier;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,11 +17,15 @@
     long long _lastDeviceOrientation;
     NSObject<OS_dispatch_queue> *_processingQueue;
     NSObject<OS_dispatch_semaphore> *_processingSemaphore;
+    struct vector<int, std::__1::allocator<int>> _localPixelDepthDict;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (int)postProcessSegmentation:(struct __CVBuffer *)arg1 depthBuffer:(struct __CVBuffer *)arg2 detectionData:(id)arg3 pResultingDepthBuffer:(struct __CVBuffer **)arg4;
+- (id)_fullDescription;
+- (_Bool)isBusy;
+- (int)_minFilterDepthMap:(struct __CVBuffer *)arg1 kernelSize:(unsigned long long)arg2 pResultBuffer:(struct __CVBuffer **)arg3;
+- (int)postProcessSegmentation:(struct __CVBuffer *)arg1 depthData:(id)arg2 depthDataSource:(long long)arg3 detectionData:(id)arg4 pResultingDepthBuffer:(struct __CVBuffer **)arg5;
 - (void)requestResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (void)dealloc;
 - (id)init;

@@ -15,10 +15,10 @@
     NSDate *_sampleDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float sampleDuration; // @synthesize sampleDuration=_sampleDuration;
 @property(nonatomic) float splValue; // @synthesize splValue=_splValue;
 @property(retain, nonatomic) NSDate *sampleDate; // @synthesize sampleDate=_sampleDate;
-- (void).cxx_destruct;
 - (id)initWithSampleDate:(id)arg1 splValue:(float)arg2 andDuration:(float)arg3;
 
 @end

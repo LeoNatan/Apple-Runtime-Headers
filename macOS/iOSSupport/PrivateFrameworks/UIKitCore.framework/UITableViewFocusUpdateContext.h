@@ -18,8 +18,8 @@
 }
 
 + (id)_contextWithContext:(id)arg1 tableView:(id)arg2;
-@property(readonly, nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) NSIndexPath *nextFocusedIndexPath; // @synthesize nextFocusedIndexPath=_nextFocusedIndexPath;
 @property(readonly, nonatomic) NSIndexPath *previouslyFocusedIndexPath; // @synthesize previouslyFocusedIndexPath=_previouslyFocusedIndexPath;
 - (id)_initWithContext:(id)arg1 tableView:(id)arg2;

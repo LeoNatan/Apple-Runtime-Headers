@@ -12,7 +12,7 @@
 
 - (id)complication;
 - (void)install;
-- (id)init;
+- (id)initWithDevice:(id)arg1;
 
 @end
 

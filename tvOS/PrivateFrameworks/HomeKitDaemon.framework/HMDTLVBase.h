@@ -13,8 +13,8 @@
     NSData *_tlvDatablob;
 }
 
-@property(readonly, nonatomic) NSData *tlvDatablob; // @synthesize tlvDatablob=_tlvDatablob;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *tlvDatablob; // @synthesize tlvDatablob=_tlvDatablob;
 - (id)_parseArray:(id)arg1 result:(id *)arg2 objectCreator:(CDUnknownBlockType)arg3;
 - (_Bool)_parse:(id)arg1;
 - (_Bool)_parseMandatory:(id)arg1 optional:(id)arg2;

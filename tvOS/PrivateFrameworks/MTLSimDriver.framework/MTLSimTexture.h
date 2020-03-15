@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
     _Bool _isDrawable;
     unsigned long long rotation;
     unsigned long long iosurfacePlane;
+    unsigned long long _uniqueIdentifier;
     unsigned long long parentRelativeSlice;
     id <MTLResource> rootResource;
 }
@@ -105,11 +106,13 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)calculateOffsetToRegion:(CDStruct_caaed6bc)arg1 level:(unsigned long long)arg2 slice:(unsigned long long)arg3;
 - (void)decompressPlaceholder:(const char *)arg1 expandedTex:(char *)arg2 srcFormat:(unsigned long long)arg3 destFormat:(unsigned long long)arg4 width:(unsigned long long)arg5 height:(unsigned long long)arg6 destRowBytes:(unsigned long long)arg7 srcRowBytes:(unsigned long long)arg8;
 @property(readonly) id <MTLTexture> decompressedTextureView;
+@property(readonly) unsigned long long uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly) id <MTLBuffer> backingBuffer;
 @property(readonly) long long compressionFeedback; // @dynamic compressionFeedback;
 
 // Remaining properties
 @property(readonly) unsigned long long allocatedSize;
+@property(readonly) unsigned long long allocationID;
 @property(readonly) MTLResourceAllocationInfo *cachedAllocationInfo;
 @property(readonly) unsigned long long cpuCacheMode;
 @property(readonly, copy) NSString *debugDescription;
@@ -127,7 +130,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long storageMode;
 @property(readonly) Class superclass;
 @property(readonly) unsigned long long unfilteredResourceOptions;
-@property(readonly) unsigned long long uniqueIdentifier;
 
 @end
 

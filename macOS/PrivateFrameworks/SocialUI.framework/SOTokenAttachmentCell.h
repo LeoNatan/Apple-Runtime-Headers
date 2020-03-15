@@ -20,12 +20,12 @@
     CNAutocompleteResult *_autocompleteResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 @property(copy, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) QLPreviewMenuItem *previewMenuItem; // @synthesize previewMenuItem=_previewMenuItem;
 @property BOOL alwaysDisplayBackground; // @synthesize alwaysDisplayBackground=_alwaysDisplayBackground;
 @property(nonatomic) __weak id <SOTokenAttachmentCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionNames;

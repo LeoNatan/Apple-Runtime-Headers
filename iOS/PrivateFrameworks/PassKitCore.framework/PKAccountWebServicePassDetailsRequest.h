@@ -15,10 +15,10 @@
     PKPaymentDeviceMetadata *_deviceMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentDeviceMetadata *deviceMetadata; // @synthesize deviceMetadata=_deviceMetadata;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1 deviceIdentifier:(id)arg2;
 
 @end

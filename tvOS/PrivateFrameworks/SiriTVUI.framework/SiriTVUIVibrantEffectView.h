@@ -16,10 +16,10 @@
     unsigned long long _vibrancyOverride;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long vibrancyOverride; // @synthesize vibrancyOverride=_vibrancyOverride;
 @property(nonatomic) _Bool sizesContentSubviewToBounds; // @synthesize sizesContentSubviewToBounds=_sizesContentSubviewToBounds;
 @property(retain, nonatomic) UIView *contentSubview; // @synthesize contentSubview=_contentSubview;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;

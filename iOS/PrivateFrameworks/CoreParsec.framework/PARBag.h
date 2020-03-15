@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(readonly, copy, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 @property(readonly, copy, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
@@ -35,6 +35,7 @@
 - (id)bag_stringForKey:(id)arg1;
 - (_Bool)bag_boolForKey:(id)arg1;
 - (id)_bag_objectOfClass:(Class)arg1 forKey:(id)arg2;
+@property(readonly, nonatomic) _Bool exp;
 @property(readonly, nonatomic) long long protocolVersion;
 @property(readonly, nonatomic) NSDictionary *tuscanyConfiguration;
 @property(readonly, copy, nonatomic) NSString *parsecFeedbackFormat;

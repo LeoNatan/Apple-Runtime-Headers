@@ -32,13 +32,13 @@
     UIView *_perspectiveTargetView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *perspectiveTargetView; // @synthesize perspectiveTargetView=_perspectiveTargetView;
 @property(readonly, nonatomic) long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) NSString *itemReuseIdentifier; // @synthesize itemReuseIdentifier=_itemReuseIdentifier;
 @property(readonly, nonatomic) Class itemClass; // @synthesize itemClass=_itemClass;
 @property(nonatomic) __weak id <MPUStackViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_updateGeometryFieldsInConfiguration;
 - (id)_dequeueReusableItem;
 - (void)updateForChangedDistanceFromVanishingPoint;

@@ -56,8 +56,8 @@
 - (id)imageQuadByScalingBy:(struct CGSize)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithBottomLeft:(struct CGPoint)arg1 bottomRight:(struct CGPoint)arg2 topLeft:(struct CGPoint)arg3 topRight:(struct CGPoint)arg4;
-- (id)normalizedQuadByConvertingFromView:(struct UIView *)arg1 toView:(struct UIView *)arg2 toViewSize:(struct CGSize)arg3;
-- (id)quadByConvertingFromView:(struct UIView *)arg1 toView:(struct UIView *)arg2 isNormalized:(_Bool)arg3;
+- (id)normalizedQuadByConvertingFromView:(id)arg1 toView:(id)arg2 toViewSize:(struct CGSize)arg3;
+- (id)quadByConvertingFromView:(id)arg1 toView:(id)arg2 isNormalized:(_Bool)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

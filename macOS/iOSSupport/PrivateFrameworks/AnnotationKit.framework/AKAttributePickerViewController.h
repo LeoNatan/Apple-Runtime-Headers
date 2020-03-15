@@ -21,12 +21,12 @@
     NSArray *_rowViews;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *rowViews; // @synthesize rowViews=_rowViews;
 @property(retain) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSSet *selectedAnnotations; // @synthesize selectedAnnotations=_selectedAnnotations;
 @property(nonatomic) __weak id <AKAttributePickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

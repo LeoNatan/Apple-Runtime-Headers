@@ -25,6 +25,7 @@
     NSString *_apfsRole;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *apfsRole; // @synthesize apfsRole=_apfsRole;
 @property(retain) NSString *apfsContainerUUID; // @synthesize apfsContainerUUID=_apfsContainerUUID;
 @property(retain) NSString *apfsVolumeGroupUUID; // @synthesize apfsVolumeGroupUUID=_apfsVolumeGroupUUID;
@@ -36,7 +37,6 @@
 @property unsigned long long reserveSpace; // @synthesize reserveSpace=_reserveSpace;
 @property unsigned long long usedSpace; // @synthesize usedSpace=_usedSpace;
 @property(retain) NSString *apfsUUID; // @synthesize apfsUUID=_apfsUUID;
-- (void).cxx_destruct;
 - (id)unwrappediCloudRecoveryKeyForPCSIdentity:(struct _PCSIdentityData *)arg1 orPCSIdentitySet:(struct _PCSIdentitySetData *)arg2;
 - (BOOL)deleteSnapshots:(id)arg1 error:(id *)arg2;
 - (BOOL)deleteSnapshot:(id)arg1 error:(id *)arg2;

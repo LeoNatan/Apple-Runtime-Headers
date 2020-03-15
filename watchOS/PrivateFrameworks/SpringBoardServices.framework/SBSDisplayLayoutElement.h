@@ -15,6 +15,7 @@
 }
 
 - (id)succinctDescriptionBuilder;
+@property(nonatomic, getter=sb_isTransitioning, setter=sb_setTransitioning:) _Bool sb_transitioning;
 @property(nonatomic) int layoutRole;
 @property(readonly, nonatomic, getter=isSpringBoardElement) _Bool springBoardElement;
 - (id)initWithIdentifier:(id)arg1 layoutRole:(int)arg2;

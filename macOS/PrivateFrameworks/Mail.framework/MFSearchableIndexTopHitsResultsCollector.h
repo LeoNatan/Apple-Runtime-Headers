@@ -28,6 +28,7 @@
 + (void)setMostRecentTopHitsQueryResult:(id)arg1;
 + (id)mostRecentTopHitsQueryResult;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MFSearchableIndexQueryResultProcessor> processor; // @synthesize processor=_processor;
 @property(retain, nonatomic) EMSearchableIndexTopHitsQuery *topHitsQuery; // @synthesize topHitsQuery=_topHitsQuery;
 @property(copy, nonatomic) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) id <MFMessageConsumer> target; // @synthesize target=_target;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(retain, nonatomic) MFMessageCriterion *criterion; // @synthesize criterion=_criterion;
-- (void).cxx_destruct;
 - (BOOL)isCancelled;
 - (void)cancel;
 @property(readonly, nonatomic) EFFuture *gatheredFuture;

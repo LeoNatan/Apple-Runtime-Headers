@@ -18,12 +18,12 @@
     NSSet *_suggestionItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *suggestionItems; // @synthesize suggestionItems=_suggestionItems;
 @property(copy, nonatomic) NSSet *supplementaryRoomBuilders; // @synthesize supplementaryRoomBuilders=_supplementaryRoomBuilders;
 @property(retain, nonatomic) id <HFRoomSuggestionVendor> suggestionVendor; // @synthesize suggestionVendor=_suggestionVendor;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) unsigned int suggestedRoomLimit; // @synthesize suggestedRoomLimit=_suggestedRoomLimit;
-- (void).cxx_destruct;
 - (id)_keyForRoomName:(id)arg1;
 - (id)_filteredSuggestions;
 - (id)_filteredSupplementaryRoomBuilders;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBSSearchProvider.h>
+#import <SafariSharedUI/WBSSearchProvider.h>
 
 @class NSString;
 
@@ -18,16 +18,16 @@
 + (unsigned long long)_endpointTypeForShortName:(id)arg1;
 + (_Bool)shouldIncludeEngineFromDictionary:(id)arg1 withController:(id)arg2;
 + (id)engineFromDictionary:(id)arg1 withController:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *scriptName; // @synthesize scriptName=_scriptName;
 @property(readonly, nonatomic) int searchID; // @synthesize searchID=_searchID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayName;
 - (id)description;
 @property(readonly, nonatomic) int resultType;
 @property(readonly, nonatomic) unsigned long long endpointType;
 - (_Bool)searchShouldUseSafeSearchTemplate;
 - (Class)classForCoder;
-- (id)initWithName:(id)arg1 scriptName:(id)arg2 searchID:(int)arg3 searchTemplate:(id)arg4 hostSuffixes:(id)arg5 pathPrefixes:(id)arg6 usesSearchTermsFromFragment:(_Bool)arg7 suggestionsTemplate:(id)arg8 topLevelDomains:(id)arg9 safeSearchSuffix:(id)arg10 safeSearchURLQueryParameters:(id)arg11 carrierInfo:(id)arg12 controller:(id)arg13;
+- (id)initWithName:(id)arg1 scriptName:(id)arg2 searchID:(int)arg3 searchTemplate:(id)arg4 hostSuffixes:(id)arg5 pathPrefixes:(id)arg6 usesSearchTermsFromFragment:(_Bool)arg7 groupIdentifierQueryStringKey:(id)arg8 suggestionsTemplate:(id)arg9 topLevelDomains:(id)arg10 safeSearchSuffix:(id)arg11 safeSearchURLQueryParameters:(id)arg12 carrierInfo:(id)arg13 controller:(id)arg14;
 
 @end
 

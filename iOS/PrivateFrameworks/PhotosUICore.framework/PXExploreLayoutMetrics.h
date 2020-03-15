@@ -22,6 +22,7 @@
     struct UIEdgeInsets _safeAreaInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowSpecialPanoHeaders; // @synthesize allowSpecialPanoHeaders=_allowSpecialPanoHeaders;
 @property(nonatomic) _Bool allowHeaders; // @synthesize allowHeaders=_allowHeaders;
 @property(copy, nonatomic) CDUnknownBlockType acceptableLargeHeroPredicate; // @synthesize acceptableLargeHeroPredicate=_acceptableLargeHeroPredicate;
@@ -30,7 +31,6 @@
 @property(nonatomic) long long layoutSubtype; // @synthesize layoutSubtype=_layoutSubtype;
 @property(nonatomic) long long layoutType; // @synthesize layoutType=_layoutType;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSpec:(id)arg1;

@@ -19,9 +19,9 @@
 
 + (id)entryWithDocumentText:(id)arg1 userInput:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *documentText; // @synthesize documentText=_documentText;
 @property(readonly, nonatomic) NSString *userInput; // @synthesize userInput=_userInput;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -24,6 +24,8 @@
     MDLMaterialProperty *_ambientOcclusionScale;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) MDLMaterialProperty *ambientOcclusionScale; // @synthesize ambientOcclusionScale=_ambientOcclusionScale;
 @property(readonly, retain, nonatomic) MDLMaterialProperty *ambientOcclusion; // @synthesize ambientOcclusion=_ambientOcclusion;
 @property(readonly, retain, nonatomic) MDLMaterialProperty *normal; // @synthesize normal=_normal;
@@ -33,8 +35,6 @@
 @property(readonly, retain, nonatomic) MDLMaterialProperty *emission; // @synthesize emission=_emission;
 @property(readonly, retain, nonatomic) MDLMaterialProperty *baseColor; // @synthesize baseColor=_baseColor;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -15,9 +15,9 @@
 }
 
 + (id)presetWithAVPreset:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double aspect; // @synthesize aspect=_aspect;
 @property(retain, nonatomic) NSString *avPreset; // @synthesize avPreset=_avPreset;
-- (void).cxx_destruct;
 
 @end
 

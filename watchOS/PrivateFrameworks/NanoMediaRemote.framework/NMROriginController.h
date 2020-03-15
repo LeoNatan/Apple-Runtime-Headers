@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     id <NMROriginCommandHandler> _originCommandHandler;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NMROriginCommandHandler> originCommandHandler; // @synthesize originCommandHandler=_originCommandHandler;
 @property(retain, nonatomic) id <NMROriginObserver> originObserver; // @synthesize originObserver=_originObserver;
 @property(nonatomic) _Bool shouldObserveLibraryAddStatus; // @synthesize shouldObserveLibraryAddStatus=_shouldObserveLibraryAddStatus;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldObserveArtwork; // @synthesize shouldObserveArtwork=_shouldObserveArtwork;
 @property(nonatomic) __weak id <NMROriginObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
-- (void).cxx_destruct;
 - (void)_notifyObserverOfUpdatedPlaybackQueue;
 - (void)_notifyObserverOfUpdatedTimestamp;
 - (void)_notifyObserverOfUpdatedNowPlayingApplicationBundleIdentifier;

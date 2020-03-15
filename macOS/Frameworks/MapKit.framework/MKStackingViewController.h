@@ -43,11 +43,11 @@
     double _verticalScrollerInset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double verticalScrollerInset; // @synthesize verticalScrollerInset=_verticalScrollerInset;
 @property(nonatomic) __weak id <MKStackingViewControllerDelegate> stackingDelegate; // @synthesize stackingDelegate=_stackingDelegate;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(retain, nonatomic) NSView *titleView; // @synthesize titleView=_titleView;
-- (void).cxx_destruct;
 - (void)_preferredScrollerStyleDidChange;
 - (BOOL)isViewVisbile:(id)arg1 percentageTreshold:(double)arg2;
 - (void)_updateViewControllerVisibilityAfterPositionChange;

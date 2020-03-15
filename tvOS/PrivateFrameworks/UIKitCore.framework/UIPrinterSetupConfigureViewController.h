@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     UIPrinterSetupConnectingView *_connectingView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIPrinterSetupConnectingView *connectingView; // @synthesize connectingView=_connectingView;
 @property(retain, nonatomic) UIButton *finishButton; // @synthesize finishButton=_finishButton;
 @property(copy, nonatomic) NSString *directPasscode; // @synthesize directPasscode=_directPasscode;
 @property(nonatomic) _Bool directPrinting; // @synthesize directPrinting=_directPrinting;
 @property(nonatomic) _Bool addToNetwork; // @synthesize addToNetwork=_addToNetwork;
 @property(retain, nonatomic) PKPrinter *printer; // @synthesize printer=_printer;
-- (void).cxx_destruct;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;

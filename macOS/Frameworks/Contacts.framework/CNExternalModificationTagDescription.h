@@ -21,6 +21,7 @@
 - (void)encodeUsingCoder:(id)arg1 contact:(id)arg2;
 - (BOOL)isEqualForContact:(id)arg1 other:(id)arg2;
 - (id)init;
+- (id)coreDataKey;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

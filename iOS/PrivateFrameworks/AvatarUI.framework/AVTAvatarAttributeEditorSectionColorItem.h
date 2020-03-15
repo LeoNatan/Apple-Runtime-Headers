@@ -21,6 +21,7 @@
     AVTColorPreset *_skinColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTColorPreset *skinColor; // @synthesize skinColor=_skinColor;
 @property(readonly, nonatomic) AVTCoreModelColor *color; // @synthesize color=_color;
 @property(readonly, copy, nonatomic) CDUnknownBlockType gradientProvider; // @synthesize gradientProvider=_gradientProvider;
@@ -28,7 +29,6 @@
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, copy, nonatomic) CDUnknownBlockType avatarUpdater; // @synthesize avatarUpdater=_avatarUpdater;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithColor:(id)arg1 skinColor:(id)arg2 imageProvider:(id)arg3 avatarUpdater:(CDUnknownBlockType)arg4 selected:(_Bool)arg5;
 - (id)initWithColor:(id)arg1 imageProvider:(id)arg2 avatarUpdater:(CDUnknownBlockType)arg3 selected:(_Bool)arg4;

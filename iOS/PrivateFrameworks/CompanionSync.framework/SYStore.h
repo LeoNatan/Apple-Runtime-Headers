@@ -46,6 +46,7 @@
     SYPersistentStore *_persistentStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SYPersistentStore *persistentStore; // @synthesize persistentStore=_persistentStore;
 @property(readonly, nonatomic) SYAtomicFIFO *sessionQueue; // @synthesize sessionQueue=_sessionQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
@@ -56,7 +57,6 @@
 @property(nonatomic) long long maxBytesInFlight; // @synthesize maxBytesInFlight=_maxBytesInFlight;
 @property(retain, nonatomic) id <SYSerialization> serializer; // @synthesize serializer=_serializer;
 @property(nonatomic) __weak id <SYStoreDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 encounteredError:(id)arg2 context:(id)arg3;
 - (void)service:(id)arg1 incomingStream:(id)arg2 metadata:(id)arg3 identifier:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)service:(id)arg1 incomingData:(id)arg2 identifier:(id)arg3 completion:(CDUnknownBlockType)arg4;

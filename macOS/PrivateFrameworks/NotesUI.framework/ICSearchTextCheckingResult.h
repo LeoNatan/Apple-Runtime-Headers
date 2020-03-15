@@ -14,9 +14,9 @@
     struct _NSRange _ic_range;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange ic_range; // @synthesize ic_range=_ic_range;
 @property(retain, nonatomic) NSString *csEvaluatorMatchString; // @synthesize csEvaluatorMatchString=_csEvaluatorMatchString;
-- (void).cxx_destruct;
 - (struct _NSRange)range;
 - (id)initWithRange:(struct _NSRange)arg1 csEvaluatorMatchString:(id)arg2;
 - (id)initWithRange:(struct _NSRange)arg1;

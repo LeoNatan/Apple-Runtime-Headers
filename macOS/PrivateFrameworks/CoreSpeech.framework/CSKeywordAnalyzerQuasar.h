@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSDictionary, NSMutableArray;
 @protocol CSKeywordAnalyzerQuasarScoreDelegate, OS_dispatch_queue;
 
 @interface CSKeywordAnalyzerQuasar : NSObject
@@ -15,15 +15,17 @@
     NSMutableArray *_previousUtteranceTokens;
     NSArray *_triggerTokenList;
     BOOL _useKeywordSpotting;
+    NSDictionary *_ctcKwdToPhraseIdMap;
     double _triggerConfidence;
     unsigned long long _activeChannel;
     id <CSKeywordAnalyzerQuasarScoreDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSKeywordAnalyzerQuasarScoreDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long activeChannel; // @synthesize activeChannel=_activeChannel;
 @property(readonly, nonatomic) double triggerConfidence; // @synthesize triggerConfidence=_triggerConfidence;
-- (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *ctcKwdToPhraseIdMap; // @synthesize ctcKwdToPhraseIdMap=_ctcKwdToPhraseIdMap;
 - (void)_recognizeWavData:(const short *)arg1 length:(int)arg2;
 - (void)processAudioChunk:(id)arg1;
 - (void)endAudio;

@@ -15,16 +15,18 @@
     NSDictionary *_responseBody;
     NSString *_token;
     NSString *_refreshToken;
+    NSString *_idToken;
     NSDate *_expiryDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
+@property(readonly, nonatomic) NSString *idToken; // @synthesize idToken=_idToken;
 @property(readonly, nonatomic) NSString *refreshToken; // @synthesize refreshToken=_refreshToken;
 @property(readonly, nonatomic) NSString *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSDictionary *responseBody; // @synthesize responseBody=_responseBody;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) long long statusCode; // @synthesize statusCode=_statusCode;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 
 @end

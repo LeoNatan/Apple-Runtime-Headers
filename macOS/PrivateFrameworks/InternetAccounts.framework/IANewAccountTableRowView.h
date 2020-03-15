@@ -15,8 +15,8 @@
     NSTrackingArea *_trackingArea;
 }
 
-@property BOOL mouseDown; // @synthesize mouseDown=_mouseDown;
 - (void).cxx_destruct;
+@property BOOL mouseDown; // @synthesize mouseDown=_mouseDown;
 - (void)drawSeparatorInRect:(struct CGRect)arg1;
 - (void)drawBackgroundInRect:(struct CGRect)arg1;
 - (void)undoMouseDown;

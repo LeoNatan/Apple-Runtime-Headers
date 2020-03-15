@@ -34,6 +34,7 @@
 }
 
 + (double)contentBaselineToBoundsBottomWithWidth:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isShowingMoreContent) _Bool showingMoreContent; // @synthesize showingMoreContent=_showingMoreContent;
 @property(nonatomic) long long buttonMode; // @synthesize buttonMode=_buttonMode;
 @property(nonatomic) double topMarginForLayout; // @synthesize topMarginForLayout=_topMarginForLayout;
@@ -46,7 +47,6 @@
 @property(nonatomic) __weak WGWidgetHostingViewController *widgetHost; // @synthesize widgetHost=_widgetHost;
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (void)iconDidInvalidate:(id)arg1;
 - (void)_updateUtilityButtonForMoreContentState:(_Bool)arg1;
 - (void)_handleAddWidget:(id)arg1;

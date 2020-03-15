@@ -24,6 +24,7 @@
 }
 
 + (int)_contextForString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *siriActionsCategories; // @synthesize siriActionsCategories=_siriActionsCategories;
 @property(readonly, copy, nonatomic) NSNumber *siriActionsExpirationEpochMillis; // @synthesize siriActionsExpirationEpochMillis=_siriActionsExpirationEpochMillis;
 @property(readonly, copy, nonatomic) NSString *deleteID; // @synthesize deleteID=_deleteID;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSURL *contentTVAppDeeplinkURL; // @synthesize contentTVAppDeeplinkURL=_contentTVAppDeeplinkURL;
 @property(readonly, nonatomic) WLKBasicContentMetadata *movieOrShowContent; // @synthesize movieOrShowContent=_movieOrShowContent;
 @property(readonly, nonatomic) WLKPlayable *playable; // @synthesize playable=_playable;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;

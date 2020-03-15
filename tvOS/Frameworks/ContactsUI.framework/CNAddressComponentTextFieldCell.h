@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSArray *_componentConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *componentConstraints; // @synthesize componentConstraints=_componentConstraints;
 @property(retain, nonatomic) UIImageView *chevron; // @synthesize chevron=_chevron;
 @property(retain, nonatomic) CNRepeatingGradientSeparatorView *separator; // @synthesize separator=_separator;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UITextField *textFieldLeft; // @synthesize textFieldLeft=_textFieldLeft;
 @property(retain, nonatomic) UITextField *textFieldForChevron; // @synthesize textFieldForChevron=_textFieldForChevron;
 @property(nonatomic) _Bool usesSplitTextFields; // @synthesize usesSplitTextFields=_usesSplitTextFields;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *textAttributes;
 @property(readonly, nonatomic) NSArray *textFields;
 - (void)updateConstraints;

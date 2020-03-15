@@ -28,12 +28,12 @@
     unsigned long long _currentStyle;
     unsigned long long _currentDial;
     unsigned long long _currentColor;
-    struct NSNumber *_clockTimerToken;
+    NSNumber *_clockTimerToken;
 }
 
 + (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
 + (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
-+ (long long)uiSensitivity;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *clockTimerToken; // @synthesize clockTimerToken=_clockTimerToken;
 @property(nonatomic) unsigned long long currentColor; // @synthesize currentColor=_currentColor;
 @property(nonatomic) unsigned long long currentDial; // @synthesize currentDial=_currentDial;
@@ -49,7 +49,6 @@
 @property(retain, nonatomic) NTKCircularAnalogDialView *dialView; // @synthesize dialView=_dialView;
 @property(retain, nonatomic) NTKVictoryAnalogBackgroundView *analogBackgroundView; // @synthesize analogBackgroundView=_analogBackgroundView;
 @property(retain, nonatomic) NTKOlympusTimeView *olympusView; // @synthesize olympusView=_olympusView;
-- (void).cxx_destruct;
 - (id)utilityBezelComplicationView;
 - (double)bezelComplicationTextWidthInRadius;
 - (void)_updateDialTicksForBezelText;

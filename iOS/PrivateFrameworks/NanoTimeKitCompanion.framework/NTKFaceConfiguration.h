@@ -21,9 +21,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool resourceDirectoryExists; // @synthesize resourceDirectoryExists=_resourceDirectoryExists;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_dateMetricsKeys;
 - (void)_applyMetrics:(id)arg1;
 - (void)_applyComplicationsDescription:(id)arg1;

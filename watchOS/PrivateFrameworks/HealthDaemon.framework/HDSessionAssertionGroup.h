@@ -15,8 +15,8 @@
     int _state;
 }
 
-@property(readonly, nonatomic) int state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int state; // @synthesize state=_state;
 - (void)_transitionToNewAssertions:(id)arg1;
 - (void)invalidate;
 - (void)transitionToState:(int)arg1;

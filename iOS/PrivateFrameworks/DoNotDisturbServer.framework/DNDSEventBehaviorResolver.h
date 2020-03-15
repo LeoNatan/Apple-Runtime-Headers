@@ -21,8 +21,8 @@
     id <DNDSEventBehaviorResolverDataSource> _dataSource;
 }
 
-@property(nonatomic) __weak id <DNDSEventBehaviorResolverDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DNDSEventBehaviorResolverDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (_Bool)_queue_eventSourceIsEmergencyContact:(id)arg1;
 - (_Bool)_queue_eventSourceIsRepeat:(id)arg1 clientDetails:(id)arg2 date:(id)arg3;
 - (_Bool)_queue_eventSourceIsContact:(id)arg1 inGroupWithIdentifier:(id)arg2;

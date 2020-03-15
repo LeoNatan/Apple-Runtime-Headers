@@ -8,7 +8,7 @@
 
 #import <ARKit/ARRecordingTechniqueProtocol-Protocol.h>
 
-@class ARParentImageSensorSettings, NSError, NSMutableDictionary, NSObject, NSSet, NSString, NSURL;
+@class ARParentImageSensorSettings, NSError, NSMutableDictionary, NSMutableSet, NSObject, NSSet, NSString, NSURL;
 @protocol ARRecordingTechniqueDelegate, OS_dispatch_queue;
 
 @interface ARRecordingTechniquePublic : ARTechnique <ARRecordingTechniqueProtocol>
@@ -20,6 +20,8 @@
     _Bool _writerReady;
     NSMutableDictionary *_lastRecordedTimestamps;
     NSError *_finishedError;
+    _Bool _recordCollaborationData;
+    NSMutableSet *_knownVIOSessionIDs;
     _Bool _expectDepthData;
     _Bool _expectAudioData;
     _Bool _expectCustomData;
@@ -33,6 +35,7 @@
 + (_Bool)isSupported;
 + (id)metadataIdentifierForARSensorDataClass:(Class)arg1 error:(id *)arg2;
 + (id)metadataIdentifierForARRecordableResultsClass:(Class)arg1;
+- (void).cxx_destruct;
 @property unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) ARParentImageSensorSettings *parentImageSensorSettings; // @synthesize parentImageSensorSettings=_parentImageSensorSettings;
 @property __weak id <ARRecordingTechniqueDelegate> recordingTechniqueDelegate; // @synthesize recordingTechniqueDelegate=_recordingTechniqueDelegate;
@@ -41,11 +44,13 @@
 @property(nonatomic) _Bool expectAudioData; // @synthesize expectAudioData=_expectAudioData;
 @property(nonatomic) _Bool expectDepthData; // @synthesize expectDepthData=_expectDepthData;
 @property(readonly, nonatomic) NSURL *outputFileURL; // @synthesize outputFileURL=_outputFileURL;
-- (void).cxx_destruct;
 - (void)didFinishRecording;
 - (void)didFailWithError:(id)arg1;
 - (void)isReadyToRecord;
 - (_Bool)isEqual:(id)arg1;
+- (void)recordRemovedAnchor:(id)arg1;
+- (void)recordAddedAnchor:(id)arg1;
+- (void)recordCollaborationData:(id)arg1 localSession:(_Bool)arg2;
 - (id)processData:(id)arg1;
 - (void)_finish:(id)arg1;
 - (void)_fail:(id)arg1;
@@ -61,7 +66,7 @@
 - (unsigned long long)requiredSensorDataTypes;
 @property(readonly, nonatomic) unsigned long long recordingSensorDataTypes;
 - (void)dealloc;
-- (id)initWithFileURL:(id)arg1 recordingSensorDataTypes:(unsigned long long)arg2 recordingResultDataClasses:(id)arg3 startImmediately:(_Bool)arg4;
+- (id)initWithFileURL:(id)arg1 recordingSensorDataTypes:(unsigned long long)arg2 recordingResultDataClasses:(id)arg3 startImmediately:(_Bool)arg4 recordCollaborationData:(_Bool)arg5;
 - (id)initWithFileURL:(id)arg1 recordingSensorDataTypes:(unsigned long long)arg2 recordingResultDataClasses:(id)arg3;
 - (id)initWithFileURL:(id)arg1 sensorDataTypes:(unsigned long long)arg2;
 - (id)init;

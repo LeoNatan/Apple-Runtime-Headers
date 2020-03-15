@@ -27,6 +27,7 @@
     NSError *_errorToReturn;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *errorToReturn; // @synthesize errorToReturn=_errorToReturn;
 @property(readonly) CDUnknownBlockType iCloudCompletion; // @synthesize iCloudCompletion=_iCloudCompletion;
 @property(retain, nonatomic) NSArray *dataclassesToEnableAnyway; // @synthesize dataclassesToEnableAnyway=_dataclassesToEnableAnyway;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain) NSWindow *setupSheet; // @synthesize setupSheet=_setupSheet;
 @property(retain, nonatomic) NSWindow *iCloudWindow; // @synthesize iCloudWindow=_iCloudWindow;
-- (void).cxx_destruct;
 - (BOOL)appleIDIsLoggedIn:(id)arg1;
 - (void)deleteAccountName:(id)arg1;
 - (BOOL)isAccountPrimary:(id)arg1;

@@ -13,8 +13,8 @@
     NSString *_movieID;
 }
 
-@property(readonly, copy, nonatomic) NSString *movieID; // @synthesize movieID=_movieID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *movieID; // @synthesize movieID=_movieID;
 - (id)jsonData;
 - (id)initWithMovieID:(id)arg1;
 

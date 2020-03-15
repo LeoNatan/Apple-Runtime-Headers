@@ -19,10 +19,10 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasKeyline; // @synthesize hasKeyline=_hasKeyline;
 @property(nonatomic) __weak id <SiriUIActionableFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)snippetViewController;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)edgeInsets;
 - (void)_buttonTapped:(id)arg1;
 - (void)setSnippetViewController:(id)arg1;

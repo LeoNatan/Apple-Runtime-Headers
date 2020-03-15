@@ -17,10 +17,10 @@
     NSValue *_targetContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *targetContentOffset; // @synthesize targetContentOffset=_targetContentOffset;
 @property(retain, nonatomic) NSValue *ignoredProposedContentOffset; // @synthesize ignoredProposedContentOffset=_ignoredProposedContentOffset;
 @property(readonly, nonatomic) AVTEngagementLayout *engagementLayout; // @synthesize engagementLayout=_engagementLayout;
-- (void).cxx_destruct;
 - (struct CGSize)contentSizeForVisibleBounds:(struct CGRect)arg1 numberOfItems:(long long)arg2;
 - (struct CGPoint)centerForCenteringElementAtIndex:(long long)arg1 visibleBoundsSize:(struct CGSize)arg2 proposedOrigin:(struct CGPoint)arg3;
 - (id)indexesForElementsInRect:(struct CGRect)arg1 visibleBounds:(struct CGRect)arg2 numberOfItems:(long long)arg3;

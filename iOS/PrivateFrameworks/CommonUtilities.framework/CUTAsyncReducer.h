@@ -16,11 +16,11 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType reducerBlock; // @synthesize reducerBlock=_reducerBlock;
 @property(retain, nonatomic) CUTResult *result; // @synthesize result=_result;
 @property(retain, nonatomic) NSArray *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 - (void)_reduceWithPending:(id)arg1 visited:(id)arg2 currentResult:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_completeWithResult:(id)arg1;
 - (void)reduceWithCompletion:(CDUnknownBlockType)arg1;

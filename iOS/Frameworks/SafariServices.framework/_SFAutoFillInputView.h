@@ -20,8 +20,8 @@
     id <_SFAutoFillInputViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_SFAutoFillInputViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SFAutoFillInputViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_showStandardKeyboard:(id)arg1;
 - (void)_showMorePasswords:(id)arg1;
 - (void)_fillCredential:(id)arg1;

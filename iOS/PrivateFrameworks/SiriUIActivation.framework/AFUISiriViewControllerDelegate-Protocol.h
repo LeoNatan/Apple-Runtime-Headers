@@ -23,7 +23,6 @@
 - (void)userRelevantEventDidOccurInSiriViewController:(AFUISiriViewController *)arg1;
 - (SASRequestOptions *)siriViewController:(AFUISiriViewController *)arg1 willStartRequestWithOptions:(SASRequestOptions *)arg2;
 - (void)startGuidedAccessForSiriViewController:(AFUISiriViewController *)arg1;
-- (void)dismissSiriViewController:(AFUISiriViewController *)arg1 delayForTTS:(_Bool)arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 didEncounterUnexpectedError:(NSError *)arg2;
 
 @optional
@@ -38,6 +37,9 @@
 - (void)siriSessionShouldExtendAudioSessionForImminentPhoneCall;
 - (void)siriViewController:(AFUISiriViewController *)arg1 didCompleteRequestWithError:(NSError *)arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 didEndSession:(AFUISiriSession *)arg2;
+- (void)siriViewController:(AFUISiriViewController *)arg1 requestsDismissalWithReason:(unsigned long long)arg2 withCompletion:(void (^)(_Bool))arg3;
+- (void)dismissSiriViewController:(AFUISiriViewController *)arg1 delayForTTS:(_Bool)arg2 withDismissalReason:(unsigned long long)arg3;
+- (void)dismissSiriViewController:(AFUISiriViewController *)arg1 delayForTTS:(_Bool)arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 requestsDismissal:(void (^)(_Bool))arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 requestsPresentation:(void (^)(_Bool))arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 presentedIntentWithBundleId:(NSString *)arg2;

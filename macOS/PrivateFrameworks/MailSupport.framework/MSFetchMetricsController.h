@@ -14,8 +14,8 @@
     id <MSFetchMetricsControllerDataSource> _dataSource;
 }
 
-@property(readonly, nonatomic) __weak id <MSFetchMetricsControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <MSFetchMetricsControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void)stopAndSubmitWithOptions:(unsigned long long)arg1 fetchSize:(unsigned long long)arg2;
 - (void)start;
 - (id)initWithDataSource:(id)arg1;

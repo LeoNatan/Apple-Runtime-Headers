@@ -26,10 +26,10 @@
 + (id)recurrenceIdentifierForItem:(id)arg1;
 + (id)recurrenceIdentifierWithString:(id)arg1;
 + (id)recurrenceIdentifierWithLocalUID:(id)arg1 recurrenceDate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifierString; // @synthesize identifierString=_identifierString;
 @property(retain) NSDate *recurrenceDateUnadjustedFromUTC; // @synthesize recurrenceDateUnadjustedFromUTC=_recurrenceDateUnadjustedFromUTC;
 @property(retain) NSString *localUID; // @synthesize localUID=_localUID;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

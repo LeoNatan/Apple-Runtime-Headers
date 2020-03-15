@@ -29,13 +29,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)_configurationHistoryClass;
+- (void).cxx_destruct;
 @property(nonatomic) long long distribution; // @synthesize distribution=_distribution;
 @property(nonatomic, getter=isBaselineRelativeArrangement) _Bool baselineRelativeArrangement; // @synthesize baselineRelativeArrangement=_baselineRelativeArrangement;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
 @property(readonly, nonatomic) NSMapTable *customSpacings; // @synthesize customSpacings=_customSpacings;
 @property(nonatomic, setter=_setItemFittingSizeChanged:) _Bool _itemFittingSizeChanged; // @synthesize _itemFittingSizeChanged;
 @property(nonatomic, setter=_setItemOrderingChanged:) _Bool _itemOrderingChanged; // @synthesize _itemOrderingChanged;
-- (void).cxx_destruct;
 - (id)_baselineViewVendTallest:(_Bool)arg1 forFirstBaseline:(_Bool)arg2;
 - (id)_lastVisibleItem;
 - (id)_firstVisibleItem;

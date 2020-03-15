@@ -136,6 +136,7 @@
 + (id)keyPathsForValuesAffectingPrefersUnobscuredContent;
 + (id)keyPathsForValuesAffectingCanShowSharingServiceButton;
 + (id)keyPathsForValuesAffectingControlsHidden;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *overrideParentApplicationDisplayIdentifier; // @synthesize overrideParentApplicationDisplayIdentifier=_overrideParentApplicationDisplayIdentifier;
 @property(nonatomic) BOOL shouldUnhideOnPictureInPictureStop; // @synthesize shouldUnhideOnPictureInPictureStop=_shouldUnhideOnPictureInPictureStop;
 @property(nonatomic) __weak id <AVPlayerViewPictureInPictureDelegate> pictureInPictureDelegate; // @synthesize pictureInPictureDelegate=_pictureInPictureDelegate;
@@ -149,7 +150,6 @@
 @property(nonatomic, getter=isTrimming) BOOL trimming; // @synthesize trimming=_trimming;
 @property(retain) AVControlsContainerViewController *controlsContainerViewController; // @synthesize controlsContainerViewController=_controlsContainerViewController;
 @property long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
-- (void).cxx_destruct;
 @property(readonly) BOOL avkit_isVisible;
 @property(readonly) NSWindow *avkit_window;
 @property(readonly) struct CGRect avkit_videoRectInWindow;

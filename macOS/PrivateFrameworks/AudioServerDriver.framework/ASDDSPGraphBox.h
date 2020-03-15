@@ -14,9 +14,9 @@
     shared_ptr_f6ac7592 _graph;
 }
 
-@property(readonly, nonatomic) struct Box *box; // @synthesize box=_box;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct Box *box; // @synthesize box=_box;
 - (BOOL)setParameter:(float)arg1 forID:(unsigned int)arg2 scope:(unsigned int)arg3 element:(unsigned int)arg4 bufferOffset:(long long)arg5;
 - (BOOL)hasParameter:(unsigned int)arg1 scope:(unsigned int)arg2 element:(unsigned int)arg3;
 - (BOOL)getParameter:(float *)arg1 forID:(unsigned int)arg2 scope:(unsigned int)arg3 element:(unsigned int)arg4;

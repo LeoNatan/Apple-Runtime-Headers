@@ -19,8 +19,8 @@
 + (id)createPresentationWithActionItems:(id)arg1 addDismissButton:(_Bool)arg2;
 + (id)createPresentationWithActionItems:(id)arg1 dismissText:(id)arg2;
 + (id)createPresentationWithActionItems:(id)arg1;
-@property(retain, nonatomic) CUISBulletinActionMenu *actionMenu; // @synthesize actionMenu=_actionMenu;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CUISBulletinActionMenu *actionMenu; // @synthesize actionMenu=_actionMenu;
 - (id)init;
 - (id)initWithActionItems:(id)arg1 addItems:(unsigned int)arg2 customItemText:(id)arg3 footerText:(id)arg4;
 

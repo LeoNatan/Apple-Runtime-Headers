@@ -31,6 +31,7 @@
     NSString *_unconfirmedPIN;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *unconfirmedPIN; // @synthesize unconfirmedPIN=_unconfirmedPIN;
 @property(retain) NSString *oldPIN; // @synthesize oldPIN=_oldPIN;
 @property(retain) TPSimpleNumberPad *numberPad; // @synthesize numberPad=_numberPad;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSString *promptTextForNewPIN; // @synthesize promptTextForNewPIN=_promptTextForNewPIN;
 @property(retain, nonatomic) NSString *promptTextForOldPIN; // @synthesize promptTextForOldPIN=_promptTextForOldPIN;
 @property id <TPSetPINViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateUIForStateChange;
 - (void)_updateStatusLabel;
 - (void)_updateNavBarButtons;

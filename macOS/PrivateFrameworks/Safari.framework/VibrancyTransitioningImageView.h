@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     id <VibrancyTransitioningImageViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <VibrancyTransitioningImageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType imageViewConfigurationBlock; // @synthesize imageViewConfigurationBlock=_imageViewConfigurationBlock;
-- (void).cxx_destruct;
 - (void)_performSnapshotCrossFadeWithFinalOpacity:(double)arg1 animationDuration:(double)arg2;
 - (void)_showNextImageViewWithFinalOpacity:(double)arg1 animationDuration:(double)arg2;
 - (void)_showNextImageViewWithFinalOpacity:(double)arg1;

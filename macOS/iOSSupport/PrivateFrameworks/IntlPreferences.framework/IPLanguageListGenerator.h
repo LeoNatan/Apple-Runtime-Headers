@@ -22,10 +22,10 @@
 + (id)regionalVariantLanguagesForBaseLanguage:(id)arg1;
 + (void)preheat;
 + (id)generator;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *systemLanguages; // @synthesize systemLanguages=_systemLanguages;
 @property(readonly, nonatomic) NSLocale *preferredLocale; // @synthesize preferredLocale=_preferredLocale;
 @property(readonly, nonatomic) NSArray *preferredLanguages; // @synthesize preferredLanguages=_preferredLanguages;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *systemDisplayLanguage; // @synthesize systemDisplayLanguage=_systemDisplayLanguage;
 - (id)otherLanguages;
 - (id)deviceLanguagesForChangingDeviceLanguage:(BOOL)arg1;

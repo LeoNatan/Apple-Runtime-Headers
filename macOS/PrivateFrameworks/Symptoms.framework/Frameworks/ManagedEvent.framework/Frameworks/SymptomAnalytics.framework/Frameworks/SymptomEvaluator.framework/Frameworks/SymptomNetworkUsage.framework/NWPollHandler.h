@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NWUsageManager *_manager;
 }
 
+- (void).cxx_destruct;
 @property(retain) NWUsageManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) unsigned long long ntstatContext; // @synthesize ntstatContext=_ntstatContext;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy) CDUnknownBlockType deliveryBlock; // @synthesize deliveryBlock=_deliveryBlock;
 @property(retain) NWUsageTargetSelector *flowSelector; // @synthesize flowSelector=_flowSelector;
-- (void).cxx_destruct;
 - (void)shutdown;
 @property(readonly, nonatomic) _Bool shouldRestartPoll;
 @property(readonly, nonatomic) _Bool completed;

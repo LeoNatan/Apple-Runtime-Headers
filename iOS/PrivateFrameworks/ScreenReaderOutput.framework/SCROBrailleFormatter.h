@@ -35,6 +35,7 @@
 }
 
 + (void)resetEditingManager;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <BRLTBrailleStateManagerDelegate> outputDelegate; // @synthesize outputDelegate=_outputDelegate;
 @property(readonly, nonatomic) unsigned long long generationID; // @synthesize generationID=_generationID;
 @property(readonly, nonatomic) long long lastToken; // @synthesize lastToken=_lastToken;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) int inputContractionMode; // @synthesize inputContractionMode=_inputContractionMode;
 @property(readonly, nonatomic) int outputContractionMode; // @synthesize outputContractionMode=_outputContractionMode;
 @property(nonatomic) int lineFocus; // @synthesize lineFocus=_lineFocus;
-- (void).cxx_destruct;
 - (void)brailleDisplayDeletedCharacter:(id)arg1;
 - (void)brailleDisplayInsertedCharacter:(id)arg1;
 - (void)didInsertScriptString:(id)arg1;

@@ -21,6 +21,7 @@
 }
 
 + (id)defaultOptions;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType decorationRegistrationHandler; // @synthesize decorationRegistrationHandler=_decorationRegistrationHandler;
 @property(copy, nonatomic) NSArray *globalSupplementaryItems; // @synthesize globalSupplementaryItems=_globalSupplementaryItems;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) Class invalidationContextClass; // @synthesize invalidationContextClass=_invalidationContextClass;
 @property(retain, nonatomic) Class layoutAttributesClass; // @synthesize layoutAttributesClass=_layoutAttributesClass;
 @property(nonatomic) double interSectionSpacing; // @synthesize interSectionSpacing=_interSectionSpacing;
-- (void).cxx_destruct;
 
 @end
 

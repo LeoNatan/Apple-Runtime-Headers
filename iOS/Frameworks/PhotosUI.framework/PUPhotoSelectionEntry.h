@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSMutableIndexSet *_selectedIndexes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setSelectedAssetsSet:(id)arg1;
 - (void)handlePhotoLibraryChange:(id)arg1;

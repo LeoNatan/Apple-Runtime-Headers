@@ -30,6 +30,7 @@
 
 + (double)cellHeight;
 + (id)identifierForConversation:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak NSObject<CKConversationListCellDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool shouldHidePreviewSummary; // @synthesize shouldHidePreviewSummary=_shouldHidePreviewSummary;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *searchSummaryText; // @synthesize searchSummaryText=_searchSummaryText;
 @property(retain, nonatomic) NSDate *searchMessageDate; // @synthesize searchMessageDate=_searchMessageDate;
 @property(copy, nonatomic) NSString *searchMessageGUID; // @synthesize searchMessageGUID=_searchMessageGUID;
-- (void).cxx_destruct;
 - (void)updateBlockedSummaryLabelIfNeeded;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)updateForEditing:(_Bool)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGSize _totalFitSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize totalFitSize; // @synthesize totalFitSize=_totalFitSize;
 @property(copy, nonatomic) NSMapTable *viewsToFitSizes; // @synthesize viewsToFitSizes=_viewsToFitSizes;
-- (void).cxx_destruct;
 
 @end
 

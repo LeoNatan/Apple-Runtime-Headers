@@ -29,6 +29,7 @@
 + (_Bool)hasMessageReceiverChildren;
 + (_Bool)__validateRecurrences:(id)arg1;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long activationState; // @synthesize activationState=_activationState;
 @property(nonatomic) unsigned long long activationType; // @synthesize activationType=_activationType;
 @property(retain, nonatomic) HMDEventTriggerUserConfirmationSession *userConfirmationSession; // @synthesize userConfirmationSession=_userConfirmationSession;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSPredicate *evaluationCondition; // @synthesize evaluationCondition=_evaluationCondition;
 @property(readonly, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(nonatomic) _Bool migratedEventsToRecords; // @synthesize migratedEventsToRecords=_migratedEventsToRecords;
-- (void).cxx_destruct;
 - (_Bool)containsRecurrences;
 - (id)metric:(_Bool)arg1;
 - (void)timerFired:(id)arg1;

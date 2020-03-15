@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_UUID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUniversalProvisioningProfile; // @synthesize isUniversalProvisioningProfile=_isUniversalProvisioningProfile;
 @property(nonatomic) _Bool isFreeDeveloperProvisioningProfile; // @synthesize isFreeDeveloperProvisioningProfile=_isFreeDeveloperProvisioningProfile;
 @property(nonatomic) _Bool isBeta; // @synthesize isBeta=_isBeta;
 @property(nonatomic) _Bool isAppleInternal; // @synthesize isAppleInternal=_isAppleInternal;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(retain, nonatomic) NSString *allowedApplicationIdentifierEntitlement; // @synthesize allowedApplicationIdentifierEntitlement=_allowedApplicationIdentifierEntitlement;
-- (void).cxx_destruct;
 - (_Bool)allowsApplicationIdentifierEntitlement:(id)arg1;
 - (id)initWithProfile:(void *)arg1;
 

@@ -27,6 +27,7 @@
 + (id)sectionWithNumberOfItems:(unsigned long long)arg1;
 + (id)sectionWithItems:(id)arg1 header:(id)arg2 footer:(id)arg3 identifier:(id)arg4;
 + (id)sectionWithItems:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) double footerHeight; // @synthesize footerHeight=_footerHeight;
 @property(nonatomic) double headerHeight; // @synthesize headerHeight=_headerHeight;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *header; // @synthesize header=_header;
 @property(retain, nonatomic) id sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(readonly, nonatomic) NSMutableArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)itemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfItems;

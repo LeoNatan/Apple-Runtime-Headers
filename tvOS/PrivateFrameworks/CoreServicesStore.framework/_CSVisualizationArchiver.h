@@ -25,9 +25,9 @@
 + (struct __sFILE *)fileHandleFromMachPort:(unsigned int)arg1 forMachServiceName:(id)arg2;
 + (struct __sFILE *)fileHandleFromFileportMessage:(const struct FileportMessage *)arg1 trailer:(const CDStruct_3d4d02d4 *)arg2;
 + (_Bool)canProvideVisualizerForMachServiceName:(id)arg1 givenTrailer:(const CDStruct_3d4d02d4 *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPredicate *unitDescriptionPredicate; // @synthesize unitDescriptionPredicate=_unitDescriptionPredicate;
 @property(readonly) _CSVisualizer *visualizer; // @synthesize visualizer=_visualizer;
-- (void).cxx_destruct;
 - (void)finishWriting;
 - (void)writeAllUnitsWithBlock:(CDUnknownBlockType)arg1;
 - (void)writeAllUnitsInTable:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;

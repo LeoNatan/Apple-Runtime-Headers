@@ -18,13 +18,13 @@
     UIStackView *_verticalStackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *verticalStackView; // @synthesize verticalStackView=_verticalStackView;
 @property(retain, nonatomic) PUICButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIStackView *horizontalStackViewContainer; // @synthesize horizontalStackViewContainer=_horizontalStackViewContainer;
 @property(retain, nonatomic) UIStackView *verticalStackViewContainer; // @synthesize verticalStackViewContainer=_verticalStackViewContainer;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

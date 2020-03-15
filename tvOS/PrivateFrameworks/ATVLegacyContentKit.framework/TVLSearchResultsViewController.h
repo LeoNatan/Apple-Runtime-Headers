@@ -19,8 +19,8 @@
     id <TVLSearchResultsViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <TVLSearchResultsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVLSearchResultsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_menuItemAtIndexPath:(id)arg1;
 - (void)_evaluateJavascriptForEvent:(id)arg1 atIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;

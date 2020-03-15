@@ -39,6 +39,7 @@
     struct CGAffineTransform _rotationTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentRotation; // @synthesize currentRotation=_currentRotation;
 @property(readonly, nonatomic) NSMutableDictionary *requestedImageTimeToCMTimeMap; // @synthesize requestedImageTimeToCMTimeMap=_requestedImageTimeToCMTimeMap;
 @property(readonly, nonatomic) NSMutableArray *pendingImageRequests; // @synthesize pendingImageRequests=_pendingImageRequests;
@@ -60,7 +61,6 @@
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) __weak AVEditBehavior *behavior; // @synthesize behavior=_behavior;
 @property(readonly, nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
-- (void).cxx_destruct;
 - (id)_makeBarButtonItems;
 - (void)_generateThumbnails;
 - (void)editViewDidFinishRequestingThumbnails:(id)arg1;

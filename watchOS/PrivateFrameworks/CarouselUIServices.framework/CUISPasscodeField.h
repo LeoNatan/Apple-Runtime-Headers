@@ -36,10 +36,10 @@
     id <CUISPasscodeFieldDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *currentPasscode; // @synthesize currentPasscode=_currentPasscode;
 @property(nonatomic) __weak id <CUISPasscodeFieldDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasContent;
 - (void)backspace;
 - (void)appendPreviewDigit:(unsigned int)arg1;

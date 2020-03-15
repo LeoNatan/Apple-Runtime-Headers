@@ -6,43 +6,24 @@
 
 #import <AppKit/NSTableRowView.h>
 
-#import <Safari/CALayerDelegate-Protocol.h>
-
-@class NSString;
+@class NSVisualEffectView;
 
 __attribute__((visibility("hidden")))
-@interface SidebarTableRowView : NSTableRowView <CALayerDelegate>
+@interface SidebarTableRowView : NSTableRowView
 {
+    NSVisualEffectView *_selectionBackgroundView;
     BOOL _shouldDrawSelectionOnlyWhenEmphasized;
     BOOL _highlighted;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) BOOL shouldDrawSelectionOnlyWhenEmphasized; // @synthesize shouldDrawSelectionOnlyWhenEmphasized=_shouldDrawSelectionOnlyWhenEmphasized;
-- (void)_redrawPreviousRow;
-- (void)_redrawRow;
-- (void)_drawSelectionHighlightInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2;
-- (BOOL)_shouldDrawSelectionBackground;
-- (BOOL)_isNextRowHighlighted;
-- (BOOL)_nextRowIsGroupRow;
-- (id)_nextRow;
-- (BOOL)_isLastRow;
 - (void)_updateSelectedBackgroundView;
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
-- (void)updateLayer;
-- (BOOL)wantsUpdateLayer;
+- (BOOL)_shouldDrawSelectionBackground;
 - (long long)interiorBackgroundStyle;
 - (void)setEmphasized:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
-- (id)makeBackingLayer;
-- (BOOL)isFlipped;
-- (id)initWithFrame:(struct CGRect)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

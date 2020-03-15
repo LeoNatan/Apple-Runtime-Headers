@@ -26,6 +26,7 @@
     NSString *_warrantyLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(retain, nonatomic) NSData *serverTerms; // @synthesize serverTerms=_serverTerms;
 @property(retain, nonatomic) NSString *disagreeLabel; // @synthesize disagreeLabel=_disagreeLabel;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSData *warranty; // @synthesize warranty=_warranty;
 @property(retain, nonatomic) NSData *multiterms; // @synthesize multiterms=_multiterms;
 @property(retain, nonatomic) NSData *license; // @synthesize license=_license;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

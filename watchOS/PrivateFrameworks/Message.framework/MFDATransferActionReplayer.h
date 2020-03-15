@@ -15,8 +15,8 @@
     MFDAMessageStore *_store;
 }
 
-@property(retain, nonatomic) MFDAMessageStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MFDAMessageStore *store; // @synthesize store=_store;
 - (_Bool)isRecoverableError:(id)arg1;
 - (_Bool)downloadFailed;
 - (id)fetchBodyDataForRemoteID:(id)arg1 mailboxURL:(id)arg2;

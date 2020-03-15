@@ -17,10 +17,10 @@
     NSData *_valueNulls;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *valueNulls; // @synthesize valueNulls=_valueNulls;
 @property(retain, nonatomic) NSData *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

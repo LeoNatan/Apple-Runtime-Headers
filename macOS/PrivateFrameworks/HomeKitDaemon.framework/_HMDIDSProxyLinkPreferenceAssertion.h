@@ -13,8 +13,8 @@
     IDSService *_proxyService;
 }
 
-@property(readonly, nonatomic) IDSService *proxyService; // @synthesize proxyService=_proxyService;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDSService *proxyService; // @synthesize proxyService=_proxyService;
 - (void)dealloc;
 - (id)initWithIDSProxyService:(id)arg1;
 

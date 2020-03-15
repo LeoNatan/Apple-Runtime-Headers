@@ -15,8 +15,8 @@
     UIApplicationSceneSettingsDiffInspector *_sceneSettingsApplicationLifecycleEventDiffInspector;
 }
 
-@property(retain, nonatomic) UIApplicationSceneSettingsDiffInspector *sceneSettingsApplicationLifecycleEventDiffInspector; // @synthesize sceneSettingsApplicationLifecycleEventDiffInspector=_sceneSettingsApplicationLifecycleEventDiffInspector;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIApplicationSceneSettingsDiffInspector *sceneSettingsApplicationLifecycleEventDiffInspector; // @synthesize sceneSettingsApplicationLifecycleEventDiffInspector=_sceneSettingsApplicationLifecycleEventDiffInspector;
 - (void)_performActionsForUIScene:(id)arg1 withUpdatedFBSScene:(id)arg2 settingsDiff:(id)arg3 fromSettings:(id)arg4 transitionContext:(id)arg5 lifecycleActionType:(unsigned int)arg6;
 
 // Remaining properties

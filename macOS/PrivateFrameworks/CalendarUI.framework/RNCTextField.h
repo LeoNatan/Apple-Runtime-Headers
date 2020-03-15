@@ -16,8 +16,8 @@
 
 + (id)textColorForStyle:(int)arg1;
 + (id)fontForStyle:(int)arg1;
-@property __weak RNCTableCellView *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property __weak RNCTableCellView *controller; // @synthesize controller=_controller;
 @property int style; // @synthesize style=_style;
 - (BOOL)drawsBackground;
 - (BOOL)wantsLayer;

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct NSDirectionalEdgeInsets _hostContentSizeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIRTree *supplementaryItemGeometricIndexer; // @synthesize supplementaryItemGeometricIndexer=_supplementaryItemGeometricIndexer;
 @property(retain, nonatomic) NSDictionary *supplementaryFramesKeyedByKindIndex; // @synthesize supplementaryFramesKeyedByKindIndex=_supplementaryFramesKeyedByKindIndex;
 @property(retain, nonatomic) NSDictionary *enrolledSupplementaryFramesDict; // @synthesize enrolledSupplementaryFramesDict=_enrolledSupplementaryFramesDict;
@@ -39,15 +40,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint hostContentOffset; // @synthesize hostContentOffset=_hostContentOffset;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) NSIndexSet *pinnedSupplementaryIndexes; // @synthesize pinnedSupplementaryIndexes=_pinnedSupplementaryIndexes;
-- (void).cxx_destruct;
-- (id)_effectiveBoundarySupplementrayItem:(id)arg1 forLayoutAxis:(int)arg2;
+- (id)_effectiveBoundarySupplementrayItem:(id)arg1 forLayoutAxis:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSArray *memoizedSupplementaryItems;
 @property(readonly, nonatomic) long long memoizedSupplementaryKind;
-- (id)_normalizedFramesAlongLayoutAxisForFrames:(id)arg1 layoutAxis:(int)arg2;
+- (id)_normalizedFramesAlongLayoutAxisForFrames:(id)arg1 layoutAxis:(unsigned long long)arg2;
 - (struct CGPoint)_offsetForContentSizeInsets:(struct NSDirectionalEdgeInsets)arg1;
-- (struct CGSize)_requiredContentSizeForSupplementaryFrames:(id)arg1 forLayoutAxis:(int)arg2 containerSize:(struct CGSize)arg3;
-- (struct CGSize)_largestPossibleHostContentSizeForContainerSize:(struct CGSize)arg1 layoutAxis:(int)arg2;
-- (struct CGSize)_computeContentSizeForEmptyHostContentSizeForContainer:(id)arg1 hostContentSize:(struct CGSize)arg2 layoutAxis:(int)arg3 supplementaryFrames:(id)arg4 preferredSizes:(id)arg5 layoutRTL:(_Bool)arg6 supplementaryKind:(long long)arg7;
+- (struct CGSize)_requiredContentSizeForSupplementaryFrames:(id)arg1 forLayoutAxis:(unsigned long long)arg2 containerSize:(struct CGSize)arg3;
+- (struct CGSize)_largestPossibleHostContentSizeForContainerSize:(struct CGSize)arg1 layoutAxis:(unsigned long long)arg2;
+- (struct CGSize)_computeContentSizeForEmptyHostContentSizeForContainer:(id)arg1 hostContentSize:(struct CGSize)arg2 layoutAxis:(unsigned long long)arg3 supplementaryFrames:(id)arg4 preferredSizes:(id)arg5 layoutRTL:(_Bool)arg6 supplementaryKind:(long long)arg7;
 - (struct CGRect)_frameForSupplementaryItem:(id)arg1 container:(id)arg2 contentSize:(struct CGSize)arg3 frameOffset:(struct CGPoint)arg4 applyPinning:(_Bool)arg5 visibleBounds:(struct CGRect)arg6 preferredSizes:(id)arg7 preferredIndex:(long long)arg8 layoutRTL:(_Bool)arg9;
 - (id)_queryFramesIntersectingRect:(struct CGRect)arg1 frameOffset:(struct CGPoint)arg2;
 - (void)_updateGeometricIndexer;

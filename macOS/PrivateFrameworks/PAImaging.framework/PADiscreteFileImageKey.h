@@ -18,10 +18,10 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSDictionary *cgOptions; // @synthesize cgOptions=_cgOptions;
 @property(readonly) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithSubsampleFactor:(unsigned long long)arg1;
 - (unsigned long long)subsampleFactor;

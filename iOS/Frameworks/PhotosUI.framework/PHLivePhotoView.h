@@ -43,6 +43,7 @@
 }
 
 + (id)livePhotoBadgeImageWithOptions:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_e83c9415 trimmedTimeRange; // @synthesize trimmedTimeRange=_trimmedTimeRange;
 @property(nonatomic) _Bool showsStatusBorder; // @synthesize showsStatusBorder=_showsStatusBorder;
 @property(retain, nonatomic) ISLivePhotoPlayer *player; // @synthesize player=_player;
@@ -58,7 +59,6 @@
 @property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 @property(retain, nonatomic) PHLivePhoto *livePhoto; // @synthesize livePhoto=_livePhoto;
 @property(nonatomic) __weak id <PHLivePhotoViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_handlePlayerItemStatusChanged;
 - (void)_updatePlayerTargetReadiness;

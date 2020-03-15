@@ -13,10 +13,10 @@
     CALayer *_stringLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *stringLayer; // @synthesize stringLayer=_stringLayer;
 @property(retain, nonatomic) CALayer *attachmentLayer; // @synthesize attachmentLayer=_attachmentLayer;
 @property(retain, nonatomic) CALayer *balloonLayer; // @synthesize balloonLayer=_balloonLayer;
-- (void).cxx_destruct;
 - (void)setupAttachmentLayerWithStringColorIndex:(unsigned int)arg1;
 - (void)setupStringLayerWithStringColorIndex:(unsigned int)arg1;
 - (void)setupBaloonLayerWithColorIndex:(unsigned int)arg1;

@@ -35,6 +35,7 @@
 - (id)dvt_dictionaryOrNilForKey:(id)arg1;
 - (id)dvt_dataOrNilForKey:(id)arg1;
 - (id)dvt_stringOrNilForKey:(id)arg1;
+- (long long)dvt_compareSortedKeysAndValues:(id)arg1;
 - (_Bool)dvt_isNonEmpty;
 - (id)dvt_dictionaryByAddingEntriesFromDictionary:(id)arg1;
 - (id)dvt_dictionaryBySettingObject:(id)arg1 forKey:(id)arg2;

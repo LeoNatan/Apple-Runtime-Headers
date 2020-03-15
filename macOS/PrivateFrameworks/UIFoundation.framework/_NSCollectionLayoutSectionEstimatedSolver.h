@@ -31,6 +31,7 @@
     struct CGVector _orthogonalScrollingPrefetchingUnitVector;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int containerLayoutAxis; // @synthesize containerLayoutAxis=_containerLayoutAxis;
 @property(retain, nonatomic) _NSCollectionLayoutSolutionState *solutionState; // @synthesize solutionState=_solutionState;
 @property(retain, nonatomic) id <NSCollectionLayoutContainer> memoizedSupplementaryHostContainer; // @synthesize memoizedSupplementaryHostContainer=_memoizedSupplementaryHostContainer;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) NSObject *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) id <NSCollectionLayoutContainer> container; // @synthesize container=_container;
 @property(readonly, nonatomic) NSCollectionLayoutSection *layoutSection; // @synthesize layoutSection=_layoutSection;
-- (void).cxx_destruct;
 - (id)auxiliaryHostPreferredSizes;
 - (id)auxiliaryHostSupplementaryEnroller;
 - (long long)auxiliaryHostAuxiliaryKind;

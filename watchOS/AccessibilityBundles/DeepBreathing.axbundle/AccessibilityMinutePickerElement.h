@@ -12,9 +12,9 @@
     id _sessionViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id sessionViewController; // @synthesize sessionViewController=_sessionViewController;
 @property(retain, nonatomic) id sessionMinutesLabel; // @synthesize sessionMinutesLabel=_sessionMinutesLabel;
-- (void).cxx_destruct;
 - (long long)_axNumberOfMinutes;
 - (void)_axSetMinute:(long long)arg1;
 - (unsigned long long)accessibilityTraits;

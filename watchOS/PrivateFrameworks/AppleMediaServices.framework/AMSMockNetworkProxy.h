@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 + (id)executedOverrides;
 + (id)registeredOverrides;
 + (id)_overrides;
-@property(retain, nonatomic) AMSMockURLOverride *currentOverride; // @synthesize currentOverride=_currentOverride;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AMSMockURLOverride *currentOverride; // @synthesize currentOverride=_currentOverride;
 - (void)finishWithError:(id)arg1;
 - (void)finishWithData:(id)arg1;
 - (void)performRedirectFromResponse:(id)arg1;

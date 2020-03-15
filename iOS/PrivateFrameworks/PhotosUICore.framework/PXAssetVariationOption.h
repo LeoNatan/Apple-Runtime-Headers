@@ -20,11 +20,11 @@
 
 + (id)_localizedNameForVariationType:(long long)arg1;
 + (id)variationOptionWithType:(long long)arg1 recommended:(_Bool)arg2 current:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCurrent) _Bool current; // @synthesize current=_current;
 @property(readonly, nonatomic, getter=isRecommended) _Bool recommended; // @synthesize recommended=_recommended;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, nonatomic) long long variationType; // @synthesize variationType=_variationType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqualToVariationOption:(id)arg1;

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     id <NSTouchBarProvider> _alternateFunctionBarProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSTouchBarProvider> alternateFunctionBarProvider; // @synthesize alternateFunctionBarProvider=_alternateFunctionBarProvider;
 @property(nonatomic) BOOL overrideMaintainsInactiveSelectionForVoiceOver; // @synthesize overrideMaintainsInactiveSelectionForVoiceOver=_overrideMaintainsInactiveSelectionForVoiceOver;
 @property(readonly, copy, nonatomic) NSArray *previewWKViews; // @synthesize previewWKViews=_previewWKViews;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldBlockAllKeyEvents; // @synthesize shouldBlockAllKeyEvents=_shouldBlockAllKeyEvents;
 @property(nonatomic) BOOL shouldBlockAllMouseEvents; // @synthesize shouldBlockAllMouseEvents=_shouldBlockAllMouseEvents;
 @property(nonatomic) __weak id <BrowserViewIconLoadingDelegate> iconDelegate; // @synthesize iconDelegate=_iconDelegate;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 shouldLoadIconWithParameters:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)touchBar;
 - (BOOL)resignFirstResponder;

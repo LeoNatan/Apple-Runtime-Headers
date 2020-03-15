@@ -19,12 +19,12 @@
 }
 
 + (id)sharedObserver;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property int userTemperatureUnit; // @synthesize userTemperatureUnit=_userTemperatureUnit;
 @property(retain) NSHashTable *observerObjects; // @synthesize observerObjects=_observerObjects;
 @property(retain) NSMutableDictionary *blockObserversForUUID; // @synthesize blockObserversForUUID=_blockObserversForUUID;
 @property(retain) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
-- (void).cxx_destruct;
 - (void)removeAllObservers;
 - (void)_updateTemperatureUnit;
 - (_Bool)removeBlockObserverWithHandle:(id)arg1;

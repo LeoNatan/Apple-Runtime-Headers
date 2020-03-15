@@ -24,6 +24,7 @@
 }
 
 + (id)disabledIdleTimerDescriptor;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_alertItemsController, setter=_setAlertItemsController:) SBAlertItemsController *alertItemsController; // @synthesize alertItemsController=_alertItemsController;
 @property(retain, nonatomic, getter=_springBoard, setter=_setSpringBoard:) SpringBoard *springBoard; // @synthesize springBoard=_springBoard;
 @property(retain, nonatomic, getter=_conferenceManager, setter=_setConferenceManager:) SBConferenceManager *conferenceManager; // @synthesize conferenceManager=_override_conferenceManager;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic, getter=_idleTimerPrototypeSettings, setter=_setIdleTimerPrototypeSettings:) SBIdleTimerSettings *idleTimerPrototypeSettings; // @synthesize idleTimerPrototypeSettings=_override_idleTimerPrototypeSettings;
 @property(retain, nonatomic, getter=_prototypeController, setter=_setPrototypeController:) SBPrototypeController *prototypeController; // @synthesize prototypeController=_override_prototypeController;
 @property(retain, nonatomic, getter=_backlightController, setter=_setBacklightController:) SBBacklightController *backlightController; // @synthesize backlightController=_override_backlightController;
-- (void).cxx_destruct;
 - (_Bool)_isIdleDurationForever:(double)arg1;
 - (_Bool)_shouldUseAttentionSensor;
 - (_Bool)updateIdleTimerSettingsForWarnInterval:(id)arg1;

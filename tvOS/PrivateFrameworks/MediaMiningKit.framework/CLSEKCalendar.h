@@ -17,10 +17,10 @@
     NSString *_calendarIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *calendarIdentifier; // @synthesize calendarIdentifier=_calendarIdentifier;
 @property(readonly) NSSet *shareesAndOwner; // @synthesize shareesAndOwner=_shareesAndOwner;
 @property(readonly) _Bool hasSharees; // @synthesize hasSharees=_hasSharees;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

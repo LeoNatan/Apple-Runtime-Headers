@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _canIndexFromCurrentState;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType canIndexFromCurrentState; // @synthesize canIndexFromCurrentState=_canIndexFromCurrentState;
 @property(retain, nonatomic) NSError *fetchError; // @synthesize fetchError=_fetchError;
 @property(retain, nonatomic) NSData *nextAnchor; // @synthesize nextAnchor=_nextAnchor;
 @property(retain, nonatomic) NSArray *deletedItemIDs; // @synthesize deletedItemIDs=_deletedItemIDs;
 @property(retain, nonatomic) NSArray *updatedItems; // @synthesize updatedItems=_updatedItems;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithIndexer:(id)arg1 isInitialIndexing:(_Bool)arg2 queue:(id)arg3;

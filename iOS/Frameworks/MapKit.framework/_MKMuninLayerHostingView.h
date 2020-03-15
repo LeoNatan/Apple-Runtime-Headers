@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
-@property(retain, nonatomic) VKMapView *muninView; // @synthesize muninView=_muninView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VKMapView *muninView; // @synthesize muninView=_muninView;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)dealloc;

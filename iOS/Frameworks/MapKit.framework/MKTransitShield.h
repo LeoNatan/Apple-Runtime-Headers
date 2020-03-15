@@ -17,10 +17,10 @@
     NSString *_shieldColorString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *shieldColorString; // @synthesize shieldColorString=_shieldColorString;
 @property(readonly, nonatomic) NSString *shieldText; // @synthesize shieldText=_shieldText;
 @property(readonly, nonatomic) long long shieldType; // @synthesize shieldType=_shieldType;
-- (void).cxx_destruct;
 - (id)initWithShieldType:(long long)arg1 text:(id)arg2 color:(id)arg3;
 
 // Remaining properties

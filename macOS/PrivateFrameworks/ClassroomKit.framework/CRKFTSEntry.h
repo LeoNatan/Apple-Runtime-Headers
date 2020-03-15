@@ -14,9 +14,9 @@
     struct stat _stat;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct stat stat; // @synthesize stat=_stat;
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)errorForFTSEntry:(struct _ftsent *)arg1;
 - (id)initWithFTSEntry:(struct _ftsent *)arg1 error:(id *)arg2;
 

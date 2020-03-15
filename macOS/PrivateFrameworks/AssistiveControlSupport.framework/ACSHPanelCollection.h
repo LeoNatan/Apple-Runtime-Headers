@@ -26,11 +26,11 @@
 + (id)_oldSwitchControlUserPanelCollectionURL;
 + (id)_switchControlUserPanelCollectionURL;
 + (id)_applicationSupportDirectoryURL;
+- (void).cxx_destruct;
 @property BOOL insertingPanelCollection; // @synthesize insertingPanelCollection=_insertingPanelCollection;
 @property(retain, nonatomic) NSMutableArray *_panels; // @synthesize _panels=__panels;
 @property(nonatomic) unsigned long long productSupportType; // @synthesize productSupportType=_productSupportType;
 @property(retain, nonatomic) ACSHToolbarOrdering *toolbarOrdering; // @synthesize toolbarOrdering=_toolbarOrdering;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *userVisiblePanelIDs;
 - (id)userPanelIDsVisibleOnly:(BOOL)arg1;
 @property(readonly, copy, nonatomic) NSArray *userVisibleToolbarPanelIDs;

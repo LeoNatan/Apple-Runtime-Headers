@@ -29,6 +29,7 @@
     struct _NSRange _selectedRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFContactPickerCoordinator *contactPicker; // @synthesize contactPicker=_contactPicker;
 @property(nonatomic) BOOL shouldEndEditing; // @synthesize shouldEndEditing=_shouldEndEditing;
 @property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
@@ -43,7 +44,6 @@
 @property(nonatomic) long long autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
 @property(copy, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 @property(nonatomic) __weak id <WFContactFieldDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (id)typingAttributes;
 - (void)textViewDidChange:(id)arg1;

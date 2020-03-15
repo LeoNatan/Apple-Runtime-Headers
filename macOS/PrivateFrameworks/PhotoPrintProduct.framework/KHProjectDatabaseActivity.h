@@ -15,10 +15,10 @@
     unsigned long long _flags;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long flags; // @synthesize flags=_flags;
 @property(retain) KHProjectBundle *managingProjectBundle; // @synthesize managingProjectBundle=_managingProjectBundle;
 @property(readonly) KHProjectBundleDatabaseActivityRecord *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (id)description;
 - (void)endActivity;
 - (id)identifier;

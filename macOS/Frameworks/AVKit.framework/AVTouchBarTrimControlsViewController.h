@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     AVTrimControlsViewController *_strongParentTrimViewControllerForBinding;
 }
 
+- (void).cxx_destruct;
 @property(retain) AVTrimControlsViewController *strongParentTrimViewControllerForBinding; // @synthesize strongParentTrimViewControllerForBinding=_strongParentTrimViewControllerForBinding;
 @property(retain) AVTrackViewController *trackViewController; // @synthesize trackViewController=_trackViewController;
 @property(retain) AVTrimView *trimView; // @synthesize trimView=_trimView;
-- (void).cxx_destruct;
 - (void)_unbindAllObjects;
 - (void)_bindObject:(id)arg1 withBinding:(id)arg2 toObject:(id)arg3 withKeyPath:(id)arg4 options:(id)arg5;
 - (void)_tearDownBindingsIfNeeded;

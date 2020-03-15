@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) LPSize *size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

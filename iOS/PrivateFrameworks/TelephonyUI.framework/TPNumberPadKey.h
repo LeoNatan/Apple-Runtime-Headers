@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 
 + (float)absoluteTrackingValueForString:(id)arg1 pointSize:(float)arg2 unitsPerEm:(float)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *secondaryLetterBaseline; // @synthesize secondaryLetterBaseline=_secondaryLetterBaseline;
 @property(retain, nonatomic) NSLayoutConstraint *letterBaseline; // @synthesize letterBaseline=_letterBaseline;
 @property(retain, nonatomic) NSLayoutConstraint *digitBaseline; // @synthesize digitBaseline=_digitBaseline;
 @property(retain, nonatomic) UILabel *secondaryLetters; // @synthesize secondaryLetters=_secondaryLetters;
 @property(retain, nonatomic) UILabel *letters; // @synthesize letters=_letters;
 @property(retain, nonatomic) UILabel *digit; // @synthesize digit=_digit;
-- (void).cxx_destruct;
 - (void)doLayoutNow;
 - (void)setDigit:(id)arg1 primaryLetters:(id)arg2 secondaryLetters:(id)arg3;
 - (void)setFontStylesForHighlightState:(_Bool)arg1 language:(unsigned long long)arg2 showLocalizedLetters:(_Bool)arg3 shouldCenterDigit:(_Bool)arg4 fontColor:(_Bool)arg5 circleDiameter:(double)arg6 largeFont:(_Bool)arg7 isCarPlay:(_Bool)arg8;

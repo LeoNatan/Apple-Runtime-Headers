@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _regionOfInterest;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *inputFaceObservations; // @synthesize inputFaceObservations=_inputFaceObservations;
 @property(nonatomic) struct CGRect regionOfInterest; // @synthesize regionOfInterest=_regionOfInterest;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequestClass:(Class)arg1;
 

@@ -18,11 +18,11 @@
     NSString *_startAnchor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long decompressedFileSize; // @synthesize decompressedFileSize=_decompressedFileSize;
 @property(retain, nonatomic) NSString *endAnchor; // @synthesize endAnchor=_endAnchor;
 @property(retain, nonatomic) NSString *startAnchor; // @synthesize startAnchor=_startAnchor;
 @property(retain, nonatomic) SYMessageHeader *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

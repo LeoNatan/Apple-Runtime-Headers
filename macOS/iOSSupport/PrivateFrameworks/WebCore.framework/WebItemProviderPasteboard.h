@@ -14,21 +14,22 @@
 {
     struct RetainPtr<NSArray> _itemProviders;
     struct RetainPtr<NSArray> _supportedTypeIdentifiers;
-    struct RetainPtr<WebItemProviderRegistrationInfoList> _stagedRegistrationInfoList;
-    struct Vector<WTF::RetainPtr<WebItemProviderLoadResult>, 0, WTF::CrashOnOverflow, 16> _loadResults;
+    struct RetainPtr<NSArray<WebItemProviderRegistrationInfoList *>> _stagedRegistrationInfoLists;
+    struct Vector<WTF::RetainPtr<WebItemProviderLoadResult>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _loadResults;
     long long _numberOfItems;
     long long _changeCount;
     long long _pendingOperationCount;
 }
 
 + (id)sharedInstance;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) long long pendingOperationCount; // @synthesize pendingOperationCount=_pendingOperationCount;
 @property(nonatomic) long long changeCount; // @synthesize changeCount=_changeCount;
 @property(nonatomic) long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)takeRegistrationList;
-- (void)stageRegistrationList:(id)arg1;
+- (id)takeRegistrationLists;
+- (void)clearRegistrationLists;
+- (void)stageRegistrationLists:(id)arg1;
 - (void)enumerateItemProvidersWithBlock:(CDUnknownBlockType)arg1;
 - (void)decrementPendingOperationCount;
 - (void)incrementPendingOperationCount;

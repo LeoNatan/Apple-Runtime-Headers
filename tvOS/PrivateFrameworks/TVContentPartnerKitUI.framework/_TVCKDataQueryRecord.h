@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     long long _priority;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool processAsync; // @synthesize processAsync=_processAsync;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(retain, nonatomic) TVCKDataQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)initWithQuery:(id)arg1 priority:(long long)arg2 processAsync:(_Bool)arg3 withCompletionQueue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 

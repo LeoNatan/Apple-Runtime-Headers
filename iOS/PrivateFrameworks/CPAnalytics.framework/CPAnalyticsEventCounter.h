@@ -16,10 +16,10 @@
 }
 
 + (id)_validateAndParseEventName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CPAnalyticsEventMatcher *matcher; // @synthesize matcher=_matcher;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (id)getName;
 - (void)countEvent:(id)arg1;
 - (id)initWithConfig:(id)arg1;

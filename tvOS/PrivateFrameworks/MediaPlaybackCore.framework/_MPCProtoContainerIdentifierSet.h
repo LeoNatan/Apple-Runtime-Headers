@@ -27,6 +27,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cloudUniversalLibraryID; // @synthesize cloudUniversalLibraryID=_cloudUniversalLibraryID;
 @property(retain, nonatomic) NSString *radioStationID; // @synthesize radioStationID=_radioStationID;
 @property(retain, nonatomic) NSString *cloudCollectionID; // @synthesize cloudCollectionID=_cloudCollectionID;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSString *storePlaylistGlobalID; // @synthesize storePlaylistGlobalID=_storePlaylistGlobalID;
 @property(nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
 @property(nonatomic) long long delegateInfoID; // @synthesize delegateInfoID=_delegateInfoID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

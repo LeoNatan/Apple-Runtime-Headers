@@ -20,6 +20,7 @@
     struct CGSize _previewSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_initialMetadataByRequestUUID; // @synthesize _initialMetadataByRequestUUID=__initialMetadataByRequestUUID;
 @property(nonatomic, getter=isCapturingPanorama, setter=_setCapturingPanorama:) _Bool capturingPanorama; // @synthesize capturingPanorama=_capturingPanorama;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) long long photoEncodingBehavior; // @synthesize photoEncodingBehavior=_photoEncodingBehavior;
 @property(retain, nonatomic, setter=_setRequest:) CAMPanoramaCaptureRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) __weak id <CAMPanoramaProcessorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)processSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)processPanoramaCaptureWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

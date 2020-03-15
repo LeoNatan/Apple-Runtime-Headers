@@ -32,9 +32,9 @@
     } _delegateFlags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIScenePresentationBinderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSSet *scenes; // @synthesize scenes=_scenes;
-- (void).cxx_destruct;
 - (void)_positionPresentationViewInRootViewOrderedCorrectly:(id)arg1;
 - (void)_noteSceneChangedLevel:(id)arg1;
 - (void)_noteSceneMovedToBackground:(id)arg1;

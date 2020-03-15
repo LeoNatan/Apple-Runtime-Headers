@@ -27,8 +27,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) __weak id <AAUIDataclassPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AAUIDataclassPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_updateConstraintsForTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;
@@ -64,7 +64,7 @@
 - (void)loadView;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithDataclassOptions:(struct NSDictionary *)arg1;
+- (id)initWithDataclassOptions:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

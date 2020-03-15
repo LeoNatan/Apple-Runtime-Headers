@@ -28,6 +28,7 @@
 }
 
 + (id)decodeSignerInfo:(struct SignerInfo *)arg1 certificates:(id)arg2 LAContext:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain) MSAlgorithmIdentifier *digestAlgorithm; // @synthesize digestAlgorithm=_digestAlgorithm;
 @property __weak MSCMSSignedData *containingSignedData; // @synthesize containingSignedData=_containingSignedData;
 @property(retain) NSNumber *version; // @synthesize version=_version;
@@ -45,7 +46,6 @@
 @property(retain) MSCMSMutableAttributeArray *protectedAttributes; // @synthesize protectedAttributes=_protectedAttributes;
 @property struct __SecCertificate *signerCertificate; // @synthesize signerCertificate=_signerCertificate;
 @property(retain) MSAlgorithmIdentifier *signatureAlgorithm; // @synthesize signatureAlgorithm=_signatureAlgorithm;
-- (void).cxx_destruct;
 - (BOOL)encodeSignerInfo:(struct SignerInfo *)arg1 error:(id *)arg2;
 - (BOOL)sign:(id *)arg1;
 - (struct __SecTrust *)createTrustObjectWithPolicies:(id)arg1 error:(id *)arg2;

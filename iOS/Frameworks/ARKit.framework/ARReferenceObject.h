@@ -29,6 +29,7 @@
 + (id)referenceObjectsInGroupNamed:(id)arg1 bundle:(id)arg2;
 + (id)referenceObjectsInGroupNamed:(id)arg1 catalog:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 // Error parsing type for property referenceOriginTransform:
 // Property attributes: T{?=[4]},R,N,V_referenceOriginTransform
 
@@ -44,7 +45,6 @@
 // Property attributes: T,R,N,V_center
 
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)setResourceGroupName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

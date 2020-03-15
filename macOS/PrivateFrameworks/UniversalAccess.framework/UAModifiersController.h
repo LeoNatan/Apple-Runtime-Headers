@@ -17,8 +17,8 @@
     NSComboBox *__modifiersComboBox;
 }
 
-@property(retain, nonatomic) NSComboBox *_modifiersComboBox; // @synthesize _modifiersComboBox=__modifiersComboBox;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSComboBox *_modifiersComboBox; // @synthesize _modifiersComboBox=__modifiersComboBox;
 - (void)_setComboBox:(id)arg1 stringValue:(id)arg2;
 - (void)controlTextDidChange:(id)arg1;
 - (void)comboBoxSelectionDidChange:(id)arg1;

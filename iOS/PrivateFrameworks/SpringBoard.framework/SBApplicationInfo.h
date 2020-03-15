@@ -80,6 +80,7 @@
 
 + (int)_calculateApplicationSupportedTypesFromProxy:(id)arg1;
 + (unsigned long long)_visibilityOverrideFromInfo:(id)arg1 entitlements:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool wantsExclusiveForeground; // @synthesize wantsExclusiveForeground=_wantsExclusiveForeground;
 @property(readonly, nonatomic, getter=isCloudDemoted) _Bool cloudDemoted; // @synthesize cloudDemoted=_cloudDemoted;
 @property(readonly, nonatomic) XBSnapshotContainerIdentity *manifestContainerIdentity; // @synthesize manifestContainerIdentity=_manifestContainerIdentity;
@@ -137,7 +138,6 @@
 @property(readonly, nonatomic, getter=isTigrisLinked) _Bool tigrisLinked; // @synthesize tigrisLinked=_isTigrisLinked;
 @property(readonly, nonatomic, getter=isMonarchLinked) _Bool monarchLinked; // @synthesize monarchLinked=_isMonarchLinked;
 @property(readonly, nonatomic) NSString *installInstanceID; // @synthesize installInstanceID=_installInstanceID;
-- (void).cxx_destruct;
 - (unsigned long long)_calculateVoipClassWithEntitlements:(id)arg1;
 - (_Bool)_supportsApplicationType:(int)arg1;
 - (id)_configureTags:(id)arg1 hasVisibilityOverride:(_Bool)arg2;

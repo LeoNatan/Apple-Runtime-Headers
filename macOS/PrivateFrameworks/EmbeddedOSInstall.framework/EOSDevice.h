@@ -23,6 +23,7 @@
     struct __AMRestoreModeDevice *_restoreModeDeviceRef;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL productionMode; // @synthesize productionMode=_productionMode;
 @property struct __AMRestoreModeDevice *restoreModeDeviceRef; // @synthesize restoreModeDeviceRef=_restoreModeDeviceRef;
 @property struct __AMRecoveryModeDevice *recoveryModeDeviceRef; // @synthesize recoveryModeDeviceRef=_recoveryModeDeviceRef;
@@ -34,7 +35,6 @@
 @property unsigned int chipID; // @synthesize chipID=_chipID;
 @property unsigned int boardID; // @synthesize boardID=_boardID;
 @property long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)_populateRunningModeDeviceInfo;
 - (id)fetchPreflightDictionary;
 @property(readonly) EOSDeviceType *type;

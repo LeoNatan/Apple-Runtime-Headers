@@ -20,8 +20,8 @@
 + (id)edgeFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2 uponEvent:(unsigned long long)arg3;
 + (id)edgeFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2 uponGestureState:(long long)arg3 andDo:(CDUnknownBlockType)arg4;
 + (id)edgeFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2 uponGestureState:(long long)arg3;
-@property(readonly, nonatomic) unsigned long long fromState; // @synthesize fromState=_fromState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long fromState; // @synthesize fromState=_fromState;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

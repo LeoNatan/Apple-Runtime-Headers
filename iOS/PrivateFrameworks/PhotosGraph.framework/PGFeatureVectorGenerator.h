@@ -18,12 +18,12 @@
 }
 
 + (id)_calendarEventsBetweenDate:(id)arg1 andDate:(id)arg2 atLocation:(id)arg3 withPeopleUUIDs:(id)arg4 inPhotoLibrary:(id)arg5;
+- (void).cxx_destruct;
 @property _Bool isDryTesting; // @synthesize isDryTesting=_isDryTesting;
 @property(readonly) __weak PGManager *manager; // @synthesize manager=_manager;
 @property(copy, nonatomic) NSArray *peopleNames; // @synthesize peopleNames=_peopleNames;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSDate *localDate; // @synthesize localDate=_localDate;
-- (void).cxx_destruct;
 - (void)enumerateFeatureVectorsByTypeUsingBlock:(CDUnknownBlockType)arg1;
 - (id)initWithManager:(id)arg1;
 

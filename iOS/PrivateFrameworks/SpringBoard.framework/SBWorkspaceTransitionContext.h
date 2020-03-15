@@ -22,11 +22,11 @@
 }
 
 + (id)context;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFinalized) _Bool finalized; // @synthesize finalized=_finalized;
 @property(retain, nonatomic) BSAnimationSettings *animationSettings; // @synthesize animationSettings=_animationSettings;
 @property(nonatomic) _Bool animationDisabled; // @synthesize animationDisabled=_animationDisabled;
 @property(nonatomic) __weak SBWorkspaceTransitionRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

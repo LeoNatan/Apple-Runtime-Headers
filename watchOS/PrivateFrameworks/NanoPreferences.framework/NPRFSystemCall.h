@@ -33,6 +33,7 @@
 + (id)dispatchProgram:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)dispatchProgram:(id)arg1 synchronous:(_Bool)arg2;
 + (id)dispatchProgram:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSArray *errors; // @synthesize errors;
 @property(readonly) unsigned int dispatchState; // @synthesize dispatchState;
 @property(readonly) int spawnReturnValue; // @synthesize spawnReturnValue;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *waitQueue; // @synthesize waitQueue;
 @property(retain) NSArray *args; // @synthesize args;
 @property(retain) NSString *program; // @synthesize program;
-- (void).cxx_destruct;
 - (id)description;
 - (void)kill;
 - (_Bool)sendSignal:(int)arg1;

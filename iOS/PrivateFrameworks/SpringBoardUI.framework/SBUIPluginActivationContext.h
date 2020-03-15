@@ -14,9 +14,9 @@
     int _activationEvent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 @property(nonatomic) int activationEvent; // @synthesize activationEvent=_activationEvent;
-- (void).cxx_destruct;
 
 @end
 

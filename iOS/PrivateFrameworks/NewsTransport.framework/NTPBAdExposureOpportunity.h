@@ -47,6 +47,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long adErrorCode; // @synthesize adErrorCode=_adErrorCode;
 @property(retain, nonatomic) NSString *eventId; // @synthesize eventId=_eventId;
 @property(retain, nonatomic) NSString *adOpportunityId; // @synthesize adOpportunityId=_adOpportunityId;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) NSString *adSlotId; // @synthesize adSlotId=_adSlotId;
 @property(nonatomic) _Bool isFilled; // @synthesize isFilled=_isFilled;
 @property(nonatomic) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

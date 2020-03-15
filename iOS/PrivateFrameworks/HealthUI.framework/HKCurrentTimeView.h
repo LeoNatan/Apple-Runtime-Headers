@@ -21,12 +21,12 @@
     id <HKCurrentTimeViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool omitPrevNextButtons; // @synthesize omitPrevNextButtons=_omitPrevNextButtons;
 @property(nonatomic) _Bool currentTimeButtonEnabled; // @synthesize currentTimeButtonEnabled=_currentTimeButtonEnabled;
 @property(nonatomic) _Bool disableControls; // @synthesize disableControls=_disableControls;
 @property(nonatomic) __weak id <HKCurrentTimeViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *currentTimeString; // @synthesize currentTimeString=_currentTimeString;
-- (void).cxx_destruct;
 - (void)_handleContentSizeCategoryDidChange;
 - (double)_backgroundAlpha:(_Bool)arg1;
 - (double)_foregroundAlpha:(_Bool)arg1;

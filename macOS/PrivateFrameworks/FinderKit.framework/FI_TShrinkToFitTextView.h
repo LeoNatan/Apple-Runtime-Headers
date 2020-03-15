@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     struct TNSWeakPtr<FI_TShrinkToFitController, void> _weakSTFController;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool textGrowsUpwards; // @synthesize textGrowsUpwards=_textGrowsUpwards;
 @property(nonatomic) long long maxNumLines; // @synthesize maxNumLines=_maxNumLines;
 @property(nonatomic) unsigned long long maxUniChars; // @synthesize maxUniChars=_maxUniChars;
 @property(nonatomic) struct CGRect maxGlobalFrame; // @synthesize maxGlobalFrame=_maxGlobalFrame;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)quickLookWithEvent:(id)arg1;
 - (id)_immediateActionAnimationControllerForCharacterAtIndex:(unsigned long long)arg1 withRecognizer:(id)arg2;
 - (id)accessibilityActionNames;

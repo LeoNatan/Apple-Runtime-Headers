@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 + (id)previewURLForOffer:(id)arg1;
 + (BOOL)hasVideoForOffer:(id)arg1;
 + (BOOL)hasAudioForOffer:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasVideo; // @synthesize hasVideo=_hasVideo;
 @property(readonly, nonatomic) BOOL hasAudio; // @synthesize hasAudio=_hasAudio;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSURL *previewURL; // @synthesize previewURL=_previewURL;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

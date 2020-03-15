@@ -19,10 +19,10 @@
     double _minimumLongPressDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsTapWhenDisabled; // @synthesize supportsTapWhenDisabled=_supportsTapWhenDisabled;
 @property(nonatomic) double minimumLongPressDuration; // @synthesize minimumLongPressDuration=_minimumLongPressDuration;
 @property(nonatomic) __weak UIControl *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (void)_clearLongPressTimer;
 - (void)_longPressTimerAction;
 - (_Bool)shouldForceTrackingEnabled;

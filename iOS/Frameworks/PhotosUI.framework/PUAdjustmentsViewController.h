@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _controlSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didPerformHapticFeedback; // @synthesize didPerformHapticFeedback=_didPerformHapticFeedback;
 @property(retain, nonatomic) PUSelectionFeedbackGenerator *selectionFeedbackGenerator; // @synthesize selectionFeedbackGenerator=_selectionFeedbackGenerator;
 @property(nonatomic) _Bool isAnimatingScroll; // @synthesize isAnimatingScroll=_isAnimatingScroll;
@@ -56,7 +57,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 @property(nonatomic) __weak id <PUAdjustmentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <PUAdjustmentsViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;

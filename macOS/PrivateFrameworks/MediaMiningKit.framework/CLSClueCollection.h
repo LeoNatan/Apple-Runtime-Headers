@@ -18,9 +18,9 @@
     NSMapTable *_meaningCluesByKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLSInputPeopleClue *mePersonClue; // @synthesize mePersonClue=_mePersonClue;
 @property(readonly) unsigned long long versionCount; // @synthesize versionCount=_versionCount;
-- (void).cxx_destruct;
 - (id)peopleDescriptionWithoutPeople:(id)arg1;
 - (id)peopleDescription;
 - (void)mergeClues:(id)arg1;

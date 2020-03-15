@@ -11,8 +11,8 @@
     NSDictionary *_underlyingDictionary;
 }
 
-@property(copy, nonatomic) NSDictionary *underlyingDictionary; // @synthesize underlyingDictionary=_underlyingDictionary;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *underlyingDictionary; // @synthesize underlyingDictionary=_underlyingDictionary;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
 - (unsigned int)count;

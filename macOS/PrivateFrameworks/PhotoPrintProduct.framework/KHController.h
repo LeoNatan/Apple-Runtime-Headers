@@ -54,12 +54,12 @@
 + (id)userInitiatedQueue;
 + (id)userInteractiveQueue;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <KHPhotoLibraryProtocol> library; // @synthesize library=_library;
 @property(nonatomic) __weak id <MapServicesProtocol> mapServices; // @synthesize mapServices=_mapServices;
 @property(nonatomic) __weak id <KHPhotoAppDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain) KHThemeDatabase *themeDatabase; // @synthesize themeDatabase=_themeDatabase;
 @property(copy) NSString *currentThemeBundlePath; // @synthesize currentThemeBundlePath=_currentThemeBundlePath;
-- (void).cxx_destruct;
 - (BOOL)checkThemes;
 - (unsigned long long)themeCount;
 - (void)stopPerformanceMonitoringTimerWithKey:(id)arg1 comment:(id)arg2;

@@ -21,10 +21,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsConsume; // @synthesize needsConsume=_needsConsume;
 @property(retain, nonatomic) SZExtractor *extractor; // @synthesize extractor=_extractor;
 @property(nonatomic) __weak id <SZExtractorDelegate> extractorDelegate; // @synthesize extractorDelegate=_extractorDelegate;
-- (void).cxx_destruct;
 - (Class)seedClass;
 - (id)initWithSeed:(id)arg1;
 - (void)extractionEnteredPassThroughMode;

@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) BOOL hasWifiOrEthernetConnection; // @synthesize hasWifiOrEthernetConnection=_hasWifiOrEthernetConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL hasWifiOrEthernetConnection; // @synthesize hasWifiOrEthernetConnection=_hasWifiOrEthernetConnection;
 - (void)setReachabilityForFlags:(unsigned int)arg1 update:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;

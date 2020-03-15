@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_listIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *listIdentifier; // @synthesize listIdentifier=_listIdentifier;
 @property(copy) SFLBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(readonly) _SFLItem *internalItem; // @synthesize internalItem=_internalItem;
-- (void).cxx_destruct;
 - (id)initWithItem:(id)arg1 listIdentifier:(id)arg2;
 @property unsigned long long seed;
 @property(copy) NSDictionary *properties;

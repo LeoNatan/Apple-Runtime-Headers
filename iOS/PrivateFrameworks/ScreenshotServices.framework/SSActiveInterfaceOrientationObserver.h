@@ -16,8 +16,8 @@
     id <SSActiveInterfaceOrientationObserverDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SSActiveInterfaceOrientationObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SSActiveInterfaceOrientationObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)activeInterfaceOrientationDidChangeToOrientation:(long long)arg1 willAnimateWithDuration:(double)arg2 fromOrientation:(long long)arg3;
 - (void)activeInterfaceOrientationWillChangeToOrientation:(long long)arg1;
 - (void)_unregisterForActiveInterfaceOrientationChanges;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSData *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *image; // @synthesize image=_image;
 @property(nonatomic) float scale; // @synthesize scale=_scale;
 @property(nonatomic) CDStruct_02837cd9 frame; // @synthesize frame=_frame;
 @property(nonatomic) CDStruct_a1199def path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

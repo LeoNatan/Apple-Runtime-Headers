@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 + (id)describedSortedRanges:(id)arg1;
 + (id)descriptionWithOperationState:(unsigned long long)arg1 absoluteStart:(double)arg2 duration:(double)arg3;
 + (id)stringForOperationState:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) unsigned long long operationState; // @synthesize operationState=_operationState;
-- (void).cxx_destruct;
 @property(readonly) double relativeStart;
 @property(readonly) double absoluteStop;
 - (long long)compareStopTime:(id)arg1;

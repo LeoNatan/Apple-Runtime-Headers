@@ -20,8 +20,8 @@
 + (id)catalogItemFileExtension;
 + (id)classNameComponents;
 + (id)createDefaultInstancesForUnitTesting;
-@property __weak id <IBICActivityReportingDelegate> activityReportingDelegate; // @synthesize activityReportingDelegate=_activityReportingDelegate;
 - (void).cxx_destruct;
+@property __weak id <IBICActivityReportingDelegate> activityReportingDelegate; // @synthesize activityReportingDelegate=_activityReportingDelegate;
 - (void)activityDidEndForItem:(id)arg1;
 - (void)activityDidUpdateForItem:(id)arg1;
 - (void)activityDidStartForItem:(id)arg1;

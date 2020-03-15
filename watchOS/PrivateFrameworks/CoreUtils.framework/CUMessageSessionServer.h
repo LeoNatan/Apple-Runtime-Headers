@@ -8,7 +8,7 @@
 
 #import <CoreUtils/NSXPCListenerDelegate-Protocol.h>
 
-@class CUMessageSession, NSString, NSXPCListener, NSXPCListenerEndpoint;
+@class CUMessageSession, NSMutableSet, NSString, NSXPCListener, NSXPCListenerEndpoint;
 @protocol OS_dispatch_queue;
 
 @interface CUMessageSessionServer : NSObject <NSXPCListenerDelegate>
@@ -17,20 +17,20 @@
     CDUnknownBlockType _registerRequestHandler;
     CDUnknownBlockType _deregisterRequestHandler;
     CDUnknownBlockType _sendRequestHandler;
-    struct NSMutableSet *_xpcConnections;
+    NSMutableSet *_xpcConnections;
     NSXPCListenerEndpoint *_xpcEndpoint;
     NSXPCListener *_xpcListener;
     CDUnknownBlockType _invalidationHandler;
     CUMessageSession *_templateSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUMessageSession *templateSession; // @synthesize templateSession=_templateSession;
 @property(copy, nonatomic) CDUnknownBlockType sendRequestHandler; // @synthesize sendRequestHandler=_sendRequestHandler;
 @property(copy, nonatomic) CDUnknownBlockType deregisterRequestHandler; // @synthesize deregisterRequestHandler=_deregisterRequestHandler;
 @property(copy, nonatomic) CDUnknownBlockType registerRequestHandler; // @synthesize registerRequestHandler=_registerRequestHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_connectionInvalidated:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)invalidate;

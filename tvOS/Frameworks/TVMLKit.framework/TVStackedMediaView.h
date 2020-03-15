@@ -17,10 +17,10 @@
     UICollectionReusableView *_containingCell;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UICollectionReusableView *containingCell; // @synthesize containingCell=_containingCell;
 @property(readonly, nonatomic) TVImageProxy *fallbackImageProxy; // @synthesize fallbackImageProxy=_fallbackImageProxy;
 @property(readonly, nonatomic) TVLSMDocumentProxy *lsmDocumentProxy; // @synthesize lsmDocumentProxy=_lsmDocumentProxy;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)placeHolder;
 - (void)_teardownHosting;

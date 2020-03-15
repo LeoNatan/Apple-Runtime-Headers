@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSSet *tagIDsReturned; // @synthesize tagIDsReturned=_tagIDsReturned;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *tagIDsReturned; // @synthesize tagIDsReturned=_tagIDsReturned;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

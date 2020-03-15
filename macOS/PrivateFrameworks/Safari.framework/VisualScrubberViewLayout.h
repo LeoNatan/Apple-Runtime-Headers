@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     BOOL _collapsed;
 }
 
-@property(nonatomic, getter=isCollapsed) BOOL collapsed; // @synthesize collapsed=_collapsed;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isCollapsed) BOOL collapsed; // @synthesize collapsed=_collapsed;
 - (BOOL)_shouldShowItemAtIndex:(long long)arg1;
 - (void)_recomputeItemOffsets;
 - (void)_recomputeItemWidths;

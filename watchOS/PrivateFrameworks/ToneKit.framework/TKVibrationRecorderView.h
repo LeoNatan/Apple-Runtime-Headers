@@ -35,8 +35,8 @@
     id <TKVibrationRecorderViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <TKVibrationRecorderViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TKVibrationRecorderViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)vibrationRecorderTouchSurface:(id)arg1 didExitRecordingModeWithContextObject:(id)arg2;
 - (_Bool)vibrationRecorderTouchSurfaceDidEnterRecordingMode:(id)arg1;
 - (void)vibrationRecorderTouchSurfaceDidFinishReplayingVibration:(id)arg1;

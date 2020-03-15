@@ -13,8 +13,8 @@
     TVSUIOuterShadowView *_shadowView;
 }
 
-@property(readonly, nonatomic) TVSUIOuterShadowView *shadowView; // @synthesize shadowView=_shadowView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TVSUIOuterShadowView *shadowView; // @synthesize shadowView=_shadowView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateIdleModeAttributes;
 - (void)_updateShadowViewVisibility;

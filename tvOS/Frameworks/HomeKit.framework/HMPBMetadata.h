@@ -24,11 +24,11 @@
 + (Class)hapCategoriesType;
 + (Class)hapServicesType;
 + (Class)hapCharacteristicsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *hapCategories; // @synthesize hapCategories=_hapCategories;
 @property(retain, nonatomic) NSMutableArray *hapServices; // @synthesize hapServices=_hapServices;
 @property(retain, nonatomic) NSMutableArray *hapCharacteristics; // @synthesize hapCharacteristics=_hapCharacteristics;
 @property(nonatomic) int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

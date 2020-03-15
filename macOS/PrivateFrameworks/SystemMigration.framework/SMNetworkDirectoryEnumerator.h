@@ -8,7 +8,7 @@
 
 #import <SystemMigration/SMPathEnumerationProtocol-Protocol.h>
 
-@class IASInputStream, NSDictionary, NSFileHandle, NSSet, NSURL;
+@class NSDate, NSDictionary, NSSet, NSURL, SMNPathingAction;
 @protocol SMNRemoteProxy;
 
 @interface SMNetworkDirectoryEnumerator : NSDirectoryEnumerator <SMPathEnumerationProtocol>
@@ -20,26 +20,28 @@
     id <SMNRemoteProxy> _remoteProxy;
     NSURL *_startingPath;
     NSSet *_dontDescendPaths;
-    NSFileHandle *_fileHandle;
     NSDictionary *_currentFileInfo;
     unsigned long long _currentEntryType;
-    IASInputStream *_inputStream;
     NSDictionary *_lastSuccessfulEvent;
+    SMNPathingAction *_pathingAction;
+    NSDate *_enumerationStartDate;
+    double _timeElapsedEnumerating;
 }
 
+- (void).cxx_destruct;
+@property double timeElapsedEnumerating; // @synthesize timeElapsedEnumerating=_timeElapsedEnumerating;
+@property(retain) NSDate *enumerationStartDate; // @synthesize enumerationStartDate=_enumerationStartDate;
+@property(retain) SMNPathingAction *pathingAction; // @synthesize pathingAction=_pathingAction;
 @property(retain) NSDictionary *lastSuccessfulEvent; // @synthesize lastSuccessfulEvent=_lastSuccessfulEvent;
-@property(retain) IASInputStream *inputStream; // @synthesize inputStream=_inputStream;
 @property unsigned long long currentEntryType; // @synthesize currentEntryType=_currentEntryType;
 @property BOOL doneEnumerating; // @synthesize doneEnumerating=_doneEnumerating;
 @property BOOL skipNext; // @synthesize skipNext=_skipNext;
 @property(retain) NSDictionary *currentFileInfo; // @synthesize currentFileInfo=_currentFileInfo;
-@property(retain) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 @property(retain) NSSet *dontDescendPaths; // @synthesize dontDescendPaths=_dontDescendPaths;
 @property(retain) NSURL *startingPath; // @synthesize startingPath=_startingPath;
 @property(retain) id <SMNRemoteProxy> remoteProxy; // @synthesize remoteProxy=_remoteProxy;
 @property BOOL autoSizeBundles; // @synthesize autoSizeBundles=_autoSizeBundles;
 @property BOOL useTrueOnDiskSizes; // @synthesize useTrueOnDiskSizes;
-- (void).cxx_destruct;
 - (BOOL)isCurrentPathAHardLink;
 - (BOOL)hasNext;
 - (BOOL)isPostorderDirectory;
@@ -52,10 +54,10 @@
 - (BOOL)isCurrentPathABundle;
 - (BOOL)isCurrentPathARegularDirectory;
 - (BOOL)isCurrentPathADirectory;
+- (void)logEnumerationSummary;
 - (id)nextObject;
 - (id)nextEvent;
 @property(readonly) BOOL supportsFastEnumeration;
-- (void)dealloc;
 - (id)initWithRemoteProxy:(id)arg1 startingPath:(id)arg2 andDontDescendPaths:(id)arg3;
 
 @end

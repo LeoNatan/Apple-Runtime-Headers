@@ -18,11 +18,11 @@
     id <BridgeOSSoftwareUpdateControllerDelegate> delegate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType bridgeOSLogFetchCompletion; // @synthesize bridgeOSLogFetchCompletion=_bridgeOSLogFetchCompletion;
 @property(copy, nonatomic) CDUnknownBlockType macOSLogFetchCompletion; // @synthesize macOSLogFetchCompletion=_macOSLogFetchCompletion;
 @property(copy, nonatomic) CDUnknownBlockType stateQueryCompletion; // @synthesize stateQueryCompletion=_stateQueryCompletion;
 @property(nonatomic) __weak id <BridgeOSSoftwareUpdateControllerDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)fetchMacOSLogs:(id)arg1 sinceDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)fetchBridgeOSLogs:(id)arg1 sinceDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)purgeUpdate:(id)arg1;

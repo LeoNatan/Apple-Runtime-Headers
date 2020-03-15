@@ -10,7 +10,7 @@
 
 @interface MTLDebugLibrary : MTLToolsLibrary
 {
-    unsigned long long _type;
+    unsigned long long _debugType;
     id _code;
     MTLCompileOptions *_compileOptions;
     NSArray *_imageFilterFunctions;
@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) NSArray *imageFilterFunctions; // @synthesize imageFilterFunctions=_imageFilterFunctions;
 @property(copy, nonatomic) MTLCompileOptions *compileOptions; // @synthesize compileOptions=_compileOptions;
 @property(copy, nonatomic) id code; // @synthesize code=_code;
-@property(nonatomic) unsigned long long type; // @synthesize type=_type;
+@property(nonatomic) unsigned long long debugType; // @synthesize debugType=_debugType;
 - (void)setImageFilterFunctions:(id)arg1 imageFilterFunctionInfo:(const CDStruct_dbc1e4aa *)arg2;
 - (void)newFunctionWithName:(id)arg1 constantValues:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)newFunctionWithName:(id)arg1 constantValues:(id)arg2 error:(id *)arg3;

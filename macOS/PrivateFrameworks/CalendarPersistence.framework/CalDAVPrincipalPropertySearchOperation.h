@@ -20,8 +20,8 @@
 }
 
 + (void)submitSearchForPrincipal:(id)arg1 forStrings:(id)arg2 ofType:(id)arg3 withReply:(CDUnknownBlockType)arg4;
-@property(readonly) NSArray *results; // @synthesize results=_results;
 - (void).cxx_destruct;
+@property(readonly) NSArray *results; // @synthesize results=_results;
 - (void)processCompletedRequest:(id)arg1;
 - (void)performSynchronousSearch;
 - (id)initWithSession:(id)arg1 forStrings:(id)arg2 ofTypes:(id)arg3;

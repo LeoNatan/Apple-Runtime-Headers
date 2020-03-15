@@ -36,6 +36,7 @@
     AKNoCodeReceivedController *_noCodeRecievedController;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKNoCodeReceivedController *noCodeRecievedController; // @synthesize noCodeRecievedController=_noCodeRecievedController;
 @property(retain) NSString *message; // @synthesize message=_message;
 @property(retain) NSString *code; // @synthesize code=_code;
@@ -57,7 +58,6 @@
 @property(retain) NSTextField *instructionLabel; // @synthesize instructionLabel=_instructionLabel;
 @property(retain) NSView *pinContainerView; // @synthesize pinContainerView=_pinContainerView;
 @property(retain) NSObject<AKSecondFactorCodeEntryDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)doneButtonPressed:(id)arg1;
 - (void)cancelButtonPressed:(id)arg1;
 - (void)noCodeButtonPressed:(id)arg1;

@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSNumber *event; // @synthesize event=_event;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *event; // @synthesize event=_event;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -16,11 +16,11 @@
     unsigned long long _numberOfDigits;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfDigits; // @synthesize numberOfDigits=_numberOfDigits;
 @property(nonatomic, getter=isSecureDigitEntry) _Bool secureDigitEntry; // @synthesize secureDigitEntry=_secureDigitEntry;
 @property(copy, nonatomic) NSString *promptText; // @synthesize promptText=_promptText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 
 @end

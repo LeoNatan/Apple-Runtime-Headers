@@ -22,6 +22,7 @@
     NAFuture *_loadingFuture;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NAFuture *loadingFuture; // @synthesize loadingFuture=_loadingFuture;
 @property(nonatomic) _Bool scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
 @property(nonatomic) _Bool zoomEnabled; // @synthesize zoomEnabled=_zoomEnabled;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(readonly, copy, nonatomic) HMHTMLDocument *document; // @synthesize document=_document;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)_share:(id)arg1;
 - (_Bool)_shouldShare;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;

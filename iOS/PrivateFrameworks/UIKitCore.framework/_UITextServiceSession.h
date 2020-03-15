@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 + (id)showServiceForText:(id)arg1 selectedTextRange:(struct _NSRange)arg2 type:(long long)arg3 fromRect:(struct CGRect)arg4 inView:(id)arg5;
 + (_Bool)shouldPresentServiceInSameWindowAsView:(id)arg1;
 + (_Bool)canShowTextServices;
-@property(copy, nonatomic) CDUnknownBlockType dismissedHandler; // @synthesize dismissedHandler=_dismissedHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType dismissedHandler; // @synthesize dismissedHandler=_dismissedHandler;
 - (void)_endSession;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)dismissTextServiceAnimated:(_Bool)arg1;

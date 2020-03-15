@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *channelMappings; // @synthesize channelMappings=_channelMappings;
 @property(copy, nonatomic) NSArray *providerAppAdamIDs; // @synthesize providerAppAdamIDs=_providerAppAdamIDs;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -17,10 +17,10 @@
     HKUnit *_unit;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKUnit *unit; // @synthesize unit=_unit;
 @property(nonatomic) double maxValue; // @synthesize maxValue=_maxValue;
 @property(nonatomic) double minValue; // @synthesize minValue=_minValue;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

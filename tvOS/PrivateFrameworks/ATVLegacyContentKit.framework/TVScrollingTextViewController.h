@@ -23,13 +23,13 @@
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) unsigned long long selectedButtonIndex; // @synthesize selectedButtonIndex=_selectedButtonIndex;
 @property(copy, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) __weak id <TVScrollingTextViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)setTitle:(id)arg1;
 - (void)_handleGestureAction:(id)arg1;

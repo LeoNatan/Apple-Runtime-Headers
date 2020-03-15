@@ -14,9 +14,9 @@
     NSArray *_savedFrames;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *savedFrames; // @synthesize savedFrames=_savedFrames;
 @property(nonatomic) unsigned int minorDetentsLocation; // @synthesize minorDetentsLocation=_minorDetentsLocation;
-- (void).cxx_destruct;
 - (void)resetNotches;
 - (void)generateNotches;
 - (void)addNotchesForFrames:(id)arg1;

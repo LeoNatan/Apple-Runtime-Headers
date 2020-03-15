@@ -21,9 +21,9 @@
     NSString *_summaryText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *notificationRequests; // @synthesize notificationRequests=_notificationRequests;
 @property(readonly, copy, nonatomic) NSString *summaryText; // @synthesize summaryText=_summaryText;
-- (void).cxx_destruct;
 - (void)_insertString:(id)arg1 intoSequence:(id)arg2 withCounters:(id)arg3;
 - (id)_filteredArgumentsArrayWithArguments:(id)arg1;
 - (id)_formatListWithArguments:(id)arg1 truncated:(_Bool)arg2 truncatedArgumentsCount:(unsigned long long *)arg3;

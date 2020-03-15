@@ -18,10 +18,10 @@
     _UILegibilitySettings *_legibilitySettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic, getter=isPullingToSearch) _Bool pullingToSearch; // @synthesize pullingToSearch=_pullingToSearch;
 @property(retain, nonatomic) UIViewController<SBUISearchBarControlling> *searchBarViewController; // @synthesize searchBarViewController=_searchBarViewController;
-- (void).cxx_destruct;
 - (double)_statusBarHeightAdjustmentForCurrentOrientation;
 - (_Bool)_canShowWhileLocked;
 - (void)viewDidDisappear:(_Bool)arg1;

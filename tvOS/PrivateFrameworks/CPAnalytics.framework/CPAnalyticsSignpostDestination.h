@@ -16,9 +16,9 @@
     NSMutableDictionary *_startTimesBySignpostID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *startTimesBySignpostID; // @synthesize startTimesBySignpostID=_startTimesBySignpostID;
 @property(nonatomic) __weak CPAnalytics *cpAnalyticsInstance; // @synthesize cpAnalyticsInstance=_cpAnalyticsInstance;
-- (void).cxx_destruct;
 - (void)_sendCPAnalyticsEvent:(id)arg1 withPayload:(id)arg2 withDuration:(double)arg3;
 - (void)_checkSignpostsEndForEvent:(id)arg1;
 - (void)_trackSignpostsStartForEvent:(id)arg1;

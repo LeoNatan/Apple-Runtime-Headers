@@ -16,8 +16,8 @@
 + (id)buildRequiredOnly;
 + (id)buildWithAudioCall:(id)arg1;
 + (id)allowedPayloadKeys;
-@property(copy, nonatomic) NSString *payloadAudioCall; // @synthesize payloadAudioCall=_payloadAudioCall;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *payloadAudioCall; // @synthesize payloadAudioCall=_payloadAudioCall;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

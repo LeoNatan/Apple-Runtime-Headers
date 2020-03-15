@@ -14,7 +14,7 @@
 #import <CoreUtils/HMMediaSystemDelegate-Protocol.h>
 #import <CoreUtils/HMUserDelegatePrivate-Protocol.h>
 
-@class HMAccessory, HMHomeManager, HMMediaSystem, HMMediaSystemRole, HMUser, NSArray, NSDictionary, NSString, NSUUID;
+@class HMAccessory, HMHomeManager, HMMediaSystem, HMMediaSystemRole, HMUser, NSArray, NSDictionary, NSMutableDictionary, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface CUHomeKitManager : NSObject <HMAccessoryDelegatePrivate, HMHomeDelegate, HMHomeDelegatePrivate, HMHomeManagerDelegate, HMHomeManagerDelegatePrivate, HMMediaSystemDelegate, HMUserDelegatePrivate>
@@ -22,8 +22,8 @@
     int _homeKitPrefsNotifyToken;
     HMHomeManager *_homeManager;
     _Bool _homeManagerDidUpdateHomes;
-    struct NSMutableDictionary *_homes;
-    struct NSMutableDictionary *_resolvableAccessoriesMap;
+    NSMutableDictionary *_homes;
+    NSMutableDictionary *_resolvableAccessoriesMap;
     NSDictionary *_selfAccessoryAppData;
     _Bool _selfAccessoryEnabled;
     NSUUID *_selfAccessoryRoomID;
@@ -31,7 +31,7 @@
     _Bool _selfAccessoryMediaSystemEnabled;
     _Bool _selfAccessorySiriAccessEnabled;
     HMUser *_selfAccessoryUser;
-    struct NSMutableDictionary *_users;
+    NSMutableDictionary *_users;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     struct LogCategory *_ucat;
@@ -59,6 +59,7 @@
     CDUnknownBlockType _selfAccessorySiriAccessUpdatedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selfAccessorySiriAccessUpdatedHandler; // @synthesize selfAccessorySiriAccessUpdatedHandler=_selfAccessorySiriAccessUpdatedHandler;
 @property(readonly, nonatomic) _Bool selfAccessorySiriEnabled; // @synthesize selfAccessorySiriEnabled=_selfAccessorySiriEnabled;
 @property(copy, nonatomic) CDUnknownBlockType selfAccessoryMediaSystemUpdatedHandler; // @synthesize selfAccessoryMediaSystemUpdatedHandler=_selfAccessoryMediaSystemUpdatedHandler;
@@ -82,8 +83,8 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)user:(id)arg1 didUpdateAssistantAccessControl:(id)arg2 forHome:(id)arg3;
+- (void)accessory:(id)arg1 didUpdateDevice:(id)arg2;
 - (void)accessoryDidUpdateApplicationData:(id)arg1;
 - (void)mediaSystem:(id)arg1 didUpdateName:(id)arg2;
 - (void)mediaSystem:(id)arg1 didUpdateComponents:(id)arg2;

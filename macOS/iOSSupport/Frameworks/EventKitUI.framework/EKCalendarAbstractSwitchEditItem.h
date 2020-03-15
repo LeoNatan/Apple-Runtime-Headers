@@ -19,12 +19,12 @@
     UISwitch *_toggleSwitch;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISwitch *toggleSwitch; // @synthesize toggleSwitch=_toggleSwitch;
 @property(retain, nonatomic) NSMutableArray *cells; // @synthesize cells=_cells;
 @property(nonatomic) BOOL allowEventAlerts; // @synthesize allowEventAlerts=_allowEventAlerts;
 @property(nonatomic) BOOL switchState; // @synthesize switchState=_switchState;
 @property(nonatomic) BOOL underlyingCalendarState; // @synthesize underlyingCalendarState=_underlyingCalendarState;
-- (void).cxx_destruct;
 - (BOOL)cellWrapsLongText;
 - (id)descriptionLabelText;
 - (id)cellText;

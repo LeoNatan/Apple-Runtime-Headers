@@ -13,8 +13,8 @@
     FCSyncFileCoordinatedDictionary *_fileCoordinatedDictionary;
 }
 
-@property(retain, nonatomic) FCSyncFileCoordinatedDictionary *fileCoordinatedDictionary; // @synthesize fileCoordinatedDictionary=_fileCoordinatedDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCSyncFileCoordinatedDictionary *fileCoordinatedDictionary; // @synthesize fileCoordinatedDictionary=_fileCoordinatedDictionary;
 - (BOOL)popActionTypesUpToCount:(unsigned long long)arg1 setLocalDataHintIfNeeded:(BOOL)arg2;
 - (id)peekAtActionTypes;
 - (BOOL)enqueueActionWithType:(long long)arg1;

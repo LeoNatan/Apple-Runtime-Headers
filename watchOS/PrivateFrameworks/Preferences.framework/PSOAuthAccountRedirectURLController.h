@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMapTable *redirectHandlerMap; // @synthesize redirectHandlerMap=_redirectHandlerMap;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMapTable *redirectHandlerMap; // @synthesize redirectHandlerMap=_redirectHandlerMap;
 - (id)_redirectURLFromURL:(id)arg1;
 - (_Bool)handleOAuthRedirectURL:(id)arg1;
 - (void)unRegisterOAuthClientForRedirectURL:(id)arg1;

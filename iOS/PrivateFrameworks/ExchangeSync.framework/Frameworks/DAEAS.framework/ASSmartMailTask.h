@@ -20,8 +20,8 @@
     _Bool _shouldNotRetry;
 }
 
-@property(nonatomic) _Bool shouldNotRetry; // @synthesize shouldNotRetry=_shouldNotRetry;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldNotRetry; // @synthesize shouldNotRetry=_shouldNotRetry;
 - (_Bool)processContext:(id)arg1;
 - (void)handleTopLevelErrorStatus:(id)arg1;
 - (_Bool)getTopLevelToken:(char *)arg1 outStatusCodePage:(char *)arg2 outStatusToken:(char *)arg3;

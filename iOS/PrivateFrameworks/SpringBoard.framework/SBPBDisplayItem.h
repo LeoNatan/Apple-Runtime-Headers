@@ -18,11 +18,11 @@
     NSString *_webClipIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *webClipIdentifier; // @synthesize webClipIdentifier=_webClipIdentifier;
 @property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

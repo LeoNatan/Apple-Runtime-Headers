@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *referrerIdentifier; // @synthesize referrerIdentifier=_referrerIdentifier;
 @property(copy, nonatomic) NSData *challengeResponse; // @synthesize challengeResponse=_challengeResponse;
 @property(copy, nonatomic) NSData *cryptogram; // @synthesize cryptogram=_cryptogram;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
 @property(retain, nonatomic) PKPaymentEligibilityResponse *eligibilityResponse; // @synthesize eligibilityResponse=_eligibilityResponse;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_updateContextUsingWebService:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_deviceScoreWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_requestBodyWithWebService:(id)arg1 completion:(CDUnknownBlockType)arg2;

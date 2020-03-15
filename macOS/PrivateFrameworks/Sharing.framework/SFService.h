@@ -9,7 +9,7 @@
 #import <Sharing/NSSecureCoding-Protocol.h>
 #import <Sharing/SFXPCInterface-Protocol.h>
 
-@class CUAppleIDClient, NSData, NSDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListenerEndpoint;
+@class CUAppleIDClient, NSData, NSDictionary, NSMutableDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListenerEndpoint;
 @protocol OS_dispatch_queue;
 
 @interface SFService : NSObject <NSSecureCoding, SFXPCInterface>
@@ -19,8 +19,8 @@
     BOOL _activateCompleted;
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
-    struct NSMutableDictionary *_requestQueue;
-    struct NSMutableDictionary *_sessions;
+    NSMutableDictionary *_requestQueue;
+    NSMutableDictionary *_sessions;
     struct LogCategory *_ucatCore;
     struct LogCategory *_ucatCrypto;
     NSXPCConnection *_xpcCnx;
@@ -81,6 +81,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wifiP2P; // @synthesize wifiP2P=_wifiP2P;
 @property(nonatomic) BOOL watchLocked; // @synthesize watchLocked=_watchLocked;
 @property(nonatomic) BOOL touchRemoteEnabled; // @synthesize touchRemoteEnabled=_touchRemoteEnabled;
@@ -135,7 +136,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned char deviceActionType; // @synthesize deviceActionType=_deviceActionType;
 @property(nonatomic) long long advertiseRate; // @synthesize advertiseRate=_advertiseRate;
-- (void).cxx_destruct;
 - (void)serviceSessionFailed:(id)arg1 error:(id)arg2;
 - (void)serviceReceivedResponse:(id)arg1;
 - (void)serviceReceivedRequest:(id)arg1;

@@ -22,6 +22,7 @@
 }
 
 + (id)diagnosticAndUsageDataASLSource;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isFetchingEntitiesBackward; // @synthesize isFetchingEntitiesBackward=_isFetchingEntitiesBackward;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateUpdatesSerialQueue; // @synthesize delegateUpdatesSerialQueue=_delegateUpdatesSerialQueue;
 @property(nonatomic) BOOL isFileObserverEnabled; // @synthesize isFileObserverEnabled=_isFileObserverEnabled;
@@ -30,7 +31,6 @@
 @property(nonatomic) struct __asl_object_s *store; // @synthesize store=_store;
 @property(nonatomic) struct __asl_object_s *queryList; // @synthesize queryList=_queryList;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (id)_handleMessagesFromList:(struct __asl_object_s *)arg1 direction:(int)arg2;
 - (id)_readStoreChunkNextToEntity:(id)arg1;
 - (id)_readStoreChunkPreviousToEntity:(id)arg1;

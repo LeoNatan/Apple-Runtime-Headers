@@ -19,10 +19,10 @@
 + (id)gestureWithLegacyFormatDictionary:(id)arg1;
 + (id)_fingerIdentifierForFingerAtIndex:(unsigned long long)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldPerformAtOriginalLocation; // @synthesize shouldPerformAtOriginalLocation=_shouldPerformAtOriginalLocation;
 @property(nonatomic) BOOL hasLocalizableName; // @synthesize hasLocalizableName=_hasLocalizableName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)gestureShiftedByOffset:(struct CGPoint)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

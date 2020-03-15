@@ -27,9 +27,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedKeyboardMediaController;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldRetryFetchingRecents; // @synthesize shouldRetryFetchingRecents=_shouldRetryFetchingRecents;
 @property(nonatomic) __weak id <UIKeyboardMediaControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)draggedStickerToPoint:(struct CGPoint)arg1;
 - (void)requestInsertionPointCompletion:(CDUnknownBlockType)arg1;
 - (void)stageStickerWithFileHandle:(id)arg1 url:(id)arg2 accessibilityLabel:(id)arg3;

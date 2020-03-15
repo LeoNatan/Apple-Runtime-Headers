@@ -28,6 +28,7 @@
 
 + (void)runSheetForWindow:(id)arg1 systemLanguages:(id)arg2 otherLanguages:(id)arg3 showHelpButton:(BOOL)arg4 usingBlock:(CDUnknownBlockType)arg5;
 + (void)runSheetForWindow:(id)arg1 systemLanguages:(id)arg2 otherLanguages:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType didEndBlock; // @synthesize didEndBlock=_didEndBlock;
 @property(retain) NSArray *filteredOtherLanguages; // @synthesize filteredOtherLanguages=_filteredOtherLanguages;
 @property(retain) NSArray *filteredSystemLanguages; // @synthesize filteredSystemLanguages=_filteredSystemLanguages;
@@ -39,7 +40,6 @@
 @property(retain) NSButton *addButton; // @synthesize addButton=_addButton;
 @property(retain) NSButton *helpButton; // @synthesize helpButton=_helpButton;
 @property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)searchStringChanged:(id)arg1;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;

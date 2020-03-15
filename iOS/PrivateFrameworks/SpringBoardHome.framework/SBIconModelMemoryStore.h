@@ -16,9 +16,9 @@
     NSDictionary *_desiredState;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *desiredState; // @synthesize desiredState=_desiredState;
 @property(copy, nonatomic) NSDictionary *currentState; // @synthesize currentState=_currentState;
-- (void).cxx_destruct;
 - (id)loadDesiredIconState:(id *)arg1;
 - (id)loadCurrentIconState:(id *)arg1;
 - (_Bool)deleteDesiredIconStateWithOptions:(unsigned long long)arg1 error:(id *)arg2;

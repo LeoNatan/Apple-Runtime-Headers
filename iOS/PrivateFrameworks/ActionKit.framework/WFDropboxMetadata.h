@@ -28,6 +28,7 @@
 + (id)serverModifiedDateJSONTransformer;
 + (id)clientModifiedDateJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *itemKind; // @synthesize itemKind=_itemKind;
 @property(readonly, nonatomic) NSDate *serverModifiedDate; // @synthesize serverModifiedDate=_serverModifiedDate;
 @property(readonly, nonatomic) NSDate *clientModifiedDate; // @synthesize clientModifiedDate=_clientModifiedDate;
@@ -37,7 +38,6 @@
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *wfName;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

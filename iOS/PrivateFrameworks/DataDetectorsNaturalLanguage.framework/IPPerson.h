@@ -16,11 +16,11 @@
     NSString *_handleType;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *handleType; // @synthesize handleType=_handleType;
 @property(retain) NSString *ABUUID; // @synthesize ABUUID=_ABUUID;
 @property(readonly) NSString *handle; // @synthesize handle=_handle;
 @property(readonly) NSString *fullName; // @synthesize fullName=_fullName;
-- (void).cxx_destruct;
 @property(readonly) NSString *email; // @dynamic email;
 @property(readonly, copy) NSString *displayableName;
 - (id)initWithString:(id)arg1;

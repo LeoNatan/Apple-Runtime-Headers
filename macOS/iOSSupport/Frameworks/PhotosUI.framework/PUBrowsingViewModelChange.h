@@ -30,6 +30,7 @@
     BOOL _isVideoContentAllowedDidChange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isVideoContentAllowedDidChange; // @synthesize isVideoContentAllowedDidChange=_isVideoContentAllowedDidChange;
 @property(nonatomic, setter=_setIsScrubbingActivationDidChange:) BOOL isScrubbingActivationDidChange; // @synthesize isScrubbingActivationDidChange=_isScrubbingActivationDidChange;
 @property(nonatomic, setter=_setIsAttemptingToPlayVideoOverlayDidChange:) BOOL isAttemptingToPlayVideoOverlayDidChange; // @synthesize isAttemptingToPlayVideoOverlayDidChange=_isAttemptingToPlayVideoOverlayDidChange;
@@ -46,7 +47,6 @@
 @property(nonatomic, setter=_setCurrentAssetTransitionProgressDidChange:) BOOL currentAssetTransitionProgressDidChange; // @synthesize currentAssetTransitionProgressDidChange=_currentAssetTransitionProgressDidChange;
 @property(nonatomic, setter=_setCurrentAssetDidChange:) BOOL currentAssetDidChange; // @synthesize currentAssetDidChange=_currentAssetDidChange;
 @property(nonatomic, setter=_setAssetsDataSourceDidChange:) BOOL assetsDataSourceDidChange; // @synthesize assetsDataSourceDidChange=_assetsDataSourceDidChange;
-- (void).cxx_destruct;
 - (BOOL)hasChanges;
 @property(readonly, nonatomic) NSMapTable *assetSharedViewModelChangesByAsset;
 @property(readonly, nonatomic) NSMapTable *_mutableSharedViewModelChangesByAsset;

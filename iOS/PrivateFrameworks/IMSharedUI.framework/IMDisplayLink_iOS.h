@@ -13,8 +13,8 @@
     CADisplayLink *_displayLink;
 }
 
-@property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 - (_Bool)isValid;
 - (void)invalidate;
 - (void)schedule;

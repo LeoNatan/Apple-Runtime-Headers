@@ -15,10 +15,10 @@
     NSDate *_lastSet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastSet; // @synthesize lastSet=_lastSet;
 @property(nonatomic) double ttl; // @synthesize ttl=_ttl;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)getValueWithGenerator:(CDUnknownBlockType)arg1;
 - (id)initWithTTL:(double)arg1;
 

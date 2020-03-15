@@ -12,16 +12,36 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 struct ArAsset;
 
+struct Handle {
+    unsigned int value;
+};
+
 struct SdfAssetPath {
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _assetPath;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _resolvedPath;
 };
 
-struct SdfPath {
-    struct intrusive_ptr<const pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_PathNode> _pathNode;
+struct SdfLayerOffset {
+    double _offset;
+    double _scale;
 };
 
-struct Sdf_PathNode;
+struct SdfPath {
+    struct Sdf_PathNodeHandleImpl<pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_Pool<pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_PathPrimTag, 24, 8, 16384>::Handle, true, const pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_PathNode> _primPart;
+    struct Sdf_PathNodeHandleImpl<pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_Pool<pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_PathPropTag, 24, 8, 16384>::Handle, false, const pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_PathNode> _propPart;
+};
+
+struct SdfTimeCode {
+    double _time;
+};
+
+struct Sdf_PathNodeHandleImpl<pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_Pool<pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_PathPrimTag, 24, 8, 16384>::Handle, true, const pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_PathNode> {
+    struct Handle _poolHandle;
+};
+
+struct Sdf_PathNodeHandleImpl<pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_Pool<pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_PathPropTag, 24, 8, 16384>::Handle, false, const pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_PathNode> {
+    struct Handle _poolHandle;
+};
 
 struct TfPointerAndBits<const pxrInternal_v0_19__pxrReserved__usdkit__::TfToken::_Rep> {
     struct _Rep *_ptrAndBits;
@@ -132,10 +152,6 @@ struct bitset<13> {
     unsigned long long __first_;
 };
 
-struct intrusive_ptr<const pxrInternal_v0_19__pxrReserved__usdkit__::Sdf_PathNode> {
-    struct Sdf_PathNode *px;
-};
-
 struct intrusive_ptr<const pxrInternal_v0_19__pxrReserved__usdkit__::Usd_PrimData> {
     struct Usd_PrimData *px;
 };
@@ -191,7 +207,7 @@ typedef struct TfWeakPtr<pxrInternal_v0_19__pxrReserved__usdkit__::UsdStage> {
 typedef struct iterator_range<pxrInternal_v0_19__pxrReserved__usdkit__::UsdPrimSiblingIterator> {
     struct UsdPrimSiblingIterator m_Begin;
     struct UsdPrimSiblingIterator m_End;
-} iterator_range_599edad9;
+} iterator_range_d33a38e4;
 
 typedef struct vector<pxrInternal_v0_19__pxrReserved__usdkit__::UsdProperty, std::__1::allocator<pxrInternal_v0_19__pxrReserved__usdkit__::UsdProperty>> {
     struct UsdProperty *__begin_;

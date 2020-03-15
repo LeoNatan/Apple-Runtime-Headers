@@ -17,10 +17,10 @@
     NSArray *_parameters;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) NSString *sql; // @synthesize sql=_sql;
 @property(readonly, nonatomic) ML3DatabaseDistantConnection *distantConnection; // @synthesize distantConnection=_distantConnection;
-- (void).cxx_destruct;
 - (_Bool)_fetchRowsIfEmpty;
 - (void)_localEnumerateRowsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_remoteEnumerateRowsWithBlock:(CDUnknownBlockType)arg1;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     id <MTLTexture> _texture;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MTLTexture> texture; // @synthesize texture=_texture;
 @property(readonly, nonatomic) float width; // @synthesize width=_width;
 @property(readonly, nonatomic) float height; // @synthesize height=_height;
-- (void).cxx_destruct;
 - (id)initWithImage:(id)arg1;
 
 @end

@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     BOOL _allowsEditors;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL allowsEditors; // @synthesize allowsEditors=_allowsEditors;
 @property(readonly, copy) NSArray *items; // @synthesize items=_items;
 @property(readonly) id <NSServicesRequestor> servicesRequestor; // @synthesize servicesRequestor=_servicesRequestor;
 @property(readonly) id <_NSQuickActionItemSource> itemSource; // @synthesize itemSource=_itemSource;
-- (void).cxx_destruct;
 - (id)initWithItemSource:(id)arg1 servicesRequestor:(id)arg2 items:(id)arg3 allowsEditors:(BOOL)arg4;
 
 @end

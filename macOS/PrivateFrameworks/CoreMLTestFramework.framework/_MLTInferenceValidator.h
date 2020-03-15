@@ -17,12 +17,12 @@
     _MLTLogger *_logger;
 }
 
+- (void).cxx_destruct;
 @property(retain) _MLTLogger *logger; // @synthesize logger=_logger;
 @property(retain) NSString *errorString; // @synthesize errorString=_errorString;
 @property(retain) NSString *computeUnit; // @synthesize computeUnit=_computeUnit;
 @property long long numFailed; // @synthesize numFailed=_numFailed;
 @property long long numCorrect; // @synthesize numCorrect=_numCorrect;
-- (void).cxx_destruct;
 - (BOOL)validatePrediction:(id)arg1 withExpectedValue:(id)arg2 testCaseName:(id)arg3 error:(id *)arg4;
 - (BOOL)validatePredicted:(id)arg1 withExpectedValue:(id)arg2 featureName:(id)arg3 testCaseName:(id)arg4 metrics:(id)arg5 error:(id *)arg6;
 - (void)calculateAndVerifyMetric:(id)arg1 forFeatureName:(id)arg2 betweenPredictedValue:(id)arg3 andExpectedValue:(id)arg4 withThresholdInformation:(id)arg5 andTestCaseName:(id)arg6;

@@ -13,8 +13,8 @@
     AKController *_annotationController;
 }
 
-@property(nonatomic) __weak AKController *annotationController; // @synthesize annotationController=_annotationController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AKController *annotationController; // @synthesize annotationController=_annotationController;
 
 @end
 

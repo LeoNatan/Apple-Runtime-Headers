@@ -20,6 +20,7 @@
     IDSCloudKitKeyElectionStore *_keyElectionStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDSCloudKitKeyElectionStore *keyElectionStore; // @synthesize keyElectionStore=_keyElectionStore;
 @property(readonly, nonatomic) IDSCloudKitTransportLog *transportLog; // @synthesize transportLog=_transportLog;
 @property(readonly, nonatomic) IDSCloudKitGroupServer *privateGroupServer; // @synthesize privateGroupServer=_privateGroupServer;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) IDSCloudKitKeyValueStore *keyValueStore; // @synthesize keyValueStore=_keyValueStore;
 @property(retain, nonatomic) IDSCKContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *containerIdentifier;
 - (id)initWithIdentifier:(id)arg1 queue:(id)arg2;
 

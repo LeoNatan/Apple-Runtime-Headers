@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     UIView *_info;
     UIImageView *_backgroundView;
+    UIView *_selectionIndicatorView;
     UIImageView *_selectionImageView;
     _UISegmentedControlAppearanceStorage *_appearanceStorage;
     _UIFloatingContentView *_floatingContentView;
@@ -44,9 +45,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_backgroundImageWithStorage:(id)arg1 mini:(BOOL)arg2 state:(unsigned long long)arg3 position:(unsigned int)arg4 drawMode:(unsigned int *)arg5 isCustom:(char *)arg6 defaultBlock:(CDUnknownBlockType)arg7;
+- (void).cxx_destruct;
 @property(nonatomic) double requestedScaleFactor; // @synthesize requestedScaleFactor=_requestedScaleFactor;
 @property(copy, nonatomic, setter=_setInfoConstraints:) NSArray *_infoConstraints; // @synthesize _infoConstraints;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (id)viewForLastBaselineLayout;
@@ -104,7 +105,7 @@ __attribute__((visibility("hidden")))
 - (void)setTintColor:(id)arg1;
 - (void)setBarStyle:(long long)arg1;
 - (id)disabledTextColor;
-- (id)_attributedTextForState:(unsigned long long)arg1 selected:(BOOL)arg2;
+- (id)_attributedTextForState:(unsigned long long)arg1 selected:(BOOL)arg2 forceSelectedAppearance:(BOOL)arg3;
 - (id)_stateTextAttibutes:(id)arg1 segmentState:(unsigned long long)arg2;
 - (void)_updateTextColors;
 - (void)setUsesAXTextSize:(BOOL)arg1;
@@ -113,6 +114,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_hasSelectedColor;
 - (void)_updateBackgroundAndContentViews;
 - (void)_updateSelectionIndicator;
+- (void)_removeSelectionIndicator;
 - (struct CATransform3D)_highlightSelectionInfoTransform;
 - (void)_updateHighlight;
 - (void)_updateSelectionToTransform:(struct CATransform3D)arg1 infoTransform:(struct CATransform3D)arg2 hideSelection:(BOOL)arg3 shouldAnimate:(BOOL)arg4;
@@ -133,13 +135,15 @@ __attribute__((visibility("hidden")))
 - (id)_encodableSubviews;
 - (id)_tintColorArchivingKey;
 - (id)_effectiveBackgroundView;
+- (id)_effectiveVibrancyEffect;
 - (BOOL)_effectiveDisableShadow;
 - (id)_effectiveBackgroundTintColor;
 - (id)_effectiveSelectedSegmentTintColor;
 - (Class)_segmentedControlClass;
+- (id)_parentSegmentedControl;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInfo:(id)arg1 size:(int)arg2 barStyle:(long long)arg3 tintColor:(id)arg4 appearanceStorage:(id)arg5 position:(unsigned int)arg6 autosizeText:(BOOL)arg7;
-- (void)_commonSegmentInit;
+- (void)_finishInitialSegmentSetup;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

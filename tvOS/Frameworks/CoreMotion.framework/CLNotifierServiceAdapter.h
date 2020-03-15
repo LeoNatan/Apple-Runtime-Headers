@@ -16,9 +16,9 @@
     struct CLNotifierBase *_notifier;
 }
 
-@property(readonly, nonatomic) struct CLNotifierBase *notifier; // @synthesize notifier=_notifier;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CLNotifierBase *notifier; // @synthesize notifier=_notifier;
 @property(readonly, copy) NSString *debugDescription;
 - (int)notifierClientNumForCoparty:(id)arg1;
 - (void)forget:(byref id)arg1;

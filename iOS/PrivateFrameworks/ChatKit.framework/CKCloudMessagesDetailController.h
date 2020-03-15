@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)specifier;
-@property(retain, nonatomic) UIProgressHUD *cloudKitProgressView; // @synthesize cloudKitProgressView=_cloudKitProgressView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIProgressHUD *cloudKitProgressView; // @synthesize cloudKitProgressView=_cloudKitProgressView;
 - (void)setEnabledDidReturned:(id)arg1;
 - (void)undoDelete:(id)arg1;
 - (void)_displayiCloudErrorMessage;

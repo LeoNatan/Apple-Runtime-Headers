@@ -14,9 +14,9 @@
     NSHashTable *_connections;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *connections; // @synthesize connections=_connections;
 @property(readonly, nonatomic) id item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithItem:(id)arg1;

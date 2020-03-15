@@ -18,10 +18,10 @@
     NSMutableDictionary *_deviceStateFlagsMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *deviceStateFlagsMap; // @synthesize deviceStateFlagsMap=_deviceStateFlagsMap;
 @property(retain, nonatomic) NSHashTable *listeners; // @synthesize listeners=_listeners;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)openPanelWithParameters:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)showErrorReportWithParameters:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)showReportWithParameters:(id)arg1 withReply:(CDUnknownBlockType)arg2;
@@ -116,7 +116,8 @@
 - (void)fetchAccessibilityPrefsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)setSyncPrefs:(id)arg1 forDevice:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)fetchSettingsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)configureNewDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)completeSetupForDevice:(id)arg1 didAcceptLicenseAgreement:(BOOL)arg2 didAcceptWarrantyInfo:(BOOL)arg3 withReply:(CDUnknownBlockType)arg4;
+- (void)fetchSetupInfoForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (BOOL)isSoftwareUpdateOrRestoreInProgressForDevice:(id)arg1;
 - (BOOL)isSoftwareDownloadInProgressForDevice:(id)arg1;
 - (BOOL)isRestoreFromBackupInProgressForDevice:(id)arg1;

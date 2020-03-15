@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_customAccessibilityLabel;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *customAccessibilityLabel; // @synthesize customAccessibilityLabel=_customAccessibilityLabel;
 @property(readonly, nonatomic) UIView *customView; // @synthesize customView=_customView;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)invalidateIntrinsicContentSize;

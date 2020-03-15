@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL interfaceIdiomIsPad; // @synthesize interfaceIdiomIsPad=_interfaceIdiomIsPad;
 @property(nonatomic) long long userInterfaceIdiom; // @synthesize userInterfaceIdiom=_userInterfaceIdiom;
 @property(copy, nonatomic) NSString *layoutTag; // @synthesize layoutTag=_layoutTag;
@@ -36,7 +37,6 @@
 @property(nonatomic) BOOL hasAccentKey; // @synthesize hasAccentKey=_hasAccentKey;
 @property(nonatomic) BOOL hasCandidateKey; // @synthesize hasCandidateKey=_hasCandidateKey;
 @property(copy, nonatomic) NSString *inputMode; // @synthesize inputMode=_inputMode;
-- (void).cxx_destruct;
 - (void)setInterfaceIdiomIsPad;
 @property(readonly, nonatomic) NSString *softwareLayout;
 - (unsigned long long)hash;

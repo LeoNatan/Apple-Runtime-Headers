@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CALayer *_videoLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *videoLayer; // @synthesize videoLayer=_videoLayer;
 @property(readonly, nonatomic) int videoContextSlotIdentifier; // @synthesize videoContextSlotIdentifier=_videoContextSlotIdentifier;
-- (void).cxx_destruct;
 - (void)cleanUpSubLayerForLayer:(id)arg1;
 - (id)nameForSubLayer;
 - (void)insertSubLayerInLayer:(id)arg1 videoSlotIdentifier:(int)arg2;

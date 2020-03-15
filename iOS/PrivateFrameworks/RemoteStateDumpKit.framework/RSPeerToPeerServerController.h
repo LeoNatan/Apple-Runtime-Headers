@@ -16,9 +16,9 @@
     MCNearbyServiceAdvertiser *_serviceAdvertiser;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool advertiserDidNotStartAdvertising; // @synthesize advertiserDidNotStartAdvertising=_advertiserDidNotStartAdvertising;
 @property(retain, nonatomic) MCNearbyServiceAdvertiser *serviceAdvertiser; // @synthesize serviceAdvertiser=_serviceAdvertiser;
-- (void).cxx_destruct;
 - (void)advertiser:(id)arg1 didNotStartAdvertisingPeer:(id)arg2;
 - (void)advertiser:(id)arg1 didReceiveInvitationFromPeer:(id)arg2 withContext:(id)arg3 invitationHandler:(CDUnknownBlockType)arg4;
 - (_Bool)didStartAcceptingConnections;

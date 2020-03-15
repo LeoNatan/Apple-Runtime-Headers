@@ -14,8 +14,8 @@
     NSTimeZone *_timeZone;
 }
 
-@property(readonly, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 - (id)messageBusinessHours;
 - (int)responseTime;
 @property(readonly, nonatomic) _Bool isVerified;

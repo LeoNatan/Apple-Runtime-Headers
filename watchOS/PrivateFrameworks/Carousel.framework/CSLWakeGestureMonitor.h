@@ -21,9 +21,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLClientConnections *clients; // @synthesize clients=_clients;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)setWantsUnfilteredGestures:(_Bool)arg1 includingWhenScreenOff:(_Bool)arg2;
 - (id)_removeEntryForConnection:(id)arg1;

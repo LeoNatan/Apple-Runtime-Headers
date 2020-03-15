@@ -17,9 +17,9 @@
     NSArray *_settings;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowCameraInMultipleForegroundAppLayout; // @synthesize allowCameraInMultipleForegroundAppLayout=_allowCameraInMultipleForegroundAppLayout;
 @property(nonatomic) _Bool audioCaptureEnabled; // @synthesize audioCaptureEnabled=_audioCaptureEnabled;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(copy, nonatomic) NSArray *settings; // @synthesize settings=_settings;

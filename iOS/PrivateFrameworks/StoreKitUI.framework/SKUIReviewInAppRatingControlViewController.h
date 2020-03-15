@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SKUIStarRatingControl *_ratingControl;
 }
 
-@property(retain, nonatomic) SKUIStarRatingControl *ratingControl; // @synthesize ratingControl=_ratingControl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIStarRatingControl *ratingControl; // @synthesize ratingControl=_ratingControl;
 - (id)_repeatedTemplateImageForImage:(id)arg1;
 - (struct CGSize)preferredContentSize;
 - (void)viewDidLayoutSubviews;

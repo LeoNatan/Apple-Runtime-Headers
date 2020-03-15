@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SearchUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) SearchUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) TLKStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)updateWithRowModel:(id)arg1;
 - (id)richTextForSearchUIText:(id)arg1 withMaxLines:(unsigned long long)arg2;
 - (id)setupContentView;

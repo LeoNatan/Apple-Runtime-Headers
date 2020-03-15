@@ -23,8 +23,8 @@
     BOOL _mirroringOnly;
 }
 
-@property(nonatomic) BOOL mirroringOnly; // @synthesize mirroringOnly=_mirroringOnly;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL mirroringOnly; // @synthesize mirroringOnly=_mirroringOnly;
 - (struct CGSize)_maxRoutingViewSize;
 - (struct CGRect)_controlsViewFrame;
 - (struct CGRect)_cancelButtonFrame;

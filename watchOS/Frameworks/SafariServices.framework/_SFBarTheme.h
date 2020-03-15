@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class UIColor, _UIBackdropViewSettings;
+@class NSArray, UIBlurEffect, UIColor;
 
 @interface _SFBarTheme : NSObject
 {
@@ -16,19 +16,21 @@
     unsigned int _tintStyle;
     UIColor *_controlsTintColor;
     UIColor *_preferredBarTintColor;
-    _UIBackdropViewSettings *_backdropInputSettings;
+    UIBlurEffect *_backdropEffect;
+    NSArray *_backdropAdjustmentEffects;
 }
 
 + (id)themeWithBarTintStyle:(unsigned int)arg1 preferredBarTintColor:(id)arg2 controlsTintColor:(id)arg3;
 + (id)themeWithBarTintStyle:(unsigned int)arg1;
 + (id)themeWithTheme:(id)arg1;
-@property(readonly, nonatomic) _UIBackdropViewSettings *backdropInputSettings; // @synthesize backdropInputSettings=_backdropInputSettings;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *backdropAdjustmentEffects; // @synthesize backdropAdjustmentEffects=_backdropAdjustmentEffects;
+@property(readonly, nonatomic) UIBlurEffect *backdropEffect; // @synthesize backdropEffect=_backdropEffect;
 @property(readonly, nonatomic) UIColor *preferredBarTintColor; // @synthesize preferredBarTintColor=_preferredBarTintColor;
 @property(readonly, nonatomic) UIColor *controlsTintColor; // @synthesize controlsTintColor=_controlsTintColor;
 @property(readonly, nonatomic) unsigned int tintStyle; // @synthesize tintStyle=_tintStyle;
 @property(readonly, nonatomic) _Bool backdropIsTinted; // @synthesize backdropIsTinted=_backdropIsTinted;
 @property(readonly, nonatomic) _Bool backdropIsDark; // @synthesize backdropIsDark=_backdropIsDark;
-- (void).cxx_destruct;
 - (void)applyBackdropEffectsToView:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) _SFBarTheme *fallbackTheme;

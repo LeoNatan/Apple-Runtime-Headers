@@ -19,10 +19,10 @@
 + (id)defaultPropertyValues;
 + (id)requiredProperties;
 + (id)className;
+- (void).cxx_destruct;
 @property(readonly) RLMLinkingObjects *workflows; // @synthesize workflows=_workflows;
 @property(retain) NSDate *importDate; // @synthesize importDate=_importDate;
 @property(copy) NSString *sourceAppIdentifier; // @synthesize sourceAppIdentifier=_sourceAppIdentifier;
-- (void).cxx_destruct;
 
 @end
 

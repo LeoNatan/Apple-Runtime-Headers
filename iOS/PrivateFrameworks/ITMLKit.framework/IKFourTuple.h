@@ -17,8 +17,8 @@
     double _values[4];
 }
 
-@property(readonly, nonatomic) NSString *namedStyle; // @synthesize namedStyle=_namedStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *namedStyle; // @synthesize namedStyle=_namedStyle;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsetsValue;
 @property(readonly, nonatomic) struct IKCornerRadii cornerRadiiValue;

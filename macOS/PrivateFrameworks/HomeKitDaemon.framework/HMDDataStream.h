@@ -28,6 +28,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 @property(nonatomic) unsigned long long nextRequestIdentifier; // @synthesize nextRequestIdentifier=_nextRequestIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) id <HMDDataStreamTransport> transport; // @synthesize transport=_transport;
 @property(readonly, copy) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(nonatomic) __weak id <HMDDataStreamDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)startHelloMessageResponseTimer;
 - (void)transportDidOpen:(id)arg1;

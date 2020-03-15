@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_webControllerName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *webControllerName; // @synthesize webControllerName=_webControllerName;
 @property(readonly, copy, nonatomic) NSString *nativeControllerName; // @synthesize nativeControllerName=_nativeControllerName;
 @property(readonly, copy, nonatomic) NSString *bridgeVersion; // @synthesize bridgeVersion=_bridgeVersion;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -53,6 +53,7 @@
     NSArray *_filterToolbarItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *filterToolbarItems; // @synthesize filterToolbarItems=_filterToolbarItems;
 @property(readonly, nonatomic) UXBarButtonItem *selectButtonItem; // @synthesize selectButtonItem=_selectButtonItem;
 @property(nonatomic) __weak id <KHThemeChooserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -64,7 +65,6 @@
 @property(copy, nonatomic) NSString *applyButtonTitle; // @synthesize applyButtonTitle=_applyButtonTitle;
 @property(copy, nonatomic) KHThemeCatalog *themeCatalog; // @synthesize themeCatalog=_themeCatalog;
 @property(readonly, nonatomic) KHThemeProvider *selectedThemeProvider; // @synthesize selectedThemeProvider=_selectedThemeProvider;
-- (void).cxx_destruct;
 - (void)_teardownAccessibility;
 - (void)_configureAccessibility;
 - (void)_setupToolbar;

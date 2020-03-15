@@ -20,10 +20,10 @@
     id <CRCard> _loadedCard;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CRCard> loadedCard; // @synthesize loadedCard=_loadedCard;
 @property(nonatomic) __weak id <_CRKCardSectionViewLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSMutableSet *identifiedCardSectionViewProviders; // @synthesize identifiedCardSectionViewProviders=_identifiedCardSectionViewProviders;
-- (void).cxx_destruct;
 - (id)_viewConfigurationForCardSection:(id)arg1 providerIdentifier:(id)arg2;
 - (id)_allViewConfigurations;
 - (_Bool)cardSectionShouldBeDisplayed:(id)arg1;

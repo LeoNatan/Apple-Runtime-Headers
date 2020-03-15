@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)internalTestConfigType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *internalTestConfigs; // @synthesize internalTestConfigs=_internalTestConfigs;
 @property(retain, nonatomic) NSString *userDefaultTestName; // @synthesize userDefaultTestName=_userDefaultTestName;
 @property(retain, nonatomic) NSString *processUuid; // @synthesize processUuid=_processUuid;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(retain, nonatomic) NSString *productName; // @synthesize productName=_productName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -29,12 +29,12 @@
     // Error parsing type: {?="columns"[4]}, name: _matrix4x4
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isDefaultValue; // @synthesize isDefaultValue=_isDefaultValue;
 // Error parsing type for property matrix4x4:
 // Property attributes: T{?=[4]},N,V_matrix4x4
 
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 -     // Error parsing type: v80@0:8{?=[4]}16, name: setMatrix4x4Value:
 // Error parsing type for property float4Value:
 // Property attributes: T,N

@@ -24,9 +24,11 @@
 + (id)mouse;
 + (id)shared;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _AXFMouseHardware *_hardware; // @synthesize _hardware=__hardware;
 @property(nonatomic) __weak id <AXFMouseDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (void)scrollWheelByDelta:(struct CGPoint)arg1 unit:(unsigned int)arg2 markupHandler:(CDUnknownBlockType)arg3;
+- (void)scrollWheelByDelta:(struct CGPoint)arg1 unit:(unsigned int)arg2;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 markupHandler:(CDUnknownBlockType)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)clickButton:(long long)arg1 count:(unsigned long long)arg2 withModifiers:(unsigned long long)arg3 markupHandler:(CDUnknownBlockType)arg4;

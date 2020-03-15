@@ -20,10 +20,10 @@
 
 + (id)dialerNumberPadNumericCharacters;
 + (id)dialerNumberPadFullCharacters;
+- (void).cxx_destruct;
 @property(retain) TPDialerSoundController *soundController; // @synthesize soundController=_soundController;
 @property id <TPDialerKeypadDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool playsSounds; // @synthesize playsSounds=_playsSounds;
-- (void).cxx_destruct;
 - (int)indexForHighlightedKey;
 - (void)highlightKeyAtIndex:(int)arg1;
 - (void)buttonLongPressed:(id)arg1;

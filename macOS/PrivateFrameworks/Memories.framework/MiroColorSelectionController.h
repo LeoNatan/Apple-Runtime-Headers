@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)colorIsLight:(id)arg1;
 + (BOOL)colorIsDark:(id)arg1;
 + (void)fetchColorAnalysisForAsset:(id)arg1 atTime:(int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *debugFilteredImageDominantRanges; // @synthesize debugFilteredImageDominantRanges=_debugFilteredImageDominantRanges;
 @property(retain, nonatomic) NSMutableArray *debugSafeAccentRanges; // @synthesize debugSafeAccentRanges=_debugSafeAccentRanges;
 @property(retain, nonatomic) id <MiroTitleColorConfiguration> debugTitleConfiguration; // @synthesize debugTitleConfiguration=_debugTitleConfiguration;
@@ -62,7 +63,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) int titleSnapshotAspect; // @synthesize titleSnapshotAspect=_titleSnapshotAspect;
 @property(retain, nonatomic) MiroBlueprint *blueprint; // @synthesize blueprint=_blueprint;
-- (void).cxx_destruct;
 - (id)_selectSafeTextColorOverImageForAnalysisRegion:(unsigned long long)arg1;
 - (id)_selectSafeAccentColor;
 - (id)_selectSafeDominantColorForAnalysisRegion:(unsigned long long)arg1;

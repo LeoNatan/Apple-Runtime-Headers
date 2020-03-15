@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSArray *_events;
 }
 
-@property(readonly, nonatomic) NSArray *events; // @synthesize events=_events;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *events; // @synthesize events=_events;
 - (id)description;
 - (id)eventForTime:(double)arg1;
 - (id)initWithTimelineElements:(id)arg1;

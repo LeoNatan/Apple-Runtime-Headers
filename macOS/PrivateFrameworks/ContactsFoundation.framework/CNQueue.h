@@ -18,9 +18,9 @@
 + (id)boundedQueueWithCapacity:(unsigned long long)arg1 overflowHandler:(CDUnknownBlockType)arg2;
 + (id)boundedQueueWithCapacity:(unsigned long long)arg1;
 + (id)priorityQueueWithComparator:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNQueueingStrategy> strategy; // @synthesize strategy=_strategy;
 @property(readonly, nonatomic) NSMutableArray *buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 - (id)drain;
 - (void)dequeueObject:(id)arg1;
 - (id)dequeue;

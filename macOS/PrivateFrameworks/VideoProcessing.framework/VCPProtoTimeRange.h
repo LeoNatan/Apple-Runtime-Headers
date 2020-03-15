@@ -17,9 +17,9 @@
 }
 
 + (id)timeRangeWithCMTimeRange:(CDStruct_e83c9415)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VCPProtoTime *duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) VCPProtoTime *start; // @synthesize start=_start;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

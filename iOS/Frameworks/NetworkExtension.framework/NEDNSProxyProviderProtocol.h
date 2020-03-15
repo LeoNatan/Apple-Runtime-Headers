@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *designatedRequirement; // @synthesize designatedRequirement=_designatedRequirement;
 @property(copy) NSString *pluginType; // @synthesize pluginType=_pluginType;
 @property(copy) NSString *providerBundleIdentifier; // @synthesize providerBundleIdentifier=_providerBundleIdentifier;
 @property(copy) NSDictionary *providerConfiguration; // @synthesize providerConfiguration=_providerConfiguration;
-- (void).cxx_destruct;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (_Bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

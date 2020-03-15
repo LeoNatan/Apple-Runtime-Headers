@@ -84,6 +84,7 @@
 + (id)deviceWithScanRecord:(id)arg1;
 + (id)deviceWithInfo:(id)arg1;
 + (_Bool)supportedScanRecord:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic) _Bool skipPairSetup; // @synthesize skipPairSetup=_skipPairSetup;
 @property(nonatomic) _Bool pausesAfterApply; // @synthesize pausesAfterApply=_pausesAfterApply;
@@ -95,7 +96,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_userQueue;
 @property(nonatomic) unsigned long long deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (int)_timeoutTimerStart:(int)arg1 block:(CDUnknownBlockType)arg2;
 - (int)_startBonjourWithTimeout:(int)arg1 handler:(CDUnknownBlockType)arg2;
 - (int)_setupClient:(id)arg1;

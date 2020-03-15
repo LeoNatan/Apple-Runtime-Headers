@@ -80,11 +80,10 @@
 + (id)clinicalTypeForIdentifier:(id)arg1;
 + (id)vaccinationRecordTypeForIdentifier:(id)arg1;
 + (id)medicationRecordTypeForIdentifier:(id)arg1;
-@property(retain, nonatomic) HKObjectType *parentType; // @synthesize parentType=_parentType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKObjectType *parentType; // @synthesize parentType=_parentType;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-@property(readonly, nonatomic, getter=_isClinicalType) _Bool _clinicalType;
 - (id)_predicateForSDKVersion:(unsigned int)arg1;
 - (_Bool)_requiresAuthorization;
 @property(readonly, nonatomic) _Bool isClinicalType;

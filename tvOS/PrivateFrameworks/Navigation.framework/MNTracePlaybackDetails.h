@@ -30,6 +30,7 @@
 }
 
 + (Class)bookmarkType;
+- (void).cxx_destruct;
 @property(nonatomic) double pedestrianTraceStartRelativeTimestamp; // @synthesize pedestrianTraceStartRelativeTimestamp=_pedestrianTraceStartRelativeTimestamp;
 @property(retain, nonatomic) NSString *pedestrianTracePath; // @synthesize pedestrianTracePath=_pedestrianTracePath;
 @property(nonatomic) unsigned int recordedBookmarkID; // @synthesize recordedBookmarkID=_recordedBookmarkID;
@@ -37,7 +38,6 @@
 @property(nonatomic) double currentPosition; // @synthesize currentPosition=_currentPosition;
 @property(nonatomic) double traceDuration; // @synthesize traceDuration=_traceDuration;
 @property(retain, nonatomic) NSString *tracePath; // @synthesize tracePath=_tracePath;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

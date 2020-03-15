@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)pairWithKVSKey:(id)arg1 kvsPayload:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *kvsPayload; // @synthesize kvsPayload=_kvsPayload;
 @property(readonly, nonatomic) NSString *kvsKey; // @synthesize kvsKey=_kvsKey;
-- (void).cxx_destruct;
 - (double)timestamp;
 - (id)kvsValueDescription;
 - (void)encodeWithCoder:(id)arg1;

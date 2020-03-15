@@ -30,6 +30,7 @@
 }
 
 + (id)categoryFromBulletin:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool classicMode; // @synthesize classicMode=_classicMode;
 @property struct CGSize intrinsicContentSize; // @synthesize intrinsicContentSize=_intrinsicContentSize;
 @property _Bool wantsHeaderBlur; // @synthesize wantsHeaderBlur=_wantsHeaderBlur;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSBundle *appBundle; // @synthesize appBundle=_appBundle;
 @property(readonly, copy, nonatomic) NSString *hostID; // @synthesize hostID=_hostID;
 @property(nonatomic) __weak id <SPRemoteNotificationViewHost> host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (id)interfaceControllerForViewController:(id)arg1;
 - (void)viewControllerDidDisappearAfterModalPresentation:(id)arg1;
 - (void)viewControllerDidAppearAfterModalDismissal:(id)arg1;

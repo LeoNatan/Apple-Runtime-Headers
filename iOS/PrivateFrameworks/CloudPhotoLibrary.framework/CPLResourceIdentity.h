@@ -35,13 +35,13 @@
 + (Class)resourceIdentityImplementation;
 + (void)setResourceIdentityImplementation:(Class)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fileUTI; // @synthesize fileUTI=_fileUTI;
 @property(nonatomic, getter=isAvailable) _Bool available; // @synthesize available=_available;
 @property(nonatomic) struct CGSize imageDimensions; // @synthesize imageDimensions=_imageDimensions;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy, nonatomic) NSString *fingerPrint; // @synthesize fingerPrint=_fingerPrint;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (id)identityForStorage;
 - (id)description;
 - (unsigned long long)hash;

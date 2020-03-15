@@ -32,6 +32,7 @@
 
 + (id)unarchive:(id)arg1;
 + (unsigned short)messageType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool mute; // @synthesize mute=_mute;
 @property(nonatomic) __weak ETMessage *parentMessage; // @synthesize parentMessage=_parentMessage;
 @property(nonatomic) _Bool delayWisp; // @synthesize delayWisp=_delayWisp;
@@ -47,7 +48,6 @@
 @property(nonatomic) double sendTime; // @synthesize sendTime=_sendTime;
 @property(nonatomic) double timeCreated; // @synthesize timeCreated=_timeCreated;
 @property(readonly, nonatomic) unsigned int messageVersion; // @synthesize messageVersion=_messageVersion;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAnimated) _Bool animated;
 - (_Bool)hasWispingChildren;
 - (void)childMessageDidDelayWisp:(id)arg1;

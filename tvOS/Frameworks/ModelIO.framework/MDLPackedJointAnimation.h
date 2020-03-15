@@ -19,11 +19,11 @@
     MDLAnimatedVector3Array *_scales;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MDLAnimatedVector3Array *scales; // @synthesize scales=_scales;
 @property(readonly, nonatomic) MDLAnimatedQuaternionArray *rotations; // @synthesize rotations=_rotations;
 @property(readonly, nonatomic) MDLAnimatedVector3Array *translations; // @synthesize translations=_translations;
 @property(readonly, nonatomic) NSArray *jointPaths; // @synthesize jointPaths=_jointPaths;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 jointPaths:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

@@ -18,10 +18,10 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)markProcessingInterruptedByGraphRequest;
 - (void)markProcessingStopped:(unsigned long long)arg1;

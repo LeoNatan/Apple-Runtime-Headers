@@ -13,8 +13,8 @@
     NSArray *_cellItems;
 }
 
-@property(copy, nonatomic) NSArray *cellItems; // @synthesize cellItems=_cellItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *cellItems; // @synthesize cellItems=_cellItems;
 - (id)initWithCellItems:(id)arg1;
 
 @end

@@ -14,8 +14,8 @@
     NSDictionary *_metaData;
 }
 
-@property(copy, nonatomic) NSDictionary *metaData; // @synthesize metaData=_metaData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *metaData; // @synthesize metaData=_metaData;
 @property(readonly, nonatomic) ARImageData *originalImage;
 - (id)initWithImageData:(id)arg1;
 

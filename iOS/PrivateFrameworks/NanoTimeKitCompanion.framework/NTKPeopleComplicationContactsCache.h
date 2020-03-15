@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSLock;
+@class CNContactStore, CNFavorites, NSDictionary, NSLock;
 
 @interface NTKPeopleComplicationContactsCache : NSObject
 {
     NSDictionary *_favoritesMapping;
     NSLock *_favoritesMappingLock;
-    int _deviceLockStateChangeNotifyToken;
     _Bool _hasSetupNotifications;
     NSLock *_hasSetupNotificationsLock;
+    CNContactStore *_contactStore;
+    CNFavorites *_favorites;
 }
 
 + (id)sharedCache;

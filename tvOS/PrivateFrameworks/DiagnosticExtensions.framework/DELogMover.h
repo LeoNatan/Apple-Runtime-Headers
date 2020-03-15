@@ -16,8 +16,8 @@
 }
 
 + (void)moveSystemLogsWithExtensions:(id)arg1;
-@property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 - (_Bool)sendRequestReturningBooleanResponse:(id)arg1 withSuccessKey:(char *)arg2;
 - (id)initWithServiceName:(id)arg1;
 

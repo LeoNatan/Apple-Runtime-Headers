@@ -28,10 +28,10 @@
 + (_Bool)fileNameIsIdentifier;
 + (id)catalogItemFileExtension;
 + (_Bool)supportsCompression;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBICIdiom *idiom; // @synthesize idiom=_idiom;
 @property(retain, nonatomic) NSString *overrideNameForCARCompiler; // @synthesize overrideNameForCARCompiler=_overrideNameForCARCompiler;
 @property(retain, nonatomic) NSValue *explicitCanvasSize; // @synthesize explicitCanvasSize=_explicitCanvasSize;
-- (void).cxx_destruct;
 - (_Bool)isEqualForUnitTests:(id)arg1;
 - (id)cloneAndConsolidateForExportForcingIdiom:(id)arg1;
 - (void)populateIssues:(id)arg1 context:(id)arg2;
@@ -44,7 +44,7 @@
 - (id)layersFromBackToFront;
 - (_Bool)manifestArchivist:(id)arg1 childHasDataToRecordInManifest:(id)arg2;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
-- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
+- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2 manifestFileData:(id)arg3;
 - (_Bool)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (long long)childOrdering;
 - (id)childForIdentifier:(id)arg1;

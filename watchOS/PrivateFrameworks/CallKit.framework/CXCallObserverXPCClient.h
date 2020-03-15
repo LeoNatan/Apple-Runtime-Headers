@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
 + (void)releaseSharedXPCClient;
 + (id)sharedXPCClient;
 + (id)sharedXPCClientSemaphore;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool clientsShouldConnect; // @synthesize clientsShouldConnect=_clientsShouldConnect;
 @property(nonatomic) int clientsShouldConnectToken; // @synthesize clientsShouldConnectToken=_clientsShouldConnectToken;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) NSHashTable *delegates; // @synthesize delegates=_delegates;
 @property(readonly, nonatomic) NSMutableDictionary *mutableCallUUIDToCallMap; // @synthesize mutableCallUUIDToCallMap=_mutableCallUUIDToCallMap;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *concurrentQueue; // @synthesize concurrentQueue=_concurrentQueue;
-- (void).cxx_destruct;
 - (oneway void)removeCall:(id)arg1;
 - (oneway void)addOrUpdateCall:(id)arg1;
 - (id)_remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1 isSynchronous:(_Bool)arg2;

@@ -28,6 +28,7 @@
     NSMutableArray *_balloonControllerPool;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *balloonControllerPool; // @synthesize balloonControllerPool=_balloonControllerPool;
 @property(retain, nonatomic) Class entryClass; // @synthesize entryClass=_entryClass;
 @property(retain, nonatomic) Class customTypingIndicatorLayerClass; // @synthesize customTypingIndicatorLayerClass=_customTypingIndicatorLayerClass;
@@ -43,7 +44,6 @@
 @property(nonatomic) int browserGroup; // @synthesize browserGroup=_browserGroup;
 @property(retain, nonatomic) NSString *browserImagePath; // @synthesize browserImagePath=_browserImagePath;
 @property(retain, nonatomic) NSString *browserImageName; // @synthesize browserImageName=_browserImageName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int presentationContexts;
 - (void)setIdentifier:(id)arg1;
 @property(readonly, retain, nonatomic) NSBundle *pluginBundle;

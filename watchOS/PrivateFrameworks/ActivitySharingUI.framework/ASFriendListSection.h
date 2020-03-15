@@ -14,9 +14,9 @@
     NSArray *_rows;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate;
 - (_Bool)containsFriendListRow:(id)arg1;
 - (id)initWithDate:(id)arg1 andRows:(id)arg2;

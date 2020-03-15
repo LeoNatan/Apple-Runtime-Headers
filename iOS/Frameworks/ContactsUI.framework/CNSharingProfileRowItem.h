@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIView *_accessoryView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(readonly, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1 accessoryView:(id)arg2;
 
 @end

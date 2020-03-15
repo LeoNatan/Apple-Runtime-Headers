@@ -27,6 +27,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)requestWithTitle:(id)arg1 message:(id)arg2;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSArray *textFields; // @synthesize textFields=_textFields;
@@ -38,7 +39,6 @@
 @property(copy) NSURL *iconBundleURL; // @synthesize iconBundleURL=_iconBundleURL;
 @property(retain) AMSDialogAction *defaultAction; // @synthesize defaultAction=_defaultAction;
 @property(copy) NSArray *buttonActions; // @synthesize buttonActions=_buttonActions;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)locateActionWithIdentifier:(id)arg1;

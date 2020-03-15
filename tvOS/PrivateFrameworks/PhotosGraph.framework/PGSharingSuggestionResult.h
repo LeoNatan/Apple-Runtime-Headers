@@ -19,12 +19,12 @@
 }
 
 + (id)suggestionResultWithPerson:(id)arg1 weight:(double)arg2 sourceWeight:(double)arg3 sourceName:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useContactSuggestion; // @synthesize useContactSuggestion=_useContactSuggestion;
 @property(readonly, nonatomic) NSArray *sourceNames; // @synthesize sourceNames=_sourceNames;
 @property(readonly, nonatomic) double sourceWeight; // @synthesize sourceWeight=_sourceWeight;
 @property(readonly, nonatomic) double weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) id <PGPersonResult> person; // @synthesize person=_person;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 @property(readonly, nonatomic) double score;

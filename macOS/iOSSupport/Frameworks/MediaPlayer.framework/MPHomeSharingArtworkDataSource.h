@@ -13,8 +13,8 @@
     HSHomeSharingLibrary *_library;
 }
 
-@property(retain, nonatomic) HSHomeSharingLibrary *library; // @synthesize library=_library;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HSHomeSharingLibrary *library; // @synthesize library=_library;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)requestForCatalog:(id)arg1 size:(struct CGSize)arg2;
 - (id)supportedSizesForCatalog:(id)arg1;

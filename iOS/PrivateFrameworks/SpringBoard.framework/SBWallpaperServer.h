@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FBServiceClientAuthenticator *accessAuthenticator; // @synthesize accessAuthenticator=_accessAuthenticator;
 @property(nonatomic) __weak id <SBWallpaperServerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleRestoreDefaultWallpaperMessage:(id)arg1 fromClient:(id)arg2;
 - (void)_handleSetGradientMessage:(id)arg1 fromClient:(id)arg2;
 - (void)_handleSetColorNameMessage:(id)arg1 fromClient:(id)arg2;

@@ -19,9 +19,9 @@
     BKAgent *_agent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BKAgent *agent; // @synthesize agent=_agent;
 @property(readonly) NSObject<OS_dispatch_queue> *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (void)removeBookLibrarySaveListener:(CDUnknownBlockType)arg1;
 - (void)addBookLibrarySaveListener:(CDUnknownBlockType)arg1;
 - (void)removeChangeListener:(CDUnknownBlockType)arg1;

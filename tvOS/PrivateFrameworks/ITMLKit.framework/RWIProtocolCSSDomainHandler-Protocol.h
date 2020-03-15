@@ -9,6 +9,8 @@
 @class NSArray, NSString, RWIProtocolCSSRuleId, RWIProtocolCSSStyleId;
 
 @protocol RWIProtocolCSSDomainHandler <NSObject>
+
+@optional
 - (void)forcePseudoStateWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 nodeId:(int)arg3 forcedPseudoClasses:(NSArray *)arg4;
 - (void)getSupportedSystemFontFamilyNamesWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(NSArray *))arg2;
 - (void)getSupportedCSSPropertiesWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(NSArray *))arg2;

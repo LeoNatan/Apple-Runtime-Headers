@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)outputIsExemptFromTaintTrackingInheritance;
 - (void)finishWithItems:(id)arg1 property:(id)arg2 coercionPerformed:(_Bool)arg3;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 - (id)parameterDefinitions;

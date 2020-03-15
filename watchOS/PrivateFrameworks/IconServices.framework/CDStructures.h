@@ -34,10 +34,6 @@ struct CGSize {
     float height;
 };
 
-struct NSData {
-    Class _field1;
-};
-
 struct _LIIconVariantInfo {
     int _field1;
     struct CGSize _field2;

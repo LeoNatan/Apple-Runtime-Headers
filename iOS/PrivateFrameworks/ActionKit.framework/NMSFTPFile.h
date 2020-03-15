@@ -24,6 +24,7 @@
 }
 
 + (id)fileWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSString *permissions; // @synthesize permissions=_permissions;
 @property(nonatomic) unsigned long long ownerGroupID; // @synthesize ownerGroupID=_ownerGroupID;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(nonatomic) _Bool isDirectory; // @synthesize isDirectory=_isDirectory;
 @property(retain, nonatomic) NSString *filename; // @synthesize filename=_filename;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)filetypeletter:(unsigned long long)arg1;

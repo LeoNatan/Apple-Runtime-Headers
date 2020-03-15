@@ -15,9 +15,9 @@
     UILabel *_secondaryLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) UILabel *mainLabel; // @synthesize mainLabel=_mainLabel;
-- (void).cxx_destruct;
 - (void)applyFont:(id)arg1;
 - (void)_updateHidden;
 - (void)showSecondaryLabelAnimated:(_Bool)arg1;

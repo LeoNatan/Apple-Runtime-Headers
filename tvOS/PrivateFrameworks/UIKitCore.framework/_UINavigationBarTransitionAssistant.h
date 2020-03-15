@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 
 + (id)popTransitionAssistantForNavigationBar:(id)arg1 delegate:(id)arg2 crossfade:(_Bool)arg3;
 + (id)pushTransitionAssistantForNavigationBar:(id)arg1 delegate:(id)arg2 crossfade:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *animationIDs; // @synthesize animationIDs=_animationIDs;
 @property(nonatomic) _Bool shouldUpdatePromptAfterTransition; // @synthesize shouldUpdatePromptAfterTransition=_shouldUpdatePromptAfterTransition;
 @property(nonatomic) _Bool shouldHideBackButtonDuringTransition; // @synthesize shouldHideBackButtonDuringTransition=_shouldHideBackButtonDuringTransition;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak id <_UINavigationBarDelegatePrivate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(readonly, nonatomic) __weak id <UIViewControllerTransitionCoordinator> transitionCoordinator; // @synthesize transitionCoordinator=_transitionCoordinator;
-- (void).cxx_destruct;
 - (void)_getInteractive;
 - (void)_getPopDurationAndTransitionAlwaysCrossfade:(_Bool)arg1;
 - (void)_getPushDurationAndTransitionAlwaysCrossfade:(_Bool)arg1;

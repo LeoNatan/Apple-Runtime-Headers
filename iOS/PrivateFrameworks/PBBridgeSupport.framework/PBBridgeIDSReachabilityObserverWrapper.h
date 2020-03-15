@@ -13,8 +13,8 @@
     id <PBBridgeIDSReachabilityObserver> _observer;
 }
 
-@property(nonatomic) __weak id <PBBridgeIDSReachabilityObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PBBridgeIDSReachabilityObserver> observer; // @synthesize observer=_observer;
 - (void)fireReachability:(id)arg1 deviceStatus:(id)arg2 devices:(id)arg3;
 
 @end

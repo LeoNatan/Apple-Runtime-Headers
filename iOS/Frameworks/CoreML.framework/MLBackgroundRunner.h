@@ -13,15 +13,15 @@
 
 @interface MLBackgroundRunner : NSObject <_DASExtensionRunner>
 {
-    struct NSString *_activity;
+    NSString *_activity;
     MLBackgroundTask *_task;
     id <NSObject> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NSObject> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) MLBackgroundTask *task; // @synthesize task=_task;
 @property(readonly, nonatomic) NSString *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (_Bool)createExtensionDataSourceWithInfoKey:(id)arg1 conformingToProtocol:(id)arg2;
 
 @end

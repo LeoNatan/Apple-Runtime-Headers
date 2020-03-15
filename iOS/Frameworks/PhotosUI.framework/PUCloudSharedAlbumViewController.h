@@ -32,6 +32,7 @@
     long long __selectedItemIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setSelectedItemIndex:) long long _selectedItemIndex; // @synthesize _selectedItemIndex=__selectedItemIndex;
 @property(retain, nonatomic, setter=_setSwitcherBarButtonItem:) UIBarButtonItem *_switcherBarButtonItem; // @synthesize _switcherBarButtonItem=__switcherBarButtonItem;
 @property(retain, nonatomic, setter=_setSwitcherSegmentedControl:) UISegmentedControl *_switcherSegmentedControl; // @synthesize _switcherSegmentedControl=__switcherSegmentedControl;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic, setter=_setOptionsViewController:) UIViewController *_optionsViewController; // @synthesize _optionsViewController=__optionsViewController;
 @property(nonatomic, getter=isDisplayingOptions, setter=setDisplayingOptions:) _Bool displayingOptions; // @synthesize displayingOptions=_displayingOptions;
 @property(nonatomic) __weak id <PUCloudSharedAlbumViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_collectionView:(id)arg1 performDropWithCoordinator:(id)arg2;
 - (void)photoStreamComposeServiceDidCancel:(id)arg1;
 - (void)photoStreamComposeService:(id)arg1 didPostComment:(id)arg2;
@@ -82,7 +82,7 @@
 - (_Bool)canDeleteContent;
 - (_Bool)canAddToOtherAlbumContent;
 - (id)_suppressionContexts;
-- (void)setAlbum:(struct NSObject *)arg1 existingFetchResult:(id)arg2;
+- (void)setAlbum:(id)arg1 existingFetchResult:(id)arg2;
 
 // Remaining properties
 @property(retain, nonatomic) PLCloudSharedAlbum *album; // @dynamic album;

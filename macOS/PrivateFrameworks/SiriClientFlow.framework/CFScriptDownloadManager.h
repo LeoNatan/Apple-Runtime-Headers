@@ -17,9 +17,9 @@
     NSURLSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSURLSession *session; // @synthesize session=_session;
 @property(readonly) id <CFScriptDownloadDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (id)_hmacVerificationEventContextWithEncryptionParameters:(id)arg1 script:(id)arg2 scriptData:(id)arg3;

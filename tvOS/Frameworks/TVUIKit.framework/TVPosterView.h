@@ -14,8 +14,8 @@
 }
 
 + (Class)_concreteContentViewClass;
-@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void)_updateFocusSizeIncrease;
 - (void)_createFooterView;
 @property(copy, nonatomic) NSString *subtitle;

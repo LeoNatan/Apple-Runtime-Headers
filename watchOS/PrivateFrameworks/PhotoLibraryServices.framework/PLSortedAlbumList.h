@@ -14,16 +14,16 @@
 
 @interface PLSortedAlbumList : NSObject <PLAlbumContainer, PLIndexMappingCache>
 {
-    struct NSObject *_backingAlbumList;
+    NSObject<PLAlbumContainer> *_backingAlbumList;
     struct __CFArray *_toBackingMap;
     struct __CFArray *_fromBackingMap;
     CDUnknownBlockType _sortComparator;
     NSMutableOrderedSet *_weak_albums;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sortComparator; // @synthesize sortComparator=_sortComparator;
 @property(retain, nonatomic) NSObject<PLAlbumContainer> *backingAlbumList; // @synthesize backingAlbumList=_backingAlbumList;
-- (void).cxx_destruct;
 - (Class)derivedChangeNotificationClass;
 - (_Bool)mappedDataSourceChanged:(id)arg1 remoteNotificationData:(id)arg2;
 @property(readonly, copy, nonatomic) id <NSObject><NSCopying> cachedIndexMapState;
@@ -49,7 +49,7 @@
 - (_Bool)needsReordering;
 - (void)setNeedsReordering;
 @property(readonly, copy, nonatomic) CDUnknownBlockType albumsSortingComparator;
-- (_Bool)albumHasFixedOrder:(struct NSObject *)arg1;
+- (_Bool)albumHasFixedOrder:(id)arg1;
 @property(readonly, nonatomic) _Bool isFolder;
 - (_Bool)canEditAlbums;
 - (short)albumListType;
@@ -61,7 +61,7 @@
 - (id)albums;
 - (id)identifier;
 - (void)dealloc;
-- (id)initWithAlbumList:(struct NSObject *)arg1 sortComparator:(CDUnknownBlockType)arg2;
+- (id)initWithAlbumList:(id)arg1 sortComparator:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

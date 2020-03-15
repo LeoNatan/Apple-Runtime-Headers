@@ -14,8 +14,8 @@
     NSMapTable *_attributionMap;
 }
 
-@property(retain, nonatomic) GEOPDRestaurantReservationLink *restaurantReservationLink; // @synthesize restaurantReservationLink=_restaurantReservationLink;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOPDRestaurantReservationLink *restaurantReservationLink; // @synthesize restaurantReservationLink=_restaurantReservationLink;
 @property(readonly, nonatomic) NSArray *featureTypes;
 - (unsigned long long)extensionModeForVendorID:(id)arg1;
 - (id)displayNameForVendorID:(id)arg1;

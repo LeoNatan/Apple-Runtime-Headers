@@ -15,8 +15,8 @@
     CNRecentLikenessesViewController *_recentLikenessesViewController;
 }
 
-@property __weak CNRecentLikenessesViewController *recentLikenessesViewController; // @synthesize recentLikenessesViewController=_recentLikenessesViewController;
 - (void).cxx_destruct;
+@property __weak CNRecentLikenessesViewController *recentLikenessesViewController; // @synthesize recentLikenessesViewController=_recentLikenessesViewController;
 - (id)accessibilityLabel;
 - (BOOL)_autoConfigureScrollers;
 - (void)keyDown:(id)arg1;

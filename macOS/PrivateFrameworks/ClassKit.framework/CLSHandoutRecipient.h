@@ -18,9 +18,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)relations;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *personID; // @synthesize personID=_personID;
 @property(copy, nonatomic) NSString *classID; // @synthesize classID=_classID;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;

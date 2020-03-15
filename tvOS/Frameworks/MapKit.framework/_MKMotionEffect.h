@@ -15,9 +15,9 @@
     id <_MKMotionEffectDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_MKMotionEffectDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (struct CATransform3D)transformWithTranslationScale:(struct UIOffset)arg1 rotationScale:(struct UIOffset)arg2;
 - (struct UIOffset)offsetWithScale:(struct UIOffset)arg1;
 - (struct UIOffset)rawOffset;

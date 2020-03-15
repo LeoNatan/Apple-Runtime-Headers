@@ -13,8 +13,8 @@
     id <CNDonationAgentAdapter> _adapter;
 }
 
-@property(readonly, nonatomic) id <CNDonationAgentAdapter> adapter; // @synthesize adapter=_adapter;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CNDonationAgentAdapter> adapter; // @synthesize adapter=_adapter;
 - (void)removeAllRejectionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)rejectValuesWithClusterIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)rejectValueWithDonationIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

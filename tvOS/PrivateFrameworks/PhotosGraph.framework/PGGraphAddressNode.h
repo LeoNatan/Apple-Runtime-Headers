@@ -24,6 +24,7 @@
 - (id)cityNode;
 - (id)districtNode;
 - (id)streetNode;
+- (id)momentNodes;
 - (id)areaNodes;
 
 @end

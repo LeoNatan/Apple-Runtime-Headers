@@ -18,13 +18,13 @@
     NSLocale *_locale;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSLocale *locale; // @synthesize locale=_locale;
 @property(retain, nonatomic) CRCHPatternNetwork *patternFST; // @synthesize patternFST=_patternFST;
 @property(retain, nonatomic) NSString *invalidSingleCharCNNCode; // @synthesize invalidSingleCharCNNCode=_invalidSingleCharCNNCode;
 @property(nonatomic) struct _LXLexicon *dynamicLexicon; // @synthesize dynamicLexicon=_dynamicLexicon;
 @property(nonatomic) struct _LXLexicon *staticLexicon; // @synthesize staticLexicon=_staticLexicon;
 @property(nonatomic) void *characterLanguageModel; // @synthesize characterLanguageModel=_characterLanguageModel;
-- (void).cxx_destruct;
 - (id)findBestPathsForTextResults:(id)arg1 numPathsToExtract:(unsigned long long)arg2 ngramsize:(unsigned long long)arg3;
 - (struct _LXLexicon *)newDynamicLexiconForLocale:(id)arg1 error:(id *)arg2;
 - (void)adjustCaseConfusions:(id)arg1;

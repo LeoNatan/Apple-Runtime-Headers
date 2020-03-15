@@ -45,8 +45,8 @@
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didVisit:(id)arg2;
 - (id)_debugLastUpdateDate;
-- (void)stopLocationUpdatesForToken:(struct NSString *)arg1;
-- (struct NSString *)startVisitUpdatesWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)stopLocationUpdatesForToken:(id)arg1;
+- (id)startVisitUpdatesWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)anyVisit;
 - (id)previousVisit;
 - (id)currentVisit;

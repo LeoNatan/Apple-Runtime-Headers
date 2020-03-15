@@ -19,13 +19,13 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFWakeAnimationSettings *wakeAnimationSettings; // @synthesize wakeAnimationSettings=_wakeAnimationSettings;
 @property(retain, nonatomic) SBEntityRemovalAnimationSettings *entityRemovalAnimationSettings; // @synthesize entityRemovalAnimationSettings=_entityRemovalAnimationSettings;
 @property(retain, nonatomic) SBFAnimationSettings *slideoverDosidoAnimationSettings; // @synthesize slideoverDosidoAnimationSettings=_slideoverDosidoAnimationSettings;
 @property(nonatomic) float spotlightNoninteractiveAnimationDuration; // @synthesize spotlightNoninteractiveAnimationDuration=_spotlightNoninteractiveAnimationDuration;
 @property(nonatomic) float assistantDismissAnimationDurationOverApp; // @synthesize assistantDismissAnimationDurationOverApp=_assistantDismissAnimationDurationOverApp;
 @property(nonatomic) float assistantAnimationDuration; // @synthesize assistantAnimationDuration=_assistantAnimationDuration;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

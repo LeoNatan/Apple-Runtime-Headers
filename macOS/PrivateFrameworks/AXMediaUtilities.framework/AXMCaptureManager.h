@@ -27,9 +27,9 @@
 }
 
 + (id)captureSessionReport:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long deviceOrientation; // @synthesize deviceOrientation=_deviceOrientation;
 @property(readonly, nonatomic) long long activeScenario; // @synthesize activeScenario=_activeScenario;
-- (void).cxx_destruct;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (void)removeFeatureDetectionObserver:(id)arg1;
 - (void)addFeatureDetectionObserver:(id)arg1;

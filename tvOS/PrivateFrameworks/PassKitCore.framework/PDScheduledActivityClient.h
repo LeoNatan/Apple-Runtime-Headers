@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *activityRegistrations; // @synthesize activityRegistrations=_activityRegistrations;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *activityQueue; // @synthesize activityQueue=_activityQueue;
 @property(nonatomic) __weak id <PDScheduledActivityClient> clientInstance; // @synthesize clientInstance=_clientInstance;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isValid;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

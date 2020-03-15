@@ -16,10 +16,10 @@
     EFFuture *_interfaceFuture;
 }
 
+- (void).cxx_destruct;
 @property(readonly) EFFuture *interfaceFuture; // @synthesize interfaceFuture=_interfaceFuture;
 @property(readonly) Protocol *interfaceProtocol; // @synthesize interfaceProtocol=_interfaceProtocol;
 @property(retain, nonatomic) id <EFScheduler> observerScheduler; // @synthesize observerScheduler=_observerScheduler;
-- (void).cxx_destruct;
 - (id)trampoliningObserverForObserver:(id)arg1;
 - (void)prepareRepositoryObjects:(id)arg1;
 - (id)performQuery:(id)arg1 withObserver:(id)arg2;

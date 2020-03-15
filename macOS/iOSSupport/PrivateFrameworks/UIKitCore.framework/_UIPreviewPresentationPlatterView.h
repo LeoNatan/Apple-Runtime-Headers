@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _contentClippingSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentShadowView; // @synthesize contentShadowView=_contentShadowView;
 @property(retain, nonatomic) UIView *contentTransformView; // @synthesize contentTransformView=_contentTransformView;
 @property(retain, nonatomic) _UIPreviewPresentationEffectView *contentClipView; // @synthesize contentClipView=_contentClipView;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize contentClippingSize; // @synthesize contentClippingSize=_contentClippingSize;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (BOOL)_shouldEnclosedScrollViewFlashIndicators:(id)arg1;
 - (void)layoutSubviews;
 @property(nonatomic) double cornerRadius; // @dynamic cornerRadius;

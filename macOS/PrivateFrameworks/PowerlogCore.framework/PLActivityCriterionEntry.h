@@ -19,11 +19,11 @@
 + (id)audioOffCriterion;
 + (id)displayOffCriterion;
 + (id)pluggedInCriterion;
+- (void).cxx_destruct;
 @property(retain) PLEntryNotificationOperatorComposition *entryListener; // @synthesize entryListener=_entryListener;
 @property(retain) NSDictionary *filter; // @synthesize filter=_filter;
 @property(copy) CDUnknownBlockType criterionBlock; // @synthesize criterionBlock=_criterionBlock;
 @property(readonly) NSString *entryKey; // @synthesize entryKey=_entryKey;
-- (void).cxx_destruct;
 - (id)description;
 - (void)scheduleEntryListener;
 - (void)didDisableActivity:(id)arg1;

@@ -55,6 +55,7 @@
 + (unsigned long long)exsRecurrenceDaysOfWeeksFromEWSDaysOfWeek:(long long)arg1;
 + (long long)exsRecurrenceMonthToEWSMonth:(long long)arg1;
 + (long long)exsRecurrenceMonthFromEWSMonth:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldHaveSubscription; // @synthesize shouldHaveSubscription=_shouldHaveSubscription;
 @property(retain, nonatomic) EWSStreamingSubscription *subscription; // @synthesize subscription=_subscription;
 @property(retain, nonatomic) EWSExchangeServiceBinding *bindingForSync; // @synthesize bindingForSync=_bindingForSync;
@@ -62,7 +63,6 @@
 @property(retain, nonatomic) EWSExchangeServiceBinding *bindingForData; // @synthesize bindingForData=_bindingForData;
 @property BOOL networkAvailable; // @synthesize networkAvailable=_networkAvailable;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (void)logServerCallOfType:(id)arg1 withPublicIdentifier:(id)arg2 withPrivateIdentifier:(id)arg3 withResponse:(id)arg4;
 - (void)logServerCallOfType:(id)arg1 withPrivateIdentifier:(id)arg2 withResponse:(id)arg3;
 - (void)logServerCallOfType:(id)arg1 withPublicIdentifier:(id)arg2 withResponse:(id)arg3;

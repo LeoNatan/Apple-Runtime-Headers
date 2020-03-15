@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(readonly) EFFuture *behaviorOverrideTypes; // @synthesize behaviorOverrideTypes=_behaviorOverrideTypes;
 - (void).cxx_destruct;
+@property(readonly) EFFuture *behaviorOverrideTypes; // @synthesize behaviorOverrideTypes=_behaviorOverrideTypes;
 - (id)_resolveDNDBehavior;
 - (id)init;
 

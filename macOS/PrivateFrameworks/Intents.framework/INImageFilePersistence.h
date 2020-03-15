@@ -16,8 +16,8 @@
     NSArray *__supportedClasses;
 }
 
-@property(copy, nonatomic, setter=_setSupportedClasses:) NSArray *_supportedClasses; // @synthesize _supportedClasses=__supportedClasses;
 - (void).cxx_destruct;
+@property(copy, nonatomic, setter=_setSupportedClasses:) NSArray *_supportedClasses; // @synthesize _supportedClasses=__supportedClasses;
 - (id)_deleteItemAtFilePath:(id)arg1;
 - (id)_filePathForImageWithFileName:(id)arg1;
 @property(readonly, nonatomic) unsigned long long servicePriority;

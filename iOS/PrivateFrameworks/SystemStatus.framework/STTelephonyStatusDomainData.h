@@ -22,12 +22,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRadioModuleDead) _Bool radioModuleDead; // @synthesize radioModuleDead=_radioModuleDead;
 @property(readonly, nonatomic, getter=isDualSIMEnabled) _Bool dualSIMEnabled; // @synthesize dualSIMEnabled=_dualSIMEnabled;
 @property(readonly, nonatomic, getter=isCellularRadioCapabilityEnabled) _Bool cellularRadioCapabilityEnabled; // @synthesize cellularRadioCapabilityEnabled=_cellularRadioCapabilityEnabled;
 @property(readonly, copy, nonatomic) STTelephonyStatusDomainSIMInfo *SIMTwoInfo; // @synthesize SIMTwoInfo=_SIMTwoInfo;
 @property(readonly, copy, nonatomic) STTelephonyStatusDomainSIMInfo *SIMOneInfo; // @synthesize SIMOneInfo=_SIMOneInfo;
-- (void).cxx_destruct;
 - (id)_anySIMInfoWithSIMPresent;
 - (id)_dataPreferredSIMInfoIfSIMPresent;
 - (id)_otherSIMInfoIfSIMPresent:(id)arg1;

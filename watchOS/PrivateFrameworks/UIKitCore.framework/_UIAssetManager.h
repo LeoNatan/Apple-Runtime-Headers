@@ -34,8 +34,6 @@
     _UIAssetManager *_nextAssetManager;
 }
 
-+ (_Bool)_validStackImageData:(id)arg1;
-+ (_Bool)validStackImageFile:(id)arg1;
 + (float)_watchScreenScale;
 + (void)_clearAllCachedImagesAndAssets;
 + (void)_dropResourceReferencesForURL:(id)arg1;
@@ -56,8 +54,6 @@
 @property(retain, nonatomic) _UIAssetManager *nextAssetManager; // @synthesize nextAssetManager=_nextAssetManager;
 @property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (_Bool)_hasMultipleAppearances;
-- (id)stackImageWithData:(id)arg1 forTraitCollection:(id)arg2;
-- (id)stackImageWithContentsOfFile:(id)arg1 forTraitCollection:(id)arg2;
 - (id)description;
 - (void)_disconnectImageAssets;
 - (id)_allImageNames;

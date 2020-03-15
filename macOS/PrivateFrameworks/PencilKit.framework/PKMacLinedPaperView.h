@@ -16,10 +16,10 @@
 }
 
 + (void)renderLinedPaper:(id)arg1 color:(id)arg2 backingScale:(double)arg3 context:(struct CGContext *)arg4 frame:(struct CGRect)arg5 dirtyRect:(struct CGRect)arg6 yOrigin:(double)arg7;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL darkMode; // @synthesize darkMode=_darkMode;
 @property(nonatomic) double yOrigin; // @synthesize yOrigin=_yOrigin;
 @property(retain, nonatomic) PKLinedPaper *linedPaper; // @synthesize linedPaper=_linedPaper;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 

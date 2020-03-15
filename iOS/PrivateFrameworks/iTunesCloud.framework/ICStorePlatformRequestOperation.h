@@ -18,9 +18,9 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(readonly, copy, nonatomic) ICStorePlatformRequest *platformRequest; // @synthesize platformRequest=_platformRequest;
-- (void).cxx_destruct;
 - (id)_URLRequestWithBaseURL:(id)arg1;
 - (id)_requestContext;
 - (void)_finishWithResponse:(id)arg1 error:(id)arg2;

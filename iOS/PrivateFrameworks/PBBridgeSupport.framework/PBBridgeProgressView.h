@@ -16,11 +16,11 @@
     unsigned long long _version;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) UIImageView *appleLogo; // @synthesize appleLogo=_appleLogo;
 @property(nonatomic) double currentProgress; // @synthesize currentProgress=_currentProgress;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_size;
 - (void)drawRect:(struct CGRect)arg1;

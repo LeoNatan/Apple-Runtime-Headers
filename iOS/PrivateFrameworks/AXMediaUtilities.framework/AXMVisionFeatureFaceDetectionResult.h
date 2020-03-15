@@ -32,6 +32,7 @@
 + (id)localizedStringFormatterForExpression:(id)arg1;
 + (id)nameForFaceExpression:(long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double poseConfidence; // @synthesize poseConfidence=_poseConfidence;
 // Error parsing type for property pose:
 // Property attributes: T{?=[4]},N,V_pose
@@ -48,7 +49,6 @@
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(nonatomic) unsigned long long faceId; // @synthesize faceId=_faceId;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (long long)_expressionForString:(id)arg1;
 - (id)descriptionForExpression:(long long)arg1;
 @property(readonly, nonatomic) long long likelyExpression;

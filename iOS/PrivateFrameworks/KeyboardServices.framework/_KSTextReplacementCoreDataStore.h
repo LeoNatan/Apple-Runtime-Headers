@@ -20,11 +20,11 @@
 }
 
 + (id)localCloudEntryFromMocObject:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
 @property(retain, nonatomic) NSManagedObjectModel *managedObjectModel; // @synthesize managedObjectModel=_managedObjectModel;
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(retain, nonatomic) NSString *directoryPath; // @synthesize directoryPath=_directoryPath;
-- (void).cxx_destruct;
 - (id)getSyncStateEntry;
 - (_Bool)didMakeInitialPull;
 - (id)getCKFetchToken;

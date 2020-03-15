@@ -32,6 +32,7 @@
 + (_Bool)supportsSecureCoding;
 + (CDUnknownBlockType)acceptedComparatorForSupportedNetworks:(id)arg1 merchantCapabilities:(unsigned long long)arg2 webService:(id)arg3;
 + (CDUnknownBlockType)preferenceComparator;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *supportedSetupFeatures; // @synthesize supportedSetupFeatures=_supportedSetupFeatures;
 @property(nonatomic) _Bool supportsFaceID; // @synthesize supportsFaceID=_supportsFaceID;
 @property(retain, nonatomic) NSUUID *bluetoothUUID; // @synthesize bluetoothUUID=_bluetoothUUID;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSString *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
-- (void).cxx_destruct;
 - (long long)_deviceTypeForModelIdentifier:(id)arg1;
 @property(readonly, nonatomic) _Bool canMakePayments;
 - (id)copyWithZone:(struct _NSZone *)arg1;

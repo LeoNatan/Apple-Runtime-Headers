@@ -21,6 +21,7 @@
 }
 
 + (id)makeDefaultContainerPermissions;
+- (void).cxx_destruct;
 @property(readonly, getter=isGuardianRestricted) BOOL guardianRestricted; // @synthesize guardianRestricted=_guardianRestricted;
 @property(readonly, copy) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
 @property(readonly, copy) ABCDContainerPermissions *permissions; // @synthesize permissions=_permissions;
@@ -29,7 +30,6 @@
 @property(readonly) long long type; // @synthesize type=_type;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 type:(long long)arg3 persistentStoreURL:(id)arg4 persistentStoreIdentifier:(id)arg5 permissions:(id)arg6 guardianRestricted:(BOOL)arg7 lastSyncDate:(id)arg8;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 type:(long long)arg3 persistentStoreURL:(id)arg4 persistentStoreIdentifier:(id)arg5;
 - (id)init;

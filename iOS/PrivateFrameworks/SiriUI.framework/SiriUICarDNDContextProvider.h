@@ -17,9 +17,9 @@
     SADeviceCarDNDHintContext *_hintContext;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setHintContext:) SADeviceCarDNDHintContext *hintContext; // @synthesize hintContext=_hintContext;
 @property(nonatomic) __weak id <SiriUICarDNDContextProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)getCurrentContext;
 - (_Bool)allowContextProvider:(id)arg1;
 

@@ -24,8 +24,8 @@
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
-@property(copy, nonatomic) NSArray *infoKeys; // @synthesize infoKeys=_infoKeys;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *infoKeys; // @synthesize infoKeys=_infoKeys;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -29,8 +29,8 @@
 
 + (id)newOutputFileURLInDirectory:(id)arg1;
 + (id)newOutputFileURL;
-@property(readonly, nonatomic) HKHealthWrapMessageConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKHealthWrapMessageConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)sinkContentFinished;
 - (void)receiveSinkContent:(id)arg1;
 - (void)_cleanup;

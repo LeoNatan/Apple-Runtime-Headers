@@ -16,9 +16,9 @@
 
 + (id)submittedReportsInDirectory:(id)arg1;
 + (id)submittedReports;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _DPDaemonConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) NSString *reportsDirectoryPath; // @synthesize reportsDirectoryPath=_reportsDirectoryPath;
-- (void).cxx_destruct;
 - (void)retireReports:(id)arg1;
 - (id)reportsNotYetSubmitted;
 - (void)dealloc;

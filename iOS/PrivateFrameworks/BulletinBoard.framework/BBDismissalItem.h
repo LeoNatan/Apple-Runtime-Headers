@@ -14,9 +14,9 @@
     NSDate *_expiration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *expiration; // @synthesize expiration=_expiration;
 @property(readonly, nonatomic) unsigned long long feeds; // @synthesize feeds=_feeds;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)hasExpired;
 - (void)addFeeds:(unsigned long long)arg1;

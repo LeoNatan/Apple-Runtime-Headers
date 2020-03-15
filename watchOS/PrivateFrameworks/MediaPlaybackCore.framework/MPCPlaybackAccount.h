@@ -21,6 +21,7 @@
     unsigned long long _subscriptionCapabilities;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActiveAccount) _Bool activeAccount; // @synthesize activeAccount=_activeAccount;
 @property(nonatomic, getter=isDelegated) _Bool delegated; // @synthesize delegated=_delegated;
 @property(copy, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) unsigned long long subscriptionCapabilities; // @synthesize subscriptionCapabilities=_subscriptionCapabilities;
 @property(copy, nonatomic) NSString *hashedDSID; // @synthesize hashedDSID=_hashedDSID;
 @property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

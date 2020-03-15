@@ -12,12 +12,12 @@
 {
     _Bool _shouldFloat;
     _Bool _shouldAbbreviateMonth;
-    struct UIFont *_titleFont;
+    UIFont *_titleFont;
     double _titleHeight;
-    struct UIColor *_titleColor;
-    struct UIColor *_floatingTitleColor;
-    struct UIColor *_subtitleColor;
-    struct UIColor *_floatingSubtitleColor;
+    UIColor *_titleColor;
+    UIColor *_floatingTitleColor;
+    UIColor *_subtitleColor;
+    UIColor *_floatingSubtitleColor;
     NSString *_chevronImageName;
     double _spacingBetweenTitleAndSubtitle;
     double _spacingBetweenTitleTopAndPreviousCardBottom;
@@ -30,6 +30,7 @@
     struct CGSize _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double floatingFadeOutDistance; // @synthesize floatingFadeOutDistance=_floatingFadeOutDistance;
 @property(readonly, nonatomic) double floatingAppearanceCrossfadeDuration; // @synthesize floatingAppearanceCrossfadeDuration=_floatingAppearanceCrossfadeDuration;
 @property(readonly, nonatomic) double floatingAppearanceCrossfadeDistance; // @synthesize floatingAppearanceCrossfadeDistance=_floatingAppearanceCrossfadeDistance;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) double titleHeight; // @synthesize titleHeight=_titleHeight;
 @property(readonly, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(readonly, nonatomic) struct CGSize contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
 
 @end

@@ -13,8 +13,8 @@
     CalDiagInboxCollectionSync *_inboxCollectionSyncDiagnostics;
 }
 
-@property(retain, nonatomic) CalDiagInboxCollectionSync *inboxCollectionSyncDiagnostics; // @synthesize inboxCollectionSyncDiagnostics=_inboxCollectionSyncDiagnostics;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CalDiagInboxCollectionSync *inboxCollectionSyncDiagnostics; // @synthesize inboxCollectionSyncDiagnostics=_inboxCollectionSyncDiagnostics;
 - (void)recordDiagnosticsForAccountSync:(id)arg1;
 - (_Bool)deleteResourcesAtURLs:(id)arg1;
 - (_Bool)_removeInvitationWithURL:(id)arg1;

@@ -22,13 +22,13 @@
 }
 
 + (id)gradientViews;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CATransformLayer *trackingLayer; // @synthesize trackingLayer=_trackingLayer;
 @property(nonatomic) struct CGRect gradientFrame; // @synthesize gradientFrame=_gradientFrame;
 @property(retain, nonatomic) CKBaseLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) UIImage *maskImage; // @synthesize maskImage=_maskImage;
 @property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(nonatomic) __weak UIView<CKGradientReferenceView> *referenceView; // @synthesize referenceView=_referenceView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *gradient;
 - (void)updateGradientImage;
 - (void)updateAnimation;

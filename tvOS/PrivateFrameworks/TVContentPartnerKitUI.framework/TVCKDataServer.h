@@ -27,6 +27,7 @@
 + (_Bool)isRegistered:(id)arg1;
 + (void)deregisterDataServer:(id)arg1;
 + (void)registerDataServer:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *metadataDict; // @synthesize metadataDict=_metadataDict;
 @property(retain) NSMutableArray *dataClients; // @synthesize dataClients=_dataClients;
 @property(nonatomic) long long serverStatus; // @synthesize serverStatus=_serverStatus;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) id serverID; // @synthesize serverID=_serverID;
 @property(nonatomic) unsigned long long serverType; // @synthesize serverType=_serverType;
-- (void).cxx_destruct;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)disconnectAllClients;

@@ -26,6 +26,7 @@
     NSIndexPath *_chosenPlanIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSIndexPath *chosenPlanIndexPath; // @synthesize chosenPlanIndexPath=_chosenPlanIndexPath;
 @property(retain) NSArray *transferItems; // @synthesize transferItems=_transferItems;
 @property(retain) UITableView *tableView; // @synthesize tableView=_tableView;
@@ -33,7 +34,6 @@
 @property(readonly) NSString *URL; // @synthesize URL=_URL;
 @property(readonly) NSDictionary *postdata; // @synthesize postdata=_postdata;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)_startPlanTransfer:(id)arg1;
 - (void)_continueButtonTapped;

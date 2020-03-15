@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSURL *paymentServicesURL; // @synthesize paymentServicesURL=_paymentServicesURL;
 @property(retain) NSURL *brokerURL; // @synthesize brokerURL=_brokerURL;
 @property(retain) NSData *cardData; // @synthesize cardData=_cardData;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

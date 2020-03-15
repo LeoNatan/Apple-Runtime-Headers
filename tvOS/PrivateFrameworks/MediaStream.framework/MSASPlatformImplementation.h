@@ -15,8 +15,8 @@
     ACAccountStore *_accountStore;
 }
 
-@property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (_Bool)shouldEnableNewFeatures;
 - (int)MMCSConcurrentConnectionsCount;
 - (id)personIDsEnabledForAlbumSharing;

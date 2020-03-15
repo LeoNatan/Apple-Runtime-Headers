@@ -15,10 +15,10 @@
     id <IMAPAccount> _account;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <IMAPAccount> account; // @synthesize account=_account;
 @property(readonly, nonatomic) long long previousActionID; // @synthesize previousActionID=_previousActionID;
 @property(nonatomic) __weak id <IMAPGetNewLocalActionsOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithDataSource:(id)arg1;
 - (id)initWithPreviousActionID:(long long)arg1 account:(id)arg2;

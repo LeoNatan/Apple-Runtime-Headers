@@ -39,6 +39,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *simplePublicKey; // @synthesize simplePublicKey=_simplePublicKey;
 @property(copy, nonatomic) NSDictionary *recordInfo; // @synthesize recordInfo=_recordInfo;
 @property(retain, nonatomic) NSNumber *coolOffPeriod; // @synthesize coolOffPeriod=_coolOffPeriod;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) NSString *modelVersion; // @synthesize modelVersion=_modelVersion;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long localSecretType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

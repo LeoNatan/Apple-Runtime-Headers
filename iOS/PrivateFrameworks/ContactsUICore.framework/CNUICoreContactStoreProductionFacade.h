@@ -7,16 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <ContactsUICore/CNUICoreContactStoreFacade-Protocol.h>
+#import <ContactsUICore/CNUICoreParentContainerProvider-Protocol.h>
 
 @class CNContactStore, NSString;
 
-@interface CNUICoreContactStoreProductionFacade : NSObject <CNUICoreContactStoreFacade>
+@interface CNUICoreContactStoreProductionFacade : NSObject <CNUICoreContactStoreFacade, CNUICoreParentContainerProvider>
 {
     CNContactStore *_contactStore;
 }
 
-@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
+- (id)containerForContact:(id)arg1;
 - (_Bool)executeSaveRequest:(id)arg1 error:(id *)arg2;
 - (_Bool)enumerateContactsWithFetchRequest:(id)arg1 error:(id *)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)_crossPlatformUnifiedMeContactWithKeysToFetch:(id)arg1 error:(id *)arg2;

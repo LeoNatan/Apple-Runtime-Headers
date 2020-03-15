@@ -16,11 +16,11 @@
     CDUnknownBlockType completionHandler;
 }
 
+- (void).cxx_destruct;
 - (void)setCompletionHandler:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)completionHandler;
 - (void)setFoundItemsHandler:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)foundItemsHandler;
-- (void).cxx_destruct;
 - (void)userEngagedWithResult:(id)arg1 interactionType:(int)arg2;
 - (unsigned int)foundItemCount;
 - (void)handleCompletion:(id)arg1;

@@ -23,10 +23,10 @@
 
 + (id)shortDescription;
 + (id)maximumSupportedProtocolVersion;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <HMDHTTPServerMessageTransportDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HMFHTTPServer *server; // @synthesize server=_server;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)server:(id)arg1 didCloseConnection:(id)arg2;
 - (void)server:(id)arg1 didOpenConnection:(id)arg2;

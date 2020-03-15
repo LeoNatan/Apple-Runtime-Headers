@@ -67,6 +67,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBHomeGestureExclusionTrapezoidSettings *exclusionTrapezoidSettings; // @synthesize exclusionTrapezoidSettings=_exclusionTrapezoidSettings;
 @property(nonatomic) _Bool resetSwitcherListAfterAppInteraction; // @synthesize resetSwitcherListAfterAppInteraction=_resetSwitcherListAfterAppInteraction;
 @property(nonatomic) double secondsToResetSwitcherListAfterTransition; // @synthesize secondsToResetSwitcherListAfterTransition=_secondsToResetSwitcherListAfterTransition;
@@ -121,7 +122,6 @@
 @property(nonatomic) _Bool recognizeAlongEdge; // @synthesize recognizeAlongEdge=_recognizeAlongEdge;
 @property(nonatomic) double hysteresis; // @synthesize hysteresis=_hysteresis;
 @property(nonatomic, getter=isHomeGestureEnabled) _Bool homeGestureEnabled; // @synthesize homeGestureEnabled=_homeGestureEnabled;
-- (void).cxx_destruct;
 - (void)setLatchDefaults;
 - (void)setHomeGestureTuningDefaults;
 - (void)setDefaultValues;

@@ -26,6 +26,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)allowedDecodableClasses;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *remoteDebugDescription; // @synthesize remoteDebugDescription=_remoteDebugDescription;
 @property(copy, nonatomic) CDUnknownBlockType remoteDescriptionBlock; // @synthesize remoteDescriptionBlock=_remoteDescriptionBlock;
 @property(nonatomic) BOOL didPopuldateAppInfo; // @synthesize didPopuldateAppInfo=_didPopuldateAppInfo;
@@ -34,7 +35,6 @@
 @property(nonatomic) BOOL isApplicationElement; // @synthesize isApplicationElement=_isApplicationElement;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) unsigned long long objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

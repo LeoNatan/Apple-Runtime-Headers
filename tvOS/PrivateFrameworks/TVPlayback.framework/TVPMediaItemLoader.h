@@ -14,6 +14,8 @@
 __attribute__((visibility("hidden")))
 @interface TVPMediaItemLoader : NSObject <AVAssetResourceLoaderDelegate>
 {
+    _Bool _allowsCellularUsage;
+    _Bool _allowsConstrainedNetworkUsage;
     _Bool _cleanedUp;
     _Bool _AVAudioSessionConfiguredAfterMediaServicesReset;
     NSObject<TVPMediaItem> *_mediaItem;
@@ -40,6 +42,7 @@ __attribute__((visibility("hidden")))
 + (void)removeTemporaryDownloadDirectory;
 + (id)loaderForMediaItem:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNotification *savedMediaServerResetUserNotification; // @synthesize savedMediaServerResetUserNotification=_savedMediaServerResetUserNotification;
 @property(nonatomic) _Bool AVAudioSessionConfiguredAfterMediaServicesReset; // @synthesize AVAudioSessionConfiguredAfterMediaServicesReset=_AVAudioSessionConfiguredAfterMediaServicesReset;
 @property(nonatomic) _Bool cleanedUp; // @synthesize cleanedUp=_cleanedUp;
@@ -54,13 +57,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVURLAsset *AVAssetInternal; // @synthesize AVAssetInternal=_AVAssetInternal;
 @property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) AVURLAsset *AVAsset; // @synthesize AVAsset=_AVAsset;
+@property(nonatomic) _Bool allowsConstrainedNetworkUsage; // @synthesize allowsConstrainedNetworkUsage=_allowsConstrainedNetworkUsage;
+@property(nonatomic) _Bool allowsCellularUsage; // @synthesize allowsCellularUsage=_allowsCellularUsage;
 @property(retain, nonatomic) id reportingHierarchyToken; // @synthesize reportingHierarchyToken=_reportingHierarchyToken;
 @property(retain, nonatomic) AVURLAsset *existingAVAsset; // @synthesize existingAVAsset=_existingAVAsset;
 @property(retain, nonatomic) TVPMediaItemTimingData *timingData; // @synthesize timingData=_timingData;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (_Bool)resourceLoader:(id)arg1 shouldWaitForRenewalOfRequestedResource:(id)arg2;
 - (_Bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)_cleanUp;

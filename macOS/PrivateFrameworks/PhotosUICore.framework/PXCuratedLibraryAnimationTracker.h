@@ -17,8 +17,8 @@
 + (void)scrollAnimationDidEndWithScrollContext:(CDStruct_912cb5d2)arg1;
 + (void)scrollAnimationDidBeginWithScrollContext:(CDStruct_912cb5d2)arg1;
 + (id)sharedTracker;
-@property(readonly, nonatomic) NSMutableSet *inFlightAnimations; // @synthesize inFlightAnimations=_inFlightAnimations;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableSet *inFlightAnimations; // @synthesize inFlightAnimations=_inFlightAnimations;
 - (void)zoomLevelTransitionsDidEndEarly;
 - (void)_zoomLevelTransitionOccurred:(id)arg1 isPreparation:(BOOL)arg2 isBegin:(BOOL)arg3;
 - (void)zoomLevelTransitionDidEnd:(id)arg1;

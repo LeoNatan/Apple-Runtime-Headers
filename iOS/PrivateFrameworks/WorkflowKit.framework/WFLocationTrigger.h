@@ -17,10 +17,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)timestampDateFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(copy, nonatomic) CLCircularRegion *region; // @synthesize region=_region;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

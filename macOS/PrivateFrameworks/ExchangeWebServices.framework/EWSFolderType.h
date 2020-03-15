@@ -16,10 +16,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL UnreadCountSpecified; // @synthesize UnreadCountSpecified=_UnreadCountSpecified;
 @property(nonatomic) long long UnreadCount; // @synthesize UnreadCount=_UnreadCount;
 @property(retain, nonatomic) EWSPermissionSetType *PermissionSet; // @synthesize PermissionSet=_PermissionSet;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

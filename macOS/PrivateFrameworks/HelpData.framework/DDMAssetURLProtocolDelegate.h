@@ -15,8 +15,8 @@
     DDMAssetURLProtocol *_protocol;
 }
 
-@property(nonatomic) __weak DDMAssetURLProtocol *protocol; // @synthesize protocol=_protocol;
 - (void).cxx_destruct;
+@property(nonatomic) __weak DDMAssetURLProtocol *protocol; // @synthesize protocol=_protocol;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

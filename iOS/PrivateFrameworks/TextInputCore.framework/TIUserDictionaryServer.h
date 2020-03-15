@@ -29,9 +29,9 @@
 + (id)singletonInstance;
 + (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _KSTextReplacementServer *textReplacementServer; // @synthesize textReplacementServer=_textReplacementServer;
 @property(copy, nonatomic) NSUUID *userDictionaryUUID; // @synthesize userDictionaryUUID=_userDictionaryUUID;
-- (void).cxx_destruct;
 - (void)handleIdleTimeout;
 - (void)keyboardActivityDidTransition:(id)arg1;
 - (void)decrementRecentClientCountAfterDelay;

@@ -19,11 +19,11 @@
 
 + (id)referencedActionResourceClasses;
 + (_Bool)hasPlaylistAccess;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFAppleMusicAccessResource *appleMusicAccessResource; // @synthesize appleMusicAccessResource=_appleMusicAccessResource;
 @property(nonatomic) _Bool generatingNotifications; // @synthesize generatingNotifications=_generatingNotifications;
 @property(retain, nonatomic) WFPlaylistSubstitutableState *entireLibraryState; // @synthesize entireLibraryState=_entireLibraryState;
 @property(readonly, nonatomic) _Bool showLibrary; // @synthesize showLibrary=_showLibrary;
-- (void).cxx_destruct;
 - (id)defaultSerializedRepresentation;
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) NSArray *possibleStates; // @synthesize possibleStates=_possibleStates;

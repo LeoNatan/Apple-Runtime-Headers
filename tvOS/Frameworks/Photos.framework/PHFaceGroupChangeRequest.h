@@ -22,9 +22,9 @@
 + (void)deleteFaceGroups:(id)arg1;
 + (id)changeRequestForFaceGroup:(id)arg1;
 + (id)creationRequestForFaceGroup;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *keyFaceHelper; // @synthesize keyFaceHelper=_keyFaceHelper;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *facesHelper; // @synthesize facesHelper=_facesHelper;
-- (void).cxx_destruct;
 @property(nonatomic) long long personBuilderState;
 - (void)setKeyFace:(id)arg1;
 - (void)_setOriginalFaceGroup:(id)arg1;

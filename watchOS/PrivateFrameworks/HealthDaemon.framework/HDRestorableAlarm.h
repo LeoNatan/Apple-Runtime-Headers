@@ -21,8 +21,8 @@
     NSString *_clientIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (id)systemScheduler;
 - (id)diagnosticDescription;
 - (void)eventsDidFire:(id)arg1;

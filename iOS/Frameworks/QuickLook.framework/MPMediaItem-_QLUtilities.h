@@ -7,6 +7,7 @@
 #import <MediaPlayer/MPMediaItem.h>
 
 @interface MPMediaItem (_QLUtilities)
++ (id)ql_propertyTitleFromAsset:(id)arg1;
 + (id)playingInfoFromAsset:(id)arg1 withDefaultTitle:(id)arg2 playbackDuration:(double)arg3 elapsedTime:(double)arg4;
 + (id)playingInfoFromAsset:(id)arg1 withDefaultTitle:(id)arg2;
 @end

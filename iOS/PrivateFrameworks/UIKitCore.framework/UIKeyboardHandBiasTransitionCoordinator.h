@@ -30,13 +30,13 @@ __attribute__((visibility("hidden")))
     UIKeyboardHandBiasTransitionContext *_currentContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIKeyboardHandBiasTransitionContext *currentContext; // @synthesize currentContext=_currentContext;
 @property(nonatomic, getter=isInteractive) _Bool interactive; // @synthesize interactive=_interactive;
 @property(nonatomic) double swipeWidthRatio; // @synthesize swipeWidthRatio=_swipeWidthRatio;
 @property(retain, nonatomic) UIKeyboardSquishTransition *currentTransition; // @synthesize currentTransition=_currentTransition;
 @property(retain, nonatomic) UIPanGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(nonatomic) __weak id <UIKeyboardHandBiasTransitionCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_handBiasPanGestureRecognizerStateDidChange:(id)arg1;
 - (void)_didRecognizeSpacebarGestureOnStartEdge:(unsigned long long)arg1 withDistance:(double)arg2;

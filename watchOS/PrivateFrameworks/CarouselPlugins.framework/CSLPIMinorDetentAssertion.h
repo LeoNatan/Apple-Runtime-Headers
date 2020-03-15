@@ -14,8 +14,8 @@
     id _wrappedAssertion;
 }
 
-@property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (void)dealloc;
 - (id)init;
 - (id)initWithReason:(id)arg1;

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allHandles;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setLineWidthConstraint:) NSLayoutConstraint *_lineWidthConstraint; // @synthesize _lineWidthConstraint=__lineWidthConstraint;
 @property(retain, nonatomic, setter=_setLayoutReferenceView:) UIView *_layoutReferenceView; // @synthesize _layoutReferenceView=__layoutReferenceView;
 @property(retain, nonatomic, setter=_setOverlayViews:) NSArray *_overlayViews; // @synthesize _overlayViews=__overlayViews;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isOverlayHidden) _Bool overlayHidden; // @synthesize overlayHidden=_overlayHidden;
 @property(nonatomic, getter=isLineWeightHeavy) _Bool lineWeightHeavy; // @synthesize lineWeightHeavy=_lineWeightHeavy;
 @property(readonly, nonatomic) unsigned long long handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *adjacentHandles;
 @property(readonly, nonatomic) unsigned long long oppositeHandle;
 @property(readonly, nonatomic, getter=isLateral) _Bool lateral;

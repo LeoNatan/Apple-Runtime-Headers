@@ -19,13 +19,13 @@
     NSArray *_migratableDevices;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool iTunes; // @synthesize iTunes=_iTunes;
 @property(retain, nonatomic) NSArray *migratableDevices; // @synthesize migratableDevices=_migratableDevices;
 @property(retain, nonatomic) NSString *sourceDeviceName; // @synthesize sourceDeviceName=_sourceDeviceName;
 @property(retain, nonatomic) BPSMultipleWatchMigrationView *multipleWatchView; // @synthesize multipleWatchView=_multipleWatchView;
 @property(retain, nonatomic) BPSRemoteWatchView *watchView; // @synthesize watchView=_watchView;
 @property(nonatomic) __weak id <BPSWatchMigrationControllerDelegate> migrationDelegate; // @synthesize migrationDelegate=_migrationDelegate;
-- (void).cxx_destruct;
 - (void)_notifyDelegateShouldMigrateWithData:(id)arg1;
 - (void)_saveMigrationPreference:(_Bool)arg1;
 - (void)loadView;

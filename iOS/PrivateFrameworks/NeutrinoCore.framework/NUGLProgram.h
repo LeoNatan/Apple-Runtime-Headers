@@ -17,10 +17,10 @@
     NUGLShader *_shader;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(readonly) NSDictionary *uniforms; // @synthesize uniforms=_uniforms;
 @property(readonly) NUGLShader *shader; // @synthesize shader=_shader;
-- (void).cxx_destruct;
 - (void)_build:(id)arg1;
 - (_Bool)build:(id)arg1 error:(out id *)arg2;
 - (void)delete;

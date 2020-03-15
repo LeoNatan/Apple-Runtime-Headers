@@ -17,10 +17,10 @@
 }
 
 + (id)disclosureImage;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIButton *typeButton; // @synthesize typeButton=_typeButton;
 @property(nonatomic) __weak UIButton *titleButton; // @synthesize titleButton=_titleButton;
 @property(nonatomic) __weak id <WFVariableConfigurationHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)typeButtonTapped;
 @property(nonatomic) _Bool showsVariableType;
 @property(copy, nonatomic) NSString *variableType;

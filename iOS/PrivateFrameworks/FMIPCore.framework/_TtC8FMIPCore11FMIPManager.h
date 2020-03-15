@@ -9,6 +9,7 @@
 @interface _TtC8FMIPCore11FMIPManager : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: delegate
+    // Error parsing type: , name: siriDelegate
     // Error parsing type: , name: refreshingController
     // Error parsing type: , name: beaconRefreshingController
     // Error parsing type: , name: dataManager
@@ -18,10 +19,11 @@
     // Error parsing type: , name: actionsController
     // Error parsing type: , name: ownerSession
     // Error parsing type: , name: ownerInterface
-    // Error parsing type: , name: beaconManager
     // Error parsing type: , name: urlHandler
     // Error parsing type: , name: isUpdatingSingleDevices
     // Error parsing type: , name: locationShifter
+    // Error parsing type: , name: dataQueue
+    // Error parsing type: , name: delegateQueue
     // Error parsing type: , name: selectedDevice
     // Error parsing type: , name: isInitialized
 }

@@ -66,6 +66,7 @@
 + (void)setReminderStoreContainerTokenProvider:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)reminderStoreContainerTokenProvider;
 + (Class)classForEntityName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CalCalendarDataContainerProvider> calendarDataContainerProvider; // @synthesize calendarDataContainerProvider=_calendarDataContainerProvider;
 @property(readonly, nonatomic) _Bool inboxRepliedSectionHasContent; // @synthesize inboxRepliedSectionHasContent=_inboxRepliedSectionHasContent;
 @property(retain, nonatomic) NSMutableDictionary *registeredObjects; // @synthesize registeredObjects=_registeredObjects;
@@ -90,7 +91,6 @@
 @property(retain, nonatomic) NSMutableSet *updatedObjects; // @synthesize updatedObjects=_updatedObjects;
 @property(retain, nonatomic) NSMutableSet *deletedObjects; // @synthesize deletedObjects=_deletedObjects;
 @property(retain, nonatomic) NSMutableSet *insertedObjects; // @synthesize insertedObjects=_insertedObjects;
-- (void).cxx_destruct;
 - (void)postSyntheticRouteHypothesis:(id)arg1 forEventWithExternalURL:(id)arg2;
 - (_Bool)shouldWhitelistOrganizerPhoneNumberFromJunkChecks:(id)arg1;
 - (_Bool)shouldWhitelistOrganizerEmailFromJunkChecks:(id)arg1;
@@ -289,7 +289,8 @@
 - (struct CGColor *)copyCGColorForNewCalendar;
 - (id)ICSDataForCalendarItems:(id)arg1 preventLineFolding:(_Bool)arg2;
 - (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3;
-- (id)_importICSData:(id)arg1 intoCalendarsWithIDs:(id)arg2 options:(unsigned long long)arg3;
+- (id)_importEventsWithExternalIDs:(id)arg1 fromICSData:(id)arg2 intoCalendarsWithIDs:(id)arg3 options:(unsigned long long)arg4 batchSize:(int)arg5;
+- (id)importEventsWithExternalIDs:(id)arg1 fromICSData:(id)arg2 intoCalendars:(id)arg3 options:(unsigned long long)arg4 batchSize:(int)arg5;
 - (id)importICSData:(id)arg1 intoCalendars:(id)arg2 options:(unsigned long long)arg3;
 - (id)importICS:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3;
 - (_Bool)setInvitationStatus:(unsigned long long)arg1 forEvents:(id)arg2 error:(id *)arg3;
@@ -312,7 +313,6 @@
 - (_Bool)removeCalendar:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)_saveCalendar:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)saveCalendar:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
-- (_Bool)removeAllItemsInCalendar:(id)arg1 error:(id *)arg2;
 - (_Bool)removeCalendar:(id)arg1 error:(id *)arg2;
 - (_Bool)saveCalendar:(id)arg1 error:(id *)arg2;
 - (void)_addObjectToPendingCommits:(id)arg1;

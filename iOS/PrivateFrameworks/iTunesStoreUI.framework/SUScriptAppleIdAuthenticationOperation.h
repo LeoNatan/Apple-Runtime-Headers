@@ -15,8 +15,8 @@
     NSString *_status;
 }
 
-@property(retain, nonatomic) NSString *status; // @synthesize status=_status;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *status; // @synthesize status=_status;
 - (void)sendCompletionCallback:(id)arg1;
 - (void)run;
 - (id)initWithUsername:(id)arg1 password:(id)arg2 viewController:(id)arg3;

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandlers;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 - (_Bool)isRichTextResolved;
 - (void)_invokeCompletionHandlers;
 - (void)setText:(id)arg1;

@@ -14,9 +14,9 @@
     NSURL *_priorURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *priorURL; // @synthesize priorURL=_priorURL;
 @property(readonly, nonatomic) int absoluteOrder; // @synthesize absoluteOrder=_absoluteOrder;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAction:(int)arg1 context:(id)arg2 absoluteOrder:(int)arg3;
 

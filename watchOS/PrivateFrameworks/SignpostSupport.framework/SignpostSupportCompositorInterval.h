@@ -16,8 +16,8 @@
 }
 
 + (id)serializationTypeNumber;
-@property(retain, nonatomic) NSArray *contributingPids; // @synthesize contributingPids=_contributingPids;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *contributingPids; // @synthesize contributingPids=_contributingPids;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqualToSignpostSupportCompositorInterval:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

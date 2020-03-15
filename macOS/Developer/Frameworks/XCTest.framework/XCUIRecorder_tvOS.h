@@ -15,10 +15,10 @@
     XCElementSnapshot *_previousFocusAppSnapshot;
 }
 
+- (void).cxx_destruct;
 @property BOOL sawButtonRecently; // @synthesize sawButtonRecently=_sawButtonRecently;
 @property(retain) XCElementSnapshot *previousFocusAppSnapshot; // @synthesize previousFocusAppSnapshot=_previousFocusAppSnapshot;
 @property(retain) XCElementSnapshot *previousFocusElementSnapshot; // @synthesize previousFocusElementSnapshot=_previousFocusElementSnapshot;
-- (void).cxx_destruct;
 - (id)_XCT_nativeFocusItemDidChangeAtTime:(id)arg1 parameterSnapshot:(id)arg2 applicationSnapshot:(id)arg3;
 - (id)_XCT_recordedEventNames:(id)arg1 timestamp:(id)arg2 duration:(id)arg3 startLocation:(id)arg4 startElementSnapshot:(id)arg5 startApplicationSnapshot:(id)arg6 endLocation:(id)arg7 endElementSnapshot:(id)arg8 endApplicationSnapshot:(id)arg9;
 - (void)_generateCodeForRemoteButton:(id)arg1 applicationSnapshot:(id)arg2;

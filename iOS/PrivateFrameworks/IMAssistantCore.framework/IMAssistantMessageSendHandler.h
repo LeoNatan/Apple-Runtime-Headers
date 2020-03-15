@@ -17,8 +17,8 @@
     id <IMAssistantMessageSendHandlerDelegate> _messageSendHandlerDelegate;
 }
 
-@property(retain, nonatomic) id <IMAssistantMessageSendHandlerDelegate> messageSendHandlerDelegate; // @synthesize messageSendHandlerDelegate=_messageSendHandlerDelegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <IMAssistantMessageSendHandlerDelegate> messageSendHandlerDelegate; // @synthesize messageSendHandlerDelegate=_messageSendHandlerDelegate;
 - (id)recipientsResolutionFailureResultWithResult:(id)arg1 forRecipient:(id)arg2 amongRecipients:(id)arg3;
 - (id)handleResolutionResultForHandles:(id)arg1 resolvedContactForAlternatives:(id)arg2 recipient:(id)arg3;
 - (id)contactResolutionResultForContacts:(id)arg1 matchingRecipient:(id)arg2;

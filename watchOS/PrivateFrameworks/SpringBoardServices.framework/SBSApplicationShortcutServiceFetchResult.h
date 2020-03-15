@@ -18,10 +18,10 @@
     NSArray *_composedApplicationShortcutItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *composedApplicationShortcutItems; // @synthesize composedApplicationShortcutItems=_composedApplicationShortcutItems;
 @property(readonly, nonatomic) NSArray *dynamicApplicationShortcutItems; // @synthesize dynamicApplicationShortcutItems=_dynamicApplicationShortcutItems;
 @property(readonly, nonatomic) NSArray *staticApplicationShortcutItems; // @synthesize staticApplicationShortcutItems=_staticApplicationShortcutItems;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

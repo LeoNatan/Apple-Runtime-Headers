@@ -16,11 +16,11 @@
     const short *_kcapShapeAndKeyDataPtr;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) const short *kcapShapeAndKeyDataPtr; // @synthesize kcapShapeAndKeyDataPtr=_kcapShapeAndKeyDataPtr;
 @property(nonatomic) const struct KCAPHeader *kcapHeaderPtr; // @synthesize kcapHeaderPtr=_kcapHeaderPtr;
 @property(nonatomic) short kcapID; // @synthesize kcapID=_kcapID;
 @property(retain) NSData *kcapData; // @synthesize kcapData=_kcapData;
-- (void).cxx_destruct;
 - (BOOL)loadNewKCAPResource:(short)arg1;
 - (short)shapeAndKeyDataForIndex:(int)arg1;
 - (struct Rect)boundsRect;

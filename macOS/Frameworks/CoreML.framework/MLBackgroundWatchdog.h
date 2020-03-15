@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)watchdogWithTimeout:(double)arg1 label:(id)arg2 queue:(id)arg3;
 + (id)watchdogWithTimeout:(double)arg1 queue:(id)arg2;
-@property(retain) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 - (void)invalidate;
 - (void)dealloc;
 

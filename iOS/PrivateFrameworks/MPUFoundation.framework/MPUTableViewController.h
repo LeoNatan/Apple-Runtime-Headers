@@ -33,9 +33,9 @@
 + (Class)invalidationContextClass;
 + (_Bool)usesCellConfigurations;
 + (_Bool)wantsAutolayoutSizedTableViewRows;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDeselectImmediately; // @synthesize shouldDeselectImmediately=_shouldDeselectImmediately;
 @property(readonly, nonatomic) Class cellConfigurationClass; // @synthesize cellConfigurationClass=_cellConfigurationClass;
-- (void).cxx_destruct;
 - (long long)_totalNumberOfSections;
 - (void)_reloadActionRowsAnimated:(_Bool)arg1 skipTableViewUpdates:(_Bool)arg2;
 - (void)_loadCellConfiguration;

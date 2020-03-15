@@ -18,9 +18,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)plainTextStringFromHTMLString:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(copy) NSString *_cachedPlainTextString; // @synthesize _cachedPlainTextString=__cachedPlainTextString;
 @property(copy, nonatomic) NSString *htmlString; // @synthesize htmlString=_htmlString;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

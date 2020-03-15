@@ -25,6 +25,7 @@
     id <MOMediaSectionFormattingDelegate> _formattingDelegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL needsReload; // @synthesize needsReload=_needsReload;
 @property(nonatomic) __weak id <MOMediaSectionFormattingDelegate> formattingDelegate; // @synthesize formattingDelegate=_formattingDelegate;
 @property(copy, nonatomic) NSAttributedString *attributedSubtitle; // @synthesize attributedSubtitle=_attributedSubtitle;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *alternateSupertitle; // @synthesize alternateSupertitle=_alternateSupertitle;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)_reloadPropertiesIfNeeded;
 - (void)_reloadProperties;

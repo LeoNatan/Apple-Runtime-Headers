@@ -15,9 +15,9 @@
 
 + (id)valueFromSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;
 + (Class)processingValueClass;
-@property(retain, nonatomic) NSNumber *legacyNumber; // @synthesize legacyNumber=_legacyNumber;
 - (void).cxx_destruct;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+@property(retain, nonatomic) NSNumber *legacyNumber; // @synthesize legacyNumber=_legacyNumber;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) NSDecimalNumber *decimalNumber;
 - (id)serializedRepresentation;
 - (id)initWithValue:(id)arg1;

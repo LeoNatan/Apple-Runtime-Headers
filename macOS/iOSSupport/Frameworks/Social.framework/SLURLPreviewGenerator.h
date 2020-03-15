@@ -14,8 +14,8 @@
     UIWebView *_webView;
 }
 
-@property(readonly) UIWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
+@property(readonly) UIWebView *webView; // @synthesize webView=_webView;
 - (void)loadURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_callCompletionWithPreview:(id)arg1;
 - (void)dealloc;

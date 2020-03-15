@@ -20,6 +20,8 @@
 - (id)cameraCalibrationDataWithExifOrientation:(unsigned int)arg1;
 - (id)initWithDepthMetadataDictionary:(id)arg1;
 - (id)initWithAuxiliaryMetadata:(struct CGImageMetadata *)arg1;
+- (id)cameraCalibrationDataDictionary;
+- (id)initWithCameraCalibrationDataDictionary:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) struct CGPoint lensDistortionCenter;
 @property(readonly, nonatomic) NSData *inverseLensDistortionLookupTable;
 @property(readonly, nonatomic) NSData *lensDistortionLookupTable;

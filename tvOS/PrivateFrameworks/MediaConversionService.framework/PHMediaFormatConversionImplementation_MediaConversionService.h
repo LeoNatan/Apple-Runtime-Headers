@@ -16,9 +16,9 @@
     PAImageConversionServiceClient *_imageConversionServiceClient;
 }
 
+- (void).cxx_destruct;
 @property(retain) PAImageConversionServiceClient *imageConversionServiceClient; // @synthesize imageConversionServiceClient=_imageConversionServiceClient;
 @property(retain) PAVideoConversionServiceClient *videoConversionServiceClient; // @synthesize videoConversionServiceClient=_videoConversionServiceClient;
-- (void).cxx_destruct;
 - (void)applyCommonOptionsFromRequest:(id)arg1 toOptions:(id)arg2;
 - (void)performImageConversionRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)applyCommonOptionsFromVideoRequest:(id)arg1 toOptions:(id)arg2;

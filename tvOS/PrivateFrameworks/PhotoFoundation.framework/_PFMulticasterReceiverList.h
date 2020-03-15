@@ -16,9 +16,9 @@
     unsigned long long _count;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long count; // @synthesize count=_count;
 @property(readonly) SEL selector; // @synthesize selector=_selector;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)enumerateReceiversWithBlock:(CDUnknownBlockType)arg1;

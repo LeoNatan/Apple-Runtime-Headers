@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     float _trackedValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float trackedValue; // @synthesize trackedValue=_trackedValue;
 @property(nonatomic) _Bool isAccumulating; // @synthesize isAccumulating=_isAccumulating;
-- (void).cxx_destruct;
 - (float)speed;
 - (void)addValue:(float)arg1;
 - (id)init;

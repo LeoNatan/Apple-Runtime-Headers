@@ -34,8 +34,8 @@
     id <NLSedentaryTimerAlertDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NLSedentaryTimerAlertDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NLSedentaryTimerAlertDelegate> delegate; // @synthesize delegate=_delegate;
 - (double)_delayIntervalForSedentaryTimerStart;
 - (void)_queue_showSedentaryAlertOfType:(int)arg1 withTimeoutDate:(id)arg2 experimentInstance:(id)arg3;
 - (_Bool)_isSedentaryTimerNotificationEnabled;

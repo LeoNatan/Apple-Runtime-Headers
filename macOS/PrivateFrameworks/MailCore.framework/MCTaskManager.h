@@ -28,13 +28,13 @@
     MCTaskList *_taskList;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MCTaskList *taskList; // @synthesize taskList=_taskList;
 @property BOOL reassignTasksWillRun; // @synthesize reassignTasksWillRun=_reassignTasksWillRun;
 @property BOOL hasActivity; // @synthesize hasActivity=_hasActivity;
 @property unsigned long long maximumPersistenceHandlers; // @synthesize maximumPersistenceHandlers=_maximumPersistenceHandlers;
 @property unsigned long long maximumNetworkHandlers; // @synthesize maximumNetworkHandlers=_maximumNetworkHandlers;
 @property(readonly, nonatomic) NSOperationQueue *serializationQueue; // @synthesize serializationQueue=_serializationQueue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL networkIsLimited;
 - (void)bodyTracker:(id)arg1 didCacheBodiesForMessages:(id)arg2;
 - (void)handlerDidCleanUp:(id)arg1;

@@ -21,8 +21,8 @@
     id <CUISAlertProviderDelegate> _alertProviderDelegate;
 }
 
-@property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate=_alertProviderDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate=_alertProviderDelegate;
 - (void)requestUITriggerWithRegistration:(id)arg1 UITriggerName:(id)arg2 withDictionary:(id)arg3 withReason:(int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

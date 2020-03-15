@@ -18,11 +18,11 @@
     float _cornerRadius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFlexibleCornerRadius; // @synthesize hasFlexibleCornerRadius=_hasFlexibleCornerRadius;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
-- (void).cxx_destruct;
 - (void)setActive:(_Bool)arg1;
 - (void)setEnabled:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;

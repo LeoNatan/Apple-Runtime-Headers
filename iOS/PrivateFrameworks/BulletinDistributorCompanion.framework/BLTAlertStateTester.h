@@ -11,11 +11,11 @@
     CDUnknownBlockType _sectionInfoRetriever;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType sectionInfoRetriever; // @synthesize sectionInfoRetriever=_sectionInfoRetriever;
 - (void).cxx_destruct;
-- (_Bool)isScreenTimeBlockedForBundleIdentifier:(id)arg1;
+@property(copy, nonatomic) CDUnknownBlockType sectionInfoRetriever; // @synthesize sectionInfoRetriever=_sectionInfoRetriever;
+- (_Bool)isScreenTimeBlockedForBundleIdentifier:(id)arg1 ignoresDowntime:(_Bool)arg2;
 - (unsigned long long)_blockingReasonForSectionInfo:(id)arg1;
-- (unsigned long long)willNanoPresentNotificationForSectionInfo:(id)arg1 subsectionIDs:(id)arg2 isWristDetectDisabled:(_Bool)arg3 hasSectionIDOptedOutOfCoordination:(_Bool)arg4 hasSectionIDOptedForwardOnly:(_Bool)arg5;
+- (unsigned long long)willNanoPresentNotificationForSectionInfo:(id)arg1 subsectionIDs:(id)arg2 isWristDetectDisabled:(_Bool)arg3 hasSectionIDOptedOutOfCoordination:(_Bool)arg4 hasSectionIDOptedForwardOnly:(_Bool)arg5 ignoresDowntime:(_Bool)arg6;
 
 @end
 

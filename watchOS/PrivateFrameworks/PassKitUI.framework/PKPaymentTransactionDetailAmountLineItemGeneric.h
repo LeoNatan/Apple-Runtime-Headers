@@ -15,12 +15,13 @@
     NSString *_label;
     NSString *_value;
     _Bool _hasTrailingLineSeperator;
+    _Bool _isEmphasized;
 }
 
-@property(nonatomic) _Bool hasTrailingLineSeperator; // @synthesize hasTrailingLineSeperator=_hasTrailingLineSeperator;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isEmphasized; // @synthesize isEmphasized=_isEmphasized;
+@property(nonatomic) _Bool hasTrailingLineSeperator; // @synthesize hasTrailingLineSeperator=_hasTrailingLineSeperator;
 @property(readonly, nonatomic) unsigned int lineItemType;
-@property(readonly, nonatomic) _Bool isEmphasized;
 @property(readonly, nonatomic) NSString *value;
 @property(readonly, nonatomic) NSString *label;
 - (id)initWithLabel:(id)arg1 value:(id)arg2;

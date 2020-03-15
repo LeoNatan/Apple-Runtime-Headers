@@ -73,6 +73,7 @@
 + (const CDStruct_b122c5d1 *)_deviceLayoutForDevice:(id)arg1;
 + (id)getDialImageForType:(unsigned int)arg1 style:(unsigned int)arg2 forDevice:(id)arg3;
 + (id)_imageNameForIndex:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *minFormatter; // @synthesize minFormatter=_minFormatter;
 @property(retain, nonatomic) NSNumberFormatter *hourFormatter; // @synthesize hourFormatter=_hourFormatter;
 @property(retain, nonatomic) NSDateFormatter *alarmMinFormatter; // @synthesize alarmMinFormatter=_alarmMinFormatter;
@@ -110,7 +111,6 @@
 @property(nonatomic) _Bool show24HourDial; // @synthesize show24HourDial=_show24HourDial;
 @property(readonly, nonatomic) UIButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(readonly, nonatomic) UIButton *leftButton; // @synthesize leftButton=_leftButton;
-- (void).cxx_destruct;
 - (void)crownInputSequencerOffsetDidChange:(id)arg1;
 - (void)crownInputSequencerIdleDidChange:(id)arg1;
 - (double)_nearestDialLocationForCrownInputSequencer:(id)arg1;

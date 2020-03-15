@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (Class)extrasRootViewControllerClass;
 + (id)overriddenJavascriptURL;
 + (void)overrideJavascriptURL:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isStarted; // @synthesize isStarted=_isStarted;
 @property(nonatomic) unsigned long long selectedMainMenuIndex; // @synthesize selectedMainMenuIndex=_selectedMainMenuIndex;
 @property(readonly, nonatomic) long long storeID; // @synthesize storeID=_storeID;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MPPlaybackContext *featurePlaybackContext; // @synthesize featurePlaybackContext=_featurePlaybackContext;
 @property(retain, nonatomic) UIViewController *featurePlaybackViewController; // @synthesize featurePlaybackViewController=_featurePlaybackViewController;
 @property(nonatomic) __weak id <VideosExtrasContextDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)extrasRootViewController:(id)arg1 extrasVisibilityNeedsUpdate:(_Bool)arg2;
 - (void)extrasRootViewControllerDidLoadMainMenuItems:(id)arg1;
 - (_Bool)shouldExtrasBeVisibleForSize:(struct CGSize)arg1;

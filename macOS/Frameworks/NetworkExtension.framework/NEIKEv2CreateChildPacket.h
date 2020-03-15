@@ -29,6 +29,7 @@
 + (id)createRekeyChildSAForInitiator:(id)arg1;
 + (id)createChildSAResponse:(id)arg1 childSA:(id)arg2;
 + (id)createChildSAForInitiatorChildSA:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *vendorIDs; // @synthesize vendorIDs=_vendorIDs;
 @property(retain) NEIKEv2ResponderTrafficSelectorPayload *tsr; // @synthesize tsr=_tsr;
 @property(retain) NEIKEv2InitiatorTrafficSelectorPayload *tsi; // @synthesize tsi=_tsi;
@@ -37,7 +38,6 @@
 @property(retain) NEIKEv2KeyExchangePayload *ke; // @synthesize ke=_ke;
 @property(retain) NEIKEv2ChildSAPayload *childSA; // @synthesize childSA=_childSA;
 @property(retain) NEIKEv2IKESAPayload *ikeSA; // @synthesize ikeSA=_ikeSA;
-- (void).cxx_destruct;
 - (void)filloutPayloads;
 - (void)gatherPayloads;
 @property(readonly) BOOL isRekeyChild;

@@ -18,12 +18,12 @@
     NSButton *_noNetworkButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *noNetworkButton; // @synthesize noNetworkButton=_noNetworkButton;
 @property(retain, nonatomic) NSTextField *noNetworkDescription; // @synthesize noNetworkDescription=_noNetworkDescription;
 @property(retain, nonatomic) NSTextField *noNetworkTitle; // @synthesize noNetworkTitle=_noNetworkTitle;
 @property __weak id <AOSUINoNetworkViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL isAlternate; // @synthesize isAlternate=_isAlternate;
-- (void).cxx_destruct;
 - (void)helpPressed:(id)arg1;
 - (void)noNetworkActionPressed:(id)arg1;
 @property(copy) NSString *localizedActionTitle;

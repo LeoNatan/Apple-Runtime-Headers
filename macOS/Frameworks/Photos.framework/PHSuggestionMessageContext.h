@@ -21,6 +21,7 @@
     NSArray *_messageTokens;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *messageTokens; // @synthesize messageTokens=_messageTokens;
 @property(retain, nonatomic) NSArray *resolvedParticipants; // @synthesize resolvedParticipants=_resolvedParticipants;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) unsigned long long numberOfParticipants; // @synthesize numberOfParticipants=_numberOfParticipants;
 @property(readonly, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(readonly, nonatomic) NSArray *messages; // @synthesize messages=_messages;
-- (void).cxx_destruct;
 - (id)_mostRecentSuggestionFromSuggestions:(id)arg1;
 - (id)confidentMatchSuggestionUsingStrategy:(unsigned long long)arg1;
 - (id)matchingResultWithSuggestion:(id)arg1;

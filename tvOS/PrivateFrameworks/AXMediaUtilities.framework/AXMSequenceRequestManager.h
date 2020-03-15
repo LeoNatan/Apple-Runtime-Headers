@@ -13,8 +13,8 @@
     VNSequenceRequestHandler *_sequenceRequestHandler;
 }
 
-@property(retain, nonatomic) VNSequenceRequestHandler *sequenceRequestHandler; // @synthesize sequenceRequestHandler=_sequenceRequestHandler;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VNSequenceRequestHandler *sequenceRequestHandler; // @synthesize sequenceRequestHandler=_sequenceRequestHandler;
 
 @end
 

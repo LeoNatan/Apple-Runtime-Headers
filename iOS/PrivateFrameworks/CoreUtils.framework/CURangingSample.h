@@ -16,11 +16,11 @@
     NSString *_deviceModel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int rawRSSI; // @synthesize rawRSSI=_rawRSSI;
 @property(copy, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(copy, nonatomic) NSData *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property(nonatomic) int channel; // @synthesize channel=_channel;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

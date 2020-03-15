@@ -26,13 +26,13 @@
     OBPrivacyLinkController *_privacyLinkController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OBPrivacyLinkController *privacyLinkController; // @synthesize privacyLinkController=_privacyLinkController;
 @property(readonly, nonatomic) PKExplanationView *explanationView; // @synthesize explanationView=_explanationView;
 @property(nonatomic) _Bool showDoneButton; // @synthesize showDoneButton=_showDoneButton;
 @property(nonatomic) _Bool showCancelButton; // @synthesize showCancelButton=_showCancelButton;
 @property(readonly, nonatomic) long long context; // @synthesize context=_context;
 @property(nonatomic) __weak id <PKExplanationViewControllerDelegate> explanationViewControllerDelegate; // @synthesize explanationViewControllerDelegate=_explanationViewControllerDelegate;
-- (void).cxx_destruct;
 - (void)_setNavigationBarEnabled:(_Bool)arg1;
 - (void)showNavigationBarSpinner:(_Bool)arg1;
 - (void)_dismissViewController;

@@ -14,8 +14,8 @@
     long long _assetMediaType;
 }
 
-@property long long assetMediaType; // @synthesize assetMediaType=_assetMediaType;
 - (void).cxx_destruct;
+@property long long assetMediaType; // @synthesize assetMediaType=_assetMediaType;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)localIdentifier;

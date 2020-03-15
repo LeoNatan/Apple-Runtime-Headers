@@ -21,8 +21,8 @@
 + (id)localizedDeviceDescription;
 + (id)availableDevices;
 + (id)service;
-@property __weak id <AKSidecarSignatureRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <AKSidecarSignatureRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleSignatureCleared;
 - (void)_handlePathMesssage:(id)arg1 complete:(_Bool)arg2;
 - (void)_handleInternalFailure;

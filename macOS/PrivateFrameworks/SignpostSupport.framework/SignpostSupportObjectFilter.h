@@ -11,8 +11,8 @@
     CDUnknownBlockType _filterBlock;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType filterBlock; // @synthesize filterBlock=_filterBlock;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType filterBlock; // @synthesize filterBlock=_filterBlock;
 - (BOOL)passesObject:(id)arg1;
 - (id)initWithFilterBlock:(CDUnknownBlockType)arg1;
 

@@ -17,12 +17,12 @@
     unsigned int _transitionReason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int transitionReason; // @synthesize transitionReason=_transitionReason;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

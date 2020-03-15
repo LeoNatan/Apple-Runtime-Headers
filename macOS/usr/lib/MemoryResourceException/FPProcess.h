@@ -33,6 +33,7 @@
 + (void)_addGlobalError:(id)arg1;
 + (id)processWithPid:(int)arg1;
 + (id)processWithBsdInfo:(struct proc_bsdinfo *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hiddenFromDisplay; // @synthesize hiddenFromDisplay=_hiddenFromDisplay;
 @property(nonatomic) unsigned long long pageSize; // @synthesize pageSize=_pageSize;
 @property(retain, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
@@ -41,7 +42,6 @@
 @property(nonatomic) BOOL is64bit; // @synthesize is64bit=_is64bit;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) BOOL breakDownPhysFootprint;
 - (BOOL)_isAlive;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
-@property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (id)initWithError:(id)arg1 fetcher:(id)arg2;
 
 @end

@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_serializer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serializer; // @synthesize serializer=_serializer;
 @property(nonatomic) _Bool canCancel; // @synthesize canCancel=_canCancel;
 @property(retain, nonatomic) NSMutableArray *cameraFiles; // @synthesize cameraFiles=_cameraFiles;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (unsigned long long)removeCameraFile:(id)arg1;
 - (void)deleteAllCameraFiles;
 - (void)deleteNextCameraFile;

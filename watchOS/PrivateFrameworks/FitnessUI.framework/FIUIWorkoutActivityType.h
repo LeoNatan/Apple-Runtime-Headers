@@ -26,15 +26,16 @@
 + (id)wheelchairActivityTypes;
 + (id)unsupportedActivityTypesWithIsWheelchairUser:(_Bool)arg1 isSwimmingSupported:(_Bool)arg2;
 + (id)optimizedActivityTypesWithIsWheelchairUser:(_Bool)arg1 isSwimmingSupported:(_Bool)arg2;
++ (id)gymKitCapableActivityTypes;
 + (id)defaultActivityTypesWithIsWheelchairUser:(_Bool)arg1 isSwimmingSupported:(_Bool)arg2;
 + (_Bool)supportsSecureCoding;
 + (id)activityTypeWithWorkout:(id)arg1;
 + (id)activityTypeWithHKWorkoutActivityTypeIdentifier:(unsigned int)arg1 isIndoor:(_Bool)arg2 metadata:(id)arg3;
 + (id)activityTypeWithHKWorkoutActivityTypeIdentifier:(unsigned int)arg1 isIndoor:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) unsigned int auxiliaryTypeIdentifier; // @synthesize auxiliaryTypeIdentifier=_auxiliaryTypeIdentifier;
 @property(readonly, nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)hasLocationTypePool;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

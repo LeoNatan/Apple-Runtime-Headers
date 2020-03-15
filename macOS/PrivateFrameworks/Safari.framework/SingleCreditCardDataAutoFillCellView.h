@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)sizeForDisplayText:(id)arg1 headerText:(id)arg2;
+- (void).cxx_destruct;
 @property __weak NSTextField *singleCreditCardDataHeaderTextField; // @synthesize singleCreditCardDataHeaderTextField=_singleCreditCardDataHeaderTextField;
 @property __weak NSTextField *singleCreditCardDataDisplayTextField; // @synthesize singleCreditCardDataDisplayTextField=_singleCreditCardDataDisplayTextField;
 @property(copy, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
 @property(copy, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 
 @end

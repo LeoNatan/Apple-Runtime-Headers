@@ -17,11 +17,11 @@
     id <HUHomePodStereoSwapperCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HUHomePodStereoSwapperCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HUHomePodDetailView *rightHomePod; // @synthesize rightHomePod=_rightHomePod;
 @property(readonly, nonatomic) HUHomePodDetailView *leftHomePod; // @synthesize leftHomePod=_leftHomePod;
 @property(readonly, nonatomic) UIButton *swapButton; // @synthesize swapButton=_swapButton;
-- (void).cxx_destruct;
 - (void)_swap;
 - (void)_setupConstraints;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

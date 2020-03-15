@@ -26,6 +26,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mailboxId; // @synthesize mailboxId=_mailboxId;
 @property(nonatomic) _Bool willTrimDatabaseAfterResults; // @synthesize willTrimDatabaseAfterResults=_willTrimDatabaseAfterResults;
 @property(retain, nonatomic) NSData *currentDateForRequestingMoreMessages; // @synthesize currentDateForRequestingMoreMessages=_currentDateForRequestingMoreMessages;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool wantsBatchedResponse; // @synthesize wantsBatchedResponse=_wantsBatchedResponse;
 @property(retain, nonatomic) NSString *conversationId; // @synthesize conversationId=_conversationId;
 @property(nonatomic) unsigned int fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

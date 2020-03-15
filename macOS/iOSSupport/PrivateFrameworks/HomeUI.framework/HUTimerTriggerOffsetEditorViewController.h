@@ -19,11 +19,11 @@
     NSDateComponents *_selectedOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *selectedOffset; // @synthesize selectedOffset=_selectedOffset;
 @property(nonatomic) __weak id <HUTimerTriggerOffsetEditorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSDateComponents *currentOffset; // @synthesize currentOffset=_currentOffset;
 @property(readonly, nonatomic) NSString *significantEvent; // @synthesize significantEvent=_significantEvent;
-- (void).cxx_destruct;
 - (void)significantEventOffsetPicker:(id)arg1 didSelectOffset:(id)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(BOOL)arg4;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;

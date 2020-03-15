@@ -22,6 +22,7 @@
     NSMutableArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
@@ -32,7 +33,6 @@
 @property(nonatomic) long long textFieldStyle; // @synthesize textFieldStyle=_textFieldStyle;
 @property(readonly, nonatomic) UITextField *entryField; // @synthesize entryField=_entryField;
 @property(readonly, nonatomic) UILabel *entryDescription; // @synthesize entryDescription=_entryDescription;
-- (void).cxx_destruct;
 - (id)cachedImageUsingBlock:(CDUnknownBlockType)arg1;
 - (void)drawFillForPathRect:(struct CGRect)arg1 roundedCorners:(int)arg2 cornerRadius:(double)arg3;
 - (void)drawStrokeForPathRect:(struct CGRect)arg1 roundedCorners:(int)arg2 cornerRadius:(double)arg3 pathSegments:(int)arg4;

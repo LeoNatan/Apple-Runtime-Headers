@@ -17,9 +17,9 @@
     id <NTFeedTransforming> _underlyingTransformation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NTFeedTransforming> underlyingTransformation; // @synthesize underlyingTransformation=_underlyingTransformation;
 @property(readonly, nonatomic) unsigned long long embedsLimit; // @synthesize embedsLimit=_embedsLimit;
-- (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1;
 - (id)initWithTodayData:(id)arg1 configurationManager:(id)arg2 readArticlesFilterMethod:(int)arg3 seenArticlesFilterMethod:(int)arg4 minimumTimeSinceFirstSeenToFilter:(double)arg5 supplementalFeedFilterOptions:(long long)arg6 embedsLimit:(unsigned long long)arg7 otherArticleIDs:(id)arg8 otherClusterIDs:(id)arg9 filterDate:(id)arg10;
 - (id)init;

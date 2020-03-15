@@ -17,8 +17,8 @@
     CSLPrelaunchActivityManager *_prelaunchActivityManager;
 }
 
-@property(readonly, nonatomic) __weak CSLPrelaunchActivityManager *prelaunchActivityManager; // @synthesize prelaunchActivityManager=_prelaunchActivityManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak CSLPrelaunchActivityManager *prelaunchActivityManager; // @synthesize prelaunchActivityManager=_prelaunchActivityManager;
 - (void)_completeSync;
 - (void)_startSync;
 - (void)prelaunchActivityManager:(id)arg1 transitionedToState:(int)arg2 fromState:(int)arg3;

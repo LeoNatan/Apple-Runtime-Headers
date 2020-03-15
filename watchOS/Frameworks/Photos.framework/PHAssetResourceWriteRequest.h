@@ -28,6 +28,7 @@
     unsigned long long _managerID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *destinationFileURL; // @synthesize destinationFileURL=_destinationFileURL;
 @property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 @property(readonly, nonatomic) NSDictionary *info; // @synthesize info=_info;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) int requestID; // @synthesize requestID=_requestID;
 @property(readonly, nonatomic) PHAssetResourceRequestOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) PHAssetResource *assetResource; // @synthesize assetResource=_assetResource;
-- (void).cxx_destruct;
 - (void)assetResourceRequestDidFinish:(id)arg1;
 - (void)assetResourceRequest:(id)arg1 didFindFileURL:(id)arg2;
 - (void)startRequest;

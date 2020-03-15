@@ -16,11 +16,11 @@
     FBSceneSnapshotContext *_snapshotContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBSceneSnapshotContext *snapshotContext; // @synthesize snapshotContext=_snapshotContext;
 @property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
 @property(readonly, nonatomic, getter=isStatusBarHidden) _Bool statusBarHidden; // @synthesize statusBarHidden=_statusBarHidden;
 @property(readonly, nonatomic) PUICApplicationStatusBarItem *statusBarItem; // @synthesize statusBarItem=_statusBarItem;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) FBSceneSnapshot *snapshot; // @dynamic snapshot;
 - (id)initWithScene:(id)arg1 snapshotContext:(id)arg2 statusBarItem:(id)arg3 statusBarHidden:(_Bool)arg4;
 

@@ -17,11 +17,11 @@
     struct _os_timesync_db_s *_tsdb;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _os_timesync_db_s *tsdb; // @synthesize tsdb=_tsdb;
 @property(readonly, nonatomic) OSLogEventSource *source; // @synthesize source=_source;
 @property(retain, nonatomic) _OSLogIndex *index; // @synthesize index=_index;
 @property(retain, nonatomic) _OSLogCatalogFilter *catalogFilter; // @synthesize catalogFilter=_catalogFilter;
-- (void).cxx_destruct;
 - (void)activateStreamFromPosition:(id)arg1;
 - (void)activateStreamFromLastBoot;
 - (void)_activateStreamFromTimeIntervalSinceLastBoot:(double)arg1;

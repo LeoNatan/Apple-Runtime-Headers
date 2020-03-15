@@ -17,10 +17,10 @@
     double _creationDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool skipInsertionFilter; // @synthesize skipInsertionFilter=_skipInsertionFilter;
 @property(readonly, nonatomic) double creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) HDDataOriginProvenance *provenance; // @synthesize provenance=_provenance;
-- (void).cxx_destruct;
 - (void)prepareObjectForInsertion:(id)arg1;
 - (id)initWithProvenance:(id)arg1 creationDate:(double)arg2 skipInsertionFilter:(_Bool)arg3 profile:(id)arg4;
 

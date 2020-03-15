@@ -25,6 +25,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool viewServiceHostIsActive; // @synthesize viewServiceHostIsActive=_viewServiceHostIsActive;
 @property(nonatomic) _Bool applicationIsActive; // @synthesize applicationIsActive=_applicationIsActive;
 @property(nonatomic) _Bool observedDisplayAllowsEditing; // @synthesize observedDisplayAllowsEditing=_observedDisplayAllowsEditing;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSXPCConnection *sharingConnection; // @synthesize sharingConnection=_sharingConnection;
 @property(retain, nonatomic) NSXPCConnection *legacyConnection; // @synthesize legacyConnection=_legacyConnection;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_evaluateDisplayMode:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)endRemoteTextEditingSessionWithID:(id)arg1;

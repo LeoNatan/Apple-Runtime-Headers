@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_deletedObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *deletedObjects; // @synthesize deletedObjects=_deletedObjects;
 @property(readonly, copy, nonatomic) NSArray *updatedObjects; // @synthesize updatedObjects=_updatedObjects;
 @property(readonly, copy, nonatomic) NSArray *insertedObjects; // @synthesize insertedObjects=_insertedObjects;
-- (void).cxx_destruct;
 - (id)deletedRecordingURIsIncludingTemporaryURIs:(BOOL)arg1;
 - (id)updatedRecordingURIsIncludingTemporaryURIs:(BOOL)arg1;
 - (id)insertedRecordingURIsIncludingTemporaryURIs:(BOOL)arg1;

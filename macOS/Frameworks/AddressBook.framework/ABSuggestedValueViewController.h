@@ -30,6 +30,7 @@
     id <CNCancelable> _mouseDownObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <CNCancelable> mouseDownObserver; // @synthesize mouseDownObserver=_mouseDownObserver;
 @property(retain) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain) CNLabeledValue *labeledValue; // @synthesize labeledValue=_labeledValue;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSView *subjectContainer; // @synthesize subjectContainer=_subjectContainer;
 @property(retain, nonatomic) NSTextField *subjectField; // @synthesize subjectField=_subjectField;
 @property(retain, nonatomic) NSStackView *verticalHeaderStackView; // @synthesize verticalHeaderStackView=_verticalHeaderStackView;
-- (void).cxx_destruct;
 - (void)rejectSuggestedValue:(id)arg1;
 - (void)confirmSuggestedValue:(id)arg1;
 - (void)setSnippet:(id)arg1 selectedRange:(struct _NSRange)arg2;

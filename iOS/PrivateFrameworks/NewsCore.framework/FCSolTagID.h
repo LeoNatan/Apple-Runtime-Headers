@@ -24,13 +24,13 @@
 + (_Bool)supportsSecureCoding;
 + (id)discardedOrphanID;
 + (id)orphanID;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isGroupable; // @synthesize isGroupable=_isGroupable;
 @property(nonatomic) _Bool isAutoFavorited; // @synthesize isAutoFavorited=_isAutoFavorited;
 @property(nonatomic) _Bool isFavorited; // @synthesize isFavorited=_isFavorited;
 @property(nonatomic) double specificity; // @synthesize specificity=_specificity;
 @property(nonatomic) unsigned long long whitelistLevel; // @synthesize whitelistLevel=_whitelistLevel;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

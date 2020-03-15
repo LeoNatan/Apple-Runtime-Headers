@@ -27,6 +27,7 @@
     NSString *_networkAccountIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsTrustPrompt; // @synthesize allowsTrustPrompt=_allowsTrustPrompt;
 @property(nonatomic) _Bool usesOpportunisticSockets; // @synthesize usesOpportunisticSockets=_usesOpportunisticSockets;
 @property(nonatomic) _Bool usesSSL; // @synthesize usesSSL=_usesSSL;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 @property(copy, nonatomic) NSString *certUIService; // @synthesize certUIService=_certUIService;
 @property(nonatomic) _Bool tryDirectSSL; // @synthesize tryDirectSSL=_tryDirectSSLConnection;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setConnectionServiceType:(struct __CFString *)arg1;
 - (struct __CFString *)connectionServiceType;

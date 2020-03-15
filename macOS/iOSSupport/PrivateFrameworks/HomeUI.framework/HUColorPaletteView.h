@@ -29,6 +29,7 @@
     UILongPressGestureRecognizer *_changePresetRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *changePresetRecognizer; // @synthesize changePresetRecognizer=_changePresetRecognizer;
 @property(retain, nonatomic) UILongPressGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(nonatomic) BOOL colorPaletteHasChanged; // @synthesize colorPaletteHasChanged=_colorPaletteHasChanged;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) HFColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
 @property(nonatomic) __weak id <HUQuickControlColorPaletteViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) HUQuickControlColorViewProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (double)radiusFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;

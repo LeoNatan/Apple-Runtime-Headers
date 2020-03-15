@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIView *_chevronView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *chevronView; // @synthesize chevronView=_chevronView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (id)_titleLabelFont;
 - (void)setupSubviews;

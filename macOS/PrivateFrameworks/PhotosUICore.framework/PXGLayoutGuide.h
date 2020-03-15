@@ -16,9 +16,9 @@
     struct CGRect _referenceRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PXGLayout *referenceLayout; // @synthesize referenceLayout=_referenceLayout;
 @property(nonatomic) struct CGRect referenceRect; // @synthesize referenceRect=_referenceRect;
-- (void).cxx_destruct;
 - (void)setRect:(struct CGRect)arg1 inLayout:(id)arg2;
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (struct CGRect)rectInLayout:(id)arg1;

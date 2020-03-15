@@ -7,6 +7,7 @@
 #import <UIKit/UIDevice.h>
 
 @interface UIDevice (SFAdditions)
+- (id)sf_serialNumberQRImage;
 - (id)sf_regulatoryDeviceVariant;
 - (id)sf_deviceType;
 - (id)sf_productType;

@@ -17,12 +17,12 @@
     double _creationTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double creationTime; // @synthesize creationTime=_creationTime;
 @property(readonly, nonatomic) int qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(readonly, copy, nonatomic) NSString *processBundleIdentifier; // @synthesize processBundleIdentifier=_processBundleIdentifier;
 @property(readonly, nonatomic) __weak HDQueryServer *queryServer; // @synthesize queryServer=_queryServer;
 @property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool shouldThrottle;
 - (_Bool)shouldRunAfterBlock:(id)arg1 foregroundBundleIdentifiers:(id)arg2;

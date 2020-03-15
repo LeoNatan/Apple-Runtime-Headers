@@ -13,8 +13,8 @@
     CADisplayLink *_displayLink;
 }
 
-@property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 - (void)updateWithGestureRecognizer:(id)arg1;
 - (BOOL)autoscrollWithOffset:(struct CGPoint)arg1;
 - (void)stopRepeating;

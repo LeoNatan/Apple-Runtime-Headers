@@ -25,6 +25,7 @@
     TIKeyboardState *_lastKeyboardState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIKeyboardState *lastKeyboardState; // @synthesize lastKeyboardState=_lastKeyboardState;
 @property(retain, nonatomic) NSMutableSet *loggedRecordClasses; // @synthesize loggedRecordClasses=_loggedRecordClasses;
 @property(readonly, nonatomic) TIRollingLog *traceLog; // @synthesize traceLog=_traceLog;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSString *systemVersion; // @synthesize systemVersion=_systemVersion;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (_Bool)loggedRecordOfClass:(Class)arg1;
 - (void)enumerateHumanReadableTraceEntriesWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateRecordsWithBlock:(CDUnknownBlockType)arg1;

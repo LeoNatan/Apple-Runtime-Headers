@@ -25,6 +25,7 @@
 
 + (id)classesForUnarchivingTextData;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool partiallyLoaded; // @synthesize partiallyLoaded=_partiallyLoaded;
 @property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(nonatomic) unsigned long long originalContentSize; // @synthesize originalContentSize=_originalContentSize;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool mainAlternativeValid; // @synthesize mainAlternativeValid=_mainAlternativeValid;
 @property(retain, nonatomic) NSString *externalReferenceId; // @synthesize externalReferenceId=_externalReferenceId;
 @property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool isHTML;
 - (void)encodeWithCoder:(id)arg1;

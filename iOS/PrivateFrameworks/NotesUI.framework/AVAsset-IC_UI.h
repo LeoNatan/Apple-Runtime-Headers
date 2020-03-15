@@ -7,6 +7,6 @@
 #import <AVFoundation/AVAsset.h>
 
 @interface AVAsset (IC_UI)
-- (struct UIImage *)ic_previewImage;
+- (id)ic_previewImage;
 @end
 

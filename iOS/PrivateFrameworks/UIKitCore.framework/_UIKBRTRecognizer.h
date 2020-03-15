@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _clusterRestHaloSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double touchIntervalAverage; // @synthesize touchIntervalAverage=_touchIntervalAverage;
 @property(nonatomic) unsigned long long numProlongedTouches; // @synthesize numProlongedTouches=_numProlongedTouches;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *ignoredTouchesQueue; // @synthesize ignoredTouchesQueue=_ignoredTouchesQueue;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <_UIKBRTRecognizerTouchPointTrackingProtocol> touchTracker; // @synthesize touchTracker=_touchTracker;
 @property(retain, nonatomic) id <_UIKBRTRecognizerTouchLoggingProtocol> touchLogger; // @synthesize touchLogger=_touchLogger;
 @property(nonatomic) id <_UIKBRTRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)kbStatusMessage:(id)arg1;
 - (void)makeTouchIgnored:(id)arg1 force:(_Bool)arg2;
 - (void)makeTouchIgnored:(id)arg1 force:(_Bool)arg2 withMessage:(id)arg3;

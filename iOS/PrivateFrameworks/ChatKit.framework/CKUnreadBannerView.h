@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     UIView *_overlayView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIImageView *chevronView; // @synthesize chevronView=_chevronView;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(nonatomic) unsigned long long unreadCount; // @synthesize unreadCount=_unreadCount;
 @property(nonatomic) __weak id <CKUnreadBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stopAnimation;
 - (void)startAnimation;
 - (void)bannerPressed:(id)arg1;

@@ -17,9 +17,9 @@
     HMHome *_home;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
-- (void).cxx_destruct;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)servicePickerDidCancel:(id)arg1;

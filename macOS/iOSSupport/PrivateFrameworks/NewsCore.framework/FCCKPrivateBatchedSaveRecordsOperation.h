@@ -21,6 +21,7 @@
     NSMutableDictionary *_resultErrorsByRecordID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *resultErrorsByRecordID; // @synthesize resultErrorsByRecordID=_resultErrorsByRecordID;
 @property(retain, nonatomic) NSMutableArray *resultSavedRecords; // @synthesize resultSavedRecords=_resultSavedRecords;
 @property(retain, nonatomic) NSMutableArray *remainingBatchesOfRecordsToSave; // @synthesize remainingBatchesOfRecordsToSave=_remainingBatchesOfRecordsToSave;
@@ -30,7 +31,6 @@
 @property(nonatomic) long long savePolicy; // @synthesize savePolicy=_savePolicy;
 @property(copy, nonatomic) NSArray *recordsToSave; // @synthesize recordsToSave=_recordsToSave;
 @property(retain, nonatomic) FCCKPrivateDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)_subdivideRemainingBatches;
 - (void)_continueModifying;
 - (void)operationWillFinishWithError:(id)arg1;

@@ -20,12 +20,12 @@
     NSArray *_imageOptions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *imageOptions; // @synthesize imageOptions=_imageOptions;
 @property(nonatomic) _Bool supportsResizing; // @synthesize supportsResizing=_supportsResizing;
 @property(copy, nonatomic) NSString *formatURL; // @synthesize formatURL=_formatURL;
 @property(retain, nonatomic) _SFPBGraphicalFloat *pixelHeight; // @synthesize pixelHeight=_pixelHeight;
 @property(retain, nonatomic) _SFPBGraphicalFloat *pixelWidth; // @synthesize pixelWidth=_pixelWidth;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

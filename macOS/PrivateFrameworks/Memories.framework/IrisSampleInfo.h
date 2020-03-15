@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 + (id)infoForAsset:(id)arg1;
 + (void)clearCache;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
 @property(nonatomic) CDStruct_1b6d18a9 dominantSampleDuration; // @synthesize dominantSampleDuration=_dominantSampleDuration;
 @property(retain, nonatomic) NSArray *gapTimeRanges; // @synthesize gapTimeRanges=_gapTimeRanges;
 @property(retain, nonatomic) NSArray *timeRanges; // @synthesize timeRanges=_timeRanges;
-- (void).cxx_destruct;
 - (void)loadInfoWithTrackOutput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadInfoWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithAsset:(id)arg1;

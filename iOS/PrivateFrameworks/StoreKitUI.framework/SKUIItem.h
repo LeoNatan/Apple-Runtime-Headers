@@ -51,6 +51,7 @@
     id <SKUIArtworkProviding> _newsstandArtworks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SKUIArtworkProviding> newsstandArtworks; // @synthesize newsstandArtworks=_newsstandArtworks;
 @property(readonly, nonatomic) long long newsstandBindingType; // @synthesize newsstandBindingType=_newsstandBindingType;
 @property(readonly, nonatomic) long long newsstandBindingEdge; // @synthesize newsstandBindingEdge=_newsstandBindingEdge;
@@ -84,7 +85,6 @@
 @property(readonly, nonatomic) struct _NSRange ageBandRange; // @synthesize ageBandRange=_ageBandRange;
 @property(readonly, nonatomic) SKUIItemOffer *primaryItemOffer; // @synthesize primaryItemOffer=_itemOffer;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleID;
-- (void).cxx_destruct;
 - (id)valueForMetricsField:(id)arg1;
 @property(readonly, nonatomic) NSMutableDictionary *cacheRepresentation;
 - (id)initWithCacheRepresentation:(id)arg1;

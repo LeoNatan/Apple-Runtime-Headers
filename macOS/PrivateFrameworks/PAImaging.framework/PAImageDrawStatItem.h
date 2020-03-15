@@ -14,9 +14,9 @@
     double _sharpness;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double sharpness; // @synthesize sharpness=_sharpness;
 @property(copy, nonatomic) IPARegion *region; // @synthesize region=_region;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -42,6 +42,7 @@
 + (unsigned long long)countObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 includeSubentities:(BOOL)arg4 includePendingChanges:(BOOL)arg5;
 + (unsigned long long)deleteObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 fetchOffset:(unsigned long long)arg5 fetchLimit:(unsigned long long)arg6 includeSubentities:(BOOL)arg7 includePendingChanges:(BOOL)arg8;
 + (unsigned long long)deleteObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 fetchLimit:(unsigned long long)arg5 includeSubentities:(BOOL)arg6 includePendingChanges:(BOOL)arg7;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL requiresManualMigration; // @synthesize requiresManualMigration=_requiresManualMigration;
 @property(readonly) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(readonly) NSCloudKitMirroringDelegate *mirroringDelegate; // @synthesize mirroringDelegate=_mirroringDelegate;
@@ -52,7 +53,6 @@
 @property(readonly) BOOL localOnly; // @synthesize localOnly=_localOnly;
 @property(readonly) BOOL readOnly; // @synthesize readOnly=_readOnly;
 @property(readonly) NSString *directory; // @synthesize directory=_directory;
-- (void).cxx_destruct;
 - (id)copyStorageFor:(id)arg1 toDirectory:(id)arg2;
 - (id)databasePathFor:(id)arg1;
 - (BOOL)deleteStorageFor:(id)arg1;

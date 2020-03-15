@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requestingClientID; // @synthesize requestingClientID=_requestingClientID;
 @property(retain, nonatomic) NSDate *requestTime; // @synthesize requestTime=_requestTime;
 @property(nonatomic) long long travelMode; // @synthesize travelMode=_travelMode;
@@ -39,7 +40,6 @@
 @property(nonatomic) double aggressiveTravelTime; // @synthesize aggressiveTravelTime=_aggressiveTravelTime;
 @property(nonatomic) double travelTime; // @synthesize travelTime=_travelTime;
 @property(retain, nonatomic) CLLocation *origin; // @synthesize origin=_origin;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (id)jsonDictionary;

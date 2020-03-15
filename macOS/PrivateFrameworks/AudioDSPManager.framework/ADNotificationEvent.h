@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <NSObject> _payload;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> payload; // @synthesize payload=_payload;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)initWithTimestamp:(id)arg1;
 
 @end

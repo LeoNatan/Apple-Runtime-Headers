@@ -22,13 +22,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)sceneResizeRequestForScene:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 gamut:(long long)arg4 insets:(struct NSEdgeInsets)arg5 fence:(id)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKSAnimationFenceHandle *fence; // @synthesize fence=_fence;
 @property(nonatomic) struct NSEdgeInsets insets; // @synthesize insets=_insets;
 @property(nonatomic) long long gamut; // @synthesize gamut=_gamut;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initCommon;

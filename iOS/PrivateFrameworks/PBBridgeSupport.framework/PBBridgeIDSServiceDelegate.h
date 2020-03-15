@@ -20,13 +20,13 @@
     BKSProcessAssertion *_suspendAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKSProcessAssertion *suspendAssertion; // @synthesize suspendAssertion=_suspendAssertion;
 @property(retain, nonatomic) NSMutableDictionary *pendingMessages; // @synthesize pendingMessages=_pendingMessages;
 @property(retain, nonatomic) NSMutableDictionary *inflightMessages; // @synthesize inflightMessages=_inflightMessages;
 @property(retain, nonatomic) NSTimer *transportReachabilityTimer; // @synthesize transportReachabilityTimer=_transportReachabilityTimer;
 @property(nonatomic) _Bool shouldSuppressTransportReachabilityTimeout; // @synthesize shouldSuppressTransportReachabilityTimeout=_shouldSuppressTransportReachabilityTimeout;
 @property(retain, nonatomic) IDSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5;
 - (id)customDescriptionOfMessageType:(unsigned short)arg1;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;

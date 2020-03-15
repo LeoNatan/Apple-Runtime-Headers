@@ -17,12 +17,12 @@
     NSString *_executablePath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(readonly, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic) unsigned int swapId; // @synthesize swapId=_swapId;
 @property(readonly, nonatomic) unsigned int transactionSeed; // @synthesize transactionSeed=_transactionSeed;
-- (void).cxx_destruct;
 - (id)initWithTransactionSeedInterval:(id)arg1;
 
 @end

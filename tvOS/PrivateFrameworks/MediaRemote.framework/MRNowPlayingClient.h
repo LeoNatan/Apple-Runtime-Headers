@@ -17,8 +17,8 @@
     _MRNowPlayingPlayerPathProtobuf *_playerPath;
 }
 
-@property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 - (id)debugDescription;
 - (id)description;
 - (void)restoreNowPlayingClientState;

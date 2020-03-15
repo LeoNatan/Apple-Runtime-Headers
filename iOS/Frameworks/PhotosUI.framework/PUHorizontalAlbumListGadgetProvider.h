@@ -22,13 +22,13 @@
     PUAlbumsGadgetProvider *_albumsGadgetProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUAlbumsGadgetProvider *albumsGadgetProvider; // @synthesize albumsGadgetProvider=_albumsGadgetProvider;
 @property(retain, nonatomic) PXPhotoKitCollectionsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(readonly, nonatomic) PXExtendedTraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly) PUSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 - (id)title;
-- (void).cxx_destruct;
 - (id)_seeAllViewController;
 - (id)_fromMyMacConfiguration;
 - (id)_peoplePlacesAndMediaTypesConfiguration;

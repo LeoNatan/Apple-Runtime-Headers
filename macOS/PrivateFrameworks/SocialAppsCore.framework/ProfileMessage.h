@@ -20,13 +20,13 @@
     NSString *_profileID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *profileID; // @synthesize profileID=_profileID;
 @property(copy, nonatomic) NSString *authToken; // @synthesize authToken=_authToken;
 @property(copy, nonatomic) NSData *pushToken; // @synthesize pushToken=_pushToken;
 @property(nonatomic) struct __SecKey *pushPublicKey; // @synthesize pushPublicKey=_pushPublicKey;
 @property(nonatomic) struct __SecKey *pushPrivateKey; // @synthesize pushPrivateKey=_pushKey;
 @property(copy, nonatomic) NSData *pushCertificate; // @synthesize pushCertificate=_pushCert;
-- (void).cxx_destruct;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)additionalMessageHeaders;
 - (id)additionalMessageHeadersForOutgoingPush;

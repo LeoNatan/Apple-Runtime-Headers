@@ -15,8 +15,8 @@
 }
 
 + (id)interface;
-@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)_startConnection;
 - (void)submitRequest:(id)arg1 withReplyHandler:(CDUnknownBlockType)arg2;
 - (void)markRequestAsComplete:(id)arg1;

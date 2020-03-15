@@ -14,8 +14,8 @@
 }
 
 + (id)defaultController;
-@property(retain, nonatomic) id <VUIMediaLibraryApplicationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <VUIMediaLibraryApplicationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)removeRentalMediaItem:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (unsigned long long)assetTypeForRentalMediaItem:(id)arg1;
 - (void)overrideCellularPlaybackQuality:(unsigned long long)arg1 forMediaItem:(id)arg2;

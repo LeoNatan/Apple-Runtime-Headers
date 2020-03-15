@@ -20,11 +20,11 @@
 + (_Bool)wantsToSkipPauseWhenEnteringTritium;
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)hasSensitiveUI;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CLKCComplicationDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) int family; // @synthesize family=_family;
 @property(readonly, nonatomic) CLKCComplication *complication; // @synthesize complication=_complication;
-- (void).cxx_destruct;
 - (void)getDesiredUpdateIntervalWithHandler:(CDUnknownBlockType)arg1;
 - (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;

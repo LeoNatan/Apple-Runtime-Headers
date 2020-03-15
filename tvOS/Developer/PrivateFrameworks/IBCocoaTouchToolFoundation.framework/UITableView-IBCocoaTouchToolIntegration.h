@@ -10,6 +10,7 @@
 
 @interface UITableView (IBCocoaTouchToolIntegration)
 - (void)ibSwizzled_layoutSubviews;
+- (double)ibSwizzled_spacingForExtraSeparators_55192336;
 @property(retain, nonatomic) IBPlaceholderDrawingAttributes *ibUnusedAreaDrawingAttributes;
 - (void)setIbUnusedAreaPlaceholderView:(id)arg1;
 - (id)ibUnusedAreaPlaceholderView;

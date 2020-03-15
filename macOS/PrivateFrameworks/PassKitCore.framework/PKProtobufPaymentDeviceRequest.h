@@ -23,11 +23,11 @@
 }
 
 + (Class)knownManifestHashesType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(retain, nonatomic) NSMutableArray *knownManifestHashes; // @synthesize knownManifestHashes=_knownManifestHashes;
 @property(nonatomic) BOOL shouldAdvertise; // @synthesize shouldAdvertise=_shouldAdvertise;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

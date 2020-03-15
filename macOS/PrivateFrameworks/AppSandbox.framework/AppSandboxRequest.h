@@ -20,8 +20,8 @@
     NSString *_personaVolumePath;
     NSString *_personaVolumeRealPath;
     NSString *_mainExecutableBundlePath;
-    NSArray *_systemProfileSnippetsInfoDicts;
-    NSArray *_otherProfileSnippetPaths;
+    NSArray *_systemProfiles;
+    NSArray *_systemImages;
     NSArray *_otherImageBundles;
     BOOL _developerMode;
     BOOL _disableContainerRepair;
@@ -33,11 +33,12 @@
 + (id)implicitProfilePaths;
 + (id)profileSnippetFileName;
 + (BOOL)_setFatalError:(id *)arg1 withMessage:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disableContainerRepair; // @synthesize disableContainerRepair=_disableContainerRepair;
 @property(nonatomic) BOOL developerMode; // @synthesize developerMode=_developerMode;
 @property(retain, nonatomic) NSArray *otherImageBundles; // @synthesize otherImageBundles=_otherImageBundles;
-@property(retain, nonatomic) NSArray *otherProfileSnippetPaths; // @synthesize otherProfileSnippetPaths=_otherProfileSnippetPaths;
-@property(retain, nonatomic) NSArray *systemProfileSnippetsInfoDicts; // @synthesize systemProfileSnippetsInfoDicts=_systemProfileSnippetsInfoDicts;
+@property(retain, nonatomic) NSArray *systemImages; // @synthesize systemImages=_systemImages;
+@property(retain, nonatomic) NSArray *systemProfiles; // @synthesize systemProfiles=_systemProfiles;
 @property(copy, nonatomic) NSString *mainExecutableBundlePath; // @synthesize mainExecutableBundlePath=_mainExecutableBundlePath;
 @property(copy, nonatomic) NSString *personaVolumeRealPath; // @synthesize personaVolumeRealPath=_personaVolumeRealPath;
 @property(copy, nonatomic) NSString *personaVolumePath; // @synthesize personaVolumePath=_personaVolumePath;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSString *userAccountName; // @synthesize userAccountName=_userAccountName;
 @property(nonatomic) unsigned int groupId; // @synthesize groupId=_groupId;
 @property(nonatomic) unsigned int userId; // @synthesize userId=_userId;
-- (void).cxx_destruct;
 - (id)compileSandboxProfileAndReturnError:(id *)arg1;
 - (id)_doCompileSandboxProfileAndReturnError:(id *)arg1;
 - (BOOL)_setupFakeContainer:(id)arg1 results:(id)arg2 error:(id *)arg3;

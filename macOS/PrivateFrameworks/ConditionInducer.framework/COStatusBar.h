@@ -12,9 +12,9 @@
     CDUnknownBlockType _terminationBeganCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType terminationBeganCallback; // @synthesize terminationBeganCallback=_terminationBeganCallback;
 @property(copy, nonatomic) CDUnknownBlockType terminationNotifyCallback; // @synthesize terminationNotifyCallback=_terminationNotifyCallback;
-- (void).cxx_destruct;
 - (id)initWithConditionClass:(id)arg1 profile:(id)arg2 teardownBeganCb:(CDUnknownBlockType)arg3 teardownCompleteCb:(CDUnknownBlockType)arg4;
 
 @end

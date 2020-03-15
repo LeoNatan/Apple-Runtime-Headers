@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(readonly, copy, nonatomic) NSString *playlistName; // @synthesize playlistName=_playlistName;
 @property(readonly, nonatomic) _Bool entireMusicLibrary; // @synthesize entireMusicLibrary=_entireMusicLibrary;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

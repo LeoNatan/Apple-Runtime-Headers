@@ -16,8 +16,8 @@
     NSDictionary *_dictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void)prepareForUseWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) FCBundleSubscription *bundleSubscription;
 @property(readonly, copy, nonatomic) NSSet *purchasedTagIDs;

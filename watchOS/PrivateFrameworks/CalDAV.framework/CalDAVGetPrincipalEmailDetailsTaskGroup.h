@@ -16,9 +16,9 @@
     CalDAVPrincipalEmailDetailsResult *_principalResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CalDAVPrincipalEmailDetailsResult *principalResult; // @synthesize principalResult=_principalResult;
 @property(retain, nonatomic) NSURL *principalURL; // @synthesize principalURL=_principalURL;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSString *displayName;
 @property(readonly, retain, nonatomic) NSSet *addresses;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;

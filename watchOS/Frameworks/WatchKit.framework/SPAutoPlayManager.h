@@ -14,9 +14,9 @@
     NSArray *_autoplayingViews;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool performedSearchForAutoplayingViews; // @synthesize performedSearchForAutoplayingViews=_performedSearchForAutoplayingViews;
 @property(retain, nonatomic) NSArray *autoplayingViews; // @synthesize autoplayingViews=_autoplayingViews;
-- (void).cxx_destruct;
 - (void)_resetPerformedSearchForAutoplayingViews:(id)arg1;
 - (void)_findAutoplayingViewsInScrollView:(id)arg1 force:(_Bool)arg2;
 - (void)enclosingScrollViewWillResignActive:(id)arg1;

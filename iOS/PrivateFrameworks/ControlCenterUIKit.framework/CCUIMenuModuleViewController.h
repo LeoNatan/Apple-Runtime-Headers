@@ -45,6 +45,7 @@
 }
 
 + (id)checkmarkImage;
+- (void).cxx_destruct;
 @property(nonatomic) __weak CCUIContentModuleContext *contentModuleContext; // @synthesize contentModuleContext=_contentModuleContext;
 @property(nonatomic) _Bool useTallLayout; // @synthesize useTallLayout=_useTallLayout;
 @property(nonatomic) _Bool useTrailingInset; // @synthesize useTrailingInset=_useTrailingInset;
@@ -54,7 +55,6 @@
 @property(nonatomic) unsigned long long indentation; // @synthesize indentation=_indentation;
 @property(nonatomic) double visibleMenuItems; // @synthesize visibleMenuItems=_visibleMenuItems;
 @property(nonatomic) unsigned long long minimumMenuItems; // @synthesize minimumMenuItems=_minimumMenuItems;
-- (void).cxx_destruct;
 - (_Bool)_shouldShowFooterChin;
 - (_Bool)_shouldShowFooterSeparator;
 - (double)_footerHeight;

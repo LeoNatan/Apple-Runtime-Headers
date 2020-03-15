@@ -20,7 +20,7 @@
     NSString *_imageKey;
     PVImageBuffer *_imageBuffer;
     PVInstructionGraphNode *_graphNode;
-    struct NSDictionary *_inputMap;
+    NSDictionary *_inputMap;
     id <PVImageSeqDelegate> _imageSeqDelegate;
     id <PVCompositeDelegate> _renderDelegate;
     NSObject *_metadata;
@@ -32,6 +32,8 @@
 + (id)newSourceCompositeNodeWithTrack:(int)arg1 outputSize:(struct CGSize)arg2;
 + (id)newSourceCompositeNodeWithPVImageBuffer:(id)arg1;
 + (id)newSourceCompositeNodeWithURL:(id)arg1 key:(id)arg2 imageDelegate:(id)arg3;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) id <PVCompositeDelegate> renderDelegate; // @synthesize renderDelegate=_renderDelegate;
 @property(retain, nonatomic) id <PVImageSeqDelegate> imageSeqDelegate; // @synthesize imageSeqDelegate=_imageSeqDelegate;
@@ -45,8 +47,6 @@
 @property(nonatomic) int trackID; // @synthesize trackID=_trackID;
 @property(nonatomic) int nodeType; // @synthesize nodeType=_nodeType;
 @property(retain, nonatomic) id <PVCompositeDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)addDotTreeLinks:(HGRef_6bae45d3)arg1;
 - (id)dotTreeLabel:(HGRef_6bae45d3)arg1;
 - (id)instructionGraphNodeDescription;

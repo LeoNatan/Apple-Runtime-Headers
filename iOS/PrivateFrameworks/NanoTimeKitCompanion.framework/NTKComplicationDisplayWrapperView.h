@@ -6,15 +6,15 @@
 
 #import <UIKit/UIControl.h>
 
+#import <NanoTimeKitCompanion/CLKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKitCompanion/NTKComplicationDisplayObserver-Protocol.h>
 #import <NanoTimeKitCompanion/NTKControl-Protocol.h>
-#import <NanoTimeKitCompanion/NTKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKitCompanion/NTKTimeTravel-Protocol.h>
 
 @class CLKComplicationTemplate, NSDate, NSString, UIView;
 @protocol CLKMonochromeFilterProvider, NTKComplicationDisplay, NTKComplicationDisplayWrapperViewAnimationDelegate;
 
-@interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, NTKSensitiveUIStateObserver, NTKControl, NTKTimeTravel>
+@interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, CLKSensitiveUIStateObserver, NTKControl, NTKTimeTravel>
 {
     UIView<NTKComplicationDisplay> *_currentComplicationView;
     UIView<NTKComplicationDisplay> *_nextComplicationView;
@@ -49,6 +49,7 @@
     struct CGSize _maxSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 @property(readonly, nonatomic) long long layoutOverride; // @synthesize layoutOverride=_layoutOverride;
 @property(readonly, nonatomic) _Bool hasLegacyDisplay; // @synthesize hasLegacyDisplay=_hasLegacyDisplay;
@@ -68,7 +69,6 @@
 @property(nonatomic) _Bool supportsCurvedText; // @synthesize supportsCurvedText=_supportsCurvedText;
 @property(retain, nonatomic) NSString *complicationSlotIdentifier; // @synthesize complicationSlotIdentifier=_complicationSlotIdentifier;
 @property(readonly, nonatomic) long long family; // @synthesize family=_family;
-- (void).cxx_destruct;
 - (_Bool)shouldCancelTouchesInScrollview;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)_resetComplicationViews;

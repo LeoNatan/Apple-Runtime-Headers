@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     long long _selectedViewControllerIndex;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *contentViewControllers; // @synthesize contentViewControllers=_contentViewControllers;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (void)_addSelectedViewController;
 - (void)layoutSubviews;
 - (void)setSelectedViewControllerIndex:(long long)arg1;

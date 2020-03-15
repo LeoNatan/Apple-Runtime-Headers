@@ -17,9 +17,9 @@
 + (id)requestWithCommandRequests:(id)arg1;
 + (void)performRequest:(id)arg1 options:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)performRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *commands; // @synthesize commands=_commands;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)performWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithCommandRequests:(id)arg1;
 

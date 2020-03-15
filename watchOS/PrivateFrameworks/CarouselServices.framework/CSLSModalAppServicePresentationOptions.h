@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *allowedAlertServices; // @synthesize allowedAlertServices=_allowedAlertServices;
 @property(nonatomic) _Bool wantsAlertSuppression; // @synthesize wantsAlertSuppression=_wantsAlertSuppression;
 @property(nonatomic) int presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) _Bool suppressesLaunchUI; // @synthesize suppressesLaunchUI=_suppressesLaunchUI;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

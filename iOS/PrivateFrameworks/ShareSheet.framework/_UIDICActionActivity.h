@@ -22,9 +22,9 @@
 + (id)newLegacyDelegationActionActivityForPrint;
 + (id)newPreviewActionActivity;
 + (long long)activityCategory;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType activityFinishedPerformingHandler; // @synthesize activityFinishedPerformingHandler=_activityFinishedPerformingHandler;
 @property(copy, nonatomic) CDUnknownBlockType activityPerformingHandler; // @synthesize activityPerformingHandler=_activityPerformingHandler;
-- (void).cxx_destruct;
 - (void)_cleanup;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;

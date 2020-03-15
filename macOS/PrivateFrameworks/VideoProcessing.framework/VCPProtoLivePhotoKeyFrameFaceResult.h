@@ -18,9 +18,9 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float faceQuality; // @synthesize faceQuality=_faceQuality;
 @property(retain, nonatomic) VCPProtoBounds *faceBounds; // @synthesize faceBounds=_faceBounds;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

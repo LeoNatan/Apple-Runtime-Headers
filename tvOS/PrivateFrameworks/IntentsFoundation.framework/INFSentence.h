@@ -19,13 +19,13 @@
 }
 
 + (id)sentenceWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak INFGrammarCollection *collection; // @synthesize collection=_collection;
 @property(retain, nonatomic) NSSet *placeholders; // @synthesize placeholders=_placeholders;
 @property(retain, nonatomic) NSMutableDictionary *placeholdersToTokens; // @synthesize placeholdersToTokens=_placeholdersToTokens;
 @property(retain, nonatomic) NSMutableDictionary *relationships; // @synthesize relationships=_relationships;
 @property(copy, nonatomic) NSString *format; // @synthesize format=_format;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)filteredPlaceholders;
 - (id)concreteToken:(id)arg1 in:(id)arg2;

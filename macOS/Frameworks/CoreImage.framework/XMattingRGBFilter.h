@@ -38,11 +38,11 @@ __attribute__((visibility("hidden")))
     CDStruct_220e14ca config;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL coefficientsComputed; // @synthesize coefficientsComputed;
 @property(readonly) BOOL stateComputed; // @synthesize stateComputed;
 @property CDStruct_220e14ca config; // @synthesize config;
 @property(retain) XMattingBoxTensorFilter *boxTensorFilter; // @synthesize boxTensorFilter;
-- (void).cxx_destruct;
 - (int)encodeUpsampleOn:(id)arg1 segmentation:(id)arg2 colorGuide:(id)arg3 disparityGuide:(id)arg4 outputMatte:(id)arg5;
 - (int)encodeApplyCoefficientsOn:(id)arg1 colorGuide:(id)arg2 disparityGuide:(id)arg3 constraints:(id)arg4 destinationAlphaTexture:(id)arg5;
 - (int)encodeStepOn:(id)arg1;

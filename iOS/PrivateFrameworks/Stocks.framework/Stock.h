@@ -46,6 +46,7 @@
 + (id)symbolForURL:(id)arg1;
 + (id)urlForStock:(id)arg1;
 + (id)urlForStockSymbol:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTransient) _Bool transient; // @synthesize transient=_transient;
 @property(nonatomic) double timeMetadataLastUpdated; // @synthesize timeMetadataLastUpdated=_timeMetadataLastUpdated;
 @property(nonatomic) double timeQuoteLastUpdated; // @synthesize timeQuoteLastUpdated=_timeQuoteLastUpdated;
@@ -70,7 +71,6 @@
 @property(retain, nonatomic) NSString *shortCompanyName; // @synthesize shortCompanyName=_shortCompanyName;
 @property(retain, nonatomic) NSString *companyName; // @synthesize companyName=_companyName;
 @property(retain, nonatomic) NSString *symbol; // @synthesize symbol=_symbol;
-- (void).cxx_destruct;
 - (id)formattedPriceDroppingFractionDigitsIfLengthExceeds:(unsigned long long)arg1;
 - (id)formattedChangePercent:(_Bool)arg1;
 @property(readonly, nonatomic) NSString *formattedChangePercent;

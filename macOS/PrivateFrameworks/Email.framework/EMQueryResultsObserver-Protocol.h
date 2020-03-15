@@ -14,6 +14,7 @@
 - (void)queryDidFinishRemoteSearch;
 - (void)queryDidFinishInitialLoad;
 - (void)queryMatchedDeletedObjectIDs:(NSArray *)arg1;
+- (void)queryAnticipatesDeletedObjectIDs:(NSArray *)arg1;
 - (void)queryMatchedChangesByObjectIDs:(NSDictionary *)arg1;
 - (void)queryMatchedMovedObjectIDs:(NSArray *)arg1 after:(EMObjectID *)arg2;
 - (void)queryMatchedMovedObjectIDs:(NSArray *)arg1 before:(EMObjectID *)arg2;

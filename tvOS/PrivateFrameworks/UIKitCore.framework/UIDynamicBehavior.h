@@ -19,8 +19,8 @@
 
 + (_Bool)_isPrimitiveBehavior;
 + (void)initialize;
-@property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 - (id)description;
 - (id)_itemsDescription;
 - (void)_changedParameterForBody:(id)arg1;

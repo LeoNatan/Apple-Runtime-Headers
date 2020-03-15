@@ -53,6 +53,7 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) BOOL shouldDisableOnSpeakerVerificationInSplitterMode; // @synthesize shouldDisableOnSpeakerVerificationInSplitterMode=_shouldDisableOnSpeakerVerificationInSplitterMode;
 @property(nonatomic) unsigned long long currentSplitterState; // @synthesize currentSplitterState=_currentSplitterState;
@@ -85,7 +86,6 @@
 @property(retain, nonatomic) CSAudioStream *audioStream; // @synthesize audioStream=_audioStream;
 @property(retain, nonatomic) CSPolicy *voiceTriggerStartPolicy; // @synthesize voiceTriggerStartPolicy=_voiceTriggerStartPolicy;
 @property(nonatomic) __weak id <CSVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_teardownSecondPassIfNeeded;
 - (void)_createSecondPassIfNeededWithFirstPassSource:(unsigned long long)arg1;
 - (BOOL)_shouldSecondPassKeepAlive;

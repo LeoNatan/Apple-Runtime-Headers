@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned int _downloadOrder;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int downloadOrder; // @synthesize downloadOrder=_downloadOrder;
 @property(nonatomic) unsigned int episodeLimit; // @synthesize episodeLimit=_episodeLimit;
 @property(readonly, nonatomic) NSString *feedURL; // @synthesize feedURL=_feedURL;
-- (void).cxx_destruct;
 - (id)description;
 - (id)predicatesForFeedURL;
 - (_Bool)isEqual:(id)arg1;

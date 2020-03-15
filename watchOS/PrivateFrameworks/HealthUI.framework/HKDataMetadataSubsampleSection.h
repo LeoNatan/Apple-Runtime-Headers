@@ -20,6 +20,7 @@
     NSMutableDictionary *_aggregationValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *aggregationValue; // @synthesize aggregationValue=_aggregationValue;
 @property(readonly, nonatomic) id <HKDataMetadataSubsampleDelegate> subsampleDelegate; // @synthesize subsampleDelegate=_subsampleDelegate;
 @property(readonly, nonatomic) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(readonly, nonatomic) NSArray *subSampleTypes; // @synthesize subSampleTypes=_subSampleTypes;
 @property(readonly, nonatomic) HKSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (id)displayNameForSampleType:(id)arg1 displayTypeController:(id)arg2;
 - (id)_trimAndSortSampleTypes:(id)arg1;
 - (id)_mergeTypesForFixedValues:(id)arg1 subSampleTypes:(id)arg2;

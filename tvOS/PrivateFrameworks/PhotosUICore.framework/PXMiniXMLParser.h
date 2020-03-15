@@ -18,13 +18,13 @@
     NSCharacterSet *__syntaxMarkerCharactersSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCharacterSet *_syntaxMarkerCharactersSet; // @synthesize _syntaxMarkerCharactersSet=__syntaxMarkerCharactersSet;
 @property(readonly, nonatomic) NSScanner *_scanner; // @synthesize _scanner=__scanner;
 @property(copy, nonatomic) CDUnknownBlockType parsedErrorBlock; // @synthesize parsedErrorBlock=_parsedErrorBlock;
 @property(copy, nonatomic) CDUnknownBlockType parsedEntityBlock; // @synthesize parsedEntityBlock=_parsedEntityBlock;
 @property(copy, nonatomic) CDUnknownBlockType parsedTagBlock; // @synthesize parsedTagBlock=_parsedTagBlock;
 @property(copy, nonatomic) CDUnknownBlockType parsedCharactersBlock; // @synthesize parsedCharactersBlock=_parsedCharactersBlock;
-- (void).cxx_destruct;
 - (_Bool)_tryScanningUsingBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_parseEntity;
 - (_Bool)_parseTag;

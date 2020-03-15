@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _itemsAddedBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType itemsAddedBlock; // @synthesize itemsAddedBlock=_itemsAddedBlock;
 @property(copy, nonatomic) CDUnknownBlockType dragPreviewProviderBlock; // @synthesize dragPreviewProviderBlock=_dragPreviewProviderBlock;
 @property(copy, nonatomic) CDUnknownBlockType handOffDroppedItemsBlock; // @synthesize handOffDroppedItemsBlock=_handOffDroppedItemsBlock;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType dragEndBlock; // @synthesize dragEndBlock=_dragEndBlock;
 @property(copy, nonatomic) CDUnknownBlockType connectionBlock; // @synthesize connectionBlock=_connectionBlock;
 @property(readonly, nonatomic) unsigned int sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
-- (void).cxx_destruct;
 - (id)_dataBearingItemProviders;
 - (id)_datalessItemProviders;
 - (void)dropSessionEnded;

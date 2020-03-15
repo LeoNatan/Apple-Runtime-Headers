@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_sosQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *sosQueue; // @synthesize sosQueue=_sosQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *spgQueue; // @synthesize spgQueue=_spgQueue;
 @property(nonatomic) unsigned long long samplingRate; // @synthesize samplingRate=_samplingRate;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *configFile; // @synthesize configFile=_configFile;
 @property(retain, nonatomic) EARCaesuraSilencePosteriorGenerator *caesuraSPG; // @synthesize caesuraSPG=_caesuraSPG;
 @property(nonatomic) __weak id <CSStartOfSpeechDetectorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)clientSilenceFeaturesAvailable:(id)arg1;
 - (void)endAudio;
 - (void)addAudio:(id)arg1 numSamples:(unsigned long long)arg2;

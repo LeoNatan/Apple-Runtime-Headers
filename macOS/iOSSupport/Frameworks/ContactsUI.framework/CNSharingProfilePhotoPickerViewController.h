@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     PRMonogramColor *_monogramBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PRMonogramColor *monogramBackgroundColor; // @synthesize monogramBackgroundColor=_monogramBackgroundColor;
 @property(retain, nonatomic) CNPhotoPickerColorVariant *animojiBackgroundColor; // @synthesize animojiBackgroundColor=_animojiBackgroundColor;
 @property(retain, nonatomic) CNPhotoPickerVariantsManager *variantsManager; // @synthesize variantsManager=_variantsManager;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL isSmallScreenDevice; // @synthesize isSmallScreenDevice=_isSmallScreenDevice;
 @property(retain, nonatomic) CNSharingProfilePhotoPickerItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(nonatomic) __weak id <CNSharingProfilePhotoPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

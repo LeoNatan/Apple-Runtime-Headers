@@ -16,11 +16,11 @@
     HFAccessorySettingManagedConfigurationAdapter *_adapter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFAccessorySettingManagedConfigurationAdapter *adapter; // @synthesize adapter=_adapter;
 @property(retain, nonatomic) NSMutableSet *accessorySettingsProfileItems; // @synthesize accessorySettingsProfileItems=_accessorySettingsProfileItems;
 @property(retain, nonatomic) HMSettingGroup *settingGroup; // @synthesize settingGroup=_settingGroup;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

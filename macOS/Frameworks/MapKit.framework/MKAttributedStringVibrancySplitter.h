@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSAttributedString *_attributedString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(readonly, nonatomic) BOOL hasMixedVibrancy; // @synthesize hasMixedVibrancy=_hasMixedVibrancy;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSAttributedString *nonvibrantAttributedString;
 @property(readonly, nonatomic) NSAttributedString *vibrantAttributedString;
 - (void)calculateAttributedStringsIfNecessary;

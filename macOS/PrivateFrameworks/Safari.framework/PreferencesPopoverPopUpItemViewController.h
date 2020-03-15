@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     PerSitePreferencePopUpButton *_permissionsPopUpButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PerSitePreferencePopUpButton *permissionsPopUpButton; // @synthesize permissionsPopUpButton=_permissionsPopUpButton;
 @property(nonatomic) __weak NSTextField *preferenceTitleTextField; // @synthesize preferenceTitleTextField=_preferenceTitleTextField;
-- (void).cxx_destruct;
 
 @end
 

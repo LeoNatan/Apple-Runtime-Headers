@@ -21,9 +21,9 @@
     id <CSBeepCancellerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSBeepCancellerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSBeepCancellerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSDictionary *metrics;
 - (void)flush;
 - (void)reset;

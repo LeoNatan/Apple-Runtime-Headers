@@ -13,8 +13,8 @@
     NSDictionary *_lookupDictionary;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *lookupDictionary; // @synthesize lookupDictionary=_lookupDictionary;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *lookupDictionary; // @synthesize lookupDictionary=_lookupDictionary;
 @property(readonly, nonatomic) long long size;
 @property(readonly, copy, nonatomic) NSURL *previewURL;
 @property(readonly, nonatomic) double previewDuration;

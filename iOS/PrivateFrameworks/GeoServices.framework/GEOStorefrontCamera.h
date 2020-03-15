@@ -18,13 +18,13 @@
     NSArray *_textureIds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *textureIds; // @synthesize textureIds=_textureIds;
 @property(readonly, nonatomic) struct GEOLensModel projection; // @synthesize projection=_projection;
 @property(readonly, nonatomic) unsigned char lensType; // @synthesize lensType=_lensType;
 @property(readonly, nonatomic) struct GEOOrientedPosition position; // @synthesize position=_position;
 @property(readonly, nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(readonly, nonatomic) int cameraNumber; // @synthesize cameraNumber=_cameraNumber;
-- (void).cxx_destruct;
 - (id)initWithCameraMetadata:(id)arg1;
 - (id)init;
 

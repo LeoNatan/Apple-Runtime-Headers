@@ -24,6 +24,7 @@
     unsigned long long _pageNextAction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pageNextAction; // @synthesize pageNextAction=_pageNextAction;
 @property(retain, nonatomic) UIViewController<NUPageable> *articleViewController; // @synthesize articleViewController=_articleViewController;
 @property(retain, nonatomic) id <FCOperationCanceling> asyncOnceCancelHandler; // @synthesize asyncOnceCancelHandler=_asyncOnceCancelHandler;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) id <NUArticleActivityFactory> articleActivityFactory; // @synthesize articleActivityFactory=_articleActivityFactory;
 @property(readonly, nonatomic) id <NUArticleHostViewControllerFactory> articleHostViewControllerFactory; // @synthesize articleHostViewControllerFactory=_articleHostViewControllerFactory;
 @property(readonly, nonatomic) FCArticle *article; // @synthesize article=_article;
-- (void).cxx_destruct;
 - (id)contextProvidersForKeyPath:(id)arg1;
 - (id)adContextValueForKeyPath:(id)arg1;
 - (id)asyncOnceLoadPageStyle:(CDUnknownBlockType)arg1;

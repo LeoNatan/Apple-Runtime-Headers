@@ -17,6 +17,7 @@
     _Bool _providesAudioData;
     _Bool _autoFocusEnabled;
     _Bool _allowCameraInMultipleForegroundAppLayout;
+    _Bool _disableOcclusionForPersonSegmentation;
     _Bool _mirroredFrameOutput;
     long long _worldAlignment;
     unsigned long long _frameSemantics;
@@ -32,7 +33,9 @@
 + (id)supportedVideoFormats;
 + (_Bool)isSupported;
 + (_Bool)supportsFrameSemantics:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool mirroredFrameOutput; // @synthesize mirroredFrameOutput=_mirroredFrameOutput;
+@property(nonatomic) _Bool disableOcclusionForPersonSegmentation; // @synthesize disableOcclusionForPersonSegmentation=_disableOcclusionForPersonSegmentation;
 @property(nonatomic) _Bool allowCameraInMultipleForegroundAppLayout; // @synthesize allowCameraInMultipleForegroundAppLayout=_allowCameraInMultipleForegroundAppLayout;
 @property(nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
 @property(nonatomic) unsigned long long frameDebugOptions; // @synthesize frameDebugOptions=_frameDebugOptions;
@@ -43,7 +46,6 @@
 @property(nonatomic) _Bool providesAudioData; // @synthesize providesAudioData=_providesAudioData;
 @property(nonatomic) long long worldAlignment; // @synthesize worldAlignment=_worldAlignment;
 @property(retain, nonatomic) ARVideoFormat *videoFormat; // @synthesize videoFormat=_videoFormat;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isKindOfConfiguration:(Class)arg1;
 - (id)description;
@@ -52,7 +54,7 @@
 - (unsigned long long)hash;
 - (id)renderingTechnique;
 - (id)secondaryTechniques;
-- (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
+- (void)createTechniques:(id)arg1;
 - (id)techniques;
 @property(readonly, nonatomic) id <ARReplaySensorProtocol> replaySensor;
 @property(readonly, nonatomic) NSString *deviceModel;

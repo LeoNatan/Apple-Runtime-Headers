@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
 
 + (id)makeFeatureJSObjectForFeature:(id)arg1;
 + (void)registerFeature;
+- (void).cxx_destruct;
 @property(nonatomic) long long selectedItemIndex; // @synthesize selectedItemIndex=_selectedItemIndex;
 @property(nonatomic) __weak id <VSIKItemGroupDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=setJSSelectedItem:) long long jsSelectedItem; // @synthesize jsSelectedItem=_jsSelectedItem;
 @property(readonly, copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (id)initWithDOMNode:(id)arg1 featureName:(id)arg2;
 
 // Remaining properties

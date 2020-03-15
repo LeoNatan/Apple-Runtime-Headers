@@ -26,6 +26,7 @@
 + (id)generationRequestWithBinding:(struct _LSBinding *)arg1 size:(struct CGSize)arg2 scale:(unsigned int)arg3;
 + (id)generationRequestWithBinding:(struct _LSBinding *)arg1 size:(struct CGSize)arg2 scale:(unsigned int)arg3 options:(id)arg4;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long lsDatabaseSequenceNumber; // @synthesize lsDatabaseSequenceNumber=_lsDatabaseSequenceNumber;
 @property(retain) NSUUID *lsDatabaseUUID; // @synthesize lsDatabaseUUID=_lsDatabaseUUID;
 @property(copy) NSArray *decorations; // @synthesize decorations=_decorations;
@@ -34,7 +35,6 @@
 @property unsigned long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(readonly) double scale; // @synthesize scale=_scale;
 @property(readonly) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)checkValidationToken:(CDStruct_32a7f38a *)arg1;
 - (CDStruct_32a7f38a)validationToken;

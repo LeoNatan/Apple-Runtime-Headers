@@ -14,9 +14,9 @@
     struct smbfattr _attributes;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property struct smbfattr attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 
 @end
 

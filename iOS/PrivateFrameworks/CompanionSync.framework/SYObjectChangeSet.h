@@ -15,10 +15,10 @@
     NSMutableSet *_deleted;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableSet *deleted; // @synthesize deleted=_deleted;
 @property(copy, nonatomic) NSMutableSet *updated; // @synthesize updated=_updated;
 @property(copy, nonatomic) NSMutableSet *added; // @synthesize added=_added;
-- (void).cxx_destruct;
 - (void)applyToStore:(id)arg1;
 - (id)initWithChangesBetween:(id)arg1 and:(id)arg2;
 - (id)init;

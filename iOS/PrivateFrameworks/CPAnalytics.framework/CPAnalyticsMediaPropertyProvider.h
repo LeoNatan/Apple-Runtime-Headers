@@ -15,9 +15,9 @@
 }
 
 - (id)_descriptionForMediaAge:(double)arg1;
-- (struct NSObject *)_mediaProperty:(id)arg1 forAsset:(id)arg2;
+- (id)_mediaProperty:(id)arg1 forAsset:(id)arg2;
 - (id)_PHAssetFromPayload:(id)arg1;
-- (struct NSObject *)getDynamicProperty:(id)arg1 forEventName:(id)arg2 withPayload:(id)arg3;
+- (id)getDynamicProperty:(id)arg1 forEventName:(id)arg2 payloadForSystemPropertyExtraction:(id)arg3;
 - (void)registerAndProvideMediaPropertiesFor:(id)arg1;
 
 // Remaining properties

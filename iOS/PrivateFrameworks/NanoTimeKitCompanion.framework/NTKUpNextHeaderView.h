@@ -14,8 +14,8 @@
     CLKTextProvider *_textProvider;
 }
 
-@property(copy, nonatomic) CLKTextProvider *textProvider; // @synthesize textProvider=_textProvider;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CLKTextProvider *textProvider; // @synthesize textProvider=_textProvider;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

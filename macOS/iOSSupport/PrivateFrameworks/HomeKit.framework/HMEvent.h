@@ -27,11 +27,11 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)sharedTriggerActivationSupportedForHome:(id)arg1;
 + (BOOL)isSupportedForHome:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *triggerType; // @synthesize triggerType=_triggerType;
 @property(nonatomic, getter=isEndEvent) BOOL endEvent; // @synthesize endEvent=_endEvent;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)_serializeForAdd;
 - (void)encodeWithCoder:(id)arg1;

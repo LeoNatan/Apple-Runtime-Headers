@@ -18,13 +18,13 @@
     NSArray *_plotPoints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *plotPoints; // @synthesize plotPoints=_plotPoints;
 @property(nonatomic) struct CGGradient *barGradient; // @synthesize barGradient=_barGradient;
 @property(nonatomic) double roundedCornerRadius; // @synthesize roundedCornerRadius=_roundedCornerRadius;
 @property(nonatomic) double barSpacing; // @synthesize barSpacing=_barSpacing;
 @property(nonatomic) double barWidth; // @synthesize barWidth=_barWidth;
 @property(nonatomic) NSDate *minDate; // @synthesize minDate=_minDate;
-- (void).cxx_destruct;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (double)yValueForPointFromChartPointValue:(id)arg1;
 - (double)xValueForPointFromChartPoint:(id)arg1;

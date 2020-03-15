@@ -16,9 +16,9 @@
     UILabel *_hint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *hint; // @synthesize hint=_hint;
 @property(retain, nonatomic) UILabel *abbreviation; // @synthesize abbreviation=_abbreviation;
-- (void).cxx_destruct;
 - (id)accessibilityIdentifier;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;

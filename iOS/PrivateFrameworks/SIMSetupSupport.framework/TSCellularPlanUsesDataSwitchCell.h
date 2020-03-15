@@ -14,9 +14,9 @@
     UISwitch *_switchControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UISwitch *switchControl; // @synthesize switchControl=_switchControl;
 @property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

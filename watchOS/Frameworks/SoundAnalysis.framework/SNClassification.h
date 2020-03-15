@@ -17,9 +17,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_init;
 - (id)init;
 

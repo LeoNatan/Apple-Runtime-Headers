@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CNContact *_contact;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 - (struct CGRect)cropRectForAsset:(id)arg1 face:(id)arg2;
 - (id)getItemsFromPhotoLibraryWithItemDelegate:(id)arg1;
 - (id)loadItemsForSize:(struct CGSize)arg1 scale:(double)arg2 RTL:(BOOL)arg3 renderingQueue:(id)arg4 callbackQueue:(id)arg5 itemDelegate:(id)arg6;

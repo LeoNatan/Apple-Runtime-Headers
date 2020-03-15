@@ -20,9 +20,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)quantityWithUnit:(id)arg1 doubleValue:(double)arg2;
 + (id)_quantityWithBeatsPerMinute:(double)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_value) double value; // @synthesize value=_value;
 @property(readonly, nonatomic, getter=_unit) HKUnit *unit; // @synthesize unit=_unit;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

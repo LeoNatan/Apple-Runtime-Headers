@@ -13,8 +13,8 @@
     SBBannerContextView *_bannerContextView;
 }
 
-@property(retain, nonatomic) SBBannerContextView *bannerContextView; // @synthesize bannerContextView=_bannerContextView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBBannerContextView *bannerContextView; // @synthesize bannerContextView=_bannerContextView;
 - (void)noteDidDismissWithReason:(int)arg1;
 - (void)noteWillDismissWithReason:(int)arg1;
 - (void)noteDidAppear;

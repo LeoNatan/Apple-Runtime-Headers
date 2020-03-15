@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     MKImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MKImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) _MKUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (id)lastBaselineAnchor;
 - (id)firstBaselineAnchor;

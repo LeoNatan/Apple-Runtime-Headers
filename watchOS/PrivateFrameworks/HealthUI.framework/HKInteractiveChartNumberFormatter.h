@@ -13,8 +13,8 @@
     NSString *_unitFormatString;
 }
 
-@property(copy, nonatomic) NSString *unitFormatString; // @synthesize unitFormatString=_unitFormatString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *unitFormatString; // @synthesize unitFormatString=_unitFormatString;
 - (id)formattedValueStringForChartData:(id)arg1 options:(int)arg2;
 - (id)formattedSelectedRangeLabelDataWithChartData:(id)arg1;
 - (id)_formattedStringWithValue:(id)arg1 formatter:(id)arg2;

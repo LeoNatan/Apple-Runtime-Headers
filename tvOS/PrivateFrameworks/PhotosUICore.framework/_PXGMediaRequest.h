@@ -17,12 +17,12 @@
     struct CGSize _bestReceivedSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool gotAnyResult; // @synthesize gotAnyResult=_gotAnyResult;
 @property(nonatomic) struct CGSize bestReceivedSize; // @synthesize bestReceivedSize=_bestReceivedSize;
 @property(readonly, nonatomic) unsigned long long postProcessOptions; // @synthesize postProcessOptions=_postProcessOptions;
 @property(readonly, nonatomic) id <PXGDisplayAssetRequestObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)initWithAsset:(id)arg1 observer:(id)arg2 postProcessOptions:(unsigned long long)arg3;
 
 @end

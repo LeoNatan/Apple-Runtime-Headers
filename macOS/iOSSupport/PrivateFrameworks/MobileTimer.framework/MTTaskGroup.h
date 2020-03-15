@@ -15,9 +15,9 @@
 }
 
 + (id)taskGroupWithTasks:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) NSArray *tasks; // @synthesize tasks=_tasks;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -20,9 +20,9 @@
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *productsURL; // @synthesize productsURL=_productsURL;
 @property(copy, nonatomic) NSArray *productCodeWhitelist; // @synthesize productCodeWhitelist=_productCodeWhitelist;
-- (void).cxx_destruct;
 - (void)resetProducts;
 - (id)productForCode:(id)arg1;
 - (id)productCodesForProjectType:(long long)arg1;

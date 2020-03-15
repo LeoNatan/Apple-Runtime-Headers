@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     long long _progressType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldSuppressCloudRestore; // @synthesize shouldSuppressCloudRestore=_shouldSuppressCloudRestore;
 @property(nonatomic) _Bool shouldSuppressEnabled; // @synthesize shouldSuppressEnabled=_shouldSuppressEnabled;
 @property(nonatomic) _Bool showsUniversal; // @synthesize showsUniversal=_showsUniversal;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *confirmationText; // @synthesize confirmationText=_confirmationText;
 @property(copy, nonatomic) NSString *buttonText; // @synthesize buttonText=_buttonText;
 @property(nonatomic) long long buttonType; // @synthesize buttonType=_buttonType;
-- (void).cxx_destruct;
 - (_Bool)canPerformLocalActionWithItemState:(id)arg1;
 - (_Bool)canPersonalizeUsingItemState:(id)arg1;
 

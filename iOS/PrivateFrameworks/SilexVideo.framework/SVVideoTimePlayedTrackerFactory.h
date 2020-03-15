@@ -19,11 +19,11 @@
     id <SVVideoTimeJumpObserverFactory> _timeJumpObserverFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoTimeJumpObserverFactory> timeJumpObserverFactory; // @synthesize timeJumpObserverFactory=_timeJumpObserverFactory;
 @property(readonly, nonatomic) id <SVVideoPlaybackStateObserverFactory> playbackStateObserverFactory; // @synthesize playbackStateObserverFactory=_playbackStateObserverFactory;
 @property(readonly, nonatomic) id <SVVideoTimeProviderFactory> timeProviderFactory; // @synthesize timeProviderFactory=_timeProviderFactory;
 @property(readonly, nonatomic) id <SVVideoPeriodicTimeObserverFactory> timeObserverFactory; // @synthesize timeObserverFactory=_timeObserverFactory;
-- (void).cxx_destruct;
 - (id)createTimePlayedTrackerForVideo:(id)arg1;
 - (id)initWithTimeObserverFactory:(id)arg1 timeProviderFactory:(id)arg2 playbackStateObserverFactory:(id)arg3 timeJumpObserverFactory:(id)arg4;
 

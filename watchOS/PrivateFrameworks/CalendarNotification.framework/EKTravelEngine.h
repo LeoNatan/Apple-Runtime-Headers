@@ -37,12 +37,12 @@
 + (id)travelEligibleEventsInEventStore:(id)arg1;
 + (double)requestRefreshTimeInterval;
 + (id)requestedDarwinNotifications;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool authorizedInternal; // @synthesize authorizedInternal=_authorizedInternal;
 @property(readonly, nonatomic) id <CALNRouteHypothesizerProvider> routeHypothesizerProvider; // @synthesize routeHypothesizerProvider=_routeHypothesizerProvider;
 @property(copy, nonatomic) CDUnknownBlockType eventSignificantlyChangedBlock; // @synthesize eventSignificantlyChangedBlock=_eventSignificantlyChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType authorizationChangedBlock; // @synthesize authorizationChangedBlock=_authorizationChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType adviceBlock; // @synthesize adviceBlock=_adviceBlock;
-- (void).cxx_destruct;
 - (void)_sendFeedbackForPostingNotificationForEventWithExternalURL:(id)arg1 feedback:(CDUnknownBlockType)arg2;
 - (void)_uninstallLocationManager;
 - (void)_installLocationManager;

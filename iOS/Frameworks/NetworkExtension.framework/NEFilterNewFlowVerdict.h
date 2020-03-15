@@ -13,6 +13,7 @@
 {
     _Bool _filterInbound;
     _Bool _filterOutbound;
+    long long _statisticsReportFrequency;
     unsigned long long _peekInboundBytes;
     unsigned long long _peekOutboundBytes;
 }
@@ -29,6 +30,9 @@
 @property unsigned long long peekInboundBytes; // @synthesize peekInboundBytes=_peekInboundBytes;
 @property _Bool filterOutbound; // @synthesize filterOutbound=_filterOutbound;
 @property _Bool filterInbound; // @synthesize filterInbound=_filterInbound;
+@property long long statisticsReportFrequency; // @synthesize statisticsReportFrequency=_statisticsReportFrequency;
+- (long long)filterAction;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -13,8 +13,8 @@
     NSArray *_virtualCards;
 }
 
-@property(readonly, copy, nonatomic) NSArray *virtualCards; // @synthesize virtualCards=_virtualCards;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *virtualCards; // @synthesize virtualCards=_virtualCards;
 - (id)initWithData:(id)arg1;
 
 @end

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <Email/EFPubliclyDescribable-Protocol.h>
 #import <Email/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSError;
+@class NSArray, NSError, NSString;
 
-@interface EMSecurityInformation : NSObject <NSSecureCoding>
+@interface EMSecurityInformation : NSObject <NSSecureCoding, EFPubliclyDescribable>
 {
     BOOL _isEncrypted;
     BOOL _hasEncryptedDescendantPart;
@@ -19,16 +20,23 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *smimeError; // @synthesize smimeError=_smimeError;
 @property(readonly, nonatomic) BOOL hasEncryptedDescendantPart; // @synthesize hasEncryptedDescendantPart=_hasEncryptedDescendantPart;
 @property(readonly, nonatomic) NSArray *signers; // @synthesize signers=_signers;
 @property(readonly, nonatomic) BOOL isEncrypted; // @synthesize isEncrypted=_isEncrypted;
-- (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)reevaluateTrustWithNetworkAccessAllowed;
 @property(readonly, nonatomic) BOOL isSigned;
 - (id)initWithSigners:(id)arg1 isEncrypted:(BOOL)arg2 hasEncryptedDescendantPart:(BOOL)arg3 smimeError:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

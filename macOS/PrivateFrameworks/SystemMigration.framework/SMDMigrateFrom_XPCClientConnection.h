@@ -17,8 +17,8 @@
 
 + (id)daemonProtocolInterface;
 + (id)daemonProtocolInterfaceInstance;
-@property(retain) NSNumber *trustedPasscode; // @synthesize trustedPasscode=_trustedPasscode;
 - (void).cxx_destruct;
+@property(retain) NSNumber *trustedPasscode; // @synthesize trustedPasscode=_trustedPasscode;
 - (void)rejectTrustedPassCode;
 - (void)acceptTrustedPassCode;
 - (void)stopServingRemoteMacs;

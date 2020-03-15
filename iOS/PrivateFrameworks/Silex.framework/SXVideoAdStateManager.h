@@ -23,6 +23,7 @@
     NFStateMachine *_stateMachine;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NFStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(copy, nonatomic, setter=onSkip:) CDUnknownBlockType onSkipBlock; // @synthesize onSkipBlock;
 @property(copy, nonatomic, setter=onLearnMore:) CDUnknownBlockType onLearnMoreBlock; // @synthesize onLearnMoreBlock;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic, setter=onResume:) CDUnknownBlockType onResumeBlock; // @synthesize onResumeBlock;
 @property(copy, nonatomic, setter=onPause:) CDUnknownBlockType onPauseBlock; // @synthesize onPauseBlock;
 @property(copy, nonatomic, setter=onPlay:) CDUnknownBlockType onPlayBlock; // @synthesize onPlayBlock;
-- (void).cxx_destruct;
 - (void)skip;
 - (void)learnMore;
 - (void)failWithError:(id)arg1;

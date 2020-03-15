@@ -15,9 +15,9 @@
     IKJSTabBar *_jsTabBar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak IKJSTabBar *jsTabBar; // @synthesize jsTabBar=_jsTabBar;
 @property(readonly, nonatomic) __weak id <IKAppTabBarController> controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)onSelect;
 - (id)initWithTabBarController:(id)arg1;
 

@@ -21,6 +21,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *sessionsTableQ; // @synthesize sessionsTableQ=_sessionsTableQ;
 @property(retain, nonatomic) NSMapTable *sessionsTable; // @synthesize sessionsTable=_sessionsTable;
 @property unsigned long long requestedService; // @synthesize requestedService=_requestedService;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) SFService *service; // @synthesize service=_service;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property __weak id <TRNearbyDeviceAdvertiserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_respondToRequest:(id)arg1 withError:(id)arg2;
 - (void)_handleNewConnectionFromPeerDevice:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_requestSessionForMessage:(id)arg1 withCallback:(CDUnknownBlockType)arg2;

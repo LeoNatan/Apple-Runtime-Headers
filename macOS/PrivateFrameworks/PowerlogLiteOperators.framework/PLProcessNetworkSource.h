@@ -15,10 +15,10 @@
     struct __NStatSource *_source;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct __NStatSource *source; // @synthesize source=_source;
 @property(copy, nonatomic) NSDictionary *countsDictionary; // @synthesize countsDictionary=_countsDictionary;
 @property(copy, nonatomic) NSDictionary *descriptionDictionary; // @synthesize descriptionDictionary=_descriptionDictionary;
-- (void).cxx_destruct;
 - (id)initWithSource:(struct __NStatSource *)arg1;
 
 @end

@@ -17,11 +17,11 @@
     id <MTLTexture> _glowTex;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTLTexture> glowTex; // @synthesize glowTex=_glowTex;
 @property(retain, nonatomic) id <MTLTexture> numbersTex; // @synthesize numbersTex=_numbersTex;
 @property(retain, nonatomic) NSNumber *glow; // @synthesize glow=_glow;
 @property(retain, nonatomic) NSNumber *numbers; // @synthesize numbers=_numbers;
-- (void).cxx_destruct;
 
 @end
 

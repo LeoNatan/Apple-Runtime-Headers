@@ -21,13 +21,13 @@
 }
 
 + (id)resultWithSingleError:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *partialInfoPlist; // @synthesize partialInfoPlist=_partialInfoPlist;
 @property(copy, nonatomic) NSArray *issues; // @synthesize issues=_issues;
 @property(copy, nonatomic) NSArray *softErrors; // @synthesize softErrors=_softErrors;
 @property(copy, nonatomic) NSArray *hardErrors; // @synthesize hardErrors=_hardErrors;
 @property(copy, nonatomic) NSArray *outputFiles; // @synthesize outputFiles=_outputFiles;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (void)mergeResults:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)addOutputFiles:(id)arg1;

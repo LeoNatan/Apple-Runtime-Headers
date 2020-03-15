@@ -15,9 +15,9 @@
     NSMutableSet *__reasonsForDisablingPreview;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *_reasonsForDisablingPreview; // @synthesize _reasonsForDisablingPreview=__reasonsForDisablingPreview;
 @property(nonatomic) __weak id <CAMDisabledPreviewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_descriptionForReasons:(id)arg1;
 - (id)_descriptionStringForReason:(long long)arg1;
 - (void)removeDisabledPreviewReason:(long long)arg1;

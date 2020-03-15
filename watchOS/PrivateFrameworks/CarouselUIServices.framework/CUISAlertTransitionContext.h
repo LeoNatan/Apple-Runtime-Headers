@@ -24,6 +24,7 @@
     struct CGRect _finalFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CUISAlertTransitionContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType didCompleteHandler; // @synthesize didCompleteHandler=_didCompleteHandler;
 @property(copy, nonatomic) CDUnknownBlockType willCompleteHandler; // @synthesize willCompleteHandler=_willCompleteHandler;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) CUISAlertViewController *alertViewController; // @synthesize alertViewController=_alertViewController;
 @property(nonatomic) struct CGRect finalFrame; // @synthesize finalFrame=_finalFrame;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)isComplete;
 - (_Bool)transitionWasCancelled;

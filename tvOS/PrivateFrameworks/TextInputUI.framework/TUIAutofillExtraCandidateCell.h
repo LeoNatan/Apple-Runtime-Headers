@@ -16,9 +16,9 @@
 
 + (id)reuseIdentifier;
 + (id)attributedStringForIcon:(id)arg1 text:(id)arg2 font:(id)arg3 color:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) TIKeyboardCandidate *candidate; // @synthesize candidate=_candidate;
-- (void).cxx_destruct;
 - (void)updateLabel;
 - (void)layoutSubviews;
 - (void)setStyle:(id)arg1;

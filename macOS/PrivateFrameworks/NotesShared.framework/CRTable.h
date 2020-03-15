@@ -19,9 +19,9 @@
 
 + (id)CRProperties;
 + (void)registerWithCRCoder;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<CRUndoDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak CRDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (BOOL)wantsUndoCommands;
 - (void)addUndoCommandsForObject:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (BOOL)isEqual:(id)arg1;

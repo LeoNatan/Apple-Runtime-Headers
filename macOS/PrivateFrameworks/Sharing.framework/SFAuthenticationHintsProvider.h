@@ -25,6 +25,7 @@
 
 + (id)sharedInstance;
 + (void)start;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *userXPCConnections; // @synthesize userXPCConnections=_userXPCConnections;
 @property(retain) id <AuthenticationHintsDelegate> hintsDelegate; // @synthesize hintsDelegate=_hintsDelegate;
 @property(retain) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
@@ -32,7 +33,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 @property(retain) NSXPCConnection *userConnection; // @synthesize userConnection=_userConnection;
-- (void).cxx_destruct;
 - (void)notifyUserNameNotAvailable:(id)arg1;
 - (void)invalidateAllUserConnections;
 - (void)updateXPCConnectionForUserName:(id)arg1;

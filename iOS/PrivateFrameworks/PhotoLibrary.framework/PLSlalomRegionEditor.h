@@ -36,6 +36,7 @@
     struct UIEdgeInsets _trackInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isZoomAnimating, setter=setZoomAnimating:) _Bool zoomAnimating; // @synthesize zoomAnimating=_zoomAnimating;
 @property(nonatomic) double zoomDelay; // @synthesize zoomDelay=_zoomDelay;
 @property(nonatomic) double endValue; // @synthesize endValue=_endValue;
@@ -46,7 +47,6 @@
 @property(nonatomic) double trimHandleWidth; // @synthesize trimHandleWidth=_trimHandleWidth;
 @property(nonatomic) struct UIEdgeInsets trackInsets; // @synthesize trackInsets=_trackInsets;
 @property(nonatomic) id <PLSlalomRegionEditorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_handleImage;
 - (void)_drawCurveWithFlatEndsFromX:(double)arg1 fromY:(double)arg2 toX:(double)arg3 toY:(double)arg4;
 - (id)_handleTintColor;

@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)supportsSecureCoding;
 + (id)loadFromClientStateInSession:(id)arg1 options:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKOperationGroup *ckGroup; // @synthesize ckGroup=_ckGroup;
 @property(nonatomic) BOOL needsSyncDown; // @synthesize needsSyncDown=_needsSyncDown;
 @property(readonly, nonatomic) unsigned long long requestID; // @synthesize requestID=_requestID;
 @property(readonly, nonatomic) CKServerChangeToken *changeToken; // @synthesize changeToken=_changeToken;
 @property(readonly) NSDate *lastSyncDownDate; // @synthesize lastSyncDownDate=_lastSyncDownDate;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)allocateNextRequestID;
 - (void)zoneHealthWasReset;

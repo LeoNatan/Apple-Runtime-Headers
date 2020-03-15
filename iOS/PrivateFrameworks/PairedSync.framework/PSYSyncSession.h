@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long syncSessionState; // @synthesize syncSessionState=_syncSessionState;
 @property(retain, nonatomic) NSArray *activities; // @synthesize activities=_activities;
 @property(nonatomic) _Bool supportsMigrationSync; // @synthesize supportsMigrationSync=_supportsMigrationSync;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(nonatomic) long long switchIndex; // @synthesize switchIndex=_switchIndex;
 @property(retain, nonatomic) NSUUID *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) double sessionProgress;
 - (_Bool)isEqual:(id)arg1;

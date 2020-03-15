@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _lastOrientation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool unitTestSampling; // @synthesize unitTestSampling=_unitTestSampling;
 @property(nonatomic) unsigned long long lastOrientation; // @synthesize lastOrientation=_lastOrientation;
 @property(nonatomic) double lastRoll; // @synthesize lastRoll=_lastRoll;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int currentState; // @synthesize currentState=_currentState;
 @property(copy) CDUnknownBlockType stateChangedCallback; // @synthesize stateChangedCallback=_stateChangedCallback;
 @property(retain, nonatomic) AWSampleLogger *sampleLogger; // @synthesize sampleLogger=_sampleLogger;
-- (void).cxx_destruct;
 - (id)initWithMask:(unsigned long long)arg1;
 - (void)setSmartCoverClosed:(_Bool)arg1;
 - (void)shouldSample:(_Bool)arg1 withDeadline:(unsigned long long)arg2;

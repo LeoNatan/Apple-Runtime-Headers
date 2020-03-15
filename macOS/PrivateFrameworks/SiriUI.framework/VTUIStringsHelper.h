@@ -17,8 +17,8 @@
 
 + (void)initialize;
 + (id)sharedStringsHelper;
-@property(readonly, nonatomic) NSString *heySiriTriggerPhrase; // @synthesize heySiriTriggerPhrase=_heySiriTriggerPhrase;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *heySiriTriggerPhrase; // @synthesize heySiriTriggerPhrase=_heySiriTriggerPhrase;
 - (id)_siriLanguageSubstitutedString:(id)arg1;
 - (id)siriLanguageStringForKey:(id)arg1;
 - (id)uiLocalizedStringForKey:(id)arg1;

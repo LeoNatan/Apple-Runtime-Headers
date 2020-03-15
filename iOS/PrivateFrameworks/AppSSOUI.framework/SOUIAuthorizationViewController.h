@@ -16,10 +16,12 @@
 {
     UIViewController *_extensionViewController;
     id <SOUIAuthorizationViewControllerDelegate> _delegate;
+    CDUnknownBlockType _dismissCompletionHandler;
 }
 
-@property __weak id <SOUIAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType dismissCompletionHandler; // @synthesize dismissCompletionHandler=_dismissCompletionHandler;
+@property __weak id <SOUIAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_cancel;
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -29,6 +31,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (unsigned long long)supportedInterfaceOrientations;
+- (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)shouldAutorotate;
 - (void)loadView;
 - (id)initWithExtensionViewController:(id)arg1 hints:(id)arg2;

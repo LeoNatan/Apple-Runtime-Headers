@@ -17,10 +17,10 @@
     HDCodableMedicalCoding *_unitCoding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalCoding *unitCoding; // @synthesize unitCoding=_unitCoding;
 @property(retain, nonatomic) HDCodableMedicalCoding *comparatorCoding; // @synthesize comparatorCoding=_comparatorCoding;
 @property(retain, nonatomic) NSString *rawValue; // @synthesize rawValue=_rawValue;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

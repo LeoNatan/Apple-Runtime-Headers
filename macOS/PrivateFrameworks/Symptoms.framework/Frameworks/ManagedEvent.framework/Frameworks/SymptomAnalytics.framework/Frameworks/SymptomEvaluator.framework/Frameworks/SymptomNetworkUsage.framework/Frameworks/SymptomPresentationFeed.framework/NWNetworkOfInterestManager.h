@@ -21,11 +21,11 @@
     NSObject<OS_dispatch_queue> *_callerQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *callerQueue; // @synthesize callerQueue=_callerQueue;
 @property(retain) id <ServiceInterface> service; // @synthesize service=_service;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateNOI:(id)arg1 keyPath:(id)arg2 change:(id)arg3;
 - (void)haveNOIs:(id)arg1 tornDown:(BOOL)arg2;
 - (void)trafficInvitesHourlyDistributionForNOI:(id)arg1 reply:(CDUnknownBlockType)arg2;

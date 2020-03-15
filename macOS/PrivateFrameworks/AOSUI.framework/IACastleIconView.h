@@ -14,9 +14,9 @@
     BOOL _enabled;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (BOOL)accessibilityIsIgnored;
 - (void)drawRect:(struct CGRect)arg1;

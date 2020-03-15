@@ -18,10 +18,10 @@
     NSMapTable *_whenExpressions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *whenExpressions; // @synthesize whenExpressions=_whenExpressions;
 @property(readonly, nonatomic) id <EFSQLExpressable> baseExpression; // @synthesize baseExpression=_baseExpression;
 @property(retain, nonatomic) id <EFSQLExpressable> elseExpression; // @synthesize elseExpression=_elseExpression;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;

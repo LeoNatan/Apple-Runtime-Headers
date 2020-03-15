@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _UIStatusBarActivityIndicator *_activityIndicator;
 }
 
-@property(retain, nonatomic) _UIStatusBarActivityIndicator *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIStatusBarActivityIndicator *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (_Bool)_enableForType:(long long)arg1;
 - (id)viewForIdentifier:(id)arg1;

@@ -39,6 +39,7 @@
     PUICStatusBarGlobalContextViewAssertion *_statusBarAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICStatusBarGlobalContextViewAssertion *statusBarAssertion; // @synthesize statusBarAssertion=_statusBarAssertion;
 @property(retain, nonatomic) AKAuthorizationViewController *authorizationViewController; // @synthesize authorizationViewController=_authorizationViewController;
 @property(retain, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) NSString *alertMessage; // @synthesize alertMessage=_alertMessage;
 @property(copy, nonatomic) NSString *alertTitle; // @synthesize alertTitle=_alertTitle;
 @property(nonatomic) __weak id <AKAlertViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_main_dismissAndExit;
 - (void)_dismissAndExit;
 - (void)_didCompleteWithError:(id)arg1;

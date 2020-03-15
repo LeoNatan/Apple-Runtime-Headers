@@ -35,6 +35,7 @@
 }
 
 + (double)barToBarHorizontalDistanceIncludingBarWidth;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EKDayOccurrenceState *currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) double bottomPinningProximity; // @synthesize bottomPinningProximity=_bottomPinningProximity;
 @property(nonatomic) double topPinningProximity; // @synthesize topPinningProximity=_topPinningProximity;
@@ -47,7 +48,6 @@
 @property(nonatomic) _Bool isProposedTime; // @synthesize isProposedTime=_isProposedTime;
 @property(nonatomic) _Bool usesSmallText; // @synthesize usesSmallText=_usesSmallText;
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (void)_updateWithPayload:(id)arg1;
 - (void)_requestPayload:(_Bool)arg1;
 @property(nonatomic) double travelTimeHeight;

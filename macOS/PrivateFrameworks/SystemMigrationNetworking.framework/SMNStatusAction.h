@@ -22,6 +22,7 @@
 
 + (id)actionWithPayload:(id)arg1;
 + (int)actionID;
+- (void).cxx_destruct;
 @property unsigned long long sourceInterfaceIconType; // @synthesize sourceInterfaceIconType=_sourceInterfaceIconType;
 @property unsigned long long sourceInterfaceType; // @synthesize sourceInterfaceType=_sourceInterfaceType;
 @property(retain) NSString *sourceInterfaceTypeString; // @synthesize sourceInterfaceTypeString=_sourceInterfaceTypeString;
@@ -30,7 +31,6 @@
 @property(retain) NSString *text; // @synthesize text=_text;
 @property(retain) NSNumber *percentDone; // @synthesize percentDone=_percentDone;
 @property(retain) NSNumber *timeRemaining; // @synthesize timeRemaining=_timeRemaining;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)keepAlive;
 - (BOOL)returnsData;

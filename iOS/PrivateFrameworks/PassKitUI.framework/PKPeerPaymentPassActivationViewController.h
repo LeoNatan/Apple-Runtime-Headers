@@ -27,8 +27,8 @@
     _Bool _presentedDeviceToDeviceEncryptionFlow;
 }
 
-@property(nonatomic) _Bool presentedDeviceToDeviceEncryptionFlow; // @synthesize presentedDeviceToDeviceEncryptionFlow=_presentedDeviceToDeviceEncryptionFlow;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool presentedDeviceToDeviceEncryptionFlow; // @synthesize presentedDeviceToDeviceEncryptionFlow=_presentedDeviceToDeviceEncryptionFlow;
 - (void)_terminateSetupFlow;
 - (void)_handleNextStep;
 - (void)_handleError:(id)arg1;

@@ -101,6 +101,7 @@
 + (_Bool)_canEnableTrackingAnimationsWithAnimators;
 + (id)_currentTrackedAnimationsUUID;
 + (id)runningPropertyAnimatorWithDuration:(double)arg1 delay:(double)arg2 options:(unsigned long long)arg3 animations:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isIntrospectable) _Bool introspectable; // @synthesize introspectable=_introspectable;
 @property(nonatomic, setter=_setShouldLayoutSubviews:) _Bool shouldLayoutSubviews; // @synthesize shouldLayoutSubviews=_shouldLayoutSubviews;
 @property(nonatomic, getter=_isPausedOnCompletion, setter=_setPausedOnCompletion:) _Bool pausedOnCompletion; // @synthesize pausedOnCompletion=_pausedOnCompletion;
@@ -122,7 +123,6 @@
 @property(retain, nonatomic, getter=_trackingIdentifier, setter=_setTrackingIdentifier:) NSUUID *trackingIdentifier; // @synthesize trackingIdentifier=_trackingIdentifier;
 @property(readonly, nonatomic) _Bool useCoreAnimation; // @synthesize useCoreAnimation=_useCoreAnimation;
 @property(nonatomic) double internalDuration; // @synthesize internalDuration=_internalDuration;
-- (void).cxx_destruct;
 - (void)interactionProgress:(id)arg1 didEnd:(_Bool)arg2;
 - (void)interactionProgressDidUpdate:(id)arg1;
 - (void)startAnimationAfterDelay:(double)arg1;

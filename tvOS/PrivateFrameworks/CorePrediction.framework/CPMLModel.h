@@ -22,8 +22,8 @@
 }
 
 + (id)initCPModelPath:(id)arg1 withConfiguration:(id)arg2;
-@property(retain) CPMLModelEvaluate *cpModelEvaluate; // @synthesize cpModelEvaluate;
 - (void).cxx_destruct;
+@property(retain) CPMLModelEvaluate *cpModelEvaluate; // @synthesize cpModelEvaluate;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setCPMLAlgorithmEngine:(id)arg1;
 - (void)setCPMLAlgorithm:(id)arg1;

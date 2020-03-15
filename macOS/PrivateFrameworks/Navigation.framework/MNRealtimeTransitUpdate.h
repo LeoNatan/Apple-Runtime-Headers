@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) GEOTransitRouteUpdate *transitUpdate; // @synthesize transitUpdate=_transitUpdate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) GEOTransitRouteUpdate *transitUpdate; // @synthesize transitUpdate=_transitUpdate;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

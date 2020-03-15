@@ -16,8 +16,8 @@
     id <SXUnitConverterFactory> _unitConverterFactory;
 }
 
-@property(readonly, nonatomic) id <SXUnitConverterFactory> unitConverterFactory; // @synthesize unitConverterFactory=_unitConverterFactory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXUnitConverterFactory> unitConverterFactory; // @synthesize unitConverterFactory=_unitConverterFactory;
 - (void)finalizeLayoutBlueprint:(id)arg1 origin:(struct CGPoint)arg2 absoluteOrigin:(struct CGPoint)arg3;
 - (void)processLayoutTask:(id)arg1 layoutBlueprint:(id)arg2 DOMObjectProvider:(id)arg3;
 - (id)initWithUnitConverterFactory:(id)arg1;

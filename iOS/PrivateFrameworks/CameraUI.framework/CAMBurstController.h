@@ -24,6 +24,7 @@
     CAMRemoteShutterController *__remoteShutterController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAMRemoteShutterController *_remoteShutterController; // @synthesize _remoteShutterController=__remoteShutterController;
 @property(readonly, nonatomic) CAMPowerController *_powerController; // @synthesize _powerController=__powerController;
 @property(readonly, nonatomic) CAMProtectionController *_protectionController; // @synthesize _protectionController=__protectionController;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSCountedSet *_inflightRequestsByIdentifier; // @synthesize _inflightRequestsByIdentifier=__inflightRequestsByIdentifier;
 @property(readonly, nonatomic) NSMutableDictionary *_sessionsByIdentifier; // @synthesize _sessionsByIdentifier=__sessionsByIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_mutexQueue; // @synthesize _mutexQueue=__mutexQueue;
-- (void).cxx_destruct;
 - (unsigned long long)inflightCountForIdentifier:(id)arg1;
 - (unsigned long long)estimatedCountForIdentifier:(id)arg1;
 - (void)processFaceResults:(id)arg1;

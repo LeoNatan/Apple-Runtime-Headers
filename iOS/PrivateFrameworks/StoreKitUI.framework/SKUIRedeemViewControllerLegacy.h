@@ -31,6 +31,7 @@
 }
 
 + (_Bool)redeemRequiresNationalId:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
 @property(nonatomic) _Bool shouldPerformInitialOperationOnAppear; // @synthesize shouldPerformInitialOperationOnAppear=_shouldPerformInitialOperationOnAppear;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) long long category; // @synthesize category=_category;
 @property(nonatomic) _Bool cameraRedeemVisible; // @synthesize cameraRedeemVisible=_cameraRedeemVisible;
 @property(nonatomic) _Bool attempsAutomaticRedeem; // @synthesize attempsAutomaticRedeem=_attempsAutomaticRedeem;
-- (void).cxx_destruct;
 - (void)_showNationalIdLoadingPage;
 - (void)_showNationalIdVerificationPage;
 - (void)_executeIdValidationOperationWithFields:(id)arg1;

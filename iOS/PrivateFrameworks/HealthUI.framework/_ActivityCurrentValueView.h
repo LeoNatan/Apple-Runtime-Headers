@@ -15,10 +15,10 @@
     HKActivitySummaryDataProvider *_activitySummaryDataProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKActivitySummaryDataProvider *activitySummaryDataProvider; // @synthesize activitySummaryDataProvider=_activitySummaryDataProvider;
 @property(retain, nonatomic) _ActivityCurrentValueDataSource *currentValueDataSource; // @synthesize currentValueDataSource=_currentValueDataSource;
 @property(readonly, nonatomic) HKInteractiveChartAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
-- (void).cxx_destruct;
 - (id)_findFirstActivitySeriesInGraphView:(id)arg1;
 - (void)_updateForDayWithGraphView:(id)arg1;
 - (void)_updateWithGraphView:(id)arg1 forTimeScopeAboveDay:(long long)arg2;

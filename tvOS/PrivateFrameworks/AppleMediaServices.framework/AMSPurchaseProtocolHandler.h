@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     AMSPurchaseQueue *_queue;
 }
 
-@property(nonatomic) __weak AMSPurchaseQueue *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AMSPurchaseQueue *queue; // @synthesize queue=_queue;
 - (void)_handlePasswordSettingWithBuyParams:(id)arg1 account:(id)arg2;
 - (_Bool)_handleFailureForAction:(id)arg1 response:(id)arg2 task:(id)arg3 decodedObject:(id)arg4 responseDictionary:(id)arg5;
 - (void)AMSURLSession:(id)arg1 task:(id)arg2 handleAuthenticateRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;

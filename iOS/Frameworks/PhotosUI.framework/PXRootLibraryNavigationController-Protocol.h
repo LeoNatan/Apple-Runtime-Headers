@@ -7,7 +7,8 @@
 #import <PhotosUI/NSObject-Protocol.h>
 #import <PhotosUI/PLCloudFeedNavigating-Protocol.h>
 
-@class NSString, NSURL, PLCloudSharedAlbum, PLCloudSharedComment, PLManagedAsset;
+@class NSObject, NSString, NSURL, PLCloudSharedAlbum, PLCloudSharedComment, PLManagedAsset;
+@protocol PLAlbumProtocol;
 
 @protocol PXRootLibraryNavigationController <NSObject, PLCloudFeedNavigating>
 - (void)navigateToPeopleAlbumAnimated:(_Bool)arg1 revealPersonWithLocalIdentifier:(NSString *)arg2 completion:(void (^)(UIViewController *))arg3;
@@ -20,14 +21,14 @@
 - (_Bool)assetIsAvailableForNavigationInMoments:(PLManagedAsset *)arg1;
 - (_Bool)cloudFeedIsAvailableForNavigation;
 - (_Bool)commentIsAvailableForNavigation:(PLCloudSharedComment *)arg1 inAsset:(PLManagedAsset *)arg2;
-- (_Bool)assetIsAvailableForNavigation:(PLManagedAsset *)arg1 inAlbum:(struct NSObject *)arg2;
-- (_Bool)albumIsAvailableForNavigation:(struct NSObject *)arg1;
+- (_Bool)assetIsAvailableForNavigation:(PLManagedAsset *)arg1 inAlbum:(NSObject<PLAlbumProtocol> *)arg2;
+- (_Bool)albumIsAvailableForNavigation:(NSObject<PLAlbumProtocol> *)arg1;
 - (_Bool)contentModeIsAvailableForNavigation:(int)arg1;
 - (void)navigateToComment:(PLCloudSharedComment *)arg1 forAsset:(PLManagedAsset *)arg2 animated:(_Bool)arg3;
-- (void)navigateToRevealAsset:(PLManagedAsset *)arg1 inAlbum:(struct NSObject *)arg2 animated:(_Bool)arg3;
-- (void)navigateToAsset:(PLManagedAsset *)arg1 inAlbum:(struct NSObject *)arg2 animated:(_Bool)arg3;
-- (void)navigateToRevealAlbum:(struct NSObject *)arg1 initiallyHidden:(_Bool)arg2 animated:(_Bool)arg3;
-- (void)navigateToAlbum:(struct NSObject *)arg1 animated:(_Bool)arg2 completion:(void (^)(UIViewController *))arg3;
+- (void)navigateToRevealAsset:(PLManagedAsset *)arg1 inAlbum:(NSObject<PLAlbumProtocol> *)arg2 animated:(_Bool)arg3;
+- (void)navigateToAsset:(PLManagedAsset *)arg1 inAlbum:(NSObject<PLAlbumProtocol> *)arg2 animated:(_Bool)arg3;
+- (void)navigateToRevealAlbum:(NSObject<PLAlbumProtocol> *)arg1 initiallyHidden:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)navigateToAlbum:(NSObject<PLAlbumProtocol> *)arg1 animated:(_Bool)arg2 completion:(void (^)(UIViewController *))arg3;
 - (void)navigateToRevealCloudFeedInvitationForAlbum:(PLCloudSharedAlbum *)arg1 completion:(void (^)(UIViewController *))arg2;
 - (void)navigateToCloudFeedComment:(PLCloudSharedComment *)arg1 completion:(void (^)(UIViewController *))arg2;
 - (void)navigateToRevealCloudFeedComment:(PLCloudSharedComment *)arg1 completion:(void (^)(UIViewController *))arg2;

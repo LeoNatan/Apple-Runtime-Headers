@@ -16,8 +16,8 @@
     id <SWScriptsManager> _scriptsManager;
 }
 
-@property(readonly, nonatomic) id <SWScriptsManager> scriptsManager; // @synthesize scriptsManager=_scriptsManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SWScriptsManager> scriptsManager; // @synthesize scriptsManager=_scriptsManager;
 - (void)performSetup;
 @property(readonly, nonatomic) NSString *identifier;
 - (id)initWithScriptsManager:(id)arg1;

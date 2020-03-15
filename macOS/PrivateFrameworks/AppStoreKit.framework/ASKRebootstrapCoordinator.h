@@ -18,12 +18,12 @@
 }
 
 + (id)sharedCoordinator;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasPendingNotification; // @synthesize hasPendingNotification=_hasPendingNotification;
 @property(nonatomic) long long delayCount; // @synthesize delayCount=_delayCount;
 @property(copy, nonatomic) CDUnknownBlockType appBootstrapHandler; // @synthesize appBootstrapHandler=_appBootstrapHandler;
 @property(readonly, nonatomic) NSHashTable *handlerTokens; // @synthesize handlerTokens=_handlerTokens;
 @property(readonly, nonatomic) ASKStorefrontChangeProvider *changeObserver; // @synthesize changeObserver=_changeObserver;
-- (void).cxx_destruct;
 - (void)registerAppBootstrapHandler:(CDUnknownBlockType)arg1;
 - (id)registerCleanupHandler:(CDUnknownBlockType)arg1;
 - (void)simulateStorefrontChange;

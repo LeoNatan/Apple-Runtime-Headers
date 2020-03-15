@@ -14,7 +14,7 @@
     NSString *_splashContentName;
     NSDictionary *_splashPlist;
     BOOL _buttonIconLoaded;
-    struct NSImage *_buttonIcon;
+    NSImage *_buttonIcon;
     NSString *_buttonTitle;
     NSString *_buttonCaption;
     NSString *_splashTitle;
@@ -38,11 +38,11 @@
 - (BOOL)_conformsToRequirements:(id)arg1;
 - (BOOL)_conformsToRequirement:(id)arg1;
 @property(readonly, nonatomic) BOOL showInCombinedList;
-- (void)setButtonIcon:(struct NSImage *)arg1;
+- (void)setButtonIcon:(id)arg1;
 @property(readonly, nonatomic) NSImage *buttonIcon;
 - (id)_iconType;
 @property(readonly, nonatomic, getter=isPersonallyIdentifiable) BOOL personallyIdentifiable;
-- (struct NSImage *)_bundleImageNamed:(id)arg1;
+- (id)_bundleImageNamed:(id)arg1;
 - (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2 table:(id)arg3 preferredDeviceType:(unsigned long long)arg4;
 - (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2 preferredDeviceType:(unsigned long long)arg3;
 @property(readonly, nonatomic) BOOL platformSupported;

@@ -16,10 +16,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *SyncState; // @synthesize SyncState=_SyncState;
 @property(retain, nonatomic) EWSTargetFolderIdType *SyncFolderId; // @synthesize SyncFolderId=_SyncFolderId;
 @property(retain, nonatomic) EWSFolderResponseShapeType *FolderShape; // @synthesize FolderShape=_FolderShape;
-- (void).cxx_destruct;
 
 @end
 

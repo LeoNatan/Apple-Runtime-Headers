@@ -15,10 +15,10 @@
     NSImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) BOOL hidesTitle; // @synthesize hidesTitle=_hidesTitle;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

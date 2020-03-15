@@ -19,8 +19,8 @@
     NSTimeZone *_globalTZ;
 }
 
-@property(retain) CALAbstractEntity *currentEntity; // @synthesize currentEntity=_currentEntity;
 - (void).cxx_destruct;
+@property(retain) CALAbstractEntity *currentEntity; // @synthesize currentEntity=_currentEntity;
 - (id)globalTZ;
 - (void)setGlobalTZFromString:(id)arg1;
 - (void)setGlobalTZ:(id)arg1;

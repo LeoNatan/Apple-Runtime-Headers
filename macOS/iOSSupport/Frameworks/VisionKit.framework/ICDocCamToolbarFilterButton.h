@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)buttonWithType:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(nonatomic) BOOL myHighlighted; // @synthesize myHighlighted=_myHighlighted;
 @property(nonatomic) struct CGRect currentBounds; // @synthesize currentBounds=_currentBounds;
 @property(nonatomic) BOOL compact; // @synthesize compact=_compact;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)preferredTintColor;
 - (void)setSelected:(BOOL)arg1;

@@ -17,12 +17,12 @@
     NSNumber *_attentionDetectionEnabled;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *attentionDetectionEnabled; // @synthesize attentionDetectionEnabled=_attentionDetectionEnabled;
 @property(retain, nonatomic) NSNumber *applePayEnabled; // @synthesize applePayEnabled=_applePayEnabled;
 @property(retain, nonatomic) NSNumber *loginEnabled; // @synthesize loginEnabled=_loginEnabled;
 @property(retain, nonatomic) NSNumber *identificationEnabled; // @synthesize identificationEnabled=_identificationEnabled;
 @property(retain, nonatomic) NSNumber *unlockEnabled; // @synthesize unlockEnabled=_unlockEnabled;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1 effective:(_Bool)arg2;

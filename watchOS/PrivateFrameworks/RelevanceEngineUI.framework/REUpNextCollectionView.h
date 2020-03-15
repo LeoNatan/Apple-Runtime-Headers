@@ -13,8 +13,8 @@
     UILayoutGuide *_contentSizeLayoutGuide;
 }
 
-@property(readonly, nonatomic) UILayoutGuide *contentSizeLayoutGuide; // @synthesize contentSizeLayoutGuide=_contentSizeLayoutGuide;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILayoutGuide *contentSizeLayoutGuide; // @synthesize contentSizeLayoutGuide=_contentSizeLayoutGuide;
 
 @end
 

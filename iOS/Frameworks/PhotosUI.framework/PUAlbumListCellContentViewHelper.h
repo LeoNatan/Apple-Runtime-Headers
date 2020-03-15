@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_placeholderImageWithSize:(struct CGSize)arg1 backgroundColor:(id)arg2 glyphImageName:(id)arg3 glyphAlpha:(double)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didInitializeMemoriesTitleSupport; // @synthesize didInitializeMemoriesTitleSupport=_didInitializeMemoriesTitleSupport;
 @property(retain, nonatomic) PXCollectionTileLayoutTemplate *collectionTileLayoutTemplate; // @synthesize collectionTileLayoutTemplate=_collectionTileLayoutTemplate;
 @property(retain, nonatomic) PXAssetBadgeManager *badgeManager; // @synthesize badgeManager=_badgeManager;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PXPhotoKitCollectionsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(readonly, nonatomic) PUAlbumListCellContentViewHelperConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) PXExtendedTraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_initializeMemoriesTitleSupportIfNeeded;
 - (id)_getDisplayableAssetsForStandInCollectionList:(id)arg1 maximumCount:(long long)arg2 useCache:(_Bool)arg3 correspondingCollections:(out id *)arg4;

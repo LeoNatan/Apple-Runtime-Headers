@@ -63,6 +63,7 @@
 + (_Bool)handlesComplicationTemplate:(id)arg1;
 + (id)largeComplicationViewForType:(unsigned int)arg1 narrow:(_Bool)arg2;
 + (id)smallComplicationViewForType:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLKComplicationTemplate *complicationTemplate; // @synthesize complicationTemplate=_complicationTemplate;
 @property(readonly, nonatomic) _Bool editing; // @synthesize editing=_editing;
 @property(readonly, nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
@@ -93,7 +94,6 @@
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText=_canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
-- (void).cxx_destruct;
 - (void)_updateForTemplateChange;
 - (void)_applyForegroundAlpha;
 - (float)_widthThatFits;

@@ -20,13 +20,13 @@
 }
 
 + (void)setupWithStorage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 @property __weak _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 @property(retain) id <_DKKeyValueStore> keyValueStore; // @synthesize keyValueStore=_keyValueStore;
 @property(retain) CKContainer *container; // @synthesize container=_container;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (_Bool)_enqueueDatabaseOperation:(id)arg1;
 - (id)_previousServerChangeTokenForRecordZoneID:(id)arg1;
 - (id)_previousServerChangeTokenKeyForRecordZoneID:(id)arg1;

@@ -34,8 +34,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
-@property(readonly, nonatomic) SKUIStorePageSectionsViewController *sectionsViewController; // @synthesize sectionsViewController=_sectionsViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIStorePageSectionsViewController *sectionsViewController; // @synthesize sectionsViewController=_sectionsViewController;
 - (void)_updateIndexBarVisibility;
 - (void)_updateEntryListControllersWithReload:(_Bool)arg1;
 - (_Bool)_tryToScrollToSectionAtIndexPath:(id)arg1;

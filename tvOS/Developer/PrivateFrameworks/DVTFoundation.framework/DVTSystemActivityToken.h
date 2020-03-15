@@ -23,10 +23,10 @@
 + (void)initialize;
 + (id)_stringForActivityOptions:(unsigned long long)arg1;
 + (void)_accessSystemActivityTokensWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain) id processInfoToken; // @synthesize processInfoToken=_processInfoToken;
 @property unsigned long long activityOptions; // @synthesize activityOptions=_activityOptions;
 @property(copy) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, copy) NSString *description;
 - (id)initWithOptions:(unsigned long long)arg1 reason:(id)arg2;

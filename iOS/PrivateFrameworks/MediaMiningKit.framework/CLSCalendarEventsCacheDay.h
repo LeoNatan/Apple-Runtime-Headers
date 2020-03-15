@@ -14,9 +14,9 @@
     NSMutableSet *_events;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *events; // @synthesize events=_events;
 @property(nonatomic) long long day; // @synthesize day=_day;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)debugDescription;

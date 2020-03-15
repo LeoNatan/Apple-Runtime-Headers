@@ -15,10 +15,10 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSURL *url; // @synthesize url=_url;
 @property struct OpaqueMappedResourceFileRef *resourceFileRef; // @synthesize resourceFileRef=_resourceFileRef;
 @property(retain) NSData *resourceFileData; // @synthesize resourceFileData=_resourceFileData;
-- (void).cxx_destruct;
 - (id)resourcesForType:(unsigned int)arg1;
 - (id)resourceForType:(unsigned int)arg1 resID:(short)arg2;
 - (BOOL)openFork:(unsigned long long)arg1;

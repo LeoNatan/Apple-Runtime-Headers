@@ -19,11 +19,11 @@
     struct CGSize _presentationSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize presentationSize; // @synthesize presentationSize=_presentationSize;
 @property(readonly, nonatomic) SVKeyValueObserver *presentationSizeObserver; // @synthesize presentationSizeObserver=_presentationSizeObserver;
 @property(readonly, nonatomic) id <SVPlayerItemObserving> playerItemObserver; // @synthesize playerItemObserver=_playerItemObserver;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock;
-- (void).cxx_destruct;
 - (id)initWithPlayerItemObserver:(id)arg1;
 
 // Remaining properties

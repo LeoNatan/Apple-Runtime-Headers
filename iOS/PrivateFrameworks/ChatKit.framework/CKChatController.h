@@ -63,6 +63,7 @@
     _Bool _suppressEntryViewKeyboardNotifications;
     _Bool _entryViewWasActiveBeforePresentingDataDetector;
     _Bool _primeTranscriptWithInitialScrollGeometries;
+    _Bool _shouldDisableEntryView;
     _Bool _showingVideoMessageRecordingView;
     _Bool _isShowingPreview;
     _Bool _entryViewWasActiveOnPreview;
@@ -125,6 +126,7 @@
     struct UIEdgeInsets _initialContentInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long acknowledgmentToSend; // @synthesize acknowledgmentToSend=_acknowledgmentToSend;
 @property(retain, nonatomic) STConversationContext *conversationContext; // @synthesize conversationContext=_conversationContext;
 @property(retain, nonatomic) UIView *lockoutView; // @synthesize lockoutView=_lockoutView;
@@ -167,6 +169,7 @@
 @property(retain, nonatomic) CKComposition *compositionBeingTrimmed; // @synthesize compositionBeingTrimmed=_compositionBeingTrimmed;
 @property(retain, nonatomic) UIToolbar *actionsToolbar; // @synthesize actionsToolbar=_actionsToolbar;
 @property(retain, nonatomic) CKRaiseGesture *raiseGesture; // @synthesize raiseGesture=_raiseGesture;
+@property(nonatomic) _Bool shouldDisableEntryView; // @synthesize shouldDisableEntryView=_shouldDisableEntryView;
 @property(retain, nonatomic) CKComposition *initialComposition; // @synthesize initialComposition=_initialComposition;
 @property(nonatomic) struct UIEdgeInsets initialContentInset; // @synthesize initialContentInset=_initialContentInset;
 @property(nonatomic) struct CGPoint initialContentOffset; // @synthesize initialContentOffset=_initialContentOffset;
@@ -193,7 +196,6 @@
 @property(nonatomic, getter=isTransitioningSize) _Bool transitioningSize; // @synthesize transitioningSize=_transitioningSize;
 @property(nonatomic) _Bool shouldShowDoneButton; // @synthesize shouldShowDoneButton=_shouldShowDoneButton;
 @property(nonatomic) _Bool isAnimatingMessageSend; // @synthesize isAnimatingMessageSend=_isAnimatingMessageSend;
-- (void).cxx_destruct;
 - (void)dismissViewController:(id)arg1;
 - (void)presentViewController:(id)arg1;
 - (void)controller:(id)arg1 didCompleteClassificationRequest:(id)arg2 withResponse:(id)arg3;
@@ -578,7 +580,7 @@
 - (id)transcriptCollectionViewController:(id)arg1 previewForDismissingContextMenuWithConfiguration:(id)arg2;
 - (id)transcriptCollectionViewController:(id)arg1 previewForHighlightingContextMenuWithConfiguration:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
-- (id)transcriptCollectionViewController:(id)arg1 contextMenuConfigurationForItemAtIndexPath:(id)arg2 point:(struct CGPoint)arg3;
+- (id)transcriptCollectionViewController:(id)arg1 contextMenuConfigurationForItemAtIndexPath:(id)arg2 point:(struct CGPoint)arg3 interaction:(id)arg4;
 - (void)effectPickerViewController:(id)arg1 effectWithIdentifierSelected:(id)arg2;
 - (void)effectPickerViewControllerClose:(id)arg1;
 - (id)throwBalloonsForSendAnimationContext:(id)arg1;

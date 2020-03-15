@@ -9,7 +9,18 @@
 __attribute__((visibility("hidden")))
 @interface _UIContextMenuContainerView : UIView
 {
+    _Bool _dismissesInstantly;
+    UIView *_contentWrapperView;
+    CDUnknownBlockType _dismissalHandler;
 }
+
+- (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType dismissalHandler; // @synthesize dismissalHandler=_dismissalHandler;
+@property(nonatomic) __weak UIView *contentWrapperView; // @synthesize contentWrapperView=_contentWrapperView;
+@property(nonatomic) _Bool dismissesInstantly; // @synthesize dismissesInstantly=_dismissesInstantly;
+- (void)_attemptDismiss:(_Bool)arg1;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

@@ -36,6 +36,7 @@
 
 + (void)createConnectionPairWithConnection:(id *)arg1 andConnection:(id *)arg2 bufferSize:(unsigned long long)arg3;
 + (void)createConnectionPairWithConnection:(id *)arg1 andConnection:(id *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long bufferSize; // @synthesize bufferSize=_bufferSize;
 @property(retain, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(retain, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
@@ -45,7 +46,6 @@
 @property(nonatomic) _Bool usesSSL; // @synthesize usesSSL=_usesSSL;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) __weak id <CATRemoteConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)messageParser:(id)arg1 didParseRequestWithURL:(id)arg2;

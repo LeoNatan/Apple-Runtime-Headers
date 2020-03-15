@@ -34,6 +34,7 @@
 
 + (id)applicationLaunchActivityWithName:(id)arg1 priority:(unsigned int)arg2 forApplication:(id)arg3 withReason:(id)arg4 duration:(unsigned int)arg5 startingAfter:(id)arg6 startingBefore:(id)arg7;
 + (id)activityWithName:(id)arg1 priority:(unsigned int)arg2 duration:(unsigned int)arg3 startingAfter:(id)arg4 startingBefore:(id)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresNetwork; // @synthesize requiresNetwork=_requiresNetwork;
 @property(nonatomic) _Bool shouldBePersisted; // @synthesize shouldBePersisted=_shouldBePersisted;
 @property(nonatomic) _Bool requiresDeviceInactivity; // @synthesize requiresDeviceInactivity=_requiresDeviceInactivity;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) CDUnknownBlockType startHandler; // @synthesize startHandler=_startHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;

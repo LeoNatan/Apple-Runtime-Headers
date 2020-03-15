@@ -42,6 +42,7 @@
 
 + (Class)layoutAttributesClass;
 + (Class)invalidationContextClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexSet *expandChildPageSectionsIndexSet; // @synthesize expandChildPageSectionsIndexSet=_expandChildPageSectionsIndexSet;
 @property(nonatomic) _Bool allowsPinningTransitions; // @synthesize allowsPinningTransitions=_allowsPinningTransitions;
 @property(nonatomic) _Bool rendersWithParallax; // @synthesize rendersWithParallax=_rendersWithParallax;
@@ -49,7 +50,6 @@
 @property(nonatomic) double overrideContentWidth; // @synthesize overrideContentWidth=_overrideContentWidth;
 @property(copy, nonatomic) NSArray *indexPathsForGradientItems; // @synthesize indexPathsForGradientItems=_indexPathsForGradientItems;
 @property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
-- (void).cxx_destruct;
 - (struct CGRect)_targetFrameForStartingFrame:(struct CGRect)arg1 itemPinningConfiguration:(id)arg2 layoutInformation:(id)arg3 atIndexPath:(id)arg4 returningIsPinning:(out _Bool *)arg5;
 - (long long)_pinningTransitionStyleForItemPinningConfiguration:(id)arg1 atIndexPath:(id)arg2;
 - (long long)_pinningGroupForItemPinningConfiguration:(id)arg1 atIndexPath:(id)arg2;

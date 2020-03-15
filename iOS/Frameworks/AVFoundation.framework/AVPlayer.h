@@ -19,6 +19,7 @@
 + (_Bool)eligibleForHDRPlayback;
 + (long long)availableHDRModes;
 + (void)registerForScreenConnectionChanges;
++ (void)fireEligibleForHDRPlaybackDidChangeNotification;
 + (void)fireAvailableHDRModesDidChangeNotification;
 + (void)checkForAvailableHDRModesChanges;
 + (_Bool)automaticallyNotifiesObserversOfUsesAirPlayVideoWhileAirPlayScreenIsActive;

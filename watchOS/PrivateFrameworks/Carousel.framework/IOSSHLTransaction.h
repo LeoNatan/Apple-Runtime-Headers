@@ -14,8 +14,8 @@
     IOSSHLTransaction *_parent;
 }
 
-@property(nonatomic) __weak IOSSHLTransaction *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+@property(nonatomic) __weak IOSSHLTransaction *parent; // @synthesize parent=_parent;
 - (double)watchdogTimeout;
 - (_Bool)shouldWatchdog:(id *)arg1;
 - (void)addChildTransaction:(id)arg1;

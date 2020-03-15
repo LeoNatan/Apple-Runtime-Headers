@@ -49,9 +49,9 @@
     NSTimeZone *_timeZoneOverride;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimeZone *timeZoneOverride; // @synthesize timeZoneOverride=_timeZoneOverride;
 @property(retain, nonatomic) NSDate *dateOverride; // @synthesize dateOverride=_dateOverride;
-- (void).cxx_destruct;
 - (void)_userCharacteristicsDidChangeNotification:(id)arg1;
 - (void)_queue_alertObservers:(id)arg1 heartRateSummaryChanged:(id)arg2;
 - (void)_queue_alertObserversYesterdayActivityCacheChanged:(id)arg1;

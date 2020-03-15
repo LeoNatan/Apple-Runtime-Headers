@@ -17,9 +17,9 @@
     NSArray *_diffableItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *diffableItems; // @synthesize diffableItems=_diffableItems;
 @property(copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties

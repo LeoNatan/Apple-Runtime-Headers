@@ -21,6 +21,7 @@
 }
 
 + (id)styleComposerWithDefaultStyleComposer:(id)arg1 parentStyleComposer:(id)arg2 styleList:(id)arg3 elementStyleOverrides:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKViewElementStyle *composedStyle; // @synthesize composedStyle=_composedStyle;
 @property(retain, nonatomic) IKViewElementStyle *composedSansDefaultStyle; // @synthesize composedSansDefaultStyle=_composedSansDefaultStyle;
 @property(readonly, nonatomic, getter=isCompositionDone) _Bool compositionDone; // @synthesize compositionDone=_compositionDone;
@@ -29,7 +30,6 @@
 @property(readonly, retain, nonatomic) IKViewElementStyleComposer *parentStyleComposer; // @synthesize parentStyleComposer=_parentStyleComposer;
 @property(readonly, retain, nonatomic) IKViewElementStyleComposer *defaultStyleComposer; // @synthesize defaultStyleComposer=_defaultStyleComposer;
 @property(readonly, nonatomic) _Bool requiresMediaQueryEvaluation; // @synthesize requiresMediaQueryEvaluation=_requiresMediaQueryEvaluation;
-- (void).cxx_destruct;
 - (void)_composeWithMediaQueryEvaluator:(id)arg1;
 - (id)composedSansDefaultStyleWithMediaQueryEvaluator:(id)arg1;
 - (id)consolidatedDefaultStyleList;

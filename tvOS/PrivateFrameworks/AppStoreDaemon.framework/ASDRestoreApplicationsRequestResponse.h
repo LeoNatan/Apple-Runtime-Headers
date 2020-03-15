@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *results; // @synthesize results=_results;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *results; // @synthesize results=_results;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

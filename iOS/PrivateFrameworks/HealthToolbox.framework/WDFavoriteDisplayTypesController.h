@@ -20,8 +20,8 @@
 }
 
 + (long long)cycleTrackingSummaryFavoritedIdentifier;
-@property(nonatomic) _Bool shouldRecoverFromErrors; // @synthesize shouldRecoverFromErrors=_shouldRecoverFromErrors;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldRecoverFromErrors; // @synthesize shouldRecoverFromErrors=_shouldRecoverFromErrors;
 - (void)_alertObserversDidSuccessfullyPersist;
 - (void)_alertObserversDidFail;
 - (void)_alertObserversDidUpdate;

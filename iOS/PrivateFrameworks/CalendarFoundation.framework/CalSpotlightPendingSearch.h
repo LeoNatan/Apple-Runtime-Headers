@@ -25,12 +25,12 @@
 + (id)_createSearchQueryWithPredicate:(id)arg1 options:(id)arg2;
 + (id)_pendingSearches;
 + (id)_queue;
+- (void).cxx_destruct;
 @property(copy) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(retain) MDSearchQuery *query; // @synthesize query=_query;
 @property(retain) NSMutableOrderedSet *searchableItems; // @synthesize searchableItems=_searchableItems;
 @property(retain) NSMutableOrderedSet *searchableItemIdentifiers; // @synthesize searchableItemIdentifiers=_searchableItemIdentifiers;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)searchQuery:(id)arg1 didFailWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 statusChanged:(unsigned long long)arg2;
 - (void)searchQuery:(id)arg1 didReturnItems:(id)arg2;

@@ -18,9 +18,9 @@
 }
 
 + (id)contextForStoreAccount:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) CKDialogContext *dialogContext; // @synthesize dialogContext=_dialogContext;
 @property(readonly) CKStoreAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)AMSURLSession:(id)arg1 task:(id)arg2 handleDialogRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)AMSURLSession:(id)arg1 task:(id)arg2 handleAuthenticateRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setTouchIDState:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

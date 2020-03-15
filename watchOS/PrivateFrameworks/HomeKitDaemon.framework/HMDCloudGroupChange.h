@@ -22,6 +22,7 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *processedCloudChanges; // @synthesize processedCloudChanges=_processedCloudChanges;
 @property(retain, nonatomic) NSMutableArray *processingCloudChanges; // @synthesize processingCloudChanges=_processingCloudChanges;
 @property(retain, nonatomic) NSMutableArray *cloudChanges; // @synthesize cloudChanges=_cloudChanges;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool encryptionFailed; // @synthesize encryptionFailed=_encryptionFailed;
 @property(nonatomic) _Bool decryptionFailed; // @synthesize decryptionFailed=_decryptionFailed;
 @property(readonly, nonatomic, getter=isTemporaryCache) _Bool temporaryCache; // @synthesize temporaryCache=_temporaryCache;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *objectChanges;
 - (_Bool)isRootRecord:(id)arg1;
 - (_Bool)isRootRecordName:(id)arg1;

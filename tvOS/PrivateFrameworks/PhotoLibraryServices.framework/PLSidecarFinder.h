@@ -16,8 +16,8 @@
 
 + (id)_findPotentialSidecarURLsInDirectory:(id)arg1 context:(id)arg2;
 + (_Bool)_isValidExtensionForSidecar:(id)arg1 context:(id)arg2;
-@property(retain, nonatomic) NSCache *cachedSidecarURLsByDirectory; // @synthesize cachedSidecarURLsByDirectory=_cachedSidecarURLsByDirectory;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCache *cachedSidecarURLsByDirectory; // @synthesize cachedSidecarURLsByDirectory=_cachedSidecarURLsByDirectory;
 - (void)reset;
 - (id)collectSidecarURLsForAssetFilename:(id)arg1 inDirectory:(id)arg2 context:(id)arg3 removeWhenDone:(_Bool)arg4;
 - (id)init;

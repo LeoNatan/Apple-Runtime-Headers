@@ -22,8 +22,8 @@
 
 + (_Bool)_hasWriteAccess;
 + (id)sharedDocumentStore;
-@property(nonatomic) __weak id <LKDocumentStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <LKDocumentStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_didRemoveDocument:(id)arg1;
 - (void)_didAddDocument:(id)arg1;
 - (void)_didModifyDocument:(id)arg1;

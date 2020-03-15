@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (Class)_shelfMenuBarViewElementClass;
 + (Class)_titlesMenuBarViewElementClass;
 + (id)supportedFeatures;
-@property(retain, nonatomic) SKUIMenuBarViewElementConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIMenuBarViewElementConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)_reloadMenuItems;
 - (id)titleForMenuItemAtIndex:(unsigned long long)arg1;
 - (void)_menuBarViewElementConfigurationRequestsReload:(id)arg1;

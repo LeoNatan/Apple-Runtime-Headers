@@ -16,8 +16,8 @@
 }
 
 + (Class)cohortsType;
-@property(retain, nonatomic) NSMutableArray *cohorts; // @synthesize cohorts=_cohorts;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *cohorts; // @synthesize cohorts=_cohorts;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

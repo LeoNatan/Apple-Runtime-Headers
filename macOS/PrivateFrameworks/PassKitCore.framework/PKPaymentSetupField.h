@@ -32,6 +32,7 @@
 + (id)paymentSetupFieldWithIdentifier:(id)arg1;
 + (id)sampleCustomPaymentSetupFields;
 + (id)newRandomlyGeneratedField;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *rawConfigurationDictionary; // @synthesize rawConfigurationDictionary=_rawConfigurationDictionary;
 @property(copy, nonatomic) NSString *localizedPlaceholder; // @synthesize localizedPlaceholder=_localizedPlaceholder;
 @property(nonatomic) BOOL requiresSecureSubmission; // @synthesize requiresSecureSubmission=_requiresSecureSubmission;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) NSString *localizedDisplayName; // @synthesize localizedDisplayName=_localizedDisplayName;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) id <NSObject><NSCopying> currentValue; // @synthesize currentValue=_currentValue;
-- (void).cxx_destruct;
 - (void)noteCurrentValueChanged;
 @property(readonly, nonatomic) unsigned long long fieldType;
 - (void)_setLocalizedDisplayName:(id)arg1;

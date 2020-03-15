@@ -22,6 +22,7 @@
     _DPKeyProperties *_keyProperties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _DPKeyProperties *keyProperties; // @synthesize keyProperties=_keyProperties;
 @property(readonly, copy, nonatomic) NSString *keyName; // @synthesize keyName=_keyName;
 @property(readonly, nonatomic) unsigned long long fragmentCount; // @synthesize fragmentCount=_fragmentCount;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) unsigned long long range; // @synthesize range=_range;
 @property(readonly, nonatomic) double privacyParameter; // @synthesize privacyParameter=_privacyParameter;
 @property(readonly, nonatomic) NSObject *randomizer; // @synthesize randomizer=_randomizer;
-- (void).cxx_destruct;
 - (void)recordWords:(id)arg1;
 - (void)recordStrings:(id)arg1;
 - (void)recordBitValues:(id)arg1;

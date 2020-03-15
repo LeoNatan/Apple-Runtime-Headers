@@ -20,6 +20,7 @@
 }
 
 + (id)resourceWithServiceResource:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *guid; // @synthesize guid=_guid;
 @property(retain, nonatomic) NSDictionary *edamAttributes; // @synthesize edamAttributes=_edamAttributes;
 @property(retain, nonatomic) NSData *dataHash; // @synthesize dataHash=_dataHash;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *mediaTag;
 - (id)EDAMResource;
 - (id)initWithData:(id)arg1 mimeType:(id)arg2;

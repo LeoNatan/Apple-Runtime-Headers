@@ -21,12 +21,12 @@
 
 + (struct CGSize)cardArtSizeForWatchViewSize:(struct CGSize)arg1;
 + (id)defaultImages;
+- (void).cxx_destruct;
 @property(nonatomic) long long watchSize; // @synthesize watchSize=_watchSize;
 @property(nonatomic) id <PKPaymentHeroImageControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PKPaymentHeroImageManifest *manifest; // @synthesize manifest=_manifest;
 @property(copy, nonatomic) NSArray *featuredImages; // @synthesize featuredImages=_featuredImages;
 @property(copy, nonatomic) NSString *primaryImageIdentifier; // @synthesize primaryImageIdentifier=_primaryImageIdentifier;
-- (void).cxx_destruct;
 - (struct CGSize)cardArtSizeForSize:(struct CGSize)arg1;
 - (void)downloadImages:(id)arg1;
 - (id)featuredDefaultImages;

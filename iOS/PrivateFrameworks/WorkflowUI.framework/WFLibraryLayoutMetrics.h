@@ -25,6 +25,7 @@
 + (id)workflowNameFontInDefaultSize;
 + (id)metricsCompatibleWithTraitCollection:(id)arg1 viewWidth:(double)arg2 layoutMargins:(struct UIEdgeInsets)arg3 needsTopPadding:(_Bool)arg4;
 + (id)metricsCompatibleWithTraitCollection:(id)arg1 viewWidth:(double)arg2 layoutMargins:(struct UIEdgeInsets)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) UIFont *workflowNameFont; // @synthesize workflowNameFont=_workflowNameFont;
 @property(readonly, nonatomic) struct CGSize workflowSize; // @synthesize workflowSize=_workflowSize;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(readonly, nonatomic) struct UIEdgeInsets sectionInset; // @synthesize sectionInset=_sectionInset;
 @property(readonly, nonatomic) WFFloatingViewConfiguration *floatingViewConfiguration; // @synthesize floatingViewConfiguration=_floatingViewConfiguration;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)capEdgeInsets:(struct UIEdgeInsets)arg1 min:(struct UIEdgeInsets)arg2 max:(struct UIEdgeInsets)arg3;
 - (struct UIEdgeInsets)scaledEdgeInsets:(struct UIEdgeInsets)arg1;
 - (double)scaledValueForValue:(double)arg1;

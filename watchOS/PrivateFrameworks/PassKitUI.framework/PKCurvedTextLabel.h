@@ -27,11 +27,11 @@
     float _maxAngularWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float maxAngularWidth; // @synthesize maxAngularWidth=_maxAngularWidth;
 @property(nonatomic) float centerAngle; // @synthesize centerAngle=_centerAngle;
 @property(nonatomic) _Bool interior; // @synthesize interior=_interior;
 @property(nonatomic) float circleRadius; // @synthesize circleRadius=_circleRadius;
-- (void).cxx_destruct;
 - (void)_enumerateTransformsForDrawableCharacters:(CDUnknownBlockType)arg1;
 - (float)_distance;
 - (struct CGRect)_glyphsBoundingRect;

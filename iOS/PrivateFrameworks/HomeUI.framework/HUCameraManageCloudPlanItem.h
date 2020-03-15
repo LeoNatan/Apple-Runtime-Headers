@@ -13,8 +13,8 @@
     HMCameraProfile *_cameraProfile;
 }
 
-@property(readonly, copy, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithCameraProfile:(id)arg1;
 

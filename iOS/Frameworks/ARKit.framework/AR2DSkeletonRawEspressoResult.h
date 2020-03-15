@@ -12,21 +12,39 @@
 
 @interface AR2DSkeletonRawEspressoResult : NSObject <ARResultData>
 {
-    void *_outputTensors;
-    unsigned long long _numberOfOutputTensors;
     ARImageData *_imageDataForNeuralNetwork;
     ARImageData *_inputImageData;
     long long _rotationNeeded;
+    struct __CVBuffer *_heatMapBuffer;
+    struct __CVBuffer *_affinityMapBuffer;
     struct CGSize _regionOfInterest;
+    // Error parsing type: , name: _heatMapShape
+    // Error parsing type: , name: _heatMapStrides
+    // Error parsing type: , name: _affinityMapShape
+    // Error parsing type: , name: _affinityMapStrides
 }
 
-@property(nonatomic) struct CGSize regionOfInterest; // @synthesize regionOfInterest=_regionOfInterest;
-@property(nonatomic) long long rotationNeeded; // @synthesize rotationNeeded=_rotationNeeded;
-@property(retain, nonatomic) ARImageData *inputImageData; // @synthesize inputImageData=_inputImageData;
-@property(retain, nonatomic) ARImageData *imageDataForNeuralNetwork; // @synthesize imageDataForNeuralNetwork=_imageDataForNeuralNetwork;
-@property(nonatomic) unsigned long long numberOfOutputTensors; // @synthesize numberOfOutputTensors=_numberOfOutputTensors;
-@property(nonatomic) void *outputTensors; // @synthesize outputTensors=_outputTensors;
 - (void).cxx_destruct;
+// Error parsing type for property affinityMapStrides:
+// Property attributes: T,R,N,V_affinityMapStrides
+
+// Error parsing type for property affinityMapShape:
+// Property attributes: T,R,N,V_affinityMapShape
+
+@property(readonly, nonatomic) struct __CVBuffer *affinityMapBuffer; // @synthesize affinityMapBuffer=_affinityMapBuffer;
+// Error parsing type for property heatMapStrides:
+// Property attributes: T,R,N,V_heatMapStrides
+
+// Error parsing type for property heatMapShape:
+// Property attributes: T,R,N,V_heatMapShape
+
+@property(readonly, nonatomic) struct __CVBuffer *heatMapBuffer; // @synthesize heatMapBuffer=_heatMapBuffer;
+@property(readonly, nonatomic) struct CGSize regionOfInterest; // @synthesize regionOfInterest=_regionOfInterest;
+@property(readonly, nonatomic) long long rotationNeeded; // @synthesize rotationNeeded=_rotationNeeded;
+@property(readonly, nonatomic) ARImageData *inputImageData; // @synthesize inputImageData=_inputImageData;
+@property(readonly, nonatomic) ARImageData *imageDataForNeuralNetwork; // @synthesize imageDataForNeuralNetwork=_imageDataForNeuralNetwork;
+- (void)dealloc;
+- (id)initWithMLImage:(id)arg1 originalImageData:(id)arg2 rotationNeeded:(long long)arg3 regionOfInterest:(struct CGSize)arg4 heatMapBuffer:(struct __CVBuffer *)arg5 heatMapShape:(struct __CVBuffer *)arg6 heatMapStrides:affinityMapBuffer:affinityMapShape:affinityMapStrides: /* Error: Ran out of types for this method. */;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

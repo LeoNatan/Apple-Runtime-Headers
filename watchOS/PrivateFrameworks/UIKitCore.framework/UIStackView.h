@@ -21,8 +21,8 @@
 }
 
 + (Class)layerClass;
-@property(nonatomic, getter=isLayoutMarginsRelativeArrangement) _Bool layoutMarginsRelativeArrangement; // @synthesize layoutMarginsRelativeArrangement=_layoutMarginsRelativeArrangement;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isLayoutMarginsRelativeArrangement) _Bool layoutMarginsRelativeArrangement; // @synthesize layoutMarginsRelativeArrangement=_layoutMarginsRelativeArrangement;
 - (float)_proportionalFillLengthForOrderedArrangement:(id)arg1 relevantParentAxis:(int)arg2;
 - (_Bool)_recordBaselineLoweringInfo;
 - (void)_vendedBaselineViewDidMoveForFirst:(_Bool)arg1;

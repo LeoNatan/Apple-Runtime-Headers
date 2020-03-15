@@ -14,9 +14,9 @@
     WLKPlayable *_playable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKPlayable *playable; // @synthesize playable=_playable;
 @property(readonly, copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 

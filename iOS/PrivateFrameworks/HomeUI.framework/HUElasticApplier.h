@@ -23,6 +23,7 @@
     double _previousForce;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double previousForce; // @synthesize previousForce=_previousForce;
 @property(nonatomic) unsigned long long restingFrameCount; // @synthesize restingFrameCount=_restingFrameCount;
 @property(nonatomic) unsigned long long frameCount; // @synthesize frameCount=_frameCount;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool completesWhenAtRest; // @synthesize completesWhenAtRest=_completesWhenAtRest;
 @property(nonatomic) double tension; // @synthesize tension=_tension;
 @property(nonatomic) double friction; // @synthesize friction=_friction;
-- (void).cxx_destruct;
 - (_Bool)complete:(_Bool)arg1;
 - (void)_invalidateDisplayLinkIfNecessary;
 - (void)_updateProgressForInitialUpdate:(_Bool)arg1;

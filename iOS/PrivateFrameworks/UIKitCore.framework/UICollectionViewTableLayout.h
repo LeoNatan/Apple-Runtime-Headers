@@ -59,6 +59,7 @@
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_showsAdditionalSeparators, setter=_setShowsAdditionalSeparators:) _Bool showsAdditionalSeparators; // @synthesize showsAdditionalSeparators=_showsAdditionalSeparators;
 @property(retain, nonatomic) NSIndexPath *deletedIndexPath; // @synthesize deletedIndexPath=_deletedIndexPath;
 @property(retain, nonatomic, getter=_swipeActionController, setter=_setSwipeActionController:) UISwipeActionController *swipeActionController; // @synthesize swipeActionController=_swipeActionController;
@@ -88,7 +89,6 @@
 @property(nonatomic) double sectionFooterHeight; // @synthesize sectionFooterHeight=_sectionFooterHeight;
 @property(nonatomic) double sectionHeaderHeight; // @synthesize sectionHeaderHeight=_sectionHeaderHeight;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
-- (void).cxx_destruct;
 - (void)_swipeToDeleteCell:(id)arg1;
 - (void)_cellAccessoryButtonTappedAtIndexPath:(id)arg1;
 - (void)_setHeight:(double)arg1 forRowAtIndexPath:(id)arg2 usingPresentationValues:(_Bool)arg3;

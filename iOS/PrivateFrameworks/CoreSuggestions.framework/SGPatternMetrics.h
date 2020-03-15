@@ -15,8 +15,8 @@
 
 + (void)recordSelfIdMatchWithPatternType:(struct SGMSIPatternType_)arg1 patternHash:(id)arg2 nameTokenCount:(unsigned long long)arg3 nameClassification:(struct SGMSINameClassification_)arg4 messageIndex:(unsigned long long)arg5;
 + (id)instance;
-@property(retain, nonatomic) SGMSelfIdPatternMatched *selfIdPatternMatched; // @synthesize selfIdPatternMatched=_selfIdPatternMatched;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SGMSelfIdPatternMatched *selfIdPatternMatched; // @synthesize selfIdPatternMatched=_selfIdPatternMatched;
 - (id)init;
 
 @end

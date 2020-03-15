@@ -31,6 +31,7 @@
 }
 
 + (unsigned long long)updateMode;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *childViewControllersAtViewWillDisappearTime; // @synthesize childViewControllersAtViewWillDisappearTime=_childViewControllersAtViewWillDisappearTime;
 @property(retain, nonatomic) NSHashTable *childViewControllersAtViewWillAppearTime; // @synthesize childViewControllersAtViewWillAppearTime=_childViewControllersAtViewWillAppearTime;
 @property(retain, nonatomic) id <NACancelable> deferredVisibilityUpdate; // @synthesize deferredVisibilityUpdate=_deferredVisibilityUpdate;
@@ -42,7 +43,6 @@
 @property(nonatomic) BOOL hasFinishedInitialLoad; // @synthesize hasFinishedInitialLoad=_hasFinishedInitialLoad;
 @property(retain, nonatomic) HFItemManager *itemManager; // @synthesize itemManager=_itemManager;
 @property(nonatomic) BOOL wantsPreferredContentSize; // @synthesize wantsPreferredContentSize=_wantsPreferredContentSize;
-- (void).cxx_destruct;
 - (void)recursivelyDisableItemUpdates:(BOOL)arg1 withReason:(id)arg2;
 @property(readonly, nonatomic) HFItem *hu_presentedItem;
 - (void)executionEnvironmentRunningStateDidChange:(id)arg1;

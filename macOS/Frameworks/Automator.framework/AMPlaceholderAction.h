@@ -22,6 +22,7 @@
 }
 
 + (id)placeholderActionWithLoadingError:(id)arg1 actionDictionary:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSButton *_thirdPartyActionsButton; // @synthesize _thirdPartyActionsButton=__thirdPartyActionsButton;
 @property(retain) NSButton *_okQuarantineButton; // @synthesize _okQuarantineButton=__okQuarantineButton;
 @property(retain) NSButton *_approveActionButton; // @synthesize _approveActionButton=__approveActionButton;
@@ -31,7 +32,6 @@
 @property(retain) NSTextField *_descriptionTextField; // @synthesize _descriptionTextField=__descriptionTextField;
 @property(retain) NSDictionary *actionDictionary; // @synthesize actionDictionary=__actionDictionary;
 @property(retain) NSError *loadingError; // @synthesize loadingError=__loadingError;
-- (void).cxx_destruct;
 - (void)_reloadAction;
 - (void)_removeQuarantineAndReloadAction;
 - (void)removeQuarantineAndReloadAction:(id)arg1;

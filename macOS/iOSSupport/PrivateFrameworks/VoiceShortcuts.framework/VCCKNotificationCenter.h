@@ -20,11 +20,11 @@
 }
 
 + (void)notificationCenterForContainer:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(readonly, nonatomic) APSConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) NSHashTable *observerTable; // @synthesize observerTable=_observerTable;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)removeObserver:(id)arg1;

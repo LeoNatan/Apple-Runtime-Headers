@@ -22,6 +22,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *includeAccountLimits; // @synthesize includeAccountLimits=_includeAccountLimits;
 @property(retain, nonatomic) NSNumber *includeResourceAppDataValues; // @synthesize includeResourceAppDataValues=_includeResourceAppDataValues;
 @property(retain, nonatomic) NSNumber *includeNoteAppDataValues; // @synthesize includeNoteAppDataValues=_includeNoteAppDataValues;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSNumber *includeResourcesRecognition; // @synthesize includeResourcesRecognition=_includeResourcesRecognition;
 @property(retain, nonatomic) NSNumber *includeResourcesData; // @synthesize includeResourcesData=_includeResourcesData;
 @property(retain, nonatomic) NSNumber *includeContent; // @synthesize includeContent=_includeContent;
-- (void).cxx_destruct;
 
 @end
 

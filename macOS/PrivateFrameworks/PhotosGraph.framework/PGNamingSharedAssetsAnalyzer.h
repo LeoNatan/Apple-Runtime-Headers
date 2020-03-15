@@ -15,8 +15,8 @@
     PGGraphNamingProcessor *_processor;
 }
 
-@property(readonly, nonatomic) __weak PGGraphNamingProcessor *processor; // @synthesize processor=_processor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PGGraphNamingProcessor *processor; // @synthesize processor=_processor;
 - (id)name;
 - (void)findSharedAssetMatchesFromSharingRecords:(id)arg1 personLocalIdentifiersByAssetUUID:(id)arg2 graph:(id)arg3 withProgressBlock:(CDUnknownBlockType)arg4;
 - (void)runAnalysisWithProgressBlock:(CDUnknownBlockType)arg1;

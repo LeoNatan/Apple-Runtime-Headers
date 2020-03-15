@@ -22,11 +22,11 @@
 + (id)categoryWithInteger:(long long)arg1 type:(id)arg2;
 + (id)fromPBCodable:(id)arg1;
 + (id)_categoryFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 cache:(id)arg3;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 cache:(id)arg3;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 excludedMetadataKeys:(id)arg3 cache:(id)arg4;
 + (id)entityName;
+- (void).cxx_destruct;
 @property(retain) _DKCategoryType *categoryType; // @synthesize categoryType=_categoryType;
 @property long long integerValue; // @synthesize integerValue=_integerValue;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)stringValue;
 - (double)doubleValue;

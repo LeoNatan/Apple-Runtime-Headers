@@ -12,12 +12,12 @@
     double _maximumVendedDelay;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double maximumVendedDelay; // @synthesize maximumVendedDelay=_maximumVendedDelay;
 @property(copy, nonatomic) CDUnknownBlockType animationDelayHandler; // @synthesize animationDelayHandler=_animationDelayHandler;
-- (void).cxx_destruct;
-- (id)_basicAnimationForView:(struct NSView *)arg1 withKeyPath:(id)arg2;
-- (id)_springAnimationForView:(struct NSView *)arg1 withKeyPath:(id)arg2;
-- (id)springAnimationForView:(struct NSView *)arg1 withKeyPath:(id)arg2;
+- (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
+- (id)_springAnimationForView:(id)arg1 withKeyPath:(id)arg2;
+- (id)springAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 
 @end
 

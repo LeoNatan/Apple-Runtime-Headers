@@ -17,9 +17,9 @@
     BOOL _strikethroughPart2;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL strikethroughPart2; // @synthesize strikethroughPart2=_strikethroughPart2;
 @property(nonatomic) BOOL strikethroughPart1; // @synthesize strikethroughPart1=_strikethroughPart1;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setMinimumPart2Width:(double)arg1;
 - (double)rightmostDisplayedPartWidth;

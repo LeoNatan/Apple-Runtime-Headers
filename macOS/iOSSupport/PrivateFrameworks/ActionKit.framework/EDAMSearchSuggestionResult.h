@@ -15,8 +15,8 @@
 
 + (id)structFields;
 + (id)structName;
-@property(retain, nonatomic) NSArray *typeAheadSuggestions; // @synthesize typeAheadSuggestions=_typeAheadSuggestions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *typeAheadSuggestions; // @synthesize typeAheadSuggestions=_typeAheadSuggestions;
 
 @end
 

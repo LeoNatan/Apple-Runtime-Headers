@@ -14,7 +14,7 @@
 #import <HomeKitDaemon/HMDTimeInformationMonitorDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDAccessorySymptomHandler, HMDCameraProfileSettingsManager, HMDCharacteristic, HMDDataStreamController, HMDNetworkRouterController, HMDNetworkRouterProfile, HMDNetworkRouterSatelliteProfile, HMDPendingCharacteristic, HMDService, HMDTargetControllerManager, HMFConnectivityInfo, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSNumber, NSSet, NSString;
+@class AWDHomeKitHAPService, HMDAccessoryAdvertisement, HMDAccessorySymptomHandler, HMDCameraProfileSettingsManager, HMDCharacteristic, HMDDataStreamController, HMDMediaProfile, HMDNetworkRouterController, HMDNetworkRouterProfile, HMDNetworkRouterSatelliteProfile, HMDPendingCharacteristic, HMDService, HMDTargetControllerManager, HMFConnectivityInfo, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSNumber, NSSet, NSString;
 
 @interface HMDHAPAccessory : HMDAccessory <HMDAccessoryMinimumUserPrivilegeCapable, HMDServiceOwner, HAPRelayAccessoryDelegate, HMDTimeInformationMonitorDelegate, HMFTimerDelegate, HMDAccessoryIdentify, HMDAccessoryUserManagement>
 {
@@ -48,6 +48,7 @@
     HMFConnectivityInfo *_connectivityInfo;
     NSMutableArray *_powerOnCompletionRoutines;
     HMDCameraProfileSettingsManager *_cameraProfileSettingsManager;
+    HMDAccessoryAdvertisement *_accessoryAdvertisement;
     NSString *_uniqueIdentifier;
     long long _certificationStatus;
     unsigned long long _activationAttempts;
@@ -72,6 +73,7 @@
 + (_Bool)supportsSecureCoding;
 + (unsigned long long)getAWDTransportTypeWithLinkType:(long long)arg1;
 + (Class)transactionClass;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *pendingReads; // @synthesize pendingReads=_pendingReads;
 @property(retain, nonatomic) NSMapTable *serverIDToHAPAccessoryTable; // @synthesize serverIDToHAPAccessoryTable=_serverIDToHAPAccessoryTable;
 @property(retain, nonatomic) HMDDataStreamController *dataStreamController; // @synthesize dataStreamController=_dataStreamController;
@@ -93,6 +95,7 @@
 @property(nonatomic) _Bool supportsRelay; // @synthesize supportsRelay=_supportsRelay;
 @property(nonatomic) long long certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(retain, nonatomic) HMDAccessoryAdvertisement *accessoryAdvertisement; // @synthesize accessoryAdvertisement=_accessoryAdvertisement;
 @property(retain, nonatomic) NSMutableArray *powerOnCompletionRoutines; // @synthesize powerOnCompletionRoutines=_powerOnCompletionRoutines;
 @property(retain, nonatomic) HMDPendingCharacteristic *pendingPowerOn; // @synthesize pendingPowerOn=_pendingPowerOn;
 @property _Bool keyGenerationInProgress; // @synthesize keyGenerationInProgress=_keyGenerationInProgress;
@@ -100,7 +103,6 @@
 @property(copy, nonatomic) NSNumber *keyUpdatedStateNumber; // @synthesize keyUpdatedStateNumber=_keyUpdatedStateNumber;
 @property(copy, nonatomic) NSData *broadcastKey; // @synthesize broadcastKey=_broadcastKey;
 @property(retain, nonatomic) NSString *relayIdentifier; // @synthesize relayIdentifier=_relayIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDCameraProfileSettingsManager *cameraProfileSettingsManager; // @synthesize cameraProfileSettingsManager=_cameraProfileSettingsManager;
 - (id)cameraClipCloudZoneUUIDForRecordingService:(id)arg1;
 @property(readonly, copy, nonatomic) NSNumber *hapInstanceId;
@@ -141,6 +143,9 @@
 - (void)handleMultipleCharacteristicsUpdated:(id)arg1 message:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)accessoryDidBecomeUnreachable:(id)arg1;
 - (void)accessoryDidBecomeReachable:(id)arg1;
+- (void)removeAdvertisement:(id)arg1;
+- (void)addAdvertisement:(id)arg1;
+- (void)associateWithAccessoryAdvertisement:(id)arg1;
 - (void)_handleConfigureTargets:(id)arg1;
 - (void)_handleKeyRefreshTimerFired;
 - (void)_removeBackedoffAccessoryForStateNumber:(id)arg1;
@@ -152,6 +157,7 @@
 - (void)_handleUpdateAuthorizationData:(id)arg1;
 - (void)_handleUpdateAssociatedServiceType:(id)arg1;
 - (void)_handleRenameService:(id)arg1;
+- (void)_renameService:(id)arg1 name:(id)arg2 message:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)runtimeState;
 - (long long)reachableTransports;
 - (void)setReachability:(_Bool)arg1 serverIdentifier:(id)arg2 linkType:(long long)arg3;
@@ -161,7 +167,7 @@
 - (id)findCharacteristic:(id)arg1;
 - (id)findCharacteristic:(id)arg1 forService:(id)arg2;
 - (id)findService:(id)arg1;
-- (void)_evaluateLocalOperation:(long long)arg1 state:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_evaluateLocalOperation:(long long)arg1 state:(id)arg2 logEventSession:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_updateStateForTrackedAccessory:(id)arg1 stateNumber:(id)arg2;
 - (void)updateTrackedAccessoryStateNumber:(id)arg1;
 - (void)_retrieveStateForTrackedAccessory:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -200,7 +206,9 @@
 - (void)_logDuetEventIfNeeded:(id)arg1 clientName:(id)arg2;
 - (id)_prepareMessagePayloadForCharacteristicRemoteWrite:(id)arg1;
 - (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 hapAccessory:(id)arg3 authorizationData:(id)arg4 message:(id)arg5;
+- (void)_readCharacteristicValues:(id)arg1 hapAccessory:(id)arg2 source:(unsigned long long)arg3 queue:(id)arg4 logEventSession:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)_readCharacteristicValues:(id)arg1 hapAccessory:(id)arg2 source:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_writeCharacteristicValues:(id)arg1 hapAccessory:(id)arg2 source:(unsigned long long)arg3 queue:(id)arg4 logEventSession:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)_writeCharacteristicValues:(id)arg1 hapAccessory:(id)arg2 source:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)populateHMDCharacteristicResponses:(id)arg1 hapResponses:(id)arg2 mapping:(id)arg3 overallError:(id)arg4 requests:(id)arg5;
 - (id)hapCharacteristicWriteRequests:(id)arg1 hapAccessory:(id)arg2 hmdResponses:(id *)arg3 mapping:(id *)arg4;
@@ -214,16 +222,20 @@
 - (_Bool)shouldConfigureTargetController;
 - (id)hmdCharacteristicForInstanceId:(id)arg1;
 - (id)hmdCharacteristicFromHapCharacteristic:(id)arg1;
+- (void)_readCharacteristicValues:(id)arg1 localOperationRequired:(_Bool)arg2 source:(unsigned long long)arg3 queue:(id)arg4 logEventSession:(id)arg5 completionHandler:(CDUnknownBlockType)arg6 errorBlock:(CDUnknownBlockType)arg7;
 - (void)_readCharacteristicValues:(id)arg1 localOperationRequired:(_Bool)arg2 source:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5 errorBlock:(CDUnknownBlockType)arg6;
 - (void)autoUpdateCachedCountDownCharacteristics:(id)arg1;
+- (void)readCharacteristicValues:(id)arg1 source:(unsigned long long)arg2 queue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)readCharacteristicValues:(id)arg1 source:(unsigned long long)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)_getResponseTuple:(id)arg1 error:(id)arg2 source:(unsigned long long)arg3 suspended:(_Bool)arg4;
 - (id)getFullError:(id)arg1 source:(unsigned long long)arg2 suspended:(_Bool)arg3;
+- (void)_writeCharacteristicValues:(id)arg1 localOperationRequired:(_Bool)arg2 source:(unsigned long long)arg3 queue:(id)arg4 logEventSession:(id)arg5 completionHandler:(CDUnknownBlockType)arg6 errorBlock:(CDUnknownBlockType)arg7;
 - (void)_writeCharacteristicValues:(id)arg1 localOperationRequired:(_Bool)arg2 source:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5 errorBlock:(CDUnknownBlockType)arg6;
+- (void)writeCharacteristicValues:(id)arg1 source:(unsigned long long)arg2 queue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)writeCharacteristicValues:(id)arg1 source:(unsigned long long)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)canWakeBasedOnCharacteristic:(id)arg1;
 @property(readonly) _Bool supportsUserManagement;
-- (void)_performOperation:(long long)arg1 linkType:(long long)arg2 operationBlock:(CDUnknownBlockType)arg3 errorBlock:(CDUnknownBlockType)arg4;
+- (void)_performOperation:(long long)arg1 linkType:(long long)arg2 logEventSession:(id)arg3 operationBlock:(CDUnknownBlockType)arg4 errorBlock:(CDUnknownBlockType)arg5;
 - (void)performOperation:(long long)arg1 linkType:(long long)arg2 operationBlock:(CDUnknownBlockType)arg3 errorBlock:(CDUnknownBlockType)arg4;
 - (_Bool)matchesHAPAccessoryWithServerIdentifier:(id)arg1 linkType:(long long *)arg2;
 - (_Bool)matchesHAPAccessory:(id)arg1;
@@ -288,6 +300,8 @@
 - (void)addTarget:(id)arg1 buttonConfiguration:(id)arg2;
 - (_Bool)supportsTargetController;
 - (_Bool)_supportsMediaAccessControl;
+@property(readonly, copy, nonatomic) NSArray *awdHAPServicesList;
+@property(readonly, copy, nonatomic) AWDHomeKitHAPService *awdPrimaryHAPService;
 - (void)_handleServiceRemovedTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleAddServiceTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleUpdatedServicesForProfilesAndControllers:(id)arg1;
@@ -351,8 +365,12 @@
 - (void)_handleRoomChangedFromOldRoomName:(id)arg1;
 - (id)_messagesForUpdatedRoom:(id)arg1;
 - (void)_handleUpdatedName:(id)arg1;
+- (void)_renameAccessory:(id)arg1 resetName:(_Bool)arg2 message:(id)arg3;
+- (id)getConfiguredName;
+- (id)name;
 - (void)handleUpdatedPassword:(id)arg1;
 - (void)handleUpdatedMinimumUserPrivilege:(long long)arg1;
+- (_Bool)_serviceSupportsMinimumUserPrivilege:(id)arg1;
 - (_Bool)supportsMinimumUserPrivilege;
 - (void)didUpdateCurrentNetworkProtection;
 - (void)_handleWiFiReconfiguration:(id)arg1;
@@ -403,7 +421,7 @@
 @property(readonly, nonatomic) HMDNetworkRouterProfile *networkRouterProfile;
 - (void)writeValue:(id)arg1 toCharacteristic:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)assistantObject;
-- (id)url;
+- (id)urlString;
 - (_Bool)_handleUpdatedServicesForCameraProfiles:(id)arg1;
 - (void)_updateSiriAudioFormat:(id)arg1;
 - (void)setSelectedSiriAudioConfiguration:(id)arg1;
@@ -413,6 +431,9 @@
 @property(readonly, nonatomic) _Bool supportsSiri;
 - (void)_handleUpdateMediaSourceDisplayOrder:(id)arg1;
 @property(readonly) _Bool hasTelevisionService;
+- (_Bool)_handleUpdatedServicesForMediaProfile:(id)arg1;
+@property(readonly) _Bool hasSmartSpeakerService;
+@property(readonly) HMDMediaProfile *mediaProfile;
 - (void)startBulkSendSessionForFileType:(id)arg1 queue:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)sendTargetControlWhoAmIWithIdentifier:(unsigned int)arg1;
 - (_Bool)canAcceptBulkSendListeners;

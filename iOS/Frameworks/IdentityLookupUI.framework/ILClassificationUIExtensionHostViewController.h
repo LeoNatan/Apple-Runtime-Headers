@@ -28,6 +28,7 @@
     ILClassificationReportingController *_reportingController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ILClassificationReportingController *reportingController; // @synthesize reportingController=_reportingController;
 @property(retain, nonatomic) ILClassificationUIExtensionHostContext *extensionHostContext; // @synthesize extensionHostContext=_extensionHostContext;
 @property(retain, nonatomic) ILClassificationExtensionShellViewController *shellViewController; // @synthesize shellViewController=_shellViewController;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) ILClassificationRequest *classificationRequest; // @synthesize classificationRequest=_classificationRequest;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <ILClassificationUIExtensionHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)logErrorWithMessage:(id)arg1;
 - (void)blockNumber:(id)arg1 withCountryCode:(id)arg2;
 - (void)launchSettings;

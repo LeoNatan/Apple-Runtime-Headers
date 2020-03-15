@@ -38,6 +38,7 @@
     _Bool _hasCacheMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SPProtoCacheMessage *cacheMessage; // @synthesize cacheMessage=_cacheMessage;
 @property(readonly, nonatomic) _Bool hasCacheMessage; // @synthesize hasCacheMessage=_hasCacheMessage;
 @property(retain, nonatomic) NSData *object; // @synthesize object=_object;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(nonatomic) int subtype; // @synthesize subtype=_subtype;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

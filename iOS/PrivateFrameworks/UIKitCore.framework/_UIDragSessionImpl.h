@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
 
 + (id)_localDragSessionForSessionDestination:(id)arg1;
 + (id)activeSessions;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_sentSessionDidBegin, setter=_setSentSessionDidBegin:) _Bool sentSessionDidBegin; // @synthesize sentSessionDidBegin=_sentSessionDidBegin;
 @property(readonly, nonatomic) __weak UIDragInteraction *primaryInteraction; // @synthesize primaryInteraction=_primaryInteraction;
 @property(retain, nonatomic, getter=_internalDragSession, setter=_setInternalDragSession:) _UIInternalDraggingSessionSource *internalDragSession; // @synthesize internalDragSession=_internalDragSession;
 @property(retain, nonatomic) id localContext; // @synthesize localContext=_localContext;
-- (void).cxx_destruct;
 - (_Bool)_setDownAnimation:(id)arg1 shouldDelaySetDownOfDragItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setDownAnimation:(id)arg1 willAnimateSetDownOfDragItem:(id)arg2 withAnimator:(id)arg3;
 - (id)_setDownAnimation:(id)arg1 prepareForSetDownOfDragItem:(id)arg2 visibleDroppedItem:(id)arg3;

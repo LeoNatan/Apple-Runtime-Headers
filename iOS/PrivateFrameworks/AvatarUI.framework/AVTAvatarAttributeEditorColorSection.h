@@ -22,6 +22,7 @@
     AVTAvatarColorVariationStore *_colorVariationStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool alwaysShowExtended; // @synthesize alwaysShowExtended=_alwaysShowExtended;
 @property(readonly, nonatomic) AVTAvatarColorVariationStore *colorVariationStore; // @synthesize colorVariationStore=_colorVariationStore;
 @property(readonly, copy, nonatomic) NSArray *extendedItems; // @synthesize extendedItems=_extendedItems;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) id <AVTAvatarAttributeEditorHeaderPicker> headerAccessory; // @synthesize headerAccessory=_headerAccessory;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 - (_Bool)shouldDisplaySeparatorBeforeSection:(id)arg1;
 - (_Bool)shouldDisplayTitle;
 @property(readonly, copy) NSString *description;

@@ -17,8 +17,8 @@
 
 + (id)new;
 + (id)listener;
-@property(retain, nonatomic) BSServiceConnectionListener *listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BSServiceConnectionListener *listener; // @synthesize listener=_listener;
 - (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
 - (id)_init;
 - (id)init;

@@ -18,10 +18,10 @@
 
 + (id)copyRenderEngagementCounts;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *countQueue; // @synthesize countQueue=_countQueue;
 @property(retain) NSMutableArray *sectionCSItems; // @synthesize sectionCSItems=_sectionCSItems;
 @property(retain) NSMutableDictionary *mapProtectionClassToBundleIdToItem; // @synthesize mapProtectionClassToBundleIdToItem=_mapProtectionClassToBundleIdToItem;
-- (void).cxx_destruct;
 - (void)writeRenderAndEngagementInfo;
 - (void)fetchBundleRenderAndEngagementInfo;
 - (void)fetchBundleRenderAndEngagementInfo:(id)arg1;

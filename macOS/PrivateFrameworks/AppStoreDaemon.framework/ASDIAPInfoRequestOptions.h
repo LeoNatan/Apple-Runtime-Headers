@@ -13,8 +13,8 @@
     NSArray *_adamIds;
 }
 
-@property(readonly, nonatomic) NSArray *adamIds; // @synthesize adamIds=_adamIds;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *adamIds; // @synthesize adamIds=_adamIds;
 - (id)init;
 
 @end

@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *variableOverides; // @synthesize variableOverides=_variableOverides;
 @property(readonly, nonatomic) CDStruct_91d4396b options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqualToServerFormattedStringParameters:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

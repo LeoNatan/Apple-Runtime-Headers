@@ -18,9 +18,9 @@
 
 + (Class)replyClass;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEODataConditionalConnectionProperties *connectionProperties; // @synthesize connectionProperties=_connectionProperties;
 @property(retain, nonatomic) GEOETATrafficUpdateRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (_Bool)expectsReply;
 - (_Bool)isValid;
 - (void)encodeWithCoder:(id)arg1;

@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)classForType:(unsigned short)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WDAAnchor *anchor; // @synthesize anchor=mAnchor;
 @property __weak OADDrawable *drawable; // @synthesize drawable=mDrawable;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)hasText;
 - (_Bool)isLinked;

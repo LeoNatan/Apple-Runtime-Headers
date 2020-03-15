@@ -24,9 +24,9 @@
 }
 
 + (id)createFromNib;
+- (void).cxx_destruct;
 @property(nonatomic) int rowViewType; // @synthesize rowViewType=_rowViewType;
 @property(nonatomic) id <MMMobileDocumentsTableRowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setRowEnabled:(BOOL)arg1;
 - (void)enableServicePressed:(id)arg1;
 - (void)setEnabledState:(BOOL)arg1;

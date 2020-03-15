@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     _Bool _showIcon;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property _Bool showIcon; // @synthesize showIcon=_showIcon;
 @property(nonatomic) double iconToTextSpacing; // @synthesize iconToTextSpacing=_iconToTextSpacing;
 @property struct CGSize iconSize; // @synthesize iconSize=_iconSize;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (id)highlightColorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawWithExpansionFrame:(struct CGRect)arg1 inView:(id)arg2;

@@ -13,8 +13,8 @@
     NSMutableArray *_itemProps;
 }
 
-@property(readonly, nonatomic) NSArray *itemProps; // @synthesize itemProps=_itemProps;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *itemProps; // @synthesize itemProps=_itemProps;
 - (_Bool)isReferencedBy:(id)arg1;
 - (void)addItemProp:(id)arg1;
 - (id)init;

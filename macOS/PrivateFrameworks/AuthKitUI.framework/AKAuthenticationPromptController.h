@@ -45,6 +45,7 @@
     long long _previousMode;
 }
 
+- (void).cxx_destruct;
 @property long long previousMode; // @synthesize previousMode=_previousMode;
 @property(retain) NSMutableArray *viewStack; // @synthesize viewStack=_viewStack;
 @property(retain) NSView *webView; // @synthesize webView=_webView;
@@ -74,7 +75,6 @@
 @property BOOL makeSheetCritical; // @synthesize makeSheetCritical=_makeSheetCritical;
 @property __weak NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(retain) NSView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)context:(id)arg1 needsPasswordWithCompletion:(CDUnknownBlockType)arg2;
 - (void)skipAndContinueSignIn;
 - (void)sizeChangedFrom:(struct CGSize)arg1 toSize:(struct CGSize)arg2 webViewName:(id)arg3 callback:(id)arg4;

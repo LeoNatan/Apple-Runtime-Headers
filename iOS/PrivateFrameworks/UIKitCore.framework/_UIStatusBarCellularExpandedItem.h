@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)badgeDisplayIdentifier;
-+ (id)groupWithHighPriority:(long long)arg1 lowPriority:(long long)arg2 typeClass:(Class)arg3;
-@property(retain, nonatomic) _UIStatusBarBadgeView *badgeView; // @synthesize badgeView=_badgeView;
++ (id)groupWithHighPriority:(long long)arg1 lowPriority:(long long)arg2 typeClass:(Class)arg3 allowDualNetwork:(_Bool)arg4;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIStatusBarBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 - (id)viewForIdentifier:(id)arg1;
 - (void)_create_badgeView;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;

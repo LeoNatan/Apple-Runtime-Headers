@@ -24,6 +24,7 @@
     NSArray *_reasons;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isInvalid; // @synthesize isInvalid=_isInvalid;
 @property(copy, nonatomic) NSArray *reasons; // @synthesize reasons=_reasons;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSSet *features; // @synthesize features=_features;
 @property(readonly, nonatomic) unsigned short subtype; // @synthesize subtype=_subtype;
 @property(readonly, nonatomic) unsigned short type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) BOOL containsUnverifiedPersons;
 @property(readonly, copy, nonatomic) NSArray *suggestedPersonLocalIdentifiers;

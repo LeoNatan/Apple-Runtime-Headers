@@ -10,15 +10,15 @@
 
 @interface NCNotificationExtensionCache : NSObject
 {
-    struct NSMutableDictionary *_extensions;
+    NSMutableDictionary *_extensions;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *extensions; // @synthesize extensions=_extensions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *extensions; // @synthesize extensions=_extensions;
 - (id)_extensionMatchingSection:(id)arg1 category:(id)arg2;
 - (id)_customSectionIdentifiersForExtension:(id)arg1;
 - (id)_categoriesForExtension:(id)arg1;
-- (struct NSMutableDictionary *)_sectionDictForSection:(id)arg1;
+- (id)_sectionDictForSection:(id)arg1;
 - (void)_removeAllExtensions;
 - (void)_addExtension:(id)arg1;
 - (void)registerExtensions:(id)arg1;

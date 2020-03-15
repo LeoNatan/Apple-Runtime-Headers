@@ -13,8 +13,8 @@
     NSHashTable *_observers;
 }
 
-@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 - (_Bool)_isKeyWindowForDeferral;
 - (void)sendEvent:(id)arg1;
 - (void)removeEventObserver:(id)arg1;

@@ -19,6 +19,7 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) double maxLength; // @synthesize maxLength=_maxLength;
 @property(nonatomic) double length; // @synthesize length=_length;
@@ -26,7 +27,6 @@
 @property(nonatomic, getter=isComplete) BOOL complete; // @synthesize complete=_complete;
 @property(retain, nonatomic) NSMutableArray *candidateItemsInternal; // @synthesize candidateItemsInternal=_candidateItemsInternal;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double remainingLength;
 @property(readonly) BOOL overflows;
 - (void)addCandidateItem:(id)arg1 preferredSize:(struct CGSize)arg2;

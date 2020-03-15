@@ -14,9 +14,9 @@
     NSMutableDictionary *_imageMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imageMap; // @synthesize imageMap=_imageMap;
 @property(retain, nonatomic) ICRandomTextGenerator *randomTextGenerator; // @synthesize randomTextGenerator=_randomTextGenerator;
-- (void).cxx_destruct;
 - (id)obfuscatedImageOfSize:(struct CGSize)arg1;
 - (id)obfuscatedStringOfLength:(unsigned long long)arg1;
 - (id)obfuscateString:(id)arg1;

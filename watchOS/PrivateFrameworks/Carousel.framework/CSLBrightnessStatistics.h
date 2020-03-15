@@ -17,11 +17,11 @@
 }
 
 + (id)statisticsWithMeanRed:(float)arg1 meanGreen:(float)arg2 meanBlue:(float)arg3 mach_time:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mach_time; // @synthesize mach_time=_mach_time;
 @property(retain, nonatomic) NSNumber *meanBlue; // @synthesize meanBlue=_meanBlue;
 @property(retain, nonatomic) NSNumber *meanGreen; // @synthesize meanGreen=_meanGreen;
 @property(retain, nonatomic) NSNumber *meanRed; // @synthesize meanRed=_meanRed;
-- (void).cxx_destruct;
 - (id)toCoreBrightnessDictionary;
 @property(readonly, nonatomic) NSNumber *meanBrightness;
 

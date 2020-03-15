@@ -16,8 +16,8 @@
 }
 
 + (id)controlWithFrame:(struct CGRect)arg1 style:(int)arg2 timeScopes:(id)arg3 shortTextStyle:(_Bool)arg4;
-@property(nonatomic) int selectedTimeScope; // @synthesize selectedTimeScope=_selectedTimeScope;
 - (void).cxx_destruct;
+@property(nonatomic) int selectedTimeScope; // @synthesize selectedTimeScope=_selectedTimeScope;
 - (int)_indexForTimeScope:(int)arg1;
 - (int)_timeScopeForIndex:(int)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 timeScopes:(id)arg2 shortTextStyle:(_Bool)arg3;

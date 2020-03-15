@@ -39,6 +39,7 @@
     PUICQuickboardListViewSpecs *_specs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICQuickboardListViewSpecs *specs; // @synthesize specs=_specs;
 @property(copy, nonatomic) CDUnknownBlockType presentationCompleteCallback; // @synthesize presentationCompleteCallback=_presentationCompleteCallback;
 @property(retain, nonatomic) ArouetPrewarmer *arouetPrewarmer; // @synthesize arouetPrewarmer=_arouetPrewarmer;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) UIColor *trayButtonsBackgroundColor; // @synthesize trayButtonsBackgroundColor=_trayButtonsBackgroundColor;
 @property(nonatomic) int dictationMode; // @synthesize dictationMode=_dictationMode;
 @property(nonatomic) __weak id <PUICDictationViewControllerDelegate> dictationDelegate; // @synthesize dictationDelegate=_dictationDelegate;
-- (void).cxx_destruct;
 - (void)dismissView:(id)arg1 toPositionY:(float)arg2 delayFactor:(unsigned int)arg3;
 - (void)addDismissalAnimations;
 - (void)finishDismissalWithOptions:(unsigned int)arg1;

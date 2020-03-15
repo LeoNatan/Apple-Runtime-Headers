@@ -38,6 +38,7 @@
 - (void)sendActions:(id)arg1 withResult:(CDUnknownBlockType)arg2;
 - (void)openApplication:(id)arg1 options:(id)arg2 withResult:(CDUnknownBlockType)arg3;
 - (BOOL)canOpenApplication:(id)arg1 reason:(long long *)arg2;
+- (int)pidForApplication:(id)arg1;
 - (BOOL)isPasscodeLockedOrBlocked;
 - (id)systemApplicationBundleIdentifier;
 - (void)dealloc;

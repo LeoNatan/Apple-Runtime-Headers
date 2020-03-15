@@ -13,8 +13,8 @@
     id <NSObject> _entity;
 }
 
-@property(readonly, nonatomic) id <NSObject> entity; // @synthesize entity=_entity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NSObject> entity; // @synthesize entity=_entity;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithEntity:(id)arg1;

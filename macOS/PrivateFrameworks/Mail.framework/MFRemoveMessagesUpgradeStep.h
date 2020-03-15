@@ -14,9 +14,9 @@
     NSArray *_accounts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 @property(nonatomic) BOOL shouldRecalculateMessageCounts; // @synthesize shouldRecalculateMessageCounts=_shouldRecalculateMessageCounts;
-- (void).cxx_destruct;
 - (void)cleanUpAfterRemovingMessagesWithRowIDs:(id)arg1 subjects:(id)arg2 senders:(id)arg3 recalculateMessageCounts:(BOOL)arg4;
 - (void)removeMessagesWithRowIDs:(id)arg1 rowIDsByMailboxURLStrings:(id)arg2;
 - (id)initWithDatabaseConnection:(id)arg1;

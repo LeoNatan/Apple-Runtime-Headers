@@ -27,6 +27,7 @@
 
 + (double)expectedMaximumResponseTimeInterval;
 + (Class)responseClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *middlewareClasses; // @synthesize middlewareClasses=_middlewareClasses;
 @property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *cleanupQueue; // @synthesize cleanupQueue=_cleanupQueue;
@@ -35,7 +36,6 @@
 @property(nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 @property(nonatomic) int qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)_performWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_stateDumpObject;

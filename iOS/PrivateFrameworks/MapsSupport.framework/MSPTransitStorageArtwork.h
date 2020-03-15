@@ -29,6 +29,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accessibilityText; // @synthesize accessibilityText=_accessibilityText;
 @property(nonatomic) _Bool hasRoutingIncidentBadge; // @synthesize hasRoutingIncidentBadge=_hasRoutingIncidentBadge;
 @property(retain, nonatomic) MSPTransitStorageShield *iconFallbackShield; // @synthesize iconFallbackShield=_iconFallbackShield;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) MSPTransitStorageShield *shield; // @synthesize shield=_shield;
 @property(nonatomic) int artworkUseType; // @synthesize artworkUseType=_artworkUseType;
 @property(nonatomic) int artworkSourceType; // @synthesize artworkSourceType=_artworkSourceType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;

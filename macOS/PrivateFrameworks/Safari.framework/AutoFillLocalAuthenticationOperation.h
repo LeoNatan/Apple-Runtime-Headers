@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     id <AutoFillLocalAuthenticationOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AutoFillLocalAuthenticationOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) LAContext *laContext; // @synthesize laContext=_laContext;
 @property(readonly, nonatomic) NSString *authenticationReason; // @synthesize authenticationReason=_authenticationReason;
-- (void).cxx_destruct;
 @property long long runningState; // @synthesize runningState=_runningState;
 - (BOOL)isAsynchronous;
 - (void)cancel;

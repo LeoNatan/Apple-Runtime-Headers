@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 
 + (id)itemForNavigationToURLWithQueryID:(long long)arg1;
 + (id)itemForSearchEngineProvider:(id)arg1 forQueryID:(long long)arg2;
-@property(readonly, nonatomic) long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 - (void).cxx_destruct;
+@property(nonatomic) long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 - (id)_initWithDomainIdentifier:(id)arg1 forQueryID:(long long)arg2;
 @property(readonly, nonatomic) unsigned long long engagementDestination;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue;

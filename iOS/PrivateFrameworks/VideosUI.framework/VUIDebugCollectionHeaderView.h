@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     VUISeparatorView *_separatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUISeparatorView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)configureHeaderViewWithTitle:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

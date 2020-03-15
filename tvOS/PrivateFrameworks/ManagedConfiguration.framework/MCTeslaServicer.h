@@ -18,13 +18,13 @@
     MCDeviceUploadSubmitDeviceRequestPayload *_deviceUploadRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MCDeviceUploadSubmitDeviceRequestPayload *deviceUploadRequest; // @synthesize deviceUploadRequest=_deviceUploadRequest;
 @property(retain, nonatomic) MCDeviceUploadOrganization *organization; // @synthesize organization=_organization;
 @property(retain, nonatomic) MCDeviceUploadCredentials *userCredentials; // @synthesize userCredentials=_userCredentials;
 @property(retain, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
-- (void).cxx_destruct;
 - (void)submitDeviceUploadRequest:(id)arg1 credentials:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)retrieveDeviceUploadSoldToIdsForOrganization:(id)arg1 credentials:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)retrieveDeviceUploadRequestTypesWithCredentials:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

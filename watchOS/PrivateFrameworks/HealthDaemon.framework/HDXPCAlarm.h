@@ -19,12 +19,12 @@
     CDUnknownBlockType _unitTest_schedulerObserver;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_schedulerObserver; // @synthesize unitTest_schedulerObserver=_unitTest_schedulerObserver;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *eventHandlerQueue; // @synthesize eventHandlerQueue=_eventHandlerQueue;
 @property(readonly, nonatomic) HDXPCAlarmScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, copy, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
-- (void).cxx_destruct;
 - (void)unitTest_fireEventImmediatelyWithDate:(id)arg1 isUserVisible:(_Bool)arg2;
 - (void)eventDidFire:(id)arg1;
 - (id)description;

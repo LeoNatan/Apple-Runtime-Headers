@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     long long _currentImageRequestID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentImageRequestID; // @synthesize currentImageRequestID=_currentImageRequestID;
 @property(readonly, nonatomic) PUPhotoView *photoView; // @synthesize photoView=_photoView;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

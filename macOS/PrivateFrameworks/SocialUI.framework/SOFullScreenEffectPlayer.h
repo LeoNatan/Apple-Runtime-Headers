@@ -18,12 +18,12 @@
     struct CGRect _messageRect;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) NSView *topView; // @synthesize topView=_topView;
 @property(retain, nonatomic) NSView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) NSView *hostView; // @synthesize hostView=_hostView;
 @property(nonatomic) struct CGRect messageRect; // @synthesize messageRect=_messageRect;
-- (void).cxx_destruct;
 - (void)willStartPlaying;
 - (void)didAbortPlaying;
 - (void)didStopPlaying;

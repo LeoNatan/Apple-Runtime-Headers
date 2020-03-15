@@ -16,8 +16,10 @@
     id <CALNNotificationStorage> _wrappedStorage;
 }
 
-@property(retain) id <CALNNotificationStorage> wrappedStorage; // @synthesize wrappedStorage=_wrappedStorage;
 - (void).cxx_destruct;
+@property(retain) id <CALNNotificationStorage> wrappedStorage; // @synthesize wrappedStorage=_wrappedStorage;
+- (void)removeAllNotificationRecords;
+- (void)addNotificationRecords:(id)arg1;
 - (void)removeNotificationRecordsPassingTest:(CDUnknownBlockType)arg1;
 - (id)notificationRecords;
 - (void)addNotificationRecord:(id)arg1;

@@ -12,8 +12,11 @@
 {
     ABBookGroupAddMembersCommand *_addMembersCommand;
     ABBookGroupAddSubgroupsCommand *_addSubgroupsCommand;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 - (void)executeUndo;
 - (void)execute;
 @property(readonly) NSSet *newSubgroupUids;

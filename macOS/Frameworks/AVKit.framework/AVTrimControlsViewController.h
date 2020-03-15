@@ -37,6 +37,7 @@
 
 + (id)keyPathsForValuesAffectingRevertButtonEnabled;
 + (id)keyPathsForValuesAffectingTrimButtonEnabled;
+- (void).cxx_destruct;
 @property double selectionEnd; // @synthesize selectionEnd=_selectionEnd;
 @property double selectionStart; // @synthesize selectionStart=_selectionStart;
 @property double originalMaxTime; // @synthesize originalMaxTime=_originalMaxTime;
@@ -45,7 +46,6 @@
 @property(readonly) unsigned long long preferredTrimViewStyle; // @synthesize preferredTrimViewStyle=_preferredTrimViewStyle;
 @property double maximumSelectionDuration; // @synthesize maximumSelectionDuration=_maximumSelectionDuration;
 @property __weak id <AVTrimControlsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)revert:(id)arg1;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;

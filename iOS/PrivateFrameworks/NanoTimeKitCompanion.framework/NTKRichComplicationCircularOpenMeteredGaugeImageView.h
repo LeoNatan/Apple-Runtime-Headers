@@ -17,10 +17,10 @@
 
 + (_Bool)supportsComplicationFamily:(long long)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NTKColoringLabel *smallLabel; // @synthesize smallLabel=_smallLabel;
 @property(readonly, nonatomic) NTKRichComplicationImageView *centerImageView; // @synthesize centerImageView=_centerImageView;
 @property(readonly, nonatomic) NTKRichComplicationCurvedProgressView *progressView; // @synthesize progressView=_progressView;
-- (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)_editingDidEnd;

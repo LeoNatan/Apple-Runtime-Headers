@@ -87,6 +87,7 @@
 + (void)removePasswordForAccount:(id)arg1 forServiceName:(id)arg2;
 + (void)setPassword:(id)arg1 forAccount:(id)arg2 forAuthID:(id)arg3 forServiceName:(id)arg4;
 + (id)passwordForAccount:(id)arg1 forServiceName:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool justLoggedIn; // @synthesize justLoggedIn=_justLoggedIn;
 @property(readonly, nonatomic) IMPeople *buddyList; // @synthesize buddyList=_buddyList;
 @property(readonly, nonatomic) id loginIMHandle; // @synthesize loginIMHandle=_loginIMHandle;
@@ -105,7 +106,6 @@
 @property(readonly, nonatomic) __weak IMServiceImpl *service; // @synthesize service=_service;
 @property(readonly, nonatomic) NSString *strippedLogin; // @synthesize strippedLogin=_strippedLogin;
 @property(retain, nonatomic) NSString *login; // @synthesize login=_loginID;
-- (void).cxx_destruct;
 - (void)_handleIncomingCommand:(id)arg1 withProperties:(id)arg2 fromBuddyInfo:(id)arg3;
 - (void)_handleDeliveredCommand:(id)arg1 withProperties:(id)arg2 fromBuddyInfo:(id)arg3;
 - (_Bool)_updateDisplayName:(id)arg1;

@@ -38,8 +38,8 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_nextButton;
 }
 
-@property(retain, nonatomic) UIBarButtonItem *nextButton; // @synthesize nextButton=_nextButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIBarButtonItem *nextButton; // @synthesize nextButton=_nextButton;
 - (void)_validateGiftThrottled:(_Bool)arg1;
 - (void)_validateGift;
 - (void)_showDatePickerPopoverForRowAtIndexPath:(id)arg1;

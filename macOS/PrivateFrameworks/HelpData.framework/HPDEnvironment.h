@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *assetServerACEnvironment; // @synthesize assetServerACEnvironment=_assetServerACEnvironment;
 @property(copy, nonatomic) NSString *contentServerACEnvironment; // @synthesize contentServerACEnvironment=_contentServerACEnvironment;
 @property(copy, nonatomic) NSDictionary *hostMappings; // @synthesize hostMappings=_hostMappings;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

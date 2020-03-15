@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSDictionary, NSOrderedSet, NSString, WFCoercionOptions, WFFileRepresentation, WFFileType, WFObjectRepresentation, WFObjectType, WFRepresentation, WFType;
+@class NSArray, NSDictionary, NSOrderedSet, NSString, WFCoercionOptions, WFContentSource, WFFileRepresentation, WFFileType, WFObjectRepresentation, WFObjectType, WFRepresentation, WFType;
 
 @protocol WFContentItemClass
++ (WFContentSource *)defaultSourceForRepresentation:(WFRepresentation *)arg1;
 + (NSString *)countDescription;
 + (NSString *)localizedPluralFilterDescription;
 + (NSString *)pluralFilterDescription;
@@ -24,7 +25,7 @@
 + (NSArray *)filterRepresentationsForAllowedContent:(NSArray *)arg1;
 + (NSArray *)propertyBuilders;
 + (_Bool)supportedTypeMustBeDeterminedByInstance:(WFType *)arg1;
-+ (id)itemWithSerializedItem:(NSDictionary *)arg1 forType:(WFFileType *)arg2 named:(NSString *)arg3;
++ (id)itemWithSerializedItem:(NSDictionary *)arg1 forType:(WFFileType *)arg2 named:(NSString *)arg3 contentSource:(WFContentSource *)arg4;
 + (NSOrderedSet *)ownedPasteboardTypes;
 - (_Bool)cachesSupportedTypes;
 - (_Bool)canGenerateRepresentationForType:(WFType *)arg1;
@@ -41,7 +42,7 @@
 - (void)generateObjectRepresentations:(void (^)(NSArray *, NSError *))arg1 options:(WFCoercionOptions *)arg2 forClass:(Class)arg3;
 - (void)generateObjectRepresentation:(void (^)(id, NSString *, NSError *))arg1 options:(WFCoercionOptions *)arg2 forClass:(Class)arg3;
 - (WFObjectRepresentation *)generateObjectRepresentationForClass:(Class)arg1 options:(WFCoercionOptions *)arg2 error:(id *)arg3;
-- (WFFileRepresentation *)generateFileRepresentationForType:(WFFileType *)arg1 error:(id *)arg2;
+- (WFFileRepresentation *)generateFileRepresentationForType:(WFFileType *)arg1 options:(WFCoercionOptions *)arg2 error:(id *)arg3;
 - (NSArray *)generateObjectRepresentationsForClass:(Class)arg1 options:(WFCoercionOptions *)arg2 error:(id *)arg3;
 - (NSArray *)generateFileRepresentationsForType:(WFFileType *)arg1 options:(WFCoercionOptions *)arg2 error:(id *)arg3;
 @end

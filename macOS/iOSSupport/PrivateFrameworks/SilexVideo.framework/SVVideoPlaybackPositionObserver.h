@@ -19,11 +19,11 @@
     id <SVPlayerTimeControlStatusObserving> _timeControlStatusObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVPlayerTimeControlStatusObserving> timeControlStatusObserver; // @synthesize timeControlStatusObserver=_timeControlStatusObserver;
 @property(readonly, nonatomic) id <SVPlayerItemObserving> playerItemObserver; // @synthesize playerItemObserver=_playerItemObserver;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock=_changeBlock;
 @property(nonatomic) unsigned long long position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (void)playerItemPlayedToEnd:(id)arg1;
 - (id)initWithPlayerItemObserver:(id)arg1 timeControlStatusObserver:(id)arg2;
 

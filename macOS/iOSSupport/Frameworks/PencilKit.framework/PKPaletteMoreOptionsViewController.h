@@ -20,6 +20,7 @@
     PKPaletteAutoMinimizeOptionCell *_autoMinimizeCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaletteAutoMinimizeOptionCell *autoMinimizeCell; // @synthesize autoMinimizeCell=_autoMinimizeCell;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) NSArray *stackViewPositioningConstraints; // @synthesize stackViewPositioningConstraints=_stackViewPositioningConstraints;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) UITraitCollection *externalTraitCollection; // @synthesize externalTraitCollection=_externalTraitCollection;
 @property(nonatomic, getter=isAutoHideOn) BOOL autoHideOn; // @synthesize autoHideOn=_autoHideOn;
 @property(nonatomic) __weak id <PKPaletteMoreOptionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateContentSize;
 - (void)_reloadItems;
 - (void)_autoMinimizeCellDidChangeValue:(id)arg1;

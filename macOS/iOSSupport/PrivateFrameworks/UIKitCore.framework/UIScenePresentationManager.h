@@ -26,10 +26,10 @@
     } _delegateFlags;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UIScenePresentationContext *defaultPresentationContext; // @synthesize defaultPresentationContext=_defaultScenePresentationContext;
 @property(nonatomic) __weak id <UIScenePresentationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak FBScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (BOOL)_hasPresenterWithIdentifier:(id)arg1;
 - (long long)_defaultPresentationPriority;
 - (id)_presenterWithIdentifier:(id)arg1;

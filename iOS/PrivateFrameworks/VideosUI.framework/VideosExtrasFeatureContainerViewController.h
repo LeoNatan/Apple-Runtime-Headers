@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     double _collectionViewHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double collectionViewHeight; // @synthesize collectionViewHeight=_collectionViewHeight;
 @property(nonatomic) __weak UIView *menuBarView; // @synthesize menuBarView=_menuBarView;
 @property(retain, nonatomic) UIViewController<VideosExtrasVideoPlaybackViewController> *videoPlaybackViewController; // @synthesize videoPlaybackViewController=_videoPlaybackViewController;
 @property(readonly, nonatomic) __weak VideosExtrasContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_menuBarHeightChange:(id)arg1;
 - (id)childViewControllerForHomeIndicatorAutoHidden;
 - (void)viewDidLoad;

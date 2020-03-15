@@ -27,6 +27,7 @@
 + (id)speechUtteranceWithAttributedString:(id)arg1;
 + (id)speechUtteranceWithString:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) double postUtteranceDelay; // @synthesize postUtteranceDelay=_postUtteranceDelay;
 @property(nonatomic) double preUtteranceDelay; // @synthesize preUtteranceDelay=_preUtteranceDelay;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSAttributedString *attributedSpeechString; // @synthesize attributedSpeechString=_attributedSpeechString;
 @property(retain, nonatomic) NSString *speechString; // @synthesize speechString=_speechString;
 @property(retain, nonatomic) AVSpeechSynthesisVoice *voice; // @synthesize voice=_voice;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

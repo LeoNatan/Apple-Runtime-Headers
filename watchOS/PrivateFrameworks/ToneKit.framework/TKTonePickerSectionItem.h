@@ -18,11 +18,11 @@
     int _numberOfChildren;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNumberOfChildren:) int numberOfChildren; // @synthesize numberOfChildren=_numberOfChildren;
 @property(nonatomic, setter=_setParentTonePickerController:) __weak TKTonePickerController *_parentTonePickerController; // @synthesize _parentTonePickerController=__parentTonePickerController;
 @property(nonatomic, setter=_setRegularToneSectionIndex:) unsigned int regularToneSectionIndex; // @synthesize regularToneSectionIndex=_regularToneSectionIndex;
 @property(nonatomic, setter=_setSectionHeader:) unsigned int sectionHeader; // @synthesize sectionHeader=_sectionHeader;
-- (void).cxx_destruct;
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (id)childItemAtIndex:(int)arg1;
 

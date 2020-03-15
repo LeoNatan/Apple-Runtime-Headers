@@ -16,8 +16,8 @@
     id <HUSoftwareUpdateItemModuleControllerDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <HUSoftwareUpdateItemModuleControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <HUSoftwareUpdateItemModuleControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)softwareUpdateUIManager:(id)arg1 dismissViewController:(id)arg2;
 - (id)softwareUpdateUIManager:(id)arg1 presentViewController:(id)arg2;
 - (void)_startUpdateOnAccessories:(id)arg1;

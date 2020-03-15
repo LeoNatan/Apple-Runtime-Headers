@@ -16,10 +16,10 @@
     long long _year;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long year; // @synthesize year=_year;
 @property(readonly) PGGraphNode *owner; // @synthesize owner=_owner;
 @property(retain) NSArray *petAssets; // @synthesize petAssets=_petAssets;
-- (void).cxx_destruct;
 - (void)addMomentNode:(id)arg1;
 - (id)initWithOwner:(id)arg1 year:(long long)arg2;
 

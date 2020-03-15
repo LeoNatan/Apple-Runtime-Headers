@@ -28,6 +28,7 @@
 }
 
 + (id)_frameSeedForLifetimeIntervalBegin:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SignpostContextInfo *contextInfoForHIDInput; // @synthesize contextInfoForHIDInput=_contextInfoForHIDInput;
 @property(readonly, nonatomic) SignpostContextInfo *earliestTimeContextInfo; // @synthesize earliestTimeContextInfo=_earliestTimeContextInfo;
 @property(readonly, nonatomic) SignpostFrameLatencyInterval *frameLatencyInterval; // @synthesize frameLatencyInterval=_frameLatencyInterval;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) unsigned long long displayRefreshIntervalDurationMachTime; // @synthesize displayRefreshIntervalDurationMachTime=_displayRefreshIntervalDurationMachTime;
 @property(readonly, nonatomic) unsigned int swapID; // @synthesize swapID=_swapID;
 @property(readonly, nonatomic) unsigned int frameSeed; // @synthesize frameSeed=_frameSeed;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SignpostSupportTimeInterval> previousFrameOnScreenInterval;
 @property(readonly, nonatomic) id <SignpostSupportTimeInterval> userVisibleGlitchInterval;
 @property(readonly, nonatomic) id <SignpostSupportTimeInterval> frameOverrunInactiveDisplayInterval;

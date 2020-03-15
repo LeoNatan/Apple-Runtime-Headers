@@ -25,6 +25,7 @@
 
 + (id)_createStackView;
 + (id)_createScrollView;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *selectedChoice; // @synthesize selectedChoice=_selectedChoice;
 @property(retain) AKAuthorizationPaneContext *context; // @synthesize context=_context;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
@@ -33,7 +34,6 @@
 @property(retain) NSArray *contextChoices; // @synthesize contextChoices=_contextChoices;
 @property __weak id <AKAuthorizationSubPaneLoginChoiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property unsigned long long indexOfChosenLogin; // @synthesize indexOfChosenLogin=_indexOfChosenLogin;
-- (void).cxx_destruct;
 - (id)getImageNamed:(id)arg1 inBundle:(id)arg2;
 - (void)addToConstraints:(id)arg1 context:(id)arg2;
 - (void)addToStackView:(id)arg1 context:(id)arg2;

@@ -21,10 +21,10 @@
     CDUnknownBlockType _asynchronousResolver;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType asynchronousResolver; // @synthesize asynchronousResolver=_asynchronousResolver;
 @property(copy) CDUnknownBlockType synchronousResolver; // @synthesize synchronousResolver=_synchronousResolver;
 @property(readonly) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)description;
 - (id)resourcePropertyForKey:(id)arg1;
 - (BOOL)resolveWithOptions:(unsigned long long)arg1 relativeToURL:(id)arg2 error:(id *)arg3;

@@ -36,6 +36,7 @@
 + (id)_activityTemplateWithFamily:(long long)arg1 entryModel:(id)arg2;
 + (id)idealizedEntryModel;
 + (id)lockedEntryModel;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool deviceLocked; // @synthesize deviceLocked=_deviceLocked;
 @property(nonatomic) _Bool databaseLoading; // @synthesize databaseLoading=_databaseLoading;
 @property(retain, nonatomic) NSArray *appleStandHourChartData; // @synthesize appleStandHourChartData=_appleStandHourChartData;
@@ -47,7 +48,6 @@
 @property(nonatomic) double appleExerciseTimeTotal; // @synthesize appleExerciseTimeTotal=_appleExerciseTimeTotal;
 @property(retain, nonatomic) HKQuantity *activeEnergyGoal; // @synthesize activeEnergyGoal=_activeEnergyGoal;
 @property(retain, nonatomic) HKQuantity *activeEnergyTotal; // @synthesize activeEnergyTotal=_activeEnergyTotal;
-- (void).cxx_destruct;
 - (id)loggingString;
 - (id)date;
 - (void)setDate:(id)arg1;

@@ -39,6 +39,7 @@
 + (id)orderedFunctionKeyMacKeyCodes;
 + (id)macKeyCodesRequiringSecondaryFN;
 + (id)sharedFunctionKeyMapper;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL fnKeyMode; // @synthesize fnKeyMode=_fnKeyMode;
 @property(retain) NSMutableArray *orderedKeyboardIdentifiers; // @synthesize orderedKeyboardIdentifiers=_orderedKeyboardIdentifiers;
 @property(retain) NSMutableDictionary *keyboardMacKeyCodeMapsByIdentifier; // @synthesize keyboardMacKeyCodeMapsByIdentifier=_keyboardMacKeyCodeMapsByIdentifier;
@@ -48,7 +49,6 @@
 @property unsigned int keyboardConnectedIterator; // @synthesize keyboardConnectedIterator=_keyboardConnectedIterator;
 @property(nonatomic) struct IONotificationPort *notificationPort; // @synthesize notificationPort=_notificationPort;
 @property __weak id <ACSHFunctionKeyMapperDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_disconnectedCallback:(unsigned int)arg1;
 - (void)_connectedCallback:(unsigned int)arg1;

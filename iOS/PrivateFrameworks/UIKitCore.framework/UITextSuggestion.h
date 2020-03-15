@@ -22,13 +22,13 @@
 
 + (id)textSuggestionWithInputText:(id)arg1 searchText:(id)arg2;
 + (id)textSuggestionWithInputText:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _shouldPersist; // @synthesize _shouldPersist=__shouldPersist;
 @property(nonatomic) _Bool displayStylePlain; // @synthesize displayStylePlain=_displayStylePlain;
 @property(copy, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
 @property(copy, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(readonly, copy, nonatomic) NSString *inputText; // @synthesize inputText=_inputText;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TIKeyboardCandidate *_keyboardCandidate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithInputText:(id)arg1 searchText:(id)arg2 displayText:(id)arg3 headerText:(id)arg4;

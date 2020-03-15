@@ -16,9 +16,9 @@
 }
 
 + (Class)responseClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forceGSToken; // @synthesize forceGSToken=_forceGSToken;
 @property(readonly, nonatomic) ACAccount *grandSlamAccount; // @synthesize grandSlamAccount=_grandSlamAccount;
-- (void).cxx_destruct;
 - (id)urlRequest;
 - (id)initWithGrandSlamAccount:(id)arg1 accountStore:(id)arg2;
 

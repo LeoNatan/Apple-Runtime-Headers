@@ -24,13 +24,13 @@
 + (id)_applyAnimationSettings:(id)arg1 withApplier:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3 applyDynamically:(_Bool)arg4;
 + (id)applyAnimationSettings:(id)arg1 withDynamicApplier:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)applyAnimationSettings:(id)arg1 withStaticApplier:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *effectiveProgressObservers; // @synthesize effectiveProgressObservers=_effectiveProgressObservers;
 @property(readonly, nonatomic) NSMutableSet *relativeAnimations; // @synthesize relativeAnimations=_relativeAnimations;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(copy, nonatomic) HUAnimationSettings *animationSettings; // @synthesize animationSettings=_animationSettings;
 @property(nonatomic) _Bool applyDynamically; // @synthesize applyDynamically=_applyDynamically;
-- (void).cxx_destruct;
 - (_Bool)complete:(_Bool)arg1;
 - (_Bool)cancel;
 - (void)_invalidateDisplayLinkIfNecessary;

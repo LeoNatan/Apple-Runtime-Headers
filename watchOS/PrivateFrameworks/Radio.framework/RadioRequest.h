@@ -23,8 +23,8 @@
 
 + (id)defaultURLCache;
 + (void)loadServiceConfigurationWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property(nonatomic, getter=isAsynchronousBackgroundRequest) _Bool asynchronousBackgroundRequest; // @synthesize asynchronousBackgroundRequest=_asynchronousBackgroundRequest;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isAsynchronousBackgroundRequest) _Bool asynchronousBackgroundRequest; // @synthesize asynchronousBackgroundRequest=_asynchronousBackgroundRequest;
 - (void)_loadRadioStoreBagAndAllowRetry:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_loadRadioStoreBagWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSDictionary *unparsedResponseDictionary;

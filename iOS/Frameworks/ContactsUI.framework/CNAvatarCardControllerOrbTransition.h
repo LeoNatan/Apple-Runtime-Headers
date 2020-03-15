@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _endActionListTransform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(nonatomic) double highlightViewToAlpha; // @synthesize highlightViewToAlpha=_highlightViewToAlpha;
 @property(nonatomic) struct CGAffineTransform endActionListTransform; // @synthesize endActionListTransform=_endActionListTransform;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak CNAvatarCardViewController *cardViewController; // @synthesize cardViewController=_cardViewController;
 @property(nonatomic) __weak CNContactOrbHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) _Bool isDismissing; // @synthesize isDismissing=_isDismissing;
-- (void).cxx_destruct;
 - (struct CGRect)_sourceRectInContainerView:(id)arg1;
 - (void)transitionDidEnd:(_Bool)arg1;
 - (void)performTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;

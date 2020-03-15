@@ -17,10 +17,10 @@
     struct CGSize _maxTileSize;
 }
 
-@property(nonatomic) struct CGSize maxTileSize; // @synthesize maxTileSize=_maxTileSize;
-@property(nonatomic) _Bool tileGeometryDirty; // @synthesize tileGeometryDirty=_tileGeometryDirty;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGSize maxTileSize; // @synthesize maxTileSize=_maxTileSize;
+@property(nonatomic) _Bool tileGeometryDirty; // @synthesize tileGeometryDirty=_tileGeometryDirty;
 @property(readonly, copy) NSString *description;
 - (_Bool)updateWithLayer:(id)arg1 scale:(double)arg2 columns:(id)arg3;
 - (void)tileGeometryConfigureWithLayer:(id)arg1 tileLayer:(id)arg2 atIndex:(unsigned long long)arg3;

@@ -19,12 +19,12 @@
     CDUnknownBlockType _didDismissHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didDismissHandler; // @synthesize didDismissHandler=_didDismissHandler;
 @property(copy, nonatomic) CDUnknownBlockType willDismissHandler; // @synthesize willDismissHandler=_willDismissHandler;
 @property(copy, nonatomic) CDUnknownBlockType didPresentHandler; // @synthesize didPresentHandler=_didPresentHandler;
 @property(copy, nonatomic) CDUnknownBlockType willPresentHandler; // @synthesize willPresentHandler=_willPresentHandler;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)didDismiss;
 - (void)willDismiss;

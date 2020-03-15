@@ -17,10 +17,10 @@
     WKWebsiteDataStore *_dataStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WKWebsiteDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(readonly, nonatomic) WKProcessPool *processPool; // @synthesize processPool=_processPool;
 @property(retain, nonatomic) NSPointerArray *webViews; // @synthesize webViews=_webViews;
-- (void).cxx_destruct;
 - (void)assignRelatedWebViewToConfiguration:(id)arg1;
 - (id)createWebViewWithUserContentController:(id)arg1;
 - (id)initWithProcessPool:(id)arg1 websiteDataStore:(id)arg2;

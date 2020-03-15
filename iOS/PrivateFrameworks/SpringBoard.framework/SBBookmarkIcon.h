@@ -13,8 +13,8 @@
     SBBookmark *_bookmark;
 }
 
-@property(readonly, nonatomic) SBBookmark *bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBBookmark *bookmark; // @synthesize bookmark=_bookmark;
 - (_Bool)isBookmarkIcon;
 - (id)representedSceneIdentifier;
 - (id)folderFallbackTitle;
@@ -22,6 +22,7 @@
 - (id)applicationToLaunch;
 @property(readonly, nonatomic) _Bool representsWebApp;
 @property(readonly, nonatomic) _Bool displaysShareBookmarkShortcutItem;
+- (_Bool)_isSaneURL;
 @property(readonly, nonatomic) NSURL *launchURL;
 @property(readonly, nonatomic) UIWebClip *webClip;
 - (id)copyWithZone:(struct _NSZone *)arg1;

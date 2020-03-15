@@ -110,6 +110,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(nonatomic) double emptySwitcherDismissDelay; // @synthesize emptySwitcherDismissDelay=_emptySwitcherDismissDelay;
 @property(nonatomic) double iconZoomFloatingDockFadeDelay; // @synthesize iconZoomFloatingDockFadeDelay=_iconZoomFloatingDockFadeDelay;
 @property(nonatomic) double reduceMotionCrossfadeDuration; // @synthesize reduceMotionCrossfadeDuration=_reduceMotionCrossfadeDuration;
@@ -207,7 +208,6 @@
 @property(retain, nonatomic) SBFFluidBehaviorSettings *iconZoomDownSettings; // @synthesize iconZoomDownSettings=_iconZoomDownSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *zoomUpSettings; // @synthesize zoomUpSettings=_zoomUpSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *layoutSettings; // @synthesize layoutSettings=_layoutSettings;
-- (void).cxx_destruct;
 - (void)_setHomeGestureAnimationDefaultValues;
 - (void)setDefaultValues;
 - (double)dimmingAlphaForMode:(long long)arg1;

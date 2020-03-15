@@ -22,13 +22,13 @@
     NSObject<OS_dispatch_queue> *_userQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *userQueue; // @synthesize userQueue=_userQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *socketQueue; // @synthesize socketQueue=_socketQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *socketSource; // @synthesize socketSource=_socketSource;
 @property(readonly, nonatomic) CATEndPoint *remoteEndPoint; // @synthesize remoteEndPoint=_remoteEndPoint;
 @property(readonly, nonatomic) CATEndPoint *localEndPoint; // @synthesize localEndPoint=_localEndPoint;
 @property(nonatomic) __weak id <CATSocketDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)delegateDidFailWithError:(id)arg1;
 - (void)delegateDidConnect;
 - (void)delegateDidClose;

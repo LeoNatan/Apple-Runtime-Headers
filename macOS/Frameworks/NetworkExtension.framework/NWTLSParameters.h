@@ -16,11 +16,11 @@
     unsigned long long _maximumSSLProtocolVersion;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long maximumSSLProtocolVersion; // @synthesize maximumSSLProtocolVersion=_maximumSSLProtocolVersion;
 @property unsigned long long minimumSSLProtocolVersion; // @synthesize minimumSSLProtocolVersion=_minimumSSLProtocolVersion;
 @property(copy) NSSet *SSLCipherSuites; // @synthesize SSLCipherSuites=_SSLCipherSuites;
 @property(copy) NSData *TLSSessionID; // @synthesize TLSSessionID=_TLSSessionID;
-- (void).cxx_destruct;
 
 @end
 

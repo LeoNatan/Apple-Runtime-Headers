@@ -21,6 +21,7 @@
 }
 
 + (CDStruct_db293311)_copyCallbacksForDelegate:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSError *nodeOperationError; // @synthesize nodeOperationError=_nodeOperationError;
 @property(readonly) unsigned int options; // @synthesize options=_options;
 @property(readonly) unsigned int reportInterval; // @synthesize reportInterval=_reportInterval;
@@ -28,7 +29,6 @@
 @property(readonly, copy) NSString *destinationName; // @synthesize destinationName=_destinationName;
 @property(readonly, copy) NSString *operationName; // @synthesize operationName=_operationName;
 @property __weak id <TMCopyEngineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)copySourceURL:(id)arg1 toDestinationURL:(id)arg2 error:(id *)arg3;
 - (void)dealloc;
 - (id)initWithOperationName:(id)arg1 kind:(unsigned int)arg2 destinationName:(id)arg3 reportInterval:(unsigned int)arg4 options:(unsigned int)arg5;

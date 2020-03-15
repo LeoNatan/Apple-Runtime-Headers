@@ -14,9 +14,9 @@
     double _cpuUsage;
 }
 
+- (void).cxx_destruct;
 @property double cpuUsage; // @synthesize cpuUsage=_cpuUsage;
 @property(retain) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

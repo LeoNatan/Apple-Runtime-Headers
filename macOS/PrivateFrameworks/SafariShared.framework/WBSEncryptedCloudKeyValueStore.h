@@ -20,9 +20,9 @@
 
 + (id)additionalStoreWithIdentifier:(id)arg1;
 + (id)defaultStore;
-@property(readonly, nonatomic) NSUbiquitousKeyValueStore *backingStore; // @synthesize backingStore=_backingStore;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSUbiquitousKeyValueStore *backingStore; // @synthesize backingStore=_backingStore;
 - (void)dealloc;
 - (void)synchronizeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)synchronize;

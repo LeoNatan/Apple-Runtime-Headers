@@ -21,8 +21,8 @@
 
 + (id)_descriptionForValue:(id)arg1 prefix:(id)arg2;
 + (id)descriptionForValue:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *contentPropertyName; // @synthesize contentPropertyName=_contentPropertyName;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *contentPropertyName; // @synthesize contentPropertyName=_contentPropertyName;
 - (id)_attributeForName:(id)arg1 ofAttributeWithName:(id)arg2;
 - (void)_setAttribute:(id)arg1 forName:(id)arg2 ofAttributeWithName:(id)arg3;
 - (id)_attributeForName:(id)arg1 ofElementWithName:(id)arg2;

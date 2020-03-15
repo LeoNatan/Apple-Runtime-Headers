@@ -17,9 +17,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) INControlHomeIntent *intent; // @synthesize intent=_intent;
 @property(retain, nonatomic) NSArray *homeKitObjects; // @synthesize homeKitObjects=_homeKitObjects;
-- (void).cxx_destruct;
 - (void)_handleActionSetForExecution:(id)arg1 message:(id)arg2;
 - (void)_handleActionSetForConfirmation:(id)arg1 message:(id)arg2;
 - (id)_getObjectsWithUUID;

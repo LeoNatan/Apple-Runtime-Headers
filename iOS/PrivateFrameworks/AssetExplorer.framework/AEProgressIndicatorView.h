@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSProgress *__progress;
 }
 
-@property(readonly, nonatomic) NSProgress *_progress; // @synthesize _progress=__progress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSProgress *_progress; // @synthesize _progress=__progress;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 progress:(id)arg2;

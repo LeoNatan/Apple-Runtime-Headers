@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSSet *expressTransitNetworks; // @synthesize expressTransitNetworks=_expressTransitNetworks;
 @property(readonly, copy) NSSet *supportedTransitNetworks; // @synthesize supportedTransitNetworks=_supportedTransitNetworks;
 @property(readonly, copy) NSSet *expressCredentialTypes; // @synthesize expressCredentialTypes=_expressCredentialTypes;
@@ -33,7 +34,6 @@
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) int classification; // @synthesize classification=_classification;
 @property(readonly) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_geoFenceWithDictionary:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

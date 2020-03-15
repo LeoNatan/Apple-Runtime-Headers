@@ -16,8 +16,8 @@
     id <SXDOMObjectProviding> _DOMObjectProvider;
 }
 
-@property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 - (id)recordValueTransformerForDataDescriptor:(id)arg1;
 - (id)initWithDOMObjectProvider:(id)arg1;
 

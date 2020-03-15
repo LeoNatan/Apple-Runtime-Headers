@@ -19,9 +19,9 @@
 
 + (long long)stateForStateName:(id)arg1;
 + (id)stateNameForState:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long oldState; // @synthesize oldState=_oldState;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *properties;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;

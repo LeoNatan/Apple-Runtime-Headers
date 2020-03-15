@@ -6,10 +6,11 @@
 
 #import <ContactsUI/NSObject-Protocol.h>
 
-@class CNContact, CNFamilyMemberWhitelistedContactViewCell, CNUICoreFamilyMemberContactItem;
+@class CNContact, CNFamilyMemberWhitelistedContactViewCell, CNUICoreFamilyMemberContactItem, NSString;
 
 @protocol CNFamilyMemberWhitelistedContactViewCellDelegate <NSObject>
 - (void)cell:(CNFamilyMemberWhitelistedContactViewCell *)arg1 didDismissDetailsOfFamilyMemberContactItem:(CNUICoreFamilyMemberContactItem *)arg2 withResult:(CNContact *)arg3;
 - (void)cell:(CNFamilyMemberWhitelistedContactViewCell *)arg1 didRequestDetailsOfFamilyMemberContactItem:(CNUICoreFamilyMemberContactItem *)arg2;
+- (NSString *)warningMessageWhenDisplayingConact:(CNContact *)arg1 cell:(CNFamilyMemberWhitelistedContactViewCell *)arg2;
 @end
 

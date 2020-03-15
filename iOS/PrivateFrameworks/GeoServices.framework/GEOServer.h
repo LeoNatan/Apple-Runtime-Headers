@@ -19,8 +19,8 @@
 + (_Bool)shouldStartImmediately;
 + (Class)peerClass;
 + (id)identifier;
-@property(nonatomic) __weak GEODaemon *daemon; // @synthesize daemon=_daemon;
 - (void).cxx_destruct;
+@property(nonatomic) __weak GEODaemon *daemon; // @synthesize daemon=_daemon;
 - (id)description;
 - (void)peerDidDisconnect:(id)arg1;
 - (void)peerDidConnect:(id)arg1;

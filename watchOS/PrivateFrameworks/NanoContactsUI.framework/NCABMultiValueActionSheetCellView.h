@@ -17,9 +17,9 @@
 }
 
 + (void)_setupSpec;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(readonly, nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
-- (void).cxx_destruct;
 - (float)_scaledBaselineSpacing;
 - (float)_scaledBaselineOffsetFromTop;
 - (float)_cellHeight;

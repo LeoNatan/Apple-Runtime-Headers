@@ -42,10 +42,6 @@ struct MTLTargetDeviceArch {
     char *_field3;
 };
 
-struct NSObject {
-    Class _field1;
-};
-
 struct StorageEntry {
     unsigned long long _field1;
     void *_field2;

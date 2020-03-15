@@ -27,6 +27,7 @@
     id <WiFiAwareDataSessionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int localInterfaceIndex; // @synthesize localInterfaceIndex=_localInterfaceIndex;
 @property(nonatomic) __weak id <WiFiAwareDataSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSData *pmk; // @synthesize pmk=_pmk;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) WiFiAwarePublishDatapathServiceSpecificInfo *serviceSpecificInfo; // @synthesize serviceSpecificInfo=_serviceSpecificInfo;
 @property(readonly, nonatomic) long long serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly, nonatomic) WiFiAwareDiscoveryResult *discoveryResult; // @synthesize discoveryResult=_discoveryResult;
-- (void).cxx_destruct;
 - (void)datapathTerminatedWithReason:(long long)arg1;
 - (void)datapathFailedToStartWithError:(long long)arg1;
 - (void)datapathConfirmedForPeerDataAddress:(id)arg1 serviceSpecificInfo:(id)arg2;

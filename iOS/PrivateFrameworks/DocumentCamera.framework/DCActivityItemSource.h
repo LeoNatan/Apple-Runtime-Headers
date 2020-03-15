@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     ICDocCamDocumentInfoCollection *_docInfoCollection;
 }
 
-@property(nonatomic) __weak ICDocCamDocumentInfoCollection *docInfoCollection; // @synthesize docInfoCollection=_docInfoCollection;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ICDocCamDocumentInfoCollection *docInfoCollection; // @synthesize docInfoCollection=_docInfoCollection;
 - (id)activityViewController:(id)arg1 attachmentNameForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;

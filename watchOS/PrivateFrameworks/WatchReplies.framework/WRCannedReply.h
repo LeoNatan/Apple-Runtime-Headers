@@ -15,10 +15,10 @@
     NSString *_defaultReplyKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *defaultReplyKey; // @synthesize defaultReplyKey=_defaultReplyKey;
 @property(retain, nonatomic) NSString *defaultReplyText; // @synthesize defaultReplyText=_defaultReplyText;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 
 @end
 

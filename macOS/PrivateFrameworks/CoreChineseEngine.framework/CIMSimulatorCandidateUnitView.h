@@ -16,11 +16,11 @@
     NSColor *_backgroundBorderColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *backgroundBorderColor; // @synthesize backgroundBorderColor=_backgroundBorderColor;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSAttributedString *attributedStringValue; // @synthesize attributedStringValue=_attributedStringValue;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)sizeToFit;
 - (id)initWithFrame:(struct CGRect)arg1;

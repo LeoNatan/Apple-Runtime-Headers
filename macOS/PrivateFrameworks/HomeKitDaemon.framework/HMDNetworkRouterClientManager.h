@@ -28,6 +28,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL startPending; // @synthesize startPending=_startPending;
 @property(nonatomic) BOOL staleClientIdentifiersResetInProgress; // @synthesize staleClientIdentifiersResetInProgress=_staleClientIdentifiersResetInProgress;
 @property(nonatomic) BOOL staleClientIdentifiersResetNeeded; // @synthesize staleClientIdentifiersResetNeeded=_staleClientIdentifiersResetNeeded;
@@ -37,7 +38,6 @@
 @property(readonly) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) HMFUnfairLock *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (BOOL)supportsDeviceWithCapabilities:(id)arg1;
 - (id)_transactionBlockForAccessoriesWithStaleClientIdentifier;
 - (void)_unregisterInterestForFirewallRulesForProductData:(id)arg1 firmwareVersion:(id)arg2;

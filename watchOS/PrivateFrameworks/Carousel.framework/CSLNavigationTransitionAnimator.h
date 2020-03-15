@@ -29,6 +29,7 @@
     NSString *_pendingPPTKey;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *pendingPPTKey; // @synthesize pendingPPTKey=_pendingPPTKey;
 @property(retain, nonatomic) UIApplicationSceneDeactivationAssertion *animationDeactivationAssertion; // @synthesize animationDeactivationAssertion=_animationDeactivationAssertion;
 @property(retain, nonatomic) UIViewController *pendingCompletionViewController; // @synthesize pendingCompletionViewController=_pendingCompletionViewController;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned int animatorState; // @synthesize animatorState=_animatorState;
 @property(copy, nonatomic) CDUnknownBlockType transitionCompletionHandler; // @synthesize transitionCompletionHandler=_transitionCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType beginAppearanceTransitionBlock; // @synthesize beginAppearanceTransitionBlock=_beginAppearanceTransitionBlock;
-- (void).cxx_destruct;
 - (void)_completeAnimationToViewController:(id)arg1;
 - (void)completeCurrentTransitionImmediately;
 - (void)transactionWatchdogImminent;

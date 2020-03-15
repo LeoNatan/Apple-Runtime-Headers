@@ -11,10 +11,10 @@
 __attribute__((visibility("hidden")))
 @interface _PUScrollViewPageSwipeTestContext : NSObject
 {
-    int _scrollAxis;
     NSString *_testName;
     long long _numberOfPages;
     long long _numberOfIterations;
+    unsigned long long _scrollAxis;
     long long _currentIteration;
     long long _currentPage;
     long long _currentDirection;
@@ -23,17 +23,17 @@ __attribute__((visibility("hidden")))
     struct CGPoint _originContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) double currentPageSwipeProgress; // @synthesize currentPageSwipeProgress=_currentPageSwipeProgress;
 @property(nonatomic) long long currentDirection; // @synthesize currentDirection=_currentDirection;
 @property(nonatomic) long long currentPage; // @synthesize currentPage=_currentPage;
 @property(nonatomic) long long currentIteration; // @synthesize currentIteration=_currentIteration;
 @property(nonatomic) struct CGPoint originContentOffset; // @synthesize originContentOffset=_originContentOffset;
-@property(nonatomic) int scrollAxis; // @synthesize scrollAxis=_scrollAxis;
+@property(nonatomic) unsigned long long scrollAxis; // @synthesize scrollAxis=_scrollAxis;
 @property(nonatomic) long long numberOfIterations; // @synthesize numberOfIterations=_numberOfIterations;
 @property(nonatomic) long long numberOfPages; // @synthesize numberOfPages=_numberOfPages;
 @property(copy, nonatomic) NSString *testName; // @synthesize testName=_testName;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

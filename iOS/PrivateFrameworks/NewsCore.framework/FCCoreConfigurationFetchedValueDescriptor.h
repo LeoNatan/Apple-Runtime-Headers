@@ -13,8 +13,8 @@
     id <FCCoreConfigurationManager> _configurationManager;
 }
 
-@property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 - (id)inputManagers;
 - (_Bool)isValue:(id)arg1 equalToValue:(id)arg2;
 - (void)fetchValueWithCachePolicy:(unsigned long long)arg1 qualityOfService:(long long)arg2 completion:(CDUnknownBlockType)arg3;

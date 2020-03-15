@@ -14,8 +14,8 @@
     _Bool _trapped;
 }
 
-@property(nonatomic, getter=isTrapped) _Bool trapped; // @synthesize trapped=_trapped;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isTrapped) _Bool trapped; // @synthesize trapped=_trapped;
 - (void)queue_handleMessage:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 

@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     UIDebuggingInformationInspectorDetailViewController *_detail;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDebuggingInformationInspectorDetailViewController *detail; // @synthesize detail=_detail;
 @property(nonatomic) double originalBorderWidth; // @synthesize originalBorderWidth=_originalBorderWidth;
 @property(nonatomic) struct CGColor *originalBorderColor; // @synthesize originalBorderColor=_originalBorderColor;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *observersForKeys; // @synthesize observersForKeys=_observersForKeys;
 @property(retain, nonatomic) NSMutableDictionary *managedValues; // @synthesize managedValues=_managedValues;
 @property(retain, nonatomic) NSMutableArray *keys; // @synthesize keys=_keys;
-- (void).cxx_destruct;
 - (void)highlightView:(id)arg1;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

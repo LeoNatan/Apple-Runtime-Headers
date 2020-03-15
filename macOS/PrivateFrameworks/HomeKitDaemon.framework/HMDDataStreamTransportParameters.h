@@ -16,8 +16,8 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
-@property(retain, nonatomic) HMDDataStreamTransportTcpListeningPort *tcpListeningPort; // @synthesize tcpListeningPort=_tcpListeningPort;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMDDataStreamTransportTcpListeningPort *tcpListeningPort; // @synthesize tcpListeningPort=_tcpListeningPort;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

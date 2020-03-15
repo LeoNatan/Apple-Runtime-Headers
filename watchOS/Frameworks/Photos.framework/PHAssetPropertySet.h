@@ -22,8 +22,8 @@
 + (id)entityName;
 + (id)propertiesToFetch;
 + (id)propertySetName;
-@property(readonly, nonatomic) __weak PHAsset *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PHAsset *asset; // @synthesize asset=_asset;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(_Bool)arg3;
 
 // Remaining properties

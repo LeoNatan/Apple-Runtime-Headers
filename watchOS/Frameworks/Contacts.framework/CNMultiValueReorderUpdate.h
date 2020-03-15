@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSOrderedSet *_values;
 }
 
-@property(readonly, copy, nonatomic) NSOrderedSet *values; // @synthesize values=_values;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSOrderedSet *values; // @synthesize values=_values;
 - (id)description;
 - (int)compareIndexOfIdentifier:(id)arg1 toIndexOfIdentifier:(id)arg2;
 - (void)applyToMutableMultiValue:(id)arg1 withIdentifierMap:(id)arg2;

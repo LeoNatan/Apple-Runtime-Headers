@@ -19,10 +19,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_didCompleteReadTransaction; // @synthesize unitTest_didCompleteReadTransaction=_unitTest_didCompleteReadTransaction;
-- (void).cxx_destruct;
 - (_Bool)generateSyncObjectsForSession:(id)arg1 entity:(Class)arg2 syncAnchorRange:(struct HDSyncAnchorRange)arg3 messageHandler:(id)arg4 error:(id *)arg5;
 - (long long)nextSyncAnchorForEntity:(Class)arg1 session:(id)arg2 startSyncAnchor:(long long)arg3 error:(id *)arg4;
 - (id)_syncAnchorMapForSyncEntityClass:(Class)arg1 session:(id)arg2 error:(id *)arg3;

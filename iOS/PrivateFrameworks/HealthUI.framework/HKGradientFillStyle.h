@@ -17,12 +17,12 @@
     double _gradientSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double gradientSize; // @synthesize gradientSize=_gradientSize;
 @property(nonatomic) long long fillDirection; // @synthesize fillDirection=_fillDirection;
 @property(nonatomic) double fillPercentage; // @synthesize fillPercentage=_fillPercentage;
 @property(retain, nonatomic) UIColor *secondColor; // @synthesize secondColor=_secondColor;
 @property(retain, nonatomic) UIColor *firstColor; // @synthesize firstColor=_firstColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_renderInContext:(struct CGContext *)arg1 size:(struct CGSize)arg2;
 - (_Bool)_useReversedFillDirection;

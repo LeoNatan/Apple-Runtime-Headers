@@ -16,10 +16,10 @@
 }
 
 + (id)ratingFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long rank; // @synthesize rank=_rank;
 @property(retain, nonatomic) NSString *localizedShortName; // @synthesize localizedShortName=_localizedShortName;
 @property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToRating:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

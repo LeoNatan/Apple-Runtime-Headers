@@ -17,11 +17,11 @@
     NSString *_streamName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *streamName; // @synthesize streamName=_streamName;
 @property(readonly, nonatomic) unsigned int uid; // @synthesize uid=_uid;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *descriptor; // @synthesize descriptor=_descriptor;
 @property(readonly, nonatomic) unsigned long long token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

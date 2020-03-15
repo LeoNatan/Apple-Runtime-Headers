@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)applicationInfoWithRemoteLocalizedName:(id)arg1 icon:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSString *remoteLocalizedName; // @synthesize remoteLocalizedName=_remoteLocalizedName;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

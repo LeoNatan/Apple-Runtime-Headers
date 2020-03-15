@@ -14,8 +14,8 @@
 }
 
 + (id)defaultInstructions;
-@property(readonly, nonatomic) NSArray *instructions; // @synthesize instructions=_instructions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *instructions; // @synthesize instructions=_instructions;
 - (id)description;
 - (_Bool)areFulfilledForBlueprint:(id)arg1;
 - (void)didLayoutComponentBlueprint:(id)arg1 blueprint:(id)arg2;

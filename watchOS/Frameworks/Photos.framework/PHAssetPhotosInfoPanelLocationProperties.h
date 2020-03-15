@@ -16,8 +16,8 @@
 + (id)propertiesToFetch;
 + (id)keyPathFromPrimaryObject;
 + (id)propertySetName;
-@property(readonly, nonatomic) NSData *placeAnnotationData; // @synthesize placeAnnotationData=_placeAnnotationData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *placeAnnotationData; // @synthesize placeAnnotationData=_placeAnnotationData;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(_Bool)arg3;
 
 @end

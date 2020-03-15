@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTrainReservation *trainReservation; // @synthesize trainReservation=_trainReservation;
 @property(retain, nonatomic) _INPBTicketedEventReservation *ticketedEventReservation; // @synthesize ticketedEventReservation=_ticketedEventReservation;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) _INPBRentalCarReservation *rentalCarReservation; // @synthesize rentalCarReservation=_rentalCarReservation;
 @property(retain, nonatomic) _INPBLodgingReservation *lodgingReservation; // @synthesize lodgingReservation=_lodgingReservation;
 @property(retain, nonatomic) _INPBFlightReservation *flightReservation; // @synthesize flightReservation=_flightReservation;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

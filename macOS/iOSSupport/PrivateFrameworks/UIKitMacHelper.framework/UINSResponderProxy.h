@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
 + (id)responderProxySearchingFromAppWithTargetForAction:(SEL)arg1 sender:(id)arg2;
 + (id)responderProxySearchingFromWindowWithTargetForAction:(SEL)arg1 sender:(id)arg2 window:(id)arg3;
 + (id)responderProxySearchingFromFirstResponderWithTargetForAction:(SEL)arg1 sender:(id)arg2 inputView:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id sender; // @synthesize sender=_sender;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
 @property(readonly, nonatomic) id <UINSMenuItem> wrappedMenuProxy; // @synthesize wrappedMenuProxy=_wrappedMenuProxy;
 @property(readonly, nonatomic) id wrappedResponder; // @synthesize wrappedResponder=_wrappedResponder;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_performMenuProxyActionForSender:(id)arg1;
 - (void)forwardInvocation:(id)arg1;

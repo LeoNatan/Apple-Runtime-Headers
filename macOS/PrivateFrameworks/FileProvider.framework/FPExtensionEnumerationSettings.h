@@ -17,11 +17,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsTrashEnumeration; // @synthesize wantsTrashEnumeration=_wantsTrashEnumeration;
 @property(nonatomic) BOOL wantsDirectExtensionEnumeration; // @synthesize wantsDirectExtensionEnumeration=_wantsDirectExtensionEnumeration;
 @property(nonatomic, getter=isPresenterEnumeration) BOOL presenterEnumeration; // @synthesize presenterEnumeration=_presenterEnumeration;
 @property(copy, nonatomic) FPItemID *enumeratedItemID; // @synthesize enumeratedItemID=_enumeratedItemID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

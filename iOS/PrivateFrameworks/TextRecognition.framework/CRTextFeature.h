@@ -43,6 +43,7 @@
 + (id)overlayFeatures:(id)arg1 onImage:(id)arg2 showSubFeatures:(_Bool)arg3;
 + (id)lineFeatures:(id)arg1 imageWidth:(unsigned long long)arg2 imageHeight:(unsigned long long)arg3;
 + (id)sortedTextFeatures:(id)arg1;
+- (void).cxx_destruct;
 @property _Bool contextSet; // @synthesize contextSet=_contextSet;
 @property int punctuationGuess; // @synthesize punctuationGuess=_punctuationGuess;
 @property int featureMapID; // @synthesize featureMapID=_featureMapID;
@@ -67,7 +68,6 @@
 @property struct CGPoint topRight; // @synthesize topRight=_topRight;
 @property struct CGPoint topLeft; // @synthesize topLeft=_topLeft;
 @property struct CGRect bounds; // @synthesize bounds=_bounds;
-- (void).cxx_destruct;
 - (float)calculateTextBoxHeight;
 - (id)createWordSubFeaturesForCandidateAtIndex:(long long)arg1 topWhiteSpacePoints:(id)arg2 bottomWhiteSpacePoints:(id)arg3;
 - (float)aspectRatioWithImageSize:(struct CGSize)arg1;

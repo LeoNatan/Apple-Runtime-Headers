@@ -16,8 +16,8 @@
 }
 
 + (id)log;
-@property(retain, nonatomic) EXSSyncEngine *syncEngine; // @synthesize syncEngine=_syncEngine;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EXSSyncEngine *syncEngine; // @synthesize syncEngine=_syncEngine;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)initWithSyncEngine:(id)arg1;
 

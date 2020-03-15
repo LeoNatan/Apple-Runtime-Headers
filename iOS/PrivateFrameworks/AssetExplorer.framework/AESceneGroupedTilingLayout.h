@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     id <AETileLayoutInfo> __gradientTileLayoutInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AETileLayoutInfo> _gradientTileLayoutInfo; // @synthesize _gradientTileLayoutInfo=__gradientTileLayoutInfo;
 @property(nonatomic, getter=isPortraitOrientation) _Bool portraitOrientation; // @synthesize portraitOrientation=_portraitOrientation;
 @property(readonly, nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic) __weak id <AEBrowserLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AEProgressViewModelSnapshot *progressSnapshot; // @synthesize progressSnapshot=_progressSnapshot;
-- (void).cxx_destruct;
 - (struct CGRect)_progressFrameForGridTileFrame:(struct CGRect)arg1;
 - (struct CGRect)_frameForGridTile:(long long)arg1 inSection:(long long)arg2;
 - (struct CGRect)_gradientShadowFrameForItemFrame:(struct CGRect)arg1;

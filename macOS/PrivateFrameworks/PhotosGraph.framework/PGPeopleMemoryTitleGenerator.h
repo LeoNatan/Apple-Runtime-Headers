@@ -14,9 +14,9 @@
     NSSet *_personNodes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *personNodes; // @synthesize personNodes=_personNodes;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)_useSplitTimeTitlesIfNeeded;
 - (id)_timeTitleForPeople;
 - (id)_birthdayTitleForPeople;

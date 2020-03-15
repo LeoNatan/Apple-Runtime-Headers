@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     VSCredentialEntryPicker *_picker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSCredentialEntryPicker *picker; // @synthesize picker=_picker;
 @property(retain, nonatomic) PSSpecifier *pickerSpecifier; // @synthesize pickerSpecifier=_pickerSpecifier;
 @property(retain, nonatomic) PSSpecifier *pickerButtonSpecifier; // @synthesize pickerButtonSpecifier=_pickerButtonSpecifier;
@@ -49,7 +50,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VSAuthenticationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) VSViewModel *viewModel;
 @property(nonatomic, getter=isCancellationAllowed) _Bool cancellationAllowed; // @synthesize cancellationAllowed=_cancellationAllowed;
-- (void).cxx_destruct;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)_updateLinkButtonLayout;
@@ -68,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (id)pickerViewCell:(id)arg1 titleForRow:(long long)arg2;
 - (id)pickerTitle;
 - (void)pickerButtonSelected;
+- (void)buildButtonsIfNeeded;
 - (void)setViewModel:(id)arg1;
 - (id)_createSpecifierForField:(id)arg1;
 - (void)_stopObservingViewModel:(id)arg1;

@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)subflowSwitchingReportsType;
 + (Class)interfaceReportsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *subflowSwitchingReports; // @synthesize subflowSwitchingReports=_subflowSwitchingReports;
 @property(retain, nonatomic) NSMutableArray *interfaceReports; // @synthesize interfaceReports=_interfaceReports;
 @property(nonatomic) int subflowSwitchingCount; // @synthesize subflowSwitchingCount=_subflowSwitchingCount;
@@ -69,7 +70,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *establishmentInterfaceName; // @synthesize establishmentInterfaceName=_establishmentInterfaceName;
 @property(retain, nonatomic) NSString *clientId; // @synthesize clientId=_clientId;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSDictionary *_headers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
 @property(retain, nonatomic) NSMapTable *transactionStateByRequestIDs; // @synthesize transactionStateByRequestIDs=_transactionStateByRequestIDs;
 @property(retain, nonatomic) CKDAssetTokenRequest *assetTokenRequest; // @synthesize assetTokenRequest=_assetTokenRequest;
 @property(nonatomic) _Bool useEncryption; // @synthesize useEncryption=_useEncryption;
-- (void).cxx_destruct;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)generateRequestOperations;

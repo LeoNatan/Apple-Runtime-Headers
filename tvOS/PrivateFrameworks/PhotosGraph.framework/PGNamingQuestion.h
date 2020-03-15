@@ -4,38 +4,38 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotosGraph/PGSurveyQuestion.h>
 
-#import <PhotosGraph/PGQuestion-Protocol.h>
+@class NSDictionary, NSString, PHPerson;
 
-@class NSString, PHPerson;
-
-@interface PGNamingQuestion : NSObject <PGQuestion>
+@interface PGNamingQuestion : PGSurveyQuestion
 {
+    unsigned short _state;
+    NSDictionary *_additionalInfo;
+    NSString *_entityIdentifier;
+    double _localFactoryScore;
     PHPerson *_person;
-    long long _type;
-    double _score;
     NSString *_contactIdentifier;
 }
 
 + (id)questionForPerson:(id)arg1;
-@property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-@property(readonly, nonatomic) double score; // @synthesize score=_score;
-@property(readonly, nonatomic) long long type; // @synthesize type=_type;
-@property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
 - (void).cxx_destruct;
-- (_Bool)isEqualToQuestion:(id)arg1;
-- (_Bool)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
-- (void)remove;
-- (void)persist;
+@property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
+@property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
+- (unsigned short)state;
+- (double)localFactoryScore;
+- (id)entityIdentifier;
+- (id)additionalInfo;
 - (id)_personForContactSuggestion;
-- (id)initWithPerson:(id)arg1 contactIdentifier:(id)arg2 score:(double)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
+- (void)legacyRemove;
+- (void)legacyPersist;
+- (void)remove;
+- (void)persistWithCreationDate:(id)arg1;
+- (unsigned short)entityType;
+- (unsigned short)displayType;
+- (unsigned short)type;
+- (id)_additionalInfoFromContactIdentifier:(id)arg1;
+- (id)initWithPerson:(id)arg1 contactIdentifier:(id)arg2 localFactoryScore:(double)arg3;
 
 @end
 

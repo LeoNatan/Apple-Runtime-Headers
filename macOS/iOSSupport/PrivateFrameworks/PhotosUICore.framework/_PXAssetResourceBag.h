@@ -14,9 +14,9 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) long long resourceType; // @synthesize resourceType=_resourceType;
-- (void).cxx_destruct;
 - (id)initWithResourceType:(long long)arg1 atURL:(id)arg2;
 
 @end

@@ -17,11 +17,11 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long SendMeetingInvitations; // @synthesize SendMeetingInvitations=_SendMeetingInvitations;
 @property(nonatomic) long long MessageDisposition; // @synthesize MessageDisposition=_MessageDisposition;
 @property(copy, nonatomic) NSArray *Items; // @synthesize Items=_Items;
 @property(retain, nonatomic) EWSTargetFolderIdType *SavedItemFolderId; // @synthesize SavedItemFolderId=_SavedItemFolderId;
-- (void).cxx_destruct;
 
 @end
 

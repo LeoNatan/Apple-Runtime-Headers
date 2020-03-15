@@ -18,8 +18,8 @@
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
-@property(nonatomic) __weak id <RPExtensionContextDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <RPExtensionContextDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setEndpoint:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties

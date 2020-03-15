@@ -27,6 +27,7 @@
 + (double)publisherTextHeightForLabelSize:(struct CGSize)arg1 font:(id)arg2;
 + (struct CGSize)publisherLogoSizeFeedSettings:(id)arg1;
 + (id)layoutAttributesForCellWithIndexPath:(id)arg1 feedSettings:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double titleFontSize; // @synthesize titleFontSize=_titleFontSize;
 @property(retain, nonatomic) NSString *titleFontName; // @synthesize titleFontName=_titleFontName;
 @property(readonly, nonatomic) NSParagraphStyle *publisherTextParagraphStyle; // @synthesize publisherTextParagraphStyle=_publisherTextParagraphStyle;
@@ -39,7 +40,6 @@
 @property(nonatomic) long long titleNumberOfLines; // @synthesize titleNumberOfLines=_titleNumberOfLines;
 @property(readonly, nonatomic) NSParagraphStyle *titleParagraphStyle; // @synthesize titleParagraphStyle=_titleParagraphStyle;
 @property(nonatomic) struct CGRect titleFrame; // @synthesize titleFrame=_titleFrame;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (id)previousMarkerForCharacterOffset:(struct CharacterOffset *)arg1;
 - (id)nextMarkerForCharacterOffset:(struct CharacterOffset *)arg1;
 - (id)textMarkerForPoint:(struct CGPoint)arg1;
-- (id)rectsForSelectionRects:(const Vector_2a2f4e8a *)arg1;
+- (id)rectsForSelectionRects:(const Vector_be121512 *)arg1;
 - (id)textRectsFromMarkers:(id)arg1 withText:(id)arg2;
 - (id)textMarkerRangeFromMarkers:(id)arg1 withText:(id)arg2;
 - (RefPtr_033e7b31)rangeFromMarkers:(id)arg1 withText:(id)arg2;
@@ -80,7 +80,7 @@ __attribute__((visibility("hidden")))
 - (id)_stringFromStartMarker:(id)arg1 toEndMarker:(id)arg2 attributed:(_Bool)arg3;
 - (id)textMarkerForPosition:(long long)arg1;
 - (id)textMarkerRangeForSelection;
-- (struct WebAccessibilityObjectWrapper *)accessibilityObjectForTextMarker:(id)arg1;
+- (id)accessibilityObjectForTextMarker:(id)arg1;
 - (struct _NSRange)elementTextRange;
 - (id)textMarkerRange;
 - (long long)positionForTextMarker:(id)arg1;
@@ -89,7 +89,7 @@ __attribute__((visibility("hidden")))
 - (id)arrayOfTextForTextMarkers:(id)arg1 attributed:(_Bool)arg2;
 - (id)stringForTextMarkers:(id)arg1;
 - (void)_accessibilitySetValue:(id)arg1;
-- (_Bool)_addAccessibilityObject:(struct AccessibilityObject *)arg1 toTextMarkerArray:(id)arg2;
+-     // Error parsing type: B32@0:8^{AccessibilityObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}I{Vector<WTF::RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >}II}Bii{AccessibilityIsIgnoredFromParentData=^{AXCoreObject}BBB}BB{RetainPtr<WebAccessibilityObjectWrapper>=^v}}16@24, name: _addAccessibilityObject:toTextMarkerArray:
 - (void)accessibilityDecrement;
 - (void)accessibilityIncrement;
 - (void)accessibilityMoveSelectionToMarker:(id)arg1;
@@ -98,9 +98,9 @@ __attribute__((visibility("hidden")))
 - (void)accessibilityIncreaseSelection:(int)arg1;
 - (void)accessibilityModifySelection:(int)arg1 increase:(_Bool)arg2;
 - (id)accessibilityFindMatchingObjects:(id)arg1;
-- (struct AccessibilityObject *)treeItemParentForObject:(struct AccessibilityObject *)arg1;
-- (struct AccessibilityObject *)detailParentForObject:(struct AccessibilityObject *)arg1;
-- (struct AccessibilityObject *)detailParentForSummaryObject:(struct AccessibilityObject *)arg1;
+-     // Error parsing type: ^{AXCoreObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}24@0:8^{AXCoreObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}16, name: treeItemParentForObject:
+-     // Error parsing type: ^{AXCoreObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}24@0:8^{AccessibilityObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}I{Vector<WTF::RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >}II}Bii{AccessibilityIsIgnoredFromParentData=^{AXCoreObject}BBB}BB{RetainPtr<WebAccessibilityObjectWrapper>=^v}}16, name: detailParentForObject:
+-     // Error parsing type: ^{AXCoreObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}24@0:8^{AXCoreObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}16, name: detailParentForSummaryObject:
 - (struct CGRect)_accessibilityScrollVisibleRect;
 - (struct CGSize)_accessibilityScrollSize;
 - (struct CGPoint)_accessibilityScrollPosition;
@@ -159,8 +159,8 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityElementForRow:(long long)arg1 andColumn:(long long)arg2;
 - (id)accessibilityHeaderElements;
 - (id)accessibilityTitleElement;
-- (struct AccessibilityTable *)tableParent;
-- (struct AccessibilityTableCell *)tableCellParent;
+-     // Error parsing type: ^{AccessibilityTable=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}I{Vector<WTF::RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >}II}Bii{AccessibilityIsIgnoredFromParentData=^{AXCoreObject}BBB}BB{RetainPtr<WebAccessibilityObjectWrapper>=^v}ii^{Node}{WeakPtrFactory<WebCore::AccessibilityRenderObject>={RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl> >=^{WeakPtrImpl}}}{WeakPtr<WebCore::RenderObject>={RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl> >=^{WeakPtrImpl}}}{Vector<WTF::RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >}II}{Vector<WTF::RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >}II}{RefPtr<WebCore::AccessibilityObject, WTF::DumbPtrTraits<WebCore::AccessibilityObject> >=^{AccessibilityObject}}B}16@0:8, name: tableParent
+-     // Error parsing type: ^{AccessibilityTableCell=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}I{Vector<WTF::RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >}II}Bii{AccessibilityIsIgnoredFromParentData=^{AXCoreObject}BBB}BB{RetainPtr<WebAccessibilityObjectWrapper>=^v}ii^{Node}{WeakPtrFactory<WebCore::AccessibilityRenderObject>={RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl> >=^{WeakPtrImpl}}}{WeakPtr<WebCore::RenderObject>={RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl> >=^{WeakPtrImpl}}}ii}16@0:8, name: tableCellParent
 - (id)accessibilityLabel;
 - (id)accessibilityRoleDescription;
 - (double)_accessibilityMaxValue;
@@ -181,14 +181,14 @@ __attribute__((visibility("hidden")))
 - (id)interactiveVideoDescription;
 - (_Bool)accessibilityIsWebInteractiveVideo;
 - (unsigned long long)_accessibilityTraitsFromAncestors;
-- (struct WebAccessibilityObjectWrapper *)_accessibilityFrameAncestor;
-- (struct WebAccessibilityObjectWrapper *)_accessibilityFieldsetAncestor;
+- (id)_accessibilityFrameAncestor;
+- (id)_accessibilityFieldsetAncestor;
 - (_Bool)_accessibilityIsInTableCell;
-- (struct WebAccessibilityObjectWrapper *)_accessibilityTableAncestor;
-- (struct WebAccessibilityObjectWrapper *)_accessibilityLandmarkAncestor;
-- (struct WebAccessibilityObjectWrapper *)_accessibilityArticleAncestor;
-- (struct WebAccessibilityObjectWrapper *)_accessibilityListAncestor;
-- (struct WebAccessibilityObjectWrapper *)_accessibilityTreeAncestor;
+- (id)_accessibilityTableAncestor;
+- (id)_accessibilityLandmarkAncestor;
+- (id)_accessibilityArticleAncestor;
+- (id)_accessibilityListAncestor;
+- (id)_accessibilityTreeAncestor;
 - (_Bool)_accessibilityIsLandmarkRole:(int)arg1;
 - (_Bool)accessibilityIsDialog;
 - (id)accessibilityLanguage;
@@ -201,7 +201,7 @@ __attribute__((visibility("hidden")))
 - (void)disableAttributeCaching;
 - (void)enableAttributeCaching;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
-- (struct WebAccessibilityObjectWrapper *)accessibilityPostProcessHitTest:(struct CGPoint)arg1;
+- (id)accessibilityPostProcessHitTest:(struct CGPoint)arg1;
 - (_Bool)accessibilityCanFuzzyHitTest;
 - (unsigned long long)_axUpdatesFrequentlyTrait;
 - (unsigned long long)_axTextAreaTrait;
@@ -232,7 +232,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_prepareAccessibilityCall;
 - (void)dealloc;
 - (void)detach;
-- (id)initWithAccessibilityObject:(struct AccessibilityObject *)arg1;
+-     // Error parsing type: @24@0:8^{AXCoreObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}16, name: initWithAccessibilityObject:
 
 @end
 

@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSSearchExpressionType *SearchExpression; // @synthesize SearchExpression=_SearchExpression;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSSearchExpressionType *SearchExpression; // @synthesize SearchExpression=_SearchExpression;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

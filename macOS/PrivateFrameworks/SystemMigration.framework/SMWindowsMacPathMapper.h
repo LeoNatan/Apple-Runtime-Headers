@@ -20,8 +20,8 @@
 + (id)basePathForDiskDomain:(id)arg1;
 + (id)basePathForSharedDomain;
 + (BOOL)supportsSecureCoding;
-@property(retain) NSMutableDictionary *encodedDomainToPathMap; // @synthesize encodedDomainToPathMap;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *encodedDomainToPathMap; // @synthesize encodedDomainToPathMap;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)basePathForDomainType:(id)arg1 specifier:(id)arg2 subtypes:(id)arg3;

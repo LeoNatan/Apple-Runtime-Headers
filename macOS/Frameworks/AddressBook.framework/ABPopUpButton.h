@@ -17,8 +17,8 @@
 }
 
 + (Class)cellClass;
-@property(nonatomic) __weak id <ABPopUpButtonDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ABPopUpButtonDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)resignFirstResponder;
 - (id)hitTest:(struct CGPoint)arg1;
 - (id)accessibilityValue;

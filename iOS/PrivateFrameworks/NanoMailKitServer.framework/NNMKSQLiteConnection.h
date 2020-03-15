@@ -18,11 +18,11 @@
 }
 
 + (_Bool)errorCodeMeansCorruptedDatabase:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cachedPreparedStatementsBySQLPattern; // @synthesize cachedPreparedStatementsBySQLPattern=_cachedPreparedStatementsBySQLPattern;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dbQueue; // @synthesize dbQueue=_dbQueue;
 @property(nonatomic) _Bool isInTransaction; // @synthesize isInTransaction=_isInTransaction;
 @property(nonatomic) struct sqlite3 *db; // @synthesize db=_db;
-- (void).cxx_destruct;
 - (int)_runRetryingIfNeeded:(CDUnknownBlockType)arg1;
 - (id)_lastErrorMessage;
 - (int)_lastErrorCode;

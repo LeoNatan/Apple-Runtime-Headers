@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     id <MTLBuffer> _uniformsBuffer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MTLBuffer> uniformsBuffer; // @synthesize uniformsBuffer=_uniformsBuffer;
 @property(readonly, nonatomic) id <MTLBuffer> kineticSparks; // @synthesize kineticSparks=_kineticSparks;
 @property(readonly, nonatomic) unsigned int kineticParticleCount; // @synthesize kineticParticleCount=_kineticParticleCount;
@@ -54,7 +55,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int numAngularIndicies; // @synthesize numAngularIndicies=_numAngularIndicies;
 @property(readonly, nonatomic) id <MTLBuffer> angularIndexBuffer; // @synthesize angularIndexBuffer=_angularIndexBuffer;
 @property(readonly, nonatomic) id <MTLBuffer> angularVertexBuffer; // @synthesize angularVertexBuffer=_angularVertexBuffer;
-- (void).cxx_destruct;
 - (void)storeCelebration:(id)arg1 withRing:(id)arg2;
 - (void)_applyKineticSparkUpdate:(id)arg1;
 - (void)_setupKineticSparkEmitters;

@@ -19,9 +19,9 @@
 + (id)largeIconForVariableWithIdentifier:(id)arg1;
 + (id)iconForVariableWithIdentifier:(id)arg1;
 + (id)sharedVariablesRegistry;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *variableIdentifiers; // @synthesize variableIdentifiers=_variableIdentifiers;
 @property(retain) NSMutableDictionary *variables; // @synthesize variables=_variables;
-- (void).cxx_destruct;
 - (void)calculateVariablesByApplication;
 - (void)calculateVariablesByCategory;
 - (id)variableWithIdentifier:(id)arg1;

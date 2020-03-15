@@ -14,10 +14,10 @@
     NSString *feedID;
 }
 
+- (void).cxx_destruct;
 - (void)setFeedID:(id)arg1;
 - (id)feedID;
 @property(retain, nonatomic) NSString *articleID; // @synthesize articleID;
-- (void).cxx_destruct;
 
 @end
 

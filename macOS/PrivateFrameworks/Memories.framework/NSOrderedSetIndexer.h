@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)indexerWithInitialSet:(id)arg1 finalSet:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexSet *deletedIndexesBeforeInsertions; // @synthesize deletedIndexesBeforeInsertions=_deletedIndexesBeforeInsertions;
 @property(retain, nonatomic) NSIndexSet *insertedIndexesAfterDeletions; // @synthesize insertedIndexesAfterDeletions=_insertedIndexesAfterDeletions;
 @property(retain, nonatomic) NSOrderedSet *finalOrderedSet; // @synthesize finalOrderedSet=_finalOrderedSet;
 @property(retain, nonatomic) NSOrderedSet *initialOrderedSet; // @synthesize initialOrderedSet=_initialOrderedSet;
-- (void).cxx_destruct;
 - (void)analyze;
 - (id)initWithInitialSet:(id)arg1 finalSet:(id)arg2;
 

@@ -22,13 +22,13 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversOfValue;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasDeterminedValue; // @synthesize hasDeterminedValue=_hasDeterminedValue;
 @property(copy, nonatomic) NSArray *observers; // @synthesize observers=_observers;
 @property(nonatomic, getter=isMonitoringForChanges) BOOL monitoringForChanges; // @synthesize monitoringForChanges=_monitoringForChanges;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(nonatomic) id object; // @synthesize object=_object;
 @property(copy, nonatomic) NSExpression *expression; // @synthesize expression=_expression;
-- (void).cxx_destruct;
 - (void)observeChange:(id)arg1 forObservance:(id)arg2;
 @property(copy, nonatomic) NSDictionary *substitutionVariables; // @synthesize substitutionVariables=_substitutionVariables;
 - (void)_updateComputedResultIfNeeded;

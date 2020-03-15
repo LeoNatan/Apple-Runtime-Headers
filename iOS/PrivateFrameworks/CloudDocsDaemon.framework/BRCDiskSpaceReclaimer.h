@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 + (double)accessTimeDeltaForUrgency:(int)arg1;
 + (int)urgencyForCacheDeleteUrgency:(int)arg1;
 + (int)simpleUrgencyForCacheDeleteUrgency:(int)arg1;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (_Bool)performOptimizeStorageWithTimeDelta:(double)arg1 onDiskAccessTimeDelta:(double)arg2 error:(id *)arg3;
 - (void)requestPurgeSpace;
 - (long long)cachedPurgeableSpaceForUrgency:(int)arg1;

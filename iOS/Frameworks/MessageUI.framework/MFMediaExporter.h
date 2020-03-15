@@ -13,6 +13,7 @@
 + (void)setConversionTimers:(id)arg1;
 + (id)conversionTimers;
 + (int)exportAsset:(id)arg1 progressHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
++ (id)log;
 
 @end
 

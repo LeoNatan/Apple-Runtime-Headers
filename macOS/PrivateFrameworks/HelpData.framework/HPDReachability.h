@@ -16,10 +16,10 @@
 }
 
 + (id)reachabilityWithHostName:(id)arg1;
+- (void).cxx_destruct;
 @property struct __SCNetworkReachability *reachabilityRef; // @synthesize reachabilityRef=_reachabilityRef;
 @property(copy) CDUnknownBlockType reachabilityChangedBlock; // @synthesize reachabilityChangedBlock=_reachabilityChangedBlock;
 @property(retain) NSString *hostName; // @synthesize hostName=_hostName;
-- (void).cxx_destruct;
 - (void)_delayedReachabilityCallback:(id)arg1;
 - (BOOL)isReachable;
 - (BOOL)isReachableWithConnectionFlags:(unsigned int)arg1;

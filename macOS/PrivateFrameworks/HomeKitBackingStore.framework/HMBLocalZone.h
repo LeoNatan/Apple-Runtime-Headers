@@ -29,6 +29,7 @@
 
 + (id)logCategory;
 + (id)calculateUpdatedTokenFrom:(id)arg1 updates:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *shutdownFuture; // @synthesize shutdownFuture=_shutdownFuture;
 @property(nonatomic) BOOL hasStartedUp; // @synthesize hasStartedUp=_hasStartedUp;
 @property(readonly, nonatomic) HMBLocalSQLContext *sql; // @synthesize sql=_sql;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) id <HMBLocalZoneID> zoneID; // @synthesize zoneID=_zoneID;
 @property(readonly, nonatomic) HMBModelContainer *modelContainer; // @synthesize modelContainer=_modelContainer;
 @property(nonatomic) __weak HMBLocalDatabase *localDatabase; // @synthesize localDatabase=_localDatabase;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)logIdentifier;
 - (BOOL)shouldLogPrivateInformation;

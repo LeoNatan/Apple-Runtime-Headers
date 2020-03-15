@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _widthPadding;
 }
 
+- (id).cxx_construct;
 @property(nonatomic) double widthPadding; // @synthesize widthPadding=_widthPadding;
 @property BOOL acceptsFirstMouse; // @synthesize acceptsFirstMouse=_acceptsFirstMouse;
-- (id).cxx_construct;
 - (struct CGSize)intrinsicContentSize;
 - (void)_windowChangedKeyState;
 - (void)setEnabled:(BOOL)arg1;

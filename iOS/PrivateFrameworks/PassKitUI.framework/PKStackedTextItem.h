@@ -21,6 +21,7 @@
     NSString *_tertiary;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isStrikethroughPrimary) _Bool strikethroughPrimary; // @synthesize strikethroughPrimary=_strikethroughPrimary;
 @property(nonatomic, getter=isDeemphasizedPrimary) _Bool deemphasizedPrimary; // @synthesize deemphasizedPrimary=_deemphasizedPrimary;
 @property(nonatomic, getter=isSignificantPrimary) _Bool significantPrimary; // @synthesize significantPrimary=_significantPrimary;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) unsigned long long numberOfContentRows; // @synthesize numberOfContentRows=_numberOfContentRows;
 @property(readonly, copy, nonatomic) NSString *groupingIdentifier; // @synthesize groupingIdentifier=_groupingIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithNumberOfContentRows:(unsigned long long)arg1 groupingIdentifier:(id)arg2;

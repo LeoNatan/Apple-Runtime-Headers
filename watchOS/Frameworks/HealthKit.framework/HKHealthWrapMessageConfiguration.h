@@ -23,6 +23,7 @@
     NSDictionary *_keyValuePairs;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableCompression; // @synthesize disableCompression=_disableCompression;
 @property(copy, nonatomic) NSDictionary *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
 @property(copy, nonatomic) NSData *applicationData; // @synthesize applicationData=_applicationData;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSString *channel; // @synthesize channel=_channel;
 @property(readonly, copy, nonatomic) NSUUID *studyUUID; // @synthesize studyUUID=_studyUUID;
 @property(readonly, copy, nonatomic) NSUUID *subjectUUID; // @synthesize subjectUUID=_subjectUUID;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithSubjectUUID:(id)arg1 studyUUID:(id)arg2 channel:(id)arg3 payloadType:(id)arg4 certificate:(struct __SecCertificate *)arg5;
 - (id)initWithChannel:(id)arg1 payloadType:(id)arg2 certificate:(struct __SecCertificate *)arg3;

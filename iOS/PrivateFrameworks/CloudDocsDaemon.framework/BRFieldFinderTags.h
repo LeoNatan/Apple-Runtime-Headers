@@ -16,8 +16,8 @@
 }
 
 + (Class)tagsType;
-@property(retain, nonatomic) NSMutableArray *tags; // @synthesize tags=_tags;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *tags; // @synthesize tags=_tags;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

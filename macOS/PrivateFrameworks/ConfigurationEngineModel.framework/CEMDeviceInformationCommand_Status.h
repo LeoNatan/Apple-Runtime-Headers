@@ -18,9 +18,9 @@
 + (id)buildWithQueryResponses:(id)arg1 withErrorResponses:(id)arg2;
 + (id)allowedReasons;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMDeviceInformationCommand_StatusErrorResponses *statusErrorResponses; // @synthesize statusErrorResponses=_statusErrorResponses;
 @property(copy, nonatomic) CEMDeviceInformationCommand_StatusQueryResponses *statusQueryResponses; // @synthesize statusQueryResponses=_statusQueryResponses;
-- (void).cxx_destruct;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 

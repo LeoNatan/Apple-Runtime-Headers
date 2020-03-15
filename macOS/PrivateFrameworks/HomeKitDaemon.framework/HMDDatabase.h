@@ -28,12 +28,12 @@
 + (id)logCategory;
 + (id)cameraClipsDatabase;
 + (id)defaultDatabase;
+- (void).cxx_destruct;
 @property BOOL hasStarted; // @synthesize hasStarted=_hasStarted;
 @property(readonly) HMDLogEventDispatcher *logEventDispatcher; // @synthesize logEventDispatcher=_logEventDispatcher;
 @property(readonly) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly) HMBCloudDatabase *cloudDatabase; // @synthesize cloudDatabase=_cloudDatabase;
 @property(readonly) HMBLocalDatabase *localDatabase; // @synthesize localDatabase=_localDatabase;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)localZone:(id)arg1 didCompleteProcessingWithResult:(id)arg2;
 - (void)cloudDatabase:(id)arg1 didReceiveMessageWithUserInfo:(id)arg2;

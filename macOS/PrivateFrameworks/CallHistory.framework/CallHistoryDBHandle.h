@@ -23,9 +23,9 @@
 + (id)createForServer;
 + (id)createForClient;
 + (id)createWithDBManager:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CallDBManager *callDBManager; // @synthesize callDBManager;
 @property(readonly, nonatomic) NSString *objectId; // @synthesize objectId;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)resetAllTimers;
 - (void)resetTimers;

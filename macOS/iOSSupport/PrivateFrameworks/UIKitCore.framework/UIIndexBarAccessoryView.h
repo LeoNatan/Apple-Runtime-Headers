@@ -17,9 +17,9 @@
     long long _edge;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long edge; // @synthesize edge=_edge;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (id)displayEntryNearestToContentOffset:(struct CGPoint)arg1;
 @property(readonly, nonatomic) BOOL overlay;
 - (BOOL)_selectEntry:(id)arg1 atIndex:(long long)arg2;

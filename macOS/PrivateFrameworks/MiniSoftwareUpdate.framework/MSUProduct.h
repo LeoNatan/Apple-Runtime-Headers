@@ -37,6 +37,7 @@
     id <PKPackageSource> __createdContentLocatorPackageSource;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <PKPackageSource> _createdContentLocatorPackageSource; // @synthesize _createdContentLocatorPackageSource=__createdContentLocatorPackageSource;
 @property(retain) PKDistributionContainer *_distributionContainer; // @synthesize _distributionContainer=__distributionContainer;
 @property BOOL visibleOnlyForPredicate; // @synthesize visibleOnlyForPredicate=_visibleOnlyForPredicate;
@@ -61,7 +62,6 @@
 @property(retain) NSDate *postDate; // @synthesize postDate=_postDate;
 @property(getter=isStaged) BOOL staged; // @synthesize staged=_staged;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2;
 - (id)stringsDictionary;
 - (id)distributionContainer;

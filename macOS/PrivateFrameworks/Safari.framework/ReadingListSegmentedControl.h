@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(nonatomic) __weak id <ReadingListSegmentedControlDelegate> readingListSegmentedControlDelegate; // @synthesize readingListSegmentedControlDelegate=_readingListSegmentedControlDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ReadingListSegmentedControlDelegate> readingListSegmentedControlDelegate; // @synthesize readingListSegmentedControlDelegate=_readingListSegmentedControlDelegate;
 - (void)selectUnreadSegment;
 - (void)selectAllSegment;
 @property(readonly, nonatomic) BOOL selectedSegmentIsUnreadSegment;

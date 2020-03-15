@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long changeDirection; // @synthesize changeDirection=_changeDirection;
 @property(retain, nonatomic) NSString *changeText; // @synthesize changeText=_changeText;
 @property(retain, nonatomic) NSString *changeInPointsText; // @synthesize changeInPointsText=_changeInPointsText;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSString *marketCapText; // @synthesize marketCapText=_marketCapText;
 @property(retain, nonatomic) NSString *priceText; // @synthesize priceText=_priceText;
 @property(retain, nonatomic) NSString *tickerSymbolText; // @synthesize tickerSymbolText=_tickerSymbolText;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

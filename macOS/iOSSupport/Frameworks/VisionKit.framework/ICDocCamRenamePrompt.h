@@ -17,10 +17,10 @@
     ICDocCamRenamePrompt *_strongSelf;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICDocCamRenamePrompt *strongSelf; // @synthesize strongSelf=_strongSelf;
 @property(retain, nonatomic) UIAlertAction *saveAction; // @synthesize saveAction=_saveAction;
 @property(copy, nonatomic) NSString *existingTitle; // @synthesize existingTitle=_existingTitle;
-- (void).cxx_destruct;
 - (void)enableAction:(id)arg1 withString:(id)arg2;
 - (void)textFieldChanged:(id)arg1;
 - (id)stringByScrubbingStringForCollectionName:(id)arg1;

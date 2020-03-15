@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     int _displayEntryIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int displayEntryIndex; // @synthesize displayEntryIndex=_displayEntryIndex;
 @property(nonatomic) int entryIndex; // @synthesize entryIndex=_entryIndex;
 @property(retain, nonatomic) UIIndexBarEntry *entry; // @synthesize entry=_entry;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

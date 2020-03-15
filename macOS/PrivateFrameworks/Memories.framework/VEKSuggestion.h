@@ -19,12 +19,12 @@
     double _reorderTimeOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double reorderTimeOffset; // @synthesize reorderTimeOffset=_reorderTimeOffset;
 @property(nonatomic) long long specialTreatment; // @synthesize specialTreatment=_specialTreatment;
 @property(nonatomic) long long volume; // @synthesize volume=_volume;
 @property(nonatomic) long long usage; // @synthesize usage=_usage;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAsset:(id)arg1;
 

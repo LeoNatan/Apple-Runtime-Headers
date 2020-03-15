@@ -13,8 +13,8 @@
     VNSaliencyImageObservation *_saliencyObservation;
 }
 
-@property(retain, nonatomic) VNSaliencyImageObservation *saliencyObservation; // @synthesize saliencyObservation=_saliencyObservation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VNSaliencyImageObservation *saliencyObservation; // @synthesize saliencyObservation=_saliencyObservation;
 - (void)cleanUp;
 - (id)result;
 - (BOOL)render:(out id *)arg1;

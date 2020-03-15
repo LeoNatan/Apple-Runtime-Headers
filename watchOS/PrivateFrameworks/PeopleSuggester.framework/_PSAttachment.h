@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *contentText; // @synthesize contentText=_contentText;
 @property(readonly, copy, nonatomic) NSURL *contentURL; // @synthesize contentURL=_contentURL;
 @property(readonly, copy, nonatomic) NSUUID *cloudIdentifier; // @synthesize cloudIdentifier=_cloudIdentifier;
@@ -29,7 +30,6 @@
 @property(readonly, copy, nonatomic) NSString *photoLocalIdentifier; // @synthesize photoLocalIdentifier=_photoLocalIdentifier;
 @property(readonly, copy, nonatomic) NSString *UTI; // @synthesize UTI=_UTI;
 @property(readonly, copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

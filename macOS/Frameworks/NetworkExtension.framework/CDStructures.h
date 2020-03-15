@@ -58,10 +58,6 @@ struct EAPClientPluginData_s {
     void *reserved[6];
 };
 
-struct NSMutableData {
-    Class _field1;
-};
-
 struct ccdigest_info;
 
 struct ccec_cp;
@@ -118,14 +114,6 @@ struct sockaddr {
     unsigned char _field1;
     unsigned char _field2;
     char _field3[14];
-};
-
-struct sockaddr_storage {
-    unsigned char ss_len;
-    unsigned char ss_family;
-    char __ss_pad1[6];
-    long long __ss_align;
-    char __ss_pad2[112];
 };
 
 struct timeval {

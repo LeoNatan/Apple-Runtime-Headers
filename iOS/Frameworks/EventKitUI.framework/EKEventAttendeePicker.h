@@ -46,10 +46,10 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)_participantHasResponded:(id)arg1;
 + (id)_addressForRecipient:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasChanges; // @synthesize hasChanges=_hasChanges;
 @property(nonatomic) __weak id <EKEventAttendeePickerDelegate> addressValidationDelegate; // @synthesize addressValidationDelegate=_addressValidationDelegate;
 @property(copy, nonatomic) NSString *searchAccountID; // @synthesize searchAccountID=_searchAccountID;
-- (void).cxx_destruct;
 - (Class)_CNContactPickerViewController;
 - (Class)_CNContactViewController;
 - (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;

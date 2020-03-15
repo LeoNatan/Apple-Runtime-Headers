@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *versionDomains; // @synthesize versionDomains=_versionDomains;
 @property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
 @property(readonly, nonatomic) double ttl; // @synthesize ttl=_ttl;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (_Bool)_isKey:(id)arg1 subsetOf:(id)arg2;
 - (_Bool)isInvalidatedByServiceVersion:(unsigned int)arg1 domains:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

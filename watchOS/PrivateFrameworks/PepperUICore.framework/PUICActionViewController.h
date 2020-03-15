@@ -33,6 +33,7 @@
     PUICActionCancelGestureRecognizer *_cancelGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICActionCancelGestureRecognizer *cancelGestureRecognizer; // @synthesize cancelGestureRecognizer=_cancelGestureRecognizer;
 @property(retain, nonatomic) NSMutableArray *actionButtonCache; // @synthesize actionButtonCache=_actionButtonCache;
 @property(nonatomic) __weak PUICApplicationStatusBarItem *statusBarItem; // @synthesize statusBarItem=_statusBarItem;
@@ -50,7 +51,6 @@
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) __weak UIViewController *viewControllerForStatusBarForwarding; // @synthesize viewControllerForStatusBarForwarding=_viewControllerForStatusBarForwarding;
 @property(retain, nonatomic) PUICActionGroup *actionGroup; // @synthesize actionGroup=_actionGroup;
-- (void).cxx_destruct;
 - (void)dismissWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_updateForChangedActionGroupAnimated:(_Bool)arg1;
 - (void)_unregisterForNotificationsForActionGroup:(id)arg1;

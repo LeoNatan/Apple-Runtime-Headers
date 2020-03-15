@@ -69,8 +69,8 @@
 + (id)_defaultMigratedBookmarksFolderURL;
 + (id)fileLockURLForBookmarkFileURL:(id)arg1;
 + (id)defaultBookmarksFileURL;
-+ (void)makePermanentAllTestDriveBookmarksRootedAtFolder:(id)arg1;
-+ (void)removeAllTestDriveBookmarksRootedAtFolder:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *migratedBookmarksFolder; // @synthesize migratedBookmarksFolder=_migratedBookmarksFolder;
 @property(nonatomic, getter=isSavePending) BOOL savePending; // @synthesize savePending=_savePending;
 @property(nonatomic, getter=isReloadingBookmarks) BOOL reloadingBookmarks; // @synthesize reloadingBookmarks=_reloadingBookmarks;
@@ -84,8 +84,6 @@
 @property(readonly, retain, nonatomic) WebBookmarkList *bookmarksBarCollection; // @synthesize bookmarksBarCollection=_bookmarksBarCollection;
 @property(readonly, nonatomic) WebBookmarkGroup *allBookmarks; // @synthesize allBookmarks=_allBookmarks;
 @property(nonatomic) BOOL isReadOnly; // @synthesize isReadOnly=_isReadOnly;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_updateSandboxExtensionFromStoreIfNeeded:(id)arg1;
 - (void)_removeSandboxExtensionFromStoreIfNeeded:(id)arg1;
 - (void)_stopObservingNetworkChangeNotifications;

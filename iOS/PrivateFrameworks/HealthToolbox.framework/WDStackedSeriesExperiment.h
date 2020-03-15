@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_series;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *series; // @synthesize series=_series;
 @property(readonly, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)seriesSelectionLineColorForGraphView:(id)arg1;
 - (id)graphView:(id)arg1 graphSeriesForZoom:(long long)arg2 stackOffset:(long long)arg3;
 - (long long)stackCountForGraphView:(id)arg1;

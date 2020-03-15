@@ -17,11 +17,11 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) id <TVImageDecrypter> decrypter; // @synthesize decrypter=_decrypter;
 @property(retain, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)initWithURL:(id)arg1 headers:(id)arg2 decrypter:(id)arg3;
 - (id)initWithURL:(id)arg1 headers:(id)arg2 identifier:(id)arg3 decrypter:(id)arg4;
 

@@ -16,8 +16,8 @@
 }
 
 + (id)sharedSelectiveFileSystemSource;
-@property(retain, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
 - (id)_themeProvidersMatchingProductCodes:(id)arg1 error:(id *)arg2;
 - (void)removeAll;
 - (void)removeThemeURL:(id)arg1;

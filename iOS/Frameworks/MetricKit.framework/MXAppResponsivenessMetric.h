@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) MXHistogram *histogrammedApplicationHangTime; // @synthesize histogrammedApplicationHangTime=_histogrammedApplicationHangTime;
 - (void).cxx_destruct;
+@property(readonly) MXHistogram *histogrammedApplicationHangTime; // @synthesize histogrammedApplicationHangTime=_histogrammedApplicationHangTime;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

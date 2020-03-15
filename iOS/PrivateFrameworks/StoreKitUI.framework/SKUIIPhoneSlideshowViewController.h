@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
     long long _indexToScrollToOnLoadView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUISlideshowViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SKUISlideshowViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_reloadSize;
 - (void)_reloadPageControl;
 - (void)_setImage:(id)arg1 atIndex:(long long)arg2;

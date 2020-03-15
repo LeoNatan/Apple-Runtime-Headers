@@ -44,6 +44,7 @@
     NSArray *_childControllerCreationSelectorNames;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ibRequiresClassSwapper; // @synthesize ibRequiresClassSwapper=_ibRequiresClassSwapper;
 @property(copy, nonatomic) NSArray *childControllerCreationSelectorNames; // @synthesize childControllerCreationSelectorNames=_childControllerCreationSelectorNames;
 @property(nonatomic) _Bool automaticallyAdjustsScrollViewInsets; // @synthesize automaticallyAdjustsScrollViewInsets=_automaticallyAdjustsScrollViewInsets;
@@ -76,7 +77,6 @@
 @property(retain, nonatomic) UITabBarItem *tabBarItem; // @synthesize tabBarItem=_tabBarItem;
 @property(retain, nonatomic) UINavigationItem *navigationItem; // @synthesize navigationItem=_navigationItem;
 @property(nonatomic) __weak UIViewControllerTemplate *parentViewController; // @synthesize parentViewController=_parentViewController;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (void)createTabBarItemsIfNecessary;
 - (void)createNavigationItemsIfNecessary;

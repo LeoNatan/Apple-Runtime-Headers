@@ -18,12 +18,12 @@
 }
 
 + (id)operation:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *successDependencies; // @synthesize successDependencies=_successDependencies;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(getter=isCancelled) BOOL cancelled; // @synthesize cancelled;
 @property(getter=isFinished) BOOL finished; // @synthesize finished;
 @property(getter=isExecuting) BOOL executing; // @synthesize executing;
-- (void).cxx_destruct;
 - (void)completeOperation;
 - (BOOL)startOperation;
 - (BOOL)checkDependencies;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(nonatomic) unsigned long long currentCacheSize; // @synthesize currentCacheSize=_currentCacheSize;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long currentCacheSize; // @synthesize currentCacheSize=_currentCacheSize;
 - (id)_randomDataOfLength:(unsigned long long)arg1;
 - (id)_createKeyForKeyUUID:(id)arg1;
 - (id)_decryptData:(id)arg1 key:(id)arg2;

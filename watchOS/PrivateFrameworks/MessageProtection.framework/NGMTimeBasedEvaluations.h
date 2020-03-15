@@ -22,8 +22,8 @@
 + (void)setNowDate:(id)arg1;
 + (id)nowDate;
 + (id)sharedManager;
-@property(retain) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(retain) NSDate *date; // @synthesize date=_date;
 
 @end
 

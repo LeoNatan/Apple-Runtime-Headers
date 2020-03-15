@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PXAssetsDataSource *_underlyingDataSource;
 }
 
-@property(readonly, nonatomic) PXAssetsDataSource *underlyingDataSource; // @synthesize underlyingDataSource=_underlyingDataSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXAssetsDataSource *underlyingDataSource; // @synthesize underlyingDataSource=_underlyingDataSource;
 - (id)badgeInfoPromiseForAssetAtIndexPath:(id)arg1;
 - (id)convertIndexPath:(id)arg1 fromAssetsDataSource:(id)arg2;
 - (id)indexPathForAssetReference:(id)arg1;

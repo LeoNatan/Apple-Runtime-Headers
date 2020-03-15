@@ -16,9 +16,9 @@
     SISchemaClientTurnContext *_turnContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SISchemaClientAnyEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) SISchemaClientTurnContext *turnContext; // @synthesize turnContext=_turnContext;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

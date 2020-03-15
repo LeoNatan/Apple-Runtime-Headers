@@ -15,9 +15,9 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALayer *_dotLayer; // @synthesize _dotLayer=__dotLayer;
 @property(nonatomic) double dotSpacingAngle; // @synthesize dotSpacingAngle=_dotSpacingAngle;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint dotCenter;
 @property(nonatomic) long long dotCount;
 - (id)initWithDotImage:(id)arg1;

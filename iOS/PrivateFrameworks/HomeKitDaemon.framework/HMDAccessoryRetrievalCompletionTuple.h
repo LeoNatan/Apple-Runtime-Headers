@@ -17,10 +17,10 @@
 }
 
 + (id)tupleWithLinkType:(long long)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) long long linkType; // @synthesize linkType=_linkType;
-- (void).cxx_destruct;
 
 @end
 

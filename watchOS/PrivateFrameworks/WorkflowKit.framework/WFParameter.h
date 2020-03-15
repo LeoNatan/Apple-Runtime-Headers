@@ -33,6 +33,7 @@
 + (id)allInsertableVariableTypes;
 + (id)parameterWithDefinition:(id)arg1;
 + (id)referencedActionResourceClasses;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *defaultSupportedVariableTypes; // @synthesize defaultSupportedVariableTypes=_defaultSupportedVariableTypes;
 @property(readonly, nonatomic) NSHashTable *eventObservers; // @synthesize eventObservers=_eventObservers;
 @property(readonly, copy, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
@@ -50,7 +51,6 @@
 @property(readonly, copy, nonatomic) NSString *localizedLabel; // @synthesize localizedLabel=_localizedLabel;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)removeEventObserver:(id)arg1;
 - (void)addEventObserver:(id)arg1;
 - (void)stateValidityCriteriaDidChange;

@@ -22,11 +22,11 @@
 + (id)sharedNotifier;
 + (_Bool)shouldScanForNearbyDevices;
 + (_Bool)isWatchAppRemoved;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *notificationService; // @synthesize notificationService=_notificationService;
 @property(copy, nonatomic) CDUnknownBlockType discoveryCompletion; // @synthesize discoveryCompletion=_discoveryCompletion;
 @property(retain, nonatomic) PPDiscoveryManager *discoveryManager; // @synthesize discoveryManager=_discoveryManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timerSource; // @synthesize timerSource=_timerSource;
-- (void).cxx_destruct;
 - (void)prepareServiceConnectionIfNeeded;
 - (void)didDiscoverDeviceWithAdvertisingID:(id)arg1 signalStrength:(long long)arg2;
 - (void)didStopDiscovering;

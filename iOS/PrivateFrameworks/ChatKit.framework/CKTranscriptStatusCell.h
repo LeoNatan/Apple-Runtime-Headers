@@ -18,10 +18,10 @@
 + (void)transitionFromView:(id)arg1 toView:(id)arg2 duration:(double)arg3 options:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)zoomAnimation:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)statusButton;
+- (void).cxx_destruct;
 @property(nonatomic) double prevBalloonWidth; // @synthesize prevBalloonWidth=_prevBalloonWidth;
 @property(nonatomic) BOOL buttonAlignmentRelativeToContent; // @synthesize buttonAlignmentRelativeToContent=_buttonAlignmentRelativeToContent;
 @property(retain, nonatomic) UIButton *statusButton; // @synthesize statusButton=_statusButton;
-- (void).cxx_destruct;
 - (void)clearFilters;
 - (void)addFilter:(id)arg1;
 @property(copy, nonatomic) NSAttributedString *attributedButtonText;

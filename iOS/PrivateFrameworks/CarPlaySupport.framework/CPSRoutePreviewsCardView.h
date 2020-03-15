@@ -15,8 +15,8 @@
     CPSAlternateRoutesView *_alternatesView;
 }
 
-@property(readonly, nonatomic) CPSAlternateRoutesView *alternatesView; // @synthesize alternatesView=_alternatesView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CPSAlternateRoutesView *alternatesView; // @synthesize alternatesView=_alternatesView;
 - (id)_linearFocusItems;
 - (id)preferredFocusEnvironments;
 - (void)alternateRoutesView:(id)arg1 didSelectRouteChoice:(id)arg2;

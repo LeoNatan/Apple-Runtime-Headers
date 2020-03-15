@@ -17,9 +17,9 @@
     id <SiriUICardSnippetViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriUICardSnippetViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SiriUICardSnippetViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_sashViewRecognizedTapGestureWithGestureRecognizer:(id)arg1;
 - (void)reloadData;
 - (void)setCardView:(id)arg1;

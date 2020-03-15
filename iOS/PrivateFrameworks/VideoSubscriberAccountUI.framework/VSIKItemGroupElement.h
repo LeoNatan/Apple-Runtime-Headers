@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)supportedFeaturesForElementName:(id)arg1;
-@property(readonly, nonatomic) VSIKItemGroup *itemGroup; // @synthesize itemGroup=_itemGroup;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) VSIKItemGroup *itemGroup; // @synthesize itemGroup=_itemGroup;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

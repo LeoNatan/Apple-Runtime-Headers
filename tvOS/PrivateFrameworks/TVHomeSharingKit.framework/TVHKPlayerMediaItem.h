@@ -17,10 +17,10 @@
     unsigned long long _loadingContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long loadingContext; // @synthesize loadingContext=_loadingContext;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) TVHKMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (id)_soundCheckMediaKind;
 - (id)_contentRatingSystem;
 - (id)_contentRatingDomain;

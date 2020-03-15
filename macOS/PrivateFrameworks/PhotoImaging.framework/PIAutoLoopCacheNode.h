@@ -16,7 +16,7 @@
 - (id)persistentMaskURL;
 - (id)persistentLongExposureURL;
 - (id)persistentURL;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (long long)subsampleFactorForScale:(CDStruct_912cb5d2)arg1;
 - (id)descriptionSubClassHook;
 

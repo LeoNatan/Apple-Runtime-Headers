@@ -21,12 +21,12 @@
     shared_ptr_274c5e8b _itemQueryResults;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) shared_ptr_274c5e8b itemQueryResults; // @synthesize itemQueryResults=_itemQueryResults;
 @property(readonly, nonatomic) shared_ptr_8b9a1f72 itemIdentifierQueryResults; // @synthesize itemIdentifierQueryResults=_itemIdentifierQueryResults;
 @property(retain, nonatomic) NSDictionary *indexPathToContainerUniqueIDMap; // @synthesize indexPathToContainerUniqueIDMap=_indexPathToContainerUniqueIDMap;
 @property(readonly, nonatomic) MPModelLibraryRequest *request; // @synthesize request=_request;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)_buildIndexPathToContainerUniqueIDMapFromItemQueryResults:(shared_ptr_274c5e8b)arg1;
 - (_Bool)_allowedEntityIdentifiersContainsAllPersistentIDs;
 - (unsigned long long)_adjustedGlobalIndexForIndexPath:(id)arg1;

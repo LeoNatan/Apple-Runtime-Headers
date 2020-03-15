@@ -25,6 +25,7 @@
     NSDate *_dateReceived;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(nonatomic) _Bool hasAttachments; // @synthesize hasAttachments=_hasAttachments;
 @property(nonatomic, getter=isBlockedSender) _Bool blockedSender; // @synthesize blockedSender=_blockedSender;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSIndexSet *flagColors; // @synthesize flagColors=_flagColors;
 @property(nonatomic, getter=isFlagged) _Bool flagged; // @synthesize flagged=_flagged;
 @property(nonatomic, getter=isRead) _Bool read; // @synthesize read=_read;
-- (void).cxx_destruct;
 - (id)initWithItemBuilder:(CDUnknownBlockType)arg1;
 
 // Remaining properties

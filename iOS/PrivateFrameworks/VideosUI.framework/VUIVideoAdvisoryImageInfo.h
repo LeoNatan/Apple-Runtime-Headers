@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_format;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *format; // @synthesize format=_format;
 @property(nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(nonatomic) unsigned long long width; // @synthesize width=_width;
-- (void).cxx_destruct;
 
 @end
 

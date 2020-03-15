@@ -18,10 +18,10 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) _Bool isEntitled; // @synthesize isEntitled=_isEntitled;
 @property(nonatomic) __weak id <CSLURLSessionPolicyClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)requestDefaultURLSessionPolicyForPID:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_connectionDidInvalidate;
 - (id)initWithConnection:(id)arg1;

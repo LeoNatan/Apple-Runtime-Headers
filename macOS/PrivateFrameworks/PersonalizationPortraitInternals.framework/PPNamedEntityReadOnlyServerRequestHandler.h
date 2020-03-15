@@ -19,9 +19,9 @@
     _PASBundleIdResolver *_bundleIdResolver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PASBundleIdResolver *bundleIdResolver; // @synthesize bundleIdResolver=_bundleIdResolver;
 @property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
-- (void).cxx_destruct;
 - (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)mapItemForPlaceName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)namedEntityRecordsWithQuery:(id)arg1 queryId:(unsigned long long)arg2;

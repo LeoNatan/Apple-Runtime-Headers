@@ -13,8 +13,8 @@
     UIView *_view;
 }
 
-@property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 - (id)accessibilityHint;
 - (unsigned long long)accessibilityTraits;
 - (struct CGRect)accessibilityFrame;

@@ -18,12 +18,12 @@
     SDRDiagnosticReporter *_reporter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL serialLogEnabled; // @synthesize serialLogEnabled=_serialLogEnabled;
 @property(readonly, nonatomic) SDRDiagnosticReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) NSString *process; // @synthesize process=_process;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (BOOL)sendSignature:(id)arg1 withDuration:(double)arg2;
 - (BOOL)sendAutoBugCaptureEvent:(unsigned long long)arg1;
 - (id)getSignatureForReason:(unsigned long long)arg1;

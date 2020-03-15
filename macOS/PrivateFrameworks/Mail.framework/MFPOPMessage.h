@@ -15,10 +15,10 @@
     NSData *_messageData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *messageData; // @synthesize messageData=_messageData;
 @property(nonatomic) unsigned long long messageNumber; // @synthesize messageNumber=_messageNumber;
 @property(copy, nonatomic) NSString *messageID; // @synthesize messageID=_messageID;
-- (void).cxx_destruct;
 - (id)remoteMailboxURLString;
 - (id)messageDataFetchIfNotAvailable:(BOOL)arg1 newDocumentID:(id)arg2;
 - (unsigned long long)messageSize;

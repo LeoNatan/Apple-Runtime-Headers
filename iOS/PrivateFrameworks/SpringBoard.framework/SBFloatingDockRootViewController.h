@@ -40,6 +40,7 @@
     SBFloatingDockSuggestionsModel *_suggestionsModel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFloatingDockSuggestionsModel *suggestionsModel; // @synthesize suggestionsModel=_suggestionsModel;
 @property(readonly, nonatomic) __weak id <SBIconViewProviding> iconViewProvider; // @synthesize iconViewProvider=_iconViewProvider;
 @property(retain, nonatomic) SBWorkspaceApplicationSceneTransitionContext *currentTransitionContext; // @synthesize currentTransitionContext=_currentTransitionContext;
@@ -56,7 +57,6 @@
 @property(nonatomic, getter=isTransitioningPresentation) _Bool transitioningPresentation; // @synthesize transitioningPresentation=_transitioningPresentation;
 @property(retain, nonatomic) SBApplication *requestedSuggestedApplication; // @synthesize requestedSuggestedApplication=_requestedSuggestedApplication;
 @property(nonatomic) __weak id <SBFloatingDockRootViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)isFloatingDockViewControllerPresentedOverTransitioningContent:(id)arg1;
 - (double)minimumHomeScreenScaleForFloatingDockViewController:(id)arg1;
 - (double)statusBarHeightForFloatingDockViewController:(id)arg1;

@@ -15,10 +15,10 @@
     UIImageView *_reportImageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *reportImageView; // @synthesize reportImageView=_reportImageView;
 @property(readonly, nonatomic) UILabel *reportLabel; // @synthesize reportLabel=_reportLabel;
 @property(readonly, nonatomic) double minimumHeight; // @synthesize minimumHeight=_minimumHeight;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setReportName:(id)arg1 reportImage:(id)arg2;
 - (void)_buildCellStructureWithWidth:(double)arg1;

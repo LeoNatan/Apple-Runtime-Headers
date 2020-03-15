@@ -18,9 +18,9 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 @property(retain, nonatomic) MFMessageCriterionConverter *criterionConverter; // @synthesize criterionConverter=_criterionConverter;
-- (void).cxx_destruct;
 - (unsigned int)optionsForQuery:(id)arg1;
 - (id)criterionForQuery:(id)arg1;
 - (id)mailAccountForIdentifier:(id)arg1;

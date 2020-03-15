@@ -7,19 +7,22 @@
 #import <PhotosUICore/PXGadgetUIViewController.h>
 
 #import <PhotosUI/PXNavigationRoot-Protocol.h>
+#import <PhotosUI/PXProgrammaticNavigationParticipant-Protocol.h>
 
 @class NSString, PUSearchHomeGadgetDataSourceManager, PXNavigationListDataSectionManager, UIBarButtonItem, UINavigationController;
 
-@interface PUSearchHomeViewController : PXGadgetUIViewController <PXNavigationRoot>
+@interface PUSearchHomeViewController : PXGadgetUIViewController <PXNavigationRoot, PXProgrammaticNavigationParticipant>
 {
+    _Bool _shouldActiveSearchFieldUponAppearing;
     UIBarButtonItem *_navigationDisplayModeButtonItem;
     PUSearchHomeGadgetDataSourceManager *_searchHomeDataSourceManager;
 }
 
 + (Class)gadgetSpecClass;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool shouldActiveSearchFieldUponAppearing; // @synthesize shouldActiveSearchFieldUponAppearing=_shouldActiveSearchFieldUponAppearing;
 @property(retain, nonatomic) PUSearchHomeGadgetDataSourceManager *searchHomeDataSourceManager; // @synthesize searchHomeDataSourceManager=_searchHomeDataSourceManager;
 @property(retain, nonatomic) UIBarButtonItem *navigationDisplayModeButtonItem; // @synthesize navigationDisplayModeButtonItem=_navigationDisplayModeButtonItem;
-- (void).cxx_destruct;
 - (void)ppt_dismissKeyboard;
 - (void)ppt_prepareForSearchTest:(CDUnknownBlockType)arg1;
 - (void)ppt_prepareForSearchScrollingTestWithSearchText:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -27,6 +30,9 @@
 - (long long)scrollAnimationIdentifier;
 - (void)_notifyAnalyticsSearchAction:(unsigned long long)arg1;
 - (void)gadget:(id)arg1 didChange:(unsigned long long)arg2;
+- (id)nextExistingParticipantOnRouteToDestination:(id)arg1;
+- (void)navigateToDestination:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)canRouteToDestination:(id)arg1;
 @property(readonly, nonatomic) NSString *navigationIdentifier;
 @property(readonly, nonatomic) NSString *navigationTitle;
 - (void)scrollViewDidScroll:(id)arg1;

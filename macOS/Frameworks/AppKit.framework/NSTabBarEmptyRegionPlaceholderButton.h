@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     BOOL _syncedWithOtherButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSyncedWithOtherButton) BOOL syncedWithOtherButton; // @synthesize syncedWithOtherButton=_syncedWithOtherButton;
 @property(nonatomic) __weak id <NSTabBarSyncedButtonDelegate> buttonInTabSyncGroupDelegate; // @synthesize buttonInTabSyncGroupDelegate=_buttonInTabSyncGroupDelegate;
-- (void).cxx_destruct;
 - (void)_setHasPressedHighlight:(BOOL)arg1 notifyNSTabBarSyncedButtonDelegate:(BOOL)arg2;
 - (void)_setHasMouseOverHighlight:(BOOL)arg1 animated:(BOOL)arg2 notifyNSTabBarSyncedButtonDelegate:(BOOL)arg3;
 - (void)setHighlightStateToPressed:(BOOL)arg1 hovered:(BOOL)arg2;

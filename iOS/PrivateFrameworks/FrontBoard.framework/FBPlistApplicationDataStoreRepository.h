@@ -23,8 +23,8 @@
     NSObject<OS_dispatch_queue> *_writeQueue;
 }
 
-@property(nonatomic) __weak id <FBApplicationDataStoreRepositoryReadingDelegate> delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FBApplicationDataStoreRepositoryReadingDelegate> delegate;
 - (void)_notifyDelegateOfStoreInvalidationForIdentifier:(id)arg1;
 - (void)_notifyDelegateOfChangeForKeys:(id)arg1 application:(id)arg2;
 - (void)_writeQueue_flushSynchronously;

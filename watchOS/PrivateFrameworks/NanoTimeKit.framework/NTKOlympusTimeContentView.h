@@ -51,6 +51,7 @@
 }
 
 + (float)scaleForViewDuringColorChangeTransitionWithFraction:(float)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float tritiumFraction; // @synthesize tritiumFraction=_tritiumFraction;
 @property(nonatomic) struct CGSize logoImageSizeForCircularDial; // @synthesize logoImageSizeForCircularDial=_logoImageSizeForCircularDial;
 @property(nonatomic) float analogStyleSwooshPositionFraction; // @synthesize analogStyleSwooshPositionFraction=_analogStyleSwooshPositionFraction;
@@ -84,7 +85,6 @@
 @property(nonatomic) _Bool invertedColors; // @synthesize invertedColors=_invertedColors;
 @property(nonatomic) __weak id <NTKOlympusContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen;
-- (void).cxx_destruct;
 - (void)_applyTransitionTritiumOnFraction:(float)arg1;
 - (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
 - (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;

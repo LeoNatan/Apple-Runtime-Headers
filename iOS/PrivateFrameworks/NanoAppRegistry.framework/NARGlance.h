@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *localizedDisplayNameMap; // @synthesize localizedDisplayNameMap=_localizedDisplayNameMap;
 @property(copy, nonatomic) NSString *glanceID; // @synthesize glanceID=_glanceID;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)initWithCoder:(id)arg1;

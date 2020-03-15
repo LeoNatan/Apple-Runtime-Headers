@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets floatPadding; // @synthesize floatPadding=_floatPadding;
 @property(nonatomic) double floatingBottomDecorationHeight; // @synthesize floatingBottomDecorationHeight=_floatingBottomDecorationHeight;
 @property(nonatomic) _Bool shouldFloatOverShortDistances; // @synthesize shouldFloatOverShortDistances=_shouldFloatOverShortDistances;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize interTileSpacing; // @synthesize interTileSpacing=_interTileSpacing;
 @property(nonatomic) struct CGSize sectionReferenceSize; // @synthesize sectionReferenceSize=_sectionReferenceSize;
 @property(nonatomic) long long flowDirection; // @synthesize flowDirection=_flowDirection;
-- (void).cxx_destruct;
 - (void)updateCollectionViewWithDeletedSections:(id)arg1 insertedSections:(id)arg2 updatedSections:(id)arg3;
 - (long long)_layoutTilesAndGetNumberOfTilesOmittedWithCollectionView:(id)arg1 tileLayoutAttributes:(id)arg2 fixedLayoutAttributes:(id)arg3 origin:(inout struct CGPoint *)arg4 size:(inout struct CGSize *)arg5 sectionContentSize:(struct CGSize)arg6 itemCount:(long long)arg7 section:(long long)arg8;
 - (struct CGRect)_layoutVerticalSectionHeaderIfNecessary:(id)arg1 fixedLayoutAttributes:(id)arg2 floatingLayoutAttributes:(id)arg3 section:(long long)arg4;

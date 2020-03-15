@@ -16,6 +16,7 @@
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSXPCConnection *_xpcConnection;
+    int _servicePort;
 }
 
 - (void).cxx_destruct;
@@ -26,10 +27,11 @@
 - (void)invalidate;
 - (oneway void)handleIntent:(id)arg1 inBackgroundAppWithBundleId:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (oneway void)handleContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (oneway void)deactivateForReason:(int)arg1 options:(unsigned int)arg2 analyticsContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (oneway void)activateWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (oneway void)prewarmWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (oneway void)deactivateForReason:(int)arg1 options:(unsigned int)arg2 context:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (oneway void)activateWithRequestInfo:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (oneway void)prewarmWithRequestInfo:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dealloc;
+- (id)initWithServicePort:(int)arg1;
 - (id)init;
 
 // Remaining properties

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)outputStreamPrefsType;
 + (Class)inputStreamPrefsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *outputStreamPrefs; // @synthesize outputStreamPrefs=_outputStreamPrefs;
 @property(retain, nonatomic) NSMutableArray *inputStreamPrefs; // @synthesize inputStreamPrefs=_inputStreamPrefs;
 @property(retain, nonatomic) NSString *clockDeviceUID; // @synthesize clockDeviceUID=_clockDeviceUID;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double clientSampleRate; // @synthesize clientSampleRate=_clientSampleRate;
 @property(nonatomic) int controllerType; // @synthesize controllerType=_controllerType;
 @property(nonatomic) unsigned int sessionToken; // @synthesize sessionToken=_sessionToken;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

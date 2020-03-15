@@ -25,6 +25,7 @@
     UIView *_customViewForTouchContinuation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldPresentAutomatically; // @synthesize shouldPresentAutomatically=_shouldPresentAutomatically;
 @property(nonatomic) __weak UIView *customViewForTouchContinuation; // @synthesize customViewForTouchContinuation=_customViewForTouchContinuation;
 @property(nonatomic) _Bool shouldUpdateFromViewBeforePresentation; // @synthesize shouldUpdateFromViewBeforePresentation=_shouldUpdateFromViewBeforePresentation;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) UIPreviewPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 @property(retain, nonatomic) UIView *customContainerView; // @synthesize customContainerView=_customContainerView;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)_completeViewControllerPresentationImmediately;
 - (void)presentViewController;
 - (id)initWithViewController:(id)arg1;

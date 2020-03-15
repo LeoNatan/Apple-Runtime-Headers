@@ -37,8 +37,8 @@
 + (id)keyPathsForValuesAffectingReadyForDisplay;
 + (id)keyPathsForValuesAffectingVideoGravity;
 + (id)keyPathsForValuesAffectingPlayer;
-@property(readonly, nonatomic) AVBehaviorStorage *_behaviorStorage; // @synthesize _behaviorStorage=__behaviorStorage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AVBehaviorStorage *_behaviorStorage; // @synthesize _behaviorStorage=__behaviorStorage;
 - (_Bool)_showsPlaybackControlsView;
 - (void)_showOrHidePlaybackControlsView;
 - (void)_updatePlaybackControlsViewVisibilityIfNeeded;

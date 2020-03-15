@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIView *_background;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *background; // @synthesize background=_background;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSAttributedString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)_setupSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

@@ -24,6 +24,7 @@
     NSTimer *_reprocessTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *reprocessTimer; // @synthesize reprocessTimer=_reprocessTimer;
 @property(nonatomic) unsigned long long highWaterMark; // @synthesize highWaterMark=_highWaterMark;
 @property(retain, nonatomic) NSMutableDictionary *interestModificationDates; // @synthesize interestModificationDates=_interestModificationDates;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) FCKeyedOperationQueue *prefetchQueue; // @synthesize prefetchQueue=_prefetchQueue;
 @property(retain, nonatomic) id <NUArticleDataProviderFactory> articleDataProviderFactory; // @synthesize articleDataProviderFactory=_articleDataProviderFactory;
 @property(retain, nonatomic) id <NUArticleFactory> articleFactory; // @synthesize articleFactory=_articleFactory;
-- (void).cxx_destruct;
 - (void)_revisitSuspendedState;
 - (void)_flushUnusedDataProvidersIfNeeded;
 - (id)keyedOperationQueue:(id)arg1 performAsyncOperationForKey:(id)arg2 completion:(CDUnknownBlockType)arg3;

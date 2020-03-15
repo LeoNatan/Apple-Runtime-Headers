@@ -15,10 +15,10 @@
     id __result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setResult:) id _result; // @synthesize _result=__result;
 @property(copy, nonatomic, setter=_setWork:) CDUnknownBlockType _work; // @synthesize _work=__work;
 @property(nonatomic, setter=_setApplicationController:) __weak AXKApplicationController *_applicationController; // @synthesize _applicationController=__applicationController;
-- (void).cxx_destruct;
 - (id)description;
 - (void)main;
 - (id)initWithWorkBlock:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2 applicationController:(id)arg3;

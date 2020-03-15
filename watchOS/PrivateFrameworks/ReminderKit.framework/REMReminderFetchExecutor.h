@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(retain, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(retain, nonatomic) REMReminderPredicateDescriptor *predicateDescriptor; // @synthesize predicateDescriptor=_predicateDescriptor;
-- (void).cxx_destruct;
 - (id)resultsFromFetchResult:(id)arg1 inParentReminder:(id)arg2 error:(id *)arg3;
 - (id)resultsFromFetchResult:(id)arg1 inList:(id)arg2 error:(id *)arg3;
 - (id)resultsFromFetchResult:(id)arg1 inStore:(id)arg2 error:(id *)arg3;

@@ -39,12 +39,12 @@
     struct CGSize _maximumSize;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize maximumSize; // @synthesize maximumSize=_maximumSize;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic, getter=isShimmerEnabled) _Bool shimmerEnabled; // @synthesize shimmerEnabled=_shimmerEnabled;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)boldTextStatusDidChange:(id)arg1;
 - (void)reduceMotionDidChange:(id)arg1;

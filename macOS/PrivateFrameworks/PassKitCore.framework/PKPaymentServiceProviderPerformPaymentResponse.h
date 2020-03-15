@@ -13,8 +13,8 @@
     PKServiceProviderPurchase *_purchase;
 }
 
-@property(readonly, retain, nonatomic) PKServiceProviderPurchase *purchase; // @synthesize purchase=_purchase;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) PKServiceProviderPurchase *purchase; // @synthesize purchase=_purchase;
 - (id)initWithData:(id)arg1;
 
 @end

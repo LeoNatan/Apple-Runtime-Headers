@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     vector_12bd641b _shape;
 }
 
-@property(readonly, nonatomic) vector_12bd641b shape; // @synthesize shape=_shape;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) vector_12bd641b shape; // @synthesize shape=_shape;
 - (BOOL)setWeightData:(id)arg1 error:(id *)arg2;
 - (id)outputShapesForInputShapes:(id)arg1 error:(id *)arg2;
 - (id)initWithParameterDictionary:(id)arg1 error:(id *)arg2;

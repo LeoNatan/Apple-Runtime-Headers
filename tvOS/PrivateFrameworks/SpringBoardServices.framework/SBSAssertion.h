@@ -17,9 +17,9 @@
     BSMachPortReceiveRight *_receiveRight;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, copy, nonatomic) NSString *assertionName; // @synthesize assertionName=_assertionName;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)dealloc;
 - (id)init;

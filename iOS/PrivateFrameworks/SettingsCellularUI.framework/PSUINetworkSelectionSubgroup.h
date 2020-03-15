@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_bundleControllers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bundleControllers; // @synthesize bundleControllers=_bundleControllers;
 @property(retain, nonatomic) CoreTelephonyClient *ctClient; // @synthesize ctClient=_ctClient;
 @property(nonatomic) __weak PSSpecifier *parentSpecifier; // @synthesize parentSpecifier=_parentSpecifier;
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
-- (void).cxx_destruct;
 - (void)simStatusDidChange:(id)arg1 status:(id)arg2;
 - (void)operatorNameChanged:(id)arg1 name:(id)arg2;
 - (void)networkSelected:(id)arg1 success:(_Bool)arg2 mode:(id)arg3;

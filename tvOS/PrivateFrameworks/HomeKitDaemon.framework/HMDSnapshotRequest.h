@@ -11,8 +11,8 @@
     CDUnknownBlockType _completion;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (id)initWithCompletion:(CDUnknownBlockType)arg1;
 
 @end

@@ -20,6 +20,7 @@
 }
 
 + (unsigned long long)numberOfLinesInPostalAddress:(id)arg1 isEditing:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(readonly, nonatomic) NSTextField *streetField; // @synthesize streetField=_streetField;
 @property(copy, nonatomic) NSArray *firstFieldsPerLine; // @synthesize firstFieldsPerLine=_firstFieldsPerLine;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(readonly, nonatomic) BOOL fieldsEditable; // @synthesize fieldsEditable=_fieldsEditable;
 @property(readonly, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
-- (void).cxx_destruct;
 - (void)buildFields;
 - (id)textFieldForAddressComponent:(id)arg1;
 - (id)fieldForAddressComponent:(id)arg1 ofDictionary:(id)arg2;

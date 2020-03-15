@@ -62,6 +62,7 @@
     NSNumber *_categoryIdentifier;
     NSString *_configuredName;
     unsigned long long _accessoryReprovisionState;
+    double _lastPairingFailureTime;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -69,6 +70,8 @@
 + (id)logCategory;
 + (_Bool)splitProductDataIntoProductGroupAndProductNumber:(id)arg1 productGroup:(id *)arg2 productNumber:(id *)arg3;
 + (_Bool)validateProductData:(id)arg1;
+- (void).cxx_destruct;
+@property(nonatomic) double lastPairingFailureTime; // @synthesize lastPairingFailureTime=_lastPairingFailureTime;
 @property(nonatomic) _Bool custom1WoWLAN; // @synthesize custom1WoWLAN=_custom1WoWLAN;
 @property(nonatomic) _Bool custom1WoBLE; // @synthesize custom1WoBLE=_custom1WoBLE;
 @property(nonatomic) unsigned long long accessoryReprovisionState; // @synthesize accessoryReprovisionState=_accessoryReprovisionState;
@@ -88,7 +91,6 @@
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSArray *allowedHosts; // @synthesize allowedHosts=_allowedHosts;
 @property(nonatomic) long long wiFiCredentialType; // @synthesize wiFiCredentialType=_wiFiCredentialType;
-- (void).cxx_destruct;
 - (void)__handlePairingIdentityRequest:(id)arg1;
 - (_Bool)supportsMinimumUserPrivilege;
 - (id)hashRouteID;
@@ -179,6 +181,7 @@
 - (void)setModel:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *model; // @synthesize model=_model;
 - (void)__handleRename:(id)arg1;
+- (void)_renameAccessory:(id)arg1 resetName:(_Bool)arg2 message:(id)arg3;
 - (void)updateProvidedName:(id)arg1;
 - (id)getConfiguredName;
 - (void)_handleUpdatedName:(id)arg1;
@@ -214,7 +217,7 @@
 @property(readonly, copy, nonatomic) NSString *contextID;
 - (id)vendorDetailsForAWD;
 - (id)assistantObject;
-- (id)url;
+- (id)urlString;
 - (id)assistantUniqueIdentifier;
 - (id)networkProtectionReportForAWD;
 - (int)networkProtectionStatusForAWD;

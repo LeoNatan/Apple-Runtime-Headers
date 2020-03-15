@@ -17,12 +17,12 @@
     double _collectionHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double collectionHeight; // @synthesize collectionHeight=_collectionHeight;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(nonatomic) double itemHeight; // @synthesize itemHeight=_itemHeight;
 @property(nonatomic) double lineSpacing; // @synthesize lineSpacing=_lineSpacing;
 @property(nonatomic) double separatorWidth; // @synthesize separatorWidth=_separatorWidth;
-- (void).cxx_destruct;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

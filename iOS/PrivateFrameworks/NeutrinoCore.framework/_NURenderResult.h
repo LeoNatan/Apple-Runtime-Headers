@@ -16,8 +16,8 @@
     id <NURenderStatistics> _statistics;
 }
 
-@property(retain) id <NURenderStatistics> statistics; // @synthesize statistics=_statistics;
 - (void).cxx_destruct;
+@property(retain) id <NURenderStatistics> statistics; // @synthesize statistics=_statistics;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

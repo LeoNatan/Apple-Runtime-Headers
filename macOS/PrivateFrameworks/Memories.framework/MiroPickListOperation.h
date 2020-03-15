@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     MiroMemory *_memory;
 }
 
-@property(retain) MiroMemory *memory; // @synthesize memory=_memory;
 - (void).cxx_destruct;
+@property(retain) MiroMemory *memory; // @synthesize memory=_memory;
 - (void)start;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;

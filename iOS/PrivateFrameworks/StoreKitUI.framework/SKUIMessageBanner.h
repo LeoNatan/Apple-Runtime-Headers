@@ -19,9 +19,9 @@
     NSAttributedString *_attributedMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSAttributedString *attributedMessage; // @synthesize attributedMessage=_attributedMessage;
 @property(nonatomic) __weak id <SKUIMessageBannerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_clearButtonAction:(id)arg1;
 - (void)_buttonAction:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

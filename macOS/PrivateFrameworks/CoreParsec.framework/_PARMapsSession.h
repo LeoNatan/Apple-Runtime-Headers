@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSData *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) double relativeTimestamp; // @synthesize relativeTimestamp=_relativeTimestamp;
 @property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *enviroment; // @synthesize enviroment=_enviroment;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

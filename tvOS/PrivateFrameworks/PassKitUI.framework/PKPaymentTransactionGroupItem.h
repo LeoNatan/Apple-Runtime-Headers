@@ -17,10 +17,10 @@
     PKAccount *_account;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(retain, nonatomic) PKPaymentTransactionGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

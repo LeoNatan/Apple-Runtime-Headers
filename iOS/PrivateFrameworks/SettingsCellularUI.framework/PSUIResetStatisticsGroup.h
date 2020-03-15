@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     CHManager *_callHistoryManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CHManager *callHistoryManager; // @synthesize callHistoryManager=_callHistoryManager;
 @property(retain, nonatomic) PSConfirmationSpecifier *resetButtonSpecifier; // @synthesize resetButtonSpecifier=_resetButtonSpecifier;
 @property(retain, nonatomic) PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 @property(nonatomic) unsigned long long policy; // @synthesize policy=_policy;
 @property(nonatomic) __weak id <PSUIResetStatisticsGroupDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)clearStats:(id)arg1;
 - (void)_updateLastResetText;
 - (id)_lastUpdateDate;

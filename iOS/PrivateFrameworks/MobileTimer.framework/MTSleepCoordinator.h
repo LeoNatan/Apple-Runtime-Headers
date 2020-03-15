@@ -29,6 +29,7 @@
     CDUnknownBlockType _currentDateProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType currentDateProvider; // @synthesize currentDateProvider=_currentDateProvider;
 @property(retain, nonatomic) MTBedtimeDNDMonitor *bedtimeDNDMonitor; // @synthesize bedtimeDNDMonitor=_bedtimeDNDMonitor;
 @property(retain, nonatomic) MTXPCScheduler *alarmTimeoutScheduler; // @synthesize alarmTimeoutScheduler=_alarmTimeoutScheduler;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(retain, nonatomic) MTAlarm *cachedSleepAlarm; // @synthesize cachedSleepAlarm=_cachedSleepAlarm;
 @property(retain, nonatomic) MTSleepCoordinatorStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
-- (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (id)sourceIdentifier;

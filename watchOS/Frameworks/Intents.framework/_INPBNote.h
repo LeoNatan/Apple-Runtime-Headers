@@ -16,6 +16,7 @@
 {
     struct _has;
     _Bool __encodeLegacyGloryData;
+    NSString *_accountIdentifier;
     NSArray *_contents;
     _INPBDateTime *_createdDateTime;
     _INPBDataString *_groupName;
@@ -26,6 +27,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)contentType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *title; // @synthesize title=_title;
 @property(retain, nonatomic) _INPBDateTime *modifiedDateTime; // @synthesize modifiedDateTime=_modifiedDateTime;
@@ -33,7 +35,7 @@
 @property(retain, nonatomic) _INPBDataString *groupName; // @synthesize groupName=_groupName;
 @property(retain, nonatomic) _INPBDateTime *createdDateTime; // @synthesize createdDateTime=_createdDateTime;
 @property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
-- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
@@ -51,6 +53,7 @@
 @property(readonly, nonatomic) unsigned int contentsCount;
 - (void)addContent:(id)arg1;
 - (void)clearContents;
+@property(readonly, nonatomic) _Bool hasAccountIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,8 +15,8 @@
     NSHashTable *_textSelecting;
 }
 
-@property(readonly, nonatomic) NSHashTable *textSelecting; // @synthesize textSelecting=_textSelecting;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSHashTable *textSelecting; // @synthesize textSelecting=_textSelecting;
 - (void)clearSelection;
 - (void)addTextSelecting:(id)arg1;
 - (id)init;

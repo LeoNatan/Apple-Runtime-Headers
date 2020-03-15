@@ -24,6 +24,7 @@
     long long _curationType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long curationType; // @synthesize curationType=_curationType;
 @property(retain, nonatomic) NSArray *fetchPropertySets; // @synthesize fetchPropertySets=_fetchPropertySets;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSDictionary *existingAssetCollectionFetchResults; // @synthesize existingAssetCollectionFetchResults=_existingAssetCollectionFetchResults;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) PHFetchResult *collectionListFetchResult; // @synthesize collectionListFetchResult=_collectionListFetchResult;
-- (void).cxx_destruct;
 - (id)initWithAssetFetchResult:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithCollectionListFetchResult:(id)arg1 options:(unsigned long long)arg2;
 - (id)init;

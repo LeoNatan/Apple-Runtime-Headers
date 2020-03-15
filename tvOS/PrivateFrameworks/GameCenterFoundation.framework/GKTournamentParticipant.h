@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKPlayer *player; // @synthesize player=_player;
 @property(retain) GKTournamentParticipantInternal *internal; // @synthesize internal=_internal;
-- (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)init;

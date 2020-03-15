@@ -21,13 +21,13 @@
     UIView *_separatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) _PKColorAlphaSlider *colorAlphaSlider; // @synthesize colorAlphaSlider=_colorAlphaSlider;
 @property(retain, nonatomic) _PKInkThicknessPicker *thicknessPicker; // @synthesize thicknessPicker=_thicknessPicker;
 @property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
 @property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
 @property(nonatomic) __weak id <_PKInkAttributesPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_colorAlphaSliderUserDidEndDraggingSlider:(id)arg1;
 - (void)_colorAlphaSliderUserDidStartDraggingSlider:(id)arg1;
 - (void)_opacityValueChanged:(id)arg1;

@@ -51,6 +51,7 @@
 }
 
 + (double)preferredRestingVisibleMarginForBounds:(struct CGRect)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *headerItems; // @synthesize headerItems=_headerItems;
 @property(copy, nonatomic) NSString *additionalDescriptionDebugText; // @synthesize additionalDescriptionDebugText=_additionalDescriptionDebugText;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
@@ -68,7 +69,6 @@
 @property(nonatomic) double titleOpacity; // @synthesize titleOpacity=_titleOpacity;
 @property(nonatomic) struct UIRectCornerRadii contentCornerRadii; // @synthesize contentCornerRadii=_contentCornerRadii;
 @property(nonatomic) __weak id <SBFluidSwitcherItemContainerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)containerViewForBlurContentView;
 - (id)initialRimShadowFilters;
 - (id)initialDiffuseShadowFilters;

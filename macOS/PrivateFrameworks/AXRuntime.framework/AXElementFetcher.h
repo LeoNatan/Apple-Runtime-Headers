@@ -39,6 +39,7 @@
 
 + (id)springBoardElement;
 + (id)systemWideElement;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customCurrentApps; // @synthesize customCurrentApps=_customCurrentApps;
 @property(nonatomic) BOOL didSendFakeScreenChangeOnLastFetch; // @synthesize didSendFakeScreenChangeOnLastFetch=_didSendFakeScreenChangeOnLastFetch;
 @property(retain, nonatomic) AXVisualElementGrouper *visualElementGrouper; // @synthesize visualElementGrouper=_visualElementGrouper;
@@ -56,7 +57,6 @@
 @property(nonatomic, getter=isEventManagementEnabled) BOOL eventManagementEnabled; // @synthesize eventManagementEnabled=_eventManagementEnabled;
 @property(nonatomic, getter=isFetchingElements) BOOL fetchingElements; // @synthesize fetchingElements=_fetchingElements;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)_debugLogElementCache;
 - (id)_debugStringForFetchEvents:(unsigned long long)arg1;
 - (void)clearCache;

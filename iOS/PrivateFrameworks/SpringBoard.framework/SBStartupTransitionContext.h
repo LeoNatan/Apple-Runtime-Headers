@@ -25,6 +25,7 @@
     _Bool _hasUserSwitchOverlayMismatch;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasUserSwitchOverlayMismatch; // @synthesize hasUserSwitchOverlayMismatch=_hasUserSwitchOverlayMismatch;
 @property(nonatomic, getter=isDark) _Bool dark; // @synthesize dark=_isDark;
 @property(retain, nonatomic) BKSDisplayRenderOverlay *overlay; // @synthesize overlay=_overlay;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *fromApplicationBundleID; // @synthesize fromApplicationBundleID=_fromApplicationBundleID;
 @property(copy, nonatomic) NSURL *applicationLaunchURL; // @synthesize applicationLaunchURL=_applicationLaunchURL;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)_parseOverlayInfo;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

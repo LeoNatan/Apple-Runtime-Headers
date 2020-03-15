@@ -14,9 +14,9 @@
     DASearchQuery *_query;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int numDownloadedElements; // @synthesize numDownloadedElements=_numDownloadedElements;
 @property(retain, nonatomic) DASearchQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)taskStatusForExchangeStatus:(int)arg1;
 - (int)commandCode;

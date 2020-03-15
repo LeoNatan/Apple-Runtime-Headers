@@ -23,11 +23,11 @@
     CRSet *_elements;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CRSet *elements; // @synthesize elements=_elements;
 @property(retain, nonatomic) CRArray *ordering; // @synthesize ordering=_ordering;
 @property(nonatomic) __weak NSObject<CRUndoDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak CRDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (_Bool)wantsUndoCommands;
 - (void)addUndoCommandsForObject:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)walkGraph:(CDUnknownBlockType)arg1;

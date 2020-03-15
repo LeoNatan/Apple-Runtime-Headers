@@ -15,8 +15,8 @@
     NSArray *_trackedFaces;
 }
 
-@property(copy, nonatomic) NSArray *trackedFaces; // @synthesize trackedFaces=_trackedFaces;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *trackedFaces; // @synthesize trackedFaces=_trackedFaces;
 -     // Error parsing type: @160@0:8{?=[4]}16{?=[4]}80@144@152, name: anchorsForCameraWithTransform:referenceOriginTransform:existingAnchors:anchorsToRemove:
 
 // Remaining properties

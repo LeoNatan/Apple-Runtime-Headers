@@ -22,6 +22,7 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) _Bool includeAdditions; // @synthesize includeAdditions=_includeAdditions;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *activityQueue; // @synthesize activityQueue=_activityQueue;
@@ -29,7 +30,6 @@
 @property(nonatomic) double delay; // @synthesize delay=_delay;
 @property(readonly, nonatomic) _CDSpotlightEventIndexer *indexer; // @synthesize indexer=_indexer;
 @property(readonly, nonatomic) _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (void)triggerIndexIncludingAdditions:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)knowledgeStorage:(id)arg1 didTombstoneEventsWithStreamNameCounts:(id)arg2;
 - (void)knowledgeStorage:(id)arg1 didInsertLocalEventsWithStreamNameCounts:(id)arg2;

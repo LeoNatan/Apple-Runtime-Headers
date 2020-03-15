@@ -13,6 +13,7 @@
 - (id)getOptionValue:(id)arg1;
 - (id)getSuperVectorWithEndPoint:(unsigned int)arg1;
 - (id)getAnalyzedResultForPhraseId:(unsigned int)arg1;
+- (unsigned int)numResultsAvailable;
 - (void)analyzeWavData:(id)arg1 numSamples:(unsigned int)arg2;
 - (void)resetBest;
 - (void)reset;

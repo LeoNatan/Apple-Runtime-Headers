@@ -20,8 +20,8 @@
 + (id)queryRecordsForKey:(id)arg1 storage:(id)arg2;
 + (unsigned long long)queryRecordCountForKey:(id)arg1 withPredicate:(id)arg2 storage:(id)arg3;
 + (id)filterNonConformingRecordsFrom:(id)arg1;
-@property(readonly, nonatomic) id <_DPMetricsCollector> metricsCollector; // @synthesize metricsCollector=_metricsCollector;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <_DPMetricsCollector> metricsCollector; // @synthesize metricsCollector=_metricsCollector;
 - (void)scheduleMaintenanceWithName:(id)arg1 database:(id)arg2;
 - (id)generateReportForKeys:(id)arg1 storage:(id)arg2;
 - (void)reportToPrivateCloudWithStrings:(id)arg1 forKey:(id)arg2;

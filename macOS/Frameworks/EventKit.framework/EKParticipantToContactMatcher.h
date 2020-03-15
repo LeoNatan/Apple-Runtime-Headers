@@ -19,11 +19,11 @@
 + (id)_allParticipantsOnItem:(id)arg1;
 + (id)_nameComponentsWithGivenName:(id)arg1 familyName:(id)arg2;
 + (id)_nameComponentsForContact:(id)arg1 reverse:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *contactCompanyNames; // @synthesize contactCompanyNames=_contactCompanyNames;
 @property(retain, nonatomic) NSSet *contactNameComponents; // @synthesize contactNameComponents=_contactNameComponents;
 @property(retain, nonatomic) NSSet *contactEmailAddresses; // @synthesize contactEmailAddresses=_contactEmailAddresses;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (BOOL)anyContactMatchesParticipant:(id)arg1;
 - (id)matchingParticipantsFromParticipants:(id)arg1;
 - (id)matchingParticipantsFromItem:(id)arg1;

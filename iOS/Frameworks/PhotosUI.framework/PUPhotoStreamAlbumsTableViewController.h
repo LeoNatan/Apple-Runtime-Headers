@@ -18,10 +18,10 @@
 }
 
 + (CDUnknownBlockType)_albumsComparator;
-+ (struct NSObject *)albumListForContentMode:(int)arg1;
++ (id)albumListForContentMode:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUPhotoStreamsAlbumsTableViewControllerDelegate> pickerDelegate; // @synthesize pickerDelegate=_pickerDelegate;
 @property(nonatomic) _Bool allowsMutlipleSelection; // @synthesize allowsMutlipleSelection=_allowsMutlipleSelection;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)contentSizeForViewInPopover;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -31,7 +31,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
-- (id)posterImageForAlbum:(struct NSObject *)arg1 imageView:(id)arg2;
+- (id)posterImageForAlbum:(id)arg1 imageView:(id)arg2;
 - (void)reloadActions;
 - (void)addSelectedCloudGuid:(id)arg1;
 - (void)didReceiveMemoryWarning;

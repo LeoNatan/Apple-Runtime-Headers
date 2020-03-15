@@ -15,8 +15,8 @@
 }
 
 + (id)assetManager;
-@property(readonly) NSArray *availableDefinitionDictionaries; // @synthesize availableDefinitionDictionaries=_availableDefinitionDictionaries;
 - (void).cxx_destruct;
+@property(readonly) NSArray *availableDefinitionDictionaries; // @synthesize availableDefinitionDictionaries=_availableDefinitionDictionaries;
 - (void)_migrateInstalledStateForNewDictionaries:(id)arg1;
 - (id)_allAvailableDefinitionDictionaries;
 - (id)_availableDictionaryAssets;

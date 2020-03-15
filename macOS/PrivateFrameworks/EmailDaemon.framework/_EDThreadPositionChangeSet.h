@@ -17,10 +17,10 @@
     NSMutableSet *_objectIDsToDelete;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *objectIDsToDelete; // @synthesize objectIDsToDelete=_objectIDsToDelete;
 @property(retain, nonatomic) NSMutableDictionary *objectIDsToMoveByBeforeObjectID; // @synthesize objectIDsToMoveByBeforeObjectID=_objectIDsToMoveByBeforeObjectID;
 @property(retain, nonatomic) NSMutableDictionary *objectIDsToAddByBeforeObjectID; // @synthesize objectIDsToAddByBeforeObjectID=_objectIDsToAddByBeforeObjectID;
-- (void).cxx_destruct;
 - (BOOL)isDeletingObjectID:(id)arg1;
 - (BOOL)_isMovingObjectID:(id)arg1;
 - (BOOL)isAddingObjectID:(id)arg1;

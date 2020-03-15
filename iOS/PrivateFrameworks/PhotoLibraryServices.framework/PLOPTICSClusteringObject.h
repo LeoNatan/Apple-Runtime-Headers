@@ -20,6 +20,7 @@
 }
 
 + (id)clusterObjectWithObject:(id)arg1 index:(unsigned long long)arg2 epsilon:(double)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool processed; // @synthesize processed=_processed;
 @property(nonatomic) double reachabilityDistance; // @synthesize reachabilityDistance=_reachabilityDistance;
 @property(nonatomic) double coreDistance; // @synthesize coreDistance=_coreDistance;
@@ -27,7 +28,6 @@
 @property(nonatomic) unsigned long long order; // @synthesize order=_order;
 @property unsigned long long index; // @synthesize index=_index;
 @property(readonly, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)updateCoreDistanceForNeighbor:(unsigned long long)arg1;
 - (id)neighborAtIndex:(unsigned long long)arg1;
 - (void)sortNeighborsByDistance;

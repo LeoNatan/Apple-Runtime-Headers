@@ -16,10 +16,10 @@
     NSArray *_cachedExtensions;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *cachedExtensions; // @synthesize cachedExtensions=_cachedExtensions;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property unsigned long long collectionTimeout; // @synthesize collectionTimeout=_collectionTimeout;
-- (void).cxx_destruct;
 - (id)extensionManager;
 - (id)availableDiagnosticExtensions;
 - (id)extensionForIdentifier:(id)arg1;

@@ -18,8 +18,8 @@
     NSMutableDictionary *_properties;
 }
 
-@property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void)_setValue:(id)arg1 forProperty:(id)arg2;
 - (id)_restoreKeyForDownloadProperty:(id)arg1;
 - (id)_restoreKeyForAssetProperty:(id)arg1;

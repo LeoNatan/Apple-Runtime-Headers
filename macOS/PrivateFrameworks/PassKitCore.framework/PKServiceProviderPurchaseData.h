@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *dictionaryRepresentation; // @synthesize dictionaryRepresentation=_dictionaryRepresentation;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *dictionaryRepresentation; // @synthesize dictionaryRepresentation=_dictionaryRepresentation;
 - (id)description;
 - (BOOL)isEqualToPKServiceProviderPurchaseData:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

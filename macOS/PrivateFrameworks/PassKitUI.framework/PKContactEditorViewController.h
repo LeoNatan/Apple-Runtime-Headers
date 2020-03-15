@@ -38,6 +38,7 @@
     PKContactLabelMenuController *_labelMenuController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKContactLabelMenuController *labelMenuController; // @synthesize labelMenuController=_labelMenuController;
 @property(retain, nonatomic) NSResponder *initialFirstResponder; // @synthesize initialFirstResponder=_initialFirstResponder;
 @property(retain, nonatomic) NSButton *saveButton; // @synthesize saveButton=_saveButton;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <PKContactEditorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_shouldShowPhoneticName;
 - (void)_applyErrors:(id)arg1;
 - (void)_applyContact:(id)arg1;

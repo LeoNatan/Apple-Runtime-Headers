@@ -24,9 +24,9 @@
 + (id)_defaultTemperatureColors;
 + (id)_defaultRGBColors;
 + (id)warmWhiteColor;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int paletteType; // @synthesize paletteType=_paletteType;
 @property(copy, nonatomic) NSArray *colors; // @synthesize colors=_colors;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
 - (id)colorPaletteByAdjustingForColorProfile:(id)arg1;

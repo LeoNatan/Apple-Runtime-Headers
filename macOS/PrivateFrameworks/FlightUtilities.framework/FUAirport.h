@@ -22,13 +22,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) CLPlacemark *placemark; // @synthesize placemark=_placemark;
 @property struct CLLocationCoordinate2D location; // @synthesize location=_location;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(retain) NSString *city; // @synthesize city=_city;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSString *IATACode; // @synthesize IATACode=_IATACode;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fetchPlacemarkWithCompletionHandler:(CDUnknownBlockType)arg1;

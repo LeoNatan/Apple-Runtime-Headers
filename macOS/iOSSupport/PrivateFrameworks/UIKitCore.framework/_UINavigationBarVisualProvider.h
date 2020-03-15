@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     UINavigationItem *_itemForMeasuring;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(retain, nonatomic) _UINavigationBarItemStack *stack; // @synthesize stack=_stack;
 @property(readonly, nonatomic) UINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
-- (void).cxx_destruct;
 - (void)appendToDescription:(id)arg1;
 - (id)description;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1 defaultAnswer:(CDUnknownBlockType)arg2;

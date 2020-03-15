@@ -20,12 +20,12 @@
 }
 
 + (id)emptySocialProfile;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy) NSString *service; // @synthesize service=_service;
 @property(readonly, copy) NSString *userIdentifier; // @synthesize userIdentifier=_userIdentifier;
 @property(readonly, copy) NSString *username; // @synthesize username=_username;
 @property(readonly, copy) NSString *urlString; // @synthesize urlString=_urlString;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

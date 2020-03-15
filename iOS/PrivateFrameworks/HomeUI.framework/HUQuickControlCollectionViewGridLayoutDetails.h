@@ -17,12 +17,12 @@
     struct CGRect _contentFrame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *rowLayouts; // @synthesize rowLayouts=_rowLayouts;
 @property(retain, nonatomic) HUQuickControlCollectionViewGridLayoutRowInfo *sectionHeaderLayout; // @synthesize sectionHeaderLayout=_sectionHeaderLayout;
 @property(nonatomic) unsigned long long sectionIndex; // @synthesize sectionIndex=_sectionIndex;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(retain, nonatomic) HUQuickControlCollectionGridLayoutSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (unsigned long long)numberOfColumnsInRow:(unsigned long long)arg1;
 - (id)indexPathForRow:(unsigned long long)arg1 column:(unsigned long long)arg2;
 - (id)indexPathForSectionHeader;

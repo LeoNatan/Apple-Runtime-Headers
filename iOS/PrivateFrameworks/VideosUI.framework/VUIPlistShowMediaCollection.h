@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     VUIPlistMediaDatabaseShow *_databaseShow;
 }
 
-@property(retain, nonatomic) VUIPlistMediaDatabaseShow *databaseShow; // @synthesize databaseShow=_databaseShow;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUIPlistMediaDatabaseShow *databaseShow; // @synthesize databaseShow=_databaseShow;
 - (id)imageLoadParamsWithImageType:(unsigned long long)arg1;
 - (id)mediaItemCount;
 - (id)_valueForPropertyDescriptor:(id)arg1;

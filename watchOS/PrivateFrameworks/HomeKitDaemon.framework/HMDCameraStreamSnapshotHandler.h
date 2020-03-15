@@ -27,6 +27,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *delegateTable; // @synthesize delegateTable=_delegateTable;
 @property(readonly, nonatomic) NSMutableDictionary *serviceInstanceStreamStatus; // @synthesize serviceInstanceStreamStatus=_serviceInstanceStreamStatus;
 @property(readonly, nonatomic) NSString *logID; // @synthesize logID=_logID;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSMutableSet *retiredStreamSnapshotCaptures; // @synthesize retiredStreamSnapshotCaptures=_retiredStreamSnapshotCaptures;
 @property(readonly, nonatomic) NSMutableSet *streamSnapshotCaptures; // @synthesize streamSnapshotCaptures=_streamSnapshotCaptures;
-- (void).cxx_destruct;
 - (void)_callStreamSetupInProgress:(_Bool)arg1;
 - (void)callStreamSetupInProgress:(_Bool)arg1;
 - (void)_callDidGetLastSnapshot:(id)arg1;

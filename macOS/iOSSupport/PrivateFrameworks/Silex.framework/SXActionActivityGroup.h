@@ -16,9 +16,9 @@
     NSMutableArray *_activities;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *activities; // @synthesize activities=_activities;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)addActivity:(id)arg1;
 - (id)initWithTitle:(id)arg1;
 

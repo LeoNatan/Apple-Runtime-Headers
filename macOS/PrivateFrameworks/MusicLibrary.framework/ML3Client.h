@@ -12,17 +12,15 @@
 {
     int _processID;
     NSXPCConnection *_connection;
-    NSString *_name;
     NSString *_bundleID;
 }
 
 + (id)processClient;
 + (id)daemonClient;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int processID; // @synthesize processID=_processID;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDaemonClient) BOOL daemonClient;
 - (id)description;
 - (id)init;

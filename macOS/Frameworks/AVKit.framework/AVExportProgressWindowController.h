@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingStatusString;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(readonly, nonatomic, getter=isFinished) BOOL finished; // @synthesize finished=_finished;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(readonly) double estimatedTimeRemaining; // @synthesize estimatedTimeRemaining=_estimatedTimeRemaining;
 @property __weak NSWindow *presentingWindow; // @synthesize presentingWindow=_presentingWindow;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *statusString;
 - (void)cancel:(id)arg1;
 - (void)stopModalWithCode:(long long)arg1;

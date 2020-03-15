@@ -16,8 +16,8 @@
 }
 
 + (id)source;
-@property(readonly, nonatomic) SWDatastore *datastore; // @synthesize datastore=_datastore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SWDatastore *datastore; // @synthesize datastore=_datastore;
 @property(readonly, nonatomic) WKUserScript *userScript;
 @property(readonly, nonatomic) _Bool queueable;
 @property(readonly, nonatomic) NSString *identifier;

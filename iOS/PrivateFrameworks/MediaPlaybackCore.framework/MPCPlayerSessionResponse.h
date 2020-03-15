@@ -16,9 +16,9 @@
 }
 
 + (id)builderProtocol;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPCMediaRemoteController *controller; // @synthesize controller=_controller;
 @property(readonly, nonatomic) MPSectionedCollection *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)initWithRequest:(id)arg1 middleware:(id)arg2;
 
 // Remaining properties

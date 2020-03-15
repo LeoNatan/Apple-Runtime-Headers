@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _TVContentRatingTextBadgeView *_contentRatingTextBadgeView;
 }
 
-@property(readonly, nonatomic) _TVContentRatingTextBadgeView *contentRatingTextBadgeView; // @synthesize contentRatingTextBadgeView=_contentRatingTextBadgeView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _TVContentRatingTextBadgeView *contentRatingTextBadgeView; // @synthesize contentRatingTextBadgeView=_contentRatingTextBadgeView;
 - (id)_contentRatingAttributedText:(id)arg1;
 - (void)setContentRatingText:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

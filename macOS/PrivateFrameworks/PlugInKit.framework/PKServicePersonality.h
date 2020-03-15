@@ -20,12 +20,12 @@
     NSUserDefaults *_preferences;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSUserDefaults *preferences; // @synthesize preferences=_preferences;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain) id embeddedPrincipal; // @synthesize embeddedPrincipal=_embeddedPrincipal;
 @property(retain) id hostPrincipal; // @synthesize hostPrincipal=_hostPrincipal;
 @property(retain) id plugInPrincipal; // @synthesize plugInPrincipal=_plugInPrincipal;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)prefsSetObject:(id)arg1 forKey:(id)arg2 inPlugIn:(id)arg3 result:(CDUnknownBlockType)arg4;
 - (void)prefsObjectForKey:(id)arg1 inPlugIn:(id)arg2 result:(CDUnknownBlockType)arg3;

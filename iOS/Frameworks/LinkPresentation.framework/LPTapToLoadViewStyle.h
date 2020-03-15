@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     LPPointUnit *_height;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPPointUnit *height; // @synthesize height=_height;
 @property(retain, nonatomic) LPPointUnit *width; // @synthesize width=_width;
 @property(readonly, nonatomic) LPTextViewStyle *caption; // @synthesize caption=_caption;
 @property(retain, nonatomic) UIColor *tapHighlightColor; // @synthesize tapHighlightColor=_tapHighlightColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)initWithPlatform:(long long)arg1;
 
 @end

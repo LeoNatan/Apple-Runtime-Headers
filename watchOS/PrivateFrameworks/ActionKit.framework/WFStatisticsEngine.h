@@ -13,8 +13,8 @@
     NSObject<OS_dispatch_queue> *_statisticsQueue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *statisticsQueue; // @synthesize statisticsQueue=_statisticsQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *statisticsQueue; // @synthesize statisticsQueue=_statisticsQueue;
 - (void)standardDeviationOfValues:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)rangeOfValues:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)modeOfValues:(id)arg1 completion:(CDUnknownBlockType)arg2;

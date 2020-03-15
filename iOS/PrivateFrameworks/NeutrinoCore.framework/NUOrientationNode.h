@@ -15,9 +15,9 @@
 }
 
 + (id)applyOrientation:(long long)arg1 to:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NUImageTransform *transform; // @synthesize transform=_transform;
 @property(readonly) long long orientation; // @synthesize orientation=_orientation;
-- (void).cxx_destruct;
 - (id)_evaluateVideo:(out id *)arg1;
 - (_Bool)requiresVideoComposition;
 - (id)_evaluateAuxiliaryImageForType:(long long)arg1 error:(out id *)arg2;
@@ -28,9 +28,9 @@
 - (long long)outputImageOrientation:(long long)arg1;
 - (id)_evaluateImage:(out id *)arg1;
 - (_Bool)isGeometryNode;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (_Bool)shouldCacheNodeForPipelineState:(id)arg1;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 - (id)initWithOrientation:(long long)arg1 input:(id)arg2;
 
 @end

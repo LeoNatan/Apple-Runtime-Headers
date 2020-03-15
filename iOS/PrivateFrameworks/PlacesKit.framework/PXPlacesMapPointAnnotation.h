@@ -21,12 +21,12 @@
     struct CLLocationCoordinate2D coordinate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long index; // @synthesize index;
 @property(retain) NSOrderedSet *geotaggables; // @synthesize geotaggables;
 @property __weak id <PXPlacesMapSelectionHandler> selectionHandler; // @synthesize selectionHandler;
 @property __weak id <PXPlacesMapRenderer> renderer; // @synthesize renderer;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

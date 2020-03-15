@@ -27,6 +27,7 @@
     NSArray *_swipeGesturesSpecifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *swipeGesturesSpecifiers; // @synthesize swipeGesturesSpecifiers=_swipeGesturesSpecifiers;
 @property(retain, nonatomic) PSSpecifier *ignoreRepeatPickerSpecifier; // @synthesize ignoreRepeatPickerSpecifier=_ignoreRepeatPickerSpecifier;
 @property(retain, nonatomic) PSSpecifier *holdDurationPickerSpecifier; // @synthesize holdDurationPickerSpecifier=_holdDurationPickerSpecifier;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool touchAccommodationsHoldDurationEnabled; // @synthesize touchAccommodationsHoldDurationEnabled=_touchAccommodationsHoldDurationEnabled;
 @property(readonly, nonatomic) _Bool touchAccommodationsAreConfigured; // @synthesize touchAccommodationsAreConfigured=_touchAccommodationsAreConfigured;
 @property(nonatomic) _Bool touchAccommodationsEnabled; // @synthesize touchAccommodationsEnabled=_touchAccommodationsEnabled;
-- (void).cxx_destruct;
 - (id)_durationSpecifiersWithName:(id)arg1 groupIdentifier:(id)arg2 footerText:(id)arg3 set:(SEL)arg4 get:(SEL)arg5 previousSpecifierIdentifier:(id)arg6 conditionalSpecifiers:(id)arg7;
 - (void)_updateDelayPickerSpecifier:(id)arg1 additionalSpecifiers:(id)arg2 afterSpecifierWithIdentifier:(id)arg3 enabled:(_Bool)arg4;
 - (id)_swipeGesturesEnabled:(id)arg1;

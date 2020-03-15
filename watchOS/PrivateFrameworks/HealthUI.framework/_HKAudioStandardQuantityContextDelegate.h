@@ -16,9 +16,9 @@
     HKDisplayType *_primaryDisplayType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKDisplayType *primaryDisplayType; // @synthesize primaryDisplayType=_primaryDisplayType;
 @property(retain, nonatomic) HKInteractiveChartOverlayNamedDataSource *cacheDataSource; // @synthesize cacheDataSource=_cacheDataSource;
-- (void).cxx_destruct;
 - (id)_statItemForTimeScope:(int)arg1;
 - (id)formatterForTimescope:(int)arg1;
 @property(readonly, nonatomic) HKLineSeries *alternateLineSeries;

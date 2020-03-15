@@ -29,6 +29,7 @@
 
 + (id)convertPushTransportsForNSServerNotificationCenter:(id)arg1;
 + (id)copyPropertyMappingsForParser;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *syncToken; // @synthesize syncToken=_syncToken;
 @property(retain, nonatomic) NSDictionary *bulkRequests; // @synthesize bulkRequests=_bulkRequests;
 @property(retain, nonatomic) NSURL *addMemberURL; // @synthesize addMemberURL=_addMemberURL;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSString *containerTitle; // @synthesize containerTitle=_containerTitle;
 @property(nonatomic) _Bool isUnauthenticated; // @synthesize isUnauthenticated=_isUnauthenticated;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportsSyncCollectionReport;
 @property(readonly, nonatomic) _Bool supportsPrincipalPropertySearchReport;
 @property(readonly, nonatomic) NSSet *supportedReportsAsStringSet;

@@ -16,6 +16,7 @@
 {
     _Bool _responseKitCandidate;
     _Bool _isSendCurrentLocation;
+    _Bool _asIsCandidate;
     unsigned int _slotID;
     int _confidence;
     NSString *_alternativeText;
@@ -27,19 +28,24 @@
 
 + (int)type;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=confidence) int confidence; // @synthesize confidence=_confidence;
+@property(readonly, nonatomic, getter=isAsIsCandidate) _Bool asIsCandidate; // @synthesize asIsCandidate=_asIsCandidate;
 @property(nonatomic) _Bool isSendCurrentLocation; // @synthesize isSendCurrentLocation=_isSendCurrentLocation;
 @property(nonatomic) unsigned long long indexForMetrics; // @synthesize indexForMetrics=_indexForMetrics;
 @property(nonatomic) unsigned long long customInfoType; // @synthesize customInfoType=_customInfoType;
 @property(nonatomic) unsigned int slotID; // @synthesize slotID=_slotID;
 @property(copy, nonatomic) NSString *annotationText; // @synthesize annotationText=_annotationText;
 @property(copy, nonatomic) NSString *alternativeText; // @synthesize alternativeText=_alternativeText;
-- (void).cxx_destruct;
 - (id)candidateByReplacingWithCandidate:(id)arg1 input:(id)arg2;
 - (id)candidateByReplacingWithCandidate:(id)arg1;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
+@property(readonly, nonatomic, getter=isInlineCandidate) _Bool inlineCandidate;
+@property(readonly, nonatomic, getter=isPartialCandidate) _Bool partialCandidate;
+@property(readonly, nonatomic, getter=isTransliterationCandidate) _Bool transliterationCandidate;
 @property(readonly, nonatomic, getter=isSecureContentCandidate) _Bool secureContentCandidate;
+@property(readonly, nonatomic, getter=isBilingualCandidate) _Bool bilingualCandidate;
 @property(readonly, nonatomic, getter=isResponseKitCandidate) _Bool responseKitCandidate; // @synthesize responseKitCandidate=_responseKitCandidate;
 @property(readonly, nonatomic, getter=isRegionalCandidate) _Bool regionalCandidate;
 @property(readonly, nonatomic, getter=isOTAWordListCandidate) _Bool OTAWordListCandidate;

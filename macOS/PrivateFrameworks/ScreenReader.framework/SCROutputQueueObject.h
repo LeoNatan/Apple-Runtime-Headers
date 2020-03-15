@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_outputIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *outputIdentifier; // @synthesize outputIdentifier=_outputIdentifier;
 @property(retain, nonatomic) SCROutputRequest *outputRequest; // @synthesize outputRequest=_outputRequest;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *queueIdentifier;
 @property(readonly, nonatomic) unsigned long long requestID;
 - (id)initWithOutputRequest:(id)arg1;

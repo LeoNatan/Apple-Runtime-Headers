@@ -13,8 +13,8 @@
     QLDisplayBundleViewController *_delegate;
 }
 
-@property __weak QLDisplayBundleViewController *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak QLDisplayBundleViewController *delegate; // @synthesize delegate=_delegate;
 - (void)setQuickLookFrame:(struct CGRect)arg1;
 - (void)viewDidEndLiveResize;
 - (void)viewWillStartLiveResize;

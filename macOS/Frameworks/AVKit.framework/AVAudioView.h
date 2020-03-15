@@ -36,11 +36,11 @@
 + (BOOL)automaticallyNotifiesObserversOfPlayerController;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingCanBeginTrimming;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEditing) BOOL editing; // @synthesize editing=_editing;
 @property(nonatomic, getter=isTrimming) BOOL trimming; // @synthesize trimming=_trimming;
 @property(retain, nonatomic) AVPlayerControlsViewController *editControlsViewController; // @synthesize editControlsViewController=_editControlsViewController;
 @property(retain, nonatomic) AVControlsContainerViewController *controlsContainerViewController; // @synthesize controlsContainerViewController=_controlsContainerViewController;
-- (void).cxx_destruct;
 - (void)_setupControlsContainerView;
 - (id)metricsDelegate;
 - (void)_restorePreviousFirstResponderOrMakeCurrentControlsViewControllersInitialFirstResponderFirstResponderIfSelfIsCurrentFirstResponder:(id)arg1;

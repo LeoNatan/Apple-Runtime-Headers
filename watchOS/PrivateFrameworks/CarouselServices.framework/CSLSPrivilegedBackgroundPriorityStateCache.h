@@ -13,8 +13,8 @@
     CSLSafeMutableDictionary *_stateCache;
 }
 
-@property(retain, nonatomic) CSLSafeMutableDictionary *stateCache; // @synthesize stateCache=_stateCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLSafeMutableDictionary *stateCache; // @synthesize stateCache=_stateCache;
 - (void)enumeratePrivilegedClients:(CDUnknownBlockType)arg1;
 - (void)addPrivilegedClient:(id)arg1 priority:(unsigned int)arg2 leeway:(double)arg3 usesBudget:(_Bool)arg4;
 - (void)addPrivilegedClient:(id)arg1 priority:(unsigned int)arg2 leeway:(double)arg3 usesBudget:(_Bool)arg4 returnToPrimaryUIInterval:(double)arg5;

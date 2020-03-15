@@ -26,6 +26,7 @@
     long long _lastKnownDeviceOrientation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long lastKnownDeviceOrientation; // @synthesize lastKnownDeviceOrientation=_lastKnownDeviceOrientation;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) _Bool inTransition; // @synthesize inTransition=_inTransition;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) __weak id <UIViewControllerTransitioningDelegate> parentTransitioningDelegate; // @synthesize parentTransitioningDelegate=_parentTransitioningDelegate;
 @property(nonatomic) __weak id <CKFullScreenAppViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIViewController<CKBrowserViewControllerProtocol> *contentViewController; // @synthesize contentViewController=_contentViewController;
-- (void).cxx_destruct;
 - (_Bool)_shouldShowDimmingView;
 - (void)_updateDimmingViewAlpha;
 - (_Bool)_currentPluginIsJellyfish;

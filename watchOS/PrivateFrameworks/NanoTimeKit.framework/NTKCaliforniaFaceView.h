@@ -24,7 +24,7 @@
     NTKCircularAnalogDialView *_dialView;
 }
 
-+ (int)uiSensitivity;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKCircularAnalogDialView *dialView; // @synthesize dialView=_dialView;
 @property(retain, nonatomic) UIImageView *editingNotchBackgroundView; // @synthesize editingNotchBackgroundView=_editingNotchBackgroundView;
 @property(retain, nonatomic) NTKCaliforniaColorPalette *tritiumColorPalette; // @synthesize tritiumColorPalette=_tritiumColorPalette;
@@ -35,7 +35,6 @@
 @property(retain, nonatomic) NTKRoundedCornerOverlayView *cornerView; // @synthesize cornerView=_cornerView;
 @property(retain, nonatomic) NTKCaliforniaContentView *californiaContentView; // @synthesize californiaContentView=_californiaContentView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)applyToForegroundZoomFraction:(float)arg1 faceScale:(float)arg2;
 - (id)tritium_createFaceAnimator;
 - (void)_updateColorForTritiumWithProgress:(float)arg1;

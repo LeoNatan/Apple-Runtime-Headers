@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     UIScrollView *_scrollView;
 }
 
-@property(readonly, nonatomic) SKUIGiftCharity *charity; // @synthesize charity=_charity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIGiftCharity *charity; // @synthesize charity=_charity;
 - (void)_amountButtonUpOutside:(id)arg1;
 - (void)_amountButtonUpInside:(id)arg1;
 - (void)_amountButtonDown:(id)arg1;

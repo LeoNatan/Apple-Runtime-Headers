@@ -21,8 +21,8 @@
     NSProgress *_progress;
 }
 
-@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void)_finishWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)startWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateMasterRecordCreationCompletionForOperationWithError:(id)arg1 masterRecordToSave:(id)arg2 savedRecords:(id)arg3 isBestEffortOperation:(_Bool)arg4 container:(id)arg5 isOperationSuccessful:(_Bool *)arg6 completion:(CDUnknownBlockType)arg7;

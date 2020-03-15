@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *_prefix;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(retain, nonatomic) NSString *href; // @synthesize href=_href;
-- (void).cxx_destruct;
 - (struct _xmlNs *)xmlNsForNode:(struct _xmlNode *)arg1 error:(id *)arg2;
 - (id)initWithNsNode:(struct _xmlNs *)arg1 error:(id *)arg2;
 

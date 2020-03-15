@@ -21,11 +21,11 @@
     NCNotificationTextInputView *_inputAccessoryView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NCNotificationTextInputView *inputAccessoryView; // @synthesize inputAccessoryView=_inputAccessoryView;
 @property(retain, nonatomic) UIViewController<NCNotificationCustomContent> *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(readonly, nonatomic) NCNotificationRequest *notificationRequest; // @synthesize notificationRequest=_notificationRequest;
 @property(nonatomic) __weak id <NCNotificationCustomContentDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removeInputAccessoryView:(id)arg1;
 - (id)_textInputActionInNotification:(id)arg1;
 - (void)_setupQuickReplyForNotificationAction:(id)arg1;

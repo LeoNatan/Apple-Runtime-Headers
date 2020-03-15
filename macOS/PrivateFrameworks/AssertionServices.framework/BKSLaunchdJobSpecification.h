@@ -29,6 +29,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)specification;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long executionOptions; // @synthesize executionOptions=_executionOptions;
 @property(copy, nonatomic) NSString *standardError; // @synthesize standardError=_standardError;
 @property(copy, nonatomic) NSString *standardOutput; // @synthesize standardOutput=_standardOutput;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *labelPrefix; // @synthesize labelPrefix=_labelPrefix;
-- (void).cxx_destruct;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;

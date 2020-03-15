@@ -43,13 +43,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _mouseEventTapRegistered; // @synthesize _mouseEventTapRegistered=__mouseEventTapRegistered;
 @property(nonatomic) struct CGPoint _mouseDetachStartZoomOriginLocation; // @synthesize _mouseDetachStartZoomOriginLocation=__mouseDetachStartZoomOriginLocation;
 @property(nonatomic) struct CGPoint _mouseDetachStartMouseLocation; // @synthesize _mouseDetachStartMouseLocation=__mouseDetachStartMouseLocation;
 @property(nonatomic, setter=_setTemporaryDetachKeysDown:) BOOL _temporaryDetachKeysDown; // @synthesize _temporaryDetachKeysDown=__temporaryDetachKeysDown;
 @property(nonatomic) struct CGPoint currentMouseLocation; // @synthesize currentMouseLocation=_currentMouseLocation;
 @property(nonatomic) BOOL isMouseDetached; // @synthesize isMouseDetached=_isMouseDetached;
-- (void).cxx_destruct;
 - (void)registerUAHotKeys;
 - (void)registerHotKeys;
 - (void)unregisterUAHotKeys;

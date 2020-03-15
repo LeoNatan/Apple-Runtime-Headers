@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) REMFetchResultToken *fetchResultToken; // @synthesize fetchResultToken=_fetchResultToken;
 @property(retain, nonatomic) _REMFetchExecutor *fetchExecutor; // @synthesize fetchExecutor=_fetchExecutor;
 @property(nonatomic) unsigned int fetchLimit; // @synthesize fetchLimit=_fetchLimit;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

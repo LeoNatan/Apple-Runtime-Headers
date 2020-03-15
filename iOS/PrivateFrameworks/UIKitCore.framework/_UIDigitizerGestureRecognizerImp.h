@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _digitizerLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTimer *shortTimer; // @synthesize shortTimer=_shortTimer;
 @property(nonatomic) double lastRecognitionTime; // @synthesize lastRecognitionTime=_lastRecognitionTime;
 @property(nonatomic) double pressEndTime; // @synthesize pressEndTime=_pressEndTime;
@@ -38,7 +39,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double maximumPressDuration; // @synthesize maximumPressDuration=_maximumPressDuration;
 @property(nonatomic) double minimumPressDuration; // @synthesize minimumPressDuration=_minimumPressDuration;
 @property(nonatomic) __weak id <_UIDigitizerGestureRecognizerImpDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (_Bool)_senderOfPressesIsSoftwareRemoteWithEvent:(id)arg1;
 - (_Bool)_senderOfPressesHasTouchSurface:(id)arg1 withEvent:(id)arg2;
 - (struct CGPoint)defaultDigitizerLocation;
 - (void)_shortTimerFired:(id)arg1;

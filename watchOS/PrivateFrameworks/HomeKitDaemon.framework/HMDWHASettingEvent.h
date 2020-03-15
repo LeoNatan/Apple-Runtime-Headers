@@ -19,9 +19,9 @@
 + (id)eventWithKeyPath:(id)arg1 value:(id)arg2;
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) AWDHomeKitValue *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;
 

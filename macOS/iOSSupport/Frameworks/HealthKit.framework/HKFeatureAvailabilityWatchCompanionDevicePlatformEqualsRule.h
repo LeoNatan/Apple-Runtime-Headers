@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ruleIdentifier;
-@property(retain, nonatomic) NSString *devicePlatform; // @synthesize devicePlatform=_devicePlatform;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *devicePlatform; // @synthesize devicePlatform=_devicePlatform;
 - (BOOL)evaluate;
 - (void)processUserInfo:(id)arg1;
 

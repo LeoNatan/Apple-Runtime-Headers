@@ -16,8 +16,8 @@
     id <EFSQLExpressable> _expression;
 }
 
-@property(readonly, nonatomic) id <EFSQLExpressable> expression; // @synthesize expression=_expression;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <EFSQLExpressable> expression; // @synthesize expression=_expression;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;
 - (id)initWithExpression:(id)arg1;
 

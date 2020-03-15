@@ -44,6 +44,7 @@
 
 + (void)setUsesInternalTrackingPipeline:(_Bool)arg1;
 + (_Bool)usesInternalTrackingPipeline;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool directRetargetingMode; // @synthesize directRetargetingMode=_directRetargetingMode;
 @property(readonly) ARFrame *currentARFrame; // @synthesize currentARFrame=_currentARFrame;
 @property(readonly) _Bool faceIsTracked; // @synthesize faceIsTracked=_faceIsTracked;
@@ -56,7 +57,6 @@
 @property(readonly, getter=isSensorCovered) _Bool sensorCovered; // @synthesize sensorCovered=_isSensorCovered;
 @property(readonly) _Bool lowLight; // @synthesize lowLight=_lowLight;
 @property(readonly) AVTFaceTrackingInfo *faceTrackingInfo; // @synthesize faceTrackingInfo=_trackingInfo;
-- (void).cxx_destruct;
 // Error parsing type for property rawTransform:
 // Property attributes: T{?=[4]},R
 

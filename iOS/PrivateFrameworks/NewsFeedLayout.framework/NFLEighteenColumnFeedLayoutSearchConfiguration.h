@@ -16,9 +16,9 @@
     NSString *_preferredContentSizeCategory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *preferredContentSizeCategory; // @synthesize preferredContentSizeCategory=_preferredContentSizeCategory;
 @property(nonatomic, getter=isShowingAccessoryText) _Bool showAccessoryText; // @synthesize showAccessoryText=_showAccessoryText;
-- (void).cxx_destruct;
 - (id)preferredOrderingOfTileInfos:(id)arg1;
 - (Class)_tilingOperationClassForRowType:(unsigned long long)arg1;
 - (id)_transitionRankByToRowTypeFromRowType:(unsigned long long)arg1;

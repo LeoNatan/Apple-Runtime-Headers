@@ -15,10 +15,10 @@
     RTXPCActivityManager *_xpcActivityManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 @property(retain, nonatomic) RTAssetProcessor *assetProcessor; // @synthesize assetProcessor=_assetProcessor;
-- (void).cxx_destruct;
 - (void)updateAssetServerURL:(id)arg1 assetType:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)forceUpdateAssetMetadataWithHandler:(CDUnknownBlockType)arg1;
 - (void)_installAsset:(id)arg1 fileManager:(id)arg2 handler:(CDUnknownBlockType)arg3;

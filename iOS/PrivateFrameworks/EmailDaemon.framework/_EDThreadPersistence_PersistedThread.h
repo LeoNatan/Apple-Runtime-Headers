@@ -16,10 +16,10 @@
     _EDThreadPersistence_SQLHelper *_sqlHelper;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _EDThreadPersistence_SQLHelper *sqlHelper; // @synthesize sqlHelper=_sqlHelper;
 @property(readonly, nonatomic) long long threadDatabaseID; // @synthesize threadDatabaseID=_threadDatabaseID;
 @property(readonly, nonatomic) _EDThreadPersistence_ThreadMessages *messages; // @synthesize messages=_messages;
-- (void).cxx_destruct;
 - (void)dropTemporaryView;
 - (void)_ensureTempMessagesView;
 - (_Bool)addRecipients:(id)arg1 ofType:(unsigned long long)arg2;

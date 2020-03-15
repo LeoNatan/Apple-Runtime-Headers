@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)activityCategory;
-@property(readonly, nonatomic) PUEditPlugin *plugin; // @synthesize plugin=_plugin;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PUEditPlugin *plugin; // @synthesize plugin=_plugin;
 - (_Bool)_isHiddenByDefault;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)_activitySettingsImage;

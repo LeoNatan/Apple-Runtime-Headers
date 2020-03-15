@@ -14,9 +14,9 @@
     NSButton *_createAccountButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *createAccountButton; // @synthesize createAccountButton=_createAccountButton;
 @property(retain) NSButton *notNowButton; // @synthesize notNowButton=_notNowButton;
-- (void).cxx_destruct;
 - (void)notNowButtonPressed:(id)arg1;
 - (void)awakeFromNib;
 - (id)init;

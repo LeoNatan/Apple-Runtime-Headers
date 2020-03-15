@@ -26,13 +26,13 @@
 }
 
 + (_Bool)isTransitionSupportedWithMasterViewController:(id)arg1 detailViewController:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTransitioningToDetail) _Bool transitioningToDetail; // @synthesize transitioningToDetail=_transitioningToDetail;
 @property(retain, nonatomic) PXRegionOfInterest *masterRegionOfInterest; // @synthesize masterRegionOfInterest=_masterRegionOfInterest;
 @property(readonly, nonatomic, getter=isInteractive) _Bool interactive; // @synthesize interactive=_interactive;
 @property(readonly, nonatomic) _Bool supportsEdgeSwipeBackGesture; // @synthesize supportsEdgeSwipeBackGesture=_supportsEdgeSwipeBackGesture;
 @property(retain, nonatomic, setter=_setPauseToken:) id _pauseToken; // @synthesize _pauseToken=__pauseToken;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (long long)transitionIdentifierForTransitionMode:(unsigned long long)arg1;

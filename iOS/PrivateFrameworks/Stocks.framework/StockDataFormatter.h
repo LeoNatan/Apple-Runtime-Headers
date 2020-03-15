@@ -19,12 +19,12 @@
 }
 
 + (id)sharedDataFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *percentFormatter; // @synthesize percentFormatter=_percentFormatter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *percentFormatterQueue; // @synthesize percentFormatterQueue=_percentFormatterQueue;
 @property(retain, nonatomic) NSNumberFormatter *decimalFormatter; // @synthesize decimalFormatter=_decimalFormatter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *decimalFormatterQueue; // @synthesize decimalFormatterQueue=_decimalFormatterQueue;
 @property(readonly, nonatomic, getter=doesLocaleUseASCII) _Bool localeUsesASCII; // @synthesize localeUsesASCII=_localeUsesASCII;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *percentSymbol;
 - (void)_resetLocale:(id)arg1;
 - (id)_locked_formatPercent:(id)arg1 withPrecision:(unsigned long long)arg2;

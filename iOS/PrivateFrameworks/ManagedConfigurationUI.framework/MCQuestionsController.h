@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     _Bool _showingKeyboard;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int outDirection; // @synthesize outDirection=_outDirection;
 @property(nonatomic) __weak id <MCQuestionsControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)_cancelActiveAlert:(_Bool)arg1;

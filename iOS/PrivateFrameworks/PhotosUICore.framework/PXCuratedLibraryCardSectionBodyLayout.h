@@ -10,7 +10,7 @@
 #import <PhotosUICore/PXGGradientSource-Protocol.h>
 #import <PhotosUICore/PXGSolidColorSource-Protocol.h>
 
-@class NSString, PXAssetsDataSource, PXCuratedLibraryCardSectionBodyLayoutSpec, PXCuratedLibrarySectionGeometryDescriptor, PXGLayoutGuide;
+@class NSIndexSet, NSString, PXAssetsDataSource, PXCuratedLibraryCardSectionBodyLayoutSpec, PXCuratedLibrarySectionGeometryDescriptor, PXGLayoutGuide;
 @protocol PXDisplayAsset, PXDisplayAssetFetchResult;
 
 @interface PXCuratedLibraryCardSectionBodyLayout : PXGLayout <PXGGradientSource, PXGDisplayAssetSource, PXGSolidColorSource>
@@ -20,6 +20,7 @@
     CDStruct_d97c9657 _updateFlags;
     struct _PXGSpriteIndexRange _assetSpriteIndexRange;
     struct _PXGSpriteIndexRange _skimmingHintSpriteIndexRange;
+    NSIndexSet *_axSpriteIndexes;
     _Bool _isSkimming;
     long long _section;
     PXAssetsDataSource *_dataSource;
@@ -32,6 +33,7 @@
     struct PXSimpleIndexPath _sectionIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PXDisplayAssetFetchResult> keyAssetsFetchResult; // @synthesize keyAssetsFetchResult=_keyAssetsFetchResult;
 @property(readonly, nonatomic) struct PXSimpleIndexPath sectionIndexPath; // @synthesize sectionIndexPath=_sectionIndexPath;
 @property(readonly, nonatomic) PXGLayoutGuide *assetLayoutGuide; // @synthesize assetLayoutGuide=_assetLayoutGuide;
@@ -42,8 +44,9 @@
 @property(nonatomic) long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(readonly, nonatomic) PXAssetsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) long long section; // @synthesize section=_section;
-- (void).cxx_destruct;
-- (struct UIColor *)colorAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
+- (id)axSpriteIndexesInRect:(struct CGRect)arg1;
+- (id)axSpriteIndexes;
+- (id)colorAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (id)gradientForSpriteAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;

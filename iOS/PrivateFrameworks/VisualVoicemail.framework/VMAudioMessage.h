@@ -17,9 +17,9 @@
     CDStruct_f86102d7 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *audioData; // @synthesize audioData=_audioData;
 @property(nonatomic) unsigned int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

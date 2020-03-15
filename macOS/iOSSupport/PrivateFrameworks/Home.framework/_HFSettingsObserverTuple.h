@@ -23,12 +23,12 @@
 
 + (id)na_identity;
 + (id)tupleForSettings:(id)arg1 setting:(id)arg2 observer:(id)arg3 owner:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NADeallocationSentinel *observerDeallocationSentinel; // @synthesize observerDeallocationSentinel=_observerDeallocationSentinel;
 @property(nonatomic) __weak id <_HFSettingsObserverTupleOwning> owner; // @synthesize owner=_owner;
 @property(nonatomic) __weak id <HFHomeKitSettingsObserver> observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) HMSetting *setting; // @synthesize setting=_setting;
 @property(retain, nonatomic) HMSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)_accessorySettingReflectionStateDidUpdate:(id)arg1;
 - (void)_accessorySettingDidUpdate:(id)arg1;
 - (void)settingsDidUpdate:(id)arg1;

@@ -16,9 +16,9 @@
 }
 
 + (id)blockOperationWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *blocks; // @synthesize blocks=_blocks;
 @property(getter=isAsynchronous) _Bool asynchronous; // @synthesize asynchronous=_asynchronous;
-- (void).cxx_destruct;
 - (void)main;
 - (void)addExecutionBlock:(CDUnknownBlockType)arg1;
 - (id)executionBlocks;

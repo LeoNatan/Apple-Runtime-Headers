@@ -13,8 +13,8 @@
     UIButton *_termsLinkButton;
 }
 
-@property(retain, nonatomic) UIButton *termsLinkButton; // @synthesize termsLinkButton=_termsLinkButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *termsLinkButton; // @synthesize termsLinkButton=_termsLinkButton;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)init;

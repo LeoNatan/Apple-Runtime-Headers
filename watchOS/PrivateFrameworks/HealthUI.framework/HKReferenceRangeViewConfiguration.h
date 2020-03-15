@@ -33,6 +33,7 @@
 
 + (id)annotationEmbeddedConfiguration;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) Class labelClass; // @synthesize labelClass=_labelClass;
 @property(nonatomic) _Bool hideReferenceRangeValues; // @synthesize hideReferenceRangeValues=_hideReferenceRangeValues;
 @property(copy, nonatomic) NSString *referenceRangeTextStyle; // @synthesize referenceRangeTextStyle=_referenceRangeTextStyle;
@@ -52,7 +53,6 @@
 @property(nonatomic) float referenceRangeViewHeight; // @synthesize referenceRangeViewHeight=_referenceRangeViewHeight;
 @property(nonatomic) float horizontalPadding; // @synthesize horizontalPadding=_horizontalPadding;
 @property(nonatomic) float currentValueToReferenceValuePadding; // @synthesize currentValueToReferenceValuePadding=_currentValueToReferenceValuePadding;
-- (void).cxx_destruct;
 
 @end
 

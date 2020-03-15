@@ -22,11 +22,11 @@
     struct CGPoint _circleCenter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint circleCenter; // @synthesize circleCenter=_circleCenter;
 @property(readonly, nonatomic) _Bool interior; // @synthesize interior=_interior;
 @property(readonly, nonatomic) float centerAngle; // @synthesize centerAngle=_centerAngle;
 @property(readonly, nonatomic) float circleRadius; // @synthesize circleRadius=_circleRadius;
-- (void).cxx_destruct;
 - (float)_alphaForIndex:(unsigned int)arg1;
 - (float)_angleForIndex:(unsigned int)arg1;
 - (struct CGAffineTransform)_transformForAngle:(float)arg1;

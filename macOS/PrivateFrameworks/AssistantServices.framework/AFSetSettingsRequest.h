@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setApplyChanges:) BOOL applyChanges; // @synthesize applyChanges=_applyChanges;
 @property(copy, nonatomic, setter=_setSettings:) NSArray *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)createResponseWithSettingChanges:(id)arg1;

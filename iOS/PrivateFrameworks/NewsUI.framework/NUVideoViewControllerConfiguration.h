@@ -19,11 +19,11 @@
     NUVideoViewControllerAdConfiguration *_adConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NUVideoViewControllerAdConfiguration *adConfiguration; // @synthesize adConfiguration=_adConfiguration;
 @property(readonly, nonatomic, getter=isSharingEnabled) _Bool sharingEnabled; // @synthesize sharingEnabled=_sharingEnabled;
 @property(readonly, nonatomic, getter=isPagingAllowed) _Bool pagingAllowed; // @synthesize pagingAllowed=_pagingAllowed;
 @property(readonly, nonatomic) _Bool preferredMuteState; // @synthesize preferredMuteState=_preferredMuteState;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSharingEnabled:(_Bool)arg1 preferredMuteState:(_Bool)arg2 pagingAllowed:(_Bool)arg3 adConfiguration:(id)arg4;
 - (id)init;

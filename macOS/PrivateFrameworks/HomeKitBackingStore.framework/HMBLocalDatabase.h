@@ -23,6 +23,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType localZoneFactory; // @synthesize localZoneFactory=_localZoneFactory;
 @property(readonly, nonatomic) NSMapTable *openZonesByZoneID; // @synthesize openZonesByZoneID=_openZonesByZoneID;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <HMBLocalDatabaseDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HMBModelContainer *modelContainer; // @synthesize modelContainer=_modelContainer;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)handleLocalZoneShutdown:(id)arg1;
 - (BOOL)removeLocalDataForZone:(id)arg1 error:(id *)arg2;

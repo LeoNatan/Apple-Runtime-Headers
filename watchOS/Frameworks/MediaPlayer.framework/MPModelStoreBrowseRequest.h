@@ -13,7 +13,10 @@
     NSURL *_loadAdditionalContentURL;
     MPModelStoreBrowseResponse *_previousRetrievedNestedResponse;
     int _domain;
+    int _additionalContent;
+    unsigned int _options;
     int _filteringPolicy;
+    int _subscriptionStatus;
     MPModelStoreBrowseResponse *_previousResponse;
     int _requestEndpoint;
 }
@@ -21,13 +24,17 @@
 + (id)allSupportedSectionProperties;
 + (id)allSupportedItemProperties;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int requestEndpoint; // @synthesize requestEndpoint=_requestEndpoint;
 @property(retain, nonatomic) MPModelStoreBrowseResponse *previousResponse; // @synthesize previousResponse=_previousResponse;
+@property(nonatomic) int subscriptionStatus; // @synthesize subscriptionStatus=_subscriptionStatus;
 @property(nonatomic) int filteringPolicy; // @synthesize filteringPolicy=_filteringPolicy;
+@property(nonatomic) unsigned int options; // @synthesize options=_options;
+@property(nonatomic) int additionalContent; // @synthesize additionalContent=_additionalContent;
 @property(nonatomic) int domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) MPModelStoreBrowseResponse *previousRetrievedNestedResponse; // @synthesize previousRetrievedNestedResponse=_previousRetrievedNestedResponse;
 @property(copy, nonatomic) NSURL *loadAdditionalContentURL; // @synthesize loadAdditionalContentURL=_loadAdditionalContentURL;
-- (void).cxx_destruct;
+@property(nonatomic) _Bool flattenRadioList;
 - (void)configureWithParentSection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

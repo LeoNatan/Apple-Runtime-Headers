@@ -19,13 +19,14 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *endTimes; // @synthesize endTimes=_endTimes;
 @property(readonly, nonatomic) NSDictionary *startTimes; // @synthesize startTimes=_startTimes;
 @property(nonatomic) int repeatType; // @synthesize repeatType=_repeatType;
 @property(nonatomic) int shuffleType; // @synthesize shuffleType=_shuffleType;
-- (void).cxx_destruct;
 - (void)_setEndTime:(double)arg1 forIdentifiers:(id)arg2;
 - (void)_setStartTime:(double)arg1 forIdentifiers:(id)arg2;
+@property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

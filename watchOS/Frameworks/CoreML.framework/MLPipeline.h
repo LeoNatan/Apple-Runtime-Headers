@@ -21,9 +21,9 @@
 + (id)compileWithModelsInPipeline:(const struct Pipeline *)arg1 toArchive:(struct _MLModelOutputArchiver *)arg2 options:(id)arg3 updatable:(_Bool)arg4 error:(id *)arg5;
 + (void)archiveCustomModelNames:(const RepeatedPtrField_fe7cf120 *)arg1 to:(struct _MLModelOutputArchiver *)arg2;
 + (void)archivePipelineUpdateParameterForModels:(const RepeatedPtrField_f3160e5f *)arg1 to:(struct _MLModelOutputArchiver *)arg2 updatable:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(retain) NSArray *modelNames; // @synthesize modelNames=_modelNames;
 @property(retain) NSArray *models; // @synthesize models=_models;
-- (void).cxx_destruct;
 - (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (_Bool)writeToURL:(id)arg1 error:(id *)arg2;
 - (void)replaceModelAtIndex:(unsigned int)arg1 with:(id)arg2;

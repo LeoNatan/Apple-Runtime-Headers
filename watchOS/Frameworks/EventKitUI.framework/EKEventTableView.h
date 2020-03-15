@@ -13,8 +13,8 @@
     EKEventViewController *_controller;
 }
 
-@property(nonatomic) __weak EKEventViewController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(nonatomic) __weak EKEventViewController *controller; // @synthesize controller=_controller;
 - (void)reloadData;
 
 @end

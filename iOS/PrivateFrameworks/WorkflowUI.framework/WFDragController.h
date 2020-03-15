@@ -21,6 +21,7 @@
     struct CGPoint _centerOffset;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSHashTable *currentViewControllers; // @synthesize currentViewControllers=_currentViewControllers;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(nonatomic) struct CGPoint centerOffset; // @synthesize centerOffset=_centerOffset;
@@ -28,7 +29,6 @@
 @property(nonatomic) _Bool removedOnCompletion; // @synthesize removedOnCompletion=_removedOnCompletion;
 @property(readonly, nonatomic) __weak UIGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(nonatomic) __weak UIViewController *initialViewController; // @synthesize initialViewController=_initialViewController;
-- (void).cxx_destruct;
 - (void)didMoveInViewControllers:(id)arg1;
 - (void)didExitViewController:(id)arg1;
 - (void)didEnterViewController:(id)arg1;

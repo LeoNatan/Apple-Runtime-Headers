@@ -19,11 +19,11 @@
 }
 
 + (id)metricWithDomain:(unsigned int)arg1 type:(unsigned int)arg2 error:(unsigned int)arg3 bagURL:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *operationID; // @synthesize operationID=_operationID;
 @property(nonatomic) unsigned int sosError; // @synthesize sosError=_sosError;
 @property(nonatomic) unsigned int sosType; // @synthesize sosType=_sosType;
 @property(nonatomic) unsigned int sosDomain; // @synthesize sosDomain=_sosDomain;
-- (void).cxx_destruct;
 @property(readonly) NSString *name;
 - (id)initWithDomain:(unsigned int)arg1 type:(unsigned int)arg2 error:(unsigned int)arg3 bagURL:(id)arg4;
 

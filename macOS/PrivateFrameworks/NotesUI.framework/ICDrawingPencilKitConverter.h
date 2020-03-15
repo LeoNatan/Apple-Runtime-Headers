@@ -25,6 +25,7 @@
 + (BOOL)canUpdateFullscreenSketchAttachment:(id)arg1;
 + (id)newThrowawayConverter;
 + (id)sharedConverter;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isThrowaway; // @synthesize isThrowaway=_isThrowaway;
 @property(retain, nonatomic) NSMutableArray *mutableFailedSketches; // @synthesize mutableFailedSketches=_mutableFailedSketches;
 @property(retain, nonatomic) NSMutableDictionary *accountIDDeviceCheckDate; // @synthesize accountIDDeviceCheckDate=_accountIDDeviceCheckDate;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *convertDispatchQueue; // @synthesize convertDispatchQueue=_convertDispatchQueue;
 @property(retain, nonatomic) NSMapTable *lastOperationForAttachmentID; // @synthesize lastOperationForAttachmentID=_lastOperationForAttachmentID;
 @property(retain, nonatomic) NSOperationQueue *converterQueue; // @synthesize converterQueue=_converterQueue;
-- (void).cxx_destruct;
 - (void)operationComplete:(id)arg1;
 - (unsigned long long)countOfDrawingsNeedingConversionInNote:(id)arg1;
 - (void)convertDrawingsInNoteIfNeeded:(id)arg1;
@@ -42,7 +42,7 @@
 - (BOOL)shouldAutoConvertNote:(id)arg1;
 - (BOOL)shouldConvertAllDrawingsIfNeeded;
 - (void)performThrowawayConversionIfNeededWithCompletion:(CDUnknownBlockType)arg1;
-- (void)convertDrawingsInNote:(id)arg1 inWindow:(struct NSWindow *)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)convertDrawingsInNote:(id)arg1 inWindow:(id)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)compareDrawingAttachment:(id)arg1 withConvertedDrawing:(id)arg2;
 - (id)updateInlineDrawingAttachment:(id)arg1;
 - (id)convertSketch:(id)arg1;

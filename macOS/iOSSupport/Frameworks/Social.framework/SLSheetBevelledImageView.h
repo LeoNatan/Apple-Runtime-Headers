@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     BOOL _needsURLPlaceholderImage;
 }
 
-@property(nonatomic) BOOL needsURLPlaceholderImage; // @synthesize needsURLPlaceholderImage=_needsURLPlaceholderImage;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL needsURLPlaceholderImage; // @synthesize needsURLPlaceholderImage=_needsURLPlaceholderImage;
 - (void)layoutSubviews;
 - (BOOL)generatePreviewImageFromAttachments;
 - (void)setImage:(id)arg1;

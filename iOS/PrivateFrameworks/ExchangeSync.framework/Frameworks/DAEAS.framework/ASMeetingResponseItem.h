@@ -24,6 +24,7 @@
     id _context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool responseRequested; // @synthesize responseRequested=_responseRequested;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(retain, nonatomic) NSDate *proposedEndTime; // @synthesize proposedEndTime=_proposedEndTime;
@@ -36,7 +37,6 @@
 @property(nonatomic) int meetingResponse; // @synthesize meetingResponse=_meetingResponse;
 @property(retain, nonatomic) NSString *deliveryItemServerId; // @synthesize deliveryItemServerId=_deliveryItemServerId;
 @property(retain, nonatomic) NSString *deliveryItemFolderId; // @synthesize deliveryItemFolderId=_deliveryItemFolderId;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDeliveryItemFolderId:(id)arg1 deliveryItemServerId:(id)arg2 instanceDate:(id)arg3 meetingResponse:(int)arg4 eventUID:(id)arg5 responseComment:(id)arg6 responseRequested:(_Bool)arg7 proposedStartTime:(id)arg8 proposedEndTime:(id)arg9;
 

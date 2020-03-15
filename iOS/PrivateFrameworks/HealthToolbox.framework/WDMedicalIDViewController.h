@@ -29,12 +29,12 @@ __attribute__((visibility("hidden")))
     WDProfile *_profile;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldReloadMedicalIDData; // @synthesize shouldReloadMedicalIDData=_shouldReloadMedicalIDData;
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) SOSContactsManager *sosContactsManager; // @synthesize sosContactsManager=_sosContactsManager;
 @property(nonatomic) __weak UIAlertController *consolidationAlertController; // @synthesize consolidationAlertController=_consolidationAlertController;
 @property(nonatomic) __weak HKMedicalIDViewController *currentMedicalIDViewController; // @synthesize currentMedicalIDViewController=_currentMedicalIDViewController;
-- (void).cxx_destruct;
 - (id)applyTransitionActivity:(id)arg1;
 - (void)applyChangeActivity:(id)arg1;
 - (void)_updateActivityForViewDidAppear;

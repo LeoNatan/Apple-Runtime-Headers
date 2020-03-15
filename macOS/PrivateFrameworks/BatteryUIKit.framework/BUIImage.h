@@ -25,6 +25,7 @@
 + (id)batteryImagesForParameters:(id)arg1;
 + (struct CGSize)imageSizeForParameters:(id)arg1;
 + (id)sharedBUIImageCache;
+- (void).cxx_destruct;
 @property(retain) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain) NSImage *batLevelRedMiddleImage; // @synthesize batLevelRedMiddleImage=_batLevelRedMiddleImage;
 @property(retain) NSImage *batLevelRedCapRightImage; // @synthesize batLevelRedCapRightImage=_batLevelRedCapRightImage;
@@ -35,7 +36,6 @@
 @property(retain) NSImage *splitBatteryStretchImage; // @synthesize splitBatteryStretchImage=_splitBatteryStretchImage;
 @property(retain) NSImage *splitBatteryHeadImage; // @synthesize splitBatteryHeadImage=_splitBatteryHeadImage;
 @property(retain) NSImage *splitBatteryEndImage; // @synthesize splitBatteryEndImage=_splitBatteryEndImage;
-- (void).cxx_destruct;
 - (id)tintImage:(id)arg1 withColor:(id)arg2;
 - (id)_imagesForBattery:(id)arg1;
 @property(readonly) NSImage *batteryChimeFill;

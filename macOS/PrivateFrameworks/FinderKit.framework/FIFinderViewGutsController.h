@@ -96,6 +96,8 @@ __attribute__((visibility("hidden")))
 + (void)watchForApplicationTermination;
 + (void)finalizeCounted;
 + (void)initializeCounted;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPopulationInProgress; // @synthesize isPopulationInProgress=_isPopulationInProgress;
 @property(readonly, nonatomic) _Bool showing; // @synthesize showing=_showing;
 @property(readonly, nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
@@ -108,8 +110,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool binding; // @synthesize binding=_binding;
 @property(retain, nonatomic) FIContainerController *activeContainer; // @synthesize activeContainer=_activeContainer;
 @property(nonatomic) FIFinderView *finderView; // @synthesize finderView=_finderView;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)browserViewContainerControllerForContainer:(id)arg1;
 - (void)containerCloseContainer:(id)arg1;
 - (void)containerConnectBackupDelegate:(id)arg1;

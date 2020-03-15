@@ -14,9 +14,9 @@
     NSMutableArray *_events;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *events; // @synthesize events=_events;
 @property(retain) NSString *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)serialize;
 - (void)stopEventWithFailure:(id)arg1 error:(id)arg2;
 - (void)stopEventWithSuccess:(id)arg1;

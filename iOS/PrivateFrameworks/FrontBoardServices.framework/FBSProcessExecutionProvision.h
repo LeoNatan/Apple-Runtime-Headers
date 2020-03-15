@@ -23,12 +23,12 @@
     id <FBSProcessExecutionProvisionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) __weak id <FBSProcessInternal> process; // @synthesize process=_process;
 @property(readonly, nonatomic, getter=isViolated) _Bool violated; // @synthesize violated=_violated;
 @property(readonly, nonatomic, getter=isMonitoring) _Bool monitoring; // @synthesize monitoring=_monitoring;
 @property(nonatomic) __weak id <FBSProcessExecutionProvisionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

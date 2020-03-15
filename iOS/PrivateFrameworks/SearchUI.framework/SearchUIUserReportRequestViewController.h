@@ -13,8 +13,8 @@
     id <SearchUIFeedbackDelegate> _feedbackDelegate;
 }
 
-@property(retain) id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
 - (void).cxx_destruct;
+@property(retain) id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
 - (_Bool)_canShowWhileLocked;
 - (void)sendFeedbackForResult:(id)arg1 cardSection:(id)arg2 selectedPunchout:(id)arg3;
 - (void)viewWillDisappear:(_Bool)arg1;

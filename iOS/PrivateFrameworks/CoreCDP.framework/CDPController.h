@@ -18,12 +18,12 @@
     CDPStateUIProviderProxy *_uiProviderProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CDPStateUIProviderProxy *uiProviderProxy; // @synthesize uiProviderProxy=_uiProviderProxy;
 @property(retain, nonatomic) CDPDaemonConnection *daemonConn; // @synthesize daemonConn=_daemonConn;
 @property(retain, nonatomic) id <CDPAuthProvider> authProvider; // @synthesize authProvider=_authProvider;
 @property(retain, nonatomic) id <CDPStateUIProvider> uiProvider; // @synthesize uiProvider=_uiProvider;
 @property(readonly, nonatomic) CDPContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)invalidate;
 - (id)initWithContext:(id)arg1;

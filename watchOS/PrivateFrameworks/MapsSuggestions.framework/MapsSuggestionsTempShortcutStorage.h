@@ -25,8 +25,8 @@
 - (_Bool)moveShortcut:(id)arg1 beforeShortcut:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)moveShortcut:(id)arg1 afterShortcut:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)moveShortcut:(id)arg1 toIndex:(int)arg2 handler:(CDUnknownBlockType)arg3;
-- (_Bool)removeShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
-- (_Bool)addOrUpdateShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
+- (_Bool)removeShortcuts:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (_Bool)addOrUpdateShortcuts:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)loadAllShortcutsWithHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
 - (id)init;

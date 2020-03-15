@@ -17,9 +17,9 @@
 + (id)_sharedFormatter;
 + (_Bool)supportsSecureCoding;
 + (int)_type;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *numberOfLibraryItems; // @synthesize numberOfLibraryItems=_numberOfLibraryItems;
 @property(nonatomic) int subscriptionStatus; // @synthesize subscriptionStatus=_subscriptionStatus;
-- (void).cxx_destruct;
 - (id)safeLibraryItems;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

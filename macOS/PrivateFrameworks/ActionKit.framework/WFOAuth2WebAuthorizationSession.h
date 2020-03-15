@@ -22,6 +22,7 @@
     NSString *_responseKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *responseKey; // @synthesize responseKey=_responseKey;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSString *state; // @synthesize state=_state;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) WFOAuth2SessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(readonly, copy, nonatomic) NSURL *redirectURI; // @synthesize redirectURI=_redirectURI;
 @property(readonly, copy, nonatomic) NSURL *authorizationURL; // @synthesize authorizationURL=_authorizationURL;
-- (void).cxx_destruct;
 - (BOOL)resumeSessionWithURL:(id)arg1;
 - (BOOL)resumeSessionWithResponseObject:(id)arg1;
 @property(readonly, nonatomic) ASWebAuthenticationSession *authenticationSession; // @synthesize authenticationSession=_authenticationSession;

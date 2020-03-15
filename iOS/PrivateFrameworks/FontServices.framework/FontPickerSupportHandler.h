@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 - (void)locallyActivatedFontFiles:(CDUnknownBlockType)arg1;
 - (void)activateFontsForFontPickerClient:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)ping:(id)arg1 reply:(CDUnknownBlockType)arg2;

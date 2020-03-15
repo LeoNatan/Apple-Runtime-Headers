@@ -21,13 +21,13 @@
     NSMutableArray *_unsharedRecordIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *unsharedRecordIDs; // @synthesize unsharedRecordIDs=_unsharedRecordIDs;
 @property(retain, nonatomic) NSMutableArray *sharedRecordIDs; // @synthesize sharedRecordIDs=_sharedRecordIDs;
 @property(retain, nonatomic) NSMutableDictionary *recordErrors; // @synthesize recordErrors=_recordErrors;
 @property(retain, nonatomic) NSArray *recordIDsToUnshare; // @synthesize recordIDsToUnshare=_recordIDsToUnshare;
 @property(retain, nonatomic) NSArray *recordIDsToShare; // @synthesize recordIDsToShare=_recordIDsToShare;
 @property(retain, nonatomic) NSArray *recordIDsToShareReadWrite; // @synthesize recordIDsToShareReadWrite=_recordIDsToShareReadWrite;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)performCKOperation;

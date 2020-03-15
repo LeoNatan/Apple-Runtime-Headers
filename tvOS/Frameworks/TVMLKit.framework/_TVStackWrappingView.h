@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     NSArray *_supplementaryCellLayoutAttributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *supplementaryCellLayoutAttributes; // @synthesize supplementaryCellLayoutAttributes=_supplementaryCellLayoutAttributes;
 @property(nonatomic) double backdropMaskFactor; // @synthesize backdropMaskFactor=_backdropMaskFactor;
 @property(nonatomic) double backdropPeekGradient; // @synthesize backdropPeekGradient=_backdropPeekGradient;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldAdjustForTabBarSafeAreaInsets; // @synthesize shouldAdjustForTabBarSafeAreaInsets=_shouldAdjustForTabBarSafeAreaInsets;
 @property(copy, nonatomic) NSArray *headerSupplementaryViews; // @synthesize headerSupplementaryViews=_headerSupplementaryViews;
 @property(retain, nonatomic) UICollectionView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (id)preferredFocusEnvironments;
 - (void)configureSupplementaryCellLayoutAttributesWithAutomaticInsets:(struct UIEdgeInsets)arg1 sectionIndex:(long long)arg2;
 - (void)layoutSubviews;

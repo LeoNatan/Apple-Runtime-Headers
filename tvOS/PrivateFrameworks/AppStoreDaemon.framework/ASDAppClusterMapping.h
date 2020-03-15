@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *usageWeight; // @synthesize usageWeight=_usageWeight;
 @property(copy, nonatomic) NSNumber *launchesWeight; // @synthesize launchesWeight=_launchesWeight;
 @property(copy, nonatomic) NSNumber *itemID; // @synthesize itemID=_itemID;
 @property(copy, nonatomic) NSNumber *clusterVersion; // @synthesize clusterVersion=_clusterVersion;
 @property(copy, nonatomic) NSNumber *clusterID; // @synthesize clusterID=_clusterID;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

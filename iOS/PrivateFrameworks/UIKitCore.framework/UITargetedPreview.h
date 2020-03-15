@@ -8,7 +8,7 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
-@class UIPreviewParameters, UIPreviewTarget, UIView;
+@class NSArray, UIPreviewParameters, UIPreviewTarget, UIView;
 @protocol NSCopying><NSObject, _UIPreviewProvider;
 
 @interface UITargetedPreview : NSObject <NSCopying>
@@ -23,9 +23,12 @@
     id <_UIPreviewProvider> __PreviewProvider;
     id <NSCopying><NSObject> _internalIdentifer;
     UIView *_overridePositionTrackingView;
+    NSArray *__accessoryViews;
 }
 
 + (id)new;
+- (void).cxx_destruct;
+@property(retain, nonatomic, getter=_accessoryViews, setter=_setAccessoryViews:) NSArray *_accessoryViews; // @synthesize _accessoryViews=__accessoryViews;
 @property(retain, nonatomic, setter=_setOverridePositionTrackingView:) UIView *overridePositionTrackingView; // @synthesize overridePositionTrackingView=_overridePositionTrackingView;
 @property(copy, nonatomic) id <NSCopying><NSObject> internalIdentifer; // @synthesize internalIdentifer=_internalIdentifer;
 @property(readonly, nonatomic) _Bool hasCustomTarget; // @synthesize hasCustomTarget=_hasCustomTarget;
@@ -36,7 +39,6 @@
 @property(readonly, copy, nonatomic) UIPreviewParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) UIPreviewTarget *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(nonatomic, getter=_previewMode, setter=_setPreviewMode:) long long previewMode;
 @property(nonatomic) _Bool _springboardPlatterStyle;

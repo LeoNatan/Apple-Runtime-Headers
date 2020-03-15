@@ -17,9 +17,9 @@
 }
 
 + (id)tileItemDescriptorWithKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *key; // @synthesize key=_key;
 @property(copy, nonatomic) NSString *etag; // @synthesize etag=_etag;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithKey:(id)arg1 etag:(id)arg2;
 

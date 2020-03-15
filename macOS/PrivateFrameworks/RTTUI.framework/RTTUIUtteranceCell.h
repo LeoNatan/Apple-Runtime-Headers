@@ -21,10 +21,10 @@
 }
 
 + (double)heightForUtterance:(id)arg1 andWidth:(double)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <RTTUIUtteranceCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isEditingUtterance) BOOL editingUtterance; // @synthesize editingUtterance=_editingUtterance;
 @property(retain, nonatomic) RTTUtterance *utterance; // @synthesize utterance=_utterance;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
 - (id)accessibilityRole;

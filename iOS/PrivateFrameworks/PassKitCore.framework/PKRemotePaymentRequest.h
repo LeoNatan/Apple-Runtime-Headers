@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *selectedApplicationIdentifier; // @synthesize selectedApplicationIdentifier=_selectedApplicationIdentifier;
 @property(retain, nonatomic) PKPaymentRequest *paymentRequest; // @synthesize paymentRequest=_paymentRequest;
 @property(readonly, nonatomic) PKRemoteDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToRemoteRequest:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

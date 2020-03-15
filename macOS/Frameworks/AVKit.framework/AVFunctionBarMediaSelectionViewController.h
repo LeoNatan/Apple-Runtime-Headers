@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     id <AVFunctionBarMediaSelectionViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVFunctionBarMediaSelectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) id <AVFunctionBarMediaSelectionControlling> playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)_updateButtonStatesForCurrentFunctionBarMediaSelectionOption:(id)arg1 containerView:(id)arg2;
 - (void)_updateFunctionBarMediaSelectionOptionInContainerView:(id)arg1 mediaSelectionOptions:(id)arg2 currentMediaSelectionOption:(id)arg3 selectionAction:(SEL)arg4;
 - (void)actionLegibleFunctionBarMediaSelectionOptionSelected:(id)arg1;

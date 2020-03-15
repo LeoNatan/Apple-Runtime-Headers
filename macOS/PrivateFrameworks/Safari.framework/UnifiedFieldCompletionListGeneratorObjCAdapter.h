@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     WBSBrowserTabCompletionProvider *_tabCompletionProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSBrowserTabCompletionProvider *tabCompletionProvider; // @synthesize tabCompletionProvider=_tabCompletionProvider;
 @property(readonly, nonatomic) struct UnifiedFieldCompletionListGenerator *completionListGenerator; // @synthesize completionListGenerator=_completionListGenerator;
-- (void).cxx_destruct;
 - (void)didFindMatchesForCurrentQueryInBrowserTabCompletionProvider:(id)arg1;
 - (id)selectedTabInfoForBrowserTabCompletionProvider:(id)arg1;
 - (id)tabInfosForBrowserTabCompletionProvider:(id)arg1;

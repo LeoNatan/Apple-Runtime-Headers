@@ -17,9 +17,9 @@
     NSButton *_pageArrowButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forceAlwaysShowing; // @synthesize forceAlwaysShowing=_forceAlwaysShowing;
 @property(retain, nonatomic) NSButton *pageArrowButton; // @synthesize pageArrowButton=_pageArrowButton;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreas;

@@ -7,6 +7,9 @@
 #import <SafariServices/NSObject-Protocol.h>
 
 @protocol WBSFormAutoFillNode <NSObject>
+- (int)htmlInputElementLastAutoFillButtonType;
+- (int)htmlInputElementAutoFillButtonType;
+- (void)setHTMLInputElementAutoFilledWithAutomaticStrongPassword:(_Bool)arg1;
 - (_Bool)isHTMLTextAreaElementUserEdited;
 - (_Bool)isHTMLInputElementUserEdited;
 - (void)setHTMLInputElementAutofilled:(_Bool)arg1;

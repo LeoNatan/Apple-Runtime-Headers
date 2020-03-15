@@ -27,6 +27,7 @@
     NSMutableArray *_selectedItems;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSMutableArray *selectedItems; // @synthesize selectedItems=_selectedItems;
 @property __weak NSClipView *clipView; // @synthesize clipView=_clipView;
 @property __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -34,7 +35,6 @@
 @property __weak NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(readonly) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
 @property __weak id <PKSelectCredentialsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;

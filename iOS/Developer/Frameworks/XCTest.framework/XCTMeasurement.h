@@ -11,20 +11,20 @@
 @interface XCTMeasurement : NSObject
 {
     NSString *_identifier;
-    NSString *_name;
     NSString *_units;
+    NSString *_name;
     NSDictionary *_baseline;
     NSDictionary *_defaultBaseline;
     NSArray *_measurements;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *measurements; // @synthesize measurements=_measurements;
 @property(copy) NSDictionary *defaultBaseline; // @synthesize defaultBaseline=_defaultBaseline;
 @property(copy) NSDictionary *baseline; // @synthesize baseline=_baseline;
-@property(copy) NSString *units; // @synthesize units=_units;
 @property(copy) NSString *name; // @synthesize name=_name;
+@property(copy) NSString *units; // @synthesize units=_units;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

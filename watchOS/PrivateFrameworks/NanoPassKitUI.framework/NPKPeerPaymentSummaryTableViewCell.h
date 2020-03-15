@@ -16,11 +16,11 @@
     UIColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(readonly, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) UILabel *feeLabel; // @synthesize feeLabel=_feeLabel;
 @property(retain, nonatomic) UILabel *paymentLabel; // @synthesize paymentLabel=_paymentLabel;
-- (void).cxx_destruct;
 - (void)_updatePaymentLabelWithAmountString:(id)arg1 paymentDescription:(id)arg2;
 - (void)_updateFeeLabelWithFeeString:(id)arg1;
 - (void)setAmountString:(id)arg1 paymentDescription:(id)arg2 feeString:(id)arg3;

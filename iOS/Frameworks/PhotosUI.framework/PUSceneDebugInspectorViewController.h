@@ -31,11 +31,11 @@ __attribute__((visibility("hidden")))
 + (id)_shortTitlesForSectionTitles:(id)arg1 SortOrder:(unsigned long long)arg2;
 + (id)_sectionTitleForSceneViewModel:(id)arg1 sortOrder:(unsigned long long)arg2;
 + (id)_sortedSceneViewModels:(id)arg1 sortOrder:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *groupedSceneViewModelTitles; // @synthesize groupedSceneViewModelTitles=_groupedSceneViewModelTitles;
 @property(copy, nonatomic) NSDictionary *groupedSceneViewModels; // @synthesize groupedSceneViewModels=_groupedSceneViewModels;
 @property(copy, nonatomic) NSArray *sceneViewModelsSearched; // @synthesize sceneViewModelsSearched=_sceneViewModelsSearched;
 @property(copy, nonatomic) NSArray *sceneViewModelsAll; // @synthesize sceneViewModelsAll=_sceneViewModelsAll;
-- (void).cxx_destruct;
 - (void)didSelectShareButton:(id)arg1;
 @property(readonly, nonatomic) UIBarButtonItem *shareButton; // @synthesize shareButton=_shareButton;
 @property(readonly, nonatomic) NSArray *currentSceneViewModels;

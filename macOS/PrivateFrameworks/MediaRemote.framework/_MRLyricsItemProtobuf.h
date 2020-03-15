@@ -20,10 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MRLyricsTokenProtobuf *token; // @synthesize token=_token;
 @property(nonatomic) BOOL userProvided; // @synthesize userProvided=_userProvided;
 @property(retain, nonatomic) NSString *lyrics; // @synthesize lyrics=_lyrics;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

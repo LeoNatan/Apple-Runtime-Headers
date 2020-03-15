@@ -13,8 +13,8 @@
     id <IMAPVerifyMailboxOperationDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <IMAPVerifyMailboxOperationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <IMAPVerifyMailboxOperationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)main;
 - (id)initWithDataSource:(id)arg1;
 - (id)initWithDataSource:(id)arg1 delegate:(id)arg2;

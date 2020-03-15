@@ -15,10 +15,10 @@
     HFAccessorySettingSiriLanguageAdapter *_adapter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFAccessorySettingSiriLanguageAdapter *adapter; // @synthesize adapter=_adapter;
 @property(readonly, nonatomic) unsigned long long optionStyle; // @synthesize optionStyle=_optionStyle;
 @property(retain, nonatomic) NSSet *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)reloadItems;
 - (id)initWithAdapter:(id)arg1 optionStyle:(unsigned long long)arg2;
 

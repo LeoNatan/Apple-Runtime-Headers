@@ -13,8 +13,8 @@
     PCSCKKSItemModifyContext *_context;
 }
 
-@property(retain) PCSCKKSItemModifyContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain) PCSCKKSItemModifyContext *context; // @synthesize context=_context;
 - (void)fetchPersistentRef:(id)arg1 alternate:(_Bool)arg2;
 - (void)fetchCurrentItem:(id)arg1 viewhint:(id)arg2 complete:(CDUnknownBlockType)arg3;
 - (void)fetchComplete:(struct __CFData *)arg1 point:(id)arg2 alternate:(_Bool)arg3 error:(struct __CFError *)arg4;

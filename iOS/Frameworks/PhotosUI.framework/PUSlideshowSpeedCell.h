@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     id <PUSlideshowSpeedCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <PUSlideshowSpeedCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic) double stepDuration;
 - (void)_stepDurationValueChanged:(id)arg1;
 - (void)_updateView;

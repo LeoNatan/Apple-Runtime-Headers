@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
     UIAlertController *_alertController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(retain) DDAction *currentAction; // @synthesize currentAction=_currentAction;
 @property(retain, nonatomic) UIView *baseView; // @synthesize baseView=_baseView;
 @property(retain, nonatomic) id <DDDetectionControllerInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
-- (void).cxx_destruct;
 - (void)viewControllerRequiresModalInPopover:(BOOL)arg1;
 - (BOOL)isPresentingInPopover;
 - (void)cancelAction;

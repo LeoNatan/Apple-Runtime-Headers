@@ -21,6 +21,7 @@
     MPMediaLibraryArtworkDataSource *_artworkDataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MPMediaLibraryArtworkDataSource *artworkDataSource; // @synthesize artworkDataSource=_artworkDataSource;
 @property(retain, nonatomic) MPMediaLibraryArtworkRequest *artworkRequest; // @synthesize artworkRequest=_artworkRequest;
 @property(copy, nonatomic) CDUnknownBlockType valueLoader; // @synthesize valueLoader=_valueLoader;
@@ -30,7 +31,6 @@
 @property(nonatomic) long long chapterType; // @synthesize chapterType=_chapterType;
 @property(nonatomic) unsigned long long indexInChaptersWithSameType; // @synthesize indexInChaptersWithSameType=_indexInChaptersWithSameType;
 @property(nonatomic) unsigned long long indexInChaptersWithAnyType; // @synthesize indexInChaptersWithAnyType=_indexInChaptersWithAnyType;
-- (void).cxx_destruct;
 - (double)duration;
 - (id)title;
 - (id)initWithCoder:(id)arg1;

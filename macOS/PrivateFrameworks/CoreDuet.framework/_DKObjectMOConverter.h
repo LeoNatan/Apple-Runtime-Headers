@@ -6,19 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSCache;
+@class NSArray, NSCache;
 
 @interface _DKObjectMOConverter : NSObject
 {
     BOOL _readMetadata;
     BOOL _deduplicateValues;
+    NSArray *_excludedMetadataKeys;
     NSCache *_cache;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSCache *cache; // @synthesize cache=_cache;
+@property(retain) NSArray *excludedMetadataKeys; // @synthesize excludedMetadataKeys=_excludedMetadataKeys;
 @property BOOL deduplicateValues; // @synthesize deduplicateValues=_deduplicateValues;
 @property BOOL readMetadata; // @synthesize readMetadata=_readMetadata;
-- (void).cxx_destruct;
 - (id)dataIntervalsFromManagedObjects:(id)arg1;
 - (id)insertObject:(id)arg1 inManagedObjectContext:(id)arg2;
 - (BOOL)copyObject:(id)arg1 intoManagedObject:(id)arg2;

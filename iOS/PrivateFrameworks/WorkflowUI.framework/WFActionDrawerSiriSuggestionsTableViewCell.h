@@ -26,6 +26,7 @@
     NSLayoutConstraint *_collectionViewHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *collectionViewHeightConstraint; // @synthesize collectionViewHeightConstraint=_collectionViewHeightConstraint;
 @property(retain, nonatomic) WFActionDrawerSiriSuggestionsCollectionViewManager *donationsCollectionViewManager; // @synthesize donationsCollectionViewManager=_donationsCollectionViewManager;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
@@ -37,7 +38,6 @@
 @property(nonatomic) __weak UIViewController *containingViewController; // @synthesize containingViewController=_containingViewController;
 @property(nonatomic) __weak id <WFActionDrawerSiriSuggestionsTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WFActionDrawerSection *section; // @synthesize section=_section;
-- (void).cxx_destruct;
 - (void)infoButtonPressed;
 - (void)siriSuggestionsCollectionViewManager:(id)arg1 showViewController:(id)arg2;
 - (void)siriSuggestionsCollectionViewManager:(id)arg1 didSelectAction:(id)arg2;

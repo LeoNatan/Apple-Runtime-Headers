@@ -15,10 +15,10 @@
     HFNetworkConfigurationItemProvider *_networkConfigurationItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFNetworkConfigurationItemProvider *networkConfigurationItemProvider; // @synthesize networkConfigurationItemProvider=_networkConfigurationItemProvider;
 @property(readonly, nonatomic) HMHome *overrideHome; // @synthesize overrideHome=_overrideHome;
 @property(readonly, nonatomic) NSSet *profiles; // @synthesize profiles=_profiles;
-- (void).cxx_destruct;
 - (id)_homeFuture;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;

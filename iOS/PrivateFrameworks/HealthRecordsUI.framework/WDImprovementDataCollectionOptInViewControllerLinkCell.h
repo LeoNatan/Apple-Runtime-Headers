@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultReuseIdentifier;
-@property(retain, nonatomic) UIButton *linkButton; // @synthesize linkButton=_linkButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *linkButton; // @synthesize linkButton=_linkButton;
 - (void)setupLinkButton;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

@@ -18,8 +18,8 @@
     BOOL _settable;
 }
 
-@property(readonly, nonatomic, getter=isSettable) BOOL settable; // @synthesize settable=_settable;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isSettable) BOOL settable; // @synthesize settable=_settable;
 - (id)driverClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
 @property(nonatomic) unsigned int rightPanChannel; // @dynamic rightPanChannel;

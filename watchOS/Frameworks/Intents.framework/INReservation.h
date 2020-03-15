@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(readonly, copy, nonatomic) NSString *reservationHolderName; // @synthesize reservationHolderName=_reservationHolderName;
 @property(readonly, nonatomic) int reservationStatus; // @synthesize reservationStatus=_reservationStatus;
 @property(readonly, copy, nonatomic) NSDate *bookingTime; // @synthesize bookingTime=_bookingTime;
 @property(readonly, copy, nonatomic) NSString *reservationNumber; // @synthesize reservationNumber=_reservationNumber;
 @property(readonly, copy, nonatomic) INSpeakableString *itemReference; // @synthesize itemReference=_itemReference;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 - (id)description;

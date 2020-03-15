@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long downloadTotalSize; // @synthesize downloadTotalSize=_downloadTotalSize;
 @property(nonatomic) unsigned long long downloadCompletedSize; // @synthesize downloadCompletedSize=_downloadCompletedSize;
 @property(nonatomic) unsigned long long uploadTotalSize; // @synthesize uploadTotalSize=_uploadTotalSize;
 @property(nonatomic) unsigned long long uploadCompletedSize; // @synthesize uploadCompletedSize=_uploadCompletedSize;
 @property(copy, nonatomic) BRFileObjectID *folderID; // @synthesize folderID=_folderID;
 @property(copy, nonatomic) NSArray *parentFileIDs; // @synthesize parentFileIDs=_parentFileIDs;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

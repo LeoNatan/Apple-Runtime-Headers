@@ -15,8 +15,8 @@
 }
 
 + (id)recoveredEventsWithPathManager:(id)arg1;
-@property(nonatomic) BOOL shouldPrioritize; // @synthesize shouldPrioritize=_shouldPrioritize;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldPrioritize; // @synthesize shouldPrioritize=_shouldPrioritize;
 - (void)runAndWaitForMessageToBeSent;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;

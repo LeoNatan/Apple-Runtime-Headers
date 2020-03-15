@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     MCSignInPageAuthenticationSectionController *_authSectionController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MCSignInPageAuthenticationSectionController *authSectionController; // @synthesize authSectionController=_authSectionController;
 @property(retain, nonatomic) MCSignInPageTitleSectionController *titleSectionController; // @synthesize titleSectionController=_titleSectionController;
 @property(nonatomic) _Bool authenticationFinished; // @synthesize authenticationFinished=_authenticationFinished;
 @property(nonatomic) _Bool signInButtonTapped; // @synthesize signInButtonTapped=_signInButtonTapped;
 @property(nonatomic) __weak id <MCUISignInViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)signInViewController:(id)arg1 didAuthenticateWithResults:(id)arg2 error:(id)arg3;
 - (void)signInViewController:(id)arg1 willPerformAuthenticationWithContext:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(retain, nonatomic) NSString *orgName;

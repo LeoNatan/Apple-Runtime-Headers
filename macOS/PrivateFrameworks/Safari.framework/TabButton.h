@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
 
 + (id)titleFont;
 + (double)titleWidthForButtonWidth:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isForOffscreenRendering) BOOL forOffscreenRendering; // @synthesize forOffscreenRendering=_forOffscreenRendering;
 @property(nonatomic) double titleTextFieldCenterOffset; // @synthesize titleTextFieldCenterOffset=_titleTextFieldCenterOffset;
 @property(nonatomic) double mainContentContainerCenterOffset; // @synthesize mainContentContainerCenterOffset=_mainContentContainerCenterOffset;
@@ -64,7 +65,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly) id <TabBarViewItem> tabBarViewItem; // @synthesize tabBarViewItem=_tabBarViewItem;
 @property(nonatomic) __weak id <TabButtonDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateAccessibilityChildren;
 - (void)_updateAccessibilityProperties;
 - (id)accessibilityValue;

@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int validityInMinutes; // @synthesize validityInMinutes=_validityInMinutes;
 @property(nonatomic) _Bool useSCRT; // @synthesize useSCRT=_useSCRT;
 @property(retain, nonatomic) NSData *dataToSign; // @synthesize dataToSign=_dataToSign;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1;

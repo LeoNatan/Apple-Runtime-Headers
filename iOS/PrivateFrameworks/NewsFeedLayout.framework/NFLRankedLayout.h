@@ -18,11 +18,11 @@
     NSMutableDictionary *_ranks;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableDictionary *ranks; // @synthesize ranks=_ranks;
 @property(nonatomic) _Bool vetoed; // @synthesize vetoed=_vetoed;
 @property(nonatomic) double rank; // @synthesize rank=_rank;
 @property(retain, nonatomic) NFLFeedCollectionViewLayoutAttributes *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

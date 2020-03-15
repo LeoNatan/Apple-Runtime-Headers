@@ -27,9 +27,9 @@
 + (id)doubleMultiArrayWithCopyOfMultiArray:(id)arg1;
 + (struct __CVBuffer *)pixelBufferBGRA8FromMultiArrayCHW:(id)arg1 channelOrderIsBGR:(_Bool)arg2 error:(id *)arg3;
 + (struct __CVBuffer *)pixelBufferGray8FromMultiArrayHW:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *strides; // @synthesize strides=_strides;
 @property(readonly, nonatomic) NSArray *shape; // @synthesize shape=_shape;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) int dataType;
 @property(readonly, nonatomic) int count;

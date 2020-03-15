@@ -21,9 +21,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL excludeFromShuffle; // @synthesize excludeFromShuffle=_excludeFromShuffle;
 @property(retain, nonatomic) _MPCProtoItemIdentifierSet *identifierSet; // @synthesize identifierSet=_identifierSet;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

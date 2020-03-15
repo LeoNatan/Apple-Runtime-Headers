@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 @property(readonly, nonatomic) unsigned short servicePort; // @synthesize servicePort=_servicePort;
 @property(readonly, nonatomic) long long protocolType; // @synthesize protocolType=_protocolType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

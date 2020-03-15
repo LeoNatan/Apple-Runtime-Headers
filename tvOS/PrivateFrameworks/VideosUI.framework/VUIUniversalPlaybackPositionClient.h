@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultClient;
-@property(retain) VUIUPPClientState *state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(retain) VUIUPPClientState *state; // @synthesize state=_state;
 - (id)allRecords;
 - (void)_activeAccountDidChange:(id)arg1;
 - (id)recordForBookmarkKey:(id)arg1;

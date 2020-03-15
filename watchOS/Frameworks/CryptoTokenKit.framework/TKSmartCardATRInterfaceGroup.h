@@ -14,8 +14,8 @@
     NSNumber *_protocol;
 }
 
-@property(readonly, nonatomic) NSNumber *protocol; // @synthesize protocol=_protocol;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *protocol; // @synthesize protocol=_protocol;
 - (id)description;
 - (id)parseWithY:(char *)arg1 toProtocol:(id *)arg2 fromSource:(CDUnknownBlockType)arg3 hasNext:(_Bool *)arg4;
 - (id)initWithProtocol:(id)arg1;

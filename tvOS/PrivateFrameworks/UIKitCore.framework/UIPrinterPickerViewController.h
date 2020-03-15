@@ -30,9 +30,9 @@ __attribute__((visibility("hidden")))
     PKPrinter *_printer;
 }
 
+- (void).cxx_destruct;
 @property _Bool userSelectedPrinter; // @synthesize userSelectedPrinter=_userSelectedPrinter;
 @property(retain, nonatomic) PKPrinter *printer; // @synthesize printer=_printer;
-- (void).cxx_destruct;
 - (_Bool)shouldShowPrinter:(id)arg1;
 - (_Bool)filtersPrinters;
 - (void)popoverControllerDidDismissPopover:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSDictionary *_mappingDictionary;
 }
 
-@property(retain, nonatomic) NSDictionary *mappingDictionary; // @synthesize mappingDictionary=_mappingDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *mappingDictionary; // @synthesize mappingDictionary=_mappingDictionary;
 - (id)_cleanRatingName:(id)arg1;
 - (id)resourceForRating:(id)arg1 ratingSystem:(id)arg2;
 - (id)init;

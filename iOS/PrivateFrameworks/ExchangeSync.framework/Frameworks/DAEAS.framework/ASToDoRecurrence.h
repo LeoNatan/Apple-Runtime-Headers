@@ -25,11 +25,11 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(nonatomic) __weak ASToDo *parentToDo; // @synthesize parentToDo=_parentToDo;
 @property(retain, nonatomic) NSNumber *deadOccur; // @synthesize deadOccur=_deadOccur;
 @property(retain, nonatomic) NSNumber *regenerate; // @synthesize regenerate=_regenerate;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_transformedUntilDateForActiveSync:(id)arg1;

@@ -42,6 +42,7 @@
 }
 
 + (id)keyPathsForValuesAffectingImage;
+- (void).cxx_destruct;
 @property unsigned long long mainItemIndex; // @synthesize mainItemIndex=_mainItemIndex;
 @property BOOL timedOutComputingThumbnail; // @synthesize timedOutComputingThumbnail=_timedOutComputingThumbnail;
 @property(readonly, retain) id selectedAccount; // @synthesize selectedAccount=_selectedAccount;
@@ -54,7 +55,6 @@
 @property(copy) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property BOOL showsCompletionPopUpInMessage; // @synthesize showsCompletionPopUpInMessage=_showsCompletionPopUpInMessage;
 @property(retain) NSNumber *charactersRemaining; // @synthesize charactersRemaining=_charactersRemaining;
-- (void).cxx_destruct;
 - (id)displayNameForLocation:(id)arg1;
 - (id)locationController:(id)arg1 displayNameForLocation:(id)arg2;
 - (void)stopUpdatingLocation;

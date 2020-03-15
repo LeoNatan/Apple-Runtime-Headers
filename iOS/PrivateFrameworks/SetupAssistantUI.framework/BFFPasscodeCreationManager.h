@@ -21,6 +21,7 @@
 }
 
 + (id)sharedPasscodeManager;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *constraintFailedInstructions; // @synthesize constraintFailedInstructions=_constraintFailedInstructions;
 @property(nonatomic) _Bool acceptedWeakPasscode; // @synthesize acceptedWeakPasscode=_acceptedWeakPasscode;
 @property(nonatomic) long long simplePasscodeEntryLength; // @synthesize simplePasscodeEntryLength=_simplePasscodeEntryLength;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak id <BFFPasscodeCreationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *passcode; // @synthesize passcode=_passcode;
 @property(nonatomic) unsigned long long passcodeState; // @synthesize passcodeState=_passcodeState;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)acceptWeakPasscode:(_Bool)arg1;
 - (void)transitionToNextPasscodeStateForInput:(id)arg1;

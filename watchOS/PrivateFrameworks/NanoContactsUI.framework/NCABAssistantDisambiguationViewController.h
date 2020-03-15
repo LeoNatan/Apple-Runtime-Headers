@@ -19,8 +19,8 @@
     PUICTableView *_tableView;
 }
 
-@property(retain, nonatomic) PUICTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUICTableView *tableView; // @synthesize tableView=_tableView;
 - (void)_performLocalContactSearchFilteringByContactPropertyKey:(id)arg1;
 - (id)_convertAndSortResults:(id)arg1 withFilterKey:(id)arg2;
 - (void)_pickedHandle:(id)arg1;

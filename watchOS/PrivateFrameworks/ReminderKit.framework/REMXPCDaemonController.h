@@ -24,13 +24,13 @@
 
 + (id)userInteractiveDaemonController;
 + (id)weakSharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) REMStoreContainerToken *storeContainerToken; // @synthesize storeContainerToken=_storeContainerToken;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSMutableDictionary *l_performersByName; // @synthesize l_performersByName=_l_performersByName;
 @property(nonatomic) struct os_unfair_lock_s ivarLock; // @synthesize ivarLock=_ivarLock;
 @property(nonatomic) __weak id <REMXPCDaemonControllerCloudKitNetworkActivityDelegate> cloudKitNetworkActivityDelegate; // @synthesize cloudKitNetworkActivityDelegate=_cloudKitNetworkActivityDelegate;
-- (void).cxx_destruct;
 - (void)cloudKitNetworkActivityDidUpdate:(id)arg1;
 - (void)_xpcConnectionDidInvalidate;
 - (void)_xpcConnectionDidInterrupt;

@@ -25,11 +25,11 @@
 + (id)itemWithSize:(id)arg1 supplementaryItems:(id)arg2;
 + (id)itemWithSize:(id)arg1;
 + (id)itemWithSize:(id)arg1 supplementaryItems:(id)arg2 decorationItems:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UICollectionLayoutSize *size; // @synthesize size=_size;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) _UICollectionLayoutEdgeSpacing *edgeSpacing; // @synthesize edgeSpacing=_edgeSpacing;
 @property(nonatomic) struct NSDirectionalEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (id)_apiRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSize:(id)arg1 supplementaryItems:(id)arg2 decorationItems:(id)arg3 contentInsets:(struct NSDirectionalEdgeInsets)arg4 edgeSpacing:(id)arg5 name:(id)arg6;

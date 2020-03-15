@@ -45,6 +45,7 @@
 + (id)feedbackRequestURLForClipUUIDString:(id)arg1;
 + (id)backgroundURLSessionIdentifier;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *currentUploadURL; // @synthesize currentUploadURL=_currentUploadURL;
 @property(retain, nonatomic) NSString *currentWrappedApiKey; // @synthesize currentWrappedApiKey=_currentWrappedApiKey;
 @property(retain, nonatomic) NSString *currentApiKey; // @synthesize currentApiKey=_currentApiKey;
@@ -66,7 +67,6 @@
 @property(retain, nonatomic) NSString *backgroundURLSessionIdentifier; // @synthesize backgroundURLSessionIdentifier=_backgroundURLSessionIdentifier;
 @property(nonatomic) __weak id <HFCameraClipFeedbackObserving> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType sessionCompletionHandler; // @synthesize sessionCompletionHandler=_sessionCompletionHandler;
-- (void).cxx_destruct;
 - (void)prepareServiceForActivityWhileBackgrounded;
 - (void)_invalidateAssertion;
 - (BOOL)serviceNeedsToContinueInBackground;
@@ -75,7 +75,8 @@
 - (BOOL)_isValidSubmissionKey:(id)arg1;
 - (void)_cleanUpLocalFilesForIdentifier:(id)arg1;
 - (void)_removeFileAtLocation:(id)arg1;
-- (id)_encryptRecording:(id)arg1 usingKey:(id)arg2;
+- (id)_base64EncodeDataAsString:(id)arg1;
+- (id)_encryptRecording:(id)arg1 usingKey:(id)arg2 forPayload:(id)arg3;
 - (id)_appendDateStringToString:(id)arg1;
 - (id)_identifierFromString:(id)arg1;
 - (void)_prepareQueuesForResumptionOfService;

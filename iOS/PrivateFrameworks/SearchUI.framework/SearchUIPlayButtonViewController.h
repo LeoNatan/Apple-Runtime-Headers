@@ -19,17 +19,23 @@
     NSArray *_storeIdentifiers;
     NSTimer *_timer;
     MPMediaEntity *_mediaEntity;
+    NSString *_universalLibraryID;
     long long _mediaEntityType;
     unsigned long long _persistentID;
 }
 
 + (_Bool)mediaItem:(id)arg1 matchesPersistentID:(unsigned long long)arg2 forType:(long long)arg3;
++ (_Bool)mediaItem:(id)arg1 matchesUniversalLibraryID:(id)arg2 forType:(long long)arg3;
++ (id)_mediaEntityForPersistentID:(id)arg1 forType:(int)arg2;
++ (id)_mediaEntityForUniversalLibraryID:(id)arg1 forType:(int)arg2;
 + (id)mediaEntityForAction:(id)arg1;
 + (id)font;
 + (_Bool)supportsRowModel:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long persistentID; // @synthesize persistentID=_persistentID;
 @property(nonatomic) long long mediaEntityType; // @synthesize mediaEntityType=_mediaEntityType;
+@property(retain, nonatomic) NSString *universalLibraryID; // @synthesize universalLibraryID=_universalLibraryID;
 @property(retain, nonatomic) MPMediaEntity *mediaEntity; // @synthesize mediaEntity=_mediaEntity;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSArray *storeIdentifiers; // @synthesize storeIdentifiers=_storeIdentifiers;
@@ -37,7 +43,6 @@
 @property(retain, nonatomic) TLKLabel *captionLabel; // @synthesize captionLabel=_captionLabel;
 @property(retain, nonatomic) SearchUIButton *playButton; // @synthesize playButton=_playButton;
 @property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
-- (void).cxx_destruct;
 - (_Bool)updateTimerForPauseState;
 - (void)invalidateTimerIfNeeded;
 - (void)createTimerIfNeeded;
@@ -47,6 +52,7 @@
 - (void)updatePlayState;
 - (void)updateButtonProgressAnimated:(_Bool)arg1;
 - (_Bool)matchesNowPlayingAudioItem;
+- (void)play;
 - (void)togglePlaybackState;
 - (void)buttonPressed;
 - (void)sendEngagementDidPunchout:(_Bool)arg1;

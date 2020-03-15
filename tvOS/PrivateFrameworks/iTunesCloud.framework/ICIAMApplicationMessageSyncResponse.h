@@ -17,9 +17,9 @@
 }
 
 + (Class)syncCommandsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *syncCommands; // @synthesize syncCommands=_syncCommands;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

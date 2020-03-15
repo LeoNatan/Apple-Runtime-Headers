@@ -23,11 +23,11 @@
 + (id)_viewConfigurationsFromAllocator:(id)arg1;
 + (void)requestInstanceWithCard:(id)arg1 delegate:(id)arg2 allocator:(id)arg3 reply:(CDUnknownBlockType)arg4;
 + (void)requestInstanceFromDefaultAllocatorWithCard:(id)arg1 delegate:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CRKCardSectionViewProviderDelegate> cardSectionViewProviderDelegate; // @synthesize cardSectionViewProviderDelegate=_cardSectionViewProviderDelegate;
 @property(retain, nonatomic) id <INUICKPViewControllerAllocating> allocator; // @synthesize allocator=_allocator;
 @property(copy, nonatomic) NSArray *viewConfigurations; // @synthesize viewConfigurations=_viewConfigurations;
 @property(readonly, nonatomic) id <CRCard> card; // @synthesize card=_card;
-- (void).cxx_destruct;
 - (double)boundingWidthForViewControllerAllocator:(id)arg1;
 - (_Bool)vetoDisplayOfCardSection:(id)arg1;
 - (unsigned long long)displayPriorityForCardSection:(id)arg1;

@@ -27,13 +27,13 @@
     CDStruct_efb11229 _interactionState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXGAccessibilityRendererDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 @property(retain, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
 @property(nonatomic) CDStruct_efb11229 interactionState; // @synthesize interactionState=_interactionState;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 @property(readonly, nonatomic) id <PXGTextureConverter> textureConverter; // @synthesize textureConverter=_textureConverter;
 @property(nonatomic) __weak id <PXGRendererDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)accessibilityViewForSpriteIndex:(unsigned int)arg1;
 - (void)_selectAsset:(id)arg1;
 - (id)accessibilityContentsWithMode:(int)arg1;

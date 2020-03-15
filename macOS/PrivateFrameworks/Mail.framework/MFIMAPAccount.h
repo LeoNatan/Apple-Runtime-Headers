@@ -59,6 +59,7 @@
 + (id)standardPorts;
 + (id)backgroundQueue;
 + (id)invocationQueue;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldIncludePrefixInPath; // @synthesize shouldIncludePrefixInPath=_shouldIncludePrefixInPath;
 @property(nonatomic) BOOL lastConnectionFailed; // @synthesize lastConnectionFailed=_lastConnectionFailed;
 @property double lastMailboxListFetchTime; // @synthesize lastMailboxListFetchTime=_lastMailboxListFetchTime;
@@ -67,7 +68,6 @@
 @property(copy) NSDictionary *serverID; // @synthesize serverID=_serverID;
 @property(readonly, nonatomic) NSOperationQueue *remoteFetchQueue; // @synthesize remoteFetchQueue=_remoteFetchQueue;
 @property(readonly, nonatomic) NSOperationQueue *remoteTaskQueue; // @synthesize remoteTaskQueue=_remoteTaskQueue;
-- (void).cxx_destruct;
 - (void)_performDiagnostics:(id)arg1;
 - (void)messageDeliveryWillBegin:(id)arg1;
 - (BOOL)storesUnseenCount;

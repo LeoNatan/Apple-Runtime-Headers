@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     GEORoute *_route;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOMapRegion *boundingMapRegion; // @synthesize boundingMapRegion=_boundingMapRegion;
 @property(readonly, nonatomic) NSMutableArray *pointSections; // @synthesize pointSections=_pointSections;
-- (void).cxx_destruct;
 - (void)buildPointSectionsForRoute:(id)arg1;
 - (id)_composedRouteLegForSteps:(id)arg1 route:(id)arg2;
 - (id)_composedRouteStepForStep:(id)arg1 route:(id)arg2;

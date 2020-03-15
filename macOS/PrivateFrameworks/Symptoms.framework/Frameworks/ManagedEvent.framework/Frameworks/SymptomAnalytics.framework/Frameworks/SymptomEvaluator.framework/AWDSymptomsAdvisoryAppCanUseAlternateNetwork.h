@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long jumboFlows; // @synthesize jumboFlows=_jumboFlows;
 @property(nonatomic) unsigned long long allFlows; // @synthesize allFlows=_allFlows;
 @property(nonatomic) unsigned long long altUsage; // @synthesize altUsage=_altUsage;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long wwanUsage; // @synthesize wwanUsage=_wwanUsage;
 @property(retain, nonatomic) NSString *bundleName; // @synthesize bundleName=_bundleName;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

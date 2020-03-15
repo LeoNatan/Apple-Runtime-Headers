@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSDictionary *eventInfo; // @synthesize eventInfo=_eventInfo;
 @property(nonatomic) long long category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *originalCommandId; // @synthesize originalCommandId=_originalCommandId;
-- (void).cxx_destruct;
 - (id)description;
 - (id)categoryString;
 - (double)_roundDouble:(double)arg1 toSignificantDigits:(unsigned long long)arg2;

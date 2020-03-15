@@ -16,10 +16,10 @@
     NSString *_inputMode;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *inputMode; // @synthesize inputMode=_inputMode;
 @property(readonly, nonatomic) IMKKeyboard *keyboard; // @synthesize keyboard=_keyboard;
 @property(nonatomic) __weak NSObject<IMKKeyboardServiceDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMenu *menu;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;

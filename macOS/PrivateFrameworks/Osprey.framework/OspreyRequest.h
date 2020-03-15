@@ -21,7 +21,7 @@
 }
 
 + (id)requestWithMethodName:(id)arg1;
-+ (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(copy, nonatomic) NSString *clientTraceId; // @synthesize clientTraceId=_clientTraceId;
 @property(nonatomic) BOOL forceHTTPv2; // @synthesize forceHTTPv2=_forceHTTPv2;
@@ -30,8 +30,6 @@
 @property(retain, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) NSString *methodName; // @synthesize methodName=_methodName;
-- (void).cxx_destruct;
-- (id)_createUserAgentString;
 - (id)grpcRequestWithBaseURL:(id)arg1;
 - (id)initWithMethodName:(id)arg1;
 

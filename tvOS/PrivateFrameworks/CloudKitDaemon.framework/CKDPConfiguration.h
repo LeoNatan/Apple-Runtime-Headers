@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)fieldsType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long expires; // @synthesize expires=_expires;
 @property(nonatomic) unsigned long long created; // @synthesize created=_created;
 @property(retain, nonatomic) NSMutableArray *fields; // @synthesize fields=_fields;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

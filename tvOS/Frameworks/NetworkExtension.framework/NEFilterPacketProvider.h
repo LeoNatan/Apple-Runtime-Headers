@@ -11,8 +11,8 @@
     CDUnknownBlockType _packetHandler;
 }
 
-@property(copy) CDUnknownBlockType packetHandler; // @synthesize packetHandler=_packetHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType packetHandler; // @synthesize packetHandler=_packetHandler;
 - (void)allowPacket:(id)arg1;
 - (id)delayCurrentPacket:(id)arg1;
 

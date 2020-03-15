@@ -17,10 +17,10 @@
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *_safePathURL; // @synthesize _safePathURL=__safePathURL;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_fileManagementQueue; // @synthesize _fileManagementQueue=__fileManagementQueue;
 @property(readonly, nonatomic) NSFileManager *_fileManager; // @synthesize _fileManager=__fileManager;
-- (void).cxx_destruct;
 - (_Bool)_removeItemAtURL:(id)arg1 error:(id *)arg2 stackshot:(id)arg3;
 - (_Bool)_allowedToDeleteItemAtURL:(id)arg1;
 - (void)removeItemAtURL:(id)arg1 completion:(CDUnknownBlockType)arg2;

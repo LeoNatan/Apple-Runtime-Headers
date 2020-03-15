@@ -21,6 +21,7 @@
 
 + (void)initialize;
 + (void)fetchDuetValues;
+- (void).cxx_destruct;
 @property _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property _Bool isInternalDevice; // @synthesize isInternalDevice=_isInternalDevice;
 @property(retain) NSSet *allowedTopHitSections; // @synthesize allowedTopHitSections=_allowedTopHitSections;
@@ -28,7 +29,6 @@
 @property(nonatomic) double blendingTime; // @synthesize blendingTime=_blendingTime;
 @property(retain) NSMutableString *logValues; // @synthesize logValues=_logValues;
 @property(retain, nonatomic) PRSRankingConfiguration *rankingConfiguration; // @synthesize rankingConfiguration=_rankingConfiguration;
-- (void).cxx_destruct;
 - (void)updateWithNewRankingInfo:(id)arg1;
 - (id)keyForSection:(id)arg1;
 - (void)finalizeLog;

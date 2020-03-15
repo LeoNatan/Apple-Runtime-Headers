@@ -10,7 +10,7 @@
 #import <CallKit/NSCopying-Protocol.h>
 #import <CallKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSOrderedSet, NSSet, NSString, NSURL;
+@class CXSandboxExtendedURL, NSArray, NSData, NSOrderedSet, NSSet, NSString;
 
 @interface CXProviderConfiguration : NSObject <NSSecureCoding, CXCopying, NSCopying>
 {
@@ -30,15 +30,16 @@
     NSArray *_emergencyLabeledHandles;
     NSArray *_handoffIdentifiers;
     NSOrderedSet *_prioritizedSenderIdentities;
-    NSURL *_ringtoneSoundURL;
+    CXSandboxExtendedURL *_ringtoneSoundURL;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsCurrentPlatform; // @synthesize supportsCurrentPlatform=_supportsCurrentPlatform;
 @property(nonatomic) _Bool supportsVoicemail; // @synthesize supportsVoicemail=_supportsVoicemail;
 @property(nonatomic) _Bool supportsEmergency; // @synthesize supportsEmergency=_supportsEmergency;
 @property(nonatomic) _Bool supportsAudioOnly; // @synthesize supportsAudioOnly=_supportsAudioOnly;
-@property(copy, nonatomic) NSURL *ringtoneSoundURL; // @synthesize ringtoneSoundURL=_ringtoneSoundURL;
+@property(copy, nonatomic) CXSandboxExtendedURL *ringtoneSoundURL; // @synthesize ringtoneSoundURL=_ringtoneSoundURL;
 @property(copy, nonatomic) NSOrderedSet *prioritizedSenderIdentities; // @synthesize prioritizedSenderIdentities=_prioritizedSenderIdentities;
 @property(copy, nonatomic) NSArray *handoffIdentifiers; // @synthesize handoffIdentifiers=_handoffIdentifiers;
 @property(copy, nonatomic) NSArray *emergencyLabeledHandles; // @synthesize emergencyLabeledHandles=_emergencyLabeledHandles;
@@ -51,7 +52,6 @@
 @property(nonatomic) unsigned int maximumCallGroups; // @synthesize maximumCallGroups=_maximumCallGroups;
 @property(copy, nonatomic) NSData *iconTemplateImageData; // @synthesize iconTemplateImageData=_iconTemplateImageData;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

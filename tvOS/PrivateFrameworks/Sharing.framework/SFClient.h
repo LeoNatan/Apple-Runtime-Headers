@@ -20,10 +20,10 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_invalidated;
 - (void)_interrupted;
 - (void)_ensureXPCStarted;
@@ -33,6 +33,7 @@
 - (void)testContinuityKeyboardBegin:(_Bool)arg1;
 - (void)showDevicePickerWithInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setupDevice:(id)arg1 home:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)setAudioRoutingScore:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)retriggerProximitySetup:(CDUnknownBlockType)arg1;
 - (void)retriggerProximityPairing:(CDUnknownBlockType)arg1;
 - (void)repairDevice:(id)arg1 flags:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;

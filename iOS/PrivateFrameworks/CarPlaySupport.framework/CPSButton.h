@@ -20,13 +20,13 @@
 }
 
 + (id)buttonWithType:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *touchTapRecognizer; // @synthesize touchTapRecognizer=_touchTapRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *pressTapRecognizer; // @synthesize pressTapRecognizer=_pressTapRecognizer;
 @property(nonatomic) __weak id <CPSButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
-- (void)_buttonSelected:(id)arg1 interactionModel:(unsigned long long)arg2;
+- (void)buttonSelected:(id)arg1 interactionModel:(unsigned long long)arg2;
 - (void)_buttonTapped:(id)arg1;
 - (void)_buttonPressed:(id)arg1;
 - (void)_addGestureRecognizers;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     OAXDrawingState *mOAXState;
 }
 
-@property __weak OAXDrawingState *oaxState; // @synthesize oaxState=mOAXState;
 - (void).cxx_destruct;
+@property __weak OAXDrawingState *oaxState; // @synthesize oaxState=mOAXState;
 - (id)blipRefForURL:(id)arg1;
 - (unsigned int)officeArtShapeIdWithVmlShapeId:(id)arg1;
 - (_Bool)isDualDrawable:(id)arg1;

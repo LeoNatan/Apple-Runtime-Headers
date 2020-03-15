@@ -39,11 +39,11 @@
 + (id)textColorPickerWithIdentifier:(id)arg1;
 + (id)colorPickerWithIdentifier:(id)arg1;
 + (id)keyPathsForValuesAffectingPresented;
+- (void).cxx_destruct;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
 @property BOOL colorListSupportsPressAndHoldVariants; // @synthesize colorListSupportsPressAndHoldVariants=_supportsPressAndHoldVariants;
 @property BOOL showsAlpha; // @synthesize showsAlpha=_showsAlpha;
-- (void).cxx_destruct;
 - (void)_pickColor:(id)arg1;
 @property(copy) NSColor *color;
 @property(readonly, copy) NSColor *storedColor;

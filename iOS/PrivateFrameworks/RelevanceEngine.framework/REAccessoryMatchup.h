@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *matchupDateFetched; // @synthesize matchupDateFetched=_matchupDateFetched;
 @property(readonly, nonatomic) NSDate *matchupStartDate; // @synthesize matchupStartDate=_matchupStartDate;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSString *homeTeamDetail; // @synthesize homeTeamDetail=_homeTeamDetail;
 @property(readonly, nonatomic) NSString *homeTeamName; // @synthesize homeTeamName=_homeTeamName;
 @property(readonly, nonatomic) REImage *homeTeamImage; // @synthesize homeTeamImage=_homeTeamImage;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

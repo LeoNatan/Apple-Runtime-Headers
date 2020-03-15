@@ -19,9 +19,9 @@
 
 + (struct __CFArray *)_copyIdentifiersWithQuery:(id)arg1;
 + (BOOL)_isDeclaration:(id)arg1 equalToDeclaration:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *_iconName; // @synthesize _iconName=__iconName;
 @property(readonly, nonatomic) NSString *_glyphName; // @synthesize _glyphName=__glyphName;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

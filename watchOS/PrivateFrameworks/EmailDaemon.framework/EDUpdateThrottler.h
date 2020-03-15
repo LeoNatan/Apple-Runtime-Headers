@@ -6,7 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSMutableArray, NSString;
+@class EFDebouncer, NSDate, NSMutableArray, NSString;
+@protocol EDResumable, EFScheduler;
 
 @interface EDUpdateThrottler : NSObject
 {
@@ -18,6 +19,9 @@
     NSDate *_lastUpdateDate;
     NSDate *_lastAcknowledgementDate;
     int _updateCounter;
+    id <EDResumable> _resumable;
+    EFDebouncer *_resumeClientDebouncer;
+    id <EFScheduler> _resumeClientScheduler;
     double _delayInterval;
 }
 
@@ -25,6 +29,10 @@
 + (void)_registerInstance:(id)arg1;
 + (id)instances;
 + (struct os_unfair_lock_s)instanceLock;
+- (void).cxx_destruct;
+@property(retain, nonatomic) id <EFScheduler> resumeClientScheduler; // @synthesize resumeClientScheduler=_resumeClientScheduler;
+@property(retain, nonatomic) EFDebouncer *resumeClientDebouncer; // @synthesize resumeClientDebouncer=_resumeClientDebouncer;
+@property(retain, nonatomic) id <EDResumable> resumable; // @synthesize resumable=_resumable;
 @property(nonatomic) int updateCounter; // @synthesize updateCounter=_updateCounter;
 @property(retain, nonatomic) NSDate *lastAcknowledgementDate; // @synthesize lastAcknowledgementDate=_lastAcknowledgementDate;
 @property(retain, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
@@ -32,12 +40,13 @@
 @property(readonly, nonatomic) int scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(readonly, nonatomic) double delayInterval; // @synthesize delayInterval=_delayInterval;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_reset;
 - (unsigned int)unacknowledgedUpdatesCountAndTimeSinceLastAcknowledgement:(double *)arg1;
 - (id)updateWithBlock:(CDUnknownBlockType)arg1 unacknowledgedUpdatesCount:(unsigned int *)arg2;
+- (void)dealloc;
 - (id)initWithDelayInterval:(double)arg1 scalingFactor:(int)arg2;
 - (id)initWithName:(id)arg1 delayInterval:(double)arg2 scalingFactor:(int)arg3;
+- (id)initWithName:(id)arg1 delayInterval:(double)arg2 resumable:(id)arg3;
 
 @end
 

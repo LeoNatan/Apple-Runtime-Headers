@@ -26,8 +26,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)_stopPeriodicalDownload;
 - (void)_startPeriodicalDownload;
 - (void)_createPeriodicalDownloadTimer;

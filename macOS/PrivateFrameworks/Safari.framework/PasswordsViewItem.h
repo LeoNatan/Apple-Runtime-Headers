@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_domain;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, copy, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)initWithDomain:(id)arg1 username:(id)arg2;
 
 @end

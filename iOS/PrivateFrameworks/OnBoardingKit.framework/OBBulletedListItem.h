@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_stackViewLeadingConstraintHorizontal;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewLeadingConstraintHorizontal; // @synthesize stackViewLeadingConstraintHorizontal=_stackViewLeadingConstraintHorizontal;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewLeadingConstraintVertical; // @synthesize stackViewLeadingConstraintVertical=_stackViewLeadingConstraintVertical;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIView *imageContainer; // @synthesize imageContainer=_imageContainer;
-- (void).cxx_destruct;
 - (double)_horizontalMargins;
 - (void)_updateImageViewLayout;
 - (id)_textStyle;

@@ -17,8 +17,8 @@
     CSLSButtonListenerCache *_handlerCache;
 }
 
-@property(retain) CSLSButtonListenerCache *handlerCache; // @synthesize handlerCache=_handlerCache;
 - (void).cxx_destruct;
+@property(retain) CSLSButtonListenerCache *handlerCache; // @synthesize handlerCache=_handlerCache;
 - (void)handleButtons:(unsigned int)arg1 event:(unsigned int)arg2 firstDownTime:(unsigned long long)arg3 lastUpTime:(unsigned long long)arg4;
 - (void)removeHandlerForButtons:(unsigned int)arg1 event:(unsigned int)arg2;
 - (void)setHandlerForButtons:(unsigned int)arg1 event:(unsigned int)arg2 handlerWithTimestamps:(CDUnknownBlockType)arg3;

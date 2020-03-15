@@ -19,8 +19,8 @@
     SBSwitcherModifierTimelineEntry *_entry;
 }
 
-@property(retain, nonatomic) SBSwitcherModifierTimelineEntry *entry; // @synthesize entry=_entry;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBSwitcherModifierTimelineEntry *entry; // @synthesize entry=_entry;
 - (id)_stackSnapshotAtIndex:(long long)arg1;
 - (long long)_numberOfModifiersInStackSnapshot:(id)arg1;
 - (void)_done;

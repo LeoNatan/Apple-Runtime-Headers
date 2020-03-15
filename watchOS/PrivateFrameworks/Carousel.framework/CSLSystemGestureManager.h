@@ -25,8 +25,8 @@
 }
 
 + (id)mainDisplayManager;
-@property(nonatomic, getter=areSystemGesturesDisabledForAccessibility) _Bool systemGesturesDisabledForAccessibility; // @synthesize systemGesturesDisabledForAccessibility=_systemGesturesDisabledForAccessibility;
 - (void).cxx_destruct;
+@property(nonatomic, getter=areSystemGesturesDisabledForAccessibility) _Bool systemGesturesDisabledForAccessibility; // @synthesize systemGesturesDisabledForAccessibility=_systemGesturesDisabledForAccessibility;
 - (void)_systemGestureChanged:(id)arg1;
 - (void)_disableSystemGesture:(id)arg1;
 - (void)_enableSystemGesture:(id)arg1;

@@ -26,6 +26,7 @@
     _Bool _requiresAuthentication;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresAuthentication; // @synthesize requiresAuthentication=_requiresAuthentication;
 @property(nonatomic) _Bool confirmedNotInPocket; // @synthesize confirmedNotInPocket=_confirmedNotInPocket;
 @property(nonatomic) _Bool wantsBiometricPresentation; // @synthesize wantsBiometricPresentation=_wantsBiometricPresentation;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *unlockDestination; // @synthesize unlockDestination=_unlockDestination;
 @property(retain, nonatomic) NSString *shortLockLabel; // @synthesize shortLockLabel=_shortLockLabel;
 @property(retain, nonatomic) NSString *lockLabel; // @synthesize lockLabel=_lockLabel;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasCustomUnlockLabel;
 - (id)initWithLockLabel:(id)arg1 shortLockLabel:(id)arg2 action:(CDUnknownBlockType)arg3 identifier:(id)arg4;
 

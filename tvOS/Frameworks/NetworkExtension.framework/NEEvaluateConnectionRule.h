@@ -23,11 +23,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSURL *probeURL; // @synthesize probeURL=_probeURL;
 @property(copy) NSArray *useDNSServers; // @synthesize useDNSServers=_useDNSServers;
 @property(readonly) NSArray *matchDomains; // @synthesize matchDomains=_matchDomains;
 @property(readonly) long long action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;

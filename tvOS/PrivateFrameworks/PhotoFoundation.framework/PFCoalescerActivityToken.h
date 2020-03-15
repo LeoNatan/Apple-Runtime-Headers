@@ -18,12 +18,12 @@
     NSDate *_creationDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain) NSArray *callStackReturnAddresses; // @synthesize callStackReturnAddresses=_callStackReturnAddresses;
 @property(retain) NSString *reason; // @synthesize reason=_reason;
 @property(retain) NSObject<OS_dispatch_queue> *isolationQueue; // @synthesize isolationQueue=_isolationQueue;
 @property(retain) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)description;
 - (void)endActivity;
 - (void)dealloc;

@@ -16,9 +16,9 @@
     id <AXUIAlertStyleProvider> _styleProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AXUIAlertStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) unsigned long long alertType; // @synthesize alertType=_alertType;
-- (void).cxx_destruct;
 - (void)_appendParagraphWithText:(id)arg1 withTextColor:(id)arg2 font:(id)arg3 textAlignment:(long long)arg4 lineSpacing:(double)arg5 paragraphSpacingBefore:(double)arg6 toAttributedString:(id)arg7;
 - (void)addToContainerView:(id)arg1;
 - (void)_cancelDismissalWithPanGesture:(id)arg1;

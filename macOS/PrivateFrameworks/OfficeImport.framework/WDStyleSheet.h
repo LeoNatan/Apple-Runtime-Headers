@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     WDDocument *mDocument;
 }
 
-@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
 - (void).cxx_destruct;
+@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
 - (id)description;
 - (id)allAliasesForStyleId:(id)arg1 name:(id)arg2;
 - (id)styleIdToName:(id)arg1;

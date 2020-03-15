@@ -20,13 +20,13 @@
 }
 
 + (id)sharedProvider;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didReceiveExtensions; // @synthesize didReceiveExtensions=_didReceiveExtensions;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *extensionSema; // @synthesize extensionSema=_extensionSema;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *extensionQueue; // @synthesize extensionQueue=_extensionQueue;
 @property(retain, nonatomic) NSDictionary *passKitExtensions; // @synthesize passKitExtensions=_passKitExtensions;
 @property(retain, nonatomic) NSDictionary *extensions; // @synthesize extensions=_extensions;
 @property(retain, nonatomic) id matchingContext; // @synthesize matchingContext=_matchingContext;
-- (void).cxx_destruct;
 - (void)_receivedExtensions:(id)arg1;
 - (void)_beginExtensionRequestWithExtension:(id)arg1 inputItems:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_beginRemoteViewControllerExtensionServiceWithExtension:(id)arg1 inputItems:(id)arg2 completion:(CDUnknownBlockType)arg3;

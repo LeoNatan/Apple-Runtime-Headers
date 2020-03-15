@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)AWDLPeerContextWithMACAddress:(id)arg1 interfaceName:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(copy, nonatomic) NSString *MACAddress; // @synthesize MACAddress=_MACAddress;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

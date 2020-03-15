@@ -16,11 +16,11 @@
     UIImage *_staticBlurSourceImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *staticBlurSourceImage; // @synthesize staticBlurSourceImage=_staticBlurSourceImage;
 @property(retain, nonatomic) UIImage *staticBlurImage; // @synthesize staticBlurImage=_staticBlurImage;
 @property(nonatomic) _Bool wantsDynamicBlur; // @synthesize wantsDynamicBlur=_wantsDynamicBlur;
 @property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
-- (void).cxx_destruct;
 
 @end
 

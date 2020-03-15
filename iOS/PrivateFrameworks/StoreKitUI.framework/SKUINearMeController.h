@@ -28,10 +28,10 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)_disableNearMe;
 - (void)_setItems:(id)arg1 responseDictionary:(id)arg2 error:(id)arg3 status:(long long)arg4;
 - (void)_refreshTimeout;

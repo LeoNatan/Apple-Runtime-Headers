@@ -14,9 +14,9 @@
     long long _actionZoomLevel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long actionZoomLevel; // @synthesize actionZoomLevel=_actionZoomLevel;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)performActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)localizedTitleForUseCase:(unsigned long long)arg1;
 - (id)initWithActionType:(id)arg1;

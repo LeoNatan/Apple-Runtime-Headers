@@ -21,6 +21,7 @@
     double _lastForwardedMessageTimeInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastForwardedMessageTimeInterval; // @synthesize lastForwardedMessageTimeInterval=_lastForwardedMessageTimeInterval;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) RTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) id backingObject; // @synthesize backingObject=_backingObject;
 @property(copy, nonatomic) CDUnknownBlockType backingObjectCreationBlock; // @synthesize backingObjectCreationBlock=_backingObjectCreationBlock;
 @property(nonatomic) __weak id <RTTransientObjectProtocol> transientObjectDelegate; // @synthesize transientObjectDelegate=_transientObjectDelegate;
-- (void).cxx_destruct;
 - (void)__invalidateBackingObject;
 - (void)__handleBackingObjectTimerExpired;
 - (void)__createTimerAssociatedWithBackingObject;

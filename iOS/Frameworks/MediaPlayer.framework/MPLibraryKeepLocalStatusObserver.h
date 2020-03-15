@@ -20,11 +20,11 @@
     struct MPLibraryActiveKeepLocalStatus _currentStatus;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType statusBlock; // @synthesize statusBlock=_statusBlock;
 @property(readonly, nonatomic) unsigned long long downloadPausedReason; // @synthesize downloadPausedReason=_downloadPausedReason;
 @property(readonly, nonatomic) struct MPLibraryActiveKeepLocalStatus currentStatus; // @synthesize currentStatus=_currentStatus;
 @property(retain, nonatomic) MPLibraryKeepLocalStatusObserverConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_updateCurrentStatus;
 - (_Bool)_updateActiveDownloadsAllowingDownloadRemoval:(_Bool)arg1;
 - (struct MPLibraryActiveKeepLocalStatus)_calculateCurrentStatus;

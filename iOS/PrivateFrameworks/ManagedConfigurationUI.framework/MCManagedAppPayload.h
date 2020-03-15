@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
-@property(retain, nonatomic) NSString *managedAppID; // @synthesize managedAppID=_managedAppID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *managedAppID; // @synthesize managedAppID=_managedAppID;
 - (id)title;
 - (id)initWithManagedAppID:(id)arg1 profile:(id)arg2;
 

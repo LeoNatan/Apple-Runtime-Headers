@@ -16,11 +16,11 @@
     id <NFLPipelayerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NFLPipelayerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<NFLPipeSegment> *pipeSegment; // @synthesize pipeSegment=_pipeSegment;
 @property(nonatomic) unsigned long long cumulativeHeadlinesUsedCount; // @synthesize cumulativeHeadlinesUsedCount=_cumulativeHeadlinesUsedCount;
 @property(nonatomic) unsigned long long pipeSegmentType; // @synthesize pipeSegmentType=_pipeSegmentType;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

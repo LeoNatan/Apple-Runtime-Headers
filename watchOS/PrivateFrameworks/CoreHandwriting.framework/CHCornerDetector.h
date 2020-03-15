@@ -23,6 +23,8 @@ __attribute__((visibility("hidden")))
     vector_f22155c2 __resampledDrawingPointMap;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) vector_f22155c2 _resampledDrawingPointMap; // @synthesize _resampledDrawingPointMap=__resampledDrawingPointMap;
 @property(readonly, copy, nonatomic) NSMutableIndexSet *_directionChangeCornerIndexes; // @synthesize _directionChangeCornerIndexes=__directionChangeCornerIndexes;
 @property(readonly, copy, nonatomic) NSMutableIndexSet *_cornerIndexSet; // @synthesize _cornerIndexSet=__cornerIndexSet;
@@ -33,8 +35,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CHDrawing *drawing; // @synthesize drawing=_drawing;
 @property(nonatomic) float minimumSignificantSegmentLength; // @synthesize minimumSignificantSegmentLength=_minimumSignificantSegmentLength;
 @property(nonatomic) _Bool shouldUseDynamicSampling; // @synthesize shouldUseDynamicSampling=_shouldUseDynamicSampling;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)_resolveResampledDirectionChangePointIndexes:(id)arg1;
 - (_Bool)_isLine:(id)arg1 usingThreshold:(float)arg2 p1:(int)arg3 p2:(int)arg4;
 - (int)_strokeHalfwayCorner:(id)arg1 p1:(int)arg2 p2:(int)arg3;

@@ -25,8 +25,8 @@
 }
 
 + (_Bool)_isPrimitiveBehavior;
-@property(nonatomic) double damping; // @synthesize damping=_damping;
 - (void).cxx_destruct;
+@property(nonatomic) double damping; // @synthesize damping=_damping;
 - (id)description;
 - (void)_dissociate;
 - (void)_associate;

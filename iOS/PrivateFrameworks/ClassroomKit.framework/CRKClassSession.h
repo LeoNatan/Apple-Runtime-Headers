@@ -17,10 +17,10 @@
     NSDate *_lastBeaconFoundDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastBeaconFoundDate; // @synthesize lastBeaconFoundDate=_lastBeaconFoundDate;
 @property(nonatomic) unsigned short flags; // @synthesize flags=_flags;
 @property(readonly, nonatomic) DMFControlSessionIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)lastMatchMessageForCurrentDate:(id)arg1;
 - (void)logBeaconFound;
 - (void)lostBeacon;

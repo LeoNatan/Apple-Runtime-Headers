@@ -14,9 +14,9 @@
     id <TUCoreTelephonyClient> _client;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <TUCoreTelephonyClient> client; // @synthesize client=_client;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)init;
 - (_Bool)isTTYSoftwareSupportedForSenderIdentityUUID:(id)arg1;
 - (_Bool)isTTYSoftwareEnabledForSenderIdentityUUID:(id)arg1;

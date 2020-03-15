@@ -7,17 +7,12 @@
 #import <AuthKit/AKAppleIDAuthenticationContext.h>
 
 #import <AuthKitUI/AKAppleIDAuthenticationUIProvider-Protocol.h>
-#import <AuthKitUI/AuthWebViewDelegate-Protocol.h>
 
-@class AKAuthWebTabView, AKAuthenticationPromptController, AKNativeAccountRecoveryController, AKSecondFactorCodeEntryController, NSImage, NSString, NSView, NSWindow;
-@protocol AKAppleIDAuthenticationInAppContextAlertDelegate, AKAppleIDAuthenticationInAppContextPasswordDelegate, CDPStateUIProvider;
+@class AKNativeAccountRecoveryController, NSImage, NSString, NSView, NSWindow;
+@protocol AKAppleIDAuthenticationInAppContextAlertDelegate, AKAppleIDAuthenticationInAppContextPasswordDelegate, AKInAppAuthenticationUIProvider, CDPStateUIProvider;
 
-@interface AKAppleIDAuthenticationInAppContext : AKAppleIDAuthenticationContext <AuthWebViewDelegate, AKAppleIDAuthenticationUIProvider>
+@interface AKAppleIDAuthenticationInAppContext : AKAppleIDAuthenticationContext <AKAppleIDAuthenticationUIProvider>
 {
-    AKAuthenticationPromptController *_authenticationPrompt;
-    AKAuthWebTabView *_webViewUI;
-    AKSecondFactorCodeEntryController *_secondFactorPrompt;
-    int _numberOfAttempts;
     AKNativeAccountRecoveryController *_nativeRecoveryController;
     BOOL _makeSheetCritical;
     BOOL _showRememberPasswordCheckbox;
@@ -28,34 +23,35 @@
     BOOL _shouldPreventSignIn;
     BOOL _hideReasonString;
     BOOL _alwaysShowUsernameField;
+    NSString *_cancelButtonString;
+    NSString *_privacyBundleIdentifier;
     NSWindow *_hostWindow;
     NSView *_hostView;
     NSString *_rememberPasswordCheckboxString;
     NSString *_alternativeButtonString;
-    NSString *_privacyBundleIdentifier;
-    NSString *_cancelButtonString;
     long long _selectedButton;
     NSImage *_displayImage;
     NSString *_initialError;
     NSString *_windowTitle;
+    id <AKInAppAuthenticationUIProvider> _inAppAuthUIProvider;
     id <AKAppleIDAuthenticationInAppContextAlertDelegate> _alertDelegate;
     id <CDPStateUIProvider> _cdpUiProvider;
     id <AKAppleIDAuthenticationInAppContextPasswordDelegate> __passwordDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setPasswordDelegate:) __weak id <AKAppleIDAuthenticationInAppContextPasswordDelegate> _passwordDelegate; // @synthesize _passwordDelegate=__passwordDelegate;
 @property(retain, setter=_setCdpUiProvider:) id <CDPStateUIProvider> cdpUiProvider; // @synthesize cdpUiProvider=_cdpUiProvider;
 @property(nonatomic) __weak id <AKAppleIDAuthenticationInAppContextAlertDelegate> alertDelegate; // @synthesize alertDelegate=_alertDelegate;
+@property(retain, nonatomic) id <AKInAppAuthenticationUIProvider> inAppAuthUIProvider; // @synthesize inAppAuthUIProvider=_inAppAuthUIProvider;
 @property BOOL alwaysShowUsernameField; // @synthesize alwaysShowUsernameField=_alwaysShowUsernameField;
 @property(retain) NSString *windowTitle; // @synthesize windowTitle=_windowTitle;
 @property(retain) NSString *initialError; // @synthesize initialError=_initialError;
 @property(retain) NSImage *displayImage; // @synthesize displayImage=_displayImage;
 @property long long selectedButton; // @synthesize selectedButton=_selectedButton;
-@property(retain) NSString *cancelButtonString; // @synthesize cancelButtonString=_cancelButtonString;
 @property BOOL hideReasonString; // @synthesize hideReasonString=_hideReasonString;
 @property BOOL shouldPreventSignIn; // @synthesize shouldPreventSignIn=_shouldPreventSignIn;
 @property BOOL clientShouldHandleAlternativeButtonAction; // @synthesize clientShouldHandleAlternativeButtonAction=_clientShouldHandleAlternativeButtonAction;
-@property(copy) NSString *privacyBundleIdentifier; // @synthesize privacyBundleIdentifier=_privacyBundleIdentifier;
 @property BOOL hideCancelButton; // @synthesize hideCancelButton=_hideCancelButton;
 @property BOOL hideAlternativeButton; // @synthesize hideAlternativeButton=_hideAlternativeButton;
 @property(retain) NSString *alternativeButtonString; // @synthesize alternativeButtonString=_alternativeButtonString;
@@ -65,15 +61,19 @@
 @property BOOL makeSheetCritical; // @synthesize makeSheetCritical=_makeSheetCritical;
 @property(retain) NSView *hostView; // @synthesize hostView=_hostView;
 @property __weak NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
-- (void).cxx_destruct;
-- (void)_setupAuthenticationPromptControllerAtMode:(long long)arg1;
-- (void)_updateUI:(CDUnknownBlockType)arg1;
+@property(copy) NSString *privacyBundleIdentifier; // @synthesize privacyBundleIdentifier=_privacyBundleIdentifier;
+@property(retain) NSString *cancelButtonString; // @synthesize cancelButtonString=_cancelButtonString;
 - (void)showCDPView:(id)arg1 modalForWindow:(id)arg2 withController:(id)arg3;
 - (void)endCDPView;
-- (void)presentBiometricOrPasscodeValidationForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)init;
+- (void)_contextDidEndPresentingSecondaryUI;
+- (void)_contextWillBeginPresentingSecondaryUI;
+- (void)dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;
+- (void)dismissNativeRecoveryUIWithCompletion:(CDUnknownBlockType)arg1;
+- (void)presentNativeRecoveryUIWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_presentServerProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_presentIDPProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentServerProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentBiometricOrPasscodeValidationForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissSecondFactorUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentSecondFactorAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)presentSecondFactorUIWithCompletion:(CDUnknownBlockType)arg1;
@@ -81,20 +81,8 @@
 - (void)presentKeepUsingUIForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentLoginAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_setupButtonActionsForSignInController:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_presentBasicLoginUIAlertWithCompletion:(CDUnknownBlockType)arg1;
-- (id)init;
-- (BOOL)_isSatisfyingPasswordRequirements;
-- (void)_contextDidEndPresentingSecondaryUI;
-- (void)_contextWillBeginPresentingSecondaryUI;
-- (void)_contextDidDismissLoginAlertController;
-- (void)_contextWillDismissLoginAlertController;
-- (void)_contextDidPresentLoginController;
-- (void)dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;
-- (void)dismissNativeRecoveryUIWithCompletion:(CDUnknownBlockType)arg1;
-- (void)presentNativeRecoveryUIWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)presentServerProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_assertValidPresentingViewController;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

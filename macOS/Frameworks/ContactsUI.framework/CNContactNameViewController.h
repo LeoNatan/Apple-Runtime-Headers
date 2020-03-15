@@ -27,6 +27,11 @@
     CNAddFieldTouchBar *_addFieldTouchBar;
 }
 
++ (id)lockGlyphAttachmentText;
++ (id)whitespaceText;
++ (id)downtimeContactText;
++ (id)downtimeLabelAttributedText;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNAddFieldTouchBar *addFieldTouchBar; // @synthesize addFieldTouchBar=_addFieldTouchBar;
 @property(retain, nonatomic) NSTextField *downtimeTextField; // @synthesize downtimeTextField=_downtimeTextField;
 @property(retain, nonatomic) NSTextField *shareTextField; // @synthesize shareTextField=_shareTextField;
@@ -37,7 +42,6 @@
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <CNContactNameViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)nameView:(id)arg1 willLoseFocusInDirection:(unsigned long long)arg2;
 - (BOOL)isSelectable;
 - (BOOL)templateMode;
@@ -54,7 +58,7 @@
 - (void)setPropertyKeysToDisplay:(id)arg1;
 - (void)selectFirstKeyView;
 - (void)reloadData;
-- (void)commitEditing;
+- (BOOL)commitEditing;
 - (void)setStyleProvider:(id)arg1;
 - (BOOL)isPrivateMeEnabled;
 - (void)focusKey:(id)arg1;

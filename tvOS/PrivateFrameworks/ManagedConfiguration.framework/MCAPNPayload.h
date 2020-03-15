@@ -18,8 +18,8 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
-@property(nonatomic) _Bool wasInstalled; // @synthesize wasInstalled=_wasInstalled;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool wasInstalled; // @synthesize wasInstalled=_wasInstalled;
 - (id)payloadDescriptionKeyValueSections;
 - (id)subtitle2Description;
 - (id)subtitle2Label;

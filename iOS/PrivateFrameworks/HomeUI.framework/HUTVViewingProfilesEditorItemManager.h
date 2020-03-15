@@ -13,8 +13,8 @@
     HUTVViewingProfilesDevicesItemModule *_tvpDevicesModule;
 }
 
-@property(readonly, nonatomic) HUTVViewingProfilesDevicesItemModule *tvpDevicesModule; // @synthesize tvpDevicesModule=_tvpDevicesModule;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUTVViewingProfilesDevicesItemModule *tvpDevicesModule; // @synthesize tvpDevicesModule=_tvpDevicesModule;
 - (void)_unregisterForExternalUpdates;
 - (void)_registerForExternalUpdates;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;

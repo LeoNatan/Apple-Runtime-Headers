@@ -32,8 +32,8 @@
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(double *)arg3 preferredScreenScale:(double)arg4 suffix:(id)arg5;
 + (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(double *)arg3;
-@property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 - (_Bool)_isTiledWhenStretchedToSize:(struct CGSize)arg1;
 - (void)_queue_createImageRefIfNecessary;
 - (id)initWithCoder:(id)arg1;

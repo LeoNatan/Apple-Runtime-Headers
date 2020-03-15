@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     _SFDialogController *_dialogController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasFormControlInteraction; // @synthesize hasFormControlInteraction=_hasFormControlInteraction;
 @property(readonly, nonatomic) _Bool hasFocusedInputFieldOnCurrentPage; // @synthesize hasFocusedInputFieldOnCurrentPage=_hasFocusedInputFieldOnCurrentPage;
 @property(readonly, nonatomic) _SFDialogController *dialogController; // @synthesize dialogController=_dialogController;
@@ -43,7 +44,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool didFirstVisuallyNonEmptyLayout; // @synthesize didFirstVisuallyNonEmptyLayout=_didFirstVisuallyNonEmptyLayout;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(nonatomic) __weak id <SFWebViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (id)sfWebView:(id)arg1 didStartDownload:(id)arg2;
 - (void)sfWebViewDidEndFormControlInteraction:(id)arg1;
 - (void)sfWebViewDidStartFormControlInteraction:(id)arg1;
 - (void)sfWebViewDidBecomeFirstResponder:(id)arg1;
@@ -63,10 +64,6 @@ __attribute__((visibility("hidden")))
 - (void)_webViewDidExitFullscreen:(id)arg1;
 - (void)_webViewDidEnterFullscreen:(id)arg1;
 - (void)_webView:(id)arg1 printFrame:(id)arg2;
-- (void)_webView:(id)arg1 commitPreviewedViewController:(id)arg2;
-- (id)_webView:(id)arg1 previewViewControllerForURL:(id)arg2 defaultActions:(id)arg3 elementInfo:(id)arg4;
-- (id)_actionsForElement:(id)arg1 defaultActions:(id)arg2 isPreviewing:(_Bool)arg3;
-- (id)_webView:(id)arg1 actionsForElement:(id)arg2 defaultActions:(id)arg3;
 - (_Bool)_webView:(id)arg1 shouldIncludeAppLinkActionsForElement:(id)arg2;
 - (void)_webView:(id)arg1 createWebViewWithConfiguration:(id)arg2 forNavigationAction:(id)arg3 windowFeatures:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)webViewDidClose:(id)arg1;
@@ -83,6 +80,7 @@ __attribute__((visibility("hidden")))
 - (void)_webViewDidShowSafeBrowsingWarning:(id)arg1;
 - (void)_webView:(id)arg1 didStartInputSession:(id)arg2;
 - (void)_webView:(id)arg1 willStartInputSession:(id)arg2;
+- (void)_webView:(id)arg1 didPresentFocusedElementViewController:(id)arg2;
 - (void)formAutoFillControllerDidFocusSensitiveFormField:(id)arg1;
 - (_Bool)formAutoFillControllerShouldShowIconsInPasswordPicker:(id)arg1;
 - (void)formAutoFillControllerGetAuthenticationForAutoFill:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -91,6 +89,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)formAutoFillControllerCanPrefillForm:(id)arg1;
 @property(readonly, nonatomic) _SFAuthenticationContext *autoFillAuthenticationContext;
 - (int)_analyticsClient;
+- (void)_webView:(id)arg1 didFinishLoadForQuickLookDocumentInMainFrame:(id)arg2;
+- (void)_webView:(id)arg1 didStartLoadForQuickLookDocumentInMainFrameWithFileName:(id)arg2 uti:(id)arg3;
 - (void)webView:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_webViewWebProcessDidCrash:(id)arg1;
 - (void)_webView:(id)arg1 navigationDidFinishDocumentLoad:(id)arg2;
@@ -101,6 +101,7 @@ __attribute__((visibility("hidden")))
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 preferences:(id)arg3 decisionHandler:(CDUnknownBlockType)arg4;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)_webViewDidEndNavigationGesture:(id)arg1 withNavigationToBackForwardListItem:(id)arg2;
+- (void)_webViewWillEndNavigationGesture:(id)arg1 withNavigationToBackForwardListItem:(id)arg2;
 - (void)_webView:(id)arg1 navigation:(id)arg2 didSameDocumentNavigation:(int)arg3;
 - (void)webView:(id)arg1 didCommitNavigation:(id)arg2;
 - (void)_webViewDidCancelClientRedirect:(id)arg1;

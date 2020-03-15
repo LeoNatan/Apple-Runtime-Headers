@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 + (void)getViewControllerForAddingShortcut:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)_voiceShortcutUIExtension;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <INUIVoiceShortcutRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)remoteViewControllerDidCancel;
 - (void)remoteViewControllerDidDeleteVoiceShortcutWithIdentifier:(id)arg1;
 - (void)remoteViewControllerDidUpdateVoiceShortcut:(id)arg1 error:(id)arg2;

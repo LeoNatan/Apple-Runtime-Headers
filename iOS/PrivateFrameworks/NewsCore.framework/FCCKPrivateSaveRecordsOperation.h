@@ -16,11 +16,11 @@
     NSArray *_resultSavedRecords;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *resultSavedRecords; // @synthesize resultSavedRecords=_resultSavedRecords;
 @property(copy, nonatomic) CDUnknownBlockType saveRecordsCompletionBlock; // @synthesize saveRecordsCompletionBlock=_saveRecordsCompletionBlock;
 @property(nonatomic) long long savePolicy; // @synthesize savePolicy=_savePolicy;
 @property(copy, nonatomic) NSArray *recordsToSave; // @synthesize recordsToSave=_recordsToSave;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;

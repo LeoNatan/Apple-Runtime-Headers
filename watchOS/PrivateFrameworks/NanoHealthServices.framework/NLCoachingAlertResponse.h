@@ -30,6 +30,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)responseForRequest:(id)arg1 userInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) HKActivitySummary *activitySummary; // @synthesize activitySummary=_activitySummary;
 @property(retain, nonatomic) NLExperimentInstance *experimentInstance; // @synthesize experimentInstance=_experimentInstance;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) NSString *submanagerIdentifier; // @synthesize submanagerIdentifier=_submanagerIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)addAction:(id)arg1;

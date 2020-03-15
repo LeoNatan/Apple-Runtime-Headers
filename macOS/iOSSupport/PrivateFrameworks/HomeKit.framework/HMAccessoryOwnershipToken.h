@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSData *internalData; // @synthesize internalData=_internalData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *internalData; // @synthesize internalData=_internalData;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

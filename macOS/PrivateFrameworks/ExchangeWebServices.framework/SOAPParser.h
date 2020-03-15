@@ -20,11 +20,11 @@
     NSXMLParser *_parser;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXMLParser *parser; // @synthesize parser=_parser;
 @property(readonly, nonatomic) SOAPDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) __weak id <SOAPParserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;

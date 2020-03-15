@@ -15,8 +15,8 @@
 
 + (id)createActivityWithTitle:(id)arg1 actionType:(id)arg2 actionSystemImageName:(id)arg3;
 + (_Bool)canPerformOnAssetCollection:(id)arg1 people:(id)arg2;
-@property(retain, nonatomic) NSString *userResponse; // @synthesize userResponse=_userResponse;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *userResponse; // @synthesize userResponse=_userResponse;
 - (void)applyBlacklistFeatureWithActionType:(id)arg1;
 - (void)performBackgroundTask;
 - (id)_memoryFeatureFromMemory:(id)arg1 forActionType:(id)arg2;

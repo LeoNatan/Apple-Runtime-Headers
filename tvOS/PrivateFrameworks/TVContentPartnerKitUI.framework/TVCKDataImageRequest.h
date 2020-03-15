@@ -14,9 +14,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) __weak TVCKDataQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)initWithQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

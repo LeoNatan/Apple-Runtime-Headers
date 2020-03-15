@@ -39,8 +39,8 @@
 + (id)specialNameForType:(int)arg1;
 + (id)fileURLForMailboxURL:(id)arg1;
 + (id)defaultScheduler;
-@property(retain, nonatomic) NSArray *extraAttributes; // @synthesize extraAttributes=_extraAttributes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *extraAttributes; // @synthesize extraAttributes=_extraAttributes;
 - (void)updateSuggestionsLostMessageSearchResultCount:(unsigned long long)arg1;
 @property(readonly, nonatomic) double suggestionsLostMessageSearchTimestamp;
 @property(readonly, nonatomic) unsigned long long suggestionsLostMessageSearchResultCount;

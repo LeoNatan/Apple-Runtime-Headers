@@ -15,8 +15,8 @@
     NSString *_countryCode;
 }
 
-@property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;

@@ -21,12 +21,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) HMFActivity *activity; // @synthesize activity=_activity;
 @property(readonly) NSMutableData *encodedAssetData; // @synthesize encodedAssetData=_encodedAssetData;
 @property(readonly) AVAssetWriterInput *assetWriterInput; // @synthesize assetWriterInput=_assetWriterInput;
 @property(readonly) AVAssetWriter *assetWriter; // @synthesize assetWriter=_assetWriter;
 @property(readonly) struct OpaqueVTCompressionSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)finishEncodingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)invalidate;

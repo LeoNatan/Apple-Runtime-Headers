@@ -31,7 +31,7 @@
 - (void)vcMediaStream:(id)arg1 didReceiveRTCPPackets:(id)arg2;
 - (void)vcMediaStreamDidRTCPTimeOut:(id)arg1;
 - (void)vcMediaStreamDidRTPTimeOut:(id)arg1;
-- (void)vcMediaStream:(id)arg1 didReceiveText:(struct NSString *)arg2;
+- (void)vcMediaStream:(id)arg1 didReceiveText:(id)arg2;
 - (void)vcMediaStream:(id)arg1 didReceiveTTYCharacter:(unsigned short)arg2;
 - (void)vcMediaStream:(id)arg1 didReceiveDTMFEventWithDigit:(BOOL)arg2;
 - (void)vcMediaStream:(id)arg1 didResumeStream:(_Bool)arg2 error:(id)arg3;

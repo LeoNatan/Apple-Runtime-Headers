@@ -22,8 +22,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) _Bool supportsFeedbackActuation; // @synthesize supportsFeedbackActuation=_supportsFeedbackActuation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool supportsFeedbackActuation; // @synthesize supportsFeedbackActuation=_supportsFeedbackActuation;
 - (void)actuateFeedback:(long long)arg1;
 - (void)coolDownForFeedback:(unsigned long long)arg1 withReason:(id)arg2;
 - (void)warmUpForFeedback:(unsigned long long)arg1 withReason:(id)arg2;

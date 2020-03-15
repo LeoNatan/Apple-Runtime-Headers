@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
 + (id)coremlShapeToEspressoShape:(id)arg1 ndMode:(_Bool)arg2;
 + (id)espressoShapesToCoremlShapes:(id)arg1 ndMode:(_Bool)arg2;
 + (id)espressoShapeToCoremlShape:(id)arg1 ndMode:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<MLCustomLayer> *customImpl; // @synthesize customImpl=_customImpl;
 @property(readonly, nonatomic) NSString *className; // @synthesize className=_className;
 @property(readonly, nonatomic) _Bool ndMode; // @synthesize ndMode=_ndMode;
-- (void).cxx_destruct;
 - (_Bool)hasGPUSupport;
 - (void)encodeToMetalCommandBuffer:(id)arg1 inputTensors:(id)arg2 outputTensors:(id)arg3;
 - (void)setMappedWeights:(void *)arg1 sizeInBytes:(unsigned long long)arg2;

@@ -23,8 +23,8 @@
     double _progress;
 }
 
-@property(nonatomic) double progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(nonatomic) double progress; // @synthesize progress=_progress;
 - (void)resetProgress;
 - (void)recalculateIncreaseProgress:(double)arg1 withTimeDiff:(double)arg2;
 - (void)_updateUIProgress;

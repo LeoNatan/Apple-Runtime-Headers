@@ -15,6 +15,7 @@
 - (void)shouldAllowOneMoreMinuteForBundleIdentifier:(NSString *)arg1 replyHandler:(void (^)(NSNumber *, NSError *))arg2;
 - (void)permitWebFilterURL:(NSURL *)arg1 pageTitle:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)performMigrationFromMCXSettings:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)contactsEditableWithReplyHandler:(void (^)(BOOL, NSError *))arg1;
 - (void)primaryiCloudCardDAVAccountIdentifierWithCompletionHandler:(void (^)(NSString *, NSError *))arg1;
 - (void)contactManagementStateForDSID:(NSNumber *)arg1 completionHandler:(void (^)(long long, NSError *))arg2;
 - (void)setContactManagementState:(long long)arg1 forDSID:(NSNumber *)arg2 completionHandler:(void (^)(NSError *))arg3;

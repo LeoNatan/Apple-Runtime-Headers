@@ -18,12 +18,12 @@
     NSString *_fieldName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *fieldName; // @synthesize fieldName=_fieldName;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(nonatomic) _Bool hasEverBeenDefined; // @synthesize hasEverBeenDefined=_hasEverBeenDefined;
 @property(readonly, nonatomic) long long fieldType; // @synthesize fieldType=_fieldType;
 @property(nonatomic) __weak id <NSObject><WFNetworkView> provider; // @synthesize provider=_provider;
-- (void).cxx_destruct;
 
 @end
 

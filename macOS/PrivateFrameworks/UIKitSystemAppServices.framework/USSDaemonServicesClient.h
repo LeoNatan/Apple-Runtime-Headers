@@ -11,8 +11,8 @@
     CDUnknownBlockType _disconnectionHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType disconnectionHandler; // @synthesize disconnectionHandler=_disconnectionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType disconnectionHandler; // @synthesize disconnectionHandler=_disconnectionHandler;
 - (void)sendPushNotificationRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)connect;
 @property(readonly, nonatomic, getter=isConnected) BOOL connected;

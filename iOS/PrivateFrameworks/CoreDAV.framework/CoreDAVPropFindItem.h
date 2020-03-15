@@ -17,11 +17,11 @@
 }
 
 + (id)copyParseRules;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVItem *prop; // @synthesize prop=_prop;
 @property(retain, nonatomic) CoreDAVItem *include; // @synthesize include=_include;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *allProp; // @synthesize allProp=_allProp;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *propName; // @synthesize propName=_propName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

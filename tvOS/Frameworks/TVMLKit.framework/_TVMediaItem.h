@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 
 + (id)_tvHighlightGroupsFromObject:(id)arg1;
 + (id)_tvInterstitialsFromObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVMediaItem *publicObj; // @synthesize publicObj=_publicObj;
 @property(readonly, nonatomic) IKAppMediaItemBridge *bridge; // @synthesize bridge=_bridge;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)_forwardObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1;

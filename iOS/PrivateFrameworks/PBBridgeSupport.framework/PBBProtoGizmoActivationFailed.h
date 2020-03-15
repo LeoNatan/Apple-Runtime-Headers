@@ -15,8 +15,8 @@
     NSString *_failureDescription;
 }
 
-@property(retain, nonatomic) NSString *failureDescription; // @synthesize failureDescription=_failureDescription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *failureDescription; // @synthesize failureDescription=_failureDescription;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

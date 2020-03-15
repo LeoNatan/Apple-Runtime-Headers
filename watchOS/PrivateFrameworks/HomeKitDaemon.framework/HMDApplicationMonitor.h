@@ -24,6 +24,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *pendingTerminatedApplications; // @synthesize pendingTerminatedApplications=_pendingTerminatedApplications;
 @property(retain, nonatomic) HMFTimer *spiClientTerminationDelayTimer; // @synthesize spiClientTerminationDelayTimer=_spiClientTerminationDelayTimer;
 @property(nonatomic) __weak HMDApplicationRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSMutableSet *processes; // @synthesize processes=_processes;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 @property(nonatomic) __weak id <HMDApplicationMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_delegateConformsAndRespondsToSelector:(SEL)arg1;
 - (unsigned int)_translateApplicationState:(unsigned int)arg1;
 - (void)timerDidFire:(id)arg1;

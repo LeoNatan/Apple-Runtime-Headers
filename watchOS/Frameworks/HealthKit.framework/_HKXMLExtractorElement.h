@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_specificationAttributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *specificationAttributes; // @synthesize specificationAttributes=_specificationAttributes;
 @property(readonly) NSString *specificationElement; // @synthesize specificationElement=_specificationElement;
-- (void).cxx_destruct;
 - (_Bool)matchesElement:(id)arg1;
 - (id)initWithElementName:(id)arg1 attributes:(id)arg2;
 - (id)initWithTagSpecification:(id)arg1;

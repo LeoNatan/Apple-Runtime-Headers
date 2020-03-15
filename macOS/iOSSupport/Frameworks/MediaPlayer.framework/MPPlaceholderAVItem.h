@@ -22,6 +22,7 @@
 }
 
 + (BOOL)isPlaceholder;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogBlock; // @synthesize artworkCatalogBlock=_artworkCatalogBlock;
 @property(nonatomic, getter=isTailPlaceholder) BOOL tailPlaceholder; // @synthesize tailPlaceholder=_tailPlaceholder;
 @property(nonatomic) BOOL supportsLikedState; // @synthesize supportsLikedState=_supportsLikedState;
@@ -31,7 +32,6 @@
 @property(nonatomic) double durationFromExternalMetadata; // @synthesize durationFromExternalMetadata=_durationFromExternalMetadata;
 @property(retain, nonatomic) NSString *artist; // @synthesize artist=_artist;
 @property(retain, nonatomic) NSString *album; // @synthesize album=_album;
-- (void).cxx_destruct;
 - (void)loadAssetAndPlayerItem;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (id)description;

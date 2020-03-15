@@ -26,6 +26,7 @@
 }
 
 + (id)wrapperWithService:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL volumeControlSupported; // @synthesize volumeControlSupported=_volumeControlSupported;
 @property(nonatomic) BOOL sentWakeKey; // @synthesize sentWakeKey=_sentWakeKey;
 @property(retain, nonatomic) HMCharacteristic *volumeSelectorCharacteristic; // @synthesize volumeSelectorCharacteristic=_volumeSelectorCharacteristic;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak id <_TVRCHMServiceWrapperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL connected; // @synthesize connected=_connected;
-- (void).cxx_destruct;
 - (void)_writeValue:(id)arg1 toCharacteristic:(id)arg2;
 - (void)_checkVolumeServicesForAccessory:(id)arg1;
 - (void)_setCharacteristicsForService:(id)arg1;

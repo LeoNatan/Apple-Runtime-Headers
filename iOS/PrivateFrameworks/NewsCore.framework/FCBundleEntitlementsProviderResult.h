@@ -16,11 +16,11 @@
     NSString *_bundlePurchaseID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAmplifyUser; // @synthesize isAmplifyUser=_isAmplifyUser;
 @property(readonly, nonatomic) _Bool isPurchaser; // @synthesize isPurchaser=_isPurchaser;
 @property(readonly, nonatomic) _Bool inTrialPeriod; // @synthesize inTrialPeriod=_inTrialPeriod;
 @property(readonly, nonatomic) NSString *bundlePurchaseID; // @synthesize bundlePurchaseID=_bundlePurchaseID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBundlePurchaseID:(id)arg1 inTrialPeriod:(_Bool)arg2 isPurchaser:(_Bool)arg3 isAmplifyUser:(_Bool)arg4;
 

@@ -15,10 +15,10 @@
     NSString *_localRelativePath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localRelativePath; // @synthesize localRelativePath=_localRelativePath;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSURL *legacyURL; // @synthesize legacyURL=_legacyURL;
-- (void).cxx_destruct;
 - (id)initWithLegacyURL:(id)arg1 url:(id)arg2 localRelativePath:(id)arg3;
 
 @end

@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSHashTable *externalHandlers; // @synthesize externalHandlers=_externalHandlers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSHashTable *externalHandlers; // @synthesize externalHandlers=_externalHandlers;
 - (void)_captureRadarAttachmentsWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_shouldPromptForSecureDrawViolations;
 - (void)_reportAndKillInsecureProcesses:(id)arg1;

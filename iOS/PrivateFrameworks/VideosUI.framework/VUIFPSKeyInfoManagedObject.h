@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool allowsManualRenewal; // @dynamic allowsManualRenewal;
 @property(copy, nonatomic) NSString *contentID; // @dynamic contentID;
 @property(copy, nonatomic) NSDate *expirationDate; // @dynamic expirationDate;
+@property(nonatomic) _Bool isInvalid; // @dynamic isInvalid;
 @property(nonatomic) _Bool isLowValue; // @dynamic isLowValue;
 @property(retain, nonatomic) NSData *keyData; // @dynamic keyData;
 @property(copy, nonatomic) NSURL *keyURI; // @dynamic keyURI;

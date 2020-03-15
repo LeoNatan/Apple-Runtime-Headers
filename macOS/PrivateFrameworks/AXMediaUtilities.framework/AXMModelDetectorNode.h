@@ -17,8 +17,8 @@
 + (id)title;
 + (BOOL)isSupported;
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSURL *modelURL; // @synthesize modelURL=_modelURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *modelURL; // @synthesize modelURL=_modelURL;
 - (void)evaluate:(id)arg1;
 - (BOOL)_loadModel:(id *)arg1;
 - (BOOL)preloadModelIfNeeded:(id *)arg1;

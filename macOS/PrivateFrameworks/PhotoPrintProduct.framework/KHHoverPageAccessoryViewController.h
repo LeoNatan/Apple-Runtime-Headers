@@ -21,12 +21,12 @@
 }
 
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) double expandedAccessoryLength; // @synthesize expandedAccessoryLength=_expandedAccessoryLength;
 @property(readonly, nonatomic) unsigned long long preferredAccessoryEdge; // @synthesize preferredAccessoryEdge=_preferredAccessoryEdge;
 @property(nonatomic) __weak id <KHAccessoryViewContainerProtocol> accessoryViewContainer; // @synthesize accessoryViewContainer=_accessoryViewContainer;
 @property(nonatomic) long long accessoryViewState; // @synthesize accessoryViewState=_accessoryViewState;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isAccessoryFloating;
 @property(readonly, nonatomic) double accessoryAnimationDuration;
 @property(readonly, nonatomic) double collapsedAccessoryLength;

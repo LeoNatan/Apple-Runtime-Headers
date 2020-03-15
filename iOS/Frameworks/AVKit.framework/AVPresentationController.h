@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIWindow *_presentationWindowForDisablingAutorotation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIWindow *presentationWindowForDisablingAutorotation; // @synthesize presentationWindowForDisablingAutorotation=_presentationWindowForDisablingAutorotation;
 @property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(readonly, nonatomic) AVPresentationContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_observeSceneDidBecomeActiveForRestoringRotatability;
 - (void)dismissalTransitionDidEnd:(_Bool)arg1;
 - (void)_prepareDismissingTransitionContext;

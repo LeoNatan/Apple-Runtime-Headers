@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <SYObject> _wrappedObject;
 }
 
-@property(readonly, nonatomic) id <SYObject> wrappedObject; // @synthesize wrappedObject=_wrappedObject;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SYObject> wrappedObject; // @synthesize wrappedObject=_wrappedObject;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) long long changeType;
 @property(readonly, nonatomic) NSString *sequencer;

@@ -16,10 +16,10 @@
     id _resultsSelectionDelegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id resultsSelectionDelegate; // @synthesize resultsSelectionDelegate=_resultsSelectionDelegate;
 @property __weak NSObject *punchoutDelegate; // @synthesize punchoutDelegate=_punchoutDelegate;
 @property __weak NSObject<SPPreviewControllerDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 - (void)mouseUp:(id)arg1;
 - (id)urlToOpen;

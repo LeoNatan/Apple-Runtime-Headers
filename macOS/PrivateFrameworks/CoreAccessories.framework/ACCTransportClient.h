@@ -21,12 +21,12 @@
 }
 
 + (id)sharedClient;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *endpointPropertyChangeHandlers; // @synthesize endpointPropertyChangeHandlers=_endpointPropertyChangeHandlers;
 @property(retain, nonatomic) NSMutableDictionary *connectionPropertyChangeHandlers; // @synthesize connectionPropertyChangeHandlers=_connectionPropertyChangeHandlers;
 @property(retain, nonatomic) NSMutableDictionary *endpointDataOutHandlers; // @synthesize endpointDataOutHandlers=_endpointDataOutHandlers;
 @property(retain, nonatomic) NSXPCConnection *serverConnection; // @synthesize serverConnection=_serverConnection;
 @property(nonatomic) __weak id <ACCTransportClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)processIncomingData:(id)arg1 forEndpointWithUUID:(id)arg2;
 - (void)setHandler:(CDUnknownBlockType)arg1 forEndpointProperty:(id)arg2;
 - (void)setHandler:(CDUnknownBlockType)arg1 forConnectionProperty:(id)arg2;

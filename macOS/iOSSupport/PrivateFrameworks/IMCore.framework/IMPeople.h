@@ -15,8 +15,8 @@
     BOOL _hidePeople;
 }
 
-@property(nonatomic, setter=setShouldHidePeople:) BOOL hidePeople; // @synthesize hidePeople=_hidePeople;
 - (void).cxx_destruct;
+@property(nonatomic, setter=setShouldHidePeople:) BOOL hidePeople; // @synthesize hidePeople=_hidePeople;
 - (void)imHandle:(id)arg1 buddyStatusChanged:(BOOL)arg2;
 - (BOOL)addPeopleFromArray:(id)arg1;
 - (BOOL)addPeopleFromArray:(id)arg1 skipMe:(BOOL)arg2;

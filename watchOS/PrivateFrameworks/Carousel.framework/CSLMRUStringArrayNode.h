@@ -15,10 +15,10 @@
     NSString *_string;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(retain, nonatomic) CSLMRUStringArrayNode *previous; // @synthesize previous=_previous;
 @property(retain, nonatomic) CSLMRUStringArrayNode *next; // @synthesize next=_next;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithString:(id)arg1;
 

@@ -23,6 +23,7 @@
     struct CGRect _targetFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *layoutItemToObjMapTable; // @synthesize layoutItemToObjMapTable=_layoutItemToObjMapTable;
 @property(retain, nonatomic) NSMutableSet *managedViews; // @synthesize managedViews=_managedViews;
 @property(nonatomic, getter=isFillMode) BOOL fillMode; // @synthesize fillMode=_fillMode;
@@ -30,7 +31,6 @@
 @property(nonatomic) struct CGRect targetFrame; // @synthesize targetFrame=_targetFrame;
 @property(nonatomic) struct CGSize minimumItemSize; // @synthesize minimumItemSize=_minimumItemSize;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)commitEditingLayoutItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGRect)largestAvailableRectInLayoutRects:(id)arg1;
 - (struct CGRect)nextAvailableRect;

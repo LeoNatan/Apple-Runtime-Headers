@@ -16,10 +16,10 @@
 }
 
 + (id)stringifyList:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) IKArray *cssValue; // @synthesize cssValue=_cssValue;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

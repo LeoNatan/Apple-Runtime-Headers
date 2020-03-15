@@ -31,6 +31,7 @@
     NSOperationQueue *_applicationQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *applicationQueue; // @synthesize applicationQueue=_applicationQueue;
 @property(retain, nonatomic, setter=_setFocusedElementController:) AXKElementController *_focusedElementController; // @synthesize _focusedElementController=__focusedElementController;
 @property(retain, nonatomic, setter=_setPreviousFocusedElementController:) AXKElementController *_previousFocusedElementController; // @synthesize _previousFocusedElementController=__previousFocusedElementController;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) AXKElementController *activeMenuController; // @synthesize activeMenuController=_activeMenuController;
 @property(nonatomic) BOOL hasOpenMenus; // @synthesize hasOpenMenus=_hasOpenMenus;
 @property(nonatomic) __weak id <AXKApplicationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)assertApplicationQueue;
 - (BOOL)removeObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 element:(id)arg4;
 - (BOOL)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 element:(id)arg4;

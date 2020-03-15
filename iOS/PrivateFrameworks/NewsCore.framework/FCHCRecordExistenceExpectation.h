@@ -17,10 +17,10 @@
     CKRecordID *_recordID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldExist; // @synthesize shouldExist=_shouldExist;
 @property(copy, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(retain, nonatomic) CKDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)validate;
 
 // Remaining properties

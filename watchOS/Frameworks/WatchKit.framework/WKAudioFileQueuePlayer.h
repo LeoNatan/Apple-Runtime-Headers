@@ -15,9 +15,9 @@
 }
 
 + (id)queuePlayerWithItems:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (double)currentTime;
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (void)_setRate:(float)arg1 suppressServerPropagation:(_Bool)arg2;

@@ -6,6 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <CarPlaySupport/BSInvalidatable-Protocol.h>
 #import <CarPlaySupport/CPBaseTemplateProviding-Protocol.h>
 #import <CarPlaySupport/CPSBaseTemplateViewController-Protocol.h>
 #import <CarPlaySupport/CPSButtonDelegate-Protocol.h>
@@ -14,7 +15,7 @@
 @class CPTemplate, NAFuture, NSString, UITapGestureRecognizer;
 @protocol CPSTemplateViewControllerDelegate, CPTemplateDelegate;
 
-@interface CPSBaseTemplateViewController : UIViewController <CPSButtonDelegate, UIGestureRecognizerDelegate, CPBaseTemplateProviding, CPSBaseTemplateViewController>
+@interface CPSBaseTemplateViewController : UIViewController <CPSButtonDelegate, UIGestureRecognizerDelegate, CPBaseTemplateProviding, CPSBaseTemplateViewController, BSInvalidatable>
 {
     _Bool _isPopping;
     _Bool _didDisappear;
@@ -25,6 +26,7 @@
     UITapGestureRecognizer *_backGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *backGestureRecognizer; // @synthesize backGestureRecognizer=_backGestureRecognizer;
 @property(nonatomic) _Bool didDisappear; // @synthesize didDisappear=_didDisappear;
 @property(nonatomic) _Bool isPopping; // @synthesize isPopping=_isPopping;
@@ -32,7 +34,6 @@
 @property(retain, nonatomic) id <CPTemplateDelegate> templateDelegate; // @synthesize templateDelegate=_templateDelegate;
 @property(retain, nonatomic) CPTemplate *associatedTemplate; // @synthesize associatedTemplate=_associatedTemplate;
 @property(readonly, nonatomic) NAFuture *templateProviderFuture; // @synthesize templateProviderFuture=_templateProviderFuture;
-- (void).cxx_destruct;
 - (void)setBarButton:(id)arg1 title:(id)arg2;
 - (void)setBarButton:(id)arg1 image:(id)arg2;
 - (void)setControl:(id)arg1 enabled:(_Bool)arg2;
@@ -53,6 +54,7 @@
 - (void)_cleanup;
 - (void)_viewDidLoad;
 - (void)viewDidLoad;
+- (void)invalidate;
 - (void)_cps_viewControllerWasPopped;
 - (void)_dismissTemplateViewController;
 - (id)initWithTemplate:(id)arg1 templateDelegate:(id)arg2;

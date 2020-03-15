@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     GEODirectionsRequester *_directionsRequester;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *requestPriority; // @synthesize requestPriority=_requestPriority;
 @property(nonatomic) _Bool isDoom; // @synthesize isDoom=_isDoom;
 @property(readonly, nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isReroute; // @synthesize isReroute=_isReroute;
 @property(nonatomic) __weak GEODirectionsRequester *directionsRequester; // @synthesize directionsRequester=_directionsRequester;
 @property(readonly, nonatomic) GEODirectionsRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)submitWithHandler:(CDUnknownBlockType)arg1 auditToken:(id)arg2 networkActivity:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) NSDictionary *responseUserInfo;

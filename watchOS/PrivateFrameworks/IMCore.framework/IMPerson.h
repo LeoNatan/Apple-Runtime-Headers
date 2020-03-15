@@ -29,10 +29,10 @@
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3;
 + (id)existingABPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 + (id)allPeople;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *cnContact; // @synthesize cnContact=_cnContact;
 @property(readonly, nonatomic) _Bool _registered; // @synthesize _registered;
 @property(readonly, nonatomic) int _recordID; // @synthesize _recordID;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 @property(readonly, nonatomic) unsigned int status;
 @property(readonly, nonatomic) NSData *imageDataWithoutLoading;

@@ -16,8 +16,8 @@
 }
 
 + (id)sharedDatabase;
-@property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 - (id)cloudObjectFromLocalObjects:(id)arg1 withTable:(id)arg2 andObjectID:(id)arg3;
 - (void)userAuthChanged;
 @property(readonly, nonatomic) _Bool canSave;

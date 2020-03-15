@@ -16,11 +16,11 @@
     NSDate *_notSeenSinceDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *notSeenSinceDate; // @synthesize notSeenSinceDate=_notSeenSinceDate;
 @property(readonly, nonatomic) NSArray *assets; // @synthesize assets=_assets;
 @property(readonly, nonatomic) NSString *personLocalIdentifier; // @synthesize personLocalIdentifier=_personLocalIdentifier;
 @property(readonly, nonatomic) CLSPerson *person; // @synthesize person=_person;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long relationshipScore;
 - (id)initWithPersonLocalIdentifier:(id)arg1 assets:(id)arg2 notSeenSinceDate:(id)arg3;
 - (id)initWithCLSPerson:(id)arg1 assets:(id)arg2;

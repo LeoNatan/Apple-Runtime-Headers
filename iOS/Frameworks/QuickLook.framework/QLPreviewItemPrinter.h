@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <QLPrintingProtocol> _itemPrinter;
 }
 
-@property(retain, nonatomic) id <QLPrintingProtocol> itemPrinter; // @synthesize itemPrinter=_itemPrinter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <QLPrintingProtocol> itemPrinter; // @synthesize itemPrinter=_itemPrinter;
 - (void)_waitForPrinterSynchronously;
 - (void)_didReceivePrinter:(id)arg1;
 - (void)drawPageAtIndex:(long long)arg1 inRect:(struct CGRect)arg2;

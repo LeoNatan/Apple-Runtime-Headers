@@ -18,10 +18,10 @@
     CMWakeGestureManager *_wakeGestureManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CMWakeGestureManager *wakeGestureManager; // @synthesize wakeGestureManager=_wakeGestureManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(nonatomic) __weak id <AVTUIRaiseGestureManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)wakeGestureManager:(id)arg1 didUpdateWakeGesture:(long long)arg2;
 - (void)stopRaiseGestureUpdates;
 - (void)startRaiseGestureUpdates;

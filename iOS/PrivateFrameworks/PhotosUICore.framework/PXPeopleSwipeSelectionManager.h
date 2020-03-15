@@ -30,6 +30,7 @@
     PXUIAutoScroller *_autoScroller;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXUIAutoScroller *autoScroller; // @synthesize autoScroller=_autoScroller;
 @property(retain, nonatomic) id pausingChangesToken; // @synthesize pausingChangesToken=_pausingChangesToken;
 @property(copy, nonatomic) NSSet *selectedIndexPathsBeforeSwipe; // @synthesize selectedIndexPathsBeforeSwipe=_selectedIndexPathsBeforeSwipe;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <PXPeopleSwipeSelectionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)autoScroller:(id)arg1 didAutoscrollWithTimestamp:(double)arg2;
 - (void)_updateSelectedIndexPaths;
 - (void)_invalidateSelectedIndexPaths;

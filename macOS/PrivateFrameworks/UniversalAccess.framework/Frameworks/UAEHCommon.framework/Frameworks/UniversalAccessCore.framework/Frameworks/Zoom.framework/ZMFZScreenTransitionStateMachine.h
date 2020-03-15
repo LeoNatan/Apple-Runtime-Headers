@@ -17,9 +17,9 @@
     long long _currentState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) __weak id <ZMFZScreenTransitionStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setZoomOriginToRestore:(struct CGPoint)arg1;
 - (void)_setZoomFactorToRestore:(double)arg1;
 - (void)_setCurrentState:(long long)arg1;

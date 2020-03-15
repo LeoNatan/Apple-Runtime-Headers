@@ -17,8 +17,8 @@
 
 + (id)logCategory;
 + (id)shortDescription;
-@property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (id)logIdentifier;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

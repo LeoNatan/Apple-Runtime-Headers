@@ -15,16 +15,18 @@
     int _comparisonType;
     int _dataType;
     NSString *_identifier;
+    int _triggerConditionType;
     NSString *_triggerValue;
     struct {
         unsigned int comparisonType:1;
         unsigned int dataType:1;
+        unsigned int triggerConditionType:1;
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *triggerValue; // @synthesize triggerValue=_triggerValue;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -34,6 +36,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsTriggerConditionType:(id)arg1;
+- (id)triggerConditionTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasTriggerConditionType;
+@property(nonatomic) int triggerConditionType; // @synthesize triggerConditionType=_triggerConditionType;
 @property(readonly, nonatomic) _Bool hasTriggerValue;
 - (int)StringAsComparisonType:(id)arg1;
 - (id)comparisonTypeAsString:(int)arg1;

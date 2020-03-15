@@ -27,6 +27,7 @@
     NSMutableSet *_rejectedSuggestions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *rejectedSuggestions; // @synthesize rejectedSuggestions=_rejectedSuggestions;
 @property(retain, nonatomic) NSMutableSet *confirmedSuggestions; // @synthesize confirmedSuggestions=_confirmedSuggestions;
 @property(retain, nonatomic) PXPeoplePagingSuggestionProvider *suggestionProvider; // @synthesize suggestionProvider=_suggestionProvider;
@@ -41,7 +42,6 @@
 @property(nonatomic) BOOL mute; // @synthesize mute=_mute;
 @property(retain, nonatomic) id <PXPeopleSuggestionManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <PXPeopleSuggestionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_fetchingSuggestions;
 - (id)_nonSkippedSuggestionsForSuggestions:(id)arg1;
 - (void)_notifyDelegateWeHaveMoreSuggestions:(BOOL)arg1;

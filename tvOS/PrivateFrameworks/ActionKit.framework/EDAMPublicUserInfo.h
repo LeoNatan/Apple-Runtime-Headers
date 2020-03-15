@@ -21,6 +21,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *webApiUrlPrefix; // @synthesize webApiUrlPrefix=_webApiUrlPrefix;
 @property(retain, nonatomic) NSString *noteStoreUrl; // @synthesize noteStoreUrl=_noteStoreUrl;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSNumber *privilege; // @synthesize privilege=_privilege;
 @property(retain, nonatomic) NSString *shardId; // @synthesize shardId=_shardId;
 @property(retain, nonatomic) NSNumber *userId; // @synthesize userId=_userId;
-- (void).cxx_destruct;
 
 @end
 

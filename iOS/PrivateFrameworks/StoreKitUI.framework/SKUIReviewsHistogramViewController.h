@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     SKUIReviewList *_reviewList;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIReviewList *reviewList; // @synthesize reviewList=_reviewList;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_reloadHistogram;
 - (id)_histogramView;
 - (void)loadView;

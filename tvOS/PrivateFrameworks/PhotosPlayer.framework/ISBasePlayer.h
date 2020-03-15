@@ -43,6 +43,7 @@
     CDStruct_1b6d18a9 __videoForwardPlaybackEndTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setVideoForwardPlaybackEndTime:) CDStruct_1b6d18a9 _videoForwardPlaybackEndTime; // @synthesize _videoForwardPlaybackEndTime=__videoForwardPlaybackEndTime;
 @property(nonatomic, setter=_setLastAppliedScale:) double lastAppliedScale; // @synthesize lastAppliedScale=_lastAppliedScale;
 @property(retain, nonatomic, setter=_setOutputContent:) ISPlayerOutputContent *_outputContent; // @synthesize _outputContent=__outputContent;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic, setter=_setError:) NSError *error; // @synthesize error=_error;
 @property(nonatomic, setter=_setStatus:) long long status; // @synthesize status=_status;
 @property(retain, nonatomic) ISPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
-- (void).cxx_destruct;
 - (void)avPlayerDidDeallocate;
 - (void)avPlayer:(id)arg1 itemDidPlayToEnd:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

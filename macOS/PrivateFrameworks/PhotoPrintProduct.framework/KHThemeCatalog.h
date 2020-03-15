@@ -37,6 +37,7 @@
 
 + (CDUnknownBlockType)landscapeCardFilter;
 + (CDUnknownBlockType)portraitCardFilter;
+- (void).cxx_destruct;
 @property BOOL allSourcesHaveReportedIn; // @synthesize allSourcesHaveReportedIn=_allSourcesHaveReportedIn;
 @property id <KHThemeCatalogDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *currentLanguageCode; // @synthesize currentLanguageCode=_currentLanguageCode;
@@ -49,7 +50,6 @@
 @property(copy, nonatomic) NSString *currentCategory; // @synthesize currentCategory=_currentCategory;
 @property BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property BOOL isLoading; // @synthesize isLoading=_isLoading;
-- (void).cxx_destruct;
 - (void)_delegateThemeCatalogWasCancelled;
 - (void)_delegateThemeCatalogDidFinishLoadingWithCompletedThemeConfigurations:(id)arg1;
 - (void)_delegateThemeCatalogDidChangeFilterWithCompletedThemeConfigurations:(id)arg1;

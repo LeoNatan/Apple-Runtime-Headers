@@ -17,9 +17,9 @@
 }
 
 + (void)load;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FBWorkspaceEventQueueLock *queueLock; // @synthesize queueLock=_queueLock;
 @property(retain, nonatomic) NSTimer *blockTimer; // @synthesize blockTimer=_blockTimer;
-- (void).cxx_destruct;
 - (void)handleVolumeDecrease;
 - (void)blockTimerDidFire:(id)arg1;
 - (void)handleVolumeIncrease;

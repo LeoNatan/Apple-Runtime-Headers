@@ -22,10 +22,10 @@
 + (id)queryWithDelegate:(id)arg1;
 + (id)groupsQuery;
 + (id)peopleQuery;
+- (void).cxx_destruct;
 @property(retain) CNContactStore *contactFetcherStore; // @synthesize contactFetcherStore=_contactFetcherStore;
 @property(retain) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain) CNAutocompleteFetchRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)searchableProperties;
 - (id)autocompleteResultsForFetchResults:(id)arg1 resultFactory:(id)arg2;

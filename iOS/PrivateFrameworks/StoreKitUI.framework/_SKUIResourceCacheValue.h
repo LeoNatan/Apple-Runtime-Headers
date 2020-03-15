@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     id _requestCacheKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id requestCacheKey; // @synthesize requestCacheKey=_requestCacheKey;
 @property(readonly, nonatomic) id resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (id)initWithResource:(id)arg1 requestCacheKey:(id)arg2;
 
 @end

@@ -14,9 +14,9 @@
     CLKTextProvider *_outerTextProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CLKTextProvider *outerTextProvider; // @synthesize outerTextProvider=_outerTextProvider;
 @property(copy, nonatomic) CLKTextProvider *innerTextProvider; // @synthesize innerTextProvider=_innerTextProvider;
-- (void).cxx_destruct;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)isCompatibleWithFamily:(int)arg1;
 

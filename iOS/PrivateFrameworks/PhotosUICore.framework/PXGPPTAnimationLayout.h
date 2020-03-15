@@ -19,11 +19,11 @@
     long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) unsigned int numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(nonatomic) unsigned int numberOfRows; // @synthesize numberOfRows=_numberOfRows;
-- (void).cxx_destruct;
-- (struct UIColor *)colorAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
+- (id)colorAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (void)referenceSizeDidChange;
 @property(readonly, nonatomic) NSString *configurationDescription;
 - (void)_updateContent;

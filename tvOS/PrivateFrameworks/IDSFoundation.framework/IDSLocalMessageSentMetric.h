@@ -21,12 +21,12 @@
     long long _priority;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) unsigned long long linkType; // @synthesize linkType=_linkType;
 @property(readonly, nonatomic) long long messageSize; // @synthesize messageSize=_messageSize;
 @property(readonly, nonatomic) _Bool isToDefaultPairedDevice; // @synthesize isToDefaultPairedDevice=_isToDefaultPairedDevice;
 @property(readonly, nonatomic) NSString *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBCodable<NSCopying> *awdRepresentation;
 @property(readonly) unsigned int awdIdentifier;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

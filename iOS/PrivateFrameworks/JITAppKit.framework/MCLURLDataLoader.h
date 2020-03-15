@@ -45,9 +45,9 @@
 + (id)fileExtensionForMimeType:(id)arg1;
 + (id)dateFromRFC1123:(id)arg1;
 + (id)uniqueImageKeyForURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHTTPCookieStorage *cookieStorage; // @synthesize cookieStorage=_cookieStorage;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (id)_cachedResponseForRequest:(id)arg1;
 - (void)_removeCachedResponseForRequest:(id)arg1 force:(_Bool)arg2;
 - (void)_removeCachedResponseForRequest:(id)arg1;

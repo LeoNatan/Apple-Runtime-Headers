@@ -18,11 +18,11 @@
     SSLookupRequest *_lookupRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain) SSLookupRequest *lookupRequest; // @synthesize lookupRequest=_lookupRequest;
 @property(copy) NSError *error; // @synthesize error=_error;
 @property(copy) NSURL *privacyPolicyURL; // @synthesize privacyPolicyURL=_privacyPolicyURL;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 @property(getter=isFinished) _Bool finished;
 @property(getter=isExecuting) _Bool executing;
 - (_Bool)isAsynchronous;

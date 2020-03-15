@@ -17,8 +17,8 @@
 
 + (void)setSharedSettings:(id)arg1;
 + (id)settings;
-@property(nonatomic) _Bool invalidatesClosedWindows; // @synthesize invalidatesClosedWindows=_invalidatesClosedWindows;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool invalidatesClosedWindows; // @synthesize invalidatesClosedWindows=_invalidatesClosedWindows;
 - (void)_synchronizeNow;
 - (void)synchronize;
 @property(readonly, nonatomic) _Bool hasPrivateBrowsingWindow;

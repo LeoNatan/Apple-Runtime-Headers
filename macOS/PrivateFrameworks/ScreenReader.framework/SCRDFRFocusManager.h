@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)_isValidDFRElementToFocusOnto:(id)arg1;
 + (id)_applicationFunctionRowElementFromRemoteUIElement:(id)arg1;
 + (id)validatedChildrenToFocusIntoForElement:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_dfrFocusManagerQueue; // @synthesize _dfrFocusManagerQueue=__dfrFocusManagerQueue;
 @property(retain, nonatomic) id <NSObject> _remoteUIElementsChangedObservation; // @synthesize _remoteUIElementsChangedObservation=__remoteUIElementsChangedObservation;
 @property(retain, nonatomic) NSObservation<NSObservable><NSObserver> *_focusedApplicationObservation; // @synthesize _focusedApplicationObservation=__focusedApplicationObservation;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *lastFocusTimestamp; // @synthesize lastFocusTimestamp=_lastFocusTimestamp;
 @property(retain, nonatomic) NSArray *orderedNavigableElements; // @synthesize orderedNavigableElements=_orderedNavigableElements;
 @property(retain, nonatomic) SCRElement *focusedElement; // @synthesize focusedElement=_focusedElement;
-- (void).cxx_destruct;
 - (void)_refreshOrderedNavigableElements;
 - (id)_appThread_deepestDescendantOfFunctionRowElement:(id)arg1 containingPoint:(struct CGPoint)arg2;
 - (id)_appThread_deepestFocusableDescendantOfElement:(id)arg1 leadingEdge:(BOOL)arg2;

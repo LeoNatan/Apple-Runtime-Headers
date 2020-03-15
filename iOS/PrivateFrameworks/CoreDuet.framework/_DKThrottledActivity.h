@@ -16,8 +16,8 @@
 }
 
 + (id)standardInstance;
-@property(retain, nonatomic) id <_DKSimpleKeyValueStore> store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <_DKSimpleKeyValueStore> store; // @synthesize store=_store;
 - (void)setDate:(id)arg1 forName:(id)arg2;
 - (void)clearHistoryForName:(id)arg1;
 - (id)description;

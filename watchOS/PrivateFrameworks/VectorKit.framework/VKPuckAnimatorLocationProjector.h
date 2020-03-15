@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _projectedCourse;
 }
 
+- (id).cxx_construct;
 @property(readonly, nonatomic) double projectedCourse; // @synthesize projectedCourse=_projectedCourse;
 @property(readonly, nonatomic) Matrix_6e1d3589 projectedPosition; // @synthesize projectedPosition=_projectedPosition;
 @property(retain, nonatomic) GEORouteMatch *projectedRouteMatch; // @synthesize projectedRouteMatch=_projectedRouteMatch;
 @property(retain, nonatomic) GEORouteMatch *routeMatch; // @synthesize routeMatch=_routeMatch;
-- (id).cxx_construct;
 - (id)detailedDescription;
 @property(readonly, nonatomic) _Bool projectedLocationOnRoute;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee projectedLocation;

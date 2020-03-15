@@ -14,8 +14,8 @@
     int _assetMediaType;
 }
 
-@property int assetMediaType; // @synthesize assetMediaType=_assetMediaType;
 - (void).cxx_destruct;
+@property int assetMediaType; // @synthesize assetMediaType=_assetMediaType;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)localIdentifier;

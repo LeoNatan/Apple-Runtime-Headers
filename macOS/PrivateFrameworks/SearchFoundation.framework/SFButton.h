@@ -23,10 +23,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) SFImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(retain, nonatomic) SFImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

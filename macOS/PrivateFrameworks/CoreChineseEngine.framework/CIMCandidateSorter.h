@@ -16,10 +16,10 @@
 }
 
 + (id)candidateSorterForScriptType:(unsigned long long)arg1 inputModeName:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSArray *storedCandidates; // @synthesize storedCandidates=_storedCandidates;
 @property unsigned long long scriptType; // @synthesize scriptType=_scriptType;
 @property(retain) NSString *inputModeName; // @synthesize inputModeName=_inputModeName;
-- (void).cxx_destruct;
 - (id)candidatesSortedByMethod:(id)arg1;
 - (id)candidatesSortedByStroke:(id)arg1;
 - (id)candidatesSortedByPinyinOrZhuyin:(id)arg1 simplified:(BOOL)arg2 zhuyin:(BOOL)arg3;

@@ -22,8 +22,8 @@
 +     // Error parsing type: v20@0:4@8@12^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}16, name: _addCalendarsForStoreWithUID:toSet:database:
 +     // Error parsing type: v20@0:4@8@12^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}16, name: _addCalendarUIDsFromPrefs:toSet:database:
 +     // Error parsing type: v20@0:4@8@12^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}16, name: _addCalendarWithUID:toSet:database:
-@property(copy, nonatomic) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 - (id)calendarIDClauseForQueryWithVariableName:(id)arg1;
 - (id)filterQueryForKey:(id)arg1 prefix:(id)arg2 whereClause:(id)arg3 creator:(CDUnknownFunctionPointerType)arg4 userInfo:(void *)arg5;
 - (id)filterQueryForQueryString:(id)arg1 creator:(CDUnknownFunctionPointerType)arg2 userInfo:(void *)arg3;

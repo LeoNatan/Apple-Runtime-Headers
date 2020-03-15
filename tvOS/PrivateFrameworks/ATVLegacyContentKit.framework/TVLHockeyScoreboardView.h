@@ -21,13 +21,13 @@
     NSArray *_scoreboardAwayRowValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *scoreboardAwayRowValues; // @synthesize scoreboardAwayRowValues=_scoreboardAwayRowValues;
 @property(retain, nonatomic) NSArray *scoreboardHomeRowValues; // @synthesize scoreboardHomeRowValues=_scoreboardHomeRowValues;
 @property(retain, nonatomic) NSArray *scoreboardHeaderTitles; // @synthesize scoreboardHeaderTitles=_scoreboardHeaderTitles;
 @property(retain, nonatomic) TVLColumnRowView *scoreboardTableView; // @synthesize scoreboardTableView=_scoreboardTableView;
 @property(retain, nonatomic) UILabel *awayScoreboardLabel; // @synthesize awayScoreboardLabel=_awayScoreboardLabel;
 @property(retain, nonatomic) UILabel *homeScoreboardLabel; // @synthesize homeScoreboardLabel=_homeScoreboardLabel;
-- (void).cxx_destruct;
 - (double)columnRowView:(id)arg1 heightForRow:(long long)arg2;
 - (double)columnRowView:(id)arg1 widthForColumn:(long long)arg2;
 - (double)headerHeightForColumnRowView:(id)arg1;

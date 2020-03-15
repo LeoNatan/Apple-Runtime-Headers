@@ -24,10 +24,10 @@
 + (unsigned int)consolidatedSourceFromInferredMapItems:(id)arg1;
 + (double)consolidatedConfidenceFromConfidences:(id)arg1;
 + (_Bool)hasKnownTypeItem:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int source; // @synthesize source=_source;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;

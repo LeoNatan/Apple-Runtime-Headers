@@ -30,6 +30,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *airportCode; // @synthesize airportCode=_airportCode;
 @property(retain, nonatomic) NSData *handle; // @synthesize handle=_handle;
 @property(nonatomic) double quality; // @synthesize quality=_quality;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSString *address; // @synthesize address=_address;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) int locationType; // @synthesize locationType=_locationType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

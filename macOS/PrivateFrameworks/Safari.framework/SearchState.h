@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_parsecSearchResults;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *parsecSearchResults; // @synthesize parsecSearchResults=_parsecSearchResults;
 @property(readonly, nonatomic) NSDate *searchDate; // @synthesize searchDate=_searchDate;
 @property(retain, nonatomic) NSURL *resultURL; // @synthesize resultURL=_resultURL;
 @property(readonly, copy, nonatomic) NSString *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)initWithQuery:(id)arg1 parsecSearchResults:(id)arg2 resultURL:(id)arg3 searchDate:(id)arg4;
 
 @end

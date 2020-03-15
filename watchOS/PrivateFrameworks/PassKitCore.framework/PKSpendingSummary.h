@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *spendingsPerCalendarUnit; // @synthesize spendingsPerCalendarUnit=_spendingsPerCalendarUnit;
 @property(retain, nonatomic) PKPaymentTransactionGroup *adjustments; // @synthesize adjustments=_adjustments;
 @property(retain, nonatomic) PKPaymentTransactionGroup *refunds; // @synthesize refunds=_refunds;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) unsigned int summaryUnit; // @synthesize summaryUnit=_summaryUnit;
 @property(nonatomic) unsigned int summaryType; // @synthesize summaryType=_summaryType;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -6,9 +6,11 @@
 
 #import <TelephonyUtilities/NSObject-Protocol.h>
 
-@class NSSet, NSString;
+@class NSDictionary, NSSet, NSString;
+@protocol TUContactsDataSource;
 
 @protocol TUFilteredRequest <NSObject>
+- (NSDictionary *)contactNamesByHandleWithContactsDataSource:(id <TUContactsDataSource>)arg1;
 - (NSSet *)handles;
 - (NSString *)bundleIdentifier;
 @end

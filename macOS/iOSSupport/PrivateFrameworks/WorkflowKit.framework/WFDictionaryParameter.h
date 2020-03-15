@@ -15,10 +15,10 @@
     NSSet *_allowedValueTypes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *allowedValueTypes; // @synthesize allowedValueTypes=_allowedValueTypes;
 @property(readonly, nonatomic) NSString *localizedNewItemTypeName; // @synthesize localizedNewItemTypeName=_localizedNewItemTypeName;
 @property(readonly, nonatomic) NSString *localizedItemTypeName; // @synthesize localizedItemTypeName=_localizedItemTypeName;
-- (void).cxx_destruct;
 - (id)defaultSupportedVariableTypes;
 - (id)initWithDefinition:(id)arg1;
 - (Class)singleStateClass;

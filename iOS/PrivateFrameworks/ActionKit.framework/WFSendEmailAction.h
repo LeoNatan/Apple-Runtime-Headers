@@ -8,8 +8,11 @@
 
 @interface WFSendEmailAction : WFHandleCustomIntentAction
 {
+    _Bool _contentManaged;
 }
 
+@property(nonatomic, getter=isContentManaged) _Bool contentManaged; // @synthesize contentManaged=_contentManaged;
+- (id)targetDataInfo;
 - (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(_Bool)arg2;
 - (void)generateEmailFromInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)generateFilesFromCollection:(id)arg1 completion:(CDUnknownBlockType)arg2;

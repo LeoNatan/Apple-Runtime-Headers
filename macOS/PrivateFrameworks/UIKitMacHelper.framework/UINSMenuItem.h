@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)separatorItem;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIRVPresenterHighlightDelegate> rvHighlighter; // @synthesize rvHighlighter=_rvHighlighter;
 @property(retain, nonatomic) RVItem *rvItem; // @synthesize rvItem=_rvItem;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *keyEquivalent; // @synthesize keyEquivalent=_keyEquivalent;
 @property(copy, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 
 @end
 

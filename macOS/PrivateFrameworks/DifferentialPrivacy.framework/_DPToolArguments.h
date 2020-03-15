@@ -19,13 +19,13 @@
 }
 
 + (id)usage;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL writeOK; // @synthesize writeOK=_writeOK;
 @property(readonly, copy, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
 @property(readonly, nonatomic) BOOL verbose; // @synthesize verbose=_verbose;
 @property(readonly, copy, nonatomic) NSString *recordKey; // @synthesize recordKey=_recordKey;
 @property(readonly, copy, nonatomic) NSString *arguments; // @synthesize arguments=_arguments;
 @property(readonly, copy, nonatomic) NSString *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (id)description;
 - (id)job;
 - (id)initWithDictionary:(id)arg1;

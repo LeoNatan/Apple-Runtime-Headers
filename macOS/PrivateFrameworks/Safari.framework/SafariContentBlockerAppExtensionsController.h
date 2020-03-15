@@ -22,8 +22,8 @@
 + (id)contentBlockerStore;
 + (id)_contentBlockerStoreWithBundleIdentifier:(id)arg1;
 + (id)sharedController;
-@property(readonly, nonatomic) NSString *crashReporterMessage; // @synthesize crashReporterMessage=_crashReporterMessage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *crashReporterMessage; // @synthesize crashReporterMessage=_crashReporterMessage;
 - (BOOL)allowUnsignedContentBlockers;
 - (id)developerIdentifierForContentBlocker:(id)arg1;
 - (id)contentBlockersFromContentBlockersState:(id)arg1;

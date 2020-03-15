@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     unordered_set_c6a929bd _uuidSet;
 }
 
-@property(readonly) unsigned int index; // @synthesize index=_index;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) unsigned int index; // @synthesize index=_index;
 - (void)p_removeUUIDsFromVector:(const vector_4dc5f307 *)arg1;
 - (void)p_addUUIDsFromVector:(const vector_4dc5f307 *)arg1;
 - (void)p_removeUUIDs:(const unordered_set_c6a929bd *)arg1;

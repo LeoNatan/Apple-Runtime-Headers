@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
     id <PUPhotoPickerFileSizeToolbarProviderDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PUPhotoPickerFileSizeToolbarProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUPhotoPickerFileSizeToolbarProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_computeSelectedIndexPath;
 - (void)_updateTableViewSelection;
 - (void)_updateSizePickerItemIfNeeded;

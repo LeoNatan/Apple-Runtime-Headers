@@ -16,9 +16,9 @@
     NSMutableSet *_hydrationCompletionBlocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *hydrationCompletionBlocks; // @synthesize hydrationCompletionBlocks=_hydrationCompletionBlocks;
 @property(nonatomic) unsigned long long totalNumberOfImages; // @synthesize totalNumberOfImages=_totalNumberOfImages;
-- (void).cxx_destruct;
 - (void)postHydrationBeganNotification;
 - (void)postHydrationCompletedNotification;
 - (id)collectionsTreeAsArrayUpToCollection:(id)arg1;

@@ -25,10 +25,10 @@
     double _accuracy;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double transitionProgress; // @synthesize transitionProgress=_transitionProgress;
 @property(readonly, nonatomic) UICollectionViewLayout *nextLayout; // @synthesize nextLayout=_toLayout;
 @property(readonly, nonatomic) UICollectionViewLayout *currentLayout; // @synthesize currentLayout=_fromLayout;
-- (void).cxx_destruct;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;

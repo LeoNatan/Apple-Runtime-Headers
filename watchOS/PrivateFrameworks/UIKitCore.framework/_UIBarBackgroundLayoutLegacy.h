@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     float _topInset;
 }
 
-@property(nonatomic) float topInset; // @synthesize topInset=_topInset;
 - (void).cxx_destruct;
+@property(nonatomic) float topInset; // @synthesize topInset=_topInset;
 - (void)describeInto:(id)arg1;
 - (void)configureWithoutShadow;
 - (void)configureShadowForBarStyle:(int)arg1;

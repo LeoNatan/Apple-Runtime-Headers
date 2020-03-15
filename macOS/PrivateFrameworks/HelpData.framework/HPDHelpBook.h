@@ -59,6 +59,7 @@
 + (id)type4BookWithID:(id)arg1 params:(id)arg2;
 + (id)type4BookWithID:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long stringEncoding; // @synthesize stringEncoding=_stringEncoding;
 @property(readonly) BOOL usesExternalViewer; // @synthesize usesExternalViewer=_usesExternalViewer;
 @property(retain) NSString *bookID; // @synthesize bookID=_bookID;
@@ -79,7 +80,6 @@
 @property(retain) NSURL *remoteURL; // @synthesize remoteURL=_remoteURL;
 @property(retain) NSArray *indexPaths; // @synthesize indexPaths=_indexPaths;
 @property(readonly) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_populateFromKnownGoodDictionary:(id)arg1;
 @property(readonly) NSDictionary *bookshelfDictionary;
 - (void)encodeWithCoder:(id)arg1;

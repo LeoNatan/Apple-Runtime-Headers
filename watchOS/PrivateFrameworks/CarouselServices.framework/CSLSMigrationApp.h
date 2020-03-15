@@ -21,9 +21,9 @@
     _Bool _isTerminating;
 }
 
+- (void).cxx_destruct;
 @property _Bool isTerminating; // @synthesize isTerminating=_isTerminating;
 @property _Bool isActive; // @synthesize isActive=_isActive;
-- (void).cxx_destruct;
 - (void)alternateSystemApp:(id)arg1 didFailToLaunchWithError:(id)arg2;
 - (void)alternateSystemApp:(id)arg1 didTerminateWithSignal:(int)arg2;
 - (void)alternateSystemApp:(id)arg1 didExitWithStatus:(int)arg2;

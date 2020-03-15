@@ -21,11 +21,11 @@
     NSArray *_otherArticleIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *otherArticleIDs; // @synthesize otherArticleIDs=_otherArticleIDs;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long feedType; // @synthesize feedType=_feedType;
-- (void).cxx_destruct;
 - (void)fetchHeadlinesWithContext:(id)arg1 forIdentifiers:(id)arg2 downloadAssets:(BOOL)arg3 qualityOfService:(long long)arg4 completion:(CDUnknownBlockType)arg5;
 @property(readonly, copy) NSString *description;
 - (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(BOOL)arg3 personalize:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;

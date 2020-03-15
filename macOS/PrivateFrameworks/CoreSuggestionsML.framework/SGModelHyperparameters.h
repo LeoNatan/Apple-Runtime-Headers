@@ -17,12 +17,12 @@
     struct _NSRange _tokenNGramRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long vectorLength; // @synthesize vectorLength=_vectorLength;
 @property(readonly, nonatomic) struct _NSRange tokenNGramRange; // @synthesize tokenNGramRange=_tokenNGramRange;
 @property(readonly, nonatomic) struct _NSRange characterNGramRange; // @synthesize characterNGramRange=_characterNGramRange;
 @property(readonly, copy, nonatomic) NSString *featuresVersion; // @synthesize featuresVersion=_featuresVersion;
 @property(readonly, copy, nonatomic) NSString *featuresModelId; // @synthesize featuresModelId=_featuresModelId;
-- (void).cxx_destruct;
 - (id)sessionDescriptorForLanguage:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 

@@ -17,11 +17,11 @@
 }
 
 + (id)infoButtonNamedImageWrapper;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIEditingRules *editingRules; // @synthesize editingRules=_editingRules;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) BOOL shouldBuildActionGlyphs; // @synthesize shouldBuildActionGlyphs=_shouldBuildActionGlyphs;
 @property(nonatomic) BOOL shouldFormatURLs; // @synthesize shouldFormatURLs=_shouldFormatURLs;
-- (void).cxx_destruct;
 - (void)applyHuggingAndCompressionSettingsToValueView:(id)arg1;
 - (id)accessibilityTitleForGlyphName:(id)arg1;
 - (id)glyphNamedImageWrapperWithName:(id)arg1;

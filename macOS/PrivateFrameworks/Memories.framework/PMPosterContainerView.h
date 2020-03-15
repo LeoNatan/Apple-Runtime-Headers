@@ -14,9 +14,9 @@
     NSArray *_imageViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *imageViews; // @synthesize imageViews=_imageViews;
 @property(retain, nonatomic) NSArray *images; // @synthesize images=_images;
-- (void).cxx_destruct;
 - (void)layout;
 
 @end

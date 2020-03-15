@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     STLockoutViewController *_lockoutViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) STLockoutViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
 @property(retain, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (_Bool)canEnterFullScreen;
 - (_Bool)canPinchToDismiss;
 - (_Bool)canSwipeToDismiss;

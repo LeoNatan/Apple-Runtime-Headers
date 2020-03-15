@@ -40,6 +40,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *controllersQueue; // @synthesize controllersQueue=_controllersQueue;
 @property(readonly, nonatomic) NSMutableArray *hidThreadExecutionBlocks; // @synthesize hidThreadExecutionBlocks=_hidThreadExecutionBlocks;
 @property(readonly, nonatomic) struct __CFRunLoopSource *hidThreadRunLoopSource; // @synthesize hidThreadRunLoopSource=_hidThreadRunLoopSource;
@@ -52,7 +53,6 @@
 @property(nonatomic) struct __IOHIDManager *hidManager; // @synthesize hidManager=_hidManager;
 @property(readonly, nonatomic) BOOL isAppInBackground; // @synthesize isAppInBackground=_isAppInBackground;
 @property(nonatomic) __weak GCController *firstMicroGamepad; // @synthesize firstMicroGamepad=_firstMicroGamepad;
-- (void).cxx_destruct;
 - (void)open;
 - (id)controllers;
 - (void)microControllerWithDigitizerX:(float)arg1 withY:(float)arg2 withTimeStamp:(unsigned long long)arg3 touchDown:(BOOL)arg4;
@@ -92,8 +92,6 @@
 - (void)addConnectedDevices;
 - (void)stopHIDDeviceMonitor;
 - (void)startHIDDeviceMonitor;
-- (void)starSessionDidEnd;
-- (void)starSessionWillBegin;
 - (void)dealloc;
 - (id)init;
 

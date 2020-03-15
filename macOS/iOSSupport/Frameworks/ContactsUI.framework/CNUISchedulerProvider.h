@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)makeBackgroundScheduler;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> afterCACommitScheduler; // @synthesize afterCACommitScheduler=_afterCACommitScheduler;
 @property(readonly, nonatomic) CNSuspendableSchedulerDecorator *suspendableBackgroundScheduler; // @synthesize suspendableBackgroundScheduler=_suspendableBackgroundScheduler;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
-- (void).cxx_destruct;
 - (id)newReaderWriterSchedulerWithName:(id)arg1;
 - (id)newSynchronousSerialSchedulerWithName:(id)arg1;
 - (id)newSerialSchedulerWithName:(id)arg1;

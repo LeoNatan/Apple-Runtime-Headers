@@ -23,6 +23,7 @@
     id <XCUIEventIterating> _eventIterator;
 }
 
+- (void).cxx_destruct;
 @property(getter=isValid) BOOL valid; // @synthesize valid=_valid;
 @property(readonly) id <XCUIEventIterating> eventIterator; // @synthesize eventIterator=_eventIterator;
 @property(readonly) __weak id <XCUIEventRequestDelegate> delegate; // @synthesize delegate=_delegate;
@@ -30,7 +31,6 @@
 @property(readonly) struct __CGEventSource *eventSource; // @synthesize eventSource=_eventSource;
 @property(readonly) XCSynthesizedEventRecord *event; // @synthesize event=_event;
 @property(readonly) double upperBoundOnDuration; // @synthesize upperBoundOnDuration=_upperBoundOnDuration;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)_waitUntilTime:(double)arg1;
 - (void)synthesizeEvent;

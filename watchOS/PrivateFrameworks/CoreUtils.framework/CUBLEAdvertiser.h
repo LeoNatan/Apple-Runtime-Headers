@@ -31,6 +31,7 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSData *lgDeviceID; // @synthesize lgDeviceID=_lgDeviceID;
 @property(copy, nonatomic) NSData *lgBTAddress; // @synthesize lgBTAddress=_lgBTAddress;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned int advertiseFlags; // @synthesize advertiseFlags=_advertiseFlags;
 @property(copy, nonatomic) NSData *appleManufacturerData; // @synthesize appleManufacturerData=_appleManufacturerData;
-- (void).cxx_destruct;
 - (void)peripheralManagerDidStartAdvertising:(id)arg1 error:(id)arg2;
 - (void)peripheralManagerDidUpdateState:(id)arg1;
 - (id)_advertiseParametersSummary:(id)arg1;

@@ -22,13 +22,13 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) id <HMCameraClipFetchAssetContextOperationDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
 @property(copy) CDUnknownBlockType downloadPosterFrameCompletionBlock; // @synthesize downloadPosterFrameCompletionBlock=_downloadPosterFrameCompletionBlock;
 @property(copy) NSURL *destinationFileURL; // @synthesize destinationFileURL=_destinationFileURL;
 @property(readonly) HMCameraClipPosterFrame *posterFrame; // @synthesize posterFrame=_posterFrame;
 @property(readonly) HMCameraClip *clip; // @synthesize clip=_clip;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)writeImageData:(id)arg1;
 - (id)decryptData:(id)arg1;

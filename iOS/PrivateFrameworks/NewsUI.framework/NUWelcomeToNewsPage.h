@@ -19,11 +19,11 @@
     NUPageStyle *_pageStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUPageStyle *pageStyle; // @synthesize pageStyle=_pageStyle;
 @property(nonatomic) unsigned long long pageNextAction; // @synthesize pageNextAction=_pageNextAction;
 @property(retain, nonatomic) NUWelcomeToNewsViewController *welcomeToNewsViewController; // @synthesize welcomeToNewsViewController=_welcomeToNewsViewController;
 @property(readonly, nonatomic) id <NURouter> router; // @synthesize router=_router;
-- (void).cxx_destruct;
 - (void)pageStyling:(CDUnknownBlockType)arg1;
 - (void)activityProvider:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool allowNeighboringAdvertising;

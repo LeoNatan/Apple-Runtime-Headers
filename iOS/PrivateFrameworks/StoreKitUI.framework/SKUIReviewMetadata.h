@@ -22,6 +22,7 @@
     unsigned long long _titleMaxLength;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long titleMaxLength; // @synthesize titleMaxLength=_titleMaxLength;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSURL *submitURL; // @synthesize submitURL=_submitURL;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(readonly, nonatomic) unsigned long long bodyMaxLength; // @synthesize bodyMaxLength=_bodyMaxLength;
 @property(copy, nonatomic) NSString *body; // @synthesize body=_body;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithReviewDictionary:(id)arg1;
 

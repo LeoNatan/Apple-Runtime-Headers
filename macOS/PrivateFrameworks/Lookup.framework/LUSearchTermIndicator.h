@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)normalizedString:(id)arg1;
-@property(retain, nonatomic) NSAttributedString *searchTerm; // @synthesize searchTerm=_searchTerm;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSAttributedString *searchTerm; // @synthesize searchTerm=_searchTerm;
 - (void)drawContentsForRect:(struct CGRect)arg1;
 - (void)setSearchTerm:(id)arg1 targetView:(id)arg2 targetRect:(struct CGRect)arg3;
 - (void)dealloc;

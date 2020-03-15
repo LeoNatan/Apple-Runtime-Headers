@@ -19,6 +19,7 @@
     long long _colorCategory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long colorCategory; // @synthesize colorCategory=_colorCategory;
 @property(readonly, nonatomic) _Bool alwaysShowExtended; // @synthesize alwaysShowExtended=_alwaysShowExtended;
 @property(readonly, nonatomic) NSArray *extendedColors; // @synthesize extendedColors=_extendedColors;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) AVTCoreModelRowOptions *options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEmpty;
 - (id)description;
 - (id)initWithTitle:(id)arg1 primaryColors:(id)arg2 extendedColors:(id)arg3 identifier:(id)arg4 alwaysShowExtended:(_Bool)arg5 colorCategory:(long long)arg6 options:(id)arg7;

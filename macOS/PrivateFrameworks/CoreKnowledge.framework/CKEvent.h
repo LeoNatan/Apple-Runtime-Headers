@@ -16,11 +16,11 @@
     NSDictionary *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly, retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (unsigned long long)hash;

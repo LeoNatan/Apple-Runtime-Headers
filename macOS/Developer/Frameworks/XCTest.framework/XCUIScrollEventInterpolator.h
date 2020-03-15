@@ -16,8 +16,8 @@
     XCPointerEvent *_pointerEvent;
 }
 
-@property(readonly) XCPointerEvent *pointerEvent; // @synthesize pointerEvent=_pointerEvent;
 - (void).cxx_destruct;
+@property(readonly) XCPointerEvent *pointerEvent; // @synthesize pointerEvent=_pointerEvent;
 - (id)pointerEventForInterpolationStep:(id)arg1 error:(id *)arg2;
 @property(readonly, copy) NSNumber *maxInterpolationValue;
 - (id)initWithPointerEvent:(id)arg1;

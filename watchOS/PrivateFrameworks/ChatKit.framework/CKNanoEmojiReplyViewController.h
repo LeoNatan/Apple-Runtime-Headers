@@ -18,9 +18,9 @@
     CKNanoSendController *_sendController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKNanoSendController *sendController; // @synthesize sendController=_sendController;
 @property(nonatomic) __weak id <CKNanoReplyViewControllerDismissalDelegate> dismissalDelegate; // @synthesize dismissalDelegate=_dismissalDelegate;
-- (void).cxx_destruct;
 - (void)finishDismissalWithOptions:(unsigned int)arg1;
 - (void)finishPresentationWithOptions:(unsigned int)arg1;
 - (void)addPresentationAnimationsWithOptions:(unsigned int)arg1;

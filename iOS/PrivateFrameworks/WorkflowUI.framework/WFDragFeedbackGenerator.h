@@ -14,9 +14,9 @@
     _UIDragSnappingFeedbackGenerator *_feedbackGenerator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak _UIDragSnappingFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(nonatomic) long long activeDragSessions; // @synthesize activeDragSessions=_activeDragSessions;
-- (void).cxx_destruct;
 - (void)objectSnapped;
 - (void)draggedObjectLanded;
 - (void)draggedObjectLifted;

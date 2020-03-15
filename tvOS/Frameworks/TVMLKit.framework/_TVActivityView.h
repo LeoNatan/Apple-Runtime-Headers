@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     UIView *_textView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) UIView *activityView; // @synthesize activityView=_activityView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

@@ -18,9 +18,9 @@
 
 + (id)newSharedVendorUniverseWithSilo:(id)arg1;
 + (id)newIsolatedUniverseWithOnlySilo:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLServiceVendor *vendor; // @synthesize vendor=_vendor;
 @property(readonly, nonatomic) CLSilo *silo; // @synthesize silo=_silo;
-- (void).cxx_destruct;
 - (id)initWithSilo:(id)arg1 vendor:(id)arg2;
 
 // Remaining properties

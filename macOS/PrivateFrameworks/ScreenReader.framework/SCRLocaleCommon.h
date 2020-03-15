@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *preferredLanguage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *preferredLanguage; // @synthesize preferredLanguage;
 @property(readonly, nonatomic) NSArray *preferredLanguages; // @synthesize preferredLanguages;
 @property(readonly, nonatomic) unsigned long long characterDirection; // @synthesize characterDirection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isLocaleCharacterDirectionRightToLeft; // @dynamic isLocaleCharacterDirectionRightToLeft;
 
 // Remaining properties

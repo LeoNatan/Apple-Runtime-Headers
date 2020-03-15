@@ -19,6 +19,7 @@
     double _minimumLocationMatchingScore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minimumLocationMatchingScore; // @synthesize minimumLocationMatchingScore=_minimumLocationMatchingScore;
 @property(nonatomic) double maximumLocationMatchingDistance; // @synthesize maximumLocationMatchingDistance=_maximumLocationMatchingDistance;
 @property(nonatomic) double minimumPeopleMatchingScore; // @synthesize minimumPeopleMatchingScore=_minimumPeopleMatchingScore;
@@ -26,7 +27,6 @@
 @property(nonatomic) unsigned long long memoryCategory; // @synthesize memoryCategory=_memoryCategory;
 @property(nonatomic) unsigned long long relatedType; // @synthesize relatedType=_relatedType;
 @property(retain, nonatomic) NSSet *featureVectors; // @synthesize featureVectors=_featureVectors;
-- (void).cxx_destruct;
 - (id)_potentialMemoriesForDryTesting;
 - (id)_createMemoryDebugWithPotentialMemory:(id)arg1;
 - (unsigned long long)_postProcessMatch:(id)arg1;

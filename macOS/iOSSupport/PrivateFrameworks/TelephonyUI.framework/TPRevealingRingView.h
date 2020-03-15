@@ -29,6 +29,7 @@
 }
 
 + (id)classIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *colorInsideRing; // @synthesize colorInsideRing=_colorInsidegamRing;
 @property(retain, nonatomic) UIColor *colorOutsideRing; // @synthesize colorOutsideRing=_colorOutsideRing;
 @property(nonatomic) double unrevealAnimationDuration; // @synthesize unrevealAnimationDuration=_unrevealAnimationDuration;
@@ -38,7 +39,6 @@
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double alphaOutsideRing; // @synthesize alphaOutsideRing=_alphaOutsideRing;
 @property(nonatomic) double alphaInsideRing; // @synthesize alphaInsideRing=_alphaInsideRing;
-- (void).cxx_destruct;
 - (void)_animateForReveal:(BOOL)arg1 withDuration:(float)arg2 delay:(double)arg3;
 - (BOOL)_shouldDrawAsCircle:(struct CGSize)arg1 cornerRadius:(double)arg2;
 - (BOOL)_isSquare:(struct CGSize)arg1;

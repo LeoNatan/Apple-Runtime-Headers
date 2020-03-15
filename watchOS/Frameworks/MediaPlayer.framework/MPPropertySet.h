@@ -22,9 +22,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)propertySetWithProperties:(id)arg1;
 + (id)emptyPropertySet;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *relationships; // @synthesize relationships=_relationships;
 @property(readonly, nonatomic) NSSet *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 - (id)_stateDumpObject;
 - (id)propertySetByIntersectingWithPropertySet:(id)arg1;
 - (id)propertySetByCombiningWithPropertySet:(id)arg1;

@@ -22,6 +22,7 @@
 }
 
 + (id)_humanReadableStringForGroupType:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isManifestDirty) _Bool manifestDirty; // @synthesize manifestDirty=_manifestDirty;
 @property(retain, nonatomic) NSMutableDictionary *manifest; // @synthesize manifest=_manifest;
 @property(retain, nonatomic) NSMutableDictionary *assetKeysByTag; // @synthesize assetKeysByTag=_assetKeysByTag;
@@ -31,7 +32,6 @@
 @property(nonatomic) unsigned long long maxCacheSize; // @synthesize maxCacheSize=_maxCacheSize;
 @property(retain, nonatomic) NSString *cachePath; // @synthesize cachePath=_cachePath;
 @property(nonatomic) long long groupType; // @synthesize groupType=_groupType;
-- (void).cxx_destruct;
 - (id)_manifestFilePath;
 - (void)_saveManifest;
 - (void)_updateManifestWithChange:(CDUnknownBlockType)arg1;

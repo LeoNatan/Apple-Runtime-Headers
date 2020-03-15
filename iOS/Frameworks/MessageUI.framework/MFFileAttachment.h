@@ -15,10 +15,10 @@
     NSURL *_attachmentContentIDURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int attachmentType; // @synthesize attachmentType=_attachmentType;
 @property(retain, nonatomic) NSURL *attachmentContentIDURL; // @synthesize attachmentContentIDURL=_attachmentContentIDURL;
 @property(copy, nonatomic) NSString *attachmentName; // @synthesize attachmentName=_attachmentName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 

@@ -21,9 +21,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property __weak HMAccessorySettingGroup *group; // @synthesize group=_group;
 @property(readonly) _HMAccessorySettingGroup *internal; // @synthesize internal=_internal;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)_settingGroup:(id)arg1 didRemoveSettingGroup:(id)arg2;
 - (void)_settingGroup:(id)arg1 didAddSettingGroup:(id)arg2;

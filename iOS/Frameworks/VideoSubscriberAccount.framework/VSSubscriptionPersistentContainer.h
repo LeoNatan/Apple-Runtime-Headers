@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSURL *_subscriptionsPropertyListURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *subscriptionsPropertyListURL; // @synthesize subscriptionsPropertyListURL=_subscriptionsPropertyListURL;
 @property(copy, nonatomic) NSURL *persistentStoreURL; // @synthesize persistentStoreURL=_persistentStoreURL;
 @property(copy, nonatomic) NSString *persistentStoreType; // @synthesize persistentStoreType=_persistentStoreType;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
 @property(nonatomic) _Bool didSetupPersistence; // @synthesize didSetupPersistence=_didSetupPersistence;
 @property(retain, nonatomic) NSOperationQueue *migrationQueue; // @synthesize migrationQueue=_migrationQueue;
-- (void).cxx_destruct;
 - (void)performBlockAndWait:(CDUnknownBlockType)arg1;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 - (void)_performBlock:(CDUnknownBlockType)arg1 andWait:(_Bool)arg2;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *idStatusCompletionBlocks; // @synthesize idStatusCompletionBlocks=_idStatusCompletionBlocks;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
-- (void).cxx_destruct;
 - (void)idStatusUpdatedForDestinations:(id)arg1 service:(id)arg2;
 - (void)addIDSIDQueryControllerDelegate;
 - (void)handleIDStatusCompletionBlocksForBizID:(id)arg1 idStatus:(long long)arg2;

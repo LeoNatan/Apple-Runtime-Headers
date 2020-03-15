@@ -18,8 +18,8 @@
 + (id)percentStringWithNumber:(id)arg1;
 + (id)stringWithNumber:(id)arg1 decimalPrecision:(unsigned int)arg2 roundingMode:(unsigned int)arg3;
 + (id)stringWithNumber:(id)arg1 decimalPrecision:(unsigned int)arg2;
-@property(readonly, nonatomic) FIUIUnitManager *unitManager; // @synthesize unitManager=_unitManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FIUIUnitManager *unitManager; // @synthesize unitManager=_unitManager;
 - (id)localizedInSessionDescriptionForGroundElevation:(unsigned int)arg1;
 - (id)localizedInSessionDescriptionForElevation:(unsigned int)arg1;
 - (id)localizedDistanceByStrokeStyle:(id)arg1 isPoolSwim:(_Bool)arg2;

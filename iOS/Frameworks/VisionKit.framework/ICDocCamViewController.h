@@ -193,6 +193,7 @@
 + (void)registerDefaults;
 + (void)initialize;
 +     // Error parsing type: {?=[3]}28@0:8f16f20f24, name: cameraIntrinsicMatrixForWidth:height:pixelFocalLength:
+- (void).cxx_destruct;
 @property(nonatomic) _Bool scanMovieRecordingDontShowWarning; // @synthesize scanMovieRecordingDontShowWarning=_scanMovieRecordingDontShowWarning;
 @property(nonatomic) _Bool scanMovieRecordingEnabled; // @synthesize scanMovieRecordingEnabled=_scanMovieRecordingEnabled;
 @property(nonatomic) __weak UIButton *recordButton; // @synthesize recordButton=_recordButton;
@@ -353,7 +354,6 @@
 @property(nonatomic) long long setupResult; // @synthesize setupResult=_setupResult;
 @property(retain, nonatomic) ICDocCamThumbnailCollectionViewController *thumbnailViewController; // @synthesize thumbnailViewController=_thumbnailViewController;
 @property(retain, nonatomic) ICDocCamThumbnailContainerView *thumbnailContainerView; // @synthesize thumbnailContainerView=_thumbnailContainerView;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (_Bool)useGestureRecognizerForVolumeButtons;
 - (void)handlePhysicalButtonReleased:(long long)arg1;

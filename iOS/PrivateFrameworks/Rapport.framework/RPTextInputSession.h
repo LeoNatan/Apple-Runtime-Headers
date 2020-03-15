@@ -20,10 +20,10 @@
     CDUnknownBlockType _rtiUpdatedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType rtiUpdatedHandler; // @synthesize rtiUpdatedHandler=_rtiUpdatedHandler;
 @property(readonly, nonatomic) RTIInputSystemSourceSession *rtiSession; // @synthesize rtiSession=_rtiSession;
 @property(retain, nonatomic) id <RPMessageable> messenger; // @synthesize messenger=_messenger;
-- (void).cxx_destruct;
 - (void)handleTextActionPayload:(id)arg1;
 - (void)_handleTextInputChange:(id)arg1 started:(_Bool)arg2;
 - (void)_handleTextInputStopped:(id)arg1;

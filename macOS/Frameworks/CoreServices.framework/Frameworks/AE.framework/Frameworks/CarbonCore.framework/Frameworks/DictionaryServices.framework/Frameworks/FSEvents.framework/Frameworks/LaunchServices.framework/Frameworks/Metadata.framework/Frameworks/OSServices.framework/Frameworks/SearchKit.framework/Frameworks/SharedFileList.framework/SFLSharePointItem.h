@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id _internalSharePoint;
 }
 
-@property(retain) SPMSharePoint *internalSharePoint; // @synthesize internalSharePoint=_internalSharePoint;
 - (void).cxx_destruct;
+@property(retain) SPMSharePoint *internalSharePoint; // @synthesize internalSharePoint=_internalSharePoint;
 @property unsigned long long seed;
 @property(copy) NSDictionary *properties;
 @property(copy) SFLBookmark *bookmark; // @dynamic bookmark;

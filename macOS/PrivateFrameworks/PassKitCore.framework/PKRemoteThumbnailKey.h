@@ -16,9 +16,9 @@
     NSDictionary *_requestDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *requestDictionary; // @synthesize requestDictionary=_requestDictionary;
 @property(retain, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isEqualToRemoteThumbnailKey:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

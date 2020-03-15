@@ -15,8 +15,8 @@
 
 + (unsigned int)minimumSupportedVersion;
 + (unsigned int)serializationVersion;
-@property(retain, nonatomic) TTMergeableAttributedString *mergeableString; // @synthesize mergeableString=_mergeableString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TTMergeableAttributedString *mergeableString; // @synthesize mergeableString=_mergeableString;
 - (id)serializeCurrentVersion:(unsigned int *)arg1;
 - (void)mergeVersion:(unsigned int)arg1 fromData:(id)arg2;
 - (unsigned long long)mergeWithStringVersionedDocument:(id)arg1;

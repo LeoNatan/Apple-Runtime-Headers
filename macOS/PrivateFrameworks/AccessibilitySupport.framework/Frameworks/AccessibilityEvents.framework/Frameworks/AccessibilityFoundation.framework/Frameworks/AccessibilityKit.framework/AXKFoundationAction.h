@@ -14,8 +14,8 @@
 }
 
 + (id)actionWithAction:(id)arg1;
-@property(retain, nonatomic) id <AXFAction> action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <AXFAction> action; // @synthesize action=_action;
 - (id)description;
 - (BOOL)mainWithElementController:(id)arg1;
 - (id)actionDescription;

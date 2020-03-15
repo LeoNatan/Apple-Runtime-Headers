@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
     TVHKDMAPMediaEntityIdentifier *_albumArtistDMAPIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) TVHKDMAPMediaEntityIdentifier *albumArtistDMAPIdentifier; // @synthesize albumArtistDMAPIdentifier=_albumArtistDMAPIdentifier;
 @property(copy, nonatomic) TVHKDMAPMediaEntityIdentifier *albumDMAPIdentifier; // @synthesize albumDMAPIdentifier=_albumDMAPIdentifier;
 @property(retain, nonatomic) TVHSDMAPChangeTrackingEntity *changeTrackingEntity; // @synthesize changeTrackingEntity=_changeTrackingEntity;
-- (void).cxx_destruct;
 - (unsigned long long)_albumPersistentID;
 - (id)videoCredits;
 - (id)studio;

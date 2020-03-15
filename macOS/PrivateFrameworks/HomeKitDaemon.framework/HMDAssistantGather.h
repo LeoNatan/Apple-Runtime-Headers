@@ -19,10 +19,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *currentHomekitObjects; // @synthesize currentHomekitObjects=_currentHomekitObjects;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak HMDHomeManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (void)getSyncEntityObjectsWithValidity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)numberOfHomeKitObjects;
 @property(readonly, nonatomic) NSArray *homeKitObjects;

@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     NSURL *__assetURL;
 }
 
+- (void).cxx_destruct;
 @property(setter=_setAnimatedImageRequestID:) int _animatedImageRequestID; // @synthesize _animatedImageRequestID=__animatedImageRequestID;
 @property(setter=_setImageManagerVideoRequestID:) int _imageManagerVideoRequestID; // @synthesize _imageManagerVideoRequestID=__imageManagerVideoRequestID;
 @property(retain, nonatomic, setter=_setAssetURL:) NSURL *_assetURL; // @synthesize _assetURL=__assetURL;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setLivePhotoView:) PHLivePhotoView *_livePhotoView; // @synthesize _livePhotoView=__livePhotoView;
 @property(retain, nonatomic) PUBrowsingIrisPlayer *_irisPlayer; // @synthesize _irisPlayer=__irisPlayer;
 @property(nonatomic) __weak id <PUPhotoPicker> photoPicker; // @synthesize photoPicker=_photoPicker;
-- (void).cxx_destruct;
 - (BOOL)_isPhotosPickerExtensionAvailable;
 - (void)performPhotoPickerSelection;
 - (void)setPhotoPickerMediaTypes:(id)arg1;

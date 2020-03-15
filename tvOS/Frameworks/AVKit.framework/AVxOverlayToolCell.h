@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     UIView *_focusView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *focusView; // @synthesize focusView=_focusView;
 @property(retain, nonatomic) _UIFloatingContentView *floatingView; // @synthesize floatingView=_floatingView;
 @property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVControlItem *controlItem; // @synthesize controlItem=_controlItem;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)updateFocusState:(id)arg1;
 - (void)didHintFocusMovement:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

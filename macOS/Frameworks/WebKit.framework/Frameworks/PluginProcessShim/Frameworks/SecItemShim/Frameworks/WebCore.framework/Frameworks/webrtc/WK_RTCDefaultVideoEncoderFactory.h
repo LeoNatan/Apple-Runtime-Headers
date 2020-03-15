@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <webrtc/WK_RTCVideoEncoderFactory-Protocol.h>
+#import <webrtc/RTCVideoEncoderFactory-Protocol.h>
 
 @class NSString, WK_RTCVideoCodecInfo;
 
 __attribute__((visibility("hidden")))
-@interface WK_RTCDefaultVideoEncoderFactory : NSObject <WK_RTCVideoEncoderFactory>
+@interface WK_RTCDefaultVideoEncoderFactory : NSObject <RTCVideoEncoderFactory>
 {
     WK_RTCVideoCodecInfo *preferredCodec;
 }
 
 + (id)supportedCodecs;
-@property(retain, nonatomic) WK_RTCVideoCodecInfo *preferredCodec; // @synthesize preferredCodec;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WK_RTCVideoCodecInfo *preferredCodec; // @synthesize preferredCodec;
 - (id)supportedCodecs;
 - (id)createEncoder:(id)arg1;
 

@@ -18,11 +18,11 @@
 }
 
 + (id)userCancelledError;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSDictionary *result; // @synthesize result=_result;
 @property(retain, nonatomic) TRSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)finishWithResult:(id)arg1;
 - (void)execute;

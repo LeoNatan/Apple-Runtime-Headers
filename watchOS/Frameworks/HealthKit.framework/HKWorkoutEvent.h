@@ -27,9 +27,9 @@
 + (id)_workoutEventWithType:(int)arg1 dateInterval:(id)arg2 metadata:(id)arg3;
 + (id)_workoutEventWithType:(int)arg1 date:(id)arg2 metadata:(id)arg3;
 + (id)_newWorkoutEventWithType:(int)arg1 dateInterval:(id)arg2 metadata:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly, copy) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
-- (void).cxx_destruct;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

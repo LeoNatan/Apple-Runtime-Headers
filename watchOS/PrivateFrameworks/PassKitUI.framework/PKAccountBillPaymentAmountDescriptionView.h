@@ -33,6 +33,7 @@
     NSDecimalNumber *_maximumAmount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showDescriptionSubtitle; // @synthesize showDescriptionSubtitle=_showDescriptionSubtitle;
 @property(nonatomic) _Bool showDescriptionLabels; // @synthesize showDescriptionLabels=_showDescriptionLabels;
 @property(copy, nonatomic) NSDecimalNumber *maximumAmount; // @synthesize maximumAmount=_maximumAmount;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(readonly, nonatomic) PKAccountBillPaymentAmountContainerView *amountContainerView; // @synthesize amountContainerView=_amountContainerView;
 @property(nonatomic) id <PKAccountBillPaymentAmountDescriptionViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_keypadSuggestions;
 - (_Bool)_shouldShakeWithNewAmount:(id)arg1;
 - (_Bool)_isEnteredAmountValid;

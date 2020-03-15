@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     id <CWFXPCEventProxyDelegate> _delegate;
 }
 
-@property id <CWFXPCEventProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property id <CWFXPCEventProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)receivedAcknowledgedXPCEvent:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)receivedXPCEvent:(id)arg1;
 - (void)__acknowledgeEventWithUUID:(id)arg1;

@@ -27,6 +27,7 @@
     _TVPagePerformanceController *_performanceController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak _TVPagePerformanceController *performanceController; // @synthesize performanceController=_performanceController;
 @property(nonatomic) unsigned long long templateDidLoadLastImageProxy; // @synthesize templateDidLoadLastImageProxy=_templateDidLoadLastImageProxy;
 @property(nonatomic) unsigned long long templateWillLoadFirstImageProxy; // @synthesize templateWillLoadFirstImageProxy=_templateWillLoadFirstImageProxy;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned long long templateUpdateCount; // @synthesize templateUpdateCount=_templateUpdateCount;
 @property(copy, nonatomic) NSString *templateElementName; // @synthesize templateElementName=_templateElementName;
 @property(nonatomic) __weak IKViewElement *templateElement; // @synthesize templateElement=_templateElement;
-- (void).cxx_destruct;
 - (void)_receivedImageProxyDidLoadNotification:(id)arg1;
 - (void)_receivedImageProxyWillLoadNotification:(id)arg1;
 - (void)_maybeStopListeningForInitialImageProxyLoadNotifications;

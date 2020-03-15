@@ -15,10 +15,10 @@
     NSTimer *_expirationTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTimer *expirationTimer; // @synthesize expirationTimer=_expirationTimer;
 @property(copy, nonatomic) id completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

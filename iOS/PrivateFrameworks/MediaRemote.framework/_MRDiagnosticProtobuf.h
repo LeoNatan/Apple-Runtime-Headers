@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *diagnosticInfo; // @synthesize diagnosticInfo=_diagnosticInfo;
 @property(nonatomic) double dateGenerated; // @synthesize dateGenerated=_dateGenerated;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

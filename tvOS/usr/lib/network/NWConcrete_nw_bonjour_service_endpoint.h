@@ -6,6 +6,9 @@
 
 #import <network/NWConcrete_nw_endpoint.h>
 
+@class NSObject;
+@protocol OS_nw_txt_record;
+
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_bonjour_service_endpoint : NWConcrete_nw_endpoint
 {
@@ -13,8 +16,10 @@ __attribute__((visibility("hidden")))
     char *service_type;
     char *service_domain;
     char *service_composite;
+    NSObject<OS_nw_txt_record> *txt_record;
 }
 
+- (void).cxx_destruct;
 - (unsigned long long)getHash;
 - (id)copyEndpoint;
 - (_Bool)isEqualToEndpoint:(id)arg1 matchInterface:(_Bool)arg2 matchParent:(_Bool)arg3;

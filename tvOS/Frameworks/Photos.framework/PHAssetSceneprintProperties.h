@@ -15,8 +15,8 @@
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
-@property(readonly, nonatomic) NSData *sceneprint; // @synthesize sceneprint=_sceneprint;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *sceneprint; // @synthesize sceneprint=_sceneprint;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(_Bool)arg3;
 
 @end

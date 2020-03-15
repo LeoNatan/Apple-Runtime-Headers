@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKCurrencyAmount *cost; // @synthesize cost=_cost;
 @property(readonly, nonatomic) NSSet *transitNetworkIdentifiers; // @synthesize transitNetworkIdentifiers=_transitNetworkIdentifiers;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

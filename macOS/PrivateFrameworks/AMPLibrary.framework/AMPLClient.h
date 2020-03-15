@@ -25,6 +25,7 @@
     unsigned long long _clientType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL lostConnection; // @synthesize lostConnection=_lostConnection;
 @property(nonatomic) unsigned long long clientType; // @synthesize clientType=_clientType;
 @property(retain, nonatomic) NSXPCConnection *connectionToService; // @synthesize connectionToService=_connectionToService;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) BOOL registered; // @synthesize registered=_registered;
 @property(readonly, nonatomic) unsigned long long mediaDomains; // @synthesize mediaDomains=_mediaDomains;
 @property(readonly, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
-- (void).cxx_destruct;
 - (id)remoteRegisteredObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)invalidate;
 - (void)closeMediaDomains:(CDUnknownBlockType)arg1;

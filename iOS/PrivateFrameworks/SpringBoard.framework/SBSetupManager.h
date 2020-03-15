@@ -21,8 +21,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic, getter=isInSetupModeReadyToExit) _Bool inSetupModeReadyToExit; // @synthesize inSetupModeReadyToExit=_inSetupModeReadyToExit;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isInSetupModeReadyToExit) _Bool inSetupModeReadyToExit; // @synthesize inSetupModeReadyToExit=_inSetupModeReadyToExit;
 - (void)eventSource:(id)arg1 didBeginTransitionToMode:(long long)arg2 withLayoutState:(id)arg3 activatingElement:(id)arg4 triggeredBy:(long long)arg5;
 - (void)_clearFloatingDockAssertion;
 - (void)_setupProcessChangedNotificationReceived:(id)arg1;

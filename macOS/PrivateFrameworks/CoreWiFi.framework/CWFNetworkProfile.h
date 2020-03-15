@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSMutableDictionary *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *internal; // @synthesize internal=_internal;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

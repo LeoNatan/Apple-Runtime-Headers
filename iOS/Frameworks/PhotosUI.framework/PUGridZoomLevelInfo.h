@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _lastItemPixelSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool summarizeSections; // @synthesize summarizeSections=_summarizeSections;
 @property(readonly, nonatomic) long long maxRowsPerSection; // @synthesize maxRowsPerSection=_maxRowsPerSection;
 @property(nonatomic) struct CGSize lastItemPixelSize; // @synthesize lastItemPixelSize=_lastItemPixelSize;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PUMomentsZoomLevelManager *zoomLevelManager; // @synthesize zoomLevelManager=_zoomLevelManager;
 @property(readonly, nonatomic) unsigned long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(readonly, nonatomic) struct CGSize thumbnailImageSize; // @synthesize thumbnailImageSize=_thumbnailImageSize;
-- (void).cxx_destruct;
 - (double)cellAspectRatioHint;
 - (long long)imageDeliveryMode;
 @property(readonly, nonatomic) _Bool supportsCollectionViewDragSource;

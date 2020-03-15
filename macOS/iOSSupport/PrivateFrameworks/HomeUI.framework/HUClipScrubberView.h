@@ -21,6 +21,7 @@
     HUBlendedSeparatorView *_rightBlendedSeparator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isPlayingMedia; // @synthesize isPlayingMedia=_isPlayingMedia;
 @property(retain, nonatomic) HUBlendedSeparatorView *rightBlendedSeparator; // @synthesize rightBlendedSeparator=_rightBlendedSeparator;
 @property(retain, nonatomic) HUBlendedSeparatorView *leftBlendedSeparator; // @synthesize leftBlendedSeparator=_leftBlendedSeparator;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UIButton *leftActionButton; // @synthesize leftActionButton=_leftActionButton;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) HUClipScrubberPlayheadView *playHeadView; // @synthesize playHeadView=_playHeadView;
-- (void).cxx_destruct;
 - (id)_deleteImage;
 - (id)_pauseImage;
 - (id)_playImage;

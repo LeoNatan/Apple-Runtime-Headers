@@ -23,6 +23,7 @@
 }
 
 + (id)entryWithIdentifier:(id)arg1 label:(id)arg2 value:(id)arg3;
+- (void).cxx_destruct;
 @property(copy) NSArray *multiValueIdentifiers; // @synthesize multiValueIdentifiers=_multiValueIdentifiers;
 @property(copy) NSArray *personIdentifiers; // @synthesize personIdentifiers=_personIdentifiers;
 @property(retain) id suggestedValue; // @synthesize suggestedValue=_suggestedValue;
@@ -33,7 +34,6 @@
 @property(copy) id value; // @synthesize value=_value;
 @property(copy) NSString *label; // @synthesize label=_label;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualIgnoringIdentifiers:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

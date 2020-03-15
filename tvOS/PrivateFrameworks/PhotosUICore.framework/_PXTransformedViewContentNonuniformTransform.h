@@ -14,9 +14,9 @@
     PXNonuniformTransform *_transform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXNonuniformTransform *transform; // @synthesize transform=_transform;
 @property(readonly, nonatomic) UIView *transformedView; // @synthesize transformedView=_transformedView;
-- (void).cxx_destruct;
 - (id)inverseTransform;
 - (struct CGAffineTransform)affineTransformForRect:(struct CGRect)arg1 inCoordinateSpace:(id)arg2;
 - (id)initWithTransformedView:(id)arg1 transform:(id)arg2;

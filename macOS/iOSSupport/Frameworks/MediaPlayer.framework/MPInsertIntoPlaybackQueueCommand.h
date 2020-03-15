@@ -18,8 +18,8 @@
     NSArray *_supportedInsertionPositions;
 }
 
-@property(copy, nonatomic) NSArray *supportedInsertionPositions; // @synthesize supportedInsertionPositions=_supportedInsertionPositions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *supportedInsertionPositions; // @synthesize supportedInsertionPositions=_supportedInsertionPositions;
 - (id)_mediaRemoteCommandInfoOptions;
 - (void)setSupportedSharedQueue:(BOOL)arg1;
 - (void)unregisterSupportedCustomQueueIdentifier:(id)arg1;

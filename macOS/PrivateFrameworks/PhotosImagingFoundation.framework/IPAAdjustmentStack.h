@@ -16,9 +16,9 @@
     NSArray *_adjustments;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *adjustments; // @synthesize adjustments=_adjustments;
 @property(copy, nonatomic) IPAAdjustmentVersionInfo *versionInfo; // @synthesize versionInfo=_versionInfo;
-- (void).cxx_destruct;
 - (id)_debugDescriptionSuffix;
 - (id)debugDescription;
 - (id)description;

@@ -21,13 +21,13 @@
 + (struct CGRect)borderMaskRectForContentRect:(struct CGRect)arg1;
 + (struct CGRect)imageViewRectForContentRect:(struct CGRect)arg1 liveViewRect:(struct CGRect)arg2 imageSize:(struct CGSize)arg3 scale:(double)arg4;
 + (struct CGRect)liveViewRectForContentRect:(struct CGRect)arg1 aspectRatio:(struct CGSize)arg2 layoutMode:(long long)arg3 scale:(double)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *borderMaskView; // @synthesize borderMaskView=_borderMaskView;
 @property(readonly, nonatomic) AVTUIAnimatingImageView *imageViewsContainer; // @synthesize imageViewsContainer=_imageViewsContainer;
 @property(readonly, nonatomic) long long layoutMode; // @synthesize layoutMode=_layoutMode;
 @property(nonatomic) struct CGSize aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(retain, nonatomic) UIImage *staticImage; // @synthesize staticImage=_staticImage;
 @property(retain, nonatomic) UIView *liveView; // @synthesize liveView=_liveView;
-- (void).cxx_destruct;
 - (void)setStaticViewVisible:(_Bool)arg1;
 - (void)transitionLiveViewToFront;
 - (void)transitionStaticViewToFront;

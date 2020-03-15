@@ -18,10 +18,10 @@
 + (id)_activityImageForApplicationBundleIdentifier:(id)arg1;
 + (id)_activityImageForActionRepresentationImage:(id)arg1;
 + (long long)activityCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *activityImage; // @synthesize activityImage=_activityImage;
 @property(readonly, nonatomic) NSString *activityTitle; // @synthesize activityTitle=_activityTitle;
 @property(readonly, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (id)_activityImage;
 - (id)applicationExtension;
 - (id)_embeddedActivityViewController;

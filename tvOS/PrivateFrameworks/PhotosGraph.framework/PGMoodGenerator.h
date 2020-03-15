@@ -21,10 +21,10 @@
     double _negativeThreshold;
 }
 
+- (void).cxx_destruct;
 @property double negativeThreshold; // @synthesize negativeThreshold=_negativeThreshold;
 @property double positiveThreshold; // @synthesize positiveThreshold=_positiveThreshold;
 @property(retain) PGMoodGeneratorOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)_processMoodSources;
 - (id)historyWeightedPositiveMoodVector;
 - (id)negativeMoodVector;

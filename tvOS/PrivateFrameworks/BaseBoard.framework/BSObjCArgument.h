@@ -26,6 +26,7 @@
 }
 
 + (id)argumentWithSignature:(id)arg1 atIndex:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(readonly, nonatomic, getter=isPlistObject) _Bool plistObject; // @synthesize plistObject=_plistObject;
 @property(readonly, nonatomic, getter=isOnewayVoid) _Bool onewayVoid; // @synthesize onewayVoid=_onewayVoid;
@@ -37,7 +38,6 @@
 @property(readonly, retain, nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
 @property(readonly, copy, nonatomic) NSString *encoding; // @synthesize encoding=_encoding;
 @property(readonly, nonatomic) BOOL type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -17,8 +17,8 @@
     id <FBSSceneHandle> _scene;
 }
 
-@property(readonly, nonatomic) __weak id <FBSSceneHandle> scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <FBSSceneHandle> scene; // @synthesize scene=_scene;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

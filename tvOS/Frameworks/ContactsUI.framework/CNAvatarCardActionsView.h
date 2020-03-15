@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)requiresConstraintBasedLayout;
 + (_Bool)performActionsOnDeepPress;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint initialLocation; // @synthesize initialLocation=_initialLocation;
 @property(retain, nonatomic) UIGestureRecognizer *selectionGestureRecognizer; // @synthesize selectionGestureRecognizer=_selectionGestureRecognizer;
 @property(retain, nonatomic) UIGestureRecognizer *rolloverGestureRecognizer; // @synthesize rolloverGestureRecognizer=_rolloverGestureRecognizer;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool actionsReversed; // @synthesize actionsReversed=_actionsReversed;
 @property(copy, nonatomic) NSArray *actionCategories; // @synthesize actionCategories=_actionCategories;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (_Bool)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)_gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

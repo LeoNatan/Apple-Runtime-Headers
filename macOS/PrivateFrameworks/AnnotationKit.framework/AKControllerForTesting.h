@@ -26,6 +26,7 @@
 }
 
 + (void)renderAnnotation:(id)arg1 inContext:(struct CGContext *)arg2;
+- (void).cxx_destruct;
 @property(retain) AKCursorController_Mac *testingCursorController; // @synthesize testingCursorController=_testingCursorController;
 @property(retain) AKSignatureModelController *testingSignatureModelController; // @synthesize testingSignatureModelController=_testingSignatureModelController;
 @property(retain) AKLegacyDoodleController *testingIntelligentSketchController; // @synthesize testingIntelligentSketchController=_testingIntelligentSketchController;
@@ -38,7 +39,6 @@
 @property(retain) AKActionController *testingActionController; // @synthesize testingActionController=_testingActionController;
 @property(retain) AKModelController *testingModelController; // @synthesize testingModelController=_testingModelController;
 @property(retain) id <AKControllerDelegateProtocol> testingDelegate; // @synthesize testingDelegate=_testingDelegate;
-- (void).cxx_destruct;
 - (id)cursorController;
 - (id)signatureModelController;
 - (id)legacyDoodleController;

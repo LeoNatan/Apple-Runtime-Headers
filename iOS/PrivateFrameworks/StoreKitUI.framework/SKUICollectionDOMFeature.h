@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 
 + (id)featureName;
 + (id)makeFeatureJSObjectForFeature:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUICollectionDOMFeatureTargetting> collectionTarget; // @synthesize collectionTarget=_collectionTarget;
 @property(readonly, copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (void)setEditing:(_Bool)arg1 options:(id)arg2;
 - (id)initWithDOMNode:(id)arg1 featureName:(id)arg2;
 

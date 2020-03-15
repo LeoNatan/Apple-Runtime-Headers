@@ -429,10 +429,6 @@ struct MTLTextureDescriptorPrivate {
     unsigned long long storageMode;
 };
 
-struct NSObject {
-    Class _field1;
-};
-
 struct PipelineLibraryData {
     struct shared_ptr<MTLPipelineDescriptions> _field1;
     id _field2;

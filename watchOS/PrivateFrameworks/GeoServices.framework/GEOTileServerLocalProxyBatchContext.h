@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     GEOTileRequester *_tileRequester;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOTileRequester *tileRequester; // @synthesize tileRequester=_tileRequester;
 @property(nonatomic) unsigned char loadReason; // @synthesize loadReason=_loadReason;
 @property(retain, nonatomic) GEOTileKeyList *cacheMissStaleUnusableDataList; // @synthesize cacheMissStaleUnusableDataList=_cacheMissStaleUnusableDataList;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOTileKeyList *networkList; // @synthesize networkList=_networkList;
 @property(retain, nonatomic) GEOTileKeyList *interestList; // @synthesize interestList=_interestList;
 @property(retain, nonatomic) GEOTileKeyList *fullList; // @synthesize fullList=_fullList;
-- (void).cxx_destruct;
 
 @end
 

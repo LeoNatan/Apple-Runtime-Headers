@@ -25,12 +25,12 @@
     NSOperationQueue *_delegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) __weak id <SKUIResourceLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_sendDidLoadAllForReason:(long long)arg1;
 - (void)_sendDidIdleIfNecessary;
 - (void)_sendDidBeginLoadingIfNecessary;

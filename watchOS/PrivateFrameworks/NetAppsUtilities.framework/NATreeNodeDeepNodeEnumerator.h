@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NATreeNode *_node;
 }
 
-@property(readonly, copy, nonatomic) NATreeNode *node; // @synthesize node=_node;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NATreeNode *node; // @synthesize node=_node;
 @property(readonly, copy, nonatomic) NSArray *allObjects;
 - (id)nextObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;

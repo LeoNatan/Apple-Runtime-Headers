@@ -26,6 +26,7 @@
 + (id)_focusAnimationCoordinatorForAnimationType:(long long)arg1 withConfiguration:(id)arg2 inContext:(id)arg3;
 + (id)_unfocusingAnimationCoordinatorWithConfiguration:(id)arg1 inContext:(id)arg2;
 + (id)_focusingAnimationCoordinatorWithConfiguration:(id)arg1 inContext:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long activeFocusAnimation; // @synthesize activeFocusAnimation=_activeFocusAnimation;
 @property(readonly, nonatomic, getter=_isLocked) _Bool locked; // @synthesize locked=_locked;
 @property(readonly, nonatomic, getter=_focusUpdateContext) UIFocusUpdateContext *focusUpdateContext; // @synthesize focusUpdateContext=_focusUpdateContext;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSMutableArray *focusingAnimations; // @synthesize focusingAnimations=_focusingAnimations;
 @property(retain, nonatomic) _UIFocusAnimationConfiguration *unfocusingConfiguration; // @synthesize unfocusingConfiguration=_unfocusingConfiguration;
 @property(retain, nonatomic) _UIFocusAnimationConfiguration *focusingConfiguration; // @synthesize focusingConfiguration=_focusingConfiguration;
-- (void).cxx_destruct;
 - (void)_cancelFocusAnimation:(long long)arg1;
 - (void)_animateFocusAnimation:(long long)arg1;
 - (void)_animate;

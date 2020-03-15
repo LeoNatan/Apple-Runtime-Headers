@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_descriptionTextViewBottomConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *descriptionTextViewBottomConstraint; // @synthesize descriptionTextViewBottomConstraint=_descriptionTextViewBottomConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *iconContainerBottomToDescriptionTextViewTopConstraint; // @synthesize iconContainerBottomToDescriptionTextViewTopConstraint=_iconContainerBottomToDescriptionTextViewTopConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *descriptionTextViewHeightConstraint; // @synthesize descriptionTextViewHeightConstraint=_descriptionTextViewHeightConstraint;
 @property(nonatomic) ConfigurableVibrancyTextView *descriptionTextView; // @synthesize descriptionTextView=_descriptionTextView;
 @property(nonatomic) __weak NSView *iconContainer; // @synthesize iconContainer=_iconContainer;
 @property(copy, nonatomic) NSArray *iconFilenames; // @synthesize iconFilenames=_iconFilenames;
-- (void).cxx_destruct;
 - (double)preferredHeightAtCurrentWidth;
 - (double)preferredMinimumWidth;
 - (void)setDescriptionText:(id)arg1 helpLinkText:(id)arg2;

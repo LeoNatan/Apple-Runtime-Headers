@@ -34,6 +34,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *quantitySample; // @synthesize quantitySample=_quantitySample;
 @property(nonatomic) long long seriesIndex; // @synthesize seriesIndex=_seriesIndex;
 @property(nonatomic) long long sourceID; // @synthesize sourceID=_sourceID;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSData *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) long long dataTypeCode; // @synthesize dataTypeCode=_dataTypeCode;
 @property(nonatomic) long long persistentID; // @synthesize persistentID=_persistentID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -56,6 +56,7 @@
 
 + (id)displayWithIOElement:(id)arg1 driverIdentifier:(id)arg2 delegate:(id)arg3;
 + (_Bool)brailleDriverClassIsValid:(Class)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double brailleKeyDebounceTimeout; // @synthesize brailleKeyDebounceTimeout=_brailleKeyDebounceTimeout;
 @property(copy, nonatomic) CDUnknownBlockType eventHandled; // @synthesize eventHandled=_eventHandled;
 @property(nonatomic) unsigned int persistentKeyModifiers; // @synthesize persistentKeyModifiers=_persistentKeyModifiers;
@@ -65,7 +66,6 @@
 @property(nonatomic) int inputContractionMode; // @synthesize inputContractionMode=_inputContractionMode;
 @property(nonatomic) _Bool automaticBrailleTranslationEnabled; // @synthesize automaticBrailleTranslationEnabled=_automaticBrailleTranslationEnabled;
 @property(nonatomic) _Bool inputAllowed; // @synthesize inputAllowed=_inputAllowed;
-- (void).cxx_destruct;
 - (void)brailleDisplayDeletedCharacter:(id)arg1;
 - (void)brailleDisplayInsertedCharacter:(id)arg1;
 - (void)didInsertScriptString:(id)arg1;

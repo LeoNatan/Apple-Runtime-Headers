@@ -17,12 +17,12 @@
     unsigned long long _columnCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long columnCount; // @synthesize columnCount=_columnCount;
 @property(nonatomic) _Bool namedColumnsInitialized; // @synthesize namedColumnsInitialized=_namedColumnsInitialized;
 @property(readonly, nonatomic) NSDictionary *columns; // @synthesize columns=_columns;
 @property(retain, nonatomic) EFSQLPreparedStatement *preparedStatement; // @synthesize preparedStatement=_preparedStatement;
 @property(readonly, nonatomic) struct sqlite3_stmt *statement; // @synthesize statement=_statement;
-- (void).cxx_destruct;
 - (id)_queryString;
 - (id)debugDescription;
 - (id)objectForKeyedSubscript:(id)arg1;

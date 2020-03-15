@@ -19,8 +19,8 @@
     id <AXDragEndpointVendorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AXDragEndpointVendorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AXDragEndpointVendorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)endpointRequestSatisfierDidDisconnect:(id)arg1;
 - (id)endpointForConnection:(id)arg1 forEndpointRequestSatisfier:(id)arg2;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

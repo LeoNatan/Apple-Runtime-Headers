@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     WebViewController *_webViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak WebViewController *webViewController; // @synthesize webViewController=_webViewController;
 @property(readonly, nonatomic) WKWebsiteDataStore *websiteDataStore; // @synthesize websiteDataStore=_websiteDataStore;
 @property(readonly, nonatomic) unsigned long long browsingMode; // @synthesize browsingMode=_browsingMode;
 @property(nonatomic) __weak id <SearchableWKViewCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=_cancelDelegate;
 @property(nonatomic) __weak id <SearchableWKViewPlaybackControlsPresenter> playbackControlsPresenter; // @synthesize playbackControlsPresenter=_playbackControlsPresenter;
 @property(nonatomic) __weak id <SearchableWKViewFullScreenDelegate> fullScreenDelegate; // @synthesize fullScreenDelegate=_fullScreenDelegate;
-- (void).cxx_destruct;
 - (BOOL)performDragOperation:(id)arg1;
 - (void)_removeMediaPlaybackControlsView;
 - (void)_addMediaPlaybackControlsView:(id)arg1;

@@ -17,11 +17,11 @@
 }
 
 + (id)_actionForSuggestion:(id)arg1 defaultAction:(id)arg2;
+- (void).cxx_destruct;
 @property unsigned long long _previousSuggestionCount; // @synthesize _previousSuggestionCount=__previousSuggestionCount;
 @property(retain) NSArray *_previousActions; // @synthesize _previousActions=__previousActions;
 @property(retain) ACSHPanelButton *_defaultButton; // @synthesize _defaultButton=__defaultButton;
 @property(nonatomic) BOOL isShowingNoSuggestions; // @synthesize isShowingNoSuggestions=_isShowingNoSuggestions;
-- (void).cxx_destruct;
 - (BOOL)canBeBrokenApart;
 - (BOOL)containsNonNavigablePanelElementsOnly;
 - (void)sizeToFitPanelElements;

@@ -16,9 +16,9 @@
     CBCentralManager *_centralManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CBCentralManager *centralManager; // @synthesize centralManager=_centralManager;
 @property(readonly, nonatomic) CBPeripheral *peripheral; // @synthesize peripheral=_peripheral;
-- (void).cxx_destruct;
 - (void)unpair;
 - (void)disconnect;
 - (void)connect;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     QLItem *_activityPreviewItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) QLItem *activityPreviewItem; // @synthesize activityPreviewItem=_activityPreviewItem;
 @property(retain) QLPreviewPrinter *printer; // @synthesize printer=_printer;
-- (void).cxx_destruct;
 - (id)_pdfPreviewDataAtURL:(id)arg1;
 - (id)printInfo;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;

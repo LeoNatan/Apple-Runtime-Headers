@@ -17,8 +17,8 @@
     EDVIPManager *_vipManager;
 }
 
-@property(readonly, nonatomic) EDVIPManager *vipManager; // @synthesize vipManager=_vipManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EDVIPManager *vipManager; // @synthesize vipManager=_vipManager;
 - (void)_vipsDidChange:(id)arg1;
 - (void)removeVIPsWithEmailAddresses:(id)arg1;
 - (void)removeVIPsWithIdentifiers:(id)arg1;

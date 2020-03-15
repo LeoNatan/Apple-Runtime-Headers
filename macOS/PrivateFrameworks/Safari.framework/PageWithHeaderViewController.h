@@ -38,6 +38,8 @@ __attribute__((visibility("hidden")))
     NSString *_footerBannerItemDescription;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL suppressBannerUpdatesOnPropertyChanges; // @synthesize suppressBannerUpdatesOnPropertyChanges=_suppressBannerUpdatesOnPropertyChanges;
 @property(readonly, nonatomic) NSString *footerBannerItemDescription; // @synthesize footerBannerItemDescription=_footerBannerItemDescription;
 @property(readonly, nonatomic) NSAttributedString *footerBannerItemTitle; // @synthesize footerBannerItemTitle=_footerBannerItemTitle;
@@ -56,8 +58,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct Image snapshotForRubberBandingArea; // @synthesize snapshotForRubberBandingArea=_snapshotForRubberBandingArea;
 @property(nonatomic) BOOL canTakeSnapshotForRubberBandingArea; // @synthesize canTakeSnapshotForRubberBandingArea=_canTakeSnapshotForRubberBandingArea;
 @property(readonly, nonatomic) BrowserViewController *browserViewController; // @synthesize browserViewController=_browserViewController;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_removeFooterBanner;
 - (void)_updateFooterBannerPropertiesForPage:(const struct Page *)arg1;
 - (void)_updateFooterBannerSecondaryIconForPage:(const struct Page *)arg1;

@@ -6,7 +6,7 @@
 
 #import <Safari/PreferencesModule.h>
 
-@class NSButton, NSOcclusionDetectionView, SLSecureCursorAssertion, WebView;
+@class NSOcclusionDetectionView, SLSecureCursorAssertion, WebView;
 
 __attribute__((visibility("hidden")))
 @interface ExtensionsPreferencesOld : PreferencesModule
@@ -18,21 +18,18 @@ __attribute__((visibility("hidden")))
     struct CGSize _originalContentMaxSize;
     unsigned long long _previousEnabledHeight;
     BOOL _usingDisabledHeight;
+    BOOL _didLoadRequestInWebView;
     SLSecureCursorAssertion *_cursorAssertion;
     NSOcclusionDetectionView *_occlusionDetectionView;
     BOOL _windowIsOccluded;
     id _occlusionValidationToken;
     BOOL _shouldHideAllButtons;
-    NSButton *_installExtensionUpdatesAutomaticallyCheckBox;
 }
 
-@property(nonatomic) __weak NSButton *installExtensionUpdatesAutomaticallyCheckBox; // @synthesize installExtensionUpdatesAutomaticallyCheckBox=_installExtensionUpdatesAutomaticallyCheckBox;
-@property(nonatomic) BOOL shouldHideAllButtons; // @synthesize shouldHideAllButtons=_shouldHideAllButtons;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldHideAllButtons; // @synthesize shouldHideAllButtons=_shouldHideAllButtons;
 - (void)selectExtensionWithIdentifier:(id)arg1;
-- (void)toggleInstallExtensionUpdatesAutomatically:(id)arg1;
-- (void)initializeFromDefaults;
 - (void)openExtensionsGallery:(id)arg1;
 - (id)safariHelpAnchor;
 - (void)resizeWindowToEnabledHeight;

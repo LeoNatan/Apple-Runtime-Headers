@@ -22,11 +22,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)recordNamePrefix;
 + (id)recordType;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDecimalNumber *transactionAmount; // @synthesize transactionAmount=_transactionAmount;
 @property(nonatomic) unsigned long long suggestedAmountCategory; // @synthesize suggestedAmountCategory=_suggestedAmountCategory;
 @property(copy, nonatomic) NSDate *transactionDate; // @synthesize transactionDate=_transactionDate;
 @property(copy, nonatomic) NSString *statementIdentifier; // @synthesize statementIdentifier=_statementIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

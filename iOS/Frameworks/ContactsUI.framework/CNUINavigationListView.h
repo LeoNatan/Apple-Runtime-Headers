@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)disableHeaderAccessibilityElements;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _CNUINavigationListViewPermissiveGestureRecognizerDelegate *selectionGestureRecognizerDelegate; // @synthesize selectionGestureRecognizerDelegate=_selectionGestureRecognizerDelegate;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *retargetBehavior; // @synthesize retargetBehavior=_retargetBehavior;
 @property(nonatomic) struct CGPoint gestureStartLocationInWindow; // @synthesize gestureStartLocationInWindow=_gestureStartLocationInWindow;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILongPressGestureRecognizer *selectionGestureRecognizer; // @synthesize selectionGestureRecognizer=_selectionGestureRecognizer;
 @property(nonatomic) __weak id <CNUINavigationListViewDelegate> navigationListViewDelegate; // @synthesize navigationListViewDelegate=_navigationListViewDelegate;
 @property(nonatomic) __weak id <CNUINavigationListViewDataSource> navigationListViewDataSource; // @synthesize navigationListViewDataSource=_navigationListViewDataSource;
-- (void).cxx_destruct;
 - (void)clearAdditionalSelectionGestureRecognizer;
 - (void)startTrackingSelectionFromGestureRecognizer:(id)arg1;
 - (void)notifyDelegateWithSelectionEventAtIndexPath:(id)arg1;

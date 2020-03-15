@@ -25,6 +25,7 @@
     double _balloonYOffsetFromTranscript;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool animationsDisabledForTesting; // @synthesize animationsDisabledForTesting=_animationsDisabledForTesting;
 @property(nonatomic) double balloonYOffsetFromTranscript; // @synthesize balloonYOffsetFromTranscript=_balloonYOffsetFromTranscript;
 @property(retain, nonatomic) CKLivePhotoBalloonView *livePhotoBalloonView; // @synthesize livePhotoBalloonView=_livePhotoBalloonView;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIView *balloonView; // @synthesize balloonView=_balloonView;
 @property(retain, nonatomic) CKGroupAcknowledgmentVotingViewController *votingViewController; // @synthesize votingViewController=_votingViewController;
 @property(retain, nonatomic) CKActionSheetMenuView *menuView; // @synthesize menuView=_menuView;
-- (void).cxx_destruct;
 - (void)disableAnimationsForTesting;
 - (_Bool)_shouldShowVotingView;
 - (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(long long)arg2;

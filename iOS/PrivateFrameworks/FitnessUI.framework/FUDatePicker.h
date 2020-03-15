@@ -42,12 +42,12 @@
     FUScrollWheel *_yearWheel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FUScrollWheel *yearWheel; // @synthesize yearWheel=_yearWheel;
 @property(retain, nonatomic) FUScrollWheel *dayWheel; // @synthesize dayWheel=_dayWheel;
 @property(retain, nonatomic) FUScrollWheel *monthWheel; // @synthesize monthWheel=_monthWheel;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) __weak id <FUDatePickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)scrollWheelShouldBecomeFirstResponder:(id)arg1;
 - (void)scrollWheel:(id)arg1 didChangeCurrentIndexTo:(unsigned long long)arg2;
 - (void)tappedScrollWheel:(id)arg1;

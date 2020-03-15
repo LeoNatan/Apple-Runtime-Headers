@@ -21,11 +21,11 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)contactPathIsMe:(id)arg1;
 + (id)utteranceWithContactPath:(id)arg1 andText:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastChangeDate; // @synthesize lastChangeDate=_lastChangeDate;
 @property(nonatomic) BOOL isMe; // @synthesize isMe=_isMe;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *contactPath; // @synthesize contactPath=_contactPath;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isComplete;

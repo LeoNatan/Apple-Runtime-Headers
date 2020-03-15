@@ -15,8 +15,8 @@
     SVVideoViewController *_videoViewController;
 }
 
-@property(nonatomic) __weak SVVideoViewController *videoViewController; // @synthesize videoViewController=_videoViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SVVideoViewController *videoViewController; // @synthesize videoViewController=_videoViewController;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

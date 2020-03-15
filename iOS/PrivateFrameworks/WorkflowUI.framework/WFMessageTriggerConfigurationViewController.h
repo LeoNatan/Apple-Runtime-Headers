@@ -20,10 +20,10 @@
     NSArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSMutableSet *allSenders; // @synthesize allSenders=_allSenders;
-- (void).cxx_destruct;
 - (void)triggerTextConfigurationViewControllerDidCancel:(id)arg1;
 - (void)triggerTextConfigurationViewController:(id)arg1 didSelectText:(id)arg2;
 - (void)presentNavControllerWithRootViewController:(id)arg1;

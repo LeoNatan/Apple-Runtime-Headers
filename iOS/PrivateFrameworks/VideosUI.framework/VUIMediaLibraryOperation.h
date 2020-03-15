@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     VUIAsynchronousWorkToken *_asyncWorkToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIAsynchronousWorkToken *asyncWorkToken; // @synthesize asyncWorkToken=_asyncWorkToken;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) VUIMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithMediaLibrary:(id)arg1;
 - (id)init;

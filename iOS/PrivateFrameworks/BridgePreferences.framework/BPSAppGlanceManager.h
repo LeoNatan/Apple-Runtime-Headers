@@ -13,8 +13,8 @@
     PSListController *_listControllerDelegate;
 }
 
-@property(nonatomic) __weak PSListController *listControllerDelegate; // @synthesize listControllerDelegate=_listControllerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PSListController *listControllerDelegate; // @synthesize listControllerDelegate=_listControllerDelegate;
 - (void)_logGlanceDescriptions;
 - (id)showsGlance:(id)arg1;
 - (void)setShowsGlance:(id)arg1 forSpecifier:(id)arg2;

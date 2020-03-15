@@ -13,8 +13,8 @@
     CSMediaControlsViewController *_controlsViewController;
 }
 
-@property(readonly, nonatomic) CSMediaControlsViewController *controlsViewController; // @synthesize controlsViewController=_controlsViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSMediaControlsViewController *controlsViewController; // @synthesize controlsViewController=_controlsViewController;
 - (id)init;
 
 @end

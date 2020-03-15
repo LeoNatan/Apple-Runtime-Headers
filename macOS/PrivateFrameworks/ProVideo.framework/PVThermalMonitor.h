@@ -18,12 +18,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) int highestThermalLevel; // @synthesize highestThermalLevel=_highestThermalLevel;
 @property(nonatomic) int currentThermalLevel; // @synthesize currentThermalLevel=_currentThermalLevel;
 @property(nonatomic) BOOL hasGoneAboveNominal; // @synthesize hasGoneAboveNominal=_hasGoneAboveNominal;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (BOOL)_disabledThermalTracking;
 - (void)_postNotificationPrevious:(int)arg1 new:(int)arg2;
 - (void)_setCurrentThermalLevel:(int)arg1;

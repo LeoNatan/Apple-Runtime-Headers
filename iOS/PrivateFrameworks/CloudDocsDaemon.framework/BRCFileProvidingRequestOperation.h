@@ -33,10 +33,10 @@ __attribute__((visibility("hidden")))
     _Bool _wantsCurrentVersion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsCurrentVersion; // @synthesize wantsCurrentVersion=_wantsCurrentVersion;
 @property(nonatomic) _Bool isForBackup; // @synthesize isForBackup=_isForBackup;
 @property(nonatomic) _Bool isRecursive; // @synthesize isRecursive=_isRecursive;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (_Bool)shouldRetryForError:(id)arg1;
 - (void)_finishAfterWaitingForDocumentsWithID:(id)arg1 error:(id)arg2;

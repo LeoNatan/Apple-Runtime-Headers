@@ -14,9 +14,9 @@
     FBSceneSnapshotContext *_snapshotContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBSceneSnapshotContext *snapshotContext; // @synthesize snapshotContext=_snapshotContext;
 @property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (id)image;
 - (id)initWithScene:(id)arg1 snapshotContext:(id)arg2;
 

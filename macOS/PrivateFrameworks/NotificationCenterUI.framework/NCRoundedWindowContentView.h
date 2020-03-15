@@ -47,9 +47,9 @@ __attribute__((visibility("hidden")))
 
 + (double)shadowMargin;
 + (double)cornerRadius;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NCRoundedWindowContentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL isDark; // @synthesize isDark=_isDark;
-- (void).cxx_destruct;
 - (void)_closeButtonPressed:(id)arg1;
 - (void)setFrameOrigin:(struct CGPoint)arg1;
 - (void)scrollWheel:(id)arg1;

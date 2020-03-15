@@ -16,9 +16,9 @@
 
 + (id)paymentCredentialMetadataWithConfiguration:(id)arg1;
 + (Class)classForValueType:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *localizedDisplayName; // @synthesize localizedDisplayName=_localizedDisplayName;
-- (void).cxx_destruct;
 - (id)displayString;
 - (id)initWithConfiguration:(id)arg1;
 

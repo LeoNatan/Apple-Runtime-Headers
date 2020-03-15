@@ -15,9 +15,9 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(copy, nonatomic) NSAttributedString *attributedSubtitleText; // @synthesize attributedSubtitleText=_attributedSubtitleText;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 - (struct CGSize)intrinsicContentSize;
 - (double)desiredHeightForWidth:(double)arg1;

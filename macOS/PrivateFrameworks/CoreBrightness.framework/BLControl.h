@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_keyboardContainers;
     HIDManager *_keyboardBacklightHIDManager;
     BOOL _userActive;
+    BOOL _nsPreset;
 }
 
 - (_Bool)updatePresetConfiguration;

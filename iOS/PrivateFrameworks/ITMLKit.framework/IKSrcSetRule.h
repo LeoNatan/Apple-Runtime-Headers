@@ -15,10 +15,10 @@
     IKStyleMediaQuery *_mediaQuery;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKStyleMediaQuery *mediaQuery; // @synthesize mediaQuery=_mediaQuery;
 @property(retain, nonatomic) NSString *descriptor; // @synthesize descriptor=_descriptor;
 @property(retain, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
-- (void).cxx_destruct;
 - (void)_parseResolutionDescriptor:(id)arg1;
 - (void)_parseMediaQueryDescriptor:(id)arg1;
 - (void)_parseDescriptor:(id)arg1;

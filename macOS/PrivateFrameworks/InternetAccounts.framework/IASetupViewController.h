@@ -19,6 +19,7 @@
     BOOL _appWillQuitOnCancel;
 }
 
+- (void).cxx_destruct;
 @property BOOL appWillQuitOnCancel; // @synthesize appWillQuitOnCancel=_appWillQuitOnCancel;
 @property BOOL authenticating; // @synthesize authenticating=_authenticating;
 @property BOOL inputValidForNext; // @synthesize inputValidForNext=_inputValidForNext;
@@ -26,7 +27,6 @@
 @property BOOL showCreateButton; // @synthesize showCreateButton=_showCreateButton;
 @property(retain) NSView *currentView; // @synthesize currentView=_currentView;
 @property(retain) IAAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)didUpdateCurrentView:(id)arg1;
 - (void)willDisplayInWindow:(id)arg1;
 - (void)createWithCompletion:(CDUnknownBlockType)arg1;

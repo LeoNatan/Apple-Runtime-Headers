@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
 + (id)episode;
 + (id)season;
 + (id)show;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *collectionType; // @synthesize collectionType=_collectionType;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) NSString *subtype; // @synthesize subtype=_subtype;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMediaEntitySubtype:(id)arg1 category:(id)arg2 collectionType:(id)arg3 appContext:(id)arg4;
 - (id)initWithAppContext:(id)arg1;

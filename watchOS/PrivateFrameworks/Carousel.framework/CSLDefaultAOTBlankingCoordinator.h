@@ -19,6 +19,7 @@
     CSLAOTBlurrableBackgroundViewController *_animationViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLAOTBlurrableBackgroundViewController *animationViewController; // @synthesize animationViewController=_animationViewController;
 @property(retain, nonatomic) UIWindow *blankingWindow; // @synthesize blankingWindow=_blankingWindow;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
@@ -26,7 +27,6 @@
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) float transitionProgress; // @synthesize transitionProgress=_transitionProgress;
 @property(readonly, nonatomic) FBSceneHostManager *sceneHostManager; // @synthesize sceneHostManager=_sceneHostManager;
-- (void).cxx_destruct;
 - (void)invalidateSnapshot;
 - (id)_createAnimationToProgress:(float)arg1 withDuration:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setState:(unsigned int)arg1 animated:(_Bool)arg2 wasTap:(_Bool)arg3 brightnessRamp:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;

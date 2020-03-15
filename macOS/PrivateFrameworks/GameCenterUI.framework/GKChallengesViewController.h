@@ -19,9 +19,9 @@
     id _internal4;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id challengesViewController; // @synthesize challengesViewController=_internal2;
 @property(retain, nonatomic) UXNavigationController *navigationController; // @synthesize navigationController=_internal1;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property id <GKChallengesViewControllerDelegate> challengeDelegate; // @dynamic challengeDelegate;

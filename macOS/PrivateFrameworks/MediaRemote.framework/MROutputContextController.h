@@ -23,9 +23,9 @@
 }
 
 + (id)sharedOutputContextController;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int localVolumeControlCapabilities; // @synthesize localVolumeControlCapabilities=_localVolumeControlCapabilities;
 @property(nonatomic) float localVolume; // @synthesize localVolume=_localVolume;
-- (void).cxx_destruct;
 - (void)_registerNotifications;
 - (void)_inititalizeVolume;
 - (id)_onSerialQueue_localOutputDevice;

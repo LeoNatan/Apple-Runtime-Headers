@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) unsigned int powerAssertionId; // @synthesize powerAssertionId=_powerAssertionId;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_drop;
 - (void)drop;

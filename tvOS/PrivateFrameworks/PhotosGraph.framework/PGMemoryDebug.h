@@ -36,6 +36,7 @@
     NSArray *_moodKeywords;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *moodKeywords; // @synthesize moodKeywords=_moodKeywords;
 @property(retain, nonatomic) PGMoodVector *historyWeightedPositiveMoodVector; // @synthesize historyWeightedPositiveMoodVector=_historyWeightedPositiveMoodVector;
 @property(retain, nonatomic) PGMoodVector *negativeMoodVector; // @synthesize negativeMoodVector=_negativeMoodVector;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) NSDictionary *eventKeywords; // @synthesize eventKeywords=_eventKeywords;
 @property(retain, nonatomic) NSDictionary *referenceKeywords; // @synthesize referenceKeywords=_referenceKeywords;
 @property(retain, nonatomic) NSDictionary *matchingKeywords; // @synthesize matchingKeywords=_matchingKeywords;
-- (void).cxx_destruct;
 
 @end
 

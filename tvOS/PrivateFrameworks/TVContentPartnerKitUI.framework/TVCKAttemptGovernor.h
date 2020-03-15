@@ -16,10 +16,10 @@
     NSTimer *_retryTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTimer *retryTimer; // @synthesize retryTimer=_retryTimer;
 @property(nonatomic) unsigned long long attemptCount; // @synthesize attemptCount=_attemptCount;
 @property(nonatomic) __weak id <TVCKAttemptGovernorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)attemptFailed;
 - (void)attemptSucceeded;
 - (void)_startTimerWithDelay:(double)arg1 tolerance:(double)arg2;

@@ -28,6 +28,7 @@
 }
 
 + (id)currentForecastForLocation:(id)arg1 conditions:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long observationTime; // @synthesize observationTime=_observationTime;
 @property(nonatomic) long long conditionCode; // @synthesize conditionCode=_conditionCode;
 @property(nonatomic) float precipitationPast24Hours; // @synthesize precipitationPast24Hours=_precipitationPast24Hours;
@@ -41,7 +42,6 @@
 @property(nonatomic) float windSpeed; // @synthesize windSpeed=_windSpeed;
 @property(retain, nonatomic) WFTemperature *feelsLike; // @synthesize feelsLike=_feelsLike;
 @property(retain, nonatomic) WFTemperature *temperature; // @synthesize temperature=_temperature;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

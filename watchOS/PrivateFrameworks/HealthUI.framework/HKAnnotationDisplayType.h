@@ -13,8 +13,8 @@
     NSArray *_trendChartPoints;
 }
 
-@property(readonly, nonatomic) NSArray *trendChartPoints; // @synthesize trendChartPoints=_trendChartPoints;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *trendChartPoints; // @synthesize trendChartPoints=_trendChartPoints;
 - (id)initWithDateInterval:(id)arg1 trendData:(id)arg2;
 
 @end

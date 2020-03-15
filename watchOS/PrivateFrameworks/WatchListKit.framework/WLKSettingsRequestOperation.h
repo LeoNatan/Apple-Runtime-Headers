@@ -14,8 +14,8 @@
 }
 
 + (id)_requestURL:(id *)arg1;
-@property(readonly, nonatomic) NSDictionary *response; // @synthesize response=_response;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *response; // @synthesize response=_response;
 - (void)processResponse;
 - (void)prepareURLRequest:(CDUnknownBlockType)arg1;
 - (id)init;

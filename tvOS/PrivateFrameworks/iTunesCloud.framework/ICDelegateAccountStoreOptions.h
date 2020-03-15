@@ -23,14 +23,16 @@
 + (id)singleWriterOptionsWithDatabasePath:(id)arg1;
 + (id)defaultOptionsWithServiceName:(id)arg1;
 + (id)defaultOptionsWithServiceEndpoint:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *XPCServiceName; // @synthesize XPCServiceName=_serviceName;
 @property(retain, nonatomic) NSXPCListenerEndpoint *XPCEndpoint; // @synthesize XPCEndpoint=_listenerEndpoint;
 @property(nonatomic, getter=isSingleWriter) _Bool singleWriter; // @synthesize singleWriter=_singleWriter;
 @property(copy, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 
 @end
 

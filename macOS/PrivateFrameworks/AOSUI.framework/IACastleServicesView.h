@@ -50,10 +50,10 @@
 }
 
 + (id)loadFromNib:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property CastlePlugin *plugin; // @synthesize plugin=_plugin;
 @property(retain, nonatomic, setter=setMMAccount:) MM_Account *mmAccount; // @synthesize mmAccount=_mmAccount;
-- (void).cxx_destruct;
 - (void)showSignInError:(id)arg1;
 - (void)help:(id)arg1;
 - (void)lockedButtonPressed:(id)arg1;

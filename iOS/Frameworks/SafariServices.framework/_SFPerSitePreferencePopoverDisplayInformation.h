@@ -16,9 +16,9 @@
 
 + (void)_buildMapIfNeeded;
 + (id)popoverDisplayInformationForPerSitePreference:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedDisplayName; // @synthesize localizedDisplayName=_localizedDisplayName;
 @property(readonly, nonatomic) unsigned long long displayOption; // @synthesize displayOption=_displayOption;
-- (void).cxx_destruct;
 - (id)_initWithDisplayOption:(unsigned long long)arg1 localizedDisplayName:(id)arg2;
 
 @end

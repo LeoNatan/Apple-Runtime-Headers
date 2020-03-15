@@ -14,9 +14,9 @@
     QLThumbnailGenerationRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property __weak QLThumbnailGenerationRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)loadImageWithCompletionHandler:(CDUnknownBlockType)arg1;

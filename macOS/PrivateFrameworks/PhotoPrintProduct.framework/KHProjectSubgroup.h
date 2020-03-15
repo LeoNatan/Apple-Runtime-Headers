@@ -16,10 +16,10 @@
     NSMapTable *_projectsByProducts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *projectsByProducts; // @synthesize projectsByProducts=_projectsByProducts;
 @property(readonly, nonatomic) NSMutableArray *sortedProducts; // @synthesize sortedProducts=_sortedProducts;
 @property(nonatomic) BOOL layoutsChanging; // @synthesize layoutsChanging=_layoutsChanging;
-- (void).cxx_destruct;
 - (id)framesWithContentIssueOfType:(unsigned long long)arg1;
 - (void)reset;
 - (void)didChangeLayouts;

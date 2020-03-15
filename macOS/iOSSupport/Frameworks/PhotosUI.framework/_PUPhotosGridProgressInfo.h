@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     double _progress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSIndexPath *cachedIndexPath; // @synthesize cachedIndexPath=_cachedIndexPath;
 @property(retain, nonatomic) PHAssetCollection *collection; // @synthesize collection=_collection;
 @property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

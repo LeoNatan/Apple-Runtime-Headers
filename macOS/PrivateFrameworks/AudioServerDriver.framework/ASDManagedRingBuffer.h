@@ -18,9 +18,9 @@
     BOOL _writerRunning;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL writerRunning; // @synthesize writerRunning=_writerRunning;
 @property(nonatomic) BOOL readerRunning; // @synthesize readerRunning=_readerRunning;
-- (void).cxx_destruct;
 - (void)stopWriter;
 - (void)startWriter;
 - (void)stopReader;

@@ -13,8 +13,8 @@
     NSMutableDictionary *_store;
 }
 
-@property(readonly, nonatomic) NSDictionary *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *store; // @synthesize store=_store;
 - (id)longDescription;
 - (_Bool)_loadStore;
 - (_Bool)_saveStore;

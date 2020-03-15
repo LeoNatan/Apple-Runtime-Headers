@@ -14,8 +14,8 @@
 }
 
 + (id)transactionNameForEntityName:(id)arg1;
-@property(nonatomic) __weak BCCloudKitController *cloudKitController; // @synthesize cloudKitController=_cloudKitController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak BCCloudKitController *cloudKitController; // @synthesize cloudKitController=_cloudKitController;
 - (double)transactionLifetimeTimout;
 - (double)coalescingDelay;
 - (void)performWorkWithCompletion:(CDUnknownBlockType)arg1;

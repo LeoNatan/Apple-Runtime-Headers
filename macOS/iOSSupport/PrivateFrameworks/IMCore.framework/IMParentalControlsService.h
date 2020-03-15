@@ -16,11 +16,11 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSSet *whitelist; // @synthesize whitelist=_whitelist;
 @property BOOL forceWhiteList; // @synthesize forceWhiteList=_forceWhiteList;
 @property BOOL disableService; // @synthesize disableService=_disableService;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

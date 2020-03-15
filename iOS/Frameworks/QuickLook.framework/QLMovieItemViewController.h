@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     QLMovieEdits *_editsSinceLastSave;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool assetCanBeRotated; // @synthesize assetCanBeRotated=_assetCanBeRotated;
 @property(nonatomic) _Bool isSavingEditsBeforeDismissing; // @synthesize isSavingEditsBeforeDismissing=_isSavingEditsBeforeDismissing;
 @property(retain, nonatomic) QLMovieEdits *editsSinceLastSave; // @synthesize editsSinceLastSave=_editsSinceLastSave;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(retain) QLVideoScrubberView *scrubber; // @synthesize scrubber=_scrubber;
 @property(retain) QLOverlayPlayButton *playButton; // @synthesize playButton=_playButton;
 @property(retain, nonatomic) AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
-- (void).cxx_destruct;
 - (void)_updatePlaceHolderView;
 @property(readonly, nonatomic) PHPlaceholderView *airPlayPlaceholderView;
 - (void)handlePerformedKeyCommandIfNeeded:(id)arg1;
@@ -79,6 +79,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_enterEditModeIfPossible;
 - (void)editButtonTapped;
 - (void)_setupEditBehavior;
+- (_Bool)shouldHandleRegisteringForCommandCenterHandlers;
 - (_Bool)shouldDisplayPlayButtonInNavigationBar;
 - (_Bool)shouldAllowEditingContents;
 - (id)parallaxView;
@@ -103,6 +104,7 @@ __attribute__((visibility("hidden")))
 - (void)previewDidAppear:(_Bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
+- (id)_metadataItemTitle;
 - (id)setupPlayerViewWithPlayer:(id)arg1;
 - (void)addScrubberIfNeededWithDeferral;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

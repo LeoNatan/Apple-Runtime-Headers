@@ -23,6 +23,7 @@
     CDUnknownBlockType _comparatorHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType comparatorHandler; // @synthesize comparatorHandler=_comparatorHandler;
 @property(copy) CDUnknownBlockType willSortHandler; // @synthesize willSortHandler=_willSortHandler;
 @property(copy) CDUnknownBlockType adjustmentHandler; // @synthesize adjustmentHandler=_adjustmentHandler;
@@ -32,7 +33,6 @@
 @property(copy) CDUnknownBlockType finishHandler; // @synthesize finishHandler=_finishHandler;
 @property(copy) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(copy) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
-- (void).cxx_destruct;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (CDUnknownBlockType)resultComparatorForAutocompleteFetch:(id)arg1;
 - (void)autocompleteFetch:(id)arg1 willSortResults:(id)arg2;

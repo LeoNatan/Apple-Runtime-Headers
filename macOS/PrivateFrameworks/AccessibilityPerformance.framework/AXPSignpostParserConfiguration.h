@@ -19,12 +19,12 @@
     NSString *_logArchivePath;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *logArchivePath; // @synthesize logArchivePath=_logArchivePath;
 @property(copy, nonatomic) NSSet *nameFilters; // @synthesize nameFilters=_nameFilters;
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *beginTime; // @synthesize beginTime=_beginTime;
 @property(copy, nonatomic) NSSet *subsystemCategoryFilters; // @synthesize subsystemCategoryFilters=_subsystemCategoryFilters;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
     _Bool _pressed;
 }
 
-@property(readonly, retain, nonatomic) UIView *dragArea; // @synthesize dragArea=_dragArea;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) UIView *dragArea; // @synthesize dragArea=_dragArea;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

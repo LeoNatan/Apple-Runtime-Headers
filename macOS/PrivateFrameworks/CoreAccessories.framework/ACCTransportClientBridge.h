@@ -19,11 +19,11 @@
 }
 
 + (id)sharedBridge;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType endpointPropertiesChangedHandler; // @synthesize endpointPropertiesChangedHandler=_endpointPropertiesChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType connectionPropertiesChangedHandler; // @synthesize connectionPropertiesChangedHandler=_connectionPropertiesChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType connectionAuthStatusChangedHandler; // @synthesize connectionAuthStatusChangedHandler=_connectionAuthStatusChangedHandler;
 @property(retain, nonatomic) ACCTransportClient *transportClient; // @synthesize transportClient=_transportClient;
-- (void).cxx_destruct;
 - (void)transportClient:(id)arg1 propertiesDidChange:(id)arg2 forEndpointWithUUID:(id)arg3 previousProperties:(id)arg4 connectionUUID:(id)arg5;
 - (void)transportClient:(id)arg1 propertiesDidChange:(id)arg2 forConnectionWithUUID:(id)arg3 previousProperties:(id)arg4;
 - (void)transportClient:(id)arg1 authStatusDidChange:(BOOL)arg2 forConnectionWithUUID:(id)arg3;

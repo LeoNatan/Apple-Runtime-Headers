@@ -20,6 +20,7 @@
     NSString *_sectionID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(copy, nonatomic) NSString *publisherMatchID; // @synthesize publisherMatchID=_publisherMatchID;
 @property(readonly, nonatomic) NSDate *creation; // @synthesize creation=_creation;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long didPlayLightsAndSirens; // @synthesize didPlayLightsAndSirens=_didPlayLightsAndSirens;
 @property(copy, nonatomic) CDUnknownBlockType reply; // @synthesize reply=_reply;
 @property(readonly, nonatomic) _Bool replySent; // @synthesize replySent=_replySent;
-- (void).cxx_destruct;
 - (_Bool)sendReply;
 - (_Bool)hasExpired;
 - (id)init;

@@ -29,6 +29,7 @@
     BKSApplicationStateMonitor *__applicationStateMonitor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BKSApplicationStateMonitor *_applicationStateMonitor; // @synthesize _applicationStateMonitor=__applicationStateMonitor;
 @property(readonly, nonatomic) int _notifyRegisterTokenResumeIO; // @synthesize _notifyRegisterTokenResumeIO=__notifyRegisterTokenResumeIO;
 @property(readonly, nonatomic) int _notifyRegisterTokenSuspendIO; // @synthesize _notifyRegisterTokenSuspendIO=__notifyRegisterTokenSuspendIO;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) _Bool _writingMovie; // @synthesize _writingMovie=__writingMovie;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_workQueue; // @synthesize _workQueue=__workQueue;
 @property(readonly, nonatomic) NSMutableArray *_sessionContexts; // @synthesize _sessionContexts=__sessionContexts;
-- (void).cxx_destruct;
 - (void)persistenceController:(id)arg1 didGenerateVideoLocalPersistenceResult:(id)arg2 forCaptureResult:(id)arg3 fromRequest:(id)arg4;
 - (void)_workQueue_destroyApplicationStateMonitor;
 - (void)_workQueue_setupCameraProcessMonitoringIfNecessary;

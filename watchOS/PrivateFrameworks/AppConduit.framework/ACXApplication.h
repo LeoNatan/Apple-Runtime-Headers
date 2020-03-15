@@ -20,10 +20,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *clockFaceExtensionPaths; // @synthesize clockFaceExtensionPaths=_clockFaceExtensionPaths;
 @property(readonly, nonatomic) unsigned int lsSequenceNumber; // @synthesize lsSequenceNumber=_lsSequenceNumber;
 @property(readonly, nonatomic) NSURL *watchAppURL; // @synthesize watchAppURL=_watchAppURL;
-- (void).cxx_destruct;
 - (id)_localizedAppNameFromProxy:(id)arg1;
 - (id)_storeMetadataWithError:(id *)arg1;
 - (id)initWithApplicationProxy:(id)arg1 databaseUUID:(id)arg2 sequenceNumber:(unsigned int)arg3 expectPlaceholder:(_Bool)arg4;

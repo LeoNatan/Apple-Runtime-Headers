@@ -32,6 +32,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadEnableAutoRenewal; // @synthesize payloadEnableAutoRenewal=_payloadEnableAutoRenewal;
 @property(copy, nonatomic) NSNumber *payloadKeysize; // @synthesize payloadKeysize=_payloadKeysize;
 @property(copy, nonatomic) NSNumber *payloadKeyIsExtractable; // @synthesize payloadKeyIsExtractable=_payloadKeyIsExtractable;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSString *payloadDescription; // @synthesize payloadDescription=_payloadDescription;
 @property(copy, nonatomic) NSString *payloadCertTemplate; // @synthesize payloadCertTemplate=_payloadCertTemplate;
 @property(copy, nonatomic) NSString *payloadCertServer; // @synthesize payloadCertServer=_payloadCertServer;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

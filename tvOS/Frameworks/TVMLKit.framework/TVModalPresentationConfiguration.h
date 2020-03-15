@@ -23,6 +23,7 @@
 }
 
 + (id)presentationTypeKeyMap;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *alertActions; // @synthesize alertActions=_alertActions;
 @property(nonatomic) unsigned long long popOverArrowDirection; // @synthesize popOverArrowDirection=_popOverArrowDirection;
 @property(nonatomic) struct CGRect popOverSourceRect; // @synthesize popOverSourceRect=_popOverSourceRect;
@@ -33,7 +34,6 @@
 @property(nonatomic, getter=isMenuDismissable) _Bool menuDismissable; // @synthesize menuDismissable=_menuDismissable;
 @property(nonatomic) _Bool allowsModalOverModal; // @synthesize allowsModalOverModal=_allowsModalOverModal;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_applyAlertActionsForController:(id)arg1;
 - (id)initWithOptions:(id)arg1;
 - (id)init;

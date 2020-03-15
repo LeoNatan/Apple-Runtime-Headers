@@ -20,6 +20,7 @@
     UIStackView *_ctaStackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *ctaStackView; // @synthesize ctaStackView=_ctaStackView;
 @property(retain, nonatomic) UIView *assetView; // @synthesize assetView=_assetView;
 @property(retain, nonatomic) CAGradientLayer *backgroundGradientLayer; // @synthesize backgroundGradientLayer=_backgroundGradientLayer;
@@ -27,7 +28,6 @@
 @property(nonatomic) __weak id <IAMViewControllerMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
 @property(retain, nonatomic) ICIAMMessageContent *content; // @synthesize content=_content;
 @property(retain, nonatomic) IAMModalBackground *background; // @synthesize background=_background;
-- (void).cxx_destruct;
 - (void)_handleBackgroundTapGesture:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;

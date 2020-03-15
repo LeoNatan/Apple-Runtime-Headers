@@ -40,6 +40,7 @@
 + (id)temperatureStringBasedOnLocaleGivenCelsius:(double)arg1 fahrenheit:(double)arg2;
 + (double)temperatureBasedOnLocaleGivenCelsius:(double)arg1 fahrenheit:(double)arg2;
 + (double)temperatureInFahrenheitGivenCelsius:(double)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *naturalLanguageStringFahrenheit; // @synthesize naturalLanguageStringFahrenheit=_naturalLanguageStringFahrenheit;
 @property(copy) NSString *naturalLanguageStringCelsius; // @synthesize naturalLanguageStringCelsius=_naturalLanguageStringCelsius;
 @property(copy) NSDate *sunsetDate; // @synthesize sunsetDate=_sunsetDate;
@@ -59,7 +60,6 @@
 @property(copy) WMLocation *location; // @synthesize location=_location;
 @property(copy) NSDateComponents *representedDate; // @synthesize representedDate=_representedDate;
 @property unsigned long long weatherDataType; // @synthesize weatherDataType=_weatherDataType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, retain) NSString *temperatureStringHighLowBasedOnLocale;

@@ -20,10 +20,10 @@
 + (id)_allowedCharacterSetForEncodingNotificationIdentifierComponents;
 + (id)_deconstructNotificationIdentifierStringRepresentationIntoComponents:(id)arg1;
 + (id)_constructNotificationIdentifierStringRepresentationFromComponents:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
 @property(readonly, copy, nonatomic) NSString *sourceClientIdentifier; // @synthesize sourceClientIdentifier=_sourceClientIdentifier;
 @property(readonly, copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToNotificationIdentifier:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

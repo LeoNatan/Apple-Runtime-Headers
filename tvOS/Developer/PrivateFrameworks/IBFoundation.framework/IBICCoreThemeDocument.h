@@ -20,8 +20,8 @@
 + (id)makeTemporaryDocumentWithOptions:(id)arg1 returningError:(id *)arg2;
 + (_Bool)isMigrationError:(id)arg1;
 + (void)initialize;
-@property(retain, nonatomic) IBICCatalogCompilerOptions *catalogCompilerOptions; // @synthesize catalogCompilerOptions=_catalogCompilerOptions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IBICCatalogCompilerOptions *catalogCompilerOptions; // @synthesize catalogCompilerOptions=_catalogCompilerOptions;
 - (void)distillWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setContent:(id)arg1 tagSolutionSpace:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)sortAndDumpImportRecords:(id)arg1;

@@ -22,13 +22,13 @@
 
 + (id)quantityContextWithIdentifier:(id)arg1 overlayChartController:(id)arg2 applicationItems:(id)arg3 optionalDelegate:(id)arg4 seriesOptions:(int)arg5 mode:(int)arg6;
 + (id)distributionContextWithStyle:(int)arg1 namedPredicate:(id)arg2 overlayChartController:(id)arg3 applicationItems:(id)arg4 options:(int)arg5 mode:(int)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKDisplayTypeContextItem *lastUpdatedContextItem; // @synthesize lastUpdatedContextItem=_lastUpdatedContextItem;
 @property(retain, nonatomic) NSMutableDictionary *displayTypesForTimeScopes; // @synthesize displayTypesForTimeScopes=_displayTypesForTimeScopes;
 @property(retain, nonatomic) HKSampleType *monitoringSampleType; // @synthesize monitoringSampleType=_monitoringSampleType;
 @property(retain, nonatomic) HKOverlayRoomApplicationItems *applicationItems; // @synthesize applicationItems=_applicationItems;
 @property(retain, nonatomic) HKInteractiveChartOverlayViewController *overlayChartController; // @synthesize overlayChartController=_overlayChartController;
 @property(nonatomic) int overlayMode; // @synthesize overlayMode=_overlayMode;
-- (void).cxx_destruct;
 - (id)_minMaxValueFromChartPoints:(id)arg1 displayType:(id)arg2 unitPreferenceController:(id)arg3;
 - (id)_buildMonitoringSampleType;
 - (id)contextItemForLastUpdate;

@@ -13,8 +13,8 @@
     NSArray *_addresses;
 }
 
-@property(retain) NSArray *addresses; // @synthesize addresses=_addresses;
 - (void).cxx_destruct;
+@property(retain) NSArray *addresses; // @synthesize addresses=_addresses;
 - (id)sharingPrefsAnchor;
 - (id)verboseText;
 - (id)externalRepresentation;

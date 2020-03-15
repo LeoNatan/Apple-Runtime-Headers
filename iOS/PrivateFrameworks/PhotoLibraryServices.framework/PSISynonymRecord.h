@@ -14,9 +14,9 @@
     NSString *_synonym;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) short category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *synonym; // @synthesize synonym=_synonym;
-- (void).cxx_destruct;
 - (id)initWithSynonym:(id)arg1 category:(short)arg2;
 
 @end

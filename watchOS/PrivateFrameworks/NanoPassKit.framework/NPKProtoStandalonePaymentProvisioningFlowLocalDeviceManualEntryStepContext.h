@@ -15,8 +15,8 @@
     NPKProtoStandalonePaymentProvisioningFlowSecondaryManualEntryStepContext *_secondaryManualEntryStepContext;
 }
 
-@property(retain, nonatomic) NPKProtoStandalonePaymentProvisioningFlowSecondaryManualEntryStepContext *secondaryManualEntryStepContext; // @synthesize secondaryManualEntryStepContext=_secondaryManualEntryStepContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NPKProtoStandalonePaymentProvisioningFlowSecondaryManualEntryStepContext *secondaryManualEntryStepContext; // @synthesize secondaryManualEntryStepContext=_secondaryManualEntryStepContext;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

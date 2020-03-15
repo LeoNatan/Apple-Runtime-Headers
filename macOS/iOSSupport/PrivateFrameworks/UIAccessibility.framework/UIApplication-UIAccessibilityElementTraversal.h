@@ -10,6 +10,7 @@
 
 @interface UIApplication (UIAccessibilityElementTraversal)
 - (id)_accessibilityElementWindowsWithOptions:(id)arg1 referenceWindow:(id)arg2;
+- (id)_accessibilityTraversalWindows;
 - (void)_accessibilityAddKeyboardWindowToArray:(id)arg1 forModalWindow:(id)arg2;
 - (id)_accessibilityViewChildrenWithOptions:(id)arg1 referenceWindow:(id)arg2;
 - (id)_accessibilityViewChildrenWithOptions:(id)arg1;

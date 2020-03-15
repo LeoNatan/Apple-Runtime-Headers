@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     _Bool _usesContiguousBarBackground;
 }
 
-@property(retain, nonatomic) UIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)didMoveToWindow;
 - (void)_updateBackgroundImageIfPossible;

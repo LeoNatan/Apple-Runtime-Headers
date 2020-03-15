@@ -21,11 +21,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(retain, nonatomic) NSString *handleIdentifier; // @synthesize handleIdentifier=_handleIdentifier;
 @property(retain, nonatomic) NSArray *handles; // @synthesize handles=_handles;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

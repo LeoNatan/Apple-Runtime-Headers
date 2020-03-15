@@ -18,9 +18,9 @@
     id <SBVoiceOverTouchLabelElementAlertItemDelegate> _voiceOverAlertItemDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBVoiceOverTouchLabelElementAlertItemDelegate> voiceOverAlertItemDelegate; // @synthesize voiceOverAlertItemDelegate=_voiceOverAlertItemDelegate;
 @property(retain, nonatomic) NSString *initialValue; // @synthesize initialValue=_initialValue;
-- (void).cxx_destruct;
 - (void)configure:(_Bool)arg1 requirePasscodeForActions:(_Bool)arg2;
 - (_Bool)reappearsAfterLock;
 - (_Bool)allowMenuButtonDismissal;

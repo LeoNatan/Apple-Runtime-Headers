@@ -17,10 +17,10 @@
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
-- (void).cxx_destruct;
 - (void)_fetchHistoryEntryRoutesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchHistoryEntryPlaceDisplaysWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchPinnedPlacesWithHandler:(CDUnknownBlockType)arg1;

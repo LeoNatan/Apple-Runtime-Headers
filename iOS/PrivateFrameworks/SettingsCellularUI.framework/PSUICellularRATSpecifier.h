@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     PSConfirmationSpecifier *_warning;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSConfirmationSpecifier *warning; // @synthesize warning=_warning;
 @property(nonatomic) __weak PSListItemsController *RATModeDrilldownController; // @synthesize RATModeDrilldownController=_RATModeDrilldownController;
 @property(retain, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
-- (void).cxx_destruct;
 - (_Bool)shouldShowLTEOptions;
 - (_Bool)shouldShowLegacyRATOptions;
 - (id)getLTEService:(id)arg1;

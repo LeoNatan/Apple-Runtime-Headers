@@ -14,6 +14,7 @@
     CDUnknownBlockType _callEventHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callEventHandler; // @synthesize callEventHandler=_callEventHandler;
 @property(readonly, retain) NSSet *currentCalls; // @synthesize currentCalls=_currentCalls;
 - (id)initWithQueue:(struct dispatch_queue_s *)arg1;

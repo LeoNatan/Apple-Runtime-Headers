@@ -13,8 +13,8 @@
     REMReminder *_reminder;
 }
 
-@property(retain, nonatomic) REMReminder *reminder; // @synthesize reminder=_reminder;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMReminder *reminder; // @synthesize reminder=_reminder;
 @property(readonly, nonatomic) NSArray *attachments;
 @property(readonly, nonatomic) NSArray *urlAttachments;
 @property(readonly, nonatomic) NSArray *imageAttachments;

@@ -18,10 +18,10 @@
     NSString *_labeledValueIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *handleValue; // @synthesize handleValue=_handleValue;
 @property(retain, nonatomic) NSString *labeledValueIdentifier; // @synthesize labeledValueIdentifier=_labeledValueIdentifier;
 @property(retain, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

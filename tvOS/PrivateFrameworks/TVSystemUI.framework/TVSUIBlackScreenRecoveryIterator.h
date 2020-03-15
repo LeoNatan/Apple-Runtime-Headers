@@ -18,12 +18,12 @@
 }
 
 + (id)scheduleIterationForDisplayModes:(id)arg1 iterationInterval:(double)arg2 iterationBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType iterationBlock; // @synthesize iterationBlock=_iterationBlock;
 @property(nonatomic) unsigned long long currentModeIndex; // @synthesize currentModeIndex=_currentModeIndex;
 @property(retain, nonatomic) NSArray *modesToTry; // @synthesize modesToTry=_modesToTry;
 @property(retain, nonatomic) TVSUIBlackScreenRecoveryViewController *currentController; // @synthesize currentController=_currentController;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
-- (void).cxx_destruct;
 - (void)_switchToNextMode;
 - (void)stop;
 

@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) unsigned long long taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
+- (void)_endTask;
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 expirationHandler:(CDUnknownBlockType)arg2;
 - (id)init;

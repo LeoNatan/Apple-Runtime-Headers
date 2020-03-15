@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_updatedProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *updatedProperties; // @synthesize updatedProperties=_updatedProperties;
 @property(readonly, nonatomic) long long changeType; // @synthesize changeType=_changeType;
 @property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (void)removePropertyWithName:(id)arg1;
 - (void)updatedWithProperties:(id)arg1;
 - (void)deleted;

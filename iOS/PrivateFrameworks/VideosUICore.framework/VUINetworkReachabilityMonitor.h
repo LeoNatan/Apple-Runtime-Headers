@@ -15,9 +15,9 @@
 
 + (_Bool)_isNetworkReachable;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id networkReachabilityChangedNotificationToken; // @synthesize networkReachabilityChangedNotificationToken=_networkReachabilityChangedNotificationToken;
 @property(retain, nonatomic) id networkTypeChangedNotificationToken; // @synthesize networkTypeChangedNotificationToken=_networkTypeChangedNotificationToken;
-- (void).cxx_destruct;
 @property(getter=isNetworkReachable) _Bool networkReachable; // @synthesize networkReachable=_networkReachable;
 - (void)_updateNetworkReachability;
 - (id)_init;

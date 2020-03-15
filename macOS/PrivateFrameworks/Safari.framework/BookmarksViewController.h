@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 + (id)bookmarksPageTitle;
 + (id)draggedBookmarks;
 + (float)bottomGradientHeight;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *titleField; // @synthesize titleField=_titleField;
 @property(nonatomic) __weak NSTextField *searchMatchesLabel; // @synthesize searchMatchesLabel=_searchMatchesLabel;
 @property(nonatomic) __weak NSSearchField *searchField; // @synthesize searchField=_searchField;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSBox *mainContentView; // @synthesize mainContentView=_mainContentView;
 @property(retain, nonatomic) WebBookmark *selectedCollection; // @synthesize selectedCollection=_selectedCollection;
 @property(nonatomic) __weak id <BookmarksViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_instrumentUserDidActivateBookmark:(id)arg1 viaContextMenu:(BOOL)arg2;
 - (long long)_numberOfFixedBookmarkFoldersInTopBookmark;
 - (BOOL)_shouldDisplayBookmark:(id)arg1;

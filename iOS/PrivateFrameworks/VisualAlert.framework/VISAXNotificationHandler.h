@@ -20,10 +20,10 @@
 + (id)_safelyGetObserverForIdentifier:(unsigned long long)arg1;
 + (void)_safelyRemoveObserverForIdentifier:(unsigned long long)arg1;
 + (unsigned long long)_safelyRegisterObserver:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTarget:) id _target; // @synthesize _target;
 @property(retain, nonatomic, setter=_setNotificationName:) NSString *_notificationName; // @synthesize _notificationName;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
-- (void).cxx_destruct;
 - (void)_handleNotificationWithName:(id)arg1 object:(const void *)arg2 userInfo:(id)arg3;
 - (void)processHandler:(SEL)arg1;
 - (void)_stopObserving;

@@ -14,8 +14,8 @@
 }
 
 + (id)databaseExceptionWithReason:(id)arg1 sqliteError:(id)arg2;
-@property(readonly, nonatomic) NSError *sqliteError; // @synthesize sqliteError=_sqliteError;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSError *sqliteError; // @synthesize sqliteError=_sqliteError;
 - (void)_SQLITE_DONE;
 - (void)_SQLITE_ROW;
 - (void)_SQLITE_NOTADB;

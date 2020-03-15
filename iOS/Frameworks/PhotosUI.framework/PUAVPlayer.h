@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     id <PUAVPlayerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PUAVPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUAVPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)init;

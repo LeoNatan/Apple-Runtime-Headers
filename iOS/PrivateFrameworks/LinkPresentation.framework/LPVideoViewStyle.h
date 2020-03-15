@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     CAMediaTimingFunction *_pulsingLoadIndicatorTimingFunction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAMediaTimingFunction *pulsingLoadIndicatorTimingFunction; // @synthesize pulsingLoadIndicatorTimingFunction=_pulsingLoadIndicatorTimingFunction;
 @property(nonatomic) double pulsingLoadIndicatorDuration; // @synthesize pulsingLoadIndicatorDuration=_pulsingLoadIndicatorDuration;
 @property(nonatomic) double pulsingLoadIndicatorMaximumOpacity; // @synthesize pulsingLoadIndicatorMaximumOpacity=_pulsingLoadIndicatorMaximumOpacity;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, retain, nonatomic) LPPadding *muteButtonPadding; // @synthesize muteButtonPadding=_muteButtonPadding;
 @property(readonly, nonatomic) LPImageViewStyle *muteButton; // @synthesize muteButton=_muteButton;
 @property(readonly, nonatomic) LPVideoPlayButtonStyle *playButton; // @synthesize playButton=_playButton;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

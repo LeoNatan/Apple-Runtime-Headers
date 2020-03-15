@@ -22,12 +22,12 @@
     CUISAlertSwipeToDismissViewBehavior *_dismissBehavior;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUISAlertSwipeToDismissViewBehavior *dismissBehavior; // @synthesize dismissBehavior=_dismissBehavior;
 @property(retain, nonatomic) CUISAlertChevronView *topChevron; // @synthesize topChevron=_topChevron;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <CUISAlertSwipeToDismissViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <CUISAlertSwipeToDismissViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)behaviorDidPerformSwipeAction;
 - (void)reloadData;
 - (id)backgroundView;

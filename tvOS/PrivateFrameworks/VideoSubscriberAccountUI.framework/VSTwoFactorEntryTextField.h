@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     long long _returnKeyType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long returnKeyType; // @synthesize returnKeyType=_returnKeyType;
 @property(nonatomic) long long autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
 @property(nonatomic) long long autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool autoShowKeyboard; // @synthesize autoShowKeyboard=_autoShowKeyboard;
 @property(nonatomic) unsigned long long expectedLength; // @synthesize expectedLength=_expectedLength;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -13,8 +13,8 @@
     NSMutableSet *_years;
 }
 
-@property(readonly, nonatomic) NSMutableSet *years; // @synthesize years=_years;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableSet *years; // @synthesize years=_years;
 - (id)_storeDayForDate:(id)arg1 createIfNeeded:(_Bool)arg2;
 - (void)_enumerateDaysFromStartDate:(id)arg1 toEndDate:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (_Bool)hasEventsFromStartDate:(id)arg1 toEndDate:(id)arg2;

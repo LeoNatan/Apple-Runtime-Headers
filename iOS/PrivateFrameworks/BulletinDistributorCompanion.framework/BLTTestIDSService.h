@@ -25,11 +25,11 @@
     unsigned long long _maximumResponseDelay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maximumResponseDelay; // @synthesize maximumResponseDelay=_maximumResponseDelay;
 @property(nonatomic) unsigned long long minimumResponseDelay; // @synthesize minimumResponseDelay=_minimumResponseDelay;
 @property(nonatomic) unsigned long long maximumSendDelay; // @synthesize maximumSendDelay=_maximumSendDelay;
 @property(nonatomic) unsigned long long minimumSendDelay; // @synthesize minimumSendDelay=_minimumSendDelay;
-- (void).cxx_destruct;
 - (unsigned long long)_randomValueBetweenMin:(unsigned long long)arg1 max:(unsigned long long)arg2;
 - (unsigned long long)_randomResponseDelay;
 - (unsigned long long)_randomSendDelay;

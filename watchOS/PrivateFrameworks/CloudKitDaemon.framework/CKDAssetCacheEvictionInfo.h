@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSMutableOrderedSet *_assetHandleItemIDsToDelete;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *assetHandleItemIDsToDelete; // @synthesize assetHandleItemIDsToDelete=_assetHandleItemIDsToDelete;
 @property(retain, nonatomic) NSMutableOrderedSet *itemIDsToUnregister; // @synthesize itemIDsToUnregister=_itemIDsToUnregister;
 @property(retain, nonatomic) CKDClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property _Bool clearRegisteredItems; // @synthesize clearRegisteredItems=_clearRegisteredItems;
 @property _Bool evictNow; // @synthesize evictNow=_evictNow;
 @property _Bool forced; // @synthesize forced=_forced;
-- (void).cxx_destruct;
 - (id)initWithClientContext:(id)arg1 forced:(_Bool)arg2 evictNow:(_Bool)arg3;
 
 @end

@@ -12,8 +12,8 @@
     void *_bytes;
 }
 
-@property(readonly, nonatomic) void *bytes; // @synthesize bytes=_bytes;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) void *bytes; // @synthesize bytes=_bytes;
 - (void)dealloc;
 - (id)initWithBytes:(void *)arg1 deallocator:(CDUnknownBlockType)arg2;
 

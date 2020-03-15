@@ -13,8 +13,8 @@
     UISwitch *_switchControl;
 }
 
-@property(readonly, nonatomic) __weak UISwitch *switchControl; // @synthesize switchControl=_switchControl;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UISwitch *switchControl; // @synthesize switchControl=_switchControl;
 - (id)accessibilityValue;
 - (id)accessibilityHint;
 - (unsigned long long)accessibilityTraits;

@@ -20,9 +20,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) LSApplicationWorkspace *lsApplicationWorkspace; // @synthesize lsApplicationWorkspace=_lsApplicationWorkspace;
 @property(retain, nonatomic) id <FBApplicationDataStoreRepository> dataStore; // @synthesize dataStore=_dataStore;
-- (void).cxx_destruct;
 - (void)storeInvalidatedForIdentifier:(id)arg1;
 - (void)objectChangedForKeys:(id)arg1 application:(id)arg2;
 - (void)_performAfterDeferredWork:(CDUnknownBlockType)arg1;

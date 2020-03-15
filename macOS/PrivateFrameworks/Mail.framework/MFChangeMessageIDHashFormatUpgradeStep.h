@@ -15,8 +15,8 @@
 
 + (BOOL)needToPerformFromMinorVersion:(unsigned long long)arg1 initialLastWriteMinorVersion:(unsigned long long)arg2;
 + (unsigned long long)targetVersion;
-@property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void)_alterTable:(id)arg1 columnDefinitions:(id)arg2 columnList:(id)arg3;
 - (BOOL)_columnIsInteger:(id)arg1 inTable:(id)arg2;
 - (void)runWithRowIDsNeedingConversationRecalculation:(id)arg1;

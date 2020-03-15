@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *serverHost; // @synthesize serverHost=_serverHost;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *serverHost; // @synthesize serverHost=_serverHost;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

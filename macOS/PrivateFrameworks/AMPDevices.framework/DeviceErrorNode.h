@@ -20,11 +20,11 @@
 + (id)nodeWithErrorDictionary:(id)arg1;
 + (id)nodeWithMessage:(id)arg1 explantion:(id)arg2 url:(id)arg3 parentNode:(id)arg4;
 + (id)node;
+- (void).cxx_destruct;
 @property(nonatomic) __weak DeviceErrorNode *parentNode; // @synthesize parentNode=_parentNode;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *explanation; // @synthesize explanation=_explanation;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)initWithMessage:(id)arg1 explantion:(id)arg2 url:(id)arg3 parentNode:(id)arg4;
 
 @end

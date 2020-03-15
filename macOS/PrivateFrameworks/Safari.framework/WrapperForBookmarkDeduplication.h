@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     WebBookmark *_bookmark;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasSyncData; // @synthesize hasSyncData=_hasSyncData;
 @property(readonly, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

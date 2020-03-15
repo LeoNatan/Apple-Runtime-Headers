@@ -13,8 +13,8 @@
     DDRemoteActionContext *_actionContext;
 }
 
-@property(readonly) DDRemoteActionContext *actionContext; // @synthesize actionContext=_actionContext;
 - (void).cxx_destruct;
+@property(readonly) DDRemoteActionContext *actionContext; // @synthesize actionContext=_actionContext;
 - (void)createViewControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithContext:(id)arg1;
 

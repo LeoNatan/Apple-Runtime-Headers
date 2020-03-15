@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCallForwardingEnabled) _Bool callForwardingEnabled; // @synthesize callForwardingEnabled=_callForwardingEnabled;
 @property(readonly, nonatomic, getter=isRegisteredWithoutCellular) _Bool registeredWithoutCellular; // @synthesize registeredWithoutCellular=_registeredWithoutCellular;
 @property(readonly, nonatomic, getter=isPreferredForDataConnections) _Bool preferredForDataConnections; // @synthesize preferredForDataConnections=_preferredForDataConnections;
@@ -45,7 +46,6 @@
 @property(readonly, copy, nonatomic) NSString *shortLabel; // @synthesize shortLabel=_shortLabel;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic, getter=isSIMPresent) _Bool SIMPresent; // @synthesize SIMPresent=_SIMPresent;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)dataByApplyingDiff:(id)arg1;

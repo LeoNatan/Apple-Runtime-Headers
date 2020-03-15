@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _fileHeaderLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fileHeaderLength; // @synthesize fileHeaderLength=_fileHeaderLength;
 @property(nonatomic) unsigned short extraFieldsLength; // @synthesize extraFieldsLength=_extraFieldsLength;
 @property(nonatomic) unsigned short nameLength; // @synthesize nameLength=_nameLength;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(copy, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

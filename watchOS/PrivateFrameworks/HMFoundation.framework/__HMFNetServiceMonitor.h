@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     HMFNetService *_service;
 }
 
-@property(readonly) HMFNetService *service; // @synthesize service=_service;
 - (void).cxx_destruct;
+@property(readonly) HMFNetService *service; // @synthesize service=_service;
 - (id)logIdentifier;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (unsigned int)reachabilityPath;

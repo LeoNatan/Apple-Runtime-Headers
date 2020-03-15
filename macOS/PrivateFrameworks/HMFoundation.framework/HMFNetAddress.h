@@ -14,8 +14,8 @@
 }
 
 + (id)localAddress;
-@property(readonly, nonatomic) HMFNetAddressInternal *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMFNetAddressInternal *internal; // @synthesize internal=_internal;
 - (id)dataUsingEncoding:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *addressString;
 @property(readonly, nonatomic) unsigned long long addressFamily;

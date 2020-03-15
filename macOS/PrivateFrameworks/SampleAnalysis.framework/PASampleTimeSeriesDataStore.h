@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) SASampleStore *sampleStore; // @synthesize sampleStore=_sampleStore;
 - (void).cxx_destruct;
+@property(retain) SASampleStore *sampleStore; // @synthesize sampleStore=_sampleStore;
 - (id)initWithSampleStore:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

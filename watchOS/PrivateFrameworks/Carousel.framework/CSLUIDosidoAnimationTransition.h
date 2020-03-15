@@ -29,8 +29,8 @@
 + (id)clockToAppSourceSpringAnimation;
 + (id)dosidoSpringAnimation;
 + (id)dosidoAnimationWithHelper:(id)arg1;
-@property(readonly, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
 - (void)_appToAppDosidoWithSource:(id)arg1 destination:(id)arg2;
 - (void)_configureAnimation:(id)arg1;
 - (void)_appToClockDosidoWithSource:(id)arg1 destination:(id)arg2;

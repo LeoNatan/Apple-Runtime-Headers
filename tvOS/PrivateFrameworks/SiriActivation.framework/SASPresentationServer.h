@@ -23,13 +23,13 @@
 + (id)interface;
 + (void)_unregisterConnection:(id)arg1;
 + (id)serverForConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long presentationIdentifier; // @synthesize presentationIdentifier=_presentationIdentifier;
 @property(nonatomic) __weak id <SASPresentationServerDelegate> weak_delegate; // @synthesize weak_delegate=_weak_delegate;
 @property(retain, nonatomic) NSMutableArray *waitForConnectBlocks; // @synthesize waitForConnectBlocks=_waitForConnectBlocks;
 @property(nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(retain, nonatomic) BSServiceConnection<BSServiceConnectionHost> *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) BSServiceConnectionEndpointInjector *workspaceServiceInjector; // @synthesize workspaceServiceInjector=_workspaceServiceInjector;
-- (void).cxx_destruct;
 - (oneway void)handleMarkBulletinWithIdentifier:(id)arg1 asRead:(id)arg2;
 - (id)bulletinForIdentifier:(id)arg1;
 - (id)bulletinsOnLockScreen;

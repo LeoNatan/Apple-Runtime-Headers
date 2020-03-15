@@ -16,9 +16,9 @@
     NSMutableArray *_assetSearchResults;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool resultsCanOverlap; // @synthesize resultsCanOverlap=_resultsCanOverlap;
 @property(retain, nonatomic) NSMutableArray *assetSearchResults; // @synthesize assetSearchResults=_assetSearchResults;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *groupResults;
 - (id)assetUUIDs;
 - (unsigned int)assetCount;

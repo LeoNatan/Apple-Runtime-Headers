@@ -16,50 +16,49 @@
 @interface HMMediaSession : NSObject <_HMMediaSessionDelegate, HMObjectMerge, NSSecureCoding>
 {
     NSUUID *_uuid;
-    int _playbackState;
     HMAudioControl *_audioControl;
+    NSString *_mediaUniqueIdentifier;
     NSString *_routeUID;
     id <HMMediaSessionDelegate> _delegate;
-    int _shuffleState;
-    int _repeatState;
-    NSString *_mediaUniqueIdentifier;
     _HMMediaSession *_mediaSession;
     HMMediaProfile *_mediaProfile;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property __weak HMMediaProfile *mediaProfile; // @synthesize mediaProfile=_mediaProfile;
 @property(retain, nonatomic) _HMMediaSession *mediaSession; // @synthesize mediaSession=_mediaSession;
-@property(readonly, copy) NSString *mediaUniqueIdentifier; // @synthesize mediaUniqueIdentifier=_mediaUniqueIdentifier;
-@property(readonly) int repeatState; // @synthesize repeatState=_repeatState;
-@property(readonly) int shuffleState; // @synthesize shuffleState=_shuffleState;
 @property __weak id <HMMediaSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) HMAudioControl *audioControl; // @synthesize audioControl=_audioControl;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)mediaSession:(id)arg1 didUpdateRouteUID:(id)arg2;
-- (void)mediaSession:(id)arg1 didUpdateMediaState:(id)arg2;
+- (void)mediaSessionDidUpdate:(id)arg1;
 - (void)mediaSession:(id)arg1 didUpdatePlaybackState:(int)arg2;
+@property(readonly, copy) NSString *description;
+- (void)updatePlaybackState:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)refreshPlaybackStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)pauseWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resumeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)playbackStateDescription;
 @property(readonly, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;
-@property(readonly) int playbackState; // @synthesize playbackState=_playbackState;
+- (void)updateMediaState:(id)arg1;
+@property(readonly, copy) NSString *mediaUniqueIdentifier; // @synthesize mediaUniqueIdentifier=_mediaUniqueIdentifier;
+@property(readonly) int repeatState;
+@property(readonly) int shuffleState;
+@property(readonly) int playbackState;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (id)messageTargetUUID;
 - (void)updatePlaybackState:(id)arg1;
 - (void)configure:(id)arg1 messageTargetUUID:(id)arg2;
-- (id)initWithUUID:(id)arg1 routeUID:(id)arg2 playbackState:(int)arg3;
+- (id)initWithUUID:(id)arg1 routeUID:(id)arg2 playbackState:(int)arg3 shuffleState:(int)arg4 repeatState:(int)arg5 mediaUniqueIdentifier:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

@@ -29,6 +29,7 @@
 }
 
 + (_Bool)isValidPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *metadataURL; // @synthesize metadataURL=_metadataURL;
 @property(retain, nonatomic) PLGenericAlbum *genericAlbum; // @synthesize genericAlbum=_genericAlbum;
 @property(nonatomic) _Bool allowsOverwrite; // @synthesize allowsOverwrite=_allowsOverwrite;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSString *cloudGUID; // @synthesize cloudGUID=_cloudGUID;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_saveMetadata;
 - (_Bool)_readMetadata;
 - (id)description;

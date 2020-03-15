@@ -13,6 +13,7 @@
 - (void)audioRecorderBufferAvailable:(CSAudioRecorder *)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(NSData *)arg3 remoteVAD:(NSData *)arg4 atTime:(unsigned long long)arg5;
 
 @optional
+- (void)remoteRecorderDidDetectedTwoShotAtTime:(double)arg1;
 - (void)audioRecorderStreamHandleIdInvalidated:(unsigned long long)arg1;
 - (void)audioRecorderBuiltInAudioStreamInvalidated:(CSAudioRecorder *)arg1 error:(NSError *)arg2;
 - (void)audioRecorderWillBeDestroyed:(CSAudioRecorder *)arg1;

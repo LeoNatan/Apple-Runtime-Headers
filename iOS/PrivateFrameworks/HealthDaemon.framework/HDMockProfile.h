@@ -20,6 +20,7 @@
     HDUserCharacteristicsManager *_userCharacteristicsManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDUserCharacteristicsManager *userCharacteristicsManager; // @synthesize userCharacteristicsManager=_userCharacteristicsManager;
 @property(retain, nonatomic) HDDataCollectionManager *dataCollectionManager; // @synthesize dataCollectionManager=_dataCollectionManager;
 @property(nonatomic) __weak id <HDHealthDaemon> healthDaemon; // @synthesize healthDaemon=_healthDaemon;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) HDDeviceManager *healthDeviceManager; // @synthesize healthDeviceManager;
 @property(retain, nonatomic) HDSourceManager *healthSourceManager; // @synthesize healthSourceManager;
 @property(retain, nonatomic) id <HDHealthDatabase> healthDatabase; // @synthesize healthDatabase;
-- (void).cxx_destruct;
 
 @end
 

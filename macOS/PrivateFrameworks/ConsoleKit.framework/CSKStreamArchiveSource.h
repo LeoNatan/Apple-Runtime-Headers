@@ -21,6 +21,7 @@
     OSLogPersistence *_persistenceStream;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsToStop; // @synthesize wantsToStop=_wantsToStop;
 @property(readonly, nonatomic) OSLogPersistence *persistenceStream; // @synthesize persistenceStream=_persistenceStream;
 @property(nonatomic) BOOL ignoresStatistics; // @synthesize ignoresStatistics=_ignoresStatistics;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) NSURL *archiveURL; // @synthesize archiveURL=_archiveURL;
-- (void).cxx_destruct;
 - (void)persistenceDidFinishReadingForStartDate:(id)arg1 endDate:(id)arg2;
 - (BOOL)persistence:(id)arg1 results:(id)arg2 error:(id)arg3;
 - (void)_gatherStatisticsAndSetPredicateOnPersistenceStream;

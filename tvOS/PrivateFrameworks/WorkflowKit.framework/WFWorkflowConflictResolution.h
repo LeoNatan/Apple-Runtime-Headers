@@ -16,11 +16,11 @@
     NSString *_remoteWorkflowID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool keepRemote; // @synthesize keepRemote=_keepRemote;
 @property(nonatomic) _Bool keepLocal; // @synthesize keepLocal=_keepLocal;
 @property(copy, nonatomic) NSString *remoteWorkflowID; // @synthesize remoteWorkflowID=_remoteWorkflowID;
 @property(copy, nonatomic) NSString *localWorkflowID; // @synthesize localWorkflowID=_localWorkflowID;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

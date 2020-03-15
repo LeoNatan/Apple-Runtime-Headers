@@ -13,8 +13,8 @@
     GEOPDAssociatedApp *_geoAssociatedApp;
 }
 
-@property(retain, nonatomic) GEOPDAssociatedApp *geoAssociatedApp; // @synthesize geoAssociatedApp=_geoAssociatedApp;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOPDAssociatedApp *geoAssociatedApp; // @synthesize geoAssociatedApp=_geoAssociatedApp;
 @property(readonly, nonatomic) NSArray *alternateAppAdamIds;
 @property(readonly, nonatomic) NSString *preferredAppAdamId;
 @property(readonly, nonatomic) _Bool hasPreferredAppAdamId;

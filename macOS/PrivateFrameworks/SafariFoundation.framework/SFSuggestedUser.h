@@ -20,10 +20,10 @@
 
 + (id)suggestedUserWithValue:(id)arg1 type:(long long)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long usageFrequency; // @synthesize usageFrequency=_usageFrequency;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)compare:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

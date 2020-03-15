@@ -22,11 +22,11 @@
     NSObject<OS_dispatch_queue> *_stateAccessQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateAccessQueue; // @synthesize stateAccessQueue=_stateAccessQueue;
 @property(nonatomic) _Bool checkedInstallStatus; // @synthesize checkedInstallStatus=_checkedInstallStatus;
 @property(readonly, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)identifierFromDictionaryForCurrentIdiom:(id)arg1;
 - (void)openFile:(id)arg1 withAnnotation:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)openFile:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

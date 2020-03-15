@@ -14,9 +14,9 @@
     NSString *_fallbackImageName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fallbackImageName; // @synthesize fallbackImageName=_fallbackImageName;
 @property(copy, nonatomic) NSString *desiredImageName; // @synthesize desiredImageName=_desiredImageName;
-- (void).cxx_destruct;
 - (void)updateImagesWithAnimation:(_Bool)arg1;
 - (void)dealloc;
 - (id)init;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     CKDMMCSItem *_MMCSItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDMMCSItem *MMCSItem; // @synthesize MMCSItem=_MMCSItem;
 @property(retain, nonatomic) CKDMMCSItemGroupContext *MMCSRequest; // @synthesize MMCSRequest=_MMCSRequest;
 @property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (BOOL)writeBytesAtOffset:(unsigned long long)arg1 bytes:(char *)arg2 length:(unsigned long long)arg3 bytesWritten:(unsigned long long *)arg4 error:(id *)arg5;
 - (BOOL)readBytesAtOffset:(unsigned long long)arg1 bytes:(char *)arg2 length:(unsigned long long)arg3 bytesRead:(unsigned long long *)arg4 error:(id *)arg5;
 - (id)getFileMetadataWithError:(id *)arg1;

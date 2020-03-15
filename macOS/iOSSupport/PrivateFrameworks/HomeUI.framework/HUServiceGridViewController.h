@@ -19,11 +19,11 @@
     id <HUServiceGridViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HUServiceGridViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL shouldShowLoadingState; // @synthesize shouldShowLoadingState=_shouldShowLoadingState;
 @property(nonatomic) long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
 @property(nonatomic) unsigned long long contentMargins; // @synthesize contentMargins=_contentMargins;
-- (void).cxx_destruct;
 - (void)_layoutSectionHeaders;
 - (void)layoutOptionsDidChange;
 - (id)layoutOptionsForSection:(long long)arg1;

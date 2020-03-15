@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_redeemButton;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *initialCode; // @synthesize initialCode=_initialCode;
 @property(readonly, nonatomic) long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (void)_toggleActivityIndicatorBarButtonItem:(_Bool)arg1;
 - (id)_newTextFieldWithClientContext:(id)arg1;
 - (void)_termsButtonAction:(id)arg1;

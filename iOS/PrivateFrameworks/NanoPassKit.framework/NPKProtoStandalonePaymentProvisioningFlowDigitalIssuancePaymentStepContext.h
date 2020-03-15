@@ -8,10 +8,15 @@
 
 #import <NanoPassKit/NSCopying-Protocol.h>
 
+@class NPKProtoStandalonePaymentSetupProduct;
+
 @interface NPKProtoStandalonePaymentProvisioningFlowDigitalIssuancePaymentStepContext : PBCodable <NSCopying>
 {
+    NPKProtoStandalonePaymentSetupProduct *_product;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NPKProtoStandalonePaymentSetupProduct *product; // @synthesize product=_product;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -21,6 +26,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasProduct;
 
 @end
 

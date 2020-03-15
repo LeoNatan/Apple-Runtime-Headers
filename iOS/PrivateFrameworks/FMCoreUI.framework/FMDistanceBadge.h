@@ -14,9 +14,9 @@
     struct UIEdgeInsets _insets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets insets; // @synthesize insets=_insets;
 @property(retain, nonatomic) UIColor *badgeColor; // @synthesize badgeColor=_badgeColor;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawTextInRect:(struct CGRect)arg1;

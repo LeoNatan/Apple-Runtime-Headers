@@ -22,12 +22,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long chargingDescriptionType; // @synthesize chargingDescriptionType=_chargingDescriptionType;
 @property(readonly, copy, nonatomic) NSString *chargingDescription; // @synthesize chargingDescription=_chargingDescription;
 @property(readonly, nonatomic, getter=isBatterySaverModeActive) _Bool batterySaverModeActive; // @synthesize batterySaverModeActive=_batterySaverModeActive;
 @property(readonly, nonatomic) unsigned long long percentCharge; // @synthesize percentCharge=_percentCharge;
 @property(readonly, nonatomic) unsigned long long chargingState; // @synthesize chargingState=_chargingState;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)dataByApplyingDiff:(id)arg1;

@@ -14,13 +14,13 @@
 + (double)automaticRowHeight;
 + (_Bool)shouldUseAccessibilityLayout;
 + (_Bool)layoutDirectionIsRTL;
-+ (struct UIImage *)_px_PhotosImageNamed:(id)arg1;
-+ (struct UIImage *)imageForImageName:(id)arg1;
-+ (struct UIColor *)wordEmbeddingPathColor;
-+ (struct UIColor *)wordEmbeddingTextColor;
++ (id)_px_PhotosImageNamed:(id)arg1;
++ (id)imageForImageName:(id)arg1;
++ (id)wordEmbeddingPathColor;
++ (id)wordEmbeddingTextColor;
 + (id)defaultStringAttributes;
-+ (id)highlightedAttributedStringForString:(id)arg1 highlightedSubstring:(id)arg2 matchedColor:(struct UIColor *)arg3 remainingColor:(struct UIColor *)arg4;
-+ (_Bool)attributedStringFontNeedsUpdate:(id)arg1 currentFont:(struct UIFont *)arg2;
++ (id)highlightedAttributedStringForString:(id)arg1 highlightedSubstring:(id)arg2 matchedColor:(id)arg3 remainingColor:(id)arg4;
++ (_Bool)attributedStringFontNeedsUpdate:(id)arg1 currentFont:(id)arg2;
 
 @end
 

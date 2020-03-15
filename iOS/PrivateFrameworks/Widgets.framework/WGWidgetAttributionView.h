@@ -16,8 +16,8 @@
 
 + (id)widgetAttributionIDsInOrder;
 + (void)requestAttributedStringForIdentifier:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) UIColor *legibilityTextColor; // @synthesize legibilityTextColor=_legibilityTextColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *legibilityTextColor; // @synthesize legibilityTextColor=_legibilityTextColor;
 - (void)layoutSubviews;
 - (void)_configureAttributedString;
 - (id)_paragraphStyle;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSDictionary *_offer;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *offer; // @synthesize offer=_offer;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *offer; // @synthesize offer=_offer;
 @property(readonly, nonatomic) NSArray *videosPlayables;
 @property(readonly, copy, nonatomic) VUIActionItunesExtras *extrasAction;
 - (id)notificationBody;

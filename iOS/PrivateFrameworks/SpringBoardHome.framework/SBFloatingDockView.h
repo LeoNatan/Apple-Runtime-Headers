@@ -29,6 +29,7 @@
 + (double)maximumInterIconSpacingWithIconImageInfo:(struct SBIconImageInfo)arg1;
 + (double)maximumDockContinuousCornerRadiusWithIconImageInfo:(struct SBIconImageInfo)arg1;
 + (double)_referenceInterIconSpacingWithIconImageInfo:(struct SBIconImageInfo)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double iconContentScale; // @synthesize iconContentScale=_iconContentScale;
 @property(retain, nonatomic) UIView *touchReceivingView; // @synthesize touchReceivingView=_touchReceivingView;
 @property(retain, nonatomic) UIView *dividerView; // @synthesize dividerView=_dividerView;
@@ -38,7 +39,6 @@
 @property(nonatomic) struct UIEdgeInsets paddingEdgeInsets; // @synthesize paddingEdgeInsets=_paddingEdgeInsets;
 @property(retain, nonatomic) SBDockIconListView *recentIconListView; // @synthesize recentIconListView=_recentIconListView;
 @property(retain, nonatomic) SBDockIconListView *userIconListView; // @synthesize userIconListView=_userIconListView;
-- (void).cxx_destruct;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)updateDividerVisualStyling;
 - (void)bounce;

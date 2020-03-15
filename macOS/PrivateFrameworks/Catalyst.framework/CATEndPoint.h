@@ -15,10 +15,10 @@
     CATAddress *_address;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int port; // @synthesize port=_port;
 @property(readonly, nonatomic) CATAddress *address; // @synthesize address=_address;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEndPoint:(id)arg1;
 - (unsigned long long)hash;

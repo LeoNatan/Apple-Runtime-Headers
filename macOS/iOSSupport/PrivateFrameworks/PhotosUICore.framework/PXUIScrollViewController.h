@@ -8,17 +8,22 @@
 
 #import <PhotosUICore/PXUIScrollViewDelegate-Protocol.h>
 #import <PhotosUICore/UIScrollViewDelegate-Protocol.h>
+#import <PhotosUICore/_PXUIScrollViewFocusItemProvider-Protocol.h>
 
 @class NSString, UIScrollView, _PXUIScrollView;
+@protocol PXUIScrollViewControllerFocusItemProvider;
 
-@interface PXUIScrollViewController : PXScrollViewController <PXUIScrollViewDelegate, UIScrollViewDelegate>
+@interface PXUIScrollViewController : PXScrollViewController <PXUIScrollViewDelegate, _PXUIScrollViewFocusItemProvider, UIScrollViewDelegate>
 {
     _PXUIScrollView *_scrollView;
     BOOL _isScrollingToTop;
+    id <PXUIScrollViewControllerFocusItemProvider> _focusItemProvider;
 }
 
-@property(nonatomic, setter=setScrollingToTop:) BOOL isScrollingToTop; // @synthesize isScrollingToTop=_isScrollingToTop;
 - (void).cxx_destruct;
+@property(nonatomic, setter=setScrollingToTop:) BOOL isScrollingToTop; // @synthesize isScrollingToTop=_isScrollingToTop;
+@property(nonatomic) __weak id <PXUIScrollViewControllerFocusItemProvider> focusItemProvider; // @synthesize focusItemProvider=_focusItemProvider;
+- (id)focusItemsForScrollView:(id)arg1 inRect:(struct CGRect)arg2;
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (BOOL)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
@@ -52,7 +57,7 @@
 - (void)setVisibleOrigin:(struct CGPoint)arg1;
 - (void)removeGestureRecognizer:(id)arg1;
 - (void)addGestureRecognizer:(id)arg1;
-- (void)addSubviewToScrollView:(struct NSObject *)arg1;
+- (void)addSubviewToScrollView:(id)arg1;
 - (void)addSubview:(id)arg1;
 - (BOOL)hasWindow;
 @property(readonly, nonatomic) UIScrollView *scrollView;

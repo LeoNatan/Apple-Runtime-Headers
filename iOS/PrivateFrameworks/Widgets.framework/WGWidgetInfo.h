@@ -29,6 +29,7 @@
 + (double)maximumContentHeightForCompactDisplayMode;
 + (void)_updateRowHeightForContentSizeCategory;
 + (id)widgetInfoWithExtension:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setDisplayName:) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic, getter=_outlineIcon, setter=_setOutlineIcon:) UIImage *outlineIcon; // @synthesize outlineIcon=_outlineIcon;
 @property(retain, nonatomic, getter=_icon, setter=_setIcon:) UIImage *icon; // @synthesize icon=_icon;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) long long initialDisplayMode; // @synthesize initialDisplayMode=_initialDisplayMode;
 @property(nonatomic) struct CGSize preferredContentSize; // @synthesize preferredContentSize=_preferredContentSize;
 @property(readonly, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)updatePreferredContentSize:(struct CGSize)arg1 forWidgetHost:(id)arg2;
 - (void)registerWidgetHost:(id)arg1;
 @property(nonatomic, setter=_setWantsVisibleFrame:) _Bool wantsVisibleFrame; // @synthesize wantsVisibleFrame=_wantsVisibleFrame;

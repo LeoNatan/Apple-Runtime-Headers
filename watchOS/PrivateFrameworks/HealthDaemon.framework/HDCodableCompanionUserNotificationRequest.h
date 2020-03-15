@@ -16,9 +16,9 @@
     NSString *_requestIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableCompanionUserNotificationConfiguration *notificationConfiguration; // @synthesize notificationConfiguration=_notificationConfiguration;
 @property(retain, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

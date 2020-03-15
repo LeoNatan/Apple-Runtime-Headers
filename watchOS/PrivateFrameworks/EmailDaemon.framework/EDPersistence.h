@@ -26,6 +26,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly) EDActivityPersistence *activityPersistence; // @synthesize activityPersistence=_activityPersistence;
 @property(readonly, nonatomic) EMBlockedSenderManager *blockedSenderManager; // @synthesize blockedSenderManager=_blockedSenderManager;
 @property(readonly) EDVIPManager *vipManager; // @synthesize vipManager=_vipManager;
@@ -36,7 +37,6 @@
 @property(readonly) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 @property(readonly, nonatomic) EDMailboxPersistence *mailboxPersistence; // @synthesize mailboxPersistence=_mailboxPersistence;
 @property(readonly) EDGmailLabelPersistence *gmailLabelPersistence; // @synthesize gmailLabelPersistence=_gmailLabelPersistence;
-- (void).cxx_destruct;
 @property(readonly) EDThreadPersistence *threadPersistence;
 @property(readonly) EDSearchableIndexManager *searchableIndexManager;
 @property(readonly) EDMessageChangeManager *messageChangeManager;

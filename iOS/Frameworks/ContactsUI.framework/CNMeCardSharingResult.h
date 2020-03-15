@@ -16,11 +16,11 @@
     CNContactImage *_contactImage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool didSaveImageToMeCard; // @synthesize didSaveImageToMeCard=_didSaveImageToMeCard;
 @property(readonly, nonatomic) CNContactImage *contactImage; // @synthesize contactImage=_contactImage;
 @property(readonly, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(readonly, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithGivenName:(id)arg1 familyName:(id)arg2 contactImage:(id)arg3 didSaveImageToMeCard:(_Bool)arg4;
 

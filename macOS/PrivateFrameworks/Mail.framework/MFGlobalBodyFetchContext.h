@@ -16,8 +16,8 @@
     NSOperationQueue *_workQueue;
 }
 
-@property(readonly, nonatomic) NSOperationQueue *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSOperationQueue *workQueue; // @synthesize workQueue=_workQueue;
 - (void)cacheBodiesForMessages:(id)arg1;
 - (id)init;
 

@@ -27,9 +27,9 @@
     id <RPMessageable> _messenger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <RPMessageable> messenger; // @synthesize messenger=_messenger;
 @property(retain, nonatomic) NSString *destinationID; // @synthesize destinationID=_destinationID;
-- (void).cxx_destruct;
 - (void)voiceControllerMediaServicesWereReset:(id)arg1;
 - (void)voiceControllerEncoderErrorDidOccur:(id)arg1 error:(id)arg2;
 - (void)voiceControllerDidDetectEndpoint:(id)arg1 ofType:(int)arg2 atTime:(double)arg3;

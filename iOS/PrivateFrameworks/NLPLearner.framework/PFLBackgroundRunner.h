@@ -13,8 +13,8 @@
     BKSProcessAssertion *_assertion;
 }
 
-@property(retain, nonatomic) BKSProcessAssertion *assertion; // @synthesize assertion=_assertion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BKSProcessAssertion *assertion; // @synthesize assertion=_assertion;
 
 @end
 

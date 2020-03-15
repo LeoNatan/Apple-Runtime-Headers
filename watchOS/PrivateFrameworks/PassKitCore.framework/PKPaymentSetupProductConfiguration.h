@@ -21,6 +21,7 @@
     unsigned int _featureIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
 @property(retain, nonatomic) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 @property(copy, nonatomic) NSString *dirtyStateIdentifier; // @synthesize dirtyStateIdentifier=_dirtyStateIdentifier;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(copy, nonatomic) NSString *partnerIdentifier; // @synthesize partnerIdentifier=_partnerIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithProductDictionary:(id)arg1;
 

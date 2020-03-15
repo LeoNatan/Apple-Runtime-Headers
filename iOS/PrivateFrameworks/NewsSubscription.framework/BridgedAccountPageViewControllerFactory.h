@@ -16,9 +16,9 @@
     id <SKAccountPageViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SKAccountPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)createAccountPageViewControllerFor:(id)arg1;
+@property(nonatomic) __weak id <SKAccountPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (id)createAccountPageViewControllerFor:(id)arg1 useAMS:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -13,7 +13,7 @@
 - (id <_UICollectionPreferredSizes>)auxillaryHostPreferredSizes;
 - (id <_UICollectionLayoutSupplementaryEnrolling>)auxillaryHostSupplementaryEnroller;
 - (int)auxillaryHostAuxillaryKind;
-- (int)auxillaryHostLayoutAxis;
+- (unsigned int)auxillaryHostLayoutAxis;
 - (_Bool)auxillaryHostShouldLayoutRTL;
 - (NSArray *)auxillaryHostAuxillaryItems;
 - (id <NSCollectionLayoutContainer>)auxillaryHostContainer;

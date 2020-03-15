@@ -19,11 +19,11 @@
 + (int)axisForVisualFormat:(id)arg1;
 + (id)parsersWithVisualFormats:(id)arg1 seperatedByDelimiter:(id)arg2;
 + (id)parserWithVisualFormat:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) int axis; // @synthesize axis=_axis;
 @property(copy, nonatomic) NSString *visualFormat; // @synthesize visualFormat=_visualFormat;
-- (void).cxx_destruct;
 - (void)_parse;
 - (id)description;
 - (id)initWithVisualFormat:(id)arg1;

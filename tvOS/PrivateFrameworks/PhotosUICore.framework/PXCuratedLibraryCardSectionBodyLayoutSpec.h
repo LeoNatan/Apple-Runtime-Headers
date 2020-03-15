@@ -18,13 +18,13 @@
     struct UIEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double distanceToNextLayout; // @synthesize distanceToNextLayout=_distanceToNextLayout;
 @property(readonly, nonatomic) PXGGradient *skimmingHintGradient; // @synthesize skimmingHintGradient=_skimmingHintGradient;
 @property(nonatomic) double horizontalMargin; // @synthesize horizontalMargin=_horizontalMargin;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) CDStruct_2bd92d94 cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
-- (void).cxx_destruct;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
 
 @end

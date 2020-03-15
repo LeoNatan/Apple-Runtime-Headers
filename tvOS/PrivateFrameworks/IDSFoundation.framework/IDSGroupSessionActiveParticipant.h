@@ -17,12 +17,12 @@
     NSData *_participantPushToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *participantPushToken; // @synthesize participantPushToken=_participantPushToken;
 @property(readonly, nonatomic) _Bool isKnown; // @synthesize isKnown=_isKnown;
 @property(readonly, nonatomic) NSString *participantURI; // @synthesize participantURI=_participantURI;
 @property(readonly, nonatomic) unsigned long long participantIdentifier; // @synthesize participantIdentifier=_participantIdentifier;
 @property(readonly, nonatomic) NSUUID *groupUUID; // @synthesize groupUUID=_groupUUID;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)dictionaryRepresentation;

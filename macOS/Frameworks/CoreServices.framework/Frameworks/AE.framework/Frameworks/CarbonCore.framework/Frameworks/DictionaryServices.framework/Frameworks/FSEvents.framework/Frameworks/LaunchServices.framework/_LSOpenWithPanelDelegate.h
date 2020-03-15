@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSOpenPanel *_openPanel;
 }
 
-@property __weak NSOpenPanel *openPanel; // @synthesize openPanel=_openPanel;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property __weak NSOpenPanel *openPanel; // @synthesize openPanel=_openPanel;
 - (void)panelSelectionDidChange:(id)arg1;
 - (BOOL)panel:(id)arg1 shouldEnableURL:(id)arg2;
 - (void)toggleAll:(id)arg1;

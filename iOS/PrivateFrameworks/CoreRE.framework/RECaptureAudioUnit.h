@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSString *_captureName;
 }
 
-@property(copy, nonatomic) NSString *captureName; // @synthesize captureName=_captureName;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *captureName; // @synthesize captureName=_captureName;
 - (CDUnknownBlockType)internalRenderBlock;
 - (id)channelCapabilities;
 - (id)outputBusses;

@@ -19,11 +19,11 @@
     struct __CFArray *_foundRecordRefs;
 }
 
+- (void).cxx_destruct;
 @property struct __CFArray *foundRecordRefs; // @synthesize foundRecordRefs=_foundRecordRefs;
 @property(retain, nonatomic) MAAsset *rawAsset; // @synthesize rawAsset=_rawAsset;
 @property(readonly) NSString *term; // @synthesize term=_term;
 @property(readonly) NSString *localizedDictionaryName; // @synthesize localizedDictionaryName=_localizedDictionaryName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_HTMLDefinitionForType:(long long)arg1;
 @property(readonly) NSDictionary *definitionElements; // @synthesize definitionElements=_definitionElements;

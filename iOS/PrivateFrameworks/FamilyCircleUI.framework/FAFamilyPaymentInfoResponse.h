@@ -13,8 +13,8 @@
     FAFamilyCreditCard *_creditCard;
 }
 
-@property(retain, nonatomic) FAFamilyCreditCard *creditCard; // @synthesize creditCard=_creditCard;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FAFamilyCreditCard *creditCard; // @synthesize creditCard=_creditCard;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 
 @end

@@ -14,9 +14,9 @@
     NWRemotePacketProxy *_packetProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain) NWRemotePacketProxy *packetProxy; // @synthesize packetProxy=_packetProxy;
 @property struct nw_protocol *utunProtocol; // @synthesize utunProtocol=_utunProtocol;
-- (void).cxx_destruct;
 - (_Bool)setUseFlowswitch:(_Bool)arg1;
 - (void)disconnectFlow:(id)arg1;
 - (void)connectNewFlow:(id)arg1;

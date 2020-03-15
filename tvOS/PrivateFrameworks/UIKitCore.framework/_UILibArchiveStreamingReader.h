@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     long long _appleDoubleIdentificationType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long appleDoubleIdentificationType; // @synthesize appleDoubleIdentificationType=_appleDoubleIdentificationType;
 @property(readonly, nonatomic) struct ui_archive *underlyingArchive; // @synthesize underlyingArchive=_underlyingArchive;
 @property(readonly, nonatomic) NSString *archivePath; // @synthesize archivePath=_archivePath;
-- (void).cxx_destruct;
 - (id)_debugLoadAndPrintAllRemainingItems;
 - (id)_loadItemByReadingAttributesFromUnderlyingArchiveEntry:(struct ui_archive_entry *)arg1;
 - (id)_nextSimpleItemFromPendingQueueOrLibArchiveRead;

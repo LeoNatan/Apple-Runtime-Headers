@@ -24,12 +24,12 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)shouldRuntimeIssueContext:(id)arg1 reportIssue:(id)arg2;
 + (void)provideCapabilitiesToBuilder:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *noMatchesMessage; // @synthesize noMatchesMessage=_noMatchesMessage;
 @property(readonly, copy) NSOrderedSet *runtimeIssues; // @synthesize runtimeIssues=_runtimeIssues;
 @property(readonly, copy) NSSet *remoteElements; // @synthesize remoteElements=_remoteElements;
 @property(readonly, copy) NSOrderedSet *matchingElements; // @synthesize matchingElements=_matchingElements;
 @property(readonly) XCElementSnapshot *rootElement; // @synthesize rootElement=_rootElement;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)resultsByReplacingRuntimeIssues:(id)arg1;

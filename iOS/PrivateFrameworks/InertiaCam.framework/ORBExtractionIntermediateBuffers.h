@@ -46,6 +46,7 @@
     unsigned long long _maxDescriptorCount;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long maxDescriptorCount; // @synthesize maxDescriptorCount=_maxDescriptorCount;
 @property unsigned int countOfRectRegions; // @synthesize countOfRectRegions=_countOfRectRegions;
 @property unsigned int maxRegionHeight; // @synthesize maxRegionHeight=_maxRegionHeight;
@@ -79,7 +80,6 @@
 @property(retain) id <MTLBuffer> rectRegionsBuffer; // @synthesize rectRegionsBuffer=_rectRegionsBuffer;
 @property(retain) MPSKernel *mpsHistogram; // @synthesize mpsHistogram=_mpsHistogram;
 @property(retain) MPSKernel *mpsFindKeypoints; // @synthesize mpsFindKeypoints=_mpsFindKeypoints;
-- (void).cxx_destruct;
 - (id)initWithDevice:(id)arg1 templateImage:(struct __CVBuffer *)arg2 rectRegions:(id)arg3 maxKeypointsPerRegion:(int)arg4 minKeypointResponseThreshold:(float)arg5;
 - (void)_reinitializeIntermediateBuffersWithDevice:(id)arg1 templateImage:(struct __CVBuffer *)arg2 rectRegions:(id)arg3 maxKeypointsPerRegion:(int)arg4 minKeypointResponseThreshold:(float)arg5;
 

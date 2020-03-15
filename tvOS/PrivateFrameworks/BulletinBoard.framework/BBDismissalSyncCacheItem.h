@@ -14,9 +14,9 @@
     NSMutableDictionary *_dismissalIDToFeeds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *dismissalIDToFeeds; // @synthesize dismissalIDToFeeds=_dismissalIDToFeeds;
 @property(readonly, nonatomic) NSMutableArray *dismissalDictionariesAndFeeds; // @synthesize dismissalDictionariesAndFeeds=_dismissalDictionariesAndFeeds;
-- (void).cxx_destruct;
 - (id)description;
 - (id)purgeExpired;
 - (void)removeBulletinMatch:(id)arg1;

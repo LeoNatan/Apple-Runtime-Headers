@@ -22,12 +22,12 @@
 + (id)_symbolLayerWithSystemName:(id)arg1 color:(id)arg2 offset:(struct CGPoint)arg3 scaleFactor:(double)arg4;
 + (id)_symbolLayerWithSystemName:(id)arg1 color:(id)arg2;
 + (id)_symbolLayerWithImage:(id)arg1 color:(id)arg2 offset:(struct CGPoint)arg3 scaleFactor:(double)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIImageCUIVectorGlyphContent *content; // @synthesize content=_content;
 @property(retain, nonatomic) UIImageAsset *asset; // @synthesize asset=_asset;
 @property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSystemImage) _Bool systemImage;
 @property(readonly, nonatomic) NSString *name;
 

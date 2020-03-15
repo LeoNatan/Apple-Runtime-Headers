@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int responseOptions; // @synthesize responseOptions=_responseOptions;
 @property(retain, nonatomic) NSDictionary *responseUserInfo; // @synthesize responseUserInfo=_responseUserInfo;
 @property(nonatomic) int scrollBehavior; // @synthesize scrollBehavior=_scrollBehavior;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSDate *presentationDate; // @synthesize presentationDate=_presentationDate;
 @property(nonatomic) int dismissReason; // @synthesize dismissReason=_dismissReason;
 @property(nonatomic) double dwelltime; // @synthesize dwelltime=_dwelltime;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

@@ -31,12 +31,12 @@
 }
 
 + (id)_provideItemNotifyQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _NSFilePromiseProviderPrivate *private; // @synthesize private=_private;
 @property long long dragggingSequenceNumber; // @synthesize dragggingSequenceNumber=_dragggingSequenceNumber;
 @property(copy) NSArray *alternateFileTypes; // @synthesize alternateFileTypes=_reservedA;
 @property __weak id <NSFilePromiseProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) id userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (void)_provideItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_provideItemAtURL:(id)arg1 toReaderWithID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly) NSOperationQueue *_providedItemsOperationQueue;

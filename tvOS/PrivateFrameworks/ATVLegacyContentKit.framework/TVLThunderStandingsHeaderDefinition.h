@@ -13,8 +13,8 @@
     NSString *_row;
 }
 
-@property(retain, nonatomic) NSString *row; // @synthesize row=_row;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *row; // @synthesize row=_row;
 - (id)initWithDictionary:(id)arg1;
 
 @end

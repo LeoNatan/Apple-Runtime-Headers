@@ -16,8 +16,8 @@
 }
 
 + (id)defaultReuseIdentifier;
-@property(retain, nonatomic) UITextView *footerTextView; // @synthesize footerTextView=_footerTextView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextView *footerTextView; // @synthesize footerTextView=_footerTextView;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)_setupConstraints;
 - (void)_setUpFooterTextViewWithBodyText:(id)arg1 linkText:(id)arg2 link:(id)arg3;

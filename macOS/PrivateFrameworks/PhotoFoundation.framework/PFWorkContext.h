@@ -53,7 +53,7 @@
     unsigned long long _errorNotificationFrequency;
     CDUnknownBlockType _errorhandler;
     id _delegate;
-    struct PFAsyncDispatchMulticaster *_statusMulticaster;
+    PFAsyncDispatchMulticaster<PFWorkContextStatusUpdateMulticaster> *_statusMulticaster;
     NSMutableDictionary *_waitingStages;
     id <PFBackgroundServiceManagerDelegate> _beginWorkDelegate;
     id <PFBackgroundServiceManagerDelegate> _createBatchDelegate;
@@ -82,6 +82,7 @@
 }
 
 + (id)sequentialWorkContextWithWorkContexts:(id)arg1 continueOnErrorOrCancel:(BOOL)arg2;
+- (void).cxx_destruct;
 @property BOOL isConfirmingCancel; // @synthesize isConfirmingCancel=_isConfirmingCancel;
 @property(retain) PFWorkContext *nextWorkContext; // @synthesize nextWorkContext=_nextWorkContext;
 @property(retain) NSMutableArray *jobsCompletedSinceLastStall; // @synthesize jobsCompletedSinceLastStall=_jobsCompletedSinceLastStall;
@@ -139,7 +140,6 @@
 @property(retain) NSString *workDescription; // @synthesize workDescription=_workDescription;
 @property(retain) PFDispatchQueue *queue; // @synthesize queue=_queue;
 @property(readonly) id uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)valueForKey:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)recordSuspender:(id)arg1;

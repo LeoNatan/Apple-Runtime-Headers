@@ -25,13 +25,13 @@
     double _interspaceBorderWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL circularSelectionRing; // @synthesize circularSelectionRing=_circularSelectionRing;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) double interspaceBorderWidth; // @synthesize interspaceBorderWidth=_interspaceBorderWidth;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(readonly, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)_resetLayers;
 - (void)_performUpdate;
 - (void)_updateSelectionBorderColor;

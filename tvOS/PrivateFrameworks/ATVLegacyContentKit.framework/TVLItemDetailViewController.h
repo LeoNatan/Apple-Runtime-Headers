@@ -28,10 +28,10 @@
     NSDictionary *_bottomShelfState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *bottomShelfState; // @synthesize bottomShelfState=_bottomShelfState;
 @property(retain, nonatomic) NSNumber *focusedShelfButtonIndexState; // @synthesize focusedShelfButtonIndexState=_focusedShelfButtonIndexState;
 @property(nonatomic) __weak UIView *lastFocusedView; // @synthesize lastFocusedView=_lastFocusedView;
-- (void).cxx_destruct;
 - (id)customAnimatorForDismissingListScrollerSplitViewController:(id)arg1;
 - (_Bool)shouldDismissListScrollerSplitViewController:(id)arg1;
 - (void)didUpdateFeedElementRequiringUserInterfaceUpdate:(_Bool)arg1 previousElement:(id)arg2;

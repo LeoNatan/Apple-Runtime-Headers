@@ -24,6 +24,7 @@
     HMSetupRemoteViewController *_remoteViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMSetupRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(retain, nonatomic) _UIAsyncInvocation *cancelServiceInvocation; // @synthesize cancelServiceInvocation=_cancelServiceInvocation;
 @property(copy, nonatomic) CDUnknownBlockType loadHandler; // @synthesize loadHandler=_loadHandler;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) HMSetupAccessoryDescription *accessoryDescription; // @synthesize accessoryDescription=_accessoryDescription;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (void)_presentAsTopmostViewController;
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)accessorySetupDidFinishWithInfo:(id)arg1 error:(id)arg2;

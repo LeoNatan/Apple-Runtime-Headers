@@ -19,13 +19,13 @@
     double _maxTextWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double maxTextWidth; // @synthesize maxTextWidth=_maxTextWidth;
 @property(nonatomic) double textDwellTime; // @synthesize textDwellTime=_textDwellTime;
 @property(retain, nonatomic) NSAttributedString *attributedAppleIDText; // @synthesize attributedAppleIDText=_attributedAppleIDText;
 @property(retain, nonatomic) NSAttributedString *attributedWarningText; // @synthesize attributedWarningText=_attributedWarningText;
 @property(retain, nonatomic) UIImage *logoImage; // @synthesize logoImage=_logoImage;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

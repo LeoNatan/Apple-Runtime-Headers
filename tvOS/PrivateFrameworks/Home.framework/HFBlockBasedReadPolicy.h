@@ -15,8 +15,8 @@
     CDUnknownBlockType _readPolicyBlock;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType readPolicyBlock; // @synthesize readPolicyBlock=_readPolicyBlock;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType readPolicyBlock; // @synthesize readPolicyBlock=_readPolicyBlock;
 - (unsigned long long)evaluateWithCharacteristic:(id)arg1 traits:(out id *)arg2;
 - (id)initWithReadPolicyBlock:(CDUnknownBlockType)arg1;
 - (id)init;

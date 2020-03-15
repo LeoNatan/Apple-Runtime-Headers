@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CXCallDirectoryProviderHostProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (oneway void)completeRequestWithReply:(CDUnknownBlockType)arg1;
 - (oneway void)removeAllIdentificationEntriesWithReply:(CDUnknownBlockType)arg1;
 - (oneway void)removeIdentificationEntriesWithData:(id)arg1 reply:(CDUnknownBlockType)arg2;

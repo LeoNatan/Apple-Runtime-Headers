@@ -16,11 +16,11 @@
     NSArray *_rowControllerProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rowControllerProperties; // @synthesize rowControllerProperties=_rowControllerProperties;
 @property(nonatomic) __weak WKInterfaceController *controller; // @synthesize controller=_controller;
 @property(copy, nonatomic) NSDictionary *rowDescriptions; // @synthesize rowDescriptions=_rowDescriptions;
 @property(copy, nonatomic) NSArray *rowControllers; // @synthesize rowControllers=_rowControllers;
-- (void).cxx_destruct;
 - (id)rowControllerAtIndex:(int)arg1;
 @property(readonly, nonatomic) int numberOfRows;
 - (void)setRowTypes:(id)arg1;

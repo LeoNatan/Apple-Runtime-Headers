@@ -19,10 +19,10 @@
 }
 
 + (id)cloudConfigSkipKey;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) __weak id <BFFFlowItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)shouldAllowStartOver;
 - (_Bool)isEphemeral;
 - (_Bool)shouldSuppressExtendedInitializationActivityIndicator;

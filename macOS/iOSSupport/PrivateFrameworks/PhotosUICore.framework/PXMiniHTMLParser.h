@@ -19,12 +19,12 @@
 
 + (id)stringByConvertingToHTML:(id)arg1;
 + (id)charactersForEntityNames;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *_string; // @synthesize _string=__string;
 @property(copy, nonatomic) CDUnknownBlockType parsedErrorBlock; // @synthesize parsedErrorBlock=_parsedErrorBlock;
 @property(copy, nonatomic) CDUnknownBlockType parsedMarkupElementEndBlock; // @synthesize parsedMarkupElementEndBlock=_parsedMarkupElementEndBlock;
 @property(copy, nonatomic) CDUnknownBlockType parsedMarkupElementStartBlock; // @synthesize parsedMarkupElementStartBlock=_parsedMarkupElementStartBlock;
 @property(copy, nonatomic) CDUnknownBlockType parsedCharactersBlock; // @synthesize parsedCharactersBlock=_parsedCharactersBlock;
-- (void).cxx_destruct;
 - (void)parse;
 - (id)initWithString:(id)arg1;
 - (id)init;

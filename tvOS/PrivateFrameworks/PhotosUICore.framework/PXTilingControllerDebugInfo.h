@@ -21,6 +21,7 @@
     struct CGRect _contentBounds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activeItems; // @synthesize activeItems=_activeItems;
 @property(retain, nonatomic) NSArray *preheatedItems; // @synthesize preheatedItems=_preheatedItems;
 @property(retain, nonatomic) NSArray *pagedItems; // @synthesize pagedItems=_pagedItems;
@@ -30,7 +31,6 @@
 @property(nonatomic) struct CGRect pagedRect; // @synthesize pagedRect=_pagedRect;
 @property(nonatomic) struct CGRect activeRect; // @synthesize activeRect=_activeRect;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
-- (void).cxx_destruct;
 - (id)debugQuickLookObject;
 - (void)drawInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
 

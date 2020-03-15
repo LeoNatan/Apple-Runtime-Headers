@@ -24,10 +24,10 @@
     id <SBDeviceApplicationSceneStatusBarStateObserver> _statusBarDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBDeviceApplicationSceneStatusBarStateObserver> statusBarDelegate; // @synthesize statusBarDelegate=_statusBarDelegate;
 @property(readonly, nonatomic) id <SBApplicationSceneStatusBarDescribing> statusBarDescriber; // @synthesize statusBarDescriber=_statusBarObserverProxy;
 @property(readonly, nonatomic) UIViewController<SBApplicationSceneViewControlling> *_applicationSceneViewController; // @synthesize _applicationSceneViewController;
-- (void).cxx_destruct;
 - (void)_updateDisplayLayoutElementForSceneExistence:(id)arg1;
 - (void)_clearState;
 - (void)applicationSceneViewController:(id)arg1 didUpdateStatusBarSettings:(id)arg2;

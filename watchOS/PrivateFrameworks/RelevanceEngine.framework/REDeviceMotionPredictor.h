@@ -20,9 +20,9 @@
 }
 
 + (id)supportedFeatures;
+- (void).cxx_destruct;
 @property unsigned int motionType; // @synthesize motionType=_motionType;
 @property(getter=isStationary) _Bool stationary; // @synthesize stationary=_stationary;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CMMotionActivityManager *activityManager;
 - (void)_updateWithActivity:(id)arg1;
 - (void)pause;

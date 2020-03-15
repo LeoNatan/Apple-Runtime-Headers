@@ -17,9 +17,9 @@
 + (id)buildRequiredOnly;
 + (id)buildWithRepeatingPowerOn:(id)arg1 withRepeatingPowerOff:(id)arg2;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMSystemEnergySaverDeclaration_RepeatingPowerItem *payloadRepeatingPowerOff; // @synthesize payloadRepeatingPowerOff=_payloadRepeatingPowerOff;
 @property(copy, nonatomic) CEMSystemEnergySaverDeclaration_RepeatingPowerItem *payloadRepeatingPowerOn; // @synthesize payloadRepeatingPowerOn=_payloadRepeatingPowerOn;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

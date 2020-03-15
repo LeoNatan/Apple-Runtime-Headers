@@ -12,9 +12,9 @@
 }
 
 + (id)probabilityDictionaryForInt64Labels:(id)arg1;
-@property(nonatomic) map_f8690629 mapIntLabelToIndex; // @synthesize mapIntLabelToIndex=_mapIntLabelToIndex;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) map_f8690629 mapIntLabelToIndex; // @synthesize mapIntLabelToIndex=_mapIntLabelToIndex;
 - (id)copy;
 - (id)keyEnumerator;
 - (void)removeObjectForKey:(id)arg1;

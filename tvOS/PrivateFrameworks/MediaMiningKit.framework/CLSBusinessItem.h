@@ -27,6 +27,7 @@
 + (id)_businessCategoriesFromGeoMapItems:(id)arg1;
 + (double)_defaultRadiusForCategories:(id)arg1;
 + (id)_regionFromMapItem:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *geoServiceProvider; // @synthesize geoServiceProvider=_geoServiceProvider;
 @property(copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(copy, nonatomic) NSArray *businessCategories; // @synthesize businessCategories=_businessCategories;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) CLCircularRegion *region; // @synthesize region=_region;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) _Bool cached; // @synthesize cached=_cached;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

@@ -9,15 +9,15 @@
 @interface NSImage (DCUtilities)
 + (struct CGRect)dc_aspectFitImageFrameForViewWithFrame:(struct CGRect)arg1 imageSize:(struct CGSize)arg2;
 + (id)dc_orientationMetadataFromImageOrientation:(long long)arg1;
-+ (struct NSImage *)dc_imageWithCGImage:(struct CGImage *)arg1;
-+ (struct NSImage *)dc_imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(long long)arg3;
-+ (struct NSImage *)dc_orientedImageFromImage:(struct NSImage *)arg1 toOrientation:(long long)arg2;
-+ (struct NSImage *)dc_orientedImageFromImage:(struct NSImage *)arg1 fromOrientation:(long long)arg2;
-+ (struct NSImage *)dc_orientedImageFromCGImage:(struct CGImage *)arg1 scale:(double)arg2 transform:(struct CGAffineTransform)arg3;
++ (id)dc_imageWithCGImage:(struct CGImage *)arg1;
++ (id)dc_imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(long long)arg3;
++ (id)dc_orientedImageFromImage:(id)arg1 toOrientation:(long long)arg2;
++ (id)dc_orientedImageFromImage:(id)arg1 fromOrientation:(long long)arg2;
++ (id)dc_orientedImageFromCGImage:(struct CGImage *)arg1 scale:(double)arg2 transform:(struct CGAffineTransform)arg3;
 - (long long)dc_imageOrientation;
 - (struct CGImage *)dc_CGImage;
-- (struct NSImage *)dc_scaledImageWithSize:(struct CGSize)arg1 scale:(double)arg2;
-- (struct NSImage *)dc_scaledImageMaxDimension:(double)arg1 scale:(double)arg2;
-- (struct NSImage *)dc_scaledImageMinDimension:(double)arg1 scale:(double)arg2;
+- (id)dc_scaledImageWithSize:(struct CGSize)arg1 scale:(double)arg2;
+- (id)dc_scaledImageMaxDimension:(double)arg1 scale:(double)arg2;
+- (id)dc_scaledImageMinDimension:(double)arg1 scale:(double)arg2;
 @end
 

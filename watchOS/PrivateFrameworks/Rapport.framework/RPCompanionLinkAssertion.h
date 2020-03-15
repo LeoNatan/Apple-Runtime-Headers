@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *destinationID; // @synthesize destinationID=_destinationID;
 @property(retain, nonatomic) RPCompanionLinkClient *client; // @synthesize client=_client;
 @property(copy, nonatomic) NSString *assertionID; // @synthesize assertionID=_assertionID;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

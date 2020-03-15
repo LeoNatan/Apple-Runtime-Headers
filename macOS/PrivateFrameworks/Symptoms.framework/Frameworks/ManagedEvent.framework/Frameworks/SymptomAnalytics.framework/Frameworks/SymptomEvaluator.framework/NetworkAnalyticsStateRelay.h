@@ -25,6 +25,7 @@
     BOOL _apsdFailure;
     unsigned char _powerCostDL;
     unsigned char _powerCostUL;
+    unsigned char _signalBars;
     BOOL _supportsIPv4;
     BOOL _supportsIPv6;
     unsigned char _radioTechnology;
@@ -32,9 +33,17 @@
     unsigned int _tcpProgressHintsScore;
     int _linkQuality;
     int _advisory;
+    int _cellMNC;
+    int _cellMCC;
+    int _cellUARFCN;
+    int _cellPID;
+    int _cellBandInfo;
+    int _cellBandwidth;
+    int _cellTAC;
     int _lastReportedRxSignalStrength;
     NSString *_interfaceName;
     unsigned long long _interfaceIndex;
+    NSString *_cellType;
     long long _interface;
     unsigned long long _cellSPIType;
     unsigned long long _lastReportedL2TxFrames;
@@ -45,6 +54,7 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long l2MetricsCount; // @synthesize l2MetricsCount=_l2MetricsCount;
 @property(retain) NSDate *madePrimaryDate; // @synthesize madePrimaryDate=_madePrimaryDate;
 @property unsigned long long lastReportedL2TxFail; // @synthesize lastReportedL2TxFail=_lastReportedL2TxFail;
@@ -56,15 +66,24 @@
 @property BOOL supportsIPv6; // @synthesize supportsIPv6=_supportsIPv6;
 @property BOOL supportsIPv4; // @synthesize supportsIPv4=_supportsIPv4;
 @property(readonly) long long interface; // @synthesize interface=_interface;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initForInternalType:(long long)arg1;
+- (void)updateSignalStrength:(id)arg1;
 - (void)populatePropertiesOnAWDMetric:(id)arg1 ingress:(BOOL)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 @property(readonly) NSSet *defaultGateways;
 - (void)removeAllDefaultGateways;
 - (void)addDefaultGateway:(id)arg1;
+@property int cellTAC; // @synthesize cellTAC=_cellTAC;
+@property int cellBandwidth; // @synthesize cellBandwidth=_cellBandwidth;
+@property(retain) NSString *cellType; // @synthesize cellType=_cellType;
+@property int cellBandInfo; // @synthesize cellBandInfo=_cellBandInfo;
+@property int cellPID; // @synthesize cellPID=_cellPID;
+@property int cellUARFCN; // @synthesize cellUARFCN=_cellUARFCN;
+@property int cellMCC; // @synthesize cellMCC=_cellMCC;
+@property int cellMNC; // @synthesize cellMNC=_cellMNC;
+@property unsigned char signalBars; // @synthesize signalBars=_signalBars;
 @property unsigned char powerCostUL; // @synthesize powerCostUL=_powerCostUL;
 @property unsigned char powerCostDL; // @synthesize powerCostDL=_powerCostDL;
 @property int advisory; // @synthesize advisory=_advisory;

@@ -19,10 +19,10 @@
 + (id)richTextForDataItems:(id)arg1;
 + (id)alignmentsForSFHeaderRow:(id)arg1;
 + (_Bool)shouldHideViewForRichData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *tableMapping; // @synthesize tableMapping=_tableMapping;
 @property(nonatomic) _Bool isCompactTable; // @synthesize isCompactTable=_isCompactTable;
 @property(retain, nonatomic) TLKGridLayoutManager *gridManager; // @synthesize gridManager=_gridManager;
-- (void).cxx_destruct;
 - (id)tableRowForTableRowCardSection:(id)arg1;
 - (_Bool)computeCompactTableForSections:(id)arg1;
 - (id)initWithHeaderSection:(id)arg1 dataSections:(id)arg2;

@@ -19,13 +19,13 @@
     NSDictionary *_facetimeAudioIDStatuses;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *facetimeAudioIDStatuses; // @synthesize facetimeAudioIDStatuses=_facetimeAudioIDStatuses;
 @property(retain, nonatomic) NSDictionary *facetimeIDStatuses; // @synthesize facetimeIDStatuses=_facetimeIDStatuses;
 @property(retain, nonatomic) NSString *serviceAvailabilityKey; // @synthesize serviceAvailabilityKey=_serviceAvailabilityKey;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak id <CKDetailsContactsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *contactsViewModels; // @synthesize contactsViewModels=_contactsViewModels;
-- (void).cxx_destruct;
 - (void)_setPreferredCallServiceToIDMap:(id)arg1;
 - (id)_preferredCallServiceToIDMap;
 - (_Bool)_preferredRoutesDisabledViaServerBag;

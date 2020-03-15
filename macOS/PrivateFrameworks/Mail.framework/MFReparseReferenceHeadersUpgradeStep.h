@@ -15,8 +15,8 @@
 
 + (BOOL)needToPerformFromMinorVersion:(unsigned long long)arg1 initialLastWriteMinorVersion:(unsigned long long)arg2;
 + (unsigned long long)targetVersion;
-@property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void)_reparseReferencesForRowIDsByMailboxURL:(id)arg1;
 - (void)runWithRowIDsNeedingConversationRecalculation:(id)arg1;
 - (id)initWithDatabaseConnection:(id)arg1 accounts:(id)arg2;

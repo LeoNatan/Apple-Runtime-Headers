@@ -7,32 +7,32 @@
 #import <objc/NSObject.h>
 
 #import <TelephonyUtilities/NSCopying-Protocol.h>
+#import <TelephonyUtilities/NSSecureCoding-Protocol.h>
 
 @class NSString, TUHandle;
 
-@interface TUMetadataDestinationID : NSObject <NSCopying>
+@interface TUMetadataDestinationID : NSObject <NSSecureCoding, NSCopying>
 {
-    NSString *_destinationID;
-    NSString *_countryCode;
-    struct __CFPhoneNumber *_phoneNumber;
-    NSString *_cacheKey;
-    TUHandle *_normalizedHandle;
+    TUHandle *_handle;
 }
 
-@property(readonly, nonatomic) TUHandle *normalizedHandle; // @synthesize normalizedHandle=_normalizedHandle;
-@property(readonly, copy, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
-@property(readonly, nonatomic) struct __CFPhoneNumber *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
-@property(readonly, copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
-@property(readonly, copy, nonatomic) NSString *destinationID; // @synthesize destinationID=_destinationID;
++ (_Bool)supportsSecureCoding;
++ (id)metadataDestinationIDForCall:(id)arg1;
++ (id)metadataDestinationIDsForCHRecentCalls:(id)arg1;
++ (id)metadataDestinationIDsForCHRecentCall:(id)arg1;
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (unsigned int)hash;
+@property(readonly, nonatomic) TUHandle *handle; // @synthesize handle=_handle;
+- (_Bool)isEqualToMetadataDestinationID:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)description;
-- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *isoCountryCode;
+- (id)initWithHandle:(id)arg1;
+- (id)initWithDestinationID:(id)arg1 isoCountryCode:(id)arg2;
 - (id)init;
-- (id)initWithCall:(id)arg1;
-- (id)initWithDestinationID:(id)arg1 countryCode:(id)arg2;
 
 @end
 

@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *flightNumber; // @synthesize flightNumber=_flightNumber;
 @property(retain, nonatomic) _INPBDateTimeRange *flightDuration; // @synthesize flightDuration=_flightDuration;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) _INPBDateTimeRange *boardingTime; // @synthesize boardingTime=_boardingTime;
 @property(retain, nonatomic) _INPBAirportGate *arrivalAirportGate; // @synthesize arrivalAirportGate=_arrivalAirportGate;
 @property(retain, nonatomic) _INPBAirline *airline; // @synthesize airline=_airline;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

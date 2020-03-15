@@ -19,6 +19,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *trackedPlaneIdentifier; // @synthesize trackedPlaneIdentifier=_trackedPlaneIdentifier;
 @property(nonatomic) float opaquePixelPercentage; // @synthesize opaquePixelPercentage=_opaquePixelPercentage;
 @property(retain, nonatomic) NSData *colorHistogram; // @synthesize colorHistogram=_colorHistogram;
@@ -26,7 +27,6 @@
 // Property attributes: T,R,N,V_extent
 
 @property(retain, nonatomic) id <MTLTexture> environmentTexture; // @synthesize environmentTexture=_environmentTexture;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAnchor:(id)arg1;

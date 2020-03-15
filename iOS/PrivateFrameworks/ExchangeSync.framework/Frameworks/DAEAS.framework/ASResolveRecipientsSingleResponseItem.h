@@ -21,10 +21,10 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mRecipients; // @synthesize mRecipients=_mRecipients;
 @property(retain, nonatomic, setter=setEASStatus:) NSNumber *easStatus; // @synthesize easStatus=_easStatus;
 @property(retain, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addRecipient:(id)arg1;
 @property(readonly, nonatomic) NSArray *recipients;

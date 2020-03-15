@@ -30,6 +30,7 @@
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
+- (void).cxx_destruct;
 @property _Bool pathIsDot; // @synthesize pathIsDot=_pathIsDot;
 @property _Bool pathIsPrestroked; // @synthesize pathIsPrestroked=_pathIsPrestroked;
 @property(retain) UIBezierPath *path; // @synthesize path=_path;
@@ -40,7 +41,6 @@
 @property double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property double rotationAngle; // @synthesize rotationAngle=_rotationAngle;
 @property struct CGRect rectangle; // @synthesize rectangle=_rectangle;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)translateBy:(struct CGPoint)arg1;

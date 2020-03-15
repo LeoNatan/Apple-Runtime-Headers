@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 
 + (struct CGSize)sizeForCreditCardData:(id)arg1 showsBiometricPrompt:(BOOL)arg2;
 + (id)cardDescription:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *stackViewTrailingConstraint; // @synthesize stackViewTrailingConstraint=_stackViewTrailingConstraint;
 @property(nonatomic) __weak NSStackView *horizontalStackView; // @synthesize horizontalStackView=_horizontalStackView;
 @property(nonatomic) __weak NSTextField *cardDescriptionLabel; // @synthesize cardDescriptionLabel=_cardDescriptionLabel;
 @property(nonatomic) __weak NSTextField *cardNameLabel; // @synthesize cardNameLabel=_cardNameLabel;
 @property(retain, nonatomic) WBSCreditCardData *cardData; // @synthesize cardData=_cardData;
-- (void).cxx_destruct;
 - (void)performBiometricPromptShakeAnimation;
 - (void)_updateBiometricPrompt;
 - (void)_setUpBiometricPrompt;

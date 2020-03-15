@@ -25,11 +25,11 @@
 + (void)getBuyOfferDictionary:(id *)arg1 regularPriceOfferDictionary:(id *)arg2 inOfferDictionaries:(id)arg3 variant:(int)arg4;
 + (void)getBuyOfferDictionary:(id *)arg1 regularPriceOfferDictionary:(id *)arg2 inOfferDictionaries:(id)arg3 variantString:(id)arg4;
 + (id)offerVariantResponseKeyForOfferVariant:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int passType; // @synthesize passType=_passType;
 @property(readonly, copy, nonatomic) NSString *entityTitle; // @synthesize entityTitle=_entityTitle;
 @property(readonly, nonatomic) int entityType; // @synthesize entityType=_entityType;
 @property(readonly, nonatomic) unsigned long long entityPersistentID; // @synthesize entityPersistentID=_entityPersistentID;
-- (void).cxx_destruct;
 - (id)storeOfferDictionary;
 @property(readonly, nonatomic) double previewDuration;
 @property(readonly, copy, nonatomic) NSURL *previewURL;

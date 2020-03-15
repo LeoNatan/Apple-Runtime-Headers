@@ -21,6 +21,7 @@
     NSString *_localizedNavigationTitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldSuppressTotal; // @synthesize shouldSuppressTotal=_shouldSuppressTotal;
 @property(readonly, nonatomic) NSString *localizedNavigationTitle; // @synthesize localizedNavigationTitle=_localizedNavigationTitle;
 @property(readonly, nonatomic) _Bool isAMPPayment; // @synthesize isAMPPayment=_isAMPPayment;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) float valueLeftMargin; // @synthesize valueLeftMargin=_valueLeftMargin;
 @property(readonly, nonatomic) float contentHorizontalMargin; // @synthesize contentHorizontalMargin=_contentHorizontalMargin;
 @property(readonly, nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)initWithStyle:(int)arg1 paymentRequest:(id)arg2;
 
 @end

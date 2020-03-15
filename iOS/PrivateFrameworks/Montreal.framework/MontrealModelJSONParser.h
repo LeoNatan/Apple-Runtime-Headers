@@ -15,10 +15,10 @@
     NSDictionary *_infoDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *infoDictionary; // @synthesize infoDictionary=_infoDictionary;
 @property(readonly) MontrealNNModelNetwork *network; // @synthesize network=_network;
 @property(readonly) NSString *jsonDir; // @synthesize jsonDir=_jsonDir;
-- (void).cxx_destruct;
 - (id)createJSONFromFile:(id)arg1;
 - (id)initWithURL:(id)arg1;
 

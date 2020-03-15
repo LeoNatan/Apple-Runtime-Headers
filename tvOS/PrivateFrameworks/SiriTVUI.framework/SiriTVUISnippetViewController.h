@@ -9,21 +9,23 @@
 #import <SiriTVUI/SiriTVUIPresentationPreparation-Protocol.h>
 
 @class NSString, NSUUID;
-@protocol SiriTVUISnippetViewControllerDelegate;
+@protocol SiriTVUIAnalyticsDelegate, SiriTVUISnippetViewControllerDelegate;
 
 @interface SiriTVUISnippetViewController : SiriUIBaseSnippetViewController <SiriTVUIPresentationPreparation>
 {
+    id <SiriTVUIAnalyticsDelegate> _analyticsDelegate;
     NSString *_currentUtterance;
     NSString *_dialogIdentifier;
     NSUUID *_conversationItemIdentifer;
     struct UIEdgeInsets _contentMargins;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentMargins; // @synthesize contentMargins=_contentMargins;
 @property(retain, nonatomic) NSUUID *conversationItemIdentifer; // @synthesize conversationItemIdentifer=_conversationItemIdentifer;
 @property(copy, nonatomic) NSString *dialogIdentifier; // @synthesize dialogIdentifier=_dialogIdentifier;
 @property(copy, nonatomic) NSString *currentUtterance; // @synthesize currentUtterance=_currentUtterance;
-- (void).cxx_destruct;
+@property(nonatomic) __weak id <SiriTVUIAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
 - (struct CGSize)preferredContentSize;
 @property(readonly, nonatomic) _Bool allowSwipeDismissal;
 - (void)willEndInteractiveTransitionFromFullScreenFraction:(double)arg1 toFullScreenFraction:(double)arg2 velocity:(struct CGPoint)arg3;

@@ -18,13 +18,13 @@
     UIView *_reduceTransparencyBackingView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *reduceTransparencyBackingView; // @synthesize reduceTransparencyBackingView=_reduceTransparencyBackingView;
 @property(retain, nonatomic) UIView *reduceTransparencyTintingView; // @synthesize reduceTransparencyTintingView=_reduceTransparencyTintingView;
 @property(retain, nonatomic) UIView *plusDView; // @synthesize plusDView=_plusDView;
 @property(retain, nonatomic) UIView *lightenSourceOverView; // @synthesize lightenSourceOverView=_lightenSourceOverView;
 @property(retain, nonatomic) MTMaterialView *materialView; // @synthesize materialView=_materialView;
 @property(retain, nonatomic) UIColor *reduceTransparencyBackingColor; // @synthesize reduceTransparencyBackingColor=_reduceTransparencyBackingColor;
-- (void).cxx_destruct;
 - (void)_setPlusDBackgroundColorWithWeighting:(double)arg1;
 - (void)setWeighting:(double)arg1;
 - (void)layoutSubviews;

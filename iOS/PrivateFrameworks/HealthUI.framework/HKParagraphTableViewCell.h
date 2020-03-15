@@ -23,10 +23,10 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *buttonText; // @synthesize buttonText=_buttonText;
 @property(copy, nonatomic) NSString *paragraphText; // @synthesize paragraphText=_paragraphText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentSizeCategory;
 - (long long)_buttonHorizontalAlignment;

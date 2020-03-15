@@ -24,6 +24,7 @@
     NSDate *_lastCheckDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int syncProtocolVersion; // @synthesize syncProtocolVersion=_syncProtocolVersion;
 @property(readonly, nonatomic) _Bool hasEncounteredGapInCurrentEpoch; // @synthesize hasEncounteredGapInCurrentEpoch=_hasEncounteredGapInCurrentEpoch;
 @property(readonly, nonatomic) NSDate *lastCheckDate; // @synthesize lastCheckDate=_lastCheckDate;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) CKServerChangeToken *serverChangeToken; // @synthesize serverChangeToken=_serverChangeToken;
 @property(readonly, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(readonly, nonatomic) NSString *ownerIdentifier; // @synthesize ownerIdentifier=_ownerIdentifier;
-- (void).cxx_destruct;
 - (id)stateWithSyncProtocolVersion:(int)arg1;
 - (id)stateWithBaselineEpoch:(unsigned long long)arg1;
 - (id)stateWithGapEncountered:(_Bool)arg1;

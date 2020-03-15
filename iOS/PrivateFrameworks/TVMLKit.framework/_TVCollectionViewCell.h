@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UIView<TVAuxiliaryViewSelecting> *_selectingView;
 }
 
-@property(nonatomic) __weak UIView<TVAuxiliaryViewSelecting> *selectingView; // @synthesize selectingView=_selectingView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView<TVAuxiliaryViewSelecting> *selectingView; // @synthesize selectingView=_selectingView;
 - (struct UIEdgeInsets)selectionMarginsForSize:(struct CGSize)arg1;
 - (void)layoutSubviews;
 

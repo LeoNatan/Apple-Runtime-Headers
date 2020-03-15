@@ -33,8 +33,8 @@
 
 + (id)_attachedCell;
 + (void)initialize;
-@property __weak id <NSPopUpButtonCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <NSPopUpButtonCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_highlightTextColor;
 - (id)_highlightColor;
 - (BOOL)_allowsContextMenus;

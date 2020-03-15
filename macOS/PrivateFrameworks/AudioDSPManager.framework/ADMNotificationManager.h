@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_dynamicSources;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dynamicSources; // @synthesize dynamicSources=_dynamicSources;
 @property(readonly, nonatomic) ADNotificationBusStation *busStation; // @synthesize busStation=_busStation;
 @property(nonatomic) _Bool isScheduled; // @synthesize isScheduled=_isScheduled;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ADNotificationBusStation *notificationBusStation;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *notificationDispatchQueue;
 - (void)_unschedule;

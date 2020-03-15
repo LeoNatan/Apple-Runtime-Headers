@@ -22,11 +22,11 @@
 + (void)cleanOrphanedObjectsFromRealm:(id)arg1;
 + (id)visibleWorkflowsInRealm:(id)arg1;
 + (_Bool)wf_createDataVaultAndMigrateToItIfNeeded;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 @property(readonly, nonatomic) _Bool mainThreadOnly; // @synthesize mainThreadOnly=_mainThreadOnly;
 @property(readonly, copy, nonatomic) RLMRealmConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) RLMRealm *inMemoryRealm; // @synthesize inMemoryRealm=_inMemoryRealm;
-- (void).cxx_destruct;
 - (int)suggestedSortOrderingInRealm:(id)arg1;
 - (void)setWorkflowOrdering:(id)arg1;
 - (id)syncToken;

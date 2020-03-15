@@ -21,9 +21,9 @@
     SUNavigationItem *_wrappedNavigationItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SUNavigationItem *wrappedNavigationItem; // @synthesize wrappedNavigationItem=_wrappedNavigationItem;
 @property(nonatomic) _Bool shouldDelayChanges; // @synthesize shouldDelayChanges=_shouldDelayChanges;
-- (void).cxx_destruct;
 - (void)_scheduleCommit;
 - (void)_prepareButtonItemForDisplay:(id)arg1;
 - (id)titleView;

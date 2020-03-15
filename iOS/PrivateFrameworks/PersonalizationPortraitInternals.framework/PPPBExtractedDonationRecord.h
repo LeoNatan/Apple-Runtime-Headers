@@ -25,13 +25,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long unixTimestampSec; // @synthesize unixTimestampSec=_unixTimestampSec;
 @property(retain, nonatomic) NSString *namedEntity; // @synthesize namedEntity=_namedEntity;
 @property(nonatomic) unsigned long long topicId; // @synthesize topicId=_topicId;
 @property(nonatomic) double score; // @synthesize score=_score;
 @property(retain, nonatomic) NSString *algorithm; // @synthesize algorithm=_algorithm;
 @property(retain, nonatomic) NSString *sourceBundleId; // @synthesize sourceBundleId=_sourceBundleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -28,6 +28,7 @@
     WFNetworkRetryManager *_retryManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFNetworkRetryManager *retryManager; // @synthesize retryManager=_retryManager;
 @property(retain) WFWeatherStoreCache *cache; // @synthesize cache=_cache;
 @property(retain) NSMutableDictionary *URLToCallbackMap; // @synthesize URLToCallbackMap=_URLToCallbackMap;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) CDUnknownBlockType locationGeocodeForCoordinateRequestStartingCallback; // @synthesize locationGeocodeForCoordinateRequestStartingCallback=_locationGeocodeForCoordinateRequestStartingCallback;
 @property(copy, nonatomic) CDUnknownBlockType forecastRequestStartingCallback; // @synthesize forecastRequestStartingCallback=_forecastRequestStartingCallback;
 @property(copy, nonatomic) WFWeatherStoreServiceConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_cleanupCallbacksAndTasksForURL:(id)arg1;
 - (void)_executeCallbacksForURL:(id)arg1 parsedForecastData:(id)arg2 error:(id)arg3;
 - (void)_addCallback:(CDUnknownBlockType)arg1 requestIdentifier:(id)arg2 forURL:(id)arg3;
@@ -71,6 +71,7 @@
 - (void)forecastForLocation:(id)arg1 locale:(id)arg2 atDate:(id)arg3 requestIdentifier:(id)arg4 options:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)completeErroneousForecastRequestWithHandler:(CDUnknownBlockType)arg1 requestIdentifier:(id)arg2 error:(id)arg3;
 - (void)cancelTaskWithIdentifier:(id)arg1;
+- (void)dealloc;
 - (void)invalidateCacheWithIdentifier:(id)arg1;
 - (id)initWithConfiguration:(id)arg1 error:(id *)arg2;
 - (id)initWithConfiguration:(id)arg1;

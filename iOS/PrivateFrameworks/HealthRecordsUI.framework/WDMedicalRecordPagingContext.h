@@ -18,10 +18,13 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_computingDaySummaries;
     NSMutableArray *_unprocessedRecords;
     NSMutableArray *_contextDependentBlockQueue;
+    NSMutableArray *_removedRecords;
 }
 
 + (id)sortDateComponentsOfDateComponents:(id)arg1 withDayOffset:(long long)arg2;
 + (id)sortDateComponentsOfDate:(id)arg1;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *removedRecords; // @synthesize removedRecords=_removedRecords;
 @property(retain, nonatomic) NSMutableArray *contextDependentBlockQueue; // @synthesize contextDependentBlockQueue=_contextDependentBlockQueue;
 @property(retain, nonatomic) NSMutableArray *unprocessedRecords; // @synthesize unprocessedRecords=_unprocessedRecords;
 @property(retain, nonatomic) NSMutableSet *computingDaySummaries; // @synthesize computingDaySummaries=_computingDaySummaries;
@@ -29,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool fetchingCurrentPage; // @synthesize fetchingCurrentPage=_fetchingCurrentPage;
 @property(nonatomic) _Bool hasMoreData; // @synthesize hasMoreData=_hasMoreData;
 @property(nonatomic) _Bool shouldClearDisplayItemGroups; // @synthesize shouldClearDisplayItemGroups=_shouldClearDisplayItemGroups;
-- (void).cxx_destruct;
 - (void)resetPagingContext;
 - (_Bool)shouldQueryForNextBatch;
 - (id)init;

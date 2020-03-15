@@ -19,11 +19,11 @@
 + (id)serviceWithAccessResource:(id)arg1;
 + (id)serviceWithApp:(id)arg1;
 + (id)servicesForWorkflow:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFAccessResource *accessResource; // @synthesize accessResource=_accessResource;
 @property(readonly, nonatomic) ICApp *app; // @synthesize app=_app;
 @property(readonly, nonatomic) WFImage *icon; // @synthesize icon=_icon;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

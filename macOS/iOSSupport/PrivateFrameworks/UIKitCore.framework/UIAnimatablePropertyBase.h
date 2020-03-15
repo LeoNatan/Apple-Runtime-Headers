@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _UIViewAnimatablePropertyTransformer *_transformer;
 }
 
-@property(retain, nonatomic) _UIViewAnimatablePropertyTransformer *transformer; // @synthesize transformer=_transformer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIViewAnimatablePropertyTransformer *transformer; // @synthesize transformer=_transformer;
 
 @end
 

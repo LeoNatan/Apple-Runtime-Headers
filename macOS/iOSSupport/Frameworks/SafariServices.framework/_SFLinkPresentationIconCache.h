@@ -17,8 +17,8 @@
     id <WBSSiteMetadataProviderDelegate> _providerDelegate;
 }
 
-@property(nonatomic) __weak id <WBSSiteMetadataProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WBSSiteMetadataProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 - (void)purgeUnneededCacheEntries;
 - (void)savePendingChangesBeforeTermination;
 - (void)emptyCaches;

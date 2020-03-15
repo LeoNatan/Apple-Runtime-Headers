@@ -15,9 +15,9 @@
 }
 
 + (id)customDataQueueWithContextID:(id)arg1 identifier:(id)arg2 customData:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *customData; // @synthesize customData=_customData;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (struct _MRSystemAppPlaybackQueue *)createRemotePlaybackQueue;
 - (id)description;
 - (id)initWithContextID:(id)arg1 identifier:(id)arg2 customData:(id)arg3;

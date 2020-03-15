@@ -25,9 +25,9 @@
 }
 
 + (double)preferredHeightForWidth:(double)arg1 scale:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(retain, nonatomic) PXCMMPosterHeaderViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (BOOL)test_showStatusCheckmark;
 - (id)test_statusString;

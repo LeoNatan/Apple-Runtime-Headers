@@ -32,9 +32,9 @@
     NSButton *_shareButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSButton *shareButton; // @synthesize shareButton=_shareButton;
 @property(readonly) NSButton *infoButton; // @synthesize infoButton=_infoButton;
-- (void).cxx_destruct;
 - (struct CGRect)sharingService:(id)arg1 opaqueFrameForSourceWindow:(id)arg2;
 - (id)sharingService:(id)arg1 transitionImageForShareItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;

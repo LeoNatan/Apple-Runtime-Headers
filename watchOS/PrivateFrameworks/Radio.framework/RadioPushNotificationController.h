@@ -20,9 +20,9 @@
     _Bool _pushEnabled;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool notificationsEnabled; // @synthesize notificationsEnabled=_notificationsEnabled;
 @property(nonatomic) __weak id <RadioPushNotificationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_portNameForEnvironmentName:(id)arg1;
 - (void)_loadURLBagWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;

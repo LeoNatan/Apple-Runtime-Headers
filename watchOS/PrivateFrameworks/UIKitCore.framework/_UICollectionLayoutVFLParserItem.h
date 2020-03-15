@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     float _fraction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float fraction; // @synthesize fraction=_fraction;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (float)_fractionForFractionTerm:(id)arg1;
 - (_Bool)_parseWithVisualFormat:(id)arg1;
 - (id)initWithName:(id)arg1 fraction:(float)arg2;

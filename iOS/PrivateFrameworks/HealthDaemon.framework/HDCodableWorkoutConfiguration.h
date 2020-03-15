@@ -25,12 +25,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wLengthUnitString; // @synthesize wLengthUnitString=_wLengthUnitString;
 @property(nonatomic) double wLengthValue; // @synthesize wLengthValue=_wLengthValue;
 @property(nonatomic) long long wLocationType; // @synthesize wLocationType=_wLocationType;
 @property(nonatomic) long long locationType; // @synthesize locationType=_locationType;
 @property(nonatomic) long long activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)activeRestrictionIdentifiers;
 + (id)sharedInstance;
-@property(copy, nonatomic) NSSet *removedSystemApplicationIdentifiers; // @synthesize removedSystemApplicationIdentifiers=_removedSystemApplicationIdentifiers;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *removedSystemApplicationIdentifiers; // @synthesize removedSystemApplicationIdentifiers=_removedSystemApplicationIdentifiers;
 @property(readonly, getter=isSystemAppDeletionEnabled) _Bool systemAppDeletionEnabled;
 - (id)identifierForRemovedAppPrompt:(id)arg1;
 @property(readonly, getter=isAdTrackingEnabled) _Bool adTrackingEnabled; // @dynamic adTrackingEnabled;

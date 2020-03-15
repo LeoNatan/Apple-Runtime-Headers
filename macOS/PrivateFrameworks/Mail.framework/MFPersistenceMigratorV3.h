@@ -13,8 +13,8 @@
     id <MFPersistenceMigratorV3Delegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MFPersistenceMigratorV3Delegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MFPersistenceMigratorV3Delegate> delegate; // @synthesize delegate=_delegate;
 - (void)_migrateDefaults;
 - (id)_fixSmartMailboxCriteria:(id)arg1;
 - (id)_updateSmartMailboxes:(id)arg1;

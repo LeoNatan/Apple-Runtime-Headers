@@ -9,11 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface _MKConditionalPanGestureRecognizer : UIPanGestureRecognizer
 {
-    long long _modifierFlags;
+    long long _requiredModifierFlags;
 }
 
-@property(nonatomic) long long modifierFlags; // @synthesize modifierFlags=_modifierFlags;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+@property(nonatomic) long long requiredModifierFlags; // @synthesize requiredModifierFlags=_requiredModifierFlags;
+- (BOOL)_shouldReceiveEvent:(id)arg1;
 
 @end
 

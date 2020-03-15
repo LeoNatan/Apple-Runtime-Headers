@@ -21,11 +21,11 @@
     NSMutableSet *_assertionHolders;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *assertionHolders; // @synthesize assertionHolders=_assertionHolders;
 @property(retain, nonatomic) CSLClientConnections *clients; // @synthesize clients=_clients;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(nonatomic) __weak id <CSLNightstandSuspensionServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)connect:(CDUnknownBlockType)arg1;
 - (void)releaseNightstandSuspensionAssertion:(CDUnknownBlockType)arg1;
 - (void)takeNightstandSuspensionAssertion:(CDUnknownBlockType)arg1;

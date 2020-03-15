@@ -15,9 +15,9 @@
 }
 
 + (id)_chromeStatusBarImageForInterfaceOrientation:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
-- (void).cxx_destruct;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)dealloc;
 - (id)_initWithFrame:(struct CGRect)arg1;

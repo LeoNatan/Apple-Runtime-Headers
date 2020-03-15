@@ -18,13 +18,13 @@
     NSArray *_deletedFolderIDs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *deletedFolderIDs; // @synthesize deletedFolderIDs=_deletedFolderIDs;
 @property(copy, nonatomic) NSArray *updatedFolders; // @synthesize updatedFolders=_updatedFolders;
 @property(copy, nonatomic) NSArray *createdFolders; // @synthesize createdFolders=_createdFolders;
 @property(nonatomic) BOOL isFinalBatch; // @synthesize isFinalBatch=_isFinalBatch;
 @property(copy, nonatomic) NSString *finalSyncState; // @synthesize finalSyncState=_finalSyncState;
 @property(copy, nonatomic) NSString *initialSyncState; // @synthesize initialSyncState=_initialSyncState;
-- (void).cxx_destruct;
 
 @end
 

@@ -31,6 +31,7 @@
     unsigned long long _currentPathInDirectoryIndex;
 }
 
+- (void).cxx_destruct;
 @property BOOL currentDirectoryNeedsReading; // @synthesize currentDirectoryNeedsReading=_currentDirectoryNeedsReading;
 @property BOOL doneEnumerating; // @synthesize doneEnumerating=_doneEnumerating;
 @property BOOL postOrderDirectory; // @synthesize postOrderDirectory=_postOrderDirectory;
@@ -47,7 +48,6 @@
 @property __weak SMNetworkSourceProxy *proxy; // @synthesize proxy=_proxy;
 @property BOOL allowCrossDeviceTraversal; // @synthesize allowCrossDeviceTraversal=_allowCrossDeviceTraversal;
 @property BOOL useTrueOnDiskSizes; // @synthesize useTrueOnDiskSizes;
-- (void).cxx_destruct;
 - (BOOL)hasNext;
 - (BOOL)isPostorderDirectory;
 - (BOOL)isPreorderDirectory;

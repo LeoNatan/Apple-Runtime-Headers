@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long defaultTextAlignment; // @synthesize defaultTextAlignment=_defaultTextAlignment;
 @property(nonatomic) double textLastBaselineToBottom; // @synthesize textLastBaselineToBottom=_textLastBaselineToBottom;
 @property(nonatomic) double textFirstBaselineToBottom; // @synthesize textFirstBaselineToBottom=_textFirstBaselineToBottom;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double subtitleFirstBaselineHeight; // @synthesize subtitleFirstBaselineHeight=_subtitleFirstBaselineHeight;
 @property(nonatomic) double titleFirstBaselineHeight; // @synthesize titleFirstBaselineHeight=_titleFirstBaselineHeight;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

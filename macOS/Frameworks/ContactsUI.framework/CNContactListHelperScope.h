@@ -16,11 +16,11 @@
     long long _row;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long row; // @synthesize row=_row;
 @property(readonly) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(readonly) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)initWithContactIdentifier:(id)arg1 contactStore:(id)arg2 row:(long long)arg3;
 - (id)initWithContact:(id)arg1 contactStore:(id)arg2 row:(long long)arg3;
 

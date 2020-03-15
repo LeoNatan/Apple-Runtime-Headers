@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     TVPMusicContextMenuData *_contextMenuData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPMusicContextMenuData *contextMenuData; // @synthesize contextMenuData=_contextMenuData;
 @property(readonly, nonatomic) _TVMLPlayer *tvmlPlayer; // @synthesize tvmlPlayer=_tvmlPlayer;
 @property(retain, nonatomic) UIViewController *overlayViewController; // @synthesize overlayViewController=_overlayViewController;
-- (void).cxx_destruct;
 - (void)_transportBarVisiblityChanged:(id)arg1;
 - (void)_currentChildViewControllerDidChangeFrom:(id)arg1;
 - (void)_currentChildViewControllerWillChangeTo:(id)arg1;

@@ -38,6 +38,7 @@
 
 + (_Bool)deviceSupportsEnvironmentalDosimetry;
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UNUserNotificationCenter *userNotificationCenter; // @synthesize userNotificationCenter=_userNotificationCenter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dataQueue; // @synthesize dataQueue=_dataQueue;
 @property(retain, nonatomic) NSDate *timeNotified90; // @synthesize timeNotified90=_timeNotified90;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) NSMutableArray *leqBuffer; // @synthesize leqBuffer=_leqBuffer;
 @property(retain, nonatomic) AXDispatchTimer *adamSuspendedTimer; // @synthesize adamSuspendedTimer=_adamSuspendedTimer;
 @property(retain, nonatomic) AXDispatchTimer *edDummyDataTimer; // @synthesize edDummyDataTimer=_edDummyDataTimer;
-- (void).cxx_destruct;
 - (id)registerForEnvironmentalDosimetryUpdates:(id)arg1;
 - (float)calculateLeqForBuffer:(id)arg1;
 - (void)maintainCircularBuffer:(id)arg1 forTime:(float)arg2;

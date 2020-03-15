@@ -14,8 +14,8 @@
     NSTrackingArea *_trackingArea;
 }
 
-@property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 - (void).cxx_destruct;
+@property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 - (void)mouseExited:(id)arg1;
 - (void)updateTrackingAreas;
 

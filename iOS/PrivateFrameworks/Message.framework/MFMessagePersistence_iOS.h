@@ -28,6 +28,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestSummaryQueue; // @synthesize requestSummaryQueue=_requestSummaryQueue;
 @property(retain, nonatomic) id <EFScheduler> offlineContentLoadScheduler; // @synthesize offlineContentLoadScheduler=_offlineContentLoadScheduler;
 @property(retain, nonatomic) id <EFScheduler> networkContentLoadScheduler; // @synthesize networkContentLoadScheduler=_networkContentLoadScheduler;
@@ -36,7 +37,6 @@
 @property(nonatomic) __weak MFMailMessageLibrary *library; // @synthesize library=_library;
 @property(retain, nonatomic) id <MFMessageSummaryLoaderProvider> summaryLoaderProvider; // @synthesize summaryLoaderProvider=_summaryLoaderProvider;
 @property(retain, nonatomic) EDMailDropMetadataGeneratorFactory *maildropContentItemGeneratorFactory; // @synthesize maildropContentItemGeneratorFactory=_maildropContentItemGeneratorFactory;
-- (void).cxx_destruct;
 - (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 oldConversationID:(long long)arg2 message:(id)arg3 generationWindow:(id)arg4;
 - (id)cachedDatabaseIDsDictionaryForMessageIDHashes:(id)arg1;
 - (id)enabledAccountMailboxesExpression;

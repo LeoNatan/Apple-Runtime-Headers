@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSData *_legacyJSON;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *legacyJSON; // @synthesize legacyJSON=_legacyJSON;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(copy, nonatomic) NSArray *results; // @synthesize results=_results;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(nonatomic) int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -19,11 +19,11 @@
     id <RWIChannelDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <RWIChannelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) RWIDebuggable *debuggable; // @synthesize debuggable=_debuggable;
 @property(readonly, nonatomic) RWIManager *manager; // @synthesize manager=_manager;
 @property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)start;
 - (void)close;
 - (void)sendMessageToFrontend:(id)arg1;

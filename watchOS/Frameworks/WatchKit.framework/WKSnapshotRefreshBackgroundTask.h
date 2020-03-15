@@ -13,10 +13,10 @@
     CDUnknownBlockType _snapshotTaskCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType snapshotTaskCompletion; // @synthesize snapshotTaskCompletion=_snapshotTaskCompletion;
 @property(readonly) int reasonForSnapshot; // @synthesize reasonForSnapshot=_reasonForSnapshot;
 @property(readonly) _Bool returnToDefaultState; // @synthesize returnToDefaultState=_returnToDefaultState;
-- (void).cxx_destruct;
 - (id)description;
 - (id)taskKey;
 - (void)setReasonForSnapshot:(int)arg1;

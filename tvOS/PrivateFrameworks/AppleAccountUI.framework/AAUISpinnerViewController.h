@@ -14,8 +14,8 @@
     UILabel *_label;
 }
 
-@property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic, getter=isSpinning) _Bool spinning;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

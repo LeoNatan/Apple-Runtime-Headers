@@ -21,6 +21,7 @@
     NSArray *_presentationSources;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *presentationSources; // @synthesize presentationSources=_presentationSources;
 @property(retain, nonatomic) id moreSourcesSource; // @synthesize moreSourcesSource=_moreSourcesSource;
 @property(retain, nonatomic) TVCKTertiaryView *tertiaryView; // @synthesize tertiaryView=_tertiaryView;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) __weak id <TVCKContentSourcePickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)canBecomeFocused;

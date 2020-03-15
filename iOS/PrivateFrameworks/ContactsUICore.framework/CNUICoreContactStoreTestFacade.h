@@ -21,13 +21,13 @@
 }
 
 + (id)contactsBySimulatingExecutionOfSaveRequest:(id)arg1 onContacts:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *fetchError; // @synthesize fetchError=_fetchError;
 @property(retain, nonatomic) NSError *saveError; // @synthesize saveError=_saveError;
 @property(retain, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(retain, nonatomic) NSArray *executedFetchRequests; // @synthesize executedFetchRequests=_executedFetchRequests;
 @property(retain, nonatomic) NSArray *executedSaveRequests; // @synthesize executedSaveRequests=_executedSaveRequests;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (_Bool)executeSaveRequest:(id)arg1 error:(id *)arg2;
 - (_Bool)enumerateContactsWithFetchRequest:(id)arg1 error:(id *)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)_crossPlatformUnifiedMeContactWithKeysToFetch:(id)arg1 error:(id *)arg2;

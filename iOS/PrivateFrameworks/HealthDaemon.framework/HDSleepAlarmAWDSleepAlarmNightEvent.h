@@ -39,6 +39,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thirdPartyDeviceManufacturer; // @synthesize thirdPartyDeviceManufacturer=_thirdPartyDeviceManufacturer;
 @property(retain, nonatomic) NSString *thirdPartyDeviceModel; // @synthesize thirdPartyDeviceModel=_thirdPartyDeviceModel;
 @property(nonatomic) _Bool wakeupIsOnWeekday; // @synthesize wakeupIsOnWeekday=_wakeupIsOnWeekday;
@@ -52,7 +53,6 @@
 @property(nonatomic) long long bedtimeToFirstSleepInterruptionMinutes; // @synthesize bedtimeToFirstSleepInterruptionMinutes=_bedtimeToFirstSleepInterruptionMinutes;
 @property(nonatomic) long long bedtimeToCorrectedBedtimeMinutes; // @synthesize bedtimeToCorrectedBedtimeMinutes=_bedtimeToCorrectedBedtimeMinutes;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

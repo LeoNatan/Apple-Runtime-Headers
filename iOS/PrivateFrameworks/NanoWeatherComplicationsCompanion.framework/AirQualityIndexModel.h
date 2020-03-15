@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)airQualityIndexModelForConditions:(id)arg1 location:(id)arg2 indexNumberFormatter:(id)arg3 useRoundedVariant:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *spectrumTicks; // @synthesize spectrumTicks=_spectrumTicks;
 @property(readonly, nonatomic) NSArray *spectrum; // @synthesize spectrum=_spectrum;
 @property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) NSString *localizedIndex; // @synthesize localizedIndex=_localizedIndex;
 @property(readonly, nonatomic) double fraction; // @synthesize fraction=_fraction;
-- (void).cxx_destruct;
 
 @end
 

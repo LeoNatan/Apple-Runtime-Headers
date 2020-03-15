@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     EKEventStore *_store;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKEventStore *store; // @synthesize store=_store;
 @property(retain) EKEvent *event; // @synthesize event=_event;
 @property(retain) NSArray *events; // @synthesize events=_events;
-- (void).cxx_destruct;
 - (void)dayViewControllerDidRespondToApplicationDidBecomeActiveStateChange:(id)arg1;
 - (void)updateSelectedOccurrenceView;
 - (void)dayViewControllerDidFinishPinchingDayView:(id)arg1;

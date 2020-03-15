@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSTextField *_moreSitesLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *moreSitesLabel; // @synthesize moreSitesLabel=_moreSitesLabel;
 @property(nonatomic) __weak NSTextField *domainLabel; // @synthesize domainLabel=_domainLabel;
 @property(nonatomic) unsigned long long numberOfSites; // @synthesize numberOfSites=_numberOfSites;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)accessibilityChildren;
 - (BOOL)isAccessibilityElement;
 - (id)accessibilityRole;

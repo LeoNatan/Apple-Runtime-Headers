@@ -32,6 +32,7 @@
     HUCameraSmartDetectionSettingsModule *_cameraSmartDetectionSettingsModule;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL serviceItemBelongsToCamera; // @synthesize serviceItemBelongsToCamera=_serviceItemBelongsToCamera;
 @property(nonatomic) BOOL showsCameraStatusChangeSection; // @synthesize showsCameraStatusChangeSection=_showsCameraStatusChangeSection;
 @property(nonatomic) BOOL showsSmartActivitySection; // @synthesize showsSmartActivitySection=_showsSmartActivitySection;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) HFStaticItem *allowNotificationsItem; // @synthesize allowNotificationsItem=_allowNotificationsItem;
 @property(retain, nonatomic) HFStaticItem *includeInStatusItem; // @synthesize includeInStatusItem=_includeInStatusItem;
 @property(nonatomic) BOOL showStatusSection; // @synthesize showStatusSection=_showStatusSection;
-- (void).cxx_destruct;
 - (id)homeStatusVisibleObject;
 @property(readonly, nonatomic) HFUserNotificationServiceSettings *notificationSettings;
 @property(readonly, nonatomic) id <HFUserNotificationServiceSettingsProviding> notificationSettingsProvider;

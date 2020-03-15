@@ -20,11 +20,11 @@
 
 + (id)supplementaryItemWithLayoutSize:(id)arg1 elementKind:(id)arg2 containerAnchor:(id)arg3 itemAnchor:(id)arg4;
 + (id)supplementaryItemWithLayoutSize:(id)arg1 elementKind:(id)arg2 containerAnchor:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCollectionLayoutAnchor *itemAnchor; // @synthesize itemAnchor=_itemAnchor;
 @property(retain, nonatomic) NSCollectionLayoutAnchor *containerAnchor; // @synthesize containerAnchor=_containerAnchor;
 @property(retain, nonatomic) NSString *elementKind; // @synthesize elementKind=_elementKind;
 @property(nonatomic) int zIndex; // @synthesize zIndex=_zIndex;
-- (void).cxx_destruct;
 - (id)decorationItem;
 - (id)boundarySupplementaryItem;
 - (id)supplementaryItem;

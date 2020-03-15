@@ -19,12 +19,12 @@
     NSBox *_detailView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSBox *detailView; // @synthesize detailView=_detailView;
 @property __weak NSView *infoView; // @synthesize infoView=_infoView;
 @property __weak NSView *topView; // @synthesize topView=_topView;
 @property(retain, nonatomic) PPSpecifierTableViewController *tableViewController; // @synthesize tableViewController=_tableViewController;
 @property(retain, nonatomic) AOSUISpyglassBaseViewController *topViewController; // @synthesize topViewController=_topViewController;
-- (void).cxx_destruct;
 - (BOOL)shouldSelectSpecifier:(id)arg1 tableViewController:(id)arg2;
 - (void)didSelectSpecifier:(id)arg1 tableViewController:(id)arg2;
 - (void)viewDidLoad;

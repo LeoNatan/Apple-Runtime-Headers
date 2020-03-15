@@ -26,8 +26,8 @@
 + (_Bool)canUseOnBoardingKitForPrivacyDisplayForBundleID:(id)arg1;
 + (id)onBoardingKitBundleIDDict;
 + (id)allowedPrivacyBundles;
-@property(retain, nonatomic) PSSystemPolicyForApp *systemPolicy; // @synthesize systemPolicy=_systemPolicy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PSSystemPolicyForApp *systemPolicy; // @synthesize systemPolicy=_systemPolicy;
 - (id)bundle;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)specifiers;

@@ -27,6 +27,8 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)_shouldDefaultToTouches;
 - (void).cxx_destruct;
+- (void)_endOrFail;
+- (void)_cancelOrFail;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

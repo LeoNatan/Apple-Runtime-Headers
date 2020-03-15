@@ -16,11 +16,11 @@
     NSURLSession *__feedDownloadURLSession;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSOperationQueue *_feedParseQueue; // @synthesize _feedParseQueue=__feedParseQueue;
 @property(retain) NSURLSession *_feedDownloadURLSession; // @synthesize _feedDownloadURLSession=__feedDownloadURLSession;
 @property(retain) NSOperationQueue *_feedDownloadQueue; // @synthesize _feedDownloadQueue=__feedDownloadQueue;
 @property(retain) NSMutableDictionary *_feedsByURL; // @synthesize _feedsByURL=__feedsByURL;
-- (void).cxx_destruct;
 - (void)_feedParsedAtURL:(id)arg1 metadata:(id)arg2 entries:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_parseFeedAtURL:(id)arg1 data:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_refreshFeedAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

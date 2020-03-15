@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     struct CGRect _currentVisibleBounds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *behaviorDict; // @synthesize behaviorDict=_behaviorDict;
 @property(nonatomic) struct CGRect currentVisibleBounds; // @synthesize currentVisibleBounds=_currentVisibleBounds;
 @property(nonatomic) struct CGRect previousVisibleBounds; // @synthesize previousVisibleBounds=_previousVisibleBounds;
-- (void).cxx_destruct;
 - (id)_dirtyItems;
 - (void)_reset;
 - (void)_setBehaviors:(id)arg1 forItem:(id)arg2;

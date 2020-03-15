@@ -30,13 +30,13 @@
     struct UIEdgeInsets _contentOccludingInset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIControl *editButton; // @synthesize editButton=_editButton;
 @property(nonatomic) struct WGWidgetListSettings listSettings; // @synthesize listSettings=_listSettings;
 @property(nonatomic) struct UIEdgeInsets contentOccludingInset; // @synthesize contentOccludingInset=_contentOccludingInset;
 @property(nonatomic) _Bool shouldBlurContent; // @synthesize shouldBlurContent=_shouldBlurContent;
 @property(nonatomic) unsigned long long location; // @synthesize location=_location;
 @property(nonatomic) __weak id <WGWidgetGroupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)isWidgetExtensionVisible:(id)arg1;
 - (struct UIEdgeInsets)widgetListViewController:(id)arg1 contentOccludingInsetsForInterfaceOrientation:(long long)arg2;
 - (struct CGSize)widgetListViewController:(id)arg1 sizeForInterfaceOrientation:(long long)arg2;

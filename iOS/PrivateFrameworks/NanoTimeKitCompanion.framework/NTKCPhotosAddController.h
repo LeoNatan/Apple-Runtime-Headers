@@ -22,9 +22,9 @@
 + (void)presentSinglePhotoAddControllerFromViewController:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (void)presentPhotosAddControllerFromViewController:(id)arg1 selectionLimit:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 + (void)presentPhotosAddControllerFromViewController:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType singleCompletion; // @synthesize singleCompletion=_singleCompletion;
 @property(copy, nonatomic) CDUnknownBlockType multipleCompletion; // @synthesize multipleCompletion=_multipleCompletion;
-- (void).cxx_destruct;
 - (void)_dismiss:(id)arg1 photos:(id)arg2 single:(id)arg3;
 - (void)imagePickerController:(id)arg1 didFinishPickingMultipleMediaWithInfo:(id)arg2;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;

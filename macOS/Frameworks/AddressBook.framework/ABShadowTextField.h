@@ -21,13 +21,13 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needsCardViewBorderDrawing; // @synthesize needsCardViewBorderDrawing=_needsCardViewBorderDrawing;
 @property(retain, nonatomic) NSArray *highlightStrings; // @synthesize highlightStrings=_highlightStrings;
 @property(nonatomic) BOOL selectAllOnFirstResponder; // @synthesize selectAllOnFirstResponder=_shouldSelectAllOnFirstResponder;
 @property(nonatomic) BOOL drawsShadow; // @synthesize drawsShadow=_drawsShadow;
 @property(nonatomic) BOOL allowsMultipleLines; // @synthesize allowsMultipleLines=_allowsMultipleLines;
 @property(retain, nonatomic) ABPhoneFormatter *phoneFormatter; // @synthesize phoneFormatter=_phoneFormatter;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 @property(nonatomic) BOOL displaysAlternatePlaceholder;
 - (void)setObjectValue:(id)arg1;

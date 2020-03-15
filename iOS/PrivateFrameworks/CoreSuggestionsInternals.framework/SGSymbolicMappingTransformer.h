@@ -18,10 +18,10 @@
 }
 
 + (id)withNumericMapping:(id)arg1 andSymbolicMapping:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSCharacterSet *characterSet; // @synthesize characterSet=_characterSet;
 @property(retain) NSString *characterMapping; // @synthesize characterMapping=_characterMapping;
 @property(retain) NSString *numericMapping; // @synthesize numericMapping=_numericMapping;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToSymbolicMappingTransformer:(id)arg1;

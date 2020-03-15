@@ -26,13 +26,13 @@
 
 + (id)messageWithSyncStore:(id)arg1;
 + (id)messageFromPersistentUserInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableNanoSyncActivationRestore *activationRestore; // @synthesize activationRestore=_activationRestore;
 @property(retain, nonatomic) HDCodableNanoSyncStatus *status; // @synthesize status=_status;
 @property(retain, nonatomic) HDCodableNanoSyncChangeSet *changeSet; // @synthesize changeSet=_changeSet;
 @property(retain, nonatomic) NSData *healthPairingUUID; // @synthesize healthPairingUUID=_healthPairingUUID;
 @property(retain, nonatomic) NSData *persistentPairingUUID; // @synthesize persistentPairingUUID=_persistentPairingUUID;
 @property(nonatomic) int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

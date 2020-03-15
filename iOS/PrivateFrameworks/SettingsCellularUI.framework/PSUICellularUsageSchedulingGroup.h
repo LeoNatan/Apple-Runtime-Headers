@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     PSUICellularUsageLayoutGroup *_dataUsageSyncGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSUICellularUsageLayoutGroup *dataUsageSyncGroup; // @synthesize dataUsageSyncGroup=_dataUsageSyncGroup;
 @property(retain, nonatomic) CTUIListWithHeaderLoadingGroup *loadingGroup; // @synthesize loadingGroup=_loadingGroup;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
-- (void).cxx_destruct;
 - (void)setGroupSpecifierTitle:(id)arg1;
 - (void)calculateUsage;
 - (void)didResetStatistics;

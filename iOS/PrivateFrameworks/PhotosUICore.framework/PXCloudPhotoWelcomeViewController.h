@@ -21,12 +21,12 @@
     AAUIGenericTermsRemoteUI *__termsManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEnableOnAppear:) _Bool _enableOnAppear; // @synthesize _enableOnAppear=__enableOnAppear;
 @property(nonatomic, setter=_setRequireStorageUpgrade:) _Bool _requireStorageUpgrade; // @synthesize _requireStorageUpgrade=__requireStorageUpgrade;
 @property(retain, nonatomic, setter=_setTermsManager:) AAUIGenericTermsRemoteUI *_termsManager; // @synthesize _termsManager=__termsManager;
 @property(retain, nonatomic, setter=_setOffersManager:) PSCloudStorageOffersManager *_offersManager; // @synthesize _offersManager=__offersManager;
 @property(retain, nonatomic, setter=_setButtons:) NSArray *_buttons; // @synthesize _buttons=__buttons;
-- (void).cxx_destruct;
 - (void)navigationControllerDidDismissViewController:(id)arg1;
 - (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(_Bool)arg2;
 - (void)managerDidCancel:(id)arg1;

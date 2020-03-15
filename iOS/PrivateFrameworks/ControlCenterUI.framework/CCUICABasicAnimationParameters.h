@@ -18,9 +18,9 @@
     id <CCUIAnimationTimingFunctionDescription> _timingFunction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id <CCUIAnimationTimingFunctionDescription> timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

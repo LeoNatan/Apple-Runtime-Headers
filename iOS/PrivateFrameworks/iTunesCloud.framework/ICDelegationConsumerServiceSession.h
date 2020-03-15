@@ -26,9 +26,9 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(readonly, copy, nonatomic) ICDelegationConsumerServiceRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)_stop;
 - (void)_handleTimeout;
 - (void)stop;

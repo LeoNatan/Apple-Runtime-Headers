@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSString *_value;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(nonatomic) unsigned long long maxLength; // @synthesize maxLength=_maxLength;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isRequired) _Bool required; // @synthesize required=_isRequired;
 @property(nonatomic) long long columnIndex; // @synthesize columnIndex=_columnIndex;
 @property(nonatomic) struct UIEdgeInsets borderInsets; // @synthesize borderInsets=_borderInsets;
-- (void).cxx_destruct;
 
 @end
 

@@ -15,8 +15,8 @@
 }
 
 + (id)sharedPreferences;
-@property(nonatomic) BOOL drawDebugViewColors; // @synthesize drawDebugViewColors=_drawDebugViewColors;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL drawDebugViewColors; // @synthesize drawDebugViewColors=_drawDebugViewColors;
 @property(retain, nonatomic) NSNumber *dayViewFirstVisibleSecond;
 @property(nonatomic) BOOL highColorCarplayEnabled;
 @property(retain, nonatomic) NSString *upNextColor;

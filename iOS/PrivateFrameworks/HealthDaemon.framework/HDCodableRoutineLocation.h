@@ -30,6 +30,7 @@
 }
 
 + (Class)visitsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *visits; // @synthesize visits=_visits;
 @property(retain, nonatomic) NSData *geoData; // @synthesize geoData=_geoData;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
@@ -37,7 +38,6 @@
 @property(nonatomic) double uncertainty; // @synthesize uncertainty=_uncertainty;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

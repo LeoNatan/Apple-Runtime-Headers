@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <BaseBoard/BSTransaction.h>
+#import <FrontBoardServices/BSTransaction.h>
 
 @class HBUILaunchAnimationContext, HBUILaunchApplicationAnimationDescription, UIView, UIWindow;
 @protocol HBUILaunchAnimationViewSnapshot;
@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     UIView *_appIconSnapshotView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsSetup; // @synthesize needsSetup=_needsSetup;
 @property(retain, nonatomic) UIView *appIconSnapshotView; // @synthesize appIconSnapshotView=_appIconSnapshotView;
 @property(retain, nonatomic) UIWindow *animationHostWindow; // @synthesize animationHostWindow=_animationHostWindow;
 @property(readonly, nonatomic) HBUILaunchApplicationAnimationDescription *appIconAnimation; // @synthesize appIconAnimation=_appIconAnimation;
 @property(readonly, nonatomic) HBUILaunchAnimationContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) id <HBUILaunchAnimationViewSnapshot> viewSnapshot; // @synthesize viewSnapshot=_viewSnapshot;
-- (void).cxx_destruct;
 - (void)willInterruptTransaction:(id)arg1;
 - (_Bool)_canBeInterrupted;
 - (void)_didComplete;

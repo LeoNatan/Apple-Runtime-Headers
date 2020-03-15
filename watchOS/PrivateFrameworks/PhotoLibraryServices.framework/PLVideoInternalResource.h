@@ -16,8 +16,8 @@
     id <PLResource> _backingResource;
 }
 
-@property(readonly, nonatomic) id <PLResource> backingResource; // @synthesize backingResource=_backingResource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PLResource> backingResource; // @synthesize backingResource=_backingResource;
 - (id)fileURLIfLocal;
 - (_Bool)matchesOrExceedsQualityLevel:(unsigned int)arg1;
 - (_Bool)isMediumHighQuality;

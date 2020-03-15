@@ -15,10 +15,10 @@
     NSDate *_exitDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *exitDate; // @synthesize exitDate=_exitDate;
 @property(retain, nonatomic) NSDate *entryDate; // @synthesize entryDate=_entryDate;
 @property(nonatomic) double logProbability; // @synthesize logProbability=_logProbability;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *outputType;
 - (_Bool)noVisit;
 - (_Bool)partialVisit;

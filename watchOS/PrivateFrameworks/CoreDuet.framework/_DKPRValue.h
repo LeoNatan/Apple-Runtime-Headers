@@ -25,13 +25,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double dateValue; // @synthesize dateValue=_dateValue;
 @property(retain, nonatomic) NSData *blobValue; // @synthesize blobValue=_blobValue;
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(nonatomic) long long integerValue; // @synthesize integerValue=_integerValue;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(retain, nonatomic) _DKPRValueType *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

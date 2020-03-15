@@ -45,8 +45,8 @@
 + (void)logConnection:(id)arg1 type:(long long)arg2 data:(id)arg3;
 + (void)initialize;
 + (void)readLoggingDefaults;
-@property(readonly, nonatomic) NSString *accountLogString; // @synthesize accountLogString=_accountLogString;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *accountLogString; // @synthesize accountLogString=_accountLogString;
 - (id)copyDiagnosticInformation;
 - (_Bool)_evaluateTrust:(struct __SecTrust *)arg1 errorPtr:(id *)arg2;
 - (void)_setCertificateIsTrusted:(_Bool)arg1 forAccount:(id)arg2;
@@ -80,6 +80,7 @@
 - (_Bool)connectUsingSettings:(id)arg1;
 - (void)_setupSocketWithSettings:(id)arg1;
 @property _Bool isFetching;
+@property(readonly, nonatomic) _Bool isConstrained;
 @property(readonly, nonatomic) _Bool isCellularConnection;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

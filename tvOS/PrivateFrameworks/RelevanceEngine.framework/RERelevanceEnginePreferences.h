@@ -19,9 +19,9 @@
 }
 
 + (id)defaultPreferences;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(copy, nonatomic) NSSet *disabledDataSourceIdentifiers; // @synthesize disabledDataSourceIdentifiers=_disabledDataSourceIdentifiers;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

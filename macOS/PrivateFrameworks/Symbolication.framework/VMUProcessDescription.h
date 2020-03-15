@@ -43,9 +43,9 @@
 
 + (struct _CSTypeRef)symbolicatorFromBinaryImagesDescription:(id)arg1;
 + (id)parseBinaryImagesDescription:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long physicalFootprintPeak; // @synthesize physicalFootprintPeak=_physicalFootprintPeak;
 @property(readonly, nonatomic) unsigned long long physicalFootprint; // @synthesize physicalFootprint=_physicalFootprint;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (void)cleansePathsIncludingBinaryImageList:(BOOL)arg1;

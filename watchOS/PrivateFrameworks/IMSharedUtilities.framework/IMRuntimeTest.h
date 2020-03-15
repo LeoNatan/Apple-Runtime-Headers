@@ -17,9 +17,9 @@
 + (void)testLog:(id)arg1;
 + (id)testName;
 + (id)logHandle;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain) IMRuntimeTestRun *testRun; // @synthesize testRun=_testRun;
-- (void).cxx_destruct;
 - (void)testLog:(id)arg1;
 - (void)finishTestAfterInterval:(double)arg1;
 - (void)dispatchAfter:(double)arg1 block:(CDUnknownBlockType)arg2;

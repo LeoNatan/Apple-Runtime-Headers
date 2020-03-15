@@ -17,10 +17,10 @@
     CNStringTokenizer *_tokenizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNStringTokenizer *tokenizer; // @synthesize tokenizer=_tokenizer;
 @property(readonly, nonatomic) CNAutocompleteCalendarServerOperationFactory *operationFactory; // @synthesize operationFactory=_operationFactory;
 @property(readonly, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)resultTransformWithFactory:(id)arg1;
 - (id)queryForFetchRequest:(id)arg1;
 - (id)executeRequest:(id)arg1 source:(id)arg2 resultsFactory:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;

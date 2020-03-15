@@ -18,11 +18,11 @@
 
 + (id)_simulationDateFormatter;
 + (id)relevanceSimulatorID;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double recentDuration; // @synthesize recentDuration=_recentDuration;
 @property(readonly, nonatomic) NSDate *irrelevantDate; // @synthesize irrelevantDate=_irrelevantDate;
 @property(readonly, nonatomic) NSDate *initialRelevanceDate; // @synthesize initialRelevanceDate=_initialRelevanceDate;
 @property(readonly, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)_hash;
 - (_Bool)isEqual:(id)arg1;

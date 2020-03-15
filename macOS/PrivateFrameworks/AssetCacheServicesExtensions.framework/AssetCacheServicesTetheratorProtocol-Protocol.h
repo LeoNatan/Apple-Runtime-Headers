@@ -14,6 +14,9 @@
 - (void)status:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)isEnabled:(void (^)(BOOL, NSError *))arg1;
 - (void)disable:(void (^)(BOOL, NSError *))arg1;
+- (void)enable:(void (^)(BOOL, NSError *))arg1;
+
+@optional
 - (void)enableWithStartAddress:(NSString *)arg1 endAddress:(NSString *)arg2 cachingServerInfo:(NSDictionary *)arg3 callback:(void (^)(BOOL, NSError *))arg4;
 @end
 

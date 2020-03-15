@@ -15,10 +15,10 @@
     NSData *_validatedData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *validatedData; // @synthesize validatedData=_validatedData;
 @property(readonly, nonatomic) NSURL *validatedURL; // @synthesize validatedURL=_validatedURL;
 @property(readonly, nonatomic) PHExternalAssetResource *resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (id)initWithResource:(id)arg1 validatedURL:(id)arg2 validatedData:(id)arg3;
 
 @end

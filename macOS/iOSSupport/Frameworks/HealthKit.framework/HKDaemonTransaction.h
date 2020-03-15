@@ -18,8 +18,8 @@
 + (id)transactionWithOwner:(id)arg1 activityName:(id)arg2;
 + (id)transactionWithOwner:(id)arg1;
 + (id)transactionWithName:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)invalidate;
 - (void)dealloc;
 - (id)_initWithName:(id)arg1;

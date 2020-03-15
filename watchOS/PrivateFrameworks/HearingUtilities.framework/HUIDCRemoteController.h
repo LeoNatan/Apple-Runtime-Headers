@@ -25,6 +25,7 @@
     NSMutableData *_outputBuffer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *outputBuffer; // @synthesize outputBuffer=_outputBuffer;
 @property(retain, nonatomic) HUIDCMessage *currentMessageInFlight; // @synthesize currentMessageInFlight=_currentMessageInFlight;
 @property(retain, nonatomic) NSMutableData *inputBuffer; // @synthesize inputBuffer=_inputBuffer;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSMutableArray *outputDataQueue; // @synthesize outputDataQueue=_outputDataQueue;
 @property(retain, nonatomic) NSNetService *service; // @synthesize service=_service;
 @property(nonatomic) __weak id <HUIDCRemoteControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (_Bool)sendObject:(id)arg1 withSendCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)sendObject:(id)arg1;

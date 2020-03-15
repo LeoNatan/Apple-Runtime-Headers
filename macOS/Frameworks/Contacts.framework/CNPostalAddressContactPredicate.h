@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 + (id)predicatesForCity:(id)arg1;
 + (id)predicatesForSubLocality:(id)arg1;
 + (id)predicatesForStreet:(id)arg1;
-@property(readonly, copy, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

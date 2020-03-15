@@ -26,8 +26,8 @@
     double _progress;
 }
 
-@property(nonatomic) double progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(nonatomic) double progress; // @synthesize progress=_progress;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)updateWithFeedElement:(id)arg1;

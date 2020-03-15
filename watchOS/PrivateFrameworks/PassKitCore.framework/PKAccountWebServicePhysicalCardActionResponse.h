@@ -13,8 +13,8 @@
     NSSet *_updatedPhysicalCards;
 }
 
-@property(readonly, nonatomic) NSSet *updatedPhysicalCards; // @synthesize updatedPhysicalCards=_updatedPhysicalCards;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *updatedPhysicalCards; // @synthesize updatedPhysicalCards=_updatedPhysicalCards;
 - (id)initWithData:(id)arg1;
 
 @end

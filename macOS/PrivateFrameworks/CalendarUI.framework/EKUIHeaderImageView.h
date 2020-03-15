@@ -15,10 +15,10 @@
     NSView *_gradientView;
 }
 
+- (void).cxx_destruct;
 @property BOOL hasBeenSetup; // @synthesize hasBeenSetup=_hasBeenSetup;
 @property(retain) NSView *gradientView; // @synthesize gradientView=_gradientView;
 @property(retain) NSImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (BOOL)shouldDisplay;
 
 @end

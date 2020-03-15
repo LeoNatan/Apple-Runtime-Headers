@@ -18,11 +18,11 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *sharerUserId; // @synthesize sharerUserId=_sharerUserId;
 @property(retain, nonatomic) NSNumber *privilege; // @synthesize privilege=_privilege;
 @property(retain, nonatomic) NSNumber *recipientIdentityId; // @synthesize recipientIdentityId=_recipientIdentityId;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 
 @end
 

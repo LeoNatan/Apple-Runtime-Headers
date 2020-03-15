@@ -14,8 +14,8 @@
 }
 
 + (id)new;
-@property(readonly, nonatomic) CRKCourse *course; // @synthesize course=_course;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CRKCourse *course; // @synthesize course=_course;
 @property(readonly, nonatomic) NSString *message;
 @property(readonly, nonatomic) NSString *acknowledgeOptionTitle;
 @property(readonly, nonatomic) NSString *title;

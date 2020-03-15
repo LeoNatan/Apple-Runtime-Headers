@@ -15,10 +15,10 @@
     int _ringStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int ringStyle; // @synthesize ringStyle=_ringStyle;
 @property(nonatomic) float fillFraction; // @synthesize fillFraction=_fillFraction;
 @property(copy, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
-- (void).cxx_destruct;
 - (void)_enumerateIntegerKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateFloatKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateImageProviderKeysWithBlock:(CDUnknownBlockType)arg1;

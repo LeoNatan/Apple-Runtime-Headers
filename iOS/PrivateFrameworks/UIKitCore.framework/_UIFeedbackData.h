@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _effectiveEnabledFeedbackTypes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEffectiveSystemSoundID:) unsigned int effectiveSystemSoundID; // @synthesize effectiveSystemSoundID=_effectiveSystemSoundID;
 @property(nonatomic, setter=_setEffectiveEnabledFeedbackTypes:) unsigned long long effectiveEnabledFeedbackTypes; // @synthesize effectiveEnabledFeedbackTypes=_effectiveEnabledFeedbackTypes;
 @property(retain, nonatomic, setter=_setAudioParameters:) _UIFeedbackParameters *audioParameters; // @synthesize audioParameters=_audioParameters;
 @property(retain, nonatomic, setter=_setHapticParameters:) _UIFeedbackParameters *hapticParameters; // @synthesize hapticParameters=_hapticParameters;
 @property(nonatomic, setter=_setEffectiveDelay:) double effectiveDelay; // @synthesize effectiveDelay=_effectiveDelay;
 @property(nonatomic, setter=_setEffectiveEventType:) unsigned long long effectiveEventType; // @synthesize effectiveEventType=_effectiveEventType;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

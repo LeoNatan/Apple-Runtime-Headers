@@ -13,8 +13,8 @@
     TVCKDataItem *_dataItem;
 }
 
-@property(retain, nonatomic) TVCKDataItem *dataItem; // @synthesize dataItem=_dataItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVCKDataItem *dataItem; // @synthesize dataItem=_dataItem;
 - (id)_mediaTypeStringFromDataType:(id)arg1;
 - (id)_propertyNameMappings;
 - (_Bool)_hasVideoContent;

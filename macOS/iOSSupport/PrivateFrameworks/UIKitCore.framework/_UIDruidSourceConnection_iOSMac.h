@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _handOffCancelledItemsBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handOffCancelledItemsBlock; // @synthesize handOffCancelledItemsBlock=_handOffCancelledItemsBlock;
 @property(copy, nonatomic) CDUnknownBlockType canHandOffCancelledItemsBlock; // @synthesize canHandOffCancelledItemsBlock=_canHandOffCancelledItemsBlock;
 @property(copy, nonatomic) CDUnknownBlockType dataTransferFinishedBlock; // @synthesize dataTransferFinishedBlock=_dataTransferFinishedBlock;
 @property(copy, nonatomic) CDUnknownBlockType dragCompletionBlock; // @synthesize dragCompletionBlock=_dragCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType dragPreviewProviderBlock; // @synthesize dragPreviewProviderBlock=_dragPreviewProviderBlock;
-- (void).cxx_destruct;
 - (void)_callDataTransferFinishedBlockIfNecessary;
 - (void)_internalDragFailed;
 - (void)dataTransferSessionFinished;

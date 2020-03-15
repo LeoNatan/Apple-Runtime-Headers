@@ -32,6 +32,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)sharedNeutralGeometry;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float tongueOut; // @synthesize tongueOut=_tongueOut;
 @property(readonly, nonatomic) NSError *trackingError; // @synthesize trackingError=_trackingError;
 // Error parsing type for property gazePoint:
@@ -44,8 +46,6 @@
 // Property attributes: T{?=[4]},R,N,V_leftEyeTransform
 
 @property(readonly, nonatomic) NSDictionary *trackingData; // @synthesize trackingData=_trackingData;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

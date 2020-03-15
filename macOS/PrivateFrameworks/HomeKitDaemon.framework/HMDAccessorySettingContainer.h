@@ -14,9 +14,9 @@
     HMDAccessory *_accessory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) __weak HMDMediaSystem *mediaSystem; // @synthesize mediaSystem=_mediaSystem;
-- (void).cxx_destruct;
 - (BOOL)isMediaSystemContainer;
 @property(readonly) NSArray *accessories;
 @property(readonly) NSArray *supportedMultiUserLanguageCodes;

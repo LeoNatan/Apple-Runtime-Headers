@@ -23,12 +23,12 @@
 
 + (id)contextWithContext:(id)arg1;
 + (_Bool)accessInstanceVariablesDirectly;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <CDPStateUIProvider> cdpUiProvider; // @synthesize cdpUiProvider=_cdpUiProvider;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(readonly, nonatomic) long long operationUIPermissions; // @synthesize operationUIPermissions=_operationUIPermissions;
 @property(readonly, nonatomic) _Bool shouldForceOperation; // @synthesize shouldForceOperation=_shouldForceOperation;
 @property(readonly, copy, nonatomic) NSDictionary *authenticationResults; // @synthesize authenticationResults=_authenticationResults;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

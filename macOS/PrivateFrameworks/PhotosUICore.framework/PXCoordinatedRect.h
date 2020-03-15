@@ -17,9 +17,9 @@
     struct CGRect _rect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(readonly, nonatomic) NSView<PXAnonymousCoordinateSpace> *coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (struct CGRect)rectInCoordinateSpace:(id)arg1;
 - (id)initWithRect:(struct CGRect)arg1 inCoordinateSpace:(id)arg2;

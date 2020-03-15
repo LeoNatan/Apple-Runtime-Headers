@@ -27,16 +27,16 @@
 + (id)cacheDirectoryURL;
 + (id)nodeWithInput:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 + (id)registry;
+- (void).cxx_destruct;
 @property(retain) NSString *cachedCacheIdentifier; // @synthesize cachedCacheIdentifier=_cachedCacheIdentifier;
 @property(readonly, nonatomic) long long subsampleFactor; // @synthesize subsampleFactor=_subsampleFactor;
-- (void).cxx_destruct;
 - (_Bool)requiresAudioMix;
 - (_Bool)requiresVideoComposition;
 - (id)_evaluateVideoComposition:(out id *)arg1;
 - (id)_evaluateVideo:(out id *)arg1;
 - (id)_evaluateImage:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
-- (void)resolveSourceWithResponse:(struct NUResponse *)arg1;
+- (void)resolveSourceWithResponse:(id)arg1;
 - (_Bool)installTemporaryURL:(id)arg1 intoPersistentURL:(id)arg2 error:(out id *)arg3;
 - (id)newRenderRequestWithOriginalRequest:(id)arg1 error:(out id *)arg2;
 - (id)persistentURL;
@@ -59,7 +59,7 @@
 - (id)descriptionSubClassHook;
 - (id)initWithInput:(id)arg1 settings:(id)arg2 subsampleFactor:(long long)arg3;
 - (id)initWithInput:(id)arg1 settings:(id)arg2;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 
 @end
 

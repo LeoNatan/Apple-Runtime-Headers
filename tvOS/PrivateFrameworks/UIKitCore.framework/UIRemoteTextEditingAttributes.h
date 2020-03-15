@@ -22,10 +22,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)supportedAttributeKeyPaths;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UITextInputTraits *textInputTraits; // @synthesize textInputTraits=_textInputTraits;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;

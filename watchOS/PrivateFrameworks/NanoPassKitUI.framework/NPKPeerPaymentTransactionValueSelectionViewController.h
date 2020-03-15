@@ -23,6 +23,7 @@
     UIView<NPKValueSelectionViewProtocol> *_valueSelectionView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowingDecimalPicker; // @synthesize isShowingDecimalPicker=_isShowingDecimalPicker;
 @property(retain, nonatomic) UIView<NPKValueSelectionViewProtocol> *valueSelectionView; // @synthesize valueSelectionView=_valueSelectionView;
 @property(nonatomic) _Bool shouldDisplayProgressIndicator; // @synthesize shouldDisplayProgressIndicator=_shouldDisplayProgressIndicator;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(retain, nonatomic) NSDecimalNumber *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSDecimalNumber *initialCardBalance; // @synthesize initialCardBalance=_initialCardBalance;
-- (void).cxx_destruct;
 - (void)valueSelectionView:(id)arg1 wasTapped:(id)arg2;
 - (void)valueSelectionView:(id)arg1 didAcceptValue:(id)arg2;
 - (void)viewDidAppear:(_Bool)arg1;

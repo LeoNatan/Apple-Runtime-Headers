@@ -22,18 +22,18 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)anyReverseAliasInAppLibrary:(id)arg1 toRelativePath:(id)arg2;
-+ (struct PQLResultSet *)reverseAliasEnumeratorWithRelativePath:(id)arg1;
-+ (struct PQLResultSet *)reverseAliasEnumeratorWithUnsaltedBookmarkData:(id)arg1 session:(id)arg2;
++ (id)reverseAliasEnumeratorWithRelativePath:(id)arg1;
++ (id)reverseAliasEnumeratorWithUnsaltedBookmarkData:(id)arg1 session:(id)arg2;
 + (id)anyReverseAliasWithUnsaltedBookmarkData:(id)arg1 inAppLibrary:(id)arg2;
 + (_Bool)isDocumentAutomaticallyEvictableWithName:(id)arg1;
 + (_Bool)isDocumentAutomaticallyEvictableWithExtension:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *liveThumbnailSignature; // @synthesize liveThumbnailSignature=_liveThumbnailSignature;
 @property(readonly, nonatomic) _Bool shouldAutomaticallyDownloadThumbnail; // @synthesize shouldAutomaticallyDownloadThumbnail=_shouldAutomaticallyDownloadThumbnail;
 @property(readonly, nonatomic) NSSet *resolvedConflictLoserEtags; // @synthesize resolvedConflictLoserEtags=_resolvedConflictLoserEtags;
 @property(retain, nonatomic) NSSet *liveConflictLoserEtags; // @synthesize liveConflictLoserEtags=_liveConflictLoserEtags;
 @property(readonly, nonatomic) BRCDesiredVersion *desiredVersion; // @synthesize desiredVersion=_desiredVersion;
 @property(readonly, nonatomic) BRCLocalVersion *currentVersion; // @synthesize currentVersion=_currentVersion;
-- (void).cxx_destruct;
 - (_Bool)startDownloadInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (_Bool)evictInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (_Bool)_deleteFromDB:(id)arg1 keepAliases:(_Bool)arg2;
@@ -69,7 +69,7 @@
 - (_Bool)updateLocationAndMetaFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
 - (_Bool)updateFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
 - (id)_filenameOverrideForPath:(id)arg1;
-- (void)learnItemID:(id)arg1 ownerKey:(id)arg2 sharingOptions:(unsigned long long)arg3 path:(id)arg4 markLost:(_Bool)arg5;
+- (void)learnItemID:(id)arg1 serverItem:(id)arg2 path:(id)arg3 markLost:(_Bool)arg4;
 - (void)markItemForgottenByServer;
 - (void)updateVersionMetadataFromServerItem:(id)arg1 preventVersionDiffs:(_Bool)arg2;
 - (void)updateContentsCKInfoAndDeviceIDFromServerItem:(id)arg1;
@@ -94,7 +94,7 @@
 - (id)descriptionWithContext:(id)arg1;
 - (id)setOfAppLibraryIDsWithReverseAliases;
 - (id)anyReverseAliasInAppLibrary:(id)arg1;
-- (struct PQLResultSet *)reverseAliasEnumerator;
+- (id)reverseAliasEnumerator;
 - (_Bool)_isInterestingUpdateForNotifs;
 @property(readonly, nonatomic) unsigned int downloadStatus;
 @property(readonly, nonatomic) unsigned int queryItemStatus;

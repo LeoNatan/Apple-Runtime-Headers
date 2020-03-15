@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSMapTable *_visibilityPriorityMapping;
 }
 
-@property __weak NSStackView *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
+@property __weak NSStackView *stackView; // @synthesize stackView=_stackView;
 - (void)reattachViews:(id)arg1;
 - (void)detachViews:(id)arg1;
 - (id)_valueOfVisibilityPriorityForView:(id)arg1;

@@ -35,11 +35,11 @@
     _Bool _enumerationFinished;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int options; // @synthesize options=_options;
 @property(readonly, nonatomic) int fileType; // @synthesize fileType=_fileType;
 @property(readonly, nonatomic) id <PFFileFilter> filterDelegate; // @synthesize filterDelegate=_filterDelegate;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)allObjects;
 - (id)nextObject;
 - (id)description;

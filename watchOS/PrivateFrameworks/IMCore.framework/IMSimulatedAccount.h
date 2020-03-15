@@ -13,8 +13,8 @@
     IMHandle *_loginHandle;
 }
 
-@property(retain, nonatomic) IMHandle *loginHandle; // @synthesize loginHandle=_loginHandle;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IMHandle *loginHandle; // @synthesize loginHandle=_loginHandle;
 - (_Bool)isConnected;
 - (_Bool)isOperational;
 - (_Bool)supportsRegistration;

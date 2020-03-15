@@ -14,9 +14,9 @@
     NSDictionary *_outputOtherFetchResultsByAssetCollection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *outputOtherFetchResultsByAssetCollection; // @synthesize outputOtherFetchResultsByAssetCollection=_outputOtherFetchResultsByAssetCollection;
 @property(nonatomic) long long maxKeyAssets; // @synthesize maxKeyAssets=_maxKeyAssets;
-- (void).cxx_destruct;
 - (void)main;
 
 @end

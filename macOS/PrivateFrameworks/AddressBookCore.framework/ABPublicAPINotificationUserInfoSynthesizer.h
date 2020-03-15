@@ -20,11 +20,11 @@
 
 + (id)userInfoWithEventEnumerator:(id)arg1;
 + (id)userInfoWithEvents:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *removed; // @synthesize removed=_removed;
 @property(readonly, nonatomic) NSMutableArray *updated; // @synthesize updated=_updated;
 @property(readonly, nonatomic) NSMutableArray *added; // @synthesize added=_added;
 @property(nonatomic) BOOL isReset; // @synthesize isReset=_isReset;
-- (void).cxx_destruct;
 - (void)visitDropEverythingEvent:(id)arg1;
 - (void)visitDeleteGroupEvent:(id)arg1;
 - (void)visitUpdateGroupEvent:(id)arg1;

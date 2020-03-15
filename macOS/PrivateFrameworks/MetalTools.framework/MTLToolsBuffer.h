@@ -28,6 +28,7 @@
 - (id)newLinearTextureWithDescriptor:(id)arg1 offset:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3 bytesPerImage:(unsigned long long)arg4;
 - (void)didModifyRange:(struct _NSRange)arg1;
 - (void *)contents;
+- (unsigned long long)gpuAddress;
 @property(readonly) unsigned long long length;
 - (void)acceptVisitor:(id)arg1;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;

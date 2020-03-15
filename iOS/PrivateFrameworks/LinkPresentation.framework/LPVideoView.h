@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
     double _volume;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int loggingID; // @synthesize loggingID=_loggingID;
 @property(readonly, nonatomic) UIView *playbackView; // @synthesize playbackView=_playbackView;
 @property(readonly, nonatomic) LPVideo *video; // @synthesize video=_video;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isFullScreen) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;
 @property(nonatomic, getter=isWaitingForPlayback) _Bool waitingForPlayback; // @synthesize waitingForPlayback=_waitingForPlayback;
 @property(readonly, nonatomic) _Bool usesSharedAudioSession; // @synthesize usesSharedAudioSession=_usesSharedAudioSession;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active;
 - (void)_muteButtonTapRecognized:(id)arg1;
 - (void)_muteButtonHighlightLongPressRecognized:(id)arg1;

@@ -19,12 +19,12 @@
 
 + (_Bool)shouldCrossFadeBottomBarsForNavigationController:(id)arg1;
 + (id)animationControllerForOperation:(long long)arg1 fromViewController:(id)arg2 toViewController:(id)arg3 inNavigationController:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setOperation:) long long _operation; // @synthesize _operation=__operation;
 @property(nonatomic) _Bool wasStatusBarHiddenBeforeTransition; // @synthesize wasStatusBarHiddenBeforeTransition=_wasStatusBarHiddenBeforeTransition;
 @property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(readonly, nonatomic) double popDuration; // @synthesize popDuration=_popDuration;
 @property(readonly, nonatomic) double pushDuration; // @synthesize pushDuration=_pushDuration;
-- (void).cxx_destruct;
 - (void)completeInteractiveOperation:(long long)arg1 finished:(_Bool)arg2;
 - (void)transitionWillAnimateOperation:(long long)arg1 interactive:(_Bool)arg2;
 - (void)transitionDidStartOperation:(long long)arg1 animated:(_Bool)arg2 interactive:(_Bool)arg3;

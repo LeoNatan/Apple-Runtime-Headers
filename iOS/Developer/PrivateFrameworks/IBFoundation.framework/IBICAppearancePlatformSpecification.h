@@ -16,9 +16,9 @@
     long long _identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *appearanceName; // @synthesize appearanceName=_appearanceName;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqualToAppearancePlatformSpecification:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

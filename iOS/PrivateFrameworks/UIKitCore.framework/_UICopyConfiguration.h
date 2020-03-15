@@ -23,13 +23,13 @@
 
 + (id)copyConfigurationWithItemProviders:(id)arg1;
 + (id)copyConfigurationWithSharedObjects:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType applicationActivitiesProvider; // @synthesize applicationActivitiesProvider=_applicationActivitiesProvider;
 @property(copy, nonatomic) CDUnknownBlockType activityItemsProvider; // @synthesize activityItemsProvider=_activityItemsProvider;
 @property(copy, nonatomic) CDUnknownBlockType previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(copy, nonatomic) CDUnknownBlockType metadataProvider; // @synthesize metadataProvider=_metadataProvider;
 @property(nonatomic) _Bool allowsSharing; // @synthesize allowsSharing=_allowsSharing;
 @property(retain, nonatomic) id localObject; // @synthesize localObject=_localObject;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *itemProvidersForSharing;
 @property(readonly, copy, nonatomic) NSArray *applicationActivitiesForSharing;
 @property(readonly, copy, nonatomic) NSArray *activityItemsForSharing;

@@ -31,6 +31,7 @@
 }
 
 + (id)resultWithContentEditingInput:(id)arg1 asset:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *overcaptureVideoURL; // @synthesize overcaptureVideoURL=_overcaptureVideoURL;
 @property(retain, nonatomic) NSURL *overcaptureImageURL; // @synthesize overcaptureImageURL=_overcaptureImageURL;
 @property(retain, nonatomic, setter=_setLivePhotoModel:) PUPhotoEditIrisModel *livePhotoModel; // @synthesize livePhotoModel=_livePhotoModel;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic, setter=_setImage:) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic, setter=_setOriginalComposition:) NUComposition *originalComposition; // @synthesize originalComposition=_originalComposition;
 @property(retain, nonatomic, setter=_setCompositionController:) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
-- (void).cxx_destruct;
 - (id)overcaptureEditSource;
 - (id)editSource;
 @property(readonly, nonatomic, getter=isPenultimateAvailable) _Bool penultimateAvailable;

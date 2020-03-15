@@ -23,11 +23,11 @@
     id <VMTranscriptionService> _transcriptionService;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <VMTranscriptionService> transcriptionService; // @synthesize transcriptionService=_transcriptionService;
 @property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(nonatomic) __weak VMTranscriptionAssetModelOperation *assetModelOperation; // @synthesize assetModelOperation=_assetModelOperation;
-- (void).cxx_destruct;
 - (void)performSynchronousBlock:(CDUnknownBlockType)arg1;
 - (void)requestAssetModelOperationWithCompletion:(CDUnknownBlockType)arg1;
 - (id)assetModelOperationWithCompletion:(CDUnknownBlockType)arg1;

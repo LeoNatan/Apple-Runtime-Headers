@@ -22,6 +22,7 @@
 }
 
 + (id)endOfFile;
+- (void).cxx_destruct;
 @property(retain) NSString *rawPath; // @synthesize rawPath=_rawPath;
 @property(retain) NSURL *localPath; // @synthesize localPath=_localPath;
 @property(readonly) NSData *iconData; // @synthesize iconData=_iconData;
@@ -31,7 +32,6 @@
 @property(readonly) NSNumber *mode; // @synthesize mode=_mode;
 @property(readonly) NSNumber *length; // @synthesize length=_length;
 @property(readonly) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)_numberForOctalString:(id)arg1;
 @property(readonly) BOOL isDirectory;
 - (id)description;

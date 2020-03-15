@@ -14,11 +14,11 @@
 }
 
 + (id)buildFromDictionary:(id)arg1;
-@property(copy, nonatomic) NSDictionary *dictKeys; // @synthesize dictKeys=_dictKeys;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *dictKeys; // @synthesize dictKeys=_dictKeys;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

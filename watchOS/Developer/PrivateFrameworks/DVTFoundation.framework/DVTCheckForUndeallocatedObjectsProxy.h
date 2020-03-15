@@ -11,8 +11,8 @@
     id _object;
 }
 
-@property(readonly) id object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(readonly) id object; // @synthesize object=_object;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithObject:(id)arg1;

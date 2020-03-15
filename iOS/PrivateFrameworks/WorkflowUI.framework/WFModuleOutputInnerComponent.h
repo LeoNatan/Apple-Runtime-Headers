@@ -14,8 +14,8 @@
 }
 
 + (id)newWithModel:(id)arg1;
-@property(readonly, nonatomic) WFModuleOutputModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFModuleOutputModel *model; // @synthesize model=_model;
 - (void)buttonTapped;
 
 @end

@@ -18,15 +18,15 @@
 }
 
 + (Class)processingValueClass;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(readonly, nonatomic) int compoundType; // @synthesize compoundType=_compoundType;
-- (void).cxx_destruct;
 - (id)stateByAddingRow:(id)arg1;
 - (id)stateByRemovingRowAtIndex:(unsigned int)arg1;
 - (id)stateByReplacingRowAtIndex:(unsigned int)arg1 withState:(id)arg2;
 - (id)stateBySettingCompoundType:(int)arg1;
 - (id)actualCopyWithZone:(struct _NSZone *)arg1;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
 - (id)containedVariables;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

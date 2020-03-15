@@ -13,8 +13,8 @@
     NSString *_deviceId;
 }
 
-@property(retain, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 
 @end
 

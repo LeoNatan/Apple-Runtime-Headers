@@ -23,6 +23,7 @@
     double _travelStateScore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double travelStateScore; // @synthesize travelStateScore=_travelStateScore;
 @property(readonly, nonatomic) unsigned long long travelState; // @synthesize travelState=_travelState;
 @property(readonly, nonatomic) NSString *routeIncidentStreetName; // @synthesize routeIncidentStreetName=_routeIncidentStreetName;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSDate *estimatedArrivalDate; // @synthesize estimatedArrivalDate=_estimatedArrivalDate;
 @property(readonly, nonatomic) NSDate *suggestedDepartureDate; // @synthesize suggestedDepartureDate=_suggestedDepartureDate;
 @property(retain, nonatomic) GEOLocation *lastLocation; // @synthesize lastLocation=_lastLocation;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateTravelState:(id)arg1;
 - (void)updateTrafficIncidents:(id)arg1;

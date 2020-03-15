@@ -19,9 +19,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)requestUITriggerWithRegistration:(id)arg1 UITriggerName:(id)arg2 withDictionary:(id)arg3 withReason:(int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)ecoModeAlertProvider:(id)arg1 shouldEnterEcoMode:(_Bool)arg2;
 - (void)present;

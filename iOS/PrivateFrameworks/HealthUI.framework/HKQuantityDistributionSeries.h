@@ -19,6 +19,7 @@
     HKStrokeStyle *_minMaxPointStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool excludeDistribution; // @synthesize excludeDistribution=_excludeDistribution;
 @property(copy, nonatomic) HKStrokeStyle *minMaxPointStyle; // @synthesize minMaxPointStyle=_minMaxPointStyle;
 @property(copy, nonatomic) HKAxisLabelStyle *minMaxValueStyle; // @synthesize minMaxValueStyle=_minMaxValueStyle;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) HKStrokeStyle *selectedStrokeStyle; // @synthesize selectedStrokeStyle=_selectedStrokeStyle;
 @property(copy, nonatomic) HKStrokeStyle *unselectedStrokeStyle; // @synthesize unselectedStrokeStyle=_unselectedStrokeStyle;
 @property(copy, nonatomic) HKStrokeStyle *inactiveStrokeStyle; // @synthesize inactiveStrokeStyle=_inactiveStrokeStyle;
-- (void).cxx_destruct;
 - (_Bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;
 - (_Bool)blockCoordinate:(id)arg1 lessThan:(id)arg2;
 - (double)yAxisDifferenceToPoint:(struct CGPoint)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect)arg3;

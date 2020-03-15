@@ -14,8 +14,8 @@
 }
 
 + (id)identifier;
-@property(readonly) NSMutableDictionary *handlerDetailsForNames; // @synthesize handlerDetailsForNames=_handlerDetailsForNames;
 - (void).cxx_destruct;
+@property(readonly) NSMutableDictionary *handlerDetailsForNames; // @synthesize handlerDetailsForNames=_handlerDetailsForNames;
 - (void)load;
 
 @end

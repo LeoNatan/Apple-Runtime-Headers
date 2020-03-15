@@ -15,8 +15,8 @@
     INCodableAttribute *_codableAttribute;
 }
 
-@property(retain, nonatomic) INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;
 - (void).cxx_destruct;
+@property(retain, nonatomic) INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;
 - (Class)singleStateClass;
 
 // Remaining properties

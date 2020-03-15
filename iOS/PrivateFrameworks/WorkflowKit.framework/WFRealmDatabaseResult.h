@@ -15,10 +15,10 @@
     NSSortDescriptor *_sortDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSortDescriptor *sortDescriptor; // @synthesize sortDescriptor=_sortDescriptor;
 @property(readonly, copy, nonatomic) NSString *predicateFormat; // @synthesize predicateFormat=_predicateFormat;
 @property(readonly, nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
-- (void).cxx_destruct;
 - (void)notifyObserversAboutChange:(id)arg1;
 - (id)initWithBackingStore:(id)arg1 objectClass:(Class)arg2 predicateFormat:(id)arg3 sortDescriptor:(id)arg4;
 

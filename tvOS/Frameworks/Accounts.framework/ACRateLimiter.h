@@ -21,6 +21,7 @@
     NSDate *_nextVacuumDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *nextVacuumDate; // @synthesize nextVacuumDate=_nextVacuumDate;
 @property _Bool isVacuumInProgress; // @synthesize isVacuumInProgress=_isVacuumInProgress;
 @property(readonly) double vacuumTimeInterval; // @synthesize vacuumTimeInterval=_vacuumTimeInterval;
@@ -29,7 +30,6 @@
 @property(readonly) NSObject<OS_dispatch_queue> *instanceQueue; // @synthesize instanceQueue=_instanceQueue;
 @property(readonly) double timeInterval; // @synthesize timeInterval=_timeInterval;
 @property(readonly) unsigned long long maximum; // @synthesize maximum=_maximum;
-- (void).cxx_destruct;
 - (_Bool)_vacuumQueue_vacuumKey:(id)arg1;
 - (void)_vacuumQueue_vacuum;
 - (void)vacuumIfNeeded;

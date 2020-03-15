@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_opacityViewVerticalConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *opacityViewVerticalConstraint; // @synthesize opacityViewVerticalConstraint=_opacityViewVerticalConstraint;
 @property(nonatomic) __weak WFOpacitySliderView *opacityView; // @synthesize opacityView=_opacityView;
 @property(nonatomic) __weak WFOverlayImageEditorCanvasView *canvasView; // @synthesize canvasView=_canvasView;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) WFFileRepresentation *currentFile; // @synthesize currentFile=_currentFile;
 @property(copy, nonatomic) NSArray *fileRepresentations; // @synthesize fileRepresentations=_fileRepresentations;
 @property(retain, nonatomic) WFImage *overlayImage; // @synthesize overlayImage=_overlayImage;
-- (void).cxx_destruct;
 - (void)cancelEditingImage;
 - (void)finishEditingImage;
 - (void)resetOverlayImageViewTransformations;

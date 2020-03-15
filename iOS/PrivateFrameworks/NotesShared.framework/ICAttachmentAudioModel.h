@@ -16,10 +16,10 @@
 }
 
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool recordedInNotes; // @synthesize recordedInNotes=_recordedInNotes;
-- (void).cxx_destruct;
 - (void)updateFileBasedAttributes;
 - (id)initWithAttachment:(id)arg1;
 

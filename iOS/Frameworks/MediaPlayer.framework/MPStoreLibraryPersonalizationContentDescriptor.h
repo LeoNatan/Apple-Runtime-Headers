@@ -17,9 +17,9 @@
 + (id)_lightweightPersonalizationPropertiesForStoreAsset;
 + (id)_lightweightPersonalizationPropertiesForPlaybackPosition;
 + (id)lightweightPersonalizationPropertiesForModelClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long personalizationStyle; // @synthesize personalizationStyle=_personalizationStyle;
 @property(readonly, nonatomic) MPModelObject *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (id)initWithModel:(id)arg1 personalizationStyle:(long long)arg2;
 
 @end

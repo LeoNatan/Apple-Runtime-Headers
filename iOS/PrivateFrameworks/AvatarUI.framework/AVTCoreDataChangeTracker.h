@@ -20,11 +20,11 @@
 }
 
 + (id)tokenFileURLForLocation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTAvatarManagedRecordTransformer> recordTransformer; // @synthesize recordTransformer=_recordTransformer;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) AVTCoreEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) id <AVTCoreDataPersistentStoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)recordIdentifierForChange:(id)arg1 managedObjectContext:(id)arg2;
 - (id)enumerateChangesAfterToken:(id)arg1 managedObjectContext:(id)arg2 changesHandler:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (_Bool)saveToken:(id)arg1 location:(id)arg2 error:(id *)arg3;

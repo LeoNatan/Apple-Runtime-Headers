@@ -22,9 +22,9 @@
     NSDate *_latestProcessedDate;
 }
 
-@property(readonly, nonatomic) NSDate *latestProcessedDate; // @synthesize latestProcessedDate=_latestProcessedDate;
 - (void).cxx_destruct;
-- (_Bool)isDoneIterating;
+@property(readonly, nonatomic) NSDate *latestProcessedDate; // @synthesize latestProcessedDate=_latestProcessedDate;
+- (BOOL)isDoneIterating;
 - (id)nextMessagePair;
 - (id)removeBreadcrumbsFromMessage:(id)arg1;
 - (id)initWithStartDate:(id)arg1 maxBatchSize:(unsigned long long)arg2 maxReplyLength:(unsigned long long)arg3 maxReplyGap:(double)arg4;

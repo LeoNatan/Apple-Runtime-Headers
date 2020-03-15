@@ -17,9 +17,9 @@
 
 + (unsigned long long)beginListeningToPasteboardChangeNotifications;
 + (id)defaultConnection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *memberQ_serverConnection; // @synthesize memberQ_serverConnection=_memberQ_serverConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
-- (void).cxx_destruct;
 - (unsigned long long)deletePersistentPasteboardWithName:(id)arg1 error:(id *)arg2;
 - (unsigned long long)savePasteboard:(id)arg1 dataProviderEndpoint:(id)arg2 error:(id *)arg3;
 - (id)localGeneralPasteboard:(id *)arg1;

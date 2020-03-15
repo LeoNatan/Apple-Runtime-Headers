@@ -26,6 +26,7 @@
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType userInterfaceStyleChanged; // @synthesize userInterfaceStyleChanged=_userInterfaceStyleChanged;
 @property(nonatomic) long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
 @property(retain, nonatomic) NSArray *imageTextAlignmentConstraints; // @synthesize imageTextAlignmentConstraints=_imageTextAlignmentConstraints;
@@ -40,7 +41,6 @@
 @property(nonatomic) long long imageAlignment; // @synthesize imageAlignment=_imageAlignment;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (id)_textLabelBoldFont;
 - (id)_textLabelFont;
 - (id)_textLabelFontStyle;

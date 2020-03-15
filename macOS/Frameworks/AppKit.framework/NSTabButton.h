@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_titleFont;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isShowingCloseButton) BOOL showingCloseButton; // @synthesize showingCloseButton=_showingCloseButton;
 @property(nonatomic) BOOL showIcon; // @synthesize showIcon=_showIcon;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak id <NSTabButtonDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTextField *test_titleTextField;
 @property(readonly, nonatomic) NSRolloverButton *test_closeButton;
 - (void)_updateAccessibilityChildren;

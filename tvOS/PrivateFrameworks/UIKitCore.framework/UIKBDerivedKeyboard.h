@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _keyboardSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool addsSupplementaryControlKeys; // @synthesize addsSupplementaryControlKeys=_addsSupplementaryControlKeys;
 @property(copy, nonatomic) NSString *derivedKBStarPrefixName; // @synthesize derivedKBStarPrefixName=_derivedKBStarPrefixName;
 @property(nonatomic) struct CGSize keyboardSize; // @synthesize keyboardSize=_keyboardSize;
-- (void).cxx_destruct;
 
 @end
 

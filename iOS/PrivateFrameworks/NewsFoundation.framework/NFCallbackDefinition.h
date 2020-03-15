@@ -14,9 +14,9 @@
     id <NFDefinitionContainer> _privateContainer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NFDefinitionContainer> privateContainer; // @synthesize privateContainer=_privateContainer;
 @property(readonly, nonatomic) CDUnknownBlockType callbackBlock; // @synthesize callbackBlock=_callbackBlock;
-- (void).cxx_destruct;
 - (id)initWithCallbackBlock:(CDUnknownBlockType)arg1 privateContainer:(id)arg2;
 
 @end

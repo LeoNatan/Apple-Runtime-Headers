@@ -16,11 +16,11 @@
     Class _valueClass;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRequired) BOOL required; // @synthesize required=_required;
 @property(retain, nonatomic) Class valueClass; // @synthesize valueClass=_valueClass;
 @property(readonly, nonatomic, getter=isEncrypted) BOOL encrypted; // @synthesize encrypted=_encrypted;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isValidRecord:(id)arg1;
 - (id)initWithName:(id)arg1 valueClass:(Class)arg2 required:(BOOL)arg3 encrypted:(BOOL)arg4;
 

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSString *_displayTypeText;
 }
 
-@property(copy, nonatomic) NSString *displayTypeText; // @synthesize displayTypeText=_displayTypeText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *displayTypeText; // @synthesize displayTypeText=_displayTypeText;
 - (void)_setupUI;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

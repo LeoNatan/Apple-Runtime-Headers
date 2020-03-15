@@ -10,6 +10,7 @@
 {
 }
 
++ (id)contextControlItem;
 + (id)controlItemWithImage:(id)arg1 handler:(id)arg2;
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;

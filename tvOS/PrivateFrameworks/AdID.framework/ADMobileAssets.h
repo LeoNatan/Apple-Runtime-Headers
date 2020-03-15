@@ -22,6 +22,7 @@
     NSObject<OS_dispatch_queue_global> *_assetQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue_global> *assetQueue; // @synthesize assetQueue=_assetQueue;
 @property _Bool operationInProgress; // @synthesize operationInProgress=_operationInProgress;
 @property(retain, nonatomic) NSDate *creationTime; // @synthesize creationTime=_creationTime;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSURL *assetPath; // @synthesize assetPath=_assetPath;
 @property(retain, nonatomic) NSString *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *assetType; // @synthesize assetType=_assetType;
-- (void).cxx_destruct;
 - (void)findProperAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)doneWithOperations;
 - (_Bool)shouldStartOperations;

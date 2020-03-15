@@ -30,6 +30,7 @@
 }
 
 + (id)defaultOptionsForCellSizeSubclass:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *continueLabelFont; // @synthesize continueLabelFont=_continueLabelFont;
 @property(nonatomic) double verticalSpacingForLipElements; // @synthesize verticalSpacingForLipElements=_verticalSpacingForLipElements;
 @property(nonatomic) double verticalSpacingForLineView; // @synthesize verticalSpacingForLineView=_verticalSpacingForLineView;
@@ -47,7 +48,6 @@
 @property(nonatomic) double horizontalItemSpacing; // @synthesize horizontalItemSpacing=_horizontalItemSpacing;
 @property(nonatomic) double trailingInset; // @synthesize trailingInset=_trailingInset;
 @property(nonatomic) double titleInterLineSpacing; // @synthesize titleInterLineSpacing=_titleInterLineSpacing;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (double)statusBannerCellHeightForWidth:(double)arg1 havingTitleAndDescription:(id)arg2 forContentSizeCategory:(id)arg3;
 

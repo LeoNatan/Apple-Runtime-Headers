@@ -38,6 +38,7 @@
 + (struct __CFURLStorageSession *)_sharedCacheStorageSession;
 + (struct _CFURLCache *)sharedCFURLCache;
 + (id)copyUserAgent;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAccountDSIDOverride:) NSNumber *_accountDSIDOverride; // @synthesize _accountDSIDOverride=__accountDSIDOverride;
 @property(retain, nonatomic) NSArray *passThroughErrors; // @synthesize passThroughErrors=_passThroughErrors;
 @property(retain) NSString *logKey; // @synthesize logKey=_logKey;
@@ -48,7 +49,6 @@
 @property(getter=_loadsHTTPFailures, setter=_setLoadsHTTPFailures:) _Bool _loadsHTTPFailures; // @synthesize _loadsHTTPFailures;
 @property(retain) ISDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(readonly, copy) NSURLRequest *activeURLRequest; // @synthesize activeURLRequest=_activeURLRequest;
-- (void).cxx_destruct;
 - (_Bool)_validateContentLength:(long long)arg1 error:(id *)arg2;
 - (void)_updateProgress;
 - (id)_stringForCachePolicy:(unsigned int)arg1;

@@ -20,10 +20,10 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(nonatomic) __weak id <PUEditingExtensionUndoButtonHost> target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)performRedo;
 - (void)performUndo;
 - (void)setUndoEnabled:(BOOL)arg1 redoEnabled:(BOOL)arg2;

@@ -18,10 +18,10 @@
 }
 
 + (id)defaultDecoration;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(copy, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
-- (void).cxx_destruct;
 - (id)photoDecorationVariantsWithIncreasingBorderBrightness:(long long)arg1;
 - (id)photoDecorationVariantsWithIncreasingAlpha:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

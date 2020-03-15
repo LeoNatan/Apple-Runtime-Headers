@@ -38,6 +38,7 @@
 + (id)allowedActionClasses;
 + (BOOL)supportsSecureCoding;
 + (BOOL)isBuiltinActionSetType:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDApplicationData *appData; // @synthesize appData=_appData;
 @property(retain, nonatomic) NSDictionary *executionInitialStates; // @synthesize executionInitialStates=_executionInitialStates;
 @property(retain, nonatomic) HMFMessage *executionMessage; // @synthesize executionMessage=_executionMessage;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)backingStoreObjects:(long long)arg1;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
@@ -119,7 +119,7 @@
 - (id)initWithName:(id)arg1 uuid:(id)arg2 type:(id)arg3 home:(id)arg4 queue:(id)arg5;
 - (id)_getActionsForActionSetObject;
 - (id)assistantObject;
-- (id)url;
+- (id)urlString;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

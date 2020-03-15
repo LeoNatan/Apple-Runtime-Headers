@@ -22,6 +22,7 @@
 + (id)inBedImageCompatibleWithFont:(id)arg1 withColor:(id)arg2;
 + (id)asleepImageCompatibleWithFont:(id)arg1 withColor:(id)arg2;
 + (id)_sleepCircleImageWithWidth:(float)arg1 diameter:(float)arg2 color:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType startOfDayTransform; // @synthesize startOfDayTransform=_startOfDayTransform;
 @property(copy, nonatomic) HKStrokeStyle *goalLineStokeStyle; // @synthesize goalLineStokeStyle=_goalLineStokeStyle;
 @property(copy, nonatomic) NSArray *highlightedFillStyles; // @synthesize highlightedFillStyles=_highlightedFillStyles;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) HKStrokeStyle *tiledStrokeStyle; // @synthesize tiledStrokeStyle=_tiledStrokeStyle;
 @property(copy, nonatomic) HKStrokeStyle *strokeStyle; // @synthesize strokeStyle=_strokeStyle;
 @property(nonatomic) struct CGSize cornerRadii; // @synthesize cornerRadii=_cornerRadii;
-- (void).cxx_destruct;
 - (id)stringFromTimeSinceNoon:(id)arg1;
 - (void)_addAnnotationForValue:(float)arg1;
 - (_Bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;

@@ -34,6 +34,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *inAccountUserId; // @synthesize inAccountUserId=_inAccountUserId;
 @property(retain, nonatomic) NSSet *notebookGuids; // @synthesize notebookGuids=_notebookGuids;
 @property(retain, nonatomic) NSString *requireNoteContentClass; // @synthesize requireNoteContentClass=_requireNoteContentClass;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSNumber *includeNoteAttributes; // @synthesize includeNoteAttributes=_includeNoteAttributes;
 @property(retain, nonatomic) NSNumber *includeNoteResources; // @synthesize includeNoteResources=_includeNoteResources;
 @property(retain, nonatomic) NSNumber *includeNotes; // @synthesize includeNotes=_includeNotes;
-- (void).cxx_destruct;
 
 @end
 

@@ -32,6 +32,7 @@
 }
 
 + (id)sharedAppLibrary;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(retain, nonatomic) NSMutableArray *prewarmCallbacks; // @synthesize prewarmCallbacks=_prewarmCallbacks;
 @property(readonly, nonatomic) struct os_unfair_lock_s *prewarmLock; // @synthesize prewarmLock=_prewarmLock;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSArray *watchSystemApps; // @synthesize watchSystemApps=_watchSystemApps;
 @property(retain, nonatomic) NSArray *firstPartyApps; // @synthesize firstPartyApps=_firstPartyApps;
 @property(retain, nonatomic) NSArray *allApps; // @synthesize allApps=_allApps;
-- (void).cxx_destruct;
 - (void)_queue_loadApps;
 - (void)_loadWatchApps;
 - (void)_loadApps;

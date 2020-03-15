@@ -14,8 +14,8 @@
     CSLWaterLockWindowManager *_waterLockWindowManager;
 }
 
-@property(readonly, nonatomic) CSLWaterLockWindowManager *waterLockWindowManager; // @synthesize waterLockWindowManager=_waterLockWindowManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLWaterLockWindowManager *waterLockWindowManager; // @synthesize waterLockWindowManager=_waterLockWindowManager;
 @property(readonly, nonatomic) _Bool touchesAreDisabled;
 - (_Bool)shouldSendEvent:(id)arg1;
 - (void)_insertWindowManager:(id)arg1 intoOrderedArray:(id)arg2;

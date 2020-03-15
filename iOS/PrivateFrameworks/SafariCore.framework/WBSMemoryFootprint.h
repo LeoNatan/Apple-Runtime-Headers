@@ -18,8 +18,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)new;
-@property(readonly, nonatomic) NSArray *zones; // @synthesize zones=_zones;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *zones; // @synthesize zones=_zones;
 - (id)dictionaryRepresentation;
 @property(readonly, nonatomic) WBSMemoryFootprintMallocZone *defaultMallocZone;
 @property(readonly, nonatomic) unsigned long long dirtySize;

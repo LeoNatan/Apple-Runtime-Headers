@@ -6,9 +6,7 @@
 
 #import <HealthRecordsUI/HRViewControllerFactory.h>
 
-#import <HealthRecordsUI/HRCategoryViewControllerFactory-Protocol.h>
-
-@interface HRViewControllerFactory (HealthRecordsUI) <HRCategoryViewControllerFactory>
+@interface HRViewControllerFactory (HealthRecordsUI)
 - (id)makeAlphabeticalViewControllerForCategory:(id)arg1;
 - (id)makeTimelineViewControllerForCategory:(id)arg1 showsInitialSearchBar:(_Bool)arg2;
 - (id)makeViewControllerForCategory:(id)arg1;

@@ -14,9 +14,9 @@
     NSString *_clientIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int consumedSequenceNumber; // @synthesize consumedSequenceNumber=_consumedSequenceNumber;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

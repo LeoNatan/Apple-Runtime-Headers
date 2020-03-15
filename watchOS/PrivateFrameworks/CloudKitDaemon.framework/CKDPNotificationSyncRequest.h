@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)options;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsChanges; // @synthesize wantsChanges=_wantsChanges;
 @property(nonatomic) unsigned int maxChanges; // @synthesize maxChanges=_maxChanges;
 @property(retain, nonatomic) NSData *serverChangeToken; // @synthesize serverChangeToken=_serverChangeToken;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

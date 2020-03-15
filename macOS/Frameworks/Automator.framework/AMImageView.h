@@ -14,9 +14,9 @@
     NSImage *_originalImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *originalImage; // @synthesize originalImage=_originalImage;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
-- (void).cxx_destruct;
 - (void)setImage:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

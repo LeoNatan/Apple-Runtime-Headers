@@ -19,13 +19,13 @@
 }
 
 + (double)textVerticalPadding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
 @property(retain, nonatomic) UILabel *userInfoLabel; // @synthesize userInfoLabel=_userInfoLabel;
 @property(retain, nonatomic) UIVisualEffectView *userInfoEffectView; // @synthesize userInfoEffectView=_userInfoEffectView;
 @property(nonatomic) _Bool isRegisteredForCategorySizeChange; // @synthesize isRegisteredForCategorySizeChange=_isRegisteredForCategorySizeChange;
 @property(nonatomic) UIColor *containerBackgroundColor; // @synthesize containerBackgroundColor=_containerBackgroundColor;
 @property(nonatomic) struct NSDirectionalEdgeInsets textInsets; // @synthesize textInsets=_textInsets;
-- (void).cxx_destruct;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (void)updateConstraints;

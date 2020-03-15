@@ -21,10 +21,10 @@
     UIViewController *_parentViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(nonatomic) __weak id <SKUIProductPageOverlayDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_showWithInitialViewController:(id)arg1;
 - (void)_showOverlayViewController;
 - (void)_removeOverlayViewController;

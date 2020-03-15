@@ -25,6 +25,7 @@
 }
 
 + (id)concatStates:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) WFAction *action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSIndexPath *listPosition; // @synthesize listPosition=_listPosition;
 @property(retain, nonatomic) WFActionDrawerState *precedingState; // @synthesize precedingState=_precedingState;
 @property(nonatomic) long long activePane; // @synthesize activePane=_activePane;
-- (void).cxx_destruct;
 - (id)stateByAddingState:(id)arg1;
 - (id)stateChain;
 - (id)description;

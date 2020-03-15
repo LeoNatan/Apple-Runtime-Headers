@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)showInspectableObject:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) _SKUIInspectablePropertySection *currentSection; // @synthesize currentSection=_currentSection;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) id <SKUIInspectableObject> inspectableObject; // @synthesize inspectableObject=_inspectableObject;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

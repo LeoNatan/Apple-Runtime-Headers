@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allTimeInterval;
-@property(readonly) NSArray *availableIntervals; // @synthesize availableIntervals=_availableIntervals;
 - (void).cxx_destruct;
+@property(readonly) NSArray *availableIntervals; // @synthesize availableIntervals=_availableIntervals;
 - (void)_clearVisitedLinksForAllTabs;
 - (void)_clearBackForwardListForAllTabs;
 - (void)_clearDataAddedAfterDate:(id)arg1;

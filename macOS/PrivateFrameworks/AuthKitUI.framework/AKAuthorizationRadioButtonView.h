@@ -22,6 +22,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain) NSLayoutGuide *textLabelLayoutGuide; // @synthesize textLabelLayoutGuide=_textLabelLayoutGuide;
 @property(retain) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(retain) NSImageView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
@@ -31,7 +32,6 @@
 @property __weak id internalTarget; // @synthesize internalTarget=_internalTarget;
 @property(retain) NSButton *radioButton; // @synthesize radioButton=_radioButton;
 @property(readonly) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_buttonClicked:(id)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;

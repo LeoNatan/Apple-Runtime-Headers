@@ -17,9 +17,9 @@
     id <FCNetworkReachabilityRequirementObserving> observer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSatisfied) _Bool satisfied; // @synthesize satisfied=_satisfied;
 @property(nonatomic) __weak id <FCNetworkReachabilityRequirementObserving> observer; // @synthesize observer;
-- (void).cxx_destruct;
 - (void)_update;
 @property(readonly, nonatomic) long long offlineReason;
 - (id)init;

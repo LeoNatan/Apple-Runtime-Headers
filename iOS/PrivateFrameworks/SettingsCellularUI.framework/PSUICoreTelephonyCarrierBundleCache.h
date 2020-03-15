@@ -28,6 +28,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *carrierMmsInfoUrlDict; // @synthesize carrierMmsInfoUrlDict=_carrierMmsInfoUrlDict;
 @property(retain) NSMutableDictionary *carrierServicesAccountUrlDict; // @synthesize carrierServicesAccountUrlDict=_carrierServicesAccountUrlDict;
 @property(retain) NSMutableDictionary *showServiceCodes; // @synthesize showServiceCodes=_showServiceCodes;
@@ -39,7 +40,6 @@
 @property(retain) NSMutableDictionary *carrierBundleVersionDict; // @synthesize carrierBundleVersionDict=_carrierBundleVersionDict;
 @property(retain) NSMutableDictionary *carrierNameDict; // @synthesize carrierNameDict=_carrierNameDict;
 @property(retain, nonatomic) CoreTelephonyClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)carrierBundleChange:(id)arg1;
 - (id)mmsInfoTitle:(id)arg1;
 - (id)mmsInfoUrl:(id)arg1;

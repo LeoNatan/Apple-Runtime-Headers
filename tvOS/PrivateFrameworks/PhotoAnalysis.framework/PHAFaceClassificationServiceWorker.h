@@ -25,11 +25,11 @@
 + (_Bool)persistsState;
 + (long long)applicationDataFolderIdentifier;
 + (short)workerType;
+- (void).cxx_destruct;
 @property unsigned long long numberOfAssetsToProcess; // @synthesize numberOfAssetsToProcess=_numberOfAssetsToProcess;
 @property(retain) VNPersonsModel *personsModel; // @synthesize personsModel=_personsModel;
 @property(retain) PVVisionAnalyzer *analyzer; // @synthesize analyzer=_analyzer;
 @property(retain) PVContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)loadPersonsModel;
 - (void)configureRequest:(id)arg1 algorithmUmbrellaVersion:(unsigned int)arg2;
 - (void)processPendingAssetIdentifiers;

@@ -32,6 +32,7 @@
     ADWebViewGestureRecognizer *_gestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldBlockNavigation; // @synthesize shouldBlockNavigation=_shouldBlockNavigation;
 @property(retain, nonatomic) ADWebViewGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(nonatomic) _Bool browserContextControllerDidLoad; // @synthesize browserContextControllerDidLoad=_browserContextControllerDidLoad;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) NSString *creativeIdentifier; // @synthesize creativeIdentifier=_creativeIdentifier;
 @property(nonatomic) __weak id <ADCreativeControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isContentVisible) _Bool contentVisible; // @synthesize contentVisible=_contentVisible;
-- (void).cxx_destruct;
 - (_Bool)_webView:(id)arg1 focusShouldStartInputSession:(id)arg2;
 - (void)webProcessMRAIDJSODidCallOpen:(id)arg1;
 - (void)webProcessMRAIDJSODidCallExpand:(id)arg1 withMaximumSize:(id)arg2;

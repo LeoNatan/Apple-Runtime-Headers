@@ -27,13 +27,13 @@
 + (id)sharedInstance;
 + (void)connect;
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned long long loadAvailableStoreFrontRetryAttempt; // @synthesize loadAvailableStoreFrontRetryAttempt=_loadAvailableStoreFrontRetryAttempt;
 @property unsigned long long loadStoreFrontRetryAttempt; // @synthesize loadStoreFrontRetryAttempt=_loadStoreFrontRetryAttempt;
 @property _Bool loadAvailableStoreFrontsChangedLocale; // @synthesize loadAvailableStoreFrontsChangedLocale=_loadAvailableStoreFrontsChangedLocale;
 @property(retain) NSDictionary *availableStoreFronts; // @synthesize availableStoreFronts=_availableStoreFronts;
 @property(retain) TVSStoreFrontLocale *locale; // @synthesize locale=_locale;
 @property(getter=isChangingStoreFront) _Bool changingStoreFront; // @synthesize changingStoreFront=_changingStoreFront;
-- (void).cxx_destruct;
 - (id)allLanguages;
 - (id)availableLocales;
 - (void)_updateDateAndTimeFromURLResponse:(id)arg1;

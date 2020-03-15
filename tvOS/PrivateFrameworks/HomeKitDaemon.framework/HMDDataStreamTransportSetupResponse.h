@@ -18,10 +18,10 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *accessoryKeySalt; // @synthesize accessoryKeySalt=_accessoryKeySalt;
 @property(retain, nonatomic) HMDDataStreamTransportParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) HMDDataStreamTransportStatus *status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 
 + (id)dataViewWithString:(id)arg1;
 + (id)headerViewWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long layoutType; // @synthesize layoutType=_layoutType;
 @property(nonatomic) struct UIEdgeInsets headerPadding; // @synthesize headerPadding=_headerPadding;
 @property(nonatomic) double lineSpacing; // @synthesize lineSpacing=_lineSpacing;
 @property(copy, nonatomic) NSArray *dataViews; // @synthesize dataViews=_dataViews;
 @property(retain, nonatomic) UIView *headerContentView; // @synthesize headerContentView=_headerContentView;
 @property(copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIEdgeInsets headerMargin;
 
 @end

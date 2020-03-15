@@ -21,6 +21,7 @@
     NSMutableSet *_noLongerMatchingMessages;
     struct os_unfair_lock_s _noLongerMatchingMessagesLock;
     _Bool _shouldReconcileJournal;
+    _Bool _addMessagesSynchronously;
     EFQuery *_query;
     EDMessagePersistence *_messagePersistence;
     EDPersistenceHookRegistry *_hookRegistry;
@@ -35,9 +36,11 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly) NSString *pendingJournaledMessageAddsKey; // @synthesize pendingJournaledMessageAddsKey=_pendingJournaledMessageAddsKey;
 @property(readonly) NSString *pendingConversationIDChangesKey; // @synthesize pendingConversationIDChangesKey=_pendingConversationIDChangesKey;
 @property(readonly) NSString *pendingFlagChangesKey; // @synthesize pendingFlagChangesKey=_pendingFlagChangesKey;
+@property(nonatomic) _Bool addMessagesSynchronously; // @synthesize addMessagesSynchronously=_addMessagesSynchronously;
 @property(nonatomic) _Bool shouldReconcileJournal; // @synthesize shouldReconcileJournal=_shouldReconcileJournal;
 @property(retain, nonatomic) EFCancelationToken *cancelationToken; // @synthesize cancelationToken=_cancelationToken;
 @property(retain, nonatomic) EDMessageQueryEvaluator *queryEvaluator; // @synthesize queryEvaluator=_queryEvaluator;
@@ -47,7 +50,6 @@
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 @property(readonly, nonatomic) EFQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)_transformAndFilterMessages:(id)arg1 includeDeleted:(_Bool)arg2;
 - (void)remoteSearchDidFindMessages:(id)arg1;
 - (void)remoteSearchDidFinish;
@@ -70,7 +72,7 @@
 - (void)cancel;
 - (void)start;
 - (void)dealloc;
-- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 remoteSearchProvider:(id)arg4 scheduler:(id)arg5 delegate:(id)arg6 shouldReconcileJournal:(_Bool)arg7;
+- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 remoteSearchProvider:(id)arg4 scheduler:(id)arg5 delegate:(id)arg6 shouldReconcileJournal:(_Bool)arg7 shouldAddMessagesSynchronously:(_Bool)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

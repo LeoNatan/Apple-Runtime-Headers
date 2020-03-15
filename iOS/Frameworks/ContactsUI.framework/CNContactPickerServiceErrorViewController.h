@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *addContactBarButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIBarButtonItem *addContactBarButtonItem; // @synthesize addContactBarButtonItem;
 @property(readonly, nonatomic) UINavigationController *navigationController; // @synthesize navigationController;
 @property(nonatomic) __weak id <CNContactPickerContentDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)invalidateSelectionAnimated:(_Bool)arg1;
 - (void)setupWithOptions:(id)arg1 readyBlock:(CDUnknownBlockType)arg2;

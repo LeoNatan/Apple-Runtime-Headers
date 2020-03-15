@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CLPlacemark *dropOffLocation; // @synthesize dropOffLocation=_dropOffLocation;
 @property(readonly, copy, nonatomic) CLPlacemark *pickupLocation; // @synthesize pickupLocation=_pickupLocation;
 @property(readonly, copy, nonatomic) INDateComponentsRange *rentalDuration; // @synthesize rentalDuration=_rentalDuration;
 @property(readonly, copy, nonatomic) INRentalCar *rentalCar; // @synthesize rentalCar=_rentalCar;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

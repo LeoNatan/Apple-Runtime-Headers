@@ -40,11 +40,11 @@
     PQLConnection *_db;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=setDB:) PQLConnection *db; // @synthesize db=_db;
 @property __weak id <BRCFSEventsDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) BRCRelativePath *root; // @synthesize root=_root;
 @property(readonly, nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)_cancel;
 - (void)resume;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     double _courseWeight;
 }
 
+- (id).cxx_construct;
 @property(nonatomic) double courseWeight; // @synthesize courseWeight=_courseWeight;
 @property(nonatomic) double courseMatchScore; // @synthesize courseMatchScore=_courseMatchScore;
 @property(nonatomic) double maxCourseDelta; // @synthesize maxCourseDelta=_maxCourseDelta;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct PolylineCoordinate routeCoordinate; // @synthesize routeCoordinate=_routeCoordinate;
 @property(nonatomic) double score; // @synthesize score=_score;
 @property(nonatomic) BOOL isGoodMatch; // @synthesize isGoodMatch=_isGoodMatch;
-- (id).cxx_construct;
 - (id)description;
 - (id)initWithRoute:(id)arg1;
 

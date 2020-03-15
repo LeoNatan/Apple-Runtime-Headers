@@ -16,10 +16,10 @@
 }
 
 + (id)cacheWithConfiguration:(id)arg1 response:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHTTPURLResponse *response; // @synthesize response=_response;
 @property(readonly, nonatomic) AAURLConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 - (id)initWithConfiguration:(id)arg1 response:(id)arg2;
 - (id)init;
 

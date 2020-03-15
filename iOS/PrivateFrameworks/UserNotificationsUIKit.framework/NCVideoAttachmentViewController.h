@@ -15,10 +15,10 @@
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NCMediaPlayPauseButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;
 @property(retain, nonatomic) AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
-- (void).cxx_destruct;
 - (void)handlePlayerItemFailedToPlayToEndTimeNotification:(id)arg1;
 - (void)handlePlayerItemDidPlayToEndTimeNotification:(id)arg1;
 - (void)_rewind;

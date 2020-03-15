@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UIColor *_dividerColor;
 }
 
-@property(retain, nonatomic) UIColor *dividerColor; // @synthesize dividerColor=_dividerColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *dividerColor; // @synthesize dividerColor=_dividerColor;
 - (void)_updateDividers;
 - (void)_observeScrollViewDidScroll:(id)arg1;
 - (void)layoutSubviews;

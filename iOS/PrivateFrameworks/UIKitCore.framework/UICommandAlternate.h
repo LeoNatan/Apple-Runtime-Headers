@@ -21,10 +21,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)alternateWithTitle:(id)arg1 action:(SEL)arg2 modifierFlags:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long modifierFlags; // @synthesize modifierFlags=_modifierFlags;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (void)encodeWithCoder:(id)arg1;

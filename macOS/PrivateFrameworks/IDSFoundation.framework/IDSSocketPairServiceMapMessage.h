@@ -15,10 +15,10 @@
     NSString *_serviceName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(readonly, nonatomic) unsigned short mappedStreamID; // @synthesize mappedStreamID=_mappedStreamID;
 @property(readonly, nonatomic) unsigned char reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)_nonHeaderData;
 - (unsigned char)command;
 - (id)initWithReason:(unsigned char)arg1 mappedStreamID:(unsigned short)arg2 serviceName:(id)arg3;

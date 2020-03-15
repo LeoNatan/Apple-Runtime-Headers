@@ -13,8 +13,8 @@
     SearchUIDetailedView *_detailedView;
 }
 
-@property(retain, nonatomic) SearchUIDetailedView *detailedView; // @synthesize detailedView=_detailedView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SearchUIDetailedView *detailedView; // @synthesize detailedView=_detailedView;
 - (void)setCardSectionRowModel:(id)arg1;
 - (void)setFeedbackDelegate:(id)arg1;
 - (id)setupContentView;

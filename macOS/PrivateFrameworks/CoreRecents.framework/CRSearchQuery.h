@@ -27,6 +27,7 @@
 + (CDUnknownBlockType)frecencyComparator;
 + (id)searchQueryForSearchTerm:(id)arg1 preferredKinds:(id)arg2 sendingAddress:(id)arg3 recentsDomain:(id)arg4;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(copy, nonatomic) CDUnknownBlockType weightDecayer; // @synthesize weightDecayer=_weightDecayer;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned long long implicitGroupThreshold; // @synthesize implicitGroupThreshold=_implicitGroupThreshold;
 @property(copy, nonatomic) NSArray *domains; // @synthesize domains=_domains;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

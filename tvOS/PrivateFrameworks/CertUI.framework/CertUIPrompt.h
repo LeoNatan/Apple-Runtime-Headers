@@ -19,10 +19,10 @@
 
 + (id)promptQueue;
 + (id)stringForResponse:(int)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *connectionDisplayName; // @synthesize connectionDisplayName=_connectionDisplayName;
 @property(retain, nonatomic) NSString *service; // @synthesize service=_service;
 @property(retain, nonatomic) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (int)showAndWaitForResponse;
 - (void)_informConsumerOfResponse:(int)arg1;
 - (void)showPromptWithOptions:(id)arg1 responseBlock:(CDUnknownBlockType)arg2;

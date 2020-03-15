@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIColor *_textColor;
 }
 
-@property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;

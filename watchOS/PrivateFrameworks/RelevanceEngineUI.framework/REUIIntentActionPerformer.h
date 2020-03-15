@@ -18,8 +18,8 @@
     CDUnknownBlockType _proceedHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType proceedHandler; // @synthesize proceedHandler=_proceedHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType proceedHandler; // @synthesize proceedHandler=_proceedHandler;
 - (void)handleIntentAction:(id)arg1 requiresUserConfirmation:(_Bool)arg2 requiresUserAuthentication:(_Bool)arg3 withIntentResponse:(id)arg4 proceedHandler:(CDUnknownBlockType)arg5;
 - (void)logDebugInformation:(id)arg1;
 - (void)workflowControllerDidFinishRunning:(id)arg1 withOutput:(id)arg2;

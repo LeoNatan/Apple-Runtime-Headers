@@ -13,8 +13,8 @@
     PXContextualNotificationCenter *_contextualNotificationCenter;
 }
 
-@property(nonatomic) __weak PXContextualNotificationCenter *contextualNotificationCenter; // @synthesize contextualNotificationCenter=_contextualNotificationCenter;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PXContextualNotificationCenter *contextualNotificationCenter; // @synthesize contextualNotificationCenter=_contextualNotificationCenter;
 - (void)layoutSubviews;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 

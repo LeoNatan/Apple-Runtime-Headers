@@ -14,15 +14,15 @@
 __attribute__((visibility("hidden")))
 @interface WeatherCloudPreferences : NSObject <WeatherCloudPersistenceDelegate>
 {
-    id <SynchronizedDefaultsDelegate> _syncDelegate;
     id <WeatherPreferencesPersistence> _cloudStore;
+    id <SynchronizedDefaultsDelegate> _syncDelegate;
     WeatherPreferences *_localPreferences;
 }
 
-@property(retain) WeatherPreferences *localPreferences; // @synthesize localPreferences=_localPreferences;
-@property(retain) id <WeatherPreferencesPersistence> cloudStore; // @synthesize cloudStore=_cloudStore;
-@property(nonatomic) __weak id <SynchronizedDefaultsDelegate> syncDelegate; // @synthesize syncDelegate=_syncDelegate;
 - (void).cxx_destruct;
+@property(retain) WeatherPreferences *localPreferences; // @synthesize localPreferences=_localPreferences;
+@property(nonatomic) __weak id <SynchronizedDefaultsDelegate> syncDelegate; // @synthesize syncDelegate=_syncDelegate;
+@property(retain, nonatomic) id <WeatherPreferencesPersistence> cloudStore; // @synthesize cloudStore=_cloudStore;
 - (BOOL)shouldWriteCitiesToCloud:(id)arg1;
 - (void)saveCitiesToCloud:(id)arg1;
 - (void)setCloudStoreCities:(id)arg1;
@@ -35,11 +35,8 @@ __attribute__((visibility("hidden")))
 - (void)cloudCitiesChangedExternally:(id)arg1;
 - (BOOL)areCloudCities:(id)arg1 equalToLocalCities:(id)arg2;
 - (id)citiesByEnforcingSizeLimitOnResults:(id)arg1;
-- (id)cloudCityRepresentationsFromLegacyRepresentations;
-- (id)cloudCitiesFromLegacyCloudCities:(id)arg1;
-- (id)cloudCityFromALCity:(id)arg1 name:(id)arg2;
-- (BOOL)legacyCloudCity:(id)arg1 isEqualToALCity:(id)arg2;
 - (id)cloudRepresentationFromCities:(id)arg1;
+- (void)purgeLegacyCloudCities;
 - (id)initWithLocalPreferences:(id)arg1 persistence:(id)arg2;
 - (id)initWithLocalPreferences:(id)arg1;
 

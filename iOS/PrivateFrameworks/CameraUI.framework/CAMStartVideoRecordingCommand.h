@@ -13,8 +13,8 @@
     CAMVideoCaptureRequest *__request;
 }
 
-@property(readonly, nonatomic) CAMVideoCaptureRequest *_request; // @synthesize _request=__request;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CAMVideoCaptureRequest *_request; // @synthesize _request=__request;
 - (long long)_videoOrientationForCaptureOrientation:(long long)arg1;
 - (void)executeWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

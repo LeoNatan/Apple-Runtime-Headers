@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_targetIndexBarEntryID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *targetIndexBarEntryID; // @synthesize targetIndexBarEntryID=_targetIndexBarEntryID;
 @property(readonly, nonatomic) long long minimumEntityCount; // @synthesize minimumEntityCount=_minimumEntityCount;
 @property(readonly, nonatomic, getter=isIndexBarHiddenWhenEmpty) _Bool indexBarHiddenWhenEmpty; // @synthesize indexBarHiddenWhenEmpty=_indexBarHiddenWhenEmpty;
 @property(readonly, nonatomic) long long entryListElementType; // @synthesize entryListElementType=_entryListElementType;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *childIndexBarEntryElements;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

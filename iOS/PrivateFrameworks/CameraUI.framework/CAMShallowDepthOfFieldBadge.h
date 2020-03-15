@@ -15,10 +15,10 @@
     CEKBadgeTextView *__disabledTextView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CEKBadgeTextView *_disabledTextView; // @synthesize _disabledTextView=__disabledTextView;
 @property(readonly, nonatomic) CEKBadgeTextView *_enabledTextView; // @synthesize _enabledTextView=__enabledTextView;
 @property(nonatomic) long long shallowDepthOfFieldStatus; // @synthesize shallowDepthOfFieldStatus=_shallowDepthOfFieldStatus;
-- (void).cxx_destruct;
 - (void)updateToContentSize:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;

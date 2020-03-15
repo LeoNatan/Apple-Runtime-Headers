@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)userDefaults;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIDocumentPickerSearchPaletteView *searchView; // @synthesize searchView=_searchView;
 @property(retain, nonatomic) _UIDocumentPickerSortOrderView *sortView; // @synthesize sortView=_sortView;
 @property(retain, nonatomic) UIViewController<_UIDocumentPickerContainedViewController> *childViewController; // @synthesize childViewController=_childViewController;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long explicitDisplayMode; // @synthesize explicitDisplayMode=_explicitDisplayMode;
 @property(retain, nonatomic) _UIDocumentPickerContainerModel *model; // @synthesize model=_model;
 @property(nonatomic) __weak id <_UIDocumentPickerServiceViewController> serviceViewController; // @synthesize serviceViewController=_serviceViewController;
-- (void).cxx_destruct;
 - (long long)displayMode;
 - (long long)defaultDisplayMode;
 - (void)setDefaultDisplayMode:(long long)arg1;

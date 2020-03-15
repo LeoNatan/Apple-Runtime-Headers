@@ -17,19 +17,17 @@
     NSObject<OS_dispatch_queue> *_syncQueue;
     NSObject<OS_dispatch_queue> *_dataQueue;
     BOOL _ckMigrationStatusOnCloud;
-    BOOL _didRequestFirstPullForAccount;
     _KSCloudKitManager *_cloudKitManager;
     _KSTextReplacementCoreDataStore *_coreDataStore;
     unsigned long long _numPullRequests;
 }
 
 + (BOOL)isMigrationCompleted;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numPullRequests; // @synthesize numPullRequests=_numPullRequests;
-@property(nonatomic) BOOL didRequestFirstPullForAccount; // @synthesize didRequestFirstPullForAccount=_didRequestFirstPullForAccount;
 @property(nonatomic) BOOL ckMigrationStatusOnCloud; // @synthesize ckMigrationStatusOnCloud=_ckMigrationStatusOnCloud;
 @property(retain, nonatomic) _KSTextReplacementCoreDataStore *coreDataStore; // @synthesize coreDataStore=_coreDataStore;
 @property(retain, nonatomic) _KSCloudKitManager *cloudKitManager; // @synthesize cloudKitManager=_cloudKitManager;
-- (void).cxx_destruct;
 - (void)userDidDeleteRecordZone:(id)arg1;
 - (id)localEntriesFromCloudEntries:(id)arg1;
 - (id)cloudRecordIDsForLocalEntries:(id)arg1;

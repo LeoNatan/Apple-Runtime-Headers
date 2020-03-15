@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *syncToken; // @synthesize syncToken=_syncToken;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *syncToken; // @synthesize syncToken=_syncToken;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

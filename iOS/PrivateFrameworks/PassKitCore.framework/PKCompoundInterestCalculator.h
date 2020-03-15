@@ -15,8 +15,8 @@
     PKCompoundInterestCalculatorConfiguration *_configuration;
 }
 
-@property(readonly, nonatomic) PKCompoundInterestCalculatorConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKCompoundInterestCalculatorConfiguration *configuration; // @synthesize configuration=_configuration;
 - (_Bool)_date:(id)arg1 isApplicableForProcessingDate:(id)arg2;
 - (id)_creditsForProcessingDate:(id)arg1;
 - (id)_additionalBalanceForProcessingDate:(id)arg1;

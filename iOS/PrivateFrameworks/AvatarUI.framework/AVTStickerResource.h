@@ -12,15 +12,17 @@
 
 @interface AVTStickerResource : NSObject <AVTCachedResource>
 {
+    _Bool _prereleaseSticker;
     UIImage *_image;
     AVTUINSURL *_internalURL;
     struct CGRect _clippingRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVTUINSURL *internalURL; // @synthesize internalURL=_internalURL;
+@property(nonatomic, getter=isPrereleaseSticker) _Bool prereleaseSticker; // @synthesize prereleaseSticker=_prereleaseSticker;
 @property(readonly, nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *URL;
 - (id)initWithImage:(id)arg1 URL:(id)arg2 clippingRect:(struct CGRect)arg3;
 

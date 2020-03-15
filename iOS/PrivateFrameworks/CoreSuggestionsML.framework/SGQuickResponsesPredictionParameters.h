@@ -27,8 +27,13 @@
     unsigned long long _maxPromptLength;
     double _maxPromptWindowSeconds;
     NSString *_promptJoiningString;
+    NSString *_modelTypeName;
+    NSString *_subModelKeyString;
 }
 
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *subModelKeyString; // @synthesize subModelKeyString=_subModelKeyString;
+@property(readonly, nonatomic) NSString *modelTypeName; // @synthesize modelTypeName=_modelTypeName;
 @property(readonly, nonatomic) NSString *promptJoiningString; // @synthesize promptJoiningString=_promptJoiningString;
 @property(readonly, nonatomic) double maxPromptWindowSeconds; // @synthesize maxPromptWindowSeconds=_maxPromptWindowSeconds;
 @property(readonly, nonatomic) unsigned long long maxPromptLength; // @synthesize maxPromptLength=_maxPromptLength;
@@ -46,7 +51,6 @@
 @property(readonly, nonatomic) _Bool isPerCategory; // @synthesize isPerCategory=_isPerCategory;
 @property(readonly, nonatomic) _Bool isReplyTextRandomized; // @synthesize isReplyTextRandomized=_isReplyTextRandomized;
 @property(readonly, nonatomic) _Bool isPersonalizationDisabled; // @synthesize isPersonalizationDisabled=_isPersonalizationDisabled;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

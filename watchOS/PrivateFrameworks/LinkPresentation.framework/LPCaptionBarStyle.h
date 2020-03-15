@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     LPPadding *_playButtonPadding;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) LPPadding *playButtonPadding; // @synthesize playButtonPadding=_playButtonPadding;
 @property(readonly, nonatomic) LPMusicPlayButtonStyle *playButton; // @synthesize playButton=_playButton;
 @property(readonly, nonatomic) LPImageViewStyle *placeholderIcon; // @synthesize placeholderIcon=_placeholderIcon;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) LPCaptionBarAccessoryStyle *leadingAccessory; // @synthesize leadingAccessory=_leadingAccessory;
 @property(readonly, nonatomic) LPImageViewStyle *trailingIcon; // @synthesize trailingIcon=_trailingIcon;
 @property(readonly, nonatomic) LPImageViewStyle *leadingIcon; // @synthesize leadingIcon=_leadingIcon;
-- (void).cxx_destruct;
 - (id)rightAccessory;
 - (id)leftAccessory;
 - (id)rightIcon;

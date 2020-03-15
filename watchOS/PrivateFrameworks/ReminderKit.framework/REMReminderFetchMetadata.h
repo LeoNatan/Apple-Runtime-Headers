@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *dueDateCounts; // @synthesize dueDateCounts=_dueDateCounts;
 @property(readonly, nonatomic) NSDictionary *subtaskCounts; // @synthesize subtaskCounts=_subtaskCounts;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

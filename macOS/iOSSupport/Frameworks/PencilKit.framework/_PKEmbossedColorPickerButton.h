@@ -16,11 +16,11 @@
     CAShapeLayer *_strokeShapeLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *strokeShapeLayer; // @synthesize strokeShapeLayer=_strokeShapeLayer;
 @property(retain, nonatomic) UIImageView *embossImageView; // @synthesize embossImageView=_embossImageView;
 @property(retain, nonatomic) CAShapeLayer *selectedColorLayer; // @synthesize selectedColorLayer=_selectedColorLayer;
 @property(retain, nonatomic) _PKHueSpectrumView *hueSpectrumView; // @synthesize hueSpectrumView=_hueSpectrumView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithColor:(id)arg1 isCompact:(BOOL)arg2;
 

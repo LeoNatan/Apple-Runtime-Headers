@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     UIImageView *_userRatingStarsView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIControl *shareButton; // @synthesize shareButton=_shareButton;
 @property(nonatomic) double userRating; // @synthesize userRating=_userRating;
 @property(retain, nonatomic) SKUIItemContentRating *secondaryContentRating; // @synthesize secondaryContentRating=_secondaryContentRating;
@@ -54,7 +55,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SKUIItemContentRating *contentRating; // @synthesize contentRating=_contentRating;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(readonly, nonatomic) UIControl *artistButton; // @synthesize artistButton=_artistButton;
-- (void).cxx_destruct;
 - (void)_getBottomLayoutProperties:(struct **)arg1 origins:(double **)arg2 height:(double *)arg3 forWidth:(double)arg4;
 - (void)_getTopLayoutProperties:(struct **)arg1 origins:(double **)arg2 height:(double *)arg3 forWidth:(double)arg4;
 - (void)_reloadItemOfferButton:(_Bool)arg1;

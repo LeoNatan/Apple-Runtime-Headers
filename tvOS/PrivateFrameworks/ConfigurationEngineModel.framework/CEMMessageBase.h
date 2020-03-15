@@ -19,12 +19,12 @@
 
 + (id)messageForData:(id)arg1 error:(id *)arg2;
 + (id)messageForPayload:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMAnyPayload *messagePayload; // @synthesize messagePayload=_messagePayload;
 @property(copy, nonatomic) NSDate *messageTimestamp; // @synthesize messageTimestamp=_messageTimestamp;
 @property(copy, nonatomic) NSString *messageInReplyTo; // @synthesize messageInReplyTo=_messageInReplyTo;
 @property(copy, nonatomic) NSString *messageIdentifier; // @synthesize messageIdentifier=_messageIdentifier;
 @property(copy, nonatomic) NSString *messageType; // @synthesize messageType=_messageType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializeAsDataWithError:(id *)arg1;
 - (id)serialize;

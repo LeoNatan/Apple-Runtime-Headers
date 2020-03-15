@@ -28,11 +28,11 @@
 + (id)propertyHashTable;
 + (void)initialize;
 + (Class)classOverrideAtInitialization:(Class)arg1 type:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct os_unfair_lock_s unfairLock; // @synthesize unfairLock=_unfairLock;
 @property(readonly, nonatomic) NSMutableDictionary *objectStorage; // @synthesize objectStorage=_objectStorage;
 @property(readonly, nonatomic) NSString *specificationVersion; // @synthesize specificationVersion=_specificationVersion;
 @property(readonly, nonatomic) NSDictionary *jsonDictionary; // @synthesize jsonDictionary=_jsonDictionary;
-- (void).cxx_destruct;
 - (id)JSONRepresentation;
 - (id)valueForLookupKey:(id)arg1;
 - (void)storeValue:(id)arg1 forLookupKey:(id)arg2;

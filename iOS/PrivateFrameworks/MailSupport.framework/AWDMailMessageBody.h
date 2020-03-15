@@ -20,10 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalTextSize; // @synthesize totalTextSize=_totalTextSize;
 @property(retain, nonatomic) NSString *mimeSubtype; // @synthesize mimeSubtype=_mimeSubtype;
 @property(retain, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -27,6 +27,7 @@
 + (_Bool)shouldSuppressLocationUpdates;
 + (long long)detailLevel;
 + (id)_descriptionForDetailLevel;
+- (void).cxx_destruct;
 @property(nonatomic) long long secondsSinceZoomRequest; // @synthesize secondsSinceZoomRequest=_secondsSinceZoomRequest;
 @property(nonatomic) __weak VKMapView *mapView; // @synthesize mapView=_mapView;
 @property(retain, nonatomic) VKFeatureAccessibilityElement *lastCurrentTourLocation; // @synthesize lastCurrentTourLocation=_lastCurrentTourLocation;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) VKMapViewTourStatus *tourStatus; // @synthesize tourStatus=_tourStatus;
 @property(retain, nonatomic) VKMapViewAccessibilityElementManager *elementManager; // @synthesize elementManager=_elementManager;
 @property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
-- (void).cxx_destruct;
 - (long long)detailLevel;
 - (void)stopTour;
 - (void)startTour;

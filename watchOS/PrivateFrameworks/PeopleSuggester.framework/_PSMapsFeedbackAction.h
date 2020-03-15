@@ -16,9 +16,9 @@
 
 + (id)engagementWithNonSuggestionWithContactIdentifier:(id)arg1 handle:(id)arg2;
 + (id)engagementWithSuggestionWithContactIdentifier:(id)arg1 handle:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(readonly, copy, nonatomic) NSString *contactId; // @synthesize contactId=_contactId;
-- (void).cxx_destruct;
 - (id)initWithContactIdentifier:(id)arg1 handle:(id)arg2 type:(int)arg3;
 
 @end

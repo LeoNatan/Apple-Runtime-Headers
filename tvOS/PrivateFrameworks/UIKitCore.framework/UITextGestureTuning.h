@@ -27,17 +27,17 @@ __attribute__((visibility("hidden")))
     NSObject<UICoordinateSpace> *_coordinateSpace;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool strongerBiasAgainstUp; // @synthesize strongerBiasAgainstUp=_strongerBiasAgainstUp;
 @property(nonatomic) _Bool includeTipProjection; // @synthesize includeTipProjection=_includeTipProjection;
 @property(nonatomic) _Bool shouldIncludeConstantOffset; // @synthesize shouldIncludeConstantOffset=_shouldIncludeConstantOffset;
 @property(readonly, nonatomic) double visibilityOffset; // @synthesize visibilityOffset=_visibilityOffset;
 @property(nonatomic) _Bool shouldUseLineThreshold; // @synthesize shouldUseLineThreshold=_shouldUseLineThreshold;
 @property(nonatomic) __weak NSObject<UICoordinateSpace> *coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
-- (void).cxx_destruct;
 - (struct CGPoint)pointIfPlacedCarefully:(struct CGPoint)arg1;
 - (void)updateWeightedPointWithGestureState:(long long)arg1 location:(struct CGPoint)arg2;
 - (struct CGPoint)touchAlignedPointForPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
-- (void)updateVisibilityOffsetForTouch:(id)arg1 state:(long long)arg2;
+- (void)updateVisibilityOffsetForGestureState:(long long)arg1 touchType:(long long)arg2 locationInSceneReferenceSpace:(struct CGPoint)arg3 majorRadius:(double)arg4;
 - (void)updateWithTouches:(id)arg1 gestureState:(long long)arg2;
 - (void)assertInitialVerticalOffset:(double)arg1 fromTopOfCaret:(double)arg2;
 - (struct CGPoint)pointForGestureState:(long long)arg1 point:(struct CGPoint)arg2 translation:(struct CGPoint)arg3;

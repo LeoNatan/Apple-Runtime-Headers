@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     NSArray *_fiveButtonContraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *fiveButtonContraints; // @synthesize fiveButtonContraints=_fiveButtonContraints;
 @property(retain, nonatomic) NSArray *threeButtonContraints; // @synthesize threeButtonContraints=_threeButtonContraints;
 @property(retain, nonatomic) MediaControlsTransportButton *languageOptionsButton; // @synthesize languageOptionsButton=_languageOptionsButton;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(retain, nonatomic) MPCPlayerResponse *response; // @synthesize response=_response;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_updateButtonConfiguration;
 - (void)_updateButtonLayout;
 - (void)_resetTransportButton:(id)arg1;

@@ -34,9 +34,9 @@
     SBFMobileKeyBagState *_cachedExtendedState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_policy, setter=_setPolicy:) id <SBFAuthenticationPolicy> policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) NSDate *lastRevokedAuthenticationDate; // @synthesize lastRevokedAuthenticationDate=_lastRevokedAuthenticationDate;
-- (void).cxx_destruct;
 - (void)_updateSecureModeIfNecessaryForNewAuthState;
 - (void)_noteDeviceLockStateMayHaveChangedForExternalReasons;
 - (void)_clearBlockedState;

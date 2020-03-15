@@ -13,8 +13,8 @@
     AppleSpell *_spellChecker;
 }
 
-@property(retain, nonatomic) AppleSpell *spellChecker; // @synthesize spellChecker=_spellChecker;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AppleSpell *spellChecker; // @synthesize spellChecker=_spellChecker;
 - (BOOL)textContainsMisspelling:(id)arg1 withLanguages:(id)arg2;
 - (void)correctSpellingInText:(id)arg1 withLanguages:(id)arg2;
 

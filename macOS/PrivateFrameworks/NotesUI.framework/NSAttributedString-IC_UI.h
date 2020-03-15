@@ -7,9 +7,9 @@
 #import <Foundation/NSAttributedString.h>
 
 @interface NSAttributedString (IC_UI)
-- (id)ic_attributedStringByHighlightingRegex:(id)arg1 withHighlightColor:(struct NSColor *)arg2;
+- (id)ic_attributedStringByHighlightingRegex:(id)arg1 withHighlightColor:(id)arg2;
 - (long long)ic_writingDirectionAtIndex:(unsigned long long)arg1;
-- (id)ic_attributesByHighlightingAttributes:(id)arg1 withHighlightColor:(struct NSColor *)arg2;
+- (id)ic_attributesByHighlightingAttributes:(id)arg1 withHighlightColor:(id)arg2;
 - (id)ic_stringWithoutAttachments;
 - (id)ic_stringByTrimmingLeadingTrailingWhitespace;
 - (struct _NSRange)ic_rangeForAttachment:(id)arg1 withTextAttachment:(id *)arg2;

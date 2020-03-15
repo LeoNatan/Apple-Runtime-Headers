@@ -17,9 +17,9 @@
 }
 
 + (id)firstPartyWorkoutSnapshotWithCurrentWorkoutSnapshot:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long activityType; // @synthesize activityType=_activityType;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
 - (double)durationForDate:(id)arg1;
 - (id)_initWithState:(long long)arg1 activityType:(unsigned long long)arg2 elapsedTime:(double)arg3 snapshotDate:(id)arg4;

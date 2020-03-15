@@ -15,8 +15,8 @@
 
 + (id)reuseIdentifier;
 + (id)supplementaryViewType;
-@property(retain, nonatomic) CALayer *bottomHairline; // @synthesize bottomHairline=_bottomHairline;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CALayer *bottomHairline; // @synthesize bottomHairline=_bottomHairline;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;

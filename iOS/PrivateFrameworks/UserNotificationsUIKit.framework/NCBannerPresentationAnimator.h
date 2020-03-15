@@ -18,10 +18,10 @@
     UIGestureRecognizer *_activeGesture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIGestureRecognizer *activeGesture; // @synthesize activeGesture=_activeGesture;
 @property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 @property(nonatomic) __weak id <NCBannerPresentationAnimatorDelegate> transitionAnimatorDelegate; // @synthesize transitionAnimatorDelegate=_transitionAnimatorDelegate;
-- (void).cxx_destruct;
 - (void)_animateDismissalOfViewController:(id)arg1 withContext:(id)arg2;
 - (void)_animatePresentationOfViewController:(id)arg1 withContext:(id)arg2;
 - (double)transitionDuration:(id)arg1;

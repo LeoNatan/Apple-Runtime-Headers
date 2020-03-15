@@ -16,9 +16,9 @@
     unsigned long long _dataDetectorTypes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long dataDetectorTypes; // @synthesize dataDetectorTypes=_dataDetectorTypes;
 @property(nonatomic) double iconTextPadding; // @synthesize iconTextPadding=_iconTextPadding;
-- (void).cxx_destruct;
 - (void)addEntryWithIcon:(id)arg1 iconSize:(struct CGSize)arg2 attributedText:(id)arg3;
 - (void)addEntryWithIcon:(id)arg1 iconSize:(struct CGSize)arg2 text:(id)arg3;
 - (id)viewForLastBaselineLayout;

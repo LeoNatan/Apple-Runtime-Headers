@@ -19,9 +19,9 @@
 + (id)setWithImageIdentifier:(id)arg1;
 + (id)setWithDefaultIcon:(id)arg1;
 + (id)placeholderIconSet;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HFIconDescriptor> defaultIcon; // @synthesize defaultIcon=_defaultIcon;
 @property(readonly, nonatomic) NSSet *allIcons; // @synthesize allIcons=_allIcons;
-- (void).cxx_destruct;
 
 @end
 

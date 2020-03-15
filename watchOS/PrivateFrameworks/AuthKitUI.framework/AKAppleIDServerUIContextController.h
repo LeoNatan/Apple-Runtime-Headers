@@ -18,10 +18,10 @@
     NSURL *_initiatingURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *initiatingURL; // @synthesize initiatingURL=_initiatingURL;
 @property(readonly, nonatomic) AKAppleIDServerUIDataHarvester *serverDataHarvester; // @synthesize serverDataHarvester=_serverDataHarvester;
 @property(readonly, nonatomic) AKAppleIDServerResourceLoadDelegate *serverUIDelegate; // @synthesize serverUIDelegate=_serverUIDelegate;
-- (void).cxx_destruct;
 - (void)_completeWithResponse:(id)arg1 additionalData:(id)arg2 error:(id)arg3;
 - (void)completeWithFinalResponse:(id)arg1;
 - (void)completeWithError:(id)arg1 additionalData:(id)arg2;

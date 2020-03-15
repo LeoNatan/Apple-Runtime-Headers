@@ -52,6 +52,7 @@
     NSHashTable *_l2capChannels;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *l2capChannels; // @synthesize l2capChannels=_l2capChannels;
 @property(retain, nonatomic) NSNumber *RSSI; // @synthesize RSSI=_RSSI;
 @property(nonatomic) unsigned char modeSupported; // @synthesize modeSupported=_modeSupported;
@@ -92,7 +93,6 @@
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) _Bool isIncoming; // @synthesize isIncoming=_isIncoming;
 @property(nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
-- (void).cxx_destruct;
 - (void)openL2CAPChannel:(id)arg1;
 - (_Bool)isServiceSupported:(id)arg1;
 - (void)removeAllL2CAPChannels;

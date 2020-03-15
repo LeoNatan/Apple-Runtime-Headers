@@ -12,6 +12,7 @@
 
 @interface PKPaymentContentItem : NSObject <NSSecureCoding>
 {
+    _Bool _centered;
     NSURLRequest *_imageRequest;
     struct CGImage *_image;
     NSAttributedString *_title;
@@ -19,11 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
 @property(copy, nonatomic) NSAttributedString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSAttributedString *title; // @synthesize title=_title;
 @property(nonatomic) struct CGImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSURLRequest *imageRequest; // @synthesize imageRequest=_imageRequest;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqualToPaymentContentItem:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

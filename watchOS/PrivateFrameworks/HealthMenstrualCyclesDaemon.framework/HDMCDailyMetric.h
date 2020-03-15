@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)eventName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *logOvulationTestResultEnabled; // @synthesize logOvulationTestResultEnabled=_logOvulationTestResultEnabled;
 @property(retain, nonatomic) NSNumber *logBasalBodyTemperatureEnabled; // @synthesize logBasalBodyTemperatureEnabled=_logBasalBodyTemperatureEnabled;
 @property(retain, nonatomic) NSNumber *logCervicalMucusQualityEnabled; // @synthesize logCervicalMucusQualityEnabled=_logCervicalMucusQualityEnabled;
@@ -56,7 +57,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, getter=isOnboardingCompleted) NSNumber *onboardingCompleted; // @synthesize onboardingCompleted=_onboardingCompleted;
 @property(nonatomic, getter=isImproveHealthAndActivityAllowed) _Bool improveHealthAndActivityAllowed; // @synthesize improveHealthAndActivityAllowed=_improveHealthAndActivityAllowed;
 @property(copy, nonatomic) NSDictionary *eventPayload; // @synthesize eventPayload=_eventPayload;
-- (void).cxx_destruct;
 - (id)_biologicalSexString;
 - (id)initWithImproveHealthAndActivityAllowed:(_Bool)arg1;
 

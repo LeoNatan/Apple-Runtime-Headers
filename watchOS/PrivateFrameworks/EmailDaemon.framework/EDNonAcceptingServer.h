@@ -17,8 +17,8 @@
 }
 
 + (id)log;
-@property(retain, nonatomic) NSMutableArray *listeners; // @synthesize listeners=_listeners;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *listeners; // @synthesize listeners=_listeners;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)initWithMachServiceNames:(id)arg1;
 

@@ -19,9 +19,9 @@
 }
 
 + (id)_defaultContainerURL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICUserIdentityStore *userIdentityStore; // @synthesize userIdentityStore=_identityStore;
 @property(readonly, copy, nonatomic) NSURL *containerDirectoryURL; // @synthesize containerDirectoryURL=_containerURL;
-- (void).cxx_destruct;
 - (id)_playbackHistoryOfClass:(Class)arg1 forStationWithIdentifier:(id)arg2 identityKey:(id)arg3 error:(id *)arg4;
 - (void)_getCacheKeyForUserIdentity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_fileURLForStationWithIdentifier:(id)arg1 identityKey:(id)arg2;

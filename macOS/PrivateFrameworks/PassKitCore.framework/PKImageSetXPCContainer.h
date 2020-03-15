@@ -21,8 +21,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSData *imageSetHash; // @synthesize imageSetHash=_imageSetHash;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *imageSetHash; // @synthesize imageSetHash=_imageSetHash;
 - (void)purge;
 - (id)containedImageSet;
 - (void)encodeWithCoder:(id)arg1;

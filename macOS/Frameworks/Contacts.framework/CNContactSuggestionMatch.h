@@ -17,10 +17,10 @@
 
 + (void)fetchLinkedIdentifiersForContactSuggestionMatches:(id)arg1 fromSuggestionService:(id)arg2;
 + (id)suggestionFromContactMatch:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mainStoreLinkedIdentifier; // @synthesize mainStoreLinkedIdentifier=_mainStoreLinkedIdentifier;
 @property(retain, nonatomic) SGContactMatch *contactMatch; // @synthesize contactMatch=_contactMatch;
 @property(retain, nonatomic) SGContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     SCRValueChangeMonitor *__valueChangeMonitor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SCRValueChangeMonitor *_valueChangeMonitor; // @synthesize _valueChangeMonitor=__valueChangeMonitor;
 @property(copy, nonatomic, setter=_setCurrentlyFocusedComponent:) NSString *_currentlyFocusedComponent; // @synthesize _currentlyFocusedComponent=__currentlyFocusedComponent;
 @property(readonly, copy, nonatomic) NSOrderedSet *_supportedDateTimeComponents; // @synthesize _supportedDateTimeComponents=__supportedDateTimeComponents;
 @property(retain, nonatomic, setter=_setCachedDateValue:) NSDate *_cachedDateValue; // @synthesize _cachedDateValue=__cachedDateValue;
-- (void).cxx_destruct;
 - (long long)brailleLineType;
 - (id)valueDescription;
 - (id)roleDescription;

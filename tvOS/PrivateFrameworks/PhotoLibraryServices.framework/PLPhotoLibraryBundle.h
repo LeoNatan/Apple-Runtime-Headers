@@ -36,10 +36,10 @@
     PLPhotoLibraryBundleController *_bundleController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak PLPhotoLibraryBundleController *bundleController; // @synthesize bundleController=_bundleController;
 @property(readonly) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 @property(readonly, copy) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
-- (void).cxx_destruct;
 - (void)unbindAssetsdService:(id)arg1;
 - (_Bool)bindAssetsdService:(id)arg1 error:(id *)arg2;
 @property(readonly) NSArray *boundAssetsdServices;
@@ -70,6 +70,7 @@
 @property(readonly) PLPersistentContainer *persistentContainer;
 @property(readonly, copy) NSError *shutdownReason;
 - (id)description;
+- (void)dealloc;
 - (id)initWithLibraryURL:(id)arg1 bundleController:(id)arg2;
 - (_Bool)registerPLPhotoLibrary:(id)arg1;
 

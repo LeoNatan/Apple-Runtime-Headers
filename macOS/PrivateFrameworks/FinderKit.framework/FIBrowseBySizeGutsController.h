@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
     NSArray *_selectedURLs;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *selectedURLs; // @synthesize selectedURLs=_selectedURLs;
 @property(nonatomic) _FIBrowseBySizeView *browseBySizeView; // @synthesize browseBySizeView=_browseBySizeView;
 @property(retain, nonatomic) FIBrowseBySizeContainerController *activeContainer; // @synthesize activeContainer=_activeContainer;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)browserViewContainerControllerForContainer:(id)arg1;
 - (_Bool)containerValidateToolbarItem:(id)arg1;
 - (void)containerConnectBackupDelegate:(id)arg1;

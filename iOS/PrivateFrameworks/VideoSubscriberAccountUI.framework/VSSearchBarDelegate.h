@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
-- (void).cxx_destruct;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)init;
 

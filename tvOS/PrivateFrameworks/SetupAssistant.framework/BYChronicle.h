@@ -13,8 +13,8 @@
     NSMutableDictionary *_featureEntries;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *featureEntries; // @synthesize featureEntries=_featureEntries;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *featureEntries; // @synthesize featureEntries=_featureEntries;
 - (id)dictionaryRepresentation;
 - (id)entryForFeature:(unsigned long long)arg1;
 - (void)addEntry:(id)arg1 forFeature:(unsigned long long)arg2;

@@ -20,6 +20,7 @@
     NSMutableDictionary *_resultErrorsByRecordID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *resultErrorsByRecordID; // @synthesize resultErrorsByRecordID=_resultErrorsByRecordID;
 @property(retain, nonatomic) NSMutableArray *resultDeletedRecordIDs; // @synthesize resultDeletedRecordIDs=_resultDeletedRecordIDs;
 @property(retain, nonatomic) NSMutableArray *remainingBatchesOfRecordIDsToDelete; // @synthesize remainingBatchesOfRecordIDsToDelete=_remainingBatchesOfRecordIDsToDelete;
@@ -28,7 +29,6 @@
 @property(nonatomic) _Bool skipPreflight; // @synthesize skipPreflight=_skipPreflight;
 @property(copy, nonatomic) NSArray *recordIDsToDelete; // @synthesize recordIDsToDelete=_recordIDsToDelete;
 @property(retain, nonatomic) FCCKPrivateDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)_continueModifying;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)resetForRetry;

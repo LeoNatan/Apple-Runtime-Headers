@@ -23,10 +23,10 @@
 + (id)charsetForEncoding:(unsigned long long)arg1;
 + (id)allMimeCharsets;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL canBeUsedForOutgoingMessages; // @synthesize canBeUsedForOutgoingMessages=_canBeUsedForOutgoingMessages;
 @property(readonly, copy, nonatomic) NSString *charsetName; // @synthesize charsetName=_charsetName;
 @property(readonly) unsigned long long encoding; // @synthesize encoding=_encoding;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;

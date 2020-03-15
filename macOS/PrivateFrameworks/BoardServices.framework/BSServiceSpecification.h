@@ -18,10 +18,10 @@
     BOOL _derived;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDerived) BOOL derived; // @synthesize derived=_derived;
 @property(readonly, nonatomic, getter=isLaunchWhitelisted) BOOL launchWhitelisted; // @synthesize launchWhitelisted=_launchWhitelisted;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

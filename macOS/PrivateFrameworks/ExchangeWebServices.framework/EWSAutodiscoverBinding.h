@@ -17,11 +17,11 @@
     EWSAutodiscoverOperation *_operation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak EWSAutodiscoverOperation *operation; // @synthesize operation=_operation;
 @property BOOL logsActivity; // @synthesize logsActivity=_logsActivity;
 @property(readonly, nonatomic) __weak id <EWSAutodiscoverBindingDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (void)sendMessage:(id)arg1;
 - (id)init;
 - (id)initWithHost:(id)arg1 delegate:(id)arg2;

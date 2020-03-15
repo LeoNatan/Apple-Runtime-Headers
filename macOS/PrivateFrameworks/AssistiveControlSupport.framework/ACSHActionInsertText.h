@@ -16,10 +16,10 @@
 }
 
 + (id)actionWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACAPWordSuggestion *wordSuggestion; // @synthesize wordSuggestion=_wordSuggestion;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (id)paramDescription;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

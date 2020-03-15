@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSSet *_invalidItemIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *invalidItemIdentifiers; // @synthesize invalidItemIdentifiers=_invalidItemIdentifiers;
 @property(copy, nonatomic) NSDictionary *loadedItems; // @synthesize loadedItems=_loadedItems;
-- (void).cxx_destruct;
 
 @end
 

@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 + (id)_doneLocalizedString;
 + (id)_addLocalizedString;
 + (id)defaultTitleForCalendarItem;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKChangeSet *originalChangeSet; // @synthesize originalChangeSet=_originalChangeSet;
 @property(retain, nonatomic) _UIAccessDeniedView *accessDeniedView; // @synthesize accessDeniedView=_accessDeniedView;
 @property(nonatomic) BOOL isTextEditing; // @synthesize isTextEditing=_isTextEditing;
@@ -66,12 +67,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) EKCalendarItem *calendarItem; // @synthesize calendarItem=_calendarItem;
 @property(retain, nonatomic) EKEventStore *store; // @synthesize store=_store;
 @property(nonatomic) __weak id <EKCalendarItemEditorDelegate> editorDelegate; // @synthesize editorDelegate=_editorDelegate;
-- (void).cxx_destruct;
 - (BOOL)canBecomeFirstResponder;
 - (void)_performCloseKeyCommand;
 - (void)_setUpKeyCommands;
-- (void)_presentDetachSheetForEvent:(id)arg1 saveAttachments:(BOOL)arg2;
-- (void)_presentAttachmentRecurrenceSheetForEvent:(id)arg1;
+- (void)_presentDetachSheetForEvent:(id)arg1 saveAttachments:(BOOL)arg2 withContinueBlock:(CDUnknownBlockType)arg3;
+- (void)_presentAttachmentRecurrenceSheetForEvent:(id)arg1 withContinueBlock:(CDUnknownBlockType)arg2;
 - (id)_viewForSheet;
 - (id)_nameForDeleteButton;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -158,8 +158,10 @@ __attribute__((visibility("hidden")))
 - (void)focus:(unsigned long long)arg1 select:(BOOL)arg2;
 - (BOOL)hasUnsavedChanges;
 - (BOOL)willPresentDialogOnSave;
+- (void)completeAndSaveWithContinueBlock:(CDUnknownBlockType)arg1;
 - (void)completeAndSave;
 - (void)handleTapOutside;
+- (void)done:(id)arg1 withContinueBlock:(CDUnknownBlockType)arg2;
 - (void)done:(id)arg1;
 - (void)cancelEditingWithDelegateNotification:(BOOL)arg1 forceCancel:(BOOL)arg2;
 - (void)cancel:(id)arg1;

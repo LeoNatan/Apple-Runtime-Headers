@@ -13,8 +13,8 @@
     DOCTagColorPicker *_colorPickerView;
 }
 
-@property(retain, nonatomic) DOCTagColorPicker *colorPickerView; // @synthesize colorPickerView=_colorPickerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DOCTagColorPicker *colorPickerView; // @synthesize colorPickerView=_colorPickerView;
 @property(readonly, nonatomic) UIGestureRecognizer *changeColorPanGestureRecognizer;
 @property(readonly, nonatomic) long long selectedColor;
 - (id)initWithFrame:(struct CGRect)arg1;

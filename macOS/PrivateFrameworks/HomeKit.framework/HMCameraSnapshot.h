@@ -13,8 +13,8 @@
     _HMCameraSnapshot *_snapshot;
 }
 
-@property(retain, nonatomic) _HMCameraSnapshot *snapshot; // @synthesize snapshot=_snapshot;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _HMCameraSnapshot *snapshot; // @synthesize snapshot=_snapshot;
 @property(readonly, copy, nonatomic) NSDate *captureDate;
 - (id)initWithSnapshot:(id)arg1;
 

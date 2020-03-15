@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGRect sourceRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) _UIContextMenuInteraction *menuInteraction; // @synthesize menuInteraction=_menuInteraction;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect sourceRect; // @synthesize sourceRect;
 - (void)setDelegate:(id)arg1;
 @property(readonly, nonatomic) id <UIViewControllerPreviewingDelegate> delegate;
-- (void).cxx_destruct;
 - (id)_targetedPreviewForHighlightView:(id)arg1 container:(id)arg2 center:(struct CGPoint)arg3;
 - (id)_guessAutomaticPreviewForLocation:(struct CGPoint)arg1;
 - (void)contextMenuInteractionDidEnd:(id)arg1;

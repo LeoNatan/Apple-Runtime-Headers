@@ -17,10 +17,10 @@
     UIColor *__overlappingControlsColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setOverlappingControlsColor:) UIColor *_overlappingControlsColor; // @synthesize _overlappingControlsColor=__overlappingControlsColor;
 @property(copy, nonatomic) NSString *accessibilityText; // @synthesize accessibilityText=_accessibilityText;
 @property(nonatomic) BOOL hasAudio; // @synthesize hasAudio=_hasAudio;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

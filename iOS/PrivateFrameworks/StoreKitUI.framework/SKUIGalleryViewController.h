@@ -27,9 +27,9 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIGalleryPageComponent *galleryComponent; // @synthesize galleryComponent=_galleryComponent;
 @property(nonatomic) __weak id <SKUIEmbeddedMediaViewDelegate> embeddedMediaDelegate; // @synthesize embeddedMediaDelegate=_embeddedMediaDelegate;
-- (void).cxx_destruct;
 - (void)_stopCycleTimer;
 - (void)_startCycleTimer;
 - (void)_showNextPaneAnimated:(_Bool)arg1;

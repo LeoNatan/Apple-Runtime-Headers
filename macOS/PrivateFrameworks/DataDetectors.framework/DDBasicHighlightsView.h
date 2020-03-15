@@ -29,13 +29,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultAnimationForKey:(id)arg1;
+- (void).cxx_destruct;
 @property struct OpaqueWKBundlePageOverlay *overlay; // @synthesize overlay=_overlay;
 @property(nonatomic) BOOL mouseDown; // @synthesize mouseDown=_mouseDown;
 @property(nonatomic) BOOL layerOnly; // @synthesize layerOnly=_layerOnly;
 @property(retain, nonatomic) NSString *toolTipString; // @synthesize toolTipString=_toolTipString;
 @property(nonatomic) unsigned long long highlightStyle; // @synthesize highlightStyle=_highlightStyle;
 @property(retain, nonatomic) DDHighlightObject *highlightObject; // @synthesize highlightObject=_highlightObject;
-- (void).cxx_destruct;
 - (void)highlight:(BOOL)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawAtPoint:(struct CGPoint)arg1 inContext:(struct CGContext *)arg2;

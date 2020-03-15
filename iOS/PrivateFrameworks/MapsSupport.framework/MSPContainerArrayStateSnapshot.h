@@ -16,9 +16,9 @@
     NSUUID *_clientIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithContents:(id)arg1 clientIdentifier:(id)arg2;
 - (id)initWithContents:(id)arg1;

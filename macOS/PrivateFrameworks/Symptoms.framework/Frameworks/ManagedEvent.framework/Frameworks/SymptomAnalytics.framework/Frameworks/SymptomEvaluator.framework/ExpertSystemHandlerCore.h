@@ -20,8 +20,8 @@
 
 + (id)internalStateDictionary;
 + (id)configureClass:(id)arg1;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (_Bool)noteSymptom:(id)arg1;
 - (int)read:(id)arg1 returnedValues:(id)arg2;
 - (int)configureInstance:(id)arg1;

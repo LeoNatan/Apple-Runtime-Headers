@@ -28,6 +28,7 @@
 }
 
 + (double)toRadian:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setContentsScale:) double _contentsScale; // @synthesize _contentsScale=__contentsScale;
 @property(retain, nonatomic, setter=_setIrisGlyphLayer:) CALayer *_irisGlyphLayer; // @synthesize _irisGlyphLayer=__irisGlyphLayer;
 @property(retain, nonatomic, setter=_setProgressArcLayer:) PXProgressArcLayer *_progressArcLayer; // @synthesize _progressArcLayer=__progressArcLayer;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic, setter=_setContentView:) UIView *_contentView; // @synthesize _contentView=__contentView;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)resetProgress;
 - (void)_recalculateIncreaseProgress:(double)arg1 withTimeDiff:(double)arg2;
 - (void)setInitialIncreaseRatePerFrame:(double)arg1;

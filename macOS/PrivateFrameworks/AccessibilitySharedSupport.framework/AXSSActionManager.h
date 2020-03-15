@@ -10,6 +10,8 @@
 {
 }
 
+- (void)end3DTouch;
+- (void)begin3DTouch;
 - (void)endRotate;
 - (void)beginRotateLeft;
 - (void)beginRotateRight;
@@ -31,13 +33,13 @@
 - (void)lift;
 - (void)press;
 - (void)toggleGesturesMode;
+- (void)togglePassthroughMode;
 - (void)activateTypeahead;
 - (void)performSysdiagnose;
 - (void)performEscape;
 - (void)showAccessibilityActions;
-- (void)switchToPreviousProcess;
-- (void)switchToNextProcess;
 - (void)rotateDevice;
+- (void)toggleDock;
 - (void)toggleControlCenter;
 - (void)toggleNotificationCenter;
 - (void)activateSOS;
@@ -51,6 +53,8 @@
 - (void)openContextualMenu;
 - (void)toggleHelp;
 - (void)performDefaultAction;
+- (void)moveInsidePrevious;
+- (void)moveInsideNext;
 - (void)moveDown;
 - (void)moveUp;
 - (void)moveRight;
@@ -63,6 +67,7 @@
 - (void)goToFirstElement;
 - (void)goToPreviousElementOfType:(unsigned long long)arg1;
 - (void)goToNextElementOfType:(unsigned long long)arg1;
+- (void)didSuppressCommand:(id)arg1;
 - (void)didPerformStandardCommandWithIdentifier:(id)arg1;
 - (void)willPerformStandardCommandWithIdentifier:(id)arg1;
 - (void)handleCommand:(id)arg1;

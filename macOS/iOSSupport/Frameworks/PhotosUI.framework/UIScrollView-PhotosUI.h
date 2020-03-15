@@ -18,7 +18,7 @@
 - (void)pu_scrollToEdge:(unsigned int)arg1 animated:(BOOL)arg2;
 - (BOOL)_pu_isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
 @property(readonly, nonatomic) BOOL pu_isBouncing;
-- (int)_pu_scrollableAxis;
+- (unsigned long long)_pu_scrollableAxis;
 - (BOOL)pu_isScrolledBeyondEdge:(unsigned int)arg1;
 - (BOOL)pu_isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
 - (BOOL)pu_isScrolledAtEdge:(unsigned int)arg1;

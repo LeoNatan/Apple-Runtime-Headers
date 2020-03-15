@@ -19,10 +19,10 @@
     NSMutableDictionary *_primaryLibraryIDsByConversationID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(retain, nonatomic) NSMutableDictionary *primaryLibraryIDsByConversationID; // @synthesize primaryLibraryIDsByConversationID=_primaryLibraryIDsByConversationID;
 @property(nonatomic) __weak id <MFSearchableIndexQueryResultProcessorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly) BOOL shouldCancel;
 - (void)newMessagesAvailable:(id)arg1 secondaryMessages:(id)arg2 fromUpdate:(BOOL)arg3;
 - (void)finishedSendingMessages;

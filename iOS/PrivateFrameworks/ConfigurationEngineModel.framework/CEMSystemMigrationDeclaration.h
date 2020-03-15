@@ -22,8 +22,8 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
-@property(copy, nonatomic) NSArray *payloadCustomBehavior; // @synthesize payloadCustomBehavior=_payloadCustomBehavior;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *payloadCustomBehavior; // @synthesize payloadCustomBehavior=_payloadCustomBehavior;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

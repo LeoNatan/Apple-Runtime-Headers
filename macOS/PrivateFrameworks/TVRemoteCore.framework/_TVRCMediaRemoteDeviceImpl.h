@@ -31,6 +31,7 @@
 }
 
 + (id)implWithTelevision:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVRCMediaRemoteKeyboardImplManager *keyboardImplManager; // @synthesize keyboardImplManager=_keyboardImplManager;
 @property(retain, nonatomic) _TVRXKeyboardController *keyboardController; // @synthesize keyboardController=_keyboardController;
 @property(retain, nonatomic) NSMutableArray *queuedAudioBuffers; // @synthesize queuedAudioBuffers=_queuedAudioBuffers;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) _TVRCMROriginWrapper *origin; // @synthesize origin=_origin;
 @property(retain, nonatomic) _TVRCMRTelevisionWrapper *television; // @synthesize television=_television;
 @property(nonatomic) __weak _TVRXDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)_sendEquivalentGameButton:(id)arg1;
 - (void)_unregisterGameControllerID;
 - (void)_registerGameControllerID;

@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBDataReader, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAutocompletePlaceContextMetadata : PBCodable <NSCopying>
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     PBDataReader *_reader;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _clientizationFeatures;
+    NSMutableArray *_alternateSearchableNames;
     NSString *_matchedDisplayNameLanguageCode;
     NSString *_matchedDisplayName;
     unsigned int _readerMarkPos;
@@ -32,10 +33,12 @@ __attribute__((visibility("hidden")))
         unsigned int has_shouldSuppressDirectionsAction:1;
         unsigned int read_unknownFields:1;
         unsigned int read_clientizationFeatures:1;
+        unsigned int read_alternateSearchableNames:1;
         unsigned int read_matchedDisplayNameLanguageCode:1;
         unsigned int read_matchedDisplayName:1;
         unsigned int wrote_unknownFields:1;
         unsigned int wrote_clientizationFeatures:1;
+        unsigned int wrote_alternateSearchableNames:1;
         unsigned int wrote_matchedDisplayNameLanguageCode:1;
         unsigned int wrote_matchedDisplayName:1;
         unsigned int wrote_isDefaultName:1;
@@ -46,6 +49,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)isValid:(id)arg1;
++ (Class)alternateSearchableNameType;
 - (void).cxx_destruct;
 - (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
@@ -59,6 +63,13 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)alternateSearchableNameAtIndex:(unsigned long long)arg1;
+- (unsigned long long)alternateSearchableNamesCount;
+- (void)_addNoFlagsAlternateSearchableName:(id)arg1;
+- (void)addAlternateSearchableName:(id)arg1;
+- (void)clearAlternateSearchableNames;
+@property(retain, nonatomic) NSMutableArray *alternateSearchableNames;
+- (void)_readAlternateSearchableNames;
 @property(nonatomic) _Bool hasIsLookAroundActionAllowed;
 @property(nonatomic) _Bool isLookAroundActionAllowed;
 @property(nonatomic) _Bool hasShouldSuppressDirectionsAction;

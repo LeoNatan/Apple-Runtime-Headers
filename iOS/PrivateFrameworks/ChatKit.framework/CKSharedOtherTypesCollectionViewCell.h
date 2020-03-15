@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UIImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
 - (void)layoutSubviews;
 - (void)configureWithAttachmentItem:(id)arg1;
 - (void)configureWithThumbnail:(id)arg1 fileURL:(id)arg2;

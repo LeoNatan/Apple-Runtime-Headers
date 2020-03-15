@@ -22,13 +22,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)unarchivingClasses;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showingInbox; // @synthesize showingInbox=_showingInbox;
 @property(nonatomic) unsigned long long filterMode; // @synthesize filterMode=_filterMode;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) _Bool composingNewMessage; // @synthesize composingNewMessage=_composingNewMessage;
 @property(retain, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 @property(retain, nonatomic) NSArray *unreadLastMessages; // @synthesize unreadLastMessages=_unreadLastMessages;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

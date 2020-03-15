@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSPopUpButton *_policyPopUpButton;
 }
 
-@property(nonatomic) __weak NSPopUpButton *policyPopUpButton; // @synthesize policyPopUpButton=_policyPopUpButton;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSPopUpButton *policyPopUpButton; // @synthesize policyPopUpButton=_policyPopUpButton;
 
 @end
 

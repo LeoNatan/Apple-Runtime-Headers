@@ -32,12 +32,12 @@
 + (id)controlTitleFontForControlStatusType:(int)arg1;
 + (id)_newControlTitleLabel;
 + (struct CGSize)_expectedSizeForControlStatusType:(int)arg1 controlTitle:(id)arg2 hasControlImage:(_Bool)arg3 displayScale:(float)arg4 preferredHeight:(float)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *filledTintColor; // @synthesize filledTintColor=_filledTintColor;
 @property(nonatomic) _Bool scaleImageForAccessibility; // @synthesize scaleImageForAccessibility=_scaleImageForAccessibility;
 @property(nonatomic) int displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic) struct MPAddKeepLocalControlStatus controlStatus; // @synthesize controlStatus=_controlStatus;
 @property(nonatomic) _Bool allowsAddImage; // @synthesize allowsAddImage=_allowsAddImage;
-- (void).cxx_destruct;
 - (void)_updateControlImageViewAnimation;
 - (void)_updateControlStatusProperties;
 - (void)_updateBackgroundViewCornerRadius;

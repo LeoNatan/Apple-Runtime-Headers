@@ -6,7 +6,8 @@
 
 #import <PhotoLibraryServices/PLAssetContainerList-Protocol.h>
 
-@class NSArray, NSIndexSet, NSMutableOrderedSet, NSNumber, NSString;
+@class NSArray, NSIndexSet, NSMutableOrderedSet, NSNumber, NSObject, NSString;
+@protocol PLAlbumProtocol;
 
 @protocol PLAlbumContainer <PLAssetContainerList>
 @property(readonly, retain, nonatomic) NSString *_typeDescription;
@@ -21,7 +22,7 @@
 - (void)updateAlbumsOrderIfNeeded;
 - (BOOL)needsReordering;
 - (void)setNeedsReordering;
-- (BOOL)albumHasFixedOrder:(struct NSObject *)arg1;
+- (BOOL)albumHasFixedOrder:(NSObject<PLAlbumProtocol> *)arg1;
 - (BOOL)canEditAlbums;
 - (short)albumListType;
 - (BOOL)hasAtLeastOneAlbum;

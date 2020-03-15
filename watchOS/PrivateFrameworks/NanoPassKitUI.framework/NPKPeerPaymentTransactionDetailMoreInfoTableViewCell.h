@@ -13,8 +13,8 @@
     UILabel *_label;
 }
 
-@property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *info;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

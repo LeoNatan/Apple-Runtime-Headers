@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (id)customDescriptorWithName:(id)arg1 encoder:(CDUnknownBlockType)arg2 decoder:(CDUnknownBlockType)arg3;
 + (id)boolDescriptorWithName:(id)arg1;
 + (id)integerDescriptorWithName:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)decodeWithTarget:(id)arg1 coder:(id)arg2;
 - (void)encodeWithTarget:(id)arg1 coder:(id)arg2;
 

@@ -29,10 +29,10 @@
 + (id)searchableMessagesTableName;
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s lastProcessedAttachmentIDLock; // @synthesize lastProcessedAttachmentIDLock=_lastProcessedAttachmentIDLock;
 @property(readonly, nonatomic) __weak id <EDSearchableIndexHookResponder> hookResponder; // @synthesize hookResponder=_hookResponder;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)_assignIndexedAttachmentItems:(id)arg1 transaction:(long long)arg2 connection:(id)arg3;
 - (id)_identifiersForAttachmentsWithQuery:(id)arg1 usingConnection:(id)arg2;
 - (id)_identifiersForAttachmentsInTransactions:(id)arg1 usingConnection:(id)arg2;

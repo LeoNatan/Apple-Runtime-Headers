@@ -19,6 +19,7 @@
     NSMutableDictionary *_truncated_threads;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int invalid_images; // @synthesize invalid_images=_invalid_images;
 @property(nonatomic) int unindexed_frames; // @synthesize unindexed_frames=_unindexed_frames;
 @property(readonly, nonatomic) NSMutableDictionary *truncated_threads; // @synthesize truncated_threads=_truncated_threads;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) NSMutableDictionary *data; // @synthesize data=_data;
 @property(readonly, nonatomic) unsigned long long tag; // @synthesize tag=_tag;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)omit;
 - (id)initWithKCData:(struct kcdata_iter)arg1;
 

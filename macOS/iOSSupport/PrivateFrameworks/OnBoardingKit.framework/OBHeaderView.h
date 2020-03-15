@@ -22,6 +22,7 @@
     UIImage *_originalIconImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *originalIconImage; // @synthesize originalIconImage=_originalIconImage;
 @property(nonatomic) unsigned long long templateType; // @synthesize templateType=_templateType;
 @property(retain, nonatomic) OBHeaderAccessoryButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) OBTemplateLabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 @property(retain, nonatomic) OBImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) BOOL iconInheritsTint; // @synthesize iconInheritsTint=_iconInheritsTint;
-- (void).cxx_destruct;
 - (id)_symbolIconForHeaderStyle:(id)arg1 configuration:(id)arg2;
 - (id)symbolConfiguration;
 - (double)iconHeight;

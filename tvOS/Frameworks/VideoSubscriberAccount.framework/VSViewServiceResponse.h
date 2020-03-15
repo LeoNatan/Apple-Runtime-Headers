@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) VSAccountMetadata *accountMetadata; // @synthesize accountMetadata=_accountMetadata;
 - (void).cxx_destruct;
+@property(copy, nonatomic) VSAccountMetadata *accountMetadata; // @synthesize accountMetadata=_accountMetadata;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

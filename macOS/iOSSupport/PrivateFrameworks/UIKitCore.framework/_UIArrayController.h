@@ -20,10 +20,10 @@
     NSOrderedSet *_lastSnapshot;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *lastSnapshot; // @synthesize lastSnapshot=_lastSnapshot;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(nonatomic) __weak id <_UIArrayControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)callUpdateHandler:(id)arg1 changeDictionary:(id)arg2;
 - (void)processUpdate:(id)arg1 changedObjects:(id)arg2;
 - (id)_computeUpdatesFromOld:(id)arg1 toNew:(id)arg2 changedItems:(id)arg3;

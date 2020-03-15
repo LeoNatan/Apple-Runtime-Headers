@@ -13,8 +13,8 @@
     TVPhotoSourceService *_photoSourceService;
 }
 
-@property(retain, nonatomic) TVPhotoSourceService *photoSourceService; // @synthesize photoSourceService=_photoSourceService;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVPhotoSourceService *photoSourceService; // @synthesize photoSourceService=_photoSourceService;
 - (void)fetchCollectionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchAssetsForCollectionWithIdentifier:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)sourceIdentifier;

@@ -18,10 +18,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ExcludeConflicts; // @synthesize ExcludeConflicts=_ExcludeConflicts;
 @property(nonatomic) long long AttendeeType; // @synthesize AttendeeType=_AttendeeType;
 @property(retain, nonatomic) EWSEmailAddress *Email; // @synthesize Email=_Email;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

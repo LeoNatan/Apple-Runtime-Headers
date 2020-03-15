@@ -19,11 +19,11 @@
     id <SiriUIAceObjectViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriUIAceObjectViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isVirgin) _Bool virgin; // @synthesize virgin=_virgin;
 @property(retain, nonatomic) AceObject *aceObject; // @synthesize aceObject=_aceObject;
 @property(nonatomic, getter=isUtteranceUserInteractionEnabled) _Bool utteranceUserInteractionEnabled; // @synthesize utteranceUserInteractionEnabled=_utteranceUserInteractionEnabled;
-- (void).cxx_destruct;
 - (void)wasAddedToTranscript;
 - (void)siriDidDeactivate;
 - (void)siriWillActivateFromSource:(long long)arg1;

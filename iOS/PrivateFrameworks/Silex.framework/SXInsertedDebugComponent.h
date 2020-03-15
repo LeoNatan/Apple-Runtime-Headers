@@ -25,6 +25,7 @@
     SXJSONArray *_additions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXJSONArray *additions; // @synthesize additions=_additions;
 @property(readonly, nonatomic) SXJSONDictionary *analytics; // @synthesize analytics=_analytics;
 @property(readonly, nonatomic) SXComponentConditions *conditions; // @synthesize conditions=_conditions;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) SXComponentAnimation *animation; // @synthesize animation=_animation;
 - (void)setIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSString *identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long traits;
 @property(readonly, nonatomic) SXComponentClassification *classification;
 @property(readonly, nonatomic) unsigned long long contentRelevance;

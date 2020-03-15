@@ -16,10 +16,10 @@
     PHMomentShare *_originatingMomentShare;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHMomentShare *originatingMomentShare; // @synthesize originatingMomentShare=_originatingMomentShare;
 @property(readonly, nonatomic) PHSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 @property(readonly, nonatomic) PHMomentShare *momentShare; // @synthesize momentShare=_momentShare;
-- (void).cxx_destruct;
 - (id)createSession;
 - (id)actionManager;
 - (id)initWithSuggestion:(id)arg1 activityType:(unsigned long long)arg2 sourceType:(unsigned long long)arg3 optionalPeopleFetchResult:(id)arg4;

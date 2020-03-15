@@ -15,8 +15,8 @@
 
 + (id)predicateWithProperty:(id)arg1 values:(id)arg2;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSSet *values; // @synthesize values=_values;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *values; // @synthesize values=_values;
 - (_Bool)containsPropertyPredicate:(id)arg1 matchingValue:(id)arg2 usingComparison:(int)arg3;
 - (id)databaseStatementParameters;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;

@@ -17,9 +17,9 @@
     NSData *_inputData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreallocatedSiriRemote; // @synthesize isPreallocatedSiriRemote=_isPreallocatedSiriRemote;
 @property(retain, nonatomic) NSData *inputData; // @synthesize inputData=_inputData;
-- (void).cxx_destruct;
 - (id)name;
 - (id)registryID;
 @property(readonly, nonatomic) struct __IOHIDServiceClient *service;

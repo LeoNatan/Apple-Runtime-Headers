@@ -17,8 +17,8 @@
     id <DOCViewServiceErrorViewControllerDelegate> _delegate;
 }
 
-@property __weak id <DOCViewServiceErrorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <DOCViewServiceErrorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didTapTryAgainInErrorView:(id)arg1;
 @property(retain, nonatomic) NSString *errorSubtitle;
 @property(retain, nonatomic) NSString *errorTitle;

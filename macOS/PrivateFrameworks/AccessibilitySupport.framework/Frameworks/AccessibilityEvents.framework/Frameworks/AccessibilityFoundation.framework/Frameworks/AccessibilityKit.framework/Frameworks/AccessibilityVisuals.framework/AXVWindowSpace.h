@@ -23,11 +23,11 @@
 + (id)existingSpaceWithUUID:(id)arg1;
 + (id)sharedSpaceAtVoiceOverLevel;
 + (id)sharedSpaceAtDefaultLevel;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _wasSpaceCreatedByThisProcess; // @synthesize _wasSpaceCreatedByThisProcess=__wasSpaceCreatedByThisProcess;
 @property(nonatomic) unsigned long long _spaceID; // @synthesize _spaceID=__spaceID;
 @property(nonatomic) unsigned int _cgsMainConnection; // @synthesize _cgsMainConnection=__cgsMainConnection;
 @property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)_initWithWindowSpaceLevel:(unsigned long long)arg1;
 - (id)_initWithSpaceUUID:(id)arg1 spaceID:(unsigned long long)arg2;

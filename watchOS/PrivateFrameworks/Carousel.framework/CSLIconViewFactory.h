@@ -16,8 +16,8 @@
 }
 
 + (id)factory;
-@property(readonly, nonatomic) NCClockIconViewController *clockIconViewController; // @synthesize clockIconViewController=_clockIconViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NCClockIconViewController *clockIconViewController; // @synthesize clockIconViewController=_clockIconViewController;
 - (id)createIconViewWithBundleIdentifier:(id)arg1;
 - (float)defaultPixelDiameter;
 - (id)init;

@@ -16,8 +16,8 @@
     id <AEMessagesShelfLayoutDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AEMessagesShelfLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AEMessagesShelfLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 - (struct CGRect)_videoDurationFrameForItemFrame:(struct CGRect)arg1;
 - (struct CGRect)_videoBadgeFrameForItemFrame:(struct CGRect)arg1;
 - (struct CGRect)_loopBadgeFrameForItemFrame:(struct CGRect)arg1;

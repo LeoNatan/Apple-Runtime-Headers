@@ -20,6 +20,7 @@
     BOOL _showsDelimiterLines;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsDelimiterLines; // @synthesize showsDelimiterLines=_showsDelimiterLines;
 @property(retain, nonatomic) NSMutableDictionary *selectionKeyToCandidateMapping; // @synthesize selectionKeyToCandidateMapping=_selectionKeyToCandidateMapping;
 @property(retain, nonatomic) NSArray *selectionKeys; // @synthesize selectionKeys=_selectionKeys;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long indexOfSelectedCandidate; // @synthesize indexOfSelectedCandidate=_indexOfSelectedCandidate;
 @property(nonatomic) double candidateItemMargin; // @synthesize candidateItemMargin=_candidateItemMargin;
 @property(nonatomic) BOOL animateChanges; // @synthesize animateChanges=_animateChanges;
-- (void).cxx_destruct;
 - (id)candidateForSelectionKey:(id)arg1;
 @property(readonly, nonatomic) BOOL selectedCandidateIsVisible;
 - (void)updateHighlightBasedOnSelection;

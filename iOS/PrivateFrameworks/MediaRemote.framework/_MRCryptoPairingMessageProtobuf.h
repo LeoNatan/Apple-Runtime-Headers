@@ -25,12 +25,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) _Bool isUsingSystemPairing; // @synthesize isUsingSystemPairing=_isUsingSystemPairing;
 @property(nonatomic) _Bool isRetrying; // @synthesize isRetrying=_isRetrying;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) NSData *pairingData; // @synthesize pairingData=_pairingData;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

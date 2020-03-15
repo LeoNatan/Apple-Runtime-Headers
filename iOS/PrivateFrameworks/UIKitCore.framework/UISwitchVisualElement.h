@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)preferredContentSize;
+- (void).cxx_destruct;
 @property(nonatomic) double enabledAlpha; // @synthesize enabledAlpha=_enabledAlpha;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *impactFeedbackGenerator; // @synthesize impactFeedbackGenerator=_impactFeedbackGenerator;
 @property(nonatomic) __weak id <UISwitchControl> switchControl; // @synthesize switchControl=_switchControl;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)setShowsOnOffLabel:(_Bool)arg1;
 - (struct CGSize)preferredContentSize;
 - (void)setOn:(_Bool)arg1 animated:(_Bool)arg2;

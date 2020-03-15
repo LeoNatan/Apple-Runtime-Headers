@@ -27,13 +27,13 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadIcon; // @synthesize payloadIcon=_payloadIcon;
 @property(copy, nonatomic) NSString *payloadLabel; // @synthesize payloadLabel=_payloadLabel;
 @property(copy, nonatomic) NSNumber *payloadIsRemovable; // @synthesize payloadIsRemovable=_payloadIsRemovable;
 @property(copy, nonatomic) NSString *payloadURL; // @synthesize payloadURL=_payloadURL;
 @property(copy, nonatomic) NSNumber *payloadFullScreen; // @synthesize payloadFullScreen=_payloadFullScreen;
 @property(copy, nonatomic) NSNumber *payloadPrecomposed; // @synthesize payloadPrecomposed=_payloadPrecomposed;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

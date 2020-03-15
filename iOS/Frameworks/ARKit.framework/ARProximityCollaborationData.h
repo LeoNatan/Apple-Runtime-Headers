@@ -17,10 +17,10 @@
     PRPeer *_peer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PRPeer *peer; // @synthesize peer=_peer;
 @property(readonly, nonatomic) PRCollaborationData *collaborationData; // @synthesize collaborationData=_collaborationData;
 @property(nonatomic) double timestamp; // @synthesize timestamp;
-- (void).cxx_destruct;
 - (id)initWithPRCollaborationData:(id)arg1 peer:(id)arg2;
 
 // Remaining properties

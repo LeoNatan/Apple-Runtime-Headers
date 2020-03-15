@@ -14,9 +14,9 @@
     long long _rowID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long rowID; // @synthesize rowID=_rowID;
 @property(nonatomic) __weak HDSimpleGraphDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithDatabase:(id)arg1 rowID:(long long)arg2;

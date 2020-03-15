@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     LPiTunesMediaAsset *_previewVideo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPiTunesMediaAsset *previewVideo; // @synthesize previewVideo=_previewVideo;
 @property(retain, nonatomic) NSArray *screenshots; // @synthesize screenshots=_screenshots;
 @property(retain, nonatomic) LPiTunesMediaAsset *messagesAppIcon; // @synthesize messagesAppIcon=_messagesAppIcon;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(copy, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
-- (void).cxx_destruct;
 - (id)assetsToFetch;
 - (id)resolve;
 

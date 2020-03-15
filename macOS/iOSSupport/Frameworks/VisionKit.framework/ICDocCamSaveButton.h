@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_layoutConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(retain, nonatomic) UILabel *saveLabel; // @synthesize saveLabel=_saveLabel;
 @property(retain, nonatomic) UILabel *countLabel; // @synthesize countLabel=_countLabel;
 @property(nonatomic) long long maxWidthForPortraitIPhone; // @synthesize maxWidthForPortraitIPhone=_maxWidthForPortraitIPhone;
 @property(nonatomic) long long documentCount; // @synthesize documentCount=_documentCount;
-- (void).cxx_destruct;
 - (id)accessibilityHint;
 - (id)accessibilityUserInputLabels;
 - (id)accessibilityLabel;

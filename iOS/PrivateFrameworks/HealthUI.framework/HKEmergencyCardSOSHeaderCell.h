@@ -13,8 +13,8 @@
     UILabel *_headerLabel;
 }
 
-@property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 - (void)_updateTextColor;
 - (void)tintColorDidChange;
 - (void)setupConstraints;

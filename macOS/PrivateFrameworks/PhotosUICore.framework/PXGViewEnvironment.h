@@ -22,6 +22,7 @@
     NSAppearance *_effectiveAppearance;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSAppearance *effectiveAppearance; // @synthesize effectiveAppearance=_effectiveAppearance;
 @property(readonly, nonatomic) BOOL emphasized; // @synthesize emphasized=_emphasized;
 @property(readonly, nonatomic) BOOL accessibilityEnabled; // @synthesize accessibilityEnabled=_accessibilityEnabled;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) id traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) NSColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;

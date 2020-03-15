@@ -17,12 +17,12 @@
     unsigned long long _endNode;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long endNode; // @synthesize endNode=_endNode;
 @property(readonly) unsigned long long startNode; // @synthesize startNode=_startNode;
 @property(readonly) double score; // @synthesize score=_score;
 @property(readonly) unsigned long long edgeIndex; // @synthesize edgeIndex=_edgeIndex;
 @property(readonly, nonatomic) NSString *symbol; // @synthesize symbol=_symbol;
-- (void).cxx_destruct;
 - (id)initWithSymbol:(id)arg1 index:(unsigned long long)arg2 score:(double)arg3 startNode:(unsigned long long)arg4 endNode:(unsigned long long)arg5;
 
 @end

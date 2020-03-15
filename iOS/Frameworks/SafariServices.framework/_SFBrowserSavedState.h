@@ -24,10 +24,11 @@
 + (id)ephemeralSavedState;
 + (void)setSharedBrowserSavedState:(id)arg1;
 + (id)sharedBrowserSavedState;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool secureDeleteEnabled; // @synthesize secureDeleteEnabled=_secureDeleteEnabled;
 @property(retain, nonatomic) NSArray *recentlyClosedTabs; // @synthesize recentlyClosedTabs=_recentlyClosedTabs;
 @property(copy, nonatomic) NSArray *browserWindows; // @synthesize browserWindows=_browserWindows;
-- (void).cxx_destruct;
+- (void)regenerateTabUUIDsForDeviceRestoration;
 - (void)removeRecentlyClosedTabWithStateData:(id)arg1;
 - (void)_removeRecentlyClosedTabStateData:(id)arg1;
 - (void)_readRecentlyClosedTabsStateIfNecessary;

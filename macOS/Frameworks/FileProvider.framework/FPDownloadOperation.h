@@ -27,10 +27,10 @@
     CDUnknownBlockType __t_patchActionOperationInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType _t_patchActionOperationInfo; // @synthesize _t_patchActionOperationInfo=__t_patchActionOperationInfo;
 @property(copy, nonatomic) CDUnknownBlockType downloadCompletionBlock; // @synthesize downloadCompletionBlock=_downloadCompletionBlock;
 @property(nonatomic) BOOL recursively; // @synthesize recursively=_recursively;
-- (void).cxx_destruct;
 - (void)_retrieveChildProgressForItem:(id)arg1 childProxies:(id)arg2 parentSetup:(CDUnknownBlockType)arg3;
 - (void)_removeProgressWithItemID:(id)arg1;
 - (void)_updateGlobalParentProgressForItem:(id)arg1;

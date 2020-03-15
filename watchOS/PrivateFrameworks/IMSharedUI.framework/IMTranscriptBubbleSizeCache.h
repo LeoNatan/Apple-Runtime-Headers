@@ -13,8 +13,8 @@
     NSMutableArray *_sizeCache;
 }
 
-@property(retain) NSMutableArray *sizeCache; // @synthesize sizeCache=_sizeCache;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *sizeCache; // @synthesize sizeCache=_sizeCache;
 - (id)_cacheEntryForMaximumWidth:(float)arg1 getEffectiveIndex:(unsigned int *)arg2;
 - (void)_insertCacheEntry:(id)arg1;
 - (void)flush;

@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *rates; // @synthesize rates=_rates;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *rates; // @synthesize rates=_rates;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

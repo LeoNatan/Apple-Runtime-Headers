@@ -15,10 +15,10 @@
     NSDictionary *_serializedCharacteristic;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *serializedCharacteristic; // @synthesize serializedCharacteristic=_serializedCharacteristic;
 @property(readonly, nonatomic) NSString *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
-- (void).cxx_destruct;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
 - (id)containedVariables;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -29,6 +29,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mimePartNumber; // @synthesize mimePartNumber=_mimePartNumber;
 @property(nonatomic) float imageHeight; // @synthesize imageHeight=_imageHeight;
 @property(nonatomic) float imageWidth; // @synthesize imageWidth=_imageWidth;
@@ -37,7 +38,6 @@
 @property(nonatomic) unsigned int fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(retain, nonatomic) NSString *contentId; // @synthesize contentId=_contentId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

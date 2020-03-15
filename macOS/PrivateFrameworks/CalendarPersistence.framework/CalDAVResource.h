@@ -18,12 +18,12 @@
 }
 
 + (id)resourceWithCalDAVCalendarItemData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) CalDAVScheduleChangesProperty *scheduleChanges; // @synthesize scheduleChanges=_scheduleChanges;
 @property(retain) NSData *data; // @synthesize data=_data;
 @property(retain) NSString *scheduleTag; // @synthesize scheduleTag=_scheduleTag;
 @property(retain) NSString *etag; // @synthesize etag=_etag;
 @property(retain) NSString *filename; // @synthesize filename=_filename;
-- (void).cxx_destruct;
 
 @end
 

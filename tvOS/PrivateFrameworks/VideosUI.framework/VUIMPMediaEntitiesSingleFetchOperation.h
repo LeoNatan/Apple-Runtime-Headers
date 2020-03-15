@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_sortIndexesWithMediaQuerySection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIMediaEntityType *currentFetchMediaEntityType; // @synthesize currentFetchMediaEntityType=_currentFetchMediaEntityType;
 @property(nonatomic) _Bool processRangeAfterFetch; // @synthesize processRangeAfterFetch=_processRangeAfterFetch;
 @property(nonatomic) _Bool processPredicateAfterFetch; // @synthesize processPredicateAfterFetch=_processPredicateAfterFetch;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) VUIMediaEntityFetchResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) VUIMediaEntityFetchRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)_coalesceResponses:(id)arg1;
 - (id)_fetchResponseWithMediaEntities:(id)arg1 mediaQuerySections:(id)arg2;
 - (id)_collectionsFetchResponseWithMediaQuery:(id)arg1;

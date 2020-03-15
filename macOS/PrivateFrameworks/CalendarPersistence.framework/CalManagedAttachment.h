@@ -23,8 +23,8 @@
 + (id)fetchRequestWithURL:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)entityName;
 + (BOOL)_isManagedAttachmentCalendar:(id)arg1;
-@property(retain) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(retain) NSData *data; // @synthesize data=_data;
 - (id)enclosingSource;
 - (id)uniqueKeyForObject;
 - (id)uniqueIdentifier;

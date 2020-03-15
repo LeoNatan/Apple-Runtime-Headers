@@ -14,8 +14,8 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)_acceptsOperatorType:(unsigned long long)arg1;
 + (id)filterWithKey:(id)arg1 operatorType:(unsigned long long)arg2 value:(id)arg3;
-@property(readonly, nonatomic) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id value; // @synthesize value=_value;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

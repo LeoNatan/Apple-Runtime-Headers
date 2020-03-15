@@ -23,13 +23,13 @@
     double _buttonBaselineOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic) double buttonBaselineOffset; // @synthesize buttonBaselineOffset=_buttonBaselineOffset;
 @property(retain, nonatomic) NSArray *replaceableConstraints; // @synthesize replaceableConstraints=_replaceableConstraints;
 @property(nonatomic) _Bool pinToBottom; // @synthesize pinToBottom=_pinToBottom;
 @property(retain, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(retain, nonatomic) GKButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (void)tableViewDidUpdateContentInset:(id)arg1;
 - (void)objectModelDidChange:(id)arg1;
 - (void)buttonTapped:(id)arg1;

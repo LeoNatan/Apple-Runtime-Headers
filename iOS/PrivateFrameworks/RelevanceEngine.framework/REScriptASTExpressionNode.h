@@ -13,9 +13,9 @@
 }
 
 + (id)parseBuffer:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REScriptASTNode *binaryExpressions; // @synthesize binaryExpressions=_binaryExpressions;
 @property(readonly, nonatomic) REScriptASTNode *prefixExpression; // @synthesize prefixExpression=_prefixExpression;
-- (void).cxx_destruct;
 - (id)dependencies;
 - (id)initWithPrefixExpression:(id)arg1 binaryExpression:(id)arg2;
 

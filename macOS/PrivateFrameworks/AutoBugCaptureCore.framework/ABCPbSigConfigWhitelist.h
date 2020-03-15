@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)sigConfigType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sigConfigs; // @synthesize sigConfigs=_sigConfigs;
 @property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(retain, nonatomic) NSString *buildVariant; // @synthesize buildVariant=_buildVariant;
 @property(retain, nonatomic) NSString *build; // @synthesize build=_build;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

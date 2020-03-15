@@ -18,10 +18,10 @@
     id <SVVideoMetadataProviding> _metadataProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoMetadataProviding> metadataProvider; // @synthesize metadataProvider=_metadataProvider;
 @property(readonly, nonatomic) id <SVURLAssetLoaderFactory> URLAssetLoaderFactory; // @synthesize URLAssetLoaderFactory=_URLAssetLoaderFactory;
 @property(readonly, nonatomic) id <SVPlayerItemFactory> playerItemFactory; // @synthesize playerItemFactory=_playerItemFactory;
-- (void).cxx_destruct;
 - (id)createPlayerItemLoaderForVideo:(id)arg1;
 - (id)initWithPlayerItemFactory:(id)arg1 URLAssetLoaderFactory:(id)arg2 metadataProvider:(id)arg3;
 

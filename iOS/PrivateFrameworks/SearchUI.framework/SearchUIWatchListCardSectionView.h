@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKSimpleRowView *rowView; // @synthesize rowView=_rowView;
 @property(retain, nonatomic) SearchUIButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (void)updateText:(id)arg1 image:(id)arg2 buttonState:(long long)arg3;
 - (void)didUpdateRowModel:(id)arg1 animate:(_Bool)arg2;
 - (void)updateWithRowModel:(id)arg1;

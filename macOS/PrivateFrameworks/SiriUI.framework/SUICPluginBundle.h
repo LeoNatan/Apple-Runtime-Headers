@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_classIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *classIdentifiers; // @synthesize classIdentifiers=_classIdentifiers;
 @property(retain, nonatomic) id factoryInstance; // @synthesize factoryInstance=_factoryInstance;
 @property(retain, nonatomic) Class factoryClass; // @synthesize factoryClass=_factoryClass;
-- (void).cxx_destruct;
 - (BOOL)supportsClassIdentifier:(id)arg1 forDomainKey:(id)arg2 groupIdentifier:(id)arg3;
 - (void)registerClassIdentifier:(id)arg1 forDomain:(id)arg2 inGroup:(id)arg3;
 - (id)init;

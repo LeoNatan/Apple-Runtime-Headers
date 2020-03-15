@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     id <SVSAceCommandRecordDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SVSAceCommandRecordDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setNumberOfUnsuccessfullyCompletedActions:) long long numberOfUnsuccessfullyCompletedActions; // @synthesize numberOfUnsuccessfullyCompletedActions=_numberOfUnsuccessfullyCompletedActions;
 @property(nonatomic, setter=_setNumberOfSuccessfullyCompletedActions:) long long numberOfSuccessfullyCompletedActions; // @synthesize numberOfSuccessfullyCompletedActions=_numberOfSuccessfullyCompletedActions;
 @property(nonatomic, setter=_setNumberOfStartedActions:) long long numberOfStartedActions; // @synthesize numberOfStartedActions=_numberOfStartedActions;
 @property(nonatomic, setter=_setResult:) long long result; // @synthesize result=_result;
 @property(readonly, nonatomic) id <SAAceCommand> aceCommand; // @synthesize aceCommand=_aceCommand;
-- (void).cxx_destruct;
 - (void)incrementNumberOfUnsuccessfullyCompletedActions;
 - (void)incrementNumberOfSuccessfullyCompletedActions;
 - (void)incrementNumberOfStartedActions;

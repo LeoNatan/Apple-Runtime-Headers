@@ -41,6 +41,8 @@ __attribute__((visibility("hidden")))
     BOOL isPIPModeEnabled;
     CALayer *placeholderContentLayerDuringPIPMode;
     BOOL isConnectedToSecondScreen;
+    BOOL honorContentScale;
+    double screenScale;
 }
 
 @end

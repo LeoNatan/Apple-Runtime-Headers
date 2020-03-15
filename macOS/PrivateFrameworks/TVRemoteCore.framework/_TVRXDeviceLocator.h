@@ -16,9 +16,9 @@
     NSMutableDictionary *_searches;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *searches; // @synthesize searches=_searches;
 @property(retain, nonatomic) _TVRXDeviceQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)deviceQueryDidUpdateDevices:(id)arg1;
 - (void)_timerExpired:(id)arg1;
 - (void)cancelSearchForDeviceWithIdentifier:(id)arg1;

@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *possiblyCompressedData; // @synthesize possiblyCompressedData=_possiblyCompressedData;
 @property(nonatomic) _Bool compressed; // @synthesize compressed=_compressed;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

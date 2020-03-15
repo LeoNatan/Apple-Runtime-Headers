@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)enumerateSubviewsOfRootView:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) UIKBAutoFillTestArchive *testArchive; // @synthesize testArchive=_testArchive;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIKBAutoFillTestArchive *testArchive; // @synthesize testArchive=_testArchive;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;

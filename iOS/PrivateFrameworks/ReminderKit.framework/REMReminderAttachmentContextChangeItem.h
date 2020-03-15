@@ -14,9 +14,9 @@
     NSMutableArray *_mutableAttachments;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableAttachments; // @synthesize mutableAttachments=_mutableAttachments;
 @property(retain, nonatomic) REMReminderChangeItem *reminderChangeItem; // @synthesize reminderChangeItem=_reminderChangeItem;
-- (void).cxx_destruct;
 - (void)removeAllAttachmentsWithClass:(Class)arg1;
 - (void)removeAllAttachments;
 - (void)removeAttachment:(id)arg1;

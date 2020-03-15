@@ -19,13 +19,13 @@
     NSString *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) NSManagedObjectModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) NSPersistentStoreCoordinator *destinationCoordinator; // @synthesize destinationCoordinator=_destinationCoordinator;
 @property(retain, nonatomic) RTPersistenceStore *destinationStore; // @synthesize destinationStore=_destinationStore;
 @property(retain, nonatomic) NSPersistentStoreCoordinator *sourceCoordinator; // @synthesize sourceCoordinator=_sourceCoordinator;
 @property(retain, nonatomic) RTPersistenceStore *sourceStore; // @synthesize sourceStore=_sourceStore;
-- (void).cxx_destruct;
 - (_Bool)import:(id *)arg1;
 - (id)fetchDestinationObjectWithEntityDescription:(id)arg1 predicate:(id)arg2 context:(id)arg3 error:(id *)arg4;
 - (_Bool)establishEntityRelationships:(id *)arg1;

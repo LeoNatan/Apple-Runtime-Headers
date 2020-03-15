@@ -15,9 +15,9 @@
     struct jetsam_info _startInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct jetsam_info startInfo; // @synthesize startInfo=_startInfo;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (_Bool)waitUntilDirtyMemoryDrained;
 - (_Bool)waitUntilDirtyMemoryReaches:(long long)arg1 maxWaitMS:(int)arg2;
 - (void)reset;

@@ -64,6 +64,7 @@
 
 + (id)newInlineDrawing;
 + (_Bool)showDebugOutlines;
+- (void).cxx_destruct;
 @property(nonatomic) long long _maxFileFormatVersion; // @synthesize _maxFileFormatVersion=__maxFileFormatVersion;
 @property(nonatomic) _Bool aggd_didMergeWithCollaborator; // @synthesize aggd_didMergeWithCollaborator=_aggd_didMergeWithCollaborator;
 @property(retain, nonatomic) NSMutableArray *undoManagersRegisteredWith; // @synthesize undoManagersRegisteredWith=_undoManagersRegisteredWith;
@@ -100,7 +101,6 @@
 @property(nonatomic) __weak UIView *attachmentContainerView; // @synthesize attachmentContainerView=_attachmentContainerView;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(copy, nonatomic) PKLinedPaper *linedPaper; // @synthesize linedPaper=_linedPaper;
-- (void).cxx_destruct;
 - (_Bool)invertColors;
 - (void)_toggleDebugPane:(id)arg1;
 - (void)replaceInkTexture:(id)arg1 image:(struct CGImage *)arg2;

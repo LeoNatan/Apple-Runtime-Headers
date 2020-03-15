@@ -19,11 +19,11 @@
     id <SXLinkActionURLQualifier> _URLQualifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXLinkActionURLQualifier> URLQualifier; // @synthesize URLQualifier=_URLQualifier;
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
 @property(readonly, nonatomic) id <SXURLPreviewing> URLPreviewing; // @synthesize URLPreviewing=_URLPreviewing;
 @property(readonly, nonatomic) id <SXURLHandling> URLHandler; // @synthesize URLHandler=_URLHandler;
-- (void).cxx_destruct;
 - (void)openInSafari:(id)arg1;
 - (void)open:(id)arg1;
 - (id)previewActivityForAction:(id)arg1;

@@ -27,8 +27,8 @@
     id <NTKRemoteComplicationOperationSchedulerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NTKRemoteComplicationOperationSchedulerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NTKRemoteComplicationOperationSchedulerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)remoteComplicationOperationSession:(id)arg1 didCancelOperation:(id)arg2;
 - (void)remoteComplicationOperationSession:(id)arg1 didFinishOperation:(id)arg2;
 - (void)remoteComplicationOperationSession:(id)arg1 didUpdateNextWakeUpDate:(id)arg2;

@@ -46,6 +46,7 @@
 + (BOOL)_actionIsKeyboardKeyAction:(id)arg1 displayText:(id)arg2;
 + (id)buttonWithRect:(struct CGRect)arg1 text:(id)arg2 actions:(id)arg3;
 + (id)keysForValuesToObserveForView;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *noDeadKeyDisplayTextDictionary; // @synthesize noDeadKeyDisplayTextDictionary=_noDeadKeyDisplayTextDictionary;
 @property(retain, nonatomic) NSDictionary *displayTextKeyDictionary; // @synthesize displayTextKeyDictionary=_displayTextKeyDictionary;
 @property(nonatomic) unsigned long long buttonType; // @synthesize buttonType=_buttonType;
@@ -72,7 +73,6 @@
 @property(nonatomic) BOOL shouldExecuteSystemFunction; // @synthesize shouldExecuteSystemFunction=_shouldExecuteSystemFunction;
 @property(nonatomic) BOOL isKeyboardKey; // @synthesize isKeyboardKey=_isKeyboardKey;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (void)toggleStickyKeyRepeatActivated;
 @property(nonatomic) BOOL stickyKeyRepeatActivated;
 @property(readonly, nonatomic) BOOL shouldNotLockModifierKey;

@@ -29,6 +29,7 @@
 }
 
 + (id)defaultStyle;
+- (void).cxx_destruct;
 @property(nonatomic) int location; // @synthesize location=_location;
 @property(retain, nonatomic) HKStrokeStyle *borderStyleForFill; // @synthesize borderStyleForFill=_borderStyleForFill;
 @property(nonatomic) float fillOuterPadding; // @synthesize fillOuterPadding=_fillOuterPadding;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) HKStrokeStyle *referenceGridLineStyle; // @synthesize referenceGridLineStyle=_referenceGridLineStyle;
 @property(retain, nonatomic) HKStrokeStyle *minorGridLineStyle; // @synthesize minorGridLineStyle=_minorGridLineStyle;
 @property(retain, nonatomic) HKStrokeStyle *gridLineStyle; // @synthesize gridLineStyle=_gridLineStyle;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -19,13 +19,13 @@
     NSObject<OS_os_log> *_logHandle;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *logHandle; // @synthesize logHandle=_logHandle;
 @property(retain) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(retain) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property BOOL isSetup; // @synthesize isSetup=_isSetup;
 @property(retain) NSDictionary *databaseOptions; // @synthesize databaseOptions=_databaseOptions;
-- (void).cxx_destruct;
 - (id)_metricForManagedObject:(id)arg1;
 - (id)_fetchManagedObjectsSinceDate:(id)arg1 withError:(id *)arg2;
 - (id)_readMetricsSinceDate:(id)arg1 withError:(id *)arg2;

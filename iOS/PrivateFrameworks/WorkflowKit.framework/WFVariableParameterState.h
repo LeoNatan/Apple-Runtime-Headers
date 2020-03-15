@@ -16,9 +16,9 @@
 }
 
 + (Class)processingValueClass;
-@property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
 - (void).cxx_destruct;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+@property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
 - (id)containedVariables;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

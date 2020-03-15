@@ -17,8 +17,8 @@
 + (id)defaultNetworkInterfaces;
 + (id)activeNetworkInterface;
 + (id)networkInterfaceWithInterface:(id)arg1;
-@property(readonly, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 - (id)ipAddressForFamily:(unsigned char)arg1;
 @property(readonly, nonatomic) NSString *IPv6Address;
 @property(readonly, nonatomic) NSString *IPv4Address;

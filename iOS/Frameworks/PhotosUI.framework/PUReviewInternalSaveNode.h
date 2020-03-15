@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _renderedImageSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) PUPhotoEditIrisModel *livePhotoModel; // @synthesize livePhotoModel=_livePhotoModel;
 @property(readonly, nonatomic) NSURL *directory; // @synthesize directory=_directory;
 @property(readonly, nonatomic) PUVideoExportNode *videoRenderNode; // @synthesize videoRenderNode=_videoRenderNode;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSURL *providedFullsizeImageURL; // @synthesize providedFullsizeImageURL=_providedFullsizeImageURL;
 @property(readonly, nonatomic) long long imageExifOrientation; // @synthesize imageExifOrientation=_imageExifOrientation;
 @property(readonly, nonatomic) NSURL *imageDataURL; // @synthesize imageDataURL=_imageDataURL;
-- (void).cxx_destruct;
 - (void)run;
 - (id)_exportProperties;
 - (long long)_adjustmentBaseVersion;

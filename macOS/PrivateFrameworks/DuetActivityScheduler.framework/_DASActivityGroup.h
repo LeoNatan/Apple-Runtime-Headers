@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)groupWithName:(id)arg1 maxConcurrent:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxConcurrent; // @synthesize maxConcurrent=_maxConcurrent;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

@@ -34,6 +34,7 @@
 + (id)providerWithFullColorImage:(id)arg1 tintedImageProvider:(id)arg2;
 + (id)providerWithFullColorImage:(id)arg1 monochromeFilterType:(long long)arg2;
 + (id)providerWithFullColorImage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long monochromeFilterType; // @synthesize monochromeFilterType=_monochromeFilterType;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) CLKImageProvider *tintedImageProvider; // @synthesize tintedImageProvider=_tintedImageProvider;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_resizeImagesIfNecessaryWithMaxSize:(struct CGSize)arg1 cornerRadius:(double)arg2;
 - (void)finalizeWithMaxSize:(struct CGSize)arg1 cornerRadius:(double)arg2;
 - (void)validate;

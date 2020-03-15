@@ -16,10 +16,10 @@
     long long _currentRank;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentRank; // @synthesize currentRank=_currentRank;
 @property(retain, nonatomic) NSDate *cachedPriorityDate; // @synthesize cachedPriorityDate=_cachedPriorityDate;
 @property(retain, nonatomic) id <PXForYouRankable> rankable; // @synthesize rankable=_rankable;
-- (void).cxx_destruct;
 
 @end
 

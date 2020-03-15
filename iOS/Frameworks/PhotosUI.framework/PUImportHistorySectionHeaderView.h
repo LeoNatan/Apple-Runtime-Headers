@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITraitCollection *selfSizingTraits; // @synthesize selfSizingTraits=_selfSizingTraits;
 @property(nonatomic) _Bool inLayoutTransition; // @synthesize inLayoutTransition=_inLayoutTransition;
 @property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showsActionButton; // @synthesize showsActionButton=_showsActionButton;
 @property(nonatomic) struct PXSimpleIndexPath sectionIndexPath; // @synthesize sectionIndexPath=_sectionIndexPath;
 @property(nonatomic) __weak id <PUImportHistorySectionHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long layoutMode;
 - (void)_updateBackdropViewGroupName;
 - (void)_updateBackground;

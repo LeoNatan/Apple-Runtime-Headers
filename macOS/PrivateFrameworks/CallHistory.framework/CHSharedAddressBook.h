@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)get;
-@property(retain) NSMutableDictionary *addressBookCache; // @synthesize addressBookCache=_addressBookCache;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *addressBookCache; // @synthesize addressBookCache=_addressBookCache;
 - (id)description;
 - (unsigned long long)cachedCount;
 - (id)fetchAddressBookInfoFromCacheForKey:(id)arg1;

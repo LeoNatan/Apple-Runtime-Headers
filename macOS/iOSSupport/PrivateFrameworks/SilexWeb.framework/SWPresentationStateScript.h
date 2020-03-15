@@ -16,9 +16,9 @@
     unsigned long long _presentationState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long presentationState; // @synthesize presentationState=_presentationState;
 @property(readonly, nonatomic) WKUserScript *userScript; // @synthesize userScript;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *executableScript;
 @property(readonly, nonatomic) BOOL queueable;
 @property(readonly, nonatomic) NSString *identifier;

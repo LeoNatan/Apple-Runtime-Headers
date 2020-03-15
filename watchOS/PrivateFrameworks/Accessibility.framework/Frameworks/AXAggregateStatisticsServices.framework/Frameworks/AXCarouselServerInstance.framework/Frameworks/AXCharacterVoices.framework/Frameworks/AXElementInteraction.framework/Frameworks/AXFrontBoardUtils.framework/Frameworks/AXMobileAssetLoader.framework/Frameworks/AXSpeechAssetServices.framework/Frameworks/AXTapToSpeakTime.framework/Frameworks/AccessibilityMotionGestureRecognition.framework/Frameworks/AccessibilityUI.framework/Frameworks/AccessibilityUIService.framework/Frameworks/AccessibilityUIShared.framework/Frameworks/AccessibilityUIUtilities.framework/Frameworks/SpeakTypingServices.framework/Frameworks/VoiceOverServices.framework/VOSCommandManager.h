@@ -16,11 +16,14 @@
     NSObject<OS_dispatch_queue> *_queue;
     VOSCommandProfile *_activeProfile;
     NSString *_siriShortCutToken;
+    _Bool _activeProfileIsUserProfile;
 }
 
-@property(readonly, nonatomic) VOSCommandProfile *activeProfile; // @synthesize activeProfile=_activeProfile;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) VOSCommandProfile *activeProfile; // @synthesize activeProfile=_activeProfile;
+@property(nonatomic) _Bool activeProfileIsUserProfile; // @synthesize activeProfileIsUserProfile=_activeProfileIsUserProfile;
 - (void)_loadSystemProfile;
+- (id)systemProfile;
 - (_Bool)commandHasModifiedBindingsWhenZoomEnabled:(id)arg1 withResolver:(id)arg2;
 - (unsigned int)availabilityForCommand:(id)arg1 withResolver:(id)arg2;
 - (unsigned int)availabilityForShortcut:(id)arg1 withResolver:(id)arg2;
@@ -44,6 +47,7 @@
 - (void)batchUpdateActiveProfile:(CDUnknownBlockType)arg1 saveIfSuccessful:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)saveAsUserProfile;
 - (void)restoreDefaultProfile;
+- (_Bool)_validateUserProfileDiscrepancies:(id)arg1;
 - (void)dealloc;
 - (void)reloadPreferringUserProfile;
 - (void)reloadWithSystemProfile;

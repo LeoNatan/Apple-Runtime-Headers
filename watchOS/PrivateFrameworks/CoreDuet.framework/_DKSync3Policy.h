@@ -46,6 +46,7 @@
 + (id)policyForTransports:(int)arg1 features:(id)arg2 sourceDevices:(id)arg3 destinationDevices:(id)arg4 isSingleDevice:(_Bool)arg5 isOnPower:(_Bool)arg6;
 + (void)clearPolicyCache;
 + (id)policyCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *featurePolicies; // @synthesize featurePolicies=_featurePolicies;
 @property(retain, nonatomic) NSArray *transportPolicies; // @synthesize transportPolicies=_transportPolicies;
 @property(nonatomic) _Bool isOnPower; // @synthesize isOnPower=_isOnPower;
@@ -57,7 +58,6 @@
 @property(nonatomic) unsigned int triggeredSyncDelayInSeconds; // @synthesize triggeredSyncDelayInSeconds=_triggeredSyncDelayInSeconds;
 @property(retain, nonatomic) NSNumber *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 - (id)description;
 - (double)timeIntervalBetweenSyncsWithUrgency:(unsigned int)arg1;
 - (double)timeIntervalBetweenSyncs;

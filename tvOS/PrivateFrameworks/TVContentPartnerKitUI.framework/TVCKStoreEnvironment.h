@@ -16,11 +16,11 @@
     NSString *_stringData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *stringData; // @synthesize stringData=_stringData;
 @property(retain) NSString *branch; // @synthesize branch=_branch;
 @property(retain) NSString *build; // @synthesize build=_build;
 @property(retain) NSString *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) _Bool isProduction;

@@ -20,13 +20,13 @@
 
 + (id)taskWithName:(id)arg1 reason:(id)arg2 forBundleID:(id)arg3;
 + (id)taskWithName:(id)arg1 reason:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (void)end;
 - (void)begin;

@@ -16,8 +16,8 @@
 }
 
 + (id)workflowCache;
-@property(readonly, copy, nonatomic) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 - (id)actuallyGetObjectForKey:(id)arg1;
 - (void)actuallyRemoveObjectForKey:(id)arg1;
 - (void)actuallySetObject:(id)arg1 forKey:(id)arg2;

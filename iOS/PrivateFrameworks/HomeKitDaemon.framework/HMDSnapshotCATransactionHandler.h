@@ -20,10 +20,10 @@
 
 + (id)logCategory;
 + (id)sharedHandler;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BSPortDeathWatcher *backboardServicesWatcher; // @synthesize backboardServicesWatcher=_backboardServicesWatcher;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain, nonatomic) CAContext *snapshotContext; // @synthesize snapshotContext=_snapshotContext;
-- (void).cxx_destruct;
 - (struct CGImage *)createSnapshotCGImageRef:(id)arg1;
 - (void)_deleteSlot:(id)arg1 filePath:(id)arg2 snapshotCATransaction:(id)arg3;
 - (void)deleteSlot:(id)arg1 filePath:(id)arg2;

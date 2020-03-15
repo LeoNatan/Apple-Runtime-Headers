@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     OITSULocale *_locale;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OITSULocale *locale; // @synthesize locale=_locale;
 @property(nonatomic) _Bool isTimeOnly; // @synthesize isTimeOnly;
 @property(nonatomic) _Bool isDateOnly; // @synthesize isDateOnly;
 @property(retain, nonatomic) NSString *preferredFormat; // @synthesize preferredFormat=_preferredFormat;
-- (void).cxx_destruct;
 - (id)stringForObjectValue:(id)arg1;
 - (_Bool)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)init;

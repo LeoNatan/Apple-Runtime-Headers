@@ -37,6 +37,7 @@
 + (void)_updateCrashReportMessage;
 +     // Error parsing type: v24@0:8^{__QLRequest={__CFRuntimeBase=QAQ}@I{?=[8I]}^{__CFURL}^{__CFURL}^{__CFURL}^v^{__CFString}^{__CFDictionary}^{__CFString}^{__CFString}C^{__QLGenerator}^{__CFDictionary}^{CGContext}^?^v{?=q^?^?^?^?}QCCCCCCCC}16, name: unsetupSession:
 +     // Error parsing type: c24@0:8^{__QLRequest={__CFRuntimeBase=QAQ}@I{?=[8I]}^{__CFURL}^{__CFURL}^{__CFURL}^v^{__CFString}^{__CFDictionary}^{__CFString}^{__CFString}C^{__QLGenerator}^{__CFDictionary}^{CGContext}^?^v{?=q^?^?^?^?}QCCCCCCCC}16, name: setupSession:
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *storedData; // @synthesize storedData=_storedData;
 @property(retain) id <QLDataGenerationHandler> dataHandler; // @synthesize dataHandler=_dataHandler;
 @property(retain) NSObject<OS_dispatch_source> *portDeathSource; // @synthesize portDeathSource=_portDeathSource;
@@ -49,7 +50,6 @@
 @property(nonatomic) void *mangledID; // @synthesize mangledID=_mangledID;
 @property BOOL isValid; // @synthesize isValid=_isValid;
 @property BOOL keepAlive; // @synthesize keepAlive=_keepAlive;
-- (void).cxx_destruct;
 - (void)setDocumentObject:(const void *)arg1 callbacks:(const CDStruct_b3b3fc87 *)arg2;
 - (void)invalidate;
 - (void)handleStartAttachment:(id)arg1 mimeType:(id)arg2 encoding:(id)arg3;

@@ -21,6 +21,8 @@
     CDStruct_0b1c536a _clearColor;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTLTexture> texture; // @synthesize texture=_texture;
 @property(nonatomic) CDStruct_0b1c536a clearColor; // @synthesize clearColor=_clearColor;
 @property(nonatomic) int initialState; // @synthesize initialState=_initialState;
@@ -28,8 +30,6 @@
 @property(nonatomic) unsigned long long pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) RBDevice *device; // @synthesize device=_device;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double GPUDuration;
 - (void)dumpTexture:(id)arg1 name:(id)arg2;
 - (void)finish;

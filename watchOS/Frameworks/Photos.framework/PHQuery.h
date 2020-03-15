@@ -46,6 +46,7 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
++ (id)queryForQuestionsWithOptions:(id)arg1;
 + (id)queryForKeywordsForAsset:(id)arg1 options:(id)arg2;
 + (id)queryForKeywordsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForKeywordsWithTitles:(id)arg1 options:(id)arg2;
@@ -79,7 +80,7 @@
 + (id)_queryForPersonsInAssetsWithObjectIDs:(id)arg1 withOptions:(id)arg2;
 + (id)queryForPersonsInAssets:(id)arg1 withOptions:(id)arg2;
 + (id)queryForPersonsInAsset:(id)arg1 options:(id)arg2;
-+ (id)queryForPersonsWithQuestionType:(int)arg1 options:(id)arg2;
++ (id)queryForPersonsWithQuestionType:(unsigned short)arg1 options:(id)arg2;
 + (id)queryForPersonsWithType:(int)arg1 options:(id)arg2;
 + (id)queryForPersonsWithOptions:(id)arg1;
 + (id)queryForKeyFaceOnPerson:(id)arg1 options:(id)arg2;
@@ -175,6 +176,7 @@
 + (id)_relationshipForFetchType:(id)arg1 predicate:(id)arg2;
 + (id)queryForType:(id)arg1 withBasePredicate:(id)arg2 seedOIDs:(id)arg3 inLibrary:(id)arg4;
 + (id)queryForType:(id)arg1 withBasePredicate:(id)arg2 inLibrary:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly) NSArray *seedOIDs; // @synthesize seedOIDs=_seedOIDs;
 @property(readonly) NSPredicate *basePredicate; // @synthesize basePredicate=_basePredicate;
@@ -183,7 +185,6 @@
 @property(retain) NSArray *propertiesToGroupBy; // @synthesize propertiesToGroupBy=_propertiesToGroupBy;
 @property(nonatomic, setter=_setIncludesCameraRoll:) _Bool _includesCameraRoll; // @synthesize _includesCameraRoll=__includesCameraRoll;
 @property(copy, nonatomic) PHFetchOptions *fetchOptions; // @synthesize fetchOptions=_fetchOptions;
-- (void).cxx_destruct;
 - (id)description;
 - (void)visitPredicateExpression:(id)arg1;
 - (void)visitPredicateOperator:(id)arg1;

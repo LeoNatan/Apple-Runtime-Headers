@@ -18,11 +18,11 @@
     HDCloudSyncZone *_primaryPushZone;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDCloudSyncZone *primaryPushZone; // @synthesize primaryPushZone=_primaryPushZone;
 @property(readonly, nonatomic) NSDictionary *zonesByIdentifier; // @synthesize zonesByIdentifier=_zonesByIdentifier;
 @property(readonly, nonatomic) int status; // @synthesize status=_status;
 @property(readonly, nonatomic) HDCloudSyncOperationConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int minimumSupportedProtocolVersion;
 - (id)masterZoneForContainerID:(id)arg1;
 @property(readonly, nonatomic) NSSet *pullZones;

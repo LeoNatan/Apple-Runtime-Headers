@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSURL *_rootFolderItemsURL;
 }
 
-@property(readonly, nonatomic) NSURL *rootFolderItemsURL; // @synthesize rootFolderItemsURL=_rootFolderItemsURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *rootFolderItemsURL; // @synthesize rootFolderItemsURL=_rootFolderItemsURL;
 @property(readonly, nonatomic) NSString *saveDescription;
 - (id)initWithURL:(id)arg1;
 

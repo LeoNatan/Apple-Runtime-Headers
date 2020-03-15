@@ -29,6 +29,7 @@
 }
 
 + (id)defaultStringForValueRange:(id)arg1 timeScope:(int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *minorFont; // @synthesize minorFont=_minorFont;
 @property(retain, nonatomic) UIFont *majorFont; // @synthesize majorFont=_majorFont;
 @property(retain, nonatomic) UIColor *valueColor; // @synthesize valueColor=_valueColor;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(nonatomic) __weak id <HKCurrentValueViewDataSourceValueRangeFormatter> valueRangeFormatter; // @synthesize valueRangeFormatter=_valueRangeFormatter;
 @property(retain, nonatomic) NSArray *selectedRangeData; // @synthesize selectedRangeData=_selectedRangeData;
-- (void).cxx_destruct;
 - (id)_selectedRangeDataForColumnAtIndex:(int)arg1;
 - (_Bool)_isMenstruationDisplayType;
 - (_Bool)_isAudioExposureDisplayType;

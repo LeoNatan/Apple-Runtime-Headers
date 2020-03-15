@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSMutableOrderedSet *_remainingViewElements;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *remainingViewElements; // @synthesize remainingViewElements=_remainingViewElements;
 @property(copy, nonatomic) NSArray *receivedEvents; // @synthesize receivedEvents=_receivedEvents;
 @property(retain, nonatomic) IKUpdateServiceRequest *currentUpdateRequest; // @synthesize currentUpdateRequest=_currentUpdateRequest;
-- (void).cxx_destruct;
 - (id)_documentUpdateRequestForViewElement:(id)arg1 appContext:(id)arg2 documentRef:(id)arg3;
 - (void)updateCurrentUpdateRequestWithAppContext:(id)arg1 documentRef:(id)arg2;
 - (void)updateRequestCompletedWithViewElements:(id)arg1 documentRef:(id)arg2;

@@ -28,9 +28,9 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *_tapToPlayGesture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapToPlayGesture; // @synthesize tapToPlayGesture=_tapToPlayGesture;
 @property(retain, nonatomic) QLMediaScrubberGesture *scrubGesture; // @synthesize scrubGesture=_scrubGesture;
-- (void).cxx_destruct;
 - (void)scrubber:(id)arg1 didChangeValue:(float)arg2;
 - (void)scrubberDidStartScrubbing:(id)arg1;
 - (void)scrubberDidEndScrubbing:(id)arg1;
@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)setAppearance:(id)arg1 animated:(_Bool)arg2;
 - (id)timeLabelScrollView;
 - (void)observePlayingTime:(CDStruct_198678f7)arg1;
+- (_Bool)shouldHandleRegisteringForCommandCenterHandlers;
 - (void)hostApplicationDidEnterBackground:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;

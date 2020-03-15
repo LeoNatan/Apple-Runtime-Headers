@@ -21,6 +21,7 @@
     struct CGSize _videoDimensions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) void *previewImageSurface; // @synthesize previewImageSurface=_previewImageSurface;
 @property(readonly, nonatomic) struct CGSize videoDimensions; // @synthesize videoDimensions=_videoDimensions;
 @property(readonly, nonatomic) long long captureDevice; // @synthesize captureDevice=_captureDevice;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) unsigned short sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly, copy, nonatomic) NSString *assetUUID; // @synthesize assetUUID=_assetUUID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 irisStillDisplayTime;
 @property(readonly, nonatomic) NSURL *irisVideoPersistenceURL;
 @property(readonly, nonatomic, getter=isExpectingPairedVideo) _Bool expectingPairedVideo;

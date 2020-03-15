@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol ACAccountStoreProtocol <NSObject>
+- (void)accountDidChange:(NSString *)arg1 forType:(NSString *)arg2;
 - (void)accountCredentialsDidChangeForAccountWithIdentifier:(NSString *)arg1;
 @end
 

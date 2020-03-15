@@ -11,9 +11,11 @@
 @interface MFMessageBody : NSObject
 {
     MFMessage *_message;
+    _Bool _isEncrypted;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 - (id)textHtmlPart;
 - (id)attachmentURLs;
 - (id)attachments;

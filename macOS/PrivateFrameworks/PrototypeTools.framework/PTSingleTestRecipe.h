@@ -13,8 +13,8 @@
 
 + (id)recipeWithTitle:(id)arg1 prepareBlock:(CDUnknownBlockType)arg2 action:(CDUnknownBlockType)arg3 cleanupBlock:(CDUnknownBlockType)arg4;
 + (id)recipeWithTitle:(id)arg1 action:(CDUnknownBlockType)arg2;
-@property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 - (void)invalidate;
 - (void)_handleEvent:(long long)arg1;
 - (BOOL)_wantsEvent:(long long)arg1;

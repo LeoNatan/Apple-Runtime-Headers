@@ -14,9 +14,9 @@
     RTLocation *_location;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=setNoise:) _Bool isNoise; // @synthesize isNoise=_isNoise;
 @property(readonly, nonatomic) RTLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)initWithLocation:(id)arg1;
 
 @end

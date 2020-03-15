@@ -16,8 +16,8 @@
     NSData *_entryData;
 }
 
-@property(readonly) NSURL *indexFileURL; // @synthesize indexFileURL=_indexFileURL;
 - (void).cxx_destruct;
+@property(readonly) NSURL *indexFileURL; // @synthesize indexFileURL=_indexFileURL;
 - (id)description;
 - (void)enumerateValuesForKey:(unsigned long long)arg1 bock:(CDUnknownBlockType)arg2;
 - (void)enumerateValuesWithBock:(CDUnknownBlockType)arg1;

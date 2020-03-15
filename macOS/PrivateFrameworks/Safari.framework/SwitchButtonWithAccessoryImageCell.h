@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSImage *_accessoryImage;
 }
 
-@property(copy, nonatomic) NSImage *accessoryImage; // @synthesize accessoryImage=_accessoryImage;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSImage *accessoryImage; // @synthesize accessoryImage=_accessoryImage;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 
 @end

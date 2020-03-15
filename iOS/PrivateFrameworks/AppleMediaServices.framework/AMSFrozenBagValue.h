@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <AMSBagDataSourceProtocol> _dataSource;
 }
 
-@property(retain, nonatomic) id <AMSBagDataSourceProtocol> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <AMSBagDataSourceProtocol> dataSource; // @synthesize dataSource=_dataSource;
 - (id)initWithKey:(id)arg1 value:(id)arg2 valueType:(unsigned long long)arg3;
 
 @end

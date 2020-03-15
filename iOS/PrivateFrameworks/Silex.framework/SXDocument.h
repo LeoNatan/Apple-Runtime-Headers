@@ -18,8 +18,8 @@
 + (CDUnknownBlockType)purgeClassBlockForPropertyWithName:(id)arg1;
 + (CDUnknownBlockType)objectValueClassBlockForPropertyWithName:(id)arg1;
 + (CDUnknownBlockType)valueClassBlockForPropertyWithName:(id)arg1;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)initWithIdentifier:(id)arg1 JSONObject:(id)arg2 andVersion:(id)arg3;
 - (id)initWithJSONObject:(id)arg1 andVersion:(id)arg2;
 

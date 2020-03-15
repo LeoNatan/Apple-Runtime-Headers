@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 + (id)pillTimeDisplayIdentifier;
 + (id)shortTimeDisplayIdentifier;
 + (id)timeDisplayIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarStringView *dateView; // @synthesize dateView=_dateView;
 @property(retain, nonatomic) _UIStatusBarStringView *pillTimeView; // @synthesize pillTimeView=_pillTimeView;
 @property(retain, nonatomic) _UIStatusBarStringView *shortTimeView; // @synthesize shortTimeView=_shortTimeView;
 @property(retain, nonatomic) _UIStatusBarStringView *timeView; // @synthesize timeView=_timeView;
-- (void).cxx_destruct;
 - (id)viewForIdentifier:(id)arg1;
 - (void)_create_dateView;
 - (void)_create_pillTimeView;

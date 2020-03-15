@@ -41,6 +41,7 @@
     NSArray *_activeConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
 @property(readonly, nonatomic) UILayoutGuide *belowSpinnerLayoutGuide; // @synthesize belowSpinnerLayoutGuide=_belowSpinnerLayoutGuide;
 @property(readonly, nonatomic) UILayoutGuide *aboveSpinnerLayoutGuide; // @synthesize aboveSpinnerLayoutGuide=_aboveSpinnerLayoutGuide;
@@ -65,7 +66,6 @@
 @property(nonatomic) __weak id <ICQPageDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long upgradeMode; // @synthesize upgradeMode=_upgradeMode;
 @property(copy, nonatomic) UIColor *buttonTintColor; // @synthesize buttonTintColor=_buttonTintColor;
-- (void).cxx_destruct;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
 - (void)_updateTrayVisibility;
 - (void)scrollViewDidScroll:(id)arg1;

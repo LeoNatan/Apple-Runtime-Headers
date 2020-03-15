@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSString *_titleText;
 }
 
-@property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 - (void)setLastBaselineToBottomDistance:(double)arg1;
 - (void)setHeaderType:(long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

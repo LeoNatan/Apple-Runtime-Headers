@@ -46,6 +46,7 @@
     NSObject<OS_os_transaction> *_foregroundTransaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *foregroundTransaction; // @synthesize foregroundTransaction=_foregroundTransaction;
 @property(retain, nonatomic) NSMutableSet *workerTypesServicedForUserFG; // @synthesize workerTypesServicedForUserFG=_workerTypesServicedForUserFG;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *runningJobTransaction; // @synthesize runningJobTransaction=_runningJobTransaction;
@@ -67,7 +68,6 @@
 @property(readonly, nonatomic) PHAJobCoalescer *jobCoalescer; // @synthesize jobCoalescer=_jobCoalescer;
 @property(readonly) BOOL graphUpdateNeeded; // @synthesize graphUpdateNeeded=_graphUpdateNeeded;
 @property(readonly, nonatomic) PHAWorkerWarmer *warmer; // @synthesize warmer=_warmer;
-- (void).cxx_destruct;
 - (id)setJobProcessingConstraintsWithValues:(id)arg1 mask:(id)arg2;
 - (void)scheduleAssetForOnDemandAnalysisWithUUID:(id)arg1 workerType:(short)arg2 workerFlags:(int)arg3 context:(id)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)operationDidFinish:(id)arg1;

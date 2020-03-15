@@ -26,6 +26,7 @@
     struct __CFDictionary *_atsStateCache;
     BOOL _preventsAppSSO;
     BOOL _appSSOFallback;
+    BOOL _appleIDContextRedirect;
     __CFN_TaskMetrics *_metrics;
 }
 
@@ -50,6 +51,10 @@
 - (BOOL)_allowsQUIC;
 - (void)set_allowsQUIC:(BOOL)arg1;
 - (void)set_TLSNegotiatedCipherSuite:(unsigned int)arg1;
+- (unsigned short)_TLSMaximumSupportedProtocolVersion;
+- (void)set_TLSMaximumSupportedProtocolVersion:(unsigned short)arg1;
+- (unsigned short)_TLSMinimumSupportedProtocolVersion;
+- (void)set_TLSMinimumSupportedProtocolVersion:(unsigned short)arg1;
 - (void)set_TCPConnectionMetadata:(id)arg1;
 - (id)_storagePartitionIdentifier;
 - (void)set_trailers:(id)arg1;
@@ -62,6 +67,7 @@
 - (struct __CFSet *)_getAuthenticatorStatusCodes;
 - (void)_getAuthenticationHeadersForResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_setAppleIDContext:(id)arg1;
+- (BOOL)_appleIDContextRedirect;
 - (void)set_appSSOFallback:(BOOL)arg1;
 - (BOOL)_appSSOFallback;
 - (void)set_preventsAppSSO:(BOOL)arg1;

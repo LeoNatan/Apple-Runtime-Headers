@@ -30,6 +30,7 @@
 }
 
 + (double)desiredUserInfoLabelAlphaForFaceTrackingState:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedDeviceName; // @synthesize localizedDeviceName=_localizedDeviceName;
 @property(nonatomic) unsigned long long interruptionType; // @synthesize interruptionType=_interruptionType;
 @property(retain, nonatomic) NSTimer *pauseTrackingTimer; // @synthesize pauseTrackingTimer=_pauseTrackingTimer;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) AVTUserInfoView *userInfoView; // @synthesize userInfoView=_userInfoView;
 @property(nonatomic) __weak id <AVTFaceTrackingManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool faceTrackingManagementPaused; // @synthesize faceTrackingManagementPaused=_faceTrackingManagementPaused;
-- (void).cxx_destruct;
 - (void)layoutMonitor:(id)arg1 didUpdateDisplayLayout:(id)arg2 withContext:(id)arg3;
 - (void)raiseGestureManagerDidRecognizeRaiseGesture:(id)arg1;
 - (void)avatarViewFaceTrackingSessionInterruptionDidEnd:(id)arg1;

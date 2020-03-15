@@ -24,6 +24,7 @@
 }
 
 + (id)aggregateStatistics:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSArray *dependencies; // @synthesize dependencies=_dependencies;
 @property double responseTime; // @synthesize responseTime=_responseTime;
 @property double didCompleteTime; // @synthesize didCompleteTime=_didCompleteTime;
@@ -33,7 +34,6 @@
 @property double didPrepareTime; // @synthesize didPrepareTime=_didPrepareTime;
 @property double willPrepareTime; // @synthesize willPrepareTime=_willPrepareTime;
 @property double requestTime; // @synthesize requestTime=_requestTime;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) double totalDuration;
 @property(readonly) double duration;

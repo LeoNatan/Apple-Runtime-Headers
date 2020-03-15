@@ -16,9 +16,9 @@
 }
 
 + (id)recordWithClientType:(id)arg1 serverType:(id)arg2 fields:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *serverRecordType; // @synthesize serverRecordType=_serverRecordType;
 @property(readonly, copy, nonatomic) NSString *clientRecordType; // @synthesize clientRecordType=_clientRecordType;
-- (void).cxx_destruct;
 - (_Bool)isFieldEncrypted:(id)arg1;
 - (_Bool)isFieldKnown:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *allUnencryptedFieldNames;

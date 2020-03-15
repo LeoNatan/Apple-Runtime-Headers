@@ -14,9 +14,9 @@
     PUICNavigationDefaultTransition *_animationController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool preferScreenEdgePopGestureRegardlessOfNavUI; // @synthesize preferScreenEdgePopGestureRegardlessOfNavUI=_preferScreenEdgePopGestureRegardlessOfNavUI;
 @property(retain, nonatomic) PUICNavigationDefaultTransition *animationController; // @synthesize animationController=_animationController;
-- (void).cxx_destruct;
 - (void)didShowViewController:(id)arg1 animated:(_Bool)arg2;
 - (id)_navigationBarHiddenByDefault:(_Bool)arg1;
 - (id)alertContextStatusBar;

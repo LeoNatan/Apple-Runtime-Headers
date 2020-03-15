@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSTimeZone *_timeZone;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(readonly, nonatomic) NSDate *departureCutoffDate; // @synthesize departureCutoffDate=_departureCutoffDate;
-- (void).cxx_destruct;
 - (id)_descriptionForDepartureDate:(id)arg1 canIncludeDate:(_Bool)arg2 outDateFormat:(out unsigned long long *)arg3;
 - (id)lastDepartureAtStringFromDate:(id)arg1;
 - (id)lastDepartureUntilStringFromDate:(id)arg1;

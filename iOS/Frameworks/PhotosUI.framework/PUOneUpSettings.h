@@ -122,6 +122,7 @@
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool simulateAssetContentDownloadFailure; // @synthesize simulateAssetContentDownloadFailure=_simulateAssetContentDownloadFailure;
 @property(nonatomic) _Bool simulateAssetContentDownload; // @synthesize simulateAssetContentDownload=_simulateAssetContentDownload;
 @property(nonatomic) _Bool alwaysShowAirPlayButton; // @synthesize alwaysShowAirPlayButton=_alwaysShowAirPlayButton;
@@ -227,7 +228,6 @@
 @property(nonatomic) long long simulatedAssetVariationSuggestion; // @synthesize simulatedAssetVariationSuggestion=_simulatedAssetVariationSuggestion;
 @property(nonatomic) long long suggestionMaximumAssetAgeInDays; // @synthesize suggestionMaximumAssetAgeInDays=_suggestionMaximumAssetAgeInDays;
 @property(nonatomic) long long suggestionsStyle; // @synthesize suggestionsStyle=_suggestionsStyle;
-- (void).cxx_destruct;
 - (void)preferencesDidChange;
 - (_Bool)allowAutoplayVideoForAsset:(id)arg1;
 - (void)_updatePrototypeRelatedSettings;

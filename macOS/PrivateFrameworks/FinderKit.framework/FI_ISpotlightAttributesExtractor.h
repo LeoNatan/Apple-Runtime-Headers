@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)extractValueFromNodes:(const struct TFENodeVector *)arg1;
 - (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
 - (id)attributeNamesForNodes:(const struct TFENodeVector *)arg1;
--     // Error parsing type: v32@0:8r^{TFENodeVector=^{TFENode}^{TFENode}{__compressed_pair<TFENode *, std::__1::allocator<TFENode> >=^{TFENode}}}16r^{atomic<bool>=AB}24, name: prefetchValueOnSecondaryThread:cancelled:
+-     // Error parsing type: v32@0:8r^{TFENodeVector=^{TFENode}^{TFENode}{__compressed_pair<TFENode *, std::__1::allocator<TFENode> >=^{TFENode}}}16r^{atomic<bool>={__cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool> >=AB}}24, name: prefetchValueOnSecondaryThread:cancelled:
 - (id)attributeNamesForNode:(const struct TFENode *)arg1;
 - (id)defaultValue;
 - (id)init;

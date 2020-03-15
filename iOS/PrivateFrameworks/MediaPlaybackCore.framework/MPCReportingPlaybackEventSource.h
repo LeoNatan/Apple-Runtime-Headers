@@ -29,6 +29,7 @@
     NSString *_requestingBundleVersion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requestingBundleVersion; // @synthesize requestingBundleVersion=_requestingBundleVersion;
 @property(copy, nonatomic) NSString *requestingBundleIdentifier; // @synthesize requestingBundleIdentifier=_requestingBundleIdentifier;
 @property(copy, nonatomic) NSData *recommendationData; // @synthesize recommendationData=_recommendationData;
@@ -45,7 +46,6 @@
 @property(nonatomic) double eventDuration; // @synthesize eventDuration=_eventDuration;
 @property(nonatomic) long long equivalencySourceAdamID; // @synthesize equivalencySourceAdamID=_equivalencySourceAdamID;
 @property(retain, nonatomic) id <MPCReportingIdentityPropertiesLoading> identityPropertiesLoader; // @synthesize identityPropertiesLoader=_identityPropertiesLoader;
-- (void).cxx_destruct;
 - (id)initWithAVItem:(id)arg1;
 - (id)init;
 

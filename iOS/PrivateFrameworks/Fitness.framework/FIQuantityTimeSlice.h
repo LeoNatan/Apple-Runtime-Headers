@@ -19,12 +19,12 @@
     HKQuantity *_committedTotal;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKQuantity *committedTotal; // @synthesize committedTotal=_committedTotal;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 @property(readonly, nonatomic) _Bool finalized; // @synthesize finalized=_finalized;
-- (void).cxx_destruct;
 - (id)settingEndDate:(id)arg1;
 - (id)committingUntilDate:(id)arg1;
 - (id)addingSample:(id)arg1 error:(id *)arg2;

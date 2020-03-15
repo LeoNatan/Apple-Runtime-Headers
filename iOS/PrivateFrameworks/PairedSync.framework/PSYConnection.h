@@ -17,11 +17,11 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) PSYOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
 @property(nonatomic) __weak id <PSYConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)remoteConnection;
 - (void)startSyncWithOptions:(id)arg1;
 - (void)startSync;

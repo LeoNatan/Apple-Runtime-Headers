@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     double _topContentInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double topContentInset; // @synthesize topContentInset=_topContentInset;
 @property(retain, nonatomic) id currentItem; // @synthesize currentItem=_currentItem;
 @property(readonly, nonatomic) __weak TabContentViewController *tabContentViewController; // @synthesize tabContentViewController=_tabContentViewController;
-- (void).cxx_destruct;
 - (double)topContentInsetForContinuousPageView:(id)arg1;
 - (BOOL)continuousPageView:(id)arg1 pageViewHasFooterBanner:(id)arg2 pageItem:(id)arg3;
 - (BOOL)continuousPageView:(id)arg1 pageViewHasHeaderBanner:(id)arg2 pageItem:(id)arg3;

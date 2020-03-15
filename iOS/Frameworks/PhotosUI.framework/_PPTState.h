@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_renderStatistics;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *renderStatistics; // @synthesize renderStatistics=_renderStatistics;
 @property _Bool hasRendered; // @synthesize hasRendered=_hasRendered;
-- (void).cxx_destruct;
 - (void)groupNotifyOnQueue:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)leaveDispatchGroup;
 - (void)enterDispatchGroup;

@@ -26,11 +26,11 @@
 
 + (Class)widgetPersonalizationFeatureCTRPairType;
 + (Class)widgetSectionsArticleCountPairType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *widgetPersonalizationFeatureCTRPairs; // @synthesize widgetPersonalizationFeatureCTRPairs=_widgetPersonalizationFeatureCTRPairs;
 @property(retain, nonatomic) NSMutableArray *widgetSectionsArticleCountPairs; // @synthesize widgetSectionsArticleCountPairs=_widgetSectionsArticleCountPairs;
 @property(nonatomic) int widgetHeadlineExposureCount; // @synthesize widgetHeadlineExposureCount=_widgetHeadlineExposureCount;
 @property(nonatomic) int widgetArticleCount; // @synthesize widgetArticleCount=_widgetArticleCount;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

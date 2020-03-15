@@ -18,11 +18,11 @@
 
 + (id)description;
 + (id)descriptionWithProfileParamsForProfile:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *profileData; // @synthesize profileData=_profileData;
 @property(retain, nonatomic) NSString *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) SlowNetworkUtil *util; // @synthesize util=_util;
 @property(nonatomic) BOOL running; // @synthesize running=_running;
-- (void).cxx_destruct;
 - (BOOL)active;
 - (void)tearDown;
 - (BOOL)setUp;

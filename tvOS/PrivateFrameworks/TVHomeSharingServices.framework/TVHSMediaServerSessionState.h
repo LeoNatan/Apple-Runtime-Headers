@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isImportingDPAPDatabase) _Bool importingDPAPDatabase; // @synthesize importingDPAPDatabase=_importingDPAPDatabase;
 @property(nonatomic) unsigned long long DPAPBasePlaylistPersistentID; // @synthesize DPAPBasePlaylistPersistentID=_DPAPBasePlaylistPersistentID;
 @property(nonatomic) unsigned int DPAPBasePlaylistID; // @synthesize DPAPBasePlaylistID=_DPAPBasePlaylistID;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned int DAAPDatabaseID; // @synthesize DAAPDatabaseID=_DAAPDatabaseID;
 @property(nonatomic) unsigned int DAAPRevision; // @synthesize DAAPRevision=_DAAPRevision;
 @property(copy, nonatomic) TVHSMediaServerProtocolVersion *protocolVersion; // @synthesize protocolVersion=_protocolVersion;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

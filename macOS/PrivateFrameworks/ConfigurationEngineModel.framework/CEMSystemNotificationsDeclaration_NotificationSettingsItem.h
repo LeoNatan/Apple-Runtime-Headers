@@ -26,6 +26,7 @@
 + (id)buildRequiredOnlyWithBundleIdentifier:(id)arg1;
 + (id)buildWithBundleIdentifier:(id)arg1 withNotificationsEnabled:(id)arg2 withShowInNotificationCenter:(id)arg3 withShowInLockScreen:(id)arg4 withAlertType:(id)arg5 withBadgesEnabled:(id)arg6 withSoundsEnabled:(id)arg7 withShowInCarPlay:(id)arg8 withEmergencyEnabled:(id)arg9 withCriticalAlertEnabled:(id)arg10 withGroupingType:(id)arg11;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadGroupingType; // @synthesize payloadGroupingType=_payloadGroupingType;
 @property(copy, nonatomic) NSNumber *payloadCriticalAlertEnabled; // @synthesize payloadCriticalAlertEnabled=_payloadCriticalAlertEnabled;
 @property(copy, nonatomic) NSNumber *payloadEmergencyEnabled; // @synthesize payloadEmergencyEnabled=_payloadEmergencyEnabled;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSNumber *payloadShowInNotificationCenter; // @synthesize payloadShowInNotificationCenter=_payloadShowInNotificationCenter;
 @property(copy, nonatomic) NSNumber *payloadNotificationsEnabled; // @synthesize payloadNotificationsEnabled=_payloadNotificationsEnabled;
 @property(copy, nonatomic) NSString *payloadBundleIdentifier; // @synthesize payloadBundleIdentifier=_payloadBundleIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

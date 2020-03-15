@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _level;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic) long long level; // @synthesize level=_level;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)initWithView:(id)arg1 atLevel:(long long)arg2;
 
 @end

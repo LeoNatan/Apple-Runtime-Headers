@@ -14,8 +14,8 @@
 }
 
 + (id)layoutViewWithDelegateView:(id)arg1;
-@property(retain, nonatomic) UIView<CNAtomTextViewAtomLayout> *delegateView; // @synthesize delegateView=_delegateView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView<CNAtomTextViewAtomLayout> *delegateView; // @synthesize delegateView=_delegateView;
 - (struct CGRect)boundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned long long)arg4;
 - (struct CGRect)selectionBounds;
 - (void)layoutSubviews;

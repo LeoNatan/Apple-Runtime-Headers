@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)preferredHeight;
-@property(retain, nonatomic) UILayoutGuide *leadingGuide; // @synthesize leadingGuide=_leadingGuide;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILayoutGuide *leadingGuide; // @synthesize leadingGuide=_leadingGuide;
 - (void)_initLabel;
 - (void)_initConstraints;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

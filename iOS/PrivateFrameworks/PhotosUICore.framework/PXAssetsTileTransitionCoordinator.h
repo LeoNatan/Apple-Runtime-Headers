@@ -27,6 +27,7 @@
 }
 
 + (id)transitionCoordinatorForChange:(id)arg1 changeHistory:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXAssetsTilingLayout *_toLayout; // @synthesize _toLayout=__toLayout;
 @property(readonly, nonatomic) PXAssetsTilingLayout *_fromLayout; // @synthesize _fromLayout=__fromLayout;
 @property(readonly, nonatomic) NSIndexSet *_kindsCenteredOnContentTiles; // @synthesize _kindsCenteredOnContentTiles=__kindsCenteredOnContentTiles;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) PXTilingChange *_tilingChange; // @synthesize _tilingChange=__tilingChange;
 @property(nonatomic) _Bool delayInsertions; // @synthesize delayInsertions=_delayInsertions;
 @property(nonatomic) _Bool treatRemovalsAsDeletes; // @synthesize treatRemovalsAsDeletes=_treatRemovalsAsDeletes;
-- (void).cxx_destruct;
 - (void)enableAnimationsForTileKind:(unsigned long long)arg1;
 - (void)disableAnimationsForTileKind:(unsigned long long)arg1;
 - (_Bool)useDoubleSidedAnimationForUpdatedTileWithIdentifier:(struct PXTileIdentifier)arg1 fromGeometry:(struct PXTileGeometry)arg2 fromUserData:(id)arg3 toGeometry:(struct PXTileGeometry)arg4 toUserData:(id)arg5;

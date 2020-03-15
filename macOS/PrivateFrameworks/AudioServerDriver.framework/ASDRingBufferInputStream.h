@@ -14,9 +14,9 @@
     id <ASDManagedRingBuffer> _ringBuffer;
 }
 
-@property(readonly, nonatomic) id <ASDManagedRingBuffer> ringBuffer; // @synthesize ringBuffer=_ringBuffer;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <ASDManagedRingBuffer> ringBuffer; // @synthesize ringBuffer=_ringBuffer;
 - (CDUnknownBlockType)readInputBlock;
 - (void)setPhysicalFormat:(id)arg1;
 - (void)stopStream;

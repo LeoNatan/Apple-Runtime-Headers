@@ -20,6 +20,7 @@
     UIView *_portaledPreview;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSourceLocal) _Bool sourceLocal; // @synthesize sourceLocal=_sourceLocal;
 @property(nonatomic) _Bool cancelsViaScaleAndFade; // @synthesize cancelsViaScaleAndFade=_cancelsViaScaleAndFade;
 @property(retain, nonatomic) UIView *portaledPreview; // @synthesize portaledPreview=_portaledPreview;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) long long startLocation; // @synthesize startLocation=_startLocation;
 @property(readonly, copy, nonatomic) NSSet *launchActions; // @synthesize launchActions=_launchActions;
 @property(copy, nonatomic) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier=_applicationBundleIdentifier;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

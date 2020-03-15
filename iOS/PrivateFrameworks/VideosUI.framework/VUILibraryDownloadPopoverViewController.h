@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     VUILibraryListItemView *_listView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUILibraryListItemView *listView; // @synthesize listView=_listView;
 @property(nonatomic) __weak id <VUILibraryDownloadPopoverViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)popoverPressed:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)loadView;

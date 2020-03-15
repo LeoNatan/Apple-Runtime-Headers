@@ -20,11 +20,11 @@
 
 + (id)makeBundleIdentifierOfCurrentProcess;
 + (id)bundleIdentifierOfCurrentProcess;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNPromise> matchingPriorityResultsPromise; // @synthesize matchingPriorityResultsPromise=_matchingPriorityResultsPromise;
 @property(retain, nonatomic) id <CNFuture> priorityResultsFuture; // @synthesize priorityResultsFuture=_priorityResultsFuture;
 @property(readonly, nonatomic) CNAutocompleteFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
 @property(readonly, nonatomic) __weak id <CNAutocompleteFetchDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)suppressResultsWithAddresses:(id)arg1;
 - (id)askDelegateToAdjustResults;
 - (id)sortResults;

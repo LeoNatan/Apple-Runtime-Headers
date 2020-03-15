@@ -14,9 +14,9 @@
     NSArray *_nodeData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *nodeData; // @synthesize nodeData=_nodeData;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
-- (void).cxx_destruct;
 - (id)initWithNodeData:(id)arg1 distance:(double)arg2;
 
 @end

@@ -10,6 +10,7 @@
 
 @protocol _PARSearchRequest <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
+@property(nonatomic) long long exp;
 @property(nonatomic) BOOL seedBuild;
 @property(nonatomic) BOOL internalBuild;
 @property(nonatomic) BOOL hsEnabled;

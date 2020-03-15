@@ -13,8 +13,8 @@
     UISwitch *_autoMinimizeSwitch;
 }
 
-@property(readonly, nonatomic) UISwitch *autoMinimizeSwitch; // @synthesize autoMinimizeSwitch=_autoMinimizeSwitch;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UISwitch *autoMinimizeSwitch; // @synthesize autoMinimizeSwitch=_autoMinimizeSwitch;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

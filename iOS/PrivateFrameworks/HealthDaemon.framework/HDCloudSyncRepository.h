@@ -25,13 +25,13 @@
     NSDictionary *_ownerIdentifiersByContainerIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *ownerIdentifiersByContainerIdentifier; // @synthesize ownerIdentifiersByContainerIdentifier=_ownerIdentifiersByContainerIdentifier;
 @property(nonatomic) unsigned long long repositorySettings; // @synthesize repositorySettings=_repositorySettings;
 @property(readonly, nonatomic) NSSet *allCKContainers; // @synthesize allCKContainers=_allCKContainers;
 @property(readonly, nonatomic) NSArray *secondaryCKContainers; // @synthesize secondaryCKContainers=_secondaryCKContainers;
 @property(readonly, nonatomic) CKContainer *primaryCKContainer; // @synthesize primaryCKContainer=_primaryCKContainer;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)cloudKitIdentityUpdated:(id)arg1;
 - (void)_queue_generateRestoreEventSyncCompleteWithPullCompleteDate:(id)arg1;
 - (void)_queue_performWhenDeviceToDeviceEncryptionIsAvailable:(CDUnknownBlockType)arg1;

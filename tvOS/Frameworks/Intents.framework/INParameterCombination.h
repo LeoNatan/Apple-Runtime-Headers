@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subtitleFormatStringLocID; // @synthesize subtitleFormatStringLocID=_subtitleFormatStringLocID;
 @property(copy, nonatomic) NSString *subtitleFormatString; // @synthesize subtitleFormatString=_subtitleFormatString;
 @property(copy, nonatomic) NSString *titleFormatStringLocID; // @synthesize titleFormatStringLocID=_titleFormatStringLocID;
@@ -30,21 +31,20 @@
 @property(nonatomic) _Bool supportsBackgroundExecution; // @synthesize supportsBackgroundExecution=_supportsBackgroundExecution;
 @property(nonatomic, getter=isPrimary) _Bool primary; // @synthesize primary=_primary;
 @property(copy, nonatomic, setter=_setLocalizationTable:) INCodableLocalizationTable *_localizationTable; // @synthesize _localizationTable;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *keyPrefix;
 @property(readonly, copy, nonatomic) NSString *cacheGroup;
-- (id)localizedSubtitleFormatStringForLanguage:(id)arg1;
+- (id)localizedSubtitleFormatStringWithLocalizer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedSubtitleFormatString;
-- (id)localizedTitleFormatStringForLanguage:(id)arg1;
+- (id)localizedTitleFormatStringWithLocalizer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedTitleFormatString;
 
 // Remaining properties

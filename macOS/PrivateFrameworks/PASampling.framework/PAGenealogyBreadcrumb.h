@@ -17,8 +17,8 @@
 
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
-- (id)message;
 - (void).cxx_destruct;
+- (id)message;
 - (id)initWithMessage:(id)arg1 atMachTime:(double)arg2 withActivityId:(unsigned long long)arg3;
 - (void)populateReferencesUsingBufferPosition:(const void *)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (id)initWithSerializedGenealogyBreadcrumb:(const CDStruct_65528fa5 *)arg1;

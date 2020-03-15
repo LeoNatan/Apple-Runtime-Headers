@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)createDeviceInfoFromTXTRecord:(id)arg1;
 + (id)createDeviceInfoFromNetService:(id)arg1;
-@property(retain, nonatomic) NSNetService *netService; // @synthesize netService=_netService;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNetService *netService; // @synthesize netService=_netService;
 @property(nonatomic) _Bool requiresCustomPairing;
 - (void)reset;
 - (_Bool)getInputStream:(id *)arg1 outputStream:(id *)arg2;

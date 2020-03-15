@@ -22,11 +22,11 @@
 + (id)companyTemplateImageCircle;
 + (id)companyTemplateImageSqare;
 + (id)implicitAnimatedActionsToDisable;
+- (void).cxx_destruct;
 @property BOOL selected; // @synthesize selected=_selected;
 @property(retain) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain) CALayer *silhouetteLayer; // @synthesize silhouetteLayer=_silhouetteLayer;
 @property(retain) NSImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
-- (void).cxx_destruct;
 - (void)setCircular:(BOOL)arg1;
 - (void)viewModelDidUpdate:(id)arg1;
 - (void)updateLayer;

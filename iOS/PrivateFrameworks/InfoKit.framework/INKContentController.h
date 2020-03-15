@@ -38,6 +38,7 @@
 }
 
 + (id)_identifierForContext:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TPSXPCConnection *discoverabilityXPCConnection; // @synthesize discoverabilityXPCConnection=_discoverabilityXPCConnection;
 @property(copy, nonatomic, getter=_contentText, setter=_setContentText:) NSString *_contentText; // @synthesize _contentText=__contentText;
 @property(copy, nonatomic, getter=_contentTitle, setter=_setContentTitle:) NSString *_contentTitle; // @synthesize _contentTitle=__contentTitle;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) INKContent *content; // @synthesize content=_content;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) _Bool contentDismissedByUser; // @synthesize contentDismissedByUser=_contentDismissedByUser;
-- (void).cxx_destruct;
 - (void)_contentViewWillBeShown:(id)arg1;
 - (void)connectionInterrupted;
 - (void)connectionInvalidated;

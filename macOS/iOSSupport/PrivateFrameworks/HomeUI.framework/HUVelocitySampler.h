@@ -14,9 +14,9 @@
     HUVelocitySample *_previousSample;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUVelocitySample *previousSample; // @synthesize previousSample=_previousSample;
 @property(retain, nonatomic) HUVelocitySample *currentSample; // @synthesize currentSample=_currentSample;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGVector velocity;
 - (void)reset;
 - (void)addTouchSample:(struct CGPoint)arg1;

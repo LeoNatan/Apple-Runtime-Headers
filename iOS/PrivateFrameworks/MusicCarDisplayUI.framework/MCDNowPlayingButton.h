@@ -19,9 +19,9 @@
 }
 
 + (id)buttonWithHeight:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(copy, nonatomic) NSString *stateName; // @synthesize stateName=_stateName;
-- (void).cxx_destruct;
 - (void)nowPlayingObserver:(id)arg1 stateDidChanged:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

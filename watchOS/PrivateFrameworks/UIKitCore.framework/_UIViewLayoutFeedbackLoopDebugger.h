@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
 + (id)layoutFeedbackLoopDebugger;
 + (void)destroyLayoutFeedbackLoopDebuggerForUnitTests;
 + (void)createLayoutFeedbackLoopDebuggerForUnitTests;
-@property(retain, nonatomic) UIView *currentLayoutView; // @synthesize currentLayoutView=_currentLayoutView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *currentLayoutView; // @synthesize currentLayoutView=_currentLayoutView;
 - (id)topLevelViewHierarchyTrace;
 - (id)description;
 - (void)dumpInfoWithInfoCollectionSuccess:(_Bool)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NACRunAssertion *_runAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NACRunAssertion *runAssertion; // @synthesize runAssertion=_runAssertion;
 @property(retain, nonatomic) MPAVRoutingController *routingController; // @synthesize routingController=_routingController;
-- (void).cxx_destruct;
 
 @end
 

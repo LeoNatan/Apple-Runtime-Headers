@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_clientQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resourceQueue; // @synthesize resourceQueue=_resourceQueue;
 @property(retain, nonatomic) NSMutableDictionary *sectionTitles; // @synthesize sectionTitles=_sectionTitles;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) HKMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
 @property(retain, nonatomic) HKConceptStore *conceptStore; // @synthesize conceptStore=_conceptStore;
 @property(retain, nonatomic) HKHealthRecordsStore *healthRecordsStore; // @synthesize healthRecordsStore=_healthRecordsStore;
-- (void).cxx_destruct;
 - (void)_updatePlacementForDisplayItems:(id)arg1;
 - (long long)sectionFHIRSourceData;
 - (void)_rqueue_recomputeDisplayItems;

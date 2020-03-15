@@ -14,9 +14,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <IDSServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 
 @end
 

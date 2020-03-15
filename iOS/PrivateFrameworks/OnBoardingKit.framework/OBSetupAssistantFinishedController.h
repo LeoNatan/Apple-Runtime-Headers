@@ -17,12 +17,12 @@
     UILabel *_instructionalLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *instructionalLabel; // @synthesize instructionalLabel=_instructionalLabel;
 @property(copy, nonatomic) CDUnknownBlockType boldButtonBlock; // @synthesize boldButtonBlock=_boldButtonBlock;
 @property(retain, nonatomic) OBBoldTrayButton *boldButton; // @synthesize boldButton=_boldButton;
 @property(retain, nonatomic) OBButtonTray *buttonTray; // @synthesize buttonTray=_buttonTray;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)buttonTapped:(id)arg1;
 - (id)_instructionFont;
 - (id)_headerFont;

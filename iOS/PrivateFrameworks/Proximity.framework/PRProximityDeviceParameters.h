@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSNumber *_rssiNear;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSNumber *rssiNear; // @synthesize rssiNear=_rssiNear;
 @property(readonly) NSNumber *rssiImmediate; // @synthesize rssiImmediate=_rssiImmediate;
 @property(readonly) unsigned long long samplesize; // @synthesize samplesize=_samplesize;
 @property(readonly) struct BtProximityFilterBase *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)initWithFilter:(struct BtProximityFilterBase *)arg1 sampleSize:(unsigned long long)arg2 rssiImmediate:(id)arg3 rssiNear:(id)arg4;
 - (id)init;
 

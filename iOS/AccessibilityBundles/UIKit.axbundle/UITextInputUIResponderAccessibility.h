@@ -13,7 +13,9 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)_axDrawFocusRingAroundFirstResponderAndMoveFocus:(_Bool)arg1;
 - (void)_axResetFKAFocusToFirstResponder;
+- (_Bool)_axShouldDrawFocusAroundFirstResponder;
 - (_Bool)resignFirstResponder;
 - (_Bool)becomeFirstResponder;
 - (id)_accessibilityEndOfDocument;

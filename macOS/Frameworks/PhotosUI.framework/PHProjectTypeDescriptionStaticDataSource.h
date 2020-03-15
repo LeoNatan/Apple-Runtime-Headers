@@ -15,8 +15,8 @@
     NSArray *_projectTypeDescriptions;
 }
 
-@property(readonly, copy, nonatomic) NSArray *projectTypeDescriptions; // @synthesize projectTypeDescriptions=_projectTypeDescriptions;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *projectTypeDescriptions; // @synthesize projectTypeDescriptions=_projectTypeDescriptions;
 - (id)footerTextForSubtypesOfProjectType:(id)arg1;
 - (id)typeDescriptionForProjectType:(id)arg1;
 - (id)subtypesForProjectType:(id)arg1;

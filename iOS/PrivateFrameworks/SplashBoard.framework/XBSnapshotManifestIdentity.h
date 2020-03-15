@@ -18,9 +18,9 @@
 }
 
 + (id)identityWithBundleIdentifier:(id)arg1 store:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id <XBSnapshotManifestStore> store; // @synthesize store=_store;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -70,13 +70,13 @@
     CDStruct_1b6d18a9 _currentTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=setUpdatingAudioSession:) _Bool isUpdatingAudioSession; // @synthesize isUpdatingAudioSession=_isUpdatingAudioSession;
 @property(nonatomic) CDStruct_1b6d18a9 currentTime; // @synthesize currentTime=_currentTime;
 @property(readonly, nonatomic) _Bool allowsExternalPlayback; // @synthesize allowsExternalPlayback=_allowsExternalPlayback;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) PXVideoContentProvider *contentProvider; // @synthesize contentProvider=_contentProvider;
 @property(nonatomic) __weak id <PXVideoSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_performBlockOnUpdateQueue:(CDUnknownBlockType)arg1;
 - (void)_assertOnUpdateQueue;
 - (_Bool)_isOnUpdateQueue;

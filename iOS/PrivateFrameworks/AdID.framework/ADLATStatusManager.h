@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *pendingJingleRequestToken; // @synthesize pendingJingleRequestToken=_pendingJingleRequestToken;
 @property(nonatomic) _Bool sendingLATToJingle; // @synthesize sendingLATToJingle=_sendingLATToJingle;
 @property(nonatomic) _Bool sendingLATToAdPlatforms; // @synthesize sendingLATToAdPlatforms=_sendingLATToAdPlatforms;
-- (void).cxx_destruct;
 - (id)handleJingleOptOutResponse:(id)arg1;
 - (void)sendLATStatusToJingle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)sendLATStatusToAdPlatforms:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

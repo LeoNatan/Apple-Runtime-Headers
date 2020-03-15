@@ -17,9 +17,9 @@
 }
 
 + (id)persistenceWithPersistenceSurvivingReboot:(id)arg1 persistenceSurvivingRelaunch:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <_CDContextPersisting> persistenceSurvivingRelaunch; // @synthesize persistenceSurvivingRelaunch=_persistenceSurvivingRelaunch;
 @property(readonly, nonatomic) id <_CDContextPersisting> persistenceSurvivingReboot; // @synthesize persistenceSurvivingReboot=_persistenceSurvivingReboot;
-- (void).cxx_destruct;
 - (id)loadRegistrations;
 - (id)loadValues;
 - (void)deleteDataCreatedBefore:(id)arg1;

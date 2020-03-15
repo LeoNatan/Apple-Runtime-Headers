@@ -48,8 +48,8 @@ __attribute__((visibility("hidden")))
     struct CGRect _imageCropRect;
 }
 
-@property(readonly, nonatomic) struct CGRect imageCropRect; // @synthesize imageCropRect=_imageCropRect;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGRect imageCropRect; // @synthesize imageCropRect=_imageCropRect;
 - (void)handlePinchGesture:(id)arg1;
 - (void)handlePanGesture:(id)arg1;
 - (void)didEndTrackingWithCropGestureHandler:(id)arg1;

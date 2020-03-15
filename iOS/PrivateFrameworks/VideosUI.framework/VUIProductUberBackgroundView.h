@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     double _contentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double contentOffset; // @synthesize contentOffset=_contentOffset;
 @property(retain, nonatomic) UIView *blurEffectView; // @synthesize blurEffectView=_blurEffectView;
 @property(retain, nonatomic) CAGradientLayer *maskGradientLayer; // @synthesize maskGradientLayer=_maskGradientLayer;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) VUIProductUberBackgroundViewLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setImageOffset:(double)arg1;
 - (void)configureBlurWithInterfaceStyle:(long long)arg1;

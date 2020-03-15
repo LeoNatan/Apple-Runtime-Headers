@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIViewController *_presentingViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) CNContact *createdContact; // @synthesize createdContact=_createdContact;
-- (void).cxx_destruct;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)performActionWithSender:(id)arg1;
 

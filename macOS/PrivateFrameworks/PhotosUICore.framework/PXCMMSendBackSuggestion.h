@@ -16,10 +16,10 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(readonly, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(readonly, nonatomic) NSSet *participants; // @synthesize participants=_participants;
-- (void).cxx_destruct;
 - (id)initWithAssetCollection:(id)arg1 participants:(id)arg2;
 - (id)init;
 

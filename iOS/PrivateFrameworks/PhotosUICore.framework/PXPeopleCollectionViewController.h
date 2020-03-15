@@ -55,6 +55,7 @@
     struct CGRect _ppt_visibleCollectionViewRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect ppt_visibleCollectionViewRect; // @synthesize ppt_visibleCollectionViewRect=_ppt_visibleCollectionViewRect;
 @property(nonatomic) unsigned long long ppt_sampledCountOfFrames; // @synthesize ppt_sampledCountOfFrames=_ppt_sampledCountOfFrames;
 @property(nonatomic) unsigned long long ppt_sampledCountOfEmptyCells; // @synthesize ppt_sampledCountOfEmptyCells=_ppt_sampledCountOfEmptyCells;
@@ -87,7 +88,6 @@
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) UILongPressGestureRecognizer *dragRecognizer; // @synthesize dragRecognizer=_dragRecognizer;
 @property _Bool ignoreChangeUpdates; // @synthesize ignoreChangeUpdates=_ignoreChangeUpdates;
-- (void).cxx_destruct;
 - (void)statusDebugRecognizerTapped:(id)arg1;
 - (void)swipeSelectionManager:(id)arg1 didSelectIndexPaths:(id)arg2;
 - (id)swipeSelectionManager:(id)arg1 itemIndexPathAtLocation:(struct CGPoint)arg2;

@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     long long _backgroundStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(copy, nonatomic) CDUnknownBlockType _mapkit_themeColorProvider; // @synthesize _mapkit_themeColorProvider=__mapkit_themeColorProvider;
-- (void).cxx_destruct;
 - (void)infoCardThemeChanged;
 - (void)viewWillMoveToWindow:(id)arg1;
 

@@ -15,10 +15,10 @@
     NSDictionary *_mappedComponentNodes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *mappedComponentNodes; // @synthesize mappedComponentNodes=_mappedComponentNodes;
 @property(readonly, nonatomic) NSMutableArray *componentNodes; // @synthesize componentNodes=_componentNodes;
 @property(readonly, nonatomic) NSArray *solvedComponentNodes; // @synthesize solvedComponentNodes=_solvedComponentNodes;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)createComponentNodesForComponentIdentifiers:(id)arg1;
 - (void)reset;

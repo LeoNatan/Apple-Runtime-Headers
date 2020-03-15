@@ -28,12 +28,12 @@
 + (id)localeByCreatingNewLocaleWithName:(id)arg1;
 + (id)localeByFindingExistingLocaleWithGroupRec:(id)arg1;
 + (id)localeByFindingExistingLocaleWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *groupRecName; // @synthesize groupRecName=_groupRecName;
 @property(retain) ODRecord *groupRec; // @synthesize groupRec=_groupRec;
 @property(retain) ODNode *node; // @synthesize node=_node;
 @property(retain) DSLog *log; // @synthesize log=_log;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)updateXMLPlistInCompRec:(id)arg1 withIPAddr:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)getServerDict:(id)arg1;
 - (BOOL)serverExistsInLocale:(id)arg1 withIPAddr:(id)arg2;

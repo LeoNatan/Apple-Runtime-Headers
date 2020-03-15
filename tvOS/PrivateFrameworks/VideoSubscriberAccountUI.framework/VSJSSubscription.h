@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)toVSSubscriptions:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *billingIdentifier; // @synthesize billingIdentifier=_billingIdentifier;
 @property(copy, nonatomic) NSArray *tierIdentifiers; // @synthesize tierIdentifiers=_tierIdentifiers;
 @property(nonatomic) long long accessLevel; // @synthesize accessLevel=_accessLevel;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)toVSSubscription;
 - (id)init;

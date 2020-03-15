@@ -18,11 +18,11 @@
     CDUnknownBlockType _nightstandChangeHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType nightstandChangeHandler; // @synthesize nightstandChangeHandler=_nightstandChangeHandler;
 @property(copy, nonatomic) CDUnknownBlockType endAnimationHandler; // @synthesize endAnimationHandler=_endAnimationHandler;
 @property(copy, nonatomic) CDUnknownBlockType alertDismissHandler; // @synthesize alertDismissHandler=_alertDismissHandler;
 @property(copy, nonatomic) CDUnknownBlockType alertPresentationHandler; // @synthesize alertPresentationHandler=_alertPresentationHandler;
-- (void).cxx_destruct;
 - (void)chargingCoordinator:(id)arg1 nightstandEnabled:(_Bool)arg2;
 - (void)chargingCoordinator:(id)arg1 endPresentationAnimation:(id)arg2;
 - (void)chargingCoordinator:(id)arg1 dismissPresentation:(id)arg2;

@@ -15,10 +15,10 @@
     long long _recoveryOptionIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long recoveryOptionIndex; // @synthesize recoveryOptionIndex=_recoveryOptionIndex;
 @property(copy, nonatomic) CDUnknownBlockType recoveryHandler; // @synthesize recoveryHandler=_recoveryHandler;
 @property(copy, nonatomic) NSString *localizedRecoveryOption; // @synthesize localizedRecoveryOption=_localizedRecoveryOption;
-- (void).cxx_destruct;
 
 @end
 

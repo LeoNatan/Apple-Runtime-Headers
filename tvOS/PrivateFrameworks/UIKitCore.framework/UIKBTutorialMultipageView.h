@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     double _pagingInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double pagingInterval; // @synthesize pagingInterval=_pagingInterval;
 @property(retain, nonatomic) NSTimer *nextPageScrollTimer; // @synthesize nextPageScrollTimer=_nextPageScrollTimer;
 @property(retain, nonatomic) UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(retain, nonatomic) NSArray *pageViews; // @synthesize pageViews=_pageViews;
 @property(retain, nonatomic) UIScrollView *pageScrollView; // @synthesize pageScrollView=_pageScrollView;
-- (void).cxx_destruct;
 - (void)resetPageScrolling;
 - (void)scrollToNextPage;
 - (void)scrollViewWillBeginDragging:(id)arg1;

@@ -34,6 +34,8 @@
 + (void)updateWMProbForPath:(id)arg1 stemmingFromPath:(id)arg2 wordModel:(void *)arg3 locale:(id)arg4 forChar:(unsigned short)arg5;
 + (void)updateLexiconProbForPath:(id)arg1 stemmingFromPath:(id)arg2 staticLexicon:(struct _LXLexicon *)arg3 dynamicLexicon:(struct _LXLexicon *)arg4 forChar:(unsigned short)arg5;
 + (void)updateNGramProbForPath:(id)arg1 stemmingFromPath:(id)arg2 withModel:(void *)arg3 forChar:(unsigned short)arg4;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct _LXCursor *lxDynamicCursor; // @synthesize lxDynamicCursor=_lxDynamicCursor;
 @property(nonatomic) struct _LXCursor *lxStaticCursor; // @synthesize lxStaticCursor=_lxStaticCursor;
 @property double probWM; // @synthesize probWM=_probWM;
@@ -43,8 +45,6 @@
 @property double probNonBlank; // @synthesize probNonBlank=_probNonBlank;
 @property double probBlank; // @synthesize probBlank=_probBlank;
 @property(retain) NSString *string; // @synthesize string=_string;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)containsCustomWords:(struct _LXLexicon *)arg1;
 - (id)pathByExtendingWithCharacter:(unsigned short)arg1 characterNGramModel:(void *)arg2 staticLexicon:(struct _LXLexicon *)arg3 dynamicLexicon:(struct _LXLexicon *)arg4 wordModel:(void *)arg5 locale:(id)arg6 forTimeSample:(unsigned long long)arg7;
 - (void)updateWhitespacesForTimeSample:(unsigned long long)arg1;

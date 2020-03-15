@@ -17,9 +17,9 @@
     NSString *_tag;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *tag; // @synthesize tag=_tag;
 @property(copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-- (void).cxx_destruct;
 - (id)accountWithIdentifier:(id)arg1;
 @property(readonly, copy) NSArray *persistentAccounts;
 @property(readonly) BOOL includeLocalAccount;

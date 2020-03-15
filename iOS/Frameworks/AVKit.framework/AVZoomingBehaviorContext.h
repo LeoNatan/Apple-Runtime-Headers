@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _contentAspectRatio;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer; // @synthesize doubleTapGestureRecognizer=_doubleTapGestureRecognizer;
 @property(retain, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(retain, nonatomic) AVPlaybackContentZoomingView *contentZoomingView; // @synthesize contentZoomingView=_contentZoomingView;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isZoomingEnabled) _Bool zoomingEnabled; // @synthesize zoomingEnabled=_zoomingEnabled;
 @property(nonatomic) __weak AVZoomingBehavior *behavior; // @synthesize behavior=_behavior;
 @property(readonly, nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
-- (void).cxx_destruct;
 - (void)_updateZoomingView;
 - (void)_handleDoubleTapGestureRecognizer:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

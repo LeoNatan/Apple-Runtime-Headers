@@ -22,22 +22,24 @@
     NSString *_matchDesignatedRequirement;
     NSString *_matchPath;
     NSArray *_matchDomains;
+    NSArray *_matchTools;
     NSArray *_additionalExecutables;
     NSArray *_matchAccountIdentifiers;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool noDivertDNS; // @synthesize noDivertDNS=_noDivertDNS;
 @property(copy) NSArray *matchAccountIdentifiers; // @synthesize matchAccountIdentifiers=_matchAccountIdentifiers;
 @property _Bool noRestriction; // @synthesize noRestriction=_noRestriction;
 @property(copy) NSArray *additionalExecutables; // @synthesize additionalExecutables=_additionalExecutables;
+@property(copy) NSArray *matchTools; // @synthesize matchTools=_matchTools;
 @property(copy) NSArray *matchDomains; // @synthesize matchDomains=_matchDomains;
 @property(copy) NSString *matchPath; // @synthesize matchPath=_matchPath;
 @property(readonly) NSString *matchDesignatedRequirement; // @synthesize matchDesignatedRequirement=_matchDesignatedRequirement;
 @property(readonly) NSString *matchSigningIdentifier; // @synthesize matchSigningIdentifier=_matchSigningIdentifier;
-- (void).cxx_destruct;
 - (_Bool)matchesProcessWithAuditToken:(id)arg1;
-- (_Bool)signingIdentifierAllowed:(id)arg1 domainsRequired:(out _Bool *)arg2;
+- (_Bool)signingIdentifierAllowed:(id)arg1 domainsOrAccountsRequired:(out _Bool *)arg2;
 - (_Bool)overlapsWithRule:(id)arg1;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)copyLegacyDictionary;

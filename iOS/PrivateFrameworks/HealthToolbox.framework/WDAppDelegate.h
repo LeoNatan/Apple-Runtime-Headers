@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)currentDelegate;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)_postAWDMetricForUsingDeepLink;
 - (void)_postAWDMetricForFinishedAddingAccount;
 - (void)_postAWDOnboardingMetricForType:(int)arg1;

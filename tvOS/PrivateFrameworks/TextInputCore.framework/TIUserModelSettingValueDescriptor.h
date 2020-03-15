@@ -14,8 +14,8 @@
 }
 
 + (id)configureSettingsValueDescriptors;
-@property(retain) NSString *settingName; // @synthesize settingName=_settingName;
 - (void).cxx_destruct;
+@property(retain) NSString *settingName; // @synthesize settingName=_settingName;
 - (id)initWithValueName:(id)arg1 settingName:(id)arg2;
 
 @end

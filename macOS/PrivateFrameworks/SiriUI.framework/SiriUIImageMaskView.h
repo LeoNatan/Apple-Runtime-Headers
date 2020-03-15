@@ -15,8 +15,8 @@
 
 + (id)imageMaskViewWithImage:(id)arg1;
 + (id)imageMaskViewWithDefaultChevron;
-@property(retain, nonatomic) NSImage *maskImage; // @synthesize maskImage=_maskImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSImage *maskImage; // @synthesize maskImage=_maskImage;
 - (void)layout;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setMaskColor:(id)arg1;

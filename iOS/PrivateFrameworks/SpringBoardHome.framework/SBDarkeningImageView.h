@@ -14,8 +14,8 @@
     double _brightness;
 }
 
-@property(nonatomic) double brightness; // @synthesize brightness=_brightness;
 - (void).cxx_destruct;
+@property(nonatomic) double brightness; // @synthesize brightness=_brightness;
 - (id)description;
 - (id)initWithFrame:(struct CGRect)arg1;
 

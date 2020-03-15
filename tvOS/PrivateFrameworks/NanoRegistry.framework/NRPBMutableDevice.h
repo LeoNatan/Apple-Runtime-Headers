@@ -18,9 +18,9 @@
 
 + (Class)propertiesType;
 + (Class)namesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) NSMutableArray *names; // @synthesize names=_names;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

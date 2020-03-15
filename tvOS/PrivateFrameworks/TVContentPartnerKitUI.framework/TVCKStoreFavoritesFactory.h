@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 + (id)_itemIDFromDictionary:(id)arg1 allowingUnknownClasses:(_Bool)arg2;
 + (id)_itemIDsFromDictionaries:(id)arg1 allowingUnknownClasses:(_Bool)arg2;
 + (id)resolveConflictsBetweenOriginalDictionaries:(id)arg1 andUpdatedDictionaries:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVCKStorePlaybackProgressFactory *progressFactory; // @synthesize progressFactory=_progressFactory;
 @property(nonatomic) __weak id <TVCKStoreFavoritesFactoryDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)constructContentItemForAdamID:(id)arg1 withUserOrder:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)showInfoForContentItem:(id)arg1;
 - (id)dictionariesFromFavorites:(id)arg1;

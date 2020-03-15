@@ -24,6 +24,7 @@
     NPKPassSyncServiceSyncStatus *_passSyncStatus;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKPassSyncServiceSyncStatus *passSyncStatus; // @synthesize passSyncStatus=_passSyncStatus;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *passSyncEngineSyncTimer; // @synthesize passSyncEngineSyncTimer=_passSyncEngineSyncTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *passSyncEngineArchiveTimer; // @synthesize passSyncEngineArchiveTimer=_passSyncEngineArchiveTimer;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) IDSService *passSyncService; // @synthesize passSyncService=_passSyncService;
 @property(retain, nonatomic) NPKPassSyncEngine *passSyncEngine; // @synthesize passSyncEngine=_passSyncEngine;
 @property(nonatomic) _Bool dropAllMessages; // @synthesize dropAllMessages=_dropAllMessages;
-- (void).cxx_destruct;
 - (id)_archivedPassSyncEngine;
 - (void)_syncTimerFired;
 - (void)_ensureSyncTimerIsSet;

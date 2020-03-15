@@ -25,6 +25,7 @@
     struct CGAffineTransform _viewToBitmapTransform;
 }
 
+- (void).cxx_destruct;
 @property struct CGRect unionDirtyRect; // @synthesize unionDirtyRect=_unionDirtyRect;
 // Error parsing type for property lastPoint:
 // Property attributes: T,V_lastPoint
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSView *view; // @synthesize view=_view;
 @property(nonatomic) BOOL isInLiveDraw; // @synthesize isInLiveDraw=_isInLiveDraw;
 @property double bitmapSizeMultiplier; // @synthesize bitmapSizeMultiplier=_bitmapSizeMultiplier;
-- (void).cxx_destruct;
 - (void)_applyDirtyRectToView;
 - (void)_addToDirtyRect:(struct CGRect)arg1;
 - (void)_addSinglePointToBitmap: /* Error: Ran out of types for this method. */;

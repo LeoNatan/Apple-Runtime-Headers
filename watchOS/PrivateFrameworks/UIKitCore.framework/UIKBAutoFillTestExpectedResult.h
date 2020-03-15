@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     int _formType;
 }
 
-@property(nonatomic) int formType; // @synthesize formType=_formType;
 - (void).cxx_destruct;
+@property(nonatomic) int formType; // @synthesize formType=_formType;
 - (void)setType:(int)arg1 forTextFieldWithTag:(int)arg2;
 - (int)typeForTextFieldWithTag:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;

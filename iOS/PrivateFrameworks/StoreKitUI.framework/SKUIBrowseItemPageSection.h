@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     SKUIBrowseItemComponent *_component;
 }
 
-@property(readonly, nonatomic) SKUIBrowseItemComponent *pageComponent; // @synthesize pageComponent=_component;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIBrowseItemComponent *pageComponent; // @synthesize pageComponent=_component;
 - (id)_imageForImageViewElement:(id)arg1 styleColor:(id)arg2;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;

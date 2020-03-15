@@ -15,9 +15,9 @@
 }
 
 + (id)labelStrengthSetsWithWeakSet:(id)arg1 strongSet:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *strong; // @synthesize strong=_strong;
 @property(readonly, nonatomic) NSSet *weak; // @synthesize weak=_weak;
-- (void).cxx_destruct;
 - (id)initWithWeakSet:(id)arg1 strongSet:(id)arg2;
 
 @end

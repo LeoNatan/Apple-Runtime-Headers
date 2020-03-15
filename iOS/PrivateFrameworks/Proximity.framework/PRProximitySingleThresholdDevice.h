@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     NSUUID *_peer;
 }
 
-@property(readonly) NSUUID *peer; // @synthesize peer=_peer;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) NSUUID *peer; // @synthesize peer=_peer;
 - (long long)deviceProximity;
 - (_Bool)proxReady;
 - (void)addSample:(struct BtProxData)arg1;

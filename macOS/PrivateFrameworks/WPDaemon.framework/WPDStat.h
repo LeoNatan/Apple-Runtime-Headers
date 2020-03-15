@@ -14,9 +14,9 @@
     NSDate *_lastTime;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *lastTime; // @synthesize lastTime=_lastTime;
 @property double currentTime; // @synthesize currentTime=_currentTime;
-- (void).cxx_destruct;
 - (void)calculateTimeUpdate;
 - (void)stopTime;
 - (void)startTime;

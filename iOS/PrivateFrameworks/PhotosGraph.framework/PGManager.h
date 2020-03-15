@@ -80,6 +80,7 @@
 + (id)_summaryClusteringForDuration:(unsigned long long)arg1 andPrecision:(unsigned long long)arg2;
 + (id)matchingWeightToDictionary;
 + (id)assetPropertySetsForCuration;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PGGraphHealthRecording> graphHealthRecorder; // @synthesize graphHealthRecorder=_graphHealthRecorder;
 @property(readonly) PGCurationCache *curationCache; // @synthesize curationCache=_curationCache;
 @property(readonly, nonatomic) NSObject<OS_os_log> *metricsLoggingConnection; // @synthesize metricsLoggingConnection=_metricsLoggingConnection;
@@ -101,7 +102,6 @@
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *graphUpdateQueue; // @synthesize graphUpdateQueue=_graphUpdateQueue;
 @property(readonly, copy) NSString *graphName; // @synthesize graphName=_graphName;
-- (void).cxx_destruct;
 - (_Bool)canProceedWithFullGraphRebuildStamp: /* Error: Ran out of types for this method. */;
 -     // Error parsing type: AQ16@0:8, name: currentFullGraphRebuildStamp
 - (void)stampFullGraphRebuild;
@@ -134,6 +134,7 @@
 - (void)_loadGraphWithProgressBlock:(CDUnknownBlockType)arg1;
 - (void)_reloadGraphWithProgressBlock:(CDUnknownBlockType)arg1;
 - (_Bool)invalidatePersistentGraph;
+- (void)dealloc;
 - (id)initWithGraph:(id)arg1;
 - (id)initForTesting;
 - (id)init;

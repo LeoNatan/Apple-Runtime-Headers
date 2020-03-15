@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int slotID; // @synthesize slotID=_slotID;
 @property(retain, nonatomic) BKSAnimationFenceHandle *fence; // @synthesize fence=_fence;
 @property(nonatomic) float naturalFrequency; // @synthesize naturalFrequency=_naturalFrequency;
 @property(nonatomic) float endLevel; // @synthesize endLevel=_endLevel;
 @property(nonatomic) float startLevel; // @synthesize startLevel=_startLevel;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

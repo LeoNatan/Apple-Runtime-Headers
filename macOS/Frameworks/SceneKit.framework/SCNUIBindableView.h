@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSValue *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSValue *value; // @synthesize value=_value;
 @property(nonatomic) SEL action; // @synthesize action;
 @property(nonatomic) __weak id target; // @synthesize target;
-- (void).cxx_destruct;
 - (void)triggerBindings;
 - (void)bind:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 

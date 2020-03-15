@@ -14,9 +14,9 @@
     HMDDevice *_expectedInviter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDDevice *expectedInviter; // @synthesize expectedInviter=_expectedInviter;
 @property(readonly, nonatomic) HMDCameraSessionID *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (_Bool)canAcceptInvitationFromDeviceWithHandle:(id)arg1 forSessionWithIdentifier:(id)arg2;
 - (id)initWithSession:(id)arg1 expectedInviter:(id)arg2;
 

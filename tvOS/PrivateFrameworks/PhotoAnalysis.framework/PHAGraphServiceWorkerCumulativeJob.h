@@ -14,8 +14,8 @@
 }
 
 + (id)graphUpdateJobWithLibrary:(id)arg1 scenario:(unsigned long long)arg2 label:(id)arg3 updateBlock:(CDUnknownBlockType)arg4;
-@property(nonatomic) __weak PHAGraphServiceWorker *worker; // @synthesize worker=_worker;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PHAGraphServiceWorker *worker; // @synthesize worker=_worker;
 - (void)additionalWorkAfterUpdate;
 - (long long)executionContext;
 - (void)prepareProcessingForWorker:(id)arg1;

@@ -17,8 +17,8 @@
 + (id)buildWithUnlockToken:(id)arg1;
 + (id)allowedReasons;
 + (id)allowedStatusKeys;
-@property(copy, nonatomic) NSData *statusUnlockToken; // @synthesize statusUnlockToken=_statusUnlockToken;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *statusUnlockToken; // @synthesize statusUnlockToken=_statusUnlockToken;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 

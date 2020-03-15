@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *validUntilDate; // @synthesize validUntilDate=_validUntilDate;
 @property(readonly, nonatomic) NSString *matchedValue; // @synthesize matchedValue=_matchedValue;
 @property(readonly, nonatomic) _Bool didMatchPhone; // @synthesize didMatchPhone=_didMatchPhone;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) long long certificateStatus; // @synthesize certificateStatus=_certificateStatus;
 @property(readonly, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(readonly, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isStale;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;

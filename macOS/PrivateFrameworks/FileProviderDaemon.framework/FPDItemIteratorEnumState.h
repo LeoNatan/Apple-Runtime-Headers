@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSData *_nextPage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *nextPage; // @synthesize nextPage=_nextPage;
 @property(retain, nonatomic) id <FPXPCAutomaticErrorProxy><FPXEnumerator> enumerator; // @synthesize enumerator=_enumerator;
 @property(retain, nonatomic) FPItem *parentItem; // @synthesize parentItem=_parentItem;
-- (void).cxx_destruct;
 
 @end
 

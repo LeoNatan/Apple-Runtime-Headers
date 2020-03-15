@@ -14,9 +14,9 @@
     UIView *_selectionView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectionView; // @synthesize selectionView=_selectionView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (id)preferredTintColor;
 - (id)accessibilityHint;
 - (unsigned long long)accessibilityTraits;

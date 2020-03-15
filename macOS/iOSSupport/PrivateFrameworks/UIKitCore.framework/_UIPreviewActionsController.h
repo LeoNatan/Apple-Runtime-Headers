@@ -32,6 +32,7 @@
 }
 
 + (id)actionsControllerWithContainerView:(id)arg1 platterView:(id)arg2 presentedViewController:(id)arg3 delegate:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint lastPanningLocation; // @synthesize lastPanningLocation=_lastPanningLocation;
 @property(retain, nonatomic) _UIPreviewQuickActionView *trailingPreviewActionView; // @synthesize trailingPreviewActionView=_trailingPreviewActionView;
 @property(retain, nonatomic) _UIPreviewQuickActionView *leadingPreviewActionView; // @synthesize leadingPreviewActionView=_leadingPreviewActionView;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) UIView *platterView; // @synthesize platterView=_platterView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) struct CGSize totalPanningTranslation; // @synthesize totalPanningTranslation=_totalPanningTranslation;
-- (void).cxx_destruct;
 - (void)setTrailingSwipeActionViewSelected:(BOOL)arg1;
 - (void)setLeadingSwipeActionViewSelected:(BOOL)arg1;
 - (struct CGPoint)_applyLayoutAdjustmentsForManagedViewWithPosition:(struct CGPoint)arg1;

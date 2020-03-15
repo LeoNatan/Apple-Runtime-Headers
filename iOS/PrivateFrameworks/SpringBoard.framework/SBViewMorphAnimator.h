@@ -44,6 +44,7 @@
     struct CGRect _targetContentClippingViewInitialFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect targetContentClippingViewInitialFrame; // @synthesize targetContentClippingViewInitialFrame=_targetContentClippingViewInitialFrame;
 @property(retain, nonatomic) SBViewMorphAnimatorContentClippingView *targetContentClippingView; // @synthesize targetContentClippingView=_targetContentClippingView;
 @property(nonatomic) struct CGRect sourceContentClippingViewInitialFrame; // @synthesize sourceContentClippingViewInitialFrame=_sourceContentClippingViewInitialFrame;
@@ -73,7 +74,6 @@
 @property(nonatomic) __weak UIView *sourceContentView; // @synthesize sourceContentView=_sourceContentView;
 @property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)_handleHandoffTimeout;
 - (void)_continueSourceAnimationsCompletionPendingBlock;
 - (void)_checkAnimationsDependencies:(CDUnknownBlockType)arg1;

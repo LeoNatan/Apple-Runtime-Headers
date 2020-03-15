@@ -28,6 +28,7 @@
     HBUITopShelfHostAnimationTransaction *_animationTransaction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFocused) _Bool focused; // @synthesize focused=_focused;
 @property(retain, nonatomic) HBUITopShelfHostAnimationTransaction *animationTransaction; // @synthesize animationTransaction=_animationTransaction;
 @property(nonatomic) long long queuedAnimationDirection; // @synthesize queuedAnimationDirection=_queuedAnimationDirection;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) unsigned long long contentStyle; // @synthesize contentStyle=_contentStyle;
 @property(nonatomic) __weak id <HBUITopShelfContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isContentOccluded) _Bool contentOccluded; // @synthesize contentOccluded=_contentOccluded;
-- (void).cxx_destruct;
 - (id)nextLaunchAnimationEnvironments;
 - (id)launchAnimationsWithContext:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

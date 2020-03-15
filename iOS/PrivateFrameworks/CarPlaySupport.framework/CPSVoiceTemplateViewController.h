@@ -17,10 +17,10 @@
     double _lastVoiceTemplateStateChangeTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastVoiceTemplateStateChangeTime; // @synthesize lastVoiceTemplateStateChangeTime=_lastVoiceTemplateStateChangeTime;
 @property(retain, nonatomic) UITapGestureRecognizer *backGestureRecognizer; // @synthesize backGestureRecognizer=_backGestureRecognizer;
 @property(retain, nonatomic) CPSVoiceView *titleView; // @synthesize titleView=_titleView;
-- (void).cxx_destruct;
 - (void)_activateStateWithIdentifier:(id)arg1;
 - (id)_stateWithIdentifier:(id)arg1;
 - (void)_backGestureFired:(id)arg1;

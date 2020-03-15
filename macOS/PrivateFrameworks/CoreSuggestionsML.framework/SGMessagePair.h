@@ -16,11 +16,11 @@
     NSDate *_sentAt;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *sentAt; // @synthesize sentAt=_sentAt;
 @property(retain, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(retain, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 @property(retain, nonatomic) NSString *reply; // @synthesize reply=_reply;
-- (void).cxx_destruct;
 - (id)initWithReply:(id)arg1 prompt:(id)arg2 handle:(id)arg3 sentAt:(id)arg4;
 
 @end

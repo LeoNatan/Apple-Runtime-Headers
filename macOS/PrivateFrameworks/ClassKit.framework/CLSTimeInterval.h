@@ -18,9 +18,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)relations;
+- (void).cxx_destruct;
 @property(nonatomic) double length; // @synthesize length=_length;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;

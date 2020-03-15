@@ -22,9 +22,9 @@
 
 + (id)localizedFirstEntryInstructionsForTouchID;
 + (_Bool)allowSkip;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BFFPasscodeCreationManager *passcodeManager; // @synthesize passcodeManager=_passcodeManager;
 @property(nonatomic) __weak NSObject<BFFPasscodeViewControllerDelegate> *passcodeCreationDelegate; // @synthesize passcodeCreationDelegate=_passcodeCreationDelegate;
-- (void).cxx_destruct;
 - (void)_showPasscodeOptionsSheet;
 - (id)passcodeOptionAlertController;
 - (void)_commitPasscodeEntryTypeChange;

@@ -21,12 +21,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)recoveryContextWithServerInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAppleIDAuthenticationContext *authContext; // @synthesize authContext=_authContext;
 @property(copy, nonatomic) NSURL *recoveryContinuationURL; // @synthesize recoveryContinuationURL=_recoveryContinuationURL;
 @property(copy, nonatomic) NSString *encodedRecoveryPET; // @synthesize encodedRecoveryPET=_encodedRecoveryPET;
 @property(copy, nonatomic) NSString *encodedRecoveryIdentityToken; // @synthesize encodedRecoveryIdentityToken=_encodedRecoveryIdentityToken;
 @property(nonatomic) BOOL supportsMasterKeyRecovery; // @synthesize supportsMasterKeyRecovery=_supportsMasterKeyRecovery;
-- (void).cxx_destruct;
 - (BOOL)isValid;
 @property(readonly, nonatomic) NSString *decodedRecoveryPETString;
 @property(readonly, nonatomic) NSString *decodedRecoveryIdentityTokenString;

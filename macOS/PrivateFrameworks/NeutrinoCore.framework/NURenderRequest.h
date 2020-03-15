@@ -30,6 +30,7 @@
     CDStruct_1b6d18a9 _time;
 }
 
+- (void).cxx_destruct;
 @property(retain) id voucher; // @synthesize voucher=_voucher;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property double submitTime; // @synthesize submitTime=_submitTime;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) id <NUDevice> device; // @synthesize device=_device;
 @property(copy, nonatomic) NSArray *pipelineFilters; // @synthesize pipelineFilters=_pipelineFilters;
 @property(nonatomic) long long sampleMode; // @synthesize sampleMode=_sampleMode;
-- (void).cxx_destruct;
 - (void)introspectPrepare:(CDUnknownBlockType)arg1;
 - (id)submitGenericSynchronous:(out id *)arg1;
 - (void)submitGenericConfiguringRequest:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

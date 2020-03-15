@@ -14,8 +14,8 @@
 }
 
 + (id)newInfoWithTap:(id)arg1;
-@property(readonly, nonatomic) __weak AXEEventTap *tap; // @synthesize tap=_tap;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak AXEEventTap *tap; // @synthesize tap=_tap;
 - (id)initInfoWithTap:(id)arg1;
 
 @end

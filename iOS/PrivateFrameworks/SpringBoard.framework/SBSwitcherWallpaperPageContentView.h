@@ -22,6 +22,7 @@
     SBWallpaperEffectView *_wallpaperEffectView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) SBWallpaperEffectView *wallpaperEffectView; // @synthesize wallpaperEffectView=_wallpaperEffectView;
@@ -29,7 +30,6 @@
 @property(nonatomic) long long desiredWallpaperOrientation; // @synthesize desiredWallpaperOrientation=_desiredWallpaperOrientation;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (void)_updateWallpaperOrientation;
 - (void)_updateCornerRadius;
 - (id)_viewForWallpaperWrapper;

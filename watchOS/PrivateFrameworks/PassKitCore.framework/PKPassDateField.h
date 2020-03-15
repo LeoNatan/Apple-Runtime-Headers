@@ -20,8 +20,10 @@
 @property(nonatomic) int timeStyle; // @synthesize timeStyle=_timeStyle;
 @property(nonatomic) int dateStyle; // @synthesize dateStyle=_dateStyle;
 - (id)value;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)asDictionary;
 
 @end
 

@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak MKAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
 @property(nonatomic) CDStruct_c3b9c2ee coordinate; // @synthesize coordinate=_coordinate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) VKCustomFeature *feature;
 - (void)setCustomFeature:(id)arg1;
 - (id)initWithCoder:(id)arg1;

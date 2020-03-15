@@ -15,10 +15,10 @@
     TLKLabel *_subtitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) NSProgressIndicator *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) TLKMultilineText *subtitle; // @synthesize subtitle=_subtitle;
-- (void).cxx_destruct;
 - (id)subtitleLabelText;
 - (void)observedPropertiesChanged;
 - (void)tlk_updateForAppearance:(id)arg1;

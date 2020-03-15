@@ -16,8 +16,8 @@
     id <FCFeedTransforming> _feedItemTransformation;
 }
 
-@property(retain, nonatomic) id <FCFeedTransforming> feedItemTransformation; // @synthesize feedItemTransformation=_feedItemTransformation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <FCFeedTransforming> feedItemTransformation; // @synthesize feedItemTransformation=_feedItemTransformation;
 - (id)transformFeedItems:(id)arg1;
 - (id)initWithFeedItemTransformation:(id)arg1;
 - (id)init;

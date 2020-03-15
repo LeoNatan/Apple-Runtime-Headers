@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_incomingHIDEvents;
     NSMutableArray *_incomingHIDEventsFiltered;
     struct __CFRunLoop *_cfRunLoop;
-    struct __CFRunLoopSource *_triggerHandOffEventsRunLoopSource;
     CDUnknownBlockType _receiveBlock;
     CDUnknownBlockType _addToFilteredEventsBlock;
     CDUnknownBlockType _gameControllerEventFilterGenerator;
@@ -35,18 +34,22 @@ __attribute__((visibility("hidden")))
     _Bool _needsSignalOnDisplayLink;
     id <UIEventFetcherSink> _eventFetcherSink;
     double _commitTimeForTouchEvents;
+    double _beginTimeForTouchEvents;
+    double _deadlineTimeForTouchEvents;
     NSMutableDictionary *_latestMoveDragEventsBySessionID;
     double _latestMoveDragEventTimestamp;
     double _latestMoveDragEventResendTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double latestMoveDragEventResendTimestamp; // @synthesize latestMoveDragEventResendTimestamp=_latestMoveDragEventResendTimestamp;
 @property(nonatomic) double latestMoveDragEventTimestamp; // @synthesize latestMoveDragEventTimestamp=_latestMoveDragEventTimestamp;
 @property(retain, nonatomic) NSMutableDictionary *latestMoveDragEventsBySessionID; // @synthesize latestMoveDragEventsBySessionID=_latestMoveDragEventsBySessionID;
+@property(nonatomic) double deadlineTimeForTouchEvents; // @synthesize deadlineTimeForTouchEvents=_deadlineTimeForTouchEvents;
+@property(nonatomic) double beginTimeForTouchEvents; // @synthesize beginTimeForTouchEvents=_beginTimeForTouchEvents;
 @property(nonatomic) double commitTimeForTouchEvents; // @synthesize commitTimeForTouchEvents=_commitTimeForTouchEvents;
 @property(nonatomic) _Bool needsSignalOnDisplayLink; // @synthesize needsSignalOnDisplayLink=_needsSignalOnDisplayLink;
 @property(retain, nonatomic) id <UIEventFetcherSink> eventFetcherSink; // @synthesize eventFetcherSink=_eventFetcherSink;
-- (void).cxx_destruct;
 - (void)_removeHIDGameControllerEventObserver;
 - (void)_setHIDGameControllerEventObserver:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
 - (void)_removeHIDEventObserver;

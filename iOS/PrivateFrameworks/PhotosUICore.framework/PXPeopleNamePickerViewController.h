@@ -23,13 +23,13 @@
     PXPeopleNamePickerResultsTableViewController *_resultsController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXPeopleNamePickerResultsTableViewController *resultsController; // @synthesize resultsController=_resultsController;
 @property(retain, nonatomic) NSLayoutConstraint *resultsViewBottomConstraint; // @synthesize resultsViewBottomConstraint=_resultsViewBottomConstraint;
 @property(nonatomic) double yOffset; // @synthesize yOffset=_yOffset;
 @property(retain, nonatomic) NSArray *savedRightBarItems; // @synthesize savedRightBarItems=_savedRightBarItems;
 @property(nonatomic) __weak id <PXPeopleNamePickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PXPeopleNamePickerTitleView *titleView; // @synthesize titleView=_titleView;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;

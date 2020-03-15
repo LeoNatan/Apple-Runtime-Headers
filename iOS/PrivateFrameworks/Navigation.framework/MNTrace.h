@@ -42,6 +42,7 @@
     NSDictionary *_miscInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bookmarkImages; // @synthesize bookmarkImages=_bookmarkImages;
 @property(retain, nonatomic) NSDictionary *miscInfo; // @synthesize miscInfo=_miscInfo;
 @property(retain, nonatomic) NSArray *commuteDirectionsRequests; // @synthesize commuteDirectionsRequests=_commuteDirectionsRequests;
@@ -70,7 +71,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *writeGroup; // @synthesize writeGroup=_writeGroup;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *writeQueue; // @synthesize writeQueue=_writeQueue;
 @property(readonly, nonatomic) struct sqlite3 *db; // @synthesize db=_db;
-- (void).cxx_destruct;
 - (void)copyTraceToCrashReporter;
 - (id)_handleOpenErrorWithPath:(id)arg1;
 @property(readonly, nonatomic) int mainTransportType; // @synthesize mainTransportType=_mainTransportType;

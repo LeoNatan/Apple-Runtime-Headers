@@ -12,10 +12,10 @@
     unordered_map_bd663eb8 _blobs;
 }
 
-@property shared_ptr_d082c67d networkPointer; // @synthesize networkPointer=_networkPointer;
-@property unordered_map_bd663eb8 blobs; // @synthesize blobs=_blobs;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property shared_ptr_d082c67d networkPointer; // @synthesize networkPointer=_networkPointer;
+@property unordered_map_bd663eb8 blobs; // @synthesize blobs=_blobs;
 - (id)initWithNetwork:(shared_ptr_d082c67d)arg1;
 - (id)initWithBlobMap:(unordered_map_bd663eb8 *)arg1;
 

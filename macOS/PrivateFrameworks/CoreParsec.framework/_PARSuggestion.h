@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSString *_topic;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(copy, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *suggestion; // @synthesize suggestion=_suggestion;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

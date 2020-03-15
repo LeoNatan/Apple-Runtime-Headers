@@ -26,6 +26,7 @@
     id <NSObject> _muninViewDidBecomeAdequatelyDrawnObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> muninViewDidBecomeAdequatelyDrawnObserver; // @synthesize muninViewDidBecomeAdequatelyDrawnObserver=_muninViewDidBecomeAdequatelyDrawnObserver;
 @property(retain, nonatomic) UIView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned long long dimmingState; // @synthesize dimmingState=_dimmingState;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) __weak id <MKMuninContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateDimmingViewBackgroundColor;
 - (void)_updateDimmingViewActivityIndicator;
 - (void)_updateDimmingStateForMuninView:(id)arg1 completion:(CDUnknownBlockType)arg2;

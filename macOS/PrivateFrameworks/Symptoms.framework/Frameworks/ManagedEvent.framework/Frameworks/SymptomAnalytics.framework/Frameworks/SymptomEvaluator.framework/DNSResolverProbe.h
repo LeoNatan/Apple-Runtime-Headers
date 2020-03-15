@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_serviceDict;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL includeAWDL; // @synthesize includeAWDL=_includeAWDL;
 @property(retain, nonatomic) NSMutableDictionary *serviceDict; // @synthesize serviceDict=_serviceDict;
 @property(nonatomic) struct _DNSServiceRef_t *getAddrInfoDNSRef; // @synthesize getAddrInfoDNSRef=_getAddrInfoDNSRef;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct _DNSServiceRef_t *sharedDNSRef; // @synthesize sharedDNSRef=_sharedDNSRef;
 @property(retain) id <DNSResolverProbeErrorDelegate> errorDelegate; // @synthesize errorDelegate=_errorDelegate;
 @property(retain) id <BonjourProbeDelegate> bonjourDelegate; // @synthesize bonjourDelegate=_bonjourDelegate;
-- (void).cxx_destruct;
 - (void)stopTest;
 - (void)startDNSResolveFor:(id)arg1 includeAWDL:(BOOL)arg2;
 - (void)dealloc;

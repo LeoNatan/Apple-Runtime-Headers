@@ -16,6 +16,7 @@
     UIAlertController *_alertController;
     id _target;
     SEL _action;
+    _Bool _useCustomView;
     _Bool _forceToNavBar;
     _Bool _selected;
     _Bool _enabled;
@@ -32,11 +33,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool disappearsOnTap; // @synthesize disappearsOnTap=_disappearsOnTap;
 @property _Bool roundedSelectedIndicator; // @synthesize roundedSelectedIndicator=_roundedSelectedIndicator;
 @property _Bool enabled; // @synthesize enabled=_enabled;
 @property _Bool selected; // @synthesize selected=_selected;
 @property _Bool forceToNavBar; // @synthesize forceToNavBar=_forceToNavBar;
+@property _Bool useCustomView; // @synthesize useCustomView=_useCustomView;
 @property unsigned long long placement; // @synthesize placement=_placement;
 @property(copy) NSArray *options; // @synthesize options=_options;
 @property(copy) NSString *accessibilityIdentifier; // @synthesize accessibilityIdentifier=_accessibilityIdentifier;
@@ -45,7 +48,6 @@
 @property(copy, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 @property(copy) UIImage *image; // @synthesize image=_image;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -25,9 +25,9 @@
 }
 
 + (int)cellStyle;
+- (void).cxx_destruct;
 @property(nonatomic) __weak PSListController *controllerDelegate; // @synthesize controllerDelegate=_controllerDelegate;
 @property(readonly, nonatomic) _Bool returnKeyTapped; // @synthesize returnKeyTapped=_returnKeyTapped;
-- (void).cxx_destruct;
 - (id)textField;
 - (void)setPlaceholderText:(id)arg1;
 - (void)setValue:(id)arg1;

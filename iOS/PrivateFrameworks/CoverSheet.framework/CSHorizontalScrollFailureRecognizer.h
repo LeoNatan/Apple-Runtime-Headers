@@ -30,6 +30,7 @@
     UIEvent *_triggeredEvent;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIEvent *triggeredEvent; // @synthesize triggeredEvent=_triggeredEvent;
 @property(nonatomic) _Bool viewDebugArea; // @synthesize viewDebugArea=_viewDebugArea;
 @property(nonatomic) double minAllowedBottomAngle; // @synthesize minAllowedBottomAngle=_minAllowedBottomAngle;
@@ -38,7 +39,6 @@
 @property(nonatomic) double maxAllowedTopAngle; // @synthesize maxAllowedTopAngle=_maxAllowedTopAngle;
 @property(nonatomic) unsigned long long maxAllowableVerticalOffset; // @synthesize maxAllowableVerticalOffset=_maxAllowableVerticalOffset;
 @property(nonatomic) _Bool allowMultiTouch; // @synthesize allowMultiTouch=_allowMultiTouch;
-- (void).cxx_destruct;
 - (void)_setDebugViewsColor:(id)arg1;
 - (void)_setDebugViewsVisible:(_Bool)arg1;
 - (_Bool)canBePreventedByGestureRecognizer:(id)arg1;

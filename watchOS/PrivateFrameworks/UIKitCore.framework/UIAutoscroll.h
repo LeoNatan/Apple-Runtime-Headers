@@ -23,6 +23,7 @@
     id _target;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(nonatomic) _Bool disabled; // @synthesize disabled=m_disabled;
 @property(nonatomic) _Bool active; // @synthesize active=m_active;
@@ -31,7 +32,6 @@
 @property(nonatomic) int directions; // @synthesize directions=m_directions;
 @property(nonatomic) struct CGPoint point; // @synthesize point=m_point;
 @property(retain, nonatomic) UIView<UIAutoscrollContainer> *scrollContainer; // @synthesize scrollContainer=m_scrollContainer;
-- (void).cxx_destruct;
 - (void)timerFired:(id)arg1;
 - (void)invalidate;
 - (_Bool)startAutoscroll:(id)arg1 scrollContainer:(id)arg2 point:(struct CGPoint)arg3 directions:(int)arg4 repeatInterval:(double)arg5;

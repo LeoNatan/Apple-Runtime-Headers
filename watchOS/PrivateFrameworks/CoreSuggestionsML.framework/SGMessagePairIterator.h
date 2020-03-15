@@ -22,8 +22,8 @@
     NSDate *_latestProcessedDate;
 }
 
-@property(readonly, nonatomic) NSDate *latestProcessedDate; // @synthesize latestProcessedDate=_latestProcessedDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *latestProcessedDate; // @synthesize latestProcessedDate=_latestProcessedDate;
 - (_Bool)isDoneIterating;
 - (id)nextMessagePair;
 - (id)removeBreadcrumbsFromMessage:(id)arg1;

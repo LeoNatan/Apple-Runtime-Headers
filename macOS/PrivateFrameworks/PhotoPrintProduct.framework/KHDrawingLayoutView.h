@@ -15,10 +15,10 @@
     double _gutterOverlap;
 }
 
+- (void).cxx_destruct;
 @property BOOL backgroundDisabled; // @synthesize backgroundDisabled=_backgroundDisabled;
 @property double gutterOverlap; // @synthesize gutterOverlap=_gutterOverlap;
 @property(retain, nonatomic) KHLayout *layoutObject; // @synthesize layoutObject=_layoutObject;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)wantsUpdateLayer;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -22,6 +22,7 @@
     NSLayoutConstraint *_titleLabelToBodyLabelConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelToBodyLabelConstraint; // @synthesize titleLabelToBodyLabelConstraint=_titleLabelToBodyLabelConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelTopConstraint; // @synthesize titleLabelTopConstraint=_titleLabelTopConstraint;
 @property(retain, nonatomic) WGWidgetPinningTeachingAnimationView *iconImageView; // @synthesize iconImageView=_iconImageView;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <WGWidgetPinningTeachingViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)_updateAppearance;
 - (void)_updateFontDependantConstraints;
 - (void)_updateFonts;

@@ -13,8 +13,8 @@
     UISelectionFeedbackGenerator *__selectionBehavior;
 }
 
-@property(retain, nonatomic, setter=_setSelectionBehavior:) UISelectionFeedbackGenerator *_selectionBehavior; // @synthesize _selectionBehavior=__selectionBehavior;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setSelectionBehavior:) UISelectionFeedbackGenerator *_selectionBehavior; // @synthesize _selectionBehavior=__selectionBehavior;
 - (void)didSnapByAttraction;
 - (void)interactionBegan;
 - (id)initWithSnappingTarget:(double)arg1;

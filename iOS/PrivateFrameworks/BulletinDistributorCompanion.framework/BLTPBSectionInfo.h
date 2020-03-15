@@ -75,6 +75,7 @@
 }
 
 + (Class)subsectionsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *watchSectionID; // @synthesize watchSectionID=_watchSectionID;
 @property(nonatomic) int phoneAuthorizationStatus; // @synthesize phoneAuthorizationStatus=_phoneAuthorizationStatus;
 @property(nonatomic) int authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
@@ -104,7 +105,6 @@
 @property(nonatomic) int sectionType; // @synthesize sectionType=_sectionType;
 @property(retain, nonatomic) NSString *subsectionID; // @synthesize subsectionID=_subsectionID;
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

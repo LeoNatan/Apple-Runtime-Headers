@@ -12,9 +12,9 @@
     unsigned long long _handle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long handle; // @synthesize handle=_handle;
 @property(copy, nonatomic) CDUnknownBlockType stateCaptureBlock; // @synthesize stateCaptureBlock=_stateCaptureBlock;
-- (void).cxx_destruct;
 - (struct os_state_data_s *)stateDataForDictionary:(id)arg1 title:(id)arg2;
 - (struct os_state_data_s *)_stateCapture;
 - (void)unregisterHandlerforStateCapture;

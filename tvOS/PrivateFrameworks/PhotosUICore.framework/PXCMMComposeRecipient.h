@@ -18,9 +18,9 @@
     id <PXCMMPersonSuggestion> _personSuggestion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PXCMMPersonSuggestion> personSuggestion; // @synthesize personSuggestion=_personSuggestion;
 @property(readonly, nonatomic) PXRecipient *recipient; // @synthesize recipient=_recipient;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;

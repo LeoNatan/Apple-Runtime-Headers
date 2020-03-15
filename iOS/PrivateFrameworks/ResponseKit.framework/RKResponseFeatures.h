@@ -22,6 +22,7 @@
     unsigned long long _responseLength;
 }
 
+- (void).cxx_destruct;
 @property(readonly) int sameRecipientCount; // @synthesize sameRecipientCount=_sameRecipientCount;
 @property(readonly) unsigned long long responseLength; // @synthesize responseLength=_responseLength;
 @property(readonly) double normalizedInputMethodDictationCount; // @synthesize normalizedInputMethodDictationCount=_normalizedInputMethodDictationCount;
@@ -32,7 +33,6 @@
 @property(readonly) double numOfElapsedDays; // @synthesize numOfElapsedDays=_numOfElapsedDays;
 @property(readonly) int count; // @synthesize count=_count;
 @property(readonly) NSString *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (id)initWithFeatures:(id)arg1 count:(int)arg2 numOfElapsedDays:(double)arg3 sourceAppCount:(double)arg4 sourceNotificationCount:(double)arg5 inputSourceCannedCount:(double)arg6 inputSourceScribbleCount:(double)arg7 inputSourceDictationCount:(double)arg8 responseLength:(unsigned long long)arg9 sameRecipientCount:(int)arg10;
 
 @end

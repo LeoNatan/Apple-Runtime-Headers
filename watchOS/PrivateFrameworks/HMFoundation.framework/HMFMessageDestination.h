@@ -19,8 +19,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)allMessageDestinations;
-@property(readonly, copy, nonatomic) NSUUID *target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSUUID *target; // @synthesize target=_target;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

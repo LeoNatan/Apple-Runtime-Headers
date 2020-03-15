@@ -20,10 +20,10 @@
 
 + (id)valueWithEntry:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSString *shortcut; // @synthesize shortcut=_shortcut;
 @property(copy, nonatomic) NSString *phrase; // @synthesize phrase=_phrase;
-- (void).cxx_destruct;
 - (id)shortcutForSorting;
 - (_Bool)matchesEntry:(id)arg1;
 @property(readonly, copy) NSString *description;

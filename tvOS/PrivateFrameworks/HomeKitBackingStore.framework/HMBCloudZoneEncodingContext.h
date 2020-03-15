@@ -13,8 +13,8 @@
     NSMutableDictionary *_createdRecords;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *createdRecords; // @synthesize createdRecords=_createdRecords;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *createdRecords; // @synthesize createdRecords=_createdRecords;
 - (id)init;
 
 @end

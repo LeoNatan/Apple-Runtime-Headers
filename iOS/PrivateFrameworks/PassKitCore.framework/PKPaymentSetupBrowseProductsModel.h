@@ -18,10 +18,10 @@
     NSArray *_likelyProductIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *likelyProductIdentifiers; // @synthesize likelyProductIdentifiers=_likelyProductIdentifiers;
 @property(nonatomic) unsigned long long filterType; // @synthesize filterType=_filterType;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
-- (void).cxx_destruct;
 - (void)_updatedFilteredProducts;
 @property(readonly, copy, nonatomic) NSArray *unifiedProducts;
 - (id)unifiedProductAtIndex:(unsigned long long)arg1;

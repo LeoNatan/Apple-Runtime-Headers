@@ -15,8 +15,8 @@
     FCArticleController *_articleController;
 }
 
-@property(readonly, nonatomic) FCArticleController *articleController; // @synthesize articleController=_articleController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FCArticleController *articleController; // @synthesize articleController=_articleController;
 - (id)createArticlesForArticleIDs:(id)arg1;
 - (id)initWithArticleController:(id)arg1;
 

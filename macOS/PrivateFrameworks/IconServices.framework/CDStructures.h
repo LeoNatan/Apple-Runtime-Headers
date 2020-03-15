@@ -38,10 +38,6 @@ struct FSRef {
     unsigned char _field1[80];
 };
 
-struct NSData {
-    Class _field1;
-};
-
 struct _LIIconVariantInfo {
     int _field1;
     struct CGSize _field2;

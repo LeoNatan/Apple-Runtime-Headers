@@ -17,11 +17,11 @@
     id <WFParameterState> _defaultState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <WFParameterState> defaultState; // @synthesize defaultState=_defaultState;
 @property(readonly, copy, nonatomic) NSString *question; // @synthesize question=_question;
 @property(readonly, nonatomic) __weak WFParameter *parameter; // @synthesize parameter=_parameter;
 @property(readonly, nonatomic) __weak WFAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)serializedRepresentationWithWorkflowActions:(id)arg1;
 - (id)initWithSerializedRepresentation:(id)arg1 workflowActions:(id)arg2;
 - (id)initWithAction:(id)arg1 parameter:(id)arg2 question:(id)arg3 defaultState:(id)arg4;

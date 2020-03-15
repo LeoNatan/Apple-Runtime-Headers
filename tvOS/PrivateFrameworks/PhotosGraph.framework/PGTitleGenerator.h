@@ -24,6 +24,7 @@
     unsigned long long _lineBreakBehavior;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isForHighlight; // @synthesize isForHighlight=_isForHighlight;
 @property(nonatomic) unsigned long long lineBreakBehavior; // @synthesize lineBreakBehavior=_lineBreakBehavior;
 @property(nonatomic) unsigned long long preferredTitleType; // @synthesize preferredTitleType=_preferredTitleType;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) PHAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(readonly, nonatomic) PGTitleGeneratorDateMatching *dateMatching; // @synthesize dateMatching=_dateMatching;
 @property(readonly, nonatomic) NSSet *momentNodes; // @synthesize momentNodes=_momentNodes;
-- (void).cxx_destruct;
 - (id)_addressNodesFromCuratedAssetCollection;
 - (id)_addressNodeFromKeyAsset;
 - (_Bool)_useSplitTimeTitlesIfNeeded;

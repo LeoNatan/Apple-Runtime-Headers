@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (id)updateColumnsIntermediate;
 - (BOOL)isUpdateScoped;
 - (void)dealloc;
-- (id)initWithEntity:(id)arg1 inScope:(id)arg2;
+- (id)initWithEntity:(id)arg1 alias:(id)arg2 inScope:(id)arg3;
 
 @end
 

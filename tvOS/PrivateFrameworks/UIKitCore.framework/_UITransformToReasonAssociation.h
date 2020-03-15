@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)association:(id)arg1 reason:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) UITransform *transform; // @synthesize transform=_transform;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithTransform:(id)arg1 reason:(id)arg2;

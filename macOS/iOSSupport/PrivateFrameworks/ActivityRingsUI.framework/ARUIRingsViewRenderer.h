@@ -28,9 +28,9 @@
 + (unsigned long long)maximumRingCountForControllers:(id)arg1;
 + (id)rendererForRingGroupControllers:(id)arg1;
 + (id)rendererForRingGroupController:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL presentsWithTransaction; // @synthesize presentsWithTransaction=_presentsWithTransaction;
 @property(readonly, nonatomic) unsigned long long maximumRingCount; // @synthesize maximumRingCount=_maximumRingCount;
-- (void).cxx_destruct;
 - (void)prewarmRendererForCelebrationOfType:(unsigned long long)arg1;
 - (id)snapshotRingGroupControllers:(id)arg1 withSize: /* Error: Ran out of types for this method. */;
 - (id)ringTextureWithCommandBuffer:(id)arg1 rings:(id)arg2 andSize: /* Error: Ran out of types for this method. */;

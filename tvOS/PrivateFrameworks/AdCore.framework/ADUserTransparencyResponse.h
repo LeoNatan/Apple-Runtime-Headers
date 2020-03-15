@@ -15,8 +15,8 @@
     ADTransparencyDetails *_transparencyDetails;
 }
 
-@property(retain, nonatomic) ADTransparencyDetails *transparencyDetails; // @synthesize transparencyDetails=_transparencyDetails;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ADTransparencyDetails *transparencyDetails; // @synthesize transparencyDetails=_transparencyDetails;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

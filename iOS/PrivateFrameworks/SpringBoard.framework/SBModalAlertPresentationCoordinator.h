@@ -20,11 +20,12 @@
     UIApplicationSceneDeactivationAssertion *_systemModalAlertsActiveSceneDeactivationAssertion;
     NSMutableSet *_hideApplicationModalAlertAssertions;
     id <BSInvalidatable> _hideApplicationModalAlertsAssertionWhileSBModalAlertsActive;
+    id <BSInvalidatable> _sysdiagnoseStateHandler;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_getSpringBoardPresenter, setter=_setSpringBoardPresenter:) SBModalAlertPresenter *springBoardPresenter; // @synthesize springBoardPresenter=_springBoardModalAlertPresenter;
 @property(nonatomic) __weak id <SBModalAlertPresentationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_adjustApplicationSceneSettingsForModalAlertsAndFence:(_Bool)arg1;
 - (id)_fencingTransitionContext:(_Bool)arg1;
 - (void)_noteSpringBoardModalAlertStateChanged:(_Bool)arg1;

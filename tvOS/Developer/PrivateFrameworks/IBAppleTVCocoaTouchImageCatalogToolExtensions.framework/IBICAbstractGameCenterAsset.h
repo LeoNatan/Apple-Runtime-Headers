@@ -26,9 +26,9 @@
 + (Class)requiredParentClass;
 + (id)defaultInstanceForIdioms:(id)arg1 enforceStrictIdioms:(_Bool)arg2;
 + (_Bool)isAbstractCatalogItemClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *explicitGameCenterIdentifier; // @synthesize explicitGameCenterIdentifier=_explicitGameCenterIdentifier;
 @property(copy, nonatomic) IBICCatalogContentReference *contentReference; // @synthesize contentReference=_contentReference;
-- (void).cxx_destruct;
 - (_Bool)isEqualForUnitTests:(id)arg1;
 - (CDStruct_2a4d9400)taggingSupport;
 - (id)implicitTags;
@@ -41,7 +41,7 @@
 - (void)populateGameCenterContentPlist:(id)arg1 andResults:(id)arg2 options:(id)arg3 referencedContentGenerator:(CDUnknownBlockType)arg4;
 - (void)enumerateDescriptionAttributeComponents:(CDUnknownBlockType)arg1;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
-- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
+- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2 manifestFileData:(id)arg3;
 - (_Bool)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (void)replaceChildrenFromFileSystemSnapshot:(id)arg1 results:(id)arg2;
 - (id)manifestContent;

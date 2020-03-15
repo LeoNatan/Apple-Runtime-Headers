@@ -14,8 +14,8 @@
 }
 
 + (id)defaultConfiguration;
-@property(retain) NSSet *lastComplications; // @synthesize lastComplications=_lastComplications;
 - (void).cxx_destruct;
+@property(retain) NSSet *lastComplications; // @synthesize lastComplications=_lastComplications;
 - (id)initWithAppSwitcherModel:(id)arg1 complicationMonitor:(id)arg2 context:(id)arg3 configuration:(id)arg4;
 
 @end

@@ -23,6 +23,7 @@
 + (id)_allSubscribersForAlbum:(id)arg1 includeMyself:(BOOL)arg2;
 + (id)allSubscribersForAvatarViewWithAlbumWithObjectID:(id)arg1 managedObjectContext:(id)arg2;
 + (id)allSubscribersForAlbum:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) BOOL isOwner; // @synthesize isOwner=_isOwner;
 @property(readonly, retain, nonatomic) PLCloudSharedAlbumInvitationRecord *invitationRecord; // @synthesize invitationRecord=_invitationRecord;
-- (void).cxx_destruct;
 - (id)matchingContactWithKeysToFetch:(id)arg1 outMatchingKey:(id *)arg2 outMatchingIdentifier:(id *)arg3;
 - (id)contactStore;
 - (id)initWithInvitationRecord:(id)arg1 identifier:(id)arg2 email:(id)arg3 phone:(id)arg4 firstName:(id)arg5 lastName:(id)arg6 displayName:(id)arg7 isOwner:(BOOL)arg8;

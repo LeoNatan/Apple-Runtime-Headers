@@ -15,9 +15,9 @@
     NSArray *_outputs;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *outputs; // @synthesize outputs=_outputs;
 @property(readonly) NSArray *inputs; // @synthesize inputs=_inputs;
-- (void).cxx_destruct;
 - (id)initWithInputs:(id)arg1 outputs:(id)arg2;
 
 @end

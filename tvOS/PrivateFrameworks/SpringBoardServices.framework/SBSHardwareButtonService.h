@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BSMutableIntegerMap *requestHIDAssertionsPerKind; // @synthesize requestHIDAssertionsPerKind=_requestHIDAssertionsPerKind;
 @property(retain, nonatomic) BSMutableIntegerMap *buttonConfigurationsPerKind; // @synthesize buttonConfigurationsPerKind=_buttonConfigurationsPerKind;
 @property(retain, nonatomic) BSMutableIntegerMap *consumersPerKind; // @synthesize consumersPerKind=_consumersPerKind;
-- (void).cxx_destruct;
 - (void)consumerInfoWillInvalidate:(id)arg1;
 - (void)handleButtonPressMessage:(long long)arg1 forButtonKind:(long long)arg2 priority:(long long)arg3;
 - (void)fetchHapticTypeForButtonKind:(long long)arg1 completion:(CDUnknownBlockType)arg2;

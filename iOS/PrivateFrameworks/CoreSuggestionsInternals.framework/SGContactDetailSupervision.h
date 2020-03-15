@@ -21,6 +21,7 @@
     NSString *_senderDisplayName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSString *senderDisplayName; // @synthesize senderDisplayName=_senderDisplayName;
 @property(nonatomic) __weak NSDate *matchDate; // @synthesize matchDate=_matchDate;
 @property(nonatomic) unsigned long long ignoreAfter; // @synthesize ignoreAfter=_ignoreAfter;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool isFirstPerson; // @synthesize isFirstPerson=_isFirstPerson;
 @property(nonatomic) _Bool regexDoesNotBelongToSender; // @synthesize regexDoesNotBelongToSender=_regexDoesNotBelongToSender;
 @property(nonatomic) _Bool regexBelongsToSender; // @synthesize regexBelongsToSender=_regexBelongsToSender;
-- (void).cxx_destruct;
 - (struct SGMContactDetailFoundIn_)metricsContactDetailFoundIn;
 - (struct SGMContactDetailOwner_)metricsContactDetailOwner;
 - (id)initWithEntity:(id)arg1 ddMatch:(id)arg2 isUnlikelyPhone:(_Bool)arg3;

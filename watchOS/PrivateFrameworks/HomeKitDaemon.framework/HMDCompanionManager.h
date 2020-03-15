@@ -24,8 +24,8 @@
 + (id)shortDescription;
 + (_Bool)isCompatibleCompanionDevice:(id)arg1;
 + (id)sharedManager;
-@property(readonly, nonatomic) IDSService *service; // @synthesize service=_service;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDSService *service; // @synthesize service=_service;
 - (void)service:(id)arg1 connectedDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 @property(readonly) HMDDevice *companion; // @synthesize companion=_companion;

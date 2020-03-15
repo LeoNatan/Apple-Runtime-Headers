@@ -18,11 +18,11 @@
     NSString *_voiceShortcutIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *syncMetadata; // @synthesize syncMetadata=_syncMetadata;
 @property(retain, nonatomic) VCPBVoiceShortcut *voiceShortcut; // @synthesize voiceShortcut=_voiceShortcut;
 @property(retain, nonatomic) NSString *voiceShortcutIdentifier; // @synthesize voiceShortcutIdentifier=_voiceShortcutIdentifier;
 @property(nonatomic) int changeType; // @synthesize changeType=_changeType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

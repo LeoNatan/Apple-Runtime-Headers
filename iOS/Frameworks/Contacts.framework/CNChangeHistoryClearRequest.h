@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(retain, nonatomic) NSArray *groupChangeIDs; // @synthesize groupChangeIDs=_groupChangeIDs;
 @property(retain, nonatomic) NSArray *contactChangeIDs; // @synthesize contactChangeIDs=_contactChangeIDs;
 @property(retain, nonatomic) CNChangeHistoryAnchor *toChangeAnchor; // @synthesize toChangeAnchor=_toChangeAnchor;
 @property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

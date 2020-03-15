@@ -20,8 +20,8 @@
 }
 
 + (double)defaultKilogramValue;
-@property(retain, nonatomic) NSNumber *kilogramValue; // @synthesize kilogramValue=_kilogramValue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *kilogramValue; // @synthesize kilogramValue=_kilogramValue;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;

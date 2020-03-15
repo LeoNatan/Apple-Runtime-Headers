@@ -32,11 +32,11 @@
 
 + (BOOL)decodeResponse:(id)arg1 sw:(unsigned short *)arg2 appendTo:(id)arg3 error:(id *)arg4;
 + (id)_localizedString:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long currentProtocol; // @synthesize currentProtocol=_currentProtocol;
 @property unsigned long long allowedProtocols; // @synthesize allowedProtocols=_allowedProtocols;
 @property BOOL valid; // @synthesize valid=_valid;
 @property(readonly, nonatomic) TKSmartCardSlot *slot; // @synthesize slot=_slot;
-- (void).cxx_destruct;
 - (BOOL)selectApplication:(id)arg1 error:(id *)arg2;
 - (id)sendIns:(unsigned char)arg1 p1:(unsigned char)arg2 p2:(unsigned char)arg3 data:(id)arg4 le:(id)arg5 sw:(unsigned short *)arg6 error:(id *)arg7;
 - (void)sendIns:(unsigned char)arg1 p1:(unsigned char)arg2 p2:(unsigned char)arg3 data:(id)arg4 le:(id)arg5 reply:(CDUnknownBlockType)arg6;

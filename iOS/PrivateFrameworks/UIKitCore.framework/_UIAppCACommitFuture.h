@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 
 + (id)scheduledPreCommitFuture:(CDUnknownBlockType)arg1;
 + (id)scheduledPostCommitFuture:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_isFinished) _Bool finished; // @synthesize finished=_finished;
 @property(readonly, nonatomic, getter=_isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
-- (void).cxx_destruct;
 - (void)_invoke;
 - (void)invalidate;
 - (id)initWithPhase:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;

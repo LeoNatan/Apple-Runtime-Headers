@@ -35,13 +35,13 @@ __attribute__((visibility("hidden")))
 + (id)waveformForAudioTrack:(id)arg1 withWaveformResolution:(unsigned long long)arg2 notificationInterval:(double)arg3;
 + (id)waveformForAudioTrack:(id)arg1 withWaveformResolution:(unsigned long long)arg2;
 + (id)waveformForAudioTrack:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic, getter=isValid) BOOL valid; // @synthesize valid=_valid;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) double notificationInterval; // @synthesize notificationInterval=_notificationInterval;
 @property(readonly, nonatomic) AVTrackIdentifier *trackIdentifier; // @synthesize trackIdentifier=_trackIdentifier;
 @property(readonly, nonatomic) unsigned long long resolution; // @synthesize resolution=_resolution;
-- (void).cxx_destruct;
 - (void)_updateIsValid;
 - (void)_stopLoadingWaveform;
 - (BOOL)_setWaveformSample:(float)arg1 atIndex:(unsigned long long)arg2;

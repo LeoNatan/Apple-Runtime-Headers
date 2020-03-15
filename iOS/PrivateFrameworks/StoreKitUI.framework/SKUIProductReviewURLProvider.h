@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     SSURLBag *_urlBag;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SSURLBag *urlBag; // @synthesize urlBag=_urlBag;
 @property(copy, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
 @property(retain, nonatomic) NSURL *writeReviewURL; // @synthesize writeReviewURL=_writeReviewURL;
 @property(retain, nonatomic) NSURL *rateURL; // @synthesize rateURL=_rateURL;
-- (void).cxx_destruct;
 - (id)_urlByAppendingItemId:(id)arg1;
 - (void)fetchURLsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithClientContext:(id)arg1 itemID:(id)arg2;

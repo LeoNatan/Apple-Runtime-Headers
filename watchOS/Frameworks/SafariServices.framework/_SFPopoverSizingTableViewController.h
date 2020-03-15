@@ -19,8 +19,8 @@
 
 + (id)tableViewCellForSizeEstimation;
 + (void)initialize;
-@property(nonatomic) float preferredContentWidth; // @synthesize preferredContentWidth=_preferredContentWidth;
 - (void).cxx_destruct;
+@property(nonatomic) float preferredContentWidth; // @synthesize preferredContentWidth=_preferredContentWidth;
 - (void)cancelPopoverKeyPressed;
 - (id)keyCommands;
 - (id)backgroundColorUsingTranslucentAppearance:(_Bool)arg1;

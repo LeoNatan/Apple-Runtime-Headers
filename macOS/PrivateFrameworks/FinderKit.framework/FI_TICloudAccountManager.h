@@ -22,6 +22,11 @@ __attribute__((visibility("hidden")))
     struct TriStateBool fIsOverQuota;
     struct TriStateBool fAppSynchingDocuments;
     struct TNSRef<BRContainer, void> fDefaultContainer;
+    struct TFENode _providersContainer;
+    struct TFENode _desktopInHome;
+    struct TFENode _documentsInHome;
+    struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _homeObserver;
+    struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _providersObserver;
     struct TNotificationCenterObserver fiCloudAccountTokenDidChangeObserver;
     struct TNotificationCenterObserver fContainerListDidChangeObserver;
     struct TKeyValueObserver fOverQuotaObserver;
@@ -42,6 +47,7 @@ __attribute__((visibility("hidden")))
 + (id)singleton;
 + (void)postOverQuotaChange;
 + (void)postStatusChange;
++ (void)checkForFileProviderChanges;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)appIsSyncingDocuments;
@@ -55,6 +61,13 @@ __attribute__((visibility("hidden")))
 - (pair_5f6a4f40)updateLoginState:(_Bool)arg1 userHasDeclinedUpgrade:(_Bool)arg2 firstSyncDownComplete:(_Bool)arg3 syncDesktop:(_Bool)arg4 syncDocuments:(_Bool)arg5 loggedIntoIcloud:(_Bool)arg6;
 - (void)computeLoginState;
 - (void)computeIsOverQuota;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesDeleted:(const struct TFENodeVector *)arg2 fromObservedNode:(const struct TFENode *)arg3;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesChanged:(const vector_614ab7ad *)arg2 inObservedNode:(const struct TFENode *)arg3;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 openSyncCompleted:(const struct TFENode *)arg2;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesAdded:(const struct TFENodeVector *)arg2 toObservedNode:(const struct TFENode *)arg3;
+- (void)providerRemoved:(const struct TFENode *)arg1;
+- (void)providerAdded:(const struct TFENode *)arg1;
+- (void)postFPProviderChange;
 - (void)invalidate;
 - (void)dealloc;
 - (id)_init;

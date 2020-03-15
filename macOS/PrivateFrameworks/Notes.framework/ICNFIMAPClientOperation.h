@@ -18,9 +18,9 @@
 + (id)IMAPNeedsLiteralCharacterSet;
 + (id)newIMAPStringForMailboxName:(id)arg1;
 + (id)newIMAPQuotedString:(id)arg1;
+- (void).cxx_destruct;
 @property long long completionState; // @synthesize completionState=_completionState;
 @property(retain) ICNFIMAPGateway *gateway; // @synthesize gateway=_gateway;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *shallowDescription;
 @property(readonly, copy, nonatomic) NSMutableString *simpleDescriptionString;

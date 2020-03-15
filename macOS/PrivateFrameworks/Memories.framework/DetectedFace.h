@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _approximateFaceRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect approximateFaceRect; // @synthesize approximateFaceRect=_approximateFaceRect;
 @property(nonatomic) struct CGRect faceRect; // @synthesize faceRect=_faceRect;
 @property(nonatomic) int frames; // @synthesize frames=_frames;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint rightEye; // @synthesize rightEye=_rightEye;
 @property(nonatomic) struct CGPoint leftEye; // @synthesize leftEye=_leftEye;
 @property(retain, nonatomic) NSNumber *size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithFaceFeature:(id)arg1 withImageSize:(struct CGSize)arg2;
 - (id)initWithFaceSize:(id)arg1 leftEye:(struct CGPoint)arg2 rightEye:(struct CGPoint)arg3 mouthCenter:(struct CGPoint)arg4 faceCenter:(struct CGPoint)arg5 confidence:(id)arg6 trackID:(int)arg7 frames:(int)arg8;

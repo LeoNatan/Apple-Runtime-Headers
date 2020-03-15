@@ -20,12 +20,12 @@
     NSLayoutConstraint *_contentLeadingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *contentLeadingConstraint; // @synthesize contentLeadingConstraint=_contentLeadingConstraint;
 @property(readonly, nonatomic) MTMaterialView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) SBHRootSidebarController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) double presentationProgress; // @synthesize presentationProgress=_presentationProgress;
 @property(nonatomic) __weak id <SBTodayOverlayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)_suggestedTodayViewSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)widgetGroupViewController:(id)arg1 sizeForInterfaceOrientation:(long long)arg2;
 - (void)widgetGroupViewControllerDidChangeHeaderVisibility:(id)arg1;

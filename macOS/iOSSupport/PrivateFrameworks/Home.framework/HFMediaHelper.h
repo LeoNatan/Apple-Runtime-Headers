@@ -10,8 +10,9 @@
 {
 }
 
-+ (id)imageIdentifier:(id)arg1;
++ (id)mediaIconDescriptorForMediaContainer:(id)arg1;
 + (BOOL)isSiriDisabled:(id)arg1;
++ (BOOL)isAudioReceiver:(id)arg1;
 + (BOOL)isAirPortExpress:(id)arg1;
 + (BOOL)isAppleTV:(id)arg1;
 + (BOOL)isHomePod:(id)arg1;

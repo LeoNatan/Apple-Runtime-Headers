@@ -14,9 +14,9 @@
     unsigned long long _selectedDisambiguationCandidateIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long selectedDisambiguationCandidateIndex; // @synthesize selectedDisambiguationCandidateIndex=_selectedDisambiguationCandidateIndex;
 @property(readonly, nonatomic) NSArray *disambiguationCandidates; // @synthesize disambiguationCandidates=_disambiguationCandidates;
-- (void).cxx_destruct;
 - (id)initWithWordSearch:(id)arg1 inputString:(id)arg2 keyboardInput:(id)arg3 segmentBreakIndex:(unsigned long long)arg4 disambiguationCandidates:(id)arg5 selectedDisambiguationCandidateIndex:(unsigned long long)arg6 predictionEnabled:(_Bool)arg7 reanalysisMode:(_Bool)arg8 target:(id)arg9 action:(SEL)arg10 geometryModelData:(id)arg11 hardwareKeyboardMode:(_Bool)arg12 logger:(id)arg13;
 
 @end

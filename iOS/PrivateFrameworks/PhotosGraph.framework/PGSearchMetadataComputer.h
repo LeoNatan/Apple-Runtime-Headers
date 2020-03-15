@@ -13,8 +13,8 @@
     PGGraph *_graph;
 }
 
-@property(readonly) PGGraph *graph; // @synthesize graph=_graph;
 - (void).cxx_destruct;
+@property(readonly) PGGraph *graph; // @synthesize graph=_graph;
 - (id)_blacklistedMeaningsByMeaning;
 - (id)_sceneWhitelist;
 - (id)_mePersonUUID;

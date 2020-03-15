@@ -12,6 +12,7 @@
     // Error parsing type: , name: summary
     // Error parsing type: , name: items
     // Error parsing type: , name: shouldAlwaysPresentExpanded
+    // Error parsing type: , name: linkAction
 }
 
 @end

@@ -51,6 +51,7 @@
 
 + (void)userEngagedWithUniqueIdentifier:(id)arg1 bundleId:(id)arg2 forUserQuery:(id)arg3 interactionType:(int)arg4;
 + (id)_makeQueryErrorWithErrorCode:(int)arg1 description:(id)arg2 underlyingError:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *privateBundleID; // @synthesize privateBundleID=_privateBundleID;
 @property(nonatomic) _Bool suspended; // @synthesize suspended=_suspended;
 @property(nonatomic) _Bool userFSIndex; // @synthesize userFSIndex=_userFSIndex;
@@ -75,7 +76,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy) CDUnknownBlockType foundItemsHandler; // @synthesize foundItemsHandler=_foundItemsHandler;
-- (void).cxx_destruct;
 - (void)didFinishWithError:(id)arg1;
 - (void)didReturnResults:(int)arg1 resultsData:(id)arg2 oidData:(id)arg3 protectionClass:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)processLiveResultsData:(id)arg1 oidData:(id)arg2 protectionClass:(id)arg3;

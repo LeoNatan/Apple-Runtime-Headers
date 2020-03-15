@@ -19,12 +19,12 @@
     NSSet *_supportedCustomDataQueueIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *supportedCustomDataQueueIdentifiers; // @synthesize supportedCustomDataQueueIdentifiers=_supportedCustomDataQueueIdentifiers;
 @property(retain, nonatomic) NSSet *supportedQueueTypes; // @synthesize supportedQueueTypes=_supportedQueueTypes;
 @property(retain, nonatomic) NSSet *supportedInsertionPositions; // @synthesize supportedInsertionPositions=_supportedInsertionPositions;
 @property(nonatomic) BOOL supportsCreateStation; // @synthesize supportsCreateStation=_supportsCreateStation;
 @property(copy, nonatomic) NSArray *devices; // @synthesize devices=_devices;
-- (void).cxx_destruct;
 - (BOOL)_isSupportedPlaybackIntent:(id)arg1 forRemotePlayer:(BOOL)arg2 atInsertionPosition:(int)arg3;
 - (id)_createRadioStationCommandRequest;
 - (id)_insertWithOptions:(id)arg1;

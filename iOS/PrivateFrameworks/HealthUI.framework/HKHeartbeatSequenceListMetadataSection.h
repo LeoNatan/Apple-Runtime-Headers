@@ -18,12 +18,12 @@
     NSArray *_sequencesSamples;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sequencesSamples; // @synthesize sequencesSamples=_sequencesSamples;
 @property(nonatomic) __weak id <HKHeartbeatSequenceListMetadataSectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
 @property(retain, nonatomic) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (void)selectCellForIndex:(unsigned long long)arg1 navigationController:(id)arg2 animated:(_Bool)arg3;
 - (id)cellForIndex:(unsigned long long)arg1 tableView:(id)arg2;
 - (unsigned long long)numberOfRowsInSection;

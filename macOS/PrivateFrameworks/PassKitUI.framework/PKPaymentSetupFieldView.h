@@ -18,10 +18,10 @@
 
 + (id)viewForSetupField:(id)arg1;
 + (Class)_setupFieldViewClassForSetupField:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentSetupField *paymentSetupField; // @synthesize paymentSetupField=_paymentSetupField;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <PKPaymentSetupFieldViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)label;
 - (id)initWithSetupField:(id)arg1;
 

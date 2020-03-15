@@ -19,10 +19,10 @@
 
 + (id)_ignoredDomainsFallback;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAssetDownloadScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(retain) NSSet *ignoredDomains; // @synthesize ignoredDomains=_ignoredDomains;
 @property _Bool shouldIgnoreUserAccountDomains; // @synthesize shouldIgnoreUserAccountDomains=_shouldIgnoreUserAccountDomains;
-- (void).cxx_destruct;
 - (void)_updateStateFromAsset:(id)arg1;
 - (void)_queryForAssetWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_downloadAssetCatalogWithCompletion:(CDUnknownBlockType)arg1;

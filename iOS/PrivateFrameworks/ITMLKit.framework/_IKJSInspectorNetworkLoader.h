@@ -19,12 +19,12 @@
     NSMutableDictionary *_requestRecords;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *requestRecords; // @synthesize requestRecords=_requestRecords;
 @property(readonly, nonatomic) __weak RWIProtocolNetworkDomainEventDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(readonly, nonatomic) __weak IKJSInspectorNetworkAgent *agent; // @synthesize agent=_agent;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (double)currentTimeIntervalSince1970;
 - (void)dispatchEventWithBlock:(CDUnknownBlockType)arg1;

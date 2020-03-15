@@ -16,9 +16,9 @@
     long long _verificationType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long verificationType; // @synthesize verificationType=_verificationType;
 @property(copy, nonatomic) NSNumber *secondFactorCode; // @synthesize secondFactorCode=_secondFactorCode;
-- (void).cxx_destruct;
 - (id)_jsonPostbackDictionaryForCode:(id)arg1 numberId:(id)arg2;
 - (id)_jsonDictionaryForData:(id)arg1 error:(id)arg2;
 - (id)_mutableJSONRequestForURL:(id)arg1;

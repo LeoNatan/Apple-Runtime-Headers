@@ -16,10 +16,10 @@
     long long _evaluationType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long evaluationType; // @synthesize evaluationType=_evaluationType;
 @property(readonly, copy, nonatomic) NSArray *patternMatches; // @synthesize patternMatches=_patternMatches;
 @property(readonly, copy, nonatomic) NSString *password; // @synthesize password=_password;
-- (void).cxx_destruct;
 - (id)compactDescriptionWithPasswordColumnWidth:(unsigned long long)arg1 includePatternMatches:(_Bool)arg2;
 @property(readonly, nonatomic) NSString *userFeedbackString;
 - (id)_passwordFeedbackStrings;

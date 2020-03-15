@@ -15,10 +15,10 @@
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSString *badgeString; // @synthesize badgeString=_badgeString;
 @property(nonatomic) long long badgeNumber; // @synthesize badgeNumber=_badgeNumber;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

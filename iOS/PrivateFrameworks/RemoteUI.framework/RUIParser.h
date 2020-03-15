@@ -34,12 +34,12 @@
 + (id)rowWithAttributeDict:(id)arg1 delegate:(id)arg2 parent:(id)arg3;
 + (id)tableRowClassForElementName:(id)arg1;
 + (long long)textAlignmentForString:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <RUIParserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) _Bool succeeded; // @synthesize succeeded=_succeeded;
 @property(retain, nonatomic) NSData *xmlData; // @synthesize xmlData=_xmlData;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-- (void).cxx_destruct;
 - (void)parser:(id)arg1 validationErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 foundCDATA:(id)arg2;

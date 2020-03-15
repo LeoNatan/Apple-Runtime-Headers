@@ -19,12 +19,12 @@
     MCQuotaUsage *_totalUsage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MCQuotaUsage *totalUsage; // @synthesize totalUsage=_totalUsage;
 @property(nonatomic) long long monitorAccessKey; // @synthesize monitorAccessKey=_monitorAccessKey;
 @property(nonatomic) BOOL isActive; // @synthesize isActive=_isActive;
 @property(retain, nonatomic) MCActivityMonitor *monitor; // @synthesize monitor=_monitor;
 @property(readonly, nonatomic) MFMailAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldStartWorkerThread;
 - (void)_workerThreadFinished:(id)arg1;
 - (void)_startWorkerThreadIfNeeded;

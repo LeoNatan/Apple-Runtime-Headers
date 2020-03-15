@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     VSSubscriptionPredicateFactory *_predicateFactory;
 }
 
-@property(retain, nonatomic) VSSubscriptionPredicateFactory *predicateFactory; // @synthesize predicateFactory=_predicateFactory;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VSSubscriptionPredicateFactory *predicateFactory; // @synthesize predicateFactory=_predicateFactory;
 - (id)standardizedFetchOptionsFromOptions:(id)arg1 withSecurityTask:(id)arg2;
 - (id)subscriptionFetchOptionsAllowedForSecurityTask:(id)arg1;
 

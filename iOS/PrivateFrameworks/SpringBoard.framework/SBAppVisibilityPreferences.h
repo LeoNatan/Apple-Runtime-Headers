@@ -11,16 +11,17 @@
 @interface SBAppVisibilityPreferences : NSObject
 {
     NSString *_bundleID;
+    NSString *_containerPath;
     _Bool _defaultVisible;
     _Bool _currentlyVisible;
 }
 
+- (void).cxx_destruct;
 @property _Bool currentlyVisible; // @synthesize currentlyVisible=_currentlyVisible;
 @property(readonly) _Bool defaultVisible; // @synthesize defaultVisible=_defaultVisible;
-- (void).cxx_destruct;
 - (_Bool)update;
 - (id)description;
-- (id)initWithDefaultVisible:(_Bool)arg1 bundleID:(id)arg2;
+- (id)initWithDefaultVisible:(_Bool)arg1 bundleID:(id)arg2 containerPath:(id)arg3;
 
 @end
 

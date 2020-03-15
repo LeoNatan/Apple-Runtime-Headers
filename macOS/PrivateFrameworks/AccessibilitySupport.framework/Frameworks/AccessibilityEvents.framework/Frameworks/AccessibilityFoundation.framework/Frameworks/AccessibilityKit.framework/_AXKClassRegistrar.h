@@ -17,11 +17,11 @@
     Class _baseClass;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) Class baseClass; // @synthesize baseClass=_baseClass;
 @property(retain, nonatomic) NSMutableDictionary *predicateMap; // @synthesize predicateMap=_predicateMap;
 @property(retain, nonatomic) NSMutableDictionary *classMap; // @synthesize classMap=_classMap;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
-- (void).cxx_destruct;
 - (Class)controllerClassForElement:(id)arg1;
 - (void)registerControllerClass:(Class)arg1 applicationIdentifier:(id)arg2 role:(id)arg3 subrole:(id)arg4 predicate:(CDUnknownBlockType)arg5;
 - (id)_registerControllerClassPreflight:(Class)arg1 applicationIdentifier:(id)arg2 role:(id)arg3 subrole:(id)arg4 predicate:(CDUnknownBlockType)arg5;

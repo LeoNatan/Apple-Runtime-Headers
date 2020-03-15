@@ -29,6 +29,7 @@
     NSDictionary *_identifierToProvider;
     SHKRemoteWindowController *_remoteWindowController;
     NSRemoteViewController *_remoteViewController;
+    NSDictionary *_sandboxExtensions;
     BOOL _disableDragging;
     BOOL _sourceWindowProvided;
     unsigned int _remoteCID;
@@ -111,6 +112,7 @@
 + (id)sharingServiceWithIdentifier:(id)arg1 title:(id)arg2 image:(id)arg3 alternateImage:(id)arg4 type:(long long)arg5 handler:(CDUnknownBlockType)arg6;
 + (id)sharingServiceNamed:(id)arg1;
 + (id)sharingServiceNamed:(id)arg1 allowInactive:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain) SHKUIServiceLatencyMetric *uiServiceLatencyMetric; // @synthesize uiServiceLatencyMetric=_uiServiceLatencyMetric;
 @property __weak NSWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
 @property(copy, nonatomic) CDUnknownBlockType cancelPotentialUnregisterTimer; // @synthesize cancelPotentialUnregisterTimer=_cancelPotentialUnregisterTimer;
@@ -128,6 +130,7 @@
 @property(retain) NSExtension *extension; // @synthesize extension=_extension;
 @property(retain) id customInternalDelegate; // @synthesize customInternalDelegate=_customInternalDelegate;
 @property(retain) id customDelegate; // @synthesize customDelegate=_customDelegate;
+@property(retain, nonatomic) NSDictionary *sandboxExtensions; // @synthesize sandboxExtensions=_sandboxExtensions;
 @property unsigned long long mask; // @synthesize mask=_mask;
 @property(copy, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property BOOL viewBased; // @synthesize viewBased=_viewBased;
@@ -142,7 +145,6 @@
 @property(copy) NSString *plugInIdentifier; // @synthesize plugInIdentifier=_plugInIdentifier;
 @property(nonatomic) __weak id <SHKSharingServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSSharingServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
-- (void).cxx_destruct;
 - (BOOL)isMessagesServiceInvokedFromMaps;
 - (void)dealloc;
 - (id)bundle;

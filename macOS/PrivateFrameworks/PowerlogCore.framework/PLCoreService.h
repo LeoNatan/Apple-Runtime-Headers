@@ -13,8 +13,8 @@
     NSMutableDictionary *_services;
 }
 
-@property(retain) NSMutableDictionary *services; // @synthesize services=_services;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *services; // @synthesize services=_services;
 - (void)stopServices;
 - (void)startServices;
 - (id)init;

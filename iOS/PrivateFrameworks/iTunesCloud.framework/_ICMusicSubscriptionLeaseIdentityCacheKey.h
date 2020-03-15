@@ -17,10 +17,10 @@
     NSString *_carrierBundleDeviceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *carrierBundleDeviceIdentifier; // @synthesize carrierBundleDeviceIdentifier=_carrierBundleDeviceIdentifier;
 @property(readonly, copy, nonatomic) NSNumber *DSID; // @synthesize DSID=_DSID;
 @property(readonly, copy, nonatomic) NSNumber *delegatedDSID; // @synthesize delegatedDSID=_delegatedDSID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

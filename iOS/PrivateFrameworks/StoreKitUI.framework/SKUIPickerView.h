@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     NSArray *_titles;
 }
 
-@property(nonatomic) __weak id <SKUIPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
 - (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;

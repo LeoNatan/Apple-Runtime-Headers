@@ -15,8 +15,8 @@
     BOOL _showGroupingPreview;
 }
 
-@property(nonatomic) BOOL showGroupingPreview; // @synthesize showGroupingPreview=_showGroupingPreview;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL showGroupingPreview; // @synthesize showGroupingPreview=_showGroupingPreview;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (void)accessibilitySetValue:(id)arg1 forAttribute:(id)arg2;
 - (BOOL)accessibilityIsAttributeSettable:(id)arg1;

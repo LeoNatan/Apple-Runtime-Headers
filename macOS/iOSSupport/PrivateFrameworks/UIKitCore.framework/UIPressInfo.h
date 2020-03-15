@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class UIKey;
+
 @interface UIPressInfo : NSObject
 {
     BOOL _longClick;
@@ -17,9 +19,12 @@
     unsigned long long _gameControllerComponent;
     double _force;
     unsigned long long _clickCount;
+    UIKey *_key;
 }
 
 + (id)_keyboardPressInfoForType:(long long)arg1 isKeyDown:(BOOL)arg2 timestamp:(double)arg3 contextID:(unsigned int)arg4;
+- (void).cxx_destruct;
+@property(retain, nonatomic) UIKey *key; // @synthesize key=_key;
 @property(nonatomic) unsigned int contextID; // @synthesize contextID=_contextID;
 @property(nonatomic, getter=isLongClick) BOOL longClick; // @synthesize longClick=_longClick;
 @property(nonatomic) unsigned long long clickCount; // @synthesize clickCount=_clickCount;

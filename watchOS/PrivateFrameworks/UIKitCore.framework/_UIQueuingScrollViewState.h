@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     _Bool _manual;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isManual) _Bool manual; // @synthesize manual=_manual;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isCompatibleWithTransitionInDirection:(int)arg1;
 - (id)initWithTransitionDirection:(int)arg1 view:(id)arg2 manual:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

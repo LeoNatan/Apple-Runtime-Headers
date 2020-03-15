@@ -29,11 +29,11 @@
 + (id)frozenObjectForObject:(id)arg1 createPartialObject:(BOOL)arg2;
 + (id)frozenObjectForObject:(id)arg1;
 + (Class)alternateUniverseClass;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cachedHash; // @synthesize cachedHash=_cachedHash;
 @property(retain, nonatomic) NSManagedObjectID *managedObjectID; // @synthesize managedObjectID=_managedObjectID;
 @property(nonatomic) BOOL isPartialObject; // @synthesize isPartialObject=_isPartialObject;
 @property(nonatomic) BOOL isNew; // @synthesize isNew;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1 ignoringProperties:(id)arg2;
 - (BOOL)isCompletelyEqual:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

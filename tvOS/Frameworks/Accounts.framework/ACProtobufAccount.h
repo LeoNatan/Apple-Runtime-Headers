@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 + (Class)enabledDataclassesType;
 + (Class)dataclassPropertiesType;
 + (Class)propertiesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dirtyDataclassProperties; // @synthesize dirtyDataclassProperties=_dirtyDataclassProperties;
 @property(retain, nonatomic) NSMutableArray *dirtyAccountProperties; // @synthesize dirtyAccountProperties=_dirtyAccountProperties;
 @property(retain, nonatomic) NSMutableArray *dirtyProperties; // @synthesize dirtyProperties=_dirtyProperties;
@@ -68,7 +69,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) ACProtobufAccountCredential *credential; // @synthesize credential=_credential;
 @property(retain, nonatomic) ACProtobufAccountType *accountType; // @synthesize accountType=_accountType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

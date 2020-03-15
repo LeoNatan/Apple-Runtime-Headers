@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     OADColorContext *mColorContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) OADColorContext *colorContext; // @synthesize colorContext=mColorContext;
 @property(readonly, nonatomic) OADFontScheme *fontScheme; // @synthesize fontScheme=mFontScheme;
 @property(readonly, nonatomic) OADStyleMatrix *styleMatrix; // @synthesize styleMatrix=mStyleMatrix;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) id <OADColorPalette> colorPalette;
 @property(readonly, nonatomic) OADColorMap *colorMap;

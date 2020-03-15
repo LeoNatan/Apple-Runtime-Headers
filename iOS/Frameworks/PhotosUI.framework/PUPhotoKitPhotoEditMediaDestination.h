@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_pendingRequestsByRequestIdentifier;
 }
 
-@property(readonly, nonatomic, getter=_pendingRequestsByRequestIdentifier) NSMutableDictionary *pendingRequestsByRequestIdentifier; // @synthesize pendingRequestsByRequestIdentifier=_pendingRequestsByRequestIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_pendingRequestsByRequestIdentifier) NSMutableDictionary *pendingRequestsByRequestIdentifier; // @synthesize pendingRequestsByRequestIdentifier=_pendingRequestsByRequestIdentifier;
 - (id)_fetchUpdatedAssetWithLocalIdentifier:(id)arg1 photoLibrary:(id)arg2;
 - (long long)_workImageVersionForContentEditingOutput:(id)arg1;
 - (void)_requestDidFinish:(id)arg1;

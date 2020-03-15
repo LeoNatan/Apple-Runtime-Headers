@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureViewWithDataDictionary:(id)arg1 andButtonViewElement:(id)arg2 existingView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *vibrantEffectView; // @synthesize vibrantEffectView=_vibrantEffectView;
 @property(retain, nonatomic) VUIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) VUILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUIComingSoonCardLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

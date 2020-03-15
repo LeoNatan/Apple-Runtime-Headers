@@ -18,13 +18,13 @@
     unsigned long long _tokenRequestID;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long tokenRequestID; // @synthesize tokenRequestID=_tokenRequestID;
 @property unsigned long long keyRequestID; // @synthesize keyRequestID=_keyRequestID;
 @property(readonly) WPDObjectDiscoveryData *keyAddressAndPayload; // @synthesize keyAddressAndPayload=_keyAddressAndPayload;
 @property(retain) WPDSearchPartyAgent *spAgent; // @synthesize spAgent=_spAgent;
 @property __weak WPDObjectDiscoveryManager *objectDiscoveryManager; // @synthesize objectDiscoveryManager=_objectDiscoveryManager;
 @property BOOL pendingSent; // @synthesize pendingSent=_pendingSent;
-- (void).cxx_destruct;
 - (void)sendTestRequest:(id)arg1;
 - (void)notifyClientObjectDiscoveryStateChange:(long long)arg1;
 - (void)notifyClientStateChange:(long long)arg1 Restricted:(BOOL)arg2;

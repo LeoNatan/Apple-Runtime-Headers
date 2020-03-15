@@ -23,6 +23,7 @@
 
 + (id)recoveryControllerWithDisplayMode:(id)arg1 timeoutDuration:(double)arg2;
 + (id)_recoveryControllerWithDisplayMode:(id)arg1 timeoutDuration:(double)arg2 iterateAvailableModes:(_Bool)arg3 iteratorDismissBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType iteratorDismissBlock; // @synthesize iteratorDismissBlock=_iteratorDismissBlock;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(nonatomic) long long remainingSeconds; // @synthesize remainingSeconds=_remainingSeconds;
@@ -31,12 +32,12 @@
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) CDUnknownBlockType dismissBlock; // @synthesize dismissBlock=_dismissBlock;
 @property(retain, nonatomic) PBSDisplayMode *displayMode; // @synthesize displayMode=_displayMode;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)_resetTimer;
 - (void)_destroyTimer;
 - (void)_updateTime;
 - (void)_dismissForReason:(long long)arg1;
+- (void)_forceDismiss;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)dealloc;

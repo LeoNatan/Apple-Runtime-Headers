@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
     _Bool _allowUnverifiedAccount;
     _Bool _canSetExplicitCodeOperationURL;
     NSString *_apsEnvironmentString;
-    int _isApplication;
+    int _contextType;
     NSString *_entitlementSpecifiedPCSServiceName;
     NSString *_applicationIdentifier;
     NSString *_clientPrefix;
@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     NSString *_applicationContainerPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canSetExplicitCodeOperationURL; // @synthesize canSetExplicitCodeOperationURL=_canSetExplicitCodeOperationURL;
 @property(nonatomic) _Bool allowUnverifiedAccount; // @synthesize allowUnverifiedAccount=_allowUnverifiedAccount;
 @property(nonatomic) _Bool canUseNonLegacyShareURL; // @synthesize canUseNonLegacyShareURL=_canUseNonLegacyShareURL;
@@ -61,9 +62,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool canSetEnvironment; // @synthesize canSetEnvironment=_canSetEnvironment;
 @property(nonatomic) _Bool canMasquerade; // @synthesize canMasquerade=_canMasquerade;
 @property(nonatomic) _Bool isCKSystemService; // @synthesize isCKSystemService=_isCKSystemService;
-@property(nonatomic) int isApplication; // @synthesize isApplication=_isApplication;
+@property(nonatomic) int contextType; // @synthesize contextType=_contextType;
 @property(retain, nonatomic) NSString *apsEnvironmentString; // @synthesize apsEnvironmentString=_apsEnvironmentString;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

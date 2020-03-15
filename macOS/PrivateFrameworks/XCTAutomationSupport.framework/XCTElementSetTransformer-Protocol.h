@@ -15,7 +15,6 @@
 @property BOOL stopsOnFirstMatch;
 @property(readonly) BOOL supportsAttributeKeyPathAnalysis;
 @property(copy) NSString *transformationDescription;
-@property(readonly) BOOL supportsRemoteEvaluation;
 - (NSSet *)requiredKeyPathsOrError:(id *)arg1;
 - (BOOL)canBeRemotelyEvaluatedWithCapabilities:(XCTCapabilities *)arg1;
 - (id <XCTMatchingElementIterator>)iteratorForInput:(XCElementSnapshot *)arg1;

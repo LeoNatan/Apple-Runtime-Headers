@@ -17,12 +17,12 @@
     NSString *_detail2String;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool detail1Dark; // @synthesize detail1Dark=_detail1Dark;
 @property(nonatomic) _Bool titleLight; // @synthesize titleLight=_titleLight;
 @property(copy, nonatomic) NSString *detail2String; // @synthesize detail2String=_detail2String;
 @property(copy, nonatomic) NSString *detail1String; // @synthesize detail1String=_detail1String;
 @property(copy, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
-- (void).cxx_destruct;
 
 @end
 

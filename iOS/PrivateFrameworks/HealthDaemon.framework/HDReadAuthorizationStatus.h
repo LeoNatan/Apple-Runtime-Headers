@@ -19,13 +19,15 @@
 
 + (id)notDerminedReadAuthorizationStatus;
 + (id)unrestrictedReadAuthorizationStatus;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *objectLimitAnchor; // @synthesize objectLimitAnchor=_objectLimitAnchor;
 @property(readonly, copy, nonatomic) NSNumber *deletedObjectBaselineAnchor; // @synthesize deletedObjectBaselineAnchor=_deletedObjectBaselineAnchor;
 @property(readonly, copy, nonatomic) NSString *restrictedBundleIdentifier; // @synthesize restrictedBundleIdentifier=_restrictedBundleIdentifier;
 @property(readonly, copy, nonatomic) NSSet *restrictedSourceEntities; // @synthesize restrictedSourceEntities=_restrictedSourceEntities;
 @property(readonly, copy, nonatomic) _HKAuthorizationRecord *authorizationRecord; // @synthesize authorizationRecord=_authorizationRecord;
-- (void).cxx_destruct;
 - (id)description;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) HDSQLitePredicate *authorizationPredicate;
 @property(readonly, nonatomic) _Bool isAuthorizationDetermined;
 - (void)disableSharing;

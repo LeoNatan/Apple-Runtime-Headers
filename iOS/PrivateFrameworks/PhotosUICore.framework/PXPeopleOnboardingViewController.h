@@ -18,11 +18,11 @@
     PXPeopleSectionedDataSource *_peopleDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXPeopleSectionedDataSource *peopleDataSource; // @synthesize peopleDataSource=_peopleDataSource;
 @property(retain, nonatomic) PXPeopleStatusViewController *statusViewController; // @synthesize statusViewController=_statusViewController;
 @property(retain, nonatomic) PXPeopleProgressManager *progressManager; // @synthesize progressManager=_progressManager;
 @property(nonatomic) unsigned long long onboardStatus; // @synthesize onboardStatus=_onboardStatus;
-- (void).cxx_destruct;
 - (void)_progressChanged:(id)arg1;
 - (void)_pushToPeopleHome:(id)arg1;
 - (id)peopleHomeController;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) CNInstantMessageAddress *imAddress; // @synthesize imAddress=_imAddress;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CNInstantMessageAddress *imAddress; // @synthesize imAddress=_imAddress;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

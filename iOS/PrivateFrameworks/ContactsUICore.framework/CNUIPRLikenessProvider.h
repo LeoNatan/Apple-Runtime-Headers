@@ -15,8 +15,8 @@
     PRLikeness *_likeness;
 }
 
-@property(readonly, nonatomic) PRLikeness *likeness; // @synthesize likeness=_likeness;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PRLikeness *likeness; // @synthesize likeness=_likeness;
 - (unsigned long long)_cnui_likenessType;
 - (id)_cnui_likeness;
 - (id)initWithPRLikeness:(id)arg1;

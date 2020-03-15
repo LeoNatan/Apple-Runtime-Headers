@@ -17,10 +17,10 @@
 }
 
 + (unsigned int *)allExportPropertyKeysForEntityClass:(Class)arg1 returnedCount:(unsigned int *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class entityClass; // @synthesize entityClass=_entityClass;
 @property(readonly, nonatomic) ML3MusicLibrary *library; // @synthesize library=_library;
 @property(readonly, nonatomic) long long persistentId; // @synthesize persistentId=_persistentId;
-- (void).cxx_destruct;
 - (id)_allExportPropertyNames;
 - (id)_propertyNamesFromKeys:(unsigned int *)arg1 numKeys:(unsigned int)arg2;
 - (id)_propertyNameForKey:(unsigned int)arg1;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     PXPlacesAlbumCoverProvider *_placesAlbumCoverProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXPlacesAlbumCoverProvider *placesAlbumCoverProvider; // @synthesize placesAlbumCoverProvider=_placesAlbumCoverProvider;
 - (id)title;
-- (void).cxx_destruct;
 - (void)_updateSubtitleInContentView:(id)arg1 animated:(_Bool)arg2;
 - (void)_updateImageInContentView:(id)arg1 animated:(_Bool)arg2;
 - (void)_extendedTraitCollectionDidChange:(unsigned long long)arg1;

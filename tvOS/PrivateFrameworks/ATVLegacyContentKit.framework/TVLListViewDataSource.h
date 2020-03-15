@@ -17,8 +17,8 @@
 }
 
 + (void)registerCellTypesWithListView:(id)arg1;
-@property(retain, nonatomic) id <TVLSectionedMenuElement> menuElement; // @synthesize menuElement=_menuElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <TVLSectionedMenuElement> menuElement; // @synthesize menuElement=_menuElement;
 - (double)cellHeightForElementType:(id)arg1;
 - (Class)cellClassForElementType:(id)arg1;
 - (id)reuseIdentifierForElementType:(id)arg1;

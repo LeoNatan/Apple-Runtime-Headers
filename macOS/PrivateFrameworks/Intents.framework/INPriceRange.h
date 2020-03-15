@@ -21,10 +21,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)_priceWithPriceRangeValue:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(readonly) NSDecimalNumber *maximumPrice; // @synthesize maximumPrice=_maximumPrice;
 @property(readonly) NSDecimalNumber *minimumPrice; // @synthesize minimumPrice=_minimumPrice;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     struct CGSize _contentSize;
 }
 
-@property(readonly, nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 - (id)_layoutInfoForIndicatorInfo:(id)arg1 withIndex:(long long)arg2;
 - (id)_layoutInfoForTileWithIndex:(long long)arg1 kind:(id)arg2;
 - (id)preferredScrollInfo;

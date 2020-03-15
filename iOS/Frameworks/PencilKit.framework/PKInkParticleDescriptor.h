@@ -24,14 +24,14 @@
 + (id)arrayFromVector:(vector_b67dfe3a)arg1;
 + (id)particleDescriptorWithName:(id)arg1 texture:(struct CGImage *)arg2 particleSpacing:(double)arg3 particleCount:(long long)arg4 particleSize:(struct CGSize)arg5 particleRotation:(unsigned long long)arg6;
 + (id)particleDescriptorWithName:(id)arg1 particleSpacing:(double)arg2 particleCount:(long long)arg3 particleSize:(struct CGSize)arg4 particleRotation:(unsigned long long)arg5;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long particleRotation; // @synthesize particleRotation=_particleRotation;
 @property(nonatomic) struct CGSize particleSize; // @synthesize particleSize=_particleSize;
 @property(nonatomic) long long particleCount; // @synthesize particleCount=_particleCount;
 @property(nonatomic) double particleSpacing; // @synthesize particleSpacing=_particleSpacing;
 @property(retain, nonatomic) struct CGImage *textureImage; // @synthesize textureImage=_textureImage;
 @property(copy, nonatomic) NSString *textureName; // @synthesize textureName=_textureName;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (double)dynamicStep;
 - (void)setDynamicStep:(double)arg1;
 - (void)setAdjustEndCapParticleAlpha:(_Bool)arg1;

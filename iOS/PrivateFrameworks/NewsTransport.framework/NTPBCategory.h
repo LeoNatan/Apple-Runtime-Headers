@@ -24,13 +24,13 @@
 + (Class)categoryHierarchyType;
 + (Class)recommendedChannelsType;
 + (Class)recommendedTopicsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *curatedTagIds; // @synthesize curatedTagIds=_curatedTagIds;
 @property(retain, nonatomic) NSMutableArray *categoryHierarchys; // @synthesize categoryHierarchys=_categoryHierarchys;
 @property(retain, nonatomic) NSMutableArray *recommendedChannels; // @synthesize recommendedChannels=_recommendedChannels;
 @property(retain, nonatomic) NSMutableArray *recommendedTopics; // @synthesize recommendedTopics=_recommendedTopics;
 @property(retain, nonatomic) NSString *entityId; // @synthesize entityId=_entityId;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

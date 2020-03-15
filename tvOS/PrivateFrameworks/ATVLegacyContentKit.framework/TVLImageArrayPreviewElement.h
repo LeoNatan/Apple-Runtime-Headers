@@ -13,8 +13,8 @@
     NSArray *_images;
 }
 
-@property(retain, nonatomic) NSArray *images; // @synthesize images=_images;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *images; // @synthesize images=_images;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

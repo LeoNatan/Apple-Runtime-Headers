@@ -20,13 +20,13 @@
 
 + (id)readOnlyContextToleratingInaccessibleFault;
 + (id)contextToleratingInaccessibleFaultForBackingStore:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *deletedSuggestionInfoUniqueKeys; // @synthesize deletedSuggestionInfoUniqueKeys=_deletedSuggestionInfoUniqueKeys;
 @property(retain) NSMutableArray *confirmedSuggestedEvents; // @synthesize confirmedSuggestedEvents=_confirmedSuggestedEvents;
 @property(retain) NSMutableDictionary *modifiedNotificationMap; // @synthesize modifiedNotificationMap=_modifiedNotificationMap;
 @property(retain) NSMutableDictionary *modifiedItemMap; // @synthesize modifiedItemMap=_modifiedItemMap;
 @property(retain) NSMutableDictionary *modifiedCalendarMap; // @synthesize modifiedCalendarMap=_modifiedCalendarMap;
 @property(retain) NSMutableDictionary *modifiedSourceMap; // @synthesize modifiedSourceMap=_modifiedSourceMap;
-- (void).cxx_destruct;
 - (BOOL)trackModifiedNotifications:(id)arg1 error:(id *)arg2;
 - (BOOL)trackDeletedSuggestionInfoUniqueKeys:(id)arg1 error:(id *)arg2;
 - (BOOL)trackConfirmedSuggestedEvents:(id)arg1 error:(id *)arg2;

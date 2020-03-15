@@ -15,10 +15,10 @@
     unsigned long long mObjectID;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int classID; // @synthesize classID=mClassID;
 @property(readonly) unsigned long long objectID; // @synthesize objectID=mObjectID;
 @property(readonly) __weak id <aura_Object> object; // @synthesize object=mObject;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

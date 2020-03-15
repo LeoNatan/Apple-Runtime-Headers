@@ -19,10 +19,10 @@
 + (id)addressForMemory:(unsigned long long)arg1 inProcess:(int)arg2;
 + (id)addressForPosixSharedMemoryWithName:(id)arg1;
 + (id)schemes;
+- (void).cxx_destruct;
 // Error parsing type for property sharedMemory:
 // Property attributes: T^{DTXSharedMemory=QQQIIIIAiAiAIAiAiAiAiIII[0c]},R,N,V_shm
 
-- (void).cxx_destruct;
 - (id)permittedBlockCompressionTypes;
 - (id)localAddresses;
 - (void)disconnect;

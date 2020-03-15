@@ -23,6 +23,7 @@
     double _amplitude;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL vertical; // @synthesize vertical=_vertical;
 @property(nonatomic) BOOL horizontal; // @synthesize horizontal=_horizontal;
 @property(nonatomic) BOOL windowed; // @synthesize windowed=_windowed;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long viewHierarchyIndex; // @synthesize viewHierarchyIndex=_viewHierarchyIndex;
 @property(retain, nonatomic) UIView *motionContentView; // @synthesize motionContentView=_motionContentView;
 @property(retain, nonatomic) UIView *clippingView; // @synthesize clippingView=_clippingView;
-- (void).cxx_destruct;
 - (void)updateEdgeAntialiasingForViewport:(id)arg1;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;
 - (void)destroyMotionDetection;

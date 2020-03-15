@@ -21,9 +21,9 @@
 + (_Bool)bluetoothAndWiFiEnabled;
 + (_Bool)autoUnlockEnabled:(unsigned int)arg1;
 + (_Bool)autoUnlockSupported;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) id <SFAutoUnlockManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)authPromptInfoWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)autoUnlockStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)failedUnlockWithError:(id)arg1;

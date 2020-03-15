@@ -14,9 +14,9 @@
     double _pedestrianTraceStartRelativeTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double pedestrianTraceStartRelativeTimestamp; // @synthesize pedestrianTraceStartRelativeTimestamp=_pedestrianTraceStartRelativeTimestamp;
 @property(copy, nonatomic) NSString *pedestrianTracePath; // @synthesize pedestrianTracePath=_pedestrianTracePath;
-- (void).cxx_destruct;
 
 @end
 

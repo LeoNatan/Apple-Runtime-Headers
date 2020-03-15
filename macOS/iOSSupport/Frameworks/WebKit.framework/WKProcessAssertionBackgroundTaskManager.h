@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @interface WKProcessAssertionBackgroundTaskManager : NSObject
 {
     unsigned long long _backgroundTask;
-    struct HashSet<WebKit::ProcessAndUIAssertion *, WTF::PtrHash<WebKit::ProcessAndUIAssertion *>, WTF::HashTraits<WebKit::ProcessAndUIAssertion *>> _assertionsNeedingBackgroundTask;
+    struct WeakHashSet<WebKit::ProcessAndUIAssertion> _assertionsNeedingBackgroundTask;
     BOOL _applicationIsBackgrounded;
     CDUnknownBlockType _pendingTaskReleaseTask;
 }

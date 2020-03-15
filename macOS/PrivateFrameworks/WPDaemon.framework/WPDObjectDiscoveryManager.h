@@ -25,6 +25,7 @@
     unsigned long long _advertHash;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long advertHash; // @synthesize advertHash=_advertHash;
 @property(retain) NSDictionary *advertOptions; // @synthesize advertOptions=_advertOptions;
 @property __weak NSUUID *advertClientUUID; // @synthesize advertClientUUID=_advertClientUUID;
@@ -34,7 +35,6 @@
 @property(readonly) __weak NSObject<OS_dispatch_queue> *serverQueue; // @synthesize serverQueue=_serverQueue;
 @property BOOL scanningDisabled; // @synthesize scanningDisabled=_scanningDisabled;
 @property(readonly) BOOL scanning; // @synthesize scanning=_scanning;
-- (void).cxx_destruct;
 - (void)peripheralManager:(id)arg1 didStopAdvertisingWithError:(id)arg2;
 - (void)peripheralManagerDidStartAdvertising:(id)arg1 error:(id)arg2;
 - (id)spoofNearOwnerWithPayload:(id)arg1;

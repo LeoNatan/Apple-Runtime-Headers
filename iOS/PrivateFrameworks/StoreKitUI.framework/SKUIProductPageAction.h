@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)actionWithType:(long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerBlock; // @synthesize viewControllerBlock=_viewControllerBlock;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_url;
 @property(retain, nonatomic) SKUIItem *item; // @synthesize item=_item;
 @property(nonatomic) long long actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *viewController;
 
 @end

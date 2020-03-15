@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) TVCKAcquisitionProperties *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 
 @end
 

@@ -24,12 +24,12 @@
     unsigned long long _alignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) unsigned long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic) __weak id <SiriTVUITemplatedViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *groupedSubviews; // @synthesize groupedSubviews=_groupedSubviews;
 @property(nonatomic) _Bool hasPriorityLayout; // @synthesize hasPriorityLayout;
-- (void).cxx_destruct;
 - (void)removeGroupedSubview:(id)arg1;
 - (void)addGroupedSubview:(id)arg1;
 - (struct CGSize)_cachedSizeThatFitsGroupedSubview:(id)arg1 forSize:(struct CGSize)arg2 forPartialLayout:(_Bool)arg3;

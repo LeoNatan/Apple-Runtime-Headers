@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _numSuppressedReports;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numSuppressedReports; // @synthesize numSuppressedReports=_numSuppressedReports;
 @property(retain, nonatomic) NSDate *suppressReportingUntil; // @synthesize suppressReportingUntil=_suppressReportingUntil;
-- (void).cxx_destruct;
 
 @end
 

@@ -21,12 +21,12 @@
 }
 
 + (_Bool)reasonableDistanceBetweenEventLocation:(id)arg1 andLocation:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
 @property(retain, nonatomic) RTEventModelProvider *eventModelProvider; // @synthesize eventModelProvider=_eventModelProvider;
 @property(retain, nonatomic) RTEventManager *eventManager; // @synthesize eventManager=_eventManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)fetchPredictedExitDatesWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchPredictedLocationsOfInterestWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchNextPredictedLocationsOfInterestWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;

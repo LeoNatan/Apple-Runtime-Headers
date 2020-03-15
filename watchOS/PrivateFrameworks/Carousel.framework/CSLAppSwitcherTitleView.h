@@ -19,11 +19,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) float scale; // @synthesize scale=_scale;
 @property(nonatomic) float yTranslation; // @synthesize yTranslation=_yTranslation;
 @property(retain, nonatomic) UIView *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)animateOut;
 - (void)animateIn;
 - (void)layoutSubviews;

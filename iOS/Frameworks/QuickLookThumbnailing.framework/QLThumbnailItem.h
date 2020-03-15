@@ -16,6 +16,7 @@
     long long _fileExtensionHandle;
     NSURL *_url;
     FPSandboxingURLWrapper *_urlWrapperForExtension;
+    FPSandboxingURLWrapper *_urlWrapperForParentDirectory;
     NSData *_data;
     NSString *_overriddenContentType;
     NSString *_computedContentType;
@@ -24,14 +25,15 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool needsAccessToExternalResources; // @synthesize needsAccessToExternalResources=_needsAccessToExternalResources;
+@property(readonly) FPSandboxingURLWrapper *urlWrapperForParentDirectory; // @synthesize urlWrapperForParentDirectory=_urlWrapperForParentDirectory;
 @property unsigned long long downloadStatus; // @synthesize downloadStatus=_downloadStatus;
 @property(copy) NSString *computedContentType; // @synthesize computedContentType=_computedContentType;
 @property(copy, nonatomic) NSString *overriddenContentType; // @synthesize overriddenContentType=_overriddenContentType;
 @property(readonly) NSData *data; // @synthesize data=_data;
 @property(readonly) FPSandboxingURLWrapper *urlWrapperForExtension; // @synthesize urlWrapperForExtension=_urlWrapperForExtension;
 @property(readonly) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (_Bool)needsDownload;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -39,6 +41,7 @@
 - (void)issueFileExtension;
 - (void)dealloc;
 - (id)initWithData:(id)arg1 contentType:(id)arg2;
+- (id)initWithURL:(id)arg1 URLWrapperForExtension:(id)arg2 URLWrapperForParentDirectory:(id)arg3;
 - (id)initWithURL:(id)arg1 URLWrapperForExtension:(id)arg2;
 - (id)initWithURL:(id)arg1;
 

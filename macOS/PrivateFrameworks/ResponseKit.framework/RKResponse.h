@@ -15,10 +15,10 @@
     NSString *_category;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *category; // @synthesize category=_category;
 @property(retain) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(retain) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)initWithString:(id)arg1 attributes:(id)arg2 category:(id)arg3;
 
 @end

@@ -102,6 +102,7 @@
 + (id)unitTestableLibraryForTest:(id)arg1 basePath:(id)arg2 setupSQLFilenames:(id)arg3;
 + (id)databasePathForUnitTest:(id)arg1 withBasePath:(id)arg2;
 + (id)jaliscoGetSortedMediaKinds:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
 @property(nonatomic, getter=isUsingSharedLibraryPath) _Bool usingSharedLibraryPath; // @synthesize usingSharedLibraryPath=_usingSharedLibraryPath;
 @property(retain, nonatomic) NSArray *libraryPublicContainerFilterPredicates; // @synthesize libraryPublicContainerFilterPredicates=_libraryPublicContainerFilterPredicates;
@@ -112,7 +113,6 @@
 @property(readonly, copy, nonatomic) NSString *accountDSID; // @synthesize accountDSID=_accountDSID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) ML3LibraryNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
-- (void).cxx_destruct;
 - (void)_onQueue_updateDatabaseConnectionsProfilingLevel;
 - (void)_postClientNotificationWithDistributedName:(id)arg1 localName:(id)arg2;
 - (void)_tearDownNotificationManager;

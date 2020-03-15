@@ -18,11 +18,11 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool removed; // @synthesize removed=_removed;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(copy, nonatomic) NSString *userDefaultsKey; // @synthesize userDefaultsKey=_userDefaultsKey;
 @property(retain, nonatomic) REMUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)stopObserving;
 - (id)initWithUserDefaults:(id)arg1 key:(id)arg2 block:(CDUnknownBlockType)arg3;

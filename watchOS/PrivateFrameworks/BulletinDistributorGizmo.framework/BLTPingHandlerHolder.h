@@ -19,11 +19,11 @@
     unsigned int _ackType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int ackType; // @synthesize ackType=_ackType;
 @property(nonatomic) _Bool forNotification; // @synthesize forNotification=_forNotification;
 @property(nonatomic) _Bool forBulletin; // @synthesize forBulletin=_forBulletin;
 @property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 - (void)pingWithBulletin:(id)arg1 ack:(CDUnknownBlockType)arg2;
 - (void)pingWithRecordID:(id)arg1 forSectionID:(id)arg2 ack:(CDUnknownBlockType)arg3;
 - (void)_performPingWithAckableForwardBlock:(CDUnknownBlockType)arg1 ackableNoParametersBlock:(CDUnknownBlockType)arg2 noAckBlock:(CDUnknownBlockType)arg3 clientAck:(CDUnknownBlockType)arg4;

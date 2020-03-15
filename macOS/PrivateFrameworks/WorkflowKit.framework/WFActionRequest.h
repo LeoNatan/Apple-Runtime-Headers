@@ -15,10 +15,10 @@
     WFAction *_result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFAction *result; // @synthesize result=_result;
 @property(readonly, nonatomic) NSDictionary *serializedParameters; // @synthesize serializedParameters=_serializedParameters;
 @property(readonly, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithActionIdentifier:(id)arg1 serializedParameters:(id)arg2;
 

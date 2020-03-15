@@ -19,13 +19,13 @@
     id <UIViewControllerPreviewing_Internal> _previewingContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIViewControllerPreviewing_Internal> previewingContext; // @synthesize previewingContext=_previewingContext;
 @property(readonly, nonatomic) NSArray *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
 @property(nonatomic) __weak id <UIPreviewInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIGestureRecognizer *beginPreviewGestureRecognizer; // @synthesize beginPreviewGestureRecognizer;
 @property(readonly, nonatomic) UIGestureRecognizer *presentationGestureRecognizer; // @synthesize presentationGestureRecognizer;
 @property(retain, nonatomic) UIInteractionProgress *interactionProgressForPresentation; // @synthesize interactionProgressForPresentation;
-- (void).cxx_destruct;
 - (void)_previewPresentationControllerDidScheduleDismiss;
 - (void)_finalizeInteractivePreview;
 - (void)cancelInteractivePreview;

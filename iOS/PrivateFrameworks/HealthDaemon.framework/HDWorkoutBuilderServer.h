@@ -51,13 +51,13 @@
 + (_Bool)finishAllWorkoutBuildersForClient:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (void)finishDetachedBuilderForEntity:(id)arg1 sessionEndDate:(id)arg2 profile:(id)arg3;
 + (id)recoveredWorkoutBuilderConfigurationForClient:(id)arg1 sessionIdentifier:(id)arg2 builderIdentifierOut:(id *)arg3 profile:(id)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDateInterval *dataInterval; // @synthesize dataInterval=_dataInterval;
 @property(copy, nonatomic) NSDate *workoutEndDate; // @synthesize workoutEndDate=_workoutEndDate;
 @property(copy, nonatomic) NSDate *workoutStartDate; // @synthesize workoutStartDate=_workoutStartDate;
 @property(retain, nonatomic) NSArray *workoutEvents; // @synthesize workoutEvents=_workoutEvents;
 @property(retain, nonatomic) NSMutableDictionary *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) HKWorkoutBuilderConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_lock_addQuantityTypesIncludedWhilePausedFromSource:(id)arg1 transaction:(id)arg2;
 - (void)_setupDataSource:(id)arg1 identifier:(id)arg2;
 - (void)didInvalidateTaskServer:(id)arg1;

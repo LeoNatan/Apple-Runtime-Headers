@@ -20,9 +20,9 @@
 + (void)setUserAvailable:(_Bool)arg1;
 + (_Bool)isUserAvailable;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowStatusIndicator; // @synthesize shouldShowStatusIndicator=_shouldShowStatusIndicator;
 @property(nonatomic) _Bool shouldObserveUnavailabilityDefaultChanges; // @synthesize shouldObserveUnavailabilityDefaultChanges=_shouldObserveUnavailabilityDefaultChanges;
-- (void).cxx_destruct;
 - (id)_unavailabilityText:(_Bool)arg1;
 - (void)_postNotificationName:(id)arg1;
 - (void)_handleDeviceFirstUnlock;

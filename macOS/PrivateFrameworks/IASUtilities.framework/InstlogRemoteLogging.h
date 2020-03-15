@@ -20,11 +20,11 @@
 
 + (id)nvramStringForKey:(id)arg1;
 + (BOOL)shouldDoRemoteLogging;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *fileKeyToPath; // @synthesize fileKeyToPath=_fileKeyToPath;
 @property(retain) NSPipe *logFilePipe; // @synthesize logFilePipe=_logFilePipe;
 @property int state; // @synthesize state=_state;
 @property(retain) ILCConnection *logServerConnection; // @synthesize logServerConnection=_logServerConnection;
-- (void).cxx_destruct;
 - (void)sysdiagnoseDidSucceedForFiles:(id)arg1;
 - (void)sysdiagnoseDidFailForFiles:(id)arg1;
 - (void)gatherSysdiagnoseDataWithHandles:(id)arg1;

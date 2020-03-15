@@ -15,9 +15,9 @@
     MPUBorderDrawingCache *_borderDrawingCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPUBorderDrawingCache *borderDrawingCache; // @synthesize borderDrawingCache=_borderDrawingCache;
 @property(copy, nonatomic) MPUBorderConfiguration *borderConfiguration; // @synthesize borderConfiguration=_borderConfiguration;
-- (void).cxx_destruct;
 - (void)_updateBorderImageView;
 - (void)_borderDrawingCacheWasInvalidated:(id)arg1;
 - (void)layoutSubviews;

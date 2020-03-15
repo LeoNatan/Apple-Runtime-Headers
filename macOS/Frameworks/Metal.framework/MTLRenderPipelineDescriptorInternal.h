@@ -72,6 +72,10 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)logicOperation;
 - (void)setLogicOperationEnabled:(BOOL)arg1;
 - (BOOL)isLogicOperationEnabled;
+- (void)setMaxVertexAmplificationCount:(unsigned long long)arg1;
+- (unsigned long long)maxVertexAmplificationCount;
+- (void)setVertexAmplificationMode:(unsigned long long)arg1;
+- (unsigned long long)vertexAmplificationMode;
 - (void)setRasterizationEnabled:(BOOL)arg1;
 - (BOOL)isRasterizationEnabled;
 - (void)setAlphaToOneEnabled:(BOOL)arg1;

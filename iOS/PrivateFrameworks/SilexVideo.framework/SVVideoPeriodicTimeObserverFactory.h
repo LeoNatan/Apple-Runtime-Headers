@@ -18,10 +18,10 @@
     id <SVTimeConverting> _timeConverter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVTimeConverting> timeConverter; // @synthesize timeConverter=_timeConverter;
 @property(readonly, nonatomic) id <SVVideoPlaybackStateObserverFactory> playbackStateObserverFactory; // @synthesize playbackStateObserverFactory=_playbackStateObserverFactory;
 @property(readonly, nonatomic) id <SVPlayerProviding> playerProvider; // @synthesize playerProvider=_playerProvider;
-- (void).cxx_destruct;
 - (id)createPeriodicTimeObserverForVideo:(id)arg1;
 - (id)initWithPlayerProvider:(id)arg1 playbackStateObserverFactory:(id)arg2 timeConverter:(id)arg3;
 

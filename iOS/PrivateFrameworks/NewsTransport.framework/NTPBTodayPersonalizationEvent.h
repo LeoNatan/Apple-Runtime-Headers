@@ -13,6 +13,7 @@
 @interface NTPBTodayPersonalizationEvent : PBCodable <NSCopying>
 {
     double _createdAt;
+    long long _groupType;
     long long _orderInGroup;
     long long _overallOrder;
     long long _sectionOrder;
@@ -23,6 +24,7 @@
     NSString *_personalizationSectionFeatureId;
     struct {
         unsigned int createdAt:1;
+        unsigned int groupType:1;
         unsigned int orderInGroup:1;
         unsigned int overallOrder:1;
         unsigned int sectionOrder:1;
@@ -31,6 +33,8 @@
 }
 
 + (Class)headlineTopicsType;
+- (void).cxx_destruct;
+@property(nonatomic) long long groupType; // @synthesize groupType=_groupType;
 @property(retain, nonatomic) NSString *personalizationSectionFeatureId; // @synthesize personalizationSectionFeatureId=_personalizationSectionFeatureId;
 @property(nonatomic) long long sectionOrder; // @synthesize sectionOrder=_sectionOrder;
 @property(nonatomic) long long overallOrder; // @synthesize overallOrder=_overallOrder;
@@ -39,7 +43,6 @@
 @property(retain, nonatomic) NSString *headlinePublisher; // @synthesize headlinePublisher=_headlinePublisher;
 @property(retain, nonatomic) NSMutableArray *headlineTopics; // @synthesize headlineTopics=_headlineTopics;
 @property(retain, nonatomic) NSString *articleId; // @synthesize articleId=_articleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -48,6 +51,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasGroupType;
 @property(readonly, nonatomic) _Bool hasPersonalizationSectionFeatureId;
 @property(nonatomic) _Bool hasSectionOrder;
 @property(nonatomic) _Bool hasOverallOrder;

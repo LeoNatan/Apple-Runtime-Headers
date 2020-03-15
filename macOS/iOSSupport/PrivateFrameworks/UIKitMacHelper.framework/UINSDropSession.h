@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _operationMask;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long operationMask; // @synthesize operationMask=_operationMask;
 @property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) unsigned int sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (void)sawDragEndEvent;
 - (void)setHandler:(id)arg1;
 - (void)takePotentialDropOperation:(unsigned long long)arg1;

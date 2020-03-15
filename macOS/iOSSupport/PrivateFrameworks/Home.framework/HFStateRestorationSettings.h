@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) int notifyRegistrationToken; // @synthesize notifyRegistrationToken=_notifyRegistrationToken;
-- (void).cxx_destruct;
 - (void)_selectedHomeDidChange;
 - (void)_setHomeAppPreferencesValue:(id)arg1 forKey:(id)arg2;
 - (id)_homeAppPreferencesValueForKey:(id)arg1 ofClass:(Class)arg2;

@@ -13,8 +13,8 @@
     NSMutableString *_passcodeMutableString;
 }
 
-@property(retain) NSMutableString *passcodeMutableString; // @synthesize passcodeMutableString=_passcodeMutableString;
 - (void).cxx_destruct;
+@property(retain) NSMutableString *passcodeMutableString; // @synthesize passcodeMutableString=_passcodeMutableString;
 - (void)clear;
 - (void)deleteLastCharacter;
 - (void)appendCharacter:(id)arg1;

@@ -28,6 +28,7 @@
     struct CGPoint _contentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriUISuggestionsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL springAnimateIn; // @synthesize springAnimateIn=_springAnimateIn;
 @property(nonatomic) struct CGPoint contentOffset; // @synthesize contentOffset=_contentOffset;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *largeSubheaderText; // @synthesize largeSubheaderText=_largeSubheaderText;
 @property(copy, nonatomic) NSString *subheaderText; // @synthesize subheaderText=_subheaderText;
 @property(copy, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
-- (void).cxx_destruct;
 - (id)accessibilityIdentifier;
 - (id)accessibilityChildren;
 - (id)accessibilityLabel;

@@ -17,12 +17,12 @@
     unsigned long long _attachmentSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL attachmentIsAutoArchived; // @synthesize attachmentIsAutoArchived=_attachmentIsAutoArchived;
 @property(readonly, nonatomic) BOOL attachmentIsDownloaded; // @synthesize attachmentIsDownloaded=_attachmentIsDownloaded;
 @property(readonly, nonatomic) unsigned long long attachmentSize; // @synthesize attachmentSize=_attachmentSize;
 @property(readonly, copy, nonatomic) NSString *attachmentExtension; // @synthesize attachmentExtension=_attachmentExtension;
 @property(readonly, copy, nonatomic) NSString *attachmentName; // @synthesize attachmentName=_attachmentName;
-- (void).cxx_destruct;
 - (BOOL)isEqualTo:(id)arg1;
 - (id)description;
 - (id)init;

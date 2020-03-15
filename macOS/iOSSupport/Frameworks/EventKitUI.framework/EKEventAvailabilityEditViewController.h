@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     UITableView *_table;
 }
 
-@property(nonatomic) long long availability; // @synthesize availability=_availability;
 - (void).cxx_destruct;
+@property(nonatomic) long long availability; // @synthesize availability=_availability;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)_selectRow:(unsigned long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

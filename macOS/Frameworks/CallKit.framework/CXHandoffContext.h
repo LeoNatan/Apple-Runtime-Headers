@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(copy, nonatomic) CXHandle *remoteHandle; // @synthesize remoteHandle=_remoteHandle;
 @property(nonatomic, getter=isOutgoing) BOOL outgoing; // @synthesize outgoing=_outgoing;
 @property(readonly, copy, nonatomic) NSString *handoffIdentifier; // @synthesize handoffIdentifier=_handoffIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToHandoffContext:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

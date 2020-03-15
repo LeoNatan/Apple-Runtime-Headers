@@ -41,6 +41,7 @@
 + (id)entryEventPointMemoryTracking;
 + (id)entryEventPointDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property long long processExitSummaryCount; // @synthesize processExitSummaryCount=_processExitSummaryCount;
 @property BOOL launchServiceStatsEnabled; // @synthesize launchServiceStatsEnabled=_launchServiceStatsEnabled;
 @property(retain) NSDate *lastEntryDate; // @synthesize lastEntryDate=_lastEntryDate;
@@ -53,7 +54,6 @@
 @property double currentCachedTotalCPUTime; // @synthesize currentCachedTotalCPUTime=_currentCachedTotalCPUTime;
 @property(retain) NSDate *previousCacheDate; // @synthesize previousCacheDate=_previousCacheDate;
 @property(retain) NSDate *currentCachedDate; // @synthesize currentCachedDate=_currentCachedDate;
-- (void).cxx_destruct;
 - (id)trimConditionsForEntryKey:(id)arg1 forTrimDate:(id)arg2;
 - (void)logEventIntervalKernelTaskMonitor;
 - (int)get_kthread_list:(unsigned long long **)arg1;

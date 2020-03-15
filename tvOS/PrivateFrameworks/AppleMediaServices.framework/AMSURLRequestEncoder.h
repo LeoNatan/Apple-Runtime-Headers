@@ -10,13 +10,14 @@
 #import <AppleMediaServices/AMSBagConsumer_Project-Protocol.h>
 #import <AppleMediaServices/AMSRequestEncoding-Protocol.h>
 
-@class ACAccount, AMSKeychainOptions, AMSProcessInfo, NSDictionary, NSString, NSURLSessionTask;
+@class ACAccount, AMSKeychainOptions, AMSProcessInfo, AMSSigningSecurityService, NSDictionary, NSString, NSURLSessionTask;
 @protocol AMSBagProtocol, AMSResponseDecoding, AMSURLBagContract, OS_dispatch_queue;
 
 @interface AMSURLRequestEncoder : NSObject <AMSBagConsumer_Project, AMSBagConsumer, AMSRequestEncoding>
 {
     _Bool _compressRequestBody;
     _Bool _disableResponseDecoding;
+    _Bool _enableRemoteSecuritySigning;
     _Bool _includeClientVersions;
     _Bool _shouldSetCookiesFromResponse;
     _Bool _shouldSetStorefrontFromResponse;
@@ -35,6 +36,7 @@
     id <AMSURLBagContract> _bagContract;
     NSObject<OS_dispatch_queue> *_internalQueue;
     long long _encodeCount;
+    AMSSigningSecurityService *_signingService;
     NSURLSessionTask *_parentTask;
 }
 
@@ -42,7 +44,9 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionTask *parentTask; // @synthesize parentTask=_parentTask;
+@property(readonly, nonatomic) AMSSigningSecurityService *signingService; // @synthesize signingService=_signingService;
 @property(nonatomic) long long encodeCount; // @synthesize encodeCount=_encodeCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) id <AMSURLBagContract> bagContract; // @synthesize bagContract=_bagContract;
@@ -55,6 +59,7 @@
 @property(retain, nonatomic) NSString *logUUID; // @synthesize logUUID=_logUUID;
 @property(retain, nonatomic) AMSKeychainOptions *keychainOptions; // @synthesize keychainOptions=_keychainOptions;
 @property(nonatomic) _Bool includeClientVersions; // @synthesize includeClientVersions=_includeClientVersions;
+@property(nonatomic) _Bool enableRemoteSecuritySigning; // @synthesize enableRemoteSecuritySigning=_enableRemoteSecuritySigning;
 @property(nonatomic) long long dialogOptions; // @synthesize dialogOptions=_dialogOptions;
 @property(nonatomic) _Bool disableResponseDecoding; // @synthesize disableResponseDecoding=_disableResponseDecoding;
 @property(nonatomic) _Bool compressRequestBody; // @synthesize compressRequestBody=_compressRequestBody;
@@ -63,7 +68,6 @@
 @property(nonatomic) long long anisetteType; // @synthesize anisetteType=_anisetteType;
 @property(retain, nonatomic) NSDictionary *additionalMetrics; // @synthesize additionalMetrics=_additionalMetrics;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)requestWithMethod:(long long)arg1 URLString:(id)arg2 parameters:(id)arg3 error:(id *)arg4;
 - (id)requestWithMethod:(long long)arg1 URLString:(id)arg2 error:(id *)arg3;
 - (id)requestWithMethod:(long long)arg1 URL:(id)arg2 parameters:(id)arg3 error:(id *)arg4;
@@ -73,6 +77,7 @@
 - (id)requestByEncodingRequest:(id)arg1 parameters:(id)arg2 error:(id *)arg3;
 - (id)initWithBagContract:(id)arg1;
 - (id)_methodStringFromMethod:(long long)arg1;
+- (void)_addSecuritySigningHeadersToRequest:(id)arg1 buyParams:(id)arg2 bag:(id)arg3;
 - (id)requestByEncodingRequest:(id)arg1 parameters:(id)arg2;
 - (id)requestWithMethod:(long long)arg1 URL:(id)arg2 parameters:(id)arg3;
 - (id)requestWithMethod:(long long)arg1 bagURL:(id)arg2 parameters:(id)arg3;

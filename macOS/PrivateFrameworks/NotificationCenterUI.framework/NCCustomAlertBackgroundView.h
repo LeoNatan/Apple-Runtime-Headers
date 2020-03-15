@@ -14,8 +14,8 @@
     _Bool _dark;
 }
 
-@property(nonatomic) _Bool dark; // @synthesize dark=_dark;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool dark; // @synthesize dark=_dark;
 @property(readonly) NSView *contentView;
 @property(readonly) struct NSEdgeInsets shadowInset;
 - (void)_commonInit;

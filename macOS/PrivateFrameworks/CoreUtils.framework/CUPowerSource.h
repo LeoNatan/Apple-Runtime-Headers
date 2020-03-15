@@ -51,6 +51,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL present; // @synthesize present=_present;
 @property(copy, nonatomic) NSDictionary *ioKitDescription; // @synthesize ioKitDescription=_ioKitDescription;
 @property(copy, nonatomic) NSDictionary *ioKitAdapterDescription; // @synthesize ioKitAdapterDescription=_ioKitAdapterDescription;
@@ -86,7 +87,6 @@
 @property(nonatomic) BOOL aggregate; // @synthesize aggregate=_aggregate;
 @property(copy, nonatomic) NSString *accessoryID; // @synthesize accessoryID=_accessoryID;
 @property(copy, nonatomic) NSString *accessoryCategory; // @synthesize accessoryCategory=_accessoryCategory;
-- (void).cxx_destruct;
 - (unsigned int)updateWithPowerSourceDescription:(id)arg1;
 - (void)updateWithPowerSource:(id)arg1;
 - (unsigned int)updateWithPowerAdapterDetails:(id)arg1;

@@ -23,13 +23,13 @@
 + (id)favoritesPath;
 + (void)flushSingleton;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNFavoritesLogger> logger; // @synthesize logger=_logger;
 @property(nonatomic) _Bool needsReload; // @synthesize needsReload=_needsReload;
 @property(nonatomic) unsigned long long postCount; // @synthesize postCount=_postCount;
 @property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
 @property(retain, nonatomic) NSMutableDictionary *uidToEntry; // @synthesize uidToEntry=_uidToEntry;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (void)recacheIdentitiesSoon;
 - (id)_uniqueRematchedEntries:(id)arg1;
 - (void)rematchEntriesWithOptions:(unsigned long long)arg1;

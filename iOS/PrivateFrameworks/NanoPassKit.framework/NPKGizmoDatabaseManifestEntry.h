@@ -15,10 +15,10 @@
     NSArray *_remoteManifestHashes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *remoteManifestHashes; // @synthesize remoteManifestHashes=_remoteManifestHashes;
 @property(retain, nonatomic) NSArray *localManifestHashes; // @synthesize localManifestHashes=_localManifestHashes;
 @property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

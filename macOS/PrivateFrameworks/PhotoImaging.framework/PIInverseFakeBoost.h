@@ -15,9 +15,9 @@
 }
 
 + (id)kernel;
+- (void).cxx_destruct;
 @property(retain) CIImage *inputImage; // @synthesize inputImage=_inputImage;
 @property double inputBoost; // @synthesize inputBoost=_inputBoost;
-- (void).cxx_destruct;
 - (id)outputImage;
 
 @end

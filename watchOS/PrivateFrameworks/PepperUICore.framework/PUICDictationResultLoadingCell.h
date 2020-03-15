@@ -13,8 +13,8 @@
     PUICActivityIndicatorView *_activityIndicatorView;
 }
 
-@property(retain, nonatomic) PUICActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUICActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

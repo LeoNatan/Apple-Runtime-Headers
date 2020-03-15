@@ -16,9 +16,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)cdEntityName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     NSMenu *_sourceAndQualitySelectionMenu;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMenu *sourceAndQualitySelectionMenu; // @synthesize sourceAndQualitySelectionMenu=_sourceAndQualitySelectionMenu;
 @property(nonatomic) __weak AVCaptureView *captureView; // @synthesize captureView=_captureView;
 @property(nonatomic) __weak AVCaptureController *captureController; // @synthesize captureController=_captureController;
-- (void).cxx_destruct;
 - (void)hideControlsForAuxiliaryControl;
 - (void)showControlsForAuxiliaryControl;
 @property(readonly) NSTouchBar *touchBar;

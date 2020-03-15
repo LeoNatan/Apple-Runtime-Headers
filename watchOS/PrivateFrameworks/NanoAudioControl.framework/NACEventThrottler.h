@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     double _minimumDelay;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(nonatomic) double minimumDelay; // @synthesize minimumDelay=_minimumDelay;
 @property(copy, nonatomic) CDUnknownBlockType eventBlock; // @synthesize eventBlock=_eventBlock;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)_fire;
 - (id)initWithQueue:(id)arg1;

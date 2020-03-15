@@ -22,10 +22,10 @@
     PKSpringAnimationFactory *_springFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic, getter=isPresented) _Bool presented; // @synthesize presented=_presented;
 @property(retain, nonatomic) PKSpringAnimationFactory *springFactory; // @synthesize springFactory=_springFactory;
-- (void).cxx_destruct;
 - (id)_animationForKeyPath:(id)arg1;
 - (id)_snapshotForView:(id)arg1;
 - (void)_executeCompletionHandlers:(_Bool)arg1;

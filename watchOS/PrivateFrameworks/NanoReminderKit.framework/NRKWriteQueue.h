@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class BKSProcessAssertion, NSLock;
+@class BKSProcessAssertion, NSLock, NSMutableArray, NSMutableDictionary;
 
 @interface NRKWriteQueue : NSObject
 {
-    struct NSMutableArray *_waitingRequests;
+    NSMutableArray *_waitingRequests;
     unsigned long long _commitThreshold;
     CDUnknownBlockType _currentDelayBlock;
-    struct NSMutableDictionary *_allChangeRequests;
+    NSMutableDictionary *_allChangeRequests;
     NSLock *_queueLock;
     BKSProcessAssertion *_processAssertion;
 }
@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (void)_decrementProcessAssertion;
 - (void)_incrementProcessAssertion;
-- (void)reconnectRequestsToReminders:(struct NSDictionary *)arg1;
+- (void)reconnectRequestsToReminders:(id)arg1;
 - (void)_commitAllWrites;
 - (id)init;
 - (void)_removeChangeRequestForID:(id)arg1;

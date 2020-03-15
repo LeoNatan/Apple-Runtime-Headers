@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedMNS;
-@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)reloadMNS;
 - (void)reloadNetworkdSettings;
 - (void)handleEvent:(id)arg1;

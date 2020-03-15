@@ -20,17 +20,17 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsReload; // @synthesize needsReload=_needsReload;
 @property(nonatomic, getter=isFinalResponse) _Bool finalResponse; // @synthesize finalResponse=_finalResponse;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) ICMusicSubscriptionStatus *subscriptionStatus; // @synthesize subscriptionStatus=_subscriptionStatus;
-- (void).cxx_destruct;
-- (id)description;
 @property(readonly, copy, nonatomic) NSDictionary *propertyListRepresentation;
 @property(readonly, nonatomic, getter=isExpired) _Bool expired;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)description;
 - (id)_init;
 - (id)initWithResponseDictionary:(id)arg1 expirationDate:(id)arg2;
 - (id)initWithPropertyListRepresentation:(id)arg1;

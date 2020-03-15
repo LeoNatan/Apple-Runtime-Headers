@@ -18,11 +18,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL blockIncomingInvitationsDuringCall; // @synthesize blockIncomingInvitationsDuringCall=_blockIncomingInvitationsDuringCall;
 @property(nonatomic) BOOL blockOutgoingInvitationsDuringCall; // @synthesize blockOutgoingInvitationsDuringCall=_blockOutgoingInvitationsDuringCall;
 @property(nonatomic) BOOL blockMultipleIncomingInvitations; // @synthesize blockMultipleIncomingInvitations=_blockMultipleIncomingInvitations;
 @property(retain, nonatomic) NSMutableArray *_delegates; // @synthesize _delegates;
-- (void).cxx_destruct;
 - (void)blockOnPendingVCInvitationsWithCapabilities:(long long)arg1;
 - (void)_receivedPendingVCRequests;
 - (void)_receivedPendingACRequests;

@@ -50,6 +50,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadProxyPACFallbackAllowed; // @synthesize payloadProxyPACFallbackAllowed=_payloadProxyPACFallbackAllowed;
 @property(copy, nonatomic) NSString *payloadProxyPACURL; // @synthesize payloadProxyPACURL=_payloadProxyPACURL;
 @property(copy, nonatomic) NSString *payloadProxyPassword; // @synthesize payloadProxyPassword=_payloadProxyPassword;
@@ -79,7 +80,6 @@
 @property(copy, nonatomic) NSNumber *payloadHIDDENNETWORK; // @synthesize payloadHIDDENNETWORK=_payloadHIDDENNETWORK;
 @property(copy, nonatomic) NSString *payloadSSIDSTR; // @synthesize payloadSSIDSTR=_payloadSSIDSTR;
 @property(copy, nonatomic) NSNumber *payloadAutoJoin; // @synthesize payloadAutoJoin=_payloadAutoJoin;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

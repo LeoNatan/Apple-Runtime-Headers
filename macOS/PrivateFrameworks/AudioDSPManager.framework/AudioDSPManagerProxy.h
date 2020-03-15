@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)deserializeStateForAudioHistorySystem:(id)arg1 fromData:(id)arg2;
-@property(nonatomic) __weak id <AudioDSPManagerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AudioDSPManagerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)simulateAudioHistoryEventForSystem:(id)arg1 withType:(id)arg2 andPayload:(id)arg3;
 - (BOOL)shouldSerializeStateForAudioHistorySystem:(id)arg1;
 - (id)serializeStateForAudioHistorySystem:(id)arg1;

@@ -18,10 +18,10 @@
 + (id)transactionWithDescription:(id)arg1 timeout:(double)arg2 timeoutBlock:(CDUnknownBlockType)arg3;
 + (id)transactionWithDescription:(id)arg1 timeout:(double)arg2;
 + (id)transactionWithDescription:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_cancel;
 - (void)end;

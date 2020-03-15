@@ -14,9 +14,9 @@
     NSCalendar *_gregorianCalendar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCalendar *gregorianCalendar; // @synthesize gregorianCalendar=_gregorianCalendar;
 @property(nonatomic) __weak ACHTemplateStore *templateStore; // @synthesize templateStore=_templateStore;
-- (void).cxx_destruct;
 - (id)earnedInstancesLimitedByEarnLimit:(id)arg1;
 - (id)earnedInstancesWithoutDuplicates:(id)arg1;
 - (id)initWithTemplateStore:(id)arg1;

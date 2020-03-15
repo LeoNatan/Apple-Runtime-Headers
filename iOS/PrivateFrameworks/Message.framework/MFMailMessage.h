@@ -27,8 +27,8 @@
 + (unsigned int)validatePriority:(int)arg1;
 + (Class)dataMessageStoreToUse;
 + (id)forwardedMessagePrefixWithSpacer:(_Bool)arg1;
-@property(nonatomic) _Bool shouldUseMailDrop; // @synthesize shouldUseMailDrop=_shouldUseMailDrop;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldUseMailDrop; // @synthesize shouldUseMailDrop=_shouldUseMailDrop;
 @property(readonly, nonatomic) long long libraryID;
 @property(readonly, nonatomic, getter=isKnownToHaveAttachments) _Bool knownToHaveAttachments;
 @property(readonly, nonatomic) _Bool deleted;

@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     struct MGNotificationTokenStruct *_notificationToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct MGNotificationTokenStruct *notificationToken; // @synthesize notificationToken=_notificationToken;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) _Bool supportsBLE; // @synthesize supportsBLE=_supportsBLE;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(readonly, copy, nonatomic) NSString *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
 @property __weak id <HMFSystemInfoNameDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)dealloc;
 - (id)init;

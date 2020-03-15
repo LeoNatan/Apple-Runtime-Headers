@@ -40,6 +40,7 @@
     struct CGPoint _originOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain) SHKAutoLayoutConstraintPair *fixedDimensionsBackgroundConstraints; // @synthesize fixedDimensionsBackgroundConstraints=_fixedDimensionsBackgroundConstraints;
 @property(retain) SHKAutoLayoutConstraintPair *fixedDimensionsContainerConstraints; // @synthesize fixedDimensionsContainerConstraints=_fixedDimensionsContainerConstraints;
 @property(retain) SHKAutoLayoutConstraintPair *sameCenterConstraints; // @synthesize sameCenterConstraints=_sameCenterConstraints;
@@ -64,7 +65,6 @@
 @property(retain) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain) NSView *containerView; // @synthesize containerView=_containerView;
 @property unsigned long long serviceMask; // @synthesize serviceMask=_serviceMask;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (BOOL)clientHasSourceWindow;
 - (void)proceedWithSharingTransitionOutWithSuccess:(BOOL)arg1 duration:(double)arg2;

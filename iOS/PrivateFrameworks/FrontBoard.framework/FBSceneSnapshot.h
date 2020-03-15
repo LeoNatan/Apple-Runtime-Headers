@@ -15,8 +15,8 @@
     _FBSSnapshot *_snapshot;
 }
 
-@property(readonly, copy, nonatomic) FBSceneSnapshotContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) FBSceneSnapshotContext *context; // @synthesize context=_context;
 - (struct CGAffineTransform)_baseTransformForSnapshotContext:(id)arg1 rootContext:(id)arg2;
 - (id)_collectLayersToSnapshotFromScene:(id)arg1 withSnapshotContext:(id)arg2 rootContext:(id)arg3;
 @property(readonly, nonatomic) IOSurface *fallbackIOSurface;

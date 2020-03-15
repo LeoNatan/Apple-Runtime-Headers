@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     double _backButtonLeadingMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isRTL; // @synthesize isRTL=_isRTL;
 @property(nonatomic) double backButtonLeadingMargin; // @synthesize backButtonLeadingMargin=_backButtonLeadingMargin;
 @property(retain, nonatomic) UIImage *edgeMaskImage; // @synthesize edgeMaskImage=_edgeMaskImage;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool maskEnabled;
 
 @end

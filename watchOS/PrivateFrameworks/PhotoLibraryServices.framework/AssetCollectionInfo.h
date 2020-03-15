@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *derivativeUTI; // @synthesize derivativeUTI=_derivativeUTI;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) NSNumber *height; // @synthesize height=_height;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) _Bool isMine; // @synthesize isMine=_isMine;
 @property(readonly, nonatomic) NSString *personID; // @synthesize personID=_personID;
 @property(readonly, nonatomic) NSString *GUID; // @synthesize GUID=_GUID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

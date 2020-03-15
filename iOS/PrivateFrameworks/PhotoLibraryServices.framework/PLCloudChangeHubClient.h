@@ -14,8 +14,8 @@
     NSUUID *_uuid;
 }
 
-@property(readonly, copy) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+@property(readonly, copy) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (id)unsuccesfulResultWithWithType:(long long)arg1;
 - (id)successfulResultWithEvents:(id)arg1 changeHubEventIndex:(unsigned long long)arg2;
 - (id)resultsFromReply:(id)arg1 sinceIndex:(unsigned long long)arg2;

@@ -14,9 +14,9 @@
     NSString *_HSAData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *HSAData; // @synthesize HSAData=_HSAData;
 @property(readonly, nonatomic) NSString *HSAAction; // @synthesize HSAAction=_HSAAction;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *appleID;
 @property(readonly, nonatomic) NSString *personID;
 @property(readonly, nonatomic) NSString *statusMessage;

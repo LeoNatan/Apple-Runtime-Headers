@@ -48,10 +48,10 @@
 
 + (id)_modernThumbImageWithTraitCollection:(id)arg1 tintColor:(id)arg2;
 + (BOOL)_allowActionsToQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
 @property(retain, nonatomic) UIColor *maximumTrackTintColor; // @synthesize maximumTrackTintColor=_maxTintColor;
 @property(retain, nonatomic) UIColor *minimumTrackTintColor; // @synthesize minimumTrackTintColor=_minTintColor;
-- (void).cxx_destruct;
 - (BOOL)cancelTouchTracking;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;

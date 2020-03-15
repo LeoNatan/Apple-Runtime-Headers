@@ -18,9 +18,9 @@
 }
 
 + (Class)moreMessagesRequestType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *moreMessagesRequests; // @synthesize moreMessagesRequests=_moreMessagesRequests;
 @property(nonatomic) unsigned int fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,10 +17,10 @@
     SXViewportDebuggerOverlayView *_appearStateIndicator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXViewportDebuggerOverlayView *appearStateIndicator; // @synthesize appearStateIndicator=_appearStateIndicator;
 @property(readonly, nonatomic) SXViewportDebuggerOverlayView *dynamicBoundsView; // @synthesize dynamicBoundsView=_dynamicBoundsView;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
-- (void).cxx_destruct;
 - (id)colorForAppearState:(unsigned long long)arg1;
 - (void)update;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;

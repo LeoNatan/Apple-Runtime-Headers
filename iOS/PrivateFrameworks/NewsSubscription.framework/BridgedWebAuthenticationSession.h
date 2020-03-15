@@ -15,8 +15,8 @@
     ASWebAuthenticationSession *_authenticationSession;
 }
 
-@property(retain, nonatomic) ASWebAuthenticationSession *authenticationSession; // @synthesize authenticationSession=_authenticationSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ASWebAuthenticationSession *authenticationSession; // @synthesize authenticationSession=_authenticationSession;
 - (id)presentationAnchorForWebAuthenticationSession:(id)arg1;
 - (_Bool)start;
 - (id)initWithURL:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -17,9 +17,9 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak id <PUEditingExtensionUndoTarget> target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)setUndoEnabled:(BOOL)arg1 redoEnabled:(BOOL)arg2;
 - (void)setShowUndoRedo:(BOOL)arg1;
 - (id)remoteObject;

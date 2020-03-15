@@ -18,10 +18,10 @@
     id <SVVideoDurationObserverFactory> _durationObserverFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoDurationObserverFactory> durationObserverFactory; // @synthesize durationObserverFactory=_durationObserverFactory;
 @property(readonly, nonatomic) id <SVVideoImpressionThresholdProviding> impressionThresholdProvider; // @synthesize impressionThresholdProvider=_impressionThresholdProvider;
 @property(readonly, nonatomic) SVTimeline *timeline; // @synthesize timeline=_timeline;
-- (void).cxx_destruct;
 - (id)createImpressionTrackerForVideo:(id)arg1;
 - (id)initWithTimeline:(id)arg1 impressionThresholdProvider:(id)arg2 durationObserverFactory:(id)arg3;
 

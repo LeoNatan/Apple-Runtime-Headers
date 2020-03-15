@@ -28,6 +28,7 @@
 
 + (_Bool)isSnapshotActivity:(id)arg1;
 + (double)defaultLeeway;
+- (void).cxx_destruct;
 @property _Bool persistAll; // @synthesize persistAll=_persistAll;
 @property(readonly) CSLSnapshotActivityManagerConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) NSMutableDictionary *lastSubmittedSystemActivities; // @synthesize lastSubmittedSystemActivities=_lastSubmittedSystemActivities;
@@ -38,7 +39,6 @@
 @property unsigned int priority; // @synthesize priority=_priority;
 @property(nonatomic) __weak CSLSnapshotService *snapshotService; // @synthesize snapshotService=_snapshotService;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)_queue_description;
 @property(readonly, copy) NSString *description;
 - (void)rescheduleSnapshotForScheduleItem:(id)arg1 restoreCredit:(_Bool)arg2;

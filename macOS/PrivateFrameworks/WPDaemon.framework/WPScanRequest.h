@@ -30,6 +30,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long advBufferMode; // @synthesize advBufferMode=_advBufferMode;
 @property BOOL advBuffer; // @synthesize advBuffer=_advBuffer;
 @property long long nearbyScanMode; // @synthesize nearbyScanMode=_nearbyScanMode;
@@ -45,7 +46,6 @@
 @property BOOL allowDuplicates; // @synthesize allowDuplicates=_allowDuplicates;
 @property CDStruct_9e3626a3 scanningRates; // @synthesize scanningRates=_scanningRates;
 @property unsigned char clientType; // @synthesize clientType=_clientType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

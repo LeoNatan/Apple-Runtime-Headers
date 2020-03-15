@@ -26,7 +26,6 @@
 - (void)consumeCodeWithMessageGUID:(NSString *)arg1;
 - (void)requestOneTimeCodeStatus;
 - (void)closeSessionChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3 account:(NSString *)arg4;
-- (void)requestMOCEnabledState;
 - (void)tryToAutoCollectLogsWithErrorString:(NSString *)arg1 sendLogsTo:(NSString *)arg2;
 - (void)fetchCloudKitSyncStateDebuggingInfo:(NSDictionary *)arg1;
 - (void)syncDeletesToCloudKit;
@@ -44,7 +43,7 @@
 - (void)deleteSalt;
 - (void)printCachedSalt;
 - (void)fetchLatestSalt;
-- (void)fetchSecurityLevelAndUpdateMiCSwitchEligibility;
+- (void)fetchAccountStatusAndUpdateMiCSwitchEligibility;
 - (void)broadcastCloudKitStateAfterClearingErrors;
 - (void)clearAnalyticDefaultsAndLocalSyncState;
 - (void)uploadDailyAnalyticstoCloudKit;

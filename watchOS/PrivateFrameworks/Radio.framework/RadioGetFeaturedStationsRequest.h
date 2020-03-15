@@ -18,9 +18,9 @@
     _Bool _disableCachedResponses;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableCachedResponses; // @synthesize disableCachedResponses=_disableCachedResponses;
 @property(nonatomic) _Bool disableArtworkLoading; // @synthesize disableArtworkLoading=_disableArtworkLoading;
-- (void).cxx_destruct;
 - (id)_stationDictionariesByApplyingResponse:(id)arg1 error:(id *)arg2;
 - (id)_importFeaturedStationWithDictionary:(id)arg1 inModel:(id)arg2 loadArtworkSynchronously:(_Bool)arg3;
 - (void)startWithFeaturedStationsCompletionHandler:(CDUnknownBlockType)arg1;

@@ -15,11 +15,11 @@
     SEL _selector;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool valid; // @synthesize valid=_valid;
 @property(nonatomic) _Bool fired; // @synthesize fired=_fired;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)evalAtTime:(CDStruct_1b6d18a9)arg1;
 @property(nonatomic) CDStruct_1b6d18a9 fireTime;

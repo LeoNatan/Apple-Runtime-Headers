@@ -18,13 +18,13 @@
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSProgress *progress; // @synthesize progress=_progress;
 @property(retain) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
 @property double initialTimeEstimate; // @synthesize initialTimeEstimate=_initialTimeEstimate;
 @property double progressPercentage; // @synthesize progressPercentage=_progressPercentage;
 @property BOOL hasRan; // @synthesize hasRan=_hasRan;
 @property __weak SMMigrateEngine *engine; // @synthesize engine=_engine;
-- (void).cxx_destruct;
 - (void)calculateProgressPercentages:(double)arg1;
 - (double)estimateTimeRemaining;
 - (double)estimatedTimeToComplete;

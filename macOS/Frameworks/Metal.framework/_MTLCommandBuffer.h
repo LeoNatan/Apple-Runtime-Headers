@@ -119,6 +119,7 @@
 - (void)waitUntilCompleted;
 - (void)addCompletedHandler:(CDUnknownBlockType)arg1;
 - (void)waitUntilScheduled;
+- (void)presentDrawable:(id)arg1 afterMinimumDuration:(double)arg2;
 - (void)presentDrawable:(id)arg1 atTime:(double)arg2;
 - (void)presentDrawable:(id)arg1;
 - (void)addScheduledHandler:(CDUnknownBlockType)arg1;

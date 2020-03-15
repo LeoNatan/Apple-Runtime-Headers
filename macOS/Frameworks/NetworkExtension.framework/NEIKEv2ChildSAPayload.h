@@ -15,9 +15,9 @@
 }
 
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property BOOL includeDHGroup; // @synthesize includeDHGroup=_includeDHGroup;
 @property(retain) NSArray *proposals; // @synthesize proposals=_proposals;
-- (void).cxx_destruct;
 - (BOOL)parsePayloadData;
 - (BOOL)generatePayloadData;
 - (BOOL)hasRequiredFields;

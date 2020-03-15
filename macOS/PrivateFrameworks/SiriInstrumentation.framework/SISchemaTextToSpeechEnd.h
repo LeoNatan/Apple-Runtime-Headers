@@ -13,8 +13,8 @@
     NSString *_aceID;
 }
 
-@property(copy, nonatomic) NSString *aceID; // @synthesize aceID=_aceID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *aceID; // @synthesize aceID=_aceID;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

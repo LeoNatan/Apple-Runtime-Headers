@@ -62,6 +62,7 @@
 }
 
 + (id)_legibilityLabelFactory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *liveTimer; // @synthesize liveTimer=_liveTimer;
 @property(retain, nonatomic) HULegibilityLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) HULegibilityLabel *dayLabel; // @synthesize dayLabel=_dayLabel;
@@ -101,7 +102,6 @@
 @property(retain, nonatomic) HFCameraItem *cameraItem; // @synthesize cameraItem=_cameraItem;
 @property(nonatomic) __weak id <HUCameraPlayerViewControllerDelegate> cameraDelegate; // @synthesize cameraDelegate=_cameraDelegate;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_cleanUpIdleTimerState;
 @property(readonly, nonatomic) HFItem *hu_presentedItem;
@@ -169,6 +169,7 @@
 - (void)_updateStateForScrubbingStatus:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateStateForPlaybackPosition:(id)arg1 animated:(BOOL)arg2;
 - (void)_setupPlaybackEngine;
+- (void)_displayPlaybackUIWithUpdate:(BOOL)arg1;
 - (void)_reloadClipsWithUpdate:(BOOL)arg1;
 @property(readonly, nonatomic) UIViewController<HUCameraPlayerScrubbing> *activeScrubberViewController;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -18,10 +18,10 @@
 }
 
 + (id)definitionFromDictionary:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long setType; // @synthesize setType=_setType;
 @property(readonly, nonatomic) long long repeatCount; // @synthesize repeatCount=_repeatCount;
 @property(readonly, nonatomic) NSArray *intervalDefinitions; // @synthesize intervalDefinitions=_intervalDefinitions;
-- (void).cxx_destruct;
 - (id)byRemovingIntervalDefinitionAtIndex:(unsigned long long)arg1;
 - (id)byReplacingIntervalDefinitionAtIndex:(unsigned long long)arg1 withIntervalDefinition:(id)arg2;
 - (id)byInsertingIntervalDefinition:(id)arg1 atIndex:(unsigned long long)arg2;

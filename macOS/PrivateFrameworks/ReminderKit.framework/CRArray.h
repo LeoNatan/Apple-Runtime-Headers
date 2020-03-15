@@ -22,12 +22,12 @@
     CRDictionary *_contents;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL moveClock; // @synthesize moveClock=_moveClock;
 @property(retain, nonatomic) CRDictionary *contents; // @synthesize contents=_contents;
 @property(retain, nonatomic) TTArray *array; // @synthesize array=_array;
 @property(nonatomic) __weak NSObject<CRUndoDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak CRDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (BOOL)wantsUndoCommands;
 - (void)addUndoCommandsForObject:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)walkGraph:(CDUnknownBlockType)arg1;

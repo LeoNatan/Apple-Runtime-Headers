@@ -16,11 +16,11 @@
     double _trailingMarginWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double trailingMarginWidth; // @synthesize trailingMarginWidth=_trailingMarginWidth;
 @property(nonatomic) double leadingMarginWidth; // @synthesize leadingMarginWidth=_leadingMarginWidth;
 @property(retain, nonatomic) NSArray *separatorConstraints; // @synthesize separatorConstraints=_separatorConstraints;
 @property(retain, nonatomic) ABCardViewSeparator *separator; // @synthesize separator=_separator;
-- (void).cxx_destruct;
 - (void)generateConstraints;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)buildSeparatorView;

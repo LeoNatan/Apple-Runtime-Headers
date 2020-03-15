@@ -13,8 +13,8 @@
     NSArray *_whitelist;
 }
 
-@property(retain, nonatomic) NSArray *whitelist; // @synthesize whitelist=_whitelist;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *whitelist; // @synthesize whitelist=_whitelist;
 - (unsigned int)suppressionRuleForAlertItem:(id)arg1 applicableToTopPresentedAlert:(_Bool *)arg2;
 - (id)description;
 - (_Bool)hasSuppressionRuleForAlertItem:(id)arg1;

@@ -31,6 +31,7 @@
 + (BOOL)supportsSecureCoding;
 + (int)paragraphStyleAlignmentForTextAlignment:(long long)arg1;
 + (long long)textAlignmentForParagraphStyleAlignment:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needsListCleanup; // @synthesize needsListCleanup=_needsListCleanup;
 @property(nonatomic) BOOL needsParagraphCleanup; // @synthesize needsParagraphCleanup=_needsParagraphCleanup;
 @property(nonatomic) unsigned int hints; // @synthesize hints=_hints;
@@ -40,7 +41,6 @@
 @property(nonatomic) long long writingDirection; // @synthesize writingDirection=_writingDirection;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSUUID *trackingUUID;
 - (id)listBulletInAttributedString:(id)arg1 atIndex:(unsigned long long)arg2;

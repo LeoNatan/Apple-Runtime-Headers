@@ -6,11 +6,13 @@
 
 #import <Safari/AnnotatedBookmarksSidebarTableCellView.h>
 
-@class NSLayoutConstraint, NSTextField;
+#import <Safari/NSControlTextEditingDelegate-Protocol.h>
+
+@class NSLayoutConstraint, NSString, NSTextField;
 @protocol AnnotatedBookmarksSidebarExpandedTableCellViewDelegate;
 
 __attribute__((visibility("hidden")))
-@interface AnnotatedBookmarksSidebarExpandedTableCellView : AnnotatedBookmarksSidebarTableCellView
+@interface AnnotatedBookmarksSidebarExpandedTableCellView : AnnotatedBookmarksSidebarTableCellView <NSControlTextEditingDelegate>
 {
     NSLayoutConstraint *_editingTitleHeightConstraint;
     NSLayoutConstraint *_editingDescriptionHeightConstraint;
@@ -25,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_spaceBetweenImageAndBottomConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *spaceBetweenImageAndBottomConstraint; // @synthesize spaceBetweenImageAndBottomConstraint=_spaceBetweenImageAndBottomConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *spaceBetweenDescriptionTextAndBottomConstraint; // @synthesize spaceBetweenDescriptionTextAndBottomConstraint=_spaceBetweenDescriptionTextAndBottomConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *spaceBetweenImageAndTextConstraint; // @synthesize spaceBetweenImageAndTextConstraint=_spaceBetweenImageAndTextConstraint;
@@ -34,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <AnnotatedBookmarksSidebarExpandedTableCellViewDelegate> expandedCellViewDelegate; // @synthesize expandedCellViewDelegate=_expandedCellViewDelegate;
 @property(nonatomic) __weak NSTextField *addressTextField; // @synthesize addressTextField=_addressTextField;
 @property(nonatomic) __weak NSTextField *descriptionTextField; // @synthesize descriptionTextField=_descriptionTextField;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double fittingHeight;
 - (void)updateTextFieldMaxLayoutWidths;
 - (void)controlTextDidEndEditing:(id)arg1;
@@ -42,6 +44,12 @@ __attribute__((visibility("hidden")))
 - (void)editTitle;
 - (void)didRecognizeLongPress:(id)arg1;
 - (void)awakeFromNib;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

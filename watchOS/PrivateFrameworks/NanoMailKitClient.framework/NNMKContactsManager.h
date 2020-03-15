@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void)_applicationResumed:(id)arg1;
 - (void)_contactStoreDidChange:(id)arg1;
 - (void)_handleAddressBookChangeNotification;

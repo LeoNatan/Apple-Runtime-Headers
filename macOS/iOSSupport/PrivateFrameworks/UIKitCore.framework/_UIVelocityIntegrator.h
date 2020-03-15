@@ -21,6 +21,7 @@
     struct CGVector _memoizedVelocity;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didResetHysteresisOnThetaDiffHandler; // @synthesize didResetHysteresisOnThetaDiffHandler=_didResetHysteresisOnThetaDiffHandler;
 @property(nonatomic) double resetHysteresisOnSampleThetaDiff; // @synthesize resetHysteresisOnSampleThetaDiff=_resetHysteresisOnSampleThetaDiff;
 @property(nonatomic) struct CGVector memoizedVelocity; // @synthesize memoizedVelocity=_memoizedVelocity;
@@ -30,7 +31,6 @@
 @property(nonatomic) struct CGVector offset; // @synthesize offset=_offset;
 @property(nonatomic) double hysteresisTimeInterval; // @synthesize hysteresisTimeInterval=_hysteresisTimeInterval;
 @property(nonatomic) double minimumRequiredMovement; // @synthesize minimumRequiredMovement=_minimumRequiredMovement;
-- (void).cxx_destruct;
 - (struct CGVector)_computedVelocity;
 - (long long)_sampleCount;
 @property(readonly, nonatomic) struct CGVector velocity;

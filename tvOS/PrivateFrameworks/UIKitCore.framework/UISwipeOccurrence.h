@@ -38,6 +38,7 @@
     CDStruct_9b6dff2a _currentSwipeInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *swipeDirectionToPullView; // @synthesize swipeDirectionToPullView=_swipeDirectionToPullView;
 @property(retain, nonatomic) UISwipeActionPullView *trailingPullView; // @synthesize trailingPullView=_trailingPullView;
 @property(retain, nonatomic) UISwipeActionPullView *leadingPullView; // @synthesize leadingPullView=_leadingPullView;
@@ -55,7 +56,6 @@
 @property(nonatomic) double offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) long long direction; // @synthesize direction=_direction;
 @property(copy, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (double)confirmationDistanceForPrimaryActionInSwipeActionPullView:(id)arg1;
 - (void)swipeActionPullView:(id)arg1 tappedAction:(id)arg2;

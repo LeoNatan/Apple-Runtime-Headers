@@ -14,9 +14,9 @@
     PXGLayout *_layout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXGLayout *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (id)initWithViewModel:(id)arg1 layout:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

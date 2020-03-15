@@ -18,9 +18,9 @@
     CDStruct_47fe53f2 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *manifestHash; // @synthesize manifestHash=_manifestHash;
 @property(retain, nonatomic) NSData *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

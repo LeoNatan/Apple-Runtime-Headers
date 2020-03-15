@@ -22,11 +22,11 @@
 + (int)suggestionSourcesForAutocompleteResult:(id)arg1;
 + (id)contactIdentifierForAutocompleteResult:(id)arg1;
 + (id)suggestionIdentifierForAutocompleteResult:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *pendingBlocks; // @synthesize pendingBlocks=_pendingBlocks;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) id <CNScheduler> workScheduler; // @synthesize workScheduler=_workScheduler;
 @property(readonly, nonatomic) id <SGSuggestionsServiceContactsProtocol> sgService; // @synthesize sgService=_sgService;
-- (void).cxx_destruct;
 - (void)sendData;
 - (void)recordSGServiceMessage:(CDUnknownBlockType)arg1;
 - (void)recordUserSawResultsConsideredSuggestion;

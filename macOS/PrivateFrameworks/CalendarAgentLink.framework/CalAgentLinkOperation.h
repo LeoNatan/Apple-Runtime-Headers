@@ -24,6 +24,7 @@
 }
 
 + (void)disableAgentLinkForTesting;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *messageQueue; // @synthesize messageQueue=_messageQueue;
 @property(retain, nonatomic) CalStopwatch *stopwatch; // @synthesize stopwatch=_stopwatch;
@@ -34,7 +35,6 @@
 @property(nonatomic) BOOL isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(nonatomic) BOOL isAllowedToBeRunOnAgent; // @synthesize isAllowedToBeRunOnAgent=_isAllowedToBeRunOnAgent;
 @property(nonatomic) __weak NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)finish;
 - (void)_finishWithTimeout;
 - (void)willFinish;

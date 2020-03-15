@@ -15,10 +15,10 @@
     unsigned long long _phase;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long phase; // @synthesize phase=_phase;
 @property(readonly, nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(readonly, nonatomic) SBAppLayout *appLayout; // @synthesize appLayout=_appLayout;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (long long)type;
 - (id)initWithAppLayout:(id)arg1 intoIndex:(unsigned long long)arg2 phase:(unsigned long long)arg3;

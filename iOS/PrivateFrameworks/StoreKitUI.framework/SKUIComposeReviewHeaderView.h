@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     SKUIComposeTextFieldListView *_textFieldListView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIReviewMetadata *review; // @synthesize review=_review;
 @property(nonatomic) __weak id <SKUIComposeReviewHeaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long composeReviewStyle; // @synthesize composeReviewStyle=_style;
-- (void).cxx_destruct;
 - (void)textFieldListValuesDidChange:(id)arg1;
 - (void)textFieldListValidityDidChange:(id)arg1;
 - (id)textFieldList:(id)arg1 configurationForFieldAtIndex:(unsigned long long)arg2;

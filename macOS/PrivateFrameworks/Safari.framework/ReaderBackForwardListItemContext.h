@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSURL *_urlOfUnderlyingContent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 @property(readonly, nonatomic) NSURL *urlOfUnderlyingContent; // @synthesize urlOfUnderlyingContent=_urlOfUnderlyingContent;
 @property(readonly, nonatomic) ReaderViewController *readerViewController; // @synthesize readerViewController=_readerViewController;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithReaderViewController:(id)arg1 urlOfUnderlyingContent:(id)arg2 active:(BOOL)arg3;
 - (id)init;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSData *_referenceSignature;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *referenceSignature; // @synthesize referenceSignature=_referenceSignature;
 @property(retain, nonatomic) NSData *fileSignature; // @synthesize fileSignature=_fileSignature;
 @property(retain, nonatomic) NSString *fieldName; // @synthesize fieldName=_fieldName;
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 - (id)encryptedDataContextString;
 - (id)assetContextString;
 - (id)initWithRecordID:(id)arg1 fieldName:(id)arg2 fileSignature:(id)arg3 referenceSignature:(id)arg4;

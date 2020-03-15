@@ -18,9 +18,10 @@
     double _balloonAlpha;
     double _contentAlpha;
     CAFilter *_textCompositingFilter;
-    struct NSColor *_textColor;
+    NSColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(copy) CAFilter *textCompositingFilter; // @synthesize textCompositingFilter=_textCompositingFilter;
 @property double contentAlpha; // @synthesize contentAlpha=_contentAlpha;
@@ -30,7 +31,6 @@
 @property(copy) NSArray *balloonFilters; // @synthesize balloonFilters=_balloonFilters;
 @property unsigned long long direction; // @synthesize direction=_direction;
 @property long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

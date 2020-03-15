@@ -24,10 +24,10 @@
 + (void)logClass:(unsigned char)arg1 code:(unsigned int)arg2;
 + (void)logEvent:(unsigned int)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long keybagUnlockTime; // @synthesize keybagUnlockTime=_keybagUnlockTime;
 @property(nonatomic) _Bool fingerOnWithScreenOn; // @synthesize fingerOnWithScreenOn=_fingerOnWithScreenOn;
 @property(nonatomic) unsigned long long fingerOnTime; // @synthesize fingerOnTime=_fingerOnTime;
-- (void).cxx_destruct;
 - (unsigned long long)_machTimeInMilliseconds;
 - (void)timestampEvent:(unsigned long long)arg1;
 - (_Bool)_shouldSyslogTimestamps;

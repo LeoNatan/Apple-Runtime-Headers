@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     HKActivitySummaryDataProvider *_provider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKActivitySummaryDataProvider *provider; // @synthesize provider=_provider;
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)activitySummaryDataProviderDidUpdateActivitySummaries:(id)arg1;
 - (void)runTest;
 - (void)_logTrialQuery;

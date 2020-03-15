@@ -6,7 +6,9 @@
 
 #import <PhotoFoundation/NSObject-Protocol.h>
 
+@class NSObject;
+
 @protocol PFResourceAccessClient <NSObject>
-- (void)resourceWillShutdown:(struct NSObject *)arg1;
+- (void)resourceWillShutdown:(NSObject *)arg1;
 @end
 

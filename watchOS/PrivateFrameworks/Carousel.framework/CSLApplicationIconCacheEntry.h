@@ -18,8 +18,8 @@
     NSHashTable *_applicationIcons;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)setIconImage:(id)arg1 isInstalling:(_Bool)arg2 percentComplete:(double)arg3;
 - (void)setIsInstalling:(_Bool)arg1 percentComplete:(double)arg2;
 - (void)addIcon:(id)arg1;

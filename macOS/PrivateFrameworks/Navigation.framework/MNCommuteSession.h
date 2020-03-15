@@ -31,11 +31,11 @@
     unsigned long long _requestedCommuteSessionState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestedCommuteSessionState; // @synthesize requestedCommuteSessionState=_requestedCommuteSessionState;
 @property(nonatomic) __weak MNCommuteDestinationUpdater *comparisonDestinationStartTime; // @synthesize comparisonDestinationStartTime=_comparisonDestinationStartTime;
 @property(readonly, nonatomic) MNNavigationTraceManager *traceManager; // @synthesize traceManager=_traceManager;
 @property(nonatomic) unsigned long long commuteSessionState; // @synthesize commuteSessionState=_commuteSessionState;
-- (void).cxx_destruct;
 - (void)suggestionsManager:(id)arg1 didAddSuggestion:(id)arg2;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;

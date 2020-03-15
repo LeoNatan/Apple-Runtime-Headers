@@ -13,8 +13,8 @@
     NSArray *_items;
 }
 
-@property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void)processResponse;
 - (id)initWithQueryParameters:(id)arg1 options:(int)arg2;
 - (id)init;

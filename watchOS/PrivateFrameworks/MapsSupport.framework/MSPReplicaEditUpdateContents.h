@@ -14,9 +14,9 @@
     MSPVectorTimestamp *_contentsTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MSPVectorTimestamp *contentsTimestamp; // @synthesize contentsTimestamp=_contentsTimestamp;
 @property(readonly, nonatomic) NSData *contents; // @synthesize contents=_contents;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

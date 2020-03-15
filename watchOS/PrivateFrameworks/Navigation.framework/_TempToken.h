@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     id <GEOServerFormatTokenCountdownValue> _countdownValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <GEOServerFormatTokenCountdownValue> countdownValue; // @synthesize countdownValue=_countdownValue;
 @property(retain, nonatomic) NSArray *timeStampValues; // @synthesize timeStampValues=_timeStampValues;
 @property(retain, nonatomic) id <GEOTransitArtworkDataSource> artworkValue; // @synthesize artworkValue=_artworkValue;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int value1; // @synthesize value1=_value1;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithToken:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -38,13 +38,17 @@
 + (double)timeIntervalFromServerTime:(id)arg1;
 + (id)serverTimeFromTimeInterval:(double)arg1;
 + (id)serverTimeFromDate:(id)arg1;
++ (_Bool)recordAppAnalyticsForEvent:(id)arg1 bugType:(id)arg2;
 + (void)setFlushTimerEnabled:(_Bool)arg1;
 + (void)setFlushDelayEnabled:(_Bool)arg1;
 + (void)setDisableBackgroundMetrics:(_Bool)arg1;
 + (_Bool)flushTimerEnabled;
 + (_Bool)flushDelayEnabled;
 + (_Bool)disableBackgroundMetrics;
++ (_Bool)diagnosticsSubmissionAllowed;
++ (_Bool)appAnalyticsAllowed;
 + (id)_sharedInstanceUsingBag:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *flushQueue; // @synthesize flushQueue=_flushQueue;
 @property(nonatomic) long long destination; // @synthesize destination=_destination;
 @property(copy, nonatomic) CDUnknownBlockType flushIntervalBlock; // @synthesize flushIntervalBlock=_flushIntervalBlock;
@@ -56,7 +60,6 @@
 @property(nonatomic) long long maxRequestCount; // @synthesize maxRequestCount=_maxRequestCount;
 @property(nonatomic) long long maxBatchSize; // @synthesize maxBatchSize=_maxBatchSize;
 @property(readonly, nonatomic) NSString *containerId; // @synthesize containerId=_containerId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <AMSMetricsBagContract> bagContract;
 - (id)initWithContainerId:(id)arg1 bagContract:(id)arg2;
 - (void)_handleFlushIntervalWithStyle:(long long)arg1;

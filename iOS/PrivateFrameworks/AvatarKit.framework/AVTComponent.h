@@ -20,10 +20,10 @@
 
 + (_Bool)componentTypeSupportsIntensity:(long long)arg1;
 + (id)componentWithAssets:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double intensity; // @synthesize intensity=_intensity;
 @property(nonatomic) _Bool mirrored; // @synthesize mirrored=_mirrored;
 @property(readonly) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_decode:(id)arg1;
 - (void)_encode:(id)arg1;

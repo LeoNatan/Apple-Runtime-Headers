@@ -14,9 +14,9 @@
     NSArray *_resolvedPersons;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *resolvedPersons; // @synthesize resolvedPersons=_resolvedPersons;
 @property(retain, nonatomic) IMChat *chat; // @synthesize chat=_chat;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithChat:(id)arg1 resolvedPersons:(id)arg2;
 

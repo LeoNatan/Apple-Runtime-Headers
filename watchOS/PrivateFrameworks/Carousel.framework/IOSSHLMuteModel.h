@@ -15,8 +15,8 @@
     id <IOSSHLMuteModelDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <IOSSHLMuteModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IOSSHLMuteModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)_isRingerStateMuted;
 - (void)_setSystemMuted:(_Bool)arg1;
 @property(nonatomic, getter=isMuted) _Bool muted;

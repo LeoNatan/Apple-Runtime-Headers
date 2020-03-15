@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)normalizedHostname:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 - (id)addressString;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

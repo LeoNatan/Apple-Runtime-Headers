@@ -24,6 +24,7 @@
     NSArray *_recognizers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *recognizers; // @synthesize recognizers=_recognizers;
 @property(retain, nonatomic) UIImageView *downArrowView; // @synthesize downArrowView=_downArrowView;
 @property(retain, nonatomic) UIImageView *upArrowView; // @synthesize upArrowView=_upArrowView;
@@ -35,7 +36,6 @@
 @property(nonatomic) _Bool showDigit; // @synthesize showDigit=_showDigit;
 @property(nonatomic) unsigned long long maxDigitValue; // @synthesize maxDigitValue=_maxDigitValue;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
-- (void).cxx_destruct;
 - (id)hiddenDigitImage;
 - (id)arrowImage:(_Bool)arg1;
 - (void)downGesture:(id)arg1;

@@ -11,8 +11,8 @@
     CDUnknownBlockType _measurementBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType measurementBlock; // @synthesize measurementBlock=_measurementBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType measurementBlock; // @synthesize measurementBlock=_measurementBlock;
 - (id)stringForObjectValue:(id)arg1;
 - (id)init;
 - (id)initWithMeasurementBlock:(CDUnknownBlockType)arg1;

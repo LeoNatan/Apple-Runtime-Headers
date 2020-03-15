@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedMNS;
-@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)reloadCarrierSettings:(_Bool)arg1;
 - (_Bool)updateSettingsFromCarrierFile:(id)arg1 prefix:(id)arg2 settings:(id)arg3;
 - (void)reloadMNS;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void)valueWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithKey:(id)arg1 valueType:(unsigned int)arg2 error:(id)arg3;
 

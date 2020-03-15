@@ -20,12 +20,12 @@
     struct CGSize _maxLabelSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CPMemoryPool *legibilityPool; // @synthesize legibilityPool=_legibilityPool;
 @property(readonly, nonatomic) CPMemoryPool *colorPool; // @synthesize colorPool=_colorPool;
 @property(readonly, nonatomic) CPMemoryPool *grayPool; // @synthesize grayPool=_grayPool;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) struct CGSize maxLabelSize; // @synthesize maxLabelSize=_maxLabelSize;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

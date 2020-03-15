@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *resourcePath; // @synthesize resourcePath=_resourcePath;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithDictionary:(id)arg1 resourcePath:(id)arg2;

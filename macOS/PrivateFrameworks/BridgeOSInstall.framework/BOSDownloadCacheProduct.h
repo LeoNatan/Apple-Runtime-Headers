@@ -14,9 +14,9 @@
     NSArray *_packageReferences;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *packageReferences; // @synthesize packageReferences=_packageReferences;
 @property(retain) NSURL *productURL; // @synthesize productURL=_productURL;
-- (void).cxx_destruct;
 - (id)allPackageReferences;
 - (id)productType;
 - (id)URL;

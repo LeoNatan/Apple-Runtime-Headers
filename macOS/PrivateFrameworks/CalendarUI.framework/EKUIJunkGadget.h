@@ -15,9 +15,9 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) CalUIHyperlinkTextView *reportJunkText; // @synthesize reportJunkText=_reportJunkText;
 @property(retain) NSView *junkView; // @synthesize junkView=_junkView;
-- (void).cxx_destruct;
 - (void)reportJunk;
 - (BOOL)shouldBeFullWidth;
 - (BOOL)shouldDisplay;

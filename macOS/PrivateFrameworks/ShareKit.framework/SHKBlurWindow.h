@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _serviceMask;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long serviceMask; // @synthesize serviceMask=_serviceMask;
 @property BOOL animatesTransitions; // @synthesize animatesTransitions;
 @property(retain) CALayer *blurLayer; // @synthesize blurLayer;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)animateBlurLayerToFrame:(struct CGRect)arg1 oldFrame:(struct CGRect)arg2;
 - (void)startTransitionOut;

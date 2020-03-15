@@ -21,8 +21,8 @@
 + (id)_selectedCalendarsFromAllCalendars:(id)arg1 deselectedCalendarSyncIdentifiers:(id)arg2;
 + (id)currentSelectedCalendarsForEventStore:(id)arg1;
 + (id)sharedPreferences;
-@property(retain, nonatomic) NSArray *customDeselectedCalendarIdentifiers; // @synthesize customDeselectedCalendarIdentifiers=_customDeselectedCalendarIdentifiers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *customDeselectedCalendarIdentifiers; // @synthesize customDeselectedCalendarIdentifiers=_customDeselectedCalendarIdentifiers;
 @property(retain, nonatomic) NSArray *customDeselectedCalendarHashes;
 - (id)customDeselectedCalendarSyncIdentifiers;
 - (void)setLastSuspendTime:(id)arg1;

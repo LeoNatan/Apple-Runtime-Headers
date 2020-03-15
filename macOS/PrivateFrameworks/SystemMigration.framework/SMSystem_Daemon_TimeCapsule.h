@@ -18,10 +18,10 @@
 
 + (unsigned long long)requiredScannerState;
 + (id)timeCapsuleURLForHostname:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *sharesQueue; // @synthesize sharesQueue;
 @property(retain) NSString *humanName; // @synthesize humanName;
 @property(retain) NSMutableArray *availableShares; // @synthesize availableShares;
-- (void).cxx_destruct;
 - (id)description;
 - (id)accessibilityDescription;
 - (void)addRemoteShare:(id)arg1;

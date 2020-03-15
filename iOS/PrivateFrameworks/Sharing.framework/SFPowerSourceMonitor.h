@@ -30,6 +30,7 @@
     CDUnknownBlockType _powerSourcesChangedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType powerSourcesChangedHandler; // @synthesize powerSourcesChangedHandler=_powerSourcesChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType powerSourcesLostHandler; // @synthesize powerSourcesLostHandler=_powerSourcesLostHandler;
 @property(copy, nonatomic) CDUnknownBlockType powerSourcesFoundHandler; // @synthesize powerSourcesFoundHandler=_powerSourcesFoundHandler;
@@ -37,7 +38,6 @@
 @property(nonatomic) _Bool skipCoalescing; // @synthesize skipCoalescing=_skipCoalescing;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
-- (void).cxx_destruct;
 - (void)_removePowerSources:(id)arg1;
 - (void)_handlePowerSourcesLost:(id)arg1;
 - (void)_handlePowerSourcesChanged:(id)arg1 changes:(unsigned int)arg2;

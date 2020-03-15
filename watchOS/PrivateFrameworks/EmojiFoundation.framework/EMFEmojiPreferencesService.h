@@ -19,9 +19,9 @@
 }
 
 + (id)sharedServiceWithMachName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EMFEmojiPreferences *preferences; // @synthesize preferences=_preferences;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)_createPreferencesIfNecessary;
 - (void)dealloc;

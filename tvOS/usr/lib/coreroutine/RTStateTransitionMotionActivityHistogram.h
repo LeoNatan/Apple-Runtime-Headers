@@ -15,10 +15,10 @@
     double _cumulativeInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double cumulativeInterval; // @synthesize cumulativeInterval=_cumulativeInterval;
 @property(nonatomic) long long activityChangeCount; // @synthesize activityChangeCount=_activityChangeCount;
 @property(retain, nonatomic) NSMutableArray *histogramBins; // @synthesize histogramBins=_histogramBins;
-- (void).cxx_destruct;
 - (unsigned long long)getDominantMotionActivityType;
 - (void)show;
 - (void)addActivity:(id)arg1 withInterval:(double)arg2;

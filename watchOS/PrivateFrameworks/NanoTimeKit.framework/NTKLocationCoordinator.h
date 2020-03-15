@@ -16,14 +16,13 @@
 {
     RadiosPreferences *_radioPreferences;
     PSYSyncStateObserver *_syncStateObserver;
-    int _deviceLockStateChangeNotifyToken;
     _Bool _isStoreDemoDevice;
     NSObject<OS_dispatch_queue> *_workerQueue;
     id <NTKLocationCoordinatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NTKLocationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NTKLocationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_didReceiveDeviceLockStateDidChangeNotification;
 - (void)syncClientStateDidChange:(id)arg1;
 - (void)airplaneModeChanged;

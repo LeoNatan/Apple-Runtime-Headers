@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSColor *_selectedTextColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *selectedTextColor; // @synthesize selectedTextColor=_selectedTextColor;
 @property(retain, nonatomic) NSColor *unselectedTextColor; // @synthesize unselectedTextColor=_unselectedTextColor;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     BKSAccelerometer *_accelerometer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKSAccelerometer *accelerometer; // @synthesize accelerometer=_accelerometer;
 @property(retain, nonatomic) DCDocumentCameraViewServiceSession *viewServiceSession; // @synthesize viewServiceSession=_viewServiceSession;
-- (void).cxx_destruct;
 - (void)didFinishWithDocumentInfoCollection:(id)arg1;
 - (void)didCancel:(id)arg1;
 - (void)dismiss;

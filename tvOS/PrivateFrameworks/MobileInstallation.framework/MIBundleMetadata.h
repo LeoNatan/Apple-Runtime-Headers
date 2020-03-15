@@ -25,6 +25,7 @@
 
 + (id)metadataFromURL:(id)arg1 error:(id *)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long autoInstallOverride; // @synthesize autoInstallOverride=_autoInstallOverride;
 @property(copy, nonatomic) NSString *watchKitAppExecutableHash; // @synthesize watchKitAppExecutableHash=_watchKitAppExecutableHash;
 @property(nonatomic) unsigned long long placeholderFailureUnderlyingErrorSource; // @synthesize placeholderFailureUnderlyingErrorSource=_placeholderFailureUnderlyingErrorSource;
@@ -33,7 +34,6 @@
 @property(nonatomic) unsigned long long installType; // @synthesize installType=_installType;
 @property(copy, nonatomic) NSString *installBuildVersion; // @synthesize installBuildVersion=_installBuildVersion;
 @property(copy, nonatomic) NSDate *installDate; // @synthesize installDate=_installDate;
-- (void).cxx_destruct;
 - (_Bool)serializeToURL:(id)arg1 error:(id *)arg2;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

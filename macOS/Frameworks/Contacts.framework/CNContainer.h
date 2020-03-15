@@ -47,6 +47,7 @@
 + (id)predicateForContainersIncludingDisabled:(BOOL)arg1;
 + (id)predicateForLocalContainerIncludingDisabled:(BOOL)arg1;
 + (id)predicateForAllContainers;
+- (void).cxx_destruct;
 @property(readonly) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
 @property(readonly, getter=isGuardianRestricted) BOOL guardianRestricted; // @synthesize guardianRestricted=_guardianRestricted;
 @property(readonly, copy) CNContainerPermissions *permissions; // @synthesize permissions=_permissions;
@@ -63,7 +64,6 @@
 @property(readonly) long long type; // @synthesize type=_type;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

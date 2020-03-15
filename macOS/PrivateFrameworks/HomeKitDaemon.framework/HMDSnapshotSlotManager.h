@@ -27,6 +27,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDNotificationRegistration *notificationRegistration; // @synthesize notificationRegistration=_notificationRegistration;
 @property(readonly, nonatomic) NSMutableArray *filesToCleanup; // @synthesize filesToCleanup=_filesToCleanup;
 @property(readonly, nonatomic) NSString *imageCacheDirectory; // @synthesize imageCacheDirectory=_imageCacheDirectory;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSMapTable *snapshotSlots; // @synthesize snapshotSlots=_snapshotSlots;
 @property(retain, nonatomic) HMDSnapshotFile *mostRecentSnapshot; // @synthesize mostRecentSnapshot=_mostRecentSnapshot;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (id)payloadForSnapshotFile:(id)arg1;
 - (id)addReferenceToMostRecentSnapshotFileForMessage:(id)arg1;
 - (void)_updateMostRecentSnapshot:(id)arg1 updateGenerationCounter:(BOOL)arg2;

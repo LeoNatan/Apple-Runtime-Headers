@@ -23,13 +23,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)tagColorWithLabelIndex:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *sidebarPinned; // @synthesize sidebarPinned=_sidebarPinned;
 @property(readonly, nonatomic) NSNumber *sidebarVisible; // @synthesize sidebarVisible=_sidebarVisible;
 @property(readonly, nonatomic) long long itemCount; // @synthesize itemCount=_itemCount;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) long long labelIndex; // @synthesize labelIndex=_labelIndex;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

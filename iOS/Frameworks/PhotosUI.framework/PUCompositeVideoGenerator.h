@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
 
 + (CDStruct_1b6d18a9)_overlapDurationBetweenAsset:(id)arg1 andAsset:(id)arg2;
 + (_Bool)canMergeAsset:(id)arg1 withConsecutiveAsset:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool onlyAllowOverlappingAssets; // @synthesize onlyAllowOverlappingAssets=_onlyAllowOverlappingAssets;
 @property(readonly, nonatomic) long long outputType; // @synthesize outputType=_outputType;
 @property(readonly, copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (void)_workQueue_finishWithError:(id)arg1;
 - (void)_workQueue_finishWithExportSession:(id)arg1 error:(id)arg2;
 - (void)_workQueue_finishWithPlaybackVideo:(id)arg1 error:(id)arg2;

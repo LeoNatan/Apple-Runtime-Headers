@@ -14,9 +14,9 @@
     MPModelGenericObject *_metadataObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPModelGenericObject *metadataObject; // @synthesize metadataObject=_metadataObject;
 @property(readonly, nonatomic) __weak MPCPlayerResponse *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (id)remove;
 - (id)initWithModelGenericObject:(id)arg1 response:(id)arg2;
 

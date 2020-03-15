@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *transactions; // @synthesize transactions=_transactions;
 @property(retain, nonatomic) PKCurrencyAmount *totalAmount; // @synthesize totalAmount=_totalAmount;
 @property(nonatomic) unsigned long long transactionCount; // @synthesize transactionCount=_transactionCount;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

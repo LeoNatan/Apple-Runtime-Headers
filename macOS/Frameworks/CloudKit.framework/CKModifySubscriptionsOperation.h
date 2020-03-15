@@ -19,13 +19,13 @@
     NSMutableDictionary *_subscriptionErrors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *subscriptionErrors; // @synthesize subscriptionErrors=_subscriptionErrors;
 @property(retain, nonatomic) NSMutableDictionary *subscriptionsBySubscriptionIDs; // @synthesize subscriptionsBySubscriptionIDs=_subscriptionsBySubscriptionIDs;
 @property(retain, nonatomic) NSMutableArray *deletedSubscriptionIDs; // @synthesize deletedSubscriptionIDs=_deletedSubscriptionIDs;
 @property(retain, nonatomic) NSMutableArray *savedSubscriptions; // @synthesize savedSubscriptions=_savedSubscriptions;
 @property(copy, nonatomic) NSArray *subscriptionIDsToDelete; // @synthesize subscriptionIDsToDelete=_subscriptionIDsToDelete;
 @property(copy, nonatomic) NSArray *subscriptionsToSave; // @synthesize subscriptionsToSave=_subscriptionsToSave;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)performCKOperation;

@@ -15,7 +15,7 @@
 
 @interface RBSInheritance : NSObject <BSXPCSecureCoding, BSDescriptionProviding, NSCopying>
 {
-    struct NSString *_endowmentNamespace;
+    NSString *_endowmentNamespace;
     NSString *_environment;
     NSObject<OS_xpc_object> *_encodedEndowment;
     RBSAssertionIdentifier *_originatingIdentifier;
@@ -24,12 +24,12 @@
 }
 
 + (BOOL)supportsBSXPCSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *encodedEndowment; // @synthesize encodedEndowment=_encodedEndowment;
 @property(readonly, nonatomic) unsigned long long originatingAttributePath; // @synthesize originatingAttributePath=_originatingAttributePath;
 @property(readonly, copy, nonatomic) RBSAssertionIdentifier *originatingIdentifier; // @synthesize originatingIdentifier=_originatingIdentifier;
 @property(readonly, nonatomic) NSString *environment; // @synthesize environment=_environment;
 @property(readonly, copy, nonatomic) NSString *endowmentNamespace; // @synthesize endowmentNamespace=_endowmentNamespace;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -40,7 +40,7 @@
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (struct NSObject *)endowment;
+- (id)endowment;
 - (id)_initWithNamespace:(id)arg1 environment:(id)arg2 encodedEndowment:(id)arg3 originatingIdentifier:(id)arg4 attributePath:(unsigned long long)arg5;
 - (id)init;
 

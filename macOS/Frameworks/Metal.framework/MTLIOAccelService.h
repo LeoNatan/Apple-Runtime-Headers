@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)registerService:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long registryID; // @synthesize registryID=_registryID;
 @property(readonly) unsigned int acceleratorPort; // @synthesize acceleratorPort=_acceleratorPort;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_wasTerminated;
 - (void)_safeEjectCancelled;

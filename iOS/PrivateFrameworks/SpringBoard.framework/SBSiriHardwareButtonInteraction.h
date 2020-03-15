@@ -24,13 +24,13 @@
 + (_Bool)dismissSiriTransientOverlayOnSinglePressUp:(long long)arg1;
 + (id)hardwareButtonInteractionForLockButton;
 + (id)hardwareButtonInteractionForHomeButton;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SiriAssertion> siriButtonDownAssertion; // @synthesize siriButtonDownAssertion=_siriButtonDownAssertion;
 @property(retain, nonatomic) id <SiriAssertion> siriPreheatAssertion; // @synthesize siriPreheatAssertion=_siriPreheatAssertion;
 @property(nonatomic) double activationInterval; // @synthesize activationInterval=_activationInterval;
 @property(retain, nonatomic) SiriLongPressButtonSource *siriActivationSource; // @synthesize siriActivationSource=_siriActivationSource;
 @property(nonatomic) long long siriButtonIdentifier; // @synthesize siriButtonIdentifier=_siriButtonIdentifier;
 @property(nonatomic) double initialPressDownTime; // @synthesize initialPressDownTime=_initialPressDownTime;
-- (void).cxx_destruct;
 - (id)hardwareButtonGestureParameters;
 - (_Bool)consumeLongPress;
 - (_Bool)consumeSinglePressUp;

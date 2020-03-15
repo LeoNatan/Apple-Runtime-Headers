@@ -78,6 +78,7 @@
     PXImageModulationManager *_debuggingObservedImageModulationManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXImageModulationManager *debuggingObservedImageModulationManager; // @synthesize debuggingObservedImageModulationManager=_debuggingObservedImageModulationManager;
 @property(retain, nonatomic) PUAssetActionPerformer *sharingPreheatedPerformer; // @synthesize sharingPreheatedPerformer=_sharingPreheatedPerformer;
 @property(retain, nonatomic, setter=_setLeftNavBarButtonIdentifiers:) NSMutableIndexSet *_leftNavBarButtonIdentifiers; // @synthesize _leftNavBarButtonIdentifiers=__leftNavBarButtonIdentifiers;
@@ -115,7 +116,6 @@
 @property(nonatomic) _Bool shouldUseCompactTitleView; // @synthesize shouldUseCompactTitleView=_shouldUseCompactTitleView;
 @property(nonatomic) _Bool shouldPlaceButtonsInNavigationBar; // @synthesize shouldPlaceButtonsInNavigationBar=_shouldPlaceButtonsInNavigationBar;
 @property(retain, nonatomic) PUBrowsingSession *browsingSession; // @synthesize browsingSession=_browsingSession;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)requestInfoOfKind:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
 - (void)infoUpdaterDidUpdate:(id)arg1;
@@ -133,6 +133,7 @@
 - (long long)_locationForBarButtonItemCollection:(id)arg1;
 - (id)_barButtonItemCollectionForLocation:(long long)arg1;
 - (id)barButtonItemCollection:(id)arg1 newBarButtonItemForIdentifier:(long long)arg2;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (id)_barButtonItemForActionType:(unsigned long long)arg1;
 - (_Bool)assetActionPerformer:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -142,7 +143,7 @@
 - (void)_browsingViewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)_handleTapGestureRecognizer:(id)arg1;
-- (void)_executeActionPerformer:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)executeActionPerformer:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_executeActionPerformer:(id)arg1;
 - (void)_performAddToLibraryAction;
 - (void)_performAssetExplorerReviewScreenActionType:(unsigned long long)arg1;

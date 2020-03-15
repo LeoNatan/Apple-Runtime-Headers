@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface STScreenTimeUIBundle : NSObject
 {
 }
 
-+ (id)blockingUIStringsTable;
 + (id)bundle;
 
 @end

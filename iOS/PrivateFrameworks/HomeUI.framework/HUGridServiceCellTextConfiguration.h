@@ -18,12 +18,12 @@
     UIVisualEffect *_descriptionTextEffect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffect *descriptionTextEffect; // @synthesize descriptionTextEffect=_descriptionTextEffect;
 @property(retain, nonatomic) UIColor *descriptionTextColor; // @synthesize descriptionTextColor=_descriptionTextColor;
 @property(retain, nonatomic) UIColor *nameTextColor; // @synthesize nameTextColor=_nameTextColor;
 @property(retain, nonatomic) id <HFStringGenerator> descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(retain, nonatomic) HFServiceNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
-- (void).cxx_destruct;
 
 @end
 

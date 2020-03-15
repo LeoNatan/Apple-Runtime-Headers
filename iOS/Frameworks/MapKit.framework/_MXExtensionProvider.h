@@ -23,11 +23,11 @@
 }
 
 + (id)sharedProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MXAssetStorage *assetStorage; // @synthesize assetStorage=_assetStorage;
 @property(retain, nonatomic) _MXExtensionServiceCenter *serviceCenter; // @synthesize serviceCenter=_serviceCenter;
 @property(retain, nonatomic) _MXExtensionDispatchCenter *dispatchCenter; // @synthesize dispatchCenter=_dispatchCenter;
 @property(retain, nonatomic) _MXExtensionMatchingMerger *merger; // @synthesize merger=_merger;
-- (void).cxx_destruct;
 - (void)imageForKey:(id)arg1 extension:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)loadImageForKey:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)imageForKey:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -25,6 +25,7 @@
 }
 
 + (double)defaultHeaderSelectionMargin;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *shelfLayoutSections; // @synthesize shelfLayoutSections=_shelfLayoutSections;
 @property(retain, nonatomic) _TVShelfLayoutHelper *layoutHelper; // @synthesize layoutHelper=_layoutHelper;
 @property(nonatomic) struct UIEdgeInsets sectionInset; // @synthesize sectionInset=_sectionInset;
@@ -37,7 +38,6 @@
 @property(nonatomic) double minimumLineSpacing; // @synthesize minimumLineSpacing=_minimumLineSpacing;
 @property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_minimumInteritemSpacing;
 @property(nonatomic) _Bool shouldSnapContent; // @synthesize shouldSnapContent=_shouldSnapContent;
-- (void).cxx_destruct;
 - (id)indexPathForSnappedContent;
 - (void)snapContentToIndexPath:(id)arg1;
 - (void)snapContent;

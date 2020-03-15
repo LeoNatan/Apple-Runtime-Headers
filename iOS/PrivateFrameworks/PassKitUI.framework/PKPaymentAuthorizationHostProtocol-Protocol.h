@@ -18,6 +18,7 @@
 - (void)authorizationDidAuthorizePeerPaymentQuote:(PKAuthorizedPeerPaymentQuote *)arg1;
 - (void)authorizationDidAuthorizePurchase:(PKServiceProviderPurchase *)arg1;
 - (void)authorizationDidAuthorizePayment:(PKPayment *)arg1;
+- (void)authorizationDidAuthorizeContext;
 - (void)authorizationDidFinishWithError:(NSError *)arg1;
 - (void)authorizationDidRequestMerchantSession;
 - (void)authorizationWillStart;

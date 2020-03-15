@@ -18,12 +18,12 @@
     NSString *_basePath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *basePath; // @synthesize basePath=_basePath;
 @property(retain, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
 @property(retain, nonatomic) NSString *flattenFolderName; // @synthesize flattenFolderName=_flattenFolderName;
 @property(nonatomic) BOOL flatten; // @synthesize flatten=_flatten;
 @property(nonatomic) BOOL usesCompression; // @synthesize usesCompression=_usesCompression;
-- (void).cxx_destruct;
 - (BOOL)writeURL:(id)arg1 isDirectory:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)open:(id *)arg1;
 - (BOOL)finish:(id *)arg1;

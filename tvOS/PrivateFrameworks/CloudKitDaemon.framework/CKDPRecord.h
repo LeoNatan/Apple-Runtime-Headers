@@ -42,6 +42,7 @@
 + (Class)conflictLoserEtagsType;
 + (Class)fieldsType;
 + (id)recordFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *zoneishMasterKeyId; // @synthesize zoneishMasterKeyId=_zoneishMasterKeyId;
 @property(retain, nonatomic) NSMutableArray *tombstonedPublicKeyIDs; // @synthesize tombstonedPublicKeyIDs=_tombstonedPublicKeyIDs;
 @property(retain, nonatomic) CKDPRecordStableUrl *stableUrl; // @synthesize stableUrl=_stableUrl;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) CKDPRecordType *type; // @synthesize type=_type;
 @property(retain, nonatomic) CKDPRecordIdentifier *recordIdentifier; // @synthesize recordIdentifier=_recordIdentifier;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

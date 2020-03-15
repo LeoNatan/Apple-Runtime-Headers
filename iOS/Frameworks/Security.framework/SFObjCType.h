@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 
 + (id)typeForValue:(id)arg1;
 + (id)typeForEncoding:(const char *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSString *className; // @synthesize className=_className;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *encoding; // @synthesize encoding=_encoding;
 @property(readonly, nonatomic) long long code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (void)getBytes:(void *)arg1 forObject:(id)arg2;
 - (id)objectWithBytes:(const void *)arg1;
 @property(readonly, nonatomic, getter=isObject) _Bool object;

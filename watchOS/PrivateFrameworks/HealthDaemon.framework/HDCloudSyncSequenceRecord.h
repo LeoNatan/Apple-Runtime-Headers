@@ -27,6 +27,7 @@
 + (id)recordIDWithZoneID:(id)arg1 sequenceSlot:(int)arg2;
 + (id)_recordNameForSequenceSlot:(int)arg1;
 + (id)recordWithCKRecord:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int slot; // @synthesize slot=_slot;
 @property(readonly, nonatomic) int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(readonly, copy, nonatomic) NSSet *includedIdentifiers; // @synthesize includedIdentifiers=_includedIdentifiers;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) long long baselineEpoch; // @synthesize baselineEpoch=_baselineEpoch;
 @property(readonly, nonatomic) unsigned long long changeIndex; // @synthesize changeIndex=_changeIndex;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)_unitTest_setChildRecordCount:(unsigned long long)arg1;
 - (id)description;
 - (void)decrementChildRecordCount:(unsigned long long)arg1;

@@ -34,10 +34,6 @@ struct CGSize {
     double height;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
 struct OptimizerOptions {
     _Bool useSGD;
     float learningRate;
@@ -47,6 +43,10 @@ struct OptimizerOptions {
     float adamBeta1;
     float adamBeta2;
     float adamEpsilon;
+};
+
+struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
+    struct __tree_node_base<void *> *_field1;
 };
 
 struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
@@ -71,6 +71,18 @@ struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>
             } ;
         } __value_;
     } __r_;
+};
+
+struct map<std::__1::basic_string<char>, turi::neural_net::shared_float_array, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, turi::neural_net::shared_float_array>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, turi::neural_net::shared_float_array>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, turi::neural_net::shared_float_array>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, turi::neural_net::shared_float_array>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, turi::neural_net::shared_float_array>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, turi::neural_net::shared_float_array>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
 };
 
 struct vector<float, std::__1::allocator<float>> {
@@ -98,4 +110,17 @@ typedef struct {
     float _field1;
     float _field2;
 } CDStruct_b2fbf00d;
+
+// Template types
+typedef struct map<std::__1::basic_string<char>, turi::neural_net::shared_float_array, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, turi::neural_net::shared_float_array>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, turi::neural_net::shared_float_array>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, turi::neural_net::shared_float_array>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, turi::neural_net::shared_float_array>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, turi::neural_net::shared_float_array>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, turi::neural_net::shared_float_array>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+} map_0ab6499d;
 

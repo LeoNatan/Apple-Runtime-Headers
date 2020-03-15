@@ -19,8 +19,8 @@
 + (void)requestLexiconFromBundlePath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)lexiconWithEntries:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

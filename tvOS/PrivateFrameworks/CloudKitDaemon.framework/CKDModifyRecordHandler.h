@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 + (id)_stringForState:(unsigned long long)arg1;
 + (id)modifyHandlerForDeleteWithRecordID:(id)arg1 operation:(id)arg2;
 + (id)modifyHandlerWithRecord:(id)arg1 operation:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didRollRecordPCSMasterKey; // @synthesize didRollRecordPCSMasterKey=_didRollRecordPCSMasterKey;
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(copy, nonatomic) NSDictionary *assetUUIDToExpectedProperties; // @synthesize assetUUIDToExpectedProperties=_assetUUIDToExpectedProperties;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *pcsGroup; // @synthesize pcsGroup=_pcsGroup;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 @property(nonatomic) __weak CKDModifyRecordsOperation *operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (void)_clearRecordProtectionDataForRecord;
 - (void)clearProtectionDataForRecord;
 - (void)savePCSDataToCache;

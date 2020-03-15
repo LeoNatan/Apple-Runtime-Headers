@@ -42,6 +42,7 @@
     CDUnknownBlockType _writeMixBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType writeMixBlock; // @synthesize writeMixBlock=_writeMixBlock;
 @property(copy, nonatomic) CDUnknownBlockType convertMixBlock; // @synthesize convertMixBlock=_convertMixBlock;
 @property(copy, nonatomic) CDUnknownBlockType processMixBlock; // @synthesize processMixBlock=_processMixBlock;
@@ -55,7 +56,6 @@
 @property(nonatomic) unsigned int startingChannel; // @synthesize startingChannel=_startingChannel;
 @property(nonatomic) unsigned int direction; // @synthesize direction=_direction;
 @property(nonatomic) BOOL isActive; // @synthesize isActive=_isActive;
-- (void).cxx_destruct;
 - (id)driverClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
 @property(readonly, nonatomic) CDUnknownBlockType *writeMixBlockUnretainedPtr;

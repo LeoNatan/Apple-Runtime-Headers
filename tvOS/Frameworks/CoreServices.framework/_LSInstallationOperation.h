@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     _Bool _claimed;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool claimed; // @synthesize claimed=_claimed;
 @property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) long long installType; // @synthesize installType=_installType;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)redactedDescription;
 - (id)description;
 - (id)initWithBundleID:(id)arg1 installType:(long long)arg2 block:(CDUnknownBlockType)arg3;

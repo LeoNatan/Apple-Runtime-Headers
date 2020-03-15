@@ -22,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *themeIdentifier; // @synthesize themeIdentifier=_themeIdentifier;
 @property(readonly, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(readonly, nonatomic) BOOL pageNumbersEnabled; // @synthesize pageNumbersEnabled=_pageNumbersEnabled;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly, nonatomic) NSString *projectType; // @synthesize projectType=_projectType;
 @property(readonly, nonatomic) long long creationSource; // @synthesize creationSource=_creationSource;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;

@@ -20,10 +20,10 @@
 }
 
 + (unsigned int)_systemBudgetForBudgetKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_CPLScheduledOverrideDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) unsigned int budget; // @synthesize budget=_budget;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *status;
 - (void)cancel;
 - (_Bool)scheduleEndOfOverride;

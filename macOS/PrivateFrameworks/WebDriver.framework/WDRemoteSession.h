@@ -36,12 +36,12 @@
     NSArray *_filesToSelectForFileUpload;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *filesToSelectForFileUpload; // @synthesize filesToSelectForFileUpload=_filesToSelectForFileUpload;
 @property(nonatomic) BOOL suppressICECandidateFiltering; // @synthesize suppressICECandidateFiltering=_suppressICECandidateFiltering;
 @property(nonatomic) BOOL allowsInsecureMediaCapture; // @synthesize allowsInsecureMediaCapture=_allowsInsecureMediaCapture;
 @property(readonly, nonatomic) WDRemoteSessionHost *remoteHost; // @synthesize remoteHost=_remoteHost;
 @property(nonatomic) BOOL usesStrictFileInteractabilityChecks; // @synthesize usesStrictFileInteractabilityChecks;
-- (void).cxx_destruct;
 - (void)_handleEventFromBackend:(id)arg1 withParameters:(id)arg2;
 - (void)_resetStateAfterSwitchingToBrowsingContext:(id)arg1;
 - (void)didConnectToRemote;

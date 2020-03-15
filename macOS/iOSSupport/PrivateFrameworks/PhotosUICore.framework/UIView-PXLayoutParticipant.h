@@ -26,7 +26,7 @@
 - (void)px_animateAlpha:(BOOL)arg1 transformType:(long long)arg2 withZoomTransitionContext:(id)arg3;
 - (void)px_animateWithZoomTransitionContext:(id)arg1;
 @property(retain, nonatomic, setter=px_setSpec:) PXViewSpec *px_spec;
-- (void)px_enumerateDescendantSubviewsWithBlock:(CDUnknownBlockType)arg1;
+- (void)px_enumerateDescendantSubviewsUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL px_hasHiddenAncestor;
 @property(readonly, nonatomic) struct UIEdgeInsets px_peripheryInsets;
 @property(readonly, nonatomic) double px_screenScale;

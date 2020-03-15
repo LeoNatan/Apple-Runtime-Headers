@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _originalCentroid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIDelayedAction *delayedAction; // @synthesize delayedAction=_delayedAction;
 @property(nonatomic) struct CGPoint originalCentroid; // @synthesize originalCentroid=_originalCentroid;
 @property(nonatomic) double touchStartTimestamp; // @synthesize touchStartTimestamp=_touchStartTimestamp;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasExceededAllowableMovement; // @synthesize hasExceededAllowableMovement=_hasExceededAllowableMovement;
 @property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
 @property(nonatomic) double minimumDurationRequired; // @synthesize minimumDurationRequired=_minimumDurationRequired;
-- (void).cxx_destruct;
 - (void)_cancelOrFail;
 - (_Bool)_exceededNumberOfTouchesForEvent:(id)arg1;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;

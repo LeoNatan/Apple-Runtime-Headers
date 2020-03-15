@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)canPerformActivityAsIndividualItemsInSourceController:(id)arg1;
-@property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController; // @synthesize itemSourceController=_itemSourceController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController; // @synthesize itemSourceController=_itemSourceController;
 - (void)performActivity;
 - (id)activityViewController;
 - (void)prepareWithActivityItems:(id)arg1;

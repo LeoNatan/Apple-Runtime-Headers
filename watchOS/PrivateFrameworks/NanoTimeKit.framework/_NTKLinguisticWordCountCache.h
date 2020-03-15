@@ -14,9 +14,9 @@
     unsigned int _number;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int number; // @synthesize number=_number;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 
 @end
 

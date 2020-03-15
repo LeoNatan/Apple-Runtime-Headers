@@ -16,10 +16,10 @@
     id <FAFamilyCircleRequestConnectionProvider> _connectionProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FAFamilyCircleRequestConnectionProvider> connectionProvider; // @synthesize connectionProvider=_connectionProvider;
 @property(copy) NSString *passwordOrToken; // @synthesize passwordOrToken=_passwordOrToken;
 @property(copy) NSString *usernameOrDSID; // @synthesize usernameOrDSID=_usernameOrDSID;
-- (void).cxx_destruct;
 - (id)requestOptions;
 - (id)serviceRemoteObjectWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)serviceConnection;

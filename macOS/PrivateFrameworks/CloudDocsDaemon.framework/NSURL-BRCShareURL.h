@@ -7,7 +7,7 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (BRCShareURL)
-- (id)brc_iWorkPathExtension;
+- (id)brc_iWorkPathExtensions;
 - (id)brc_applicationContainerID;
 - (id)brc_applicationBundleID;
 - (id)brc_applicationName;

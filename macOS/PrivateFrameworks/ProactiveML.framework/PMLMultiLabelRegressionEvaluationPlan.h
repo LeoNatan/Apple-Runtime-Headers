@@ -25,9 +25,10 @@
     NSArray *_evaluationPoints;
     id <PMLMultiLabelEvaluationTrackerProtocol> _tracker;
     unsigned long long _evaluationLevel;
-    struct NSString *_planId;
+    NSString *_planId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long evaluationLevel; // @synthesize evaluationLevel=_evaluationLevel;
 @property(readonly, nonatomic) id <PMLMultiLabelEvaluationTrackerProtocol> tracker; // @synthesize tracker=_tracker;
 @property(readonly, nonatomic) NSArray *evaluationPoints; // @synthesize evaluationPoints=_evaluationPoints;
@@ -41,14 +42,13 @@
 @property(readonly, nonatomic) PMLSessionDescriptor *sessionDescriptor; // @synthesize sessionDescriptor=_sessionDescriptor;
 @property(readonly, nonatomic) PMLTrainingStore *store; // @synthesize store=_store;
 @property(readonly, nonatomic) NSString *planId; // @synthesize planId=_planId;
-- (void).cxx_destruct;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;
 - (id)runWhile:(CDUnknownBlockType)arg1 didFinish:(char *)arg2;
 - (id)run;
 - (id)_precisionAtEvaluationPointsForSessions:(id)arg1;
 - (id)_rankedLabelsForSession:(id)arg1;
-- (id)initWithPlanId:(struct NSString *)arg1 store:(id)arg2 sessionDescriptor:(id)arg3 maxSessionsLimit:(unsigned long long)arg4 sessionsInBatch:(unsigned long long)arg5 supportPerLabel:(unsigned long long)arg6 labelAndWeights:(id)arg7 modelClassName:(id)arg8 intercept:(BOOL)arg9 evaluationPoints:(id)arg10 tracker:(id)arg11 evaluationLevel:(unsigned long long)arg12;
+- (id)initWithPlanId:(id)arg1 store:(id)arg2 sessionDescriptor:(id)arg3 maxSessionsLimit:(unsigned long long)arg4 sessionsInBatch:(unsigned long long)arg5 supportPerLabel:(unsigned long long)arg6 labelAndWeights:(id)arg7 modelClassName:(id)arg8 intercept:(BOOL)arg9 evaluationPoints:(id)arg10 tracker:(id)arg11 evaluationLevel:(unsigned long long)arg12;
 - (id)init;
 
 // Remaining properties

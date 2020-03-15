@@ -18,9 +18,9 @@
     float _value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALayer *handLayer; // @synthesize handLayer=_handLayer;
 @property(readonly, nonatomic) CALayer *dotLayer; // @synthesize dotLayer=_dotLayer;
-- (void).cxx_destruct;
 - (void)_updateHandTransform;
 - (void)setValue:(float)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;

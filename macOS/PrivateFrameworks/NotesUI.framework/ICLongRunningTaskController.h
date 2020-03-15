@@ -17,7 +17,7 @@
     BOOL _allowSingleUnitProgress;
     NSString *_customCancelButtonTitle;
     NSString *_progressFormatString;
-    struct NSWindow *_window;
+    NSWindow *_window;
     double _intervalBeforeOpeningProgressDialog;
     id _keepAlive;
     CDUnknownBlockType _completionBlock;
@@ -28,7 +28,8 @@
     ICMProgressWindowController *_progressWindowController;
 }
 
-+ (void)setMainWindow:(struct NSWindow *)arg1;
++ (void)setMainWindow:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICMProgressWindowController *progressWindowController; // @synthesize progressWindowController=_progressWindowController;
 @property(retain, nonatomic) NSDate *openProgressDate; // @synthesize openProgressDate=_openProgressDate;
 @property(retain, nonatomic) NSDate *lastAccessibilityAnnouncementDate; // @synthesize lastAccessibilityAnnouncementDate=_lastAccessibilityAnnouncementDate;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSString *customCancelButtonTitle; // @synthesize customCancelButtonTitle=_customCancelButtonTitle;
 @property(nonatomic) BOOL shouldShowCancelButton; // @synthesize shouldShowCancelButton=_shouldShowCancelButton;
 @property(nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
-- (void).cxx_destruct;
 - (void)closeProgressDialog;
 - (void)openProgressDialog;
 - (void)didTapCancelButtonInProgressWindowController:(id)arg1;
@@ -51,7 +51,7 @@
 - (void)completeTaskIfNecessary;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)startTask:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)initWithWindow:(struct NSWindow *)arg1 intervalBeforeOpeningProgressDialog:(double)arg2;
+- (id)initWithWindow:(id)arg1 intervalBeforeOpeningProgressDialog:(double)arg2;
 - (id)init;
 
 // Remaining properties

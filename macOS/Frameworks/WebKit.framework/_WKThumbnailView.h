@@ -27,16 +27,15 @@
     struct CGSize _maximumSnapshotSize;
 }
 
-@property(nonatomic) struct CGSize maximumSnapshotSize; // @synthesize maximumSnapshotSize=_maximumSnapshotSize;
-@property(nonatomic) double scale; // @synthesize scale=_scale;
-@property(nonatomic) BOOL shouldKeepSnapshotWhenRemovedFromSuperview; // @synthesize shouldKeepSnapshotWhenRemovedFromSuperview=_shouldKeepSnapshotWhenRemovedFromSuperview;
-@property(nonatomic) BOOL exclusivelyUsesSnapshot; // @synthesize exclusivelyUsesSnapshot=_exclusivelyUsesSnapshot;
-@property(nonatomic, setter=_setWaitingForSnapshot:) BOOL _waitingForSnapshot; // @synthesize _waitingForSnapshot;
-@property(readonly, nonatomic) struct CGSize snapshotSize; // @synthesize snapshotSize=_snapshotSize;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldKeepSnapshotWhenRemovedFromSuperview; // @synthesize shouldKeepSnapshotWhenRemovedFromSuperview=_shouldKeepSnapshotWhenRemovedFromSuperview;
+@property(nonatomic) BOOL exclusivelyUsesSnapshot; // @synthesize exclusivelyUsesSnapshot=_exclusivelyUsesSnapshot;
+@property(nonatomic) struct CGSize maximumSnapshotSize; // @synthesize maximumSnapshotSize=_maximumSnapshotSize;
+@property(readonly, nonatomic) struct CGSize snapshotSize; // @synthesize snapshotSize=_snapshotSize;
+@property(nonatomic) double scale; // @synthesize scale=_scale;
+@property(nonatomic, setter=_setWaitingForSnapshot:) BOOL _waitingForSnapshot; // @synthesize _waitingForSnapshot;
 @property(nonatomic, setter=_setThumbnailLayer:) CALayer *_thumbnailLayer;
-@property(nonatomic) BOOL usesSnapshot;
 - (void)viewDidMoveToWindow;
 - (void)_didTakeSnapshot:(struct CGImage *)arg1;
 - (void)_requestSnapshotIfNeeded;

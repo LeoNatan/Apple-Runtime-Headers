@@ -21,8 +21,8 @@
 + (double)pickerWidth;
 + (double)pickerDiameter;
 + (double)colorWheelWidth;
-@property(readonly, nonatomic) UIColor *selectedColor; // @synthesize selectedColor=_selectedColor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIColor *selectedColor; // @synthesize selectedColor=_selectedColor;
 - (void)animatePickerToOriginalPosition;
 - (void)hideColorWheelPickingColor:(_Bool)arg1;
 - (void)doneButtonTapped:(id)arg1;

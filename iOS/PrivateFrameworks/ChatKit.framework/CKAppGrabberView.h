@@ -26,11 +26,11 @@
 
 + (double)compactRoundedCornerRadius;
 + (double)roundedCornerRadius;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool roundsTopCorners; // @synthesize roundsTopCorners=_roundsTopCorners;
 @property(readonly, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(nonatomic) _Bool showsAppTitle; // @synthesize showsAppTitle=_showsAppTitle;
 @property(nonatomic) __weak id <CKAppGrabberViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)iconImageView;
 - (id)headerView;
 - (void)updateHeaderFrame:(_Bool)arg1;

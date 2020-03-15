@@ -12,8 +12,8 @@
     CDUnknownBlockType _completion;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (_Bool)dismissOnLock;
 - (_Bool)ignoreIfAlreadyDisplaying;
 - (void)deactivateForButton;

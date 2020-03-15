@@ -15,8 +15,8 @@
 
 + (BOOL)updateAsset;
 + (void)scheduleAssetUpdate;
-@property(readonly, nonatomic) VCUserDefaults *defaults; // @synthesize defaults=_defaults;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) VCUserDefaults *defaults; // @synthesize defaults=_defaults;
 - (BOOL)updateVoiceShortcutsBlacklistWithAsset:(id)arg1;
 - (BOOL)downloadAsset:(id)arg1;
 - (BOOL)downloadAssetCatalog;

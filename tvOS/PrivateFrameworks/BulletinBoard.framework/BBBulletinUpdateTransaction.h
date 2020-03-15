@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)transactionWithBulletinUpdate:(id)arg1 transactionID:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long transactionID; // @synthesize transactionID=_transactionID;
 @property(readonly, copy, nonatomic) BBBulletinUpdate *bulletinUpdate; // @synthesize bulletinUpdate=_bulletinUpdate;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

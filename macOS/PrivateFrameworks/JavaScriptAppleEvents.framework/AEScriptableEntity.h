@@ -26,6 +26,7 @@
     NSMutableDictionary *_pluralDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *pluralDictionary; // @synthesize pluralDictionary=_pluralDictionary;
 @property(retain) NSMutableDictionary *typeDictionary; // @synthesize typeDictionary=_typeDictionary;
 @property(retain) NSMutableDictionary *commandDetailsForNames; // @synthesize commandDetailsForNames=_commandDetailsForNames;
@@ -40,7 +41,6 @@
 @property(retain) NSString *path; // @synthesize path=_path;
 @property(retain) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)sendAppleEvent:(id)arg1 modifiers:(id)arg2 withContext:(id)arg3 waitForReply:(BOOL)arg4 error:(id *)arg5;
 - (id)sendAppleEvent:(id)arg1 timeout:(long long)arg2 withContext:(id)arg3 waitForReply:(BOOL)arg4 error:(id *)arg5;
 - (id)sendAppleEvent:(id)arg1 withContext:(id)arg2 waitForReply:(BOOL)arg3 error:(id *)arg4;

@@ -16,9 +16,9 @@
     CNContactListHelperScope *_scope;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactListHelperScope *scope; // @synthesize scope=_scope;
 @property(readonly, nonatomic) CNContactCardViewController *contactCardViewController; // @synthesize contactCardViewController=_contactCardViewController;
-- (void).cxx_destruct;
 - (void)performSelect;
 - (id)initWithContactCardViewController:(id)arg1 scope:(id)arg2;
 

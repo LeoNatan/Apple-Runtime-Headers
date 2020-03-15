@@ -20,9 +20,9 @@
     NSString *_recordsToDeletePlistPath;
 }
 
+- (void).cxx_destruct;
 @property _Bool shouldGenerateDerivatives; // @synthesize shouldGenerateDerivatives=_shouldGenerateDerivatives;
 @property _Bool initialUpload; // @synthesize initialUpload=_initialUpload;
-- (void).cxx_destruct;
 - (id)processCommitError:(id)arg1 andFinalizeError:(id)arg2 forUploadBatchContainer:(id)arg3 withUploadTracker:(id)arg4;
 - (void)_clearSuccessfullyPushedDeletedRecords:(id)arg1;
 - (_Bool)_updateDeletionRecordListForKey:(id)arg1 removingRecordID:(id)arg2;

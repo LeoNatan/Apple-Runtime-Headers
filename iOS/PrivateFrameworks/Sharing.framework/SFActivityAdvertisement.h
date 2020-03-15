@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, retain) SFPeerDevice *device; // @synthesize device=_device;
 @property(readonly, copy) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, copy) NSData *advertisementPayload; // @synthesize advertisementPayload=_advertisementPayload;
 @property(readonly) long long advertisementVersion; // @synthesize advertisementVersion=_advertisementVersion;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

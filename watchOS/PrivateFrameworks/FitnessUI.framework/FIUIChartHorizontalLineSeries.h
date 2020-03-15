@@ -16,10 +16,10 @@
     float _sidePadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float sidePadding; // @synthesize sidePadding=_sidePadding;
 @property(nonatomic) float lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)layoutSubviews;
 

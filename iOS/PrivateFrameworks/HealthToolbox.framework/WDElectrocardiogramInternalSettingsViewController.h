@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
     HKHeartRhythmAvailability *_heartRhythmAvailability;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDeletingSamples) _Bool deletingSamples; // @synthesize deletingSamples=_deletingSamples;
 @property(readonly, nonatomic) HKHeartRhythmAvailability *heartRhythmAvailability; // @synthesize heartRhythmAvailability=_heartRhythmAvailability;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) NSArray *demoResultKeys; // @synthesize demoResultKeys=_demoResultKeys;
 @property(readonly, nonatomic) NPSManager *syncManager; // @synthesize syncManager=_syncManager;
-- (void).cxx_destruct;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;

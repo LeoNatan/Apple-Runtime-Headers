@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)throttlerWithMinimumInterval:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *_queuedSelectorTimer; // @synthesize _queuedSelectorTimer=__queuedSelectorTimer;
 @property(retain, nonatomic) id _selectorArgument; // @synthesize _selectorArgument=__selectorArgument;
 @property(nonatomic) __weak id _target; // @synthesize _target=__target;
 @property(nonatomic) SEL _selector; // @synthesize _selector=__selector;
 @property(retain, nonatomic) NSDate *_lastFireTime; // @synthesize _lastFireTime=__lastFireTime;
 @property(nonatomic) double _minimumInterval; // @synthesize _minimumInterval=__minimumInterval;
-- (void).cxx_destruct;
 - (void)_performQueuedBlock:(id)arg1;
 - (void)performSelector:(SEL)arg1 onTarget:(id)arg2 withObject:(id)arg3;
 - (void)dealloc;

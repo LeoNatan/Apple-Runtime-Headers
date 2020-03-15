@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     UILabel *_valueLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UILabel *depthEffectLabel; // @synthesize depthEffectLabel=_depthEffectLabel;
 @property(retain, nonatomic) CEKApertureSlider *slider; // @synthesize slider=_slider;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double sliderWidth; // @synthesize sliderWidth=_sliderWidth;
 @property(readonly, nonatomic) long long layoutOrientation;
 @property(nonatomic) __weak id <PUPhotoEditApertureToolbarDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)apertureSliderDidChangeApertureValue:(id)arg1;
 - (void)setApertureValueClosestTo:(double)arg1;
 @property(readonly, nonatomic) double apertureValue;

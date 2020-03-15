@@ -56,6 +56,7 @@
     TRSession *_trSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TRSession *trSession; // @synthesize trSession=_trSession;
 @property(nonatomic) int stereoRole; // @synthesize stereoRole=_stereoRole;
 @property(retain, nonatomic) HMAccessory *stereoCounterpart; // @synthesize stereoCounterpart=_stereoCounterpart;
@@ -77,7 +78,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) NSDictionary *appDataSelf; // @synthesize appDataSelf=_appDataSelf;
-- (void).cxx_destruct;
 - (void)_updateAccount;
 - (void)_updateHomeStats;
 - (void)_restoreHomeApp;

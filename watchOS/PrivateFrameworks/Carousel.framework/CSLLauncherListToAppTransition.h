@@ -23,9 +23,9 @@
     CSLLauncherTableViewController *_listViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLLauncherTableViewController *listViewController; // @synthesize listViewController=_listViewController;
 @property(readonly, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
-- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (id)reverseOpacityAnimationWithOffset:(_Bool)arg1 referenceLayer:(id)arg2;
 - (id)reversePositionAnimation;

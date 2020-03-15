@@ -13,8 +13,8 @@
     UIStackView *_stackView;
 }
 
-@property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 - (void)_layoutStackView;
 - (void)layoutSubviews;
 

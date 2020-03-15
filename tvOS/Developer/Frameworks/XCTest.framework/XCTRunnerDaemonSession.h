@@ -13,12 +13,14 @@
 #import <XCTest/XCUIPlatformApplicationServicesProviding-Protocol.h>
 #import <XCTest/XCUIRemoteAccessibilityInterface-Protocol.h>
 #import <XCTest/XCUIRemoteSiriInterface-Protocol.h>
+#import <XCTest/XCUIResetAuthorizationStatusOfProtectedResourcesInterface-Protocol.h>
 
 @class NSMutableDictionary, NSString, NSXPCConnection, XCTCapabilities;
 @protocol OS_dispatch_queue, XCTestManager_ManagerInterface, XCUIAXNotificationHandling, XCUIApplicationPlatformServicesProviderDelegate;
 
-@interface XCTRunnerDaemonSession : NSObject <XCUIRemoteSiriInterface, XCUIDeviceEventAndStateInterface, XCUIPlatformApplicationServicesProviding, XCUIApplicationAutomationSessionProviding, XCTestManager_TestsInterface, XCUIRemoteAccessibilityInterface, XCUIEventSynthesizing>
+@interface XCTRunnerDaemonSession : NSObject <XCUIRemoteSiriInterface, XCUIDeviceEventAndStateInterface, XCUIPlatformApplicationServicesProviding, XCUIApplicationAutomationSessionProviding, XCUIResetAuthorizationStatusOfProtectedResourcesInterface, XCTestManager_TestsInterface, XCUIRemoteAccessibilityInterface, XCUIEventSynthesizing>
 {
+    double _implicitEventConfirmationIntervalForCurrentContext;
     NSXPCConnection *_connection;
     XCTCapabilities *_remoteInterfaceCapabilities;
     id <XCUIApplicationPlatformServicesProviderDelegate> _platformApplicationServicesProviderDelegate;
@@ -30,19 +32,21 @@
 + (id)daemonCapabilitiesForProtocolVersion:(unsigned long long)arg1 platform:(unsigned long long)arg2 error:(id *)arg3;
 + (id)capabilities;
 + (id)capabilitiesForDaemonConnection:(id)arg1 error:(id *)arg2;
++ (id)sessionWithConnection:(id)arg1;
 + (id)sharedSession;
 + (id)automationSessionBlacklist;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *invalidationHandlers; // @synthesize invalidationHandlers=_invalidationHandlers;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property __weak id <XCUIAXNotificationHandling> axNotificationHandler; // @synthesize axNotificationHandler=_axNotificationHandler;
 @property __weak id <XCUIApplicationPlatformServicesProviderDelegate> platformApplicationServicesProviderDelegate; // @synthesize platformApplicationServicesProviderDelegate=_platformApplicationServicesProviderDelegate;
 @property(readonly) XCTCapabilities *remoteInterfaceCapabilities; // @synthesize remoteInterfaceCapabilities=_remoteInterfaceCapabilities;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)enableFauxCollectionViewCells:(CDUnknownBlockType)arg1;
 - (void)setLocalizableStringsDataGatheringEnabled:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)loadAccessibilityWithTimeout:(double)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)setAXTimeout:(double)arg1 reply:(CDUnknownBlockType)arg2;
+@property double implicitEventConfirmationIntervalForCurrentContext; // @synthesize implicitEventConfirmationIntervalForCurrentContext=_implicitEventConfirmationIntervalForCurrentContext;
 - (id)synthesizeEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestElementAtPoint:(struct CGPoint)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)fetchParameterizedAttribute:(id)arg1 forElement:(id)arg2 parameter:(id)arg3 reply:(CDUnknownBlockType)arg4;
@@ -91,6 +95,7 @@
 - (void)requestAutomationSessionBlacklist:(CDUnknownBlockType)arg1;
 - (void)requestAutomationSessionForTestTargetWithPID:(int)arg1 preferredBackendPath:(id)arg2 reply:(CDUnknownBlockType)arg3;
 @property(readonly) long long applicationAutomationSessionSupport;
+- (_Bool)resetAuthorizationStatusForBundleIdentifier:(id)arg1 resourceIdentifier:(id)arg2 error:(id *)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

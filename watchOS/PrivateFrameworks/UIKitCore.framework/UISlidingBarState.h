@@ -25,6 +25,7 @@
     int __collapsedState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setCollapsedState:) int _collapsedState; // @synthesize _collapsedState=__collapsedState;
 @property(nonatomic) float _keyboardAdjustment; // @synthesize _keyboardAdjustment=__keyboardAdjustment;
 @property(nonatomic, setter=_setTreatTrailingHiddenAsOverlaps:) _Bool _treatTrailingHiddenAsOverlaps; // @synthesize _treatTrailingHiddenAsOverlaps=__treatTrailingHiddenAsOverlaps;
@@ -36,7 +37,6 @@
 @property(nonatomic) float leadingDragOffset; // @synthesize leadingDragOffset=_leadingDragOffset;
 @property(nonatomic) float trailingWidth; // @synthesize trailingWidth=_trailingWidth;
 @property(nonatomic) float leadingWidth; // @synthesize leadingWidth=_leadingWidth;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isTrailingVisible;
 @property(readonly, nonatomic) _Bool isLeadingVisible;
 - (id)_interactiveStateRequest;

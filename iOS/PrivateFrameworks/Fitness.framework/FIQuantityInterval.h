@@ -16,11 +16,11 @@
     HKQuantity *_threshold;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKQuantity *threshold; // @synthesize threshold=_threshold;
 @property(readonly, nonatomic) HKQuantityType *trackedQuantityType; // @synthesize trackedQuantityType=_trackedQuantityType;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) FIIntervalDefinition *definition; // @synthesize definition=_definition;
-- (void).cxx_destruct;
 - (id)initWithIntervalDefinition:(id)arg1 activityType:(unsigned long long)arg2 startDate:(id)arg3;
 
 @end

@@ -19,11 +19,11 @@
     IDSAccountController *_accountController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSAccountController *accountController; // @synthesize accountController=_accountController;
 @property(copy, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) CNFRegController *regController; // @synthesize regController=_regController;
-- (void).cxx_destruct;
 - (_Bool)serviceIsAvailable;
 - (id)displayName;
 - (id)name;

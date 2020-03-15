@@ -28,6 +28,7 @@
 + (_Bool)initializeDatabaseIfNecessaryAtURL:(id)arg1 usingTemplateAtURL:(id)arg2 error:(id *)arg3;
 + (id)databaseTemplateURL;
 + (id)databaseURLUsingTemporaryDirectory:(_Bool)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *removeIdentificationEntriesSQL; // @synthesize removeIdentificationEntriesSQL=_removeIdentificationEntriesSQL;
 @property(nonatomic) int lastRemoveIdentificationEntriesCount; // @synthesize lastRemoveIdentificationEntriesCount=_lastRemoveIdentificationEntriesCount;
 @property(copy, nonatomic) NSString *addPhoneNumbersSQL; // @synthesize addPhoneNumbersSQL=_addPhoneNumbersSQL;
@@ -41,7 +42,6 @@
 @property(nonatomic) int lastAddBlockingEntriesCount; // @synthesize lastAddBlockingEntriesCount=_lastAddBlockingEntriesCount;
 @property(nonatomic, getter=isTemporary) _Bool temporary; // @synthesize temporary=_temporary;
 @property(retain, nonatomic) CXDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (_Bool)vacuumWithError:(id *)arg1;
 - (id)_sqlValuesListPlaceholderStringWithNumberOfEntries:(int)arg1 entryString:(id)arg2;
 - (id)_sqlStringListPlaceholderStringWithNumberOfEntries:(int)arg1;

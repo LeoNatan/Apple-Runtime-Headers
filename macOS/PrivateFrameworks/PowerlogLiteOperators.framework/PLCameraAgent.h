@@ -23,9 +23,9 @@
 + (id)entryEventPointDefinitions;
 + (id)defaults;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) NSArray *cameraDevices; // @synthesize cameraDevices=_cameraDevices;
 @property(readonly) PLXPCListenerOperatorComposition *cameraUsageNotification; // @synthesize cameraUsageNotification=_cameraUsageNotification;
-- (void).cxx_destruct;
 - (void)log;
 - (void)handleMacOSCameraEvent:(id)arg1;
 - (BOOL)getCameraLocationFromGUId:(id)arg1 location:(unsigned int *)arg2 withRefresh:(BOOL)arg3;

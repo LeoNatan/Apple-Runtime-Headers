@@ -13,8 +13,8 @@
     UIGraphicsImageRenderer *_imageRenderer;
 }
 
-@property(retain, nonatomic) UIGraphicsImageRenderer *imageRenderer; // @synthesize imageRenderer=_imageRenderer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIGraphicsImageRenderer *imageRenderer; // @synthesize imageRenderer=_imageRenderer;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;

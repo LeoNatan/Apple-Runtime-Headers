@@ -13,8 +13,8 @@
     NSDateComponents *_hourlyDateComponents;
 }
 
-@property(retain, nonatomic) NSDateComponents *hourlyDateComponents; // @synthesize hourlyDateComponents=_hourlyDateComponents;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDateComponents *hourlyDateComponents; // @synthesize hourlyDateComponents=_hourlyDateComponents;
 - (_Bool)_useHourlyGoalComparison;
 - (id)dateComponentsForCalendar:(id)arg1;
 

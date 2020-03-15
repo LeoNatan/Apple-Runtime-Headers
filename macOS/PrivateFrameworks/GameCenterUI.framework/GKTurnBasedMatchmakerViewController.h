@@ -23,12 +23,12 @@
     id <GKTurnBasedMatchmakerViewControllerDelegate> turnBasedMatchmakerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <GKTurnBasedMatchmakerViewControllerDelegate> turnBasedMatchmakerDelegate; // @synthesize turnBasedMatchmakerDelegate;
 @property BOOL didRequestRemoteViewController; // @synthesize didRequestRemoteViewController=_internalFlag;
 @property(retain, nonatomic) id <GKRemoteViewController> remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) BOOL showExistingMatches; // @synthesize showExistingMatches=_showExistingMatches;
 @property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
-- (void).cxx_destruct;
 - (id)_gkInGameUIUnavailableAlertWithDismissHandler:(CDUnknownBlockType)arg1;
 - (void)authenticationChanged:(id)arg1;
 - (void)playerQuitMatch:(id)arg1;

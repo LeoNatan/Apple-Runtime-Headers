@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _eventsBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType eventsBlock; // @synthesize eventsBlock=_eventsBlock;
 @property(copy) CDUnknownBlockType removedBlock; // @synthesize removedBlock=_removedBlock;
 @property(copy) CDUnknownBlockType descriptionBlock; // @synthesize descriptionBlock=_descriptionBlock;
 @property(copy) CDUnknownBlockType countsBlock; // @synthesize countsBlock=_countsBlock;
 @property(copy) CDUnknownBlockType addedBlock; // @synthesize addedBlock=_addedBlock;
-- (void).cxx_destruct;
 - (void)sourceDidReceiveDescription:(id)arg1;
 - (void)sourceDidReceiveCounts:(id)arg1;
 - (void)statisticsManager:(id)arg1 didRemoveSource:(id)arg2;

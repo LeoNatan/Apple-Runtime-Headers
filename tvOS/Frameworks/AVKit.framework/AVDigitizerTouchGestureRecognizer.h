@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (id)_viewForTouchEventForwarding;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 @property(readonly, nonatomic) long long avTouchPosition;
 

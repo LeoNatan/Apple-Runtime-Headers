@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _altStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long altStyle; // @synthesize altStyle=_altStyle;
 @property(retain, nonatomic) MiroAutoEditProjectPolish *polishController; // @synthesize polishController=_polishController;
 @property(retain, nonatomic) MiroAutoEditKenBurnsController *kbController; // @synthesize kbController=_kbController;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *chronologicallyOrderedAssets; // @synthesize chronologicallyOrderedAssets=_chronologicallyOrderedAssets;
 @property(retain, nonatomic) MiroMemory *activeMemory; // @synthesize activeMemory=_activeMemory;
 @property(retain, nonatomic) Project *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (void)adjustKBRectanglesForClip:(id)arg1 animationStyle:(unsigned long long)arg2 aspect:(double)arg3;
 - (id)selectLayoutPeerFrom:(id)arg1;
 - (id)pickBetweenClipA:(id)arg1 andClipB:(id)arg2 forLayoutClip:(id)arg3;

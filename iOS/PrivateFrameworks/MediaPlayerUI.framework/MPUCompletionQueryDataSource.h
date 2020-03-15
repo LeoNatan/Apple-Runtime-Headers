@@ -22,10 +22,10 @@
     id <MPUCompletionQueryDataSourceDelegate> _completionDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MPUCompletionQueryDataSourceDelegate> completionDelegate; // @synthesize completionDelegate=_completionDelegate;
 @property(nonatomic) _Bool shouldAutomaticallyLoadCompletions; // @synthesize shouldAutomaticallyLoadCompletions=_shouldAutomaticallyLoadCompletions;
 @property(nonatomic) _Bool shouldShowCompletions; // @synthesize shouldShowCompletions=_shouldShowCompletions;
-- (void).cxx_destruct;
 - (void)_setCompletion:(id)arg1 forSectionAtIndex:(long long)arg2;
 - (void)_setToken:(unsigned long long)arg1 forSectionAtIndex:(long long)arg2;
 - (long long)_tokenForSectionAtIndex:(long long)arg1;

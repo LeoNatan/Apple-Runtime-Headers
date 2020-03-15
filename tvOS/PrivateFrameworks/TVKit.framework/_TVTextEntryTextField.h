@@ -16,10 +16,10 @@
     NSDictionary *_autofillContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_autofillContext) NSDictionary *autofillContext; // @synthesize autofillContext=_autofillContext;
 @property(nonatomic) __weak id <_TVTextEntryTextFieldDelegate> _tvTextEntryDelegate; // @synthesize _tvTextEntryDelegate=__tvTextEntryDelegate;
 @property(nonatomic) _Bool allowsFocus; // @synthesize allowsFocus=_allowsFocus;
-- (void).cxx_destruct;
 - (void)insertTextSuggestion:(id)arg1;
 - (id)text;
 - (_Bool)canBecomeFocused;

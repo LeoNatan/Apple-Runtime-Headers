@@ -16,8 +16,8 @@
     NSMutableArray *_columns;
 }
 
-@property(retain, nonatomic) NSMutableArray *columns; // @synthesize columns=_columns;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *columns; // @synthesize columns=_columns;
 @property(readonly, nonatomic) _Bool shouldHyphenate;
 @property(readonly, nonatomic) _Bool ignoresEquationAlignment;
 @property(readonly, nonatomic) unsigned int maxLineCount;

@@ -26,6 +26,7 @@
     NSMutableDictionary *_values;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIUber *uber; // @synthesize uber=_uber;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) SKUIProductPage *productPage; // @synthesize productPage=_productPage;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSHTTPURLResponse *ITMLResponse; // @synthesize ITMLResponse=_itmlResponse;
 @property(retain, nonatomic) NSData *ITMLData; // @synthesize ITMLData=_itmlData;
 @property(retain, nonatomic) SKUIArtwork *backgroundArtwork; // @synthesize backgroundArtwork=_backgroundArtwork;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)valueForPageKey:(id)arg1;
 - (void)setValue:(id)arg1 forPageKey:(id)arg2;

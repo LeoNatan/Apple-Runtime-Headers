@@ -17,14 +17,20 @@ struct Chromaticity {
     float _field2;
 };
 
+struct CodecBufferUsage;
+
 struct CodecSpecificInfo {
     int _field1;
-    char *_field2;
-    union CodecSpecificInfoUnion _field3;
+    union CodecSpecificInfoUnion _field2;
+    struct optional<webrtc::GenericFrameInfo> _field3;
+    struct optional<webrtc::FrameDependencyStructure> _field4;
 };
 
 struct CodecSpecificInfoH264 {
     int _field1;
+    unsigned char _field2;
+    _Bool _field3;
+    _Bool _field4;
 };
 
 struct CodecSpecificInfoVP8 {
@@ -32,6 +38,11 @@ struct CodecSpecificInfoVP8 {
     unsigned char _field2;
     _Bool _field3;
     char _field4;
+    _Bool _field5;
+    unsigned long long _field6[3];
+    unsigned long long _field7;
+    unsigned long long _field8[3];
+    unsigned long long _field9;
 };
 
 struct CodecSpecificInfoVP9 {
@@ -59,8 +70,28 @@ struct ColorSpace {
     unsigned char _field2;
     unsigned char _field3;
     int _field4;
-    struct optional<webrtc::HdrMetadata> _field5;
+    int _field5;
+    int _field6;
+    struct optional<webrtc::HdrMetadata> _field7;
 };
+
+struct CompressedTuple<std::__1::allocator<int>, unsigned long> {
+    unsigned long long _field1;
+};
+
+struct CompressedTuple<std::__1::allocator<webrtc::CodecBufferUsage>, unsigned long> {
+    unsigned long long _field1;
+};
+
+struct CompressedTuple<std::__1::allocator<webrtc::DecodeTargetIndication>, unsigned long> {
+    unsigned long long _field1;
+};
+
+struct CompressedTuple<std::__1::allocator<webrtc::RenderResolution>, unsigned long> {
+    unsigned long long _field1;
+};
+
+struct Data;
 
 struct EncodedImage {
     unsigned int _field1;
@@ -68,18 +99,45 @@ struct EncodedImage {
     long long _field3;
     long long _field4;
     int _field5;
-    char *_field6;
-    unsigned long long _field7;
-    unsigned long long _field8;
+    int _field6;
+    unsigned char _field7;
+    _Bool _field8;
     int _field9;
-    unsigned char _field10;
-    _Bool _field11;
-    int _field12;
-    struct PlayoutDelay _field13;
-    struct Timing _field14;
-    unsigned int _field15;
-    struct optional<int> _field16;
-    struct optional<webrtc::ColorSpace> _field17;
+    struct PlayoutDelay _field10;
+    struct Timing _field11;
+    scoped_refptr_05c3cd2c _field12;
+    unsigned long long _field13;
+    char *_field14;
+    unsigned long long _field15;
+    unsigned int _field16;
+    struct optional<int> _field17;
+    struct map<int, unsigned long, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, unsigned long>>> _field18;
+    struct optional<webrtc::ColorSpace> _field19;
+    struct RtpPacketInfos _field20;
+    _Bool _field21;
+};
+
+struct EncodedImageBufferInterface;
+
+struct FrameDependencyStructure {
+    int _field1;
+    int _field2;
+    int _field3;
+    struct InlinedVector<int, 10, std::__1::allocator<int>> _field4;
+    struct InlinedVector<webrtc::RenderResolution, 4, std::__1::allocator<webrtc::RenderResolution>> _field5;
+    struct vector<webrtc::FrameDependencyTemplate, std::__1::allocator<webrtc::FrameDependencyTemplate>> _field6;
+};
+
+struct FrameDependencyTemplate;
+
+struct GenericFrameInfo {
+    int _field1;
+    int _field2;
+    struct InlinedVector<webrtc::DecodeTargetIndication, 10, std::__1::allocator<webrtc::DecodeTargetIndication>> _field3;
+    struct InlinedVector<int, 4, std::__1::allocator<int>> _field4;
+    struct InlinedVector<int, 4, std::__1::allocator<int>> _field5;
+    long long _field6;
+    struct InlinedVector<webrtc::CodecBufferUsage, 8, std::__1::allocator<webrtc::CodecBufferUsage>> _field7;
 };
 
 struct GofInfoVP9 {
@@ -92,7 +150,7 @@ struct GofInfoVP9 {
 };
 
 struct H264BitstreamParser {
-    CDUnknownFunctionPointerType *_vptr$H264BitstreamParser;
+    CDUnknownFunctionPointerType *_vptr$BitstreamParser;
     struct optional<webrtc::SpsParser::SpsState> sps_;
     struct optional<webrtc::PpsParser::PpsState> pps_;
     struct optional<int> last_slice_qp_delta_;
@@ -109,11 +167,35 @@ struct HdrMasteringMetadata {
 
 struct HdrMetadata {
     struct HdrMasteringMetadata _field1;
-    unsigned int _field2;
-    unsigned int _field3;
+    int _field2;
+    int _field3;
 };
 
 struct I420BufferInterface;
+
+struct Inlined {
+    struct type _field1[10];
+};
+
+struct InlinedVector<int, 10, std::__1::allocator<int>> {
+    struct Storage<int, 10, std::__1::allocator<int>> _field1;
+};
+
+struct InlinedVector<int, 4, std::__1::allocator<int>> {
+    struct Storage<int, 4, std::__1::allocator<int>> _field1;
+};
+
+struct InlinedVector<webrtc::CodecBufferUsage, 8, std::__1::allocator<webrtc::CodecBufferUsage>> {
+    struct Storage<webrtc::CodecBufferUsage, 8, std::__1::allocator<webrtc::CodecBufferUsage>> _field1;
+};
+
+struct InlinedVector<webrtc::DecodeTargetIndication, 10, std::__1::allocator<webrtc::DecodeTargetIndication>> {
+    struct Storage<webrtc::DecodeTargetIndication, 10, std::__1::allocator<webrtc::DecodeTargetIndication>> _field1;
+};
+
+struct InlinedVector<webrtc::RenderResolution, 4, std::__1::allocator<webrtc::RenderResolution>> {
+    struct Storage<webrtc::RenderResolution, 4, std::__1::allocator<webrtc::RenderResolution>> _field1;
+};
 
 struct PlayoutDelay {
     int _field1;
@@ -131,12 +213,15 @@ struct PpsState {
     unsigned int sps_id;
 };
 
+struct ProfileLevelId {
+    int profile;
+    int level;
+};
+
 struct RTPFragmentationHeader {
     unsigned short _field1;
     unsigned long long *_field2;
     unsigned long long *_field3;
-    unsigned short *_field4;
-    char *_field5;
 };
 
 struct RtpEncodingParameters {
@@ -164,6 +249,10 @@ struct RtpFecParameters {
     int _field2;
 };
 
+struct RtpPacketInfos {
+    struct scoped_refptr<webrtc::RtpPacketInfos::Data> _field1;
+};
+
 struct RtpRtxParameters {
     struct optional<unsigned int> _field1;
 };
@@ -174,15 +263,15 @@ struct SdpVideoFormat {
 };
 
 struct SpatialLayer {
-    unsigned short width;
-    unsigned short height;
-    float maxFramerate;
-    unsigned char numberOfTemporalLayers;
-    unsigned int maxBitrate;
-    unsigned int targetBitrate;
-    unsigned int minBitrate;
-    unsigned int qpMax;
-    _Bool active;
+    unsigned short _field1;
+    unsigned short _field2;
+    float _field3;
+    unsigned char _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    _Bool _field9;
 };
 
 struct SpsState {
@@ -199,6 +288,61 @@ struct SpsState {
     unsigned int id;
 };
 
+struct Storage<int, 10, std::__1::allocator<int>> {
+    struct CompressedTuple<std::__1::allocator<int>, unsigned long> _field1;
+    union Data {
+        struct Allocated {
+            int *_field1;
+            unsigned long long _field2;
+        } _field1;
+        struct Inlined _field2;
+    } _field2;
+};
+
+struct Storage<int, 4, std::__1::allocator<int>> {
+    struct CompressedTuple<std::__1::allocator<int>, unsigned long> _field1;
+    union Data {
+        struct Allocated {
+            int *_field1;
+            unsigned long long _field2;
+        } _field1;
+        struct Inlined _field2;
+    } _field2;
+};
+
+struct Storage<webrtc::CodecBufferUsage, 8, std::__1::allocator<webrtc::CodecBufferUsage>> {
+    struct CompressedTuple<std::__1::allocator<webrtc::CodecBufferUsage>, unsigned long> _field1;
+    union Data {
+        struct Allocated {
+            struct CodecBufferUsage *_field1;
+            unsigned long long _field2;
+        } _field1;
+        struct Inlined _field2;
+    } _field2;
+};
+
+struct Storage<webrtc::DecodeTargetIndication, 10, std::__1::allocator<webrtc::DecodeTargetIndication>> {
+    struct CompressedTuple<std::__1::allocator<webrtc::DecodeTargetIndication>, unsigned long> _field1;
+    union Data {
+        struct Allocated {
+            int *_field1;
+            unsigned long long _field2;
+        } _field1;
+        struct Inlined _field2;
+    } _field2;
+};
+
+struct Storage<webrtc::RenderResolution, 4, std::__1::allocator<webrtc::RenderResolution>> {
+    struct CompressedTuple<std::__1::allocator<webrtc::RenderResolution>, unsigned long> _field1;
+    union Data {
+        struct Allocated {
+            struct RenderResolution *_field1;
+            unsigned long long _field2;
+        } _field1;
+        struct Inlined _field2;
+    } _field2;
+};
+
 struct Timing {
     unsigned char _field1;
     long long _field2;
@@ -212,66 +356,56 @@ struct Timing {
 };
 
 struct TimingFrameTriggerThresholds {
-    long long delay_ms;
-    unsigned short outlier_ratio_percent;
-};
-
-struct VideoBitrateAllocation {
-    unsigned int sum_;
-    struct optional<unsigned int> bitrates_[5][4];
+    long long _field1;
+    unsigned short _field2;
 };
 
 struct VideoCodec {
-    int codecType;
-    unsigned char plType;
-    unsigned short width;
-    unsigned short height;
-    unsigned int startBitrate;
-    unsigned int maxBitrate;
-    unsigned int minBitrate;
-    unsigned int targetBitrate;
-    unsigned int maxFramerate;
-    _Bool active;
-    unsigned int qpMax;
-    unsigned char numberOfSimulcastStreams;
-    struct SpatialLayer simulcastStream[4];
-    struct SpatialLayer spatialLayers[5];
-    int mode;
-    _Bool expect_encode_from_texture;
-    struct TimingFrameTriggerThresholds timing_frame_thresholds;
-    union VideoCodecUnion codec_specific_;
+    int _field1;
+    unsigned char _field2;
+    unsigned short _field3;
+    unsigned short _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    _Bool _field9;
+    unsigned int _field10;
+    unsigned char _field11;
+    struct SpatialLayer _field12[3];
+    struct SpatialLayer _field13[5];
+    int _field14;
+    _Bool _field15;
+    struct TimingFrameTriggerThresholds _field16;
+    union VideoCodecUnion _field17;
 };
 
 struct VideoCodecH264 {
-    _Bool frameDroppingOn;
-    int keyFrameInterval;
-    char *spsData;
-    unsigned long long spsLen;
-    char *ppsData;
-    unsigned long long ppsLen;
-    int profile;
+    _Bool _field1;
+    int _field2;
+    unsigned char _field3;
 };
 
 struct VideoCodecVP8 {
-    int complexity;
-    unsigned char numberOfTemporalLayers;
-    _Bool denoisingOn;
-    _Bool automaticResizeOn;
-    _Bool frameDroppingOn;
-    int keyFrameInterval;
+    int _field1;
+    unsigned char _field2;
+    _Bool _field3;
+    _Bool _field4;
+    _Bool _field5;
+    int _field6;
 };
 
 struct VideoCodecVP9 {
-    int complexity;
-    unsigned char numberOfTemporalLayers;
-    _Bool denoisingOn;
-    _Bool frameDroppingOn;
-    int keyFrameInterval;
-    _Bool adaptiveQpMode;
-    _Bool automaticResizeOn;
-    unsigned char numberOfSpatialLayers;
-    _Bool flexibleMode;
-    int interLayerPred;
+    int _field1;
+    unsigned char _field2;
+    _Bool _field3;
+    _Bool _field4;
+    int _field5;
+    _Bool _field6;
+    _Bool _field7;
+    unsigned char _field8;
+    _Bool _field9;
+    int _field10;
 };
 
 struct VideoDecoder;
@@ -306,6 +440,18 @@ struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>
     } _field1;
 };
 
+struct map<int, unsigned long, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, unsigned long>>> {
+    struct __tree<std::__1::__value_type<int, unsigned long>, std::__1::__map_value_compare<int, std::__1::__value_type<int, unsigned long>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, unsigned long>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, unsigned long>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, unsigned long>, std::__1::less<int>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+};
+
 struct map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>> {
     struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
@@ -333,10 +479,10 @@ struct optional<int> {
 
 struct optional<unsigned int> {
     union {
-        char __null_state_;
-        unsigned int __val_;
-    } ;
-    _Bool __engaged_;
+        char _field1;
+        unsigned int _field2;
+    } _field1;
+    _Bool _field2;
 };
 
 struct optional<webrtc::ColorSpace> {
@@ -350,6 +496,30 @@ struct optional<webrtc::ColorSpace> {
 struct optional<webrtc::DtxStatus> {
     CDUnion_81a57ede _field1;
     _Bool _field2;
+};
+
+struct optional<webrtc::FrameDependencyStructure> {
+    union {
+        char _field1;
+        struct FrameDependencyStructure _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct optional<webrtc::GenericFrameInfo> {
+    union {
+        char _field1;
+        struct GenericFrameInfo _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct optional<webrtc::H264::ProfileLevelId> {
+    union {
+        char __null_state_;
+        struct ProfileLevelId __val_;
+    } ;
+    _Bool __engaged_;
 };
 
 struct optional<webrtc::HdrMetadata> {
@@ -392,8 +562,20 @@ struct optional<webrtc::SpsParser::SpsState> {
     _Bool __engaged_;
 };
 
+struct scoped_refptr<webrtc::EncodedImageBufferInterface> {
+    struct EncodedImageBufferInterface *ptr_;
+};
+
 struct scoped_refptr<webrtc::I420BufferInterface> {
     struct I420BufferInterface *ptr_;
+};
+
+struct scoped_refptr<webrtc::RtpPacketInfos::Data> {
+    struct Data *_field1;
+};
+
+struct type {
+    unsigned char _field1[4];
 };
 
 struct unique_ptr<webrtc::BitrateAdjuster, std::__1::default_delete<webrtc::BitrateAdjuster>> {
@@ -436,6 +618,23 @@ struct vector<unsigned char, std::__1::allocator<unsigned char>> {
     } __end_cap_;
 };
 
+struct vector<webrtc::FrameDependencyTemplate, std::__1::allocator<webrtc::FrameDependencyTemplate>> {
+    struct FrameDependencyTemplate *_field1;
+    struct FrameDependencyTemplate *_field2;
+    struct __compressed_pair<webrtc::FrameDependencyTemplate *, std::__1::allocator<webrtc::FrameDependencyTemplate>> {
+        struct FrameDependencyTemplate *_field1;
+    } _field3;
+};
+
+#if 0
+// Names with conflicting types:
+typedef struct {
+    int *_field1;
+    unsigned long long _field2;
+} Allocated_499e3ff4;
+
+#endif
+
 #pragma mark Typedef'd Structures
 
 // Template types
@@ -462,6 +661,10 @@ typedef struct basic_string<char, std::__1::char_traits<char>, std::__1::allocat
         } _field1;
     } _field1;
 } basic_string_a1f69cfb;
+
+typedef struct scoped_refptr<webrtc::EncodedImageBufferInterface> {
+    struct EncodedImageBufferInterface *ptr_;
+} scoped_refptr_05c3cd2c;
 
 typedef struct scoped_refptr<webrtc::I420BufferInterface> {
     struct I420BufferInterface *ptr_;
@@ -494,10 +697,22 @@ union CodecSpecificInfoUnion {
 };
 
 union VideoCodecUnion {
-    struct VideoCodecVP8 VP8;
-    struct VideoCodecVP9 VP9;
-    struct VideoCodecH264 H264;
+    struct VideoCodecVP8 _field1;
+    struct VideoCodecVP9 _field2;
+    struct VideoCodecH264 _field3;
 };
+
+#if 0
+// Names with conflicting types:
+typedef union {
+    struct Allocated {
+        int *_field1;
+        unsigned long long _field2;
+    } _field1;
+    struct Inlined _field2;
+} Data_36c55096;
+
+#endif
 
 #pragma mark Typedef'd Unions
 

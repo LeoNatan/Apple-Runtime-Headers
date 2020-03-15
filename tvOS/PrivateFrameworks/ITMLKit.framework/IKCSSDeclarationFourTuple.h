@@ -13,8 +13,8 @@
     IKFourTuple *_fourTuple;
 }
 
-@property(retain, nonatomic) IKFourTuple *fourTuple; // @synthesize fourTuple=_fourTuple;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKFourTuple *fourTuple; // @synthesize fourTuple=_fourTuple;
 - (id)description;
 - (id)stringValue;
 - (id)initWithParseDeclaration:(id)arg1 info:(id)arg2;

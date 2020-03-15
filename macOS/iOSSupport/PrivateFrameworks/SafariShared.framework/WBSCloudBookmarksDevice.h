@@ -14,9 +14,9 @@
     CDStruct_f6aba300 _operatingSystemVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_f6aba300 operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
 @property(readonly, nonatomic) NSString *operatingSystemFamily; // @synthesize operatingSystemFamily=_operatingSystemFamily;
-- (void).cxx_destruct;
 - (id)initWithOperatingSystemVersion:(CDStruct_f6aba300)arg1 family:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
 

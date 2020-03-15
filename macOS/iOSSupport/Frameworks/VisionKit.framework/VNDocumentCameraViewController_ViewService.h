@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     DCDocumentCameraViewServiceSession *_viewServiceSession;
 }
 
-@property(retain, nonatomic) DCDocumentCameraViewServiceSession *viewServiceSession; // @synthesize viewServiceSession=_viewServiceSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DCDocumentCameraViewServiceSession *viewServiceSession; // @synthesize viewServiceSession=_viewServiceSession;
 - (void)didFinishWithDocumentInfoCollection:(id)arg1;
 - (void)didCancel:(id)arg1;
 - (void)dismiss;

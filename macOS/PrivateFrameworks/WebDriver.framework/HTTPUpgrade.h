@@ -17,8 +17,8 @@
     id delegate;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *upgradeQueue; // @synthesize upgradeQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *upgradeQueue; // @synthesize upgradeQueue;
 - (void)socketDidDisconnect:(id)arg1 withError:(id)arg2;
 - (void)didClose;
 - (void)didOpen;

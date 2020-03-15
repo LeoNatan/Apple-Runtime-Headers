@@ -21,10 +21,10 @@
 + (id)resultByResolvingBookmarkData:(id)arg1 options:(unsigned long long)arg2 relativeToURL:(id)arg3;
 + (id)resultWithURL:(id)arg1 stale:(BOOL)arg2 error:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL stale; // @synthesize stale=_stale;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

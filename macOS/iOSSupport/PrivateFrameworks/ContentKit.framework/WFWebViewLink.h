@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _rect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(readonly, nonatomic) NSURL *href; // @synthesize href=_href;
-- (void).cxx_destruct;
 - (id)initWithHref:(id)arg1 rect:(struct CGRect)arg2;
 
 @end

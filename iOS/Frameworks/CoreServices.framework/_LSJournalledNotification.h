@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, nonatomic) _Bool includePlugins; // @synthesize includePlugins=_includePlugins;
 @property(readonly, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 @property(readonly, nonatomic) int notification; // @synthesize notification=_notification;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithNotification:(int)arg1 bundleIDs:(id)arg2 plugins:(_Bool)arg3 options:(id)arg4;

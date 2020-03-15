@@ -14,9 +14,9 @@
     NSSet *_foundFolderIdStrings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *foundFolderIdStrings; // @synthesize foundFolderIdStrings=_foundFolderIdStrings;
 @property(nonatomic) BOOL prunedSuccessfully; // @synthesize prunedSuccessfully=_prunedSuccessfully;
-- (void).cxx_destruct;
 - (void)main;
 - (id)init;
 - (id)initWithFoundFolderIdStrings:(id)arg1;

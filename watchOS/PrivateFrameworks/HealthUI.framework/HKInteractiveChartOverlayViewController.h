@@ -23,6 +23,7 @@
     NSMutableArray *_cachedDataControllersWaitingForData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cachedDataControllersWaitingForData; // @synthesize cachedDataControllersWaitingForData=_cachedDataControllersWaitingForData;
 @property(retain, nonatomic) NSMutableDictionary *customNamedCaches; // @synthesize customNamedCaches=_customNamedCaches;
 @property(retain, nonatomic) NSMutableDictionary *overlayChartCaches; // @synthesize overlayChartCaches=_overlayChartCaches;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) HKValueRange *initialVisibleDateRange; // @synthesize initialVisibleDateRange=_initialVisibleDateRange;
 @property(nonatomic) int displayMode; // @synthesize displayMode=_displayMode;
 @property(readonly, nonatomic) HKDisplayType *primaryDisplayType; // @synthesize primaryDisplayType=_primaryDisplayType;
-- (void).cxx_destruct;
 - (id)seriesSelectionLineColorForGraphView:(id)arg1;
 - (id)lollipopExtensionColor;
 - (id)lollipopAnnotationColor;

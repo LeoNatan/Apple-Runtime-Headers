@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTrashed) BOOL trashed; // @synthesize trashed=_trashed;
 @property(nonatomic, getter=isPlayed) BOOL played; // @synthesize played=_played;
 @property(copy, nonatomic) NSURL *audioFileURL; // @synthesize audioFileURL=_audioFileURL;
 @property(copy, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(copy, nonatomic) CXHandle *sender; // @synthesize sender=_sender;
 @property(readonly, copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateCopy:(id)arg1 withZone:(struct _NSZone *)arg2;
 - (void)updateSanitizedCopy:(id)arg1 withZone:(struct _NSZone *)arg2;

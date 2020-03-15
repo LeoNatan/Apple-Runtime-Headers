@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     unsigned int _fallbackContextId;
 }
 
-@property(nonatomic) unsigned int fallbackContextId; // @synthesize fallbackContextId=_fallbackContextId;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int fallbackContextId; // @synthesize fallbackContextId=_fallbackContextId;
 - (id)hidEventFromCurrentState;
-- (struct __IOHIDEvent *)_createCollectionEvent;
+- (struct __IOHIDEvent *)_createCollectionEventForEvent:(struct __IOHIDEvent *)arg1;
 - (unsigned int)_collectionMask;
 - (void)updateWithHIDEvent:(struct __IOHIDEvent *)arg1;
 - (void)removePath:(id)arg1;

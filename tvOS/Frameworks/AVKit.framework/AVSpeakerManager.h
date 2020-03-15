@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSSet *_selectedRoutes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *selectedRoutes; // @synthesize selectedRoutes=_selectedRoutes;
 @property(readonly, copy, nonatomic) NSArray *routes; // @synthesize routes=_routes;
-- (void).cxx_destruct;
 - (void)_updateSelectedRoutes;
 - (void)routingController:(id)arg1 didFailToPickRouteWithError:(id)arg2;
 - (void)routingController:(id)arg1 pickedRouteDidChange:(id)arg2;

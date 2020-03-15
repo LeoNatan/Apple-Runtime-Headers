@@ -25,6 +25,7 @@
 + (void)initializeMonitor;
 + (id)sharedInstance;
 + (void)disableAllFilters;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoringNotifications; // @synthesize ignoringNotifications=_ignoringNotifications;
 @property(nonatomic) _Bool reduceWhitePointWasEnabled; // @synthesize reduceWhitePointWasEnabled=_reduceWhitePointWasEnabled;
 @property(nonatomic) _Bool grayscaleWasEnabled; // @synthesize grayscaleWasEnabled=_grayscaleWasEnabled;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool didEnableHWFilters; // @synthesize didEnableHWFilters=_didEnableHWFilters;
 @property(nonatomic) _Bool softwareFiltersEnabled; // @synthesize softwareFiltersEnabled=_softwareFiltersEnabled;
 @property(retain, nonatomic) AXUIClient *displayFilterUIClient; // @synthesize displayFilterUIClient=_displayFilterUIClient;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)updateSettings;
 - (void)_updateMatrixSupport;

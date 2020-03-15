@@ -22,6 +22,7 @@
 }
 
 + (id)stringByConvertingToHTML:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setCurrentAttributes:) NSDictionary *_currentAttributes; // @synthesize _currentAttributes=__currentAttributes;
 @property(nonatomic, setter=_setCurrentTraits:) unsigned int _currentTraits; // @synthesize _currentTraits=__currentTraits;
 @property(readonly, nonatomic) NSCountedSet *_currentMarkupElements; // @synthesize _currentMarkupElements=__currentMarkupElements;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) CDUnknownBlockType parsedAttributedStringBlock; // @synthesize parsedAttributedStringBlock=_parsedAttributedStringBlock;
 @property(copy, nonatomic) NSDictionary *italicizedAttributes; // @synthesize italicizedAttributes=_italicizedAttributes;
 @property(copy, nonatomic) NSDictionary *emphasizedAttributes; // @synthesize emphasizedAttributes=_emphasizedAttributes;
-- (void).cxx_destruct;
 - (void)_updateCurrentTraits;
 - (void)parse;
 - (id)initWithHTMLString:(id)arg1 defaultAttributes:(id)arg2;

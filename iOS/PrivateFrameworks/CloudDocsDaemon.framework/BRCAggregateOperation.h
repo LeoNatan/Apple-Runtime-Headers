@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _wrapperOperationCompletionHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType wrapperOperationCompletionHandler; // @synthesize wrapperOperationCompletionHandler=_wrapperOperationCompletionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType wrapperOperationCompletionHandler; // @synthesize wrapperOperationCompletionHandler=_wrapperOperationCompletionHandler;
 - (_Bool)shouldRetryForError:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;

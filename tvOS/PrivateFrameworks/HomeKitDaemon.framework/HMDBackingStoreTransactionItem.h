@@ -17,10 +17,10 @@
     HMFMessage *_message;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFMessage *message; // @synthesize message=_message;
 @property(readonly, nonatomic) NSSet *dependentUUIDs; // @synthesize dependentUUIDs=_dependentUUIDs;
 @property(readonly, nonatomic) HMDBackingStoreModelObject *change; // @synthesize change=_change;
-- (void).cxx_destruct;
 - (id)initWithChange:(id)arg1 message:(id)arg2;
 
 // Remaining properties

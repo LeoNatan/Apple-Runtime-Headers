@@ -16,8 +16,8 @@
     id <BLTSectionIdentifierMapperDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BLTSectionIdentifierMapperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BLTSectionIdentifierMapperDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)isMirroredSectionID:(id)arg1;
 - (id)mirroredSectionIDForRemoteSectionID:(id)arg1;
 - (id)_loadLocalDataProviderSectionIDs;

@@ -16,10 +16,10 @@
     id <CALNNotificationManager> _notificationManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CALNNotificationManager> notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(readonly, nonatomic) CALNInboxNotificationMonitor *inboxNotificationMonitor; // @synthesize inboxNotificationMonitor=_inboxNotificationMonitor;
 @property(readonly, copy, nonatomic) NSArray<CALNNotificationSource> *sources; // @synthesize sources=_sources;
-- (void).cxx_destruct;
 - (void)_withdrawExpiredNotificationsForSource:(id)arg1;
 - (void)refreshNotifications:(id)arg1;
 - (void)refreshNotifications;

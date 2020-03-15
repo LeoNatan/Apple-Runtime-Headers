@@ -26,6 +26,7 @@
 
 + (void)updateChildrenOrderingInFolder:(id)arg1 usingChildUUIDs:(id)arg2 sourceDescription:(id)arg3 includePendingChanges:(BOOL)arg4;
 + (BOOL)isValidPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *metadataURL; // @synthesize metadataURL=_metadataURL;
 @property(retain, nonatomic) PLManagedFolder *folder; // @synthesize folder=_folder;
 @property(readonly, retain, nonatomic) NSString *remappedUUID; // @synthesize remappedUUID=_remappedUUID;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *cloudGUID; // @synthesize cloudGUID=_cloudGUID;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_saveMetadata;
 - (BOOL)_readMetadata;
 - (id)description;

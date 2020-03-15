@@ -17,12 +17,12 @@
     NSString *_buildID;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *buildID; // @synthesize buildID=_buildID;
 @property(readonly, nonatomic) NSURL *remoteExactMatch; // @synthesize remoteExactMatch=_remoteExactMatch;
 @property(readonly, nonatomic) NSURL *remoteCSSearchIndex; // @synthesize remoteCSSearchIndex=_remoteCSSearchIndex;
 @property(readonly, nonatomic) NSURL *remoteSearchIndex; // @synthesize remoteSearchIndex=_remoteSearchIndex;
 @property(readonly, nonatomic) NSURL *harrierBaseURL; // @synthesize harrierBaseURL=_harrierBaseURL;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setRemoteExactMatch:(id)arg1;
 - (void)setRemoteCSSearchIndex:(id)arg1;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)intrinsicContentSizeForOrientation:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *placements; // @synthesize placements=_placements;
 @property(nonatomic) __weak _UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
-- (void).cxx_destruct;
 - (id)styleAttributesForStyle:(int)arg1;
 - (id)orderedDisplayItemPlacementsInRegionWithIdentifier:(id)arg1;
 - (id)setupInContainerView:(id)arg1;

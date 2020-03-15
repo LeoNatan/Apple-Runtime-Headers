@@ -11,8 +11,8 @@
     CDUnknownBlockType _handler;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (id)initWithHandler:(CDUnknownBlockType)arg1;
 
 @end

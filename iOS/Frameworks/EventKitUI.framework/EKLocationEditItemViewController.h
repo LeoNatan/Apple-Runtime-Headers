@@ -32,12 +32,12 @@
 }
 
 + (id)_sectionNameForSection:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKUIConferenceRoom *selectedConferenceRoom; // @synthesize selectedConferenceRoom=_selectedConferenceRoom;
 @property(retain, nonatomic) EKStructuredLocation *selectedLocation; // @synthesize selectedLocation=_selectedLocation;
 @property(retain, nonatomic) EKStructuredLocation *structuredLocation; // @synthesize structuredLocation=_structuredLocation;
 @property(nonatomic) _Bool onlyDisplayMapLocations; // @synthesize onlyDisplayMapLocations=_onlyDisplayMapLocations;
 @property(nonatomic) _Bool needsSave; // @synthesize needsSave=_needsSave;
-- (void).cxx_destruct;
 - (id)_cellForConferenceRoom:(id)arg1 atIndexPath:(id)arg2;
 - (void)eventsSearchUpdated:(id)arg1;
 - (void)frequentsSearchUpdated:(id)arg1;

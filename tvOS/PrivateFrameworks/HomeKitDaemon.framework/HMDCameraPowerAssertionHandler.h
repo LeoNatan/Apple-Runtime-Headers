@@ -20,10 +20,10 @@
 
 + (id)logCategory;
 + (id)sharedHandler;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int powerAssertion; // @synthesize powerAssertion=_powerAssertion;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSMutableSet *currentRequestHandlerSessionIDs; // @synthesize currentRequestHandlerSessionIDs=_currentRequestHandlerSessionIDs;
-- (void).cxx_destruct;
 - (void)deregisterRemoteRequestHandler:(id)arg1;
 - (void)registerRemoteRequestHandler:(id)arg1 forSessionID:(id)arg2;
 - (id)init;

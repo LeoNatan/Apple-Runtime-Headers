@@ -15,9 +15,9 @@
     id <GKFocusableViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <GKFocusableViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak GKDashboardPlayerShadowView *playerShadowView; // @synthesize playerShadowView=_playerShadowView;
-- (void).cxx_destruct;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)canBecomeFocused;

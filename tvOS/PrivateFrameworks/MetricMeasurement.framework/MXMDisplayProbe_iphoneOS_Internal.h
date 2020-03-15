@@ -22,8 +22,8 @@
 
 + (id)_allDescriptors;
 + (unsigned long long)_displayIndexWithDescriptor:(id)arg1;
-@property(nonatomic) __weak id <MXMDisplayProbePlatformDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MXMDisplayProbePlatformDelegate> delegate; // @synthesize delegate=_delegate;
 - (CDStruct_db19de03)_pollDisplayForSample;
 - (void)_pollMain;
 - (void)_loop;

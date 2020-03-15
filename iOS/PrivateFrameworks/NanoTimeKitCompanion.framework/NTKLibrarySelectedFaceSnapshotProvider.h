@@ -25,8 +25,8 @@
 + (void)snapshotCurrentFaceForDeviceUUID:(id)arg1 withOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)snapshotCurrentFaceForDevice:(id)arg1 withOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)snapshotCurrentFaceForActiveDeviceWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
-@property(nonatomic) __weak id <NTKLibrarySelectedFaceSnapshotProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NTKLibrarySelectedFaceSnapshotProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)snapshotSelectedFaceWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleFaceChange:(id)arg1;
 - (void)_updateSelectedFaceAndSnapshotKey;

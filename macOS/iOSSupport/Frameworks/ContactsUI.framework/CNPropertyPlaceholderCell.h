@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UILabel *_label;
 }
 
-@property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (BOOL)shouldIndentWhileEditing;
 - (double)minCellHeight;
 - (void)setCardGroupItem:(id)arg1;

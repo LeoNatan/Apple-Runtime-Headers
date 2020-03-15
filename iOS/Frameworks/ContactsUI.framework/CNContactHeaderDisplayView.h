@@ -41,6 +41,7 @@
 + (id)contactHeaderViewWithContact:(id)arg1 monogramOnly:(_Bool)arg2 delegate:(id)arg3;
 + (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(_Bool)arg2 shouldAllowImageDrops:(_Bool)arg3 monogramOnly:(_Bool)arg4;
 + (id)descriptorForRequiredKeysForContactFormatter:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNGeminiPickerController *geminiPicker; // @synthesize geminiPicker=_geminiPicker;
 @property(retain) CNGeminiResult *geminiResult; // @synthesize geminiResult=_geminiResult;
 @property(retain) CNContactGeminiView *geminiView; // @synthesize geminiView=_geminiView;
@@ -59,7 +60,6 @@
 @property(copy, nonatomic) NSDictionary *importantTextAttributes; // @synthesize importantTextAttributes=_importantTextAttributes;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(nonatomic) _Bool shouldShowGemini; // @synthesize shouldShowGemini=_shouldShowGemini;
-- (void).cxx_destruct;
 - (void)pickerDidCancel:(id)arg1;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)handleGeminiViewTouch:(id)arg1;

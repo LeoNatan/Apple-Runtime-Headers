@@ -66,6 +66,7 @@
 + (id)histogramColorProfileForColorSpaceName:(id)arg1;
 + (id)colorProfileForColorSpaceName:(id)arg1;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(nonatomic) double inputWhiteDstBlue; // @synthesize inputWhiteDstBlue=_inputWhiteDstBlue;
 @property(nonatomic) double inputWhiteSrcBlue; // @synthesize inputWhiteSrcBlue=_inputWhiteSrcBlue;
@@ -108,7 +109,6 @@
 @property(nonatomic) double inputBlackDstRGB; // @synthesize inputBlackDstRGB=_inputBlackDstRGB;
 @property(nonatomic) double inputBlackSrcRGB; // @synthesize inputBlackSrcRGB=_inputBlackSrcRGB;
 @property(nonatomic) int inputMode; // @synthesize inputMode=_inputMode;
-- (void).cxx_destruct;
 - (void)_applyAutoSettings:(id)arg1;
 - (void)setNilValueForKey:(id)arg1;
 - (id)archivalVersion;

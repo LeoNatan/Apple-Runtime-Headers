@@ -21,6 +21,7 @@
 }
 
 + (id)currentEnvironment;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactsEnvironment *cnEnvironment; // @synthesize cnEnvironment=_cnEnvironment;
 @property(retain, nonatomic) id <CNUIPlaceholderProviderFactory> likenessProviderFactory; // @synthesize likenessProviderFactory=_likenessProviderFactory;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
 @property(readonly, nonatomic) NCABPeopleEnvironmentServicesProvider *servicesProvider; // @synthesize servicesProvider=_servicesProvider;
 @property(readonly, nonatomic) _DECConsumer *duetConsumer; // @synthesize duetConsumer=_duetConsumer;
-- (void).cxx_destruct;
 - (id)initWithContactsEnvironment:(id)arg1;
 - (id)init;
 

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)infoWithTitle:(id)arg1 url:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 url:(id)arg2;
 
 @end

@@ -29,6 +29,7 @@
     struct CGRect _elementWindowRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect elementWindowRect; // @synthesize elementWindowRect=_elementWindowRect;
 @property(nonatomic) struct CGRect selectionRangeFrame; // @synthesize selectionRangeFrame=_selectionRangeFrame;
 @property(nonatomic) struct CGRect editingLineFrame; // @synthesize editingLineFrame=_editingLineFrame;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSAttributedString *currentLineContent; // @synthesize currentLineContent=_currentLineContent;
 @property(nonatomic) long long numberOfCharacters; // @synthesize numberOfCharacters=_numberOfCharacters;
 @property(retain, nonatomic) AXKElementController *elementController; // @synthesize elementController=_elementController;
-- (void).cxx_destruct;
 - (id)initWithElementController:(id)arg1;
 
 @end

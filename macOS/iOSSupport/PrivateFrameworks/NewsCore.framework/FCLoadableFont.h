@@ -17,9 +17,9 @@
 }
 
 + (id)loadableFontWithName:(id)arg1 url:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *fontURL; // @synthesize fontURL=_fontURL;
 @property(copy, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

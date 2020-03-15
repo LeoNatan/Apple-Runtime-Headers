@@ -16,10 +16,10 @@
     NSMutableDictionary *__pendingLocalPersistenceResults;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_pendingLocalPersistenceResults; // @synthesize _pendingLocalPersistenceResults=__pendingLocalPersistenceResults;
 @property(readonly, nonatomic) NSMutableDictionary *_receivedCoordinationInfos; // @synthesize _receivedCoordinationInfos=__receivedCoordinationInfos;
 @property(readonly, nonatomic) __weak id <CAMStillImagePersistenceCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_debugStringForUnreceivedResultSpecifiersFromExpectedResultSpecifiers:(id)arg1 receivedCoordinationInfos:(id)arg2;
 - (unsigned int)_powerAssertionReasonForResultSpecifiers:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool hasReceivedAllExpectedResponses;

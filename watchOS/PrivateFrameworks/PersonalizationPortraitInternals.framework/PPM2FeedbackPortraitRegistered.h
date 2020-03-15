@@ -27,12 +27,12 @@
 }
 
 + (Class)recordsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *records; // @synthesize records=_records;
 @property(nonatomic) _Bool fromPortrait; // @synthesize fromPortrait=_fromPortrait;
 @property(retain, nonatomic) NSString *mappingId; // @synthesize mappingId=_mappingId;
 @property(retain, nonatomic) NSString *variantId; // @synthesize variantId=_variantId;
 @property(retain, nonatomic) NSString *clientId; // @synthesize clientId=_clientId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

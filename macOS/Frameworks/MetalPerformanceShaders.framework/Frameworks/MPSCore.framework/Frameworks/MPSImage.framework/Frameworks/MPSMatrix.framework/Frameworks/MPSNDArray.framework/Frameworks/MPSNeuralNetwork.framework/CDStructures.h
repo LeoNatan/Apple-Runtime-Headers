@@ -151,10 +151,6 @@ struct NNKernelSourceParams {
     unsigned long long _field10;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
 struct NeuronInfo {
     int type;
     float a;
@@ -239,13 +235,13 @@ typedef struct {
     unsigned long long _field3;
     CDStruct_183601bc *_field4;
     unsigned int _field5;
-    struct NSArray *_field6;
+    id _field6;
     CDStruct_4b22da39 _field7;
     unsigned int _field8;
-    struct NSArray *_field9;
+    id _field9;
     CDStruct_8abe0896 _field10;
     unsigned int _field11;
-    struct NSArray *_field12;
+    id _field12;
     CDStruct_8abe0896 _field13;
     CDStruct_1e3be3a8 _field14;
     CDStruct_d6af7fc0 _field15;
@@ -253,7 +249,7 @@ typedef struct {
     unsigned long long _field17;
     unsigned long long _field18;
     unsigned long long _field19;
-} CDStruct_7b0ab756;
+} CDStruct_551bb076;
 
 typedef struct {
     unsigned long long _field1;
@@ -261,16 +257,16 @@ typedef struct {
     unsigned long long _field3;
     CDStruct_183601bc *_field4;
     unsigned int _field5;
-    struct NSArray *_field6;
+    id _field6;
     CDStruct_4b22da39 _field7;
     unsigned int _field8;
-    struct NSArray *_field9;
+    id _field9;
     CDStruct_8abe0896 _field10;
     CDStruct_1e3be3a8 _field11;
     CDStruct_d6af7fc0 _field12;
     unsigned long long _field13;
     unsigned long long _field14;
-} CDStruct_d22c003a;
+} CDStruct_bbc9fd3e;
 
 typedef struct {
     unsigned long long _field1;

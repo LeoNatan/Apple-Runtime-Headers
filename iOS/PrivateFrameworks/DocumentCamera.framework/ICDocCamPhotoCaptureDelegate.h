@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completed;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completed; // @synthesize completed=_completed;
 @property(copy, nonatomic) CDUnknownBlockType willCapturePhotoAnimation; // @synthesize willCapturePhotoAnimation=_willCapturePhotoAnimation;
 @property(nonatomic) struct __CVBuffer *pbRef; // @synthesize pbRef=_pbRef;
 @property(retain, nonatomic) NSDictionary *metaData; // @synthesize metaData=_metaData;
 @property(retain, nonatomic) AVCapturePhotoSettings *requestedPhotoSettings; // @synthesize requestedPhotoSettings=_requestedPhotoSettings;
-- (void).cxx_destruct;
 - (void)captureOutput:(id)arg1 didFinishCaptureForResolvedSettings:(id)arg2 error:(id)arg3;
 - (void)captureOutput:(id)arg1 didFinishProcessingLivePhotoToMovieFileAtURL:(id)arg2 duration:(CDStruct_198678f7)arg3 photoDisplayTime:(CDStruct_198678f7)arg4 resolvedSettings:(id)arg5 error:(id)arg6;
 - (void)captureOutput:(id)arg1 didFinishRecordingLivePhotoMovieForEventualFileAtURL:(id)arg2 resolvedSettings:(id)arg3;

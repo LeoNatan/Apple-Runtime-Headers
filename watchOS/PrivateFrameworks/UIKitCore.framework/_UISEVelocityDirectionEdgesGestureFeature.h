@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     unsigned int _touchedEdges;
 }
 
-@property(readonly, nonatomic) unsigned int touchedEdges; // @synthesize touchedEdges=_touchedEdges;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int touchedEdges; // @synthesize touchedEdges=_touchedEdges;
 - (id)debugDictionary;
 - (void)_incorporateSample:(const struct _UISEGestureFeatureSample *)arg1;
 - (id)initWithSettings:(id)arg1 touchedEdgesProvider:(id)arg2 exactMatchEdges:(_Bool)arg3;

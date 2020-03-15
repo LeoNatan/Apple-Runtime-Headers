@@ -16,9 +16,9 @@
     WFUberProduct *_product;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFUberProduct *product; // @synthesize product=_product;
 @property(retain, nonatomic) WFAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)action:(id)arg1 parameterStateDidChangeForKey:(id)arg2;
 - (void)updateProduct;
 - (BOOL)isHidden;

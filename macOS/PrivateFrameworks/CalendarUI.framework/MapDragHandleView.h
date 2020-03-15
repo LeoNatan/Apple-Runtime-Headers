@@ -13,8 +13,8 @@
     MapDragRadiusView *_radView;
 }
 
-@property __weak MapDragRadiusView *radView; // @synthesize radView=_radView;
 - (void).cxx_destruct;
+@property __weak MapDragRadiusView *radView; // @synthesize radView=_radView;
 - (void)updateLayer;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDragged:(id)arg1;

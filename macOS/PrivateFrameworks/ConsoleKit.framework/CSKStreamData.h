@@ -19,13 +19,13 @@
     unsigned long long _objectsCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long objectsCount; // @synthesize objectsCount=_objectsCount;
 @property(readonly, nonatomic) CSKStreamSortedData *sortedData; // @synthesize sortedData=_sortedData;
 @property(nonatomic) __weak CSKEntity *keyEntity; // @synthesize keyEntity=_keyEntity;
 @property(nonatomic) unsigned long long direction; // @synthesize direction=_direction;
 @property(nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
 @property(nonatomic) __weak id <CSKStreamDataDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (struct _NSRange)_rangeForListCount:(unsigned long long)arg1 targetCount:(unsigned long long)arg2 direction:(unsigned long long)arg3;
 - (id)_popActivitiesFromSortedData:(unsigned long long)arg1 direction:(unsigned long long)arg2;

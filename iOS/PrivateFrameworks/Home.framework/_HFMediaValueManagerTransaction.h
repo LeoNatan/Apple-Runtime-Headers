@@ -15,10 +15,10 @@
     NSNumber *_transactionNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *transactionNumber; // @synthesize transactionNumber=_transactionNumber;
 @property(nonatomic) long long playbackState; // @synthesize playbackState=_playbackState;
 @property(retain, nonatomic) NAFuture *writeFuture; // @synthesize writeFuture=_writeFuture;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

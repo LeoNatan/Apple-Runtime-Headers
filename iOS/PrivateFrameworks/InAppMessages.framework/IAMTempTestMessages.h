@@ -13,8 +13,8 @@
     ICInAppMessageEntry *_messageEntry;
 }
 
-@property(retain, nonatomic) ICInAppMessageEntry *messageEntry; // @synthesize messageEntry=_messageEntry;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ICInAppMessageEntry *messageEntry; // @synthesize messageEntry=_messageEntry;
 - (id)initWithDisplayType:(long long)arg1;
 
 @end

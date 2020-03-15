@@ -9,24 +9,25 @@
 #import <UIKitCore/_UITextLoupeResponderProxyDelegate-Protocol.h>
 
 @class UIDelayedAction, UIResponder, UITextGestureTuning, _UITextLoupeResponderProxy;
+@protocol UITextLoupeInteractionBehaviorDelegate;
 
 __attribute__((visibility("hidden")))
 @interface UITextLoupeInteraction : UITextInteraction <_UITextLoupeResponderProxyDelegate>
 {
-    Class _configuratorClass;
     UIDelayedAction *_delayedLoupeAction;
     UIDelayedAction *_delayedSelectionAction;
-    _Bool _isShiftKeyBeingHeld;
-    UITextGestureTuning *_gestureTuning;
     _Bool _hasPerformedInteraction;
-    _Bool _didChangeSelection;
     struct CGPoint _initialPointFromPreviousInteraction;
+    UITextGestureTuning *_gestureTuning;
+    id <UITextLoupeInteractionBehaviorDelegate> _behaviorDelegate;
     _UITextLoupeResponderProxy *_responderProxy;
 }
 
-@property(retain, nonatomic) _UITextLoupeResponderProxy *responderProxy; // @synthesize responderProxy=_responderProxy;
 - (void).cxx_destruct;
-- (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
+@property(retain, nonatomic) _UITextLoupeResponderProxy *responderProxy; // @synthesize responderProxy=_responderProxy;
+@property(retain, nonatomic) id <UITextLoupeInteractionBehaviorDelegate> behaviorDelegate; // @synthesize behaviorDelegate=_behaviorDelegate;
+@property(readonly, nonatomic) UITextGestureTuning *gestureTuning; // @synthesize gestureTuning=_gestureTuning;
+- (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4 forTouchType:(int)arg5;
 - (void)canBeginDragCursor:(id)arg1;
 - (void)delayedDisplayLoupe:(id)arg1;
 - (void)delayedSelectionAction:(id)arg1;
@@ -47,7 +48,10 @@ __attribute__((visibility("hidden")))
 - (void)_processGestureForCustomHighlighter:(id)arg1;
 - (void)loupeGesture:(id)arg1;
 - (_Bool)interaction_gestureRecognizerShouldBegin:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)setupGestureExclusionRequirements;
 - (void)finishSetup;
 - (void)selectToHere:(id)arg1;
 - (void)updateInitialPoint:(struct CGPoint)arg1;
@@ -55,7 +59,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIResponder *responder;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;
-- (id)initWithConfigurator:(Class)arg1;
+- (id)initWithBehaviorDelegate:(id)arg1;
 
 @end
 

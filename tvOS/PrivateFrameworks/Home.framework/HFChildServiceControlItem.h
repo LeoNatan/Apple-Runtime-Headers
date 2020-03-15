@@ -15,9 +15,9 @@
 }
 
 + (Class)valueClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFChildServiceFilter *childServiceFilter; // @synthesize childServiceFilter=_childServiceFilter;
 @property(readonly, nonatomic) HMService *parentService; // @synthesize parentService=_parentService;
-- (void).cxx_destruct;
 - (_Bool)supportsItemRepresentingServices:(id)arg1;
 - (id)normalizedValueForValue:(id)arg1;
 - (id)characteristicValuesForValue:(id)arg1;

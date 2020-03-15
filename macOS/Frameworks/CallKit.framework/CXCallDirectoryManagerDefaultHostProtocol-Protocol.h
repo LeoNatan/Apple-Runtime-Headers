@@ -9,6 +9,7 @@
 @class NSArray, NSString;
 
 @protocol CXCallDirectoryManagerDefaultHostProtocol <NSObject>
+- (oneway void)launchCallDirectorySettingsWithReply:(void (^)(NSError *))arg1;
 - (oneway void)setPrioritizedExtensionIdentifiers:(NSArray *)arg1 reply:(void (^)(NSError *))arg2;
 - (oneway void)getExtensionsWithReply:(void (^)(NSArray *, NSError *))arg1;
 - (oneway void)firstIdentificationEntriesForEnabledExtensionsWithPhoneNumbers:(NSArray *)arg1 reply:(void (^)(NSDictionary *, NSError *))arg2;

@@ -16,8 +16,8 @@
 }
 
 + (id)promise;
-@property(readonly) EFFuture *future; // @synthesize future=_future;
 - (void).cxx_destruct;
+@property(readonly) EFFuture *future; // @synthesize future=_future;
 - (void)cancel;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;

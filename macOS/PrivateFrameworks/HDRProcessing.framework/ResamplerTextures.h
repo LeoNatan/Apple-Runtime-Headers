@@ -18,13 +18,13 @@
     id <MTLTexture> _outputTextureUV;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <MTLTexture> outputTextureUV; // @synthesize outputTextureUV=_outputTextureUV;
 @property(retain) id <MTLTexture> outputTextureY; // @synthesize outputTextureY=_outputTextureY;
 @property(retain) id <MTLTexture> tempTextureUV; // @synthesize tempTextureUV=_tempTextureUV;
 @property(retain) id <MTLTexture> tempTextureY; // @synthesize tempTextureY=_tempTextureY;
 @property(retain) id <MTLTexture> inputTexureUV; // @synthesize inputTexureUV=_inputTexureUV;
 @property(retain) id <MTLTexture> inputTexture; // @synthesize inputTexture=_inputTexture;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,9 +17,9 @@
     id <PUICSystemGestureScrollCoordinatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <PUICSystemGestureScrollCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didEndDraggingWithAcceleration:(_Bool)arg1;
 - (void)didEndDecelerating;
 - (void)animationEnded;

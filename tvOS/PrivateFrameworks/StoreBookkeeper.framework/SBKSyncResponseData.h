@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)deserializedResponseBodyWithTransaction:(id)arg1 responseDictionary:(id)arg2 response:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *responseOpEntiesByKey; // @synthesize responseOpEntiesByKey=_responseOpEntiesByKey;
 @property(readonly) NSArray *successfullyDeletedKeys; // @synthesize successfullyDeletedKeys=_successfullyDeletedKeys;
 @property(readonly) NSArray *successfullyUpdatedKeys; // @synthesize successfullyUpdatedKeys=_successfullyUpdatedKeys;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSArray *updatedKeys; // @synthesize updatedKeys=_updatedKeys;
 @property(readonly, copy) NSString *syncAnchor; // @synthesize syncAnchor=_syncAnchor;
 @property(readonly) SBKSyncTransaction *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (void)_deserializeResponseDictionary:(id)arg1 response:(id)arg2;
 - (id)payloadDataForUpdateResponseKey:(id)arg1;
 - (id)description;

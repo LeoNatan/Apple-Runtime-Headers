@@ -25,6 +25,7 @@
     NSUUID *_relaySessionID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *members; // @synthesize members=_members;
 @property(readonly, nonatomic) NSDate *serverDate; // @synthesize serverDate=_serverDate;
 @property(readonly, nonatomic) _Bool fromServer; // @synthesize fromServer=_fromServer;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) unsigned long long participantIdentifier; // @synthesize participantIdentifier=_participantIdentifier;
 @property(readonly, nonatomic) _Bool isInitiator; // @synthesize isInitiator=_isInitiator;
 @property(readonly, nonatomic) NSUUID *groupUUID; // @synthesize groupUUID=_groupUUID;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)dictionaryRepresentation;

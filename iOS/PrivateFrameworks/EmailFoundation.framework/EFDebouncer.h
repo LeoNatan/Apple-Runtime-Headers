@@ -17,9 +17,9 @@
     id <EFCancelable> _cancelable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <EFCancelable> cancelable; // @synthesize cancelable=_cancelable;
 @property(readonly, nonatomic) EFObservable<EFObserver> *observable; // @synthesize observable=_observable;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)debounceResult:(id)arg1;
 - (id)initWithTimeInterval:(double)arg1 scheduler:(id)arg2 startAfter:(unsigned long long)arg3 block:(CDUnknownBlockType)arg4;

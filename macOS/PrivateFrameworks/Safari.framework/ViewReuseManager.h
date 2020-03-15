@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     id <ViewReuseManagerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *trackedViews; // @synthesize trackedViews=_trackedViews;
 @property(nonatomic) BOOL alwaysSendPrepareForReuse; // @synthesize alwaysSendPrepareForReuse=_alwaysSendPrepareForReuse;
 @property(nonatomic) __weak id <ViewReuseManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) Class reusableViewClass; // @synthesize reusableViewClass=_reusableViewClass;
-- (void).cxx_destruct;
 - (void)_addTrackedViewForRepresentedObjectAtIndex:(unsigned long long)arg1;
 - (void)_recycleView:(id)arg1;
 - (void)_recycleViewsInCollection:(id)arg1;

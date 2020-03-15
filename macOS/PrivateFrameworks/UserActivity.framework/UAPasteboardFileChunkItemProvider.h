@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     long long _chunkSize;
 }
 
+- (void).cxx_destruct;
 @property long long chunkSize; // @synthesize chunkSize=_chunkSize;
 @property(retain) NSNumber *offsetInFile; // @synthesize offsetInFile=_offsetInFile;
 @property(retain) NSFileHandle *dataFile; // @synthesize dataFile=_dataFile;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)getDataWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithType:(id)arg1 fileHandle:(id)arg2 offsetInFile:(id)arg3 size:(long long)arg4;
 

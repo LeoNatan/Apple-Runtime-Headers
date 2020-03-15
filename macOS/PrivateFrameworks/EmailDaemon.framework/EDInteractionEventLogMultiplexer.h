@@ -15,8 +15,8 @@
     NSArray *_logs;
 }
 
-@property(retain, nonatomic) NSArray *logs; // @synthesize logs=_logs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *logs; // @synthesize logs=_logs;
 - (id)description;
 - (void)persistEvent:(id)arg1 date:(id)arg2 message:(id)arg3 mailboxType:(long long)arg4;
 - (void)persistEvent:(id)arg1 date:(id)arg2 message:(id)arg3 mailbox:(id)arg4;

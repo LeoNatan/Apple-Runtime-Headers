@@ -19,6 +19,7 @@
     CDUnknownBlockType _stopBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType stopBlock; // @synthesize stopBlock=_stopBlock;
 @property(copy, nonatomic) CDUnknownBlockType continueBlock; // @synthesize continueBlock=_continueBlock;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) id currentItem; // @synthesize currentItem=_currentItem;
 @property(retain, nonatomic) NSArray *pendingItems; // @synthesize pendingItems=_pendingItems;
 @property(retain, nonatomic) NSArray *visitedItems; // @synthesize visitedItems=_visitedItems;
-- (void).cxx_destruct;
 - (void)stopWithResult:(id)arg1;
 - (void)cancelWithError:(id)arg1;
 - (void)continueWithResult:(id)arg1;

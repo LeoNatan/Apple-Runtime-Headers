@@ -30,10 +30,10 @@
     id <MNRouteRefreshPolicySchedulerTimedActivity> _timedActivity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MNRouteRefreshPolicySchedulerTimedActivity> timedActivity; // @synthesize timedActivity=_timedActivity;
 @property(nonatomic) double tolerance; // @synthesize tolerance=_tolerance;
 @property(copy, nonatomic) CDUnknownBlockType refreshCompletion; // @synthesize refreshCompletion=_refreshCompletion;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)_leaveActiveWorkload;

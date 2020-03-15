@@ -22,11 +22,11 @@
 + (void)readArchiveFromURL:(id)arg1 options:(unsigned long long)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (_Bool)isZipArchiveAtFD:(int)arg1;
 + (_Bool)isZipArchiveAtURL:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) NSURL *temporaryDirectoryURL; // @synthesize temporaryDirectoryURL=_temporaryDirectoryURL;
 @property(retain, nonatomic) BUZipFileDescriptorWrapper *fdWrapper; // @synthesize fdWrapper=_fdWrapper;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (_Bool)isValid;
 - (id)newArchiveReadChannel;

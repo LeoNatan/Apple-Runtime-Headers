@@ -38,6 +38,7 @@
     SUAppStoreUpdate *_appStoreUpdate;
 }
 
+- (void).cxx_destruct;
 @property(retain) SUAppStoreUpdate *appStoreUpdate; // @synthesize appStoreUpdate=_appStoreUpdate;
 @property(retain) SUUpdateProduct *updateProduct; // @synthesize updateProduct=_updateProduct;
 @property(readonly) BOOL allowedToUseInstallLater; // @synthesize allowedToUseInstallLater=_allowedToUseInstallLater;
@@ -64,7 +65,6 @@
 @property(retain) NSString *versionString; // @synthesize versionString=_versionString;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSString *productKey; // @synthesize productKey=_productKey;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (long long)_timeRemainingBeforeCriticalAutoInstallIfApplicable;
 - (id)description;

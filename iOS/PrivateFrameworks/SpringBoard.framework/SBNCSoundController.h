@@ -17,12 +17,12 @@
     DNDEventBehaviorResolutionService *_dndEventBehaviorResolutionService;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DNDEventBehaviorResolutionService *dndEventBehaviorResolutionService; // @synthesize dndEventBehaviorResolutionService=_dndEventBehaviorResolutionService;
 @property(retain, nonatomic) NSMutableSet *requestsRequiringExplicitKill; // @synthesize requestsRequiringExplicitKill=_requestsRequiringExplicitKill;
 @property(retain, nonatomic) NSMutableDictionary *playingSounds; // @synthesize playingSounds=_playingSounds;
 @property(retain, nonatomic) SBLockStateAggregator *lockStateAggregator; // @synthesize lockStateAggregator=_lockStateAggregator;
 @property(retain, nonatomic) SBLockScreenManager *lockScreenManager; // @synthesize lockScreenManager=_lockScreenManager;
-- (void).cxx_destruct;
 - (void)_lockStateChanged:(id)arg1;
 - (void)_hardwareButtonPressed:(id)arg1;
 - (_Bool)_isDeviceUILocked;

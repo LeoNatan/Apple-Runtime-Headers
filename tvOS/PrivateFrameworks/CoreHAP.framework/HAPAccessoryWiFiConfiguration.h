@@ -16,10 +16,10 @@
 }
 
 + (id)accessoryConfigurationWithSsid:(id)arg1 psk:(id)arg2 country:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(readonly, nonatomic) NSData *psk; // @synthesize psk=_psk;
 @property(readonly, nonatomic) NSString *ssid; // @synthesize ssid=_ssid;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSSID:(id)arg1 psk:(id)arg2 country:(id)arg3;
 

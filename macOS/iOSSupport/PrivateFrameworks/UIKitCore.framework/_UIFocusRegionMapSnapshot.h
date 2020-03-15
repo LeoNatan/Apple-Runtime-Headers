@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)combinedVisualRepresentationForSnapshots:(id)arg1 scaleFactor:(double)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *finalFocusableRegionMapEntries; // @synthesize finalFocusableRegionMapEntries=_finalFocusableRegionMapEntries;
 @property(nonatomic) struct CGPoint visualRepresentationScreenCenter; // @synthesize visualRepresentationScreenCenter=_visualRepresentationScreenCenter;
 @property(nonatomic) __weak UIView *focusableRegionAncestorView; // @synthesize focusableRegionAncestorView=_focusableRegionAncestorView;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect snapshottedRect; // @synthesize snapshottedRect=_snapshottedRect;
 @property(readonly, nonatomic) __weak UIView *rootView; // @synthesize rootView=_rootView;
 @property(readonly, copy, nonatomic) _UIFocusRegionMapSnapshotRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)debugQuickLookObject;
 - (id)visualRepresentationWithMinimumArea:(struct CGRect)arg1;
 @property(readonly, nonatomic) UIImage *visualRepresentation; // @synthesize visualRepresentation=_visualRepresentation;

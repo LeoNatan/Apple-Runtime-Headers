@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     _Bool _changingValue;
 }
 
-@property(nonatomic, getter=isChangingValue) _Bool changingValue; // @synthesize changingValue=_changingValue;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isChangingValue) _Bool changingValue; // @synthesize changingValue=_changingValue;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 @property(nonatomic) _Bool drawsFocusOutline;
 - (void)gestureRecognized:(id)arg1;

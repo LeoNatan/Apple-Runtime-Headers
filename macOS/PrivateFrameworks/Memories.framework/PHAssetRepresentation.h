@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 + (void)clearStaticCache;
 + (void)initialize;
 + (void)createStaticCache;
+- (void).cxx_destruct;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
 @property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(nonatomic, getter=isAdjustedVersion) BOOL adjustedVersion; // @synthesize adjustedVersion=_adjustedVersion;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(retain, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
 @property(nonatomic) unsigned long long lastKnownPersistenceState; // @synthesize lastKnownPersistenceState=_lastKnownPersistenceState;
-- (void).cxx_destruct;
 - (id)handleRequestCompletionWithResult:(id)arg1 info:(id)arg2 videoRequestOptions:(id)arg3;
 - (id)handleVideoRequestCompletionWithResult:(id)arg1 info:(id)arg2 videoRequestOptions:(id)arg3;
 - (id)handlePlayerItemRequestCompletionWithResult:(id)arg1 info:(id)arg2 videoRequestOptions:(id)arg3;

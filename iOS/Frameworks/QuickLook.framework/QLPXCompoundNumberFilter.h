@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_filters;
 }
 
-@property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 - (double)updatedOutput;
 
 @end

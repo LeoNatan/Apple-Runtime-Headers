@@ -25,13 +25,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *router; // @synthesize router=_router;
 @property long long configMethod; // @synthesize configMethod=_configMethod;
 @property(copy) NSArray *excludedRoutes; // @synthesize excludedRoutes=_excludedRoutes;
 @property(copy) NSArray *includedRoutes; // @synthesize includedRoutes=_includedRoutes;
 @property(readonly) NSArray *networkPrefixLengths; // @synthesize networkPrefixLengths=_networkPrefixLengths;
 @property(readonly) NSArray *addresses; // @synthesize addresses=_addresses;
-- (void).cxx_destruct;
 - (BOOL)hasDefaultRoute;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)copyLegacyDictionary;

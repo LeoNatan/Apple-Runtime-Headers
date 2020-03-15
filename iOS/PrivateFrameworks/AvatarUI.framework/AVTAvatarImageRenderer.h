@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_snapshotBuilderQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *snapshotBuilderQueue; // @synthesize snapshotBuilderQueue=_snapshotBuilderQueue;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) AVTSnapshotBuilder *snapshotBuilder; // @synthesize snapshotBuilder=_snapshotBuilder;
-- (void).cxx_destruct;
 - (id)nts_imageForAvatar:(id)arg1 scope:(id)arg2;
 - (id)imageForAvatar:(id)arg1 scope:(id)arg2;
 - (id)initWithSnapshotBuilder:(id)arg1 lockProvider:(CDUnknownBlockType)arg2 logger:(id)arg3;

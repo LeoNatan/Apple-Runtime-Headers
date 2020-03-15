@@ -13,8 +13,8 @@
     id <IMAPMessageDataSource> _dataSource;
 }
 
-@property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id)_messagesForPersistentIDs:(id)arg1;
 - (id)description;
 - (id)init;

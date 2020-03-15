@@ -33,6 +33,7 @@
 }
 
 + (double)cornerRadius;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsTextSizeComputation; // @synthesize needsTextSizeComputation=_needsTextSizeComputation;
 @property(retain, nonatomic) UILabel *moreLabel; // @synthesize moreLabel=_moreLabel;
 @property(retain, nonatomic) UITapGestureRecognizer *playRecognizer; // @synthesize playRecognizer=_playRecognizer;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) UIColor *highlightBackgroundColor; // @synthesize highlightBackgroundColor=_highlightBackgroundColor;
 @property(retain, nonatomic) UIColor *descriptionTextHighlightColor; // @synthesize descriptionTextHighlightColor=_descriptionTextHighlightColor;
 @property(retain, nonatomic) UIColor *descriptionTextColor; // @synthesize descriptionTextColor=_descriptionTextColor;
-- (void).cxx_destruct;
 - (void)_playButtonAction:(id)arg1;
 - (void)_selectButtonAction:(id)arg1;
 - (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;

@@ -24,9 +24,9 @@
     NSDictionary *_userIdentityDelegationAccountUUIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *userIdentityDelegationAccountUUIDs; // @synthesize userIdentityDelegationAccountUUIDs=_userIdentityDelegationAccountUUIDs;
 @property(nonatomic) __weak id <ICDelegationConsumerNetServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateNetServiceStatus;
 - (void)stop;
 - (void)publish;

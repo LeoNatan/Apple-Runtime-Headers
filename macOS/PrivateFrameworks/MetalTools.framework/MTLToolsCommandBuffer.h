@@ -73,6 +73,7 @@
 @property(readonly) unsigned long long status;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;
+- (void)presentDrawable:(id)arg1 afterMinimumDuration:(double)arg2;
 - (void)presentDrawable:(id)arg1 atTime:(double)arg2;
 - (void)presentDrawable:(id)arg1;
 - (void)enqueue;

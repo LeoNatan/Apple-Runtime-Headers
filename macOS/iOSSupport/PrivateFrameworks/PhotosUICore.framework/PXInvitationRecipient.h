@@ -24,12 +24,12 @@
 
 + (id)validPhoneNumberFromString:(id)arg1;
 + (id)validEmailAddressFromComposeRecipient:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *invalidAddressString; // @synthesize invalidAddressString=_invalidAddressString;
 @property(readonly, copy, nonatomic) NSString *selectedEmailString; // @synthesize selectedEmailString=_selectedEmailString;
 @property(readonly, copy, nonatomic) NSString *selectedPhoneString; // @synthesize selectedPhoneString=_selectedPhoneString;
 @property(readonly, retain, nonatomic) NSArray *allPhones; // @synthesize allPhones=_allPhones;
 @property(readonly, retain, nonatomic) NSArray *allEmails; // @synthesize allEmails=_allEmails;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy, nonatomic) NSString *lastName;
 @property(readonly, copy, nonatomic) NSString *firstName;

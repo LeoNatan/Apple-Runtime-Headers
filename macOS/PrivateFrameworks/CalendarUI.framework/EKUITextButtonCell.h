@@ -16,11 +16,11 @@
     NSAttributedString *_originalTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSAttributedString *originalTitle; // @synthesize originalTitle=_originalTitle;
 @property(retain) NSColor *mouseoverTextColor; // @synthesize mouseoverTextColor=_mouseoverTextColor;
 @property(retain) NSImage *originalImage; // @synthesize originalImage=_originalImage;
 @property BOOL mouseOver; // @synthesize mouseOver=_mouseOver;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (struct CGRect)drawTitle:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;

@@ -4,9 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSObject;
+@protocol PLIndexMappingCache;
+
 @protocol PLDerivedAlbumOrigin
-- (void)enumerateDerivedAlbums:(void (^)(struct NSObject *))arg1;
+- (void)enumerateDerivedAlbums:(void (^)(NSObject<PLIndexMappingCache> *))arg1;
 - (void)unregisterAllDerivedAlbums;
-- (void)registerDerivedAlbum:(struct NSObject *)arg1;
+- (void)registerDerivedAlbum:(NSObject<PLIndexMappingCache> *)arg1;
 @end
 

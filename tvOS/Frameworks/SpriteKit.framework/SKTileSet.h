@@ -30,8 +30,8 @@
 + (id)tileSetWithTileGroups:(id)arg1 tileSetType:(unsigned long long)arg2;
 + (id)tileSetWithTileGroups:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)getCenterTileDefinitionForGroup:(id)arg1 withRequiredOutputGroupAdjacency:(unsigned long long *)arg2;
 - (id)findTileDefinitionsForGroup:(id)arg1 withGroupAdjacency:(unsigned long long *)arg2;

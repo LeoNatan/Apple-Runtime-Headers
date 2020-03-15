@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     int _modelTypeBindOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int modelTypeBindOffset; // @synthesize modelTypeBindOffset=_modelTypeBindOffset;
 @property(readonly, nonatomic) NSString *modelType; // @synthesize modelType=_modelType;
 @property(readonly, nonatomic) int zoneRowBindOffset; // @synthesize zoneRowBindOffset=_zoneRowBindOffset;
 @property(readonly, nonatomic) unsigned int zoneRow; // @synthesize zoneRow=_zoneRow;
 @property(readonly, nonatomic) unsigned int returning; // @synthesize returning=_returning;
-- (void).cxx_destruct;
 - (id)fetchRowFromStatement:(struct sqlite3_stmt *)arg1 skip:(_Bool *)arg2 updatedSequence:(unsigned int *)arg3 error:(id *)arg4;
 - (_Bool)bindPropertiesToStatement:(struct sqlite3_stmt *)arg1 error:(id *)arg2;
 - (id)initWithLocalZone:(id)arg1 zoneRow:(unsigned int)arg2 modelType:(id)arg3 returning:(unsigned int)arg4;

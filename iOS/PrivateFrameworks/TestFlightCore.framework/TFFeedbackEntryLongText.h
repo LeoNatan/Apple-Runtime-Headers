@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_placeholder;
 }
 
-@property(readonly, copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2 placeholder:(id)arg3;
 
 @end

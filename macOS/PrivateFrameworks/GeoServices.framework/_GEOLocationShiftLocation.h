@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     BOOL _recordCacheInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(readonly, nonatomic) double accuracy; // @synthesize accuracy=_accuracy;
 @property(readonly, nonatomic) GEOLatLng *latLng; // @synthesize latLng=_latLng;
-- (void).cxx_destruct;
 - (void)performMustGoToNetwork;
 - (void)performErrorHandler:(id)arg1;
 - (void)performCompletionHandlerWithShiftedCoordinate:(CDStruct_c3b9c2ee)arg1 accuracy:(double)arg2 function:(id)arg3 wasFunctionCached:(BOOL)arg4;

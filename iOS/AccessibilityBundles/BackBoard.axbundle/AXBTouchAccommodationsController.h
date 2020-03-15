@@ -21,8 +21,8 @@
 + (void)hideHoldDurationTripleClickHelp;
 + (void)showHoldDurationTripleClickHelp;
 + (void)initializeMonitor;
-@property(retain, nonatomic) AXUIClient *touchAccommodationsClient; // @synthesize touchAccommodationsClient=_touchAccommodationsClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXUIClient *touchAccommodationsClient; // @synthesize touchAccommodationsClient=_touchAccommodationsClient;
 - (void)connectionWithServiceWasInterruptedForUserInterfaceClient:(id)arg1;
 - (id)_clientIdentifier;
 - (void)_hideHoldDurationTripleClickHelp;

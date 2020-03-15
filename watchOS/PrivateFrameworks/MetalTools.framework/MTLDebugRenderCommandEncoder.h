@@ -68,6 +68,8 @@
     CDStruct_24aab684 _tessellationFactorBufferArgument;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float tessellationFactorScale; // @synthesize tessellationFactorScale=_tessellationFactorScale;
 @property(readonly, nonatomic) unsigned int tessellationFactorBufferInstanceStride; // @synthesize tessellationFactorBufferInstanceStride=_tessellationFactorBufferInstanceStride;
 @property(readonly, nonatomic) CDStruct_24aab684 tessellationFactorBufferArgument; // @synthesize tessellationFactorBufferArgument=_tessellationFactorBufferArgument;
@@ -95,8 +97,6 @@
 @property(readonly, nonatomic) unsigned int cullMode; // @synthesize cullMode=_cullMode;
 @property(readonly, nonatomic) unsigned int frontFacingWinding; // @synthesize frontFacingWinding=_frontFacingWinding;
 @property(readonly, copy, nonatomic) MTLRenderPassDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)executeCommandsInBuffer:(id)arg1 indirectBuffer:(id)arg2 indirectBufferOffset:(unsigned int)arg3;
 - (void)executeCommandsInBuffer:(id)arg1 withRange:(struct _NSRange)arg2;
 - (void)memoryBarrierWithResources:(const id *)arg1 count:(unsigned int)arg2 afterStages:(unsigned int)arg3 beforeStages:(unsigned int)arg4;

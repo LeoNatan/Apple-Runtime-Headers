@@ -33,6 +33,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(copy) NSString *confirmedPassPhrase; // @synthesize confirmedPassPhrase=_confirmedPassPhrase;
 @property(copy) NSString *initialPassPhrase; // @synthesize initialPassPhrase=_initialPassPhrase;
@@ -50,7 +51,6 @@
 @property BOOL showRandomView; // @synthesize showRandomView=_showRandomView;
 @property BOOL showChangeView; // @synthesize showChangeView=_showChangeView;
 @property id <MMCSCPassPhraseSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)controlTextDidChange:(id)arg1;
 - (void)_showNormalMessage:(id)arg1;
 - (void)_showErrorMessage:(id)arg1;

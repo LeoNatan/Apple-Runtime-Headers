@@ -27,13 +27,13 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadEnforceSmartCard; // @synthesize payloadEnforceSmartCard=_payloadEnforceSmartCard;
 @property(copy, nonatomic) NSNumber *payloadTokenRemovalAction; // @synthesize payloadTokenRemovalAction=_payloadTokenRemovalAction;
 @property(copy, nonatomic) NSNumber *payloadOneCardPerUser; // @synthesize payloadOneCardPerUser=_payloadOneCardPerUser;
 @property(copy, nonatomic) NSNumber *payloadCheckCertificateTrust; // @synthesize payloadCheckCertificateTrust=_payloadCheckCertificateTrust;
 @property(copy, nonatomic) NSNumber *payloadAllowSmartCard; // @synthesize payloadAllowSmartCard=_payloadAllowSmartCard;
 @property(copy, nonatomic) NSNumber *payloadUserPairing; // @synthesize payloadUserPairing=_payloadUserPairing;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

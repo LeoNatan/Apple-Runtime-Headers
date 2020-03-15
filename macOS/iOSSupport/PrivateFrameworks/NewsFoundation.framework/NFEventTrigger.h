@@ -17,12 +17,12 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL fireOnAny; // @synthesize fireOnAny=_fireOnAny;
 @property(readonly, nonatomic) BOOL fireOnce; // @synthesize fireOnce=_fireOnce;
 @property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, copy, nonatomic) NSSet *events; // @synthesize events=_events;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 fireOnce:(BOOL)arg2 fireOnAny:(BOOL)arg3 events:(id)arg4 block:(CDUnknownBlockType)arg5;
 
 @end

@@ -16,8 +16,8 @@
     id <SFAirDropClassroomTransferDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SFAirDropClassroomTransferDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SFAirDropClassroomTransferDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)shouldEscapeXpcTryCatch;
 - (id)remoteObjectInterface;
 - (id)exportedInterface;

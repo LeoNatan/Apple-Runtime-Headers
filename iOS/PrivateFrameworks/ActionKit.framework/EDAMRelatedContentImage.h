@@ -19,12 +19,12 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSNumber *pixelRatio; // @synthesize pixelRatio=_pixelRatio;
 @property(retain, nonatomic) NSNumber *height; // @synthesize height=_height;
 @property(retain, nonatomic) NSNumber *width; // @synthesize width=_width;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 
 @end
 

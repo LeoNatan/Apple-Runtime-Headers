@@ -11,8 +11,8 @@
 #import <MessageUI/WKUIDelegatePrivate-Protocol.h>
 #import <MessageUI/_WKInputDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, UIBarButtonItemGroup, _WKRemoteObjectInterface;
-@protocol MFComposeBodyFieldController, MFComposeWebViewDelegate, MFMailComposeViewDelegate, MFMailSignatureController, _WKFormInputSession;
+@class NSArray, NSMutableDictionary, NSString, UIBarButtonItemGroup, UIView, _WKRemoteObjectInterface;
+@protocol MFComposeBodyFieldController, MFComposeWebViewDelegate, MFMailComposeViewDelegate, MFMailSignatureController;
 
 @interface MFComposeWebView : WKWebView <MFComposeBodyFieldObserver, WKNavigationDelegate, _WKInputDelegate, WKUIDelegatePrivate>
 {
@@ -37,13 +37,14 @@
     _Bool _originalAttachmentsWereRestored;
     _Bool _attachmentDataMissingAlertDisplayed;
     id <MFComposeWebViewDelegate> _composeWebViewDelegate;
-    id <_WKFormInputSession> _inputSession;
+    UIView *_inputViewForPreservingFocus;
 }
 
 + (id)_webViewConfiguration;
-@property(readonly, nonatomic) id <_WKFormInputSession> inputSession; // @synthesize inputSession=_inputSession;
-@property(nonatomic) __weak id <MFComposeWebViewDelegate> composeWebViewDelegate; // @synthesize composeWebViewDelegate=_composeWebViewDelegate;
++ (id)log;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *inputViewForPreservingFocus; // @synthesize inputViewForPreservingFocus=_inputViewForPreservingFocus;
+@property(nonatomic) __weak id <MFComposeWebViewDelegate> composeWebViewDelegate; // @synthesize composeWebViewDelegate=_composeWebViewDelegate;
 - (_Bool)_sourceIsManaged;
 - (void)_removeAttachment:(id)arg1;
 - (void)_addAttachment:(id)arg1;
@@ -88,6 +89,7 @@
 - (void)compositionWillFinish;
 - (void)releaseFocusAfterDismissing:(_Bool)arg1;
 - (void)retainFocusAfterPresenting;
+- (id)inputView;
 - (void)removeDropPlaceholders;
 @property(readonly, nonatomic) _Bool allowsAttachmentElements;
 - (id)nextAttachmentName;

@@ -17,10 +17,10 @@
     long long _resultPhase;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long resultPhase; // @synthesize resultPhase=_resultPhase;
 @property(nonatomic) long long requestPhase; // @synthesize requestPhase=_requestPhase;
 @property(readonly, nonatomic) CDUnknownBlockType postProcessingBlock; // @synthesize postProcessingBlock=_postProcessingBlock;
-- (void).cxx_destruct;
 - (_Bool)requiresSynchronousResultProcessing;
 - (void)processResult:(id)arg1 orError:(id)arg2;
 - (void)encodeWithBinaryArchiver:(id)arg1;

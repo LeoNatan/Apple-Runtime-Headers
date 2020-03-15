@@ -13,8 +13,8 @@
     NSString *_reason;
 }
 
-@property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (void)invalidate;
 - (id)description;
 - (id)_initWithReason:(id)arg1;

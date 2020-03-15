@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VUIMediaTagsViewLayout *badgeViewLayout; // @synthesize badgeViewLayout=_badgeViewLayout;
 @property(readonly, nonatomic) VUITextLayout *descriptionLayout; // @synthesize descriptionLayout=_descriptionLayout;
 @property(readonly, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

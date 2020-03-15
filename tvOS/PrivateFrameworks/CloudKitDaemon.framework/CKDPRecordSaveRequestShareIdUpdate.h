@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CKDPShareIdentifier *_shareId;
 }
 
-@property(retain, nonatomic) CKDPShareIdentifier *shareId; // @synthesize shareId=_shareId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDPShareIdentifier *shareId; // @synthesize shareId=_shareId;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

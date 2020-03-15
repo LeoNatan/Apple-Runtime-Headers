@@ -22,13 +22,13 @@
     struct CGSize _containerSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL valid; // @synthesize valid=_valid;
 @property(retain, nonatomic) id <WFActionDrawerCategoriesMetricsProviderCellDimension> cellDimensions; // @synthesize cellDimensions=_cellDimensions;
 @property(nonatomic) struct CGSize containerSize; // @synthesize containerSize=_containerSize;
 @property(nonatomic) __weak UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(copy, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(nonatomic) BOOL verticalPresentation; // @synthesize verticalPresentation=_verticalPresentation;
-- (void).cxx_destruct;
 - (BOOL)shouldStackVertically;
 - (BOOL)canFitVertically;
 - (BOOL)isAccessibilityContentSize;

@@ -18,8 +18,8 @@
 
 + (id)sharedDBToPathMap;
 + (id)sharedQueue;
-@property(retain) ODNode *node; // @synthesize node=_node;
 - (void).cxx_destruct;
+@property(retain) ODNode *node; // @synthesize node=_node;
 - (BOOL)setRequirePasswordResetOnNextLoginForUser:(id)arg1 error:(id *)arg2;
 - (BOOL)setPassword:(id)arg1 forUser:(id)arg2 error:(id *)arg3;
 - (void)removeEmptyAttributes:(id)arg1;

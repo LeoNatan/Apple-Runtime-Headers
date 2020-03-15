@@ -22,13 +22,13 @@
 }
 
 + (id)taskWithKey:(id)arg1 identifier:(id)arg2 barTaskUUID:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *barTaskUUID; // @synthesize barTaskUUID=_barTaskUUID;
 @property(nonatomic) _Bool requiresCompletion; // @synthesize requiresCompletion=_requiresCompletion;
 @property(nonatomic) _Bool completed; // @synthesize completed=_completed;
 @property(retain, nonatomic) NSURL *userInfoPath; // @synthesize userInfoPath=_userInfoPath;
 @property(copy, nonatomic) CDUnknownBlockType taskCompletion; // @synthesize taskCompletion=_taskCompletion;
 @property(readonly) id <NSSecureCoding><NSObject> userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (id)taskKey;
 - (void)cleanupStorage;
 - (id)fileURLForUserInfoUUID:(id)arg1;

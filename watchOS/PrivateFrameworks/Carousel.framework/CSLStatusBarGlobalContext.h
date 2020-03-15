@@ -29,9 +29,9 @@
     CDStruct_daf30f2e _flags;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_daf30f2e flags; // @synthesize flags=_flags;
 @property(readonly, nonatomic) NSString *timeString; // @synthesize timeString=_timeString;
-- (void).cxx_destruct;
 - (void)tinCanStatusIndicatorStateDidChange:(id)arg1;
 - (void)downtimeDidChangeState:(id)arg1;
 - (void)theaterModeDidChange:(id)arg1;

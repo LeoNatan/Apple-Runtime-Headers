@@ -22,6 +22,7 @@
     BOOL _isFreezeFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isFreezeFrame; // @synthesize isFreezeFrame=_isFreezeFrame;
 @property(retain, nonatomic) PVInstructionGraphNode *outputNode; // @synthesize outputNode=m_outputIGNode;
 @property(readonly, nonatomic) int passthroughTrackID; // @synthesize passthroughTrackID=m_passthroughTrackID;
@@ -29,7 +30,6 @@
 @property(nonatomic) BOOL containsTweening; // @synthesize containsTweening=m_containsTweening;
 @property(nonatomic) BOOL enablePostProcessing; // @synthesize enablePostProcessing=m_enablePostProcessing;
 @property(nonatomic) CDStruct_e83c9415 timeRange; // @synthesize timeRange=m_timeRange;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)unloadInstructionGraphNodes;
 - (void)loadInstructionGraphNodes:(HGRef_6bae45d3)arg1;

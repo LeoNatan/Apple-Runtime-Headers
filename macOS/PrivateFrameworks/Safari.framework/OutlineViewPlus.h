@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     BOOL _acceptsFirstMouse;
 }
 
-@property(nonatomic) BOOL acceptsFirstMouse; // @synthesize acceptsFirstMouse=_acceptsFirstMouse;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL acceptsFirstMouse; // @synthesize acceptsFirstMouse=_acceptsFirstMouse;
 @property(readonly, nonatomic) BOOL wantsDFRAccessoriesInFieldEditor;
 - (void)_cancelDoubleClickTimerAction;
 - (id)accessibilityActionNames;

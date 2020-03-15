@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedUnitTestScheduler;
 + (id)sharedScheduler;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AWAttentionSampler *attentionSampler; // @synthesize attentionSampler=_attentionSampler;
 @property(nonatomic) __weak id <AWSchedulerObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (void)reevaluate;
 - (void)armEvents;
 - (void)setSmartCoverClosed:(_Bool)arg1;

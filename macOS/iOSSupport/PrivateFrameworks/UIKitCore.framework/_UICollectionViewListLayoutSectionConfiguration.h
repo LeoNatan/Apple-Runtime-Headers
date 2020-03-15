@@ -25,6 +25,7 @@
     struct NSDirectionalEdgeInsets _separatorInset;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_itemHeights, setter=_setItemHeights:) NSArray *itemHeights; // @synthesize itemHeights=_itemHeights;
 @property(readonly, nonatomic, getter=_layoutEnvironment) id <NSCollectionLayoutEnvironment_Private> layoutEnvironment; // @synthesize layoutEnvironment=_layoutEnvironment;
 @property(readonly, nonatomic, getter=_collectionView) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -37,7 +38,6 @@
 @property(nonatomic) double sectionHeaderHeight; // @synthesize sectionHeaderHeight=_sectionHeaderHeight;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
 @property(nonatomic) long long appearanceStyle; // @synthesize appearanceStyle=_appearanceStyle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_constants) id <UITableConstants> constants;
 - (struct NSDirectionalEdgeInsets)_defaultDirectionalLayoutMargins;
 - (struct UIEdgeInsets)_defaultLayoutMargins;

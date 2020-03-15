@@ -18,8 +18,8 @@
     id <CSAudioFileReaderDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSAudioFileReaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSAudioFileReaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)close;
 - (id)readSamplesFromChannelIdx:(unsigned long)arg1;
 - (void)dealloc;

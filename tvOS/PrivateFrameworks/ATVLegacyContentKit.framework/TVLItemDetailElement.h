@@ -26,6 +26,7 @@
     TVLGenericCollectionElement *_moreInfo;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool verticallyCentered; // @synthesize verticallyCentered=_verticallyCentered;
 @property(retain, nonatomic) TVLGenericCollectionElement *moreInfo; // @synthesize moreInfo=_moreInfo;
 @property(retain, nonatomic) TVLShelfElement *bottomShelf; // @synthesize bottomShelf=_bottomShelf;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) TVLImageElement *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;

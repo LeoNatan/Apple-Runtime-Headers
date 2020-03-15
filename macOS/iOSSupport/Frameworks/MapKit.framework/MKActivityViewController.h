@@ -17,8 +17,8 @@
     id <MKActivityViewControllerDelegate> _activityControllerDelegate;
 }
 
-@property(nonatomic) __weak id <MKActivityViewControllerDelegate> activityControllerDelegate; // @synthesize activityControllerDelegate=_activityControllerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MKActivityViewControllerDelegate> activityControllerDelegate; // @synthesize activityControllerDelegate=_activityControllerDelegate;
 - (CDUnknownBlockType)_activityHandler;
 - (CDUnknownBlockType)_completionHandler;
 - (id)initWithActivityItems:(id)arg1;

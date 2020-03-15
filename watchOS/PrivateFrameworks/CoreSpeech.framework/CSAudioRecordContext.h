@@ -27,10 +27,10 @@
 + (id)contextForBuiltInVoiceTrigger;
 + (id)contextForOpportuneSpeakerListener;
 + (id)contextForHearstVoiceTriggerWithDeviceId:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool alwaysUseRemoteBuiltInMic; // @synthesize alwaysUseRemoteBuiltInMic=_alwaysUseRemoteBuiltInMic;
 @property(retain, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *xpcObject;
 - (int)avvcActivationMode:(long long)arg1;

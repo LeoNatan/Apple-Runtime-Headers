@@ -14,8 +14,8 @@
 }
 
 + (double)defaultHeight;
-@property(readonly, nonatomic) UIButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIButton *button; // @synthesize button=_button;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

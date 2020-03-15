@@ -16,11 +16,11 @@
     NSArray *_finalViewControllers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(copy, nonatomic) NSArray *finalViewControllers; // @synthesize finalViewControllers=_finalViewControllers;
 @property(copy, nonatomic) NSArray *initialViewControllers; // @synthesize initialViewControllers=_initialViewControllers;
 @property(retain, nonatomic) CSLNavigationStackRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *toViewController;
 @property(readonly, nonatomic) UIViewController *fromViewController;
 @property(readonly, nonatomic) NSSet *removedViewControllers;

@@ -16,8 +16,8 @@
 + (id)buildRequiredOnlyWithDeviceID:(id)arg1;
 + (id)buildWithDeviceID:(id)arg1;
 + (id)allowedPayloadKeys;
-@property(copy, nonatomic) NSString *payloadDeviceID; // @synthesize payloadDeviceID=_payloadDeviceID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *payloadDeviceID; // @synthesize payloadDeviceID=_payloadDeviceID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

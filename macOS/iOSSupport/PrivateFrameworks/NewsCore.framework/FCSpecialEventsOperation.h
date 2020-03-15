@@ -18,12 +18,12 @@
     CDUnknownBlockType _catchUpCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType catchUpCompletionHandler; // @synthesize catchUpCompletionHandler=_catchUpCompletionHandler;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) FCSpecialEventsOperationResult *specialEventsResult; // @synthesize specialEventsResult=_specialEventsResult;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_checkShouldShowBreakingNewsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

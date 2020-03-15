@@ -19,13 +19,13 @@
     UIBarButtonItem *_nextBarButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIBarButtonItem *nextBarButtonItem; // @synthesize nextBarButtonItem=_nextBarButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *doneBarButtonItem; // @synthesize doneBarButtonItem=_doneBarButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *shareBarButtonItem; // @synthesize shareBarButtonItem=_shareBarButtonItem;
 @property(readonly, nonatomic) NUArticleNextButton *nextButton; // @synthesize nextButton=_nextButton;
 @property(readonly, nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak id <NUArticleBarButtonItemManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGRect)adjustedFrameForNextArticleButtonForTraitCollection:(id)arg1;
 - (struct CGRect)adjustedFrameForShareBarButtonItemForTraitCollection:(id)arg1;
 - (struct CGRect)adjustedFrameForDoneBarButtonItemForTraitCollection:(id)arg1;

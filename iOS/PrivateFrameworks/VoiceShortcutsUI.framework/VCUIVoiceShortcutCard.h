@@ -16,11 +16,11 @@
     NSArray *_sectionCommands;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *sectionCommands; // @synthesize sectionCommands=_sectionCommands;
 @property(readonly, nonatomic) INIntentResponse *intentResponse; // @synthesize intentResponse=_intentResponse;
 @property(readonly, nonatomic) INIntent *intent; // @synthesize intent=_intent;
 @property(readonly, nonatomic) NSString *shortcutIdentifier; // @synthesize shortcutIdentifier=_shortcutIdentifier;
-- (void).cxx_destruct;
 - (void)loadCardWithContent:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadCardWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)asynchronous;

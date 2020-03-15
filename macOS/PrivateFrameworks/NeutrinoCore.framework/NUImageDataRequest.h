@@ -14,9 +14,9 @@
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *options; // @synthesize options=_options;
 @property(copy) NSString *dataExtractor; // @synthesize dataExtractor=_dataExtractor;
-- (void).cxx_destruct;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (id)newRenderJob;
 - (id)copyWithZone:(struct _NSZone *)arg1;

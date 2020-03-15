@@ -23,10 +23,10 @@
 + (id)migrateDictionaryRepresentation:(id)arg1 fromVersionNumber:(unsigned long long)arg2 toVersionNumber:(unsigned long long)arg3;
 + (id)backingStoreWithFileURL:(id)arg1;
 + (id)recordWithEncodedInfo:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) DNDSScheduleSettingsRecord *scheduleSettings; // @synthesize scheduleSettings=_scheduleSettings;
 @property(readonly, copy, nonatomic) DNDSBypassSettingsRecord *phoneCallBypassSettings; // @synthesize phoneCallBypassSettings=_phoneCallBypassSettings;
 @property(readonly, copy, nonatomic) DNDSBehaviorSettingsRecord *behaviorSettings; // @synthesize behaviorSettings=_behaviorSettings;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

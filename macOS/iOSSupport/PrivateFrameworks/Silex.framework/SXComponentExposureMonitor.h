@@ -20,10 +20,10 @@
     NSMutableSet *_trackingComponents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *trackingComponents; // @synthesize trackingComponents=_trackingComponents;
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
-- (void).cxx_destruct;
 - (void)endExposure:(id)arg1;
 - (void)beginExposure:(id)arg1;
 - (void)trackExposureForTracking:(id)arg1;

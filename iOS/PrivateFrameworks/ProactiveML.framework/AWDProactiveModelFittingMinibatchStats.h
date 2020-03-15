@@ -24,10 +24,10 @@
 + (Class)perLabelSupportType;
 + (id)statsWithSize:(unsigned long long)arg1 support:(float)arg2;
 + (id)statsWithPerLabelCounts:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *perLabelSupports; // @synthesize perLabelSupports=_perLabelSupports;
 @property(nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property(nonatomic) float support; // @synthesize support=_support;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

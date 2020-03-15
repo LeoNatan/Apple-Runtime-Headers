@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     PXIndexPathSet *__pathsWithProgress;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXIndexPathSet *_pathsWithProgress; // @synthesize _pathsWithProgress=__pathsWithProgress;
 @property(readonly, nonatomic) NSDictionary *_progressByIndexPath; // @synthesize _progressByIndexPath=__progressByIndexPath;
 @property(readonly, nonatomic) unsigned long long correspondingDataSourceIdentifier; // @synthesize correspondingDataSourceIdentifier=_correspondingDataSourceIdentifier;
-- (void).cxx_destruct;
 - (id)progressForIndexPath:(struct PXSimpleIndexPath)arg1;
 - (_Bool)hasProgressForIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)initWithProgressByIndexPath:(id)arg1 dataSourceIdenfitier:(unsigned long long)arg2;

@@ -16,8 +16,8 @@
     NSDate *_startTime;
 }
 
-@property(readonly, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 - (void)stop;
 - (void)goOffNext:(unsigned long long)arg1 fromTime:(id)arg2 forEpoch:(id)arg3 timesTotal:(unsigned long long)arg4 onQueue:(id)arg5 withIterationBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
 - (id)init;

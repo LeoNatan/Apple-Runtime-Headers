@@ -20,10 +20,10 @@
 + (id)popRequestWithViewController:(id)arg1 animated:(BOOL)arg2;
 + (id)pushRequestWithViewController:(id)arg1 animated:(BOOL)arg2;
 + (id)_requestWithOperation:(long long)arg1 viewControllers:(id)arg2 animated:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL animated; // @synthesize animated=_animated;
 @property(readonly, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(readonly, nonatomic) long long operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToNavigationRequest:(id)arg1;
 - (id)description;

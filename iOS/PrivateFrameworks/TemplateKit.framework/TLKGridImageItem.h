@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     struct CGRect frame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUISizeCache *sizeCache; // @synthesize sizeCache;
 @property(nonatomic) double horizontalCompressionResistance; // @synthesize horizontalCompressionResistance;
 @property(nonatomic) double horizontalHuggingPriority; // @synthesize horizontalHuggingPriority;
 @property(nonatomic) unsigned long long row; // @synthesize row;
 @property(nonatomic) struct _NSRange columnRange; // @synthesize columnRange;
 @property(nonatomic) struct CGRect frame;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (struct CGSize)sizeForTargetSize:(struct CGSize)arg1;
 

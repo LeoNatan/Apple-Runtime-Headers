@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _block;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)invoke;
 - (void)dealloc;
 

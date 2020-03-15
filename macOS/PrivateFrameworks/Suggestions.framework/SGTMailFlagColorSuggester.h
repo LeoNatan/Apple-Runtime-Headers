@@ -20,8 +20,8 @@
 + (id)mailFlagColorRepresentedObjectForRepresentedObject:(id)arg1;
 + (BOOL)isMailFlagColorRepresentedObject:(id)arg1;
 + (id)flagColorsCategory;
-@property(copy) NSArray *mailFlagColors; // @synthesize mailFlagColors;
 - (void).cxx_destruct;
+@property(copy) NSArray *mailFlagColors; // @synthesize mailFlagColors;
 - (void)setInput:(id)arg1;
 
 @end

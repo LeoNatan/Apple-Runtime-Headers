@@ -22,13 +22,13 @@
 }
 
 + (id)sharedWorkspace;
+- (void).cxx_destruct;
 @property BOOL finishedRunning; // @synthesize finishedRunning=_finishedRunning;
 @property BOOL didStart; // @synthesize didStart=_didStart;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_reserved3;
 @property(retain) id output; // @synthesize output=_reserved2;
 @property(retain) AMRemoteRunnerController *runnerController; // @synthesize runnerController=_reserved;
-- (void).cxx_destruct;
 - (void)runnerControllerDidStop:(id)arg1;
 - (void)runnerControllerDidRun:(id)arg1;
 - (void)runnerControllerWillRun:(id)arg1;

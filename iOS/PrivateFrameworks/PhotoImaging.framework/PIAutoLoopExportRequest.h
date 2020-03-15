@@ -15,10 +15,10 @@
     NSURL *_destinationMaskURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSURL *destinationMaskURL; // @synthesize destinationMaskURL=_destinationMaskURL;
 @property(readonly) NSURL *destinationLongExposureURL; // @synthesize destinationLongExposureURL=_destinationLongExposureURL;
 @property(readonly) NSString *destinationUTI; // @synthesize destinationUTI=_destinationUTI;
-- (void).cxx_destruct;
 - (void)submit:(CDUnknownBlockType)arg1;
 @property(readonly) NUColorSpace *outputColorSpace;
 - (long long)mediaComponentType;

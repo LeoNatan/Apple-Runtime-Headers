@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     SFAirDropActiveIconView *_airDropActiveIconView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SFAirDropActiveIconView *airDropActiveIconView; // @synthesize airDropActiveIconView=_airDropActiveIconView;
 @property(readonly, nonatomic) UITextView *instructionsTextView; // @synthesize instructionsTextView=_instructionsTextView;
-- (void).cxx_destruct;
 - (struct CGSize)_cachedPreferredItemSize;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 preferredSizeForItemAtIndexPath:(id)arg3;
 - (id)attributedStringWithTitle:(id)arg1 content:(id)arg2;

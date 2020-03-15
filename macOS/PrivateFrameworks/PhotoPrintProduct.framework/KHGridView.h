@@ -14,9 +14,9 @@
     NSView *_targetFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *targetFrame; // @synthesize targetFrame=_targetFrame;
 @property(retain, nonatomic) KHLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)drawRect:(struct CGRect)arg1;

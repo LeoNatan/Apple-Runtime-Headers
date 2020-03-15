@@ -17,10 +17,10 @@
     id <FCCoreConfigurationManager> _configurationManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(readonly, nonatomic) id <FCBundleSubscriptionProviderType> bundleSubscriptionProvider; // @synthesize bundleSubscriptionProvider=_bundleSubscriptionProvider;
 @property(readonly, nonatomic) id <FCPurchaseProviderType> purchaseProvider; // @synthesize purchaseProvider=_purchaseProvider;
-- (void).cxx_destruct;
 - (_Bool)_canGetBundleSubscriptionToChannel:(id)arg1;
 - (_Bool)_canGetALaCarteSubscriptionToChannel:(id)arg1;
 - (void)prepareForUseWithCompletion:(CDUnknownBlockType)arg1;

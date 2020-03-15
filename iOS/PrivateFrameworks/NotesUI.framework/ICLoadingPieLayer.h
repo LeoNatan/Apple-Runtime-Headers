@@ -17,12 +17,12 @@
     CAShapeLayer *_backgroundLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 @property(retain, nonatomic) CAShapeLayer *pieLayer; // @synthesize pieLayer=_pieLayer;
 @property(nonatomic) _Bool removeOnCompletion; // @synthesize removeOnCompletion=_removeOnCompletion;
 @property(retain, nonatomic) NSProgress *observedProgress; // @synthesize observedProgress=_observedProgress;
 @property(readonly, nonatomic) double progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setProgress:(double)arg1;
 - (struct CGPath *)newPathForProgress:(double)arg1;

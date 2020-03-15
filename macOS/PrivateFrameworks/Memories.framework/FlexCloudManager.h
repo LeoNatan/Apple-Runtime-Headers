@@ -17,11 +17,11 @@
 }
 
 + (id)createCloudManager:(long long)arg1 withLibrary:(id)arg2 options:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property(readonly) NSMutableDictionary *cloudManagedSongsByUID; // @synthesize cloudManagedSongsByUID=_cloudManagedSongsByUID;
 @property(readonly) NSMutableArray *cloudManagedSongs; // @synthesize cloudManagedSongs=_cloudManagedSongs;
 @property(readonly) __weak FMSongLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (unsigned long long)assetStatus:(id)arg1;
 - (id)_purgeAndReturnReplacementFor:(id)arg1;
 - (void)requestPurgeOfAsset:(id)arg1;

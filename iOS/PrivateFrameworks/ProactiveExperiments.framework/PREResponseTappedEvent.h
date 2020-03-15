@@ -18,13 +18,13 @@
     unsigned long long _timeToTap;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasQuestionMark; // @synthesize hasQuestionMark=_hasQuestionMark;
 @property(nonatomic) int inputMethod; // @synthesize inputMethod=_inputMethod;
 @property(nonatomic) unsigned long long timeToTap; // @synthesize timeToTap=_timeToTap;
 @property(retain, nonatomic) NSNumber *selectedPosition; // @synthesize selectedPosition=_selectedPosition;
 @property(retain, nonatomic) NSString *selectedResponse; // @synthesize selectedResponse=_selectedResponse;
 @property(retain, nonatomic) PREResponsesGeneratedEvent *responsesGeneratedEvent; // @synthesize responsesGeneratedEvent=_responsesGeneratedEvent;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,10 +19,10 @@
 }
 
 + (id)_imageCache;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRoundedPill) _Bool roundedPill; // @synthesize roundedPill=_roundedPill;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned int roundedCorners; // @synthesize roundedCorners=_roundedCorners;
-- (void).cxx_destruct;
 - (void)setOpaqueWithUpdate:(_Bool)arg1;
 - (void)setPillOpaque:(_Bool)arg1;
 - (void)viewWillMoveToSuperview:(id)arg1;

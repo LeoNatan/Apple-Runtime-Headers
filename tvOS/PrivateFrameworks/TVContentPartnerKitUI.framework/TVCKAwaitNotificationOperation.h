@@ -15,10 +15,10 @@
     id _notificationObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id notificationObject; // @synthesize notificationObject=_notificationObject;
 @property(readonly, copy, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)_didReceiveNotification:(id)arg1;
 - (void)dealloc;

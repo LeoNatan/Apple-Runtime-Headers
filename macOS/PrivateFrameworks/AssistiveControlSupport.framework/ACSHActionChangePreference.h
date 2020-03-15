@@ -12,9 +12,9 @@
     id _preferenceValue;
 }
 
+- (void).cxx_destruct;
 @property(retain) id preferenceValue; // @synthesize preferenceValue=_preferenceValue;
 @property unsigned long long preferenceOption; // @synthesize preferenceOption=_preferenceOption;
-- (void).cxx_destruct;
 - (void)performWithEventSourceData:(id)arg1;
 - (unsigned long long)actionType;
 - (id)dictionaryForSaving;

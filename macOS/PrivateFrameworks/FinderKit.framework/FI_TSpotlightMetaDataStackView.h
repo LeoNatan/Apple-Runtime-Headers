@@ -29,6 +29,8 @@ __attribute__((visibility("hidden")))
     _Bool _centerAligned;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool centerAligned; // @synthesize centerAligned=_centerAligned;
 @property(nonatomic) _Bool useRelativeDates; // @synthesize useRelativeDates=_useRelativeDates;
 @property(nonatomic) _Bool showAttributesWithNoData; // @synthesize showAttributesWithNoData=_showAttributesWithNoData;
@@ -37,8 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double interRowGap; // @synthesize interRowGap=_interRowGap;
 @property(nonatomic, getter=isFilterActive) _Bool filterActive; // @synthesize filterActive=_filterActive;
 @property(readonly, nonatomic) long long hiddenAttributesCountDelta; // @synthesize hiddenAttributesCountDelta=_hiddenAttributesCountDelta;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)populate;
 - (id)prepareForAnimatingExpansion:(_Bool)arg1;

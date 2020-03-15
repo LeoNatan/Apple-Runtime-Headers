@@ -17,9 +17,9 @@
     id <SXAnalyticsReporting> _analyticsReporting;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <SXAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
 @property(readonly, nonatomic) SXVideoComponent *component; // @synthesize component=_component;
-- (void).cxx_destruct;
 - (void)reportEvent:(id)arg1;
 - (id)initWithComponent:(id)arg1 analyticsProviding:(id)arg2;
 

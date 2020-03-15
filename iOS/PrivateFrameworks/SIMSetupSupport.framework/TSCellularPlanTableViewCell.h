@@ -14,8 +14,8 @@
 }
 
 + (double)rowHeight;
-@property(retain, nonatomic) UITextField *editableTextField; // @synthesize editableTextField=_editableTextField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextField *editableTextField; // @synthesize editableTextField=_editableTextField;
 - (id)initWithTag:(long long)arg1 delegate:(id)arg2;
 
 @end

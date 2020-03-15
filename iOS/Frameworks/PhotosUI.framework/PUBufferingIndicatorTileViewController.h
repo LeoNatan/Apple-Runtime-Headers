@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 
 + (struct CGSize)bufferingIndicatorTileSize;
 + (_Bool)canShowBufferingIndicatorTileForAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setErrorButton:) UIButton *_errorButton; // @synthesize _errorButton=__errorButton;
 @property(retain, nonatomic, setter=_setSpinner:) UIActivityIndicatorView *_spinner; // @synthesize _spinner=__spinner;
 @property(nonatomic, setter=_setIndicatorStyle:) long long _indicatorStyle; // @synthesize _indicatorStyle=__indicatorStyle;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUOneUpMergedVideoProvider *mergedVideoProvider; // @synthesize mergedVideoProvider=_mergedVideoProvider;
 @property(retain, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
 @property(retain, nonatomic) PUAssetViewModel *assetViewModel; // @synthesize assetViewModel=_assetViewModel;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)_updateIndicator;

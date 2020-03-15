@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_deleteBarButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *deleteBarButtonItem; // @synthesize deleteBarButtonItem=_deleteBarButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *cancelEditingBarButtonItem; // @synthesize cancelEditingBarButtonItem=_cancelEditingBarButtonItem;
 @property(retain, nonatomic) UINavigationItem *navItem; // @synthesize navItem=_navItem;
 @property(retain, nonatomic) UIView *topLineView; // @synthesize topLineView=_topLineView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)_updateNavigationItemState;
 - (void)_handleDelete;
 - (void)_handleCancel;

@@ -19,10 +19,10 @@
 + (_Bool)homeNeedsMigration:(id)arg1;
 + (id)accessoriesToMigrateFavoritesForHome:(id)arg1;
 + (id)primaryServicesToMigrateForHome:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeoutOverride; // @synthesize timeoutOverride=_timeoutOverride;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HFHomeKitDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
-- (void).cxx_destruct;
 - (id)migrateServicesToAccessory;
 - (id)initWithHome:(id)arg1;
 

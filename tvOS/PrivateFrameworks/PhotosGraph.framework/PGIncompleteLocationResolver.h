@@ -15,9 +15,9 @@
 }
 
 + (double)_maxDistanceForDimension:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *resolvedLocationNodesCache; // @synthesize resolvedLocationNodesCache=_resolvedLocationNodesCache;
 @property(retain, nonatomic) NSSet *addressNodes; // @synthesize addressNodes=_addressNodes;
-- (void).cxx_destruct;
 - (id)_resolvedAddressForIncompleteAddress:(id)arg1 withTargetDimension:(unsigned long long)arg2 resolvedDimension:(unsigned long long *)arg3 resolvedLocation:(id *)arg4 addresses:(id)arg5;
 - (id)_resolvedAddressForIncompleteAddress:(id)arg1 withTargetDimension:(unsigned long long)arg2 resolvedDimension:(unsigned long long *)arg3 resolvedLocation:(id *)arg4 sortedAddresses:(id)arg5;
 - (id)_resolvedLocationNodeForIncompleteAddressNode:(id)arg1 withTargetDimension:(unsigned long long)arg2 resolvedDimension:(unsigned long long *)arg3 continueResolvingHigherDimensions:(_Bool)arg4;

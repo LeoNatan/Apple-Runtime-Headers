@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MNTraceRecordingData *traceRecordingData; // @synthesize traceRecordingData=_traceRecordingData;
 @property(retain, nonatomic) GEODirectionsError *directionsError; // @synthesize directionsError=_directionsError;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) GEODirectionsResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) GEODirectionsRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSArray *routeInfos; // @synthesize routeInfos=_routeInfos;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

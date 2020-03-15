@@ -11,6 +11,6 @@
 @protocol OS_dispatch_queue;
 
 @protocol _CDAsyncUserContext <_CDUserContext, _CDAsyncContext>
-- (void)valuesForKeyPaths:(NSArray *)arg1 responseQueue:(NSObject<OS_dispatch_queue> *)arg2 withCompletion:(void (^)(struct NSDictionary *))arg3;
+- (void)valuesForKeyPaths:(NSArray *)arg1 responseQueue:(NSObject<OS_dispatch_queue> *)arg2 withCompletion:(void (^)(NSDictionary *))arg3;
 @end
 

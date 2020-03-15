@@ -52,6 +52,7 @@
 + (id)descriptorForRequiredKeysWithThreeDTouchEnabled:(_Bool)arg1;
 + (_Bool)defaultThreeDTouchSupport;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool prohibitsPersonaFetch; // @synthesize prohibitsPersonaFetch=_prohibitsPersonaFetch;
 @property(nonatomic) _Bool allowsAnimation; // @synthesize allowsAnimation=_allowsAnimation;
 @property(nonatomic) _Bool allowStaleRendering; // @synthesize allowStaleRendering=_allowStaleRendering;
@@ -79,7 +80,6 @@
 @property(readonly, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 @property _Bool transitioningImageVisible;
 @property(readonly, nonatomic) struct CGRect transitioningImageFrame;
 @property(readonly, nonatomic) UIImage *transitioningImage;

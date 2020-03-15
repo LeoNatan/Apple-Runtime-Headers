@@ -26,13 +26,13 @@
 + (id)_writeImageToDisk:(id)arg1 suffix:(id)arg2;
 + (id)_snapshotImageFromView:(id)arg1;
 + (id)_cropRect:(struct CGRect)arg1 fromImage:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect lastScrollViewBounds; // @synthesize lastScrollViewBounds=_lastScrollViewBounds;
 @property(retain, nonatomic) NSMutableArray *imageURLs; // @synthesize imageURLs=_imageURLs;
 @property(retain, nonatomic) NSMutableArray *images; // @synthesize images=_images;
 @property(readonly, nonatomic) PXCuratedLibraryAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(readonly, nonatomic) PXGView *gridView; // @synthesize gridView=_gridView;
-- (void).cxx_destruct;
 - (void)_mergeAllImagesAndWriteToDisk;
 - (void)_stopCapture;
 - (void)_captureNextPage;

@@ -15,8 +15,8 @@
     NSDictionary *_options;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 - (id)createURLAssetWithURL:(id)arg1;
 - (id)initWithOptions:(id)arg1;
 

@@ -21,10 +21,10 @@
     id <PXCPLServiceUIDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXCPLServiceUIDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <PXCPLServiceUIStatus> serviceUIStatus; // @synthesize serviceUIStatus=_serviceUIStatus;
 @property(readonly, nonatomic) PXCPLServiceStatus *serviceStatus; // @synthesize serviceStatus=_serviceStatus;
-- (void).cxx_destruct;
 - (void)_handleUpdatedServiceStatus:(id)arg1;
 - (void)_serviceUIStatusDidChange:(id)arg1 nonProgressPropertiesDidChange:(BOOL)arg2 progressDidChange:(BOOL)arg3;
 - (void)_performAction:(long long)arg1;

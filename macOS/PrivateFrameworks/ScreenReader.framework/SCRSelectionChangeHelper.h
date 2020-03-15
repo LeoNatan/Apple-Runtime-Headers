@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     SCRElement *__element;
 }
 
-@property(retain, nonatomic) SCRElement *_element; // @synthesize _element=__element;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SCRElement *_element; // @synthesize _element=__element;
 - (BOOL)toggleMultipleSelectionWithOutputRequest:(id)arg1;
 - (BOOL)toggleSingleSelectionWithOutputRequest:(id)arg1;
 - (BOOL)_toggleSelection:(id)arg1 multiple:(BOOL)arg2 canSetSelector:(SEL)arg3 getterSelector:(SEL)arg4 setterSelector:(SEL)arg5 outputRequest:(id)arg6;

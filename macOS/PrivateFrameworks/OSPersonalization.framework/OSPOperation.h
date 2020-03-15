@@ -15,10 +15,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property BOOL isFinished; // @synthesize isFinished=_isFinished;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) OSPRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)start;
 - (id)initWithRequest:(id)arg1;
 

@@ -14,8 +14,8 @@
     HUIconButton *_iconButton;
 }
 
-@property(retain, nonatomic) HUIconButton *iconButton; // @synthesize iconButton=_iconButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUIconButton *iconButton; // @synthesize iconButton=_iconButton;
 @property(retain, nonatomic) id <HFIconDescriptor> iconDescriptor;
 - (void)setSelected:(_Bool)arg1;
 - (void)layoutSubviews;

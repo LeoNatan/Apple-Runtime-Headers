@@ -20,11 +20,11 @@
     PXPeopleDetailsContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool prefetchingStarted; // @synthesize prefetchingStarted=_prefetchingStarted;
 @property(nonatomic) _Bool isForOneUp; // @synthesize isForOneUp=_isForOneUp;
 @property(retain, nonatomic) PXPeopleDetailsContext *context; // @synthesize context=_context;
 @property(nonatomic) _Bool containsSocialGroups; // @synthesize containsSocialGroups=_containsSocialGroups;
-- (void).cxx_destruct;
 - (id)_socialGroupsForIdentifiers:(id)arg1;
 - (void)loadMembersWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_updateMembers;

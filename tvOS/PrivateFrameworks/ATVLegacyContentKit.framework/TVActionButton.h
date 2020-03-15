@@ -28,13 +28,13 @@
     UIImage *_badgeImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool invertTextColorOnFocus; // @synthesize invertTextColorOnFocus=_invertTextColorOnFocus;
 @property(nonatomic) _Bool drawsBorder; // @synthesize drawsBorder=_drawsBorder;
 @property(retain, nonatomic) UIImage *badgeImage; // @synthesize badgeImage=_badgeImage;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *headline; // @synthesize headline=_headline;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_updateImageViewBounds;
 - (id)_headlineLabel;
 - (id)_titleLabel;

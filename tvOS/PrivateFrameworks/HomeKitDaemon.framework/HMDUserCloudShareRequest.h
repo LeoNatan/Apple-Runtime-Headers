@@ -21,6 +21,7 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly) NSString *containerID; // @synthesize containerID=_containerID;
 @property(readonly) NSData *shareToken; // @synthesize shareToken=_shareToken;
@@ -30,7 +31,6 @@
 @property(readonly) __weak HMDHome *home; // @synthesize home=_home;
 @property(readonly) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithHome:(id)arg1 fromUser:(id)arg2 toUser:(id)arg3 encodedShareURL:(id)arg4 shareToken:(id)arg5 containerID:(id)arg6 currentDate:(id)arg7 completion:(CDUnknownBlockType)arg8;
 

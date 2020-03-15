@@ -17,8 +17,8 @@
 }
 
 + (Class)behaviorContextClass;
-@property(nonatomic) __weak AVMusicAppBehaviorContext *behaviorContext; // @synthesize behaviorContext=_behaviorContext;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AVMusicAppBehaviorContext *behaviorContext; // @synthesize behaviorContext=_behaviorContext;
 - (void)skipToPreviousItem;
 - (void)skipToNextItem;
 - (void)contextWillHandleUserAction:(long long)arg1;

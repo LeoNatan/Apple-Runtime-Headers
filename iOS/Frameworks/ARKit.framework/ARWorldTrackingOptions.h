@@ -8,47 +8,50 @@
 
 #import <ARKit/NSCopying-Protocol.h>
 
-@class ARImageSensorSettings, ARWorldMap, NSDictionary, NSMutableDictionary, NSString;
+@class ARImageSensorSettings, ARWorldMap, NSDictionary, NSMutableDictionary, NSNumber, NSString;
 @protocol OS_dispatch_semaphore;
 
 @interface ARWorldTrackingOptions : NSObject <NSCopying>
 {
     NSMutableDictionary *_activeVideoFormatsMap;
     NSObject<OS_dispatch_semaphore> *_activeVideoFormatsSemaphore;
+    NSString *_slamConfigurationPreset;
     _Bool _relocalizationEnabled;
     _Bool _deterministicMode;
     _Bool _mlModelEnabled;
     _Bool _deliverRawSceneUnderstandingResults;
     _Bool _collaborationEnabled;
+    _Bool _alwaysUsePrimaryCameraForTracking;
     ARImageSensorSettings *_imageSensorSettings;
-    ARImageSensorSettings *_imageSensorSettingsForSuperWide;
+    ARImageSensorSettings *_imageSensorSettingsForUltraWide;
     NSString *_deviceModel;
     ARWorldMap *_initialWorldMap;
-    NSString *_slamConfiguration;
     unsigned long long _planeDetection;
     double _minVergenceAngle;
+    NSNumber *_vioSessionID;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *vioSessionID; // @synthesize vioSessionID=_vioSessionID;
+@property(nonatomic) _Bool alwaysUsePrimaryCameraForTracking; // @synthesize alwaysUsePrimaryCameraForTracking=_alwaysUsePrimaryCameraForTracking;
 @property(nonatomic, getter=isCollaborationEnabled) _Bool collaborationEnabled; // @synthesize collaborationEnabled=_collaborationEnabled;
 @property(nonatomic) _Bool deliverRawSceneUnderstandingResults; // @synthesize deliverRawSceneUnderstandingResults=_deliverRawSceneUnderstandingResults;
 @property(nonatomic) _Bool mlModelEnabled; // @synthesize mlModelEnabled=_mlModelEnabled;
 @property(nonatomic) double minVergenceAngle; // @synthesize minVergenceAngle=_minVergenceAngle;
 @property(nonatomic) unsigned long long planeDetection; // @synthesize planeDetection=_planeDetection;
 @property(nonatomic) _Bool deterministicMode; // @synthesize deterministicMode=_deterministicMode;
-@property(copy, nonatomic) NSString *slamConfiguration; // @synthesize slamConfiguration=_slamConfiguration;
 @property(copy, nonatomic) ARWorldMap *initialWorldMap; // @synthesize initialWorldMap=_initialWorldMap;
 @property(nonatomic) _Bool relocalizationEnabled; // @synthesize relocalizationEnabled=_relocalizationEnabled;
 @property(copy, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
-@property(copy, nonatomic) ARImageSensorSettings *imageSensorSettingsForSuperWide; // @synthesize imageSensorSettingsForSuperWide=_imageSensorSettingsForSuperWide;
+@property(copy, nonatomic) ARImageSensorSettings *imageSensorSettingsForUltraWide; // @synthesize imageSensorSettingsForUltraWide=_imageSensorSettingsForUltraWide;
 @property(copy, nonatomic) ARImageSensorSettings *imageSensorSettings; // @synthesize imageSensorSettings=_imageSensorSettings;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) NSDictionary *dictionary;
 - (unsigned int)cameraIdForCaptureDeviceType:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *activeVideoFormatsMap;
 - (void)updateCameraMap;
-- (_Bool)shouldUseSuperWide;
+- (_Bool)shouldUseUltraWide;
+@property(copy, nonatomic) NSString *slamConfiguration;
 - (id)initWithImageSensorSettings:(id)arg1;
 - (id)init;
 

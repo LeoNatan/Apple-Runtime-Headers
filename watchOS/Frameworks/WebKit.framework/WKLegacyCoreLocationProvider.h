@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)resetGeolocation;
 - (void)errorOccurred:(id)arg1;
-- (void)positionChanged:(struct GeolocationPosition *)arg1;
+- (void)positionChanged:(struct GeolocationPositionData *)arg1;
 - (void)geolocationAuthorizationDenied;
 - (void)geolocationAuthorizationGranted;
 - (void)setEnableHighAccuracy:(_Bool)arg1;

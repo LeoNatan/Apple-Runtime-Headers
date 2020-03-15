@@ -31,6 +31,7 @@
 + (id)tableHasTimestampColumn;
 + (void)removeDBAtFilePath:(id)arg1;
 + (id)sharedSQLiteConnection;
+- (void).cxx_destruct;
 @property long long cacheSize; // @synthesize cacheSize=_cacheSize;
 @property int entryCacheStorageSize; // @synthesize entryCacheStorageSize=_entryCacheStorageSize;
 @property(retain) NSString *cachedClassName; // @synthesize cachedClassName=_cachedClassName;
@@ -42,7 +43,6 @@
 @property(retain) NSObject<OS_dispatch_semaphore> *dbSem; // @synthesize dbSem=_dbSem;
 @property struct sqlite3 *dbConnection; // @synthesize dbConnection=_dbConnection;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withTableFilters:(id)arg4 vacuumDB:(BOOL)arg5 withCacheSize:(long long)arg6;
 - (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withTableFilters:(id)arg4 vacuumDB:(BOOL)arg5;
 - (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3;

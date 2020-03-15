@@ -15,8 +15,8 @@
     IKColor *_ikColor;
 }
 
-@property(readonly, nonatomic) __weak IKColor *ikColor; // @synthesize ikColor=_ikColor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IKColor *ikColor; // @synthesize ikColor=_ikColor;
 @property(readonly, nonatomic) NSArray *gradientPoints;
 @property(readonly, nonatomic) NSArray *gradientColors;
 @property(readonly, nonatomic) long long colorType;

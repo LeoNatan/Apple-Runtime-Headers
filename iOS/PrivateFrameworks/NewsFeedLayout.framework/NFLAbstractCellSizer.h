@@ -14,9 +14,9 @@
     NFLFeedSettings *_feedSettings;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NFLFeedSettings *feedSettings; // @synthesize feedSettings=_feedSettings;
 @property(retain, nonatomic) NFLAbstractCellPropertyProvider *propertyProvider; // @synthesize propertyProvider=_propertyProvider;
-- (void).cxx_destruct;
 - (id)layoutDataForTileInfo:(id)arg1 template:(id)arg2 columnSpan:(unsigned long long)arg3 showAccessoryText:(_Bool)arg4;
 - (id)initWithFeedSettings:(id)arg1;
 - (id)init;

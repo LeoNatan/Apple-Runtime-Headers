@@ -13,8 +13,8 @@
     NSArray *_usageBundleClasses;
 }
 
-@property(retain, nonatomic) NSArray *usageBundleClasses; // @synthesize usageBundleClasses=_usageBundleClasses;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *usageBundleClasses; // @synthesize usageBundleClasses=_usageBundleClasses;
 - (unsigned long long)_sizeOfDirectoryAtURL:(id)arg1;
 - (unsigned long long)_sizeOfDirectoryAtPath:(id)arg1;
 - (id)_checkAndFixUpVersion:(id)arg1;

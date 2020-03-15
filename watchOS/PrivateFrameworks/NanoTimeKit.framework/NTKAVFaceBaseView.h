@@ -16,9 +16,9 @@
     CLKVideoPlayerView *_videoPlayerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLKVideoPlayerView *videoPlayerView; // @synthesize videoPlayerView=_videoPlayerView;
 @property(retain, nonatomic) UIImageView *posterImageView; // @synthesize posterImageView=_posterImageView;
-- (void).cxx_destruct;
 - (void)videoPlayerViewDidBeginPlayingQueuedVideo:(id)arg1;
 - (void)videoPlayerViewDidPauseAfterPlayingVideoToEnd:(id)arg1;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;

@@ -14,6 +14,7 @@
 
 @interface HMDXPCClientConnection : HMFMessageTransport <HMDaemonConnection, HMFLogging>
 {
+    NSObject<OS_dispatch_queue> *_queue;
     _Bool _activated;
     _Bool _entitledForAPIAccess;
     _Bool _entitledForBackgroundMode;
@@ -24,14 +25,13 @@
     unsigned int _entitlements;
     NSString *_clientName;
     HMDXPCRequestTracker *_requestTracker;
-    NSObject<OS_dispatch_queue> *_workQueue;
     HMDApplicationRegistry *_appRegistry;
 }
 
 + (id)logCategory;
 + (unsigned int)entitlementsForConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMDApplicationRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMDXPCRequestTracker *requestTracker; // @synthesize requestTracker=_requestTracker;
 @property(retain, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 @property(readonly, nonatomic, getter=isEntitledForMultiUserSetupAccess) _Bool entitledForMultiUserSetupAccess; // @synthesize entitledForMultiUserSetupAccess=_entitledForMultiUserSetupAccess;
@@ -42,7 +42,6 @@
 @property(nonatomic, getter=isActivated) _Bool activated; // @synthesize activated=_activated;
 @property(nonatomic) __weak HMDProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
 @property(nonatomic) __weak NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)checkinWithName:(id)arg1;
@@ -73,7 +72,7 @@
 @property(readonly, nonatomic, getter=isAuthorizedForHomeDataAccess) _Bool authorizedForHomeDataAccess;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)initWithConnection:(id)arg1 queue:(id)arg2 activeMessageTracker:(id)arg3 appRegistry:(id)arg4;
+- (id)initWithConnection:(id)arg1 appRegistry:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 
 + (id)scrollerImpWithStyle:(long long)arg1 horizontal:(BOOL)arg2 replacingScrollerImp:(id)arg3;
 + (Class)scrollerImpClassForStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UIScrollerImpDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double knobAlpha; // @synthesize knobAlpha=_knobAlpha;
 @property(nonatomic) double trackAlpha; // @synthesize trackAlpha=_trackAlpha;
@@ -56,7 +57,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CALayer *knobLayer; // @synthesize knobLayer=_knobLayer;
 @property(retain, nonatomic) CALayer *trackLayer; // @synthesize trackLayer=_trackLayer;
 @property(retain, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 - (void)mouseExitedScroller;
 - (void)mouseEnteredScroller;
 - (void)_installDelayedRolloverAnimation;

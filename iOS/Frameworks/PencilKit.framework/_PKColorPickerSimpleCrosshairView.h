@@ -13,10 +13,10 @@
     UIView *_borderView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *borderView; // @synthesize borderView=_borderView;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(nonatomic) double borderCornerRadius; // @synthesize borderCornerRadius=_borderCornerRadius;
-- (void).cxx_destruct;
 - (double)_cornerRadiusForShadowView;
 - (double)_cornerRadiusForBorderView;
 - (void)configureShadowView:(id)arg1;

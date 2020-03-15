@@ -17,8 +17,8 @@
 + (void)enqueuePosterFrameView:(id)arg1;
 + (id)dequeuePosterFrameView;
 + (id)sharedCache;
-@property(retain, nonatomic) NSMutableArray *posterFrameViewQueue; // @synthesize posterFrameViewQueue=_posterFrameViewQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *posterFrameViewQueue; // @synthesize posterFrameViewQueue=_posterFrameViewQueue;
 - (id)init;
 
 @end

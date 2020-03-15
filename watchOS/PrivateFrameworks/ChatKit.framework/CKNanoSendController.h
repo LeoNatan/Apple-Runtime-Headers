@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
     CKNanoChatController *_chatController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=shouldDisableSending) _Bool disableSending; // @synthesize disableSending=_disableSending;
 @property(readonly, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak CKNanoChatController *chatController; // @synthesize chatController=_chatController;
-- (void).cxx_destruct;
 - (void)_presentDigitalTouchViewController;
 - (void)_dismissReplyViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_dismissAfterSendWithCompletion:(CDUnknownBlockType)arg1;

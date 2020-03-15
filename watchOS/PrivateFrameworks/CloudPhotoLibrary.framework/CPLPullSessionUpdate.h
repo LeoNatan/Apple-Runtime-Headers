@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CPLChangeBatch *cloudBatch; // @synthesize cloudBatch=_cloudBatch;
 @property(readonly, nonatomic) CPLChangeBatch *clientBatch; // @synthesize clientBatch=_clientBatch;
-- (void).cxx_destruct;
 - (id)pendingRecordChangeForClientCacheWithLocalScopedIdentifier:(id)arg1;
 - (id)statusDescription;
 - (id)storageForStatusInStore:(id)arg1;

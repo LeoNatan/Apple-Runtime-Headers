@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/NTKUtilityComplicationFactoryDelegate-Protocol.h>
 
-@class CLKRelativeDateTextProvider, NSDate, NSString, NSTimer, NTKChronoButton, NTKChronoHandsView, NTKChronoPalette, NTKChronoScene, NTKColoringLabel, NTKStopwatchButton, NTKUtilityComplicationFactory, NTSStopwatchModel, UIColor, UILabel, _LapLabel;
+@class CLKRelativeDateTextProvider, NSDate, NSNumber, NSString, NSTimer, NTKChronoButton, NTKChronoHandsView, NTKChronoPalette, NTKChronoScene, NTKColoringLabel, NTKStopwatchButton, NTKUtilityComplicationFactory, NTSStopwatchModel, UIColor, UILabel, _LapLabel;
 
 @interface NTKChronoFaceView : NTKSpriteKitAnalogFaceView <NTKUtilityComplicationFactoryDelegate>
 {
@@ -24,7 +24,7 @@
     _LapLabel *_lapLabel;
     NSTimer *_resetLabelTimer;
     unsigned int _currentMode;
-    struct NSNumber *_stopwatchToken;
+    NSNumber *_stopwatchToken;
     NTSStopwatchModel *_model;
     CLKRelativeDateTextProvider *_totalTimeTextProvider;
     CLKRelativeDateTextProvider *_lapTimeTextProvider;

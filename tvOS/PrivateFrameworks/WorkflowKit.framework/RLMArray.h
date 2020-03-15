@@ -23,10 +23,10 @@
 }
 
 + (id)objectWithThreadSafeReference:(unique_ptr_d0e912ad)arg1 metadata:(id)arg2 realm:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *objectClassName; // @synthesize objectClassName=_objectClassName;
 @property(readonly, nonatomic, getter=isOptional) _Bool optional; // @synthesize optional=_optional;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)descriptionWithMaxDepth:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) id objectiveCMetadata;

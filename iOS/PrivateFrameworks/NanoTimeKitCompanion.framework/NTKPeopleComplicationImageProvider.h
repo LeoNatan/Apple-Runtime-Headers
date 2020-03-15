@@ -17,12 +17,12 @@
     NSString *_nameAbbreviation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nameAbbreviation; // @synthesize nameAbbreviation=_nameAbbreviation;
 @property(retain, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(retain, nonatomic) UIImage *profileImage; // @synthesize profileImage=_profileImage;
 @property double fontSize; // @synthesize fontSize=_fontSize;
 @property double borderWidth; // @synthesize borderWidth=_borderWidth;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;

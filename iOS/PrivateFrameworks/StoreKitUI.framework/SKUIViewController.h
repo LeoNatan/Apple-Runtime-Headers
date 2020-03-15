@@ -28,10 +28,10 @@
     SKUIWishlistViewController *_wishlistViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIBarButtonItem *_wishlistButtonItem; // @synthesize _wishlistButtonItem;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (id)_defaultRightBarButtonItemsIsCompact:(_Bool)arg1;
 - (id)_defaultLeftBarButtonItems;
 - (void)_reloadForOrientation:(long long)arg1;

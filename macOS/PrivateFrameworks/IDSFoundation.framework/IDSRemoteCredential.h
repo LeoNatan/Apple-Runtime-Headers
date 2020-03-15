@@ -15,8 +15,8 @@
     BOOL _wantsRetries;
 }
 
-@property(nonatomic) BOOL wantsRetries; // @synthesize wantsRetries=_wantsRetries;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL wantsRetries; // @synthesize wantsRetries=_wantsRetries;
 - (void)_sendMessage:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)sendAccountSyncMessage:(id)arg1 messageID:(id)arg2 queueOneIdentifier:(id)arg3 allowCloudFallback:(BOOL)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)requestIDStatusForURIs:(id)arg1 service:(id)arg2 lightQuery:(BOOL)arg3 allowQuery:(BOOL)arg4 completionBlock:(CDUnknownBlockType)arg5;

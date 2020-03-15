@@ -47,6 +47,7 @@
     NSString *_PIOvercaptureSourceAdjustmentKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *PIOvercaptureSourceAdjustmentKey; // @synthesize PIOvercaptureSourceAdjustmentKey=_PIOvercaptureSourceAdjustmentKey;
 @property(readonly, nonatomic) NSString *PISourceAdjustmentKey; // @synthesize PISourceAdjustmentKey=_PISourceAdjustmentKey;
 @property(readonly, nonatomic) NSString *PISourceSelectAdjustmentKey; // @synthesize PISourceSelectAdjustmentKey=_PISourceSelectAdjustmentKey;
@@ -82,7 +83,6 @@
 @property(readonly, nonatomic) NSString *PISmartBWAdjustmentKey; // @synthesize PISmartBWAdjustmentKey=_PISmartBWAdjustmentKey;
 @property(readonly, nonatomic) NSString *PISmartColorAdjustmentKey; // @synthesize PISmartColorAdjustmentKey=_PISmartColorAdjustmentKey;
 @property(readonly, nonatomic) NSString *PISmartToneAdjustmentKey; // @synthesize PISmartToneAdjustmentKey=_PISmartToneAdjustmentKey;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *nonVisualAdjustmentTypes;
 @property(readonly, nonatomic) NSArray *allAdjustmentTypes;
 - (id)init;

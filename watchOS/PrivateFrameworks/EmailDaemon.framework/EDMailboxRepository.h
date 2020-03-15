@@ -18,9 +18,9 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serializationQueue; // @synthesize serializationQueue=_serializationQueue;
 @property(retain, nonatomic) EDMailboxPersistence *mailboxPersistence; // @synthesize mailboxPersistence=_mailboxPersistence;
-- (void).cxx_destruct;
 - (_Bool)_performRenameMailboxChangeAction:(id)arg1;
 - (_Bool)_performMoveMailboxChangeAction:(id)arg1;
 - (_Bool)_performDeleteMailboxChangeAction:(id)arg1;

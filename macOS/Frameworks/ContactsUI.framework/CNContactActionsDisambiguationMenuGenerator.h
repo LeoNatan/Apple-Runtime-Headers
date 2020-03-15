@@ -33,13 +33,13 @@
 + (double)widthOfSpace;
 + (double)maxWidthOfMenuItemList:(id)arg1;
 + (id)adjustTabOfAttributedString:(id)arg1 withTabOffset:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType menuItemForActionItem; // @synthesize menuItemForActionItem=_menuItemForActionItem;
 @property(readonly, nonatomic) id <CNLSApplicationWorkspace> applicationWorkspace; // @synthesize applicationWorkspace=_applicationWorkspace;
 @property(readonly, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
 @property(readonly, nonatomic) CNUIUserActionItem *defaultAction; // @synthesize defaultAction=_defaultAction;
 @property(readonly, nonatomic) CNUIUserActionListModel *model; // @synthesize model=_model;
 @property(readonly, nonatomic) id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)adjustTabStopForMaximumWidth:(id)arg1;
 - (void)markTheDefaultItem:(id)arg1;
 - (id)menuItemForActionItem:(id)arg1;

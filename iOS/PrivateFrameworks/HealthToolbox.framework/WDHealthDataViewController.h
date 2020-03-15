@@ -34,13 +34,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)activitiesForLevelLocators:(id)arg1 startAt:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) HKBadge *healthRecordsBadge; // @synthesize healthRecordsBadge=_healthRecordsBadge;
 @property(retain, nonatomic) UIFont *bodyFont; // @synthesize bodyFont=_bodyFont;
 @property(copy, nonatomic) NSArray *sortedSecondaryDataCategories; // @synthesize sortedSecondaryDataCategories=_sortedSecondaryDataCategories;
 @property(copy, nonatomic) NSArray *prearrangedTopLevelDataCategories; // @synthesize prearrangedTopLevelDataCategories=_prearrangedTopLevelDataCategories;
 @property(retain, nonatomic) NSDate *initialStartDate; // @synthesize initialStartDate=_initialStartDate;
 @property(readonly, nonatomic) HKDisplayCategory *displayedCategory; // @synthesize displayedCategory=_displayedCategory;
-- (void).cxx_destruct;
 - (void)testScrollPerformanceWithTestName:(id)arg1 iterations:(int)arg2 delta:(int)arg3 options:(id)arg4;
 - (id)_handlePushDisplayTypeActivity:(id)arg1;
 - (id)_handlePushCategoryActivity:(id)arg1;

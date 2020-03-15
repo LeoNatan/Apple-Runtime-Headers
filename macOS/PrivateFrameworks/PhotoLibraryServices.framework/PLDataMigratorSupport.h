@@ -14,8 +14,8 @@
     PLPhotoLibraryPathManager *_pathManager;
 }
 
-@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void)recordDataMigrationInfo:(id)arg1;
 - (BOOL)hasCapturedOTARestoreStatus;
 - (void)setCapturedOTARestoreStatus;

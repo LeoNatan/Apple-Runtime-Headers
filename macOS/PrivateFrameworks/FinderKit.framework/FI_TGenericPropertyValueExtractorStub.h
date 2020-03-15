@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
     function_ce22cfb2 _isApplicableGetter;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) function_ce22cfb2 isApplicableGetter; // @synthesize isApplicableGetter=_isApplicableGetter;
 @property(nonatomic) function_15fcc248 needsUpdateGetter; // @synthesize needsUpdateGetter=_needsUpdateGetter;
 @property(nonatomic) function_24308192 valueExtractor; // @synthesize valueExtractor=_valueExtractor;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
 - (_Bool)needsUpdateForProperty:(unsigned int)arg1;
 - (id)extractValueFromNodes:(const struct TFENodeVector *)arg1;

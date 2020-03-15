@@ -22,13 +22,13 @@
     PUAssetExplorerReviewScreenViewController *__internalReviewViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUAssetExplorerReviewScreenViewController *_internalReviewViewController; // @synthesize _internalReviewViewController=__internalReviewViewController;
 @property(readonly, nonatomic) PUReviewAssetsMediaProvider *_internalReviewMediaProvider; // @synthesize _internalReviewMediaProvider=__internalReviewMediaProvider;
 @property(readonly, nonatomic) PUReviewAssetsDataSourceManager *_internalReviewDataSourceManager; // @synthesize _internalReviewDataSourceManager=__internalReviewDataSourceManager;
 @property(readonly, nonatomic) PUReviewDataSource *_reviewDataSource; // @synthesize _reviewDataSource=__reviewDataSource;
 @property(readonly, nonatomic) NSArray *_initialAssets; // @synthesize _initialAssets=__initialAssets;
 @property(nonatomic) __weak id <CAMCameraReviewDelegate> reviewDelegate; // @synthesize reviewDelegate=_reviewDelegate;
-- (void).cxx_destruct;
 - (void)assetExplorerReviewScreenViewController:(id)arg1 didPerformCompletionAction:(unsigned long long)arg2 withSelectedAssetUUIDs:(id)arg3 livePhotoDisabledAssetUUIDs:(id)arg4 substituteAssetsByUUID:(id)arg5;
 - (void)assetExplorerReviewScreenViewControllerDidPressRetake:(id)arg1;
 - (void)assetExplorerReviewScreenViewControllerDidPressCancel:(id)arg1;

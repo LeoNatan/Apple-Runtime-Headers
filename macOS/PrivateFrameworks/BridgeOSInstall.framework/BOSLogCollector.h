@@ -20,13 +20,13 @@
 
 + (id)_nvramStringForStartDate:(id)arg1 sessionUUID:(id)arg2;
 + (BOOL)saveUpdateInProgressNVRAMStateWithStartDate:(id)arg1 sessionUUID:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *bridgeOSLog; // @synthesize bridgeOSLog=_bridgeOSLog;
 @property(retain) NSString *macOSBridgeOSSoftwareUpdateControllerLog; // @synthesize macOSBridgeOSSoftwareUpdateControllerLog=_macOSBridgeOSSoftwareUpdateControllerLog;
 @property(retain) NSString *macOSBridgeOSInstallLog; // @synthesize macOSBridgeOSInstallLog=_macOSBridgeOSInstallLog;
 @property BOOL initializedFromNVRAMState; // @synthesize initializedFromNVRAMState=_initializedFromNVRAMState;
 @property(retain) NSString *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (BOOL)_submitToCrashReporter;
 - (id)_replaceOccurrencesOfPattern:(id)arg1 withReplacement:(id)arg2 inString:(id)arg3;
 - (id)_scrubString:(id)arg1;

@@ -36,12 +36,12 @@ __attribute__((visibility("hidden")))
 + (_Bool)isDerivedRelationship;
 + (_Bool)isWeakRelationship;
 + (unsigned long long)_numberOfSharedLocksForUnitTesting;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKObjectValidationContext *_validationContext; // @synthesize _validationContext=__validationContext;
 @property(retain, nonatomic) NSMutableDictionary *_cachedValues; // @synthesize _cachedValues=__cachedValues;
 @property(retain, nonatomic) NSDictionary *additionalFrozenProperties; // @synthesize additionalFrozenProperties=_additionalFrozenProperties;
 @property(retain, nonatomic) NSMutableDictionary *_cachedMeltedObjects; // @synthesize _cachedMeltedObjects=__cachedMeltedObjects;
 @property(retain, nonatomic) EKChangeSet *changeSet; // @synthesize changeSet=_changeSet;
-- (void).cxx_destruct;
 - (void)deletePersistentObject;
 - (void)updatePersistentObjectSkippingProperties:(id)arg1;
 - (void)updatePersistentObject;
@@ -80,7 +80,7 @@ __attribute__((visibility("hidden")))
 - (id)meltedObjectInStore:(id)arg1;
 - (_Bool)isEqual:(id)arg1 ignoringProperties:(id)arg2;
 - (_Bool)isCompletelyEqual:(id)arg1;
-- (EKPersistentObject_556b3b22 *)frozenObject;
+- (id)frozenObject;
 - (id)initWithObject:(id)arg1;
 @property(readonly, nonatomic) _Bool hasChanges;
 @property(readonly, nonatomic, getter=isNew) _Bool new;
@@ -120,7 +120,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)_cachedMeltedObjectsCount;
 - (void)_applyKnownImmutableValuesFrom:(id)arg1;
 - (void)_applyDefinedAfterFirstSaveFrom:(id)arg1;
-- (void)_resetWithFrozenObject:(EKPersistentObject_556b3b22 *)arg1;
+- (void)_resetWithFrozenObject:(id)arg1;
 - (_Bool)revert;
 - (void)refetch;
 - (_Bool)_refreshCommon;

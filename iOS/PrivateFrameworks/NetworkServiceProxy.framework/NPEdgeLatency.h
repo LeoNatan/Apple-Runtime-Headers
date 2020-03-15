@@ -37,6 +37,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool isObserving; // @synthesize isObserving=_isObserving;
 @property _Bool needReprobe; // @synthesize needReprobe=_needReprobe;
 @property(retain) NSNumber *currentTimeout; // @synthesize currentTimeout=_currentTimeout;
@@ -58,7 +59,6 @@
 @property unsigned long long roundTripTime; // @synthesize roundTripTime=_roundTripTime;
 @property(retain) NWEndpoint *probeEndpoint; // @synthesize probeEndpoint=_probeEndpoint;
 @property unsigned long long edgeIndex; // @synthesize edgeIndex=_edgeIndex;
-- (void).cxx_destruct;
 - (_Bool)isComplete:(_Bool)arg1;
 - (_Bool)isMatched:(id)arg1;
 - (_Bool)isMatched:(id)arg1 parameters:(struct networkParameters *)arg2;

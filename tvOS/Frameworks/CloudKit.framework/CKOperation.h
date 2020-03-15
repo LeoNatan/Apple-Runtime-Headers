@@ -50,6 +50,7 @@
     CKOperationMMCSRequestOptions *_MMCSRequestOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id clientVoucher; // @synthesize clientVoucher=_clientVoucher;
 @property(retain, nonatomic) NSObject<OS_os_activity> *osActivity; // @synthesize osActivity=_osActivity;
 @property(retain, nonatomic) CKOperationMMCSRequestOptions *MMCSRequestOptions; // @synthesize MMCSRequestOptions=_MMCSRequestOptions;
@@ -82,7 +83,6 @@
 @property(copy, nonatomic) NSString *operationID; // @synthesize operationID=_operationID;
 @property(retain, nonatomic) CKOperationGroup *group; // @synthesize group=_group;
 @property(copy, nonatomic) CKOperationConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *w3cNavigationTimingByRequestUUID;
 @property(readonly, nonatomic) NSDictionary *responseHTTPHeadersByRequestUUID;
 @property(readonly, nonatomic) NSArray *requestUUIDs;

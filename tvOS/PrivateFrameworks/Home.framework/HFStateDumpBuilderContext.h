@@ -22,13 +22,13 @@
 }
 
 + (id)contextWithDetailLevel:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *multilinePrefix; // @synthesize multilinePrefix=_multilinePrefix;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSSet *objectsToExclude; // @synthesize objectsToExclude=_objectsToExclude;
 @property(nonatomic) _Bool excludePrimaryID; // @synthesize excludePrimaryID=_excludePrimaryID;
 @property(nonatomic) unsigned long long outputStyle; // @synthesize outputStyle=_outputStyle;
 @property(nonatomic) unsigned long long detailLevel; // @synthesize detailLevel=_detailLevel;
-- (void).cxx_destruct;
 - (unsigned long long)derivedOutputStyle;
 - (id)copyWithOutputStyle:(unsigned long long)arg1;
 - (id)copyWithDetailLevel:(unsigned long long)arg1;

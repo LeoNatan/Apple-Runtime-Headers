@@ -17,11 +17,11 @@
     NSMutableDictionary *_userChannels;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *userChannels; // @synthesize userChannels=_userChannels;
 @property struct nw_protocol *defaultInputProtocol; // @synthesize defaultInputProtocol=_defaultInputProtocol;
 @property struct nw_protocol *protocol; // @synthesize protocol=_protocol;
 @property(retain) NSObject<OS_nw_channel> *kernelChannel; // @synthesize kernelChannel=_kernelChannel;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

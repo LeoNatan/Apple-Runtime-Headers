@@ -27,6 +27,7 @@
     double _currentScaleFactor;
 }
 
+- (void).cxx_destruct;
 @property double currentScaleFactor; // @synthesize currentScaleFactor=_currentScaleFactor;
 @property _Bool isObservingModel; // @synthesize isObservingModel=_isObservingModel;
 @property(retain) AKPageModelController *pageModelController; // @synthesize pageModelController=_pageModelController;
@@ -42,7 +43,6 @@
 @property(nonatomic) _Bool shouldPixelate; // @synthesize shouldPixelate=_shouldPixelate;
 @property(retain) CALayer *rootLayer; // @synthesize rootLayer=_rootLayer;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
-- (void).cxx_destruct;
 - (void)_removeAdornmentLayerForAnnotation:(id)arg1;
 - (void)_addAdornmentLayerForAnnotation:(id)arg1;
 - (void)_removeLayerForAnnotation:(id)arg1;

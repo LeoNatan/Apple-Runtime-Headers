@@ -20,6 +20,7 @@
     NSArray *_alarmConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *alarmConstraints; // @synthesize alarmConstraints=_alarmConstraints;
 @property __weak EKUIAlarmCompositeGadget *alarmsContainer; // @synthesize alarmsContainer=_alarmsContainer;
 @property unsigned long long currentTrigger; // @synthesize currentTrigger=_currentTrigger;
@@ -28,7 +29,6 @@
 @property(retain) EKUIAlarmContainerView *container; // @synthesize container=_container;
 @property BOOL addButtonAvailible; // @synthesize addButtonAvailible=_addButtonAvailible;
 @property(retain) EKAlarm *alarm; // @synthesize alarm=_alarm;
-- (void).cxx_destruct;
 - (void)updateWithAlarm:(id)arg1;
 - (id)defaultAlarmDescriptionWithAbbreviation:(BOOL)arg1;
 - (id)alarmDescriptionWithAbbreviation:(BOOL)arg1;

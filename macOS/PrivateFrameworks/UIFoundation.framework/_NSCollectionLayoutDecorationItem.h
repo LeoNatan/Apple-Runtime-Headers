@@ -22,8 +22,8 @@
 
 + (id)decorationItemWithSize:(id)arg1 elementKind:(id)arg2 containerAnchor:(id)arg3;
 + (id)backgroundDecorationItemWithElementKind:(id)arg1;
-@property(nonatomic) long long zIndex; // @synthesize zIndex=_zIndex;
 - (void).cxx_destruct;
+@property(nonatomic) long long zIndex; // @synthesize zIndex=_zIndex;
 - (id)_apiRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(retain, nonatomic, setter=_setRegistrationViewClass:) Class _registrationViewClass;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSSet *_removedObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *removedObjects; // @synthesize removedObjects=_removedObjects;
 @property(readonly, nonatomic) NSSet *addedObjects; // @synthesize addedObjects=_addedObjects;
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

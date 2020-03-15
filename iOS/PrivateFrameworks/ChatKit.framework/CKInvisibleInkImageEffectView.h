@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     CAEmitterLayer *_dustEmitterLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAEmitterLayer *dustEmitterLayer; // @synthesize dustEmitterLayer=_dustEmitterLayer;
 @property(retain, nonatomic) CALayer *dustEmitterContainerLayer; // @synthesize dustEmitterContainerLayer=_dustEmitterContainerLayer;
 @property(retain, nonatomic) CAEmitterLayer *drawEmitterLayer; // @synthesize drawEmitterLayer=_drawEmitterLayer;
 @property(retain, nonatomic) CALayer *drawEmitterContainerLayer; // @synthesize drawEmitterContainerLayer=_drawEmitterContainerLayer;
 @property(retain, nonatomic) CALayer *blurredImageContainerLayer; // @synthesize blurredImageContainerLayer=_blurredImageContainerLayer;
 @property(retain, nonatomic) CALayer *blurredImageLayer; // @synthesize blurredImageLayer=_blurredImageLayer;
-- (void).cxx_destruct;
 - (void)setPaused:(_Bool)arg1;
 - (void)setSuspended:(_Bool)arg1;
 - (void)reset;

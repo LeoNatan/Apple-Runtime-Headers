@@ -15,10 +15,10 @@
     int _baseValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) int baseValue; // @synthesize baseValue=_baseValue;
 @property(readonly) int rolloverValue; // @synthesize rolloverValue=_rolloverValue;
 @property(readonly) NSDate *lastResetDate; // @synthesize lastResetDate=_lastResetDate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)clearRolloverValue;
 - (void)subtractValue:(int)arg1 fromSource:(unsigned int)arg2;

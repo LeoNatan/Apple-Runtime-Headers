@@ -12,8 +12,8 @@
 }
 
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
-@property(copy) CDUnknownBlockType pendingFetchCompletionHandler; // @synthesize pendingFetchCompletionHandler=_pendingFetchCompletionHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType pendingFetchCompletionHandler; // @synthesize pendingFetchCompletionHandler=_pendingFetchCompletionHandler;
 - (BOOL)canConvertToHTMLForSharing;
 - (id)attributesForSharingHTMLWithTagName:(id *)arg1 textContent:(id *)arg2;
 - (BOOL)showThumbnailInNoteList;

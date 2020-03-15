@@ -17,8 +17,8 @@
 
 + (id)unsavedReplicaManagersForAccountIDs:(id)arg1;
 + (id)replicaManagerForAccountID:(id)arg1 withStore:(id)arg2;
-@property(retain, nonatomic) REMStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMStore *store; // @synthesize store=_store;
 - (id)unsavedReplicaManagersForAccountIDs:(id)arg1;
 - (id)replicaManagerForAccountID:(id)arg1;
 - (id)initWithStore:(id)arg1;

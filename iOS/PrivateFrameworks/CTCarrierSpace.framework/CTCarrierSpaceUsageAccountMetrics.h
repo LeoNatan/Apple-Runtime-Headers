@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *applicablePlans; // @synthesize applicablePlans=_applicablePlans;
 @property(retain, nonatomic) NSDate *billingCycleEndDate; // @synthesize billingCycleEndDate=_billingCycleEndDate;
 @property(retain, nonatomic) NSString *planType; // @synthesize planType=_planType;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool localDevice; // @synthesize localDevice=_localDevice;
 @property(nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) NSString *networkUsageLabel; // @synthesize networkUsageLabel=_networkUsageLabel;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

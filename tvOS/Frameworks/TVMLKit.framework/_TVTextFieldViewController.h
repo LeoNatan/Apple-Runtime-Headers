@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     IKTextFieldElement *_viewElement;
 }
 
-@property(readonly, retain, nonatomic) IKTextFieldElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) IKTextFieldElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void)_updateKeyboardWithUserText;
 - (void)_updateUserText;
 - (void)_updateViewLayout;

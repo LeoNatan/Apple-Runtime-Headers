@@ -17,9 +17,9 @@
     NSString *_sender;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *sender; // @synthesize sender=_sender;
 @property(readonly, nonatomic) unsigned long long certificateType; // @synthesize certificateType=_certificateType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __SecTrust *trust;
 @property(readonly, nonatomic) ECSecureMIMETrustEvaluation *trustEvaluation;
 - (void)dealloc;

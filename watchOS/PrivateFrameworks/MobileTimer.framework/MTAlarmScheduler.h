@@ -28,6 +28,7 @@
 }
 
 + (id)_intervalToCheckForAlarmsToFireBeforeDate:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTPersistence> defaults; // @synthesize defaults=_defaults;
 @property(readonly, nonatomic) id <MTTaskScheduler> taskScheduler; // @synthesize taskScheduler=_taskScheduler;
 @property(readonly, nonatomic) id <MTSchedulingDelegate> schedulingDelegate; // @synthesize schedulingDelegate=_schedulingDelegate;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) MTScheduledList *scheduledAlarms; // @synthesize scheduledAlarms=_scheduledAlarms;
 @property(readonly, nonatomic) id <MTAlarmStorage> storage; // @synthesize storage=_storage;
 @property(nonatomic) __weak id <MTAlarmScheduleDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (void)handleNotification:(id)arg1 ofType:(int)arg2 completion:(CDUnknownBlockType)arg3;

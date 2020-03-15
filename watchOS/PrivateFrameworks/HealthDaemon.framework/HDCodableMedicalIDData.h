@@ -15,8 +15,8 @@
     NSData *_medicalIDBytes;
 }
 
-@property(retain, nonatomic) NSData *medicalIDBytes; // @synthesize medicalIDBytes=_medicalIDBytes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *medicalIDBytes; // @synthesize medicalIDBytes=_medicalIDBytes;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

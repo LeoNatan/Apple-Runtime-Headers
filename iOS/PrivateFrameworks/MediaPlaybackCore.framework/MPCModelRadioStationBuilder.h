@@ -23,12 +23,14 @@
         unsigned int type:1;
         unsigned int subtype:1;
         unsigned int subscriptionRequired:1;
+        unsigned int providerUniversalLink:1;
+        unsigned int providerBundleIdentifier:1;
     } _requestedRadioStationProperties;
     MPPropertySet *_requestedProperties;
 }
 
-@property(readonly, copy, nonatomic) MPPropertySet *requestedProperties; // @synthesize requestedProperties=_requestedProperties;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) MPPropertySet *requestedProperties; // @synthesize requestedProperties=_requestedProperties;
 - (id)modelRadioStationForMetadata:(id)arg1;
 - (id)initWithRequestedProperties:(id)arg1;
 

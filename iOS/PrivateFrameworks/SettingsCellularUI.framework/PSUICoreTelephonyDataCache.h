@@ -10,34 +10,30 @@
 #import <SettingsCellularUI/RadiosPreferencesDelegate-Protocol.h>
 
 @class CoreTelephonyClient, NSMutableDictionary, NSString, RadiosPreferences;
-@protocol OS_dispatch_group, OS_dispatch_queue;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface PSUICoreTelephonyDataCache : NSObject <CoreTelephonyClientDataDelegate, RadiosPreferencesDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
-    _Bool _intlDataAccessStatus;
-    _Bool _intlDataAccessStatusInitialized;
     _Bool _cellularDataSetting;
     _Bool _cellularDataSettingInitialized;
     struct __CTServerConnection *_ctConnection;
     CoreTelephonyClient *_client;
     NSMutableDictionary *_dataStatusDict;
-    NSObject<OS_dispatch_group> *_intlDataAccessGroup;
+    NSMutableDictionary *_intlDataAccessStatus;
     RadiosPreferences *_radioPreferences;
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property _Bool cellularDataSettingInitialized; // @synthesize cellularDataSettingInitialized=_cellularDataSettingInitialized;
 @property _Bool cellularDataSetting; // @synthesize cellularDataSetting=_cellularDataSetting;
 @property(retain, nonatomic) RadiosPreferences *radioPreferences; // @synthesize radioPreferences=_radioPreferences;
-@property _Bool intlDataAccessStatusInitialized; // @synthesize intlDataAccessStatusInitialized=_intlDataAccessStatusInitialized;
-@property(retain) NSObject<OS_dispatch_group> *intlDataAccessGroup; // @synthesize intlDataAccessGroup=_intlDataAccessGroup;
-@property _Bool intlDataAccessStatus; // @synthesize intlDataAccessStatus=_intlDataAccessStatus;
+@property(retain) NSMutableDictionary *intlDataAccessStatus; // @synthesize intlDataAccessStatus=_intlDataAccessStatus;
 @property(retain) NSMutableDictionary *dataStatusDict; // @synthesize dataStatusDict=_dataStatusDict;
 @property(retain, nonatomic) CoreTelephonyClient *client; // @synthesize client=_client;
 @property struct __CTServerConnection *ctConnection; // @synthesize ctConnection=_ctConnection;
-- (void).cxx_destruct;
 - (void)airplaneModeChanged;
 - (void)setDataFallbackEnabled:(_Bool)arg1;
 - (_Bool)isDataFallbackEnabled;
@@ -45,9 +41,11 @@ __attribute__((visibility("hidden")))
 - (void)setCellularDataEnabled:(_Bool)arg1;
 - (_Bool)isCellularDataEnabled;
 - (void)fetchCellularDataEnabled;
+- (void)setInternationalDataAccessStatus:(id)arg1 status:(_Bool)arg2;
 - (void)setInternationalDataAccessStatus:(_Bool)arg1;
+- (_Bool)getInternationalDataAccessStatus:(id)arg1;
 - (_Bool)getInternationalDataAccessStatus;
-- (void)fetchInternationalDataAccessStatus;
+- (void)fetchInternationalDataAccessStatus:(id)arg1;
 - (void)dataStatus:(id)arg1 dataStatusInfo:(id)arg2;
 - (id)getDataStatus:(id)arg1;
 - (void)fetchDataStatus;

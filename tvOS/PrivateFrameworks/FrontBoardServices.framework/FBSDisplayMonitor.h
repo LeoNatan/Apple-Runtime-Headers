@@ -24,8 +24,8 @@
     _Bool _lock_canPostToBookendObserver;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callOutQueue; // @synthesize callOutQueue=_callOutQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callOutQueue; // @synthesize callOutQueue=_callOutQueue;
 - (void)_lock_enumerateConnectedWithBlock:(CDUnknownBlockType)arg1;
 - (void)_lock_enumerateSourcesWithBlock:(CDUnknownBlockType)arg1;
 - (id)_sortedSources;

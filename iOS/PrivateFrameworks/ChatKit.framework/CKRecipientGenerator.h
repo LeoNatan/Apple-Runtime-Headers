@@ -14,8 +14,8 @@
 }
 
 + (id)sharedRecipientGenerator;
-@property(retain, nonatomic) NSArray *searchABPropertyTypes; // @synthesize searchABPropertyTypes=_searchABPropertyTypes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *searchABPropertyTypes; // @synthesize searchABPropertyTypes=_searchABPropertyTypes;
 - (void)_appendSearchResults:(id)arg1 identifiers:(id)arg2 abPropertyType:(int)arg3 toArray:(id)arg4;
 - (id)recipientWithAddress:(id)arg1;
 - (id)recipientWithContactProperty:(id)arg1;

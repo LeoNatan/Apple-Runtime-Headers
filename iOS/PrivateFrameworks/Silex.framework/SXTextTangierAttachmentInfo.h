@@ -14,9 +14,9 @@
     struct _NSRange _actualRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange actualRange; // @synthesize actualRange=_actualRange;
 @property(retain, nonatomic) SXTextExclusionPath *exclusionPath; // @synthesize exclusionPath=_exclusionPath;
-- (void).cxx_destruct;
 - (Class)repClass;
 - (Class)layoutClass;
 

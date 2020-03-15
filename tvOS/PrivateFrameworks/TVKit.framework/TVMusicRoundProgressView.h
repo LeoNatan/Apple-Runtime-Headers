@@ -28,6 +28,7 @@
     UIImage *_spinnerOverlayImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *spinnerOverlayImage; // @synthesize spinnerOverlayImage=_spinnerOverlayImage;
 @property(retain, nonatomic) UIImage *spinnerImage; // @synthesize spinnerImage=_spinnerImage;
 @property(retain, nonatomic) UIImage *fillImage; // @synthesize fillImage=_fillImage;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) UIImageView *spinnerLayer; // @synthesize spinnerLayer=_spinnerLayer;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_setSpinnerAnimating:(_Bool)arg1;
 - (void)_startSpinner;
 - (void)drawRect:(struct CGRect)arg1;

@@ -31,6 +31,7 @@
     unsigned long long _presentationDismissalStartTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLClockAssertion *transitionPauseAssertion; // @synthesize transitionPauseAssertion=_transitionPauseAssertion;
 @property(nonatomic) unsigned long long presentationDismissalStartTimestamp; // @synthesize presentationDismissalStartTimestamp=_presentationDismissalStartTimestamp;
 @property(nonatomic, getter=isWaitingOnPresentationDismissal) _Bool waitingOnPresentationDismissal; // @synthesize waitingOnPresentationDismissal=_waitingOnPresentationDismissal;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(readonly, nonatomic, getter=_isCancelled) _Bool _cancelled; // @synthesize _cancelled;
-- (void).cxx_destruct;
 - (void)transactionWatchdogImminent;
 - (_Bool)addChildViewServiceTransaction:(id)arg1 forBundleIdentifier:(id)arg2;
 @property(readonly, nonatomic) NSArray *childViewServiceBundleIdentifiers;

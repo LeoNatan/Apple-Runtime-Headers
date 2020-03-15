@@ -22,10 +22,10 @@
 
 + (id)itemTypeIdentifier;
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_textMargins) struct NSEdgeInsets textMargins; // @synthesize textMargins=_textMargins;
 @property(nonatomic) __weak id <SOGenericStatusLayoutItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IMTranscriptChatItem *chatTranscriptItem; // @synthesize chatTranscriptItem=_chatTranscriptItem;
-- (void).cxx_destruct;
 - (long long)verticalSpaceToPrecedingItemOfClassification:(long long)arg1;
 - (struct CGSize)sizeConstrainedToWidth:(double)arg1;
 @property(readonly, nonatomic) long long layoutOrientation;

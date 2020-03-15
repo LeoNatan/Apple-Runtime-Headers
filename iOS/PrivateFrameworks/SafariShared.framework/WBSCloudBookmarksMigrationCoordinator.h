@@ -27,9 +27,9 @@
     id <WBSLogger> _keyActionsLogger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <WBSLogger> keyActionsLogger; // @synthesize keyActionsLogger=_keyActionsLogger;
 @property(readonly, nonatomic) __weak id <WBSCloudBookmarksMigrationCoordinatorLocalDataProvider> localDataProvider; // @synthesize localDataProvider=_localDataProvider;
-- (void).cxx_destruct;
 - (void)fetchUserIdentityWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_migrationReadinessDataInvalidated:(id)arg1;
 - (void)_migrationReadinessDeciderDecidedMigrationIsNoLongerPossible;

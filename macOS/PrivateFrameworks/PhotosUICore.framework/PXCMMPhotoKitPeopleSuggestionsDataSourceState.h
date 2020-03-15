@@ -16,9 +16,9 @@
     NSDictionary *_personSuggestionsByPerson;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *personSuggestionsByPerson; // @synthesize personSuggestionsByPerson=_personSuggestionsByPerson;
 @property(readonly, nonatomic) PHFetchResult *people; // @synthesize people=_people;
-- (void).cxx_destruct;
 - (id)stateUpdatedWithChange:(id)arg1 changeDetails:(id *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPeople:(id)arg1 personSuggestionsByPerson:(id)arg2;

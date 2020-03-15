@@ -35,6 +35,7 @@
 
 + (id)decodedDocumentFromData:(id)arg1 replica:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(retain, nonatomic) NSMutableArray *uuidArray; // @synthesize uuidArray=_uuidArray;
 @property(retain, nonatomic) NSMutableOrderedSet *keySet; // @synthesize keySet=_keySet;
@@ -44,7 +45,6 @@
 @property(nonatomic) struct Document *currentDocument; // @synthesize currentDocument=_currentDocument;
 @property(retain, nonatomic) CRDocument *document; // @synthesize document=_document;
 @property(copy, nonatomic) NSUUID *replica; // @synthesize replica=_replica;
-- (void).cxx_destruct;
 - (unsigned long long)indexForKey:(id)arg1;
 - (const struct Document_DocObject *)currentDocumentObjectForDecoding;
 - (void)sortCompletionHandlers;

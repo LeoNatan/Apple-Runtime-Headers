@@ -20,6 +20,7 @@
     PXPeopleScalableAvatarView *_avatarView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXPeopleScalableAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UIButton *denyButton; // @synthesize denyButton=_denyButton;
@@ -27,7 +28,6 @@
 @property(retain) id <PXPerson> suggestedPerson; // @synthesize suggestedPerson=_suggestedPerson;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 @property(readonly, nonatomic) id <PXPeopleMeViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;

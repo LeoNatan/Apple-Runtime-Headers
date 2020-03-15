@@ -22,8 +22,8 @@
     _Bool _debugMode;
 }
 
-@property(nonatomic) _Bool debugMode; // @synthesize debugMode=_debugMode;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool debugMode; // @synthesize debugMode=_debugMode;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)animationDidStart:(id)arg1;
 - (void)transitionToSize:(struct CGSize)arg1 offset:(struct CGPoint)arg2 duration:(double)arg3 animationCurve:(id)arg4 completion:(CDUnknownBlockType)arg5;

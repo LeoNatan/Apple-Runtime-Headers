@@ -14,9 +14,9 @@
     HKPersistentTimer *_authorizationTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKPersistentTimer *authorizationTimer; // @synthesize authorizationTimer=_authorizationTimer;
 @property(retain, nonatomic) HDAWDHealthKitGymKitWorkoutEvent *gymKitWorkoutEvent; // @synthesize gymKitWorkoutEvent=_gymKitWorkoutEvent;
-- (void).cxx_destruct;
 - (void)workoutEnded;
 - (long long)_failureReasonForError:(id)arg1;
 - (void)workoutFailedWithError:(id)arg1;

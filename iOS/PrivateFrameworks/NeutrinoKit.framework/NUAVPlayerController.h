@@ -28,6 +28,7 @@
     id <NUAVPlayerControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic) _Bool loopsVideo; // @synthesize loopsVideo=_loopsVideo;
 @property(nonatomic) __weak id <NUAVPlayerControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) AVAsset *videoAsset; // @synthesize videoAsset=_videoAsset;
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_addPlayerItemKVO:(id)arg1;
 - (void)_removePlayerItemKVO:(id)arg1 removeFromArray:(_Bool)arg2;
 - (void)_removePlayerItemKVO:(id)arg1;

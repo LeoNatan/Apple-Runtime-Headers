@@ -21,12 +21,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)sessionConfigurationWithStartDate:(id)arg1 sessionDuration:(double)arg2 inhaleExhaleRatio:(double)arg3 respirationsPerMinute:(double)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) double respirationsPerMinute; // @synthesize respirationsPerMinute=_respirationsPerMinute;
 @property(nonatomic) double inhaleExhaleRatio; // @synthesize inhaleExhaleRatio=_inhaleExhaleRatio;
 @property(nonatomic) double sessionDuration; // @synthesize sessionDuration=_sessionDuration;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

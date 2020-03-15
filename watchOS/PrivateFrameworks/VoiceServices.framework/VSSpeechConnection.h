@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_threadSafeQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *threadSafeQueue; // @synthesize threadSafeQueue=_threadSafeQueue;
 @property(retain, nonatomic) VSSpeechConnectionDelegateWrapper *delegateWrapper; // @synthesize delegateWrapper=_delegateWrapper;
 @property(nonatomic) __weak id <VSSpeechConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)killDaemon;
 - (void)forwardStreamObject:(id)arg1;
 - (void)getTTSServerVoicesWithFilter:(id)arg1 reply:(CDUnknownBlockType)arg2;
@@ -52,7 +52,7 @@ __attribute__((visibility("hidden")))
 - (id)availableVoicesForLanguageCode:(id)arg1;
 - (void)estimateDurationWithRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)queryPhaticCapabilityWithRequest:(id)arg1;
-- (void)prewarmIfNeededWithRequest:(id)arg1;
+- (void)prewarmIfNeededWithRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)updateWithConnectionIdentifier:(id)arg1;
 @property(readonly, nonatomic) VSPresynthesizedAudioRequest *presynthesizedAudioRequest;
 - (void)setPresynthesizedAudioRequest:(id)arg1;
@@ -61,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)setRequest:(id)arg1;
 - (void)_connectionInvalidated;
 - (id)_remoteObjectWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)_remoteObjectSync;
 - (id)_remoteObject;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)dealloc;

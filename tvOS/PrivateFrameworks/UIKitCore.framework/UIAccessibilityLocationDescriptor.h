@@ -15,9 +15,9 @@
     struct CGPoint _point;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSAttributedString *attributedName; // @synthesize attributedName=_attributedName;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *name;

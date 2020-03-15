@@ -25,12 +25,12 @@
 + (id)atomicCacheScheduler;
 + (id)atomicCache;
 + (id)cache;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *evictedKeysAndValues; // @synthesize evictedKeysAndValues=_evictedKeysAndValues;
 @property(readonly, nonatomic) NSMutableArray *didEvictHandlers; // @synthesize didEvictHandlers=_didEvictHandlers;
 @property(readonly, nonatomic) NSMutableDictionary *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) id <CNScheduler> resourceScheduler; // @synthesize resourceScheduler=_resourceScheduler;
 @property(readonly, copy, nonatomic) NSArray *boundingStrategies; // @synthesize boundingStrategies=_boundingStrategies;
-- (void).cxx_destruct;
 - (void)callDidEvictHandlersIfNecessary;
 - (void)resourceLock_evictObjectsForKeys:(id)arg1;
 - (void)resourceLock_evictObjectForKey:(id)arg1;

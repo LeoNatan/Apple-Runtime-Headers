@@ -11,9 +11,9 @@
 }
 
 + (unsigned long long)filterVersion;
-- (struct NSString *)identifierForUserActivity:(id)arg1 bundleIdentifier:(id)arg2;
+- (id)identifierForUserActivity:(id)arg1 bundleIdentifier:(id)arg2;
 - (unsigned long long)_actionIdentifierForUserActivity:(id)arg1;
-- (struct NSString *)identifierForIntent:(id)arg1 bundleIdentifier:(id)arg2;
+- (id)identifierForIntent:(id)arg1 bundleIdentifier:(id)arg2;
 - (unsigned long long)_actionIdentifierForIntent:(id)arg1;
 - (id)userActivityByFilteringUserActivity:(id)arg1 withLevel:(unsigned long long)arg2;
 - (id)intentByFilteringIntent:(id)arg1 withLevel:(unsigned long long)arg2;

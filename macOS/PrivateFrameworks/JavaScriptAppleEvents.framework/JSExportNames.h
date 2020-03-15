@@ -16,10 +16,10 @@
 }
 
 + (id)defaultSetterNameForPropertyName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMapTable *methodSelectorTables; // @synthesize methodSelectorTables=_methodSelectorTables;
 @property(retain) NSMapTable *getterSelectorTables; // @synthesize getterSelectorTables=_getterSelectorTables;
 @property(retain) NSMapTable *setterSelectorTables; // @synthesize setterSelectorTables=_setterSelectorTables;
-- (void).cxx_destruct;
 - (SEL)methodSelectorForName:(id)arg1 protocol:(id)arg2;
 - (SEL)getterSelectorForName:(id)arg1 protocol:(id)arg2;
 - (SEL)setterSelectorForName:(id)arg1 protocol:(id)arg2;

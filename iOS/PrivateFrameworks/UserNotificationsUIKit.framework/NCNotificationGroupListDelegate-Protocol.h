@@ -10,6 +10,7 @@
 @protocol NCAuxiliaryOptionsProviding;
 
 @protocol NCNotificationGroupListDelegate <NCNotificationListComponentDelegate>
+- (_Bool)isViewVisibleForNotificationGroupList:(NCNotificationGroupList *)arg1;
 - (_Bool)notificationGroupListShouldScrollToTop:(NCNotificationGroupList *)arg1;
 - (void)notificationGroupList:(NCNotificationGroupList *)arg1 requestsScrollToTopOfGroupWithCompletion:(void (^)(void))arg2;
 - (id <NCAuxiliaryOptionsProviding>)notificationGroupList:(NCNotificationGroupList *)arg1 requestsAuxiliaryOptionsContentProviderForNotificationRequest:(NCNotificationRequest *)arg2 isLongLook:(_Bool)arg3;

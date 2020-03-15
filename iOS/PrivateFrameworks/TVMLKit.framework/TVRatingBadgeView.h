@@ -15,9 +15,9 @@
 }
 
 + (id)ratingBadgeViewWithValue:(double)arg1 layout:(id)arg2 existingBadgeView:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double ratingValue; // @synthesize ratingValue=_ratingValue;
 @property(retain, nonatomic) TVRatingBadgeLayout *ratingBadgeLayout; // @synthesize ratingBadgeLayout=_ratingBadgeLayout;
-- (void).cxx_destruct;
 - (double)_circleRadius;
 - (id)_halfStarImage;
 - (id)_starImage;

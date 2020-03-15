@@ -30,11 +30,11 @@
     CDStruct_fea8a6c8 _contentConstraints;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_fea8a6c8 contentConstraints; // @synthesize contentConstraints=_contentConstraints;
 @property(copy, nonatomic) PKStackedTextItem *content; // @synthesize content=_content;
 @property(nonatomic) int textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(readonly, nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)setContent:(id)arg1 animated:(_Bool)arg2;
 - (void)setTextAlignment:(int)arg1 animated:(_Bool)arg2;
 - (double)_prepareViewForReuse:(id)arg1;

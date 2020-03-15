@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _shouldAcceptDatabaseConnection;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType shouldAcceptDatabaseConnection; // @synthesize shouldAcceptDatabaseConnection=_shouldAcceptDatabaseConnection;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType shouldAcceptDatabaseConnection; // @synthesize shouldAcceptDatabaseConnection=_shouldAcceptDatabaseConnection;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 @end

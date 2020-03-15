@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_chartPoints;
 }
 
-@property(readonly, nonatomic) NSArray *chartPoints; // @synthesize chartPoints=_chartPoints;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *chartPoints; // @synthesize chartPoints=_chartPoints;
 - (id)_appointmentsToChartPoints:(id)arg1;
 - (id)cachedBlockForPath:(CDStruct_912cb5d2)arg1 context:(id)arg2;
 - (id)initWithAppointments:(id)arg1;

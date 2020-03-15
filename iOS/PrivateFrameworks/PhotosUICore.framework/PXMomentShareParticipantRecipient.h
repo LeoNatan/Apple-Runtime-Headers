@@ -13,8 +13,8 @@
     PHMomentShareParticipant *_momentShareParticipant;
 }
 
-@property(readonly, nonatomic) PHMomentShareParticipant *momentShareParticipant; // @synthesize momentShareParticipant=_momentShareParticipant;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHMomentShareParticipant *momentShareParticipant; // @synthesize momentShareParticipant=_momentShareParticipant;
 - (id)initWithContact:(id)arg1 address:(id)arg2 nameComponents:(id)arg3 recipientKind:(long long)arg4;
 - (id)initWithMomentShareParticipant:(id)arg1;
 

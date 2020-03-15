@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) id <ICUIApplicationShimDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <ICUIApplicationShimDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)endReceivingRemoteControlEvents;
 - (void)beginReceivingRemoteControlEvents;
 @property(readonly, nonatomic) UIWindow *keyWindow;

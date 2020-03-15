@@ -19,6 +19,7 @@
     NSCache *_tokenizersCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct os_unfair_lock_s unfairLock; // @synthesize unfairLock=_unfairLock;
 @property(retain, nonatomic) NSCache *tokenizersCache; // @synthesize tokenizersCache=_tokenizersCache;
 @property(retain, nonatomic) NSMutableArray *attachments; // @synthesize attachments=_attachments;
@@ -26,7 +27,6 @@
 @property(nonatomic) BOOL shouldHyphenate; // @synthesize shouldHyphenate=_shouldHyphenate;
 @property(nonatomic) BOOL isSelectable; // @synthesize isSelectable=_isSelectable;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (struct _NSRange)wordAtCharIndex:(unsigned long long)arg1 includePreviousWord:(BOOL)arg2;
 - (struct _NSRange)insertAttachmentOrFootnote:(id)arg1 range:(struct _NSRange)arg2;

@@ -18,12 +18,12 @@
 }
 
 + (id)webResourceWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *frameName; // @synthesize frameName=_frameName;
 @property(copy, nonatomic) NSString *textEncodingName; // @synthesize textEncodingName=_textEncodingName;
 @property(copy, nonatomic) NSString *MIMEType; // @synthesize MIMEType=_MIMEType;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)propertyList;
 - (id)initWithData:(id)arg1 URL:(id)arg2 MIMEType:(id)arg3 textEncodingName:(id)arg4 frameName:(id)arg5;
 

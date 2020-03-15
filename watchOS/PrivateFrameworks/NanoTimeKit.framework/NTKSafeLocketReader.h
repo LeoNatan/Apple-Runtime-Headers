@@ -17,9 +17,9 @@
     id <NTKSafeLocketReaderDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPTOLocket *locket; // @synthesize locket=_locket;
 @property(nonatomic) __weak id <NTKSafeLocketReaderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_photoLibraryDidBecomeAvailable;
 - (id)_createLocket;
 - (id)remoteCollectionIdentifier;

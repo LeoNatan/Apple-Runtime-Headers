@@ -16,11 +16,11 @@ __attribute__((visibility("hidden")))
     NSString *_staticPrompt;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *staticPrompt; // @synthesize staticPrompt=_staticPrompt;
 @property(nonatomic) BOOL showsPrompt; // @synthesize showsPrompt=_showsPrompt;
 - (void)setSelectionLimit:(unsigned long long)arg1;
 - (unsigned long long)selectionLimit;
-- (void).cxx_destruct;
 - (id)localizedPrompt;
 - (BOOL)isSelectingAssets;
 - (id)initWithPhotoSelectionManager:(id)arg1;

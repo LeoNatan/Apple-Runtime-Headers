@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsBSXPCSecureCoding;
 + (BOOL)supportsSecureCoding;
 + (id)definitionWithIdentifier:(id)arg1 variant:(long long)arg2 scope:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long scope; // @synthesize scope=_scope;
 @property(readonly, nonatomic) long long variant; // @synthesize variant=_variant;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

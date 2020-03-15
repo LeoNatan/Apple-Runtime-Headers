@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSArray *_attributeGroups;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attributeGroups; // @synthesize attributeGroups=_attributeGroups;
 @property(copy, nonatomic) NSString *endowmentNamespace; // @synthesize endowmentNamespace=_endowmentNamespace;
 @property(copy, nonatomic) NSDictionary *targetBundleProperties; // @synthesize targetBundleProperties=_targetBundleProperties;
 @property(copy, nonatomic) NSDictionary *originatorEntitlements; // @synthesize originatorEntitlements=_originatorEntitlements;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

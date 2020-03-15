@@ -16,11 +16,11 @@
     NSColor *_darkHighContrastColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *darkHighContrastColor; // @synthesize darkHighContrastColor=_darkHighContrastColor;
 @property(readonly, nonatomic) NSColor *lightHighContrastColor; // @synthesize lightHighContrastColor=_lightHighContrastColor;
 @property(readonly, nonatomic) NSColor *darkColor; // @synthesize darkColor=_darkColor;
 @property(readonly, nonatomic) NSColor *lightColor; // @synthesize lightColor=_lightColor;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

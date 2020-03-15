@@ -17,10 +17,10 @@
     CDUnknownBlockType _durationDefaultScaleCurve;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType durationDefaultScaleCurve; // @synthesize durationDefaultScaleCurve=_durationDefaultScaleCurve;
 @property(copy, nonatomic) CDUnknownBlockType durationCurve; // @synthesize durationCurve=_durationCurve;
 @property(nonatomic) __weak UIView *scalingView; // @synthesize scalingView=_scalingView;
-- (void).cxx_destruct;
 - (void)_resetDurationDefaultScaleCurve;
 - (void)_resetDurationCurve;
 - (void)_setScale:(float)arg1 view:(id)arg2 duration:(double)arg3 completion:(CDUnknownBlockType)arg4;

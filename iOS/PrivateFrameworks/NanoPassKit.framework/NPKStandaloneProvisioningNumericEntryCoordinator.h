@@ -16,11 +16,11 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) NSMutableArray *completedFields; // @synthesize completedFields=_completedFields;
 @property(retain, nonatomic) NSArray *providedFields; // @synthesize providedFields=_providedFields;
-- (void).cxx_destruct;
 - (void)_invokeCompletionHandler;
 - (void)_showCurrentPasscodePromptOrComplete;
 - (void)_showNextPasscodePromptOrComplete;

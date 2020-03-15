@@ -20,10 +20,10 @@
     id <MKTransitAttributionViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKTransitAttributionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <GEOTransitLineItem> lineItem; // @synthesize lineItem=_lineItem;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (void)_presentTransitAttributionDetails;
 - (void)tableView:(id)arg1 mouseUpOnRow:(long long)arg2;
 - (BOOL)tableView:(id)arg1 shouldClickRow:(long long)arg2;

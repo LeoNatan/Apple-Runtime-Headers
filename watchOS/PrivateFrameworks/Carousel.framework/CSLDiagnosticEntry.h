@@ -14,9 +14,9 @@
     NSDictionary *_data;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *data; // @synthesize data=_data;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithEntry:(id)arg1 withTimestamp:(id)arg2;
 

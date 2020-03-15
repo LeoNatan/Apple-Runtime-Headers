@@ -17,12 +17,12 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *userTargetingIdentifier; // @synthesize userTargetingIdentifier=_userTargetingIdentifier;
 @property(retain, nonatomic) NSString *deviceRequestID; // @synthesize deviceRequestID=_deviceRequestID;
 @property(retain, nonatomic) NSString *routingInfoData; // @synthesize routingInfoData=_routingInfoData;
 @property(retain, nonatomic) NSString *sponsoredSearchRequestData; // @synthesize sponsoredSearchRequestData=_sponsoredSearchRequestData;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

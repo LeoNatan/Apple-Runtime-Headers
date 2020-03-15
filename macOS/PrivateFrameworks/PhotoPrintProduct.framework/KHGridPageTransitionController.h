@@ -15,10 +15,10 @@
     struct CGPoint _anchorPoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _KHTransitionHelper *activeTransition; // @synthesize activeTransition=_activeTransition;
 @property(nonatomic) struct CGPoint anchorPoint; // @synthesize anchorPoint=_anchorPoint;
 @property(nonatomic) struct CGPoint anchorOffset; // @synthesize anchorOffset=_anchorOffset;
-- (void).cxx_destruct;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

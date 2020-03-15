@@ -21,12 +21,12 @@
     NTKUserPhotoEditViewController *_contentViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NTKUserPhotoEditViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(retain, nonatomic) UIView *borrowedForegroundView; // @synthesize borrowedForegroundView=_borrowedForegroundView;
 @property(copy, nonatomic) CDUnknownBlockType canConfirmSelectionHandler; // @synthesize canConfirmSelectionHandler=_canConfirmSelectionHandler;
 @property(copy, nonatomic) CDUnknownBlockType interactionStateHandler; // @synthesize interactionStateHandler=_interactionStateHandler;
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
-- (void).cxx_destruct;
 - (void)endEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)reset;
 @property(readonly, nonatomic) _Bool shouldRemainVisibleDuringEndEditing;

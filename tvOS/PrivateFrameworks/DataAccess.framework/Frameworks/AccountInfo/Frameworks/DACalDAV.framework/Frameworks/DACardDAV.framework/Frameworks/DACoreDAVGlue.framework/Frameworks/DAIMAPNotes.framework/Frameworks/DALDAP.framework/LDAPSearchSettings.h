@@ -15,10 +15,10 @@
     unsigned long long _scope;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scope; // @synthesize scope=_scope;
 @property(retain, nonatomic) NSString *searchBase; // @synthesize searchBase=_searchBase;
 @property(retain, nonatomic) NSString *searchDescription; // @synthesize searchDescription=_searchDescription;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

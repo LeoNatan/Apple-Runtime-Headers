@@ -18,10 +18,10 @@
 }
 
 + (id)annotationStyleWithLabelStyle:(id)arg1 localizedLabelKey:(id)arg2 leftOfSeries:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool leftOfSeries; // @synthesize leftOfSeries=_leftOfSeries;
 @property(copy, nonatomic) NSString *localizedLabelKey; // @synthesize localizedLabelKey=_localizedLabelKey;
 @property(copy, nonatomic) HKAxisLabelStyle *labelStyle; // @synthesize labelStyle=_labelStyle;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

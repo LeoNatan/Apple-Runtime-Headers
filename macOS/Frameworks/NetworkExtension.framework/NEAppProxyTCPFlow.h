@@ -13,8 +13,8 @@
     NWEndpoint *_remoteEndpoint;
 }
 
-@property(readonly) NWEndpoint *remoteEndpoint; // @synthesize remoteEndpoint=_remoteEndpoint;
 - (void).cxx_destruct;
+@property(readonly) NWEndpoint *remoteEndpoint; // @synthesize remoteEndpoint=_remoteEndpoint;
 - (id)description;
 - (void)writeData:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)readDataWithCompletionHandler:(CDUnknownBlockType)arg1;

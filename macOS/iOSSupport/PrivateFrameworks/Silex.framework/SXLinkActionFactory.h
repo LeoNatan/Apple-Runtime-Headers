@@ -16,8 +16,8 @@
     id <SXURLActionFactory> _URLActionFactory;
 }
 
-@property(readonly, nonatomic) id <SXURLActionFactory> URLActionFactory; // @synthesize URLActionFactory=_URLActionFactory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXURLActionFactory> URLActionFactory; // @synthesize URLActionFactory=_URLActionFactory;
 - (id)actionForURL:(id)arg1;
 - (id)actionForAddition:(id)arg1;
 - (id)initWithURLActionFactory:(id)arg1;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     IKViewElement *_regenerateCodeButtonElement;
 }
 
-@property(retain, nonatomic) IKViewElement *regenerateCodeButtonElement; // @synthesize regenerateCodeButtonElement=_regenerateCodeButtonElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKViewElement *regenerateCodeButtonElement; // @synthesize regenerateCodeButtonElement=_regenerateCodeButtonElement;
 - (_Bool)_updateViewModel:(id)arg1 error:(id *)arg2;
 - (id)_newViewModel;
 - (void)_stopObservingViewModel:(id)arg1;

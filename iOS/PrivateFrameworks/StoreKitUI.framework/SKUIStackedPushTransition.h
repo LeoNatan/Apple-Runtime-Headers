@@ -17,10 +17,10 @@
     SKUIStackedBar *_toBar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIStackedBar *toBar; // @synthesize toBar=_toBar;
 @property(retain, nonatomic) SKUIStackedBar *fromBar; // @synthesize fromBar=_fromBar;
 @property(nonatomic) double split; // @synthesize split=_split;
-- (void).cxx_destruct;
 - (double)transitionDuration:(id)arg1;
 - (void)animateTransition:(id)arg1;
 

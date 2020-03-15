@@ -26,10 +26,10 @@
 + (id)_elementActionWithType:(long long)arg1 title:(id)arg2 actionHandler:(CDUnknownBlockType)arg3;
 + (id)elementActionWithType:(long long)arg1 title:(id)arg2 actionHandler:(CDUnknownBlockType)arg3;
 + (id)elementActionWithTitle:(id)arg1 actionHandler:(CDUnknownBlockType)arg2;
-@property(copy, nonatomic) CDUnknownBlockType dismissalHandler; // @synthesize dismissalHandler=_dismissalHandler;
-@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType dismissalHandler; // @synthesize dismissalHandler=_dismissalHandler;
+@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (id)uiActionForElementInfo:(id)arg1;
 - (void)runActionWithElementInfo:(id)arg1;
 - (void)_runActionWithElementInfo:(id)arg1 forActionSheetAssistant:(id)arg2;

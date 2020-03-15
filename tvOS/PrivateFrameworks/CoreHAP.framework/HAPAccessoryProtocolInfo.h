@@ -21,6 +21,7 @@
     NSData *_setupHash;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *setupHash; // @synthesize setupHash=_setupHash;
 @property(readonly, nonatomic) unsigned short categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(readonly, nonatomic) unsigned char statusFlags; // @synthesize statusFlags=_statusFlags;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSNumber *currentConfigNumber; // @synthesize currentConfigNumber=_currentConfigNumber;
 @property(readonly, nonatomic) NSNumber *currentStateNumber; // @synthesize currentStateNumber=_currentStateNumber;
 @property(readonly, nonatomic) NSString *deviceIdentifer; // @synthesize deviceIdentifer=_deviceIdentifer;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 currentStateNumber:(id)arg2 currentConfigNumber:(id)arg3 modelName:(id)arg4 protocolVersion:(id)arg5 authMethods:(unsigned char)arg6 statusFlags:(unsigned char)arg7 categoryIdentifier:(unsigned short)arg8 setupHash:(id)arg9;
 
 @end

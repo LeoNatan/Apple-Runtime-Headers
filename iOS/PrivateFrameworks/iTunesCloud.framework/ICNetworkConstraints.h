@@ -30,6 +30,8 @@
 - (_Bool)shouldAllowDataForNetworkType:(long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)init;
 

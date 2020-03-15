@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <XCTest/NSObject-Protocol.h>
+#import <XCTest/XCTMacCatalystStatusProviding-Protocol.h>
 
 @class NSArray, NSDictionary, NSString, XCAccessibilityElement;
 
-@protocol XCTElementSnapshotAttributeDataSource <NSObject>
+@protocol XCTElementSnapshotAttributeDataSource <XCTMacCatalystStatusProviding>
 @property(readonly) BOOL usePointTransformationsForFrameConversions;
 @property(readonly) BOOL supportsHostedViewCoordinateTransformations;
 @property(readonly) BOOL allowsRemoteAccess;

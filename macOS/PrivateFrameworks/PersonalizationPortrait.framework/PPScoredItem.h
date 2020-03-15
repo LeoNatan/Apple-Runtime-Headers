@@ -21,11 +21,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned short resultCount; // @synthesize resultCount=_resultCount;
 @property(readonly, nonatomic) unsigned short resultPosition; // @synthesize resultPosition=_resultPosition;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
 @property(readonly, nonatomic) NSObject<NSCopying><NSSecureCoding> *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToScoredItem:(id)arg1;
 - (unsigned long long)hash;

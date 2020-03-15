@@ -36,6 +36,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *playbackBundleIdentifier; // @synthesize playbackBundleIdentifier=_playbackBundleIdentifier;
 @property(nonatomic) BOOL playbackRouteUniqueIdentifierIsEncrypted; // @synthesize playbackRouteUniqueIdentifierIsEncrypted=_playbackRouteUniqueIdentifierIsEncrypted;
 @property(copy, nonatomic) NSString *playbackRouteUniqueIdentifier; // @synthesize playbackRouteUniqueIdentifier=_playbackRouteUniqueIdentifier;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *punchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

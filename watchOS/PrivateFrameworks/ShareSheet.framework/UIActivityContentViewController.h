@@ -42,6 +42,7 @@
     NSUUID *_airDropUUID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignorePersonTap; // @synthesize ignorePersonTap=_ignorePersonTap;
 @property(retain, nonatomic) NSUUID *airDropUUID; // @synthesize airDropUUID=_airDropUUID;
 @property(nonatomic) _Bool contentInstalled; // @synthesize contentInstalled=_contentInstalled;
@@ -69,7 +70,6 @@
 @property(nonatomic) _Bool configureForPhotosEdit; // @synthesize configureForPhotosEdit=_configureForPhotosEdit;
 @property(nonatomic) _Bool configureForCloudSharing; // @synthesize configureForCloudSharing=_configureForCloudSharing;
 @property(nonatomic) __weak id <UIActivityContentDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_presentedInFormSheet;
 - (void)updateProgress:(float)arg1 withTopText:(id)arg2 bottomText:(id)arg3 forNodeWithIdentifier:(id)arg4 shouldPulse:(_Bool)arg5 animated:(_Bool)arg6;
 - (void)_editActionsTapped;

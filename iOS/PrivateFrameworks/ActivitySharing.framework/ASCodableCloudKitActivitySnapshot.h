@@ -48,6 +48,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long amm; // @synthesize amm=_amm;
 @property(nonatomic) double mmg; // @synthesize mmg=_mmg;
 @property(nonatomic) double mmv; // @synthesize mmv=_mmv;
@@ -65,7 +66,6 @@
 @property(nonatomic) long long snapshotIndex; // @synthesize snapshotIndex=_snapshotIndex;
 @property(retain, nonatomic) NSData *sourceUUID; // @synthesize sourceUUID=_sourceUUID;
 @property(retain, nonatomic) ASCodableCloudKitSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

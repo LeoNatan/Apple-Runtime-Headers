@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSObject<CAAnimationDelegate> *_animationDelegate;
 }
 
-@property(nonatomic) __weak NSObject<CAAnimationDelegate> *animationDelegate; // @synthesize animationDelegate=_animationDelegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<CAAnimationDelegate> *animationDelegate; // @synthesize animationDelegate=_animationDelegate;
 - (void)setUserInterfaceLayoutDirection:(long long)arg1;
 - (long long)userInterfaceLayoutDirection;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

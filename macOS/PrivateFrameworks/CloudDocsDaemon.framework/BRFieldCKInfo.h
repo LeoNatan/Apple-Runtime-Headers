@@ -24,11 +24,11 @@
 }
 
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *etagBeforeCrossZoneMove; // @synthesize etagBeforeCrossZoneMove=_etagBeforeCrossZoneMove;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(nonatomic) BOOL wasCached; // @synthesize wasCached=_wasCached;
 @property(nonatomic) BOOL knownToServer; // @synthesize knownToServer=_knownToServer;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

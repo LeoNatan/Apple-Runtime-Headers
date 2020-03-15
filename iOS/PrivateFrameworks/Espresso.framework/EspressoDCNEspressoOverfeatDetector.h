@@ -19,10 +19,10 @@
     double _minBoundingBoxThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minBoundingBoxThreshold; // @synthesize minBoundingBoxThreshold=_minBoundingBoxThreshold;
 @property(nonatomic) double confidenceThreshold; // @synthesize confidenceThreshold=_confidenceThreshold;
 @property(retain, nonatomic) EspressoFDOverfeatNetwork *enet; // @synthesize enet=_enet;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)getDescription;
 - (double)compareObject:(id)arg1 withObject:(id)arg2 error:(id *)arg3;

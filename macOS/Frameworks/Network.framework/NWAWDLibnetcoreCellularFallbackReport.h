@@ -33,11 +33,11 @@ __attribute__((visibility("hidden")))
 
 + (Class)dataUsageSnapshotsAtNetworkEventsType;
 + (Class)primaryInterfaceAttemptStatisticsReportsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dataUsageSnapshotsAtNetworkEvents; // @synthesize dataUsageSnapshotsAtNetworkEvents=_dataUsageSnapshotsAtNetworkEvents;
 @property(retain, nonatomic) NSMutableArray *primaryInterfaceAttemptStatisticsReports; // @synthesize primaryInterfaceAttemptStatisticsReports=_primaryInterfaceAttemptStatisticsReports;
 @property(nonatomic) unsigned long long fallbackTimerMsecs; // @synthesize fallbackTimerMsecs=_fallbackTimerMsecs;
 @property(nonatomic) BOOL fellback; // @synthesize fellback=_fellback;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

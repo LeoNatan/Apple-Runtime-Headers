@@ -16,9 +16,9 @@
     CKDPRecordReference *_reference;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPRecordReference *reference; // @synthesize reference=_reference;
 @property(retain, nonatomic) NSData *publicKeyID; // @synthesize publicKeyID=_publicKeyID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -30,6 +30,7 @@
 + (id)_extractEventDataFromSpotlightIdentifier:(id)arg1;
 + (id)eventImportDataFromData:(id)arg1 forType:(id)arg2;
 + (id)acceptedTypeIdentifiers;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool prefersManagedCalendar; // @synthesize prefersManagedCalendar=_prefersManagedCalendar;
 @property(nonatomic) int requestedAction; // @synthesize requestedAction=_requestedAction;
 @property(retain, nonatomic) EKStructuredLocation *structuredLocation; // @synthesize structuredLocation=_structuredLocation;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

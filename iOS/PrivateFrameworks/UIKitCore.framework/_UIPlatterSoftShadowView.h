@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     _UIPlatterShadowView *_rimShadowView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIPlatterShadowView *rimShadowView; // @synthesize rimShadowView=_rimShadowView;
 @property(readonly, nonatomic) _UIPlatterShadowView *diffuseShadowView; // @synthesize diffuseShadowView=_diffuseShadowView;
 @property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) _Bool needsPunchOut; // @synthesize needsPunchOut=_needsPunchOut;
 @property(copy, nonatomic) UIBezierPath *shadowPath; // @synthesize shadowPath=_shadowPath;
-- (void).cxx_destruct;
 - (void)_updateForShadowPath;
 - (id)initWithFrame:(struct CGRect)arg1 shadowPath:(id)arg2;
 

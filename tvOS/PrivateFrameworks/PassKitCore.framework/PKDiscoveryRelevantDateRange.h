@@ -18,13 +18,14 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (_Bool)isExpiredForDate:(id)arg1;
 - (_Bool)isValidForTime:(id)arg1;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)initWithDictionary:(id)arg1;

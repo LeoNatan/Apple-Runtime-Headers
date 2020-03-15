@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 + (id)titleStyleRootForTitleName:(id)arg1;
 + (int)titleGroupForTitleName:(id)arg1;
 + (id)objectFromPlist:(id)arg1 inProject:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL temporarilyDisabled; // @synthesize temporarilyDisabled=_temporarilyDisabled;
 @property(copy, nonatomic) NSDictionary *titleEffectSettings; // @synthesize titleEffectSettings=_titleEffectSettings;
 @property(nonatomic) BOOL audioEnabled; // @synthesize audioEnabled=_audioEnabled;
@@ -63,7 +64,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *text2; // @synthesize text2=_text2;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *titleName; // @synthesize titleName=_titleName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int nominalOverallDuration;
 @property(readonly, nonatomic) int animationOutDuration;
 - (id)copyWithZone:(struct _NSZone *)arg1;

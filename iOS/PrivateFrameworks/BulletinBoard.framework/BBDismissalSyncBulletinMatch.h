@@ -16,11 +16,11 @@
     unsigned long long _feeds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long feeds; // @synthesize feeds=_feeds;
 @property(copy, nonatomic) NSString *dismissalID; // @synthesize dismissalID=_dismissalID;
 @property(retain, nonatomic) BBDismissalItem *dismissalItem; // @synthesize dismissalItem=_dismissalItem;
 @property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDismissalDictionaryItem:(id)arg1;
 - (id)initWithDismissalID:(id)arg1 andItem:(id)arg2;

@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isCurrentUser; // @synthesize isCurrentUser=_isCurrentUser;
 @property(readonly, nonatomic) _Bool hasDataToSync; // @synthesize hasDataToSync=_hasDataToSync;
 @property(readonly, nonatomic) unsigned long long dataUsed; // @synthesize dataUsed=_dataUsed;
 @property(readonly, nonatomic) unsigned long long dataQuota; // @synthesize dataQuota=_dataQuota;
 @property(readonly, copy, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

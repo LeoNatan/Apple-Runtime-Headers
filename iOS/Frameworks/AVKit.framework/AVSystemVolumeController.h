@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 
 + (id)windowSceneVolumeHUDAssertions;
 + (id)volumeController;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFullyInitialized) _Bool fullyInitialized; // @synthesize fullyInitialized=_fullyInitialized;
 @property(retain, nonatomic) AVSystemController *sharedSystemController; // @synthesize sharedSystemController=_sharedSystemController;
 @property(readonly, nonatomic) NSString *volumeCategory; // @synthesize volumeCategory=_volumeCategory;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float EUVolumeLimit; // @synthesize EUVolumeLimit=_EUVolumeLimit;
 @property(nonatomic) _Bool currentRouteHasVolumeControl; // @synthesize currentRouteHasVolumeControl=_currentRouteHasVolumeControl;
 @property(nonatomic, getter=isChangingVolume) _Bool changingVolume; // @synthesize changingVolume=_changingVolume;
-- (void).cxx_destruct;
 - (void)_performOnMainThread:(CDUnknownBlockType)arg1;
 - (void)_applyProposedVolumeImmediately;
 - (void)_applyProposedVolumeIfNeeded;

@@ -21,10 +21,10 @@
 
 + (id)capturableObjectType;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) unsigned long long scopeAddress; // @synthesize scopeAddress=_scopeAddress;
 @property(readonly, nonatomic) unsigned long long deviceAddress; // @synthesize deviceAddress=_deviceAddress;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

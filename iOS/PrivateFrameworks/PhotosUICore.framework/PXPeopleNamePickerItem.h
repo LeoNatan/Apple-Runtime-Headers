@@ -16,11 +16,11 @@
     NSAttributedString *_subtitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSAttributedString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly) NSAttributedString *title; // @synthesize title=_title;
 @property(readonly) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly) PHPerson *person; // @synthesize person=_person;
-- (void).cxx_destruct;
 - (id)initWithContact:(id)arg1 searchPrefix:(id)arg2;
 - (id)initWithPerson:(id)arg1 searchPrefix:(id)arg2;
 

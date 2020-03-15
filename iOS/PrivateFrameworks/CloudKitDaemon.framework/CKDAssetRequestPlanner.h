@@ -21,6 +21,7 @@
     NSMutableDictionary *_assetZoneByKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *assetZoneByKey; // @synthesize assetZoneByKey=_assetZoneByKey;
 @property(retain, nonatomic) NSMutableOrderedSet *items; // @synthesize items=_items;
 @property(nonatomic) unsigned long long mmcsEncryptionSupport; // @synthesize mmcsEncryptionSupport=_mmcsEncryptionSupport;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) unsigned int assetTokenRequestSizeLimit; // @synthesize assetTokenRequestSizeLimit=_assetTokenRequestSizeLimit;
 @property(retain, nonatomic) NSArray *assetGetChunkKeysBatches; // @synthesize assetGetChunkKeysBatches=_assetGetChunkKeysBatches;
 @property(retain, nonatomic) NSArray *assetRegisterAndPutBatches; // @synthesize assetRegisterAndPutBatches=_assetRegisterAndPutBatches;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (_Bool)hasSuccessfulAssetTokenRequests;

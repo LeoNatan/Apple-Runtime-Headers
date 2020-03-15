@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     _Bool _hasWrittenData;
 }
 
-@property(readonly, nonatomic) _Bool hasWrittenData; // @synthesize hasWrittenData=_hasWrittenData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasWrittenData; // @synthesize hasWrittenData=_hasWrittenData;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (id)streamPropertyForKey:(id)arg1;
 - (void)setStreamProperty:(id)arg1 forKey:(id)arg2;

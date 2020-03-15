@@ -17,9 +17,9 @@
     NSURLSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) id <SXEmbedDataProvider> embedDataProvider; // @synthesize embedDataProvider=_embedDataProvider;
-- (void).cxx_destruct;
 - (id)addAdditionalQueryParameters:(id)arg1 toURL:(id)arg2;
 - (id)additionalQueryParametersForConfiguration:(id)arg1;
 - (void)fetchHTMLFromOEmbedURL:(id)arg1 embedType:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

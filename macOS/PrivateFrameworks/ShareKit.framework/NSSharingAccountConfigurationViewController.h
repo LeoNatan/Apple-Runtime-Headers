@@ -20,12 +20,12 @@
     NSTouchBar *configurationTouchBar;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSButton *configureButton; // @synthesize configureButton;
 @property(readonly) NSButton *cancelButton; // @synthesize cancelButton;
 @property(readonly) NSTextField *setupTextField; // @synthesize setupTextField;
 @property(readonly) NSImageView *iconImageView; // @synthesize iconImageView;
 @property(readonly) NSImageView *logoImageView; // @synthesize logoImageView;
-- (void).cxx_destruct;
 - (id)makeTouchBar;
 - (void)viewDidAppear;
 - (void)closeAndConfigure:(id)arg1;

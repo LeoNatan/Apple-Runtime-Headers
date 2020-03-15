@@ -19,13 +19,13 @@
     CDUnknownBlockType _attemptNextIterationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType attemptNextIterationBlock; // @synthesize attemptNextIterationBlock=_attemptNextIterationBlock;
 @property(retain, nonatomic) TURepeatingAction *pendingRepeatingAction; // @synthesize pendingRepeatingAction=_pendingRepeatingAction;
 @property(retain, nonatomic) TURepeatingAction *currentRepeatingAction; // @synthesize currentRepeatingAction=_currentRepeatingAction;
 @property(nonatomic, getter=isCurrentlyPerformingAction) _Bool currentlyPerformingAction; // @synthesize currentlyPerformingAction=_currentlyPerformingAction;
 @property(nonatomic, getter=isStopped) _Bool stopped; // @synthesize stopped=_stopped;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_completeWithDidFinish:(_Bool)arg1;
 - (void)_stopWithDidFinish:(_Bool)arg1;
 - (_Bool)_hasIterationsRemaining;

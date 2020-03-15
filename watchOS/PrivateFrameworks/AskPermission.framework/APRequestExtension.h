@@ -15,8 +15,8 @@
     NSExtensionContext *_extensionContext;
 }
 
-@property(retain, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)_finish;
 - (void)requestUpdatedWithResult:(id)arg1 completion:(CDUnknownBlockType)arg2;

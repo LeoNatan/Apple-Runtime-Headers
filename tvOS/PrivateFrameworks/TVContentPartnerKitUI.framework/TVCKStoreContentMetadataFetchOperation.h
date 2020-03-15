@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_requestQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *requestQueue; // @synthesize requestQueue=_requestQueue;
 @property(retain, nonatomic) NSDictionary *lookupItemsByAdamID; // @synthesize lookupItemsByAdamID=_lookupItemsByAdamID;
 @property(retain, nonatomic) NSValueTransformer *lookupItemValueTransformer; // @synthesize lookupItemValueTransformer=_lookupItemValueTransformer;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long personalizationStyle; // @synthesize personalizationStyle=_personalizationStyle;
 @property(readonly, copy, nonatomic) NSString *keyProfile; // @synthesize keyProfile=_keyProfile;
 @property(readonly, copy, nonatomic) NSSet *adamIDs; // @synthesize adamIDs=_adamIDs;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (_Bool)isExecuting;

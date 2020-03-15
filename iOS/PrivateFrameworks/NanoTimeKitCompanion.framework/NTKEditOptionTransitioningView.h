@@ -22,10 +22,10 @@
     NTKEditOption *_fromEditOption;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKEditOption *fromEditOption; // @synthesize fromEditOption=_fromEditOption;
 @property(retain, nonatomic) NTKEditOption *toEditOption; // @synthesize toEditOption=_toEditOption;
 @property(nonatomic) __weak id <NTKEditOptionTransitioningViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_resetTransitionImageView:(id)arg1;
 - (void)setTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3;
 - (void)setOption:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)predicateForPayload:(id)arg1 error:(id *)arg2;
-@property(copy, nonatomic) NSString *payloadType; // @synthesize payloadType=_payloadType;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *payloadType; // @synthesize payloadType=_payloadType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)evaluateWithOptions:(id)arg1 error:(id *)arg2;
 

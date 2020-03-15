@@ -32,10 +32,10 @@
     id <AKWebKitControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) WebPreferences *webPreferences; // @synthesize webPreferences=_webPreferences;
 @property(nonatomic) __weak id <AKWebKitControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 resource:(id)arg2 didReceiveResponse:(id)arg3 fromDataSource:(id)arg4;
 - (id)webView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
 - (id)webView:(id)arg1 contextMenuItemsForElement:(id)arg2 defaultMenuItems:(id)arg3;

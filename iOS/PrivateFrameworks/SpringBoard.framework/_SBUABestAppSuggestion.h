@@ -13,8 +13,8 @@
     UABestAppSuggestion *_appSuggestion;
 }
 
-@property(readonly, nonatomic) UABestAppSuggestion *appSuggestion; // @synthesize appSuggestion=_appSuggestion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UABestAppSuggestion *appSuggestion; // @synthesize appSuggestion=_appSuggestion;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isHandoff;

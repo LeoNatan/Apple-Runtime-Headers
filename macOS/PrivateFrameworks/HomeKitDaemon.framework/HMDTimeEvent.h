@@ -23,9 +23,9 @@
 + (BOOL)isValidOffsetDateComponents:(id)arg1;
 + (BOOL)isValidAbsoluteDateComponents:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDBackgroundTaskAgentTimer *btaTimer; // @synthesize btaTimer=_btaTimer;
 @property(readonly, nonatomic) BOOL repetitive; // @synthesize repetitive=_repetitive;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_reactiveTriggerAfterDelay;

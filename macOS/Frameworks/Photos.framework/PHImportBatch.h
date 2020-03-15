@@ -17,10 +17,10 @@
     NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(readonly, nonatomic) PHImportTimerCollection *timers; // @synthesize timers=_timers;
 @property(readonly, nonatomic) NSMutableArray *records; // @synthesize records=_records;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double duration;
 - (id)init;
 

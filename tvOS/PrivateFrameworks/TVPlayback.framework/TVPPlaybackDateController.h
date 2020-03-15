@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     id _timeZoneDidChangeObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id timeZoneDidChangeObserver; // @synthesize timeZoneDidChangeObserver=_timeZoneDidChangeObserver;
 @property(nonatomic) __weak id localeDidChangeObserver; // @synthesize localeDidChangeObserver=_localeDidChangeObserver;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(copy, nonatomic) NSString *localizedString; // @synthesize localizedString=_localizedString;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) long long dateStyle; // @synthesize dateStyle=_dateStyle;
-- (void).cxx_destruct;
 - (void)_updateLocalizedString;
 - (void)_removeObservers;
 - (void)_addObserversWithDateFormatter:(id)arg1;

@@ -36,6 +36,7 @@
 
 + (float)idealHeightForLongLook;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *quickLookSubtitleContainer; // @synthesize quickLookSubtitleContainer=_quickLookSubtitleContainer;
 @property(retain, nonatomic) UIView *quickLookTitleContainer; // @synthesize quickLookTitleContainer=_quickLookTitleContainer;
 @property(retain, nonatomic) UITapGestureRecognizer *quickLookTapGesture; // @synthesize quickLookTapGesture=_quickLookTapGesture;
@@ -55,7 +56,6 @@
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) __weak id <CUISAlertHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CUISAlertHeaderViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_didTapQuickLook:(id)arg1;
 - (void)_didTapLongLookIcon:(id)arg1;
 - (void)animateToLongLookWithAdditionalAnimations:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

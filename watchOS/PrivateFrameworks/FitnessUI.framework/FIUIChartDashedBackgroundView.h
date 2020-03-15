@@ -18,12 +18,12 @@
     int _lineType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int lineType; // @synthesize lineType=_lineType;
 @property(nonatomic) int direction; // @synthesize direction=_direction;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) _Bool shouldCenterLines; // @synthesize shouldCenterLines=_shouldCenterLines;
 @property(nonatomic) unsigned int numLines; // @synthesize numLines=_numLines;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawLine:(id)arg1 rect:(struct CGRect)arg2 context:(struct CGContext *)arg3;
 - (void)_updateLinePositions;

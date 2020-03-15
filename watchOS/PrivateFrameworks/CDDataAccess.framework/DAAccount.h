@@ -38,6 +38,7 @@
 + (void)reacquireClientRestrictions:(id)arg1;
 + (id)oneshotListOfAccountIDs;
 + (id)_leafAccountTypes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastQueryStartedTime; // @synthesize lastQueryStartedTime=_lastQueryStartedTime;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *pendingQueryQueue; // @synthesize pendingQueryQueue=_pendingQueryQueue;
 @property(retain, nonatomic) NSMutableArray *pendingQueries; // @synthesize pendingQueries=_pendingQueries;
@@ -51,7 +52,6 @@
 @property(nonatomic) _Bool shouldUseOpportunisticSockets; // @synthesize shouldUseOpportunisticSockets=_shouldUseOpportunisticSockets;
 @property(retain, nonatomic) DAStatusReport *statusReport; // @synthesize statusReport=_statusReport;
 @property(readonly, nonatomic) ACAccount *backingAccountInfo; // @synthesize backingAccountInfo=_backingAccountInfo;
-- (void).cxx_destruct;
 - (_Bool)getFetchingAutomaticallyState;
 - (void)saveFetchingAutomaticallyState:(_Bool)arg1;
 - (void)removeXpcActivity;

@@ -17,8 +17,8 @@
 + (id)sourceFromHomeButton;
 + (id)sourceFromHeadsetButton;
 + (id)sourceFromBluetoothDevice:(id)arg1;
-@property(readonly, nonatomic) long long sourceType; // @synthesize sourceType=_sourceType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long sourceType; // @synthesize sourceType=_sourceType;
 @property(readonly, nonatomic) BluetoothDevice *bluetoothDevice; // @synthesize bluetoothDevice=_bluetoothDevice;
 - (id)_initWithSourceType:(long long)arg1;
 

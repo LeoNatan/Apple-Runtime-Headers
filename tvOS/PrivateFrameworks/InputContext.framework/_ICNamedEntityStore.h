@@ -20,9 +20,9 @@
 
 + (id)tokenize:(id)arg1;
 + (id)lexiconViews;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *lexicons; // @synthesize lexicons=_lexicons;
 @property(copy, nonatomic) CDUnknownBlockType filteringBlock; // @synthesize filteringBlock=_filteringBlock;
-- (void).cxx_destruct;
 - (void)removeAllEntries;
 - (void)reloadRecents;
 - (void)addEntity:(id)arg1 isDurable:(_Bool)arg2;

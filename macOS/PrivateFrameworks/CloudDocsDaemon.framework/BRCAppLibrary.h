@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_rootQuotaUsage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *rootQuotaUsage; // @synthesize rootQuotaUsage=_rootQuotaUsage;
 @property(nonatomic) BOOL containerMetadataNeedsSyncUp; // @synthesize containerMetadataNeedsSyncUp=_containerMetadataNeedsSyncUp;
 @property(retain, nonatomic) NSString *containerMetadataEtag; // @synthesize containerMetadataEtag=_containerMetadataEtag;
@@ -64,7 +65,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <BRCAppLibraryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long maxLostStamp; // @synthesize maxLostStamp=_maxLostStamp;
 @property(readonly, nonatomic) brc_task_tracker *tracker; // @synthesize tracker=_tracker;
-- (void).cxx_destruct;
 - (void)setExcludedFromBackupUsingEvictUploadedItemsState;
 - (void)setExcludedFromBackup:(BOOL)arg1;
 - (void)setIsOverQuota:(BOOL)arg1;
@@ -76,8 +76,8 @@ __attribute__((visibility("hidden")))
 - (void)recreateDocumentsFolderIfNeeded;
 - (id)rootItemGlobalID;
 - (id)rootItemID;
-- (struct BRCDirectoryItem *)fetchRootItem;
-- (struct BRCDirectoryItem *)fetchRootItemInDB:(id)arg1;
+- (id)fetchRootItem;
+- (id)fetchRootItemInDB:(id)arg1;
 - (id)documentsFolderItemID;
 @property(readonly, nonatomic) BRCRelativePath *documentsPath;
 - (BOOL)shouldSaveContainerMetadataServerside;
@@ -85,7 +85,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)wasMovedToCloudDocs;
 - (id)containerMetadataFilledWithTCCInfo;
 - (id)aliasByUnsaltedBookmarkData:(id)arg1;
-- (struct PQLResultSet *)liveAliasesEnumeratorTargetingThisAppLibrary;
+- (id)liveAliasesEnumeratorTargetingThisAppLibrary;
 - (id)itemByRowID:(unsigned long long)arg1;
 - (id)itemByRowID:(unsigned long long)arg1 db:(id)arg2;
 - (id)itemIDByRowID:(unsigned long long)arg1;
@@ -101,8 +101,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)isStillTargetingSharedServerZone:(id)arg1;
 - (BOOL)isStillTargetingAppLibrary:(id)arg1;
 - (id)_aliasAppLibraryTargetSQLPrefix;
-- (struct PQLResultSet *)_targetSharedServerZonesEnumerator;
-- (struct PQLResultSet *)_targetAppLibrariesEnumerator;
+- (id)_targetSharedServerZonesEnumerator;
+- (id)_targetAppLibrariesEnumerator;
 @property(readonly, nonatomic) NSString *identifier;
 - (void)didReceiveHandoffRequest;
 @property(readonly, nonatomic) BRCSyncContext *syncContext;
@@ -138,10 +138,10 @@ __attribute__((visibility("hidden")))
 - (void)freeFileCoordinationSlotsAfterDelayForRead:(BOOL)arg1;
 - (id)coordinatorForItem:(id)arg1 forRead:(BOOL)arg2;
 - (void)cancelWriteCoordinatorForItem:(id)arg1;
-- (struct PQLResultSet *)enumerateUserVisibleChildrenDirectoriesOfItemGlobalID:(id)arg1 db:(id)arg2;
-- (struct PQLResultSet *)enumerateUserVisibleChildrenOfItemGlobalID:(id)arg1 sortOrder:(unsigned char)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 db:(id)arg5;
-- (struct PQLResultSet *)itemsEnumeratorChildOf:(id)arg1 withDeadItems:(BOOL)arg2 rankMin:(unsigned long long)arg3 rankMax:(unsigned long long)arg4 count:(unsigned long long)arg5 db:(id)arg6;
-- (struct PQLResultSet *)itemsEnumeratorWithRankMin:(unsigned long long)arg1 rankMax:(unsigned long long)arg2 namePrefix:(id)arg3 withDeadItems:(BOOL)arg4 shouldIncludeFolders:(BOOL)arg5 shouldIncludeOnlyFolders:(BOOL)arg6 shouldIncludeDocumentsScope:(BOOL)arg7 shouldIncludeDataScope:(BOOL)arg8 shouldIncludeExternalScope:(BOOL)arg9 shouldIncludeTrashScope:(BOOL)arg10 count:(unsigned long long)arg11 db:(id)arg12;
+- (id)enumerateUserVisibleChildrenDirectoriesOfItemGlobalID:(id)arg1 db:(id)arg2;
+- (id)enumerateUserVisibleChildrenOfItemGlobalID:(id)arg1 sortOrder:(unsigned char)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 db:(id)arg5;
+- (id)itemsEnumeratorChildOf:(id)arg1 withDeadItems:(BOOL)arg2 rankMin:(unsigned long long)arg3 rankMax:(unsigned long long)arg4 count:(unsigned long long)arg5 db:(id)arg6;
+- (id)itemsEnumeratorWithRankMin:(unsigned long long)arg1 rankMax:(unsigned long long)arg2 namePrefix:(id)arg3 withDeadItems:(BOOL)arg4 shouldIncludeFolders:(BOOL)arg5 shouldIncludeOnlyFolders:(BOOL)arg6 shouldIncludeDocumentsScope:(BOOL)arg7 shouldIncludeDataScope:(BOOL)arg8 shouldIncludeExternalScope:(BOOL)arg9 shouldIncludeTrashScope:(BOOL)arg10 count:(unsigned long long)arg11 db:(id)arg12;
 - (id)descriptionWithContext:(id)arg1;
 - (id)_unwrappedDescriptionWithContext:(id)arg1;
 @property(readonly, copy) NSString *description;

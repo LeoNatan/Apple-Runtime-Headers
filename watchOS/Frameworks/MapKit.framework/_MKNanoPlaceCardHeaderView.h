@@ -29,7 +29,6 @@
 }
 
 - (void).cxx_destruct;
-- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (float)additionalBaselineSpacingWithTallCharactersSet:(id)arg1 label:(id)arg2;
 - (void)updateFontBasedConstraints;
 - (void)updateMapItemBasedContraints;

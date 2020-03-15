@@ -16,6 +16,7 @@
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityHint;
 - (id)accessibilityElements;
+- (_Bool)_accessibilityInTopLevelTabLoop;
 - (_Bool)canBecomeFocused;
 - (_Bool)accessibilityRespondsToUserInteraction;
 - (_Bool)isAccessibilityElement;

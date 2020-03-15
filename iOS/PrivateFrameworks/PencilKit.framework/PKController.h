@@ -30,6 +30,7 @@
 }
 
 + (void)updatesFrom:(id)arg1 to:(id)arg2 newStrokesToRender:(id *)arg3 redrawAllInRect:(struct CGRect *)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMetal; // @synthesize isMetal=_isMetal;
 @property(nonatomic) double totalStrokes; // @synthesize totalStrokes=_totalStrokes;
 @property(nonatomic) double totalTiles; // @synthesize totalTiles=_totalTiles;
@@ -44,7 +45,6 @@
 @property _Bool liveInteraction; // @synthesize liveInteraction=_liveInteraction;
 @property(retain, nonatomic) PKMetalRendererController *rendererController; // @synthesize rendererController=_rendererController;
 @property(nonatomic) __weak NSObject<PKControllerDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addNewRenderedStroke:(id)arg1 preDrawingChangedBlock:(CDUnknownBlockType)arg2;
 - (void)imageWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_renderAllStrokes:(id)arg1 clipRect:(struct CGRect)arg2 completion:(CDUnknownBlockType)arg3;

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configurationWithBag:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) AMSMetricsFigaroEventModifier *defaultModifier; // @synthesize defaultModifier=_defaultModifier;
 @property(readonly, nonatomic) NSDictionary *metricsDictionary; // @synthesize metricsDictionary=_metricsDictionary;
-- (void).cxx_destruct;
 - (id)_generateModifiersIfNeeded;
 @property(readonly, nonatomic) NSArray *overrides; // @synthesize overrides=_overrides;
 - (id)modifierForEvent:(id)arg1;

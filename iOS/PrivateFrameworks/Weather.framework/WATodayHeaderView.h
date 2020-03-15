@@ -30,6 +30,7 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) double pageBaselineOffset; // @synthesize pageBaselineOffset=_pageBaselineOffset;
 @property(nonatomic) double pageDegreeFontSize; // @synthesize pageDegreeFontSize=_pageDegreeFontSize;
 @property(nonatomic) double pageFontSize; // @synthesize pageFontSize=_pageFontSize;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) UIImage *conditionsImage; // @synthesize conditionsImage=_conditionsImage;
 @property(copy, nonatomic) NSString *conditionsLine2; // @synthesize conditionsLine2=_conditionsLine2;
 @property(copy, nonatomic) NSString *conditionsLine1; // @synthesize conditionsLine1=_conditionsLine1;
-- (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)_setupSubviews;
 - (void)_updateContent;

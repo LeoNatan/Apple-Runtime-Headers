@@ -31,6 +31,7 @@
     double _metricWiFiSetupSeconds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFSession *sfSession; // @synthesize sfSession=_sfSession;
 @property(nonatomic) unsigned int setupFlags; // @synthesize setupFlags=_setupFlags;
 @property(nonatomic) unsigned int repairFlags; // @synthesize repairFlags=_repairFlags;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) int bonjourTestState; // @synthesize bonjourTestState=_bonjourTestState;
-- (void).cxx_destruct;
 - (void)_setupResponse:(id)arg1;
 - (void)_complete:(id)arg1;
 - (void)_bonjourTestTimeout;

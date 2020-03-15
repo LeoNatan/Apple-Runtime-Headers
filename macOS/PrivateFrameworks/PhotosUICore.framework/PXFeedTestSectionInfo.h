@@ -14,9 +14,9 @@
     long long _countOfItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long countOfItems; // @synthesize countOfItems=_countOfItems;
 - (id)photoLibrary;
-- (void).cxx_destruct;
 - (id)captionForItemAtIndex:(long long)arg1;
 - (long long)numberOfItems;
 - (id)albumTitle;

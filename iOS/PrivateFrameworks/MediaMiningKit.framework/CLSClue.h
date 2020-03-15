@@ -25,6 +25,7 @@
 
 + (id)_clueWithValue:(id)arg1 forKey:(id)arg2 confidence:(double)arg3 relevance:(double)arg4;
 + (id)_clueWithValue:(id)arg1 forKey:(id)arg2;
+- (void).cxx_destruct;
 @property unsigned long long versionCount; // @synthesize versionCount=_versionCount;
 @property _Bool transient; // @synthesize transient=_transient;
 @property(retain) CLSProfile *profile; // @synthesize profile=_profile;
@@ -34,7 +35,6 @@
 @property double confidence; // @synthesize confidence=_confidence;
 @property(retain) id value; // @synthesize value=_value;
 @property(copy) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (_Bool)isEqualToClue:(id)arg1;
 - (long long)compareScore:(id)arg1;
 - (long long)compare:(id)arg1;

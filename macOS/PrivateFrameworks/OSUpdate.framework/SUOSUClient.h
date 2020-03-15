@@ -15,9 +15,9 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) SUOSUShimController *controller; // @synthesize controller=_controller;
 @property unsigned long long clientType; // @synthesize clientType=_clientType;
-- (void).cxx_destruct;
 @property(readonly) BOOL isAutomaticallyInstallSecurityAndConfigUpdatesPreferenceManaged;
 @property(readonly) BOOL isAutomaticallyInstallAppUpdatesPreferenceManaged;
 @property(readonly) BOOL isAutomaticallyInstallMacOSUpdatesPreferenceManaged;

@@ -18,8 +18,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) UIViewController<CSLUISwitcherPageTransitionCoordinating> *launcherViewController; // @synthesize launcherViewController=_launcherViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController<CSLUISwitcherPageTransitionCoordinating> *launcherViewController; // @synthesize launcherViewController=_launcherViewController;
 - (id)debugDescription;
 - (id)_createContainerPageViewControllerForItem:(id)arg1 withContainee:(id)arg2;
 - (id)_createViewControllerForItem:(id)arg1;

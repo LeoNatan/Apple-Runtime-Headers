@@ -14,8 +14,8 @@
     HFServiceGroupBuilder *_serviceGroupBuilder;
 }
 
-@property(readonly, nonatomic) HFServiceGroupBuilder *serviceGroupBuilder; // @synthesize serviceGroupBuilder=_serviceGroupBuilder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFServiceGroupBuilder *serviceGroupBuilder; // @synthesize serviceGroupBuilder=_serviceGroupBuilder;
 - (id)_serviceVendorItemForItem:(id)arg1;
 - (id)layoutOptionsForSection:(long long)arg1;
 - (void)didDeselectItem:(id)arg1;

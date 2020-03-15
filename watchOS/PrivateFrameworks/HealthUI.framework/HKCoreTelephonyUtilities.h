@@ -14,8 +14,8 @@
     NSObject<OS_dispatch_queue> *_ctServerQueue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *ctServerQueue; // @synthesize ctServerQueue=_ctServerQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *ctServerQueue; // @synthesize ctServerQueue=_ctServerQueue;
 - (struct __CTServerConnection *)ctServerConnection;
 - (_Bool)isEmergencyServicePhoneNumber:(id)arg1;
 - (void)dealloc;

@@ -18,9 +18,9 @@
 }
 
 + (id)_baseC2AnimationParametersForTransitionState:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CCUIOverlayMetricsProvider> metricsProvider; // @synthesize metricsProvider=_metricsProvider;
 @property(nonatomic) __weak id <CCUIOverlayViewProvider> viewProvider; // @synthesize viewProvider=_viewProvider;
-- (void).cxx_destruct;
 - (void)_addContainerAlphaAnimationToBatch:(id)arg1 transitionState:(id)arg2;
 - (void)_addContainerTransformAnimationToBatch:(id)arg1 transitionState:(id)arg2;
 - (void)_addBackgroundViewWeightingAnimationToBatch:(id)arg1 transitionState:(id)arg2;

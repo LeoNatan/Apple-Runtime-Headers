@@ -44,23 +44,11 @@ struct CGSize {
     double height;
 };
 
-struct UIColor {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double top;
     double left;
     double bottom;
     double right;
-};
-
-struct UIImageView {
-    Class _field1;
-};
-
-struct UIView {
-    Class _field1;
 };
 
 struct os_unfair_lock_s {

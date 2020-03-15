@@ -15,8 +15,8 @@
     EKEventStore *_sharedEventStore;
 }
 
-@property(readonly, nonatomic) EKEventStore *sharedEventStore; // @synthesize sharedEventStore=_sharedEventStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EKEventStore *sharedEventStore; // @synthesize sharedEventStore=_sharedEventStore;
 - (id)eventStore;
 - (id)initWithEventStore:(id)arg1;
 

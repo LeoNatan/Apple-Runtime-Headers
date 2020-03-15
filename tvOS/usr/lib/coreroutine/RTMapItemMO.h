@@ -16,8 +16,8 @@
 + (id)managedObjectWithMapItem:(id)arg1 managedObject:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)managedObjectWithMapItem:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fetchRequest;
-@property(retain, nonatomic) RTMapItemExtendedAttributesMO *cachedExtendedAttributes; // @synthesize cachedExtendedAttributes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RTMapItemExtendedAttributesMO *cachedExtendedAttributes; // @synthesize cachedExtendedAttributes;
 - (void)didSave;
 - (void)setExtendedAttributes:(id)arg1;
 - (id)extendedAttributes;

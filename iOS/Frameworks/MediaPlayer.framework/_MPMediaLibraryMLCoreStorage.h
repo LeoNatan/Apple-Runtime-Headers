@@ -11,9 +11,9 @@
     shared_ptr_0f3dbfb3 __MediaLibrary_coreLibrary;
 }
 
-@property(nonatomic) shared_ptr_0f3dbfb3 _MediaLibrary_coreLibrary; // @synthesize _MediaLibrary_coreLibrary=__MediaLibrary_coreLibrary;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) shared_ptr_0f3dbfb3 _MediaLibrary_coreLibrary; // @synthesize _MediaLibrary_coreLibrary=__MediaLibrary_coreLibrary;
 
 @end
 

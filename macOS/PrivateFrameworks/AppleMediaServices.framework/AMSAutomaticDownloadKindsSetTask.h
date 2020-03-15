@@ -22,10 +22,10 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
+- (void).cxx_destruct;
 @property(readonly) NSArray *enabledMediaKinds; // @synthesize enabledMediaKinds=_enabledMediaKinds;
 @property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(readonly) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)perform;
 - (id)initWithEnabledMediaKinds:(id)arg1 account:(id)arg2 bag:(id)arg3;
 

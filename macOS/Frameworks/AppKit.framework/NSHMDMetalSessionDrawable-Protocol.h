@@ -14,5 +14,8 @@
 @property double inputTimeStamp;
 @property(readonly) id <MTLTexture> texture;
 @property(readonly) NSHMDMetalSession *session;
+- (void)addPresentedHandler:(void (^)(id <MTLDrawable>))arg1;
+- (double)presentedTime;
+- (void)presentAfterMinimumDuration:(double)arg1;
 @end
 

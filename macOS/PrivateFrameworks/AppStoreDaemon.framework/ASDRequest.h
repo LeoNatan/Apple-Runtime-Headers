@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (void)cancelAllRequestsWithErrorHandler:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *requestID; // @synthesize requestID=_requestID;
 @property __weak id <ASDRequestObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

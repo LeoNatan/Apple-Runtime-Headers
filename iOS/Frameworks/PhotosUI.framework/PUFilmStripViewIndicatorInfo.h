@@ -14,9 +14,9 @@
     UIColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) double normalizedLocation; // @synthesize normalizedLocation=_normalizedLocation;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithLocation:(double)arg1 color:(id)arg2;

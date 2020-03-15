@@ -26,13 +26,13 @@
     _Bool _success;
 }
 
+- (void).cxx_destruct;
 @property _Bool success; // @synthesize success=_success;
 @property _Bool shouldRunWithBackgroundPriority; // @synthesize shouldRunWithBackgroundPriority=_shouldRunWithBackgroundPriority;
 @property(retain) NSString *powerAssertionIdentifier; // @synthesize powerAssertionIdentifier=_powerAssertionIdentifier;
 @property(retain) ISOperation *parentOperation; // @synthesize parentOperation=_parentOperation;
 @property(retain) NSRunLoop *operationRunLoop; // @synthesize operationRunLoop=_operationRunLoop;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)_sendWillStartToDelegate;
 - (void)_sendSuccessToDelegate;
 - (void)_sendErrorToDelegate:(id)arg1;

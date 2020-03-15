@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _eventHandler;
 }
 
-@property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 - (id)DNSSearchDomains;
 - (id)DNSDomainName;
 - (id)DNSServerAddresses;

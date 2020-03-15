@@ -15,10 +15,10 @@
     CDUnknownBlockType _attemptHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDestructive) _Bool destructive; // @synthesize destructive=_destructive;
 @property(copy, nonatomic) CDUnknownBlockType attemptHandler; // @synthesize attemptHandler=_attemptHandler;
 @property(copy, nonatomic) NSString *localizedAlertButtonTitle; // @synthesize localizedAlertButtonTitle=_localizedAlertButtonTitle;
-- (void).cxx_destruct;
 
 @end
 

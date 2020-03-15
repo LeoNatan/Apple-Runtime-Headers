@@ -20,9 +20,9 @@
 + (id)timeRangeStart:(id)arg1 end:(id)arg2;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_383aa905 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(retain) SATimestamp *endTime; // @synthesize endTime=_endTime;
 @property(retain) SATimestamp *startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) double deltaWallTime;
 @property(readonly) double deltaMachContTimeSeconds;
@@ -32,9 +32,9 @@
 - (long long)compare:(id)arg1;
 - (void)writeJSONDictionaryEntriesToStream:(id)arg1;
 - (void)applyMachTimebase:(struct mach_timebase_info)arg1;
-- (void)populateReferencesUsingBuffer:(const CDStruct_383aa905 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_383aa905 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBuffer:(const CDStruct_383aa905 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_383aa905 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

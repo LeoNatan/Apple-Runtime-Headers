@@ -18,12 +18,12 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain) NSArray *scenedAssets; // @synthesize scenedAssets=_scenedAssets;
 @property(readonly) long long year; // @synthesize year=_year;
 @property(readonly) PGGraphNode *regionNode; // @synthesize regionNode=_regionNode;
-- (void).cxx_destruct;
 @property(readonly) NSString *region;
 - (void)addMomentNode:(id)arg1;
 - (id)initWithRegionNode:(id)arg1 year:(long long)arg2;

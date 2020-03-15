@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_remoteTypeAheadGuideItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isFinishedCreatingAllRemoteTypeAheadGuideItems; // @synthesize isFinishedCreatingAllRemoteTypeAheadGuideItems=_isFinishedCreatingAllRemoteTypeAheadGuideItems;
 @property(nonatomic) BOOL isCreatingMoreRemoteGuideItems; // @synthesize isCreatingMoreRemoteGuideItems=_isCreatingMoreRemoteGuideItems;
 @property(retain, nonatomic) NSMutableArray *remoteTypeAheadGuideItems; // @synthesize remoteTypeAheadGuideItems=_remoteTypeAheadGuideItems;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SCRElement *containerElement; // @synthesize containerElement=_containerElement;
 @property(retain, nonatomic) SCRApplication *application; // @synthesize application=_application;
 @property(retain, nonatomic) SCRElementRotorManager *rotorManager; // @synthesize rotorManager=_rotorManager;
-- (void).cxx_destruct;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;
 - (void)selectItemAtIndex:(unsigned long long)arg1 indexForView:(unsigned long long)arg2;
 - (id)guideItems;

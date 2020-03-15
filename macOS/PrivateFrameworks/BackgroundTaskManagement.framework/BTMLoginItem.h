@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL hidden; // @synthesize hidden=_hidden;
 @property unsigned long long type; // @synthesize type=_type;
 @property(retain) NSData *installerBookmark; // @synthesize installerBookmark=_installerBookmark;
 @property(readonly) NSData *bookmark; // @synthesize bookmark=_bookmark;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

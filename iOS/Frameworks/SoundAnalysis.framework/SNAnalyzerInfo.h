@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     NSError *_configurationError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *configurationError; // @synthesize configurationError=_configurationError;
 @property(nonatomic) _Bool configured; // @synthesize configured=_configured;
 @property(retain, nonatomic) id <SNProcessing> sharedProcessor; // @synthesize sharedProcessor=_sharedProcessor;
 @property(retain, nonatomic) SNAnalyzerHost *analyzerHost; // @synthesize analyzerHost=_analyzerHost;
 @property(nonatomic) __weak id <SNResultsObserving> resultsObserver; // @synthesize resultsObserver=_resultsObserver;
 @property(retain, nonatomic) id <SNAnalyzerProviding> request; // @synthesize request=_request;
-- (void).cxx_destruct;
 
 @end
 

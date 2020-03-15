@@ -14,8 +14,8 @@
     LSApplicationProxy *_proxy;
 }
 
-@property(readonly, nonatomic) LSApplicationProxy *proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) LSApplicationProxy *proxy; // @synthesize proxy=_proxy;
 - (id)description;
 - (void)load;
 - (id)localizedName;

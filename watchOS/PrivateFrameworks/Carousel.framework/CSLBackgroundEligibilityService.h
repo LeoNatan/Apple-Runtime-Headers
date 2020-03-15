@@ -19,10 +19,10 @@
 }
 
 + (id)sharedBackgroundEligibilityService;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLClientConnections *clients; // @synthesize clients=_clients;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) CSLBackgroundUpdatePolicy *updatePolicy; // @synthesize updatePolicy=_updatePolicy;
-- (void).cxx_destruct;
 - (void)reconnect:(CDUnknownBlockType)arg1;
 - (void)connect:(CDUnknownBlockType)arg1;
 - (void)isBundleIDEligibleForBackgroundWork:(id)arg1 completion:(CDUnknownBlockType)arg2;

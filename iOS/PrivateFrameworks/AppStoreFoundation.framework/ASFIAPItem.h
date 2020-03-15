@@ -20,13 +20,13 @@
     NSString *_transactionID;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *transactionID; // @synthesize transactionID=_transactionID;
 @property(copy) NSNumber *quantity; // @synthesize quantity=_quantity;
 @property(copy) NSString *productID; // @synthesize productID=_productID;
 @property(copy) NSDate *purchaseDate; // @synthesize purchaseDate=_purchaseDate;
 @property(copy) NSString *originalTransactionID; // @synthesize originalTransactionID=_originalTransactionID;
 @property(copy) NSDate *originalPurchaseDate; // @synthesize originalPurchaseDate=_originalPurchaseDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

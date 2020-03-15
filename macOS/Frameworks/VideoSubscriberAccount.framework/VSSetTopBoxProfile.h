@@ -15,10 +15,11 @@
     NSString *_userToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isDeveloper; // @synthesize isDeveloper=_isDeveloper;
 @property(retain, nonatomic) NSString *userToken; // @synthesize userToken=_userToken;
 @property(retain, nonatomic) NSString *providerID; // @synthesize providerID=_providerID;
-- (void).cxx_destruct;
+- (id)description;
 - (id)initWithProviderID:(id)arg1 userToken:(id)arg2 isDeveloper:(BOOL)arg3;
 
 @end

@@ -20,9 +20,9 @@
 }
 
 + (id)temporaryElementWithValue:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CRRegisterLatest *index; // @synthesize index=_index;
 @property(retain, nonatomic) id <CRDataType><CRCoding> value; // @synthesize value=_value;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)realizeLocalChangesIn:(id)arg1;
 - (id)tombstone;

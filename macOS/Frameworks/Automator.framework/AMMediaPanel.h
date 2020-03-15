@@ -19,10 +19,10 @@
 
 + (BOOL)shouldDisplayMediaGroup:(id)arg1;
 + (id)sharedMediaPanel;
+- (void).cxx_destruct;
 @property(retain) NSPointerArray *observers; // @synthesize observers=_observers;
 @property __weak ILMediaBrowserView *_mediaBrowserView; // @synthesize _mediaBrowserView;
 @property __weak NSSegmentedControl *_segmentedControl; // @synthesize _segmentedControl;
-- (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
 - (void)showWindow:(id)arg1;
 - (void)removeObserver:(id)arg1;

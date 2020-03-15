@@ -14,9 +14,9 @@
     unsigned int _elementCount;
 }
 
-@property(readonly, nonatomic) unsigned int elementCount; // @synthesize elementCount=_elementCount;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int elementCount; // @synthesize elementCount=_elementCount;
 -     // Error parsing type: I16@0:4^{?=[4]}8I12, name: getDouble4x4Array:maxCount:
 -     // Error parsing type: I16@0:4^{?=[4]}8I12, name: getFloat4x4Array:maxCount:
 -     // Error parsing type: v16@0:4r^{?=[4]}8I12, name: setDouble4x4Array:count:

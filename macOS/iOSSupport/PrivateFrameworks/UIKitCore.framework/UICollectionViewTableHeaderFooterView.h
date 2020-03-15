@@ -14,9 +14,9 @@
     UITableViewHeaderFooterView *_tableViewHeaderFooterView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITableViewHeaderFooterView *tableViewHeaderFooterView; // @synthesize tableViewHeaderFooterView=_tableViewHeaderFooterView;
 @property(nonatomic) BOOL floating; // @synthesize floating=_floating;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView;
 @property(readonly, nonatomic) UIView *contentView;
 @property(readonly, nonatomic) UILabel *detailTextLabel;

@@ -22,13 +22,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)activityWithPlist:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *backboardPrelaunchBundleIdentifier; // @synthesize backboardPrelaunchBundleIdentifier=_backboardPrelaunchBundleIdentifier;
 @property(copy, nonatomic) NSArray *sessionTypes; // @synthesize sessionTypes=_sessionTypes;
 @property(copy, nonatomic) NSNumber *timeoutSeconds; // @synthesize timeoutSeconds=_timeoutSeconds;
 @property(copy, nonatomic) NSString *priority; // @synthesize priority=_priority;
 @property(copy, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

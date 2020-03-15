@@ -26,6 +26,7 @@
 
 + (Class)layoutOptionsClass;
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUVisualEffectContainerView *exclamationView; // @synthesize exclamationView=_exclamationView;
 @property(retain, nonatomic) NADecayingTimer *descriptionLabelUpdateTimer; // @synthesize descriptionLabelUpdateTimer=_descriptionLabelUpdateTimer;
 @property(retain, nonatomic) NSArray *labelsConstraints; // @synthesize labelsConstraints=_labelsConstraints;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) HUGridCameraCellLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 - (void)setItem:(id)arg1;
 - (id)item;
-- (void).cxx_destruct;
 - (id)_descriptionLabelText:(id)arg1;
 - (void)_updateRecordIndicatorColor;
 - (void)_updateCameraViewAppearance;

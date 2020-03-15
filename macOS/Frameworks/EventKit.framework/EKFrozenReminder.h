@@ -25,6 +25,7 @@
 }
 
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property(readonly) NSDate *cachedAdjustedDueDate; // @synthesize cachedAdjustedDueDate=_cachedAdjustedDueDate;
 @property(readonly, nonatomic) BOOL statusCompleteNotByDate; // @synthesize statusCompleteNotByDate=_statusCompleteNotByDate;
 @property(readonly, copy, nonatomic) NSNumber *orderNumber; // @synthesize orderNumber=_orderNumber;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) BOOL cachedHasLocationAlarm; // @synthesize cachedHasLocationAlarm=_cachedHasLocationAlarm;
 @property(readonly, copy, nonatomic) NSData *appLink; // @synthesize appLink=_appLink;
 @property(readonly, copy, nonatomic) NSURL *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (BOOL)isReminder;
 @property(readonly, nonatomic) NSDate *dueDate;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;

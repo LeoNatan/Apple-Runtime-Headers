@@ -22,10 +22,10 @@
     SBFUserAuthenticationController *_authenticationController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isLockedOutCached, setter=_setLockedOutCached:) _Bool lockedOutCached; // @synthesize lockedOutCached=_lockedOutCached;
 @property(retain, nonatomic, getter=_thermalProvider, setter=_setThermalProvider:) id <SBFThermalBlockProvider> thermalProvider; // @synthesize thermalProvider=_thermalProvider;
 @property(retain, nonatomic, getter=_authenticationController, setter=_setAuthenticationController:) SBFUserAuthenticationController *authenticationController; // @synthesize authenticationController=_authenticationController;
-- (void).cxx_destruct;
 - (void)_noteLockedOutReasonsMayHaveChanged;
 - (void)_noteLockedOutStateMayHaveChanged:(_Bool)arg1;
 - (void)temporaryBlockStatusChanged;

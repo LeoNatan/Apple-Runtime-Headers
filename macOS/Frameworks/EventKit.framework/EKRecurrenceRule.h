@@ -44,13 +44,13 @@
 + (BOOL)isDerivedRelationship;
 + (id)ruleWithBackingRule:(id)arg1;
 + (id)recurrenceRuleWithType:(long long)arg1 interval:(unsigned long long)arg2 end:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL dirtyStateMayAffectExceptionDates; // @synthesize dirtyStateMayAffectExceptionDates=_dirtyStateMayAffectExceptionDates;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(readonly) BOOL usesEndDate; // @synthesize usesEndDate=_usesEndDate;
 @property(nonatomic) __weak EKCalendarItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) EKFrozenRecurrenceRule *backingRule; // @synthesize backingRule;
 @property(retain, nonatomic) EKRecurrenceEnd *cachedEnd; // @synthesize cachedEnd=_cachedEnd;
-- (void).cxx_destruct;
 - (BOOL)isEqualToRecurrenceRule:(id)arg1;
 - (id)humanReadableDescriptionWithStartDate:(id)arg1;
 - (BOOL)ruleIsForFloatingItem;

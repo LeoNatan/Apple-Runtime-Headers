@@ -21,12 +21,12 @@
     NSMutableSet *_addedConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *addedConstraints; // @synthesize addedConstraints=_addedConstraints;
 @property(retain, nonatomic) NSMutableArray *internalLayoutViewControllers; // @synthesize internalLayoutViewControllers=_internalLayoutViewControllers;
 @property(retain, nonatomic) KHSelectionViewController *selectionViewController; // @synthesize selectionViewController=_selectionViewController;
 @property(retain, nonatomic) KHCanvasLayout *canvasLayout; // @synthesize canvasLayout=_canvasLayout;
 @property(retain, nonatomic) KHSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
-- (void).cxx_destruct;
 - (id)layoutViewForLayout:(id)arg1;
 - (id)spacingViewForCanvasLayout:(id)arg1;
 - (id)selectionManagerForLayoutViewController:(id)arg1;

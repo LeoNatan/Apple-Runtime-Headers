@@ -13,8 +13,8 @@
     NFLazy *_lazyHandler;
 }
 
-@property(retain, nonatomic) NFLazy *lazyHandler; // @synthesize lazyHandler=_lazyHandler;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NFLazy *lazyHandler; // @synthesize lazyHandler=_lazyHandler;
 - (void)handleNotificationResponse:(id)arg1;
 - (_Bool)shouldHandleNotificationResponse:(id)arg1;
 - (void)handleNotification:(id)arg1;

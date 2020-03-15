@@ -14,8 +14,8 @@
 }
 
 + (BOOL)remoteGroupShouldOverwriteLocal:(id)arg1;
-@property(retain) SMDBEntry *backing; // @synthesize backing=_backing;
 - (void).cxx_destruct;
+@property(retain) SMDBEntry *backing; // @synthesize backing=_backing;
 - (id)entriesForKey:(id)arg1;
 - (id)nestedGroups;
 - (id)groupMembership;

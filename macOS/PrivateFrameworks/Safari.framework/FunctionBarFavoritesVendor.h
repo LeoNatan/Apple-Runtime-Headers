@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     WebBookmarkList *_vendedFolder;
 }
 
-@property(nonatomic) __weak id <FunctionBarFavoritesClient> client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FunctionBarFavoritesClient> client; // @synthesize client=_client;
 - (void)_favoritesDidChange:(id)arg1;
 - (void)_notifyClientOfRefresh;
 - (id)_defaultVendedFolder;

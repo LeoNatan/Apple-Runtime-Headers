@@ -16,8 +16,8 @@
     id <SXPresentationAttributesProvider> _presentationAttributesProvider;
 }
 
-@property(readonly, nonatomic) id <SXPresentationAttributesProvider> presentationAttributesProvider; // @synthesize presentationAttributesProvider=_presentationAttributesProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXPresentationAttributesProvider> presentationAttributesProvider; // @synthesize presentationAttributesProvider=_presentationAttributesProvider;
 - (id)createInstructions;
 - (id)initWithPresentationAttributesProvider:(id)arg1;
 

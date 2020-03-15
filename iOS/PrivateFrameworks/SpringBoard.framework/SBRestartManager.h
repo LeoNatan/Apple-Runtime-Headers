@@ -22,9 +22,9 @@
     FBSystemService *_systemService;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBRestartTransitionRequest *pendingRestartTransitionRequest; // @synthesize pendingRestartTransitionRequest=_pendingRestartTransitionRequest;
 @property(nonatomic) __weak id <SBRestartManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)___waitForeverForRunningBoardKill;
 - (void)_doRestartForTransition:(int)arg1;
 - (void)_persistStartupTransitionContextFromShutdownContext:(id)arg1;

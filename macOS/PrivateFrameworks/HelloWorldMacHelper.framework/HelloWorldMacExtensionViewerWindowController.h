@@ -18,9 +18,9 @@
     id <HelloWorldMacExtensionViewerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HelloWorldMacExtensionViewerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
 - (void)makeFrontmost;
 - (id)windowNibName;

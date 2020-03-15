@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     GEOTransitDecoderData *_decoderData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOMapRegion *boundingMapRegion; // @synthesize boundingMapRegion=_boundingMapRegion;
 @property(readonly, nonatomic) NSMutableArray *pointSections; // @synthesize pointSections=_pointSections;
-- (void).cxx_destruct;
 - (BOOL)_shouldBreakPointSectionAtStep:(id)arg1 previousStep:(id)arg2;
 - (id)_sectionForRoute:(id)arg1 pointRange:(struct _NSRange)arg2 stepIndex:(unsigned long long)arg3 bounds:(CDStruct_953f3dc7)arg4 currentTransitLineColor:(id)arg5 startDistance:(double)arg6;
 - (double)_buildPointSectionsForRoute:(id)arg1 pointRange:(struct _NSRange)arg2 stepIndex:(unsigned long long)arg3 currentTransitLineColor:(id)arg4 startDistance:(double)arg5;

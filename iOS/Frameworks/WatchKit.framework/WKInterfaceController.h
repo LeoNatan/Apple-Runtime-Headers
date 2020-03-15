@@ -28,6 +28,7 @@
 + (void)reloadRootControllersWithNames:(id)arg1 contexts:(id)arg2;
 + (struct CGRect)screenBounds;
 + (double)screenScale;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingGestureInstallationFinishedBlocks; // @synthesize pendingGestureInstallationFinishedBlocks=_pendingGestureInstallationFinishedBlocks;
 @property(retain, nonatomic) NSMutableArray *uninstalledGestureIDs; // @synthesize uninstalledGestureIDs=_uninstalledGestureIDs;
 @property(retain, nonatomic) NSMutableDictionary *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSArray *topLevelObjects; // @synthesize topLevelObjects=_topLevelObjects;
 @property(readonly, nonatomic) WKCrownSequencer *crownSequencer; // @synthesize crownSequencer=_crownSequencer;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
-- (void).cxx_destruct;
 - (void)endGlanceUpdates;
 - (void)beginGlanceUpdates;
 - (void)invalidateUserActivity;

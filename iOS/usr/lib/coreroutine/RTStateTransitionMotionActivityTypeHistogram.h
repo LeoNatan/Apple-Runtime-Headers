@@ -13,8 +13,8 @@
     NSMutableDictionary *_motionActivityTypeBins;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *motionActivityTypeBins; // @synthesize motionActivityTypeBins=_motionActivityTypeBins;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *motionActivityTypeBins; // @synthesize motionActivityTypeBins=_motionActivityTypeBins;
 - (void)show;
 - (unsigned long long)getDominantMotionActivityType;
 - (void)addMotionActivityType:(unsigned long long)arg1;

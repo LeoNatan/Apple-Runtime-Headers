@@ -15,8 +15,8 @@
     id <AKAuthorizationUIProvider> _uiProvider;
 }
 
-@property(retain) id <AKAuthorizationUIProvider> uiProvider; // @synthesize uiProvider=_uiProvider;
 - (void).cxx_destruct;
+@property(retain) id <AKAuthorizationUIProvider> uiProvider; // @synthesize uiProvider=_uiProvider;
 - (void)presentAuthorizationUIForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end

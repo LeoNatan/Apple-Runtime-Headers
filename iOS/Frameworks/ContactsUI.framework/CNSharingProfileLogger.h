@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)log;
-@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void)logSettingsReturningEmptyImage;
 - (void)logSettingsReturningEmptyImageForNoChange;
 - (void)logSettingsReturningDefaultMonogram;

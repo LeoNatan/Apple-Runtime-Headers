@@ -19,11 +19,11 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *middleButton; // @synthesize middleButton=_middleButton;
 @property(retain, nonatomic) UIButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(retain, nonatomic) UIButton *leftButton; // @synthesize leftButton=_leftButton;
 @property(nonatomic) __weak id <AXGestureRecorderControlsViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_buttonTapped:(id)arg1;
 @property(nonatomic, getter=isRightButtonEnabled) _Bool rightButtonEnabled;
 @property(nonatomic, getter=isLeftButtonEnabled) _Bool leftButtonEnabled;

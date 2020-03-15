@@ -14,8 +14,8 @@
     NSArray *_iosActivityItems;
 }
 
-@property(copy, nonatomic) NSArray *iosActivityItems; // @synthesize iosActivityItems=_iosActivityItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *iosActivityItems; // @synthesize iosActivityItems=_iosActivityItems;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
 @property(copy, nonatomic) CDUnknownBlockType completionWithItemsHandler;
 @property(copy, nonatomic) NSArray *activityItems;

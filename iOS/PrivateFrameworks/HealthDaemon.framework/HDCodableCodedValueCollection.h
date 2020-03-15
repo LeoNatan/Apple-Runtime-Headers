@@ -16,8 +16,8 @@
 }
 
 + (Class)codedValuesType;
-@property(retain, nonatomic) NSMutableArray *codedValues; // @synthesize codedValues=_codedValues;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *codedValues; // @synthesize codedValues=_codedValues;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

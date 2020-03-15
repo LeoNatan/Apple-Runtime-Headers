@@ -26,6 +26,7 @@
 }
 
 + (unsigned long long)suggestedStrategy;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long strategy; // @synthesize strategy=_strategy;
 @property(copy, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 @property(retain, nonatomic) APSConnection *apsConnection; // @synthesize apsConnection=_apsConnection;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *subscriptionInfos; // @synthesize subscriptionInfos=_subscriptionInfos;
-- (void).cxx_destruct;
 - (void)pushRegistry:(id)arg1 didReceiveIncomingPushWithPayload:(id)arg2 forType:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)pushRegistry:(id)arg1 didUpdatePushCredentials:(id)arg2 forType:(id)arg3;
 - (void)updatePKPushRegistry;

@@ -17,10 +17,10 @@
     NSMutableDictionary *_relationChangeHistory;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *relationChangeHistory; // @synthesize relationChangeHistory=_relationChangeHistory;
 @property(retain) NSMutableDictionary *changeHistory; // @synthesize changeHistory=_changeHistory;
 @property(retain) NSMutableDictionary *seriesOffsets; // @synthesize seriesOffsets=_seriesOffsets;
-- (void).cxx_destruct;
 - (id)summary;
 - (void)resetIdentifiers:(id)arg1;
 - (void)reset;

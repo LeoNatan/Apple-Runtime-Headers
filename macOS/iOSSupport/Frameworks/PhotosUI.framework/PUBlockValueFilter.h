@@ -11,8 +11,8 @@
     CDUnknownBlockType _operationBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType operationBlock; // @synthesize operationBlock=_operationBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType operationBlock; // @synthesize operationBlock=_operationBlock;
 - (double)updatedValue:(double)arg1 withTargetValue:(double)arg2;
 
 @end

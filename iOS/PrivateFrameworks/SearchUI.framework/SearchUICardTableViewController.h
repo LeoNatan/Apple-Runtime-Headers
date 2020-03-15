@@ -15,9 +15,9 @@
     SFCard *_card;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFCard *card; // @synthesize card=_card;
 @property(nonatomic) __weak id <SearchUICardViewDelegate> cardViewDelegate; // @synthesize cardViewDelegate=_cardViewDelegate;
-- (void).cxx_destruct;
 - (_Bool)shouldDrawTopAndBottomSeparators;
 - (_Bool)tableView:(id)arg1 shouldDrawBottomSeparatorForSection:(long long)arg2;
 - (_Bool)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;

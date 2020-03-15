@@ -21,6 +21,7 @@
 
 + (id)animationToValue:(double)arg1 fromAnimation:(id)arg2 duration:(double)arg3 curve:(id)arg4;
 + (id)animationToValue:(double)arg1 fromValue:(double)arg2 duration:(double)arg3 curve:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setLastTime:) double _lastTime; // @synthesize _lastTime=__lastTime;
 @property(nonatomic, setter=_setStartTime:) double _startTime; // @synthesize _startTime=__startTime;
 @property(retain, nonatomic) CAMAdditiveAnimation *_fromAnimation; // @synthesize _fromAnimation=__fromAnimation;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) double _duration; // @synthesize _duration=__duration;
 @property(nonatomic) double _fromValue; // @synthesize _fromValue=__fromValue;
 @property(readonly, nonatomic) double _toValue; // @synthesize _toValue=__toValue;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) double value;
 - (void)updateWithTimestamp:(double)arg1;

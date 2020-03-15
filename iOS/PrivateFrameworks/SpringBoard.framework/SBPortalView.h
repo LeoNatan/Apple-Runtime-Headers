@@ -14,8 +14,8 @@
 }
 
 + (Class)layerClass;
-@property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(readonly, nonatomic) CAPortalLayer *portalLayer; // @dynamic portalLayer;
 - (id)description;
 @property(nonatomic) _Bool allowsBackdropGroups; // @dynamic allowsBackdropGroups;

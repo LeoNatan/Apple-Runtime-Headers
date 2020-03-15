@@ -11,7 +11,7 @@
 #import <ReminderKit/REMExternalSyncMetadataWritableProviding-Protocol.h>
 #import <ReminderKit/REMObjectIDProviding-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSDateComponents, NSSet, NSString, REMCRMergeableStringDocument, REMContactRepresentation, REMDisplayDate, REMObjectID, REMResolutionTokenMap, REMUserActivity;
+@class NSArray, NSData, NSDate, NSDateComponents, NSSet, NSString, NSURL, REMCRMergeableStringDocument, REMContactRepresentation, REMDisplayDate, REMObjectID, REMResolutionTokenMap, REMUserActivity;
 
 @interface REMReminderStorage : NSObject <NSCopying, NSSecureCoding, REMObjectIDProviding, REMExternalSyncMetadataWritableProviding>
 {
@@ -47,6 +47,7 @@
     NSArray *_alarms;
     REMContactRepresentation *_contactHandles;
     unsigned long long _icsDisplayOrder;
+    NSURL *_icsUrl;
     NSData *_importedICSData;
     NSString *_daCalendarItemUniqueIdentifier;
     REMUserActivity *_userActivity;
@@ -64,6 +65,7 @@
 + (id)objectIDWithUUID:(id)arg1;
 + (id)newObjectID;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) REMDisplayDate *displayDate; // @synthesize displayDate=_displayDate;
 @property(nonatomic) long long flagged; // @synthesize flagged=_flagged;
 @property(copy, nonatomic) NSDate *lastBannerPresentationDate; // @synthesize lastBannerPresentationDate=_lastBannerPresentationDate;
@@ -72,6 +74,7 @@
 @property(copy, nonatomic) REMUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(copy, nonatomic) NSString *daCalendarItemUniqueIdentifier; // @synthesize daCalendarItemUniqueIdentifier=_daCalendarItemUniqueIdentifier;
 @property(retain, nonatomic) NSData *importedICSData; // @synthesize importedICSData=_importedICSData;
+@property(copy, nonatomic) NSURL *icsUrl; // @synthesize icsUrl=_icsUrl;
 @property(nonatomic) unsigned long long icsDisplayOrder; // @synthesize icsDisplayOrder=_icsDisplayOrder;
 @property(retain, nonatomic) REMContactRepresentation *contactHandles; // @synthesize contactHandles=_contactHandles;
 @property(retain, nonatomic) NSArray *alarms; // @synthesize alarms=_alarms;
@@ -98,7 +101,6 @@
 @property(copy, nonatomic) NSString *daSyncToken; // @synthesize daSyncToken;
 @property(copy, nonatomic) NSString *externalModificationTag; // @synthesize externalModificationTag;
 @property(copy, nonatomic) NSString *externalIdentifier; // @synthesize externalIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isRecurrent;
 @property(readonly, nonatomic) BOOL isOverdue;
 - (void)updateDisplayDate;

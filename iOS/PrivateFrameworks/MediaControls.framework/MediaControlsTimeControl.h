@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
     CDStruct_fce57115 _durationSnapshot;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCurrentlyTracking) _Bool currentlyTracking; // @synthesize currentlyTracking=_currentlyTracking;
 @property(nonatomic) double sliderValue; // @synthesize sliderValue=_sliderValue;
 @property(retain, nonatomic) UILayoutGuide *trackLayoutGuide; // @synthesize trackLayoutGuide=_trackLayoutGuide;
@@ -66,7 +67,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
-- (void).cxx_destruct;
 - (void)providedStylesDidChangeForProvider:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateBackgroundMask;

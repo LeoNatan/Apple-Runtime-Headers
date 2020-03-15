@@ -16,9 +16,9 @@
     NSMutableDictionary *_stickerChatItemsToUpdateAfterMediaLoad;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *stickerChatItemsToUpdateAfterMediaLoad; // @synthesize stickerChatItemsToUpdateAfterMediaLoad=_stickerChatItemsToUpdateAfterMediaLoad;
 @property(retain, nonatomic) NSMutableDictionary *stickerChatItemsToUpdate; // @synthesize stickerChatItemsToUpdate=_stickerChatItemsToUpdate;
-- (void).cxx_destruct;
 - (id)getStickerSpacerElement:(id)arg1;
 - (double)getStickerWidth:(struct CGSize *)arg1 withRadians:(double)arg2;
 - (double)getStickerHeight:(struct CGSize *)arg1 withRadians:(double)arg2;

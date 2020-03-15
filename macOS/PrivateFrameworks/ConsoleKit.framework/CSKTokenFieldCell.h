@@ -14,9 +14,9 @@
     NSImage *_findDefaultIcon;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSImage *findDefaultIcon; // @synthesize findDefaultIcon=_findDefaultIcon;
 @property(readonly, nonatomic) NSImage *findUnfocusedIcon; // @synthesize findUnfocusedIcon=_findUnfocusedIcon;
-- (void).cxx_destruct;
 - (struct CGRect)_findIconRectFromContainerRect:(struct CGRect)arg1;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;

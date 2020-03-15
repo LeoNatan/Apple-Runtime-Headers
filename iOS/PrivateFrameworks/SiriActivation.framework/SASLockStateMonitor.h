@@ -17,11 +17,11 @@
     NSNumber *_assistantIsEnabled;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *assistantIsEnabled; // @synthesize assistantIsEnabled=_assistantIsEnabled;
 @property(nonatomic) _Bool unlockedByTouchID; // @synthesize unlockedByTouchID=_unlockedByTouchID;
 @property(nonatomic) unsigned long long lockState; // @synthesize lockState=_lockState;
 @property(nonatomic) __weak id <SASLockStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)_currentLockState;
 - (_Bool)isScreenOn;
 - (_Bool)hasUnlockedSinceBoot;

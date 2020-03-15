@@ -19,11 +19,11 @@
     CDStruct_669c4a63 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MRGameControllerDigitizerProtobuf *digitizer; // @synthesize digitizer=_digitizer;
 @property(retain, nonatomic) _MRGameControllerButtonsProtobuf *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) _MRGameControllerMotionProtobuf *motion; // @synthesize motion=_motion;
 @property(nonatomic) unsigned long long controllerID; // @synthesize controllerID=_controllerID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -22,12 +22,12 @@
 + (long long)_afDataSharingEnabledForOptInStatus:(unsigned long long)arg1;
 + (unsigned long long)_dataSharingOptInStatusForAFDataSharingOptInStatus:(long long)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(nonatomic) unsigned long long dataSharingOptInStatus; // @synthesize dataSharingOptInStatus=_dataSharingOptInStatus;
 @property(nonatomic) _Bool offeredEnableDictation; // @synthesize offeredEnableDictation=_offeredEnableDictation;
 @property(nonatomic) _Bool offeredEnableAssistant; // @synthesize offeredEnableAssistant=_offeredEnableAssistant;
 @property(nonatomic, getter=isSiriEnabled) _Bool siriEnabled; // @synthesize siriEnabled=_siriEnabled;
-- (void).cxx_destruct;
 - (void)_reloadSettings;
 - (void)prefsChanged:(id)arg1;
 - (void)deleteSiriHistoryWithCompletion:(CDUnknownBlockType)arg1;

@@ -26,8 +26,8 @@
 }
 
 + (struct CGSize)preferredIconSize;
-@property(nonatomic) __weak id <_SFPasswordIconControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SFPasswordIconControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_fetchAppIconForDomain:(id)arg1;
 - (void)_populateDomainToAppIDWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_requestTouchIconForDomain:(id)arg1 iconDownloadingEnabled:(_Bool)arg2;

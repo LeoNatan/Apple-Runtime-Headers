@@ -9,8 +9,8 @@
 #import <LinkPresentation/LPMetadataProviderSpecializationDelegate-Protocol.h>
 #import <LinkPresentation/WKNavigationDelegate-Protocol.h>
 
-@class LPAnimatedImageTranscoder, LPFetcherGroup, LPLinkMetadata, LPMetadataProviderSpecialization, NSMutableArray, NSString, NSTimer, NSURL, WKWebView;
-@protocol OS_dispatch_group, OS_dispatch_semaphore;
+@class BKSProcessAssertion, LPAnimatedImageTranscoder, LPFetcherGroup, LPLinkMetadata, LPMetadataProviderSpecialization, NSMutableArray, NSString, NSTimer, NSURL, WKWebView;
+@protocol OS_dispatch_group;
 
 @interface LPMetadataProvider : NSObject <WKNavigationDelegate, LPMetadataProviderSpecializationDelegate>
 {
@@ -19,7 +19,7 @@
     NSURL *_URL;
     NSURL *_originalURL;
     NSTimer *_watchdog;
-    NSObject<OS_dispatch_semaphore> *_completionSemaphore;
+    BKSProcessAssertion *_processAssertion;
     LPLinkMetadata *_metadata;
     _Bool _complete;
     _Bool _fetchingFromExistingWebView;
@@ -45,13 +45,13 @@
 + (id)requestMetadataForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)_incompleteMetadataRequests;
 + (id)_callbackQueue;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useSpecializedProviders; // @synthesize useSpecializedProviders=_useSpecializedProviders;
 @property _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) _Bool shouldFetchSubresources; // @synthesize shouldFetchSubresources=_shouldFetchSubresources;
 @property(nonatomic) unsigned long long allowedSpecializedProviders; // @synthesize allowedSpecializedProviders=_allowedSpecializedProviders;
-- (void).cxx_destruct;
 - (void)metadataProviderSpecializationDidFail:(id)arg1;
 - (void)metadataProviderSpecialization:(id)arg1 didCompleteWithMetadata:(id)arg2;
 - (void)metadataProviderSpecialization:(id)arg1 didFetchPreliminaryMetadata:(id)arg2;

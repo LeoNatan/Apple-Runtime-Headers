@@ -19,13 +19,13 @@
 }
 
 + (id)descriptorWithName:(id)arg1 frameRate:(float)arg2 columns:(unsigned int)arg3 rows:(unsigned int)arg4 totalFrames:(unsigned int)arg5 dimension:(float)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) float spriteDimension; // @synthesize spriteDimension=_spriteDimension;
 @property(nonatomic) unsigned int totalFrames; // @synthesize totalFrames=_totalFrames;
 @property(nonatomic) unsigned int rows; // @synthesize rows=_rows;
 @property(nonatomic) unsigned int columns; // @synthesize columns=_columns;
 @property(nonatomic) float frameRate; // @synthesize frameRate=_frameRate;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithWithName:(id)arg1 frameRate:(float)arg2 columns:(unsigned int)arg3 rows:(unsigned int)arg4 totalFrames:(unsigned int)arg5 dimension:(float)arg6;
 
 @end

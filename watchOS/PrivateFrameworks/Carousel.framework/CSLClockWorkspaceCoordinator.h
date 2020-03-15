@@ -12,7 +12,7 @@
 #import <Carousel/FBSceneObserver-Protocol.h>
 #import <Carousel/IOSSHLWorkspaceCoordinator-Protocol.h>
 
-@class CSLTransactionQueue, FBScene, NSMapTable, NSString, RBSAssertion;
+@class CSLInternalSysdiagnoseDialog, CSLTransactionQueue, FBScene, NSMapTable, NSString, RBSAssertion;
 @protocol CSLClockWorkspaceCoordinatorDelegate;
 
 @interface CSLClockWorkspaceCoordinator : NSObject <FBApplicationUpdateScenesTransactionObserver, FBApplicationProcessObserver, FBSceneObserver, FBProcessWatchdogProviding, IOSSHLWorkspaceCoordinator>
@@ -20,20 +20,22 @@
     CSLTransactionQueue *_transactionQueue;
     NSMapTable *_transactionToCompletionMap;
     _Bool _needsClockSceneUpdate;
+    CSLInternalSysdiagnoseDialog *_dialog;
     FBScene *_clockScene;
     id <CSLClockWorkspaceCoordinatorDelegate> _delegate;
     int _effectivelyBackground;
     RBSAssertion *_subordinateProcessAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RBSAssertion *subordinateProcessAssertion; // @synthesize subordinateProcessAssertion=_subordinateProcessAssertion;
 @property(nonatomic, getter=isEffectivelyBackground) int effectivelyBackground; // @synthesize effectivelyBackground=_effectivelyBackground;
 @property(nonatomic) __weak id <CSLClockWorkspaceCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) FBScene *clockScene; // @synthesize clockScene=_clockScene;
-- (void).cxx_destruct;
 - (id)watchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2;
 - (void)sceneDidInvalidate:(id)arg1;
-- (void)applicationProcessDidExit:(id)arg1 withContext:(struct FBProcessExitContext *)arg2;
+- (_Bool)wantsDialogForExitContext:(id)arg1;
+- (void)applicationProcessDidExit:(id)arg1 withContext:(id)arg2;
 - (void)transactionDidComplete:(id)arg1;
 - (void)transaction:(id)arg1 willCommitSceneUpdate:(id)arg2;
 - (void)transaction:(id)arg1 didCreateScene:(id)arg2;
@@ -46,6 +48,7 @@
 - (void)_launchClockIfPossibleWithOptions:(id)arg1 terminateIfRunning:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)relaunchClockIfPossible;
 - (void)handleOpenApplicationRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_registerDefaults;
 - (void)dealloc;
 - (id)init;
 

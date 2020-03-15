@@ -24,11 +24,11 @@
     BOOL _highPrecision;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double parallacticAngle; // @synthesize parallacticAngle=_parallacticAngle;
 @property(readonly, nonatomic) double illuminatedFraction; // @synthesize illuminatedFraction=_illuminatedFraction;
 @property(readonly, nonatomic) double phaseAngle; // @synthesize phaseAngle=_phaseAngle;
 @property(readonly, nonatomic) double elongation; // @synthesize elongation=_elongation;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLocation:(CDStruct_c3b9c2ee)arg1 julianDay:(double)arg2 body:(long long)arg3 altitude:(double)arg4 useHighPrecision:(BOOL)arg5;
 - (id)initWithLocation:(CDStruct_c3b9c2ee)arg1 date:(id)arg2 body:(long long)arg3 useHighPrecision:(BOOL)arg4;

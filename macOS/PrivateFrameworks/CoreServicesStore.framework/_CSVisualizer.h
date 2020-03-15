@@ -20,14 +20,14 @@
 + (id)URLForUnit:(unsigned int)arg1 inTable:(unsigned int)arg2;
 + (BOOL)unitDescription:(id)arg1 referencesUnit:(unsigned int)arg2 inTable:(unsigned int)arg3;
 + (void)enumerateReferencesToUnitsInUnitDescription:(id)arg1 block:(CDUnknownBlockType)arg2;
-+     // Error parsing type: v40@0:8r^{Table={Unit=b30b2I[0c]}[48c]QQII}16r^{Store=@{array<unsigned int, 64>=[64I]}^{Table}^{Table}{atomic<long long>=Aq}{atomic<long long>=Aq}{Pedigree=Q{optional<unsigned int>=(?=cI)B}}}24*32, name: breakDownTable:inStore:buffer:
++     // Error parsing type: v40@0:8r^{Table={Unit=b30b2I[0c]}[48c]QQII}16r^{Store=@{array<unsigned int, 64>=[64I]}^{Table}^{Table}{atomic<long long>={__cxx_atomic_impl<long long, std::__1::__cxx_atomic_base_impl<long long> >=Aq}}{atomic<long long>={__cxx_atomic_impl<long long, std::__1::__cxx_atomic_base_impl<long long> >=Aq}}{Pedigree=Q{optional<unsigned int>=(?=cI)B}}}24*32, name: breakDownTable:inStore:buffer:
 + (id)predicateForSearchingDescriptionWithString:(id)arg1 error:(id *)arg2;
 + (void)enumerateValuesForTitlesInDescription:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (struct _NSRange)rangeOfValueForTitle:(id)arg1 inDescription:(id)arg2;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) const struct __CSStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (void)enumerateReferencesToUnit:(unsigned int)arg1 inTable:(unsigned int)arg2 block:(CDUnknownBlockType)arg3;
 - (id)breakDownUsage;
 - (id)iconForUnit:(unsigned int)arg1 inTable:(unsigned int)arg2;

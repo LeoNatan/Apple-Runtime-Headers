@@ -21,13 +21,13 @@
 }
 
 + (id)requestWithAction:(id)arg1 andTransitionReason:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType transitionCompletion; // @synthesize transitionCompletion=_transitionCompletion;
 @property(nonatomic) int canExecuteDuringSetup; // @synthesize canExecuteDuringSetup=_canExecuteDuringSetup;
 @property(readonly, nonatomic) unsigned int transitionReason; // @synthesize transitionReason=_transitionReason;
 @property(copy, nonatomic) NSString *eventLabel; // @synthesize eventLabel=_eventLabel;
 @property(retain, nonatomic) CSLWorkspaceTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(copy, nonatomic) NSSet *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

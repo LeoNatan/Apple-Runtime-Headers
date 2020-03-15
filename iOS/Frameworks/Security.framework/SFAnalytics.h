@@ -21,13 +21,14 @@
 }
 
 + (void)addOSVersionToEvent:(id)arg1;
++ (id)hwModelID;
 + (long long)fuzzyDaysSinceDate:(id)arg1;
 + (id)defaultAnalyticsDatabasePath:(id)arg1;
 + (id)databasePath;
 + (id)logger;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) SFAnalyticsSQLiteStore *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)logMetric:(id)arg1 withName:(id)arg2 oncePerReport:(_Bool)arg3;
 - (void)logMetric:(id)arg1 withName:(id)arg2;
 - (id)startLogSystemMetricsForActivityNamed:(id)arg1;

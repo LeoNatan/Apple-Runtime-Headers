@@ -22,13 +22,13 @@
     TVLListViewDataSource *_tableViewDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLListViewDataSource *tableViewDataSource; // @synthesize tableViewDataSource=_tableViewDataSource;
 @property(retain, nonatomic) TVLRelatedPlaybackElement *relatedPlaybackElement; // @synthesize relatedPlaybackElement=_relatedPlaybackElement;
 @property(retain, nonatomic) TVLVideoPlayerElement *videoPlayerElement; // @synthesize videoPlayerElement=_videoPlayerElement;
 @property(retain, nonatomic) TVLDocument *feedDocument; // @synthesize feedDocument=_feedDocument;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(retain, nonatomic) id <TVPPlayback> player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didReceiveLongPressForItemAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didReceivePhysicalPlayForItemAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

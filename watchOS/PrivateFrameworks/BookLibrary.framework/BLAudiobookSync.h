@@ -30,6 +30,7 @@
     unsigned long long _bitrate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BLAudiobookCacheDirectoryUtils *cacheDirectoryUtils; // @synthesize cacheDirectoryUtils=_cacheDirectoryUtils;
 @property(nonatomic) _Bool trimMasterPlaylist; // @synthesize trimMasterPlaylist=_trimMasterPlaylist;
 @property(retain, nonatomic) NSMutableSet *pendingMediaPlaylistKeys; // @synthesize pendingMediaPlaylistKeys=_pendingMediaPlaylistKeys;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) BLAudiobookInfo *audiobookInfo; // @synthesize audiobookInfo=_audiobookInfo;
-- (void).cxx_destruct;
 - (id)_streamInfoFromPlaylist:(id)arg1 cachedBitRate:(unsigned long long)arg2;
 - (_Bool)_selectPreferredMediaPlaylistFromMasterPlaylistURL:(id)arg1 cachedBitrate:(unsigned long long)arg2 error:(id *)arg3;
 - (_Bool)_trimMasterPlaylist:(id)arg1 pickingSteamInf:(id)arg2 error:(id *)arg3;

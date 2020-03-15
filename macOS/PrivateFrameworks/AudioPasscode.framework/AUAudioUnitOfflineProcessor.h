@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     long long _assetLength;
 }
 
-@property(readonly, nonatomic) long long assetLength; // @synthesize assetLength=_assetLength;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long assetLength; // @synthesize assetLength=_assetLength;
 - (BOOL)run;
 - (id)initWithAudioUnit:(id)arg1 inputFileURL:(id)arg2 outputFileURL:(id)arg3 ioSampleRate:(long long)arg4;
 

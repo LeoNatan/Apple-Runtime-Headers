@@ -16,8 +16,8 @@
     id <CSLSButtonListenerClientInterface> _realClient;
 }
 
-@property(nonatomic) __weak id <CSLSButtonListenerClientInterface> realClient; // @synthesize realClient=_realClient;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSButtonListenerClientInterface> realClient; // @synthesize realClient=_realClient;
 - (void)handleButtons:(unsigned int)arg1 event:(unsigned int)arg2 firstDownTime:(unsigned long long)arg3 lastUpTime:(unsigned long long)arg4;
 
 // Remaining properties

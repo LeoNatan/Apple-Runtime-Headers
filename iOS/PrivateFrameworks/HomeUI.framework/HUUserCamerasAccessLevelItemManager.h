@@ -17,10 +17,10 @@
     HFItem *_removeItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItem *removeItem; // @synthesize removeItem=_removeItem;
 @property(retain, nonatomic) HMHome *homeForUser; // @synthesize homeForUser=_homeForUser;
 @property(retain, nonatomic) NSArray *accessLevelItems; // @synthesize accessLevelItems=_accessLevelItems;
-- (void).cxx_destruct;
 - (_Bool)_isAllowedToEditTargetUser;
 - (_Bool)_isUserBeingEditedTheDeviceUser;
 - (_Bool)_isUserOwner:(id)arg1;

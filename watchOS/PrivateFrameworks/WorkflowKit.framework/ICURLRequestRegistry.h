@@ -15,9 +15,9 @@
 }
 
 + (id)sharedRegistry;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *requestHandlers; // @synthesize requestHandlers=_requestHandlers;
 @property(retain, nonatomic) NSMutableArray *activeRequests; // @synthesize activeRequests=_activeRequests;
-- (void).cxx_destruct;
 - (id)popRequestWithUUID:(id)arg1;
 - (id)popActiveRequest;
 - (id)popRequest:(id)arg1;

@@ -28,12 +28,12 @@
     BOOL _destroyed;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FBSynchronizedTransactionDelegate> synchronizationDelegate; // @synthesize synchronizationDelegate=_synchronizationDelegate;
 @property(nonatomic) BOOL waitsForSceneCommit; // @synthesize waitsForSceneCommit=_waitsForSceneCommit;
 @property(readonly, nonatomic) BOOL destroyed; // @synthesize destroyed=_destroyed;
 @property(readonly, nonatomic) FBSSceneTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(readonly, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneID;
-- (void).cxx_destruct;
 - (void)performSynchronizedCommit;
 - (BOOL)isReadyForSynchronizedCommit;
 - (void)sceneDidInvalidate:(id)arg1;

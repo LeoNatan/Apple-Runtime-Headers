@@ -7,35 +7,45 @@
 #import <objc/NSObject.h>
 
 @class NSMutableArray;
+@protocol XCTestObservation;
 
 @interface XCTestObservationCenter : NSObject
 {
-    id _internalImplementation;
+    _Bool _suspended;
+    NSMutableArray *_observers;
+    CDUnknownBlockType _exceptionHandler;
+    id <XCTestObservation> _throwingTestObserver;
+    SEL _throwingTestObserverMethod;
 }
 
 + (void)setSharedTestObservationCenter:(id)arg1;
 + (id)sharedTestObservationCenter;
 - (void).cxx_destruct;
+@property SEL throwingTestObserverMethod; // @synthesize throwingTestObserverMethod=_throwingTestObserverMethod;
+@property(retain) id <XCTestObservation> throwingTestObserver; // @synthesize throwingTestObserver=_throwingTestObserver;
+@property(readonly, copy) CDUnknownBlockType exceptionHandler; // @synthesize exceptionHandler=_exceptionHandler;
+@property _Bool suspended; // @synthesize suspended=_suspended;
+@property(readonly) NSMutableArray *observers; // @synthesize observers=_observers;
 - (void)_testCase:(id)arg1 didFinishActivity:(id)arg2;
 - (void)_testCase:(id)arg1 willStartActivity:(id)arg2;
 - (void)_testCaseDidFail:(id)arg1 withDescription:(id)arg2 inFile:(id)arg3 atLine:(unsigned long long)arg4;
 - (void)_testCase:(id)arg1 didMeasureValues:(id)arg2 forPerformanceMetricID:(id)arg3 name:(id)arg4 unitsOfMeasurement:(id)arg5 baselineName:(id)arg6 baselineAverage:(id)arg7 maxPercentRegression:(id)arg8 maxPercentRelativeStandardDeviation:(id)arg9 maxRegression:(id)arg10 maxStandardDeviation:(id)arg11 file:(id)arg12 line:(unsigned long long)arg13;
 - (void)_testCaseDidStop:(id)arg1;
+- (void)_testCaseWasSkipped:(id)arg1 withDescription:(id)arg2 inFile:(id)arg3 atLine:(unsigned long long)arg4;
 - (void)_testCaseDidStart:(id)arg1;
 - (void)_testSuiteDidFail:(id)arg1 withDescription:(id)arg2 inFile:(id)arg3 atLine:(unsigned long long)arg4;
 - (void)_testSuiteDidStop:(id)arg1;
 - (void)_testSuiteDidStart:(id)arg1;
+- (void)_handleException:(id)arg1 thrownBy:(id)arg2 inMethod:(SEL)arg3;
 - (void)_suspendObservationForBlock:(CDUnknownBlockType)arg1;
 - (void)_suspendObservation;
 - (void)_resumeObservation;
 - (void)_observeTestExecutionForBlock:(CDUnknownBlockType)arg1;
 - (void)removeTestObserver:(id)arg1;
 - (void)addTestObserver:(id)arg1;
-@property _Bool suspended;
-@property(readonly) NSMutableArray *observers;
 - (id)description;
 - (id)init;
-- (id)initBasicCenter;
+- (id)initWithObservers:(id)arg1 exceptionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

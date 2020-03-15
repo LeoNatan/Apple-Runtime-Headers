@@ -20,10 +20,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didSuccessfullyDownloadAssets; // @synthesize didSuccessfullyDownloadAssets=_didSuccessfullyDownloadAssets;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSDictionary *adamIdsByType; // @synthesize adamIdsByType=_adamIdsByType;
-- (void).cxx_destruct;
 - (void)_storeDataForIdentifier:(id)arg1 onLoadingCompletion:(CDUnknownBlockType)arg2;
 - (void)storeDataForHKDisplayCategory:(id)arg1 onLoadingCompletion:(CDUnknownBlockType)arg2;
 - (void)storeDataForHKDisplayType:(id)arg1 onLoadingCompletion:(CDUnknownBlockType)arg2;

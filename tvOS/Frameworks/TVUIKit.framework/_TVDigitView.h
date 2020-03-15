@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic, getter=isSecure) _Bool secure; // @synthesize secure=_secure;
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
-- (void).cxx_destruct;
 - (void)reset;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;

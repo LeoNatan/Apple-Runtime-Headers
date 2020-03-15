@@ -25,12 +25,12 @@
 + (id)parametersWithProtocolBufferData:(id)arg1;
 + (id)parametersWithCParameters:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enableSFO; // @synthesize enableSFO=_enableSFO;
 @property(nonatomic) unsigned long long maximumSSLProtocolVersionInternal; // @synthesize maximumSSLProtocolVersionInternal=_maximumSSLProtocolVersionInternal;
 @property(nonatomic) unsigned long long minimumSSLProtocolVersionInternal; // @synthesize minimumSSLProtocolVersionInternal=_minimumSSLProtocolVersionInternal;
 @property(retain, nonatomic) NSSet *SSLCipherSuitesInternal; // @synthesize SSLCipherSuitesInternal=_SSLCipherSuitesInternal;
 @property(retain) NSObject<OS_nw_parameters> *internalParameters; // @synthesize internalParameters=_internalParameters;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL allowDuplicateStateUpdates;
 @property(nonatomic) BOOL allowJoiningConnectedFd;
 @property(nonatomic) BOOL prohibitJoiningProtocols;

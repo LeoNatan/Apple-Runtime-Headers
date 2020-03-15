@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSArray *_containedClips;
 }
 
-@property(retain, nonatomic) NSArray *containedClips; // @synthesize containedClips=_containedClips;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *containedClips; // @synthesize containedClips=_containedClips;
 - (BOOL)expandsEditList;
 - (int)maxDuration;
 - (void)setDuration:(int)arg1;

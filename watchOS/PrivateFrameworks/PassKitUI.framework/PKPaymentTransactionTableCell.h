@@ -14,9 +14,9 @@
     PKPaymentTransactionView *_transactionView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPaymentTransactionView *transactionView; // @synthesize transactionView=_transactionView;
 @property(copy, nonatomic) NSString *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *secondaryColor;
 @property(retain, nonatomic) UIColor *primaryColor;
 - (void)prepareForReuse;

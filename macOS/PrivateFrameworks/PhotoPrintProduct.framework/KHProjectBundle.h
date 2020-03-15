@@ -29,6 +29,7 @@
 + (id)bundleWithURL:(id)arg1;
 + (id)previewImageNameForProject:(id)arg1;
 + (id)defaultSortDescriptors;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long databaseClosingDelay; // @synthesize databaseClosingDelay=_databaseClosingDelay;
 @property(readonly, nonatomic) NSMutableSet *databaseActivityRecords; // @synthesize databaseActivityRecords=_databaseActivityRecords;
 @property(readonly, nonatomic) NSMutableDictionary *propertyCache; // @synthesize propertyCache=_propertyCache;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSURL *previewImageURL; // @synthesize previewImageURL=_previewImageURL;
 @property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_projectCoverInvalidated:(id)arg1;
 - (void)closeDatabase;

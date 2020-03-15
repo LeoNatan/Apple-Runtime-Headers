@@ -20,10 +20,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *shuffleStartingItemIdentifier; // @synthesize shuffleStartingItemIdentifier=_shuffleStartingItemIdentifier;
 @property(copy, nonatomic) NSString *shuffleStartingSectionIdentifier; // @synthesize shuffleStartingSectionIdentifier=_shuffleStartingSectionIdentifier;
 @property(nonatomic) long long shuffleType; // @synthesize shuffleType=_shuffleType;
-- (void).cxx_destruct;
 - (void)moveItem:(id)arg1 fromSection:(id)arg2 afterTailOfSection:(id)arg3;
 - (void)moveItem:(id)arg1 fromSection:(id)arg2 afterHeadOfSection:(id)arg3;
 - (void)addDataSource:(id)arg1 section:(id)arg2 afterHeadOfSection:(id)arg3;

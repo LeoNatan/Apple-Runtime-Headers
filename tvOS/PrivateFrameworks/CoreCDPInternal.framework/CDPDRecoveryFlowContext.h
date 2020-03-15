@@ -14,9 +14,9 @@
     CDPContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPeersForRemoteApproval; // @synthesize hasPeersForRemoteApproval=_hasPeersForRemoteApproval;
 @property(retain, nonatomic) CDPContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 
 @end
 

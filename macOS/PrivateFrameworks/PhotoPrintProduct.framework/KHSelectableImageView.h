@@ -18,12 +18,12 @@
     id <KHSelectableImageViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <KHSelectableImageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *selectionLabel; // @synthesize selectionLabel=_selectionLabel;
 @property BOOL showsSelectionLabel; // @synthesize showsSelectionLabel=_showsSelectionLabel;
 @property BOOL acceptsFirstMouse; // @synthesize acceptsFirstMouse=_acceptsFirstMouse;
 @property BOOL selected; // @synthesize selected=_selected;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;

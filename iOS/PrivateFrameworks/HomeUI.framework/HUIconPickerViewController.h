@@ -17,10 +17,10 @@
 }
 
 + (id)sceneIconDescriptors;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HUIconPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <HFIconDescriptor> selectedIconDescriptor; // @synthesize selectedIconDescriptor=_selectedIconDescriptor;
 @property(readonly, nonatomic) NSArray *iconDescriptors; // @synthesize iconDescriptors=_iconDescriptors;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

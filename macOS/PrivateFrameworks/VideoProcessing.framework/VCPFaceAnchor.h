@@ -18,12 +18,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VCPFaceGeometry *geometry; // @synthesize geometry=_geometry;
 @property(readonly, nonatomic) NSDictionary *blendShapes; // @synthesize blendShapes=_blendShapes;
 // Error parsing type for property transform:
 // Property attributes: T{?=[4]},R,N,V_transform
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 -     // Error parsing type: @96@0:8{?=[4]}16@80@88, name: initWithTransform:blendShapes:geometry:

@@ -7,6 +7,7 @@
 #import <Photos/PHObject.h>
 
 @class NSArray, NSDate, NSManagedObjectID, NSSortDescriptor, NSString;
+@protocol PHCollectionPresentationHints;
 
 @interface PHCollection : PHObject
 {
@@ -28,14 +29,15 @@
 + (_Bool)managedObjectSupportsTrashedState;
 + (id)fetchType;
 + (id)managedEntityName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int customSortKey; // @synthesize customSortKey=_customSortKey;
 @property(readonly, nonatomic) _Bool customSortAscending; // @synthesize customSortAscending=_customSortAscending;
 @property(readonly, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) unsigned long long estimatedVideosCount; // @synthesize estimatedVideosCount=_estimatedVideosCount;
 @property(readonly, nonatomic) unsigned long long estimatedPhotosCount; // @synthesize estimatedPhotosCount=_estimatedPhotosCount;
-- (void).cxx_destruct;
 - (id)description;
+@property(readonly, copy, nonatomic) id <PHCollectionPresentationHints> presentationHints;
 @property(readonly, nonatomic) _Bool isUserSmartAlbum;
 @property(readonly, nonatomic) _Bool isAlbumContentTitleSort;
 @property(readonly, nonatomic) _Bool isAlbumContentSort;

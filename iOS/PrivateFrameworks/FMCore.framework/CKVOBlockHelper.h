@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _nextIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long nextIdentifier; // @synthesize nextIdentifier=_nextIdentifier;
 @property(readonly, nonatomic) NSMutableDictionary *tokensByContext; // @synthesize tokensByContext=_tokensByContext;
 @property(readonly, nonatomic) __weak id observedObject; // @synthesize observedObject=_observedObject;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)insertNewTokenForKeyPath:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)removeHandlerForKey:(id)arg1;

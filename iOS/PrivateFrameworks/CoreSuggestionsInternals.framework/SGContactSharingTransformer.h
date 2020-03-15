@@ -19,9 +19,9 @@
     NSString *_language;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *language; // @synthesize language=_language;
 @property(retain) NSString *targetMapping; // @synthesize targetMapping=_targetMapping;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToContactSharingTransformer:(id)arg1;

@@ -16,6 +16,7 @@
 - (_Bool)mightHaveLinks;
 
 @optional
+- (void)_requestTextItemConstrainedToLineAtPoint:(struct CGPoint)arg1 resultHandler:(void (^)(struct CGRect, _Bool))arg2;
 - (_Bool)interactionDidStartWithLinkAtPoint:(struct CGPoint)arg1;
 @end
 

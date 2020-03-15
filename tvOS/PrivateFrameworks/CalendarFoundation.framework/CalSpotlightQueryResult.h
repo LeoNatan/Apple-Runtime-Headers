@@ -15,10 +15,10 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isNaturalLanguageSuggestedEvent) _Bool naturalLanguageSuggestedEvent; // @synthesize naturalLanguageSuggestedEvent=_naturalLanguageSuggestedEvent;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

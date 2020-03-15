@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _lastVelocity;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) struct CGPoint lastVelocity; // @synthesize lastVelocity=_lastVelocity;
 @property(nonatomic) double convergenceRate; // @synthesize convergenceRate=_convergenceRate;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint lastContentOffset; // @synthesize lastContentOffset=_lastContentOffset;
 @property(retain, nonatomic) id <UIScrollViewDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 @property(retain, nonatomic) id <UIFocusItemScrollableContainer> scrollableContainer; // @synthesize scrollableContainer=_scrollableContainer;
-- (void).cxx_destruct;
 
 @end
 

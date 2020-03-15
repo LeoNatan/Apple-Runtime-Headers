@@ -18,12 +18,12 @@
 }
 
 + (id)semanticClassesForArray:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long category; // @synthesize category=_category;
 @property(readonly, nonatomic) double scoreWeight; // @synthesize scoreWeight=_scoreWeight;
 @property(readonly, nonatomic) NSArray *selectedPseudocounts; // @synthesize selectedPseudocounts=_selectedPseudocounts;
 @property(readonly, nonatomic) NSArray *semanticClasses; // @synthesize semanticClasses=_semanticClasses;
 @property(readonly, nonatomic) unsigned long long semanticClassIndex; // @synthesize semanticClassIndex=_semanticClassIndex;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1 index:(unsigned long long)arg2;
 
 @end

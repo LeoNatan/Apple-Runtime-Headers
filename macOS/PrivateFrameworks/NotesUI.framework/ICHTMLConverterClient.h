@@ -17,9 +17,9 @@
 }
 
 + (id)sharedClient;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestCount; // @synthesize requestCount=_requestCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestCountQueue; // @synthesize requestCountQueue=_requestCountQueue;
-- (void).cxx_destruct;
 - (void)suspendConnectionIfNeeded;
 - (void)resumeConnectionIfNeeded;
 - (id)attributedStringFromHTMLString:(id)arg1;

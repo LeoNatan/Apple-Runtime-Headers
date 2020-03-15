@@ -14,9 +14,9 @@
     long long _childCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long childCount; // @synthesize childCount=_childCount;
 @property(readonly, nonatomic) NSMutableDictionary *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

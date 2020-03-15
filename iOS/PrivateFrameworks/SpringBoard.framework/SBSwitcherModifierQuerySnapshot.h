@@ -15,10 +15,10 @@
     NSDictionary *_queryMethodsToDescriptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *queryMethodsToDescriptions; // @synthesize queryMethodsToDescriptions=_queryMethodsToDescriptions;
 @property(retain, nonatomic) NSArray *nonImplementingQueryMethods; // @synthesize nonImplementingQueryMethods=_nonImplementingQueryMethods;
 @property(retain, nonatomic) NSArray *implementingQueryMethods; // @synthesize implementingQueryMethods=_implementingQueryMethods;
-- (void).cxx_destruct;
 
 @end
 

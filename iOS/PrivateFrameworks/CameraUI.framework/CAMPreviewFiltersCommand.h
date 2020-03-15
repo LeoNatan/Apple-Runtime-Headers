@@ -13,8 +13,8 @@
     NSArray *_filters;
 }
 
-@property(readonly, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 - (void)executeWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

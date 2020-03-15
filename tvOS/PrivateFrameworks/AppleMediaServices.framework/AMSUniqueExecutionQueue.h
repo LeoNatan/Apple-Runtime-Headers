@@ -18,12 +18,12 @@
     NSObject<OS_dispatch_queue> *_executionPromiseAccessQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *executionPromiseAccessQueue; // @synthesize executionPromiseAccessQueue=_executionPromiseAccessQueue;
 @property(retain, nonatomic) AMSPromise *executionPromise; // @synthesize executionPromise=_executionPromise;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *executeBlockQueue; // @synthesize executeBlockQueue=_executeBlockQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionCallbacksQueue; // @synthesize completionCallbacksQueue=_completionCallbacksQueue;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (id)_createExecutionPromise;
 - (void)_beginExecutingBlockWithPromise:(id)arg1;
 - (void)addCompletionBlockForSubsequentExecution:(CDUnknownBlockType)arg1;

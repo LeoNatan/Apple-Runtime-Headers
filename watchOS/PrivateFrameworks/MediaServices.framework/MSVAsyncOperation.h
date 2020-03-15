@@ -17,8 +17,8 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(nonatomic, getter=_isFinished, setter=_setFinished:) _Bool _finished; // @synthesize _finished=__finished;
 @property(nonatomic, getter=_isExecuting, setter=_setExecuting:) _Bool _executing; // @synthesize _executing=__executing;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;

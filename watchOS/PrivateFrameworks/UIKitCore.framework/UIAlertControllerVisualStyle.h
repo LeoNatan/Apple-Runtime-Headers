@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (void)positionContentsOfAlertController:(id)arg1 alertContentView:(id)arg2 availableSpaceView:(id)arg3 visualStyle:(id)arg4 updatableConstraints:(id)arg5;
 + (int)interfaceActionPresentationStyle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) UIInterfaceActionVisualStyle *interfaceActionVisualStyle; // @synthesize interfaceActionVisualStyle=_interfaceActionVisualStyle;
 @property(nonatomic) int forcedInterfaceIdiom; // @synthesize forcedInterfaceIdiom=_forcedInterfaceIdiom;
 @property(retain, nonatomic) UIAlertControllerDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-- (void).cxx_destruct;
 - (id)_keyCommandInputForCancelAction;
 - (_Bool)_shouldReverseActions;
 - (float)_scaledMarginAboveDetailMessageFirstBaseline;

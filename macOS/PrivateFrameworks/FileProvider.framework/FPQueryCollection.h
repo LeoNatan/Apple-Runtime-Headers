@@ -21,11 +21,11 @@
 
 + (void)resumeAllQueries;
 + (void)suspendAllQueries;
+- (void).cxx_destruct;
 @property(readonly) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly) FPQueryEnumerationSettings *settings; // @synthesize settings=_settings;
 @property(copy) NSString *descriptionName; // @synthesize descriptionName=_descriptionName;
 @property(readonly, nonatomic) unsigned long long itemsOrigin; // @synthesize itemsOrigin=_itemsOrigin;
-- (void).cxx_destruct;
 @property(copy) NSString *tagIdentifier;
 - (id)_enumerationSettingsPredicate;
 - (id)_createDescriptorWithSortDescriptors:(id)arg1;

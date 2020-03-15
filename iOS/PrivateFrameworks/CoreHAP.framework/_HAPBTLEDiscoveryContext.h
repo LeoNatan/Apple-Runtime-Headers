@@ -24,6 +24,7 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) long long retries; // @synthesize retries=_retries;
 @property(readonly, nonatomic) NSMapTable *serviceSignatures; // @synthesize serviceSignatures=_serviceSignatures;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSMutableArray *discoveringCharacteristics; // @synthesize discoveringCharacteristics=_discoveringCharacteristics;
 @property(readonly, nonatomic) NSMutableArray *discoveringServices; // @synthesize discoveringServices=_discoveringServices;
 @property(readonly, nonatomic) long long discoveryType; // @synthesize discoveryType=_discoveryType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isComplete) _Bool complete;
 - (void)reset;
 - (id)initWithDiscoveryType:(long long)arg1;

@@ -21,9 +21,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *body; // @synthesize body=_body;
 @property(readonly, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

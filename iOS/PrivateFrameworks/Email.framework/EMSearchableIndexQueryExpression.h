@@ -16,8 +16,8 @@
 }
 
 + (id)expressionWithQueryString:(id)arg1;
-@property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

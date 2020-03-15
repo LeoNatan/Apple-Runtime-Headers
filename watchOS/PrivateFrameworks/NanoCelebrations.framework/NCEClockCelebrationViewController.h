@@ -34,6 +34,7 @@
     NCENotificationManager *_notificationManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NCENotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(retain, nonatomic) NSMutableDictionary *ncStats; // @synthesize ncStats=_ncStats;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *sendStatsTimer; // @synthesize sendStatsTimer=_sendStatsTimer;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(nonatomic) __weak id <NCEClockCelebrationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool enableAnimations; // @synthesize enableAnimations=_enableAnimations;
-- (void).cxx_destruct;
 - (void)requestUITriggerWithRegistration:(id)arg1 UITriggerName:(id)arg2 withDictionary:(id)arg3 withReason:(int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)setupTriggers;
 - (void)bulletinsLiaison:(id)arg1 didTriggerBulletinForCelebrationName:(id)arg2;

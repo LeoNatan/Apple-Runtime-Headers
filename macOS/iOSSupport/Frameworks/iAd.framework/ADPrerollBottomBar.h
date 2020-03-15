@@ -28,6 +28,7 @@
     ADPrerollButton *_playPauseButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADPrerollButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;
 @property(retain, nonatomic) UIImage *pauseImage; // @synthesize pauseImage=_pauseImage;
 @property(retain, nonatomic) UIImage *playImage; // @synthesize playImage=_playImage;
@@ -43,7 +44,6 @@
 @property(nonatomic) BOOL isFullscreen; // @synthesize isFullscreen=_isFullscreen;
 @property(nonatomic) BOOL layoutForExpandedSize; // @synthesize layoutForExpandedSize=_layoutForExpandedSize;
 @property(nonatomic) __weak id <ADPrerollBottomBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_playButtonTapped:(id)arg1;
 - (void)_pauseButtonTapped:(id)arg1;
 - (void)_skipButtonTapped:(id)arg1;

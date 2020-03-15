@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_urlTemplate;
 }
 
-@property(readonly, nonatomic) NSString *urlTemplate; // @synthesize urlTemplate=_urlTemplate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *urlTemplate; // @synthesize urlTemplate=_urlTemplate;
 - (id)initWithUrlTemplate:(id)arg1;
 
 @end

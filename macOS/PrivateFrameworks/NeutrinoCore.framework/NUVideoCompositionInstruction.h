@@ -27,6 +27,7 @@
 
 + (id)instructionFromBase:(id)arg1;
 + (id)instructionForVideoTrack:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long sampleMode; // @synthesize sampleMode=_sampleMode;
 @property(retain, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(nonatomic) CDStruct_912cb5d2 renderScale; // @synthesize renderScale=_renderScale;
@@ -36,7 +37,6 @@
 @property(nonatomic) __weak NURenderJob *renderJob; // @synthesize renderJob=_renderJob;
 @property(retain, nonatomic) NSArray *requiredSourceTrackIDs; // @synthesize requiredSourceTrackIDs=_requiredSourceTrackIDs;
 @property(nonatomic) CDStruct_e83c9415 timeRange; // @synthesize timeRange=_timeRange;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToInstruction:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

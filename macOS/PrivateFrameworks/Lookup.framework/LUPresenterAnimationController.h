@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     LUPresenter *_associatedPresenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LUPresenter *associatedPresenter; // @synthesize associatedPresenter=_associatedPresenter;
 @property(retain, nonatomic) LUSearchTermIndicator *searchTermIndicator; // @synthesize searchTermIndicator=_searchTermIndicator;
 @property(nonatomic) struct CGPoint displayedTermOrigin; // @synthesize displayedTermOrigin=_displayedTermOrigin;
 @property(retain, nonatomic) NSAttributedString *displayedTerm; // @synthesize displayedTerm=_displayedTerm;
-- (void).cxx_destruct;
 - (void)commonLUPresenterAnimationControllerTeardown;
 - (void)dealloc;
 - (void)showPopover;

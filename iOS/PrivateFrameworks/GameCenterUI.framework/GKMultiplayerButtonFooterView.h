@@ -19,6 +19,7 @@
     UIColor *_blueColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forcingAutomatch; // @synthesize forcingAutomatch=_forcingAutomatch;
 @property(retain, nonatomic) UIColor *blueColor; // @synthesize blueColor=_blueColor;
 @property(retain, nonatomic) NSLayoutConstraint *viewHeightConstraint; // @synthesize viewHeightConstraint=_viewHeightConstraint;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) UIButton *inviteFriendsButton; // @synthesize inviteFriendsButton=_inviteFriendsButton;
 @property(retain, nonatomic) NSLayoutConstraint *buttonWidthConstraint; // @synthesize buttonWidthConstraint=_buttonWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *buttonHeightConstraint; // @synthesize buttonHeightConstraint=_buttonHeightConstraint;
-- (void).cxx_destruct;
 - (void)configureForMatchRequest:(id)arg1;
 - (void)setButtonsEnabled:(_Bool)arg1;
 - (void)setAction:(SEL)arg1 forTarget:(id)arg2 onButtonWithType:(long long)arg3;

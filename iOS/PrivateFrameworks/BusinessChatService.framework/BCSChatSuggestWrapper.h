@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_phone;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BCSChatSuggestMessage *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *phone; // @synthesize phone=_phone;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

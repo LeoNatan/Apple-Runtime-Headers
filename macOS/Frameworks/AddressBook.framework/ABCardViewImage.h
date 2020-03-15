@@ -15,10 +15,10 @@
     struct CGRect _clippingRect;
 }
 
+- (void).cxx_destruct;
 @property struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
 @property(retain) NSData *largeImageData; // @synthesize largeImageData=_largeImageData;
 @property(retain) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 - (id)initWithImageData:(id)arg1 largeImageData:(id)arg2 clippingRect:(struct CGRect)arg3;
 
 @end

@@ -25,6 +25,7 @@
     AXMutableReplayableGesture *_replayableGesture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMutableReplayableGesture *replayableGesture; // @synthesize replayableGesture=_replayableGesture;
 @property(nonatomic) double maximumFingerLineWidth; // @synthesize maximumFingerLineWidth=_maximumFingerLineWidth;
 @property(nonatomic) double minimumFingerLineWidth; // @synthesize minimumFingerLineWidth=_minimumFingerLineWidth;
@@ -37,7 +38,6 @@
 @property(nonatomic) unsigned long long referenceTimesArrayIndex; // @synthesize referenceTimesArrayIndex=_referenceTimesArrayIndex;
 @property(nonatomic) unsigned long long maximumFingerPathsCount; // @synthesize maximumFingerPathsCount=_maximumFingerPathsCount;
 @property(nonatomic) __weak id <AXGestureRecorderFingerPathCollectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_didUpdateFingerPathAtIndex:(unsigned long long)arg1;
 - (void)_didInsertFingerPathAtIndex:(unsigned long long)arg1;
 - (void)_addPointsToReplayableGesture:(id)arg1 forces:(id)arg2 time:(double)arg3;

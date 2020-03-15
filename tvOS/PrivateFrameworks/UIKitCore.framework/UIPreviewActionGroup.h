@@ -25,13 +25,13 @@
 + (id)_actionGroupWithPreviewMenuItemWithSubactions:(id)arg1;
 + (id)_actionGroupWithTitle:(id)arg1 style:(long long)arg2 color:(id)arg3 actions:(id)arg4;
 + (id)actionGroupWithTitle:(id)arg1 style:(long long)arg2 actions:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_actions, setter=_setActions:) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic, getter=_color, setter=_setColor:) UIColor *color; // @synthesize color=_color;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)_effectiveImage;
 - (id)_effectiveColor;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -13,8 +13,8 @@
 
 + (BOOL)allowsReverseTransformation;
 + (Class)transformedValueClass;
-@property(retain, nonatomic) NSValueTransformer *objectValueTransformer; // @synthesize objectValueTransformer=_objectValueTransformer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSValueTransformer *objectValueTransformer; // @synthesize objectValueTransformer=_objectValueTransformer;
 - (id)transformedValue:(id)arg1;
 
 @end

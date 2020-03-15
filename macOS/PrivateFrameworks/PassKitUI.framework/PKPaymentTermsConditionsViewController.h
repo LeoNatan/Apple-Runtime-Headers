@@ -22,6 +22,7 @@
     NSTextField *_failedMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *failedMessage; // @synthesize failedMessage=_failedMessage;
 @property(retain) WKWebView *webView; // @synthesize webView=_webView;
 @property(retain) NSBox *box; // @synthesize box=_box;
@@ -29,7 +30,6 @@
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(nonatomic) __weak id <PKPaymentTermsAndConditionsDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSURL *termsAndConditionsURL; // @synthesize termsAndConditionsURL=_termsAndConditionsURL;
-- (void).cxx_destruct;
 - (id)nibBundle;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;

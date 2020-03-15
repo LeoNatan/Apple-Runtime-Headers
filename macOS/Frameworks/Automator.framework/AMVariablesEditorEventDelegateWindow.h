@@ -11,8 +11,8 @@
     id _eventDelegate;
 }
 
-@property(retain) id eventDelegate; // @synthesize eventDelegate=_eventDelegate;
 - (void).cxx_destruct;
+@property(retain) id eventDelegate; // @synthesize eventDelegate=_eventDelegate;
 - (void)sendEvent:(id)arg1;
 
 @end

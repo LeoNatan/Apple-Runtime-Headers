@@ -21,10 +21,10 @@
     struct CGSize _sizeToMimic;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSAdjunctItemHosting> contentHost; // @synthesize contentHost=_contentHost;
 @property(nonatomic) struct CGSize sizeToMimic; // @synthesize sizeToMimic=_sizeToMimic;
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
-- (void).cxx_destruct;
 - (void)_setPlatterView:(id)arg1;
 - (void)_updateSizeToMimic;
 - (void)layoutSubviews;

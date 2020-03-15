@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_replyQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *replyQueue; // @synthesize replyQueue=_replyQueue;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak id <AMPArtworkEventsProtocol> eventsDelegate; // @synthesize eventsDelegate=_eventsDelegate;
 @property(retain, nonatomic) NSObject<OS_os_log> *logHandle; // @synthesize logHandle=_logHandle;
-- (void).cxx_destruct;
 - (void)purgeAllItemsforDatabase:(unsigned long long)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)removeArtworkWithArray:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)removeArtwork:(unsigned long long)arg1 forUUID:(id)arg2 withReply:(CDUnknownBlockType)arg3;

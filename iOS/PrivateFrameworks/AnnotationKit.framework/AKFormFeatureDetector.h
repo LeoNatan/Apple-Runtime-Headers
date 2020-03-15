@@ -15,8 +15,8 @@
 
 + (struct CGContext *)_newBitmapFromCGPDFDocument:(struct CGPDFDocument *)arg1;
 + (struct CGContext *)_newBitmapInRect:(struct CGRect)arg1 onPage:(id)arg2 scale:(double)arg3;
-@property(nonatomic) __weak NSObject<AKFormFeatureDetectorDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<AKFormFeatureDetectorDelegate> *delegate; // @synthesize delegate=_delegate;
 - (struct CGRect)_findExtentForLineTop:(double)arg1 lineBottom:(double)arg2 x:(double)arg3 onPage:(id)arg4;
 - (id)_boxOnLine:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (id)_defaultFeatureForPoint:(struct CGPoint)arg1 onPage:(id)arg2 snapToVerticalEdges:(_Bool)arg3;

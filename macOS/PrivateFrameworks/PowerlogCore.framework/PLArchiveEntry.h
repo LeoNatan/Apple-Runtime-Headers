@@ -17,9 +17,9 @@
 + (id)storageQueue;
 + (id)entryKey;
 + (void)load;
+- (void).cxx_destruct;
 @property(readonly) BOOL systemTimeOffsetModified; // @synthesize systemTimeOffsetModified=_systemTimeOffsetModified;
 @property(readonly, nonatomic) NSString *crPath; // @synthesize crPath=_crPath;
-- (void).cxx_destruct;
 - (void)log;
 @property(nonatomic) long long mainDBSizeAtStart;
 @property(readonly, nonatomic) BOOL removed;

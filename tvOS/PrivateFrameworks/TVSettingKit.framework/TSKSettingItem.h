@@ -59,6 +59,7 @@
 + (id)actionItemWithTitle:(id)arg1 description:(id)arg2 representedObject:(id)arg3 keyPath:(id)arg4 target:(id)arg5 action:(SEL)arg6;
 + (void)setValue:(id)arg1 forSettingItem:(id)arg2;
 + (id)valueForSettingItem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) SEL rightButtonAction; // @synthesize rightButtonAction=_rightButtonAction;
 @property(nonatomic) SEL longPressAction; // @synthesize longPressAction=_longPressAction;
 @property(nonatomic, getter=isDirty) _Bool dirty; // @synthesize dirty=_dirty;
@@ -94,7 +95,6 @@
 @property(retain, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (id)_metadata;
 - (void)_preloadViewController;
 - (void)_cloneStateToItem:(id)arg1;

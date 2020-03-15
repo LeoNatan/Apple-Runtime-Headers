@@ -18,9 +18,9 @@
     id <SBFramewiseInteractiveTransitionAnimatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 @property(nonatomic) __weak id <SBFramewiseInteractiveTransitionAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double percentVisible;
 - (_Bool)supportsRestarting;
 - (double)percentComplete;

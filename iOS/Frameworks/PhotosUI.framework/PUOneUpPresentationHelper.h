@@ -73,6 +73,7 @@
     long long __presentationOrigin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long _presentationOrigin; // @synthesize _presentationOrigin=__presentationOrigin;
 @property(nonatomic, setter=_setIsPerformingNonAnimatedPush:) _Bool _isPerformingNonAnimatedPush; // @synthesize _isPerformingNonAnimatedPush=__isPerformingNonAnimatedPush;
 @property(retain, nonatomic, setter=_setPanDirectionValueFilter:) PUChangeDirectionValueFilter *_panDirectionValueFilter; // @synthesize _panDirectionValueFilter=__panDirectionValueFilter;
@@ -97,7 +98,6 @@
 @property(nonatomic) __weak id <PUOneUpPresentationHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXPhotosDataSource *photosDataSource; // @synthesize photosDataSource=_photosDataSource;
 @property(retain, nonatomic, setter=_setBrowsingSession:) PUBrowsingSession *browsingSession; // @synthesize browsingSession=_browsingSession;
-- (void).cxx_destruct;
 - (void)tilingViewDidEndAnimatingTileControllers:(id)arg1;
 - (void)tilingViewDidUpdateTileControllers:(id)arg1;
 - (void)tilingView:(id)arg1 didStopUsingTileController:(id)arg2;

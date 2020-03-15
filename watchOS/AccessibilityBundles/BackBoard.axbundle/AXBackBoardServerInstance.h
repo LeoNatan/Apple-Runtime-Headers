@@ -8,7 +8,7 @@
 
 #import "AXBackBoardServerInstance-Protocol.h"
 
-@class AXIPCServer, NSMutableArray, NSString;
+@class AXIPCServer, BSProcessDeathWatcher, NSMutableArray, NSString;
 @protocol AXBackBoardServerInstanceDelegate;
 
 @interface AXBackBoardServerInstance : NSObject <AXBackBoardServerInstance>
@@ -18,13 +18,14 @@
     NSMutableArray *_zoomListeners;
     struct CGRect _initialZoomFocusRect;
     NSMutableArray *_eventTapClients;
+    BSProcessDeathWatcher *_heardDeathWatcher;
     id <AXBackBoardServerInstanceDelegate> _delegate;
 }
 
 + (id)backBoardServerInstanceIfExists;
 + (id)backBoardServerInstance;
-@property(nonatomic) __weak id <AXBackBoardServerInstanceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AXBackBoardServerInstanceDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_handleGetLastSetColorFilter:(id)arg1;
 - (id)_handleToggleGuidedAccess:(id)arg1;
 - (id)_handleResetAccessibilityFeatures:(id)arg1;
@@ -39,6 +40,7 @@
 - (id)_axPreferenceAsMobile:(id)arg1;
 - (id)_handleGuidedAccessCurrentModeAndSessionApp:(id)arg1;
 - (id)_handleGuidedAccessIgnoredRegions:(id)arg1;
+- (id)_handleIsRestrictedForAAC:(id)arg1;
 - (id)_handleIsGuidedAccessUnmanagedSelfLocked:(id)arg1;
 - (id)_handleIsGuidedAccessSelfLockedToRequestingApp:(id)arg1;
 - (void)_handleSetGuidedAccessEnabledByRequestingApp:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -65,8 +67,12 @@
 - (id)_handleSetSwitchControlRendersDeviceUnusable:(id)arg1;
 - (id)_handleLockScreenDimTimerEnabled:(id)arg1;
 - (id)_handleInvertColorsChange:(id)arg1;
+- (id)_handleRegisterHearingAidServerPID:(id)arg1;
 - (id)_handleRegisterSiriViewServicePID:(id)arg1;
+- (id)_handleRegisterFullKeyboardAccessDaemonPID:(id)arg1;
 - (id)_handleRegisterAccessibilityUIServerPID:(id)arg1;
+- (id)_handleFullKeyboardAccessDaemonPID:(id)arg1;
+- (id)_handleHearingAidServerPID:(id)arg1;
 - (id)_handleAssistiveTouchPID:(id)arg1;
 - (id)_handleAXUIServerPID:(id)arg1;
 - (id)_handleRegisterAssistiveTouchPID:(id)arg1;
@@ -75,6 +81,8 @@
 - (id)_handleSetCapsLockLightOn:(id)arg1;
 - (id)_handleUserEventOccurred:(id)arg1;
 - (id)_handlePostEvent:(id)arg1;
+- (id)_handleConvertPointToContextId:(id)arg1;
+- (id)_handleConvertPointFromContextId:(id)arg1;
 - (id)_handleConvertFrameFromContextIdToContextId:(id)arg1;
 - (id)_handleConvertFrameFromContextId:(id)arg1;
 - (id)_handleConvertFrameToContextId:(id)arg1;

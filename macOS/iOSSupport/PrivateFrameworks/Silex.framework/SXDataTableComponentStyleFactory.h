@@ -21,6 +21,7 @@
     SXJSONObjectMerger *_cellStyleMerger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXJSONObjectMerger *cellStyleMerger; // @synthesize cellStyleMerger=_cellStyleMerger;
 @property(readonly, nonatomic) SXJSONObjectMerger *columnStyleMerger; // @synthesize columnStyleMerger=_columnStyleMerger;
 @property(readonly, nonatomic) SXJSONObjectMerger *rowStyleMerger; // @synthesize rowStyleMerger=_rowStyleMerger;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) unsigned long long dataOrientation; // @synthesize dataOrientation=_dataOrientation;
 @property(readonly, nonatomic) SXDataTableStyle *tableStyle; // @synthesize tableStyle=_tableStyle;
 @property(readonly, nonatomic) SXDataRecordStore *recordStore; // @synthesize recordStore=_recordStore;
-- (void).cxx_destruct;
 - (id)descriptorForIdentifier:(id)arg1;
 - (long long)compareSelector:(id)arg1 withOtherSelector:(id)arg2;
 - (id)sortStylesMatchesBySelectorWeight:(id)arg1;

@@ -14,8 +14,8 @@
     ML3DatabaseResult *_parentResult;
 }
 
-@property(readonly, nonatomic) ML3DatabaseResult *parentResult; // @synthesize parentResult=_parentResult;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ML3DatabaseResult *parentResult; // @synthesize parentResult=_parentResult;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)arrayRepresentation;

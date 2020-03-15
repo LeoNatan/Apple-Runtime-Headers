@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_moreListTitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *moreListTitle; // @synthesize moreListTitle=_moreListTitle;
 @property(readonly, nonatomic) long long maximumNumberOfVisibleItems; // @synthesize maximumNumberOfVisibleItems=_maximumNumberOfVisibleItems;
-- (void).cxx_destruct;
 - (void)_enumerateItemElementsUsingBlock:(CDUnknownBlockType)arg1;
 - (long long)pageComponentType;
 - (id)applyUpdatesWithElement:(id)arg1;

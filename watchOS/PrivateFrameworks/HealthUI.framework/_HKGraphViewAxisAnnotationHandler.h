@@ -17,10 +17,10 @@
     NSMapTable *_seriesToAnnotations;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool clearedPreviousAnnotations; // @synthesize clearedPreviousAnnotations=_clearedPreviousAnnotations;
 @property(retain, nonatomic) NSMapTable *seriesToAnnotations; // @synthesize seriesToAnnotations=_seriesToAnnotations;
 @property(nonatomic) _Bool disableDuringTiling; // @synthesize disableDuringTiling=_disableDuringTiling;
-- (void).cxx_destruct;
 - (void)clearAxisAnnotations;
 - (int)applyAnnotationForSeries:(id)arg1 commonAxes:(id)arg2;
 - (void)addAxisAnnotation:(id)arg1 forSeries:(id)arg2 textColor:(id)arg3 modelCoordinate:(id)arg4;

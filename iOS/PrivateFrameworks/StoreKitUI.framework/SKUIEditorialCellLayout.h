@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     double _totalHeight;
 }
 
-@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (void).cxx_destruct;
+@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (id)_textBoxView;
 - (id)_linkView;
 - (void)editorialLinkView:(id)arg1 didSelectLink:(id)arg2;

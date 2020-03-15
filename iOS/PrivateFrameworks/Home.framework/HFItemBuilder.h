@@ -15,9 +15,9 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) id homeKitRepresentation; // @synthesize homeKitRepresentation=_homeKitRepresentation;
-- (void).cxx_destruct;
 - (id)_failureFutureWithReason:(id)arg1;
 - (id)verifyNameIsNotEmpty:(id)arg1;
 - (id)verifyProperty:(id)arg1 matchesCondition:(CDUnknownBlockType)arg2 description:(id)arg3;

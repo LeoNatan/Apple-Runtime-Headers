@@ -30,10 +30,10 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly) NSTitlebarRenamingURLResolver *renameResolver; // @synthesize renameResolver=_renameResolver;
 @property(readonly) unsigned long long editingMode; // @synthesize editingMode=_editingMode;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_accessibilityHandleFocusedUserInterfaceElementChanged:(id)arg1;
 - (void)_accessibilityHandleEnhancedUserInterfaceValueChanged:(id)arg1;

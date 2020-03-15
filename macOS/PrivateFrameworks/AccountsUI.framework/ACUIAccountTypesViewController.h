@@ -20,12 +20,12 @@
     ACUIAccountTypesCellView *_lastHighlightedCell;
 }
 
+- (void).cxx_destruct;
 @property BOOL isDisplayingOtherAccounts; // @synthesize isDisplayingOtherAccounts=_isDisplayingOtherAccounts;
 @property __weak ACUIAccountTypesCellView *lastHighlightedCell; // @synthesize lastHighlightedCell=_lastHighlightedCell;
 @property(retain) NSArray *accountTypes; // @synthesize accountTypes=_accountTypes;
 @property __weak id <ACUIAccountTypesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)showOtherAccountTypes;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

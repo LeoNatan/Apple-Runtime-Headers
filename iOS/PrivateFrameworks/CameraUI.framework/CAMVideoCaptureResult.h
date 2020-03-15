@@ -24,6 +24,7 @@
     CDStruct_1b6d18a9 _stillDisplayTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) CAMCaptureCoordinationInfo *coordinationInfo; // @synthesize coordinationInfo=_coordinationInfo;
 @property(readonly, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSURL *filteredLocalDestinationURL; // @synthesize filteredLocalDestinationURL=_filteredLocalDestinationURL;
 @property(readonly, nonatomic) NSURL *localDestinationURL; // @synthesize localDestinationURL=_localDestinationURL;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly, nonatomic) _Bool stoppedUnexpectedly;
 - (id)initWithURL:(id)arg1 filteredLocalDestinationURL:(id)arg2 duration:(CDStruct_1b6d18a9)arg3 stillDisplayTime:(CDStruct_1b6d18a9)arg4 dimensions:(CDStruct_79c71658)arg5 metadata:(id)arg6 videoZoomFactor:(double)arg7 reason:(long long)arg8 videoPreviewPixelBuffer:(struct __CVBuffer *)arg9 coordinationInfo:(id)arg10 error:(id)arg11;

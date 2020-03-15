@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_topic;
 }
 
-@property(retain, nonatomic) NSString *topic; // @synthesize topic=_topic;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *topic; // @synthesize topic=_topic;
 - (void)handleEvent:(id)arg1;
 
 // Remaining properties

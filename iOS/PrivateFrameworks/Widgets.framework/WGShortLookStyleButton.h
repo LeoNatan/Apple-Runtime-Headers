@@ -19,8 +19,8 @@
     _Bool _backgroundBlurred;
 }
 
-@property(nonatomic, getter=isBackgroundBlurred) _Bool backgroundBlurred; // @synthesize backgroundBlurred=_backgroundBlurred;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isBackgroundBlurred) _Bool backgroundBlurred; // @synthesize backgroundBlurred=_backgroundBlurred;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 @property(copy, nonatomic) NSString *materialGroupNameBase;
 - (void)traitCollectionDidChange:(id)arg1;

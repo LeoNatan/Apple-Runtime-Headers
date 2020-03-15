@@ -21,12 +21,12 @@
 }
 
 + (id)diffFromSet:(id)arg1 toSet:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *toSet; // @synthesize toSet=_toSet;
 @property(readonly, nonatomic) NSSet *fromSet; // @synthesize fromSet=_fromSet;
 @property(readonly, nonatomic) NSSet *updates; // @synthesize updates=_updates;
 @property(readonly, nonatomic) NSSet *deletions; // @synthesize deletions=_deletions;
 @property(readonly, nonatomic) NSSet *additions; // @synthesize additions=_additions;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

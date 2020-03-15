@@ -26,6 +26,7 @@
 + (id)decode:(const struct ProtobufCMessage *)arg1;
 + (id)convertObject:(id)arg1 toProtocol:(id)arg2;
 + (id)convertObject:(id)arg1 toClass:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *requires; // @synthesize requires=_requires;
 @property(readonly, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(readonly, nonatomic) NSArray *exports; // @synthesize exports=_exports;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSDictionary *protocols; // @synthesize protocols=_protocols;
 @property(readonly, nonatomic) NSDictionary *classes; // @synthesize classes=_classes;
 @property(readonly, nonatomic) NSDictionary *objects; // @synthesize objects=_objects;
-- (void).cxx_destruct;
 - (id)serializedData;
 - (void)encode:(struct ProtobufCMessage *)arg1;
 - (id)findParentForObjectWithIdentifier:(id)arg1;

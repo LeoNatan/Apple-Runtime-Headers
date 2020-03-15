@@ -15,8 +15,8 @@
     NSDictionary *_dictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (id)adContextValueForKeyPath:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 

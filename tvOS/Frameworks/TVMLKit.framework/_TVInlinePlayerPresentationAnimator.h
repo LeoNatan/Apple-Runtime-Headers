@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _inlineFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 @property(readonly, nonatomic) struct CGRect inlineFrame; // @synthesize inlineFrame=_inlineFrame;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (id)initWithInlineFrame:(struct CGRect)arg1 playerViewController:(id)arg2;

@@ -23,6 +23,7 @@
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowCalloutActions; // @synthesize allowCalloutActions=_allowCalloutActions;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableDictionary *pluginDisplayContainers; // @synthesize pluginDisplayContainers=_pluginDisplayContainers;
 @property(retain, nonatomic) NSMutableDictionary *mediaObjects; // @synthesize mediaObjects=_mediaObjects;
 @property(nonatomic) BOOL balloonColor; // @synthesize balloonColor=_balloonColor;
-- (void).cxx_destruct;
 - (void)handleTapOrLongPress:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)attributedTextForCompositionText:(id)arg1;

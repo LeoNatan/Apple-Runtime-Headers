@@ -36,6 +36,7 @@
 + (id)itemWithData:(id)arg1 type:(id)arg2;
 + (id)itemWithObject:(id)arg1;
 + (id)item;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) _Bool itemQueue_isStoredOnServer; // @synthesize itemQueue_isStoredOnServer=_itemQueue_isStoredOnServer;
 @property(copy, nonatomic) NSDictionary *itemQueue_metadata; // @synthesize itemQueue_metadata=_itemQueue_metadata;
@@ -50,7 +51,6 @@
 @property(nonatomic) __weak id <PBItemDataTransferDelegate> itemQueue_dataTransferDelegate; // @synthesize itemQueue_dataTransferDelegate=_itemQueue_dataTransferDelegate;
 @property(retain, nonatomic) NSURL *itemQueue_primaryFileURL; // @synthesize itemQueue_primaryFileURL=_itemQueue_primaryFileURL;
 @property(retain, nonatomic) NSData *itemQueue_primaryData; // @synthesize itemQueue_primaryData=_itemQueue_primaryData;
-- (void).cxx_destruct;
 - (id)initWithNSItemProvider:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)itemRepresentationFinishedDataTransfer:(id)arg1;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     const void *mDataBytes;
 }
 
-@property(retain, nonatomic) OCPZipPackage *zipPackage; // @synthesize zipPackage=mZipPackage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) OCPZipPackage *zipPackage; // @synthesize zipPackage=mZipPackage;
 - (id)read;
 - (BOOL)start;
 - (void)restartReaderToUseDecryptedDocument;

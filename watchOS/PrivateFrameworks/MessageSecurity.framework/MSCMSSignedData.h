@@ -26,6 +26,7 @@
 }
 
 + (id)decodeMessageSecurityObject:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property _Bool contentChanged; // @synthesize contentChanged=_contentChanged;
 @property(retain) MSDecodeOptions *options; // @synthesize options=_options;
 @property(retain) NSNumber *version; // @synthesize version=_version;
@@ -36,7 +37,6 @@
 @property(retain) MSOID *contentType; // @synthesize contentType=_contentType;
 @property(retain) id <MSCMSMessage> embeddedContent; // @synthesize embeddedContent=_embeddedContent;
 @property(retain, nonatomic) NSData *dataContent; // @synthesize dataContent=_dataContent;
-- (void).cxx_destruct;
 @property(readonly) MSOID *type;
 - (id)encodeMessageSecurityObject:(id *)arg1;
 - (id)calculateContentDigestWithAlgorithm:(id)arg1 error:(id *)arg2;

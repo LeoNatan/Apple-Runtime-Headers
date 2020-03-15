@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, copy, nonatomic) NSDictionary *configInfo; // @synthesize configInfo=_configInfo;
-@property(nonatomic) NSString *authenticationText; // @synthesize authenticationText=_authenticationText;
-- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *authenticationText; // @synthesize authenticationText=_authenticationText;
 
 @end
 

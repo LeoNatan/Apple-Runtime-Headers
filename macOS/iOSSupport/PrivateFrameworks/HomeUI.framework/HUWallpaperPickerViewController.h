@@ -20,11 +20,11 @@
     NSString *_namedSectionTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *namedSectionTitle; // @synthesize namedSectionTitle=_namedSectionTitle;
 @property(retain, nonatomic) HUNamedWallpaperCollectionViewController *namedWallpaperController; // @synthesize namedWallpaperController=_namedWallpaperController;
 @property(nonatomic) long long collectionType; // @synthesize collectionType=_collectionType;
 @property(readonly, nonatomic) __weak id <HUWallpaperPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)loadAssetCollections;
 - (id)identifierForSection:(unsigned long long)arg1;
 - (id)currentSectionIdentifiers;

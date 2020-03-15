@@ -24,6 +24,7 @@
     Class _storageClass;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class storageClass; // @synthesize storageClass=_storageClass;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *migrationQueue; // @synthesize migrationQueue=_migrationQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) double migrationDelay; // @synthesize migrationDelay=_migrationDelay;
 @property(readonly, nonatomic) long long purgeableLimit; // @synthesize purgeableLimit=_purgeableLimit;
 @property(readonly, nonatomic) long long nonPurgeableLimit; // @synthesize nonPurgeableLimit=_nonPurgeableLimit;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)waitForMigration;
 - (void)_migrateStorageToPurgeable:(id)arg1;

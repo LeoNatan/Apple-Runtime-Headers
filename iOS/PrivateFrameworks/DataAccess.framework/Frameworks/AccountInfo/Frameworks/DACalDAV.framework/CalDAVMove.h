@@ -17,12 +17,12 @@
     long long _objectType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long objectType; // @synthesize objectType=_objectType;
 @property(nonatomic) int changeID; // @synthesize changeID=_changeID;
 @property(retain, nonatomic) NSString *oldExternalID; // @synthesize oldExternalID=_oldExternalID;
 @property(nonatomic) int itemID; // @synthesize itemID=_itemID;
 @property(nonatomic) int sourceCalendarID; // @synthesize sourceCalendarID=_sourceCalendarID;
-- (void).cxx_destruct;
 - (id)initWithSourceCalendarID:(int)arg1 itemID:(int)arg2 oldExternalID:(id)arg3 changeID:(int)arg4 objectType:(long long)arg5;
 
 @end

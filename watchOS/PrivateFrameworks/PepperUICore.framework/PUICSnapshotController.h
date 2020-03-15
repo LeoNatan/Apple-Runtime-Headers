@@ -17,9 +17,9 @@
     CSLSSnapshotContext *_preparedSnapshotContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSSnapshotContext *preparedSnapshotContext; // @synthesize preparedSnapshotContext=_preparedSnapshotContext;
 @property(nonatomic) __weak id <PUICSnapshotDelegate> snapshotDelegate; // @synthesize snapshotDelegate=_snapshotDelegate;
-- (void).cxx_destruct;
 - (void)extendSnapshotContext:(id)arg1 forSnapshotAction:(id)arg2;
 - (void)prepareSnapshotsWithAction:(id)arg1 forScene:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)snapshotWhenBackgroundProcessingCompletes:(CDUnknownBlockType)arg1;

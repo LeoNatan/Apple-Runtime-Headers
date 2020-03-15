@@ -25,6 +25,7 @@
     NSMutableSet *_groupableTags;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *groupableTags; // @synthesize groupableTags=_groupableTags;
 @property(retain, nonatomic) NSMutableArray *articleGroups; // @synthesize articleGroups=_articleGroups;
 @property(retain, nonatomic) FCSolHeuristic *autoFavoriteHeuristic; // @synthesize autoFavoriteHeuristic=_autoFavoriteHeuristic;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSDictionary *articlesByTag; // @synthesize articlesByTag=_articlesByTag;
 @property(retain, nonatomic) NSSet *articleIds; // @synthesize articleIds=_articleIds;
 @property(retain, nonatomic) FCHeadlineClusteringRules *rules; // @synthesize rules=_rules;
-- (void).cxx_destruct;
 - (id)clusterHeadlinesByTopic:(id)arg1 subscribedTags:(id)arg2 personalizer:(id)arg3 rules:(id)arg4 translationProvider:(id)arg5 unpaidHeadlineIDs:(id)arg6;
 - (id)computeBestGrouping:(id)arg1 tagScores:(id)arg2 headlinesById:(id)arg3;
 - (void)computeGrouping:(id)arg1 topK:(double)arg2;

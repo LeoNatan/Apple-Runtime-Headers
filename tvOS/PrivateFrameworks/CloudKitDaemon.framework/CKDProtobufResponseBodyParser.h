@@ -17,12 +17,12 @@
     unsigned long long _curObjectLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isParsing; // @synthesize isParsing=_isParsing;
 @property(nonatomic) unsigned long long curObjectLength; // @synthesize curObjectLength=_curObjectLength;
 @property(retain, nonatomic) NSMutableData *tailParserData; // @synthesize tailParserData=_tailParserData;
 @property(nonatomic) _Bool parsingStandaloneMessage; // @synthesize parsingStandaloneMessage=_parsingStandaloneMessage;
 @property(nonatomic) Class messageClass; // @synthesize messageClass=_messageClass;
-- (void).cxx_destruct;
 - (void)finishWithCompletion:(CDUnknownBlockType)arg1;
 - (void)processData:(id)arg1;
 - (_Bool)_parseObjects:(_Bool)arg1;

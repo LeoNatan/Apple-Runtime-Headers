@@ -26,8 +26,8 @@
 }
 
 + (double)defaultCellHeight;
-@property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 - (void)setEnabled:(_Bool)arg1;
 @property(nonatomic) long long size;
 @property(retain, nonatomic) NSString *sizeString;

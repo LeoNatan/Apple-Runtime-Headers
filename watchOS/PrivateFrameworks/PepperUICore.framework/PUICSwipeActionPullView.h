@@ -23,6 +23,7 @@
     float _horizontalMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float horizontalMargin; // @synthesize horizontalMargin=_horizontalMargin;
 @property(nonatomic) float swipePercentage; // @synthesize swipePercentage=_swipePercentage;
 @property(nonatomic) float buttonCornerRadius; // @synthesize buttonCornerRadius=_buttonCornerRadius;
@@ -30,7 +31,6 @@
 @property(nonatomic) int layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic) __weak id <PUICSwipeActionPullViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (float)openWidthFittingSize:(struct CGSize)arg1;
 - (void)buttonTapped:(id)arg1;

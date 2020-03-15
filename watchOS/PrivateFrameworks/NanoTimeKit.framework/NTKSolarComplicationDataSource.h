@@ -6,11 +6,11 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-@class CLLocation;
+@class CLLocation, NSString;
 
 @interface NTKSolarComplicationDataSource : NTKComplicationDataSource
 {
-    struct NSString *_locationToken;
+    NSString *_locationToken;
     CLLocation *_lastLocation;
 }
 

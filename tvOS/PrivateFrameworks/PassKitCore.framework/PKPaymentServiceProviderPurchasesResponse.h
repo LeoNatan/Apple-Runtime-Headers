@@ -13,8 +13,8 @@
     NSArray *_purchases;
 }
 
-@property(readonly, copy, nonatomic) NSArray *purchases; // @synthesize purchases=_purchases;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *purchases; // @synthesize purchases=_purchases;
 - (id)initWithData:(id)arg1;
 
 @end

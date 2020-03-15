@@ -21,6 +21,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBHRootFolderSettings *rootFolderSettings; // @synthesize rootFolderSettings=_rootFolderSettings;
 @property(retain, nonatomic) SBHFolderSettings *folderSettings; // @synthesize folderSettings=_folderSettings;
 @property(retain, nonatomic) SBHIconSettings *iconSettings; // @synthesize iconSettings=_iconSettings;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool showWidgets; // @synthesize showWidgets=_showWidgets;
 @property(nonatomic) _Bool showPopOvers; // @synthesize showPopOvers=_showPopOvers;
 @property(nonatomic) _Bool usesMinimumViableHomeScreen; // @synthesize usesMinimumViableHomeScreen=_usesMinimumViableHomeScreen;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

@@ -18,13 +18,13 @@
     TVLTableElement *_summaryTable;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLTableElement *summaryTable; // @synthesize summaryTable=_summaryTable;
 @property(retain, nonatomic) TVLTableElement *inningsTable; // @synthesize inningsTable=_inningsTable;
 @property(retain, nonatomic) TVLTableElement *teamsTable; // @synthesize teamsTable=_teamsTable;
 @property(copy, nonatomic) NSString *rightLabel; // @synthesize rightLabel=_rightLabel;
 @property(copy, nonatomic) NSString *leftLabel; // @synthesize leftLabel=_leftLabel;
 @property(copy, nonatomic) NSArray *banners; // @synthesize banners=_banners;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

@@ -18,13 +18,13 @@
     NSString *_launchContextDesc;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *launchContextDesc; // @synthesize launchContextDesc=_launchContextDesc;
 @property(nonatomic) BOOL directionalControlsEnabled; // @synthesize directionalControlsEnabled=_directionalControlsEnabled;
 @property(nonatomic) BOOL requiredPairing; // @synthesize requiredPairing=_requiredPairing;
 @property(nonatomic) BOOL usedSiri; // @synthesize usedSiri=_usedSiri;
 @property(nonatomic) BOOL usedRTI; // @synthesize usedRTI=_usedRTI;
 @property(retain, nonatomic) NSDate *sessionStartTime; // @synthesize sessionStartTime=_sessionStartTime;
-- (void).cxx_destruct;
 
 @end
 

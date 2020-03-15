@@ -37,6 +37,7 @@
     NSArray *_bottomButtonsConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *bottomButtonsConstraints; // @synthesize bottomButtonsConstraints=_bottomButtonsConstraints;
 @property(retain) NSView *disclaimerSlice; // @synthesize disclaimerSlice=_disclaimerSlice;
 @property(retain) NSView *dataclassConfigurationSlice; // @synthesize dataclassConfigurationSlice=_dataclassConfigurationSlice;
@@ -58,7 +59,6 @@
 @property(readonly) NSWindow *sheet; // @synthesize sheet=_sheet;
 @property(readonly) NSWindow *window; // @synthesize window=_window;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (BOOL)handleInsecureConnectionForAccount:(id)arg1 withSaveError:(id)arg2;
 - (void)controlTextDidChange:(id)arg1;
 - (id)nibName;

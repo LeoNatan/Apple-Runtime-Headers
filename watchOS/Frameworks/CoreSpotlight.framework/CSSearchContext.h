@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) unsigned int markedTextStart; // @synthesize markedTextStart=_markedTextStart;
 @property(readonly) NSString *markedText; // @synthesize markedText=_markedText;
 @property(readonly) NSArray *preferredLanguages; // @synthesize preferredLanguages=_preferredLanguages;
@@ -30,7 +31,6 @@
 @property(readonly) unsigned int maxItemsCount; // @synthesize maxItemsCount=_maxItemsCount;
 @property(readonly) NSString *userQuery; // @synthesize userQuery=_userQuery;
 @property(readonly) unsigned int queryID; // @synthesize queryID=_queryID;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

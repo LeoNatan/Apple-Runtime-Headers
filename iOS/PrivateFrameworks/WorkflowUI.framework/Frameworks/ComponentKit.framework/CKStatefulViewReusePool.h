@@ -15,9 +15,9 @@
 }
 
 + (id)sharedPool;
-@property(nonatomic) _Bool pendingReusePoolEnabled; // @synthesize pendingReusePoolEnabled=_pendingReusePoolEnabled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool pendingReusePoolEnabled; // @synthesize pendingReusePoolEnabled=_pendingReusePoolEnabled;
 - (void)purgePendingPool;
 - (void)enqueueStatefulView:(id)arg1 forControllerClass:(Class)arg2 context:(id)arg3 mayRelinquishBlock:(CDUnknownBlockType)arg4;
 - (id)dequeueStatefulViewForControllerClass:(Class)arg1 preferredSuperview:(id)arg2 context:(id)arg3;

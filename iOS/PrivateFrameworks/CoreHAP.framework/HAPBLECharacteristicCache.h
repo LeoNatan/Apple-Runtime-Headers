@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HAPCharacteristicMetadata *characteristicMetadata; // @synthesize characteristicMetadata=_characteristicMetadata;
 @property(nonatomic) unsigned long long characteristicProperties; // @synthesize characteristicProperties=_characteristicProperties;
 @property(readonly, nonatomic) NSNumber *characteristicInstanceId; // @synthesize characteristicInstanceId=_characteristicInstanceId;
 @property(readonly, nonatomic) NSUUID *characteristicUUID; // @synthesize characteristicUUID=_characteristicUUID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

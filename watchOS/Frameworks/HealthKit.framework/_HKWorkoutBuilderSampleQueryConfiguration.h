@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *workoutBuilderIdentifier; // @synthesize workoutBuilderIdentifier=_workoutBuilderIdentifier;
 @property(nonatomic) _Bool needsHistoricalData; // @synthesize needsHistoricalData=_needsHistoricalData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

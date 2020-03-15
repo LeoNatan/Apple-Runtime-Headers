@@ -18,9 +18,9 @@
     id <SBFSpringLoadedInteractionEffectDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBFSpringLoadedInteractionEffectDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool useFastBlinkAnimation; // @synthesize useFastBlinkAnimation=_useFastBlinkAnimation;
-- (void).cxx_destruct;
 - (id)fastBlinkAnimation;
 - (void)interaction:(id)arg1 didChangeWithContext:(id)arg2;
 - (id)init;

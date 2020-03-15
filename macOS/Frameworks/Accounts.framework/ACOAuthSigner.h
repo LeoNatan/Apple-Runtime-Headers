@@ -17,8 +17,8 @@
     BOOL _shouldIncludeAppIdInRequest;
 }
 
-@property BOOL shouldIncludeAppIdInRequest; // @synthesize shouldIncludeAppIdInRequest=_shouldIncludeAppIdInRequest;
 - (void).cxx_destruct;
+@property BOOL shouldIncludeAppIdInRequest; // @synthesize shouldIncludeAppIdInRequest=_shouldIncludeAppIdInRequest;
 - (void)disconnectFromRemoteOAuthSigner;
 - (void)_connectToRemoteOAuthSignerUsingEndpoint:(id)arg1;
 - (id)signedURLRequestWithURLRequest:(id)arg1;

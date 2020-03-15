@@ -20,12 +20,12 @@
     NSMapTable *_playbackEventTrackers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *playbackEventTrackers; // @synthesize playbackEventTrackers=_playbackEventTrackers;
 @property(retain, nonatomic) id <SVVideoEventTracker> eventTracker; // @synthesize eventTracker=_eventTracker;
 @property(retain, nonatomic) id <SVVideoPlaybackEventTracking> playbackEventTracker; // @synthesize playbackEventTracker=_playbackEventTracker;
 @property(readonly, nonatomic) id <SVVideoEventTrackerProviding> videoEventTrackerProvider; // @synthesize videoEventTrackerProvider=_videoEventTrackerProvider;
 @property(readonly, nonatomic) id <SVVideoPlaybackEventTrackerFactory> playbackEventTrackerFactory; // @synthesize playbackEventTrackerFactory=_playbackEventTrackerFactory;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)initWithPlaybackEventTrackerFactory:(id)arg1 videoEventTrackerProvider:(id)arg2;
 

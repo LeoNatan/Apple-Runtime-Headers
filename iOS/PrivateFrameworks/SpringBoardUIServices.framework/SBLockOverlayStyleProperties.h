@@ -20,12 +20,12 @@
     _UIBackdropViewSettings *_settings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double blurRadius; // @synthesize blurRadius=_blurRadius;
 @property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) double tintAlpha; // @synthesize tintAlpha=_tintAlpha;
 @property(readonly, nonatomic) long long graphicsQuality; // @synthesize graphicsQuality=_quality;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)_stringForStyle;
 - (id)_stringForQuality;
 - (id)_settingsForStyle;

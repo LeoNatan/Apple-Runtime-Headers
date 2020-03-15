@@ -16,11 +16,11 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 @property(readonly) long long addressType; // @synthesize addressType=_addressType;
 @property(readonly, copy) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)initWithNameComponents:(id)arg1 address:(id)arg2 addressType:(long long)arg3;
 - (id)initWithName:(id)arg1 address:(id)arg2 addressType:(long long)arg3;
 

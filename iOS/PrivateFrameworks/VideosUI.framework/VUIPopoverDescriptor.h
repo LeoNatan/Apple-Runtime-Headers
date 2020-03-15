@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _popoverSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *popoverEntries; // @synthesize popoverEntries=_popoverEntries;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGSize popoverSize; // @synthesize popoverSize=_popoverSize;
 @property(readonly, nonatomic) IKViewElement *popoverElement; // @synthesize popoverElement=_popoverElement;
 @property(readonly, nonatomic) IKViewElement *buttonElement; // @synthesize buttonElement=_buttonElement;
-- (void).cxx_destruct;
 - (void)_populateWithElement:(id)arg1;
 - (id)_init;
 - (id)init;

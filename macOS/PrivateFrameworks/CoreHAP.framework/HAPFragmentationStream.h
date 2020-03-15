@@ -18,11 +18,11 @@
 }
 
 + (id)fragmentationPacketsForData:(id)arg1 maxLength:(unsigned long long)arg2 transactionIdentifier:(unsigned short)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *currentPacketTransactionIdentifier; // @synthesize currentPacketTransactionIdentifier=_currentPacketTransactionIdentifier;
 @property(readonly, nonatomic) NSMutableOrderedSet *pendingPackets; // @synthesize pendingPackets=_pendingPackets;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property __weak id <HAPFragmentationStreamDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)__removeAllPendingPacketsWithTransactionIdentifier:(unsigned short)arg1;
 - (void)__addFragmentationPacket:(id)arg1;
 - (id)__filteredPacketsWithTransactionIdentifier:(unsigned short)arg1;

@@ -15,8 +15,8 @@
 
 + (id)firstTimeAntimonyOnlyOnboardingSequence;
 + (id)firstTimeElectrocardiogramOnboardingSequence;
-@property(readonly, nonatomic) NSArray *pages; // @synthesize pages=_pages;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *pages; // @synthesize pages=_pages;
 - (id)_initWithPages:(id)arg1;
 
 @end

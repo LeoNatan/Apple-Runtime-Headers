@@ -17,8 +17,8 @@
 
 + (id)_unwrap:(id)arg1;
 + (_Bool)_dictionaryIsForSerializableObject:(id)arg1;
-@property(retain, nonatomic) NSMutableArray *stack; // @synthesize stack=_stack;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *stack; // @synthesize stack=_stack;
 - (id)_objectForDictionary:(id)arg1;
 - (id)_decodeObject:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;

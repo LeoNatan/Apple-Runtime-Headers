@@ -8,23 +8,20 @@
 
 #import <CPAnalytics/CPAnalyticsDestination-Protocol.h>
 
-@class CPAnalyticsEventMatcherSet, NSMutableDictionary;
+@class NSMutableArray;
 @protocol _DKKnowledgeSaving;
 
 @interface CPAnalyticsKnowledgeStoreDestination : NSObject <CPAnalyticsDestination>
 {
-    NSMutableDictionary *_eventNameToStorageConfig;
-    CPAnalyticsEventMatcherSet *_matcherSet;
+    NSMutableArray *_matchers;
     id <_DKKnowledgeSaving> _knowledgeStore;
 }
 
-@property(retain, nonatomic) id <_DKKnowledgeSaving> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
-@property(retain, nonatomic) CPAnalyticsEventMatcherSet *matcherSet; // @synthesize matcherSet=_matcherSet;
-@property(retain, nonatomic) NSMutableDictionary *eventNameToStorageConfig; // @synthesize eventNameToStorageConfig=_eventNameToStorageConfig;
 - (void).cxx_destruct;
-- (id)_getEventStreamForDatasetName:(id)arg1;
+@property(readonly, nonatomic) id <_DKKnowledgeSaving> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
+@property(readonly, nonatomic) NSMutableArray *matchers; // @synthesize matchers=_matchers;
 - (void)_addCoreDuetDatasetSample:(id)arg1 toDataset:(id)arg2;
-- (void)_configureTrackingForEvent:(id)arg1;
+- (id)_datasetSampleFromEvent:(id)arg1 andMatcher:(id)arg2;
 - (void)processEvent:(id)arg1;
 - (id)initWithConfig:(id)arg1 cpAnalyticsInstance:(id)arg2;
 

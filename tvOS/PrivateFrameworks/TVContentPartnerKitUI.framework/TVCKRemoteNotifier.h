@@ -17,11 +17,11 @@
     NSDistributedNotificationCenter *_distributedNotificationCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDistributedNotificationCenter *distributedNotificationCenter; // @synthesize distributedNotificationCenter=_distributedNotificationCenter;
 @property(copy, nonatomic) NSString *notificationObject; // @synthesize notificationObject=_notificationObject;
 @property(nonatomic) __weak id <TVCKRemoteNotifierDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *remoteNotificationName; // @synthesize remoteNotificationName=_remoteNotificationName;
-- (void).cxx_destruct;
 - (void)postNotificationWithUserInfo:(id)arg1;
 - (void)postNotification;
 - (void)_didReceiveDistributedNotification:(id)arg1;

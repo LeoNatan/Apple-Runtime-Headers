@@ -22,13 +22,13 @@
     NSString *_homeCountryCode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *homeCountryCode; // @synthesize homeCountryCode=_homeCountryCode;
 @property(readonly, copy, nonatomic) NSString *carrierName; // @synthesize carrierName=_carrierName;
 @property(readonly, copy, nonatomic) NSArray *disabledApplicationIDs; // @synthesize disabledApplicationIDs=_disabledApplicationIDs;
 @property(readonly, copy, nonatomic) NSString *customerServicePhoneNumber; // @synthesize customerServicePhoneNumber=_customerServicePhoneNumber;
 @property(readonly, nonatomic, getter=isReinitiatingActivationDisabled) _Bool reinitiatingActivationDisabled; // @synthesize reinitiatingActivationDisabled=_reinitiatingActivationDisabled;
 @property(readonly, nonatomic) _Bool LTEConnectionShows4G; // @synthesize LTEConnectionShows4G=_LTEConnectionShows4G;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

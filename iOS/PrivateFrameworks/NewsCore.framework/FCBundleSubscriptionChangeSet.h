@@ -14,9 +14,9 @@
     NSArray *_tagIDsRemoved;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tagIDsRemoved; // @synthesize tagIDsRemoved=_tagIDsRemoved;
 @property(copy, nonatomic) NSArray *tagIDsAdded; // @synthesize tagIDsAdded=_tagIDsAdded;
-- (void).cxx_destruct;
 - (id)initWithTagIDsAdded:(id)arg1 tagIDsRemoved:(id)arg2;
 
 @end

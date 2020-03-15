@@ -52,6 +52,7 @@
 + (id)replyPrefixWithSpacer:(BOOL)arg1;
 + (id)forwardedMessagePrefixWithSpacer:(BOOL)arg1;
 + (id)messageWithRFC822Data:(id)arg1 sanitizeData:(BOOL)arg2;
+- (void).cxx_destruct;
 @property double primitiveDateLastViewedInterval; // @synthesize primitiveDateLastViewedInterval=_primitiveDateLastViewedInterval;
 @property double primitiveDateReceivedInterval; // @synthesize primitiveDateReceivedInterval=_primitiveDateReceivedInterval;
 @property double primitiveDateSentInterval; // @synthesize primitiveDateSentInterval=_primitiveDateSentInterval;
@@ -59,7 +60,6 @@
 @property BOOL recipientType; // @synthesize recipientType=_recipientType;
 @property BOOL markedForOverwrite; // @synthesize markedForOverwrite=_markedForOverwrite;
 @property(readonly) long long conversationID; // @synthesize conversationID=_conversationID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ECAngleBracketIDHash *listIDHash;
 @property(readonly, copy, nonatomic) NSArray *references;
 @property(readonly, nonatomic) id <ECMessageHeaders> headers;

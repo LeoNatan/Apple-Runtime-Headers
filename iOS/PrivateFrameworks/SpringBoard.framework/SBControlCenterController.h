@@ -18,12 +18,13 @@
 #import <SpringBoard/SBGrabberTongueDelegate-Protocol.h>
 #import <SpringBoard/SBIdleTimerProviding-Protocol.h>
 #import <SpringBoard/SBReachabilityObserver-Protocol.h>
+#import <SpringBoard/SBSystemGestureRecognizerDelegate-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
 @class BSSimpleAssertion, CCUIModularControlCenterOverlayViewController, CCUIStatusBarStyleSnapshot, FBDisplayLayoutElement, NSArray, NSHashTable, NSMutableArray, NSSet, NSString, PTSingleTestRecipe, SBAppStatusBarSettingsAssertion, SBAsynchronousRenderingAssertion, SBBarSwipeAffordanceViewController, SBControlCenterSystemAgent, SBControlCenterWindow, SBGrabberTongue, UIApplicationSceneDeactivationAssertion, UIColor, UIPanGestureRecognizer, _UILegibilitySettings;
 @protocol BSInvalidatable, SBIdleTimerCoordinating, UICoordinateSpace;
 
-@interface SBControlCenterController : NSObject <CCUIModularControlCenterOverlayViewControllerDelegate, SBGrabberTongueDelegate, CSExternalBehaviorProviding, CSExternalPresentationProviding, CSExternalAppearanceProviding, UIGestureRecognizerDelegate, SBBarSwipeAffordanceObserver, SBBarSwipeAffordanceDelegate, SBFIdleTimerBehaviorProviding, CCUIHostStatusBarStyleProvider, SBReachabilityObserver, SBIdleTimerProviding, CSCoverSheetOverlaying>
+@interface SBControlCenterController : NSObject <CCUIModularControlCenterOverlayViewControllerDelegate, SBGrabberTongueDelegate, CSExternalBehaviorProviding, CSExternalPresentationProviding, CSExternalAppearanceProviding, UIGestureRecognizerDelegate, SBSystemGestureRecognizerDelegate, SBBarSwipeAffordanceObserver, SBBarSwipeAffordanceDelegate, SBFIdleTimerBehaviorProviding, CCUIHostStatusBarStyleProvider, SBReachabilityObserver, SBIdleTimerProviding, CSCoverSheetOverlaying>
 {
     id <SBIdleTimerCoordinating> _idleTimerCoordinator;
     SBControlCenterWindow *_window;
@@ -48,6 +49,7 @@
 + (id)sharedInstanceIfExists;
 + (id)sharedInstance;
 + (id)_sharedInstanceCreatingIfNeeded:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PTSingleTestRecipe *userInterfaceStyleTestRecipe; // @synthesize userInterfaceStyleTestRecipe=_userInterfaceStyleTestRecipe;
 @property(readonly, nonatomic) PTSingleTestRecipe *presentModuleTestRecipe; // @synthesize presentModuleTestRecipe=_presentModuleTestRecipe;
 @property(retain, nonatomic) id <BSInvalidatable> deferOrientationUpdatesAssertion; // @synthesize deferOrientationUpdatesAssertion=_deferOrientationUpdatesAssertion;
@@ -66,12 +68,12 @@
 @property(retain, nonatomic) CCUIModularControlCenterOverlayViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) SBControlCenterWindow *window; // @synthesize window=_window;
 @property(nonatomic) __weak id <SBIdleTimerCoordinating> idleTimerCoordinator; // @synthesize idleTimerCoordinator=_idleTimerCoordinator;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CCUIStatusBarStyleSnapshot *hostStatusBarStyle;
 - (_Bool)_isStatusBarHiddenIgnoringControlCenter;
 - (double)_homeAffordanceAnimationDelay;
 - (id)unhideAnimationSettingsForBarSwipeAffordanceView:(id)arg1;
 - (id)hideAnimationSettingsForBarSwipeAffordanceView:(id)arg1;
+- (unsigned long long)barSwipeAffordanceView:(id)arg1 systemGestureTypeForType:(long long)arg2;
 - (void)homeGesturePerformedForBarSwipeAffordanceView:(id)arg1;
 - (id)coordinatorRequestedIdleTimerBehavior:(id)arg1;
 @property(readonly, nonatomic) long long proximityDetectionMode;
@@ -96,6 +98,7 @@
 - (_Bool)allowShowTransitionSystemGesture;
 - (_Bool)allowShowTransition;
 - (void)_updateWindowLevel;
+- (double)_trailingStatusBarRegionWidth;
 - (_Bool)_isLocationXWithinTrailingStatusBarRegion:(double)arg1;
 - (struct CGPoint)_locationOfTouchInActiveInterfaceOrientation:(id)arg1 gestureRecognizer:(id)arg2;
 - (struct CGPoint)_presentGestureVelocityInView;
@@ -123,17 +126,17 @@
 - (double)reachabilityOffsetForControlCenterViewController:(id)arg1;
 - (void)controlCenterViewController:(id)arg1 wantsHostStatusBarHidden:(_Bool)arg2;
 - (id)customGestureRecognizerForGrabberTongue:(id)arg1;
-- (void)grabberTongueCanceledPulling:(id)arg1 withDistance:(double)arg2 andVelocity:(double)arg3;
-- (void)grabberTongueEndedPulling:(id)arg1 withDistance:(double)arg2 andVelocity:(double)arg3;
-- (void)grabberTongueUpdatedPulling:(id)arg1 withDistance:(double)arg2 andVelocity:(double)arg3;
-- (void)grabberTongueBeganPulling:(id)arg1 withDistance:(double)arg2 andVelocity:(double)arg3;
+- (void)grabberTongueCanceledPulling:(id)arg1 withDistance:(double)arg2 andVelocity:(double)arg3 andGesture:(id)arg4;
+- (void)grabberTongueEndedPulling:(id)arg1 withDistance:(double)arg2 andVelocity:(double)arg3 andGesture:(id)arg4;
+- (void)grabberTongueUpdatedPulling:(id)arg1 withDistance:(double)arg2 andVelocity:(double)arg3 andGesture:(id)arg4;
+- (void)grabberTongueBeganPulling:(id)arg1 withDistance:(double)arg2 andVelocity:(double)arg3 andGesture:(id)arg4;
 - (void)grabberTongueDidDismiss:(id)arg1;
 - (void)grabberTongueWillPresent:(id)arg1;
 - (_Bool)grabberTongue:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)grabberTongueHonorsAmbiguousActivationMargin:(id)arg1;
 - (_Bool)grabberTongue:(id)arg1 shouldAllowSecondSwipeWithEdgeLocation:(double)arg2;
 - (_Bool)grabberTongue:(id)arg1 shouldShowTongueOnFirstSwipeWithEdgeLocation:(double)arg2;
-- (_Bool)grabberTongueOrPullEnabled:(id)arg1;
+- (_Bool)grabberTongueOrPullEnabled:(id)arg1 forGestureRecognizer:(id)arg2;
 - (void)_handleStatusBarPullDownGesture:(id)arg1;
 - (void)_disableReachability;
 - (double)_reachabilityOffset;
@@ -158,6 +161,8 @@
 - (_Bool)isPresentedOrDismissing;
 @property(readonly, nonatomic, getter=isPresented) _Bool presented;
 - (id)acquireWindowLevelAssertionWithPriority:(long long)arg1 windowLevel:(double)arg2 reason:(id)arg3;
+- (id)viewForSystemGestureRecognizer:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

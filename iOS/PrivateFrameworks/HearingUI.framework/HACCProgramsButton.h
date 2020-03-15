@@ -22,12 +22,12 @@
     UILabel *_statusLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <HACCContentModuleDelegate> delegate; // @synthesize delegate;
 @property(nonatomic) unsigned long long module; // @synthesize module;
-- (void).cxx_destruct;
 - (id)accessibilityHint;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;

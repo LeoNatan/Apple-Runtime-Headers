@@ -20,6 +20,7 @@
     double _minDurationInSeconds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double minDurationInSeconds; // @synthesize minDurationInSeconds=_minDurationInSeconds;
 @property(readonly, nonatomic) double maxDurationInSeconds; // @synthesize maxDurationInSeconds=_maxDurationInSeconds;
 @property(readonly, nonatomic) NSArray *sortedSessions; // @synthesize sortedSessions=_sortedSessions;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSArray *sortedTitles; // @synthesize sortedTitles=_sortedTitles;
 @property(readonly, nonatomic) NSArray *sortedArtists; // @synthesize sortedArtists=_sortedArtists;
 @property(readonly, nonatomic) NSArray *sortedAlbums; // @synthesize sortedAlbums=_sortedAlbums;
-- (void).cxx_destruct;
 - (void)logStatistics;
 - (void)computeStatistics;
 - (id)initWithNowPlayingStreamSessions:(id)arg1;

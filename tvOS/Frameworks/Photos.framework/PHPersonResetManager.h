@@ -17,10 +17,10 @@
     unsigned long long _batchSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresPhotoAnalysisReset; // @synthesize requiresPhotoAnalysisReset=_requiresPhotoAnalysisReset;
 @property(nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
-- (void).cxx_destruct;
 - (void)resetPersons:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resetPersonsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;

@@ -35,12 +35,12 @@
 
 + (Class)layoutAttributesClass;
 + (Class)invalidationContextClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsFooterConnector; // @synthesize showsFooterConnector=_showsFooterConnector;
 @property(readonly, nonatomic) double connectorWidth; // @synthesize connectorWidth=_connectorWidth;
 @property(readonly, nonatomic) UIColor *connectorColor; // @synthesize connectorColor=_connectorColor;
 @property(nonatomic) _Bool disableItemAnimations; // @synthesize disableItemAnimations=_disableItemAnimations;
 @property(nonatomic) struct UIEdgeInsets sectionInset; // @synthesize sectionInset=_sectionInset;
-- (void).cxx_destruct;
 - (id)indexPathsToInsertForDecorationViewOfKind:(id)arg1;
 - (id)indexPathsToDeleteForDecorationViewOfKind:(id)arg1;
 - (id)indexPathsToInsertForSupplementaryViewOfKind:(id)arg1;

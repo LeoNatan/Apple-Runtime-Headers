@@ -27,6 +27,7 @@
 + (id)imageSourceForFileURL:(id)arg1;
 + (id)videoSourceForFileURL:(id)arg1;
 + (id)sourceForFileURL:(id)arg1 mediaType:(long long)arg2 imageDimensions:(struct CGSize)arg3;
+- (void).cxx_destruct;
 @property(retain) id hevcTrackFormatDescription; // @synthesize hevcTrackFormatDescription=_hevcTrackFormatDescription;
 @property long long locationMetadataStatus; // @synthesize locationMetadataStatus=_locationMetadataStatus;
 @property BOOL didCheckForLivePhotoPairingIdentifier; // @synthesize didCheckForLivePhotoPairingIdentifier=_didCheckForLivePhotoPairingIdentifier;
@@ -36,7 +37,6 @@
 @property BOOL preflighted; // @synthesize preflighted=_preflighted;
 @property struct CGSize imageDimensions; // @synthesize imageDimensions=_imageDimensions;
 @property(copy) NSString *renderOriginatingSignature; // @synthesize renderOriginatingSignature=_renderOriginatingSignature;
-- (void).cxx_destruct;
 - (void)markLocationMetadataAsCheckedWithStatus:(long long)arg1;
 - (long long)videoSourceLocationMetadataStatus;
 - (long long)imageSourceLocationMetadataStatus;

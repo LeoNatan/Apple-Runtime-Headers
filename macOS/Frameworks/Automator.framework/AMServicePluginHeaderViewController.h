@@ -17,10 +17,10 @@
 
 + (id)_imageNames;
 + (id)_imageMenuItems;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSPopUpButton *colorPopUpButton; // @synthesize colorPopUpButton=_colorPopUpButton;
 @property(retain, nonatomic) NSImage *_cachedCustomImage; // @synthesize _cachedCustomImage=__cachedCustomImage;
 @property(nonatomic) __weak NSPopUpButton *iconPopUpButton; // @synthesize iconPopUpButton=_iconPopUpButton;
-- (void).cxx_destruct;
 - (void)_updateImageMenu;
 - (void)_updateColorPopUpButton;
 - (void)_setupColorPopUpButtonIfNeeded;

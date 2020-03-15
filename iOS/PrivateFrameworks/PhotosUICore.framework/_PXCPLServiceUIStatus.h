@@ -25,6 +25,7 @@
     long long _serviceAction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long serviceAction; // @synthesize serviceAction=_serviceAction;
 @property(retain, nonatomic) NSString *actionConfirmationAlertButtonTitle; // @synthesize actionConfirmationAlertButtonTitle=_actionConfirmationAlertButtonTitle;
 @property(retain, nonatomic) NSString *actionConfirmationAlertSubtitle; // @synthesize actionConfirmationAlertSubtitle=_actionConfirmationAlertSubtitle;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *failureDescription; // @synthesize failureDescription=_failureDescription;
 @property(retain, nonatomic) NSString *stateDescription; // @synthesize stateDescription=_stateDescription;
 @property(retain, nonatomic) NSString *referencedItemsDescription; // @synthesize referencedItemsDescription=_referencedItemsDescription;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)init;
 

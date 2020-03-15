@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_valueLabels;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *valueLabels; // @synthesize valueLabels=_valueLabels;
 @property(retain, nonatomic) NSMutableArray *keyLabels; // @synthesize keyLabels=_keyLabels;
-- (void).cxx_destruct;
 - (void)updateWithTuples:(id)arg1 valueColumnIsTrailing:(_Bool)arg2 truncateKey:(_Bool)arg3;
 - (id)init;
 

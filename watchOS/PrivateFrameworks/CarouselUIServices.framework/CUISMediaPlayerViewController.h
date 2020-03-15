@@ -24,8 +24,8 @@
     id <CUISMediaPlayerViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CUISMediaPlayerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CUISMediaPlayerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)playerViewControllerShouldHandleDoneButtonTap:(id)arg1;
 - (void)_transitionToPlayerViewController;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

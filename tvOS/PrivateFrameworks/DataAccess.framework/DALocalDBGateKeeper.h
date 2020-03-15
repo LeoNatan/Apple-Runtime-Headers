@@ -27,6 +27,7 @@
 }
 
 + (id)sharedGateKeeper;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *unitTestHackRunLoopMode; // @synthesize unitTestHackRunLoopMode=_unitTestHackRunLoopMode;
 @property(retain, nonatomic) NSMutableSet *waiterIDsExpectingNotesLock; // @synthesize waiterIDsExpectingNotesLock=_waiterIDsExpectingNotesLock;
 @property(retain, nonatomic) NSMutableArray *notesWaiters; // @synthesize notesWaiters=_notesWaiters;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSMutableArray *contactsWaiters; // @synthesize contactsWaiters=_contactsWaiters;
 @property(retain, nonatomic) id <DADataclassLockWatcher> contactsLockHolder; // @synthesize contactsLockHolder=_contactsLockHolder;
 @property(nonatomic) _Bool claimedOwnershipOfContacts; // @synthesize claimedOwnershipOfContacts=_claimedOwnershipOfContacts;
-- (void).cxx_destruct;
 - (void)_setUnitTestHackRunLoopMode:(id)arg1;
 - (id)stateString;
 - (void)claimedOwnershipOfDataclasses:(long long)arg1;

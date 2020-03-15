@@ -57,6 +57,7 @@
     NSString *_localizedConsentText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isManagedByMDM; // @synthesize isManagedByMDM=_isManagedByMDM;
 @property(readonly, nonatomic) NSString *localizedConsentText; // @synthesize localizedConsentText=_localizedConsentText;
 @property(readonly, retain, nonatomic) NSArray *installationWarnings; // @synthesize installationWarnings=_installationWarnings;
@@ -95,7 +96,6 @@
 @property(readonly, retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, retain, nonatomic) NSString *profileDescription; // @synthesize profileDescription=_profileDescription;
-- (void).cxx_destruct;
 
 @end
 

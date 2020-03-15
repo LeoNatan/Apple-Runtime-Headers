@@ -16,11 +16,11 @@
     unsigned long long _identifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isAvailable; // @synthesize isAvailable=_isAvailable;
 @property(nonatomic) BOOL isSelected; // @synthesize isSelected=_isSelected;
 @property(nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

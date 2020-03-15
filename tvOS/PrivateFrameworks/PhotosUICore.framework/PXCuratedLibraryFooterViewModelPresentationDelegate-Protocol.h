@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class PXCuratedLibraryFooterViewModel;
+@class NSObject, PXCuratedLibraryFooterViewModel;
+@protocol PXAnonymousViewController;
 
 @protocol PXCuratedLibraryFooterViewModelPresentationDelegate
-- (struct NSObject *)presentingViewControllerForFooterViewModel:(PXCuratedLibraryFooterViewModel *)arg1;
+- (NSObject<PXAnonymousViewController> *)presentingViewControllerForFooterViewModel:(PXCuratedLibraryFooterViewModel *)arg1;
 @end
 

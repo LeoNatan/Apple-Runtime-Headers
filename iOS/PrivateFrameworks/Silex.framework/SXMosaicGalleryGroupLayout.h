@@ -18,10 +18,10 @@
     SXMosaicGalleryColumnLayout *_columnLayout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXMosaicGalleryColumnLayout *columnLayout; // @synthesize columnLayout=_columnLayout;
 @property(readonly, nonatomic) SXMosaicGalleryCluster *cluster; // @synthesize cluster=_cluster;
 @property(readonly, nonatomic) unsigned long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *columnRanges; // @synthesize columnRanges=_columnRanges;
 - (struct _NSRange)columnRangeForItem:(id)arg1;
 - (double)desiredHeightForItem:(id)arg1;

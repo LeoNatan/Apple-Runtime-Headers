@@ -21,10 +21,10 @@
     id <FBSServiceFacilityClientContext> _context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FBSServiceFacilityClientContext> context; // @synthesize context=_context;
 @property(readonly, copy, nonatomic) NSString *facilityID; // @synthesize facilityID=_facilityID;
 @property(readonly, nonatomic) BSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
-- (void).cxx_destruct;
 - (id)prettyProcessDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) id <BSXPCServiceConnectionMessaging> clientHandle_messageBuilder;

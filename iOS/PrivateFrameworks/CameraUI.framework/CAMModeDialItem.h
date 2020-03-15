@@ -18,13 +18,13 @@
     struct CGSize __textFrameSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setTextFrameSize:) struct CGSize _textFrameSize; // @synthesize _textFrameSize=__textFrameSize;
 @property(readonly, nonatomic) CAShapeLayer *_scalableTextLayer; // @synthesize _scalableTextLayer=__scalableTextLayer;
 @property(nonatomic) _Bool shouldShadowTitleText; // @synthesize shouldShadowTitleText=_shouldShadowTitleText;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
-- (void).cxx_destruct;
 - (struct CGPath *)_pathForAttributedString:(struct __CFAttributedString *)arg1;
 - (void)_updateScalableTextPathFromAttributedTitle;
 - (struct CGColor *)_textColor;

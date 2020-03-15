@@ -15,8 +15,8 @@
     EXSSyncEngine *_syncEngine;
 }
 
-@property(retain, nonatomic) EXSSyncEngine *syncEngine; // @synthesize syncEngine=_syncEngine;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EXSSyncEngine *syncEngine; // @synthesize syncEngine=_syncEngine;
 - (void)reevaluateAccounts;
 - (id)initWithSyncEngine:(id)arg1;
 

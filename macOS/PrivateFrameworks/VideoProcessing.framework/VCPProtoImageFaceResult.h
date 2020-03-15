@@ -26,6 +26,7 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float faceQuality; // @synthesize faceQuality=_faceQuality;
 @property(nonatomic) BOOL isCloseup; // @synthesize isCloseup=_isCloseup;
 @property(retain, nonatomic) VCPProtoBounds *bounds; // @synthesize bounds=_bounds;
@@ -33,7 +34,6 @@
 @property(nonatomic) int yaw; // @synthesize yaw=_yaw;
 @property(nonatomic) int mouthExpression; // @synthesize mouthExpression=_mouthExpression;
 @property(nonatomic) int eyeExpression; // @synthesize eyeExpression=_eyeExpression;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

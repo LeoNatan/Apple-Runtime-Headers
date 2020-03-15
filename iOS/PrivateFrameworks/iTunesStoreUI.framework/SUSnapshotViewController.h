@@ -16,11 +16,11 @@
     UIImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(nonatomic) long long originalOrientation; // @synthesize originalOrientation=_originalOrientation;
 @property(retain, nonatomic) UIViewController *originalViewController; // @synthesize originalViewController=_originalViewController;
-- (void).cxx_destruct;
 - (void)_stopActivityIndicator;
 - (void)_startActivityIndicator;
 - (id)_snapshotOfView:(id)arg1;

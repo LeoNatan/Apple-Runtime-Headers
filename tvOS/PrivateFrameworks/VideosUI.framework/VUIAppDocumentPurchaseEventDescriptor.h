@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_canonicalID;
 }
 
-@property(copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

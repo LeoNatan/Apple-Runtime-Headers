@@ -24,6 +24,7 @@
     HKUnit *_unit;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKUnit *unit; // @synthesize unit=_unit;
 @property(readonly, nonatomic) NSArray *bucketCounts; // @synthesize bucketCounts=_bucketCounts;
 @property(readonly, nonatomic) double bucketIncrement; // @synthesize bucketIncrement=_bucketIncrement;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) double minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)initWithDistributionData:(id)arg1 unit:(id)arg2;
 
 // Remaining properties

@@ -13,8 +13,8 @@
     NSString *_category;
 }
 
-@property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 - (void)focus:(id)arg1 result:(id)arg2;
 - (id)rollOverString;
 - (BOOL)supportsFocus;

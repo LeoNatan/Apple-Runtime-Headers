@@ -14,9 +14,9 @@
     NSArray *_groupContainerURLs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *groupContainerURLs; // @synthesize groupContainerURLs=_groupContainerURLs;
 @property(retain, nonatomic) LSPlugInKitProxy *pluginProxy; // @synthesize pluginProxy=_pluginProxy;
-- (void).cxx_destruct;
 - (_Bool)_sharesGroupContainerWithURL:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)initWithApplicationExtension:(id)arg1;

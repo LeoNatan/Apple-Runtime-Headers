@@ -17,8 +17,8 @@
     struct CGAffineTransform _transform;
 }
 
-@property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
 @property(readonly, nonatomic) struct CGRect bounds;
 @property(nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(readonly, copy, nonatomic) NSArray *items;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_peerID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *generationID; // @synthesize generationID=_generationID;
 @property(retain, nonatomic) NSString *peerID; // @synthesize peerID=_peerID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

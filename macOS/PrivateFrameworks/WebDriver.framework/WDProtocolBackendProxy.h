@@ -18,8 +18,8 @@
     CDUnknownBlockType _protocolEventHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType protocolEventHandler; // @synthesize protocolEventHandler=_protocolEventHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType protocolEventHandler; // @synthesize protocolEventHandler=_protocolEventHandler;
 - (void)cancelPendingResponsesWithErrorMessage:(id)arg1;
 - (void)sendCommand:(id)arg1 parameters:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)dispatchMessageToFrontend:(id)arg1;

@@ -19,9 +19,9 @@
     id <CATTransportDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CATTransportDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)delegateDidInvalidate;
 - (void)enqueueDelegateDidInterruptWithError:(id)arg1;
 - (void)enqueueDelegateCouldNotConnectWithError:(id)arg1;

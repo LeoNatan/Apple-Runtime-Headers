@@ -112,6 +112,7 @@
     NTPBWidgetEngagement *_widgetEngagement;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTPBArticleFeedback *articleFeedback; // @synthesize articleFeedback=_articleFeedback;
 @property(retain, nonatomic) NTPBAppleIdSignInResult *appleidSignInResult; // @synthesize appleidSignInResult=_appleidSignInResult;
 @property(retain, nonatomic) NTPBIssueExposure *issueExposure; // @synthesize issueExposure=_issueExposure;
@@ -210,7 +211,6 @@
 @property(retain, nonatomic) NTPBUserOnboardingResult *userOnboardingResult; // @synthesize userOnboardingResult=_userOnboardingResult;
 @property(retain, nonatomic) NTPBUserOnboardingResume *userOnboardingResume; // @synthesize userOnboardingResume=_userOnboardingResume;
 @property(retain, nonatomic) NTPBUserOnboardingBegin *userOnboardingBegin; // @synthesize userOnboardingBegin=_userOnboardingBegin;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -18,13 +18,13 @@
     NSString *_policyId;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *policyId; // @synthesize policyId=_policyId;
 @property(readonly, nonatomic) SiriCoreConnectionType *connectionType; // @synthesize connectionType=_connectionType;
 @property(readonly, nonatomic) _Bool wwanPreferred; // @synthesize wwanPreferred=_wwanPreferred;
 @property(readonly, copy, nonatomic) NSNumber *sendBufferSize; // @synthesize sendBufferSize=_sendBufferSize;
 @property(readonly, nonatomic) int interfaceIndex; // @synthesize interfaceIndex=_interfaceIndex;
 @property(readonly, nonatomic) NSURL *connectionURL; // @synthesize connectionURL=_connectionURL;
-- (void).cxx_destruct;
 - (id)initWithConnectionURL:(id)arg1 interfaceIndex:(int)arg2 sendBufferSize:(id)arg3 wwanPreferred:(_Bool)arg4 connectionType:(id)arg5 policyId:(id)arg6;
 
 @end

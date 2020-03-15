@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)viewControllerWithOrigin:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *foundInAppName; // @synthesize foundInAppName=_foundInAppName;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UILabel *subjectLabel; // @synthesize subjectLabel=_subjectLabel;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SGOrigin *origin; // @synthesize origin=_origin;
 @property(retain, nonatomic) CNPropertyCell *propertyCell; // @synthesize propertyCell=_propertyCell;
 @property(retain, nonatomic) CNPropertySuggestionAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)showSource:(id)arg1;
 - (void)ignore:(id)arg1;
 - (void)addToContact:(id)arg1;

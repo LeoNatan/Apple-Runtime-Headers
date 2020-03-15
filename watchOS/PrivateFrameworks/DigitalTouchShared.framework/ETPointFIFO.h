@@ -11,8 +11,8 @@
     ETPointFIFO *_nextFIFO;
 }
 
-@property(retain, nonatomic) ETPointFIFO *nextFIFO; // @synthesize nextFIFO=_nextFIFO;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ETPointFIFO *nextFIFO; // @synthesize nextFIFO=_nextFIFO;
 - (void)clear;
 - (void)flush;
 -     // Error parsing type: v16@0:4^8L12, name: addPoints:count:

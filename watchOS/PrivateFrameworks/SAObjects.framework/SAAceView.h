@@ -21,6 +21,7 @@
 @property(copy, nonatomic) NSString *speakableText;
 @property(copy, nonatomic) NSDictionary *speakableContextInfo;
 @property(copy, nonatomic) NSNumber *listenAfterSpeaking;
+@property(nonatomic) _Bool isTransient;
 @property(copy, nonatomic) NSNumber *deferredRendering;
 @property(retain, nonatomic) id <SAAceSerializable> context;
 @property(nonatomic) _Bool canUseServerTTS;

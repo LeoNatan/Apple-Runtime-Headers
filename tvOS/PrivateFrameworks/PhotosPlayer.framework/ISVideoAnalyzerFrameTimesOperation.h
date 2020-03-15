@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _resultHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, nonatomic) int trackID; // @synthesize trackID=_trackID;
 @property(readonly, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_handleAssetDidLoadValues;
 - (void)main;
 - (id)initWithAsset:(id)arg1 trackID:(int)arg2 resultHandler:(CDUnknownBlockType)arg3;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     HKRoundedHeaderView *_headerView;
 }
 
-@property(retain, nonatomic) HKRoundedHeaderView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKRoundedHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(copy, nonatomic) NSString *title;
 @property(retain, nonatomic) UIImage *image;
 @property(retain, nonatomic) HKGradient *gradient;

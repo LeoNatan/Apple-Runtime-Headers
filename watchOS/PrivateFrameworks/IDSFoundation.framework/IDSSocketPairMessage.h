@@ -24,12 +24,12 @@
 + (id)messageWithData:(id)arg1;
 + (unsigned int)dataLengthFromHeaderData:(id)arg1;
 + (unsigned int)headerDataSize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) _Bool useDynamicServiceName; // @synthesize useDynamicServiceName=_useDynamicServiceName;
 @property(retain, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(retain, nonatomic) id <NSObject> context; // @synthesize context=_context;
 @property(readonly, nonatomic) unsigned char command; // @synthesize command=_command;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *underlyingData; // @synthesize underlyingData=_underlyingData;
 - (id)_existingUnderlyingData;
 @property(readonly, nonatomic) unsigned int underlyingDataLength;

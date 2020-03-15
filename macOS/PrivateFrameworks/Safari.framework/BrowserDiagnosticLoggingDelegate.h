@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)_webView:(id)arg1 logDiagnosticMessage:(id)arg2 description:(id)arg3 valueDictionary:(id)arg4;
 - (void)_webView:(id)arg1 logDiagnosticMessageWithEnhancedPrivacy:(id)arg2 description:(id)arg3;
 - (void)_webView:(id)arg1 logDiagnosticMessageWithValue:(id)arg2 description:(id)arg3 value:(id)arg4;
 - (void)_webView:(id)arg1 logDiagnosticMessageWithResult:(id)arg2 description:(id)arg3 result:(long long)arg4;

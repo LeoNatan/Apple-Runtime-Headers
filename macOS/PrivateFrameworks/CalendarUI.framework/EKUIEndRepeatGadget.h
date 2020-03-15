@@ -22,13 +22,13 @@
 
 + (id)interestedChangeKeys;
 + (BOOL)shouldShowAfter;
+- (void).cxx_destruct;
 @property(retain) NSNumber *selectedWidth; // @synthesize selectedWidth=_selectedWidth;
 @property(retain) NSArray *endConstraints; // @synthesize endConstraints=_endConstraints;
 @property(retain) NSTextField *numberOfTimesLabel; // @synthesize numberOfTimesLabel=_numberOfTimesLabel;
 @property(retain) CalUIResizingTextField *numberOfTimesField; // @synthesize numberOfTimesField=_numberOfTimesField;
 @property(retain) EKUIPopUpButton *endRepeatTypePicker; // @synthesize endRepeatTypePicker=_endRepeatTypePicker;
 @property(retain) NSView *endRepeatContainerView; // @synthesize endRepeatContainerView=_endRepeatContainerView;
-- (void).cxx_destruct;
 - (double)pixelsBetweenLabelAndControl;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;

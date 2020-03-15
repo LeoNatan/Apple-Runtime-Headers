@@ -28,6 +28,7 @@
     NSArray *_localPackageSpecifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *localPackageSpecifiers; // @synthesize localPackageSpecifiers=_localPackageSpecifiers;
 @property(copy) CDUnknownBlockType downloadProgressHandler; // @synthesize downloadProgressHandler=_downloadProgressHandler;
 @property(retain) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
@@ -43,7 +44,6 @@
 @property(retain) NSDictionary *macOSInstallationAuxInfo; // @synthesize macOSInstallationAuxInfo=_macOSInstallationAuxInfo;
 @property(retain) NSString *productBridgeVersion; // @synthesize productBridgeVersion=_productBridgeVersion;
 @property(retain) MSUProduct *product; // @synthesize product=_product;
-- (void).cxx_destruct;
 - (void)_tryAlternateSourceInvalidatingPackageReference:(id)arg1 reason:(int)arg2 downloader:(id)arg3 error:(id)arg4;
 - (id)_destinationURLForPackageReference:(id)arg1 destinationDirectoryURL:(id)arg2;
 - (BOOL)_queueRequiredPackagesReferencesWithDownloader:(id)arg1 destinationDirectoryURL:(id)arg2;

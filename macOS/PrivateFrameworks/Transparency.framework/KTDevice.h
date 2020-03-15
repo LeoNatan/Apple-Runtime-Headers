@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *clientDatas; // @synthesize clientDatas=_clientDatas;
 @property(retain) NSData *deviceIDVRFOutput; // @synthesize deviceIDVRFOutput=_deviceIDVRFOutput;
 @property(retain) NSData *deviceID; // @synthesize deviceID=_deviceID;
-- (void).cxx_destruct;
 - (BOOL)updateWithMutation:(id)arg1 error:(id *)arg2;
 - (void)markClientDatasForAppVersion:(unsigned long long)arg1 mutationMs:(unsigned long long)arg2;
 - (void)addClientDatasObject:(id)arg1;

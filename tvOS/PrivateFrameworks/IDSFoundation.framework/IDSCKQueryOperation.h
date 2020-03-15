@@ -14,9 +14,9 @@
 
 + (id)alloc;
 + (Class)__class;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType recordFetchedBlock; // @synthesize recordFetchedBlock=_recordFetchedBlock;
-- (void).cxx_destruct;
 
 @end
 

@@ -25,13 +25,13 @@
 + (id)preservedVideoViewsForPlayer:(id)arg1 identifier:(id)arg2;
 + (void)preserveVideoViewForReuse:(id)arg1 identifier:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *stillImageView; // @synthesize stillImageView=_stillImageView;
 @property(retain, nonatomic) TVPPlayerLayerView *playerLayerView; // @synthesize playerLayerView=_playerLayerView;
 @property(nonatomic, getter=isReadyForDisplay) _Bool readyForDisplay; // @synthesize readyForDisplay=_readyForDisplay;
 @property(nonatomic) _Bool isPrimarySubtitleDisplayer; // @synthesize isPrimarySubtitleDisplayer=_isPrimarySubtitleDisplayer;
 @property(readonly, nonatomic) UILabel *debugLabel; // @synthesize debugLabel=_debugLabel;
 @property(retain, nonatomic) NSObject<TVPAVFPlayback> *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_playerStillImageDidChange:(id)arg1;
 - (id)AVPlayer;
 - (void)setAVPlayer:(id)arg1;

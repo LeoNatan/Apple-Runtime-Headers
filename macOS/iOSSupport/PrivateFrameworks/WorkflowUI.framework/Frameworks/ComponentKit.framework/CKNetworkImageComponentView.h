@@ -15,8 +15,8 @@
     CKNetworkImageSpecifier *_specifier;
 }
 
-@property(retain, nonatomic) CKNetworkImageSpecifier *specifier; // @synthesize specifier=_specifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKNetworkImageSpecifier *specifier; // @synthesize specifier=_specifier;
 - (void)layoutSubviews;
 - (void)updateContentsRect;
 - (void)_startDownloadIfNotInReusePool;

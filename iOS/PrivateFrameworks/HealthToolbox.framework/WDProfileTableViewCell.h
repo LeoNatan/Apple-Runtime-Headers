@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 
 + (double)notEditingRightEdgeMargin;
 + (double)editingRightEdgeMargin;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextField *displayValueTextField; // @synthesize displayValueTextField=_displayValueTextField;
 @property(retain, nonatomic) UIView *inputAccessoryView; // @synthesize inputAccessoryView=_inputAccessoryView;
 @property(retain, nonatomic) UIView *inputView; // @synthesize inputView=_inputView;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *placeholderValue; // @synthesize placeholderValue=_placeholderValue;
 @property(retain, nonatomic) NSString *displayValue; // @synthesize displayValue=_displayValue;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (void)_updateClearButtonState;
 - (void)removeClearButtonTarget:(id)arg1 action:(SEL)arg2;
 - (void)addClearButtonTarget:(id)arg1 action:(SEL)arg2;

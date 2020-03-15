@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     NSTimer *_alertRetryTimer;
 }
 
-@property(nonatomic) __weak id <MNTrafficIncidentAlertUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MNTrafficIncidentAlertUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_alertRetryTimerFired:(id)arg1;
 - (void)_activateAlertForLocation:(id)arg1;
 - (void)_updateAlertDistanceAndETA:(id)arg1;

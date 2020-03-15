@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSArray *_qualityCriteriaList;
 }
 
+- (void).cxx_destruct;
 @property float naturalClusteringDistanceThreshold; // @synthesize naturalClusteringDistanceThreshold=_naturalClusteringDistanceThreshold;
 @property int numberOfKeypointsToConsider; // @synthesize numberOfKeypointsToConsider=_numberOfKeypointsToConsider;
 @property float inliersRatioThreshold; // @synthesize inliersRatioThreshold=_inliersRatioThreshold;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property int clusterSplitDistanceType; // @synthesize clusterSplitDistanceType=_clusterSplitDistanceType;
 @property int timerMode; // @synthesize timerMode=_timerMode;
 @property int debugMode; // @synthesize debugMode=_debugMode;
-- (void).cxx_destruct;
 
 @end
 

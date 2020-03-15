@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 + (id)itemDeleteSection:(long long)arg1 deleteRange:(struct _NSRange)arg2;
 + (id)itemInsertItemAtIndexPath:(id)arg1 index:(long long)arg2;
 + (id)itemInsertSection:(long long)arg1 insertRange:(struct _NSRange)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange moveToRange; // @synthesize moveToRange=_moveToRange;
 @property(nonatomic) struct _NSRange moveFromRange; // @synthesize moveFromRange=_moveFromRange;
 @property(nonatomic) long long moveToSection; // @synthesize moveToSection=_moveToSection;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isDelete; // @synthesize isDelete=_isDelete;
 @property(nonatomic) _Bool isInsert; // @synthesize isInsert=_isInsert;
 @property(nonatomic) _Bool isSectionUpdate; // @synthesize isSectionUpdate=_isSectionUpdate;
-- (void).cxx_destruct;
 - (id)reverseUpdateItem;
 - (id)description;
 

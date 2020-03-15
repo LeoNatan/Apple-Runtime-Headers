@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int switchCount; // @synthesize switchCount=_switchCount;
 @property(retain, nonatomic) NSString *switchToInterfaceName; // @synthesize switchToInterfaceName=_switchToInterfaceName;
 @property(retain, nonatomic) NSString *switchFromInterfaceName; // @synthesize switchFromInterfaceName=_switchFromInterfaceName;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

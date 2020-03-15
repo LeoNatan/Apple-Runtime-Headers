@@ -11,8 +11,8 @@
     CDUnknownBlockType _userInfoCreationBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType userInfoCreationBlock; // @synthesize userInfoCreationBlock=_userInfoCreationBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType userInfoCreationBlock; // @synthesize userInfoCreationBlock=_userInfoCreationBlock;
 - (id)_combineBasalStatistics:(id)arg1 withTotalStatistics:(id)arg2 filterInterval:(id)arg3;
 - (id)queriesForStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 

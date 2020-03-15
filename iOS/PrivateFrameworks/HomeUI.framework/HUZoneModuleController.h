@@ -17,10 +17,10 @@
     HUEditableTextCell *_createNewZoneCell;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HUEditableTextCell *createNewZoneCell; // @synthesize createNewZoneCell=_createNewZoneCell;
 @property(nonatomic) __weak HUTitleValueCell *currentZoneItemCell; // @synthesize currentZoneItemCell=_currentZoneItemCell;
 @property(retain, nonatomic) HMRoom *room; // @synthesize room=_room;
-- (void).cxx_destruct;
 - (_Bool)textFieldShouldEndEditing:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;

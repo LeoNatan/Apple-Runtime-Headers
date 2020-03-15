@@ -17,9 +17,9 @@
 }
 
 + (Class)verificationChannelsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *verificationChannels; // @synthesize verificationChannels=_verificationChannels;
 @property(retain, nonatomic) NPKProtoStandalonePaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

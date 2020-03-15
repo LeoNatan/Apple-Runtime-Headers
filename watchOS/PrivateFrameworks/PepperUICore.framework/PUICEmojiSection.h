@@ -31,13 +31,13 @@
 + (Class)headerClass;
 + (id)cellReuseIdentifier;
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUICEmojiSectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int recentCount; // @synthesize recentCount=_recentCount;
 @property(nonatomic) _Bool showStickers; // @synthesize showStickers=_showStickers;
 @property(nonatomic) _Bool showHeader; // @synthesize showHeader=_showHeader;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(readonly, copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
-- (void).cxx_destruct;
 - (id)_thumbnailForRecentItem:(id)arg1 withMaxPixelDimension:(float)arg2;
 - (void)_updateWithRecents:(id)arg1;
 - (void)_loadRecents;

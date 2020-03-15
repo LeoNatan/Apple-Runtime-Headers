@@ -15,7 +15,7 @@
     OBPrivacyCombinedController *_combinedController;
     NSString *_displayLanguage;
     NSWindow *_presentingWindow;
-    struct NSWindowController *_presentedController;
+    NSWindowController *_presentedController;
     NSArray *_presentedIdentifiers;
 }
 
@@ -25,6 +25,7 @@
 + (id)presenterForPrivacySplashWithIdentifer:(id)arg1;
 + (id)presenterForPrivacySplashWithIdentifier:(id)arg1;
 + (id)presenterForPrivacySplashWithBundle:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *presentedIdentifiers; // @synthesize presentedIdentifiers=_presentedIdentifiers;
 @property(retain) NSWindowController *presentedController; // @synthesize presentedController=_presentedController;
 @property __weak NSWindow *presentingWindow; // @synthesize presentingWindow=_presentingWindow;
@@ -32,7 +33,6 @@
 @property(retain) OBPrivacyCombinedController *combinedController; // @synthesize combinedController=_combinedController;
 @property(retain) OBPrivacySplashController *splashController; // @synthesize splashController=_splashController;
 @property(copy) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
-- (void).cxx_destruct;
 - (void)present;
 - (void)_presenterDidDismiss;
 

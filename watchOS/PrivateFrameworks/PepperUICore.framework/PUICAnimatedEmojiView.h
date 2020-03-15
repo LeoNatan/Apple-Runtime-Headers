@@ -37,13 +37,13 @@
     struct CGPoint _animatedImageOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHoldingActivation) _Bool holdActivation; // @synthesize holdActivation=_holdActivation;
 @property(copy, nonatomic) CDUnknownBlockType didSelectAnimatedEmojiType; // @synthesize didSelectAnimatedEmojiType=_didSelectAnimatedEmojiType;
 @property(nonatomic) struct CGPoint animatedImageOffset; // @synthesize animatedImageOffset=_animatedImageOffset;
 @property(nonatomic) struct CGSize preferredAnimatedImageSize; // @synthesize preferredAnimatedImageSize=_preferredAnimatedImageSize;
 @property(nonatomic) struct CGSize preferredContentSize; // @synthesize preferredContentSize=_preferredContentSize;
 @property(retain, nonatomic) PUICAnimatedEmoji *animatedEmoji; // @synthesize animatedEmoji=_animatedEmoji;
-- (void).cxx_destruct;
 - (void)selectEmojiForTesting;
 - (_Bool)_reallyBecomeFirstResponder;
 - (_Bool)canBecomeFirstResponder;

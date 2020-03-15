@@ -16,8 +16,8 @@
     id <ASVAROnboardingUIUpdateManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ASVAROnboardingUIUpdateManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ASVAROnboardingUIUpdateManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)drawWithTimeDelta:(double)arg1;
 - (void)update;
 - (void)stop;

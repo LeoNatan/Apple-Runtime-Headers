@@ -43,6 +43,7 @@
     struct __AMLibraryViewFlags _libraryViewFlags;
 }
 
+- (void).cxx_destruct;
 @property struct __AMLibraryViewFlags libraryViewFlags; // @synthesize libraryViewFlags=_libraryViewFlags;
 @property(retain) AMDescriptionViewController *variableDescriptionViewController; // @synthesize variableDescriptionViewController=_variableDescriptionViewController;
 @property(retain) AMDescriptionViewController *actionDescriptionViewController; // @synthesize actionDescriptionViewController=_actionDescriptionViewController;
@@ -71,7 +72,6 @@
 @property __weak AMGradientBackgroundView *_headerBackgroundView; // @synthesize _headerBackgroundView;
 @property(copy) NSArray *draggedGroups; // @synthesize draggedGroups=_draggedGroups;
 @property(copy) NSArray *draggedAssets; // @synthesize draggedAssets=_draggedAssets;
-- (void).cxx_destruct;
 - (void)restoreStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;

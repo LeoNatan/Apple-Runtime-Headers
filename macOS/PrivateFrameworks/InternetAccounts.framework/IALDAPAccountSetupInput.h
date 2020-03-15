@@ -18,13 +18,13 @@
     BOOL _authenticate;
 }
 
+- (void).cxx_destruct;
 @property BOOL authenticate; // @synthesize authenticate=_authenticate;
 @property(retain) NSString *searchBase; // @synthesize searchBase=_searchBase;
 @property(retain) NSString *scope; // @synthesize scope=_scope;
 @property long long port; // @synthesize port=_port;
 @property(retain) NSNumber *useSSL; // @synthesize useSSL=_useSSL;
 @property(retain) NSString *serverAddress; // @synthesize serverAddress=_serverAddress;
-- (void).cxx_destruct;
 
 @end
 

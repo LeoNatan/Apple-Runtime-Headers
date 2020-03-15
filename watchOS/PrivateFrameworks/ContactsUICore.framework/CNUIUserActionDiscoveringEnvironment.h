@@ -26,6 +26,7 @@
     id <CNUIUserActionTargetDiscovering> _targetDiscoveringHelper;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNUIUserActionTargetDiscovering> targetDiscoveringHelper; // @synthesize targetDiscoveringHelper=_targetDiscoveringHelper;
 @property(readonly, nonatomic) id <CNUIRTTUtilities> ttyUtilities; // @synthesize ttyUtilities=_ttyUtilities;
 @property(readonly, nonatomic) id <CNUIDefaultUserActionFetcher> defaultUserActionFetcher; // @synthesize defaultUserActionFetcher=_defaultUserActionFetcher;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) CNUIIDSContactPropertyResolver *idsContactPropertyResolver; // @synthesize idsContactPropertyResolver=_idsContactPropertyResolver;
 @property(readonly, nonatomic) id <CNTUCallProviderManager> callProviderManager; // @synthesize callProviderManager=_callProviderManager;
 @property(readonly, nonatomic) id <CNLSApplicationWorkspace> applicationWorkspace; // @synthesize applicationWorkspace=_applicationWorkspace;
-- (void).cxx_destruct;
 - (id)nts_lazyContactStore;
 @property(readonly, nonatomic) CNContactStore *contactStore;
 - (id)copyWithContactStore:(id)arg1;

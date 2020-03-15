@@ -33,7 +33,6 @@
 @property unsigned long long startTime; // @synthesize startTime=_startTime;
 @property double duration; // @synthesize duration=_duration;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)enumerateFramesWithBlock:(CDUnknownBlockType)arg1;
 - (void)logToSoftAssertWithID:(id)arg1;
 - (void)fileRadarWithLog:(id)arg1;
@@ -46,6 +45,7 @@
 - (void)addChildFrame:(id)arg1;
 - (id)createReport;
 - (void)_addToReport:(id)arg1 rootDuration:(double)arg2 backtraceIdentifiers:(id)arg3 backtracesForIdentifiers:(id)arg4;
+- (void)dealloc;
 
 @end
 

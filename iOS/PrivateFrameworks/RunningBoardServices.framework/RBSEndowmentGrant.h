@@ -11,14 +11,14 @@
 
 @interface RBSEndowmentGrant : RBSGrant
 {
-    struct NSString *_endowmentNamespace;
+    NSString *_endowmentNamespace;
     NSObject<OS_xpc_object> *_encodedEndowment;
 }
 
-+ (id)grantWithNamespace:(id)arg1 endowment:(struct NSObject *)arg2;
++ (id)grantWithNamespace:(id)arg1 endowment:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *encodedEndowment; // @synthesize encodedEndowment=_encodedEndowment;
 @property(readonly, copy, nonatomic) NSString *endowmentNamespace; // @synthesize endowmentNamespace=_endowmentNamespace;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -29,6 +29,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)actionResponseForResponse:(id)arg1 bulletinRequest:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) BSServiceConnectionEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(copy, nonatomic) NSString *originID; // @synthesize originID=_originID;
 @property(copy, nonatomic) NSDictionary *context; // @synthesize context=_context;
@@ -42,7 +43,6 @@
 @property(nonatomic) long long actionBehavior; // @synthesize actionBehavior=_actionBehavior;
 @property(nonatomic) unsigned long long actionActivationMode; // @synthesize actionActivationMode=_actionActivationMode;
 @property(nonatomic) long long actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

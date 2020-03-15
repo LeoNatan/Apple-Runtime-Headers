@@ -18,11 +18,11 @@
     NSArray *__allowedModes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setAllowedModes:) NSArray *_allowedModes; // @synthesize _allowedModes=__allowedModes;
 @property(readonly, nonatomic) UIImageView *_glyphView; // @synthesize _glyphView=__glyphView;
 @property(nonatomic) _Bool allowsHDROn; // @synthesize allowsHDROn=_allowsHDROn;
 @property(nonatomic) _Bool allowsAutomaticHDR; // @synthesize allowsAutomaticHDR=_allowsAutomaticHDR;
-- (void).cxx_destruct;
 - (id)imageForAccessibilityHUD;
 - (void)reloadData;
 - (_Bool)shouldAllowExpansion;

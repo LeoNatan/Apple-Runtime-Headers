@@ -16,10 +16,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long ContactSource; // @synthesize ContactSource=_ContactSource;
 @property(copy, nonatomic) NSString *DisplayName; // @synthesize DisplayName=_DisplayName;
 @property(copy, nonatomic) NSString *FileAs; // @synthesize FileAs=_FileAs;
-- (void).cxx_destruct;
 
 @end
 

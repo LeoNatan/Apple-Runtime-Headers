@@ -20,10 +20,10 @@
 }
 
 + (id)connectToIMDaemonController;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *intentIdentifier; // @synthesize intentIdentifier=_intentIdentifier;
 @property(retain, nonatomic) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
 @property(retain, nonatomic) id <IMAssistantMessageHandlerDataSource> messageHandlerDataSource; // @synthesize messageHandlerDataSource=_messageHandlerDataSource;
-- (void).cxx_destruct;
 - (void)forceTriggerResumeNotification;
 - (id)personFromSPIHandle:(id)arg1 contact:(id)arg2;
 - (id)personFromSPIHandle:(id)arg1;

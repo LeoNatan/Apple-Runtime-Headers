@@ -14,8 +14,8 @@
     id <AXCameraTorchManager> _synchronousManager;
 }
 
-@property(readonly, nonatomic) id <AXCameraTorchManager> synchronousTorchManager; // @synthesize synchronousTorchManager=_synchronousManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <AXCameraTorchManager> synchronousTorchManager; // @synthesize synchronousTorchManager=_synchronousManager;
 - (void)turnTorchOffWithCompletion:(CDUnknownBlockType)arg1;
 - (void)turnTorchOnWithCompletion:(CDUnknownBlockType)arg1;
 - (void)closeTorchDeviceWithCompletion:(CDUnknownBlockType)arg1;

@@ -19,12 +19,12 @@
     unsigned int _transactionAction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int transactionAction; // @synthesize transactionAction=_transactionAction;
 @property(nonatomic) __weak id <NPKPeerPaymentTransactionDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *actionInProgress; // @synthesize actionInProgress=_actionInProgress;
 @property(copy, nonatomic) NSArray *availableActions; // @synthesize availableActions=_availableActions;
 @property(retain, nonatomic) id <NPKPeerPaymentTransactionSummary> transactionSummary; // @synthesize transactionSummary=_transactionSummary;
-- (void).cxx_destruct;
 - (unsigned int)_actionWithTransaction:(id)arg1;
 - (id)_currencyAmountWithAmount:(id)arg1 currencyCode:(id)arg2;
 - (id)_amountDescriptionsWithCurrencyAmount:(id)arg1;

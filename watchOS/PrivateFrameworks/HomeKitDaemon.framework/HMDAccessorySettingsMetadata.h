@@ -15,8 +15,8 @@
     HMDAccessorySettingGroupMetadata *_rootGroup;
 }
 
-@property(readonly) HMDAccessorySettingGroupMetadata *rootGroup; // @synthesize rootGroup=_rootGroup;
 - (void).cxx_destruct;
+@property(readonly) HMDAccessorySettingGroupMetadata *rootGroup; // @synthesize rootGroup=_rootGroup;
 @property(readonly, copy) NSString *propertyDescription;
 - (id)initWithURL:(id)arg1;
 - (id)init;

@@ -20,12 +20,12 @@
     UIColor *_tintColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) unsigned long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) id <HFIconDescriptor> decorationIconDescriptor; // @synthesize decorationIconDescriptor=_decorationIconDescriptor;
 @property(retain, nonatomic) id <HFDynamicFormattingValue> supplementaryFormattedValue; // @synthesize supplementaryFormattedValue=_supplementaryFormattedValue;
 @property(nonatomic) unsigned long long controlSize; // @synthesize controlSize=_controlSize;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) _Bool supportsTouchContinuation;
 @property(readonly, nonatomic) double gestureDragCoefficient;

@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDAutocompleteEntry, GEOPDRecentRouteInfo, GEOPDRetainedSearchMetadata, GEOPDSearchFilter, GEOPDSearchLocationParameters, GEOPDSearchStructureIntentRequestType, GEOPDViewportInfo, NSData, NSString, PBDataReader, PBUnknownFields;
+@class GEOPDAutocompleteEntry, GEOPDRecentRouteInfo, GEOPDRetainedSearchMetadata, GEOPDSSearchFilter, GEOPDSSearchLocationParameters, GEOPDSSearchStructureIntentRequestType, GEOPDViewportInfo, NSData, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDSearchParameters : PBCodable <NSCopying>
@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     PBUnknownFields *_unknownFields;
     GEOPDRecentRouteInfo *_recentRouteInfo;
     GEOPDRetainedSearchMetadata *_retainedSearch;
-    GEOPDSearchFilter *_searchFilter;
-    GEOPDSearchLocationParameters *_searchLocationParameters;
+    GEOPDSSearchFilter *_searchFilter;
+    GEOPDSSearchLocationParameters *_searchLocationParameters;
     NSString *_searchString;
-    GEOPDSearchStructureIntentRequestType *_searchStructureIntentType;
+    GEOPDSSearchStructureIntentRequestType *_searchStructureIntentType;
     NSData *_suggestionEntryMetadata;
     GEOPDAutocompleteEntry *_suggestionEntry;
     NSData *_suggestionMetadata;
@@ -101,16 +101,16 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL supportDirectionIntentSearch;
 @property(nonatomic) BOOL hasSupportDymSuggestion;
 @property(nonatomic) BOOL supportDymSuggestion;
-@property(retain, nonatomic) GEOPDSearchFilter *searchFilter;
+@property(retain, nonatomic) GEOPDSSearchFilter *searchFilter;
 @property(readonly, nonatomic) BOOL hasSearchFilter;
 - (void)_readSearchFilter;
 @property(retain, nonatomic) GEOPDRecentRouteInfo *recentRouteInfo;
 @property(readonly, nonatomic) BOOL hasRecentRouteInfo;
 - (void)_readRecentRouteInfo;
-@property(retain, nonatomic) GEOPDSearchLocationParameters *searchLocationParameters;
+@property(retain, nonatomic) GEOPDSSearchLocationParameters *searchLocationParameters;
 @property(readonly, nonatomic) BOOL hasSearchLocationParameters;
 - (void)_readSearchLocationParameters;
-@property(retain, nonatomic) GEOPDSearchStructureIntentRequestType *searchStructureIntentType;
+@property(retain, nonatomic) GEOPDSSearchStructureIntentRequestType *searchStructureIntentType;
 @property(readonly, nonatomic) BOOL hasSearchStructureIntentType;
 - (void)_readSearchStructureIntentType;
 - (int)StringAsSearchType:(id)arg1;

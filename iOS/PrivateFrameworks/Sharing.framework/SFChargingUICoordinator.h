@@ -24,8 +24,8 @@
     long long _defaultDuration;
 }
 
-@property(nonatomic) long long defaultDuration; // @synthesize defaultDuration=_defaultDuration;
 - (void).cxx_destruct;
+@property(nonatomic) long long defaultDuration; // @synthesize defaultDuration=_defaultDuration;
 - (void)onqueue_connectionInvalidated;
 - (void)onqueue_connectionInterrupted;
 - (void)onqueue_connectionEstablished;

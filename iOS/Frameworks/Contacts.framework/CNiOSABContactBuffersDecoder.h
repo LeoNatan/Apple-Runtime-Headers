@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CNContactFetchRequest *_fetchRequest;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
 @property(readonly, nonatomic) NSMutableDictionary *matchInfosWaitingForUnification; // @synthesize matchInfosWaitingForUnification=_matchInfosWaitingForUnification;
 @property(readonly, nonatomic) NSMutableArray *contactsWaitingForUnification; // @synthesize contactsWaitingForUnification=_contactsWaitingForUnification;
 @property(readonly, nonatomic) CNContactBufferDecoder *decoder; // @synthesize decoder=_decoder;
-- (void).cxx_destruct;
 - (id)unifyContacts:(id)arg1 moreComing:(_Bool)arg2;
 - (id)contactMatchInfosFromABMatchInfos:(id)arg1 contacts:(id)arg2;
 - (id)_contactMatchInfosFromABMatchInfos:(id)arg1 contacts:(id)arg2;

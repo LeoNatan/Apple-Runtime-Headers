@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_bundleIDs;
 }
 
-@property(copy, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 - (void)fillOutOperationResult:(id)arg1;
 - (Class)operationResultClass;
 - (void)main;

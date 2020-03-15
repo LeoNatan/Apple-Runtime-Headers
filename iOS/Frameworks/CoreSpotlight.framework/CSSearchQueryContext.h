@@ -44,6 +44,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSArray *scopes; // @synthesize scopes=_scopes;
 @property(retain, nonatomic) NSArray *mountPoints; // @synthesize mountPoints=_mountPoints;
@@ -75,7 +76,6 @@
 @property(retain, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 @property(retain, nonatomic) NSArray *protectionClasses; // @synthesize protectionClasses=_protectionClasses;
 @property(retain, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 @property(copy, nonatomic) NSDictionary *options;

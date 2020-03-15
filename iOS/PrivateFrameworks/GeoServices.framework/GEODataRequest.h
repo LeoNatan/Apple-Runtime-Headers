@@ -32,6 +32,7 @@
     BOOL _HTTPMethod;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *backgroundSessionIdentifier; // @synthesize backgroundSessionIdentifier=_backgroundSessionIdentifier;
 @property(readonly, nonatomic) unsigned long long multipathAlternatePort; // @synthesize multipathAlternatePort=_multipathAlternatePort;
 @property(readonly, nonatomic) unsigned long long multipathServiceType; // @synthesize multipathServiceType=_multipathServiceType;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *xpcRequest; // @synthesize xpcRequest=_xpcRequest;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) GEODataRequestThrottlerToken *throttleToken; // @synthesize throttleToken=_throttleToken;
-- (void).cxx_destruct;
 - (id)publicLogDescription;
 - (id)description;
 - (id)initWithKind:(CDStruct_d1a7ebee)arg1 URL:(id)arg2 xpcRequest:(id)arg3 auditToken:(id)arg4 timeoutInterval:(double)arg5 additionalHTTPHeaders:(id)arg6 needsProxy:(_Bool)arg7 HTTPMethod:(BOOL)arg8 bodyData:(id)arg9 HTTPShouldHandleCookies:(_Bool)arg10 constraints:(unsigned long long)arg11 allowTLSSessionTicketUse:(_Bool)arg12 allowTFOUse:(_Bool)arg13 userAgent:(id)arg14 entityTag:(id)arg15 cachedData:(id)arg16 requestCounterTicket:(id)arg17 multipathServiceType:(unsigned long long)arg18 multipathAlternatePort:(unsigned long long)arg19 throttleToken:(id)arg20;

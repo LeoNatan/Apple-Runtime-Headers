@@ -13,8 +13,8 @@
     id <SSUIServiceServerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SSUIServiceServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SSUIServiceServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
 - (_Bool)_handleHasAnySSUIServiceEntitlement:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

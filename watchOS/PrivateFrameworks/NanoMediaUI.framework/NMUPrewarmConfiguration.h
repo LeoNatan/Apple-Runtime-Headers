@@ -13,10 +13,10 @@
     CDUnknownBlockType _customPrewarmBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType customPrewarmBlock; // @synthesize customPrewarmBlock=_customPrewarmBlock;
 @property(copy, nonatomic) CDUnknownBlockType nowPlayingUserInterfaceViewControllerBlock; // @synthesize nowPlayingUserInterfaceViewControllerBlock=_nowPlayingUserInterfaceViewControllerBlock;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)initWithOptions:(unsigned int)arg1;
 
 @end

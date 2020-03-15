@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AKAppleIDAuthenticationController, NSImage, NSWindow;
+@class AKAppleIDAuthenticationController, CDPUIDeviceToDeviceEncryptionFlowContext, NSImage, NSWindow;
 @protocol CDPUIDeviceToDeviceEncryptionHelperDelegate;
 
 @interface CDPUIDeviceToDeviceEncryptionHelper : NSObject
@@ -15,27 +15,48 @@
     NSImage *_displayImage;
     id <CDPUIDeviceToDeviceEncryptionHelperDelegate> _delegate;
     AKAppleIDAuthenticationController *_authController;
+    CDPUIDeviceToDeviceEncryptionFlowContext *_context;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) CDPUIDeviceToDeviceEncryptionFlowContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) AKAppleIDAuthenticationController *authController; // @synthesize authController=_authController;
 @property(nonatomic) __weak id <CDPUIDeviceToDeviceEncryptionHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak NSImage *displayImage; // @synthesize displayImage=_displayImage;
 @property __weak NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
-- (void).cxx_destruct;
+- (void)_postBiometricFollowupIfNeeded;
+- (void)_setupPresentedViewController;
+- (void)_dismissPresentedViewControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (id)_displayImage;
+- (id)_hostWindow;
+- (void)_shouldContinueCreationWithCompletion:(CDUnknownBlockType)arg1;
+- (id)_authController;
+- (id)_authContextFromContext:(id)arg1;
+- (id)_inAppContextFromContext:(id)arg1;
+- (id)_upgradeUIProvider;
 - (void)_executeSyncOnMainThreadIfNeeded:(CDUnknownBlockType)arg1;
 - (id)_cdpStateControllerWithContext:(id)arg1;
 - (id)_cdpContextForPrimaryAccountWithAuthenticationResults:(id)arg1;
 - (id)_cdpStateControllerWithAuthResults:(id)arg1;
 - (void)_configurePresentingViewControllerForModalPresentation;
 - (id)_encryptionErrorFromError:(id)arg1;
+- (BOOL)_isInCircle;
+- (BOOL)_hasManatee;
 - (BOOL)_hasPasscode;
-- (void)_validatePasscodeWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_validateCDPStateForAuthResults:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (BOOL)_isHSA2AvailableForAuthenticationContext:(id)arg1;
-- (void)_presentCDPUpgradeSpinnerViewControllerForAuthContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_authenticateContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_askPermissionToContinueFlowForEligibleAccountForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_presentIneligibleAlertWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_repairCDPWithAuthResults:(id)arg1 cachedSecret:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)_createPasscodeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_validateLocalSecretAndRepairCDPWithAuthResults:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_isAccount2FAForAltDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_presentCDPUpgradeSpinnerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performDeviceToDeviceEncryptionStateRepairForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_legacyAskPermissionToContinueFlowWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_showUpgradeMessageWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_checkEligibilityWithCompletionForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_preflightDeviceToDeviceEncryptionWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)dealloc;
+- (void)performDeviceToDeviceEncryptionStateRepairWithCompletion:(CDUnknownBlockType)arg1;
+- (id)initWithContext:(id)arg1;
 - (id)initWithWindow:(id)arg1;
 
 @end

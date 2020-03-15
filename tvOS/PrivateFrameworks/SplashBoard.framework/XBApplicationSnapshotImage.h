@@ -14,8 +14,8 @@
     long long _interfaceOrientation;
 }
 
-@property(readonly, nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 - (id)description;
 - (void)dealloc;
 - (id)initWithSnapshot:(id)arg1 interfaceOrientation:(long long)arg2;

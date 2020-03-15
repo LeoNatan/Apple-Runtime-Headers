@@ -22,6 +22,7 @@
     NSDictionary *_resultRecordsByRecordID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *resultRecordsByRecordID; // @synthesize resultRecordsByRecordID=_resultRecordsByRecordID;
 @property(nonatomic) long long networkEventType; // @synthesize networkEventType=_networkEventType;
 @property(copy, nonatomic) NSArray *requestUUIDs; // @synthesize requestUUIDs=_requestUUIDs;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSDictionary *recordIDsToETags; // @synthesize recordIDsToETags=_recordIDsToETags;
 @property(copy, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 @property(retain, nonatomic) FCCKContentDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)_operationForRecordID:(id)arg1;
 - (id)throttleGroup;
 - (void)operationWillFinishWithError:(id)arg1;

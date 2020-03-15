@@ -17,13 +17,14 @@
     ICTrackedParagraph *_trackedParagraph;
     double _zoomFactor;
     id <ICTodoButtonDragDelegate> _dragDelegate;
-    struct NSImageView *_undoneImageView;
-    struct NSImageView *_doneImageView;
+    NSImageView *_undoneImageView;
+    NSImageView *_doneImageView;
     NSTrackingArea *_cursorTrackingArea;
     struct CGSize _defaultSize;
     struct CGSize _defaultImageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTrackingArea *cursorTrackingArea; // @synthesize cursorTrackingArea=_cursorTrackingArea;
 @property(retain) NSImageView *doneImageView; // @synthesize doneImageView=_doneImageView;
 @property(retain) NSImageView *undoneImageView; // @synthesize undoneImageView=_undoneImageView;
@@ -33,7 +34,6 @@
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
 @property(nonatomic) __weak ICTrackedParagraph *trackedParagraph; // @synthesize trackedParagraph=_trackedParagraph;
 @property(nonatomic, getter=isDone) BOOL done; // @synthesize done=_done;
-- (void).cxx_destruct;
 - (void)setDone:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)init;
 - (BOOL)panGestureRecognizerIsWithinThreshold:(id)arg1;

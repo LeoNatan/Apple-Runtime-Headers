@@ -15,10 +15,10 @@
     NSString *_opToFail;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *opToFail; // @synthesize opToFail=_opToFail;
 @property(retain) OSInstallOptions *options; // @synthesize options=_options;
 @property BOOL shouldFailAtStart; // @synthesize shouldFailAtStart=_shouldFailAtStart;
-- (void).cxx_destruct;
 - (BOOL)shouldFailAtQueueElement:(id)arg1;
 - (BOOL)loadDebuggerPropertyList;
 - (id)initWithOptions:(id)arg1;

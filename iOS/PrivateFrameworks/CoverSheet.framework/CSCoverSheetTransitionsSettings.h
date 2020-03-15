@@ -21,6 +21,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSCoverSheetTransitionSettings *overAppTransitionSettings; // @synthesize overAppTransitionSettings=_overAppTransitionSettings;
 @property(retain, nonatomic) CSCoverSheetTransitionSettings *differentWallpaperSubsequentTransitionSettings; // @synthesize differentWallpaperSubsequentTransitionSettings=_differentWallpaperSubsequentTransitionSettings;
 @property(retain, nonatomic) CSCoverSheetTransitionSettings *sameWallpaperSubsequentTransitionSettings; // @synthesize sameWallpaperSubsequentTransitionSettings=_sameWallpaperSubsequentTransitionSettings;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) CSCoverSheetFlyInSettings *flyInSettings; // @synthesize flyInSettings=_flyInSettings;
 @property(nonatomic) double friction; // @synthesize friction=_friction;
 @property(nonatomic) double tension; // @synthesize tension=_tension;
-- (void).cxx_destruct;
 - (void)setDefaultValuesForParallaxAndBlur;
 - (void)setDefaultValuesForBlurOnly;
 - (void)setDefaultValuesForParallaxOnly;

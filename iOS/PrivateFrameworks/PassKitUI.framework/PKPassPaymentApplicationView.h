@@ -22,11 +22,11 @@
     id <PKPassPaymentApplicationViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showHeader; // @synthesize showHeader=_showHeader;
 @property(nonatomic) id <PKPassPaymentApplicationViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPaymentApplication *selectedApplication; // @synthesize selectedApplication=_selectedApplication;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_selectedApplicationDidChange:(id)arg1;
 - (id)initWithPass:(id)arg1;

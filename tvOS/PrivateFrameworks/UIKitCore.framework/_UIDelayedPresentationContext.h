@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_timerSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSInvocation *presentInvocation; // @synthesize presentInvocation=_presentInvocation;
 @property(copy, nonatomic) CDUnknownBlockType cancellationHandler; // @synthesize cancellationHandler=_cancellationHandler;
-- (void).cxx_destruct;
 - (void)finishDelayedPresentation:(id)arg1;
 - (void)beginDelayedPresentation;
 - (void)cancelDelayedPresentation:(_Bool)arg1;

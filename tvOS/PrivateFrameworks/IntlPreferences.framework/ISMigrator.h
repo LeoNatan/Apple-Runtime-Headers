@@ -20,11 +20,11 @@
 + (id)migratorFromVersion:(id)arg1 toVersion:(id)arg2 platform:(unsigned long long)arg3;
 + (id)migratorFromVersion:(id)arg1 toVersion:(id)arg2;
 + (unsigned long long)currentPlatform;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long previousSchemaVersion; // @synthesize previousSchemaVersion=_previousSchemaVersion;
 @property(copy, nonatomic) NSString *currentVersion; // @synthesize currentVersion=_currentVersion;
 @property(copy, nonatomic) NSString *previousVersion; // @synthesize previousVersion=_previousVersion;
 @property(nonatomic) unsigned long long platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (_Bool)previousVersionIsOlderThanMacOS:(id)arg1 iOS:(id)arg2 watchOS:(id)arg3 tvOS:(id)arg4;
 - (id)performMigrationForUserPreferences:(id)arg1 systemPreferences:(id)arg2;
 - (id)performMigrationForPreferences:(id)arg1;

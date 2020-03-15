@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSArray;
+
 __attribute__((visibility("hidden")))
 @interface VUINowPlayingConfig : NSObject
 {
@@ -13,8 +15,11 @@ __attribute__((visibility("hidden")))
     _Bool _showsStillWatchingAlert;
     double _stillWatchingAlertDuration;
     double _alertIdleTimeout;
+    NSArray *_mediaTypesExcludedFromReporting;
 }
 
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *mediaTypesExcludedFromReporting; // @synthesize mediaTypesExcludedFromReporting=_mediaTypesExcludedFromReporting;
 @property(nonatomic) double alertIdleTimeout; // @synthesize alertIdleTimeout=_alertIdleTimeout;
 @property(nonatomic) double stillWatchingAlertDuration; // @synthesize stillWatchingAlertDuration=_stillWatchingAlertDuration;
 @property(nonatomic) _Bool showsStillWatchingAlert; // @synthesize showsStillWatchingAlert=_showsStillWatchingAlert;

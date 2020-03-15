@@ -18,10 +18,10 @@
 + (id)abandonment;
 + (id)engagementWithSuggestion:(id)arg1 transportBundleID:(id)arg2;
 + (id)engagementWithNonSuggestionWithEngagementIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *transportBundleID; // @synthesize transportBundleID=_transportBundleID;
 @property(readonly, nonatomic) _PSSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(long long)arg1 suggestion:(id)arg2 transportBundleID:(id)arg3;
 
 @end

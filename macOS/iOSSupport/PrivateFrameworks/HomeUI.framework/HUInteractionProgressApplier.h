@@ -26,6 +26,7 @@
 
 + (id)applierWithInteractionProgress:(id)arg1;
 + (id)applyInteractionProgress:(id)arg1 withApplier:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL waitingOnAnimationToComplete; // @synthesize waitingOnAnimationToComplete=_waitingOnAnimationToComplete;
 @property(nonatomic) double previousInteractionProgress; // @synthesize previousInteractionProgress=_previousInteractionProgress;
 @property(retain, nonatomic) HUAnimationApplier *inFlightAnimation; // @synthesize inFlightAnimation=_inFlightAnimation;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) HUAnimationSettings *transitionAnimationSettings; // @synthesize transitionAnimationSettings=_transitionAnimationSettings;
 @property(retain, nonatomic) HUAnimationSettings *significantProgressChangeAnimationSettings; // @synthesize significantProgressChangeAnimationSettings=_significantProgressChangeAnimationSettings;
 @property(readonly, nonatomic) UIInteractionProgress *interactionProgress; // @synthesize interactionProgress=_interactionProgress;
-- (void).cxx_destruct;
 - (BOOL)cancel;
 - (BOOL)complete:(BOOL)arg1;
 - (void)_completeSuccessfullyIfAnimationsComplete;

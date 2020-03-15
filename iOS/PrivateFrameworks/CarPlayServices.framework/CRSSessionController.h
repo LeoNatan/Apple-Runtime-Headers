@@ -18,9 +18,9 @@
     BSServiceConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) RBSProcessHandle *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)init;
 

@@ -20,8 +20,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) _Bool isShowingIncomingCallUI; // @synthesize isShowingIncomingCallUI=_isShowingIncomingCallUI;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isShowingIncomingCallUI; // @synthesize isShowingIncomingCallUI=_isShowingIncomingCallUI;
 - (void)_setIncomingCallUIState:(_Bool)arg1 forReason:(id)arg2;
 - (void)_refreshState;
 - (double)_fallbackTimerDuration;

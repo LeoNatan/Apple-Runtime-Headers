@@ -18,9 +18,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *logID; // @synthesize logID=_logID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)sendConfigureBulletinNotification:(id)arg1;
 - (void)_sendNotifications:(id)arg1 notificationUpdateIdentifier:(id)arg2;
 - (void)sendNotifications:(id)arg1 notificationUpdateIdentifier:(id)arg2;

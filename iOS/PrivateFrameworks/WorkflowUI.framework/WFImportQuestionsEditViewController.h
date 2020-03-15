@@ -21,12 +21,12 @@
     SSSection *_addSection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SSSection *addSection; // @synthesize addSection=_addSection;
 @property(retain, nonatomic) SSSectionedDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) WFWorkflowSettingsLayoutMetrics *layoutMetrics; // @synthesize layoutMetrics=_layoutMetrics;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
-- (void).cxx_destruct;
 - (void)questionDetailsViewControllerWillDisappear:(id)arg1 withUpdatedImportQuestion:(id)arg2;
 - (void)parameterPicker:(id)arg1 didFinishWithParameter:(id)arg2 ofAction:(id)arg3;
 - (void)parameterPickerDidCancel:(id)arg1;

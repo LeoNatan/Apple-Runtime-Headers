@@ -18,12 +18,12 @@
 }
 
 + (_Bool)psrTdAssetExistsAtResourcePath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *speakerVector; // @synthesize speakerVector=_speakerVector;
 @property(readonly, nonatomic) float lastRequestSatScore; // @synthesize lastRequestSatScore=_lastRequestSatScore;
 @property(readonly, nonatomic) int getSATVectorCount; // @synthesize getSATVectorCount=_getSATVectorCount;
 @property(readonly, nonatomic) NSString *tdSATModelFilePath; // @synthesize tdSATModelFilePath=_tdSATModelFilePath;
 @property(readonly, nonatomic) _Bool tdPsrCanProcessRequest; // @synthesize tdPsrCanProcessRequest=_tdPsrCanProcessRequest;
-- (void).cxx_destruct;
 - (float)scoreSpeakerVector:(id)arg1 withDimensions:(unsigned int)arg2;
 - (void)logWithAudioFilepath:(id)arg1;
 - (void)deleteVectorAtIndex:(int)arg1;

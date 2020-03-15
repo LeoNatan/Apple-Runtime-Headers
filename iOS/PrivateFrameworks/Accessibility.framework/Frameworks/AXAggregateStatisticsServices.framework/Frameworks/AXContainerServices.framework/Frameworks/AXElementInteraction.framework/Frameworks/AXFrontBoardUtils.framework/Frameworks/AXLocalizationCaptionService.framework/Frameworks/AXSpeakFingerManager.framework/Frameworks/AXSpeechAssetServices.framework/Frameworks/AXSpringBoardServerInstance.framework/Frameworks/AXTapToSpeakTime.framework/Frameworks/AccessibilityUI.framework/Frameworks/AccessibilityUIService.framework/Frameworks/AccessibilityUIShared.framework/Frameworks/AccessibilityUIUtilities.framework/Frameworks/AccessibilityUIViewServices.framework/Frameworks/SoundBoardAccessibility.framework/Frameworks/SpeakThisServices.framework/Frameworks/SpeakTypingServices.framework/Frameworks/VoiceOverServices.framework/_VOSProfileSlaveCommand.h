@@ -21,11 +21,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)profileSlaveCommandWithStringValue:(id)arg1 context:(unsigned long long)arg2 pressCount:(unsigned long long)arg3;
 + (id)profileSlaveCommandWithCommand:(id)arg1 context:(unsigned long long)arg2 pressCount:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) __weak _VOSProfileCommand *masterProfileCommand; // @synthesize masterProfileCommand=_masterProfileCommand;
 @property(nonatomic) unsigned long long pressCount; // @synthesize pressCount=_pressCount;
 @property(nonatomic) unsigned long long context; // @synthesize context=_context;
 @property(retain, nonatomic) VOSCommand *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

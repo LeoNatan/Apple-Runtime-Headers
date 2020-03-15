@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setHighlightedReadings:) NSArray *highlightedReadings; // @synthesize highlightedReadings=_highlightedReadings;
 @property(readonly, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property(readonly, nonatomic) int numberOfReadings; // @synthesize numberOfReadings=_numberOfReadings;
 @property(readonly, nonatomic) int numberOfBuckets; // @synthesize numberOfBuckets=_numberOfBuckets;
 @property(readonly, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

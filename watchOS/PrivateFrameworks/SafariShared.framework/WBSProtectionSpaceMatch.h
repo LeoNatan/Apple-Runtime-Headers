@@ -16,11 +16,11 @@
     int _matchLevel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int matchLevel; // @synthesize matchLevel=_matchLevel;
 @property(readonly, nonatomic) NSURLCredential *defaultCredential; // @synthesize defaultCredential=_defaultCredential;
 @property(readonly, copy, nonatomic) NSDictionary *credentials; // @synthesize credentials=_credentials;
 @property(readonly, nonatomic) NSURLProtectionSpace *protectionSpace; // @synthesize protectionSpace=_protectionSpace;
-- (void).cxx_destruct;
 - (id)initWithProtectionSpace:(id)arg1 credentials:(id)arg2 defaultCredential:(id)arg3 matchLevel:(int)arg4;
 
 @end

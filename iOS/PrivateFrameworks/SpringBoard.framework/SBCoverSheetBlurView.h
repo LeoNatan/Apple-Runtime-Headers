@@ -21,13 +21,13 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) long long variantToTrack; // @synthesize variantToTrack=_variantToTrack;
 @property(retain, nonatomic) UIView *reduceTransparencyView; // @synthesize reduceTransparencyView=_reduceTransparencyView;
 @property(copy, nonatomic) CDUnknownBlockType alphaAdjustment; // @synthesize alphaAdjustment=_alphaAdjustment;
 @property(copy, nonatomic) CDUnknownBlockType scaleAdjustment; // @synthesize scaleAdjustment=_scaleAdjustment;
 @property(nonatomic) double weighting; // @synthesize weighting=_weighting;
 @property(nonatomic) double blurRadius; // @synthesize blurRadius=_blurRadius;
-- (void).cxx_destruct;
 - (id)_averageWallpaperColor;
 - (void)_removeReduceTransparencyView;
 - (void)_createReduceTransparencyView;

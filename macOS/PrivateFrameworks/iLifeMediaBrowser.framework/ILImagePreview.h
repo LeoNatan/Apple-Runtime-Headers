@@ -17,11 +17,11 @@
     id _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id delegate; // @synthesize delegate=_delegate;
 @property(readonly) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property BOOL autoresizes; // @synthesize autoresizes=_autoresizes;
 @property BOOL animates; // @synthesize animates=_animates;
-- (void).cxx_destruct;
 - (struct CGRect)fitImageRect;
 - (void)_dragSelectionWithEvent:(id)arg1;
 - (void)mouseDown:(id)arg1;

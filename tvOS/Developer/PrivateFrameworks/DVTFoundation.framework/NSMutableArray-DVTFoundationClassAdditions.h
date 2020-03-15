@@ -26,7 +26,6 @@
 - (void)dvt_insertObjects:(id)arg1 atIndex:(long long)arg2;
 - (void)dvt_insertObjectIfNonNil:(id)arg1 atIndex:(long long)arg2;
 - (void)dvt_addObjectIfAbsent:(id)arg1;
-- (id)dvt_popSuffixWithMaxLength:(long long)arg1;
 - (id)dvt_popLastObject;
 - (id)dvt_popFirstObject;
 @end

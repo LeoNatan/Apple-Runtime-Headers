@@ -20,12 +20,12 @@
     PXPlacesImageCache *_imageCache;
 }
 
+- (void).cxx_destruct;
 @property(retain) PXPlacesImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(readonly) id <PXPlacesMapSelectionHandler> selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 @property(readonly) id <PXPlacesMapRenderer> renderer; // @synthesize renderer=_renderer;
 @property(readonly) id <PXPlacesMapUpdatePlan> updatePlan; // @synthesize updatePlan=_updatePlan;
 @property(readonly) id <PXPlacesMapLayout> layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)executeRemoval;
 - (id)executeWithUpdatedViewPort:(id)arg1 andDataSourceChange:(id)arg2;

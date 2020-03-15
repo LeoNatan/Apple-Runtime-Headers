@@ -30,6 +30,7 @@
     id <HKCurrentValueViewDataSourceValueRangeFormatter> _dateRangeFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HKCurrentValueViewDataSourceValueRangeFormatter> dateRangeFormatter; // @synthesize dateRangeFormatter=_dateRangeFormatter;
 @property(retain, nonatomic) UIFont *minorFont; // @synthesize minorFont=_minorFont;
 @property(retain, nonatomic) UIFont *majorFont; // @synthesize majorFont=_majorFont;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSArray *annotationLabels; // @synthesize annotationLabels=_annotationLabels;
 @property(retain, nonatomic) HKUIMetricColors *metricColors; // @synthesize metricColors=_metricColors;
 @property(readonly, nonatomic) HKSelectedRangeFormatter *selectedRangeFormatter; // @synthesize selectedRangeFormatter=_selectedRangeFormatter;
-- (void).cxx_destruct;
 - (void)updateWithSelectionContext:(id)arg1 displayType:(id)arg2 timeScope:(long long)arg3;
 - (_Bool)showSeparators;
 - (id)valueViewForColumnAtIndex:(long long)arg1 orientation:(long long)arg2;

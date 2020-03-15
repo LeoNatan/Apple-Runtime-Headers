@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     _UIHostedWindowHostingHandle *_remoteKeyboardsWindowHostingHandle;
 }
 
+- (void).cxx_destruct;
 @property(retain) _UIHostedWindowHostingHandle *remoteKeyboardsWindowHostingHandle; // @synthesize remoteKeyboardsWindowHostingHandle=_remoteKeyboardsWindowHostingHandle;
 @property(retain) _UIHostedWindowHostingHandle *textEffectsWindowAboveStatusBarHostingHandle; // @synthesize textEffectsWindowAboveStatusBarHostingHandle=_textEffectsWindowAboveStatusBarHostingHandle;
 @property(retain) _UIHostedWindowHostingHandle *textEffectsWindowHostingHandle; // @synthesize textEffectsWindowHostingHandle=_textEffectsWindowHostingHandle;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain) id serviceViewControllerProxy; // @synthesize serviceViewControllerProxy=_serviceViewControllerProxy;
 @property(retain) id viewControllerOperatorProxy; // @synthesize viewControllerOperatorProxy=_viewControllerOperatorProxy;
 @property(retain) _UIViewServiceInterface *interface; // @synthesize interface=_interface;
-- (void).cxx_destruct;
 
 @end
 

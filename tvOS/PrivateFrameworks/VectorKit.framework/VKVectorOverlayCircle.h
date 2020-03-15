@@ -19,10 +19,10 @@
     struct shared_ptr<md::CircleOverlayRenderable::Style> _style;
 }
 
-@property(readonly, nonatomic, getter=_renderable) shared_ptr_9852d3ba renderable; // @synthesize renderable=_renderable;
-@property(readonly, nonatomic, getter=_bounds) Box_3d7e3c2c bounds; // @synthesize bounds=_bounds;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_renderable) shared_ptr_9852d3ba renderable; // @synthesize renderable=_renderable;
+@property(readonly, nonatomic, getter=_bounds) Box_3d7e3c2c bounds; // @synthesize bounds=_bounds;
 @property(nonatomic) double alpha;
 @property(nonatomic) struct CGColor *strokeColor;
 @property(nonatomic) struct CGColor *fillColor;

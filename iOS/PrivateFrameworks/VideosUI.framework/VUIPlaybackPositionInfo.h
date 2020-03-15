@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSNumber *_hasBeenPlayed;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *hasBeenPlayed; // @synthesize hasBeenPlayed=_hasBeenPlayed;
 @property(retain, nonatomic) NSNumber *playCount; // @synthesize playCount=_playCount;
 @property(retain, nonatomic) NSNumber *bookmarkTime; // @synthesize bookmarkTime=_bookmarkTime;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

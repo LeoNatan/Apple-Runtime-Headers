@@ -27,10 +27,10 @@
 + (id)keySpace;
 + (id)keyEnter;
 + (id)keyDelete;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *secondaryCharactersMapping; // @synthesize secondaryCharactersMapping=_secondaryCharactersMapping;
 @property(readonly, nonatomic) NSMutableDictionary *primaryCharactersMapping; // @synthesize primaryCharactersMapping=_primaryCharactersMapping;
 @property(readonly, nonatomic) unsigned short code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (unsigned long long)primaryComposedCharactersCountAt:(unsigned long long)arg1;
 - (id)primaryCharactersAt:(unsigned long long)arg1;
 - (id)keyWithForwardRotatedPrimaryAlphaComposedCharacters;

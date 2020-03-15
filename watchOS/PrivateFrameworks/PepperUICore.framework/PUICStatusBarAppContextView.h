@@ -53,6 +53,7 @@
     struct CGRect _overrideGlobalContextFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUICStatusBarAppContextViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGRect overrideGlobalContextFrame; // @synthesize overrideGlobalContextFrame=_overrideGlobalContextFrame;
 @property(nonatomic, getter=isTitleViewChargeEnabled) _Bool titleViewChargeEnabled; // @synthesize titleViewChargeEnabled=_titleViewChargeEnabled;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic) UIView *navigationBackButtonView; // @synthesize navigationBackButtonView=_navigationBackButtonView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_builtInTitleView;
-- (void).cxx_destruct;
 - (void)statusBarAppContextDataSourceDidChange:(id)arg1 animated:(_Bool)arg2;
 - (void)statusBarAppContextDataSourceWillChange:(id)arg1 animated:(_Bool)arg2;
 - (void)releaseDisableTitleTruncationTimerAssertion;

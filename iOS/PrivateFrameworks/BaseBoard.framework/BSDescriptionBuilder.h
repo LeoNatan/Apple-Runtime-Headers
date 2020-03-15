@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <BaseBoard/BSDescriptionFormatting-Protocol.h>
+
 @class NSMutableString, NSString;
 @protocol NSObject;
 
-@interface BSDescriptionBuilder : NSObject
+@interface BSDescriptionBuilder : NSObject <BSDescriptionFormatting>
 {
     id <NSObject> _object;
     NSMutableString *_proem;
@@ -25,10 +27,10 @@
 + (id)builderWithObject:(id)arg1;
 + (id)nameObjectSeparator;
 + (id)componentSeparator;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useDebugDescription; // @synthesize useDebugDescription=_useDebugDescription;
 @property(retain, nonatomic) NSString *activeMultilinePrefix; // @synthesize activeMultilinePrefix=_activePrefix;
 @property(nonatomic) int activeComponent; // @synthesize activeComponent=_activeComponent;
-- (void).cxx_destruct;
 - (id)build;
 - (id)appendFormat:(id)arg1;
 - (id)appendString:(id)arg1;
@@ -59,10 +61,12 @@
 - (id)appendDouble:(double)arg1 withName:(id)arg2 decimalPrecision:(unsigned long long)arg3;
 - (id)appendFloat:(double)arg1 withName:(id)arg2 decimalPrecision:(unsigned long long)arg3;
 - (id)appendFloat:(double)arg1 withName:(id)arg2;
+- (id)appendUInt64:(unsigned long long)arg1 withName:(id)arg2 format:(long long)arg3;
 - (id)appendUInt64:(unsigned long long)arg1 withName:(id)arg2;
 - (id)appendUnsignedInt:(unsigned int)arg1 withName:(id)arg2;
 - (id)appendInt64:(long long)arg1 withName:(id)arg2;
 - (id)appendInt:(int)arg1 withName:(id)arg2;
+- (id)appendUnsignedInteger:(unsigned long long)arg1 withName:(id)arg2 format:(long long)arg3;
 - (id)appendUnsignedInteger:(unsigned long long)arg1 withName:(id)arg2;
 - (id)appendInteger:(long long)arg1 withName:(id)arg2;
 - (id)appendFlag:(long long)arg1 withName:(id)arg2 skipIfNotSet:(_Bool)arg3;
@@ -71,6 +75,8 @@
 - (id)appendBool:(_Bool)arg1 withName:(id)arg2;
 - (void)appendString:(id)arg1 withName:(id)arg2 skipIfEmpty:(_Bool)arg3;
 - (void)appendString:(id)arg1 withName:(id)arg2;
+- (void)appendProem:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)appendCustomFormatWithName:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)appendObjectWithName:(id)arg1 formatBlock:(CDUnknownBlockType)arg2;
 - (id)appendObject:(id)arg1 withName:(id)arg2 skipIfNil:(_Bool)arg3;
 - (id)appendObject:(id)arg1 withName:(id)arg2;

@@ -17,9 +17,9 @@
 
 + (id)eventWithType:(long long)arg1 degree:(double)arg2;
 + (id)eventWithType:(long long)arg1 time:(id)arg2 degree:(double)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSDate *time; // @synthesize time=_time;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)debugNameForType:(long long)arg1;

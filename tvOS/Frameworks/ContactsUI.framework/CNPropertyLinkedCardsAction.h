@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     CNMutableContact *_linkedContact;
 }
 
+- (void).cxx_destruct;
 @property(retain) CNMutableContact *linkedContact; // @synthesize linkedContact=_linkedContact;
 @property(retain) CNContactContentViewController *contactController; // @synthesize contactController=_contactController;
 @property __weak id <CNContactContentViewControllerDelegate> contactDelegate; // @synthesize contactDelegate=_contactDelegate;
-- (void).cxx_destruct;
 - (void)setPreferredForName;
 - (void)setPreferredForImage;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;

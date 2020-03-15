@@ -19,11 +19,11 @@
 }
 
 + (id)linkedNotebookRefFromLinkedNotebook:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sharedNotebookGlobalId; // @synthesize sharedNotebookGlobalId=_sharedNotebookGlobalId;
 @property(retain, nonatomic) NSString *shardId; // @synthesize shardId=_shardId;
 @property(retain, nonatomic) NSString *noteStoreUrl; // @synthesize noteStoreUrl=_noteStoreUrl;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isRegistrationForcedHome; // @synthesize isRegistrationForcedHome=_isRegistrationForcedHome;
 @property(nonatomic) _Bool changedDueToSimRemoval; // @synthesize changedDueToSimRemoval=_changedDueToSimRemoval;
 @property(nonatomic) _Bool isInHomeCountry; // @synthesize isInHomeCountry=_isInHomeCountry;
 @property(retain, nonatomic) NSString *registrationDisplayStatus; // @synthesize registrationDisplayStatus=_registrationDisplayStatus;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -19,9 +19,9 @@
     _Bool _displayModeSwitchInProgress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDisplayModeSwitchInProgress, setter=_setDisplayModeSwitchInProgress:) _Bool displayModeSwitchInProgress; // @synthesize displayModeSwitchInProgress=_displayModeSwitchInProgress;
 @property(copy, nonatomic) AVDisplayCriteria *preferredDisplayCriteria; // @synthesize preferredDisplayCriteria=_preferredDisplayCriteria;
-- (void).cxx_destruct;
 - (void)displayState:(id)arg1 didChangeWithConnection:(long long)arg2;
 @property(readonly, nonatomic, getter=isDisplayCriteriaMatchingEnabled) _Bool displayCriteriaMatchingEnabled;
 - (void)considerDisplayModeSwitchFinished;

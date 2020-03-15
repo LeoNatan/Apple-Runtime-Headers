@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CKMediaObject *_mediaObject;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
 @property(retain, nonatomic) CKBalloonView *balloonView; // @synthesize balloonView=_balloonView;
-- (void).cxx_destruct;
 - (void)previewDidChange:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)imageBalloon;

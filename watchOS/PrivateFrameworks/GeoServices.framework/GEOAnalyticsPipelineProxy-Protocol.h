@@ -16,7 +16,7 @@
 - (void)flushEvalData;
 - (void)setEvalMode:(_Bool)arg1;
 - (void)reportMapKitCountType:(int)arg1 appId:(NSString *)arg2 completion:(void (^)(void))arg3 completionQueue:(NSObject<OS_dispatch_queue> *)arg4;
-- (void)reportLogMsgType:(int)arg1 eventType:(int)arg2 logMsg:(NSData *)arg3 completion:(void (^)(void))arg4 completionQueue:(NSObject<OS_dispatch_queue> *)arg5;
+- (void)reportLogMsgType:(int)arg1 handlingPolicyId:(int)arg2 logMsg:(NSData *)arg3 completion:(void (^)(void))arg4 completionQueue:(NSObject<OS_dispatch_queue> *)arg5;
 - (void)setShortSessionValues:(GEOUserSessionEntity *)arg1 withCompletion:(void (^)(void))arg2;
 - (void)shortSessionValuesWithCompletion:(void (^)(struct GEOSessionID, unsigned long long, double))arg1;
 @end

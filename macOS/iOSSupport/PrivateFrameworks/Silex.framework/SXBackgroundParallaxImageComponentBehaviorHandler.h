@@ -17,12 +17,12 @@
     double _amplitude;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double amplitude; // @synthesize amplitude=_amplitude;
 @property(nonatomic) unsigned long long viewHierarchyIndex; // @synthesize viewHierarchyIndex=_viewHierarchyIndex;
 @property(retain, nonatomic) UIView *clippingView; // @synthesize clippingView=_clippingView;
 @property(nonatomic) double originalYCenter; // @synthesize originalYCenter=_originalYCenter;
 @property(retain, nonatomic) UIView *windowedScrollContentView; // @synthesize windowedScrollContentView=_windowedScrollContentView;
-- (void).cxx_destruct;
 - (void)destroyWithBehaviorController:(id)arg1;
 - (void)destroyWindowedScroll;
 - (void)setupWindowedScroll;

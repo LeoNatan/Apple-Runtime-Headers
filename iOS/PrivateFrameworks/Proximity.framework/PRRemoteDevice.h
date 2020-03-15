@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(copy, nonatomic) NSData *roseMACAddress; // @synthesize roseMACAddress=_roseMACAddress;
 @property(copy, nonatomic) NSData *btAdvAddress; // @synthesize btAdvAddress=_btAdvAddress;
 @property(nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)compareField:(id)arg1 to:(id)arg2;
 - (id)description;

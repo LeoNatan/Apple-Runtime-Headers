@@ -27,6 +27,7 @@
 
 + (id)directionsButtonImage;
 + (_Bool)supportsRowModel:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSURL *messageURL; // @synthesize messageURL=_messageURL;
 @property(retain, nonatomic) UIView *messageButton; // @synthesize messageButton=_messageButton;
 @property(retain, nonatomic) CNContactInlineActionsViewController *inlineActionsViewController; // @synthesize inlineActionsViewController=_inlineActionsViewController;
-- (void).cxx_destruct;
 - (unsigned long long)type;
 - (void)contactInlineActionsViewController:(id)arg1 willPerformActionOfType:(id)arg2;
 - (id)hostingViewControllerForController:(id)arg1;

@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     SymptomsFileCleaner *_abcCleaner;
 }
 
-@property(retain, nonatomic) SymptomsFileCleaner *abcCleaner; // @synthesize abcCleaner=_abcCleaner;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SymptomsFileCleaner *abcCleaner; // @synthesize abcCleaner=_abcCleaner;
 - (void)purgeAttachmentsAtPaths:(id)arg1;
 - (void)didSaveDiagnosticCases;
 - (void)fileCleanupComplete;

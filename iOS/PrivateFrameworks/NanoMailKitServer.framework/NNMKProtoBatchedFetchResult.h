@@ -31,6 +31,7 @@
 + (Class)messageDeletionType;
 + (Class)messageUpdateType;
 + (Class)messageAdditionType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int mailboxSyncVersion; // @synthesize mailboxSyncVersion=_mailboxSyncVersion;
 @property(retain, nonatomic) NSString *mailboxId; // @synthesize mailboxId=_mailboxId;
 @property(nonatomic) _Bool shouldTrimDatabase; // @synthesize shouldTrimDatabase=_shouldTrimDatabase;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSMutableArray *messageAdditions; // @synthesize messageAdditions=_messageAdditions;
 @property(retain, nonatomic) NSData *dateSynced; // @synthesize dateSynced=_dateSynced;
 @property(nonatomic) unsigned int fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

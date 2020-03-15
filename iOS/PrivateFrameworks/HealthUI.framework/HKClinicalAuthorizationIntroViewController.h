@@ -21,11 +21,11 @@
     HKClinicalAuthorizationHeaderView *_headerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKClinicalAuthorizationHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) HKClinicalAuthorizationSequenceContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <HKHealthPrivacyServicePromptControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentContentSizeCategory;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

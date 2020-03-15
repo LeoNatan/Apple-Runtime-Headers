@@ -30,13 +30,13 @@
 + (id)JSONKeyPathsByPropertyKey;
 + (id)allowedSecureCodingClassesByPropertyKey;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *artworkURLs; // @synthesize artworkURLs=_artworkURLs;
 @property(readonly, nonatomic) NSURL *viewURL; // @synthesize viewURL=_viewURL;
 @property(readonly, nonatomic) NSString *censoredName; // @synthesize censoredName=_censoredName;
 @property(retain, nonatomic) NSString *kind; // @synthesize kind=_kind;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *wfName;
 - (id)initWithName:(id)arg1 identifier:(id)arg2 kind:(id)arg3;
 

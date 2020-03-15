@@ -26,12 +26,12 @@
     long long _currentVariationType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentVariationType; // @synthesize currentVariationType=_currentVariationType;
 @property(nonatomic) long long pendingVariationType; // @synthesize pendingVariationType=_pendingVariationType;
 @property(retain, nonatomic) PHAsset *currentAsset; // @synthesize currentAsset=_currentAsset;
 @property(readonly, nonatomic) PXAssetEditOperationManager *editOperationManager; // @synthesize editOperationManager=_editOperationManager;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)assetEditOperationManager:(id)arg1 didChangeEditOperationsPerformedOnAsset:(id)arg2 context:(void *)arg3;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)_assetEditOperationsDidChange;

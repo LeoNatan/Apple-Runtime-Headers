@@ -7,7 +7,7 @@
 #import <NearField/NSObject-Protocol.h>
 
 @class NSData, NSObject, NSUUID;
-@protocol NFContactlessPaymentSessionCallbacks, NFContactlessSessionCallbacks, NFECommercePaymentSessionCallbacks, NFFieldDetectSessionCallbacks, NFHardwareManagerCallbacks, NFNdefTagSessionCallbacks, NFPeerPaymentSessionCallbacks, NFReaderSessionCallbacks, NFSecureElementManagerSessionCallbacks, NFSessionInterface, NFTrustSessionCallbacks;
+@protocol NFContactlessPaymentSessionCallbacks, NFContactlessSessionCallbacks, NFECommercePaymentSessionCallbacks, NFFieldDetectSessionCallbacks, NFHardwareManagerCallbacks, NFHostEmulationSessionCallbacks, NFNdefTagSessionCallbacks, NFPeerPaymentSessionCallbacks, NFReaderSessionCallbacks, NFSecureElementAndHostCardEmulationSessionCallbacks, NFSecureElementManagerSessionCallbacks, NFSessionInterface, NFTrustSessionCallbacks;
 
 @protocol NFHardwareManagerInterface <NSObject>
 - (oneway void)setChipscope:(BOOL)arg1 callback:(void (^)(NSError *))arg2;
@@ -22,6 +22,8 @@
 - (oneway void)getHostCardEmulationLog:(void (^)(NSArray *, NSError *))arg1;
 - (oneway void)toggleGPIO:(unsigned short)arg1 callback:(void (^)(NSError *))arg2;
 - (oneway void)triggerDelayedWake:(unsigned char)arg1 callback:(void (^)(NSError *))arg2;
+- (oneway void)cancelSinglePollExpressModeAssertion:(void (^)(NSError *))arg1;
+- (oneway void)openSinglePollExpressModeAssertion:(double)arg1 callback:(void (^)(NSError *))arg2;
 - (oneway void)getPowerCounters:(void (^)(NSError *, NSDictionary *))arg1;
 - (oneway void)getUniqueFDRKeyXPC:(void (^)(NSString *, NSError *))arg1;
 - (oneway void)getDieID:(void (^)(NSData *, NSError *))arg1;
@@ -31,6 +33,8 @@
 - (oneway void)blessedUser:(void (^)(NSUUID *))arg1;
 - (oneway void)setBlessedUser:(NSUUID *)arg1 keybagUUID:(NSUUID *)arg2 withAuthorization:(NSData *)arg3 callback:(void (^)(unsigned int))arg4;
 - (oneway void)checkUserBlessing:(NSUUID *)arg1 callback:(void (^)(unsigned int, BOOL))arg2;
+- (oneway void)queueSecureElementAndHostEmulationSession:(NSObject<NFSecureElementAndHostCardEmulationSessionCallbacks> *)arg1 callback:(void (^)(NSObject<NFSecureElementAndHostCardEmulationSessionInterface> *, BOOL, NSError *))arg2;
+- (oneway void)queueHostEmulationSession:(NSObject<NFHostEmulationSessionCallbacks> *)arg1 callback:(void (^)(NSObject<NFHostEmulationSessionInterface> *, BOOL, NSError *))arg2;
 - (oneway void)queueNdefTagSession:(NSObject<NFNdefTagSessionCallbacks> *)arg1 data:(NSData *)arg2 callback:(void (^)(NSObject<NFNdefTagSessionInterface> *, BOOL, NSError *))arg3;
 - (oneway void)queuePeerPaymentSession:(NSObject<NFPeerPaymentSessionCallbacks> *)arg1 callback:(void (^)(NSObject<NFPeerPaymentSessionInterface> *, BOOL, NSError *))arg2;
 - (oneway void)configureReaderModeRFForTransitPartner:(BOOL)arg1 transitPartner:(unsigned int)arg2 callback:(void (^)(NSError *))arg3;

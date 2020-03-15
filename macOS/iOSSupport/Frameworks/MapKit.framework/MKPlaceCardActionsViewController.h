@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     MKPlaceActionManager *_actionManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MKPlaceActionManager *actionManager; // @synthesize actionManager=_actionManager;
 @property(nonatomic) BOOL showTopButtonSeparator; // @synthesize showTopButtonSeparator=_showTopButtonSeparator;
 @property(nonatomic) BOOL useMarginLayout; // @synthesize useMarginLayout=_useMarginLayout;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL showTopSeparator; // @synthesize showTopSeparator=_showTopSeparator;
 @property(nonatomic) BOOL useSmallFonts; // @synthesize useSmallFonts=_useSmallFonts;
 @property(nonatomic) BOOL haveTwoColumns; // @synthesize haveTwoColumns=_haveTwoColumns;
-- (void).cxx_destruct;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)placeCardActionSectionView:(id)arg1 buttonWithActionItemPressed:(id)arg2;

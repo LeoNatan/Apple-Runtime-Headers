@@ -14,9 +14,9 @@
     _UIStatesFeedbackGenerator *_feedbackGenerator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool feedbackActivated; // @synthesize feedbackActivated=_feedbackActivated;
 @property(retain, nonatomic) _UIStatesFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
-- (void).cxx_destruct;
 - (id)_stateForFeedback:(long long)arg1;
 - (void)actuateFeedback:(long long)arg1;
 - (void)endUsingFeedback:(long long)arg1;

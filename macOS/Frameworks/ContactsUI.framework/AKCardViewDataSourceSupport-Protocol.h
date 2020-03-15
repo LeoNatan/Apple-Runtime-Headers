@@ -6,16 +6,16 @@
 
 #import <ContactsUI/NSObject-Protocol.h>
 
-@class ABAddressBook, NSString;
+@class ABAddressBook, CNContainer, NSString;
 
 @protocol AKCardViewDataSourceSupport <NSObject>
+- (CNContainer *)parentContainer;
 - (ABAddressBook *)addressBookForActionExecution;
-- (NSString *)containerIdentifier;
 - (void)reloadNameDataForKey:(NSString *)arg1;
 - (void)reloadCollectionData;
 - (BOOL)editMode;
 - (BOOL)canEditContact;
-- (void)refreshData;
+- (void)refreshDisplayedValues;
 - (void)reloadData;
 @end
 

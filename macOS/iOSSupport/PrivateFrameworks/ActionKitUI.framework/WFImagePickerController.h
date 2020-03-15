@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _magicTapHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType magicTapHandler; // @synthesize magicTapHandler=_magicTapHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType magicTapHandler; // @synthesize magicTapHandler=_magicTapHandler;
 - (BOOL)accessibilityPerformMagicTap;
 
 @end

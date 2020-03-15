@@ -36,8 +36,8 @@
 + (_Bool)dictionaryHasDefinitionForTerm:(id)arg1;
 + (_Bool)_shouldShowDefineForTermOfLength:(int)arg1;
 + (_Bool)_shouldShowDefineForTerm:(id)arg1;
-@property(copy, nonatomic) CDUnknownBlockType dismissCompletionHandler; // @synthesize dismissCompletionHandler=_dismissCompletionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType dismissCompletionHandler; // @synthesize dismissCompletionHandler=_dismissCompletionHandler;
 - (void)window:(id)arg1 setupWithInterfaceOrientation:(int)arg2;
 - (int)_preferredInterfaceOrientationGivenCurrentOrientation:(int)arg1;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(int)arg1;

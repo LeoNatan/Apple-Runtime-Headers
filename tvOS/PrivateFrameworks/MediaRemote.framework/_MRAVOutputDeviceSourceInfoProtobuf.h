@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool multipleBuiltInDevices; // @synthesize multipleBuiltInDevices=_multipleBuiltInDevices;
 @property(retain, nonatomic) NSString *routingContextUID; // @synthesize routingContextUID=_routingContextUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

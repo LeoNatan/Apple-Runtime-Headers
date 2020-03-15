@@ -18,10 +18,10 @@
 }
 
 + (id)actionByAppendingAction:(id)arg1 toAction:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isConsumed) _Bool consumed; // @synthesize consumed=_consumed;
 @property(copy, nonatomic) CDUnknownBlockType validator; // @synthesize validator=_validator;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;

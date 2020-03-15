@@ -16,9 +16,9 @@
     NSDictionary *_invitationsByAssetCollectionObjectID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *invitationsByAssetCollectionObjectID; // @synthesize invitationsByAssetCollectionObjectID=_invitationsByAssetCollectionObjectID;
 @property(readonly, nonatomic) PHFetchResult *assetCollections; // @synthesize assetCollections=_assetCollections;
-- (void).cxx_destruct;
 - (id)stateUpdatedWithChange:(id)arg1 changeDetails:(id *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithAssetCollections:(id)arg1 invitationsByAssetCollectionObjectID:(id)arg2;

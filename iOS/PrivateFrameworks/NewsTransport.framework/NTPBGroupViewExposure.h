@@ -64,6 +64,7 @@
 + (Class)sectionIdsType;
 + (Class)groupedIssueIdsType;
 + (Class)groupedArticleIdsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *layoutIds; // @synthesize layoutIds=_layoutIds;
 @property(retain, nonatomic) NSString *curatedBatchId; // @synthesize curatedBatchId=_curatedBatchId;
 @property(retain, nonatomic) NSString *curatedSubtype; // @synthesize curatedSubtype=_curatedSubtype;
@@ -84,7 +85,6 @@
 @property(nonatomic) int groupDisplayRankInForYou; // @synthesize groupDisplayRankInForYou=_groupDisplayRankInForYou;
 @property(retain, nonatomic) NSMutableArray *groupedArticleIds; // @synthesize groupedArticleIds=_groupedArticleIds;
 @property(retain, nonatomic) NSString *groupFeedId; // @synthesize groupFeedId=_groupFeedId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

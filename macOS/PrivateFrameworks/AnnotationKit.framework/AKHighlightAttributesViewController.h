@@ -16,11 +16,11 @@
     NSMutableDictionary *_partIndexesToTags;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *partIndexesToTags; // @synthesize partIndexesToTags=_partIndexesToTags;
 @property(retain) NSArray *itemTags; // @synthesize itemTags=_itemTags;
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property(copy) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
-- (void).cxx_destruct;
 - (void)_labelViewAction:(id)arg1;
 - (void)loadView;
 - (id)initWithController:(id)arg1 items:(id)arg2;

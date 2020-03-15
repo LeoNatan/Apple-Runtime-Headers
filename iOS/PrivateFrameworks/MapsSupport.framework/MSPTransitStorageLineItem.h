@@ -22,11 +22,11 @@
 }
 
 + (Class)incidentsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *incidents; // @synthesize incidents=_incidents;
 @property(retain, nonatomic) MSPTransitStorageAttribution *transitAttribution; // @synthesize transitAttribution=_transitAttribution;
 @property(retain, nonatomic) GEOMapRegion *storedMapRegion; // @synthesize storedMapRegion=_storedMapRegion;
 @property(retain, nonatomic) MSPTransitStorageLine *line; // @synthesize line=_line;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;

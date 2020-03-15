@@ -15,8 +15,8 @@
     BOOL _mirrored;
 }
 
-@property(nonatomic) BOOL mirrored; // @synthesize mirrored=_mirrored;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL mirrored; // @synthesize mirrored=_mirrored;
 - (void)setFrostingLayerVisible:(BOOL)arg1;
 - (void)setCaptureSession:(id)arg1;
 - (id)captureSession;

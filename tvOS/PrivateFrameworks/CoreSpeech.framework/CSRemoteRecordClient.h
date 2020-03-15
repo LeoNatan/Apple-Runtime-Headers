@@ -14,8 +14,8 @@
     id <CSRemoteRecordClientDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSRemoteRecordClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSRemoteRecordClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)hasPendingTwoShotBeep;
 - (id)voiceTriggerEventInfo;
 - (_Bool)isRecording;

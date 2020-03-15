@@ -21,11 +21,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) SVXDeviceSetupFlowSiriCapabilitiesHint *siriCapabilitiesHint; // @synthesize siriCapabilitiesHint=_siriCapabilitiesHint;
 @property(readonly, copy, nonatomic) NSArray *displayKeyFrames; // @synthesize displayKeyFrames=_displayKeyFrames;
 @property(readonly, copy, nonatomic) NSString *speakableText; // @synthesize speakableText=_speakableText;
 @property(readonly, nonatomic) long long sceneID; // @synthesize sceneID=_sceneID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

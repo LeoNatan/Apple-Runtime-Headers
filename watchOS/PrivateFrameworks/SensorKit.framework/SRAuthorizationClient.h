@@ -28,9 +28,6 @@
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)authorizedServicesDidChange:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)notifyAuthorizationChangeForBundleIdentifier:(id)arg1;
-- (void)removeFromBundlePathMap:(id)arg1;
-- (void)addToBundlePathMap:(id)arg1;
-@property(readonly, copy) NSDictionary *bundlePathMap;
 - (id)serviceStartTimeForService:(id)arg1;
 - (void)setServiceStartTimeForService:(id)arg1;
 - (void)removeBundle:(id)arg1 fromPendingAuthorizations:(id)arg2;

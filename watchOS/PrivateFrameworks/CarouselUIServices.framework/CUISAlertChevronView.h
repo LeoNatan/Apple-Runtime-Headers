@@ -17,8 +17,8 @@
     _Bool _flat;
 }
 
-@property(nonatomic) _Bool flat; // @synthesize flat=_flat;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool flat; // @synthesize flat=_flat;
 - (void)setFlat:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setLabelText:(id)arg1;
 - (void)_updatePathFlat:(struct CGPath *)arg1;

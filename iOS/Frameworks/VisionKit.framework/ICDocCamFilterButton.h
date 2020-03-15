@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)filterButtonWithType:(short)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *iconSizeConstraint; // @synthesize iconSizeConstraint=_iconSizeConstraint;
 @property(nonatomic) __weak UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) __weak UIImageView *filterIconView; // @synthesize filterIconView=_filterIconView;
 @property(nonatomic) __weak UILabel *filterNameLabel; // @synthesize filterNameLabel=_filterNameLabel;
 @property(nonatomic) __weak NSLayoutConstraint *labelVerticalSpacingConstraint; // @synthesize labelVerticalSpacingConstraint=_labelVerticalSpacingConstraint;
 @property(nonatomic) short filterType; // @synthesize filterType=_filterType;
-- (void).cxx_destruct;
 - (void)updateForAccessibilityDarkerSystemColors:(id)arg1;
 - (unsigned long long)accessibilityTraits;
 - (struct CGRect)accessibilityFrame;

@@ -23,6 +23,7 @@
     struct CGSize _lastLayedOutBoundsSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double labelScaleFactor; // @synthesize labelScaleFactor=_labelScaleFactor;
 @property(nonatomic) struct CGSize lastLayedOutBoundsSize; // @synthesize lastLayedOutBoundsSize=_lastLayedOutBoundsSize;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UIFont *primaryFont; // @synthesize primaryFont=_primaryFont;
 @property(retain, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
 @property(retain, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
-- (void).cxx_destruct;
 - (id)_attributedString;
 - (void)_addSuperscriptToAttributedString:(id)arg1 inRange:(struct _NSRange)arg2;
 - (void)_addSuperscriptToAttributedString:(id)arg1 formattedCurrencyAmount:(id)arg2 currencyAmountWithoutSymbols:(id)arg3;

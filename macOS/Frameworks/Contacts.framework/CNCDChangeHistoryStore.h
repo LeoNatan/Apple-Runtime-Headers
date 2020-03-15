@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)contextHasPersistentStores:(id)arg1;
-@property(readonly, nonatomic) CNCDPersistenceStack *persistenceStack; // @synthesize persistenceStack=_persistenceStack;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNCDPersistenceStack *persistenceStack; // @synthesize persistenceStack=_persistenceStack;
 - (id)resultWithManagedObjectContext:(CDUnknownBlockType)arg1;
 - (id)currentHistoryToken;
 - (BOOL)executeChangeHistoryClearRequest:(id)arg1 error:(id *)arg2;

@@ -10,5 +10,7 @@
 
 @protocol PMLMultiLabelClassifierModelProtocol <NSObject>
 - (NSArray *)classify:(PMLSparseVector *)arg1;
+- (NSArray *)predict:(PMLSparseVector *)arg1;
+- (unsigned long long)count;
 @end
 

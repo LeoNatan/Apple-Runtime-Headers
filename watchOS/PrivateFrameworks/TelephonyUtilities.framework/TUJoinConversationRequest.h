@@ -8,10 +8,11 @@
 
 #import <TelephonyUtilities/NSCopying-Protocol.h>
 #import <TelephonyUtilities/NSSecureCoding-Protocol.h>
+#import <TelephonyUtilities/TUFilteredRequest-Protocol.h>
 
 @class NSSet, NSString, NSURL, NSUUID, TUHandle;
 
-@interface TUJoinConversationRequest : NSObject <NSCopying, NSSecureCoding>
+@interface TUJoinConversationRequest : NSObject <TUFilteredRequest, NSCopying, NSSecureCoding>
 {
     _Bool _videoEnabled;
     _Bool _shouldSuppressInCallUI;
@@ -35,6 +36,7 @@
 + (_Bool)shouldSuppressInCallUIFromURLComponents:(id)arg1;
 + (_Bool)videoEnabledFromURLComponents:(id)arg1;
 + (id)remoteMembersFromURLComponents:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isUplinkMuted) _Bool uplinkMuted; // @synthesize uplinkMuted=_uplinkMuted;
 @property(nonatomic) _Bool showUIPrompt; // @synthesize showUIPrompt=_showUIPrompt;
 @property(copy, nonatomic) NSString *messagesGroupName; // @synthesize messagesGroupName=_messagesGroupName;
@@ -45,7 +47,6 @@
 @property(nonatomic, getter=isVideoEnabled) _Bool videoEnabled; // @synthesize videoEnabled=_videoEnabled;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(readonly, copy, nonatomic) NSSet *remoteMembers; // @synthesize remoteMembers=_remoteMembers;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -59,11 +60,19 @@
 - (id)remoteMembersQueryItem;
 - (id)queryItems;
 @property(readonly, nonatomic) NSURL *URL;
-- (id)description;
+- (id)contactNamesByHandleWithContactsDataSource:(id)arg1;
+- (id)handles;
+- (id)bundleIdentifier;
+@property(readonly, copy) NSString *description;
 - (id)initWithGroupUUID:(id)arg1 localParticipantHandle:(id)arg2 remoteParticipantHandles:(id)arg3;
 - (id)initWithURL:(id)arg1;
 - (id)initWithConversation:(id)arg1;
 - (id)initWithRemoteMembers:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

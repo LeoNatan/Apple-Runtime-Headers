@@ -17,9 +17,9 @@
     WFVariableString *_itemTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) WFVariableString *itemTitle; // @synthesize itemTitle=_itemTitle;
 @property(readonly, nonatomic) int latestMenuChoice; // @synthesize latestMenuChoice=_latestMenuChoice;
-- (void).cxx_destruct;
 - (void)variableDidChange:(id)arg1;
 - (void)arrayParameter:(id)arg1 confirmDeletionOfItemAtIndex:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)arrayParameter:(id)arg1 itemWasUpdatedAtIndex:(unsigned int)arg2 toValue:(id)arg3;

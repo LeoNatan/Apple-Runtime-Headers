@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
 + (id)_actionForKey:(id)arg1 eventDict:(id)arg2 viewElement:(id)arg3;
 + (id)_documentDataSourceWithDict:(id)arg1 viewElement:(id)arg2;
 + (id)eventDataSourceWithEventDict:(id)arg1 viewElement:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIAction *postAction; // @synthesize postAction=_postAction;
 @property(retain, nonatomic) VUIDocumentDataSource *postActionDocumentDataSource; // @synthesize postActionDocumentDataSource=_postActionDocumentDataSource;
 @property(retain, nonatomic) VUIAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) VUIDocumentDataSource *documentDataSource; // @synthesize documentDataSource=_documentDataSource;
 @property(retain, nonatomic) VUIAction *preAction; // @synthesize preAction=_preAction;
 @property(retain, nonatomic) VUIDocumentDataSource *preActionDocumentDataSource; // @synthesize preActionDocumentDataSource=_preActionDocumentDataSource;
-- (void).cxx_destruct;
 
 @end
 

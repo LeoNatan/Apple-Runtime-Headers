@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) __weak AXMIconClassDetectorNode *iconClassDetector; // @synthesize iconClassDetector=_iconClassDetector;
 @property(nonatomic) __weak AXMImageNode *imageNode; // @synthesize imageNode=_imageNode;
-- (void).cxx_destruct;
 - (id)classifyImages:(id)arg1 withTimeout:(double)arg2;
 - (id)initWithIdentifier:(id)arg1;
 

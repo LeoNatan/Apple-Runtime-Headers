@@ -15,12 +15,12 @@
     UIView *_currentProgressView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldResizeCurrentProgress; // @synthesize shouldResizeCurrentProgress=_shouldResizeCurrentProgress;
 @property(retain, nonatomic) UIView *currentProgressView; // @synthesize currentProgressView=_currentProgressView;
 @property(retain, nonatomic) UIView *overallProgressView; // @synthesize overallProgressView=_overallProgressView;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) double playbackProgress; // @synthesize playbackProgress=_playbackProgress;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setProgressViewHighlighted:(_Bool)arg1;
 - (id)init;

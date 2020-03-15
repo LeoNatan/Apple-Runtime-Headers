@@ -14,9 +14,9 @@
     NSTextField *_timeStamp;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(retain, nonatomic) SOPreviewingWaveformView *waveformView; // @synthesize waveformView=_waveformView;
-- (void).cxx_destruct;
 - (void)clearWaveform;
 - (void)setTime:(double)arg1;
 - (void)setWaveformImage:(id)arg1;

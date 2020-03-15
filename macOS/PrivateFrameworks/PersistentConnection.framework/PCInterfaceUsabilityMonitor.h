@@ -41,6 +41,7 @@
 - (void)_dynamicStoreCallback:(id)arg1;
 - (void)_processLinkQualityUpdateWithChangedKey:(id)arg1 updatedLinkQuality:(int)arg2;
 - (void)_unscheduleLinkQualityMonitor;
+- (void)_updatePathParameters;
 - (void)_pathUpdate:(id)arg1;
 - (void)_createPathEvaluator;
 - (void)_unschedulePathEvaluator;

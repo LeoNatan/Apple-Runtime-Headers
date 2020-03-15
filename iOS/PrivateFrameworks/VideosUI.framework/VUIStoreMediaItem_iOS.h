@@ -30,13 +30,12 @@ __attribute__((visibility("hidden")))
     NSURL *_playbackURL;
     VUIStoreDownloadMonitor *_downloadMonitor;
     NSObject *_parentReportingToken;
-    NSString *_alternateAssetURLString;
     NSError *_fpsKeyError;
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *fpsKeyError; // @synthesize fpsKeyError=_fpsKeyError;
-@property(retain, nonatomic) NSString *alternateAssetURLString; // @synthesize alternateAssetURLString=_alternateAssetURLString;
 @property(retain, nonatomic) NSObject *parentReportingToken; // @synthesize parentReportingToken=_parentReportingToken;
 @property(nonatomic) _Bool needsRentalCheckin; // @synthesize needsRentalCheckin=_needsRentalCheckin;
 @property(retain, nonatomic) VUIStoreDownloadMonitor *downloadMonitor; // @synthesize downloadMonitor=_downloadMonitor;
@@ -52,14 +51,11 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSURL *fpsKeyServerURL; // @synthesize fpsKeyServerURL=_fpsKeyServerURL;
 @property(copy, nonatomic) NSURL *fpsCertificateURL; // @synthesize fpsCertificateURL=_fpsCertificateURL;
 @property(nonatomic) NSNumber *startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)_rentalExpirationDate;
 - (id)_rentalPlaybackEndDate;
 - (id)_rentalEndDate;
 - (id)_iTunesStoreContentInfo;
 - (void)_externalPlaybackTypeDidChange:(id)arg1;
-- (void)_userPlaybackSettingsDidChange:(id)arg1;
-- (_Bool)_allowedToPlayWhileOnCellularNetwork;
 - (void)_checkInRental;
 - (void)_checkoutRentalWithCheckoutType:(unsigned long long)arg1 startPlaybackClock:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_persistOfflineKeyData:(id)arg1 forKeyRequest:(id)arg2;
@@ -87,7 +83,6 @@ __attribute__((visibility("hidden")))
 - (void)prepareForPlaybackInitiationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)prepareForLoadingWithCompletion:(CDUnknownBlockType)arg1;
 - (id)mediaItemMetadataForProperty:(id)arg1;
-@property(readonly, nonatomic, getter=isStreamingHLS) _Bool streamingHLS;
 - (_Bool)hasTrait:(id)arg1;
 - (id)mediaItemURL;
 - (void)dealloc;

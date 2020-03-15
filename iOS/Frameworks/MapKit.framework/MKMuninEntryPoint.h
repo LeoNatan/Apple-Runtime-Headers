@@ -26,6 +26,7 @@
 + (id)entryPointWithMuninMarker:(id)arg1 heading:(double)arg2;
 + (id)entryPointWithMapItem:(id)arg1 wantsCloseUpView:(_Bool)arg2;
 + (id)entryPointWithMapItem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int triggerAction; // @synthesize triggerAction=_triggerAction;
 @property(retain, nonatomic) GEOMuninViewState *muninViewState; // @synthesize muninViewState=_muninViewState;
 @property(nonatomic) double heading; // @synthesize heading=_heading;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool wantsCloseUpView; // @synthesize wantsCloseUpView=_wantsCloseUpView;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

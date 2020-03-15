@@ -18,9 +18,9 @@
 
 + (id)accessoryReferenceWithAccessory:(id)arg1;
 + (id)accessoryReferenceWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, nonatomic) HMPBHomeReference *homeReference; // @synthesize homeReference=_homeReference;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

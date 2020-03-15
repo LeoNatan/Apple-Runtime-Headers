@@ -12,8 +12,8 @@
     id _object;
 }
 
-@property(readonly, nonatomic) id object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id object; // @synthesize object=_object;
 - (id)description;
 - (BOOL)hasMultipleInterests;
 - (void)endInterest;

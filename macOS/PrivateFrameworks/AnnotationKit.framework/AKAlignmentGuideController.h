@@ -24,6 +24,7 @@
     NSPanGestureRecognizer *_panRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSPanGestureRecognizer *panRecognizer; // @synthesize panRecognizer=_panRecognizer;
 @property(retain, nonatomic) NSMutableArray *alignmentGuides; // @synthesize alignmentGuides=_alignmentGuides;
 @property(retain, nonatomic) AKAlignedItem *alignmentItem; // @synthesize alignmentItem=_alignmentItem;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSInputAlignmentController *alignmentController; // @synthesize alignmentController=_alignmentController;
 @property BOOL exifHasFlippedAxes; // @synthesize exifHasFlippedAxes=_exifHasFlippedAxes;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
-- (void).cxx_destruct;
 - (BOOL)alignmentController:(id)arg1 shouldAlignOnMatch:(id)arg2;
 - (struct CGPoint)guideAlignedPointForPoint:(struct CGPoint)arg1 withEvent:(id)arg2 orRecognizer:(id)arg3;
 - (void)dealloc;

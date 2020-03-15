@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     long long type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type;
 @property(copy, nonatomic) NSArray *items; // @synthesize items;
 @property(copy, nonatomic) NSString *title; // @synthesize title;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

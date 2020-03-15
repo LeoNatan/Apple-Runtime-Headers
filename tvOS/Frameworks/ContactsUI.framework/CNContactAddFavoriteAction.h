@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CNUIFavoritesEntryPicker *_favoritesEntryPicker;
 }
 
-@property(retain, nonatomic) CNUIFavoritesEntryPicker *favoritesEntryPicker; // @synthesize favoritesEntryPicker=_favoritesEntryPicker;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNUIFavoritesEntryPicker *favoritesEntryPicker; // @synthesize favoritesEntryPicker=_favoritesEntryPicker;
 - (void)_saveFavorite:(id)arg1;
 - (void)favoritesEntryPicker:(id)arg1 didPickEntry:(id)arg2;
 - (void)performActionWithSender:(id)arg1;

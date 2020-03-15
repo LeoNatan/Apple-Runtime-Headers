@@ -25,6 +25,7 @@
     unsigned long long _graphStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long graphStyle; // @synthesize graphStyle=_graphStyle;
 @property(retain, nonatomic) UITapGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 @property(retain, nonatomic) NSLayoutConstraint *labelBaselineConstraint; // @synthesize labelBaselineConstraint=_labelBaselineConstraint;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSArray *sleepData; // @synthesize sleepData=_sleepData;
 @property(copy, nonatomic) MTAlarm *sleepAlarm; // @synthesize sleepAlarm=_sleepAlarm;
 @property(retain, nonatomic) UILayoutGuide *axesLayoutGuide; // @synthesize axesLayoutGuide=_axesLayoutGuide;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double wakeTimeOriginY;
 @property(readonly, nonatomic) double bedtimeOriginY;
 - (double)barOriginXForBarAtIndex:(unsigned long long)arg1 outOfCount:(unsigned long long)arg2 shouldChangeForRTL:(_Bool)arg3;

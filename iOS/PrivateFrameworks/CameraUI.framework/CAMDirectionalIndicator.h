@@ -10,17 +10,29 @@
 
 @interface CAMDirectionalIndicator : UIControl
 {
-    unsigned long long _direction;
+    long long _style;
+    long long _direction;
+    CAShapeLayer *__arrowLayer;
+    CAShapeLayer *__compactBackgroundLayer;
 }
 
 + (Class)layerClass;
-@property(nonatomic) unsigned long long direction; // @synthesize direction=_direction;
++ (struct CGSize)_compactBackgroundSize;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) CAShapeLayer *_compactBackgroundLayer; // @synthesize _compactBackgroundLayer=__compactBackgroundLayer;
+@property(readonly, nonatomic) CAShapeLayer *_arrowLayer; // @synthesize _arrowLayer=__arrowLayer;
+@property(nonatomic) long long direction; // @synthesize direction=_direction;
+@property(readonly, nonatomic) long long style; // @synthesize style=_style;
+- (void)_updateCompactCirclePath;
+- (void)_updateArrowColorAnimated:(_Bool)arg1;
 - (void)_updateArrowShapeAnimated:(_Bool)arg1;
-- (void)setDirection:(unsigned long long)arg1 animated:(_Bool)arg2;
+- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setSelected:(_Bool)arg1;
+- (void)setDirection:(long long)arg1 animated:(_Bool)arg2;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
-@property(readonly, nonatomic) CAShapeLayer *_arrowLayer;
+- (id)initWithStyle:(long long)arg1;
+@property(readonly, nonatomic) CAShapeLayer *_backingShapeLayer;
 
 @end
 

@@ -14,9 +14,9 @@
     NSString *_chrDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chrDescription; // @synthesize chrDescription=_chrDescription;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

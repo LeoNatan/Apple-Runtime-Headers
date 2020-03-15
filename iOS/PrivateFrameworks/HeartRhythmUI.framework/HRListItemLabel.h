@@ -20,6 +20,7 @@
     struct CGSize _itemViewSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *topToTextLabelFirstBaselineConstraint; // @synthesize topToTextLabelFirstBaselineConstraint=_topToTextLabelFirstBaselineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *itemViewTextAlignmentConstraint; // @synthesize itemViewTextAlignmentConstraint=_itemViewTextAlignmentConstraint;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
@@ -28,7 +29,6 @@
 @property(nonatomic) _Bool centerItemViewToFirstLine; // @synthesize centerItemViewToFirstLine=_centerItemViewToFirstLine;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIView *itemView; // @synthesize itemView=_itemView;
-- (void).cxx_destruct;
 - (double)_textLabelLastBaselineToBottom;
 - (double)_topToTextLabelFirstBaseline;
 - (id)_textLabelBoldFont;

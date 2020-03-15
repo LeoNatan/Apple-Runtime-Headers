@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_placementInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *placementInfo; // @synthesize placementInfo=_placementInfo;
 @property(retain, nonatomic) _UIStatusBarStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
 @property(nonatomic) BOOL styleAttributesChanged; // @synthesize styleAttributesChanged=_styleAttributesChanged;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL dataChanged; // @synthesize dataChanged=_dataChanged;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) BOOL enabilityChanged; // @synthesize enabilityChanged=_enabilityChanged;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

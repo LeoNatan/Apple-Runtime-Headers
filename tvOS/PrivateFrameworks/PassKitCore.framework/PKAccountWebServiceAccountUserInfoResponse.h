@@ -13,8 +13,8 @@
     CNContact *_userInfo;
 }
 
-@property(readonly, nonatomic) CNContact *userInfo; // @synthesize userInfo=_userInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContact *userInfo; // @synthesize userInfo=_userInfo;
 - (id)_stringValueFromDictionary:(id)arg1 key:(id)arg2 isOptional:(_Bool)arg3;
 - (id)initWithData:(id)arg1;
 

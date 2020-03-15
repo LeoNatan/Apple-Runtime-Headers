@@ -18,13 +18,13 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
 @property(readonly, nonatomic) MPCMediaRemoteController *controller; // @synthesize controller=_controller;
 @property(copy, nonatomic) NSDictionary *userInitiatedOptions; // @synthesize userInitiatedOptions=_userInitiatedOptions;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, nonatomic) unsigned int command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (void)setCommandOptionValue:(id)arg1 forKey:(id)arg2;
 - (id)initWithMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 playerPath:(id)arg3 label:(id)arg4;
 - (id)initWithMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 controller:(id)arg3 label:(id)arg4;

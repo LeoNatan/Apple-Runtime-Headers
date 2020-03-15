@@ -15,10 +15,10 @@
     NSString *_designatedAppBundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isInSetTopBoxMode; // @synthesize isInSetTopBoxMode=_isInSetTopBoxMode;
 @property(copy, nonatomic) NSString *designatedAppBundleIdentifier; // @synthesize designatedAppBundleIdentifier=_designatedAppBundleIdentifier;
 @property(copy, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

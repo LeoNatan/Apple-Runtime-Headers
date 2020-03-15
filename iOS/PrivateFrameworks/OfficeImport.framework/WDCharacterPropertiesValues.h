@@ -147,6 +147,7 @@ __attribute__((visibility("hidden")))
     OADShadowEffect *_shadow2010;
 }
 
+- (void).cxx_destruct;
 @property unsigned short symbolCharacter; // @synthesize symbolCharacter=_symbolCharacter;
 @property unsigned char useCsFont; // @synthesize useCsFont=_useCsFont;
 @property unsigned char rightToLeft; // @synthesize rightToLeft=_rightToLeft;
@@ -281,7 +282,6 @@ __attribute__((visibility("hidden")))
 @property _Bool shadingOverridden; // @synthesize shadingOverridden=mShadingOverridden;
 @property _Bool borderOverridden; // @synthesize borderOverridden=mBorderOverridden;
 @property _Bool baseStyleOverridden; // @synthesize baseStyleOverridden=mBaseStyleOverridden;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

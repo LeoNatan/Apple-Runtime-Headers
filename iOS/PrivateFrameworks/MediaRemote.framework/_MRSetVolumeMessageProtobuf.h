@@ -17,9 +17,9 @@
     CDStruct_731552e5 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *outputDeviceUID; // @synthesize outputDeviceUID=_outputDeviceUID;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

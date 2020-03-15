@@ -20,6 +20,7 @@
 }
 
 + (float)deselectCellAnimationDuration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(nonatomic) _Bool platterEnabled; // @synthesize platterEnabled=_platterEnabled;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) float fontSize; // @synthesize fontSize=_fontSize;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (struct CGRect)imageRect;
 - (id)emojiPlatterColor;
 - (void)drawRect:(struct CGRect)arg1;

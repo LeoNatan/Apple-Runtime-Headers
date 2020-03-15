@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (id)mergeRanges:(id)arg1 withRanges:(id)arg2;
 + (void)miro_computeAndSetStaticScoreWithFlags:(unsigned long long)arg1 forRanges:(id)arg2;
 + (double)miro_computeStaticScoreWithFlags:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *childRanges; // @synthesize childRanges=_childRanges;
 @property(nonatomic) unsigned long long rating; // @synthesize rating=_rating;
 @property(nonatomic) double score; // @synthesize score=_score;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int startTimeInFrames; // @synthesize startTimeInFrames=_startTimeInFrames;
 @property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (int)durationOfOverlapWithStart:(int)arg1 duration:(int)arg2;
 - (int)durationOfOverlapWithRange:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *dictionary;

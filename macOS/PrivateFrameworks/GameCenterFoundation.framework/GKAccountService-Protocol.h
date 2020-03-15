@@ -17,6 +17,7 @@
 - (oneway void)signOutPlayerWithHandler:(void (^)(NSError *))arg1;
 - (oneway void)authenticationWasCancelled;
 - (oneway void)authenticatePlayerViaAlertWithHandler:(void (^)(GKAuthenticateResponse *, NSError *))arg1;
+- (oneway void)fetchItemsForIdentityVerificationSignature:(void (^)(NSDictionary *, NSError *))arg1;
 - (oneway void)generateIdentityVerificationSignatureWithHandler:(void (^)(NSDictionary *, NSError *))arg1;
 - (oneway void)authenticatePlayerWithExistingCredentialsWithHandler:(void (^)(GKAuthenticateResponse *, NSError *))arg1;
 @end

@@ -13,8 +13,8 @@
     NSArray *_indicatorInfos;
 }
 
-@property(copy, nonatomic) NSArray *indicatorInfos; // @synthesize indicatorInfos=_indicatorInfos;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *indicatorInfos; // @synthesize indicatorInfos=_indicatorInfos;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

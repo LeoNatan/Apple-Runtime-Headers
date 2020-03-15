@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) NSArray *cloudAssetIdentifiers; // @synthesize cloudAssetIdentifiers=_cloudAssetIdentifiers;
 @property(readonly, nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(readonly, nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(readonly, nonatomic) NSArray *elements; // @synthesize elements=_elements;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;

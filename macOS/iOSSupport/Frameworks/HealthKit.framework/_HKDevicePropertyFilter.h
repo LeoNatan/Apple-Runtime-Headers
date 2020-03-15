@@ -20,10 +20,10 @@
 + (BOOL)_acceptsOperatorType:(unsigned long long)arg1;
 + (id)filterWithDeviceProperty:(id)arg1 allowedValues:(id)arg2;
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3 dataTypes:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *allowedValues; // @synthesize allowedValues=_allowedValues;
 @property(readonly, nonatomic) NSString *propertyKey; // @synthesize propertyKey=_propertyKey;
 @property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)acceptsDataObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

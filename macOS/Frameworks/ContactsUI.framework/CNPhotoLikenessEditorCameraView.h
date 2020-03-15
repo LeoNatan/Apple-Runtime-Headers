@@ -13,8 +13,8 @@
     id <CNPhotoLikenessEditorCameraViewDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <CNPhotoLikenessEditorCameraViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <CNPhotoLikenessEditorCameraViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setHidden:(BOOL)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

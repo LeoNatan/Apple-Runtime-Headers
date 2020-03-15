@@ -13,8 +13,8 @@
     NSArray *_fundingSources;
 }
 
-@property(readonly, copy, nonatomic) NSArray *fundingSources; // @synthesize fundingSources=_fundingSources;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *fundingSources; // @synthesize fundingSources=_fundingSources;
 - (id)initWithData:(id)arg1;
 
 @end

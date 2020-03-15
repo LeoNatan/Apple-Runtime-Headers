@@ -26,11 +26,11 @@
     NSString *_unlockDestination;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *unlockDestination; // @synthesize unlockDestination=_unlockDestination;
 @property(nonatomic) _Bool useBiometricPresentation; // @synthesize useBiometricPresentation=_useBiometricPresentation;
 @property(nonatomic) _Bool showEmergencyCallButton; // @synthesize showEmergencyCallButton=_showEmergencyCallButton;
 @property(nonatomic) __weak id <SBPasscodeEntryTransientOverlayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updatePrototypeSettings;
 - (void)_passcodeLockViewPasscodeEntered:(id)arg1 viaMesa:(_Bool)arg2;
 - (void)_attemptUnlock:(id)arg1 passcode:(id)arg2;

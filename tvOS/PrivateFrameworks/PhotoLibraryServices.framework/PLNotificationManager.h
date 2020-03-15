@@ -24,10 +24,10 @@
 
 + (id)_bestDateForDeliveringNotificationWithError:(id *)arg1;
 + (id)_notificationDeliveryDate;
-+ (struct NSObject *)filteredAlbumListForContentMode:(int)arg1 library:(id)arg2;
++ (id)filteredAlbumListForContentMode:(int)arg1 library:(id)arg2;
 + (id)sharedManager;
-@property(retain, nonatomic) PLNotificationUNCenter *UNCenter; // @synthesize UNCenter=_UNCenter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PLNotificationUNCenter *UNCenter; // @synthesize UNCenter=_UNCenter;
 - (void)_resetAlertFiltration;
 - (_Bool)_alertFiltrationEnabled;
 - (_Bool)_isMyEmailAddress:(id)arg1;

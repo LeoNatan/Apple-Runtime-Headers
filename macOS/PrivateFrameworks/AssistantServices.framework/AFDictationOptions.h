@@ -52,6 +52,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long dictationInputOrigin; // @synthesize dictationInputOrigin=_dictationInputOrigin;
 @property(copy, nonatomic) AFLanguageDetectionUserContext *languageDetectionUserContext; // @synthesize languageDetectionUserContext=_languageDetectionUserContext;
 @property(copy, nonatomic) NSURL *modelOverrideURL; // @synthesize modelOverrideURL=_modelOverrideURL;
@@ -88,7 +89,6 @@
 @property(retain, nonatomic) STSiriContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) NSString *applicationVersion; // @synthesize applicationVersion=_applicationVersion;
 @property(copy, nonatomic) NSString *applicationName; // @synthesize applicationName=_applicationName;
-- (void).cxx_destruct;
 - (id)dictationOptionsWithoutTextContext;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

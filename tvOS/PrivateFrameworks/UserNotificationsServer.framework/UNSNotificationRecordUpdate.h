@@ -13,8 +13,8 @@
     UNSNotificationRecord *_notificationRecord;
 }
 
-@property(readonly, nonatomic) UNSNotificationRecord *notificationRecord; // @synthesize notificationRecord=_notificationRecord;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UNSNotificationRecord *notificationRecord; // @synthesize notificationRecord=_notificationRecord;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)_initWithNotificationRecord:(id)arg1;

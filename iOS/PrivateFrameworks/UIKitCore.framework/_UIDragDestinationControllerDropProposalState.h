@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_indexPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didDrop; // @synthesize didDrop=_didDrop;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) UICollectionViewDropProposal *proposal; // @synthesize proposal=_proposal;
-- (void).cxx_destruct;
 - (_Bool)_hasDropActionTarget;
 @property(readonly, nonatomic) NSIndexPath *effectiveIndexPath;
 - (void)updateFromDropProposal:(id)arg1;

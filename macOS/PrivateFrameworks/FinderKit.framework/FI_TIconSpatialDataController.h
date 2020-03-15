@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     _Bool _writeSpatialDataToDisk;
 }
 
-@property _Bool writeSpatialDataToDisk; // @synthesize writeSpatialDataToDisk=_writeSpatialDataToDisk;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property _Bool writeSpatialDataToDisk; // @synthesize writeSpatialDataToDisk=_writeSpatialDataToDisk;
 - (void)setSpatialDataOnNode:(const struct TFENode *)arg1 fromNodePropertyList:(const struct TFENodePropertyList *)arg2;
 - (void)setSpatialData:(const struct IconSpatialData *)arg1 inNodePropertyList:(struct TFENodePropertyList *)arg2;
 - (struct IconSpatialData)spatialDataFromNodePropertyList:(const struct TFENodePropertyList *)arg1;

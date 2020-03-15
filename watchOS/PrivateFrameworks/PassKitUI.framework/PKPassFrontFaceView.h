@@ -20,12 +20,12 @@
     PKLinkedAppIconView *_linkedApp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKLinkedAppIconView *linkedApp; // @synthesize linkedApp=_linkedApp;
 @property(nonatomic) _Bool showsLiveBalance; // @synthesize showsLiveBalance=_showsLiveBalance;
 @property(nonatomic) _Bool showsBarcodeView; // @synthesize showsBarcodeView=_showsBarcodeView;
 @property(nonatomic) int bottomRightItem; // @synthesize bottomRightItem=_bottomRightItem;
 @property(nonatomic) _Bool showsLinkedApp; // @synthesize showsLinkedApp=_showsLinkedApp;
-- (void).cxx_destruct;
 - (id)_relevantBuckets;
 - (id)_rebucketAuxiliaryFields:(id)arg1;
 @property(readonly, nonatomic) PKBarcodeStickerView *barcodeView;

@@ -18,12 +18,12 @@
 }
 
 + (id)colorWheelImage:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(nonatomic) _Bool isEmbossed; // @synthesize isEmbossed=_isEmbossed;
 @property(nonatomic) _Bool isCompact; // @synthesize isCompact=_isCompact;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

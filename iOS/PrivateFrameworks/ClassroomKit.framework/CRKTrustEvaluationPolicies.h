@@ -15,8 +15,8 @@
 
 + (id)defaultPolicicesForServerEvaluation;
 + (id)defaultPoliciesForClientEvaluation;
-@property(readonly, copy, nonatomic) NSArray *policyRefs; // @synthesize policyRefs=_policyRefs;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *policyRefs; // @synthesize policyRefs=_policyRefs;
 - (id)initWithPolicyRefs:(id)arg1;
 - (id)init;
 

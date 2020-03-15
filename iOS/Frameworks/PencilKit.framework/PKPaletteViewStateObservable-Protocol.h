@@ -4,7 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@protocol PKPaletteViewStateObservable
+#import <PencilKit/NSObject-Protocol.h>
+
+@protocol PKPaletteViewStateObservable <NSObject>
 @property(readonly, nonatomic, getter=isAnnotationSupportEnabled) _Bool annotationSupportEnabled;
 @end
 

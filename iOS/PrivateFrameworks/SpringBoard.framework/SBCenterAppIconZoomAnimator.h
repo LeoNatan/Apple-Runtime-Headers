@@ -19,10 +19,10 @@
     NSMutableArray *_animationCompletions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *animationCompletions; // @synthesize animationCompletions=_animationCompletions;
 @property(retain, nonatomic) SBReversibleLayerPropertyAnimator *appZoomAnimator; // @synthesize appZoomAnimator=_appZoomAnimator;
 @property double distantScale; // @synthesize distantScale=_distantScale;
-- (void).cxx_destruct;
 - (void)_fadeAppForZoomFraction:(double)arg1;
 - (void)_translateAppForZoomFraction:(double)arg1;
 - (double)_appZPositionForZoomFraction:(double)arg1;

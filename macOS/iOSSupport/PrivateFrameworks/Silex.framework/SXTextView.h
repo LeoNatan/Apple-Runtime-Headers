@@ -31,6 +31,7 @@
     struct CGRect _parentFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak TSDCanvas *canvas; // @synthesize canvas=_canvas;
 @property(retain, nonatomic) CALayer *overlayContainerLayer; // @synthesize overlayContainerLayer=_overlayContainerLayer;
 @property(retain, nonatomic) CALayer *repContainerLayer; // @synthesize repContainerLayer=_repContainerLayer;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) SXTextSource *textSource; // @synthesize textSource=_textSource;
 @property(nonatomic) __weak id <SXTextViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SXTextLayouter *textLayouter; // @synthesize textLayouter=_textLayouter;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)accessibilityElements;
 - (long long)accessibilityContainerType;

@@ -16,6 +16,7 @@
     _Bool _isAppJustDeepLinkOpened;
     _Bool _isGDPRConsented;
     _Bool _shouldPostAppLaunchData;
+    _Bool _isInDebugMode;
     NSDictionary *_baseFields;
     NSDictionary *_cachedOpenUrlData;
     NSString *_currentTabIdentifier;
@@ -32,6 +33,7 @@
 
 + (id)sharedInstance;
 + (id)_baseToVPAFMapping;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *savedRecentEvents; // @synthesize savedRecentEvents=_savedRecentEvents;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *metricsDataDispatchSQ; // @synthesize metricsDataDispatchSQ=_metricsDataDispatchSQ;
 @property(retain, nonatomic) MTMetricsKit *perfMetricsKit; // @synthesize perfMetricsKit=_perfMetricsKit;
@@ -44,8 +46,8 @@
 @property(readonly, copy, nonatomic) NSString *currentTabIdentifier; // @synthesize currentTabIdentifier=_currentTabIdentifier;
 @property(retain, nonatomic) NSDictionary *cachedOpenUrlData; // @synthesize cachedOpenUrlData=_cachedOpenUrlData;
 @property(copy, nonatomic) NSDictionary *baseFields; // @synthesize baseFields=_baseFields;
+@property(nonatomic) _Bool isInDebugMode; // @synthesize isInDebugMode=_isInDebugMode;
 @property(nonatomic) _Bool shouldPostAppLaunchData; // @synthesize shouldPostAppLaunchData=_shouldPostAppLaunchData;
-- (void).cxx_destruct;
 - (id)getRecentEventsForDebuggerUI;
 - (void)_saveRecentEvents:(id)arg1;
 - (id)_getLocationAuthorizationStatus;
@@ -55,6 +57,7 @@
 - (void)_handleServerConfigChange:(id)arg1;
 - (void)_handleTabBarChange:(id)arg1;
 - (void)_updateBaseFieldsWithData:(id)arg1;
+- (void)_flushMetrics;
 - (void)flushMetrics;
 - (void)_setGDPRConsentStatus:(_Bool)arg1;
 - (void)updateGDPRConsentStatus;
@@ -68,11 +71,12 @@
 - (void)_flushUnreportedEvents:(id)arg1;
 - (void)_recordEvent:(id)arg1 withEventData:(id)arg2;
 - (void)jsDelegateRecordEvent:(id)arg1;
+- (void)recordRawEvent:(id)arg1;
 - (void)recordMedia:(id)arg1;
 - (void)recordClick:(id)arg1;
 - (void)recordDialog:(id)arg1;
 - (void)recordPage:(id)arg1;
-- (void)_flushMetricsOnExit;
+- (void)_invokeOnInactiveMethodInJs;
 - (void)_recordExit:(id)arg1;
 - (void)recordAppWillBackground;
 - (void)recordAppWillTerminate;

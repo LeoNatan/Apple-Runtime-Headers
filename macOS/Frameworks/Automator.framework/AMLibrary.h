@@ -20,11 +20,11 @@
 
 + (id)sharedLibrary;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSCountedSet *observedGroups; // @synthesize observedGroups=_observedGroups;
 @property(nonatomic) unsigned long long organizationStyle; // @synthesize organizationStyle=_organizationStyle;
 @property(retain, nonatomic) NSArray *variablesLibrary; // @synthesize variablesLibrary=_variablesLibrary;
 @property(retain, nonatomic) NSArray *actionsLibrary; // @synthesize actionsLibrary=_actionsLibrary;
-- (void).cxx_destruct;
 - (void)organizeActions:(id)arg1 byKey:(id)arg2 inGroup:(id)arg3;
 - (void)organizeAction:(id)arg1 byKey:(id)arg2 inGroup:(id)arg3;
 @property(retain, nonatomic) AMGroup *categoriesGroup;

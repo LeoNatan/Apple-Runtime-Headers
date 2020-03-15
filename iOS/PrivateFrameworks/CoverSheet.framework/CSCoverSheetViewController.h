@@ -128,6 +128,7 @@
     SBWallpaperAggdLogger *_wallpaperAggdLogger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBWallpaperAggdLogger *wallpaperAggdLogger; // @synthesize wallpaperAggdLogger=_wallpaperAggdLogger;
 @property(retain, nonatomic, getter=_screenWakeAnimationController, setter=_setScreenWakeAnimationController:) id <SBFScreenWakeAnimationControlling> screenWakeAnimationController; // @synthesize screenWakeAnimationController=_screenWakeAnimationController;
 @property(retain, nonatomic) id <BSInvalidatable> suspendWallpaperAnimationAssertion; // @synthesize suspendWallpaperAnimationAssertion=_suspendWallpaperAnimationAssertion;
@@ -176,7 +177,6 @@
 @property(retain, nonatomic, getter=_customLockScreenActionContext) SBFLockScreenActionContext *customLockScreenActionContext; // @synthesize customLockScreenActionContext=_customLockScreenActionContext;
 @property(nonatomic) double backlightLevel; // @synthesize backlightLevel=_backlightLevel;
 @property(nonatomic, getter=isAuthenticated) _Bool authenticated; // @synthesize authenticated=_authenticated;
-- (void).cxx_destruct;
 - (id)_passcodeViewController;
 - (void)dismissOverlaysAnimated:(_Bool)arg1;
 - (void)removeApplicationHoster:(id)arg1;

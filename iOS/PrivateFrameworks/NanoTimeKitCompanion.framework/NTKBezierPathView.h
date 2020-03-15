@@ -19,10 +19,10 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *pathColor; // @synthesize pathColor=_pathColor;
 @property(readonly, nonatomic) NTKBezierPathPointModel *pointModel; // @synthesize pointModel=_pointModel;
 @property(retain, nonatomic) UIBezierPath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)_shapeLayer;
 - (struct CGPoint)pointOnPathForHorizontalPercentage:(double)arg1;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;

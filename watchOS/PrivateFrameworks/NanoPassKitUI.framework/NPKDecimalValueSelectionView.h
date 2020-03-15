@@ -34,6 +34,7 @@
     NSNumberFormatter *_valueFormatter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumberFormatter *valueFormatter; // @synthesize valueFormatter=_valueFormatter;
 @property(readonly, nonatomic) PUICButton *acceptButton; // @synthesize acceptButton=_acceptButton;
 @property(readonly, nonatomic) UILabel *annotationLabel; // @synthesize annotationLabel=_annotationLabel;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) NSDecimalNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(retain, nonatomic) NSDecimalNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(retain, nonatomic) NSDecimalNumber *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)updateUserInteractionState;
 - (void)_updateUI;
 - (void)_centsButtonTapped:(id)arg1;

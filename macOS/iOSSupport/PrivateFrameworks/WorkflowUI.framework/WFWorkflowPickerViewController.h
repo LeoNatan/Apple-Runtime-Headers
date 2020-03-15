@@ -24,6 +24,7 @@
     NSArray *_filteredVariables;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *filteredVariables; // @synthesize filteredVariables=_filteredVariables;
 @property(retain, nonatomic) NSArray *filteredWorkflows; // @synthesize filteredWorkflows=_filteredWorkflows;
 @property(retain, nonatomic) NSArray *variables; // @synthesize variables=_variables;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(readonly, copy, nonatomic) NSArray *workflowNames; // @synthesize workflowNames=_workflowNames;
 @property(nonatomic) __weak id <WFWorkflowPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)reloadSearchResults;
 - (id)workflowIconForWorkflow:(id)arg1;

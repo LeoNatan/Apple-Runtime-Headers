@@ -41,8 +41,8 @@ __attribute__((visibility("hidden")))
 + (id)borderWidthCache;
 + (id)borderStyleCache;
 + (id)cssStyleCache;
-@property(retain) NSString *fileName; // @synthesize fileName=mFileName;
 - (void).cxx_destruct;
+@property(retain) NSString *fileName; // @synthesize fileName=mFileName;
 - (void)setElementCount:(unsigned long long)arg1;
 - (void)finishMappingWithState:(id)arg1;
 - (void)mapElement:(id)arg1 atIndex:(unsigned long long)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;

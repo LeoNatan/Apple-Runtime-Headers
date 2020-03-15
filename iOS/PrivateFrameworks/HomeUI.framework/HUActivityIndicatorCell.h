@@ -20,13 +20,14 @@
     UIActivityIndicatorView *_activityIndicatorView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(readonly, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(readonly, nonatomic) HUTitleDescriptionContentView *titleDescriptionView; // @synthesize titleDescriptionView=_titleDescriptionView;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
 - (void)_setupConstraints;
+@property(readonly, copy) NSString *description;
 @property(retain, nonatomic) UIImage *icon;
 @property(retain, nonatomic) id <HFStringGenerator> descriptionText;
 @property(retain, nonatomic) id <HFStringGenerator> titleText;
@@ -36,7 +37,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

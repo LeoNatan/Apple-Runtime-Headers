@@ -18,11 +18,11 @@
     NPKPickPaymentApplicationController *_pickPaymentApplicationController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsShowUIAfterDismiss; // @synthesize needsShowUIAfterDismiss=_needsShowUIAfterDismiss;
 @property(retain, nonatomic) NPKPickPaymentApplicationController *pickPaymentApplicationController; // @synthesize pickPaymentApplicationController=_pickPaymentApplicationController;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
-- (void).cxx_destruct;
 - (void)pickPaymentApplicationController:(id)arg1 didPickPaymentApplication:(id)arg2;
 - (void)showSelectionUI;
 - (id)initWithPaymentPass:(id)arg1 presentingViewController:(id)arg2;

@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *keyImagesByType; // @synthesize keyImagesByType=_keyImagesByType;
 @property(copy, nonatomic) NSString *proxyIdentifier; // @synthesize proxyIdentifier=_proxyIdentifier;
 @property(nonatomic, setter=_setImageTypeToStore:) long long _imageTypeToStore; // @synthesize _imageTypeToStore;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) unsigned long long servicePriority;

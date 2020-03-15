@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double timeoutSeconds; // @synthesize timeoutSeconds=_timeoutSeconds;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(nonatomic) unsigned int colorCode; // @synthesize colorCode=_colorCode;
 @property(nonatomic) unsigned short bluetoothProductID; // @synthesize bluetoothProductID=_bluetoothProductID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

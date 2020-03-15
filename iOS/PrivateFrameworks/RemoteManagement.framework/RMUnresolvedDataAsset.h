@@ -8,18 +8,20 @@
 
 #import <RemoteManagement/RMUnresolvedAsset-Protocol.h>
 
-@class NSString, RMAsset;
+@class NSDictionary, NSString, RMAsset;
 
 @interface RMUnresolvedDataAsset : NSObject <RMUnresolvedAsset>
 {
     RMAsset *_asset;
+    NSDictionary *_queryParameters;
 }
 
-@property(retain, nonatomic) RMAsset *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
-- (void)resolveWithAssetResolver:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(copy, nonatomic) NSDictionary *queryParameters; // @synthesize queryParameters=_queryParameters;
+@property(retain, nonatomic) RMAsset *asset; // @synthesize asset=_asset;
+- (void)resolveWithAssetResolver:(id)arg1 statusUpdater:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, copy, nonatomic) NSString *identifier;
-- (id)initWithAsset:(id)arg1;
+- (id)initWithAsset:(id)arg1 queryParameters:(id)arg2;
 
 @end
 

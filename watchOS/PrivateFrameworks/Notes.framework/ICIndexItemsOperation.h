@@ -16,11 +16,11 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned int maxBytesPerBatch; // @synthesize maxBytesPerBatch=_maxBytesPerBatch;
 @property(copy, nonatomic) NSArray *dataSources; // @synthesize dataSources=_dataSources;
 @property(retain, nonatomic) CSSearchableIndex *searchableIndex; // @synthesize searchableIndex=_searchableIndex;
-- (void).cxx_destruct;
 - (id)objectIDURIsToDeleteFromDataSource:(id)arg1;
 - (id)objectIDsToIndexFromDataSource:(id)arg1;
 - (void)indexItems;

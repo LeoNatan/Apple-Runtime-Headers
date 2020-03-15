@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)defaultCornerRadius;
-@property(nonatomic) BOOL cornersAreRounded; // @synthesize cornersAreRounded=_cornersAreRounded;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL cornersAreRounded; // @synthesize cornersAreRounded=_cornersAreRounded;
 @property(nonatomic) double cornerRadius;
 @property(readonly, nonatomic) NSView *mainContentView;
 - (id)_cornerMask;

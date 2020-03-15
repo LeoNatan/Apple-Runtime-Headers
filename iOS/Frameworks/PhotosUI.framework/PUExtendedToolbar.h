@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSMutableSet *__accessoryViewContainers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *_accessoryViewContainers; // @synthesize _accessoryViewContainers=__accessoryViewContainers;
 @property(retain, nonatomic, setter=_setAccessoryViewContainer:) UIView *_accessoryViewContainer; // @synthesize _accessoryViewContainer=__accessoryViewContainer;
 @property(retain, nonatomic, setter=_setContainedToolbar:) UIToolbar *_containedToolbar; // @synthesize _containedToolbar=__containedToolbar;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setUpdating:) _Bool _isUpdating; // @synthesize _isUpdating=__isUpdating;
 @property(nonatomic, setter=_setNumberOfNestedChanges:) long long _numberOfNestedChanges; // @synthesize _numberOfNestedChanges=__numberOfNestedChanges;
 @property(retain, nonatomic) PUToolbarViewModel *toolbarViewModel; // @synthesize toolbarViewModel=_toolbarViewModel;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)_updateViewsIfNeededWithAnimatorBlock:(CDUnknownBlockType)arg1;
 - (void)_invalidateAccessoryViewContainer;

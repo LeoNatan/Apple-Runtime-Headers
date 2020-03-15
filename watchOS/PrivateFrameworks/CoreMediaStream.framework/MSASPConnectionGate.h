@@ -14,8 +14,8 @@
 }
 
 + (id)gate;
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 
 @end
 

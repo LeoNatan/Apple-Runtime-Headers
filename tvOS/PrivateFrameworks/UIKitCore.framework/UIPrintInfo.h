@@ -29,6 +29,7 @@
 
 + (id)printInfoWithDictionary:(id)arg1;
 + (id)printInfo;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool imagePDFAnnotations; // @synthesize imagePDFAnnotations=_imagePDFAnnotations;
 @property(retain, nonatomic) NSString *pdfPassword; // @synthesize pdfPassword=_pdfPassword;
 @property(nonatomic) _Bool scaleUp; // @synthesize scaleUp=_scaleUp;
@@ -41,7 +42,6 @@
 @property(nonatomic) long long outputType; // @synthesize outputType=_outputType;
 @property(copy, nonatomic) NSString *jobName; // @synthesize jobName=_jobName;
 @property(copy, nonatomic) NSString *printerID; // @synthesize printerID=_printerID;
-- (void).cxx_destruct;
 - (id)_createPrintSettingsForPrinter:(id)arg1;
 - (void)_updateWithPrinter:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

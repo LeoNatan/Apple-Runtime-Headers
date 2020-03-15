@@ -24,6 +24,7 @@
 
 + (id)onScheduler:(id)arg1 requestContentForObjectID:(id)arg2 legacyMessage:(id)arg3 messageTransformer:(id)arg4 clientIdentifier:(id)arg5 options:(id)arg6 delegate:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <EMContentItemRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) EMContentRequestOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) MCMessage *legacyMessage; // @synthesize legacyMessage=_legacyMessage;
 @property(retain, nonatomic) EMObjectID *objectID; // @synthesize objectID=_objectID;
 @property(retain, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 - (id)requestRawRepresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)beginRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_init;

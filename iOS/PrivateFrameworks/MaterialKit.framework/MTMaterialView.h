@@ -38,12 +38,12 @@
 + (id)materialViewWithRecipeNamed:(id)arg1 inBundle:(id)arg2 configuration:(long long)arg3 initialWeighting:(double)arg4 scaleAdjustment:(CDUnknownBlockType)arg5;
 + (id)materialViewWithRecipe:(long long)arg1 configuration:(long long)arg2 initialWeighting:(double)arg3 scaleAdjustment:(CDUnknownBlockType)arg4;
 + (id)staticMaterialViewWithRecipe:(long long)arg1 configuration:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_backdropFloatAnimatableProperty) UIViewFloatAnimatableProperty *backdropFloatAnimatableProperty; // @synthesize backdropFloatAnimatableProperty=_backdropFloatAnimatableProperty;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) long long configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) long long recipe; // @synthesize recipe=_recipe;
 @property(copy, nonatomic) NSString *groupNameBase; // @synthesize groupNameBase=_groupNameBase;
-- (void).cxx_destruct;
 - (void)_notifyObserversWithBlock:(CDUnknownBlockType)arg1;
 - (id)_recipeNameForCurrentTraitCollection;
 - (void)_reduceTransparencyStatusDidChange;

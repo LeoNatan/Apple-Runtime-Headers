@@ -22,8 +22,8 @@
     id <SOUIAuthorizationViewControllerDelegate> _delegate;
 }
 
-@property __weak id <SOUIAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <SOUIAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_cancel;
 - (void)_updateConstraints;
 - (void)preferredContentSizeDidChangeForViewController:(id)arg1;

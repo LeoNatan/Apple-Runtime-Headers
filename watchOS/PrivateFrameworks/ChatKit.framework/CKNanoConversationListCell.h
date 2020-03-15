@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 
 + (float)cellHeight;
 + (id)identifierForConversation:(id)arg1;
-@property(nonatomic) _Bool shouldHidePreviewSummary; // @synthesize shouldHidePreviewSummary=_shouldHidePreviewSummary;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldHidePreviewSummary; // @synthesize shouldHidePreviewSummary=_shouldHidePreviewSummary;
 - (void)layoutSubviews;
 - (void)_calculateLayoutFrames;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

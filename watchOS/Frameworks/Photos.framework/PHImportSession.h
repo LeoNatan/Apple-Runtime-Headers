@@ -21,8 +21,8 @@
 + (_Bool)managedObjectSupportsTrashedState;
 + (id)fetchType;
 + (id)managedEntityName;
-@property(readonly, nonatomic) NSString *importSessionID; // @synthesize importSessionID=_importSessionID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *importSessionID; // @synthesize importSessionID=_importSessionID;
 - (id)description;
 - (id)localizedTitle;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;

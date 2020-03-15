@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     UIView *_snapshotView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(retain, nonatomic) UIViewController *interstitialViewController; // @synthesize interstitialViewController=_interstitialViewController;
 @property(nonatomic) __weak id <AVChannelInterstitialContainerDelegate> containerDelegate; // @synthesize containerDelegate=_containerDelegate;
-- (void).cxx_destruct;
 - (void)_swipeRight:(id)arg1;
 - (void)_swipeLeft:(id)arg1;
 - (id)preferredFocusEnvironments;

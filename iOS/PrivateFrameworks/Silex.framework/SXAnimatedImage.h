@@ -32,6 +32,7 @@
 + (id)animatedImageWithData:(id)arg1 size:(struct CGSize)arg2;
 + (id)animatedImageWithURL:(id)arg1 scale:(double)arg2 type:(long long)arg3;
 + (id)animatedImageWithURL:(id)arg1 type:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXAnimatedImageViewCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) NSArray *frames; // @synthesize frames=_frames;
 @property(readonly, nonatomic) long long preloadType; // @synthesize preloadType=_preloadType;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) struct CGImageSource *imageSource; // @synthesize imageSource=_imageSource;
 @property(nonatomic) __weak id <SXAnimatedImageDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)resumePreloading;
 - (void)suspendPreloading;
 - (void)setPreloadType:(long long)arg1 currentFrameIndex:(unsigned long long)arg2;

@@ -13,8 +13,8 @@
     NSString *_searchTerm;
 }
 
-@property(copy, nonatomic) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

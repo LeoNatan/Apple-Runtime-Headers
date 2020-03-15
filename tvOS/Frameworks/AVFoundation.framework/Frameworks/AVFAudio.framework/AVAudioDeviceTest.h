@@ -16,10 +16,10 @@
     id <AVAudioDeviceTestServiceProtocol> _serviceDelegateSync;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <AVAudioDeviceTestServiceProtocol> serviceDelegateSync; // @synthesize serviceDelegateSync=_serviceDelegateSync;
 @property(retain) id <AVAudioDeviceTestServiceProtocol> serviceDelegateAsync; // @synthesize serviceDelegateAsync=_serviceDelegateAsync;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)cancel;
 - (void)startWithSequence:(id)arg1 completion:(CDUnknownBlockType)arg2;

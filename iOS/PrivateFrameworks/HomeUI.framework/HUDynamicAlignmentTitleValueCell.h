@@ -13,8 +13,8 @@
     HUDynamicAlignmentTitleValueCellLayoutOptions *_layoutOptions;
 }
 
-@property(retain, nonatomic) HUDynamicAlignmentTitleValueCellLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUDynamicAlignmentTitleValueCellLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 - (void)_ensureCorrectHeaderViewOrientation;
 - (_Bool)useVerticalLayout;
 

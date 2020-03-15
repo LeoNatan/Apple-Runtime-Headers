@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSData *_signature;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *keyValidator; // @synthesize keyValidator=_keyValidator;
 @property(retain, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSData *ephemeralPubKey; // @synthesize ephemeralPubKey=_ephemeralPubKey;
 @property(retain, nonatomic) NSData *encryptedPayload; // @synthesize encryptedPayload=_encryptedPayload;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

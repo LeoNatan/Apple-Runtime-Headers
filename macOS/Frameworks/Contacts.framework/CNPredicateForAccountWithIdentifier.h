@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_accountIdentifiers;
 }
 
-@property(readonly, nonatomic) NSArray *accountIdentifiers; // @synthesize accountIdentifiers=_accountIdentifiers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *accountIdentifiers; // @synthesize accountIdentifiers=_accountIdentifiers;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (BOOL)evaluateWithObject:(id)arg1;
 - (id)initWithAccountIdentifiers:(id)arg1;

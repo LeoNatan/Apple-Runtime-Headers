@@ -16,8 +16,8 @@
     long long _keychainAccount;
 }
 
-@property(nonatomic) long long keychainAccount; // @synthesize keychainAccount=_keychainAccount;
 - (void).cxx_destruct;
+@property(nonatomic) long long keychainAccount; // @synthesize keychainAccount=_keychainAccount;
 - (BOOL)setExtensionsPlistKeychainItemUsingLegacyKeychain:(BOOL)arg1 withData:(id)arg2;
 - (int)getExtensionsPlistKeychainItemUsingLegacyKeychain:(BOOL)arg1 outData:(id *)arg2 outItem:(id *)arg3;
 - (int)createExtensionsPlistKeychainUsingLegacyKeychain:(BOOL)arg1 withData:(id)arg2;

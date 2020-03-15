@@ -20,6 +20,7 @@
     id <CPSBannerItemDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPSBannerItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CPImageSet *imageSet; // @synthesize imageSet=_imageSet;
 @property(readonly, nonatomic) NSArray *attributedDetailTextVariants; // @synthesize attributedDetailTextVariants=_attributedDetailTextVariants;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) NSArray *textVariants; // @synthesize textVariants=_textVariants;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToBannerItem:(id)arg1;

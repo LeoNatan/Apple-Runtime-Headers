@@ -15,10 +15,10 @@
     NSOperationQueue *_privateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(readonly, nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(readonly, nonatomic) NSOperation *operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (id)initWithOperation:(id)arg1 timeout:(double)arg2;

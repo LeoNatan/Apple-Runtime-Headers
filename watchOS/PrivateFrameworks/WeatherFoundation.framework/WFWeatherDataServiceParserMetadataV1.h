@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_language;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) WFLocation *location; // @synthesize location=_location;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(retain, nonatomic) NSDate *expireTime; // @synthesize expireTime=_expireTime;
 @property(retain, nonatomic) NSDate *readTime; // @synthesize readTime=_readTime;
-- (void).cxx_destruct;
 
 @end
 

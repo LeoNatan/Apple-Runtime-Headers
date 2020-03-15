@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSString *_channelIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool actionExecutionWasAttemted; // @synthesize actionExecutionWasAttemted=_actionExecutionWasAttemted;
 @property(copy, nonatomic) NSString *channelIdentifier; // @synthesize channelIdentifier=_channelIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNUIUserActionCurator> actionCurator;
 @property(readonly, nonatomic) id <CNUIUserActionRecorder> actionRecorder;
 @property(readonly, nonatomic) id <CNUIUserActionDialRequestOpener> dialRequestOpener;

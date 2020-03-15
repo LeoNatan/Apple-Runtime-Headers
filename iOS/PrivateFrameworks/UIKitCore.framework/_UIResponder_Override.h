@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)overrideForResponder:(id)arg1 withTarget:(id)arg2 forType:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long types; // @synthesize types=_types;
 @property(readonly, nonatomic) __weak UIResponder *target; // @synthesize target=_target;
 @property(readonly, nonatomic) __weak UIResponder *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 

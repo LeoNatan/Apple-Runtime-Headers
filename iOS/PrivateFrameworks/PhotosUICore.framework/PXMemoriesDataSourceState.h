@@ -16,9 +16,9 @@
     NSDictionary *_infosByMemory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *infosByMemory; // @synthesize infosByMemory=_infosByMemory;
 @property(readonly, nonatomic) PHFetchResult *memories; // @synthesize memories=_memories;
-- (void).cxx_destruct;
 - (id)stateUpdatedWithChange:(id)arg1 outMemoriesChangeDetails:(out id *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMemories:(id)arg1 infosByMemory:(id)arg2;

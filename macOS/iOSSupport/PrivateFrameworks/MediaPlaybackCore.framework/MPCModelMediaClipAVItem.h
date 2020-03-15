@@ -18,8 +18,8 @@
 }
 
 + (id)requiredMediaClipProperties;
-@property(readonly, nonatomic) MPModelMediaClip *mediaClip; // @synthesize mediaClip=_mediaClip;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MPModelMediaClip *mediaClip; // @synthesize mediaClip=_mediaClip;
 - (BOOL)_isVideoAsset;
 - (id)_currentPreferredStaticAsset;
 - (void)_applyLoudnessInfo;

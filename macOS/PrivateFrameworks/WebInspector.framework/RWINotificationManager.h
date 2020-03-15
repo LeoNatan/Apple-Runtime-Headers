@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_sendQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *sendQueue; // @synthesize sendQueue=_sendQueue;
 @property(nonatomic) unsigned long long nextRegistrationID; // @synthesize nextRegistrationID=_nextRegistrationID;
 @property(retain, nonatomic) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *handlersQueue; // @synthesize handlersQueue=_handlersQueue;
-- (void).cxx_destruct;
 - (void)sendNotification:(id)arg1;
 - (BOOL)unregisterNotificationHandler:(unsigned long long)arg1 error:(id *)arg2;
 - (unsigned long long)registerNotificationHandlerOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;

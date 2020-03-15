@@ -18,13 +18,13 @@
     NSImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int data_alignment; // @synthesize data_alignment=_data_alignment;
 @property(readonly, nonatomic) int image_alignment; // @synthesize image_alignment=_image_alignment;
 @property(readonly, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) NSString *csType; // @synthesize csType=_csType;
 @property(readonly, nonatomic) PRSColumnSection *values; // @synthesize values=_values;
 @property(readonly, nonatomic) PRSColumnSection *keys; // @synthesize keys=_keys;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 - (id)initWithKeys:(id)arg1 values:(id)arg2 image:(id)arg3 image_alignment:(unsigned long long)arg4 data_alignment:(long long)arg5 type:(id)arg6;

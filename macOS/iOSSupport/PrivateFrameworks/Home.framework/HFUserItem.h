@@ -27,6 +27,7 @@
 
 + (id)_fakeHMSettings;
 + (void)set_fakeHMSettings:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMHome *hf_home; // @synthesize hf_home=_hf_home;
 @property(readonly, nonatomic) HFUserNameFormatter *userNameFormatter; // @synthesize userNameFormatter=_userNameFormatter;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) BOOL isItemGroup; // @synthesize isItemGroup=_isItemGroup;
 @property(readonly, nonatomic) HMUser *user; // @synthesize user=_user;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (BOOL)hasDismissedUserSplitMediaAccountWarning;
 - (id)setDismissUserSplitMediaAccountWarning:(BOOL)arg1;
 - (BOOL)isPlaybackInfluencesForYouEnabled;

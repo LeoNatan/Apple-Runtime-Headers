@@ -14,9 +14,9 @@
     UILabel *_detailLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (id)initWithReuseIdentifier:(id)arg1;
 
 @end

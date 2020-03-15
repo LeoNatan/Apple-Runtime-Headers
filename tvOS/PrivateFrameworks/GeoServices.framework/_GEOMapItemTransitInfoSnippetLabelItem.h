@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <GEOTransitArtworkDataSource> _labelArtwork;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> labelArtwork; // @synthesize labelArtwork=_labelArtwork;
 @property(readonly, nonatomic) NSString *labelString; // @synthesize labelString=_labelString;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned long long)arg1 labelString:(id)arg2 labelArtwork:(id)arg3;
 
 // Remaining properties

@@ -11,8 +11,8 @@
     CDUnknownBlockType __clientDataCompletionHandler;
 }
 
-@property(copy) CDUnknownBlockType _clientDataCompletionHandler; // @synthesize _clientDataCompletionHandler=__clientDataCompletionHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType _clientDataCompletionHandler; // @synthesize _clientDataCompletionHandler=__clientDataCompletionHandler;
 - (BOOL)_isUpload;
 - (id)initWithNSURLDataTaskCreator:(CDUnknownBlockType)arg1 initialRequest:(id)arg2 forSession:(id)arg3;
 

@@ -17,12 +17,12 @@
     NSString *_sourceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(readonly, copy, nonatomic) NSString *sourceTitle; // @synthesize sourceTitle=_sourceTitle;
 @property(readonly, nonatomic) _Bool isDelegate; // @synthesize isDelegate=_isDelegate;
 @property(readonly, nonatomic) EKCalendarNotification *calendarNotification; // @synthesize calendarNotification=_calendarNotification;
 @property(readonly, copy, nonatomic) NSString *sourceClientIdentifier; // @synthesize sourceClientIdentifier=_sourceClientIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSourceClientIdentifier:(id)arg1 calendarNotification:(id)arg2 isDelegate:(_Bool)arg3 sourceTitle:(id)arg4 sourceIdentifier:(id)arg5;
 

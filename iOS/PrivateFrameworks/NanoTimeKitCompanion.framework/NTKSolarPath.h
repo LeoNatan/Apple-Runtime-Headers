@@ -19,11 +19,11 @@
     double _altitude[29];
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool verticallyFitsPathToBounds; // @synthesize verticallyFitsPathToBounds=_verticallyFitsPathToBounds;
 @property(readonly, nonatomic) NTKSolarTimeModel *solarTimeModel; // @synthesize solarTimeModel=_solarTimeModel;
 @property(readonly, nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(readonly, nonatomic) UIBezierPath *bezierPath; // @synthesize bezierPath=_bezierPath;
-- (void).cxx_destruct;
 - (double)altitudeAtX:(double)arg1;
 - (double)altitudeAtPercentage:(double)arg1;
 - (id)_computeSolarPath;

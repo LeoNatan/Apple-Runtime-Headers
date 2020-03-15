@@ -26,6 +26,7 @@
 + (id)makeFlowLayout;
 + (id)makeLikenessCollectionView;
 + (id)makeDescriptionField;
+- (void).cxx_destruct;
 @property(retain) id <CNCancelable> contactLikenessesModelCancelable; // @synthesize contactLikenessesModelCancelable=_contactLikenessesModelCancelable;
 @property(retain) NSArray *displayedItems; // @synthesize displayedItems=_displayedItems;
 @property(retain) NSArray *likenessesFromStore; // @synthesize likenessesFromStore=_likenessesFromStore;
@@ -33,7 +34,6 @@
 @property(retain) NSTextField *descriptionField; // @synthesize descriptionField=_descriptionField;
 @property(retain, nonatomic) id <CNRecentLikenessesDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property __weak id <CNRecentLikenessesViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)existingLikenessPerformPress:(id)arg1;
 - (void)newLikenessPerformPress;
 - (id)likeness;

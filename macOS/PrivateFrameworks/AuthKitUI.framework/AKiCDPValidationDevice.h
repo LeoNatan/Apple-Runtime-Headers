@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDate *recordDate; // @synthesize recordDate=_recordDate;
 @property BOOL isCurrentDevice; // @synthesize isCurrentDevice=_isCurrentDevice;
 @property(retain) NSUUID *deviceID; // @synthesize deviceID=_deviceID;
@@ -37,7 +38,6 @@
 @property(copy) NSString *deviceModelClass; // @synthesize deviceModelClass=_deviceModelClass;
 @property(copy) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(copy) NSString *deviceName; // @synthesize deviceName=_deviceName;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

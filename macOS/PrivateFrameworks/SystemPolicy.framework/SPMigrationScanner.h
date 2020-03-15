@@ -15,10 +15,10 @@
     NSArray *_allBundleURLs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *allBundleURLs; // @synthesize allBundleURLs=_allBundleURLs;
 @property(readonly, nonatomic) NSArray *allKextURLs; // @synthesize allKextURLs=_allKextURLs;
 @property(readonly, nonatomic) NSURL *volumeRoot; // @synthesize volumeRoot=_volumeRoot;
-- (void).cxx_destruct;
 - (BOOL)performMigrationScan;
 - (id)initWithRoot:(id)arg1;
 

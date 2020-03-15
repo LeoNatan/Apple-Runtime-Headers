@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) __weak id <_HMNetworkRouterProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_HMNetworkRouterProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)initWithCoder:(id)arg1;
 - (void)handleRuntimeStateUpdate:(id)arg1;
 - (void)_handleNetworkStatusUpdated:(id)arg1;

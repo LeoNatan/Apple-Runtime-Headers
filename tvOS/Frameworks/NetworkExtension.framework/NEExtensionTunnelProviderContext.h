@@ -20,9 +20,9 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *ipcIdleTimer; // @synthesize ipcIdleTimer=_ipcIdleTimer;
 @property(retain) NEIPC *ipc; // @synthesize ipc=_ipc;
-- (void).cxx_destruct;
 - (void)cancelWithError:(id)arg1;
 - (void)establishIPCWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetIPCIdleTimer;

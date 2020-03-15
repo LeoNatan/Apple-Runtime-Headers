@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (void)removeRulesFromDOMElement:(id)arg1;
 + (id)derivationRulesForDOMElement:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, copy, nonatomic) NSArray *mutationRules; // @synthesize mutationRules=_mutationRules;
-- (void).cxx_destruct;
 - (id)initWithIndexPath:(id)arg1 mutationRules:(id)arg2;
 
 @end

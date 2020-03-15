@@ -13,8 +13,8 @@
     id <MFMessageCriterionConverterDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MFMessageCriterionConverterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MFMessageCriterionConverterDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)messageCriterionFromPredicateFormatString:(id)arg1;
 - (id)messageCriterionFromPredicate:(id)arg1;
 - (id)_messageCriterionForCompoundPredicate:(id)arg1;

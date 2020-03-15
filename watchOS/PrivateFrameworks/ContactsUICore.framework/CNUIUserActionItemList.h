@@ -15,10 +15,10 @@
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithItems:(id)arg1 type:(id)arg2 icon:(id)arg3;
 
 @end

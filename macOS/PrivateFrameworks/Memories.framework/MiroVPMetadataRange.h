@@ -26,13 +26,13 @@ __attribute__((visibility("hidden")))
 + (id)descriptionForFlags:(unsigned long long)arg1;
 + (id)descriptionForType:(unsigned long long)arg1;
 + (id)mergeRanges:(id)arg1 withRanges:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
 @property(readonly, nonatomic) NSDictionary *analysisDict; // @synthesize analysisDict=_analysisDict;
 @property(readonly, nonatomic) int durationInFrames; // @synthesize durationInFrames=_durationInFrames;
 @property(readonly, nonatomic) int startTimeInFrames; // @synthesize startTimeInFrames=_startTimeInFrames;
 @property(readonly, nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_setScore:(double)arg1;
 @property(readonly, nonatomic) NSDictionary *dictionary;
 - (id)initWithDictionary:(id)arg1;

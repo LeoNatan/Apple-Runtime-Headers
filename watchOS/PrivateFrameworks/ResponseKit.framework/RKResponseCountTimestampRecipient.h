@@ -15,10 +15,10 @@
     NSDate *_timestamp;
 }
 
+- (void).cxx_destruct;
 @property _Bool hasSameRecipient; // @synthesize hasSameRecipient=_hasSameRecipient;
 @property(retain) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property int count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (id)initWithCount:(int)arg1 timestamp:(id)arg2 hasSameRecipient:(_Bool)arg3;
 
 @end

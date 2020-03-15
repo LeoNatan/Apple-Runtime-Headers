@@ -17,12 +17,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)relationWithSubject:(id)arg1 verbPhrase:(id)arg2 object:(id)arg3;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 excludedMetadataKeys:(id)arg3 cache:(id)arg4;
 + (id)entityName;
+- (void).cxx_destruct;
 @property(readonly) _DKObject *object; // @synthesize object=_object;
 @property(readonly) _DKObject *subject; // @synthesize subject=_subject;
 @property(readonly) NSString *verbPhrase; // @synthesize verbPhrase=_verbPhrase;
-- (void).cxx_destruct;
 - (id)stringValue;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

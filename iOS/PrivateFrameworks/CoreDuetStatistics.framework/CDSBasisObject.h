@@ -22,6 +22,7 @@
     long long _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long attributeId; // @synthesize attributeId=_attributeId;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *basisValueString; // @synthesize basisValueString=_basisValueString;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(nonatomic) unsigned long long localTime; // @synthesize localTime=_localTime;
-- (void).cxx_destruct;
 - (id)initWithLocalTime:(unsigned long long)arg1 creationDate:(id)arg2 basisValueString:(id)arg3 basisUint64Value:(unsigned long long)arg4 basisDoubleValue:(double)arg5 risingEdge:(_Bool)arg6 fallingEdge:(_Bool)arg7 duration:(double)arg8 attributeId:(unsigned long long)arg9 type:(long long)arg10;
 
 @end

@@ -22,12 +22,12 @@
     double _displayScale;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double displayScale; // @synthesize displayScale=_displayScale;
 @property(readonly, nonatomic) UIColor *overlayColor; // @synthesize overlayColor=_overlayColor;
 @property(readonly, nonatomic) BOOL continuousCorners; // @synthesize continuousCorners=_continuousCorners;
 @property(readonly, nonatomic) unsigned long long cornersToRound; // @synthesize cornersToRound=_cornersToRound;
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)_updateImageIfNeeded;
 - (void)_invalidateImage;

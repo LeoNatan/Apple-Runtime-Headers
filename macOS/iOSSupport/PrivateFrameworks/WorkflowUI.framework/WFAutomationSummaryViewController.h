@@ -24,6 +24,7 @@
     UITableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) NSArray *actionIcons; // @synthesize actionIcons=_actionIcons;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) WFTrigger *trigger; // @synthesize trigger=_trigger;
 @property(readonly, nonatomic) WFConfiguredTriggerRecord *triggerRecord; // @synthesize triggerRecord=_triggerRecord;
 @property(nonatomic) __weak id <WFAutomationSummaryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didTapDone:(id)arg1;
 - (void)promptSwitchChanged:(id)arg1;
 - (void)enabledSwitchChanged:(id)arg1;

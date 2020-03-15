@@ -18,13 +18,13 @@
     AMPLSharingClient *_client;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMPLSharingClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) NSArray *playlists; // @synthesize playlists=_playlists;
 @property(readonly, nonatomic, getter=areAllPlaylistsShared) BOOL shareAllPlaylists; // @synthesize shareAllPlaylists=_shareAllPlaylists;
 @property(readonly, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, nonatomic, getter=isPasswordProtected) BOOL passwordProtected; // @synthesize passwordProtected=_passwordProtected;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)setShareAllPlaylists:(BOOL)arg1 withUpdatedPlaylists:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)setPasswordProtectionEnabled:(BOOL)arg1 withPassword:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)setEnabled:(_Bool)arg1 withReply:(CDUnknownBlockType)arg2;

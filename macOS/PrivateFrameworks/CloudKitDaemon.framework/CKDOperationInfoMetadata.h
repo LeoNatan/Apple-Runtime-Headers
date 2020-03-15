@@ -15,10 +15,10 @@
     NSNumber *_retryNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *retryNumber; // @synthesize retryNumber=_retryNumber;
 @property(retain, nonatomic) NSDate *lastAttemptDate; // @synthesize lastAttemptDate=_lastAttemptDate;
 @property(retain, nonatomic) CKOperationInfo *operationInfo; // @synthesize operationInfo=_operationInfo;
-- (void).cxx_destruct;
 
 @end
 

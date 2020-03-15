@@ -28,6 +28,7 @@
 }
 
 + (id)quadWithShaderType:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float dialRadius; // @synthesize dialRadius=_dialRadius;
 @property(nonatomic) float rotation; // @synthesize rotation=_rotation;
 // Error parsing type for property sampleRadius:
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) CLKUITexture *secondaryTexture; // @synthesize secondaryTexture=_secondaryTexture;
 @property(retain, nonatomic) CLKUITexture *primaryChromaTexture; // @synthesize primaryChromaTexture=_primaryChromaTexture;
 @property(retain, nonatomic) CLKUITexture *primaryLumaTexture; // @synthesize primaryLumaTexture=_primaryLumaTexture;
-- (void).cxx_destruct;
 - (_Bool)prepareForTime:(double)arg1;
 - (void)renderForDisplayWithEncoder:(id)arg1;
 - (void)purge;

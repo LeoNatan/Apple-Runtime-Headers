@@ -23,6 +23,7 @@
     NAFuture *_loadingFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *loadingFuture; // @synthesize loadingFuture=_loadingFuture;
 @property(readonly, nonatomic) UIBarButtonItem *shareButton; // @synthesize shareButton=_shareButton;
 @property(nonatomic) _Bool showProgressIndicatorView; // @synthesize showProgressIndicatorView=_showProgressIndicatorView;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) _Bool showsShareButton; // @synthesize showsShareButton=_showsShareButton;
 @property(copy, nonatomic) NSAttributedString *textContent; // @synthesize textContent=_textContent;
-- (void).cxx_destruct;
 - (void)_fulfillProgressIndicatorState:(_Bool)arg1;
 - (void)_shareLog:(id)arg1;
 - (id)_textContentWithDefaultAttributes;

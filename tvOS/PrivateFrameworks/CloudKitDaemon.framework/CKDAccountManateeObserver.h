@@ -17,10 +17,10 @@
 }
 
 + (id)sharedObserver;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *lastCDPError; // @synthesize lastCDPError=_lastCDPError;
 @property(nonatomic, setter=_lockedSetManateeAvailableForLoggedInAccount:) long long manateeAvailableForLoggedInAccount; // @synthesize manateeAvailableForLoggedInAccount=_manateeAvailableForLoggedInAccount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *statusQueue; // @synthesize statusQueue=_statusQueue;
-- (void).cxx_destruct;
 - (_Bool)accountSupportsManatee:(id)arg1;
 - (_Bool)isManateeAvailable:(id *)arg1;
 - (void)statusForCurrentlyLoggedInAccountWithCompletionHandler:(CDUnknownBlockType)arg1;

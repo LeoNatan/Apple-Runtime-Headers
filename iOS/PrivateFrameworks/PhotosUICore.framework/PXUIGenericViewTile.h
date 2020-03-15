@@ -16,8 +16,8 @@
     PXViewSpec *__spec;
 }
 
-@property(retain, nonatomic, setter=_setSpec:) PXViewSpec *_spec; // @synthesize _spec=__spec;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setSpec:) PXViewSpec *_spec; // @synthesize _spec=__spec;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;

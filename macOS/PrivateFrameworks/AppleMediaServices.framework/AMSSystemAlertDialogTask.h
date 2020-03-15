@@ -21,6 +21,7 @@
     long long _unlockActionButtonIndex;
 }
 
+- (void).cxx_destruct;
 @property long long unlockActionButtonIndex; // @synthesize unlockActionButtonIndex=_unlockActionButtonIndex;
 @property BOOL displaysOnLockscreen; // @synthesize displaysOnLockscreen=_displaysOnLockscreen;
 @property BOOL shouldPendInSetupIfNotAllowed; // @synthesize shouldPendInSetupIfNotAllowed=_shouldPendInSetupIfNotAllowed;
@@ -30,7 +31,6 @@
 @property BOOL dismissOnHomeButton; // @synthesize dismissOnHomeButton=_dismissOnHomeButton;
 @property long long defaultButtonIndex; // @synthesize defaultButtonIndex=_defaultButtonIndex;
 @property(readonly) AMSDialogRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)_reorderButtonActions;
 - (id)_handleResponseForNote:(struct __CFUserNotification *)arg1 buttonActions:(id)arg2 keys:(struct ButtonKey *)arg3;
 - (struct __CFUserNotification *)_createNotificationFromDictionary:(struct __CFDictionary *)arg1 options:(unsigned long long)arg2;

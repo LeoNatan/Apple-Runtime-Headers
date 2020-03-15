@@ -16,8 +16,8 @@
 
 + (id)dataHolderWithData:(id)arg1;
 + (id)dataHolder;
-@property(readonly, nonatomic) unsigned int length; // @synthesize length=_length;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int length; // @synthesize length=_length;
 - (void)enumerateConvertingNewlinesUsingBlock:(CDUnknownBlockType)arg1;
 - (unsigned int)numberOfNewlinesNeedingConversion:(_Bool)arg1;
 - (void)enumerateByteRangesUsingBlock:(CDUnknownBlockType)arg1;

@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSMutableArray *devices; // @synthesize devices=_devices;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *devices; // @synthesize devices=_devices;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

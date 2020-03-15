@@ -20,8 +20,8 @@
 + (void)enableConversion:(BOOL)arg1;
 + (void)initialize;
 + (void)cacheSeparators;
-@property(retain) NSArray *results; // @synthesize results=_results;
 - (void).cxx_destruct;
+@property(retain) NSArray *results; // @synthesize results=_results;
 - (BOOL)isCalculatorQuery;
 - (void)start;
 - (BOOL)looksLikeMath;

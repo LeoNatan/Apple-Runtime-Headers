@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     long long _currentState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long currentState; // @synthesize currentState=_currentState;
 @property(readonly, nonatomic) long long workImageVersion; // @synthesize workImageVersion=_workImageVersion;
 @property(readonly, nonatomic) PHContentEditingOutput *contentEditingOutput; // @synthesize contentEditingOutput=_contentEditingOutput;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
 @property(readonly, nonatomic) PHAsset *photo; // @synthesize photo=_photo;
 @property(readonly, nonatomic) int identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_transitionToState:(long long)arg1;
 @property(readonly, nonatomic) double progress;
 @property(readonly, nonatomic) _Bool supportsProgress;

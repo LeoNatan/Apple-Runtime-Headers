@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) NSString *mappingId; // @synthesize mappingId=_mappingId;
 @property(readonly, nonatomic) NSString *clientBundleId; // @synthesize clientBundleId=_clientBundleId;
 @property(readonly, nonatomic) NSArray *feedbackItems; // @synthesize feedbackItems=_feedbackItems;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToPPBaseFeedback:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

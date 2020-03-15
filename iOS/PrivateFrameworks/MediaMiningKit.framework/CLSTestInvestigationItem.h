@@ -57,6 +57,7 @@
 + (id)contextForItems:(id)arg1;
 + (id)itemWithUniversalDate:(id)arg1 sceneClassifications:(id)arg2;
 + (id)itemWithPeopleNames:(id)arg1 universalDate:(id)arg2 coordinate:(struct CLLocationCoordinate2D)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool clsIsInterestingReframe; // @synthesize clsIsInterestingReframe=_clsIsInterestingReframe;
 @property(readonly, nonatomic) _Bool clsIsLongExposure; // @synthesize clsIsLongExposure=_clsIsLongExposure;
 @property(readonly, nonatomic) _Bool clsIsLoopOrBounce; // @synthesize clsIsLoopOrBounce=_clsIsLoopOrBounce;
@@ -97,7 +98,6 @@
 @property(retain, nonatomic) NSArray *clsPeopleNames; // @synthesize clsPeopleNames=_clsPeopleNames;
 @property(retain, nonatomic) CLLocation *clsLocation; // @synthesize clsLocation=_clsLocation;
 @property(readonly) NSString *clsIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D pl_coordinate;
 @property(readonly, nonatomic) NSDate *pl_date;
 - (double)scoreWithContext:(id)arg1;

@@ -23,13 +23,13 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <EMUserProfileProvider> userProfileProvider; // @synthesize userProfileProvider=_userProfileProvider;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(readonly, nonatomic) EDMailboxPersistence *mailboxPersistence; // @synthesize mailboxPersistence=_mailboxPersistence;
 @property(readonly, nonatomic) EDCachingMailboxPredictor *cachingPredictor; // @synthesize cachingPredictor=_cachingPredictor;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(readonly, nonatomic) id <EDMailboxPredictionQueryAdapter> queryAdapter; // @synthesize queryAdapter=_queryAdapter;
-- (void).cxx_destruct;
 - (id)_createPredictor;
 - (void)_invalidateCacheForAddedMessage:(id)arg1;
 - (id)_processPredictionForMessages:(id)arg1;

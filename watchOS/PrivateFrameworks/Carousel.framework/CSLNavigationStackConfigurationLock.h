@@ -18,9 +18,9 @@
     IOSSHLBacklight *_backlight;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IOSSHLBacklight *backlight; // @synthesize backlight=_backlight;
 @property(retain, nonatomic) id <BSInvalidatable> configurationLock; // @synthesize configurationLock=_configurationLock;
-- (void).cxx_destruct;
 - (void)backlight:(id)arg1 willPerformRequest:(id)arg2;
 - (void)invalidate;
 - (void)dealloc;

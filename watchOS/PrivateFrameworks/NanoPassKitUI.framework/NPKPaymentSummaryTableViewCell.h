@@ -22,6 +22,7 @@
     float _extraBottomMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float extraBottomMargin; // @synthesize extraBottomMargin=_extraBottomMargin;
 @property(nonatomic, setter=_setFirstLineBaselineFrameOriginY:) float _firstLineBaselineFrameOriginY; // @synthesize _firstLineBaselineFrameOriginY=__firstLineBaselineFrameOriginY;
 @property(nonatomic) float minimumSingleLineEstimatedHeight; // @synthesize minimumSingleLineEstimatedHeight=_minimumSingleLineEstimatedHeight;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
 @property(nonatomic) _Bool emphasized; // @synthesize emphasized=_emphasized;
-- (void).cxx_destruct;
 - (void)_updateSummaryViewStyle;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

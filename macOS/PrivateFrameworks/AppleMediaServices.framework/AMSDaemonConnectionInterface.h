@@ -10,6 +10,8 @@
 {
 }
 
++ (void)_setUpSecurityInterfaceHandleResponseSelector:(id)arg1;
++ (void)_setUpSecurityInterfaceSignedHeadersSelector:(id)arg1;
 + (id)_securityServiceInterface;
 + (id)_securityClientInterface;
 + (void)_configureURLPresentationDelegateClasses:(id)arg1;

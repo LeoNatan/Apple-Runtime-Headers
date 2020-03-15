@@ -17,8 +17,8 @@
     BOOL _isChanging;
 }
 
-@property BOOL isChanging; // @synthesize isChanging=_isChanging;
 - (void).cxx_destruct;
+@property BOOL isChanging; // @synthesize isChanging=_isChanging;
 - (BOOL)endChanging:(BOOL)arg1 immediately:(BOOL)arg2;
 - (void)beginChanging;
 - (void)setProxiedValue:(id)arg1 forKey:(id)arg2;

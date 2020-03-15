@@ -19,10 +19,10 @@
 }
 
 + (unsigned long long)maxMemoriesToFetch;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *cachedPriorityDate; // @synthesize cachedPriorityDate=_cachedPriorityDate;
 @property(nonatomic) _Bool hasGeneratedGadgets; // @synthesize hasGeneratedGadgets=_hasGeneratedGadgets;
 @property(retain, nonatomic) PXMemoriesFeedWidgetDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)resetPriorityDate;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 @property(readonly, nonatomic) long long defaultPriority;

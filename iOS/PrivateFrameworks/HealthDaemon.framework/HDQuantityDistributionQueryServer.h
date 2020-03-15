@@ -14,8 +14,8 @@
 }
 
 + (Class)queryClass;
-@property(readonly, copy, nonatomic) _HKQuantityDistributionQueryServerConfiguration *quantityDistributionQueryServerConfiguration; // @synthesize quantityDistributionQueryServerConfiguration=_quantityDistributionQueryServerConfiguration;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) _HKQuantityDistributionQueryServerConfiguration *quantityDistributionQueryServerConfiguration; // @synthesize quantityDistributionQueryServerConfiguration=_quantityDistributionQueryServerConfiguration;
 - (id)_combineDistributionResults:(id)arg1 withAverageAndDurations:(id)arg2 bucketUnits:(id)arg3;
 - (id)_walkSampleDatesWithPredicate:(id)arg1 entityClass:(Class)arg2 errorOut:(id *)arg3;
 - (id)_categoryPredicateWithTypeCode:(long long)arg1 matchingValue:(id)arg2 errorOut:(id *)arg3;

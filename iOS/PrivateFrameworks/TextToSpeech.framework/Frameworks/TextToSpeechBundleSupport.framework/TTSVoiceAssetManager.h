@@ -22,6 +22,7 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)getCustomVoiceAssetsLocalOnly:(_Bool)arg1 language:(id)arg2 voiceType:(long long)arg3 reply:(CDUnknownBlockType)arg4;
+- (id)getPreinstalledNeuralAssetsForLanguage:(id)arg1;
 - (id)getPreinstalledGryphonAssetsForLanguage:(id)arg1;
 - (id)convertVSVoiceAssetSelectionsToTTSVoiceAssets:(id)arg1 language:(id)arg2;
 - (id)_voiceAssetForMAAsset:(id)arg1 voiceType:(long long)arg2;

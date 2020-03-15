@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_imageDatas;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *imageDatas; // @synthesize imageDatas=_imageDatas;
 @property(retain, nonatomic) NSMutableArray *mutableImages; // @synthesize mutableImages=_mutableImages;
 @property(retain, nonatomic) NSMutableArray *triedKeys; // @synthesize triedKeys=_triedKeys;
 @property(readonly, nonatomic, getter=hasSameFullBleedColors) _Bool sameFullBleedColors; // @synthesize sameFullBleedColors=_sameFullBleedColors;
 @property(readonly, nonatomic) MKVKImageSourceCalculationParameters *parameters; // @synthesize parameters=_parameters;
-- (void).cxx_destruct;
 - (void)addFullBleedColor:(id)arg1;
 @property(readonly, nonatomic) NSArray *images;
 @property(readonly, nonatomic) NSArray *fullBleedColors;

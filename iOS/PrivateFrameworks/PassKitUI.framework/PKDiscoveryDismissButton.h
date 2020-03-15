@@ -16,8 +16,8 @@
 
 + (long long)_blurEffectStyleForUserInterfaceStyle:(long long)arg1;
 + (id)_tintColorForUserInterfaceStyle:(long long)arg1;
-@property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void)_updateStyleWithStyle:(long long)arg1;
 - (id)_tintColor;
 - (id)_backingEffect;

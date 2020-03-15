@@ -17,10 +17,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, copy) NSString *service; // @synthesize service=_service;
 @property(readonly) id <BSXPCConnectionListenerHandler> handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (id)description;
 - (void)invalidate;
 - (void)dealloc;

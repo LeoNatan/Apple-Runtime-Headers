@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)arrowImageUpOrDown:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BU_DateText *dateText; // @synthesize dateText=_dateText;
 @property(nonatomic) BU_Button *nextButton; // @synthesize nextButton=_nextButton;
 @property(nonatomic) BU_Button *previousButton; // @synthesize previousButton=_previousButton;
 @property(nonatomic) BU_Button *restoreButton; // @synthesize restoreButton=_restoreButton;
 @property(nonatomic) BU_Button *cancelButton; // @synthesize cancelButton=_cancelButton;
-- (void).cxx_destruct;
 - (void)setDateY:(double)arg1 width:(double)arg2;
 - (void)setRestoreOrigin:(struct CGPoint)arg1;
 - (void)setPreviousOrigin:(struct CGPoint)arg1;

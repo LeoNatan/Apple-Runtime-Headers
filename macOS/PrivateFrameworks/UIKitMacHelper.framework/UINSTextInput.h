@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedTextInput;
-@property(retain, nonatomic) NSObject<OS_xpc_object> *remoteTextInputEndpoint; // @synthesize remoteTextInputEndpoint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *remoteTextInputEndpoint; // @synthesize remoteTextInputEndpoint;
 @property(readonly, nonatomic, getter=isFullKeyboardAccessEnabled) BOOL fullKeyboardAccessEnabled;
 @property(readonly, nonatomic) id <UINSRevealController> revealController;
 

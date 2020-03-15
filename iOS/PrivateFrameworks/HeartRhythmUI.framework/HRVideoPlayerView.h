@@ -24,6 +24,7 @@
 
 + (Class)layerClass;
 + (id)playerViewWithURL:(id)arg1 looping:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> applicationInactiveNotificationStub; // @synthesize applicationInactiveNotificationStub=_applicationInactiveNotificationStub;
 @property(retain, nonatomic) id <NSObject> applicationActiveNotificationStub; // @synthesize applicationActiveNotificationStub=_applicationActiveNotificationStub;
 @property(nonatomic) _Bool shouldBePlaying; // @synthesize shouldBePlaying=_shouldBePlaying;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UIImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
 @property(retain, nonatomic) UIImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)_setUpNotifications;
 - (void)_setUpUI;
 - (void)setPlayer:(id)arg1;

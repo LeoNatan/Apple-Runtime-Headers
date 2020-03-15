@@ -15,10 +15,10 @@
     NSValueTransformer *_valueTransformer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSValueTransformer *valueTransformer; // @synthesize valueTransformer=_valueTransformer;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
-- (void).cxx_destruct;
 - (void)_updateTitles;
 - (id)init;
 

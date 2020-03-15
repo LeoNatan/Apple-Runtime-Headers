@@ -38,6 +38,7 @@
 }
 
 + (id)persistedClientsPath;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) RTWiFiManager *wifiManager; // @synthesize wifiManager=_wifiManager;
 @property(retain, nonatomic) RTFingerprintManager *fingerprintManager; // @synthesize fingerprintManager=_fingerprintManager;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic) RTVehicleLocationProvider *vehicleLocationProvider; // @synthesize vehicleLocationProvider=_vehicleLocationProvider;
 @property(retain, nonatomic) RTScenarioTriggerManager *scenarioTriggerManager; // @synthesize scenarioTriggerManager=_scenarioTriggerManager;
 @property(retain, nonatomic) NSMutableDictionary *persistedClients; // @synthesize persistedClients=_persistedClients;
-- (void).cxx_destruct;
 - (void)handleDisconnectionForDaemonClient:(id)arg1;
 - (void)saveDaemonClient:(id)arg1;
 - (id)handleRestorationForDaemonClient:(id)arg1;

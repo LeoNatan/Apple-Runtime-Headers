@@ -20,12 +20,12 @@
     id <PKPaymentAuthorizationHostProtocol> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPaymentAuthorizationHostProtocol> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PKPaymentAuthorizationDataModel *dataModel; // @synthesize dataModel=_dataModel;
 @property(readonly, nonatomic) PKPaymentAuthorizationStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(readonly, nonatomic) PKPaymentAuthorizationLayout *paymentAuthorizationLayout; // @synthesize paymentAuthorizationLayout=_paymentAuthorizationLayout;
 @property(readonly, nonatomic) long long paymentAuthorizationStyle; // @synthesize paymentAuthorizationStyle=_paymentAuthorizationStyle;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

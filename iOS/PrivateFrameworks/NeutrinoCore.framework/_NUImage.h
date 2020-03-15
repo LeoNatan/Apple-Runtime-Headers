@@ -28,12 +28,12 @@
     struct vector<unsigned char, std::__1::allocator<unsigned char>> _accessCount;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy) NURegion *validRegion; // @synthesize validRegion=_validRegion;
 @property(readonly) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) NUPixelFormat *format; // @synthesize format=_format;
 @property(readonly) NUImageLayout *layout; // @synthesize layout=_layout;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)copyBufferStorage:(id)arg1 fromRect:(CDStruct_996ac03c)arg2 toPoint:(CDStruct_912cb5d2)arg3;
 - (_Bool)copySurfaceStorage:(id)arg1 fromRect:(CDStruct_996ac03c)arg2 toPoint:(CDStruct_912cb5d2)arg3 device:(id)arg4;
 - (id)mutablePurgeableImageCopy;

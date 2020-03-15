@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     NSArray *_windowStates;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *windowStates; // @synthesize windowStates=_windowStates;
 @property(readonly, nonatomic) NSArray *pinnedTabsStates; // @synthesize pinnedTabsStates=_pinnedTabsStates;
-- (void).cxx_destruct;
 - (id)dataForCleanExit:(BOOL)arg1;
-- (void)restoreSessionWithLaunchTimePerformanceMonitor:(id)arg1 minimizeRestoredWindows:(BOOL)arg2;
+- (void)restoreSessionMinimizingRestoredWindows:(BOOL)arg1;
 - (BOOL)containsAnyURLs;
 - (id)initFromFile:(id)arg1 encryptionProvider:(id)arg2;
 - (id)initFromCurrentSessionIgnoringPrivateWindows:(BOOL)arg1 encryptionProvider:(id)arg2;

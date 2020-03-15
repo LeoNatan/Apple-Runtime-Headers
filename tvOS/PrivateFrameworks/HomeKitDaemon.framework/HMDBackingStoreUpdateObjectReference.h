@@ -14,9 +14,9 @@
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithObject:(id)arg1 uuid:(id)arg2;
 

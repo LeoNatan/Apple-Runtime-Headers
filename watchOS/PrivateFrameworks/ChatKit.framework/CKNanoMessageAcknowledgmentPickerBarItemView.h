@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CAShapeLayer *_circleLayer;
 }
 
-@property(retain, nonatomic) CAShapeLayer *circleLayer; // @synthesize circleLayer=_circleLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CAShapeLayer *circleLayer; // @synthesize circleLayer=_circleLayer;
 - (void)layoutSubviews;
 - (void)setSelected:(_Bool)arg1;
 

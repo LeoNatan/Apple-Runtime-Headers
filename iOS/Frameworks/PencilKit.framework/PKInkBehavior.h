@@ -38,6 +38,8 @@
 + (id)inkFunctionForProperty:(unsigned long long)arg1 outputFunctions:(vector_2b0a8222 *)arg2 index:(unsigned long long)arg3;
 + (id)arrayFromVector:(vector_b67dfe3a)arg1;
 + (double)inkRadiusOverride;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKInkFeatheringDescriptor *featheringDescriptor; // @synthesize featheringDescriptor=_featheringDescriptor;
 @property(retain, nonatomic) PKInkSmoothingDescriptor *smoothingDescriptor; // @synthesize smoothingDescriptor=_smoothingDescriptor;
 @property(nonatomic) double baseAlpha; // @synthesize baseAlpha=_baseAlpha;
@@ -45,8 +47,6 @@
 @property(nonatomic) double blendAlpha; // @synthesize blendAlpha=_blendAlpha;
 @property(readonly, nonatomic) PKInkRenderingDescriptor *renderingDescriptor; // @synthesize renderingDescriptor=_renderingDescriptor;
 @property(readonly, nonatomic) NSString *variant; // @synthesize variant=_variant;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)particleTextureName;
 - (double)rulerOffsetForBaseValues:(struct _PKStrokePoint)arg1 inputType:(long long)arg2 inputScale:(double)arg3;
 - (void)setVariableSnappedWidth:(_Bool)arg1;

@@ -25,7 +25,7 @@
 - (void)backgroundDownloadTask:(unsigned int)arg1 didWriteData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4;
 - (void)willRetryBackgroundDataTask:(unsigned int)arg1 withError:(NSError *)arg2 transactionMetrics:(__CFN_TransactionMetrics *)arg3;
 - (void)backgroundDataTaskDidBecomeDownloadTask:(unsigned int)arg1;
-- (void)backgroundTask:(unsigned int)arg1 getAuthHeadersForResponse:(NSURLResponse *)arg2 reply:(void (^)(_Bool, NSDictionary *))arg3;
+- (void)backgroundTask:(unsigned int)arg1 getAuthHeadersForResponse:(NSURLResponse *)arg2 reply:(void (^)(_Bool, NSDictionary *, NSURLRequest *))arg3;
 - (void)backgroundDataTask:(unsigned int)arg1 didReceiveData:(NSData *)arg2 withReply:(void (^)(void))arg3;
 - (void)backgroundTask:(unsigned int)arg1 didCompleteWithError:(NSError *)arg2 taskMetrics:(__CFN_TaskMetrics *)arg3 info:(NSDictionary *)arg4 reply:(void (^)(void))arg5;
 - (void)backgroundTask:(unsigned int)arg1 needNewBodyStream:(_Bool)arg2 withReply:(void (^)(NSFileHandle *))arg3;

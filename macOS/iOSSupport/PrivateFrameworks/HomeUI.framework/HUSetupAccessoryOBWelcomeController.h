@@ -14,8 +14,8 @@
     HUHomeAccessoryTileView *_homeAccessoryTileView;
 }
 
-@property(readonly, nonatomic) HUHomeAccessoryTileView *homeAccessoryTileView; // @synthesize homeAccessoryTileView=_homeAccessoryTileView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUHomeAccessoryTileView *homeAccessoryTileView; // @synthesize homeAccessoryTileView=_homeAccessoryTileView;
 - (double)_contentAspectRatio;
 @property(readonly, nonatomic) HFItem<HFServiceLikeItem> *item;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3 contentView:(id)arg4;

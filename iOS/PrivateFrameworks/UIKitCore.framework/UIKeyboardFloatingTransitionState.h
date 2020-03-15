@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _finalInputViewTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(copy, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect platterViewFrame; // @synthesize platterViewFrame=_platterViewFrame;
 @property(nonatomic) struct CGRect inputViewFrame; // @synthesize inputViewFrame=_inputViewFrame;
 @property(retain, nonatomic) UIView *inputView; // @synthesize inputView=_inputView;
-- (void).cxx_destruct;
 
 @end
 

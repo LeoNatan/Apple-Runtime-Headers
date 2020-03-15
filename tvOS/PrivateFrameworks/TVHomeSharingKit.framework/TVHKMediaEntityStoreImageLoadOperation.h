@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSOperation *_currentSubOperation;
 }
 
-@property(retain, nonatomic) NSOperation *currentSubOperation; // @synthesize currentSubOperation=_currentSubOperation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOperation *currentSubOperation; // @synthesize currentSubOperation=_currentSubOperation;
 - (id)_templateImageURLStringFromLookupResults:(id)arg1 storeID:(id)arg2;
 - (void)_startImageLoadOperationWithTemplateImageURLString:(id)arg1;
 - (void)_startLookupOperation;

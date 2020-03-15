@@ -15,10 +15,10 @@
     NSDate *_lastDragStartDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int reorderSound; // @synthesize reorderSound=_reorderSound;
 @property(nonatomic) BOOL initializedReorderSound; // @synthesize initializedReorderSound=_initializedReorderSound;
 @property(retain, nonatomic) NSDate *lastDragStartDate; // @synthesize lastDragStartDate=_lastDragStartDate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)playReorderSound;
 - (void)draggingActionsEnteredDeletionZone:(id)arg1;

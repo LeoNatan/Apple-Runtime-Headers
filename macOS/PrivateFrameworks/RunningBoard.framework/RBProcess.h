@@ -46,6 +46,7 @@
     double _processStartTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *underlyingAssertion; // @synthesize underlyingAssertion=_underlyingAssertion;
 @property(readonly, nonatomic, getter=isSuspended) BOOL suspended; // @synthesize suspended=_suspended;
 @property(nonatomic, getter=isTerminating) BOOL terminating; // @synthesize terminating=_terminating;
@@ -62,7 +63,6 @@
 @property(readonly, copy, nonatomic) RBSProcessInstance *instance; // @synthesize instance=_instance;
 @property(readonly, copy, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
 @property(readonly, copy, nonatomic) RBSProcessIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

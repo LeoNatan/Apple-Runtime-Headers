@@ -36,9 +36,9 @@
 
 + (id)_filterInputColorForEffect:(long long)arg1;
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool blurDisabled; // @synthesize blurDisabled=_blurDisabled;
 @property(nonatomic) _Bool showSpinner; // @synthesize showSpinner=_showSpinner;
-- (void).cxx_destruct;
 - (void)_updateFilter;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;

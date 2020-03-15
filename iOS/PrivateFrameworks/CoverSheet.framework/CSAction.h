@@ -16,9 +16,9 @@
 
 + (id)actionWithContext:(id)arg1;
 + (id)actionWithType:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFLockScreenActionContext *context; // @synthesize context=_context;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

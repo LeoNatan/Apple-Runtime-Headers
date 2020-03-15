@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_currentIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexPath *currentIndexPath; // @synthesize currentIndexPath=_currentIndexPath;
 @property(readonly, nonatomic) UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(readonly, nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) __weak id <VUIPreviewInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_cleanupPreviewInteraction;
 - (void)animateTransition:(id)arg1;

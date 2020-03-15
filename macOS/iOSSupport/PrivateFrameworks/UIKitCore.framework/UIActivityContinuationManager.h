@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     NSProgress *_currentActivityContinuationProgress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_currentActivityContinuationProgress, setter=_setCurrentActivityContinuationProgress:) NSProgress *currentActivityContinuationProgress; // @synthesize currentActivityContinuationProgress=_currentActivityContinuationProgress;
 @property(copy, nonatomic, getter=_currentActivityContinuationUUIDString, setter=_setCurrentActivityContinuationUUIDString:) NSString *currentActivityContinuationUUIDString; // @synthesize currentActivityContinuationUUIDString=_currentActivityContinuationUUIDString;
 @property(copy, nonatomic, getter=_currentActivityContinuationType, setter=_setCurrentActivityContinuationType:) NSString *currentActivityContinuationType; // @synthesize currentActivityContinuationType=_currentActivityContinuationType;
-- (void).cxx_destruct;
 - (void)removeResponder:(id)arg1 document:(id)arg2 forUserActivity:(id)arg3;
 - (void)_cleanupUserActivity:(id)arg1 activityIdentifier:(id)arg2;
 - (void)addResponder:(id)arg1 document:(id)arg2 forUserActivity:(id)arg3;

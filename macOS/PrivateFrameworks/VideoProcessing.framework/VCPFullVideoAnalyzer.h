@@ -37,13 +37,13 @@
 }
 
 + (BOOL)useSceneprintInSceneAnalysis;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property float trackingScore; // @synthesize trackingScore=_trackingScore;
 @property float obstructionScore; // @synthesize obstructionScore=_obstructionScore;
 @property float interestingnessScore; // @synthesize interestingnessScore=_interestingnessScore;
 @property float actionScore; // @synthesize actionScore=_actionScore;
 @property float qualityScore; // @synthesize qualityScore=_qualityScore;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (float)computeExposureScoreOfFrame:(struct Frame *)arg1;
 - (void)reviseFrameTrackScore:(struct Frame *)arg1 saliencyRegions:(id)arg2;
 - (void)setNextCaptureFrame:(struct __CVBuffer *)arg1;

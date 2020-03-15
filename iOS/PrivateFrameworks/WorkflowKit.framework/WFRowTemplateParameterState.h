@@ -34,6 +34,7 @@
 }
 
 + (Class)processingValueClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFDateSubstitutableState *anotherDateValue; // @synthesize anotherDateValue=_anotherDateValue;
 @property(readonly, nonatomic) WFDateSubstitutableState *dateValue; // @synthesize dateValue=_dateValue;
 @property(readonly, nonatomic) WFByteCountUnitSubstitutableState *byteCountUnitValue; // @synthesize byteCountUnitValue=_byteCountUnitValue;
@@ -52,7 +53,6 @@
 @property(readonly, copy, nonatomic) NSArray *contentProperties; // @synthesize contentProperties=_contentProperties;
 @property(readonly, nonatomic) WFContentProperty *contentProperty; // @synthesize contentProperty=_contentProperty;
 @property(readonly, nonatomic) Class contentItemClass; // @synthesize contentItemClass=_contentItemClass;
-- (void).cxx_destruct;
 - (id)stateBySettingAnotherDateValue:(id)arg1;
 - (id)stateBySettingDateValue:(id)arg1;
 - (id)stateBySettingByteCountUnitValue:(id)arg1;
@@ -68,8 +68,8 @@
 - (id)stateBySettingContentProperty:(id)arg1;
 - (id)actualCopyWithZone:(struct _NSZone *)arg1;
 - (id)actualCopyWithZone:(struct _NSZone *)arg1 propertyName:(id)arg2;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
-- (void)getUserInputRequiredValue:(CDUnknownBlockType)arg1 variableSource:(id)arg2 parameter:(id)arg3;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
+- (void)getUserInputRequiredValue:(CDUnknownBlockType)arg1 context:(id)arg2;
 - (id)defaultStateForInfo:(const struct WFRowTemplateValueInfo *)arg1;
 - (_Bool)isValueWithInfoDisplayed:(const struct WFRowTemplateValueInfo *)arg1;
 - (id)containedVariables;

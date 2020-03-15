@@ -21,6 +21,7 @@
     NSDictionary *_titleAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *titleAttributes; // @synthesize titleAttributes=_titleAttributes;
 @property double selectionPadding; // @synthesize selectionPadding=_selectionPadding;
 @property double selectionKeyMargin; // @synthesize selectionKeyMargin=_selectionKeyMargin;
@@ -28,7 +29,6 @@
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSMutableDictionary *cellDictionary; // @synthesize cellDictionary=_cellDictionary;
 @property(retain) NSDictionary *annotationAttributes; // @synthesize annotationAttributes=_annotationAttributes;
-- (void).cxx_destruct;
 - (void)clearCache;
 - (void)setSizeValue:(id)arg1 key:(id)arg2;
 - (void)setSizeValue:(id)arg1 candidateItem:(id)arg2;

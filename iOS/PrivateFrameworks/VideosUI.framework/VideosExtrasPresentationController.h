@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _extrasMenuBarFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect extrasMenuBarFrame; // @synthesize extrasMenuBarFrame=_extrasMenuBarFrame;
 @property(retain, nonatomic) UIView *extrasMenuBarView; // @synthesize extrasMenuBarView=_extrasMenuBarView;
-- (void).cxx_destruct;
 - (void)dismissalTransitionDidEnd:(_Bool)arg1;
 - (void)dismissalTransitionWillBegin;
 - (void)presentationTransitionDidEnd:(_Bool)arg1;

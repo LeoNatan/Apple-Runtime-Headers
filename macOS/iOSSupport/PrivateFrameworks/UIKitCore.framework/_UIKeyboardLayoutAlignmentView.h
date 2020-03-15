@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 + (struct CGRect)_endFrameForNotification:(id)arg1 inView:(id)arg2;
 + (BOOL)_shouldIgnoreFrameChangeNotification:(id)arg1 inView:(id)arg2;
 + (struct CGRect)_frameInBoundsForKeyboardFrame:(struct CGRect)arg1 inView:(id)arg2;
-@property(nonatomic) BOOL automaticKeyboardFrameTrackingDisabled; // @synthesize automaticKeyboardFrameTrackingDisabled=_automaticKeyboardFrameTrackingDisabled;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL automaticKeyboardFrameTrackingDisabled; // @synthesize automaticKeyboardFrameTrackingDisabled=_automaticKeyboardFrameTrackingDisabled;
 - (void)_startObservingKeyboardNotificationsForScreen:(id)arg1;
 - (void)_stopObservingKeyboardNotifications;
 - (void)dealloc;

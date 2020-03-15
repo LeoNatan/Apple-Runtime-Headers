@@ -29,12 +29,12 @@
 + (id)_initialsForContact:(id)arg1;
 + (int)monogramTypeForContact:(id)arg1;
 + (id)descriptorForRequiredKeysIncludingImage:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool textKnockout; // @synthesize textKnockout=_textKnockout;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) float diameter; // @synthesize diameter=_diameter;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
-- (void).cxx_destruct;
 - (id)monogramForPerson:(void *)arg1 isPersonImage:(_Bool *)arg2;
 - (id)monogramForPerson:(void *)arg1;
 - (id)_copyMonogramWithKnockoutMask;

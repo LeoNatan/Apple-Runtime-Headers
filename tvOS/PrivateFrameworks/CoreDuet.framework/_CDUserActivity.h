@@ -21,12 +21,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)createFromUserActivity:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *payload; // @synthesize payload=_payload;
 @property(copy) NSDate *date; // @synthesize date=_date;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *type; // @synthesize type=_type;
 @property(copy) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

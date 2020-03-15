@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *lastDatePlayed; // @synthesize lastDatePlayed=_lastDatePlayed;
 @property(readonly, nonatomic) long long playedStatus; // @synthesize playedStatus=_playedStatus;
 @property(readonly, nonatomic) double playheadPosition; // @synthesize playheadPosition=_playheadPosition;
 @property(readonly, nonatomic) unsigned long long playCount; // @synthesize playCount=_playCount;
 @property(readonly, nonatomic) long long syncID; // @synthesize syncID=_syncID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initUsingPropertiesFrom:(id)arg1;

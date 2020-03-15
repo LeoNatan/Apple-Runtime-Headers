@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _imageProxyProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType imageProxyProvider; // @synthesize imageProxyProvider=_imageProxyProvider;
 @property(readonly, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
-- (void).cxx_destruct;
 - (id)initWithImageURLProvider:(CDUnknownBlockType)arg1;
 - (id)initWithImageRequestProvider:(CDUnknownBlockType)arg1;
 - (id)initWithImageProxyProvider:(CDUnknownBlockType)arg1;

@@ -20,9 +20,9 @@
 + (id)postalAddress:(id)arg1 components:(id)arg2 label:(id)arg3 extractionType:(unsigned long long)arg4 recordId:(id)arg5 origin:(id)arg6;
 + (id)postalAddress:(id)arg1 components:(id)arg2 label:(id)arg3 extractionInfo:(id)arg4 recordId:(id)arg5;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SGPostalAddressComponents *components; // @synthesize components=_components;
 @property(readonly, nonatomic) NSString *rawAddress; // @synthesize rawAddress=_rawAddress;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqualToPostalAddress:(id)arg1;

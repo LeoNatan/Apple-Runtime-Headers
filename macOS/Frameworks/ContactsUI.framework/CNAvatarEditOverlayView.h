@@ -16,10 +16,10 @@
 }
 
 + (id)arrowImage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) NSImageView *arrowImage; // @synthesize arrowImage=_arrowImage;
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)updateLabelVisibilityForNewSize;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)updateLayer;

@@ -71,11 +71,11 @@
 
 + (struct CGSize)_scaledSizeForSize:(struct CGSize)arg1 focusSizeIncrease:(float)arg2 selectionStyle:(int)arg3;
 + (id)_layerStackObservingKeys;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint focusDirection; // @synthesize focusDirection=_focusDirection;
 @property(nonatomic) unsigned int controlState; // @synthesize controlState=_controlState;
 @property(retain, nonatomic) id <UINamedLayerStack> layerStack; // @synthesize layerStack=_layerStack;
 @property(retain, nonatomic) _UIStackedImageConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_updateShadowWithAnimationCoordinator:(id)arg1;
 - (void)_updateShadowPositionWithOffset:(struct CGPoint)arg1;
 - (void)_updateShadowBounds;

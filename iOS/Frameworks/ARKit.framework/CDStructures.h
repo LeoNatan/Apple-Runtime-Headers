@@ -49,6 +49,8 @@ struct ARLabHistogram {
 
 struct ARTexturedPlane;
 
+struct BodyRegistration;
+
 struct CATransform3D {
     double _field1;
     double _field2;
@@ -119,20 +121,7 @@ struct Human {
     struct CGRect _field4;
 };
 
-struct IndirectArgumentBufferCapabilities {
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :29;
-};
-
 struct KeyMapBuffer<const void *, std::__1::vector<unsigned char, std::__1::allocator<unsigned char>>>;
-
-struct MTLTargetDeviceArch {
-    unsigned int _field1;
-    unsigned int _field2;
-    char *_field3;
-};
 
 struct Matrix<float, 0, 0, false> {
     float *m_data;
@@ -147,13 +136,41 @@ struct Matrix<float, 0, 1, false> {
     unsigned int m_rows;
 };
 
+struct Matrix<float, 2, 16, false> {
+    float m_data[32];
+};
+
+struct Matrix<float, 3, 16, false> {
+    float m_data[48];
+};
+
+struct Matrix<float, 3, 3, false> {
+    float m_data[9];
+};
+
 struct Matrix<float, 9, 1, false> {
     float m_data[9];
 };
 
 struct PrecomputedFaceData;
 
+struct RegistrationData {
+    struct Matrix<float, 2, 16, false> image_points;
+    struct Matrix<float, 3, 16, false> lifted_points;
+    struct Matrix<float, 3, 3, false> intrinsics;
+    struct SE3GroupStorage<float, cva::Matrix<float, 4, 4, false>> cam_from_obj;
+    struct SE3GroupStorage<float, cva::Matrix<float, 4, 4, false>> cam_from_vio;
+    double timestamp_obj;
+    double timestamp_vio;
+};
+
 struct RobustExpFilter<float>;
+
+struct SE3GroupStorage<float, cva::Matrix<float, 4, 4, false>> {
+    float m_data[16];
+};
+
+struct ScaleCorrection;
 
 struct SkeletonJointFilter<float> {
     vector_7584168e m_values;
@@ -167,7 +184,6 @@ struct SkeletonJointFilter<float> {
     float m_temporal_smoothing;
     float m_prediction_factor;
     float m_min_smoothing;
-    double m_extrapolation_time_seconds;
     float m_up_slope;
     float m_down_slope;
     float m_temporal_slope;
@@ -188,6 +204,14 @@ struct __shared_weak_count;
 
 struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
     struct __tree_node_base<void *> *_field1;
+};
+
+struct array<arkit::btr::RegistrationData, 5> {
+    struct RegistrationData __elems_[5];
+};
+
+struct array<float, 2> {
+    float __elems_[2];
 };
 
 struct array<float, 32> {
@@ -212,6 +236,90 @@ struct array<std::__1::array<std::__1::array<float, 8>, 8>, 4> {
 
 struct array<unsigned char, 17> {
     unsigned char _field1[17];
+};
+
+struct basic_filebuf<char, std::__1::char_traits<char>> {
+    CDUnknownFunctionPointerType *_vptr$basic_streambuf;
+    struct locale __loc_;
+    char *__binp_;
+    char *__ninp_;
+    char *__einp_;
+    char *__bout_;
+    char *__nout_;
+    char *__eout_;
+    char *__extbuf_;
+    char *__extbufnext_;
+    char *__extbufend_;
+    char __extbuf_min_[8];
+    unsigned long long __ebs_;
+    char *__intbuf_;
+    unsigned long long __ibs_;
+    struct __sFILE *__file_;
+    struct codecvt<char, char, __mbstate_t> *__cv_;
+    CDUnion_96f6e1fe __st_;
+    CDUnion_96f6e1fe __st_last_;
+    unsigned int __om_;
+    unsigned int __cm_;
+    _Bool __owns_eb_;
+    _Bool __owns_ib_;
+    _Bool __always_noconv_;
+};
+
+struct basic_ofstream<char, std::__1::char_traits<char>> {
+    CDUnknownFunctionPointerType *_vptr$basic_ostream;
+    struct basic_filebuf<char, std::__1::char_traits<char>> __sb_;
+    CDUnknownFunctionPointerType *_vptr$ios_base;
+    unsigned int __fmtflags_;
+    long long __precision_;
+    long long __width_;
+    unsigned int __rdstate_;
+    unsigned int __exceptions_;
+    void *__rdbuf_;
+    void *__loc_;
+    CDUnknownFunctionPointerType *__fn_;
+    int *__index_;
+    unsigned long long __event_size_;
+    unsigned long long __event_cap_;
+    long long *__iarray_;
+    unsigned long long __iarray_size_;
+    unsigned long long __iarray_cap_;
+    void **__parray_;
+    unsigned long long __parray_size_;
+    unsigned long long __parray_cap_;
+    struct basic_ostream<char, std::__1::char_traits<char>> *__tie_;
+    int __fill_;
+};
+
+struct basic_ostream<char, std::__1::char_traits<char>>;
+
+struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+        struct __rep {
+            union {
+                struct __long {
+                    unsigned long long __cap_;
+                    unsigned long long __size_;
+                    char *__data_;
+                } __l;
+                struct __short {
+                    union {
+                        unsigned char __size_;
+                        char __lx;
+                    } ;
+                    char __data_[23];
+                } __s;
+                struct __raw {
+                    unsigned long long __words[3];
+                } __r;
+            } ;
+        } __value_;
+    } __r_;
+};
+
+struct codecvt<char, char, __mbstate_t>;
+
+struct locale {
+    struct __imp *__locale_;
 };
 
 struct map<int, float __attribute__((ext_vector_type(2))), std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, float __attribute__((ext_vector_type(2)))>>> {
@@ -275,6 +383,16 @@ struct shared_ptr<arkit::PrecomputedFaceData> {
 
 struct shared_ptr<arkit::RobustExpFilter<float>> {
     struct RobustExpFilter<float> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<arkit::btr::BodyRegistration> {
+    struct BodyRegistration *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<arkit::btr::ScaleCorrection> {
+    struct ScaleCorrection *__ptr_;
     struct __shared_weak_count *__cntrl_;
 };
 
@@ -430,104 +548,6 @@ typedef struct ?<float __attribute__((ext_vector_type(3))), std::__1::allocator<
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    _Bool _field1;
-    _Bool _field2;
-    _Bool _field3;
-    _Bool _field4;
-    _Bool _field5;
-    _Bool _field6;
-    _Bool _field7;
-    _Bool _field8;
-    float _field9;
-    float _field10;
-} CDStruct_ff515195;
-
-typedef struct {
-    unsigned int _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    unsigned int _field9;
-    unsigned int _field10;
-    unsigned int _field11;
-    unsigned int _field12;
-    unsigned int _field13;
-    unsigned int _field14;
-    unsigned int _field15;
-    unsigned int _field16;
-    unsigned int _field17;
-    unsigned int _field18;
-    float _field19;
-    float _field20;
-    unsigned int _field21;
-    unsigned int _field22;
-    unsigned int _field23;
-    unsigned int _field24;
-    unsigned int _field25;
-    unsigned int _field26;
-    unsigned int _field27;
-    unsigned int _field28;
-    unsigned int _field29;
-    unsigned int _field30;
-    unsigned int _field31;
-    unsigned int _field32;
-    unsigned int _field33;
-    unsigned int _field34;
-    unsigned int _field35;
-    unsigned int _field36;
-    unsigned int _field37;
-    unsigned int _field38;
-    unsigned int _field39;
-    unsigned int _field40;
-    unsigned int _field41;
-    unsigned int _field42;
-    unsigned int _field43;
-    unsigned int _field44;
-    unsigned int _field45;
-    unsigned int _field46;
-    unsigned int _field47;
-    unsigned int _field48;
-    unsigned int _field49;
-    unsigned int _field50;
-    unsigned int _field51;
-    unsigned int _field52;
-    unsigned int _field53;
-    unsigned int _field54;
-    unsigned int _field55;
-    unsigned int _field56;
-    unsigned int _field57;
-    unsigned int _field58;
-    unsigned int _field59;
-    unsigned long long _field60;
-} CDStruct_a9d832e7;
-
-typedef struct {
-    unsigned int _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-} CDStruct_32a7f38a;
-
-typedef struct {
-    unsigned int _field1;
-    unsigned int _field2;
-} CDStruct_c0454aff;
-
-typedef struct {
-    unsigned long long _field1;
-    unsigned long long _field2;
-    unsigned long long _field3;
-} CDStruct_14f26992;
-
-typedef struct {
-    unsigned long long _field1;
-    unsigned long long _field2;
-} CDStruct_4bcfbbae;
-
-typedef struct {
     float coefficients[9];
 } CDStruct_9c26ff66;
 
@@ -567,15 +587,6 @@ typedef struct {
 } CDStruct_2d7b3170;
 
 typedef struct {
-    double originX;
-    double originY;
-    double width;
-    double height;
-    double znear;
-    double zfar;
-} CDStruct_4b2885c7;
-
-typedef struct {
     double x;
     double y;
     double z;
@@ -598,11 +609,6 @@ typedef struct {
 
 typedef struct {
     float _field1;
-    float _field2;
-} CDStruct_b2fbf00d;
-
-typedef struct {
-    float _field1;
 } CDStruct_37a3040a;
 
 typedef struct {
@@ -618,17 +624,6 @@ typedef struct {
 } CDStruct_1b6d18a9;
 
 typedef struct CDStruct_183601bc;
-
-typedef struct {
-    _Bool _field1;
-    unsigned long long _field2;
-    CDStruct_183601bc *_field3;
-} CDStruct_dbc1e4aa;
-
-typedef struct {
-    CDStruct_14f26992 _field1;
-    CDStruct_14f26992 _field2;
-} CDStruct_4c83c94d;
 
 typedef struct {
     CDStruct_183601bc _field1;
@@ -695,4 +690,11 @@ typedef struct vector<unsigned long long, std::__1::allocator<unsigned long long
         unsigned long long *__value_;
     } __end_cap_;
 } vector_7984f87c;
+
+#pragma mark Typedef'd Unions
+
+typedef union {
+    char __mbstate8[128];
+    long long _mbstateL;
+} CDUnion_96f6e1fe;
 

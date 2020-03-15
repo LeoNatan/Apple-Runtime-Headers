@@ -16,9 +16,9 @@
 }
 
 + (id)personalizedResponseForContentDescriptor:(id)arg1 requestedProperties:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) MPStoreLibraryPersonalizationRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)execute;
 - (void)cancel;
 

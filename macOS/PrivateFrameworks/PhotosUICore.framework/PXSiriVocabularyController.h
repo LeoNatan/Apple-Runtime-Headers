@@ -22,11 +22,11 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHFetchResult *peopleFetchResult; // @synthesize peopleFetchResult=_peopleFetchResult;
 @property(retain, nonatomic) PHFetchResult *albumFetchResult; // @synthesize albumFetchResult=_albumFetchResult;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-- (void).cxx_destruct;
 - (void)_onQueueUpdatePeopleVocabulary;
 - (id)_localizedTitlesForAssetCollectionFetchResult:(id)arg1;
 - (void)_onQueueUpdateAlbumVocabulary;

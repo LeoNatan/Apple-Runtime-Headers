@@ -19,10 +19,10 @@
     double _applicationCPUTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
 @property(readonly, nonatomic) int busyPercent; // @synthesize busyPercent=_busyPercent;
 @property(readonly, nonatomic) double applicationCPUTime; // @synthesize applicationCPUTime=_applicationCPUTime;
-- (void).cxx_destruct;
 - (double)_elapsedCPUTime;
 - (void)_hostwideUserElapsedCPUTime:(double *)arg1 systemElapsedCPUTime:(double *)arg2 idleElapsedCPUTime:(double *)arg3;
 - (void)_getApplicationCPUTimesForUser:(double *)arg1 system:(double *)arg2 idle:(double *)arg3;

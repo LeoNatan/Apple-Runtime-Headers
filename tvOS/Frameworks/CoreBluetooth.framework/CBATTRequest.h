@@ -18,13 +18,13 @@
     NSNumber *_transactionID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreResponse; // @synthesize ignoreResponse=_ignoreResponse;
 @property(readonly, nonatomic) NSNumber *transactionID; // @synthesize transactionID=_transactionID;
 @property(readonly, nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) CBCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
 @property(readonly, nonatomic) CBCentral *central; // @synthesize central=_central;
 @property(copy) NSData *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)description;
 - (void)appendValueData:(id)arg1;
 - (unsigned long long)endOffset;

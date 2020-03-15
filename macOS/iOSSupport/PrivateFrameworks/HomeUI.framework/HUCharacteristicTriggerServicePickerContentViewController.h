@@ -19,11 +19,11 @@
     UINavigationItem *_effectiveNavigationItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UINavigationItem *effectiveNavigationItem; // @synthesize effectiveNavigationItem=_effectiveNavigationItem;
 @property(readonly, nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) HFCharacteristicTriggerBuilder *characteristicTriggerBuilder; // @synthesize characteristicTriggerBuilder=_characteristicTriggerBuilder;
-- (void).cxx_destruct;
 - (void)_validateNextButton;
 - (void)_addCharacteristicEventsForOtherDeviceItem:(id)arg1;
 - (void)_addCharacteristicEventsForAlarmItem:(id)arg1;

@@ -18,13 +18,13 @@
     struct CGRect _boundingBox;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CGPoint bottomLeft; // @synthesize bottomLeft=_bottomLeft;
 @property(readonly) struct CGPoint bottomRight; // @synthesize bottomRight=_bottomRight;
 @property(readonly) struct CGPoint topRight; // @synthesize topRight=_topRight;
 @property(readonly) struct CGPoint topLeft; // @synthesize topLeft=_topLeft;
 @property(readonly) struct CGRect boundingBox; // @synthesize boundingBox=_boundingBox;
 @property(readonly) NSArray *candidates; // @synthesize candidates=_candidates;
-- (void).cxx_destruct;
 - (id)initWithTextFeature:(id)arg1 options:(id)arg2;
 
 @end

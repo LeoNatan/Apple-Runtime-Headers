@@ -15,10 +15,10 @@
     struct UIEdgeInsets _parentLayoutMargins;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) struct UIEdgeInsets parentLayoutMargins; // @synthesize parentLayoutMargins=_parentLayoutMargins;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithEffect:(id)arg1;
 

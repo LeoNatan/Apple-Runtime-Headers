@@ -24,6 +24,7 @@
 + (void)_fillIdentifiersToRemove:(id *)arg1 searchableItemRegistry:(id *)arg2 withMaximumUpdatedItems:(int)arg3 references:(id)arg4 localState:(id)arg5;
 + (id)getSpotlightLocalState;
 + (id)spotlightDiffFileURL;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property(readonly, nonatomic) CSSearchableIndex *index; // @synthesize index=_index;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSSet *identifiersToRemove; // @synthesize identifiersToRemove=_identifiersToRemove;
 @property(readonly, nonatomic) NSDictionary *searchableItemRegistry; // @synthesize searchableItemRegistry=_searchableItemRegistry;
 @property(nonatomic) __weak id <VCSpotlightSyncOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cleanupAndExitWithRequestToRelaunch:(_Bool)arg1;
 - (void)deleteSpotlightFileAndCleanup;
 - (void)clearLocalStateAndExit;

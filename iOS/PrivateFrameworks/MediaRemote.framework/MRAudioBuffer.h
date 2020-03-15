@@ -14,9 +14,9 @@
     NSDictionary *_formatSettings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *formatSettings; // @synthesize formatSettings=_formatSettings;
 @property(readonly, nonatomic) AVAudioCompressedBuffer *buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 - (id)initWithFormatSettings:(id)arg1 packetCapacity:(unsigned long long)arg2 maximumPacketSize:(unsigned long long)arg3;
 
 @end

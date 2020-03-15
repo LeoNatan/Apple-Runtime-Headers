@@ -20,6 +20,7 @@
     SFPunchout *_actionPunchout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFPunchout *actionPunchout; // @synthesize actionPunchout=_actionPunchout;
 @property(retain, nonatomic) SFActionItem *actionItem; // @synthesize actionItem=_actionItem;
 @property(retain, nonatomic) SFImage *image; // @synthesize image=_image;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *footnote; // @synthesize footnote=_footnote;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

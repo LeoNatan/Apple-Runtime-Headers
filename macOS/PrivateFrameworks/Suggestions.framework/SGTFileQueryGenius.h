@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 + (id)filenameTypingScopeCategory;
 + (id)displayNameForScope:(long long)arg1;
 + (void)initialize;
-@property(copy) NSDictionary *imagesForTags; // @synthesize imagesForTags=_imagesForTags;
 - (void).cxx_destruct;
+@property(copy) NSDictionary *imagesForTags; // @synthesize imagesForTags=_imagesForTags;
 - (id)imageForSuggestion:(id)arg1;
 - (void)suggesterBecomesIdle:(id)arg1;
 - (id)suggestionForString:(id)arg1;

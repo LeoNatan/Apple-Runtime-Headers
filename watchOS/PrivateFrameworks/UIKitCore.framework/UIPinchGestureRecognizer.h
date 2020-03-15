@@ -11,10 +11,11 @@
 @interface UIPinchGestureRecognizer : UIGestureRecognizer
 {
     float _initialTouchDistance;
-    float _initialTouchScale;
-    double _lastTouchTime;
+    float _initialScale;
+    double _lastEventTime;
     float _velocity;
     float _previousVelocity;
+    double _lastNonZeroTimestampDelta;
     float _scaleThreshold;
     struct CGAffineTransform _transform;
     struct CGPoint _anchorSceneReferencePoint;
@@ -29,16 +30,20 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)_shouldDefaultToTouches;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _enableNestedHysteresis; // @synthesize _enableNestedHysteresis=__enableNestedHysteresis;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
 @property(nonatomic, getter=_hysteresis, setter=_setHysteresis:) float hysteresis; // @synthesize hysteresis=_hysteresis;
 @property(nonatomic) float scaleThreshold; // @synthesize scaleThreshold=_scaleThreshold;
-- (void).cxx_destruct;
 - (void)_logStatisticsForScale:(float)arg1;
+- (void)_endOrFail;
+- (void)_cancelOrFail;
+- (void)_applyScale:(float)arg1 atLocation:(struct CGPoint)arg2 touchDistance:(float)arg3 withEvent:(id)arg4;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (float)_hysteresisForTouches:(id)arg1;
 @property(readonly, nonatomic) float velocity;
 @property(nonatomic) float scale;
 @property(readonly, nonatomic) struct CGPoint anchorPoint;

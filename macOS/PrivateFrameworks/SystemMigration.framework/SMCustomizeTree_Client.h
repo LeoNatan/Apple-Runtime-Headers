@@ -25,6 +25,7 @@
     id <SMSizingDelegate> _sizingBridge;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <SMSizingDelegate> sizingBridge; // @synthesize sizingBridge=_sizingBridge;
 @property(readonly) BOOL rebootRequired; // @synthesize rebootRequired=_rebootRequired;
 @property(readonly) NSString *migratableStateDescription; // @synthesize migratableStateDescription=_migratableStateDescription;
@@ -37,7 +38,6 @@
 @property(readonly, copy) NSNumber *totalSize; // @synthesize totalSize=_totalSize;
 @property(readonly) __weak SMCustomizeTreeNode_Client *appropriateUserNode; // @synthesize appropriateUserNode=_appropriateUserNode;
 @property(retain) SMCustomizeTreeNode_Client *root; // @synthesize root=_root;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)migrationRequest;
 - (Class)requestClass;

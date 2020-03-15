@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSString *_privacyNote;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *privacyNote; // @synthesize privacyNote=_privacyNote;
 @property(copy, nonatomic) NSString *selectedReason; // @synthesize selectedReason=_selectedReason;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

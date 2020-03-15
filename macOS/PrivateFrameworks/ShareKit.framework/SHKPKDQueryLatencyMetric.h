@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     SHKLatencyMeasurement *_queryLatency;
 }
 
+- (void).cxx_destruct;
 @property(retain) SHKLatencyMeasurement *queryLatency; // @synthesize queryLatency=_queryLatency;
 @property(retain) NSString *processName; // @synthesize processName=_processName;
 @property(retain) NSString *extensionPoint; // @synthesize extensionPoint=_extensionPoint;
 @property(retain) NSNumber *extensionCount; // @synthesize extensionCount=_extensionCount;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)report;
 - (id)init;
 

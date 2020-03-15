@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     WDCancellationToken *_cancellationToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFallback; // @synthesize isFallback=_isFallback;
 @property(retain, nonatomic) WDCancellationToken *cancellationToken; // @synthesize cancellationToken=_cancellationToken;
 @property(nonatomic) double size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)_updateStyle;
 - (void)prepareForReuse;
 - (void)fetchBrandable:(id)arg1 dataProvider:(id)arg2;

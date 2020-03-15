@@ -20,11 +20,11 @@
     CDStruct_d58201db _size;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <NUAuxiliaryImage> auxImage; // @synthesize auxImage=_auxImage;
 @property(retain) NSDictionary *auxCoreGraphicsInfoDictionary; // @synthesize auxCoreGraphicsInfoDictionary=_auxCoreGraphicsInfoDictionary;
 @property CDStruct_912cb5d2 size; // @synthesize size=_size;
 @property(readonly) NSString *auxiliaryImageTypeCGIdentifier; // @synthesize auxiliaryImageTypeCGIdentifier=_auxiliaryImageTypeCGIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)auxiliaryImage:(out id *)arg1;
 - (id)auxiliaryCoreGraphicsInfoDictionary:(out id *)arg1;

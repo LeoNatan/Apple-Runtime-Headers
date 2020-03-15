@@ -13,8 +13,8 @@
     NSDictionary *_auxiliaryDataByType;
 }
 
-@property(retain) NSDictionary *auxiliaryDataByType; // @synthesize auxiliaryDataByType=_auxiliaryDataByType;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *auxiliaryDataByType; // @synthesize auxiliaryDataByType=_auxiliaryDataByType;
 - (id)init;
 
 @end

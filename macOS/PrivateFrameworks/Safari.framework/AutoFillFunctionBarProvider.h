@@ -17,26 +17,26 @@
 __attribute__((visibility("hidden")))
 @interface AutoFillFunctionBarProvider : NSObject <AutoFillCandidateListBarItemControllerDelegate, NSTouchBarDelegate, FormAutoFillCompletionControllerObserver, NSTouchBarProvider>
 {
-    Vector_9c080eda _currentCompletionListItems;
+    Vector_e1d4bda3 _currentCompletionListItems;
     NSCustomTouchBarItem *_autoFillLabelFunctionBarItem;
     AutoFillCandidateListBarItemController *_autoFillCandidateListBarItemController;
     NSTouchBar *_functionBar;
     id <AutoFillFunctionBarProviderDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AutoFillFunctionBarProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)didShowAutoFillQuickTypeForItem:(const struct CompletionListItem *)arg1;
-- (id)textForCompletionListItem:(const struct CompletionListItem *)arg1;
-- (id)imageForCompletionListItem:(const struct CompletionListItem *)arg1;
+@property(nonatomic) __weak id <AutoFillFunctionBarProviderDelegate> delegate; // @synthesize delegate=_delegate;
+-     // Error parsing type: c24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: didShowAutoFillQuickTypeForItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: textForCompletionListItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: imageForCompletionListItem:
 - (void)candidateListBarItemController:(id)arg1 didSelectCandidateAtIndex:(unsigned long long)arg2;
 - (id)candidateListBarItemController:(id)arg1 imageForCandidateAtIndex:(unsigned long long)arg2;
 - (id)candidateListBarItemController:(id)arg1 labelForCandidateAtIndex:(unsigned long long)arg2;
 - (id)_candidateBarTextAttributesForMultiLineLabel;
 - (id)_candidateBarTextAttributesForSingleLineLabel;
 - (unsigned long long)numberOfCandidatesForCandidateListBarItemController:(id)arg1;
-- (void)formAutoFillController:(id)arg1 didRefreshCompletionListItems:(const Vector_9c080eda *)arg2;
+- (void)formAutoFillController:(id)arg1 didRefreshCompletionListItems:(const Vector_e1d4bda3 *)arg2;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)_autoFillCandidateListFunctionBarItem;
 - (id)_autoFillCandidateListBarItemController;

@@ -17,9 +17,9 @@
     id <BLTBBObserverDelegateDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <BLTBBObserverDelegateDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak id <BBObserverDelegate> actualDelegate; // @synthesize actualDelegate=_actualDelegate;
-- (void).cxx_destruct;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (_Bool)isKindOfClass:(Class)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;

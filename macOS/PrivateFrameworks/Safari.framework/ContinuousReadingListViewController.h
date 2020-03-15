@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 + (void)setLastShownReadingListPageItem:(id)arg1 forBackForwardListItem:(const struct BackForwardListItem *)arg2;
 + (id)lastShownReadingListPageItemForBackForwardListItem:(const struct BackForwardListItem *)arg1;
 + (id)continuousReadingListPageItemForReadingListItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ContinuousReadingListDataSource *readingListDataSource; // @synthesize readingListDataSource=_readingListDataSource;
 @property(retain, nonatomic) id currentItemBeforeLoadingNewContinuousReadingListItem; // @synthesize currentItemBeforeLoadingNewContinuousReadingListItem=_currentItemBeforeLoadingNewContinuousReadingListItem;
 @property(nonatomic, getter=isInReaderMode) BOOL inReaderMode; // @synthesize inReaderMode=_inReaderMode;
-- (void).cxx_destruct;
 - (void)viewDidDisappear;
 - (void)viewDidAppear;
 - (void)_clearBottomOverhangImageForPageWithHeaderViewController:(id)arg1;

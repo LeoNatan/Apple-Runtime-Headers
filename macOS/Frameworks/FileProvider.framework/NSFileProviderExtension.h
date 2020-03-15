@@ -27,11 +27,11 @@
 + (id)_resourceIDOfURL:(id)arg1 outError:(id *)arg2;
 + (id)placeholderURLForURL:(id)arg1;
 + (BOOL)writePlaceholderAtURL:(id)arg1 withMetadata:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFileProviderDomain *domain; // @synthesize domain=_domain;
 @property(copy, nonatomic) NSString *memberQueueProviderIdentifier; // @synthesize memberQueueProviderIdentifier=_memberQueueProviderIdentifier;
 @property(retain, nonatomic) NSURL *memberQueueDocumentStorageURL; // @synthesize memberQueueDocumentStorageURL=_memberQueueDocumentStorageURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
-- (void).cxx_destruct;
 - (id)currentRequest;
 - (void)_withRequest:(id)arg1 execute:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
@@ -74,6 +74,7 @@
 - (id)enumeratorForContainerItemIdentifier:(id)arg1 error:(id *)arg2;
 - (void)materializedItemsDidChangeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)createItemBasedOnTemplate:(id)arg1 fields:(unsigned long long)arg2 contents:(id)arg3 options:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (BOOL)_fp_itemsMightBeTheSame:(id)arg1 otherItem:(id)arg2 url:(id)arg3;
 - (void)deleteItemWithIdentifier:(id)arg1 baseVersion:(id)arg2 options:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)importDidFinishWithCompletionHandler:(CDUnknownBlockType)arg1;
 

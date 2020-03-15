@@ -17,9 +17,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)predictionsFrom:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float score; // @synthesize score=_score;
 @property(readonly, nonatomic) id predictedItem; // @synthesize predictedItem=_predictedItem;
-- (void).cxx_destruct;
 - (void)setScore:(float)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

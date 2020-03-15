@@ -16,9 +16,9 @@
     NSDictionary *_properties;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *properties; // @synthesize properties=_properties;
 @property unsigned int method; // @synthesize method=_method;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

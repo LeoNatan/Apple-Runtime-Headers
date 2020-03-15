@@ -16,8 +16,8 @@
 }
 
 + (Class)anchorRangesType;
-@property(retain, nonatomic) NSMutableArray *anchorRanges; // @synthesize anchorRanges=_anchorRanges;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *anchorRanges; // @synthesize anchorRanges=_anchorRanges;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

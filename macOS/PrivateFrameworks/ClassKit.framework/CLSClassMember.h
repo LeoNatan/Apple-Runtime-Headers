@@ -20,10 +20,10 @@
 + (BOOL)supportsSecureCoding;
 + (id)objectIDForClassID:(id)arg1 andPersonID:(id)arg2;
 + (id)relations;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL markedForDeletion; // @synthesize markedForDeletion=_markedForDeletion;
 @property(nonatomic) unsigned long long roles; // @synthesize roles=_roles;
 @property(copy, nonatomic) NSString *personID; // @synthesize personID=_personID;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

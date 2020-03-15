@@ -17,10 +17,10 @@
 
 + (id)groupWithActions:(id)arg1 headerView:(id)arg2;
 + (id)groupWithActions:(id)arg1 title:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -16,8 +16,8 @@
 }
 
 + (id)NameForReason:(unsigned int)arg1;
-@property(readonly, nonatomic) unsigned int reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int reason; // @synthesize reason=_reason;
 - (unsigned int)_legacyFlagsForFlags:(unsigned int)arg1;
 - (unsigned int)_legacyReasonForReason:(unsigned int)arg1;
 - (void)dealloc;

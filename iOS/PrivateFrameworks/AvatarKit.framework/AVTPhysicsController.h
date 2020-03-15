@@ -17,8 +17,8 @@
     id <AVTPhysicsControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AVTPhysicsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AVTPhysicsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)resetToPhysicsState:(id)arg1;
 - (id)physicsState;
 - (void)setupPhysicsIfNeeded;

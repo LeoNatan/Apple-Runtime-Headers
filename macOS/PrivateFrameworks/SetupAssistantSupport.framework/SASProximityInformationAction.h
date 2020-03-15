@@ -14,8 +14,8 @@
 }
 
 + (unsigned long long)actionID;
-@property(retain) SASProximityInformation *information; // @synthesize information=_information;
 - (void).cxx_destruct;
+@property(retain) SASProximityInformation *information; // @synthesize information=_information;
 - (id)responsePayload;
 - (void)setResponseFromData:(id)arg1;
 - (BOOL)hasResponse;

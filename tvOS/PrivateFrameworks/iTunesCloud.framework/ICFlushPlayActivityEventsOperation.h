@@ -15,8 +15,8 @@
     SSVPlayActivityController *_playActivityController;
 }
 
-@property(readonly, nonatomic) SSVPlayActivityController *playActivityController; // @synthesize playActivityController=_playActivityController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SSVPlayActivityController *playActivityController; // @synthesize playActivityController=_playActivityController;
 - (void)execute;
 - (id)initWithPlayActivityController:(id)arg1;
 - (id)init;

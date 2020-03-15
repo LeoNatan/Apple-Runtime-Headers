@@ -20,12 +20,12 @@
 + (id)defaultIconSpecification;
 + (id)macosTemplateIconSpecification;
 + (id)macosIconSpecification;
+- (void).cxx_destruct;
 @property(readonly) NSArray *imageSpecifications; // @synthesize imageSpecifications=_imageSpecifications;
 @property(readonly) double minScale; // @synthesize minScale=_minScale;
 @property(readonly) double maxScale; // @synthesize maxScale=_maxScale;
 @property(readonly) struct CGSize minSize; // @synthesize minSize=_minSize;
 @property(readonly) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
-- (void).cxx_destruct;
 @property(readonly) NSArray *allImageSpecifications;
 - (id)imageSpecificationForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (id)_initWithImageSpecifiactions:(id)arg1;

@@ -24,6 +24,7 @@
     MDLMaterialProperty *_clearcoatGloss;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) MDLMaterialProperty *clearcoatGloss; // @synthesize clearcoatGloss=_clearcoatGloss;
 @property(readonly, retain, nonatomic) MDLMaterialProperty *clearcoat; // @synthesize clearcoat=_clearcoat;
 @property(readonly, retain, nonatomic) MDLMaterialProperty *sheenTint; // @synthesize sheenTint=_sheenTint;
@@ -35,7 +36,6 @@
 @property(readonly, retain, nonatomic) MDLMaterialProperty *specularAmount; // @synthesize specularAmount=_specularAmount;
 @property(readonly, retain, nonatomic) MDLMaterialProperty *metallic; // @synthesize metallic=_metallic;
 @property(readonly, retain, nonatomic) MDLMaterialProperty *subsurface; // @synthesize subsurface=_subsurface;
-- (void).cxx_destruct;
 - (id)init;
 @property(readonly, nonatomic) int version;
 

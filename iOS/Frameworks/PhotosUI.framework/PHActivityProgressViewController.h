@@ -14,8 +14,8 @@
     double _progress;
 }
 
-@property(nonatomic) double progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) CDUnknownBlockType cancellationHandler;
 - (void)setTitle:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;

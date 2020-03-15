@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <DTSDisplayPortDeviceInfo> info; // @synthesize info=_info;
 @property(readonly, nonatomic) unsigned int framebufferIndex; // @synthesize framebufferIndex=_framebufferIndex;
 @property(readonly, nonatomic) unsigned int port; // @synthesize port=_port;
 @property(readonly, nonatomic) unsigned long long registryEntryID; // @synthesize registryEntryID=_registryEntryID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithRegistryEntryID:(unsigned long long)arg1 port:(unsigned int)arg2 framebufferIndex:(unsigned int)arg3 info:(id)arg4;

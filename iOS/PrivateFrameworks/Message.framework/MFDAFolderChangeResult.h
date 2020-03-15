@@ -16,11 +16,11 @@
     NSString *_folderName;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *folderName; // @synthesize folderName=_folderName;
 @property(readonly) NSString *folderID; // @synthesize folderID=_folderID;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) long long statusCode; // @synthesize statusCode=_statusCode;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)wasSuccessful;
 - (id)initWithStatusCode:(long long)arg1 error:(id)arg2 folderID:(id)arg3 folderName:(id)arg4;

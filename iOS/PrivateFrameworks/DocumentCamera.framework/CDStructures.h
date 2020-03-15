@@ -60,30 +60,6 @@ struct NSDirectionalEdgeInsets {
     double _field4;
 };
 
-struct UIColor {
-    Class _field1;
-};
-
-struct UIFont {
-    Class _field1;
-};
-
-struct UIImage {
-    Class _field1;
-};
-
-struct UIView {
-    Class _field1;
-};
-
-struct UIViewController {
-    Class _field1;
-};
-
-struct UIWindow {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;

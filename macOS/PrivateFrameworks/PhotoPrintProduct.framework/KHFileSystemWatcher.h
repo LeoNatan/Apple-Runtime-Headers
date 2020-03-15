@@ -17,8 +17,8 @@
     id <KHFileSystemWatcherDelegate> _delegate;
 }
 
-@property(nonatomic) id <KHFileSystemWatcherDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <KHFileSystemWatcherDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_notifyDelegateOfChangesInPath:(id)arg1;
 - (void)_tearDownStream;
 - (void)_resetFileSystemEventsStream;

@@ -19,8 +19,8 @@
     id <NSSharingServicePickerTouchBarItemDelegate> _delegate;
 }
 
-@property __weak id <NSSharingServicePickerTouchBarItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <NSSharingServicePickerTouchBarItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)items;
 - (void)setItems:(id)arg1;
 - (id)view;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <UIFocusItemContainer> _itemContainer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFocusEnvironment; // @synthesize isFocusEnvironment=_isFocusEnvironment;
 @property(retain, nonatomic) id <UIFocusItemContainer> itemContainer; // @synthesize itemContainer=_itemContainer;
-- (void).cxx_destruct;
 - (void)_searchForFocusRegionsInContext:(id)arg1;
 - (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
 - (id)_preferredFocusRegionCoordinateSpace;

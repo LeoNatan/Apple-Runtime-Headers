@@ -18,13 +18,13 @@
     NSArray *_suggestedTags;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *suggestedTags; // @synthesize suggestedTags=_suggestedTags;
 @property(readonly, nonatomic) int textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(readonly, nonatomic) int autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
 @property(readonly, nonatomic) int autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
 @property(readonly, nonatomic) int keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(readonly, nonatomic) _Bool allowsTextEntry; // @synthesize allowsTextEntry=_allowsTextEntry;
-- (void).cxx_destruct;
 - (_Bool)shouldAlignLabels;
 - (id)initWithDefinition:(id)arg1;
 - (Class)singleStateClass;

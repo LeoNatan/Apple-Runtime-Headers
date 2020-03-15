@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL speakingCompletedNormally; // @synthesize speakingCompletedNormally=_speakingCompletedNormally;
 @property(readonly, copy) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy) NSString *string; // @synthesize string=_string;
 @property(readonly) NSSpeechSynthesizer *synthesizer; // @synthesize synthesizer=_synthesizer;
-- (void).cxx_destruct;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeaking:(BOOL)arg2;
 - (void)start;
 - (BOOL)isFinished;

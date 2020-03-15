@@ -17,9 +17,9 @@
     CDStruct_278ffb8f _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(nonatomic) unsigned int schemaVersion; // @synthesize schemaVersion=_schemaVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

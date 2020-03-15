@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalSize; // @synthesize totalSize=_totalSize;
 @property(nonatomic) unsigned long long dataSize; // @synthesize dataSize=_dataSize;
 @property(readonly, nonatomic) unsigned long long sharedSize; // @synthesize sharedSize=_sharedSize;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

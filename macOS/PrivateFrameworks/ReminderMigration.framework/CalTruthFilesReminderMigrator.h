@@ -47,9 +47,9 @@
 + (BOOL)_cleanupAccountDirectory:(id)arg1 withContext:(id)arg2;
 + (BOOL)_cleanupCalendarDirectory:(id)arg1 withContext:(id)arg2;
 + (BOOL)_cleanupTopLevelDirectory:(id)arg1 withContext:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CalReminderMigrationDefaultsProvider> defaultsProvider; // @synthesize defaultsProvider=_defaultsProvider;
 @property(readonly, nonatomic) id <CalReminderKitProvider> reminderKitProvider; // @synthesize reminderKitProvider=_reminderKitProvider;
-- (void).cxx_destruct;
 - (id)_calendarDirectoryForHomeDirectory:(id)arg1;
 - (BOOL)_performPostMigrationTasksInCalendarDirectory:(id)arg1 withContext:(id)arg2;
 - (BOOL)_performMigrationInCalendarDirectory:(id)arg1 withContext:(id)arg2 shouldDeleteMigratedData:(char *)arg3;

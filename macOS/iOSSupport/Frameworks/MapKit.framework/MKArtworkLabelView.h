@@ -13,8 +13,8 @@
     MKServerFormattedString *_formattedString;
 }
 
-@property(retain, nonatomic) MKServerFormattedString *formattedString; // @synthesize formattedString=_formattedString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MKServerFormattedString *formattedString; // @synthesize formattedString=_formattedString;
 
 @end
 

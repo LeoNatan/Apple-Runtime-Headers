@@ -90,6 +90,7 @@
 
 + (_Bool)airDropActivityCanPerformActivityWithItemClasses:(id)arg1;
 + (_Bool)isAirDropAvailable;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool manuallyManageBrowsing; // @synthesize manuallyManageBrowsing=_manuallyManageBrowsing;
 @property(copy, nonatomic) NSString *overriddenInstructionsText; // @synthesize overriddenInstructionsText=_overriddenInstructionsText;
 @property(copy, nonatomic) NSString *overriddenNoAWDLText; // @synthesize overriddenNoAWDLText=_overriddenNoAWDLText;
@@ -103,7 +104,6 @@
 @property(nonatomic) _Bool sharedItemsAvailable; // @synthesize sharedItemsAvailable=_sharedItemsAvailable;
 @property(nonatomic) __weak NSObject<SFAirDropActivityViewControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) CDStruct_4c969caf sendingApplicationAuditToken; // @synthesize sendingApplicationAuditToken=_sendingApplicationAuditToken;
-- (void).cxx_destruct;
 - (void)_emitTelemetryForPerson:(id)arg1;
 - (void)_collectTelemetryForPeople:(id)arg1;
 - (void)_stopTelemetry;

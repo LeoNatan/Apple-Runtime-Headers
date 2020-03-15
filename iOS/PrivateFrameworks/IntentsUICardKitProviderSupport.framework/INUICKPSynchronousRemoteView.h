@@ -13,8 +13,8 @@
     id <INUICKPSynchronousRemoteViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <INUICKPSynchronousRemoteViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <INUICKPSynchronousRemoteViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 

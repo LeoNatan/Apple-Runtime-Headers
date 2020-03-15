@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     Class _weakExportedObjectClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class weakExportedObjectClass; // @synthesize weakExportedObjectClass=_weakExportedObjectClass;
 @property(nonatomic) __weak id weakExportedObject; // @synthesize weakExportedObject=_weakExportedObject;
-- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 

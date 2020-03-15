@@ -42,6 +42,7 @@
 }
 
 + (id)nodeWithSFNode:(struct __SFNode *)arg1;
+- (void).cxx_destruct;
 @property(readonly) _Bool supportsMixedTypes; // @synthesize supportsMixedTypes=_supportsMixedTypes;
 @property(readonly) _Bool supportsPasses; // @synthesize supportsPasses=_supportsPasses;
 @property(readonly) _Bool supportsFMF; // @synthesize supportsFMF=_supportsFMF;
@@ -69,7 +70,6 @@
 @property(retain) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(retain) id node; // @synthesize node=_node;
 @property(readonly) NSDate *discoveryDate; // @synthesize discoveryDate=_discoveryDate;
-- (void).cxx_destruct;
 - (void)handleOperationCallback:(struct __SFOperation *)arg1 event:(long long)arg2 withResults:(id)arg3;
 - (void)cancelSend;
 - (void)startSendForBundleID:(id)arg1 sessionID:(id)arg2 items:(id)arg3 description:(id)arg4 previewImage:(struct CGImage *)arg5;

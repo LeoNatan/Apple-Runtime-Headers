@@ -8,14 +8,14 @@
 
 #import <CoreUtils/CXCallObserverDelegate-Protocol.h>
 
-@class CUBluetoothClient, CUNetInterfaceMonitor, CUSystemMonitor, CUWiFiManager, CXCallObserver, NSArray, NSData, NSMutableArray, NSString;
+@class CUBluetoothClient, CUNetInterfaceMonitor, CUSystemMonitor, CUWiFiManager, CXCallObserver, NSArray, NSData, NSMutableArray, NSMutableSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
 @interface CUSystemMonitorImp : NSObject <CXCallObserverDelegate>
 {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    struct NSMutableSet *_monitors;
+    NSMutableSet *_monitors;
     CDStruct_83abfce7 _bluetoothAddress48;
     NSData *_bluetoothAddressData;
     CUBluetoothClient *_bluetoothClient;
@@ -85,6 +85,7 @@ __attribute__((visibility("hidden")))
 - (void)_rotatingIdentifierTimerFired;
 - (void)_rotatingIdentifierMonitorStop;
 - (void)_rotatingIdentifierMonitorStart;
+- (void)_primaryAppleIDChanged2:(_Bool)arg1;
 - (void)_primaryAppleIDChanged:(id)arg1;
 - (id)_primaryAppleIDAccount;
 - (void)_primaryAppleIDMonitorStop;

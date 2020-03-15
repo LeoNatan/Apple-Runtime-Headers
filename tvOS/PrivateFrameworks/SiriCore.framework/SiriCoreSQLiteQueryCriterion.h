@@ -36,13 +36,13 @@
 + (id)greaterThanOrEqualToQueryCriterionWithColumnName:(id)arg1 value:(id)arg2;
 + (id)greaterThanQueryCriterionWithColumnName:(id)arg1 value:(id)arg2;
 + (id)equalToQueryCriterionWithColumnName:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *subcriteria; // @synthesize subcriteria=_subcriteria;
 @property(readonly, copy, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, copy, nonatomic) id <SiriCoreSQLiteValue> value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long logicalOperator; // @synthesize logicalOperator=_logicalOperator;
 @property(readonly, nonatomic) long long comparisonOperator; // @synthesize comparisonOperator=_comparisonOperator;
 @property(readonly, copy, nonatomic) NSString *columnName; // @synthesize columnName=_columnName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithColumnName:(id)arg1 comparisonOperator:(long long)arg2 logicalOperator:(long long)arg3 value:(id)arg4 values:(id)arg5 subcriteriaProvider:(CDUnknownBlockType)arg6;
 - (id)initWithColumnName:(id)arg1 comparisonOperator:(long long)arg2 logicalOperator:(long long)arg3 value:(id)arg4 values:(id)arg5 subcriteria:(id)arg6;

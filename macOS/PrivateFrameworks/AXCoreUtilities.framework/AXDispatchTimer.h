@@ -23,6 +23,7 @@
     CDUnknownBlockType _cancelBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(copy, nonatomic) CDUnknownBlockType processBlock; // @synthesize processBlock=_processBlock;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
@@ -33,7 +34,6 @@
 @property(nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic, getter=isPending) BOOL pending; // @synthesize pending=_pending;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (id)description;
 - (void)cancel;
 - (void)_reallyCancel;

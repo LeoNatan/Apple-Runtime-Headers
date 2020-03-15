@@ -32,10 +32,10 @@
 + (_Bool)contextShouldIgnoreChangesForALAssetsGroupFilterPredicate;
 + (_Bool)contextShouldIgnoreChangesForFetchRequest;
 + (_Bool)contextShouldIgnoreChangesForFetchedAssets;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsPersistenceUpdate; // @synthesize needsPersistenceUpdate=_needsPersistenceUpdate;
 @property(nonatomic) unsigned int batchSize; // @synthesize batchSize=_batchSize;
 @property(retain, nonatomic) NSPredicate *ALAssetsGroupFilterPredicate; // @synthesize ALAssetsGroupFilterPredicate=_ALAssetsGroupFilterPredicate;
-- (void).cxx_destruct;
 - (void)prepareForDeletion;
 @property(readonly) int cloudDeletionType;
 @property(readonly, copy) NSString *cloudUUIDForDeletion;

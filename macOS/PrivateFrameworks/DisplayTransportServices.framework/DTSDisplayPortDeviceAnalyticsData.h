@@ -20,6 +20,7 @@
     NSDate *_lockDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lockDate; // @synthesize lockDate=_lockDate;
 @property(nonatomic) double lockUnlockTimeInterval; // @synthesize lockUnlockTimeInterval=_lockUnlockTimeInterval;
 @property(retain, nonatomic) NSString *postLockFirmwareVersion; // @synthesize postLockFirmwareVersion=_postLockFirmwareVersion;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *hardwareVersion; // @synthesize hardwareVersion=_hardwareVersion;
 @property(retain, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(retain, nonatomic) NSNumber *oui; // @synthesize oui=_oui;
-- (void).cxx_destruct;
 - (void)sendEvent;
 - (void)deviceUnlocked:(id)arg1;
 - (void)deviceLockedWithInfo:(id)arg1;

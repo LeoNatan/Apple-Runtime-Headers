@@ -36,6 +36,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)voiceOverOptions;
 + (id)defaultOptions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *ignoredLayerContextIDs; // @synthesize ignoredLayerContextIDs=_ignoredLayerContextIDs;
 @property(nonatomic) _Bool includeImageInResult; // @synthesize includeImageInResult=_includeImageInResult;
 @property(retain, nonatomic) AXMTextDetectionOptions *textDetectionOptions; // @synthesize textDetectionOptions=_textDetectionOptions;
@@ -55,7 +56,6 @@
 @property(nonatomic) _Bool detectFaceNames; // @synthesize detectFaceNames=_detectFaceNames;
 @property(nonatomic) _Bool detectFaceRectangles; // @synthesize detectFaceRectangles=_detectFaceRectangles;
 @property(nonatomic) long long clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

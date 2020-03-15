@@ -14,9 +14,9 @@
     id <NLCoachingSubmanagerDelegate> _coachingSubmanagerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate=_coachingSubmanagerDelegate;
 @property(retain, nonatomic) id <NLFirstGlanceEngineDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)initWithDataSource:(id)arg1 coachingSubmanagerDelegate:(id)arg2;
 
 @end

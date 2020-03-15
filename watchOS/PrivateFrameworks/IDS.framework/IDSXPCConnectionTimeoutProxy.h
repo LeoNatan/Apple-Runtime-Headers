@@ -16,11 +16,11 @@
     CDUnknownBlockType _errorHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(retain, nonatomic) IDSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (_Bool)_invocationHasBlock:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;

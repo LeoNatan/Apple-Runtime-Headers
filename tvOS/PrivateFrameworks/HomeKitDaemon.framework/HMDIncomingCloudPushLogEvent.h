@@ -15,8 +15,8 @@
 
 + (id)incomingCloudPush:(id)arg1;
 + (id)uuid;
-@property(readonly, nonatomic) NSString *topic; // @synthesize topic=_topic;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *topic; // @synthesize topic=_topic;
 - (id)initWithTopic:(id)arg1;
 
 @end

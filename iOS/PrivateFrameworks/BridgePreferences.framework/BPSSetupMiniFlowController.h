@@ -16,8 +16,8 @@
     id <BPSBuddyControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BPSBuddyControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BPSBuddyControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)pushController:(id)arg1 animated:(_Bool)arg2;
 - (id)navigationController;
 - (id)viewController;

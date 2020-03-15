@@ -17,10 +17,10 @@
     unsigned long long _hashValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long hashValue; // @synthesize hashValue=_hashValue;
 @property(nonatomic) BOOL immutable; // @synthesize immutable=_immutable;
 @property(retain, nonatomic) NSMutableSet *processes; // @synthesize processes=_processes;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

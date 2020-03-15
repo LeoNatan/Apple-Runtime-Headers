@@ -14,9 +14,9 @@
     FCPurchaseLookupRecordSource *_purchaseLookupRecordSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCPurchaseLookupRecordSource *purchaseLookupRecordSource; // @synthesize purchaseLookupRecordSource=_purchaseLookupRecordSource;
 @property(retain, nonatomic) NSArray *purchaseIDs; // @synthesize purchaseIDs=_purchaseIDs;
-- (void).cxx_destruct;
 - (id)processFetchedResults:(id)arg1;
 - (id)_prefixedPurchasedIDs:(id)arg1;
 - (void)performOperation;

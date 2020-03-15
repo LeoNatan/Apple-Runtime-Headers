@@ -14,9 +14,9 @@
     RTStateModelEntryExit *_entryExit;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTStateModelEntryExit *entryExit; // @synthesize entryExit=_entryExit;
 @property(retain, nonatomic) RTStateModelOneState *oneState; // @synthesize oneState=_oneState;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithOneState:(id)arg1 entryExit:(id)arg2;

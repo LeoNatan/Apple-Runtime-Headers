@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSMutableDictionary *syncStateItems; // @synthesize syncStateItems=_syncStateItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *syncStateItems; // @synthesize syncStateItems=_syncStateItems;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -41,6 +41,7 @@
     struct UIEdgeInsets _knobInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIVibrantSettings *vibrantSettings; // @synthesize vibrantSettings=_vibrantSettings;
 @property(readonly, nonatomic, getter=_knobView) UIView *knobView; // @synthesize knobView=_knobView;
 @property(nonatomic) double cachedTrackMaskWidth; // @synthesize cachedTrackMaskWidth=_cachedTrackMaskWidth;
@@ -59,7 +60,6 @@
 @property(nonatomic) struct CGSize knobImageOffset; // @synthesize knobImageOffset=_knobImageOffset;
 @property(nonatomic) long long textStyle; // @synthesize textStyle=_textStyle;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_knobPanGesture:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_slideCompleted:(_Bool)arg1;

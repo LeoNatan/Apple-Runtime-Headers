@@ -20,12 +20,12 @@
 + (double)cellHeight;
 + (id)hyphenationParagraphStyle;
 + (id)identifierForConversation:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *unreadIndicatorColor; // @synthesize unreadIndicatorColor=_unreadIndicatorColor;
 @property(retain, nonatomic) NSTextAttachment *unreadIndicatorAttachment; // @synthesize unreadIndicatorAttachment=_unreadIndicatorAttachment;
 @property(retain, nonatomic) NSArray *contentSizeCategoryDependentConstraints; // @synthesize contentSizeCategoryDependentConstraints=_contentSizeCategoryDependentConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *editingDependentConstraint; // @synthesize editingDependentConstraint=_editingDependentConstraint;
 @property(retain, nonatomic) UILayoutGuide *firstLineLayoutGuide; // @synthesize firstLineLayoutGuide=_firstLineLayoutGuide;
-- (void).cxx_destruct;
 - (id)_contentSizeCategoryDependentConstraints;
 - (id)_constraintForEditing:(_Bool)arg1;
 - (void)updateForEditing:(_Bool)arg1;

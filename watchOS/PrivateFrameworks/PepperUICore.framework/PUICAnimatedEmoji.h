@@ -23,9 +23,9 @@
 + (int)defaultAnimatedEmojiTypeForHands;
 + (int)defaultAnimatedEmojiTypeForFaces;
 + (id)sharedInstanceWithAnimatedEmojiType:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int animatedEmojiType; // @synthesize animatedEmojiType=_animatedEmojiType;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (struct _AnimatedEmojiSpecification)_specificationForAnimatedEmojiType:(int)arg1;
 - (id)_initWithAnimatedEmojiType:(int)arg1;
 @property(readonly, nonatomic) UIImage *animatedImage;

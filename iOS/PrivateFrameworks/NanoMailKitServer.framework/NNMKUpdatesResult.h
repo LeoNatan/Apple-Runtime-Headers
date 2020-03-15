@@ -20,6 +20,7 @@
     NSArray *_messageIdsToDelete;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *messageIdsToDelete; // @synthesize messageIdsToDelete=_messageIdsToDelete;
 @property(retain, nonatomic) NSArray *messagesToAdd; // @synthesize messagesToAdd=_messagesToAdd;
 @property(retain, nonatomic) NSArray *messageIdsWithDefaultPriorityAndProtectedChannel; // @synthesize messageIdsWithDefaultPriorityAndProtectedChannel=_messageIdsWithDefaultPriorityAndProtectedChannel;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NNMKProtoMessageStatusUpdates *protoMessageUpdatesWithDefaultPriorityAndProtectedChannel; // @synthesize protoMessageUpdatesWithDefaultPriorityAndProtectedChannel=_protoMessageUpdatesWithDefaultPriorityAndProtectedChannel;
 @property(retain, nonatomic) NNMKProtoMessageStatusUpdates *protoMessageUpdatesWithDefaultPriority; // @synthesize protoMessageUpdatesWithDefaultPriority=_protoMessageUpdatesWithDefaultPriority;
 @property(retain, nonatomic) NNMKProtoMessageStatusUpdates *protoMessageUpdatesWithNotificationPriority; // @synthesize protoMessageUpdatesWithNotificationPriority=_protoMessageUpdatesWithNotificationPriority;
-- (void).cxx_destruct;
 
 @end
 

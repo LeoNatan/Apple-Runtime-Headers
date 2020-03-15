@@ -14,8 +14,8 @@
     BOOL _usedDsymForUUID;
 }
 
-@property BOOL usedDsymForUUID; // @synthesize usedDsymForUUID=_usedDsymForUUID;
 - (void).cxx_destruct;
+@property BOOL usedDsymForUUID; // @synthesize usedDsymForUUID=_usedDsymForUUID;
 - (id)debugDescription;
 @property(readonly) __weak NSString *path;
 - (id)initWithSymbolOwner:(struct _CSTypeRef)arg1 andPath:(id)arg2;

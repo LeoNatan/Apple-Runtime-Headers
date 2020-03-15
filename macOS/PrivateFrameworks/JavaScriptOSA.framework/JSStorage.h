@@ -37,6 +37,7 @@
 }
 
 + (id)storageWithComponentInstance:(struct ComponentInstanceRecord *)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *contextsBeingInspected; // @synthesize contextsBeingInspected=_contextsBeingInspected;
 @property(retain) NSMutableDictionary *objects; // @synthesize objects=_objects;
 @property struct ComponentInstanceRecord *componentInstance; // @synthesize componentInstance=_componentInstance;
@@ -61,7 +62,6 @@
 @property unsigned long long errorRangeStart; // @synthesize errorRangeStart=_errorRangeStart;
 @property unsigned long long errorLineNum; // @synthesize errorLineNum=_errorLineNum;
 @property unsigned long long errorNumber; // @synthesize errorNumber=_errorNumber;
-- (void).cxx_destruct;
 - (void)setDefaultTargetOnAllContexts;
 - (void)setSendProcOnAllContexts;
 - (void)setActiveProcOnAllContexts;

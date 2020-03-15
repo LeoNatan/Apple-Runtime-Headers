@@ -15,9 +15,9 @@
     NSSet *_preselectedServices;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *preselectedServices; // @synthesize preselectedServices=_preselectedServices;
 @property(nonatomic) BOOL isPresentedModally; // @synthesize isPresentedModally=_isPresentedModally;
-- (void).cxx_destruct;
 - (BOOL)serviceGridItemManager:(id)arg1 shouldHideItem:(id)arg2;
 - (BOOL)_preselectedServicesContainsService:(id)arg1;
 - (BOOL)_isItemPreselected:(id)arg1;

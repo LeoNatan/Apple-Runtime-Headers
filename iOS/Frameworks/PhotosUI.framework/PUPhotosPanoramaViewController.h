@@ -14,9 +14,9 @@
     PHAssetCollection *_userPanoAlbum;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHAssetCollection *userPanoAlbum; // @synthesize userPanoAlbum=_userPanoAlbum;
 @property(retain, nonatomic) PUPhotosPanoramaViewControllerSpec *panoramaSpec; // @synthesize panoramaSpec=_panoramaSpec;
-- (void).cxx_destruct;
 - (void)_updatePhotoDecorationForCell:(id)arg1 animated:(_Bool)arg2;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(_Bool)arg1;

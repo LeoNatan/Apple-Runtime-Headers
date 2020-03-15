@@ -44,6 +44,8 @@
 + (id)dummyGeometryData;
 + (void)removeDynamicDictionaryForInputMode:(id)arg1;
 + (id)inputMethodWithChainedKeyboardInputManager:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *touchUpEvents; // @synthesize touchUpEvents=_touchUpEvents;
 @property(readonly, nonatomic) NSMutableDictionary *touchDownEvents; // @synthesize touchDownEvents=_touchDownEvents;
 @property(readonly, nonatomic) NSMutableArray *geometryDataArray; // @synthesize geometryDataArray=_geometryDataArray;
@@ -65,8 +67,6 @@
 @property(retain, nonatomic) NSArray *clearedGeometryDataArray; // @synthesize clearedGeometryDataArray=_clearedGeometryDataArray;
 @property(retain, nonatomic) TIKeyboardInputManager_zh_ja *composingKeyboardInputManager; // @synthesize composingKeyboardInputManager=_composingKeyboardInputManager;
 @property(readonly, nonatomic) TIKeyboardInputManager_zh_ja *chainedKeyboardInputManager; // @synthesize chainedKeyboardInputManager;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)lastAcceptedCandidateCorrected;
 - (void)candidateRejected:(id)arg1;
 - (void)textAccepted:(id)arg1 fromPredictiveInputBar:(BOOL)arg2 withInput:(id)arg3;
@@ -94,6 +94,7 @@
 - (void)incrementUsageTrackingKeysForDeleteFromInput;
 - (void)updateUsageStatisticsForCandidate:(id)arg1 isPartial:(BOOL)arg2;
 - (void)syncToKeyboardState:(id)arg1 from:(id)arg2 afterContextChange:(BOOL)arg3;
+- (BOOL)syncToKeyboardState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (int)mecabraTextContentTypeFromTITextContentType:(id)arg1;
 - (void)setLanguageModelAdaptationContext;
 @property(readonly, nonatomic) BOOL supportsPerRecipientLearning;

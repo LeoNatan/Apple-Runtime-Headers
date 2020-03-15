@@ -23,8 +23,8 @@
     CPLEngineLibrary *_engineLibrary;
 }
 
-@property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 - (void)reportMiscInformation:(id)arg1;
 - (void)reportSetting:(id)arg1 hasBeenSetToValue:(id)arg2;
 - (void)reportFetchChangesRewindToFeatureVersion:(unsigned long long)arg1;

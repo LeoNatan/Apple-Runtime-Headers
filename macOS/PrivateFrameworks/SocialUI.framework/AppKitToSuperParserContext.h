@@ -18,8 +18,8 @@
     NSMutableArray *_mutableFileTransferGUIDs;
 }
 
-@property(readonly) NSMutableArray *mutableFileTransferGUIDs; // @synthesize mutableFileTransferGUIDs=_mutableFileTransferGUIDs;
 - (void).cxx_destruct;
+@property(readonly) NSMutableArray *mutableFileTransferGUIDs; // @synthesize mutableFileTransferGUIDs=_mutableFileTransferGUIDs;
 - (void)_preloadImage:(id)arg1;
 @property(readonly) NSArray *fileTransferGUIDs; // @dynamic fileTransferGUIDs;
 - (id)superFormatString;

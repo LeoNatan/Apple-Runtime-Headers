@@ -14,9 +14,9 @@
     NSColor *_stripeColor;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSColor *mainColor; // @synthesize mainColor=_mainColor;
 @property(retain) NSColor *stripeColor; // @synthesize stripeColor=_stripeColor;
-- (void).cxx_destruct;
 
 @end
 

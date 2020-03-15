@@ -46,12 +46,12 @@
     id <_PXScoreLabGraphViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <_PXScoreLabGraphViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSPredicate *assetPredicate; // @synthesize assetPredicate=_assetPredicate;
 @property unsigned long long graphType; // @synthesize graphType=_graphType;
 @property(copy) CDUnknownBlockType yScoreValueGetter; // @synthesize yScoreValueGetter=_yScoreValueGetter;
 @property(copy) CDUnknownBlockType xScoreValueGetter; // @synthesize xScoreValueGetter=_xScoreValueGetter;
-- (void).cxx_destruct;
 - (void)drawCorrelationInContext:(struct CGContext *)arg1;
 - (void)drawDistributionInContext:(struct CGContext *)arg1;
 - (void)drawTextPanelWithNumberOfAssets:(long long)arg1 numberOfIgnoredAssets:(unsigned long long)arg2 rho:(double)arg3 inContext:(struct CGContext *)arg4;

@@ -23,6 +23,7 @@
     CAMExposureBiasSlider *__exposureBiasSlider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int _exposureBiasSide; // @synthesize _exposureBiasSide=__exposureBiasSide;
 @property(readonly, nonatomic) CAMExposureBiasSlider *_exposureBiasSlider; // @synthesize _exposureBiasSlider=__exposureBiasSlider;
 @property(readonly, nonatomic) CAMFocusIndicatorRectView *_rectView; // @synthesize _rectView=__rectView;
@@ -33,7 +34,6 @@
 @property(nonatomic, getter=isInactive) _Bool inactive; // @synthesize inactive=_inactive;
 @property(nonatomic) __weak id <CAMFocusIndicatorViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_layoutExposureBiasSlider;
 - (void)setExposureBiasSide:(int)arg1 animated:(_Bool)arg2;
 - (void)_createExposureBiasSlider;

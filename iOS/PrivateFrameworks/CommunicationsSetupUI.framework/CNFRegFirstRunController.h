@@ -27,6 +27,7 @@
     IMAccount *_account;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMAccount *account; // @synthesize account=_account;
 @property(nonatomic) _Bool timedOut; // @synthesize timedOut=_timedOut;
 @property(retain, nonatomic) UIBarButtonItem *customRightButton; // @synthesize customRightButton=_customRightButton;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) UIBarButtonItem *previousRightButton; // @synthesize previousRightButton=_previousRightButton;
 @property(retain, nonatomic) UIBarButtonItem *previousLeftButton; // @synthesize previousLeftButton=_previousLeftButton;
 @property(nonatomic) Class completionControllerClass; // @synthesize completionControllerClass=_completionControllerClass;
-- (void).cxx_destruct;
 - (void)_executeDismissBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) long long currentAppearanceStyle;
 - (void)_setupEventHandlers;

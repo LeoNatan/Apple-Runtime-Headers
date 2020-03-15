@@ -54,6 +54,7 @@
 + (id)greatMemoryCriteria;
 + (id)stellarMemoryCriteria;
 + (id)mustSeeMemoryCriteria;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *musicGenreDistribution; // @synthesize musicGenreDistribution=_musicGenreDistribution;
 @property(nonatomic) NSString *rejectionCause; // @synthesize rejectionCause=_rejectionCause;
 @property(retain, nonatomic) NSArray *blacklistableFeatures; // @synthesize blacklistableFeatures=_blacklistableFeatures;
@@ -88,7 +89,6 @@
 @property(retain, nonatomic) PHAssetCollection *curatedAssetCollection; // @synthesize curatedAssetCollection=_curatedAssetCollection;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long suggestedMood;
 @property(readonly, nonatomic) NSArray *moodKeywords;
 @property(readonly, nonatomic) NSArray *meaningLabels;

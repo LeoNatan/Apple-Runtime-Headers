@@ -14,8 +14,8 @@
     float *_probabilities;
 }
 
-@property(readonly, nonatomic) NSArray *tokenSequences; // @synthesize tokenSequences=_tokenSequences;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *tokenSequences; // @synthesize tokenSequences=_tokenSequences;
 - (id)description;
 - (CDStruct_f48a8b00)topClassification;
 - (void)getTopKClassifications:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;

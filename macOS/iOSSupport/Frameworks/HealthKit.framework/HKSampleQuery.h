@@ -22,9 +22,9 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL includeAutomaticTimeZones; // @synthesize includeAutomaticTimeZones=_includeAutomaticTimeZones;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
-- (void).cxx_destruct;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_validate;
 - (void)queue_deliverError:(id)arg1;

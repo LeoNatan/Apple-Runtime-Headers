@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
     NSMutableIndexSet *_queuedSectionInsertIndexes;
 }
 
-@property NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void)dealloc;
 @property(readonly, copy) NSString *debugDescription;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;

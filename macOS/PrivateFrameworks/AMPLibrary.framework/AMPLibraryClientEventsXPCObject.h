@@ -15,8 +15,8 @@
     id <AMPLMediaAppClientEventsProtocol> _eventsDelegate;
 }
 
-@property(nonatomic) __weak id <AMPLMediaAppClientEventsProtocol> eventsDelegate; // @synthesize eventsDelegate=_eventsDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AMPLMediaAppClientEventsProtocol> eventsDelegate; // @synthesize eventsDelegate=_eventsDelegate;
 - (void)triggerCheckForNewCloudTracks:(_Bool)arg1 withFinishImport:(_Bool)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)synchronousIsProcessingNewTrackForUpload:(unsigned long long)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)synchronousNotifyClientDisableIsComplete;

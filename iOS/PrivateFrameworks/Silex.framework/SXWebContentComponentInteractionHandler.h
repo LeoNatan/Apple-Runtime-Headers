@@ -16,8 +16,8 @@
     id <SWInteraction> _interaction;
 }
 
-@property(readonly, nonatomic) id <SWInteraction> interaction; // @synthesize interaction=_interaction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SWInteraction> interaction; // @synthesize interaction=_interaction;
 - (void)handleInteractionType:(unsigned long long)arg1 sourceView:(id)arg2 sourceRect:(struct CGRect)arg3;
 - (id)initWithInteraction:(id)arg1;
 

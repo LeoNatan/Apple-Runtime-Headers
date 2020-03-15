@@ -23,6 +23,7 @@
 }
 
 + (_Bool)treatAsReadonlyVolume:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *pathsByFileBaseNameAccess; // @synthesize pathsByFileBaseNameAccess=_pathsByFileBaseNameAccess;
 @property(retain, nonatomic) NSArray *baseNames; // @synthesize baseNames=_baseNames;
 @property(retain, nonatomic) NSMutableDictionary *pathsByFileBaseName; // @synthesize pathsByFileBaseName=_pathsByFileBaseName;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSArray *urls; // @synthesize urls=_urls;
 - (void)setPrefix:(id)arg1;
 - (id)prefix;
-- (void).cxx_destruct;
 - (id)rootUrlOfUrls:(id)arg1;
 - (void)dispatchAssetDataRequestAsync:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)canReference;

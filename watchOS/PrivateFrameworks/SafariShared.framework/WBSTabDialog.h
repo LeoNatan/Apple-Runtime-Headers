@@ -17,9 +17,9 @@
 }
 
 + (id)tabDialogWithPresentationBlock:(CDUnknownBlockType)arg1 dismissalBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *cancellationExemptions; // @synthesize cancellationExemptions=_cancellationExemptions;
 @property(nonatomic) _Bool blocksWebProcessUntilDismissed; // @synthesize blocksWebProcessUntilDismissed=_blocksWebProcessUntilDismissed;
-- (void).cxx_destruct;
 - (id)createInfo;
 - (id)init;
 - (id)_init;

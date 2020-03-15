@@ -24,6 +24,7 @@
 }
 
 + (id)descriptionForCandidacy:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *ANODSubjects; // @synthesize ANODSubjects=_ANODSubjects;
 @property(retain, nonatomic) VNSaliencyImageObservation *saliencyObservation; // @synthesize saliencyObservation=_saliencyObservation;
 @property(nonatomic) CDStruct_996ac03c stabCropRect; // @synthesize stabCropRect=_stabCropRect;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned long long performedActions; // @synthesize performedActions=_performedActions;
 @property(retain, nonatomic) NSError *finalizerError; // @synthesize finalizerError=_finalizerError;
 @property(nonatomic) unsigned long long candidacy; // @synthesize candidacy=_candidacy;
-- (void).cxx_destruct;
 - (void)processPerspectiveResult:(id)arg1;
 - (void)processHorizonResult:(id)arg1;
 - (void)processVideoReframeResult:(id)arg1;

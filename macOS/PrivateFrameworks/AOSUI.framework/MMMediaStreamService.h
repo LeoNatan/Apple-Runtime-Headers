@@ -24,6 +24,7 @@
     MMPromptForLocalSecret *_gSharedPromptForLocalSecret;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didEncounterLoadError; // @synthesize didEncounterLoadError=_didEncounterLoadError;
 @property(retain) MMPromptForLocalSecret *gSharedPromptForLocalSecret; // @synthesize gSharedPromptForLocalSecret=_gSharedPromptForLocalSecret;
 @property(retain) CPSConfigurationClient *gSharedCPSConfigurationClient; // @synthesize gSharedCPSConfigurationClient=_gSharedCPSConfigurationClient;
@@ -31,7 +32,6 @@
 @property(retain) NSString *infoButtonURLString; // @synthesize infoButtonURLString=_infoButtonURLString;
 @property BOOL hasCheckedRampedState; // @synthesize hasCheckedRampedState=_hasCheckedRampedState;
 @property(retain) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
-- (void).cxx_destruct;
 - (id)_simulateHasReferencedFiles;
 - (id)_simulateMediaServiceExitType;
 - (id)_simulateMediaServiceExitInterval;

@@ -15,9 +15,9 @@
     HFMutableSetDiff *_mutableSelectedActionSets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFMutableSetDiff *mutableSelectedActionSets; // @synthesize mutableSelectedActionSets=_mutableSelectedActionSets;
 @property(nonatomic) __weak id <HUSelectableGridActionSetListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateSelectionState:(_Bool)arg1 forCell:(id)arg2;
 - (void)_selectedItemStateChanged:(id)arg1 isSelected:(_Bool)arg2 accessoryViewCell:(id)arg3;
 - (_Bool)presentationCoordinator:(id)arg1 shouldBeginInteractivePresentationWithTouchLocation:(struct CGPoint)arg2;

@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 - (void)syncCoordinator:(id)arg1 didApplyRemoteDeletionChangeSet:(id)arg2;
 - (void)syncCoordinator:(id)arg1 didApplyRemoteAdditionChangeSet:(id)arg2;
 - (void)syncCoordinator:(id)arg1 didCreateDeletionChangeSet:(id)arg2;

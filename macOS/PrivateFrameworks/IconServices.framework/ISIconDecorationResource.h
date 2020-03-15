@@ -17,9 +17,9 @@
     id <ISScalableCompositorResource> _internalResource;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <ISScalableCompositorResource> internalResource; // @synthesize internalResource=_internalResource;
 @property(readonly) ISIconDecoration *decoration; // @synthesize decoration=_decoration;
-- (void).cxx_destruct;
 - (id)imageForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (void)configureWithType:(id)arg1;
 - (id)initWithDecoration:(id)arg1;

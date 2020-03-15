@@ -33,8 +33,8 @@
 + (void)downloadAttachments:(id)arg1 session:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)downloadedRecipeWithID:(id)arg1 recipeType:(id)arg2 baseURL:(id)arg3 protocolClass:(Class)arg4 error:(id *)arg5;
 + (void)initialize;
-@property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void)invalidate;
 - (void)runWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_ensureEvaluatorWithError:(id *)arg1;

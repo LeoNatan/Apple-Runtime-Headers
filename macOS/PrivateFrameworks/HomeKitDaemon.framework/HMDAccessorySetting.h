@@ -42,6 +42,7 @@
 + (id)supportedValueClasses;
 + (BOOL)hasMessageReceiverChildren;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFMessageDestination *messageDestination; // @synthesize messageDestination=_messageDestination;
 @property(retain, nonatomic) HMDAccessorySettingContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
@@ -51,7 +52,6 @@
 @property(readonly) unsigned long long properties; // @synthesize properties=_properties;
 @property __weak HMDAccessorySettingGroup *group; // @synthesize group=_group;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)shouldEncodeForCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

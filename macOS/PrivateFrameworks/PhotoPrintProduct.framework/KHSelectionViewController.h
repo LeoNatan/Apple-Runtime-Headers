@@ -24,6 +24,7 @@
 }
 
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long panSelectionResizeType; // @synthesize panSelectionResizeType=_panSelectionResizeType;
 @property(retain, nonatomic) KHSelectionLayer *panSelectionLayer; // @synthesize panSelectionLayer=_panSelectionLayer;
 @property(retain, nonatomic) NSPanGestureRecognizer *panRecognizer; // @synthesize panRecognizer=_panRecognizer;
@@ -31,7 +32,6 @@
 @property(nonatomic) __weak id <KHSelectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UXView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly, nonatomic) KHSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
-- (void).cxx_destruct;
 - (BOOL)selectionView:(id)arg1 shouldHandleEvent:(id)arg2 atPoint:(struct CGPoint)arg3;
 - (id)selectionManagerForSelectionView:(id)arg1;
 - (void)selectionManager:(id)arg1 didRemoveSelections:(id)arg2;

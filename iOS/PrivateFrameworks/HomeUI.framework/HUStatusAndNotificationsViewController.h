@@ -20,10 +20,10 @@
     HUCameraSmartNotificationSettingsModuleController *_cameraSmartSettingsModuleController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HUCameraSmartNotificationSettingsModuleController *cameraSmartSettingsModuleController; // @synthesize cameraSmartSettingsModuleController=_cameraSmartSettingsModuleController;
 @property(readonly, nonatomic) HUTriggerConditionEditorItemModuleController *conditionModuleController; // @synthesize conditionModuleController=_conditionModuleController;
 @property(retain, nonatomic) HFItem<HFServiceLikeItem> *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)smartNotificationSettingsModuleController:(id)arg1 didUpdateConditionCollection:(id)arg2;
 - (void)conditionEditorModuleController:(id)arg1 didUpdateConditionCollection:(id)arg2;
 - (void)conditionEditorModuleController:(id)arg1 dismissDetailViewController:(id)arg2;

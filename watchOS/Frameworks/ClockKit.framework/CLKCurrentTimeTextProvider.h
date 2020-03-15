@@ -19,8 +19,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)textProviderWithTimeZone:(id)arg1;
-@property(copy, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
 - (id)JSONObjectRepresentation;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

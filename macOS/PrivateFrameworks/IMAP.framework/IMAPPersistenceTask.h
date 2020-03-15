@@ -13,8 +13,8 @@
     id <IMAPMessageDataSource> _dataSource;
 }
 
-@property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (long long)networkPriority;
 - (id)nextNetworkOperation;
 - (id)description;

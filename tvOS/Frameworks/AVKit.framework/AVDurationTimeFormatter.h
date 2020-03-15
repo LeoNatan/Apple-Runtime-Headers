@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDateComponentsFormatter *_shorterFormatter;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDateComponentsFormatter *shorterFormatter; // @synthesize shorterFormatter=_shorterFormatter;
 @property(readonly) NSDateComponentsFormatter *longerFormatter; // @synthesize longerFormatter=_longerFormatter;
-- (void).cxx_destruct;
 - (id)stringForTimeInterval:(double)arg1;
 - (id)stringForObjectValue:(id)arg1;
 - (id)init;

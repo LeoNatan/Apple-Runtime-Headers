@@ -31,6 +31,7 @@
     NSSet *_extraSupportedSignatureHashes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSet *extraSupportedSignatureHashes; // @synthesize extraSupportedSignatureHashes=_extraSupportedSignatureHashes;
 @property(retain) NSArray *customIKESAInitVendorPayloads; // @synthesize customIKESAInitVendorPayloads=_customIKESAInitVendorPayloads;
 @property(retain) NSArray *customIKESAInitPayloads; // @synthesize customIKESAInitPayloads=_customIKESAInitPayloads;
@@ -47,7 +48,6 @@
 @property(retain) NSString *outgoingInterfaceName; // @synthesize outgoingInterfaceName=_outgoingInterfaceName;
 @property(retain) NWEndpoint *remoteEndpoint; // @synthesize remoteEndpoint=_remoteEndpoint;
 @property(retain) NWEndpoint *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *proposals;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

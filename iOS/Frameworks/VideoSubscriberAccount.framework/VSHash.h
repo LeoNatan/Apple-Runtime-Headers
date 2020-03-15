@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CC_SHA256state_st _ctx;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *finalData; // @synthesize finalData=_finalData;
 @property(nonatomic) struct CC_SHA256state_st ctx; // @synthesize ctx=_ctx;
 @property(nonatomic, getter=isFinalized) _Bool finalized; // @synthesize finalized=_finalized;
-- (void).cxx_destruct;
 - (void)updateWithData:(id)arg1;
 - (void)dealloc;
 - (id)init;

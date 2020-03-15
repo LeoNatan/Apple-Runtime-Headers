@@ -29,8 +29,8 @@
 + (id)historyDatabaseURL;
 + (id)historyPropertyListURL;
 + (id)existingSharedHistory;
-@property(nonatomic) double historyAgeLimit; // @synthesize historyAgeLimit=_historyAgeLimit;
 - (void).cxx_destruct;
+@property(nonatomic) double historyAgeLimit; // @synthesize historyAgeLimit=_historyAgeLimit;
 - (Class)_historyItemClass;
 - (void)_addVisitedLinksForItemsIfNeeded:(id)arg1;
 - (void)_removeAllVisitedLinks;
@@ -80,6 +80,7 @@
 - (void)updateTitle:(id)arg1 forVisit:(id)arg2;
 - (_Bool)canRecordRedirectFromVisit:(id)arg1 to:(id)arg2;
 - (void)checkIfLocalVisitExistsInAnyOfItems:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)getHighLevelHTTPFamilyDomainsVisitedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getVisitsCreatedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)itemRedirectedFrom:(id)arg1 to:(id)arg2 origin:(int)arg3 date:(id)arg4;
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 timeOfVisit:(double)arg3 wasHTTPNonGet:(_Bool)arg4 wasFailure:(_Bool)arg5 increaseVisitCount:(_Bool)arg6 origin:(int)arg7 attributes:(unsigned int)arg8;

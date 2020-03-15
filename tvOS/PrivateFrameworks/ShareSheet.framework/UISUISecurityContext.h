@@ -18,8 +18,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *securityScopedResources; // @synthesize securityScopedResources=_securityScopedResources;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *securityScopedResources; // @synthesize securityScopedResources=_securityScopedResources;
 - (id)accessibleURLs;
 - (void)deactivate;
 - (void)activate;

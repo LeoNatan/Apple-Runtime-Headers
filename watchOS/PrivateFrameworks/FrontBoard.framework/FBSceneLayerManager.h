@@ -17,9 +17,9 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *layers; // @synthesize layers=_layers;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_observer_didRepositionLayer:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (void)_observer_didStopTrackingLayers;
 - (void)_observer_didStartTrackingLayers;

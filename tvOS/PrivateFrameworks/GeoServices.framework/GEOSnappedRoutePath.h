@@ -23,12 +23,12 @@
     CDStruct_869f9c67 *_unsnappedPoints;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) unsigned int routeEndIndex; // @synthesize routeEndIndex=_routeEndIndex;
 @property(readonly) unsigned int routeStartIndex; // @synthesize routeStartIndex=_routeStartIndex;
 @property(readonly) __weak GEOComposedRouteSection *section; // @synthesize section=_section;
 @property(readonly) NSArray *edges; // @synthesize edges=_edges;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)hasObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (_Bool)removeObserver:(id)arg1;

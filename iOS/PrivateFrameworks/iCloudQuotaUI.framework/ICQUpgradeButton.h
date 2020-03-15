@@ -19,8 +19,8 @@
 + (id)upgradeButton;
 + (id)buttonWithType:(long long)arg1;
 + (_Bool)shouldShowForOffer:(id)arg1;
-@property(readonly, nonatomic) ICQLink *link; // @synthesize link=_link;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ICQLink *link; // @synthesize link=_link;
 - (id)buttonLinkAttributes;
 - (id)buttonAttributes;
 @property(retain, nonatomic) ICQOffer *offer;

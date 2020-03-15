@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_sceneIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithSceneIdentifier:(id)arg1 clientIdentifier:(id)arg2;

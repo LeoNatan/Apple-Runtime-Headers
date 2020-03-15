@@ -16,10 +16,10 @@
     NSMutableSet *_outstandingTransactionGroups;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *outstandingTransactionGroups; // @synthesize outstandingTransactionGroups=_outstandingTransactionGroups;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CXTransactionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_timeoutReachedForAction:(id)arg1 callSource:(id)arg2;
 - (void)_setUpTimeoutForAction:(id)arg1 callSource:(id)arg2;
 - (void)failOutstandingActionsForCallWithUUID:(id)arg1;

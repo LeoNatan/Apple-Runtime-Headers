@@ -15,9 +15,9 @@
 }
 
 + (id)pairWithDuration:(double)arg1;
+- (void).cxx_destruct;
 @property double duration; // @synthesize duration=_duration;
 @property(retain) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 
 @end
 

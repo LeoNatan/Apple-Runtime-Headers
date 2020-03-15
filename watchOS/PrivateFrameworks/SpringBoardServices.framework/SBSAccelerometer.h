@@ -17,8 +17,8 @@
     BKSAccelerometer *_bksMirror;
 }
 
-@property(nonatomic) __weak id <SBSAccelerometerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBSAccelerometerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (int)currentDeviceOrientation;

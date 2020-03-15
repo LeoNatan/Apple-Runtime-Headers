@@ -49,6 +49,7 @@
 }
 
 + (id)fullwidthToHalfwidthPunctuationMapping;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldOptimizeLayoutForFixedSize; // @synthesize shouldOptimizeLayoutForFixedSize=_shouldOptimizeLayoutForFixedSize;
 @property(nonatomic, getter=isShowingSubstitutionCandidatesInTouchBar) BOOL showingSubstitutionCandidatesInTouchBar; // @synthesize showingSubstitutionCandidatesInTouchBar=_showingSubstitutionCandidatesInTouchBar;
 @property(nonatomic) BOOL shouldShowInlineTextAsSecondaryCandidate; // @synthesize shouldShowInlineTextAsSecondaryCandidate=_shouldShowInlineTextAsSecondaryCandidate;
@@ -80,7 +81,6 @@
 @property BOOL currentCandidatesHaveExtendedEmoji; // @synthesize currentCandidatesHaveExtendedEmoji=_currentCandidatesHaveExtendedEmoji;
 @property(retain, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
 @property(readonly, nonatomic) TIMecabraEnvironment *mecabraEnvironment; // @synthesize mecabraEnvironment=_mecabraEnvironment;
-- (void).cxx_destruct;
 - (id)environmentDebuggingInformation;
 @property(readonly, nonatomic) BOOL shouldShowSubstitutionCandidatesInTouchBar;
 @property(readonly, nonatomic) BOOL selectionShouldBeReflectedInTouchBar;

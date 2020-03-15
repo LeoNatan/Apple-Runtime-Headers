@@ -13,8 +13,8 @@
     NSURL *_publishedURL;
 }
 
-@property(retain, nonatomic) NSURL *publishedURL; // @synthesize publishedURL=_publishedURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *publishedURL; // @synthesize publishedURL=_publishedURL;
 - (void)cancelActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)isCancellable;
 - (void)_completePublishActionWithSuccess:(BOOL)arg1 error:(id)arg2 shareOrigin:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;

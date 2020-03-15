@@ -36,6 +36,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(copy) NSUUID *mediaContentProfileAccessControlModelID; // @synthesize mediaContentProfileAccessControlModelID=_mediaContentProfileAccessControlModelID;
 @property __weak id <HMDMediaContentProfileAccessControlModelUpdateReceiver> mediaContentProfileAccessControlModelUpdateReceiver; // @synthesize mediaContentProfileAccessControlModelUpdateReceiver=_mediaContentProfileAccessControlModelUpdateReceiver;
 @property(copy) NSUUID *assistantAccessControlModelID; // @synthesize assistantAccessControlModelID=_assistantAccessControlModelID;
@@ -50,7 +51,6 @@
 @property(readonly, copy) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) __weak id <HMDUserSettingsBackingStoreControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)database:(id)arg1 didRemoveZoneWithName:(id)arg2;
 - (void)database:(id)arg1 didCreateZoneWithName:(id)arg2;

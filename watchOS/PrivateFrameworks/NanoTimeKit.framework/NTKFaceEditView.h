@@ -37,9 +37,9 @@
     UIButton *_customEditingConfirmButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *customEditingConfirmButton; // @synthesize customEditingConfirmButton=_customEditingConfirmButton;
 @property(nonatomic) __weak id <NTKFaceEditViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_performIgnoringCrownInputScrolling:(CDUnknownBlockType)arg1;
 - (void)_updateSequencerForEditMode:(int)arg1;
 - (double)_currentSequencerValue;

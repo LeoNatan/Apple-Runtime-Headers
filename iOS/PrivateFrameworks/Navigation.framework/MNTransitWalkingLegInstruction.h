@@ -14,9 +14,9 @@
 }
 
 + (id)instructionForWalkingLeg:(id)arg1 context:(long long)arg2;
-@property(readonly, nonatomic) GEOComposedWalkingRouteLeg *walkingLeg; // @synthesize walkingLeg=_walkingLeg;
 - (void).cxx_destruct;
-- (struct NSDictionary *)overridenInstructionsMapping;
+@property(readonly, nonatomic) GEOComposedWalkingRouteLeg *walkingLeg; // @synthesize walkingLeg=_walkingLeg;
+- (id)overridenInstructionsMapping;
 - (id)instructionSet;
 - (id)initWithWalkingLeg:(id)arg1 context:(long long)arg2;
 

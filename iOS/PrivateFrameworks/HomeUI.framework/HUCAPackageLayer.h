@@ -17,10 +17,10 @@
 
 + (id)_tagsForName:(id)arg1;
 + (id)_allTags;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *tags; // @synthesize tags=_tags;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_applyPrimaryColorWithModifiers:(id)arg1;
 - (void)applyModifiers:(id)arg1;
 - (id)initWithName:(id)arg1 layer:(id)arg2;

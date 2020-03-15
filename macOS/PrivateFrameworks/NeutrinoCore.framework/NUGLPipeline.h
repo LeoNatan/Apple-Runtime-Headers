@@ -23,12 +23,12 @@
     NSOrderedSet *_samplers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *samplers; // @synthesize samplers=_samplers;
 @property(readonly, nonatomic) NSArray *orderedAttributes; // @synthesize orderedAttributes=_orderedAttributes;
 @property(readonly, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) NSDictionary *uniforms; // @synthesize uniforms=_uniforms;
 @property(readonly, nonatomic) NSArray *stages; // @synthesize stages=_stages;
-- (void).cxx_destruct;
 - (void)_endDrawing:(id)arg1;
 - (void)_beginDrawing:(id)arg1;
 - (BOOL)_validate:(id)arg1;

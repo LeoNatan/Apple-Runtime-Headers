@@ -105,6 +105,7 @@
 + (id)networkingActivityWithName:(id)arg1 priority:(unsigned long long)arg2 downloadSize:(unsigned long long)arg3 uploadSize:(unsigned long long)arg4 expensiveNetworkingAllowed:(BOOL)arg5 startingAfter:(id)arg6 startingBefore:(id)arg7;
 + (id)networkingActivityWithName:(id)arg1 priority:(unsigned long long)arg2 transferSize:(unsigned long long)arg3 isUpload:(BOOL)arg4 expensiveNetworkingAllowed:(BOOL)arg5 startingAfter:(id)arg6 startingBefore:(id)arg7;
 + (id)activityWithName:(id)arg1 priority:(unsigned long long)arg2 duration:(unsigned long long)arg3 startingAfter:(id)arg4 startingBefore:(id)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) unsigned int userIdentifier; // @synthesize userIdentifier=_userIdentifier;
 @property(nonatomic) BOOL requiresBuddyComplete; // @synthesize requiresBuddyComplete=_requiresBuddyComplete;
@@ -176,7 +177,6 @@
 @property(copy, nonatomic) CDUnknownBlockType startHandler; // @synthesize startHandler=_startHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)updateGroupIfNecessary;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

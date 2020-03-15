@@ -26,15 +26,16 @@
 + (id)_userDefaults;
 + (void)setDidDismissCloudGadget:(_Bool)arg1;
 + (_Bool)didDismissCloudGadget;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXCMMCloudView *cloudView; // @synthesize cloudView=_cloudView;
 @property(copy, nonatomic) NSString *gadgetTitle; // @synthesize gadgetTitle=_gadgetTitle;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 @property(nonatomic) __weak id <PXCMMCloudGadgetViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (void)_updateViewInsets;
-- (struct NSObject *)contentViewController;
+- (id)contentViewController;
 @property(readonly, nonatomic) _Bool hasContentToDisplay; // @synthesize hasContentToDisplay=_hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 @property(readonly, nonatomic) NSString *localizedTitle;
 - (void)completeMyMomentCloudPhotoViewDismissTapped:(id)arg1;
@@ -55,9 +56,6 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) unsigned long long headerStyle;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

@@ -17,8 +17,8 @@
 
 + (id)layerWithDescriptor:(id)arg1;
 + (id)new;
-@property(readonly, nonatomic) MLFoundationPoolingDescriptor *poolingDescriptor; // @synthesize poolingDescriptor=_poolingDescriptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MLFoundationPoolingDescriptor *poolingDescriptor; // @synthesize poolingDescriptor=_poolingDescriptor;
 @property(readonly, copy) NSString *description;
 - (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initWithDescriptor:(id)arg1;

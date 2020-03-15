@@ -20,8 +20,8 @@
     NSString *_name;
 }
 
-@property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly) NSString *name; // @synthesize name=_name;
 - (_Bool)_runNextJob;
 - (void)_run;
 - (void)_startRunning;

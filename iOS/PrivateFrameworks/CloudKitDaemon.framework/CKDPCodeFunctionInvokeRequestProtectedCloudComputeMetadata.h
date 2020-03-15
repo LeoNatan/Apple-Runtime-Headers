@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cryptoSessionsType;
-@property(retain, nonatomic) NSMutableArray *cryptoSessions; // @synthesize cryptoSessions=_cryptoSessions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *cryptoSessions; // @synthesize cryptoSessions=_cryptoSessions;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

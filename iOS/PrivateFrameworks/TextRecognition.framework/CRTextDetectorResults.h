@@ -20,6 +20,7 @@
     NSMutableArray *_pyramidScaleSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pyramidScaleSize; // @synthesize pyramidScaleSize=_pyramidScaleSize;
 @property(retain, nonatomic) NSArray *pyramidPostInterScaleNMSTextFeatures; // @synthesize pyramidPostInterScaleNMSTextFeatures=_pyramidPostInterScaleNMSTextFeatures;
 @property(retain, nonatomic) NSArray *pyramidPostIntraScaleNMSTextFeatures; // @synthesize pyramidPostIntraScaleNMSTextFeatures=_pyramidPostIntraScaleNMSTextFeatures;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSDictionary *inputOptions; // @synthesize inputOptions=_inputOptions;
-- (void).cxx_destruct;
 
 @end
 

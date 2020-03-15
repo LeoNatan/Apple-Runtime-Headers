@@ -19,10 +19,10 @@
     UIViewController *_presentedViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly, nonatomic) id <SXViewControllerPresenting> viewControllerPresenting; // @synthesize viewControllerPresenting=_viewControllerPresenting;
-- (void).cxx_destruct;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)dismissPresentedViewController;
 - (void)presentContact:(id)arg1;

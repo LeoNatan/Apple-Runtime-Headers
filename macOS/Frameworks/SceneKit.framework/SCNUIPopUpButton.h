@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id mlDelegate;
 }
 
-@property(nonatomic) __weak id mlDelegate; // @synthesize mlDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id mlDelegate; // @synthesize mlDelegate;
 - (void)mouseDown:(id)arg1;
 
 @end

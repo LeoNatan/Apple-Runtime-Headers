@@ -19,14 +19,16 @@ __attribute__((visibility("hidden")))
     NSString *_initiator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *initiator; // @synthesize initiator=_initiator;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, nonatomic) NSArray *avOutputDevices; // @synthesize avOutputDevices=_avOutputDevices;
 @property(readonly, nonatomic) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;
 @property(readonly, nonatomic) NSArray *concreteOutputDevices; // @synthesize concreteOutputDevices=_concreteOutputDevices;
 @property(readonly, nonatomic) unsigned long long modificationType; // @synthesize modificationType=_modificationType;
-- (void).cxx_destruct;
+- (void)trackModificationWithStartDate:(id)arg1 initialGroupSize:(unsigned long long)arg2 error:(id)arg3;
 - (id)errorFromResult:(id)arg1;
+- (void)performModificationWithOutputContext:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_modifyWithOutputContext:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)modifyWithOutputContext:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithType:(unsigned long long)arg1 devices:(id)arg2;

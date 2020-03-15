@@ -15,10 +15,10 @@
     NSXPCListenerEndpoint *_clientEndpoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool clientHasFontAccessEntitlement; // @synthesize clientHasFontAccessEntitlement=_clientHasFontAccessEntitlement;
 @property(readonly, retain, nonatomic) NSXPCListenerEndpoint *clientEndpoint; // @synthesize clientEndpoint=_clientEndpoint;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)done;
 - (void)setup;
 - (id)locallyActivatedFontFilePaths;

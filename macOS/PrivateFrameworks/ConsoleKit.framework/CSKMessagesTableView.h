@@ -13,8 +13,8 @@
     id <CSKMessagesTableViewEventDelegate> _eventDelegate;
 }
 
-@property(nonatomic) __weak id <CSKMessagesTableViewEventDelegate> eventDelegate; // @synthesize eventDelegate=_eventDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSKMessagesTableViewEventDelegate> eventDelegate; // @synthesize eventDelegate=_eventDelegate;
 - (void)keyDown:(id)arg1;
 
 @end

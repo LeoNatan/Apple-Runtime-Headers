@@ -24,12 +24,12 @@
     UIView *_superviewOwningLayout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *superviewOwningLayout; // @synthesize superviewOwningLayout=_superviewOwningLayout;
 @property(nonatomic) __weak id <_SFBarRegistrationToken> barRegistration; // @synthesize barRegistration=_barRegistration;
 @property(nonatomic) _Bool usesLegacyDarkBackdrop; // @synthesize usesLegacyDarkBackdrop=_usesLegacyDarkBackdrop;
 @property(retain, nonatomic) _SFBarTheme *theme; // @synthesize theme=_theme;
 @property(readonly, nonatomic) long long placement; // @synthesize placement=_placement;
-- (void).cxx_destruct;
 - (void)didChangeArrangedBarItems:(id)arg1;
 - (void)didCompleteBarRegistrationWithToken:(id)arg1;
 - (id)popoverSourceInfoForBarItem:(long long)arg1;

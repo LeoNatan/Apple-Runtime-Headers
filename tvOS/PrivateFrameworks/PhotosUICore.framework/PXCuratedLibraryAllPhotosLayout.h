@@ -41,7 +41,7 @@
     NSArray *_layers;
     NSArray *_itemLayouts;
     PXGItemsLayout<PXCuratedLibraryAllPhotosBodyLayout> *_itemLayoutByHeaderLevel[2];
-    struct PXGItemsLayout *_decadesItemLayout;
+    PXGItemsLayout<PXCuratedLibraryAllPhotosBodyLayout> *_decadesItemLayout;
     NSMutableSet *_itemLayoutsAllowedToLoad;
     NSDateInterval *_lastReturnedDateInterval;
     unsigned long long _lastReturnedDateIntervalDataSourceIdentifier;
@@ -64,7 +64,7 @@
     PXGAnchor *_anchor;
     PXPointAnimator *_anchorViewportScaleCenterAnimator;
     PXNumberAnimator *_anchorViewportScaleCenterVelocityTracker;
-    struct PXGItemsLayout *_didAnimateTowardsAnchorInItemsLayout;
+    PXGItemsLayout<PXCuratedLibraryAllPhotosBodyLayout> *_didAnimateTowardsAnchorInItemsLayout;
     PXGOneColumnLayout *_oneColLayout;
     struct CGPoint _anchorTargetViewportCenter;
     struct CGPoint _normalizedScaleCenterInAnchorSprite;
@@ -72,6 +72,7 @@
     struct UIEdgeInsets _effectiveOverlayInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets effectiveOverlayInsets; // @synthesize effectiveOverlayInsets=_effectiveOverlayInsets;
 @property(readonly, nonatomic) PXGOneColumnLayout *oneColLayout; // @synthesize oneColLayout=_oneColLayout;
 @property(readonly, nonatomic) PXGItemsLayout<PXCuratedLibraryAllPhotosBodyLayout> *didAnimateTowardsAnchorInItemsLayout; // @synthesize didAnimateTowardsAnchorInItemsLayout=_didAnimateTowardsAnchorInItemsLayout;
@@ -87,16 +88,16 @@
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) PXAssetReference *anchorAssetReference; // @synthesize anchorAssetReference=__anchorAssetReference;
 @property(retain, nonatomic) PXCuratedLibraryLayoutSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (id)viewModel:(id)arg1 dominantAssetCollectionReferenceForZoomLevel:(long long)arg2;
+- (void)axGroup:(id)arg1 didChange:(unsigned long long)arg2 userInfo:(id)arg3;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (unsigned long long)behaviorForCaptureSpriteAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
-- (struct UIColor *)colorAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
+- (id)colorAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
-- (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(struct PXGItemsLayout *)arg2;
+- (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
 - (unsigned long long)desiredPlaceholderStyleInLayout:(id)arg1;
-- (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(struct PXGItemsLayout *)arg1;
+- (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(id)arg1;
 - (CDUnknownBlockType)locationNamesFutureForContentInRect:(struct CGRect)arg1;
 - (CDUnknownBlockType)dateIntervalFutureForContentInRect:(struct CGRect)arg1;
 - (_Bool)_layoutWantsSingleDateTitle;
@@ -110,9 +111,9 @@
 - (double)itemsLayout:(id)arg1 aspectRatioForItem:(long long)arg2;
 - (long long)itemsLayout:(id)arg1 itemForObjectReference:(id)arg2;
 - (CDStruct_3fe57b01)_spriteTransformForLayout:(id)arg1;
-- (void)_performAnchorAlignmentVisualShiftWithBaseLayout:(struct PXGItemsLayout *)arg1;
-- (void)_performVisualShiftWithLayout:(struct PXGItemsLayout *)arg1 movingItem:(long long)arg2 toColumn:(long long)arg3;
-- (long long)_estimatedItemsPerScreenForLayout:(struct PXGItemsLayout *)arg1;
+- (void)_performAnchorAlignmentVisualShiftWithBaseLayout:(id)arg1;
+- (void)_performVisualShiftWithLayout:(id)arg1 movingItem:(long long)arg2 toColumn:(long long)arg3;
+- (long long)_estimatedItemsPerScreenForLayout:(id)arg1;
 - (void)_updateViewModelIsAnimating;
 - (void)_updatePrefetching;
 - (void)_updatePinchEffect;
@@ -129,13 +130,13 @@
 - (id)presentedItemsGeometryForDataSource:(id)arg1;
 @property(readonly, nonatomic) PXGItemsLayout<PXCuratedLibraryAllPhotosBodyLayout> *primaryItemsLayout;
 - (_Bool)_wantsDecorationForNumberOfColumns:(long long)arg1;
-- (double)_itemCaptionSpacingForLayout:(struct PXGItemsLayout *)arg1;
-- (double)_interItemSpacingForLayout:(struct PXGItemsLayout *)arg1;
-- (_Bool)_layoutHasIndividualItems:(struct PXGItemsLayout *)arg1;
-- (_Bool)_layoutIsAspectFit:(struct PXGItemsLayout *)arg1;
-- (void)_configureLayout:(struct PXGItemsLayout *)arg1;
-- (struct PXGItemsLayout *)_createLayoutWithNumberOfColumns:(long long)arg1;
-- (struct CGSize)_scaleForLayout:(struct PXGItemsLayout *)arg1;
+- (double)_itemCaptionSpacingForLayout:(id)arg1;
+- (double)_interItemSpacingForLayout:(id)arg1;
+- (_Bool)_layoutHasIndividualItems:(id)arg1;
+- (_Bool)_layoutIsAspectFit:(id)arg1;
+- (void)_configureLayout:(id)arg1;
+- (id)_createLayoutWithNumberOfColumns:(long long)arg1;
+- (struct CGSize)_scaleForLayout:(id)arg1;
 - (unsigned long long)zoomBehavior;
 - (_Bool)isAnimating;
 - (id)hitTestResultForSpriteIndex:(unsigned int)arg1;

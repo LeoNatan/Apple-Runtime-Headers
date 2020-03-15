@@ -16,11 +16,11 @@
     double _lastExit_s;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int numOfEntries; // @synthesize numOfEntries=_numOfEntries;
 @property(nonatomic) double lastExit_s; // @synthesize lastExit_s=_lastExit_s;
 @property(nonatomic) double aggregateTime_s; // @synthesize aggregateTime_s=_aggregateTime_s;
 @property(retain, nonatomic) RTStateModelLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

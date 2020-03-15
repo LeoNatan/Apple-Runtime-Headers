@@ -13,8 +13,8 @@
     NSArray *_browseableBankApps;
 }
 
-@property(readonly, copy, nonatomic) NSArray *browseableBankApps; // @synthesize browseableBankApps=_browseableBankApps;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *browseableBankApps; // @synthesize browseableBankApps=_browseableBankApps;
 - (id)initWithData:(id)arg1;
 
 @end

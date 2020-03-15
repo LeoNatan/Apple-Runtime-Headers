@@ -37,6 +37,7 @@
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(_Bool)arg3;
 + (id)newWithMessage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldEncrypt; // @synthesize shouldEncrypt=_shouldEncrypt;
 @property(nonatomic) _Bool shouldSign; // @synthesize shouldSign=_shouldSign;
 @property(nonatomic) int action; // @synthesize action=_action;
@@ -45,7 +46,6 @@
 @property(nonatomic) _Bool isUserRequested; // @synthesize isUserRequested=_isUserRequested;
 @property(nonatomic) unsigned long long conversationFlags; // @synthesize conversationFlags=_conversationFlags;
 @property(retain, nonatomic) NSDictionary *compositionSpecification; // @synthesize compositionSpecification=_compositionSpecification;
-- (void).cxx_destruct;
 - (void)updateOriginalMessageFromHeaders:(id)arg1;
 - (void)archive;
 - (void)setCellDataOnly:(_Bool)arg1;

@@ -16,9 +16,9 @@
     NSArray *_deviceIds;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *deviceIds; // @synthesize deviceIds=_deviceIds;
 @property unsigned int fileTimeout; // @synthesize fileTimeout=_fileTimeout;
-- (void).cxx_destruct;
 - (id)send:(id)arg1 file:(id)arg2 metadata:(id)arg3 error:(id *)arg4;
 - (id)send:(id)arg1 message:(id)arg2 error:(id *)arg3;
 - (id)synchronize:(id)arg1 withOptions:(id)arg2;

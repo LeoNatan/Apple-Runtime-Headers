@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIView *_dimmingView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool constraintsPrepared; // @synthesize constraintsPrepared=_constraintsPrepared;
 @property(retain, nonatomic) UIView *dimmingView; // @synthesize dimmingView=_dimmingView;
-- (void).cxx_destruct;
 - (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)_prepareConstraintsIfNecessary;

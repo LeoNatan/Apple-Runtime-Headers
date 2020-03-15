@@ -17,9 +17,9 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *assetTagInformation; // @synthesize assetTagInformation=_assetTagInformation;
 @property(readonly, nonatomic) NSString *lockScreenFootnote; // @synthesize lockScreenFootnote=_lockScreenFootnote;
-- (void).cxx_destruct;
 - (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 @property(readonly, nonatomic) NSDictionary *configuration;

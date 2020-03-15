@@ -16,9 +16,9 @@
     NSMutableDictionary *_traitBlocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *traitBlocks; // @synthesize traitBlocks=_traitBlocks;
 @property(readonly, nonatomic) double defaultValue; // @synthesize defaultValue=_defaultValue;
-- (void).cxx_destruct;
 - (double)valueForTraitCollection:(id)arg1 size:(struct CGSize)arg2 deviceTrait:(id)arg3;
 - (double)valueForTraitCollection:(id)arg1 size:(struct CGSize)arg2;
 - (id)when:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;

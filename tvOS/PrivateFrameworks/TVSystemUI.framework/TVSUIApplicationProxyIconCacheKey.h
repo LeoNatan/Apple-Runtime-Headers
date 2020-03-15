@@ -19,11 +19,11 @@
 }
 
 + (id)iconCacheKeyForProxy:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *applicationIconName; // @synthesize applicationIconName=_applicationIconName;
 @property(copy, nonatomic) NSString *lifetimeCacheKeyString; // @synthesize lifetimeCacheKeyString=_lifetimeCacheKeyString;
 @property(readonly) double displayScale; // @synthesize displayScale=_displayScale;
 @property(readonly, copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

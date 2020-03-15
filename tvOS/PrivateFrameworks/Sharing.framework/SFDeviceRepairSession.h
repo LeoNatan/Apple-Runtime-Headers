@@ -47,6 +47,7 @@
     unsigned long long _triggerMs;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long triggerMs; // @synthesize triggerMs=_triggerMs;
 @property(nonatomic) unsigned int repairFlags; // @synthesize repairFlags=_repairFlags;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(readonly, copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (int)_runFinish;
 - (int)_runHomeKitSetup;
 - (int)_runCDPSetup;

@@ -23,9 +23,9 @@
     AVOutputDevice *_avOutputDevice;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVOutputDevice *avOutputDevice; // @synthesize avOutputDevice=_avOutputDevice;
 @property(readonly, nonatomic) MRAVOutputDevice *outputDevice; // @synthesize outputDevice=_outputDevice;
-- (void).cxx_destruct;
 - (id)_onQueue_createRemoteControlContextWithID:(id)arg1;
 - (void)_destroyRemoteControlContext;
 - (void)_unregisterNotificationsForOutputContext:(id)arg1;

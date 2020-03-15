@@ -6,7 +6,7 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class NSData, NSSet, NSString, NSUUID;
+@class NSData, NSDate, NSSet, NSString, NSUUID;
 
 __attribute__((visibility("hidden")))
 @interface KTRequest : NSManagedObject
@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSData *queryResponse; // @dynamic queryResponse;
 @property(copy, nonatomic) NSUUID *requestId; // @dynamic requestId;
 @property(nonatomic) double requestTime; // @dynamic requestTime;
+@property(nonatomic) long long responseErrorCode; // @dynamic responseErrorCode;
+@property(copy, nonatomic) NSDate *responseTime; // @dynamic responseTime;
 @property(nonatomic) long long sequenceId; // @dynamic sequenceId;
 @property(copy, nonatomic) NSString *serverHint; // @dynamic serverHint;
 @property(retain, nonatomic) NSData *serverLoggableDatas; // @dynamic serverLoggableDatas;

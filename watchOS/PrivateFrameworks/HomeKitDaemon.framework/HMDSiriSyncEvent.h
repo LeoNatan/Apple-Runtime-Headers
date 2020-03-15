@@ -22,12 +22,12 @@
 + (id)syncRequestWithStartTime:(unsigned long long)arg1 serverConfigurationVersion:(unsigned int)arg2 configurationVersion:(unsigned int)arg3 lastSyncedConfigurationVersion:(unsigned int)arg4 notificationReasons:(id)arg5;
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int serverConfigurationVersion; // @synthesize serverConfigurationVersion=_serverConfigurationVersion;
 @property(readonly, nonatomic) unsigned int configurationVersion; // @synthesize configurationVersion=_configurationVersion;
 @property(readonly, nonatomic) unsigned int lastSyncedConfigurationVersion; // @synthesize lastSyncedConfigurationVersion=_lastSyncedConfigurationVersion;
 @property(readonly, nonatomic) NSArray *notificationReasons; // @synthesize notificationReasons=_notificationReasons;
 @property(readonly, nonatomic) unsigned int duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (id)initWithStartTime:(unsigned long long)arg1 serverConfigurationVersion:(unsigned int)arg2 configurationVersion:(unsigned int)arg3 lastSyncedConfigurationVersion:(unsigned int)arg4 notificationReasons:(id)arg5;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;

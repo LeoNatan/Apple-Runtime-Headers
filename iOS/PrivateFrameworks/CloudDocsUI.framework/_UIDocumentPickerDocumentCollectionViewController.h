@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_initialActivityView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *initialActivityView; // @synthesize initialActivityView=_initialActivityView;
 @property(nonatomic) _Bool updatesMayAnimate; // @synthesize updatesMayAnimate=_updatesMayAnimate;
 @property(copy, nonatomic) NSArray *modelObjects; // @synthesize modelObjects=_modelObjects;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIDocumentPickerContainerModel *model; // @synthesize model=_model;
 @property(nonatomic) __weak id <_UIDocumentPickerServiceViewController> serviceViewController; // @synthesize serviceViewController=_serviceViewController;
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;
-- (void).cxx_destruct;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewActionItemsForItem:(id)arg1;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;

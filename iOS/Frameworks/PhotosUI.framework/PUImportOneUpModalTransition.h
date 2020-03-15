@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (id)transitioningObjectInViewController:(id)arg1;
 + (id)propertyAnimatorWithInitialVelocity:(struct CGVector)arg1 forOperation:(long long)arg2 inDirection:(long long)arg3;
 + (double)defaultAnimationDurationForOperation:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double startingAnimationProgress; // @synthesize startingAnimationProgress=_startingAnimationProgress;
 @property(retain, nonatomic) PUImportOneUpTransitionItem *manipulatedFloatingItem; // @synthesize manipulatedFloatingItem=_manipulatedFloatingItem;
 @property(retain, nonatomic) NSArray *floatingItems; // @synthesize floatingItems=_floatingItems;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PXPinchTracker *pinchTracker; // @synthesize pinchTracker=_pinchTracker;
 @property(readonly, nonatomic) PUPhotoPinchGestureRecognizer *pinchGestureRecognizer; // @synthesize pinchGestureRecognizer=_pinchGestureRecognizer;
 @property(retain, nonatomic) UIViewPropertyAnimator *transitionAnimator; // @synthesize transitionAnimator=_transitionAnimator;
-- (void).cxx_destruct;
 - (_Bool)continuousGestureRecognizerIsActive:(id)arg1;
 - (void)pauseAnimation;
 - (long long)animatingPositionForSwipeDownTracker:(id)arg1;

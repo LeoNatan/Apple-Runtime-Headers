@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *stationStringID; // @synthesize stationStringID=_stationStringID;
 @property(readonly, nonatomic) long long stationID; // @synthesize stationID=_stationID;
-- (void).cxx_destruct;
 - (BOOL)verifyWithError:(id *)arg1;
 - (id)description;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue *)arg1 options:(id)arg2;

@@ -14,9 +14,9 @@
     NSString *_selectedDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *selectedDescription; // @synthesize selectedDescription=_selectedDescription;
 @property(nonatomic) long long sliderType; // @synthesize sliderType=_sliderType;
-- (void).cxx_destruct;
 - (id)_accessibilityUserTestingElementBaseType;
 - (unsigned long long)accessibilityTraits;
 - (struct CGRect)accessibilityFrame;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     UIDragItem *_dragItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDragItem *dragItem; // @synthesize dragItem=_dragItem;
 @property(nonatomic) __weak id <_UICollectionViewPlaceholderContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) _UIDropAnimationHandlers *animationHandlers; // @synthesize animationHandlers=_animationHandlers;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSIndexPath *originalInsertionIndexPath; // @synthesize originalInsertionIndexPath=_originalInsertionIndexPath;
 @property(retain, nonatomic) NSString *reuseIdentifier; // @synthesize reuseIdentifier=_reuseIdentifier;
 @property(retain, nonatomic) NSUUID *shadowUpdateIdentifier; // @synthesize shadowUpdateIdentifier=_shadowUpdateIdentifier;
-- (void).cxx_destruct;
 - (void)addCompletion:(CDUnknownBlockType)arg1;
 - (void)addAnimations:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;

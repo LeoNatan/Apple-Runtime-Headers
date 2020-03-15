@@ -14,9 +14,9 @@
     NSString *_customClientId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *customClientId; // @synthesize customClientId=_customClientId;
 @property(readonly, copy, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CADChangeTrackingClientId *CADChangeTrackingClientId;
 - (id)initWithCustomClientId:(id)arg1 suffix:(id)arg2;
 - (id)init;

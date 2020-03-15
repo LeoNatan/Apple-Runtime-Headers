@@ -14,8 +14,8 @@
 }
 
 + (BOOL)workflowNeedsMigration:(id)arg1 fromClientVersion:(id)arg2;
-@property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 - (void)migrateWorkflow;
 
 @end

@@ -14,9 +14,9 @@
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(retain, nonatomic) UIView *contentChildView; // @synthesize contentChildView=_contentChildView;
-- (void).cxx_destruct;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;
 - (void)applyLayoutAttributes:(id)arg1;

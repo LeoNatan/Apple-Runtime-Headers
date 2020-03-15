@@ -16,10 +16,10 @@
 }
 
 + (id)movieClipAssetsWithArray:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSString *flavor; // @synthesize flavor=_flavor;
 @property(readonly, nonatomic) unsigned int duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *durationString;
 - (id)init;
 - (id)_init;

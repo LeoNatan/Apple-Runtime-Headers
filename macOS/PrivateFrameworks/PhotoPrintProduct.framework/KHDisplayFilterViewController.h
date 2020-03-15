@@ -24,13 +24,13 @@
     NSArray *_filters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(nonatomic) __weak id <KHDisplayFilterViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double expandedAccessoryLength; // @synthesize expandedAccessoryLength;
 @property(nonatomic) __weak id <KHAccessoryViewContainerProtocol> accessoryViewContainer; // @synthesize accessoryViewContainer;
 @property(nonatomic) long long accessoryViewState; // @synthesize accessoryViewState;
 @property(retain, nonatomic) KHFilterControl *filterControl; // @synthesize filterControl=_filterControl;
-- (void).cxx_destruct;
 - (void)_teardownAccessibility;
 - (void)_configureAccessibility;
 @property(readonly, nonatomic) BOOL isAccessoryFloating;

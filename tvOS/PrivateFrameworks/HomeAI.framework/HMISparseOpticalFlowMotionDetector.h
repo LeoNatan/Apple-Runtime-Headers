@@ -18,9 +18,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) struct CGSize size; // @synthesize size=_size;
 @property(readonly) NSMutableArray *frames; // @synthesize frames=_frames;
-- (void).cxx_destruct;
 - (id)detectWithGlobalMotionScore:(float *)arg1;
 - (id)_computeOpticalFlow:(struct __CVBuffer *)arg1 with:(struct __CVBuffer *)arg2 globalMotionScore:(float *)arg3;
 - (void)appendFramePixelBuffer:(struct __CVBuffer *)arg1 atTime:(CDStruct_1b6d18a9)arg2;

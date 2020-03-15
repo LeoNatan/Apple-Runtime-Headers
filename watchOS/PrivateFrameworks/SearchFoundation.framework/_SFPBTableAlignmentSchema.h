@@ -17,9 +17,9 @@
     _SFPBStringDictionary *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBStringDictionary *metadata; // @synthesize metadata=_metadata;
 @property(copy, nonatomic) NSArray *tableColumnAlignments; // @synthesize tableColumnAlignments=_tableColumnAlignments;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

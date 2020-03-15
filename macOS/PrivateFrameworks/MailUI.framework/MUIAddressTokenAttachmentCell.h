@@ -16,10 +16,10 @@
 }
 
 + (id)colorForExternalDomain;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(nonatomic) BOOL displayAsExternal; // @synthesize displayAsExternal=_displayAsExternal;
 @property BOOL neverShowSeparator; // @synthesize neverShowSeparator=_neverShowSeparator;
-- (void).cxx_destruct;
 - (id)_textAttributes;
 - (BOOL)_finalizeStyleTextOptions:(id)arg1;
 - (id)tokenTintColor;

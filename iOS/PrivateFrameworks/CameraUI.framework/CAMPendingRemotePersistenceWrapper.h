@@ -16,11 +16,11 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSMutableDictionary *job; // @synthesize job=_job;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) CAMCaptureRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)initWithRequest:(id)arg1 creationDate:(id)arg2 job:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 @end

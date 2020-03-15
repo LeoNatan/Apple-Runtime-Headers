@@ -15,8 +15,8 @@
     FMFuture *_future;
 }
 
-@property(readonly) FMFuture *future; // @synthesize future=_future;
 - (void).cxx_destruct;
+@property(readonly) FMFuture *future; // @synthesize future=_future;
 - (CDUnknownBlockType)errorOnlyCompletionHandlerAdapter;
 - (CDUnknownBlockType)completionHandlerAdapter;
 - (_Bool)finishWithNoResult;

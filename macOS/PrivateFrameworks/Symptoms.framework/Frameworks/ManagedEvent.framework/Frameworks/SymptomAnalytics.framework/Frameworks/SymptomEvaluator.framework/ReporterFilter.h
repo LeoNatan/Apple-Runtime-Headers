@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
 + (void)enumerateReporterFiltersUsingBlock:(CDUnknownBlockType)arg1;
 + (id)filterForName:(id)arg1 id:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *filterMessage; // @synthesize filterMessage=_filterMessage;
 @property(nonatomic) _Bool symptomFilterChanged; // @synthesize symptomFilterChanged=_symptomFilterChanged;
 @property(readonly, nonatomic) NSMutableArray *symptomFilters; // @synthesize symptomFilters=_symptomFilters;
 @property(readonly, nonatomic) NSString *reporterName; // @synthesize reporterName=_reporterName;
 @property(readonly, nonatomic) unsigned int reporterId; // @synthesize reporterId=_reporterId;
-- (void).cxx_destruct;
 - (int)configureSymptomFilter:(id)arg1;
 - (void)setFinalTimer:(long long)arg1;
 - (_Bool)hasFinalTimer;

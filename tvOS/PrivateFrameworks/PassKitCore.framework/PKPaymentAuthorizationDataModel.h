@@ -26,6 +26,8 @@
     NSString *_paymentApplicationIdentifierForErrors;
     NSArray *_clientErrors;
     _Bool _shippingEditable;
+    _Bool _supportsPreservePeerPaymentBalance;
+    _Bool _usePeerPaymentBalance;
     PKPaymentPass *_pass;
     PKRemoteDevice *_remoteDevice;
     long long _mode;
@@ -70,6 +72,7 @@
     CNContact *_cachedRecentAddress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *cachedRecentAddress; // @synthesize cachedRecentAddress=_cachedRecentAddress;
 @property(readonly, nonatomic) NSSet *allUnavailableRemotePaymentInstruments; // @synthesize allUnavailableRemotePaymentInstruments=_allUnavailableRemotePaymentInstruments;
 @property(readonly, nonatomic) NSSet *allAcceptedRemotePaymentInstruments; // @synthesize allAcceptedRemotePaymentInstruments=_allAcceptedRemotePaymentInstruments;
@@ -83,6 +86,8 @@
 @property(copy, nonatomic) NSString *installmentBindToken; // @synthesize installmentBindToken=_installmentBindToken;
 @property(retain, nonatomic) PKCurrencyAmount *peerPaymentBalanceForAccountPayment; // @synthesize peerPaymentBalanceForAccountPayment=_peerPaymentBalanceForAccountPayment;
 @property(retain, nonatomic) PKBankAccountInformation *bankAccount; // @synthesize bankAccount=_bankAccount;
+@property(nonatomic) _Bool usePeerPaymentBalance; // @synthesize usePeerPaymentBalance=_usePeerPaymentBalance;
+@property(nonatomic) _Bool supportsPreservePeerPaymentBalance; // @synthesize supportsPreservePeerPaymentBalance=_supportsPreservePeerPaymentBalance;
 @property(retain, nonatomic) PKDisbursementApplicationInformation *disbursementApplicationInformation; // @synthesize disbursementApplicationInformation=_disbursementApplicationInformation;
 @property(retain, nonatomic) PKPeerPaymentQuote *peerPaymentQuote; // @synthesize peerPaymentQuote=_peerPaymentQuote;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
@@ -113,7 +118,7 @@
 @property(retain, nonatomic) NSArray *paymentContentItems; // @synthesize paymentContentItems=_paymentContentItems;
 @property(retain, nonatomic) PKPaymentRequest *paymentRequest; // @synthesize paymentRequest=_paymentRequest;
 @property(readonly, nonatomic) long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
+- (void)showPeerPaymentCardDataItem:(_Bool)arg1 withCardDataItem:(_Bool)arg2;
 - (void)fallbackToBypassMode;
 - (long long)_statusForPass:(id)arg1;
 - (void)_setStatus:(long long)arg1 forPass:(id)arg2;
@@ -152,6 +157,7 @@
 - (void)_ensurePaymentContentItems;
 - (void)_ensureItemForClass:(Class)arg1;
 - (void)_didSetItemForClass:(Class)arg1;
+- (void)updatePeerPaymentPromotionForPeerPaymentQuote:(_Bool)arg1;
 - (void)_updatePeerPaymentPromotionAvailability;
 - (void)_ensureItems;
 @property(readonly, nonatomic) NSString *defaultPaymentPassUniqueIdentifier;

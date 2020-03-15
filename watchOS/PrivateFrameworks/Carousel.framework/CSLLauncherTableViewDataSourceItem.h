@@ -16,9 +16,9 @@
 }
 
 + (id)itemWithApplicationInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FBSBundleInfo<CSLAppOrPlaceholderBundleInfo> *applicationInfo; // @synthesize applicationInfo=_applicationInfo;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *bundleIdentifier;
 
 @end

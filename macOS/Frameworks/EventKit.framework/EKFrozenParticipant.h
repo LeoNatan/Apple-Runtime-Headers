@@ -32,6 +32,7 @@
     NSString *_proposalStatusString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *proposalStatusString; // @synthesize proposalStatusString=_proposalStatusString;
 @property(readonly, nonatomic) NSDate *proposedEndDateUnadjustedFromUTC; // @synthesize proposedEndDateUnadjustedFromUTC=_proposedEndDateUnadjustedFromUTC;
 @property(readonly, nonatomic) NSDate *proposedStartDateUnadjustedFromUTC; // @synthesize proposedStartDateUnadjustedFromUTC=_proposedStartDateUnadjustedFromUTC;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *encodedLikenessData; // @synthesize encodedLikenessData=_encodedLikenessData;
 @property(readonly, nonatomic) NSString *comment; // @synthesize comment=_comment;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isCurrentUserForScheduling;
 @property(readonly, nonatomic) BOOL isCurrentUserForSharing;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;

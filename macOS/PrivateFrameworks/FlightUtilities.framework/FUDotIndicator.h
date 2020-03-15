@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _segmentCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long segmentCount; // @synthesize segmentCount=_segmentCount;
 @property(nonatomic) unsigned long long selectedSegment; // @synthesize selectedSegment=_selectedSegment;
 @property(retain, nonatomic) FUStyleProvider *provider; // @synthesize provider=_provider;
 @property(nonatomic) __weak id <FUDotIndicatorTarget> target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseDown:(id)arg1;

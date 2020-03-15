@@ -16,10 +16,10 @@
 }
 
 + (_Bool)isEdiingStateOfContactValid:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUICoreContactScratchpad *contactsRemoved; // @synthesize contactsRemoved=_contactsRemoved;
 @property(retain, nonatomic) CNUICoreContactScratchpad *contactsUpdated; // @synthesize contactsUpdated=_contactsUpdated;
 @property(retain, nonatomic) CNUICoreContactScratchpad *contactsAdded; // @synthesize contactsAdded=_contactsAdded;
-- (void).cxx_destruct;
 - (id)description;
 - (id)applyChangesToContacts:(id)arg1;
 - (id)generateSaveRequest;

@@ -22,6 +22,7 @@
     CDUnknownBlockType _descriptorDidOpenHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL started; // @synthesize started=_started;
 @property(copy, nonatomic) CDUnknownBlockType descriptorDidOpenHandler; // @synthesize descriptorDidOpenHandler=_descriptorDidOpenHandler;
 @property(nonatomic) int descriptor; // @synthesize descriptor=_descriptor;
@@ -31,7 +32,6 @@
 @property(nonatomic) long long options; // @synthesize options=_options;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *eventQueue; // @synthesize eventQueue=_eventQueue;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)observerWillStart;
 - (BOOL)start;

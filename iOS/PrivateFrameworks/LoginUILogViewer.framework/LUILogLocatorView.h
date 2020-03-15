@@ -16,11 +16,11 @@
     UICollectionView *_screenshotCollectionView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *screenshotCollectionView; // @synthesize screenshotCollectionView=_screenshotCollectionView;
 @property(retain, nonatomic) UIButton *screenshotButton; // @synthesize screenshotButton=_screenshotButton;
 @property(retain, nonatomic) UIButton *downArrowButton; // @synthesize downArrowButton=_downArrowButton;
 @property(retain, nonatomic) UIButton *upArrowButton; // @synthesize upArrowButton=_upArrowButton;
-- (void).cxx_destruct;
 - (id)_createButtonWithImageName:(id)arg1;
 - (id)_createScreenshotCollectionView;
 - (id)_createElementStackViewWithElements:(id)arg1;

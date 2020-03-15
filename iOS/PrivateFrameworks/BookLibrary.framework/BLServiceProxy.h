@@ -15,8 +15,8 @@
     NSXPCConnection *_connection;
 }
 
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)getValueSimulateDeviceOutOfSpaceWithReply:(CDUnknownBlockType)arg1;
 - (void)setValueSimulateDeviceOutOfSpace:(_Bool)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)resetAllCrashSimulationOverridesWithReply:(CDUnknownBlockType)arg1;

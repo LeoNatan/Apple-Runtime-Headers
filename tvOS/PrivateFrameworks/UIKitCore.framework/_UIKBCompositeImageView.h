@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *imageViews; // @synthesize imageViews=_imageViews;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

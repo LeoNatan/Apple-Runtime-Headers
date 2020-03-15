@@ -16,9 +16,9 @@
 }
 
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *connectionsByServiceName; // @synthesize connectionsByServiceName=_connectionsByServiceName;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *modsSerialQueue; // @synthesize modsSerialQueue=_modsSerialQueue;
-- (void).cxx_destruct;
 - (id)resumeConnectionWithConfiguration:(id)arg1;
 - (void)dealloc;
 - (id)init;

@@ -28,6 +28,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)imageDescriptorNamed:(id)arg1;
 + (id)icnsImageDescriptors;
+- (void).cxx_destruct;
 @property _Bool preferExtendedColorResources; // @synthesize preferExtendedColorResources=_preferExtendedColorResources;
 @property(nonatomic) unsigned long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(nonatomic) unsigned long long badgeOptions; // @synthesize badgeOptions=_badgeOptions;
@@ -36,7 +37,6 @@
 @property(nonatomic) unsigned long long variantOptions; // @synthesize variantOptions=_variantOptions;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(retain) id <NSCopying> imageCacheKey; // @dynamic imageCacheKey;
 @property(readonly) double sanitizedScale;

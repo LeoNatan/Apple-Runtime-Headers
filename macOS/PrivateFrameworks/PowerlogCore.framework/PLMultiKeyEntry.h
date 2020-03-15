@@ -14,8 +14,8 @@
 }
 
 + (void)load;
-@property(retain) NSMutableDictionary *multiKeys; // @synthesize multiKeys=_multiKeys;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *multiKeys; // @synthesize multiKeys=_multiKeys;
 - (id)serializedForJSON;
 - (id)objectsForSubKey:(id)arg1 ofSubKeyType:(id)arg2;
 - (id)keysForSubKey:(id)arg1 ofSubKeyType:(id)arg2;

@@ -15,9 +15,9 @@
     id <CNDonationExtensionLogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNDonationExtensionLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)redonateAllValuesWithReason:(unsigned long long)arg1;
 - (void)renewExpirationDateForDonatedValue:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
 - (id)description;

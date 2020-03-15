@@ -16,9 +16,9 @@
 }
 
 + (void)deleteWithContext:(id)arg1 objectID:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int target; // @synthesize target=_target;
 @property(readonly, nonatomic) __weak PAOpenGLContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)withFramebuffer:(CDUnknownBlockType)arg1;
 - (void)_withFramebuffer:(CDUnknownBlockType)arg1;
 - (void)_end;

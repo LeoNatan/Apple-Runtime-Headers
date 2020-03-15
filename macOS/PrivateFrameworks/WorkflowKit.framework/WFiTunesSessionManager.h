@@ -14,9 +14,9 @@
     NSURL *_baseURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)getMediaWithURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)lookupMediaWithISBN:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)lookupMediaWithUPC:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;

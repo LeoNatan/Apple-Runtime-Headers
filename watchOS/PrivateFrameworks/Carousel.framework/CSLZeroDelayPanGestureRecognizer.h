@@ -18,10 +18,10 @@
     _Bool _ignoreYTranslation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreYTranslation; // @synthesize ignoreYTranslation=_ignoreYTranslation;
 @property(nonatomic) _Bool ignoreXTranslation; // @synthesize ignoreXTranslation=_ignoreXTranslation;
 @property(nonatomic) _Bool shouldBeginWithZeroDelayHandler; // @synthesize shouldBeginWithZeroDelayHandler=_shouldBeginWithZeroDelayHandler;
-- (void).cxx_destruct;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

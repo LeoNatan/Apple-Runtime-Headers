@@ -14,9 +14,9 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(readonly, nonatomic) ICPBDGSRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)initWithRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 
 @end

@@ -46,6 +46,7 @@
     NSNumber *_dismissForReplyPortInvalidation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *dismissForReplyPortInvalidation; // @synthesize dismissForReplyPortInvalidation=_dismissForReplyPortInvalidation;
 @property(retain, nonatomic) CSLUserNotificationImageDescriptor *imageDescriptor; // @synthesize imageDescriptor=_imageDescriptor;
 @property(retain, nonatomic) NSString *iconPath; // @synthesize iconPath=_iconPath;
@@ -59,7 +60,6 @@
 @property(nonatomic) unsigned long systemSoundID; // @synthesize systemSoundID=_systemSoundID;
 @property(retain, nonatomic) id policyOverrideAssertion; // @synthesize policyOverrideAssertion=_policyOverrideAssertion;
 @property(nonatomic) __weak id <CSLUserNotificationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)wantsDismissalForDNDGesture;
 - (void)animateAlertTransition:(id)arg1;
 - (double)alertTransitionDuration:(id)arg1;

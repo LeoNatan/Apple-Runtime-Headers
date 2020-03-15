@@ -14,9 +14,9 @@
     float _apl;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float apl; // @synthesize apl=_apl;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 
 @end
 

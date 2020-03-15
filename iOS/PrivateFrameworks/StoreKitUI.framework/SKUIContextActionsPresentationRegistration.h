@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) UIViewPropertyAnimator *commitPhasePropertyAnimator; // @synthesize commitPhasePropertyAnimator=_commitPhasePropertyAnimator;
 @property(retain, nonatomic) UIViewPropertyAnimator *previewPhasePropertyAnimator; // @synthesize previewPhasePropertyAnimator=_previewPhasePropertyAnimator;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIPreviewInteraction *previewInteraction; // @synthesize previewInteraction=_previewInteraction;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (void)_presentFromGestureRecognizer:(id)arg1;
 - (void)longPressGestureRecognizerTriggered:(id)arg1;
 - (void)cleanupPreviewInteraction:(id)arg1;

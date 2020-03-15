@@ -18,10 +18,10 @@
 }
 
 + (id)transformerWithContact:(id)arg1 personMapper:(id)arg2 field:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *field; // @synthesize field=_field;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) ABCardViewPersonMapper *personMapper; // @synthesize personMapper=_personMapper;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)setIdentifierIsPrivate:(BOOL)arg1;
 - (void)setPrivacyStateOfAggregateIdentifier:(id)arg1 isPrivate:(BOOL)arg2;
 - (id)reverseTransformMultiValue:(id)arg1;

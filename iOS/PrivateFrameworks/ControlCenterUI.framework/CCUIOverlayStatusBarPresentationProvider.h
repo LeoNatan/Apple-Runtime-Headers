@@ -29,9 +29,9 @@
 + (id)_leadingStatusBarCAAnimationParametersForTransitionState:(id)arg1;
 + (id)_baseC2AnimationParametersForTransitionState:(id)arg1;
 + (id)_hiddenStatusBarFadeAnimationParameters;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CCUIOverlayMetricsProvider> metricsProvider; // @synthesize metricsProvider=_metricsProvider;
 @property(nonatomic) __weak id <CCUIOverlayViewProvider> viewProvider; // @synthesize viewProvider=_viewProvider;
-- (void).cxx_destruct;
 - (double)_delayForTransitionState:(id)arg1 layoutRect:(struct CCUILayoutRect)arg2;
 - (struct CGAffineTransform)_transformForTransitionState:(id)arg1 rubberBandingHeight:(double)arg2;
 - (void)_addModuleAlphaAnimationsToBatch:(id)arg1 transitionState:(id)arg2;

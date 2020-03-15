@@ -22,9 +22,9 @@
     NSString *_bottomText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bottomText; // @synthesize bottomText=_bottomText;
 @property(retain, nonatomic) NSString *topText; // @synthesize topText=_topText;
-- (void).cxx_destruct;
 - (id)_curvedLabel;
 - (void)didFinishTransition;
 - (void)applyTransitionFraction:(double)arg1;

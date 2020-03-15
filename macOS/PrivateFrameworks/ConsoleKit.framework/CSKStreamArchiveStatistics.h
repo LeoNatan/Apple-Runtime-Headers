@@ -18,9 +18,9 @@
 + (id)_entityCountsFromEntries:(id)arg1 total:(unsigned long long *)arg2;
 + (id)statisticsWithRawData:(id)arg1 totalCountThreshold:(unsigned long long)arg2 percentageThreshold:(float)arg3 entriesMaximumCount:(unsigned long long)arg4 type:(unsigned long long)arg5;
 + (id)statisticsWithRawData:(id)arg1 type:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalEntityCount; // @synthesize totalEntityCount=_totalEntityCount;
 @property(retain, nonatomic) NSArray *sortedEntries; // @synthesize sortedEntries=_sortedEntries;
-- (void).cxx_destruct;
 - (id)allPaths;
 
 @end

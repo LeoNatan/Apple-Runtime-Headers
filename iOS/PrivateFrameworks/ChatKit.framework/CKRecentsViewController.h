@@ -25,6 +25,7 @@
     CDUnknownBlockType _draggingCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType draggingCompletionHandler; // @synthesize draggingCompletionHandler=_draggingCompletionHandler;
 @property(nonatomic, getter=isPreparingForDisplay) _Bool preparingForDisplay; // @synthesize preparingForDisplay=_preparingForDisplay;
 @property(nonatomic) _Bool isLoadingRecents; // @synthesize isLoadingRecents=_isLoadingRecents;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSMutableArray *recentItems; // @synthesize recentItems=_recentItems;
 @property(nonatomic) _Bool hasStickerRecents; // @synthesize hasStickerRecents=_hasStickerRecents;
 @property(nonatomic) _Bool hasHandwritingRecents; // @synthesize hasHandwritingRecents=_hasHandwritingRecents;
-- (void).cxx_destruct;
 - (_Bool)stickerBrowserView:(id)arg1 shouldDrawBorderAroundSticker:(id)arg2;
 - (_Bool)dragManager:(id)arg1 canPeelItem:(id)arg2;
 - (_Bool)dragManager:(id)arg1 canRotateItem:(id)arg2;

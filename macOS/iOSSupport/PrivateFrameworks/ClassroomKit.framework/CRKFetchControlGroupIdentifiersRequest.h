@@ -16,9 +16,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL includeTemporary; // @synthesize includeTemporary=_includeTemporary;
 @property(copy, nonatomic) NSString *leaderIdentifier; // @synthesize leaderIdentifier=_leaderIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

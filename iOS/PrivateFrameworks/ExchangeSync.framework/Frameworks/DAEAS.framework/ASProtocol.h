@@ -13,8 +13,8 @@
     ASProtocolCapabilities *_capabilities;
 }
 
-@property(retain, nonatomic) ASProtocolCapabilities *capabilities; // @synthesize capabilities=_capabilities;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ASProtocolCapabilities *capabilities; // @synthesize capabilities=_capabilities;
 - (int)supportsDraftFolderSync;
 - (_Bool)supportsFreeBusyLookup;
 - (int)supportsConversations;

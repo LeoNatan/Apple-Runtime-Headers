@@ -27,6 +27,7 @@
 }
 
 + (Class)keyValuePairsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
 @property(retain, nonatomic) NSData *applicationData; // @synthesize applicationData=_applicationData;
 @property(retain, nonatomic) NSString *payloadIdentifier; // @synthesize payloadIdentifier=_payloadIdentifier;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSData *subjectUUID; // @synthesize subjectUUID=_subjectUUID;
 @property(retain, nonatomic) NSString *payloadType; // @synthesize payloadType=_payloadType;
 @property(retain, nonatomic) NSString *channel; // @synthesize channel=_channel;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

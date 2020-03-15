@@ -15,9 +15,9 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) MPModelLibraryDeleteEntityChangeRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (BOOL)_isCloudLibraryEnabled;
 - (void)_deleteItems:(id)arg1 withLibrary:(id)arg2;
 - (void)_handlePersistentID:(long long)arg1 modelClass:(Class)arg2 mediaLibrary:(id)arg3;

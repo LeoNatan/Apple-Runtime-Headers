@@ -19,6 +19,7 @@
     HKQuery *_query;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKQuery *query; // @synthesize query=_query;
 @property(retain, nonatomic) HKObserverSet *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSSet *devices; // @synthesize devices=_devices;
 @property(nonatomic) unsigned long long deviceType; // @synthesize deviceType=_deviceType;
 @property(nonatomic, getter=isReady) _Bool ready; // @synthesize ready=_ready;
-- (void).cxx_destruct;
 - (id)_localizedNameForDevice:(id)arg1;
 - (id)_sampleTypeForDeviceType;
 - (id)_makeDeviceQueryForDeviceType;

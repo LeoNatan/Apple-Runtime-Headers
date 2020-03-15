@@ -20,12 +20,12 @@
     VSLinkedOnOrAfterChecker *_linkedOnOrAfterChecker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSLinkedOnOrAfterChecker *linkedOnOrAfterChecker; // @synthesize linkedOnOrAfterChecker=_linkedOnOrAfterChecker;
 @property(retain, nonatomic) VSViewServiceRequestCenter *requestCenter; // @synthesize requestCenter=_requestCenter;
 @property(retain, nonatomic) VSPrivacyInfoCenter *privacyInfoCenter; // @synthesize privacyInfoCenter=_privacyInfoCenter;
 @property(retain, nonatomic) VSSecurityTask *securityTask; // @synthesize securityTask=_securityTask;
 @property(nonatomic) __weak id <VSAccountManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)enqueueAccountMetadataRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_enqueueViewServiceRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)checkAccessStatusWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

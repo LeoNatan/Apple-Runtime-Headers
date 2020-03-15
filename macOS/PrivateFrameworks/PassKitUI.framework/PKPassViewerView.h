@@ -13,8 +13,8 @@
     PKPassViewController *_accessibilityPass;
 }
 
-@property(retain) PKPassViewController *accessibilityPass; // @synthesize accessibilityPass=_accessibilityPass;
 - (void).cxx_destruct;
+@property(retain) PKPassViewController *accessibilityPass; // @synthesize accessibilityPass=_accessibilityPass;
 
 @end
 

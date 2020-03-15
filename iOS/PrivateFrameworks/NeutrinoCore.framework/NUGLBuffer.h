@@ -16,10 +16,10 @@
     long long _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int usage; // @synthesize usage=_usage;
 @property(nonatomic) unsigned int target; // @synthesize target=_target;
 @property(readonly, nonatomic) long long size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)validateDataInRange:(struct _NSRange)arg1;
 - (void)invalidateDataInRange:(struct _NSRange)arg1;
 - (void)invalidateData;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy) LSCodeEvaluationInfo *info; // @synthesize info=_info;
 @property(copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithInfo:(id)arg1 handler:(CDUnknownBlockType)arg2;
 
 @end

@@ -24,8 +24,8 @@
 + (id)timeMemoryFeatureWithHolidayForName:(id)arg1;
 + (id)timeMemoryFeatureWithDate:(id)arg1;
 + (id)peopleMemoryFeatureWithPersonLocalIdentifier:(id)arg1;
-@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (_Bool)collidesWithPersonWithLocalIdentifier:(id)arg1;
 - (_Bool)collidesWithAreaWithName:(id)arg1;
 - (_Bool)collidesWithLocationAtCoordinates:(struct CLLocationCoordinate2D)arg1;

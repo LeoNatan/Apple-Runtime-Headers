@@ -18,9 +18,9 @@
 + (BOOL)actionIsThirdPartyWithURL:(id)arg1;
 + (BOOL)currentProcessHasEntitlement:(id)arg1 withValue:(const void *)arg2;
 + (BOOL)secAssessAction:(id)arg1 withURL:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *analyze_sem; // @synthesize analyze_sem=_analyze_sem;
 @property BOOL xprotectSucceeded; // @synthesize xprotectSucceeded=_xprotectSucceeded;
-- (void).cxx_destruct;
 - (BOOL)isQuarantined:(id)arg1;
 - (BOOL)isActionCodeSignedByApple:(id)arg1;
 - (void)malwareCheckEnded:(id)arg1 result:(id)arg2 forURL:(id)arg3;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)tintViewWithBlurEffectStyle:(long long)arg1 color:(id)arg2;
 + (id)ultraLightTintView;
-@property(retain, nonatomic) UIView *tintView; // @synthesize tintView=_tintView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *tintView; // @synthesize tintView=_tintView;
 - (void)layoutSubviews;
 - (id)initWithEffect:(id)arg1;
 

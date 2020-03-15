@@ -16,9 +16,9 @@
     NSString *_sessionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(nonatomic) int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

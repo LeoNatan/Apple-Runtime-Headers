@@ -52,6 +52,7 @@
     PKAddressTextField *_phoneticFamilyNameTextField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requirementsMet; // @synthesize requirementsMet=_requirementsMet;
 @property(nonatomic) __weak PKAddressTextField *phoneticFamilyNameTextField; // @synthesize phoneticFamilyNameTextField=_phoneticFamilyNameTextField;
 @property(nonatomic) __weak PKAddressTextField *phoneticGivenNameTextField; // @synthesize phoneticGivenNameTextField=_phoneticGivenNameTextField;
@@ -81,7 +82,6 @@
 @property(nonatomic) _Bool countryIsEditable; // @synthesize countryIsEditable=_countryIsEditable;
 @property(nonatomic) _Bool readOnly; // @synthesize readOnly=_readOnly;
 @property(nonatomic) id <PKAddressEditorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)countryPicker:(id)arg1 didPickCountryCode:(id)arg2;
 - (void)completer:(id)arg1 didFailWithError:(id)arg2;
 - (void)completerDidUpdateResults:(id)arg1;

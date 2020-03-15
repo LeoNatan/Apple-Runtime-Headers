@@ -15,8 +15,8 @@
     BOOL _isRunning;
 }
 
-@property(readonly, nonatomic) PAGLProgramExecutable *program; // @synthesize program=_program;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PAGLProgramExecutable *program; // @synthesize program=_program;
 - (id)valueForUniform:(id)arg1;
 - (void)setValue:(id)arg1 forUniform:(id)arg2;
 - (BOOL)_setUniform:(id)arg1 withValue:(id)arg2;

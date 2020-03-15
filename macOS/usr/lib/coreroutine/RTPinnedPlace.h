@@ -14,9 +14,9 @@
     RTMapItem *_mapItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithType:(unsigned long long)arg1 mapItem:(id)arg2;
 - (id)init;

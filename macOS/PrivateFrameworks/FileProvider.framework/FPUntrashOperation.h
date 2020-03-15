@@ -14,8 +14,8 @@
     CDUnknownBlockType _untrashCompletionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType untrashCompletionBlock; // @synthesize untrashCompletionBlock=_untrashCompletionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType untrashCompletionBlock; // @synthesize untrashCompletionBlock=_untrashCompletionBlock;
 - (id)fp_prettyDescription;
 - (void)presendNotifications;
 - (void)postStitchingFinishWithResult:(id)arg1 error:(id)arg2;

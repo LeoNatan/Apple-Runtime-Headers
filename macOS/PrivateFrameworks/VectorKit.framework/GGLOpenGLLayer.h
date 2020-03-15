@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     BOOL _readPixels;
 }
 
-@property(readonly, nonatomic) struct CGSize backingSize; // @synthesize backingSize=_backingSize;
-@property id <GGLLayerDelegate> renderDelegate; // @synthesize renderDelegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGSize backingSize; // @synthesize backingSize=_backingSize;
+@property id <GGLLayerDelegate> renderDelegate; // @synthesize renderDelegate=_delegate;
 - (void)dealloc;
 - (void)_deleteBuffers;
 - (void)_updateTexture;

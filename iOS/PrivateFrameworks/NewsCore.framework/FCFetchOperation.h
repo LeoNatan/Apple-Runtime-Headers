@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_fetchCompletionQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) FCFetchOperationResult *result; // @synthesize result=_result;
 @property _Bool canSendFetchCompletionSynchronously; // @synthesize canSendFetchCompletionSynchronously=_canSendFetchCompletionSynchronously;
 @property(retain) NSObject<OS_dispatch_queue> *fetchCompletionQueue; // @synthesize fetchCompletionQueue=_fetchCompletionQueue;
@@ -29,7 +30,6 @@
 @property double maximumCachedAge; // @synthesize maximumCachedAge=_maximumCachedAge;
 @property unsigned long long cachePolicy; // @synthesize cachePolicy=_cachePolicy;
 @property _Bool wifiOnly; // @synthesize wifiOnly=_wifiOnly;
-- (void).cxx_destruct;
 - (void)finishFromEarlyCancellation;
 - (void)operationDidFinishWithError:(id)arg1;
 - (void)takeInputsFromFetchOperation:(id)arg1;

@@ -35,6 +35,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(retain) NSPConfiguration *defaults; // @synthesize defaults=_defaults;
 @property(readonly) long long diskVersion; // @synthesize diskVersion=_diskVersion;
 @property(copy) NSNumber *persistMetrics; // @synthesize persistMetrics=_persistMetrics;
@@ -52,7 +53,6 @@
 @property(copy) NSNumber *enabled; // @synthesize enabled=_enabled;
 @property(readonly) NSNumber *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) NSNumber *version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)incrementSessionCountersOnFirstLaunch;
 - (BOOL)resetStaleEdgeSets;
 @property(copy) NSString *waldoHost;

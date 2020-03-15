@@ -107,6 +107,7 @@
 + (long long)uiSensitivity;
 + (id)newFaceViewOfStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 + (id)newFaceViewOfStyle:(long long)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double editModeTransitionFraction; // @synthesize editModeTransitionFraction=_editModeTransitionFraction;
 @property(readonly, nonatomic) long long toEditMode; // @synthesize toEditMode=_toEditMode;
 @property(readonly, nonatomic) long long fromEditMode; // @synthesize fromEditMode=_fromEditMode;
@@ -146,7 +147,6 @@
 @property(retain, nonatomic) UIView *complicationContainerView; // @synthesize complicationContainerView=_complicationContainerView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) UIView *foregroundContainerView; // @synthesize foregroundContainerView=_foregroundContainerView;
-- (void).cxx_destruct;
 - (id)interpolatedColorForView:(id)arg1;
 - (id)colorForView:(id)arg1 accented:(_Bool)arg2;
 - (id)filterForView:(id)arg1 style:(long long)arg2;

@@ -16,11 +16,11 @@
     CSLSBacklightAssertion *_backlightAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) int playbackCompletionType; // @synthesize playbackCompletionType=_playbackCompletionType;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 
 @end
 

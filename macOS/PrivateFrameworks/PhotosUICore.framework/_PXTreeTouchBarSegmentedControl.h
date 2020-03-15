@@ -12,9 +12,9 @@
     id _representedItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL representedItemHasChildren; // @synthesize representedItemHasChildren=_representedItemHasChildren;
 @property(retain, nonatomic) id representedItem; // @synthesize representedItem=_representedItem;
-- (void).cxx_destruct;
 
 @end
 

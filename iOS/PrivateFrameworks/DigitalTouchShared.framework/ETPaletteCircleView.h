@@ -15,8 +15,8 @@
 + (id)selectionMarkerColor;
 + (double)selectionMarkerDiameter;
 + (double)paletteCircleDiameter;
-@property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_updateSelectionMarkerFrame;
 - (void)layoutSubviews;

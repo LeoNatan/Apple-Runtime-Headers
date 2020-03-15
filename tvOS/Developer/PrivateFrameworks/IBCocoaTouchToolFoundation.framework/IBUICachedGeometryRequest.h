@@ -14,9 +14,9 @@
     id _object;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(copy, nonatomic) NSString *requestedKeyPath; // @synthesize requestedKeyPath=_requestedKeyPath;
-- (void).cxx_destruct;
 - (void)processResult:(id)arg1 orError:(id)arg2;
 - (id)description;
 - (void)encodeWithBinaryArchiver:(id)arg1;

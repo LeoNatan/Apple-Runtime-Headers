@@ -20,8 +20,8 @@
 + (id)invertControlWithValue:(BOOL)arg1 isSettable:(BOOL)arg2 forElement:(unsigned int)arg3 inScope:(unsigned int)arg4 withPlugin:(id)arg5;
 + (id)phantomPowerControlWithValue:(BOOL)arg1 isSettable:(BOOL)arg2 forElement:(unsigned int)arg3 inScope:(unsigned int)arg4 withPlugin:(id)arg5;
 + (id)muteControlWithValue:(BOOL)arg1 isSettable:(BOOL)arg2 forElement:(unsigned int)arg3 inScope:(unsigned int)arg4 withPlugin:(id)arg5;
-@property(readonly, nonatomic, getter=isSettable) BOOL settable; // @synthesize settable=_settable;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isSettable) BOOL settable; // @synthesize settable=_settable;
 - (id)driverClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
 @property(nonatomic) BOOL value; // @dynamic value;

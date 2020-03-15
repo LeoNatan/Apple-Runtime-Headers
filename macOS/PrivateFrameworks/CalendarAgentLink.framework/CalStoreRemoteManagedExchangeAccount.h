@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSURL *internalWebServicesURL; // @synthesize internalWebServicesURL=_internalWebServicesURL;
 @property(retain, nonatomic) NSURL *externalURL; // @synthesize externalURL=_externalURL;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

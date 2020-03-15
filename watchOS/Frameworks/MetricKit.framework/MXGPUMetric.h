@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) NSMeasurement *cumulativeGPUTime; // @synthesize cumulativeGPUTime=_cumulativeGPUTime;
 - (void).cxx_destruct;
+@property(readonly) NSMeasurement *cumulativeGPUTime; // @synthesize cumulativeGPUTime=_cumulativeGPUTime;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -24,6 +24,7 @@
     NSString *_userName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSString *siriDebugID; // @synthesize siriDebugID=_siriDebugID;
 @property(retain, nonatomic) NSString *sharedHomeID; // @synthesize sharedHomeID=_sharedHomeID;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *voiceProfileFilePath; // @synthesize voiceProfileFilePath=_voiceProfileFilePath;
 @property(retain, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
 @property(retain, nonatomic) NSString *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1;

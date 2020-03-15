@@ -15,10 +15,10 @@
     NFLAbstractCellPropertyProvider *_propertyProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFLAbstractCellPropertyProvider *propertyProvider; // @synthesize propertyProvider=_propertyProvider;
 @property(nonatomic) __weak NFLFeedSettings *feedSettings; // @synthesize feedSettings=_feedSettings;
 @property(retain, nonatomic) NFLAbstractRanker *nextRanker; // @synthesize nextRanker=_nextRanker;
-- (void).cxx_destruct;
 - (double)_applyRanksForCardWithLayoutData:(id)arg1 tileInfo:(id)arg2 successfulRankCount:(long long *)arg3 veto:(_Bool *)arg4 rankerDictionary:(id)arg5;
 @property(readonly, nonatomic) long long rankerWeight;
 @property(readonly, nonatomic) NSString *rankerName;

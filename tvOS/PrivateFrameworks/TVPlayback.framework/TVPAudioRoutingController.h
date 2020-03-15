@@ -29,6 +29,7 @@
 + (void)_updateEffectiveDiscoveryMode;
 + (id)_sharedSelectedRouteVolume;
 + (_Bool)automaticallyNotifiesObserversOfSelectedRouteVolume;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *fetchCompletionHandlers; // @synthesize fetchCompletionHandlers=_fetchCompletionHandlers;
 @property(nonatomic) _Bool fetchingRoutes; // @synthesize fetchingRoutes=_fetchingRoutes;
 @property(retain, nonatomic) TVPAudioRouteVolume *selectedRouteVolume; // @synthesize selectedRouteVolume=_selectedRouteVolume;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
 @property(nonatomic) long long discoveryMode; // @synthesize discoveryMode=_discoveryMode;
 @property(nonatomic) __weak id <TVPAudioRoutingControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateVolumeControl;
 - (id)_knownRoutesFromAvailableRoutes:(id)arg1;
 - (void)_updateAudioRoutesFromRouteDescriptions:(id)arg1;

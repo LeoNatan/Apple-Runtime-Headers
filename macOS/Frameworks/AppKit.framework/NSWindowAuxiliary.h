@@ -278,6 +278,7 @@
     NSObject<NSAppearanceCustomization> *_appearanceParent;
 }
 
+- (void).cxx_destruct;
 @property __weak NSObject<NSAppearanceCustomization> *appearanceParent; // @synthesize appearanceParent=_appearanceParent;
 @property BOOL enteringFullScreen; // @synthesize enteringFullScreen=_enteringFullScreen;
 @property __weak _NSWindowAnimator *animator; // @synthesize animator=_animator;
@@ -292,7 +293,6 @@
 @property(retain) NSDictionary *cachedShadowParameters; // @synthesize cachedShadowParameters=_cachedShadowParameters;
 @property(retain) NSScreen *savedScreen; // @synthesize savedScreen=_savedScreen;
 @property(retain) NSViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
-- (void).cxx_destruct;
 @property __weak NSWindowController *windowController; // @dynamic windowController;
 - (void)dealloc;
 

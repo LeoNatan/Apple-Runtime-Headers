@@ -14,9 +14,9 @@
     GEORelatedSearchSuggestion *_relatedSearchSuggestion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEORelatedSearchSuggestion *relatedSearchSuggestion; // @synthesize relatedSearchSuggestion=_relatedSearchSuggestion;
 @property(retain, nonatomic) GEOPDDisplayHeaderSubstitute *displayHeaderSubstitute; // @synthesize displayHeaderSubstitute=_displayHeaderSubstitute;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *interpretedQuery;
 @property(readonly, nonatomic) int substituteType;
 - (id)initWithPDDisplayHeaderSubstitute:(id)arg1;

@@ -30,6 +30,7 @@
 + (id)_destructiveFocusedButtonBackgroundColor;
 + (id)_destructiveButtonBackgroundColor;
 + (id)_buttonBackgroundColor;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasLongText; // @synthesize hasLongText=_hasLongText;
 @property(readonly, nonatomic) UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
 @property(readonly, nonatomic) NSMapTable *buttonHandlers; // @synthesize buttonHandlers=_buttonHandlers;
@@ -42,7 +43,6 @@
 @property(nonatomic) _Bool shouldDismissAutomatically; // @synthesize shouldDismissAutomatically=_shouldDismissAutomatically;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIImage *headerImage; // @synthesize headerImage=_headerImage;
-- (void).cxx_destruct;
 - (struct CGRect)_textViewLongTextFrame;
 - (struct CGRect)_titleLabelLongTextFrame;
 - (double)_buttonAreaLongTextHeight;

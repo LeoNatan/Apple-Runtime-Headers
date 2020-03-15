@@ -18,10 +18,10 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *underlyingURL; // @synthesize underlyingURL=_url;
 @property(copy, nonatomic) NSString *referrerURLString; // @synthesize referrerURLString=_referrerURLString;
 @property(copy, nonatomic) NSString *referrerApplicationName; // @synthesize referrerApplicationName=_referrerApplicationName;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

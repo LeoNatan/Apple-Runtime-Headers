@@ -19,11 +19,11 @@
 + (id)buildRequiredOnly;
 + (id)buildWithEncryptionAlgorithm:(id)arg1 withIntegrityAlgorithm:(id)arg2 withDiffieHellmanGroup:(id)arg3 withLifeTimeInMinutes:(id)arg4;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadLifeTimeInMinutes; // @synthesize payloadLifeTimeInMinutes=_payloadLifeTimeInMinutes;
 @property(copy, nonatomic) NSNumber *payloadDiffieHellmanGroup; // @synthesize payloadDiffieHellmanGroup=_payloadDiffieHellmanGroup;
 @property(copy, nonatomic) NSString *payloadIntegrityAlgorithm; // @synthesize payloadIntegrityAlgorithm=_payloadIntegrityAlgorithm;
 @property(copy, nonatomic) NSString *payloadEncryptionAlgorithm; // @synthesize payloadEncryptionAlgorithm=_payloadEncryptionAlgorithm;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

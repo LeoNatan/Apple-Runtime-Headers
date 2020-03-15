@@ -22,8 +22,8 @@
 + (id)_entryEntityName;
 + (id)_managedObjectModel;
 + (id)_persistentStoreURL;
-@property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 - (void)updateBookmarks:(id)arg1;
 - (void)setLookupItem:(id)arg1 forAdamID:(id)arg2;
 - (id)lookupItemForAdamID:(id)arg1;

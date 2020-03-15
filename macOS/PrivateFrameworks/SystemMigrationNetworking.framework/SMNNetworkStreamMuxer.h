@@ -31,6 +31,7 @@
     long long _downBufferSize;
 }
 
+- (void).cxx_destruct;
 @property BOOL interrupted; // @synthesize interrupted=_interrupted;
 @property long long downBufferSize; // @synthesize downBufferSize=_downBufferSize;
 @property long long upBufferSize; // @synthesize upBufferSize=_upBufferSize;
@@ -47,7 +48,6 @@
 @property(retain) id <SMNNetworkSecurityProvider> securityProvider; // @synthesize securityProvider=_securityProvider;
 @property __weak id <SMNStreamMuxerDelegate> delegate; // @synthesize delegate=_delegate;
 @property unsigned long long protocolVersion; // @synthesize protocolVersion=_protocolVersion;
-- (void).cxx_destruct;
 - (BOOL)_read:(int)arg1 buffer:(void *)arg2 bufferSize:(unsigned long long)arg3 useSecurityProvider:(BOOL)arg4 usingFailureHandler:(CDUnknownBlockType)arg5;
 - (BOOL)_readFromPipe:(int)arg1 buffer:(void *)arg2 bufferSize:(unsigned long long)arg3 usingFailureHandler:(CDUnknownBlockType)arg4;
 - (BOOL)_readFromMuxerFd:(void *)arg1 bufferSize:(unsigned long long)arg2 usingFailureHandler:(CDUnknownBlockType)arg3;

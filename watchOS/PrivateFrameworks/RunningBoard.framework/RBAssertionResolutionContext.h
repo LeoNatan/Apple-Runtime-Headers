@@ -29,6 +29,7 @@
     RBSystemState *_systemState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *touchedAssertions; // @synthesize touchedAssertions=_touchedAssertions;
 @property(readonly, nonatomic) RBSystemState *systemState; // @synthesize systemState=_systemState;
 @property(readonly, nonatomic) RBProcessStateChangeSet *changeSet; // @synthesize changeSet=_changeSet;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) RBProcessMap *stateMap; // @synthesize stateMap=_stateMap;
 @property(retain, nonatomic) RBProcessIndex *processIndex; // @synthesize processIndex=_processIndex;
 @property(retain, nonatomic) RBAssertionCollection *assertionCollection; // @synthesize assertionCollection=_assertionCollection;
-- (void).cxx_destruct;
 - (void)_resolveSystemState;
 - (void)_finalizeStateChangeSet;
 - (void)_resolveProcessStateForTarget:(id)arg1 ofType:(unsigned int)arg2 viaAssertion:(id)arg3;

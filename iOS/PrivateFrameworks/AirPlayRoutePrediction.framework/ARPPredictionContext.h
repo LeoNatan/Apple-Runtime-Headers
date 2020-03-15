@@ -15,10 +15,10 @@
     NSDictionary *_microLocationProbabilityVector;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *microLocationProbabilityVector; // @synthesize microLocationProbabilityVector=_microLocationProbabilityVector;
 @property(readonly, copy, nonatomic) NSDate *predictionDate; // @synthesize predictionDate=_predictionDate;
 @property(readonly, copy, nonatomic) NSDate *microLocationEventDate; // @synthesize microLocationEventDate=_microLocationEventDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithPredictionDate:(id)arg1 microLocationEventDate:(id)arg2 microLocationProbabilityVector:(id)arg3;
 

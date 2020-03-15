@@ -13,8 +13,8 @@
     NSNumber *_flagColor;
 }
 
-@property(retain, nonatomic) NSNumber *flagColor; // @synthesize flagColor=_flagColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *flagColor; // @synthesize flagColor=_flagColor;
 
 @end
 

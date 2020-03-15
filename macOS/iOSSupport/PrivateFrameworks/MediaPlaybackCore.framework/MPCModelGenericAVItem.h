@@ -70,6 +70,7 @@
 }
 
 + (id)_utilitySerialQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *trackInfo; // @synthesize trackInfo=_trackInfo;
 @property(nonatomic) long long stationItemLikedState; // @synthesize stationItemLikedState=_stationItemLikedState;
 @property(readonly, copy, nonatomic) MPCPlaybackRequestEnvironment *playbackRequestEnvironment; // @synthesize playbackRequestEnvironment=_playbackRequestEnvironment;
@@ -86,7 +87,6 @@
 @property(nonatomic) BOOL supportsRadioTrackActions; // @synthesize supportsRadioTrackActions;
 - (id)leaseStatus;
 - (long long)leasePlaybackPreventionState;
-- (void).cxx_destruct;
 - (void)_updateJingleTimedMetadata;
 - (void)_updateBookmarkTime:(double)arg1 isCheckpoint:(BOOL)arg2;
 - (void)_updateAutomaticSubscriptionLeaseRefresh;
@@ -113,6 +113,7 @@
 - (void)_suzeLeaseSessionRenewDidFailNotification:(id)arg1;
 - (void)_subscriptionLeaseStatusDidChangeNotification:(id)arg1;
 - (void)_contentTasteControllerDidChangeNotification:(id)arg1;
+- (void)_ageVerificationStateDidChangeNotification:(id)arg1;
 - (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)nowPlayingInfoCenter:(id)arg1 lyricsForContentItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_reloadTimedMetadataRequest;
@@ -165,6 +166,7 @@
 - (BOOL)supportsLikedState;
 - (long long)storeSubscriptionAdamID;
 - (long long)storeItemInt64ID;
+- (long long)stationProviderID;
 - (id)stationStringID;
 - (id)stationName;
 - (id)stationHash;
@@ -199,6 +201,7 @@
 - (BOOL)isStreamable;
 - (BOOL)isRadioItem;
 - (BOOL)isLikedStateEnabled;
+- (id)explicitBadge;
 - (BOOL)isExplicitTrack;
 - (BOOL)isAssetURLValid;
 - (BOOL)isAlwaysLive;

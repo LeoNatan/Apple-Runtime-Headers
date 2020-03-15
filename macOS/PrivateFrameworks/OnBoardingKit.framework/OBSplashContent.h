@@ -14,9 +14,9 @@
     NSArray *_bullets;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *bullets; // @synthesize bullets=_bullets;
 @property(copy) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 
 @end
 

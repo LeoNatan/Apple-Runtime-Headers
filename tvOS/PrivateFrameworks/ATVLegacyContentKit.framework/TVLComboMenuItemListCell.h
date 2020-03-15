@@ -15,8 +15,8 @@
     TVLComboMenuItemView *_menuItemView;
 }
 
-@property(readonly, nonatomic) TVLComboMenuItemView *menuItemView; // @synthesize menuItemView=_menuItemView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TVLComboMenuItemView *menuItemView; // @synthesize menuItemView=_menuItemView;
 - (id)labelForMarquee;
 - (void)configureWithMenuItemElement:(id)arg1;
 - (void)layoutSubviews;

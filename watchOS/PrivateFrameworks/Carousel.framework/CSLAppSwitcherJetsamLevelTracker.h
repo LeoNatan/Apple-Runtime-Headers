@@ -22,9 +22,9 @@
     NSArray *_switcherControllers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *switcherControllers; // @synthesize switcherControllers=_switcherControllers;
 @property(nonatomic) __weak id <CSLAppSwitcherJetsamLevelTrackerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_queue_removeBorderFromSwitcherControllers:(id)arg1;
 - (void)_queue_evaluateSwitcherControllers:(id)arg1 elevatedBundleIDs:(id)arg2;
 - (void)jetsamBandManager:(id)arg1 updatedElevatedBundleIDs:(id)arg2;

@@ -15,8 +15,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 - (void)setInterfaceOrientation:(long long)arg1 animationSettings:(id)arg2 direction:(long long)arg3;
 - (void)setInterfaceOrientation:(long long)arg1;
 - (id)init;

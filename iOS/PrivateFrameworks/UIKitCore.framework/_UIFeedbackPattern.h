@@ -24,12 +24,12 @@
 + (id)feedbackPattern;
 + (id)type;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *repeatTimer; // @synthesize repeatTimer=_repeatTimer;
 @property(readonly, nonatomic) _Bool isRepeating; // @synthesize isRepeating=_isRepeating;
 @property(retain, nonatomic) NSMutableArray *feedbacks; // @synthesize feedbacks=_feedbacks;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic, getter=isHighPriority) _Bool highPriority; // @synthesize highPriority=_highPriority;
-- (void).cxx_destruct;
 - (id)_debugDictionary;
 - (void)setPosition:(float)arg1;
 @property(readonly, nonatomic, getter=isPlaying) _Bool playing;

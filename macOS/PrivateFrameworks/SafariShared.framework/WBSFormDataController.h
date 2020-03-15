@@ -64,8 +64,8 @@
 + (id)_metadataForControlWithUniqueID:(id)arg1 inForm:(id)arg2;
 + (BOOL)convertNumber:(id)arg1 toAutoFillFormType:(unsigned long long *)arg2;
 + (id)dontSaveMarker;
-@property(readonly, nonatomic) WBSAutoFillQuirksManager *autoFillQuirksManager; // @synthesize autoFillQuirksManager=_autoFillQuirksManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WBSAutoFillQuirksManager *autoFillQuirksManager; // @synthesize autoFillQuirksManager=_autoFillQuirksManager;
 - (BOOL)textFieldIsEligibleForAutomaticStrongPassword:(id)arg1 form:(id)arg2 ignorePreviousDecision:(BOOL)arg3 textFieldCurrentlyContainsStrongPassword:(char *)arg4;
 - (BOOL)textFieldMetadataMeetsRequirementsForAutomaticStrongPasswordTreatment:(id)arg1 form:(id)arg2;
 - (void)notifyKeychainWasDirectlyAffectedBySafari;
@@ -164,7 +164,8 @@
 - (id)init;
 - (BOOL)_dateIsWithinGracePeriodForNotAutomaticallySubmittingLoginForms:(id)arg1;
 - (void)_removeStaleEntriesFromMapOfHighLevelDomainToLastAutomaticFormSubmission;
-- (void)didAutomaticallySubmitFormWhenFillingOnURL:(id)arg1;
+- (id)_formKeyForMapOfHighLevelDomainToLastAutomaticFormSubmission:(id)arg1 formMetadata:(id)arg2;
+- (void)didAutomaticallySubmitFormWhenFillingOnURL:(id)arg1 formMetadata:(id)arg2;
 - (BOOL)shouldSubmitForm:(id)arg1 withCredential:(id)arg2 onURL:(id)arg3;
 - (long long)autoFillActionForFormType:(unsigned long long)arg1 onURL:(id)arg2 shouldSubmitAfterFilling:(BOOL)arg3;
 

@@ -14,9 +14,9 @@
     id <MTLCommandQueue> _commandQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

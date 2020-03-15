@@ -42,6 +42,7 @@
     struct CGRect _displayedRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *allDaySeparatorHeightConstraint; // @synthesize allDaySeparatorHeightConstraint=_allDaySeparatorHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *timeLineHeightConstraint; // @synthesize timeLineHeightConstraint=_timeLineHeightConstraint;
 @property(retain, nonatomic) CalUIDayViewTimeLineView *timelineView; // @synthesize timelineView=_timelineView;
@@ -66,7 +67,6 @@
 @property(retain, nonatomic) NSDate *displayEnd; // @synthesize displayEnd=_displayEnd;
 @property(retain, nonatomic) id <CalUIDayViewGadgetAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
 @property(nonatomic) __weak id <CalUIDayViewGadgetDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (BOOL)shouldShowNewDotForOccurrence:(id)arg1;
 - (BOOL)occurrenceWantsTentativeAppearance:(id)arg1;
 - (BOOL)_isPreviewEvent:(id)arg1;

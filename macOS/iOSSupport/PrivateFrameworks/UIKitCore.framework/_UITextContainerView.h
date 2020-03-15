@@ -38,12 +38,12 @@ __attribute__((visibility("hidden")))
     id <_UITextContainerViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UITextViewCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 @property(nonatomic) struct CGSize minSize; // @synthesize minSize=_minSize;
 @property(nonatomic) __weak id <_UITextContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak NSTextContainer *textContainer; // @synthesize textContainer=_textContainer;
-- (void).cxx_destruct;
 - (void)setDrawingFindIndicator:(BOOL)arg1;
 - (BOOL)isDrawingFindIndicator;
 - (struct CGRect)_intersectRectWithConstrainedTiledRenderingRect:(struct CGRect)arg1;
@@ -56,8 +56,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL usesTiledViews;
 - (struct CGRect)visibleRect;
 @property(readonly, copy) NSString *description;
-- (id)attributedSubstringForMarkedRange;
 - (id)markedTextAttributes;
+- (id)attributedSubstringForMarkedRange;
 @property(readonly, nonatomic) NSDictionary *markedTextStyle;
 @property(nonatomic) struct _NSRange markedRange;
 - (void)setLayoutOrientation:(long long)arg1;

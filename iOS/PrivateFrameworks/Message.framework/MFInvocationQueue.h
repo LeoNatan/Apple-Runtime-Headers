@@ -22,10 +22,10 @@
 
 + (void)flushAllInvocationQueues;
 + (id)sharedInvocationQueue;
+- (void).cxx_destruct;
 @property(nonatomic) double threadRecycleTimeout; // @synthesize threadRecycleTimeout=_threadRecycleTimeout;
 @property(nonatomic) int threadPriorityTrigger; // @synthesize threadPriorityTrigger=_threadPriorityTrigger;
 @property(readonly, nonatomic) unsigned long long threadCount; // @synthesize threadCount=_numThreads;
-- (void).cxx_destruct;
 - (id)copyDiagnosticInformation;
 - (void)didCancel:(id)arg1;
 - (void)_drainQueue:(id)arg1;

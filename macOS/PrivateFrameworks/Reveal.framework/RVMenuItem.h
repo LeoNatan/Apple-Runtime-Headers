@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     BOOL _forceLookup;
 }
 
-@property(nonatomic) BOOL forceLookup; // @synthesize forceLookup=_forceLookup;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL forceLookup; // @synthesize forceLookup=_forceLookup;
 - (long long)tagForType;
 - (void)_rvMenuItemAction;
 - (id)initWithTitle:(id)arg1 presenter:(id)arg2 item:(id)arg3 documentContext:(id)arg4 presentingContext:(id)arg5 options:(id)arg6;

@@ -16,11 +16,11 @@
     NSMutableSet *_deletedIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *deletedIDs; // @synthesize deletedIDs=_deletedIDs;
 @property(readonly, nonatomic) NSMutableSet *insertedIDs; // @synthesize insertedIDs=_insertedIDs;
 @property(readonly, nonatomic) NSMutableSet *timeUpdatedIDs; // @synthesize timeUpdatedIDs=_timeUpdatedIDs;
 @property(readonly, nonatomic) NSMutableSet *nonTimeUpdatedIDs; // @synthesize nonTimeUpdatedIDs=_nonTimeUpdatedIDs;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)hasAnyChanges;
 - (id)immutableAllModifiedObjectIDs;

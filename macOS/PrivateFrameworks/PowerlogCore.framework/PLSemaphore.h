@@ -18,12 +18,12 @@
 }
 
 + (id)sharedSemaphoreForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSCondition *pendingObjectsLock; // @synthesize pendingObjectsLock=_pendingObjectsLock;
 @property(retain) NSString *key; // @synthesize key=_key;
 @property(retain) NSMutableSet *pendingDoneObjects; // @synthesize pendingDoneObjects=_pendingDoneObjects;
 @property(retain) NSMutableSet *interestedObjects; // @synthesize interestedObjects=_interestedObjects;
 @property double timeout; // @synthesize timeout=_timeout;
-- (void).cxx_destruct;
 - (void)waitWithBlockSync:(CDUnknownBlockType)arg1;
 - (void)waitWithBlock:(CDUnknownBlockType)arg1;
 - (void)signalStartListening;

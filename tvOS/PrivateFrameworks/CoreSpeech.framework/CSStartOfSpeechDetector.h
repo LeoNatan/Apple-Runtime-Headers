@@ -13,8 +13,8 @@
     id <CSStartOfSpeechDetectorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSStartOfSpeechDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSStartOfSpeechDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)endAudio;
 - (void)addAudio:(id)arg1 numSamples:(unsigned long long)arg2;
 - (void)resetForNewRequest;

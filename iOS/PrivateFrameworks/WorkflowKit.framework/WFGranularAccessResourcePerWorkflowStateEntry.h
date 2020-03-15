@@ -20,9 +20,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)valueKey;
 + (Class)valueTypeClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *authorized; // @synthesize authorized=_authorized;
 @property(readonly, nonatomic) id <NSObject><NSSecureCoding> value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

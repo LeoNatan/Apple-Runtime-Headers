@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     NSTableView *_tableView;
 }
 
-@property(nonatomic) __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)dealloc;

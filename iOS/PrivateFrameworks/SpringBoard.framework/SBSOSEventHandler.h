@@ -23,8 +23,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic, getter=_isRunning, setter=_setRunning:) _Bool running; // @synthesize running=_running;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_isRunning, setter=_setRunning:) _Bool running; // @synthesize running=_running;
 @property(readonly, nonatomic, getter=_sosManager) SOSManager *sosManager; // @synthesize sosManager=_override_sosManager;
 @property(readonly, nonatomic, getter=_lockScreenManager) SBLockScreenManager *lockScreenManager; // @synthesize lockScreenManager=_override_lockscreenManager;
 @property(readonly, nonatomic, getter=_backlightController) SBBacklightController *backlightController; // @synthesize backlightController=_override_backlightController;

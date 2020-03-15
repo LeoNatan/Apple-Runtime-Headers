@@ -16,9 +16,9 @@
     HDCodableCodedQuantity *_numerator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableCodedQuantity *denominator; // @synthesize denominator=_denominator;
 @property(retain, nonatomic) HDCodableCodedQuantity *numerator; // @synthesize numerator=_numerator;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

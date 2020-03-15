@@ -14,9 +14,9 @@
     NSString *_objectUniqueID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *objectUniqueID; // @synthesize objectUniqueID=_objectUniqueID;
 @property(retain, nonatomic) NPKCompanionAgentConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)updateSettings:(unsigned long long)arg1;
 
 @end

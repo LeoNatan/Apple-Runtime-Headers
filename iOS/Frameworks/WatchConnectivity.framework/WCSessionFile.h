@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(copy, nonatomic) NSNumber *fileSize; // @synthesize fileSize=_fileSize;
 @property(copy) NSString *fileIdentifier; // @synthesize fileIdentifier=_fileIdentifier;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) WCUserInfo *userInfoStorage; // @synthesize userInfoStorage=_userInfoStorage;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (long long)compare:(id)arg1;

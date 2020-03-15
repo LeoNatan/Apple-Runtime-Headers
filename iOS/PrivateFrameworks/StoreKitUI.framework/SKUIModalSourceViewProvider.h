@@ -19,12 +19,12 @@
     UIView *_sourceView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) UIBarButtonItem *sourceButtonBarItem; // @synthesize sourceButtonBarItem=_sourceButtonBarItem;
 @property(retain, nonatomic) UIView *originalSourceView; // @synthesize originalSourceView=_originalSourceView;
 @property(nonatomic) __weak id <SKUIModalSourceViewProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)showOriginalSourceView;
 - (void)hideOriginalSourceView;
 - (id)animationView;

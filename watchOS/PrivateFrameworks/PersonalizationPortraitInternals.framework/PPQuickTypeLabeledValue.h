@@ -19,11 +19,11 @@
 + (id)labeledValueWithLabel:(id)arg1 value:(id)arg2 scoreBoost:(double)arg3 fields:(unsigned int)arg4;
 + (id)labeledValueWithLabel:(id)arg1 value:(id)arg2 scoreBoost:(double)arg3;
 + (id)labeledValueWithLabel:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int fields; // @synthesize fields=_fields;
 @property(readonly, nonatomic) double scoreBoost; // @synthesize scoreBoost=_scoreBoost;
 @property(readonly, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1 value:(id)arg2 scoreBoost:(double)arg3 fields:(unsigned int)arg4;
 
 @end

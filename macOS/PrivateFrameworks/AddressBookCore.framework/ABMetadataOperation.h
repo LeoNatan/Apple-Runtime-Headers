@@ -16,8 +16,8 @@
     BOOL _addressBookTracksAllSources;
 }
 
-@property(readonly) id <ABMetadataManager> metadataManager; // @synthesize metadataManager=_metadataManager;
 - (void).cxx_destruct;
+@property(readonly) id <ABMetadataManager> metadataManager; // @synthesize metadataManager=_metadataManager;
 - (void)stamp;
 - (void)markUniqueIdsAsCompleted:(id)arg1;
 - (void)markUniqueIdsAsPlanned:(id)arg1;

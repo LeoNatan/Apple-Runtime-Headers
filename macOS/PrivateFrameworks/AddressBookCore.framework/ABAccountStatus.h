@@ -19,11 +19,11 @@
 + (id)offlineStatusWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)networkActivityStatus;
 + (id)noStatus;
+- (void).cxx_destruct;
 @property(readonly) struct CGRect frameForAccessoryViews; // @synthesize frameForAccessoryViews=_frameForAccessoryViews;
 @property(readonly) unsigned long long state; // @synthesize state=_state;
 @property(readonly) SEL action; // @synthesize action=_action;
 @property(readonly) id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)initWithState:(unsigned long long)arg1;
 
 @end

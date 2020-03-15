@@ -20,11 +20,11 @@
 }
 
 + (Class)valueClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(readonly, nonatomic) NSArray *possibleValues; // @synthesize possibleValues=_possibleValues;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <HUControlViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isDisabled) _Bool disabled;
 @property(retain, nonatomic) id value;
 - (void)_selectedIndexChanged:(id)arg1;

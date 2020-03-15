@@ -13,10 +13,10 @@
 {
     unsigned int _indexType;
     unsigned long long _polygonType;
-    // Error parsing type: ^{MPSPrimitiveBVH=^^?{atomic<unsigned int>=AI}^{MPSBVHGroup}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQiIi@@^{MPSLibrary}^{MPSBufferRange}I}, name: _bvh
+    // Error parsing type: ^{MPSPrimitiveBVH=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBVHGroup}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQiIi@@^{MPSLibrary}^{MPSBufferRange}I}, name: _bvh
     NSArray *_polygonBuffers;
     id <MTLArgumentEncoder> _resourceEncoder;
-    // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}, name: _resourceBufferRange
+    // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}, name: _resourceBufferRange
     unsigned long long _vertexStride;
 }
 
@@ -59,13 +59,13 @@
 - (unsigned long long)innerNodeCount;
 - (unsigned long long)leafNodeCount;
 - (int)rootNodeType;
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: pageBufferRange
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: pageTable1BufferRange
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: pageTable0BufferRange
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: leafNodeBufferRange
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: innerNodeBufferRange
--     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>=AI}^{MPSBufferAllocator}}16@0:8, name: primitiveIndexBufferRange
--     // Error parsing type: ^{MPSBVH=^^?{atomic<unsigned int>=AI}^{MPSBVHGroup}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQiIi@@^{MPSLibrary}}16@0:8, name: bvh
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: pageBufferRange
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: pageTable1BufferRange
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: pageTable0BufferRange
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: leafNodeBufferRange
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: innerNodeBufferRange
+-     // Error parsing type: ^{MPSBufferRange=^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQ{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBufferAllocator}}16@0:8, name: primitiveIndexBufferRange
+-     // Error parsing type: ^{MPSBVH=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}^{MPSBVHGroup}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}^{MPSBufferRange}QQiIi@@^{MPSLibrary}}16@0:8, name: bvh
 @property(nonatomic) unsigned int indexType;
 @property(nonatomic) unsigned long long polygonType;
 

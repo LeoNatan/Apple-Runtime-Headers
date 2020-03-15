@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 
 + (id)constraintSetWithCollapsableConstantPreferredEqualityConstraint:(id)arg1 equalityPriority:(unsigned int)arg2;
 + (id)constraintSetWithRequiredEqualityConstraint:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float equalityConstant; // @synthesize equalityConstant=_equalityConstant;
 @property(nonatomic) float maxConstant; // @synthesize maxConstant=_maxConstant;
 @property(nonatomic) float minConstant; // @synthesize minConstant=_minConstant;
-- (void).cxx_destruct;
 - (id)_otherInequalityConstraint;
 - (id)_preferredInequalityConstraint;
 - (void)_updateInequalityConstants;

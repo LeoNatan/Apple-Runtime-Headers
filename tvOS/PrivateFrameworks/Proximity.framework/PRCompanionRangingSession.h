@@ -19,8 +19,8 @@
     id <PRGenericRangingSessionDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PRGenericRangingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PRGenericRangingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)stopCompanionRanging:(id)arg1 error:(id *)arg2;
 - (_Bool)startCompanionRanging:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (void)configureForCompanionRanging:(id)arg1 options:(id)arg2;

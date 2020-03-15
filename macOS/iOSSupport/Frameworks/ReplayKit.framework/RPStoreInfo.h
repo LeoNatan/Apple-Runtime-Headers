@@ -18,13 +18,13 @@
     NSArray *_artworkDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *artworkDictionary; // @synthesize artworkDictionary=_artworkDictionary;
 @property(retain, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(retain, nonatomic) NSString *itemURL; // @synthesize itemURL=_itemURL;
 @property(retain, nonatomic) NSString *author; // @synthesize author=_author;
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)dictionary;
 
 @end

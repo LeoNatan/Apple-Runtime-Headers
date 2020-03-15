@@ -23,12 +23,12 @@
 + (id)createdAtJSONTransformer;
 + (id)dateJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int revision; // @synthesize revision=_revision;
 @property(readonly, nonatomic) NSDate *updatedAt; // @synthesize updatedAt=_updatedAt;
 @property(readonly, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) int reminderId; // @synthesize reminderId=_reminderId;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

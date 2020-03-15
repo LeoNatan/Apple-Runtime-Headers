@@ -16,10 +16,10 @@
 }
 
 + (id)auxiliaryChangeInfoFetchResultOfType:(Class)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *changeObjectForAuxiliaryChangeInfoMap; // @synthesize changeObjectForAuxiliaryChangeInfoMap=_changeObjectForAuxiliaryChangeInfoMap;
 @property(nonatomic) Class typedKlass; // @synthesize typedKlass=_typedKlass;
 @property(retain, nonatomic) NSArray *auxiliaryChangeInfos; // @synthesize auxiliaryChangeInfos=_auxiliaryChangeInfos;
-- (void).cxx_destruct;
 - (id)changeObjectForAuxiliaryChangeInfo:(id)arg1;
 - (id)initWithAuxiliaryChangeInfoType:(Class)arg1;
 - (id)auxiliaryChangeInfoFromData:(id)arg1 withObjectID:(id)arg2 fromChangeObject:(id)arg3 error:(id *)arg4;

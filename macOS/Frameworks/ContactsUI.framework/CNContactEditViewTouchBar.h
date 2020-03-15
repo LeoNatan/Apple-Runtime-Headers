@@ -21,12 +21,12 @@
     CNAddFieldTouchBar *_addFieldTouchBar;
 }
 
+- (void).cxx_destruct;
 @property(retain) CNAddFieldTouchBar *addFieldTouchBar; // @synthesize addFieldTouchBar=_addFieldTouchBar;
 @property(retain) NSCustomTouchBarItem *doneButtonTouchBarItem; // @synthesize doneButtonTouchBarItem=_doneButtonTouchBarItem;
 @property(retain) NSPopoverTouchBarItem *addFieldPopoverItem; // @synthesize addFieldPopoverItem=_addFieldPopoverItem;
 @property(retain) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak id <CNContactEditViewTouchBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addField:(id)arg1;
 - (void)addGroup;
 - (void)addContact;

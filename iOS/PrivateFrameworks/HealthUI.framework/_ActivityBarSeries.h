@@ -19,13 +19,13 @@
     double _lastLegendUpdateTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastLegendUpdateTime; // @synthesize lastLegendUpdateTime=_lastLegendUpdateTime;
 @property(nonatomic) long long activityDisplayTypeIdentifier; // @synthesize activityDisplayTypeIdentifier=_activityDisplayTypeIdentifier;
 @property(readonly, nonatomic) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
 @property(nonatomic) __weak id <HKActivityBarSeriesDelegate> activityBarDelegate; // @synthesize activityBarDelegate=_activityBarDelegate;
 @property(retain, nonatomic) HKFillStyle *missedGoalUnselectedFillStyle; // @synthesize missedGoalUnselectedFillStyle=_missedGoalUnselectedFillStyle;
 @property(readonly, nonatomic) HKUnitPreferenceController *unitPreferenceController; // @synthesize unitPreferenceController=_unitPreferenceController;
-- (void).cxx_destruct;
 - (void)_drawPath:(id)arg1 withFillStyle:(id)arg2 strokeStyle:(id)arg3 axisRect:(struct CGRect)arg4 context:(struct CGContext *)arg5;
 - (void)drawWithBlockCoordinates:(id)arg1 visibleBarCount:(long long)arg2 pointTransform:(struct CGAffineTransform)arg3 context:(struct CGContext *)arg4 axisRect:(struct CGRect)arg5;
 - (void)updateLegendsForTimeScope:(long long)arg1 range:(id)arg2;

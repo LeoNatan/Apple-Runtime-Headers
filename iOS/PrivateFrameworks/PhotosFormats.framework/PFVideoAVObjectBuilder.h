@@ -19,6 +19,7 @@
     AVVideoComposition *__finalVideoComposition;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVVideoComposition *_finalVideoComposition; // @synthesize _finalVideoComposition=__finalVideoComposition;
 @property(readonly, nonatomic) AVAudioMix *_finalAudioMix; // @synthesize _finalAudioMix=__finalAudioMix;
 @property(readonly, nonatomic) AVAsset *_finalAsset; // @synthesize _finalAsset=__finalAsset;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) PFSlowMotionTimeRangeMapper *_timeRangeMapperForPlayback; // @synthesize _timeRangeMapperForPlayback=__timeRangeMapperForPlayback;
 @property(readonly, nonatomic) PFVideoAdjustments *videoAdjustments; // @synthesize videoAdjustments=_videoAdjustments;
 @property(readonly, nonatomic) AVAsset *videoAsset; // @synthesize videoAsset=_videoAsset;
-- (void).cxx_destruct;
 - (void)_synchronouslyLoadSlowMotionPropertiesFromAsset:(id)arg1;
 - (void)requestAVAssetForExport:(_Bool)arg1 withResultHandler:(CDUnknownBlockType)arg2;
 - (void)requestAsynchronousAVAssetWithResultHandler:(CDUnknownBlockType)arg1;

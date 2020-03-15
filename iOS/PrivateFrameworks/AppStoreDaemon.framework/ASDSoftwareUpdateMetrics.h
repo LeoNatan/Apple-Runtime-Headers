@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usingModernUpdatesCheck; // @synthesize usingModernUpdatesCheck=_usingModernUpdatesCheck;
 @property(copy, nonatomic) NSDate *nextUpdateCheck; // @synthesize nextUpdateCheck=_nextUpdateCheck;
 @property(copy, nonatomic) NSDate *lastUpdateCheck; // @synthesize lastUpdateCheck=_lastUpdateCheck;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

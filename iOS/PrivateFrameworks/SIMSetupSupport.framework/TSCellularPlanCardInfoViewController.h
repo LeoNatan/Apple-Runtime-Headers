@@ -28,12 +28,12 @@
     UIScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak NSLayoutConstraint *infoTableViewHeightConstraint; // @synthesize infoTableViewHeightConstraint=_infoTableViewHeightConstraint;
 @property(nonatomic) __weak UITableView *infoTableView; // @synthesize infoTableView=_infoTableView;
 @property(nonatomic) __weak UILabel *enterActivationLabel; // @synthesize enterActivationLabel=_enterActivationLabel;
 @property(nonatomic) __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)addNewPlanWithUserInfo:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;

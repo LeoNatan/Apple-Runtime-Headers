@@ -11,8 +11,8 @@
     CDUnknownBlockType _eventHandler;
 }
 
-@property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 
 @end
 

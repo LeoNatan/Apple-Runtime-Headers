@@ -14,9 +14,9 @@
     NSURL *_fileURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, nonatomic) struct CGImageSource *imageSourceRef; // @synthesize imageSourceRef=_imageSourceRef;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *filePath;
 @property(readonly, nonatomic) _Bool fileExists;
 - (void)dealloc;

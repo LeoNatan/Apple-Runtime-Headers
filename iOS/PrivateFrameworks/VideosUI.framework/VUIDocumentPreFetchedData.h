@@ -13,8 +13,8 @@
     NSDictionary *_prefetchedDataDict;
 }
 
-@property(copy, nonatomic) NSDictionary *prefetchedDataDict; // @synthesize prefetchedDataDict=_prefetchedDataDict;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *prefetchedDataDict; // @synthesize prefetchedDataDict=_prefetchedDataDict;
 - (id)jsonData;
 - (id)initWithDictionary:(id)arg1;
 

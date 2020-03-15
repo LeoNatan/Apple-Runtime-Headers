@@ -14,13 +14,20 @@
 
 // Remaining properties
 @property(nonatomic) _Bool allowLocketGesture; // @dynamic allowLocketGesture;
+@property(nonatomic) double cameraSwipePrelaunchThreshold; // @dynamic cameraSwipePrelaunchThreshold;
+@property(nonatomic) double cameraSwipePrewarmThreshold; // @dynamic cameraSwipePrewarmThreshold;
 @property(nonatomic) _Bool forceWakeToMaps; // @dynamic forceWakeToMaps;
 @property(nonatomic) _Bool limitFeaturesForRemoteLock; // @dynamic limitFeaturesForRemoteLock;
 @property(nonatomic) double nowPlayingTimeout; // @dynamic nowPlayingTimeout;
+@property(nonatomic) _Bool prelaunchCameraOnButtonTouch; // @dynamic prelaunchCameraOnButtonTouch;
+@property(nonatomic) _Bool prelaunchCameraOnSwipe; // @dynamic prelaunchCameraOnSwipe;
+@property(nonatomic) _Bool prewarmCameraOnButtonTouch; // @dynamic prewarmCameraOnButtonTouch;
+@property(nonatomic) _Bool prewarmCameraOnSwipe; // @dynamic prewarmCameraOnSwipe;
 @property(nonatomic) _Bool showAuthenticationEngineeringUI; // @dynamic showAuthenticationEngineeringUI;
 @property(readonly, nonatomic) _Bool showLegalText; // @dynamic showLegalText;
 @property(nonatomic) _Bool showQuickNoteFingerGestureRecognizer; // @dynamic showQuickNoteFingerGestureRecognizer;
 @property(nonatomic) _Bool showSupervisionText; // @dynamic showSupervisionText;
+@property(nonatomic) _Bool useDefaultsValuesForCameraPrewarm; // @dynamic useDefaultsValuesForCameraPrewarm;
 @property(nonatomic) _Bool weDontNeedNoEducation; // @dynamic weDontNeedNoEducation;
 
 @end

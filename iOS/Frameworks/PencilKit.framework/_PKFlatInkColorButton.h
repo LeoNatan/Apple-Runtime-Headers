@@ -14,9 +14,9 @@
     CAShapeLayer *_strokeShapeLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *strokeShapeLayer; // @synthesize strokeShapeLayer=_strokeShapeLayer;
 @property(retain, nonatomic) CAShapeLayer *fillShapeLayer; // @synthesize fillShapeLayer=_fillShapeLayer;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithColor:(id)arg1 isCompact:(_Bool)arg2;
 

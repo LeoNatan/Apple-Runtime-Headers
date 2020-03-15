@@ -32,6 +32,7 @@
     // Error parsing type: , name: _up
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float yearsSince1970; // @synthesize yearsSince1970=_yearsSince1970;
 @property(copy, nonatomic) CDUnknownBlockType currentDateBlock; // @synthesize currentDateBlock=_currentDateBlock;
 @property(nonatomic) unsigned int collectionType; // @synthesize collectionType=_collectionType;
@@ -52,7 +53,6 @@
 
 @property(readonly, nonatomic) NSArray *spheroids; // @synthesize spheroids=_spheroids;
 @property(nonatomic, getter=isUpdatable) _Bool updatable; // @synthesize updatable=_isUpdatable;
-- (void).cxx_destruct;
 - (void)setCamera:(float)arg1 target:up:roll: /* Error: Ran out of types for this method. */;
 - (void)updateFromDateIfNeeded;
 - (id)spheroidOfType:(unsigned int)arg1;

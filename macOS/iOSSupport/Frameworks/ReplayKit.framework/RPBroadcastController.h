@@ -18,12 +18,12 @@
     RPBroadcastViewController *_broadcastViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RPBroadcastViewController *broadcastViewController; // @synthesize broadcastViewController=_broadcastViewController;
 @property(retain, nonatomic) NSString *broadcastExtensionBundleIdentifier; // @synthesize broadcastExtensionBundleIdentifier=_broadcastExtensionBundleIdentifier;
 @property(readonly, nonatomic) NSString *broadcastExtensionBundleID; // @synthesize broadcastExtensionBundleID=_broadcastExtensionBundleID;
 @property(nonatomic) __weak id <RPBroadcastControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDictionary *serviceInfo; // @synthesize serviceInfo=_serviceInfo;
-- (void).cxx_destruct;
 - (void)finishBroadcastWithHandler:(CDUnknownBlockType)arg1;
 - (void)resumeBroadcast;
 - (void)pauseBroadcast;

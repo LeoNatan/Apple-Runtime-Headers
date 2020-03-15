@@ -15,8 +15,8 @@
     BOOL _active;
 }
 
-@property BOOL active; // @synthesize active=_active;
 - (void).cxx_destruct;
+@property BOOL active; // @synthesize active=_active;
 - (id)commandRecognitionSystem;
 - (id)spokenCommands;
 - (id)initWithCommandRecognitionSystem:(id)arg1 spokenCommands:(id)arg2;

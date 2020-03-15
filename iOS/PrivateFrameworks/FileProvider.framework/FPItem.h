@@ -98,6 +98,7 @@
 + (id)placeholderWithCopyOfExistingItem:(id)arg1 lastUsageUpdatePolicy:(unsigned long long)arg2 underParent:(id)arg3 inProviderDomainID:(id)arg4;
 + (id)generatePlaceholderIdentifierWithOriginalID:(id)arg1;
 + (id)generatePlaceholderIdentifier;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fileSystemFilename; // @synthesize fileSystemFilename=_fileSystemFilename;
 @property(retain, nonatomic) NSData *fsID; // @synthesize fsID=_fsID;
 @property(readonly, nonatomic) NSString *providerID; // @synthesize providerID=_providerID;
@@ -163,7 +164,6 @@
 @property(readonly, copy, nonatomic) NSString *parentItemIdentifier; // @synthesize parentItemIdentifier=_parentItemIdentifier;
 @property(readonly, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
 @property(readonly, copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fp_displayName;
 - (id)_downloadingStatus;
 - (id)ubiquitousResourceKeysDiffAgainstItem:(id)arg1;

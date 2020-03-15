@@ -26,6 +26,7 @@
 }
 
 + (double)preferredHeightForWidth:(double)arg1 forAvatarPercentage:(double)arg2 withSizeClass:(long long)arg3 isFavorite:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXRoundedCornerOverlayView *roundCornerOverlay; // @synthesize roundCornerOverlay=_roundCornerOverlay;
 @property(retain, nonatomic) UIView *selectionView; // @synthesize selectionView=_selectionView;
 @property(retain, nonatomic) UIView *actionIndicatorView; // @synthesize actionIndicatorView=_actionIndicatorView;
@@ -37,8 +38,7 @@
 @property(nonatomic) unsigned long long photoQuantity; // @synthesize photoQuantity=_photoQuantity;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) UIImageView *avatarView; // @synthesize avatarView=_avatarView;
-- (void).cxx_destruct;
-- (struct UIColor *)_placeHolderColor;
+- (id)_placeHolderColor;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_updateType;
 - (long long)_preferredSizeClass;

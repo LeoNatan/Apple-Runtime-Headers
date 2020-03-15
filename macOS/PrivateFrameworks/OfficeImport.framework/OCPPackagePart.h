@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     OCPPackage *mPackage;
 }
 
-@property(readonly) __weak OCPPackage *package; // @synthesize package=mPackage;
 - (void).cxx_destruct;
+@property(readonly) __weak OCPPackage *package; // @synthesize package=mPackage;
 - (void)setFallbackNode:(struct _xmlNode *)arg1 forChoiceNode:(struct _xmlNode *)arg2;
 - (struct _xmlNode *)fallbackNodeForChoiceNode:(struct _xmlNode *)arg1;
 - (id)contentType;

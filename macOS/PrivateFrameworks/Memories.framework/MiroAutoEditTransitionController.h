@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     MiroMemory *_activeMemory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) MiroMemory *activeMemory; // @synthesize activeMemory=_activeMemory;
 @property(nonatomic) int numberOfPotentialTransitionPoints; // @synthesize numberOfPotentialTransitionPoints=_numberOfPotentialTransitionPoints;
 @property(retain, nonatomic) NSMutableArray *multiTransitions; // @synthesize multiTransitions=_multiTransitions;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *layoutClips; // @synthesize layoutClips=_layoutClips;
 @property(retain, nonatomic) MiroBlueprint *activeBlueprint; // @synthesize activeBlueprint=_activeBlueprint;
 @property(retain, nonatomic) Project *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (id)_everyTransitionDEBUG;
 - (void)applyMultiUpTransitionTreatmentToLayoutClip:(id)arg1;
 - (BOOL)attemptToTransitionFromClip:(id)arg1 toClip:(id)arg2 withSettingsFromLayoutClip:(id)arg3;

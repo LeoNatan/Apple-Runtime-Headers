@@ -68,6 +68,8 @@
 + (id)neuralNetworkFromContainer:(id)arg1 error:(id *)arg2;
 + (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
 + (id)loadModelFromCompiledArchive:(struct _MLModelInputArchiver *)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *blobNameToRank; // @synthesize blobNameToRank=_blobNameToRank;
 @property(nonatomic) map_2ee3570a OutputBlobIsDynamic; // @synthesize OutputBlobIsDynamic=_OutputBlobIsDynamic;
 @property basic_string_23d93216 currentConfigurationName; // @synthesize currentConfigurationName=_currentConfigurationName;
@@ -112,8 +114,6 @@
 @property(readonly, retain, nonatomic) NSArray *inputLayers; // @synthesize inputLayers=_inputLayers;
 @property(retain, nonatomic) NSString *classScoreVectorName; // @synthesize classScoreVectorName=_classScoreVectorName;
 @property(retain, nonatomic) NSArray *classLabels; // @synthesize classLabels=_classLabels;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (void)dumpTestVectorsToPath:(id)arg1;
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;

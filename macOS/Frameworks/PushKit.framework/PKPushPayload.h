@@ -14,9 +14,9 @@
     NSDictionary *_dictionaryPayload;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *dictionaryPayload; // @synthesize dictionaryPayload=_dictionaryPayload;
 @property(copy) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

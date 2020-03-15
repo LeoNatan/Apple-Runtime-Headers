@@ -18,12 +18,12 @@
 }
 
 + (id)newLabel;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL compactMode; // @synthesize compactMode=_compactMode;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(copy, nonatomic) CDUnknownBlockType productSubgroupSelectionHandler; // @synthesize productSubgroupSelectionHandler=_productSubgroupSelectionHandler;
 @property(readonly, nonatomic) KHProductFamilyItem *familyItem; // @synthesize familyItem=_familyItem;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)productSubgroupSelected:(id)arg1;

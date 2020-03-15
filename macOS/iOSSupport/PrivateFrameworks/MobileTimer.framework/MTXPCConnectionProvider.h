@@ -22,13 +22,13 @@
 
 + (id)providerWithConnectionInfo:(id)arg1 reconnectHandler:(CDUnknownBlockType)arg2;
 + (id)providerWithConnectionInfo:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastLifecycleNotification; // @synthesize lastLifecycleNotification=_lastLifecycleNotification;
 @property(retain, nonatomic) id <NAScheduler> callbackScheduler; // @synthesize callbackScheduler=_callbackScheduler;
 @property(retain, nonatomic) id <MTScheduler> serializer; // @synthesize serializer=_serializer;
 @property(copy, nonatomic) CDUnknownBlockType reconnectHandler; // @synthesize reconnectHandler=_reconnectHandler;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) MTXPCConnectionInfo *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)description;
 - (id)_remoteObjectProxyWithXPCConnectionProvider:(CDUnknownBlockType)arg1 remoteObjectProxyProvider:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;

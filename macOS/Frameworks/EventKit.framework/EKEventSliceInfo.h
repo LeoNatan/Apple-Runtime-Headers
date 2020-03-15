@@ -15,10 +15,10 @@
     NSDate *_currentDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(retain) NSDate *sliceDate; // @synthesize sliceDate=_sliceDate;
 @property long long sliceType; // @synthesize sliceType=_sliceType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)updatedIdentifier:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_labelLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *labelLabel; // @synthesize labelLabel=_labelLabel;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)setAllowsEditing:(_Bool)arg1;
 - (void)textViewEditingDidEnd:(id)arg1;
 - (void)textViewChanged:(id)arg1;

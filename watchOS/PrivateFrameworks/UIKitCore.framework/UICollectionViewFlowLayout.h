@@ -56,6 +56,7 @@
 }
 
 + (Class)invalidationContextClass;
+- (void).cxx_destruct;
 @property(nonatomic) int sectionInsetReference; // @synthesize sectionInsetReference=_sectionInsetReference;
 @property(nonatomic) struct CGSize estimatedItemSize; // @synthesize estimatedItemSize=_estimatedItemSize;
 @property(nonatomic) struct UIEdgeInsets sectionInset; // @synthesize sectionInset=_sectionInset;
@@ -64,8 +65,7 @@
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 @property(nonatomic) float minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_interitemSpacing;
 @property(nonatomic) float minimumLineSpacing; // @synthesize minimumLineSpacing=_lineSpacing;
-- (void).cxx_destruct;
-- (int)_layoutAxis;
+- (unsigned int)_layoutAxis;
 - (void)_didPerformUpdateVisibleCellsPass;
 - (void)_willPerformUpdateVisibleCellsPass;
 - (int)developmentLayoutDirection;

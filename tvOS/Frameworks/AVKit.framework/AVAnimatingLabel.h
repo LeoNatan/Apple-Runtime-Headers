@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (id)animatingDateLabelForTimeStyle:(unsigned long long)arg1;
 + (id)animatingDurationLabel;
 + (id)animatingNumberLabel;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSFormatter *formatter; // @synthesize formatter=_formatter;
-- (void).cxx_destruct;
 - (void)displayLayer:(id)arg1;
 - (void)layoutSubviews;
 - (id)labelPresentationValue;

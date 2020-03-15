@@ -14,9 +14,9 @@
     NSString *_topicTagID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *topicTagID; // @synthesize topicTagID=_topicTagID;
 @property(retain, nonatomic) NSString *publisherTagID; // @synthesize publisherTagID=_publisherTagID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *features;
 - (id)fr_description;
 - (id)initWithPublisherTagID:(id)arg1 topicTagID:(id)arg2;

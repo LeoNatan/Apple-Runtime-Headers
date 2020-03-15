@@ -40,6 +40,7 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType willCompleteHandler; // @synthesize willCompleteHandler=_willCompleteHandler;
 @property(nonatomic) __weak UXView *containerView; // @synthesize containerView=_containerView;
@@ -57,7 +58,6 @@
 @property(nonatomic, getter=isAnimated) BOOL animated; // @synthesize animated=_animated;
 @property(nonatomic, getter=isCurrentlyInteractive) BOOL currentlyInteractive; // @synthesize currentlyInteractive=_currentlyInteractive;
 @property(nonatomic) BOOL initiallyInteractive; // @synthesize initiallyInteractive=_initiallyInteractive;
-- (void).cxx_destruct;
 - (void)_enableInteractionForDisabledViews;
 - (void)_disableInteractionForViews:(id)arg1;
 - (void)__runAlongsideAnimations;

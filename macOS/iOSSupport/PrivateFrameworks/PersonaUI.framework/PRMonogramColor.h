@@ -33,6 +33,7 @@
 + (id)gradientStartName:(id)arg1;
 + (id)gradientStartColor:(id)arg1;
 + (id)defaultBundle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) UIColor *selectedActiveTextColor; // @synthesize selectedActiveTextColor=_selectedActiveTextColor;
 @property(retain, nonatomic) UIColor *selectedInactiveColor; // @synthesize selectedInactiveColor=_selectedInactiveColor;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) UIColor *gradientStartColor; // @synthesize gradientStartColor=_gradientStartColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) NSString *colorName; // @synthesize colorName=_colorName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)setColorName:(id)arg1;

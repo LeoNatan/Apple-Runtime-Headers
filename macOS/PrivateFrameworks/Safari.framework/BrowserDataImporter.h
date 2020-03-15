@@ -6,19 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSBundle;
 
 __attribute__((visibility("hidden")))
 @interface BrowserDataImporter : NSObject
 {
-    NSString *_sourceBrowserBundleIdentifier;
-    CDUnknownBlockType _completionHandler;
+    NSBundle *_sourceBrowserBundle;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-@property(copy, nonatomic) NSString *sourceBrowserBundleIdentifier; // @synthesize sourceBrowserBundleIdentifier=_sourceBrowserBundleIdentifier;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=isImportingForTestDrive) BOOL importingForTestDrive;
+@property(retain, nonatomic) NSBundle *sourceBrowserBundle; // @synthesize sourceBrowserBundle=_sourceBrowserBundle;
 
 @end
 

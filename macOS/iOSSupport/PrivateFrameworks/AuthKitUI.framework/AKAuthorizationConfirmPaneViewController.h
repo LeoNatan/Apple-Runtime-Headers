@@ -35,6 +35,7 @@
     AKAuthorizationNameFormatter *_nameFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAuthorizationNameFormatter *nameFormatter; // @synthesize nameFormatter=_nameFormatter;
 @property(retain, nonatomic) UIBarButtonItem *savedLeftBarButtonItem; // @synthesize savedLeftBarButtonItem=_savedLeftBarButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *savedRightBarButtonItem; // @synthesize savedRightBarButtonItem=_savedRightBarButtonItem;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) BOOL editableScopeChoicesChanged; // @synthesize editableScopeChoicesChanged=_editableScopeChoicesChanged;
 @property(readonly, nonatomic) AKAuthorizationScopeChoices *editableScopeChoices; // @synthesize editableScopeChoices=_editableScopeChoices;
-- (void).cxx_destruct;
 - (id)init;
 - (void)passwordAuthenticationCompletedWithResults:(id)arg1 error:(id)arg2;
 - (BOOL)validateReadyForAuthorization;

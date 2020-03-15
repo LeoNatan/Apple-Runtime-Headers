@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFastCountable; // @synthesize isFastCountable=_isFastCountable;
 @property(readonly, nonatomic) NSString *foreignPersistentIDProperty; // @synthesize foreignPersistentIDProperty=_foreignPersistentIDProperty;
 @property(readonly, nonatomic) Class aggregateEntityClass; // @synthesize aggregateEntityClass=_aggregateEntityClass;
-- (void).cxx_destruct;
 - (_Bool)sectionsPersistentIDColumnIsDistinct;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(_Bool)arg2;
 - (unsigned long long)countOfEntities;

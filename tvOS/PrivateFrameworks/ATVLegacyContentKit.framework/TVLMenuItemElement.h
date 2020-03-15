@@ -23,6 +23,7 @@
     long long _maxOrdinalDigits;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
 @property(nonatomic) _Bool dimmed; // @synthesize dimmed=_dimmed;
 @property(nonatomic) long long maxOrdinalDigits; // @synthesize maxOrdinalDigits=_maxOrdinalDigits;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *rightLabel; // @synthesize rightLabel=_rightLabel;
 @property(copy, nonatomic) NSString *label2; // @synthesize label2=_label2;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

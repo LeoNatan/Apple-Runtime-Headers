@@ -23,9 +23,9 @@
 + (void)disableBundleNamed:(id)arg1 deactivationContext:(id)arg2;
 + (void)enableBundleNamed:(id)arg1;
 + (void)enableBundleNamed:(id)arg1 activationContext:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool viewCanBeDisplayed; // @synthesize viewCanBeDisplayed=_viewCanBeDisplayed;
 @property(nonatomic) __weak id <SBLockScreenPluginAgent> pluginAgent; // @synthesize pluginAgent=_agent;
-- (void).cxx_destruct;
 - (void)setNeedsLegibilityAppearanceUpdate;
 - (_Bool)isContentViewWhiteUnderSlideToUnlockText;
 - (_Bool)legibilitySettingsOverridesVibrancy;

@@ -18,9 +18,9 @@
 }
 
 + (id)exportedInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BRLTSTranslator *queueTranslator; // @synthesize queueTranslator=_queueTranslator;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)loadBrailleBundleForIdentifier:(id)arg1;
 - (void)textForBraille:(id)arg1 parameters:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)brailleForText:(id)arg1 parameters:(id)arg2 withReply:(CDUnknownBlockType)arg3;

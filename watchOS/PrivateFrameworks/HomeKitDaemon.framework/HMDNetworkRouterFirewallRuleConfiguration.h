@@ -20,20 +20,20 @@
     NSArray *_wanRules;
 }
 
-+ (id)__decodeRulesFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 class:(Class)arg3 required:(_Bool)arg4;
-+ (_Bool)__decodeFullAccessFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 fullAccess:(_Bool *)arg3;
-+ (_Bool)__decodeNetworkDeclarationsFromJSONDictionary:(struct NSDictionary *)arg1 networkDeclarations:(struct NSDictionary **)arg2;
++ (id)__decodeRulesFromNetworkDeclarations:(id)arg1 key:(id)arg2 class:(Class)arg3 required:(_Bool)arg4;
++ (_Bool)__decodeFullAccessFromNetworkDeclarations:(id)arg1 key:(id)arg2 fullAccess:(_Bool *)arg3;
++ (_Bool)__decodeNetworkDeclarationsFromJSONDictionary:(id)arg1 networkDeclarations:(id *)arg2;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=hasFullAccessToWAN) _Bool fullAccessWAN; // @synthesize fullAccessWAN=_fullAccessWAN;
 @property(readonly, nonatomic) NSArray *wanRules; // @synthesize wanRules=_wanRules;
 @property(readonly, nonatomic, getter=hasFullAccessToLAN) _Bool fullAccessLAN; // @synthesize fullAccessLAN=_fullAccessLAN;
 @property(readonly, nonatomic) NSArray *lanRules; // @synthesize lanRules=_lanRules;
 @property(readonly, nonatomic) NSDate *lastModifiedTime; // @synthesize lastModifiedTime=_lastModifiedTime;
 @property(readonly, nonatomic) HMDNetworkRouterFirewallRuleAccessoryIdentifier *accessoryIdentifier; // @synthesize accessoryIdentifier=_accessoryIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *prettyJSONDictionary;
 - (id)attributeDescriptions;
-- (id)initWithAccessoryIdentifier:(id)arg1 jsonDictionary:(struct NSDictionary *)arg2;
+- (id)initWithAccessoryIdentifier:(id)arg1 jsonDictionary:(id)arg2;
 - (id)initWithAccessoryIdentifier:(id)arg1 lastModifiedTime:(id)arg2 fullAccessLAN:(_Bool)arg3 lanRules:(id)arg4 fullAccessWAN:(_Bool)arg5 wanRules:(id)arg6;
 
 // Remaining properties

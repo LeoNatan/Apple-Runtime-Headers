@@ -16,10 +16,10 @@
     PXSearchResultsSectionedDataSourceManager *_dataSourceManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXSearchResultsSectionedDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(nonatomic) unsigned long long configurationType; // @synthesize configurationType=_configurationType;
 @property(nonatomic) __weak id <PXSearchResultsLayoutDataSource> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *suggestions;
 @property(readonly, nonatomic) NSArray *wordEmbeddingSubstitutions;
 @property(readonly, nonatomic) NSArray *attachmentURLs;

@@ -14,8 +14,8 @@
     NSArray *_locations;
 }
 
-@property(readonly, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 - (id)lastDate;
 - (id)firstDate;
 - (double)duration;

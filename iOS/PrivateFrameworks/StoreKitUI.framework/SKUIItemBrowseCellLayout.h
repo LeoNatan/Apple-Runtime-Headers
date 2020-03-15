@@ -19,11 +19,11 @@
     double _userRating;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double userRating; // @synthesize userRating=_userRating;
 @property(nonatomic) long long numberOfUserRatings; // @synthesize numberOfUserRatings=_numberOfUserRatings;
 @property(nonatomic, getter=isLargeSpacing) _Bool largeSpacing; // @synthesize largeSpacing=_largeSpacing;
 @property(nonatomic) struct CGSize imageBoundingSize; // @synthesize imageBoundingSize=_imageBoundingSize;
-- (void).cxx_destruct;
 - (void)_reloadUserRatingViews;
 - (void)_initSKUIItemBrowseCellLayout;
 - (id)_decimalNumberFormatter;

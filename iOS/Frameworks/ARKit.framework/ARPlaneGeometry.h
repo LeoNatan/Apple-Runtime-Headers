@@ -19,6 +19,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 // Error parsing type for property extent:
 // Property attributes: T,R,N,V_extent
 
@@ -26,8 +28,6 @@
 // Property attributes: T,R,N,V_center
 
 @property(readonly, nonatomic) unsigned long long boundaryVertexCount; // @synthesize boundaryVertexCount=_boundaryVertexCount;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 // Error parsing type for property boundaryVertices:

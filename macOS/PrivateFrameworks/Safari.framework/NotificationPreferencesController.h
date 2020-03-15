@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *permissionData; // @synthesize permissionData=_permissionData;
 @property(nonatomic) __weak TableViewPlus *policyTableView; // @synthesize policyTableView=_policyTableView;
 @property(nonatomic) __weak NSButton *canPromptForPushNotificationsCheckbox; // @synthesize canPromptForPushNotificationsCheckbox=_canPromptForPushNotificationsCheckbox;
 @property(nonatomic) __weak NSTextField *emptyTablePlaceholderText; // @synthesize emptyTablePlaceholderText=_emptyTablePlaceholderText;
 @property(nonatomic) __weak NSButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(readonly, nonatomic) WBSPerSitePreference *notificationsPreference; // @synthesize notificationsPreference=_notificationsPreference;
-- (void).cxx_destruct;
 - (BOOL)_canRemoveSelectedItems;
 - (void)_updateRemoveButtonState;
 - (void)_updateVisibilityOfPlaceholderText;

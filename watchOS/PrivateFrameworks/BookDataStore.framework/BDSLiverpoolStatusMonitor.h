@@ -25,6 +25,7 @@
     id <BDSLiverpoolStatusChangeObserving> _coordinatingObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <BDSLiverpoolStatusChangeObserving> coordinatingObserver; // @synthesize coordinatingObserver=_coordinatingObserver;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *notifyQueue; // @synthesize notifyQueue=_notifyQueue;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) BDSICloudIdentityToken *lastArchivedNonNilICloudIdentityToken; // @synthesize lastArchivedNonNilICloudIdentityToken=_lastArchivedNonNilICloudIdentityToken;
 @property(copy, nonatomic) BDSICloudIdentityToken *lastArchivedICloudIdentityToken; // @synthesize lastArchivedICloudIdentityToken=_lastArchivedICloudIdentityToken;
 @property(nonatomic) _Bool optedIn; // @synthesize optedIn=_optedIn;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dq_refreshICloudAvailabilityStatus;
 - (void)_notifyObserversWithCurrentToken:(id)arg1 lastToken:(id)arg2;

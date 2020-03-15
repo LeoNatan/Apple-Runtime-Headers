@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_completionBlocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
 @property(retain, nonatomic) NSMutableArray *animationsBlocks; // @synthesize animationsBlocks=_animationsBlocks;
 @property(nonatomic, getter=_didBeginAnimation, setter=_setDidBeginAnimation:) _Bool didBeginAnimation; // @synthesize didBeginAnimation=_didBeginAnimation;
 @property(retain, nonatomic) UIDragItem *dragItem; // @synthesize dragItem=_dragItem;
-- (void).cxx_destruct;
 - (void)_executeCompletionBlocks;
 - (void)_addClientBlocksToAnimator:(id)arg1;
 - (void)addCompletion:(CDUnknownBlockType)arg1;

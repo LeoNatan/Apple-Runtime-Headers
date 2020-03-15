@@ -47,12 +47,12 @@
 + (void)_blockUntilSendQueueIsEmpty;
 + (_Bool)_applicationWillTerminate;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMRemoteObject<IDSDaemonProtocol> *remoteObject; // @synthesize remoteObject=_remoteObject;
 @property(setter=_setAutoReconnect:) _Bool _autoReconnect; // @synthesize _autoReconnect;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_remoteMessageQueue; // @synthesize _remoteMessageQueue;
 @property(readonly, nonatomic) IDSDaemonListener *listener; // @synthesize listener=_daemonListener;
-- (void).cxx_destruct;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationWillEnterForeground;
 - (void)systemApplicationDidEnterBackground;

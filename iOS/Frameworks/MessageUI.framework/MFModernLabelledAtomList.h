@@ -35,6 +35,7 @@
 + (double)atomLineHeight;
 + (id)primaryLabelFont;
 + (id)defaultLabelFont;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *addresses; // @synthesize addresses=_addresses;
 @property(nonatomic) __weak id <MFModernLabelledAtomListDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *viewsToDodge; // @synthesize viewsToDodge=_viewsToDodge;
@@ -43,7 +44,6 @@
 @property(nonatomic, getter=isPrimary) _Bool primary; // @synthesize primary=_primary;
 @property(retain, nonatomic) UIColor *labelTextColor; // @synthesize labelTextColor=_labelTextColor;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGPoint)baselinePointForRow:(unsigned long long)arg1;
 - (void)setOverrideFont:(id)arg1;

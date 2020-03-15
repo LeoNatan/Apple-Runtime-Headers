@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned int)valueForSpanType:(long long)arg1;
+- (void).cxx_destruct;
 @property long long spanType; // @synthesize spanType=_spanType;
 @property long long dateType; // @synthesize dateType=_dateType;
 @property(retain, nonatomic) NSDate *spanDate; // @synthesize spanDate=_spanDate;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)compare:(id)arg1;
 - (id)initWithDate:(id)arg1 dateType:(long long)arg2 spanType:(long long)arg3;

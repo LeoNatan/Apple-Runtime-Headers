@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 
 + (id)sourceWithEnvironment:(id)arg1 contactStore:(id)arg2;
 + (id)sourceKind;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fetching; // @synthesize fetching=_fetching;
 @property(retain, nonatomic) id familyRequest; // @synthesize familyRequest=_familyRequest;
 @property(retain, nonatomic) NSArray *familyContacts; // @synthesize familyContacts=_familyContacts;
 @property(retain, nonatomic) NSArray *familyMembers; // @synthesize familyMembers=_familyMembers;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNUIAccountsFacade *accountsFacade; // @synthesize accountsFacade=_accountsFacade;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)familyContactFromFamilyMemberTransformWithKeysToFetch:(id)arg1;
 - (void)fetchFamilyMembers;
 - (id)peopleInGroup:(id)arg1 keysToFetch:(id)arg2;

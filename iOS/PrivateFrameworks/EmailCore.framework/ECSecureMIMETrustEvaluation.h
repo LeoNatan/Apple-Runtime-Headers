@@ -24,12 +24,12 @@
 + (id)reevaluateWithNetworkAccessAllowed:(id)arg1;
 + (id)evaluateTrust:(struct __SecTrust *)arg1 withOptions:(unsigned long long)arg2 signerEmailAddress:(id)arg3;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int trustResult; // @synthesize trustResult=_trustResult;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *signerEmailAddress; // @synthesize signerEmailAddress=_signerEmailAddress;
 @property(readonly, nonatomic) struct __SecTrust *trust; // @synthesize trust=_trust;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool requiresReevaluationWithNetworkAccess;
 - (void)_evaluate;
 @property(readonly, copy) NSString *description;

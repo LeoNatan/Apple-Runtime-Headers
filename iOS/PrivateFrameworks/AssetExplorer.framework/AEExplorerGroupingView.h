@@ -11,8 +11,8 @@
     UIView *_sceneView;
 }
 
-@property(retain, nonatomic) UIView *sceneView; // @synthesize sceneView=_sceneView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *sceneView; // @synthesize sceneView=_sceneView;
 - (void)layoutSubviews;
 
 @end

@@ -16,20 +16,20 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSObject<OS_dispatch_group> *_providersLoadedGroup;
     id _matchingContext;
-    struct NSMutableDictionary *_alternateContentsURLDictionary;
+    NSMutableDictionary *_alternateContentsURLDictionary;
     NSMapTable *_sessionQueueForExtensionIdentifier;
     FPDPushConnection *_pushConnection;
     FPDServer *_server;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FPDPushConnection *pushConnection; // @synthesize pushConnection=_pushConnection;
 @property(nonatomic) __weak FPDServer *server; // @synthesize server=_server;
-- (void).cxx_destruct;
 - (id)clouddocsExtensionIdentifier;
 - (void)dropLegacyDaemonCoreSpotlightIndexIfNeeded;
 - (id)allProviders;
 - (id)_deserializedAlternateContentsDictionary;
-- (void)_serializeAlternateContentsURLDictionary:(struct NSMutableDictionary *)arg1;
+- (void)_serializeAlternateContentsURLDictionary:(id)arg1;
 - (void)_loadAlternateContentsDictionary;
 - (id)alternateContentsDictionaryForProviderIdentifier:(id)arg1;
 - (id)alternateContentsURLForItemID:(id)arg1;

@@ -18,9 +18,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long authTagLength; // @synthesize authTagLength=_authTagLength;
-- (void).cxx_destruct;
 - (_Bool)decryptInputBytes:(const void *)arg1 inputLength:(unsigned long)arg2 inputAADBytes:(const void *)arg3 inputAADLength:(unsigned long)arg4 inputAuthTagPtr:(const void *)arg5 inputAuthTagLength:(unsigned long)arg6 outputBytes:(void *)arg7 error:(id *)arg8;
 - (_Bool)encryptInputBytes:(const void *)arg1 inputLength:(unsigned long)arg2 inputAADBytes:(const void *)arg3 inputAADLength:(unsigned long)arg4 outputBytes:(void *)arg5 outputAuthTagBytes:(void *)arg6 outputAuthTagLength:(unsigned long)arg7 error:(id *)arg8;
 - (id)decryptData:(id)arg1 aadBytes:(const void *)arg2 aadLength:(unsigned long)arg3 error:(id *)arg4;

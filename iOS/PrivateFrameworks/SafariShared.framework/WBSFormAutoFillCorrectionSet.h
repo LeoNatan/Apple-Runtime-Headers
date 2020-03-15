@@ -15,10 +15,10 @@
     NSDictionary *_fingerprintsToCorrections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *fingerprintsToCorrections; // @synthesize fingerprintsToCorrections=_fingerprintsToCorrections;
 @property(readonly, nonatomic) NSDictionary *fingerprintsToClassifications; // @synthesize fingerprintsToClassifications=_fingerprintsToClassifications;
 @property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithDomain:(id)arg1 fingerprintsToCorrections:(id)arg2;

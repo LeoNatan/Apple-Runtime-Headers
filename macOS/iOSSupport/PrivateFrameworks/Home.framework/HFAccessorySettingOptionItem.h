@@ -14,9 +14,9 @@
     NSDictionary *_usageOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *usageOptions; // @synthesize usageOptions=_usageOptions;
 @property(retain, nonatomic) HMAccessorySelectionSettingItem *optionItem; // @synthesize optionItem=_optionItem;
-- (void).cxx_destruct;
 - (void)_decorateOutcomeWithDependencies:(id)arg1;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)settingKeyPath;

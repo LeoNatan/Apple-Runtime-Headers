@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     _Bool mExternal;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *target; // @synthesize target=mTarget;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=mType;
 @property(readonly, nonatomic) NSString *idString; // @synthesize idString=mIdString;
-- (void).cxx_destruct;
 - (void)writeToStreamWriter:(id)arg1;
 - (id)initWithId:(unsigned long long)arg1 type:(id)arg2 target:(id)arg3 external:(_Bool)arg4;
 

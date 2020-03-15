@@ -27,6 +27,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *bytesPredicateValue; // @synthesize bytesPredicateValue=_bytesPredicateValue;
 @property(retain, nonatomic) NSString *stringPredicateValue; // @synthesize stringPredicateValue=_stringPredicateValue;
 @property(nonatomic) _Bool boolPredicateValue; // @synthesize boolPredicateValue=_boolPredicateValue;
@@ -34,7 +35,6 @@
 @property(nonatomic) double doublePredicateValue; // @synthesize doublePredicateValue=_doublePredicateValue;
 @property(nonatomic) long long integerPredicateValue; // @synthesize integerPredicateValue=_integerPredicateValue;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

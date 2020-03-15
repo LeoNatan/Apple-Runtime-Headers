@@ -35,9 +35,9 @@
 + (id)imageWithPath:(id)arg1;
 + (id)imageWithURL:(id)arg1 cacheImmediately:(_Bool)arg2;
 + (id)imageWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool rotationEnabled; // @synthesize rotationEnabled=_rotationEnabled;
 @property(readonly, nonatomic) int orientation; // @synthesize orientation=_imageOrientation;
-- (void).cxx_destruct;
 - (void)_initializeCGImageWithRotation;
 - (id)_initWithCGImageSourceRotationEnabled:(struct CGImageSource *)arg1;
 - (long long)_uiImageOrientation;

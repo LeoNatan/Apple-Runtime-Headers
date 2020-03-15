@@ -17,10 +17,10 @@
     NSString *_fetchableArtworkToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *fetchableArtworkToken; // @synthesize fetchableArtworkToken=_fetchableArtworkToken;
 @property(readonly, nonatomic) NSString *availableArtworkToken; // @synthesize availableArtworkToken=_availableArtworkToken;
 @property(readonly, nonatomic) long long artworkType; // @synthesize artworkType=_artworkType;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

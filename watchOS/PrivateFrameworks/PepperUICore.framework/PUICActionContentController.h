@@ -43,6 +43,7 @@
 
 + (void)_setupActionContentControllerSpec;
 + (id)actionContentControllerWithContentView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int preferredPresentationStyle; // @synthesize preferredPresentationStyle=_preferredPresentationStyle;
 @property(nonatomic) _Bool shouldSetStatusBar; // @synthesize shouldSetStatusBar=_shouldSetStatusBar;
 @property(copy) CDUnknownBlockType dismissalCompletionHandler; // @synthesize dismissalCompletionHandler=_dismissalCompletionHandler;
@@ -59,7 +60,6 @@
 @property(nonatomic) _Bool showCancelButton; // @synthesize showCancelButton=_showCancelButton;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)presentationControllerDidFinishDismissing;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)animateTransition:(id)arg1;

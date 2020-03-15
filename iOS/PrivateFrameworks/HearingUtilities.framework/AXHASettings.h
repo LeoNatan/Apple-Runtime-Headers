@@ -20,17 +20,18 @@
 
 + (id)sharedInstance;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *icloudInitializationQueue; // @synthesize icloudInitializationQueue=_icloudInitializationQueue;
 @property(retain, nonatomic) NSMutableDictionary *updateBlocks; // @synthesize updateBlocks=_updateBlocks;
 @property(retain, nonatomic) NSMutableSet *synchronizePreferences; // @synthesize synchronizePreferences=_synchronizePreferences;
 @property(retain, nonatomic) NSMutableSet *registeredNotifications; // @synthesize registeredNotifications=_registeredNotifications;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *detectableUltronTypes;
 @property(nonatomic) _Bool ultronIsRunning;
 @property(nonatomic) _Bool ultronSupportEnabled;
 - (_Bool)isDeviceIDOnCloudBlacklist:(id)arg1;
 - (void)removeDeviceIDFromCloudBlacklist:(id)arg1;
 - (void)addDeviceIDToCloudBlacklist:(id)arg1;
+@property(nonatomic) unsigned long long usedHearingFeatures;
 @property(nonatomic) long long complicationPreferredDisplayMode;
 @property(nonatomic) _Bool multideviceAudioEnabled;
 @property(nonatomic) _Bool multideviceSettingsEnabled;
@@ -60,6 +61,7 @@
 - (void)icloudHearingSettingsDidChange:(id)arg1;
 - (_Bool)shouldUseiCloud;
 - (id)convertPersistentRepresentation:(id)arg1 fromVersion:(float)arg2 toVersion:(float)arg3;
+- (_Bool)isPairedWithRealHearingAids;
 - (_Bool)isiCloudPaired;
 - (_Bool)isPairedWithFakeHearingAids;
 - (void)dealloc;

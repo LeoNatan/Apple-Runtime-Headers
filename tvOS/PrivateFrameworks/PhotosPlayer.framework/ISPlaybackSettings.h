@@ -14,9 +14,9 @@
     AVVideoComposition *_videoComposition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float audioVolume; // @synthesize audioVolume=_audioVolume;
 @property(retain, nonatomic) AVVideoComposition *videoComposition; // @synthesize videoComposition=_videoComposition;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

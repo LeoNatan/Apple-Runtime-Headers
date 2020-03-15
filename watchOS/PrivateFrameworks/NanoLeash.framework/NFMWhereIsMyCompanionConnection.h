@@ -18,10 +18,10 @@
 }
 
 + (id)sharedDeviceConnection;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType playSoundAndLEDCompletion; // @synthesize playSoundAndLEDCompletion=_playSoundAndLEDCompletion;
 @property(copy, nonatomic) CDUnknownBlockType playSoundCompletion; // @synthesize playSoundCompletion=_playSoundCompletion;
 @property(retain) NSXPCConnection *serverConnection; // @synthesize serverConnection=_serverConnection;
-- (void).cxx_destruct;
 - (void)applicationIdentifierWithReply:(CDUnknownBlockType)arg1;
 - (void)playedSoundAndLED:(_Bool)arg1;
 - (void)playedSound:(_Bool)arg1;

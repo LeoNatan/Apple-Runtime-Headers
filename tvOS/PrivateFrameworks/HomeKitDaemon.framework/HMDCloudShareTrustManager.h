@@ -37,6 +37,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType requestInviteTimerFactory; // @synthesize requestInviteTimerFactory=_requestInviteTimerFactory;
 @property(copy) CDUnknownBlockType participantsManagerFactory; // @synthesize participantsManagerFactory=_participantsManagerFactory;
 @property(retain) HMBShareUserID *ownerCloudShareID; // @synthesize ownerCloudShareID=_ownerCloudShareID;
@@ -50,7 +51,6 @@
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property __weak id <HMDCloudShareTrustManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak id <HMDCloudShareTrustManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)_cancelRequestInviteTimer;
 - (void)_startRequestInviteTimer;

@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     CNUIPeopleGroupsDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIPeopleGroupsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) CNUIPeopleGroupsGridView *gridView; // @synthesize gridView=_gridView;
 @property(nonatomic) __weak id <CNUIPeopleGroupsGridViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dataSourceDidChange:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

@@ -39,6 +39,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *walletData; // @synthesize walletData=_walletData;
 @property(nonatomic) long long userInterfaceStyleMode; // @synthesize userInterfaceStyleMode=_userInterfaceStyleMode;
 @property(nonatomic) _Bool didSeeTrueTonePane; // @synthesize didSeeTrueTonePane=_didSeeTrueTonePane;
@@ -52,7 +53,6 @@
 @property(nonatomic) unsigned int homeButtonHapticKind; // @synthesize homeButtonHapticKind=_homeButtonHapticKind;
 @property(retain, nonatomic) NSData *nanoRegistryData; // @synthesize nanoRegistryData=_nanoRegistryData;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

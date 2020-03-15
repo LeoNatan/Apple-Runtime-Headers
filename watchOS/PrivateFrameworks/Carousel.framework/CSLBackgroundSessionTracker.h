@@ -17,8 +17,8 @@
     id <CSLSessionXPCServerDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <CSLSessionXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <CSLSessionXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)stopBackgroundSession:(id)arg1 remove:(_Bool)arg2;
 - (void)_backgroundSession:(id)arg1 endedWithError:(id)arg2;
 - (void)startBackgroundSession:(id)arg1;

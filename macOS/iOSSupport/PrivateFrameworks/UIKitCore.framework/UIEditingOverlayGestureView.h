@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIWindow *_previousWindow;
 }
 
-@property(nonatomic) __weak UIWindow *previousWindow; // @synthesize previousWindow=_previousWindow;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIWindow *previousWindow; // @synthesize previousWindow=_previousWindow;
 - (BOOL)_isTransparentFocusRegion;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)_gestureRecognizersForEvent:(id)arg1;

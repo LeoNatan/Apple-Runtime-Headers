@@ -14,9 +14,9 @@
     RTMapItem *_mapItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTitle:(id)arg1 mapItem:(id)arg2;
 - (id)init;

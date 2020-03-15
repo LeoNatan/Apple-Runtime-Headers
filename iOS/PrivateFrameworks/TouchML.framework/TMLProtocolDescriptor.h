@@ -18,11 +18,11 @@
 }
 
 + (id)decode:(const struct ProtobufCMessage *)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *objcProtocolName; // @synthesize objcProtocolName=_objcProtocolName;
 @property(readonly, nonatomic) NSDictionary *signals; // @synthesize signals=_signals;
 @property(readonly, nonatomic) NSSet *implementsProtocols; // @synthesize implementsProtocols=_implementsProtocols;
 @property(readonly, nonatomic) NSString *protocolName; // @synthesize protocolName=_protocolName;
-- (void).cxx_destruct;
 - (void)encode:(struct ProtobufCMessage *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) Protocol *objcProtocol; // @synthesize objcProtocol=_objcProtocol;

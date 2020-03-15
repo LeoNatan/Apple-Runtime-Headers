@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(nonatomic) _Bool allowsRotation; // @synthesize allowsRotation=_allowsRotation;
 @property(nonatomic) _Bool reportsAbsoluteDpadValues; // @synthesize reportsAbsoluteDpadValues=_reportsAbsoluteDpadValues;
@@ -35,7 +36,6 @@
 @property(readonly, retain, nonatomic) GCControllerButtonInput *buttonA; // @synthesize buttonA=_button0;
 - (void)set_motion:(id)arg1;
 - (id)_motion;
-- (void).cxx_destruct;
 - (_Bool)isBluetoothAndUSBMirrored;
 - (void)setStateFromMicroGamepad:(id)arg1;
 - (id)productCategory;

@@ -19,12 +19,12 @@
 
 + (BOOL)blocksDefaultLayoutBehavior;
 + (struct CGSize)defaultSize;
+- (void).cxx_destruct;
 @property(readonly) MOMediaSection *mediaSection; // @synthesize mediaSection=_mediaSection;
 @property(nonatomic) unsigned long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) UXView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) __weak MOMediaView *mediaView; // @synthesize mediaView=_mediaView;
 @property(readonly) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)updateWithMediaSection:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseMoved:(id)arg1;

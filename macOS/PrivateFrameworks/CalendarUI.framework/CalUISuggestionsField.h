@@ -37,6 +37,7 @@
     NSLayoutConstraint *_maxScrollHeight;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *maxScrollHeight; // @synthesize maxScrollHeight=_maxScrollHeight;
 @property(retain) NSLayoutConstraint *scrollHeight; // @synthesize scrollHeight=_scrollHeight;
 @property(retain) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -56,7 +57,6 @@
 @property BOOL suggestionsAreOptional; // @synthesize suggestionsAreOptional=_suggestionsAreOptional;
 @property __weak id <CalUIAutocompleteFieldDelegate> autoCompleteDelegate; // @synthesize autoCompleteDelegate=_autoCompleteDelegate;
 @property __weak id <CalUISuggestionsFieldDelegate> suggestionsDelegate; // @synthesize suggestionsDelegate=_suggestionsDelegate;
-- (void).cxx_destruct;
 - (id)currentPrefix;
 - (id)accessibilitySharedFocusElements;
 - (void)_selectCandidateAtIndex:(unsigned long long)arg1 endSelecting:(BOOL)arg2;

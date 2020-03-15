@@ -18,8 +18,8 @@
 }
 
 + (id)registeredImageLoaderWithScreenDelegate;
-@property(nonatomic) __weak id <INUIImageLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <INUIImageLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long servicePriority;
 - (_Bool)canLoadImageDataForImage:(id)arg1;
 - (void)loadDataImageFromImage:(id)arg1 usingPortableImageLoader:(id)arg2 scaledSize:(CDStruct_c3b9c2ee)arg3 completion:(CDUnknownBlockType)arg4;

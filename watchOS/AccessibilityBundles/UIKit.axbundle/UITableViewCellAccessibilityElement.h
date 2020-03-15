@@ -16,10 +16,10 @@
     _Bool _usingRealTableViewCell;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usingRealTableViewCell; // @synthesize usingRealTableViewCell=_usingRealTableViewCell;
 @property(retain, nonatomic) UITableViewCell *tableViewCell; // @synthesize tableViewCell=_tableViewCell;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (_Bool)_accessibilityRetainsCustomRotorActionSetting;
 - (id)_privateAccessibilityCustomActions;
 - (id)accessibilityCustomActions;

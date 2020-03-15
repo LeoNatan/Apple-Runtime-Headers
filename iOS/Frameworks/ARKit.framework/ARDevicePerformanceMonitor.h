@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(retain) NSTimer *notificationTimer; // @synthesize notificationTimer=_notificationTimer;
 @property(retain) ARDevicePerformanceLevel *pendingDeviceCondition; // @synthesize pendingDeviceCondition=_pendingDeviceCondition;
 @property double lastNotifiedTimeStamp; // @synthesize lastNotifiedTimeStamp=_lastNotifiedTimeStamp;
 @property(retain) ARDevicePerformanceLevel *currentDeviceCondition; // @synthesize currentDeviceCondition=_currentDeviceCondition;
 @property __weak id <ARDevicePerformanceMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)deviceCondition;
 - (void)_updateDelegateWithDeviceCondition:(id)arg1;
 - (void)_processThermalStateChanged:(long long)arg1;

@@ -12,8 +12,8 @@
 }
 
 + (id)copyParseRules;
-@property(retain, nonatomic) CoreDAVItem *report; // @synthesize report=_report;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CoreDAVItem *report; // @synthesize report=_report;
 - (id)description;
 - (id)init;
 

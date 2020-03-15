@@ -8,7 +8,7 @@
 
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableSet;
+@class NSArray, NSMutableArray, NSMutableSet, NSSet;
 @protocol UITapRecognizerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 {
     unsigned long long _numberOfTouchesRequired;
     unsigned long long _numberOfTapsRequired;
+    _Bool _continuousTapRecognition;
     NSMutableSet *_activeTouches;
     int _currentNumberOfTouches;
     int _currentNumberOfTaps;
@@ -28,6 +29,8 @@ __attribute__((visibility("hidden")))
     double _allowableTouchTimeSeparation;
     double _maximumSingleTapDuration;
     double _maximumTapDuration;
+    double _minimumTapDuration;
+    double _startTime;
     double _maximumIntervalBetweenSuccessiveTaps;
     NSMutableArray *_touches;
     long long _strongestDirectionalAxis;
@@ -35,21 +38,25 @@ __attribute__((visibility("hidden")))
     unsigned int _timerOn:1;
     unsigned int _multitouchTimerOn:1;
     unsigned int _noNewTouches:1;
+    _Bool _countsOnlyActiveTouches;
     id <UITapRecognizerDelegate> _delegate;
     long long _exclusiveDirectionalAxis;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long exclusiveDirectionalAxis; // @synthesize exclusiveDirectionalAxis=_exclusiveDirectionalAxis;
+@property(nonatomic) _Bool countsOnlyActiveTouches; // @synthesize countsOnlyActiveTouches=_countsOnlyActiveTouches;
+@property(nonatomic) double minimumTapDuration; // @synthesize minimumTapDuration=_minimumTapDuration;
 @property(nonatomic) double allowableTouchTimeSeparation; // @synthesize allowableTouchTimeSeparation=_allowableTouchTimeSeparation;
 @property(nonatomic) double maximumTapDuration; // @synthesize maximumTapDuration=_maximumTapDuration;
 @property(nonatomic) __weak id <UITapRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *touches; // @synthesize touches=_touches;
 @property(nonatomic) unsigned long long numberOfTouchesRequired; // @synthesize numberOfTouchesRequired=_numberOfTouchesRequired;
 @property(nonatomic) unsigned long long numberOfTapsRequired; // @synthesize numberOfTapsRequired=_numberOfTapsRequired;
-- (void).cxx_destruct;
 - (void)_updateDigitizerLocationForEvent:(id)arg1;
 - (struct CGPoint)_digitizerLocation;
+@property(readonly, nonatomic) NSSet *activeTouches;
 - (struct CGPoint)locationInView:(id)arg1 focusSystem:(id)arg2;
 - (struct CGPoint)locationInView:(id)arg1;
 - (struct CGPoint)_locationInSceneReferenceSpace;
@@ -57,6 +64,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double maximumSingleTapDuration;
 @property(nonatomic) double allowableSeparation;
 @property(nonatomic) double allowableMovement;
+@property(nonatomic) _Bool continuousTapRecognition;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;

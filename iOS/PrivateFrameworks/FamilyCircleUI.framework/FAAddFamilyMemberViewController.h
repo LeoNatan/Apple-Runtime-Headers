@@ -32,8 +32,8 @@
     NSString *_continuationData;
 }
 
-@property(copy, nonatomic) NSString *continuationData; // @synthesize continuationData=_continuationData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *continuationData; // @synthesize continuationData=_continuationData;
 - (void)pickInviteeViewControllerWantsChildAccountFlow:(id)arg1;
 - (void)_startRemoteUIRequest:(id)arg1;
 - (void)pickInviteeViewController:(id)arg1 didCompleteWithSuccess:(_Bool)arg2;

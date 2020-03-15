@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *ik; // @synthesize ik=_ik;
 @property(retain, nonatomic) NSData *ck; // @synthesize ck=_ck;
 @property(retain, nonatomic) NSData *kc; // @synthesize kc=_kc;
 @property(retain, nonatomic) NSData *sres; // @synthesize sres=_sres;
 @property(retain, nonatomic) NSData *res; // @synthesize res=_res;
 @property(retain, nonatomic) NSData *auts; // @synthesize auts=_auts;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

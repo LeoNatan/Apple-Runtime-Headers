@@ -21,9 +21,9 @@
 + (id)d6;
 + (id)distributionForDieWithSideCount:(long long)arg1;
 + (id)distributionWithLowestValue:(long long)arg1 highestValue:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long highestValue; // @synthesize highestValue=_highest;
 @property(readonly, nonatomic) long long lowestValue; // @synthesize lowestValue=_lowest;
-- (void).cxx_destruct;
 - (_Bool)nextBool;
 - (float)nextUniform;
 - (unsigned long long)nextIntWithUpperBound:(unsigned long long)arg1;

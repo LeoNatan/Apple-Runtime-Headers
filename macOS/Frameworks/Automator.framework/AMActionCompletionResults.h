@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSNumber *errorNumber; // @synthesize errorNumber=_errorNumber;
 @property(copy) NSString *errorString; // @synthesize errorString=_errorString;
 @property struct _NSRange errorRange; // @synthesize errorRange=_errorRange;
 @property(retain) id output; // @synthesize output=_output;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

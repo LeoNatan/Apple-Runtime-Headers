@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_doctorName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *doctorName; // @synthesize doctorName=_doctorName;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 
 @end
 

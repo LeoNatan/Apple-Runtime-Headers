@@ -18,10 +18,10 @@
 }
 
 + (id)clientInfoForConnection:(id)arg1 clientLink:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *connectedDate; // @synthesize connectedDate=_connectedDate;
 @property(retain, nonatomic) id clientLink; // @synthesize clientLink=_clientLink;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (_Bool)donatesIntent;
 - (id)sourceIdentifier;
 - (_Bool)isEqual:(id)arg1;

@@ -36,6 +36,7 @@
 + (id)standardPorts;
 + (id)csAccountTypeString;
 + (id)accountTypeString;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFEWSDeliveryAccount *ewsDeliveryAccount; // @synthesize ewsDeliveryAccount=_ewsDeliveryAccount;
 @property(readonly, nonatomic) NSOperationQueue *autodiscoverQueue; // @synthesize autodiscoverQueue=_autodiscoverQueue;
 @property(readonly, nonatomic) NSTimer *autodiscoveryTimer; // @synthesize autodiscoveryTimer=_autodiscoveryTimer;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) MFEWSGateway *gateway; // @synthesize gateway=_gateway;
 - (id)remoteFetchQueue;
 - (id)remoteTaskQueue;
-- (void).cxx_destruct;
 - (void)syncMailbox:(id)arg1;
 - (void)messageTraceEWSParameters;
 - (BOOL)_setEWSError:(id)arg1;

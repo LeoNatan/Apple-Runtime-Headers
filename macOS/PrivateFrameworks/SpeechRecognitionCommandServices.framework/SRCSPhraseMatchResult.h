@@ -16,10 +16,10 @@
     id <SRCSTextMarkerRangeProtocol> _markerRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <SRCSTextMarkerRangeProtocol> markerRange; // @synthesize markerRange=_markerRange;
 @property(readonly) NSString *matchedString; // @synthesize matchedString=_matchedString;
 @property(retain) id userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)location;
 - (id)initWithMarkerRange:(id)arg1 matchedString:(id)arg2 userInfo:(id)arg3;

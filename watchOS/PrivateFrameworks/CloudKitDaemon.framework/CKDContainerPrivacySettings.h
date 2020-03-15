@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     int _discoverable;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int discoverable; // @synthesize discoverable=_discoverable;
 @property(copy, nonatomic) NSSet *applicationBundleIDs; // @synthesize applicationBundleIDs=_applicationBundleIDs;
 @property(copy, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

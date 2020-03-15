@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     } _formulaTextAreaFlags;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *lastReferencedCellUIElementsForMovingReference; // @synthesize lastReferencedCellUIElementsForMovingReference=_lastReferencedCellUIElementsForMovingReference;
 @property(retain, nonatomic) NSString *lastCompletionTokenTitleForWordEcho; // @synthesize lastCompletionTokenTitleForWordEcho=_lastCompletionTokenTitleForWordEcho;
 @property(retain, nonatomic) NSString *lastCompletionTokenTitleForOutput; // @synthesize lastCompletionTokenTitleForOutput=_lastCompletionTokenTitleForOutput;
 @property(nonatomic) struct _NSRange completionTokenRange; // @synthesize completionTokenRange=_completionTokenRange;
 @property(retain, nonatomic) SCRElement *completionToken; // @synthesize completionToken=_completionToken;
-- (void).cxx_destruct;
 - (void)_tokenForKeyboardInsertionDeleted:(id)arg1;
 - (void)_textEntryWasDenied:(id)arg1;
 - (void)_echoCompletionTokenTitleChangesToRequest:(id)arg1 userInfo:(id)arg2;

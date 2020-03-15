@@ -15,8 +15,8 @@
     NSString *_appBundleIdentifier;
 }
 
-@property(copy, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 - (void)loadPossibleStatesForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)enumeration:(id)arg1 localizedLabelForPossibleState:(id)arg2;
 - (id)initWithDefinition:(id)arg1;

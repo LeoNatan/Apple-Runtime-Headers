@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     CKNanoReplyListView *_replyListView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKNanoReplyListView *replyListView; // @synthesize replyListView=_replyListView;
 @property(nonatomic) __weak id <CKNanoReplyListCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSNumber *messageItemListNumber; // @synthesize messageItemListNumber=_messageItemListNumber;
-- (void).cxx_destruct;
 - (id)textReplyButtonForTesting:(unsigned int)arg1;
 - (void)replyListView:(id)arg1 tappedTextReply:(id)arg2 view:(id)arg3;
 - (void)updateWithReplies:(id)arg1;

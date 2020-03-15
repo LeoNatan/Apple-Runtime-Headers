@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     long long _frameIndex;
 }
 
+- (void).cxx_destruct;
 @property _Bool preserveCompressedImageRepresentation; // @synthesize preserveCompressedImageRepresentation=_preserveCompressedImageRepresentation;
 @property(readonly) long long frameIndex; // @synthesize frameIndex=_frameIndex;
 @property(readonly) double actualTime; // @synthesize actualTime=_actualTime;
 @property(readonly) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (unsigned long long)estimatedSizeOfImageInMemory;
 - (id)description;
 - (id)initWithImage:(id)arg1 actualTime:(double)arg2 frameIndex:(long long)arg3;

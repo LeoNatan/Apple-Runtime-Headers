@@ -8,10 +8,13 @@
 
 @interface _TtC9JetEngine20PageMetricsPresenter : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: appStatePresenter
-    // Error parsing type: , name: hasResignedActiveWhileAppeared
-    // Error parsing type: , name: eventDispatcher
-    // Error parsing type: , name: pageMetrics
+    // Error parsing type: , name: appMetrics
+    // Error parsing type: , name: pipeline
+    // Error parsing type: , name: appStateEventSubscription
+    // Error parsing type: , name: isViewAppeared
+    // Error parsing type: , name: hasAppExitedWhileAppeared
+    // Error parsing type: , name: context
+    // Error parsing type: , name: data
 }
 
 @end

@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     PUEditableMediaProvider *_mediaProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUEditableMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) AVAsset *videoAsset; // @synthesize videoAsset=_videoAsset;
-- (void).cxx_destruct;
 - (void)_handleDidLoadVideo:(id)arg1 info:(id)arg2;
 - (void)run;
 - (id)initWithAsset:(id)arg1 mediaProvider:(id)arg2 version:(long long)arg3;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _pathTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform pathTransform; // @synthesize pathTransform=_pathTransform;
 @property(retain, nonatomic) UIBezierPath *path; // @synthesize path=_path;
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(nonatomic) unsigned short glyph; // @synthesize glyph=_glyph;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -27,6 +27,7 @@
 + (unsigned char)isLocationValid:(id)arg1 uptoSeconds:(double)arg2 isHighAccuracy:(unsigned char)arg3;
 + (void)logLocation:(id)arg1 addPrefixString:(id)arg2;
 + (id)sharedWiFiLocationManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property int locationManagerState; // @synthesize locationManagerState=_locationManagerState;
 @property(retain, nonatomic) NSMutableArray *clientsDataArray; // @synthesize clientsDataArray=_clientsDataArray;
@@ -34,7 +35,6 @@
 @property unsigned char isAuthorized; // @synthesize isAuthorized=_isAuthorized;
 @property(retain) CLLocation *latestLocation; // @synthesize latestLocation=_latestLocation;
 @property(nonatomic) __weak id <WiFiLocationManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;

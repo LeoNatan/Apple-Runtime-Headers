@@ -14,9 +14,9 @@
     NSString *_selection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *selection; // @synthesize selection=_selection;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 selection:(id)arg2;

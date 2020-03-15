@@ -26,6 +26,7 @@
 + (id)removeDictationCharacterInString:(id)arg1;
 + (Class)_backgroundViewClass;
 + (_Bool)_isRTL;
+- (void).cxx_destruct;
 @property _Bool ignoreTokensUpdate; // @synthesize ignoreTokensUpdate=_ignoreTokensUpdate;
 @property(retain) SPSearchEntity *lastSearchEntity; // @synthesize lastSearchEntity=_lastSearchEntity;
 @property(retain) NSString *lastSearchText; // @synthesize lastSearchText=_lastSearchText;
@@ -36,7 +37,6 @@
 @property(retain) UIImage *clearButtonImage; // @synthesize clearButtonImage=_clearButtonImage;
 @property struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(retain) NSArray *suggestions; // @synthesize suggestions=_suggestions;
-- (void).cxx_destruct;
 - (void)escapeKeyCommand;
 - (id)keyCommands;
 - (void)_handleKeyUIEvent:(id)arg1;

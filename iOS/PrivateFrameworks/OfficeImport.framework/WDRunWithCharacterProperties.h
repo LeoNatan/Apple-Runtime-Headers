@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     WDCharacterProperties *mProperties;
 }
 
-@property(retain) WDCharacterProperties *properties; // @synthesize properties=mProperties;
 - (void).cxx_destruct;
+@property(retain) WDCharacterProperties *properties; // @synthesize properties=mProperties;
 @property(readonly, getter=isHidden) _Bool hidden;
 - (void)clearProperties;
 - (id)initWithParagraph:(id)arg1;

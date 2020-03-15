@@ -18,11 +18,11 @@
 }
 
 + (id)_sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) long long _queue_iteration; // @synthesize _queue_iteration=__queue_iteration;
 @property(retain, nonatomic) NSMutableDictionary *_queue_historyStringsKeyedByLogger; // @synthesize _queue_historyStringsKeyedByLogger=__queue_historyStringsKeyedByLogger;
 @property(retain, nonatomic) NSHashTable *_queue_runningLoggers; // @synthesize _queue_runningLoggers=__queue_runningLoggers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)_historyStrings;
 - (id)_runningLoggerStrings;
 - (id)_runningLoggers;

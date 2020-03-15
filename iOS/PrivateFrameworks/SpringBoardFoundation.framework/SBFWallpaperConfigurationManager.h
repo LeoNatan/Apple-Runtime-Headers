@@ -31,6 +31,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCachedVariantsShareWallpaperConfigurationValid) _Bool cachedVariantsShareWallpaperConfigurationValid; // @synthesize cachedVariantsShareWallpaperConfigurationValid=_cachedVariantsShareWallpaperConfigurationValid;
 @property(nonatomic) _Bool cachedVariantsShareWallpaperConfiguration; // @synthesize cachedVariantsShareWallpaperConfiguration=_cachedVariantsShareWallpaperConfiguration;
 @property(retain, nonatomic) SBFMagnifyMode *magnifyMode; // @synthesize magnifyMode=_magnifyMode;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) struct CGSize wallpaperSize; // @synthesize wallpaperSize=_wallpaperSize;
 @property(nonatomic) __weak id <SBFWallpaperConfigurationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSArray *dataStores; // @synthesize dataStores=_dataStores;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

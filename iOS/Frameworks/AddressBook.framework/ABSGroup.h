@@ -20,11 +20,11 @@
 
 + (id)propertyKeyForPropertyID:(int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) int revertedRecordID; // @synthesize revertedRecordID=_revertedRecordID;
 @property(retain, nonatomic) CNMutableGroup *cnImpl; // @synthesize cnImpl=_cnImpl;
 @property(nonatomic) __weak ABSSource *source; // @synthesize source=_source;
 @property(nonatomic) __weak ABSAddressBook *addressBook; // @synthesize addressBook=_addressBook;
-- (void).cxx_destruct;
 - (void)replaceRecordStorageWithCNObject:(id)arg1;
 - (void)updateAllValuesWithValuesFromGroup:(id)arg1;
 - (_Bool)removeProperty:(int)arg1 withError:(id *)arg2;

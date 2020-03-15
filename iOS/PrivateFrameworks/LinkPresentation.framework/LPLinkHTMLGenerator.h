@@ -46,6 +46,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) _Bool isPreliminary; // @synthesize isPreliminary=_isPreliminary;
 @property(readonly, nonatomic) LPTheme *theme; // @synthesize theme=_theme;
@@ -62,7 +63,6 @@
 @property(nonatomic, setter=_setIncludeDarkInterfaceInlineStyles:) _Bool _includeDarkInterfaceInlineStyles; // @synthesize _includeDarkInterfaceInlineStyles;
 @property(nonatomic, setter=_setIncludeClassNamesWhenUsingInlineStyles:) _Bool _includeClassNamesWhenUsingInlineStyles; // @synthesize _includeClassNamesWhenUsingInlineStyles;
 @property(nonatomic, setter=_setUseVariablesWhenUsingInlineStyles:) _Bool _useVariablesWhenUsingInlineStyles; // @synthesize _useVariablesWhenUsingInlineStyles;
-- (void).cxx_destruct;
 - (void)_didFollowLink;
 @property(readonly, nonatomic) _Bool _canTapToLoad;
 - (void)_rebuildView;

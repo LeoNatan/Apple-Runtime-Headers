@@ -27,6 +27,7 @@
 + (id)paramWithPurchase:(id)arg1 purchaseTransactionIdentifier:(id)arg2;
 + (id)paramWithPayment:(id)arg1;
 + (id)paramWithPaymentToken:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *installmentAuthorizationToken; // @synthesize installmentAuthorizationToken=_installmentAuthorizationToken;
 @property(readonly, nonatomic) PKApplePayTrustSignature *applePayTrustSignature; // @synthesize applePayTrustSignature=_applePayTrustSignature;
 @property(readonly, nonatomic) PKDisbursementVoucher *disbursementVoucher; // @synthesize disbursementVoucher=_disbursementVoucher;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) PKServiceProviderPurchase *purchase; // @synthesize purchase=_purchase;
 @property(retain, nonatomic) PKPayment *payment; // @synthesize payment=_payment;
 @property(retain, nonatomic) PKPaymentToken *paymentToken; // @synthesize paymentToken=_paymentToken;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

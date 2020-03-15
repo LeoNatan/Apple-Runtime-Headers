@@ -13,8 +13,8 @@
     PUMediaProvider *__internalMediaProvider;
 }
 
-@property(readonly, nonatomic) PUMediaProvider *_internalMediaProvider; // @synthesize _internalMediaProvider=__internalMediaProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PUMediaProvider *_internalMediaProvider; // @synthesize _internalMediaProvider=__internalMediaProvider;
 - (long long)requestImageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
 - (void)cancelImageRequest:(long long)arg1;
 - (long long)requestAnimatedImageForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;

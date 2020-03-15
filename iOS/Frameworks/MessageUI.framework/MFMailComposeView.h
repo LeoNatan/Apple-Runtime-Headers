@@ -72,6 +72,7 @@
 }
 
 + (unsigned long long)expectedFromAddressPickerDisplayModeForTraitCollection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFComposeDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
 @property(readonly, nonatomic) unsigned long long fromAddressPickerDisplayMode; // @synthesize fromAddressPickerDisplayMode=_fromAddressPickerDisplayMode;
 @property(readonly, nonatomic) MFMailComposeContactsSearchController *searchController; // @synthesize searchController=_searchController;
@@ -87,7 +88,6 @@
 @property(nonatomic) __weak UIViewController *popoverOwner; // @synthesize popoverOwner=_popoverOwner;
 @property(nonatomic) __weak id <MFMailComposeRecipientTextViewDelegate> composeRecipientDelegate; // @synthesize composeRecipientDelegate=_composeRecipientViewDelegate;
 @property(nonatomic) __weak id <MFMailComposeViewDelegate> composeViewDelegate; // @synthesize composeViewDelegate=_mailComposeViewDelegate;
-- (void).cxx_destruct;
 - (void)composeWebViewTextChanged:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;

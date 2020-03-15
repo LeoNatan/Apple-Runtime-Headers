@@ -21,13 +21,13 @@
     unsigned long long __currentState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long _currentState; // @synthesize _currentState=__currentState;
 @property(retain, nonatomic) NSDate *_secondTouchStartTime; // @synthesize _secondTouchStartTime=__secondTouchStartTime;
 @property(retain, nonatomic) AXETrackingTouchEvent *_secondTouchStart; // @synthesize _secondTouchStart=__secondTouchStart;
 @property(retain, nonatomic) AXETrackingTouchEvent *_firstTouchStart; // @synthesize _firstTouchStart=__firstTouchStart;
 @property(nonatomic) __weak id <AXETrackingSplitTapGestureRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) double maximumTapDownDeviation; // @synthesize maximumTapDownDeviation=_maximumTapDownDeviation;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)processGestureEvent:(id)arg1;
 - (id)initWithMaximumTapDownDeviation:(double)arg1;

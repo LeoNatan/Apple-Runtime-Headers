@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownFunctionPointerType _handlerFunction;
 }
 
+- (void).cxx_destruct;
 @property CDUnknownFunctionPointerType handlerFunction; // @synthesize handlerFunction=_handlerFunction;
 @property(retain) NSArray *allowedEntitlementGroup; // @synthesize allowedEntitlementGroup=_allowedEntitlementGroup;
-- (void).cxx_destruct;
 - (id)initWithHandlerFunction:(CDUnknownFunctionPointerType)arg1 allowedEntitlementGroup:(id)arg2;
 
 @end

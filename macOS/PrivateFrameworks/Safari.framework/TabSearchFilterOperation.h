@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_tabInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tabInfo; // @synthesize tabInfo=_tabInfo;
 @property(readonly, nonatomic) NSString *filterText; // @synthesize filterText=_filterText;
 @property(readonly, copy, nonatomic) CDUnknownBlockType filterCompletionCallback; // @synthesize filterCompletionCallback=_filterCompletionCallback;
-- (void).cxx_destruct;
 - (void)_completeOperationWithIndexes:(id)arg1;
 - (void)main;
 - (id)initWithTabInfoForFilteringTabs:(id)arg1 filterText:(id)arg2 completionCallback:(CDUnknownBlockType)arg3;

@@ -23,6 +23,7 @@
     NSMutableData *_amShellScriptActionResultData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *amShellScriptActionResultData; // @synthesize amShellScriptActionResultData=_amShellScriptActionResultData;
 @property(nonatomic) double progressValue; // @synthesize progressValue=_progressValue;
 @property(copy, nonatomic) NSString *selectedOutputType; // @synthesize selectedOutputType=_selectedOutputType;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) id outputOfPreviousAction; // @synthesize outputOfPreviousAction=_outputOfPreviousAction;
 @property(retain, nonatomic) NSMutableArray *outputConnectionPoints; // @synthesize outputConnectionPoints=_outputConnectionPoints;
 @property(retain, nonatomic) NSMutableArray *inputConnectionPoints; // @synthesize inputConnectionPoints=_inputConnectionPoints;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

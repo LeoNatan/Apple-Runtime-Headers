@@ -16,11 +16,11 @@
     UIImage *_singlePointImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *singlePointImage; // @synthesize singlePointImage=_singlePointImage;
 @property(retain, nonatomic) UIImage *bottomImage; // @synthesize bottomImage=_bottomImage;
 @property(retain, nonatomic) UIImage *centerImage; // @synthesize centerImage=_centerImage;
 @property(retain, nonatomic) UIImage *topImage; // @synthesize topImage=_topImage;
-- (void).cxx_destruct;
 - (float)_desiredWidth;
 - (void)renderInContext:(struct CGContext *)arg1 topCenter:(struct CGPoint)arg2 bottomCenter:(struct CGPoint)arg3 contextBounds:(struct CGRect)arg4 alpha:(float)arg5;
 - (void)_renderSingleImageInContext:(struct CGContext *)arg1 point:(struct CGPoint)arg2 contextBounds:(struct CGRect)arg3 alpha:(float)arg4;

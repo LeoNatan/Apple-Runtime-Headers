@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CTCellularPlanManager *_cellularPlanManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CTCellularPlanManager *cellularPlanManager; // @synthesize cellularPlanManager=_cellularPlanManager;
 @property(retain, nonatomic) CTCellularPlanPendingTransfer *plan; // @synthesize plan=_plan;
-- (void).cxx_destruct;
 - (void)activatePlanPendingTransfer:(id)arg1;
 - (void)setSpecifierProperties;
 - (id)initWithListController:(id)arg1 planPendingTransfer:(id)arg2;

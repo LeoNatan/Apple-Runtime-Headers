@@ -14,9 +14,9 @@
     NSDateComponents *_offset;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDateComponents *offset; // @synthesize offset=_offset;
 @property long long changeType; // @synthesize changeType=_changeType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)updatedIdentifier:(id)arg1;

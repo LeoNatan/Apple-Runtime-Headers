@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsSecureCoding;
 + (id)alwaysAllowedBundleIdentifiers;
 + (id)queryWithIdentifier:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

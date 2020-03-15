@@ -54,6 +54,7 @@
     NSMutableSet *_lePipePeersSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL supportsRanging; // @synthesize supportsRanging=_supportsRanging;
 @property(readonly) BOOL supportsObjectDiscovery; // @synthesize supportsObjectDiscovery=_supportsObjectDiscovery;
 @property BOOL isObjectDiscovery; // @synthesize isObjectDiscovery=_isObjectDiscovery;
@@ -92,7 +93,6 @@
 @property(retain) NSString *clientTypeString; // @synthesize clientTypeString=_clientTypeString;
 @property(retain) NSUUID *clientUUID; // @synthesize clientUUID=_clientUUID;
 @property(readonly) __weak id <WPDClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)receivedTestResponse:(id)arg1;
 - (void)sendTestRequest:(id)arg1;
 - (void)stopScans;

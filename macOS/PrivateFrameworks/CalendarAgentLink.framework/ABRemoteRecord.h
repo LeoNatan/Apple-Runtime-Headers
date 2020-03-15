@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
 @property(retain) id publicRecord; // @synthesize publicRecord=_publicRecord;
 @property long long personFlags; // @synthesize personFlags=_personFlags;
@@ -34,7 +35,6 @@
 @property(retain) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain) NSDate *builtDate; // @synthesize builtDate=_builtDate;
 @property(copy) NSString *abAccountIdentifier; // @synthesize abAccountIdentifier=_abAccountIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

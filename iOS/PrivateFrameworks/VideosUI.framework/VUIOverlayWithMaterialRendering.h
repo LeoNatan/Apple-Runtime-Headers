@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _rect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 rect:(struct CGRect)arg2;
 

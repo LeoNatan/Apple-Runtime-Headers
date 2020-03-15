@@ -31,6 +31,8 @@
     UIColor *_platterProgressBarTintColor;
 }
 
++ (id)textColorForBackgroundColor:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *platterProgressBarTintColor; // @synthesize platterProgressBarTintColor=_platterProgressBarTintColor;
 @property(readonly, nonatomic) UIColor *platterSelectionColor; // @synthesize platterSelectionColor=_platterSelectionColor;
 @property(readonly, nonatomic) UIColor *platterPlaceholderTextColor; // @synthesize platterPlaceholderTextColor=_platterPlaceholderTextColor;
@@ -50,7 +52,6 @@
 @property(readonly, nonatomic) long long platterKeyboardOverrideAppearance; // @synthesize platterKeyboardOverrideAppearance=_platterKeyboardOverrideAppearance;
 @property(readonly, nonatomic) long long platterTextFieldOverrideUserInterfaceStyle; // @synthesize platterTextFieldOverrideUserInterfaceStyle=_platterTextFieldOverrideUserInterfaceStyle;
 @property(readonly, nonatomic) long long platterOverrideUserInterfaceStyle; // @synthesize platterOverrideUserInterfaceStyle=_platterOverrideUserInterfaceStyle;
-- (void).cxx_destruct;
 - (id)_colorForPlatterTextColor:(id)arg1 regularColor:(id)arg2 withPlatterAlpha:(double)arg3;
 - (id)annotationTextColorForPlatterAlpha:(double)arg1;
 - (id)platterWarningTextColorForPlatterAlpha:(double)arg1;

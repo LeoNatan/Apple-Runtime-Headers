@@ -29,6 +29,7 @@
     NSArray *_proactiveTriggers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *proactiveTriggers; // @synthesize proactiveTriggers=_proactiveTriggers;
 @property(retain, nonatomic) NSMutableArray *committedCandidates; // @synthesize committedCandidates=_committedCandidates;
 @property(retain, nonatomic) NSMutableDictionary *candidateRefsDictionary; // @synthesize candidateRefsDictionary=_candidateRefsDictionary;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) TIHandwritingStrokes *userDrawing; // @synthesize userDrawing=_userDrawing;
 @property(nonatomic) _Bool shouldLearnAcceptedCandidate; // @synthesize shouldLearnAcceptedCandidate=_shouldLearnAcceptedCandidate;
 @property(nonatomic) _Bool isInCompletionMode; // @synthesize isInCompletionMode=_isInCompletionMode;
-- (void).cxx_destruct;
 - (id)searchStringForMarkedText;
 @property(readonly, nonatomic) NSLocale *recognitionLanguage;
 @property(readonly, nonatomic) CIMCandidateData *candidateData; // @synthesize candidateData=_candidateData;

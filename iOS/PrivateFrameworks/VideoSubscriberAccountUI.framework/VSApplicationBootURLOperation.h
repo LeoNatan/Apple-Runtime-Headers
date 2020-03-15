@@ -19,14 +19,14 @@ __attribute__((visibility("hidden")))
     VSPreferences *_preferences;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSPreferences *preferences; // @synthesize preferences=_preferences;
 @property(retain, nonatomic) VSFailable *urlOrError; // @synthesize urlOrError=_urlOrError;
 @property(nonatomic) _Bool isDeveloper; // @synthesize isDeveloper=_isDeveloper;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)verifyExtendedValidationWithTrust:(struct __SecTrust *)arg1;
-- (id)generateTempFilePath;
+- (id)generateFilePathForURL:(id)arg1;
 - (void)executionDidBegin;
 - (id)initWithBootURL:(id)arg1 isDeveloper:(_Bool)arg2;
 - (id)init;

@@ -20,12 +20,12 @@
     ICMusicSubscriptionLeaseSession *_subscriptionLeaseSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICMusicSubscriptionLeaseSession *subscriptionLeaseSession; // @synthesize subscriptionLeaseSession=_subscriptionLeaseSession;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) ICStoreRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(nonatomic) int operationType; // @synthesize operationType=_operationType;
 @property(retain, nonatomic) MPCModelGenericAVItemAssetLoadProperties *assetLoadProperties; // @synthesize assetLoadProperties=_assetLoadProperties;
-- (void).cxx_destruct;
 - (void)setCancellationHandler:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)cancellationHandler;
 - (id)_handlePlaybackResponse:(id)arg1 withPlaybackCacheRequest:(id)arg2 error:(id *)arg3;

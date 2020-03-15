@@ -13,8 +13,8 @@
     CUISAlertSheetController *_alertSheet;
 }
 
-@property(retain, nonatomic) CUISAlertSheetController *alertSheet; // @synthesize alertSheet=_alertSheet;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CUISAlertSheetController *alertSheet; // @synthesize alertSheet=_alertSheet;
 - (void)animateDismissalWithCompletion:(CDUnknownBlockType)arg1;
 - (void)animatePresentationWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithActions:(id)arg1 title:(id)arg2 message:(id)arg3 attributedMessage:(id)arg4;

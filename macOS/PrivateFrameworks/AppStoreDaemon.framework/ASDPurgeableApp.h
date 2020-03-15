@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSystemApp) BOOL systemApp; // @synthesize systemApp=_systemApp;
 @property(readonly, nonatomic) NSNumber *storeItemID; // @synthesize storeItemID=_storeItemID;
 @property(readonly, nonatomic) long long staticDiskUsage; // @synthesize staticDiskUsage=_staticDiskUsage;
 @property(readonly, nonatomic) NSString *purgeableReason; // @synthesize purgeableReason=_purgeableReason;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

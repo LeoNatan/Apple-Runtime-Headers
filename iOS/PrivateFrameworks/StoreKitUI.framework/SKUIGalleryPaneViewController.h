@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     long long _galleryIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long galleryIndex; // @synthesize galleryIndex=_galleryIndex;
 @property(readonly, nonatomic) SKUIMediaComponent *component; // @synthesize component=_component;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIEmbeddedMediaView *mediaView;
 - (id)initWithMediaComponent:(id)arg1 galleryIndex:(long long)arg2;
 

@@ -18,12 +18,12 @@
     NSDictionary *_result;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *result; // @synthesize result=_result;
 @property(copy, nonatomic) CDUnknownBlockType lookupCompletion; // @synthesize lookupCompletion=_lookupCompletion;
 @property(copy, nonatomic) NSArray *lookupRequests; // @synthesize lookupRequests=_lookupRequests;
 @property(copy, nonatomic) FCPersonalizationTreatment *personalizationTreatment; // @synthesize personalizationTreatment=_personalizationTreatment;
 @property(retain, nonatomic) id <FCReadonlyPersonalizationAggregateStore> aggregateStore; // @synthesize aggregateStore=_aggregateStore;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;

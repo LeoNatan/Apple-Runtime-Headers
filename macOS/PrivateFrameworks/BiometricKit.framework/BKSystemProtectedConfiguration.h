@@ -17,12 +17,12 @@
     NSNumber *_unlockTokenMaxLifetime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *unlockTokenMaxLifetime; // @synthesize unlockTokenMaxLifetime=_unlockTokenMaxLifetime;
 @property(retain, nonatomic) NSNumber *loginEnabled; // @synthesize loginEnabled=_loginEnabled;
 @property(retain, nonatomic) NSNumber *identificationEnabled; // @synthesize identificationEnabled=_identificationEnabled;
 @property(retain, nonatomic) NSNumber *unlockEnabled; // @synthesize unlockEnabled=_unlockEnabled;
 @property(retain, nonatomic) NSNumber *biometryEnabled; // @synthesize biometryEnabled=_biometryEnabled;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;

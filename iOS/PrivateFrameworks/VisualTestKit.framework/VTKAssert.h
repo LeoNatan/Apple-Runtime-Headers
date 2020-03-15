@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     VTKInternalConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) VTKInternalConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) __weak XCTestCase *testCase; // @synthesize testCase=_testCase;
-- (void).cxx_destruct;
 - (void)assertView:(id)arg1 identifier:(id)arg2 filePath:(id)arg3 lineNumber:(unsigned long long)arg4;
 @property(readonly, nonatomic) NSArray *drawItems;
 @property(readonly, nonatomic) NSString *referenceImagesDirectory;

@@ -29,6 +29,7 @@
 + (Class)indoorCMAttitudeType;
 + (Class)indoorLocationsType;
 + (Class)indoorWifisType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bundleIds; // @synthesize bundleIds=_bundleIds;
 @property(retain, nonatomic) NSMutableArray *indoorPressures; // @synthesize indoorPressures=_indoorPressures;
 @property(retain, nonatomic) NSMutableArray *indoorMotionActivitys; // @synthesize indoorMotionActivitys=_indoorMotionActivitys;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSMutableArray *indoorLocations; // @synthesize indoorLocations=_indoorLocations;
 @property(retain, nonatomic) NSMutableArray *indoorWifis; // @synthesize indoorWifis=_indoorWifis;
 @property(retain, nonatomic) CLPMeta *meta; // @synthesize meta=_meta;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

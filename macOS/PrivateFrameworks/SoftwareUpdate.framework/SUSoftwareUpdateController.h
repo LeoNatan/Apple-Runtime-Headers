@@ -44,6 +44,7 @@
     NSObject<OS_dispatch_queue> *_updateQueue;
 }
 
+- (void).cxx_destruct;
 @property BOOL didSendAuth; // @synthesize didSendAuth=_didSendAuth;
 @property(retain) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
@@ -57,7 +58,6 @@
 @property(nonatomic) BOOL requireACPower; // @synthesize requireACPower=_requireACPower;
 @property(readonly) __weak id <SUSoftwareUpdateControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSDictionary *evaluationMetaInfo; // @synthesize evaluationMetaInfo=_evaluationMetaInfo;
-- (void).cxx_destruct;
 - (id)_errorWithCode:(long long)arg1 userInfo:(id)arg2 underlyingError:(id)arg3 recoveryAction:(CDUnknownBlockType)arg4;
 - (void)_closeNecessaryApplicationsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_checkAndInstallMatchingUpdatesWithCompletionHandler:(CDUnknownBlockType)arg1;

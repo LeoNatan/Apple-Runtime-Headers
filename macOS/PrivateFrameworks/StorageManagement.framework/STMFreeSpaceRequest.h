@@ -31,6 +31,7 @@
 + (unsigned long long)freeSpaceOnVolume:(id)arg1;
 + (id)requestFreeSpace:(unsigned long long)arg1 onVolume:(id)arg2;
 + (id)requestFreeSpace:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *operationTypeLabel; // @synthesize operationTypeLabel=_operationTypeLabel;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property struct CacheDeleteToken *cacheDeleteToken; // @synthesize cacheDeleteToken=_cacheDeleteToken;
@@ -44,7 +45,6 @@
 @property(retain) NSString *volume; // @synthesize volume=_volume;
 @property unsigned long long spaceRequested; // @synthesize spaceRequested=_spaceRequested;
 @property long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)setOperationType:(long long)arg1 label:(id)arg2;
 - (id)cancel;
 - (id)begin:(CDUnknownBlockType)arg1;

@@ -21,13 +21,13 @@
     id <SVVideoPlaybackProgressObserverFactory> _playbackProgressObserverFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoPlaybackProgressObserverFactory> playbackProgressObserverFactory; // @synthesize playbackProgressObserverFactory=_playbackProgressObserverFactory;
 @property(readonly, nonatomic) id <SVVideoLoadingProgressObserverFactory> loadingProgressObserverFactory; // @synthesize loadingProgressObserverFactory=_loadingProgressObserverFactory;
 @property(readonly, nonatomic) id <SVVideoLoadingStateObserverFactory> loadingStateObserverFactory; // @synthesize loadingStateObserverFactory=_loadingStateObserverFactory;
 @property(readonly, nonatomic) id <SVPlaybackCoordinatorProviding> playbackCoordinatorProvider; // @synthesize playbackCoordinatorProvider=_playbackCoordinatorProvider;
 @property(readonly, nonatomic) id <SVPrefetchPolicyHandler> prefetchPolicyHandler; // @synthesize prefetchPolicyHandler=_prefetchPolicyHandler;
 @property(readonly, nonatomic) id <SVVideoBufferObserverFactory> bufferObserverFactory; // @synthesize bufferObserverFactory=_bufferObserverFactory;
-- (void).cxx_destruct;
 - (id)createPrefetcherForVideo:(id)arg1 afterVideo:(id)arg2;
 - (id)initWithPrefetchPolicyHandler:(id)arg1 bufferObserverFactory:(id)arg2 playbackCoordinatorProvider:(id)arg3 loadingStateObserverFactory:(id)arg4 loadingProgressObserverFactory:(id)arg5 playbackProgressObserverFactory:(id)arg6;
 

@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
         NSString *name;
         long long requirement;
         char supported;
-    } _featureInfo[96];
+    } _featureInfo[101];
     id <MTLDeviceSPI> _device;
 }
 
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)supportsMirrorClampToEdgeSamplerMode;
 - (BOOL)supportsBlackOrWhiteSamplerBorderColors;
 - (BOOL)supportsShaderBarycentricCoordinates;
+- (BOOL)supportsVariableRateRasterization;
 - (BOOL)supportsSIMDShufflesAndBroadcast;
 - (BOOL)supportsShaderMinLODClamp;
 - (BOOL)supportsSIMDGroup;
@@ -89,6 +90,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)supportsSRGBwrites;
 - (BOOL)supportsPublicXR10Formats;
 - (BOOL)supportsASTCTextureCompression;
+- (BOOL)supportsBinaryLibraries;
+- (BOOL)supportsDynamicLibraries;
+- (BOOL)supportsBinaryArchives;
 - (BOOL)supportsGPUStatistics;
 - (BOOL)supportsSeparateDepthStencil;
 - (BOOL)supportsRelaxedTextureViewRequirements;
@@ -107,6 +111,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)supportsOpenCLTextureWriteSwizzles;
 - (BOOL)supportsPlacementHeaps;
 - (BOOL)supportsSamplerReductionMode;
+- (BOOL)supportsVertexAmplification;
 - (BOOL)supportsQueryTextureLOD;
 - (BOOL)supports32bpcMSAATextures;
 - (BOOL)supportsSamplerAddressModeClampToHalfBorder;

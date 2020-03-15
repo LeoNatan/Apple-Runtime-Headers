@@ -13,8 +13,8 @@
     HMSymptom *_symptom;
 }
 
-@property(readonly, nonatomic) HMSymptom *symptom; // @synthesize symptom=_symptom;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMSymptom *symptom; // @synthesize symptom=_symptom;
 - (id)_subclass_updateWithOptions:(id)arg1;
 
 @end

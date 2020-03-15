@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     id <_NSCollectionLayoutVisibleItem> _visibleItem;
 }
 
-@property(readonly, nonatomic) NSCollectionLayoutVisibleItem *visibleItem; // @synthesize visibleItem=_visibleItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSCollectionLayoutVisibleItem *visibleItem; // @synthesize visibleItem=_visibleItem;
 - (id)item;
 - (id)initWithVisibleItem:(id)arg1;
 

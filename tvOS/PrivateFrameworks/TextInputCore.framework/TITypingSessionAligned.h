@@ -25,6 +25,7 @@
 + (id)alignedPathTouchesForWord:(id)arg1;
 + (id)alignedEntryForWord:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long firstCPEntryIndex; // @synthesize firstCPEntryIndex=_firstCPEntryIndex;
 @property(nonatomic) _Bool containsCPEntries; // @synthesize containsCPEntries=_containsCPEntries;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSArray *alignedEntries; // @synthesize alignedEntries=_alignedEntries;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, nonatomic) NSArray *layouts; // @synthesize layouts=_layouts;
-- (void).cxx_destruct;
 - (id)alignedWordsFromSession:(id)arg1;
 - (id)textToAppendForEntry:(id)arg1 sessionIndx:(unsigned long long)arg2;
 - (void)getAlignedTextAndConfidence;

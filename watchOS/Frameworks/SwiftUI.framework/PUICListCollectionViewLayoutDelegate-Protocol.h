@@ -16,6 +16,7 @@
 - (float)collectionView:(UICollectionView *)arg1 layout:(PUICListCollectionViewLayout *)arg2 estimatedHeightForItemAtIndexPath:(NSIndexPath *)arg3;
 - (float)collectionView:(UICollectionView *)arg1 layout:(PUICListCollectionViewLayout *)arg2 heightForFooterInSection:(int)arg3;
 - (float)collectionView:(UICollectionView *)arg1 layout:(PUICListCollectionViewLayout *)arg2 heightForHeaderInSection:(int)arg3;
+- (float)collectionView:(UICollectionView *)arg1 layout:(PUICListCollectionViewLayout *)arg2 rowSpacingInSection:(int)arg3;
 - (_Bool)collectionView:(UICollectionView *)arg1 layout:(PUICListCollectionViewLayout *)arg2 isRadioSection:(int)arg3;
 - (float)collectionView:(UICollectionView *)arg1 layout:(PUICListCollectionViewLayout *)arg2 heightForItemAtIndexPath:(NSIndexPath *)arg3;
 @end

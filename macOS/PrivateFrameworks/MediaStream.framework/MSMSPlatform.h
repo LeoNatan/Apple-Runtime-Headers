@@ -18,10 +18,10 @@
 }
 
 + (id)thePlatform;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(nonatomic) BOOL isPerfLoggingEnabled; // @synthesize isPerfLoggingEnabled=_isPerfLoggingEnabled;
 @property(retain, nonatomic) NSData *pushToken; // @synthesize pushToken=_pushToken;
-- (void).cxx_destruct;
 - (id)theDaemon;
 - (id)fullNameFromFirstName:(id)arg1 lastName:(id)arg2;
 - (BOOL)shouldEnableNewFeatures;

@@ -40,9 +40,9 @@
     PKRemotePaymentRequest *_remoteRequest;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKRemotePaymentRequest *remoteRequest; // @synthesize remoteRequest=_remoteRequest;
 @property(nonatomic) id <PKPaymentAuthorizationHostProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)authorizationFooterViewDidChangeConstraints:(id)arg1;
 - (void)authorizationFooterViewPasscodeButtonPressed:(id)arg1;
 - (void)dismissPassphraseViewController;

@@ -19,11 +19,11 @@
 + (id)buildRequiredOnly;
 + (id)buildWithFirewallEnabled:(id)arg1 withBlockAllIncoming:(id)arg2 withStealthMode:(id)arg3 withApplications:(id)arg4;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *statusApplications; // @synthesize statusApplications=_statusApplications;
 @property(copy, nonatomic) NSNumber *statusStealthMode; // @synthesize statusStealthMode=_statusStealthMode;
 @property(copy, nonatomic) NSNumber *statusBlockAllIncoming; // @synthesize statusBlockAllIncoming=_statusBlockAllIncoming;
 @property(copy, nonatomic) NSNumber *statusFirewallEnabled; // @synthesize statusFirewallEnabled=_statusFirewallEnabled;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

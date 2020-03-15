@@ -15,12 +15,14 @@
     UIView *_viewForAnimatingAlpha;
     AXPIPinchChainView *_pinchChainView;
     _Bool _shouldAnimatePress;
+    _Bool _shouldSuppressFingerVisuals;
     id <AXPIFingerAppearanceDelegate> _appearanceDelegate;
 }
 
-@property(nonatomic) __weak id <AXPIFingerAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
-@property(nonatomic) _Bool shouldAnimatePress; // @synthesize shouldAnimatePress=_shouldAnimatePress;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AXPIFingerAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
+@property(nonatomic) _Bool shouldSuppressFingerVisuals; // @synthesize shouldSuppressFingerVisuals=_shouldSuppressFingerVisuals;
+@property(nonatomic) _Bool shouldAnimatePress; // @synthesize shouldAnimatePress=_shouldAnimatePress;
 - (void)animateToTapWithDuration:(double)arg1;
 - (void)cancelCircularProgressAnimation;
 - (void)performCircularProgressAnimationOnFingersWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;

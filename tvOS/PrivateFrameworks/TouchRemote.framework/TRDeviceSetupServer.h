@@ -27,10 +27,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cachedAuthInfo; // @synthesize cachedAuthInfo=_cachedAuthInfo;
 @property(retain, nonatomic) NSMutableArray *accountsToAuthenticate; // @synthesize accountsToAuthenticate=_accountsToAuthenticate;
 @property(nonatomic) __weak id <TRDeviceSetupServerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_sendAction:(id)arg1 sendDataHandler:(CDUnknownBlockType)arg2 shouldSendNilOnFailure:(_Bool)arg3 error:(id *)arg4;
 - (void)_finishSetupWithError:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)_cancelWithAction:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;

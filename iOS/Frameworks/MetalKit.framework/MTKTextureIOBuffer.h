@@ -16,8 +16,8 @@
     id <MTLBuffer> _buffer;
 }
 
-@property(readonly, nonatomic) id <MTLBuffer> buffer; // @synthesize buffer=_buffer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <MTLBuffer> buffer; // @synthesize buffer=_buffer;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)map;
 - (id)initWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 deallocNotification:(CDUnknownBlockType)arg3 device:(id)arg4 error:(id *)arg5;

@@ -41,6 +41,7 @@
 + (id)toolbarPropertyNames;
 + (Class)viewClass;
 + (double)defaultToolbarHeight;
+- (void).cxx_destruct;
 @property(nonatomic) struct NSEdgeInsets preferredToolbarDecorationInsets; // @synthesize preferredToolbarDecorationInsets=_preferredToolbarDecorationInsets;
 @property(nonatomic) long long preferredToolbarStyle; // @synthesize preferredToolbarStyle=_preferredToolbarStyle;
 @property(nonatomic) double preferredSubtoolbarBaselineOffsetFromBottom; // @synthesize preferredSubtoolbarBaselineOffsetFromBottom=_preferredSubtoolbarBaselineOffsetFromBottom;
@@ -53,7 +54,6 @@
 @property(nonatomic) unsigned long long edgesForExtendedLayout; // @synthesize edgesForExtendedLayout=_edgesForExtendedLayout;
 @property(nonatomic) long long modalPresentationStyle; // @synthesize modalPresentationStyle=_modalPresentationStyle;
 @property(nonatomic) BOOL isEditing; // @synthesize isEditing=_isEditing;
-- (void).cxx_destruct;
 - (id)menuForEvent:(id)arg1;
 - (id)bottomLayoutGuide;
 - (id)topLayoutGuide;

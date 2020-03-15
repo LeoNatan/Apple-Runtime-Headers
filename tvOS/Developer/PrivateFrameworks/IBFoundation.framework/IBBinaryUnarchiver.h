@@ -31,8 +31,8 @@
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)_globalClassByClassNameMap;
 + (id)unarchiveObjectWithDataArray:(id)arg1 context:(id)arg2;
-@property(readonly, nonatomic) NSDictionary *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *context; // @synthesize context=_context;
 - (Class)classForClassName:(id)arg1;
 - (void)setClass:(Class)arg1 forClassName:(id)arg2;
 - (Class)decodeClass;

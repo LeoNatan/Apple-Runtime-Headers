@@ -20,11 +20,11 @@
     KHThemeDetailView *_themeDetailView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHThemeDetailView *themeDetailView; // @synthesize themeDetailView=_themeDetailView;
 @property(nonatomic) __weak id <KHThemeDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <KHThemeDetailViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) KHThemeProvider *themeProvider; // @synthesize themeProvider=_themeProvider;
-- (void).cxx_destruct;
 - (void)_configureThemeDetailView:(id)arg1 forThemeProvider:(id)arg2;
 - (void)_closeThemeDetailViewController:(id)arg1;
 - (void)_showSimilar:(id)arg1;

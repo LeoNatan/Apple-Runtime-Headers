@@ -13,8 +13,8 @@
     TSPObject *_owner;
 }
 
-@property(nonatomic) __weak TSPObject *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
+@property(nonatomic) __weak TSPObject *owner; // @synthesize owner=_owner;
 - (void)willModifyForUpgrade;
 - (void)willModify;
 - (id)initWithOwner:(id)arg1;

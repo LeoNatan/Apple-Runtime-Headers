@@ -19,11 +19,11 @@
 
 + (void)savePreferredFrame:(struct CGRect)arg1;
 + (struct CGRect)preferredFrame;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *resizeTriangle; // @synthesize resizeTriangle=_resizeTriangle;
 @property(nonatomic) struct CGPoint initialTouchLocation; // @synthesize initialTouchLocation=_initialTouchLocation;
 @property(nonatomic, getter=isResizingWindow) _Bool resizingWindow; // @synthesize resizingWindow=_resizingWindow;
 @property(nonatomic, getter=isDraggingWindow) _Bool draggingWindow; // @synthesize draggingWindow=_draggingWindow;
-- (void).cxx_destruct;
 - (void)refresh;
 - (id)navigationController;
 @property(nonatomic) __weak id <ICHandwritingDebugDelegate> handwritingDebugDelegate;

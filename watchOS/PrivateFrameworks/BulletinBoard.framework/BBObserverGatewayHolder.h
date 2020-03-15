@@ -21,12 +21,12 @@
     BBMaskedSet *_observerFeedSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BBMaskedSet *observerFeedSet; // @synthesize observerFeedSet=_observerFeedSet;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned int feed; // @synthesize feed=_feed;
 @property(nonatomic) unsigned int gatewayPriority; // @synthesize gatewayPriority=_gatewayPriority;
 @property(retain, nonatomic) BBObserverClientProxy *gateway; // @synthesize gateway=_gateway;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)sendObserver:(id)arg1 addBulletin:(id)arg2 playLightsAndSirens:(_Bool)arg3 forFeeds:(unsigned int)arg4 withHandler:(CDUnknownBlockType)arg5;
 - (void)sendObserversAddBulletin:(id)arg1 playLightsAndSirens:(_Bool)arg2 forFeeds:(unsigned int)arg3;

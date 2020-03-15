@@ -16,9 +16,9 @@
     HFStaticItem *_removeItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFStaticItem *removeItem; // @synthesize removeItem=_removeItem;
 @property(retain, nonatomic) HFStaticItem *inviteAgainItem; // @synthesize inviteAgainItem=_inviteAgainItem;
-- (void).cxx_destruct;
 - (id)_removeTitleForInvitationState:(long long)arg1;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;

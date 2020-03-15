@@ -19,8 +19,8 @@
     id <TKTonePickerContentViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <TKTonePickerContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TKTonePickerContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)tonePickerControllerDidReloadTones:(id)arg1;
 - (void)tonePickerController:(id)arg1 selectedToneWithIdentifier:(id)arg2;
 - (BOOL)validateMenuItem:(id)arg1;

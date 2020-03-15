@@ -15,10 +15,10 @@
     AXAccessQueueTimer *_timeoutTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didTimeout; // @synthesize didTimeout=_didTimeout;
 @property(retain, nonatomic) AXAccessQueueTimer *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(copy, nonatomic) CDUnknownBlockType postConnectionBlock; // @synthesize postConnectionBlock=_postConnectionBlock;
-- (void).cxx_destruct;
 - (void)_performTask;
 - (void)performTask;
 - (id)initWithConnectBlock:(CDUnknownBlockType)arg1 timeout:(double)arg2 accessQueue:(id)arg3;

@@ -19,9 +19,9 @@
 
 + (id)filterExcludingAllCategories;
 + (id)filterIncludingAllCategories;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *categoriesToExclude; // @synthesize categoriesToExclude=_categoriesToExclude;
 @property(readonly, nonatomic) NSArray *categoriesToInclude; // @synthesize categoriesToInclude=_categoriesToInclude;
-- (void).cxx_destruct;
 - (BOOL)shouldDisplayPOIWithType:(int)arg1;
 - (BOOL)applyToSearchParameters:(id)arg1 error:(id *)arg2;
 - (BOOL)applyToAutocompleteParameters:(id)arg1 error:(id *)arg2;

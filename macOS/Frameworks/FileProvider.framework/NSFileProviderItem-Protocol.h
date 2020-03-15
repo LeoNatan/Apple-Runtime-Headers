@@ -17,6 +17,7 @@
 
 @optional
 @property(readonly, nonatomic) NSDictionary *userInfo;
+@property(readonly, copy, nonatomic) NSString *symlinkTargetPath;
 @property(readonly, nonatomic) NSFileProviderItemVersion *itemVersion;
 @property(readonly, nonatomic) NSData *versionIdentifier;
 @property(readonly, nonatomic) NSPersonNameComponents *mostRecentEditorNameComponents;

@@ -17,10 +17,10 @@
 }
 
 + (id)sharedMenuControllerWithDataSource:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CIMMenuControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSMenu *menu; // @synthesize menu=_menu;
 @property(retain, nonatomic) NSMenu *originalMenu; // @synthesize originalMenu=_originalMenu;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 - (id)init;
 

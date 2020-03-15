@@ -24,11 +24,11 @@
 + (void)setDefaultUserAgent:(id)arg1;
 + (id)knownNonNodeSessionIDs;
 + (void)persistErrorOnAccount:(id)arg1 forPrincipal:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property double interval; // @synthesize interval=_interval;
 @property(readonly, retain) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugInfo;
 - (void)systemDidWake;

@@ -6,14 +6,14 @@
 
 #import <AssistantServices/NSObject-Protocol.h>
 
-@class AFRequestInfo, AFSiriActivationListener, INIntent, NSDictionary, NSString;
+@class AFRequestInfo, AFSiriActivationContext, AFSiriActivationListener, INIntent, NSString;
 
 @protocol AFSiriActivationListenerDelegate <NSObject>
-- (void)siriActivationListener:(AFSiriActivationListener *)arg1 deactivateForReason:(int)arg2 options:(unsigned int)arg3 analyticsContext:(NSDictionary *)arg4 completion:(void (^)(NSError *))arg5;
-- (void)siriActivationListener:(AFSiriActivationListener *)arg1 activateWithRequestInfo:(AFRequestInfo *)arg2 completion:(void (^)(NSError *))arg3;
-- (void)siriActivationListener:(AFSiriActivationListener *)arg1 prewarmWithRequestInfo:(AFRequestInfo *)arg2 completion:(void (^)(NSError *))arg3;
 
 @optional
+- (void)siriActivationListener:(AFSiriActivationListener *)arg1 deactivateForReason:(int)arg2 options:(unsigned int)arg3 context:(AFSiriActivationContext *)arg4 completion:(void (^)(NSError *))arg5;
+- (void)siriActivationListener:(AFSiriActivationListener *)arg1 activateWithRequestInfo:(AFRequestInfo *)arg2 context:(AFSiriActivationContext *)arg3 completion:(void (^)(NSError *))arg4;
+- (void)siriActivationListener:(AFSiriActivationListener *)arg1 prewarmWithRequestInfo:(AFRequestInfo *)arg2 context:(AFSiriActivationContext *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)siriActivationListener:(AFSiriActivationListener *)arg1 handleIntent:(INIntent *)arg2 inBackgroundAppWithBundleId:(NSString *)arg3 reply:(void (^)(INIntentResponse *, NSError *))arg4;
 @end
 

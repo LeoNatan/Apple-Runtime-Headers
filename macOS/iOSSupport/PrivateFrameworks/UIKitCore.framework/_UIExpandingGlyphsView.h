@@ -22,6 +22,7 @@
     struct CGSize _intrinsicSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize intrinsicSize; // @synthesize intrinsicSize=_intrinsicSize;
 @property(nonatomic) int remainingAnimationCount; // @synthesize remainingAnimationCount=_remainingAnimationCount;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -30,7 +31,6 @@
 @property(nonatomic) BOOL expandsFromLeftToRight; // @synthesize expandsFromLeftToRight=_expandsFromLeftToRight;
 @property(readonly, nonatomic) double baselineOffset; // @synthesize baselineOffset=_baselineOffset;
 @property(retain, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
-- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

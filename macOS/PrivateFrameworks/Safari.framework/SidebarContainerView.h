@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     NSView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) NSView *topBarView; // @synthesize topBarView=_topBarView;
 @property(nonatomic) __weak id <SafariViewDelegate> safariViewDelegate; // @synthesize safariViewDelegate=_safariViewDelegate;
-- (void).cxx_destruct;
 - (void)updateKeyViewLoop;
 - (BOOL)isAccessibilityElement;
 - (id)accessibilityChildren;

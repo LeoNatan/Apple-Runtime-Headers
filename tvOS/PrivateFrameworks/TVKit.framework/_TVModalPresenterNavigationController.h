@@ -20,8 +20,8 @@
     NSArray *_previousViewControllers;
 }
 
-@property(retain, nonatomic) NSArray *previousViewControllers; // @synthesize previousViewControllers=_previousViewControllers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *previousViewControllers; // @synthesize previousViewControllers=_previousViewControllers;
 - (void)updatePreferredFocusedViewStateForFocus:(_Bool)arg1;
 - (void)_dismissForLastViewController:(_Bool)arg1;
 - (void)_dismissForLastViewController;

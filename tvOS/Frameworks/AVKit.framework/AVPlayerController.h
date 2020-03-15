@@ -141,6 +141,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingHasAudioMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasMediaSelectionOptions;
 + (id)canonicalLanguageIdentifierFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool touchBarRequiresLinearPlayback; // @synthesize touchBarRequiresLinearPlayback=_touchBarRequiresLinearPlayback;
 @property(nonatomic) double defaultPlaybackRate; // @synthesize defaultPlaybackRate=_defaultPlaybackRate;
 @property(nonatomic) long long bestAvailableAudioFormat; // @synthesize bestAvailableAudioFormat=_bestAvailableAudioFormat;
@@ -179,7 +180,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isAtMaxTime) _Bool atMaxTime; // @synthesize atMaxTime=_atMaxTime;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_prepareAssetForInspectionIfNeeded;
 - (id)scanningDelays;
 - (void)_updateRateForScrubbingAndSeeking;

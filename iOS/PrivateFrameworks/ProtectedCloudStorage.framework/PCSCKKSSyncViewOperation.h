@@ -15,10 +15,10 @@
     NSString *_view;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *view; // @synthesize view=_view;
 @property(retain) CKKSControl *CKKSControl; // @synthesize CKKSControl=_CKKSControl;
 @property(readonly) PCSCKKSItemModifyContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)syncView;
 - (void)checkTLKStatus;
 - (_Bool)ensureControl;

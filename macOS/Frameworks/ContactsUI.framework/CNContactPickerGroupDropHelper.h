@@ -21,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)setCompletionBlock:(CDUnknownBlockType)arg1;
+- (BOOL)acceptDropWithIgnoresGuardianRestrictions:(BOOL)arg1;
 - (BOOL)acceptDrop;
 - (unsigned long long)validateDrop;
 - (id)initWithDraggingInfo:(id)arg1 pickerView:(id)arg2 selectedEntryIdentifier:(id)arg3 destinationEntryIdentifier:(id)arg4;

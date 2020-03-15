@@ -24,6 +24,7 @@
 + (float)maximumZoomDiameter;
 + (float)centerIconDiameter;
 + (float)defaultIconSize;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_727cf631 layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
 @property(retain, nonatomic) CSLHexAppNode *node; // @synthesize node=_node;
 @property(readonly, nonatomic) float unscaledIconSize; // @synthesize unscaledIconSize=_unscaledIconSize;
@@ -31,7 +32,6 @@
 @property(nonatomic, getter=isJiggling) _Bool jiggling; // @synthesize jiggling=_jiggling;
 @property(readonly, nonatomic) _Bool isDragging; // @synthesize isDragging=_isDragging;
 @property(readonly, nonatomic) _Bool isZooming; // @synthesize isZooming=_isZooming;
-- (void).cxx_destruct;
 - (void)endDraggingToLayoutAttributes:(CDStruct_727cf631)arg1;
 - (void)dragToPoint:(struct CGPoint)arg1;
 - (void)beginDraggingAtPoint:(struct CGPoint)arg1;

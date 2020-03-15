@@ -16,9 +16,9 @@
     double _interval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
 @property(retain, nonatomic) CMMotionActivity *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithActivity:(id)arg1;
 

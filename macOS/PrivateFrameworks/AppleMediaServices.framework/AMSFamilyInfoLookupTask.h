@@ -23,10 +23,10 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
+- (void).cxx_destruct;
 @property(retain) NSString *logKey; // @synthesize logKey=_logKey;
 @property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(readonly) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)initWithBagContract:(id)arg1;
 - (id)initWithBag:(id)arg1;
 - (id)_pathForCachedFamilyInfoLookupResult;

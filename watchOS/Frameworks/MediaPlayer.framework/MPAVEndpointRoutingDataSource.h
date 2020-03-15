@@ -18,10 +18,10 @@
     NSMutableDictionary *_endpoints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *endpoints; // @synthesize endpoints=_endpoints;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(copy, nonatomic) NSString *routingContextUID; // @synthesize routingContextUID=_routingContextUID;
-- (void).cxx_destruct;
 - (void)_endpointsDidChange:(id)arg1;
 - (void)setPickedRoute:(id)arg1 withPassword:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getRoutesForCategory:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

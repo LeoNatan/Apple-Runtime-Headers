@@ -29,6 +29,7 @@
 + (id)largeUtility:(id)arg1 suppressCountdown:(_Bool)arg2;
 + (id)smallModular:(id)arg1;
 + (id)largeModular:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *animationGroup; // @synthesize animationGroup=_animationGroup;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *locationText; // @synthesize locationText=_locationText;
@@ -37,7 +38,6 @@
 @property(nonatomic) int constantSun; // @synthesize constantSun=_constantSun;
 @property(retain, nonatomic) NSDate *sunsetDate; // @synthesize sunsetDate=_sunsetDate;
 @property(retain, nonatomic) NSDate *sunriseDate; // @synthesize sunriseDate=_sunriseDate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *eventDate;
 - (id)description;
 - (id)templateForComplicationFamily:(int)arg1;

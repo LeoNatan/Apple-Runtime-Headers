@@ -4,11 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary, NSString, NSURL;
+@class NSDictionary, NSURL;
 
 @protocol WBSSafariSandboxBrokerProtocol
 - (void)changeUserWebSearchProviderInfoTo:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)loadLinkPresentationMetdataForMessageWithGUID:(NSString *)arg1 completionHandler:(void (^)(NSString *, NSImage *, NSError *))arg2;
 - (void)relatedExtensionsForURL:(NSURL *)arg1 completionHandler:(void (^)(NSDictionary *, BOOL, NSError *))arg2;
 @end
 

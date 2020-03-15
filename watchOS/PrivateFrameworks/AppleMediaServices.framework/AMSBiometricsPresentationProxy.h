@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSURLSessionTask *_task;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLSessionTask *task; // @synthesize task=_task;
 @property(readonly, nonatomic) AMSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)handleDialogRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleAuthenticateRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithSession:(id)arg1 task:(id)arg2;

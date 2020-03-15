@@ -14,8 +14,8 @@
     float _tableViewWidth;
 }
 
-@property(readonly, nonatomic) float tableViewWidth; // @synthesize tableViewWidth=_tableViewWidth;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) float tableViewWidth; // @synthesize tableViewWidth=_tableViewWidth;
 - (void)setTableViewWidth:(float)arg1;
 - (id)initWithTextMode:(int)arg1;
 

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _expectedPopoverSize;
 }
 
+- (void).cxx_destruct;
 @property struct CGSize expectedPopoverSize; // @synthesize expectedPopoverSize=_expectedPopoverSize;
 @property unsigned long long expectedPopoverAnchorEdge; // @synthesize expectedPopoverAnchorEdge=_expectedPopoverAnchorEdge;
 @property struct CGRect popoverPositioningRect; // @synthesize popoverPositioningRect=_popoverPositioningRect;
-- (void).cxx_destruct;
 - (void)recognizerDidDismissAnimation:(id)arg1;
 - (void)recognizerDidCompleteAnimation:(id)arg1;
 - (void)recognizerDidCancelAnimation:(id)arg1;

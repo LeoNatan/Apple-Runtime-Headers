@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_q;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *q; // @synthesize q=_q;
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(readonly, nonatomic) unsigned long long jobCount; // @synthesize jobCount=_jobCount;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) _MLNetworkOptions *nwOptions; // @synthesize nwOptions=_nwOptions;
 @property(readonly, nonatomic) _MLNetworking *nwObj; // @synthesize nwObj=_nwObj;
 @property(readonly, nonatomic) NSObject<OS_nw_connection> *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (BOOL)sendDataAndWaitForAcknowledgementOrTimeout:(id)arg1;
 - (void)send:(id)arg1 options:(id)arg2;
 - (BOOL)unloadFromURL:(id)arg1 options:(id)arg2 error:(id *)arg3;

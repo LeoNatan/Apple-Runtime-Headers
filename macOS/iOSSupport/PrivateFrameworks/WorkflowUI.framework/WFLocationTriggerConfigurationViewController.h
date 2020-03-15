@@ -22,12 +22,12 @@
     NSDateFormatter *_dateFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(readonly, nonatomic) BOOL isArrive; // @synthesize isArrive=_isArrive;
 @property(nonatomic) BOOL isLocationBasedAlertsEnabled; // @synthesize isLocationBasedAlertsEnabled=_isLocationBasedAlertsEnabled;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)timeRangePickerViewControllerDidCancel:(id)arg1;
 - (void)timeRangePickerViewController:(id)arg1 didPickStartTime:(id)arg2 endTime:(id)arg3;
 - (void)locationPickerDidCancel:(id)arg1;

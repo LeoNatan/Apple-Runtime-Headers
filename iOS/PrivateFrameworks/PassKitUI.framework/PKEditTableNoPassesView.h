@@ -18,8 +18,8 @@
     id <PKEditTableNoPassesViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PKEditTableNoPassesViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKEditTableNoPassesViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)findAppsForWalletTapped;
 - (void)scanCodeButtonTapped;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

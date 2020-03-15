@@ -15,8 +15,11 @@
     NSDictionary *_pasteboardDictionary;
     NSMutableArray *_addedPersonUids;
     ABImportRecordFactory *_importRecordFactory;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 - (void)removePeople:(id)arg1;
 - (id)addedPeople;
 - (void)executeUndo;

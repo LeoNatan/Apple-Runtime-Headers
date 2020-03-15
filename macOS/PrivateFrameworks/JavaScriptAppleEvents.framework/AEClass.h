@@ -20,6 +20,7 @@
 }
 
 + (id)classWithCode:(unsigned int)arg1 inherits:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *elementsForNames; // @synthesize elementsForNames=_elementsForNames;
 @property(retain) NSMutableDictionary *propertiesForNames; // @synthesize propertiesForNames=_propertiesForNames;
 @property(retain) NSMutableArray *respondsTo; // @synthesize respondsTo=_respondsTo;
@@ -27,7 +28,6 @@
 @property(retain) NSString *plural; // @synthesize plural=_plural;
 @property(retain) NSString *inherits; // @synthesize inherits=_inherits;
 @property unsigned int code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (void)addRespondsTo:(id)arg1;
 - (id)allElementNames;
 - (id)allPropertyNames;

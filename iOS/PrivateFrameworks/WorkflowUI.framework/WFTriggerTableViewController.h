@@ -19,13 +19,13 @@
     NSString *_mainSectionTitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *mainSectionTitle; // @synthesize mainSectionTitle=_mainSectionTitle;
 @property(readonly, copy, nonatomic) NSString *nameOfAnyOption; // @synthesize nameOfAnyOption=_nameOfAnyOption;
 @property(nonatomic) _Bool anyOptionSelected; // @synthesize anyOptionSelected=_anyOptionSelected;
 @property(retain, nonatomic) NSArray *options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(nonatomic) __weak id <WFTriggerTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)updateDoneButtonEnabledState;

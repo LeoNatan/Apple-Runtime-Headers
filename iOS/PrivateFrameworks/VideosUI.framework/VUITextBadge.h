@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)attributedTextFromString:(id)arg1 fontColor:(id)arg2 fontSize:(double)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) unsigned long long badgeStyle; // @synthesize badgeStyle=_badgeStyle;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int textBlendMode; // @synthesize textBlendMode=_textBlendMode;
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (struct CGSize)_textSize;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

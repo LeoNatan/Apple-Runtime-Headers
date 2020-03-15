@@ -19,10 +19,10 @@
     id <HFCharacteristicValueSource> _valueSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, copy, nonatomic) NSNumber *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly, nonatomic) NSSet *profiles; // @synthesize profiles=_profiles;
-- (void).cxx_destruct;
 - (id)copyWithValueSource:(id)arg1;
 - (id)_buildProfileItems;
 @property(readonly, nonatomic) NSSet *services;

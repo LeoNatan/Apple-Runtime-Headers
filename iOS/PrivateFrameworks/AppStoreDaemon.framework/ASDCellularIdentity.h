@@ -17,10 +17,10 @@
 
 + (id)_digestMD5:(id)arg1;
 + (id)identityForSubscription:(id)arg1 usingClient:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSString *simIdentity; // @synthesize simIdentity=_simIdentity;
 @property(getter=isRoaming) _Bool roaming; // @synthesize roaming=_roaming;
 @property(readonly) NSString *defaultsKey; // @synthesize defaultsKey=_defaultsKey;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSIMIdentity:(id)arg1 roaming:(_Bool)arg2;
 

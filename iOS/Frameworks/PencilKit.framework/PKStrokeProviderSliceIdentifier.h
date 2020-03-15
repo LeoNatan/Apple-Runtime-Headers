@@ -18,11 +18,11 @@
     struct _PKStrokeID _version;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _PKStrokeID version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSUUID *strokeUUID; // @synthesize strokeUUID=_strokeUUID;
 @property(readonly, nonatomic) double tEnd; // @synthesize tEnd=_tEnd;
 @property(readonly, nonatomic) double tStart; // @synthesize tStart=_tStart;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

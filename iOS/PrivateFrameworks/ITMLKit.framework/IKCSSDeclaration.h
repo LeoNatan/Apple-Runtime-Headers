@@ -20,6 +20,7 @@
 }
 
 + (id)typeString:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange valueRange; // @synthesize valueRange=_valueRange;
 @property(nonatomic) struct _NSRange nameRange; // @synthesize nameRange=_nameRange;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSString *aliasedName; // @synthesize aliasedName=_aliasedName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSString *stringValue;
 

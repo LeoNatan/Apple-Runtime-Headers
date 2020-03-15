@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_suggestionInfos;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *suggestionInfos; // @synthesize suggestionInfos=_suggestionInfos;
 @property(nonatomic, getter=isFocusedLongEnough) _Bool focusedLongEnough; // @synthesize focusedLongEnough=_focusedLongEnough;
 @property(nonatomic) double lastFocusedAssetReferenceChangeTime; // @synthesize lastFocusedAssetReferenceChangeTime=_lastFocusedAssetReferenceChangeTime;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PUOneUpSuggestionsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
 @property(readonly, nonatomic) PUOneUpSuggestionsProvider *suggestionsProvider; // @synthesize suggestionsProvider=_suggestionsProvider;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)contextualNotificationDidDisappear:(id)arg1;
 - (void)contextualNotificationWasDiscarded:(id)arg1;

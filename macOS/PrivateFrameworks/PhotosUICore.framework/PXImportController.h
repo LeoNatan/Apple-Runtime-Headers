@@ -55,13 +55,14 @@
     PXImportMediaLoadingCoordinator *_mediaLoadingCoordinator;
 }
 
-+ (void)unregisterPXImportControllerNotificationsReceiver:(struct NSObject *)arg1;
-+ (void)registerPXImportControllerNotificationsReceiver:(struct NSObject *)arg1;
++ (void)unregisterPXImportControllerNotificationsReceiver:(id)arg1;
++ (void)registerPXImportControllerNotificationsReceiver:(id)arg1;
 + (id)importFilesAtURLs:(id)arg1 photoLibrary:(id)arg2 collection:(id)arg3 checkDuplicates:(BOOL)arg4 referenced:(BOOL)arg5 delegate:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 + (void)favoriteAssetsFromImportResults:(id)arg1 photoLibrary:(id)arg2;
 + (id)itemsConstrainedByAvailableDiskSpaceFromItems:(id)arg1 additionalBytesRequired:(inout long long *)arg2;
 + (id)assetsForModels:(id)arg1;
 + (id)importOperationQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXImportMediaLoadingCoordinator *mediaLoadingCoordinator; // @synthesize mediaLoadingCoordinator=_mediaLoadingCoordinator;
 @property(retain, nonatomic) PXSelectionSnapshot *lastSelectionSnapshot; // @synthesize lastSelectionSnapshot=_lastSelectionSnapshot;
 @property(copy, nonatomic) CDUnknownBlockType deleteCompletionHandler; // @synthesize deleteCompletionHandler=_deleteCompletionHandler;
@@ -97,7 +98,6 @@
 @property(readonly, nonatomic) unsigned short imageFormat; // @synthesize imageFormat=_imageFormat;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) PHImportSource *importSource; // @synthesize importSource=_importSource;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)assetLoadingPowerAssertionTimerFired;
 - (void)stopTimedAssetsLoadingPowerAssertion;

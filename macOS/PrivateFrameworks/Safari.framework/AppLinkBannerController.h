@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     WBSAppLink *_appLink;
 }
 
-@property(readonly, nonatomic) WBSAppLink *appLink; // @synthesize appLink=_appLink;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WBSAppLink *appLink; // @synthesize appLink=_appLink;
 - (void)appLinkBannerOpenButtonWasClicked:(id)arg1;
 - (void)getBannerWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithAppLink:(id)arg1;

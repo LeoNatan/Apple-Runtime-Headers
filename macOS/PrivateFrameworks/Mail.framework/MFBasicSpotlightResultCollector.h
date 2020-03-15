@@ -30,6 +30,7 @@
     long long _nextIndexToProcess;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long nextIndexToProcess; // @synthesize nextIndexToProcess=_nextIndexToProcess;
 @property(nonatomic) double timeSpentInCallback; // @synthesize timeSpentInCallback=_timeSpentInCallback;
 @property(nonatomic) BOOL async; // @synthesize async=_async;
@@ -44,7 +45,6 @@
 @property(nonatomic) BOOL queryIsCancelled; // @synthesize queryIsCancelled=_queryIsCancelled;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(retain, nonatomic) id <MFMessageConsumer> target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)cancelQuery;
 - (void)receivedSpotlightCallback:(id)arg1 userInfo:(id)arg2;
 - (void)dealloc;

@@ -37,6 +37,7 @@
     NSString *_recoveryKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *recoveryKey; // @synthesize recoveryKey=_recoveryKey;
 @property(retain) CDPRecoveryKeyPrintController *printController; // @synthesize printController=_printController;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -61,7 +62,6 @@
 @property(retain) NSTextField *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSImage *displayImage; // @synthesize displayImage=_displayImage;
 @property BOOL isCreation; // @synthesize isCreation=_isCreation;
-- (void).cxx_destruct;
 - (void)controlTextDidChange:(id)arg1;
 - (void)processCollectedRecoveryKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showError:(BOOL)arg1;

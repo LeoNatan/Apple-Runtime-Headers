@@ -15,9 +15,9 @@
     NSPopover *_popover;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSPopover *popover; // @synthesize popover=_popover;
 @property(nonatomic) __weak id <SFSafariExtensionRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id)serviceViewControllerInterface;
 

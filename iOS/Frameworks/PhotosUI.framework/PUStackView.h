@@ -43,6 +43,7 @@
 
 + (long long)maximumNumberOfVisibleImagesForStyle:(unsigned long long)arg1;
 + (long long)maximumNumberOfVisibleItemsForStyle:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *cornersBackgroundColor; // @synthesize cornersBackgroundColor=_cornersBackgroundColor;
 @property(retain, nonatomic, setter=_setBackgroundView:) UIView *_backgroundView; // @synthesize _backgroundView=__backgroundView;
 @property(copy, nonatomic, setter=_setPhotoDecorationVariants:) NSArray *_photoDecorationVariants; // @synthesize _photoDecorationVariants=__photoDecorationVariants;
@@ -68,7 +69,6 @@
 @property(nonatomic) _Bool combinesPhotoDecorations; // @synthesize combinesPhotoDecorations=_combinesPhotoDecorations;
 @property(retain, nonatomic) PUPhotoDecoration *photoDecoration; // @synthesize photoDecoration=_photoDecoration;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)setSubtitle:(id)arg1 forItemAtIndex:(long long)arg2;
 - (void)setTitle:(id)arg1 forItemAtIndex:(long long)arg2;
 - (void)setTitleFontName:(id)arg1 forItemAtIndex:(long long)arg2;

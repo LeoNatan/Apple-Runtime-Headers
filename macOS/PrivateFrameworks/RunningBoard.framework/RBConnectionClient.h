@@ -41,10 +41,10 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedLaunchWorkloop;
 + (id)sharedTerminationWorkloop;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) RBSProcessIdentity *processIdentity; // @synthesize processIdentity=_processIdentity;
 @property(readonly, copy, nonatomic) RBSProcessIdentifier *processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(readonly, nonatomic) RBProcess *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (id)captureState;
 @property(readonly, copy, nonatomic) NSString *stateCaptureTitle;
 - (void)didRemoveProcess:(id)arg1 withState:(id)arg2;

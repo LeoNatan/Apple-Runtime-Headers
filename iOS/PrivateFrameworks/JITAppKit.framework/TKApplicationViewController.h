@@ -19,12 +19,12 @@
 }
 
 + (id)applicationViewController:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TKApplicationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIViewController *loadingViewController; // @synthesize loadingViewController=_loadingViewController;
 @property(retain, nonatomic) UIViewController *childViewController; // @synthesize childViewController=_childViewController;
 @property(readonly, nonatomic) NSString *viewName; // @synthesize viewName=_viewName;
 @property(readonly, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
-- (void).cxx_destruct;
 - (void)dismissApplicationControllerAnimated:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)didLoadViewController:(id)arg1;

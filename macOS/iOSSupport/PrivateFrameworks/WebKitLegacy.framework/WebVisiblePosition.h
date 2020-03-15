@@ -13,7 +13,7 @@
 
 + (id)_wrapVisiblePositionIfValid:(struct VisiblePosition)arg1;
 + (id)_wrapVisiblePosition:(struct VisiblePosition)arg1;
-@property(nonatomic) int affinity;
+@property(nonatomic) unsigned long long affinity;
 - (id)enclosingRangeWithCorrectionIndicator;
 - (id)enclosingRangeWithDictationPhraseAlternatives:(id *)arg1;
 - (BOOL)atAlphaNumericBoundaryInDirection:(int)arg1;

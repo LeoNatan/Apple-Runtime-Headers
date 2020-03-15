@@ -32,13 +32,13 @@
 + (id)negativeFeedbackForMemoryDetailsKeys;
 + (id)positiveFeedbackForMemoryDetailsKeys;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appVersion; // @synthesize appVersion=_appVersion;
 @property(nonatomic) _Bool alreadyCollected; // @synthesize alreadyCollected=_alreadyCollected;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSString *systemID; // @synthesize systemID=_systemID;
 @property(nonatomic) long long generalFeedback; // @synthesize generalFeedback=_generalFeedback;
 @property(retain, nonatomic) NSMutableDictionary *feedbackItemsDict; // @synthesize feedbackItemsDict=_feedbackItemsDict;
-- (void).cxx_destruct;
 - (id)longDescription;
 - (id)asTextForItemKey:(id)arg1;
 - (id)osKeyForItemKey:(id)arg1;

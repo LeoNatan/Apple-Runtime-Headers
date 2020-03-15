@@ -22,8 +22,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSCalendar *recurrenceCalendar; // @synthesize recurrenceCalendar=_recurrenceCalendar;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSCalendar *recurrenceCalendar; // @synthesize recurrenceCalendar=_recurrenceCalendar;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

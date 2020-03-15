@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)itemGlobalIDFromLocalItem:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BRCItemID *itemID; // @synthesize itemID=_itemID;
 @property(readonly, nonatomic) BRCZoneRowID *zoneRowID; // @synthesize zoneRowID=_zoneRowID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToItemGlobalID:(id)arg1;

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <SKUITrendingSearchPageViewDelegate> _trendingSearchDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool trendingSearchesVisible; // @synthesize trendingSearchesVisible=_trendingSearchesVisible;
 @property(nonatomic) __weak id <SKUITrendingSearchPageViewDelegate> trendingSearchDelegate; // @synthesize trendingSearchDelegate=_trendingSearchDelegate;
 @property(retain, nonatomic) SKUITrendingSearchProvider *trendingSearchProvider; // @synthesize trendingSearchProvider=_trendingSearchProvider;
-- (void).cxx_destruct;
 - (void)_reloadView;
 - (void)_setTrendingResponse:(id)arg1 error:(id)arg2;
 - (void)_reloadData;

@@ -18,11 +18,11 @@
     CDUnknownBlockType _upsellCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didEncounterLoadError; // @synthesize didEncounterLoadError=_didEncounterLoadError;
 @property(copy, nonatomic) CDUnknownBlockType upsellCompletionHandler; // @synthesize upsellCompletionHandler=_upsellCompletionHandler;
 @property(retain, nonatomic) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
 @property(retain, nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
-- (void).cxx_destruct;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;
 - (void)mmWebKitViewControllerDidFinishLoading:(id)arg1;
 - (void)mmWebKitViewControllerDidFailLoading:(id)arg1 error:(id)arg2;

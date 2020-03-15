@@ -17,12 +17,12 @@
     ICAttachment *_attachment;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICAttachment *attachment; // @synthesize attachment=_attachment;
 @property(retain, nonatomic) ICBaseTextAttachment *textAttachment; // @synthesize textAttachment=_textAttachment;
 @property(readonly, nonatomic) NSManagedObjectID *finalAttachmentID; // @synthesize finalAttachmentID=_finalAttachmentID;
 @property(readonly, nonatomic) NSManagedObjectID *attachmentID; // @synthesize attachmentID=_attachmentID;
 @property(readonly, nonatomic) _Bool isAutomatic; // @synthesize isAutomatic=_isAutomatic;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithAttachment:(id)arg1 textAttachment:(id)arg2 automatic:(_Bool)arg3;
 

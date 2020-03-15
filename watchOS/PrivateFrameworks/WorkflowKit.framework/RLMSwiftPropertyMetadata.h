@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 + (id)metadataForLinkingObjectsProperty:(id)arg1 className:(id)arg2 linkedPropertyName:(id)arg3;
 + (id)metadataForListProperty:(id)arg1;
 + (id)metadataForOtherProperty:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int kind; // @synthesize kind=_kind;
 @property(nonatomic) int propertyType; // @synthesize propertyType=_propertyType;
 @property(retain, nonatomic) NSString *linkedPropertyName; // @synthesize linkedPropertyName=_linkedPropertyName;
 @property(retain, nonatomic) NSString *className; // @synthesize className=_className;
 @property(retain, nonatomic) NSString *propertyName; // @synthesize propertyName=_propertyName;
-- (void).cxx_destruct;
 
 @end
 

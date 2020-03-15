@@ -22,6 +22,7 @@
 }
 
 + (double)minimumDescriptionScaleFactor;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(nonatomic) _Bool shouldShowRoomName; // @synthesize shouldShowRoomName=_shouldShowRoomName;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(retain, nonatomic) HFServiceNameComponents *serviceNameComponents; // @synthesize serviceNameComponents=_serviceNameComponents;
-- (void).cxx_destruct;
 - (id)_effectiveTextColor;
 - (void)_drawDescriptionLabel;
 - (void)_drawSeperateLabels;

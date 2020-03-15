@@ -25,6 +25,7 @@
 + (double)defaultPrecision;
 + (unsigned long long)numberOfRegionsPerBatch;
 + (id)queryWithTemplate:(id)arg1 forRegions:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 @property(nonatomic) double precision; // @synthesize precision=_precision;
 @property(nonatomic) CDStruct_95c2efd7 statistics; // @synthesize statistics=_statistics;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) NSArray *regions; // @synthesize regions=_regions;
 @property(readonly, nonatomic) id <GEOMapServiceTicket> ticket; // @synthesize ticket=_ticket;
 @property(readonly, nonatomic) NSArray *geoLocations; // @synthesize geoLocations=_geoLocations;
-- (void).cxx_destruct;
 - (void)logAggdGeoLookupFailureResult;
 - (void)logAggdGeoLookupCounterAndDurationWithLookupDuration:(id)arg1;
 - (BOOL)shouldQueryItemsForRegion:(id)arg1 selectedRegions:(id)arg2;

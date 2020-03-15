@@ -22,6 +22,7 @@
     NSSet *_bssids;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *bssids; // @synthesize bssids=_bssids;
 @property(retain, nonatomic) TBLocalFetchRequestDescriptor *preferLocalFetchDescriptor; // @synthesize preferLocalFetchDescriptor=_preferLocalFetchDescriptor;
 @property(retain, nonatomic) TBLocalFetchRequestDescriptor *localFetchDescriptor; // @synthesize localFetchDescriptor=_localFetchDescriptor;
@@ -29,7 +30,6 @@
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) GEOWiFiQualityNetworkSearch *remoteRequest; // @synthesize remoteRequest=_remoteRequest;
 @property(retain, nonatomic) NSPredicate *localFetchPredicate; // @synthesize localFetchPredicate=_localFetchPredicate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) Class remoteRequestClass;
 - (id)initWithBSSIDs:(id)arg1 maxCacheAge:(id)arg2;

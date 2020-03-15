@@ -15,9 +15,9 @@
     NSArray *_sectionHeadlinesGroups;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sectionHeadlinesGroups; // @synthesize sectionHeadlinesGroups=_sectionHeadlinesGroups;
 @property(retain, nonatomic) id <FCChannelProviding> channel; // @synthesize channel=_channel;
-- (void).cxx_destruct;
 - (id)initWithChannel:(id)arg1 sectionHeadlinesGroups:(id)arg2;
 - (id)init;
 

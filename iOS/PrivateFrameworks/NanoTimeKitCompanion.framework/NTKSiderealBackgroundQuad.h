@@ -68,6 +68,7 @@
     id <MTLTexture> _nightMask;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTLTexture> nightMask; // @synthesize nightMask=_nightMask;
 @property(retain, nonatomic) id <MTLTexture> dayMask; // @synthesize dayMask=_dayMask;
 @property(nonatomic) unsigned long long renderingMode; // @synthesize renderingMode=_renderingMode;
@@ -75,7 +76,6 @@
 @property(nonatomic) float blurScale; // @synthesize blurScale=_blurScale;
 @property(nonatomic) float backgroundDimming; // @synthesize backgroundDimming=_backgroundDimming;
 @property(nonatomic) float litProgress; // @synthesize litProgress=_litProgress;
-- (void).cxx_destruct;
 - (id)_currentBuffer;
 - (void)renderForDisplayWithEncoder:(id)arg1;
 - (void)performOffscreenPassesWithCommandBuffer:(id)arg1;

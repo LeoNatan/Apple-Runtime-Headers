@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     UIViewController<TVBrowserProviding> *_provider;
 }
 
-@property(nonatomic) __weak UIViewController<TVBrowserProviding> *provider; // @synthesize provider=_provider;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController<TVBrowserProviding> *provider; // @synthesize provider=_provider;
 - (void)present;
 @property(nonatomic) struct UIEdgeInsets maskInset;
 @property(nonatomic) double interitemSpacing;

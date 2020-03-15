@@ -34,12 +34,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)defaultPageWidthForUserInterfaceIdiom:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIProductPage *productPage; // @synthesize productPage=_productPage;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(nonatomic) __weak id <SKUIProductPageChildViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(nonatomic) _Bool askPermission; // @synthesize askPermission=_askPermission;
-- (void).cxx_destruct;
 - (id)_whatsNewSection;
 - (id)_textLayoutRequestWithText:(id)arg1 widthOffset:(double)arg2;
 - (id)_tableViewController;

@@ -15,9 +15,9 @@
 }
 
 + (id)titleWithString:(id)arg1 category:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

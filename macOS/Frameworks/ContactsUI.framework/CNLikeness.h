@@ -22,6 +22,7 @@
     struct CGRect _originalLikenessCropRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect originalLikenessCropRect; // @synthesize originalLikenessCropRect=_originalLikenessCropRect;
 @property(nonatomic) struct CGImage *originalLikenessImage; // @synthesize originalLikenessImage=_originalLikenessImage;
 @property(nonatomic) BOOL hasPictureDataBeenEdited; // @synthesize hasPictureDataBeenEdited=_hasPictureDataBeenEdited;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *sourceContainerName; // @synthesize sourceContainerName=_sourceContainerName;
 @property(retain, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(retain, nonatomic) PRLikeness *personaLikeness; // @synthesize personaLikeness=_personaLikeness;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PRLikeness *originalLikeness;
 - (void)dealloc;
 - (id)initWithLikeness:(id)arg1 contactIdentifier:(id)arg2 sourceContainerName:(id)arg3 sourceContainerIdentifier:(id)arg4 isEditable:(BOOL)arg5 hasBeenPersisted:(BOOL)arg6;

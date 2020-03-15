@@ -19,8 +19,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSData *seed; // @synthesize seed=_seed;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *seed; // @synthesize seed=_seed;
 - (unsigned long long)nextIntWithUpperBound:(unsigned long long)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

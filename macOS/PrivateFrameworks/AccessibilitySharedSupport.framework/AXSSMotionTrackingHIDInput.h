@@ -18,11 +18,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)motionTrackingHIDInputWithDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(copy, nonatomic) NSNumber *vendorID; // @synthesize vendorID=_vendorID;
 @property(copy, nonatomic) NSNumber *productID; // @synthesize productID=_productID;
 @property(copy, nonatomic) NSString *deviceUniqueID; // @synthesize deviceUniqueID=_deviceUniqueID;
-- (void).cxx_destruct;
 - (BOOL)isHIDDevice;
 - (BOOL)supportsExpressions;
 - (unsigned long long)trackingType;

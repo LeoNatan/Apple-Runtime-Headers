@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)versionFromString:(id)arg1;
 + (id)stringFromVersion:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *metadataVersion; // @synthesize metadataVersion=_metadataVersion;
 @property(retain, nonatomic) NSData *contentVersion; // @synthesize contentVersion=_contentVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

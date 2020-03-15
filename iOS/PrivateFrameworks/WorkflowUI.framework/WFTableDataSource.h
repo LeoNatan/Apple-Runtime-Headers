@@ -18,10 +18,10 @@
     NSMutableArray *_mutableSections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *mutableSections; // @synthesize mutableSections=_mutableSections;
 @property(readonly, nonatomic) WFTableDataSourceTreeNode *tree; // @synthesize tree=_tree;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

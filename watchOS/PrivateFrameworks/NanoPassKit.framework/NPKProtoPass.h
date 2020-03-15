@@ -15,8 +15,8 @@
     NSData *_passData;
 }
 
-@property(retain, nonatomic) NSData *passData; // @synthesize passData=_passData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *passData; // @synthesize passData=_passData;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     NSXPCConnection *_xpcCnx;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCConnection *xpcCnx; // @synthesize xpcCnx=_xpcCnx;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(readonly, nonatomic) _Bool entitled; // @synthesize entitled=_entitled;
 @property(readonly, nonatomic) CUTDSDaemon *daemon; // @synthesize daemon=_daemon;
-- (void).cxx_destruct;
 - (void)xpcTDSSessionActivate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)xpcTDSSeekerActivate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)xpcTDSProviderActivate:(id)arg1 completion:(CDUnknownBlockType)arg2;

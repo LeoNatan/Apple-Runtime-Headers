@@ -33,6 +33,7 @@
 + (id)feedEntryWithRSSFeedElement:(id)arg1 baseURL:(id)arg2;
 + (id)dateFromAtomDateString:(id)arg1;
 + (id)dateFromRSSDateString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *enclosures; // @synthesize enclosures=_enclosures;
 @property(nonatomic) __weak AMFFeed *feed; // @synthesize feed=_feed;
 @property(retain, nonatomic) NSArray *contributors; // @synthesize contributors=_contributors;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) AMFFeedContent *content; // @synthesize content=_content;
 @property(retain, nonatomic) AMFFeedContent *entryDescription; // @synthesize entryDescription=_entryDescription;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *authorString;

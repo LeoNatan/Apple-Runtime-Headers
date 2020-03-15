@@ -27,6 +27,7 @@
     NSMutableDictionary *_friendScoreByPersonLocalIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *friendScoreByPersonLocalIdentifier; // @synthesize friendScoreByPersonLocalIdentifier=_friendScoreByPersonLocalIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *coworkerScoreByPersonLocalIdentifier; // @synthesize coworkerScoreByPersonLocalIdentifier=_coworkerScoreByPersonLocalIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *familyScoreByPersonLocalIdentifier; // @synthesize familyScoreByPersonLocalIdentifier=_familyScoreByPersonLocalIdentifier;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) unsigned long long numberOfSignals; // @synthesize numberOfSignals=_numberOfSignals;
 @property(retain, nonatomic) NSMutableArray *analyzersToRun; // @synthesize analyzersToRun=_analyzersToRun;
 @property(readonly, nonatomic) unsigned long long runOptions; // @synthesize runOptions=_runOptions;
-- (void).cxx_destruct;
 - (id)relationshipAnalyzerPropertiesForPersonLocalIdentifier:(id)arg1;
 - (id)personLocalIdentifierForContactIdentifier:(id)arg1;
 - (void)_enumerateInferredCoworkersUsingBlock:(CDUnknownBlockType)arg1;

@@ -14,9 +14,9 @@
     UILabel *_loadingLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 @property(readonly, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

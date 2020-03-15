@@ -18,13 +18,13 @@
     HMFBlockOperation *_operation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMFBlockOperation *operation; // @synthesize operation=_operation;
 @property(readonly, nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSData *body; // @synthesize body=_body;
 @property(nonatomic) unsigned short transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
 @property(readonly, nonatomic) NSSet *requestIdentifiers; // @synthesize requestIdentifiers=_requestIdentifiers;
-- (void).cxx_destruct;
 - (void)addRequestIdentifier:(id)arg1;
 @property(readonly, nonatomic, getter=isFinished) _Bool finished;
 @property(readonly, nonatomic) _Bool sent;

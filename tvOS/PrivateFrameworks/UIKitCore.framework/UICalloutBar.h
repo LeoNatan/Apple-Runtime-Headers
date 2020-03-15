@@ -39,6 +39,7 @@
     NSMutableArray *m_rectsToEvade;
     UICalloutBarBackground *m_overlay;
     double m_fadedTime;
+    _Bool m_fadedDueToCommand;
     NSDictionary *m_currentAppearOrFadeContext;
     id m_responderTarget;
     CDUnknownBlockType m_responderTargetCompletionHandler;
@@ -52,7 +53,8 @@
     _Bool m_isDisplayingVertically;
     UIScrollView *m_verticalScrollView;
     UIStackView *m_verticalStackView;
-    NSMutableArray *m_axSeparatorViews;
+    NSMutableArray *m_separatorViews;
+    UIView *m_buttonView;
 }
 
 + (void)hideSharedCalloutBarFromTargetView:(id)arg1;
@@ -64,6 +66,7 @@
 + (id)activeCalloutBar;
 + (id)sharedCalloutBar;
 + (void)performWithoutAffectingSharedCalloutBar:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIStackView *verticalStackView; // @synthesize verticalStackView=m_verticalStackView;
 @property(readonly, nonatomic) UIScrollView *verticalScrollView; // @synthesize verticalScrollView=m_verticalScrollView;
 @property(nonatomic) _Bool suppressesAppearance; // @synthesize suppressesAppearance=m_suppressesAppearance;
@@ -87,7 +90,6 @@
 @property(nonatomic) struct CGPoint pointLeftOfControls; // @synthesize pointLeftOfControls=m_pointLeftOfControls;
 @property(nonatomic) struct CGPoint pointBelowControls; // @synthesize pointBelowControls=m_pointBelowControls;
 @property(nonatomic) struct CGPoint pointAboveControls; // @synthesize pointAboveControls=m_pointAboveControls;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDisplayingVertically; // @synthesize isDisplayingVertically=m_isDisplayingVertically;
 - (void)clearSupressesHorizontalMovementFrame;
 - (void)clearReplacements;
@@ -96,6 +98,7 @@
 - (void)addRectToEvade:(struct CGRect)arg1;
 - (void)fadeAnimationDidStopWithContext:(id)arg1 finished:(_Bool)arg2;
 - (void)appearAnimationDidStopWithContext:(id)arg1;
+- (_Bool)fadedDueToCommand;
 - (_Bool)recentlyFaded;
 - (void)updateAnimated:(_Bool)arg1;
 - (void)update;
@@ -116,7 +119,7 @@
 - (void)setTargetRect:(struct CGRect)arg1 view:(id)arg2 pointBelowControls:(struct CGPoint)arg3 pointAboveControls:(struct CGPoint)arg4;
 - (_Bool)_updateVisibleItemsAnimated:(_Bool)arg1;
 - (void)adjustFrameToAvoidDividerOnArrow;
-- (void)addVerticalSeparatorAfterButton:(id)arg1;
+- (void)addVerticalSeparatorAfterButton:(id)arg1 usingLargeText:(_Bool)arg2;
 - (void)updateForCurrentVerticalPage;
 - (void)updateForCurrentHorizontalPage;
 - (void)updateForCurrentPage;

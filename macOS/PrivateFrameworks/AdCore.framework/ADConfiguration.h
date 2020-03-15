@@ -24,12 +24,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) NSString *baseUrl; // @synthesize baseUrl=_baseUrl;
 @property(nonatomic) BOOL isTest; // @synthesize isTest=_isTest;
 @property(nonatomic) int requestType; // @synthesize requestType=_requestType;
 @property(retain, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

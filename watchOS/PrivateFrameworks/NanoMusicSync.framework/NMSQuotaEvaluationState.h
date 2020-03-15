@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _listQuota;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int itemIndex; // @synthesize itemIndex=_itemIndex;
 @property(nonatomic) int containerIndex; // @synthesize containerIndex=_containerIndex;
 @property(nonatomic) unsigned long long listQuota; // @synthesize listQuota=_listQuota;
 @property(nonatomic) unsigned long long listTotalSize; // @synthesize listTotalSize=_listTotalSize;
 @property(nonatomic) unsigned long long itemSize; // @synthesize itemSize=_itemSize;
 @property(retain, nonatomic) NSNumber *identifer; // @synthesize identifer=_identifer;
-- (void).cxx_destruct;
 
 @end
 

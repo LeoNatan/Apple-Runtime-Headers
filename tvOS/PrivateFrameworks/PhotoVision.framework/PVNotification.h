@@ -16,9 +16,9 @@
 
 + (id)notificationWithName:(id)arg1 details:(id)arg2;
 + (id)notificationWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id details; // @synthesize details=_details;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1 details:(id)arg2;
 

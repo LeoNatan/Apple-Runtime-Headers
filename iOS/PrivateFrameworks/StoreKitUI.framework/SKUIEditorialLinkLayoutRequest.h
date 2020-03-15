@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     double _width;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(copy, nonatomic) NSArray *links; // @synthesize links=_links;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) Class layoutClass;
 

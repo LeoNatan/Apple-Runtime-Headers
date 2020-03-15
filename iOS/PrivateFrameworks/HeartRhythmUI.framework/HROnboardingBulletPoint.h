@@ -16,10 +16,10 @@
 }
 
 + (id)bulletPointWithImage:(id)arg1 title:(id)arg2 body:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *bulletBodyString; // @synthesize bulletBodyString=_bulletBodyString;
 @property(readonly, nonatomic) NSString *bulletTitleString; // @synthesize bulletTitleString=_bulletTitleString;
 @property(readonly, nonatomic) UIImage *bulletImage; // @synthesize bulletImage=_bulletImage;
-- (void).cxx_destruct;
 - (id)initWithImage:(id)arg1 title:(id)arg2 body:(id)arg3;
 
 @end

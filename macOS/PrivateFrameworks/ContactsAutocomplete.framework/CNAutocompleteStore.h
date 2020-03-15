@@ -21,6 +21,7 @@
 }
 
 + (double)defaultFetchCoalescingInterval;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) id <CNAutocompleteProbeProvider> probeProvider; // @synthesize probeProvider=_probeProvider;
 @property(retain, nonatomic) CNAutocompleteStoreReproStringRecorder *reproStringRecorder; // @synthesize reproStringRecorder=_reproStringRecorder;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak CNCancelationToken *currentFetchToken; // @synthesize currentFetchToken=_currentFetchToken;
 @property(readonly, nonatomic) CNAutocompleteStoreQueryHelper *queryHelper; // @synthesize queryHelper=_queryHelper;
 @property(nonatomic) double fetchCoalescingInterval; // @synthesize fetchCoalescingInterval=_fetchCoalescingInterval;
-- (void).cxx_destruct;
 - (void)ignoreResult:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)userSelectedResult:(id)arg1 atSortedIndex:(unsigned long long)arg2;
 - (id)executeFetchRequest:(id)arg1 delegate:(id)arg2;

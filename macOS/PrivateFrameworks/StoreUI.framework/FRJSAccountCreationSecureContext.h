@@ -13,8 +13,8 @@
     CKSigningSession *_session;
 }
 
-@property(readonly, nonatomic) CKSigningSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKSigningSession *session; // @synthesize session=_session;
 - (id)_signData:(id)arg1;
 - (void)_closeSession;
 - (id)callFunction:(id)arg1 withArguments:(id)arg2;

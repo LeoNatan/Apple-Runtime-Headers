@@ -25,12 +25,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float w; // @synthesize w=_w;
 @property(nonatomic) float z; // @synthesize z=_z;
 @property(nonatomic) float y; // @synthesize y=_y;
 @property(nonatomic) float x; // @synthesize x=_x;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

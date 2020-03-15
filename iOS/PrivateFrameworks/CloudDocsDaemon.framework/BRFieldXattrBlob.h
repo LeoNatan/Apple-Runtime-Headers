@@ -19,8 +19,8 @@
 + (_Bool)removeXattrsOnFD:(int)arg1 includingContentRelated:(_Bool)arg2 error:(id *)arg3;
 + (_Bool)loadXattrsFromFD:(int)arg1 structuralBlob:(id *)arg2 contentBlob:(id *)arg3 localBlob:(id *)arg4 withMaximumSize:(unsigned long long)arg5 error:(id *)arg6;
 + (id)loadXattrsFromFD:(int)arg1 withMaximumSize:(unsigned long long)arg2 error:(id *)arg3;
-@property(retain, nonatomic) NSMutableArray *xattrs; // @synthesize xattrs=_xattrs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *xattrs; // @synthesize xattrs=_xattrs;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

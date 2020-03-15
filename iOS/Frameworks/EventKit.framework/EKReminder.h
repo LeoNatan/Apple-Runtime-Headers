@@ -19,10 +19,10 @@
 + (void)_removeSnoozedAlarmsFromReminder:(id)arg1 usingDueDate:(id)arg2;
 + (id)reminderWithEventStore:(id)arg1;
 + (Class)frozenClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKObjectID *parentID; // @synthesize parentID=_parentID;
 @property(copy, nonatomic) NSDateComponents *dueDateComponents; // @synthesize dueDateComponents=_dueDateComponents;
 @property(copy, nonatomic) NSDateComponents *startDateComponents; // @synthesize startDateComponents=_startDateComponents;
-- (void).cxx_destruct;
 - (id)startDateForRecurrence;
 - (id)bestDisplayAlarm;
 - (_Bool)_reset;

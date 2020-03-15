@@ -29,6 +29,7 @@
     ADVolumeSlider *_volumeSlider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADVolumeSlider *volumeSlider; // @synthesize volumeSlider=_volumeSlider;
 @property(retain, nonatomic) ADPrerollButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;
 @property(retain, nonatomic) UIImage *pauseImage; // @synthesize pauseImage=_pauseImage;
@@ -45,7 +46,6 @@
 @property(nonatomic) _Bool isFullscreen; // @synthesize isFullscreen=_isFullscreen;
 @property(nonatomic) _Bool layoutForExpandedSize; // @synthesize layoutForExpandedSize=_layoutForExpandedSize;
 @property(nonatomic) __weak id <ADPrerollBottomBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_playButtonTapped:(id)arg1;
 - (void)_pauseButtonTapped:(id)arg1;
 - (void)_skipButtonTapped:(id)arg1;

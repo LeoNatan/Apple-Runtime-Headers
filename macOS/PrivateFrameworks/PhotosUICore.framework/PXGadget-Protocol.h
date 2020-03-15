@@ -6,21 +6,19 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class NSArray, NSString, PXGadgetSpec;
-@protocol PXGadgetDelegate;
+@class NSArray, NSCollectionViewItem, NSObject, NSString, PXGadgetSpec;
+@protocol PXAnonymousView, PXGadgetDelegate;
 
 @protocol PXGadget <NSObject>
 @property(readonly, nonatomic) BOOL hasContentToDisplay;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 
 @optional
 @property(readonly, nonatomic) Class collectionViewItemClass;
-@property(readonly, nonatomic) BOOL supportsAssetsDrop;
-@property(readonly, nonatomic) BOOL supportsSelection;
-@property(readonly, nonatomic) BOOL supportsHighlighting;
 @property(nonatomic) long long priority;
 @property(readonly, nonatomic) unsigned long long headerStyle;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
@@ -31,11 +29,11 @@
 - (void)contentHasBeenSeen;
 - (NSString *)uniqueGadgetIdentifier;
 - (NSArray *)debugURLsForDiagnostics;
-- (void)prepareCollectionViewItem:(struct NSCollectionViewItem *)arg1;
+- (void)prepareCollectionViewItem:(NSCollectionViewItem *)arg1;
 - (void)contentViewDidDisappear;
 - (void)contentViewWillAppear;
 - (void)preloadResources;
-- (void)userDidSelectAccessoryButton:(struct NSObject *)arg1;
+- (void)userDidSelectAccessoryButton:(NSObject<PXAnonymousView> *)arg1;
 - (void)userDidSelectGadget;
 @end
 

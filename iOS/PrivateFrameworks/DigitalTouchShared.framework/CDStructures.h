@@ -25,10 +25,6 @@ struct CGSize {
     double height;
 };
 
-struct UIColor {
-    Class _field1;
-};
-
 struct __compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> {
     void *__value_;
 };

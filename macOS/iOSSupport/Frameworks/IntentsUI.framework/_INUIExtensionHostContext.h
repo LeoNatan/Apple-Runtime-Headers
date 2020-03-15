@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
-@property(nonatomic) __weak id <INUIExtensionHostContextDelegate> extensionHostContextDelegate; // @synthesize extensionHostContextDelegate=_extensionHostContextDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <INUIExtensionHostContextDelegate> extensionHostContextDelegate; // @synthesize extensionHostContextDelegate=_extensionHostContextDelegate;
 - (void)willBeginEditing;
 - (void)requestHandlingOfIntent:(id)arg1;
 - (id)_errorHandlingExtensionContextProxy;

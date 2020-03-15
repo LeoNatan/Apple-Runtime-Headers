@@ -16,14 +16,15 @@ __attribute__((visibility("hidden")))
     VUILabel *_legendDescriptionLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUILabel *legendDescriptionLabel; // @synthesize legendDescriptionLabel=_legendDescriptionLabel;
 @property(retain, nonatomic) VUILabel *legendNameLabel; // @synthesize legendNameLabel=_legendNameLabel;
 @property(retain, nonatomic) VUIVideoAdvisoryViewLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *legendDescription;
 @property(copy, nonatomic) NSString *legendName;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (struct CGSize)legendNameSizeThatFits:(struct CGSize)arg1;
 - (id)initWithLayout:(id)arg1;
 
 @end

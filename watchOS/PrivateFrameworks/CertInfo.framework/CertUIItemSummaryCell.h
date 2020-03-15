@@ -17,11 +17,11 @@
 }
 
 + (float)titleOriginX;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *itemSubtitleLabel; // @synthesize itemSubtitleLabel=_itemSubtitleLabel;
 @property(retain, nonatomic) UILabel *itemTitleLabel; // @synthesize itemTitleLabel=_itemTitleLabel;
 @property(retain, nonatomic) UIView *itemTitleView; // @synthesize itemTitleView=_itemTitleView;
 @property(retain, nonatomic) UIImageView *itemImageView; // @synthesize itemImageView=_itemImageView;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (float)cellHeight;
 - (void)_setupConstraints;

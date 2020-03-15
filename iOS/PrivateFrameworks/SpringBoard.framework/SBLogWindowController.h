@@ -16,9 +16,9 @@
 
 + (id)sharedInstanceIfAvailable;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBMainScreenActiveInterfaceOrientationWindow *logWindow; // @synthesize logWindow=_logWindow;
 @property(retain, nonatomic) UITextView *logTextView; // @synthesize logTextView=_logTextView;
-- (void).cxx_destruct;
 - (void)hide;
 - (void)show;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

@@ -15,10 +15,10 @@
     NSMutableDictionary *_pendingRequestsByRequestIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_pendingRequestsByRequestIdentifier) NSMutableDictionary *pendingRequestsByRequestIdentifier; // @synthesize pendingRequestsByRequestIdentifier=_pendingRequestsByRequestIdentifier;
 @property(readonly, nonatomic) PUEditableMediaProvider *_mediaProvider; // @synthesize _mediaProvider=__mediaProvider;
 @property(readonly, nonatomic) NSURL *_desiredOutputDirectory; // @synthesize _desiredOutputDirectory=__desiredOutputDirectory;
-- (void).cxx_destruct;
 - (id)initWithOutputDirectory:(id)arg1 mediaProvider:(id)arg2;
 - (long long)_workImageVersionForContentEditingOutput:(id)arg1;
 - (void)_requestDidFinish:(id)arg1;

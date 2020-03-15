@@ -21,6 +21,7 @@
     NSString *_valueString;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowDisclosure; // @synthesize shouldShowDisclosure=_shouldShowDisclosure;
 @property(nonatomic) _Bool shouldStrikeValue; // @synthesize shouldStrikeValue=_shouldStrikeValue;
 @property(nonatomic) _Bool shouldGrayValue; // @synthesize shouldGrayValue=_shouldGrayValue;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSString *tertiaryString; // @synthesize tertiaryString=_tertiaryString;
 @property(retain, nonatomic) NSString *secondaryString; // @synthesize secondaryString=_secondaryString;
 @property(retain, nonatomic) NSString *primaryString; // @synthesize primaryString=_primaryString;
-- (void).cxx_destruct;
 
 @end
 

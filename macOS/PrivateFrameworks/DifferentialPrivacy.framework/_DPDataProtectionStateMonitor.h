@@ -18,9 +18,9 @@
 + (id)dataProtectionClassD;
 + (id)dataProtectionClassC;
 + (id)dataProtectionClassA;
+- (void).cxx_destruct;
 @property(readonly) NSUUID *handlerUUID; // @synthesize handlerUUID=_handlerUUID;
 @property(readonly, nonatomic) _DPDataProtectionMaster *master; // @synthesize master=_master;
-- (void).cxx_destruct;
 - (BOOL)isDataAvailableFor:(id)arg1;
 @property(copy) CDUnknownBlockType changeHandler; // @synthesize changeHandler=_changeHandler;
 - (void)dealloc;

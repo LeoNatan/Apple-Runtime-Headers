@@ -18,11 +18,11 @@
     PHAssetCollection *_confidentMatch;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHAssetCollection *confidentMatch; // @synthesize confidentMatch=_confidentMatch;
 @property(readonly, nonatomic) PXCMMSuggestionsDataSourceContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSDictionary *suggestionsByAssetCollectionObjectID; // @synthesize suggestionsByAssetCollectionObjectID=_suggestionsByAssetCollectionObjectID;
 @property(readonly, nonatomic) PHFetchResult *assetCollections; // @synthesize assetCollections=_assetCollections;
-- (void).cxx_destruct;
 - (id)_confidentMatch;
 - (id)_confidentMatchUsingStrategy:(unsigned long long)arg1;
 - (void)_compareSuggestionsUsingContext;

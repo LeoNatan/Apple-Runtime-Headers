@@ -30,6 +30,7 @@
 }
 
 + (id)_identifierForPropertyListRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *fadeOutDurationNumber; // @synthesize fadeOutDurationNumber=_fadeOutDurationNumber;
 @property(readonly, nonatomic) NSNumber *fadeInDurationNumber; // @synthesize fadeInDurationNumber=_fadeInDurationNumber;
 @property(readonly, nonatomic, getter=isPrivateTone) _Bool privateTone; // @synthesize privateTone=_privateTone;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) NSString *albumTitle; // @synthesize albumTitle=_albumTitle;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isDuplicateOfTone:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CURunLoopThread : NSObject
@@ -15,7 +15,7 @@
     _Bool _invalidateCalled;
     struct __CFRunLoop *_runLoop;
     _Bool _runLoopValid;
-    struct NSMutableArray *_startBlocks;
+    NSMutableArray *_startBlocks;
     _Bool _threadRunning;
     struct LogCategory *_ucat;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -25,12 +25,12 @@
     CDUnknownBlockType _threadFinalizeHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType threadFinalizeHandler; // @synthesize threadFinalizeHandler=_threadFinalizeHandler;
 @property(copy, nonatomic) CDUnknownBlockType threadInitializeHandler; // @synthesize threadInitializeHandler=_threadInitializeHandler;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_threadMain;
 - (_Bool)_scheduleStopThread;
 - (void)performBlock:(CDUnknownBlockType)arg1;

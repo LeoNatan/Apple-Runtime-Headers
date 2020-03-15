@@ -22,13 +22,13 @@
 }
 
 + (id)datasourceWithChannels:(unsigned long long)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 epsilon:(float)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float varianceEpsilon; // @synthesize varianceEpsilon=_varianceEpsilon;
 @property(readonly, nonatomic) MLFoundationTensor *gammas; // @synthesize gammas=_gammas;
 @property(readonly, nonatomic) MLFoundationTensor *betas; // @synthesize betas=_betas;
 @property(readonly, nonatomic) MLFoundationTensor *variances; // @synthesize variances=_variances;
 @property(readonly, nonatomic) MLFoundationTensor *means; // @synthesize means=_means;
 @property(readonly, nonatomic) unsigned long long channels; // @synthesize channels=_channels;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (float)epsilon;
 - (float *)variance;

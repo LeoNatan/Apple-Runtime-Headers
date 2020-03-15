@@ -67,6 +67,7 @@
     CDStruct_29b32c11 _proudLockConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_statusSubtitleText, setter=_setStatusSubtitleText:) NSString *statusSubtitleText; // @synthesize statusSubtitleText=_statusSubtitleText;
 @property(copy, nonatomic, getter=_statusText, setter=_setStatusText:) NSString *statusText; // @synthesize statusText=_statusText;
 @property(nonatomic) CDStruct_930a33b1 transitionContext; // @synthesize transitionContext=_transitionContext;
@@ -97,7 +98,6 @@
 @property(nonatomic) _Bool usesBiometricPresentation; // @synthesize usesBiometricPresentation=_usesBiometricPresentation;
 @property(nonatomic) _Bool showsStatusField; // @synthesize showsStatusField=_showsStatusField;
 @property(nonatomic) __weak id <SBUIPasscodeLockViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)passcodeBiometricAuthenticationViewEmergencyCallButtonHit:(id)arg1;
 - (void)passcodeBiometricAuthenticationViewCancelButtonHit:(id)arg1;
 - (void)passcodeBiometricAuthenticationViewUsePasscodeButtonHit:(id)arg1;

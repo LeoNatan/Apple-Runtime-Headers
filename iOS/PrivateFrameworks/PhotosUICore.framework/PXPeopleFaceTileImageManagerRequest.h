@@ -17,12 +17,12 @@
     long long _deliveryMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool synchronous; // @synthesize synchronous=_synchronous;
 @property(nonatomic) long long deliveryMode; // @synthesize deliveryMode=_deliveryMode;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) PHFace *face; // @synthesize face=_face;
 @property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithFaceTile:(id)arg1;
 - (id)initWithPerson:(id)arg1 face:(id)arg2 asset:(id)arg3;

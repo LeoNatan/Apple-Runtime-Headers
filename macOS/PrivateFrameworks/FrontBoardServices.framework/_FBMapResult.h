@@ -13,10 +13,10 @@
     BOOL _filtered;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL filtered; // @synthesize filtered=_filtered;
 @property(nonatomic) BOOL created; // @synthesize created=_created;
 @property(retain, nonatomic) id result; // @synthesize result=_result;
-- (void).cxx_destruct;
 
 @end
 

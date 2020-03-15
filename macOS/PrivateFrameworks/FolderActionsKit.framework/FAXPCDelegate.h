@@ -19,10 +19,10 @@
 }
 
 + (id)delegateWithExportedObject:(id)arg1 exportedProtocol:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) Protocol *exportedProtocol; // @synthesize exportedProtocol=_exportedProtocol;
 @property(retain) id <FAXPCListenerProtocol> exportedObject; // @synthesize exportedObject=_exportedObject;
 @property(retain) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
-- (void).cxx_destruct;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 // Remaining properties

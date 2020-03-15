@@ -30,9 +30,9 @@ __attribute__((visibility("hidden")))
     MRPlaybackQueueSubscriptionController *_subscriptionController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MRPlaybackQueueSubscriptionController *subscriptionController; // @synthesize subscriptionController=_subscriptionController;
 @property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
-- (void).cxx_destruct;
 - (void)_registerDefaultCallbacks;
 - (void)_handleTransactionPackets:(id)arg1 packets:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_transactionDestintationForName:(unsigned long long)arg1;

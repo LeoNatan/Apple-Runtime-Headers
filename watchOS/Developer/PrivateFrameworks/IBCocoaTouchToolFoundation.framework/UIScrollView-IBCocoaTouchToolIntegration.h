@@ -34,8 +34,6 @@
 - (void)ibApplyContentOffsetAdjustment;
 - (void)ibDidIncrementallyUpdateValueForKeyPath:(id)arg1;
 - (void)ibPrepareForSceneUpdate;
-- (void)awakeAfterMarshallerDidEstablishAttributesWithContext:(id)arg1;
-@property struct UIEdgeInsets ibInsetAdjustments;
 @property struct CGPoint ibContentOffsetAdjustment;
 - (id)initWithMarshalledValues:(id)arg1 orderedKeys:(id)arg2 ignoredKeys:(id)arg3 globalMarshallingContext:(id)arg4;
 @end

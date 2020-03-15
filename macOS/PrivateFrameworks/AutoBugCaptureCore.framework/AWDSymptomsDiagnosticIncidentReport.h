@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)incidentEventsType;
 + (Class)relatedNamesType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(retain, nonatomic) NSMutableArray *incidentEvents; // @synthesize incidentEvents=_incidentEvents;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

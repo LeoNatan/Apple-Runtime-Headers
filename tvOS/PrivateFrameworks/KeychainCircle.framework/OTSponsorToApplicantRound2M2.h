@@ -8,21 +8,18 @@
 
 #import <KeychainCircle/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray;
+@class NSData;
 
 __attribute__((visibility("hidden")))
 @interface OTSponsorToApplicantRound2M2 : PBCodable <NSCopying>
 {
-    NSMutableArray *_preapprovedKeys;
     NSData *_voucher;
     NSData *_voucherSignature;
 }
 
-+ (Class)preapprovedKeysType;
-@property(retain, nonatomic) NSMutableArray *preapprovedKeys; // @synthesize preapprovedKeys=_preapprovedKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *voucherSignature; // @synthesize voucherSignature=_voucherSignature;
 @property(retain, nonatomic) NSData *voucher; // @synthesize voucher=_voucher;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -32,10 +29,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-- (id)preapprovedKeysAtIndex:(unsigned long long)arg1;
-- (unsigned long long)preapprovedKeysCount;
-- (void)addPreapprovedKeys:(id)arg1;
-- (void)clearPreapprovedKeys;
 @property(readonly, nonatomic) _Bool hasVoucherSignature;
 @property(readonly, nonatomic) _Bool hasVoucher;
 

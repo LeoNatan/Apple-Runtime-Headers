@@ -17,10 +17,10 @@
     MTBedtimeDNDStateMachineWaitingState *_waitingState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MTBedtimeDNDStateMachineWaitingState *waitingState; // @synthesize waitingState=_waitingState;
 @property(readonly, nonatomic) MTBedtimeDNDStateMachineOffState *offState; // @synthesize offState=_offState;
 @property(readonly, nonatomic) MTBedtimeDNDStateMachineInitialState *initialState; // @synthesize initialState=_initialState;
-- (void).cxx_destruct;
 - (void)stateMachine:(id)arg1 scheduleUpdateForSecondsFromNow:(double)arg2;
 - (void)stateMachineClearKeepBedtimeDNDOff:(id)arg1;
 - (void)stateMachine:(id)arg1 keepBedtimeDNDOffUntilDate:(id)arg2;

@@ -18,10 +18,10 @@
 
 + (id)_updateMetrics;
 + (void)_setUpdateMetrics:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *lastAutoPollDate; // @synthesize lastAutoPollDate=_lastAutoPollDate;
 @property(readonly, nonatomic) NSArray *metrics; // @synthesize metrics=_metrics;
 @property(readonly, nonatomic) double averagePollTime; // @synthesize averagePollTime=_averagePollTime;
-- (void).cxx_destruct;
 - (void)_load;
 - (id)_serialableData;
 - (void)synchronize;

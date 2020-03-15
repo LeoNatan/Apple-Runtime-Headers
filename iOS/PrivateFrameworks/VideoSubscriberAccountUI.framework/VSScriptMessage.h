@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     VSScriptSecurityOrigin *_target;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSScriptSecurityOrigin *target; // @synthesize target=_target;
 @property(retain, nonatomic) VSScriptSecurityOrigin *source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *body; // @synthesize body=_body;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

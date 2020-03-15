@@ -17,11 +17,11 @@
     FCTagRelationships *_resultTagRelationships;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCTagRelationships *resultTagRelationships; // @synthesize resultTagRelationships=_resultTagRelationships;
 @property(readonly, copy, nonatomic) id <FCTagProviding> tag; // @synthesize tag=_tag;
 @property(readonly, copy, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id)initWithContext:(id)arg1 tag:(id)arg2;

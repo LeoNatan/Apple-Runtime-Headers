@@ -15,9 +15,9 @@
 }
 
 + (BOOL)screenShieldIsRaised;
+- (void).cxx_destruct;
 @property(nonatomic) struct __CFRunLoopSource *ioRunLoopSource; // @synthesize ioRunLoopSource=_ioRunLoopSource;
 @property __weak id <SODarkWakeHelperDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

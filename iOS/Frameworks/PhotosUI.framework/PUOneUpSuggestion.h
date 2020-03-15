@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _dismissHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 @property(copy, nonatomic) CDUnknownBlockType markAsSeenHandler; // @synthesize markAsSeenHandler=_markAsSeenHandler;
 @property(retain, nonatomic) AVVideoComposition *loopingVideoComposition; // @synthesize loopingVideoComposition=_loopingVideoComposition;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImage *titleIcon; // @synthesize titleIcon=_titleIcon;
 @property(retain, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(nonatomic) long long preferredPresentationStyle; // @synthesize preferredPresentationStyle=_preferredPresentationStyle;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -24,11 +24,11 @@
 }
 
 + (_Bool)drivesAnimation;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool runAlongsideAnimationsManually; // @synthesize runAlongsideAnimationsManually=_runAlongsideAnimationsManually;
 @property(nonatomic) _Bool includePresentingViewInAnimation; // @synthesize includePresentingViewInAnimation=_includePresentingViewInAnimation;
 @property(readonly, nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 @property(nonatomic) __weak id <PLViewControllerAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (void)_animateTransitionWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;

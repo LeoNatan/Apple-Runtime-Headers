@@ -15,8 +15,8 @@
 }
 
 + (id)animationSettingsForTransitionToStyle:(long long)arg1;
-@property(retain, nonatomic, getter=_propertyAnimator, setter=_setPropertyAnimator:) UIViewPropertyAnimator *propertyAnimator; // @synthesize propertyAnimator=_propertyAnimator;
 - (void).cxx_destruct;
+@property(retain, nonatomic, getter=_propertyAnimator, setter=_setPropertyAnimator:) UIViewPropertyAnimator *propertyAnimator; // @synthesize propertyAnimator=_propertyAnimator;
 - (void)coronaDidChange:(long long)arg1;
 - (id)_configurePropertyAnimatorIfNecessaryForChangeToUserInterfaceStyle:(long long)arg1;
 - (void)removeParticipant:(id)arg1;

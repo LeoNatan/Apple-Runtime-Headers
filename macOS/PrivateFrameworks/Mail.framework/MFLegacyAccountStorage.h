@@ -16,9 +16,9 @@
 
 + (id)legacyUIDForAccount:(id)arg1;
 + (id)smtpIdentifierWithHostname:(id)arg1 username:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUserDefaults *mailUserDefaults; // @synthesize mailUserDefaults=_mailUserDefaults;
 @property(copy, nonatomic) NSDictionary *accountsPlistContents; // @synthesize accountsPlistContents=_accountsPlistContents;
-- (void).cxx_destruct;
 - (id)legacyTildeAbbreviatedAccountDirectoryPathForAccount:(id)arg1;
 - (id)legacyAccountInfoForAccount:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

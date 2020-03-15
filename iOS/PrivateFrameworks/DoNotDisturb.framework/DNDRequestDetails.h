@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)detailsRepresentingNowWithClientIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy, nonatomic) NSUUID *auditUUID; // @synthesize auditUUID=_auditUUID;
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -32,9 +32,9 @@
 + (id)futureWithName:(id)arg1 error:(id)arg2;
 + (id)futureWithName:(id)arg1 result:(id)arg2;
 + (id)calloutQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFinished) BOOL finished; // @synthesize finished=_finished;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_onQueue_finalizeWithResult:(id)arg1 error:(id)arg2;
 - (void)_loadResultIfNeeded;
 - (id)result:(id *)arg1;

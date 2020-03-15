@@ -19,8 +19,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)ancestery;
-@property(readonly, copy, nonatomic) MXMSampleTag *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) MXMSampleTag *parent; // @synthesize parent=_parent;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqualToTag:(id)arg1;

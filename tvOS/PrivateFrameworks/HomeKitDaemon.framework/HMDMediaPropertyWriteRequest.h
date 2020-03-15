@@ -19,9 +19,9 @@
 + (id)writeRequestWithProperty:(id)arg1 value:(id)arg2 mediaProfile:(id)arg3 identifier:(id)arg4;
 + (id)writeRequestWithProperty:(id)arg1 value:(id)arg2 mediaProfile:(id)arg3;
 + (id)requestWithProperty:(id)arg1 mediaProfile:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithProperty:(id)arg1 value:(id)arg2 mediaProfile:(id)arg3 identifier:(id)arg4;
 

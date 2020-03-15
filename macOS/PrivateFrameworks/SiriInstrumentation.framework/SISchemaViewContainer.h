@@ -16,11 +16,11 @@
     NSString *_dialogPhase;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *dialogPhase; // @synthesize dialogPhase=_dialogPhase;
 @property(copy, nonatomic) NSString *dialogIdentifier; // @synthesize dialogIdentifier=_dialogIdentifier;
 @property(copy, nonatomic) NSString *snippetClass; // @synthesize snippetClass=_snippetClass;
 @property(copy, nonatomic) NSString *viewID; // @synthesize viewID=_viewID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

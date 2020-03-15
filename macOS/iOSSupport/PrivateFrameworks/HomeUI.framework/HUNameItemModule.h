@@ -18,12 +18,12 @@
     HFStaticItemProvider *_itemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFStaticItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
 @property(retain, nonatomic) NSSet *items; // @synthesize items=_items;
 @property(retain, nonatomic) HFTransformItem *nameAndIconItem; // @synthesize nameAndIconItem=_nameAndIconItem;
 @property(retain, nonatomic) HFItemBuilder *sourceItemBuilder; // @synthesize sourceItemBuilder=_sourceItemBuilder;
 @property(retain, nonatomic) HFItem<HFNamingComponentCreating> *sourceItem; // @synthesize sourceItem=_sourceItem;
-- (void).cxx_destruct;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;
 - (id)init;

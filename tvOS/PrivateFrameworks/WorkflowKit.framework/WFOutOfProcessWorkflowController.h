@@ -16,6 +16,7 @@
     WFContentCollection *_input;
     WFContentCollection *_output;
     id <WFOutOfProcessWorkflowControllerDelegate> _delegate;
+    NSString *_automationType;
     NSString *_debugIdentifier;
     NSData *_workflowData;
     long long _environment;
@@ -28,6 +29,7 @@
     long long _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *extensionMaxRunTimeTimer; // @synthesize extensionMaxRunTimeTimer=_extensionMaxRunTimeTimer;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalSerialQueue; // @synthesize internalSerialQueue=_internalSerialQueue;
@@ -38,10 +40,10 @@
 @property(readonly, nonatomic) long long environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) NSData *workflowData; // @synthesize workflowData=_workflowData;
 @property(readonly, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
+@property(copy, nonatomic) NSString *automationType; // @synthesize automationType=_automationType;
 @property(nonatomic) __weak id <WFOutOfProcessWorkflowControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WFContentCollection *output; // @synthesize output=_output;
 @property(retain, nonatomic) WFContentCollection *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 - (void)workflowDidFinishRunningWithError:(id)arg1 cancelled:(_Bool)arg2;
 - (void)workflowDidStart;
 - (void)reportFinishToDelegateWithError:(id)arg1 cancelled:(_Bool)arg2;

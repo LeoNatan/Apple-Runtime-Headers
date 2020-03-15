@@ -15,8 +15,8 @@
     UIPresentationController *_presentationController;
 }
 
-@property(retain, nonatomic, getter=_presentationController, setter=_setPresentationController:) UIPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 - (void).cxx_destruct;
+@property(retain, nonatomic, getter=_presentationController, setter=_setPresentationController:) UIPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 - (void)viewControllerAnimator:(id)arg1 willBeginDismissalAnimationWithTransitionContext:(id)arg2;
 - (void)viewControllerAnimator:(id)arg1 willBeginPresentationAnimationWithTransitionContext:(id)arg2;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;

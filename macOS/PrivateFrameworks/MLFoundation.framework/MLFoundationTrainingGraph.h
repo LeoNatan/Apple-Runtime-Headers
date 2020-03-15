@@ -17,11 +17,11 @@
 }
 
 + (id)trainingGraphWithGraphObjects:(id)arg1 lossLayer:(id)arg2 optimizer:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MLFoundationTensor *rootSourceGradientTensor; // @synthesize rootSourceGradientTensor=_rootSourceGradientTensor;
 @property(retain, nonatomic) NSMutableArray *optimizerUpdateLayerList; // @synthesize optimizerUpdateLayerList=_optimizerUpdateLayerList;
 @property(readonly, retain, nonatomic) MLFoundationLayer *lossLayer; // @synthesize lossLayer=_lossLayer;
 @property(retain, nonatomic) MLFoundationOptimizer *optimizer; // @synthesize optimizer=_optimizer;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)synchronizeUpdates;
 - (id)resultTensorForLayer:(id)arg1;

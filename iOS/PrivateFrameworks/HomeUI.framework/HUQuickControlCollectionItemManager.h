@@ -20,12 +20,12 @@
     HFItemProvider *_supplementaryItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItemProvider *supplementaryItemProvider; // @synthesize supplementaryItemProvider=_supplementaryItemProvider;
 @property(readonly, copy, nonatomic) CDUnknownBlockType supplementaryItemProviderCreator; // @synthesize supplementaryItemProviderCreator=_supplementaryItemProviderCreator;
 @property(readonly, copy, nonatomic) CDUnknownBlockType gridItemProviderCreator; // @synthesize gridItemProviderCreator=_gridItemProviderCreator;
 @property(readonly, copy, nonatomic) HFItem<NSCopying> *supplementaryItem; // @synthesize supplementaryItem=_supplementaryItem;
 @property(retain, nonatomic) HFItemProvider *gridItemProvider; // @synthesize gridItemProvider=_gridItemProvider;
-- (void).cxx_destruct;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (_Bool)isGridItem:(id)arg1;

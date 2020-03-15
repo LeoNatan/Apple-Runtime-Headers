@@ -15,9 +15,9 @@
 }
 
 + (id)defaultRectDiagnosticsProviders;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *rectDiagnosticsProviders; // @synthesize rectDiagnosticsProviders=_rectDiagnosticsProviders;
 @property(retain, nonatomic) PXGLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)update;
 
 @end

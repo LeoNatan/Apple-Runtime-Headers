@@ -17,9 +17,9 @@
 }
 
 + (id)keyPathsForPanelSettings;
+- (void).cxx_destruct;
 @property(copy) NSString *autosaveName; // @synthesize autosaveName=_autosaveName;
 @property unsigned long long browserType; // @synthesize browserType=_browserType;
-- (void).cxx_destruct;
 @property(readonly) BOOL isVisible;
 @property struct CGRect frame;
 - (void)orderOut:(id)arg1;

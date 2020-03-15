@@ -18,12 +18,12 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) CDUnknownBlockType clientCallback; // @synthesize clientCallback=_clientCallback;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSMutableDictionary *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) NSURL *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (BOOL)startMonitoringForFileDeletion;
 - (void)stopMonitoringForFileDeletion;
 - (BOOL)readSettings;

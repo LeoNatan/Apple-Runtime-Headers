@@ -21,13 +21,13 @@
 }
 
 + (Class)destinationsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASCodableRelationshipContainer *remoteRelationshipContainer; // @synthesize remoteRelationshipContainer=_remoteRelationshipContainer;
 @property(retain, nonatomic) ASCodableRelationshipContainer *relationshipContainer; // @synthesize relationshipContainer=_relationshipContainer;
 @property(retain, nonatomic) NSMutableArray *destinations; // @synthesize destinations=_destinations;
 @property(retain, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 @property(retain, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(retain, nonatomic) NSString *linkedContactStoreIdentifier; // @synthesize linkedContactStoreIdentifier=_linkedContactStoreIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -13,8 +13,8 @@
     PKPeerPaymentAccount *_account;
 }
 
-@property(readonly, nonatomic) PKPeerPaymentAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPeerPaymentAccount *account; // @synthesize account=_account;
 - (id)initWithData:(id)arg1;
 
 @end

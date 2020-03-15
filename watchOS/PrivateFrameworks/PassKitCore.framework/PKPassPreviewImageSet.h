@@ -19,10 +19,10 @@
 + (unsigned int)currentVersion;
 + (id)archiveName;
 + (int)imageSetType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKImage *rawIcon; // @synthesize rawIcon=_rawIcon;
 @property(retain, nonatomic) PKImage *notificationIconImage; // @synthesize notificationIconImage=_notificationIconImage;
 @property(retain, nonatomic) PKImage *iconImage; // @synthesize iconImage=_iconImage;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

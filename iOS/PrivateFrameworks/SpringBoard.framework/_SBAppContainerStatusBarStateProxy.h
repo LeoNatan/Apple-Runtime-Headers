@@ -13,8 +13,8 @@
     SBAppContainerViewController *_appVCBackReference;
 }
 
-@property(nonatomic) __weak SBAppContainerViewController *appVCBackReference; // @synthesize appVCBackReference=_appVCBackReference;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SBAppContainerViewController *appVCBackReference; // @synthesize appVCBackReference=_appVCBackReference;
 - (_Bool)_statusBarAppearsOutsideOfAJailedApp;
 - (long long)_fallbackInterfaceOrientation;
 - (long long)_statusBarOrientationGivenFallbackOrientation:(long long)arg1;

@@ -46,7 +46,9 @@
     UIBarButtonItem *_addContactBarButtonItem;
 }
 
++ (id)keyCommandForNewContact;
 + (id)newContactFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *addContactBarButtonItem; // @synthesize addContactBarButtonItem=_addContactBarButtonItem;
 @property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
 @property(nonatomic) _Bool hideGroupsButton; // @synthesize hideGroupsButton=_hideGroupsButton;
@@ -72,7 +74,6 @@
 @property(nonatomic) _Bool allowsCardDeletion; // @synthesize allowsCardDeletion=_allowsCardDeletion;
 @property(nonatomic) _Bool allowsCardEditing; // @synthesize allowsCardEditing=_allowsCardEditing;
 @property(retain, nonatomic) CNContactStyle *contactStyle; // @synthesize contactStyle=_contactStyle;
-- (void).cxx_destruct;
 - (id)userActivityRepresentingCurrentlyDisplayedContact;
 - (void)notifyOtherFacebookContactsAlertDidSelectAction;
 - (void)otherFacebookContactsAlertDidSelectActionWithNotification:(id)arg1;
@@ -120,6 +121,7 @@
 - (_Bool)shouldShowRightAddButton;
 - (_Bool)shouldShowRightCancelButton;
 - (_Bool)shouldShowRightAddAndCancelButton;
+- (_Bool)shouldShowLeftDoneAndRightAddButton;
 - (_Bool)shouldShowLeftCancelAndRightAddButton;
 - (_Bool)shouldShowLeftCancelAndRightDoneButton;
 - (_Bool)shouldShowGroupsButton;

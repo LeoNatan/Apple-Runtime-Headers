@@ -14,8 +14,8 @@
 }
 
 + (id)complicationWithApp:(id)arg1;
-@property(retain, nonatomic) NTKCompanion3rdPartyApp *app; // @synthesize app=_app;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTKCompanion3rdPartyApp *app; // @synthesize app=_app;
 - (id)localizedDetailText;
 
 @end

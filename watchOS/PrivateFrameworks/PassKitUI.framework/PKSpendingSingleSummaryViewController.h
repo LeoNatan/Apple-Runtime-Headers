@@ -54,6 +54,7 @@
     struct UIEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) unsigned int selectionType; // @synthesize selectionType=_selectionType;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) UIGestureRecognizer *gestureRecognizerRequiredToFail; // @synthesize gestureRecognizerRequiredToFail=_gestureRecognizerRequiredToFail;
 @property(readonly, nonatomic) PKSpendingSummary *summary; // @synthesize summary=_summary;
 @property(nonatomic) __weak id <PKSpendingSingleSummaryViewControllerDelegate> scrollingDelegate; // @synthesize scrollingDelegate=_scrollingDelegate;
-- (void).cxx_destruct;
 - (void)accountServiceAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)buttonTappedInFooterView:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

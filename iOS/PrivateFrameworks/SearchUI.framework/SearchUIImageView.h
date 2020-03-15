@@ -17,10 +17,10 @@
 
 + (id)thumbnailForResult:(id)arg1;
 + (id)imageViewWithImage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *tintView; // @synthesize tintView=_tintView;
 @property(retain, nonatomic) SearchUIButton *overlayPlayButton; // @synthesize overlayPlayButton=_overlayPlayButton;
 @property(retain, nonatomic) SFImage *currentImage; // @synthesize currentImage=_currentImage;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateWithImage:(id)arg1 needsOverlayButton:(_Bool)arg2 preventImageScaling:(_Bool)arg3 useMinimumWidthIfPossible:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)updateWithImage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

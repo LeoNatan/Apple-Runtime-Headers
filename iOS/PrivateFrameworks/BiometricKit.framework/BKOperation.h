@@ -17,11 +17,11 @@
     long long _state;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <BKOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) BKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)userPresentWithError:(id *)arg1;
 - (void)cancel;
 - (void)startWithReply:(CDUnknownBlockType)arg1;

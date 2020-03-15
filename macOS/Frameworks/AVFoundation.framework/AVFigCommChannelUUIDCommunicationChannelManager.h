@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     AVWeakReference *_weakObserver;
 }
 
-@property __weak AVFigRoutingContextOutputContextImpl *parentOutputContextImpl; // @synthesize parentOutputContextImpl=_parentOutputContextImpl;
 - (void).cxx_destruct;
+@property __weak AVFigRoutingContextOutputContextImpl *parentOutputContextImpl; // @synthesize parentOutputContextImpl=_parentOutputContextImpl;
 - (void)didCloseCommChannelUUID:(struct __CFString *)arg1;
 - (void)_didReceiveData:(struct __CFData *)arg1 fromCommChannelUUID:(struct __CFString *)arg2;
 - (id)openCommunicationChannelWithOptions:(id)arg1 error:(id *)arg2;

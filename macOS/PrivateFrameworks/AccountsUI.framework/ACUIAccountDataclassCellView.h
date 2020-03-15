@@ -15,10 +15,10 @@
     NSProgressIndicator *_spinner;
 }
 
+- (void).cxx_destruct;
 @property BOOL checkboxChecked; // @synthesize checkboxChecked=_checkboxChecked;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(retain) NSButton *checkbox; // @synthesize checkbox=_checkbox;
-- (void).cxx_destruct;
 - (void)setObjectValue:(id)arg1;
 - (void)checkboxAction:(id)arg1;
 - (void)didClickOptionsButton:(id)arg1;

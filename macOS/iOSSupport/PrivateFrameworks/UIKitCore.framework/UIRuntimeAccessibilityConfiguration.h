@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSObject *object;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *object; // @synthesize object;
 @property(retain, nonatomic) NSNumber *isAccessibilityConfigurationElement; // @synthesize isAccessibilityConfigurationElement;
 @property(retain, nonatomic) NSNumber *accessibilityConfigurationTraits; // @synthesize accessibilityConfigurationTraits;
 @property(retain, nonatomic) NSString *accessibilityConfigurationLabel; // @synthesize accessibilityConfigurationLabel;
 @property(retain, nonatomic) NSString *accessibilityConfigurationIdentifier; // @synthesize accessibilityConfigurationIdentifier;
 @property(retain, nonatomic) NSString *accessibilityConfigurationHint; // @synthesize accessibilityConfigurationHint;
-- (void).cxx_destruct;
 - (void)applyConfiguration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -35,6 +35,7 @@
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long upNextIndex; // @synthesize upNextIndex=_upNextIndex;
 @property(nonatomic) unsigned long long upcomingItemsLimit; // @synthesize upcomingItemsLimit=_upcomingItemsLimit;
 @property(retain, nonatomic) NSDictionary *changeContext; // @synthesize changeContext=_changeContext;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSObject<TVPMediaItem> *previousMediaItem; // @synthesize previousMediaItem=_previousMediaItem;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *nextMediaItem; // @synthesize nextMediaItem=_nextMediaItem;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *currentMediaItem; // @synthesize currentMediaItem=_currentMediaItem;
-- (void).cxx_destruct;
 - (void)addItemsToUpNext:(id)arg1;
 @property(readonly, nonatomic) NSArray *upcomingItems;
 - (void)removeItemsAtIndexes:(id)arg1;

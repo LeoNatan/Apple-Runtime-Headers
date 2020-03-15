@@ -27,15 +27,15 @@
 }
 
 + (void)startDefaultTracker;
-@property(readonly, nonatomic) CSLForegroundUpdateTrackerConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLForegroundUpdateTrackerConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)_queue_noteBacklightOffAtTime:(unsigned long long)arg1;
 - (void)backlight:(id)arg1 willBeOn:(_Bool)arg2 forReason:(unsigned int)arg3;
 - (void)_logKey:(id)arg1;
 - (void)_queue_noteForegroundActivationAttemptForEvent:(id)arg1;
-- (void)_queue_processDidExit:(id)arg1 withContext:(struct FBProcessExitContext *)arg2;
+- (void)_queue_processDidExit:(id)arg1 withContext:(id)arg2;
 - (void)_queue_handleFailedEvent:(id)arg1 forProcess:(id)arg2;
-- (void)applicationProcessDidExit:(id)arg1 withContext:(struct FBProcessExitContext *)arg2;
+- (void)applicationProcessDidExit:(id)arg1 withContext:(id)arg2;
 - (void)processManager:(id)arg1 didRemoveProcess:(id)arg2;
 - (void)processManager:(id)arg1 didAddProcess:(id)arg2;
 - (void)sceneManager:(id)arg1 updateForScene:(id)arg2 completedWithContext:(id)arg3 error:(id)arg4;

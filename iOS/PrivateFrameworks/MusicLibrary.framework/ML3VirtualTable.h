@@ -21,12 +21,12 @@
     shared_ptr_c3e79333 _dataSource;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ML3DatabaseConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) ML3DatabaseTable *databaseTable; // @synthesize databaseTable=_databaseTable;
 @property(nonatomic) __weak id <ML3VirtualTableDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) shared_ptr_c3e79333 dataSource; // @synthesize dataSource=_dataSource;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)unregister;
 - (_Bool)registerWithConnection:(id)arg1;
 @property(readonly, nonatomic) NSString *name;

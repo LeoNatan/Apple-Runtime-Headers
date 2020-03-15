@@ -21,6 +21,7 @@
 
 + (void)setSharedPlaybackSessionID:(id)arg1;
 + (id)sharedPlaybackSessionID;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(nonatomic) BOOL recordingIsComplete; // @synthesize recordingIsComplete=_recordingIsComplete;
 @property(retain, nonatomic) NSDate *clipStartDate; // @synthesize clipStartDate=_clipStartDate;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSUUID *playbackSessionID; // @synthesize playbackSessionID=_playbackSessionID;
 @property(retain, nonatomic) NSUUID *cameraID; // @synthesize cameraID=_cameraID;
 @property(retain, nonatomic) NSUUID *clipID; // @synthesize clipID=_clipID;
-- (void).cxx_destruct;
 - (id)payload;
 - (id)initWithData:(id)arg1;
 

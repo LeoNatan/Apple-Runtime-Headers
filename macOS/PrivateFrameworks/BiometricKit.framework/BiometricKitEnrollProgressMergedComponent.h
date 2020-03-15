@@ -14,9 +14,9 @@
     BiometricKitEnrollProgressCoordinates *_transformationCoordinates;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BiometricKitEnrollProgressCoordinates *transformationCoordinates; // @synthesize transformationCoordinates=_transformationCoordinates;
 @property(nonatomic) long long componentID; // @synthesize componentID=_componentID;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

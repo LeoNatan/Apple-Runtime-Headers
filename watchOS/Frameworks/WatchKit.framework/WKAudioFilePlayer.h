@@ -18,12 +18,12 @@
 }
 
 + (id)playerWithPlayerItem:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(nonatomic) float rate; // @synthesize rate=_rate;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) WKAudioFilePlayerItem *currentItem; // @synthesize currentItem=_currentItem;
-- (void).cxx_destruct;
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (void)pause;
 - (void)play;

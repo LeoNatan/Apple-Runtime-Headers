@@ -24,13 +24,13 @@
 + (id)_accountChannelsWithProviderID:(id)arg1;
 + (void)_startOperationAndWaitForCompletion:(id)arg1;
 + (id)sharedCenter;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType identityProviderFetchOperationBlock; // @synthesize identityProviderFetchOperationBlock=_identityProviderFetchOperationBlock;
 @property(copy, nonatomic) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
 @property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(retain, nonatomic) VSAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-- (void).cxx_destruct;
 - (void)fetchAccountChannelsWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSUndoManager *undoManager;
 - (void)_removeSavedAccountChannelsWithCompletionHandler:(CDUnknownBlockType)arg1;

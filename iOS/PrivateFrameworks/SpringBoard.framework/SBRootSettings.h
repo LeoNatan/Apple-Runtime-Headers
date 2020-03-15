@@ -15,10 +15,10 @@
     SBProximitySettings *_proximitySettings;
 }
 
+- (void).cxx_destruct;
 @property(retain) SBProximitySettings *proximitySettings; // @synthesize proximitySettings=_proximitySettings;
 @property(retain) SBAttentionAwarenessSettings *attentionAwarenessSettings; // @synthesize attentionAwarenessSettings=_attentionAwarenessSettings;
 @property(retain) SBStatusBarStyleOverridesSettings *statusBarStyleOverridesSettings; // @synthesize statusBarStyleOverridesSettings=_statusBarStyleOverridesSettings;
-- (void).cxx_destruct;
 
 @end
 

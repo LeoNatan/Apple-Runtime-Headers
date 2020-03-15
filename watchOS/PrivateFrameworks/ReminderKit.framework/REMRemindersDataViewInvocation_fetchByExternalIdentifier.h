@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMObjectID *listObjectID; // @synthesize listObjectID=_listObjectID;
 @property(readonly, nonatomic) NSArray *externalIdentifiers; // @synthesize externalIdentifiers=_externalIdentifiers;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

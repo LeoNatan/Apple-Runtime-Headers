@@ -13,6 +13,8 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)accessibilityPath;
+- (id)_viewToAddFocusLayer;
 - (_Bool)_accessibilityMoveFocusWithHeading:(unsigned long long)arg1;
 - (void)_fkaMoveToNextColumn;
 - (void)_fkaMoveToPreviousColumn;

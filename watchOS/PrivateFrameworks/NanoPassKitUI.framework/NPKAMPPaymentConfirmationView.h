@@ -6,13 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class NPKAMPPaymentView, NPKApprovalConfirmationView, NPKPaymentLabelAndAccessoryView, NPKPaymentLabelAndDotsView, NPKSynchronizedAnimationCoordinator, NSAttributedString, NSString, UIImageView;
+@class NPKAMPPaymentDetailsView, NPKApprovalConfirmationView, NPKPaymentLabelAndAccessoryView, NPKPaymentLabelAndDotsView, NPKSynchronizedAnimationCoordinator, NSAttributedString, NSString, UIImageView;
 
 @interface NPKAMPPaymentConfirmationView : UIView
 {
+    unsigned int _confirmationStyle;
     unsigned int _displayState;
     NPKApprovalConfirmationView *_approvalConfirmationView;
-    NPKAMPPaymentView *_paymentView;
+    NPKAMPPaymentDetailsView *_paymentView;
     NPKPaymentLabelAndDotsView *_processingView;
     NPKSynchronizedAnimationCoordinator *_paymentProcessingAnimationCoordinator;
     NPKPaymentLabelAndAccessoryView *_doneView;
@@ -20,16 +21,17 @@
 }
 
 + (_Bool)_isRightToLeft;
-+ (id)ampPaymentConfirmationViewWithFrame:(struct CGRect)arg1;
-+ (id)ampPaymentConfirmationView;
++ (id)ampPaymentConfirmationViewWithFrame:(struct CGRect)arg1 forStyle:(unsigned int)arg2;
++ (id)ampPaymentConfirmationViewForStyle:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
 @property(retain, nonatomic) NPKPaymentLabelAndAccessoryView *doneView; // @synthesize doneView=_doneView;
 @property(retain, nonatomic) NPKSynchronizedAnimationCoordinator *paymentProcessingAnimationCoordinator; // @synthesize paymentProcessingAnimationCoordinator=_paymentProcessingAnimationCoordinator;
 @property(retain, nonatomic) NPKPaymentLabelAndDotsView *processingView; // @synthesize processingView=_processingView;
-@property(retain, nonatomic) NPKAMPPaymentView *paymentView; // @synthesize paymentView=_paymentView;
+@property(retain, nonatomic) NPKAMPPaymentDetailsView *paymentView; // @synthesize paymentView=_paymentView;
 @property(retain, nonatomic) NPKApprovalConfirmationView *approvalConfirmationView; // @synthesize approvalConfirmationView=_approvalConfirmationView;
 @property(nonatomic) unsigned int displayState; // @synthesize displayState=_displayState;
-- (void).cxx_destruct;
+@property(nonatomic) unsigned int confirmationStyle; // @synthesize confirmationStyle=_confirmationStyle;
 - (id)_moveInFromBottomTransition;
 - (void)_updateVisibleViewsToDisplayView:(id)arg1 removingViews:(id)arg2;
 - (void)_updateDisplayState;
@@ -40,9 +42,10 @@
 - (void)handleContentOverlapWithNormalizedOffsetY:(float)arg1;
 @property(copy, nonatomic) NSString *instructionText;
 @property(copy, nonatomic) NSString *amountText;
+@property(copy, nonatomic) NSAttributedString *subscriptionDetailsAttributedText;
 @property(copy, nonatomic) NSAttributedString *appDetailsAttributedText;
 @property(nonatomic) struct CGImage *appIconImage;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 forStyle:(unsigned int)arg2;
 
 @end
 

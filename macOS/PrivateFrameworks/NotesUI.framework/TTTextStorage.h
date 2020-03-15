@@ -71,7 +71,8 @@
 + (id)removeDataDetectorLinksForAttributedString:(id)arg1;
 + (id)standardizedAttributedStringFromAttributedString:(id)arg1 withStyler:(id)arg2 fixAttachments:(BOOL)arg3 translateTTFont:(BOOL)arg4;
 + (double)listItemGlyphPointSizeForUnorderedListStyle:(unsigned int)arg1 withStyler:(id)arg2;
-+ (id)bulletTextAttributesWithTextFont:(struct NSFont *)arg1 paragraphStyle:(id)arg2 letterpress:(BOOL)arg3 withStyler:(id)arg4;
++ (id)bulletTextAttributesWithTextFont:(id)arg1 paragraphStyle:(id)arg2 letterpress:(BOOL)arg3 withStyler:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL delayedFixupAfterEditingWantsUndoCommand; // @synthesize delayedFixupAfterEditingWantsUndoCommand=_delayedFixupAfterEditingWantsUndoCommand;
 @property(nonatomic) long long ttChangeInLength; // @synthesize ttChangeInLength=_ttChangeInLength;
 @property(nonatomic) unsigned long long ttEditedMask; // @synthesize ttEditedMask=_ttEditedMask;
@@ -118,7 +119,6 @@
 @property(nonatomic) BOOL wantsUndoCommands; // @synthesize wantsUndoCommands=_wantsUndoCommands;
 @property __weak NSObject<TTTextUndoTarget> *overrideUndoTarget; // @synthesize overrideUndoTarget=_overrideUndoTarget;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSAttributedString *_icaxUnfilteredAttributedString;
 - (struct _NSRange)safeCharacterRangeForRange:(struct _NSRange)arg1;
 - (id)attributedSubstringFromRange:(struct _NSRange)arg1;
@@ -140,7 +140,7 @@
 - (void)convertNSTablesToTabs:(id)arg1;
 - (BOOL)shouldBreakUndoCoalescingWithReplacementRange:(struct _NSRange)arg1 replacementLength:(unsigned long long)arg2;
 - (BOOL)isDeletingContentAttachmentWithReplacementRange:(struct _NSRange)arg1 replacementLength:(unsigned long long)arg2;
-- (BOOL)textViewHasMarkedText:(struct NSTextView *)arg1;
+- (BOOL)textViewHasMarkedText:(id)arg1;
 - (BOOL)isEditingOrConvertingMarkedText:(BOOL)arg1;
 - (BOOL)isDeletingDictationAttachmentWithReplacementRange:(struct _NSRange)arg1 replacementLength:(unsigned long long)arg2;
 - (void)preReplaceCharactersInRange:(struct _NSRange)arg1 withStringLength:(unsigned long long)arg2;

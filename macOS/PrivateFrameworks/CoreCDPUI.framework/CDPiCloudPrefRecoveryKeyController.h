@@ -13,8 +13,8 @@
     NSView *_recoveryView;
 }
 
-@property(retain) NSView *recoveryView; // @synthesize recoveryView=_recoveryView;
 - (void).cxx_destruct;
+@property(retain) NSView *recoveryView; // @synthesize recoveryView=_recoveryView;
 - (void)setupCdpRecoveryKeyWithWindow:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)init;

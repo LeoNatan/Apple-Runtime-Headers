@@ -22,9 +22,13 @@
     unsigned int _tripleChainRxPacketDuration;
     unsigned int _dspProcessingDuration;
     unsigned int _txDuration;
+    unsigned int _sleepCount;
+    unsigned int _wakeCount;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) unsigned int wakeCount; // @synthesize wakeCount=_wakeCount;
+@property(readonly, nonatomic) unsigned int sleepCount; // @synthesize sleepCount=_sleepCount;
 @property(readonly, nonatomic) unsigned short numPacketsTransmitted; // @synthesize numPacketsTransmitted=_numPacketsTransmitted;
 @property(readonly, nonatomic) unsigned short numPacketsReceived; // @synthesize numPacketsReceived=_numPacketsReceived;
 @property(readonly, nonatomic) unsigned int txDuration; // @synthesize txDuration=_txDuration;
@@ -42,7 +46,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithGetPowerStatsResponse:(const struct GetPowerStatsResponse *)arg1;
-- (id)initWithSleepDuration:(unsigned int)arg1 wakeDuration:(unsigned int)arg2 singleAntennaSearchDuration:(unsigned int)arg3 dualAntennaSearchDuration:(unsigned int)arg4 singleChainRxPacketDuration:(unsigned int)arg5 dualChainRxPacketDuration:(unsigned int)arg6 tripleChainRxPacketDuration:(unsigned int)arg7 dspProcessingDuration:(unsigned int)arg8 txDuration:(unsigned int)arg9 numPacketsReceived:(unsigned short)arg10 numPacketsTransmitted:(unsigned short)arg11;
+- (id)initWithSleepDuration:(unsigned int)arg1 wakeDuration:(unsigned int)arg2 singleAntennaSearchDuration:(unsigned int)arg3 dualAntennaSearchDuration:(unsigned int)arg4 singleChainRxPacketDuration:(unsigned int)arg5 dualChainRxPacketDuration:(unsigned int)arg6 tripleChainRxPacketDuration:(unsigned int)arg7 dspProcessingDuration:(unsigned int)arg8 txDuration:(unsigned int)arg9 numPacketsReceived:(unsigned short)arg10 numPacketsTransmitted:(unsigned short)arg11 sleepCount:(unsigned int)arg12 wakeCount:(unsigned int)arg13;
 
 @end
 

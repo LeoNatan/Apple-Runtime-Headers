@@ -16,10 +16,10 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useSoftwareRenderer; // @synthesize useSoftwareRenderer=_useSoftwareRenderer;
 @property(readonly, nonatomic) _Bool cachesResources; // @synthesize cachesResources=_cachesResources;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)_purgeResources;
 - (void)_createResourcesIfNeeded;
 - (id)_imageWithLayerTree:(id)arg1;

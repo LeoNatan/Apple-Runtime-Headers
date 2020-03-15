@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     UIView *_transitionBackgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *transitionBackgroundView; // @synthesize transitionBackgroundView=_transitionBackgroundView;
 @property(retain, nonatomic) NSArray *navBarButtons; // @synthesize navBarButtons=_navBarButtons;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) UIView *navBarGradientView; // @synthesize navBarGradientView=_navBarGradientView;
 @property(retain, nonatomic) UIViewController<VUIProductUberBackgroundInterface> *productBanner; // @synthesize productBanner=_productBanner;
 @property(nonatomic) _Bool lightStatusBar; // @synthesize lightStatusBar=_lightStatusBar;
-- (void).cxx_destruct;
 - (id)_gradientLayer;
 - (void)_configureNavigationBarGradient;
 - (void)_configureTransitionBackgroundView;

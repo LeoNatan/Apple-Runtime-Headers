@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     long long autocompletedPhase;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long autocompletedPhase; // @synthesize autocompletedPhase;
 @property(nonatomic) long long recordedPhase; // @synthesize recordedPhase;
 @property(nonatomic) __weak UIResponder *responder; // @synthesize responder;
 @property(nonatomic) __weak UIResponder *fromResponder; // @synthesize fromResponder;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithResponder:(id)arg1 fromResponder:(id)arg2;
 

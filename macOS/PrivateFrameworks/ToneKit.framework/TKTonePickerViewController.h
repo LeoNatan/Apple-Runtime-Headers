@@ -22,9 +22,9 @@
 }
 
 + (Class)_tonePickerContentViewControllerClassForStyle:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TKTonePickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)viewForSizingTonePickerView:(id)arg1;
 - (id)viewForBaselineLayoutOfTonePickerView:(id)arg1;
 - (void)tonePickerContentViewController:(id)arg1 selectedToneWithIdentifier:(id)arg2;

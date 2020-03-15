@@ -19,10 +19,10 @@
 + (void)performWithDatabaseProvider:(id)arg1;
 + (void)scheduleWithScheduler:(id)arg1 databaseProvider:(id)arg2;
 + (void)scheduleWithDatabaseProvider:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <VCDatabaseProvider> databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 @property(readonly, nonatomic) WFDailyStatusEvent *event; // @synthesize event=_event;
 @property(readonly, nonatomic) VCDailyMetricCheckIn *dailyCheckIn; // @synthesize dailyCheckIn=_dailyCheckIn;
-- (void).cxx_destruct;
 - (BOOL)homeAutomationsPresent:(id *)arg1;
 - (BOOL)personalAutomationsPresent:(id *)arg1;
 - (BOOL)isSharingEnabled;

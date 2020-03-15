@@ -25,6 +25,7 @@
 }
 
 + (id)instructionForUncertainArrivalToStationStep:(id)arg1 context:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hideTimeInstructionsWhenCollapsed; // @synthesize hideTimeInstructionsWhenCollapsed=_hideTimeInstructionsWhenCollapsed;
 @property(retain, nonatomic) id <GEOServerFormattedString> secondaryTimeinstruction; // @synthesize secondaryTimeinstruction=_secondaryTimeinstruction;
 @property(retain, nonatomic) id <GEOServerFormattedString> primaryTimeInstruction; // @synthesize primaryTimeInstruction=_primaryTimeInstruction;
@@ -36,11 +37,10 @@
 @property(copy, nonatomic) NSArray *minorFormattedInstruction; // @synthesize minorFormattedInstruction=_minorFormattedInstruction;
 @property(copy, nonatomic) NSArray *majorFormattedInstruction; // @synthesize majorFormattedInstruction=_majorFormattedInstruction;
 @property(readonly, nonatomic) int context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)formattedInstructionForType:(int)arg1;
 - (void)refreshInstructionStrings;
 - (id)instructionSetsForInstructionType:(int)arg1;
-- (struct NSDictionary *)overridenInstructionsMapping;
+- (id)overridenInstructionsMapping;
 - (id)instructionSet;
 - (void)_fillInInstructions;
 - (id)initWithContext:(int)arg1;

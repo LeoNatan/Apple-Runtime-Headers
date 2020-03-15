@@ -20,8 +20,8 @@
     NSString *_verificationCode;
 }
 
-@property(copy, nonatomic) NSString *verificationCode; // @synthesize verificationCode=_verificationCode;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *verificationCode; // @synthesize verificationCode=_verificationCode;
 - (void)_watermarkStep;
 - (void)stop;
 - (void)start;

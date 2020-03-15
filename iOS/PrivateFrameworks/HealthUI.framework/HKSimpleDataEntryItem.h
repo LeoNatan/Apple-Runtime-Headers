@@ -15,10 +15,10 @@
     unsigned long long _placeholderType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long placeholderType; // @synthesize placeholderType=_placeholderType;
 @property(nonatomic) __weak id <HKSimpleDataEntryItemToolbarDelegate> toolbarDelegate; // @synthesize toolbarDelegate=_toolbarDelegate;
 @property(nonatomic) __weak id <HKSimpleDataEntryItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)toolbarDoneButtonPressed:(id)arg1;
 - (void)toolbarNextButtonPressed:(id)arg1;
 - (void)toolbarPrevButtonPressed:(id)arg1;

@@ -15,10 +15,10 @@
     NSColor *_crk_borderColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL suppressMouseDown; // @synthesize suppressMouseDown=_suppressMouseDown;
 @property(retain, nonatomic) NSColor *crk_borderColor; // @synthesize crk_borderColor=_crk_borderColor;
 @property(retain, nonatomic) NSColor *crk_backgroundColor; // @synthesize crk_backgroundColor=_crk_backgroundColor;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 - (void)updateLayer;
 - (void)buildView;

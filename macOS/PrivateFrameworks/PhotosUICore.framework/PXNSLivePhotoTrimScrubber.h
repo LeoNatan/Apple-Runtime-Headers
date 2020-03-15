@@ -20,9 +20,9 @@
 + (id)trimStartImage;
 + (id)_stretchableImageNamed:(id)arg1 withCapInsets:(struct NSEdgeInsets)arg2;
 + (id)createSnappingControllerWithSnappingTarget:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint lastGestureLocation; // @synthesize lastGestureLocation=_lastGestureLocation;
 @property(retain, nonatomic) NSPressGestureRecognizer *pressGesture; // @synthesize pressGesture=_pressGesture;
-- (void).cxx_destruct;
 - (struct CGRect)backingAlignedRectForRect:(struct CGRect)arg1;
 - (void)impactOccured;
 - (void)setDisabled:(BOOL)arg1;

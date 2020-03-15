@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 @interface VUIDownloadEntityTableViewCell : UITableViewCell <VUIRentalExpirationLabelDelegate, VUIDownloadEntityDelegate>
 {
     id <VUIDownloadEntityTableViewCellDelegate> _delegate;
+    VUIDownloadButton *_downloadButton;
     VUISeparatorView *_topSeparatorView;
     VUISeparatorView *_bottomSeparatorView;
     VUILabel *_titleLabel;
@@ -24,7 +25,6 @@ __attribute__((visibility("hidden")))
     VUILabel *_metaDataHeaderSecondLabel;
     VUILabel *_dotSeparatorLabel;
     VUIImageView *_rightImageView;
-    VUIDownloadButton *_downloadButton;
     _TVImageView *_episodeImageView;
     VUIDownloadEntity *_downloadEntity;
 }
@@ -32,9 +32,9 @@ __attribute__((visibility("hidden")))
 + (id)_generateMetaDataHeaderFirstLabelForDownloadEntity:(id)arg1;
 + (id)_entityPlaceholderImageForDownloadEntity:(id)arg1;
 + (void)configureVUIDownloadEntityTableViewCell:(id)arg1 withDownloadEntity:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIDownloadEntity *downloadEntity; // @synthesize downloadEntity=_downloadEntity;
 @property(retain, nonatomic) _TVImageView *episodeImageView; // @synthesize episodeImageView=_episodeImageView;
-@property(retain, nonatomic) VUIDownloadButton *downloadButton; // @synthesize downloadButton=_downloadButton;
 @property(retain, nonatomic) VUIImageView *rightImageView; // @synthesize rightImageView=_rightImageView;
 @property(retain, nonatomic) VUILabel *dotSeparatorLabel; // @synthesize dotSeparatorLabel=_dotSeparatorLabel;
 @property(retain, nonatomic) VUILabel *metaDataHeaderSecondLabel; // @synthesize metaDataHeaderSecondLabel=_metaDataHeaderSecondLabel;
@@ -43,8 +43,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUISeparatorView *bottomSeparatorView; // @synthesize bottomSeparatorView=_bottomSeparatorView;
 @property(retain, nonatomic) VUISeparatorView *topSeparatorView; // @synthesize topSeparatorView=_topSeparatorView;
+@property(retain, nonatomic) VUIDownloadButton *downloadButton; // @synthesize downloadButton=_downloadButton;
 @property(nonatomic) __weak id <VUIDownloadEntityTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (double)_verticalPaddingForCurrentSizeClass;
 - (double)_imageHeightForCurrentSizeClass;

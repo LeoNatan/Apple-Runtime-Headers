@@ -16,11 +16,11 @@
     NSArray *_specifiers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *specifiers; // @synthesize specifiers=_specifiers;
 @property(readonly, nonatomic) _Bool supportsDisabledSubscriptions; // @synthesize supportsDisabledSubscriptions=_supportsDisabledSubscriptions;
 @property(retain, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 @property(readonly, nonatomic) TPSTelephonyController *telephonyController; // @synthesize telephonyController=_telephonyController;
-- (void).cxx_destruct;
 - (void)telephonyController:(id)arg1 didChangeSubscriptions:(id)arg2;
 - (void)telephonyController:(id)arg1 didChangeActiveSubscriptions:(id)arg2;
 - (id)subscriptionContextForSpecifier:(id)arg1;

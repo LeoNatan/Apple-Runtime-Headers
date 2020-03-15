@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedRegistry;
-@property(readonly, nonatomic) NSMapTable *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMapTable *storage; // @synthesize storage=_storage;
 - (id)loadingContextForURL:(id)arg1;
 - (id)URLForLoadingContext:(id)arg1 scheme:(id)arg2;
 - (id)init;

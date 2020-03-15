@@ -16,8 +16,8 @@
     id <CSLOnWristClientExportedInterface> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLOnWristClientExportedInterface> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLOnWristClientExportedInterface> delegate; // @synthesize delegate=_delegate;
 - (void)onWristStateChanged:(id)arg1;
 
 // Remaining properties

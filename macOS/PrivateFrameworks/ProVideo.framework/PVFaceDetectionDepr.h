@@ -19,6 +19,7 @@
     struct CGRect _boundingBox;
 }
 
+- (void).cxx_destruct;
 @property(retain) id faceObject; // @synthesize faceObject=_faceObject;
 @property(nonatomic) long long detectionOrientation; // @synthesize detectionOrientation=_detectionOrientation;
 @property(nonatomic) CDStruct_1b6d18a9 time; // @synthesize time=_time;
@@ -28,7 +29,6 @@
 @property(nonatomic) double rollAngleInDegrees; // @synthesize rollAngleInDegrees=_rollAngleInDegrees;
 @property(nonatomic) BOOL hasRollAngle; // @synthesize hasRollAngle=_hasRollAngle;
 @property(nonatomic) long long ID; // @synthesize ID=_ID;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (BOOL)isEqualToFaceDetection:(id)arg1;

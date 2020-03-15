@@ -15,9 +15,9 @@
 }
 
 + (id)buttonWithSuggestion:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKNumericSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)init;
 

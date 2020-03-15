@@ -31,11 +31,11 @@
 }
 
 + (id)_chineseContextualVariantMapping;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TISmartPunctuationOptions *smartPunctuationOptions; // @synthesize smartPunctuationOptions=_smartPunctuationOptions;
 @property(nonatomic) unsigned long long autoQuoteType; // @synthesize autoQuoteType=_autoQuoteType;
 @property(nonatomic) _Bool smartDashesEnabled; // @synthesize smartDashesEnabled=_smartDashesEnabled;
 @property(nonatomic) _Bool smartQuotesEnabled; // @synthesize smartQuotesEnabled=_smartQuotesEnabled;
-- (void).cxx_destruct;
 - (id)_checkInput:(id)arg1 forContextualDashesInDocumentState:(id)arg2;
 - (id)_checkInput:(id)arg1 forContextualChinesePunctuationInDocumentState:(id)arg2;
 - (id)_checkInput:(id)arg1 forContextualQuotesInDocumentState:(id)arg2;

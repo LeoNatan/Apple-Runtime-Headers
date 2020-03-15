@@ -22,6 +22,7 @@
     NAFuture *_imageDownloadFuture;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool initialScrollToBottom; // @synthesize initialScrollToBottom=_initialScrollToBottom;
 @property(retain, nonatomic) NAFuture *imageDownloadFuture; // @synthesize imageDownloadFuture=_imageDownloadFuture;
 @property(retain, nonatomic) PHFetchResult *assetsFetchResult; // @synthesize assetsFetchResult=_assetsFetchResult;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak HUWallpaperPhotoCollectionFlowLayout *flowLayout; // @synthesize flowLayout=_flowLayout;
 @property(readonly, nonatomic) long long assetCollectionSubtype; // @synthesize assetCollectionSubtype=_assetCollectionSubtype;
 @property(readonly, nonatomic) __weak id <HUWallpaperPhotoCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)imageFutureForAsset:(id)arg1 cloudAllowed:(_Bool)arg2;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

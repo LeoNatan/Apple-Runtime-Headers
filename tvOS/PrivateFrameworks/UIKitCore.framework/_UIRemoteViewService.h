@@ -16,10 +16,10 @@
     NSUUID *_contextToken;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *contextToken; // @synthesize contextToken=_contextToken;
 @property(readonly, nonatomic) _Bool overridesHostAppearance; // @synthesize overridesHostAppearance=_overridesHostAppearance;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)updateOverridesHostAppearance;
 @property(retain, nonatomic) id <PKPlugIn> plugin;
 - (id)initWithExtension:(id)arg1 andContextToken:(id)arg2;

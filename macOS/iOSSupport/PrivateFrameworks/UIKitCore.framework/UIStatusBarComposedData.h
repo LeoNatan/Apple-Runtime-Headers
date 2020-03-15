@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     UISystemNavigationAction *_systemNavigationItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISystemNavigationAction *systemNavigationItem; // @synthesize systemNavigationItem=_systemNavigationItem;
 @property(copy, nonatomic) NSString *doubleHeightStatus; // @synthesize doubleHeightStatus=_doubleHeightStatus;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)setItem:(int)arg1 enabled:(BOOL)arg2;

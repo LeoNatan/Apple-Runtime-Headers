@@ -26,6 +26,7 @@
     PHAdjustmentData *_originalAdjustmentData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHAdjustmentData *originalAdjustmentData; // @synthesize originalAdjustmentData=_originalAdjustmentData;
 @property(copy, nonatomic) NSURL *backSwappingVideoRenderURL; // @synthesize backSwappingVideoRenderURL=_backSwappingVideoRenderURL;
 @property(copy, nonatomic) NSURL *frontSwappingVideoRenderURL; // @synthesize frontSwappingVideoRenderURL=_frontSwappingVideoRenderURL;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSURL *overCapturePhotoURL; // @synthesize overCapturePhotoURL=_overCapturePhotoURL;
 @property(retain, nonatomic) NSNumber *baseVersionNeeded; // @synthesize baseVersionNeeded=_baseVersionNeeded;
 @property(nonatomic) _Bool canHandleAdjustmentData; // @synthesize canHandleAdjustmentData=_canHandleAdjustmentData;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addFlipVideoURL:(id)arg1 forAssetResourceType:(int)arg2;
 - (void)addFlipImageURL:(id)arg1 forAssetResourceType:(int)arg2;

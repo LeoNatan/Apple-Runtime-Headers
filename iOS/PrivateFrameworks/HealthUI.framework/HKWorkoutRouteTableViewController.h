@@ -15,10 +15,10 @@
     NSMutableArray *_routeData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *routeData; // @synthesize routeData=_routeData;
 @property(retain, nonatomic) HKMapRouteTableViewCell *mapRouteTableViewCell; // @synthesize mapRouteTableViewCell=_mapRouteTableViewCell;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

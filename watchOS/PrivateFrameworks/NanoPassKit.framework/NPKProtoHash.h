@@ -15,8 +15,8 @@
     NSData *_hashData;
 }
 
-@property(retain, nonatomic) NSData *hashData; // @synthesize hashData=_hashData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *hashData; // @synthesize hashData=_hashData;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

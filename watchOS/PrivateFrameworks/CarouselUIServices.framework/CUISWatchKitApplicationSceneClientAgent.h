@@ -14,9 +14,9 @@
     id <CUISWatchActionHandler> _actionHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReceivedNonClockKitEvent; // @synthesize hasReceivedNonClockKitEvent=_hasReceivedNonClockKitEvent;
 @property(nonatomic) __weak id <CUISWatchActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
-- (void).cxx_destruct;
 - (void)inspectClockKitContextForEvent:(id)arg1;
 - (id)sceneCreateActionByRemovingFromSceneEvent:(id)arg1;
 - (id)watchActionsFromActions:(id)arg1;

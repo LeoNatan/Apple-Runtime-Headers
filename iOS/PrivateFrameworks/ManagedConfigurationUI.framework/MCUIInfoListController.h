@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSString *_continueButtonTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *continueButtonTitle; // @synthesize continueButtonTitle=_continueButtonTitle;
 @property(nonatomic) __weak id <MCUIInfoListDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *navTitle; // @synthesize navTitle=_navTitle;
 @property(copy, nonatomic) NSArray *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)specifiers;

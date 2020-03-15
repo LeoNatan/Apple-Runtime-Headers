@@ -14,9 +14,9 @@
     EFLazyCache *_displayNameCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EFLazyCache *displayNameCache; // @synthesize displayNameCache=_displayNameCache;
 @property(readonly, nonatomic) CNContactStore *cnStore; // @synthesize cnStore=_cnStore;
-- (void).cxx_destruct;
 - (void)_invalidateDisplayNameCache;
 - (id)_fetchDisplayNameForEmailAddress:(id)arg1 abbreviated:(_Bool)arg2;
 - (id)displayNameForEmailAddress:(id)arg1 abbreviated:(_Bool)arg2;

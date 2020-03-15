@@ -18,10 +18,10 @@
     NSMutableDictionary *_alarmStatesByAlarmID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *alarmStatesByAlarmID; // @synthesize alarmStatesByAlarmID=_alarmStatesByAlarmID;
 @property(readonly, nonatomic) id <MTAlarmStorage> alarmStorage; // @synthesize alarmStorage=_alarmStorage;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-- (void).cxx_destruct;
 - (void)_queue_writeCurrentStateToContextStore;
 - (void)_queue_clearPreviouslyDismissedAlarmStates;
 - (void)updateStateForAlarms:(id)arg1;

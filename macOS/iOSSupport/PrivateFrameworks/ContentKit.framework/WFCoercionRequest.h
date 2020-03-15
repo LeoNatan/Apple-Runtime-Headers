@@ -27,13 +27,13 @@
 + (id)requestForCoercingToContentClasses:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)requestForCoercingToFileType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)requestForCoercingToObjectClass:(Class)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *contentItemClasses; // @synthesize contentItemClasses=_contentItemClasses;
 @property(readonly, nonatomic) WFFileType *fileType; // @synthesize fileType=_fileType;
 @property(readonly, nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
 @property(readonly, nonatomic) long long requestType; // @synthesize requestType=_requestType;
 @property(retain, nonatomic) WFCoercionOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) CDUnknownBlockType contentItemsCompletionHandler; // @synthesize contentItemsCompletionHandler=_contentItemsCompletionHandler;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)completeContentItemCoercionRequestWithResultItems:(id)arg1 originalItem:(id)arg2 error:(id)arg3;
 @property(readonly, nonatomic) CDUnknownBlockType contentCollectionResultHandler; // @synthesize contentCollectionResultHandler=_contentCollectionResultHandler;

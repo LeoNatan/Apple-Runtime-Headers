@@ -16,8 +16,8 @@
 }
 
 + (id)taskIdentifier;
-@property(retain, nonatomic) HKWorkoutRoute *route; // @synthesize route=_route;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKWorkoutRoute *route; // @synthesize route=_route;
 - (_Bool)_validateRouteData:(id)arg1 error:(out id *)arg2;
 - (void)queue_recoverBuilder;
 - (void)createSeriesSampleIfNeeded:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;

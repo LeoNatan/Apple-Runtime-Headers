@@ -22,6 +22,7 @@
     NSString *_initialCheckedLanguage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool initialCheckedResult; // @synthesize initialCheckedResult=_initialCheckedResult;
 @property(retain, nonatomic) NSString *initialCheckedLanguage; // @synthesize initialCheckedLanguage=_initialCheckedLanguage;
 @property(nonatomic) _Bool shouldAbortAllOnboarding; // @synthesize shouldAbortAllOnboarding=_shouldAbortAllOnboarding;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UIViewController<HUConfigurationViewController> *initialViewController; // @synthesize initialViewController=_initialViewController;
 @property(retain, nonatomic) NAFuture *onboardingFuture; // @synthesize onboardingFuture=_onboardingFuture;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)processUserInput:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)checkIfStillRequiredFromCurrentResults:(id)arg1;

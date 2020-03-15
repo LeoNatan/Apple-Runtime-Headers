@@ -37,6 +37,7 @@
     HUAnimationApplier *_animationApplier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUAnimationApplier *animationApplier; // @synthesize animationApplier=_animationApplier;
 @property(nonatomic) BOOL reachable; // @synthesize reachable=_reachable;
 @property(retain, nonatomic) UILayoutGuide *quickControlLayoutGuide; // @synthesize quickControlLayoutGuide=_quickControlLayoutGuide;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) HFItem *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(readonly, nonatomic) UIViewController *settingsViewController; // @synthesize settingsViewController=_settingsViewController;
 @property(readonly, nonatomic) HUQuickControlContainerViewController *quickControlViewController; // @synthesize quickControlViewController=_quickControlViewController;
-- (void).cxx_destruct;
 - (id)hu_prepareForDismissalAnimated:(BOOL)arg1;
 - (struct CGSize)overridingContentSizeForPresentedViewController:(id)arg1;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;

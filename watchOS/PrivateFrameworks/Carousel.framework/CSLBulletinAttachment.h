@@ -16,9 +16,9 @@
 
 + (id)bulletinAttachmentWithImage:(id)arg1 bulletinKey:(id)arg2;
 + (id)bulletinAttachmentWithData:(id)arg1 bulletinKey:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLBulletinKey *bulletinKey; // @synthesize bulletinKey=_bulletinKey;
 @property(retain, nonatomic) NSData *avAttachment; // @synthesize avAttachment=_avAttachment;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *imageAttachment;
 
 @end

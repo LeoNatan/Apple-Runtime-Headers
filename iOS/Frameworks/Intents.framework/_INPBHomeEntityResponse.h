@@ -22,10 +22,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)taskResponsesType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *taskResponses; // @synthesize taskResponses=_taskResponses;
 @property(retain, nonatomic) _INPBHomeEntity *entity; // @synthesize entity=_entity;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

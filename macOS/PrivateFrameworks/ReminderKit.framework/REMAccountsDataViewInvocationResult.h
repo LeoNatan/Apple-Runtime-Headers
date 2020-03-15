@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *accountStorages; // @synthesize accountStorages=_accountStorages;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *accountStorages; // @synthesize accountStorages=_accountStorages;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

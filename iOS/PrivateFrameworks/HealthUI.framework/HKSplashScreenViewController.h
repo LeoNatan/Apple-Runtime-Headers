@@ -19,9 +19,9 @@
 
 + (id)splashScreenForSplashScreenVersion:(long long)arg1;
 + (void)markSplashScreenAtVersion:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long splashVersion; // @synthesize splashVersion=_splashVersion;
 @property(retain, nonatomic) NSMutableArray *splashItems; // @synthesize splashItems=_splashItems;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

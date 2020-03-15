@@ -14,9 +14,9 @@
     NSFileHandle *_fileHandle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 @property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
-- (void).cxx_destruct;
 
 @end
 

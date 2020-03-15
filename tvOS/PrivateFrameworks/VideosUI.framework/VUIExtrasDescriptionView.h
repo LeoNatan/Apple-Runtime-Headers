@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     VUIFocusableTextView *_textView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIFocusableTextView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) VUIExtrasDescriptionLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)selectionMarginsForSize:(struct CGSize)arg1;
 - (void)prepareForCellReuse;
 - (void)didSelect;

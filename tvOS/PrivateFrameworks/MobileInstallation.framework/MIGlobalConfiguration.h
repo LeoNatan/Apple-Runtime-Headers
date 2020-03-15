@@ -29,12 +29,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *rootPath; // @synthesize rootPath=_rootPath;
 @property(readonly, nonatomic) NSURL *mobilePath; // @synthesize mobilePath=_mobilePath;
 @property(readonly, nonatomic) NSURL *installdPath; // @synthesize installdPath=_installdPath;
 @property(readonly, nonatomic) unsigned int gid; // @synthesize gid=_gid;
 @property(readonly, nonatomic) unsigned int uid; // @synthesize uid=_uid;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *lastBuildInfoFileURL;
 @property(readonly, copy, nonatomic) NSURL *migrationPlistURL;
 @property(readonly, copy, nonatomic) NSString *alternateThinningModelIdentifier;

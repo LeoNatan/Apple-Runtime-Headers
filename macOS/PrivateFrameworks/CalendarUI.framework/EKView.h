@@ -13,8 +13,8 @@
     EKViewController *_controller;
 }
 
-@property __weak EKViewController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property __weak EKViewController *controller; // @synthesize controller=_controller;
 - (BOOL)performDragOperation:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (id)initWithViewController:(id)arg1;

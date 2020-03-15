@@ -30,6 +30,7 @@
     NSString *_urlType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *urlType; // @synthesize urlType=_urlType;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(nonatomic) long long badgeCount; // @synthesize badgeCount=_badgeCount;
@@ -48,7 +49,6 @@
 @property(nonatomic) _Bool alwaysShowTitles; // @synthesize alwaysShowTitles=_alwaysShowTitles;
 @property(nonatomic) _Bool featured; // @synthesize featured=_featured;
 @property(nonatomic) _Bool related; // @synthesize related=_related;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

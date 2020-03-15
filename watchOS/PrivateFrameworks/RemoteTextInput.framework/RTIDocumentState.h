@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *_selectionRects; // @synthesize _selectionRects=__selectionRects;
 @property(copy, nonatomic) NSAttributedString *textCheckingAnnotatedString; // @synthesize textCheckingAnnotatedString=_textCheckingAnnotatedString;
 @property(nonatomic) struct CGRect firstSelectionRectInWindow; // @synthesize firstSelectionRectInWindow=_firstSelectionRectInWindow;
 @property(nonatomic) struct CGRect caretRectInWindow; // @synthesize caretRectInWindow=_caretRectInWindow;
 @property(retain, nonatomic) TIDocumentState *documentState; // @synthesize documentState=_documentState;
-- (void).cxx_destruct;
 - (unsigned int)characterIndexForPoint:(struct CGPoint)arg1;
 - (struct CGRect)firstRectForCharacterRange:(struct _NSRange)arg1;
 - (void)addTextRect:(struct CGRect)arg1 forCharacterRange:(struct _NSRange)arg2;

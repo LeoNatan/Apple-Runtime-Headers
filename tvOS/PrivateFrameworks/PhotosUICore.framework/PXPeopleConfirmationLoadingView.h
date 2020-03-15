@@ -18,12 +18,12 @@
     id <PXPerson> _person;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PXPerson> person; // @synthesize person=_person;
 @property(readonly, nonatomic) UIActivityIndicatorView *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 @property(readonly, nonatomic) UILabel *noneFoundLabel; // @synthesize noneFoundLabel=_noneFoundLabel;
 @property(readonly, nonatomic) UIView *loadingStatusView; // @synthesize loadingStatusView=_loadingStatusView;
 @property(nonatomic) unsigned long long loadingState; // @synthesize loadingState=_loadingState;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 - (id)initWithFrame:(struct CGRect)arg1 person:(id)arg2 localizedName:(id)arg3;

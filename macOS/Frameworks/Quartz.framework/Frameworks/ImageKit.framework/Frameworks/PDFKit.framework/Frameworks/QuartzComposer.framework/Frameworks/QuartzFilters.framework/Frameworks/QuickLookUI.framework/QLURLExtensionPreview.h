@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSArray *additionalURLsAccessed; // @synthesize additionalURLsAccessed=_additionalURLsAccessed;
 @property(retain) QLURLHandler *urlHandler; // @synthesize urlHandler=_urlHandler;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithPreview:(id)arg1;

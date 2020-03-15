@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     double _width;
 }
 
-@property(nonatomic) double width; // @synthesize width=_width;
 - (void).cxx_destruct;
+@property(nonatomic) double width; // @synthesize width=_width;
 - (BOOL)isSpace;
 - (BOOL)isSeparatorItem;
 - (void)prepareItem;

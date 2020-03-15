@@ -17,12 +17,12 @@
     CDUnknownBlockType _characteristicsHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType characteristicsHandler; // @synthesize characteristicsHandler=_characteristicsHandler;
 @property(copy, nonatomic) CDUnknownBlockType sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 @property(nonatomic) unsigned long long sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(retain, nonatomic) NSLock *propertyLock; // @synthesize propertyLock=_propertyLock;
 @property(readonly, nonatomic) HKHealthService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (id)initWithService:(id)arg1;
 
 @end

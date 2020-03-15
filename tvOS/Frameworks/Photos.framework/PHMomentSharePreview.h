@@ -17,11 +17,11 @@
     struct CGRect _cropRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(copy, nonatomic) PHAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(copy, nonatomic) NSArray *previewImageData; // @synthesize previewImageData=_previewImageData;
 @property(copy, nonatomic) NSData *thumbnailImageData; // @synthesize thumbnailImageData=_thumbnailImageData;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSString *keyAssetIdentifier;
 - (id)initWithThumbnailImageData:(id)arg1 previewData:(id)arg2;

@@ -27,12 +27,12 @@
 + (id)makeVCardShareingServices;
 + (id)vCardSharingServices;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain) NSSharingServicePicker *servicePicker; // @synthesize servicePicker=_servicePicker;
 @property(retain) CNContact *contact; // @synthesize contact=_contact;
 @property(retain) id <CNUIShareKitTransitionProvider> transitionProvider; // @synthesize transitionProvider=_transitionProvider;
 @property(copy) NSArray *defaultRecipients; // @synthesize defaultRecipients=_defaultRecipients;
 @property(copy) NSString *emailSubject; // @synthesize emailSubject=_emailSubject;
-- (void).cxx_destruct;
 - (id)itemsForSharingServicePickerTouchBarItem:(id)arg1;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (id)sharingService:(id)arg1 transitionImageForShareItem:(id)arg2 contentRect:(struct CGRect *)arg3;

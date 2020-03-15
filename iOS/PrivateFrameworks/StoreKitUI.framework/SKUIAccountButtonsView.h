@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     UIButton *_redeemButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *termsAndConditionsButton; // @synthesize termsAndConditionsButton=_termsAndConditionsButton;
 @property(readonly, nonatomic) UIButton *redeemButton; // @synthesize redeemButton=_redeemButton;
 @property(readonly, nonatomic) UIButton *giftingButton; // @synthesize giftingButton=_giftingButton;
 @property(readonly, nonatomic) UIControl *ECommerceButton; // @synthesize ECommerceButton=_ecommerceButton;
 @property(readonly, nonatomic) UIButton *appleIDButton; // @synthesize appleIDButton=_appleIDButton;
-- (void).cxx_destruct;
 - (void)_reloadFonts;
 - (id)_newLinkButtonWithTitle:(id)arg1;
 - (void)_layoutTwoRows;

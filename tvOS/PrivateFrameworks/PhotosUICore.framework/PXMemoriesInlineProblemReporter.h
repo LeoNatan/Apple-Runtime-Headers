@@ -14,9 +14,9 @@
     NSArray *_features;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *features; // @synthesize features=_features;
 @property(retain, nonatomic) PHMemory *memory; // @synthesize memory=_memory;
-- (void).cxx_destruct;
 - (id)_headerText;
 - (id)_disclaimerText;
 - (id)_infoText;

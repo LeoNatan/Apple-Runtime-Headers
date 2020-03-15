@@ -19,6 +19,7 @@
     long long _firstTrailingIndex;
 }
 
+- (void).cxx_destruct;
 @property long long firstTrailingIndex; // @synthesize firstTrailingIndex=_firstTrailingIndex;
 @property long long centerIndex; // @synthesize centerIndex=_centerIndex;
 @property double totalWidth; // @synthesize totalWidth=_totalWidth;
@@ -26,7 +27,6 @@
 @property(retain) NSArray *columnSpacing; // @synthesize columnSpacing=_columnSpacing;
 @property(retain) NSArray *columnsWithEqualWidths; // @synthesize columnsWithEqualWidths=_columnsWithEqualWidths;
 @property(retain) NSArray *columnWidths; // @synthesize columnWidths=_columnWidths;
-- (void).cxx_destruct;
 
 @end
 

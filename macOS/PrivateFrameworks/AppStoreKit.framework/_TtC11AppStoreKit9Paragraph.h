@@ -15,6 +15,7 @@
     // Error parsing type: , name: alignment
     // Error parsing type: , name: style
     // Error parsing type: , name: isCollapsed
+    // Error parsing type: , name: suppressVerticalMargins
     // Error parsing type: , name: impressionMetrics
 }
 

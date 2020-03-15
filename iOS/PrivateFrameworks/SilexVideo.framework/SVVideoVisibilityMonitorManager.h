@@ -17,9 +17,9 @@
     SVWeakObjectCache *_visibilityMonitors;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVWeakObjectCache *visibilityMonitors; // @synthesize visibilityMonitors=_visibilityMonitors;
 @property(readonly, nonatomic) id <SVVisibilityMonitorFactory> videoVisibilityMonitorFactory; // @synthesize videoVisibilityMonitorFactory=_videoVisibilityMonitorFactory;
-- (void).cxx_destruct;
 - (id)visibilityMonitorForVideo:(id)arg1;
 - (id)initWithVideoVisibilityMonitorFactory:(id)arg1;
 

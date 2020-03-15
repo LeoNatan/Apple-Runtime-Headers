@@ -90,6 +90,7 @@
 - (void)pauseLocationUpdates:(_Bool)arg1;
 - (void)resumeLocationUpdates;
 - (void)onClientEventRegionSetupCompleted:(id)arg1;
+- (void)onClientEventNoLocationWatchdog:(id)arg1;
 - (void)onClientEventRegionResponseDelayed:(id)arg1;
 - (void)onClientEventPeerRangingError:(id)arg1;
 - (void)onClientEventPeerRangingRequestProcessed:(id)arg1;

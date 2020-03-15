@@ -38,6 +38,7 @@
 + (id)_resourcesToShareForAsset:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)_resourcesToShareForAsset:(id)arg1 error:(id *)arg2;
 + (id)fetchResourcesToShareForAsset:(id)arg1 requestOptions:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *_activeAssetResourcesRequest; // @synthesize _activeAssetResourcesRequest=__activeAssetResourcesRequest;
 @property(retain, nonatomic, setter=_setAssetResources:) NSArray *_assetResources; // @synthesize _assetResources=__assetResources;
 @property(nonatomic, getter=_isDownloadCancelled, setter=_setDownloadCancelled:) BOOL _downloadCancelled; // @synthesize _downloadCancelled=__downloadCancelled;
@@ -46,8 +47,7 @@
 @property(nonatomic, setter=_setProgressFraction:) double progressFraction; // @synthesize progressFraction=_progressFraction;
 @property(readonly) long long requestType; // @synthesize requestType=_requestType;
 @property(readonly) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
-- (BOOL)isDownloadingRequiredForOptions:(id)arg1 resourceInfo:(id *)arg2;
+- (long long)resourceAvailabilityForOptions:(id)arg1 resourceInfo:(id *)arg2;
 - (void)_updateCombinedProgressWithValue:(double)arg1 forRequestIdentifier:(id)arg2 networkAccessAllowed:(BOOL)arg3;
 - (void)cancelDownloadRequest;
 - (void)_cancelActiveAssetResourceRequests;
@@ -59,7 +59,7 @@
 - (void)_fetchResourcesForPickerAsset:(id)arg1 options:(id)arg2 networkAccessAllowed:(BOOL)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_fetchResourcesWithOptions:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)downloadRequiredResourcesWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)fetchIsDownloadRequiredWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchResourceAvailabilityWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithAsset:(id)arg1 requestType:(long long)arg2;
 - (id)init;
 

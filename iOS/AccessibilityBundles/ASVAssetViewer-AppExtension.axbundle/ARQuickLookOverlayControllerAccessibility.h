@@ -17,11 +17,9 @@
 - (void)_axSpeakUpdateToStatusPill;
 - (void)enableWorldModeControl:(_Bool)arg1;
 - (void)startAutoHideControlsTimer;
-- (void)_axDidToggleAXSetting:(id)arg1;
-- (_Bool)_axShouldDisableAutoHidingControls;
 - (void)_accessibilityLoadAccessibilityInformation;
-- (void)_axSetDidRegisterForNotifications:(_Bool)arg1;
-- (_Bool)_axDidRegisterForNotifications;
+@property(readonly, nonatomic) _Bool axShouldDisableAutoHidingControls;
+- (void)axUpdateAutoHideControlsTimer;
 
 @end
 

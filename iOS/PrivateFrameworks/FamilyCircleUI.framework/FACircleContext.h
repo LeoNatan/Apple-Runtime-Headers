@@ -23,13 +23,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)contextWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAppleIDAuthenticationContext *authContext; // @synthesize authContext=_authContext;
 @property(copy, nonatomic) NSURL *urlForContext; // @synthesize urlForContext=_urlForContext;
 @property(copy, nonatomic) NSDictionary *additionalParameters; // @synthesize additionalParameters=_additionalParameters;
 @property(copy, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(copy, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 @property(readonly, copy, nonatomic) NSString *eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -16,8 +16,8 @@
     id <SVPlaybackTransitionContext> _context;
 }
 
-@property(readonly, nonatomic) id <SVPlaybackTransitionContext> context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVPlaybackTransitionContext> context; // @synthesize context=_context;
 - (id)initWithTransitionContext:(id)arg1;
 
 // Remaining properties

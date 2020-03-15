@@ -21,8 +21,8 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (_Bool)isSelectorExcludedFromWebScript:(SEL)arg1;
 + (_Bool)isKeyExcludedFromWebScript:(const char *)arg1;
-@property(readonly) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (id)attributeKeys;
 - (id)stringRepresentation;
 - (id)valueForNotNativelySupportedKey:(id)arg1;

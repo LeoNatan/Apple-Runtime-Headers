@@ -37,6 +37,7 @@
     struct UIEdgeInsets _additionalInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesTwoButtonLayout; // @synthesize usesTwoButtonLayout=_usesTwoButtonLayout;
 @property(retain, nonatomic) UIColor *bleedColor; // @synthesize bleedColor=_bleedColor;
 @property(nonatomic) long long privacyLinkPosition; // @synthesize privacyLinkPosition=_privacyLinkPosition;
@@ -52,7 +53,6 @@
 @property(nonatomic) long long contentViewPosition; // @synthesize contentViewPosition=_contentViewPosition;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(copy, nonatomic) NSString *detailText; // @synthesize detailText=_detailText;
-- (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
 - (void)_updateTrayVisibility;
 - (void)scrollViewDidScroll:(id)arg1;

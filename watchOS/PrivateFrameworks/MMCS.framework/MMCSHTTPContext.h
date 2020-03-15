@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     struct os_activity_s *_activityMarker;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct os_activity_s *activityMarker; // @synthesize activityMarker=_activityMarker;
 @property(nonatomic) _Bool isHandlingError; // @synthesize isHandlingError=_isHandlingError;
 @property(nonatomic) _Bool requestIsStreamed; // @synthesize requestIsStreamed=_requestIsStreamed;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 // Error parsing type for property hc:
 // Property attributes: T^{mmcs_http_context={_C3Base={__CFRuntimeBase=IAI}}i{_Metricsinfo__HTTPMetricsInfo={_ProtobufCMessage=^{_ProtobufCMessageDescriptor}I^{_ProtobufCMessageUnknownField}}*iiiiidididddqqiqQQidiqiqI^{_Chunkserver__ErrorResponse}idid}^{__CFString}iddCCCCCCi^{__CFUUID}dd^{__CFError}^{__CFHTTPMessage}CQ^{_mmcs_http_request_options}dd^{__CFHTTPMessage}C^{__CFData}C^{__sFILE}^{__sFILE}{_Metricsinfo__SocketInfo={_ProtobufCMessage=^{_ProtobufCMessageDescriptor}I^{_ProtobufCMessageUnknownField}}**Ii}^{mmcs_metrics_http_info}^?^?^?^?^?^?^?^?^?^v^v^{os_activity_s}^{voucher_s}^{mmcs_read_stream_pool}^{__CFRunLoop}^{__CFArray}^{__CFData}(?=^{mmcs_cfnetwork_http_context}^{mmcs_nsurlsession_http_context}^{mmcs_curl_http_context}^v)},N,V_hc
 
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 _willRetryBackgroundDataTask:(id)arg2 withError:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 _conditionalRequirementsChanged:(_Bool)arg3;
 - (void)URLSession:(id)arg1 _taskIsWaitingForConnection:(id)arg2;

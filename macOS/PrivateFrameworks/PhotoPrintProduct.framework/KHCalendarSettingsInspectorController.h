@@ -19,6 +19,7 @@
     KHCalendarProjectLayoutsDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain) KHCalendarProjectLayoutsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain) KHCalendarHolidayPickerController *holidayPicker; // @synthesize holidayPicker=_holidayPicker;
 @property(retain) KHCalendarDateRangePickerController *timePicker; // @synthesize timePicker=_timePicker;
@@ -26,7 +27,6 @@
 @property(retain) KHInspectorTileViewController *holidayTileController; // @synthesize holidayTileController=_holidayTileController;
 @property(retain) KHInspectorTileViewController *timeTileController; // @synthesize timeTileController=_timeTileController;
 @property(readonly, nonatomic) KHProjectSettingsPickerController *projectSettingsController; // @synthesize projectSettingsController=_projectSettingsController;
-- (void).cxx_destruct;
 - (void)loadView;
 - (struct CGSize)preferredContentSize;
 - (id)initWithProjectDatasource:(id)arg1;

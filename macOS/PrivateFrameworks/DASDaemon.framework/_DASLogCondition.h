@@ -13,9 +13,9 @@
 }
 
 + (id)withCondition:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isIdeal; // @synthesize isIdeal=_isIdeal;
 @property(retain, nonatomic) NSObject *condition; // @synthesize condition=_condition;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

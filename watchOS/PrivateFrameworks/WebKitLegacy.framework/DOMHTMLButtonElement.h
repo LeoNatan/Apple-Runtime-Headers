@@ -22,6 +22,7 @@
 @property _Bool disabled;
 @property _Bool autofocus;
 - (int)structuralComplexityContribution;
+- (int)structuralComplexityContribution;
 
 @end
 

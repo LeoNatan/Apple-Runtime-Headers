@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _layoutFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UICollectionLayoutItemSolver *solution; // @synthesize solution=_solution;
 @property(nonatomic) struct CGRect layoutFrame; // @synthesize layoutFrame=_layoutFrame;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCollectionLayoutItem *item;
 - (id)initWithSolution:(id)arg1;
 

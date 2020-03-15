@@ -21,9 +21,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *applicationID; // @synthesize applicationID=_applicationID;
 @property(copy) NSString *clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)supportedFamilies;

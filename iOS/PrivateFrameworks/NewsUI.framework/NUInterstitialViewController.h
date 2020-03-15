@@ -20,12 +20,12 @@
     UIView *_interstitialView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPresentedInterstitial; // @synthesize hasPresentedInterstitial=_hasPresentedInterstitial;
 @property(retain, nonatomic) UIView *interstitialView; // @synthesize interstitialView=_interstitialView;
 @property(readonly, nonatomic) ADInterstitialAd *interstitial; // @synthesize interstitial=_interstitial;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
 @property(readonly, copy, nonatomic) NSString *pageIdentifier; // @synthesize pageIdentifier=_pageIdentifier;
-- (void).cxx_destruct;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

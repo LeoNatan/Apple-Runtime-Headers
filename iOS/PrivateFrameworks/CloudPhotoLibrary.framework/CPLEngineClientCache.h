@@ -15,8 +15,8 @@
     NSArray *__lastModifiedProperties;
 }
 
-@property(copy, setter=_setLastModifiedProperties:) NSArray *_lastModifiedProperties; // @synthesize _lastModifiedProperties=__lastModifiedProperties;
 - (void).cxx_destruct;
+@property(copy, setter=_setLastModifiedProperties:) NSArray *_lastModifiedProperties; // @synthesize _lastModifiedProperties=__lastModifiedProperties;
 - (void)fillRelatedIdentifiersInChange:(id)arg1;
 - (id)statusDictionary;
 - (id)status;

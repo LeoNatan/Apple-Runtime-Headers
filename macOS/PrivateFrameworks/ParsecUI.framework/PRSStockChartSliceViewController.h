@@ -24,6 +24,7 @@
     NSArray *_stockIntervalButtons;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *stockIntervalButtons; // @synthesize stockIntervalButtons=_stockIntervalButtons;
 @property(retain, nonatomic) ChartUpdater *chartUpdater; // @synthesize chartUpdater=_chartUpdater;
 @property __weak NSStackView *stockIntervalButtonsRowView; // @synthesize stockIntervalButtonsRowView=_stockIntervalButtonsRowView;
@@ -34,7 +35,6 @@
 @property __weak NSButton *stockIntervalButtonOneMonth; // @synthesize stockIntervalButtonOneMonth=_stockIntervalButtonOneMonth;
 @property __weak NSButton *stockIntervalButtonOneWeek; // @synthesize stockIntervalButtonOneWeek=_stockIntervalButtonOneWeek;
 @property __weak NSButton *stockIntervalButtonOneDay; // @synthesize stockIntervalButtonOneDay=_stockIntervalButtonOneDay;
-- (void).cxx_destruct;
 - (void)chartUpdater:(id)arg1 didFailWithError:(id)arg2;
 - (void)chartUpdater:(id)arg1 didReceiveStockChartData:(id)arg2;
 - (void)stockIntervalTypeChanged:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id <MTLBuffer> _biasesBuffer;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <MTLBuffer> biasesBuffer; // @synthesize biasesBuffer=_biasesBuffer;
 @property(retain) id <MTLBuffer> weightsBuffer; // @synthesize weightsBuffer=_weightsBuffer;
-- (void).cxx_destruct;
 - (BOOL)ready;
 - (float *)biasTerms;
 - (void *)weights;

@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double distanceFromDestination; // @synthesize distanceFromDestination=_distanceFromDestination;
 @property(retain, nonatomic) NSDate *time; // @synthesize time=_time;
 @property(readonly, nonatomic) double penalty; // @synthesize penalty=_penalty;
-- (void).cxx_destruct;
 - (void)updateWithCurrentTime:(id)arg1 location:(id)arg2 isMostRecentReroute:(_Bool)arg3 destinationCoordinate:(CDStruct_c3b9c2ee)arg4 numThrottledReroutes:(unsigned long long)arg5;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

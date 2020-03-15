@@ -42,6 +42,7 @@
     struct UIEdgeInsets _scrollIndicatorInsetsBeforeKeyboard;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKAccountRemoteUIController *accountController; // @synthesize accountController=_accountController;
 @property(retain, nonatomic) GKGame *game; // @synthesize game=_game;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -66,7 +67,6 @@
 @property(nonatomic) _Bool disablesSignIn; // @synthesize disablesSignIn=_disablesSignIn;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
-- (void).cxx_destruct;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (void)iForgotTapped;

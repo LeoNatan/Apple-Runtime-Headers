@@ -30,6 +30,7 @@
 + (Class)classForResultObjectWithRequestClassName:(id)arg1;
 + (void)assertResultObject:(id)arg1 isValidForRequestClassName:(id)arg2;
 + (id)progressForOperation:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requestClassName; // @synthesize requestClassName=_requestClassName;
 @property(nonatomic) int totalUnitCount; // @synthesize totalUnitCount=_totalUnitCount;
 @property(nonatomic) int completedUnitCount; // @synthesize completedUnitCount=_completedUnitCount;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) id resultObject; // @synthesize resultObject=_resultObject;
 @property(nonatomic) unsigned int phase; // @synthesize phase=_phase;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)setProgress:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

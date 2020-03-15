@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <RPBInspecting> _proxyInterface;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <RPBInspecting> proxyInterface; // @synthesize proxyInterface=_proxyInterface;
 @property(retain) NSXPCConnection *xpconnection; // @synthesize xpconnection=_xpconnection;
-- (void).cxx_destruct;
 
 @end
 

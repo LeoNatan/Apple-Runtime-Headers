@@ -31,8 +31,8 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
 + (double)maximumPerspectiveHeightForSize:(struct CGSize)arg1;
-@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (void).cxx_destruct;
+@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (void)_removeEditControlAnimated:(_Bool)arg1;
 - (void)_reloadLockupViewBackgroundColor;
 - (void)_reloadHighlightBackgroundView;

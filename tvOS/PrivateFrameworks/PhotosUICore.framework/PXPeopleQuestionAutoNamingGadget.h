@@ -25,6 +25,7 @@
     NSString *_possibleName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *possibleName; // @synthesize possibleName=_possibleName;
 @property(retain, nonatomic) UIButton *undoButton; // @synthesize undoButton=_undoButton;
 @property(retain, nonatomic) UIButton *noButton; // @synthesize noButton=_noButton;
@@ -35,10 +36,10 @@
 @property(readonly, nonatomic) unsigned long long gadgetType; // @synthesize gadgetType=_gadgetType;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct NSObject *)contentViewController;
+- (id)contentViewController;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 - (void)undoButtonTapped:(id)arg1;
 - (void)noButtonTapped:(id)arg1;
 - (void)yesButtonTapped:(id)arg1;
@@ -56,9 +57,6 @@
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(nonatomic) long long priority;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

@@ -38,8 +38,8 @@
     id <NTKUpNextPhotoBrowsingViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NTKUpNextPhotoBrowsingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NTKUpNextPhotoBrowsingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)photo1UpModelAtIndex:(unsigned int)arg1;
 - (unsigned int)photo1UpViewNumberOfPhotos;
 - (void)photo1UpViewDidChangeZoomScale:(id)arg1;

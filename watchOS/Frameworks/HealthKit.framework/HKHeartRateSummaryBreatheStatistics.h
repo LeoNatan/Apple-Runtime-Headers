@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic, setter=_setFinalReading:) HKHeartRateSummaryReading *finalReading; // @synthesize finalReading=_finalReading;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setFinalReading:) HKHeartRateSummaryReading *finalReading; // @synthesize finalReading=_finalReading;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

@@ -24,14 +24,16 @@
     IBPlaceholderDrawingAttributes *_attributes;
 }
 
++ (id)viewBorderDrawingDescription;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDrawWithSubduedAppearance; // @synthesize shouldDrawWithSubduedAppearance=_shouldDrawWithSubduedAppearance;
 @property(retain, nonatomic) IBPlaceholderDrawingAttributes *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (void)_synchronizeViewsWithAttributes;
 - (void)_configureShadows;
 - (id)_topShadowImage;
+- (void)drawRect:(struct CGRect)arg1;
 - (void)_configureBackground;
 - (void)_makeLabelIfNeeded:(id *)arg1 text:(id)arg2 fontSize:(double)arg3 useBoldFont:(_Bool)arg4 populatingUsedLabelsArray:(id)arg5;
 - (void)_installCenteringViewIfNeeded;

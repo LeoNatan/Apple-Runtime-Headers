@@ -15,8 +15,8 @@
 }
 
 + (id)requiredProperties;
-@property(retain, nonatomic) MPModelTVEpisode *episode; // @synthesize episode=_episode;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPModelTVEpisode *episode; // @synthesize episode=_episode;
 - (void)_invalidateModelObjectPlaybackItemMetadata;
 - (id)storeAsset;
 - (id)playbackPosition;

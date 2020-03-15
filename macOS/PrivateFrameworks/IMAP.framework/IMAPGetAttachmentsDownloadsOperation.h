@@ -16,10 +16,10 @@
     IMAPDownloadCache *_downloadCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMAPDownloadCache *downloadCache; // @synthesize downloadCache=_downloadCache;
 @property(readonly, nonatomic) __weak id <IMAPGetAttachmentsDownloadsOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSArray *messages; // @synthesize messages=_messages;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithDataSource:(id)arg1;
 - (id)initWithMessages:(id)arg1 dataSource:(id)arg2 downloadCache:(id)arg3 delegate:(id)arg4;

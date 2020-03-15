@@ -35,10 +35,10 @@
 }
 
 + (id)lookupForRelativePath:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BRCPQLConnection *db; // @synthesize db=_db;
 @property(readonly, nonatomic) BRCRelativePath *relpathOfFSEvent; // @synthesize relpathOfFSEvent=_relpathOfFSEvent;
 @property(readonly, nonatomic) BRCRelativePath *relpathOfItem; // @synthesize relpathOfItem=_pathOfItem;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_fetchClientZone;
 - (_Bool)_shareIDMatchesParent:(id)arg1;

@@ -17,10 +17,10 @@
     FCInterestToken *_holdToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCInterestToken *holdToken; // @synthesize holdToken=_holdToken;
 @property(readonly, nonatomic) _Bool isRawFileConsumable; // @synthesize isRawFileConsumable=_isRawFileConsumable;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *data;
 - (id)init;
 - (id)initWithFilePath:(id)arg1;

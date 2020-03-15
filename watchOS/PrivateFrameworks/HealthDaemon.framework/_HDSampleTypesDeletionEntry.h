@@ -16,9 +16,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *types; // @synthesize types=_types;
 @property(copy, nonatomic) NSSet *sourceIDs; // @synthesize sourceIDs=_sourceIDs;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSourceIDs:(id)arg1 types:(id)arg2;

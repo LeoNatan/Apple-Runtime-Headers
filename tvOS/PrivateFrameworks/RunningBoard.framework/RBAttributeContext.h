@@ -25,6 +25,7 @@
     id <RBEntitlementManaging> _entitlementManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <RBEntitlementManaging> entitlementManager; // @synthesize entitlementManager=_entitlementManager;
 @property(retain, nonatomic) id <RBBundlePropertiesManaging> bundlePropertiesManager; // @synthesize bundlePropertiesManager=_bundlePropertiesManager;
 @property(retain, nonatomic) id <RBDomainAttributeManaging> domainAttributeManager; // @synthesize domainAttributeManager=_domainAttributeManager;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) RBConcreteTarget *target; // @synthesize target=_target;
 @property(readonly, nonatomic) RBSAssertionIdentifier *assertionID; // @synthesize assertionID=_assertionID;
 @property(retain, nonatomic) RBAssertion *assertion; // @synthesize assertion=_assertion;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isActiveDueToInheritedEndowment;
 - (void)popActiveDueToInheritedEndowment;
 - (void)pushActiveDueToInheritedEndowment;

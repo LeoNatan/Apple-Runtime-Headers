@@ -28,13 +28,13 @@
 + (id)criteriaDictionaryWithCriteria:(id)arg1;
 + (id)lastCompleteDateKeyForIdentifier:(id)arg1;
 + (id)lastAttemptDateKeyForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingTasks; // @synthesize pendingTasks=_pendingTasks;
 @property(retain, nonatomic) RTXPCActivityTask *runningTask; // @synthesize runningTask=_runningTask;
 @property(retain, nonatomic) NSMutableDictionary *registrants; // @synthesize registrants=_registrants;
 @property(retain, nonatomic) RTTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) RTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
-- (void).cxx_destruct;
 - (void)unregisterActivityWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_unregisterActivityWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)registerActivityWithIdentifier:(id)arg1 criteria:(id)arg2 handler:(CDUnknownBlockType)arg3;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     UITableViewCell *_tableCell;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL usingDefaultFont; // @synthesize usingDefaultFont=_usingDefaultFont;
 @property(nonatomic) __weak UITableViewCell *tableCell; // @synthesize tableCell=_tableCell;
-- (void).cxx_destruct;
 - (void)setFont:(id)arg1;
 - (void)_setDefaultFont:(id)arg1;
 - (void)setAttributedText:(id)arg1;

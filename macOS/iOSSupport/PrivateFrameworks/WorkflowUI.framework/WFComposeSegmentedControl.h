@@ -17,11 +17,11 @@
     NSArray *_buttons;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(readonly, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property(nonatomic) __weak id <WFComposeSegmentedControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long selectedSegment; // @synthesize selectedSegment=_selectedSegment;
-- (void).cxx_destruct;
 - (void)segmentPressed:(id)arg1;
 - (void)safeAreaInsetsDidChange;
 - (void)layoutSubviews;

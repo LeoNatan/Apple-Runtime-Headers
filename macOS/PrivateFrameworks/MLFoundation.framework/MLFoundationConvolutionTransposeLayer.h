@@ -19,10 +19,10 @@
 
 + (id)layerWithWeights:(id)arg1 descriptor:(id)arg2;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MLFoundationTensor *weights; // @synthesize weights=_weights;
 @property(readonly, nonatomic) MLFoundationConvolutionDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 @property(readonly, nonatomic) int accumulatorPrecisionOption; // @synthesize accumulatorPrecisionOption=_accumulatorPrecisionOption;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initWithWeights:(id)arg1 descriptor:(id)arg2;

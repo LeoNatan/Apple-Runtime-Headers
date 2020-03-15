@@ -6,13 +6,14 @@
 
 #import <WebKit/WKWebView.h>
 
+@class SnippetEditorDelegate;
+
 __attribute__((visibility("hidden")))
 @interface SnippetEditorWKWebView : WKWebView
 {
-    struct unique_ptr<SnippetEditorDelegate, std::__1::default_delete<SnippetEditorDelegate>> _delegate;
+    SnippetEditorDelegate *_delegate;
 }
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 

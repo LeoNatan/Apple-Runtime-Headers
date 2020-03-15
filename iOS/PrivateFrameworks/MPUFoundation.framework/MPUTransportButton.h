@@ -30,6 +30,7 @@
 + (id)defaultRegularColor;
 + (id)_stringForDisplayedSkipInterval:(double)arg1;
 + (id)skipIntervalImageForInterval:(double)arg1 baseImage:(id)arg2 font:(id)arg3 scale:(double)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *transportButtonImage; // @synthesize transportButtonImage=_transportButtonImage;
 @property(nonatomic) _Bool shouldShowBackgroundForSelectedState; // @synthesize shouldShowBackgroundForSelectedState=_shouldShowBackgroundForSelectedState;
 @property(nonatomic) _Bool shouldInferColorsFromTintColor; // @synthesize shouldInferColorsFromTintColor=_shouldInferColorsFromTintColor;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) UIColor *highlightedColor; // @synthesize highlightedColor=_highlightedColor;
 @property(retain, nonatomic) UIColor *disabledColor; // @synthesize disabledColor=_disabledColor;
 @property(retain, nonatomic) UIColor *regularColor; // @synthesize regularColor=_regularColor;
-- (void).cxx_destruct;
 - (void)_updateSelectedTransportButtonImage;
 - (void)_updateRegularTransportButtonImage;
 - (void)_updateHighlightedTransportButtonImage;

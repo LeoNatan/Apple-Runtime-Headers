@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAvailable) _Bool available; // @synthesize available=_available;
 @property(readonly, nonatomic) TUSenderIdentity *senderIdentity; // @synthesize senderIdentity=_senderIdentity;
 @property(readonly, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(readonly, nonatomic) NSString *localizedBadgeLabel; // @synthesize localizedBadgeLabel=_localizedBadgeLabel;
 @property(readonly, nonatomic) NSString *localizedLabel; // @synthesize localizedLabel=_localizedLabel;
 @property(readonly, nonatomic) NSString *channelIdentifier; // @synthesize channelIdentifier=_channelIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initInvalidChannel;

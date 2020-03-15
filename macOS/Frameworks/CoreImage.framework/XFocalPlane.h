@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     CDStruct_6cae9ebd _config;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <MTLBuffer> zeroShiftResult_buf; // @synthesize zeroShiftResult_buf=_zeroShiftResult_buf;
 @property(readonly) id <MTLBuffer> minMaxResult_buf; // @synthesize minMaxResult_buf=_minMaxResult_buf;
 @property(readonly) id <MTLBuffer> minMaxAtomic_buf; // @synthesize minMaxAtomic_buf=_minMaxAtomic_buf;
 @property CDStruct_6cae9ebd config; // @synthesize config=_config;
-- (void).cxx_destruct;
 - (int)encodeFocalPlaneCalcOn:(id)arg1 disparityTexture:(id)arg2;
 - (int)encodeMinMaxOn:(id)arg1 inputTexture:(id)arg2;
 - (int)encodeDisparityRefinementPreprocessingOn:(id)arg1 alphaTexture:(id)arg2 inputDisparityTexture:(id)arg3 outputDisparityTexture:(id)arg4 configuration:(CDStruct_ee2a85d1)arg5;

@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)initForSymptom:(unsigned int)arg1 trigger:(unsigned int)arg2 triggering:(id)arg3 finally:(id)arg4 after:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Filter *finalFilter; // @synthesize finalFilter=_finalFilter;
 @property(readonly, nonatomic) long long delayValue; // @synthesize delayValue=_delayValue;
 @property(readonly, nonatomic) Filter *initialFilter; // @synthesize initialFilter=_initialFilter;
 @property(nonatomic) unsigned int triggerSymptomId; // @synthesize triggerSymptomId=_triggerSymptomId;
-- (void).cxx_destruct;
 - (void)initForSymptom:(unsigned int)arg1 trigger:(unsigned int)arg2 triggering:(id)arg3 finally:(id)arg4 after:(id)arg5;
 - (id)description;
 

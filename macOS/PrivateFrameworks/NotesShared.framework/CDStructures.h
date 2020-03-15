@@ -218,29 +218,6 @@ struct Location;
 
 struct Media;
 
-struct NFAccount {
-    Class _field1;
-};
-
-struct NSImage {
-    Class _field1;
-};
-
-struct NSManagedObjectContext {
-    Class _field1;
-};
-
-struct NSWindow {
-    Class _field1;
-    struct CGRect _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    int _field8;
-};
-
 struct ObjectID {
     CDUnknownFunctionPointerType *_field1;
     basic_string_a1f69cfb _field2;

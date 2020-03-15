@@ -16,8 +16,8 @@
 }
 
 + (id)logCategory;
-@property(readonly) AFSettingsConnection *settingsConnection; // @synthesize settingsConnection=_settingsConnection;
 - (void).cxx_destruct;
+@property(readonly) AFSettingsConnection *settingsConnection; // @synthesize settingsConnection=_settingsConnection;
 - (void)main;
 - (id)initWithSettingsConnection:(id)arg1;
 

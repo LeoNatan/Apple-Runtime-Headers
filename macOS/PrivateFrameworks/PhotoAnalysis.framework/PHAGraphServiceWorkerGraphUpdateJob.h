@@ -28,6 +28,7 @@
 }
 
 + (id)graphUpdateJobWithLibrary:(id)arg1 scenario:(unsigned long long)arg2 label:(id)arg3 updateBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(retain) NSConditionLock *completionWaitLock; // @synthesize completionWaitLock=_completionWaitLock;
 @property(retain) id pgManager; // @synthesize pgManager=_pgManager;
 @property(retain, nonatomic) PHAGraphManager *graphManager; // @synthesize graphManager=_graphManager;
@@ -40,7 +41,6 @@
 @property(nonatomic) long long originalExecutionContext; // @synthesize originalExecutionContext=_originalExecutionContext;
 @property(nonatomic) float completionScore; // @synthesize completionScore=_completionScore;
 @property(nonatomic) BOOL finished; // @synthesize finished=_finished;
-- (void).cxx_destruct;
 - (void)additionalWorkAfterUpdate;
 - (long long)executionContext;
 - (void)prepareProcessingForWorker:(id)arg1;

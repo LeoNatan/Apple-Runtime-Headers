@@ -33,6 +33,7 @@
     struct CGSize _cachedSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NACVolumeController> volumeController; // @synthesize volumeController=_volumeController;
 @property(retain, nonatomic) NMUVolumeControlsView *volumeControlsView; // @synthesize volumeControlsView=_volumeControlsView;
 @property(nonatomic) struct CGSize cachedSize; // @synthesize cachedSize=_cachedSize;
@@ -49,7 +50,6 @@
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (void)_volumeValueDidChange;
 - (struct CGRect)_boundsForCompactVolumeControl;
 - (void)volumeControllerDidUpdateVolumeControlAvailibility:(id)arg1;

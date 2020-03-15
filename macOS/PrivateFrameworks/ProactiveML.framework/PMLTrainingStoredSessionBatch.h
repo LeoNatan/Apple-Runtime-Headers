@@ -15,10 +15,10 @@
     unsigned long long _count;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(readonly, nonatomic) PMLModelRegressor *outcomes; // @synthesize outcomes=_outcomes;
 @property(readonly, nonatomic) PMLSparseMatrix *covariates; // @synthesize covariates=_covariates;
-- (void).cxx_destruct;
 - (id)minibatchStatsForPositiveLabels:(id)arg1;
 - (id)minibatchStats;
 - (id)minibatchStatsForPositiveLabel:(unsigned long long)arg1;

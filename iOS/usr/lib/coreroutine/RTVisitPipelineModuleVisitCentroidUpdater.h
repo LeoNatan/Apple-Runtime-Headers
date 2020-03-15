@@ -19,12 +19,12 @@
     unsigned long long _binCountsSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long binCountsSize; // @synthesize binCountsSize=_binCountsSize;
 @property(readonly, nonatomic) unsigned int *binCounts; // @synthesize binCounts=_binCounts;
 @property(readonly, nonatomic) unsigned int invalidBinIndex; // @synthesize invalidBinIndex=_invalidBinIndex;
 @property(readonly, nonatomic) RTLocation *referenceLocation; // @synthesize referenceLocation=_referenceLocation;
 @property(readonly, nonatomic) RTVisitHyperParameter *hyperParameter; // @synthesize hyperParameter=_hyperParameter;
-- (void).cxx_destruct;
 - (id)process:(id)arg1;
 - (id)modeWithReferenceLocation:(id)arg1;
 - (unsigned long long)modeBinIndex;

@@ -14,9 +14,9 @@
     UIView *_dayGridView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *dayGridView; // @synthesize dayGridView=_dayGridView;
 @property(retain, nonatomic) NSDate *hourDate; // @synthesize hourDate;
-- (void).cxx_destruct;
 - (id)accessibilityDropPointDescriptors;
 - (struct CGRect)accessibilityFrameForScrolling;
 - (_Bool)isAccessibilityElement;

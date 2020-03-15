@@ -13,8 +13,8 @@
     RTLocationShifter *_locationShifter;
 }
 
-@property(retain, nonatomic) RTLocationShifter *locationShifter; // @synthesize locationShifter=_locationShifter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RTLocationShifter *locationShifter; // @synthesize locationShifter=_locationShifter;
 - (double)distanceFromLocation:(id)arg1 toLocation:(id)arg2 error:(id *)arg3;
 
 @end

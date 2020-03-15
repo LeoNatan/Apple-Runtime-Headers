@@ -17,8 +17,8 @@
 
 + (id)errorForUnableToOpenDialRequest:(id)arg1 withUnderlyingError:(id)arg2;
 + (id)errorForUnableToCastDialRequest:(id)arg1;
-@property(readonly, nonatomic) TUCallCenter *callCenter; // @synthesize callCenter=_callCenter;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TUCallCenter *callCenter; // @synthesize callCenter=_callCenter;
 - (id)openDialRequest:(id)arg1 withScheduler:(id)arg2;
 - (id)initWithCallCenter:(id)arg1;
 - (id)init;

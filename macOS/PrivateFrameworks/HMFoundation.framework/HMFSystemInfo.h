@@ -26,6 +26,7 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)systemInfo;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HMFSystemInfoBluetoothLEDataSource> bluetoothLEDataSource; // @synthesize bluetoothLEDataSource=_bluetoothLEDataSource;
 @property(readonly, nonatomic) id <HMFSystemInfoWiFiDataSource> WiFiDataSource; // @synthesize WiFiDataSource=_WiFiDataSource;
 @property(readonly, nonatomic) id <HMFSystemInfoMigrationDataSource> migrationDataSource; // @synthesize migrationDataSource=_migrationDataSource;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) id <HMFSystemInfoSerialNumberDataSource> serialNumberDataSource; // @synthesize serialNumberDataSource=_serialNumberDataSource;
 @property(readonly, nonatomic) id <HMFSystemInfoMarketingInformationDataSource> marketingDataSource; // @synthesize marketingDataSource=_marketingDataSource;
 @property(readonly, nonatomic) id <HMFSystemInfoNameDataSource> nameDataSource; // @synthesize nameDataSource=_nameDataSource;
-- (void).cxx_destruct;
 @property(readonly) BOOL supportsBLE;
 @property(readonly, copy) HMFMACAddress *WiFiInterfaceMACAddress;
 - (void)dataSource:(id)arg1 didUpdateMigrating:(BOOL)arg2;

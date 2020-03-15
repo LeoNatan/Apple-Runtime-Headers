@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     VSOnboardingInfoCenter *_onboardingInfoCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSOnboardingInfoCenter *onboardingInfoCenter; // @synthesize onboardingInfoCenter=_onboardingInfoCenter;
 @property(retain, nonatomic) VSIdentityProviderTableViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <VSIdentityProviderSearchResultsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

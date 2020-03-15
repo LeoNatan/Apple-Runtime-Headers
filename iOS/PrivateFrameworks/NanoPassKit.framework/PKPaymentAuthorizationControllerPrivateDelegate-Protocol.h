@@ -11,6 +11,7 @@
 @protocol PKPaymentAuthorizationControllerPrivateDelegate <NSObject>
 
 @optional
+- (void)paymentAuthorizationController:(PKPaymentAuthorizationController *)arg1 didAuthorizeContextWithHandler:(void (^)(PKPaymentAuthorizationResult *))arg2;
 - (void)paymentAuthorizationController:(PKPaymentAuthorizationController *)arg1 didAuthorizeDisbursementVoucher:(PKDisbursementVoucher *)arg2 handler:(void (^)(PKPaymentAuthorizationResult *))arg3;
 - (void)paymentAuthorizationController:(PKPaymentAuthorizationController *)arg1 didAuthorizePeerPaymentQuote:(PKAuthorizedPeerPaymentQuote *)arg2 handler:(void (^)(PKPaymentAuthorizationResult *))arg3;
 - (void)paymentAuthorizationController:(PKPaymentAuthorizationController *)arg1 didAuthorizePurchase:(PKServiceProviderPurchase *)arg2 completion:(void (^)(long long))arg3;

@@ -28,14 +28,19 @@
     NSHashTable *_subscribedClientConnections;
     HMBCloudZone *_cloudZone;
     HMFTimer *_cloudZoneFetchTimer;
+    HMFTimer *_clipsCleanupTimer;
     unsigned int _fetchClipsBatchLimit;
     CDUnknownBlockType _cloudFetchTimerFactory;
+    CDUnknownBlockType _clipsCleanupTimerFactory;
 }
 
 + (id)logCategory;
 + (double)maximumClipDuration;
+- (void).cxx_destruct;
+@property(copy) CDUnknownBlockType clipsCleanupTimerFactory; // @synthesize clipsCleanupTimerFactory=_clipsCleanupTimerFactory;
 @property(copy) CDUnknownBlockType cloudFetchTimerFactory; // @synthesize cloudFetchTimerFactory=_cloudFetchTimerFactory;
 @property unsigned int fetchClipsBatchLimit; // @synthesize fetchClipsBatchLimit=_fetchClipsBatchLimit;
+@property(retain) HMFTimer *clipsCleanupTimer; // @synthesize clipsCleanupTimer=_clipsCleanupTimer;
 @property(retain) HMFTimer *cloudZoneFetchTimer; // @synthesize cloudZoneFetchTimer=_cloudZoneFetchTimer;
 @property(retain) HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(readonly) NSHashTable *subscribedClientConnections; // @synthesize subscribedClientConnections=_subscribedClientConnections;
@@ -46,11 +51,9 @@
 @property(nonatomic) _Bool hasWriteAccess; // @synthesize hasWriteAccess=_hasWriteAccess;
 @property(retain) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
 @property __weak id <HMDCameraClipManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)zoneManager:(id)arg1 didReceiveMessageWithUserInfo:(id)arg2;
 - (void)zoneManagerDidStop:(id)arg1;
 - (void)zoneManagerDidStart:(id)arg1;
-- (void)_cleanUpClipsLeftInProgress;
 - (_Bool)areShareModificationsEnabledForManager:(id)arg1;
 - (_Bool)manager:(id)arg1 shouldGrantWriteAccessToUser:(id)arg2;
 - (_Bool)manager:(id)arg1 shouldShareWithUser:(id)arg2;
@@ -76,17 +79,22 @@
 - (void)handleFetchClipMessage:(id)arg1;
 - (void)handleUnsubscribeMessage:(id)arg1;
 - (void)handleSubscribeMessage:(id)arg1;
-- (void)_handleNewSignificantEventNotificationModel:(id)arg1 withHeroFrameURL:(id)arg2 forClipModel:(id)arg3;
+- (void)_postNotificationForSignificantEventNotificationModel:(id)arg1 clipModel:(id)arg2 heroFrameURL:(id)arg3;
+- (void)_postNotificationForSignificantEventNotificationModel:(id)arg1 clipModel:(id)arg2;
 - (void)_handleNewSignificantEventNotificationModel:(id)arg1;
-- (void)_handleChangedClipModel:(id)arg1;
+- (void)_handleChangedClipModel:(id)arg1 wasCreated:(_Bool)arg2;
 - (id)_fetchAssetContextForProperty:(id)arg1 forClipModel:(id)arg2;
 - (void)_fetchAssetContextForMessage:(id)arg1 propertyName:(id)arg2;
 - (_Bool)_fetchClipsAfterDate:(id)arg1 beforeDate:(id)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_notifyTransportsOfUpdatedClips:(id)arg1 removedClipUUIDs:(id)arg2;
 - (void)_notifyTransport:(id)arg1 ofFetchedClips:(id)arg2 forFetchUUID:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
+- (void)_cleanUpOrphanedSignficantEvents;
+- (void)_cleanUpExpiredClips;
+- (void)_cleanUpIncompleteClips;
+- (void)_cleanUpClips;
 - (void)_updateCloudFetchTimer;
 - (void)_performCloudPull;
-- (id)_significantEventsForClipModel:(id)arg1;
+- (id)_significantEventModelsForClipModel:(id)arg1;
 - (id)disableCloudStorage;
 - (id)enableCloudStorage;
 - (id)remove;

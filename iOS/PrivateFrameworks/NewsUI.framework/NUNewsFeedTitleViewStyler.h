@@ -16,9 +16,9 @@
     long long _textAlignment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
 - (id)titleParagraphStyleWithWrapping:(_Bool)arg1;
 - (id)titleExtraLargeFont;
 - (id)messageSmallFont;

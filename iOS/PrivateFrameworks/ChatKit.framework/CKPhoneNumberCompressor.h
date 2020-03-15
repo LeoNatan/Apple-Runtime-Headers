@@ -16,11 +16,11 @@
     NSArray *_preferredCompressions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *preferredCompressions; // @synthesize preferredCompressions=_preferredCompressions;
 @property(nonatomic) double desiredWidth; // @synthesize desiredWidth=_desiredWidth;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
-- (void).cxx_destruct;
 - (id)_compressPhoneNumberIfFitsInCompressionLevel:(int)arg1;
 - (id)compress;
 

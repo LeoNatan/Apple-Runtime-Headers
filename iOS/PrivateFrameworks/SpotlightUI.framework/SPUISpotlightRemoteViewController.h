@@ -27,6 +27,7 @@
     NSMutableArray *_sceneEventsQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *sceneEventsQueue; // @synthesize sceneEventsQueue=_sceneEventsQueue;
 @property _Bool crashedWhileForeground; // @synthesize crashedWhileForeground=_crashedWhileForeground;
 @property long long currentOrientation; // @synthesize currentOrientation=_currentOrientation;
@@ -36,7 +37,6 @@
 @property(retain) FBScene *scene; // @synthesize scene=_scene;
 @property(retain) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
-- (void).cxx_destruct;
 - (id)watchdogTerminationRequestForProcess:(id)arg1 error:(id)arg2;
 - (id)watchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2;
 - (_Bool)setSceneFrameOnRotation;

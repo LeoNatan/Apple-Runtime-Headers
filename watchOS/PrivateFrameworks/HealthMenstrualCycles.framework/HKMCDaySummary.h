@@ -10,7 +10,7 @@
 #import <HealthMenstrualCycles/NSCopying-Protocol.h>
 #import <HealthMenstrualCycles/NSSecureCoding-Protocol.h>
 
-@class HKQuantity, NSNumber, NSSet;
+@class HKQuantity, NSDictionary, NSNumber, NSSet;
 
 @interface HKMCDaySummary : NSObject <HKMCAdjacentFlowDay, NSSecureCoding, NSCopying>
 {
@@ -24,11 +24,15 @@
     HKQuantity *_basalBodyTemperature;
     int _menstrualFlowModificationDayIndex;
     NSNumber *_startOfCycleFromCycleTracking;
+    NSDictionary *_sampleCountByType;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)emptyDaySummaryWithDayIndex:(int)arg1;
++ (id)daySummaryWithDayIndex:(int)arg1 menstrualFlow:(int)arg2 intermenstrualBleeding:(_Bool)arg3 symptoms:(unsigned int)arg4 sexualActivity:(int)arg5 ovulationTestResult:(int)arg6 cervicalMucusQuality:(int)arg7 basalBodyTemperature:(id)arg8 sampleCountByType:(id)arg9;
 + (id)daySummaryWithDayIndex:(int)arg1 menstrualFlow:(int)arg2 intermenstrualBleeding:(_Bool)arg3 symptoms:(unsigned int)arg4 sexualActivity:(int)arg5 ovulationTestResult:(int)arg6 cervicalMucusQuality:(int)arg7 basalBodyTemperature:(id)arg8;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *sampleCountByType; // @synthesize sampleCountByType=_sampleCountByType;
 @property(copy, nonatomic) NSNumber *startOfCycleFromCycleTracking; // @synthesize startOfCycleFromCycleTracking=_startOfCycleFromCycleTracking;
 @property(nonatomic) int menstrualFlowModificationDayIndex; // @synthesize menstrualFlowModificationDayIndex=_menstrualFlowModificationDayIndex;
 @property(copy, nonatomic) HKQuantity *basalBodyTemperature; // @synthesize basalBodyTemperature=_basalBodyTemperature;
@@ -39,7 +43,10 @@
 @property(nonatomic) _Bool intermenstrualBleeding; // @synthesize intermenstrualBleeding=_intermenstrualBleeding;
 @property(nonatomic) int menstrualFlow; // @synthesize menstrualFlow=_menstrualFlow;
 @property(readonly, nonatomic) int dayIndex; // @synthesize dayIndex=_dayIndex;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) int cervicalMucusQualitySampleCount;
+@property(readonly, nonatomic) int ovulationTestResultSampleCount;
+@property(readonly, nonatomic) int sexualActivitySampleCount;
+@property(readonly, nonatomic) int menstrualFlowSampleCount;
 @property(readonly, copy, nonatomic) NSSet *loggedSupplementaryDisplayTypes;
 @property(readonly, nonatomic) _Bool isSupplementaryDataLogged;
 @property(readonly, nonatomic) _Bool isDataLogged;

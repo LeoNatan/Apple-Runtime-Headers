@@ -30,6 +30,7 @@
     struct UIEdgeInsets _fadeEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long animationDirection; // @synthesize animationDirection=_animationDirection;
 @property(retain, nonatomic) UIView *viewForContentSize; // @synthesize viewForContentSize=_viewForContentSize;
 @property(nonatomic, getter=isMarqueeEnabled) _Bool marqueeEnabled; // @synthesize marqueeEnabled=_marqueeEnabled;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) double contentGap; // @synthesize contentGap=_contentGap;
-- (void).cxx_destruct;
 - (void)sceneWillEnterForegroundNotification:(id)arg1;
 - (void)sceneDidEnterBackgroundNotification:(id)arg1;
 - (double)_duration;

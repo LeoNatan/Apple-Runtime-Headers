@@ -23,13 +23,13 @@
 }
 
 + (id)topic;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) AVTPushNotificationsConnectionFactory *connectionFactory; // @synthesize connectionFactory=_connectionFactory;
 @property(readonly, nonatomic) AVTCoreEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
 @property(retain, nonatomic) APSConnection *pushConnection; // @synthesize pushConnection=_pushConnection;
 @property(nonatomic) __weak id <AVTPushNotificationsSupportDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stopListeningToPushNotifications;
 - (void)startListeningToPushNotifications;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;

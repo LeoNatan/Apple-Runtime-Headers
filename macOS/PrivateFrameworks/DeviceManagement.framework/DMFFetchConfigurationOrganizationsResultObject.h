@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSDictionary *organizationsByIdentifier; // @synthesize organizationsByIdentifier=_organizationsByIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *organizationsByIdentifier; // @synthesize organizationsByIdentifier=_organizationsByIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

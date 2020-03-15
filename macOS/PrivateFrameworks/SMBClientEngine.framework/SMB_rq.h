@@ -55,6 +55,7 @@
     struct timespec _sr_timesent;
 }
 
+- (void).cxx_destruct;
 @property unsigned int writeLen; // @synthesize writeLen=_writeLen;
 @property(retain) NSData *writeData; // @synthesize writeData=_writeData;
 @property unsigned int onEncryptedShare; // @synthesize onEncryptedShare=_onEncryptedShare;
@@ -94,7 +95,6 @@
 @property unsigned int sr_extflags; // @synthesize sr_extflags=_sr_extflags;
 @property unsigned short sr_command; // @synthesize sr_command=_sr_command;
 @property(retain) SMBPiston *sr_pd; // @synthesize sr_pd=_sr_pd;
-- (void).cxx_destruct;
 - (void)smb_rq_set_srflagsp:(unsigned int)arg1;
 - (void)smb_rq_set_srflags:(unsigned int)arg1;
 - (void)smb_rq_set_sr_nextcmdp:(unsigned long long)arg1;

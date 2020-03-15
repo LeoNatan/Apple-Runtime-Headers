@@ -19,13 +19,14 @@ __attribute__((visibility("hidden")))
     VUISeparatorView *_bottomSeparatorView;
 }
 
++ (void)configureSeasonPickerCell:(id)arg1 withMedia:(id)arg2 traitCollection:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUISeparatorView *bottomSeparatorView; // @synthesize bottomSeparatorView=_bottomSeparatorView;
 @property(retain, nonatomic) VUISeparatorView *topSeparatorView; // @synthesize topSeparatorView=_topSeparatorView;
 @property(retain, nonatomic) _TVImageView *seasonImageView; // @synthesize seasonImageView=_seasonImageView;
 @property(retain, nonatomic) VUILabel *secondSubtitleLabel; // @synthesize secondSubtitleLabel=_secondSubtitleLabel;
 @property(retain, nonatomic) VUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

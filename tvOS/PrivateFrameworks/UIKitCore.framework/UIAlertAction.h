@@ -39,6 +39,7 @@
 + (id)_actionWithContentViewController:(id)arg1 style:(long long)arg2;
 + (id)_actionWithTitle:(id)arg1 image:(id)arg2 style:(long long)arg3 handler:(CDUnknownBlockType)arg4 shouldDismissHandler:(CDUnknownBlockType)arg5;
 + (id)_actionWithTitle:(id)arg1 descriptiveText:(id)arg2 image:(id)arg3 style:(long long)arg4 handler:(CDUnknownBlockType)arg5 shouldDismissHandler:(CDUnknownBlockType)arg6;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAlertController:) UIAlertController *_alertController; // @synthesize _alertController=__alertController;
 @property(setter=_setInterfaceActionRepresentation:) UIInterfaceAction<UIAlertActionMutablePropertyObservering> *_interfaceActionRepresentation; // @synthesize _interfaceActionRepresentation=__interfaceActionRepresentation;
 @property(setter=_setRepresenter:) id <UIAlertActionViewRepresentation_Internal> _representer; // @synthesize _representer=__representer;
@@ -52,7 +53,6 @@
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_setKeyCommandInput:(id)arg1 modifierFlags:(long long)arg2;
 - (void)_didAddContentViewController;
 - (void)_willAddContentViewController;

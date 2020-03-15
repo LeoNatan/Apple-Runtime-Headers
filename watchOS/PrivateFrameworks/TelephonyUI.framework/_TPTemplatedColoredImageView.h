@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     CAFilter *_multiplyColorFilter;
 }
 
-@property(retain, nonatomic) UIColor *templateImageColor; // @synthesize templateImageColor=_templateImageColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *templateImageColor; // @synthesize templateImageColor=_templateImageColor;
 
 @end
 

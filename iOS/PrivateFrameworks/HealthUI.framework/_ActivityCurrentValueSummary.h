@@ -15,10 +15,10 @@
     double _collatedSummaryCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double collatedSummaryCount; // @synthesize collatedSummaryCount=_collatedSummaryCount;
 @property(nonatomic) long long timeScope; // @synthesize timeScope=_timeScope;
 @property(retain, nonatomic) NSDateComponents *collationDateComponents; // @synthesize collationDateComponents=_collationDateComponents;
-- (void).cxx_destruct;
 - (id)_maxQuantity:(id)arg1 otherQuantity:(id)arg2;
 - (id)_divideQuantity:(id)arg1 divisor:(double)arg2;
 - (id)_addQuantity:(id)arg1 toQuantity:(id)arg2;

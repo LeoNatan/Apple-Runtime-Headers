@@ -21,6 +21,7 @@
     NSNumber *_clientID;
 }
 
+- (void).cxx_destruct;
 - (void)setClientID:(id)arg1;
 - (id)clientID;
 - (void)setServerID:(id)arg1;
@@ -34,7 +35,6 @@
 - (void)setCardDAVRecordItem:(id)arg1;
 - (void)setDataPayload:(id)arg1;
 - (id)dataPayload;
-- (void).cxx_destruct;
 - (id)convertToDAContactSearchResultElement;
 - (id)createOrphanedABRecordFromParsedVCardOutRecordType:(unsigned int *)arg1;
 - (void)loadClientIDs;

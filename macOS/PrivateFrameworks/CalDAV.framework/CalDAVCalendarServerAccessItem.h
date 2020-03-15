@@ -13,8 +13,8 @@
     CoreDAVItemWithNoChildren *_accessLevel;
 }
 
-@property(retain, nonatomic) CoreDAVItemWithNoChildren *accessLevel; // @synthesize accessLevel=_accessLevel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CoreDAVItemWithNoChildren *accessLevel; // @synthesize accessLevel=_accessLevel;
 - (id)copyParseRules;
 - (id)initWithAccess:(int)arg1;
 - (id)init;

@@ -27,6 +27,7 @@
     unsigned long long _numberOfViewsInCylinderView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfViewsInCylinderView; // @synthesize numberOfViewsInCylinderView=_numberOfViewsInCylinderView;
 @property(retain, nonatomic) UIView<NTKEditOptionContainerView> *pickingView; // @synthesize pickingView=_pickingView;
 @property(nonatomic) unsigned long long centeredViewIndex; // @synthesize centeredViewIndex=_centeredViewIndex;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NTKUpNextComplicationConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <NTKComplicationTemplateDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (id)colorForView:(id)arg1 accented:(_Bool)arg2;
 - (id)filterForView:(id)arg1 style:(long long)arg2;
 - (id)filterForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;

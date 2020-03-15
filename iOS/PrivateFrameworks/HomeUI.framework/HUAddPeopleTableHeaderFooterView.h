@@ -18,11 +18,11 @@
 
 + (double)preferredHeight;
 + (id)identifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomBorder; // @synthesize bottomBorder=_bottomBorder;
 @property(retain, nonatomic) UIView *topBorder; // @synthesize topBorder=_topBorder;
 @property(nonatomic) _Bool needsBottomBorder; // @synthesize needsBottomBorder=_needsBottomBorder;
 @property(nonatomic) _Bool needsTopBorder; // @synthesize needsTopBorder=_needsTopBorder;
-- (void).cxx_destruct;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithReuseIdentifier:(id)arg1;

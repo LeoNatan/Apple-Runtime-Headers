@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     BOOL _shouldUpdate;
 }
 
-@property(readonly, nonatomic) BOOL shouldUpdate; // @synthesize shouldUpdate=_shouldUpdate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL shouldUpdate; // @synthesize shouldUpdate=_shouldUpdate;
 - (id)importAllIntoCalendar:(id)arg1;
 - (id)importEvent:(id)arg1 intoCalendar:(id)arg2;
 @property(readonly, nonatomic) NSArray *allEvents;

@@ -17,9 +17,9 @@
 }
 
 + (id)specifierWithBundleIdentifier:(id)arg1 path:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *path; // @synthesize path=_path;
 @property(readonly) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

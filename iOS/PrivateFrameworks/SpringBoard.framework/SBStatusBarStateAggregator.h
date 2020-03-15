@@ -73,6 +73,7 @@
 
 + (int)_thermalColorForLevel:(long long)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) STWifiStatusDomain *wifiDomain; // @synthesize wifiDomain=_wifiDomain;
 @property(readonly, nonatomic) STVoiceControlStatusDomain *voiceControlDomain; // @synthesize voiceControlDomain=_voiceControlDomain;
 @property(readonly, nonatomic) STTelephonyStatusDomain *telephonyDomain; // @synthesize telephonyDomain=_telephonyDomain;
@@ -82,7 +83,6 @@
 @property(readonly, nonatomic) SBSystemStatusBatteryDataProvider *batteryDataProvider; // @synthesize batteryDataProvider=_batteryDataProvider;
 @property(retain, nonatomic, getter=_telephonyManager, setter=_setTelephonyManager:) SBTelephonyManager *telephonyManager; // @synthesize telephonyManager=_override_telephonyManager;
 @property(retain, nonatomic, getter=_userSessionController, setter=_setUserSessionController:) SBUserSessionController *userSessionController; // @synthesize userSessionController=_override_userSessionController;
-- (void).cxx_destruct;
 - (void)cache:(id)arg1 didUpdatePickableRoutes:(id)arg2;
 - (void)cache:(id)arg1 didUpdateActiveAudioRoute:(id)arg2;
 - (void)stateService:(id)arg1 didReceiveDoNotDisturbStateUpdate:(id)arg2;

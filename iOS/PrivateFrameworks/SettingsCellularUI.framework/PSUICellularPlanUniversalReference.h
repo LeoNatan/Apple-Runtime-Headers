@@ -19,8 +19,8 @@
 + (id)referenceFromCellularPlanPendingTransfer:(id)arg1;
 + (id)referenceFromDanglingPlanItem:(id)arg1;
 + (id)referenceFromPlanItem:(id)arg1;
-@property(retain, nonatomic) NSString *iccid; // @synthesize iccid=_iccid;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *iccid; // @synthesize iccid=_iccid;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -55,6 +55,7 @@
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_insetTopAndBottomSeparator) _Bool insetTopAndBottomSeparator; // @synthesize insetTopAndBottomSeparator=_insetTopAndBottomSeparator;
 @property(readonly, nonatomic, getter=_layoutSections) NSMutableDictionary *layoutSections; // @synthesize layoutSections=_layoutSections;
 @property(retain, nonatomic, getter=_solver, setter=_setSolver:) _UICollectionCompositionalLayoutSolver *solver; // @synthesize solver=_solver;
@@ -77,7 +78,6 @@
 @property(nonatomic) double sectionFooterHeight; // @synthesize sectionFooterHeight=_sectionFooterHeight;
 @property(nonatomic) double sectionHeaderHeight; // @synthesize sectionHeaderHeight=_sectionHeaderHeight;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
-- (void).cxx_destruct;
 - (double)_effectiveEstimatedGlobalFooterHeight;
 - (double)_effectiveEstimatedGlobalHeaderHeight;
 - (double)_defaultGlobalFooterHeight;

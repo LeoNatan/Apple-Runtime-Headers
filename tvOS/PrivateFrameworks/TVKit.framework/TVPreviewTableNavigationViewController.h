@@ -27,6 +27,7 @@
 + (id)defaultTabTextAttributes;
 + (id)defaultSubtitleTextAttributes;
 + (id)defaultTitleTextAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVListTabsHeaderView *tabHeaderView; // @synthesize tabHeaderView=_tabHeaderView;
 @property(retain, nonatomic) TVListTumblerHeaderView *tumblerHeaderView; // @synthesize tumblerHeaderView=_tumblerHeaderView;
 @property(nonatomic) unsigned long long selectedItemIndex; // @synthesize selectedItemIndex=_selectedItemIndex;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSAttributedString *attributedSubtitle; // @synthesize attributedSubtitle=_attributedSubtitle;
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
 @property(nonatomic) __weak id <TVPreviewTableNavigationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateHeaderWithNavigationItem:(id)arg1 oldIndex:(unsigned long long)arg2 newIndex:(unsigned long long)arg3;
 - (id)_tabHeaderSegmentedControl;
 - (id)_existingHeaderView;

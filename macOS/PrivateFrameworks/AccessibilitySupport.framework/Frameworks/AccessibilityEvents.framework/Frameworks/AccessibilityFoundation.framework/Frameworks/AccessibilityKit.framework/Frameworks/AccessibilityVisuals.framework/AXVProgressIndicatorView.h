@@ -18,13 +18,13 @@
     CAShapeLayer *__animationLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *_animationLayer; // @synthesize _animationLayer=__animationLayer;
 @property(nonatomic) BOOL showCenterDot; // @synthesize showCenterDot=_showCenterDot;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) long long quadrant; // @synthesize quadrant=_quadrant;
 @property(nonatomic) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
-- (void).cxx_destruct;
 - (id)_boundaryStrokeColor;
 - (id)_emptyTrackStrokeColor;
 - (id)_progressTrackStrokeColor;

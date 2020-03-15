@@ -21,6 +21,7 @@
     struct CGRect _dimFrame;
 }
 
+- (void).cxx_destruct;
 @property BOOL noSourceWindow; // @synthesize noSourceWindow=_noSourceWindow;
 @property BOOL disableServiceWindowPresentation; // @synthesize disableServiceWindowPresentation=_disableServiceWindowPresentation;
 @property(retain) RPBlurWindow *blurWindow; // @synthesize blurWindow=_blurWindow;
@@ -28,7 +29,6 @@
 @property struct CGRect dimFrame; // @synthesize dimFrame=_dimFrame;
 @property(retain) NSWindow *clientWindow; // @synthesize clientWindow=_clientWindow;
 @property __weak NSRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
-- (void).cxx_destruct;
 @property struct CGRect blurFrame;
 - (void)windowDidResignMain:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;

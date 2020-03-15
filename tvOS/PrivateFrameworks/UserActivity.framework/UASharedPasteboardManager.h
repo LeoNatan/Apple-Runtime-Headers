@@ -34,6 +34,7 @@
 + (_Bool)dontConnectToServer;
 + (id)sharedManager;
 + (void)initialize;
+- (void).cxx_destruct;
 @property CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain) NSDictionary *typeAliases; // @synthesize typeAliases=_typeAliases;
 @property(retain) NSDictionary *typeBOMs; // @synthesize typeBOMs=_typeBOMs;
@@ -50,7 +51,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *serverQ; // @synthesize serverQ=_serverQ;
 @property(retain) UAPasteboardGeneration *currentGeneration; // @synthesize currentGeneration=_currentGeneration;
 @property(copy) CDUnknownBlockType localPasteboardWasFetched; // @synthesize localPasteboardWasFetched=_localPasteboardWasFetched;
-- (void).cxx_destruct;
 - (void)tellClientDebuggingEnabled:(_Bool)arg1 logFileHandle:(id)arg2;
 - (void)fetchPasteboardStatus:(CDUnknownBlockType)arg1;
 - (void)fetchPasteboardDataForProcess:(int)arg1 withCompletion:(CDUnknownBlockType)arg2;

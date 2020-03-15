@@ -22,10 +22,10 @@
 + (id)fallBackAssetResourcePath;
 + (id)assetForAssetType:(unsigned long long)arg1 resourcePath:(id)arg2 configVersion:(id)arg3;
 + (id)hybridEndpointerAssetFilename;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *configVersion; // @synthesize configVersion=_configVersion;
 @property(readonly, nonatomic) NSString *resourcePath; // @synthesize resourcePath=_resourcePath;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (BOOL)isEqualAsset:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) NSString *hashFromResourcePath;
@@ -71,6 +71,7 @@
 @property(readonly, nonatomic) float VTFirstPassDelaySecondsForChannelSelection;
 @property(readonly, nonatomic) float VTFirstPassThreshold;
 @property(readonly, nonatomic) NSString *VTFirstPassConfigPathNDAPI;
+- (id)_getCategoryKey;
 - (id)_sha256:(id)arg1;
 - (id)_sha1:(id)arg1;
 - (id)hearstRTModelLocaleMap;
@@ -78,7 +79,10 @@
 - (id)latestHearstRTModelForLocale:(id)arg1;
 - (id)RTModelWithFallbackLanguage:(id)arg1;
 - (id)createRTModelWithLocale:(id)arg1;
+- (id)ctcKwdToPhraseIdMapForCategory:(id)arg1;
+- (id)supportedVTPhrasesInfoForCategory:(id)arg1;
 - (float)VTSecondPassRejectLoggingThresholdFrom:(id)arg1;
+- (float)VTSecondPassShadowMicScoreThresholdForVADGating:(id)arg1;
 - (float)VTSecondPassMinimumPhraseLengthForVADGating:(id)arg1;
 - (float)VTSecondPassRemoteVADMyriadThresholdFrom:(id)arg1;
 - (float)VTSecondPassRemoteVADThresholdFrom:(id)arg1;
@@ -114,6 +118,7 @@
 @property(readonly, nonatomic) float CVTTwoShotThreshold;
 @property(readonly, nonatomic) float CVTThreshold;
 @property(readonly, nonatomic) NSString *CVTConfigPathNDAPI;
+- (id)_getContinuousVoiceTriggerAssetCategory;
 
 @end
 

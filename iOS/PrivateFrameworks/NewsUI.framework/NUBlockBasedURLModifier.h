@@ -16,8 +16,8 @@
 }
 
 + (id)modifierWithBlock:(CDUnknownBlockType)arg1;
-@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (id)modifyURL:(id)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 

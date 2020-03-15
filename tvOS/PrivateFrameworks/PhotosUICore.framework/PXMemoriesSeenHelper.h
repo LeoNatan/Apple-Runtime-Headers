@@ -14,8 +14,8 @@
 }
 
 + (id)defaultHelper;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void)_clearPendingNotificationForMemory:(id)arg1 inLibrary:(id)arg2;
 - (void)clearAnyPendingStateFromMemories:(id)arg1 inLibrary:(id)arg2;
 - (void)clearAnyPendingNotificationsFromMemories:(id)arg1 inLibrary:(id)arg2;

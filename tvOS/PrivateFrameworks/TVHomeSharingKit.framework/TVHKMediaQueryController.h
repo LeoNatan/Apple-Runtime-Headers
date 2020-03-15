@@ -23,6 +23,7 @@
     unsigned long long _pauseCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pauseCount; // @synthesize pauseCount=_pauseCount;
 @property(retain, nonatomic) NSOperation *cachedQueryOperation; // @synthesize cachedQueryOperation=_cachedQueryOperation;
 @property(copy, nonatomic) TVHSMediaServerContentsChange *cachedContentsChange; // @synthesize cachedContentsChange=_cachedContentsChange;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *logNameSuffix; // @synthesize logNameSuffix=_logNameSuffix;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) TVHKMediaEntityServer *mediaEntityServer; // @synthesize mediaEntityServer=_mediaEntityServer;
-- (void).cxx_destruct;
 - (void)_queryOperationCompleted:(id)arg1 withQueryReason:(long long)arg2;
 - (void)_enqueueQueryWithQueryReason:(long long)arg1 simulatedContentsChangeObjects:(id)arg2;
 - (void)_handleMediaEntityServerContentsDidChange:(id)arg1;

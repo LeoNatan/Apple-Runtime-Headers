@@ -46,7 +46,8 @@
     NSString *_sourceGenerationVersion;
     NSDictionary *_appearanceSpecificationToPlatformAppearanceMapping;
     NSDictionary *_representativeColorsForCatalogReferences;
-    NSString *_xcodeVersion;
+    NSString *_xcodeBuildVersion;
+    NSString *_xcodeProductVersion;
     NSString *_developmentLanguage;
     NSString *_issueTextForResizableImage;
     NSString *_issueTextForTemplateRenderingIntent;
@@ -55,6 +56,7 @@
     NSMutableDictionary *_failureIssuesByName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *failureIssuesByName; // @synthesize failureIssuesByName=_failureIssuesByName;
 @property(retain, nonatomic) NSMutableDictionary *masksByName; // @synthesize masksByName=_masksByName;
 @property(copy) IBICDeviceThinningTraits *filterForDeviceTraits; // @synthesize filterForDeviceTraits=_filterForDeviceTraits;
@@ -63,7 +65,8 @@
 @property(copy) NSString *issueTextForResizableImage; // @synthesize issueTextForResizableImage=_issueTextForResizableImage;
 @property _Bool supportsResizableImages; // @synthesize supportsResizableImages=_supportsResizableImages;
 @property(copy, nonatomic) NSString *developmentLanguage; // @synthesize developmentLanguage=_developmentLanguage;
-@property(copy, nonatomic) NSString *xcodeVersion; // @synthesize xcodeVersion=_xcodeVersion;
+@property(copy, nonatomic) NSString *xcodeProductVersion; // @synthesize xcodeProductVersion=_xcodeProductVersion;
+@property(copy, nonatomic) NSString *xcodeBuildVersion; // @synthesize xcodeBuildVersion=_xcodeBuildVersion;
 @property(retain, nonatomic) NSDictionary *representativeColorsForCatalogReferences; // @synthesize representativeColorsForCatalogReferences=_representativeColorsForCatalogReferences;
 @property(copy, nonatomic) NSDictionary *appearanceSpecificationToPlatformAppearanceMapping; // @synthesize appearanceSpecificationToPlatformAppearanceMapping=_appearanceSpecificationToPlatformAppearanceMapping;
 @property(copy) NSString *sourceGenerationVersion; // @synthesize sourceGenerationVersion=_sourceGenerationVersion;
@@ -95,8 +98,6 @@
 @property _Bool appIconAsPNGOnly; // @synthesize appIconAsPNGOnly=_appIconAsPNGOnly;
 @property _Bool enableOnDemandResources; // @synthesize enableOnDemandResources=_enableOnDemandResources;
 @property _Bool compressPNGs; // @synthesize compressPNGs=_compressPNGs;
-- (void).cxx_destruct;
-- (id)uuidForCoreThemeDocument;
 - (id)failureIssueTextForName:(id)arg1;
 - (void)setFailureIssueText:(id)arg1 forName:(id)arg2;
 - (id)maskForName:(id)arg1;

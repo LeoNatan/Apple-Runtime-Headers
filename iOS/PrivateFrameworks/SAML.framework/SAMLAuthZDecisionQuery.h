@@ -13,8 +13,8 @@
     SAMLAuthZDecisionQueryElement *_requestElement;
 }
 
-@property(retain, nonatomic) SAMLAuthZDecisionQueryElement *requestElement; // @synthesize requestElement=_requestElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SAMLAuthZDecisionQueryElement *requestElement; // @synthesize requestElement=_requestElement;
 - (void)setResource:(id)arg1;
 - (void)addAction:(id)arg1;
 - (void)setSubjectFromResponse:(id)arg1;

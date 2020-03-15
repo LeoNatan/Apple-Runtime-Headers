@@ -19,8 +19,8 @@
 
 + (id)sharedInstanceWithPortName:(id)arg1;
 + (id)sharedInstance;
-@property(nonatomic) _Bool shouldWaitToSetTopics; // @synthesize shouldWaitToSetTopics=_shouldWaitToSetTopics;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldWaitToSetTopics; // @synthesize shouldWaitToSetTopics=_shouldWaitToSetTopics;
 - (void)connection:(id)arg1 didChangeConnectedStatus:(_Bool)arg2;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)configureAsMacNotificationCenterObserver:(id)arg1;

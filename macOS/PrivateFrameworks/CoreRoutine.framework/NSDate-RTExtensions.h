@@ -21,7 +21,7 @@
 - (id)dateReducedToResolution:(unsigned long long)arg1;
 - (id)stringFromDate;
 - (id)weekdayStringFromDate;
-- (long long)weekday;
+- (unsigned long long)weekday;
 - (unsigned long long)minute;
 - (unsigned long long)hour;
 - (id)endOfDay;

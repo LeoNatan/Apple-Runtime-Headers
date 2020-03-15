@@ -25,11 +25,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsExtendedMotion; // @synthesize supportsExtendedMotion=_supportsExtendedMotion;
 @property(nonatomic) int buttonAUpDelay; // @synthesize buttonAUpDelay=_buttonAUpDelay;
 @property(retain, nonatomic) NSString *vendorName; // @synthesize vendorName=_vendorName;
 @property(nonatomic) unsigned int playerIndex; // @synthesize playerIndex=_playerIndex;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

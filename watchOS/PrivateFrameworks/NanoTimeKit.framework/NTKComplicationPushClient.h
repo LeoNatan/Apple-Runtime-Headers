@@ -25,6 +25,7 @@
     NSData *_token;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *token; // @synthesize token=_token;
 @property(retain, nonatomic) NSMutableArray *pendingPayloads; // @synthesize pendingPayloads=_pendingPayloads;
 @property(nonatomic) __weak id <NTKComplicationPushClientDelegate> delegate; // @synthesize delegate=_delegate;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, copy, nonatomic) NSString *extensionBundleID; // @synthesize extensionBundleID=_extensionBundleID;
 @property(readonly, copy, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (id)remoteObjectProxy;

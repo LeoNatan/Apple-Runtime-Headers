@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (BOOL)hasVariableHeight;
-@property(nonatomic) BOOL showAsOffline; // @synthesize showAsOffline=_showAsOffline;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL showAsOffline; // @synthesize showAsOffline=_showAsOffline;
 - (id)_readingListItem;
 - (void)_setUpBindings;
 - (void)_setUpSubviews;

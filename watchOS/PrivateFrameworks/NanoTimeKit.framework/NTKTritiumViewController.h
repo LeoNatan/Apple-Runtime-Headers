@@ -11,11 +11,12 @@
 #import <NanoTimeKit/NTKFaceObserver-Protocol.h>
 #import <NanoTimeKit/NTKFaceViewDelegate-Protocol.h>
 #import <NanoTimeKit/NTKFaceViewTritiumDelegate-Protocol.h>
+#import <NanoTimeKit/NTKTritiumFaceAnimatorDelegate-Protocol.h>
 
 @class NSCountedSet, NSMutableDictionary, NSString, NSTimer, NTKColorCodeTimeView, NTKFace, NTKFaceView, UILabel, UIView;
 @protocol NTKClockStatusBarViewController, NTKTritiumFaceView, NTKTritiumViewControllerDelegate;
 
-@interface NTKTritiumViewController : UIViewController <NTKFaceObserver, NTKFaceViewDelegate, NTKComplicationControllerTritiumDelegate, NTKFaceViewTritiumDelegate, CSLSAOTViewController>
+@interface NTKTritiumViewController : UIViewController <NTKFaceObserver, NTKFaceViewDelegate, NTKComplicationControllerTritiumDelegate, NTKFaceViewTritiumDelegate, NTKTritiumFaceAnimatorDelegate, CSLSAOTViewController>
 {
     NTKFace *_face;
     _Bool _faceConfigurationsHaveChanged;
@@ -37,9 +38,14 @@
     id <NTKTritiumViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NTKTritiumViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NTKFace *face; // @synthesize face=_face;
-- (void).cxx_destruct;
+- (void)tritiumFaceAnimator:(id)arg1 willTransitionStepToTritiumOn:(id)arg2;
+- (void)tritiumFaceAnimator:(id)arg1 willTransitionStepToTritiumOff:(id)arg2;
+- (void)tritiumFaceAnimator:(id)arg1 didUpdateStep:(id)arg2 fraction:(float)arg3;
+- (void)tritiumFaceAnimator:(id)arg1 didTransitionStepToTritiumOn:(id)arg2;
+- (void)tritiumFaceAnimator:(id)arg1 didTransitionStepToTritiumOff:(id)arg2;
 - (void)setNeedsInvalidateFramesOnFaceView:(id)arg1 withReason:(id)arg2;
 - (void)complicationController:(id)arg1 timelineEntriesDidChangeWithTritiumUpdatePriority:(int)arg2;
 - (id)faceViewComplicationForSlot:(id)arg1;

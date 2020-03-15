@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_statesAssigned;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *statesAssigned; // @synthesize statesAssigned=_statesAssigned;
 @property(readonly, nonatomic) NSMutableArray *titlesAssigned; // @synthesize titlesAssigned=_titlesAssigned;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)init;
 
 // Remaining properties

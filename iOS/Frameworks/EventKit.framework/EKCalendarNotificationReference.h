@@ -17,9 +17,9 @@
     EKObjectID *_objectID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EKObjectID *objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)_notificationTypeForResourceChange:(id)arg1 notificationType:(int)arg2;
 @property(readonly, nonatomic) EKCalendarNotification *notification;

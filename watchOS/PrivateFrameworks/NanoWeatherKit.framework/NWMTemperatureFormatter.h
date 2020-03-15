@@ -30,6 +30,7 @@
 }
 
 + (id)sharedFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *formattedStaleTemperatureWithoutUnitRoundedVariant; // @synthesize formattedStaleTemperatureWithoutUnitRoundedVariant=_formattedStaleTemperatureWithoutUnitRoundedVariant;
 @property(retain, nonatomic) NSString *formattedStaleTemperatureWithoutUnit; // @synthesize formattedStaleTemperatureWithoutUnit=_formattedStaleTemperatureWithoutUnit;
 @property(retain, nonatomic) NSString *formattedStaleTemperatureWithUnitRoundedVariant; // @synthesize formattedStaleTemperatureWithUnitRoundedVariant=_formattedStaleTemperatureWithUnitRoundedVariant;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSNumberFormatter *noUnitFormatter; // @synthesize noUnitFormatter=_noUnitFormatter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSLocale *referenceLocale; // @synthesize referenceLocale=_referenceLocale;
-- (void).cxx_destruct;
 - (id)_locked_unitFormatter;
 - (id)_locked_degreeSymbolOnlyFormatter;
 - (id)_locked_noUnitFormatter;

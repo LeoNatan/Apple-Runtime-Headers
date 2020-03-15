@@ -60,6 +60,7 @@
 }
 
 + (id)composerWithRecipients:(id)arg1 message:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) _Bool compositionChangedToAudio; // @synthesize compositionChangedToAudio=_compositionChangedToAudio;
 @property(nonatomic) int bodyDictationMode; // @synthesize bodyDictationMode=_bodyDictationMode;
@@ -76,7 +77,6 @@
 @property(copy, nonatomic) NSAttributedString *subjectTitle; // @synthesize subjectTitle=_subjectTitle;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(nonatomic) __weak id <PUICQuickboardCompositionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)handleButton:(unsigned int)arg1 eventType:(unsigned int)arg2;
 - (void)handleCrownButtonTap;
 - (_Bool)isRunningInCarouselProcess;

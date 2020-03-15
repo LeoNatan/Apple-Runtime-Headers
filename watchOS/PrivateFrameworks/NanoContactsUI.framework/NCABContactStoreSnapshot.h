@@ -26,11 +26,11 @@
     NSMutableArray *_batchContactIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *batchContactIdentifiers; // @synthesize batchContactIdentifiers=_batchContactIdentifiers;
 @property(readonly, nonatomic) NSMapTable *identifiersToIndexPath; // @synthesize identifiersToIndexPath=_identifiersToIndexPath;
 @property(readonly, nonatomic) NSMutableDictionary *contactMatchInfos; // @synthesize contactMatchInfos=_contactMatchInfos;
 @property(nonatomic) __weak NCABContactStoreDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *indexSections;
 @property(readonly, nonatomic) NSArray *sections;
 - (void)prepareAllContacts;

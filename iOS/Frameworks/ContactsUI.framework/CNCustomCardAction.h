@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 
 + (id)groupForActionGivenPlacement:(long long)arg1 inContactContentViewController:(id)arg2;
 + (long long)placementForGroup:(id)arg1 inContactContentViewController:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDestructive) _Bool destructive; // @synthesize destructive=_destructive;
 @property(readonly, nonatomic) long long placement; // @synthesize placement=_placement;
 @property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(readonly, nonatomic) CNContactTargetActionWrapper *targetActionWrapper; // @synthesize targetActionWrapper=_targetActionWrapper;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)matchesTarget:(id)arg1 selector:(SEL)arg2 group:(id)arg3 inContactContentViewController:(id)arg4;
 - (_Bool)isValidForContact:(id)arg1;
 - (id)initWithTitle:(id)arg1 targetActionWrapper:(id)arg2 contactIdentifier:(id)arg3 placement:(long long)arg4 isDesctructive:(_Bool)arg5;

@@ -14,8 +14,8 @@
 }
 
 + (id)eventStreamWithProperties:(id)arg1;
-@property(readonly) _CDEventStreamProperties *eventStreamProperties; // @synthesize eventStreamProperties;
 - (void).cxx_destruct;
+@property(readonly) _CDEventStreamProperties *eventStreamProperties; // @synthesize eventStreamProperties;
 - (id)description;
 - (id)initWithProperties:(id)arg1;
 

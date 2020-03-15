@@ -15,10 +15,10 @@
     NSDate *_buildUIAttemptDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *buildUIAttemptDate; // @synthesize buildUIAttemptDate=_buildUIAttemptDate;
 @property(nonatomic) _Bool didCancel; // @synthesize didCancel=_didCancel;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (void)_handleTimerExpired;
 - (void)_handleLastChanceTimerWarning;
 - (void)_handleSecondTimerWarning;

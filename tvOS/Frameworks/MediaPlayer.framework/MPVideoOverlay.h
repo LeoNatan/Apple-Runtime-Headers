@@ -29,6 +29,7 @@
     double _lastTickTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long visibleParts; // @synthesize visibleParts=_visibleParts;
 @property(nonatomic) __weak id <MPVideoControllerProtocol> videoViewController; // @synthesize videoViewController=_videoViewController;
 @property(retain, nonatomic) MPAVController *player; // @synthesize player=_player;
@@ -36,7 +37,6 @@
 @property(nonatomic) unsigned long long disabledParts; // @synthesize disabledParts=_disabledParts;
 @property(nonatomic) unsigned long long desiredParts; // @synthesize desiredParts=_desiredParts;
 @property(nonatomic) __weak id <MPVideoOverlayDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_playableDuration;
 - (double)_duration;
 - (void)cancelPreviousPerformTickEventsForSelector:(SEL)arg1;

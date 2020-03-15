@@ -15,10 +15,10 @@
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateFont;
 - (void)layoutSubviews;

@@ -41,6 +41,7 @@
 
 + (id)archivedClasses;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain) id <DEDNotifier><DEDSecureArchiving> _notifier; // @synthesize _notifier=__notifier;
 @property(retain) id <DEDFinisher><DEDSecureArchiving> _finisher; // @synthesize _finisher=__finisher;
@@ -63,7 +64,6 @@
 @property int priorClientTransportType; // @synthesize priorClientTransportType=_priorClientTransportType;
 @property(retain) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_logOperationQueue;
 - (void)_streamOperationQueue;
 - (void)didFinishOperation:(int)arg1 withIdentifier:(id)arg2;

@@ -24,6 +24,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSNumber *includeAllReadableNotebooks; // @synthesize includeAllReadableNotebooks=_includeAllReadableNotebooks;
 @property(retain, nonatomic) NSString *emphasized; // @synthesize emphasized=_emphasized;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *words; // @synthesize words=_words;
 @property(retain, nonatomic) NSNumber *ascending; // @synthesize ascending=_ascending;
 @property(retain, nonatomic) NSNumber *order; // @synthesize order=_order;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,9 +17,9 @@
     double _borderPaddingLeft;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets textLabelInsets; // @synthesize textLabelInsets=_textLabelInsets;
 @property(nonatomic) double borderPaddingLeft; // @synthesize borderPaddingLeft=_borderPaddingLeft;
-- (void).cxx_destruct;
 - (void)_reloadBorderVisibility;
 - (void)layoutSubviews;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

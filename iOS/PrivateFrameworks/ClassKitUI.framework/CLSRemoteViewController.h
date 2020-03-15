@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 + (id)instantiateViewControllerWithInputItems:(id)arg1 identifier:(id)arg2 connectionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(retain, nonatomic) UIWindow *previousKeyWindow; // @synthesize previousKeyWindow=_previousKeyWindow;
-- (void).cxx_destruct;
 - (void)presentModallyInNewWindowWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

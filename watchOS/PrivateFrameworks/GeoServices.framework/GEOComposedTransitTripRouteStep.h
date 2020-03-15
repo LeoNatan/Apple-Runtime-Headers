@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isBus; // @synthesize isBus=_isBus;
 @property(readonly, nonatomic) _Bool isRail; // @synthesize isRail=_isRail;
 @property(readonly, nonatomic) NSArray *routeLineArtwork; // @synthesize routeLineArtwork=_routeLineArtwork;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSArray *arrivalTimes; // @synthesize arrivalTimes=_arrivalTimes;
 @property(readonly, nonatomic) NSArray *departureTimes; // @synthesize departureTimes=_departureTimes;
 @property(readonly, nonatomic) NSArray *arrivalTimesAtOrigin; // @synthesize arrivalTimesAtOrigin=_arrivalTimesAtOrigin;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

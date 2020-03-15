@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     struct VKGlobeRouteSplit *_routeSplit;
 }
 
-@property(nonatomic) id <VKGlobeLineContainerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) id <VKGlobeLineContainerDelegate> delegate; // @synthesize delegate=_delegate;
 - (float)halfWidthForLine:(id)arg1 styleZ:(float)arg2;
 - (void)update;
 - (void)_recreateLinesIfNeeded;

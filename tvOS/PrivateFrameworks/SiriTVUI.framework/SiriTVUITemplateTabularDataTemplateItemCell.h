@@ -13,8 +13,8 @@
     SiriTVUITemplateItemViewController *_templateItemViewController;
 }
 
-@property(retain, nonatomic) SiriTVUITemplateItemViewController *templateItemViewController; // @synthesize templateItemViewController=_templateItemViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SiriTVUITemplateItemViewController *templateItemViewController; // @synthesize templateItemViewController=_templateItemViewController;
 - (_Bool)canBecomeFocused;
 - (id)preferredFocusEnvironments;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

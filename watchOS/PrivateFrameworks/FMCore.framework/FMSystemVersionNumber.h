@@ -16,11 +16,11 @@
     NSString *_suffix;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
 @property(nonatomic) int buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(copy, nonatomic) NSString *baseLetter; // @synthesize baseLetter=_baseLetter;
 @property(nonatomic) int baseNumber; // @synthesize baseNumber=_baseNumber;
-- (void).cxx_destruct;
 - (int)compare:(id)arg1;
 - (id)description;
 - (id)debugDescription;

@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)frontmostWindow;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldDeferSettingFirstResponderDueToScrubbing; // @synthesize shouldDeferSettingFirstResponderDueToScrubbing=_shouldDeferSettingFirstResponderDueToScrubbing;
 @property(nonatomic) BOOL ignoresOrderFront; // @synthesize ignoresOrderFront=_ignoresOrderFront;
 @property(retain, nonatomic) BookmarksUndoController *bookmarksUndoController; // @synthesize bookmarksUndoController=_bookmarksUndoController;
-- (void).cxx_destruct;
 - (void)removeFromOrderedTabViewItemsAtIndex:(unsigned int)arg1;
 - (void)replaceInOrderedTabViewItems:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)insertInOrderedTabViewItems:(id)arg1 atIndex:(unsigned int)arg2;

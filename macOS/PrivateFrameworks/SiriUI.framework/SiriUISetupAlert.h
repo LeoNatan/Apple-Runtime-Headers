@@ -22,6 +22,7 @@
     NSString *_informativeTextVTStringKey;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *informativeTextVTStringKey; // @synthesize informativeTextVTStringKey=_informativeTextVTStringKey;
 @property(retain) NSString *messageTextVTStringKey; // @synthesize messageTextVTStringKey=_messageTextVTStringKey;
 @property __weak SOSRSimpleLanguagePopUpButton *languagePopUp; // @synthesize languagePopUp=_languagePopUp;
@@ -32,7 +33,6 @@
 @property BOOL showsLanguageSelection; // @synthesize showsLanguageSelection=_showsLanguageSelection;
 @property BOOL showsPrivacyInformation; // @synthesize showsPrivacyInformation=_showsPrivacyInformation;
 @property(readonly) NSString *siriLanguageCode; // @synthesize siriLanguageCode=_siriLanguageCode;
-- (void).cxx_destruct;
 - (void)_setAlertTextFromVoiceTriggerKeys;
 - (id)buttonTitleForAmbiguousLanguage:(id)arg1;
 - (void)languagePopUpSelectionChanged:(id)arg1;

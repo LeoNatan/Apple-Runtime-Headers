@@ -19,12 +19,12 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *nextLeaveDaylightSavings; // @synthesize nextLeaveDaylightSavings=_nextLeaveDaylightSavings;
 @property(retain, nonatomic) NSNumber *nextEnterDaylightSavings; // @synthesize nextEnterDaylightSavings=_nextEnterDaylightSavings;
 @property(retain, nonatomic) NSNumber *dstSavingsAdjustmentMillis; // @synthesize dstSavingsAdjustmentMillis=_dstSavingsAdjustmentMillis;
 @property(retain, nonatomic) NSNumber *rawUTCOffsetMillis; // @synthesize rawUTCOffsetMillis=_rawUTCOffsetMillis;
 @property(retain, nonatomic) NSString *id; // @synthesize id=_id;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 + (id)reportSpamButton;
 + (id)internalPhishingWarning;
 + (id)internalPhishingWarningLabel;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *internalPhishingWarningLabel; // @synthesize internalPhishingWarningLabel=_internalPhishingWarningLabel;
 @property(nonatomic) _Bool showReportSMSSpam; // @synthesize showReportSMSSpam=_showReportSMSSpam;
 @property(retain, nonatomic) UIButton *reportSpamButton; // @synthesize reportSpamButton=_reportSpamButton;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 @property(copy, nonatomic) NSAttributedString *attributedButtonText;
 - (void)clearFilters;

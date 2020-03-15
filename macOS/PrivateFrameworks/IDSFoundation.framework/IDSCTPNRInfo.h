@@ -14,9 +14,9 @@
     NSString *_phoneBookNumber;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *phoneBookNumber; // @synthesize phoneBookNumber=_phoneBookNumber;
 @property(readonly, nonatomic) NSString *PNRPhoneNumber; // @synthesize PNRPhoneNumber=_PNRPhoneNumber;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *IMSI;
 @property(readonly, nonatomic) NSString *PLMN;
 

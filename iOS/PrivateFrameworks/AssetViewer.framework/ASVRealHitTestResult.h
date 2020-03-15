@@ -16,6 +16,7 @@
     // Error parsing type: {?="columns"[4]}, name: _worldTransform
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property localPosition:
 // Property attributes: T,R,N,V_localPosition
 
@@ -24,10 +25,10 @@
 
 @property(readonly, nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(readonly, nonatomic) NSUUID *planeIdentifier; // @synthesize planeIdentifier=_planeIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float distanceFromFeaturePoint;
 -     // Error parsing type: @176@0:8q1624{?=[4]}40104120128144@160q168, name: initWithType:worldPosition:worldTransform:localPosition:imagePoint:assetPosition:cameraPosition:planeIdentifier:planeAlignment:
 - (id)initWithHitTestResult:(id)arg1 imagePoint:assetPosition:cameraPosition: /* Error: Ran out of types for this method. */;
+- (id)initWithRaycastResult:(id)arg1 imagePoint:assetPosition:cameraPosition: /* Error: Ran out of types for this method. */;
 
 @end
 

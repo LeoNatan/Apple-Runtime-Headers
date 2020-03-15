@@ -16,8 +16,8 @@
 
 +     // Error parsing type: @24@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16, name: _specifierForSecKey:
 + (Class)_attributesClass;
-@property(readonly, nonatomic) NSData *keyData; // @synthesize keyData=_keyData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *keyData; // @synthesize keyData=_keyData;
 @property(readonly, copy, nonatomic) NSString *keyDomain;
 @property(readonly, copy, nonatomic) _SFKeySpecifier *keySpecifier;
 - (BOOL)isEqual:(id)arg1;

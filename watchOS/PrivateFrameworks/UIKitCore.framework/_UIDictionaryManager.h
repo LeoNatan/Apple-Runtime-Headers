@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)assetManager;
-@property(readonly) NSArray *availableDefinitionDictionaries; // @synthesize availableDefinitionDictionaries=_availableDefinitionDictionaries;
 - (void).cxx_destruct;
+@property(readonly) NSArray *availableDefinitionDictionaries; // @synthesize availableDefinitionDictionaries=_availableDefinitionDictionaries;
 - (_Bool)_isTTYEnabled;
 - (id)_allAvailableDefinitionDictionaries;
 - (id)_availableDictionaryAssets;

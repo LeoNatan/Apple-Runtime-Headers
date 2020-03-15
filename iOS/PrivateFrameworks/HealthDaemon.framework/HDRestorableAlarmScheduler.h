@@ -29,11 +29,11 @@
     NSDate *__unitTest_currentDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isRegisteredForLockStateUpdates; // @synthesize isRegisteredForLockStateUpdates=_isRegisteredForLockStateUpdates;
 @property(readonly, nonatomic) _Bool isRegisteredForOnWristUpdates; // @synthesize isRegisteredForOnWristUpdates=_isRegisteredForOnWristUpdates;
 @property(copy, nonatomic) NSDate *_unitTest_currentDate; // @synthesize _unitTest_currentDate=__unitTest_currentDate;
 @property(readonly, nonatomic) HDXPCAlarm *systemScheduler; // @synthesize systemScheduler=_systemScheduler;
-- (void).cxx_destruct;
 - (id)diagnosticDescription;
 @property(readonly, copy) NSString *description;
 - (_Bool)_enumerateAllAlarmEventsWithError:(id *)arg1 enumerationHandler:(CDUnknownBlockType)arg2;

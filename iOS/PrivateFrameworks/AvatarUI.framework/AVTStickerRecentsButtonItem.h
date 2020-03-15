@@ -18,11 +18,11 @@
     CDUnknownBlockType discardableContentHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType discardableContentHandler; // @synthesize discardableContentHandler;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)discardContent;
 @property(readonly, copy, nonatomic) CDUnknownBlockType provider;
 - (id)cellIdentifier;

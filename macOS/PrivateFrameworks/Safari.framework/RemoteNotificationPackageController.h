@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedController;
-@property(retain, nonatomic) NSMutableDictionary *permissions; // @synthesize permissions=_permissions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *permissions; // @synthesize permissions=_permissions;
 - (void)_loadPackageInformationIfNecessary;
 - (id)identifiersAddedBetweenDate:(id)arg1 andDate:(id)arg2 withAllowedPermissions:(BOOL)arg3 withDeniedPermissions:(BOOL)arg4;
 - (void)getRemoteNotificationInformationForIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

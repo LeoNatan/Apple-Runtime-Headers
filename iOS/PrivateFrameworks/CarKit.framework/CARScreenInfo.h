@@ -28,6 +28,7 @@
     struct CGSize _pixelSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long systemPrimaryInteractionModel; // @synthesize systemPrimaryInteractionModel=_systemPrimaryInteractionModel;
 @property(nonatomic) unsigned long long systemAvailableInteractionModels; // @synthesize systemAvailableInteractionModels=_systemAvailableInteractionModels;
 @property(readonly, nonatomic) NSURL *initialURL; // @synthesize initialURL=_initialURL;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic, getter=isLimitedUI) _Bool limitedUI; // @synthesize limitedUI=_limitedUI;
 @property(readonly, nonatomic) unsigned long long screenType; // @synthesize screenType=_screenType;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)limitedUIChanged:(_Bool)arg1;
 - (void)nightModeChanged:(_Bool)arg1;
 - (id)description;

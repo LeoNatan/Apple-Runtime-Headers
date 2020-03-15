@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     id <SKUISettingsEditTransactionDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SKUISettingsEditTransactionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUISettingsEditTransactionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_settingDescription:(id)arg1 completedWithSuccess:(_Bool)arg2;
 - (void)_finalizeCommit;
 - (void)_delegateWillCommitTransaction;

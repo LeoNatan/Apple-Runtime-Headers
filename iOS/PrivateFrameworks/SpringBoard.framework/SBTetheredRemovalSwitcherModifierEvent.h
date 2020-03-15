@@ -14,9 +14,9 @@
     unsigned long long _phase;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long phase; // @synthesize phase=_phase;
 @property(readonly, nonatomic) NSUUID *tetheredRemovalID; // @synthesize tetheredRemovalID=_tetheredRemovalID;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (long long)type;
 - (id)initWithTetheredRemovalID:(id)arg1 phase:(unsigned long long)arg2;

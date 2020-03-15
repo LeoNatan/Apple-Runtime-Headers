@@ -27,6 +27,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(readonly, nonatomic) NSMutableArray *pendingSentMessageIdentifiers; // @synthesize pendingSentMessageIdentifiers=_pendingSentMessageIdentifiers;
 @property(nonatomic, getter=isOpened) _Bool opened; // @synthesize opened=_opened;
@@ -36,7 +37,6 @@
 @property(readonly, copy, nonatomic) NSData *accessToken; // @synthesize accessToken=_accessToken;
 @property(readonly, copy, nonatomic) NSString *accessoryIdentifier; // @synthesize accessoryIdentifier=_accessoryIdentifier;
 @property(readonly, nonatomic) __weak HMDRelayManager *relayManger; // @synthesize relayManger=_relayManger;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 incomingAccessoryData:(id)arg3 fromAccessoryID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5;
 - (id)logIdentifier;

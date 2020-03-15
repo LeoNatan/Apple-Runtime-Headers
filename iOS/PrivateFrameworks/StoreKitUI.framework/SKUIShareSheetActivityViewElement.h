@@ -14,9 +14,9 @@
     NSURL *_contentSourceURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *contentSourceURL; // @synthesize contentSourceURL=_contentSourceURL;
 @property(readonly, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 @property(readonly, nonatomic) SKUIURLViewElement *URL;
 @property(readonly, nonatomic) SKUILabelViewElement *title;

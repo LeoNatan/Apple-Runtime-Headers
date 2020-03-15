@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL animates; // @synthesize animates=_animates;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) Banner *banner; // @synthesize banner=_banner;
-- (void).cxx_destruct;
 - (id)initWithBanner:(id)arg1 type:(long long)arg2 animates:(BOOL)arg3;
 - (id)init;
 

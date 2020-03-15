@@ -26,13 +26,13 @@
 }
 
 + (id)keyPathsForValuesAffectingEffectiveFilter;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(retain, nonatomic) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
 @property(retain, nonatomic) CNContactStore *store; // @synthesize store=_store;
 @property(copy, nonatomic) CNContactStoreFilter *filter; // @synthesize filter=_filter;
 @property(nonatomic) __weak id <CNContactDataSourceDelegate> delegate; // @synthesize delegate;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *localizedSectionIndices;
 @property(readonly, nonatomic) NSDictionary *localizedSectionHeaders;
 @property(readonly, nonatomic) NSArray *indexSectionsArray;

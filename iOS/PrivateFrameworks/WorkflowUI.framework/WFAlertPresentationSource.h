@@ -20,12 +20,12 @@
 + (id)sourceWithBarButtonItem:(id)arg1;
 + (id)sourceWithView:(id)arg1 rect:(struct CGRect)arg2;
 + (id)sourceWithView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canOverlapSourceViewRect; // @synthesize canOverlapSourceViewRect=_canOverlapSourceViewRect;
 @property(nonatomic) unsigned long long permittedArrowDirections; // @synthesize permittedArrowDirections=_permittedArrowDirections;
 @property(readonly, nonatomic) UIBarButtonItem *barButtonItem; // @synthesize barButtonItem=_barButtonItem;
 @property(readonly, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(readonly, nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
-- (void).cxx_destruct;
 - (id)initWithSourceView:(id)arg1 sourceRect:(struct CGRect)arg2 barButtonItem:(id)arg3;
 - (id)init;
 

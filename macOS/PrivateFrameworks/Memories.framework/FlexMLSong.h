@@ -19,13 +19,13 @@
 }
 
 + (id)loadSongAtPath:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 cachedNaturalDuration; // @synthesize cachedNaturalDuration=_cachedNaturalDuration;
 @property(retain, nonatomic) NSString *audioFileExtension; // @synthesize audioFileExtension=_audioFileExtension;
 @property(readonly, nonatomic) NSString *metadataPath; // @synthesize metadataPath=_metadataPath;
 @property(readonly, nonatomic) NSString *rootPath; // @synthesize rootPath=_rootPath;
 @property(retain, nonatomic) FlexMLSummaryManager *summaryManager; // @synthesize summaryManager=_summaryManager;
 @property(readonly, nonatomic) NSURL *audioFileURL; // @synthesize audioFileURL=_audioFileURL;
-- (void).cxx_destruct;
 - (CDStruct_1b6d18a9)minimumDuration;
 - (CDStruct_1b6d18a9)naturalDuration;
 - (id)idealDurations;

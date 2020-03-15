@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *classRosterInformationDictionary; // @synthesize classRosterInformationDictionary=_classRosterInformationDictionary;
 @property(retain) NSMutableDictionary *classesByClassGroupName; // @synthesize classesByClassGroupName=_classesByClassGroupName;
 @property(retain) NSMutableDictionary *usersByUsername; // @synthesize usersByUsername=_usersByUsername;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSArray *students; // @synthesize students=_students;
 @property(readonly, copy, nonatomic) NSArray *classes; // @synthesize classes=_classes;
 @property(readonly, copy, nonatomic) NSString *schoolName; // @synthesize schoolName=_schoolName;
-- (void).cxx_destruct;
 - (id)classesByClassGroupNameDictionary;
 - (id)studentForUsername:(id)arg1;
 - (id)studentForUsername:(id)arg1 inClass:(id)arg2;

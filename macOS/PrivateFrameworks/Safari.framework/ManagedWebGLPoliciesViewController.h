@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (id)_askPolicyString;
 + (id)_blockPolicyString;
 + (id)cautionImage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *warningContentViewTrailingHorizontalSpacingConstraint; // @synthesize warningContentViewTrailingHorizontalSpacingConstraint=_warningContentViewTrailingHorizontalSpacingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *warningContentViewLeadingHorizontalSpacingConstraint; // @synthesize warningContentViewLeadingHorizontalSpacingConstraint=_warningContentViewLeadingHorizontalSpacingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *warningContentViewBottomVerticalSpacingConstraint; // @synthesize warningContentViewBottomVerticalSpacingConstraint=_warningContentViewBottomVerticalSpacingConstraint;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSSegmentedControl *removeButtonSegmentedControl; // @synthesize removeButtonSegmentedControl=_removeButtonSegmentedControl;
 @property(nonatomic) __weak SegmentedControlWithDynamicWidth *removePolicySegmentedControl; // @synthesize removePolicySegmentedControl=_removePolicySegmentedControl;
 @property(nonatomic) __weak NSButton *removeButton; // @synthesize removeButton=_removeButton;
-- (void).cxx_destruct;
 - (void)_setUpOutlineHeaderView;
 - (void)_setUpPolicies;
 - (void)_updateClearButtonState;

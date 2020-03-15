@@ -16,9 +16,9 @@
 
 + (Class)cellClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL isMenuVisible; // @synthesize isMenuVisible=_isMenuVisible;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 - (void)popUpButtonWillPopUp:(id)arg1;
 - (void)AMVariableInWorkflowDidChange:(id)arg1;

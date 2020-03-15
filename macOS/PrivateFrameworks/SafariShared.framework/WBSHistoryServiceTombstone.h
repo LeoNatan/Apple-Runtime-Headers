@@ -19,13 +19,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long generation; // @synthesize generation=_generation;
 @property(readonly, nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) NSData *urlSalt; // @synthesize urlSalt=_urlSalt;
 @property(readonly, nonatomic) NSData *urlHash; // @synthesize urlHash=_urlHash;
 @property(readonly, nonatomic) NSString *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTombstone:(id)arg1;

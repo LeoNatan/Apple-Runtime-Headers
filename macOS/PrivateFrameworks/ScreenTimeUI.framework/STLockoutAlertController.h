@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(readonly) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (void)pinFieldViewTextDidComplete:(id)arg1;
 - (void)pinFieldViewTextDidChange:(id)arg1;
 - (void)dismissControllerAnimated:(BOOL)arg1;

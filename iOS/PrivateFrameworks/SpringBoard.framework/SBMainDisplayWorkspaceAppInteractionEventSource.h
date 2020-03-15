@@ -20,8 +20,8 @@
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) NSString *currentFocusedBundleID; // @synthesize currentFocusedBundleID=_currentFocusedBundleID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *currentFocusedBundleID; // @synthesize currentFocusedBundleID=_currentFocusedBundleID;
 - (id)_bundleIDsForIcons:(id)arg1;
 - (void)_iconVisibilityDidChange:(id)arg1;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;

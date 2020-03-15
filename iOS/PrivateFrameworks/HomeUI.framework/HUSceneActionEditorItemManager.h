@@ -27,6 +27,7 @@
 + (id)allActionGridEditorSectionIdentifiers;
 + (id)sectionIdentifierForActionGridEditorType:(unsigned long long)arg1;
 + (unsigned long long)actionGridEditorTypeForSectionIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *actionGridItemsByEditorType; // @synthesize actionGridItemsByEditorType=_actionGridItemsByEditorType;
 @property(readonly, nonatomic) NSMutableDictionary *instructionsItemsByEditorType; // @synthesize instructionsItemsByEditorType=_instructionsItemsByEditorType;
 @property(retain, nonatomic) HFStaticItem *deleteSceneItem; // @synthesize deleteSceneItem=_deleteSceneItem;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSSet *prioritizedServices; // @synthesize prioritizedServices=_prioritizedServices;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) HFActionSetBuilder *actionSetBuilder; // @synthesize actionSetBuilder=_actionSetBuilder;
-- (void).cxx_destruct;
 - (void)_createItemsForActionGridEditorType:(unsigned long long)arg1 home:(id)arg2;
 - (id)_buildSectionForActionGridEditorType:(unsigned long long)arg1;
 - (id)_itemsToHideInSet:(id)arg1;

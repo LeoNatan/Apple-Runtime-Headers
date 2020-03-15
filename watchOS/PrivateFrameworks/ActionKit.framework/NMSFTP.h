@@ -16,10 +16,10 @@
 }
 
 + (id)connectWithSession:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct _LIBSSH2_SFTP *sftpSession; // @synthesize sftpSession=_sftpSession;
 @property(nonatomic, getter=isConnected) _Bool connected; // @synthesize connected=_connected;
 @property(retain, nonatomic) NMSSHSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (_Bool)copyContentsOfPath:(id)arg1 toFileAtPath:(id)arg2 progress:(CDUnknownBlockType)arg3;
 - (_Bool)writeStream:(id)arg1 toSFTPHandle:(struct _LIBSSH2_SFTP_HANDLE *)arg2 progress:(CDUnknownBlockType)arg3;
 - (_Bool)writeStream:(id)arg1 toSFTPHandle:(struct _LIBSSH2_SFTP_HANDLE *)arg2;

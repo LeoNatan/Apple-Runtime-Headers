@@ -17,10 +17,10 @@
     int _primaryState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int primaryState; // @synthesize primaryState=_primaryState;
 @property(readonly, nonatomic) _Bool shouldForceLTR; // @synthesize shouldForceLTR=_shouldForceLTR;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)iconDescriptorByMergingWithIconDescriptor:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

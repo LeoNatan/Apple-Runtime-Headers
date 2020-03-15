@@ -19,6 +19,7 @@
     TIKeyboardLayout *_layout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDownUpTap) _Bool downup; // @synthesize downup=_downup;
 @property(retain, nonatomic) TIKeyboardLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) long long pathIndex; // @synthesize pathIndex=_pathIndex;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSMutableArray *dragTouches; // @synthesize dragTouches=_dragTouches;
 @property(retain, nonatomic) TIKeyboardTouchEvent *lastTouch; // @synthesize lastTouch=_lastTouch;
 @property(retain, nonatomic) TIKeyboardTouchEvent *firstTouch; // @synthesize firstTouch=_firstTouch;
-- (void).cxx_destruct;
 - (double)totalTapDistance;
 - (double)distance:(id)arg1 withTouch:(id)arg2;
 - (id)stringForIntendedKey;

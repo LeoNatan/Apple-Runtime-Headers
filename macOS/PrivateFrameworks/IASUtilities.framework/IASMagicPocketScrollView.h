@@ -28,6 +28,7 @@
     id documentViewFrameChangeNotificationToken;
 }
 
+- (void).cxx_destruct;
 @property BOOL handleBoundsOrFrameChangePending; // @synthesize handleBoundsOrFrameChangePending;
 @property(retain) id documentViewFrameChangeNotificationToken; // @synthesize documentViewFrameChangeNotificationToken;
 @property(retain) id contentViewBoundsChangeNotificationToken; // @synthesize contentViewBoundsChangeNotificationToken;
@@ -44,7 +45,6 @@
 @property(nonatomic) BOOL showsPocketOnLeft; // @synthesize showsPocketOnLeft;
 @property(nonatomic) BOOL showsPocketOnBottom; // @synthesize showsPocketOnBottom;
 @property(nonatomic) BOOL showsPocketOnTop; // @synthesize showsPocketOnTop;
-- (void).cxx_destruct;
 - (void)animateScrollToPoint:(struct CGPoint)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)tile;

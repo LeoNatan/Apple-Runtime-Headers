@@ -27,10 +27,10 @@
     unsigned int _displayedFrameIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowFrameDrops; // @synthesize allowFrameDrops=_allowFrameDrops;
 @property(nonatomic) unsigned int displayedFrameIndex; // @synthesize displayedFrameIndex=_displayedFrameIndex;
 @property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
-- (void).cxx_destruct;
 - (void)animationTimerFired:(double)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void *)arg3;
 - (void)updateAnimation;

@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PODShowSettingsProtocol> settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) NSURL *showPageUrl; // @synthesize showPageUrl=_showPageUrl;
 @property(readonly, nonatomic) NSURL *feedUrl; // @synthesize feedUrl=_feedUrl;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSString *provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) NSString *author; // @synthesize author=_author;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initUsingPropertiesFrom:(id)arg1;

@@ -39,6 +39,7 @@
     NSString *_toggleItemIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIBuyButtonDescriptor *buyButtonDescriptor; // @synthesize buyButtonDescriptor=_buyButtonDescriptor;
 @property(readonly, nonatomic) _Bool suppressCloudRestore; // @synthesize suppressCloudRestore=_suppressCloudRestore;
 @property(nonatomic, getter=isToggled) _Bool toggled; // @synthesize toggled=_toggled;
@@ -62,7 +63,6 @@
 @property(readonly, nonatomic) double bigHitSize; // @synthesize bigHitSize=_bigHitSize;
 @property(readonly, nonatomic, getter=isBigHitButton) _Bool bigHitButton; // @synthesize bigHitButton=_bigHitButton;
 @property(readonly, nonatomic) _Bool autoIncrementCount; // @synthesize autoIncrementCount=_autoIncrementCount;
-- (void).cxx_destruct;
 - (id)_parseButtonText;
 - (id)personalizationLibraryItems;
 - (long long)pageComponentType;

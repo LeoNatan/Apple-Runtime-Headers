@@ -15,8 +15,8 @@
     CDUnknownBlockType _activationHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType activationHandler; // @synthesize activationHandler=_activationHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType activationHandler; // @synthesize activationHandler=_activationHandler;
 - (void)_handleActivationRequest:(id)arg1 withResponseHandler:(CDUnknownBlockType)arg2;
 - (void)registerMessageHandlersForSession:(id)arg1;
 - (id)initWithActivationHandler:(CDUnknownBlockType)arg1;

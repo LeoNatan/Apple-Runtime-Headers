@@ -12,6 +12,7 @@
 @protocol _UIClickInteractionDriving <NSObject>
 + (BOOL)prefersCancelsTouchesInView;
 + (BOOL)requiresForceCapability;
+@property(readonly, nonatomic) unsigned long long inputPrecision;
 @property(readonly, nonatomic) double maximumEffectProgress;
 @property(readonly, nonatomic) BOOL clicksUpAutomaticallyAfterTimeout;
 @property(readonly, nonatomic) BOOL isCurrentlyAcceleratedByForce;

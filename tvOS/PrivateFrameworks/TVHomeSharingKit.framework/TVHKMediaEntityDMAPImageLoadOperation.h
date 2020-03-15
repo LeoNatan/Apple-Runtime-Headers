@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     TVHKMediaServerRequestOperation *_imageRequestOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKMediaServerRequestOperation *imageRequestOperation; // @synthesize imageRequestOperation=_imageRequestOperation;
 @property(nonatomic) _Bool imageWillBeCropped; // @synthesize imageWillBeCropped=_imageWillBeCropped;
 @property(nonatomic) unsigned long long DPAPDatabaseID; // @synthesize DPAPDatabaseID=_DPAPDatabaseID;
 @property(nonatomic) unsigned long long DAAPDatabaseID; // @synthesize DAAPDatabaseID=_DAAPDatabaseID;
-- (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1;
 - (id)_mediaEntityImageLoadParams;
 - (void)cancel;

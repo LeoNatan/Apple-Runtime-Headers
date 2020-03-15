@@ -24,12 +24,15 @@
     CDStruct_db34bedf _fragmentBuffers[31];
     CDStruct_db34bedf _fragmentTextures[128];
     CDStruct_db34bedf _fragmentSamplers[16];
-    CDStruct_ba442ac5 _limits;
+    CDStruct_210bae5a _limits;
     unsigned int _encoderState;
     unsigned int _unknownStoreActions;
     struct set<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int>> *_visibilityOffsets;
     vector_9706d78e _viewports;
     vector_dc8a7a87 _scissorRects;
+    unsigned long long _amplificationMode;
+    unsigned long long _amplificationValue;
+    unsigned long long _vertexAmplificationCount;
     struct ResourceTrackingDeferredAttachments _deferredAttachments;
     struct deque<id, std::__1::allocator<id>> _updatedFences;
     BOOL _hasValidViewportsAndScissorRects;
@@ -61,6 +64,8 @@
     CDStruct_db34bedf _tessellationFactorBufferArgument;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float tessellationFactorScale; // @synthesize tessellationFactorScale=_tessellationFactorScale;
 @property(readonly, nonatomic) unsigned long long tessellationFactorBufferInstanceStride; // @synthesize tessellationFactorBufferInstanceStride=_tessellationFactorBufferInstanceStride;
 @property(readonly, nonatomic) CDStruct_db34bedf tessellationFactorBufferArgument; // @synthesize tessellationFactorBufferArgument=_tessellationFactorBufferArgument;
@@ -87,8 +92,6 @@
 @property(readonly, nonatomic) unsigned long long cullMode; // @synthesize cullMode=_cullMode;
 @property(readonly, nonatomic) unsigned long long frontFacingWinding; // @synthesize frontFacingWinding=_frontFacingWinding;
 @property(readonly, copy, nonatomic) MTLRenderPassDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)sampleCountersInBuffer:(id)arg1 atSampleIndex:(unsigned long long)arg2 withBarrier:(BOOL)arg3;
 - (void)executeCommandsInBuffer:(id)arg1 indirectBuffer:(id)arg2 indirectBufferOffset:(unsigned long long)arg3;
 - (void)executeCommandsInBuffer:(id)arg1 withRange:(struct _NSRange)arg2;
@@ -138,6 +141,8 @@
 - (void)setDepthStencilState:(id)arg1;
 - (void)setTriangleFillMode:(unsigned long long)arg1;
 - (void)setTriangleFrontFillMode:(unsigned long long)arg1 backFillMode:(unsigned long long)arg2;
+- (void)setVertexAmplificationCount:(unsigned long long)arg1 viewMappings:(const CDStruct_c0454aff *)arg2;
+- (void)setVertexAmplificationMode:(unsigned long long)arg1 value:(unsigned long long)arg2;
 - (void)setTransformFeedbackState:(unsigned long long)arg1;
 - (void)setScissorRects:(const CDStruct_33dcf794 *)arg1 count:(unsigned long long)arg2;
 - (void)setScissorRect:(CDStruct_33dcf794)arg1;

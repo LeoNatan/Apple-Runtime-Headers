@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_modifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *modifiers; // @synthesize modifiers=_modifiers;
 @property(readonly, nonatomic) NSString *pendingBraille; // @synthesize pendingBraille=_pendingBraille;
-- (void).cxx_destruct;
 - (id)initWithPendingBraille:(id)arg1 modifiers:(id)arg2;
 
 @end

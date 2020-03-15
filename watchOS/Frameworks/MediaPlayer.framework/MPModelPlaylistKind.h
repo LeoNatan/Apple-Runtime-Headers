@@ -18,10 +18,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)kindWithVariants:(unsigned int)arg1 playlistEntryKind:(id)arg2 options:(unsigned int)arg3;
 + (id)identityKind;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, nonatomic) MPModelPlaylistEntryKind *playlistEntryKind; // @synthesize playlistEntryKind=_playlistEntryKind;
 @property(readonly, nonatomic) unsigned int variants; // @synthesize variants=_variants;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

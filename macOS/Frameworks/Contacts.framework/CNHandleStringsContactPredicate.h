@@ -6,12 +6,12 @@
 
 #import <Contacts/CNPredicate.h>
 
-#import <Contacts/CNCDContactPredicate-Protocol.h>
+#import <Contacts/CNCDContainerScopedContactPredicate-Protocol.h>
 
 @class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
-@interface CNHandleStringsContactPredicate : CNPredicate <CNCDContactPredicate>
+@interface CNHandleStringsContactPredicate : CNPredicate <CNCDContainerScopedContactPredicate>
 {
     NSArray *_handleStrings;
     NSArray *_containerIdentifiers;
@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (id)phoneNumberSubpredicateWithHandles:(id)arg1;
 + (id)emailAddressSubpredicateWithHandles:(id)arg1;
 + (id)subpredicatesWithClassification:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *containerIdentifiers; // @synthesize containerIdentifiers=_containerIdentifiers;
 @property(readonly, copy, nonatomic) NSArray *handleStrings; // @synthesize handleStrings=_handleStrings;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)cn_resultTransformWithMatchInfos:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithHandleStrings:(id)arg1 containerIdentifiers:(id)arg2;
 - (id)initWithHandleStrings:(id)arg1;
 - (id)init;
+- (id)cn_coreDataExchangePredicate;
 - (id)cn_coreDataPredicate;
 
 // Remaining properties

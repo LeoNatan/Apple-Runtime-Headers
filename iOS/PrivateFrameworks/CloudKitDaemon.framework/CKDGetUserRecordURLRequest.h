@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CKRecord *_userRecord;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKRecord *userRecord; // @synthesize userRecord=_userRecord;
 @property(copy, nonatomic) CDUnknownBlockType recordFetchedBlock; // @synthesize recordFetchedBlock=_recordFetchedBlock;
-- (void).cxx_destruct;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)generateRequestOperations;
 - (id)requestOperationClasses;

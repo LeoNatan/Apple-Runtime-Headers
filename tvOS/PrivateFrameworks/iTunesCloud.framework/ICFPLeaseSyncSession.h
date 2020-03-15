@@ -14,10 +14,10 @@
 }
 
 + (id)leaseSyncSessionWithID:(id)arg1 accountID:(unsigned long long)arg2 mediaKind:(unsigned int)arg3 returningLeaseSyncRequestData:(id *)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int mediaKind; // @synthesize mediaKind=_mediaKind;
 @property(readonly, nonatomic) id leaseID; // @synthesize leaseID=_leaseID;
 @property(readonly, nonatomic) unsigned long long accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (_Bool)processRenewResponseData:(id)arg1 error:(id *)arg2;
 - (_Bool)importLeaseSyncResponseData:(id)arg1 error:(id *)arg2;
 - (_Bool)getLeaseSyncRenewRequestData:(id *)arg1 error:(id *)arg2;

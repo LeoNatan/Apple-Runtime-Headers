@@ -45,6 +45,7 @@
 }
 
 + (struct CGGradient *)LineBackgroundGradient;
+- (void).cxx_destruct;
 @property(nonatomic) long long preferredInterval; // @synthesize preferredInterval=_preferredInterval;
 @property(nonatomic) __weak id <StockChartViewDelegate> chartViewDelegate; // @synthesize chartViewDelegate=_chartViewDelegate;
 @property(nonatomic) long long selectedInterval; // @synthesize selectedInterval=_selectedInterval;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) StockChartData *chartData; // @synthesize chartData=_chartData;
 @property(retain, nonatomic) Stock *stock; // @synthesize stock=_stock;
 @property(nonatomic) __weak StocksViewController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)chartIntervalButtonRow:(id)arg1 didSelectChartInterval:(long long)arg2;
 - (void)updateChartViewForSelectedInterval;
 - (long long)maxSupportedIntervalFromDesiredInterval:(long long)arg1;

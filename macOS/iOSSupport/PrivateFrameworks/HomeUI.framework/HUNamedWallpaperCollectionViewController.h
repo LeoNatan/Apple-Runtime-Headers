@@ -18,12 +18,12 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *wallpaperImageCache; // @synthesize wallpaperImageCache=_wallpaperImageCache;
 @property(retain, nonatomic) NSArray *wallpapers; // @synthesize wallpapers=_wallpapers;
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(readonly, nonatomic) long long collectionType; // @synthesize collectionType=_collectionType;
 @property(readonly, nonatomic) __weak id <HUNamedWallpaperCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

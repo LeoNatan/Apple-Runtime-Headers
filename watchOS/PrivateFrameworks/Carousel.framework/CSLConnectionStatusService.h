@@ -21,11 +21,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCInterface *remoteObjectInterface; // @synthesize remoteObjectInterface=_remoteObjectInterface;
 @property(readonly, nonatomic) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) NSMutableSet *clientConnections; // @synthesize clientConnections=_clientConnections;
-- (void).cxx_destruct;
 - (void)simActiveDidChange:(_Bool)arg1;
 - (void)cellularSignalStrengthBarsDidChange:(long)arg1;
 - (void)registrationStatusDidChange:(int)arg1;

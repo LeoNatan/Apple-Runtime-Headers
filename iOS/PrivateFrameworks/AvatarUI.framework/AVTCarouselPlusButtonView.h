@@ -17,12 +17,12 @@
     struct CGSize _maxItemSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(nonatomic) _Bool allowHighlight; // @synthesize allowHighlight=_allowHighlight;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) struct CGSize maxItemSize; // @synthesize maxItemSize=_maxItemSize;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 environment:(id)arg2;
 

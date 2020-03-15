@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)clearError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)injectError:(id)arg1 errorCode:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)synchronousRemoteObjectProxy;

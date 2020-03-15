@@ -6,16 +6,16 @@
 
 #import <UIKit/UIControl.h>
 
+#import <NanoTimeKit/CLKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/NTKComplicationDisplayObserver-Protocol.h>
 #import <NanoTimeKit/NTKControl-Protocol.h>
-#import <NanoTimeKit/NTKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/NTKTimeTravel-Protocol.h>
 #import <NanoTimeKit/NTKTritiumBaseAnimator-Protocol.h>
 
 @class CLKComplicationTemplate, NSDate, NSString, PUICClientSideAnimation, UIColor, UIView;
 @protocol CLKMonochromeFilterProvider, NTKComplicationDisplay, NTKComplicationDisplayWrapperViewAnimationDelegate;
 
-@interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, NTKSensitiveUIStateObserver, NTKControl, NTKTimeTravel, NTKTritiumBaseAnimator>
+@interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, CLKSensitiveUIStateObserver, NTKControl, NTKTimeTravel, NTKTritiumBaseAnimator>
 {
     UIView<NTKComplicationDisplay> *_currentComplicationView;
     UIView<NTKComplicationDisplay> *_nextComplicationView;
@@ -57,6 +57,7 @@
     struct CGSize _maxSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tritium_overridePlatterColor; // @synthesize tritium_overridePlatterColor=_tritium_overridePlatterColor;
 @property(retain, nonatomic) UIColor *tritium_overrideForegroundColor; // @synthesize tritium_overrideForegroundColor=_tritium_overrideForegroundColor;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
@@ -78,7 +79,6 @@
 @property(nonatomic) _Bool supportsCurvedText; // @synthesize supportsCurvedText=_supportsCurvedText;
 @property(retain, nonatomic) NSString *complicationSlotIdentifier; // @synthesize complicationSlotIdentifier=_complicationSlotIdentifier;
 @property(readonly, nonatomic) int family; // @synthesize family=_family;
-- (void).cxx_destruct;
 - (void)_updateDefaultDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 forward:(_Bool)arg3 animationType:(unsigned int)arg4 animationDuration:(double)arg5 animationFraction:(float)arg6;
 - (void)_prepareDefaultNewDataAnimation:(id)arg1 fromEarlierView:(id)arg2 laterView:(id)arg3 forward:(_Bool)arg4 animationType:(unsigned int)arg5;
 - (_Bool)shouldCancelTouchesInScrollview;

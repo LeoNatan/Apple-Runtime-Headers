@@ -14,9 +14,9 @@
     NSData *_currentHistoryToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *currentHistoryToken; // @synthesize currentHistoryToken=_currentHistoryToken;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithValue:(id)arg1 currentHistoryToken:(id)arg2;
 

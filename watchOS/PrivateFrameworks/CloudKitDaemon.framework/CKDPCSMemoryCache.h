@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 
 + (void)registerEvictionTimer;
 + (id)globalEvictQueue;
+- (void).cxx_destruct;
 @property unsigned int memoryCacheEvictCount; // @synthesize memoryCacheEvictCount=_memoryCacheEvictCount;
 @property unsigned int memoryCacheUpdateCount; // @synthesize memoryCacheUpdateCount=_memoryCacheUpdateCount;
 @property unsigned int memoryCacheDeleteCount; // @synthesize memoryCacheDeleteCount=_memoryCacheDeleteCount;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *cacheEntries; // @synthesize cacheEntries=_cacheEntries;
 @property(nonatomic) double minAge; // @synthesize minAge=_minAge;
 @property(nonatomic) unsigned int maxEntries; // @synthesize maxEntries=_maxEntries;
-- (void).cxx_destruct;
 - (id)CKStatusReportArray;
 - (_Bool)hasStatusToReport;
 - (unsigned int)_cacheCount;

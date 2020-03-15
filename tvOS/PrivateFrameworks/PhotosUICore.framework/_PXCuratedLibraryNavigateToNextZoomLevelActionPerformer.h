@@ -14,9 +14,9 @@
     PXGSpriteReference *_hitSpriteReference;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXGSpriteReference *hitSpriteReference; // @synthesize hitSpriteReference=_hitSpriteReference;
 @property(readonly, nonatomic) PXGLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)performUserInteractionTask;
 - (id)initWithActionType:(id)arg1 viewModel:(id)arg2 layout:(id)arg3 hitSpriteReference:(id)arg4;
 - (id)initWithActionType:(id)arg1 viewModel:(id)arg2;

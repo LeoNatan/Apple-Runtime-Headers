@@ -17,9 +17,9 @@
 }
 
 + (id)sceneUpdateForScene:(id)arg1 contextID:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int contextID; // @synthesize contextID=_contextID;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initCommon;

@@ -9,12 +9,13 @@
 #import <Email/EFLoggable-Protocol.h>
 #import <Email/EFSignpostable-Protocol.h>
 
-@class EFFuture, EFPromise, EFQuery, NSMutableOrderedSet, NSOrderedSet, NSString;
+@class EFFuture, EFPromise, EFQuery, NSMutableOrderedSet, NSMutableSet, NSOrderedSet, NSString;
 @protocol EFCancelable, EFScheduler, EMCollectionChangeObserver;
 
 @interface EMCollection : EMRepositoryObject <EFLoggable, EFSignpostable>
 {
     NSMutableOrderedSet *_itemIDs;
+    NSMutableSet *_itemIDsAnticipatingDelete;
     NSOrderedSet *_recoveringItemIDs;
     EFPromise *_allItemIDsPromise;
     struct os_unfair_lock_s _itemIDsLock;
@@ -22,19 +23,17 @@
     EFQuery *_query;
     id <EFCancelable> _cancelationToken;
     id <EMCollectionChangeObserver> _changeObserver;
-    id <EFScheduler> _queryScheduler;
     id <EFScheduler> _observerScheduler;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <EFScheduler> observerScheduler; // @synthesize observerScheduler=_observerScheduler;
-@property(readonly, nonatomic) id <EFScheduler> queryScheduler; // @synthesize queryScheduler=_queryScheduler;
 @property(nonatomic) __weak id <EMCollectionChangeObserver> changeObserver; // @synthesize changeObserver=_changeObserver;
 @property(retain, nonatomic) id <EFCancelable> cancelationToken; // @synthesize cancelationToken=_cancelationToken;
 @property(readonly, nonatomic) EFQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)queryReplacedObjectID:(id)arg1 withNewObjectID:(id)arg2;
 - (BOOL)observerContainsObjectID:(id)arg1;
 - (void)_filterAndTransformObjectIDs:(id)arg1 before:(BOOL)arg2 existingObjectID:(id)arg3 batchBlock:(CDUnknownBlockType)arg4;
@@ -42,6 +41,7 @@
 - (void)queryDidFinishRemoteSearch;
 - (void)queryDidFinishInitialLoad;
 - (void)queryMatchedDeletedObjectIDs:(id)arg1;
+- (void)queryAnticipatesDeletedObjectIDs:(id)arg1;
 - (void)queryMatchedChangesByObjectIDs:(id)arg1;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 after:(id)arg2;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 before:(id)arg2;
@@ -60,9 +60,13 @@
 - (void)notifyChangeObserverAboutChangesByItemIDs:(id)arg1;
 - (void)notifyChangeObserverAboutAddedItemIDs:(id)arg1 after:(id)arg2 extraInfo:(id)arg3;
 - (void)notifyChangeObserverAboutAddedItemIDs:(id)arg1 before:(id)arg2 extraInfo:(id)arg3;
+- (id)_iterateItemIDsStartingAtItemID:(id)arg1 inReverse:(BOOL)arg2 includeStartingItem:(BOOL)arg3 withBlock:(CDUnknownBlockType)arg4;
 - (id)iterateItemIDsStartingAtItemID:(id)arg1 inReverse:(BOOL)arg2 withBlock:(CDUnknownBlockType)arg3;
+- (id)_firstExistingItemIDForItemID:(id)arg1 inReverse:(BOOL)arg2;
+- (id)firstExistingItemIDBeforeItemID:(id)arg1;
+- (id)firstExistingItemIDAfterItemID:(id)arg1;
 - (BOOL)containsItemID:(id)arg1 includeRecovery:(BOOL)arg2;
-- (void)removeItemIDs:(id)arg1;
+- (id)removeItemIDs:(id)arg1;
 - (void)insertItemIDs:(id)arg1 after:(id)arg2;
 - (void)insertItemIDs:(id)arg1 before:(id)arg2;
 - (BOOL)objectIDBelongsToCollection:(id)arg1;
@@ -70,6 +74,7 @@
 - (id)objectIDForItemID:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) id <EFScheduler> queryScheduler;
 - (void)dealloc;
 - (void)_commonInitWithQuery:(id)arg1;
 - (id)initWithObjectID:(id)arg1 query:(id)arg2;

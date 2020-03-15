@@ -19,11 +19,11 @@
     unsigned long long _level;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long level; // @synthesize level=_level;
 @property(nonatomic) _Bool shouldDrawStatusBarInsideSceneView; // @synthesize shouldDrawStatusBarInsideSceneView=_shouldDrawStatusBarInsideSceneView;
 @property(copy, nonatomic) SBAppStatusBarSettings *settings; // @synthesize settings=_settings;
 @property(nonatomic) long long nubViewHidden; // @synthesize nubViewHidden=_nubViewHidden;
-- (void).cxx_destruct;
 - (void)_notifyObserversDidInvalidate;
 - (void)_notifyObserversDidUpdate;
 - (void)removeObserver:(id)arg1;

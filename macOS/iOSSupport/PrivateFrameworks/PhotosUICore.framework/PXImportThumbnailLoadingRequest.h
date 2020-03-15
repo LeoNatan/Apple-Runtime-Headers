@@ -17,12 +17,12 @@
     PHImportAssetDataRequest *_assetDataRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain) PHImportAssetDataRequest *assetDataRequest; // @synthesize assetDataRequest=_assetDataRequest;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, nonatomic) unsigned long long requestSize; // @synthesize requestSize=_requestSize;
 @property(readonly, nonatomic) long long requestID; // @synthesize requestID=_requestID;
 @property(readonly, nonatomic) __weak PXImportItemViewModel *importItem; // @synthesize importItem=_importItem;
-- (void).cxx_destruct;
 - (id)initWithImportItem:(id)arg1 requestID:(long long)arg2 requestSize:(unsigned long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
 
 @end

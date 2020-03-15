@@ -32,8 +32,8 @@
 
 + (id)sharedInstanceUnitTest;
 + (id)sharedInstance;
-@property(nonatomic) __weak id <CSLBulletinUIBuilderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLBulletinUIBuilderDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)mediumLookItemsFromNotificationCenterItem:(id)arg1;
 - (void)_addItemsToMediumLook:(id)arg1 fromThreadGroups:(id)arg2 ncIcon:(id)arg3;
 - (void)_addItemsToMediumLook:(id)arg1 fromBulletins:(id)arg2 ncIcon:(id)arg3;

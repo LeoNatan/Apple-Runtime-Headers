@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)infoWithBookmark:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(readonly, retain, nonatomic) WebBookmarkList *parent; // @synthesize parent=_parent;
 @property(readonly, retain, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
-- (void).cxx_destruct;
 - (id)initWithBookmark:(id)arg1;
 - (id)init;
 

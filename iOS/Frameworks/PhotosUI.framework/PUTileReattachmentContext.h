@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMapTable *__tileControllerVelocities;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *_tileControllerVelocities; // @synthesize _tileControllerVelocities=__tileControllerVelocities;
 @property(nonatomic, setter=setTransitioningOverOneUp:) _Bool isTransitioningOverOneUp; // @synthesize isTransitioningOverOneUp=_isTransitioningOverOneUp;
 @property(nonatomic, setter=setZoomingIn:) _Bool isZoomingIn; // @synthesize isZoomingIn=_isZoomingIn;
-- (void).cxx_destruct;
 - (void)setVelocity:(struct PUDisplayVelocity)arg1 forTileController:(id)arg2;
 - (struct PUDisplayVelocity)velocityForTileController:(id)arg1;
 

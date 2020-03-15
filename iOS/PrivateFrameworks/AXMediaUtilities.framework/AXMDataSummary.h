@@ -35,6 +35,7 @@
     NSNumberFormatter *_numberFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
 @property(nonatomic) __weak NSObject<AXMDataSummaryCategoryNameProvider> *categoryNameDelegate; // @synthesize categoryNameDelegate=_categoryNameDelegate;
 @property(readonly, nonatomic) NSArray *outliers; // @synthesize outliers=_outliers;
@@ -57,7 +58,6 @@
 @property(readonly, nonatomic) NSArray *yValues; // @synthesize yValues=_yValues;
 @property(readonly, nonatomic) NSArray *xValues; // @synthesize xValues=_xValues;
 @property(readonly, nonatomic) NSArray *axisTitles; // @synthesize axisTitles=_axisTitles;
-- (void).cxx_destruct;
 - (id)descriptionForXValue:(double)arg1;
 - (double)positionForYAxisValue:(double)arg1;
 - (double)positionForXAxisValue:(double)arg1;

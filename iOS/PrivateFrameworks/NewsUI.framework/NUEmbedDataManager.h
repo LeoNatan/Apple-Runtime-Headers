@@ -18,9 +18,9 @@
     SXJSONDictionary *_embedConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXJSONDictionary *embedConfiguration; // @synthesize embedConfiguration=_embedConfiguration;
 @property(readonly, nonatomic) id <NUEmbedConfigurationLoader> embedConfigurationLoader; // @synthesize embedConfigurationLoader=_embedConfigurationLoader;
-- (void).cxx_destruct;
 - (id)embedForType:(id)arg1;
 - (void)loadEmbedDataWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithEmbedConfigurationLoader:(id)arg1;

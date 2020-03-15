@@ -16,11 +16,11 @@
     NSMutableDictionary *_instrumentToUnavailablePaymentApplicationsMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *instrumentToUnavailablePaymentApplicationsMap; // @synthesize instrumentToUnavailablePaymentApplicationsMap=_instrumentToUnavailablePaymentApplicationsMap;
 @property(retain, nonatomic) NSMutableDictionary *instrumentToAcceptedPaymentApplicationsMap; // @synthesize instrumentToAcceptedPaymentApplicationsMap=_instrumentToAcceptedPaymentApplicationsMap;
 @property(retain, nonatomic) NSMutableDictionary *instrumentToCardEntryMap; // @synthesize instrumentToCardEntryMap=_instrumentToCardEntryMap;
 @property(retain, nonatomic) PKPaymentPreferenceContact *billingPreference; // @synthesize billingPreference=_billingPreference;
-- (void).cxx_destruct;
 - (BOOL)_shouldDisplayPaymentApplicationWithAcceptedApplicationsCount:(long long)arg1 unavailableApplicationsCount:(long long)arg2;
 - (id)_unavailablePaymentApplicationsForRemoteInstrument:(id)arg1;
 - (id)_acceptedPaymentApplicationsForRemoteInstrument:(id)arg1;

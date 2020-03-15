@@ -16,11 +16,11 @@
 }
 
 + (id)sharedTypingAssertion;
-@property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 - (id)__restingPathIndices;
-- (void)touch;
-- (void)touchWithDuration:(double)arg1;
+- (void)touchWithReason:(long long)arg1;
+- (void)touchWithDuration:(double)arg1 reason:(long long)arg2;
 - (void)timerFired:(id)arg1;
 - (void)_sbsSetTypingActive:(BOOL)arg1;
 - (void)restTouchEndWithPathIndex:(long long)arg1;

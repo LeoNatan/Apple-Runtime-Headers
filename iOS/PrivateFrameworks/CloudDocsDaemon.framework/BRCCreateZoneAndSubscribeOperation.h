@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     CKRecordZone *_createdZone;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKRecordZone *createdZone; // @synthesize createdZone=_createdZone;
 @property(copy, nonatomic) CDUnknownBlockType createZoneAndSubscribeCompletionBlock; // @synthesize createZoneAndSubscribeCompletionBlock=_createZoneAndSubscribeCompletionBlock;
 @property(nonatomic) _Bool subscriptionOnly; // @synthesize subscriptionOnly=_subscriptionOnly;
 @property(nonatomic) _Bool optimisticSubscribe; // @synthesize optimisticSubscribe=_optimisticSubscribe;
-- (void).cxx_destruct;
 - (void)_registerSubscriptionForZoneID:(id)arg1 isOptimisticSubscribe:(_Bool)arg2;
 - (void)_createZoneWithZoneID:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

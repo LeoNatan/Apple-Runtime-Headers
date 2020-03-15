@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) C2MPGenericEvent *genericEvent; // @synthesize genericEvent=_genericEvent;
 @property(retain, nonatomic) C2MPNetworkEvent *networkEvent; // @synthesize networkEvent=_networkEvent;
 @property(retain, nonatomic) NSString *reportTransportSourceApplicationSecondaryIdentifier; // @synthesize reportTransportSourceApplicationSecondaryIdentifier=_reportTransportSourceApplicationSecondaryIdentifier;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) C2MPServerInfo *serverInfo; // @synthesize serverInfo=_serverInfo;
 @property(retain, nonatomic) C2MPCloudKitInfo *cloudkitInfo; // @synthesize cloudkitInfo=_cloudkitInfo;
 @property(retain, nonatomic) C2MPDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

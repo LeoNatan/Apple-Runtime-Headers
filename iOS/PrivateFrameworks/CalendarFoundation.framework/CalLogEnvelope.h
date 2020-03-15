@@ -20,6 +20,7 @@
     NSString *_function;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *function; // @synthesize function=_function;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned int machPort; // @synthesize machPort=_machPort;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(nonatomic) int level; // @synthesize level=_level;
 @property(retain, nonatomic) NSString *logName; // @synthesize logName=_logName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLogName:(id)arg1 level:(int)arg2 message:(id)arg3;
 - (id)init;

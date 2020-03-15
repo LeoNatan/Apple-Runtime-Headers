@@ -20,10 +20,10 @@
 + (double)continuousCornerRadiusForSize:(struct CGSize)arg1;
 + (id)circleShape;
 + (id)continuousRoundedRectShape;
+- (void).cxx_destruct;
 @property double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain) ISColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(retain) ISColor *fillColor; // @synthesize fillColor=_fillColor;
-- (void).cxx_destruct;
 - (id)imageForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (id)_init;
 

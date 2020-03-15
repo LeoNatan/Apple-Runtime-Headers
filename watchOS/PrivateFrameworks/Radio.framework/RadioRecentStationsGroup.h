@@ -18,10 +18,10 @@
     NSArray *_stations;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *stations; // @synthesize stations=_stations;
 @property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (id)_copyWithRecentStationsGroupClass:(Class)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

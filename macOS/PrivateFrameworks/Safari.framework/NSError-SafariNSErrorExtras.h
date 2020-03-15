@@ -10,6 +10,7 @@
 + (id)safari_webProcessCrashedErrorWithSuspectedURL:(id)arg1;
 + (id)safari_canceledErrorWithURL:(id)arg1;
 + (id)safari_errorWithCode:(long long)arg1;
+- (BOOL)safari_isPlugInHandledLoadError;
 - (BOOL)safari_isDiffieHellmanError;
 - (BOOL)safari_isInPosixErrorDomain;
 - (BOOL)safari_isInWebKitErrorDomain;

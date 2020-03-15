@@ -39,6 +39,7 @@
     struct CGRect _replacementRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSViewController *customControlsViewController; // @synthesize customControlsViewController=_customControlsViewController;
 @property(nonatomic) struct CGRect replacementRect; // @synthesize replacementRect=_replacementRect;
 @property(nonatomic) __weak NSWindow *replacementWindow; // @synthesize replacementWindow=_replacementWindow;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) __weak NSView *replacementView; // @synthesize replacementView=_replacementView;
 @property(nonatomic) __weak id <PIPViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dismissViewControllerWithFlyback:(id)arg1;
 - (void)_dismissViewControllerWithFlyback;
 - (unsigned int)copyActiveFencePort;

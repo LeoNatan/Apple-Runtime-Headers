@@ -28,6 +28,7 @@
 + (id)componentsForURL:(id)arg1;
 + (void)locationForURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)locationForURLComponents:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *platform; // @synthesize platform=_platform;
 @property(retain) NSLocale *locale; // @synthesize locale=_locale;
 @property unsigned long long cityIndex; // @synthesize cityIndex=_cityIndex;
@@ -36,7 +37,6 @@
 @property(copy) NSString *locationName; // @synthesize locationName=_locationName;
 @property(copy) CLLocation *location; // @synthesize location=_location;
 @property unsigned long long destination; // @synthesize destination=_destination;
-- (void).cxx_destruct;
 - (_Bool)_canBuildURLWithProvidedComponents;
 @property(readonly, copy) NSURL *URL;
 - (unsigned long long)hash;

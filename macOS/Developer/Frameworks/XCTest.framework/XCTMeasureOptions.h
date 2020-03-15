@@ -6,28 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary;
+@class NSDictionary;
 
 @interface XCTMeasureOptions : NSObject
 {
-    NSMutableDictionary *_instrumentOptions;
+    BOOL _enableParallelizedSampling;
+    BOOL _scheduleKickOffOnNewThread;
+    BOOL _allowContinuousSampling;
     BOOL _discardFirstIteration;
-    unsigned long long _instrumentAutomatic;
-    unsigned long long _metricPerferredSampleMode;
+    unsigned long long _invocationOptions;
+    unsigned long long _iterationCount;
 }
 
 + (id)defaultOptions;
 @property(nonatomic) BOOL discardFirstIteration; // @synthesize discardFirstIteration=_discardFirstIteration;
-@property(readonly, nonatomic) unsigned long long metricPerferredSampleMode; // @synthesize metricPerferredSampleMode=_metricPerferredSampleMode;
-@property(readonly, nonatomic) unsigned long long instrumentAutomatic; // @synthesize instrumentAutomatic=_instrumentAutomatic;
-- (void).cxx_destruct;
-- (id)init;
-- (id)initWithInstrumentOptionsDictionary:(id)arg1;
-@property(nonatomic) unsigned long long iterationCount;
-@property(nonatomic) unsigned long long invocationOptions;
-@property(nonatomic) BOOL allowContinuousSampling;
+@property(nonatomic) BOOL allowContinuousSampling; // @synthesize allowContinuousSampling=_allowContinuousSampling;
+@property(nonatomic) unsigned long long iterationCount; // @synthesize iterationCount=_iterationCount;
+@property(nonatomic) unsigned long long invocationOptions; // @synthesize invocationOptions=_invocationOptions;
+@property(readonly, nonatomic) unsigned long long instrumentAutomatic;
 @property(nonatomic) BOOL allowConcurrentIterations;
 @property(readonly, nonatomic) NSDictionary *instrumentOptions;
+- (id)initWithInstrumentOptionsDictionary:(id)arg1;
+- (id)init;
 
 @end
 

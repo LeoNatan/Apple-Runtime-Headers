@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_defaultAttributes;
-@property(readonly, nonatomic) _Bool _fontIsDefaultForIdiom; // @synthesize _fontIsDefaultForIdiom;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool _fontIsDefaultForIdiom; // @synthesize _fontIsDefaultForIdiom;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)tintColorDidChange;
 - (id)_defaultAttributes;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIColor *_highlightedTitleColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *highlightedTitleColor; // @synthesize highlightedTitleColor=_highlightedTitleColor;
 @property(retain, nonatomic) UIColor *normalTitleColor; // @synthesize normalTitleColor=_normalTitleColor;
 @property(retain, nonatomic) UIColor *highlightedBackgroundColor; // @synthesize highlightedBackgroundColor=_highlightedBackgroundColor;
 @property(retain, nonatomic) UIColor *normalBackgroundColor; // @synthesize normalBackgroundColor=_normalBackgroundColor;
-- (void).cxx_destruct;
 - (void)_updateBackgroundAndTitleColor;
 - (id)_titleColorForState:(unsigned long long)arg1;
 - (id)_currentTitleColor;

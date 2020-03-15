@@ -18,12 +18,13 @@
     int _token;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int token; // @synthesize token=_token;
 - (id)intentDescription;
-- (void).cxx_destruct;
 - (id)enumeration:(id)arg1 localizedLabelForPossibleState:(id)arg2;
 - (id)possibleStatesForEnumeration:(id)arg1;
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
+- (id)selectedHandlerBundleIdentifier;
 - (id)slots;
 - (id)copyWithSerializedParameters:(id)arg1;
 - (id)appSection;

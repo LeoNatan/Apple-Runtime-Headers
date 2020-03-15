@@ -26,10 +26,10 @@
 + (void)_recordExtractionOutcome:(struct SGMContactDetailExtractionOutcome_)arg1 detailType:(struct SGMContactDetailType_)arg2 fromEntity:(id)arg3 foundInSignature:(_Bool)arg4 detailType:(unsigned long long)arg5 detailValue:(id)arg6 modelVersion:(id)arg7 isUnlikelyPhone:(_Bool)arg8;
 + (void)_recordExtractionEventFromSource:(struct SGMDocumentType_)arg1 foundInSignature:(_Bool)arg2 detailType:(struct SGMContactDetailType_)arg3 outcome:(struct SGMContactDetailExtractionOutcome_)arg4 foundInCNContact:(struct SGMContactDetailOwner_)arg5 modelVersion:(id)arg6 isUnlikelyPhone:(_Bool)arg7 sigSource:(struct SGMContactDetailExtractionSignatureSource_)arg8;
 + (id)instance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PETEventTracker2 *pet2Tracker; // @synthesize pet2Tracker=_pet2Tracker;
 @property(retain, nonatomic) SGMContactDetailSent *contactDetailSent; // @synthesize contactDetailSent=_contactDetailSent;
 @property(retain, nonatomic) SGMContactDetailExtraction *contactDetailExtraction; // @synthesize contactDetailExtraction=_contactDetailExtraction;
-- (void).cxx_destruct;
 - (id)initWithTracker:(id)arg1;
 
 @end

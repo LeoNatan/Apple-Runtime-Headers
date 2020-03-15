@@ -21,12 +21,12 @@
 
 + (id)createWithDeviceMO:(id)arg1;
 + (id)createWithManagedObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(readonly, nonatomic) NSString *deviceClass; // @synthesize deviceClass=_deviceClass;
 @property(readonly, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithIdentifier:(id)arg1 deviceName:(id)arg2 deviceClass:(id)arg3 deviceModel:(id)arg4 creationDate:(id)arg5;
 - (id)init;

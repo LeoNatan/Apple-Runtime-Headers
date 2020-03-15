@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) SKUIGiftConfiguration *giftConfiguration; // @synthesize giftConfiguration=_giftConfiguration;
-- (void).cxx_destruct;
 - (void)_finishImageLoadWithImage:(id)arg1 error:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)loadItemArtworkWithArtworkContext:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) SKUIGift *gift; // @synthesize gift=_gift;

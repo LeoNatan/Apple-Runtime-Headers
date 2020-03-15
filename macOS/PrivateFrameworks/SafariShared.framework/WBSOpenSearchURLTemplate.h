@@ -19,8 +19,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *templateString; // @synthesize templateString=_templateString;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *templateString; // @synthesize templateString=_templateString;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

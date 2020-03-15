@@ -33,6 +33,7 @@
     NSMutableDictionary *_rowsForObjects;
 }
 
+- (void).cxx_destruct;
 @property BOOL summaryRowIsSelectable; // @synthesize summaryRowIsSelectable=_summaryRowIsSelectable;
 @property(retain) NSMutableDictionary *rowsForObjects; // @synthesize rowsForObjects=_rowsForObjects;
 @property(copy) CDUnknownBlockType groupFilter; // @synthesize groupFilter=_groupFilter;
@@ -51,7 +52,6 @@
 @property(retain) NSArray *groupSortDescriptors; // @synthesize groupSortDescriptors=_groupSortDescriptors;
 @property(retain) NSArray *itemSortDescriptors; // @synthesize itemSortDescriptors=_itemSortDescriptors;
 @property int organizationType; // @synthesize organizationType=_organizationType;
-- (void).cxx_destruct;
 - (id)selectedItemsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 selectionIndexesForProposedSelection:(id)arg2;
 - (id)indexesWithoutGroupRowsForProposedIndexes:(id)arg1;

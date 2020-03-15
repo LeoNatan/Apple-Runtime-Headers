@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain) NSDictionary *pluginsByBundleIentifier; // @synthesize pluginsByBundleIentifier=_pluginsByBundleIentifier;
-- (void).cxx_destruct;
 - (void)endpointForServiceIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)startPlugins;

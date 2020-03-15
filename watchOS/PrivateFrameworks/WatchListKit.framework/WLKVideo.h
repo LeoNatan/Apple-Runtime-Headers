@@ -19,13 +19,13 @@
 }
 
 + (id)videosWithDictionaries:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKVideoAsset *asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) WLKArtworkVariantListing *images; // @synthesize images=_images;
 @property(readonly, nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(readonly, copy, nonatomic) NSString *ID; // @synthesize ID=_ID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

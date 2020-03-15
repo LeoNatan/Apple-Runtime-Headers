@@ -29,13 +29,13 @@
 + (BOOL)shouldWhiteListOrganizerEmailFromJunkChecks:(id)arg1 inReputationStore:(id)arg2;
 + (id)reputationForHandle:(id)arg1 inStore:(id)arg2;
 + (id)defaultProvider;
+- (void).cxx_destruct;
 @property(retain) NSArray *unitTestEmails; // @synthesize unitTestEmails=_unitTestEmails;
 @property(retain) NSMutableSet *delegates; // @synthesize delegates=_delegates;
 @property(retain) NSString *testMeContactIdentifer; // @synthesize testMeContactIdentifer=_testMeContactIdentifer;
 @property(retain) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property(retain) CNReputationStore *reputationStore; // @synthesize reputationStore=_reputationStore;
 @property(retain) CNContactStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (BOOL)shouldWhiteListOrganizerPhoneNumberFromJunkChecks:(id)arg1;
 - (BOOL)shouldWhiteListOrganizerEmailFromJunkChecks:(id)arg1;
 - (BOOL)urlMatchesOneOfMyEmails:(id)arg1;

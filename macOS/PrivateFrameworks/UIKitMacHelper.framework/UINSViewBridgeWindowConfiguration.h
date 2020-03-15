@@ -14,9 +14,9 @@
     struct CGRect _contentRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
 @property(nonatomic) struct CGRect contentRect; // @synthesize contentRect=_contentRect;
-- (void).cxx_destruct;
 - (id)windowController;
 
 @end

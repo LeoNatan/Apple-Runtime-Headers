@@ -24,9 +24,9 @@
 + (id)namedEmailAddressWithCSPerson:(id)arg1;
 + (id)namedEmailAddressWithFieldValue:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
-- (void).cxx_destruct;
 - (id)description;
 - (id)asCSPerson;
 - (unsigned long long)hash;

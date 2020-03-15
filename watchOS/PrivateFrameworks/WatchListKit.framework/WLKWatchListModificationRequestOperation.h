@@ -15,10 +15,10 @@
     WLKWatchListModificationResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKWatchListModificationResponse *response; // @synthesize response=_response;
 @property(readonly, copy, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
 @property(readonly, nonatomic) unsigned int action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)processResponse;
 - (id)initWithAction:(unsigned int)arg1 channelID:(id)arg2 externalID:(id)arg3 caller:(id)arg4;
 - (id)initWithAction:(unsigned int)arg1 identifier:(id)arg2 caller:(id)arg3;

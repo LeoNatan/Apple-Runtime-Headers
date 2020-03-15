@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _condition;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType condition; // @synthesize condition=_condition;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType condition; // @synthesize condition=_condition;
 - (id)characterSet;
 - (unsigned long long)_minimumLength;
 - (id)_label;

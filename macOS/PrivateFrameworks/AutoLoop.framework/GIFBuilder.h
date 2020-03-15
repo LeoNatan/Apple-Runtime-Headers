@@ -17,11 +17,11 @@
 }
 
 + (id)builderWithContext:(id)arg1 forURL:(id)arg2 maxRes:(unsigned long long)arg3 fps:(float)arg4;
+- (void).cxx_destruct;
 @property double maxRes; // @synthesize maxRes=_maxRes;
 @property struct CGImageDestination *imgDest; // @synthesize imgDest=_imgDest;
 @property(retain) NSDictionary *frameProperties; // @synthesize frameProperties=_frameProperties;
 @property(retain) CIContext *ciCtx; // @synthesize ciCtx=_ciCtx;
-- (void).cxx_destruct;
 - (BOOL)finish;
 - (BOOL)addImage:(id)arg1;
 - (void)dealloc;

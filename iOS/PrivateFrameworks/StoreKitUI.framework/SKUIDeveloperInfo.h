@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSString *_postalCode;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
 @property(copy, nonatomic) NSString *tradeRepresentativeName; // @synthesize tradeRepresentativeName=_tradeRepresentativeName;
 @property(copy, nonatomic) NSString *tradeName; // @synthesize tradeName=_tradeName;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *businessRegistrationIdentifier; // @synthesize businessRegistrationIdentifier=_businessRegistrationIdentifier;
 @property(copy, nonatomic) NSString *administrativeArea; // @synthesize administrativeArea=_administrativeArea;
 @property(copy, nonatomic) NSArray *addressLines; // @synthesize addressLines=_addressLines;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)formattedAddressString;
 - (id)initWithDeveloperDictionary:(id)arg1;

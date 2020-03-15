@@ -20,6 +20,7 @@
     AMSDialogResult *_result;
 }
 
+- (void).cxx_destruct;
 @property(readonly) AMSDialogResult *result; // @synthesize result=_result;
 @property(readonly) AMSDialogRequest *request; // @synthesize request=_request;
 @property(copy) NSString *proxyBundleId; // @synthesize proxyBundleId=_proxyBundleId;
@@ -27,7 +28,6 @@
 @property(readonly, copy) NSError *error; // @synthesize error=_error;
 @property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(copy) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)_handleAskPermissionRequestWithURL:(id)arg1 account:(id)arg2;
 - (id)perform;
 - (id)initWithRequest:(id)arg1 result:(id)arg2 error:(id)arg3 bag:(id)arg4;

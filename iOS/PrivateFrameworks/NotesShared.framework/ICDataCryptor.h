@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *initializationVectorDictionary; // @synthesize initializationVectorDictionary=_initializationVectorDictionary;
 @property(retain, nonatomic) NSString *cloudSyncingObjectIdentifier; // @synthesize cloudSyncingObjectIdentifier=_cloudSyncingObjectIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *tagDictionary; // @synthesize tagDictionary=_tagDictionary;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)decryptEncryptedData:(id)arg1 identifier:(id)arg2;

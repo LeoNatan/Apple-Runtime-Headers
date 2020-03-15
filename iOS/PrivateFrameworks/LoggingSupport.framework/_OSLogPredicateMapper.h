@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_stack;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *validationErrors; // @synthesize validationErrors=_validationErrors;
 @property(retain, nonatomic) NSMutableArray *stack; // @synthesize stack=_stack;
 @property(readonly, nonatomic) NSPredicate *mappedPredicate; // @synthesize mappedPredicate=_predicate;
 @property(readonly, nonatomic) unsigned long long flags; // @synthesize flags=_flags;
-- (void).cxx_destruct;
 - (void)visitPredicateExpression:(id)arg1;
 - (void)visitPredicateOperator:(id)arg1;
 - (void)validateExpression:(id)arg1;

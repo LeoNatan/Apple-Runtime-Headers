@@ -26,6 +26,7 @@
 }
 
 + (id)serviceManager;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *managerSemaphore; // @synthesize managerSemaphore=_managerSemaphore;
 @property(retain) NSObject<OS_dispatch_queue> *serviceIdentifierQueue; // @synthesize serviceIdentifierQueue=_serviceIdentifierQueue;
 @property(retain) NSMutableDictionary *streamHandlers; // @synthesize streamHandlers=_streamHandlers;
@@ -35,7 +36,6 @@
 @property(copy) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(retain) id <SFCompanionServiceManagerProtocol> managerProxy; // @synthesize managerProxy=_managerProxy;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)streamsFromFileHandle:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)disableStreamSupportForIdentifier:(id)arg1;
 - (void)supportStreamsWithIdentifier:(id)arg1 withStreamHandler:(CDUnknownBlockType)arg2;

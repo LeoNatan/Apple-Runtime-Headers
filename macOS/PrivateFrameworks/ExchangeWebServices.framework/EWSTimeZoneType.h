@@ -28,12 +28,12 @@
 + (id)StandardTimeZoneNameForWindowsTimeZoneName:(id)arg1;
 + (id)definition;
 + (id)log;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *TimeZoneName; // @synthesize TimeZoneName=_TimeZoneName;
 @property(retain, nonatomic) EWSTimeChangeType *Daylight; // @synthesize Daylight=_Daylight;
 @property(retain, nonatomic) EWSTimeChangeType *Standard; // @synthesize Standard=_Standard;
 @property(nonatomic) BOOL IsBaseOffsetSpecified; // @synthesize IsBaseOffsetSpecified=_IsBaseOffsetSpecified;
 @property(nonatomic) double BaseOffset; // @synthesize BaseOffset=_BaseOffset;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *StandardTimeZoneName;
 - (id)initWithStandardTimeZoneName:(id)arg1;
 @property(readonly, copy) NSString *description;

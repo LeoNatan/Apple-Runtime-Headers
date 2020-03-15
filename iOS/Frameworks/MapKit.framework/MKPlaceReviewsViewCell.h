@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(copy, nonatomic) NSString *author; // @synthesize author=_author;
 @property(nonatomic) unsigned long long rating; // @synthesize rating=_rating;
 @property(retain, nonatomic) MKPlaceReviewAvatarGenerator *avatarGenerator; // @synthesize avatarGenerator=_avatarGenerator;
 @property(nonatomic) _Bool isLastReview; // @synthesize isLastReview=_isLastReview;
-- (void).cxx_destruct;
 - (unsigned long long)maxCharacters;
 - (id)detailLabelText;
 - (void)setReviewText:(id)arg1;

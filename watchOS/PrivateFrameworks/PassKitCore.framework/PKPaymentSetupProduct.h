@@ -45,6 +45,7 @@
 + (id)_inAppProvisioningURLWthScheme:(id)arg1 path:(id)arg2;
 + (id)_displayNameForCardType:(id)arg1;
 + (id)productsFromBrowseableBankApps:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSMutableDictionary *requestedProvisioningMethods; // @synthesize requestedProvisioningMethods=_requestedProvisioningMethods;
 @property(retain, nonatomic) NSDictionary *minimumOSVersion; // @synthesize minimumOSVersion=_minimumOSVersion;
@@ -71,7 +72,6 @@
 @property(copy, nonatomic) NSArray *requiredFields; // @synthesize requiredFields=_requiredFields;
 @property(copy, nonatomic) NSSet *regions; // @synthesize regions=_regions;
 @property(readonly, copy, nonatomic) PKPaymentSetupProductConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)partnerIdentifier;
 - (id)productIdentifier;
 - (_Bool)supportsDevice:(id)arg1;

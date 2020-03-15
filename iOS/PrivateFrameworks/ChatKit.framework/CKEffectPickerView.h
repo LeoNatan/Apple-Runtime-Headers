@@ -63,6 +63,7 @@
 }
 
 + (_Bool)shouldUseLargeScreenDimension;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *accessibilitySendBackgroundView; // @synthesize accessibilitySendBackgroundView=_accessibilitySendBackgroundView;
 @property(retain, nonatomic) UIView *accessibilityCloseBackgroundView; // @synthesize accessibilityCloseBackgroundView=_accessibilityCloseBackgroundView;
 @property(retain, nonatomic) UIView *accessibilityBackdropView; // @synthesize accessibilityBackdropView=_accessibilityBackdropView;
@@ -109,7 +110,6 @@
 @property(retain, nonatomic) UIView *peekContainer; // @synthesize peekContainer=_peekContainer;
 @property(retain, nonatomic) UIView *hintContainer; // @synthesize hintContainer=_hintContainer;
 @property(nonatomic) id <CKEffectPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_accessibilityContrastStatusDidChange;
 - (id)_defaultSendAnimationContextForAnimationPreview;
 - (void)_applicationWillEnterForeground;

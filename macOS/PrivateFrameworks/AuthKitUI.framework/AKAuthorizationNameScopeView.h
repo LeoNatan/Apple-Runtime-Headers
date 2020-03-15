@@ -15,10 +15,10 @@
     NSTextField *_valueLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property BOOL mouseDownInValueLabel; // @synthesize mouseDownInValueLabel=_mouseDownInValueLabel;
 @property __weak AKAuthorizationNameScopeViewController *internalViewController; // @synthesize internalViewController=_internalViewController;
-- (void).cxx_destruct;
 - (BOOL)_isEvent:(id)arg1 inFrame:(struct CGRect)arg2;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;

@@ -23,8 +23,8 @@
     MTMediaEventHandler *_media;
 }
 
-- (void)setBase:(id)arg1;
 - (void).cxx_destruct;
+- (void)setBase:(id)arg1;
 @property(readonly, nonatomic) MTMediaEventHandler *media; // @synthesize media=_media;
 @property(readonly, nonatomic) MTDialogEventHandler *dialog; // @synthesize dialog=_dialog;
 @property(readonly, nonatomic) MTAccountEventHandler *account; // @synthesize account=_account;

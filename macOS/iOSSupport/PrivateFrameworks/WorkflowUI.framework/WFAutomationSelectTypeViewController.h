@@ -24,10 +24,10 @@
 + (id)allTriggersByGroupIdentifier;
 + (id)triggerGroupTitleForIdentifier:(id)arg1;
 + (id)sortedTriggerGroupIdentifiers;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *tableContent; // @synthesize tableContent=_tableContent;
 @property(readonly, nonatomic) WFTriggerManager *triggerManager; // @synthesize triggerManager=_triggerManager;
 @property(nonatomic) __weak id <WFAutomationSelectTypeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (Class)triggerSourceClassForIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;

@@ -15,10 +15,10 @@
     NSOutlineView *_collectionView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSOutlineView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain) NSTreeController *collectionController; // @synthesize collectionController=_collectionController;
 @property(readonly) id owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (void)installViewInSuperview:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 andOwner:(id)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

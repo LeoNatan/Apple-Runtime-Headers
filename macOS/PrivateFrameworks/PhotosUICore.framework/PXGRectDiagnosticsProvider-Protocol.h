@@ -7,6 +7,6 @@
 @class PXGLayout;
 
 @protocol PXGRectDiagnosticsProvider
-- (void)enumerateRectDiagnosticsForLayout:(PXGLayout *)arg1 usingBlock:(void (^)(struct CGRect, struct NSColor *, NSString *, char *))arg2;
+- (void)enumerateRectDiagnosticsForLayout:(PXGLayout *)arg1 usingBlock:(void (^)(struct CGRect, NSColor *, NSString *, char *))arg2;
 @end
 

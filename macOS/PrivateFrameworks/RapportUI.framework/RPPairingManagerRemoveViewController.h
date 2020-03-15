@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSTextField *_progressLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *progressLabel; // @synthesize progressLabel=_progressLabel;
 @property(retain, nonatomic) NSProgressIndicator *progressSpinner; // @synthesize progressSpinner=_progressSpinner;
 @property(retain, nonatomic) NSTextField *infoField; // @synthesize infoField=_infoField;
 @property(retain, nonatomic) NSTextField *messageField; // @synthesize messageField=_messageField;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
-- (void).cxx_destruct;
 - (void)handleRemoveButton:(id)arg1;
 - (void)handleCancelButton:(id)arg1;
 - (void)viewDidDisappear;

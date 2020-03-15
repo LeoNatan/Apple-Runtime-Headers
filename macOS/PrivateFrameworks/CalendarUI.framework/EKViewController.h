@@ -59,6 +59,7 @@
 + (id)strokeColor;
 + (id)placeholderTextColor;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL definitelyUpdateUIBecauseWeDontClose; // @synthesize definitelyUpdateUIBecauseWeDontClose=_definitelyUpdateUIBecauseWeDontClose;
 @property BOOL skipUpdatingUIBecauseWeAreAttemptingToClose; // @synthesize skipUpdatingUIBecauseWeAreAttemptingToClose=_skipUpdatingUIBecauseWeAreAttemptingToClose;
 @property(retain) NSAttributedString *longestAttributedLabel; // @synthesize longestAttributedLabel=_longestAttributedLabel;
@@ -94,7 +95,6 @@
 @property __weak id <EKHidePopover> presentingPopoverController; // @synthesize presentingPopoverController=_presentingPopoverController;
 @property(nonatomic) __weak EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property(retain, nonatomic) EKObject *object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (BOOL)isTestObserver;
 - (id)oldObject:(id)arg1 didUpdateTo:(id)arg2;
 - (void)saveCancelled;

@@ -25,6 +25,7 @@
     id <CNCancelable> _dataSourceContactLikenessModelToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forwardingLikenessesToObserverDisabled; // @synthesize forwardingLikenessesToObserverDisabled=_forwardingLikenessesToObserverDisabled;
 @property(retain, nonatomic) id <CNCancelable> dataSourceContactLikenessModelToken; // @synthesize dataSourceContactLikenessModelToken=_dataSourceContactLikenessModelToken;
 @property(retain, nonatomic) CNObservable *dataSourceContactLikenessModelObservable; // @synthesize dataSourceContactLikenessModelObservable=_dataSourceContactLikenessModelObservable;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) CNCreateLikenessHelper *createLikenessHelper; // @synthesize createLikenessHelper=_createLikenessHelper;
 @property(retain, nonatomic) CNUIMeContactMonitor *meMonitor; // @synthesize meMonitor=_meMonitor;
 @property(retain, nonatomic) id <CNRecentLikenessesDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)commitEditing;
 - (void)setAsCurrentLikeness:(id)arg1;
 - (void)updateLikeness:(id)arg1;

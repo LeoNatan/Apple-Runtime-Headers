@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *additionalActivityReports; // @synthesize additionalActivityReports=_additionalActivityReports;
 @property(copy, nonatomic) CLSActivityReport *primaryActivityReport; // @synthesize primaryActivityReport=_primaryActivityReport;
 @property(nonatomic, getter=isCompleted) _Bool completed; // @synthesize completed=_completed;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *studentID; // @synthesize studentID=_studentID;
 @property(nonatomic) int granularity; // @synthesize granularity=_granularity;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)scalarMultiply:(double)arg1;

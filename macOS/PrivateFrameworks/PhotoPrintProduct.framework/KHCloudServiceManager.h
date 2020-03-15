@@ -18,11 +18,11 @@
 
 + (id)_ppsManagersByIdentifier;
 + (id)cloudServiceManagersByIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PPSManager *ppsManager; // @synthesize ppsManager=_ppsManager;
 @property(readonly, nonatomic) BOOL cloudKitIsAvailable; // @synthesize cloudKitIsAvailable=_cloudKitIsAvailable;
 @property(retain, nonatomic) NSString *zone; // @synthesize zone=_zone;
 @property(retain, nonatomic) NSString *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)die;
 @property(readonly, nonatomic) NSURL *ppsManagerIdentifier;
 - (id)initWithPPSManager:(id)arg1;

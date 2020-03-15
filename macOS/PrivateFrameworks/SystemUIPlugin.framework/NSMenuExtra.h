@@ -29,8 +29,8 @@
 }
 
 + (unsigned int)defaultLength;
-@property(nonatomic) BOOL supportsAnimation; // @synthesize supportsAnimation=_supportsAnimation;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL supportsAnimation; // @synthesize supportsAnimation=_supportsAnimation;
 - (double)defaultLength;
 @property(nonatomic, getter=isMenuDown) BOOL menuDown;
 - (BOOL)menuDown;

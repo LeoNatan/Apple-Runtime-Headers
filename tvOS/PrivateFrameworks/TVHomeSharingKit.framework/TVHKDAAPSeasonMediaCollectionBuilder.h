@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_episodesByEpisodeNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *episodesByEpisodeNumber; // @synthesize episodesByEpisodeNumber=_episodesByEpisodeNumber;
 @property(retain, nonatomic) NSMutableDictionary *episodesByAlbumMetadataSeasonIdentifier; // @synthesize episodesByAlbumMetadataSeasonIdentifier=_episodesByAlbumMetadataSeasonIdentifier;
 @property(retain, nonatomic) NSMutableArray *episodes; // @synthesize episodes=_episodes;
 @property(nonatomic) _Bool haveDuplicateEpisodeNumbers; // @synthesize haveDuplicateEpisodeNumbers=_haveDuplicateEpisodeNumbers;
 @property(nonatomic) _Bool allowSplitSeason; // @synthesize allowSplitSeason=_allowSplitSeason;
 @property(retain, nonatomic) TVHKDAAPShowMediaCollection *show; // @synthesize show=_show;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *seasons;
 - (void)addEpisode:(id)arg1;
 - (id)initWithShow:(id)arg1;

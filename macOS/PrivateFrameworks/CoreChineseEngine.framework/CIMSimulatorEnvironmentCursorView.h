@@ -13,8 +13,8 @@
     NSTimer *_blinkingTimer;
 }
 
-@property(retain, nonatomic) NSTimer *blinkingTimer; // @synthesize blinkingTimer=_blinkingTimer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTimer *blinkingTimer; // @synthesize blinkingTimer=_blinkingTimer;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)blinkingTimerFired:(id)arg1;
 - (void)dealloc;

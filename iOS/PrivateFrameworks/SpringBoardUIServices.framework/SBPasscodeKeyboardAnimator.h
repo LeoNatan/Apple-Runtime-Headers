@@ -15,9 +15,9 @@
     id <SBPasscodeKeyboardAnimatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBPasscodeKeyboardAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) BSAnimationSettings *animationSettings; // @synthesize animationSettings=_animationSettings;
-- (void).cxx_destruct;
 - (void)completeAnimationWithState:(id)arg1;
 - (void)runAnimationWithState:(id)arg1;
 - (void)prepareForAnimationWithState:(id)arg1;

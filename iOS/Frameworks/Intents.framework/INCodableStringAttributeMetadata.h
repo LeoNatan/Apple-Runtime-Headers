@@ -20,6 +20,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long capitalization; // @synthesize capitalization=_capitalization;
 @property(copy, nonatomic) NSString *defaultValueID; // @synthesize defaultValueID=_defaultValueID;
 @property(copy, nonatomic) NSString *defaultValue; // @synthesize defaultValue=_defaultValue;
@@ -27,12 +28,11 @@
 @property(nonatomic) _Bool disableSmartDashes; // @synthesize disableSmartDashes=_disableSmartDashes;
 @property(nonatomic) _Bool disableAutocorrect; // @synthesize disableAutocorrect=_disableAutocorrect;
 @property(nonatomic, getter=isMultiline) _Bool multiline; // @synthesize multiline=_multiline;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)localizedDefaultValueForLanguage:(id)arg1;
+- (id)localizedDefaultValueWithLocalizer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedDefaultValue;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 
 @end

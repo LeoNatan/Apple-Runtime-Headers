@@ -14,9 +14,9 @@
     NSNumber *_yValue;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *yValue; // @synthesize yValue=_yValue;
 @property(copy, nonatomic) NSDate *xValue; // @synthesize xValue=_xValue;
-- (void).cxx_destruct;
 
 @end
 

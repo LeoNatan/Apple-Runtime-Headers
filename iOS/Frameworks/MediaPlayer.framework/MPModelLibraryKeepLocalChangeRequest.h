@@ -16,9 +16,9 @@
     long long _enableState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long enableState; // @synthesize enableState=_enableState;
 @property(retain, nonatomic) MPModelObject *modelObject; // @synthesize modelObject=_modelObject;
-- (void).cxx_destruct;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

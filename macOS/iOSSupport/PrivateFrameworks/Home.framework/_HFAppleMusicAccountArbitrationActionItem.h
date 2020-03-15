@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (id)loginActionItemForAccessories:(id)arg1 account:(id)arg2 contextGenerator:(CDUnknownBlockType)arg3;
 + (id)logoutActionItemForAccessories:(id)arg1 desiredAccount:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *future; // @synthesize future=_future;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSSet *accessories; // @synthesize accessories=_accessories;
 @property(retain, nonatomic) NSString *actionItemDescription; // @synthesize actionItemDescription=_actionItemDescription;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

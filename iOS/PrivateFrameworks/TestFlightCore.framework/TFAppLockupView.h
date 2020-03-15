@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     TFAppLockupViewSpecification *_specification;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TFAppLockupViewSpecification *specification; // @synthesize specification=_specification;
 @property(readonly, nonatomic) UILabel *secondarySubtitleLabel; // @synthesize secondarySubtitleLabel=_secondarySubtitleLabel;
 @property(readonly, nonatomic) UILabel *primarySubtitleLabel; // @synthesize primarySubtitleLabel=_primarySubtitleLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
-- (void)setImage:(struct UIImage *)arg1 animated:(_Bool)arg2;
+- (void)setImage:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) struct CGSize displayedIconSize;
 - (void)_prepareForDisplayWithTraitCollection:(id)arg1;
 - (void)_layoutLabelsInLayoutBounds:(struct CGRect)arg1;

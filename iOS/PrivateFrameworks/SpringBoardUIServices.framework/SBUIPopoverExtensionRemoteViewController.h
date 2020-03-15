@@ -19,9 +19,9 @@
 + (_Bool)_isSecureForRemoteViewService;
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController<SBUIPopoverExtension> *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
 @property(retain, nonatomic) id <_SBUIPopoverExtensionHostInterface> hostService; // @synthesize hostService=_hostService;
-- (void).cxx_destruct;
 - (void)_setupChildViewController:(id)arg1;
 - (id)popoverExtensionContext;
 - (void)beginRequestWithExtensionContext:(id)arg1;

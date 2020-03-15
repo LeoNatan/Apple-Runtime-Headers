@@ -11,8 +11,8 @@
     CDUnknownBlockType _userInfoCreationBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType userInfoCreationBlock; // @synthesize userInfoCreationBlock=_userInfoCreationBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType userInfoCreationBlock; // @synthesize userInfoCreationBlock=_userInfoCreationBlock;
 - (CDUnknownBlockType)_mappingFunctionForConsistencyChartWithContext:(id)arg1;
 - (CDUnknownBlockType)_mappingFunctionForEfficiencyChartWithContext:(id)arg1;
 - (CDUnknownBlockType)_mappingFunctionForDurationChartWithContext:(id)arg1;

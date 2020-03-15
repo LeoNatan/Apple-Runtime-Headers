@@ -15,8 +15,8 @@
     id <ECIMAPServerInterface> serverInterface;
 }
 
-@property(retain, nonatomic) id <ECIMAPServerInterface> serverInterface; // @synthesize serverInterface;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <ECIMAPServerInterface> serverInterface; // @synthesize serverInterface;
 - (id)replayAction;
 
 // Remaining properties

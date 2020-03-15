@@ -16,8 +16,8 @@
     int _snippetsLogged;
 }
 
-@property(retain, nonatomic) NSArray *headerSortDescriptors; // @synthesize headerSortDescriptors=_headerSortDescriptors;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *headerSortDescriptors; // @synthesize headerSortDescriptors=_headerSortDescriptors;
 - (void)finishCoreDAVResponse;
 - (void)logCoreDAVResponseSnippet:(id)arg1 withTaskIdentifier:(id)arg2 isBody:(_Bool)arg3;
 - (void)logCoreDAVResponseSnippet:(id)arg1 withTaskIdentifier:(id)arg2;

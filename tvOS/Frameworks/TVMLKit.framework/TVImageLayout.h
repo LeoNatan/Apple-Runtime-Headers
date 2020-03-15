@@ -32,6 +32,7 @@
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useInSearchPartial; // @synthesize useInSearchPartial=_useInSearchPartial;
 @property(nonatomic) _Bool allowsNonOpaqueShadows; // @synthesize allowsNonOpaqueShadows=_allowsNonOpaqueShadows;
 @property(copy, nonatomic) NSString *inlineTitle; // @synthesize inlineTitle=_inlineTitle;
@@ -51,7 +52,6 @@
 @property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(nonatomic) double upscaleFactor; // @synthesize upscaleFactor=_upscaleFactor;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
-- (void).cxx_destruct;
 - (struct CGSize)_aspectFitToSize:(struct CGSize)arg1 scaleToSize:(struct CGSize)arg2 aspectRatio:(double)arg3;
 - (double)focusSizeIncrease;
 @property(readonly, nonatomic) struct CGSize decoratorSize;

@@ -22,10 +22,10 @@
 + (id)finalizedTextProviderWithStartDate:(id)arg1 endDate:(id)arg2;
 + (id)textProviderWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3;
 + (id)textProviderWithStartDate:(id)arg1 endDate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)JSONObjectRepresentation;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
 - (id)initWithCoder:(id)arg1;

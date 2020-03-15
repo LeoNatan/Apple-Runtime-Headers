@@ -15,8 +15,8 @@
     MTStateMachine *_stateMachine;
 }
 
-@property(nonatomic) __weak MTStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MTStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 - (void)didEnterWithPreviousState:(id)arg1;
 - (void)didExitWithNextState:(id)arg1;
 - (void)willEnterWithPreviousState:(id)arg1;

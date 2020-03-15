@@ -22,6 +22,7 @@
 + (double)preferredChromeHeightForTitlePosition:(unsigned long long)arg1;
 + (id)_titleFont;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NAUILayoutConstraintSet *preferredContentFrameConstraintSet; // @synthesize preferredContentFrameConstraintSet=_preferredContentFrameConstraintSet;
 @property(readonly, nonatomic) NAUILayoutConstraintSet *constraintSet; // @synthesize constraintSet=_constraintSet;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -29,7 +30,6 @@
 @property(nonatomic) struct UIEdgeInsets preferredContentLayoutFrameInset; // @synthesize preferredContentLayoutFrameInset=_preferredContentLayoutFrameInset;
 @property(nonatomic) unsigned long long titlePosition; // @synthesize titlePosition=_titlePosition;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)_configureConstraintSets;
 - (void)updateConstraints;
 @property(copy, nonatomic) NSString *title;

@@ -23,6 +23,7 @@
     NSString *_currencyCode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(retain, nonatomic) NSString *transactionDescription; // @synthesize transactionDescription=_transactionDescription;
 @property(retain, nonatomic) NSNumber *balance; // @synthesize balance=_balance;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *paymentMethodDescription; // @synthesize paymentMethodDescription=_paymentMethodDescription;
 @property(retain, nonatomic) PKPass *valueAddedServicePass; // @synthesize valueAddedServicePass=_valueAddedServicePass;
 @property(retain, nonatomic) PKPass *transactionPass; // @synthesize transactionPass=_transactionPass;
-- (void).cxx_destruct;
 - (id)_fareFreeTransactionDescriptionWithCredentialType:(int)arg1;
 - (id)description;
 - (void)forceToTransitTypeTransactionWithTransactionStatus:(unsigned int)arg1;

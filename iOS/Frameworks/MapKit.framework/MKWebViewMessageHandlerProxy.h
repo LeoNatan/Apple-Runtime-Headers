@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <WKScriptMessageHandler> _target;
 }
 
-@property(nonatomic) __weak id <WKScriptMessageHandler> target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WKScriptMessageHandler> target; // @synthesize target=_target;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;
 
 // Remaining properties

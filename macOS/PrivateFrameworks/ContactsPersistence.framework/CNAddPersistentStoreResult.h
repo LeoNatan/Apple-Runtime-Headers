@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     BOOL _didMigrate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL didMigrate; // @synthesize didMigrate=_didMigrate;
 @property(readonly) BOOL shouldCache; // @synthesize shouldCache=_shouldCache;
 @property(readonly, getter=isPristineDatabase) BOOL pristineDatabase; // @synthesize pristineDatabase=_pristineDatabase;
 @property(readonly) NSPersistentStore *store; // @synthesize store=_store;
 @property(readonly) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithCoordinator:(id)arg1 store:(id)arg2 pristineDatabase:(BOOL)arg3 shouldCache:(BOOL)arg4 didMigrate:(BOOL)arg5;
 

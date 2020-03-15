@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     PHAsset *_videoAsset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsRevertInSession; // @synthesize allowsRevertInSession=_allowsRevertInSession;
 @property(retain, nonatomic) PHAsset *videoAsset; // @synthesize videoAsset=_videoAsset;
-- (void).cxx_destruct;
 - (void)_fetchCanRevertAsset:(id)arg1 asynchronously:(_Bool)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)editPluginSession:(id)arg1 revertToOriginalWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)editPluginSessionCanRevertToOriginal:(id)arg1;

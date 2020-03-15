@@ -18,10 +18,10 @@
     id <SVURLAssetOptionsProviding> _optionsProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVURLAssetOptionsProviding> optionsProvider; // @synthesize optionsProvider=_optionsProvider;
 @property(readonly, nonatomic) id <SVVideoURLProviderFactory> URLProviderFactory; // @synthesize URLProviderFactory=_URLProviderFactory;
 @property(readonly, nonatomic) id <SVURLAssetFactory> URLAssetFactory; // @synthesize URLAssetFactory=_URLAssetFactory;
-- (void).cxx_destruct;
 - (id)createURLAssetLoaderForVideo:(id)arg1;
 - (id)initWithURLAssetFactory:(id)arg1 URLProviderFactory:(id)arg2 optionsProvider:(id)arg3;
 

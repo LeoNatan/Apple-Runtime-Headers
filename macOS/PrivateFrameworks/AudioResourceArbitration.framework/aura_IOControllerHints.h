@@ -16,14 +16,14 @@
     optional_21a71da4 outputIOStreamHints;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) optional_21a71da4 outputIOStreamHints; // @synthesize outputIOStreamHints;
 @property(nonatomic) optional_21a71da4 inputIOStreamHints; // @synthesize inputIOStreamHints;
 @property(nonatomic) optional_ce918c5b clock; // @synthesize clock;
 @property(nonatomic) optional_488f82df bufferSize; // @synthesize bufferSize;
 @property(nonatomic) optional_fcefa02e sampleRate; // @synthesize sampleRate;
 @property(nonatomic) unsigned char ioControllerType; // @synthesize ioControllerType;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 
 @end
 

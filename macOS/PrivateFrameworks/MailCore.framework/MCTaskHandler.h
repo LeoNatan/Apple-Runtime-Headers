@@ -21,12 +21,12 @@
 
 + (id)keyPathsForValuesAffectingPriority;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSDate *cancelTime; // @synthesize cancelTime=_cancelTime;
 @property(nonatomic) BOOL isCleaningUp; // @synthesize isCleaningUp=_isCleaningUp;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) __weak id <MCHandlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *serializationQueue;
 - (id)newCleanUpOperation;
 - (void)cleanUp;

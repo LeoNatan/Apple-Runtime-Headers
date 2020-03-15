@@ -17,8 +17,8 @@
     unsigned int _bufferSize;
 }
 
-@property(nonatomic) unsigned int bufferSize; // @synthesize bufferSize=_bufferSize;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int bufferSize; // @synthesize bufferSize=_bufferSize;
 - (id)init;
 - (void)setbufferSize:(unsigned int)arg1;
 @property(nonatomic) unsigned int format;

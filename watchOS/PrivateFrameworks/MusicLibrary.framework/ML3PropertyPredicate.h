@@ -15,8 +15,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)predicateWithProperty:(id)arg1;
-@property(copy, nonatomic) NSString *property; // @synthesize property=_property;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *property; // @synthesize property=_property;
 - (id)description;
 - (_Bool)isDynamicForEntityClass:(Class)arg1;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;

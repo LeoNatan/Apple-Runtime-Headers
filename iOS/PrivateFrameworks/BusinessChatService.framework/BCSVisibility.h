@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double ratio; // @synthesize ratio=_ratio;
 @property(retain, nonatomic) NSString *country; // @synthesize country=_country;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

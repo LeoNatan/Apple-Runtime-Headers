@@ -20,10 +20,10 @@
 }
 
 + (id)defaultPrefetchedAttributes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL gatherComplete; // @synthesize gatherComplete=_gatherComplete;
 @property(readonly) SPMetadataPattern *queryPattern; // @synthesize queryPattern=_queryPattern;
 @property(retain) CSSearchQuery *csQuery; // @synthesize csQuery=_csQuery;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executeQuery;
 - (void)initQuery;

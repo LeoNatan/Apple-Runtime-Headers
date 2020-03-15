@@ -15,9 +15,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *cachedSchemasByBundleIdentifier; // @synthesize cachedSchemasByBundleIdentifier=_cachedSchemasByBundleIdentifier;
 @property(nonatomic, getter=isObservingInstalledApplicationsChanges) BOOL observingInstalledApplicationsChanges; // @synthesize observingInstalledApplicationsChanges=_observingInstalledApplicationsChanges;
-- (void).cxx_destruct;
 - (void)installedApplicationsDidChange:(id)arg1;
 - (void)observeInstalledApplicationsChangesIfNeeded;
 - (BOOL)shouldCreateActionForIntentClassName:(id)arg1 actionIdentifier:(id)arg2 bundleIdentifier:(id)arg3 inSchema:(id)arg4;

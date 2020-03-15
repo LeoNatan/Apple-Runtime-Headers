@@ -15,8 +15,8 @@
     RPCompanionLinkClient *_client;
 }
 
-@property(retain, nonatomic) RPCompanionLinkClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RPCompanionLinkClient *client; // @synthesize client=_client;
 - (void)stop;
 - (void)start;
 @property(copy, nonatomic) CDUnknownBlockType deviceLostHandler;

@@ -17,11 +17,11 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long AffectedTaskOccurrences; // @synthesize AffectedTaskOccurrences=_AffectedTaskOccurrences;
 @property(nonatomic) long long SendMeetingCancellations; // @synthesize SendMeetingCancellations=_SendMeetingCancellations;
 @property(nonatomic) long long DeleteType; // @synthesize DeleteType=_DeleteType;
 @property(copy, nonatomic) NSArray *ItemIds; // @synthesize ItemIds=_ItemIds;
-- (void).cxx_destruct;
 
 @end
 

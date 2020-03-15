@@ -19,10 +19,10 @@
 }
 
 + (id)_tintColorForFeatureType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *featureLocalizedTitle; // @synthesize featureLocalizedTitle=_featureLocalizedTitle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedTypeStringValue;
 @property(readonly, nonatomic) UIColor *featureTintColor; // @synthesize featureTintColor=_featureTintColor;
 @property(readonly, nonatomic) long long featureGroupIndex;

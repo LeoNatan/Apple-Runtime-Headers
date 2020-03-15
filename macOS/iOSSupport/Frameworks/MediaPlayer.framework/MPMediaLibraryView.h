@@ -16,9 +16,9 @@
     unsigned long long _filteringOptions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long filteringOptions; // @synthesize filteringOptions=_filteringOptions;
 @property(readonly, nonatomic) MPMediaLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (BOOL)hasEntitiesForModelKind:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithLibrary:(id)arg1 filteringOptions:(unsigned long long)arg2;

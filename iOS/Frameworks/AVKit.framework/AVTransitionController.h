@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _touchGravity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint touchGravity; // @synthesize touchGravity=_touchGravity;
 @property(retain, nonatomic) CAMediaTimingFunction *easeOutFunction; // @synthesize easeOutFunction=_easeOutFunction;
 @property(retain, nonatomic) CAMediaTimingFunction *easeInFunction; // @synthesize easeInFunction=_easeInFunction;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *interactionView; // @synthesize interactionView=_interactionView;
 @property(retain, nonatomic) id <AVTransitionDriver> interactiveGestureTracker; // @synthesize interactiveGestureTracker=_interactiveGestureTracker;
 @property(nonatomic) __weak id <AVTransitionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_startObservingAnimatorProgress;
 - (void)_fireDidBeginHandlerIfNeeded;
 - (void)transitionWillComplete:(id)arg1 success:(_Bool)arg2;

@@ -16,8 +16,8 @@
     id <PXUIImageProvider> _underlyingAssetImageProvider;
 }
 
-@property(readonly, nonatomic) id <PXUIImageProvider> underlyingAssetImageProvider; // @synthesize underlyingAssetImageProvider=_underlyingAssetImageProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PXUIImageProvider> underlyingAssetImageProvider; // @synthesize underlyingAssetImageProvider=_underlyingAssetImageProvider;
 - (id)_underlyingAssetsFromPreviewAssets:(id)arg1;
 - (void)stopCachingImagesForAllAssets;
 - (void)stopCachingImagesForAssets:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4;

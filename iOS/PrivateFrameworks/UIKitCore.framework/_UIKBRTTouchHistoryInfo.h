@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _errorVector;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint errorVector; // @synthesize errorVector=_errorVector;
 @property(nonatomic) _Bool ignoreTouch; // @synthesize ignoreTouch=_ignoreTouch;
 @property(nonatomic) _Bool ignoreForDrift; // @synthesize ignoreForDrift=_ignoreForDrift;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint actualLocation; // @synthesize actualLocation=_actualLocation;
 @property(nonatomic) double touchTime; // @synthesize touchTime=_touchTime;
 @property(retain, nonatomic) id touchIdentifier; // @synthesize touchIdentifier=_touchIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

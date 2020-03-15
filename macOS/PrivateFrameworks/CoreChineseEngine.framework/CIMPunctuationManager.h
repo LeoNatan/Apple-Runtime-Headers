@@ -20,12 +20,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *recentPunctuation; // @synthesize recentPunctuation=_recentPunctuation;
 @property(retain, nonatomic) NSArray *recentActions; // @synthesize recentActions=_recentActions;
 @property(retain, nonatomic) NSArray *sortedPunctuationCandidates; // @synthesize sortedPunctuationCandidates=_sortedPunctuationCandidates;
 @property(retain, nonatomic) NSArray *punctuationCandidates; // @synthesize punctuationCandidates=_punctuationCandidates;
 @property(nonatomic) unsigned long long scriptType; // @synthesize scriptType=_scriptType;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSDictionary *punctuationLookupTable; // @synthesize punctuationLookupTable=_punctuationLookupTable;
 - (id)sortedPunctuationCandidateSurfaces;
 @property(readonly, retain, nonatomic) NSArray *punctuationCandidateSurfaces; // @synthesize punctuationCandidateSurfaces=_punctuationCandidateSurfaces;

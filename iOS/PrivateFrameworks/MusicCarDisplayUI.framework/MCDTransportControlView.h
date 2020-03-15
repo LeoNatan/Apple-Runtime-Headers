@@ -24,6 +24,7 @@
     struct CGSize _buttonSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *containerHeightConstraint; // @synthesize containerHeightConstraint=_containerHeightConstraint;
 @property(retain, nonatomic) UIImage *pauseImage; // @synthesize pauseImage=_pauseImage;
 @property(retain, nonatomic) UIImage *playImage; // @synthesize playImage=_playImage;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) UIButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;
 @property(readonly, nonatomic) UIButton *leftButton; // @synthesize leftButton=_leftButton;
 @property(nonatomic) struct CGSize buttonSize; // @synthesize buttonSize=_buttonSize;
-- (void).cxx_destruct;
 - (id)_defaultImageForIdentifier:(id)arg1;
 - (void)_updateProgressActive;
 - (void)updateConstraints;

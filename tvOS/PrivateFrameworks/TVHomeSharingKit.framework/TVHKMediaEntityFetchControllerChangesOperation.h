@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_changesFromCurrentMediaEntities:(id)arg1 toUpdatedMediaEntities:(id)arg2;
 + (void)_populateMediaEntityIdentifiers:(id)arg1 forMediaEntities:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *currentGroupings; // @synthesize currentGroupings=_currentGroupings;
 @property(copy, nonatomic) NSDictionary *updatedGroupings; // @synthesize updatedGroupings=_updatedGroupings;
 @property(copy, nonatomic) NSArray *currentUnplayedMediaEntities; // @synthesize currentUnplayedMediaEntities=_currentUnplayedMediaEntities;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *unplayedMediaEntitiesChanges; // @synthesize unplayedMediaEntitiesChanges=_unplayedMediaEntitiesChanges;
 @property(copy, nonatomic) NSArray *recentlyAddedMediaEntitiesChanges; // @synthesize recentlyAddedMediaEntitiesChanges=_recentlyAddedMediaEntitiesChanges;
 @property(copy, nonatomic) NSArray *mediaEntitiesChanges; // @synthesize mediaEntitiesChanges=_mediaEntitiesChanges;
-- (void).cxx_destruct;
 - (id)_groupingChangesWithCurrentGrouping:(id)arg1 updatedGrouping:(id)arg2;
 - (id)_groupingsChanges;
 - (id)_unplayedMediaEntitiesChanges;

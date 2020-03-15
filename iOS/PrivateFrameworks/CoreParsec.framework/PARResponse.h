@@ -25,6 +25,7 @@
 
 + (id)responseFromReply:(id)arg1;
 + (id)responseFromJSON:(id)arg1 session:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOUserSessionEntity *geoUserSessionEntity; // @synthesize geoUserSessionEntity=_geoUserSessionEntity;
 @property(readonly, nonatomic) NSArray *corrections; // @synthesize corrections=_corrections;
 @property(readonly, nonatomic) NSArray *suggestions; // @synthesize suggestions=_suggestions;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSString *query; // @synthesize query=_query;
 @property(readonly, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(readonly, nonatomic) PARReply *reply; // @synthesize reply=_reply;
-- (void).cxx_destruct;
 - (id)initWithReply:(id)arg1 factory:(id)arg2 responseV2:(id)arg3;
 - (id)initWithReply:(id)arg1;
 

@@ -17,8 +17,8 @@
 
 + (id)createPresentationWithClientViewController:(id)arg1 customInfo:(id)arg2;
 + (id)createPresentationWithViewController:(id)arg1;
-@property(retain, nonatomic) UIViewController<CUISBulletinQuickLongLook> *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController<CUISBulletinQuickLongLook> *viewController; // @synthesize viewController=_viewController;
 - (id)customInfo;
 - (void)setCustomInfo:(id)arg1;
 - (id)init;

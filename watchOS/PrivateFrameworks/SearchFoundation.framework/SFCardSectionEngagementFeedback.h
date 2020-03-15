@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int actionTarget; // @synthesize actionTarget=_actionTarget;
 @property(nonatomic) unsigned int actionCardType; // @synthesize actionCardType=_actionCardType;
 @property(nonatomic) unsigned int triggerEvent; // @synthesize triggerEvent=_triggerEvent;
 @property(retain, nonatomic) SFPunchout *destination; // @synthesize destination=_destination;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCardSection:(id)arg1 destination:(id)arg2 triggerEvent:(unsigned int)arg3 actionCardType:(unsigned int)arg4;

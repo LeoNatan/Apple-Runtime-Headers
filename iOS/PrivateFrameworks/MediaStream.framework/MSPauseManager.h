@@ -16,8 +16,8 @@
 }
 
 + (id)sharedManager;
-@property(nonatomic) __weak id <MSPauseManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MSPauseManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)unpauseUUID:(id)arg1;
 - (void)_timerDidFire:(id)arg1;
 - (void)_removeTimerUUID:(id)arg1;

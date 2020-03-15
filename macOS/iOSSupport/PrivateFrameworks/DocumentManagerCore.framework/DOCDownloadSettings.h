@@ -16,11 +16,11 @@
     FPItem *_currentDefaultDownloadsLocationItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) FPItem *currentDefaultDownloadsLocationItem; // @synthesize currentDefaultDownloadsLocationItem=_currentDefaultDownloadsLocationItem;
 @property(retain) id providersObserverContext; // @synthesize providersObserverContext=_providersObserverContext;
 @property(retain) NSError *providersObserverError; // @synthesize providersObserverError=_providersObserverError;
 @property(retain) NSArray *providers; // @synthesize providers=_providers;
-- (void).cxx_destruct;
 - (id)_createErrorForCode:(long long)arg1 localizedDescription:(id)arg2 underlyingError:(id)arg3;
 - (void)_validatePreferredProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_preferredProvidersIn:(id)arg1 completion:(CDUnknownBlockType)arg2;

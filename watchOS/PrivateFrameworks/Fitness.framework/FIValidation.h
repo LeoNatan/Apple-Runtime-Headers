@@ -16,9 +16,9 @@
 
 + (_Bool)performValidations:(id)arg1 withObject:(id)arg2 error:(id *)arg3;
 + (id)validationWithName:(id)arg1 test:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType test; // @synthesize test=_test;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)validateObject:(id)arg1 withError:(id *)arg2;
 
 @end

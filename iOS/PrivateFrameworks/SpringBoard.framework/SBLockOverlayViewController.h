@@ -13,8 +13,8 @@
     id <SBLockOverlayViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBLockOverlayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBLockOverlayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool shouldBeHidden;
 - (id)overlayView;
 

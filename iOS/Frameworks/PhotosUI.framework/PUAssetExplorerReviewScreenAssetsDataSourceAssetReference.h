@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     PUAssetReference *_originalAssetReference;
 }
 
-@property(readonly, nonatomic) PUAssetReference *originalAssetReference; // @synthesize originalAssetReference=_originalAssetReference;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PUAssetReference *originalAssetReference; // @synthesize originalAssetReference=_originalAssetReference;
 - (id)description;
 - (id)initWithOriginalAssetReference:(id)arg1 asset:(id)arg2 dataSourceIdentifier:(id)arg3;
 

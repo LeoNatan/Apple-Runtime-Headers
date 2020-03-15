@@ -17,9 +17,9 @@
     id <SXAVPlayerItemFactory> _playerItemFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXAVPlayerItemFactory> playerItemFactory; // @synthesize playerItemFactory=_playerItemFactory;
 @property(readonly, nonatomic) int audioMode; // @synthesize audioMode=_audioMode;
-- (void).cxx_destruct;
 - (id)createPlayerWithURL:(id)arg1;
 - (id)initWithAudioMode:(int)arg1 playerItemFactory:(id)arg2;
 

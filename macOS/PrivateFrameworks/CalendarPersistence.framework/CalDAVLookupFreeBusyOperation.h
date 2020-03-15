@@ -16,9 +16,9 @@
     CalDateRange *_timeRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *userEventArrays; // @synthesize userEventArrays=_userEventArrays;
 @property(readonly) NSDictionary *freeBusySpans; // @synthesize freeBusySpans=_freeBusySpans;
-- (void).cxx_destruct;
 - (BOOL)executeSynchronouslyWithError:(id *)arg1;
 - (id)initWithPrincipal:(id)arg1 timeRange:(id)arg2 attendees:(id)arg3 maskingEventSharedUid:(id)arg4;
 

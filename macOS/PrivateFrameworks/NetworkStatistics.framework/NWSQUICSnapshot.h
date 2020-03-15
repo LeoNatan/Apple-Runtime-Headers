@@ -24,10 +24,10 @@
     double _rttVariation;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double rttVariation; // @synthesize rttVariation=_rttVariation;
 @property(readonly) double rttAverage; // @synthesize rttAverage=_rttAverage;
 @property(readonly) double rttMinimum; // @synthesize rttMinimum=_rttMinimum;
-- (void).cxx_destruct;
 - (id)initWithCounts:(const struct nstat_counts *)arg1 QUICDescriptor:(struct nstat_tcp_descriptor *)arg2 sourceIdent:(unsigned long long)arg3 events:(unsigned long long)arg4 seqno:(unsigned long long)arg5 provider:(unsigned int)arg6;
 - (id)description;
 - (id)traditionalDictionary;

@@ -40,13 +40,13 @@
 + (id)sceneWithContentsOfFile:(id)arg1;
 + (id)sceneWithSize:(struct CGSize)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPhysicsWorld *_pkPhysicsWorld; // @synthesize _pkPhysicsWorld=__pkPhysicsWorld;
 @property(retain, nonatomic) AVAudioEnvironmentNode *avAudioEnvironmentNode; // @synthesize avAudioEnvironmentNode=_avAudioEnvironmentNode;
 @property BOOL _needsRender; // @synthesize _needsRender=__needsRender;
 @property BOOL _needsUpdate; // @synthesize _needsUpdate=__needsUpdate;
 @property(nonatomic) __weak id <SKSceneDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak SKCameraNode *camera; // @synthesize camera=_camera;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak SKView *view;
 - (void)setPaused:(BOOL)arg1;
 - (void)didFinishUpdate;

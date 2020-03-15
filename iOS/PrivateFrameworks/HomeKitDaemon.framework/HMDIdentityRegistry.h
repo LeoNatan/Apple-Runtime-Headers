@@ -19,8 +19,8 @@
 
 + (id)logCategory;
 + (id)sharedRegistry;
-@property(readonly, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 - (id)dumpState;
 - (void)reset;
 - (void)deregisterIdentity:(id)arg1 object:(id)arg2;

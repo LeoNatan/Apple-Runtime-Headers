@@ -13,8 +13,8 @@
     id <MTLTexture> _texture;
 }
 
-@property(retain) id <MTLTexture> texture; // @synthesize texture=_texture;
 - (void).cxx_destruct;
+@property(retain) id <MTLTexture> texture; // @synthesize texture=_texture;
 
 @end
 

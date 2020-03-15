@@ -26,6 +26,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDHomeKitDurationEvent *durationEvent; // @synthesize durationEvent=_durationEvent;
 @property(retain, nonatomic) AWDHomeKitPresenceEvent *presenceEvent; // @synthesize presenceEvent=_presenceEvent;
 @property(retain, nonatomic) AWDHomeKitCharacteristicThresholdEvent *thresholdEvent; // @synthesize thresholdEvent=_thresholdEvent;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) AWDHomeKitLocationEvent *locationEvent; // @synthesize locationEvent=_locationEvent;
 @property(retain, nonatomic) AWDHomeKitCharacteristicEvent *charEvent; // @synthesize charEvent=_charEvent;
 @property(nonatomic) _Bool endEvent; // @synthesize endEvent=_endEvent;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

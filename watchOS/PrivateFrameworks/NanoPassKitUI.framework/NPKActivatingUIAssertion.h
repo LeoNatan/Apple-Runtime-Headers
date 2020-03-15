@@ -15,10 +15,10 @@
     unsigned long long _usageCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long usageCount; // @synthesize usageCount=_usageCount;
 @property(retain, nonatomic) CSLSActivatingUIAssertion *carouselAssertion; // @synthesize carouselAssertion=_carouselAssertion;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (_Bool)releaseCarouselAssertion;
 - (void)dealloc;

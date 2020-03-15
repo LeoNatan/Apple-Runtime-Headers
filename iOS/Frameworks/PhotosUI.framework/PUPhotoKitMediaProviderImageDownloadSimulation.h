@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSDictionary *__resultInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setResultInfo:) NSDictionary *_resultInfo; // @synthesize _resultInfo=__resultInfo;
 @property(retain, nonatomic, setter=_setResultImage:) UIImage *_resultImage; // @synthesize _resultImage=__resultImage;
 @property(readonly, copy, nonatomic) CDUnknownBlockType internalResultHandler; // @synthesize internalResultHandler=_internalResultHandler;
 @property(copy, nonatomic) CDUnknownBlockType externalResultHandler; // @synthesize externalResultHandler=_externalResultHandler;
 @property(readonly, copy, nonatomic) CDUnknownBlockType internalProgressHandler; // @synthesize internalProgressHandler=_internalProgressHandler;
 @property(copy, nonatomic) CDUnknownBlockType externalProgressHandler; // @synthesize externalProgressHandler=_externalProgressHandler;
-- (void).cxx_destruct;
 - (void)endSimulationWithError:(id)arg1;
 - (void)updateSimulationWithProgress:(double)arg1;
 - (void)_handleResultImage:(id)arg1 info:(id)arg2;

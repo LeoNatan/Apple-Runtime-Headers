@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)sigResponseType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ABCPbSigConfigWhitelist *sigConfigWhitelist; // @synthesize sigConfigWhitelist=_sigConfigWhitelist;
 @property(retain, nonatomic) NSMutableArray *sigResponses; // @synthesize sigResponses=_sigResponses;
 @property(retain, nonatomic) NSString *status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

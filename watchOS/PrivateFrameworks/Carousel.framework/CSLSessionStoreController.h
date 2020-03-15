@@ -14,8 +14,8 @@
     id <CSLSessionXPCServerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLSessionXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSessionXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_queue_processStoredSessions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeSession:(id)arg1;
 - (void)updateSession:(id)arg1;

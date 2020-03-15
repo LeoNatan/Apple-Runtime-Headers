@@ -21,11 +21,11 @@
 
 + (id)createOutputs:(CDStruct_96916c69 *)arg1 outputChunks:(id)arg2 nodeName:(id)arg3;
 + (id)createInputs:(CDStruct_96916c69 *)arg1 inputChunks:(id)arg2 nodeName:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSHashTable *asOutput; // @synthesize asOutput=_asOutput;
 @property(readonly) NSHashTable *asInput; // @synthesize asInput=_asInput;
 @property(readonly) NSArray *dimension; // @synthesize dimension=_dimension;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

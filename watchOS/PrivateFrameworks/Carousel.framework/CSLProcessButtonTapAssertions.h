@@ -17,9 +17,9 @@
     id <CSLButtonTapAssertionHandler> _handler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSLButtonTapAssertionHandler> handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLButtonTapAssertionConnection *activeConnection;
 @property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 @property(readonly, nonatomic, getter=isActive) _Bool active;

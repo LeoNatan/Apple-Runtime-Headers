@@ -20,6 +20,7 @@
     EMMailboxScope *_mailboxScope;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
 @property(nonatomic) long long row; // @synthesize row=_row;
 @property(copy, nonatomic) NSString *messageListType; // @synthesize messageListType=_messageListType;
@@ -28,7 +29,6 @@
 @property(nonatomic) _Bool scrolledToEnd; // @synthesize scrolledToEnd=_scrolledToEnd;
 @property(retain, nonatomic) EMMessageObjectID *messageObjectID; // @synthesize messageObjectID=_messageObjectID;
 @property(retain, nonatomic) NSDate *viewingStarted; // @synthesize viewingStarted=_viewingStarted;
-- (void).cxx_destruct;
 
 @end
 

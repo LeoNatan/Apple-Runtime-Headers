@@ -20,9 +20,9 @@
 + (BOOL)isSuccessResultCode:(int)arg1 forStep:(BOOL)arg2 error:(id *)arg3;
 + (BOOL)setFileProtection:(id)arg1 forDatabaseAtURL:(id)arg2 error:(id *)arg3;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) struct sqlite3 *sqlDB; // @synthesize sqlDB=_sqlDB;
-- (void).cxx_destruct;
 - (BOOL)_isSuccessResultCode:(int)arg1 sqlDB:(struct sqlite3 *)arg2 error:(id *)arg3;
 - (id)resultsForQueryString:(id)arg1;
 - (BOOL)executeStatementString:(id)arg1 error:(id *)arg2;

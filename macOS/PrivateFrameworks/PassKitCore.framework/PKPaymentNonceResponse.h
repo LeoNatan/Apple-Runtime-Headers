@@ -13,8 +13,8 @@
     NSData *_nonceData;
 }
 
-@property(copy, nonatomic) NSData *nonceData; // @synthesize nonceData=_nonceData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *nonceData; // @synthesize nonceData=_nonceData;
 - (id)initWithData:(id)arg1;
 
 @end

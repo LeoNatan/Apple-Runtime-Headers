@@ -101,11 +101,11 @@
 + (id)cacheTopLevelPath;
 + (void)initialize;
 + (Class)classForStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isNighttime) _Bool nighttime; // @synthesize nighttime=_nighttime;
 @property(retain, nonatomic) NSDate *time; // @synthesize time=_time;
 @property(readonly, nonatomic) UIImageView *faceView; // @synthesize faceView=_faceView;
 @property(nonatomic) long long runMode; // @synthesize runMode=_runMode;
-- (void).cxx_destruct;
 - (void)handleLocaleChange;
 - (void)stop;
 - (void)start;

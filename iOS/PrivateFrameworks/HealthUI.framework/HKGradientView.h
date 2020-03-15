@@ -15,8 +15,8 @@
 
 + (Class)layerClass;
 + (id)hk_verticalWaveformMaskGradientWithInsetLocation:(double)arg1;
-@property(retain, nonatomic) HKGradient *gradient; // @synthesize gradient=_gradient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKGradient *gradient; // @synthesize gradient=_gradient;
 - (void)_updateGradientLayer;
 - (void)maskAllCornersWithRadius:(double)arg1;
 - (void)maskCorners:(unsigned long long)arg1 radius:(double)arg2;

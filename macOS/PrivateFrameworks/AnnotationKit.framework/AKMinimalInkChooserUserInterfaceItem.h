@@ -15,8 +15,8 @@
     PKInk *_ink;
 }
 
-@property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -11,12 +11,11 @@
     // Error parsing type: , name: tabTitle
     // Error parsing type: , name: footer
     // Error parsing type: , name: titleEffect
-    // Error parsing type: , name: subscriptionOfferAction
-    // Error parsing type: , name: subscriptionOfferDisplayProperties
-    // Error parsing type: , name: subscriptionOfferTitle
-    // Error parsing type: , name: subscriptionOfferSubtitle
     // Error parsing type: , name: autoUpsellAction
     // Error parsing type: , name: shouldForceAutoUpsell
+    // Error parsing type: , name: subscriptionLockup
+    // Error parsing type: , name: subscriptionOfferAction
+    // Error parsing type: , name: subscriptionOfferDisplayProperties
 }
 
 @end

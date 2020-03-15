@@ -23,12 +23,12 @@
 + (id)createIKESAInitResponse:(id)arg1 errorCode:(unsigned int)arg2 errorData:(id)arg3;
 + (id)createIKESAInitResponse:(id)arg1 ikeSA:(id)arg2;
 + (id)createIKESAInitForInitiatorIKESA:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *vendorIDs; // @synthesize vendorIDs=_vendorIDs;
 @property(retain) NEIKEv2NoncePayload *nonce; // @synthesize nonce=_nonce;
 @property(retain) NEIKEv2KeyExchangePayload *ke; // @synthesize ke=_ke;
 @property(retain) NEIKEv2IKESAPayload *sa; // @synthesize sa=_sa;
 @property(retain) NEIKEv2NotifyPayload *cookie; // @synthesize cookie=_cookie;
-- (void).cxx_destruct;
 - (void)filloutPayloads;
 - (void)gatherPayloads;
 - (_Bool)validateSAInitAsResponder:(id)arg1 sendInvalidKE:(_Bool *)arg2;

@@ -19,13 +19,13 @@
     BOOL _userNameIsEditable;
 }
 
+- (void).cxx_destruct;
 @property BOOL userNameIsEditable; // @synthesize userNameIsEditable=_userNameIsEditable;
 @property(retain) NSString *user; // @synthesize user=_user;
 @property __weak id <NSURLAuthenticationChallengeSender> sender; // @synthesize sender=_sender;
 @property(retain) NSString *password; // @synthesize password=_password;
 @property BOOL hasPassword; // @synthesize hasPassword=_hasPassword;
 @property long long failureCount; // @synthesize failureCount=_failureCount;
-- (void).cxx_destruct;
 - (BOOL)userNameIsEmail;
 - (id)init;
 

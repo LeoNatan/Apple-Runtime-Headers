@@ -14,8 +14,8 @@
 }
 
 + (id)attributesWithDictionary:(id)arg1;
-@property(retain, nonatomic) NSMutableDictionary *attributes; // @synthesize attributes=_attributes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *attributes; // @synthesize attributes=_attributes;
 - (id)debugDescription;
 - (id)description;
 - (_Bool)containsAttributes:(id)arg1 ignoreKeys:(id)arg2;

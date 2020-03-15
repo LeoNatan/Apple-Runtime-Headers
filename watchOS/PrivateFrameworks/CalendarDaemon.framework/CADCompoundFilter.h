@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int operation; // @synthesize operation=_operation;
 @property(readonly, nonatomic) NSArray *filters; // @synthesize filters=_filters;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)extendWhereClause:(id)arg1 usingOperation:(int)arg2 withValues:(id)arg3 andTypes:(id)arg4;

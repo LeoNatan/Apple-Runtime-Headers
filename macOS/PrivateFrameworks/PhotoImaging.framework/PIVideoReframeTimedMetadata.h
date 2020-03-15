@@ -17,6 +17,7 @@
     // Error parsing type: {?="columns"[3]}, name: _trajectoryHomography
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property trajectoryHomography:
 // Property attributes: T{?=[3]},R,V_trajectoryHomography
 
@@ -24,7 +25,6 @@
 @property(readonly) struct CGVector estimatedCenterMotion; // @synthesize estimatedCenterMotion=_estimatedCenterMotion;
 @property(readonly) NSArray *subjects; // @synthesize subjects=_subjects;
 @property(readonly) CDStruct_1b6d18a9 time; // @synthesize time=_time;
-- (void).cxx_destruct;
 - (void)setEstimatedMotionBlur:(struct CGVector)arg1;
 - (void)setEstimatedCenterMotion:(struct CGVector)arg1;
 - (void)setSubjects:(id)arg1;

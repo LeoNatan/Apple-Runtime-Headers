@@ -18,9 +18,9 @@
 }
 
 + (id)descriptionWithType:(id)arg1 role:(int)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int role; // @synthesize role=_role;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

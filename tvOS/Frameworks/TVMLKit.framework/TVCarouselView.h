@@ -38,6 +38,7 @@
     struct CGPoint _targetContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *firstFocusChangeInInterval; // @synthesize firstFocusChangeInInterval=_firstFocusChangeInInterval;
 @property(nonatomic) double offsetChangePerSecond; // @synthesize offsetChangePerSecond=_offsetChangePerSecond;
 @property(nonatomic) struct CGPoint targetContentOffset; // @synthesize targetContentOffset=_targetContentOffset;
@@ -52,7 +53,6 @@
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 @property(nonatomic) __weak id <TVCarouselViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <TVCarouselViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_updateIdleModeLayoutAttributes;
 - (void)_stopAutoScrollTimer;
 - (void)_startAutoScrollTimer;

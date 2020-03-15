@@ -15,9 +15,9 @@
 }
 
 + (id)requestWithResourceName:(id)arg1 traits:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBUITraitCollection *traits; // @synthesize traits=_traits;
 @property(readonly, nonatomic) NSString *resourceName; // @synthesize resourceName=_resourceName;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithResourceName:(id)arg1 traits:(id)arg2;

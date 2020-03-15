@@ -20,9 +20,9 @@
     _Bool _shouldShowGreeting;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowGreeting; // @synthesize shouldShowGreeting=_shouldShowGreeting;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)_cleanUpGreetingGracePeriodTimer;
 - (void)stateService:(id)arg1 didReceiveDoNotDisturbStateUpdate:(id)arg2;
 - (void)removeObserver:(id)arg1;

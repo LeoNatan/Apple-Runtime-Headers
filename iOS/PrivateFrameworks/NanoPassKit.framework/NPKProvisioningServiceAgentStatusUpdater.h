@@ -22,6 +22,7 @@
     unsigned long long _maxUpdates;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxUpdates; // @synthesize maxUpdates=_maxUpdates;
 @property(nonatomic) unsigned long long updatesSent; // @synthesize updatesSent=_updatesSent;
 @property(retain, nonatomic) NSDictionary *sendOptions; // @synthesize sendOptions=_sendOptions;
@@ -31,7 +32,6 @@
 @property(nonatomic) long long messagePriority; // @synthesize messagePriority=_messagePriority;
 @property(retain, nonatomic) IDSProtobuf *pendingStatusProtobuf; // @synthesize pendingStatusProtobuf=_pendingStatusProtobuf;
 @property(retain, nonatomic) IDSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)_sendStatusUpdate;
 - (void)dealloc;
 - (void)invalidate;

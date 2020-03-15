@@ -42,6 +42,7 @@
 + (id)_observedDeviceProperties;
 + (id)orderedSyncEntitiesForProfile:(id)arg1 protocolVersion:(int)arg2 companion:(_Bool)arg3;
 + (id)nanoSyncStoreWithProfile:(id)arg1 device:(id)arg2 delegate:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsSyncOnUnlock; // @synthesize needsSyncOnUnlock=_needsSyncOnUnlock;
 @property(readonly, copy, nonatomic) NSSet *obliteratedDatabaseUUIDs; // @synthesize obliteratedDatabaseUUIDs=_obliteratedDatabaseUUIDs;
 @property(readonly, nonatomic) HDNanoSyncRestoreSession *restoreSession; // @synthesize restoreSession=_restoreSession;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) IDSDevice *identityServicesDevice; // @synthesize identityServicesDevice=_identityServicesDevice;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, getter=isMaster) _Bool master; // @synthesize master=_master;
-- (void).cxx_destruct;
 - (id)diagnosticDescription;
 @property(readonly, copy) NSString *description;
 - (void)device:(id)arg1 propertyDidChange:(id)arg2 fromValue:(id)arg3;

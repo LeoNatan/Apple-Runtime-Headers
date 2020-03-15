@@ -14,9 +14,9 @@
     NSHashTable *_assertions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *assertions; // @synthesize assertions=_assertions;
 @property(readonly, copy, nonatomic) NSString *assertionIdentifier; // @synthesize assertionIdentifier=_assertionIdentifier;
-- (void).cxx_destruct;
 - (id)initWithAssertionIdentifier:(id)arg1;
 
 @end

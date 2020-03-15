@@ -15,8 +15,8 @@
     NSURL *_baseURL;
 }
 
-@property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 - (id)urlForIdentifier:(id)arg1;
 - (BOOL)saveData:(id)arg1 identifier:(id)arg2;
 - (id)loadDataForIdentifier:(id)arg1;

@@ -31,6 +31,7 @@
     struct CGSize _targetSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL skipDisplaySizeImage; // @synthesize skipDisplaySizeImage=_skipDisplaySizeImage;
 @property(nonatomic) BOOL loadResourcesToFlip; // @synthesize loadResourcesToFlip=_loadResourcesToFlip;
 @property(nonatomic) BOOL editAsOvercapture; // @synthesize editAsOvercapture=_editAsOvercapture;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic, getter=isNetworkAccessAllowed) BOOL networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;
 @property(copy, nonatomic) CDUnknownBlockType canHandleAdjustmentData; // @synthesize canHandleAdjustmentData=_canHandleAdjustmentData;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isSynchronous;
 

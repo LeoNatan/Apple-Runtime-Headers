@@ -18,11 +18,11 @@
     NSString *_displayString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
 @property(retain, nonatomic) NSString *code; // @synthesize code=_code;
 @property(retain, nonatomic) NSString *codingVersion; // @synthesize codingVersion=_codingVersion;
 @property(retain, nonatomic) NSString *codingSystem; // @synthesize codingSystem=_codingSystem;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

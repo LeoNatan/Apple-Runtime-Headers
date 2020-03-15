@@ -25,6 +25,7 @@
 }
 
 + (id)profileForDisplayProfile:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double regularLighteningAlpha; // @synthesize regularLighteningAlpha=_regularLighteningAlpha;
 @property(readonly, nonatomic) double overlayLighteningAlpha; // @synthesize overlayLighteningAlpha=_overlayLighteningAlpha;
 @property(readonly, nonatomic) double regularDarkeningAlpha; // @synthesize regularDarkeningAlpha=_regularDarkeningAlpha;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) UIColor *labelColor; // @synthesize labelColor=_labelColor;
 @property(readonly, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (void)_calculateColorsWithBackgroundColor:(id)arg1 foregroundColor:(id)arg2 labelColor:(id)arg3;
 - (id)_imageForGlyph:(id)arg1 color:(id)arg2;
 - (void)dealloc;

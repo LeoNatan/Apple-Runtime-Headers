@@ -19,10 +19,10 @@
 }
 
 + (_Bool)canDisplayError:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_networkTypeChanged:(id)arg1;
 @property(retain, nonatomic) SKUIProductPageHeaderViewController *headerViewController;
 @property(readonly, nonatomic) UIScrollView *scrollView;

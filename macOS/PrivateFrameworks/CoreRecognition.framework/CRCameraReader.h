@@ -92,6 +92,7 @@
 + (void)loadFonts;
 + (unsigned long long)supportedCameraCount;
 + (unsigned long long)supportedCameraCountForTypes:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) id <CRCaptureSessionManager> sessionManager; // @synthesize sessionManager=_sessionManager;
 @property BOOL showDiagnosticHUD; // @synthesize showDiagnosticHUD=_showDiagnosticHUD;
 @property long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
@@ -156,7 +157,6 @@
 @property BOOL enableAltIDCardScan; // @synthesize enableAltIDCardScan=_enableAltIDCardScan;
 @property BOOL hidePlacementText; // @synthesize hidePlacementText=_hidePlacementText;
 @property __weak id <CRCameraReaderDelegate> callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
-- (void).cxx_destruct;
 - (void)mergeInfo:(id)arg1 intoFindInfo:(id)arg2;
 - (void)updateContactsCache:(id)arg1;
 - (void)reportAcceptedString:(id)arg1 forOutput:(id)arg2 withClientID:(id)arg3;

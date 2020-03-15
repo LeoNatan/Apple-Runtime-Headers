@@ -48,15 +48,17 @@
     NSDictionary *_stopContext;
     AFLanguageDetectionUserContext *_languageDetectionUserContext;
     int _dictationInputOrigin;
-    struct NSUUID *_turnIdentifier;
+    NSUUID *_turnIdentifier;
     double _homeButtonDownEventTime;
     unsigned long long _homeButtonDownEventMachAbsoluteTime;
     double _activationEventTime;
     unsigned long long _activationEventMachAbsoluteTime;
     double _expectedActivationEventTime;
+    unsigned long long _stopRecordingHostTime;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *turnIdentifier; // @synthesize turnIdentifier=_turnIdentifier;
 @property(nonatomic) int dictationInputOrigin; // @synthesize dictationInputOrigin=_dictationInputOrigin;
 @property(copy, nonatomic) AFLanguageDetectionUserContext *languageDetectionUserContext; // @synthesize languageDetectionUserContext=_languageDetectionUserContext;
@@ -87,6 +89,7 @@
 @property(nonatomic) _Bool acousticIdEnabled; // @synthesize acousticIdEnabled=_acousticIdEnabled;
 @property(copy, nonatomic) NSNumber *homeButtonUpFromBeep; // @synthesize homeButtonUpFromBeep=_homeButtonUpFromBeep;
 @property(nonatomic) _Bool isInitialBringUp; // @synthesize isInitialBringUp=_isInitialBringUp;
+@property(nonatomic) unsigned long long stopRecordingHostTime; // @synthesize stopRecordingHostTime=_stopRecordingHostTime;
 @property(nonatomic) double expectedActivationEventTime; // @synthesize expectedActivationEventTime=_expectedActivationEventTime;
 @property(nonatomic) unsigned long long activationEventMachAbsoluteTime; // @synthesize activationEventMachAbsoluteTime=_activationEventMachAbsoluteTime;
 @property(nonatomic) double activationEventTime; // @synthesize activationEventTime=_activationEventTime;
@@ -99,7 +102,6 @@
 @property(nonatomic) _Bool isEyesFree; // @synthesize isEyesFree=_isEyesFree;
 @property(copy, nonatomic) NSString *activationDeviceIdentifier; // @synthesize activationDeviceIdentifier=_activationDeviceIdentifier;
 @property(nonatomic) int activationEvent; // @synthesize activationEvent=_activationEvent;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy, nonatomic) NSString *btDeviceAddress;
 - (id)initWithCoder:(id)arg1;

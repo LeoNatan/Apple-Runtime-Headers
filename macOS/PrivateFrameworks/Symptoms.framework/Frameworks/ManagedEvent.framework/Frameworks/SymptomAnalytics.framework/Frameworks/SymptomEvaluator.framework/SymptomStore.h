@@ -44,12 +44,12 @@ __attribute__((visibility("hidden")))
 + (id)idFromSymptomName:(id)arg1;
 + (void)initialize;
 + (id)description;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *symptomDescription; // @synthesize symptomDescription=_symptomDescription;
 @property(retain, nonatomic) NSMutableArray *symptomHistory; // @synthesize symptomHistory;
 @property(retain, nonatomic) NSString *symptomKey; // @synthesize symptomKey;
 @property(retain, nonatomic) NSString *symptomName; // @synthesize symptomName;
 @property(nonatomic) unsigned int symptomIdent; // @synthesize symptomIdent;
-- (void).cxx_destruct;
 - (void)noteReceivedSymptom:(id)arg1;
 - (unsigned int)numSymptomsWithRetainTime:(unsigned int)arg1;
 - (void)_pruneSymptomsForDate:(id)arg1;

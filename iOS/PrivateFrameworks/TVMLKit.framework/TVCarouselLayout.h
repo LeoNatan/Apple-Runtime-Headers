@@ -6,15 +6,19 @@
 
 #import <TVMLKit/TVViewLayout.h>
 
+@class NSNumber;
+
 @interface TVCarouselLayout : TVViewLayout
 {
     _Bool _parallaxEnabled;
+    _Bool _showsPageControl;
     double _interitemSpacing;
     long long _layoutType;
     unsigned long long _scrollMode;
     double _focusedEdgeExpansion;
     double _revealDistance;
     double _shearAngle;
+    NSNumber *_pageControlMarginNumber;
     struct CGSize _cellSize;
     struct UIEdgeInsets _cellPadding;
 }
@@ -23,6 +27,8 @@
 + (long long)layoutTypeForElement:(id)arg1;
 + (unsigned long long)scrollModeForString:(id)arg1;
 + (long long)layoutTypeForString:(id)arg1;
+@property(nonatomic) NSNumber *pageControlMarginNumber; // @synthesize pageControlMarginNumber=_pageControlMarginNumber;
+@property(nonatomic) _Bool showsPageControl; // @synthesize showsPageControl=_showsPageControl;
 @property(nonatomic) double shearAngle; // @synthesize shearAngle=_shearAngle;
 @property(nonatomic, getter=isParallaxEnabled) _Bool parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
 @property(nonatomic) double revealDistance; // @synthesize revealDistance=_revealDistance;

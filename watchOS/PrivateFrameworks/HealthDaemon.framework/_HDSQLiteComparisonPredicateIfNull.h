@@ -11,8 +11,8 @@
     id _ifPropertyIsNullValue;
 }
 
-@property(readonly, copy, nonatomic) id ifPropertyIsNullValue; // @synthesize ifPropertyIsNullValue=_ifPropertyIsNullValue;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) id ifPropertyIsNullValue; // @synthesize ifPropertyIsNullValue=_ifPropertyIsNullValue;
 - (id)description;
 - (id)SQLForEntityClass:(Class)arg1;
 - (_Bool)isEqual:(id)arg1;

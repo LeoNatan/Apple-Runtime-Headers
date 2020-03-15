@@ -17,13 +17,13 @@
     HMDDAccessoryServerBrowserDemo *_browser;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _hasPairings; // @synthesize _hasPairings=__hasPairings;
 @property(nonatomic) _Bool _paired; // @synthesize _paired=__paired;
 @property(nonatomic) __weak HMDDAccessoryServerBrowserDemo *browser; // @synthesize browser=_browser;
 @property(retain, nonatomic) NSDictionary *accessoryInfo; // @synthesize accessoryInfo=_accessoryInfo;
 - (void)setCategory:(id)arg1;
 - (id)category;
-- (void).cxx_destruct;
 - (_Bool)_delegateRespondsToSelector:(SEL)arg1;
 - (void)handleUpdatesForCharacteristics:(id)arg1;
 - (void)identifyWithCompletion:(CDUnknownBlockType)arg1;
@@ -37,8 +37,8 @@
 - (void)startPairingWithConsentRequired:(_Bool)arg1 config:(id)arg2 ownershipToken:(id)arg3;
 - (void)processCharacteristicWrite:(id)arg1 value:(id)arg2;
 - (void)enableEvents:(_Bool)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3 queue:(id)arg4;
-- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_parseAttributeDatabase:(id)arg1;
 - (void)discoverAccessories;
 - (long long)linkType;

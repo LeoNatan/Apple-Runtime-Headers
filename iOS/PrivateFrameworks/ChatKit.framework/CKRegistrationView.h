@@ -17,8 +17,11 @@
     UIActivityIndicatorView *_signingInSpinner;
     UIButton *_learnMoreButton;
     UIView *_authKitSignInView;
+    UIView *_privacyLinkView;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) UIView *privacyLinkView; // @synthesize privacyLinkView=_privacyLinkView;
 @property(retain, nonatomic) UIView *authKitSignInView; // @synthesize authKitSignInView=_authKitSignInView;
 @property(retain, nonatomic) UIButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
 @property(retain, nonatomic) UIActivityIndicatorView *signingInSpinner; // @synthesize signingInSpinner=_signingInSpinner;
@@ -26,7 +29,6 @@
 @property(retain, nonatomic) UILabel *verbiageLabel; // @synthesize verbiageLabel=_verbiageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
-- (void).cxx_destruct;
 - (void)_learnMorePressed:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)manualSizeToFitForAuthKitSignInView;

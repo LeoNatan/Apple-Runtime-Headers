@@ -18,8 +18,8 @@
     UILabel *_descriptionLabel;
 }
 
-@property(retain, nonatomic) NSMutableArray *shareeCells; // @synthesize shareeCells=_shareeCells;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *shareeCells; // @synthesize shareeCells=_shareeCells;
 - (id)eventStoreForShareePickerViewController:(id)arg1;
 - (void)shareePickerViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)shareeViewController:(id)arg1 didCompleteWithAction:(int)arg2;

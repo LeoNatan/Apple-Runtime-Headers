@@ -19,12 +19,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *homeIdentifierToFuturePromiseMapping; // @synthesize homeIdentifierToFuturePromiseMapping=_homeIdentifierToFuturePromiseMapping;
 @property(retain, nonatomic) NSMutableDictionary *homeIdentifierToActiveAMSQueriesMapping; // @synthesize homeIdentifierToActiveAMSQueriesMapping=_homeIdentifierToActiveAMSQueriesMapping;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *concurrentQueryQueue; // @synthesize concurrentQueryQueue=_concurrentQueryQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dataModelUpdateQueue; // @synthesize dataModelUpdateQueue=_dataModelUpdateQueue;
 @property(retain, nonatomic) NSMutableDictionary *homeIdentifierToMediaAccountMapping; // @synthesize homeIdentifierToMediaAccountMapping=_homeIdentifierToMediaAccountMapping;
-- (void).cxx_destruct;
 - (void)getHomeMediaAccountForHome:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_finishPendingPromisesWithMediaAccountInfo:(id)arg1 forHome:(id)arg2;
 - (id)_futureForQueryLimitForHome:(id)arg1;

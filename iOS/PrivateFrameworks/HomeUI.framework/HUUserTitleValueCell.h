@@ -16,10 +16,10 @@
     UIView *_avatarView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *avatarView; // @synthesize avatarView=_avatarView;
 @property(readonly, nonatomic) id <CNAvatarViewController> avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property(retain, nonatomic) HFUserHandle *userHandle; // @synthesize userHandle=_userHandle;
-- (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

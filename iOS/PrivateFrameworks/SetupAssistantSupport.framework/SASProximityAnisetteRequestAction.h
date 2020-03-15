@@ -22,13 +22,13 @@
 
 + (id)actionFromDictionary:(id)arg1;
 + (unsigned long long)actionID;
+- (void).cxx_destruct;
 @property _Bool success; // @synthesize success=_success;
 @property(retain) AKAnisetteData *anisetteData; // @synthesize anisetteData=_anisetteData;
 @property(retain) NSString *dsid; // @synthesize dsid=_dsid;
 @property _Bool shouldProvision; // @synthesize shouldProvision=_shouldProvision;
 @property(retain) NSData *sim; // @synthesize sim=_sim;
 @property long long request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)legacyAnisetteDataForDSID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchAnisetteDataAndProvisionIfNecessary:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)eraseAnisetteWithCompletion:(CDUnknownBlockType)arg1;

@@ -16,10 +16,10 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(nonatomic) struct os_unfair_lock_s observersLock; // @synthesize observersLock=_observersLock;
 @property(retain, nonatomic) id <NAScheduler> callbackScheduler; // @synthesize callbackScheduler=_callbackScheduler;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long count;
 - (_Bool)containsObserver:(id)arg1;
 - (void)enumerateObserversWithBlock:(CDUnknownBlockType)arg1;

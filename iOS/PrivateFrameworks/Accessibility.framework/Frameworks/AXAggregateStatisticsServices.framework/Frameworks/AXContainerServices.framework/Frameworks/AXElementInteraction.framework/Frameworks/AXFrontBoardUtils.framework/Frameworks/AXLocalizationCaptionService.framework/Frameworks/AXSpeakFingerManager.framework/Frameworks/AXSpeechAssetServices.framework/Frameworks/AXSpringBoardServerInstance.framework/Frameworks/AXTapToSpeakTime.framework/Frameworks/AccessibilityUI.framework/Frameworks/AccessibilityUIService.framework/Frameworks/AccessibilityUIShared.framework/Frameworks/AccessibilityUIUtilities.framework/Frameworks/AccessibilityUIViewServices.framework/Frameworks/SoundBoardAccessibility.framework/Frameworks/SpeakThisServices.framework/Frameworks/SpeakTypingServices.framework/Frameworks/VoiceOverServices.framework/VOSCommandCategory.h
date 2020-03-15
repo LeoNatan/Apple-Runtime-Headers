@@ -31,9 +31,9 @@
 + (id)textNavigation;
 + (id)basicNavigation;
 + (id)interaction;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localizedCategoryName; // @synthesize localizedCategoryName=_localizedCategoryName;
 @property(retain, nonatomic) NSArray *commands; // @synthesize commands=_commands;
-- (void).cxx_destruct;
 - (_Bool)containsCommand:(id)arg1;
 - (id)init;
 - (id)initWithCommands:(id)arg1 localizedCategoryName:(id)arg2;

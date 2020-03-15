@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     MTMaterialView *_backgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTMaterialView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic, getter=isUserInteractionActive) _Bool userInteractionActive; // @synthesize userInteractionActive=_userInteractionActive;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(nonatomic) __weak id <HUQuickControlViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) HUQuickControlViewProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (id)initWithProfile:(id)arg1;

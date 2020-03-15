@@ -15,10 +15,10 @@
     HMCameraClip *_previousClip;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMCameraClip *previousClip; // @synthesize previousClip=_previousClip;
 @property(nonatomic) __weak HMCameraClip *clip; // @synthesize clip=_clip;
 @property(nonatomic) BOOL spansMultipleDays; // @synthesize spansMultipleDays=_spansMultipleDays;
-- (void).cxx_destruct;
 - (void)updateWithClip:(id)arg1 previousClip:(id)arg2;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

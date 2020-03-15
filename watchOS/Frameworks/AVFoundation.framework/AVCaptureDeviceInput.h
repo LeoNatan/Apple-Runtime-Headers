@@ -20,6 +20,8 @@
 @property(nonatomic) CDStruct_1b6d18a9 videoMinFrameDurationOverride; // @synthesize videoMinFrameDurationOverride=_videoMinFrameDurationOverride;
 @property(nonatomic) _Bool unifiedAutoExposureDefaultsEnabled; // @synthesize unifiedAutoExposureDefaultsEnabled=_unifiedAutoExposureDefaultsEnabled;
 - (id)videoDevice;
+- (float)portraitLightingEffectStrength;
+- (void)setPortraitLightingEffectStrength:(float)arg1;
 - (void)_sourceFormatDidChange:(struct opaqueCMFormatDescription *)arg1;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (_Bool)_authorizedToUseDeviceAndRequestIfNecessary:(id)arg1;

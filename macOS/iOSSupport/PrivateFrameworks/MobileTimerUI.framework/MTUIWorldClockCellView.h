@@ -26,13 +26,13 @@
 
 + (id)dayAndTimeZoneOffsetStringFromDate:(id)arg1 withTimeZoneOffset:(long long)arg2 timeZoneAbbreviation:(id)arg3 spaceBeforeTimeDesignator:(BOOL)arg4;
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldStackViews; // @synthesize shouldStackViews=_shouldStackViews;
 @property(readonly, nonatomic) UILabel *combinedLabel; // @synthesize combinedLabel=_combinedLabel;
 @property(readonly, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(readonly, nonatomic) MTUIDigitalClockLabel *digitalClock; // @synthesize digitalClock=_digitalClock;
 @property(readonly, nonatomic) BOOL started; // @synthesize started=_started;
 @property(nonatomic) __weak id <MTUIWorldClockCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setTimeZone:(id)arg1;
 - (void)updateTime;
 - (double)coarseUpdateInterval;

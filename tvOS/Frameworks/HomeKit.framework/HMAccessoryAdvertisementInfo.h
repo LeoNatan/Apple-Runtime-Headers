@@ -13,8 +13,8 @@
     NSString *_deviceIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 - (id)initWithAccessoryIdentifier:(id)arg1;
 
 @end

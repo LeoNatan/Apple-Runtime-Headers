@@ -18,10 +18,10 @@
     unsigned int _frontmostPassIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLocal) _Bool local; // @synthesize local=_local;
 @property(nonatomic) unsigned int frontmostPassIndex; // @synthesize frontmostPassIndex=_frontmostPassIndex;
 @property(nonatomic) __weak id <PKGroupDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removeUniqueID:(id)arg1 notify:(_Bool)arg2;
 - (void)_moveUniqueID:(id)arg1 toIndex:(unsigned int)arg2 notify:(_Bool)arg3;
 - (void)_insertPass:(id)arg1 atIndex:(unsigned int)arg2 notify:(_Bool)arg3;

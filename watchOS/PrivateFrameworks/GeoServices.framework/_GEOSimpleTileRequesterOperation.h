@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
     _Bool _isRunning;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double tileLoaderCreateTime; // @synthesize tileLoaderCreateTime=_tileLoaderCreateTime;
 @property(retain, nonatomic) NSString *requestingBundleId; // @synthesize requestingBundleId=_requestingBundleId;
 @property(nonatomic) _Bool shouldReportAnalytics; // @synthesize shouldReportAnalytics=_shouldReportAnalytics;
@@ -66,7 +67,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
 @property(readonly, nonatomic) GEODataRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) GEODataSession *dataSession; // @synthesize dataSession=_dataSession;
-- (void).cxx_destruct;
 - (void)_recordAnalyticsWithError:(id)arg1;
 - (void)taskFailed:(id)arg1 withError:(id)arg2;
 - (_Bool)validateTileIntegrityForTask:(id)arg1;

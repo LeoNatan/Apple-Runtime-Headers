@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _compositeImageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *wellContentView; // @synthesize wellContentView=_wellContentView;
 @property(retain, nonatomic) NSIndexPath *associatedIndexPath; // @synthesize associatedIndexPath=_associatedIndexPath;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIFont *labelFont; // @synthesize labelFont=_labelFont;
 @property(retain, nonatomic) NSArray *compositeImageRepresentation; // @synthesize compositeImageRepresentation=_compositeImageRepresentation;
 @property(nonatomic) struct CGSize compositeImageSize; // @synthesize compositeImageSize=_compositeImageSize;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

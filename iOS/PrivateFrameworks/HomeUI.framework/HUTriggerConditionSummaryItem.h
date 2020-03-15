@@ -14,9 +14,9 @@
     HMHome *_home;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) NSArray *conditions; // @synthesize conditions=_conditions;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithConditions:(id)arg1 home:(id)arg2;
 

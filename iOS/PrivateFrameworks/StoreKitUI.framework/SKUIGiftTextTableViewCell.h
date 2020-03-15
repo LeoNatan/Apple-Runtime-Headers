@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)newTextView;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool leftToRight; // @synthesize leftToRight=_leftToRight;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) long long maximumCharacterCount; // @synthesize maximumCharacterCount=_maximumCharacterCount;
-- (void).cxx_destruct;
 - (void)textViewDidEndEditing:(id)arg1;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;

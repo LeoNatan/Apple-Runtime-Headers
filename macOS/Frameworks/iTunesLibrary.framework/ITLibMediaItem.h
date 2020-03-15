@@ -18,10 +18,10 @@
 }
 
 + (id)mediaItemWithDict:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ITLibMediaItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) NSString *artworkUUID; // @synthesize artworkUUID=_artworkUUID;
-- (void).cxx_destruct;
 - (id)valueForProperty:(id)arg1;
 - (void)enumerateValuesExceptForProperties:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

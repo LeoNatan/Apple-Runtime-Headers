@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long refCount; // @synthesize refCount=_refCount;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) ASBMutableContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (unsigned long long)decrementRefCount;
 - (unsigned long long)incrementRefCount;
 - (void)dealloc;

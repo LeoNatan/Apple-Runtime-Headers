@@ -21,12 +21,12 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL alwaysTreatAsLink; // @synthesize alwaysTreatAsLink=_alwaysTreatAsLink;
 @property(nonatomic) BOOL automaticLinkDetection; // @synthesize automaticLinkDetection=_automaticLinkDetection;
 @property(retain, nonatomic) id <CalUIResizingTextFieldDelegate> calDelegate; // @synthesize calDelegate=_calDelegate;
 @property(retain) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
 @property BOOL resizingEnabled; // @synthesize resizingEnabled=_resizingEnabled;
-- (void).cxx_destruct;
 - (BOOL)readPasteboard:(id)arg1;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)setDelegate:(id)arg1;

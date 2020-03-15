@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _object;
 }
 
-@property(nonatomic) __weak id object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id object; // @synthesize object=_object;
 - (id)initWithObject:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

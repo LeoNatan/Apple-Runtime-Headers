@@ -6,9 +6,9 @@
 
 #import <Photos/NSObject-Protocol.h>
 
-@class PHResourceRepairRequest;
+@protocol PLTrackableRequest;
 
 @protocol PHResourceRepairRequestDelegate <NSObject>
-- (void)resourceRepairRequest:(PHResourceRepairRequest *)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)resourceRepairRequest:(id <PLTrackableRequest>)arg1 didFinishWithSuccess:(BOOL)arg2;
 @end
 

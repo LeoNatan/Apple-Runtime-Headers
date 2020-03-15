@@ -37,6 +37,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *fileExtension; // @synthesize fileExtension=_fileExtension;
 @property(copy) NSString *locationName; // @synthesize locationName=_locationName;
 @property(copy) INCurrencyAmount *paymentAmount; // @synthesize paymentAmount=_paymentAmount;
@@ -54,7 +55,6 @@
 @property(readonly, copy) NSString *content; // @synthesize content=_content;
 @property(readonly, copy) NSString *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

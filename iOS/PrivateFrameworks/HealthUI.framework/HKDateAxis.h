@@ -15,8 +15,8 @@
     long long _dayScopeType;
 }
 
-@property(nonatomic) long long dayScopeType; // @synthesize dayScopeType=_dayScopeType;
 - (void).cxx_destruct;
+@property(nonatomic) long long dayScopeType; // @synthesize dayScopeType=_dayScopeType;
 - (void)_clearCachedAxisLabels;
 - (void)_updateIntervalCacheWithModelRange:(id)arg1 zoomScale:(double)arg2;
 - (_Bool)_labelsOutsideStartDate:(id)arg1 endDate:(id)arg2;

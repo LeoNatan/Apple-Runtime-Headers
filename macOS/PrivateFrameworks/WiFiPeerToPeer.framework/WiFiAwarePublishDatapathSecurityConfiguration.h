@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *passphraseList; // @synthesize passphraseList=_passphraseList;
 @property(readonly, nonatomic) NSArray *pmkList; // @synthesize pmkList=_pmkList;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithPMKList:(id)arg1 passphraseList:(id)arg2;

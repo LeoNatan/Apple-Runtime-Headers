@@ -19,12 +19,12 @@
 }
 
 + (id)addressBookMatchWithDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
 @property(copy, nonatomic) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *dictionaryRepresentation;
 - (id)completion;
 - (id)description;

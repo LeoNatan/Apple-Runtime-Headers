@@ -42,6 +42,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDowntimeContact) _Bool downtimeContact; // @synthesize downtimeContact=_downtimeContact;
 @property(nonatomic, getter=isEmergencyContact) _Bool emergencyContact; // @synthesize emergencyContact=_emergencyContact;
 @property(nonatomic, getter=isWalkieTalkieHidden) _Bool walkieTalkieHidden; // @synthesize walkieTalkieHidden=_walkieTalkieHidden;
@@ -51,7 +52,6 @@
 @property(nonatomic, getter=isCallEnabled) _Bool callEnabled; // @synthesize callEnabled=_callEnabled;
 @property(retain, nonatomic) TUSenderIdentity *senderIdentity; // @synthesize senderIdentity=_senderIdentity;
 @property(nonatomic) __weak id <NCABContactQuickCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_quickWalkieTalkie:(id)arg1;
 - (void)_quickMail:(id)arg1;
 - (void)_quickMessage:(id)arg1;

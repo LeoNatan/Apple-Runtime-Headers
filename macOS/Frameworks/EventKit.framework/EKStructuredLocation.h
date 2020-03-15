@@ -27,8 +27,8 @@
 + (id)locationWithPlacemark:(id)arg1;
 + (id)locationWithCalLocation:(id)arg1;
 + (id)locationWithTitle:(id)arg1;
-@property(readonly, retain) NSString *uuid; // @synthesize uuid;
 - (void).cxx_destruct;
+@property(readonly, retain) NSString *uuid; // @synthesize uuid;
 - (BOOL)_reset;
 - (void)updateFromMapItem:(id)arg1;
 - (BOOL)isEqualToLocation:(id)arg1;

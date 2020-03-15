@@ -17,12 +17,12 @@
     double _timeIntervalToResetCount;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *firstRetryDate; // @synthesize firstRetryDate=_firstRetryDate;
 @property(nonatomic) unsigned int currentNumberOfAttempts; // @synthesize currentNumberOfAttempts=_currentNumberOfAttempts;
 @property(nonatomic) unsigned int numberOfAttempts; // @synthesize numberOfAttempts=_numberOfAttempts;
 @property(nonatomic) double timeIntervalToResetCount; // @synthesize timeIntervalToResetCount=_timeIntervalToResetCount;
 @property(readonly, nonatomic) NSString *retryOperationIdentifier; // @synthesize retryOperationIdentifier=_retryOperationIdentifier;
-- (void).cxx_destruct;
 - (_Bool)canRetry;
 - (id)initWithIdentifier:(id)arg1;
 

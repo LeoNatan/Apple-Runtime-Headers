@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     UIViewController *_inspectedVC;
 }
 
-@property(nonatomic) __weak UIViewController *inspectedVC; // @synthesize inspectedVC=_inspectedVC;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController *inspectedVC; // @synthesize inspectedVC=_inspectedVC;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

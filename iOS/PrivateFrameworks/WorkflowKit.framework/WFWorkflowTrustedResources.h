@@ -20,10 +20,10 @@
 
 + (id)linkingObjectsProperties;
 + (id)requiredProperties;
+- (void).cxx_destruct;
 @property(readonly) RLMLinkingObjects *workflows; // @synthesize workflows=_workflows;
 @property(retain) RLMArray<WFRealmAccessResourcePermissionState> *accessResourcePermissionStates; // @synthesize accessResourcePermissionStates=_accessResourcePermissionStates;
 @property(retain) RLMArray<WFTrustedJavaScriptDomain> *trustedDomains; // @synthesize trustedDomains=_trustedDomains;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

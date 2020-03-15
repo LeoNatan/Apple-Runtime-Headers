@@ -17,6 +17,7 @@
     // Error parsing type: {?="columns"[4]}, name: _worldTransform
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ARAnchor *anchor; // @synthesize anchor=_anchor;
 // Error parsing type for property worldTransform:
 // Property attributes: T{?=[4]},N,V_worldTransform
@@ -26,7 +27,6 @@
 
 @property(nonatomic) double distance; // @synthesize distance=_distance;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)debugQuickLookObject;
 - (id)description;
 - (id)_description:(_Bool)arg1;

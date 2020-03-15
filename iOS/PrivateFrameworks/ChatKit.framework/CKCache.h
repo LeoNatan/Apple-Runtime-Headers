@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_dictionary;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void)removeAllObjects;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1;

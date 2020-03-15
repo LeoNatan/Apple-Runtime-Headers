@@ -14,9 +14,9 @@
     ABActionAutovalidatorCache *_cache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ABActionAutovalidatorCache *cache; // @synthesize cache=_cache;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)description;
 - (SEL)selectorForMenuAction:(SEL)arg1;
 - (SEL)selectorForSimpleAction:(SEL)arg1;

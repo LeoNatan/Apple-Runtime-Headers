@@ -45,6 +45,7 @@
 + (BOOL)_defaultsToBackground;
 + (void)initialize;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain) NSFileHandle *logFile; // @synthesize logFile=_logFile;
 @property(retain, nonatomic) ECSASLClient *saslClient; // @synthesize saslClient=_saslClient;
 @property(retain, nonatomic) NSData *logHeader; // @synthesize logHeader=_logHeader;
@@ -58,7 +59,6 @@
 @property(nonatomic) double readWriteTimeout; // @synthesize readWriteTimeout=_readWriteTimeout;
 @property(nonatomic) double connectTimeout; // @synthesize connectTimeout=_connectTimeout;
 @property(retain, nonatomic) MCSocket *socket; // @synthesize socket=_socket;
-- (void).cxx_destruct;
 - (void)_resetLogHeaderWithPort:(long long)arg1;
 - (void)_logToFileDidChange:(id)arg1;
 - (void)_loggingDidChange:(id)arg1;

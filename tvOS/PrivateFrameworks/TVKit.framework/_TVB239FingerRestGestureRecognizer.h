@@ -20,11 +20,11 @@
 }
 
 + (_Bool)_shouldDefaultToTouches;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTimer *pressDurationTimer; // @synthesize pressDurationTimer=_pressDurationTimer;
 @property(nonatomic) double minimumPressDuration; // @synthesize minimumPressDuration=_minimumPressDuration;
 @property(readonly, nonatomic) struct CGPoint digitizerLocation; // @synthesize digitizerLocation=_digitizerLocation;
 @property(readonly, nonatomic) struct CGPoint digitizerStartLocation; // @synthesize digitizerStartLocation=_digitizerStartLocation;
-- (void).cxx_destruct;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;

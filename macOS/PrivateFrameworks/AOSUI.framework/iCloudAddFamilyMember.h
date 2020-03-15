@@ -32,13 +32,13 @@
     id <iCloudAddFamilyMemberDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *membershipInfo; // @synthesize membershipInfo=_membershipInfo;
 @property(retain) NSString *accountID; // @synthesize accountID=_accountID;
 @property id <iCloudAddFamilyMemberDelegate> delegate; // @synthesize delegate=_delegate;
 @property int viewType; // @synthesize viewType=_viewType;
 @property(retain) NSArray *matchingTokens; // @synthesize matchingTokens=_matchingTokens;
 @property(retain) NSArray *matches; // @synthesize matches=_matches;
-- (void).cxx_destruct;
 - (id)inviteeMembershipInfo;
 - (id)inviteeObject;
 - (id)emailAddressOfAddFamily;

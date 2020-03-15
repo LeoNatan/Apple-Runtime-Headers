@@ -19,13 +19,13 @@
 }
 
 + (id)contextWithTitle:(id)arg1 subtitle:(id)arg2 detailTitle:(id)arg3 toolTip:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UXView *titleAccessoryView; // @synthesize titleAccessoryView=_titleAccessoryView;
 @property(retain, nonatomic) UXViewController *titleAccessoryViewController; // @synthesize titleAccessoryViewController=_titleAccessoryViewController;
 @property(retain, nonatomic) NSString *toolTip; // @synthesize toolTip=_toolTip;
 @property(retain, nonatomic) NSString *detailTitle; // @synthesize detailTitle=_detailTitle;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

@@ -20,11 +20,11 @@
     UINavigationController *_onboardingNavigationController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UINavigationController *onboardingNavigationController; // @synthesize onboardingNavigationController=_onboardingNavigationController;
 @property(nonatomic) __weak UIViewController<HRFeatureRegulatoryReenableFeatureActionDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HKHeartRhythmAvailability *heartRhythmAvailability; // @synthesize heartRhythmAvailability=_heartRhythmAvailability;
 @property(readonly, nonatomic) NSArray *displayableItems; // @synthesize displayableItems=_displayableItems;
-- (void).cxx_destruct;
 - (void)protectedDataDidBecomeAvailable:(id)arg1;
 - (void)heartRhythmAvailabilityDidUpdate;
 - (void)didSelectReenableFeatureForProductName:(id)arg1;

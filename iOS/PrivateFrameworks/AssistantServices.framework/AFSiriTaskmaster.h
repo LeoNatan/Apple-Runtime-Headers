@@ -26,8 +26,8 @@
 + (id)taskmasterForUIApplicationWithBundleIdentifier:(id)arg1;
 + (id)taskmasterForMachServiceForAppWithBundleIdentifier:(id)arg1;
 + (id)taskmasterForMachServiceWithName:(id)arg1;
-@property(nonatomic) __weak id <AFSiriTaskmasterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AFSiriTaskmasterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handleSiriTaskUsageResult:(id)arg1 fromRequest:(id)arg2;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)handleSiriRequest:(id)arg1 deliveryHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;

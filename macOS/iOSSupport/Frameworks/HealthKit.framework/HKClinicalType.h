@@ -18,7 +18,7 @@
 + (id)conditionRecordType;
 + (id)allergyRecordType;
 + (id)allTypes;
-- (BOOL)_isClinicalType;
+- (BOOL)isClinicalType;
 
 @end
 

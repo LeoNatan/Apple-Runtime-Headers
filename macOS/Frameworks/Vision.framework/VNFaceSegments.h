@@ -27,6 +27,8 @@
 + (id)faceSegmentIndexToFlagMap;
 + (id)faceSegmentToSegmentMaskGrayLevelDictionary;
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *faceSegmentLabelToProbabilityMap; // @synthesize faceSegmentLabelToProbabilityMap=_faceSegmentLabelToProbabilityMap;
 @property(readonly, nonatomic) struct CGRect boundingBox; // @synthesize boundingBox=_boundingBox;
 @property(readonly, nonatomic) unsigned long long numberOfFaceSegments; // @synthesize numberOfFaceSegments=_numberOfFaceSegments;
@@ -34,8 +36,6 @@
 @property(readonly, nonatomic) unsigned long long outputBufferHeight; // @synthesize outputBufferHeight=_outputBufferHeight;
 @property(readonly, nonatomic) unsigned long long outputBufferWidth; // @synthesize outputBufferWidth=_outputBufferWidth;
 @property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_calculateProbabilityNormalSumsForRect:(struct CGRect)arg1;
 - (struct __CVBuffer *)_createFaceSegmentProabilityDataPixelBufferWithSize:(struct CGSize)arg1 error:(id *)arg2;
 - (struct vImage_Buffer)_makeFaceSegmentProbabilityDataImageBuffer:(id)arg1 rect:(struct CGRect)arg2;

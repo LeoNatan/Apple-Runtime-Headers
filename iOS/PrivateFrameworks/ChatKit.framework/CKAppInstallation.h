@@ -21,11 +21,11 @@
     LSApplicationWorkspace *__applicationWorkspace;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) LSApplicationWorkspace *_applicationWorkspace; // @synthesize _applicationWorkspace=__applicationWorkspace;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) unsigned long long installState; // @synthesize installState=_installState;
 @property(nonatomic) double percentComplete; // @synthesize percentComplete=_percentComplete;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) UIImage *icon;
 @property(readonly, nonatomic) _Bool installed;

@@ -21,11 +21,11 @@
 }
 
 + (id)memoryCache;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, nonatomic) PHImageRequestOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
-- (void).cxx_destruct;
 - (void)_handleRenderingFinishedWithData:(id)arg1 destinationURL:(id)arg2 targetSize:(struct CGSize)arg3;
 - (void)_handleRenderedImage:(id)arg1 error:(id)arg2;
 - (void)_handleImageWasCached;

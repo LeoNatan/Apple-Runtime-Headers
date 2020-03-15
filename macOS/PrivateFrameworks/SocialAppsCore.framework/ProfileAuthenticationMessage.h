@@ -18,11 +18,11 @@
     NSString *_responseAuthToken;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *responseAuthorizationToken; // @synthesize responseAuthorizationToken=_responseAuthToken;
 @property(copy) NSString *responseProfileID; // @synthesize responseProfileID=_responseProfileID;
 @property(copy) NSString *password; // @synthesize password=_password;
 @property(copy) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)messageBody;
 - (id)additionalMessageHeaders;

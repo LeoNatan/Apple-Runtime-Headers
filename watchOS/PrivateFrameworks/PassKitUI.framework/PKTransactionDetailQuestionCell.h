@@ -23,8 +23,8 @@
     id <PKTransactionDetailQuestionCellDelegate> _questionDelegate;
 }
 
-@property(nonatomic) __weak id <PKTransactionDetailQuestionCellDelegate> questionDelegate; // @synthesize questionDelegate=_questionDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKTransactionDetailQuestionCellDelegate> questionDelegate; // @synthesize questionDelegate=_questionDelegate;
 - (void)_enableButtons:(_Bool)arg1;
 - (void)_leadingButtonTapped:(id)arg1;
 - (void)_trailingButtonTapped:(id)arg1;

@@ -19,9 +19,9 @@
     UIButton *_closeButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) _SFBarTheme *theme; // @synthesize theme=_theme;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)_layoutCloseButton;

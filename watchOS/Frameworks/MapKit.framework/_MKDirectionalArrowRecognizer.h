@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     int _lastArrows;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int lastArrows; // @synthesize lastArrows=_lastArrows;
 @property(readonly, nonatomic) int arrows; // @synthesize arrows=_arrows;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)handleArrowMask:(int)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 

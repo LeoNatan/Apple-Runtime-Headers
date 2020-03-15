@@ -15,11 +15,11 @@
     FCFetchedValueManager *_resourceConfigurationManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCFetchedValueManager *resourceConfigurationManager; // @synthesize resourceConfigurationManager=_resourceConfigurationManager;
 @property(readonly, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
-- (void).cxx_destruct;
 - (void)_processFetchOperationResult:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (_Bool)isValue:(struct FCShallowCopyPair *)arg1 equalToValue:(struct FCShallowCopyPair *)arg2;
+- (_Bool)isValue:(id)arg1 equalToValue:(id)arg2;
 - (id)inputManagers;
 - (void)fetchValueWithCachePolicy:(unsigned long long)arg1 qualityOfService:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)fastCachedValue;

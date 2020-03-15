@@ -24,13 +24,13 @@
 + (id)annotationNameFromType:(unsigned long long)arg1;
 + (void)initialize;
 + (id)defaultDataProvider;
+- (void).cxx_destruct;
 @property(retain) NSString *processedText; // @synthesize processedText=_processedText;
 @property(retain) NSMutableArray *annotations; // @synthesize annotations=_annotations;
 @property _Bool trainVerbatim; // @synthesize trainVerbatim=_trainVerbatim;
 @property double trainingWeight; // @synthesize trainingWeight=_trainingWeight;
 @property(retain) NSString *languageID; // @synthesize languageID=_languageID;
 @property(retain) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)lsmText;
 - (id)taggedText;
 - (unsigned long long)annotatedPolarity;

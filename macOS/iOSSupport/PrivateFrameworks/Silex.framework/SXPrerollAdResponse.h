@@ -16,10 +16,10 @@
     id <SXPrerollAdMetadata> _prerollAdMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SXPrerollAdMetadata> prerollAdMetadata; // @synthesize prerollAdMetadata=_prerollAdMetadata;
 @property(nonatomic) double skipDuration; // @synthesize skipDuration=_skipDuration;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
-- (void).cxx_destruct;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @interface NSObject (IBCocoaTouchToolAutolayoutEngineAdditions)
 + (id)instantiateWithMarshalledValues:(id)arg1 orderedKeys:(id)arg2 ignoredKeys:(id)arg3 globalMarshallingContext:(id)arg4;
+- (_Bool)ibRequiresSuperviewDuringLayoutForRepresentedView:(id)arg1;
 - (id)ibRootHostingViewWithCopiedViewHierarchySnapshotForLayoutEngine:(id)arg1 returningWindowForRepresentedViews:(id *)arg2 returningSimulatedMetricsContext:(id *)arg3 returningAddedRepresentedConstraintsForRepresentedViews:(id *)arg4;
 - (id)ibMakeWindowForRenderingWithSimulatedMetricsContext:(id)arg1;
 - (void)ibApplySimulatedMetricsWithContext:(id)arg1;
@@ -33,7 +34,7 @@
 - (_Bool)ibRequiresClassSwapperForObjectClassName:(id)arg1 customClassName:(id)arg2;
 - (id)initWithMarshalledValues:(id)arg1 orderedKeys:(id)arg2 ignoredKeys:(id)arg3 globalMarshallingContext:(id)arg4;
 - (_Bool)ibCapturePlaceholderTable:(id)arg1 forRelationship:(id)arg2 withContext:(id)arg3;
-- (id)traitStoragesWithObjectID:(id)arg1 keyPath:(id)arg2 targetOSVersion:(id)arg3 platform:(id)arg4;
+- (id)ibAdditionalTraitStoragesWithObjectID:(id)arg1 keyPath:(id)arg2 targetOSVersion:(id)arg3 platform:(id)arg4;
 - (id)transformAfterMarshalling;
 @end
 

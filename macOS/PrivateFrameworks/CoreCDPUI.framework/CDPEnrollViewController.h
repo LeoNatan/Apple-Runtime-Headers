@@ -59,6 +59,7 @@
     NSString *_code;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *code; // @synthesize code=_code;
 @property(retain) MMPinFieldView *pinView; // @synthesize pinView=_pinView;
 @property unsigned long long attemptNumber; // @synthesize attemptNumber=_attemptNumber;
@@ -104,7 +105,6 @@
 @property BOOL isNumeric; // @synthesize isNumeric=_isNumeric;
 @property BOOL promptForICSC; // @synthesize promptForICSC=_promptForICSC;
 @property BOOL shouldShowPassword; // @synthesize shouldShowPassword=_shouldShowPassword;
-- (void).cxx_destruct;
 - (BOOL)supportsRecoveryKeyRecovery;
 - (void)resetConfirmation;
 - (void)handleForgotWithRecoveryKey;

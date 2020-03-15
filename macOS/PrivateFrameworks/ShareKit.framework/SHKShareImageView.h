@@ -15,9 +15,9 @@
     int _imageStyle;
 }
 
+- (void).cxx_destruct;
 @property int imageStyle; // @synthesize imageStyle=_imageStyle;
 @property struct CGRect contentRect; // @synthesize contentRect=_contentRect;
-- (void).cxx_destruct;
 - (void)drawWithFrame:(struct CGRect)arg1;
 - (struct CGRect)imageRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)mainImageWithBorderFrameForCellBounds:(struct CGRect)arg1;

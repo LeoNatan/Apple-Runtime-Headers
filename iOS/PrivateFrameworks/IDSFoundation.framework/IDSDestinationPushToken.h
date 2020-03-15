@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *pushToken; // @synthesize pushToken=_pushToken;
 @property(readonly, nonatomic) NSString *alias; // @synthesize alias=_alias;
-- (void).cxx_destruct;
 - (id)groupID;
 - (id)destinationURIs;
 - (unsigned long long)hash;

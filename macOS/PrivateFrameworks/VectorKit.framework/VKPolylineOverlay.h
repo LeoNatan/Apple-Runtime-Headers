@@ -27,6 +27,8 @@
     GEOComposedRouteTraffic *_traffic;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showTraffic; // @synthesize showTraffic=_showTraffic;
 @property(nonatomic) BOOL hasFocus; // @synthesize hasFocus=_hasFocus;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
@@ -35,8 +37,6 @@
 @property(readonly, nonatomic) double trafficTimeStamp; // @synthesize trafficTimeStamp=_trafficTimeStamp;
 @property(readonly, nonatomic) GEOComposedRouteTraffic *traffic; // @synthesize traffic=_traffic;
 @property(readonly, nonatomic) GEOComposedRoute *composedRoute; // @synthesize composedRoute=_composedRoute;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)composedRoute:(id)arg1 appliedTransitRouteUpdates:(id)arg2;
 - (void)composedRoute:(id)arg1 changedSelectedRideInClusteredLeg:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
 - (void)composedRoute:(id)arg1 selectedSections:(id)arg2 deselectedSections:(id)arg3;

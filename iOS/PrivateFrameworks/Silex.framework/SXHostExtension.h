@@ -16,9 +16,9 @@
     NSExtensionContext *_extensionContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property(nonatomic) __weak NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
-- (void).cxx_destruct;
 - (void)extensionHostWillEnterForeground:(id)arg1;
 - (void)extensionHostDidEnterBackground:(id)arg1;
 - (void)extensionHostDidBecomeActive:(id)arg1;

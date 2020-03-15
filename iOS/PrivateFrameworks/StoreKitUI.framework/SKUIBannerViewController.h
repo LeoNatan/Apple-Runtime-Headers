@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
     SKUIItemArtworkContext *_itemArtworkContext;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *scriptContextDictionary; // @synthesize scriptContextDictionary=_scriptContextDictionary;
 @property(retain, nonatomic) NSOperationQueue *resourceOperationQueue; // @synthesize resourceOperationQueue=_resourceOperationQueue;
 @property(nonatomic) __weak id <SKUIBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (id)_itemArtworkContext;
 - (void)_warmItemStateCenter;
 - (void)_setScreenshot:(id)arg1 forIndex:(long long)arg2 error:(id)arg3;

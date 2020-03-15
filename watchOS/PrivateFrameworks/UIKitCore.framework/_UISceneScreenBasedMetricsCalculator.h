@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIWindowScene *_scene;
 }
 
-@property(nonatomic, setter=_setScene:) __weak UIWindowScene *_scene; // @synthesize _scene;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setScene:) __weak UIWindowScene *_scene; // @synthesize _scene;
 - (void)_updateMetricsOnWindows:(id)arg1 animated:(_Bool)arg2;
 
 // Remaining properties

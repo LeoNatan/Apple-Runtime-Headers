@@ -23,6 +23,7 @@
 }
 
 + (Class)responseClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *preferredFallbackItemRelationship; // @synthesize preferredFallbackItemRelationship=_preferredFallbackItemRelationship;
 @property(nonatomic) BOOL disablePlaybackRateValidation; // @synthesize disablePlaybackRateValidation=_disablePlaybackRateValidation;
 @property(nonatomic) BOOL disablePlaybackStateValidation; // @synthesize disablePlaybackStateValidation=_disablePlaybackStateValidation;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) MPPropertySet *playingItemProperties; // @synthesize playingItemProperties=_playingItemProperties;
 @property(nonatomic) CDStruct_339ad95e tracklistRange; // @synthesize tracklistRange=_tracklistRange;
 @property(retain, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
-- (void).cxx_destruct;
 - (id)_stateDumpObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)middlewareClasses;

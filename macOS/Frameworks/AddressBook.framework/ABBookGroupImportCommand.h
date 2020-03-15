@@ -19,8 +19,11 @@
     ABImportRecordFactory *_importRecordFactory;
     NSMutableArray *_importedGroups;
     NSMutableArray *_importedPeopleUids;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 - (void)removeRecords:(id)arg1;
 - (void)undoImportedGroups;
 - (void)undoImportedPeople;

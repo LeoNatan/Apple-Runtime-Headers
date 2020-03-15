@@ -22,7 +22,7 @@
 - (void)homeKitGetAdminAccessTokensWithServiceUserID:(NSString *)arg1 accessoryID:(NSString *)arg2 pairingToken:(NSData *)arg3;
 - (void)homeKitGetServiceUserIDs;
 - (void)reportiMessageSpamCheckUnknown:(NSString *)arg1 count:(NSNumber *)arg2 requestID:(NSString *)arg3;
-- (void)reportiMessageUnknownSender:(NSString *)arg1 messageID:(NSString *)arg2 messageServerTimestamp:(NSNumber *)arg3 toURI:(NSString *)arg4;
+- (void)reportiMessageUnknownSender:(NSString *)arg1 messageID:(NSString *)arg2 isBlackholed:(BOOL)arg3 messageServerTimestamp:(NSNumber *)arg4 toURI:(NSString *)arg5;
 - (void)reportiMessageSpam:(NSArray *)arg1 toURI:(NSString *)arg2;
 - (void)continuityStopTrackingPeer:(NSString *)arg1 forType:(long long)arg2;
 - (void)continuityStartTrackingPeer:(NSString *)arg1 forType:(long long)arg2;

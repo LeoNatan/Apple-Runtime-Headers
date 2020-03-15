@@ -64,6 +64,7 @@
     CKRecord *_defaultZoneServerRecordSecure;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKRecord *defaultZoneServerRecordSecure; // @synthesize defaultZoneServerRecordSecure=_defaultZoneServerRecordSecure;
 @property(readonly, nonatomic) CKRecord *defaultZoneServerRecord; // @synthesize defaultZoneServerRecord=_defaultZoneServerRecord;
 @property(readonly, nonatomic) NSDictionary *allDefaultZoneClientRecordsByID; // @synthesize allDefaultZoneClientRecordsByID=_allDefaultZoneClientRecordsByID;
@@ -116,7 +117,6 @@
 @property(readonly, nonatomic) CKDatabase *ckDatabaseWithZoneWidePCS; // @synthesize ckDatabaseWithZoneWidePCS=_ckDatabaseWithZoneWidePCS;
 @property(readonly, nonatomic) CKDatabase *ckDatabase; // @synthesize ckDatabase=_ckDatabase;
 @property(readonly, nonatomic) FCCKPrivateDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

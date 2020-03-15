@@ -18,8 +18,8 @@
     IKAppBrowserBridge *_bridge;
 }
 
-@property(retain, nonatomic) IKAppBrowserBridge *bridge; // @synthesize bridge=_bridge;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKAppBrowserBridge *bridge; // @synthesize bridge=_bridge;
 - (void)present;
 @property(retain, nonatomic) NSDictionary *maskInset; // @synthesize maskInset=_maskInset;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;

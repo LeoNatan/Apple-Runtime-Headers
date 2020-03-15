@@ -15,9 +15,9 @@
 }
 
 + (id)callbackWithQueue:(id)arg1 block:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) id block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (void)invokeWithObject:(id)arg1;
 - (void)invoke;
 

@@ -33,6 +33,7 @@
     unsigned int _detentType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isScrolling; // @synthesize isScrolling=_isScrolling;
 @property(nonatomic) unsigned int detentType; // @synthesize detentType=_detentType;
 @property(copy, nonatomic) CDUnknownBlockType discreteScrollHandler; // @synthesize discreteScrollHandler=_discreteScrollHandler;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <_NTKFaceEditPageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) int editMode; // @synthesize editMode=_editMode;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_updateKeylineForKey:(id)arg1;
 - (void)_startSelectedKeylineBreathing;

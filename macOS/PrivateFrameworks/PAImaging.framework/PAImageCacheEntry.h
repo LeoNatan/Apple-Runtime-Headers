@@ -30,13 +30,13 @@
     NSURL *_imageURL;
 }
 
+- (void).cxx_destruct;
 @property long long rasterToDisplayOrientation; // @synthesize rasterToDisplayOrientation=_rasterToDisplayOrientation;
 @property long long masterToRasterOrientation; // @synthesize masterToRasterOrientation=_masterToRasterOrientation;
 @property(nonatomic) BOOL endAccessOnDealloc; // @synthesize endAccessOnDealloc=_endAccessOnDealloc;
 @property int format; // @synthesize format=_format;
 @property(retain) id invalidationKey; // @synthesize invalidationKey=_invalidationKey;
 @property(retain, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (unsigned long long)accessCount;
 - (struct CGImage *)newCGImageWithMaxSize:(struct PFIntSize_st)arg1 cropCenter:(struct CGPoint)arg2;

@@ -6,11 +6,14 @@
 
 #import <Safari/Banner.h>
 
-@class NSResponder, NSSearchField, NSSegmentedControl, NSTextField, NSTimer;
+#import <Safari/NSControlTextEditingDelegate-Protocol.h>
+#import <Safari/NSMenuItemValidation-Protocol.h>
+
+@class NSResponder, NSSearchField, NSSegmentedControl, NSString, NSTextField, NSTimer;
 @protocol FindBannerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface FindBanner : Banner
+@interface FindBanner : Banner <NSControlTextEditingDelegate, NSMenuItemValidation>
 {
     NSSearchField *searchField;
     NSSegmentedControl *nextPreviousControl;
@@ -25,10 +28,10 @@ __attribute__((visibility("hidden")))
     NSResponder *_supplementalSearchFieldCommandPerformer;
 }
 
-+ (unsigned int)_optionsForFindingMatches;
++ (unsigned long long)_optionsForFindingMatches;
 + (int)bannerSortOrder;
-@property(nonatomic) __weak NSResponder *supplementalSearchFieldCommandPerformer; // @synthesize supplementalSearchFieldCommandPerformer=_supplementalSearchFieldCommandPerformer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSResponder *supplementalSearchFieldCommandPerformer; // @synthesize supplementalSearchFieldCommandPerformer=_supplementalSearchFieldCommandPerformer;
 - (void)_windowDidUpdate:(id)arg1;
 - (void)_updateSearchFieldFromFindPasteboard;
 - (void)_updateNextAndPreviousButtons;
@@ -43,15 +46,15 @@ __attribute__((visibility("hidden")))
 - (void)_makeSearchFieldFirstResponder;
 - (id)_imageForBannerControlWithBaseName:(id)arg1;
 - (void)_highlightAllMatchesIfPossible;
-- (void)_findWithDirection:(BOOL)arg1 beepOnFailure:(BOOL)arg2;
-- (void)_findString:(id)arg1 direction:(BOOL)arg2 beepOnFailure:(BOOL)arg3;
+- (void)_findWithDirection:(unsigned long long)arg1 beepOnFailure:(BOOL)arg2;
+- (void)_findString:(id)arg1 direction:(unsigned long long)arg2 beepOnFailure:(BOOL)arg3;
 - (id)_computeStatusText;
 - (void)_clearStatus;
 - (void)_cancelClearMatchCountTimer;
 - (BOOL)_canHighlightAllMatches;
 - (void)_findBannerBehaviorDidChange:(id)arg1;
 - (void)updateDisplayedMatchCountForString:(id)arg1 to:(unsigned int)arg2;
-- (unsigned int)_optionsForCountingMatches;
+- (unsigned long long)_optionsForCountingMatches;
 - (void)hideOverlay;
 - (void)setSearchFieldString:(id)arg1;
 - (BOOL)readyToFind;
@@ -72,7 +75,11 @@ __attribute__((visibility("hidden")))
 - (id)init;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
 @property(nonatomic) __weak id <FindBannerDelegate> delegate; // @dynamic delegate;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

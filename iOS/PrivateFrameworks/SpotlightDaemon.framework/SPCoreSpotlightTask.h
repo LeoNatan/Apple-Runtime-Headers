@@ -31,6 +31,7 @@
 + (id)_makeDisabledBundlesQueryStringForQueryContext:(id)arg1;
 + (id)_makePrefsQueryStringWithBundleIDs:(id)arg1;
 + (id)_makeBundleQueryStringForField:(id)arg1 withBundleIDs:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSMutableArray *jobs; // @synthesize jobs=_jobs;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) SPQueryResultsQueue *resultsQueue; // @synthesize resultsQueue=_resultsQueue;
 @property(nonatomic) struct __SIQuery *siQuery; // @synthesize siQuery=_siQuery;
 @property(retain, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
-- (void).cxx_destruct;
 - (void)resumeResults;
 - (void)pauseResults;
 - (void)finishWithError:(id)arg1;

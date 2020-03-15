@@ -21,12 +21,12 @@
     WKUserContentController *_contentController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WKUserContentController *contentController; // @synthesize contentController=_contentController;
 @property(nonatomic) double estimatedHeight; // @synthesize estimatedHeight=_estimatedHeight;
 @property(nonatomic) __weak id <HUInlineWebContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *HTMLContent; // @synthesize HTMLContent=_HTMLContent;
 @property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldPreviewElement:(id)arg2;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;

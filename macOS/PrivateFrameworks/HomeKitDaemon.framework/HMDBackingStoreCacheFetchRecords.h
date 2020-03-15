@@ -19,6 +19,7 @@
     NSArray *_parentUuids;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *parentUuids; // @synthesize parentUuids=_parentUuids;
 @property(retain, nonatomic) NSArray *uuids; // @synthesize uuids=_uuids;
 @property(retain, nonatomic) NSArray *recordNames; // @synthesize recordNames=_recordNames;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) HMDBackingStoreCacheShareGroup *share; // @synthesize share=_share;
 @property(retain, nonatomic) HMDBackingStoreCacheGroup *group; // @synthesize group=_group;
 @property BOOL recursive; // @synthesize recursive=_recursive;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithGroup:(id)arg1 records:(id)arg2 fetchResult:(CDUnknownBlockType)arg3;
 - (id)initWithShareGroup:(id)arg1 records:(id)arg2 fetchResult:(CDUnknownBlockType)arg3;

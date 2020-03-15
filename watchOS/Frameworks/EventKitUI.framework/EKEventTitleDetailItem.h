@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
     unsigned int _numberOfTitleLines;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int numberOfTitleLines; // @synthesize numberOfTitleLines=_numberOfTitleLines;
 @property(nonatomic) _Bool hasMapItemLaunchOptionFromTimeToLeaveNotification; // @synthesize hasMapItemLaunchOptionFromTimeToLeaveNotification=_hasMapItemLaunchOptionFromTimeToLeaveNotification;
 @property(nonatomic) __weak NSObject<EKEventTitleDetailItemDelegate> *editDelegate; // @synthesize editDelegate=_editDelegate;
 @property(retain, nonatomic) NSDate *proposedTime; // @synthesize proposedTime=_proposedTime;
 @property(nonatomic) _Bool hidesSeparator; // @synthesize hidesSeparator=_hidesSeparator;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *sourceViewForPopover;
 - (_Bool)minimalMode;
 - (void)predictionWasActedOn;

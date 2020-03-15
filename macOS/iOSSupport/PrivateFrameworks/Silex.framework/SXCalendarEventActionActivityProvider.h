@@ -17,9 +17,9 @@
     id <SXHost> _host;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
 @property(readonly, nonatomic) id <SXCalendarPresenter> calendarPresenter; // @synthesize calendarPresenter=_calendarPresenter;
-- (void).cxx_destruct;
 - (void)showInCalendar:(id)arg1;
 - (void)createEvent:(id)arg1;
 - (id)activityGroupForAction:(id)arg1;

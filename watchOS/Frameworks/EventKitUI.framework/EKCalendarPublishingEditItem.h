@@ -17,8 +17,8 @@
     UIActivityIndicatorView *_spinner;
 }
 
-@property(nonatomic) _Bool published; // @synthesize published=_published;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool published; // @synthesize published=_published;
 - (id)pubishURL;
 - (id)calendarTitle;
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;

@@ -51,6 +51,7 @@
 }
 
 + (id)searchHelperWithPersonListController:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long theme; // @synthesize theme=_theme;
 @property(copy) id <CNCancelable> selectionAfterDelaySubscription; // @synthesize selectionAfterDelaySubscription=_selectionAfterDelaySubscription;
 @property(copy) CNPublishingSubject *selectionObservable; // @synthesize selectionObservable=_selectionObservable;
@@ -69,7 +70,6 @@
 @property(readonly) ABAddressBook *suggestionAddressBook; // @synthesize suggestionAddressBook=_suggestionAddressBook;
 @property(retain, nonatomic) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 @property(retain) ABMainListOutlineView *outlineView; // @synthesize outlineView=_outlineView;
-- (void).cxx_destruct;
 - (void)_forciblyRemoveEntriesInArray:(id)arg1;
 - (void)addEntriesFromArray:(id)arg1;
 - (void)insertEntry:(id)arg1 inEntriesAtIndex:(unsigned long long)arg2;
@@ -81,6 +81,9 @@
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)scrollVisibleToSelectedRow;
 - (void)setTableViewNeedsDisplay;
+- (BOOL)accountIsGuardianRestricted;
+- (BOOL)accountOfDisplayedEntriesIsGuardianRestricted;
+- (BOOL)selectedEntriesAreRestrcited;
 - (void)restoreState;
 - (void)saveState;
 - (void)printDescription:(id)arg1;

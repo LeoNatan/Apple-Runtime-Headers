@@ -18,10 +18,10 @@
 + (id)digestAlgorithmWithSignatureAlgorithm:(id)arg1 error:(id *)arg2;
 + (id)algorithmIdentifierWithAsn1AlgId:(struct AlgorithmIdentifier *)arg1 error:(id *)arg2;
 + (id)algorithmIdentifierWithOID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) struct AlgorithmIdentifier *asn1AlgId; // @synthesize asn1AlgId=_asn1AlgId;
 @property(readonly) NSData *parameters; // @synthesize parameters=_parameters;
 @property(readonly) MSOID *algorithm; // @synthesize algorithm=_algorithm;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -16,11 +16,11 @@
     BSAction *_BSAction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BSAction *BSAction; // @synthesize BSAction=_BSAction;
 @property(readonly, nonatomic) STKSessionAction *action; // @synthesize action=_action;
 @property(readonly, copy, nonatomic) NSString *viewControllerName; // @synthesize viewControllerName=_viewControllerName;
 @property(readonly, copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;

@@ -24,6 +24,7 @@
     id <NCAlertingController> _alertingController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NCAlertingController> alertingController; // @synthesize alertingController=_alertingController;
 @property(retain, nonatomic) NCLayoutLoopDetector *layoutDetector; // @synthesize layoutDetector=_layoutDetector;
 @property(retain, nonatomic) NSHashTable *sourceDelegates; // @synthesize sourceDelegates=_sourceDelegates;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NCNotificationStore *notificationStore; // @synthesize notificationStore=_notificationStore;
 @property(retain, nonatomic) NCNotificationDestinationsRegistry *destinationsRegistry; // @synthesize destinationsRegistry=_destinationsRegistry;
 @property(nonatomic) __weak id <NCNotificationDispatcherDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_clearUnsafeNotification:(id)arg1;
 - (void)_didRemoveNotificationRequest:(id)arg1;
 - (void)_didPostNotificationRequest:(id)arg1;

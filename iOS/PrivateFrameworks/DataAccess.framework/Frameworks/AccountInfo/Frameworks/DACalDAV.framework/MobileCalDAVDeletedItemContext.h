@@ -14,9 +14,9 @@
     NSNumber *_rowid;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int entityType; // @synthesize entityType=_entityType;
 @property(retain, nonatomic) NSNumber *rowid; // @synthesize rowid=_rowid;
-- (void).cxx_destruct;
 
 @end
 

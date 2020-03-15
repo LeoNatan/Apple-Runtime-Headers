@@ -15,8 +15,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)resourceObjectWithFHIRJSONObject:(id)arg1 redactedJSONObject:(id)arg2 error:(id *)arg3;
-@property(readonly, copy, nonatomic) NSString *resourceType; // @synthesize resourceType=_resourceType;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *resourceType; // @synthesize resourceType=_resourceType;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

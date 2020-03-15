@@ -24,6 +24,7 @@
 }
 
 + (id)lockTileView;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fadeOutCompletionHandler; // @synthesize fadeOutCompletionHandler=_fadeOutCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType fadeInCompletionHandler; // @synthesize fadeInCompletionHandler=_fadeInCompletionHandler;
 @property(nonatomic) _Bool isLocked; // @synthesize isLocked=_isLocked;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) CALayer *lockGroupLayer; // @synthesize lockGroupLayer=_lockGroupLayer;
 @property(retain, nonatomic) CALayer *lockBase; // @synthesize lockBase=_lockBase;
 @property(retain, nonatomic) CALayer *lockHandle; // @synthesize lockHandle=_lockHandle;
-- (void).cxx_destruct;
 - (id)lockAnimationWithBeginTime:(double)arg1;
 - (id)unLockAnimationWithBeginTime:(double)arg1;
 - (id)fadeAnimationWithStartAlpha:(double)arg1 endAlpha:(double)arg2 beginTime:(double)arg3 duration:(double)arg4;

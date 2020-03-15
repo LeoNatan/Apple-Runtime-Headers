@@ -23,12 +23,12 @@
 + (id)cancelButtonWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)okButtonWithHandler:(CDUnknownBlockType)arg1;
 + (id)cancelButtonWithHandler:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak WFAlert *alert; // @synthesize alert=_alert;
 @property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic, getter=isPreferred) _Bool preferred; // @synthesize preferred=_preferred;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 style:(long long)arg2 handler:(CDUnknownBlockType)arg3 preferred:(_Bool)arg4;
 
 @end

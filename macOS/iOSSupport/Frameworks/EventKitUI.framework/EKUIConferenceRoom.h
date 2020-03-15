@@ -16,11 +16,11 @@
     long long _availability;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long availability; // @synthesize availability=_availability;
 @property(nonatomic) BOOL availabilityRequestInProgress; // @synthesize availabilityRequestInProgress=_availabilityRequestInProgress;
 @property(nonatomic) BOOL supportsAvailability; // @synthesize supportsAvailability=_supportsAvailability;
 @property(retain, nonatomic) EKDirectoryLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -13,8 +13,8 @@
     NSString *_alignment;
 }
 
-@property(copy, nonatomic) NSString *alignment; // @synthesize alignment=_alignment;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *alignment; // @synthesize alignment=_alignment;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

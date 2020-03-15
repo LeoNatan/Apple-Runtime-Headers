@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)_foundCalendarEvents:(id)arg1;
+- (void)_service:(id)arg1 didFindEventCandidateForURL:(id)arg2 pageTitle:(id)arg3;
 - (void)_checkIfPageContainsCalendarEvent;
 - (void)cancelCheckForConfirmationPage;
 - (void)checkIfPageContainsCalendarEvent;

@@ -17,8 +17,8 @@
 + (void)fetchActiveEndpointUIDWithCompletion:(CDUnknownBlockType)arg1;
 + (void)_allDiscoveredDevicesDidUpdate:(id)arg1;
 + (id)_allDiscoveredDevices;
-@property(nonatomic) __weak id <TVRCDeviceQueryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVRCDeviceQueryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)stop;
 - (void)start;
 @property(readonly, copy, nonatomic) NSSet *devices;

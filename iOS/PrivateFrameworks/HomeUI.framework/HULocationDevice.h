@@ -18,10 +18,10 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCurrentDevice) _Bool currentDevice; // @synthesize currentDevice=_currentDevice;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

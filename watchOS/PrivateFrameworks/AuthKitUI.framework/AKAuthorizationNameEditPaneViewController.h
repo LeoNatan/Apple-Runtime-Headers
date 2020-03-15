@@ -19,12 +19,12 @@
     unsigned int _editingFamilyNameIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int editingFamilyNameIndex; // @synthesize editingFamilyNameIndex=_editingFamilyNameIndex;
 @property(nonatomic) unsigned int editingGivenNameIndex; // @synthesize editingGivenNameIndex=_editingGivenNameIndex;
 @property(retain, nonatomic) AKUserInformation *userInformation; // @synthesize userInformation=_userInformation;
 @property(nonatomic) _Bool shouldClearName; // @synthesize shouldClearName=_shouldClearName;
 @property(copy, nonatomic) NSString *applicationName; // @synthesize applicationName=_applicationName;
-- (void).cxx_destruct;
 - (void)textField:(id)arg1 textInputValueDidChange:(id)arg2;
 - (void)textInputValueCancelled:(id)arg1;
 - (void)updateDataSourceWithNameFromUserInformation:(id)arg1;

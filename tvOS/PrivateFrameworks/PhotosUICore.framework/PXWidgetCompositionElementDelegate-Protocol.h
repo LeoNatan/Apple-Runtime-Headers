@@ -6,13 +6,14 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class PXWidgetCompositionElement;
+@class NSObject, PXWidgetCompositionElement;
+@protocol PXAnonymousViewController;
 
 @protocol PXWidgetCompositionElementDelegate <NSObject>
-- (struct NSObject *)elementViewController:(PXWidgetCompositionElement *)arg1;
+- (NSObject<PXAnonymousViewController> *)elementViewController:(PXWidgetCompositionElement *)arg1;
 
 @optional
 - (_Bool)element:(PXWidgetCompositionElement *)arg1 requestViewControllerDismissalAnimated:(_Bool)arg2;
-- (_Bool)element:(PXWidgetCompositionElement *)arg1 transitionToViewController:(struct NSObject *)arg2 withTransitionType:(long long)arg3;
+- (_Bool)element:(PXWidgetCompositionElement *)arg1 transitionToViewController:(NSObject<PXAnonymousViewController> *)arg2 withTransitionType:(long long)arg3;
 @end
 

@@ -31,6 +31,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)identityForRemoteDataProvider:(id)arg1;
 + (id)identityForDataProvider:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *filterDisplayNames; // @synthesize filterDisplayNames=_filterDisplayNames;
 @property(readonly, nonatomic) _Bool syncsBulletinDismissal; // @synthesize syncsBulletinDismissal=_syncsBulletinDismissal;
 @property(copy, nonatomic) NSString *parentSectionIdentifier; // @synthesize parentSectionIdentifier=_parentSectionIdentifier;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(readonly, nonatomic) CDStruct_0e6e99aa traits; // @synthesize traits=_traits;
 @property(copy, nonatomic) NSString *sortKey; // @synthesize sortKey=_sortKey;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

@@ -15,9 +15,9 @@
 }
 
 + (_Bool)shouldParseChildDOMElements;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *entityTypeString; // @synthesize entityTypeString=_entityTypeString;
 @property(readonly, nonatomic) long long limitValue; // @synthesize limitValue=_limitValue;
-- (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)_layoutAxis;
-@property(retain, nonatomic) UISwitch *valueSwitch; // @synthesize valueSwitch=_valueSwitch;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UISwitch *valueSwitch; // @synthesize valueSwitch=_valueSwitch;
 - (void)_switchDidChangeValue:(id)arg1;
 - (void)_prototypingSettingDidChange;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

@@ -22,10 +22,10 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDetecting; // @synthesize isDetecting=_isDetecting;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) NSUUID *advertisingDeviceUUID; // @synthesize advertisingDeviceUUID=_advertisingDeviceUUID;
-- (void).cxx_destruct;
 - (void)_endPowerAssertion;
 - (void)_createPowerAssertion;
 - (void)endDetecting;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_currentHorizontalConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *currentHorizontalConstraints; // @synthesize currentHorizontalConstraints=_currentHorizontalConstraints;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool spinnerHidden;
 @property(nonatomic) _Bool spinSpinner;
 @property(retain, nonatomic) NSString *messageText;

@@ -14,8 +14,8 @@
 }
 
 + (void)load;
-@property(retain) PLXPCResponderOperatorComposition *presubmissionTestResponder; // @synthesize presubmissionTestResponder=_presubmissionTestResponder;
 - (void).cxx_destruct;
+@property(retain) PLXPCResponderOperatorComposition *presubmissionTestResponder; // @synthesize presubmissionTestResponder=_presubmissionTestResponder;
 - (id)presubmissionTest_testEPLMode:(id)arg1 withParam:(id)arg2;
 - (void)initOperatorDependancies;
 - (id)init;

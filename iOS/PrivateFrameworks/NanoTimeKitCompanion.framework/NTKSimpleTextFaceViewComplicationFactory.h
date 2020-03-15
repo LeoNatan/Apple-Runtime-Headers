@@ -17,9 +17,9 @@
     CLKDevice *_device;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) __weak NTKFaceView<NTKUtilityFlatComplicationViewDelegate> *faceView; // @synthesize faceView=_faceView;
-- (void).cxx_destruct;
 - (long long)complicationPickerStyleForSlot:(id)arg1;
 - (unsigned long long)keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (id)pickerMaskForSlot:(id)arg1;

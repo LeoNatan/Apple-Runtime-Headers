@@ -19,16 +19,16 @@
 
 + (id)responseWithRequest:(id)arg1 value:(id)arg2 updatedTime:(id)arg3 stateNumber:(id)arg4;
 + (id)responseWithRequest:(id)arg1 error:(id)arg2;
-+ (struct NSArray *)responsesFromSerializedResponse:(struct NSDictionary *)arg1 requests:(id)arg2 home:(id)arg3;
-+ (struct NSDictionary *)serializeResponses:(id)arg1;
-+ (struct NSArray *)groupedProfileResponses:(id)arg1;
++ (id)responsesFromSerializedResponse:(id)arg1 requests:(id)arg2 home:(id)arg3;
++ (id)serializeResponses:(id)arg1;
++ (id)groupedProfileResponses:(id)arg1;
 + (id)propertyResponsesFromRequests:(id)arg1 error:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *valueUpdatedTime; // @synthesize valueUpdatedTime=_valueUpdatedTime;
 @property(readonly, nonatomic) NSNumber *stateNumber; // @synthesize stateNumber=_stateNumber;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) HMDMediaPropertyRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRequest:(id)arg1 value:(id)arg2 updatedTime:(id)arg3 stateNumber:(id)arg4;
 - (id)initWithRequest:(id)arg1 error:(id)arg2;

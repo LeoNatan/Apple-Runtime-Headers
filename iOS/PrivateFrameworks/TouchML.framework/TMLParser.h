@@ -42,9 +42,9 @@
 + (id)transformObjectCreation:(id)arg1;
 + (id)transformAccessors:(id)arg1;
 + (id)transformFunction:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool strict; // @synthesize strict=_strict;
 @property(readonly, nonatomic) NSString *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)compileFunction:(id)arg1 bodyOnly:(_Bool)arg2 localVars:(id)arg3;
 - (id)compileFunction:(id)arg1 bodyOnly:(_Bool)arg2;
 - (id)compileExpression:(id)arg1;

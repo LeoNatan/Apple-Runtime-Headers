@@ -16,9 +16,9 @@
     NSURL *_thumbnailImageURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *thumbnailImageURL; // @synthesize thumbnailImageURL=_thumbnailImageURL;
 @property(copy, nonatomic) NSURL *fullsizeImageURL; // @synthesize fullsizeImageURL=_fullsizeImageURL;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double stillTimeInVideo;
 @property(readonly, copy, nonatomic) NSURL *videoAssetURL;
 @property(readonly, nonatomic) unsigned long long type;

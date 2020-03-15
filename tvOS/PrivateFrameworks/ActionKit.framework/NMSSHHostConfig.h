@@ -17,12 +17,12 @@
     NSArray *_identityFiles;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *identityFiles; // @synthesize identityFiles=_identityFiles;
 @property(retain, nonatomic) NSNumber *port; // @synthesize port=_port;
 @property(retain, nonatomic) NSString *user; // @synthesize user=_user;
 @property(retain, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 @property(retain, nonatomic) NSArray *hostPatterns; // @synthesize hostPatterns=_hostPatterns;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (id)mergedArray:(id)arg1 withArray:(id)arg2;
 - (id)arrayByRemovingDuplicateElementsFromArray:(id)arg1;

@@ -13,8 +13,8 @@
 
 + (id)proxyForOperation:(id)arg1;
 + (void)initialize;
-@property(retain, nonatomic) FCOperation *underlyingOperation; // @synthesize underlyingOperation=_underlyingOperation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCOperation *underlyingOperation; // @synthesize underlyingOperation=_underlyingOperation;
 - (void)_revisitQualityOfService;
 - (void)_revisitRelativePriority;
 - (void)setQualityOfService:(long long)arg1;

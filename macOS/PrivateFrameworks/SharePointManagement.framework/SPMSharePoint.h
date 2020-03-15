@@ -29,6 +29,7 @@
 
 + (BOOL)isURLShareable:(id)arg1;
 + (id)attributesToFetch;
+- (void).cxx_destruct;
 @property(readonly) BOOL smbShared; // @synthesize smbShared=_smbShared;
 @property(readonly) BOOL smbGuestAccess; // @synthesize smbGuestAccess=_smbGuestAccess;
 @property(readonly) unsigned long long smbDirectoryMask; // @synthesize smbDirectoryMask=_smbDirectoryMask;
@@ -42,7 +43,6 @@
 @property(readonly) NSURL *url; // @synthesize url=_url;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 url:(id)arg3;

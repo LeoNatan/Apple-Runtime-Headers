@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *listID; // @synthesize listID=_listID;
 @property(readonly, nonatomic) NSString *firstSenderAddress; // @synthesize firstSenderAddress=_firstSenderAddress;
 @property(readonly, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(readonly, nonatomic) NSString *firstRecipient; // @synthesize firstRecipient=_firstRecipient;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHeaders:(id)arg1;

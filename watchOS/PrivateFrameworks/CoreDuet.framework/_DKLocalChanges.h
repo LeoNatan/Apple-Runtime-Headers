@@ -16,11 +16,11 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) NSArray *tombstones; // @synthesize tombstones=_tombstones;
 @property(readonly, nonatomic) NSArray *insertedObjects; // @synthesize insertedObjects=_insertedObjects;
-- (void).cxx_destruct;
 - (id)initWithInsertedObjects:(id)arg1 tombstones:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;
 
 @end

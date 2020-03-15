@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIColor *_shadowColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRasterizeForTransition; // @synthesize shouldRasterizeForTransition=_shouldRasterizeForTransition;
 @property(copy, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
-- (void).cxx_destruct;
 @property(nonatomic) float shadowRadius;
 @property(nonatomic) struct CGSize shadowOffset;
 @property(nonatomic) float shadowAlpha;

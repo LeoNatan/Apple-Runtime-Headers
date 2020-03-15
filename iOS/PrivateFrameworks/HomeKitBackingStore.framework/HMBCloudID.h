@@ -22,11 +22,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)hmbDecodeData:(id)arg1 fromStorageLocation:(unsigned long long)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *modelID; // @synthesize modelID=_modelID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) long long scope; // @synthesize scope=_scope;
 @property(readonly, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

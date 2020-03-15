@@ -17,11 +17,11 @@
     struct UIEdgeInsets _initialContentInset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *compositionInvalidationContexts; // @synthesize compositionInvalidationContexts=_compositionInvalidationContexts;
 @property(readonly, nonatomic) struct UIEdgeInsets initialContentInset; // @synthesize initialContentInset=_initialContentInset;
 @property(readonly, nonatomic) struct CGSize initialReferenceSize; // @synthesize initialReferenceSize=_initialReferenceSize;
 @property(readonly, nonatomic) PXTilingLayout *initialLayout; // @synthesize initialLayout=_initialLayout;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *invalidationContexts;
 - (id)defaultAnimationOptionsForTilingController:(id)arg1;
 @property(readonly, nonatomic) _Bool coordinateSpaceDidChange;

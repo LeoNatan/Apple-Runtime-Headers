@@ -18,9 +18,9 @@
 }
 
 + (_Bool)showsLabelAndValue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *editPhotoLabelButton; // @synthesize editPhotoLabelButton=_editPhotoLabelButton;
 @property(readonly, nonatomic) UIButton *editPhotoButton; // @synthesize editPhotoButton=_editPhotoButton;
-- (void).cxx_destruct;
 - (struct CGRect)_separatorFrame;
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
 - (void)_adjustEditPhotoButtonFontSizeIfNecessary;

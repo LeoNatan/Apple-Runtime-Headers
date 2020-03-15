@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)quickActionForPresentation:(id)arg1 serviceAction:(id)arg2;
-@property(readonly) id <_NSServiceAction> _legacyServiceAction; // @synthesize _legacyServiceAction;
 - (void).cxx_destruct;
+@property(readonly) id <_NSServiceAction> _legacyServiceAction; // @synthesize _legacyServiceAction;
 - (BOOL)canMoveToTrash;
 - (id)_bundleURL;
 - (Class)_preferencesClass;

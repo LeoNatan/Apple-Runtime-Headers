@@ -16,8 +16,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
 + (id)filterWithSampleUUID:(id)arg1;
-@property(readonly, nonatomic) NSUUID *sampleUUID; // @synthesize sampleUUID=_sampleUUID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSUUID *sampleUUID; // @synthesize sampleUUID=_sampleUUID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

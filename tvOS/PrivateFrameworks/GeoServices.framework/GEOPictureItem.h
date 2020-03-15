@@ -19,11 +19,11 @@
     NSString *_secondaryText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(readonly, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
 @property(readonly, nonatomic) int pictureItemPhotoType; // @synthesize pictureItemPhotoType=_pictureItemPhotoType;
 @property(readonly, nonatomic) id <GEOMapItemPhoto> photo; // @synthesize photo=_photo;
-- (void).cxx_destruct;
 - (id)initWithPictureItem:(id)arg1;
 - (id)initWithPhoto:(id)arg1 pictureItemPhotoType:(int)arg2 primaryText:(id)arg3 secondaryText:(id)arg4;
 - (id)init;

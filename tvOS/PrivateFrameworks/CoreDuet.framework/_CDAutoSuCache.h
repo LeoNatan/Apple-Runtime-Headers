@@ -16,10 +16,10 @@
 }
 
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(retain) NSDate *predictedSleepValidityEndDate; // @synthesize predictedSleepValidityEndDate=_predictedSleepValidityEndDate;
 @property(retain) NSDate *predictedSleepValidityStartDate; // @synthesize predictedSleepValidityStartDate=_predictedSleepValidityStartDate;
 @property(retain) NSDictionary *predictedSleep; // @synthesize predictedSleep=_predictedSleep;
-- (void).cxx_destruct;
 - (id)cachedPredictedSleepDictionaryForDate:(id)arg1;
 - (void)setCachedPredictedSleepDictionary:(id)arg1 validityStartDate:(id)arg2 validityEndDate:(id)arg3;
 - (void)clear;

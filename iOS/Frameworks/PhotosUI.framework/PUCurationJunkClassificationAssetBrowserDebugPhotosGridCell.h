@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     UIColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(copy, nonatomic) NSString *score; // @synthesize score=_score;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

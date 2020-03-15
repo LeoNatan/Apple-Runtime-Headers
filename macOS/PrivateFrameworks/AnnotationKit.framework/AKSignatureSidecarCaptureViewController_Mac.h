@@ -24,6 +24,7 @@
     NSSegmentedControl *_devicePickerButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSegmentedControl *devicePickerButton; // @synthesize devicePickerButton=_devicePickerButton;
 @property(retain) NSTextField *bottomInstructions; // @synthesize bottomInstructions=_bottomInstructions;
 @property(retain) NSButton *doneButton; // @synthesize doneButton=_doneButton;
@@ -32,7 +33,6 @@
 @property(retain) AKSignatureOutputView_Mac *signatureView; // @synthesize signatureView=_signatureView;
 @property(copy) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_startWithDevice:(id)arg1;
 - (void)showDevicePicker:(id)arg1;
 - (void)_devicePicked:(id)arg1;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSUUID *_extensionUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *contextMenuItems; // @synthesize contextMenuItems=_contextMenuItems;
 @property(retain, nonatomic) NSUUID *extensionUUID; // @synthesize extensionUUID=_extensionUUID;
-- (void).cxx_destruct;
 - (void)invalidateContextMenuUserInfoForPageUUID:(id)arg1;
 - (id)userInfoForPageUUID:(id)arg1;
 - (void)setUserInfo:(id)arg1 forPageUUID:(id)arg2;

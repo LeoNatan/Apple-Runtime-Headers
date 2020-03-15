@@ -15,10 +15,10 @@
     struct CGSize _intrinsicContentSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didMoveToWindowHandler; // @synthesize didMoveToWindowHandler=_didMoveToWindowHandler;
 @property(copy, nonatomic) NSArray *animatedLayerProperties; // @synthesize animatedLayerProperties=_animatedLayerProperties;
 @property(nonatomic) struct CGSize intrinsicContentSize; // @synthesize intrinsicContentSize=_intrinsicContentSize;
-- (void).cxx_destruct;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)didMoveToWindow;
 

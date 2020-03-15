@@ -13,8 +13,8 @@
     HUNetworkConfigurationSettingsModuleController *_networkConfigurationSettingsModuleController;
 }
 
-@property(retain, nonatomic) HUNetworkConfigurationSettingsModuleController *networkConfigurationSettingsModuleController; // @synthesize networkConfigurationSettingsModuleController=_networkConfigurationSettingsModuleController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUNetworkConfigurationSettingsModuleController *networkConfigurationSettingsModuleController; // @synthesize networkConfigurationSettingsModuleController=_networkConfigurationSettingsModuleController;
 - (void)updateNetworkConfigurationSettingsModuleFooter;
 - (void)itemManagerDidFinishUpdate:(id)arg1;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;

@@ -10,7 +10,7 @@
 #import <LinkPresentation/WKNavigationDelegate-Protocol.h>
 
 @class LPAnimatedImageTranscoder, LPFetcherGroup, LPLinkMetadata, LPMetadataProviderSpecialization, NSMutableArray, NSString, NSTimer, NSURL, WKWebView;
-@protocol OS_dispatch_group, OS_dispatch_semaphore;
+@protocol OS_dispatch_group;
 
 @interface LPMetadataProvider : NSObject <WKNavigationDelegate, LPMetadataProviderSpecializationDelegate>
 {
@@ -19,7 +19,6 @@
     NSURL *_URL;
     NSURL *_originalURL;
     NSTimer *_watchdog;
-    NSObject<OS_dispatch_semaphore> *_completionSemaphore;
     LPLinkMetadata *_metadata;
     BOOL _complete;
     BOOL _fetchingFromExistingWebView;
@@ -45,13 +44,13 @@
 + (id)requestMetadataForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)_incompleteMetadataRequests;
 + (id)_callbackQueue;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useSpecializedProviders; // @synthesize useSpecializedProviders=_useSpecializedProviders;
 @property BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) BOOL shouldFetchSubresources; // @synthesize shouldFetchSubresources=_shouldFetchSubresources;
 @property(nonatomic) unsigned long long allowedSpecializedProviders; // @synthesize allowedSpecializedProviders=_allowedSpecializedProviders;
-- (void).cxx_destruct;
 - (void)metadataProviderSpecializationDidFail:(id)arg1;
 - (void)metadataProviderSpecialization:(id)arg1 didCompleteWithMetadata:(id)arg2;
 - (void)metadataProviderSpecialization:(id)arg1 didFetchPreliminaryMetadata:(id)arg2;

@@ -20,8 +20,8 @@
     NSArray *_apps;
 }
 
-@property(copy, nonatomic) NSArray *apps; // @synthesize apps=_apps;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *apps; // @synthesize apps=_apps;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)setTitle:(id)arg1;

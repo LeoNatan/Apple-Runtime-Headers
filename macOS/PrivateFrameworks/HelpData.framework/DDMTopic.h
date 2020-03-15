@@ -27,6 +27,7 @@
 }
 
 + (id)ddmObjectIdentifierWithBookID:(id)arg1 topicID:(id)arg2;
+- (void).cxx_destruct;
 @property BOOL allResourcesCached; // @synthesize allResourcesCached=_allResourcesCached;
 @property(readonly) NSString *bodyString; // @synthesize bodyString=_bodyString;
 @property(readonly) NSString *searchTitle; // @synthesize searchTitle=_searchTitle;
@@ -41,7 +42,6 @@
 @property(readonly) NSString *locale; // @synthesize locale=_locale;
 @property(readonly) NSString *title; // @synthesize title=_title;
 @property(readonly) NSString *tocID; // @synthesize tocID=_tocID;
-- (void).cxx_destruct;
 - (id)ddmObjectIdentifier;
 - (id)description;
 @property(readonly) DDMBook *ddmBook;

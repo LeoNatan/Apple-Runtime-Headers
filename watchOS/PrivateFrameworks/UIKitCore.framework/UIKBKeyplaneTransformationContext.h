@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     float _resizingOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float resizingOffset; // @synthesize resizingOffset=_resizingOffset;
 @property(nonatomic) _Bool usesScriptSwitch; // @synthesize usesScriptSwitch=_usesScriptSwitch;
 @property(retain, nonatomic) UIKBScreenTraits *screenTraits; // @synthesize screenTraits=_screenTraits;
 @property(retain, nonatomic) NSString *currentKeyplaneName; // @synthesize currentKeyplaneName=_currentKeyplaneName;
 @property(retain, nonatomic) UIKBTree *activeKeyboard; // @synthesize activeKeyboard=_activeKeyboard;
-- (void).cxx_destruct;
 
 @end
 

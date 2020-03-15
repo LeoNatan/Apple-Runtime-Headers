@@ -16,8 +16,8 @@
 }
 
 + (id)instructionWithIdentifier:(id)arg1;
-@property(readonly, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 @property(readonly, copy) NSString *description;
 - (_Bool)isFulfilledForBlueprint:(id)arg1;
 

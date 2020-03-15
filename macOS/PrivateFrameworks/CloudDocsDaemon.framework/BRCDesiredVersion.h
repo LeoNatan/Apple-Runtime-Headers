@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
 
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *serverName; // @synthesize serverName=_serverName;
 @property(retain, nonatomic) NSError *downloadError; // @synthesize downloadError=_downloadError;
-- (void).cxx_destruct;
 - (BOOL)isStillValidForEtag:(id)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt *)arg1 index:(int)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

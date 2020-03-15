@@ -15,8 +15,8 @@
 
 + (void)setSharedHelper:(id)arg1;
 + (id)sharedHelper;
-@property(retain, nonatomic) id <HMDHelperExternalProtocol> externalProtocol; // @synthesize externalProtocol=_externalProtocol;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <HMDHelperExternalProtocol> externalProtocol; // @synthesize externalProtocol=_externalProtocol;
 - (id)hashedRouteIDForIdentifier:(id)arg1;
 - (id)initWithExternalProtocol:(id)arg1;
 

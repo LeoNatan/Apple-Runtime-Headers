@@ -19,8 +19,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)stableGroupIDWithCurrentTime;
 + (unsigned int)stableGroupIDLength;
-@property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (id)description;
 - (int)customUUIDCompare:(unsigned char [16])arg1 u2:(unsigned char [16])arg2;
 - (int)compare:(id)arg1;

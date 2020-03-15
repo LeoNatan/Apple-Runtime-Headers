@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     HKGraphSeries *_graphSeries;
 }
 
-@property(readonly, nonatomic) HKGraphSeries *graphSeries; // @synthesize graphSeries=_graphSeries;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKGraphSeries *graphSeries; // @synthesize graphSeries=_graphSeries;
 - (void)graphViewDidTapYAxis:(id)arg1;
 - (id)seriesSelectionLineColorForGraphView:(id)arg1;
 - (id)graphView:(id)arg1 graphSeriesForZoom:(long long)arg2 stackOffset:(long long)arg3;

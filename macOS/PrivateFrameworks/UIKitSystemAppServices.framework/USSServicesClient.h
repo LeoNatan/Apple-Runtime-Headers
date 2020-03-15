@@ -22,10 +22,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isNotSystemApp; // @synthesize isNotSystemApp=_isNotSystemApp;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) struct CGSize defaultSceneSize; // @synthesize defaultSceneSize=_defaultSceneSize;
-- (void).cxx_destruct;
 - (void)submitRemoteNotificationRequest:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setDisconnectionQueue:(id)arg1 disconnectionHandler:(CDUnknownBlockType)arg2;
 - (id)initDaemonClientForCurrentUserWithName:(id)arg1;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)canHostRefreshControlOwnedByScrollView:(id)arg1 inNavigationController:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSArray *refreshControlConstraints; // @synthesize refreshControlConstraints=_refreshControlConstraints;
 @property __weak UIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
 @property(nonatomic) double unobstructedHeight; // @synthesize unobstructedHeight=_unobstructedHeight;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) __weak id <_UINavigationControllerRefreshControlHostDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (double)_alphaForRefreshingControlStateWithPossiblyObstructedContent;
 - (double)_thresholdForObstructedContentZeroAlpha;
 - (double)_thresholdForObstructedContentFullAlpha;

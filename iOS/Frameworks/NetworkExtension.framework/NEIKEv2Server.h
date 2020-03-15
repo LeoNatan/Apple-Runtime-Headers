@@ -26,6 +26,7 @@
 }
 
 + (id)getSynthesizedIPv6Address:(id)arg1 outgoingIf:(unsigned long long)arg2 nat64Prefixes:(CDStruct_c3d3b44c *)arg3 numNat64Prefixes:(int)arg4;
+- (void).cxx_destruct;
 @property unsigned long long nextCount; // @synthesize nextCount=_nextCount;
 @property(retain) NSObject<OS_dispatch_source> *redirectTimer; // @synthesize redirectTimer=_redirectTimer;
 @property unsigned int redirects; // @synthesize redirects=_redirects;
@@ -36,7 +37,6 @@
 @property(retain) NSString *redirectedAddress; // @synthesize redirectedAddress=_redirectedAddress;
 @property(retain) NSMutableArray *resolvedAddresses; // @synthesize resolvedAddresses=_resolvedAddresses;
 @property(retain) NSString *serverAddress; // @synthesize serverAddress=_serverAddress;
-- (void).cxx_destruct;
 - (id)getViableServerAddressForPath:(id)arg1;
 - (void)dealloc;
 - (void)stopRedirectTimer;

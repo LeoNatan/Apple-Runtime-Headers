@@ -17,9 +17,9 @@
 }
 
 + (id)todoWithIdentifier:(id)arg1 done:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool done; // @synthesize done=_done;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

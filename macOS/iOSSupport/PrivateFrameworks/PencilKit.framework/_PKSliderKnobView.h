@@ -13,8 +13,8 @@
     UIImageView *_knobImageView;
 }
 
-@property(readonly, nonatomic) UIImageView *knobImageView; // @synthesize knobImageView=_knobImageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageView *knobImageView; // @synthesize knobImageView=_knobImageView;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

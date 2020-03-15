@@ -27,6 +27,7 @@
     NSMutableDictionary *_stackedComponentsGuideConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *stackedComponentsGuideConstraints; // @synthesize stackedComponentsGuideConstraints=_stackedComponentsGuideConstraints;
 @property(retain, nonatomic) UILayoutGuide *stackedComponentsBoundsGuide; // @synthesize stackedComponentsBoundsGuide=_stackedComponentsBoundsGuide;
 @property(retain, nonatomic) NSDictionary *contentBoundsGuideConstraints; // @synthesize contentBoundsGuideConstraints=_contentBoundsGuideConstraints;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) UIView *topView; // @synthesize topView=_topView;
 @property(nonatomic) long long defaultTextAlignment; // @synthesize defaultTextAlignment=_defaultTextAlignment;
 @property(nonatomic) __weak id <SiriUILabelStackTemplateViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriUILabelStackTemplateModel> dataSource; // @dynamic dataSource;
 - (void)reloadData;
 - (long long)layoutStyle;

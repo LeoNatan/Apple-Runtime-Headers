@@ -10,12 +10,13 @@
 #import <UserManagement/UMUserPersonaAttributesList-Protocol.h>
 #import <UserManagement/UMUserPersonaLoginSessionManagement-Protocol.h>
 #import <UserManagement/UMUserPersonaManagement-Protocol.h>
+#import <UserManagement/UMUserSessionProvisioning-Protocol.h>
 #import <UserManagement/UMUserSwitchManagement-Protocol.h>
 
 @class NSArray, NSString, UMUser, UMUserPersona;
 @protocol UMUserListUpdateObserver, UMUserPersonaUpdateObserver;
 
-@interface UMUserManager : NSObject <UMUserManagement, UMUserSwitchManagement, UMUserPersonaManagement, UMUserPersonaAttributesList, UMUserPersonaLoginSessionManagement>
+@interface UMUserManager : NSObject <UMUserManagement, UMUserSwitchManagement, UMUserPersonaManagement, UMUserPersonaAttributesList, UMUserPersonaLoginSessionManagement, UMUserSessionProvisioning>
 {
     NSArray *_allUsers;
     _Bool _switchIsOccurring;
@@ -24,10 +25,11 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UMUserPersonaUpdateObserver> userPersonaUpdateObserver; // @synthesize userPersonaUpdateObserver=_userPersonaUpdateObserver;
 @property(nonatomic) _Bool switchIsOccurring; // @synthesize switchIsOccurring=_switchIsOccurring;
 @property(nonatomic) __weak id <UMUserListUpdateObserver> userListUpdateObserver; // @synthesize userListUpdateObserver=_userListUpdateObserver;
-- (void).cxx_destruct;
+- (void)setupUMUserSessionProvisioning:(id)arg1 WithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)registerPersonaListUpdateObserver:(id)arg1 withMachService:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)registerPersonaListUpdateObserver:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)personaLogoutWithUserODuuid:(id)arg1 withUid:(unsigned int)arg2 WithError:(id *)arg3;
@@ -87,6 +89,7 @@
 @property(readonly, copy, nonatomic) UMUser *loginUser;
 @property(readonly, copy, nonatomic) UMUser *currentUser;
 - (_Bool)canAccessUserProperties;
+@property(readonly, nonatomic) unsigned long long userQuotaSize;
 @property(readonly, nonatomic) unsigned long long maxNumberOfUsers;
 @property(readonly, nonatomic) _Bool isLoginSession;
 @property(readonly, nonatomic) _Bool isMultiUser;

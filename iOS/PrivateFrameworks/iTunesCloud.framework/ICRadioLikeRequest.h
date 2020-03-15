@@ -21,6 +21,7 @@
     ICStoreRequestContext *_requestContext;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) ICStoreRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(copy, nonatomic) NSString *stationStringID; // @synthesize stationStringID=_stationStringID;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *stationHash; // @synthesize stationHash=_stationHash;
 @property(nonatomic) long long likeState; // @synthesize likeState=_likeState;
 @property(nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
-- (void).cxx_destruct;
 - (void)performWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequestContext:(id)arg1;

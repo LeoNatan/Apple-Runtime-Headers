@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) IDSURI *uri; // @synthesize uri=_uri;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDSURI *uri; // @synthesize uri=_uri;
 - (id)description;
 - (id)groupID;
 - (id)destinationURIs;

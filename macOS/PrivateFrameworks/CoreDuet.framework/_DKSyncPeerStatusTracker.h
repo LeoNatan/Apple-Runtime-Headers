@@ -22,8 +22,8 @@
 + (id)syncPeerTransportsStrings;
 + (id)peerStatusTrackerWithContext:(id)arg1;
 + (id)sharedInstance;
-@property(nonatomic) __weak _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+@property(nonatomic) __weak _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 - (void)debugLogPeers;
 - (void)postCloudDeviceCountChangedNotification;
 - (void)_loadPeers;

@@ -17,11 +17,11 @@
     long long _qualityOfService;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(nonatomic) BOOL isFinished; // @synthesize isFinished=_isFinished;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic) __weak id <MCActivityDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)end;
 - (void)resume;

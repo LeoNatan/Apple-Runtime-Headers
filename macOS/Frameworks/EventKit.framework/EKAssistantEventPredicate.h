@@ -18,13 +18,13 @@
     unsigned long long _countSoFar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long countSoFar; // @synthesize countSoFar=_countSoFar;
 @property(readonly, nonatomic) long long limit; // @synthesize limit=_limit;
 @property(readonly, nonatomic) NSArray *participants; // @synthesize participants=_participants;
 @property(readonly, copy, nonatomic) NSString *notes; // @synthesize notes=_notes;
 @property(readonly, copy, nonatomic) NSString *location; // @synthesize location=_location;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)_sortedParticipants;
 - (id)predicateFormat;
 - (BOOL)evaluateWithObject:(id)arg1;

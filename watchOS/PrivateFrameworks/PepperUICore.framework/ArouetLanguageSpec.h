@@ -22,6 +22,7 @@
 
 + (id)forcedLanguageForLanguage:(id)arg1 textContentType:(id)arg2;
 + (_Bool)supportsLanguage:(id)arg1 textContentType:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _isNaturalLanguageEntry; // @synthesize _isNaturalLanguageEntry=__isNaturalLanguageEntry;
 @property(readonly, nonatomic) _Bool _isPasswordEntry; // @synthesize _isPasswordEntry=__isPasswordEntry;
 @property(readonly, nonatomic) NSString *_lowercaseScriptCode; // @synthesize _lowercaseScriptCode=__lowercaseScriptCode;
@@ -30,7 +31,6 @@
 @property(readonly) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly) NSString *displayLocalizationLanguage; // @synthesize displayLocalizationLanguage=_displayLocalizationLanguage;
 @property(readonly) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportsFullWordReplacementRange;
 @property(readonly, nonatomic) int mecabraInputMethodType;
 @property(readonly, nonatomic) _Bool useLMLanguageModel;

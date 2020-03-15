@@ -30,6 +30,7 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain) NSWindow *sheet; // @synthesize sheet=_sheet;
 @property(retain) NSWindow *window; // @synthesize window=_window;
@@ -44,7 +45,6 @@
 @property(retain) NSPanel *passwordPanel; // @synthesize passwordPanel=_passwordPanel;
 @property(retain) NSString *password; // @synthesize password=_password;
 @property BOOL isVerifyingCredential; // @synthesize isVerifyingCredential=_isVerifyingCredential;
-- (void).cxx_destruct;
 - (void)cancelAuthorization:(id)arg1;
 - (void)startWebAuthorization:(id)arg1;
 - (BOOL)disableAutoReload;

@@ -18,13 +18,13 @@
     NSDateFormatter *_dateTimeFormatter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDateFormatter *dateTimeFormatter; // @synthesize dateTimeFormatter=_dateTimeFormatter;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *apiToken; // @synthesize apiToken=_apiToken;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (id)authenticatedTaskWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getModifiedDateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getBookmarksWithTags:(id)arg1 limit:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;

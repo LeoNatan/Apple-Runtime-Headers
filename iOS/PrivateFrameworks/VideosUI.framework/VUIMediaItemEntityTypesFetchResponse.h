@@ -14,9 +14,9 @@
     NSOrderedSet *_mediaItemEntityTypes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=areLocalMediaItemsAvailable) _Bool localMediaItemsAvailable; // @synthesize localMediaItemsAvailable=_localMediaItemsAvailable;
 @property(copy, nonatomic) NSOrderedSet *mediaItemEntityTypes; // @synthesize mediaItemEntityTypes=_mediaItemEntityTypes;
-- (void).cxx_destruct;
 - (_Bool)_updateWithResponse:(id)arg1 changes:(id)arg2 replaceContentsOnNilChanges:(_Bool)arg3;
 - (id)description;
 - (id)init;

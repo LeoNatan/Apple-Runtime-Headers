@@ -11,5 +11,9 @@
 @protocol TUContactsDataSource <NSObject>
 - (NSArray *)unifiedContactsMatchingPredicate:(NSPredicate *)arg1 keysToFetch:(NSArray *)arg2 error:(id *)arg3;
 - (CNContact *)unifiedContactWithIdentifier:(NSString *)arg1 keysToFetch:(NSArray *)arg2 error:(id *)arg3;
+
+@optional
+- (CNContact *)contactForDestinationId:(NSString *)arg1 keysToFetch:(NSArray *)arg2;
+- (CNContact *)contactForIdentifier:(NSString *)arg1 keysToFetch:(NSArray *)arg2;
 @end
 

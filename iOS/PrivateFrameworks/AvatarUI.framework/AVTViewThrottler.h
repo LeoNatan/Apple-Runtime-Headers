@@ -20,12 +20,12 @@
     NSTimer *_autoUnthrottlingTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool throttling; // @synthesize throttling=_throttling;
 @property(retain, nonatomic) NSTimer *autoUnthrottlingTimer; // @synthesize autoUnthrottlingTimer=_autoUnthrottlingTimer;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) AVTView *avtView; // @synthesize avtView=_avtView;
 @property(nonatomic) __weak id <AVTDeviceResourceConsumerDelegate> consumerDelegate; // @synthesize consumerDelegate=_consumerDelegate;
-- (void).cxx_destruct;
 - (void)releaseRenderingResourceForEstimatedDuration:(double)arg1;
 - (void)autoUnthrottle;
 - (void)scheduleAutoUnthrottlingAfterDelay:(double)arg1;

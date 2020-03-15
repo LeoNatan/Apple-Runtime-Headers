@@ -18,9 +18,9 @@
 
 + (struct CGSize)itemSeparation;
 + (struct CGSize)itemSize;
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *preferredHeightConstraint; // @synthesize preferredHeightConstraint=_preferredHeightConstraint;
 @property(copy, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
-- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;

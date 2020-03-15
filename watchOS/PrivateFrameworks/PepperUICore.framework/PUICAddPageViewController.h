@@ -17,10 +17,10 @@
     id <PUICAddPageViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) __weak id <PUICAddPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PUICPageScrollViewController *pageScrollViewController; // @synthesize pageScrollViewController=_pageScrollViewController;
-- (void).cxx_destruct;
 - (void)_setCrownIndicatorVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)willDisappearForPageSelection;
 - (void)_activationButtonPress;

@@ -17,10 +17,10 @@
     unsigned long long _relevanceProvidersHash;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long relevanceProvidersHash; // @synthesize relevanceProvidersHash=_relevanceProvidersHash;
 @property(readonly, nonatomic) id <REDonatedActionIdentifierProviding> actionType; // @synthesize actionType=_actionType;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithIdentifier:(id)arg1 actionType:(id)arg2 relevanceProvidersHash:(unsigned long long)arg3;

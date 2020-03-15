@@ -16,8 +16,8 @@
     id <SBStarkNotificationBannerSourceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBStarkNotificationBannerSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBStarkNotificationBannerSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)bannerViewDidDismiss:(id)arg1 forReason:(int)arg2;
 - (void)bannerViewWillAppear:(id)arg1;
 - (void)executeAction:(id)arg1 forNotificationRequest:(id)arg2;

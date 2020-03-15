@@ -17,8 +17,8 @@
 + (double)desiredHeightForScaledFontSize:(double)arg1;
 + (id)_createLayoutManager;
 + (double)defaultUnscaledFontSize;
-@property(retain, nonatomic) ACSHHoverTextView *_textView; // @synthesize _textView=__textView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACSHHoverTextView *_textView; // @synthesize _textView=__textView;
 @property(readonly, nonatomic) NSFont *_scaledFont;
 @property(readonly, nonatomic) NSColor *_textColor;
 @property(readonly, nonatomic) ACSHPanelHoverTextGroup *_hoverTextGroup;

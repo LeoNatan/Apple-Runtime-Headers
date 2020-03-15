@@ -23,10 +23,10 @@
 + (_Bool)supportsBSXPCSecureCoding;
 + (id)identifierWithClientPid:(int)arg1;
 + (unsigned long long)_next;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(readonly, nonatomic) int clientPid; // @synthesize clientPid=_clientPid;
 @property(readonly, nonatomic) int serverPid; // @synthesize serverPid=_serverPid;
-- (void).cxx_destruct;
 - (id)_initWithServerPid:(int)arg1 clientPid:(int)arg2 count:(unsigned long long)arg3;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

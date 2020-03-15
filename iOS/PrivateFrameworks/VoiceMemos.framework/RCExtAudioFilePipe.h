@@ -20,9 +20,9 @@
     unsigned long long _sourceFileSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long sourceFileSize; // @synthesize sourceFileSize=_sourceFileSize;
 @property(readonly, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
-- (void).cxx_destruct;
 - (void)_accessExtAudioFileWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) struct AudioStreamBasicDescription *outputFormatDescription;
 @property(readonly, nonatomic) struct AudioStreamBasicDescription *sourceFormatDescription;

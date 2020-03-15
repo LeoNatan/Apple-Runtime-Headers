@@ -16,8 +16,8 @@
 }
 
 + (id)createAndSetupConnectionWithObserver:(id)arg1 completion:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) NWKXPCConnectionWrapper *connectionWrapper; // @synthesize connectionWrapper=_connectionWrapper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NWKXPCConnectionWrapper *connectionWrapper; // @synthesize connectionWrapper=_connectionWrapper;
 - (void)resumeMonitoringForInterval:(id)arg1 lastUpdateToken:(unsigned int)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resumeWithCompletion:(CDUnknownBlockType)arg1;

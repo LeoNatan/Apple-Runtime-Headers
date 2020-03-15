@@ -18,8 +18,8 @@
     CDUnknownBlockType _copyOnWriteHandler;
 }
 
-@property(copy) CDUnknownBlockType copyOnWriteHandler; // @synthesize copyOnWriteHandler=_copyOnWriteHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType copyOnWriteHandler; // @synthesize copyOnWriteHandler=_copyOnWriteHandler;
 - (id)description;
 - (id)_copyObject:(id)arg1;
 - (void)write:(CDUnknownBlockType)arg1;

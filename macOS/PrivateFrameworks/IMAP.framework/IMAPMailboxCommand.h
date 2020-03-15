@@ -14,9 +14,9 @@
     NSString *_mailboxArgumentName;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *mailboxArgumentName; // @synthesize mailboxArgumentName=_mailboxArgumentName;
 @property(copy) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
-- (void).cxx_destruct;
 - (long long)maxAllowedConnectionState;
 - (long long)minRequiredConnectionState;
 - (id)simpleDescriptionString;

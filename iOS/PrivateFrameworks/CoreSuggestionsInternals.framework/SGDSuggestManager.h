@@ -35,9 +35,9 @@
 + (void)clearChangeHistory:(id)arg1;
 + (id)fetchChangeHistory;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 @property(readonly, nonatomic) SGServiceContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)foundInStringForRecordId:(id)arg1 style:(unsigned char)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)urlsFoundBetweenStartDate:(id)arg1 endDate:(id)arg2 excludingBundleIdentifiers:(id)arg3 limit:(unsigned int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)recentURLsWithLimit:(unsigned int)arg1 withCompletion:(CDUnknownBlockType)arg2;

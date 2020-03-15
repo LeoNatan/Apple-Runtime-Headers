@@ -16,10 +16,10 @@
     NSArray *_controlPoints;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long shape; // @synthesize shape=_shape;
 @property double time; // @synthesize time=_time;
 @property unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly) NSArray *controlPoints;
 - (id)initWithType:(unsigned long long)arg1 relativeTime:(double)arg2 shape:(unsigned long long)arg3 controlPoints:(id)arg4;
 - (id)init;

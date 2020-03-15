@@ -18,11 +18,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *predicate; // @synthesize predicate=_predicate;
 @property(readonly, copy, nonatomic) NSArray *coreDuetEvents; // @synthesize coreDuetEvents=_coreDuetEvents;
 @property(readonly, copy, nonatomic) NSDictionary *nativeRecordInfo; // @synthesize nativeRecordInfo=_nativeRecordInfo;
 @property(readonly, copy, nonatomic) NSDictionary *nativeRecords; // @synthesize nativeRecords=_nativeRecords;
-- (void).cxx_destruct;
 - (id)filteredRecordSetWithJSONPredicate:(id)arg1;
 - (id)_anyNativeRecordUUID;
 @property(readonly, nonatomic) unsigned long long count;

@@ -13,8 +13,8 @@
     NSString *_slotIdentifier;
 }
 
-@property(readonly, nonatomic) NSString *slotIdentifier; // @synthesize slotIdentifier=_slotIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *slotIdentifier; // @synthesize slotIdentifier=_slotIdentifier;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)_performWithContext:(id)arg1;

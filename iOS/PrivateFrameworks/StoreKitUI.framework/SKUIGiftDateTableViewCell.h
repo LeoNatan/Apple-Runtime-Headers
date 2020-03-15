@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     _Bool _leftToRight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool leftToRight; // @synthesize leftToRight=_leftToRight;
 @property(nonatomic, getter=isChecked) _Bool checked; // @synthesize checked=_checked;
-- (void).cxx_destruct;
 - (id)_newLabel;
 - (id)_labelColor;
 - (void)layoutSubviews;

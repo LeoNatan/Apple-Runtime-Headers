@@ -47,6 +47,7 @@
 + (id)localIdentifierWithUUID:(id)arg1;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSDate *expungeDate; // @synthesize expungeDate=_expungeDate;
 @property(readonly, nonatomic) NSDate *relevantUntilDate; // @synthesize relevantUntilDate=_relevantUntilDate;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) unsigned short state; // @synthesize state=_state;
 @property(readonly, nonatomic) unsigned short subtype; // @synthesize subtype=_subtype;
 @property(readonly, nonatomic) unsigned short type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)assets;
 @property(readonly, nonatomic) _Bool containsUnverifiedPersons;
 - (id)description;

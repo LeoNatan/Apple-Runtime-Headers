@@ -15,10 +15,10 @@
     NSIndexSet *_changes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexSet *changes; // @synthesize changes=_changes;
 @property(retain, nonatomic) NSIndexSet *deletions; // @synthesize deletions=_deletions;
 @property(retain, nonatomic) NSIndexSet *insertions; // @synthesize insertions=_insertions;
-- (void).cxx_destruct;
 
 @end
 

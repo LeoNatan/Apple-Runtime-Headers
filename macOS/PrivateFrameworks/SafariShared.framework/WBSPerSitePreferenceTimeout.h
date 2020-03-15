@@ -13,9 +13,9 @@
 }
 
 + (id)timeoutWithInterval:(double)arg1 fallbackValue:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id fallbackValue; // @synthesize fallbackValue=_fallbackValue;
 @property(readonly, nonatomic) double interval; // @synthesize interval=_interval;
-- (void).cxx_destruct;
 - (id)initWithInterval:(double)arg1 fallbackValue:(id)arg2;
 
 @end

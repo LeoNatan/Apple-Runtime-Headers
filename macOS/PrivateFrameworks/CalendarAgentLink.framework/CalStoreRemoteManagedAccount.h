@@ -20,6 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *serverURL; // @synthesize serverURL=_serverURL;
 @property(retain, nonatomic) NSString *login; // @synthesize login=_login;
 @property(nonatomic) BOOL isMarkedForDeletion; // @synthesize isMarkedForDeletion=_isMarkedForDeletion;
@@ -27,7 +28,6 @@
 @property(nonatomic) BOOL isEnabledForCalendar; // @synthesize isEnabledForCalendar=_isEnabledForCalendar;
 @property(retain, nonatomic) NSString *accountPluginID; // @synthesize accountPluginID=_accountPluginID;
 @property(retain, nonatomic) NSString *acAccountID; // @synthesize acAccountID=_acAccountID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) CalStoreRemoteManagedPrincipal *mainPrincipal;
 - (id)initWithCoder:(id)arg1;

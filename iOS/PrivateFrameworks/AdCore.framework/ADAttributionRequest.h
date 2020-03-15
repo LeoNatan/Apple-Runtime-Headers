@@ -40,6 +40,7 @@
 }
 
 + (id)options;
+- (void).cxx_destruct;
 @property(nonatomic) double downloadClickTimestamp; // @synthesize downloadClickTimestamp=_downloadClickTimestamp;
 @property(retain, nonatomic) NSString *adMetadata; // @synthesize adMetadata=_adMetadata;
 @property(nonatomic) double searchAdClickTimestamp; // @synthesize searchAdClickTimestamp=_searchAdClickTimestamp;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSData *anonymousDemandiAdID; // @synthesize anonymousDemandiAdID=_anonymousDemandiAdID;
 @property(retain, nonatomic) NSData *tiltID; // @synthesize tiltID=_tiltID;
 @property(retain, nonatomic) NSData *iAdID; // @synthesize iAdID=_iAdID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

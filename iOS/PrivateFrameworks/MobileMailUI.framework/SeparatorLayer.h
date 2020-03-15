@@ -15,9 +15,9 @@
 }
 
 + (double)separatorHeight;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long axis; // @synthesize axis=_axis;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

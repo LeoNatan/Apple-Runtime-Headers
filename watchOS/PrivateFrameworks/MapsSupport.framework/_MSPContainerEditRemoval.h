@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSIndexSet *_indexesOfRemovedObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexSet *indexesOfRemovedObjects; // @synthesize indexesOfRemovedObjects=_indexesOfRemovedObjects;
 @property(readonly, nonatomic) NSArray *removedImmutableObjects; // @synthesize removedImmutableObjects=_removedImmutableObjects;
 @property(readonly, nonatomic) NSArray *originalObjects; // @synthesize originalObjects=_originalObjects;
-- (void).cxx_destruct;
 - (void)useImmutableObjectsFromMap:(id)arg1 intermediateMutableObjectTransferBlock:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
 - (id)initWithRemovedObjects:(id)arg1 indexes:(id)arg2;

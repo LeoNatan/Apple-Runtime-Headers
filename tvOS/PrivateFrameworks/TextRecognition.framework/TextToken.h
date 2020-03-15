@@ -17,12 +17,12 @@
     unsigned long long _properties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long properties; // @synthesize properties=_properties;
 @property(readonly) int wordID; // @synthesize wordID=_wordID;
 @property(readonly) NSArray *features; // @synthesize features=_features;
 @property(readonly) double score; // @synthesize score=_score;
 @property(readonly) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)initWithString:(id)arg1 score:(double)arg2 features:(id)arg3 wordID:(int)arg4 properties:(unsigned long long)arg5;
 
 @end

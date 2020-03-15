@@ -13,8 +13,8 @@
 
 + (id)predicateWithPredicate:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) ML3Predicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ML3Predicate *predicate; // @synthesize predicate=_predicate;
 - (id)databaseStatementParameters;
 - (id)SQLJoinClausesForClass:(Class)arg1;
 - (unsigned long long)hash;

@@ -14,9 +14,9 @@
     NSData *_sharedInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSData *sharedInfo; // @synthesize sharedInfo=_sharedInfo;
 @property(readonly) long long requestedSize; // @synthesize requestedSize=_requestedSize;
-- (void).cxx_destruct;
 - (id)initWithParameters:(id)arg1;
 
 @end

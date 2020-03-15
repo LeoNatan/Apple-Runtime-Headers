@@ -17,8 +17,8 @@
 }
 
 + (id)appleIDLookupOperationForReceipt:(id)arg1 storeClient:(id)arg2;
-@property(readonly) NSString *appleID; // @synthesize appleID=mAppleID;
 - (void).cxx_destruct;
+@property(readonly) NSString *appleID; // @synthesize appleID=mAppleID;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)run;
 - (id)initWithReceipt:(id)arg1 storeClient:(id)arg2;

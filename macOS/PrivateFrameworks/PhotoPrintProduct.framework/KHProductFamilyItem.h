@@ -24,11 +24,11 @@
 + (id)subtitleForProductFamily:(unsigned long long)arg1 countryCode:(id)arg2;
 + (id)titleForProductFamily:(unsigned long long)arg1;
 + (id)keyForProductFamily:(unsigned long long)arg1 suffix:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSOrderedSet *productSubgroups; // @synthesize productSubgroups=_productSubgroups;
 @property(nonatomic) unsigned long long productFamily; // @synthesize productFamily=_productFamily;
-- (void).cxx_destruct;
 - (id)subTitleForCountryCode:(id)arg1;
 @property(readonly, nonatomic) NSImage *universalImage;
 @property(readonly, nonatomic) NSImage *landscapeImage;

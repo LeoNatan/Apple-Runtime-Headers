@@ -17,11 +17,11 @@
     unsigned long long _filteringType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long filteringType; // @synthesize filteringType=_filteringType;
 @property(readonly) PGIncompleteLocationResolver *incompleteLocationResolver; // @synthesize incompleteLocationResolver=_incompleteLocationResolver;
 @property(readonly) NSArray *locationNodes; // @synthesize locationNodes=_locationNodes;
 @property(readonly) NSArray *sortedMomentNodes; // @synthesize sortedMomentNodes=_sortedMomentNodes;
-- (void).cxx_destruct;
 - (id)_filteredSignificantLocationNodes;
 @property(readonly, nonatomic) NSArray *filteredLocationNodes; // @synthesize filteredLocationNodes=_filteredLocationNodes;
 - (id)initWithSortedMomentNodes:(id)arg1 locationNodes:(id)arg2 incompleteLocationResolver:(id)arg3;

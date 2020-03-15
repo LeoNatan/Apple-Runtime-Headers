@@ -20,12 +20,12 @@
 + (_Bool)supportsSecureCoding;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int attachmentConfiguration; // @synthesize attachmentConfiguration=_attachmentConfiguration;
 @property(retain, nonatomic) NSArray *selectedSenders; // @synthesize selectedSenders=_selectedSenders;
 @property(retain, nonatomic) NSArray *selectedRecipients; // @synthesize selectedRecipients=_selectedRecipients;
 @property(retain, nonatomic) NSString *selectedSubject; // @synthesize selectedSubject=_selectedSubject;
 @property(retain, nonatomic) NSString *selectedAccount; // @synthesize selectedAccount=_selectedAccount;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

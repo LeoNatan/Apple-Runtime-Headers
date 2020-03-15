@@ -17,10 +17,10 @@
     unsigned int _currentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double maximumLatency; // @synthesize maximumLatency=_maximumLatency;
 @property(nonatomic) unsigned int maximumSize; // @synthesize maximumSize=_maximumSize;
 @property(readonly, nonatomic) unsigned int size; // @synthesize size=_currentSize;
-- (void).cxx_destruct;
 - (_Bool)handleItems:(id)arg1;
 - (unsigned long long)sizeForItem:(id)arg1;
 - (_Bool)isEmpty;

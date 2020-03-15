@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

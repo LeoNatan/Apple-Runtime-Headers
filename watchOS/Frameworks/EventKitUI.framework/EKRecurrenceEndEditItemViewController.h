@@ -27,9 +27,9 @@
 }
 
 + (id)_neverLocalizedString;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *bestInitialDate; // @synthesize bestInitialDate=_bestInitialDate;
 @property(copy, nonatomic) NSDate *repeatEndDate; // @synthesize repeatEndDate=_repeatEndDate;
-- (void).cxx_destruct;
 - (void)shortenCell:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

@@ -9,6 +9,7 @@
 @protocol MTLSamplerState, MTLTexture;
 
 @protocol MTLRenderCommandEncoderSPI <MTLRenderCommandEncoder>
+- (void)setVertexAmplificationMode:(unsigned long long)arg1 value:(unsigned long long)arg2;
 - (void)addSplitHandler:(void (^)(id <MTLRenderCommandEncoderSPI>, unsigned long long))arg1;
 - (void)setLineWidth:(float)arg1;
 - (void)setDepthClipModeSPI:(unsigned long long)arg1;

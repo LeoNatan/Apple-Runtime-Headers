@@ -15,9 +15,9 @@
     NSObject<OS_os_transaction> *_transaction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (id)initWithLabel:(id)arg1;

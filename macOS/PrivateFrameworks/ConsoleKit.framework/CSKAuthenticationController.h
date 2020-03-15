@@ -31,12 +31,12 @@
 }
 
 + (id)sharedAuthenticator;
+- (void).cxx_destruct;
 @property BOOL isAuthorized; // @synthesize isAuthorized=_isAuthorized;
 @property(retain) NSImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(retain) NSString *messageDetail; // @synthesize messageDetail=_messageDetail;
 @property(retain) NSString *messageTitle; // @synthesize messageTitle=_messageTitle;
 @property __weak NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
-- (void).cxx_destruct;
 - (void)closeAuthenticationSheet:(id)arg1;
 - (void)displayAuthenticationSheetWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)windowDidLoad;

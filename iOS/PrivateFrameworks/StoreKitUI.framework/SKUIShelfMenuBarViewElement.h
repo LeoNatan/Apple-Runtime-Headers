@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)supportedFeatures;
-@property(retain, nonatomic) SKUIMenuBarViewElementConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIMenuBarViewElementConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)_reloadMenuItems;
 - (id)focusedViewElementForMenuItemAtIndex:(unsigned long long)arg1;
 - (id)regularViewElementForMenuItemAtIndex:(unsigned long long)arg1;

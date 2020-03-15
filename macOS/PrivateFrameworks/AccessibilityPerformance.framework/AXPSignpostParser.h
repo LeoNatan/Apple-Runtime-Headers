@@ -13,8 +13,8 @@
     AXPSignpostParserConfiguration *_configuration;
 }
 
-@property(copy, nonatomic) AXPSignpostParserConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(copy, nonatomic) AXPSignpostParserConfiguration *configuration; // @synthesize configuration=_configuration;
 - (id)_allSignpostObjectsFromTestArchiveWithSubsystemCategoryFilter:(id)arg1 archivePath:(id)arg2;
 - (id)_wrappedEventFromSignpostEvent:(id)arg1;
 - (id)_signpostEventResultsFromSupportObjects:(id)arg1;

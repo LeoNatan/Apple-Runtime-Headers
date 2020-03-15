@@ -14,9 +14,9 @@
     NSString *_phoneNumber;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(readonly, nonatomic) NSString *email; // @synthesize email=_email;
-- (void).cxx_destruct;
 - (id)initWithPhoneNumber:(id)arg1;
 - (id)initWithEmail:(id)arg1;
 

@@ -18,13 +18,13 @@
     NSDate *_expiryDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
 @property(readonly) NSString *refreshToken; // @synthesize refreshToken=_refreshToken;
 @property(readonly) NSString *accessToken; // @synthesize accessToken=_accessToken;
 @property(readonly) NSDictionary *responseBody; // @synthesize responseBody=_responseBody;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) long long statusCode; // @synthesize statusCode=_statusCode;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 
 @end

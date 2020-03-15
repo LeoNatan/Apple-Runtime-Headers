@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_uppercaseName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *uppercaseName; // @synthesize uppercaseName=_uppercaseName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSNumber *reasonID; // @synthesize reasonID=_reasonID;
-- (void).cxx_destruct;
 
 @end
 

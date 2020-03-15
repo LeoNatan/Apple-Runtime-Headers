@@ -22,9 +22,9 @@
 + (id)sessionManager;
 + (id)localizedServiceName;
 + (id)serviceID;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *teamName; // @synthesize teamName=_teamName;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (void)refreshWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)localizedName;
 

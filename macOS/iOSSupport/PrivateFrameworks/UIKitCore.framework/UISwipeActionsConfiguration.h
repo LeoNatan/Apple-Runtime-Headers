@@ -16,10 +16,10 @@
 }
 
 + (id)configurationWithActions:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_autosizesButtons, setter=_setAutosizesButtons:) BOOL autosizesButtons; // @synthesize autosizesButtons=_autosizesButtons;
 @property(nonatomic) BOOL performsFirstActionWithFullSwipe; // @synthesize performsFirstActionWithFullSwipe=_performsFirstActionWithFullSwipe;
 @property(readonly, copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

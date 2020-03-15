@@ -14,9 +14,9 @@
 
 + (id)scheduledObserverForPaths:(id)arg1 queue:(id)arg2 callBack:(CDUnknownBlockType)arg3;
 + (id)scheduledObserverForPaths:(id)arg1 queue:(id)arg2 eventFlags:(unsigned int)arg3 latency:(double)arg4 callBack:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property struct __FSEventStream *fsEventStream; // @synthesize fsEventStream=_fsEventStream;
 @property(copy) CDUnknownBlockType callbackBlock; // @synthesize callbackBlock=_callbackBlock;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithPaths:(id)arg1 onQueue:(id)arg2 eventFlags:(unsigned int)arg3 latency:(double)arg4;

@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double timeUntilSecondarySign_SIRI_USE_ONLY; // @synthesize timeUntilSecondarySign_SIRI_USE_ONLY=_timeUntilSecondarySign_SIRI_USE_ONLY;
 @property(readonly, nonatomic) double timeUntilPrimarySign_SIRI_USE_ONLY; // @synthesize timeUntilPrimarySign_SIRI_USE_ONLY=_timeUntilPrimarySign_SIRI_USE_ONLY;
 @property(readonly, nonatomic) double secondaryDistance_SIRI_USE_ONLY; // @synthesize secondaryDistance_SIRI_USE_ONLY=_secondaryDistance_SIRI_USE_ONLY;
 @property(readonly, nonatomic) double primaryDistance_SIRI_USE_ONLY; // @synthesize primaryDistance_SIRI_USE_ONLY=_primaryDistance_SIRI_USE_ONLY;
 @property(readonly, nonatomic) MNGuidanceSignDescription *secondarySign; // @synthesize secondarySign=_secondarySign;
 @property(readonly, nonatomic) MNGuidanceSignDescription *primarySign; // @synthesize primarySign=_primarySign;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)debugDescription;

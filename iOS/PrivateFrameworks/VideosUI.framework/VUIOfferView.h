@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     VUISeparatorView *_separatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUISeparatorView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) _Bool isEntitled; // @synthesize isEntitled=_isEntitled;
 @property(retain, nonatomic) UIView *channelImageBackgroundView; // @synthesize channelImageBackgroundView=_channelImageBackgroundView;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *logoView; // @synthesize logoView=_logoView;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) VUIOfferLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

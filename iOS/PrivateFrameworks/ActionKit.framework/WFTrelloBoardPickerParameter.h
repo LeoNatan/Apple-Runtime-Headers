@@ -14,8 +14,8 @@
     id _observer;
 }
 
-@property(retain, nonatomic) id observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id observer; // @synthesize observer=_observer;
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) NSArray *possibleStates; // @synthesize possibleStates=_possibleStates;
 - (id)defaultSerializedRepresentation;

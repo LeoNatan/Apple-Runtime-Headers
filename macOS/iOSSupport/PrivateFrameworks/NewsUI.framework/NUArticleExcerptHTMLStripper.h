@@ -16,9 +16,9 @@
     NSMutableArray *_parts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *parts; // @synthesize parts=_parts;
 @property(readonly, nonatomic) NSString *strippedString; // @synthesize strippedString=_strippedString;
-- (void).cxx_destruct;
 - (id)stripHTMLString:(id)arg1;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (id)initWithHTMLString:(id)arg1;

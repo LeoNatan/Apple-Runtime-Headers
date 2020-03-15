@@ -14,8 +14,8 @@
     PKPaymentAuthorizationSummaryItemsView *_summaryItemsView;
 }
 
-@property(readonly, nonatomic) PKPaymentAuthorizationSummaryItemsView *summaryItemsView; // @synthesize summaryItemsView=_summaryItemsView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPaymentAuthorizationSummaryItemsView *summaryItemsView; // @synthesize summaryItemsView=_summaryItemsView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

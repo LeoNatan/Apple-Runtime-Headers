@@ -14,9 +14,9 @@
     NSString *_category;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
-- (void).cxx_destruct;
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2;
 
 @end

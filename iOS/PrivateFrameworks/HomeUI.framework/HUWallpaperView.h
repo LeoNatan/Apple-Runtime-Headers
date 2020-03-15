@@ -14,9 +14,9 @@
     UIView *_wallpaperContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *wallpaperContentView; // @synthesize wallpaperContentView=_wallpaperContentView;
 @property(retain, nonatomic) HFWallpaperSlice *wallpaperSlice; // @synthesize wallpaperSlice=_wallpaperSlice;
-- (void).cxx_destruct;
 - (struct CGRect)normalizedWallpaperRectForFrameInWindowSpace:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

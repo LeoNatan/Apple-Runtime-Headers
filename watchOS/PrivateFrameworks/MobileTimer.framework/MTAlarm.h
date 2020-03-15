@@ -66,6 +66,7 @@
 + (id)propertiesAffectingSnooze;
 + (id)propertiesAffectingBedtime;
 + (id)propertiesAffectingWaketime;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType currentDateProvider; // @synthesize currentDateProvider=_currentDateProvider;
 @property(nonatomic) unsigned int onboardingVersion; // @synthesize onboardingVersion=_onboardingVersion;
 @property(copy, nonatomic) NSDate *keepOffUntilDate; // @synthesize keepOffUntilDate=_keepOffUntilDate;
@@ -95,7 +96,6 @@
 @property(nonatomic) unsigned int minute; // @synthesize minute=_minute;
 @property(nonatomic) unsigned int hour; // @synthesize hour=_hour;
 @property(readonly, nonatomic) NSUUID *alarmID; // @synthesize alarmID=_alarmID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)serializeWithSerializer:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -18,9 +18,9 @@
     id <TVMediaControllerHosting> _toHost;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <TVMediaControllerHosting> toHost; // @synthesize toHost=_toHost;
 @property(retain, nonatomic) id <TVMediaControllerHosting> fromHost; // @synthesize fromHost=_fromHost;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (void)migratesMediaControllerFromHost:(id)arg1 toHost:(id)arg2;

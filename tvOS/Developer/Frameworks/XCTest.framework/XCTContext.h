@@ -6,35 +6,49 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, _XCTContextImplementation;
+@class NSDictionary, NSMutableArray, NSMutableDictionary, XCTActivityRecordStack, XCTestCase;
 
 @interface XCTContext : NSObject
 {
-    id _internalImplementation;
+    _Bool _valid;
+    NSMutableDictionary *_associatedObjects;
+    NSMutableArray *_tearDownBlocks;
+    XCTContext *_parent;
+    XCTestCase *_testCase;
+    XCTActivityRecordStack *_activityRecordStack;
 }
 
-+ (void)popCurrentContextInThread:(id)arg1;
 + (_Bool)hasContextInThread:(id)arg1;
 + (id)currentContextInThread:(id)arg1;
 + (id)_currentContextInThread:(id)arg1;
-+ (void)pushCurrentContext:(id)arg1 inThread:(id)arg2;
 + (void)runInContextForTestCase:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (_Bool)shouldReportActivityWithType:(id)arg1 inTestMode:(long long)arg2;
 + (_Bool)_shouldReportActivityWithType:(id)arg1;
 + (void)_runActivityNamed:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (void)runActivityNamed:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)currentContext;
-@property(retain) _XCTContextImplementation *internalImplementation; // @synthesize internalImplementation=_internalImplementation;
 - (void).cxx_destruct;
+@property(readonly) XCTActivityRecordStack *activityRecordStack; // @synthesize activityRecordStack=_activityRecordStack;
+@property(readonly) __weak XCTestCase *testCase; // @synthesize testCase=_testCase;
+@property(readonly) XCTContext *parent; // @synthesize parent=_parent;
+@property(readonly, getter=isValid) _Bool valid; // @synthesize valid=_valid;
+@property(readonly) NSMutableArray *tearDownBlocks; // @synthesize tearDownBlocks=_tearDownBlocks;
+@property(readonly) NSMutableDictionary *associatedObjects; // @synthesize associatedObjects=_associatedObjects;
+- (void)addTearDownBlock:(CDUnknownBlockType)arg1;
+- (void)setAssociatedObject:(id)arg1 forKey:(id)arg2;
+- (id)associatedObjectForKey:(id)arg1;
 @property(readonly) NSDictionary *aggregationRecords;
 - (id)topActivity;
 - (long long)activityRecordStackDepth;
 - (void)unwindRemainingActivities;
+- (void)_reportEmptyActivityWithType:(id)arg1 format:(id)arg2;
 - (void)_runActivityNamed:(id)arg1 type:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)didFinishActivity:(id)arg1;
 - (id)willStartActivityWithTitle:(id)arg1 type:(id)arg2;
-- (id)initInternally;
+- (id)initWithParent:(id)arg1 testCase:(id)arg2;
+- (void)invalidate;
 - (void)_runActivityNamed:(id)arg1 block:(CDUnknownBlockType)arg2;
+@property(readonly) NSMutableArray *interruptionHandlers;
 
 @end
 

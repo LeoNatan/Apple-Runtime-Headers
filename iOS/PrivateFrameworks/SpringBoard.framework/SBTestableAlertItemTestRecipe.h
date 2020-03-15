@@ -20,8 +20,8 @@
 + (id)testCasesGrouped;
 + (id)testCases;
 + (void)load;
-@property(retain, nonatomic) NSArray *recipesToTest; // @synthesize recipesToTest=_recipesToTest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *recipesToTest; // @synthesize recipesToTest=_recipesToTest;
 - (id)alertForIndex:(long long)arg1;
 - (id)_nextAlertItemToTest;
 - (id)dataPlanAlertItemForCase:(long long)arg1;

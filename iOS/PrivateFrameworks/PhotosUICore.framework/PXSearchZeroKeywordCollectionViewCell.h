@@ -29,10 +29,10 @@
 + (struct CGSize)cellSizeWithTextLabelNumberOfLines:(unsigned long long)arg1;
 + (struct CGSize)cellSizeWithoutTextLabel;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXRoundedCornerOverlayView *imageCornerOverlayView; // @synthesize imageCornerOverlayView=_imageCornerOverlayView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;
 

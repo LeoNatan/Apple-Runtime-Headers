@@ -16,11 +16,11 @@
     NSData *_certData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *certData; // @synthesize certData=_certData;
 @property(readonly, nonatomic) NSDate *expiration; // @synthesize expiration=_expiration;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
-- (void).cxx_destruct;
 - (_Bool)hasExpired;
 - (id)initWithPublicKey:(id)arg1 version:(long long)arg2 expiration:(id)arg3 certificateData:(id)arg4;
 

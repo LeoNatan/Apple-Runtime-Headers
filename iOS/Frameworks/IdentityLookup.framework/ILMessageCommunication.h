@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *messageBody; // @synthesize messageBody=_messageBody;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *messageBody; // @synthesize messageBody=_messageBody;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

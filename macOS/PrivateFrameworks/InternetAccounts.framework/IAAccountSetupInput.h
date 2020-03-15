@@ -24,6 +24,7 @@
     BOOL _createDeactivated;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *configProfileIdentifier; // @synthesize configProfileIdentifier=_configProfileIdentifier;
 @property(retain) NSString *acAccountTypeID; // @synthesize acAccountTypeID=_acAccountTypeID;
 @property(retain) NSString *acAccountID; // @synthesize acAccountID=_acAccountID;
@@ -36,7 +37,6 @@
 @property(retain) NSString *accountDescription; // @synthesize accountDescription=_description;
 @property(retain) NSString *userName; // @synthesize userName=_userName;
 @property(retain) NSString *password; // @synthesize password=_password;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

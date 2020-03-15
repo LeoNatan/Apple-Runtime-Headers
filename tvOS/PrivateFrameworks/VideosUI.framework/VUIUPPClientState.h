@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_lastSyncedDomainVersion;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *lastSyncedDomainVersion; // @synthesize lastSyncedDomainVersion=_lastSyncedDomainVersion;
 @property(readonly, nonatomic) NSMutableDictionary *uppKeyToRecordMap; // @synthesize uppKeyToRecordMap=_uppKeyToRecordMap;
 @property(readonly, nonatomic) NSMutableDictionary *pendingChanges; // @synthesize pendingChanges=_pendingChanges;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

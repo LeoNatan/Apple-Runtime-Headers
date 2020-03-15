@@ -33,6 +33,7 @@
 + (double)standardFontSize;
 + (id)attributedString:(id)arg1 byReplayingFromBaseStyle:(id)arg2 systemContentSizeDidChange:(BOOL)arg3;
 + (id)textStyle;
+- (void).cxx_destruct;
 @property(nonatomic) SEL fontNameRebaseSelector; // @synthesize fontNameRebaseSelector=_fontNameRebaseSelector;
 @property(nonatomic) SEL fontSizeRebaseSelector; // @synthesize fontSizeRebaseSelector=_fontSizeRebaseSelector;
 @property(nonatomic) BOOL overrideUIKitFontSize; // @synthesize overrideUIKitFontSize=_overrideUIKitFontSize;
@@ -47,7 +48,6 @@
 @property(nonatomic) unsigned long long lineBreakMode; // @synthesize lineBreakMode=_lineBreakMode;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (id)styleWithName:(id)arg1 fallback:(id)arg2 layoutMode:(int)arg3;
 - (id)bubbleTextSmall;
 - (id)bubbleText;

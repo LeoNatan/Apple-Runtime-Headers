@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ejectButtonTitle; // @synthesize ejectButtonTitle=_ejectButtonTitle;
 @property(retain, nonatomic) NSString *recoveryModeTitle; // @synthesize recoveryModeTitle=_recoveryModeTitle;
 @property(nonatomic) BOOL restoreButtonEnabled; // @synthesize restoreButtonEnabled=_restoreButtonEnabled;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSString *disabledMessage; // @synthesize disabledMessage=_disabledMessage;
 @property(retain, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(retain, nonatomic) NSString *softwareVersion; // @synthesize softwareVersion=_softwareVersion;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

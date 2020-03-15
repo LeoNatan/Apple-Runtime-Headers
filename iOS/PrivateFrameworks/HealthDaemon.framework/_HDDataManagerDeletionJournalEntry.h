@@ -17,9 +17,9 @@
 
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HDDataDeletionConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) id <HKUUIDCollection> UUIDCollection; // @synthesize UUIDCollection=_UUIDCollection;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConfiguration:(id)arg1 objectUUIDs:(id)arg2;

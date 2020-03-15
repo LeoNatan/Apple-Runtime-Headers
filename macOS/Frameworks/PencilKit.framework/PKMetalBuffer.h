@@ -18,8 +18,8 @@
     id <MTLBuffer> _metalBuffer;
 }
 
-@property(readonly, nonatomic) id <MTLBuffer> metalBuffer; // @synthesize metalBuffer=_metalBuffer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <MTLBuffer> metalBuffer; // @synthesize metalBuffer=_metalBuffer;
 - (BOOL)isPurged;
 - (void)unlock;
 - (BOOL)lock;

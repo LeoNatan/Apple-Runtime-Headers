@@ -8,13 +8,14 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOCompanionDriveStep, GEOCompanionFerryStep, GEOCompanionWalkStep, NSData, NSMutableArray, NSString, PBDataReader;
+@class GEOCompanionDriveStep, GEOCompanionFerryStep, GEOCompanionGenericStep, GEOCompanionWalkStep, NSData, NSMutableArray, NSString, PBDataReader;
 
 @interface GEOCompanionStep : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
     GEOCompanionDriveStep *_driveStep;
     GEOCompanionFerryStep *_ferryStep;
+    GEOCompanionGenericStep *_genericStep;
     NSMutableArray *_guidanceEvents;
     NSMutableArray *_instructionWithAlternatives;
     NSString *_listInstruction;
@@ -39,6 +40,7 @@
         unsigned int has_time:1;
         unsigned int read_driveStep:1;
         unsigned int read_ferryStep:1;
+        unsigned int read_genericStep:1;
         unsigned int read_guidanceEvents:1;
         unsigned int read_instructionWithAlternatives:1;
         unsigned int read_listInstruction:1;
@@ -47,6 +49,7 @@
         unsigned int read_walkStep:1;
         unsigned int wrote_driveStep:1;
         unsigned int wrote_ferryStep:1;
+        unsigned int wrote_genericStep:1;
         unsigned int wrote_guidanceEvents:1;
         unsigned int wrote_instructionWithAlternatives:1;
         unsigned int wrote_listInstruction:1;
@@ -76,6 +79,9 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOCompanionGenericStep *genericStep;
+@property(readonly, nonatomic) _Bool hasGenericStep;
+- (void)_readGenericStep;
 @property(retain, nonatomic) NSData *updateID;
 @property(readonly, nonatomic) _Bool hasUpdateID;
 - (void)_readUpdateID;

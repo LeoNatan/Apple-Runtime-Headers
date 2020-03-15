@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sharedPlanIdentifier; // @synthesize sharedPlanIdentifier=_sharedPlanIdentifier;
 @property(retain, nonatomic) NSString *sharedDataUsed; // @synthesize sharedDataUsed=_sharedDataUsed;
 @property(retain, nonatomic) NSString *thisDeviceDataUsed; // @synthesize thisDeviceDataUsed=_thisDeviceDataUsed;
 @property(retain, nonatomic) NSString *maxDataBeforeThrottling; // @synthesize maxDataBeforeThrottling=_maxDataBeforeThrottling;
 @property(retain, nonatomic) NSString *capacity; // @synthesize capacity=_capacity;
 @property(nonatomic) long long units; // @synthesize units=_units;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

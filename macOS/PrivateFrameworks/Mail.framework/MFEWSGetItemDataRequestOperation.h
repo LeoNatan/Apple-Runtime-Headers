@@ -13,8 +13,8 @@
     NSArray *_itemIdTypes;
 }
 
-@property(readonly, copy, nonatomic) NSArray *itemIdTypes; // @synthesize itemIdTypes=_itemIdTypes;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *itemIdTypes; // @synthesize itemIdTypes=_itemIdTypes;
 - (id)prepareRequest;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;
 @property(retain, nonatomic) MFEWSGetItemDataResponseOperation *responseOperation;

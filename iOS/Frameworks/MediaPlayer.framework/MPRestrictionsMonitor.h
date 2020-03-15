@@ -27,6 +27,7 @@
 }
 
 + (id)sharedRestrictionsMonitor;
+- (void).cxx_destruct;
 @property(nonatomic) long long maximumMovieRatingForAgeGate; // @synthesize maximumMovieRatingForAgeGate=_maximumMovieRatingForAgeGate;
 @property(nonatomic) long long maximumTVShowRatingForAgeGate; // @synthesize maximumTVShowRatingForAgeGate=_maximumTVShowRatingForAgeGate;
 @property(readonly, nonatomic) _Bool allowsRadioPurchases; // @synthesize allowsRadioPurchases=_allowsRadioPurchases;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) _Bool allowsExplicitContent; // @synthesize allowsExplicitContent=_allowsExplicitContent;
 @property(readonly, nonatomic) _Bool allowsDeletion; // @synthesize allowsDeletion=_allowsDeletion;
 @property(readonly, nonatomic) _Bool allowsAccountModification; // @synthesize allowsAccountModification=_allowsAccountModification;
-- (void).cxx_destruct;
 - (void)_updateWithCanPostNotifications:(_Bool)arg1;
 - (void)_cacheValue:(id)arg1 forSetting:(id)arg2;
 - (_Bool)_isRunningInStoreDemoMode;

@@ -15,11 +15,11 @@
 }
 
 + (void)animateFromView:(id)arg1 toView:(id)arg2 animationOut:(int)arg3 animationOutCurve:(int)arg4 animationIn:(int)arg5 animationInCurve:(int)arg6 delay:(double)arg7 duration:(double)arg8 completed:(CDUnknownBlockType)arg9;
+- (void).cxx_destruct;
 @property(nonatomic) double defaultDelay; // @synthesize defaultDelay=_defaultDelay;
 @property(nonatomic) double defaultDuration; // @synthesize defaultDuration=_defaultDuration;
 @property(retain, nonatomic) UIViewController *currentController; // @synthesize currentController=_currentController;
 @property(retain, nonatomic) UIViewController *previousController; // @synthesize previousController=_previousController;
-- (void).cxx_destruct;
 - (void)setCurrentViewController:(id)arg1 withAnimations:(CDUnknownBlockType)arg2 completed:(CDUnknownBlockType)arg3;
 - (void)setCurrentViewController:(id)arg1 withAnimations:(CDUnknownBlockType)arg2 leavingControllerIsInFront:(_Bool)arg3 completed:(CDUnknownBlockType)arg4;
 - (void)setCurrentViewController:(id)arg1 animationOut:(int)arg2 animationOutCurve:(int)arg3 animationIn:(int)arg4 animationInCurve:(int)arg5 completed:(CDUnknownBlockType)arg6;

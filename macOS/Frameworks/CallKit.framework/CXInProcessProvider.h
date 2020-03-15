@@ -14,9 +14,9 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak CXInProcessCallSource *callSource; // @synthesize callSource=_callSource;
-- (void).cxx_destruct;
 - (id)hostProtocolDelegate;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 callSource:(id)arg2 configuration:(id)arg3;

@@ -16,9 +16,9 @@
     NSDate *_onOrAfter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *onOrAfter; // @synthesize onOrAfter=_onOrAfter;
 @property(retain, nonatomic) NCECelebration *celebration; // @synthesize celebration=_celebration;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)descriptionForPasswordWithUser:(id)arg1 creationDate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, copy, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(readonly, nonatomic) WBSCredentialMatch *match; // @synthesize match=_match;
-- (void).cxx_destruct;
 - (id)initWithMatch:(id)arg1 detail:(id)arg2 creationDate:(id)arg3;
 
 @end

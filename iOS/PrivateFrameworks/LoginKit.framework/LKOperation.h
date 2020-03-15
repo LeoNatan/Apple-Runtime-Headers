@@ -15,10 +15,10 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(readonly, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)dictionary;
 - (void)setDuration:(double)arg1;
 - (void)setEndTime:(id)arg1;

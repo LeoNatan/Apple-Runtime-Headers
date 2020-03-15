@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 @property(readonly, nonatomic) NSString *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqualToMailMessageKey:(id)arg1;

@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     NSUUID *_tabGroupUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *tabGroupUUID; // @synthesize tabGroupUUID=_tabGroupUUID;
 @property(readonly, nonatomic) NSDate *dateClosed; // @synthesize dateClosed=_dateClosed;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <WBSClosedTab> firstNonDisposableClosedTab;
 @property(readonly, copy, nonatomic) NSArray *closedTabs;
 @property(readonly, nonatomic) long long closedItemType;

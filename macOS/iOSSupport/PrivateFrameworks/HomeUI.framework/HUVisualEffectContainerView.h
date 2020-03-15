@@ -13,8 +13,8 @@
     UIView *_innerContentView;
 }
 
-@property(retain, nonatomic) UIView *innerContentView; // @synthesize innerContentView=_innerContentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *innerContentView; // @synthesize innerContentView=_innerContentView;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

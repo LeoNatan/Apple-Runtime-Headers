@@ -20,8 +20,8 @@
     SMNetworkSourceProxy *_proxy;
 }
 
-@property(retain) SMNetworkSourceProxy *proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+@property(retain) SMNetworkSourceProxy *proxy; // @synthesize proxy=_proxy;
 - (int)bomCopierEncounteredFileError:(struct _BOMCopier *)arg1 atPath:(const char *)arg2 error:(int)arg3;
 - (void)bomCopierEncounteredFatalFileError:(struct _BOMCopier *)arg1 atPath:(const char *)arg2 error:(int)arg3;
 - (void)bomCopierEncounteredFatalError:(struct _BOMCopier *)arg1 message:(const char *)arg2;

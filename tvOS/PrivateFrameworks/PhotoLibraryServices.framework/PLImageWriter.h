@@ -91,7 +91,7 @@
 - (void)_removeInProgressExtendedAttributesForFileAtURL:(id)arg1;
 - (void)_processImageJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_linkDiagnosticFileWithSourcePath:(id)arg1 forPhotoDestinationURL:(id)arg2;
-- (id)_pathForFilteredPreviewWithBaseName:(id)arg1 imageData:(id)arg2 orImage:(struct NSObject *)arg3;
+- (id)_pathForFilteredPreviewWithBaseName:(id)arg1 imageData:(id)arg2 orImage:(id)arg3;
 - (void)_removeTransientKeys:(id)arg1;
 - (id)pathForOriginalMyPhotoStreamAssetWithJob:(id)arg1;
 - (id)pathForNewAssetPathAtAlbumDirectoryPath:(id)arg1 assetType:(unsigned int)arg2 extension:(id)arg3;

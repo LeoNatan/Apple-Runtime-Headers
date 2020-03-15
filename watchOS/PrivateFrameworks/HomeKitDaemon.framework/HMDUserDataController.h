@@ -38,6 +38,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFTimer *privateZoneFirstLoadTimer; // @synthesize privateZoneFirstLoadTimer=_privateZoneFirstLoadTimer;
 @property(retain, nonatomic) HMFTimer *sharedZoneFirstLoadTimer; // @synthesize sharedZoneFirstLoadTimer=_sharedZoneFirstLoadTimer;
 @property(retain) NSUUID *privateSettingsRootUUID; // @synthesize privateSettingsRootUUID=_privateSettingsRootUUID;
@@ -55,7 +56,6 @@
 @property(readonly) NSUUID *homeUUID; // @synthesize homeUUID=_homeUUID;
 @property(readonly) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property _Bool assistantAccessControlRequiresAuthenticationForSecureRequests; // @synthesize assistantAccessControlRequiresAuthenticationForSecureRequests=_assistantAccessControlRequiresAuthenticationForSecureRequests;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)timerDidFire:(id)arg1;
 - (void)mediaContentProfileAccessControlModelRemoved:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -85,7 +85,7 @@
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSArray *mediaContentProfileAccessControlAccessoriesToEncode;
 @property(readonly, copy) NSArray *assistantAccessControlAccessoriesToEncode;
-- (_Bool)isInitialized;
+@property(readonly) _Bool isInitialized;
 - (void)configure;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 userID:(id)arg3 homeID:(id)arg4 sharedSettingsController:(id)arg5 privateSettingsController:(id)arg6;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 userID:(id)arg3 homeID:(id)arg4 sharedSettingsController:(id)arg5 privateSettingsController:(id)arg6 timerCreator:(id)arg7;

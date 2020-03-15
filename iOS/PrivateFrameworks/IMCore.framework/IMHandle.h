@@ -93,6 +93,7 @@
 + (void)validHandlesForPersons:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)bestHandlesForPersons:(id)arg1 useExtendedAsyncLookup:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)bestHandlesForPersons:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCheckedForSuggestions; // @synthesize hasCheckedForSuggestions=_hasCheckedForSuggestions;
 @property(copy, nonatomic) NSString *suggestedName; // @synthesize suggestedName=_suggestedName;
 @property(nonatomic) long long IDStatus; // @synthesize IDStatus=_IDStatus;
@@ -119,7 +120,6 @@
 @property(readonly, nonatomic) unsigned long long previousStatus; // @synthesize previousStatus=_prevStatus;
 @property(readonly, retain, nonatomic) NSDictionary *extraProperties; // @synthesize extraProperties=_extraProps;
 @property(readonly, retain, nonatomic) NSString *originalID; // @synthesize originalID=_uncanonicalID;
-- (void).cxx_destruct;
 - (void)_mapItemBannerImageDataFetchedWithResponse:(id)arg1 statusCode:(long long)arg2 resultData:(id)arg3 remoteURLConnectionError:(id)arg4;
 - (void)_fetchMapItemBannerImageDataForMapItem:(id)arg1;
 - (void)_mapItemImageDataFetchedWithResponse:(id)arg1 statusCode:(long long)arg2 resultData:(id)arg3 remoteURLConnectionError:(id)arg4;
@@ -256,6 +256,7 @@
 @property(readonly, retain, nonatomic) NSString *normalizedID;
 @property(readonly, retain, nonatomic) NSString *displayID;
 - (id)_displayNameWithNicknameIfAvailable;
+- (_Bool)_allowedByScreenTime;
 - (id)_displayNameWithContact:(id)arg1;
 - (id)immediateNameWithNeedsSuggestedNameFetch:(_Bool *)arg1 useSuggestedName:(_Bool)arg2;
 - (void)scheduleSuggestedNameFetchIfNecessary;

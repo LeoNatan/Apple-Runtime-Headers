@@ -21,13 +21,13 @@
     AKDFRColorPickerController *_strokeColorPickerController;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKDFRColorPickerController *strokeColorPickerController; // @synthesize strokeColorPickerController=_strokeColorPickerController;
 @property(retain) AKDFRColorPickerController *fillColorPickerController; // @synthesize fillColorPickerController=_fillColorPickerController;
 @property(retain) NSColorPickerTouchBarItem *fillColorItem; // @synthesize fillColorItem=_fillColorItem;
 @property(retain) NSColorPickerTouchBarItem *strokeColorItem; // @synthesize strokeColorItem=_strokeColorItem;
 @property(retain) NSGroupTouchBarItem *touchBarItem; // @synthesize touchBarItem=_touchBarItem;
 @property __weak id <AKDFRAnnotationPropertiesControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)colorPickerAction:(id)arg1;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)itemIdentifiers;

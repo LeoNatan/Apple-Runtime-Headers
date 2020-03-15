@@ -58,10 +58,10 @@
     unsigned long long _startTime;
 }
 
-@property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
-@property(readonly, nonatomic) NSObject<OS_os_log> *telemetryLog; // @synthesize telemetryLog=_telemetryLog;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
+@property(readonly, nonatomic) NSObject<OS_os_log> *telemetryLog; // @synthesize telemetryLog=_telemetryLog;
 - (BOOL)supportsTextureSampleCount:(unsigned long long)arg1;
 - (BOOL)supportsFeatureSet:(unsigned long long)arg1;
 - (void)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;

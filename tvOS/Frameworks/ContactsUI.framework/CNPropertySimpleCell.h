@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_valueLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(readonly, nonatomic) UILabel *labelLabel; // @synthesize labelLabel=_labelLabel;
-- (void).cxx_destruct;
 - (id)valueView;
 - (id)labelView;
 

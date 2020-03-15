@@ -17,11 +17,11 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FMHorizontalRule *bottomRule; // @synthesize bottomRule=_bottomRule;
 @property(retain, nonatomic) FMHorizontalRule *topRule; // @synthesize topRule=_topRule;
 @property(nonatomic) BOOL isConfigured; // @synthesize isConfigured=_isConfigured;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
-- (void).cxx_destruct;
 - (void)commonSetup;
 - (void)prepareForInterfaceBuilder;
 - (void)awakeFromNib;

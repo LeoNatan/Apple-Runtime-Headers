@@ -17,10 +17,10 @@
     NSArray *_previewItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suppressRefetchingCurrentHighQualityImage; // @synthesize suppressRefetchingCurrentHighQualityImage=_suppressRefetchingCurrentHighQualityImage;
 @property(nonatomic) _Bool controllerWasDismissed; // @synthesize controllerWasDismissed=_controllerWasDismissed;
 @property(copy, nonatomic) NSArray *previewItems; // @synthesize previewItems=_previewItems;
-- (void).cxx_destruct;
 - (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (id)previewActions;

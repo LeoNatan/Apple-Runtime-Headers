@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary;
+@class NSMutableArray;
 @protocol OS_dispatch_queue;
 
 @interface SUAdminInstallController : NSObject
@@ -14,8 +14,7 @@
     NSObject<OS_dispatch_queue> *_installQueue;
     NSObject<OS_dispatch_queue> *_updateInfoQueue;
     BOOL _deferredInstallEnabled;
-    NSMutableDictionary *_productTagToDeferredInstallDate;
-    NSMutableArray *_overriddenDeferralProductTags;
+    NSMutableArray *_overriddenDeferralProductKeys;
 }
 
 + (BOOL)deferredInstallEnabled;
@@ -28,13 +27,6 @@
 - (void)deferralDateForMajorProductTag:(id)arg1 orProductKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)_shouldDeferFromDate:(id)arg1;
 - (id)_deferralDateFromDate:(id)arg1;
-- (id)existingDeferralDateForProductTag:(id)arg1;
-- (void)_clearDeferralDateForProductTag:(id)arg1;
-- (void)_setDeferralDate:(id)arg1 forProductTag:(id)arg2;
-- (void)clearDeferralDateForMajorOS;
-- (void)clearDeferralDateForProduct:(id)arg1;
-- (void)_setDeferralDateForMajorOSFromPostDate:(id)arg1;
-- (void)setDeferralDate:(id)arg1 forProduct:(id)arg2;
 - (void)_managedPreferencesDidChange:(id)arg1;
 - (void)startInstallingAdminUpdates:(id)arg1 usingClientAuthorization:(struct AuthorizationOpaqueRef *)arg2 replyWhenDone:(CDUnknownBlockType)arg3;
 - (void)_dumpAuthForDebugging:(struct AuthorizationOpaqueRef *)arg1;

@@ -29,6 +29,7 @@
 + (id)generateAccountIdForAccount:(id)arg1;
 + (id)inboxesFromAccounts:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *mailboxes; // @synthesize mailboxes=_mailboxes;
 @property(nonatomic) unsigned long long standaloneState; // @synthesize standaloneState=_standaloneState;
 @property(copy, nonatomic) NSString *defaultEmailAddress; // @synthesize defaultEmailAddress=_defaultEmailAddress;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSString *parentAccountIdentifier; // @synthesize parentAccountIdentifier=_parentAccountIdentifier;
 @property(retain, nonatomic) NSString *localId; // @synthesize localId=_localId;
 @property(retain, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isiCloud;

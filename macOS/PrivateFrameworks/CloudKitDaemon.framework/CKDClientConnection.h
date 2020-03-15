@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CKDClientProxy *_proxy;
 }
 
-@property(retain, nonatomic) CKDClientProxy *proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDClientProxy *proxy; // @synthesize proxy=_proxy;
 - (void)requestClientSyncWithOperationInfo:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)tossConfigWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)repairZonePCSWithOperationInfo:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

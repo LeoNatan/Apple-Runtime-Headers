@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     ManagedPlugIn *_managedPlugIn;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ManagedPlugIn *managedPlugIn; // @synthesize managedPlugIn=_managedPlugIn;
 - (void)setPermissionsPopUpButton:(id)arg1;
 - (id)permissionsPopUpButton;
 - (void)setPreferenceTitleTextField:(id)arg1;
 - (id)preferenceTitleTextField;
-- (void).cxx_destruct;
 - (id)_askPolicyString;
 - (id)_onPolicyString;
 - (id)_offPolicyString;

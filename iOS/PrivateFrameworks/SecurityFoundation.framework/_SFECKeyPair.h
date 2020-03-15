@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)performWithCCKey:(CDUnknownBlockType)arg1;
 - (id)publicKey;
-- (id)initRandomKeyPairWithSpecifier:(id)arg1 privateKeyDomain:(struct NSString *)arg2;
+- (id)initRandomKeyPairWithSpecifier:(id)arg1 privateKeyDomain:(id)arg2;
 - (id)initRandomKeyPairWithSpecifier:(id)arg1;
 
 // Remaining properties

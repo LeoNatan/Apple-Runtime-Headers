@@ -17,15 +17,16 @@ __attribute__((visibility("hidden")))
     VUIRoomBannerView *_bannerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIRoomBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)setBannerOpacity:(double)arg1;
 - (void)setWhiteBannerOpacity:(double)arg1;
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, nonatomic) double topThreshold;
 - (void)setUberImageOffset:(double)arg1;
 @property(readonly, nonatomic) _Bool isUberLayoutActive;
+@property(readonly, nonatomic) _Bool disableGradientBelowNavBar;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

@@ -26,11 +26,11 @@
     double _smoothingDuration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType endHandler; // @synthesize endHandler=_endHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(copy, nonatomic) CDUnknownBlockType beginHandler; // @synthesize beginHandler=_beginHandler;
 @property(nonatomic) double smoothingDuration; // @synthesize smoothingDuration=_smoothingDuration;
-- (void).cxx_destruct;
 - (void)_tearDown;
 - (id)_anyAvailableAnimation;
 - (void)_onDisplayLink:(id)arg1;

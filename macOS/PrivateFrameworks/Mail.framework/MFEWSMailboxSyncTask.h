@@ -36,6 +36,7 @@
     MFEWSAccount *_account;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needToPersistInitialSync; // @synthesize needToPersistInitialSync=_needToPersistInitialSync;
 @property(nonatomic) BOOL isInitialSync; // @synthesize isInitialSync=_isInitialSync;
 @property(nonatomic) BOOL isPrimaryMailbox; // @synthesize isPrimaryMailbox=_isPrimaryMailbox;
@@ -49,7 +50,6 @@
 @property(nonatomic) __weak id <MFEWSMailboxDataCache> mailboxDataCache; // @synthesize mailboxDataCache=_mailboxDataCache;
 @property(copy, nonatomic) NSString *folderIDString; // @synthesize folderIDString=_folderIDString;
 @property(readonly, nonatomic) MFMailbox *mailbox; // @synthesize mailbox=_mailbox;
-- (void).cxx_destruct;
 - (void)_sendMailboxDidStartSyncTaskNotification;
 - (void)_finishCheckingForMailProgress;
 - (void)_setFoundNewUnreadMessageInInbox;

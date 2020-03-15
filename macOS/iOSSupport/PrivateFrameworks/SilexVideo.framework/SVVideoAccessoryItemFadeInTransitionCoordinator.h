@@ -15,8 +15,8 @@
     UIViewPropertyAnimator *_animator;
 }
 
-@property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 @property(readonly, nonatomic) BOOL animated;
 - (void)cancelTransition;
 - (void)animateWithContext:(id)arg1;

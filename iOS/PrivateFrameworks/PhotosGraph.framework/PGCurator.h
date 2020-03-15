@@ -16,8 +16,8 @@
 + (unsigned long long)numberOfItemsToShaveOffWithNumberOfItems:(unsigned long long)arg1 maximumNumberOfItems:(unsigned long long)arg2 options:(id)arg3;
 + (unsigned long long)numberOfExtraItemsNeededWithNumberOfChosenItems:(unsigned long long)arg1 totalNumberOfItems:(unsigned long long)arg2 options:(id)arg3;
 + (unsigned long long)maximumNumberOfItemsToElectWithTotalNumberOfItems:(unsigned long long)arg1 spanningNumberOfDays:(double)arg2 options:(id)arg3;
-@property(retain, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 - (void)lastPassToCompleteItems:(id)arg1 fromFeeder:(id)arg2 options:(id)arg3 maximumNumberOfItems:(unsigned long long)arg4 debugInfo:(id)arg5;
 - (id)newMovieDeduperWithOptions:(id)arg1;
 - (id)newSemanticalDeduperWithOptions:(id)arg1;

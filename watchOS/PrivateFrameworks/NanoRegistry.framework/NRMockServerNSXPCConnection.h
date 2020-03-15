@@ -25,13 +25,13 @@
     CDUnknownBlockType _interruptionHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) id exportedObject; // @synthesize exportedObject=_exportedObject;
 @property(retain, nonatomic) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int processIdentifier;
 - (id)initWithMachServiceName:(id)arg1 options:(unsigned int)arg2;
 - (void)dealloc;

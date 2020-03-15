@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *FinalName; // @synthesize FinalName=_FinalName;
 @property(copy, nonatomic) NSString *InitialName; // @synthesize InitialName=_InitialName;
-- (void).cxx_destruct;
 
 @end
 

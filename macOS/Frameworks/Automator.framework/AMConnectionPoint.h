@@ -24,13 +24,13 @@
 
 + (id)outputConnectionPointWithAction:(id)arg1;
 + (id)inputConnectionPointWithAction:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) AMActionConnector *_runtimeConnector; // @synthesize _runtimeConnector;
 @property(retain) NSDictionary *runtimeTypeDictionary; // @synthesize runtimeTypeDictionary=_runtimeTypeDictionary;
 @property(copy, nonatomic) NSString *typeDisplayName; // @synthesize typeDisplayName=_typeDisplayName;
 @property(retain) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) __weak AMAction *action; // @synthesize action=_action;
 @property __weak AMActionConnector *connector; // @synthesize connector=_connector;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 - (id)description;
 - (void)resetToDefaultOnMainThread;

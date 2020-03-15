@@ -15,10 +15,10 @@
     int _value;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *feature; // @synthesize feature=_feature;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDomain:(id)arg1 feature:(id)arg2 value:(int)arg3;
 

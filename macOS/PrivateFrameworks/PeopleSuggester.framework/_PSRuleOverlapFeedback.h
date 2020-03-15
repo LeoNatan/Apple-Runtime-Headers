@@ -6,18 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class _CDInteractionStore;
+@class NSUserDefaults, _CDInteractionStore;
 @protocol _DKKnowledgeQuerying;
 
 @interface _PSRuleOverlapFeedback : NSObject
 {
     _CDInteractionStore *_interactionStore;
     id <_DKKnowledgeQuerying> _knowledgeStore;
+    NSUserDefaults *_ruleOverlapFeedbackDefaults;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSUserDefaults *ruleOverlapFeedbackDefaults; // @synthesize ruleOverlapFeedbackDefaults=_ruleOverlapFeedbackDefaults;
 @property(retain, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 @property(retain, nonatomic) _CDInteractionStore *interactionStore; // @synthesize interactionStore=_interactionStore;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

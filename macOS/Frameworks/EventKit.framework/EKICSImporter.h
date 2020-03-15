@@ -54,6 +54,7 @@
 + (id)importSaveQueue;
 + (id)allowedImportFileTypes;
 + (id)allowedBackupFileTypes;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionCallback; // @synthesize completionCallback=_completionCallback;
 @property(retain, nonatomic) CalManagedObjectContext *legacyContext; // @synthesize legacyContext=_legacyContext;
 @property(retain, nonatomic) CalManagedCalendar *legacyCalManagedCalendar; // @synthesize legacyCalManagedCalendar=_legacyCalManagedCalendar;
@@ -88,7 +89,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *async_queue; // @synthesize async_queue=_async_queue;
 @property(nonatomic) BOOL displayEventsInCalendar; // @synthesize displayEventsInCalendar=_displayEventsInCalendar;
 @property(retain, nonatomic) NSError *importError; // @synthesize importError=_importError;
-- (void).cxx_destruct;
 - (BOOL)_shouldFinalizeVCSImportInContext:(id)arg1;
 - (void)_sanitizeVCSImportInContext:(id)arg1;
 - (BOOL)_importVCSFile:(id)arg1 toCalendar:(id)arg2 inManagedObjectContext:(id)arg3 numReminders:(unsigned long long *)arg4;

@@ -19,12 +19,12 @@
 }
 
 + (BOOL)collectDiagnosticsForFailedBoot;
+- (void).cxx_destruct;
 @property(retain) NSURL *outputURL; // @synthesize outputURL=_outputURL;
 @property(retain) NSURL *workingDirectoryURL; // @synthesize workingDirectoryURL=_workingDirectoryURL;
 @property(retain) NSObject<OS_dispatch_queue> *bridgeSysdiagnoseQueue; // @synthesize bridgeSysdiagnoseQueue=_bridgeSysdiagnoseQueue;
 @property(retain) NSObject<OS_dispatch_queue> *collectionQueue; // @synthesize collectionQueue=_collectionQueue;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)_collectUSBTermOutput;
 - (void)_collectFullHostSysdiagnose;
 - (void)_collectSCDynamicStore;

@@ -38,6 +38,7 @@
 + (BOOL)isDeveloper;
 + (BOOL)getShowExtensionStatus;
 + (id)standardAppDefaults;
+- (void).cxx_destruct;
 @property(getter=shouldReloadPrefs) BOOL reloadPrefs; // @synthesize reloadPrefs=_reloadPrefs;
 @property(readonly) BOOL customFolderPreview; // @synthesize customFolderPreview=_customFolderPreview;
 @property(readonly) BOOL customAppPreview; // @synthesize customAppPreview=_customAppPreview;
@@ -54,7 +55,6 @@
 @property(getter=isParsecEnabled) BOOL parsecEnabled; // @synthesize parsecEnabled=_parsecEnabled;
 @property(getter=isHighlightShownWithSpot) BOOL highlightShownWithSpot; // @synthesize highlightShownWithSpot=_highlightShownWithSpot;
 @property(getter=isSpotEnabled) BOOL spotEnabled; // @synthesize spotEnabled=_spotEnabled;
-- (void).cxx_destruct;
 @property BOOL showedFTE;
 - (void)used;
 - (void)_used;

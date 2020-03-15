@@ -19,9 +19,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *cep_server_values; // @synthesize cep_server_values=_cep_server_values;
 @property double gSessionStartTime; // @synthesize gSessionStartTime=_gSessionStartTime;
-- (void).cxx_destruct;
 - (id)supportedDomainIdentifiers;
 @property(readonly, nonatomic, getter=isEnabled) BOOL enabled;
 @property(readonly, nonatomic) double sessionStartTime;

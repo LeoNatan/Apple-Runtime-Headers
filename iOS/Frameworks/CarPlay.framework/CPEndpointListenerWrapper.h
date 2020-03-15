@@ -16,8 +16,8 @@
     NSObject<OS_xpc_object> *_endpoint;
 }
 
-@property(retain, nonatomic) NSObject<OS_xpc_object> *endpoint; // @synthesize endpoint=_endpoint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *endpoint; // @synthesize endpoint=_endpoint;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)initWithXPCEndpoint:(id)arg1;

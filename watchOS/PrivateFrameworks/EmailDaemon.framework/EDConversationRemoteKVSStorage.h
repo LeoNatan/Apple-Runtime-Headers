@@ -21,11 +21,11 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInitialized) _Bool initialized; // @synthesize initialized=_initialized;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(retain, nonatomic) NSUbiquitousKeyValueStore *kvStore; // @synthesize kvStore=_kvStore;
 @property(nonatomic) __weak id <EDConversationRemoteStorageDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_storeChangedExternally:(id)arg1;
 - (id)subsetOfMessageIDsToSyncFromMessageIDString:(id)arg1;
 - (_Bool)initialized;

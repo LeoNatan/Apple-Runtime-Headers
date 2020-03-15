@@ -14,9 +14,9 @@
     NSMutableArray *_mutableSearchSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableSearchSettings; // @synthesize mutableSearchSettings=_mutableSearchSettings;
 @property(retain, nonatomic) NSMutableSet *searchTaskSet; // @synthesize searchTaskSet=_searchTaskSet;
-- (void).cxx_destruct;
 - (id)onBehalfOfBundleIdentifier;
 - (id)localizedInvalidPasswordMessage;
 - (id)localizedIdenticalAccountFailureMessage;

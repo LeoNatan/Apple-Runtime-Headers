@@ -72,6 +72,7 @@
 + (void)activate;
 + (void)registerModelUpdatingActivity;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) SFStartLocalSearchFeedback *startLocalSearchFeedback; // @synthesize startLocalSearchFeedback=_startLocalSearchFeedback;
 @property(retain) PRSRankingConfiguration *rankingConfiguration; // @synthesize rankingConfiguration=_rankingConfiguration;
 @property(retain) NSString *shortcutUserQueryString; // @synthesize shortcutUserQueryString=_shortcutUserQueryString;
@@ -106,7 +107,6 @@
 @property(retain, nonatomic) NSString *keyboardLanguage; // @synthesize keyboardLanguage=_keyboardLanguage;
 @property(readonly) unsigned long long queryGroupId; // @synthesize queryGroupId=_queryGroupId;
 @property(nonatomic) __weak NSObject<SPQueryTaskDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)sendPerformanceFeedback:(id)arg1 forKey:(id)arg2;
 - (void)willSendPerformanceFeedback;

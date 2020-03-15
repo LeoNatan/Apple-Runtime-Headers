@@ -28,6 +28,9 @@
 @property(readonly) DOMHTMLFormElement *form;
 @property BOOL disabled;
 @property BOOL autofocus;
+- (int)structuralComplexityContribution;
+- (id)listItemAtIndex:(int)arg1;
+- (unsigned int)completeLength;
 - (void)_activateItemAtIndex:(int)arg1 allowMultipleSelection:(BOOL)arg2;
 - (void)_activateItemAtIndex:(int)arg1;
 - (void)add:(id)arg1:(id)arg2;

@@ -14,8 +14,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void)_authenticate;
 - (void)authenticate;
 - (int)loginType;

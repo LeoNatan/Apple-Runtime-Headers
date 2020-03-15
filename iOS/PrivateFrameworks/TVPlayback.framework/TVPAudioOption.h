@@ -20,6 +20,7 @@
     NSString *_savedLocaleLanguageCode;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *savedLocaleLanguageCode; // @synthesize savedLocaleLanguageCode=_savedLocaleLanguageCode;
 @property(nonatomic) int trackID; // @synthesize trackID=_trackID;
 @property(retain, nonatomic) id propertyListRepresentation; // @synthesize propertyListRepresentation=_propertyListRepresentation;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *localizedDisplayString; // @synthesize localizedDisplayString=_localizedDisplayString;
 @property(retain, nonatomic) AVMediaSelectionOption *avMediaSelectionOption; // @synthesize avMediaSelectionOption=_avMediaSelectionOption;
-- (void).cxx_destruct;
 - (void)_currentLocaleDidChange:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

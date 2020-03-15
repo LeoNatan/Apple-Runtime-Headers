@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     CKDRecordPCSData *_parentPCSData;
 }
 
+- (void).cxx_destruct;
 @property(getter=isPCSDataInvalidated) _Bool pcsDataInvalidated; // @synthesize pcsDataInvalidated=_pcsDataInvalidated;
 @property(retain, nonatomic) CKDRecordPCSData *parentPCSData; // @synthesize parentPCSData=_parentPCSData;
 @property(nonatomic) _Bool shouldRetry; // @synthesize shouldRetry=_shouldRetry;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <CKSQLiteItem> itemID; // @synthesize itemID=_itemID;
 @property(retain, nonatomic) CKDPCSCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *fetchGroup; // @synthesize fetchGroup=_fetchGroup;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_willRetryFetch;

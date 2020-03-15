@@ -17,12 +17,12 @@
     NSDictionary *_additionalContentAttributes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *additionalContentAttributes; // @synthesize additionalContentAttributes=_additionalContentAttributes;
 @property(nonatomic) _Bool shouldTruncateHeaderLeadingLabelFirst; // @synthesize shouldTruncateHeaderLeadingLabelFirst=_shouldTruncateHeaderLeadingLabelFirst;
 @property(copy, nonatomic) CLKTextProvider *headerTrailingTextProvider; // @synthesize headerTrailingTextProvider=_headerTrailingTextProvider;
 @property(copy, nonatomic) CLKTextProvider *bodyTextProvider; // @synthesize bodyTextProvider=_bodyTextProvider;
 @property(copy, nonatomic) CLKTextProvider *headerTextProvider; // @synthesize headerTextProvider=_headerTextProvider;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *contentDate;
 - (void)_enumerateDateKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateBOOLKeysWithBlock:(CDUnknownBlockType)arg1;

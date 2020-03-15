@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     NSTimer *_afterPreviewVideoTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_afterPreviewVideoTimer, setter=_setAfterPreviewVideoTimer:) NSTimer *afterPreviewVideoTimer; // @synthesize afterPreviewVideoTimer=_afterPreviewVideoTimer;
 @property(retain, nonatomic, getter=_previewVideoTimeoutTimer, setter=_setPreviewVideoTimeoutTimer:) NSTimer *previewVideoTimeoutTimer; // @synthesize previewVideoTimeoutTimer=_previewVideoTimeoutTimer;
 @property(retain, nonatomic, getter=_beforePreviewVideoTimer, setter=_setBeforePreviewVideoTimer:) NSTimer *beforePreviewVideoTimer; // @synthesize beforePreviewVideoTimer=_beforePreviewVideoTimer;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <HBUITopShelfParadeItem> paradeItem; // @synthesize paradeItem=_paradeItem;
 @property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic) _Bool isCenterViewController; // @synthesize isCenterViewController=_isCenterViewController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long contentState;
 - (void)prepareForReuse;
 - (_Bool)_audioIsMuted;

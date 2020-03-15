@@ -29,6 +29,7 @@
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *buttonFont; // @synthesize buttonFont=_buttonFont;
 @property(readonly, nonatomic) UILayoutGuide *trailingWhitespace; // @synthesize trailingWhitespace=_trailingWhitespace;
 @property(readonly, nonatomic) UILayoutGuide *middleWhitespace; // @synthesize middleWhitespace=_middleWhitespace;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) UIView *iconView; // @synthesize iconView=_iconView;
 @property(readonly, nonatomic) UIButton *startButton; // @synthesize startButton=_startButton;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (id)_createPadConstraints;
 - (id)_createLandscapeConstraintsPhone;
 - (id)_createPortraitConstraintsPhone;

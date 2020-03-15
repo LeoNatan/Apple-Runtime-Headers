@@ -6,21 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+@class NSArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface MRAVRoutingDiscoverySession : NSObject
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
-    struct NSMutableDictionary *_endpointsChangedCallbacks;
-    struct NSMutableDictionary *_outputDevicesChangedCallbacks;
+    NSMutableDictionary *_endpointsChangedCallbacks;
+    NSMutableDictionary *_outputDevicesChangedCallbacks;
     BOOL _alwaysAllowUpdates;
 }
 
 + (id)discoverySessionWithEndpointFeatures:(unsigned int)arg1;
 + (id)discoverySessionWithEndpointFeatures:(unsigned int)arg1 enableThrottling:(BOOL)arg2;
-@property(nonatomic) BOOL alwaysAllowUpdates; // @synthesize alwaysAllowUpdates=_alwaysAllowUpdates;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL alwaysAllowUpdates; // @synthesize alwaysAllowUpdates=_alwaysAllowUpdates;
 - (void)removeOutputDevicesChangedCallback:(id)arg1;
 - (void)removeEndpointsChangedCallback:(id)arg1;
 - (id)addOutputDevicesChangedCallback:(CDUnknownBlockType)arg1;

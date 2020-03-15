@@ -8,7 +8,7 @@
 
 #import <MapsSuggestions/MapsSuggestionsSource-Protocol.h>
 
-@class MSPFavoritesContainer, MSPHistoryContainer, MapsSuggestionsCanKicker, NSObject, NSString;
+@class MSPFavoritesContainer, MSPHistoryContainer, MapsSuggestionsCanKicker, NSMutableArray, NSObject, NSString;
 @protocol MapsSuggestionsSourceDelegate, OS_dispatch_queue;
 
 @interface MapsSuggestionsMSPSource : MapsSuggestionsBaseSource <MapsSuggestionsSource>
@@ -19,8 +19,8 @@
     MapsSuggestionsCanKicker *_canKickerFavoriteNotification;
     MSPHistoryContainer *_historyContainer;
     MSPFavoritesContainer *_favoritesContainer;
-    struct NSMutableArray *_recentsEntriesToAdd;
-    struct NSMutableArray *_favoritesEntriesToAdd;
+    NSMutableArray *_recentsEntriesToAdd;
+    NSMutableArray *_favoritesEntriesToAdd;
     int _notificationTokenForRecentHistory;
     int _notificationTokenForFavorites;
     _Bool _favoritesEnabled;
@@ -29,9 +29,9 @@
 + (unsigned int)disposition;
 + (_Bool)isEnabled;
 - (void).cxx_destruct;
-- (id)_extractTitleAndSubtitleFromMapItem:(struct GEOMapItemStorage *)arg1;
+- (id)_extractTitleAndSubtitleFromMapItem:(id)arg1;
 - (_Bool)_addFieldsToSuggestionsEntry:(id)arg1;
-- (struct NSArray *)_mergeRecentsAndFavoritesList;
+- (id)_mergeRecentsAndFavoritesList;
 - (void)_unregisterNotification;
 - (void)_registerNotification;
 - (id)_createEntryFromFavoritePlace:(id)arg1;

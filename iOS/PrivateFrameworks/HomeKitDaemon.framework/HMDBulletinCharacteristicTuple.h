@@ -19,13 +19,13 @@
 }
 
 + (id)tupleWithServiceContextID:(id)arg1 currentType:(id)arg2 targetValue:(id)arg3 targetStateNumber:(id)arg4 changedByThisDevice:(_Bool)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool changedByThisDevice; // @synthesize changedByThisDevice=_changedByThisDevice;
 @property(readonly, nonatomic) NSNumber *targetStateNumber; // @synthesize targetStateNumber=_targetStateNumber;
 @property(retain, nonatomic) NSDate *lastPostingTime; // @synthesize lastPostingTime=_lastPostingTime;
 @property(readonly, nonatomic) id targetValue; // @synthesize targetValue=_targetValue;
 @property(readonly, nonatomic) NSString *currentType; // @synthesize currentType=_currentType;
 @property(readonly, nonatomic) NSString *serviceContextID; // @synthesize serviceContextID=_serviceContextID;
-- (void).cxx_destruct;
 - (void)updatePostingTime;
 - (id)initWithServiceContextID:(id)arg1 currentType:(id)arg2 targetValue:(id)arg3 targetStateNumber:(id)arg4 changedByThisDevice:(_Bool)arg5;
 

@@ -22,6 +22,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKBulletTextListStackView *akBulletTextListStackView; // @synthesize akBulletTextListStackView=_akBulletTextListStackView;
 @property(retain, nonatomic) PUICButton *learnHowButton; // @synthesize learnHowButton=_learnHowButton;
 @property(retain, nonatomic) UILabel *splashSummaryLabel; // @synthesize splashSummaryLabel=_splashSummaryLabel;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <AKAuthorizationPrivacyDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleLearnHowTapped:(id)arg1;
 - (id)learnHowAttributedText;
 - (void)viewDidLayoutSubviews;

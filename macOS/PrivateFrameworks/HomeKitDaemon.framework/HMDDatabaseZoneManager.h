@@ -34,6 +34,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType participantsManagerFactory; // @synthesize participantsManagerFactory=_participantsManagerFactory;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) __weak id <HMBLocalZoneDelegate><HMBCloudZoneDelegate> zoneDelegate; // @synthesize zoneDelegate=_zoneDelegate;
@@ -49,7 +50,6 @@
 @property(readonly, copy) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property __weak id <HMDCloudShareParticipantsManagerDataSource> participantsManagerDataSource; // @synthesize participantsManagerDataSource=_participantsManagerDataSource;
 @property __weak id <HMDDatabaseZoneManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)database:(id)arg1 didReceiveMessageWithUserInfo:(id)arg2;
 - (void)database:(id)arg1 didRemoveZoneWithName:(id)arg2;

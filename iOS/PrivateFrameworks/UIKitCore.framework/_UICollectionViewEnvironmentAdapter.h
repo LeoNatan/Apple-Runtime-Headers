@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     UICollectionView *_collectionView;
 }
 
-@property(nonatomic, getter=_collectionView) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_collectionView) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(readonly, nonatomic) struct NSDirectionalEdgeInsets effectiveContentInsets;
 @property(readonly, nonatomic) struct NSDirectionalEdgeInsets contentInsets;
 @property(readonly, nonatomic) struct CGSize effectiveContentSize;

@@ -21,8 +21,8 @@
 }
 
 + (id)defaultAnimationForKey:(id)arg1;
-@property(nonatomic) BOOL doNotDrawThirdSeparationLine; // @synthesize doNotDrawThirdSeparationLine=_doNotDrawThirdSeparationLine;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL doNotDrawThirdSeparationLine; // @synthesize doNotDrawThirdSeparationLine=_doNotDrawThirdSeparationLine;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawBevelInRect:(struct CGRect)arg1;
 - (void)drawBevel;

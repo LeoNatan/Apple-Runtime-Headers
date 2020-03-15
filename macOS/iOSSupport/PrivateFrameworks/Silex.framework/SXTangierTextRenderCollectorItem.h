@@ -22,6 +22,7 @@
     struct _NSRange _flowRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXTextTangierFlowLayout *flowLayout; // @synthesize flowLayout=_flowLayout;
 @property(retain, nonatomic) SXTextTangierTextLayout *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) UIView<TSDRepDirectLayerHosting> *directLayerHost; // @synthesize directLayerHost=_directLayerHost;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) struct _NSRange flowRange; // @synthesize flowRange=_flowRange;
 @property(readonly, nonatomic) SXTextTangierFlowStorage *flowStorage; // @synthesize flowStorage=_flowStorage;
 @property(retain, nonatomic) SXTextTangierStorage *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescription;
 - (id)flowLayoutWithICC:(id)arg1;

@@ -14,9 +14,9 @@
     NSArray *_paths;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *paths; // @synthesize paths=_paths;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)initWithURLString:(id)arg1;
 - (id)initWithURL:(id)arg1;
 

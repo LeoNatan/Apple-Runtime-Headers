@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)factoryFromSectionInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *universalSectionIdentifier; // @synthesize universalSectionIdentifier=_universalSectionIdentifier;
 @property(copy, nonatomic) BBSectionInfo *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
-- (void).cxx_destruct;
 - (id)sectionIcon;
 - (id)sectionDisplayName;
 - (id)sectionIdentifier;

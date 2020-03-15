@@ -20,11 +20,11 @@
     id <CSLSceneMonitorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSLSceneMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool hasCompletedInitialCommit; // @synthesize hasCompletedInitialCommit=_hasCompletedInitialCommit;
 @property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 @property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
 - (void)sceneManager:(id)arg1 willDestroyScene:(id)arg2;
 - (void)sceneManager:(id)arg1 didCommitUpdateForScene:(id)arg2 transactionID:(unsigned int)arg3 success:(_Bool)arg4;

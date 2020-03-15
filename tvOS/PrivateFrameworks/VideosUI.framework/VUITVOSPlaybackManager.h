@@ -31,6 +31,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fullscreenDisappearanceReason; // @synthesize fullscreenDisappearanceReason=_fullscreenDisappearanceReason;
 @property(nonatomic) __weak NSTimer *postPlayUIDismissTimer; // @synthesize postPlayUIDismissTimer=_postPlayUIDismissTimer;
 @property(nonatomic) _Bool ignorePictureInPictureStop; // @synthesize ignorePictureInPictureStop=_ignorePictureInPictureStop;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) VUIPlaybackInfo *fullscreenPlaybackInfo; // @synthesize fullscreenPlaybackInfo=_fullscreenPlaybackInfo;
 @property(nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive; // @synthesize pictureInPictureActive=_pictureInPictureActive;
 @property(nonatomic) _Bool suppressErrorAlerts; // @synthesize suppressErrorAlerts=_suppressErrorAlerts;
-- (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)_showErrorIfAppropriate:(id)arg1;
 - (void)featureMonitor:(id)arg1 featureDidChangeState:(id)arg2 animated:(_Bool)arg3;
@@ -87,6 +87,7 @@
 - (_Bool)_isCurrentNavigationControllerExtrasNavigationController;
 - (id)_currentNavigationController;
 - (void)_setPictureInPictureMuted:(_Bool)arg1;
+- (void)_markMediaItemPlayingInPIP:(_Bool)arg1 forAVPlayerViewController:(id)arg2;
 - (void)pictureInPictureController:(id)arg1 didRequestPlayerMute:(_Bool)arg2;
 - (void)pictureInPictureControllerDidDestroyPictureInPicture:(id)arg1;
 - (void)pictureInPictureControllerDidActivatePictureInPicture:(id)arg1;
@@ -113,7 +114,9 @@
 - (void)nowPlayingControllerViewWillDisappear:(id)arg1 withDisappearanceReason:(unsigned long long)arg2;
 - (void)nowPlayingControllerViewDidAppear:(id)arg1;
 - (void)nowPlayingControllerViewWillAppear:(id)arg1;
+- (void)configureAudioSessionForBackgroundPlayback:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isFullscreenPlaybackUIBeingShown) _Bool fullscreenPlaybackUIBeingShown;
+@property(readonly, nonatomic) _Bool isPlaybackUIBeingShown;
 - (void)stopAllPlayback;
 - (void)mutePictureInPicture:(_Bool)arg1 reason:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

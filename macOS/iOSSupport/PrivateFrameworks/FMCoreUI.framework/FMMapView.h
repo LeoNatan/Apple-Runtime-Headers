@@ -62,6 +62,7 @@
 }
 
 + (BOOL)hasUserLocation;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isMapMoved; // @synthesize isMapMoved=_isMapMoved;
 @property(nonatomic) BOOL isFingerOnAnnotation; // @synthesize isFingerOnAnnotation=_isFingerOnAnnotation;
 @property(nonatomic) BOOL isFingerOnMap; // @synthesize isFingerOnMap=_isFingerOnMap;
@@ -105,7 +106,6 @@
 @property(retain, nonatomic) _MKUserTrackingButton *userTrackingButton; // @synthesize userTrackingButton=_userTrackingButton;
 @property(readonly, nonatomic) MKMapView *mapView; // @synthesize mapView=_mapView;
 @property(nonatomic) __weak id <FMMapViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)selectAnnotationForPreview:(id)arg1;
 - (void)updateAnnotationPositionAfterPreview:(id)arg1;
 - (void)updatePreviewLocationForAnnotation:(id)arg1;

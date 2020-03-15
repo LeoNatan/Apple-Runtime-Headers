@@ -14,8 +14,8 @@
 }
 
 + (id)_baseRequestOptions;
-@property(readonly, nonatomic) SASRequestOptions *requestOptions; // @synthesize requestOptions=_requestOptions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SASRequestOptions *requestOptions; // @synthesize requestOptions=_requestOptions;
 - (id)initWithRecordedSpeechURL:(id)arg1;
 - (id)initWithText:(id)arg1;
 - (id)_initWithRequestOptions:(id)arg1;

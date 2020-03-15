@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id <SZExtractorDelegate> delegate;
 }
 
-@property __weak id <SZExtractorDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
+@property __weak id <SZExtractorDelegate> delegate; // @synthesize delegate;
 - (void)extractionEnteredPassThroughMode;
 - (void)extractionCompleteAtArchivePath:(id)arg1;
 - (void)setExtractionProgress:(double)arg1;

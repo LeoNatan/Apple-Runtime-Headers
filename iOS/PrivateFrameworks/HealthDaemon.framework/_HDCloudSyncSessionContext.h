@@ -28,6 +28,7 @@
 
 + (_Bool)_updateAnchorRangeMap:(id)arg1 withChange:(id)arg2 outError:(id *)arg3;
 + (id)_assetFileHandleForArchiveURL:(id)arg1 fileManager:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasOpenSequence; // @synthesize hasOpenSequence=_hasOpenSequence;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) HDSyncAnchorRangeMap *pendingAnchorRangeMap; // @synthesize pendingAnchorRangeMap=_pendingAnchorRangeMap;
 @property(readonly, nonatomic) _HKArchiveCreator *archiveCreator; // @synthesize archiveCreator=_archiveCreator;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)finishProgress;
 - (_Bool)addChangeData:(id)arg1 changes:(id)arg2 sessionIdentifier:(id)arg3 outError:(id *)arg4;
 - (_Bool)resetInvalidArchiveCreatorWithSessionUUID:(id)arg1 error:(id *)arg2;

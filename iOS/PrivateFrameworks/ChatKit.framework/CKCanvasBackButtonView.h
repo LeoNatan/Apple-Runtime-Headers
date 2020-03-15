@@ -17,12 +17,12 @@
     UIColor *_titleLabelColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *titleLabelColor; // @synthesize titleLabelColor=_titleLabelColor;
 @property(nonatomic) _Bool shouldShowTitlePaddingView; // @synthesize shouldShowTitlePaddingView=_shouldShowTitlePaddingView;
 @property(retain, nonatomic) UIView *titlePaddingView; // @synthesize titlePaddingView=_titlePaddingView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *backButtonView; // @synthesize backButtonView=_backButtonView;
-- (void).cxx_destruct;
 - (struct CGSize)_titlePaddingViewSizeForTitle;
 - (void)_setVisuallyHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;

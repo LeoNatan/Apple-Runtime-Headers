@@ -24,19 +24,20 @@
 + (id)expressModeForCriterion:(id)arg1;
 + (id)criterionForExpressMode:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *mask; // @synthesize mask=_mask;
 @property(copy, nonatomic) NSSet *TCIs; // @synthesize TCIs=_TCIs;
 @property(copy, nonatomic) NSSet *primaryTCIs; // @synthesize primaryTCIs=_primaryTCIs;
 @property(nonatomic) _Bool supportsExpress; // @synthesize supportsExpress=_supportsExpress;
 @property(nonatomic) long long technologyType; // @synthesize technologyType=_technologyType;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)asDictionary;
 - (id)initWithDictionary:(id)arg1;
 
 @end

@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
     int notifyToken;
 }
 
-@property(nonatomic) int shakeState; // @synthesize shakeState=_shakeState;
 - (void).cxx_destruct;
+@property(nonatomic) int shakeState; // @synthesize shakeState=_shakeState;
 - (void)_enablePeakDetectionForScreenBlanked:(id)arg1;
 - (void)_enablePeakDetectionIfNecessary;
 - (int)_shakeState;

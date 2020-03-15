@@ -17,9 +17,9 @@
     id <SVVideoDurationObserverFactory> _durationObserverFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoDurationObserverFactory> durationObserverFactory; // @synthesize durationObserverFactory=_durationObserverFactory;
 @property(readonly, nonatomic) id <SVPlayerItemObserverFactory> playerItemObserverFactory; // @synthesize playerItemObserverFactory=_playerItemObserverFactory;
-- (void).cxx_destruct;
 - (id)createLoadingProgressObserverForVideo:(id)arg1;
 - (id)initWithPlayerItemObserverFactory:(id)arg1 durationObserverFactory:(id)arg2;
 

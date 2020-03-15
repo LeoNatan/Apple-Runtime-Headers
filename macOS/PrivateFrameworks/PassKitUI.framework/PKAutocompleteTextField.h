@@ -23,13 +23,13 @@
     PKAddressSearchResults *_searchResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKAddressSearchResults *searchResults; // @synthesize searchResults=_searchResults;
 @property(retain, nonatomic) PKAutocompleteViewController *autocompleteViewController; // @synthesize autocompleteViewController=_autocompleteViewController;
 @property(retain, nonatomic) PKAddressSearchModel *addressSearchModel; // @synthesize addressSearchModel=_addressSearchModel;
 @property(nonatomic, getter=isAutocompleting) BOOL autocompleting; // @synthesize autocompleting=_autocompleting;
 @property(nonatomic, getter=isEditing) BOOL editing; // @synthesize editing=_editing;
 @property(nonatomic) __weak id <PKAutocompleteTextFieldDelegate> autocompleteDelegate; // @synthesize autocompleteDelegate=_autocompleteDelegate;
-- (void).cxx_destruct;
 - (BOOL)_isViewOrSubviewFirstResponder:(id)arg1;
 - (void)_hideAutocomplete;
 - (void)_showAutocompleteIfNecessary;

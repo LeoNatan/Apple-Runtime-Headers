@@ -15,8 +15,8 @@
     WFModuleSummaryEditor *_currentEditor;
 }
 
-@property(retain, nonatomic) WFModuleSummaryEditor *currentEditor; // @synthesize currentEditor=_currentEditor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFModuleSummaryEditor *currentEditor; // @synthesize currentEditor=_currentEditor;
 - (void)summaryEditorDidRequestTextEntry:(id)arg1;
 - (void)summaryEditorDidFinish:(id)arg1 returnToKeyboard:(BOOL)arg2 withTextAttachmentToEdit:(id)arg3;
 - (void)summaryEditor:(id)arg1 willUpdateVariable:(id)arg2;

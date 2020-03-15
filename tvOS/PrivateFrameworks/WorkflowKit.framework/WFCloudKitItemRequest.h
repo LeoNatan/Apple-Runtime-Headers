@@ -23,10 +23,10 @@
 + (void)hydrateItem:(id)arg1 withRecord:(id)arg2 resolvedReferences:(id)arg3 setNilValues:(_Bool)arg4;
 + (id)desiredKeysFromProperties:(id)arg1 itemType:(Class)arg2;
 + (void)hydrateItem:(id)arg1 withRecord:(id)arg2 setNilValues:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool performExpensiveFetchOperations; // @synthesize performExpensiveFetchOperations=_performExpensiveFetchOperations;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) CKContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)fetchRecordIDs:(id)arg1 desiredKeys:(id)arg2 operationGroup:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)createTaskCancelledError;
 - (id)deleteItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

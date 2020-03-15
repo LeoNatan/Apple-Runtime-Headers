@@ -16,9 +16,9 @@
 }
 
 + (id)fileHandleFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSFileHandle *handle; // @synthesize handle=_handle;
 @property(readonly) _Bool launchOwnerWhenReadable; // @synthesize launchOwnerWhenReadable=_launchOwnerWhenReadable;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long type;
 @property(readonly) NSObject<OS_xpc_object> *dictionary;
 - (id)initWithFileDescriptor:(int)arg1 launchOwnerWhenReadable:(_Bool)arg2;

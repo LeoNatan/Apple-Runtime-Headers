@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
 
 + (id)objectFromPlist:(id)arg1;
 + (void)rangesFromSloMoAsset:(id)arg1 userAdjustedOnly:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) int mediaDuration; // @synthesize mediaDuration=_mediaDuration;
 @property int editCount; // @synthesize editCount=_editCount;
 @property(retain, nonatomic) SpeedRanges *old; // @synthesize old=_old;
 @property(retain, nonatomic) NSMutableArray *array; // @synthesize array=_array;
 @property(retain, nonatomic) SpeedRanges *ramped; // @synthesize ramped=_ramped;
 @property(nonatomic) __weak NSObject<SpeedRangeDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)testUberRamp;
 - (void)testRamps;
 - (id)generateRamps;

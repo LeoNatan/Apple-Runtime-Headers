@@ -24,6 +24,7 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)arg1;
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(retain, nonatomic) WebScriptObject *webClientMetadata; // @synthesize webClientMetadata=_webClientMetadata;
 @property(retain, nonatomic) GKServerWebViewJSExternalAccounts *externalAccounts; // @synthesize externalAccounts=_externalAccounts;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) GKServerWebViewJSAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) GKServerWebViewJSEnvironment *environment; // @synthesize environment=_environment;
 @property(nonatomic) __weak id <GKServerWebViewJSRootDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)reauthenticateWithDisplayTitle:(id)arg1 displayString:(id)arg2 username:(id)arg3 callback:(id)arg4;
 - (void)reauthenticate:(id)arg1;
 - (void)saveFile:(id)arg1 suggestedFilename:(id)arg2 mimeType:(id)arg3;

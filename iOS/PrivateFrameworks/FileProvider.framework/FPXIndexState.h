@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)stateWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *lastChangeToken; // @synthesize lastChangeToken=_lastChangeToken;
 @property(readonly, nonatomic) NSData *lastPage; // @synthesize lastPage=_lastPage;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) unsigned long long phase;

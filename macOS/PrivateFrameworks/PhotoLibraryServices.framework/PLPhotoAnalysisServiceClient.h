@@ -145,7 +145,8 @@
 - (id)requestSocialGroupsForPersonIdentifiers:(id)arg1 withError:(id *)arg2;
 - (id)requestAllSocialGroupsForPersonIdentifier:(id)arg1 withError:(id *)arg2;
 - (id)requestSortedArrayOfPersonIdentifiers:(id)arg1 withError:(id *)arg2;
-- (void)generateQuestionsWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (id)requestLastQuestionGenerationJobDateWithError:(id *)arg1;
+- (void)requestGenerateQuestionsWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)generateSuggestionsWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)simulateMemoriesNotificationWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)generateMemoriesWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;

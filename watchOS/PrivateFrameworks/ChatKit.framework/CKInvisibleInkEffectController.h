@@ -23,6 +23,7 @@
     UIView *_borrowedEffectViewSnapshot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *borrowedEffectViewSnapshot; // @synthesize borrowedEffectViewSnapshot=_borrowedEffectViewSnapshot;
 @property(retain, nonatomic) NSTimer *resumeTimer; // @synthesize resumeTimer=_resumeTimer;
 @property(nonatomic) _Bool effectViewNeedsReset; // @synthesize effectViewNeedsReset=_effectViewNeedsReset;
@@ -31,7 +32,6 @@
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)invisibleInkEffectViewWasUncovered:(id)arg1;
 - (void)returnBorrowedEffectView;
 - (void)updateBorrowedEffectViewSnapshot;

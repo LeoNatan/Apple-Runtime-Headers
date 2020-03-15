@@ -16,9 +16,9 @@
 }
 
 + (id)pickerControllerWithPicker:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_picker) SAUIDomainObjectPicker *picker; // @synthesize picker=_picker;
 @property(nonatomic) __weak id <SiriUIObjectPickerViewControllerDelegate> pickerDelegate; // @synthesize pickerDelegate=_pickerDelegate;
-- (void).cxx_destruct;
 - (void)showPicker:(id)arg1;
 - (id)initWithPicker:(id)arg1;
 

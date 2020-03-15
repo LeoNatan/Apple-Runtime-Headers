@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreTelephony/CoreTelephonyClientSubscriberDelegate-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientSubscriberDelegateInternal-Protocol.h>
 
 @class CTServiceDescriptor, CoreTelephonyClient, NSData, NSString;
 @protocol CTSubscriberDelegate;
 
-@interface CTSubscriber : NSObject <CoreTelephonyClientSubscriberDelegate>
+@interface CTSubscriber : NSObject <CoreTelephonyClientSubscriberDelegateInternal>
 {
     struct queue _queue;
     CoreTelephonyClient *_client;
@@ -19,10 +19,10 @@
     CTServiceDescriptor *_descriptor;
 }
 
-@property(retain, nonatomic) CTServiceDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-@property(nonatomic) __weak id <CTSubscriberDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CTServiceDescriptor *descriptor; // @synthesize descriptor=_descriptor;
+@property(nonatomic) __weak id <CTSubscriberDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)authTokenChanged:(id)arg1;
 - (id)typeAllocationCode;
 - (void)authenticateWithInfo:(id)arg1 handleResult:(CDUnknownBlockType)arg2;

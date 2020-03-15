@@ -32,6 +32,7 @@
 }
 
 + (id)_createTestMemoryWithAssets:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long viewCount; // @synthesize viewCount=_viewCount;
 @property(nonatomic) long long shareCount; // @synthesize shareCount=_shareCount;
 @property(nonatomic) long long playCount; // @synthesize playCount=_playCount;
@@ -51,7 +52,6 @@
 @property(nonatomic) long long category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (id)propertiesDescription;
 - (BOOL)supportsDirectDeletion;

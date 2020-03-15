@@ -18,11 +18,11 @@
     NSString *_uniqueID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(nonatomic) int changeType; // @synthesize changeType=_changeType;
 @property(nonatomic) int messageType; // @synthesize messageType=_messageType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

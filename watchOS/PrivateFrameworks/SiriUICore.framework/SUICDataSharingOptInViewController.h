@@ -12,11 +12,13 @@
 @interface SUICDataSharingOptInViewController : CUISAlertViewController
 {
     AFSettingsConnection *_settingsConnection;
+    _Bool _selectedDataSharingOptInOption;
     id <SUICDataSharingOptInViewControllerDelegate> _dataSharingOptInDelegate;
 }
 
-@property(nonatomic) __weak id <SUICDataSharingOptInViewControllerDelegate> dataSharingOptInDelegate; // @synthesize dataSharingOptInDelegate=_dataSharingOptInDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SUICDataSharingOptInViewControllerDelegate> dataSharingOptInDelegate; // @synthesize dataSharingOptInDelegate=_dataSharingOptInDelegate;
+- (void)deactivate;
 - (void)activate;
 - (id)_attributesForAlertString;
 - (void)_setupAndPresentAlertSheetController;

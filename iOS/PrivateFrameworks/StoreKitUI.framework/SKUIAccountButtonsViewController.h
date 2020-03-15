@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     SKUILink *_ecommerceLink;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUILink *ECommerceLink; // @synthesize ECommerceLink=_ecommerceLink;
 @property(nonatomic) __weak id <SKUIAccountButtonsDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_viewAppleID;
 - (void)_signOut;
 - (void)_sendDidSignIn;

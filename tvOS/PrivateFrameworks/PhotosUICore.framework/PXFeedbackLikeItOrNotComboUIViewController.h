@@ -16,10 +16,10 @@
     UIActivityIndicatorView *__activityIndicatorView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _showsActivityIndicator; // @synthesize _showsActivityIndicator=__showsActivityIndicator;
 @property(readonly, nonatomic) UIActivityIndicatorView *_activityIndicatorView; // @synthesize _activityIndicatorView=__activityIndicatorView;
 @property(retain, nonatomic) id <PXFeedbackFormDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)finishWithSuccess:(_Bool)arg1;
 - (void)cancelFeedback:(id)arg1;
 - (void)setShowsActivityIndicator:(_Bool)arg1;

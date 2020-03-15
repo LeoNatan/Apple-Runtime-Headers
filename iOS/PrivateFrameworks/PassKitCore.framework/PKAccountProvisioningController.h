@@ -30,6 +30,7 @@
 }
 
 + (_Bool)_isPaymentPassActivated:(id)arg1 forAccountCredential:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long addToAMPState; // @synthesize addToAMPState=_addToAMPState;
 @property(readonly, nonatomic) unsigned long long makeAccountPassDefaultOnLocalDeviceState; // @synthesize makeAccountPassDefaultOnLocalDeviceState=_makeAccountPassDefaultOnLocalDeviceState;
 @property(readonly, nonatomic) unsigned long long addToIDMSState; // @synthesize addToIDMSState=_addToIDMSState;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *provisionedPassUniqueID; // @synthesize provisionedPassUniqueID=_provisionedPassUniqueID;
 @property(nonatomic) __weak id <PKAccountProvisioningControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double passActivationTimeout; // @synthesize passActivationTimeout=_passActivationTimeout;
-- (void).cxx_destruct;
 - (void)_informDelegateOfStateUpdate;
 - (void)_informDelegateOfError:(id)arg1;
 - (void)_handlePassActiviated;

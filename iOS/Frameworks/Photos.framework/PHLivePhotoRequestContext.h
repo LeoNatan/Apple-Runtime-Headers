@@ -22,9 +22,8 @@
     PHLivePhotoRequestOptions *_livePhotoOptions;
 }
 
-+ (long long)type;
-@property(readonly, nonatomic) PHLivePhotoRequestOptions *livePhotoOptions; // @synthesize livePhotoOptions=_livePhotoOptions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHLivePhotoRequestOptions *livePhotoOptions; // @synthesize livePhotoOptions=_livePhotoOptions;
 - (void)processMediaResult:(id)arg1 forRequest:(id)arg2;
 - (id)progresses;
 - (CDUnknownBlockType)progressHandler;
@@ -33,6 +32,7 @@
 - (id)initialRequests;
 - (_Bool)representsShareableHighQualityResource;
 - (_Bool)isNetworkAccessAllowed;
+- (long long)type;
 - (void)_setFinalImageRequestFromRequest:(id)arg1;
 - (id)_lazyVideoProgress;
 - (id)_lazyImageProgress;

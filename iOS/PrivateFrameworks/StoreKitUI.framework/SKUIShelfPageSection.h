@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
     id <SKUIScrollViewDelegateObserver> _scrollViewDelegateObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIScrollViewDelegateObserver> scrollViewDelegateObserver; // @synthesize scrollViewDelegateObserver=_scrollViewDelegateObserver;
 @property(readonly, nonatomic) SKUIShelfPageSectionConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_reloadViewElementProperties;
 - (void)_performDefaultSelectActionForEffectiveViewElement:(id)arg1;
 - (id)_normalizedShelfItemIndexPathFromActualIndexPath:(id)arg1;

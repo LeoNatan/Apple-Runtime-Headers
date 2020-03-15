@@ -30,10 +30,10 @@
 - (id)_assetsToImportFromAssetJournalInManagedObjectContext:(id)arg1 outOnDiskURLs:(id)arg2;
 - (id)assetsToImportFromAssetJournalInManagedObjectContext:(id)arg1 outOnDiskURLs:(id)arg2;
 - (void)_recreateNonAssetsInManagedObjectContext:(id)arg1 progress:(id)arg2;
-- (void)_recreateAssetsInManagedObjectContext:(id)arg1 progress:(id)arg2;
+- (void)_recreateAssetsInManagedObjectContext:(id)arg1 options:(unsigned char)arg2 progress:(id)arg3;
 - (void)recreateNonAssetsInManagedObjectContext:(id)arg1 progress:(id)arg2;
-- (void)recreateAssetsInManagedObjectContext:(id)arg1 progress:(id)arg2;
-- (void)recreateAllObjectsInManagedObjectContext:(id)arg1;
+- (void)recreateAssetsInManagedObjectContext:(id)arg1 options:(unsigned char)arg2 progress:(id)arg3;
+- (void)recreateAllObjectsInManagedObjectContext:(id)arg1 options:(unsigned char)arg2;
 - (_Bool)_replayFromCurrentHistoryTokenWithPayloadIDsToSkipInserts:(id)arg1;
 - (_Bool)_replayFromCurrentHistoryToken;
 - (_Bool)_appendEntriesByPayloadClassID:(id)arg1 withCurrentHistoryToken:(id)arg2;

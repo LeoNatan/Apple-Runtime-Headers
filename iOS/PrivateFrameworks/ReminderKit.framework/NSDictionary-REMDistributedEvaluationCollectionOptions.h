@@ -7,6 +7,8 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (REMDistributedEvaluationCollectionOptions)
+- (double)remdes_doubleForKey:(id)arg1 defaultValue:(double)arg2;
+- (unsigned long long)remdes_nsuintegerForKey:(id)arg1 defaultValue:(unsigned long long)arg2;
 - (_Bool)remdes_boolForKey:(id)arg1 defaultValue:(_Bool)arg2;
 @end
 

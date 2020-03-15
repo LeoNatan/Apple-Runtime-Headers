@@ -28,12 +28,11 @@ __attribute__((visibility("hidden")))
     double endTimeForScheduleFreshness;
 }
 
-@property(retain, nonatomic) NSMutableSet *placeDatasToLoad; // @synthesize placeDatasToLoad=_placeDatasToLoad;
-@property(retain, nonatomic) GEOTileKeyList *tilesToLoad; // @synthesize tilesToLoad=_tilesToLoad;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *placeDatasToLoad; // @synthesize placeDatasToLoad=_placeDatasToLoad;
+@property(retain, nonatomic) GEOTileKeyList *tilesToLoad; // @synthesize tilesToLoad=_tilesToLoad;
 - (double)networkDataRateKB;
-- (double)dataRateKB;
 - (id)init;
 
 @end

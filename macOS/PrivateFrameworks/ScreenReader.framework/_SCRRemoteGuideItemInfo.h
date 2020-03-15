@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)remoteGuideItemInfoWithTitle:(id)arg1 result:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRChooserItemResult *remoteGuideItemResult; // @synthesize remoteGuideItemResult=_remoteGuideItemResult;
 @property(copy, nonatomic) NSString *remoteGuideItemTitle; // @synthesize remoteGuideItemTitle=_remoteGuideItemTitle;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 result:(id)arg2;
 
 @end

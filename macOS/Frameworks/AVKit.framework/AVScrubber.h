@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVScrubberSlider *slider; // @synthesize slider=_slider;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)_updateWaveformVisibilityState;
 - (void)_updateWaveformRange;
 - (void)_updateWaveformIfNeeded;

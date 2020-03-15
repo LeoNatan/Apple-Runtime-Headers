@@ -14,14 +14,20 @@
 {
     int _alternativeSelectionCount;
     int _characterModificationCount;
+    int _characterInsertionCount;
+    int _characterSubstitutionCount;
+    int _characterDeletionCount;
     NSString *_correctedText;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *correctedText; // @synthesize correctedText=_correctedText;
+@property(nonatomic) int characterDeletionCount; // @synthesize characterDeletionCount=_characterDeletionCount;
+@property(nonatomic) int characterSubstitutionCount; // @synthesize characterSubstitutionCount=_characterSubstitutionCount;
+@property(nonatomic) int characterInsertionCount; // @synthesize characterInsertionCount=_characterInsertionCount;
 @property(nonatomic) int characterModificationCount; // @synthesize characterModificationCount=_characterModificationCount;
 @property(nonatomic) int alternativeSelectionCount; // @synthesize alternativeSelectionCount=_alternativeSelectionCount;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

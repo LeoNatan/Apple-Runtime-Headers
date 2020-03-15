@@ -21,13 +21,13 @@
     NSArray *_continuationResponses;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *continuationResponses; // @synthesize continuationResponses=_continuationResponses;
 @property(readonly, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
 @property(readonly, nonatomic) unsigned int statusDetail; // @synthesize statusDetail=_statusDetail;
 @property(readonly, nonatomic) unsigned int statusSubject; // @synthesize statusSubject=_statusSubject;
 @property(readonly, nonatomic) unsigned int statusClass; // @synthesize statusClass=_statusClass;
 @property(readonly, nonatomic) int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)description;
 - (id)errorMessageWithAddress:(id)arg1 defaultMessage:(id)arg2;
 - (int)failureReason;

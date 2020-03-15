@@ -17,9 +17,9 @@
 + (id)grammarCollectionNamed:(id)arg1 bundle:(id)arg2 language:(id)arg3;
 + (id)grammarCollectionNamed:(id)arg1 bundle:(id)arg2;
 + (id)grammarCollection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sentencesDictionary; // @synthesize sentencesDictionary=_sentencesDictionary;
 @property(retain, nonatomic) NSMutableDictionary *tokensDictionary; // @synthesize tokensDictionary=_tokensDictionary;
-- (void).cxx_destruct;
 - (void)writeToFileAtPath:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, nonatomic) NSArray *tokens;

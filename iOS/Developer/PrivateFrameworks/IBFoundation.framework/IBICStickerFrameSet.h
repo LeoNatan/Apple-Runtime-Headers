@@ -31,11 +31,11 @@
 + (Class)requiredParentClass;
 + (id)createInstanceNamed:(id)arg1 frameCount:(long long)arg2 duration:(double)arg3 baseSize:(struct CGSize)arg4 usingRenderer:(CDUnknownBlockType)arg5;
 + (id)createDefaultInstancesForUnitTesting;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) long long durationType; // @synthesize durationType=_durationType;
 @property(nonatomic) long long repetitions; // @synthesize repetitions=_repetitions;
-- (void).cxx_destruct;
 - (_Bool)isEqualForUnitTests:(id)arg1;
 - (_Bool)writeAPNGToPath:(id)arg1 withError:(id *)arg2;
 - (void)encodeWithCoder:(id)arg1;
@@ -47,7 +47,7 @@
 - (id)intrinsicallyOrderedChildren;
 - (id)children;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
-- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
+- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2 manifestFileData:(id)arg3;
 - (_Bool)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (void)manifestArchivist:(id)arg1 populateManifestEntry:(id)arg2 forChild:(id)arg3;
 - (_Bool)manifestArchivist:(id)arg1 childHasDataToRecordInManifest:(id)arg2;

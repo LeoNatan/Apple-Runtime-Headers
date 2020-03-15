@@ -15,9 +15,9 @@
     NSOperationQueue *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 - (void)addAccountOperation:(CDUnknownBlockType)arg1;
 - (id)initWithClientQueue:(id)arg1;
 

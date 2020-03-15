@@ -13,8 +13,8 @@
     HUEditOutgoingInvitationItemManager *_editOutgoingInvitationItemManager;
 }
 
-@property(readonly, nonatomic) HUEditOutgoingInvitationItemManager *editOutgoingInvitationItemManager; // @synthesize editOutgoingInvitationItemManager=_editOutgoingInvitationItemManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUEditOutgoingInvitationItemManager *editOutgoingInvitationItemManager; // @synthesize editOutgoingInvitationItemManager=_editOutgoingInvitationItemManager;
 - (id)_messageForInvitationState:(long long)arg1;
 - (void)_cancelOutgoingInvitation:(_Bool)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

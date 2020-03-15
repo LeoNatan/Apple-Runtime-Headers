@@ -17,10 +17,10 @@
     NSString *_treatmentModelName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *treatmentModelName; // @synthesize treatmentModelName=_treatmentModelName;
 @property(retain, nonatomic) NSString *treatmentId; // @synthesize treatmentId=_treatmentId;
 @property(retain, nonatomic) NSString *experimentId; // @synthesize experimentId=_experimentId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

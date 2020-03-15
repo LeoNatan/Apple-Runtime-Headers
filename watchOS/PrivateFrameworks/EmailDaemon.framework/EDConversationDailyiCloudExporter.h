@@ -18,9 +18,9 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EDUbiquitousConversationManager *conversationManager; // @synthesize conversationManager=_conversationManager;
 @property(readonly, nonatomic) id <EDConversationDailyCloudExporterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)run;
 - (id)initWithDelegate:(id)arg1 conversationManager:(id)arg2;
 

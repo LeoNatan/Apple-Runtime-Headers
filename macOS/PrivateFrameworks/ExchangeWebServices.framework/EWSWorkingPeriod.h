@@ -18,10 +18,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long EndTimeInMinutes; // @synthesize EndTimeInMinutes=_EndTimeInMinutes;
 @property(nonatomic) long long StartTimeInMinutes; // @synthesize StartTimeInMinutes=_StartTimeInMinutes;
 @property(copy, nonatomic) NSIndexSet *DayOfWeek; // @synthesize DayOfWeek=_DayOfWeek;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

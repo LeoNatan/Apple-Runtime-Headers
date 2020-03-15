@@ -25,12 +25,12 @@
 + (id)objectPropertyWithName:(id)arg1;
 + (id)scalarPropertyWithName:(id)arg1 nilValue:(id)arg2 ignoredByDefault:(_Bool)arg3;
 + (id)scalarPropertyWithName:(id)arg1 nilValue:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSValue *nilValue; // @synthesize nilValue=_nilValue;
 @property(readonly, nonatomic, getter=isIgnoredByDefault) _Bool ignoredByDefault; // @synthesize ignoredByDefault=_ignoredByDefault;
 @property(readonly, nonatomic) Class itemClass; // @synthesize itemClass=_itemClass;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned long long)arg1 name:(id)arg2 itemClass:(Class)arg3 ignoredByDefault:(_Bool)arg4 nilValue:(id)arg5;
 
 @end

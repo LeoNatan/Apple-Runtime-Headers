@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSPathControl *stackControl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPathControl *stackControl; // @synthesize stackControl;
 @property(nonatomic) __weak NSObjectController *objectController; // @synthesize objectController=_objectController;
-- (void).cxx_destruct;
 - (void)pathControlClicked:(id)arg1;
 - (void)stackSelectionChanged:(id)arg1;
 - (void)selectInstance:(id)arg1 propertyName:(id)arg2;

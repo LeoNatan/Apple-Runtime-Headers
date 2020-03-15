@@ -18,10 +18,10 @@
     UIButton *_disclosureButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *disclosureButton; // @synthesize disclosureButton=_disclosureButton;
 @property(retain, nonatomic) UILabel *detailTextLabel; // @synthesize detailTextLabel=_detailTextLabel;
 @property(retain, nonatomic) UIImageView *chevronView; // @synthesize chevronView=_chevronView;
-- (void).cxx_destruct;
 - (void)reloadData;
 - (void)layoutDetailText;
 - (void)removeTargetForDisclosure:(id)arg1 action:(SEL)arg2;

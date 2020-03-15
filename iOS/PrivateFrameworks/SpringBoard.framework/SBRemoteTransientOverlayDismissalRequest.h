@@ -16,11 +16,11 @@
     SBTransientOverlayViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBTransientOverlayViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) _Bool shouldInvalidatePresentation; // @synthesize shouldInvalidatePresentation=_shouldInvalidatePresentation;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithViewController:(id)arg1;
 

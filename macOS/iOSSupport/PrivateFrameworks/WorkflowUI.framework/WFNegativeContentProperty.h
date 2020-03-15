@@ -15,8 +15,8 @@
     WFContentProperty *_property;
 }
 
-@property(readonly, copy, nonatomic) WFContentProperty *property; // @synthesize property=_property;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) WFContentProperty *property; // @synthesize property=_property;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

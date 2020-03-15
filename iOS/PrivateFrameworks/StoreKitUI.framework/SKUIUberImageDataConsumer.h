@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIColor *_backgroundColor;
 }
 
-@property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (id)imageForImage:(id)arg1;
 
 @end

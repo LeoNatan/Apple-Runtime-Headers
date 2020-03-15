@@ -14,8 +14,8 @@
 }
 
 + (id)brushListWithBrushes:(id)arg1;
-@property(retain, nonatomic) NSArray *brushList; // @synthesize brushList=_brushList;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *brushList; // @synthesize brushList=_brushList;
 - (void)didDrawRect:(struct CGRect)arg1 withBrushAtIndex:(unsigned long long)arg2 input:(id)arg3;
 - (void)willDrawRect:(struct CGRect)arg1 withBrushAtIndex:(unsigned long long)arg2 input:(id)arg3;
 - (struct CGRect)drawRectForBrushAtIndex:(unsigned long long)arg1 fromRect:(struct CGRect)arg2 input:(id)arg3;

@@ -15,9 +15,9 @@
     NSDictionary *_contextualKeyAssetByHighlighItemUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *contextualKeyAssetByHighlighItemUUID; // @synthesize contextualKeyAssetByHighlighItemUUID=_contextualKeyAssetByHighlighItemUUID;
 @property(readonly, nonatomic) id <PGHighlightItemEnrichmentRule> rule; // @synthesize rule=_rule;
-- (void).cxx_destruct;
 - (void)enrichHighlightItemLists:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
 - (id)initWithRule:(id)arg1 contextualKeyAssetByHighlighItemUUID:(id)arg2;
 

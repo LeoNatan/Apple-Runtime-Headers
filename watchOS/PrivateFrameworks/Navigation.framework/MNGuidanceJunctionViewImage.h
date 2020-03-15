@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(readonly, nonatomic) unsigned int imageID; // @synthesize imageID=_imageID;
-- (void).cxx_destruct;
 - (void)setImageData:(id)arg1;
 - (void)setImageID:(unsigned int)arg1;
 - (void)encodeWithCoder:(id)arg1;

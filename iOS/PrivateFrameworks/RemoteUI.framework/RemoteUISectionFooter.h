@@ -20,11 +20,11 @@
     CDUnknownBlockType _linkAction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RUILinkLabel *linkLabel; // @synthesize linkLabel=_linkLabel;
 @property(copy, nonatomic) CDUnknownBlockType linkAction; // @synthesize linkAction=_linkAction;
 @property(retain, nonatomic) NSURL *linkURL; // @synthesize linkURL=_linkURL;
 @property(nonatomic) __weak id <RUITableFooterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_linkPressed;
 - (double)footerHeightForWidth:(double)arg1 inView:(id)arg2;
 - (double)footerHeightForWidth:(double)arg1 inTableView:(id)arg2;

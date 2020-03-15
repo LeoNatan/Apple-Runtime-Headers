@@ -14,9 +14,9 @@
     CDUnknownBlockType reportProgress;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reportProgress; // @synthesize reportProgress;
 @property(copy, nonatomic) CDUnknownBlockType shouldBeCanceled; // @synthesize shouldBeCanceled;
-- (void).cxx_destruct;
 - (_Bool)ICShouldBeCanceled;
 - (void)ICReportProgress:(float)arg1;
 - (id)initWithProgress:(CDUnknownBlockType)arg1;

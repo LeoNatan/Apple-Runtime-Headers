@@ -39,9 +39,9 @@
     id <CalendarEventLoaderDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowEventLocationPrediction; // @synthesize allowEventLocationPrediction=_allowEventLocationPrediction;
 @property(nonatomic) __weak id <CalendarEventLoaderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_getLoadStart:(double *)arg1 end:(double *)arg2 fromLoadedStart:(double)arg3 loadedEnd:(double)arg4 currentlyLoadingStart:(double)arg5 currentlyLoadingEnd:(double)arg6;
 - (void)_getStart:(double)arg1 end:(double)arg2 paddedByDays:(int)arg3 inTimeZone:(id)arg4 resultStart:(double *)arg5 resultEnd:(double *)arg6;
 - (void)_getStart:(double)arg1 end:(double)arg2 expandedToComponents:(unsigned long long)arg3 withResultStart:(double *)arg4 resultEnd:(double *)arg5;

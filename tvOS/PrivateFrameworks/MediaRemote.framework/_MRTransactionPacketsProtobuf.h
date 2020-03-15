@@ -16,8 +16,8 @@
 }
 
 + (Class)packetsType;
-@property(retain, nonatomic) NSMutableArray *packets; // @synthesize packets=_packets;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *packets; // @synthesize packets=_packets;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

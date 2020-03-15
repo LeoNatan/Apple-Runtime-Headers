@@ -30,6 +30,7 @@
 - (unsigned long long)hash;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
+- (id)singleLinkDescription;
 - (id)initWithScreenSize:(struct CGSize)arg1 idiom:(long long)arg2 orientation:(long long)arg3 interfaceStyle:(long long)arg4 horizontalSizeClass:(long long)arg5 verticalSizeClass:(long long)arg6;
 - (id)initWithScreenSize:(struct CGSize)arg1 idiom:(long long)arg2 orientation:(long long)arg3 traitCollection:(id)arg4;
 - (id)createWindowForViewController:(id)arg1 initialSize:(id)arg2 inContext:(id)arg3;

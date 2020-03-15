@@ -18,11 +18,11 @@
 }
 
 + (id)preferredReuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *cardView; // @synthesize cardView=_cardView;
 @property(nonatomic) _Bool dimmingIneligibleForPrediction; // @synthesize dimmingIneligibleForPrediction=_dimmingIneligibleForPrediction;
 @property(nonatomic) _Bool showAppName; // @synthesize showAppName=_showAppName;
 @property(nonatomic) __weak id <VCActionDonation> donation; // @synthesize donation=_donation;
-- (void).cxx_destruct;
 - (_Bool)_donationHasSubtitle:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)prepareForReuse;

@@ -20,11 +20,11 @@
     WFDebouncer *_inputDebouncer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFDebouncer *inputDebouncer; // @synthesize inputDebouncer=_inputDebouncer;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(nonatomic) __weak id <WFDynamicResolveViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WFDynamicResolveParameter *parameter; // @synthesize parameter=_parameter;
-- (void).cxx_destruct;
 - (void)willDismissSearchController:(id)arg1;
 - (void)didPresentSearchController:(id)arg1;
 - (void)failWithError:(id)arg1;

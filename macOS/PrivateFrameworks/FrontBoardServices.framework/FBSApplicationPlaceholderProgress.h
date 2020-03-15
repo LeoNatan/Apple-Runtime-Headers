@@ -26,8 +26,8 @@
     FBSApplicationPlaceholder *_placeholder;
 }
 
-@property(readonly, nonatomic) __weak FBSApplicationPlaceholder *placeholder; // @synthesize placeholder=_placeholder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak FBSApplicationPlaceholder *placeholder; // @synthesize placeholder=_placeholder;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_stopObservingProgress:(id)arg1 withContext:(void *)arg2;
 - (void)_startObservingProgress:(id)arg1 withContext:(void *)arg2;

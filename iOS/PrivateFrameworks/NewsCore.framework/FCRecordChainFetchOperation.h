@@ -33,6 +33,7 @@
     NSMutableArray *_mutableNetworkEvents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableNetworkEvents; // @synthesize mutableNetworkEvents=_mutableNetworkEvents;
 @property(retain, nonatomic) NSDictionary *resultHeldRecordsByType; // @synthesize resultHeldRecordsByType=_resultHeldRecordsByType;
 @property(retain, nonatomic) NSMutableSet *missingCachedOnlyTopLevelRecordIDs; // @synthesize missingCachedOnlyTopLevelRecordIDs=_missingCachedOnlyTopLevelRecordIDs;
@@ -53,7 +54,6 @@
 @property(copy, nonatomic) NSDictionary *linkKeysByRecordType; // @synthesize linkKeysByRecordType=_linkKeysByRecordType;
 @property(copy, nonatomic) NSArray *topLevelRecordIDs; // @synthesize topLevelRecordIDs=_topLevelRecordIDs;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)_errorForMissingRecordNames:(id)arg1;
 - (id)_partialUncachedErrorForMissingRecordName:(id)arg1;
 - (id)_partialFetchErrorForMissingRecordName:(id)arg1;

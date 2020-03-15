@@ -13,8 +13,8 @@
     NSString *_token;
 }
 
-@property(readonly) NSString *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+@property(readonly) NSString *token; // @synthesize token=_token;
 - (BOOL)match:(id)arg1 location:(unsigned long long *)arg2 count:(unsigned long long *)arg3;
 - (BOOL)isEqualToTokenPattern:(id)arg1;
 - (BOOL)isEqualToPattern:(id)arg1;

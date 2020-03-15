@@ -29,6 +29,7 @@
     struct UIEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double adjustedContentInset; // @synthesize adjustedContentInset=_adjustedContentInset;
 @property(copy, nonatomic) NSIndexPath *currentFocusedIndexPath; // @synthesize currentFocusedIndexPath=_currentFocusedIndexPath;
 @property(nonatomic) _Bool fixedHeader; // @synthesize fixedHeader=_fixedHeader;
@@ -38,7 +39,6 @@
 @property(nonatomic) __weak TVCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) double scrollContentInset; // @synthesize scrollContentInset=_scrollContentInset;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (_Bool)collectionView:(id)arg1 shouldHandleLongPressForItemAtIndexPath:(id)arg2;

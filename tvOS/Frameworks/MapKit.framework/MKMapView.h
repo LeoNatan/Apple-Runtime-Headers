@@ -200,7 +200,6 @@
     unsigned long long _compassInsetEdges;
     _Bool _explicitCompassInsetEdges;
     MKMapViewLabelMarkerState *_selectedLabelMarkerState;
-    _Bool _showsAppleLogo;
     _Bool _compassSuppressedForFloorPicker;
     _Bool _geodHealthConsoleEnabled;
     double _compassVisibleRotationThreshold;
@@ -219,12 +218,12 @@
 + (unsigned long long)minZoomLevelForMapType:(unsigned long long)arg1 viewSize:(struct CGSize)arg2;
 + (CDStruct_02837cd9)_mapRectThatFitsViewBounds:(struct CGRect)arg1 mapRect:(CDStruct_02837cd9)arg2 viewInsets:(struct UIEdgeInsets)arg3 edgePadding:(struct UIEdgeInsets)arg4 minZoomLevel:(double)arg5 maxZoomLevel:(double)arg6 snapToZoomLevel:(_Bool)arg7;
 + (CDStruct_b7cb895d)_regionThatFitsMapType:(unsigned long long)arg1 viewSize:(struct CGSize)arg2 viewInsets:(struct UIEdgeInsets)arg3 edgePadding:(struct UIEdgeInsets)arg4 region:(CDStruct_b7cb895d)arg5 minZoomLevel:(double)arg6 maxZoomLevel:(double)arg7 snapToZoomLevel:(_Bool)arg8;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_labelsDidLayoutCallback, setter=_setLabelsDidLayoutCallback:) CDUnknownBlockType labelsDidLayoutCallback; // @synthesize labelsDidLayoutCallback=_labelsDidLayoutCallback;
 @property(nonatomic, getter=_isGeodHealthConsoleEnabled, setter=_setGeodHealthConsoleEnabled:) _Bool geodHealthConsoleEnabled; // @synthesize geodHealthConsoleEnabled=_geodHealthConsoleEnabled;
 @property(readonly, nonatomic) long long compassViewStyle; // @synthesize compassViewStyle=_compassViewStyle;
 @property(readonly, nonatomic) long long compassViewSize; // @synthesize compassViewSize=_compassViewSize;
 @property(nonatomic, getter=_isCompassSuppressedForFloorPicker, setter=_setCompassSuppressedForFloorPicker:) _Bool compassSuppressedForFloorPicker; // @synthesize compassSuppressedForFloorPicker=_compassSuppressedForFloorPicker;
-@property(nonatomic, getter=_showsAppleLogo, setter=_setShowsAppleLogo:) _Bool showsAppleLogo; // @synthesize showsAppleLogo=_showsAppleLogo;
 @property(nonatomic) int attributionCorner; // @synthesize attributionCorner=_attributionCorner;
 @property(copy, nonatomic) MKPointOfInterestFilter *pointOfInterestFilter; // @synthesize pointOfInterestFilter=_pointOfInterestFilter;
 @property(copy, nonatomic) MKMapCameraBoundary *cameraBoundary; // @synthesize cameraBoundary=_cameraBoundary;
@@ -238,7 +237,6 @@
 @property(nonatomic, getter=_attributionInsets, setter=_setAttributionInsets:) struct UIEdgeInsets attributionInsets; // @synthesize attributionInsets=_attributionInsets;
 @property(nonatomic, getter=_annotationTrackingZoomStyle, setter=_setAnnotationTrackingZoomStyle:) long long annotationTrackingZoomStyle; // @synthesize annotationTrackingZoomStyle=_annotationTrackingZoomStyle;
 @property(readonly, nonatomic, getter=_calloutShowAnimationGroup) NSObject<OS_dispatch_group> *calloutShowAnimationGroup; // @synthesize calloutShowAnimationGroup=_calloutShowAnimationGroup;
-- (void).cxx_destruct;
 - (void)_insertSubviewBelowAnnotationContainerView:(id)arg1;
 - (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
@@ -457,6 +455,7 @@
 - (void)mapLayerDidChangeRegionAnimated:(_Bool)arg1;
 - (void)mapLayerWillChangeRegionAnimated:(_Bool)arg1;
 - (void)mapLayerDidChangeVisibleRegion;
+- (void)mapLayer:(id)arg1 venueCreated:(id)arg2 venueCreatedBuilding:(id)arg3;
 - (void)mapLayer:(id)arg1 venueWithFocusDidChange:(id)arg2 building:(id)arg3;
 - (void)mapLayer:(id)arg1 flyoverModeWillChange:(int)arg2;
 - (void)mapLayer:(id)arg1 flyoverModeDidChange:(int)arg2;
@@ -818,7 +817,7 @@
 - (void)_showInteractionControlsInfoOverlay:(id)arg1;
 - (void)_showInteractionControlsInfoOverlay;
 - (void)_commonTvOSInitFromIB:(_Bool)arg1;
-- (id)_flattenedAnnotationsForAnnotationViews:(id)arg1 maxdisplayPriority:(float *)arg2;
+- (id)_flattenedAnnotationsForAnnotationViews:(id)arg1 maxDisplayPriority:(float *)arg2;
 @property(nonatomic) __weak id <MKMapViewDelegate> delegate; // @dynamic delegate;
 - (double)_distanceFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2 fromView:(id)arg3 withPrecision:(long long)arg4;
 - (struct CGRect)_convertMapRect:(CDStruct_02837cd9)arg1 toRectToView:(id)arg2;

@@ -35,11 +35,11 @@ __attribute__((visibility("hidden")))
     MKAnnotationView *_userLocationView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKAnnotation> draggedAnnotation; // @synthesize draggedAnnotation=_draggedAnnotation;
 @property(nonatomic) _Bool annotationRepresentationsAreAddedImmediately; // @synthesize annotationRepresentationsAreAddedImmediately=_annotationRepresentationsAreAddedImmediately;
 @property(nonatomic) __weak id <MKAnnotationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MKAnnotationMarkerContainer> container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_removeRepresentationForAnnotation:(id)arg1 fromCull:(_Bool)arg2;
 - (void)cleanUpAnnotationRepresentationForRemoval:(id)arg1;

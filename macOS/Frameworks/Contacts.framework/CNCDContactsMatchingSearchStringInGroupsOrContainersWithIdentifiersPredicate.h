@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     NSString *_searchString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(readonly, nonatomic) NSArray *groupIdentifiers; // @synthesize groupIdentifiers=_groupIdentifiers;
 @property(readonly, nonatomic) NSArray *containerIdentifiers; // @synthesize containerIdentifiers=_containerIdentifiers;
-- (void).cxx_destruct;
 - (id)cn_coreDataExchangePredicate;
 - (id)cn_unscopedFetchCoreDataPredicate;
 - (id)cn_coreDataPredicate;

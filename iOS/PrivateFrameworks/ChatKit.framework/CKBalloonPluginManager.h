@@ -48,6 +48,7 @@
 + (id)morePlugin;
 + (id)recentPlugin;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *activeBrowsers; // @synthesize activeBrowsers=_activeBrowsers;
 @property(retain, nonatomic) CKPreviewDispatchCache *snapshotCache; // @synthesize snapshotCache=_snapshotCache;
 @property(retain, nonatomic) NSCache *iconCache; // @synthesize iconCache=_iconCache;
@@ -74,7 +75,6 @@
 @property(nonatomic) _Bool isAppInstallationEnabled; // @synthesize isAppInstallationEnabled=_isAppInstallationEnabled;
 @property(nonatomic) __weak IMBalloonPlugin *lastViewedPlugin; // @synthesize lastViewedPlugin=_lastViewedPlugin;
 @property(retain, nonatomic) NSString *lastLaunchedIdentifier; // @synthesize lastLaunchedIdentifier=_lastLaunchedIdentifier;
-- (void).cxx_destruct;
 - (_Bool)_shouldShowActivity;
 - (_Bool)_shouldShowSURF;
 - (_Bool)isPluginVisible:(id)arg1;

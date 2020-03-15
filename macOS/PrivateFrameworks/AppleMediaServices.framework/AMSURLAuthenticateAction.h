@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     ACAccount *_updatedAccount;
 }
 
-@property(retain) ACAccount *updatedAccount; // @synthesize updatedAccount=_updatedAccount;
 - (void).cxx_destruct;
+@property(retain) ACAccount *updatedAccount; // @synthesize updatedAccount=_updatedAccount;
 
 @end
 

@@ -21,6 +21,7 @@
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double aspectRatioOfVideoPlayer; // @synthesize aspectRatioOfVideoPlayer=_aspectRatioOfVideoPlayer;
 @property(nonatomic) _Bool dynamicPlacement; // @synthesize dynamicPlacement=_dynamicPlacement;
 @property(retain, nonatomic) NSDictionary *campaignData; // @synthesize campaignData=_campaignData;
@@ -30,7 +31,6 @@
 @property(nonatomic) struct CGPoint positionInArticle; // @synthesize positionInArticle=_positionInArticle;
 @property(retain, nonatomic) NSDictionary *componentMetadata; // @synthesize componentMetadata=_componentMetadata;
 @property(retain, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
-- (void).cxx_destruct;
 
 @end
 

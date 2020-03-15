@@ -19,13 +19,13 @@
     CDUnknownBlockType _endedRecordingHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType endedRecordingHandler; // @synthesize endedRecordingHandler=_endedRecordingHandler;
 @property(copy, nonatomic) CDUnknownBlockType startedRecordingHandler; // @synthesize startedRecordingHandler=_startedRecordingHandler;
 @property(readonly, copy, nonatomic) NSDictionary *messageLoadTimes; // @synthesize messageLoadTimes=_messageLoadTimes;
 @property(nonatomic) unsigned long long maxLoadingTimeSeconds; // @synthesize maxLoadingTimeSeconds=_maxLoadingTimeSeconds;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialMessageLoadingTimerQueue; // @synthesize serialMessageLoadingTimerQueue=_serialMessageLoadingTimerQueue;
 @property(retain, nonatomic) MSDiagnosticManager *diagnosticManager; // @synthesize diagnosticManager=_diagnosticManager;
-- (void).cxx_destruct;
 - (id)_retrieveAndRemoveMessageLoadingInfoForMessage:(id)arg1;
 - (void)_calculateAndSubmitTimeForLoadingInfo:(id)arg1;
 - (void)_startTimeoutForMessage:(id)arg1;

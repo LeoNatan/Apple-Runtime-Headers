@@ -47,6 +47,7 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *frameViewMap; // @synthesize frameViewMap=_frameViewMap;
 @property(nonatomic) __weak UXCollectionView *enclosingCollectionView; // @synthesize enclosingCollectionView=_enclosingCollectionView;
 @property(retain, nonatomic) KHFrame *draggingFrameObject; // @synthesize draggingFrameObject=_draggingFrameObject;
@@ -70,7 +71,6 @@
 @property(nonatomic, getter=isHoverVisible) BOOL hoverVisible; // @synthesize hoverVisible=_hoverVisible;
 @property(nonatomic, getter=isEditing) BOOL editing; // @synthesize editing=_editing;
 @property(retain, nonatomic) KHFrame *frameObject; // @synthesize frameObject=_frameObject;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 @property(readonly, copy) NSString *description;
 - (void)getFrameInfo:(id)arg1;

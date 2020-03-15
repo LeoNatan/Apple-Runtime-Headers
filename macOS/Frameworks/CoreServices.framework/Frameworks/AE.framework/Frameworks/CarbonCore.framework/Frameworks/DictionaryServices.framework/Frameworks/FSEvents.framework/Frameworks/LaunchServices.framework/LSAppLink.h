@@ -33,9 +33,9 @@
 + (id)_dispatchQueue;
 + (id)_appLinksWithState:(id)arg1 context:(struct LSContext *)arg2 limit:(unsigned long long)arg3 URLComponents:(id)arg4 error:(id *)arg5;
 + (BOOL)URLComponentsAreValidForAppLinks:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) LSApplicationProxy *targetApplicationProxy; // @synthesize targetApplicationProxy=_targetApplicationProxy;
 @property(copy) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;

@@ -31,17 +31,18 @@ __attribute__((visibility("hidden")))
     float _rightHitTestExtension;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isNoLongerInUse; // @synthesize isNoLongerInUse=_isNoLongerInUse;
 @property(nonatomic) float rightHitTestExtension; // @synthesize rightHitTestExtension=_rightHitTestExtension;
 @property(nonatomic) float leftHitTestExtension; // @synthesize leftHitTestExtension=_leftHitTestExtension;
 @property(retain, nonatomic, getter=_textColor, setter=_setTextColor:) UIColor *_textColor; // @synthesize _textColor=__textColor;
 @property(nonatomic) struct CATransform3D perspectiveTransform; // @synthesize perspectiveTransform=_perspectiveTransform;
 @property(nonatomic) float rowHeight; // @synthesize rowHeight=_rowHeight;
-- (void).cxx_destruct;
 - (id)_viewToAddFocusLayer;
 - (id)accessibilityPath;
 - (struct CGRect)accessibilityFrame;
 - (struct CGRect)_defaultFocusRegionFrame;
+- (id)_systemDefaultFocusGroupDescriptor;
 - (_Bool)canBecomeFocused;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

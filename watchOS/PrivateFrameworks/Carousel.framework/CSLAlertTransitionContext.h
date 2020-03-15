@@ -15,10 +15,10 @@
     id <CUISAlertToAlertAnimatedTransitioning> _customAnimator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CUISAlertToAlertAnimatedTransitioning> customAnimator; // @synthesize customAnimator=_customAnimator;
 @property(nonatomic) unsigned int transitionReasonForAppearingAlert; // @synthesize transitionReasonForAppearingAlert=_transitionReasonForAppearingAlert;
 @property(nonatomic) unsigned int transitionReasonForDisappearingAlerts; // @synthesize transitionReasonForDisappearingAlerts=_transitionReasonForDisappearingAlerts;
-- (void).cxx_destruct;
 - (id)initWithAppearingReason:(unsigned int)arg1 disappearingReason:(unsigned int)arg2;
 
 @end

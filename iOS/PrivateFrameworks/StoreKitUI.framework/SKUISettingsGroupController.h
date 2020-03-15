@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     SKUISettingsGroupDescription *_settingsGroupDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUISettingsGroupDescription *settingsGroupDescription; // @synthesize settingsGroupDescription=_settingsGroupDescription;
 @property(retain, nonatomic) NSMutableArray *settingDescriptions; // @synthesize settingDescriptions=_settingDescriptions;
 @property(nonatomic) __weak id <SKUISettingsGroupControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_viewForSettingDescription:(id)arg1;
 - (void)_reloadSettingDescription:(id)arg1;
 - (void)attachSettingDescription:(id)arg1;

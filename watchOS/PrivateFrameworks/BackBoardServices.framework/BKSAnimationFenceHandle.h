@@ -27,8 +27,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)newFenceHandleForContext:(id)arg1;
 + (id)newSystemFenceHandle;
-@property(readonly, nonatomic) BSMachPortSendRight *trigger; // @synthesize trigger=_preFenceTrigger;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BSMachPortSendRight *trigger; // @synthesize trigger=_preFenceTrigger;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -22,6 +22,7 @@
 }
 
 + (id)tagWithDialects:(id)arg1 range:(struct _NSRange)arg2 content:(id)arg3 predictedByTagger:(BOOL)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL createdFromNewline; // @synthesize createdFromNewline=_createdFromNewline;
 @property(retain, nonatomic) NSMutableOrderedSet *predictedSecondaryDialects; // @synthesize predictedSecondaryDialects=_predictedSecondaryDialects;
 @property(nonatomic) BOOL wasPredicted; // @synthesize wasPredicted=_wasPredicted;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSMutableOrderedSet *unambiguousDialects; // @synthesize unambiguousDialects=_unambiguousDialects;
 @property(nonatomic) __weak NSString *content; // @synthesize content=_content;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)canBeSpokenByLanguage:(id)arg1;
 - (BOOL)canBeSpokenByDialect:(id)arg1;

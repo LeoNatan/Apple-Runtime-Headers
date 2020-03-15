@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)canAccessTextInView:(id)arg1;
 + (BOOL)canAccessTextAtLocation:(struct CGPoint)arg1;
-@property(retain, nonatomic) NSView<NSTextInput> *textInputView; // @synthesize textInputView=_textInputView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSView<NSTextInput> *textInputView; // @synthesize textInputView=_textInputView;
 - (id)termForRange:(struct _NSRange)arg1 textOrigin:(struct CGPoint *)arg2;
 - (id)_termAndTextOrigin:(struct CGPoint *)arg1;
 - (id)_termAtLocation:(struct CGPoint)arg1 textOrigin:(struct CGPoint *)arg2;

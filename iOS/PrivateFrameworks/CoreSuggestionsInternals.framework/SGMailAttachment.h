@@ -18,11 +18,11 @@
 
 + (id)attachmentsFromSearchableItem:(id)arg1;
 + (id)attachmentWithType:(id)arg1 filename:(id)arg2 path:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDownloadedLocally; // @synthesize isDownloadedLocally=_isDownloadedLocally;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 @property(readonly, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool isCalendarMimeType; // @dynamic isCalendarMimeType;
 - (id)initWithType:(id)arg1 filename:(id)arg2 path:(id)arg3;

@@ -14,8 +14,8 @@
     NSUUID *_operationUUID;
 }
 
-@property(readonly) NSUUID *operationUUID; // @synthesize operationUUID=_operationUUID;
 - (void).cxx_destruct;
+@property(readonly) NSUUID *operationUUID; // @synthesize operationUUID=_operationUUID;
 @property(readonly) NUColorSampler *sampler;
 - (void)processRAWTempTintColor:(id)arg1;
 - (void)processPickedColor:(id)arg1;

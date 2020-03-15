@@ -34,10 +34,10 @@
 + (void)performCallCenterTask:(CDUnknownBlockType)arg1;
 + (id)sharedCallCenter;
 + (id)sharedUtilityProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callCenterQueue; // @synthesize callCenterQueue=_callCenterQueue;
 @property(nonatomic) BOOL headphoneJackSupportsTTY; // @synthesize headphoneJackSupportsTTY=_headphoneJackSupportsTTY;
 @property(nonatomic) BOOL inUnitTestMode; // @synthesize inUnitTestMode=_inUnitTestMode;
-- (void).cxx_destruct;
 - (void)setTTYDictionaryAvailability:(BOOL)arg1;
 - (BOOL)contactIsTTYContact:(id)arg1;
 - (BOOL)deleteConversationWithCallUID:(id)arg1;

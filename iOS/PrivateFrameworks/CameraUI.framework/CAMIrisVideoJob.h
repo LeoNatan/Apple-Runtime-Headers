@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) long long temporaryPersistenceOptions; // @synthesize temporaryPersistenceOptions=_temporaryPersistenceOptions;
 @property(nonatomic) long long persistenceOptions; // @synthesize persistenceOptions=_persistenceOptions;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) NSString *videoPersistenceUUID; // @synthesize videoPersistenceUUID=_videoPersistenceUUID;
 @property(readonly, nonatomic) NSString *stillImagePersistenceUUID; // @synthesize stillImagePersistenceUUID=_stillImagePersistenceUUID;
 @property(readonly, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCTMVideo) _Bool CTMVideo;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

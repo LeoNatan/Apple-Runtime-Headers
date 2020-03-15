@@ -18,10 +18,10 @@
     UIColor *_outerRingColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *outerRingColor; // @synthesize outerRingColor=_outerRingColor;
 @property(retain, nonatomic) UIImage *centerImage; // @synthesize centerImage=_centerImage;
 @property(nonatomic) float downloadProgress; // @synthesize downloadProgress=_downloadProgress;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

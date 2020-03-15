@@ -16,10 +16,10 @@
 }
 
 + (id)endpointErrorWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *stacktrace; // @synthesize stacktrace=_stacktrace;
 @property(readonly, copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, copy, nonatomic) NSString *errorCode; // @synthesize errorCode=_errorCode;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

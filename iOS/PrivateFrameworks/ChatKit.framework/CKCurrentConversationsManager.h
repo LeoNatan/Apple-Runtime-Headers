@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMDoubleLinkedList *orderedKeys; // @synthesize orderedKeys=_orderedKeys;
 @property(retain, nonatomic) NSMutableDictionary *idToNodeDictionary; // @synthesize idToNodeDictionary=_idToNodeDictionary;
 @property(retain, nonatomic) NSCountedSet *currentConversations; // @synthesize currentConversations=_currentConversations;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long cacheSize;
 - (void)_prepareToDumpCachedConversation:(id)arg1;
 - (_Bool)_canDumpConversationFromCache:(id)arg1;

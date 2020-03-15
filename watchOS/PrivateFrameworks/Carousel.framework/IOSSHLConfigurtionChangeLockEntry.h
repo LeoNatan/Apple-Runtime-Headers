@@ -14,9 +14,9 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) __weak id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;

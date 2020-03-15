@@ -37,13 +37,13 @@
     struct CGPoint _ringCenter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showBlurTrails; // @synthesize showBlurTrails=_showBlurTrails;
 @property(readonly, nonatomic) long long numberOfVisiblePetals; // @synthesize numberOfVisiblePetals=_numberOfVisiblePetals;
 @property(readonly, nonatomic) long long numberOfPetals; // @synthesize numberOfPetals=_numberOfPetals;
 @property(nonatomic) float ringRadius; // @synthesize ringRadius=_ringRadius;
 @property(nonatomic) struct CGPoint ringCenter; // @synthesize ringCenter=_ringCenter;
 @property(nonatomic) __weak id <FIUIDeepBreathingPetalRingGLViewDelegate> petalRingDelegate; // @synthesize petalRingDelegate=_petalRingDelegate;
-- (void).cxx_destruct;
 - (void)_teardown;
 - (unsigned int)drawInRect:(struct CGRect)arg1 withContext:(id)arg2;
 - (void)_updateVertices;

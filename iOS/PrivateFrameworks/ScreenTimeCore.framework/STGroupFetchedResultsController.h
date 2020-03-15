@@ -20,12 +20,12 @@
     unsigned long long _changeCounter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long changeCounter; // @synthesize changeCounter=_changeCounter;
 @property(retain, nonatomic) NSArray *resultsRequests; // @synthesize resultsRequests=_resultsRequests;
 @property(retain, nonatomic) NSArray *resultsControllers; // @synthesize resultsControllers=_resultsControllers;
 @property(retain, nonatomic) NSFetchedResultsController *resultsController; // @synthesize resultsController=_resultsController;
 @property(nonatomic) __weak id <STGroupFetchedResultsControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_evaluateCounter;
 - (void)controllerDidChangeContent:(id)arg1;
 - (void)controllerWillChangeContent:(id)arg1;

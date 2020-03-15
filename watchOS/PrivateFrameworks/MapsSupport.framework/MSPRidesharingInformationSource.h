@@ -16,9 +16,9 @@
     GEOComposedWaypoint *_endWaypoint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_endWaypoint) GEOComposedWaypoint *endWaypoint; // @synthesize endWaypoint=_endWaypoint;
 @property(readonly, nonatomic, getter=_startWaypoint) GEOComposedWaypoint *startWaypoint; // @synthesize startWaypoint=_startWaypoint;
-- (void).cxx_destruct;
 - (id)ifGEOStorageRouteRequestStorage;
 - (id)ifRidesharingInformationSource;
 - (id)initWithStartWaypoint:(id)arg1 endWaypoint:(id)arg2;

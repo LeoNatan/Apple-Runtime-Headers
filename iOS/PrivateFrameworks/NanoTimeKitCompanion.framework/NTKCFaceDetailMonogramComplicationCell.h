@@ -14,8 +14,8 @@
 }
 
 + (id)reuseIdentifier;
-@property(readonly, nonatomic) NSString *slot; // @synthesize slot=_slot;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *slot; // @synthesize slot=_slot;
 - (id)initWithSlot:(id)arg1 inFace:(id)arg2;
 
 @end

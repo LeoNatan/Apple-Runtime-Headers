@@ -28,6 +28,7 @@
 }
 
 + (id)signpostLog;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ECLocalMessageActionResults *resultsToPersist; // @synthesize resultsToPersist=_resultsToPersist;
 @property(nonatomic) BOOL needToPersistResults; // @synthesize needToPersistResults=_needToPersistResults;
 @property(nonatomic) BOOL needToCheckForActions; // @synthesize needToCheckForActions=_needToCheckForActions;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) id <IMAPMessageDataSource> currentDataSource; // @synthesize currentDataSource=_currentDataSource;
 @property(retain, nonatomic) NSURL *currentMailboxURL; // @synthesize currentMailboxURL=_currentMailboxURL;
 @property(retain, nonatomic) IMAPTaskManager *taskManager; // @synthesize taskManager=_taskManager;
-- (void).cxx_destruct;
 - (void)_createProgressForAction:(id)arg1;
 - (void)persistActionResultsOperationCompleted:(id)arg1 needToReplayAction:(BOOL)arg2 messagesNeedingBodies:(id)arg3;
 - (void)messageActionSyncOperationCompleted:(id)arg1 results:(id)arg2;

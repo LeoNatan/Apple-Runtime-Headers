@@ -15,10 +15,10 @@
     double _rankMultiplier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double rankMultiplier; // @synthesize rankMultiplier=_rankMultiplier;
 @property(readonly, nonatomic) NSString *nameOverride; // @synthesize nameOverride=_nameOverride;
 @property(nonatomic) _Bool isEligible; // @synthesize isEligible=_isEligible;
-- (void).cxx_destruct;
 - (id)initWithJSONData:(id)arg1;
 - (id)initWithJSONString:(id)arg1;
 

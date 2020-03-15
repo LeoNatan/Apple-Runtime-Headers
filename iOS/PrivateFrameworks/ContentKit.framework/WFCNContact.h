@@ -12,6 +12,7 @@
 {
     _Bool _fromVCard;
     int _propertyID;
+    NSString *_accountIdentifier;
     long long _multivalueIndex;
     WFFileRepresentation *_vCardRepresentation;
     CNContact *_contact;
@@ -31,14 +32,15 @@
 + (id)allContactsWithSortOrder:(long long)arg1;
 + (id)allContactsWithSortOrder:(long long)arg1 passingTest:(CDUnknownBlockType)arg2;
 + (id)requiredKeysToFetch;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool fromVCard; // @synthesize fromVCard=_fromVCard;
 @property(readonly, copy, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (long long)multivalueIndex;
 - (int)propertyID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+@property(readonly, copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 - (id)instantMessageAddresses;
 - (id)socialProfiles;
 - (id)URLs;

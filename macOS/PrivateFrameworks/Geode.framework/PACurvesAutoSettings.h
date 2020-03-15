@@ -16,11 +16,11 @@
     NSArray *_pointsB;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pointsB; // @synthesize pointsB=_pointsB;
 @property(retain, nonatomic) NSArray *pointsG; // @synthesize pointsG=_pointsG;
 @property(retain, nonatomic) NSArray *pointsR; // @synthesize pointsR=_pointsR;
 @property(retain, nonatomic) NSArray *pointsL; // @synthesize pointsL=_pointsL;
-- (void).cxx_destruct;
 - (BOOL)_applyArchiveDictionary:(id)arg1;
 - (void)_archiveIntoDictionary:(id)arg1;
 

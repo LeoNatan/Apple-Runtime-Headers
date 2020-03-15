@@ -23,12 +23,12 @@
 }
 
 + (id)componentForModel:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double lastWidth; // @synthesize lastWidth=_lastWidth;
 @property(retain, nonatomic) WFParameterEditorModel *model; // @synthesize model=_model;
 @property(nonatomic) __weak CKComponentHostingView *hostingView; // @synthesize hostingView=_hostingView;
 @property(nonatomic) __weak UIViewController *containingViewController; // @synthesize containingViewController=_containingViewController;
 @property(nonatomic) __weak id <WFParameterEditorHostingCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)parameterAttributesDidChange:(id)arg1;
 - (void)componentHostingViewDidInvalidateSize:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

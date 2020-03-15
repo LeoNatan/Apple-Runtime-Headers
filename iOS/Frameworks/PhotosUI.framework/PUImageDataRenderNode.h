@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _renderedImageSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *livePhotoPairingIdentifier; // @synthesize livePhotoPairingIdentifier=_livePhotoPairingIdentifier;
 @property(readonly, nonatomic) double jpegCompression; // @synthesize jpegCompression=_jpegCompression;
 @property(readonly, copy, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGSize renderedImageSize; // @synthesize renderedImageSize=_renderedImageSize;
 @property(readonly, nonatomic) struct CGSize baseImageSize; // @synthesize baseImageSize=_baseImageSize;
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 - (void)_handleRenderCompletedWithJpegData:(id)arg1 baseSize:(struct CGSize)arg2 editedSize:(struct CGSize)arg3;
 - (void)run;
 - (id)_editSource;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)cellStyle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 @property(retain, nonatomic) UILabel *badgelessCenteredTitleLabel; // @synthesize badgelessCenteredTitleLabel=_badgelessCenteredTitleLabel;
 @property(retain, nonatomic) UILabel *centeredTitleLabel; // @synthesize centeredTitleLabel=_centeredTitleLabel;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) PSUIBadgeView *badgeView; // @synthesize badgeView=_badgeView;
-- (void).cxx_destruct;
 - (id)detailTextLabel;
 - (id)textLabel;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;

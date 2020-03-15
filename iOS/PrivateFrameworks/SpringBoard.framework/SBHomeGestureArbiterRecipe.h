@@ -16,8 +16,8 @@
 }
 
 + (void)load;
-@property(retain, nonatomic) SBHomeGestureParticipant *participant; // @synthesize participant=_participant;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBHomeGestureParticipant *participant; // @synthesize participant=_participant;
 - (void)handleVolumeDecrease;
 - (void)handleVolumeIncrease;
 - (id)title;

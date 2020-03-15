@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     BRCRelativePath *_rootPath;
 }
 
-@property(readonly, nonatomic) BRCRelativePath *rootPath; // @synthesize rootPath=_rootPath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BRCRelativePath *rootPath; // @synthesize rootPath=_rootPath;
 - (void)dealloc;
 - (void)scheduleWithProcessBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initForEnumeratingBelow:(id)arg1 recursive:(_Bool)arg2 batchSize:(long long)arg3 targetQueue:(id)arg4;

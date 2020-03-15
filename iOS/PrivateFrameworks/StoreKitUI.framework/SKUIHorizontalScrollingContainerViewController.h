@@ -28,11 +28,11 @@
     UICollectionView *_menuBarCollectionView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool initialScrollWasPerformed; // @synthesize initialScrollWasPerformed=_initialScrollWasPerformed;
 @property(retain, nonatomic) UICollectionView *menuBarCollectionView; // @synthesize menuBarCollectionView=_menuBarCollectionView;
 @property(nonatomic) __weak id <SKUIHorizontalScrollingContainerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (void)_updateScrollViewContentOffsetsToTargetContentOffsets;
 - (void)_synchronizeMenuBarCollectionViewWithContentCollectionView;
 - (void)_synchronizeContentCollectionViewWithMenuBarCollectionView;

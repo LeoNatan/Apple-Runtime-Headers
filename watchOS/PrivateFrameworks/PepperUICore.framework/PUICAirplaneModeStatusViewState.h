@@ -17,8 +17,8 @@
     _Bool _statusViewStateActive;
 }
 
-@property(nonatomic, getter=statusViewIsStateActive) _Bool statusViewStateActive; // @synthesize statusViewStateActive=_statusViewStateActive;
 - (void).cxx_destruct;
+@property(nonatomic, getter=statusViewIsStateActive) _Bool statusViewStateActive; // @synthesize statusViewStateActive=_statusViewStateActive;
 - (_Bool)statusViewDoEntranceAnimation:(id)arg1 willGoToState:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)statusViewIndicatorView;
 - (id)statusViewStateName;

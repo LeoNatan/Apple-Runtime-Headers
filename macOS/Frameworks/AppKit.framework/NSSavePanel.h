@@ -16,6 +16,7 @@
     NSTextField *_nameField;
     NSButton *_newFolderButton;
     NSButton *_okButton;
+    NSButton *_cancelButton;
     unsigned int _spFlags;
     BOOL _iCloudOpenPanel;
     BOOL observingBridge;
@@ -59,6 +60,7 @@
 + (BOOL)_defaultSettingForUbiquitousBehaviors;
 + (void)_storeRootDirectoryURL:(id)arg1 forSaveMode:(BOOL)arg2;
 + (id)_lastSavedRootDirectoryForSaveMode:(BOOL)arg1;
+- (void).cxx_destruct;
 @property BOOL runningAppModalExplicitly; // @synthesize runningAppModalExplicitly;
 @property BOOL becameAppModalWindow; // @synthesize becameAppModalWindow;
 @property BOOL didPrepareToRun; // @synthesize didPrepareToRun;
@@ -80,7 +82,6 @@
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler;
 @property struct CGSize lastReportedAccessorySize; // @synthesize lastReportedAccessorySize;
 @property(retain) NSCFRunLoopSemaphore *advanceToRunPhaseIfNeededSemaphore; // @synthesize advanceToRunPhaseIfNeededSemaphore;
-- (void).cxx_destruct;
 - (void)_reallyDoOrderWindow:(long long)arg1 relativeTo:(long long)arg2 findKey:(BOOL)arg3 forCounter:(BOOL)arg4 force:(BOOL)arg5 isModal:(BOOL)arg6;
 - (BOOL)_startServiceFailedAlert;
 - (void)setCanDownloadUbiquitousContents:(BOOL)arg1;

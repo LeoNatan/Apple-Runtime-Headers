@@ -8,20 +8,22 @@
 
 #import <ReminderKit/NSSecureCoding-Protocol.h>
 
+@class NSURL;
+
 @interface REMDistributedEvaluationCollectionOptions : NSObject <NSSecureCoding>
 {
     BOOL _includeListNames;
     BOOL _includeReminderTitles;
+    BOOL _includeListNameFuzzedEmbeddings;
+    BOOL _includeReminderTitleFuzzedEmbeddings;
     BOOL _includeSystemLanguage;
     BOOL _includeSystemTimezone;
     BOOL _includeAccountType;
     BOOL _includeListGroupInfo;
-    BOOL _includeListNameFuzzedEmbeddings;
-    BOOL _includeReminderTitleFuzzedEmbeddings;
     BOOL _includeReminderTitleSaltedHash;
     BOOL _includeDates;
+    BOOL _includeDayOfWeek;
     BOOL _includeRecurrenceInfo;
-    BOOL _shouldFuzzDates;
     BOOL _includeLocationInfo;
     BOOL _includeAttachmentUTIs;
     BOOL _includeRemindMeWhenMessagingInfo;
@@ -31,12 +33,28 @@
     BOOL _includeIsFlagged;
     BOOL _includePriority;
     BOOL _relevantWordTagsIncludeOtherWord;
+    BOOL _includeReminderTitleCategoryClosestWord;
+    BOOL _includeReminderTitleCategoryIntentionalWord;
+    BOOL _includeReminderTitleCategorySentenceAverage;
+    double _reminderTitleCategoryDistanceTolerance;
+    NSURL *_reminderTitleCategoryEmbeddingURL;
+    unsigned long long _dateResolutionInSeconds;
+    unsigned long long _creationDateWithinDays;
 }
 
++ (id)_attachmentURLFromFilenameWithKey:(id)arg1 inJSONRepresentation:(id)arg2 attachmentURLs:(id)arg3 error:(id *)arg4;
 + (BOOL)supportsSecureCoding;
-+ (id)optionsFromJSONRepresentation:(id)arg1;
++ (id)optionsFromJSONRepresentation:(id)arg1 attachmentURLs:(id)arg2 error:(id *)arg3;
 + (id)optionsWithEverythingOff;
 + (id)optionsWithDefaultValues;
+- (void).cxx_destruct;
+@property(nonatomic) unsigned long long creationDateWithinDays; // @synthesize creationDateWithinDays=_creationDateWithinDays;
+@property(nonatomic) unsigned long long dateResolutionInSeconds; // @synthesize dateResolutionInSeconds=_dateResolutionInSeconds;
+@property(retain, nonatomic) NSURL *reminderTitleCategoryEmbeddingURL; // @synthesize reminderTitleCategoryEmbeddingURL=_reminderTitleCategoryEmbeddingURL;
+@property(nonatomic) double reminderTitleCategoryDistanceTolerance; // @synthesize reminderTitleCategoryDistanceTolerance=_reminderTitleCategoryDistanceTolerance;
+@property(nonatomic) BOOL includeReminderTitleCategorySentenceAverage; // @synthesize includeReminderTitleCategorySentenceAverage=_includeReminderTitleCategorySentenceAverage;
+@property(nonatomic) BOOL includeReminderTitleCategoryIntentionalWord; // @synthesize includeReminderTitleCategoryIntentionalWord=_includeReminderTitleCategoryIntentionalWord;
+@property(nonatomic) BOOL includeReminderTitleCategoryClosestWord; // @synthesize includeReminderTitleCategoryClosestWord=_includeReminderTitleCategoryClosestWord;
 @property(nonatomic) BOOL relevantWordTagsIncludeOtherWord; // @synthesize relevantWordTagsIncludeOtherWord=_relevantWordTagsIncludeOtherWord;
 @property(nonatomic) BOOL includePriority; // @synthesize includePriority=_includePriority;
 @property(nonatomic) BOOL includeIsFlagged; // @synthesize includeIsFlagged=_includeIsFlagged;
@@ -46,16 +64,16 @@
 @property(nonatomic) BOOL includeRemindMeWhenMessagingInfo; // @synthesize includeRemindMeWhenMessagingInfo=_includeRemindMeWhenMessagingInfo;
 @property(nonatomic) BOOL includeAttachmentUTIs; // @synthesize includeAttachmentUTIs=_includeAttachmentUTIs;
 @property(nonatomic) BOOL includeLocationInfo; // @synthesize includeLocationInfo=_includeLocationInfo;
-@property(nonatomic) BOOL shouldFuzzDates; // @synthesize shouldFuzzDates=_shouldFuzzDates;
 @property(nonatomic) BOOL includeRecurrenceInfo; // @synthesize includeRecurrenceInfo=_includeRecurrenceInfo;
+@property(nonatomic) BOOL includeDayOfWeek; // @synthesize includeDayOfWeek=_includeDayOfWeek;
 @property(nonatomic) BOOL includeDates; // @synthesize includeDates=_includeDates;
 @property(nonatomic) BOOL includeReminderTitleSaltedHash; // @synthesize includeReminderTitleSaltedHash=_includeReminderTitleSaltedHash;
-@property(nonatomic) BOOL includeReminderTitleFuzzedEmbeddings; // @synthesize includeReminderTitleFuzzedEmbeddings=_includeReminderTitleFuzzedEmbeddings;
-@property(nonatomic) BOOL includeListNameFuzzedEmbeddings; // @synthesize includeListNameFuzzedEmbeddings=_includeListNameFuzzedEmbeddings;
 @property(nonatomic) BOOL includeListGroupInfo; // @synthesize includeListGroupInfo=_includeListGroupInfo;
 @property(nonatomic) BOOL includeAccountType; // @synthesize includeAccountType=_includeAccountType;
 @property(nonatomic) BOOL includeSystemTimezone; // @synthesize includeSystemTimezone=_includeSystemTimezone;
 @property(nonatomic) BOOL includeSystemLanguage; // @synthesize includeSystemLanguage=_includeSystemLanguage;
+@property(nonatomic) BOOL includeReminderTitleFuzzedEmbeddings; // @synthesize includeReminderTitleFuzzedEmbeddings=_includeReminderTitleFuzzedEmbeddings;
+@property(nonatomic) BOOL includeListNameFuzzedEmbeddings; // @synthesize includeListNameFuzzedEmbeddings=_includeListNameFuzzedEmbeddings;
 @property(nonatomic) BOOL includeReminderTitles; // @synthesize includeReminderTitles=_includeReminderTitles;
 @property(nonatomic) BOOL includeListNames; // @synthesize includeListNames=_includeListNames;
 - (id)description;

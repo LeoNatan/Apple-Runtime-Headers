@@ -19,15 +19,18 @@
     NSDecimalNumber *_balance;
     NSNumber *_loyaltyBalance;
     NSDate *_expirationDate;
+    NSArray *_balances;
     NSArray *_historyRecords;
     NSArray *_inStationDetails;
     NSSet *_enrouteTransitTypes;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *enrouteTransitTypes; // @synthesize enrouteTransitTypes=_enrouteTransitTypes;
 @property(copy, nonatomic) NSArray *inStationDetails; // @synthesize inStationDetails=_inStationDetails;
 @property(copy, nonatomic) NSArray *historyRecords; // @synthesize historyRecords=_historyRecords;
+@property(copy, nonatomic) NSArray *balances; // @synthesize balances=_balances;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSNumber *loyaltyBalance; // @synthesize loyaltyBalance=_loyaltyBalance;
 @property(copy, nonatomic) NSDecimalNumber *balance; // @synthesize balance=_balance;
@@ -35,7 +38,6 @@
 @property(nonatomic, getter=isBlacklisted) _Bool blacklisted; // @synthesize blacklisted=_blacklisted;
 @property(copy, nonatomic) NSString *serviceProvider; // @synthesize serviceProvider=_serviceProvider;
 @property(nonatomic) int source; // @synthesize source=_source;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInStation) _Bool inStation; // @dynamic inStation;
 - (void)sanitizeValuesWithState:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

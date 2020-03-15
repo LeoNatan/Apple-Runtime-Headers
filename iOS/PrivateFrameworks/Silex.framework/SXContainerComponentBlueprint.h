@@ -14,9 +14,9 @@
     SXLayoutBlueprint *_layoutBlueprint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXLayoutBlueprint *layoutBlueprint; // @synthesize layoutBlueprint=_layoutBlueprint;
 - (id)parentLayoutBlueprint;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setParentLayoutBlueprint:(id)arg1;
 

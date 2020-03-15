@@ -28,11 +28,11 @@
     NSByteCountFormatter *_byteCountFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSByteCountFormatter *byteCountFormatter; // @synthesize byteCountFormatter=_byteCountFormatter;
 @property(retain) NSMutableArray *aeArray; // @synthesize aeArray=_aeArray;
 @property(readonly) NSString *accountClass; // @synthesize accountClass=_accountClass;
 @property(readonly) BOOL isPrimary; // @synthesize isPrimary=_isPrimary;
-- (void).cxx_destruct;
 - (id)mmAccount;
 - (id)appleAccount;
 - (void)mtLogFeature:(id)arg1 toggledOn:(BOOL)arg2;

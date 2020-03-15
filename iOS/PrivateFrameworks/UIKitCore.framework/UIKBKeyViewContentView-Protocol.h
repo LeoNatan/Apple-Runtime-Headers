@@ -11,6 +11,7 @@
 @protocol UIKBKeyViewContentView <NSObject>
 + (struct CGSize)preferredContentViewSizeForKey:(UIKBTree *)arg1 withTraits:(UIKBRenderTraits *)arg2;
 - (void)updateRenderConfig:(UIKBRenderConfig *)arg1;
+- (void)retestForTouchUpSelectedVariantIndexForKey:(UIKBTree *)arg1 atPoint:(struct CGPoint)arg2;
 - (void)retestSelectedVariantIndexForKey:(UIKBTree *)arg1 atPoint:(struct CGPoint)arg2;
 - (void)updateForKeyplane:(UIKBTree *)arg1 key:(UIKBTree *)arg2;
 @end

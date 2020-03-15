@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <HealthRecordsUI/HKGraphSeriesBlockCoordinate-Protocol.h>
-
 @protocol HKGraphSeriesBlockCoordinateInfo;
 
-@interface _TtC15HealthRecordsUI28MedicalRecordChartCoordinate : NSObject <HKGraphSeriesBlockCoordinate>
+@interface _TtC15HealthRecordsUI28MedicalRecordChartCoordinate : NSObject
 {
     // Error parsing type: , name: pointValuesAscending
     // Error parsing type: , name: blockCoordinateInfo

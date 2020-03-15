@@ -21,9 +21,9 @@
     _Bool _isProjecting;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isProjecting; // @synthesize isProjecting=_isProjecting;
 @property(nonatomic) __weak id <MNTunnelLocationProjectorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_approximateMaxSpeedForRoad:(CDStruct_123780e2 *)arg1;
 - (id)_projectFromLocation:(id)arg1 timeInterval:(double)arg2;
 - (double)_locationOverdueTimeoutForLocation:(id)arg1;

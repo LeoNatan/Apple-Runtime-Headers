@@ -38,6 +38,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isForStartingDownload; // @synthesize isForStartingDownload=_isForStartingDownload;
 @property(retain, nonatomic) VUIVideoManagedObject *videoManagedObject; // @synthesize videoManagedObject=_videoManagedObject;
 @property(nonatomic) _Bool isHLS; // @synthesize isHLS=_isHLS;
@@ -58,8 +59,6 @@
 @property(copy, nonatomic) NSDictionary *fpsAdditionalServerParams; // @synthesize fpsAdditionalServerParams=_fpsAdditionalServerParams;
 @property(copy, nonatomic) NSURL *fpsKeyServerURL; // @synthesize fpsKeyServerURL=_fpsKeyServerURL;
 @property(copy, nonatomic) NSURL *fpsCertificateURL; // @synthesize fpsCertificateURL=_fpsCertificateURL;
-- (void).cxx_destruct;
-- (void)_userPlaybackSettingsDidChange:(id)arg1;
 - (id)_offlineKeyDataForKeyRequest:(id)arg1;
 - (void)_scrubPlayerItemDidLoad:(id)arg1;
 - (void)_keepKeyLoaderAlive:(id)arg1;
@@ -68,6 +67,7 @@
 - (void)updateOfflineKeyWithIdentifier:(id)arg1 updatedOfflineKeyData:(id)arg2;
 - (void)loadFairPlayStreamingKeyRequests:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadFairPlayStreamingKeyRequests:(id)arg1;
+- (void)mediaItem:(id)arg1 didChangeFromPlaybackState:(id)arg2 toPlaybackState:(id)arg3 updatedRate:(double)arg4 player:(id)arg5;
 - (void)mediaItem:(id)arg1 errorDidOccur:(id)arg2 player:(id)arg3;
 - (id)reportingDelegate;
 - (void)cleanUpMediaItem;

@@ -20,11 +20,11 @@
 }
 
 + (id)clientInterface;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool syncDidComplete; // @synthesize syncDidComplete=_syncDidComplete;
 @property(nonatomic) _Bool syncDidStart; // @synthesize syncDidStart=_syncDidStart;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak id <BYClientDaemonCloudSyncProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)syncCompletedWithErrors:(id)arg1;
 - (void)syncProgress:(double)arg1;
 - (void)connectToDaemon;

@@ -21,9 +21,9 @@
 + (id)identityForIdentifier:(id)arg1 workspaceIdentifier:(id)arg2;
 + (id)identityForIdentifier:(id)arg1;
 + (id)identity;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *workspaceIdentifier; // @synthesize workspaceIdentifier=_workspaceIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

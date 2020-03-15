@@ -17,11 +17,11 @@
 }
 
 + (id)deserializeFromDictionary:(id)arg1 error:(out id *)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSNumber *ui_maximumValue; // @synthesize ui_maximumValue=_ui_maximumValue;
 @property(readonly) NSNumber *ui_minimumValue; // @synthesize ui_minimumValue=_ui_minimumValue;
 @property(readonly) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(readonly) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
-- (void).cxx_destruct;
 - (BOOL)serializeIntoDictionary:(id)arg1 error:(out id *)arg2;
 - (BOOL)isValid:(out id *)arg1;
 - (BOOL)validateNumber:(id)arg1 error:(out id *)arg2;

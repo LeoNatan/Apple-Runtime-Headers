@@ -33,6 +33,7 @@
 
 + (id)keyPathsForValuesAffectingAllSystems;
 + (id)sharedScanner;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *observedSystems; // @synthesize observedSystems=_observedSystems;
 @property(retain) NSMutableDictionary *availabilityNotifications; // @synthesize availabilityNotifications=_availabilityNotifications;
 @property(retain) NSObject<OS_dispatch_queue> *timeCapsuleBrowserQueue; // @synthesize timeCapsuleBrowserQueue=_timeCapsuleBrowserQueue;
@@ -49,7 +50,6 @@
 @property BOOL switchingWirelessNetworks; // @synthesize switchingWirelessNetworks=_switchingWirelessNetworks;
 @property(retain) SMSystem_Daemon *currentSystem; // @synthesize currentSystem=_currentSystem;
 @property unsigned long long scannerState; // @synthesize scannerState=_scannerState;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)notifyWhenSystemIsAvailable:(id)arg1 callbackBlock:(CDUnknownBlockType)arg2;
 - (void)stopObservingSystem:(id)arg1;

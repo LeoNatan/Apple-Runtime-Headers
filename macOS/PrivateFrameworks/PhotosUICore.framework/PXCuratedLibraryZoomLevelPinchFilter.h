@@ -17,8 +17,8 @@
     BOOL _isTrackingPinch;
 }
 
-@property(readonly, nonatomic) BOOL isTrackingPinch; // @synthesize isTrackingPinch=_isTrackingPinch;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL isTrackingPinch; // @synthesize isTrackingPinch=_isTrackingPinch;
 - (void)reset;
 - (void)filterPinchGestureWithScale:(double)arg1 initialPinchHandler:(CDUnknownBlockType)arg2 subsequentDirectionChangeHandler:(CDUnknownBlockType)arg3;
 - (id)init;

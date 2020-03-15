@@ -16,9 +16,9 @@
 }
 
 + (id)clientMessengerWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)sendSynchronousMessage:(id)arg1 withIdentifier:(unsigned long long)arg2 error:(id *)arg3;
 - (void)sendAsynchronousMessage:(id)arg1 withIdentifier:(unsigned long long)arg2 targetAccessQueue:(id)arg3 completionRequiresWritingBlock:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;

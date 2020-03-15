@@ -18,12 +18,12 @@
     id <ABActionManagerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <ABActionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id transitionProvider; // @synthesize transitionProvider=_transitionProvider;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSString *personUniqueId; // @synthesize personUniqueId=_personUniqueId;
 @property(retain) id <ABCardCollectionViewDelegate> cardCollectionViewDelegate; // @synthesize cardCollectionViewDelegate=_cardCollectionViewDelegate;
-- (void).cxx_destruct;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)hasActionsForProperty:(id)arg1;
 - (void)performActionForMenuItem:(id)arg1;

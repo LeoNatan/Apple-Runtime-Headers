@@ -18,10 +18,10 @@
     id <HKDataMetadataViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HKDataMetadataViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) HKSample *sample; // @synthesize sample=_sample;
 @property(copy) CDUnknownBlockType reloadMetaDataVC; // @synthesize reloadMetaDataVC=_reloadMetaDataVC;
-- (void).cxx_destruct;
 - (void)reloadSampleData;
 - (void)sampleDidChange:(id)arg1;
 - (void)selectCellForIndex:(unsigned long long)arg1 navigationController:(id)arg2 animated:(_Bool)arg3;

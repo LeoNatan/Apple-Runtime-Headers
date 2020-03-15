@@ -28,6 +28,7 @@
     NSString *_fallbackButtonTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fallbackButtonTitle; // @synthesize fallbackButtonTitle=_fallbackButtonTitle;
 @property(retain, nonatomic) UIImage *payButtonImage; // @synthesize payButtonImage=_payButtonImage;
 @property(nonatomic) _Bool useAccssibilityLayout; // @synthesize useAccssibilityLayout=_useAccssibilityLayout;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) UILabel *labelPaymentDue; // @synthesize labelPaymentDue=_labelPaymentDue;
 @property(retain, nonatomic) PKDashboardCreditAccountItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak id <PKCreditPaymentDueCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_buttonTapped:(id)arg1;
 - (id)_payButtonWithCircleLayout:(_Bool)arg1;
 - (void)_updateButtonImage:(id)arg1;

@@ -19,11 +19,11 @@
 
 + (id)messageWithPayload:(id)arg1;
 + (id)messageWithPayload:(id)arg1 xpcMessage:(id)arg2 andClient:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcMessage; // @synthesize xpcMessage=_xpcMessage;
 @property(nonatomic) __weak HCXPCClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)hasEntitlement:(id)arg1;
 - (void)dealloc;

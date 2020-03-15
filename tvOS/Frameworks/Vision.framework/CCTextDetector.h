@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     NSString *_debugFilename;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *debugFilename; // @synthesize debugFilename=_debugFilename;
 @property _Bool debugOut; // @synthesize debugOut=_debugOut;
 @property _Bool debugMatlab; // @synthesize debugMatlab=_debugMatlab;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property int midRow; // @synthesize midRow=_midRow;
 @property _Bool computeZCVectorHighProbability; // @synthesize computeZCVectorHighProbability=_computeZCVectorHighProbability;
 @property(retain) CCCharBoxContext *charBoxContext; // @synthesize charBoxContext=_charBoxContext;
-- (void).cxx_destruct;
 - (id)textBoxesForImage:(id)arg1 error:(id *)arg2;
 - (id)textBoxesForBuffer:(struct vImage_Buffer)arg1 error:(id *)arg2;
 - (int)_generatePulseVectorOutputs:(struct vImage_Buffer)arg1 votingImage:(struct vImage_Buffer)arg2 rowLocationsRef:(unsigned short *)arg3;

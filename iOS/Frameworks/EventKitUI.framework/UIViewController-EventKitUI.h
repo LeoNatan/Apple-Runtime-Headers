@@ -9,8 +9,8 @@
 @class UIWindow;
 
 @interface UIViewController (EventKitUI)
-+ (id)eventDetailViewControllerWithEvent:(id)arg1 delegate:(id)arg2 context:(struct NSDictionary *)arg3 allowInlinePreview:(_Bool)arg4 previewInline:(_Bool)arg5 minimalMode:(_Bool)arg6;
-+ (id)eventDetailViewControllerWithEvent:(id)arg1 delegate:(id)arg2 context:(struct NSDictionary *)arg3;
++ (id)eventDetailViewControllerWithEvent:(id)arg1 delegate:(id)arg2 context:(id)arg3 allowInlinePreview:(_Bool)arg4 previewInline:(_Bool)arg5 minimalMode:(_Bool)arg6;
++ (id)eventDetailViewControllerWithEvent:(id)arg1 delegate:(id)arg2 context:(id)arg3;
 @property(readonly, nonatomic) UIWindow *EKUI_window;
 @property(readonly, nonatomic) _Bool isPresentedInsidePopover;
 @end

@@ -16,9 +16,9 @@
     CDUnknownBlockType _notDrivingActionHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showSiriHeaderViewController; // @synthesize showSiriHeaderViewController=_showSiriHeaderViewController;
 @property(copy, nonatomic) CDUnknownBlockType notDrivingActionHandler; // @synthesize notDrivingActionHandler=_notDrivingActionHandler;
-- (void).cxx_destruct;
 - (void)controllerDidProvideContext:(id)arg1;
 - (_Bool)reappearsAfterUnlock;
 - (_Bool)forcesModalAlertAppearance;

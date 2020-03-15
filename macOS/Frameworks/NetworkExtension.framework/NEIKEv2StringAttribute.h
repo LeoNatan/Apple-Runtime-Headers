@@ -17,9 +17,9 @@
 }
 
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long customType; // @synthesize customType=_customType;
 @property(retain) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;

@@ -17,8 +17,8 @@
     TILanguageModelOfflineLearningTask *_learningTask;
 }
 
-@property(readonly) TILanguageModelOfflineLearningTask *learningTask; // @synthesize learningTask=_learningTask;
 - (void).cxx_destruct;
+@property(readonly) TILanguageModelOfflineLearningTask *learningTask; // @synthesize learningTask=_learningTask;
 - (void)didFinishLearning;
 - (id)filterMessages:(id)arg1;
 - (BOOL)learnMessages:(id)arg1 withRecipientRecords:(id)arg2;

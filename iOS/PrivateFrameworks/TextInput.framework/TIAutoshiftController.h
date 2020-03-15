@@ -14,9 +14,9 @@
     TITextInputTraits *_textInputTraits;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) TITextInputTraits *textInputTraits; // @synthesize textInputTraits=_textInputTraits;
-- (void).cxx_destruct;
 - (_Bool)isSelectionAtSentenceAutoshiftBoundaryWithDocumentState:(id)arg1 inputManagerState:(id)arg2;
 - (unsigned long long)actionForDocumentState:(id)arg1 inputMangerState:(id)arg2;
 - (id)initWithTextInputTraits:(id)arg1;

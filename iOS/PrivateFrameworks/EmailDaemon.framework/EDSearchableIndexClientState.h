@@ -19,10 +19,10 @@
 + (id)clientStateFromData:(id)arg1;
 + (id)clientState;
 + (id)transactionAttributeKey;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *systemBuildVersion; // @synthesize systemBuildVersion=_systemBuildVersion;
 @property(retain, nonatomic) NSDate *transactionDate; // @synthesize transactionDate=_transactionDate;
 @property(nonatomic) long long transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (void)addTransactionValueToAttributeSet:(id)arg1;
 @property(readonly, nonatomic) NSNumber *transactionValue;
 - (id)archiveRepresentation;

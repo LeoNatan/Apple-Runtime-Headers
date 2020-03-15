@@ -14,9 +14,9 @@
     NGMPublicDeviceIdentity *_registrationInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NGMPublicDeviceIdentity *registrationInfo; // @synthesize registrationInfo=_registrationInfo;
 @property(readonly, nonatomic) NGMFullPrekey *prekey; // @synthesize prekey=_prekey;
-- (void).cxx_destruct;
 - (id)publicDeviceIdentity;
 - (id)prekeyData;
 - (id)identityData;

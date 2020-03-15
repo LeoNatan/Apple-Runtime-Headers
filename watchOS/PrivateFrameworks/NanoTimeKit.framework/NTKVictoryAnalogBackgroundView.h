@@ -43,11 +43,11 @@
 }
 
 + (id)_disabledLayerActions;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NTKVictoryAnalogBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int dialShape; // @synthesize dialShape=_dialShape;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(retain, nonatomic) id <NTKVictoryAnalogBackgroundColorPalette> palette; // @synthesize palette=_palette;
-- (void).cxx_destruct;
 - (id)_dotImage;
 - (id)_circularDialLogoImage;
 - (id)_logoImage;
@@ -65,6 +65,8 @@
 - (float)_elementScaleForTransitionProgress:(float)arg1 initialScale:(float)arg2 middleScale:(float)arg3 finalScale:(float)arg4;
 - (float)_transitionProgressForDigitAtIndex:(unsigned int)arg1 overallProgress:(float)arg2 delayPerDigit:(float)arg3 digitTransitionLength:(float)arg4;
 - (struct CGColor *)_layerTransitionColorFromColor:(id)arg1 toColor:(id)arg2 amount:(float)arg3;
+- (id)tritium_outlineColorForNumberVictoryAnalogTimeElement:(unsigned int)arg1 withTritiumOnProgress:(float)arg2;
+- (id)tritium_textColorForNumberVictoryAnalogTimeElement:(unsigned int)arg1 withTritiumOnProgress:(float)arg2;
 - (void)applyTransitionTritiumOnWithFraction:(float)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3 style:(unsigned int)arg4 animateElements:(_Bool)arg5;
 - (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3 style:(unsigned int)arg4;

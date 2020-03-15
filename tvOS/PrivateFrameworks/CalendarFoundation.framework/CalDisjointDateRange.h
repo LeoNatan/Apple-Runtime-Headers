@@ -19,8 +19,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)disjointRangeWithSingleRange:(id)arg1;
 + (id)disjointRangeWithDistinctRanges:(id)arg1;
-@property(copy, nonatomic) NSMutableSet *distinctRanges; // @synthesize distinctRanges=_distinctRanges;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSMutableSet *distinctRanges; // @synthesize distinctRanges=_distinctRanges;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

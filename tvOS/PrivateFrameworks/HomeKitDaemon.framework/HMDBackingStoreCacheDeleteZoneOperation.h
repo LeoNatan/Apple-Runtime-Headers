@@ -14,9 +14,9 @@
     HMDBackingStoreCacheZone *_zone;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDBackingStoreCacheZone *zone; // @synthesize zone=_zone;
 @property(copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithZone:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
 

@@ -17,10 +17,10 @@
 }
 
 + (id)sharedLoader;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *replyFrames; // @synthesize replyFrames=_replyFrames;
 @property(copy, nonatomic) NSArray *additionalReplies; // @synthesize additionalReplies=_additionalReplies;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_updateState:(unsigned int)arg1;
 @property(readonly, copy, nonatomic) NSArray *replies; // @synthesize replies=_replies;
 - (void)repliesForMessage:(id)arg1 recipients:(id)arg2 time:(id)arg3 languageCode:(id)arg4 completion:(CDUnknownBlockType)arg5;

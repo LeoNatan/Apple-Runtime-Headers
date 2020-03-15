@@ -15,10 +15,10 @@
     FCFeedGroup *_group;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCFeedGroup *group; // @synthesize group=_group;
 @property(readonly, nonatomic) NSString *articleList; // @synthesize articleList=_articleList;
 @property(copy, nonatomic) CDUnknownBlockType headlineFilter; // @synthesize headlineFilter=_headlineFilter;
-- (void).cxx_destruct;
 - (void)performOperation;
 - (id)initWithContext:(id)arg1 articleList:(id)arg2 group:(id)arg3;
 

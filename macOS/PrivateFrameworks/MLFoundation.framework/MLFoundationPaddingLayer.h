@@ -18,8 +18,8 @@
 
 + (id)layerWithPaddingDescriptor:(id)arg1;
 + (id)new;
-@property(readonly, nonatomic) MLFoundationPaddingDescriptor *paddingDescriptor; // @synthesize paddingDescriptor=_paddingDescriptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MLFoundationPaddingDescriptor *paddingDescriptor; // @synthesize paddingDescriptor=_paddingDescriptor;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;

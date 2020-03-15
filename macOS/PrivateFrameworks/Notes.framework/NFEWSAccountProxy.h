@@ -19,9 +19,9 @@
 
 + (id)_newExtendedFieldTypeForPropertyId:(long long)arg1;
 + (id)_extendedFieldsForEWSNoteType;
+- (void).cxx_destruct;
 @property(readonly) EWSExchangeServiceBinding *exchangeServiceBinding; // @synthesize exchangeServiceBinding=_exchangeServiceBinding;
 @property(nonatomic) BOOL useExternalURL; // @synthesize useExternalURL=_useExternalURL;
-- (void).cxx_destruct;
 - (BOOL)responseCodeIsFatal:(long long)arg1;
 - (id)_sendMessage:(id)arg1;
 - (BOOL)_processMoveItemResponse:(id)arg1 forNote:(id)arg2 responseCode:(long long *)arg3;

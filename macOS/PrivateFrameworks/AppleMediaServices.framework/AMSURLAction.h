@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <AppleMediaServices/NSSecureCoding-Protocol.h>
+
 @class AMSAuthenticateResult, AMSDialogResult, NSDictionary, NSError, NSString, NSURL;
 
-@interface AMSURLAction : NSObject
+@interface AMSURLAction : NSObject <NSSecureCoding>
 {
     long long _actionType;
     NSError *_error;
@@ -19,10 +21,12 @@
     NSDictionary *_updatedHeaders;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)redirectActionWithURL:(id)arg1;
 + (id)retryAction;
 + (id)proceedAction;
 + (id)actionWithError:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *updatedHeaders; // @synthesize updatedHeaders=_updatedHeaders;
 @property(retain) AMSDialogResult *dialogResult; // @synthesize dialogResult=_dialogResult;
 @property(retain) AMSAuthenticateResult *authenticateResult; // @synthesize authenticateResult=_authenticateResult;
@@ -30,8 +34,10 @@
 @property(retain) NSString *reason; // @synthesize reason=_reason;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) long long actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)description;
+- (id)initWithType:(long long)arg1 error:(id)arg2 reason:(id)arg3 redirectURL:(id)arg4;
 - (id)initWithType:(long long)arg1;
 
 @end

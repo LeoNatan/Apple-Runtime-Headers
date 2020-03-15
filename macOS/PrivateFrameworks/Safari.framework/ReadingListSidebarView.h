@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <ReadingListSidebarViewDragAndDropDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ReadingListSidebarViewDragAndDropDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ReadingListSidebarViewDragAndDropDelegate> delegate; // @synthesize delegate=_delegate;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

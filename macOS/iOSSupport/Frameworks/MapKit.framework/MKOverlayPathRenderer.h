@@ -27,9 +27,9 @@
 
 + (BOOL)_externalSubclassOverridesDrawingMethods;
 + (Class)_mapkitLeafClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldRasterize; // @synthesize shouldRasterize=_shouldRasterize;
 @property(readonly, nonatomic, getter=_externalSubclassOverridesDrawingMethods) BOOL externalSubclassOverridesDrawingMethods; // @synthesize externalSubclassOverridesDrawingMethods=_externalSubclassOverridesDrawingMethods;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)canDrawMapRect:(CDStruct_02837cd9)arg1 zoomScale:(double)arg2;
 - (void)drawMapRect:(CDStruct_02837cd9)arg1 zoomScale:(double)arg2 inContext:(struct CGContext *)arg3;

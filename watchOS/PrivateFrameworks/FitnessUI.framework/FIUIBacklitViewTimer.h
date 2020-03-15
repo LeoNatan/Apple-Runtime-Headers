@@ -18,10 +18,10 @@
     unsigned long long _screenOnTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *dismissDate; // @synthesize dismissDate=_dismissDate;
 @property(readonly, nonatomic) NSDate *visibleDate; // @synthesize visibleDate=_visibleDate;
 @property(readonly, nonatomic) NSDate *presentationDate; // @synthesize presentationDate=_presentationDate;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)viewDidDeactivate;
 - (void)viewDidActivate;

@@ -16,10 +16,10 @@
     UIView *_searchResultsView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *searchResultsView; // @synthesize searchResultsView=_searchResultsView;
 @property(readonly, nonatomic) PXRecipientSearchDataSourceManager *searchDataSourceManager; // @synthesize searchDataSourceManager=_searchDataSourceManager;
 @property(nonatomic) __weak id <PXSearchRecipientControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 
 @end
 

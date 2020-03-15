@@ -19,10 +19,10 @@
     id <ECMessage> _destinationMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ECMessage> destinationMessage; // @synthesize destinationMessage=_destinationMessage;
 @property(retain, nonatomic) id <ECMessage> sourceMessage; // @synthesize sourceMessage=_sourceMessage;
 @property(copy, nonatomic) NSString *sourceRemoteID; // @synthesize sourceRemoteID=_sourceRemoteID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 - (id)initWithBuilder:(CDUnknownBlockType)arg1;

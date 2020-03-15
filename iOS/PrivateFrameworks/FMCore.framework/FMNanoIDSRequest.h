@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     FMDispatchTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FMDispatchTimer *timer; // @synthesize timer=_timer;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain, nonatomic) NSString *idsMessageID; // @synthesize idsMessageID=_idsMessageID;
-- (void).cxx_destruct;
 
 @end
 

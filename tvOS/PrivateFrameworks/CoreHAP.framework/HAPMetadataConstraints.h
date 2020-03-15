@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *validValues; // @synthesize validValues=_validValues;
 @property(retain, nonatomic) NSNumber *maxLength; // @synthesize maxLength=_maxLength;
 @property(retain, nonatomic) NSNumber *minLength; // @synthesize minLength=_minLength;
 @property(retain, nonatomic) NSNumber *stepValue; // @synthesize stepValue=_stepValue;
 @property(retain, nonatomic) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(retain, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

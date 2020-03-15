@@ -19,9 +19,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)userRecordWithScreenName:(id)arg1;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *objectID; // @synthesize objectID=_objectID;
 @property(retain, nonatomic) NSString *id_str; // @synthesize id_str=_id_str;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

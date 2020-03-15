@@ -16,10 +16,10 @@
 }
 
 + (id)parseCalendarString:(id)arg1 type:(unsigned long long)arg2 typeListForCountry:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *resultDictionary; // @synthesize resultDictionary=_resultDictionary;
 @property(copy, nonatomic) NSDictionary *typeListForCountry; // @synthesize typeListForCountry=_typeListForCountry;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_addEventWithName:(id)arg1 key:(id)arg2;
 - (id)_parseCalendarString:(id)arg1;
 - (id)initWithType:(unsigned long long)arg1 typeListForCountry:(id)arg2;

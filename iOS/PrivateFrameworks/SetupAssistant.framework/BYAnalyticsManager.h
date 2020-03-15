@@ -15,9 +15,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *producers; // @synthesize producers=_producers;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
-- (void).cxx_destruct;
 - (void)commit;
 - (void)addEvent:(id)arg1 withPayloadBlock:(CDUnknownBlockType)arg2;
 - (void)addEvent:(id)arg1 withPayload:(id)arg2;

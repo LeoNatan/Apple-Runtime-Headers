@@ -20,10 +20,10 @@
 }
 
 + (id)actionForDictionary:(id)arg1 inBundle:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) BOOL isImmediate; // @synthesize isImmediate=_isImmediate;
 @property(readonly) BOOL alternate; // @synthesize alternate=_alternate;
 @property(readonly) NSString *actionUTI; // @synthesize actionUTI=_actionUTI;
-- (void).cxx_destruct;
 - (id)menuItemForResult:(struct __DDResult *)arg1 textCheckingResult:(id)arg2 URL:(id)arg3 uiReady:(BOOL)arg4 context:(id)arg5 actionTarget:(id)arg6;
 - (id)rawMenuItemForContext:(id)arg1;
 - (BOOL)runForURL:(id)arg1 context:(id)arg2;

@@ -39,6 +39,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKMapsBrand *mapsBrand; // @synthesize mapsBrand=_mapsBrand;
 @property(retain, nonatomic) PKMapsMerchant *mapsMerchant; // @synthesize mapsMerchant=_mapsMerchant;
 @property(copy, nonatomic) NSString *fallbackDetailedCategory; // @synthesize fallbackDetailedCategory=_fallbackDetailedCategory;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) NSString *webMerchantName; // @synthesize webMerchantName=_webMerchantName;
 @property(copy, nonatomic) NSString *webMerchantIdentifier; // @synthesize webMerchantIdentifier=_webMerchantIdentifier;
 @property(copy, nonatomic) NSURL *originURL; // @synthesize originURL=_originURL;
-- (void).cxx_destruct;
 - (id)uniqueIdentifier;
 - (void)_regenerateDisplayName;
 @property(readonly, nonatomic) NSString *detailedCategory;
@@ -82,7 +82,7 @@
 - (_Bool)hasCloudArchivableDeviceData;
 - (_Bool)isCloudArchivableDeviceDataEqual:(id)arg1;
 - (unsigned long long)itemType;
-- (id)recordTypesAndNames;
+- (id)recordTypesAndNamesIncludingServerData:(_Bool)arg1;
 - (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (id)initWithCloudStoreCoder:(id)arg1;

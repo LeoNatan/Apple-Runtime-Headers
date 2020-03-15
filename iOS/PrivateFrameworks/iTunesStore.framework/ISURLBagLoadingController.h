@@ -23,8 +23,8 @@
 }
 
 + (id)sharedBagLoadingController;
-@property(readonly, nonatomic, getter=isLoadingBag) _Bool loadingBag; // @synthesize loadingBag=_loadingBag;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isLoadingBag) _Bool loadingBag; // @synthesize loadingBag=_loadingBag;
 - (void)_updateBagWithDictionary:(id)arg1 error:(id)arg2;
 - (void)_reloadURLBagAllowingUpdateUsingExistingBagDictionary:(_Bool)arg1;
 - (void)_didCompleteLoadingBagDictionary:(id)arg1 withError:(id)arg2;

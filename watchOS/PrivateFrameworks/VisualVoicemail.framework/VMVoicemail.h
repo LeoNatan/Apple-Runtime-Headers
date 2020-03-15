@@ -32,6 +32,7 @@
 + (_Bool)supportsSecureCoding;
 + (unsigned int)flagsByApplyingMailboxType:(int)arg1 toFlags:(unsigned int)arg2;
 + (int)mailboxTypeForFlags:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSURL *transcriptionURL; // @synthesize transcriptionURL=_transcriptionURL;
 @property(copy, nonatomic) NSString *receiverISOCountryCode; // @synthesize receiverISOCountryCode=_receiverISOCountryCode;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned int remoteUID; // @synthesize remoteUID=_remoteUID;
-- (void).cxx_destruct;
 - (void)setFlag:(unsigned int)arg1 enabled:(_Bool)arg2;
 - (id)mailboxTypeDescription;
 - (id)flagDescription;

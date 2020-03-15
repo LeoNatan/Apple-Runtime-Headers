@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIImage *_maxTrack;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *maxTrack; // @synthesize maxTrack=_maxTrack;
 @property(retain, nonatomic) UIImage *minTrack; // @synthesize minTrack=_minTrack;
 @property(retain, nonatomic) UIImage *thumb; // @synthesize thumb=_thumb;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isEmpty;
 
 @end

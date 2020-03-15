@@ -14,9 +14,9 @@
     NSMutableSet *_mutableParserErrors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *mutableParserErrors; // @synthesize mutableParserErrors=_mutableParserErrors;
 @property(retain, nonatomic) NSMutableString *mutableErrorMessages; // @synthesize mutableErrorMessages=_mutableErrorMessages;
-- (void).cxx_destruct;
 - (void)clear;
 @property(readonly, nonatomic) NSArray *parserErrors;
 @property(readonly, nonatomic) NSString *errorMessage;

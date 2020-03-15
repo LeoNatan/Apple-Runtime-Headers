@@ -16,8 +16,8 @@
     HKDisplayType *_displayType;
 }
 
-@property(readonly, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 - (id)queriesForStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)statisticsIntervalForTimeScope:(int)arg1 displayType:(id)arg2;
 - (unsigned int)calendarUnitForTimeScope:(int)arg1 displayType:(id)arg2;

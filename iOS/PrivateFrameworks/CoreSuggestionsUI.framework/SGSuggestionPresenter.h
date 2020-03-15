@@ -24,9 +24,9 @@
 }
 
 + (id)formatList:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsToShowBanner; // @synthesize wantsToShowBanner=_wantsToShowBanner;
 @property(nonatomic) __weak id <SGSuggestionPresenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (_Bool)presentationControllerShouldDismiss:(id)arg1;
 - (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;

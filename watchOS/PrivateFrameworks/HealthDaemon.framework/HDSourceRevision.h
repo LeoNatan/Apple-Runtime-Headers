@@ -16,11 +16,11 @@
     CDStruct_4bb15e50 _operatingSystemVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_77932685 operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
 @property(readonly, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, nonatomic) HDSourceEntity *sourceEntity; // @synthesize sourceEntity=_sourceEntity;
-- (void).cxx_destruct;
 - (id)initWithSource:(id)arg1 version:(id)arg2 productType:(id)arg3 operatingSystemVersion:(CDStruct_77932685)arg4;
 
 @end

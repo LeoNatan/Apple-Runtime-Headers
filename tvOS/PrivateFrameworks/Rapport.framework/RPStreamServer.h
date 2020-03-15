@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
 @protocol OS_dispatch_queue, RPMessageable;
 
 @interface RPStreamServer : NSObject
@@ -14,7 +15,7 @@
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     id _selfRef;
-    struct NSMutableDictionary *_streamSessions;
+    NSMutableDictionary *_streamSessions;
     unsigned int _streamFlags;
     CDUnknownBlockType _invalidationHandler;
     id <RPMessageable> _messenger;
@@ -23,13 +24,13 @@
     CDUnknownBlockType _streamPrepareHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType streamPrepareHandler; // @synthesize streamPrepareHandler=_streamPrepareHandler;
 @property(copy, nonatomic) CDUnknownBlockType streamPrepareHandlerEx; // @synthesize streamPrepareHandlerEx=_streamPrepareHandlerEx;
 @property(nonatomic) unsigned int streamFlags; // @synthesize streamFlags=_streamFlags;
 @property(copy, nonatomic) CDUnknownBlockType streamAcceptHandler; // @synthesize streamAcceptHandler=_streamAcceptHandler;
 @property(retain, nonatomic) id <RPMessageable> messenger; // @synthesize messenger=_messenger;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
-- (void).cxx_destruct;
 - (void)_handleStopRequest:(id)arg1 options:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)_handleStartRequest:(id)arg1 options:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)_invalidated;

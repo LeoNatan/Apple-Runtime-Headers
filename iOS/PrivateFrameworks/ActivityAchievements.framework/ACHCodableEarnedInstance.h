@@ -25,13 +25,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *valueUnitString; // @synthesize valueUnitString=_valueUnitString;
 @property(nonatomic) double value; // @synthesize value=_value;
 @property(nonatomic) long long creatorDevice; // @synthesize creatorDevice=_creatorDevice;
 @property(nonatomic) double createdDate; // @synthesize createdDate=_createdDate;
 @property(retain, nonatomic) NSString *earnedDateComponents; // @synthesize earnedDateComponents=_earnedDateComponents;
 @property(retain, nonatomic) NSString *templateUniqueName; // @synthesize templateUniqueName=_templateUniqueName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

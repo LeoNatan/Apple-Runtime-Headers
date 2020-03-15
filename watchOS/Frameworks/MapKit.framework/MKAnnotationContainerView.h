@@ -42,9 +42,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_existingClusterAnnotationViews;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MKAnnotationView *draggingAnnotationView; // @synthesize draggingAnnotationView=_draggingAnnotationView;
 @property(nonatomic) _Bool suppressCallout; // @synthesize suppressCallout=_suppressCallout;
-- (void).cxx_destruct;
 - (void)_performStateUpdatesIfNeeded;
 - (_Bool)_updateAnnotationViewPositions;
 - (void)stopSuppressingUpdates;

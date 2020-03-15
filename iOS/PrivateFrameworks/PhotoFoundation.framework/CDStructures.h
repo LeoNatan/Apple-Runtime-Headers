@@ -10,10 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct PFAsyncDispatchMulticaster {
-    Class _field1;
-};
-
 struct PFChecksumBytes {
     unsigned char data[16];
 };

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool centerAligned; // @synthesize centerAligned=_centerAligned;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(retain, nonatomic) UIImageView *squishedView; // @synthesize squishedView=_squishedView;
 @property(retain, nonatomic) UIImageView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect frame;
 @property(readonly, nonatomic) UIView *viewForLayout;
 

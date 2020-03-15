@@ -20,10 +20,10 @@
 + (id)resultWithError:(id)arg1 warningMessages:(id)arg2;
 + (id)resultWithValue:(id)arg1 warningMessages:(id)arg2;
 + (id)resultWithValue:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSArray *warningMessages; // @synthesize warningMessages=_warningMessages;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

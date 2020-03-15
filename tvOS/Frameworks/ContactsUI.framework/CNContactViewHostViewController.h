@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 + (_Bool)getViewController:(CDUnknownBlockType)arg1;
 + (id)contextForIdentifier:(id)arg1;
 + (id)contactViewExtension;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(retain, nonatomic) id <NSCopying> currentRequestIdentifier; // @synthesize currentRequestIdentifier=_currentRequestIdentifier;
 @property __weak id <CNContactViewHostProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)isPresentingFullscreen:(_Bool)arg1;
 - (void)didDeleteContact:(id)arg1;
 - (void)didCompleteWithContact:(id)arg1;

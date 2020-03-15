@@ -36,6 +36,7 @@
 + (id)characterVoiceWithIdentifier:(id)arg1;
 + (void)initiateCharacterVoicesDownloadForLanguage:(id)arg1;
 + (id)availableCharacterVoices;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUnitTesting; // @synthesize isUnitTesting=_isUnitTesting;
 @property(retain, nonatomic) NSString *resourceDirectoryOverride; // @synthesize resourceDirectoryOverride=_resourceDirectoryOverride;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -47,7 +48,6 @@
 @property(nonatomic) _Bool syncComplete; // @synthesize syncComplete=_syncComplete;
 @property(nonatomic) __weak id <AXCharacterVoiceSpeechDelegate> speechDelegate; // @synthesize speechDelegate;
 @property(nonatomic) __weak id <AXCharacterVoiceMobileAssetDelegate> mobileAssetDelegate; // @synthesize mobileAssetDelegate;
-- (void).cxx_destruct;
 - (_Bool)isDoneSyncingForSyncClientState:(id)arg1;
 - (void)syncClientStateDidChange:(id)arg1;
 - (void)_deregisterForSyncStateNotifications;

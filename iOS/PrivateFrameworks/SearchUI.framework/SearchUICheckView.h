@@ -13,8 +13,8 @@
     CAShapeLayer *_checkLayer;
 }
 
-@property(retain, nonatomic) CAShapeLayer *checkLayer; // @synthesize checkLayer=_checkLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CAShapeLayer *checkLayer; // @synthesize checkLayer=_checkLayer;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;

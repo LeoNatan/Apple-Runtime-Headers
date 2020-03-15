@@ -19,11 +19,11 @@
     id <HKGraphSeriesBlockCoordinateInfo> _userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSNumber *yValue; // @synthesize yValue=_yValue;
 @property(retain, nonatomic) NSDate *xEnd; // @synthesize xEnd=_xEnd;
 @property(retain, nonatomic) NSDate *xStart; // @synthesize xStart=_xStart;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)allYValues;
 - (id)maxYValue;

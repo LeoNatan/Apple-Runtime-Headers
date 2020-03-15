@@ -26,6 +26,7 @@
 + (id)transformationWithFilterOptions:(long long)arg1 configuration:(id)arg2 context:(id)arg3;
 + (id)transformationWithFilterOptions:(long long)arg1 configuration:(id)arg2 context:(id)arg3 otherArticleIDs:(id)arg4;
 + (id)transformationWithFilterOptions:(long long)arg1 otherArticleIDs:(id)arg2 otherClusterIDs:(id)arg3 subscribedTagIDs:(id)arg4 mutedTagIDs:(id)arg5 briefingsTagID:(id)arg6 paidAccessChecker:(id)arg7 bundleSubscription:(id)arg8;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCBundleSubscription *bundleSubscription; // @synthesize bundleSubscription=_bundleSubscription;
 @property(retain, nonatomic) id <FCPaidAccessCheckerType> paidAccessChecker; // @synthesize paidAccessChecker=_paidAccessChecker;
 @property(copy, nonatomic) NSString *briefingsTagID; // @synthesize briefingsTagID=_briefingsTagID;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSSet *otherClusterIDs; // @synthesize otherClusterIDs=_otherClusterIDs;
 @property(copy, nonatomic) NSSet *otherArticleIDs; // @synthesize otherArticleIDs=_otherArticleIDs;
 @property(nonatomic) long long filterOptions; // @synthesize filterOptions=_filterOptions;
-- (void).cxx_destruct;
 - (id)transformHeadline:(id)arg1;
 - (id)transformHeadlines:(id)arg1;
 - (id)transformFeedItems:(id)arg1;

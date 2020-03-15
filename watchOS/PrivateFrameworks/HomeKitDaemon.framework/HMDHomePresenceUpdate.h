@@ -16,11 +16,11 @@
     HMDDevice *_causingDevice;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDDevice *causingDevice; // @synthesize causingDevice=_causingDevice;
 @property(readonly, nonatomic, getter=isUpdate) _Bool update; // @synthesize update=_update;
 @property(readonly, nonatomic) HMDUserPresence *userPresence; // @synthesize userPresence=_userPresence;
 @property(readonly, nonatomic) HMDHomePresence *homePresence; // @synthesize homePresence=_homePresence;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithHomePresence:(id)arg1 userPresence:(id)arg2 update:(_Bool)arg3 causingDevice:(id)arg4;
 

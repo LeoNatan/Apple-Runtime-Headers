@@ -17,10 +17,10 @@
 
 + (_Bool)accessInstanceVariablesDirectly;
 + (id)appPrivateDataForLibraryURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 @property(retain) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 @property(retain) NSMutableDictionary *backingDictionary; // @synthesize backingDictionary=_backingDictionary;
-- (void).cxx_destruct;
 - (void)setValuesForKeysWithDictionary:(id)arg1;
 - (id)dictionaryWithValuesForKeys:(id)arg1;
 - (id)allKeys;

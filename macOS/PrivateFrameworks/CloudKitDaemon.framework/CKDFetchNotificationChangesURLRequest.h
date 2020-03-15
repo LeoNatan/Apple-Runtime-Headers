@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSData *_serverChangeTokenData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *serverChangeTokenData; // @synthesize serverChangeTokenData=_serverChangeTokenData;
 @property(nonatomic) BOOL moreComing; // @synthesize moreComing=_moreComing;
 @property(retain, nonatomic) NSData *resultServerChangeTokenData; // @synthesize resultServerChangeTokenData=_resultServerChangeTokenData;
 @property(nonatomic) BOOL wantsChanges; // @synthesize wantsChanges=_wantsChanges;
 @property(nonatomic) unsigned long long resultsLimit; // @synthesize resultsLimit=_resultsLimit;
 @property(readonly, nonatomic) NSArray *resultChangedNotifications; // @synthesize resultChangedNotifications=_resultChangedNotifications;
-- (void).cxx_destruct;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)generateRequestOperations;
 - (id)requestOperationClasses;

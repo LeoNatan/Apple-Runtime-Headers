@@ -38,9 +38,9 @@
 + (BOOL)directoryExists:(id)arg1;
 + (BOOL)fileExists:(id)arg1;
 + (BOOL)pathExists:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long pathHash; // @synthesize pathHash=_pathHash;
 @property(readonly) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)newFileIOStream;
 - (id)newFileIStream;
 - (void)setLabelNumber:(id)arg1;

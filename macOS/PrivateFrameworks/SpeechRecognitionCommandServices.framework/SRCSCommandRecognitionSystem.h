@@ -16,9 +16,9 @@
     NSString *_localeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain) NSArray *recognizers; // @synthesize recognizers=_recognizers;
 @property(readonly, retain) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
-- (void).cxx_destruct;
 - (void)_testWithPhrases:(id)arg1;
 - (void)_initalizeLanguageModelTree;
 - (id)languageModelTreeForBuiltInLMIdentifier:(id)arg1;

@@ -7,11 +7,10 @@
 #import <FileProviderDaemon/FPProviderDomainAccessControl-Protocol.h>
 #import <FileProviderDaemon/NSObject-Protocol.h>
 
-@class FPCTLTermDumper, FPDDomain, FPDDomainIndexer, FPDExtension, FPDRequest, FPExtensionEnumerationSettings, FPItem, FPItemID, FPSandboxingURLWrapper, NSArray, NSData, NSObject, NSProgress, NSURL;
-@protocol FPDLifetimeExtender, FPXEnumeratorObserver, OS_dispatch_queue;
+@class FPCTLTermDumper, FPDDomain, FPDDomainIndexer, FPDExtension, FPDRequest, FPExtensionEnumerationSettings, FPItem, FPItemID, FPSandboxingURLWrapper, NSArray, NSData, NSProgress, NSURL;
+@protocol FPDLifetimeExtender, FPXEnumeratorObserver;
 
 @protocol FPDDomainBackend <NSObject, FPProviderDomainAccessControl>
-@property(readonly) NSObject<OS_dispatch_queue> *backendQueue;
 @property(readonly, copy) NSArray *rootURLs;
 - (void)resolveProviderItemID:(FPItemID *)arg1 completionHandler:(void (^)(FPItemID *, NSError *))arg2;
 - (void)fetchOperationServiceOrEndpointWithRequest:(FPDRequest *)arg1 completionHandler:(void (^)(id <FPXOperationService>, NSXPCListenerEndpoint *, NSError *))arg2;
@@ -23,6 +22,8 @@
 - (BOOL)removeAllFilesWithError:(id *)arg1;
 - (void)currentMaterializedSetSyncAnchorWithCompletionHandler:(void (^)(NSData *))arg1;
 - (void)enumerateMaterializedSetFromSyncAnchor:(NSData *)arg1 completionHandler:(void (^)(NSArray *, NSArray *, BOOL, NSData *, NSError *))arg2;
+- (void)waitForStabilizationForRequest:(FPDRequest *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)copyDatabaseToURL:(NSURL *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)dumpStateTo:(FPCTLTermDumper *)arg1 limitNumberOfItems:(BOOL)arg2;
 - (void)URLForItemID:(FPItemID *)arg1 creatingPlaceholderIfMissing:(BOOL)arg2 ignoreAlternateContentsURL:(BOOL)arg3 request:(FPDRequest *)arg4 completionHandler:(void (^)(NSError *, FPSandboxingURLWrapper *, FPSandboxingURLWrapper *))arg5;
 - (BOOL)updateRootAfterDomainChangeWithError:(id *)arg1;

@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 - (void)setAlertTitle:(id)arg1;
 - (id)alertTitle;
 - (void)setRegionTriggersOnce:(BOOL)arg1;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 - (id)timeZone;
 - (void)setFireDate:(id)arg1;
 - (id)fireDate;
-- (void).cxx_destruct;
 - (BOOL)isTriggeredByRegion;
 - (BOOL)isTriggeredByDate;
 - (void)validate;

@@ -16,9 +16,9 @@
 
 + (id)settingsControllerModule;
 + (id)sharedSettings;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHResourceDownloadSettings *resourceDownloadSettings; // @synthesize resourceDownloadSettings=_resourceDownloadSettings;
 @property(readonly, nonatomic) PHImageManagerSettings *imageManagerSettings; // @synthesize imageManagerSettings=_imageManagerSettings;
-- (void).cxx_destruct;
 - (id)parentSettings;
 
 @end

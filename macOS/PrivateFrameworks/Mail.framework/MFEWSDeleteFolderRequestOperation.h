@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *folderIdString; // @synthesize folderIdString=_folderIdString;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *folderIdString; // @synthesize folderIdString=_folderIdString;
 - (void)setupOfflineResponse;
 - (id)prepareRequest;
 - (BOOL)isFolderRequest;

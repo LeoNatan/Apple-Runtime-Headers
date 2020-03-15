@@ -21,6 +21,7 @@
     long long __deferredLabelOrientation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDeferredOrientation:) long long _deferredLabelOrientation; // @synthesize _deferredLabelOrientation=__deferredLabelOrientation;
 @property(nonatomic, getter=_isPerformingStyleAnimation, setter=_setPerformingStyleAnimation:) _Bool _performingStyleAnimation; // @synthesize _performingStyleAnimation=__performingStyleAnimation;
 @property(readonly, nonatomic) CAMAnimationDelegate *_animationDelegate; // @synthesize _animationDelegate=__animationDelegate;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) UILabel *_countdownLabel; // @synthesize _countdownLabel=__countdownLabel;
 @property(readonly, nonatomic) UIView *_dimmingView; // @synthesize _dimmingView=__dimmingView;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_handleOrientationChange:(long long)arg1;
 - (void)cam_rotateWithInterfaceOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (void)_addDimmingAnimationForTick:(long long)arg1;

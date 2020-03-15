@@ -28,6 +28,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) double secondaryNormalizedValue; // @synthesize secondaryNormalizedValue=_secondaryNormalizedValue;
 @property(nonatomic) double primaryNormalizedValue; // @synthesize primaryNormalizedValue=_primaryNormalizedValue;
 @property(retain, nonatomic) HUIconView *decorationIconView; // @synthesize decorationIconView=_decorationIconView;
@@ -41,7 +42,6 @@
 @property(nonatomic) double sliderValue; // @synthesize sliderValue=_sliderValue;
 @property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(copy, nonatomic) HUQuickControlSliderViewProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (BOOL)_createDecorationIconViewIfNecessary;
 - (void)_updateDecorationIconDescriptorAnimated:(BOOL)arg1;
 - (void)_updateUIForReachabilityState:(unsigned long long)arg1;

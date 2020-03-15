@@ -20,8 +20,8 @@
     BOOL _showIcon;
 }
 
-@property __weak NSWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+@property __weak NSWindow *window; // @synthesize window=_window;
 @property(readonly) NSTabBarItem *tabBarItem;
 @property(copy) NSAttributedString *attributedTitle;
 @property BOOL showIcon;

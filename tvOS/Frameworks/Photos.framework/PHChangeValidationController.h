@@ -27,6 +27,7 @@
     NSString *_clientName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool confirmationRequired; // @synthesize confirmationRequired=_confirmationRequired;
 @property(readonly, copy, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 @property(readonly, nonatomic) NSArray *foldersToDelete; // @synthesize foldersToDelete=_foldersToDelete;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSOrderedSet *deleteRequests; // @synthesize deleteRequests=_deleteRequests;
 @property(readonly, nonatomic) NSOrderedSet *updateRequests; // @synthesize updateRequests=_updateRequests;
 @property(readonly, nonatomic) NSOrderedSet *insertRequests; // @synthesize insertRequests=_insertRequests;
-- (void).cxx_destruct;
 - (_Bool)_promptForUserConfirmationWithTitle:(id)arg1 message:(id)arg2 defaultButtonTitle:(id)arg3 alternateButtonTitle:(id)arg4 additionalAlertParameters:(id)arg5;
 - (_Bool)promptForUserConfirmationWithTitle:(id)arg1 message:(id)arg2 defaultButtonTitle:(id)arg3 alternateButtonTitle:(id)arg4 previewAssetLocalIdentifiers:(id)arg5;
 - (_Bool)promptForUserConfirmationWithTitle:(id)arg1 message:(id)arg2 defaultButtonTitle:(id)arg3 alternateButtonTitle:(id)arg4 renderedContentURLs:(id)arg5;

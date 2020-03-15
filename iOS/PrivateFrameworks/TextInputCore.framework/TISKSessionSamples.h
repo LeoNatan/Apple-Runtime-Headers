@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isEmpty; // @synthesize isEmpty=_isEmpty;
 @property(retain, nonatomic) TIKeyboardLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) NSString *version; // @synthesize version=_version;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSMutableDictionary *keyedSamples; // @synthesize keyedSamples=_keyedSamples;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)generateDataForSR;

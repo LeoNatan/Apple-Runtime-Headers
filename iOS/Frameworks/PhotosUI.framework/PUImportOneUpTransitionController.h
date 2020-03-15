@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     PUImportOneUpModalTransition *_transition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUImportOneUpModalTransition *transition; // @synthesize transition=_transition;
 @property(readonly, nonatomic) long long operation; // @synthesize operation=_operation;
 @property(readonly, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUPhotoPinchGestureRecognizer *dismissPinchGestureRecognizer; // @synthesize dismissPinchGestureRecognizer=_dismissPinchGestureRecognizer;
 @property(readonly, nonatomic) PUPhotoPinchGestureRecognizer *presentingPinchGestureRecognizer; // @synthesize presentingPinchGestureRecognizer=_presentingPinchGestureRecognizer;
 @property(nonatomic) _Bool hasInstalledDismissGestureRecognizers; // @synthesize hasInstalledDismissGestureRecognizers=_hasInstalledDismissGestureRecognizers;
-- (void).cxx_destruct;
 - (void)installDismissGestureRecognizersOnView:(id)arg1;
 - (_Bool)continuousGestureRecognizerIsActive:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

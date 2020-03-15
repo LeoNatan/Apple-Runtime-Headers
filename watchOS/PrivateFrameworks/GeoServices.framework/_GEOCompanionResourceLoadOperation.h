@@ -33,10 +33,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_isForRegionalResource;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool preferDirectNetworking; // @synthesize preferDirectNetworking=_preferDirectNetworking;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic) _Bool requiresWiFi; // @synthesize requiresWiFi=_requiresWiFi;
-- (void).cxx_destruct;
 - (void)didChangePairedDeviceReachability:(_Bool)arg1;
 - (void)cancel;
 - (void)_loadDirectlyFromNetwork;

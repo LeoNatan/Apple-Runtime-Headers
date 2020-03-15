@@ -16,8 +16,8 @@
 + (long long)resultSubtypeForACResultSubtype:(int)arg1;
 + (long long)resultTypeForACResultType:(int)arg1;
 + (id)sortPriorityMappingFromDefaultsValue:(id)arg1;
-@property(readonly, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (id)initWithAutocompleteResultSortPriorityMapping:(id)arg1;
 - (id)initWithEntries:(id)arg1;
 - (id)init;

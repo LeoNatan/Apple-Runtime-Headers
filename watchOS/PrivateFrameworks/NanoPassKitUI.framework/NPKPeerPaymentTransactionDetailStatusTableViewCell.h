@@ -19,6 +19,7 @@
     UIStackView *_stackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
@@ -26,7 +27,6 @@
 @property(nonatomic) unsigned int layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(copy, nonatomic) NSString *placeholderText; // @synthesize placeholderText=_placeholderText;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)_timeStringWithDate:(id)arg1 placeholder:(id)arg2;
 - (id)_dateStringWithDate:(id)arg1 placeholder:(id)arg2;
 @property(copy, nonatomic) NSString *statusDescription;

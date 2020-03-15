@@ -38,6 +38,7 @@
 + (id)keyPathsForValuesAffectingIsActionable;
 + (id)eventKitEventForRealtimeEvent:(id)arg1;
 + (id)_eventStore;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *stackWidthFixedConstraint; // @synthesize stackWidthFixedConstraint=_stackWidthFixedConstraint;
 @property(nonatomic) BOOL isNewEvent; // @synthesize isNewEvent=_isNewEvent;
 @property(nonatomic) BOOL showingDetails; // @synthesize showingDetails=_showingDetails;
@@ -51,7 +52,6 @@
 @property(nonatomic) __weak NSView *divider; // @synthesize divider=_divider;
 @property(nonatomic) __weak NSStackView *summaryStackView; // @synthesize summaryStackView=_summaryStackView;
 @property(nonatomic) __weak id <SuggestedEventPopoverControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutConstraint *eventHeaderHeightConstraint; // @synthesize eventHeaderHeightConstraint=_eventHeaderHeightConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *detailsWidthConstraint; // @synthesize detailsWidthConstraint=_detailsWidthConstraint;
 - (void)didCommitItem;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     _Bool _configuredForInvalid;
 }
 
-@property(nonatomic) _Bool configuredForInvalid; // @synthesize configuredForInvalid=_configuredForInvalid;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool configuredForInvalid; // @synthesize configuredForInvalid=_configuredForInvalid;
 - (void)removeAnimationForKey:(id)arg1;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (_Bool)showAsValidTarget;

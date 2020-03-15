@@ -19,12 +19,12 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL skipResolveAndConfirm; // @synthesize skipResolveAndConfirm=_skipResolveAndConfirm;
 @property(nonatomic) BOOL forceExecutionOnPhone; // @synthesize forceExecutionOnPhone=_forceExecutionOnPhone;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) __weak id <WFIntentExecutorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) INCExtensionConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)autoreleaseSelf;
 - (void)retainSelf;
 - (void)showConfirmationForInteraction:(id)arg1 confirmationRequired:(BOOL)arg2 authenticationRequired:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;

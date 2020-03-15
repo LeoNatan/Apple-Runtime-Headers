@@ -28,6 +28,7 @@
 + (id)_extensionBlacklist;
 + (id)sharedInstance;
 + (void)disableExtensionDiscovery;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *localParticipantID2; // @synthesize localParticipantID2=_localParticipantID2;
 @property(retain, nonatomic) NSUUID *localParticipantID1; // @synthesize localParticipantID1=_localParticipantID1;
 @property(retain, nonatomic) NSString *simulatedConversationID2; // @synthesize simulatedConversationID2=_simulatedConversationID2;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) id extensionMatchingContext; // @synthesize extensionMatchingContext=_extensionMatchingContext;
 @property(retain, nonatomic) NSMutableDictionary *pluginsMap; // @synthesize pluginsMap=_pluginsMap;
 @property(readonly, retain, nonatomic) Class richLinksDataSourceClass; // @synthesize richLinksDataSourceClass=_richLinksDataSourceClass;
-- (void).cxx_destruct;
 - (id)systemBundleIdentifierForPluginIdentifier:(id)arg1;
 - (id)balloonPluginForBundleID:(id)arg1;
 - (id)allPlugins;

@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL started; // @synthesize started=_started;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(retain, nonatomic) id <FMScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (id)addCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)addFailureBlock:(CDUnknownBlockType)arg1;
 - (id)addSuccessBlock:(CDUnknownBlockType)arg1;

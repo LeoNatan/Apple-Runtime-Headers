@@ -18,12 +18,12 @@
     NSArray *_apps;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *apps; // @synthesize apps=_apps;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(nonatomic) __weak id <VSSupportedAppsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) VSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(retain, nonatomic) VSOptional *identityProvider; // @synthesize identityProvider=_identityProvider;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)beginLoadingApps;
 - (void)_finishLoadingApps:(id)arg1;

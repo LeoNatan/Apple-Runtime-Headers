@@ -14,8 +14,8 @@
 }
 
 + (Class)layerClass;
-@property(copy, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
 @property(nonatomic) struct CGPoint endPoint;
 @property(nonatomic) struct CGPoint startPoint;
 @property(copy, nonatomic) NSArray *locations;

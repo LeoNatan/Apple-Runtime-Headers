@@ -17,12 +17,12 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) NSNumber *redownloadableItemCount; // @synthesize redownloadableItemCount=_redownloadableItemCount;
 @property(copy, nonatomic) MPMediaLibraryView *libraryView; // @synthesize libraryView=_libraryView;
 @property(retain, nonatomic) MPModelObject *identifyingModelObject; // @synthesize identifyingModelObject=_identifyingModelObject;
 @property(nonatomic) long long enableState; // @synthesize enableState=_enableState;
-- (void).cxx_destruct;
 - (void)execute;
 
 @end

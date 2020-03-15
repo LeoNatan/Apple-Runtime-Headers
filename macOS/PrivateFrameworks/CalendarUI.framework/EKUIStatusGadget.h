@@ -14,8 +14,8 @@
 }
 
 + (id)interestedChangeKeys;
-@property(retain) EKUIPopUpButton *statusPicker; // @synthesize statusPicker=_statusPicker;
 - (void).cxx_destruct;
+@property(retain) EKUIPopUpButton *statusPicker; // @synthesize statusPicker=_statusPicker;
 - (void)statusChanged:(id)arg1;
 - (void)updateWithChanges:(id)arg1;
 - (id)control;

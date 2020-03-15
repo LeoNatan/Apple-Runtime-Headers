@@ -16,11 +16,11 @@
     unsigned int _numOfClusters;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int numOfClusters; // @synthesize numOfClusters=_numOfClusters;
 @property(copy, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(readonly, nonatomic) CLLocation *homeLocation; // @synthesize homeLocation=_homeLocation;
 @property(readonly, nonatomic) NSArray *groups; // @synthesize groups=_groups;
-- (void).cxx_destruct;
 - (void)printGroups:(id)arg1;
 - (void)calculateHomeLocationFromGroups;
 - (id)generateNewGroupsFromGroups:(id)arg1;

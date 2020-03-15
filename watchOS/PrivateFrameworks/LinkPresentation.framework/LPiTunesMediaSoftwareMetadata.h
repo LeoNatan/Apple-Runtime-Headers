@@ -30,6 +30,7 @@
 
 + (id)keyPathsForValuesAffecting_dummyPropertyForObservation;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPImage *messagesAppIcon; // @synthesize messagesAppIcon=_messagesAppIcon;
 @property(nonatomic) _Bool isMessagesOnlyApp; // @synthesize isMessagesOnlyApp=_isMessagesOnlyApp;
 @property(retain, nonatomic) LPVideo *previewVideo; // @synthesize previewVideo=_previewVideo;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(copy, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
-- (void).cxx_destruct;
 - (void)_enumerateAsynchronousFields:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

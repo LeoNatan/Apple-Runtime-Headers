@@ -16,10 +16,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *Changes; // @synthesize Changes=_Changes;
 @property(nonatomic) BOOL IncludesLastFolderInRange; // @synthesize IncludesLastFolderInRange=_IncludesLastFolderInRange;
 @property(copy, nonatomic) NSString *SyncState; // @synthesize SyncState=_SyncState;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

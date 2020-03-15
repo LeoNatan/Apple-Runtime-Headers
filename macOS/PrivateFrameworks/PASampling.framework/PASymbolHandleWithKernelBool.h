@@ -14,9 +14,9 @@
     PASymbolHandle *_symbolHandle;
 }
 
+- (void).cxx_destruct;
 @property BOOL isKernel; // @synthesize isKernel=_isKernel;
 @property(retain) PASymbolHandle *symbolHandle; // @synthesize symbolHandle=_symbolHandle;
-- (void).cxx_destruct;
 
 @end
 

@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *localizedUserNotificationBodyKey; // @synthesize localizedUserNotificationBodyKey=_localizedUserNotificationBodyKey;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *localizedUserNotificationBodyKey; // @synthesize localizedUserNotificationBodyKey=_localizedUserNotificationBodyKey;
 - (id)notificationBundleIdentifier;
 - (id)destinations;
 - (void)customizeNotificationContent:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;

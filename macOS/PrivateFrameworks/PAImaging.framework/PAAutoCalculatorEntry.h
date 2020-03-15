@@ -17,12 +17,12 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain) NSString *autoIdentifier; // @synthesize autoIdentifier=_autoIdentifier;
 @property(retain) NSString *operationIdentifier; // @synthesize operationIdentifier=_operationIdentifier;
 @property(retain) NSUUID *operationUUID; // @synthesize operationUUID=_operationUUID;
 @property(retain) NUAutoCalculator *calculator; // @synthesize calculator=_calculator;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

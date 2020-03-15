@@ -17,10 +17,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
++ (id)maxImageContentSizeCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageLayout *imageViewLayout; // @synthesize imageViewLayout=_imageViewLayout;
 @property(readonly, nonatomic) VUITextLayout *subtitleTextLayout; // @synthesize subtitleTextLayout=_subtitleTextLayout;
 @property(readonly, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

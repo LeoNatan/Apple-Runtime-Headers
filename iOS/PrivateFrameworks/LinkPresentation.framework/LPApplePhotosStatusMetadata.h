@@ -17,8 +17,8 @@
 
 + (id)keyPathsForValuesAffecting_dummyPropertyForObservation;
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSAttributedString *status; // @synthesize status=_status;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSAttributedString *status; // @synthesize status=_status;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

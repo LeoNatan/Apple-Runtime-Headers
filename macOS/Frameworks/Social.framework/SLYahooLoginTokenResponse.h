@@ -16,11 +16,11 @@
     NSString *_loginToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *loginToken; // @synthesize loginToken=_loginToken;
 @property(readonly) NSString *body; // @synthesize body=_body;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) long long statusCode; // @synthesize statusCode=_statusCode;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 
 @end

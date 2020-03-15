@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     BOOL _observingKeyWindow;
 }
 
-@property __weak id <NSDebugResponderChainUIDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
 - (void).cxx_destruct;
+@property __weak id <NSDebugResponderChainUIDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
 - (void)updateResponderChainFromWindow:(id)arg1;
 - (void)switchObservedWindow:(id)arg1;
 - (void)toggleObservingKeyWindow:(BOOL)arg1;

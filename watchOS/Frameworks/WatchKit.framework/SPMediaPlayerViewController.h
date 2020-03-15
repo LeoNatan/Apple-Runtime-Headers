@@ -31,11 +31,11 @@
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *extensionATSContext; // @synthesize extensionATSContext=_extensionATSContext;
 @property(nonatomic) _Bool loops; // @synthesize loops=_loops;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) _Bool autoplay; // @synthesize autoplay=_autoplay;
-- (void).cxx_destruct;
 - (void)progressControllerFinishedDownloadingAsset:(id)arg1 toFileURL:(id)arg2 error:(id)arg3;
 - (void)progressControllerWasCancelled:(id)arg1;
 - (void)progressControllerReadyToStart:(id)arg1;

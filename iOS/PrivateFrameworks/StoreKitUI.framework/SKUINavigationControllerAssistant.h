@@ -22,6 +22,7 @@
 
 + (id)existingAssistantForNavigationController:(id)arg1;
 + (id)assistantForNavigationController:(id)arg1 clientContext:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *statusOverlayViewController; // @synthesize statusOverlayViewController=_statusOverlayViewController;
 @property(retain, nonatomic) _UINavigationControllerPalette *paletteBackgroundView; // @synthesize paletteBackgroundView=_paletteBackgroundView;
 @property(retain, nonatomic) UIView *childPaletteView; // @synthesize childPaletteView=_childPaletteView;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool hidesShadow; // @synthesize hidesShadow=_hidesShadow;
 @property(readonly, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (void)_transitionToPaletteView:(id)arg1 animated:(_Bool)arg2 operation:(long long)arg3;
 - (void)_showOverlayView:(id)arg1 previousOverlayView:(id)arg2 animated:(_Bool)arg3;
 - (void)_setStatusOverlayProvider:(id)arg1 animated:(_Bool)arg2;

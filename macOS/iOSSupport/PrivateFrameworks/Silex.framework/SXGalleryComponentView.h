@@ -15,8 +15,8 @@
     SXDragManager *_dragManager;
 }
 
-@property(retain, nonatomic) SXDragManager *dragManager; // @synthesize dragManager=_dragManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SXDragManager *dragManager; // @synthesize dragManager=_dragManager;
 - (id)dragManager:(id)arg1 dragableAtLocation:(struct CGPoint)arg2;
 - (id)viewForDragManager:(id)arg1;
 - (void)forceImageViewFullscreen:(id)arg1;

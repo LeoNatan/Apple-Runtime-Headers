@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     struct UIOffset _viewerOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double planarRotationAngle; // @synthesize planarRotationAngle=_planarRotationAngle;
 @property(nonatomic) struct UIOffset viewerOffset; // @synthesize viewerOffset=_viewerOffset;
-- (void).cxx_destruct;
 - (struct UIOffset)_acceleratedOutputForViewerOffset:(struct UIOffset)arg1 accelerationBoostFactor:(struct CGPoint)arg2;
 - (void)_setAcceleration:(struct CGPoint)arg1 fixingOutputForViewerOffset:(struct UIOffset)arg2;
 - (void)_reset;

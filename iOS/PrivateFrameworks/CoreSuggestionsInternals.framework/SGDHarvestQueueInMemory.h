@@ -19,8 +19,8 @@
     SGDHarvestQueue *_other;
 }
 
-@property(readonly, nonatomic) SGDHarvestQueue *other; // @synthesize other=_other;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SGDHarvestQueue *other; // @synthesize other=_other;
 - (void)_flushWithItemIdLockedAsync:(long long)arg1;
 - (void)_flushWithIndexLockedAsync:(unsigned long long)arg1;
 - (void)_deleteWithItemId:(long long)arg1 completion:(CDUnknownBlockType)arg2;

@@ -24,13 +24,13 @@
     NSXPCListenerEndpoint *_xpcEndpoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListenerEndpoint *xpcEndpoint; // @synthesize xpcEndpoint=_xpcEndpoint;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain, nonatomic) id <SFProxCardXPCServerInterface> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)performAction:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_reportError:(id)arg1;
 - (void)_invalidated;

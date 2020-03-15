@@ -17,11 +17,11 @@
     id <FCCKRecordZoneDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(getter=isZoneReady) _Bool zoneReady; // @synthesize zoneReady=_zoneReady;
 @property(nonatomic) __weak id <FCCKRecordZoneDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) FCCKPrivateDatabase *database; // @synthesize database=_database;
 @property(retain, nonatomic) CKRecordZoneID *recordZoneID; // @synthesize recordZoneID=_recordZoneID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)fetchChangesWithChangeToken:(id)arg1 desiredKeys:(id)arg2 fetchAllChanges:(_Bool)arg3 qualityOfService:(long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)performActionWithRecordZone:(CDUnknownBlockType)arg1;

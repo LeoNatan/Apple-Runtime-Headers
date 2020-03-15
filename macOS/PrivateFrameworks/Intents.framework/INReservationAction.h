@@ -22,10 +22,10 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(readonly, copy) INDateComponentsRange *validDuration; // @synthesize validDuration=_validDuration;
 @property(readonly) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

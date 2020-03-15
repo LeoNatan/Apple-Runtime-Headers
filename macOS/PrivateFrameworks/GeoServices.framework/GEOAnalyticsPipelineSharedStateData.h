@@ -11,10 +11,12 @@
 @interface GEOAnalyticsPipelineSharedStateData : GEOAnalyticsPipelineStateData
 {
     geo_isolater *_placeIso;
+    geo_isolater *_mapViewIso;
 }
 
 + (id)sharedData;
 - (void).cxx_destruct;
+- (BOOL)hasMapLaunchData;
 - (BOOL)hasMapRestoreData;
 - (void)clearSuggestionsData;
 - (BOOL)hasSuggestionsData;
@@ -30,6 +32,8 @@
 - (void)populateWithPlaceActionDetails:(id)arg1;
 - (void)clearPlaceCardStateData;
 - (void)performPlaceCardStateUpdate:(CDUnknownBlockType)arg1;
+- (void)performMapViewStateUpdate:(CDUnknownBlockType)arg1;
+- (void)_performSyncStateUpdateWithIsolator:(id)arg1 updateBlock:(CDUnknownBlockType)arg2;
 - (id)init;
 
 @end

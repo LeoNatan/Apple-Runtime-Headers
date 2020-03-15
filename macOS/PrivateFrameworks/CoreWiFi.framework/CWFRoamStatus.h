@@ -31,6 +31,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(nonatomic) int reason; // @synthesize reason=_reason;
 @property(nonatomic) long long toRSSI; // @synthesize toRSSI=_toRSSI;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSDate *startedAt; // @synthesize startedAt=_startedAt;
 @property(copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

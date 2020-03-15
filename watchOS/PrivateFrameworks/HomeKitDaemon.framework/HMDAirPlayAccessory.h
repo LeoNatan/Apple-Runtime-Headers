@@ -25,8 +25,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
-@property(readonly, nonatomic) HMFExponentialBackoffTimer *configurationRetryTimer; // @synthesize configurationRetryTimer=_configurationRetryTimer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMFExponentialBackoffTimer *configurationRetryTimer; // @synthesize configurationRetryTimer=_configurationRetryTimer;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)timerDidFire:(id)arg1;

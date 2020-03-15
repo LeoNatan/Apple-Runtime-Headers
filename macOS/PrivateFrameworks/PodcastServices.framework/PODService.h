@@ -18,12 +18,12 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) PODServiceConfiguration *serviceConfiguration; // @synthesize serviceConfiguration=_serviceConfiguration;
 @property(readonly, nonatomic) NSObject<OS_os_log> *loggingCategory; // @synthesize loggingCategory=_loggingCategory;
 @property(readonly, nonatomic) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 @property(readonly, nonatomic) NSMutableDictionary *inflightXPCInvalidationHandlers; // @synthesize inflightXPCInvalidationHandlers=_inflightXPCInvalidationHandlers;
-- (void).cxx_destruct;
 - (void)_invokeMessageSendingInvalidationHandlers;
 - (void)removeInflightXPCInvalidationHandler:(id)arg1;
 - (id)addInflightXPCInvalidationHandler:(CDUnknownBlockType)arg1;

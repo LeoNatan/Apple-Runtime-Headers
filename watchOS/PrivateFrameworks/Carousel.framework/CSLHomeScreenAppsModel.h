@@ -25,8 +25,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic, getter=isShowingInternalApps) _Bool showingInternalApps; // @synthesize showingInternalApps=_showingInternalApps;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isShowingInternalApps) _Bool showingInternalApps; // @synthesize showingInternalApps=_showingInternalApps;
 - (void)_workQueue_didDemoteApplications:(id)arg1;
 - (void)_workQueue_didRemoveApplications:(id)arg1;
 - (void)_workQueue_didReplaceApplications:(id)arg1;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSData *_finalData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *finalData; // @synthesize finalData=_finalData;
 @property(retain, nonatomic) CPLResource *finalResource; // @synthesize finalResource=_finalResource;
 @property(retain, nonatomic) NSError *finalError; // @synthesize finalError=_finalError;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(nonatomic) _Bool didStart; // @synthesize didStart=_didStart;
 @property(nonatomic, getter=isInMemoryRequest) _Bool inMemoryRequest; // @synthesize inMemoryRequest=_inMemoryRequest;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

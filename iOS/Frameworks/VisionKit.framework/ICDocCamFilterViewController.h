@@ -31,6 +31,7 @@
     UILongPressGestureRecognizer *_longPressGesture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGesture; // @synthesize longPressGesture=_longPressGesture;
 @property(retain, nonatomic) NSMutableArray *filterButtons; // @synthesize filterButtons=_filterButtons;
 @property(nonatomic) _Bool transitioning; // @synthesize transitioning=_transitioning;
@@ -46,7 +47,6 @@
 @property(nonatomic) double bottomContentInset; // @synthesize bottomContentInset=_bottomContentInset;
 @property(nonatomic) double bottomOffset; // @synthesize bottomOffset=_bottomOffset;
 @property(nonatomic) double horizontalOffset; // @synthesize horizontalOffset=_horizontalOffset;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)longPressGesture:(id)arg1;
 - (void)applyToAll:(short)arg1;

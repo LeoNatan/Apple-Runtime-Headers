@@ -15,10 +15,10 @@
     NSArray *_childSnapshots;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *childSnapshots; // @synthesize childSnapshots=_childSnapshots;
 @property(retain, nonatomic) SBSwitcherModifierQuerySnapshot *querySnapshot; // @synthesize querySnapshot=_querySnapshot;
 @property(retain, nonatomic) NSString *modifierName; // @synthesize modifierName=_modifierName;
-- (void).cxx_destruct;
 - (void)_enumerateModifierSnapshots:(CDUnknownBlockType)arg1 stop:(_Bool *)arg2;
 - (void)enumerateModifierSnapshots:(CDUnknownBlockType)arg1;
 

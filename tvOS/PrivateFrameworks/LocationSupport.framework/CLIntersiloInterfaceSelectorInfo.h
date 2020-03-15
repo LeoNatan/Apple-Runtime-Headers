@@ -16,11 +16,11 @@
     NSMethodSignature *_sig;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSMethodSignature *sig; // @synthesize sig=_sig;
 @property(readonly, nonatomic) int returnAddressIndex; // @synthesize returnAddressIndex=_returnAddressIndex;
 @property(readonly, nonatomic) int replyBlockIndex; // @synthesize replyBlockIndex=_replyBlockIndex;
 @property(readonly, nonatomic) SEL sel; // @synthesize sel=_sel;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *typeStr; // @dynamic typeStr;
 - (id)initWithSelector:(SEL)arg1 andMethodSignature:(id)arg2;

@@ -18,10 +18,10 @@
 + (id)titleFont;
 + (id)defaultTextColor;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoresRTLCorrection; // @synthesize ignoresRTLCorrection=_ignoresRTLCorrection;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) _Bool showsSeparator; // @synthesize showsSeparator=_showsSeparator;
-- (void).cxx_destruct;
 - (void)_fontSizeDidChange;
 - (id)_fontForDetailTextLabel;
 - (id)_fontForTextLabel;

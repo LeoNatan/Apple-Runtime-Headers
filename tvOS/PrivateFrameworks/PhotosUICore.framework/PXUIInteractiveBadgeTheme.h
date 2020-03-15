@@ -31,6 +31,7 @@
 
 + (id)sharedToggledOffBadgeTheme;
 + (id)sharedToggledOnBadgeTheme;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIBlurEffect *backgroundBlurEffect; // @synthesize backgroundBlurEffect=_backgroundBlurEffect;
 @property(readonly, nonatomic) UIColor *backgroundBorderColor; // @synthesize backgroundBorderColor=_backgroundBorderColor;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) UIColor *imageTintColor; // @synthesize imageTintColor=_imageTintColor;
 @property(readonly, nonatomic) double imageAlpha; // @synthesize imageAlpha=_imageAlpha;
 @property(readonly, nonatomic) UIImageSymbolConfiguration *imageConfiguration; // @synthesize imageConfiguration=_imageConfiguration;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithIsToggledOn:(_Bool)arg1;
 

@@ -37,6 +37,7 @@
     HFStaticItemProvider *_debugItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFStaticItemProvider *debugItemProvider; // @synthesize debugItemProvider=_debugItemProvider;
 @property(readonly, nonatomic) HMSymptomsHandler *symptomsHandler; // @synthesize symptomsHandler=_symptomsHandler;
 @property(readonly, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) HFItem *fakeShouldDisplayManualFixOptionItem; // @synthesize fakeShouldDisplayManualFixOptionItem=_fakeShouldDisplayManualFixOptionItem;
 @property(readonly, nonatomic) HFItem *fakeUnreachableItem; // @synthesize fakeUnreachableItem=_fakeUnreachableItem;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject; // @synthesize homeKitObject=_homeKitObject;
-- (void).cxx_destruct;
 - (void)_pushSymptomUpdate;
 - (void)_reloadItemProviders;
 @property(nonatomic) BOOL fakeNetworkNotShareableSymptom;

@@ -30,6 +30,7 @@
     struct _NSRange _selectedRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(nonatomic) __weak UIButton *plusButton; // @synthesize plusButton=_plusButton;
 @property(nonatomic) __weak WFTextScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -44,7 +45,6 @@
 @property(nonatomic) __weak id <WFTagFieldDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *fieldTitle; // @synthesize fieldTitle=_fieldTitle;
 @property(copy, nonatomic) NSString *tags; // @synthesize tags=_tags;
-- (void).cxx_destruct;
 - (void)tagPickerDidCancel:(id)arg1;
 - (void)tagPicker:(id)arg1 didSelectTags:(id)arg2;
 - (void)updateTags;

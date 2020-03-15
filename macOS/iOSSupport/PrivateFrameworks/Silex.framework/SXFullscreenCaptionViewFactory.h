@@ -17,9 +17,9 @@
     id <SXComponentActionHandler> _actionHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXComponentActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(readonly, nonatomic) id <SXTextSourceFactory> textSourceFactory; // @synthesize textSourceFactory=_textSourceFactory;
-- (void).cxx_destruct;
 - (id)createCaptionView;
 - (id)initWithTextSourceFactory:(id)arg1 actionHandler:(id)arg2;
 

@@ -35,11 +35,11 @@ __attribute__((visibility("hidden")))
     UIView *_customBackgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *customBackgroundView; // @synthesize customBackgroundView=_customBackgroundView;
 @property(retain, nonatomic) _UIBarBackgroundLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) BOOL topAligned; // @synthesize topAligned=_topAligned;
 @property(copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
-- (void).cxx_destruct;
 - (void)set_shadowView:(id)arg1;
 - (id)_shadowView;
 - (void)set_backgroundEffectView:(id)arg1;

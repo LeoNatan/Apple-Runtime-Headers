@@ -19,12 +19,12 @@
     NSSet *_fallbackElements;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *fallbackElements; // @synthesize fallbackElements=_fallbackElements;
 @property(retain, nonatomic) NSDictionary *responseHeaders; // @synthesize responseHeaders=_responseHeaders;
 @property(retain, nonatomic) NSDictionary *headersToOverride; // @synthesize headersToOverride=_headersToOverride;
 @property(nonatomic) _Bool shouldSupportVTODO; // @synthesize shouldSupportVTODO=_shouldSupportVTODO;
 @property(nonatomic) _Bool shouldSupportVEVENT; // @synthesize shouldSupportVEVENT=_shouldSupportVEVENT;
-- (void).cxx_destruct;
 - (void)startTaskGroup;
 - (void)_mkcalendarAfterFailureCount:(unsigned long long)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 primaryPropertiesToSet:(id)arg3 fallbackPropertiesToSet:(id)arg4 atURL:(id)arg5;

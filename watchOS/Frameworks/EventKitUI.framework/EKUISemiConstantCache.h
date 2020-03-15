@@ -28,13 +28,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property float minYearMonthHeaderFontSizeUsed; // @synthesize minYearMonthHeaderFontSizeUsed=_minYearMonthHeaderFontSizeUsed;
 @property float weekAllDayOccurrenceHeight; // @synthesize weekAllDayOccurrenceHeight=_weekAllDayOccurrenceHeight;
 @property float weekAllDayBaselineForSmallFormatWeekView; // @synthesize weekAllDayBaselineForSmallFormatWeekView=_weekAllDayBaselineForSmallFormatWeekView;
 @property float weekAllDayBaselineForLargeFormatWeekView; // @synthesize weekAllDayBaselineForLargeFormatWeekView=_weekAllDayBaselineForLargeFormatWeekView;
 @property(readonly) float currentScaleFactor; // @synthesize currentScaleFactor=_currentScaleFactor;
 @property(readonly) _Bool usesLargeText; // @synthesize usesLargeText=_usesLargeText;
-- (void).cxx_destruct;
 @property(readonly) UIFont *weekAllDayTodayLabelFontRegular;
 @property(readonly) UIFont *weekAllDayTodayLabelFontCompact;
 @property(readonly) UIFont *weekAllDayLabelFontRegular;

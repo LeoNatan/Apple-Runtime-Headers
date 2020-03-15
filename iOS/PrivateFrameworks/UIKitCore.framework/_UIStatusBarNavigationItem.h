@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _UIStatusBarStringView *_nameView;
 }
 
-@property(retain, nonatomic) _UIStatusBarStringView *nameView; // @synthesize nameView=_nameView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIStatusBarStringView *nameView; // @synthesize nameView=_nameView;
 - (id)viewForIdentifier:(id)arg1;
 - (void)_create_nameView;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;

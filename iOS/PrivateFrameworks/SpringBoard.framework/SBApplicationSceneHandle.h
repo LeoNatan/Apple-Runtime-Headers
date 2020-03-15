@@ -20,11 +20,11 @@
 
 + (id)sceneSpecificationForDisplayIdentity:(id)arg1;
 + (id)lookupOrCreatePersistenceIDFromApplication:(id)arg1 sceneID:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long layoutRole; // @synthesize layoutRole=_layoutRole;
 @property(readonly, nonatomic, getter=isSecure) _Bool secure; // @synthesize secure=_isSecure;
 @property(readonly, nonatomic) NSString *persistenceIdentifier; // @synthesize persistenceIdentifier=_persistenceIdentifier;
 @property(readonly, nonatomic) SBApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (id)newSceneViewController;
 - (id)newScenePlaceholderContentContextWithActivationSettings:(id)arg1;
 - (id)newSceneViewWithReferenceSize:(struct CGSize)arg1 orientation:(long long)arg2 hostRequester:(id)arg3;

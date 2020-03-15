@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_previousUnitCounts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *previousUnitCounts; // @synthesize previousUnitCounts=_previousUnitCounts;
 @property(readonly, nonatomic) NSMutableDictionary *childProgresses; // @synthesize childProgresses=_childProgresses;
 @property(readonly, nonatomic) NSMutableDictionary *versionSizes; // @synthesize versionSizes=_versionSizes;
 @property(nonatomic) long long sumOfTotalUnitCountDelta; // @synthesize sumOfTotalUnitCountDelta;
 @property(nonatomic) long long sumOfCompletedUnitCountDelta; // @synthesize sumOfCompletedUnitCountDelta;
 @property(readonly, nonatomic) BRCProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)verifyFutureProgressIsNotFinished;
 - (void)copyProgressInfoToProgress:(id)arg1 options:(BOOL)arg2;
 - (void)updateLocalizedDescriptionWithOptions:(BOOL)arg1;

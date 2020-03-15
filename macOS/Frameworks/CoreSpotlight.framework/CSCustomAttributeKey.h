@@ -22,12 +22,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)_keyNameIsValid:(id)arg1;
+- (void).cxx_destruct;
 @property(getter=isMultiValued) BOOL multiValued; // @synthesize multiValued=_multiValued;
 @property(getter=isUnique) BOOL unique; // @synthesize unique=_unique;
 @property(getter=isSearchableByDefault) BOOL searchableByDefault; // @synthesize searchableByDefault=_searchableByDefault;
 @property(getter=isSearchable) BOOL searchable; // @synthesize searchable=_searchable;
 @property(retain) NSString *keyName; // @synthesize keyName=_keyName;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

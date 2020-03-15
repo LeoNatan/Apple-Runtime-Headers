@@ -6,11 +6,14 @@
 
 #import <HealthDaemon/HDDatabaseTransactionContext.h>
 
+@class HDDatabaseTransactionContextStatistics;
+
 @interface HDMutableDatabaseTransactionContext : HDDatabaseTransactionContext
 {
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(retain, nonatomic) HDDatabaseTransactionContextStatistics *statistics; // @dynamic statistics;
 @property(nonatomic) _Bool requiresNewDatabaseConnection; // @dynamic requiresNewDatabaseConnection;
 @property(nonatomic) _Bool skipJournalMerge; // @dynamic skipJournalMerge;
 @property(nonatomic) _Bool highPriority; // @dynamic highPriority;

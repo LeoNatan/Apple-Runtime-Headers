@@ -21,10 +21,10 @@
 + (id)serverInterface;
 + (id)clientInterface;
 + (id)defaultConfigurationWithWorkoutConfiguration:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) HKTaskServerProxyProvider *proxyProvider; // @synthesize proxyProvider=_proxyProvider;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_startTaskServerIfNeeded;
 - (void)connectionInterrupted;
 - (void)connectionInvalidated;

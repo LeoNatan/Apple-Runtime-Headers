@@ -6,23 +6,11 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSURL, NSView, STPINRemoteViewController;
-
 @interface STPINAuthenticationViewController : NSViewController
 {
-    NSView *_remoteControllerContainerView;
-    CDUnknownBlockType _authenticationHandler;
-    NSURL *_userIDRepresentation;
-    STPINRemoteViewController *_remoteViewController;
 }
 
 + (id)newViewControllerWithUser:(id)arg1 authenticationHandler:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) STPINRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
-@property(readonly, copy) NSURL *userIDRepresentation; // @synthesize userIDRepresentation=_userIDRepresentation;
-@property(readonly, copy) CDUnknownBlockType authenticationHandler; // @synthesize authenticationHandler=_authenticationHandler;
-@property(retain) NSView *remoteControllerContainerView; // @synthesize remoteControllerContainerView=_remoteControllerContainerView;
-- (void).cxx_destruct;
-- (void)viewDidLoad;
 
 @end
 

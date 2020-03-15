@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)_isNonSandboxedForAuditToken:(CDStruct_4c969caf)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasAuditToken; // @synthesize hasAuditToken=_hasAuditToken;
 @property(readonly, nonatomic) NSString *defaultAppLibraryID; // @synthesize defaultAppLibraryID=_defaultAppLibraryID;
 @property(readonly, nonatomic) NSSet *appLibraryIDs; // @synthesize appLibraryIDs=_appLibraryIDs;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL isAllowedToAccessAnyCloudService; // @synthesize isAllowedToAccessAnyCloudService=_isAllowedToAccessAnyCloudService;
 @property(readonly, nonatomic) BOOL isNonAppSandboxed; // @synthesize isNonAppSandboxed=_isNonAppSandboxed;
 @property(readonly, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (BOOL)_computeCloudEnabledStatusWithoutLogOutStatus;
 - (void)updateCloudEnabledStatus;
 - (BOOL)cloudEnabledStatusForSession:(id)arg1;

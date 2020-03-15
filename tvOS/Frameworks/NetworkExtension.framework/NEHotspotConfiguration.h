@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool useSSIDPrefix; // @synthesize useSSIDPrefix=_useSSIDPrefix;
 @property(copy) NEHotspotHS20Settings *hs20Settings; // @synthesize hs20Settings=_hs20Settings;
 @property(copy) NEHotspotEAPSettings *eapSettings; // @synthesize eapSettings=_eapSettings;
@@ -36,7 +37,6 @@
 @property _Bool joinOnce; // @synthesize joinOnce=_joinOnce;
 @property(readonly) NSString *SSIDPrefix; // @synthesize SSIDPrefix=_SSIDPrefix;
 @property(readonly) NSString *SSID; // @synthesize SSID=_SSID;
-- (void).cxx_destruct;
 - (long long)validate;
 - (_Bool)validateEAPSettings;
 - (_Bool)validateTrustedServerCertificateReferences;

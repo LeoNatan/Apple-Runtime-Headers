@@ -15,9 +15,9 @@
 }
 
 + (id)parseBuffer:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(readonly, nonatomic) REScriptToken *functionIdentifier; // @synthesize functionIdentifier=_functionIdentifier;
-- (void).cxx_destruct;
 - (id)dependencies;
 - (id)initWithFunctionName:(id)arg1 arguments:(id)arg2;
 

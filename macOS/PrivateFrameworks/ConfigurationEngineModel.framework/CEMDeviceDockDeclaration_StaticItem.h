@@ -17,9 +17,9 @@
 + (id)buildRequiredOnlyWithTileData:(id)arg1 withTileType:(id)arg2;
 + (id)buildWithTileData:(id)arg1 withTileType:(id)arg2;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadTileType; // @synthesize payloadTileType=_payloadTileType;
 @property(copy, nonatomic) CEMDeviceDockDeclaration_StaticItemTileData *payloadTileData; // @synthesize payloadTileData=_payloadTileData;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

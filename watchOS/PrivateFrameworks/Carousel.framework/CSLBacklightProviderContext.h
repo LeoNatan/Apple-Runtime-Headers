@@ -21,6 +21,7 @@
     CSLPIBacklightAssertion *_assertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLPIBacklightAssertion *assertion; // @synthesize assertion=_assertion;
 @property(nonatomic) _Bool timedOut; // @synthesize timedOut=_timedOut;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
@@ -29,7 +30,6 @@
 @property(nonatomic, getter=hasPendingRender) _Bool pendingRender; // @synthesize pendingRender=_pendingRender;
 @property(retain, nonatomic) CSLBalancedCATransaction *activeCATransaction; // @synthesize activeCATransaction=_activeCATransaction;
 @property(readonly, nonatomic) id <CSLSScreenWakeProvider> screenWakeProvider; // @synthesize screenWakeProvider=_screenWakeProvider;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (id)initWithScreenWakeProvider:(id)arg1;

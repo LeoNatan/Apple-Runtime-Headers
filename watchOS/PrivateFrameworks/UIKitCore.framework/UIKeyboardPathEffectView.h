@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *pointDecayDisplayLink; // @synthesize pointDecayDisplayLink=_pointDecayDisplayLink;
 @property(retain, nonatomic) NSMutableIndexSet *pointDecayQueue; // @synthesize pointDecayQueue=_pointDecayQueue;
 @property(nonatomic) _Bool done; // @synthesize done=_done;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *paths; // @synthesize paths=_paths;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) UIKBHandwritingQuadCurvePointFIFO *pointInterpolator; // @synthesize pointInterpolator=_pointInterpolator;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (CDStruct_818bb265)_currentThemeSettings;
 - (void)accessibilityValueChanged:(id)arg1;

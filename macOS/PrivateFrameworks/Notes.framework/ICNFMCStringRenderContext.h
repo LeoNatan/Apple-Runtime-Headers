@@ -20,6 +20,7 @@
     long long _mode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableString *buffer; // @synthesize buffer=_buffer;
 @property(nonatomic) BOOL updateBodyFlags; // @synthesize updateBodyFlags=_updateBodyFlags;
 @property long long mode; // @synthesize mode=_mode;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long characterCount; // @synthesize characterCount=_characterCount;
 @property(nonatomic) unsigned long long imageCount; // @synthesize imageCount=_imageCount;
 @property(retain, nonatomic) ICNFMCJunkRecorder *junkRecorder; // @synthesize junkRecorder=_junkRecorder;
-- (void).cxx_destruct;
 - (id)renderString;
 - (id)init;
 - (id)initForMode:(long long)arg1;

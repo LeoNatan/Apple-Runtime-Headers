@@ -20,9 +20,9 @@
 + (id)accessSpecifierFilteredForAssociatedAppBundleIdentifier:(id)arg1;
 + (id)accessSpecifierUnrestricted;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *associatedAppBundleIdentifier; // @synthesize associatedAppBundleIdentifier=_associatedAppBundleIdentifier;
 @property(readonly, nonatomic) unsigned long long accessLevel; // @synthesize accessLevel=_accessLevel;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithAccessLevel:(unsigned long long)arg1 associatedAppBundleIdentifier:(id)arg2;
 

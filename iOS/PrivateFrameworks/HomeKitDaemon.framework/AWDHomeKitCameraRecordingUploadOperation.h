@@ -34,6 +34,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long operationStartTime; // @synthesize operationStartTime=_operationStartTime;
 @property(retain, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
@@ -43,7 +44,6 @@
 @property(nonatomic) _Bool didCausePreviousClipToFinalizeBecauseMaxDurationExceeded; // @synthesize didCausePreviousClipToFinalizeBecauseMaxDurationExceeded=_didCausePreviousClipToFinalizeBecauseMaxDurationExceeded;
 @property(retain, nonatomic) NSString *clipModelUUID; // @synthesize clipModelUUID=_clipModelUUID;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

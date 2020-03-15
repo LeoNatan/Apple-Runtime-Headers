@@ -13,8 +13,8 @@
     NSString *_userDefaultsKey;
 }
 
-@property(readonly, copy) NSString *userDefaultsKey; // @synthesize userDefaultsKey=_userDefaultsKey;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *userDefaultsKey; // @synthesize userDefaultsKey=_userDefaultsKey;
 - (void)handleMenuAction:(id)arg1;
 - (void)update;
 - (void)featureEnabled:(BOOL)arg1;

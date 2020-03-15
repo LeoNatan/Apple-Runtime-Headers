@@ -17,10 +17,10 @@
 }
 
 + (id)hashCacheItemWithData:(id)arg1 URL:(id)arg2 identifier:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (id)MD5;
 - (_Bool)isEqual:(id)arg1;

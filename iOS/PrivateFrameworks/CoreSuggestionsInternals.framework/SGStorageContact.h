@@ -20,10 +20,10 @@
 + (id)mergeAll:(id)arg1;
 + (id)contactWithMasterEntityId:(long long)arg1;
 + (id)contactFromContactEntity:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) SGContactDetailsHolder *internalDetectedDetails; // @synthesize internalDetectedDetails=_internalDetectedDetails;
 @property(readonly, nonatomic) SGRecordId *recordId; // @synthesize recordId=_recordId;
 @property(readonly, nonatomic) long long masterEntityId; // @synthesize masterEntityId=_masterEntityId;
-- (void).cxx_destruct;
 - (_Bool)hasProfileFromTextMessage;
 - (_Bool)hasProfileFromInteraction;
 - (id)bestProfile;

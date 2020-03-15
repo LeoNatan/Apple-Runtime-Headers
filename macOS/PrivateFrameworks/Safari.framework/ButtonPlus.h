@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSCursor *_customCursor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCursor *customCursor; // @synthesize customCursor=_customCursor;
 @property(nonatomic) BOOL superviewIsFocusRingClipAncestor; // @synthesize superviewIsFocusRingClipAncestor=_superviewIsFocusRingClipAncestor;
 @property(retain, nonatomic) NSImage *imageForNonMainWindow; // @synthesize imageForNonMainWindow=_imageForNonMainWindow;
 @property(readonly, nonatomic) unsigned long long lastMouseDownModifierFlags; // @synthesize lastMouseDownModifierFlags=_lastMouseDownModifierFlags;
-- (void).cxx_destruct;
 - (id)_focusRingClipAncestor;
 - (void)setAcceptsFirstMouse:(BOOL)arg1;
 - (void)resetCursorRects;

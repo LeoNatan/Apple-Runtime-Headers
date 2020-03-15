@@ -14,9 +14,9 @@
     double _progress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (struct CGPoint)_simulatedTouchLocationForProgress;
 - (double)_progressFromContenViewFrame:(struct CGRect)arg1;
 - (struct CGAffineTransform)_transformForLocation:(struct CGPoint)arg1 transformMode:(long long)arg2;

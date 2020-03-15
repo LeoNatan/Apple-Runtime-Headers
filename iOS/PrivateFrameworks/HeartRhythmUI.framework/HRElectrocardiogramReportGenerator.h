@@ -18,12 +18,12 @@
     double _descriptionTextSizeAdjustment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double descriptionTextSizeAdjustment; // @synthesize descriptionTextSizeAdjustment=_descriptionTextSizeAdjustment;
 @property(nonatomic) unsigned long long heartGlyphPositionInFirstSectionText; // @synthesize heartGlyphPositionInFirstSectionText=_heartGlyphPositionInFirstSectionText;
 @property(retain, nonatomic) NSArray *waveformPaths; // @synthesize waveformPaths=_waveformPaths;
 @property(nonatomic) struct CGContext *pdfContext; // @synthesize pdfContext=_pdfContext;
 @property(readonly, nonatomic) __weak id <HRElectrocardiogramReportDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (_Bool)_didMultilineBulletFlowIntoSectionThree:(id)arg1 remainingRange:(struct _NSRange)arg2;
 - (id)_bulletedDescriptionTextAttributes;
 - (void)_drawRect:(struct CGRect)arg1;

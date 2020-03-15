@@ -16,8 +16,8 @@
     NSMapTable *_backingMapTable;
 }
 
-@property(retain, nonatomic) NSMapTable *backingMapTable; // @synthesize backingMapTable=_backingMapTable;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMapTable *backingMapTable; // @synthesize backingMapTable=_backingMapTable;
 - (id)_setForKey:(id)arg1;
 - (id)objectEnumerator;
 - (id)keyEnumerator;

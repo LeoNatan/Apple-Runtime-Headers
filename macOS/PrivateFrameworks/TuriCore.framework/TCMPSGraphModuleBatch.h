@@ -13,18 +13,18 @@ __attribute__((visibility("hidden")))
 @interface TCMPSGraphModuleBatch : NSObject
 {
     id <MTLCommandBuffer> _commandBuffer;
-    struct NSArray *_input;
-    struct NSArray *_grad;
-    struct NSArray *_lossState;
-    struct NSArray *_output;
+    NSArray *_input;
+    NSArray *_grad;
+    NSArray *_lossState;
+    NSArray *_output;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *output; // @synthesize output=_output;
 @property(retain, nonatomic) NSArray *lossState; // @synthesize lossState=_lossState;
 @property(retain, nonatomic) NSArray *grad; // @synthesize grad=_grad;
 @property(retain, nonatomic) NSArray *input; // @synthesize input=_input;
 @property(readonly, nonatomic) id <MTLCommandBuffer> commandBuffer; // @synthesize commandBuffer=_commandBuffer;
-- (void).cxx_destruct;
 - (id)initWithCommandBuffer:(id)arg1;
 
 @end

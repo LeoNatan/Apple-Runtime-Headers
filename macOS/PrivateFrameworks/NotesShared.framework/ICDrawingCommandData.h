@@ -20,6 +20,8 @@
     CDStruct_4a3d0796 _baseValues;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct ICDrawingCommandID commandID; // @synthesize commandID=_commandID;
 @property(nonatomic) struct CGPoint clipNormal; // @synthesize clipNormal=_clipNormal;
 @property(nonatomic) struct CGPoint clipOrigin; // @synthesize clipOrigin=_clipOrigin;
@@ -29,8 +31,6 @@
 @property(retain, nonatomic) struct CGColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) vector_352d2fdf *points; // @synthesize points=_points;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) struct CGRect bounds;
 - (double)renderCost;

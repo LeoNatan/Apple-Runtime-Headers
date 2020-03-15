@@ -19,7 +19,7 @@
 + (id)imageDataWithMarkupModelData:(id)arg1 sourceImageURL:(id)arg2;
 + (id)imageDataWithMarkupModelData:(id)arg1 sourceImageData:(id)arg2 embedData:(BOOL)arg3;
 + (id)imageDataWithMarkupModelData:(id)arg1 sourceImageData:(id)arg2;
-+ (id)createProcessingMarkupViewControllerOutWindow:(struct NSWindow **)arg1;
++ (id)createProcessingMarkupViewControllerOutWindow:(id *)arg1;
 + (id)createMarkupViewController;
 + (id)cleanImageMetadataFromData:(id)arg1;
 + (BOOL)hasPrivateImageMetadata:(id)arg1;

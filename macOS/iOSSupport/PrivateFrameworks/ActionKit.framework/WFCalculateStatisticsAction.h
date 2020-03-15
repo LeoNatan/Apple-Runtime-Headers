@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)outputIsExemptFromTaintTrackingInheritance;
 - (id)outputName;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 

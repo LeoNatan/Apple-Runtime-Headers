@@ -15,9 +15,9 @@
 }
 
 + (id)pairWithObject:(id)arg1 keyPath:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, nonatomic) NSObject *observedObject; // @synthesize observedObject=_observedObject;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1 keyPath:(id)arg2;
 
 @end

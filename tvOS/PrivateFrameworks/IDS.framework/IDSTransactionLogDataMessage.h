@@ -13,8 +13,8 @@
     NSData *_dataValue;
 }
 
-@property(readonly, nonatomic) NSData *dataValue; // @synthesize dataValue=_dataValue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *dataValue; // @synthesize dataValue=_dataValue;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithData:(id)arg1 accountUniqueID:(id)arg2 fromID:(id)arg3 loginID:(id)arg4 serviceName:(id)arg5;

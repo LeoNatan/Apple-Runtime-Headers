@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     NSHashTable *_viewControllers;
 }
 
-@property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 - (void)_reloadViewControllersWithPreviewStatus:(id)arg1 animated:(_Bool)arg2;
 - (id)_operationQueue;
 - (void)_connectToAudioPlayer;

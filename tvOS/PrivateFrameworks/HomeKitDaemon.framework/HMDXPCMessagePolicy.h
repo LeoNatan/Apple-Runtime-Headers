@@ -11,12 +11,13 @@
     unsigned long long _entitlements;
 }
 
++ (id)defaultPolicy;
 + (id)policyWithEntitlements:(unsigned long long)arg1;
 @property(readonly) unsigned long long entitlements; // @synthesize entitlements=_entitlements;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithEntitlements:(unsigned long long)arg1;
+- (id)__initWithEntitlements:(unsigned long long)arg1;
 - (id)init;
 
 @end

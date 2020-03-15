@@ -28,6 +28,7 @@
 
 + (id)_createTestSuggestionWithKeyAssets:(id)arg1 representativeAssets:(id)arg2;
 + (BOOL)serverSupportsSuggestion;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *featuresData; // @synthesize featuresData=_featuresData;
 @property(copy, nonatomic) NSData *actionData; // @synthesize actionData=_actionData;
 @property(copy, nonatomic) NSDate *expungeDate; // @synthesize expungeDate=_expungeDate;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned short type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (id)propertiesDescription;
 - (BOOL)supportsDirectDeletion;

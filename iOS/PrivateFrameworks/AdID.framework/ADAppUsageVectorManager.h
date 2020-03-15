@@ -20,6 +20,7 @@
     ADBackgroundTaskRequest *_task;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADBackgroundTaskRequest *task; // @synthesize task=_task;
 @property(retain, nonatomic) NSMutableDictionary *adamIDtoBundleID; // @synthesize adamIDtoBundleID=_adamIDtoBundleID;
 @property(retain, nonatomic) NSMutableDictionary *vectorWeightTotals; // @synthesize vectorWeightTotals=_vectorWeightTotals;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSNumber *maxQueryElements; // @synthesize maxQueryElements=_maxQueryElements;
 @property(retain, nonatomic) NSArray *lookbackPeriods; // @synthesize lookbackPeriods=_lookbackPeriods;
 @property(retain, nonatomic) NSString *version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (id)adamIDForBundleID:(id)arg1;
 - (id)bundleIdForAdamId:(id)arg1;
 - (void)buildBundleIDtoAdamIDCache:(id)arg1;

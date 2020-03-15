@@ -15,10 +15,10 @@
     NSSet *_propertyNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *propertyNames; // @synthesize propertyNames=_propertyNames;
 @property(retain, nonatomic) PGGraphPersonNode *personNode; // @synthesize personNode=_personNode;
 @property(readonly, nonatomic) NSString *personLocalIdentifier; // @synthesize personLocalIdentifier=_personLocalIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)mergeChange:(id)arg1;
 - (unsigned long long)type;

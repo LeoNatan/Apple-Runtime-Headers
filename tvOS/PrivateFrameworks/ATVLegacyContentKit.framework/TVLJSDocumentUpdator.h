@@ -17,11 +17,11 @@
 }
 
 + (id)documentUpdatorForContext:(struct OpaqueJSContext *)arg1 xmlDocument:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUsed; // @synthesize isUsed=_isUsed;
 @property(retain, nonatomic) TVLXMLDocument *xmlDocument; // @synthesize xmlDocument=_xmlDocument;
 @property(retain, nonatomic) TVLDocument *feedDocument; // @synthesize feedDocument=_feedDocument;
 @property(retain, nonatomic) TVLLegacyJSContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)updateDocument;
 - (id)initWithContext:(id)arg1 feedDocument:(id)arg2 xmlDocument:(id)arg3;
 

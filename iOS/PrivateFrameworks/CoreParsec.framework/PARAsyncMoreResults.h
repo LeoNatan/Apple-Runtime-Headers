@@ -6,12 +6,10 @@
 
 #import <SearchFoundation/SFMoreResults.h>
 
-@class NSURL, NSXPCListenerEndpoint, PARSessionConfiguration;
+@class NSURL;
 
 @interface PARAsyncMoreResults : SFMoreResults
 {
-    NSXPCListenerEndpoint *_endpoint;
-    PARSessionConfiguration *_configuration;
     double _scale;
     NSURL *_moreResultsURL;
     unsigned long long _queryId;
@@ -21,13 +19,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)moreResults:(id)arg1 label:(id)arg2 session:(id)arg3 scale:(double)arg4 queryId:(unsigned long long)arg5 clientQueryId:(unsigned long long)arg6;
 + (id)moreResults:(id)arg1 label:(id)arg2 session:(id)arg3 scale:(double)arg4 queryId:(unsigned long long)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long clientQueryId; // @synthesize clientQueryId=_clientQueryId;
 @property(readonly, nonatomic) unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(readonly, copy, nonatomic) NSURL *moreResultsURL; // @synthesize moreResultsURL=_moreResultsURL;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
-@property(readonly, nonatomic) PARSessionConfiguration *configuration; // @synthesize configuration=_configuration;
-@property(readonly, nonatomic) NSXPCListenerEndpoint *endpoint; // @synthesize endpoint=_endpoint;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

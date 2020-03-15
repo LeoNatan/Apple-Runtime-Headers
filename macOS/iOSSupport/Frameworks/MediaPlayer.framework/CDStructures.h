@@ -58,14 +58,6 @@ struct MPLibraryAddStatusObserverConfiguration {
     char isLibraryAddEligible;
 };
 
-struct NSMapTable {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double top;
     double left;

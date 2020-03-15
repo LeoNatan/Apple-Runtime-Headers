@@ -14,8 +14,8 @@
     NSMutableDictionary *_valuesByCharacteristicUUID;
 }
 
-@property(readonly, nonatomic) NSSet *allCharacteristics; // @synthesize allCharacteristics=_allCharacteristics;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *allCharacteristics; // @synthesize allCharacteristics=_allCharacteristics;
 - (void)removeValueForCharacteristic:(id)arg1;
 - (void)setValue:(id)arg1 forCharacteristic:(id)arg2;
 - (id)valueForCharacteristic:(id)arg1;

@@ -17,9 +17,9 @@
 }
 
 + (id)machineAuthorizationContextWithStoreClient:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) CKDialogContext *dialogContext; // @synthesize dialogContext=_dialogContext;
 @property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
-- (void).cxx_destruct;
 - (void)storeRequest:(id)arg1 didAuthenticateAccount:(id)arg2;
 - (id)_requestBodyForAccount:(id)arg1 bagURLKey:(id)arg2;
 - (void)_runRequestWithAccount:(id)arg1 bagURLKey:(id)arg2 authenticationContext:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -25,6 +25,7 @@
     NSString *_web_fbq;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isLocalQuery; // @synthesize isLocalQuery=_isLocalQuery;
 @property(nonatomic) _Bool didReissue; // @synthesize didReissue=_didReissue;
 @property(readonly, nonatomic) _Bool gotQueryComplete; // @synthesize gotQueryComplete=_gotQueryComplete;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) SPSearchQuery *query; // @synthesize query=_query;
 @property(readonly, nonatomic) unsigned int queryID; // @synthesize queryID=_queryID;
 @property(readonly, nonatomic) __weak id <SPDaemonQueryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)initWithQuery:(id)arg1 queue:(id)arg2 delegate:(id)arg3;
 - (void)queryDidComplete;
 - (void)handleLocalQueryWithResultSet:(id)arg1;

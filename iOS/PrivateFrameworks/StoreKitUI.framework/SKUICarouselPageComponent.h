@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     long long _missingItemCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double cycleInterval; // @synthesize cycleInterval=_cycleInterval;
 @property(readonly, nonatomic) NSArray *carouselItems; // @synthesize carouselItems=_carouselItems;
-- (void).cxx_destruct;
 - (id)valueForMetricsField:(id)arg1;
 - (id)metricsElementName;
 - (_Bool)isMissingItemData;

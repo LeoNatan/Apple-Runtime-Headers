@@ -26,6 +26,7 @@
     SBHomeGestureSettings *_homeGestureSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBHomeGestureSettings *homeGestureSettings; // @synthesize homeGestureSettings=_homeGestureSettings;
 @property(nonatomic) _Bool hasUserInteractedWithActiveApplication; // @synthesize hasUserInteractedWithActiveApplication=_hasUserInteractedWithActiveApplication;
 @property(retain, nonatomic) NSDate *lastTransitionCompletionDate; // @synthesize lastTransitionCompletionDate=_lastTransitionCompletionDate;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) SBMainDisplayLayoutState *currentLayoutState; // @synthesize currentLayoutState=_currentLayoutState;
 @property(readonly, nonatomic) SBWorkspaceApplicationSceneTransitionContext *activeTransitionContext; // @synthesize activeTransitionContext=_activeTransitionContext;
 @property(retain, nonatomic) SBFluidSwitcherGesture *activeGesture; // @synthesize activeGesture=_activeGesture;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

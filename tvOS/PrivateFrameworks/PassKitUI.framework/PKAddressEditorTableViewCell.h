@@ -13,8 +13,8 @@
     UIStackView *_stackView;
 }
 
-@property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

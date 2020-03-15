@@ -27,13 +27,13 @@
 + (id)phoneNumberChangedObservableWithCoreTelephonyServices:(id)arg1 serverConnection:(struct __CTServerConnection *)arg2;
 + (id)continuousPhoneNumberObservableWithCoreTelephonyClient:(id)arg1 services:(id)arg2 serverConnection:(struct __CTServerConnection *)arg3;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serverConnectionQueue; // @synthesize serverConnectionQueue=_serverConnectionQueue;
 @property(nonatomic) struct __CTServerConnection *serverConnection; // @synthesize serverConnection=_serverConnection;
 @property(retain, nonatomic) id <CNCancelable> subjectToken; // @synthesize subjectToken=_subjectToken;
 @property(readonly, nonatomic) CNReplaySubject *subject; // @synthesize subject=_subject;
 @property(readonly, nonatomic) id <CNDCoreTelephonyServices> coreTelephonyServices; // @synthesize coreTelephonyServices=_coreTelephonyServices;
 @property(readonly, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
-- (void).cxx_destruct;
 - (void)nts_configureSubjectIfNecessary;
 - (void)nts_configureConnectionIfNecessary;
 - (void)configureStateIfNecessary;

@@ -22,6 +22,7 @@
 }
 
 + (id)secureCodedPropertyKeys;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
 @property(retain, nonatomic) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property(retain, nonatomic) NSString *alertMessage; // @synthesize alertMessage=_alertMessage;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool passwordChangeRequired; // @synthesize passwordChangeRequired=_passwordChangeRequired;
 @property(nonatomic) _Bool loginDisabled; // @synthesize loginDisabled=_loginDisabled;
 @property(retain, nonatomic) GKPlayerCredential *credential; // @synthesize credential=_credential;
-- (void).cxx_destruct;
 
 @end
 

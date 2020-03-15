@@ -14,9 +14,9 @@
     unsigned long long _maximumChangeThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maximumChangeThreshold; // @synthesize maximumChangeThreshold=_maximumChangeThreshold;
 @property(copy, nonatomic) PHPersistentChangeToken *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 
 @end
 

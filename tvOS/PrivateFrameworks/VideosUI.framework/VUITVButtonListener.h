@@ -15,9 +15,9 @@
 }
 
 + (id)defaultListener;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *gestureToHandlerMap; // @synthesize gestureToHandlerMap=_gestureToHandlerMap;
 @property(retain, nonatomic) UITapGestureRecognizer *tvButtonRecognizer; // @synthesize tvButtonRecognizer=_tvButtonRecognizer;
-- (void).cxx_destruct;
 - (void)_tvButtonAction:(id)arg1;
 - (void)registerHandler:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithAttachingToView:(id)arg1;

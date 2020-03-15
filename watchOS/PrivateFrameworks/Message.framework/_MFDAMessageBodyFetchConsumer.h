@@ -21,11 +21,11 @@
     _Bool _hasLocalCopyOfData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasLocalCopyOfData; // @synthesize hasLocalCopyOfData=_hasLocalCopyOfData;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) MFError *error; // @synthesize error=_error;
 @property(retain, nonatomic) id <MFDAStreamingContentConsumer> streamConsumer; // @synthesize streamConsumer=_streamConsumer;
-- (void).cxx_destruct;
 - (id)streamingContentConsumer;
 @property(readonly, nonatomic) _Bool succeeded; // @synthesize succeeded=_succeeded;
 - (void)handleResponse:(id)arg1 error:(id)arg2;

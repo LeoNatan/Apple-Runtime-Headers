@@ -15,8 +15,8 @@
 }
 
 + (int)executeSystemCommand:(id)arg1 stdoutTo:(id)arg2;
-@property(readonly, nonatomic, getter=_queue) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_queue) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (id)_uniqueTemporaryFileURL;
 - (id)_siriCardLogDirectoryURL;
 @property(readonly, copy, nonatomic, getter=_siriLogDirectoryURL) NSURL *siriLogDirectoryURL;
@@ -30,7 +30,6 @@
 - (void)_captureLogsAtURL:(id)arg1 logName:(id)arg2 sinceTime:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)capturePreviousConversationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureSiriTTSAudioWithCompletion:(CDUnknownBlockType)arg1;
-- (void)captureSiriRemembersLogWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureSiriVoiceTriggerLogsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureSiriSpeechLogsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureCardLogsSinceTime:(double)arg1 completion:(CDUnknownBlockType)arg2;

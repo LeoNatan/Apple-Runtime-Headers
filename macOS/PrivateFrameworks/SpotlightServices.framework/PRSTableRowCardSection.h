@@ -22,6 +22,7 @@
     NSArray *_values;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(nonatomic) long long rowType; // @synthesize rowType=_rowType;
 @property(retain, nonatomic) PRSTableAlignmentSchema *alignmentSchema; // @synthesize alignmentSchema=_alignmentSchema;
@@ -32,7 +33,6 @@
 @property BOOL reducedRowHeight; // @synthesize reducedRowHeight=_reducedRowHeight;
 @property BOOL cardPaddingTop; // @synthesize cardPaddingTop=_cardPaddingTop;
 @property BOOL cardPaddingBottom; // @synthesize cardPaddingBottom=_cardPaddingBottom;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 

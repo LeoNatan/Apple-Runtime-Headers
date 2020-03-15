@@ -18,11 +18,11 @@
     NSMutableDictionary *_sendMessageIdentifierToPhone;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sendMessageIdentifierToPhone; // @synthesize sendMessageIdentifierToPhone=_sendMessageIdentifierToPhone;
 @property(retain, nonatomic) IDSService *idsService; // @synthesize idsService=_idsService;
 @property(retain, nonatomic) MSASAlbum *album; // @synthesize album=_album;
 @property(retain, nonatomic) MSASStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5;
 - (void)removeSharingRelationships:(id)arg1 forAlbum:(id)arg2;
 - (void)addPendingPhoneInvitations:(id)arg1 toOwnedAlbum:(id)arg2 inStateMachin:(id)arg3;

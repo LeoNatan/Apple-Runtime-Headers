@@ -22,11 +22,11 @@
 + (id)moveOperationWithItem:(id)arg1 fromIndexPath:(id)arg2 toIndexPath:(id)arg3;
 + (id)deleteOperationWithItem:(id)arg1 atIndexPath:(id)arg2;
 + (id)insertOperationWithItem:(id)arg1 atIndexPath:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSIndexPath *toIndexPath; // @synthesize toIndexPath=_toIndexPath;
 @property(readonly, copy, nonatomic) NSIndexPath *fromIndexPath; // @synthesize fromIndexPath=_fromIndexPath;
 @property(readonly, nonatomic) id item; // @synthesize item=_item;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_operationDescriptionWithVerboseType:(_Bool)arg1;
 @property(readonly, copy, nonatomic) NSString *operationDescription;
 @property(readonly, copy) NSString *description;

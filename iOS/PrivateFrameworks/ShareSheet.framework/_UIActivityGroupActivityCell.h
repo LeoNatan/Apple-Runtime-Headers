@@ -23,6 +23,7 @@
 
 + (struct CGSize)preferredSizeForSheetWidth:(double)arg1 sizeCategory:(id)arg2 titleLabelText:(id)arg3 screenScale:(double)arg4;
 + (void)invalidatePreferredSizes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *highlightLayer; // @synthesize highlightLayer=_highlightLayer;
 @property(retain, nonatomic) UIImageView *highlightedImageView; // @synthesize highlightedImageView=_highlightedImageView;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) _UIActivityGroupActivityCellTitleLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) unsigned long long sequence; // @synthesize sequence=_sequence;
-- (void).cxx_destruct;
 - (void)initHighlightedImageViewIfNeeded;
 - (void)updateHighlightedImageViewIfNeeded;
 - (void)initHighlightLayerIfNeeded;

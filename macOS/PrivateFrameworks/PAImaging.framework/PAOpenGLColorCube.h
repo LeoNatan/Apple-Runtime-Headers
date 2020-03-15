@@ -26,8 +26,8 @@
 + (id)_newIdentityColorCube;
 + (id)identityColorCube;
 + (void)initialize;
-@property(readonly, nonatomic) unsigned int gridPoints; // @synthesize gridPoints=_gridSize;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int gridPoints; // @synthesize gridPoints=_gridSize;
 - (void)_setTexture:(id)arg1 forDevice:(id)arg2;
 - (id)_newTextureForDevice:(id)arg1;
 - (id)_lookupTextureForDevice:(id)arg1;

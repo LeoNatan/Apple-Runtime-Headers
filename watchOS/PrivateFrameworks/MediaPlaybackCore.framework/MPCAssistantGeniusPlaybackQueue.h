@@ -14,8 +14,8 @@
 }
 
 + (id)geniusQueueWithContextID:(id)arg1 seedTrack:(id)arg2;
-@property(readonly, nonatomic) NSURL *seedTrack; // @synthesize seedTrack=_seedTrack;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *seedTrack; // @synthesize seedTrack=_seedTrack;
 - (struct _MRSystemAppPlaybackQueue *)createRemotePlaybackQueue;
 - (id)description;
 - (id)initWithContextID:(id)arg1 seedTrack:(id)arg2;

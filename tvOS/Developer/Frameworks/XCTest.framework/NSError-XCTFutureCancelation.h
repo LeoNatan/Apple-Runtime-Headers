@@ -14,5 +14,6 @@
 @property(readonly) _Bool xct_isFutureCancelation;
 @property(readonly) _Bool xcui_isApplicationNotRunningError;
 - (_Bool)xcui_isUITestingError:(long long)arg1;
+@property(readonly) _Bool xct_shouldBeRecordedAsTestFailure;
 @end
 

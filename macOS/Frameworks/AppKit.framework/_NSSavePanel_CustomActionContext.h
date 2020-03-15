@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *urlsToActOn;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *urlsToActOn; // @synthesize urlsToActOn;
 @property __weak NSSavePanelCustomAction *action; // @synthesize action;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

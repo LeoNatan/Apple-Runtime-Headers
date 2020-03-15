@@ -11,8 +11,8 @@
 @interface IMSticker : NSObject
 {
     NSURL *_fileURL;
-    struct NSString *_stickerGUID;
-    struct NSString *_stickerPackGUID;
+    NSString *_stickerGUID;
+    NSString *_stickerPackGUID;
     NSString *_accessibilityLabel;
     NSString *_moodCategory;
     NSString *_stickerName;
@@ -30,12 +30,12 @@
 @property(readonly, copy, nonatomic) NSString *stickerPackGUID; // @synthesize stickerPackGUID=_stickerPackGUID;
 @property(readonly, copy, nonatomic) NSString *stickerGUID; // @synthesize stickerGUID=_stickerGUID;
 @property(readonly, copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (id)initWithStickerPropertyDictionary:(id)arg1 stickerPackID:(struct NSString *)arg2 stickerPackBundlePath:(id)arg3;
+- (id)initWithStickerPropertyDictionary:(id)arg1 stickerPackID:(id)arg2 stickerPackBundlePath:(id)arg3;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)initWithStickerID:(struct NSString *)arg1 stickerPackID:(struct NSString *)arg2 fileURL:(id)arg3 accessibilityLabel:(id)arg4 moodCategory:(id)arg5 stickerName:(id)arg6;
+- (id)initWithStickerID:(id)arg1 stickerPackID:(id)arg2 fileURL:(id)arg3 accessibilityLabel:(id)arg4 moodCategory:(id)arg5 stickerName:(id)arg6;
 - (id)init;
 
 @end

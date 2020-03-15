@@ -15,9 +15,9 @@
     UISwitch *_enabledSwitch;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISwitch *enabledSwitch; // @synthesize enabledSwitch=_enabledSwitch;
 @property(nonatomic) __weak id <MTUISwitchTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setSwitchStateEnabled:(BOOL)arg1;
 - (void)switchAction:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

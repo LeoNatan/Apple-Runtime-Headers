@@ -19,11 +19,11 @@
     NSMutableDictionary *_modifiedKeyValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *modifiedKeyValues; // @synthesize modifiedKeyValues=_modifiedKeyValues;
 @property(retain, nonatomic) NSMutableOrderedSet *ignoredKeys; // @synthesize ignoredKeys=_ignoredKeys;
 @property(readonly, nonatomic) PLManagedObject *backingManagedObject; // @synthesize backingManagedObject=_backingManagedObject;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
-- (void).cxx_destruct;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)removeObjectForKey:(id)arg1;

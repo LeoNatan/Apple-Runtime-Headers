@@ -21,11 +21,11 @@
     CDUnknownBlockType _applier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType applier; // @synthesize applier=_applier;
 @property(readonly, nonatomic) id presentationValue; // @synthesize presentationValue=_presentationValue;
 @property(retain, nonatomic) id modelValue; // @synthesize modelValue=_modelValue;
 @property(retain, nonatomic) id zeroValue; // @synthesize zeroValue=_zeroValue;
-- (void).cxx_destruct;
 - (id)_reusableAnimationWithClass:(Class)arg1;
 - (id)_reusableAnimationsForClass:(Class)arg1;
 - (void)_displayLinkFired:(id)arg1;

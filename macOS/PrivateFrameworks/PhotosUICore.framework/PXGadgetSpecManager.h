@@ -20,12 +20,12 @@
     NSMutableSet *_updatedGadgets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *updatedGadgets; // @synthesize updatedGadgets=_updatedGadgets;
 @property(retain, nonatomic) PXExtendedTraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) long long scrollAxis; // @synthesize scrollAxis=_scrollAxis;
 @property(readonly, nonatomic) Class gadgetSpecClass; // @synthesize gadgetSpecClass=_gadgetSpecClass;
 @property(retain, nonatomic) PXGadgetSpec *currentGadgetSpec; // @synthesize currentGadgetSpec=_currentGadgetSpec;
-- (void).cxx_destruct;
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (id)mutableChangeObject;
 - (void)_extendedTraitCollection:(id)arg1 didChange:(unsigned long long)arg2;

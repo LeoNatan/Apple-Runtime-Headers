@@ -23,13 +23,13 @@
 
 + (BOOL)_hideHandlesInTranscript;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL singleOptionPressed; // @synthesize singleOptionPressed=_singleOptionPressed;
 @property BOOL altFunction; // @synthesize altFunction=_altFunction;
 @property(retain) NSMutableSet *guidsForAllOwnedTransfers; // @synthesize guidsForAllOwnedTransfers=_guidsForAllOwnedTransfers;
 @property(nonatomic) BOOL createDebugElements; // @synthesize createDebugElements=_createDebugElements;
 @property(nonatomic) BOOL animateReceiptChanges; // @synthesize animateReceiptChanges=_animateReceiptChanges;
 @property(retain) DateDOMProvider *dateDOMProvider; // @synthesize dateDOMProvider=_dateDOMProvider;
-- (void).cxx_destruct;
 - (void)deselectChatItem:(id)arg1;
 - (void)selectChatItem:(id)arg1;
 - (id)parseMessageText:(id)arg1 chatItem:(id)arg2 messageElement:(id)arg3;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _seed;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long seed; // @synthesize seed=_seed;
 @property(copy) NSDictionary *properties; // @synthesize properties=_properties;
 @property(copy) SFLBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(copy) NSString *listIdentifier; // @synthesize listIdentifier=_listIdentifier;
 @property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

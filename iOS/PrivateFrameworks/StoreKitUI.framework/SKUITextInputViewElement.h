@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (id)supportedFeatures;
 + (_Bool)isTextInputType:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSecure) _Bool secure; // @synthesize secure=_secure;
 @property(readonly, nonatomic) NSString *placeholderText; // @synthesize placeholderText=_placeholderText;
 @property(readonly, nonatomic) long long maximumLength; // @synthesize maximumLength=_maximumLength;
 @property(readonly, nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
-- (void).cxx_destruct;
 - (unsigned long long)elementType;
 - (id)applyUpdatesWithElement:(id)arg1;
 @property(readonly, nonatomic) SKUIAnimatorDOMFeature *animationInterface;

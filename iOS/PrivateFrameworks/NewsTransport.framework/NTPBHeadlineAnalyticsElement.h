@@ -23,12 +23,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *preseenCountTrackingIdentifier; // @synthesize preseenCountTrackingIdentifier=_preseenCountTrackingIdentifier;
 @property(retain, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(nonatomic) _Bool needsSeenStateTracking; // @synthesize needsSeenStateTracking=_needsSeenStateTracking;
 @property(nonatomic) long long articleVersion; // @synthesize articleVersion=_articleVersion;
 @property(retain, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

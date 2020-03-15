@@ -14,6 +14,7 @@
 + (id)sharedInstance;
 - (id)remapKeyWithString:(id)arg1 stringWithoutModifiers:(id)arg2 modifierFlags:(unsigned int)arg3 keyboardState:(id)arg4;
 - (_Bool)isZhuyinCharacterBeforeInsertionPointOfKeyboardState:(id)arg1;
+- (_Bool)shouldInsertZhuyinCharacterAfter:(id)arg1;
 - (id)punctuationMap;
 
 @end

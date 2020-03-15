@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_currentLayoutMethodName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *currentLayoutMethodName; // @synthesize currentLayoutMethodName=_currentLayoutMethodName;
 @property(readonly, nonatomic) NSView *currentLayoutView; // @synthesize currentLayoutView=_currentLayoutView;
 @property(readonly, nonatomic) NSValue *geometricPropertyValue; // @synthesize geometricPropertyValue=_geometricPropertyValue;
 @property(readonly, nonatomic) NSString *geometricPropertyName; // @synthesize geometricPropertyName=_geometricPropertyName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithGeometricPropertyName:(id)arg1 value:(id)arg2 currentLayoutView:(id)arg3 methodName:(id)arg4;
 

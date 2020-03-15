@@ -14,9 +14,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) HMCameraClip *cameraClip; // @synthesize cameraClip=_cameraClip;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithCameraClip:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 

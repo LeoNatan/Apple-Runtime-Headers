@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     PUICTableViewCellBackgroundView *_backgroundSourceOverView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICTableViewCellBackgroundView *backgroundSourceOverView; // @synthesize backgroundSourceOverView=_backgroundSourceOverView;
 @property(retain, nonatomic) PUICTableViewCellBackgroundView *backgroundColorDodgeView; // @synthesize backgroundColorDodgeView=_backgroundColorDodgeView;
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;
-- (void).cxx_destruct;
 - (void)setRouteIconViewForRouteType:(int)arg1 origin:(id)arg2;
 - (void)_adjustBackgroundPill;
 - (void)_updateStyle;

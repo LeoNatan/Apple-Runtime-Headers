@@ -16,10 +16,10 @@
 }
 
 + (id)morpherOverrideFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *morpher; // @synthesize morpher=_morpher;
 @property(readonly, copy, nonatomic) NSString *geometry; // @synthesize geometry=_geometry;
-- (void).cxx_destruct;
 - (id)overridenMorpherForAvatar:(id)arg1;
 - (void)applyToAvatar:(id)arg1;
 - (id)initWithGeometry:(id)arg1 morpher:(id)arg2 value:(float)arg3;

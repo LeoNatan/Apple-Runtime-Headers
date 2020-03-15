@@ -14,8 +14,8 @@
     id <IMAPMessage> _message;
 }
 
-@property(retain) id <IMAPMessage> message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(retain) id <IMAPMessage> message; // @synthesize message=_message;
 - (unsigned int)bytesFetched;
 - (void)saveCompletedDownloads;
 - (id)createCopy;

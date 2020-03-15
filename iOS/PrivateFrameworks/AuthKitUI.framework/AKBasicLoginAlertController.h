@@ -6,50 +6,42 @@
 
 #import <UIKit/UIAlertController.h>
 
+#import <AuthKitUI/AKBasicLoginAnimateProtocol-Protocol.h>
+#import <AuthKitUI/AKBasicLoginPasswordFieldProtocol-Protocol.h>
+#import <AuthKitUI/AKSecondFactorCodeEntry-Protocol.h>
 #import <AuthKitUI/UITextFieldDelegate-Protocol.h>
 
-@class NSString;
-@protocol AKBasicLoginAlertControllerDelegate, NSObject;
+@class AKBasicLoginActions, AKBasicLoginSecondFactorActions, NSString;
+@protocol AKBasicLoginControllerDelegate, NSObject;
 
-@interface AKBasicLoginAlertController : UIAlertController <UITextFieldDelegate>
+@interface AKBasicLoginAlertController : UIAlertController <UITextFieldDelegate, AKBasicLoginPasswordFieldProtocol, AKSecondFactorCodeEntry, AKBasicLoginAnimateProtocol>
 {
     long long _alertStyle;
     id <NSObject> _didEnterCodeObserver;
-    CDUnknownBlockType _ak_cancelAction;
-    CDUnknownBlockType _ak_authenticateAction;
-    CDUnknownBlockType _ak_createIDAction;
-    CDUnknownBlockType _ak_useIDAction;
-    CDUnknownBlockType _ak_forgotIDAction;
-    CDUnknownBlockType _ak_forgotPasswordAction;
     NSString *_ak_username;
     NSString *_ak_password;
     NSString *_ak_title;
     NSString *_ak_reason;
     NSString *_ak_authenticateButtonTitle;
-    CDUnknownBlockType _ak_regenerateCodeAction;
-    CDUnknownBlockType _ak_codeEnteredAction;
+    NSString *_ak_cancelButtonTitle;
     NSString *_generatedCode;
-    id <AKBasicLoginAlertControllerDelegate> _delegate;
+    AKBasicLoginActions *_loginActions;
+    AKBasicLoginSecondFactorActions *_secondFactorActions;
+    id <AKBasicLoginControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AKBasicLoginAlertControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(copy, nonatomic) NSString *generatedCode; // @synthesize generatedCode=_generatedCode;
-@property(copy, nonatomic) CDUnknownBlockType codeEnteredAction; // @synthesize codeEnteredAction=_ak_codeEnteredAction;
-@property(copy, nonatomic) CDUnknownBlockType regenerateCodeAction; // @synthesize regenerateCodeAction=_ak_regenerateCodeAction;
-@property(copy, nonatomic) CDUnknownBlockType forgotPasswordAction; // @synthesize forgotPasswordAction=_ak_forgotPasswordAction;
-@property(copy, nonatomic) CDUnknownBlockType forgotIDAction; // @synthesize forgotIDAction=_ak_forgotIDAction;
-@property(copy, nonatomic) CDUnknownBlockType useIDAction; // @synthesize useIDAction=_ak_useIDAction;
-@property(copy, nonatomic) CDUnknownBlockType createIDAction; // @synthesize createIDAction=_ak_createIDAction;
-@property(copy, nonatomic) CDUnknownBlockType authenticateAction; // @synthesize authenticateAction=_ak_authenticateAction;
-@property(copy, nonatomic) CDUnknownBlockType ak_cancelAction; // @synthesize ak_cancelAction=_ak_cancelAction;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AKBasicLoginControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy, nonatomic) AKBasicLoginSecondFactorActions *secondFactorActions; // @synthesize secondFactorActions=_secondFactorActions;
+@property(copy, nonatomic) AKBasicLoginActions *loginActions; // @synthesize loginActions=_loginActions;
+@property(copy, nonatomic) NSString *generatedCode; // @synthesize generatedCode=_generatedCode;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)_endObservingDidEnterCodeNotifications;
 - (void)_didEnterCode:(id)arg1;
 - (void)_beginObservingDidEnterCodeNotifications;
 - (void)_passwordFieldDidChange:(id)arg1;
-- (void)_clearPasswordField;
-- (void)_jiggleTheAlert;
+- (void)clearPasswordField;
+- (void)jiggleAView;
 - (void)stopAnimating;
 - (void)startAnimating;
 - (_Bool)disablesAutomaticKeyboardDismissal;
@@ -59,6 +51,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)setPasscodeFieldDisabled:(_Bool)arg1;
 - (void)clearSecondFactorEntry;
+@property(copy, nonatomic) NSString *cancelButtonTitle; // @synthesize cancelButtonTitle=_ak_cancelButtonTitle;
 @property(copy, nonatomic) NSString *authenticateButtonTitle; // @synthesize authenticateButtonTitle=_ak_authenticateButtonTitle;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_ak_reason;
 @property(copy, nonatomic) NSString *authenticateTitle; // @synthesize authenticateTitle=_ak_title;

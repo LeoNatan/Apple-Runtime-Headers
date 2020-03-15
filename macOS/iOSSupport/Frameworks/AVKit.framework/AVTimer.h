@@ -16,8 +16,8 @@
     double _interval;
 }
 
-@property(readonly) double interval; // @synthesize interval=_interval;
 - (void).cxx_destruct;
+@property(readonly) double interval; // @synthesize interval=_interval;
 - (void)invalidate;
 - (void)dealloc;
 - (id)init;

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_altFaxs;
     NSMutableArray *_altTelephones;
     NSMutableArray *_altUrls;
+    NSMutableArray *_alternateSearchableNames;
     unsigned long long _brandMuid;
     NSString *_fax;
     NSMutableArray *_localizedCategorys;
@@ -63,6 +64,7 @@ __attribute__((visibility("hidden")))
         unsigned int read_altFaxs:1;
         unsigned int read_altTelephones:1;
         unsigned int read_altUrls:1;
+        unsigned int read_alternateSearchableNames:1;
         unsigned int read_fax:1;
         unsigned int read_localizedCategorys:1;
         unsigned int read_mapsCategoryId:1;
@@ -79,6 +81,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_altFaxs:1;
         unsigned int wrote_altTelephones:1;
         unsigned int wrote_altUrls:1;
+        unsigned int wrote_alternateSearchableNames:1;
         unsigned int wrote_brandMuid:1;
         unsigned int wrote_fax:1;
         unsigned int wrote_localizedCategorys:1;
@@ -106,6 +109,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)isValid:(id)arg1;
++ (Class)alternateSearchableNameType;
 + (Class)localizedCategoryType;
 + (Class)spokenNameType;
 + (Class)nameType;
@@ -126,6 +130,13 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)alternateSearchableNameAtIndex:(unsigned int)arg1;
+- (unsigned int)alternateSearchableNamesCount;
+- (void)_addNoFlagsAlternateSearchableName:(id)arg1;
+- (void)addAlternateSearchableName:(id)arg1;
+- (void)clearAlternateSearchableNames;
+@property(retain, nonatomic) NSMutableArray *alternateSearchableNames;
+- (void)_readAlternateSearchableNames;
 @property(nonatomic) _Bool hasEnableRapLightweightFeedback;
 @property(nonatomic) _Bool enableRapLightweightFeedback;
 @property(retain, nonatomic) NSString *mapsCategoryId;

@@ -19,9 +19,9 @@
     long long _freeItemCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long freeItemCount; // @synthesize freeItemCount=_freeItemCount;
 @property(nonatomic) unsigned long long totalCostLimit; // @synthesize totalCostLimit=_totalCostLimit;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *allObjects; // @dynamic allObjects;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;

@@ -26,10 +26,10 @@
 }
 
 + (id)submanagerIdentifier;
+- (void).cxx_destruct;
 @property _Bool shouldFireOnNextPoll; // @synthesize shouldFireOnNextPoll=_shouldFireOnNextPoll;
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel;
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate;
-- (void).cxx_destruct;
 - (_Bool)_hasDeepBreathingAppBeenInstalled;
 - (void)_setDeepBreathingAppInstalled:(_Bool)arg1;
 - (void)cancelScheduledTask;

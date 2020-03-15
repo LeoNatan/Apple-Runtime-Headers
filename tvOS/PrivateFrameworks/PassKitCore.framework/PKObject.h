@@ -32,6 +32,7 @@
 + (_Bool)supportsSecureCoding;
 + (unsigned long long)defaultSettings;
 + (_Bool)isValidObjectWithFileURL:(id)arg1 warnings:(id *)arg2 orError:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool initializedViaInitWithCoder; // @synthesize initializedViaInitWithCoder=_initializedViaInitWithCoder;
 @property(nonatomic) long long shareCount; // @synthesize shareCount=_shareCount;
 @property(nonatomic) unsigned long long settings; // @synthesize settings=_settings;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) PKDataAccessor *dataAccessor; // @synthesize dataAccessor=_dataAccessor;
 @property(copy, nonatomic) NSData *manifestHash; // @synthesize manifestHash=_manifestHash;
 @property(copy, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -61,7 +61,7 @@
 - (id)localizedString:(id)arg1;
 - (void)downloadRemoteAssetsWithCloudStoreCoordinatorDelegate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)downloadRemoteAssetsWithCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)remoteAssetsDownloaded;
+- (_Bool)remoteAssetsDownloadedForSEIDs:(id)arg1;
 - (void)noteShared;
 - (void)requestUpdateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)revocationStatusWithCompletion:(CDUnknownBlockType)arg1;

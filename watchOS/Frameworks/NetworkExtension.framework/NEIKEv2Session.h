@@ -70,6 +70,7 @@
 }
 
 + (unsigned int)getNewChildSAID;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NEIKEv2IKESAConfiguration *ikeConfig; // @synthesize ikeConfig=_ikeConfig;
 @property(retain) NEIKEv2Packet *previousMOBIKERequest; // @synthesize previousMOBIKERequest=_previousMOBIKERequest;
 @property int previousMOBIKEMessageID; // @synthesize previousMOBIKEMessageID=_previousMOBIKEMessageID;
@@ -123,7 +124,6 @@
 @property(retain) NEIKEv2ConfigurationMessage *assignedConfiguration; // @synthesize assignedConfiguration=_assignedConfiguration;
 @property unsigned int state; // @synthesize state=_state;
 @property(retain) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 - (void)sendPendingInformationalContext;
 - (void)enqueuePendingInformationalContext:(id)arg1;
 @property(readonly, nonatomic) _Bool hasOutboundRequestInFlight;

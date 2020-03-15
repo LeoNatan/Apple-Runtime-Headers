@@ -15,10 +15,10 @@
     CNActionView *_directionsButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) CNActionView *directionsButton; // @synthesize directionsButton=_directionsButton;
 @property(retain) CNContactInlineActionsViewController *inlineActionsViewController; // @synthesize inlineActionsViewController=_inlineActionsViewController;
 @property(retain) CNActionView *messageButton; // @synthesize messageButton=_messageButton;
-- (void).cxx_destruct;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;

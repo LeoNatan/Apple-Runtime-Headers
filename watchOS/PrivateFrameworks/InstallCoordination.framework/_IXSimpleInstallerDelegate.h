@@ -18,10 +18,10 @@
     IXAppInstallCoordinator<IXInitiatingOrUpdatingCoordinator> *_coordinator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IXAppInstallCoordinator<IXInitiatingOrUpdatingCoordinator> *coordinator; // @synthesize coordinator=_coordinator;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)coordinator:(id)arg1 canceledWithReason:(id)arg2 client:(unsigned int)arg3;
 - (void)coordinatorDidCompleteSuccessfully:(id)arg1;
 

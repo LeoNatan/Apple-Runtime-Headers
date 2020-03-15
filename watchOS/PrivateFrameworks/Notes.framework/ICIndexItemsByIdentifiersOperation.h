@@ -13,8 +13,8 @@
     NSArray *_objectIDURIsToIndex;
 }
 
-@property(copy, nonatomic) NSArray *objectIDURIsToIndex; // @synthesize objectIDURIsToIndex=_objectIDURIsToIndex;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *objectIDURIsToIndex; // @synthesize objectIDURIsToIndex=_objectIDURIsToIndex;
 - (void)main;
 - (id)initWithSearchableIndex:(id)arg1 dataSources:(id)arg2;
 - (id)initWithSearchableIndex:(id)arg1 dataSources:(id)arg2 objectIDURIsToIndex:(id)arg3;

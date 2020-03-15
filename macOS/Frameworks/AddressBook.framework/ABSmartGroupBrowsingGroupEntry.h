@@ -14,9 +14,9 @@
     ABSmartGroup *_smartGroup;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain) ABSmartGroup *smartGroup; // @synthesize smartGroup=_smartGroup;
 @property(readonly, retain) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
-- (void).cxx_destruct;
 - (id)iconWithStyleProvider:(id)arg1;
 - (BOOL)canCreateGroup;
 - (BOOL)canSendEmailToGroup;

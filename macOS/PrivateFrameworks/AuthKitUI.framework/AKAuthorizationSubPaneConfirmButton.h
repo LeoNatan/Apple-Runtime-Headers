@@ -28,6 +28,7 @@
 }
 
 + (id)_createMainStackView;
+- (void).cxx_destruct;
 @property(retain) LAUIAuthenticationView *bioView; // @synthesize bioView=_bioView;
 @property(retain) NSTextField *bioLabel; // @synthesize bioLabel=_bioLabel;
 @property BOOL canPerformBiometricValidation; // @synthesize canPerformBiometricValidation=_canPerformBiometricValidation;
@@ -38,7 +39,6 @@
 @property __weak id <AKAuthorizationSubPaneConfirmButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) AKAuthorizationButton *authorizationButton; // @synthesize authorizationButton=_authorizationButton;
 @property(copy) NSString *bioTextForInactiveState; // @synthesize bioTextForInactiveState=_bioTextForInactiveState;
-- (void).cxx_destruct;
 - (void)_performPasscodeValidations:(CDUnknownBlockType)arg1;
 - (id)_passcodeButtonTitle;
 - (id)_passwordButtonTitle;

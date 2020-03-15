@@ -14,11 +14,11 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active;
 @property(nonatomic, getter=isFinished) BOOL finished; // @synthesize finished;
 @property(nonatomic, getter=isCancelled) BOOL cancel; // @synthesize cancel;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (void)runAfterDelay:(float)arg1;
 - (void)run;
 

@@ -21,11 +21,11 @@
 + (id)memoryInfoWithAssetCollection:(id)arg1 keyAssetFetchResult:(id)arg2;
 + (id)memoryInfoWithMemory:(id)arg1;
 + (id)fastMemoryInfoWithMemory:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHFetchResult *keyAssetFetchResult; // @synthesize keyAssetFetchResult=_keyAssetFetchResult;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(readonly, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly, nonatomic) NSString *localizedDateText; // @synthesize localizedDateText=_localizedDateText;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) PHAsset *primaryAsset;

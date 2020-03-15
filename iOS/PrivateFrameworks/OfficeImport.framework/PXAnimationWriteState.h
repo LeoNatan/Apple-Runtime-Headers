@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     unsigned long long mMainSeqTimeNodeId;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TCXmlPrefixStreamWriter *file; // @synthesize file=mFile;
 @property(retain, nonatomic) OCXWriteState *writeState; // @synthesize writeState=mWriteState;
-- (void).cxx_destruct;
 - (unsigned long long)mainSeqTimeNodeId;
 - (void)setMainSeqTimeNodeId:(unsigned long long)arg1;
 - (_Bool)hasMainSeqTimeNodeId;

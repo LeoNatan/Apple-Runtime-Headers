@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
     long long _indexInCollection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long indexInCollection; // @synthesize indexInCollection=_indexInCollection;
 @property(readonly, nonatomic) SKUISlideshowImageScrollView *imageScrollView; // @synthesize imageScrollView=_imageScrollView;
 @property(nonatomic) __weak id <SKUISlideshowItemViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_pinchGestureAction:(id)arg1;
 - (id)_newLoadingView;
 - (_Bool)_gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;

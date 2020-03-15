@@ -17,9 +17,9 @@
     REFeatureMap *_featureMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REFeatureMap *featureMap; // @synthesize featureMap=_featureMap;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_aggregationQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *aggregationQueue; // @synthesize aggregationQueue=_aggregationQueue;
 @property(nonatomic) __weak id <TFDataAggregatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) TFFeedbackDataContainer *sessionDataContainer; // @synthesize sessionDataContainer=_sessionDataContainer;
-- (void).cxx_destruct;
 - (void)_validateProvidedIdentifiersForTasks:(id)arg1;
 - (id)_loadAndExtractDataForTasks:(id)arg1 intoDataContainer:(id)arg2;
 - (void)_finishUpdatingDataContainer:(id)arg1 byMergingDataContainer:(id)arg2 forTasks:(id)arg3;

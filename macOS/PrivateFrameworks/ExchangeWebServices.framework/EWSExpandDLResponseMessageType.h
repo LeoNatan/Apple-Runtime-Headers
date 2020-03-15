@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *DLExpansion; // @synthesize DLExpansion=_DLExpansion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *DLExpansion; // @synthesize DLExpansion=_DLExpansion;
 - (id)description;
 
 @end

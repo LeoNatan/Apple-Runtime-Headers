@@ -36,6 +36,7 @@
 + (void)beginCachingSharedAlbumsByGUIDs;
 + (id)sectionInfoWithCloudFeedEntry:(id)arg1;
 + (id)defaultPreviewImage;
+- (void).cxx_destruct;
 @property(nonatomic) long long cachedInboxModelType; // @synthesize cachedInboxModelType=_cachedInboxModelType;
 @property(copy, nonatomic) NSIndexSet *excludedAssetIndexes; // @synthesize excludedAssetIndexes=_excludedAssetIndexes;
 @property(nonatomic) _Bool shouldBeVisibleWhenEmpty; // @synthesize shouldBeVisibleWhenEmpty=_shouldBeVisibleWhenEmpty;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) PLManagedAsset *tertiaryKeyAsset; // @synthesize tertiaryKeyAsset=_tertiaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset; // @synthesize secondaryKeyAsset=_secondaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
 - (id)sharedAlbumWithGUID:(id)arg1;

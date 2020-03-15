@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _value;
 }
 
-@property(nonatomic) __weak id value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id value; // @synthesize value=_value;
 - (id)initWithValue:(id)arg1;
 
 @end

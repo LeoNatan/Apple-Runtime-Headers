@@ -18,10 +18,10 @@
 + (id)characteristicBatchRequestWithWriteRequests:(id)arg1;
 + (id)characteristicBatchRequestWithReadRequests:(id)arg1;
 + (_Bool)validateRequestTypes:(id)arg1 requestClass:(Class)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *requests; // @synthesize requests=_requests;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
-- (void).cxx_destruct;
 - (id)initWithRequests:(id)arg1 requestClass:(Class)arg2;
 
 @end

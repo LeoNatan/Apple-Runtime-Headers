@@ -13,8 +13,8 @@
     UIView<HUQuickControlAuxiliaryView> *_auxiliaryView;
 }
 
-@property(retain, nonatomic) UIView<HUQuickControlAuxiliaryView> *auxiliaryView; // @synthesize auxiliaryView=_auxiliaryView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView<HUQuickControlAuxiliaryView> *auxiliaryView; // @synthesize auxiliaryView=_auxiliaryView;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)updateConstraints;
 

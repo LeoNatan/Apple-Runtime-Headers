@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBSPerSitePreferenceManager.h>
+#import <SafariSharedUI/WBSPerSitePreferenceManager.h>
 
 #import <SafariServices/WBSPerSitePreferenceBinaryToggleItemManager-Protocol.h>
 #import <SafariServices/WBSPerSitePreferenceManagerDefaultsDelegate-Protocol.h>
@@ -21,9 +21,9 @@
     WBSPerSitePreference *_requestDesktopSitePreference;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool clientPrefersMobileUserAgentByDefault; // @synthesize clientPrefersMobileUserAgentByDefault=_clientPrefersMobileUserAgentByDefault;
 @property(readonly, nonatomic) WBSPerSitePreference *requestDesktopSitePreference; // @synthesize requestDesktopSitePreference=_requestDesktopSitePreference;
-- (void).cxx_destruct;
 - (int)_defaultPreferenceValue;
 - (id)offValueForPreference:(id)arg1;
 - (id)onValueForPreference:(id)arg1;

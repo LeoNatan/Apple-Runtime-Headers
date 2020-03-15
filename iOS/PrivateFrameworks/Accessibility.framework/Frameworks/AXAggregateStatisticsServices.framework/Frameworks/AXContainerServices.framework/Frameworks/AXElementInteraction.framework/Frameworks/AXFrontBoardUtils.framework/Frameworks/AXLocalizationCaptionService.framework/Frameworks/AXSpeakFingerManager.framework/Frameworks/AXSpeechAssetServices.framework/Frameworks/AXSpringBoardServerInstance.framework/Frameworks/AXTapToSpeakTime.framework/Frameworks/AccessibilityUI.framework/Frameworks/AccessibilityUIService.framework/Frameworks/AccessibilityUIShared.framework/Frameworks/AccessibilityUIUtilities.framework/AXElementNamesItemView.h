@@ -22,6 +22,7 @@
     struct CGRect _labelContainerFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint arrowTipLocation; // @synthesize arrowTipLocation=_arrowTipLocation;
 @property(nonatomic) struct CGSize labelContainerSize; // @synthesize labelContainerSize=_labelContainerSize;
 @property(nonatomic) struct CGSize forcedLabelContainerSize; // @synthesize forcedLabelContainerSize=_forcedLabelContainerSize;
@@ -29,7 +30,6 @@
 @property(nonatomic) long long labelPosition; // @synthesize labelPosition=_labelPosition;
 @property(readonly, nonatomic) struct CGRect containerBounds; // @synthesize containerBounds=_containerBounds;
 @property(readonly, nonatomic) struct CGRect elementFrame; // @synthesize elementFrame=_elementFrame;
-- (void).cxx_destruct;
 - (id)_newBackgroundImage;
 - (void)layoutSubviews;
 - (double)_outlineWidth;

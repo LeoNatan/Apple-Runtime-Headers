@@ -15,8 +15,8 @@
     NSMapTable *_lastFocusedItems;
 }
 
-@property(retain, nonatomic) NSMapTable *lastFocusedItems; // @synthesize lastFocusedItems=_lastFocusedItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMapTable *lastFocusedItems; // @synthesize lastFocusedItems=_lastFocusedItems;
 - (id)_linearFocusItems;
 - (id)preferredFocusEnvironments;
 - (id)popNavigationItemAnimated:(_Bool)arg1;

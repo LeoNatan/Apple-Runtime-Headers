@@ -14,7 +14,7 @@
 + (id)_fitnessFriendAchievementWithCodableAchievement:(id)arg1 friendUUID:(id)arg2;
 + (id)fitnessFriendAchievementWithCodableAchievement:(id)arg1 friendUUID:(id)arg2;
 + (id)fitnessFriendAchievementWithCodableAchievement:(id)arg1;
-+ (struct _HKFitnessFriendAchievement *)fitnessFriendAchievementWithRecord:(id)arg1 friendUUID:(id)arg2;
++ (id)fitnessFriendAchievementWithRecord:(id)arg1 friendUUID:(id)arg2;
 - (id)recordWithZoneID:(id)arg1;
 @property(readonly, nonatomic) ASCodableCloudKitAchievement *codableAchievement;
 

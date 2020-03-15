@@ -25,6 +25,7 @@
     HDCloudSyncDataUploadRequestRecord *_dataUploadRequestRecord;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDCloudSyncDataUploadRequestRecord *dataUploadRequestRecord; // @synthesize dataUploadRequestRecord=_dataUploadRequestRecord;
 @property(nonatomic) _Bool validatedForSharing; // @synthesize validatedForSharing=_validatedForSharing;
 @property(retain, nonatomic) CKShare *zoneShare; // @synthesize zoneShare=_zoneShare;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) long long zoneType; // @synthesize zoneType=_zoneType;
 @property(readonly, copy, nonatomic) HDCloudSyncZoneIdentifier *zoneIdentifier; // @synthesize zoneIdentifier=_zoneIdentifier;
 @property(readonly, nonatomic) __weak HDCloudSyncRepository *repository; // @synthesize repository=_repository;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_addSubscriptionRecord:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) long long recordCount;

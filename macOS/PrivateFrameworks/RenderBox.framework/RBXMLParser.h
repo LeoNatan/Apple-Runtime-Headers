@@ -8,7 +8,7 @@
 
 #import <RenderBox/NSXMLParserDelegate-Protocol.h>
 
-@class NSString, RBDisplayList;
+@class NSError, NSString, RBDisplayList;
 @protocol RBXMLParserDelegate;
 
 @interface RBXMLParser : NSObject <NSXMLParserDelegate>
@@ -19,6 +19,7 @@
     struct objc_ptr<RBDisplayList *> _list;
     struct objc_ptr<RBShape *> _shape;
     struct objc_ptr<RBFill *> _fill;
+    struct objc_ptr<NSError *> _error;
     struct State *_state;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _characters;
     struct cf_ptr<__CFDictionary *> _image_cache;
@@ -29,16 +30,17 @@
 }
 
 + (id)parserWithDelegate:(id)arg1 contentsOfURL:(id)arg2 options:(id)arg3;
-@property(readonly, nonatomic) CDStruct_0b1c536a backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-@property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDStruct_0b1c536a backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parserDidEndDocument:(id)arg1;
 - (void)parserDidStartDocument:(id)arg1;
 - (void)abortParsing;
+@property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) RBDisplayList *displayList;
 - (BOOL)parse;
 - (void)dealloc;

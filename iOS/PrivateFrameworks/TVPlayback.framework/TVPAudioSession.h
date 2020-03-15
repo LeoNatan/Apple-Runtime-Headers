@@ -12,8 +12,8 @@
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) CDUnknownBlockType configurationBlock; // @synthesize configurationBlock=_configurationBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType configurationBlock; // @synthesize configurationBlock=_configurationBlock;
 - (void)_updateIfNecessary;
 - (void)_mediaServicesReset:(id)arg1;
 - (void)dealloc;

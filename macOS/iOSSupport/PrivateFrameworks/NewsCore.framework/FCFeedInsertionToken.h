@@ -15,10 +15,10 @@
     unsigned long long _toOrder;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long toOrder; // @synthesize toOrder=_toOrder;
 @property(nonatomic) unsigned long long fromOrder; // @synthesize fromOrder=_fromOrder;
 @property(retain, nonatomic) FCFDBFeed *fromFeed; // @synthesize fromFeed=_fromFeed;
-- (void).cxx_destruct;
 
 @end
 

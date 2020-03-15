@@ -14,9 +14,9 @@
     UIAnimatableProperty *_animatableProperty;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool performingInterpolationBetweenTwoStates; // @synthesize performingInterpolationBetweenTwoStates=_performingInterpolationBetweenTwoStates;
 @property(retain, nonatomic) UIAnimatableProperty *animatableProperty; // @synthesize animatableProperty=_animatableProperty;
-- (void).cxx_destruct;
 @property(retain, nonatomic) _UIViewAnimatablePropertyTransformer *transformer;
 - (void)dealloc;
 @property(readonly, nonatomic) double presentationValue;

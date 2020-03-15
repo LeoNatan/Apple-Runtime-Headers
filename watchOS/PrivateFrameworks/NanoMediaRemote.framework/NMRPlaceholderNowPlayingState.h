@@ -30,6 +30,7 @@
     double rewindTimeInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double rewindTimeInterval; // @synthesize rewindTimeInterval;
 @property(nonatomic) double fastForwardTimeInterval; // @synthesize fastForwardTimeInterval;
 @property(nonatomic, getter=isSkipBackwardCommandEnabled) _Bool skipBackwardCommandEnabled; // @synthesize skipBackwardCommandEnabled;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *artist; // @synthesize artist;
 @property(copy, nonatomic) NSString *title; // @synthesize title;
 @property(copy, nonatomic) NSNumber *itemPersistentID; // @synthesize itemPersistentID;
-- (void).cxx_destruct;
 
 @end
 

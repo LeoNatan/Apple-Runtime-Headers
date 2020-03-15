@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSMapTable *oldToNewConfiguration; // @synthesize oldToNewConfiguration=_oldToNewConfiguration;
 @property(readonly, copy, nonatomic) NSMapTable *oldToNewUpdatedAppInfos; // @synthesize oldToNewUpdatedAppInfos=_oldToNewUpdatedAppInfos;
 @property(readonly, copy, nonatomic) NSSet *removedAppInfos; // @synthesize removedAppInfos=_removedAppInfos;
 @property(readonly, copy, nonatomic) NSSet *addedAppInfos; // @synthesize addedAppInfos=_addedAppInfos;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasChanges;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

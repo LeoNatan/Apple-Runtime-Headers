@@ -37,6 +37,7 @@
     float _prev_ambientnits;
     float _prev_maxedr;
     float _prev_degamma_lut_additional_scaler;
+    int _prev_processingType;
     struct _HDR10TMParam _prev_tmParam;
     struct _HDR10AmbAdaptationParam _prev_ambAdaptationParam;
     struct _HDR10DpcParam _prev_dpcParam;
@@ -103,10 +104,10 @@
 - (BOOL)dovi_tm_configChanged:(CDStruct_78732a63 *)arg1 LLDoVi:(_Bool)arg2;
 - (void)dovi_createLUTFromDMConfig:(CDStruct_78732a63 *)arg1 LLDoVi:(_Bool)arg2 ApplyExtraAdaptation:(_Bool)arg3 AdaptationLut:(float *)arg4 NumOfEntryOfAdaptationLut:(int)arg5;
 - (void)hlg_tm_updateLUT:(long long)arg1 ScalingFactorBuffer:(float *)arg2 ScalingFactorBufferSize:(unsigned long long)arg3 dmConfig:(CDStruct_78732a63 *)arg4;
-- (void)hlg_tm_createLUTFromDMConfig:(CDStruct_78732a63 *)arg1 ApplyExtraAdaptation:(_Bool)arg2 AdaptationLut:(float *)arg3 NumOfEntryOfAdaptationLut:(int)arg4;
-- (void)hlg_tm_reserveConfig:(CDStruct_78732a63 *)arg1;
-- (BOOL)hlg_tm_configChanged:(CDStruct_78732a63 *)arg1;
-- (void)hlg_createLUTFromDMConfig:(CDStruct_78732a63 *)arg1 ApplyExtraAdaptation:(_Bool)arg2 AdaptationLut:(float *)arg3 NumOfEntryOfAdaptationLut:(int)arg4;
+- (void)hlg_tm_createLUTFromDMConfig:(CDStruct_78732a63 *)arg1 TMParam:(struct _HDR10TMParam *)arg2 EdrAdaptationParam:(struct _HDR10EdrAdaptationParam *)arg3 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg4 TMMode:(int)arg5;
+- (void)hlg_tm_reserveConfig:(CDStruct_78732a63 *)arg1 EdrAdaptationParam:(struct _HDR10EdrAdaptationParam *)arg2 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg3;
+- (BOOL)hlg_tm_configChanged:(CDStruct_78732a63 *)arg1 EdrAdaptationParam:(struct _HDR10EdrAdaptationParam *)arg2 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg3;
+- (void)hlg_createLUTFromDMConfig:(CDStruct_78732a63 *)arg1 TMParam:(struct _HDR10TMParam *)arg2 EdrAdaptationParam:(struct _HDR10EdrAdaptationParam *)arg3 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg4 TMMode:(int)arg5;
 - (void)hdr10_tm_updateLUT:(long long)arg1 ScalingFactorBuffer:(float *)arg2 ScalingFactorBufferSize:(unsigned long long)arg3 LumaMixFactorBuffer:(float *)arg4 LumaMixFactorBufferSize:(unsigned long long)arg5 dmConfig:(CDStruct_78732a63 *)arg6 TCControl:(struct ToneCurve_Control *)arg7 HDRControl:(CDStruct_d76a58a8 *)arg8;
 - (void)hdr10_tm_createLUTFromDMConfig:(struct _HDR10TMParam *)arg1 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg2;
 - (void)hdr10_tm_reserveConfig:(struct _HDR10TMParam *)arg1 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg2;

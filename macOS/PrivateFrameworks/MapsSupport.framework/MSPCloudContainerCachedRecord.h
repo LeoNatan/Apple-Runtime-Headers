@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *positionHash; // @synthesize positionHash=_positionHash;
 @property(retain, nonatomic) NSData *contentsHash; // @synthesize contentsHash=_contentsHash;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqualToCloudRecord:(id)arg1;

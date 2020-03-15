@@ -10,7 +10,7 @@
 #import <NanoTimeKitCompanion/NTKSiderealDataSourceDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/NTKTimeView-Protocol.h>
 
-@class CALayer, CAShapeLayer, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealTimeView, NTKWhistlerAnalogFaceViewComplicationFactory, UILabel, UIView;
+@class CALayer, CAShapeLayer, NSCalendar, NSDateFormatter, NSNumber, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealTimeView, NTKWhistlerAnalogFaceViewComplicationFactory, UILabel, UIView;
 
 @interface NTKSiderealFaceView : NTKFaceView <NTKTimeView, NTKSiderealDataSourceDelegate, CLKMonochromeFilterProvider>
 {
@@ -21,7 +21,7 @@
     NSTimer *_wheelDelayTimer;
     NSTimer *_buttonPressTimer;
     NTKSiderealDataSource *_dataSource;
-    struct NSNumber *_clockTimerToken;
+    NSNumber *_clockTimerToken;
     double _currentSolarDayProgress;
     double _interactionProgress;
     double _lastTestedWaypointProgress;
@@ -42,7 +42,6 @@
     _Bool _disableRendering;
 }
 
-+ (long long)uiSensitivity;
 - (void).cxx_destruct;
 - (void)performScrollTestNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
@@ -110,7 +109,7 @@
 - (void)_updateSolarOrbitGlowPath:(double)arg1;
 - (void)_refreshGlowPathState;
 - (void)_updateStatusBarVisibility;
-- (void)_cleanupAfterSettingViewMode:(unsigned long long)arg1;
+- (void)_cleanupAfterSettingViewMode:(unsigned long long)arg1 previousViewMode:(unsigned long long)arg2;
 - (void)_interpolateFromViewMode:(unsigned long long)arg1 toViewMode:(unsigned long long)arg2 progress:(double)arg3;
 - (void)_prepareForSettingViewMode:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)_setViewMode:(unsigned long long)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

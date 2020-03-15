@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     double __animationDuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double _animationDuration; // @synthesize _animationDuration=__animationDuration;
 @property(readonly, nonatomic) NSMutableDictionary *_hiddenTileControllersByLayoutInfo; // @synthesize _hiddenTileControllersByLayoutInfo=__hiddenTileControllersByLayoutInfo;
 @property(readonly, nonatomic) PUTilingView *tilingView; // @synthesize tilingView=_tilingView;
-- (void).cxx_destruct;
 - (void)reattachTiles;
 - (void)unhideTilesAnimated:(_Bool)arg1;
 - (void)hideTilesAtIndexPath:(id)arg1 withKinds:(id)arg2 dataSourceIdentifier:(id)arg3 animated:(_Bool)arg4;

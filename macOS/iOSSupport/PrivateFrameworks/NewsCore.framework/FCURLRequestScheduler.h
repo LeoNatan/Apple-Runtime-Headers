@@ -15,10 +15,10 @@
     NFUnfairLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFUnfairLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMapTable *inFlightURLTasks; // @synthesize inFlightURLTasks=_inFlightURLTasks;
 @property(retain, nonatomic) NSMutableOrderedSet *requests; // @synthesize requests=_requests;
-- (void).cxx_destruct;
 - (void)_applyPriority:(long long)arg1 toRequest:(id)arg2;
 - (void)_cancelRequest:(id)arg1;
 - (void)_suspendURLTaskForRequest:(id)arg1;

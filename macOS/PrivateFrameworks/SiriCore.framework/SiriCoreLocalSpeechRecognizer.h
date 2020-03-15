@@ -30,8 +30,8 @@
 + (id)dictionaryWithContentsProfilePathForLanguage:(id)arg1 errorOut:(id *)arg2;
 + (id)profilePathForLanguage:(id)arg1 errorOut:(id *)arg2;
 + (id)speechProfileDataLastModifiedDataForLanguage:(id)arg1;
-@property(readonly, nonatomic) __weak id <SiriCoreLocalSpeechRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <SiriCoreLocalSpeechRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)fetchUserDataForLanguage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (oneway void)speechServiceDidFinishRecognitionWithStatistics:(id)arg1 error:(id)arg2;
 - (oneway void)speechServiceDidRecognizePackage:(id)arg1;
@@ -50,7 +50,8 @@
 - (void)getOfflineDictationStatusIgnoringCache:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)updateSpeechProfileWithLanguage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)createSpeechProfileWithLanguage:(id)arg1 JSONData:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)startSpeechRecognitionWithLanguage:(id)arg1 task:(id)arg2 context:(id)arg3 narrowband:(BOOL)arg4 detectUtterances:(BOOL)arg5 maximumRecognitionDuration:(double)arg6 farField:(BOOL)arg7 secureOfflineOnly:(BOOL)arg8 censorSpeech:(BOOL)arg9 originalAudioFileURL:(id)arg10 overrides:(id)arg11 modelOverrideURL:(id)arg12 didStartHandler:(CDUnknownBlockType)arg13;
+- (void)sendSpeechCorrectionInfo:(id)arg1 interactionIdentifier:(id)arg2;
+- (void)startSpeechRecognitionWithLanguage:(id)arg1 interactionIdentifier:(id)arg2 task:(id)arg3 context:(id)arg4 narrowband:(BOOL)arg5 detectUtterances:(BOOL)arg6 maximumRecognitionDuration:(double)arg7 farField:(BOOL)arg8 secureOfflineOnly:(BOOL)arg9 censorSpeech:(BOOL)arg10 originalAudioFileURL:(id)arg11 overrides:(id)arg12 modelOverrideURL:(id)arg13 didStartHandler:(CDUnknownBlockType)arg14;
 - (void)preheatSpeechRecognitionWithLanguage:(id)arg1;
 - (id)_synchronousServiceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_serviceWithFunctionName:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;

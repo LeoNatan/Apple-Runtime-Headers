@@ -13,8 +13,8 @@
     NSString *_imageName;
 }
 
-@property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 - (void)_setImage;
 - (void)update;
 - (id)initWithFrame:(struct CGRect)arg1;

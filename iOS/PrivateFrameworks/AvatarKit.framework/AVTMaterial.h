@@ -10,14 +10,14 @@
 
 @interface AVTMaterial : NSObject
 {
-    struct UIColor *baseColor;
+    UIColor *baseColor;
     NSDictionary *secondaryColors;
 }
 
-+ (id)materialWithColor:(struct UIColor *)arg1;
++ (id)materialWithColor:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *secondaryColors; // @synthesize secondaryColors;
 @property(retain) UIColor *baseColor; // @synthesize baseColor;
-- (void).cxx_destruct;
 - (void)applyToSceneKitMaterial:(id)arg1;
 - (_Bool)_decode:(id)arg1;
 - (void)_encode:(id)arg1;

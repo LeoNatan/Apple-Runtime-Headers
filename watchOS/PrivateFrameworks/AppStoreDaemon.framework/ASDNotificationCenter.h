@@ -22,8 +22,8 @@
 
 + (id)interface;
 + (id)defaultCenter;
-@property __weak id <ASDNotificationCenterDialogObserver> dialogObserver; // @synthesize dialogObserver=_dialogObserver;
 - (void).cxx_destruct;
+@property __weak id <ASDNotificationCenterDialogObserver> dialogObserver; // @synthesize dialogObserver=_dialogObserver;
 - (void)deliverProgress:(id)arg1;
 - (void)deliverNotifications:(id)arg1;
 - (void)deliverDialogRequest:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;

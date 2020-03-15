@@ -15,9 +15,9 @@
     long long _year;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long year; // @synthesize year=_year;
 @property(nonatomic) NSString *area; // @synthesize area=_area;
-- (void).cxx_destruct;
 - (BOOL)canFallbackToDejunkAndDedupeForShowMore;
 - (id)_potentialMemoriesForDryTesting;
 - (void)_postProcessMemory:(id)arg1 withPotentialMemory:(id)arg2;

@@ -24,9 +24,9 @@
 
 + (id)remoteInterface;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain) EFPromise *vipsByIdentifierPromise; // @synthesize vipsByIdentifierPromise=_vipsByIdentifierPromise;
 @property(retain, nonatomic) EMRemoteConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)didFinishBlockingMainThreadForFuture:(id)arg1;
 - (void)didStartBlockingMainThreadForFuture:(id)arg1;
 - (void)observer:(id)arg1 updatedVIPs:(id)arg2 removedVIPs:(id)arg3;

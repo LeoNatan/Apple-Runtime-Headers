@@ -14,9 +14,9 @@
     NSString *_userAgent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(retain, nonatomic) NSString *deviceGUID; // @synthesize deviceGUID=_deviceGUID;
-- (void).cxx_destruct;
 - (id)deviceName;
 - (id)propertyListRepresentation;
 

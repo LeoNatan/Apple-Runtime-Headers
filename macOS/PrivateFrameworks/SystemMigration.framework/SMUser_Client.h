@@ -24,13 +24,13 @@
 + (id)keyPathsForValuesAffectingDisplayName;
 + (id)interestedDaemonKeysLimitedToMigratableUsers;
 + (id)interestedDaemonKeys;
+- (void).cxx_destruct;
 @property BOOL allowFileVaultUnlock; // @synthesize allowFileVaultUnlock=_allowFileVaultUnlock;
 @property BOOL passwordIsTemporary; // @synthesize passwordIsTemporary=_passwordIsTemporary;
 @property(retain) NSString *clearPassword; // @synthesize clearPassword=_clearPassword;
 @property BOOL shouldPromoteToAdmin; // @synthesize shouldPromoteToAdmin=_shouldPromoteToAdmin;
 @property(retain) SMSystem_Client *sourceSystem; // @synthesize sourceSystem;
 @property(retain) NSObject<OS_dispatch_queue> *daemonPropertyQueue; // @synthesize daemonPropertyQueue;
-- (void).cxx_destruct;
 @property(readonly) NSColor *extraInfoColor;
 @property(readonly) NSString *displayExtraInfo;
 @property(readonly) NSString *displayName;

@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     id <PUPhotoPickerHostViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isInvalidated) _Bool _invalidated; // @synthesize _invalidated=__invalidated;
 @property(nonatomic) __weak id <PUPhotoPickerHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSExtensionContext *hostExtensionContext; // @synthesize hostExtensionContext=_hostExtensionContext;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PUPhotoPickerHostService> hostProxy;
 - (id)_hostContext;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

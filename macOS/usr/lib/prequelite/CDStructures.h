@@ -10,22 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct PQLResultSet {
-    Class _field1;
-    id _field2;
-    Class _field3;
-    SEL _field4;
-    char _field5;
-    CDUnknownBlockType _field6;
-    id _field7;
-    char _field8;
-    id _field9;
-    id _field10;
-    unsigned long long _field11;
-    unsigned long long _field12;
-    id _field13;
-};
-
 struct __va_list_tag {
     unsigned int _field1;
     unsigned int _field2;

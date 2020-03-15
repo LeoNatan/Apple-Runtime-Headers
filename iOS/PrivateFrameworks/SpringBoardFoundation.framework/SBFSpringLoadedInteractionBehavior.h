@@ -16,8 +16,8 @@
     id <SBFSpringLoadedInteractionBehaviorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBFSpringLoadedInteractionBehaviorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBFSpringLoadedInteractionBehaviorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)interactionDidFinish:(id)arg1;
 - (_Bool)shouldAllowInteraction:(id)arg1 withContext:(id)arg2;
 

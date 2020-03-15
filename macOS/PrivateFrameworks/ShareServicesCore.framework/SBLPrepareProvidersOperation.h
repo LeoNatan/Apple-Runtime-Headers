@@ -13,8 +13,8 @@
     NSArray *_providersForDownload;
 }
 
-@property(readonly, nonatomic) NSArray *providersForDownload; // @synthesize providersForDownload=_providersForDownload;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *providersForDownload; // @synthesize providersForDownload=_providersForDownload;
 - (void)px_start;
 
 @end

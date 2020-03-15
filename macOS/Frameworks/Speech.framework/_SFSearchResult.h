@@ -15,10 +15,10 @@
     long long _searchType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long searchType; // @synthesize searchType=_searchType;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) NSHTTPURLResponse *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithVoiceSearchResult:(id)arg1;
 

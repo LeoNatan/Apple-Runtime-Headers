@@ -11,8 +11,8 @@
     UIViewController *_viewController;
 }
 
-@property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 - (id)description;
 - (id)preferredFocusEnvironments;
 - (void)tvl_restoreStateWithCoder:(id)arg1;

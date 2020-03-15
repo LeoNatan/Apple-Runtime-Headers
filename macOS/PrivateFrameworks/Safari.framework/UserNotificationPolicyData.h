@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSDate *_dateAdded;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
 @property(nonatomic) int policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (void)updatePermission:(int)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDisplayName:(id)arg1 icon:(id)arg2 policy:(int)arg3;

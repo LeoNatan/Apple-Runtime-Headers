@@ -25,6 +25,7 @@
 
 + (id)stringFromNWTCPConnectionState:(long long)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NWParameters *parameters; // @synthesize parameters=_parameters;
 @property __weak id <NWTCPConnectionAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSObject<OS_nw_connection> *internalConnection; // @synthesize internalConnection=_internalConnection;
@@ -33,7 +34,6 @@
 @property(nonatomic) BOOL hasBetterPath; // @synthesize hasBetterPath=_hasBetterPath;
 @property(nonatomic, getter=isViable) BOOL viable; // @synthesize viable=_viable;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *metadata;
 @property(readonly, nonatomic) NSDictionary *TCPInfo;
 @property(readonly, nonatomic) NSDictionary *multipathSubflowSwitchCounts;

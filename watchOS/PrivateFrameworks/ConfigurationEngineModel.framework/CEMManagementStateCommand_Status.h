@@ -18,9 +18,9 @@
 + (id)buildWithCommands:(id)arg1 withDeclarations:(id)arg2;
 + (id)allowedReasons;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *statusDeclarations; // @synthesize statusDeclarations=_statusDeclarations;
 @property(copy, nonatomic) NSArray *statusCommands; // @synthesize statusCommands=_statusCommands;
-- (void).cxx_destruct;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 

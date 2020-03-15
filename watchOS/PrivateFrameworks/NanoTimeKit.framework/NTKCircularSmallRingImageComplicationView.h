@@ -6,14 +6,14 @@
 
 #import <NanoTimeKit/NTKCircularSmallRingComplicationView.h>
 
-@class CLKProgressProvider, UIView;
+@class CLKProgressProvider, NSNumber, UIView;
 @protocol NTKComplicationImageView;
 
 @interface NTKCircularSmallRingImageComplicationView : NTKCircularSmallRingComplicationView
 {
     UIView<NTKComplicationImageView> *_imageView;
     CLKProgressProvider *_progressProvider;
-    struct NSNumber *_progressUpdateToken;
+    NSNumber *_progressUpdateToken;
 }
 
 + (float)_imageScaleForTemplate:(id)arg1;

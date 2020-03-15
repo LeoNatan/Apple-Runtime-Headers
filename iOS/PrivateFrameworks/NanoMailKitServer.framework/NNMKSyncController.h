@@ -13,8 +13,8 @@
     id <NNMKDeviceRegistryHolder> _delegate;
 }
 
-@property(nonatomic) __weak id <NNMKDeviceRegistryHolder> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NNMKDeviceRegistryHolder> delegate; // @synthesize delegate=_delegate;
 - (id)mailboxWithId:(id)arg1;
 - (id)mailboxForMessageWithId:(id)arg1;
 - (void)groupMessagesByMailbox:(id)arg1 mailboxes:(id)arg2 block:(CDUnknownBlockType)arg3;

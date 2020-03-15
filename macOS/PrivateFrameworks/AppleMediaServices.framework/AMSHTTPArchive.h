@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
 + (id)merge:(id)arg1 withEstimatedFileSizeLimit:(unsigned long long)arg2;
 + (id)merge:(id)arg1;
 + (id)directory;
+- (void).cxx_destruct;
 @property(readonly) NSData *JSONData; // @synthesize JSONData=_JSONData;
 @property(getter=isCompressed) BOOL compressed; // @synthesize compressed=_compressed;
 @property(retain) NSData *backingJSONData; // @synthesize backingJSONData=_backingJSONData;
-- (void).cxx_destruct;
 - (BOOL)writeToDiskWithError:(id *)arg1 compressed:(BOOL)arg2;
 - (id)_initWithJSONObject:(id)arg1;
 - (id)initWithURLTaskInfo:(id)arg1;

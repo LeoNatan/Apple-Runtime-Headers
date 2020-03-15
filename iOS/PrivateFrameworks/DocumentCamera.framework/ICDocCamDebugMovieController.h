@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _backgroundRecordingID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long backgroundRecordingID; // @synthesize backgroundRecordingID=_backgroundRecordingID;
 @property long long videoOrientation; // @synthesize videoOrientation=_videoOrientation;
 @property(nonatomic) _Bool canRecordFrames; // @synthesize canRecordFrames=_canRecordFrames;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak AVCaptureConnection *videoConnection; // @synthesize videoConnection=_videoConnection;
 @property(nonatomic) long long referenceOrientation; // @synthesize referenceOrientation=_referenceOrientation;
 @property(getter=isRecording) _Bool recording; // @synthesize recording=_recording;
-- (void).cxx_destruct;
 - (struct CGAffineTransform)transformFromCurrentVideoOrientationToOrientation:(long long)arg1;
 - (double)angleOffsetFromPortraitOrientationToOrientation:(long long)arg1;
 - (void)removeFile:(id)arg1;

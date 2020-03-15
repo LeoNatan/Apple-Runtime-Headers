@@ -72,10 +72,6 @@ struct GEOOnce_s {
     _Bool didRun;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double top;
     double left;
@@ -86,10 +82,6 @@ struct UIEdgeInsets {
 struct UIOffset {
     double horizontal;
     double vertical;
-};
-
-struct UIViewController {
-    Class _field1;
 };
 
 struct _GEOFlyoverKey {

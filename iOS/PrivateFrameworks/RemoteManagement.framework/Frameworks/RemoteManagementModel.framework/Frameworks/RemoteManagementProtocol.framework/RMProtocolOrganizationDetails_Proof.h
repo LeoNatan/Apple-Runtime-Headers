@@ -16,11 +16,11 @@
 + (id)buildRequiredOnly;
 + (id)buildWithIdentityToken:(id)arg1;
 + (id)allowedDetailsKeys;
-@property(copy, nonatomic) NSString *detailsIdentityToken; // @synthesize detailsIdentityToken=_detailsIdentityToken;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *detailsIdentityToken; // @synthesize detailsIdentityToken=_detailsIdentityToken;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

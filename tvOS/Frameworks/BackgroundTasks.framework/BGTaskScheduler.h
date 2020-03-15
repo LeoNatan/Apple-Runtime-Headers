@@ -22,11 +22,11 @@
 + (_Bool)_isRunningInExtension;
 + (void)_applicationDidFinishLaunching:(id)arg1;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setRunningTasksMap:) NSMapTable *_runningTasksMap; // @synthesize _runningTasksMap=__runningTasksMap;
 @property(retain, nonatomic, setter=_setPermittedIdentifiers:) NSSet *_permittedIdentifiers; // @synthesize _permittedIdentifiers=__permittedIdentifiers;
 @property(retain, nonatomic, setter=_setRegistrations:) NSMutableDictionary *_registrations; // @synthesize _registrations=__registrations;
 @property(nonatomic, setter=_setLock:) struct os_unfair_lock_s _lock; // @synthesize _lock=__lock;
-- (void).cxx_destruct;
 - (void)_simulateExpirationForTaskWithIdentifier:(id)arg1;
 - (void)_simulateLaunchForTaskWithIdentifier:(id)arg1;
 - (void)_runTask:(id)arg1 registration:(id)arg2;

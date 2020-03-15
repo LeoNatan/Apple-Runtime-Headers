@@ -30,6 +30,7 @@
 
 + (void)_checkIfNecessaryVoIPFrameworksAreLinked;
 + (id)_pushTypeToMachServiceName;
+- (void).cxx_destruct;
 @property(nonatomic) int outstandingVoIPPushes; // @synthesize outstandingVoIPPushes=_outstandingVoIPPushes;
 @property(nonatomic) int fileProviderToken; // @synthesize fileProviderToken=_fileProviderToken;
 @property(nonatomic) int complicationToken; // @synthesize complicationToken=_complicationToken;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *ivarQueue; // @synthesize ivarQueue=_ivarQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property __weak id <PKPushRegistryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)pushTokenForType:(id)arg1;
 @property(copy) NSSet *desiredPushTypes; // @synthesize desiredPushTypes=_desiredPushTypes;
 - (void)_renewConnectionForPushTypeIfRegistered:(id)arg1;

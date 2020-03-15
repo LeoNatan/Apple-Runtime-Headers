@@ -14,8 +14,8 @@
 }
 
 + (long long)cellStyle;
-@property(nonatomic) __weak WFWorkflowImportQuestion *question; // @synthesize question=_question;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFWorkflowImportQuestion *question; // @synthesize question=_question;
 
 @end
 

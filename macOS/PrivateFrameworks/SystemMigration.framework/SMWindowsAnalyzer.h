@@ -28,6 +28,7 @@
 + (BOOL)hasCustomPaths;
 + (id)loadCustomPathsFromProfile;
 + (id)customPathsFromProfile:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *preliminaryCustomPathsSizeDelegates; // @synthesize preliminaryCustomPathsSizeDelegates=_preliminaryCustomPathsSizeDelegates;
 @property(retain) NSMutableDictionary *preliminaryComponentSizeDelegates; // @synthesize preliminaryComponentSizeDelegates=_preliminaryComponentSizeDelegates;
 @property(retain) NSMutableDictionary *customUserToSystemPathSizes; // @synthesize customUserToSystemPathSizes=_customUserToSystemPathSizes;
@@ -40,7 +41,6 @@
 @property(retain) NSArray *customPaths; // @synthesize customPaths=_customPaths;
 @property(retain, nonatomic) SMSystem_Daemon *comparisonSystem; // @synthesize comparisonSystem=_comparisonSystem;
 @property(retain, nonatomic) SMSystem_Daemon_Windows *system; // @synthesize system=_system;
-- (void).cxx_destruct;
 - (void)messageTraceAnalysis;
 - (void)removePreliminaryCustomPathsSizeDelegate:(id)arg1;
 - (void)addPreliminaryCustomPathsSizeDelegate:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NewTabButton *_createTabButton;
 }
 
-@property(readonly, nonatomic) NewTabButton *createTabButton; // @synthesize createTabButton=_createTabButton;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NewTabButton *createTabButton; // @synthesize createTabButton=_createTabButton;
 - (id)initWithButtonTarget:(id)arg1 action:(SEL)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

@@ -14,9 +14,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <CSLDuetApplicationProcessStateProvider> provider; // @synthesize provider=_provider;
-- (void).cxx_destruct;
 
 @end
 

@@ -15,9 +15,9 @@
     unsigned long long _blockedContentTypes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long blockedContentTypes; // @synthesize blockedContentTypes=_blockedContentTypes;
 @property(nonatomic) __weak id <MFLoadBlockedContentBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_titleControlTapped:(id)arg1;
 - (void)_updateBannerText;
 - (id)initWithFrame:(struct CGRect)arg1 blockedContentTypes:(unsigned long long)arg2 blockingReason:(long long)arg3;

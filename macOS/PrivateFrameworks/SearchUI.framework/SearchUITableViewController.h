@@ -19,11 +19,11 @@
     id <SearchUICardViewDelegate> _cardViewDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disableNextCards; // @synthesize disableNextCards=_disableNextCards;
 @property(nonatomic) __weak id <SearchUICardViewDelegate> cardViewDelegate; // @synthesize cardViewDelegate=_cardViewDelegate;
 @property(retain, nonatomic) SearchUITableModel *tableModel; // @synthesize tableModel=_tableModel;
 @property(nonatomic) __weak id <SFFeedbackListener> feedbackListener; // @synthesize feedbackListener=_feedbackListener;
-- (void).cxx_destruct;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (BOOL)forwardFeedbackForSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;

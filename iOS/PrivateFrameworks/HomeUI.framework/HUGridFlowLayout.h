@@ -23,6 +23,7 @@
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HUGridFlowLayout *parentGridLayout; // @synthesize parentGridLayout=_parentGridLayout;
 @property(retain, nonatomic) NSHashTable *childGridLayouts; // @synthesize childGridLayouts=_childGridLayouts;
 @property(readonly, nonatomic) NSMutableDictionary *overrideAttributesByIndexPath; // @synthesize overrideAttributesByIndexPath=_overrideAttributesByIndexPath;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) HFWallpaperSlice *blurredWallpaperSlice; // @synthesize blurredWallpaperSlice=_blurredWallpaperSlice;
 @property(nonatomic) __weak HUWallpaperView *wallpaperView; // @synthesize wallpaperView=_wallpaperView;
 @property(retain, nonatomic) HUGridLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
-- (void).cxx_destruct;
 - (id)_modifiedLayoutAttributesForAttributes:(id)arg1;
 - (void)unregisterChildGridLayout:(id)arg1;
 - (void)registerChildGridLayout:(id)arg1;

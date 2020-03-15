@@ -18,10 +18,10 @@
 
 + (id)deviceWithDescriptor:(id)arg1 error:(id *)arg2;
 + (_Bool)isIdentityEnrolled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKDeviceDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <BKDeviceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)lastMatchEventWithError:(id *)arg1;
 - (_Bool)biometryAvailability:(long long *)arg1 forUser:(unsigned int)arg2 error:(id *)arg3;
 - (id)freeIdentityCountForUser:(unsigned int)arg1 error:(id *)arg2;

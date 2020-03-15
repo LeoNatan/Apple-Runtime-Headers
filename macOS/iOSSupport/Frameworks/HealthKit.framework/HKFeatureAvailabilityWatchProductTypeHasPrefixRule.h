@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ruleIdentifier;
-@property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;
 - (BOOL)evaluate;
 - (void)processUserInfo:(id)arg1;
 

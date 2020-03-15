@@ -15,8 +15,8 @@
     NSMutableArray *_messages;
 }
 
-@property(retain, nonatomic) NSMutableArray *messages; // @synthesize messages=_messages;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *messages; // @synthesize messages=_messages;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

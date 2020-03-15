@@ -41,6 +41,8 @@
     NSData *_cloudKitAccountHash;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=areAllPendingChangesDiscardable) BOOL allPendingChangesDiscardable; // @synthesize allPendingChangesDiscardable=_allPendingChangesDiscardable;
 @property(retain, nonatomic) NSData *cloudKitAccountHash; // @synthesize cloudKitAccountHash=_cloudKitAccountHash;
 @property(nonatomic) long long cloudKitMigrationState; // @synthesize cloudKitMigrationState=_cloudKitMigrationState;
@@ -51,8 +53,6 @@
 @property(retain, nonatomic, setter=setDAVHomeURL:) NSURL *davHomeURL; // @synthesize davHomeURL=_davHomeURL;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(nonatomic) __weak id <BookmarkGroupDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_sendDelegateMessage:(int)arg1 withModifiedBookmark:(id)arg2 child:(id)arg3 changeWasInteractive:(BOOL)arg4;
 - (void)_releaseTouchIconsForBookmark:(id)arg1;
 - (void)_retainTouchIconsForBookmark:(id)arg1;

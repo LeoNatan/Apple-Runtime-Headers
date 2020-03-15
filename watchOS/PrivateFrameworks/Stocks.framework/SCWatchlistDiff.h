@@ -20,6 +20,7 @@
 }
 
 + (id)reorderedStocksFrom:(id)arg1 to:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *stocksPostDiff; // @synthesize stocksPostDiff=_stocksPostDiff;
 @property(readonly, copy, nonatomic) NSArray *stocksPreDiff; // @synthesize stocksPreDiff=_stocksPreDiff;
 @property(readonly, copy, nonatomic) NSDictionary *indexesOfReorderedStocks; // @synthesize indexesOfReorderedStocks=_indexesOfReorderedStocks;
@@ -27,7 +28,6 @@
 @property(readonly, copy, nonatomic) NSArray *removedStocks; // @synthesize removedStocks=_removedStocks;
 @property(readonly, copy, nonatomic) NSDictionary *indexesOfAddedStocks; // @synthesize indexesOfAddedStocks=_indexesOfAddedStocks;
 @property(readonly, copy, nonatomic) NSArray *addedStocks; // @synthesize addedStocks=_addedStocks;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 - (id)initWithOldStocks:(id)arg1 newStocks:(id)arg2;
 

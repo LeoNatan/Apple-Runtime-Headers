@@ -13,8 +13,8 @@
     AMApplicationDefinition *_applicationDefinition;
 }
 
-@property(retain) AMApplicationDefinition *applicationDefinition; // @synthesize applicationDefinition=_applicationDefinition;
 - (void).cxx_destruct;
+@property(retain) AMApplicationDefinition *applicationDefinition; // @synthesize applicationDefinition=_applicationDefinition;
 - (void)updateName;
 - (void)updateNameForApplication:(id)arg1 findingName:(id)arg2;
 - (void)awakeFromNib;

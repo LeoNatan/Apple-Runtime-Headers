@@ -19,8 +19,8 @@
     _Bool _trusted;
 }
 
-@property(nonatomic, getter=isTrusted) _Bool trusted; // @synthesize trusted=_trusted;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isTrusted) _Bool trusted; // @synthesize trusted=_trusted;
 - (id)_trustedLabel;
 - (id)_subtitleLabel;
 - (id)_titleLabel;

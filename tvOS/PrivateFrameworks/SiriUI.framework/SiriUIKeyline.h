@@ -24,12 +24,12 @@
 + (id)keylineForSelectableRow;
 + (id)keylineWithDefaultInsets;
 + (id)keyline;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isVeritical, setter=_setVertical:) _Bool veritical; // @synthesize veritical=_veritical;
 @property(retain, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(nonatomic) double customRightPadding; // @synthesize customRightPadding=_customRightPadding;
 @property(nonatomic) double customLeftPadding; // @synthesize customLeftPadding=_customLeftPadding;
 @property(nonatomic) long long keylineType; // @synthesize keylineType=_keylineType;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)_sizeThatFits:(struct CGSize)arg1 useAutolayout:(_Bool)arg2;
 - (struct CGSize)intrinsicContentSize;

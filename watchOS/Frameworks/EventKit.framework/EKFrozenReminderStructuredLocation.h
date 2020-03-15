@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 + (id)uniqueIdentifierForREMObject:(id)arg1;
 + (_Bool)canCommitSelf;
 + (Class)meltedClass;
-- (void)setLatitudeAndLongitudeFromAlternateUniverseObject:(EKPersistentObject_556b3b22 *)arg1 inChangeSet:(id)arg2;
+- (void)setLatitudeAndLongitudeFromAlternateUniverseObject:(id)arg1 inChangeSet:(id)arg2;
 - (double)radius;
 - (int)referenceFrame;
 - (double)longitude;
@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)_structuredLocation;
 - (id)remObjectID;
 @property(readonly) NSString *uniqueIdentifier;
-- (id)initWithAlternateUniverseObject:(EKPersistentObject_556b3b22 *)arg1 inEventStore:(id)arg2 withUpdatedChildObjects:(id)arg3;
+- (id)initWithAlternateUniverseObject:(id)arg1 inEventStore:(id)arg2 withUpdatedChildObjects:(id)arg3;
 
 @end
 

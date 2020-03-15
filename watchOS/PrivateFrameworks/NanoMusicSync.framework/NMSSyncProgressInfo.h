@@ -22,6 +22,7 @@
 
 + (id)_stringFromWaitingSubstate:(unsigned int)arg1;
 + (id)_stringFromSyncState:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long aggregateAssetItemBytesAdded; // @synthesize aggregateAssetItemBytesAdded=_aggregateAssetItemBytesAdded;
 @property(nonatomic) int numberOfAssetItemsNeedingDownload; // @synthesize numberOfAssetItemsNeedingDownload=_numberOfAssetItemsNeedingDownload;
 @property(nonatomic) int numberOfAssetItemsSynced; // @synthesize numberOfAssetItemsSynced=_numberOfAssetItemsSynced;
@@ -30,7 +31,6 @@
 @property(nonatomic) unsigned int syncWaitingSubstate; // @synthesize syncWaitingSubstate=_syncWaitingSubstate;
 @property(nonatomic) unsigned int syncState; // @synthesize syncState=_syncState;
 @property(retain, nonatomic) NSString *assetType; // @synthesize assetType=_assetType;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

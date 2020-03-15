@@ -19,11 +19,11 @@
 }
 
 + (id)rootWithListener:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKComponentScopeFrame *rootFrame; // @synthesize rootFrame=_rootFrame;
 @property(readonly, nonatomic) int globalIdentifier; // @synthesize globalIdentifier=_globalIdentifier;
 @property(readonly, nonatomic) __weak id <CKComponentStateListener> listener; // @synthesize listener=_listener;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct CKComponentBoundsAnimation)boundsAnimationFromPreviousScopeRoot:(id)arg1;
 - (id)boundsAnimationComponents;
 - (void)registerBoundsAnimationComponent:(id)arg1;

@@ -18,13 +18,13 @@
     unsigned long long _updateType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long updateType; // @synthesize updateType=_updateType;
 @property(retain, nonatomic) IKViewElement *templateViewElement; // @synthesize templateViewElement=_templateViewElement;
 @property(retain, nonatomic) IKViewElement *toolBarViewElement; // @synthesize toolBarViewElement=_toolBarViewElement;
 @property(retain, nonatomic) IKViewElement *navigationBarViewElement; // @synthesize navigationBarViewElement=_navigationBarViewElement;
 @property(retain, nonatomic) IKViewElement *headViewElement; // @synthesize headViewElement=_headViewElement;
 @property(retain, nonatomic) IKViewElementStyleFactory *styleFactory; // @synthesize styleFactory=_styleFactory;
-- (void).cxx_destruct;
 
 @end
 

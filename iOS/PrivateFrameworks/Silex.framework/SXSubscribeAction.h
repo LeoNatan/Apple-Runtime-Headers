@@ -16,8 +16,8 @@
     id <SXAction> postPurchaseAction;
 }
 
-@property(readonly, nonatomic) id <SXAction> postPurchaseAction; // @synthesize postPurchaseAction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXAction> postPurchaseAction; // @synthesize postPurchaseAction;
 @property(readonly, nonatomic) NSString *type;
 
 // Remaining properties

@@ -27,8 +27,8 @@
     NSArray *_enteredRecipients;
 }
 
-@property(retain, nonatomic) NSArray *enteredRecipients; // @synthesize enteredRecipients=_enteredRecipients;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *enteredRecipients; // @synthesize enteredRecipients=_enteredRecipients;
 - (id)_dictionaryForResultType:(unsigned long long)arg1;
 - (void)processAddedResultsOfType:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_appendSortedResultsOfType:(unsigned long long)arg1 excluding:(id)arg2 toResults:(id)arg3;

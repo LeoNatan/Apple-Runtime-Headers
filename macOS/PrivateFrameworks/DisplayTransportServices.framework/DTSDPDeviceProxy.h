@@ -25,12 +25,12 @@
 + (void)setPortState:(long long)arg1 forKey:(id)arg2;
 + (long long)i2cTransactionLengthLimit;
 + (long long)nativeAUXTransactionLengthLimit;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DTSDisplayPortDeviceAnalyticsData *analyticsData; // @synthesize analyticsData=_analyticsData;
 @property(retain, nonatomic) id <DTSIOPMAssertion> sleepAssertion; // @synthesize sleepAssertion=_sleepAssertion;
 @property(nonatomic) long long portState; // @synthesize portState=_portState;
 @property(readonly, nonatomic) NSString *portLookupKey; // @synthesize portLookupKey=_portLookupKey;
 @property(retain, nonatomic) DTSDPDeviceDescription *remoteDeviceDescription; // @synthesize remoteDeviceDescription=_remoteDeviceDescription;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <DTSDisplayPortDeviceInfo> info;
 - (BOOL)unlock:(id *)arg1;
 - (BOOL)lock:(id *)arg1;

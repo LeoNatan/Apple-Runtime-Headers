@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_resultsQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resultsQueue; // @synthesize resultsQueue=_resultsQueue;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) MKLocalSearch *localSearch; // @synthesize localSearch=_localSearch;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(nonatomic) __weak id <PKAddressSearchModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *recentsSearchResults; // @synthesize recentsSearchResults=_recentsSearchResults;
-- (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)_resetContactsSearchResults;
 - (void)_updateRecents:(id)arg1;

@@ -34,10 +34,12 @@
     NSDate *_renewalDate;
 }
 
++ (id)receiptWithData:(id)arg1;
 + (id)receiptWithContentsOfFile:(id)arg1;
-+ (id)receiptPathForBundleAtPath:(id)arg1;
++ (id)_receiptURLForBundleURL:(id)arg1;
 + (id)receiptFromBundleAtURL:(id)arg1;
 + (id)receiptFromBundleAtPath:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *path; // @synthesize path=_path;
 @property(readonly) NSDate *renewalDate; // @synthesize renewalDate=_renewalDate;
 @property(readonly) NSString *receiptType; // @synthesize receiptType=_receiptType;
@@ -58,7 +60,6 @@
 @property(readonly) NSString *cancellationReason; // @synthesize cancellationReason=_cancellationReason;
 @property(readonly) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(readonly) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (long long)_verifySignatureForSignedData:(struct SecCmsSignedDataStr *)arg1 onDate:(id)arg2;
 - (BOOL)_setPoliciesForTrust:(struct __SecTrust *)arg1;
 - (void)_parseTokens:(id)arg1;
@@ -80,6 +81,7 @@
 @property(readonly) BOOL isVPPLicensed;
 @property(readonly) BOOL isRevoked;
 @property(readonly) BOOL isDSIDless;
+- (id)initWithData:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 
 @end

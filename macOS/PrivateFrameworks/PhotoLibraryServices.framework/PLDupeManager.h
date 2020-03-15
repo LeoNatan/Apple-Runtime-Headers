@@ -32,8 +32,8 @@
 + (id)_hashForFileAtPath:(id)arg1 utiType:(id)arg2;
 + (BOOL)resetDupesAnalysisForOfflineStore:(id)arg1 pathManager:(id)arg2;
 + (BOOL)_resetDupesAnalysisInManagedObjectContext:(id)arg1 pathManager:(id)arg2;
-@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void)resumeAnalysisWithReason:(id)arg1;
 - (void)pauseAnalysisWithReason:(id)arg1;
 - (void)_resetSoftPauseReasons;

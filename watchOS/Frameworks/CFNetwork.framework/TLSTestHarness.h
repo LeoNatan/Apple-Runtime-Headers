@@ -27,6 +27,8 @@
     NSURLCredential *_clientCertificateSent;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain) NSURLCredential *clientCertificateSent; // @synthesize clientCertificateSent=_clientCertificateSent;
 @property _Bool clientCertificateRequested; // @synthesize clientCertificateRequested=_clientCertificateRequested;
 @property shared_ptr_3ed6bb45 receivedServerTrust; // @synthesize receivedServerTrust=_receivedServerTrust;
@@ -37,8 +39,6 @@
 @property(retain) NSURLSession *session; // @synthesize session=_session;
 @property(retain) NSMutableDictionary *socketStreamProperties; // @synthesize socketStreamProperties=_socketStreamProperties;
 @property(retain) NSURLSessionConfiguration *sessionConfig; // @synthesize sessionConfig=_sessionConfig;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

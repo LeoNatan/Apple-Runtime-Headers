@@ -9,6 +9,7 @@
 @class NSArray, UIView, UIViewController;
 
 @protocol PKPalettePopoverPresenting <NSObject>
+- (void)updatePalettePopover:(UIViewController *)arg1;
 - (UIView *)palettePopoverSourceView;
 - (struct CGRect)palettePopoverSourceRect;
 - (_Bool)wantsCustomPalettePopoverPresentationSource;

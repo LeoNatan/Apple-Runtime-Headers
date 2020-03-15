@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *baggageClaim; // @synthesize baggageClaim=_baggageClaim;
 @property(retain) FUFlightStep *arrival; // @synthesize arrival=_arrival;
 @property(retain) FUFlightStep *departure; // @synthesize departure=_departure;
 @property double duration; // @synthesize duration=_duration;
 @property long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

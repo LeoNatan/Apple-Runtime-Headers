@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *ongoingDeleteIDOperationDictionary; // @synthesize ongoingDeleteIDOperationDictionary=_ongoingDeleteIDOperationDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *ongoingDeleteIDOperationDictionary; // @synthesize ongoingDeleteIDOperationDictionary=_ongoingDeleteIDOperationDictionary;
 - (void)sendRequestForDeleteID:(id)arg1 canonicalID:(id)arg2 isContinueWatching:(_Bool)arg3;
 - (id)init;
 - (id)_init;

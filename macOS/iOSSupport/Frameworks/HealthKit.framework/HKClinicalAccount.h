@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKClinicalGateway *gateway; // @synthesize gateway=_gateway;
 @property(readonly, copy, nonatomic) NSDate *lastFullFetchDate; // @synthesize lastFullFetchDate=_lastFullFetchDate;
 @property(readonly, copy, nonatomic) NSDate *lastFetchDate; // @synthesize lastFetchDate=_lastFetchDate;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic, getter=isUserEnabled) BOOL userEnabled; // @synthesize userEnabled=_userEnabled;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

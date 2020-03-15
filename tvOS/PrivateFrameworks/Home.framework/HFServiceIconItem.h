@@ -13,8 +13,8 @@
     id <HFIconDescriptor> _iconDescriptor;
 }
 
-@property(readonly, nonatomic) id <HFIconDescriptor> iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <HFIconDescriptor> iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithIconDescriptor:(id)arg1;
 

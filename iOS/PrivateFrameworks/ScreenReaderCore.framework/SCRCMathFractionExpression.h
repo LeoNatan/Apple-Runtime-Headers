@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     double _lineThickness;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lineThickness; // @synthesize lineThickness=_lineThickness;
 @property(retain, nonatomic) SCRCMathExpression *operator; // @synthesize operator=_operator;
 @property(retain, nonatomic) SCRCMathExpression *denominator; // @synthesize denominator=_denominator;
 @property(retain, nonatomic) SCRCMathExpression *numerator; // @synthesize numerator=_numerator;
-- (void).cxx_destruct;
 - (id)latexMathModeDescription;
 - (id)mathMLString;
 - (id)_dollarCodeDescriptionAsBinomialCoefficient:(_Bool)arg1 orMixedNumberFraction:(_Bool)arg2 withNumberOfOuterRadicals:(unsigned long long)arg3 treePosition:(id)arg4;

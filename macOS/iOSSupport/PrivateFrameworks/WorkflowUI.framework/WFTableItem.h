@@ -27,6 +27,7 @@
 + (id)itemWithPrimaryText:(id)arg1;
 + (id)itemWithCellClass:(Class)arg1 representedObject:(id)arg2 configurationBlock:(CDUnknownBlockType)arg3;
 + (id)itemWithStyle:(long long)arg1 representedObject:(id)arg2 configurationBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFTableItemTreeNode *node; // @synthesize node=_node;
 @property(readonly, nonatomic) NSMutableArray *mutableChildren; // @synthesize mutableChildren=_mutableChildren;
 @property(nonatomic, getter=isExpanded) BOOL expanded; // @synthesize expanded=_expanded;
@@ -34,7 +35,6 @@
 @property(nonatomic) long long accessoryType; // @synthesize accessoryType=_accessoryType;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) Class cellClass; // @synthesize cellClass=_cellClass;
-- (void).cxx_destruct;
 - (void)removeFromParent;
 - (id)nextItemInSection;
 - (void)configureCell:(id)arg1;

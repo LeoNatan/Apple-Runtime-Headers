@@ -22,12 +22,12 @@
 + (_Bool)_supportsInterface:(struct __SCNetworkInterface *)arg1;
 + (id)_interfaceType;
 + (id)preferredInterface;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasChanges; // @synthesize hasChanges=_hasChanges;
 @property(copy, nonatomic) NSString *hardwareAddress; // @synthesize hardwareAddress=_hardwareAddress;
 @property(readonly, copy, nonatomic) NSString *IPAddress; // @synthesize IPAddress=_IPAddress;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_setNeedsUpdate;
 - (void)_discardChanges;
 - (_Bool)_commitChangesWithServiceRef:(struct __SCNetworkService *)arg1;

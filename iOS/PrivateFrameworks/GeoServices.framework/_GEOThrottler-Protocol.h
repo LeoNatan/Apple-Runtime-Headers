@@ -9,16 +9,16 @@
 @class NSDictionary, NSString;
 
 @protocol _GEOThrottler <NSObject>
-+ (_Bool)stateIsExpired:(struct NSDictionary *)arg1;
++ (_Bool)stateIsExpired:(NSDictionary *)arg1;
 @property(readonly, nonatomic) double timeWindow;
 @property(readonly, nonatomic) NSString *keyPath;
-- (struct NSDictionary *)captureState;
+- (NSDictionary *)captureState;
 - (_Bool)isExpired;
 - (NSDictionary *)userInfoForError;
 - (unsigned int)maxReqCount;
 - (double)timeUntilReset;
 - (unsigned long long)remainingEntries;
 - (_Bool)addRequestTimestamp;
-- (id)initWithKeyPath:(NSString *)arg1 requestCount:(unsigned long long)arg2 interval:(double)arg3 savedState:(struct NSDictionary *)arg4;
+- (id)initWithKeyPath:(NSString *)arg1 requestCount:(unsigned long long)arg2 interval:(double)arg3 savedState:(NSDictionary *)arg4;
 @end
 

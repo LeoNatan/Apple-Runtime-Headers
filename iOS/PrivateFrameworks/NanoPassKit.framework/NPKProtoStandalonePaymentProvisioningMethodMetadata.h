@@ -25,6 +25,7 @@
 }
 
 + (Class)requiredFieldsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *minimumReaderModeBalance; // @synthesize minimumReaderModeBalance=_minimumReaderModeBalance;
 @property(retain, nonatomic) NSString *readerModeResourcesJson; // @synthesize readerModeResourcesJson=_readerModeResourcesJson;
 @property(retain, nonatomic) NPKProtoStandalonePaymentDigitalIssuanceMetadata *digitalIssuanceMetadata; // @synthesize digitalIssuanceMetadata=_digitalIssuanceMetadata;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSString *depositAmount; // @synthesize depositAmount=_depositAmount;
 @property(retain, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(retain, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

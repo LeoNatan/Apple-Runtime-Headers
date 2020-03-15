@@ -19,6 +19,7 @@
     NSData *_LAContext;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *LAContext; // @synthesize LAContext=_LAContext;
 @property(retain) NSData *key; // @synthesize key=_key;
 @property struct __SecIdentity *identity; // @synthesize identity=_identity;
@@ -26,7 +27,6 @@
 @property(retain) NSArray *signerPolicies; // @synthesize signerPolicies=_signerPolicies;
 @property BOOL verifySigners; // @synthesize verifySigners=_verifySigners;
 @property BOOL verifySignatures; // @synthesize verifySignatures=_verifySignatures;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDecryptionKey:(id)arg1;
 - (id)initWithDecryptionIdentity:(struct __SecIdentity *)arg1;

@@ -17,10 +17,10 @@
     OSLogDevice *_rawDevice;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OSLogDevice *rawDevice; // @synthesize rawDevice=_rawDevice;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 identifier:(id)arg2;
 - (id)initWithOSLogDevice:(id)arg1;
 

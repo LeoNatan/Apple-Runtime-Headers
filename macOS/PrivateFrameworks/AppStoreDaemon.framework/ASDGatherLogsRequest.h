@@ -6,15 +6,35 @@
 
 #import <objc/NSObject.h>
 
+@class ASDGatherLogsRequestOptions, NSXPCConnection;
+@protocol OS_dispatch_queue;
+
 @interface ASDGatherLogsRequest : NSObject
 {
+    NSObject<OS_dispatch_queue> *_accessQueue;
+    NSObject<OS_dispatch_queue> *_calloutQueue;
+    NSXPCConnection *_connection;
+    ASDGatherLogsRequestOptions *_options;
 }
 
++ (id)_harLogsDirectory;
++ (void)_clearHARFiles;
++ (long long)requestType;
++ (void)clearHARFiles;
+- (void).cxx_destruct;
+- (id)_zippedDataForURL:(id)arg1;
+- (void)_sendHarFileRequestWithOptions:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)_sendRequestWithOptions:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)_sendGatherRequestWithOptions:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)_createCombinedHarFile;
+- (void)_copyDB:(id)arg1 fullSourcePath:(id)arg2 toDir:(id)arg3 datbaseBase:(id)arg4;
+- (void)_combineLogs:(id)arg1 toDir:(id)arg2;
+- (id)_combineAllLogs;
+- (id)_appstoredContainerPath;
 - (void)gatherLogsWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)createHARFileArchiveWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)createLogFileArchiveWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)createHarFileArchiveWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithOptions:(id)arg1;
-- (id)init;
 
 @end
 

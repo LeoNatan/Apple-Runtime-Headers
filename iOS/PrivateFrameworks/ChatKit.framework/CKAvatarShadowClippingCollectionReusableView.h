@@ -15,8 +15,8 @@
 
 + (struct CGSize)shadowSize;
 + (id)decorationViewKind;
-@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

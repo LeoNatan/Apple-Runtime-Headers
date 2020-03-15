@@ -73,6 +73,7 @@
 + (_Bool)isValidTransaction:(long long)arg1;
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EFFuture *delayDataSourceAssignmentFuture; // @synthesize delayDataSourceAssignmentFuture=_delayDataSourceAssignmentFuture;
 @property(nonatomic) double dataSourceUpdateTimeLimit; // @synthesize dataSourceUpdateTimeLimit=_dataSourceUpdateTimeLimit;
 @property(nonatomic) double coalescingDelaySeconds; // @synthesize coalescingDelaySeconds=_coalescingDelaySeconds;
@@ -85,7 +86,6 @@
 @property(nonatomic) __weak id <EDSearchableIndexReasonProvider> reasonProvider; // @synthesize reasonProvider=_reasonProvider;
 @property(nonatomic) __weak id <EDSearchableIndexDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic, getter=isDataSourceIndexingPermitted) _Bool dataSourceIndexingPermitted; // @synthesize dataSourceIndexingPermitted=_dataSourceIndexingPermitted;
-- (void).cxx_destruct;
 - (void)waitForAsynchronousWork;
 - (id)currentReasons;
 - (id)exclusionReasons;

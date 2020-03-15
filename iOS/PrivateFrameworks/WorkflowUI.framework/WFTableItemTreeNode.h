@@ -13,8 +13,8 @@
     WFTableItem *_item;
 }
 
-@property(nonatomic) __weak WFTableItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFTableItem *item; // @synthesize item=_item;
 
 @end
 

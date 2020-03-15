@@ -20,11 +20,11 @@
 }
 
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <EARPSRAudioProcessorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *configRoot; // @synthesize configRoot=_configRoot;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_startComputeTask;
 - (void)resetForNewRequest;

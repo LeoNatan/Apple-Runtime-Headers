@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *FPInfo; // @synthesize FPInfo=_FPInfo;
 @property(copy, nonatomic) NSString *hostApplicationVersion; // @synthesize hostApplicationVersion=_hostApplicationVersion;
 @property(copy, nonatomic) NSString *hostApplicationIdentifier; // @synthesize hostApplicationIdentifier=_hostApplicationIdentifier;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSData *ephemeralPublicKey; // @synthesize ephemeralPublicKey=_ephemeralPublicKey;
 @property(copy, nonatomic) NSData *activationData; // @synthesize activationData=_activationData;
 @property(copy, nonatomic) NSData *encryptedPassData; // @synthesize encryptedPassData=_encryptedPassData;
-- (void).cxx_destruct;
 - (BOOL)_hasRequiredFields:(BOOL)arg1;
 - (BOOL)_hasRequiredThirdPartyFields:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;

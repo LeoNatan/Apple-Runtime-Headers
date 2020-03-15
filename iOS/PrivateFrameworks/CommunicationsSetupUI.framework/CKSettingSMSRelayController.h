@@ -19,8 +19,8 @@
 + (unsigned long long)numberOfActiveDevices;
 + (_Bool)deviceIsAuthorized:(id)arg1;
 + (id)authorizedSMSRelayDevices;
-@property(retain, nonatomic) IDSService *relayService; // @synthesize relayService=_relayService;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDSService *relayService; // @synthesize relayService=_relayService;
 - (void)setDeviceActive:(id)arg1 specifier:(id)arg2;
 - (id)getDeviceActive:(id)arg1;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;

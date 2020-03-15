@@ -17,10 +17,10 @@
     NSURLRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) NSString *host; // @synthesize host=_host;
 @property(readonly, nonatomic) NSString *protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 - (id)initWithProtocol:(id)arg1 host:(id)arg2 request:(id)arg3;
 
 // Remaining properties

@@ -15,10 +15,10 @@
     ISLivePhotoUIView *_livePhotoView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDisplayingVideoComplement) _Bool displayingVideoComplement; // @synthesize displayingVideoComplement=_displayingVideoComplement;
 @property(readonly, nonatomic) ISLivePhotoUIView *livePhotoView; // @synthesize livePhotoView=_livePhotoView;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (id)init;
 

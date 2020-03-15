@@ -14,28 +14,34 @@
 {
     _Bool _shouldIgnore;
     _Bool _authenticationRequired;
+    _Bool _ECP2Field;
     unsigned int _technology;
     int _terminalType;
     int _valueAddedServiceMode;
+    unsigned int _terminalSubtype;
+    int _accessTerminalSubtype;
     NSArray *_TCIs;
     NSArray *_merchantIdentifiers;
     NSError *_error;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSArray *merchantIdentifiers; // @synthesize merchantIdentifiers=_merchantIdentifiers;
 @property(copy, nonatomic) NSArray *TCIs; // @synthesize TCIs=_TCIs;
+@property(nonatomic, getter=isECP2Field) _Bool ECP2Field; // @synthesize ECP2Field=_ECP2Field;
 @property(nonatomic) _Bool authenticationRequired; // @synthesize authenticationRequired=_authenticationRequired;
-@property(nonatomic) _Bool shouldIgnore; // @synthesize shouldIgnore=_shouldIgnore;
+@property(readonly, nonatomic) _Bool shouldIgnore; // @synthesize shouldIgnore=_shouldIgnore;
+@property(readonly, nonatomic) int accessTerminalSubtype; // @synthesize accessTerminalSubtype=_accessTerminalSubtype;
+@property(readonly, nonatomic) unsigned int terminalSubtype; // @synthesize terminalSubtype=_terminalSubtype;
 @property(readonly, nonatomic) int valueAddedServiceMode; // @synthesize valueAddedServiceMode=_valueAddedServiceMode;
 @property(readonly, nonatomic) int terminalType; // @synthesize terminalType=_terminalType;
 @property(readonly, nonatomic) unsigned int technology; // @synthesize technology=_technology;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithTechnology:(unsigned int)arg1 terminalType:(int)arg2 valueAddedServiceMode:(int)arg3;
+- (id)initWithTechnology:(unsigned int)arg1 terminalType:(int)arg2 terminalSubtype:(unsigned int)arg3 valueAddedServiceMode:(int)arg4;
 
 @end
 

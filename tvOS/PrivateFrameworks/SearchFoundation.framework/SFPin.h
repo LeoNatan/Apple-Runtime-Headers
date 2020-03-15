@@ -26,13 +26,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int pinBehavior; // @synthesize pinBehavior=_pinBehavior;
 @property(copy, nonatomic) NSData *mapsData; // @synthesize mapsData=_mapsData;
 @property(copy, nonatomic) NSString *resultID; // @synthesize resultID=_resultID;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) SFColor *pinColor; // @synthesize pinColor=_pinColor;
 @property(retain, nonatomic) SFLatLng *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

@@ -13,8 +13,8 @@
     NSString *_symbolicColorName;
 }
 
-@property(retain, nonatomic) NSString *symbolicColorName; // @synthesize symbolicColorName=_symbolicColorName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *symbolicColorName; // @synthesize symbolicColorName=_symbolicColorName;
 - (void)write:(id)arg1;
 @property(retain, nonatomic) NSString *colorString;
 - (void)parserFoundAttributes:(id)arg1;

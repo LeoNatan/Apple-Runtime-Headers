@@ -25,6 +25,7 @@
 @property(copy, nonatomic) NSString *completedQuery;
 @property(copy, nonatomic) NSString *correctedQuery;
 @property(copy, nonatomic) NSString *intendedQuery;
+@property(copy, nonatomic) NSDictionary *serverFeatures;
 @property(copy, nonatomic) NSDictionary *localFeatures;
 @property(nonatomic) _Bool isStaticCorrection;
 @property(retain, nonatomic) SFImage *icon;
@@ -39,10 +40,7 @@
 @property(copy, nonatomic) NSString *resultTemplate;
 @property(copy, nonatomic) NSString *resultType;
 @property(retain, nonatomic) SFCustom *customProperties;
-@property(nonatomic) unsigned int origRank;
 @property(nonatomic) double personalizationScore;
-@property(copy, nonatomic) NSDictionary *featureScaling;
-@property(copy, nonatomic) NSDictionary *topicDistribution;
 @property(nonatomic) double serverScore;
 @property(copy, nonatomic) NSString *mediaType;
 @property(nonatomic) unsigned int minimumRankOfTopHitToSuppressResult;

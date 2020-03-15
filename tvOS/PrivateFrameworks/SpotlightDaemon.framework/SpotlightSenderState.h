@@ -13,8 +13,8 @@
     CSReceiverServerPreferences *_serverPreferences;
 }
 
-@property(readonly, nonatomic) CSReceiverServerPreferences *serverPreferences; // @synthesize serverPreferences=_serverPreferences;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSReceiverServerPreferences *serverPreferences; // @synthesize serverPreferences=_serverPreferences;
 - (_Bool)clientDisabled:(long long)arg1;
 - (void)_updateFromPreferences;
 - (id)init;

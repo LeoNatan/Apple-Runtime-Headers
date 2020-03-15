@@ -88,6 +88,7 @@
 + (void)clearCaches;
 + (void)_clearViewCache;
 + (id)_viewCache;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL touchesAreBeingTracked; // @synthesize touchesAreBeingTracked=_touchesAreBeingTracked;
 @property(readonly, nonatomic) EKDayOccurrenceState *currentImageState; // @synthesize currentImageState=_currentImageState;
 @property(nonatomic) double topYBoundaryForText; // @synthesize topYBoundaryForText=_topYBoundaryForText;
@@ -121,7 +122,6 @@
 @property(nonatomic) BOOL isVibrant; // @synthesize isVibrant=_isVibrant;
 @property(nonatomic) __weak EKDayOccurrenceView *selectedCopy; // @synthesize selectedCopy=_selectedCopy;
 @property(nonatomic) __weak NSObject<EKDayOccurrenceViewDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)_compareOccurrenceViewLeftToRight:(id)arg1;
 - (BOOL)_isBelowAllDayOccurrenceView:(id)arg1;
 - (BOOL)_isBelowOccurrenceView:(id)arg1 overlapToIgnore:(double)arg2;

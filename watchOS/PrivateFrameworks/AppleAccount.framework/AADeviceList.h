@@ -18,10 +18,10 @@
     id <AADeviceListDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AADeviceListDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSError *loadError; // @synthesize loadError=_loadError;
 @property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
-- (void).cxx_destruct;
 - (void)_renewCredentials;
 - (void)_loadRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_createRequestForAccount:(id)arg1 requestHandler:(CDUnknownBlockType)arg2;

@@ -14,9 +14,9 @@
     long long _handle;
 }
 
+- (void).cxx_destruct;
 @property long long handle; // @synthesize handle=_handle;
 @property(retain) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)expel;
 - (void)consume;
 - (BOOL)isEqual:(id)arg1;

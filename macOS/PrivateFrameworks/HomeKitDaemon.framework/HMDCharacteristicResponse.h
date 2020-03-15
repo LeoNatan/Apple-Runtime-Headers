@@ -19,12 +19,12 @@
 
 + (id)responsesWithRequests:(id)arg1 error:(id)arg2;
 + (id)responseWithRequest:(id)arg1 error:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *valueUpdatedTime; // @synthesize valueUpdatedTime=_valueUpdatedTime;
 @property(readonly, nonatomic) NSNumber *stateNumber; // @synthesize stateNumber=_stateNumber;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) HMDCharacteristicRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setValue:(id)arg1 updatedTime:(id)arg2 stateNumber:(id)arg3;
 - (id)initWithRequest:(id)arg1 error:(id)arg2;

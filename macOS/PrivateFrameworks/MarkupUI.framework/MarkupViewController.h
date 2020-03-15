@@ -42,6 +42,7 @@
 + (BOOL)hasPrivateImageMetadata:(id)arg1;
 + (id)supportedOutputTypes;
 + (struct CGSize)minimumToolbarSize;
+- (void).cxx_destruct;
 @property BOOL cropToolEnabled; // @synthesize cropToolEnabled=_cropToolEnabled;
 @property(copy, nonatomic) NSString *hostProcessBundleIdentifier; // @synthesize hostProcessBundleIdentifier=_hostProcessBundleIdentifier;
 @property BOOL encryptPrivateMetadata; // @synthesize encryptPrivateMetadata=_encryptPrivateMetadata;
@@ -62,7 +63,6 @@
 @property(nonatomic) __weak NSView *contentViewHolder; // @synthesize contentViewHolder=_contentViewHolder;
 @property(nonatomic) __weak NSStackView *toolBarViewHolder; // @synthesize toolBarViewHolder=_toolBarViewHolder;
 @property BOOL wantsToolbarAndPadding; // @synthesize wantsToolbarAndPadding=_wantsToolbarAndPadding;
-- (void).cxx_destruct;
 - (void)_someViewDidChangeFrame:(id)arg1;
 - (void)_updateBorderOverlayView;
 - (struct CGSize)_usableScreenSize;

@@ -7,6 +7,7 @@
 #import <PrototypeToolsUI/NSObject-Protocol.h>
 
 @protocol PTUIServer <NSObject>
+- (void)launchForRemoteEditing;
 - (void)handlePrototypingEvent:(int)arg1;
 @end
 

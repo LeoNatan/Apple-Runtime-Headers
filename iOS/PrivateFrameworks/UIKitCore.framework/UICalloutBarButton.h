@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 + (id)buttonWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(double)arg3 action:(SEL)arg4 type:(int)arg5 inView:(id)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dontDismiss; // @synthesize dontDismiss=m_dontDismiss;
 @property(nonatomic) double imageVerticalAdjust; // @synthesize imageVerticalAdjust=m_imageVerticalAdjust;
 @property(nonatomic) double dividerOffset; // @synthesize dividerOffset=m_dividerOffset;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double contentScale; // @synthesize contentScale=m_contentScale;
 @property(readonly, nonatomic) double contentWidth; // @synthesize contentWidth=m_contentWidth;
 @property(readonly, nonatomic) SEL action; // @synthesize action=m_action;
-- (void).cxx_destruct;
 - (void)flash;
 - (void)cancelFlash;
 - (void)fadeAndSendAction;

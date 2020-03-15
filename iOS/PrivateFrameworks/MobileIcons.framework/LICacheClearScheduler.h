@@ -23,6 +23,7 @@
 }
 
 + (id)transactionDescription:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType clearHandler; // @synthesize clearHandler=_clearHandler;
 @property _Bool holdTransaction; // @synthesize holdTransaction=_holdTransaction;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -32,7 +33,6 @@
 @property _Bool timerFired; // @synthesize timerFired=_timerFired;
 @property(retain) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property double delay; // @synthesize delay=_delay;
-- (void).cxx_destruct;
 - (void)_queue_clearCache;
 @property(readonly) id object; // @synthesize object=_object;
 - (id)initWithObject:(id)arg1 delay:(double)arg2 holdTransaction:(_Bool)arg3 clearHandler:(CDUnknownBlockType)arg4;

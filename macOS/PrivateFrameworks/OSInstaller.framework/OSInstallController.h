@@ -64,6 +64,7 @@
 
 + (id)failureReasonForError:(id)arg1;
 + (id)getPriorOSBuildOnSystemTarget:(id)arg1 withRecoveredItems:(id)arg2;
+- (void).cxx_destruct;
 @property BOOL hasPickedATarget; // @synthesize hasPickedATarget=_hasPickedATarget;
 @property BOOL targetEvaluationStarted; // @synthesize targetEvaluationStarted=_targetEvaluationStarted;
 @property(retain) NSObject<OS_dispatch_queue> *targetEvaluationQueue; // @synthesize targetEvaluationQueue=_targetEvaluationQueue;
@@ -109,7 +110,6 @@
 @property(retain) NSError *installCheckFailureReason; // @synthesize installCheckFailureReason=_installCheckFailureReason;
 @property BOOL hasEvaluatedInstallability; // @synthesize hasEvaluatedInstallability=_hasEvaluatedInstallability;
 @property BOOL isCurrentlyInstalling; // @synthesize isCurrentlyInstalling=_isCurrentlyInstalling;
-- (void).cxx_destruct;
 - (void)powerButtonPressed;
 - (void)lowBatteryStatusChanged:(BOOL)arg1;
 - (void)_thermalStateDidChange:(id)arg1;

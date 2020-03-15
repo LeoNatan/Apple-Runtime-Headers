@@ -16,10 +16,10 @@
     NSTimer *_navigationInvalidationTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTimer *navigationInvalidationTimer; // @synthesize navigationInvalidationTimer=_navigationInvalidationTimer;
 @property(retain, nonatomic) PXGadgetNavigationItem *pendingNavigationItem; // @synthesize pendingNavigationItem=_pendingNavigationItem;
 @property(nonatomic) __weak id <PXGadgetNavigationHelperDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_pendingNavigationInvalidationTimerFired:(id)arg1;
 - (void)_stopPendingNavigationTimer;
 - (BOOL)_navigateToGadget:(id)arg1 animated:(BOOL)arg2 navigationBlock:(CDUnknownBlockType)arg3;

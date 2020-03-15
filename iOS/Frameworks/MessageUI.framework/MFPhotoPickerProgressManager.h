@@ -13,8 +13,8 @@
     NSMutableDictionary *_progressItems;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *progressItems; // @synthesize progressItems=_progressItems;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *progressItems; // @synthesize progressItems=_progressItems;
 - (void)_cancelProgressItem:(id)arg1;
 - (void)cancelEverythingAtIndexPath:(id)arg1;
 - (void)cancelEverything;

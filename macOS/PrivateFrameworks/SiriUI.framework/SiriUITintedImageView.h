@@ -13,8 +13,8 @@
     NSColor *_tintColor;
 }
 
-@property(copy, nonatomic) NSColor *tintColor; // @synthesize tintColor=_tintColor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSColor *tintColor; // @synthesize tintColor=_tintColor;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

@@ -22,8 +22,8 @@
     NSMutableDictionary *_feedbackDelegateDemultiplexersByCardIdentifiers;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *feedbackDelegateDemultiplexersByCardIdentifiers; // @synthesize feedbackDelegateDemultiplexersByCardIdentifiers=_feedbackDelegateDemultiplexersByCardIdentifiers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *feedbackDelegateDemultiplexersByCardIdentifiers; // @synthesize feedbackDelegateDemultiplexersByCardIdentifiers=_feedbackDelegateDemultiplexersByCardIdentifiers;
 - (void)cardSectionViewDidDisappearForCardSection:(id)arg1 withDisappearanceFeedback:(id)arg2;
 - (void)cardSectionViewDidAppearForCardSection:(id)arg1 withAppearanceFeedback:(id)arg2;
 - (void)cardSectionViewWillAppearForCardSection:(id)arg1 withAppearanceFeedback:(id)arg2;

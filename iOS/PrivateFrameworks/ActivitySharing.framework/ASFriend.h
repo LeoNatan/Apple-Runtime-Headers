@@ -21,19 +21,19 @@
 }
 
 + (id)friendWithCodableFriend:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *friendWorkouts; // @synthesize friendWorkouts=_friendWorkouts;
 @property(retain, nonatomic) NSDictionary *friendAchievements; // @synthesize friendAchievements=_friendAchievements;
 @property(retain, nonatomic) NSDictionary *snapshots; // @synthesize snapshots=_snapshots;
 @property(retain, nonatomic) NSArray *competitions; // @synthesize competitions=_competitions;
 @property(retain, nonatomic) ASContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *fullName;
 @property(readonly, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) NSDateComponents *currentDateComponents;
 @property(readonly, nonatomic) NSTimeZone *timeZone;
 @property(readonly, nonatomic) _Bool supportsCompetitions;
-- (struct _HKFitnessFriendActivitySnapshot *)snapshotWithGoalsCarriedForwardForSnapshotIndex:(id)arg1;
-- (struct _HKFitnessFriendActivitySnapshot *)_emptySnapshotWithGoalsCarriedForwardForSnapshotIndex:(long long)arg1;
+- (id)snapshotWithGoalsCarriedForwardForSnapshotIndex:(id)arg1;
+- (id)_emptySnapshotWithGoalsCarriedForwardForSnapshotIndex:(long long)arg1;
 @property(readonly, nonatomic) _HKFitnessFriendActivitySnapshot *currentSnapshotWithGoalsCarriedForward;
 @property(readonly, nonatomic) NSNumber *currentCacheIndex; // @synthesize currentCacheIndex=_currentCacheIndex;
 @property(readonly, nonatomic) _HKFitnessFriendActivitySnapshot *currentSnapshot;

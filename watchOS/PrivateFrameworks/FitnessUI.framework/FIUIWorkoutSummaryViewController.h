@@ -40,11 +40,11 @@
     HKWorkout *_workout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKWorkout *workout; // @synthesize workout=_workout;
 @property(retain, nonatomic) FIUIWorkoutSummaryRowBuilder *rowBuilder; // @synthesize rowBuilder=_rowBuilder;
 @property(retain, nonatomic) NSDictionary *swimDistanceByStrokeStyle; // @synthesize swimDistanceByStrokeStyle=_swimDistanceByStrokeStyle;
 @property(nonatomic) __weak id <FIUIWorkoutSummaryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_resignCurrentActivity;
 - (void)_becomeCurrentActivity;
 - (void)_onDoneButton;

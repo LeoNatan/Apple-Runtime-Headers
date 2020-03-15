@@ -25,6 +25,7 @@
 + (id)_codedQuantityForValueCollection:(id)arg1;
 + (id)_codedQuantityForValue:(id)arg1;
 + (id)referenceRangeViewDataFromInspectableValueInRange:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useOutOfRangeValueColor; // @synthesize useOutOfRangeValueColor=_useOutOfRangeValueColor;
 @property(copy, nonatomic) NSNumber *rangeHigh; // @synthesize rangeHigh=_rangeHigh;
 @property(copy, nonatomic) NSNumber *rangeLow; // @synthesize rangeLow=_rangeLow;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *rangeLowString; // @synthesize rangeLowString=_rangeLowString;
 @property(copy, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
 @property(copy, nonatomic) NSString *valueString; // @synthesize valueString=_valueString;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

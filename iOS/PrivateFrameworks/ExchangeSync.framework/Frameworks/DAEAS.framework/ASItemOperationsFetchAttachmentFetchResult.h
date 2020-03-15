@@ -21,10 +21,10 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASItemOperationsFetchAttachmentProperties *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) NSString *fileReference; // @synthesize fileReference=_fileReference;
 @property(retain, nonatomic) NSNumber *status; // @synthesize status=_status;
-- (void).cxx_destruct;
 
 @end
 

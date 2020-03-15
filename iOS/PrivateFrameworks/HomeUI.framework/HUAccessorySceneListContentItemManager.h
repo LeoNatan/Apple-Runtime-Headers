@@ -19,11 +19,11 @@
 
 + (id)computeNumberOfItemsToDisplayForContentSource:(unsigned long long)arg1 serviceLikeItem:(id)arg2 home:(id)arg3;
 + (id)createItemProviderForContentSource:(unsigned long long)arg1 serviceLikeItem:(id)arg2 home:(id)arg3 persistAddedSuggestions:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *committedActionBuildersByActionSetID; // @synthesize committedActionBuildersByActionSetID=_committedActionBuildersByActionSetID;
 @property(nonatomic) _Bool persistAddedSuggestions; // @synthesize persistAddedSuggestions=_persistAddedSuggestions;
 @property(readonly, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
 @property(readonly, nonatomic) unsigned long long contentSource; // @synthesize contentSource=_contentSource;
-- (void).cxx_destruct;
 - (id)suggestionItemProvider;
 - (id)_transformedUpdateOutcomeForItem:(id)arg1 proposedOutcome:(id)arg2;
 - (id)_buildItemProvidersForHome:(id)arg1;

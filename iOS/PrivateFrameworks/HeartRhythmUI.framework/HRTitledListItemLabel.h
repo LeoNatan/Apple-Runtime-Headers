@@ -15,10 +15,10 @@
     long long _currentUserInterfaceStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) HRListItemLabel *listItemLabel; // @synthesize listItemLabel=_listItemLabel;
-- (void).cxx_destruct;
 - (double)_bodyLabelToBottom;
 - (id)_bodyLabelFont;
 - (double)_listItemLabelToBody;

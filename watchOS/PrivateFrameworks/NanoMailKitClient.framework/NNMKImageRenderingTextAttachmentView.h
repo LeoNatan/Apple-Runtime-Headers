@@ -13,8 +13,8 @@
     UIImageView *_imageView;
 }
 
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void)layoutSubviews;
 @property(retain, nonatomic) UIImage *image;
 - (id)initWithImage:(id)arg1;

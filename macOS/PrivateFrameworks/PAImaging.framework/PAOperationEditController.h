@@ -14,9 +14,9 @@
     NSUUID *_operationUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak PADescriptionEditController *descriptionEditController; // @synthesize descriptionEditController=_descriptionEditController;
 @property(readonly) NSUUID *operationUUID; // @synthesize operationUUID=_operationUUID;
-- (void).cxx_destruct;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)remove;

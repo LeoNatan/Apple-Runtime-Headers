@@ -38,10 +38,6 @@ struct CGSize {
     double _field2;
 };
 
-struct NSString {
-    Class _field1;
-};
-
 struct _AXEventDataStorage {
     long long eventSenderIdentifier;
 };

@@ -28,12 +28,12 @@
 + (id)protectedDatabaseName;
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isReconciling; // @synthesize isReconciling=_isReconciling;
 @property(nonatomic) BOOL isInitialized; // @synthesize isInitialized=_isInitialized;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *reconciliationQueue; // @synthesize reconciliationQueue=_reconciliationQueue;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(readonly, nonatomic) EDPersistenceDatabaseJournalManager *journalManager; // @synthesize journalManager=_journalManager;
-- (void).cxx_destruct;
 - (void)addAdditionalCriteriaToCleanupActivity:(id)arg1;
 - (void)finishJournalReconciliation:(unsigned long long)arg1;
 @property(readonly, nonatomic) BOOL protectedDataAvailable;

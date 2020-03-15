@@ -19,11 +19,11 @@
 + (id)buildRequiredOnlyWithDomains:(id)arg1 withDomainAction:(id)arg2;
 + (id)buildWithDomains:(id)arg1 withDomainAction:(id)arg2 withRequiredDNSServers:(id)arg3 withRequiredURLStringProbe:(id)arg4;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadRequiredURLStringProbe; // @synthesize payloadRequiredURLStringProbe=_payloadRequiredURLStringProbe;
 @property(copy, nonatomic) NSArray *payloadRequiredDNSServers; // @synthesize payloadRequiredDNSServers=_payloadRequiredDNSServers;
 @property(copy, nonatomic) NSString *payloadDomainAction; // @synthesize payloadDomainAction=_payloadDomainAction;
 @property(copy, nonatomic) NSArray *payloadDomains; // @synthesize payloadDomains=_payloadDomains;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -13,8 +13,8 @@
     CUTPromise *_promise;
 }
 
-@property(retain, nonatomic) CUTPromise *promise; // @synthesize promise=_promise;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CUTPromise *promise; // @synthesize promise=_promise;
 - (void)failWithError:(id)arg1;
 - (void)fulfillWithValue:(id)arg1;
 - (id)initWithQueue:(id)arg1;

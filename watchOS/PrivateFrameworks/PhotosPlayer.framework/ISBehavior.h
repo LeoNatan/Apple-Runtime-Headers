@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     ISPlayerState *_initialLayoutInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) ISPlayerState *initialLayoutInfo; // @synthesize initialLayoutInfo=_initialLayoutInfo;
 @property(nonatomic) __weak id <ISBehaviorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)videoReadyForDisplayDidChange;
 - (void)videoWillPlayToEnd;
 - (void)videoWillPlayToPhoto;

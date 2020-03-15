@@ -24,6 +24,7 @@
 }
 
 + (id)punctuationGroupFromJSONRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL inDatabase; // @synthesize inDatabase=_inDatabase;
 @property(retain, nonatomic) NSDate *ckRecordProcessDate; // @synthesize ckRecordProcessDate=_ckRecordProcessDate;
 @property(retain, nonatomic) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) BOOL isSystemPunctuationGroup;

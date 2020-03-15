@@ -14,9 +14,9 @@
     unsigned long long _expectedResponseCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long expectedResponseCount; // @synthesize expectedResponseCount=_expectedResponseCount;
 @property(copy) NSArray *destinationEWSItemIdStrings; // @synthesize destinationEWSItemIdStrings=_destinationEWSItemIdStrings;
-- (void).cxx_destruct;
 - (void)executeOperation;
 - (void)prepareToExecuteWithResponse:(id)arg1 forRequestOperation:(id)arg2;
 @property(retain) EWSCopyItemResponseType *response;

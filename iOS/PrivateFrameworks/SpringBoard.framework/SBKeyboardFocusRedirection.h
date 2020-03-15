@@ -16,11 +16,11 @@
     BKSHIDEventDeferringToken *_toToken;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) BKSHIDEventDeferringToken *toToken; // @synthesize toToken=_toToken;
 @property(nonatomic) int toProcessIdentifier; // @synthesize toProcessIdentifier=_toProcessIdentifier;
 @property(copy, nonatomic) BKSHIDEventDeferringToken *fromToken; // @synthesize fromToken=_fromToken;
 @property(nonatomic) int fromProcessIdentifier; // @synthesize fromProcessIdentifier=_fromProcessIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

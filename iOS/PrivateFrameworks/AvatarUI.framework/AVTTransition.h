@@ -21,13 +21,13 @@
     id <AVTUILogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType setupHandler; // @synthesize setupHandler=_setupHandler;
 @property(readonly, nonatomic) id <AVTTransitionModel> model; // @synthesize model=_model;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)performCancellation;
 - (void)cancel;

@@ -39,12 +39,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) float screenSpaceMultiplierFactor; // @synthesize screenSpaceMultiplierFactor=_screenSpaceMultiplierFactor;
 @property(nonatomic) float maximumVolume; // @synthesize maximumVolume=_maximumVolume;
 @property(nonatomic) float minimumVolume; // @synthesize minimumVolume=_minimumVolume;
 @property(retain, nonatomic) id <NACVolumeController> volumeController; // @synthesize volumeController=_volumeController;
 @property(nonatomic) __weak id <NMUVolumeIndicatorControlDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_releaseVolumeController;
 - (void)_invalidateTimer;
 - (void)_startTimerWithDuration:(double)arg1;

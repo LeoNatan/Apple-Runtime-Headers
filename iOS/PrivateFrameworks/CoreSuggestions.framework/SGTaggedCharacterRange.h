@@ -23,11 +23,11 @@
 + (id)annotationTypeUniqueIdentifier:(unsigned long long)arg1;
 + (unsigned long long)annotationTypeFromString:(id)arg1;
 + (id)describeAnnotationType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(readonly, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(readonly, nonatomic) unsigned long long annotationType; // @synthesize annotationType=_annotationType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)annotationTypeUniqueIdentifier;
 - (unsigned long long)hash;

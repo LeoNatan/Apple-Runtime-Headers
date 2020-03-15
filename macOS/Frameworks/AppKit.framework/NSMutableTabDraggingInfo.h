@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSTabBarItem *_draggingItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTabBarItem *draggingItem; // @synthesize draggingItem=_draggingItem;
 @property(retain, nonatomic) id draggingSource; // @synthesize draggingSource=_draggingSource;
 @property(retain, nonatomic) NSImage *draggedImage; // @synthesize draggedImage=_draggedImage;
 @property(nonatomic) struct CGPoint draggingLocation; // @synthesize draggingLocation=_draggingLocation;
 @property(nonatomic) unsigned long long draggingSourceOperationMask; // @synthesize draggingSourceOperationMask=_draggingSourceOperationMask;
 @property(retain, nonatomic) NSWindow *draggingDestinationWindow; // @synthesize draggingDestinationWindow=_draggingDestinationWindow;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

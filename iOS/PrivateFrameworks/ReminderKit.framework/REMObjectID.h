@@ -24,9 +24,9 @@
 + (id)objectIDWithUUID:(id)arg1 entityName:(id)arg2;
 + (void)initialize;
 + (void)rem_registerClassAtCRCoderIfNeeded;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *entityName; // @synthesize entityName=_entityName;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

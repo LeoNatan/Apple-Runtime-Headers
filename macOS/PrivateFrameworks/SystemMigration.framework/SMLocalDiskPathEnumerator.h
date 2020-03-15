@@ -28,6 +28,7 @@
     NSDictionary *_firmlinks;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *firmlinks; // @synthesize firmlinks=_firmlinks;
 @property BOOL systemVolume; // @synthesize systemVolume=_systemVolume;
 @property(retain) NSURL *alternateBasePathURL; // @synthesize alternateBasePathURL=_alternateBasePathURL;
@@ -42,7 +43,6 @@
 @property struct __CFURLEnumerator *pathEnumerator; // @synthesize pathEnumerator=_pathEnumerator;
 @property(retain, nonatomic) SMPathSizer *sizer; // @synthesize sizer=_sizer;
 @property BOOL useTrueOnDiskSizes; // @synthesize useTrueOnDiskSizes;
-- (void).cxx_destruct;
 - (BOOL)hasNext;
 - (BOOL)isCurrentPathABundle;
 - (unsigned long long)filesystemSizeOfCurrentPath;

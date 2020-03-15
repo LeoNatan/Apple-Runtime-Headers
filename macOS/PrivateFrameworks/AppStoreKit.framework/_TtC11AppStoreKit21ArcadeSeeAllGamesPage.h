@@ -9,6 +9,7 @@
 @interface _TtC11AppStoreKit21ArcadeSeeAllGamesPage : _TtC11AppStoreKit11GenericPage
 {
     // Error parsing type: , name: sort
+    // Error parsing type: , name: displayStyles
 }
 
 @end

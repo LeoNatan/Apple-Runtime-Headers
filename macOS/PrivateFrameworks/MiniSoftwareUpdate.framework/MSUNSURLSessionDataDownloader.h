@@ -18,10 +18,10 @@
 }
 
 + (BOOL)_extendedValidationCheckForServerTrust:(struct __SecTrust *)arg1 trustError:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *extendedValidationBooleansByHostname; // @synthesize extendedValidationBooleansByHostname=_extendedValidationBooleansByHostname;
 @property(retain) NSMutableDictionary *challengeErrorsByHostname; // @synthesize challengeErrorsByHostname=_challengeErrorsByHostname;
 @property(retain) NSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)sendSynchronousRequest:(id)arg1 response:(id *)arg2 error:(id *)arg3;
 - (void)sendAsynchronousRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;

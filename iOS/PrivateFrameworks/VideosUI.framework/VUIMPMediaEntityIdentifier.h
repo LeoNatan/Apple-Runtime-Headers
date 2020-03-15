@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)mediaItemIdentifierWithMediaItem:(id)arg1;
 + (id)showIdentifierWithMediaItem:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) VUIMediaEntityType *mediaEntityType; // @synthesize mediaEntityType=_mediaEntityType;
 @property(copy, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

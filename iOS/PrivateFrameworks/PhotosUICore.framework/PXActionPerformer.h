@@ -20,12 +20,13 @@
     id _sender;
     unsigned long long _state;
     id <PXActionPerformerDelegate> _delegate;
-    struct NSObject *_presentedViewController;
+    NSObject<PXAnonymousViewController> *_presentedViewController;
     CDUnknownBlockType _viewControllerPresenter;
     CDUnknownBlockType _viewControllerDismisser;
 }
 
 + (_Bool)canPerformBlacklistingOnAssetCollection:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerDismisser; // @synthesize viewControllerDismisser=_viewControllerDismisser;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerPresenter; // @synthesize viewControllerPresenter=_viewControllerPresenter;
 @property(readonly, nonatomic) NSObject<PXAnonymousViewController> *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
@@ -35,15 +36,14 @@
 @property(nonatomic) __weak id sender; // @synthesize sender=_sender;
 @property(readonly, nonatomic) _Bool success; // @synthesize success=_success;
 @property(readonly, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (void)_completeStateWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_transitionToState:(unsigned long long)arg1 withSuccess:(_Bool)arg2 error:(id)arg3;
 - (void)_handleStepFinished:(unsigned long long)arg1 withSuccess:(_Bool)arg2 error:(id)arg3;
 - (void)completeBackgroundTaskWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)performBackgroundTask;
 - (void)completeUserInteractionTaskWithSuccess:(_Bool)arg1 error:(id)arg2;
-- (_Bool)dismissViewController:(struct NSObject *)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)presentViewController:(struct NSObject *)arg1;
+- (_Bool)dismissViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)presentViewController:(id)arg1;
 - (void)performUserInteractionTask;
 - (void)_completeUnlockTaskWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_performUnlockIfNeeded;

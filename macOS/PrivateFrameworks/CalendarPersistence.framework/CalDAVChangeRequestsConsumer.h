@@ -21,10 +21,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSString *lastLocalUIDProcessed; // @synthesize lastLocalUIDProcessed=_lastLocalUIDProcessed;
 @property int lastChangeRequestTypeProcessed; // @synthesize lastChangeRequestTypeProcessed=_lastChangeRequestTypeProcessed;
 @property long long lastSequenceNumberProcessed; // @synthesize lastSequenceNumberProcessed=_lastSequenceNumberProcessed;
-- (void).cxx_destruct;
 - (void)managedObjectContextDidSave:(id)arg1;
 - (void)registerObserver:(id)arg1;
 - (id)makeSharedCalendarInvitationResponseOperation:(id)arg1 forSession:(id)arg2;

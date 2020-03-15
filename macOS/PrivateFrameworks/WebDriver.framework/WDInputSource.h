@@ -16,9 +16,9 @@
     NSString *_sourceId;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sourceId; // @synthesize sourceId=_sourceId;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToInputSource:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

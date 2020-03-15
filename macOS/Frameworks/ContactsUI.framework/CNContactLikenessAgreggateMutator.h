@@ -15,8 +15,8 @@
     NSArray *_likenessMutators;
 }
 
-@property(retain, nonatomic) NSArray *likenessMutators; // @synthesize likenessMutators=_likenessMutators;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *likenessMutators; // @synthesize likenessMutators=_likenessMutators;
 - (id)setLikenessAsCurrent:(id)arg1;
 - (id)deleteLikeness:(id)arg1;
 - (id)updateLikeness:(id)arg1;

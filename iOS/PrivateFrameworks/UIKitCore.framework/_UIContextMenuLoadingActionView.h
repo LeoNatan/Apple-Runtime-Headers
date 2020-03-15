@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_activityIndicatorView;
 }
 
-@property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 - (id)_contentsCompositingFilter;
 - (id)_contentsTintColor;
 - (void)_updateContentAppearance;

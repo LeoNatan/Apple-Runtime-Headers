@@ -22,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(readonly, nonatomic) NSDate *snapshotDate; // @synthesize snapshotDate=_snapshotDate;
 @property(readonly, nonatomic) long long internalState; // @synthesize internalState=_internalState;
@@ -29,7 +30,6 @@
 @property(readonly, copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 @property(readonly, nonatomic) HKWorkoutConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (long long)state;

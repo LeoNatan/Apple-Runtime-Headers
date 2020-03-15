@@ -21,8 +21,8 @@
     SBWalletNotificationSource *_walletNotificationSource;
 }
 
-@property(retain, nonatomic) SBWalletNotificationSource *walletNotificationSource; // @synthesize walletNotificationSource=_walletNotificationSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBWalletNotificationSource *walletNotificationSource; // @synthesize walletNotificationSource=_walletNotificationSource;
 - (void)_updateRestrictions;
 - (void)_deactivateCardItem:(id)arg1;
 - (void)_updateCardItem:(id)arg1;

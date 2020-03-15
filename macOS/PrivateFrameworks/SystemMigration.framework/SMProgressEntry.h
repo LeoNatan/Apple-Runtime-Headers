@@ -16,11 +16,11 @@
     double _percentComplete;
 }
 
+- (void).cxx_destruct;
 @property double percentComplete; // @synthesize percentComplete=_percentComplete;
 @property double transferRate; // @synthesize transferRate=_transferRate;
 @property double timeRemaining; // @synthesize timeRemaining=_timeRemaining;
 @property(retain) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 
 @end
 

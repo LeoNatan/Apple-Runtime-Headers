@@ -6,12 +6,13 @@
 
 #import <PassKitUI/PKSectionTableViewController.h>
 
+#import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
 #import <PassKitUI/PKPerformActionViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSDateComponentsFormatter, NSString, PKPaymentPass, PKPaymentPassAction, PKPaymentWebService;
+@class NSArray, NSDateComponentsFormatter, NSString, PKPaymentPass, PKPaymentPassAction, PKPaymentWebService, PKTransitBalanceModel, PKTransitCommutePlan;
 @protocol PKPaymentDataProvider;
 
-@interface PKCommutePlanDetailsViewController : PKSectionTableViewController <PKPerformActionViewControllerDelegate>
+@interface PKCommutePlanDetailsViewController : PKSectionTableViewController <PKPerformActionViewControllerDelegate, PKPaymentDataProviderDelegate>
 {
     int _style;
     NSArray *_fields;
@@ -24,9 +25,12 @@
     PKPaymentPassAction *_action;
     NSDateComponentsFormatter *_timeIntervalFormatter;
     _Bool _canShowReminders;
+    PKTransitBalanceModel *_balanceModel;
+    PKTransitCommutePlan *_commutePlan;
 }
 
 - (void).cxx_destruct;
+- (id)_commutePlanBalanceIdentifier;
 - (void)performActionViewControllerDidPerformAction:(id)arg1;
 - (void)performActionViewControllerDidCancel:(id)arg1;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
@@ -35,14 +39,22 @@
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (int)_numberOfCommutePlanDetailsRowsEnabledForRowType:(unsigned int)arg1;
+- (int)_numberOfCommutePlanDetailsRowsEnabled;
+- (unsigned int)_commutePlanDetailsRowTypeForRowIndex:(int)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)_updateSelectedReminderIntervalsIndexWithInterval:(double)arg1;
+- (void)_reloadChangedIndexPathsWithOldIndex:(unsigned int)arg1 newIndex:(unsigned int)arg2 inSection:(unsigned int)arg3;
+- (void)_updateSelectedReminderIntervalsIndexWithReminder:(id)arg1;
+- (void)_updateSelectedBalanceReminderWithBalanceReminder:(id)arg1;
 - (void)_handleActionSelected;
 - (void)_handleReminderIntervalChanged:(int)arg1;
 - (void)viewWillLayoutSubviews;
 - (_Bool)shouldMapSection:(unsigned int)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (id)initWithSuicaFields:(id)arg1 forPass:(id)arg2 associatedAction:(id)arg3 paymentDataProvider:(id)arg4 webService:(id)arg5 style:(int)arg6;
+- (void)_reloadBalance;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
+- (id)initWithCommutePlan:(id)arg1 associatedAction:(id)arg2 forPass:(id)arg3 paymentDataProvider:(id)arg4 webService:(id)arg5 style:(int)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

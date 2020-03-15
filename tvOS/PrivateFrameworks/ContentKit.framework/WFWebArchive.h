@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *subframeArchives; // @synthesize subframeArchives=_subframeArchives;
 @property(readonly, nonatomic) NSArray *subresources; // @synthesize subresources=_subresources;
 @property(readonly, nonatomic) WFWebResource *mainResource; // @synthesize mainResource=_mainResource;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)serializedRepresentation;

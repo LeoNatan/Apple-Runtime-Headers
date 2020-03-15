@@ -67,9 +67,9 @@
 + (id)DidFocusOnElement;
 + (id)NoResultsFound;
 + (id)DidActivateElement;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsHaptic; // @synthesize supportsHaptic=_supportsHaptic;
 @property(nonatomic) _Bool supportsSoundEffect; // @synthesize supportsSoundEffect=_supportsSoundEffect;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSString *localizedName;
 @property(readonly, nonatomic) NSString *rawValue;

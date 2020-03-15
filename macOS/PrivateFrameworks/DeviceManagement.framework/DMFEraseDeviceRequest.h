@@ -20,11 +20,11 @@
 + (BOOL)isPermittedOnUserConnection;
 + (BOOL)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hideProximitySetupPane; // @synthesize hideProximitySetupPane=_hideProximitySetupPane;
 @property(copy, nonatomic) NSString *pin; // @synthesize pin=_pin;
 @property(nonatomic) unsigned long long dataResetOptions; // @synthesize dataResetOptions=_dataResetOptions;
 @property(nonatomic) unsigned long long eraseDeviceType; // @synthesize eraseDeviceType=_eraseDeviceType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

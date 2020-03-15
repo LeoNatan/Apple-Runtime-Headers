@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_source> *_heartbeatRequestTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *heartbeatRequestTimer; // @synthesize heartbeatRequestTimer=_heartbeatRequestTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQ; // @synthesize connectionQ=_connectionQ;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *messageHandlerMapQ; // @synthesize messageHandlerMapQ=_messageHandlerMapQ;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSMutableDictionary *messageHandlerMap; // @synthesize messageHandlerMap=_messageHandlerMap;
 @property(copy, nonatomic) CDUnknownBlockType disconnectHandler; // @synthesize disconnectHandler=_disconnectHandler;
 @property(retain, nonatomic) TRNearbyDevice *nearbyDevice; // @synthesize nearbyDevice=_nearbyDevice;
-- (void).cxx_destruct;
 - (void)_handleHeartbeatWithResponseHandler:(CDUnknownBlockType)arg1;
 - (void)sendHeartbeatWithResponseHandler:(CDUnknownBlockType)arg1;
 - (void)_sendHeartbeats;

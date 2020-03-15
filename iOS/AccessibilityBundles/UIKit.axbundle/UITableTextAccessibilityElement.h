@@ -13,9 +13,10 @@
     id attributeDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id attributeDelegate; // @synthesize attributeDelegate;
 @property(nonatomic) __weak id textDelegate; // @synthesize textDelegate;
-- (void).cxx_destruct;
+- (_Bool)canBecomeFocused;
 - (id)_accessibilityCapturedImages;
 - (id)_accessibilityAllDropPointDescriptors;
 - (id)_accessibilityAllDragSourceDescriptors;

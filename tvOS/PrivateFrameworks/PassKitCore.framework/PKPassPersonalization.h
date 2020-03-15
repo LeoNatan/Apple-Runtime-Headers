@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)passPersonalizationWithPassBundle:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(readonly, nonatomic) NSString *termsAndConditions; // @synthesize termsAndConditions=_termsAndConditions;
 @property(readonly, nonatomic) unsigned long long requiredPersonalizationFields; // @synthesize requiredPersonalizationFields=_requiredPersonalizationFields;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

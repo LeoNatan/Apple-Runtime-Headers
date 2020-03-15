@@ -19,11 +19,11 @@
     UIViewController<HUQuickControlInteractiveViewController> *_contraptionViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasStartedSecondTouch; // @synthesize hasStartedSecondTouch=_hasStartedSecondTouch;
 @property(readonly, nonatomic) UIViewController<HUQuickControlInteractiveViewController> *contraptionViewController; // @synthesize contraptionViewController=_contraptionViewController;
 @property(nonatomic) BOOL shouldDismissAutomatically; // @synthesize shouldDismissAutomatically=_shouldDismissAutomatically;
 - (id)value;
-- (void).cxx_destruct;
 - (void)controlView:(id)arg1 interactionStateDidChange:(BOOL)arg2 forFirstTouch:(BOOL)arg3;
 - (void)controlView:(id)arg1 valueDidChange:(id)arg2;
 - (void)_requestDismissalIfNecessary;

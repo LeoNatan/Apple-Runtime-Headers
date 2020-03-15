@@ -14,8 +14,8 @@
     BRContainer *_container;
 }
 
-@property(copy) CDUnknownBlockType uploadAllFilesCompletion; // @synthesize uploadAllFilesCompletion=_uploadAllFilesCompletion;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType uploadAllFilesCompletion; // @synthesize uploadAllFilesCompletion=_uploadAllFilesCompletion;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithContainer:(id)arg1;

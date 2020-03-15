@@ -28,6 +28,7 @@
     NSString *_personaID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool quotaDisabled; // @synthesize quotaDisabled=_quotaDisabled;
 @property(readonly, nonatomic) _Bool isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(readonly, nonatomic) _Bool privateIndexNonSandboxAllowed; // @synthesize privateIndexNonSandboxAllowed=_privateIndexNonSandboxAllowed;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) NSString *protectionClass; // @synthesize protectionClass=_protectionClass;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)initWithConnection:(id)arg1 isPrivate:(_Bool)arg2;
 
 @end

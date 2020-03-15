@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) DMFOSUpdate *update; // @synthesize update=_update;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) DMFOSUpdate *update; // @synthesize update=_update;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)searchableItemFromUserActivity:(id)arg1 bundleID:(id)arg2;
+- (void).cxx_destruct;
 // Error parsing type for property score:
 // Property attributes: TT,V_score
 
-- (void).cxx_destruct;
 - (void)setAttributes:(id)arg1;
 - (id)attributes;
 @property _Bool noIndex;

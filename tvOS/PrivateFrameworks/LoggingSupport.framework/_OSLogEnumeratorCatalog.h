@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _et;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long endTime; // @synthesize endTime=_et;
 @property(readonly, nonatomic) unsigned long long oldestTime; // @synthesize oldestTime=_ot;
 @property(readonly, nonatomic) _OSLogChunkStore *store; // @synthesize store=_store;
 @property(readonly, nonatomic) struct tracev3_chunk_s *fileHeader; // @synthesize fileHeader=_fileHeader;
 @property(readonly, nonatomic) struct tracev3_chunk_s *chunk; // @synthesize chunk=_chunk;
 @property(readonly, nonatomic) __weak _OSLogIndex *index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (void)enumerateSubchunksUsingBlock:(CDUnknownBlockType)arg1;
 - (void)unionWithRange:(struct _NSRange)arg1;
 @property(readonly, nonatomic) struct catalog_s *catalog; // @synthesize catalog=_catalog;

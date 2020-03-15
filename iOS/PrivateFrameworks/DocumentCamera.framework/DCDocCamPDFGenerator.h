@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (void)performPDFGenerationWithGenerator:(id)arg1 docInfoCollection:(id)arg2 imageCache:(id)arg3 progress:(id)arg4;
 + (id)blockingGeneratepdfURLForDocumentInfoCollection:(id)arg1 imageCache:(id)arg2 withProgress:(id)arg3 error:(id *)arg4;
-+ (void)generatePDFsIfNecessaryForDocumentInfoCollection:(id)arg1 imageCache:(id)arg2 displayWindow:(struct UIWindow *)arg3 presentingViewController:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
++ (void)generatePDFsIfNecessaryForDocumentInfoCollection:(id)arg1 imageCache:(id)arg2 displayWindow:(id)arg3 presentingViewController:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 + (id)pdfURLForDocumentInfoCollection:(id)arg1;
 + (void)deleteAllDocCamPDFs;
 + (void)applicationWillTerminate:(id)arg1;

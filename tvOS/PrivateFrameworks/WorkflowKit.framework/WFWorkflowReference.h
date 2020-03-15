@@ -22,13 +22,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)workflowReferenceConsumingSingleUseToken:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDeleted; // @synthesize isDeleted=_isDeleted;
 @property(readonly, copy, nonatomic) WFWorkflowIcon *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSString *associatedAppBundleIdentifier; // @synthesize associatedAppBundleIdentifier=_associatedAppBundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *actionsDescription; // @synthesize actionsDescription=_actionsDescription;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)externalURLForViewing;
 - (id)externalURLForRunningWithSource:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

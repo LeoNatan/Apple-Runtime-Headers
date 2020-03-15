@@ -18,11 +18,11 @@
 }
 
 + (id)fetchOperationWithCollection:(id)arg1 delegate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHFetchResult *outputFetchResult; // @synthesize outputFetchResult=_outputFetchResult;
 @property(readonly, nonatomic) PHCollection *collection; // @synthesize collection=_collection;
 @property(retain, nonatomic) PHFetchOptions *fetchOptions; // @synthesize fetchOptions=_fetchOptions;
 @property(nonatomic) __weak id <PXCollectionFetchOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleFinish;
 - (void)handleBegin;
 - (void)main;

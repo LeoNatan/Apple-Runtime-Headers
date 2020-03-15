@@ -56,6 +56,7 @@
 + (id)propertyMapper;
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *currentAddedMessagesMap; // @synthesize currentAddedMessagesMap=_currentAddedMessagesMap;
 @property(retain, nonatomic) id <EFScheduler> fileRemovalAfterCompactionScheduler; // @synthesize fileRemovalAfterCompactionScheduler=_fileRemovalAfterCompactionScheduler;
 @property(retain, nonatomic) id <EFScheduler> reconciliationCleanupScheduler; // @synthesize reconciliationCleanupScheduler=_reconciliationCleanupScheduler;
@@ -65,7 +66,6 @@
 @property(readonly) MFMessageChangeManager_iOS *messageChangeManager; // @synthesize messageChangeManager=_messageChangeManager;
 @property(readonly) MFPersistenceDatabase_iOS *database; // @synthesize database=_database;
 @property(readonly) EDPersistence *persistence; // @synthesize persistence=_persistence;
-- (void).cxx_destruct;
 - (_Bool)messageDataExistsInDatabaseForMessageLibraryID:(long long)arg1 part:(id)arg2 length:(unsigned long long *)arg3;
 - (id)stringFromAllMailboxUnreadCount;
 - (id)_recipientsForMessagesWithDatabaseIDs:(id)arg1 includeTo:(_Bool)arg2 includeCC:(_Bool)arg3 includeBCC:(_Bool)arg4;

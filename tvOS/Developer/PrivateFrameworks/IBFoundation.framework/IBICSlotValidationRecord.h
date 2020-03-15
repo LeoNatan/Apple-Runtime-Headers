@@ -18,13 +18,13 @@
     NSString *_obsoleteMessage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *obsoleteMessage; // @synthesize obsoleteMessage=_obsoleteMessage;
 @property(readonly, copy) NSString *missingRequiredMessage; // @synthesize missingRequiredMessage=_missingRequiredMessage;
 @property(readonly, copy) NSString *versionOfObsolescence; // @synthesize versionOfObsolescence=_versionOfObsolescence;
 @property(readonly, copy) NSString *versionOfIntroduction; // @synthesize versionOfIntroduction=_versionOfIntroduction;
 @property(readonly, getter=isRequired) _Bool required; // @synthesize required=_required;
 @property(readonly) IBICSlot *slot; // @synthesize slot=_slot;
-- (void).cxx_destruct;
 - (void)ibic_generateSubNodes:(CDUnknownBlockType)arg1;
 - (void)ibic_generateAttributes:(CDUnknownBlockType)arg1;
 - (_Bool)appliesToMinimumDeploymentTarget:(id)arg1;

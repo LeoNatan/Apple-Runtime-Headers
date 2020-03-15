@@ -40,6 +40,7 @@
 
 + (id)defaultCustomTournamentForTournamentDefinition:(id)arg1;
 + (id)secureCodedPropertyKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *nextTournamentBeginDate; // @synthesize nextTournamentBeginDate=_nextTournamentBeginDate;
 @property(retain, nonatomic) NSString *nextTournamentID; // @synthesize nextTournamentID=_nextTournamentID;
 @property(retain, nonatomic) GKPlayerInternal *customTournamentCreator; // @synthesize customTournamentCreator=_customTournamentCreator;
@@ -66,7 +67,6 @@
 @property(retain, nonatomic) NSString *tournamentName; // @synthesize tournamentName=_tournamentName;
 @property(retain, nonatomic) GKTournamentDefinitionInternal *tournamentDefinition; // @synthesize tournamentDefinition=_tournamentDefinition;
 @property(retain, nonatomic) NSString *tournamentID; // @synthesize tournamentID=_tournamentID;
-- (void).cxx_destruct;
 
 @end
 

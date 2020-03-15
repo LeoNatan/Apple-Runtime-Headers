@@ -15,10 +15,10 @@
     NSObject<OS_dispatch_group> *_accessGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *accessGroup; // @synthesize accessGroup=_accessGroup;
 @property(readonly, nonatomic) id <BUReadChannel> readChannel; // @synthesize readChannel=_readChannel;
 @property(readonly, nonatomic) int fileDescriptor; // @synthesize fileDescriptor=_fileDescriptor;
-- (void).cxx_destruct;
 - (void)waitForAccessToEnd;
 - (void)endAccess;
 - (void)beginAccess;

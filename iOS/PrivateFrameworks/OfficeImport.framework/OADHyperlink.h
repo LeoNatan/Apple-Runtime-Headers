@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     _Bool mDoAddToHistory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool doAddToHistory; // @synthesize doAddToHistory=mDoAddToHistory;
 @property(nonatomic) _Bool isVisited; // @synthesize isVisited=mIsVisited;
 @property(nonatomic) _Bool doEndSound; // @synthesize doEndSound=mDoEndSound;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

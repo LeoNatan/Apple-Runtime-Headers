@@ -17,8 +17,8 @@
 }
 
 + (id)keyRepresentationForType:(unsigned short)arg1 isResponse:(_Bool)arg2;
-@property(retain, nonatomic) NSData *uncompressedData; // @synthesize uncompressedData=_uncompressedData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *uncompressedData; // @synthesize uncompressedData=_uncompressedData;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(retain, nonatomic) IDSMessageContext *context;

@@ -36,6 +36,7 @@
 + (_Bool)automaticallyNotifiesObserversOfEnqueuedDate;
 + (_Bool)automaticallyNotifiesObserversOfCreatedDate;
 + (_Bool)automaticallyNotifiesObserversOfUUID;
+- (void).cxx_destruct;
 @property long long totalUnitCount; // @synthesize totalUnitCount=_totalUnitCount;
 @property long long completedUnitCount; // @synthesize completedUnitCount=_completedUnitCount;
 @property(readonly) _Bool canCancel; // @synthesize canCancel=_canCancel;
@@ -48,7 +49,6 @@
 @property(retain) NSDate *enqueuedDate; // @synthesize enqueuedDate=_enqueuedDate;
 @property(retain) NSDate *createdDate; // @synthesize createdDate=_createdDate;
 @property(retain) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned long long)arg3 userInfo:(id)arg4 delegateQueue:(id)arg5;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned long long)arg3 delegateQueue:(id)arg4;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned long long)arg3 userInfo:(id)arg4;

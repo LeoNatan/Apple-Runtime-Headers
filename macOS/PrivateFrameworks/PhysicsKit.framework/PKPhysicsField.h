@@ -19,9 +19,9 @@
     BOOL _override;
 }
 
-@property(nonatomic, getter=isOverride) BOOL override; // @synthesize override=_override;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isOverride) BOOL override; // @synthesize override=_override;
 @property(nonatomic) float minimumRadius;
 // Error parsing type for property scale:
 // Property attributes: T,N

@@ -14,8 +14,8 @@
     NSArray *_sections;
 }
 
-@property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (void)dealloc;
 - (id)initWithFeature:(CDStruct_b326a3d5 *)arg1;
 

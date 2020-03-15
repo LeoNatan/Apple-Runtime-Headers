@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _cropRectInLocalCoordinateSpace;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUCropMaskView *rightMask; // @synthesize rightMask=_rightMask;
 @property(retain, nonatomic) PUCropMaskView *leftMask; // @synthesize leftMask=_leftMask;
 @property(retain, nonatomic) PUCropMaskView *bottomMask; // @synthesize bottomMask=_bottomMask;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isStraightenGridVisible) _Bool straightenGridVisible; // @synthesize straightenGridVisible=_straightenGridVisible;
 @property(nonatomic, getter=isCropGridVisible) _Bool cropGridVisible; // @synthesize cropGridVisible=_cropGridVisible;
 @property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
-- (void).cxx_destruct;
 - (id)_createMaskView;
 - (id)_createLineViewForCount:(unsigned long long)arg1;
 - (id)_createConstraintsForLine:(id)arg1 centerMultiplier:(double)arg2 vertical:(_Bool)arg3;

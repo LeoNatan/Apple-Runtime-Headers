@@ -25,12 +25,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)configurationWithName:(id)arg1 sessionRole:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL _fromPlist; // @synthesize _fromPlist;
 @property(readonly, nonatomic) BOOL _isDefault; // @synthesize _isDefault;
 @property(readonly, nonatomic) BOOL _hadResolutionErrorsOnLoad; // @synthesize _hadResolutionErrorsOnLoad;
 @property(readonly, nonatomic) NSString *role; // @synthesize role=_role;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

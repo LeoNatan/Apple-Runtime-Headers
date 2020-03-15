@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL actionSelector; // @synthesize actionSelector=_actionSelector;
 @property(readonly, nonatomic) SEL predicateSelector; // @synthesize predicateSelector=_predicateSelector;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)performActionWithSystem:(id)arg1;
 - (_Bool)evaluatePredicateWithSystem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)shortDescription;
-@property(readonly, nonatomic) HMDAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMDAccount *account; // @synthesize account=_account;
 - (id)remoteDestinationString;
 - (id)description;
 - (id)debugDescription;

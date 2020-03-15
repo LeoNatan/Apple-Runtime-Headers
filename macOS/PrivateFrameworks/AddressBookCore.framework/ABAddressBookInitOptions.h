@@ -23,6 +23,7 @@
 }
 
 + (id)defaultOptions;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *delegateInfos; // @synthesize delegateInfos=_delegateInfos;
 @property(retain, nonatomic) ABPersistentStoreCoordinatorCache *persistentStoreCoordinatorCache; // @synthesize persistentStoreCoordinatorCache=_persistentStoreCoordinatorCache;
 @property(copy, nonatomic) NSString *databaseDirectory; // @synthesize databaseDirectory=_databaseDirectory;
@@ -33,7 +34,6 @@
 @property(nonatomic) BOOL tracksAllSources; // @synthesize tracksAllSources=_tracksAllSources;
 @property(nonatomic) BOOL registerForChangeNotifications; // @synthesize registerForChangeNotifications=_registerForChangeNotifications;
 @property(nonatomic) BOOL doInitialImports; // @synthesize doInitialImports=_doInitialImports;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

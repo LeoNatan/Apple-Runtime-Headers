@@ -18,8 +18,8 @@
 + (id)currentDate;
 + (double)currentTime;
 + (id)sharedManager;
-@property(retain, nonatomic) id <MNTimeProvider> provider; // @synthesize provider=_provider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <MNTimeProvider> provider; // @synthesize provider=_provider;
 - (void)_resetToDefaultProvider;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

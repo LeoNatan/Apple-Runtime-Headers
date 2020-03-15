@@ -38,6 +38,7 @@
     struct UIEdgeInsets _touchEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tritiumOverrideTextColor; // @synthesize tritiumOverrideTextColor=_tritiumOverrideTextColor;
 @property(nonatomic) struct UIEdgeInsets touchEdgeInsets; // @synthesize touchEdgeInsets=_touchEdgeInsets;
 @property(nonatomic) unsigned int overrideDateStyle; // @synthesize overrideDateStyle=_overrideDateStyle;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) int sizeStyle; // @synthesize sizeStyle=_sizeStyle;
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
-- (void).cxx_destruct;
 - (void)tritium_setOnProgress:(float)arg1;
 - (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
 - (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;

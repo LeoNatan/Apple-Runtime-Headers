@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)getActionWithData:(id)arg1 codePayload:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <BCSCodePayload> codePayload; // @synthesize codePayload=_codePayload;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) id <BCSParsedDataPrivate> data; // @synthesize data=_data;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *appLinks; // @synthesize appLinks;
 @property(readonly, nonatomic) NSURL *urlThatCanBeOpened; // @synthesize urlThatCanBeOpened;
 @property(nonatomic) __weak id <BCSActionDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long codeType;
 @property(readonly, copy, nonatomic) NSString *extraPreviewText;
 - (void)determineActionabilityWithCompletionHandler:(CDUnknownBlockType)arg1;

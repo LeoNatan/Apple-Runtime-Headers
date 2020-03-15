@@ -17,10 +17,10 @@
     NSArray *_presetResources;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *presetResources; // @synthesize presetResources=_presetResources;
 @property(getter=isCanceled) _Bool canceled; // @synthesize canceled;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithPresetResources:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 

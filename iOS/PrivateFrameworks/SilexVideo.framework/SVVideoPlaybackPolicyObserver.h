@@ -20,12 +20,12 @@
     SVKeyValueObserver *_playbackRequestedObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVKeyValueObserver *playbackRequestedObserver; // @synthesize playbackRequestedObserver=_playbackRequestedObserver;
 @property(readonly, nonatomic) SVKeyValueObserver *playbackAllowedObserver; // @synthesize playbackAllowedObserver=_playbackAllowedObserver;
 @property(readonly, nonatomic) id <SVVideoPlaybackPolicy> policy; // @synthesize policy=_policy;
 @property(copy, nonatomic, setter=onAllowedStateChange:) CDUnknownBlockType allowedStateChangeBlock; // @synthesize allowedStateChangeBlock;
 @property(copy, nonatomic, setter=onRequestStateChange:) CDUnknownBlockType requestStateChangeBlock; // @synthesize requestStateChangeBlock;
-- (void).cxx_destruct;
 - (void)playbackRequestedStateChanged;
 - (void)playbackAllowedStateChanged;
 - (id)initWithPlaybackPolicy:(id)arg1;

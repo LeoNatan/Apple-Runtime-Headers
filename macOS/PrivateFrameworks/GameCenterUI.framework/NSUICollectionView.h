@@ -122,6 +122,7 @@
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
 + (BOOL)isCompatibleWithResponsiveScrolling;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL requiresTransparentLayer; // @synthesize requiresTransparentLayer=_requiresTransparentLayer;
 @property(nonatomic) double currentAnimatedUpdateDuration; // @synthesize currentAnimatedUpdateDuration=_currentAnimatedUpdateDuration;
 @property(readonly, nonatomic, getter=isDecelerating) BOOL decelerating; // @synthesize decelerating=_decelerating;
@@ -135,7 +136,6 @@
 @property(nonatomic) __weak NSObject<NSUICollectionViewDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak NSObject<NSUICollectionViewDataSource> *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSUICollectionViewLayout *collectionViewLayout; // @synthesize collectionViewLayout=_layout;
-- (void).cxx_destruct;
 - (BOOL)lassoInvertsSelection;
 - (void)setLassoInvertsSelection:(BOOL)arg1;
 - (void)keyDown:(id)arg1;

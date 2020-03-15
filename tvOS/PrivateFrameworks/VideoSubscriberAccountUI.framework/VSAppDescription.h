@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *artworkURLTemplate; // @synthesize artworkURLTemplate=_artworkURLTemplate;
 @property(nonatomic) _Bool offersInAppPurchases; // @synthesize offersInAppPurchases=_offersInAppPurchases;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *buyParams; // @synthesize buyParams=_buyParams;
 @property(copy, nonatomic) NSNumber *adamID; // @synthesize adamID=_adamID;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *shortenedDisplayName;
 - (id)iconURLForSize:(struct CGSize)arg1;
 - (id)description;

@@ -18,13 +18,13 @@
     NSArray *_longPressActions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDown; // @synthesize isDown=_isDown;
 @property(retain, nonatomic) NSArray *longPressActions; // @synthesize longPressActions=_longPressActions;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(copy, nonatomic) NSString *switchDisplayName; // @synthesize switchDisplayName=_switchDisplayName;
 @property(copy, nonatomic) NSString *switchIdentifier; // @synthesize switchIdentifier=_switchIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

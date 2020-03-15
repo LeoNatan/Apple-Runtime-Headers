@@ -14,8 +14,8 @@
     CDUnknownBlockType _cleanSubitemsCompletionBlock;
 }
 
-@property(copy) CDUnknownBlockType cleanSubitemsCompletionBlock; // @synthesize cleanSubitemsCompletionBlock=_cleanSubitemsCompletionBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType cleanSubitemsCompletionBlock; // @synthesize cleanSubitemsCompletionBlock=_cleanSubitemsCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithURL:(id)arg1;

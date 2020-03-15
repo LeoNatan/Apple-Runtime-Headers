@@ -18,9 +18,9 @@
     SPViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SPViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) PUICCrownInputSequencer *puicSequencer; // @synthesize puicSequencer=_puicSequencer;
-- (void).cxx_destruct;
 - (void)_crownInputSequencer:(id)arg1 offsetDidChangeByDelta:(double)arg2;
 - (void)crownInputSequencerIdleDidChange:(id)arg1;
 - (id)dictionaryRepresentationWithDelta:(double)arg1;

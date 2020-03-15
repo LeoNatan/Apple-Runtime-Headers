@@ -18,10 +18,10 @@
     NSArray *_textLines;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int textWeight; // @synthesize textWeight=_textWeight;
 @property(nonatomic) _Bool textNoWrap; // @synthesize textNoWrap=_textNoWrap;
 @property(copy, nonatomic) NSArray *textLines; // @synthesize textLines=_textLines;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

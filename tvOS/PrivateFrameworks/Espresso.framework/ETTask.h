@@ -17,12 +17,12 @@
     ETImageDescriptorExtractor *_extractor;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dumpData; // @synthesize dumpData=_dumpData;
 @property(retain, nonatomic) ETImageDescriptorExtractor *extractor; // @synthesize extractor=_extractor;
 @property(retain, nonatomic) ETOptimizerDef *optimizer; // @synthesize optimizer=_optimizer;
 @property(retain, nonatomic) ETModelDef *model; // @synthesize model=_model;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)moveToGPU:(int)arg1 error:(id *)arg2;
 - (void)saveNetwork:(id)arg1 revertToInferenceMode:(_Bool)arg2;
 - (void)saveNetwork:(id)arg1;

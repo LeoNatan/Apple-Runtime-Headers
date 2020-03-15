@@ -20,12 +20,12 @@
     id <NUURLHandling> _URLHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUURLHandling> URLHandler; // @synthesize URLHandler=_URLHandler;
 @property(readonly, nonatomic) id <SVVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
 @property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 @property(readonly, nonatomic) id <NSSNewsAnalyticsArticleViewingSessionTracker> articleViewingSessionTracker; // @synthesize articleViewingSessionTracker=_articleViewingSessionTracker;
 @property(readonly, nonatomic) id <NUVideoActivityViewControllerFactory> activityViewControllerFactory; // @synthesize activityViewControllerFactory=_activityViewControllerFactory;
-- (void).cxx_destruct;
 - (id)createInteractionHandlerForVideo:(id)arg1;
 - (id)initWithVideoViewControllerProvider:(id)arg1 playbackController:(id)arg2 activityViewControllerFactory:(id)arg3 articleViewingSessionTracker:(id)arg4 URLHandler:(id)arg5;
 - (id)init;

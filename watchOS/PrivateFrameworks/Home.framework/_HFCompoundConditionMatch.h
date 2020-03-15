@@ -15,9 +15,9 @@
 }
 
 + (id)matchWithCondition:(id)arg1 matchedPredicates:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *matchedPredicates; // @synthesize matchedPredicates=_matchedPredicates;
 @property(retain, nonatomic) HFCondition *matchedCondition; // @synthesize matchedCondition=_matchedCondition;
-- (void).cxx_destruct;
 
 @end
 

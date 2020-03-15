@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     _TVImageView *_backgroundImagesViewHighlightedState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVImageView *backgroundImagesViewHighlightedState; // @synthesize backgroundImagesViewHighlightedState=_backgroundImagesViewHighlightedState;
 @property(retain, nonatomic) _TVImageView *backgroundImagesViewDefaultState; // @synthesize backgroundImagesViewDefaultState=_backgroundImagesViewDefaultState;
 @property(retain, nonatomic) _TVImageView *imagesViewHighlightedState; // @synthesize imagesViewHighlightedState=_imagesViewHighlightedState;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool imageTrailsTextContent; // @synthesize imageTrailsTextContent=_imageTrailsTextContent;
 @property(retain, nonatomic) _TVImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) VUIButtonLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (_Bool)scalesLargeContentImage;
 - (id)largeContentImage;
 - (id)largeContentTitle;

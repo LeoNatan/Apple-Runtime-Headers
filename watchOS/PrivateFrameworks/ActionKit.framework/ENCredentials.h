@@ -20,13 +20,13 @@
     NSDate *_expirationDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSString *authenticationToken; // @synthesize authenticationToken=_authenticationToken;
 @property(copy, nonatomic) NSString *webApiUrlPrefix; // @synthesize webApiUrlPrefix=_webApiUrlPrefix;
 @property(copy, nonatomic) NSString *noteStoreUrl; // @synthesize noteStoreUrl=_noteStoreUrl;
 @property(copy, nonatomic) NSString *edamUserId; // @synthesize edamUserId=_edamUserId;
 @property(copy, nonatomic) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)keychainQuery;

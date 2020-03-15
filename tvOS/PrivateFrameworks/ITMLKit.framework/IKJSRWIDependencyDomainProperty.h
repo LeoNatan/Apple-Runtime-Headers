@@ -22,13 +22,13 @@
 
 + (id)propertyNameMapping;
 + (id)typeMapping;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak IKJSRWIDependencyDomain *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) __weak IKJSRWIDependencyDomainType *domainType; // @synthesize domainType=_domainType;
 @property(readonly, nonatomic) NSString *propertyType; // @synthesize propertyType=_propertyType;
 @property(readonly, nonatomic, getter=isRequired) _Bool required; // @synthesize required=_required;
 @property(readonly, nonatomic) NSString *purpose; // @synthesize purpose=_purpose;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)methodParameterString;
 - (id)propertyDefinitionString;
 - (id)initWithPropertyDictionary:(id)arg1;

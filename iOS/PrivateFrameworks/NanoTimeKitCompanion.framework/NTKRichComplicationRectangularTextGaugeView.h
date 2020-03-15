@@ -20,11 +20,11 @@
 + (_Bool)handlesComplicationTemplate:(id)arg1;
 + (long long)progressFillStyle;
 + (_Bool)isMeteredProgressView;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NTKRichComplicationLineProgressView *progressView; // @synthesize progressView=_progressView;
 @property(readonly, nonatomic) NTKColoringLabel *line1Label; // @synthesize line1Label=_line1Label;
 @property(readonly, nonatomic) NTKColoringLabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 @property(readonly, nonatomic) NTKRichComplicationImageView *headerImageView; // @synthesize headerImageView=_headerImageView;
-- (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)_editingDidEnd;

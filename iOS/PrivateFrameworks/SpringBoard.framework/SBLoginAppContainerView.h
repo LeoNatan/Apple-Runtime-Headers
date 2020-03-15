@@ -19,13 +19,13 @@
     _UILegibilitySettings *_legibilitySettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) UIView *pluginView; // @synthesize pluginView=_pluginView;
 @property(retain, nonatomic) SBLockScreenDeviceInformationTextView *deviceInformationTextView; // @synthesize deviceInformationTextView=_deviceInformationTextView;
 @property(retain, nonatomic) SBLoginAppContainerOverlayWrapperView *thermalWarningView; // @synthesize thermalWarningView=_thermalWarningView;
 @property(retain, nonatomic) CSBatteryChargingView *batteryChargingView; // @synthesize batteryChargingView=_batteryChargingView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)_showOrHidePluginViewAppropriately;
 - (void)setContentHidden:(_Bool)arg1 forRequester:(id)arg2;
 - (void)layoutSubviews;

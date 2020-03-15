@@ -14,9 +14,9 @@
     UIColor *_textLabelColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldTintTextLabel; // @synthesize shouldTintTextLabel=_shouldTintTextLabel;
 @property(retain, nonatomic) UIColor *textLabelColor; // @synthesize textLabelColor=_textLabelColor;
-- (void).cxx_destruct;
 - (void)setSectionLocation:(int)arg1 animated:(_Bool)arg2;
 - (void)_updateTextLabelColor;
 - (void)tintColorDidChange;

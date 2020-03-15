@@ -10,7 +10,7 @@
 #import <VideosUI/UICollectionViewDelegate-Protocol.h>
 #import <VideosUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class NSArray, NSString, VUILibraryMenuItemViewCell;
+@class NSArray, NSString, VUILibraryMenuItemViewCell, VUIMediaLibrary, VUIViewControllerContentPresenter;
 @protocol VUIHomeShareViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -19,12 +19,16 @@ __attribute__((visibility("hidden")))
     id <VUIHomeShareViewControllerDelegate> _delegate;
     NSArray *_homeShares;
     VUILibraryMenuItemViewCell *_menuItemSizingCell;
+    VUIViewControllerContentPresenter *_contentPresenter;
+    VUIMediaLibrary *_mediaLibrary;
 }
 
+- (void).cxx_destruct;
+@property(readonly, nonatomic) VUIMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
+@property(retain, nonatomic) VUIViewControllerContentPresenter *contentPresenter; // @synthesize contentPresenter=_contentPresenter;
 @property(retain, nonatomic) VUILibraryMenuItemViewCell *menuItemSizingCell; // @synthesize menuItemSizingCell=_menuItemSizingCell;
 @property(retain, nonatomic) NSArray *homeShares; // @synthesize homeShares=_homeShares;
 @property(nonatomic) __weak id <VUIHomeShareViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_homeShareMediaLibrariesDidChange:(id)arg1;
 - (void)_removeNotificationObserversWithDeviceLibrary:(id)arg1;
 - (void)_removeMediaLibraryNotificationObservers;
@@ -35,8 +39,9 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (void)start;
 - (void)configureWithCollectionView:(id)arg1;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (void)dealloc;

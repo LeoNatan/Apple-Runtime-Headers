@@ -17,10 +17,10 @@
     MDLAnimatedQuaternion *_animatedValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inverse; // @synthesize inverse=_inverse;
 @property(readonly, nonatomic) MDLAnimatedQuaternion *animatedValue; // @synthesize animatedValue=_animatedValue;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 -     // Error parsing type: {?=[4]}16@0:4d8, name: double4x4AtTime:
 -     // Error parsing type: {?=[4]}16@0:4d8, name: float4x4AtTime:
 - (_Bool)IsInverseOp;

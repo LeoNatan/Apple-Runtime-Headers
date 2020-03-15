@@ -13,8 +13,8 @@
     PKPeerPaymentPreferences *_peerPaymentPreferences;
 }
 
-@property(readonly, nonatomic) PKPeerPaymentPreferences *peerPaymentPreferences; // @synthesize peerPaymentPreferences=_peerPaymentPreferences;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPeerPaymentPreferences *peerPaymentPreferences; // @synthesize peerPaymentPreferences=_peerPaymentPreferences;
 - (id)initWithData:(id)arg1;
 
 @end

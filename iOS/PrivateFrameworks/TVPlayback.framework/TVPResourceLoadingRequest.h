@@ -13,8 +13,8 @@
     AVAssetResourceLoadingRequest *_loadingRequest;
 }
 
-@property(readonly, nonatomic) AVAssetResourceLoadingRequest *loadingRequest; // @synthesize loadingRequest=_loadingRequest;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AVAssetResourceLoadingRequest *loadingRequest; // @synthesize loadingRequest=_loadingRequest;
 - (id)init;
 @property(readonly, copy, nonatomic) NSDictionary *dictionaryRepresentation;
 @property(readonly, copy, nonatomic) NSNumber *avRequestID;

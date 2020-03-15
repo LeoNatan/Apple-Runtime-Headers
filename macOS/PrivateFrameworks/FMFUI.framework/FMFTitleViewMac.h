@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSTextField *_subtitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_updateLabels:(id)arg1;
 - (void)updateLocation:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

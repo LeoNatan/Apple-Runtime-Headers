@@ -10,6 +10,16 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct _CSTypeRef {
+    unsigned long long _field1;
+    unsigned long long _field2;
+};
+
+struct _VMURange {
+    unsigned long long _field1;
+    unsigned long long _field2;
+};
+
 struct __sFILE {
     char *_field1;
     int _field2;
@@ -41,6 +51,12 @@ struct __sbuf {
 struct dyld_uuid_info_64 {
     unsigned long long _field1;
     unsigned char _field2[16];
+};
+
+struct exit_reason_snapshot {
+    unsigned int _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
 };
 
 struct jetsam_snapshot {
@@ -109,6 +125,13 @@ struct memorystatus_kernel_stats {
     char _field17[80];
 };
 
+struct proc_workqueueinfo {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+};
+
 struct stackshot_thread_turnstileinfo {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -122,6 +145,11 @@ struct stackshot_thread_waitinfo {
     unsigned long long _field2;
     unsigned long long _field3;
     unsigned char _field4;
+};
+
+struct timeval {
+    long long tv_sec;
+    int tv_usec;
 };
 
 struct timeval64 {

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)urlOfModelInThisBundle;
-@property(readonly, nonatomic) MLModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MLModel *model; // @synthesize model=_model;
 - (id)predictionsFromInputs:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionFromInput_1:(id)arg1 error:(id *)arg2;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;

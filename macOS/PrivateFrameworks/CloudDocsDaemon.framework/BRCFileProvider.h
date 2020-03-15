@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)prettyNameForFilePresenterID:(id)arg1;
-@property(retain, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
 - (void)_providedItemAtURL:(id)arg1 withPresenterWithID:(id)arg2 didMoveToURL:(id)arg3;
 - (void)_providedItemAtURL:(id)arg1 didLosePresenterWithID:(id)arg2;
 - (void)_providedItemAtURL:(id)arg1 didGainPresenterWithID:(id)arg2;

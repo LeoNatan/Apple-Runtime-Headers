@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableString *_errorMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(nonatomic) long long errorCount; // @synthesize errorCount=_errorCount;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

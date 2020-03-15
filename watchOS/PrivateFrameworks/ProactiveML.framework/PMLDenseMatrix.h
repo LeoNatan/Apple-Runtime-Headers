@@ -17,9 +17,9 @@
 
 + (id)denseMatrixFromNumbers:(id)arg1;
 + (id)denseMatrixFromData:(id)arg1 numberOfRows:(unsigned int)arg2 numberOfColumns:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(readonly, nonatomic) unsigned int numberOfRows; // @synthesize numberOfRows=_numberOfRows;
-- (void).cxx_destruct;
 - (void)enumerateNonZeroValuesWithBlock:(CDUnknownBlockType)arg1;
 - (const float *)values;
 - (id)initWithData:(id)arg1 numberOfRows:(unsigned int)arg2 numberOfColumns:(unsigned int)arg3;

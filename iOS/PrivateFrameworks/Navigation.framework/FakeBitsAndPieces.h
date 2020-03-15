@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     GEOComposedWaypoint *_waypoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOComposedWaypoint *waypoint; // @synthesize waypoint=_waypoint;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double weight; // @synthesize weight=_weight;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) GEOLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 @property(readonly) MNCommuteDestinationSuggestion *fakeSuggestion;
 
 @end

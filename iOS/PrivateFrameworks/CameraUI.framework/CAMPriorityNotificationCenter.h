@@ -16,10 +16,10 @@
 }
 
 + (id)defaultCenter;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSMutableDictionary *_observersByNameNormalPriority; // @synthesize _observersByNameNormalPriority=__observersByNameNormalPriority;
 @property(readonly, retain, nonatomic) NSMutableDictionary *_observersByNameHighPriority; // @synthesize _observersByNameHighPriority=__observersByNameHighPriority;
 @property(readonly, retain, nonatomic) NSNotificationCenter *_notificationCenter; // @synthesize _notificationCenter=__notificationCenter;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (id)_allSubscriptions;
 - (void)_removeObserver:(id)arg1 fromObserversByName:(id)arg2;

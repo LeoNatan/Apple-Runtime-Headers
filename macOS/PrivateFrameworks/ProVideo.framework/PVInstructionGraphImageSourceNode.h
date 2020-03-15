@@ -23,13 +23,13 @@
 }
 
 + (void)purgeBitmapCache:(BOOL)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useAnimationInfo; // @synthesize useAnimationInfo=_useAnimationInfo;
 @property(nonatomic) int renderingIntent; // @synthesize renderingIntent=_renderingIntent;
 @property(retain, nonatomic) id <PVImageDelegate> imageDelegate; // @synthesize imageDelegate=_imageDelegate;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)instructionGraphNodeDescription;
 - (id)dotTreeLabel:(HGRef_6bae45d3)arg1;
 - (void)cache:(id)arg1 willEvictObject:(id)arg2;

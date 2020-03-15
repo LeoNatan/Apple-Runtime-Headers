@@ -20,11 +20,11 @@
     NSArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSMutableArray *displayNameOfSelectedApps; // @synthesize displayNameOfSelectedApps=_displayNameOfSelectedApps;
 @property(retain, nonatomic) NSMutableOrderedSet *selectedApps; // @synthesize selectedApps=_selectedApps;
-- (void).cxx_destruct;
 - (void)appSearchViewController:(id)arg1 didFinishWithApps:(id)arg2;
 - (void)appSearchViewControllerDidCancel:(id)arg1;
 - (void)updateDisplayNameOfSelectedApps;

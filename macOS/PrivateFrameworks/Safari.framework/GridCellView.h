@@ -36,13 +36,13 @@ __attribute__((visibility("hidden")))
 + (double)heightExceedingWidth;
 + (struct CGSize)minimumCellViewSize;
 + (struct CGSize)maximumCellViewSize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(retain, nonatomic) NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(nonatomic) BOOL redrawsTextContentOnlyOnNeedsDisplay; // @synthesize redrawsTextContentOnlyOnNeedsDisplay=_redrawsTextContentOnlyOnNeedsDisplay;
 @property(readonly, nonatomic) NSTextField *textField; // @synthesize textField=_textField;
 @property(readonly, nonatomic) GridViewImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak id <GridCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_didRecognizeImmediateAction:(id)arg1;
 - (BOOL)accessibilityPerformShowMenu;
 - (BOOL)accessibilityPerformPress;

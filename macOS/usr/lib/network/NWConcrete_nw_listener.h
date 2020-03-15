@@ -37,6 +37,8 @@ __attribute__((visibility("hidden")))
     NSObject<OS_xpc_object> *inactive_agent_dictionaries;
     NSObject<OS_xpc_object> *triggered_agents;
     NSObject<OS_nw_parameters> *current_derived_parameters;
+    NSObject<OS_nw_path_evaluator> *advertise_evaluator;
+    NSObject<OS_nw_path> *advertise_path;
     NSObject<OS_nw_advertise_descriptor> *advertise_descriptor;
     CDUnknownBlockType advertised_endpoint_changed_handler;
     struct _DNSServiceRef_t *dnsref;
@@ -51,8 +53,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithParameters:(id)arg1;
 - (void)handleInboxCancelComplete:(id)arg1;
 - (void)handleInboxFailed:(id)arg1 error:(id)arg2;
-- (void)handleInbound:(id)arg1 addProtocolInbox:(BOOL)arg2;
-- (BOOL)canHandleNewConnection:(id)arg1;
+- (void)handleInbound:(id)arg1 addProtocolInbox:(_Bool)arg2;
+- (_Bool)canHandleNewConnection:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

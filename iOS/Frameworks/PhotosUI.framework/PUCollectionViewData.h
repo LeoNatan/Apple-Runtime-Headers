@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_itemLayoutAttributesByIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *itemLayoutAttributesByIndexPath; // @synthesize itemLayoutAttributesByIndexPath=_itemLayoutAttributesByIndexPath;
 @property(readonly, nonatomic) NSMutableArray *itemLayoutAttributes; // @synthesize itemLayoutAttributes=_itemLayoutAttributes;
 @property(nonatomic) struct CGRect currentContentBounds; // @synthesize currentContentBounds=_currentContentBounds;
 @property(readonly, nonatomic) long long cachedPageCount; // @synthesize cachedPageCount=_cachedPageCount;
-- (void).cxx_destruct;
 - (_Bool)hasReferenceIndexPath;
 - (void)invalidate;
 - (id)init;

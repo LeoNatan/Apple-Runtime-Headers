@@ -16,9 +16,9 @@
 }
 
 + (id)_syncInfoDirectory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int target; // @synthesize target=_target;
 @property(retain, nonatomic) NSDictionary *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (id)_syncInfoFilePath;
 - (id)_targetIdentifier;
 - (id)_notificationName;

@@ -15,10 +15,10 @@
     NSDate *_modified;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *modified; // @synthesize modified=_modified;
 @property(readonly) unsigned int status; // @synthesize status=_status;
 @property(readonly) NSString *machineID; // @synthesize machineID=_machineID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMachineID:(id)arg1 status:(unsigned int)arg2 modified:(id)arg3;
 

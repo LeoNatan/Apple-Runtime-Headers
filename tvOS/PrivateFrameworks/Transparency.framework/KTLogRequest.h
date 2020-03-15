@@ -18,13 +18,13 @@
     double _timeout;
 }
 
+- (void).cxx_destruct;
 @property double timeout; // @synthesize timeout=_timeout;
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain) NSData *data; // @synthesize data=_data;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property _Bool isGET; // @synthesize isGET=_isGET;
 @property(retain) NSString *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (id)copyRequest:(id *)arg1;
 - (id)createGETRequestForURL:(id)arg1 timeout:(double)arg2 error:(id *)arg3;
 - (id)createPOSTRequestForURL:(id)arg1 timeout:(double)arg2 contents:(id)arg3 error:(id *)arg4;

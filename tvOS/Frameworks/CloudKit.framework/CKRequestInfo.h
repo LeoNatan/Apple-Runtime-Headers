@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *w3cNavigationTiming; // @synthesize w3cNavigationTiming=_w3cNavigationTiming;
 @property(readonly, nonatomic) NSDictionary *responseHTTPHeaders; // @synthesize responseHTTPHeaders=_responseHTTPHeaders;
 @property(readonly, nonatomic) NSString *requestUUID; // @synthesize requestUUID=_requestUUID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithRequestUUID:(id)arg1 responseHTTPHeaders:(id)arg2 w3cTiming:(id)arg3;

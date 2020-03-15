@@ -18,12 +18,12 @@
 }
 
 + (id)shapeBasedCandidateWithCandidate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) void *mecabraCandidate; // @synthesize mecabraCandidate=_mecabraCandidate;
 @property(nonatomic) BOOL showReading; // @synthesize showReading=_showReading;
 @property(nonatomic) BOOL readingIsShort; // @synthesize readingIsShort=_readingIsShort;
 @property(copy, nonatomic) NSString *inputModeName; // @synthesize inputModeName=_inputModeName;
 @property(retain, nonatomic) CIMDisplayCandidateFadeProperties *annotationFade; // @synthesize annotationFade=_annotationFade;
-- (void).cxx_destruct;
 - (id)fadingAnnotation;
 - (id)colorsForNumberOfFadingCharacters:(unsigned long long)arg1;
 - (id)defaultReadingAttributes;

@@ -13,8 +13,8 @@
     NSDictionary *_lookupDictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *lookupDictionary; // @synthesize lookupDictionary=_lookupDictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *lookupDictionary; // @synthesize lookupDictionary=_lookupDictionary;
 @property(readonly, nonatomic) NSString *subscriptionType;
 @property(readonly, nonatomic) NSNumber *price;
 @property(readonly, nonatomic) NSString *offerType;

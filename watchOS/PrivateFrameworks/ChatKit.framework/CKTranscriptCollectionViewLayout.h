@@ -39,6 +39,7 @@
 
 + (Class)layoutAttributesClass;
 + (int)translateLayoutIndexToEffectIndex:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sizeCategoryIsAccessibilitySizeCategory; // @synthesize sizeCategoryIsAccessibilitySizeCategory=_sizeCategoryIsAccessibilitySizeCategory;
 @property(nonatomic) _Bool coalesceInvalidations; // @synthesize coalesceInvalidations=_coalesceInvalidations;
 @property(nonatomic) _Bool useFastQuanta; // @synthesize useFastQuanta=_useFastQuanta;
@@ -64,7 +65,6 @@
 @property(nonatomic, getter=isHoldingBoundsInvalidation) _Bool holdingBoundsInvalidation; // @synthesize holdingBoundsInvalidation=_holdingBoundsInvalidation;
 @property(nonatomic) struct CGPoint targetContentOffset; // @synthesize targetContentOffset=_targetContentOffset;
 @property(nonatomic) float anchorYPosition; // @synthesize anchorYPosition=_anchorYPosition;
-- (void).cxx_destruct;
 - (void)reduceMotionSettingChanged:(id)arg1;
 - (void)sizeCategoryDidChange:(id)arg1;
 - (void)updateFrames;

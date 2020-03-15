@@ -14,9 +14,9 @@
     FCInterestToken *_interestToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCInterestToken *interestToken; // @synthesize interestToken=_interestToken;
 @property(retain, nonatomic) NTPBChannelMembershipRecord *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *draftIssueListID;

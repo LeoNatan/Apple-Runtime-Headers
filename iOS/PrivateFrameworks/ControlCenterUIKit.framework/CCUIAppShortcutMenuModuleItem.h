@@ -13,8 +13,8 @@
     UIImage *_icon;
 }
 
-@property(copy, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 
 @end
 

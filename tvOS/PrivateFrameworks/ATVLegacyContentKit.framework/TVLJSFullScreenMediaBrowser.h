@@ -21,11 +21,11 @@
 }
 
 + (void)addConstructorToObject:(struct OpaqueJSValue *)arg1 inContext:(struct OpaqueJSContext *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *oneUpViewController; // @synthesize oneUpViewController=_oneUpViewController;
 @property(readonly, nonatomic) TVLLegacyJSContext *context; // @synthesize context=_context;
 @property(retain) id jsInfo; // @synthesize jsInfo=_jsInfo;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (long long)oneupView:(id)arg1 contentModeForItemAtIndex:(unsigned long long)arg2;
 - (id)oneupView:(id)arg1 viewForItemAtIndex:(unsigned long long)arg2;
 - (long long)numberOfItemsInOneupView:(id)arg1;

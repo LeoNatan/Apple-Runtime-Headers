@@ -52,6 +52,7 @@
 + (id)editorCollectionViewLayout;
 + (long long)displayMode;
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL separatorMoving; // @synthesize separatorMoving=_separatorMoving;
 @property(readonly, nonatomic) double minimumLayoutScale; // @synthesize minimumLayoutScale=_minimumLayoutScale;
 @property(readonly, nonatomic) KHLayoutCollectionDataSource<KHMutableEditorDataSource> *dataSource; // @synthesize dataSource=_dataSource;
@@ -69,7 +70,6 @@
 @property(readonly, nonatomic) NSArray *visibleLayouts; // @synthesize visibleLayouts=_visibleLayouts;
 @property(readonly, nonatomic) NSUndoManager *contextualUndoManager; // @synthesize contextualUndoManager=_contextualUndoManager;
 @property(readonly, nonatomic) KHEditor *editor; // @synthesize editor=_editor;
-- (void).cxx_destruct;
 - (void)_configureAccessibility;
 - (id)menuForEvent:(id)arg1;
 - (struct CGRect)rectForLayout:(id)arg1;

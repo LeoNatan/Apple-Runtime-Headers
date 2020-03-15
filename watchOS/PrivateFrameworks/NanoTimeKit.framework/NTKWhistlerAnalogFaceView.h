@@ -22,9 +22,9 @@
 }
 
 + (float)curvedRadiusForDevice:(id)arg1 dark:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int dateStyle; // @synthesize dateStyle=_dateStyle;
 @property(nonatomic) unsigned int color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)_setupDialView;
 - (void)_reorderSwitcherSnapshotView;
 - (void)_prepareForSnapshotting;

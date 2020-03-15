@@ -17,12 +17,12 @@
     long long _rowIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long rowIndex; // @synthesize rowIndex=_rowIndex;
 @property(nonatomic) long long tableIndex; // @synthesize tableIndex=_tableIndex;
 @property(copy, nonatomic) NSString *propertyIndex; // @synthesize propertyIndex=_propertyIndex;
 @property(copy, nonatomic) NSString *viewControllerID; // @synthesize viewControllerID=_viewControllerID;
 @property(copy, nonatomic) NSString *interfaceProperty; // @synthesize interfaceProperty=_interfaceProperty;
-- (void).cxx_destruct;
 - (void)_sendValueChanged:(id)arg1 forProperty:(id)arg2;
 - (void)_sendValueChanged:(id)arg1;
 - (void)_setupWithDescription:(id)arg1 forController:(id)arg2;

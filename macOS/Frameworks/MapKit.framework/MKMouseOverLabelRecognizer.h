@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     NSView *_view;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <MKMouseOverLabelRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <MKMouseOverLabelTarget> target; // @synthesize target=_target;
 @property(retain, nonatomic) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 @property(retain, nonatomic) VKLabelMarker *labelMarker; // @synthesize labelMarker=_labelMarker;
-- (void).cxx_destruct;
 - (void)detachFromView;
 - (void)attachToView:(id)arg1;
 - (void)setState:(long long)arg1 withEvent:(id)arg2;

@@ -16,11 +16,11 @@
     struct CGSize _targetSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, copy, nonatomic) NSArray *resourceURLs; // @synthesize resourceURLs=_resourceURLs;
 @property(readonly, nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
-- (void).cxx_destruct;
 - (id)_createImageOnlyLivePhotoWithImageURL:(id)arg1;
 - (void)main;
 - (id)initWithResourceURLs:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 resultHandler:(CDUnknownBlockType)arg4;

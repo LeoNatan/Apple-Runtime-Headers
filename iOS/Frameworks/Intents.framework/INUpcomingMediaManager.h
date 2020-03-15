@@ -15,8 +15,8 @@
 
 + (id)sharedManager;
 + (id)mediaQueue;
-@property(readonly, nonatomic) CSSearchableIndex *index; // @synthesize index=_index;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSSearchableIndex *index; // @synthesize index=_index;
 - (id)keyWithMediaItemTypeName:(id)arg1 bundleId:(id)arg2;
 - (long long)_predictionModeForBundleId:(id)arg1 type:(long long)arg2 error:(id *)arg3;
 - (void)setPredictionMode:(long long)arg1 forType:(long long)arg2;

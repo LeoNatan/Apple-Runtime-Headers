@@ -26,13 +26,13 @@
 + (BOOL)supportsSecureCoding;
 + (Class)filtersType;
 + (Class)contentsType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBHomeUserTask *userTask; // @synthesize userTask=_userTask;
 @property(retain, nonatomic) _INPBDateTimeRange *time; // @synthesize time=_time;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

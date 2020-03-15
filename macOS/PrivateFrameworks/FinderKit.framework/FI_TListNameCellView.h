@@ -45,9 +45,9 @@ __attribute__((visibility("hidden")))
 
 + (double)interItemSpacing;
 + (struct NSEdgeInsets)contentInsets;
-@property(retain, nonatomic) NSLayoutGuide *masterLayoutGuide; // @synthesize masterLayoutGuide=_masterLayoutGuide;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLayoutGuide *masterLayoutGuide; // @synthesize masterLayoutGuide=_masterLayoutGuide;
 - (void)setIconDimmed:(_Bool)arg1;
 - (void)setDimmed:(_Bool)arg1;
 - (void)updateProgressView;

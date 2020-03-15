@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     const CDStruct_d2548575 *_utypeData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) const CDStruct_d2548575 *utypeData; // @synthesize utypeData=_utypeData;
 @property(nonatomic) _LSDatabase *database; // @synthesize database=_database;
 @property(retain, nonatomic) _UTDeclaredType *declaredType; // @synthesize declaredType=_declaredType;
-- (void).cxx_destruct;
 - (int)compare:(id)arg1;
 
 @end

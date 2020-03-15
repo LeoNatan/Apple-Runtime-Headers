@@ -20,10 +20,10 @@
     _Bool _fileWasDeleted;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(readonly, retain, nonatomic) NSString *baseName; // @synthesize baseName=_baseName;
 @property(readonly, retain, nonatomic) NSString *folder; // @synthesize folder=_folder;
-- (void).cxx_destruct;
 - (void)cullFilesMaxFileCount:(long long)arg1;
 - (void)checkForMaximumFileSize:(long long)arg1 wantsCompressed:(_Bool)arg2 outDidCreateNewFile:(_Bool *)arg3 outNewFilePath:(id *)arg4;
 - (id)startNewFile;

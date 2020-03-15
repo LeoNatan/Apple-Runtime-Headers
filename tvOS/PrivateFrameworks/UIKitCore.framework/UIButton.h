@@ -81,11 +81,11 @@
 + (id)_systemButtonWithImage:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 + (_Bool)_buttonTypeIsModernUI:(long long)arg1;
 + (double)_defaultNeighborSpacingForAxis:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_plainButtonBackgroundColor, setter=_setPlainButtonBackgroundColor:) UIColor *_plainButtonBackgroundColor; // @synthesize _plainButtonBackgroundColor=__plainButtonBackgroundColor;
 @property(nonatomic, setter=_setImageContentMode:) long long _imageContentMode; // @synthesize _imageContentMode=__imageContentMode;
 @property(nonatomic, setter=_setInternalTitlePaddingInsets:) struct UIEdgeInsets _internalTitlePaddingInsets; // @synthesize _internalTitlePaddingInsets;
 @property(copy, nonatomic, setter=_setContentConstraints:) NSArray *_contentConstraints; // @synthesize _contentConstraints;
-- (void).cxx_destruct;
 - (_Bool)_isInCarPlay;
 - (_Bool)_isCarPlaySystemTypeButton;
 - (void)_applyCarPlaySystemButtonCustomizations;
@@ -104,6 +104,7 @@
 - (id)_imageForState:(unsigned long long)arg1 applyingConfiguration:(_Bool)arg2 usesImageForNormalState:(_Bool *)arg3;
 - (void)_takeContentFromArchivableContent:(id)arg1;
 - (id)_archivableContent:(id *)arg1;
+- (id)_allButtonContent;
 - (id)_contentForState:(unsigned long long)arg1;
 - (void)_setAttributedTitle:(id)arg1 forStates:(unsigned long long)arg2;
 - (void)_setShadowColor:(id)arg1 forStates:(unsigned long long)arg2;
@@ -112,6 +113,7 @@
 - (void)_setTitle:(id)arg1 forStates:(unsigned long long)arg2;
 - (void)_setBackground:(id)arg1 forStates:(unsigned long long)arg2;
 - (void)_setImage:(id)arg1 forStates:(unsigned long long)arg2;
+- (void)_enumerateContentWithBlock:(CDUnknownBlockType)arg1;
 - (void)_setContent:(id)arg1 forState:(unsigned long long)arg2;
 @property(nonatomic, getter=_isContentBackgroundHidden, setter=_setContentBackgroundHidden:) _Bool contentBackgroundHidden;
 - (void)_updateEffectsForImageView:(id)arg1 background:(_Bool)arg2;
@@ -238,6 +240,7 @@
 - (void)setTitleColor:(id)arg1 forState:(unsigned long long)arg2;
 - (void)setTitle:(id)arg1 forState:(unsigned long long)arg2;
 - (void)setNeedsLayout;
+- (void)_invalidateForPropertyChange;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)setSemanticContentAttribute:(long long)arg1;
@@ -265,6 +268,7 @@
 - (void)_setupDrawingStyleForState:(unsigned long long)arg1;
 - (struct CGRect)_highlightBoundsForDrawingStyle;
 - (void)_prepareMaskAnimationViewIfNecessary;
+- (id)_selectionIndicatorView;
 - (struct CGRect)_selectedIndicatorBounds;
 - (id)_selectedIndicatorViewWithImage:(id)arg1;
 - (double)_selectedIndicatorAlpha;

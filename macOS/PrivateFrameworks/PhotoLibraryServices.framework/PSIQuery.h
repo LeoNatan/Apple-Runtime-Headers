@@ -55,6 +55,7 @@
 + (id)dateFilterWithAttributes:(id)arg1 andAttributes:(id)arg2;
 + (id)dateFilterByCombiningDateFilter:(id)arg1 withDateFilter:(id)arg2;
 + (id)dateFilterWithAttributes:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL useWildcardText; // @synthesize useWildcardText=_useWildcardText;
 @property(copy, nonatomic) NSSet *socialGroupExtendedCollectionIds; // @synthesize socialGroupExtendedCollectionIds=_socialGroupExtendedCollectionIds;
 @property(copy, nonatomic) NSSet *socialGroupExtendedAssetIds; // @synthesize socialGroupExtendedAssetIds=_socialGroupExtendedAssetIds;
@@ -73,7 +74,6 @@
 @property(nonatomic) unsigned long long wordEmbeddingMode; // @synthesize wordEmbeddingMode=_wordEmbeddingMode;
 @property(readonly, copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(readonly, copy, nonatomic) NSArray *queryTokens; // @synthesize queryTokens=_queryTokens;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_postProcessPersonGroupsInGroupArrays:(id)arg1;
 - (id)suggestionWhitelistedScenes;

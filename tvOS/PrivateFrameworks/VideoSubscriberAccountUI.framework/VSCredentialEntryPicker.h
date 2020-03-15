@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _selectedIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(copy, nonatomic) NSArray *pickerItems; // @synthesize pickerItems=_pickerItems;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)pickerItemAtCurrentIndex;
 
 @end

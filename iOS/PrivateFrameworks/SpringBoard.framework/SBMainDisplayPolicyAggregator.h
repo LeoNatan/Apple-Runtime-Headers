@@ -28,6 +28,7 @@
     _Bool _storeDemoAppLockEnabled;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_bannerDestination, setter=_setBannerDestination:) SBNotificationBannerDestination *bannerDestination; // @synthesize bannerDestination=_override_bannerDestination;
 @property(retain, nonatomic, getter=_mainWorkspace, setter=_setMainWorkspace:) SBMainWorkspace *mainWorkspace; // @synthesize mainWorkspace=_override_mainWorkspace;
 @property(retain, nonatomic, getter=_telephonyManager, setter=_setTelephonyManager:) SBTelephonyManager *telephonyManager; // @synthesize telephonyManager=_override_telephonyManager;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic, getter=_alertItemsController, setter=_setAlertItemsController:) SBAlertItemsController *alertItemsController; // @synthesize alertItemsController=_override_alertItemsController;
 @property(retain, nonatomic, getter=_setupManager, setter=_setSetupManager:) SBSetupManager *setupManager; // @synthesize setupManager=_override_setupManager;
 @property(retain, nonatomic, getter=_profileConnection, setter=_setProfileConnection:) MCProfileConnection *profileConnection; // @synthesize profileConnection=_override_profileConnection;
-- (void).cxx_destruct;
 - (_Bool)_dictationInfoOnScreen;
 - (_Bool)_allowsCapabilityQuickNoteWithExplanation:(id *)arg1;
 - (_Bool)_allowsCapabilityLiftToWakeWithExplanation:(id *)arg1;

@@ -17,12 +17,12 @@
     PKMutableProduct *_mutableProduct;
 }
 
+- (void).cxx_destruct;
 @property(retain) PKMutableProduct *mutableProduct; // @synthesize mutableProduct=_mutableProduct;
 @property(retain) NSString *productType; // @synthesize productType=_productType;
 @property(retain) NSString *resolvedProductPath; // @synthesize resolvedProductPath=_resolvedProductPath;
 @property(retain) NSString *productPath; // @synthesize productPath=_productPath;
 @property(retain) NSString *productUUID; // @synthesize productUUID=_productUUID;
-- (void).cxx_destruct;
 - (id)_diskForDiskWithUUID:(id)arg1;
 - (void)_sanityCheckProduct;
 - (id)methodSignatureForSelector:(SEL)arg1;

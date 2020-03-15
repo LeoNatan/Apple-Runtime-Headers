@@ -27,6 +27,7 @@
 
 + (id)sharedCache;
 + (id)internalResourceBundle;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *scenarioTitles; // @synthesize scenarioTitles=_scenarioTitles;
 @property(retain) NSMutableDictionary *lifecycleScenarios; // @synthesize lifecycleScenarios=_lifecycleScenarios;
 @property(retain) NSDictionary *animationThresholdsForWhitelistedNames; // @synthesize animationThresholdsForWhitelistedNames=_animationThresholdsForWhitelistedNames;
@@ -40,7 +41,6 @@
 @property(retain) NSString *hwModel; // @synthesize hwModel=_hwModel;
 @property(retain) NSDictionary *bundleIdForAppName; // @synthesize bundleIdForAppName=_bundleIdForAppName;
 @property(retain) NSMutableDictionary *scenarioObjects; // @synthesize scenarioObjects=_scenarioObjects;
-- (void).cxx_destruct;
 - (id)lifecyleScenarioWithScenarioId:(id)arg1 error:(id *)arg2;
 - (id)wakeScenario:(id)arg1 subType:(id)arg2 error:(id *)arg3;
 - (id)scenarioFromSignpostEvent:(id)arg1 error:(id *)arg2;

@@ -29,7 +29,7 @@
     unordered_map_fcbaed0a _temporaryIDToItem;
     unordered_map_fcbaed0a _visitForTemporaryID;
     NSMutableArray *_pendingVisits;
-    // Error parsing type: {atomic<bool>="__a_"AB}, name: _integrityCheckPending
+    // Error parsing type: {atomic<bool>="__a_"{__cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool> >="__a_value"AB}}, name: _integrityCheckPending
     NSURL *_clearHistoryInProgressFileURL;
     CDUnknownBlockType _pendingVisitsTimeout;
     WBSHistoryTagDatabaseController *_tagController;
@@ -38,11 +38,11 @@
     WBSHistoryServiceURLCompletion *_urlCompletion;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSHistoryServiceURLCompletion *urlCompletion; // @synthesize urlCompletion=_urlCompletion;
 @property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 @property(readonly, copy, nonatomic) NSString *databaseID; // @synthesize databaseID=_databaseID;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setTitle:(id)arg1 ofTagWithID:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)assignHistoryItemWithID:(long long)arg1 toTopicTagsWithIDs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)createTagsForIdentifiers:(id)arg1 withTitles:(id)arg2 type:(unsigned long long)arg3 level:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
@@ -68,6 +68,7 @@
 - (void)vacuumHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performMaintenanceWithAgeLimit:(double)arg1 itemCountLimit:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_executePlan:(struct DeletionPlan *)arg1 outDeletedItemCount:(unsigned long long *)arg2 outDeletedVisitCount:(unsigned long long *)arg3;
+- (id)_collectDeletedHostnamesForPlan:(struct DeletionPlan *)arg1;
 - (id)_collectDeletedURLsForPlan:(struct DeletionPlan *)arg1;
 - (void)deletionPlanForAgeLimit:(double)arg1 itemCountLimit:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deletionPlanForItemsToDelete:(id)arg1 visitsToDelete:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -95,7 +96,6 @@
 - (id)_generateUpdatedLastVisitForPlan:(struct DeletionPlan *)arg1;
 - (id)_generateDisposedVisitsForPlan:(struct DeletionPlan *)arg1;
 - (void)clearAllHistoryInsertingTombstoneUpToDate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)clearAllTestDriveVisitsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_clearAllHistoryInsertingTombstoneUpToDate:(id)arg1;
 - (long long)_lastSyncedGeneration;
 - (long long)_currentGeneration;
@@ -107,11 +107,9 @@
 - (void)recordVisitWithIdentifier:(id)arg1 sourceVisit:(id)arg2 title:(id)arg3 wasHTTPNonGet:(BOOL)arg4 loadSuccessful:(BOOL)arg5 origin:(long long)arg6 attributes:(unsigned long long)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)addAutocompleteTrigger:(id)arg1 forURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_addAutocompleteTrigger:(id)arg1 forURL:(id)arg2 error:(id *)arg3;
-- (void)updateWithType:(unsigned long long)arg1 addOrModifyObjects:(id)arg2 updateCurrentGeneration:(id)arg3 updateLastSyncGeneration:(id)arg4 updateLastMaintenance:(id)arg5 makeTestDriveVisitsPermanent:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
-- (id)_updateByAddingOrModifyObjects:(id)arg1 updateCurrentGeneration:(id)arg2 updateLastSyncGeneration:(id)arg3 updateLastMaintenance:(id)arg4 makeTestDriveVisitsPermanent:(BOOL)arg5;
+- (void)updateWithType:(unsigned long long)arg1 addOrModifyObjects:(id)arg2 updateCurrentGeneration:(id)arg3 updateLastSyncGeneration:(id)arg4 updateLastMaintenance:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (id)_updateByAddingOrModifyObjects:(id)arg1 updateCurrentGeneration:(id)arg2 updateLastSyncGeneration:(id)arg3 updateLastMaintenance:(id)arg4;
 - (void)_checkpointWriteAheadLog;
-- (id)_makePermanentAllTestDriveVisits;
-- (id)_setOrigin:(long long)arg1 forVisitsFromOrigin:(long long)arg2;
 - (id)_addOrModifyObjects:(id)arg1;
 - (void)_notifyDelegatesOfVisitIDs;
 - (void)_notifyDelegatesOfItemIDs;

@@ -17,12 +17,12 @@
     struct CGSize _preferredImageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) VSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(readonly, nonatomic) struct CGSize preferredImageSize; // @synthesize preferredImageSize=_preferredImageSize;
 @property(readonly, nonatomic) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (void)_beginFetchingDataFromURL:(id)arg1;

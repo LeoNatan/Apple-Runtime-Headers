@@ -12,13 +12,15 @@
 {
     _Bool _cachedShouldRequestMoreTime;
     _Bool _cachedIsRestrictionsPasscodeSet;
+    _Bool _contactsEditable;
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
+@property(readonly) _Bool contactsEditable; // @synthesize contactsEditable=_contactsEditable;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property _Bool cachedIsRestrictionsPasscodeSet; // @synthesize cachedIsRestrictionsPasscodeSet=_cachedIsRestrictionsPasscodeSet;
 @property _Bool cachedShouldRequestMoreTime; // @synthesize cachedShouldRequestMoreTime=_cachedShouldRequestMoreTime;
-- (void).cxx_destruct;
 - (void)isExplicitContentRestricted:(CDUnknownBlockType)arg1;
 - (id)shouldAllowOneMoreMinuteForCategoryIdentifier:(id)arg1 error:(id *)arg2;
 - (id)shouldAllowOneMoreMinuteForWebsiteURL:(id)arg1 error:(id *)arg2;

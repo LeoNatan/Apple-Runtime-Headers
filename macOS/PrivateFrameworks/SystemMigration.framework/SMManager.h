@@ -55,6 +55,7 @@
 + (BOOL)isSoftwareUpdateInProgress;
 + (BOOL)isOSUpgradeInProgress;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) SUSoftwareUpdateController *suController; // @synthesize suController=_suController;
 @property BOOL blockingUpgradeRequests; // @synthesize blockingUpgradeRequests=_blockingUpgradeRequests;
 @property(retain) NSString *cancelWatchdogUUID; // @synthesize cancelWatchdogUUID=_cancelWatchdogUUID;
@@ -90,7 +91,6 @@
 @property BOOL skipSpotlightIndexing; // @synthesize skipSpotlightIndexing=_skipSpotlightIndexing;
 @property(retain) NSObject<OS_dispatch_queue> *spotlightIndexHeartbeatQueue; // @synthesize spotlightIndexHeartbeatQueue=_spotlightIndexHeartbeatQueue;
 @property(retain) NSObject<OS_dispatch_queue> *spotlightIndexQueue; // @synthesize spotlightIndexQueue=_spotlightIndexQueue;
-- (void).cxx_destruct;
 - (BOOL)isTimeMachineDataVolume:(id)arg1;
 - (BOOL)validateArchiveInstallSystemAtPath:(id)arg1;
 - (BOOL)validateSystemAtPath:(id)arg1 serverSystemsAllowed:(BOOL)arg2 tmVolumeStoreInfo:(id)arg3 rejectionReason:(id *)arg4;

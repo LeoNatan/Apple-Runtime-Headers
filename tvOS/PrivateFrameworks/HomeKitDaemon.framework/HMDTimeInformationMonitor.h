@@ -18,10 +18,10 @@
     NSObject<OS_dispatch_queue> *_clientQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain, nonatomic) NSHashTable *delegates; // @synthesize delegates=_delegates;
 @property(readonly, nonatomic) HMFTimer *expirationTimer; // @synthesize expirationTimer=_expirationTimer;
-- (void).cxx_destruct;
 - (void)systemTimeChanged:(id)arg1;
 - (void)timerDidFire:(id)arg1;
 - (void)_handleExpiration;

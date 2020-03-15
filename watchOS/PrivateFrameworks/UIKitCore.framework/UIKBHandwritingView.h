@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     CDStruct_86c70518 _previousPoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIKBHandwritingInputSpeedModel *inputSpeedModel; // @synthesize inputSpeedModel=_inputSpeedModel;
 @property(retain, nonatomic) UIDelayedAction *nextPageTimer; // @synthesize nextPageTimer=_nextPageTimer;
 @property(nonatomic) float pageOffset; // @synthesize pageOffset=_pageOffset;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGImage *inkMask; // @synthesize inkMask=_inkMask;
 @property(nonatomic) struct CGColor *inkColor; // @synthesize inkColor=_inkColor;
 @property(nonatomic) float inkWidth; // @synthesize inkWidth=_inkWidth;
-- (void).cxx_destruct;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)cancelTouchTracking;
 - (void)clearTouches;

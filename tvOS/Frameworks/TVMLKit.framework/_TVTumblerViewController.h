@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     struct TVCellMetrics _cellMetrics;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *tumblerItems; // @synthesize tumblerItems=_tumblerItems;
 @property(readonly, nonatomic) struct TVCellMetrics cellMetrics; // @synthesize cellMetrics=_cellMetrics;
 @property(readonly, retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (id)_tumblerView;
 - (void)_updateTumblerHeader;
 - (void)loadView;

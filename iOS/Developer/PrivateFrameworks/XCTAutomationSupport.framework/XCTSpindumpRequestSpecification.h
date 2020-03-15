@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *filename; // @synthesize filename=_filename;
 @property(readonly) NSString *signature; // @synthesize signature=_signature;
 @property(readonly) NSString *reason; // @synthesize reason=_reason;
@@ -29,7 +30,6 @@
 @property(readonly) unsigned long long intervalMicroseconds; // @synthesize intervalMicroseconds=_intervalMicroseconds;
 @property(readonly) unsigned long long durationMilliseconds; // @synthesize durationMilliseconds=_durationMilliseconds;
 @property(readonly) int processID; // @synthesize processID=_processID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

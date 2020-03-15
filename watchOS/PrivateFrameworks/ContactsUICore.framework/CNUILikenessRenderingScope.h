@@ -21,6 +21,7 @@
 
 + (id)renderingScopeWithPointSize:(struct CGSize)arg1 scale:(float)arg2 rightToLeft:(_Bool)arg3 style:(unsigned int)arg4 color:(id)arg5;
 + (id)renderingScopeWithPointSize:(struct CGSize)arg1 scale:(float)arg2 strokeWidth:(float)arg3 strokeColor:(struct CGColor *)arg4 rightToLeft:(_Bool)arg5 style:(unsigned int)arg6 color:(id)arg7;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PRMonogramColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) unsigned int style; // @synthesize style=_style;
 @property(readonly, nonatomic) _Bool rightToLeft; // @synthesize rightToLeft=_rightToLeft;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) float strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property(readonly, nonatomic) float scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) struct CGSize pointSize; // @synthesize pointSize=_pointSize;
-- (void).cxx_destruct;
 - (void)setStrokeColor:(struct CGColor *)arg1;
 - (id)description;
 - (void)dealloc;

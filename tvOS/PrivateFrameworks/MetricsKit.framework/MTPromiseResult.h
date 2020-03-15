@@ -14,9 +14,9 @@
     id _result;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id result; // @synthesize result=_result;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)initWithResult:(id)arg1 error:(id)arg2;
 
 @end

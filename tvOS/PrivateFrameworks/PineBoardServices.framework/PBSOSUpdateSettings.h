@@ -31,6 +31,7 @@
     NSString *_buildNumber;
     NSString *_assetServerURLString;
     NSString *_brainServerURLString;
+    NSString *_assetAudience;
     NSString *_vpnProfileServerURLString;
     NSString *_personalizationServerURLString;
     TVSPreferences *_preferences;
@@ -39,11 +40,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *defaultAssetServerURLString; // @synthesize defaultAssetServerURLString=_defaultAssetServerURLString;
 @property(copy, nonatomic) NSString *defaultBrainServerURLString; // @synthesize defaultBrainServerURLString=_defaultBrainServerURLString;
 @property(retain, nonatomic) TVSPreferences *preferences; // @synthesize preferences=_preferences;
 @property(nonatomic) _Bool shouldSkipUpdate; // @synthesize shouldSkipUpdate=_shouldSkipUpdate;
-- (void).cxx_destruct;
 - (void)_refreshPropertiesWithPreferences;
 - (void)_setDefaultBrainServerURLString:(id)arg1;
 - (id)_defaultBrainServerURLString;
@@ -52,6 +53,7 @@
 @property(nonatomic, getter=isMobileAssetLoggingEnabled, setter=setMobileAssetLoggingEnabled:) _Bool enableMobileAssetLogging; // @synthesize enableMobileAssetLogging=_enableMobileAssetLogging;
 @property(readonly, copy, nonatomic) NSString *vpnProfileServerURLString; // @synthesize vpnProfileServerURLString=_vpnProfileServerURLString;
 @property(copy, nonatomic) NSString *personalizationServerURLString; // @synthesize personalizationServerURLString=_personalizationServerURLString;
+@property(copy, nonatomic) NSString *assetAudience; // @synthesize assetAudience=_assetAudience;
 @property(copy, nonatomic) NSString *brainServerURLString; // @synthesize brainServerURLString=_brainServerURLString;
 @property(copy, nonatomic) NSString *assetServerURLString; // @synthesize assetServerURLString=_assetServerURLString;
 @property(readonly, copy, nonatomic) NSString *buildTrainName;

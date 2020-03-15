@@ -16,8 +16,8 @@
     id <PSYSyncStateObserverInterface> _delegate;
 }
 
-@property(nonatomic) __weak id <PSYSyncStateObserverInterface> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PSYSyncStateObserverInterface> delegate; // @synthesize delegate=_delegate;
 - (oneway void)didUpdateSyncForPairingID:(id)arg1;
 
 // Remaining properties

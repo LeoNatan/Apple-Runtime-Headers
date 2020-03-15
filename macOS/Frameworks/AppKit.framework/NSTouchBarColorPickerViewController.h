@@ -26,12 +26,12 @@
 + (id)keyPathsForValuesAffectingWorkingColor;
 + (id)keyPathsForValuesAffecting_swatchIsPrearmed;
 + (id)keyPathsForValuesAffecting_shouldSwatchBeHidden;
+- (void).cxx_destruct;
 @property(copy) NSArray *allowedColorSpaces; // @synthesize allowedColorSpaces=_allowedColorSpaces;
 @property BOOL colorListSupportsPressAndHoldVariants; // @synthesize colorListSupportsPressAndHoldVariants=_supportsPressAndHoldVariants;
 @property(retain) NSColorList *colorList; // @synthesize colorList=_colorList;
 @property BOOL allowsAlpha; // @synthesize allowsAlpha=_allowsAlpha;
 @property(copy) NSColor *currentColor; // @synthesize currentColor=_currentColor;
-- (void).cxx_destruct;
 - (void)_pickerDidCancelTracking;
 - (void)_pickerDidEndTracking;
 - (void)_pickerWillBeginTracking;

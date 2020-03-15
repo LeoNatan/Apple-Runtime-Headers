@@ -18,9 +18,9 @@
     NSData *_separator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *separator; // @synthesize separator=_separator;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)uniquedString:(id)arg1;
 - (void)flushAllCaches;
 - (void)invalidateMessage:(id)arg1;

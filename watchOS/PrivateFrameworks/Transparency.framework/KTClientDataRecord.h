@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool verified; // @synthesize verified=_verified;
 @property(retain) NSDate *addedDate; // @synthesize addedDate=_addedDate;
 @property(retain) NSDate *deletionEscrowExpiry; // @synthesize deletionEscrowExpiry=_deletionEscrowExpiry;
@@ -29,7 +30,6 @@
 @property(retain) NSData *clientDataVRFOutput; // @synthesize clientDataVRFOutput=_clientDataVRFOutput;
 @property unsigned int applicationVersion; // @synthesize applicationVersion=_applicationVersion;
 @property(retain) NSData *clientData; // @synthesize clientData=_clientData;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithSingleDataRecord:(id)arg1;
 - (id)initWithMutation:(id)arg1;

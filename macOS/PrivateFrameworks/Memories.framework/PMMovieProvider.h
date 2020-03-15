@@ -21,6 +21,7 @@
 }
 
 + (unsigned long long)movieClipCountWithProduction:(id)arg1 result:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentEditID; // @synthesize currentEditID=_currentEditID;
 @property(retain, nonatomic) VEKProduction *lastEditingProduction; // @synthesize lastEditingProduction=_lastEditingProduction;
 @property(retain, nonatomic) PMMovieProviderAnalyticsEvent *analyticsEvent; // @synthesize analyticsEvent=_analyticsEvent;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) VEKResult *lastResult; // @synthesize lastResult=_lastResult;
 @property(nonatomic) __weak id <PMMovieProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 @property(retain, nonatomic) VEKProduction *production; // @synthesize production=_production;
-- (void).cxx_destruct;
 - (void)cancelEdit;
 - (void)refreshPlayerItem;
 - (id)initWithProduction:(id)arg1;

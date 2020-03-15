@@ -15,10 +15,10 @@
     NSURL *_destinationDirectory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *destinationDirectory; // @synthesize destinationDirectory=_destinationDirectory;
 @property(retain, nonatomic) NSURL *outputUserURL; // @synthesize outputUserURL=_outputUserURL;
 @property(retain, nonatomic) NSURL *userURL; // @synthesize userURL=_userURL;
-- (void).cxx_destruct;
 - (void)cleanOnDisk;
 - (_Bool)enumerateURL:(id)arg1 rootURL:(id)arg2 usingBlock:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (_Bool)enumerateRootURL:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;

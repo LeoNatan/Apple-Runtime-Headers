@@ -16,8 +16,8 @@
     NSTableView *_tableView;
 }
 
-@property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
 - (id)_tableRootView;
 - (void)updateTableHeightConstraintAnimated:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

@@ -17,11 +17,11 @@
 }
 
 + (id)transactionLogMessageFromDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(readonly, nonatomic) NSString *loginID; // @synthesize loginID=_loginID;
 @property(readonly, nonatomic) NSString *fromID; // @synthesize fromID=_fromID;
 @property(readonly, nonatomic) NSString *accountUniqueID; // @synthesize accountUniqueID=_accountUniqueID;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)_dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

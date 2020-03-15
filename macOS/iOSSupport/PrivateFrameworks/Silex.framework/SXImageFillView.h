@@ -16,11 +16,11 @@
     SXImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) SXImageResource *imageResource; // @synthesize imageResource=_imageResource;
 @property(readonly, nonatomic) SXImageFill *imageFill; // @synthesize imageFill=_imageFill;
 @property(retain, nonatomic) SXClippingView *clippingView; // @synthesize clippingView=_clippingView;
-- (void).cxx_destruct;
 - (void)setContentFrame:(struct CGRect)arg1;
 - (struct CGRect)contentFrame;
 - (id)dragable;

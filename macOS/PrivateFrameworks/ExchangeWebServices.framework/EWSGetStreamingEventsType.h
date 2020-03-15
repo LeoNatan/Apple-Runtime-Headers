@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long ConnectionTimeout; // @synthesize ConnectionTimeout=_ConnectionTimeout;
 @property(copy, nonatomic) NSArray *SubscriptionIds; // @synthesize SubscriptionIds=_SubscriptionIds;
-- (void).cxx_destruct;
 
 @end
 

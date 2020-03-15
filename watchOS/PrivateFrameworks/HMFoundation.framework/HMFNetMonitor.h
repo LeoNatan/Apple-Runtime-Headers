@@ -20,9 +20,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HMFNetAddress *netAddress; // @synthesize netAddress=_netAddress;
 @property __weak id <HMFNetMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly) unsigned int reachabilityPath;
 @property(getter=isReachable) _Bool reachable;
 - (id)initWithNetService:(id)arg1;

@@ -13,8 +13,8 @@
     NSURL *_videoURL;
 }
 
-@property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 - (id)videoAdjustmentData;
 - (void)setVideoAdjustmentData:(id)arg1;
 - (BOOL)containsValidData;

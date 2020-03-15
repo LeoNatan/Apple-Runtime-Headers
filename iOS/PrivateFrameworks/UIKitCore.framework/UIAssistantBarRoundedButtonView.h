@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     UIAssistantBarRoundedButtonViewButton *_button;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIAssistantBarRoundedButtonViewButton *button; // @synthesize button=_button;
 @property(nonatomic) _Bool dropShadow; // @synthesize dropShadow=_dropShadow;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

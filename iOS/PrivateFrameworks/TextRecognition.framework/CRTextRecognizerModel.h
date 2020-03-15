@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)urlOfModelInThisBundle;
+- (void).cxx_destruct;
 @property(nonatomic) long long ctcBlankLabelIndex; // @synthesize ctcBlankLabelIndex=_ctcBlankLabelIndex;
 @property(nonatomic) unsigned short *codemapArray; // @synthesize codemapArray=_codemapArray;
 @property(retain, nonatomic) NSString *codemap; // @synthesize codemap=_codemap;
 @property(readonly, nonatomic) MLModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)predictionsFromInputs:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionFromImg_input:(id)arg1 error:(id *)arg2;

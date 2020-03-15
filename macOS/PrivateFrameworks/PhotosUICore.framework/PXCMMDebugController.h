@@ -13,8 +13,8 @@
     NSView *_contentView;
 }
 
-@property(readonly, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 - (void)loadView;
 - (id)initWithContentView:(id)arg1 initialSize:(struct CGSize)arg2;
 

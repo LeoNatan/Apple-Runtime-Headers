@@ -14,9 +14,9 @@
     long long _presentationIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long presentationIdentifier; // @synthesize presentationIdentifier=_presentationIdentifier;
 @property(retain, nonatomic) SASSystemState *systemState; // @synthesize systemState=_systemState;
-- (void).cxx_destruct;
 - (_Bool)_siriIsEnabled;
 - (id)_createRequestOptionsForRequest:(id)arg1 withDataSource:(id)arg2;
 - (id)buildOptionsWithRequest:(id)arg1 presentationIdentifier:(long long)arg2 dataSource:(id)arg3;

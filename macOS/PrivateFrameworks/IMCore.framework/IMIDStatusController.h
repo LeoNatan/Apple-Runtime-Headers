@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *_servicesRegistered; // @synthesize _servicesRegistered;
 @property(retain, nonatomic) NSRecursiveLock *_servicesLock; // @synthesize _servicesLock;
-- (void).cxx_destruct;
 - (long long)statusForID:(id)arg1 onService:(id)arg2;
 - (void)requestStatusForID:(id)arg1 onAccount:(id)arg2;
 - (void)requestStatusForID:(id)arg1 onService:(id)arg2;

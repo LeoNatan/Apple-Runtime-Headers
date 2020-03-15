@@ -8,7 +8,7 @@
 
 @interface FISimpleHistogram : NSObject
 {
-    int _bucketCount;
+    unsigned int _bucketCount;
     struct {
         int _field1;
         double _field2;
@@ -18,9 +18,9 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)descriptionArray;
 - (id)debugDescription;
-- (int)numberOfValuesInBucketAtIndex:(int)arg1;
-- (void)addValue:(double)arg1 toBucketAtIndex:(int)arg2;
-- (double)valueForBucketAtIndex:(int)arg1;
+- (int)numberOfValuesInBucketAtIndex:(unsigned int)arg1;
+- (void)addValue:(double)arg1 toBucketAtIndex:(unsigned int)arg2;
+- (double)valueForBucketAtIndex:(unsigned int)arg1;
 - (int)bucketCount;
 - (void)dealloc;
 - (id)initWithNumberOfBuckets:(int)arg1;

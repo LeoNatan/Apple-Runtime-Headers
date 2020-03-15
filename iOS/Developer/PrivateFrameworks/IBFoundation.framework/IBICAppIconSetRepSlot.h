@@ -21,9 +21,9 @@
 + (id)slotFilterWithPlatformFilter:(id)arg1 idiomFilter:(id)arg2 sizeFilter:(id)arg3 scaleFilter:(id)arg4 roleFilter:(id)arg5 subtypeFilter:(id)arg6 colorSpaceFilter:(id)arg7 languageDirectionFilter:(id)arg8;
 + (Class)assetRepClass;
 + (Class)assetSetClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBICLanguageDirection *languageDirection; // @synthesize languageDirection=_languageDirection;
 @property(retain, nonatomic) IBICColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
-- (void).cxx_destruct;
 - (id)baseSlotWithoutSecondaryVariations;
 @property(readonly, nonatomic) _Bool hasLanguageDirection;
 @property(readonly, nonatomic) _Bool hasColorSpace;

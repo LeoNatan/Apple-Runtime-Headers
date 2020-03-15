@@ -6,12 +6,13 @@
 
 #import <MetalTools/MTLDevice-Protocol.h>
 
-@class MTLCommandQueueDescriptor, MTLComputePipelineDescriptor, MTLIndirectCommandBufferDescriptor, MTLMotionEstimationPipelineDescriptor, MTLMotionEstimatorCapabilities, MTLRenderPipelineDescriptor, MTLStructType, MTLTextureDescriptor, NSArray, NSData, NSMutableDictionary, NSObject, NSString, _MTLIndirectArgumentBufferLayout;
-@protocol MTLArgumentEncoder, MTLBuffer, MTLCommandQueue, MTLComputeCommandEncoder, MTLComputePipelineState, MTLDeserializationContext, MTLDevice, MTLDeviceSPI, MTLFunction, MTLIndirectArgumentEncoder, MTLIndirectCommandBuffer, MTLIndirectRenderCommandEncoder, MTLLibrary, MTLMotionEstimationPipeline, MTLPipelineCache, MTLPipelineLibrarySPI, MTLRenderCommandEncoder, MTLRenderPipelineState, MTLSamplerState, MTLSharedEvent, MTLTexture, OS_dispatch_data;
+@class MTLBinaryArchiveDescriptor, MTLCommandQueueDescriptor, MTLComputePipelineDescriptor, MTLIndirectCommandBufferDescriptor, MTLMotionEstimationPipelineDescriptor, MTLMotionEstimatorCapabilities, MTLRasterizationRateMapDescriptor, MTLRenderPipelineDescriptor, MTLStructType, MTLTextureDescriptor, NSArray, NSData, NSMutableDictionary, NSObject, NSString, NSURL, _MTLIndirectArgumentBufferLayout;
+@protocol MTLArgumentEncoder, MTLBinaryArchive, MTLBinaryLibrary, MTLBuffer, MTLCommandQueue, MTLComputeCommandEncoder, MTLComputePipelineState, MTLDeserializationContext, MTLDevice, MTLDeviceSPI, MTLDynamicLibrary, MTLFunction, MTLIndirectArgumentEncoder, MTLIndirectCommandBuffer, MTLIndirectRenderCommandEncoder, MTLLibrary, MTLMotionEstimationPipeline, MTLPipelineCache, MTLPipelineLibrarySPI, MTLRasterizationRateMap, MTLRenderCommandEncoder, MTLRenderPipelineState, MTLSamplerState, MTLSharedEvent, MTLTexture, OS_dispatch_data;
 
 @protocol MTLDeviceSPI <MTLDevice>
 + (void)registerDevices;
 @property(readonly, getter=isPlacementHeapSupported) BOOL placementHeapSupported;
+@property(readonly) unsigned long long maxRasterizationRateLayerCount;
 @property unsigned long long currentUtilityBufferIndex;
 @property(retain, nonatomic) NSArray *utilityBuffers;
 @property(readonly, getter=isUtilityBufferRequired) BOOL utilityBufferRequired;
@@ -25,6 +26,8 @@
 @property(readonly) unsigned int acceleratorPort;
 @property(readonly) unsigned long long maxComputeAttributes;
 @property(readonly) unsigned long long maxTextureBufferWidth;
+@property(readonly) unsigned long long maxVertexAmplificationCount;
+@property(readonly) unsigned long long maxVertexAmplificationFactor;
 @property(readonly) unsigned long long maxCustomSamplePositions;
 @property(readonly) unsigned long long maxViewportCount;
 @property(readonly) unsigned long long maxIndirectSamplersPerDevice;
@@ -71,7 +74,7 @@
 @property(readonly) unsigned long long maxVertexBuffers;
 @property(readonly) unsigned long long maxVertexAttributes;
 @property(readonly) unsigned long long maxColorAttachments;
-@property(readonly) const CDStruct_ba442ac5 *limits;
+@property(readonly) const CDStruct_210bae5a *limits;
 @property(readonly) unsigned long long featureProfile;
 @property(nonatomic) BOOL metalAssertionsEnabled;
 @property(readonly) unsigned long long doubleFPConfig;
@@ -87,6 +90,7 @@
 @property(readonly, nonatomic) BOOL supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) BOOL supportsBlackOrWhiteSamplerBorderColors;
 @property(readonly, nonatomic) BOOL supportsShaderBarycentricCoordinates;
+@property(readonly, nonatomic) BOOL supportsVariableRateRasterization;
 @property(readonly, nonatomic) BOOL supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) BOOL supportsShaderMinLODClamp;
 @property(readonly, nonatomic) BOOL supportsSIMDGroup;
@@ -145,6 +149,9 @@
 @property(readonly, nonatomic) BOOL supportsSRGBwrites;
 @property(readonly, nonatomic) BOOL supportsPublicXR10Formats;
 @property(readonly, nonatomic) BOOL supportsASTCTextureCompression;
+@property(readonly, nonatomic) BOOL supportsBinaryLibraries;
+@property(readonly, nonatomic) BOOL supportsDynamicLibraries;
+@property(readonly, nonatomic) BOOL supportsBinaryArchives;
 @property(readonly, nonatomic) BOOL supportsGPUStatistics;
 @property(readonly, nonatomic) BOOL supportsSeparateDepthStencil;
 @property(readonly, nonatomic) BOOL supportsRelaxedTextureViewRequirements;
@@ -163,6 +170,7 @@
 @property(readonly, nonatomic) BOOL supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) BOOL supportsPlacementHeaps;
 @property(readonly, nonatomic) BOOL supportsSamplerReductionMode;
+@property(readonly, nonatomic) BOOL supportsVertexAmplification;
 @property(readonly, nonatomic) BOOL supportsQueryTextureLOD;
 @property(readonly, nonatomic) BOOL supports32bpcMSAATextures;
 @property(readonly, nonatomic) BOOL supportsSamplerAddressModeClampToHalfBorder;
@@ -175,6 +183,13 @@
 @property(readonly, nonatomic) BOOL supportsArgumentBuffersTier2;
 @property(readonly, nonatomic) BOOL supportsBufferlessClientStorageTexture;
 @property(readonly, nonatomic) BOOL supportsQuadReduction;
+- (id <MTLBinaryLibrary>)newBinaryLibraryWithOptions:(unsigned long long)arg1 url:(NSURL *)arg2 error:(id *)arg3;
+- (id <MTLDynamicLibrary>)newDynamicLibraryFromURL:(NSURL *)arg1 error:(id *)arg2;
+- (id <MTLDynamicLibrary>)newDynamicLibrary:(id <MTLLibrary>)arg1 error:(id *)arg2;
+- (id <MTLDynamicLibrary>)newDynamicLibrary:(id <MTLLibrary>)arg1 computeDescriptor:(MTLComputePipelineDescriptor *)arg2 error:(id *)arg3;
+- (id <MTLBinaryArchive>)newBinaryArchiveWithDescriptor:(MTLBinaryArchiveDescriptor *)arg1 error:(id *)arg2;
+- (id <MTLRasterizationRateMap>)newRasterizationRateMapWithDescriptor:(MTLRasterizationRateMapDescriptor *)arg1;
+- (BOOL)supportsRasterizationRateMapWithLayerCount:(unsigned long long)arg1;
 - (unsigned long long)offsetFromIndirectBufferAddress:(unsigned long long)arg1;
 - (unsigned long long)resourceIndexFromIndirectBufferAddress:(unsigned long long)arg1;
 - (unsigned long long)indirectBufferAddressForResourceIndex:(unsigned long long)arg1 offset:(unsigned long long)arg2;

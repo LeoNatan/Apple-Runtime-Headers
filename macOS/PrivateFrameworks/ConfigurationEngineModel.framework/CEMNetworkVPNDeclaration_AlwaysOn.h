@@ -21,13 +21,13 @@
 + (id)buildRequiredOnlyWithTunnelConfigurations:(id)arg1;
 + (id)buildWithTunnelConfigurations:(id)arg1 withUIToggleEnabled:(id)arg2 withServiceExceptions:(id)arg3 withAllowCaptiveWebSheet:(id)arg4 withAllowAllCaptiveNetworkPlugins:(id)arg5 withAllowedCaptiveNetworkPlugins:(id)arg6;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadAllowedCaptiveNetworkPlugins; // @synthesize payloadAllowedCaptiveNetworkPlugins=_payloadAllowedCaptiveNetworkPlugins;
 @property(copy, nonatomic) NSNumber *payloadAllowAllCaptiveNetworkPlugins; // @synthesize payloadAllowAllCaptiveNetworkPlugins=_payloadAllowAllCaptiveNetworkPlugins;
 @property(copy, nonatomic) NSNumber *payloadAllowCaptiveWebSheet; // @synthesize payloadAllowCaptiveWebSheet=_payloadAllowCaptiveWebSheet;
 @property(copy, nonatomic) NSArray *payloadServiceExceptions; // @synthesize payloadServiceExceptions=_payloadServiceExceptions;
 @property(copy, nonatomic) NSNumber *payloadUIToggleEnabled; // @synthesize payloadUIToggleEnabled=_payloadUIToggleEnabled;
 @property(copy, nonatomic) NSArray *payloadTunnelConfigurations; // @synthesize payloadTunnelConfigurations=_payloadTunnelConfigurations;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

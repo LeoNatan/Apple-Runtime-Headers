@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)uploadRequiresConsent:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) short payloadPreflightStatus; // @synthesize payloadPreflightStatus=_payloadPreflightStatus;
 @property(retain, nonatomic) NSDate *receivedTime; // @synthesize receivedTime=_receivedTime;
 @property(readonly, nonatomic) NSMutableArray *attachmentFileInfos; // @synthesize attachmentFileInfos=_attachmentFileInfos;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long urgency; // @synthesize urgency=_urgency;
 @property(nonatomic) long long radarID; // @synthesize radarID=_radarID;
 @property(copy, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)requestUserConsent:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (BOOL)validateAttachmentFiles;
 - (long long)compare:(id)arg1;

@@ -24,6 +24,7 @@
     NSString *_titleText;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool matchesUnengagedSuggestion; // @synthesize matchesUnengagedSuggestion=_matchesUnengagedSuggestion;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(retain, nonatomic) _CPSearchResultForFeedback *result; // @synthesize result=_result;
@@ -32,7 +33,6 @@
 @property(nonatomic) int triggerEvent; // @synthesize triggerEvent=_triggerEvent;
 @property(nonatomic) _Bool actionEngaged; // @synthesize actionEngaged=_actionEngaged;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

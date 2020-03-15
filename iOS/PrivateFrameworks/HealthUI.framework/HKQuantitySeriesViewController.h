@@ -14,9 +14,9 @@
     UITableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) HKQuantitySeriesDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
-- (void).cxx_destruct;
 - (void)loadView;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;

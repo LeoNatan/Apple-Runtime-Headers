@@ -40,6 +40,7 @@
 
 + (id)sharedKeyAssetsFetchQueue;
 + (id)sharedSubCollectionsFetchQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHFetchResult *collectionsFetchResult; // @synthesize collectionsFetchResult=_collectionsFetchResult;
 @property(readonly, nonatomic) PHCollectionList *collectionList; // @synthesize collectionList=_collectionList;
 @property(readonly) PXPhotoKitCollectionsDataSourceManagerConfiguration *configuration; // @synthesize configuration=_configuration;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic, setter=_setCollectionListBySection:) NSArray *_collectionListBySection; // @synthesize _collectionListBySection=__collectionListBySection;
 @property(readonly, nonatomic) NSMutableDictionary *_subCollectionActiveKeyAssetsFetchOperations; // @synthesize _subCollectionActiveKeyAssetsFetchOperations=__subCollectionActiveKeyAssetsFetchOperations;
 @property(readonly, nonatomic) NSMutableDictionary *_subCollectionActiveCountFetchOperations; // @synthesize _subCollectionActiveCountFetchOperations=__subCollectionActiveCountFetchOperations;
-- (void).cxx_destruct;
 @property(readonly) NSObject<OS_os_log> *dataSourceManagerLog;
 @property(readonly, nonatomic) long long numberOfPendingKeyAssetFetches;
 - (void)waitUntilBackgroundFetchingFinishedWithCompletionBlock:(CDUnknownBlockType)arg1;
@@ -100,8 +100,8 @@
 - (void)_enumerateAllPhotoKitCollectionsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_updateCollectionIndexMappingForFilteredFetchResults;
 - (_Bool)_shouldIncludeCollection:(id)arg1;
-- (struct PXTwoTuple *)_filterFetchResult:(id)arg1;
-- (struct PXTwoTuple *)_getSectionedCollectionListAndFetchResultsFromFetchResult:(id)arg1;
+- (id)_filterFetchResult:(id)arg1;
+- (id)_getSectionedCollectionListAndFetchResultsFromFetchResult:(id)arg1;
 - (_Bool)_isEmpty;
 - (unsigned long long)_fixedOrderPriorityForVirtualCollection:(id)arg1;
 - (id)createInitialDataSource;

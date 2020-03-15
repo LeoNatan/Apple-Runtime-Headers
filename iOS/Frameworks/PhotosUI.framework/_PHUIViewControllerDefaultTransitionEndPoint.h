@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UIViewController *_viewController;
 }
 
-@property(readonly, nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 - (id)zoomAnimationCoordinatorForZoomTransition:(id)arg1;
 - (void)restoreBackgroundColor:(id)arg1 forTransition:(id)arg2;
 - (id)removeBackgroundColorForTransition:(id)arg1;

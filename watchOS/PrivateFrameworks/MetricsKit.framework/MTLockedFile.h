@@ -15,9 +15,9 @@
 }
 
 + (id)lockFile:(id)arg1 openFlags:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int fd; // @synthesize fd=_fd;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
-- (void).cxx_destruct;
 - (void)lockWithPromise:(id)arg1;
 - (id)fileHandle;
 - (void)close;

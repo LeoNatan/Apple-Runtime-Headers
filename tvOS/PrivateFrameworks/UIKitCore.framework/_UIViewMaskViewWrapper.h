@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *_maskView;
 }
 
-@property(nonatomic) __weak UIView *maskView; // @synthesize maskView=_maskView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *maskView; // @synthesize maskView=_maskView;
 
 @end
 

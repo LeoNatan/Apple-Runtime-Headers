@@ -50,6 +50,7 @@
     _Bool _shouldForceRemoteControlabillity;
     _Bool _supportsBufferedAirPlay;
     _Bool _supportsExternalScreen;
+    _Bool _supportsHAP;
     struct {
         unsigned int batteryLevel:1;
         unsigned int deviceSubType:1;
@@ -78,9 +79,12 @@
         unsigned int shouldForceRemoteControlabillity:1;
         unsigned int supportsBufferedAirPlay:1;
         unsigned int supportsExternalScreen:1;
+        unsigned int supportsHAP:1;
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) _Bool supportsHAP; // @synthesize supportsHAP=_supportsHAP;
 @property(retain, nonatomic) NSString *bluetoothID; // @synthesize bluetoothID=_bluetoothID;
 @property(nonatomic) int volumeCapabilities; // @synthesize volumeCapabilities=_volumeCapabilities;
 @property(nonatomic) _Bool isAddedToHomeKit; // @synthesize isAddedToHomeKit=_isAddedToHomeKit;
@@ -117,7 +121,6 @@
 @property(retain, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -127,6 +130,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasSupportsHAP;
 @property(readonly, nonatomic) _Bool hasBluetoothID;
 @property(nonatomic) _Bool hasVolumeCapabilities;
 @property(nonatomic) _Bool hasIsAddedToHomeKit;

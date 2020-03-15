@@ -24,12 +24,12 @@
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
 + (int)separatorStyleForCardSection:(id)arg1;
 + (double)separatorInsetForLeadingImageForSection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *chevronView; // @synthesize chevronView=_chevronView;
 @property(nonatomic) __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
 @property(readonly) UIViewController *embeddedViewController; // @synthesize embeddedViewController=_embeddedViewController;
 @property(retain, nonatomic) SearchUICardSectionRowModel *rowModel; // @synthesize rowModel=_rowModel;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (id)description;
 - (void)presentViewController:(id)arg1;
 - (void)requestRemovalFromEnclosingView;

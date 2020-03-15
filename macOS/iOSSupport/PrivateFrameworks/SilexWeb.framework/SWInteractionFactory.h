@@ -16,8 +16,8 @@
     id <SWNavigationManager> _navigationManager;
 }
 
-@property(readonly, nonatomic) id <SWNavigationManager> navigationManager; // @synthesize navigationManager=_navigationManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SWNavigationManager> navigationManager; // @synthesize navigationManager=_navigationManager;
 - (id)interactionForDictionary:(id)arg1;
 - (id)initWithNavigationManager:(id)arg1;
 

@@ -27,6 +27,7 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType checkinHandler; // @synthesize checkinHandler=_checkinHandler;
 @property(copy, nonatomic) NSSet *activeComplications; // @synthesize activeComplications=_activeComplications;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSNumber *pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic) NSString *clientBundlePath; // @synthesize clientBundlePath=_clientBundlePath;
 @property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (void)getLocalizableSampleTemplateForComplication:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)requestedUpdateBudgetExhausted;
 - (void)requestedUpdateDidBegin;

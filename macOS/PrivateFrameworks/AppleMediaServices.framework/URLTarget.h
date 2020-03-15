@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)targetWithBundle:(id)arg1 scheme:(id)arg2 secureScheme:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSString *secureScheme; // @synthesize secureScheme=_secureScheme;
 @property(retain) NSString *normalScheme; // @synthesize normalScheme=_normalScheme;
 @property long long defaultIndex; // @synthesize defaultIndex=_defaultIndex;
 @property(retain) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property unsigned int applicationState; // @synthesize applicationState=_applicationState;
-- (void).cxx_destruct;
 - (id)initWithBundle:(id)arg1 scheme:(id)arg2 secureScheme:(id)arg3;
 
 @end

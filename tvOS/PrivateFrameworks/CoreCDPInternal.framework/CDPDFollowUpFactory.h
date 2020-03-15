@@ -11,9 +11,13 @@
 }
 
 + (id)contextToIdentifierMap;
+- (_Bool)_supportsFaceID;
+- (_Bool)_isBiometricCapable;
+- (_Bool)_isBiometricAuthEnrolled;
 - (id)_localizedStringForKey:(id)arg1;
 - (unsigned long long)secretType;
 - (id)_baseFollowUpItemWithContext:(id)arg1;
+- (id)_followUpForSettingUpBiometricsWithContext:(id)arg1;
 - (id)_followUpActionForRecoveryKeyRepair;
 - (id)_followUpForRecoveryKeyRepairWithContext:(id)arg1;
 - (id)_followUpActionForRepair;

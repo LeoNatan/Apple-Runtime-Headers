@@ -32,6 +32,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSURL *artworkURL; // @synthesize artworkURL=_artworkURL;
 @property(readonly) NSDate *expectedReleaseDate; // @synthesize expectedReleaseDate=_expectedReleaseDate;
 @property(readonly) BOOL isPreorder; // @synthesize isPreorder=_isPreorder;
@@ -49,7 +50,6 @@
 @property(readonly) NSNumber *purchasedToken; // @synthesize purchasedToken=_purchasedToken;
 @property(readonly) NSNumber *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(readonly) NSNumber *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_initWithDAAPDictionary:(id)arg1;

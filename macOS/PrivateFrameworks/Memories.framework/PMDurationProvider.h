@@ -22,13 +22,13 @@
     NSArray *_localizedDurations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *localizedDurations; // @synthesize localizedDurations=_localizedDurations;
 @property(nonatomic) double currentDuration; // @synthesize currentDuration=_currentDuration;
 @property(nonatomic) double customDuration; // @synthesize customDuration=_customDuration;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) __weak id <PMEditProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) VEKProduction *production; // @synthesize production=_production;
-- (void).cxx_destruct;
 - (void)setCustomDuration:(double)arg1 andEdit:(BOOL)arg2;
 - (void)willBeginScrolling;
 - (void)updateLocalizedNames;

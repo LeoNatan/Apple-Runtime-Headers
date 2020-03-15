@@ -18,13 +18,13 @@
     BOOL _shouldUploadContacts;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldUploadContacts; // @synthesize shouldUploadContacts=_shouldUploadContacts;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(retain, nonatomic) NSString *alias; // @synthesize alias=_alias;
 @property(retain, nonatomic) NSString *accountName; // @synthesize accountName=_accountName;
-- (void).cxx_destruct;
 - (void)uploadContacts;
 - (void)processGameKitURLComponents:(id)arg1;
 - (void)finish;

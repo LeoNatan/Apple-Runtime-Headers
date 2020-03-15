@@ -29,6 +29,7 @@
 }
 
 + (id)newTrafficFeatureForEnrouteNotice:(id)arg1 onRoute:(id)arg2;
+- (id).cxx_construct;
 @property(nonatomic) BOOL shouldUpdateStyle; // @synthesize shouldUpdateStyle=_shouldUpdateStyle;
 @property(readonly, nonatomic) int groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly, nonatomic) unsigned int priority; // @synthesize priority=_priority;
@@ -43,7 +44,6 @@
 @property(nonatomic) float minZoom; // @synthesize minZoom=_minZoom;
 @property(nonatomic) struct PolylineCoordinate routeOffset; // @synthesize routeOffset=_routeOffset;
 @property(nonatomic) Matrix_6e1d3589 worldPoint; // @synthesize worldPoint=_worldPoint;
-- (id).cxx_construct;
 - (void)updateLabelStateForRouteUserOffset:(const struct PolylineCoordinate *)arg1;
 @property(readonly, nonatomic) _Bool isGrouped;
 - (BOOL)isBehind;

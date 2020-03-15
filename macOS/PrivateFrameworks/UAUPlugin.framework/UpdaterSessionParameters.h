@@ -24,6 +24,7 @@
 }
 
 + (long long)compareSpecificOSVersion:(id)arg1 toSpecificOSVersion:(id)arg2;
+- (void).cxx_destruct;
 @property unsigned int groupID; // @synthesize groupID=_groupID;
 @property unsigned int userID; // @synthesize userID=_userID;
 @property(retain) NSString *currentOSBuild; // @synthesize currentOSBuild=_currentOSBuild;
@@ -33,7 +34,6 @@
 @property BOOL updateIsFLO; // @synthesize updateIsFLO=_updateIsFLO;
 @property BOOL accountWasMigrated; // @synthesize accountWasMigrated=_accountWasMigrated;
 @property(retain) NSURL *homeDirectory; // @synthesize homeDirectory=_homeDirectory;
-- (void).cxx_destruct;
 - (long long)compareSpecificOSVersion:(id)arg1 toSpecificOSVersion:(id)arg2;
 - (long long)compareToSpecificOSVersion:(id)arg1;
 - (long long)compareOSVersion;

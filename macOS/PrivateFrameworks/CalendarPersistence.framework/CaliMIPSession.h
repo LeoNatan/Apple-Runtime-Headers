@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain) CalOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void).cxx_destruct;
+@property(retain) CalOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (double)timeSinceLastSync;
 - (void)systemWillSleep;
 - (void)systemNetworkDidChange;

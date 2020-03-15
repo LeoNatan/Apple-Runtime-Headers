@@ -17,11 +17,11 @@
     struct CLSRoutineServiceStatisticsStruct _statistics;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CLSRoutineServiceStatisticsStruct statistics; // @synthesize statistics=_statistics;
 @property(nonatomic) _Bool routineIsAvailable; // @synthesize routineIsAvailable=_routineIsAvailable;
 @property(retain, nonatomic) NSMutableSet *pendingPinningVisitIdentifiers; // @synthesize pendingPinningVisitIdentifiers=_pendingPinningVisitIdentifiers;
 @property(retain, nonatomic) NSDateInterval *fetchDateInterval; // @synthesize fetchDateInterval=_fetchDateInterval;
-- (void).cxx_destruct;
 - (id)_placemarksFromLocationsOfInterest:(id)arg1;
 - (void)_pinPendingVisits;
 - (id)_fetchLocationOfInterestTransitionsWithinDateInterval:(id)arg1 routineManager:(id)arg2;

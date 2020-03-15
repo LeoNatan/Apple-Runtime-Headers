@@ -32,6 +32,7 @@
     NSDate *_latestCatalogModifiedDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *latestCatalogModifiedDate; // @synthesize latestCatalogModifiedDate=_latestCatalogModifiedDate;
 @property(retain) SUOSUMajorProduct *latestQualifyingMajorProduct; // @synthesize latestQualifyingMajorProduct=_latestQualifyingMajorProduct;
 @property(retain) NSArray *availableMajorUpdates; // @synthesize availableMajorUpdates=_availableMajorUpdates;
@@ -51,7 +52,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property BOOL currentlyFetchingMajorOSUpdateForURLScheme; // @synthesize currentlyFetchingMajorOSUpdateForURLScheme=_currentlyFetchingMajorOSUpdateForURLScheme;
 @property(retain) NSDate *latestSuccessfulScanDate; // @synthesize latestSuccessfulScanDate=_latestSuccessfulScanDate;
-- (void).cxx_destruct;
 @property(readonly) BOOL isAutomaticallyInstallSecurityAndConfigUpdatesPreferenceManaged;
 @property(readonly) BOOL isAutomaticallyInstallAppUpdatesPreferenceManaged;
 @property(readonly) BOOL isAutomaticallyInstallMacOSUpdatesPreferenceManaged;
@@ -102,6 +102,7 @@
 - (void)_handleCatalogURLChanged;
 - (void)_handleQueuedUpdatesForLaterChanged;
 - (void)_handleNotifyingUpdatesChanged;
+- (id)_latestAvailableMajorOSProduct;
 - (void)_handleAvailableUpdatesChangedWithNotificationNamed:(id)arg1;
 - (void)_registerForStateChangeNotifications;
 - (void)_startUpAndDetermineCurrentState;

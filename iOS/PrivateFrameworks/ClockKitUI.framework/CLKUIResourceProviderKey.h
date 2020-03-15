@@ -13,8 +13,8 @@
     NSNumber *_key;
 }
 
-@property(readonly, nonatomic) NSNumber *key; // @synthesize key=_key;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *key; // @synthesize key=_key;
 - (id)init;
 
 @end

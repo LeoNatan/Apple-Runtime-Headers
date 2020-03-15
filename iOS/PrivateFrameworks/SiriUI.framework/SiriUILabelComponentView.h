@@ -15,8 +15,8 @@
 
 + (id)labelForComponentModel:(id)arg1;
 + (id)viewForComponent:(id)arg1;
-@property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 
 @end
 

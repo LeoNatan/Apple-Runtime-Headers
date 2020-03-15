@@ -19,8 +19,8 @@
 + (void)configureStatefulView:(id)arg1 forComponent:(id)arg2;
 + (id)newStatefulView:(id)arg1;
 + (id)contextForNewStatefulView:(id)arg1;
-@property(retain, nonatomic) WFVariableEditingContext *editingContext; // @synthesize editingContext=_editingContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFVariableEditingContext *editingContext; // @synthesize editingContext=_editingContext;
 - (void)textTokenEditorTextDidEndEditing:(id)arg1;
 - (void)textTokenEditorTextDidChange:(id)arg1;
 - (void)textTokenEditorTextDidBeginEditing:(id)arg1;

@@ -6,15 +6,16 @@
 
 #import <XCTAutomationSupport/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary;
+@class NSArray, NSDictionary, XCAccessibilityElement;
 
 @protocol XCTAccessibilityFramework <NSObject>
-@property _Bool allowsRemoteAccess;
+@property(readonly) _Bool allowsRemoteAccess;
 - (void)performWithAXTimeout:(double)arg1 block:(void (^)(void))arg2;
 - (NSArray *)attributes:(NSArray *)arg1 forElement:(const struct __AXUIElement *)arg2 error:(id *)arg3;
 - (long long)appOrientationForElement:(const struct __AXUIElement *)arg1 error:(id *)arg2;
 - (struct CGRect)frameForElement:(const struct __AXUIElement *)arg1 error:(id *)arg2;
 - (const struct __AXUIElement *)mainWindowForElement:(const struct __AXUIElement *)arg1 error:(id *)arg2;
 - (NSDictionary *)userTestingSnapshotForElement:(const struct __AXUIElement *)arg1 options:(NSDictionary *)arg2 error:(id *)arg3;
+- (NSDictionary *)attributesForElement:(XCAccessibilityElement *)arg1 attributes:(NSArray *)arg2 error:(id *)arg3;
 @end
 

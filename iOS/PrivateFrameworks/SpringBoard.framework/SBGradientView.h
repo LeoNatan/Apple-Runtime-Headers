@@ -14,8 +14,8 @@
 }
 
 + (Class)layerClass;
-@property(copy, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property struct CGPoint endPoint;
 @property struct CGPoint startPoint;
 @property(copy, nonatomic) NSArray *locations;

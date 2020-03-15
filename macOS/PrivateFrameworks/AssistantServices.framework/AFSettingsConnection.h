@@ -81,9 +81,12 @@
 - (void)getPeerIdentifiers:(CDUnknownBlockType)arg1;
 - (void)startRemoteRequest:(id)arg1 onPeer:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dismissUI;
+- (void)startMultiUserUIRequestWithText:(id)arg1 expectedSpeakerSharedUserID:(id)arg2 expectedSpeakerConfidenceScore:(unsigned long long)arg3 nonspeakerConfidenceScores:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)startUIRequestWithInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startUIRequestWithText:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startUIMockServerRequestWithReplayFileURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startUIRequestWithSpeechAudioFileURL:(id)arg1;
+- (void)startUIRequestWithInfo:(id)arg1;
 - (void)startUIRequestWithText:(id)arg1;
 - (void)startUIRequest:(id)arg1;
 - (void)setLanguage:(id)arg1 outputVoice:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
@@ -108,6 +111,7 @@
 - (void)fetchMultiUserVoiceIdentificationSetting:(CDUnknownBlockType)arg1;
 - (void)clearOpportuneSpeakingEdgeDetectorSignalOverride;
 - (void)setOpportuneSpeakingEdgeDetectorSignalOverride:(long long)arg1;
+- (void)setSpokenNotificationProxCardSeen:(BOOL)arg1;
 - (void)setSpokenNotificationShouldSkipTriggerlessReplies:(BOOL)arg1;
 - (void)getSpokenNotificationShouldSkipTriggerlessRepliesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setSpokenNotificationShouldAlwaysSpeakNotifications:(BOOL)arg1;
@@ -147,7 +151,7 @@
 - (void)_tellDelegatePartialVerificationResult:(id)arg1;
 @property(nonatomic, setter=_setDelegate:) __weak id <AFSettingsDelegate> _delegate;
 - (void)_getSharedUserID:(CDUnknownBlockType)arg1;
-- (void)_updateMultiUserInfoForUser:(id)arg1 score:(id)arg2 companionId:(id)arg3 companionSpeechId:(id)arg4 idsIdentifier:(id)arg5 reset:(BOOL)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)_updateMultiUserInfoForUser:(id)arg1 score:(id)arg2 companionId:(id)arg3 companionSpeechId:(id)arg4 idsIdentifier:(id)arg5 aceHost:(id)arg6 reset:(BOOL)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)_getSharedCompanionInfo:(CDUnknownBlockType)arg1;
 - (void)_runServiceMaintenance;
 - (void)_startDeepSyncVerificationForKeys:(id)arg1;

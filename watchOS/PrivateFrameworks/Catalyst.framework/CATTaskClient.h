@@ -29,12 +29,12 @@
     NSDictionary *_serverUserInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *serverUserInfo; // @synthesize serverUserInfo=_serverUserInfo;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) __weak id <CATTaskClientDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property(readonly, nonatomic) CATTransport *transport; // @synthesize transport=mTransport;
-- (void).cxx_destruct;
 - (void)delegateDidInvalidate;
 - (void)delegateWillInvalidate;
 - (void)delegateDidDisconnect;

@@ -17,10 +17,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic, getter=didSucceed) _Bool success; // @synthesize success=_success;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithSuccess:(_Bool)arg1 userInfo:(id)arg2 error:(id)arg3;
 

@@ -14,8 +14,8 @@
     PXCollectionsDataSource *_collectionsDataSource;
 }
 
-@property(readonly, nonatomic) PXCollectionsDataSource *collectionsDataSource; // @synthesize collectionsDataSource=_collectionsDataSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXCollectionsDataSource *collectionsDataSource; // @synthesize collectionsDataSource=_collectionsDataSource;
 - (id)objectAtIndex:(long long)arg1;
 - (long long)count;
 - (id)content;

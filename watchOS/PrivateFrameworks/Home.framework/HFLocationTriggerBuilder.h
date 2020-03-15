@@ -16,9 +16,9 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *stagedEvents; // @synthesize stagedEvents=_stagedEvents;
 @property(retain, nonatomic) HFEventBuilder<HFLocationEventBuilder> *eventBuilder; // @synthesize eventBuilder=_eventBuilder;
-- (void).cxx_destruct;
 - (id)_performValidation;
 - (id)_updateEvents;
 - (id)_allActionSets;

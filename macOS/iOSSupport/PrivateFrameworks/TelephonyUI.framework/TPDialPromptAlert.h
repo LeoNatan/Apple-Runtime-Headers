@@ -16,11 +16,11 @@
     BSProcessHandle *_processHandle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
 @property(readonly, copy, nonatomic) NSSet *handles; // @synthesize handles=_handles;
 @property(readonly, copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(copy, nonatomic) CDUnknownBlockType dialAction; // @synthesize dialAction=_dialAction;
-- (void).cxx_destruct;
 - (id)phoneNumberHandle;
 - (void)otherResponse;
 - (void)defaultResponse;

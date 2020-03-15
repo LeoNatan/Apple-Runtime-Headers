@@ -33,6 +33,7 @@
 + (id)validFuzzyPinyinPairs;
 + (id)sharedUserDefaults;
 + (id)preferencesForInputMode:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *inputMode; // @synthesize inputMode=_inputMode;
 @property(nonatomic) BOOL fromiCloudUpdate; // @synthesize fromiCloudUpdate=_fromiCloudUpdate;
 @property(readonly, nonatomic) NSString *adjustsWordFrequencyDefaultsKey; // @synthesize adjustsWordFrequencyDefaultsKey=_adjustsWordFrequencyDefaultsKey;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSUbiquitousKeyValueStore *defaultStore; // @synthesize defaultStore=_defaultStore;
 @property(nonatomic) double localTimeStamp; // @synthesize localTimeStamp=_localTimeStamp;
 @property(nonatomic) BOOL ubiquityEnabled; // @synthesize ubiquityEnabled=_ubiquityEnabled;
-- (void).cxx_destruct;
 - (void)logStats:(id)arg1;
 - (void)logStatistics;
 - (void)postDistributedNotificationName:(id)arg1 withUserInfo:(id)arg2;

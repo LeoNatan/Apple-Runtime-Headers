@@ -24,6 +24,7 @@
     double _targetScrollOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double targetScrollOffset; // @synthesize targetScrollOffset=_targetScrollOffset;
 @property(retain, nonatomic) HMCameraClip *currentClip; // @synthesize currentClip=_currentClip;
 @property(nonatomic) double lastContentWidth; // @synthesize lastContentWidth=_lastContentWidth;
@@ -33,7 +34,6 @@
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(nonatomic) __weak UICollectionView *clipCollectionView; // @synthesize clipCollectionView=_clipCollectionView;
 @property(nonatomic) __weak HUClipScrubberDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_interpolatedDateFromClip:(id)arg1 toClip:(id)arg2 insideRect:(struct CGRect)arg3 atTimelinePosition:(float)arg4;
 - (id)_selectedDateForYesterdayFromPreviousClip:(id)arg1 percentDuration:(float)arg2;
 - (id)_selectedDateForTodayFromClip:(id)arg1 percentDuration:(float)arg2;

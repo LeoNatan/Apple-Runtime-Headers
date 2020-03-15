@@ -19,10 +19,10 @@
     id <FCOperationThrottlerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FCOperationThrottlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) FCOperationThrottler *operationThrottler; // @synthesize operationThrottler=_operationThrottler;
 @property double cooldownTime; // @synthesize cooldownTime=_cooldownTime;
-- (void).cxx_destruct;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(CDUnknownBlockType)arg2;
 @property _Bool suspended;
 - (void)tickleWithCompletion:(CDUnknownBlockType)arg1;

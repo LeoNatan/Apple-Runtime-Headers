@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 
 @end
 

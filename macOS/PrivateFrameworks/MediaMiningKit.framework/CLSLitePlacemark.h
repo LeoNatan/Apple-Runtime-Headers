@@ -33,6 +33,7 @@
 + (BOOL)_isIslandForGeoMapItem:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)litePlacemarkFromCLPlacemark:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *geoServiceProvider; // @synthesize geoServiceProvider=_geoServiceProvider;
 @property(retain, nonatomic) NSData *revGeoLocationData; // @synthesize revGeoLocationData=_revGeoLocationData;
 @property(nonatomic) BOOL isIsland; // @synthesize isIsland=_isIsland;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSString *thoroughfare; // @synthesize thoroughfare=_thoroughfare;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) CLCircularRegion *region; // @synthesize region=_region;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)_extractValuesFromGeoMapItem:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIViewController *_viewController;
 }
 
-@property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void)_updateLayoutOfViewControllerView;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;

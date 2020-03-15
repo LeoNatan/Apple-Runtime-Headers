@@ -61,6 +61,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL editableFieldInterruptedByAlert; // @synthesize editableFieldInterruptedByAlert=_editableFieldInterruptedByAlert;
 @property(retain, nonatomic) NSMutableArray *pendingBrailleStringDictionaries; // @synthesize pendingBrailleStringDictionaries=_pendingBrailleStringDictionaries;
 @property(nonatomic) __weak id <BRLTBrailleStateManagerDelegate> translationDelegate; // @synthesize translationDelegate=_translationDelegate;
@@ -71,7 +72,6 @@
 @property(nonatomic) long long lineOffset; // @synthesize lineOffset=_lineOffset;
 @property(nonatomic) BOOL displayEnabled; // @synthesize displayEnabled=_displayEnabled;
 @property(readonly, nonatomic) BOOL needsDisplayFlush; // @synthesize needsDisplayFlush=_needsDisplayFlush;
-- (void).cxx_destruct;
 - (void)brailleDisplayDeletedCharacter:(id)arg1;
 - (void)brailleDisplayInsertedCharacter:(id)arg1;
 - (void)didInsertScriptString:(id)arg1;

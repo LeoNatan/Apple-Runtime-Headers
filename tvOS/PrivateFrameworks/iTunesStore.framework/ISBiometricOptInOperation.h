@@ -19,9 +19,9 @@
     NSString *_userAgent;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(copy) NSString *topicName; // @synthesize topicName=_topicName;
-- (void).cxx_destruct;
 - (id)_newSourceByStartingTimeoutTimer;
 - (void)_updateTouchIDSettingsForAccount:(id)arg1;
 - (_Bool)_performOptInDialogOperationWithError:(id *)arg1;

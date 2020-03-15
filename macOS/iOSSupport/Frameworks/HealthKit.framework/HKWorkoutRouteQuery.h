@@ -19,8 +19,8 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
-@property(copy) CDUnknownBlockType dataHandler; // @synthesize dataHandler=_dataHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType dataHandler; // @synthesize dataHandler=_dataHandler;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;

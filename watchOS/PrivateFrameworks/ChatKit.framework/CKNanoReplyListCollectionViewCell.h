@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _replyButtonTapped;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType replyButtonTapped; // @synthesize replyButtonTapped=_replyButtonTapped;
 @property(retain, nonatomic) CKNanoReplyListButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (void)buttonTapped:(id)arg1;
 - (void)setReply:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

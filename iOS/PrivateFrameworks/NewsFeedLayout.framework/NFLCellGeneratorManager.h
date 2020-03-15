@@ -23,6 +23,7 @@
 }
 
 + (id)cellGeneratorWithFeedSettings:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NFLFeedSettings *feedSettings; // @synthesize feedSettings=_feedSettings;
 @property(retain, nonatomic) NFLCellGenerator *gapCellGenerator; // @synthesize gapCellGenerator=_gapCellGenerator;
 @property(retain, nonatomic) NFLCellGenerator *spotlightImageOnSideCellGenerator; // @synthesize spotlightImageOnSideCellGenerator=_spotlightImageOnSideCellGenerator;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NFLCellGenerator *imageOnSideAccessibilityCellGenerator; // @synthesize imageOnSideAccessibilityCellGenerator=_imageOnSideAccessibilityCellGenerator;
 @property(retain, nonatomic) NFLCellGenerator *imageOnSideCellGenerator; // @synthesize imageOnSideCellGenerator=_imageOnSideCellGenerator;
 @property(retain, nonatomic) NFLCellGenerator *noImageCellGenerator; // @synthesize noImageCellGenerator=_noImageCellGenerator;
-- (void).cxx_destruct;
 - (id)cellGeneratorForCellType:(long long)arg1;
 - (id)cellGeneratorsForCellType:(long long)arg1;
 

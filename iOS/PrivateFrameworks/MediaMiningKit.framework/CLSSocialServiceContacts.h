@@ -8,7 +8,7 @@
 
 #import <MediaMiningKit/PVVisionIntegrating-Protocol.h>
 
-@class CLSContactCache, CLSPerson, CNContact, CNContactStore, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class CLSContactCache, CLSPerson, CNContact, CNContactStore, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL;
 @protocol CLSSocialServiceContactsDelegate;
 
 @interface CLSSocialServiceContacts : CLSSocialService <PVVisionIntegrating>
@@ -28,13 +28,13 @@
 }
 
 + (id)defaultKeysToFetch;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLSContactCache *contactCache; // @synthesize contactCache=_contactCache;
 @property(retain, nonatomic) NSMutableSet *nonFoundHandles; // @synthesize nonFoundHandles=_nonFoundHandles;
 @property(retain, nonatomic) NSMutableDictionary *personByHandle; // @synthesize personByHandle=_personByHandle;
 @property(retain, nonatomic) NSMutableSet *nonFoundFullNames; // @synthesize nonFoundFullNames=_nonFoundFullNames;
 @property(retain, nonatomic) NSMutableDictionary *personByFullName; // @synthesize personByFullName=_personByFullName;
 @property(nonatomic) __weak id <CLSSocialServiceContactsDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateProxy;
 - (float)_confidenceInPersonRecord:(id)arg1 forName:(id)arg2 components:(id)arg3;
 - (float)_fuzzyMatchingScoreBetweenNameComponents:(id)arg1 andNameComponents:(id)arg2;
@@ -77,6 +77,7 @@
 - (id)personResultsForName:(id)arg1 inPhotoLibrary:(id)arg2;
 - (id)mePerson;
 - (void)invalidateMemoryCaches;
+@property(readonly) NSURL *diskCacheURL;
 - (id)initWithProxyAtURL:(id)arg1 andIntent:(unsigned long long)arg2;
 
 // Remaining properties

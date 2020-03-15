@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) unsigned int loggingState; // @synthesize loggingState=_loggingState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int loggingState; // @synthesize loggingState=_loggingState;
 - (void)_updateOverlayWithState:(unsigned int)arg1;
 - (void)_updateLoggingState;
 - (void)_profileListChanged;

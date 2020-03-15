@@ -36,9 +36,9 @@ __attribute__((visibility("hidden")))
     WKWebView *__webView;
 }
 
-@property(nonatomic) __weak WKWebView *_webView; // @synthesize _webView=__webView;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WKWebView *_webView; // @synthesize _webView=__webView;
 - (void)_interactivePinchDismissChanged:(id)arg1;
 - (void)_interactiveDismissChanged:(id)arg1;
 - (void)_dismissFullscreenViewController;

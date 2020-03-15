@@ -17,8 +17,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)makeMetric:(unsigned long long)arg1;
-@property(retain, nonatomic) NSMutableArray *positionalMetricSample; // @synthesize positionalMetricSample=_positionalMetricSample;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *positionalMetricSample; // @synthesize positionalMetricSample=_positionalMetricSample;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)generateDataForSR:(id)arg1;

@@ -19,9 +19,9 @@
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKHeartRateModel *dataModel; // @synthesize dataModel=_dataModel;
 @property(retain, nonatomic) NSTimer *invalidationTimer; // @synthesize invalidationTimer=_invalidationTimer;
-- (void).cxx_destruct;
 - (void)_timeChanged:(id)arg1;
 - (void)_localeChanged:(id)arg1;
 - (void)model:(id)arg1 updatedSummary:(id)arg2;

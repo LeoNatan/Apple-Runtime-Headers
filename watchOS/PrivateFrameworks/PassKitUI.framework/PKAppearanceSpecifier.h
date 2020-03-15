@@ -40,6 +40,7 @@
     UIImage *_navBarShadowPointImage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIImage *navBarShadowPointImage; // @synthesize navBarShadowPointImage=_navBarShadowPointImage;
 @property(copy, nonatomic) UIImage *navBarPointImage; // @synthesize navBarPointImage=_navBarPointImage;
 @property(copy, nonatomic) UIColor *cameraCaptureMaskOutlineColor; // @synthesize cameraCaptureMaskOutlineColor=_cameraCaptureMaskOutlineColor;
@@ -66,7 +67,6 @@
 @property(copy, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) _Bool hasDarkAppearance; // @synthesize hasDarkAppearance=_hasDarkAppearance;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

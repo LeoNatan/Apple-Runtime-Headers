@@ -15,10 +15,10 @@
     NSString *_deletedText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldDeleteAcceptCandidateInput; // @synthesize shouldDeleteAcceptCandidateInput=_shouldDeleteAcceptCandidateInput;
 @property(readonly, nonatomic) _Bool deleteBySyllable; // @synthesize deleteBySyllable=_deleteBySyllable;
 @property(readonly, nonatomic) NSString *deletedText; // @synthesize deletedText=_deletedText;
-- (void).cxx_destruct;
 - (_Bool)canComposeNew:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDeletedText:(id)arg1 deleteBySyllable:(_Bool)arg2 shouldDeleteAcceptCandidateInput:(_Bool)arg3;

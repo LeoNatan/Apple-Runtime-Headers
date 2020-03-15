@@ -13,8 +13,8 @@
     NSOperationQueue *_serialOperationQueue;
 }
 
-@property(retain, nonatomic) NSOperationQueue *serialOperationQueue; // @synthesize serialOperationQueue=_serialOperationQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOperationQueue *serialOperationQueue; // @synthesize serialOperationQueue=_serialOperationQueue;
 @property(getter=isSuspended) _Bool suspended;
 - (void)waitUntilEmpty;
 - (void)enqueueBlock:(CDUnknownBlockType)arg1;

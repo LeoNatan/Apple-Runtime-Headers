@@ -17,10 +17,10 @@
     double _delay;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
 @property(retain, nonatomic) NSTimer *transitionTimer; // @synthesize transitionTimer=_transitionTimer;
 @property(readonly, copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
-- (void).cxx_destruct;
 - (void)scheduleTransitionTimer;
 - (void)didCompleteEvent;
 - (void)stop;

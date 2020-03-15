@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)_updateLabel:(id)arg1 withState:(CDStruct_3139860e)arg2 prefix:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) CDStruct_3139860e saveTimerState; // @synthesize saveTimerState=_saveTimerState;
 @property(nonatomic) CDStruct_3139860e autoCalcTimerState; // @synthesize autoCalcTimerState=_autoCalcTimerState;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *mainTimerLabel; // @synthesize mainTimerLabel=_mainTimerLabel;
 @property(retain, nonatomic) UILabel *clockLabel; // @synthesize clockLabel=_clockLabel;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
-- (void).cxx_destruct;
 - (void)_updateSaveTimerLabel;
 - (void)_updateAutoCalcTimerLabel;
 - (void)_updateFilterTimerLabel;

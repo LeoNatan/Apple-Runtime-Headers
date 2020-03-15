@@ -15,9 +15,9 @@
     long long _messageID;
 }
 
+- (void).cxx_destruct;
 @property BOOL hideCalendarMimePart; // @synthesize hideCalendarMimePart=_hideCalendarMimePart;
 @property long long messageID; // @synthesize messageID=_messageID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WebArchive *webArchive;
 @property(readonly, nonatomic) ICNFMCMimePart *textHtmlPart;
 @property(readonly, copy, nonatomic) NSArray *attachmentFilenames;

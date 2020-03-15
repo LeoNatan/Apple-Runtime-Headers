@@ -26,6 +26,7 @@
     FCFeedGroup *_inflatedGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCFeedGroup *inflatedGroup; // @synthesize inflatedGroup=_inflatedGroup;
 @property(retain, nonatomic) FCDeflatedFeedGroup *groupToInflate; // @synthesize groupToInflate=_groupToInflate;
 @property(nonatomic) unsigned long long indexOfGroupToInflate; // @synthesize indexOfGroupToInflate=_indexOfGroupToInflate;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) FCFeedDescriptor *feedDescriptor; // @synthesize feedDescriptor=_feedDescriptor;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (void)prepareOperation;

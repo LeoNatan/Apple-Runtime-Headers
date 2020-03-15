@@ -14,8 +14,8 @@
     id <TVHKAccountSetupViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <TVHKAccountSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVHKAccountSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_notifyDidCancel;
 - (void)_notifyDidSucceedWithAccountName:(id)arg1;
 - (void)_presentError;

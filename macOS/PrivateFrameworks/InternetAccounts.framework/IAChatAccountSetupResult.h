@@ -15,10 +15,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property BOOL isExistingAccount; // @synthesize isExistingAccount=_isExistingAccount;
 @property(retain) NSError *setupError; // @synthesize setupError=_error;
 @property(retain) IMAccount *accountObject; // @synthesize accountObject=_accountObject;
-- (void).cxx_destruct;
 
 @end
 

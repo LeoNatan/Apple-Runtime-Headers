@@ -22,8 +22,8 @@
 + (id)eitherWithRight:(id)arg1;
 + (id)eitherWithLeft:(id)arg1;
 + (id)eitherWithLeft:(id)arg1 right:(id)arg2;
-@property(retain, nonatomic) CNPair *pair; // @synthesize pair=_pair;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNPair *pair; // @synthesize pair=_pair;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

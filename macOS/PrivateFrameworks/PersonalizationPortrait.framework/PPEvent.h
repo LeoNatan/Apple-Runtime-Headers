@@ -32,6 +32,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLLocation *structuredLocationCoordinates; // @synthesize structuredLocationCoordinates=_structuredLocationCoordinates;
 @property(readonly, nonatomic) NSString *structuredLocationAddress; // @synthesize structuredLocationAddress=_structuredLocationAddress;
 @property(readonly, nonatomic) NSString *structuredLocationTitle; // @synthesize structuredLocationTitle=_structuredLocationTitle;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) NSString *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *eventIdentifier; // @synthesize eventIdentifier=_eventIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isEqualToEvent:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

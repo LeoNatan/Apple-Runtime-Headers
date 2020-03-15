@@ -25,6 +25,7 @@
 }
 
 + (id)_productImage;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TSKPreviewViewController *defaultPreviewViewController; // @synthesize defaultPreviewViewController=_defaultPreviewViewController;
 @property(readonly, nonatomic) struct UIEdgeInsets tableViewContentInsets; // @synthesize tableViewContentInsets=_tableViewContentInsets;
 @property(readonly, nonatomic) long long tableViewStyle; // @synthesize tableViewStyle=_tableViewStyle;
@@ -33,7 +34,6 @@
 @property(nonatomic) double tableViewWidth; // @synthesize tableViewWidth=_tableViewWidth;
 @property(retain, nonatomic) TSKTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <TSKPreviewingDelegate> previewingDelegate; // @synthesize previewingDelegate=_previewingDelegate;
-- (void).cxx_destruct;
 - (id)sourceViewForSlideTransition;
 - (_Bool)hasFullscreenPreview;
 - (id)defaultIndexPathForPreview;

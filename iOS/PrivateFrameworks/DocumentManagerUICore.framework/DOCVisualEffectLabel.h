@@ -13,8 +13,8 @@
     UILabel *_label;
 }
 
-@property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) long long textAlignment;
 @property(nonatomic) long long numberOfLines;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @dynamic adjustsFontForContentSizeCategory;

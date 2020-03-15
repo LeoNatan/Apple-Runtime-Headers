@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) STTimer *timer; // @synthesize timer=_timer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) STTimer *timer; // @synthesize timer=_timer;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

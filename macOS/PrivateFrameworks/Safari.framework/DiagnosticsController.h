@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSURL *_homeDirectoryURL;
 }
 
-@property(readonly, nonatomic) NSURL *homeDirectoryURL; // @synthesize homeDirectoryURL=_homeDirectoryURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *homeDirectoryURL; // @synthesize homeDirectoryURL=_homeDirectoryURL;
 - (void)saveString:(id)arg1 toURL:(id)arg2;
 - (void)saveDictionary:(id)arg1 toURL:(id)arg2;
 - (void)saveArray:(id)arg1 toURL:(id)arg2;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (id)buttonForActionType:(long long)arg1 withActionBlock:(CDUnknownBlockType)arg2;
 + (unsigned long long)maximumNumberOfButtons;
 + (id)localizedTitleForActionType:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool buttonsDisabled; // @synthesize buttonsDisabled=_buttonsDisabled;
 @property(retain, nonatomic) NSString *assignActionTitleOverride; // @synthesize assignActionTitleOverride=_assignActionTitleOverride;
 @property(nonatomic) _Bool canDelete; // @synthesize canDelete=_canDelete;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *currentInlineActionButtons; // @synthesize currentInlineActionButtons=_currentInlineActionButtons;
 @property(retain, nonatomic) CNPhotoPickerProviderItem *providerItem; // @synthesize providerItem=_providerItem;
 @property(nonatomic) __weak id <CNPhotoPickerActionsDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didTapDelete;
 - (void)didTapDuplicate;
 - (void)didTapEdit;

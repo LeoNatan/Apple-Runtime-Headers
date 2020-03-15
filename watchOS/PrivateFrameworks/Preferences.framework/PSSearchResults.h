@@ -21,10 +21,10 @@
     CDUnknownBlockType _entryComparator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool treatSectionEntriesAsRegularEntries; // @synthesize treatSectionEntriesAsRegularEntries=_treatSectionEntriesAsRegularEntries;
 @property(copy, nonatomic) CDUnknownBlockType entryComparator; // @synthesize entryComparator=_entryComparator;
 @property(copy, nonatomic) CDUnknownBlockType sectionComparator; // @synthesize sectionComparator=_sectionComparator;
-- (void).cxx_destruct;
 - (id)description;
 - (id)resultsByMergingWithResults:(id)arg1;
 - (void)mergeWithResults:(id)arg1;

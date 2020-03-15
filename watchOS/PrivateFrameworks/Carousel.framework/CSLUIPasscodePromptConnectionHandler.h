@@ -24,13 +24,13 @@
     CDUnknownBlockType _replyBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType replyBlock; // @synthesize replyBlock=_replyBlock;
 @property(retain, nonatomic) id policyAssertion; // @synthesize policyAssertion=_policyAssertion;
 @property(retain, nonatomic) CUISPasscodeAlertViewController *alertViewController; // @synthesize alertViewController=_alertViewController;
 @property(retain, nonatomic) UIViewController *passcodeController; // @synthesize passcodeController=_passcodeController;
 @property(nonatomic) __weak id <CSLUIPasscodePromptConnectionHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)validationCodeViewController:(id)arg1 didComplete:(_Bool)arg2 withPasscode:(id)arg3;
 - (void)alertViewControllerDidCancel:(id)arg1;
 - (void)passcodeViewController:(id)arg1 didVerifyPasscode:(id)arg2;

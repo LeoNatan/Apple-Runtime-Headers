@@ -14,9 +14,9 @@
     WNUIClientBundleManagerBundleInfo *_defaultCategoryBundleInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WNUIClientBundleManagerBundleInfo *defaultCategoryBundleInfo; // @synthesize defaultCategoryBundleInfo=_defaultCategoryBundleInfo;
 @property(retain, nonatomic) NSMutableDictionary *categoryToBundleInfo; // @synthesize categoryToBundleInfo=_categoryToBundleInfo;
-- (void).cxx_destruct;
 - (void)setBundleInfo:(id)arg1 categories:(id)arg2;
 
 @end

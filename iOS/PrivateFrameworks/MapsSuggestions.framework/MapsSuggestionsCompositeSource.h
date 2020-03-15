@@ -9,12 +9,12 @@
 #import <MapsSuggestions/MapsSuggestionsSource-Protocol.h>
 #import <MapsSuggestions/MapsSuggestionsSourceDelegate-Protocol.h>
 
-@class MapsSuggestionsSuppressor, NSMutableDictionary, NSObject, NSString;
+@class MapsSuggestionsSuppressor, NSMutableDictionary, NSMutableSet, NSObject, NSString;
 @protocol MapsSuggestionsSourceDelegate, OS_dispatch_source;
 
 @interface MapsSuggestionsCompositeSource : MapsSuggestionsBaseSource <MapsSuggestionsSource, MapsSuggestionsSourceDelegate>
 {
-    struct NSMutableSet *_sources;
+    NSMutableSet *_sources;
     NSMutableDictionary *_nextUpdateTimes;
     struct Queue _queue;
     NSObject<OS_dispatch_source> *_updateTimer;
@@ -24,19 +24,19 @@
 
 + (unsigned long long)disposition;
 + (_Bool)isEnabled;
-@property _Bool running; // @synthesize running=_running;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property _Bool running; // @synthesize running=_running;
 - (void)test_resetSuppressions;
 - (double)test_suppressionDurationForBehavior:(long long)arg1 type:(long long)arg2;
 - (id)test_dateUntilSuppressedEntry:(id)arg1;
 - (void)test_sync;
-- (struct NSSet *)children;
+- (id)children;
 - (_Bool)removeChildSource:(id)arg1;
 - (_Bool)addChildSource:(id)arg1;
 - (_Bool)detachSource:(id)arg1;
 - (_Bool)attachSource:(id)arg1;
-- (unsigned long long)addOrUpdateSuggestionEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
+- (unsigned long long)addOrUpdateSuggestionEntries:(id)arg1 source:(id)arg2;
 - (void)feedbackForContact:(id)arg1 action:(long long)arg2;
 - (void)feedbackForMapItem:(id)arg1 action:(long long)arg2;
 - (void)feedbackForEntry:(id)arg1 action:(long long)arg2;

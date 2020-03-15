@@ -29,6 +29,7 @@
     NSLayoutConstraint *_imageWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *imageWidthConstraint; // @synthesize imageWidthConstraint=_imageWidthConstraint;
 @property(retain, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
@@ -45,7 +46,6 @@
 @property(nonatomic) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic) _Bool busy; // @synthesize busy=_busy;
 @property(copy, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 @property(retain, nonatomic) UIImage *image;
 - (void)showBorder:(_Bool)arg1 animated:(_Bool)arg2;

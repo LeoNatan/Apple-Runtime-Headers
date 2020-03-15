@@ -33,6 +33,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADClientSettingsResponse *clientSettings; // @synthesize clientSettings=_clientSettings;
 @property(nonatomic) unsigned long long maxClickCapElements; // @synthesize maxClickCapElements=_maxClickCapElements;
 @property(nonatomic) unsigned long long maxFrequencyCapElements; // @synthesize maxFrequencyCapElements=_maxFrequencyCapElements;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSString *algoID; // @synthesize algoID=_algoID;
 @property(retain, nonatomic) NSURL *defaultAdTargetingServerURL; // @synthesize defaultAdTargetingServerURL=_defaultAdTargetingServerURL;
 @property(retain, nonatomic) NSURL *defaultToroServerURL; // @synthesize defaultToroServerURL=_defaultToroServerURL;
-- (void).cxx_destruct;
 - (void)overrideRevGeoThreshold:(double)arg1;
 - (void)overrideMaxToroClickElements:(unsigned long long)arg1;
 - (void)overrideToroClickExpiration:(double)arg1;

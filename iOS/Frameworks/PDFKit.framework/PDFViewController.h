@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)_postAnnotationHitNotification:(id)arg1;
 - (void)_postAnnotationWillHitNotification:(id)arg1;
 - (id)_pageViewForAnnotation:(id)arg1;
+- (_Bool)isUpdatingSelectionMarkups;
 - (void)removeNoteForAnnotation:(id)arg1;
 - (void)editNoteForAnnotation:(id)arg1;
 - (void)setMarkupStyle:(unsigned long long)arg1 forAnnotation:(id)arg2;

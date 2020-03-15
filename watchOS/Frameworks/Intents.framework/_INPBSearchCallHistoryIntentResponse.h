@@ -24,12 +24,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)callRecordsType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *targetContact; // @synthesize targetContact=_targetContact;
 @property(copy, nonatomic) NSString *status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(copy, nonatomic) NSArray *callRecords; // @synthesize callRecords=_callRecords;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

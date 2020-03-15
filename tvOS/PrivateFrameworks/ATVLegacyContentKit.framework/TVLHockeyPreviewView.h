@@ -15,10 +15,10 @@
     TVLHockeyScoreboardView *_scoreboardView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLHockeyScoreboardView *scoreboardView; // @synthesize scoreboardView=_scoreboardView;
 @property(retain, nonatomic) TVLItemTitleView *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) TVLHeadToHeadBannerView *bannerView; // @synthesize bannerView=_bannerView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithDictionary:(id)arg1;
 

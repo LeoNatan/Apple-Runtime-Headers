@@ -16,10 +16,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float volumeValue; // @synthesize volumeValue=_volumeValue;
 @property(readonly, nonatomic) unsigned long haptic; // @synthesize haptic=_haptic;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)toDictionaryWithReason:(id)arg1;
 - (id)initWithSystemSoundID:(unsigned long)arg1 volume:(float)arg2;
 

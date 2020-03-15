@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_generationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *generationQueue; // @synthesize generationQueue=_generationQueue;
 @property(retain, nonatomic) NSMutableDictionary *operations; // @synthesize operations=_operations;
-- (void).cxx_destruct;
 - (void)operation:(id)arg1 didDetermineFileSize:(id)arg2 fileTypeString:(id)arg3;
 - (void)operation:(id)arg1 didGenerateThumbnail:(id)arg2;
 - (void)_operationDidFinish:(id)arg1;

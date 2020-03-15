@@ -14,9 +14,9 @@
     NSSet *_alternateViewControllers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *alternateViewControllers; // @synthesize alternateViewControllers=_alternateViewControllers;
 @property(readonly, nonatomic) HUQuickControlViewController *primaryViewController; // @synthesize primaryViewController=_primaryViewController;
-- (void).cxx_destruct;
 - (id)initWithPrimaryViewController:(id)arg1 alternateViewControllers:(id)arg2;
 
 @end

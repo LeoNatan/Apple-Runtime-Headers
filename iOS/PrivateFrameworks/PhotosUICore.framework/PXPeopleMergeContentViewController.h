@@ -14,9 +14,9 @@
     id <PXPerson> _draggedPerson;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PXPerson> draggedPerson; // @synthesize draggedPerson=_draggedPerson;
 @property(retain, nonatomic) id <PXPerson> targetPerson; // @synthesize targetPerson=_targetPerson;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (struct CGSize)preferredContentSize;
 - (id)initWithTargetPerson:(id)arg1 draggedPerson:(id)arg2;

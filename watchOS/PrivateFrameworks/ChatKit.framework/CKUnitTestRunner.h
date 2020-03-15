@@ -18,10 +18,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 @property(nonatomic) _Bool shouldWrite; // @synthesize shouldWrite=_shouldWrite;
 @property(retain, nonatomic) IMUnitTestRunner *runner; // @synthesize runner=_runner;
-- (void).cxx_destruct;
 - (void)unitTestRunner:(id)arg1 didReceiveOutput:(id)arg2;
 - (void)_dumpResults:(id)arg1;
 - (void)runUnitTestBundleAtPath:(id)arg1 writeToFile:(_Bool)arg2;

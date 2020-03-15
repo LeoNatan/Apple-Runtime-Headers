@@ -22,6 +22,7 @@
     id <SVVideoDurationObserving> _durationObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoDurationObserving> durationObserver; // @synthesize durationObserver=_durationObserver;
 @property(readonly, nonatomic) id <SVVideoPeriodicTimeObserving> periodicTimeObserver; // @synthesize periodicTimeObserver=_periodicTimeObserver;
 @property(copy, nonatomic, setter=onProgressChanged:) CDUnknownBlockType progressChangedBlock; // @synthesize progressChangedBlock=_progressChangedBlock;
@@ -29,7 +30,6 @@
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double time; // @synthesize time=_time;
-- (void).cxx_destruct;
 - (void)updateProgressWithTime:(double)arg1 duration:(double)arg2;
 - (id)initWithPeriodicTimeObserver:(id)arg1 durationObserver:(id)arg2;
 

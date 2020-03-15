@@ -19,6 +19,7 @@
     NSError *_lastRetryError;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canceledOrCompleted; // @synthesize canceledOrCompleted=_canceledOrCompleted;
 @property(retain, nonatomic) NSError *lastRetryError; // @synthesize lastRetryError=_lastRetryError;
 @property(retain, nonatomic) NSMutableData *receivedData; // @synthesize receivedData=_receivedData;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSURLSessionDataTask *underlyingTask; // @synthesize underlyingTask=_underlyingTask;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_completeWithError:(id)arg1;
 

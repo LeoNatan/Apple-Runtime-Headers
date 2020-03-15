@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *webUsage; // @synthesize webUsage=_webUsage;
 @property(copy) NSArray *applicationUsage; // @synthesize applicationUsage=_applicationUsage;
 @property(readonly) double totalUsageTime; // @synthesize totalUsageTime=_totalUsageTime;
 @property(readonly, copy) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

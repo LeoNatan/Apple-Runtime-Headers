@@ -27,6 +27,7 @@
     CDUnknownBlockType _downloadSessionAlternativeConfigurationOptionsBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType downloadSessionAlternativeConfigurationOptionsBlock; // @synthesize downloadSessionAlternativeConfigurationOptionsBlock=_downloadSessionAlternativeConfigurationOptionsBlock;
 @property(readonly, nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
 @property(readonly, nonatomic) long long endpointType; // @synthesize endpointType=_endpointType;
@@ -42,7 +43,6 @@
 @property(nonatomic) BOOL prefersHLS; // @synthesize prefersHLS=_prefersHLS;
 @property(nonatomic) unsigned long long preferredAssetQuality; // @synthesize preferredAssetQuality=_preferredAssetQuality;
 @property(retain, nonatomic) MPMediaPlaybackItemMetadata *playbackItemMetadata; // @synthesize playbackItemMetadata=_playbackItemMetadata;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL usesSubscriptionLease;
 
 @end

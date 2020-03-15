@@ -27,6 +27,7 @@
     struct UIEdgeInsets _offImageEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize offIconImagePointSize; // @synthesize offIconImagePointSize=_offIconImagePointSize;
 @property(nonatomic) struct CGSize onIconImagePointSize; // @synthesize onIconImagePointSize=_onIconImagePointSize;
 @property(nonatomic) struct UIEdgeInsets offImageEdgeInsets; // @synthesize offImageEdgeInsets=_offImageEdgeInsets;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) SABaseCommand *commandToToggleToOffMode; // @synthesize commandToToggleToOffMode=_commandToToggleToOffMode;
 @property(copy, nonatomic) SABaseCommand *commandToToggleToOnMode; // @synthesize commandToToggleToOnMode=_commandToToggleToOnMode;
 @property(nonatomic) _Bool initialState; // @synthesize initialState=_initialState;
-- (void).cxx_destruct;
 - (id)offDynamicImageForUserInterfaceStyle:(long long)arg1;
 - (id)onDynamicImageForUserInterfaceStyle:(long long)arg1;
 - (id)backgroundColorForUserInterfaceStyle:(long long)arg1;

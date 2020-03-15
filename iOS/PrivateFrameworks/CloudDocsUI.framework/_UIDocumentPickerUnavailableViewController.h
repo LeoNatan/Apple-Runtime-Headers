@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_textToButtonConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *textToButtonConstraint; // @synthesize textToButtonConstraint=_textToButtonConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *textToTextConstraint; // @synthesize textToTextConstraint=_textToTextConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleToTextConstraint; // @synthesize titleToTextConstraint=_titleToTextConstraint;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *leadImageView; // @synthesize leadImageView=_leadImageView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_fontSizeDidChange:(id)arg1;
 - (id)_buttonBackgroundImageForState:(unsigned long long)arg1 traits:(id)arg2;

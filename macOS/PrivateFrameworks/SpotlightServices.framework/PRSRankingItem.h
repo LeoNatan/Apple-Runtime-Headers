@@ -46,6 +46,7 @@
 + (id)rankingDescriptorForBundleFeature:(unsigned long long)arg1;
 + (unsigned long long)indexOfShortcutBit;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) BOOL isPrepared; // @synthesize isPrepared=_isPrepared;
 @property(nonatomic) unsigned short bundleIDType; // @synthesize bundleIDType=_bundleIDType;
@@ -79,7 +80,6 @@
 @property(nonatomic) float feedbackScore; // @synthesize feedbackScore=_feedbackScore;
 @property(nonatomic) float rawScore; // @synthesize rawScore=_rawScore;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (long long)passesRecencyTestWithCurrentTime:(double)arg1;
 - (long long)recencyTestForVisibilityWithCurrentTime:(double)arg1;
 - (BOOL)serializeToJSON:(void *)arg1 valuesOnly:(BOOL)arg2;

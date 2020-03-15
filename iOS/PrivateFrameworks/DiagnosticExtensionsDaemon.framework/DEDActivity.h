@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain) NSObject<OS_os_activity> *cleanup; // @synthesize cleanup=_cleanup;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_os_activity> *cleanup; // @synthesize cleanup=_cleanup;
 - (id)currentCleanupActivity;
 - (id)newCleanupActivity;
 

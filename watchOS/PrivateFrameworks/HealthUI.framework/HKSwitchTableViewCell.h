@@ -21,12 +21,12 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
 @property(nonatomic) _Bool centersIcon; // @synthesize centersIcon=_centersIcon;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool shouldHideSwitch; // @synthesize shouldHideSwitch=_shouldHideSwitch;
 @property(nonatomic) __weak id <HKSwitchTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)switchValueChanged:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setOn:(_Bool)arg1 animated:(_Bool)arg2;

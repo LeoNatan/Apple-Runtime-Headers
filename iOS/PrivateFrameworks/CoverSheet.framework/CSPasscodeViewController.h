@@ -33,6 +33,7 @@
     id <CSWallpaperColorProvider> _wallpaperColorProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CSWallpaperColorProvider> wallpaperColorProvider; // @synthesize wallpaperColorProvider=_wallpaperColorProvider;
 @property(retain, nonatomic) id <CSCoverSheetContextProviding> coverSheetContext; // @synthesize coverSheetContext=_coverSheetContext;
 @property(nonatomic) _Bool confirmedNotInPocket; // @synthesize confirmedNotInPocket=_confirmedNotInPocket;
@@ -43,7 +44,6 @@
 @property(nonatomic) _Bool biometricButtonsInitiallyVisible; // @synthesize biometricButtonsInitiallyVisible=_biometricButtonsInitiallyVisible;
 @property(nonatomic) _Bool useBiometricPresentation; // @synthesize useBiometricPresentation=_useBiometricPresentation;
 @property(nonatomic) __weak id <CSPasscodeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_emulateInteractivePresentation;
 - (_Bool)_shouldEmulateInteractivePresentation;
 - (void)_updateProudLockViewControllerConfiguration;

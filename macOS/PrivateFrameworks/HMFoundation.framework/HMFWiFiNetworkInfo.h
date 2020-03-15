@@ -19,9 +19,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *SSID; // @synthesize SSID=_SSID;
 @property(readonly, copy) HMFMACAddress *MACAddress; // @synthesize MACAddress=_MACAddress;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

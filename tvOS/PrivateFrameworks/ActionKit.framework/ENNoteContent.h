@@ -17,8 +17,8 @@
 + (id)noteContentWithSanitizedHTML:(id)arg1;
 + (id)noteContentWithContentArray:(id)arg1;
 + (id)noteContentWithString:(id)arg1;
-@property(copy, nonatomic) NSString *emml; // @synthesize emml=_emml;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *emml; // @synthesize emml=_emml;
 - (id)enml;
 - (id)enmlWithNote:(id)arg1;
 - (id)initWithENML:(id)arg1;

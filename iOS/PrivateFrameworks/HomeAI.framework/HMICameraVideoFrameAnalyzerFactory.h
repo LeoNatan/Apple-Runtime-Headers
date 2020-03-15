@@ -23,10 +23,10 @@
 + (id)eventConfidenceThresholdsHigh;
 + (id)eventConfidenceThresholdsMedium;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly) HMFTimer *watchdogTimer; // @synthesize watchdogTimer=_watchdogTimer;
 @property(retain, nonatomic) id <HMICameraVideoFrameAnalyzer> frameAnalyzer; // @synthesize frameAnalyzer=_frameAnalyzer;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (double)modelTimeoutPreference;
 - (id)getConfidenceThresholdPreferenceForKey:(id)arg1 defaultConfidenceThreshold:(double)arg2;
 - (id)analyze:(id)arg1 targetEventTypes:(long long)arg2 error:(id *)arg3;

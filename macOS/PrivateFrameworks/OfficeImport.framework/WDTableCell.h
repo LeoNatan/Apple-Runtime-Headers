@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     WDTableRow *mRow;
 }
 
-@property(readonly) __weak WDTableRow *row; // @synthesize row=mRow;
 - (void).cxx_destruct;
+@property(readonly) __weak WDTableRow *row; // @synthesize row=mRow;
 - (id)description;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;

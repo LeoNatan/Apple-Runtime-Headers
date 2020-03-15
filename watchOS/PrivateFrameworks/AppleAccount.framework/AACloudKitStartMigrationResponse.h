@@ -13,8 +13,8 @@
     NSNumber *_status;
 }
 
-@property(readonly, nonatomic) NSNumber *status; // @synthesize status=_status;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *status; // @synthesize status=_status;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 
 @end

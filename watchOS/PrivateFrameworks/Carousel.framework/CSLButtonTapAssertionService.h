@@ -18,9 +18,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *processAssertionsByPid; // @synthesize processAssertionsByPid=_processAssertionsByPid;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)deactivate:(_Bool)arg1 forPid:(int)arg2;
 - (void)setHandler:(id)arg1 forPid:(int)arg2;

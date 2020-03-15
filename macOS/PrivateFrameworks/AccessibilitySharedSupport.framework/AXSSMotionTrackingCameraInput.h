@@ -10,6 +10,7 @@
 
 @interface AXSSMotionTrackingCameraInput : AXSSMotionTrackingInput
 {
+    BOOL _isBuiltIn;
     NSString *_name;
     NSString *_captureDeviceUniqueID;
 }
@@ -17,9 +18,10 @@
 + (BOOL)supportsSecureCoding;
 + (id)motionTrackingCameraInputWithAVCaptureDevice:(id)arg1;
 + (id)captureDeviceForMotionTrackingInput:(id)arg1;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL isBuiltIn; // @synthesize isBuiltIn=_isBuiltIn;
 @property(copy, nonatomic) NSString *captureDeviceUniqueID; // @synthesize captureDeviceUniqueID=_captureDeviceUniqueID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isCamera;
 - (BOOL)supportsExpressions;
 - (unsigned long long)trackingType;
@@ -29,7 +31,7 @@
 - (id)uniqueIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCaptureDeviceUniqueID:(id)arg1 name:(id)arg2;
+- (id)initWithCaptureDeviceUniqueID:(id)arg1 name:(id)arg2 isBuiltIn:(BOOL)arg3;
 
 @end
 

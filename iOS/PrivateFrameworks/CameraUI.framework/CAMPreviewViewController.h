@@ -54,6 +54,7 @@
     CAMMotionController *__motionController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isShowingStandardControls) _Bool showingStandardControls; // @synthesize showingStandardControls=_showingStandardControls;
 @property(readonly, nonatomic) CAMMotionController *_motionController; // @synthesize _motionController=__motionController;
 @property(readonly, nonatomic) CAMStageLightOverlayView *_stageLightOverlayView; // @synthesize _stageLightOverlayView=__stageLightOverlayView;
@@ -89,7 +90,6 @@
 @property(nonatomic) long long shallowDepthOfFieldStatus; // @synthesize shallowDepthOfFieldStatus=_shallowDepthOfFieldStatus;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic) __weak id <CAMPreviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_shouldShowIndicatorsAsInactive;
 - (_Bool)_isPortraitEffectActive;
 - (void)_updatePortraitModeViewsAnimated:(_Bool)arg1;
@@ -167,7 +167,7 @@
 - (void)_updatePortraitModeViewsForResults:(id)arg1;
 - (_Bool)_shouldAllowFaceIndicators;
 - (void)_updateFaceIndicatorsForResults:(id)arg1;
-- (void)captureController:(id)arg1 didOutputFaceResults:(id)arg2;
+- (void)captureController:(id)arg1 didOutputFaceResults:(id)arg2 bodyResults:(id)arg3;
 - (_Bool)_shouldSuppressNewFaces;
 - (void)_hideIndicatorsOfViewType:(id)arg1 animated:(_Bool)arg2;
 - (void)_fadeOutIndicatorsOfViewType:(id)arg1;

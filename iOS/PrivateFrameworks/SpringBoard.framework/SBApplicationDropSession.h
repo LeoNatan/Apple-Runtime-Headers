@@ -37,6 +37,7 @@
 + (void)getDropSessionWithUIDropSession:(id)arg1 sceneProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)dropSessionWithWindowUIDragSession:(id)arg1;
 + (_Bool)canHandleUIDragDropSession:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *targetContentIdentifier; // @synthesize targetContentIdentifier=_targetContentIdentifier;
 @property(readonly, nonatomic) NSSet *launchActions; // @synthesize launchActions=_launchActions;
 @property(readonly, nonatomic) SBSAppDragLocalContext *localContext; // @synthesize localContext=_localContext;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) id <UIDragDropSession> uiDragDropSession; // @synthesize uiDragDropSession=_uiDragDropSession;
 @property(retain, nonatomic) FBSSceneIdentity *sceneIdentity; // @synthesize sceneIdentity=_sceneIdentity;
 @property(readonly, nonatomic) SBApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long dropZones;
 - (void)calculateSceneIdentityWithSceneProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) SBActivationSettings *activationSettings; // @synthesize activationSettings=_activationSettings;

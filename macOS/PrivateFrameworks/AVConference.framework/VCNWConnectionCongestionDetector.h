@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     CDStruct_b21f1e06 _previousStatistics;
     unsigned int _averageThroughputBps;
     unsigned int _averagePacketDelayMs;
+    unsigned int _maxAveragePacketDelayMs;
     unsigned int _lastTimestampWithPacketDrop;
     unsigned int _packetDropCount;
     unsigned int _packetDropCountPerFrame;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly) unsigned int packetDropCount; // @synthesize packetDropCount=_packetDropCount;
 @property(readonly) unsigned int averageThroughputBps; // @synthesize averageThroughputBps=_averageThroughputBps;
+@property unsigned int maxAveragePacketDelayMs; // @synthesize maxAveragePacketDelayMs=_maxAveragePacketDelayMs;
 @property(readonly) unsigned int averagePacketDelayMs; // @synthesize averagePacketDelayMs=_averagePacketDelayMs;
 @property(retain, nonatomic) AVCStatisticsCollector *statisticsCollector; // @synthesize statisticsCollector=_statisticsCollector;
 - (void)enableNWLogDump:(void *)arg1;

@@ -28,9 +28,9 @@
     NSButton *_checkbox5;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
 @property(retain) NSMutableDictionary *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)createAccountsWithDelegate:(id)arg1 didCreateSelector:(SEL)arg2 contextInfo:(void *)arg3;
 - (BOOL)createAccounts;
 - (unsigned long long)numberOfAppsNeedingSetup;

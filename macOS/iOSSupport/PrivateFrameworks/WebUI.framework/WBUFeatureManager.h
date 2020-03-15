@@ -25,13 +25,13 @@
 + (BOOL)shouldOfferVirtualCards;
 + (id)webui_sharedFeatureManager;
 + (long long)accessLevel;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInMemoryBookmarkChangeTrackingAvailable) BOOL inMemoryBookmarkChangeTrackingAvailable; // @synthesize inMemoryBookmarkChangeTrackingAvailable=_inMemoryBookmarkChangeTrackingAvailable;
 @property(readonly, nonatomic, getter=isCloudSyncAvailable) BOOL cloudSyncAvailable; // @synthesize cloudSyncAvailable=_cloudSyncAvailable;
 @property(readonly, nonatomic, getter=isOfflineReadingListAvailable) BOOL offlineReadingListAvailable; // @synthesize offlineReadingListAvailable=_offlineReadingListAvailable;
 @property(readonly, nonatomic, getter=isReadingListAvailable) BOOL readingListAvailable; // @synthesize readingListAvailable=_readingListAvailable;
 @property(readonly, nonatomic, getter=isBookmarksAvailable) BOOL bookmarksAvailable; // @synthesize bookmarksAvailable=_bookmarksAvailable;
 @property(readonly, nonatomic, getter=isAutoFillAvailable) BOOL autoFillAvailable; // @synthesize autoFillAvailable=_autoFillAvailable;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAirDropPasswordsAvailable) BOOL airDropPasswordsAvailable;
 @property(readonly, nonatomic, getter=isPrivateBrowsingAvailable) BOOL privateBrowsingAvailable;
 @property(readonly, nonatomic, getter=isCloudTabsAvailable) BOOL cloudTabsAvailable;

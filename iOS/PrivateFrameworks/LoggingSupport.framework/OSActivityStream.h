@@ -27,13 +27,13 @@
     OSLogDevice *_device;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OSLogDevice *device; // @synthesize device=_device;
 @property(copy, nonatomic) NSCompoundPredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) unsigned long long eventFilter; // @synthesize eventFilter=_eventFilter;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(nonatomic) __weak id <OSActivityStreamDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <OSDeviceDelegate> deviceDelegate; // @synthesize deviceDelegate=_deviceDelegate;
-- (void).cxx_destruct;
 - (_Bool)establishTrust:(id)arg1;
 - (id)getInfoForDevice:(id)arg1 andKey:(id)arg2;
 - (void)stopRemote;

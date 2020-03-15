@@ -25,10 +25,10 @@
 }
 
 + (_Bool)_requiresResponseProvider;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) STKSessionAction *alertAction; // @synthesize alertAction=_alertAction;
 @property(retain, nonatomic) id <STKSound> sound; // @synthesize sound=_sound;
 @property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)_lock_sendResponse:(long long)arg1;
 - (void)remoteAlertHandleDidActivate:(id)arg1;
 - (void)sendResponse:(long long)arg1 withStringResult:(id)arg2;

@@ -6,11 +6,13 @@
 
 #import <PowerlogCore/PLAgent.h>
 
-@class PLEntryNotificationOperatorComposition;
+@class PLEntry, PLEntryNotificationOperatorComposition, PLStateTrackingComposition;
 
 @interface PLSMCAgent : PLAgent
 {
     PLEntryNotificationOperatorComposition *_sbc;
+    PLStateTrackingComposition *_stateTracker;
+    PLEntry *_lastAccumEntry;
 }
 
 + (id)entryAggregateDefinitions;
@@ -25,8 +27,10 @@
 + (id)entryEventPointDefinitionThermalKeys;
 + (id)entryEventPointDefinitions;
 + (void)load;
-@property(retain) PLEntryNotificationOperatorComposition *sbc; // @synthesize sbc=_sbc;
 - (void).cxx_destruct;
+@property(retain) PLEntry *lastAccumEntry; // @synthesize lastAccumEntry=_lastAccumEntry;
+@property(retain) PLStateTrackingComposition *stateTracker; // @synthesize stateTracker=_stateTracker;
+@property(retain) PLEntryNotificationOperatorComposition *sbc; // @synthesize sbc=_sbc;
 - (id)configKeys;
 - (id)accumulatedKeys;
 - (id)thermalKeys;
@@ -38,7 +42,11 @@
 - (id)readKeyAsNumeric:(id)arg1;
 - (CDStruct_3d4409aa *)smcConnection;
 - (BOOL)accumSupported;
+- (id)diffAccumulatedKey:(id)arg1 withEntry:(id)arg2;
+- (void)logAccumulatedKeysToCA:(id)arg1 forDate:(id)arg2;
+- (void)handleStateChangeForSMCStats;
 - (void)logEventBackwardAccumulatedKeys;
+- (id)sampleAccumulatedKeys;
 - (void)logEventPointThermalKeys;
 - (void)log;
 - (void)initOperatorDependancies;

@@ -24,11 +24,11 @@
 }
 
 + (void)preloadResources;
+- (void).cxx_destruct;
 @property(nonatomic) double contentTileCornerRadius; // @synthesize contentTileCornerRadius=_contentTileCornerRadius;
 @property(nonatomic) struct CGSize maximumImageSize; // @synthesize maximumImageSize=_maximumImageSize;
 @property(retain, nonatomic, setter=_setDebugBadgeManager:) PXDebugAssetBadgeManager *_debugBadgeManager; // @synthesize _debugBadgeManager=__debugBadgeManager;
 @property(nonatomic, setter=_setSupressingColorSettings:) BOOL _supressingColorSettings; // @synthesize _supressingColorSettings=__supressingColorSettings;
-- (void).cxx_destruct;
 - (id)_assetsBySizeWithTileIdentifiers:(const struct PXTileIdentifier *)arg1 withGeometries:(const struct PXTileGeometry *)arg2 count:(unsigned long long)arg3;
 - (void)stopPreheatingTilesForIdentifiers:(const struct PXTileIdentifier *)arg1 withGeometries:(const struct PXTileGeometry *)arg2 count:(unsigned long long)arg3 context:(void *)arg4;
 - (void)startPreheatingTilesForIdentifiers:(const struct PXTileIdentifier *)arg1 withGeometries:(const struct PXTileGeometry *)arg2 count:(unsigned long long)arg3 context:(void *)arg4;

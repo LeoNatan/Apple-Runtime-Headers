@@ -29,6 +29,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
 @property(retain) VNFaceAttributeCategory *makeupLipsCategory; // @synthesize makeupLipsCategory=_makeupLipsCategory;
 @property(retain) VNFaceAttributeCategory *makeupEyesCategory; // @synthesize makeupEyesCategory=_makeupEyesCategory;
@@ -41,7 +42,6 @@
 @property(retain) VNFaceAttributeCategory *eyesCategory; // @synthesize eyesCategory=_eyesCategory;
 @property(retain) VNFaceAttributeCategory *genderCategory; // @synthesize genderCategory=_genderCategory;
 @property(retain) VNFaceAttributeCategory *ageCategory; // @synthesize ageCategory=_ageCategory;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

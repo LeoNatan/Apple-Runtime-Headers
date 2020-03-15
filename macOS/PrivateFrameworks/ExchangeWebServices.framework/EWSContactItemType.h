@@ -43,6 +43,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *WeddingAnniversary; // @synthesize WeddingAnniversary=_WeddingAnniversary;
 @property(copy, nonatomic) NSString *Surname; // @synthesize Surname=_Surname;
 @property(copy, nonatomic) NSString *SpouseName; // @synthesize SpouseName=_SpouseName;
@@ -73,7 +74,6 @@
 @property(copy, nonatomic) NSString *DisplayName; // @synthesize DisplayName=_DisplayName;
 @property(nonatomic) long long FileAsMapping; // @synthesize FileAsMapping=_FileAsMapping;
 @property(copy, nonatomic) NSString *FileAs; // @synthesize FileAs=_FileAs;
-- (void).cxx_destruct;
 
 @end
 

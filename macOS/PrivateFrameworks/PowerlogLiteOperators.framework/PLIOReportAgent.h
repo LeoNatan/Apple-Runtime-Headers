@@ -6,7 +6,7 @@
 
 #import <PowerlogCore/PLAgent.h>
 
-@class NSDictionary, NSMutableDictionary, PLEntryNotificationOperatorComposition, PLIOKitOperatorComposition;
+@class NSDictionary, NSMutableDictionary, PLEntryNotificationOperatorComposition, PLIOKitOperatorComposition, PLIOReportStats, PLStateTrackingComposition;
 
 @interface PLIOReportAgent : PLAgent
 {
@@ -22,12 +22,17 @@
     PLIOKitOperatorComposition *_iokitAging;
     PLIOKitOperatorComposition *_iokitAudio;
     long long _AOPTotalThreadTime;
+    PLIOReportStats *_psrIOReport;
+    PLStateTrackingComposition *_stateTracker;
 }
 
 + (BOOL)hasAOPSupport;
 + (BOOL)hasLisaCapability;
 + (BOOL)hasPlatinumCapability;
++ (id)keyForSubBlock:(int)arg1;
 + (BOOL)shouldLogAtAppSwitchTrigger;
++ (id)entryEventBackwardDefinitionMemCacheStats;
++ (BOOL)shouldLogMemCacheStats;
 + (id)entryEventBackwardDefinitionAOPpressurepower;
 + (id)entryEventBackwardDefinitionAOPaccelpower;
 + (id)entryEventBackwardDefinitionAOPcompasspower;
@@ -50,6 +55,8 @@
 + (id)entryEventBackwardDefinitionHapticsStats;
 + (id)entryEventBackwardDefinitionCarnelianVaxholmStats;
 + (id)entryEventBackwardDefinitionPPMStatsCPMSLanesEngagement;
++ (id)entryEventBackwardDefinitionPPMStatsCPMSFerocity;
++ (id)entryEventBackwardDefinitionPPMStatsCPMSPowerReduction;
 + (id)entryEventBackwardDefinitionPPMStatsDroopController;
 + (id)entryEventBackwardDefinitionCLPCStatsLimiterControlEffort;
 + (id)entryEventBackwardDefinitionLimiterControlEffort;
@@ -169,11 +176,15 @@
 + (id)entryEventBackwardDefinitionGPUStatsDVDRequestStates;
 + (id)entryEventBackwardDefinitionIOReport;
 + (id)entryEventBackwardDefinitions;
++ (id)entryEventForwardDefinitionMemCacheLabels;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitionPmtelemetry_Flex;
 + (id)entryEventPointDefinitions;
 + (id)defaults;
 + (void)load;
+- (void).cxx_destruct;
+@property(retain) PLStateTrackingComposition *stateTracker; // @synthesize stateTracker=_stateTracker;
+@property(retain) PLIOReportStats *psrIOReport; // @synthesize psrIOReport=_psrIOReport;
 @property long long AOPTotalThreadTime; // @synthesize AOPTotalThreadTime=_AOPTotalThreadTime;
 @property(readonly) PLIOKitOperatorComposition *iokitAudio; // @synthesize iokitAudio=_iokitAudio;
 @property(readonly) PLIOKitOperatorComposition *iokitAging; // @synthesize iokitAging=_iokitAging;
@@ -186,12 +197,18 @@
 @property(retain) PLEntryNotificationOperatorComposition *displayOffNotification; // @synthesize displayOffNotification=_displayOffNotification;
 @property(retain) PLEntryNotificationOperatorComposition *screenstateChangedNotifications; // @synthesize screenstateChangedNotifications=_screenstateChangedNotifications;
 @property(retain) PLEntryNotificationOperatorComposition *batteryLevelChangedNotifications; // @synthesize batteryLevelChangedNotifications=_batteryLevelChangedNotifications;
-- (void).cxx_destruct;
 - (void)logSOCHOT0Snapshot;
 - (void)logDroopSnapshot;
 - (void)logIOReportSnapshot;
 - (void)modelPMPAPSocPower:(id)arg1;
 - (void)modelAPSoCPower:(id)arg1;
+- (void)logEventForwardMemCacheLabels;
+- (void)logEventBackwardMemCacheStats:(id)arg1;
+- (void)triggerMemCacheLogging:(id)arg1 withDelay:(unsigned long long)arg2;
+- (BOOL)fgAppChangedSince:(unsigned long long)arg1;
+- (void)readAndLogMemCacheStats;
+- (void)connectToMemCacheDriver;
+- (id)allowSamplingMemCacheStats:(id)arg1;
 - (void)logEngagementToAggD:(id)arg1;
 - (void)logEventBackwardMTRAging;
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
@@ -202,10 +219,12 @@
 - (void)logEventBackwardCorePerformanceStates:(id)arg1 withChannels:(id)arg2;
 - (int)getCoreChannelId:(id)arg1;
 - (void)logEventBackwardComplexPerformanceStates:(id)arg1;
+- (void)logEventBackwardPSRToCA;
+- (id)samplePSRChannelsDelta;
 - (int)getChannelId:(id)arg1;
 - (void)ioReportLogEntry:(id)arg1;
 - (id)entryKeyForEventWithGroupName:(id)arg1 withSubGroupName:(id)arg2;
-- (void)logEventBackwardIOReportAtScreenStateChange;
+- (void)logEventBackwardIOReportAtScreenStateChange:(id)arg1;
 - (void)logEventBackwardIOReportAtAudioEvent;
 - (void)logEventBackwardIOReport;
 - (void)logEventPointIOReport;
@@ -214,6 +233,8 @@
 - (int)addReportSample:(struct __CFDictionary *)arg1 toEntry:(id)arg2;
 - (void)addReportingGroup:(id)arg1 toEntry:(id)arg2;
 - (id)sampleDeltaForChannelGroup:(id)arg1;
+- (void)logPSRToCA:(id)arg1 forDate:(id)arg2;
+- (void)handleStateChangeForPSRStats;
 - (void)initTaskOperatorDependancies;
 - (void)initOperatorDependancies;
 - (BOOL)processNotificationForChannelGroup:(id)arg1;

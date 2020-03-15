@@ -15,8 +15,8 @@
     NSString *_proem;
 }
 
-@property(readonly, copy, nonatomic) NSString *loggingProem; // @synthesize loggingProem=_proem;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *loggingProem; // @synthesize loggingProem=_proem;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 @property(readonly, nonatomic, getter=isChild) BOOL child;

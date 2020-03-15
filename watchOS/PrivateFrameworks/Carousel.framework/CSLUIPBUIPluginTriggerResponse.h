@@ -16,9 +16,9 @@
     _Bool _success;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorString; // @synthesize errorString=_errorString;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

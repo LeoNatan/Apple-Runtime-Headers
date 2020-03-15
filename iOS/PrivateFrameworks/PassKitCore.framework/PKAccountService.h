@@ -55,6 +55,7 @@
 - (void)lastRedemptionEventToPeerPaymentForAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)creditStatementsForAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)insertEvents:(id)arg1 withAccountidentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)deleteEventsWithAccountIdentifier:(id)arg1 excludingTypes:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)deleteEventWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteEventsWithAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)eventsForAccountIdentifier:(id)arg1 types:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 orderedByDate:(long long)arg5 limit:(unsigned long long)arg6 completion:(CDUnknownBlockType)arg7;

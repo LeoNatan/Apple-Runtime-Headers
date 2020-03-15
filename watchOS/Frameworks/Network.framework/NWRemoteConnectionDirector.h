@@ -19,13 +19,13 @@
     NSMutableArray *_writeRequests;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *writeRequests; // @synthesize writeRequests=_writeRequests;
 @property struct nw_hash_table *protocolHashTable; // @synthesize protocolHashTable=_protocolHashTable;
 @property struct nw_protocol *defaultOutputHandler; // @synthesize defaultOutputHandler=_defaultOutputHandler;
 @property struct nw_protocol *directorProtocol; // @synthesize directorProtocol=_directorProtocol;
 @property __weak NSObject<NWRemoteConnectionDirectorDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int maximumDataChunkSize; // @synthesize maximumDataChunkSize=_maximumDataChunkSize;
-- (void).cxx_destruct;
 - (void)receiveData:(id)arg1 forClient:(id)arg2;
 - (void)setOutputProtocolHandler:(struct nw_protocol *)arg1 forFlowID:(id)arg2 dataMode:(unsigned int)arg3;
 - (void)setDefaultOutputProtocolHandler:(struct nw_protocol *)arg1;

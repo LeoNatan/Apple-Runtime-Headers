@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <SPSchedulerXPCProtocol> proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) FMXPCSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) FMXPCServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
-- (void).cxx_destruct;
 - (void)publishImmediatelyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)schedulePublishWakeWithInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)remoteInterface;

@@ -16,8 +16,8 @@
 + (id)title;
 + (_Bool)isSupported;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) VNClassifyImageAestheticsRequest *_imageAestheticsRequest; // @synthesize _imageAestheticsRequest=__imageAestheticsRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VNClassifyImageAestheticsRequest *_imageAestheticsRequest; // @synthesize _imageAestheticsRequest=__imageAestheticsRequest;
 - (void)evaluate:(id)arg1;
 - (_Bool)validateVisionKitSoftLinkSymbols;
 - (void)encodeWithCoder:(id)arg1;

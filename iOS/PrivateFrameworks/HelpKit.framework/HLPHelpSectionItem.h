@@ -14,9 +14,9 @@
     NSArray *_children;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(nonatomic, getter=isOpen) _Bool open; // @synthesize open=_open;
-- (void).cxx_destruct;
 - (id)debugDescription;
 
 @end

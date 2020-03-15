@@ -28,6 +28,7 @@
 + (id)remoteElementForBlock:(CDUnknownBlockType)arg1;
 + (BOOL)_isSerializableAccessibilityElement;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL deniesDirectAppConnection; // @synthesize deniesDirectAppConnection=_deniesDirectAppConnection;
 @property(nonatomic) __weak id accessibilityContainer; // @synthesize accessibilityContainer=_accessibilityContainer;
 @property(nonatomic) unsigned int machPort; // @synthesize machPort=_machPort;
@@ -36,7 +37,8 @@
 @property(nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) int remotePid; // @synthesize remotePid=_remotePid;
-- (void).cxx_destruct;
+- (BOOL)_accessibilitySetNativeFocus;
+- (void)_accessibilitySetFocusOnElement:(BOOL)arg1;
 - (id)description;
 - (void)_accessibilityIncreaseSelection:(id)arg1;
 - (struct CGRect)accessibilityFrame;
@@ -58,6 +60,7 @@
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)_accessibilityTextOperations;
 - (void)platformCleanup;
+@property(readonly, nonatomic) unsigned int localHostingWindowContextId;
 - (id)initWithUUID:(id)arg1 andRemotePid:(int)arg2 andContextId:(unsigned int)arg3;
 
 @end

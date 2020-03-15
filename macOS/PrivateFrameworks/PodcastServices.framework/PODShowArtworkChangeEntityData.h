@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PODShow *show; // @synthesize show=_show;
 @property(readonly, nonatomic) PODArtwork *artwork; // @synthesize artwork=_artwork;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithArtwork:(id)arg1 show:(id)arg2;

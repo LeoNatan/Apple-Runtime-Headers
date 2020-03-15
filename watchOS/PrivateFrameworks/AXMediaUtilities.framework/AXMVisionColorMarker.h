@@ -16,8 +16,8 @@
 + (id)closestMarkerToColor:(id)arg1 withMaximumThreshold:(float)arg2;
 + (id)allColorMarkers;
 + (id)colorWithHueDegrees:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 localizedName:(id)arg4;
-@property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 - (id)description;
 
 @end

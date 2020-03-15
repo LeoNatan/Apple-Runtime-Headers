@@ -10,20 +10,23 @@
 
 @interface CNUIAggregateUndoableCommandBuilder : NSObject
 {
+    BOOL _ignoresGuardianRestrictions;
     NSString *_actionName;
     CNContactStore *_contactStore;
     NSMutableArray *_undoableCommands;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *undoableCommands; // @synthesize undoableCommands=_undoableCommands;
+@property(nonatomic) BOOL ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
-- (void).cxx_destruct;
 - (id)build;
 - (void)deleteContacts:(id)arg1;
 - (void)updateContacts:(id)arg1;
+- (void)addContacts:(id)arg1 toContainer:(id)arg2;
 - (void)addContacts:(id)arg1;
-- (id)initWithActionName:(id)arg1 contactStore:(id)arg2;
+- (id)initWithActionName:(id)arg1 contactStore:(id)arg2 ignoresGuardianRestrictions:(BOOL)arg3;
 
 @end
 

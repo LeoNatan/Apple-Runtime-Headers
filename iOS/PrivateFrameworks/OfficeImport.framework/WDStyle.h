@@ -27,9 +27,9 @@ __attribute__((visibility("hidden")))
     WDStyle *mNextStyle;
 }
 
+- (void).cxx_destruct;
 @property __weak WDStyle *nextStyle; // @synthesize nextStyle=mNextStyle;
 @property(readonly) __weak WDStyleSheet *styleSheet; // @synthesize styleSheet=mStyleSheet;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property __weak WDStyle *baseStyle; // @synthesize baseStyle=mBaseStyle;

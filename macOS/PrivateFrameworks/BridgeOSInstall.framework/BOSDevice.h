@@ -18,13 +18,13 @@
     OS_remote_device *_device;
 }
 
+- (void).cxx_destruct;
 @property(retain) OS_remote_device *device; // @synthesize device=_device;
 @property BOOL isAppleInternal; // @synthesize isAppleInternal=_isAppleInternal;
 @property(retain) NSString *hardwareModel; // @synthesize hardwareModel=_hardwareModel;
 @property BOOL productionStatus; // @synthesize productionStatus=_productionStatus;
 @property(retain) NSString *bridgeVersion; // @synthesize bridgeVersion=_bridgeVersion;
 @property(retain) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
-- (void).cxx_destruct;
 - (unsigned long long)requirementSatisfiedForMinimumBridgeVersion:(id)arg1;
 - (id)initWithRunningDevice;
 - (id)_initWithBridgeVersion:(id)arg1;

@@ -13,8 +13,8 @@
     NSDictionary *_payloadAttributes;
 }
 
-@property(readonly, nonatomic) NSDictionary *payloadAttributes; // @synthesize payloadAttributes=_payloadAttributes;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *payloadAttributes; // @synthesize payloadAttributes=_payloadAttributes;
 - (id)description;
 - (_Bool)isReferenceResource;
 - (_Bool)isAdjusted;

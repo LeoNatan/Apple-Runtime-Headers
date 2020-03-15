@@ -15,8 +15,8 @@
     NSXPCConnection *_systemServiceConnection;
 }
 
-@property(retain, nonatomic) NSXPCConnection *systemServiceConnection; // @synthesize systemServiceConnection=_systemServiceConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *systemServiceConnection; // @synthesize systemServiceConnection=_systemServiceConnection;
 - (void)_handlePresenceDetectionStateChanged:(_Bool)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)getPictureInPictureServiceProxyWithReply:(CDUnknownBlockType)arg1;

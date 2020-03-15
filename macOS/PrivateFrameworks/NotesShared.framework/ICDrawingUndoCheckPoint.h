@@ -20,12 +20,12 @@
 + (void)deleteAllCacheFiles;
 + (unsigned long long)cacheSize;
 + (id)cacheDirectory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isEraseAllCheckPoint; // @synthesize isEraseAllCheckPoint=_isEraseAllCheckPoint;
 @property(readonly, nonatomic) NSOrderedSet *renderedCommands; // @synthesize renderedCommands=_renderedCommands;
 @property(readonly, nonatomic) NSString *cacheFilename; // @synthesize cacheFilename=_cacheFilename;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) struct CGImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)flushFromMemoryIfPossible;
 - (void)writeToDiskAndFreeMemory;
 - (void)reloadImage;

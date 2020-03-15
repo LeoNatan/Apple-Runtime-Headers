@@ -17,9 +17,9 @@
     CDUnknownBlockType _resolutionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resolutionHandler; // @synthesize resolutionHandler=_resolutionHandler;
 @property(readonly, nonatomic) MPAVErrorResolver *errorResolver; // @synthesize errorResolver=_errorResolver;
-- (void).cxx_destruct;
 - (void)resolveError:(id)arg1;
 - (void)errorResolver:(id)arg1 didResolveError:(id)arg2 withResolution:(long long)arg3;
 - (id)initWithErrorResolver:(id)arg1;

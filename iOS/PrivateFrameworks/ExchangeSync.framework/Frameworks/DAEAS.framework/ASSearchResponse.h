@@ -21,10 +21,10 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(nonatomic) int expectedResultType; // @synthesize expectedResultType=_expectedResultType;
 @property(copy, nonatomic) NSNumber *status; // @synthesize status=_status;
 @property(retain, nonatomic) NSArray *stores; // @synthesize stores=_stores;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

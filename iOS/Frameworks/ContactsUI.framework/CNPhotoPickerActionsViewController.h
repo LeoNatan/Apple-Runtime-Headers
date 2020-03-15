@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     id <CNPhotoPickerActionsViewControllerLayout> _currentLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNPhotoPickerActionsViewControllerLayout> currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(retain, nonatomic) CNPhotoPickerActionButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) CNPhotoPickerActionButton *duplicateButton; // @synthesize duplicateButton=_duplicateButton;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIStackView *buttonsView; // @synthesize buttonsView=_buttonsView;
 @property(retain, nonatomic) CNPhotoPickerActionsModel *actionsModel; // @synthesize actionsModel=_actionsModel;
 @property(nonatomic) __weak id <CNPhotoPickerActionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)actionsModel:(id)arg1 didDelete:(id)arg2 atIndexPath:(id)arg3;
 - (void)actionsModel:(id)arg1 didDuplicate:(id)arg2 atIndexPath:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

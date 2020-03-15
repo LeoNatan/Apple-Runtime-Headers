@@ -29,11 +29,11 @@
 + (id)_indeterminateImage;
 + (id)_fillImage;
 + (id)_borderImage;
+- (void).cxx_destruct;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) struct UIEdgeInsets imageInsets; // @synthesize imageInsets=_centerImageInsets;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_centerImage;
-- (void).cxx_destruct;
 - (void)_startIndeterminateAnimation;
 - (void)_animateValueOnDisplayLink:(id)arg1;
 - (void)_setHidesBorderView:(_Bool)arg1;

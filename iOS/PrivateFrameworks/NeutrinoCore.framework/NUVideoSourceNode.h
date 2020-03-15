@@ -31,7 +31,7 @@
 - (id)_evaluateImagePropertiesWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
 - (id)_settingsForPipelineState:(id)arg1 ownedFrame:(_Bool)arg2;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (_Bool)supportsPipelineState:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateVideoCompositionWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateVideo:(out id *)arg1;

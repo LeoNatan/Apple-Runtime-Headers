@@ -16,8 +16,8 @@
 + (id)sharedInstance;
 + (void)__setSingleton__im:(id)arg1;
 + (id)__singleton__im;
-@property(retain) SOCloudKitPurchaseStorageAlertController *alertController; // @synthesize alertController=_alertController;
 - (void).cxx_destruct;
+@property(retain) SOCloudKitPurchaseStorageAlertController *alertController; // @synthesize alertController=_alertController;
 - (void)beginSheetModalForWindow:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) BOOL isPrompting;
 

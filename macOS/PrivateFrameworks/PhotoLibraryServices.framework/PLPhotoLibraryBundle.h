@@ -38,11 +38,11 @@
     id <PLUnlocker> _unlocker;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <PLUnlocker> unlocker; // @synthesize unlocker=_unlocker;
 @property(readonly, nonatomic) __weak PLPhotoLibraryBundleController *bundleController; // @synthesize bundleController=_bundleController;
 @property(readonly) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 @property(readonly, copy) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
-- (void).cxx_destruct;
 - (void)unbindAssetsdService:(id)arg1;
 - (BOOL)bindAssetsdService:(id)arg1 error:(id *)arg2;
 @property(readonly) NSArray *boundAssetsdServices;
@@ -73,6 +73,7 @@
 @property(readonly) PLPersistentContainer *persistentContainer;
 @property(readonly, copy) NSError *shutdownReason;
 - (id)description;
+- (void)dealloc;
 - (id)initWithLibraryURL:(id)arg1 bundleController:(id)arg2;
 - (BOOL)registerPLPhotoLibrary:(id)arg1;
 

@@ -13,8 +13,8 @@
     EKUIAlarmGadget *_gadget;
 }
 
-@property __weak EKUIAlarmGadget *gadget; // @synthesize gadget=_gadget;
 - (void).cxx_destruct;
+@property __weak EKUIAlarmGadget *gadget; // @synthesize gadget=_gadget;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeKeyView;

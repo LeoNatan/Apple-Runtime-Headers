@@ -18,11 +18,11 @@
     _Bool _accepted;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SYErrorInfo *error; // @synthesize error=_error;
 @property(nonatomic) _Bool accepted; // @synthesize accepted=_accepted;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic) SYMessageHeader *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

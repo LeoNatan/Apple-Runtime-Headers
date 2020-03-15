@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)quickActionForPresentation:(id)arg1 extension:(id)arg2;
+- (void).cxx_destruct;
 - (id)_bundleURL;
 @property(readonly, copy) NSString *_extensionIdentifier; // @synthesize _extensionIdentifier;
 @property(readonly) NSSharingService *_sharingService; // @synthesize _sharingService;
-- (void).cxx_destruct;
 - (BOOL)canMoveToTrash;
 - (Class)_preferencesClass;
 - (Class)_validationClass;

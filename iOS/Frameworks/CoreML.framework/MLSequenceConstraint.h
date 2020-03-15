@@ -19,9 +19,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange countRange; // @synthesize countRange=_countRange;
 @property(readonly, nonatomic) MLFeatureDescription *valueDescription; // @synthesize valueDescription=_valueDescription;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

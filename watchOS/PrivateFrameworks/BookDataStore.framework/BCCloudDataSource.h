@@ -20,11 +20,11 @@
 
 + (id)_persistentStoreDirectory;
 + (void)deleteCloudDataWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool setupPersistentStore; // @synthesize setupPersistentStore=_setupPersistentStore;
 @property(retain, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
 @property(retain, nonatomic) NSManagedObjectModel *managedObjectModel; // @synthesize managedObjectModel=_managedObjectModel;
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
-- (void).cxx_destruct;
 - (void)_setupPersistentStoreCoordinatorWithPath:(id)arg1;
 - (void)_setupManagedObjectContextWithCoordinator:(id)arg1;
 - (void)_logIfError:(id)arg1 operation:(id)arg2;

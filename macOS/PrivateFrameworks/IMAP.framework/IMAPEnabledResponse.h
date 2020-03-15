@@ -14,8 +14,8 @@
 }
 
 + (BOOL)handlesResponseWithName:(const char *)arg1 ofLength:(unsigned long long)arg2;
-@property(copy, nonatomic) NSString *capability; // @synthesize capability=_capability;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *capability; // @synthesize capability=_capability;
 - (id)description;
 
 @end

@@ -13,8 +13,8 @@
     SVVideoPlayButton *_playButton;
 }
 
-@property(retain, nonatomic) SVVideoPlayButton *playButton; // @synthesize playButton=_playButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SVVideoPlayButton *playButton; // @synthesize playButton=_playButton;
 - (BOOL)accessibilityIgnoresInvertColors;
 - (void)setImage:(id)arg1 animated:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

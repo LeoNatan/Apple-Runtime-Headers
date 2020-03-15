@@ -21,13 +21,13 @@
     id <BLTSiriActionAppListDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BLTSiriActionAppListDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BLTSiriActionAppListDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)updateStoreWithInstalled:(id)arg1 removed:(id)arg2;
 - (void)applicationIconDidChange:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
-- (_Bool)_handleAppListInstalled:(struct NSDictionary *)arg1 removed:(id)arg2;
+- (_Bool)_handleAppListInstalled:(id)arg1 removed:(id)arg2;
 @property(readonly, nonatomic) NSSet *removed;
 @property(readonly, nonatomic) NSDictionary *installed;
 - (void)dealloc;

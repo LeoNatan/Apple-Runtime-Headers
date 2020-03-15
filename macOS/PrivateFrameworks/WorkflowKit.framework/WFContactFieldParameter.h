@@ -17,12 +17,12 @@
     NSArray *_supportedContactProperties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *supportedContactProperties; // @synthesize supportedContactProperties=_supportedContactProperties;
 @property(readonly, nonatomic) long long autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
 @property(readonly, nonatomic) long long autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
 @property(readonly, nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(readonly, nonatomic) BOOL allowsTextEntry; // @synthesize allowsTextEntry=_allowsTextEntry;
-- (void).cxx_destruct;
 - (BOOL)shouldAlignLabels;
 @property(readonly, nonatomic) long long keyboardType;
 - (id)initWithDefinition:(id)arg1;

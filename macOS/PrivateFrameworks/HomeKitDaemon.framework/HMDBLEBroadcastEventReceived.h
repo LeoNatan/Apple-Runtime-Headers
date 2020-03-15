@@ -19,9 +19,9 @@
 + (id)broadcastEventFromAccessory:(id)arg1 withExpectedGSN:(BOOL)arg2;
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasExpectedGSN; // @synthesize hasExpectedGSN=_hasExpectedGSN;
 @property(readonly, nonatomic) HMDAccessory *accessory; // @synthesize accessory=_accessory;
-- (void).cxx_destruct;
 - (id)initBroadcastEventFromAccessory:(id)arg1 withExpectedGSN:(BOOL)arg2;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;

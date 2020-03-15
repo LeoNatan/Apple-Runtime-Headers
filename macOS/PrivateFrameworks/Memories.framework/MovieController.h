@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 
 + (id)imageFromProject:(id)arg1 atTime:(int)arg2 withSize:(struct CGSize)arg3;
 + (id)controllerWithProject:(id)arg1 forExport:(BOOL)arg2;
+- (void).cxx_destruct;
 @property long long customImageGenCount; // @synthesize customImageGenCount=_customImageGenCount;
 @property(copy) CDUnknownBlockType playerReadyCompletionBlock; // @synthesize playerReadyCompletionBlock=_playerReadyCompletionBlock;
 @property double exportAspect; // @synthesize exportAspect=_exportAspect;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CALayer *compositionLayer; // @synthesize compositionLayer;
 @property(retain) Project *project; // @synthesize project;
 @property(retain, nonatomic) CALayer *playerLayer; // @synthesize playerLayer;
-- (void).cxx_destruct;
 - (void)generateOrigUIImagesAsynchronouslyForSize:(struct CGSize)arg1 atTimes:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)generateUIImagesAsynchronouslyForSize:(struct CGSize)arg1 atTimes:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)cancelAllUIImageGeneration;

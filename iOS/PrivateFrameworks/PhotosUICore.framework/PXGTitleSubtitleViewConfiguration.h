@@ -17,10 +17,10 @@
     PXTitleSubtitleLabelSpec *_spec;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) PXTitleSubtitleLabelSpec *spec; // @synthesize spec=_spec;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

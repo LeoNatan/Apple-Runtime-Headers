@@ -21,10 +21,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)keyPathsForValuesAffectingRequestResponseQueue;
+- (void).cxx_destruct;
 @property(retain) MFEWSResponseOperation *lastResponseDecoded; // @synthesize lastResponseDecoded=_lastResponseDecoded;
 @property(retain) MFEWSConnection *offlineConnection; // @synthesize offlineConnection=_offlineConnection;
 - (id)requestResponseQueue;
-- (void).cxx_destruct;
 - (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 - (id)unarchiver:(id)arg1 didDecodeObject:(id)arg2;
 - (void)_undeleteMessagesFromFailedDeleteRequest:(id)arg1;

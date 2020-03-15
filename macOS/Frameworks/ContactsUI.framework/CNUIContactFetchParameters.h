@@ -22,6 +22,7 @@
 + (id)fetchDescriptionWithContactIdentifier:(id)arg1 contactStore:(id)arg2 alternateContactStore:(id)arg3 unified:(BOOL)arg4 keysToFetch:(id)arg5 fetchAsynchronously:(BOOL)arg6 fetchingDuringLaunch:(BOOL)arg7;
 + (id)fetchDescriptionWithContactIdentifier:(id)arg1 contactStore:(id)arg2;
 + (id)fetchDescriptionWithContactIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL fetchingDuringLaunch; // @synthesize fetchingDuringLaunch=_fetchingDuringLaunch;
 @property(readonly, nonatomic) BOOL fetchAsynchronously; // @synthesize fetchAsynchronously=_fetchAsynchronously;
 @property(readonly, nonatomic) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(readonly, nonatomic) CNContactStore *alternateContactStore; // @synthesize alternateContactStore=_alternateContactStore;
 @property(readonly, nonatomic) CNContactStore *mainContactStore; // @synthesize mainContactStore=_mainContactStore;
-- (void).cxx_destruct;
 - (id)initWithContactIdentifier:(id)arg1 contactStore:(id)arg2 alternateContactStore:(id)arg3 unified:(BOOL)arg4 keysToFetch:(id)arg5 fetchAsynchronously:(BOOL)arg6 fetchingDuringLaunch:(BOOL)arg7;
 
 @end

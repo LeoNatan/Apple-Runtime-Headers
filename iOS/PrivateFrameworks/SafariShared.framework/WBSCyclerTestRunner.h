@@ -19,10 +19,10 @@
     id <WBSCyclerTestTarget> _target;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(readonly, nonatomic) id <WBSCyclerTestTarget> target; // @synthesize target=_target;
 @property(readonly, nonatomic) id <WBSCyclerTestSuite> testSuite; // @synthesize testSuite=_testSuite;
-- (void).cxx_destruct;
 - (id)_descriptionForErrorCode:(long long)arg1;
 - (id)_errorWithCode:(long long)arg1;
 - (void)_handleNextPendingRequestWithCompletionHandler:(CDUnknownBlockType)arg1;

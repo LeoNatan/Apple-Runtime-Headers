@@ -16,9 +16,9 @@
     UIViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)presentAlert:(id)arg1;
 - (id)initWithView:(id)arg1 inViewController:(id)arg2;
 

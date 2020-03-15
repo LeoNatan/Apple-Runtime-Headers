@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVVoiceTriggerClient *alwaysOnProcessorController; // @synthesize alwaysOnProcessorController=_alwaysOnProcessorController;
 @property(nonatomic) unsigned long long serverState; // @synthesize serverState=_serverState;
-- (void).cxx_destruct;
 - (void)_notifyObserver:(id)arg1 withMediaserverState:(unsigned long long)arg2;
 - (void)_didReceiveMediaserverNotification:(unsigned long long)arg1;
 - (void)_mediaserverdDidRestart;

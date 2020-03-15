@@ -16,10 +16,10 @@
     NSString *_firstPasscodeEntry;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *firstPasscodeEntry; // @synthesize firstPasscodeEntry=_firstPasscodeEntry;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
 @property(nonatomic) int securityCodeType; // @synthesize securityCodeType=_securityCodeType;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setBulletText:(id)arg1;
 - (_Bool)textFieldShouldBeginEditing:(id)arg1;

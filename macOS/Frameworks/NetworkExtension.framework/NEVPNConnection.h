@@ -25,6 +25,7 @@
 
 + (id)createConnectionForEnabledEnterpriseConfiguration;
 + (id)createDisconnectErrorWithDomain:(id)arg1 code:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSError *lastDisconnectError; // @synthesize lastDisconnectError=_lastDisconnectError;
 @property(nonatomic) BOOL initialized; // @synthesize initialized=_initialized;
 @property __weak NEVPNManager *weakmanager; // @synthesize weakmanager=_weakmanager;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NEConfigurationManager *configManager; // @synthesize configManager=_configManager;
 @property(readonly) NSDate *connectedDate; // @synthesize connectedDate=_connectedDate;
 @property(readonly) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)resetLastDisconnectError:(id)arg1;
 - (void)reload;
 @property(readonly) NEVPNManager *manager;

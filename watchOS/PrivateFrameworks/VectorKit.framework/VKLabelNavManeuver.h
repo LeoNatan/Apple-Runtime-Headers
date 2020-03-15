@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     _Bool _isPicked;
 }
 
+- (id).cxx_construct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) _Bool isPicked; // @synthesize isPicked=_isPicked;
 @property(readonly, nonatomic) _Bool isVisible; // @synthesize isVisible=_isVisible;
 @property(readonly, nonatomic) struct PolylineCoordinate routeOffset; // @synthesize routeOffset=_routeOffset;
 @property(readonly, nonatomic) VKLabelNavRoadLabel *maneuverSign; // @synthesize maneuverSign=_maneuverSign;
-- (id).cxx_construct;
 @property(readonly, nonatomic) _Bool isTrafficCameraFeature;
 @property(readonly, nonatomic) _Bool isEtaFeature;
 @property(readonly, nonatomic) _Bool isGuidanceStepStart;

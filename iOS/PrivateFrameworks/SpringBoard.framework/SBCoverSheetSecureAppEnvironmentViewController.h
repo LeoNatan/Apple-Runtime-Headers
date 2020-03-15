@@ -23,10 +23,10 @@
     SBHomeGestureParticipant *_homeGestureParticipant;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBHomeGestureParticipant *homeGestureParticipant; // @synthesize homeGestureParticipant=_homeGestureParticipant;
 @property(nonatomic) __weak id <SBCoverSheetSecureAppEnvironmentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) SBDashBoardHostedAppViewController *secureAppViewController; // @synthesize secureAppViewController=_secureAppViewController;
-- (void).cxx_destruct;
 - (void)relinquishHiddenAssertionForHomeGrabber:(id)arg1 animated:(_Bool)arg2;
 - (void)takeHiddenAssertionForHomeGrabber:(id)arg1 animated:(_Bool)arg2;
 - (void)updateHomeGrabberHiddenAssertion:(_Bool)arg1;

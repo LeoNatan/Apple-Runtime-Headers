@@ -29,6 +29,7 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
 @property(readonly) _Bool isSuggestedAndAccepted; // @synthesize isSuggestedAndAccepted=_isSuggestedAndAccepted;
 @property(readonly) _Bool hasRecurrenceRules; // @synthesize hasRecurrenceRules=_hasRecurrenceRules;
@@ -44,7 +45,6 @@
 @property(readonly) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) _Bool isBirthday; // @synthesize isBirthday=_isBirthday;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) CLLocation *geoLocation;
 - (_Bool)isEqual:(id)arg1;

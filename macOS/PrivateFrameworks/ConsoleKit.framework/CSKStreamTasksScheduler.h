@@ -23,6 +23,7 @@
     NSMutableDictionary *_observersOperationQueues;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *observersOperationQueues; // @synthesize observersOperationQueues=_observersOperationQueues;
 @property(readonly, nonatomic) NSOperationQueue *dataOperationQueue; // @synthesize dataOperationQueue=_dataOperationQueue;
 @property(nonatomic) BOOL cancelled; // @synthesize cancelled=_cancelled;
@@ -31,7 +32,6 @@
 @property(nonatomic) long long scheduledTasks; // @synthesize scheduledTasks=_scheduledTasks;
 @property(nonatomic) __weak NSMapTable *observers; // @synthesize observers=_observers;
 @property(nonatomic) __weak id <CSKStreamTasksSchedulerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)_observerDataBatchDirectionFromDataDirection:(unsigned long long)arg1;
 - (void)_cancelOperationsWithName:(id)arg1 initiatorIdentifier:(id)arg2 operationQueue:(id)arg3;
 - (void)_enumerateObserversWithIdentifiers:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

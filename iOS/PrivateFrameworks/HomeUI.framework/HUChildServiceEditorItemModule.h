@@ -20,11 +20,11 @@
 
 + (CDUnknownBlockType)childItemComparator;
 + (id)supportedServiceTypes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) unsigned long long editingMode; // @synthesize editingMode=_editingMode;
 @property(retain, nonatomic) HFServiceItemProvider *childServiceItemProvider; // @synthesize childServiceItemProvider=_childServiceItemProvider;
 @property(readonly, nonatomic) HFItem<HFServiceLikeItem> *sourceItem; // @synthesize sourceItem=_sourceItem;
-- (void).cxx_destruct;
 - (id)toggleConfigurationStateForItem:(id)arg1;
 - (_Bool)canToggleConfigurationStateForItem:(id)arg1;
 - (long long)configurationStateForItem:(id)arg1;

@@ -23,13 +23,13 @@
     WKWebView *_userPrivacyWebView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WKWebView *userPrivacyWebView; // @synthesize userPrivacyWebView=_userPrivacyWebView;
 @property(retain, nonatomic) NSTextField *errorTextField; // @synthesize errorTextField=_errorTextField;
 @property(retain, nonatomic) NSString *userTransparencyRendererURL; // @synthesize userTransparencyRendererURL=_userTransparencyRendererURL;
 @property(retain, nonatomic) NSString *userTransparencyRendererPayload; // @synthesize userTransparencyRendererPayload=_userTransparencyRendererPayload;
 @property(retain, nonatomic) NSString *userTransparencyDetailsUnavailableMessage; // @synthesize userTransparencyDetailsUnavailableMessage=_userTransparencyDetailsUnavailableMessage;
 @property(retain, nonatomic) id <ADUserTransparencySheetDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_reportAdUserTransparencySheetEventWithType:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)bundleForTransparencyDetailsViewMacFramework;
 - (id)normalizeChineseLanguage:(id)arg1;

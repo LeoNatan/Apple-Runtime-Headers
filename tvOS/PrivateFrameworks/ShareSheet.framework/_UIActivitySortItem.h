@@ -18,11 +18,11 @@
 
 + (id)sortDescriptorForActivity:(id)arg1 withGroup:(long long)arg2 secondarySortValue:(id)arg3 tertiarySortValue:(id)arg4;
 + (id)sortDescriptorForActivity:(id)arg1 withGroup:(long long)arg2 secondarySortValue:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id tertiarySortValue; // @synthesize tertiarySortValue=_tertiarySortValue;
 @property(readonly, nonatomic) id secondarySortValue; // @synthesize secondarySortValue=_secondarySortValue;
 @property(readonly, nonatomic) long long group; // @synthesize group=_group;
 @property(readonly, nonatomic) UIActivity *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)debugDescription;
 

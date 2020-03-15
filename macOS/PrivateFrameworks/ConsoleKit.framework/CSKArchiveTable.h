@@ -15,9 +15,9 @@
 }
 
 + (id)nameForID:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long ID; // @synthesize ID=_ID;
 @property(nonatomic) __weak CSKDatabaseHandle *dbHandle; // @synthesize dbHandle=_dbHandle;
-- (void).cxx_destruct;
 - (id)numberValueForKey:(id)arg1 domain:(id)arg2;
 - (id)stringValueForKey:(id)arg1 domain:(id)arg2;
 - (id)blobValueForKey:(id)arg1 domain:(id)arg2;

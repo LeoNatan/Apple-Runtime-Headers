@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double areaInSquareMeters; // @synthesize areaInSquareMeters=_areaInSquareMeters;
 @property(readonly, nonatomic) unsigned long long dominantOrderType; // @synthesize dominantOrderType=_dominantOrderType;
 @property(readonly, copy, nonatomic) NSNumber *placeType; // @synthesize placeType=_placeType;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

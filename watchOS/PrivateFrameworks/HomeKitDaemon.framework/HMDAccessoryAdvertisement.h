@@ -15,10 +15,10 @@
     HMAccessoryCategory *_category;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMAccessoryCategory *category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) int associationOptions;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

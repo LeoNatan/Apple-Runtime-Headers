@@ -19,11 +19,11 @@
     NSDate *_timestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) unsigned long long level; // @synthesize level=_level;
 @property(readonly, copy, nonatomic) SBAppStatusBarSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

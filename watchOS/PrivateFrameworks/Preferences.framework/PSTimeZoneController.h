@@ -21,10 +21,10 @@
 }
 
 + (void)setTimeZone:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(nonatomic) __weak PSListController *parentController; // @synthesize parentController=_parentController;
 @property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

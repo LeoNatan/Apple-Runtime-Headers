@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CNContactStore *_contactStore;
 }
 
-@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (id)updateChanges:(id)arg1 withFetchedGroups:(id)arg2;
 - (id)fetchGroupsWithIdentifiers:(id)arg1;
 - (id)objectsRepresentedByBatch:(id)arg1;

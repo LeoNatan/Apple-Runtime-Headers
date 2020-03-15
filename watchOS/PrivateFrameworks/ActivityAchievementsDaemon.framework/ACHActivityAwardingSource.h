@@ -40,6 +40,7 @@
     NSString *_watchCountryCode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isObservingSummaryUpdates; // @synthesize isObservingSummaryUpdates=_isObservingSummaryUpdates;
 @property(retain, nonatomic) NSString *watchCountryCode; // @synthesize watchCountryCode=_watchCountryCode;
 @property(retain, nonatomic) NSString *overrideWatchCountryCode; // @synthesize overrideWatchCountryCode=_overrideWatchCountryCode;
@@ -61,7 +62,6 @@
 @property(nonatomic) __weak ACHEarnedInstanceAwardingEngine *engine; // @synthesize engine=_engine;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) NSCalendar *gregorianUTCCalendar; // @synthesize gregorianUTCCalendar=_gregorianUTCCalendar;
-- (void).cxx_destruct;
 - (void)dataStoreDidClearAllProperties:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) NSDictionary *dataStoreProperties;
 @property(readonly, nonatomic) NSArray *dataStorePropertyKeys;

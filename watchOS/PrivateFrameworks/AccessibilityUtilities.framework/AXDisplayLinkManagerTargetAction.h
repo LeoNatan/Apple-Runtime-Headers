@@ -13,10 +13,10 @@
     unsigned int _displayDidRefreshCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int displayDidRefreshCount; // @synthesize displayDidRefreshCount=_displayDidRefreshCount;
 @property(nonatomic) SEL actionSelector; // @synthesize actionSelector=_actionSelector;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)displayDidRefresh:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

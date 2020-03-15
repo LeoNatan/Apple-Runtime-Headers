@@ -19,13 +19,13 @@
 }
 
 + (id)calendarIconLayoutModelForIconDiameter:(float)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float dayHorizontalOffset; // @synthesize dayHorizontalOffset=_dayHorizontalOffset;
 @property(nonatomic) float dateBaselineFromOriginY; // @synthesize dateBaselineFromOriginY=_dateBaselineFromOriginY;
 @property(nonatomic) float dayBaselineFromOriginY; // @synthesize dayBaselineFromOriginY=_dayBaselineFromOriginY;
 @property(retain, nonatomic) UIFont *dateFont; // @synthesize dateFont=_dateFont;
 @property(retain, nonatomic) UIFont *dayFont; // @synthesize dayFont=_dayFont;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 
 @end
 

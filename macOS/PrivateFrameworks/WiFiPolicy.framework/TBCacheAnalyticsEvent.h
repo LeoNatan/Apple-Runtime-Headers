@@ -23,6 +23,7 @@
 
 + (id)cacheEventWithTotalCount:(unsigned long long)arg1 last24HoursCount:(unsigned long long)arg2;
 + (id)cacheAnalyticsEventWithStatus:(unsigned long long)arg1 staleness:(unsigned long long)arg2 tileKey:(unsigned long long)arg3 type:(unsigned long long)arg4 error:(id)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *eventDictionary; // @synthesize eventDictionary=_eventDictionary;
 @property(retain, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
 @property(nonatomic) NSNumber *errorCode; // @synthesize errorCode=_errorCode;
@@ -30,7 +31,6 @@
 @property(nonatomic) NSNumber *tileKey; // @synthesize tileKey=_tileKey;
 @property(nonatomic) NSNumber *staleness; // @synthesize staleness=_staleness;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

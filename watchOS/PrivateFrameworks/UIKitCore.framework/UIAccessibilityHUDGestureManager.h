@@ -22,8 +22,8 @@
     _Bool _isInvalidated;
 }
 
-@property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (void)_gestureRecognizerChanged:(id)arg1;
 - (id)_bestViewControllerForView;
 - (void)_didToggleLargeContentViewer:(id)arg1;

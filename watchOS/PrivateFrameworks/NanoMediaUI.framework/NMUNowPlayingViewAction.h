@@ -14,11 +14,11 @@
     id _context;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id context; // @synthesize context=_context;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) unsigned int placement; // @synthesize placement=_placement;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)image;
 - (id)initWithActionType:(unsigned int)arg1 placement:(unsigned int)arg2 enabled:(_Bool)arg3 context:(id)arg4;
 

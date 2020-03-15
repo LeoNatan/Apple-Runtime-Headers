@@ -14,9 +14,9 @@
     NSArray *_isoCodes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *isoCodes; // @synthesize isoCodes=_isoCodes;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithDictionary:(id)arg1;
 

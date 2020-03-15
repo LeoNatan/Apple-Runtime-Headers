@@ -14,9 +14,9 @@
     struct unfair_lock _simplifiedGeometryCacheLock;
 }
 
-@property(readonly, nonatomic) Range_ee55b4bd worldIndexes; // @synthesize worldIndexes=_worldIndexes;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) Range_ee55b4bd worldIndexes; // @synthesize worldIndexes=_worldIndexes;
 - (shared_ptr_13962faa)simplifiedGeometryAtZoomLevel:(unsigned char)arg1;
 - (id)initWithMapPoints:(const CDStruct_c3b9c2ee *)arg1 count:(unsigned long long)arg2;
 

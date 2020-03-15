@@ -12,7 +12,7 @@
 
 @interface NTKAstronomyComplicationDataSource : NTKComplicationDataSource <CLKTritiumRandomizedComplicationEntryProvider>
 {
-    struct NSString *_token;
+    NSString *_token;
     CLLocation *_currentLocation;
     CLLocation *_anyLocation;
     unsigned int _vista;

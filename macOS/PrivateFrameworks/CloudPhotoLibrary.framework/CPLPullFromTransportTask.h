@@ -13,8 +13,8 @@
     CPLScopeFilter *_scopeFilter;
 }
 
-@property(retain, nonatomic) CPLScopeFilter *scopeFilter; // @synthesize scopeFilter=_scopeFilter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CPLScopeFilter *scopeFilter; // @synthesize scopeFilter=_scopeFilter;
 - (id)taskIdentifier;
 - (id)newScopedTaskWithScope:(id)arg1 session:(id)arg2 transportScope:(id)arg3 clientCacheIdentifier:(id)arg4;
 - (BOOL)shouldProcessScope:(id)arg1 inTransaction:(id)arg2;

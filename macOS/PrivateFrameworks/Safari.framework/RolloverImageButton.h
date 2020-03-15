@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSImage *_focusRingMask;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *focusRingMask; // @synthesize focusRingMask=_focusRingMask;
 @property(retain, nonatomic) NSImage *rolloverImage; // @synthesize rolloverImage=_rolloverImage;
 @property(nonatomic) BOOL allowsVibrancy; // @synthesize allowsVibrancy=_allowsVibrancy;
-- (void).cxx_destruct;
 - (void)_windowChangedKeyState;
 - (void)drawFocusRingMask;
 - (void)drawRect:(struct CGRect)arg1;

@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
     WDStyle *mStyle;
 }
 
-@property __weak WDStyle *style; // @synthesize style=mStyle;
 - (void).cxx_destruct;
+@property __weak WDStyle *style; // @synthesize style=mStyle;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setTableCellStylePropertiesOverridden:(_Bool)arg1;

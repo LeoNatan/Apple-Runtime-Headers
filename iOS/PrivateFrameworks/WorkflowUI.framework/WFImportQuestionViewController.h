@@ -23,6 +23,7 @@
     struct CGSize _parameterEditorSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFParameterEditorModel *parameterEditorModel; // @synthesize parameterEditorModel=_parameterEditorModel;
 @property(nonatomic) __weak WFParameterEditorHostingCell *parameterEditorCell; // @synthesize parameterEditorCell=_parameterEditorCell;
 @property(nonatomic) struct CGSize parameterEditorSize; // @synthesize parameterEditorSize=_parameterEditorSize;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) WFGradient *workflowGradient; // @synthesize workflowGradient=_workflowGradient;
 @property(readonly, nonatomic) WFWorkflowImportQuestion *importQuestion; // @synthesize importQuestion=_importQuestion;
 @property(nonatomic) __weak id <WFImportQuestionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)action:(id)arg1 parameterStateDidChangeForKey:(id)arg2;
 - (void)parameterEditorCellDidInvalidateSize:(id)arg1;
 - (void)parameterEditorCell:(id)arg1 didUpdateParameterState:(id)arg2;

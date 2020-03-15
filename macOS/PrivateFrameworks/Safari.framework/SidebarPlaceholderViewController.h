@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)readingListPlaceholderViewController;
-@property(nonatomic) __weak NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 - (void)updateDescriptionIfNecessaryWithString:(id)arg1;
 
 @end

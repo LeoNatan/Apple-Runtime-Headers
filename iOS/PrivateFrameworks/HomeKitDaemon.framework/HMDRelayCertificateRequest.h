@@ -17,11 +17,11 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *challengeCertificate; // @synthesize challengeCertificate=_challengeCertificate;
 @property(readonly, copy, nonatomic) NSData *challengeResponse; // @synthesize challengeResponse=_challengeResponse;
 @property(readonly, copy, nonatomic) NSString *challengeIdentifier; // @synthesize challengeIdentifier=_challengeIdentifier;
 @property(readonly, copy, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescription;
 - (id)descriptionWithPointer:(_Bool)arg1;

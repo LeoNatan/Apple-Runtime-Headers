@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableData *_outputData;
 }
 
-@property(readonly, nonatomic) NSMutableData *outputData; // @synthesize outputData=_outputData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableData *outputData; // @synthesize outputData=_outputData;
 - (BOOL)hasSpaceAvailable;
 - (long long)write:(const char *)arg1 maxLength:(unsigned long long)arg2;
 - (int)appendData:(id)arg1;

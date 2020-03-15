@@ -39,10 +39,6 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
-struct ICBaseTextView {
-    Class _field1;
-};
-
 struct ICDeviceHardwareInfo {
     unsigned long long modelName;
     long long version;
@@ -202,17 +198,6 @@ struct ICDrawingVelocityCalculationFilter {
 
 struct ICSmoothingPoint;
 
-struct ICTextView {
-    Class _field1;
-};
-
-struct NSCache {
-    Class _field1;
-    id _field2;
-    void *_field3[5];
-    void *_field4;
-};
-
 struct NSDirectionalEdgeInsets {
     double _field1;
     double _field2;
@@ -220,61 +205,11 @@ struct NSDirectionalEdgeInsets {
     double _field4;
 };
 
-struct NoteContext {
-    Class _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    unsigned long long _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    id _field15;
-};
-
-struct UIColor {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double top;
     double left;
     double bottom;
     double right;
-};
-
-struct UIFont {
-    Class _field1;
-};
-
-struct UIImage {
-    Class _field1;
-};
-
-struct UIImageView {
-    Class _field1;
-};
-
-struct UITextView {
-    Class _field1;
-};
-
-struct UIView {
-    Class _field1;
-};
-
-struct UIViewController {
-    Class _field1;
-};
-
-struct UIWindow {
-    Class _field1;
 };
 
 struct _NSRange {

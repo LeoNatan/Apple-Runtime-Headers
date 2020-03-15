@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *installedPlans; // @synthesize installedPlans=_installedPlans;
 @property(retain, nonatomic) CTDeviceIdentifier *deviceID; // @synthesize deviceID=_deviceID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)EID;

@@ -26,11 +26,11 @@
     id <MFMailDropBannerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MFMailDropBannerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(nonatomic) unsigned long long bannerState; // @synthesize bannerState=_bannerState;
 @property(retain, nonatomic) EMMailDropMetadata *metaData; // @synthesize metaData=_metaData;
-- (void).cxx_destruct;
 - (void)setSeparatorIsHidden:(_Bool)arg1;
 - (_Bool)shouldPresent;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;

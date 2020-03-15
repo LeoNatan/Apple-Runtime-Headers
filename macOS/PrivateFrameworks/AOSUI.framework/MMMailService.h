@@ -16,9 +16,9 @@
     BOOL _shouldEnable;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldEnable; // @synthesize shouldEnable=_shouldEnable;
 @property(retain, nonatomic) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
-- (void).cxx_destruct;
 - (void)_closeModalWindow;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;
 - (void)mmWebKitViewControllerDidFinishLoading:(id)arg1;

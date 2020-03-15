@@ -19,10 +19,10 @@
 
 + (_Bool)isNanoMailInstalled;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) BKSApplicationStateMonitor *stateMonitor; // @synthesize stateMonitor=_stateMonitor;
 @property(nonatomic) unsigned int nanoMailApplicationState; // @synthesize nanoMailApplicationState=_nanoMailApplicationState;
-- (void).cxx_destruct;
 - (unsigned int)_convertEnum:(unsigned int)arg1;
 - (void)enumerateObservers:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;

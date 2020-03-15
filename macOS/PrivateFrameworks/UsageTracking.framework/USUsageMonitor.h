@@ -13,8 +13,8 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property(readonly) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(readonly) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)checkStatusOfBudgets:(id)arg1 clientIdentifiers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)checkStatusOfAllBudgetsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)checkStatusOfBudgets:(id)arg1 error:(id *)arg2;

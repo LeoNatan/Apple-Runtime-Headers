@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
     struct NSDirectionalEdgeInsets _largeTitleViewInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;
 @property(nonatomic) long long apiVersion; // @synthesize apiVersion=_apiVersion;
 @property(readonly, nonatomic) double computedBackgroundViewAlpha; // @synthesize computedBackgroundViewAlpha=_computedBackgroundViewAlpha;
@@ -83,7 +84,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UINavigationBarLargeTitleView *largeTitleView; // @synthesize largeTitleView=_largeTitleView;
 @property(retain, nonatomic) _UINavigationBarContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) _UINavigationBarModernPromptView *promptView; // @synthesize promptView=_promptView;
-- (void).cxx_destruct;
 - (void)finalizeStateFromTransition:(id)arg1;
 - (void)ensureBackButtonTruncationOccursWithContext:(id)arg1;
 - (void)recordToStateForTransition:(id)arg1;

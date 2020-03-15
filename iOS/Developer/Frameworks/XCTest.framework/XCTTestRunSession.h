@@ -13,15 +13,16 @@
 
 @interface XCTTestRunSession : NSObject <XCTTestWorker>
 {
-    XCTestConfiguration *_testConfiguration;
     id <XCTTestRunSessionDelegate> _delegate;
+    XCTestConfiguration *_testConfiguration;
     XCTBlockingQueue *_workQueue;
 }
 
-@property(retain) XCTBlockingQueue *workQueue; // @synthesize workQueue=_workQueue;
-@property __weak id <XCTTestRunSessionDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain) XCTestConfiguration *testConfiguration; // @synthesize testConfiguration=_testConfiguration;
++ (void)initialize;
 - (void).cxx_destruct;
+@property(retain) XCTBlockingQueue *workQueue; // @synthesize workQueue=_workQueue;
+@property(retain) XCTestConfiguration *testConfiguration; // @synthesize testConfiguration=_testConfiguration;
+@property __weak id <XCTTestRunSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)shutdown;
 - (void)executeTestIdentifiers:(id)arg1 skippingTestIdentifiers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3 completionQueue:(id)arg4;
 - (void)fetchDiscoveredTestClasses:(CDUnknownBlockType)arg1;

@@ -22,6 +22,7 @@
     unsigned long long _frequencyCounter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long frequencyCounter; // @synthesize frequencyCounter=_frequencyCounter;
 @property(retain, nonatomic) NSMutableArray *stickers; // @synthesize stickers=_stickers;
 @property(readonly, nonatomic) NSURL *cacheLocation; // @synthesize cacheLocation=_cacheLocation;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak id <AVTStickerBackendDelegate> stickerBackendDelegate; // @synthesize stickerBackendDelegate=_stickerBackendDelegate;
-- (void).cxx_destruct;
 - (id)stickersIndexesMatchingAvatarIdentifier:(id)arg1 stickerIdentifier:(id)arg2;
 - (void)updateStickerAtIndex:(unsigned long long)arg1;
 - (void)addStickerWithAvatarIdentifier:(id)arg1 stickerIdentifier:(id)arg2;

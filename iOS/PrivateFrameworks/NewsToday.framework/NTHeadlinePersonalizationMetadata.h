@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *scoredTopicIDs; // @synthesize scoredTopicIDs=_scoredTopicIDs;
 @property(readonly, copy, nonatomic) NSString *publisherID; // @synthesize publisherID=_publisherID;
 @property(readonly, copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

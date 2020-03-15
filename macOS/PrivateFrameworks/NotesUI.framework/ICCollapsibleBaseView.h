@@ -14,12 +14,13 @@
     BOOL _setupComplete;
     double _leadingSpace;
     double _trailingSpace;
-    struct NSView *_contentView;
+    NSView *_contentView;
     NSLayoutConstraint *_zeroWidthConstraint;
     NSLayoutConstraint *_leadingConstraint;
     NSLayoutConstraint *_trailingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL setupComplete; // @synthesize setupComplete=_setupComplete;
 @property(retain, nonatomic) NSLayoutConstraint *trailingConstraint; // @synthesize trailingConstraint=_trailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *leadingConstraint; // @synthesize leadingConstraint=_leadingConstraint;
@@ -28,9 +29,8 @@
 @property(nonatomic, getter=isCollapsed) BOOL collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic) double trailingSpace; // @synthesize trailingSpace=_trailingSpace;
 @property(nonatomic) double leadingSpace; // @synthesize leadingSpace=_leadingSpace;
-- (void).cxx_destruct;
 - (void)ic_setNeedsUpdateConstraints;
-- (void)performSetUpWithContentView:(struct NSView *)arg1;
+- (void)performSetUpWithContentView:(id)arg1;
 - (void)performSetup;
 - (void)setUpIfNeeded;
 - (void)awakeFromNib;

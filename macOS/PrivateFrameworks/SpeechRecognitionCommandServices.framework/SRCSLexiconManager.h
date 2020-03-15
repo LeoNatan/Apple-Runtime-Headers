@@ -13,8 +13,8 @@
     NSString *_localeIdentifier;
 }
 
-@property(readonly) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 - (id)initWithLocaleIdentifier:(id)arg1;
 
 @end

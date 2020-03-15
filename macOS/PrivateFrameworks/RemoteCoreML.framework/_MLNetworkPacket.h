@@ -16,11 +16,11 @@
     unsigned long long _command;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long command; // @synthesize command=_command;
 @property(nonatomic) unsigned long long sizeOfPacket; // @synthesize sizeOfPacket=_sizeOfPacket;
 @property(retain, nonatomic) NSMutableData *doubleBuffer; // @synthesize doubleBuffer=_doubleBuffer;
 @property(retain, nonatomic) NSMutableData *buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 - (void)resetDoubleBuffer;
 - (void)cleanupDoubleBuffer;
 - (void)resetMetadata;

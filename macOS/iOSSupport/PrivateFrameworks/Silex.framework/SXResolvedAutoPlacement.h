@@ -17,9 +17,9 @@
     id <SXSuggestedArticlesPlacementType> _suggestedArticles;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXSuggestedArticlesPlacementType> suggestedArticles; // @synthesize suggestedArticles=_suggestedArticles;
 @property(readonly, nonatomic) id <SXAdvertisementPlacementType> advertisement; // @synthesize advertisement=_advertisement;
-- (void).cxx_destruct;
 - (id)initWithAdvertisement:(id)arg1 suggestedArticles:(id)arg2;
 
 // Remaining properties

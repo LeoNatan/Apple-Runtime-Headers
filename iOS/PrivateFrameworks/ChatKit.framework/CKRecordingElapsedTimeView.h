@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSDate *__startTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *_startTime; // @synthesize _startTime=__startTime;
 @property(readonly, nonatomic) NSTimer *_updateTimer; // @synthesize _updateTimer=__updateTimer;
 @property(readonly, nonatomic) UIView *_recordingDotView; // @synthesize _recordingDotView=__recordingDotView;
 @property(readonly, nonatomic) UILabel *_timeLabel; // @synthesize _timeLabel=__timeLabel;
 @property(readonly, nonatomic) NSDateComponentsFormatter *_durationFormatter; // @synthesize _durationFormatter=__durationFormatter;
-- (void).cxx_destruct;
 - (void)_endRecordingAnimation;
 - (void)_beginRecordingAnimation;
 - (void)resetTimer;

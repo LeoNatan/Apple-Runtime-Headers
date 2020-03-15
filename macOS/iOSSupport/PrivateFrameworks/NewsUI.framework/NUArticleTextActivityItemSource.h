@@ -13,8 +13,8 @@
     NSString *_itemTitle;
 }
 
-@property(readonly, nonatomic) NSString *itemTitle; // @synthesize itemTitle=_itemTitle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *itemTitle; // @synthesize itemTitle=_itemTitle;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;

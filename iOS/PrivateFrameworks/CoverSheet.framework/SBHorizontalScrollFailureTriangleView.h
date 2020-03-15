@@ -15,8 +15,8 @@
     UIColor *_contentColor;
 }
 
-@property(retain, nonatomic) UIColor *contentColor; // @synthesize contentColor=_contentColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *contentColor; // @synthesize contentColor=_contentColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithStyle:(int)arg1 recognizer:(id)arg2 forPoint:(struct CGPoint)arg3 withMaxVerticalOffset:(double)arg4 inView:(id)arg5 pointingRight:(_Bool)arg6;
 

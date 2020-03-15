@@ -19,13 +19,13 @@
     id <RBEntitlementManaging> _entitlementManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <RBEntitlementManaging> entitlementManager; // @synthesize entitlementManager=_entitlementManager;
 @property(retain, nonatomic) id <RBBundlePropertiesManaging> bundlePropertiesManager; // @synthesize bundlePropertiesManager=_bundlePropertiesManager;
 @property(retain, nonatomic) id <RBDomainAttributeManaging> domainAttributeManager; // @synthesize domainAttributeManager=_domainAttributeManager;
 @property(retain, nonatomic) RBProcessMap *stateMap; // @synthesize stateMap=_stateMap;
 @property(retain, nonatomic) RBProcessIndex *processIndex; // @synthesize processIndex=_processIndex;
 @property(retain, nonatomic) RBAssertionCollection *assertionCollection; // @synthesize assertionCollection=_assertionCollection;
-- (void).cxx_destruct;
 - (id)assertionDescriptorsWithFlattenedAttributes:(_Bool)arg1;
 - (id)resolveForAssertions:(id)arg1;
 

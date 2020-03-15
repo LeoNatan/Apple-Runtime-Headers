@@ -43,11 +43,11 @@
     NSString *_overriddenInstructionsText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *overriddenInstructionsText; // @synthesize overriddenInstructionsText=_overriddenInstructionsText;
 @property(copy, nonatomic) NSString *overriddenNoAWDLText; // @synthesize overriddenNoAWDLText=_overriddenNoAWDLText;
 @property(copy, nonatomic) NSString *overriddenNoWiFIBTText; // @synthesize overriddenNoWiFIBTText=_overriddenNoWiFIBTText;
 @property(copy, nonatomic) NSString *overriddenTitleText; // @synthesize overriddenTitleText=_overriddenTitleText;
-- (void).cxx_destruct;
 - (void)wirelessSettingsDidChange:(id)arg1;
 - (void)updateFontSizes;
 - (void)updateContentAreaAnimated:(_Bool)arg1;

@@ -24,13 +24,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)actionFromUserActivity:(id)arg1 searchableItem:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *uaIdentifier; // @synthesize uaIdentifier=_uaIdentifier;
 @property unsigned long long eligibility; // @synthesize eligibility=_eligibility;
 @property(retain) NSSet *keywords; // @synthesize keywords=_keywords;
 @property(retain) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy) NSString *contentAction; // @synthesize contentAction=_contentAction;
 @property(copy) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)_propertiesDescription;

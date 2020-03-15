@@ -15,10 +15,10 @@
     NSString *_idNamespace;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *idNamespace; // @synthesize idNamespace=_idNamespace;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) NSString *ID; // @synthesize ID=_ID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithNamespace:(id)arg1 expiration:(id)arg2 ID:(id)arg3;
 

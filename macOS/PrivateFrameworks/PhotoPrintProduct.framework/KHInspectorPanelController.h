@@ -30,6 +30,7 @@
 }
 
 + (id)sharedPanelController;
+- (void).cxx_destruct;
 @property BOOL ignoreSelection; // @synthesize ignoreSelection=_ignoreSelection;
 @property BOOL temporarilyHidden; // @synthesize temporarilyHidden=_temporarilyHidden;
 @property(retain) NSArray *vContentConstraints; // @synthesize vContentConstraints=_vContentConstraints;
@@ -43,7 +44,6 @@
 @property(nonatomic) __weak KHSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 @property(retain) NSTextField *placeholderField; // @synthesize placeholderField=_placeholderField;
 @property(retain, nonatomic) NSPanel *panel; // @synthesize panel=_panel;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)selectionManager:(id)arg1 didRemoveSelections:(id)arg2;
 - (void)selectionManager:(id)arg1 didAddSelections:(id)arg2;

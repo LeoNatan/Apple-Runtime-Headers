@@ -15,10 +15,10 @@
     NSArray *_minimumDistanceSpecifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *minimumDistanceSpecifiers; // @synthesize minimumDistanceSpecifiers=_minimumDistanceSpecifiers;
 @property(nonatomic) double touchAccommodationsSwipeGestureMinimumDistance; // @synthesize touchAccommodationsSwipeGestureMinimumDistance=_touchAccommodationsSwipeGestureMinimumDistance;
 @property(nonatomic) _Bool touchAccommodationsAllowsSwipeGesturesToBypass; // @synthesize touchAccommodationsAllowsSwipeGesturesToBypass=_touchAccommodationsAllowsSwipeGesturesToBypass;
-- (void).cxx_destruct;
 - (id)_minimumDistanceSpecifiers;
 - (id)_specifierWithName:(id)arg1 minimumDistance:(double)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

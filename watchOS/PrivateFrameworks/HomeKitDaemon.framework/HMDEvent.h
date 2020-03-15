@@ -32,6 +32,7 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)hasMessageReceiverChildren;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int activationType; // @synthesize activationType=_activationType;
 @property(readonly, nonatomic, getter=isEndEvent) _Bool endEvent; // @synthesize endEvent=_endEvent;
 @property(retain, nonatomic) NSString *logString; // @synthesize logString=_logString;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak HMDEventTrigger *eventTrigger; // @synthesize eventTrigger=_eventTrigger;
-- (void).cxx_destruct;
 - (id)metricData;
 - (_Bool)_activate:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_transactionObjectRemoved:(id)arg1 message:(id)arg2;

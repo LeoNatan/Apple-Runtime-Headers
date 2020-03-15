@@ -21,11 +21,11 @@
 + (id)_getIDfromURLQueryParameters:(id)arg1 idKeyName:(id)arg2;
 + (void)_insertPageBehindTop:(id)arg1 viewControllers:(id)arg2 clearStack:(_Bool)arg3;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deferredOpenURLCompletion; // @synthesize deferredOpenURLCompletion=_deferredOpenURLCompletion;
 @property(retain, nonatomic) NSURL *deferredOpenURL; // @synthesize deferredOpenURL=_deferredOpenURL;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) _Bool openedByDeeplink; // @synthesize openedByDeeplink=_openedByDeeplink;
-- (void).cxx_destruct;
 - (void)_fetchLocalMediaWithAdamID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_processLocalLibraryLink:(id)arg1 playbackInitiationDate:(id)arg2 openURLCompletionDate:(id)arg3;
 - (void)_handleOpenURLRouterDataSource:(id)arg1 appContext:(id)arg2 clearStack:(_Bool)arg3 startDate:(id)arg4;

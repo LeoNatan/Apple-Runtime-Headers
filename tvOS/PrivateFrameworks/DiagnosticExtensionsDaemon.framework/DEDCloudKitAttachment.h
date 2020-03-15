@@ -14,9 +14,9 @@
     NSNumber *_fileSize;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *fileSize; // @synthesize fileSize=_fileSize;
 @property(retain) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)initWithURL:(id)arg1;
 
 @end

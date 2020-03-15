@@ -16,8 +16,8 @@
     NSOperationQueue *__delegateQueue;
 }
 
-@property(retain, nonatomic) NSOperationQueue *_delegateQueue; // @synthesize _delegateQueue=__delegateQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOperationQueue *_delegateQueue; // @synthesize _delegateQueue=__delegateQueue;
 @property(readonly) _Bool isValid;
 - (void)sendPingWithReceiveHandler:(CDUnknownBlockType)arg1;
 - (void)invalidateUnderlyingConnection;

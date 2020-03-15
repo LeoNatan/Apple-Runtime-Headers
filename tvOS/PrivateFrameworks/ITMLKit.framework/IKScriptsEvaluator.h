@@ -21,13 +21,13 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSMutableArray *records; // @synthesize records=_records;
 @property(retain, nonatomic) JSManagedValue *callback; // @synthesize callback=_callback;
 @property(nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(retain, nonatomic) NSArray *scripts; // @synthesize scripts=_scripts;
 @property(nonatomic) _Bool isJingleRequest; // @synthesize isJingleRequest=_isJingleRequest;
-- (void).cxx_destruct;
 - (void)_sendCallback:(id)arg1 inContext:(id)arg2 success:(_Bool)arg3;
 - (void)_operation:(id)arg1 finishedWithResult:(id)arg2 error:(id)arg3;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;

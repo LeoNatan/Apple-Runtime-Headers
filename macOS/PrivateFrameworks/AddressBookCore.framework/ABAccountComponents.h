@@ -23,6 +23,7 @@
 + (id)componentsWithIdentifier:(id)arg1 path:(id)arg2 account:(id)arg3 parentAccount:(id)arg4 store:(id)arg5;
 + (id)componentsWithIdentifier:(id)arg1 path:(id)arg2 account:(id)arg3 store:(id)arg4;
 + (id)componentsWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(readonly) NSNumber *dsid; // @synthesize dsid=_dsid;
 @property(readonly) id <ABACAccountStore> store; // @synthesize store=_store;
@@ -30,7 +31,6 @@
 @property(readonly) ABACAccount *account; // @synthesize account=_account;
 @property(readonly) NSString *path; // @synthesize path=_path;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 path:(id)arg2 account:(id)arg3 parentAccount:(id)arg4 store:(id)arg5;
 

@@ -26,6 +26,7 @@
 }
 
 + (void)addLocalInstanceName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *serviceMapQueue; // @synthesize serviceMapQueue=_serviceMapQueue;
 @property(retain) NSMutableDictionary *serviceToTxtRecordMap; // @synthesize serviceToTxtRecordMap=_serviceToTxtRecordMap;
 @property struct __SecIdentity *localIdentity; // @synthesize localIdentity=_localIdentity;
@@ -36,7 +37,6 @@
 @property BOOL allowLocalNetworkServer; // @synthesize allowLocalNetworkServer=_allowLocalNetworkServer;
 @property BOOL useSSL; // @synthesize useSSL=_useSSL;
 @property(retain) NSString *secretPassword; // @synthesize secretPassword;
-- (void).cxx_destruct;
 - (void)session:(id)arg1 benchmarkedSoftAP:(double)arg2 infrastructureSample:(double)arg3;
 - (void)sessionInterrupted:(id)arg1 connection:(id)arg2 active:(BOOL)arg3 didReplaceActiveConnection:(BOOL)arg4;
 - (void)session:(id)arg1 streamClosing:(id)arg2;

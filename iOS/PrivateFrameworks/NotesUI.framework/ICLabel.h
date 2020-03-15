@@ -17,12 +17,12 @@
     double _lineHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lineHeight; // @synthesize lineHeight=_lineHeight;
 @property(nonatomic) double paragraphSpacing; // @synthesize paragraphSpacing=_paragraphSpacing;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
 @property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (void)updateText;
 
 @end

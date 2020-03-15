@@ -26,6 +26,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mapGUIDtoMapFileURLMap; // @synthesize mapGUIDtoMapFileURLMap=_mapGUIDtoMapFileURLMap;
 @property(retain, nonatomic) NSMutableDictionary *mapURLtoRenderedImageMap; // @synthesize mapURLtoRenderedImageMap=_mapURLtoRenderedImageMap;
 @property(retain, nonatomic) NSMutableDictionary *fileURLToMapURLMap; // @synthesize fileURLToMapURLMap=_fileURLToMapURLMap;
@@ -38,7 +39,6 @@
 @property(retain) NSMutableSet *imageGUIDsNotWorthScaling; // @synthesize imageGUIDsNotWorthScaling=_imageGUIDsNotWorthScaling;
 @property(retain) NSMutableSet *imageGUIDsWritingToDisk; // @synthesize imageGUIDsWritingToDisk=_imageGUIDsWritingToDisk;
 @property(retain) NSMutableDictionary *imageGUIDToScaledDownPath; // @synthesize imageGUIDToScaledDownPath=_imageGUIDToScaledDownPath;
-- (void).cxx_destruct;
 - (void)postMapLoadComplete:(id)arg1;
 - (id)renderedMapImageForMapFileURL:(id)arg1;
 - (id)renderedMapImageForGUID:(id)arg1;

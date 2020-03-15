@@ -38,8 +38,8 @@
 + (id)functionName;
 + (_Bool)supportsInvalidation;
 + (_Bool)supportsPersistence;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_invalidate;
 - (void)_performAndScheduleTimer;

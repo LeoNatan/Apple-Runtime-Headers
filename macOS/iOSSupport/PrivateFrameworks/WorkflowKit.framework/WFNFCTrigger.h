@@ -19,9 +19,9 @@
 + (id)localizedDisplayName;
 + (BOOL)isSupportedOnThisDevice;
 + (BOOL)isAllowedToRunAutomatically;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *tagIdentifier; // @synthesize tagIdentifier=_tagIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

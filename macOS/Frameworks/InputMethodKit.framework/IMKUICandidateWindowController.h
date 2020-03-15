@@ -54,6 +54,7 @@
     BOOL _windowShouldAdjustToTotalCandidateSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL windowShouldAdjustToTotalCandidateSize; // @synthesize windowShouldAdjustToTotalCandidateSize=_windowShouldAdjustToTotalCandidateSize;
 @property(nonatomic) unsigned long long windowLevel; // @synthesize windowLevel=_windowLevel;
 @property(nonatomic) Class UICandidateClass; // @synthesize UICandidateClass=_UICandidateClass;
@@ -87,7 +88,6 @@
 @property(retain, nonatomic) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) NSAppearance *appearance; // @synthesize appearance=_appearance;
 @property(retain, nonatomic) NSArray *accessibilityItems; // @synthesize accessibilityItems=_accessibilityItems;
-- (void).cxx_destruct;
 - (void)radarButtonPressed;
 - (void)updateAppearanceView;
 - (id)appearanceView;

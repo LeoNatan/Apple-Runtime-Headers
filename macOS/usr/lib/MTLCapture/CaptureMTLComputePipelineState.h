@@ -22,9 +22,9 @@
     MTLComputePipelineDescriptor *_descriptor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) MTLComputePipelineDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 @property(retain, nonatomic) id <MTLFunction> function; // @synthesize function=_function;
-- (void).cxx_destruct;
 - (unsigned int)getComputeKernelTelemetryID;
 @property(readonly) unsigned long long uniqueIdentifier;
 @property(readonly) unsigned long long threadExecutionWidth;

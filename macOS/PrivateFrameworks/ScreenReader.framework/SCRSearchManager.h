@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
 
 + (void)initialize;
 + (id)searchManager;
+- (void).cxx_destruct;
 @property(nonatomic) long long _previouslyFocusedElementHash; // @synthesize _previouslyFocusedElementHash=__previouslyFocusedElementHash;
 @property(retain, nonatomic) SCRUIElement *_previouslyFoundUIElementFromMarker; // @synthesize _previouslyFoundUIElementFromMarker=__previouslyFoundUIElementFromMarker;
 @property(retain, nonatomic) _SCRSearchData *_searchData; // @synthesize _searchData=__searchData;
 @property(readonly, nonatomic) SCRVisualsManager *_visualsManager; // @synthesize _visualsManager=__visualsManager;
-- (void).cxx_destruct;
 - (long long)_iOSPerformSearchWithSearchString:(id)arg1 orAttribute:(long long)arg2 inDirection:(long long)arg3 request:(id)arg4 element:(id)arg5 stayWithin:(id)arg6;
 - (id)_validProviderNearElement:(id)arg1 attribute:(long long)arg2;
 - (id)_iOSGetElementForSearchWithSearchAttribute:(long long)arg1 inDirection:(long long)arg2 request:(id)arg3 element:(id)arg4 stayWithin:(id)arg5 provider:(id)arg6;

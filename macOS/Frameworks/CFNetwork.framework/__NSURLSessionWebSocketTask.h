@@ -24,6 +24,7 @@
     NSString *_protocolPicked;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *protocolPicked; // @synthesize protocolPicked=_protocolPicked;
 @property(retain) NSError *webSocketError; // @synthesize webSocketError=_webSocketError;
 @property BOOL readInProgress; // @synthesize readInProgress=_readInProgress;
@@ -36,7 +37,6 @@
 @property(readonly, copy) NSData *closeReason; // @synthesize closeReason=_closeReason;
 @property(readonly) long long closeCode; // @synthesize closeCode=_closeCode;
 @property long long maximumMessageSize; // @synthesize maximumMessageSize=_maximumMessageSize;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didFinishLoadingWithError:(id)arg2;
 - (void)_onqueue_didReceiveResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)_onqueue_validateWebSocketHandshake;

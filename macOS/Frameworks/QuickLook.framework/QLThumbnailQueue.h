@@ -20,13 +20,13 @@
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property CDUnknownFunctionPointerType callback; // @synthesize callback=_callback;
 @property const void *client; // @synthesize client=_client;
 @property struct __QLThumbnailQueue *wrapperStruct; // @synthesize wrapperStruct=_wrapperStruct;
-- (void).cxx_destruct;
 - (void)waitForCompletion;
 - (void)setMaxConcurrentThumbnails:(long long)arg1;
 - (void)cancelAll;

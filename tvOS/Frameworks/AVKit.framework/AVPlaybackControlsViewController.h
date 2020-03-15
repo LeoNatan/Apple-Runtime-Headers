@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     AVKeyValueObserverCollection *_keyValueObservers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(readonly) AVKeyValueObserverCollection *keyValueObservers; // @synthesize keyValueObservers=_keyValueObservers;
 @property(nonatomic) _Bool showsLoadingIndicator; // @synthesize showsLoadingIndicator=_showsLoadingIndicator;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
 @property(retain, nonatomic) AVDelegateManager *delegateManager; // @synthesize delegateManager=_delegateManager;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (_Bool)forwardMethodToPlayerViewController:(SEL)arg1 sender:(id)arg2;
 - (void)didChangePlayerController;
 - (void)_didChangePlayerControllerFrom:(id)arg1 to:(id)arg2;

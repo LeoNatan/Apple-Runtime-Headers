@@ -23,6 +23,7 @@
     NSArray *_faceIndexing;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *faceIndexing; // @synthesize faceIndexing=_faceIndexing;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) MDLSubmeshTopology *topology; // @synthesize topology=_topology;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) unsigned long long indexCount; // @synthesize indexCount=_indexCount;
 @property(readonly, retain, nonatomic) id <MDLMeshBuffer> indexBuffer; // @synthesize indexBuffer=_indexBuffer;
 @property(retain, nonatomic) MDLMaterial *material; // @synthesize material=_material;
-- (void).cxx_destruct;
 - (struct MDLAABB)boundingBoxForMesh:(id)arg1;
 - (void)debugPrintToFile:(struct __sFILE *)arg1;
 - (id)indexBufferAsIndexType:(unsigned long long)arg1;

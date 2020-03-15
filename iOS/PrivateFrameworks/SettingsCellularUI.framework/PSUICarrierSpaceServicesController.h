@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_appsList;
 }
 
-@property(retain, nonatomic) NSArray *appsList; // @synthesize appsList=_appsList;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *appsList; // @synthesize appsList=_appsList;
 - (void)moreAppsTapped:(id)arg1;
 - (_Bool)shouldShowMoreApps;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

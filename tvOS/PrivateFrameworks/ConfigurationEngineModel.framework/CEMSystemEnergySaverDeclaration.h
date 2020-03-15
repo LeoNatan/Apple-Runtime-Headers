@@ -27,13 +27,13 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadDestroyFVKeyOnStandby; // @synthesize payloadDestroyFVKeyOnStandby=_payloadDestroyFVKeyOnStandby;
 @property(copy, nonatomic) NSNumber *payloadSleepDisabled; // @synthesize payloadSleepDisabled=_payloadSleepDisabled;
 @property(copy, nonatomic) CEMSystemEnergySaverDeclaration_EnergySaverSchedule *payloadComappleEnergySaverdesktopSchedule; // @synthesize payloadComappleEnergySaverdesktopSchedule=_payloadComappleEnergySaverdesktopSchedule;
 @property(copy, nonatomic) CEMSystemEnergySaverDeclaration_PowerSettings *payloadComappleEnergySaverportableBatteryPower; // @synthesize payloadComappleEnergySaverportableBatteryPower=_payloadComappleEnergySaverportableBatteryPower;
 @property(copy, nonatomic) CEMSystemEnergySaverDeclaration_PowerSettings *payloadComappleEnergySaverportableACPower; // @synthesize payloadComappleEnergySaverportableACPower=_payloadComappleEnergySaverportableACPower;
 @property(copy, nonatomic) CEMSystemEnergySaverDeclaration_PowerSettings *payloadComappleEnergySaverdesktopACPower; // @synthesize payloadComappleEnergySaverdesktopACPower=_payloadComappleEnergySaverdesktopACPower;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

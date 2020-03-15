@@ -17,11 +17,11 @@
     NSArray *_infoMessages;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *infoMessages; // @synthesize infoMessages=_infoMessages;
 @property(retain, nonatomic) NSArray *errorMessages; // @synthesize errorMessages=_errorMessages;
 @property(retain, nonatomic) NSManagedObject<PLValidatedManagedObject> *validatedObject; // @synthesize validatedObject=_validatedObject;
 @property(nonatomic) _Bool status; // @synthesize status=_status;
-- (void).cxx_destruct;
 
 @end
 

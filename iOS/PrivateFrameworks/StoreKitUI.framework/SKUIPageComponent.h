@@ -16,9 +16,9 @@
     SKUIViewElement *_viewElement;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(nonatomic, setter=_setMetricsLocationPosition:) long long metricsLocationPosition; // @synthesize metricsLocationPosition=_metricsLocationPosition;
-- (void).cxx_destruct;
 - (void)_enumerateMissingItemIdentifiersFromLockups:(id)arg1 startIndex:(long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)_enumerateMissingItemIdentifiersFromLinks:(id)arg1 startIndex:(long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)_enumerateMissingItemIdentifiersFromBricks:(id)arg1 startIndex:(long long)arg2 usingBlock:(CDUnknownBlockType)arg3;

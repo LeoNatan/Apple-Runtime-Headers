@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *coalescedTimers; // @synthesize coalescedTimers=_coalescedTimers;
 @property(retain, nonatomic) NSMutableDictionary *coalescedKeys; // @synthesize coalescedKeys=_coalescedKeys;
 @property(retain, nonatomic) NSMutableDictionary *pendingUpdates; // @synthesize pendingUpdates=_pendingUpdates;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) Class dataClass; // @synthesize dataClass=_dataClass;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(copy, nonatomic) _UIStatusBarData *overlayData; // @synthesize overlayData=_overlayData;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *coalescedEntryKeys;
 - (void)endCoalescingUpdatesForEntryKeys:(id)arg1;
 - (void)beginCoalescingUpdatesForEntryKeys:(id)arg1 delay:(double)arg2;

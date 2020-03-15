@@ -16,10 +16,10 @@
 }
 
 + (id)shared;
+- (void).cxx_destruct;
 @property(nonatomic) struct __IOHIDManager *_hidManager; // @synthesize _hidManager=__hidManager;
 @property(nonatomic) __weak id <AXEHIDDeviceDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL detectDevices; // @synthesize detectDevices=_detectDevices;
-- (void).cxx_destruct;
 - (id)_matchingDictionaries;
 
 @end

@@ -95,6 +95,7 @@
 + (int)translateToUISpellCheckingType:(unsigned int)arg1;
 + (int)translateToUIAutocorrectionType:(unsigned int)arg1;
 + (int)translateToUIAutocapitalizationType:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool loadKeyboardsForSiriLanguage; // @synthesize loadKeyboardsForSiriLanguage;
 @property(nonatomic) int textScriptType; // @synthesize textScriptType;
 @property(nonatomic) _Bool isCarPlayIdiom; // @synthesize isCarPlayIdiom;
@@ -157,7 +158,6 @@
 @property(nonatomic) int spellCheckingType; // @synthesize spellCheckingType;
 @property(nonatomic) int autocorrectionType; // @synthesize autocorrectionType;
 @property(nonatomic) int autocapitalizationType; // @synthesize autocapitalizationType;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (int)updateResultComparedToTraits:(id)arg1;
 - (_Bool)publicTraitsMatchTraits:(id)arg1;

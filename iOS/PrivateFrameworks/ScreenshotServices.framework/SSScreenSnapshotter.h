@@ -14,8 +14,8 @@
 }
 
 + (id)snapshotterForScreen:(id)arg1;
-@property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 - (id)takeScreenshot;
 - (id)initWithScreen:(id)arg1;
 

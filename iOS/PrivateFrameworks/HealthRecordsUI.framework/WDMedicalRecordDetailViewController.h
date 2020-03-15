@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     WDMedicalRecordDetailDataProvider *_medicalRecordDataProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WDMedicalRecordDetailDataProvider *medicalRecordDataProvider; // @synthesize medicalRecordDataProvider=_medicalRecordDataProvider;
 @property(retain, nonatomic) HKMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
 @property(readonly, copy, nonatomic) HKAccountOwner *accountOwner; // @synthesize accountOwner=_accountOwner;
 @property(readonly, copy, nonatomic) HKClinicalAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)detailDataProviderHasDisplayItemUpdate:(id)arg1;
 - (void)_tapToRadar:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;

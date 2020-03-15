@@ -18,9 +18,9 @@
     id <CSLEcoModeConfirmationViewButtonProtocol> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) __weak id <CSLEcoModeConfirmationViewButtonProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long)_findBestFontOptionForLabelHeight:(float)arg1;
 - (id)_localizedAlertText:(unsigned long)arg1;
 - (id)_alertColor;

@@ -26,6 +26,7 @@
     KHPhotoCaptionPickerController *_captionPicker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHPhotoCaptionPickerController *captionPicker; // @synthesize captionPicker=_captionPicker;
 @property(retain, nonatomic) KHPhotoPrintOptionsController *printOptionsController; // @synthesize printOptionsController=_printOptionsController;
 @property(retain, nonatomic) KHPhotoEditButtonController *editButtonController; // @synthesize editButtonController=_editButtonController;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) KHInspectorTileViewController *zoomTileController; // @synthesize zoomTileController=_zoomTileController;
 @property(retain, nonatomic) NSSlider *opacitySlider; // @synthesize opacitySlider=_opacitySlider;
 @property(retain, nonatomic) NSSlider *zoomSlider; // @synthesize zoomSlider=_zoomSlider;
-- (void).cxx_destruct;
 - (void)opacitySliderChanged:(id)arg1;
 - (void)zoomSliderChanged:(id)arg1;
 - (id)badgeImage;

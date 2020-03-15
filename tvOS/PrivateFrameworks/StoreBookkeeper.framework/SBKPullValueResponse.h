@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)responseWithResponse:(id)arg1 transaction:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *domainVersion; // @synthesize domainVersion=_domainVersion;
 @property(readonly) NSData *itemValuePayload; // @synthesize itemValuePayload=_itemValuePayload;
 @property(readonly) NSString *itemVersion; // @synthesize itemVersion=_itemVersion;
 @property(readonly) NSString *itemKey; // @synthesize itemKey=_itemKey;
-- (void).cxx_destruct;
 - (void)deserializeResponseBodyWithTransaction:(id)arg1;
 
 @end

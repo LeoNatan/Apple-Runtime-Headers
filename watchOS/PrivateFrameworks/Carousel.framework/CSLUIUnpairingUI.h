@@ -18,12 +18,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLPIBacklightAssertion *unpairingUIAssertion; // @synthesize unpairingUIAssertion=_unpairingUIAssertion;
 @property(retain, nonatomic) CSLSAlertSuppressionAssertion *alertSuppression; // @synthesize alertSuppression=_alertSuppression;
 @property(retain, nonatomic) UIWindow *overlayWindow; // @synthesize overlayWindow=_overlayWindow;
 @property(nonatomic) int deviceUnpairedToken; // @synthesize deviceUnpairedToken=_deviceUnpairedToken;
 @property(nonatomic) int deviceIsUnpairingToken; // @synthesize deviceIsUnpairingToken=_deviceIsUnpairingToken;
-- (void).cxx_destruct;
 - (void)hideSpinner;
 - (void)displaySpinner;
 - (id)init;

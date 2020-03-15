@@ -23,6 +23,7 @@
     struct UIEdgeInsets _evaluatedInset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIActivityGroupActivityCell *draggingView; // @synthesize draggingView=_draggingView;
 @property(nonatomic) struct UIOffset draggingOffset; // @synthesize draggingOffset=_draggingOffset;
 @property(copy, nonatomic) NSArray *preparedUpdateItems; // @synthesize preparedUpdateItems=_preparedUpdateItems;
@@ -34,7 +35,6 @@
 @property(nonatomic) struct UIEdgeInsets externalSafeInset; // @synthesize externalSafeInset=_externalSafeInset;
 @property(copy, nonatomic) NSIndexPath *indexPathForDraggedItem; // @synthesize indexPathForDraggedItem=_indexPathForDraggedItem;
 @property(retain, nonatomic) UILongPressGestureRecognizer *editingGestureRecognizer; // @synthesize editingGestureRecognizer=_editingGestureRecognizer;
-- (void).cxx_destruct;
 - (_Bool)_shouldScrollToContentBeginningInRightToLeft;
 - (void)cancelDraggingForGesture:(id)arg1;
 - (_Bool)shouldCancelDraggingForGesture:(id)arg1;

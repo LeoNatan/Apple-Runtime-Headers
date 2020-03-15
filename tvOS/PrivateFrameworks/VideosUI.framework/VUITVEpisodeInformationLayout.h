@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     VUIMediaTagsViewLayout *_metadataLayout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VUIMediaTagsViewLayout *metadataLayout; // @synthesize metadataLayout=_metadataLayout;
 @property(readonly, nonatomic) VUITextLayout *descriptionLayout; // @synthesize descriptionLayout=_descriptionLayout;
 @property(readonly, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
 @property(readonly, nonatomic) VUITextLayout *episodeLayout; // @synthesize episodeLayout=_episodeLayout;
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (void)_configureLayout;
 - (id)focusedBackgroundColorWithTraitCollection:(id)arg1;
 - (id)highlightedBackgroundColorWithTraitCollection:(id)arg1;

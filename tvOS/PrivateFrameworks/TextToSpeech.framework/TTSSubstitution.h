@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUserSubstitution; // @synthesize isUserSubstitution=_isUserSubstitution;
 @property(readonly, nonatomic) _Bool isReplacementTextSurroundedByPunctuation; // @synthesize isReplacementTextSurroundedByPunctuation=_isReplacementTextSurroundedByPunctuation;
 @property(readonly, nonatomic) _Bool isReplacementTextAllPunctuation; // @synthesize isReplacementTextAllPunctuation=_isReplacementTextAllPunctuation;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSString *phonemes; // @synthesize phonemes=_phonemes;
 @property(copy, nonatomic) NSString *replacementString; // @synthesize replacementString=_replacementString;
 @property(copy, nonatomic) NSString *originalString; // @synthesize originalString=_originalString;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

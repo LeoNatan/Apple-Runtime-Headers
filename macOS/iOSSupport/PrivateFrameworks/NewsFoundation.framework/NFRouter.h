@@ -16,8 +16,8 @@
     id <NFResolver> _resolver;
 }
 
-@property(readonly, nonatomic) id <NFResolver> resolver; // @synthesize resolver=_resolver;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NFResolver> resolver; // @synthesize resolver=_resolver;
 - (id)resolveRoutable:(id)arg1;
 - (id)initWithResolver:(id)arg1;
 

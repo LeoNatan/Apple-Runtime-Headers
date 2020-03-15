@@ -6,7 +6,7 @@
 
 #import <AVFoundation/AVCaptureDevice.h>
 
-@class AVCaptureDeviceControlRequestQueue, AVCaptureDeviceFormat, AVCaptureSystemPressureState, AVWeakReference, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString;
+@class AVCaptureDeviceControlRequestQueue, AVCaptureDeviceFormat, AVCaptureSystemPressureState, AVWeakReference, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -104,6 +104,7 @@ __attribute__((visibility("hidden")))
     double _minAvailableVideoZoomFactor;
     double _maxAvailableVideoZoomFactor;
     _Bool _depthDataDeliveryEnabled;
+    _Bool _cameraCalibrationDataDeliveryEnabled;
     long long _shallowDepthOfFieldEffectStatus;
     NSString *_bravoCameraSelectionBehavior;
     AVWeakReference *_weakReference;
@@ -128,6 +129,7 @@ __attribute__((visibility("hidden")))
     long long _nonDestructiveCropAspectRatio;
     _Bool _geometricDistortionCorrectionEnabled;
     _Bool _globalToneMappingEnabled;
+    NSData *_cameraPoseMatrix;
 }
 
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -186,6 +188,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEyeClosedDetectionSupported;
 - (_Bool)isEyeDetectionSupported;
 - (id)supportedMetadataObjectIdentifiers;
+- (void)_setCameraCalibrationDataDeliveryEnabled:(_Bool)arg1;
 - (void)_setDepthDataDeliveryEnabled:(_Bool)arg1;
 - (_Bool)_isDepthDataDeliveryEnabled;
 - (void)_setShallowDepthOfFieldEffectStatus:(long long)arg1;

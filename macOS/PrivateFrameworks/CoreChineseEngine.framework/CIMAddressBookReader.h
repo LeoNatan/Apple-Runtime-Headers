@@ -15,9 +15,9 @@
 }
 
 + (id)sharedAddressBookReader;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *cachedEntries; // @synthesize cachedEntries=_cachedEntries;
 @property(copy) NSString *inputMode; // @synthesize inputMode=_inputMode;
-- (void).cxx_destruct;
 - (void)addressBookChanged;
 - (id)addressBookNamePhoneticPairsFromInputMode:(id)arg1;
 - (id)transliterate:(id)arg1 inputMode:(id)arg2;

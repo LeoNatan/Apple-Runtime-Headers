@@ -18,11 +18,11 @@
 }
 
 + (_Bool)prefersNonBlockingReloads;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *controlPanelItems; // @synthesize controlPanelItems=_controlPanelItems;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, copy, nonatomic) HFItem<NSCopying> *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)controlPanelItemComparator;
 - (id)items;
 - (id)invalidationReasons;

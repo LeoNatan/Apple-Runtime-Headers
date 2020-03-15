@@ -16,9 +16,9 @@
     EKUIGadget *_gadget;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldDrawSeparator; // @synthesize shouldDrawSeparator=_shouldDrawSeparator;
 @property __weak EKUIGadget *gadget; // @synthesize gadget=_gadget;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;

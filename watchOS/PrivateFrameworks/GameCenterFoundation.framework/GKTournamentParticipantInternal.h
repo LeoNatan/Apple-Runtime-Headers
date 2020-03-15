@@ -20,6 +20,7 @@
 }
 
 + (id)secureCodedPropertyKeys;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cheatingIndicator; // @synthesize cheatingIndicator=_cheatingIndicator;
 @property(nonatomic) int participantState; // @synthesize participantState=_participantState;
 @property(nonatomic) int replayCount; // @synthesize replayCount=_replayCount;
@@ -27,7 +28,6 @@
 @property(nonatomic) long long score; // @synthesize score=_score;
 @property(retain, nonatomic) GKPlayerInternal *player; // @synthesize player=_player;
 @property(retain, nonatomic) NSString *tournamentID; // @synthesize tournamentID=_tournamentID;
-- (void).cxx_destruct;
 
 @end
 

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _regionChangeCount;
     BOOL _inProgressRegionChangeIsAnimated;
     struct VKEdgeInsets _edgeInsets;
+    _Bool _edgeInsetsAnimating;
     struct MapDataAccess *_mapDataAccess;
     struct AnimationRunner *_animationRunner;
     struct RunLoopController *_runLoopController;
@@ -72,8 +73,8 @@ __attribute__((visibility("hidden")))
 - (double)currentZoomLevel;
 - (double)maximumZoomLevel;
 - (double)minimumZoomLevel;
-- (void)edgeInsetsDidEndAnimating;
-- (void)edgeInsetsWillBeginAnimating;
+- (BOOL)edgeInsetsAnimating;
+- (void)setEdgeInsetsAnimating:(BOOL)arg1;
 - (struct VKEdgeInsets)edgeInsets;
 - (void)setEdgeInsets:(struct VKEdgeInsets)arg1;
 - (Matrix_443f5d51)cursorFromScreenPoint:(struct CGPoint)arg1;

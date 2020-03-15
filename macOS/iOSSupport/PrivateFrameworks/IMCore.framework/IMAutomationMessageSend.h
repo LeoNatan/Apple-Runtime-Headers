@@ -14,9 +14,9 @@
     NSMutableDictionary *_sentMessageInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sentMessageInfo; // @synthesize sentMessageInfo=_sentMessageInfo;
 @property(retain, nonatomic) NSMutableSet *pendingSendGUIDs; // @synthesize pendingSendGUIDs=_pendingSendGUIDs;
-- (void).cxx_destruct;
 - (id)dictionaryFromGUID:(id)arg1;
 - (id)fileSizeForMessageGUID:(id)arg1 withFilePathIndex:(long long)arg2;
 - (id)uploadAttachmentToCloudkitWithMessageGUID:(id)arg1 andFilePathIndex:(long long)arg2;

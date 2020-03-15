@@ -25,6 +25,7 @@
     CDUnknownBlockType _cleanupTask;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cleanupTask; // @synthesize cleanupTask=_cleanupTask;
 @property(copy, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(retain, nonatomic) MCUIProfile *UIProfile; // @synthesize UIProfile=_UIProfile;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSData *profileData; // @synthesize profileData=_profileData;
 @property(retain, nonatomic) MCProfile *profile; // @synthesize profile=_profile;
 @property(nonatomic) __weak UIViewController<MCProfileTitlePageViewModelDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_installErrorIsUserCancelledError:(id)arg1;
 - (void)profileConnection:(id)arg1 didFinishPreflightWithError:(id)arg2;
 - (void)profileConnection:(id)arg1 didRequestUserInput:(id)arg2;

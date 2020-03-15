@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_bagKeySets;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *bagKeySets; // @synthesize bagKeySets=_bagKeySets;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *bagKeySets; // @synthesize bagKeySets=_bagKeySets;
 - (_Bool)hasBagKeySetForConsumer:(Class)arg1;
 - (id)generateAggregatedBagKeySet;
 - (void)addBagKeySet:(id)arg1 forConsumer:(Class)arg2;

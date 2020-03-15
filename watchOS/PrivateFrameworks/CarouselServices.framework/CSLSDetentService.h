@@ -27,13 +27,13 @@
 }
 
 + (id)sharedDetentService;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *detentsByType; // @synthesize detentsByType=_detentsByType;
 @property(retain) NSArray *detents; // @synthesize detents=_detents;
 @property _Bool flashDetents; // @synthesize flashDetents=_flashDetents;
 @property _Bool detentsDebug; // @synthesize detentsDebug=_detentsDebug;
 @property _Bool detentsDisabled; // @synthesize detentsDisabled=_detentsDisabled;
 @property(retain, nonatomic) AOPHapticsController *aopHapticsController; // @synthesize aopHapticsController=_aopHapticsController;
-- (void).cxx_destruct;
 - (void)recordMetrics:(id)arg1;
 - (void)_queue_releaseAssertion:(CDUnknownBlockType)arg1;
 - (void)setTest:(_Bool)arg1;

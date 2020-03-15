@@ -13,8 +13,8 @@
     NSArray *_services;
 }
 
-@property(readonly, nonatomic) NSArray *services; // @synthesize services=_services;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *services; // @synthesize services=_services;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 
 @end

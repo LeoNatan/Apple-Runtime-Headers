@@ -17,11 +17,11 @@
     NSDictionary *_enumNamesToLabels;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *enumNamesToLabels; // @synthesize enumNamesToLabels=_enumNamesToLabels;
 @property(readonly, nonatomic) NSDictionary *keysToEnumNames; // @synthesize keysToEnumNames=_keysToEnumNames;
 @property(readonly, nonatomic) NSDictionary *enumNamesToKeys; // @synthesize enumNamesToKeys=_enumNamesToKeys;
 @property(readonly, nonatomic) INCodableEnumAttribute *enumAttribute; // @synthesize enumAttribute=_enumAttribute;
-- (void).cxx_destruct;
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) NSArray *possibleStates; // @synthesize possibleStates=_possibleStates;
 - (id)initWithDefinition:(id)arg1;

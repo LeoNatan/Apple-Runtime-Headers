@@ -17,10 +17,10 @@
     PSRootController *_rootController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PSRootController *rootController; // @synthesize rootController=_rootController;
 @property(retain, nonatomic) MFMailComposeViewController *mailComposeController; // @synthesize mailComposeController=_mailComposeController;
 @property(retain, nonatomic) UIBarButtonItem *emailButton; // @synthesize emailButton=_emailButton;
-- (void).cxx_destruct;
 - (void)emailFile:(id)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (void)setPreferenceSpecifier:(id)arg1;

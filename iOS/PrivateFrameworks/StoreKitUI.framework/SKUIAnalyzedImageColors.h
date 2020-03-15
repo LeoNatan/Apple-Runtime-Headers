@@ -16,11 +16,11 @@
     UIColor *_textSecondaryColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isBackgroundLight; // @synthesize isBackgroundLight=_isBackgroundLight;
 @property(retain, nonatomic) UIColor *textSecondaryColor; // @synthesize textSecondaryColor=_textSecondaryColor;
 @property(retain, nonatomic) UIColor *textPrimaryColor; // @synthesize textPrimaryColor=_textPrimaryColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,6 +16,8 @@
 }
 
 - (void).cxx_destruct;
+- (id)leafChildCountForFoldersInFolderWithID:(int)arg1;
+- (unsigned long long)leafChildCountForBookmarksInFolderWithID:(int)arg1;
 - (id)databaseHealthInformation;
 - (id)bookmarkWithID:(int)arg1;
 - (id)readingListBookmarksMatchingString:(id)arg1 maxResults:(unsigned int)arg2 onlyArchivedBookmarks:(_Bool)arg3;

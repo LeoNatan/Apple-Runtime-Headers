@@ -17,12 +17,12 @@
     struct CGSize _unitSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *controlSignalLayer; // @synthesize controlSignalLayer=_controlSignalLayer;
 @property(retain, nonatomic) NSMutableArray *gridLayers; // @synthesize gridLayers=_gridLayers;
 @property(retain, nonatomic) UIBezierPath *controlSignalPath; // @synthesize controlSignalPath=_controlSignalPath;
 @property(retain, nonatomic) NSArray *grids; // @synthesize grids=_grids;
 @property(nonatomic) struct CGSize unitSize; // @synthesize unitSize=_unitSize;
-- (void).cxx_destruct;
 - (void)_createLayers;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) struct CGSize majorGridSize;

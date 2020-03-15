@@ -16,8 +16,8 @@
 
 + (id)actionButtonWithStyle:(unsigned int)arg1;
 + (void)_setupActionButtonSpec;
-@property(retain, nonatomic) PUICTableViewRowAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUICTableViewRowAction *action; // @synthesize action=_action;
 - (void)_fadeOutForDestructiveAction;
 - (void)_setHighlightedAppearance:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;

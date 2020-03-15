@@ -16,9 +16,9 @@
     unsigned long long _selectionAffinity;
 }
 
-@property(nonatomic) unsigned long long selectionAffinity; // @synthesize selectionAffinity=_selectionAffinity;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long selectionAffinity; // @synthesize selectionAffinity=_selectionAffinity;
 @property(readonly, copy) NSString *description;
 - (id)serialize;
 - (void)saveToArchive:(struct Selection *)arg1;

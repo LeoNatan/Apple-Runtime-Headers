@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)sigRequestType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sigRequests; // @synthesize sigRequests=_sigRequests;
 @property(retain, nonatomic) NSString *buildPlatform; // @synthesize buildPlatform=_buildPlatform;
 @property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(nonatomic) unsigned int ver; // @synthesize ver=_ver;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

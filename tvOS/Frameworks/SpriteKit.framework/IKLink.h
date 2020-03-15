@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     union _GLKVector2 _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) union _GLKVector2 size; // @synthesize size=_size;
 @property(nonatomic) float length; // @synthesize length=_length;
 @property(readonly, nonatomic) float angle; // @synthesize angle=_angle;
 @property(nonatomic) float angleInitial; // @synthesize angleInitial=_angleInitial;
 @property(nonatomic) union _GLKVector2 position; // @synthesize position=_position;
 @property(retain, nonatomic) SKNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (void)rotateByAngle:(float)arg1;
 - (double)normalizeAngle:(double)arg1;
 - (id)initWithNode:(id)arg1;

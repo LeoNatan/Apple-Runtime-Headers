@@ -14,9 +14,9 @@
     NSString *_application;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *application; // @synthesize application=_application;
 @property(readonly) KTApplicationPublicKeyStore *keyStore; // @synthesize keyStore=_keyStore;
-- (void).cxx_destruct;
 - (BOOL)verifyPatConfigInclusionProofWithPerAppLogEntry:(id)arg1 topLevelTreeEntry:(id)arg2 error:(id *)arg3;
 - (id)initWithKeyStore:(id)arg1 application:(id)arg2;
 

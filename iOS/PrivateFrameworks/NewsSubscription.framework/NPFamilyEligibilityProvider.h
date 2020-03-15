@@ -18,11 +18,11 @@
     FAFamilyEligibilityRequester *_eligibilityRequester;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FAFamilyEligibilityRequester *eligibilityRequester; // @synthesize eligibilityRequester=_eligibilityRequester;
 @property(readonly, nonatomic) AIDAAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 @property(readonly, nonatomic) ACAccountStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
-- (struct NSDictionary *)accountsForAccountManager:(id)arg1;
+- (id)accountsForAccountManager:(id)arg1;
 - (id)requestFamilyEligibility;
 - (id)init;
 

@@ -14,9 +14,9 @@
     NSDictionary *_additionalTrackMetadata;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *additionalTrackMetadata; // @synthesize additionalTrackMetadata=_additionalTrackMetadata;
 @property(readonly, nonatomic) long long storeItemID; // @synthesize storeItemID=_storeItemID;
-- (void).cxx_destruct;
 - (id)storeItem;
 - (id)initWithStoreItemID:(long long)arg1 additionalTrackMetadata:(id)arg2;
 

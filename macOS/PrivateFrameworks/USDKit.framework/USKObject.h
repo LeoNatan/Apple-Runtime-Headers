@@ -14,9 +14,9 @@
     USKObjectPath *_path;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) USKObjectPath *path; // @synthesize path=_path;
 @property(readonly, retain, nonatomic) USKToken *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *metadata;
 
 @end

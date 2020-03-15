@@ -24,6 +24,7 @@
 + (id)layerWithFeatureChannelCount:(unsigned long long)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 variance_epsilon:(float)arg6 momentum:(float)arg7;
 + (id)layerWithFeatureChannelCount:(unsigned long long)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 variance_epsilon:(float)arg6;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float momentum; // @synthesize momentum=_momentum;
 @property(readonly, nonatomic) float varianceEpsilon; // @synthesize varianceEpsilon=_varianceEpsilon;
 @property(readonly, nonatomic) MLFoundationTensor *gamma; // @synthesize gamma=_gamma;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) MLFoundationTensor *variance; // @synthesize variance=_variance;
 @property(readonly, nonatomic) MLFoundationTensor *mean; // @synthesize mean=_mean;
 @property(readonly, nonatomic) unsigned long long featureChannelCount; // @synthesize featureChannelCount=_featureChannelCount;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;
 - (id)initWithFeatureChannelCount:(unsigned long long)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 variance_epsilon:(float)arg6 momentum:(float)arg7;

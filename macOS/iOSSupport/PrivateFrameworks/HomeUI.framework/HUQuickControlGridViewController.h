@@ -14,8 +14,8 @@
 }
 
 + (id)controlItemPredicate;
-@property(readonly, nonatomic) HUQuickControlCollectionViewController *collectionViewController; // @synthesize collectionViewController=_collectionViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUQuickControlCollectionViewController *collectionViewController; // @synthesize collectionViewController=_collectionViewController;
 - (void)_subclass_configureQuickControlViewController:(id)arg1;
 - (id)childQuickControlContentViewControllers;
 - (BOOL)_canShowWhileLocked;

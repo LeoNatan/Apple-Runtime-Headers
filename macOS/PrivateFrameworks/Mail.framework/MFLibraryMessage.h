@@ -41,13 +41,13 @@
 + (id)_addMessageToResidentMessages:(id)arg1 overridingPreviousMessage:(BOOL)arg2;
 + (id)residentMessages;
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned int primitiveOptions; // @synthesize primitiveOptions=_primitiveOptions;
 @property BOOL isBeingChanged; // @synthesize isBeingChanged=_isBeingChanged;
 @property BOOL isCompacted; // @synthesize isCompacted=_isCompacted;
 @property long long mailboxID; // @synthesize mailboxID=_mailboxID;
 @property unsigned long long messageSize; // @synthesize messageSize=_messageSize;
 @property long long conversationID; // @synthesize conversationID=_conversationID;
-- (void).cxx_destruct;
 - (id)searchableItemWithHTML:(id)arg1 messageBody:(id)arg2 updatableAttributesOnly:(BOOL)arg3;
 - (void)appendMimeData:(id)arg1 partNumber:(id)arg2;
 @property(readonly) BOOL shouldIndexAttachmentsForSpotlight;

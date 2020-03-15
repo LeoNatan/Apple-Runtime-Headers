@@ -26,6 +26,7 @@
 }
 
 + (id)styleForScreenWithSize:(struct CGSize)arg1 orientation:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double conditionsLabelBaselineToBottom; // @synthesize conditionsLabelBaselineToBottom=_conditionsLabelBaselineToBottom;
 @property(nonatomic) double conditionsLabelBaselineToLocationLabelBaseline; // @synthesize conditionsLabelBaselineToLocationLabelBaseline=_conditionsLabelBaselineToLocationLabelBaseline;
 @property(nonatomic) double locationLabelBaselineToTemperatureLabelBaseline; // @synthesize locationLabelBaselineToTemperatureLabelBaseline=_locationLabelBaselineToTemperatureLabelBaseline;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) UIFont *locationFont; // @synthesize locationFont=_locationFont;
 @property(nonatomic) unsigned long long format; // @synthesize format=_format;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_setupForDefaultWithOrientation:(long long)arg1;
 - (void)_setupForGigantorWithOrientation:(long long)arg1;

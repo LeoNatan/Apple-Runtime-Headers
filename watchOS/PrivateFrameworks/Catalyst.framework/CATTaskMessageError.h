@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSError *taskError; // @synthesize taskError=_taskError;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *taskError; // @synthesize taskError=_taskError;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTaskUUID:(id)arg1 taskError:(id)arg2;

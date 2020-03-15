@@ -23,6 +23,7 @@
     NSArray *_replaceableConstraints;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(retain, nonatomic) NSArray *replaceableConstraints; // @synthesize replaceableConstraints=_replaceableConstraints;
 @property(retain, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) GKLabel *subLabel; // @synthesize subLabel=_subLabel;
 @property(retain, nonatomic) GKLabel *label; // @synthesize label=_label;
 @property(nonatomic) double height; // @synthesize height=_height;
-- (void).cxx_destruct;
 - (void)objectModelDidChange:(id)arg1;
 - (void)buttonTapped:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

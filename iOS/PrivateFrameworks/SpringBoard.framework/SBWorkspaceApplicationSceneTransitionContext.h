@@ -37,6 +37,7 @@
     SBApplicationSceneEntityDestructionIntent *_intentForEntityRemoval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAlreadyPopulatedRequestedWorkspaceEntities:) _Bool _alreadyPopulatedRequestedWorkspaceEntities; // @synthesize _alreadyPopulatedRequestedWorkspaceEntities=__alreadyPopulatedRequestedWorkspaceEntities;
 @property(retain, nonatomic) SBApplicationSceneEntityDestructionIntent *intentForEntityRemoval; // @synthesize intentForEntityRemoval=_intentForEntityRemoval;
 @property(copy, nonatomic) NSString *requestedAppExposeBundleID; // @synthesize requestedAppExposeBundleID=_requestedAppExposeBundleID;
@@ -55,7 +56,6 @@
 @property(nonatomic) _Bool alwaysRunsWatchdog; // @synthesize alwaysRunsWatchdog=_alwaysRunsWatchdog;
 @property(nonatomic) _Bool fencesAnimations; // @synthesize fencesAnimations=_fencesAnimations;
 @property(nonatomic, getter=isBackground) _Bool background; // @synthesize background=_background;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)compactDescriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)_displayConfiguration;

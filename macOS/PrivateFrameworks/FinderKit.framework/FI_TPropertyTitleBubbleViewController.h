@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingShouldBeVisible;
-@property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 - (void)updateProgressView;
 - (id)progressView;
 - (_Bool)hasProgressView;

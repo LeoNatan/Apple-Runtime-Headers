@@ -30,10 +30,6 @@ struct _NSRange {
     unsigned long long _field2;
 };
 
-struct _UIArrayController {
-    Class _field1;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

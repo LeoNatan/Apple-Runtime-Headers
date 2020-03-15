@@ -14,8 +14,8 @@
 }
 
 + (id)instance;
-@property(retain, nonatomic) DACoreDAVLogger *curLogger; // @synthesize curLogger=_curLogger;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DACoreDAVLogger *curLogger; // @synthesize curLogger=_curLogger;
 - (void)logData:(id)arg1;
 - (void)logStringWithFormat:(id)arg1;
 - (void)finishSnippets;

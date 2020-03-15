@@ -14,9 +14,9 @@
     NSString *_instanceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *instanceIdentifier; // @synthesize instanceIdentifier=_instanceIdentifier;
 @property(retain, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
-- (void).cxx_destruct;
 
 @end
 

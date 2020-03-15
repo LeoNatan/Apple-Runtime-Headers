@@ -23,6 +23,7 @@
     _Bool _shouldEnableMessagesExtension;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldEnableMessagesExtension; // @synthesize shouldEnableMessagesExtension=_shouldEnableMessagesExtension;
 @property(readonly, nonatomic) NSString *variantIdentifier; // @synthesize variantIdentifier=_variantIdentifier;
 @property(readonly, nonatomic) float price; // @synthesize price=_price;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSString *confirmationText; // @synthesize confirmationText=_confirmationText;
 @property(readonly, nonatomic) NSString *buttonText; // @synthesize buttonText=_buttonText;
 @property(readonly, nonatomic) NSString *actionParameters; // @synthesize actionParameters=_actionParameters;
-- (void).cxx_destruct;
 - (void)_setFileSizeWithFlavors:(id)arg1;
 - (void)_setFileSizeWithAssets:(id)arg1;
 @property(readonly, nonatomic) NSMutableDictionary *cacheRepresentation;

@@ -16,11 +16,11 @@
     NSString *_signInPageURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *signInPageURL; // @synthesize signInPageURL=_signInPageURL;
 @property(copy, nonatomic) NSString *confirmationDescription; // @synthesize confirmationDescription=_confirmationDescription;
 @property(copy, nonatomic) NSString *confirmationTitle; // @synthesize confirmationTitle=_confirmationTitle;
 @property(nonatomic) _Bool signOutExitsApp; // @synthesize signOutExitsApp=_signOutExitsApp;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

@@ -17,10 +17,10 @@
     NSString *_localizedDisplayName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localizedDisplayName; // @synthesize localizedDisplayName=_localizedDisplayName;
 @property(nonatomic) double iconImageScale; // @synthesize iconImageScale=_iconImageScale;
 @property(retain, nonatomic) NSData *iconImageData; // @synthesize iconImageData=_iconImageData;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

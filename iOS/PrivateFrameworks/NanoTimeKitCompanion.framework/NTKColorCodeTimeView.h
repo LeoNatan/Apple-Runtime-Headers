@@ -16,8 +16,8 @@
     NSDate *_date;
 }
 
-@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void)layoutSubviews;
 - (id)init;
 

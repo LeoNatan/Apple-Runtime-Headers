@@ -17,9 +17,9 @@
     id <HBUITopShelfContentViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isContentOccluded) _Bool contentOccluded; // @synthesize contentOccluded=_contentOccluded;
 @property(nonatomic) __weak id <HBUITopShelfContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long contentStyle;
 
 // Remaining properties

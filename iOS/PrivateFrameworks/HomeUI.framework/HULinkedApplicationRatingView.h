@@ -14,9 +14,9 @@
     NSArray *_starViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *starViews; // @synthesize starViews=_starViews;
 @property(nonatomic) double rating; // @synthesize rating=_rating;
-- (void).cxx_destruct;
 - (void)updateStarViews;
 - (void)setupConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -13,8 +13,8 @@
     UILabel *_label;
 }
 
-@property(nonatomic) __weak UILabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UILabel *label; // @synthesize label=_label;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

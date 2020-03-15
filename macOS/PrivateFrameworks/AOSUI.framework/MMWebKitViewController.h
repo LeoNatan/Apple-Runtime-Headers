@@ -43,6 +43,7 @@
     NSWindow *_parentWindow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(copy, nonatomic) NSDictionary *storageContext; // @synthesize storageContext=_storageContext;
 @property(nonatomic) __weak NSWindow *window; // @synthesize window=_window;
@@ -62,7 +63,6 @@
 @property(retain, nonatomic) MMWebKitController *webKitController; // @synthesize webKitController=_webKitController;
 @property(nonatomic) SEL classCreationSelector; // @synthesize classCreationSelector=_classCreationSelector;
 @property(nonatomic) id <MMWebKitViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct OpaqueJSClass *)_createTOSMailNotesClass;
 - (struct OpaqueJSClass *)_createQuotaClass;
 - (struct OpaqueJSClass *)_createAccountCreationClass;

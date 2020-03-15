@@ -22,6 +22,7 @@
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) _Bool me; // @synthesize me=_me;
 @property(copy, nonatomic) NSString *version; // @synthesize version=_version;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(copy, nonatomic) NSString *idsDeviceIdentifier; // @synthesize idsDeviceIdentifier=_idsDeviceIdentifier;
 @property(copy, nonatomic) NSString *sourceDeviceID; // @synthesize sourceDeviceID=_sourceDeviceID;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly, copy, nonatomic) NSUUID *sourceDeviceUUID;

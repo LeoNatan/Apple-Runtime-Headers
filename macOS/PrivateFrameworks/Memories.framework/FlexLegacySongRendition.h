@@ -16,10 +16,10 @@
 }
 
 + (long long)_durationOfOutroForPlaylist:(id)arg1 onlyUsedDuration:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long durationOfFullOutro; // @synthesize durationOfFullOutro=_durationOfFullOutro;
 @property(nonatomic) long long durationOfUsedOutro; // @synthesize durationOfUsedOutro=_durationOfUsedOutro;
 @property(retain, nonatomic) NSArray *segments; // @synthesize segments=_segments;
-- (void).cxx_destruct;
 - (id)_buildOutroFadeoutMixParams;
 - (void)_buildTracksFromSegments:(id)arg1;
 - (id)initWithSong:(id)arg1 segments:(id)arg2 withOptions:(id)arg3;

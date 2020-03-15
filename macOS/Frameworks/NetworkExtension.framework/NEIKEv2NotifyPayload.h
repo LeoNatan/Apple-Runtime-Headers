@@ -19,10 +19,10 @@
 + (id)createNotifyPayloadType:(unsigned long long)arg1 data:(id)arg2;
 + (id)createNotifyPayloadType:(unsigned long long)arg1;
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(retain) NEIKEv2SPI *spi; // @synthesize spi=_spi;
 @property(retain) NSData *data; // @synthesize data=_data;
 @property unsigned long long notifyType; // @synthesize notifyType=_notifyType;
-- (void).cxx_destruct;
 - (id)copyAdditionalAddress;
 - (id)copyServerRedirectEndpoint;
 - (id)copyServerRedirectNonce;

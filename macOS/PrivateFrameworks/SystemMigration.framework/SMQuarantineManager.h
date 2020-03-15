@@ -15,9 +15,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *pdfXPCConnection; // @synthesize pdfXPCConnection=_pdfXPCConnection;
 @property unsigned long long seenReasons; // @synthesize seenReasons=_seenReasons;
-- (void).cxx_destruct;
 - (void)renderPDF:(id)arg1 to:(id)arg2;
 - (id)createLPDFShellAt:(id)arg1;
 - (void)generateSummaryDocument:(id)arg1 withErrors:(id)arg2;

@@ -19,12 +19,12 @@
 }
 
 + (_Bool)destroyPersistentStore:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSManagedObjectContext *suggestionsContext; // @synthesize suggestionsContext=_suggestionsContext;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSPersistentContainer *container; // @synthesize container=_container;
 @property(readonly, nonatomic) VCRealmDataStore *realmDataStore; // @synthesize realmDataStore=_realmDataStore;
-- (void).cxx_destruct;
 - (void)deleteStaleShortcutSuggestions;
 - (void)deleteShortcutSuggestionsFromApps:(id)arg1;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned int)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;

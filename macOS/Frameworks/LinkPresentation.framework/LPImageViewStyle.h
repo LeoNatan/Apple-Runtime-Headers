@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     double _darkeningAmount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double darkeningAmount; // @synthesize darkeningAmount=_darkeningAmount;
 @property(retain, nonatomic) LPPointUnit *cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) LPPointUnit *backgroundInset; // @synthesize backgroundInset=_backgroundInset;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) LPSize *minimumSize; // @synthesize minimumSize=_minimumSize;
 @property(nonatomic) BOOL requireFixedSize; // @synthesize requireFixedSize=_requireFixedSize;
 @property(retain, nonatomic) LPSize *fixedSize; // @synthesize fixedSize=_fixedSize;
-- (void).cxx_destruct;
 - (id)emailCompatibleMargin;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

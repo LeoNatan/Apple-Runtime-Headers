@@ -16,9 +16,9 @@
     AWDProactiveModelFittingMinibatchStats *_stats;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDProactiveModelFittingMinibatchStats *stats; // @synthesize stats=_stats;
 @property(retain, nonatomic) AWDProactiveModelFittingModelInfo *modelInfo; // @synthesize modelInfo=_modelInfo;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

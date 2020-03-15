@@ -18,8 +18,8 @@
 + (double)preferredHeight;
 + (_Bool)shouldHighlight;
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UILabel *simTitleLabel; // @synthesize simTitleLabel=_simTitleLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *simTitleLabel; // @synthesize simTitleLabel=_simTitleLabel;
 - (void)initConstraints;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

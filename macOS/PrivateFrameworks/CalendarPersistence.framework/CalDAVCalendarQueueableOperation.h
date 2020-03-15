@@ -13,8 +13,8 @@
     NSString *_sourceUID;
 }
 
-@property(readonly, copy) NSString *sourceUID; // @synthesize sourceUID=_sourceUID;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *sourceUID; // @synthesize sourceUID=_sourceUID;
 - (void)configureOperationDependencies;
 - (id)initWithChangeRequest:(id)arg1 andSession:(id)arg2;
 - (id)initWithChangeRequest:(id)arg1 sourceUID:(id)arg2 andSession:(id)arg3;

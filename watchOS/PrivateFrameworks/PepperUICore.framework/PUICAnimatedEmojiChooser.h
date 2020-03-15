@@ -18,8 +18,8 @@
 }
 
 + (id)sharedInstanceWithAnimatedEmojiChooserType:(int)arg1;
-@property(readonly, nonatomic) PUICImageSequenceView *imageSequenceView; // @synthesize imageSequenceView=_imageSequenceView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PUICImageSequenceView *imageSequenceView; // @synthesize imageSequenceView=_imageSequenceView;
 - (void)_configureWithAnimatedEmojiChooserTypeHeartsPurple;
 - (void)_configureWithAnimatedEmojiChooserTypeHeartsBlue;
 - (void)_configureWithAnimatedEmojiChooserTypeHeartsRed;

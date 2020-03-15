@@ -32,6 +32,7 @@
 - (void)networkModeDidChange:(id)arg1 toMode:(id)arg2;
 - (long long)numberOfInputChannelsToExpectInNetwork;
 - (_Bool)isLoadedModelVersionCorrect:(id)arg1;
+- (id)_fullDescription;
 - (id)resultDataClasses;
 - (double)requiredTimeInterval;
 - (void)dealloc;

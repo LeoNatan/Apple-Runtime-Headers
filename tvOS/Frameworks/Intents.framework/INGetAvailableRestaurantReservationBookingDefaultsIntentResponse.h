@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) INImage *providerImage; // @synthesize providerImage=_providerImage;
 @property(copy, nonatomic) NSNumber *minimumPartySize; // @synthesize minimumPartySize=_minimumPartySize;
 @property(copy, nonatomic) NSNumber *maximumPartySize; // @synthesize maximumPartySize=_maximumPartySize;
 @property(readonly, copy, nonatomic) NSDate *defaultBookingDate; // @synthesize defaultBookingDate=_defaultBookingDate;
 @property(readonly, nonatomic) unsigned long long defaultPartySize; // @synthesize defaultPartySize=_defaultPartySize;
-- (void).cxx_destruct;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_dictionaryRepresentation;
 @property(readonly, nonatomic) long long code;

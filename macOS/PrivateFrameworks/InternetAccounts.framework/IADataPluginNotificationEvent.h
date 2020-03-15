@@ -17,11 +17,11 @@
 }
 
 + (id)eventForPlugin:(id)arg1 uid:(id)arg2 eventType:(id)arg3 date:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) NSDate *date; // @synthesize date=_date;
 @property(retain) NSString *eventType; // @synthesize eventType=_eventType;
 @property(retain) NSString *pluginID; // @synthesize pluginID=_pluginID;
 @property(retain) NSString *uid; // @synthesize uid=_uid;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

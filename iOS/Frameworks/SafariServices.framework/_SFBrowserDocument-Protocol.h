@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) NSURL *URLForPerSitePreferences;
 @property(readonly, nonatomic) id <SFReaderContext> readerContext;
 @property(readonly, nonatomic) _SFReloadOptionsController *reloadOptionsController;
+@property(readonly, nonatomic) _SFWebView *activeWebView;
 @property(readonly, nonatomic) _SFWebView *webView;
 - (void)perSiteSettingsUIPresentSettings;
 - (void)reloadEnablingContentBlockers:(_Bool)arg1;

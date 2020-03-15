@@ -17,8 +17,8 @@
 
 + (id)requiredEntitlements;
 + (Class)queryClass;
-@property(readonly, nonatomic) NSDictionary *dataFilters; // @synthesize dataFilters=_dataFilters;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *dataFilters; // @synthesize dataFilters=_dataFilters;
 - (void)_queue_start;
 - (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
 

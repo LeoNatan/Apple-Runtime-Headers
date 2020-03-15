@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 
 + (void)setupRelationsBetweenDisplayItemStates:(id)arg1 visualProvider:(id)arg2;
 + (id)stateForDisplayItemWithIdentifier:(id)arg1 statusBar:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *animations; // @synthesize animations=_animations;
 @property(retain, nonatomic) _UIStatusBarAnimation *removingAnimation; // @synthesize removingAnimation=_removingAnimation;
 @property(retain, nonatomic) _UIStatusBarAnimation *addingAnimation; // @synthesize addingAnimation=_addingAnimation;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak _UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
 @property(copy, nonatomic) _UIStatusBarIdentifier *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak _UIStatusBarDisplayItem *displayItem; // @synthesize displayItem=_displayItem;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) long long priority;
 @property(readonly, copy, nonatomic) NSArray *potentialPlacementRegionIdentifiers;

@@ -15,8 +15,8 @@
     NSMutableDictionary *_keyedPayloads;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *keyedPayloads; // @synthesize keyedPayloads=_keyedPayloads;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *keyedPayloads; // @synthesize keyedPayloads=_keyedPayloads;
 - (void)removePayloadForSelector:(SEL)arg1;
 - (id)getPayloadForSelector:(SEL)arg1;
 - (id)syncgetPayloadForSelector:(SEL)arg1;

@@ -16,9 +16,9 @@
     NSObject<OS_dispatch_queue> *_serialDispatchQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(retain) NSDate *lastTimeoutDate; // @synthesize lastTimeoutDate=_lastTimeoutDate;
-- (void).cxx_destruct;
 - (void)_deleteInMemoryCache;
 - (void)fetchSquareIconDataForBusinessItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchIsBusinessPhoneNumber:(id)arg1 completion:(CDUnknownBlockType)arg2;

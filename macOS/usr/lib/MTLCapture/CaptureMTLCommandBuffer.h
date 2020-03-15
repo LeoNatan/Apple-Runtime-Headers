@@ -27,10 +27,10 @@
     NSMutableSet *_retainedObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL presentDrawableUsed; // @synthesize presentDrawableUsed=_presentDrawableUsed;
 @property(readonly, nonatomic) BOOL isCapturing; // @synthesize isCapturing=_isCapturing;
 @property(readonly, nonatomic) NSMutableSet *retainedObjects; // @synthesize retainedObjects=_retainedObjects;
-- (void).cxx_destruct;
 - (void)waitUntilScheduled;
 - (void)waitUntilCompleted;
 - (id)sampledRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(CDStruct_4af8c268 *)arg2 capacity:(unsigned long long)arg3;
@@ -76,6 +76,7 @@
 - (void)touch;
 - (id)videoCommandEncoder;
 - (void)addCompletedHandler:(CDUnknownBlockType)arg1;
+- (void)presentDrawable:(id)arg1 afterMinimumDuration:(double)arg2;
 - (void)presentDrawable:(id)arg1 atTime:(double)arg2;
 - (void)presentDrawable:(id)arg1;
 - (void)addScheduledHandler:(CDUnknownBlockType)arg1;

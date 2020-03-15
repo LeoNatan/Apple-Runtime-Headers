@@ -26,6 +26,7 @@
     CalManagedMoveEntityChangeRequest *_changeRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *destinationCalendarUID; // @synthesize destinationCalendarUID=_destinationCalendarUID;
 @property(retain) NSString *sourceCalendarUID; // @synthesize sourceCalendarUID=_sourceCalendarUID;
 @property(retain) NSString *filename; // @synthesize filename=_filename;
@@ -33,7 +34,6 @@
 @property(retain) NSManagedObjectID *objectID; // @synthesize objectID;
 @property(retain) NSString *scheduleTag; // @synthesize scheduleTag;
 @property(retain) NSString *eTag; // @synthesize eTag;
-- (void).cxx_destruct;
 - (void)finishOperation;
 - (void)configureOperationDependencies;
 - (id)readableDescription;

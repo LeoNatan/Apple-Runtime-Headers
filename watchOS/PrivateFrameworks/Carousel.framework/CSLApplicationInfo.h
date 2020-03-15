@@ -48,6 +48,7 @@
 
 + (int)defaultWritingDirectionForLanguage:(id)arg1;
 + (int)preferredWritingDirectionForBundle:(struct __CFBundle *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool requestsMicrophone; // @synthesize requestsMicrophone=_requestsMicrophone;
 @property(readonly, nonatomic) _Bool shouldDefaultToSuperSticky; // @synthesize shouldDefaultToSuperSticky=_shouldDefaultToSuperSticky;
 @property(readonly, nonatomic) _Bool supportsStickySession; // @synthesize supportsStickySession=_supportsStickySession;
@@ -70,7 +71,6 @@
 @property(readonly, nonatomic, getter=isLaunchableDuringSetup) _Bool launchableDuringSetup; // @synthesize launchableDuringSetup=_launchableDuringSetup;
 @property(readonly, nonatomic) NSArray *launchStatusBarArray; // @synthesize launchStatusBarArray=_launchStatusBarArray;
 @property(readonly, nonatomic) UIColor *primaryColor; // @synthesize primaryColor=_primaryColor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double percentComplete;
 @property(readonly, nonatomic, getter=isInstalling) _Bool installing;
 @property(readonly, nonatomic, getter=isDeletable) _Bool deletable;

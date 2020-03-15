@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_tabBarButtons;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tabBarButtons; // @synthesize tabBarButtons=_tabBarButtons;
 @property(readonly, nonatomic) SKUIScrollingTabBarBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

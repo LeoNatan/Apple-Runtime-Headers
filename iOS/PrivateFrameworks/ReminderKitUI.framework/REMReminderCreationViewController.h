@@ -18,10 +18,10 @@
     NSError *_deferredErrorDuringPresentation;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *deferredErrorDuringPresentation; // @synthesize deferredErrorDuringPresentation=_deferredErrorDuringPresentation;
 @property(readonly, nonatomic) id <REMReminderCreationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic, setter=setChildViewController:) _UIResilientRemoteViewContainerViewController *childViewController; // @synthesize childViewController=_childViewController;
-- (void).cxx_destruct;
 - (void)viewServiceDidFinish;
 - (void)viewServiceDidFailWithError:(id)arg1;
 - (void)viewServiceDidCancel;

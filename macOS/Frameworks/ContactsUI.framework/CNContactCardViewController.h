@@ -10,14 +10,15 @@
 #import <ContactsUI/AKCardViewDataSourceSupport-Protocol.h>
 #import <ContactsUI/CNAvatarViewDelegate-Protocol.h>
 #import <ContactsUI/CNContactDetailsViewControllerDelegate-Protocol.h>
+#import <ContactsUI/CNContactEditingInterfaceElement-Protocol.h>
 #import <ContactsUI/CNContactNameViewControllerDelegate-Protocol.h>
-#import <ContactsUI/CNEditAutorizationViewControllerDelegate-Protocol.h>
+#import <ContactsUI/CNEditAuthorizationViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNUIShareKitTransitionProvider-Protocol.h>
 
-@class ABAddressBook, ABCardViewSaveHelper, ABCardViewStyleProvider, ABCardViewUndoableDataSource, ABCommandExecutor, ABPerson, AKCardViewDataSource, AKCardViewDataSourceFactory, CNContact, CNContactCardViewControlContext, CNContactCardViewControllerABPersonViewMediator, CNContactCardViewControllerDataSourceDelegate, CNContactCardViewControllerWidgetProviderDelegate, CNContactCardWidgetProvider, CNContactPersistenceHelper, CNContainer, CNUIEnvironment, CNUIMeContactMonitor, CNUIUserActionListDataSource, NSArray, NSColor, NSMutableDictionary, NSSet, NSStackView, NSString, NSTextField, NSUndoManager;
-@protocol CNCancelable, CNContactCardViewControllerDelegate, CNContactCardViewControllerLogger, CNContactCardViewRefreshStrategy, CNInhibitor, CNSchedulerProvider;
+@class ABAddressBook, ABCardViewSaveHelper, ABCardViewStyleProvider, ABCardViewUndoableDataSource, ABCommandExecutor, ABPerson, AKCardViewDataSource, AKCardViewDataSourceFactory, CNContact, CNContactCardViewControlContext, CNContactCardViewControllerABPersonViewMediator, CNContactCardViewControllerDataSourceDelegate, CNContactCardViewControllerWidgetProviderDelegate, CNContactCardWidgetProvider, CNContactPersistenceHelper, CNContainer, CNUIEnvironment, CNUIUserActionListDataSource, NSArray, NSColor, NSMutableDictionary, NSSet, NSStackView, NSString, NSTextField, NSUndoManager;
+@protocol CNCancelable, CNContactCardViewControllerDelegate, CNContactCardViewControllerLogger, CNInhibitor;
 
-@interface CNContactCardViewController : NSViewController <CNContactDetailsViewControllerDelegate, CNContactNameViewControllerDelegate, AKCardViewDataSourceSupport, ABCardViewDelegate, CNAvatarViewDelegate, CNEditAutorizationViewControllerDelegate, CNUIShareKitTransitionProvider>
+@interface CNContactCardViewController : NSViewController <CNContactDetailsViewControllerDelegate, CNContactNameViewControllerDelegate, AKCardViewDataSourceSupport, ABCardViewDelegate, CNAvatarViewDelegate, CNEditAuthorizationViewControllerDelegate, CNContactEditingInterfaceElement, CNUIShareKitTransitionProvider>
 {
     BOOL _editable;
     BOOL _selectable;
@@ -25,9 +26,8 @@
     BOOL _shouldShowLinkedContacts;
     BOOL _shouldShowSuggestedFields;
     BOOL _shouldShowInMapsButtons;
-    BOOL _shouldWaitUntilLaunchForRefresh;
     BOOL _shouldDisableRefetching;
-    BOOL _shouldEnforceRefetchWithAllKeysIfRefetchingNotDisabled;
+    BOOL _shouldPreferRefetching;
     BOOL _fetchAsynchronously;
     BOOL _isMakingChangesOutsideOfEditMode;
     AKCardViewDataSource *_dataSource;
@@ -45,15 +45,11 @@
     ABCommandExecutor *_commandExecutor;
     ABCommandExecutor *_dataSourceCommandExecutor;
     CNUIEnvironment *_environment;
-    CNContainer *_containerOfContact;
     CNContactCardWidgetProvider *_widgetProvider;
     CNContactCardViewControllerWidgetProviderDelegate *_widgetProviderDelegate;
     CNContactCardViewControlContext *_controlContext;
     NSArray *_widgetsDisplayed;
     id <CNContactCardViewControllerLogger> _logger;
-    CNUIMeContactMonitor *_meMonitor;
-    id <CNSchedulerProvider> _schedulerProvider;
-    id <CNContactCardViewRefreshStrategy> _refreshStrategy;
     NSUndoManager *_undoManager;
     NSMutableDictionary *_displayAtttibutes;
     NSStackView *_stackView;
@@ -62,23 +58,27 @@
     id <CNCancelable> _recentLikenessesToken;
     ABCardViewStyleProvider *_styleProvider;
     long long _backgroundStyle;
+    NSString *_warningMessage;
     id <CNContactCardViewControllerDelegate> _contactCardControllerDelegate;
     unsigned long long _mode;
+    unsigned long long _authorizedMode;
+    CNContainer *_parentContainer;
     unsigned long long _displayStyle;
-    NSString *_containerIdentifier;
     NSColor *_backgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-@property(retain, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
+@property(retain, nonatomic) CNContainer *parentContainer; // @synthesize parentContainer=_parentContainer;
+@property(nonatomic) unsigned long long authorizedMode; // @synthesize authorizedMode=_authorizedMode;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <CNContactCardViewControllerDelegate> contactCardControllerDelegate; // @synthesize contactCardControllerDelegate=_contactCardControllerDelegate;
 @property(readonly, nonatomic) BOOL isMakingChangesOutsideOfEditMode; // @synthesize isMakingChangesOutsideOfEditMode=_isMakingChangesOutsideOfEditMode;
+@property(retain, nonatomic) NSString *warningMessage; // @synthesize warningMessage=_warningMessage;
 @property(nonatomic) BOOL fetchAsynchronously; // @synthesize fetchAsynchronously=_fetchAsynchronously;
-@property(nonatomic) BOOL shouldEnforceRefetchWithAllKeysIfRefetchingNotDisabled; // @synthesize shouldEnforceRefetchWithAllKeysIfRefetchingNotDisabled=_shouldEnforceRefetchWithAllKeysIfRefetchingNotDisabled;
+@property(nonatomic) BOOL shouldPreferRefetching; // @synthesize shouldPreferRefetching=_shouldPreferRefetching;
 @property(nonatomic) BOOL shouldDisableRefetching; // @synthesize shouldDisableRefetching=_shouldDisableRefetching;
-@property(nonatomic) BOOL shouldWaitUntilLaunchForRefresh; // @synthesize shouldWaitUntilLaunchForRefresh=_shouldWaitUntilLaunchForRefresh;
 @property(nonatomic) BOOL shouldShowInMapsButtons; // @synthesize shouldShowInMapsButtons=_shouldShowInMapsButtons;
 @property(nonatomic) BOOL shouldShowSuggestedFields; // @synthesize shouldShowSuggestedFields=_shouldShowSuggestedFields;
 @property(nonatomic) BOOL shouldShowLinkedContacts; // @synthesize shouldShowLinkedContacts=_shouldShowLinkedContacts;
@@ -93,15 +93,11 @@
 @property(retain, nonatomic) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) NSMutableDictionary *displayAtttibutes; // @synthesize displayAtttibutes=_displayAtttibutes;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
-@property(retain, nonatomic) id <CNContactCardViewRefreshStrategy> refreshStrategy; // @synthesize refreshStrategy=_refreshStrategy;
-@property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
-@property(retain, nonatomic) CNUIMeContactMonitor *meMonitor; // @synthesize meMonitor=_meMonitor;
 @property(retain, nonatomic) id <CNContactCardViewControllerLogger> logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) NSArray *widgetsDisplayed; // @synthesize widgetsDisplayed=_widgetsDisplayed;
 @property(retain, nonatomic) CNContactCardViewControlContext *controlContext; // @synthesize controlContext=_controlContext;
 @property(retain, nonatomic) CNContactCardViewControllerWidgetProviderDelegate *widgetProviderDelegate; // @synthesize widgetProviderDelegate=_widgetProviderDelegate;
 @property(retain, nonatomic) CNContactCardWidgetProvider *widgetProvider; // @synthesize widgetProvider=_widgetProvider;
-@property(retain, nonatomic) CNContainer *containerOfContact; // @synthesize containerOfContact=_containerOfContact;
 @property(retain, nonatomic) CNUIEnvironment *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) ABCommandExecutor *dataSourceCommandExecutor; // @synthesize dataSourceCommandExecutor=_dataSourceCommandExecutor;
 @property(retain, nonatomic) ABCommandExecutor *commandExecutor; // @synthesize commandExecutor=_commandExecutor;
@@ -116,10 +112,8 @@
 @property(retain, nonatomic) ABPerson *legacySaveTarget; // @synthesize legacySaveTarget=_legacySaveTarget;
 @property(retain, nonatomic) CNUIUserActionListDataSource *userActionListDataSource; // @synthesize userActionListDataSource=_userActionListDataSource;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)setProhibitedPropertyKeys:(id)arg1;
 - (void)setPropertyKeysToDisplay:(id)arg1;
-- (void)setContactDataIsTransient:(BOOL)arg1;
 - (id)displayAttributesForProperty:(id)arg1 identifier:(id)arg2;
 - (void)setDisplayAttributes:(id)arg1 forProperty:(id)arg2 identifier:(id)arg3;
 - (id)_displayAttributeKeyForProperty:(id)arg1 identifier:(id)arg2;
@@ -162,13 +156,12 @@
 - (BOOL)canSelectContact;
 - (BOOL)isDirectoryResult;
 - (void)selectFirstKeyViewIfNecessary;
-@property(readonly, nonatomic) BOOL isMe;
-@property(readonly, nonatomic) BOOL isEmpty;
 - (struct CGSize)preferredMinimumSize;
 - (void)tabSwitcherDidChange:(id)arg1;
 - (void)didClickHeader:(id)arg1;
 - (void)setPersonToCompanyIfNameIsEmpty;
-- (void)commitEditing;
+- (void)commitDisplayedValues;
+- (BOOL)commitEditing;
 - (void)setNoCardLabel:(id)arg1;
 - (void)enableUndoWithManager:(id)arg1;
 - (void)setPerson:(id)arg1 shouldShowLinkedPeople:(BOOL)arg2 shouldShowSuggestedFields:(BOOL)arg3;
@@ -187,19 +180,18 @@
 - (void)setupKeyViewLoop;
 - (void)dispayAndLayoutNewWidgets:(id)arg1;
 - (void)displayWidgets;
-- (BOOL)isShouldSaveFlagEnabledAndCanSaveInCurrentMode;
-- (void)saveContactIfNecessaryWithRefreshData:(BOOL)arg1;
-- (void)saveContactIfNecessary;
-@property(readonly, nonatomic) BOOL isSaving;
 - (void)updateDataSourceWithContact:(id)arg1;
 - (void)handeNewContact:(id)arg1;
 - (void)handleNilContact;
-- (void)updateToContact:(id)arg1 containerOfContact:(id)arg2;
+- (void)updateToContact:(id)arg1 inParentContainer:(id)arg2;
 - (void)didReceveContactFetchResult:(id)arg1;
+- (id)fetchParametersForContact:(id)arg1;
 - (BOOL)shouldRefetchContact:(id)arg1;
-- (id)generateFetchDescriptionForContact:(id)arg1;
-- (void)fetchContact;
-- (void)refreshData;
+- (void)refreshDisplayedValues;
+- (void)beginPresentationOfContact;
+- (void)setContact:(id)arg1 inParentContainer:(id)arg2;
+- (void)saveContactIfNecessaryAndRefreshInterface:(BOOL)arg1;
+- (void)endPresentationOfContact;
 @property(readonly, nonatomic) CNContact *editedContact;
 - (void)finishSwichingToDefaultModeFromMode:(unsigned long long)arg1;
 - (void)finishSwichingToEditModeAndRefocusOnNameView:(BOOL)arg1;
@@ -209,11 +201,14 @@
 - (BOOL)shouldPresentEditAutorizationUIWhenSwitchingFromMode:(unsigned long long)arg1 toMode:(unsigned long long)arg2;
 - (void)switchModeFromMode:(unsigned long long)arg1 toMode:(unsigned long long)arg2 refocusOnNameView:(BOOL)arg3;
 @property(readonly, nonatomic) BOOL hasChanges;
+@property(readonly, nonatomic) BOOL isSaving;
+@property(readonly, nonatomic) BOOL isMe;
+@property(readonly, nonatomic) BOOL isEmpty;
 - (BOOL)editLikenessMode;
 - (BOOL)editMode;
 @property(retain, nonatomic) AKCardViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void)createViewHierarchy;
 - (void)ensureUserEnteredDataIsPersistedBeforeViewWillDisappear;
+- (void)createViewHierarchy;
 - (void)viewWillDisappear;
 - (void)viewDidLoad;
 - (void)loadView;

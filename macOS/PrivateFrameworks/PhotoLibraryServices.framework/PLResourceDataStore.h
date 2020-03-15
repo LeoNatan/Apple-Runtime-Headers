@@ -21,8 +21,8 @@
 + (unsigned short)keyLengthWithDataPreview:(unsigned char)arg1;
 + (unsigned int)storeClassID;
 + (BOOL)isMasterThumbRecipeID:(unsigned int)arg1;
-@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (BOOL)verifyAndFixLocalAvailabilityForResource:(id)arg1 asset:(id)arg2 managedObjectContext:(id)arg3;
 - (unsigned long long)nextLocalAvailabilityRequestID;
 - (id)guessUTIForExternalResource:(id)arg1 forAssetKind:(short)arg2 managedObjectContext:(id)arg3;

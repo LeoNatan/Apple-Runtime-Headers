@@ -26,11 +26,11 @@
 }
 
 + (id)_openOptionsWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) _Bool useSmallIcon; // @synthesize useSmallIcon=_useSmallIcon;
 @property(copy, nonatomic) NSURL *defaultLaunchURL; // @synthesize defaultLaunchURL=_defaultLaunchURL;
 @property(copy, nonatomic) NSArray *storeIDs; // @synthesize storeIDs=_storeIDs;
-- (void).cxx_destruct;
 - (void)productViewControllerDidFinish:(id)arg1;
 @property(readonly, nonatomic) NSString *price;
 @property(readonly, nonatomic) NSNumber *averageRating;

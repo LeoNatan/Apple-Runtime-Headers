@@ -20,13 +20,13 @@
 
 + (id)L2Loss;
 + (id)softmaxCrossEntropyLoss;
+- (void).cxx_destruct;
 @property(retain) NSString *custom_network_path; // @synthesize custom_network_path=_custom_network_path;
 @property(retain) NSArray *label_shape; // @synthesize label_shape=_label_shape;
 @property(retain) NSString *label_name; // @synthesize label_name=_label_name;
 @property(retain) NSString *output_name; // @synthesize output_name=_output_name;
 @property(retain) NSString *loss_name; // @synthesize loss_name=_loss_name;
 @property unsigned long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 
 @end
 

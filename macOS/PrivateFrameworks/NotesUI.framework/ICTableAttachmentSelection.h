@@ -17,12 +17,12 @@
     NSArray *_rows;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL draggingText; // @synthesize draggingText=_draggingText;
 @property(nonatomic) BOOL moving; // @synthesize moving=_moving;
 @property(copy, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(copy, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)removeColumns:(id)arg1 rows:(id)arg2;
 - (BOOL)removeColumns:(id)arg1 rows:(id)arg2 previousColumns:(id)arg3 previousRows:(id)arg4;
 - (void)setSelectionEqualTo:(id)arg1;

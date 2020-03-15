@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     CDStruct_e83c9415 _trimmedTimeRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, nonatomic) _Bool includeAudio; // @synthesize includeAudio=_includeAudio;
 @property(readonly, nonatomic) _Bool includeVideo; // @synthesize includeVideo=_includeVideo;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 photoTime; // @synthesize photoTime=_photoTime;
 @property(readonly, nonatomic) CDStruct_e83c9415 trimmedTimeRange; // @synthesize trimmedTimeRange=_trimmedTimeRange;
 @property(readonly, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_preparePlayerItem;
 - (void)_handleValuesDidLoad;
 - (void)main;

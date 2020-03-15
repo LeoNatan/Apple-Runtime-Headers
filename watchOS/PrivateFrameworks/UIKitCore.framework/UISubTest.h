@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_data;
 }
 
-@property(readonly) NSNumber *startTime; // @synthesize startTime=_startTime;
 - (void).cxx_destruct;
+@property(readonly) NSNumber *startTime; // @synthesize startTime=_startTime;
 - (id)getObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)outputData;

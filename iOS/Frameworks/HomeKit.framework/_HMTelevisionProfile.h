@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     id <_HMTelevisionProfileDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <_HMTelevisionProfileDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) _Bool mediaSourceDisplayOrderModifiable; // @synthesize mediaSourceDisplayOrderModifiable=_mediaSourceDisplayOrderModifiable;
-- (void).cxx_destruct;
 - (void)_handleSourceDisplayOrderUpdated:(id)arg1;
 - (void)_notifyDelegateOfUpdatedSourceDisplayOrder:(id)arg1;
 - (void)updateMediaSourceDisplayOrder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

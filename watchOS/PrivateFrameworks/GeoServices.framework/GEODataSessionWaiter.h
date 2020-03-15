@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id _strongReferenceToSelf;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) GEODataSessionTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) GEODataSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)dataSession:(id)arg1 didCompleteTask:(id)arg2;
 - (id)initWithSession:(id)arg1 request:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)init;

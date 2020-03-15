@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     PUTileLayoutInfo *__trackedTileLayoutInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTrackedTileLayoutInfo:) PUTileLayoutInfo *_trackedTileLayoutInfo; // @synthesize _trackedTileLayoutInfo=__trackedTileLayoutInfo;
 @property(retain, nonatomic, setter=_setSwipeDownTracker:) PHSwipeDownTracker *_swipeDownTracker; // @synthesize _swipeDownTracker=__swipeDownTracker;
 @property(retain, nonatomic) PUTileController *designatedTileController; // @synthesize designatedTileController=_designatedTileController;
 @property(readonly, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
-- (void).cxx_destruct;
 - (id)tileControllerToTrack;
 - (void)completeTracking;
 - (void)updateTileControllerTracking;

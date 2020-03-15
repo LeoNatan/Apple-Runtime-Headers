@@ -16,8 +16,8 @@
     id <SVVideoEventTrackerProviding> _eventTrackerProvider;
 }
 
-@property(readonly, nonatomic) id <SVVideoEventTrackerProviding> eventTrackerProvider; // @synthesize eventTrackerProvider=_eventTrackerProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVVideoEventTrackerProviding> eventTrackerProvider; // @synthesize eventTrackerProvider=_eventTrackerProvider;
 - (id)createInteractionHandlerForVideo:(id)arg1;
 - (id)initWithVideoEventTrackerProvider:(id)arg1;
 

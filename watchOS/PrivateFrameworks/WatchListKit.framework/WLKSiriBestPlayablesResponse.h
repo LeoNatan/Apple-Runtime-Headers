@@ -14,9 +14,9 @@
     NSDictionary *_playablesByID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *playablesByID; // @synthesize playablesByID=_playablesByID;
 @property(readonly, copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)playableForStatsID:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;

@@ -21,11 +21,11 @@
 
 + (id)decodedNamedLayerStackWithImage:(id)arg1 size:(struct CGSize)arg2 cornerRadius:(double)arg3;
 + (id)namedLayerStackWithImage:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *replacementLayers; // @synthesize replacementLayers=_replacementLayers;
 @property(retain, nonatomic) UIImage *originalImage; // @synthesize originalImage=_originalImage;
 @property(retain, nonatomic) UIImage *cornerRadiusFlatImage; // @synthesize cornerRadiusFlatImage=_cornerRadiusFlatImage;
 @property(retain, nonatomic) id <UINamedLayerStack> layerStack; // @synthesize layerStack=_layerStack;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool flatImageContainsCornerRadius;
 @property(readonly, nonatomic) struct CGSize radiosityImageScale;
 @property(readonly, nonatomic) id radiosityImage;

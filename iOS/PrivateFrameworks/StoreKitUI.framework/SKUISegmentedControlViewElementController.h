@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
     SKUISegmentedControlViewElement *_viewElement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(readonly, nonatomic) SKUISegmentedControlViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(nonatomic) double desiredSegmentWidth; // @synthesize desiredSegmentWidth=_desiredSegmentWidth;
 @property(nonatomic) long long defaultMaximumNumberOfVisibleItems; // @synthesize defaultMaximumNumberOfVisibleItems=_defaultMaximumNumberOfVisibleItems;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_showPopoverMoreListWithTitles:(id)arg1;
 - (void)_showMoreListSheetWithTitles:(id)arg1 selectedIndex:(long long)arg2;
 - (id)_segmentedControl;

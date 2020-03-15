@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
     id <NSStreamDelegate> _delegate;
 }
 
-@property __weak id <NSStreamDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <NSStreamDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned long long *)arg2;
 - (BOOL)hasBytesAvailable;
 - (unsigned long long)bytesRead;

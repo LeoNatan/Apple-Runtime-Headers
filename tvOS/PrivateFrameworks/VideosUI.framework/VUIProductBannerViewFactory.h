@@ -11,9 +11,10 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)comingSoonInfoString:(id)arg1;
++ (id)_availabilityTextAttrString:(id)arg1 prefersUberLayout:(_Bool)arg2 userInterfaceStyle:(long long)arg3;
++ (id)_comingSoonInfoAttrString:(id)arg1 prefersUberLayout:(_Bool)arg2 userInterfaceStyle:(long long)arg3;
 + (id)_buttonViewsFromElements:(id)arg1 existingButtons:(id)arg2 prefersUberLayout:(_Bool)arg3;
-+ (id)_tagsViewWithMetadata:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
++ (id)_tagsViewWithMetadata:(id)arg1 layout:(id)arg2 existingView:(id)arg3 prefersUberLayout:(_Bool)arg4;
 + (id)configureViewWithElement:(id)arg1 existingController:(id)arg2;
 
 @end

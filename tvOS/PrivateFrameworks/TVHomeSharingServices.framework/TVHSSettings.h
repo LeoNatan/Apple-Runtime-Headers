@@ -14,9 +14,9 @@
     TVSPreferences *_preferences;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSPreferences *preferences; // @synthesize preferences=_preferences;
 @property(retain, nonatomic) id preferencesDomainObserver; // @synthesize preferencesDomainObserver=_preferencesDomainObserver;
-- (void).cxx_destruct;
 - (void)_updateSettingWithBlock:(CDUnknownBlockType)arg1 shouldNotify:(_Bool)arg2 forKey:(id)arg3;
 - (void)_refreshSettingsFromPreferencesAndShouldNotify:(_Bool)arg1;
 - (void)dealloc;

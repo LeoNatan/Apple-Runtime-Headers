@@ -14,9 +14,9 @@
     NSArray *_possibleTitles;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *possibleTitles; // @synthesize possibleTitles=_possibleTitles;
 @property(copy, nonatomic) NSArray *possibleValues; // @synthesize possibleValues=_possibleValues;
-- (void).cxx_destruct;
 - (id)searchableStrings;
 - (void)_handlePopUpButton:(id)arg1;
 - (void)prepareValueViewForReuse:(id)arg1;

@@ -25,6 +25,7 @@
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool reverseNextHorizontalLivingRoomLayout; // @synthesize reverseNextHorizontalLivingRoomLayout=_reverseNextHorizontalLivingRoomLayout;
 @property(readonly, nonatomic) NSMutableArray *frames; // @synthesize frames=_frames;
 @property(readonly, nonatomic) NSMutableArray *views; // @synthesize views=_views;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) SXMosaicGalleryColumnLayout *columnLayout; // @synthesize columnLayout=_columnLayout;
 @property(nonatomic) __weak id <SXMosaicGalleryLayouterDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) double width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (void)resetLayout;
 - (id)viewForItem:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;

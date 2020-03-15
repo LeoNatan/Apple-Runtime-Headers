@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIImageView *_bgImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
 @property(retain, nonatomic) TVImageProxy *bgImageProxy; // @synthesize bgImageProxy=_bgImageProxy;
 @property(retain, nonatomic) VUIUpsellOfferView *upsellView; // @synthesize upsellView=_upsellView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
 - (id)_backgroundImageProxy;
 - (struct CGSize)_backgroundImageProxySize;

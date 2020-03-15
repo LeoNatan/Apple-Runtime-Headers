@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSDate *_reportStart;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *reportStart; // @synthesize reportStart=_reportStart;
 @property(retain, nonatomic) NSDictionary *netDiagsResults; // @synthesize netDiagsResults=_netDiagsResults;
 @property(retain, nonatomic) NSMutableDictionary *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)createDefaultTaskDictionaryWithTaskName:(const char *)arg1;
 - (void)netDiagnosticTaskStatusChangedFor:(id)arg1 toStatus:(int)arg2;
 - (BOOL)startReportGeneration;

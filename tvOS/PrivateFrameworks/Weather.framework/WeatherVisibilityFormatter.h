@@ -14,8 +14,8 @@
 }
 
 + (id)convenienceFormatter;
-@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (id)stringFromDistance:(double)arg1 isDataMetric:(_Bool)arg2;
 - (id)stringFromMiles:(double)arg1;
 - (id)stringFromKilometers:(double)arg1;

@@ -14,9 +14,9 @@
     NSArray *_serviceUserInfos;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *serviceUserInfos; // @synthesize serviceUserInfos=_serviceUserInfos;
 @property(readonly, nonatomic) unsigned int serviceType; // @synthesize serviceType=_serviceType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int appleIDUserStatus;
 @property(readonly, nonatomic) unsigned int phoneUserStatus;
 - (id)description;

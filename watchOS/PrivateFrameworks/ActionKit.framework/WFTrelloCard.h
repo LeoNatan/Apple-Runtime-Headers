@@ -19,11 +19,11 @@
 + (id)dueDateJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSDate *dueDate; // @synthesize dueDate=_dueDate;
 @property(readonly, nonatomic) NSNumber *creationPosition; // @synthesize creationPosition=_creationPosition;
 @property(readonly, nonatomic) NSString *itemDescription; // @synthesize itemDescription=_itemDescription;
-- (void).cxx_destruct;
 
 @end
 

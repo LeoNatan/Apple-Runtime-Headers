@@ -23,6 +23,7 @@
     CIMSimulatorEnvironmentGradientView *_rightGradientView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CIMSimulatorEnvironmentGradientView *rightGradientView; // @synthesize rightGradientView=_rightGradientView;
 @property(retain, nonatomic) CIMSimulatorEnvironmentGradientView *leftGradientView; // @synthesize leftGradientView=_leftGradientView;
 @property(retain, nonatomic) CIMSimulatorEnvironmentCursorView *cursorView; // @synthesize cursorView=_cursorView;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *leftContext; // @synthesize leftContext=_leftContext;
 @property(retain, nonatomic) NSArray *inlineCandidateSurfaces; // @synthesize inlineCandidateSurfaces=_inlineCandidateSurfaces;
 @property(retain, nonatomic) NSArray *candidateSurfaces; // @synthesize candidateSurfaces=_candidateSurfaces;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)arrangeRightCandidateSurfaces;
 - (void)arrangeCandidateSurfaces;

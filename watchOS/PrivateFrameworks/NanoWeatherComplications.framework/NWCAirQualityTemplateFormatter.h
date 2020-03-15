@@ -16,8 +16,8 @@
 }
 
 + (id)sharedFormatter;
-@property(retain, nonatomic) NSNumberFormatter *indexNumberFormatter; // @synthesize indexNumberFormatter=_indexNumberFormatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumberFormatter *indexNumberFormatter; // @synthesize indexNumberFormatter=_indexNumberFormatter;
 - (id)_utilitarianLargeTemplateForLocation:(id)arg1 conditions:(id)arg2 isLoading:(_Bool)arg3;
 - (id)_modularLargeTemplateForLocation:(id)arg1 conditions:(id)arg2 isLoading:(_Bool)arg3;
 - (id)_localizedIndexForConditions:(id)arg1;

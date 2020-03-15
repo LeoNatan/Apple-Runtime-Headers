@@ -23,6 +23,7 @@
     NSLayoutConstraint *_stackViewTopAnchorLayoutConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewTopAnchorLayoutConstraint; // @synthesize stackViewTopAnchorLayoutConstraint=_stackViewTopAnchorLayoutConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewRightAnchorLayoutConstraint; // @synthesize stackViewRightAnchorLayoutConstraint=_stackViewRightAnchorLayoutConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewLeftAnchorLayoutConstraint; // @synthesize stackViewLeftAnchorLayoutConstraint=_stackViewLeftAnchorLayoutConstraint;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) TPBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(nonatomic) unsigned long long theme; // @synthesize theme=_theme;
 @property(nonatomic) __weak id <TPPillViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title;
 @property(copy, nonatomic) NSString *badgeText;
 - (void)handleTap:(id)arg1;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIColor *_backgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) NSString *imageNamePart; // @synthesize imageNamePart=_imageNamePart;
-- (void).cxx_destruct;
 
 @end
 

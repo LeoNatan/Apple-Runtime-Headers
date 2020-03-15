@@ -16,8 +16,8 @@
     AKTextAttributesViewController *_parentController;
 }
 
-@property __weak AKTextAttributesViewController *parentController; // @synthesize parentController=_parentController;
 - (void).cxx_destruct;
+@property __weak AKTextAttributesViewController *parentController; // @synthesize parentController=_parentController;
 - (void)syncFontsToUI:(id)arg1;
 - (id)convertFont:(id)arg1;
 - (long long)tag;

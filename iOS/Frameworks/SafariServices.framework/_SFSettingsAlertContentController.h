@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     _SFSettingsAlertItem *_focusedItem;
 }
 
-@property(retain, nonatomic) _SFSettingsAlertItem *focusedItem; // @synthesize focusedItem=_focusedItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _SFSettingsAlertItem *focusedItem; // @synthesize focusedItem=_focusedItem;
 - (void)_panRecognized:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

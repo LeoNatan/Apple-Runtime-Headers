@@ -13,8 +13,8 @@
     NSString *_sessionIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 - (id)appVersion;
 @property(readonly, copy, nonatomic) NSDictionary *dictionaryValue;
 - (id)initWithSessionIdentifier:(id)arg1;

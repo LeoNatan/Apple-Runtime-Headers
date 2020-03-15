@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_phoneticCountryName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *phoneticCountryName; // @synthesize phoneticCountryName=_phoneticCountryName;
 @property(copy, nonatomic) NSString *countryName; // @synthesize countryName=_countryName;
 @property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,9 +17,9 @@
 }
 
 + (id)differWithBeforeDataSourceInfo:(id)arg1 afterDataSourceInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSDiffableDataSourceInfo> afterDataSourceInfo; // @synthesize afterDataSourceInfo=_afterDataSourceInfo;
 @property(retain, nonatomic) id <NSDiffableDataSourceInfo> beforeDataSourceInfo; // @synthesize beforeDataSourceInfo=_beforeDataSourceInfo;
-- (void).cxx_destruct;
 - (BOOL)_verifyForUpdates:(id)arg1;
 - (id)_orderedRangeIndexerForSnapshot:(id)arg1;
 - (id)_sectionUpdatesForDiffResults:(id)arg1 deletedSections:(id)arg2 insertedSections:(id)arg3;

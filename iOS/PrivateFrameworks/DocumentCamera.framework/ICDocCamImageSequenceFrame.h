@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_frameOptions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *frameOptions; // @synthesize frameOptions=_frameOptions;
 @property(nonatomic) struct __CVBuffer *pb; // @synthesize pb=_pb;
-- (void).cxx_destruct;
 
 @end
 

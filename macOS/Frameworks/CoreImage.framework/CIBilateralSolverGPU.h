@@ -51,8 +51,8 @@ __attribute__((visibility("hidden")))
     BOOL _useTrilinearInterpolation;
 }
 
-@property(nonatomic) BOOL useTrilinearInterpolation; // @synthesize useTrilinearInterpolation=_useTrilinearInterpolation;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL useTrilinearInterpolation; // @synthesize useTrilinearInterpolation=_useTrilinearInterpolation;
 - (int)_doSliceTrilinearWithCommandBuffer:(id)arg1 ref_tex:(id)arg2 o_tex:(id)arg3;
 - (int)_doSliceWithCommandBuffer:(id)arg1 o_tex:(id)arg2;
 - (int)_doPCGWithCommandBuffer:(id)arg1 nIterations:(int)arg2;

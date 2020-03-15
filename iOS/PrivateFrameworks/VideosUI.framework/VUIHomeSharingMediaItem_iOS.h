@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long loadingContext; // @synthesize loadingContext=_loadingContext;
 @property(nonatomic) _Bool needsKeyBagSyncPriorToPlayback; // @synthesize needsKeyBagSyncPriorToPlayback=_needsKeyBagSyncPriorToPlayback;
 @property(retain, nonatomic) NSString *keyBagFilePath; // @synthesize keyBagFilePath=_keyBagFilePath;
 @property(retain, nonatomic) NSURL *mediaItemURLInternal; // @synthesize mediaItemURLInternal=_mediaItemURLInternal;
 @property(retain, nonatomic) HSHomeSharingLibrary *homeSharingLibrary; // @synthesize homeSharingLibrary=_homeSharingLibrary;
-- (void).cxx_destruct;
 - (_Bool)_loadingCancelled:(unsigned long long)arg1;
 - (void)_fetchKeybagForDSID:(id)arg1 isFamilyAccount:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)shouldRetryPlaybackForError:(id)arg1;

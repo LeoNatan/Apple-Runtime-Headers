@@ -17,12 +17,12 @@
     struct _NSRange _encodedTextRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange encodedTextRange; // @synthesize encodedTextRange=_encodedTextRange;
 @property(nonatomic) long long encodedWordEncoding; // @synthesize encodedWordEncoding=_encodedWordEncoding;
 @property(readonly, copy, nonatomic) NSData *headerData; // @synthesize headerData=_headerData;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) NSNumber *stringEncoding; // @synthesize stringEncoding=_stringEncoding;
-- (void).cxx_destruct;
 - (void)_enumerateQByteRangesUsingBlock:(CDUnknownBlockType)arg1;
 - (BOOL)_decodeQEncodedTextToData:(id)arg1;
 - (BOOL)_decodeBEncodedTextToData:(id)arg1;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cacheValueWithPretiledImage:(id)arg1 cacheKey:(id)arg2;
-@property(readonly, nonatomic) UIImage *pretiledImage; // @synthesize pretiledImage=_pretiledImage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImage *pretiledImage; // @synthesize pretiledImage=_pretiledImage;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

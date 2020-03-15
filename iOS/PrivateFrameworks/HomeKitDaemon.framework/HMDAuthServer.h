@@ -13,11 +13,11 @@
     id <HMDAuthServerDelegate> _delegate;
 }
 
-@property(readonly) __weak id <HMDAuthServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) __weak id <HMDAuthServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)sendActivationConfirmation:(id)arg1 uuid:(id)arg2 context:(id)arg3;
 - (void)sendActivationRequest:(id)arg1 uuid:(id)arg2 context:(id)arg3;
-- (void)sendPPIDInfoRequest:(id)arg1 model:(id)arg2 token:(id)arg3 uuid:(id)arg4 context:(id)arg5;
+- (void)sendPPIDInfoRequest:(id)arg1 model:(id)arg2 token:(id)arg3 authFeatures:(unsigned long long)arg4 uuid:(id)arg5 context:(id)arg6;
 - (void)getPPIDInfo:(id)arg1 model:(id)arg2 cert:(id)arg3 context:(id)arg4;
 - (id)initWithDelegate:(id)arg1;
 

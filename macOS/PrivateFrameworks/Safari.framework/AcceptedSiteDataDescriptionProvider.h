@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)subtitleRowsForWebsiteDataDescription:(id)arg1;
+- (id)dataTypesListForWebsiteDataDescription:(id)arg1;
 - (id)titleForWebsiteDataDescription:(id)arg1;
 
 @end

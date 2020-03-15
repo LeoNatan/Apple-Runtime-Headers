@@ -20,12 +20,12 @@
 }
 
 + (id)obhRandomizerWithDimensionality:(unsigned long long)arg1 epsilon:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double cEpsilon; // @synthesize cEpsilon=_cEpsilon;
 @property(readonly, nonatomic) _DPRandomBitPositionGenerator *bitPositionGenerator; // @synthesize bitPositionGenerator=_bitPositionGenerator;
 @property(readonly, nonatomic) _DPBiasedCoin *epsilonCoin; // @synthesize epsilonCoin=_epsilonCoin;
 @property(readonly, nonatomic) double epsilon; // @synthesize epsilon=_epsilon;
 @property(readonly, nonatomic) unsigned long long m; // @synthesize m=_m;
-- (void).cxx_destruct;
 - (id)randomizeBitValues:(id)arg1 forKey:(id)arg2;
 - (id)randomizeWords:(id)arg1 fragmentWidth:(unsigned long long)arg2 forKey:(id)arg3;
 - (id)randomizeStrings:(id)arg1 forKey:(id)arg2;

@@ -52,6 +52,7 @@
 + (_Bool)_allowsParallax;
 + (Class)wallpaperViewClassForWallpaperType:(long long)arg1;
 + (Class)wallpaperViewClassForConfiguration:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBFWallpaperViewInternalObserver> internalObserver; // @synthesize internalObserver=_internalObserver;
 @property(readonly, copy, nonatomic) NSString *cacheGroup; // @synthesize cacheGroup=_cacheGroup;
 @property(nonatomic) long long logicalContentOrientation; // @synthesize logicalContentOrientation=_logicalContentOrientation;
@@ -71,7 +72,6 @@
 @property(nonatomic) long long variant; // @synthesize variant=_variant;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <SBFLegibilitySettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)legibilitySettingsDidChange;
 - (void)_updateContentViewScale;
 - (void)_updateScaleFactor;

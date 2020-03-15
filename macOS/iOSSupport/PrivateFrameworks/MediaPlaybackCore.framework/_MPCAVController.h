@@ -13,22 +13,27 @@
     BOOL _playedSuccessfully;
     BOOL _allowsNewPlaybackErrorItem;
     MPCPlaybackEngine *_playbackEngine;
+    long long _actionAtQueueEnd;
     MPAVItem *_firstPlaybackErrorItem;
     NSMutableSet *_failedItemsIdentifiers;
 }
 
 + (BOOL)prefersApplicationAudioSession;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *failedItemsIdentifiers; // @synthesize failedItemsIdentifiers=_failedItemsIdentifiers;
 @property(nonatomic) __weak MPAVItem *firstPlaybackErrorItem; // @synthesize firstPlaybackErrorItem=_firstPlaybackErrorItem;
 @property(nonatomic) BOOL allowsNewPlaybackErrorItem; // @synthesize allowsNewPlaybackErrorItem=_allowsNewPlaybackErrorItem;
+@property(nonatomic) long long actionAtQueueEnd; // @synthesize actionAtQueueEnd=_actionAtQueueEnd;
 @property(nonatomic, getter=hasPlayedSuccessfully) BOOL playedSuccessfully; // @synthesize playedSuccessfully=_playedSuccessfully;
 @property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
-- (void).cxx_destruct;
 - (void)_updateStateForPlaybackPrevention;
-- (void)_queueDidEndWithReason:(id)arg1 skipCL:(BOOL)arg2 lastItem:(id)arg3;
+- (void)_streamBufferFull:(id)arg1;
+- (void)_streamLikelyToKeepUp:(id)arg1;
+- (void)_itemPlaybackDidEndNotification:(id)arg1;
 - (void)_queueDidEndWithReason:(id)arg1 lastItem:(id)arg2;
 - (void)_setState:(long long)arg1;
 - (void)_itemDidChange:(id)arg1;
+- (void)_itemDidSignificantlyChangeElapsedTime:(double)arg1 rate:(float)arg2;
 - (void)_itemWillChange:(id)arg1;
 - (id)_expectedAssetTypesForPlaybackMode:(long long)arg1;
 - (void)_contentsChanged;

@@ -28,6 +28,7 @@
     PUProgressIndicatorView *__progressIndicatorView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShouldHideBars:) _Bool _shouldHideBars; // @synthesize _shouldHideBars=__shouldHideBars;
 @property(retain, nonatomic, setter=_setProgressIndicatorView:) PUProgressIndicatorView *_progressIndicatorView; // @synthesize _progressIndicatorView=__progressIndicatorView;
 @property(nonatomic) unsigned long long _exportCompletion; // @synthesize _exportCompletion=__exportCompletion;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) PUReviewScreenBarsModel *reviewBarsModel; // @synthesize reviewBarsModel=_reviewBarsModel;
 @property(readonly, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) PUReviewAsset *reviewAsset; // @synthesize reviewAsset=_reviewAsset;
-- (void).cxx_destruct;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
 - (void)_signalCompletion:(unsigned long long)arg1 withSavedAsset:(id)arg2;

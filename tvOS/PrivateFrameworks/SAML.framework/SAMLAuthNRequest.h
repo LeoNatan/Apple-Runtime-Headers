@@ -14,8 +14,8 @@
     SAMLAuthNRequestElement *_requestElement;
 }
 
-@property(retain, nonatomic) SAMLAuthNRequestElement *requestElement; // @synthesize requestElement=_requestElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SAMLAuthNRequestElement *requestElement; // @synthesize requestElement=_requestElement;
 - (void)setProviderName:(id)arg1;
 - (void)setForceAuthN:(_Bool)arg1;
 - (void)setIsPassive:(_Bool)arg1;

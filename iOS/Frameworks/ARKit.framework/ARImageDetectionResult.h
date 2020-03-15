@@ -21,6 +21,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) void *imageContext; // @synthesize imageContext=_imageContext;
 // Error parsing type for property worldTrackingCameraTransformAtDetection:
 // Property attributes: T{?=[4]},N,V_worldTrackingCameraTransformAtDetection
@@ -30,7 +31,6 @@
 // Error parsing type for property visionTransform:
 // Property attributes: T{?=[4]},N,V_visionTransform
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

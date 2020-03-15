@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class CURunLoopThread;
+@class CURunLoopThread, NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
 @interface CUMobileDeviceDiscovery : NSObject
 {
     BOOL _activateCalled;
     BOOL _invalidateCalled;
-    struct NSMutableDictionary *_mdDevices;
+    NSMutableDictionary *_mdDevices;
     struct _AMDeviceNotificationContext *_mdNotification;
     CURunLoopThread *_mdRunLoopThread;
     unsigned int _changeFlags;
@@ -26,6 +26,7 @@
 }
 
 + (void)getDevicesWithQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deviceChangedHandler; // @synthesize deviceChangedHandler=_deviceChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceLostHandler; // @synthesize deviceLostHandler=_deviceLostHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceFoundHandler; // @synthesize deviceFoundHandler=_deviceFoundHandler;
@@ -33,7 +34,6 @@
 @property(nonatomic) unsigned int discoveryFlags; // @synthesize discoveryFlags=_discoveryFlags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
-- (void).cxx_destruct;
 - (void)_mdThreadHandlePropertiesChanged:(id)arg1;
 - (void)_mdThreadStopMonitoringDevice:(id)arg1;
 - (void)_mdThreadStartMonitoringDevice:(id)arg1;

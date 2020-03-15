@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIResponderForwardable-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, UIResponder, UIWindow;
+@class NSArray, NSMutableArray, NSString, UIKey, UIResponder, UIWindow;
 
 @interface UIPress : NSObject <_UIResponderForwardable>
 {
@@ -25,11 +25,13 @@
     UIWindow *_window;
     UIResponder *_responder;
     double _force;
+    UIKey *_key;
     unsigned long long _source;
     unsigned long long _gameControllerComponent;
     unsigned long long _clickCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLongClick) BOOL longClick; // @synthesize longClick=_longClick;
 @property(nonatomic) unsigned long long clickCount; // @synthesize clickCount=_clickCount;
 @property(nonatomic) BOOL sentPressesEnded; // @synthesize sentPressesEnded=_sentPressesEnded;
@@ -37,13 +39,13 @@
 @property(readonly, nonatomic) unsigned int contextID; // @synthesize contextID=_contextID;
 @property(nonatomic, getter=_gameControllerComponent, setter=_setGameControllerComponent:) unsigned long long gameControllerComponent; // @synthesize gameControllerComponent=_gameControllerComponent;
 @property(nonatomic, getter=_source, setter=_setSource:) unsigned long long source; // @synthesize source=_source;
+@property(retain, nonatomic) UIKey *key; // @synthesize key=_key;
 @property(nonatomic) double force; // @synthesize force=_force;
 @property(retain, nonatomic) UIResponder *responder; // @synthesize responder=_responder;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) long long phase; // @synthesize phase=_phase;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)_loadStateFromPressInfo:(id)arg1;
 - (void)_loadStateFromPress:(id)arg1;
 - (BOOL)_isSynthetic;

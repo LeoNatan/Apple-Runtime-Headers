@@ -30,6 +30,7 @@
     PHFetchResult *__preparedRelatedCollections;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPreparedRelatedCollections:) PHFetchResult *_preparedRelatedCollections; // @synthesize _preparedRelatedCollections=__preparedRelatedCollections;
 @property(retain, nonatomic, setter=_setRelatedCollections:) PHFetchResult *_relatedCollections; // @synthesize _relatedCollections=__relatedCollections;
 @property(nonatomic, getter=_isCanceled, setter=_setCanceled:) BOOL _canceled; // @synthesize _canceled=__canceled;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) BOOL useItemIndexPaths; // @synthesize useItemIndexPaths=_useItemIndexPaths;
 @property(nonatomic) unsigned long long loadBatchSize; // @synthesize loadBatchSize=__loadBatchSize;
 @property(nonatomic) unsigned long long initialBatchSize; // @synthesize initialBatchSize=__initialBatchSize;
-- (void).cxx_destruct;
 - (id)_referenceAssetForReferenceObject:(id)arg1;
 - (id)_keyAssetFetchResultForRelatedCollection:(id)arg1 referenceAsset:(id)arg2;
 - (id)_collectionListRelatedToObject:(id)arg1;

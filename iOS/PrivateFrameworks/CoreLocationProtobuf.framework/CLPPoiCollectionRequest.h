@@ -17,9 +17,9 @@
 }
 
 + (Class)harvestsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *harvests; // @synthesize harvests=_harvests;
 @property(retain, nonatomic) CLPMeta *meta; // @synthesize meta=_meta;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

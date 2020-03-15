@@ -21,12 +21,12 @@
 
 + (_Bool)_hasValidKeys:(id)arg1;
 + (id)accessoryWithContentsOfDictionary:(id)arg1 forHome:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isInternallyCertified; // @synthesize isInternallyCertified=_isInternallyCertified;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) NSPredicate *notificationCondition; // @synthesize notificationCondition=_notificationCondition;
 @property(nonatomic, getter=areNotificationsEnabled) _Bool notificationsEnabled; // @synthesize notificationsEnabled=_notificationsEnabled;
 @property(retain, nonatomic) NSUUID *internalUniqueIdentifier; // @synthesize internalUniqueIdentifier=_internalUniqueIdentifier;
-- (void).cxx_destruct;
 - (_Bool)_shouldShowAppleInternalManufacturerInfo;
 - (_Bool)_isAppleInternalAccessory;
 - (void)_updateManufacturerInfoWithString:(id)arg1 forKey:(id)arg2;

@@ -35,6 +35,7 @@
 }
 
 + (unsigned short)messageType;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double heartbreakTime; // @synthesize heartbreakTime=_heartbreakTime;
 @property(readonly, nonatomic, getter=isBroken) _Bool broken; // @synthesize broken=_broken;
 @property(nonatomic) double rotation; // @synthesize rotation=_rotation;
@@ -42,7 +43,6 @@
 @property(nonatomic) float scale; // @synthesize scale=_scale;
 @property(nonatomic) int duration; // @synthesize duration=_duration;
 @property(nonatomic) float beatsPerMinute; // @synthesize beatsPerMinute=_beatsPerMinute;
-- (void).cxx_destruct;
 - (double)messageDuration;
 - (void)_startAudioPlayback;
 - (void)_stopAudioPlayback;

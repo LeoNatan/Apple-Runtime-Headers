@@ -18,12 +18,12 @@
     struct CGRect _frame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *geometryKinds; // @synthesize geometryKinds=_geometryKinds;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(nonatomic, getter=isAccurate) _Bool accurate; // @synthesize accurate=_accurate;
 @property(nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize size;
 - (void)enumerateGeometriesWithBlock:(CDUnknownBlockType)arg1;
 - (id)geometriesWithKind:(long long)arg1;

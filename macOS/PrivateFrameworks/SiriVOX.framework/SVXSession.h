@@ -59,8 +59,8 @@
     NSUUID *_sessionUUID;
 }
 
-@property(readonly, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 - (void)_sessionIdleFiredWithAssertion:(id)arg1;
 - (void)_stopSessionIdleTimer;
 - (void)_startSessionIdleTimerWithTimeInterval:(double)arg1;
@@ -160,6 +160,7 @@
 - (void)speechSynthesizerDidBecomeIdle:(id)arg1;
 - (void)speechSynthesizerDidBecomeBusy:(id)arg1;
 - (void)acquireAudioSessionForReason:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)assistantConnection:(id)arg1 startUIRequestWithInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)assistantConnection:(id)arg1 startUIRequestWithText:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)assistantConnection:(id)arg1 audioSessionDidBecomeActive:(BOOL)arg2;
 - (void)assistantConnection:(id)arg1 audioSessionWillBecomeActive:(BOOL)arg2;

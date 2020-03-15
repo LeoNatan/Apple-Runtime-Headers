@@ -16,9 +16,9 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMNoteFilter *contextFilter; // @synthesize contextFilter=_contextFilter;
 @property(retain, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 
 @end
 

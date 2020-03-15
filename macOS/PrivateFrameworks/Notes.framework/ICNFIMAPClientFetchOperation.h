@@ -18,10 +18,10 @@
 
 + (id)_fetchDataItemsForMessageSkeletonsWithHeaders:(id)arg1;
 + (id)_headersToFetch;
+- (void).cxx_destruct;
 @property(copy) NSIndexSet *messageNumbers; // @synthesize messageNumbers=_messageNumbers;
 @property(retain) id <ICNFIMAPFetchResponseHandler> responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain) NSMutableArray *dataItems; // @synthesize dataItems=_dataItems;
-- (void).cxx_destruct;
 - (long long)maxAllowedConnectionState;
 - (long long)minRequiredConnectionState;
 - (id)_fetchDataItemsForMessageSkeletonsWithAdditionalHeaderFields:(id)arg1;

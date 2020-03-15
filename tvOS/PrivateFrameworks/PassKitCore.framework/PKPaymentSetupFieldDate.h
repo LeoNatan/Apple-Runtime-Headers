@@ -20,6 +20,7 @@
     NSDate *_defaultDate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *defaultDate; // @synthesize defaultDate=_defaultDate;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
@@ -27,7 +28,6 @@
 @property(nonatomic) _Bool showsYear; // @synthesize showsYear=_showsYear;
 @property(nonatomic) _Bool showsMonth; // @synthesize showsMonth=_showsMonth;
 @property(nonatomic) _Bool showsDay; // @synthesize showsDay=_showsDay;
-- (void).cxx_destruct;
 - (unsigned long long)fieldType;
 - (void)_commonUpdate;
 - (void)updateWithConfiguration:(id)arg1;

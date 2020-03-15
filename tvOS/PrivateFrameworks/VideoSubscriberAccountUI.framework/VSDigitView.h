@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UILabel *_label;
 }
 
-@property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) NSData *_webArchiveData; // @synthesize _webArchiveData=__webArchiveData;
 - (void).cxx_destruct;
+@property(retain) NSData *_webArchiveData; // @synthesize _webArchiveData=__webArchiveData;
 - (id)_am_convertFromXPCWithWorkflow:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

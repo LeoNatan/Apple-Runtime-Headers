@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)commandWithContactStore:(id)arg1 contact:(id)arg2 containerIdentifier:(id)arg3;
++ (id)commandWithContactStore:(id)arg1 contact:(id)arg2 containerIdentifier:(id)arg3 ignoresGuardianRestrictions:(BOOL)arg4;
 
 @end
 

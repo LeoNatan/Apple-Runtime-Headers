@@ -24,6 +24,7 @@
 }
 
 + (id)sharedService;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool bumperConfigLoadingInProgress; // @synthesize bumperConfigLoadingInProgress=_bumperConfigLoadingInProgress;
 @property(retain, nonatomic) NSMutableArray *bumperConfigCompletionHandlers; // @synthesize bumperConfigCompletionHandlers=_bumperConfigCompletionHandlers;
 @property(retain, nonatomic) TVCKStoreBumperConfig *storeBumperConfig; // @synthesize storeBumperConfig=_storeBumperConfig;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) TVCKRemoteNotifier *remoteNotifier; // @synthesize remoteNotifier=_remoteNotifier;
 @property(retain, nonatomic) TVCKDataClientConnector *connector; // @synthesize connector=_connector;
 @property(nonatomic) _Bool rentalsEnabled; // @synthesize rentalsEnabled=_rentalsEnabled;
-- (void).cxx_destruct;
 - (id)_rentalQuery;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_sendRemoteChangeNotification;

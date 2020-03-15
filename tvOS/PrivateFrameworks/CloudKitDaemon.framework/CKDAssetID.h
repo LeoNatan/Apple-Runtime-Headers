@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSNumber *_size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSData *referenceSignature; // @synthesize referenceSignature=_referenceSignature;
 @property(readonly, nonatomic) NSData *fileSignature; // @synthesize fileSignature=_fileSignature;
 @property(readonly, nonatomic) CKDPRecordIdentifier *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;

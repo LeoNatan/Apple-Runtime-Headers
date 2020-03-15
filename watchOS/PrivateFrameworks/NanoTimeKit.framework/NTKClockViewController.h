@@ -6,6 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <NanoTimeKit/CLKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/CSLPIButtonHandlerProtocol-Protocol.h>
 #import <NanoTimeKit/CSLSAOTModeProvider-Protocol.h>
 #import <NanoTimeKit/CSLSScreenWakeProvider-Protocol.h>
@@ -18,7 +19,6 @@
 #import <NanoTimeKit/NTKFaceLibraryViewControllerDelegate-Protocol.h>
 #import <NanoTimeKit/NTKFaceObserver-Protocol.h>
 #import <NanoTimeKit/NTKFaceViewControllerDelegate-Protocol.h>
-#import <NanoTimeKit/NTKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/NTKTritiumAnimationControllerDelegate-Protocol.h>
 #import <NanoTimeKit/NTKTritiumToolControllerDelegate-Protocol.h>
 #import <NanoTimeKit/NTKTritiumViewControllerDelegate-Protocol.h>
@@ -28,7 +28,7 @@
 @class CSLPITimer, NCEClockCelebrationViewController, NSLock, NSSet, NSString, NSTimer, NTKAggdReporter, NTKComplicationLocationManager, NTKFaceLibraryViewController, NTKFaceSnapshotClient, NTKFaceViewController, NTKPersistentFaceCollection, NTKTransientFaceCollection, NTKTritiumAnimationController, NTKTritiumToolController, NTKTritiumViewController, NTKTritiumWakeController, NTKUpNextUseMonitor, ORBAnimator, ORBTapGestureRecognizer, PPTNTKBlankFaceCollection, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol CSLSFlipbookFrameCoordinator, CSLSScreenWakeProviderDelegate, NTKClockWakeController, NTKTritiumAnimationControllerViewProvider;
 
-@interface NTKClockViewController : UIViewController <NTKClockViewDelegate, NTKFaceViewControllerDelegate, NTKFaceLibraryViewControllerDelegate, ORBTapGestureRecognizerDelegate, CSLPIButtonHandlerProtocol, UIGestureRecognizerDelegate, NPTOUserPhotoFaceServerDelegateProtocol, NTKFaceCollectionObserver, NTKSensitiveUIStateObserver, NCEClockCelebrationViewControllerDelegate, CSLSScreenWakeProvider, NTKClockStatusBarViewControllerStatusObserver, NTKClockWakeControllerProvider, NTKFaceObserver, CSLSAOTModeProvider, NTKTritiumToolControllerDelegate, NTKTritiumViewControllerDelegate, NTKTritiumAnimationControllerDelegate>
+@interface NTKClockViewController : UIViewController <NTKClockViewDelegate, NTKFaceViewControllerDelegate, NTKFaceLibraryViewControllerDelegate, ORBTapGestureRecognizerDelegate, CSLPIButtonHandlerProtocol, UIGestureRecognizerDelegate, NPTOUserPhotoFaceServerDelegateProtocol, NTKFaceCollectionObserver, CLKSensitiveUIStateObserver, NCEClockCelebrationViewControllerDelegate, CSLSScreenWakeProvider, NTKClockStatusBarViewControllerStatusObserver, NTKClockWakeControllerProvider, NTKFaceObserver, CSLSAOTModeProvider, NTKTritiumToolControllerDelegate, NTKTritiumViewControllerDelegate, NTKTritiumAnimationControllerDelegate>
 {
     Class _statusBarViewControllerClass;
     NTKPersistentFaceCollection *_libraryFaceCollection;
@@ -73,9 +73,9 @@
     NSSet *_pauseReasons;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLockScreenBorrowed) _Bool lockScreenBorrowed; // @synthesize lockScreenBorrowed=_lockScreenBorrowed;
 @property(copy, nonatomic) NSSet *pauseReasons; // @synthesize pauseReasons=_pauseReasons;
-- (void).cxx_destruct;
 - (void)tritiumAnimationController:(id)arg1 cleanupAfterTritiumTransitionAnimated:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (_Bool)tritiumAnimationController:(id)arg1 prepareForTransitionToTritiumOnAnimated:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)faceConfigurationsDidChangeInTritiumViewController:(id)arg1;

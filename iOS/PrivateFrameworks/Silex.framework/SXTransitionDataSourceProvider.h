@@ -19,11 +19,11 @@
     SXTransitionDataSourceNode *_currentNode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXTransitionDataSourceNode *currentNode; // @synthesize currentNode=_currentNode;
 @property(readonly, nonatomic) id <SXDocumentMetadataProviding> documentMetadataProvider; // @synthesize documentMetadataProvider=_documentMetadataProvider;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) id <SXComponentController> componentController; // @synthesize componentController=_componentController;
-- (void).cxx_destruct;
 - (id)transitionDataSourceForType:(unsigned long long)arg1;
 - (id)initWithComponentController:(id)arg1 scrollView:(id)arg2 documentMetadataProvider:(id)arg3;
 

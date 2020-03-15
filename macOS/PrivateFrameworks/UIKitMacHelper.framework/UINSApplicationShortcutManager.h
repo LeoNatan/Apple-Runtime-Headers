@@ -15,9 +15,9 @@
 }
 
 + (id)sharedShortcutManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *dynamicShortcutItems; // @synthesize dynamicShortcutItems=_dynamicShortcutItems;
 @property(retain, nonatomic) NSArray *staticShortcutItems; // @synthesize staticShortcutItems=_staticShortcutItems;
-- (void).cxx_destruct;
 
 @end
 

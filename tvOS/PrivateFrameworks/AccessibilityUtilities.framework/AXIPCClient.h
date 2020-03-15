@@ -33,6 +33,7 @@
 
 + (id)allClients;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXAccessQueue *portDeathAccessQueue; // @synthesize portDeathAccessQueue=_portDeathAccessQueue;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) _Bool usesPerPidLookup; // @synthesize usesPerPidLookup=_usesPerPidLookup;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) CDUnknownBlockType portDeathHandler; // @synthesize portDeathHandler=_portDeathHandler;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(nonatomic, getter=isConnected) _Bool connected; // @synthesize connected=_connected;
-- (void).cxx_destruct;
 - (id)_descriptionForMachError:(int)arg1;
 - (_Bool)_handleErrorWithMessage:(id)arg1 outError:(id *)arg2;
 - (_Bool)_handleErrorWithMessage:(id)arg1 machError:(int)arg2 outError:(id *)arg3;

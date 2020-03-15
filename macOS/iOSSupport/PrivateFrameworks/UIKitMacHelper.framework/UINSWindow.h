@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 
 + (struct CGSize)_sizeFromAutosaveName:(id)arg1 defaultSize:(struct CGSize)arg2;
 + (id)keyPathsForValuesAffectingContentLayoutGuide;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint lastMouseDownLocation; // @synthesize lastMouseDownLocation=_lastMouseDownLocation;
 @property(retain, nonatomic) UIWindow *uiWindow; // @synthesize uiWindow=_uiWindow;
 @property(copy, nonatomic) CDUnknownBlockType liveResizeDidEndHandler; // @synthesize liveResizeDidEndHandler=_liveResizeDidEndHandler;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long windowAppearance; // @synthesize windowAppearance=_windowAppearance;
 @property(retain, nonatomic) id <UINSToolbar> uins_toolbar; // @synthesize uins_toolbar=_uins_toolbar;
 @property(retain, nonatomic) NSObject<UINSTouchBarCoordinator> *touchBarCoordinator; // @synthesize touchBarCoordinator=_touchBarCoordinator;
-- (void).cxx_destruct;
 - (id)_responderChainFromFirstResponder;
 - (id)_dumpLayer;
 @property(nonatomic) __weak UIWindow *keyUIWindow;
@@ -76,6 +76,7 @@ __attribute__((visibility("hidden")))
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)endHostModalSession;
 - (void)beginHostModalSession;
+- (void)forwardUINSEventToAppKit:(id)arg1;
 - (void)beginDragWithItems:(id)arg1 handler:(id)arg2;
 - (void)setCursor:(id)arg1;
 - (void)takeCursor:(id)arg1;

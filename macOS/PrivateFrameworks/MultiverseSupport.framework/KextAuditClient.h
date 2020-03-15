@@ -16,9 +16,9 @@
 }
 
 + (id)client;
+- (void).cxx_destruct;
 @property(retain) KextAuditIntelBootSession *session; // @synthesize session=_session;
 @property(retain) NSXPCConnection<KextAuditXPCClientProtocol> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (id)updateSession;
 - (void)newBootSession:(id)arg1;
 - (void)kextLoad:(id)arg1;

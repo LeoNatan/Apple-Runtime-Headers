@@ -38,6 +38,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) long long flags; // @synthesize flags=_flags;
 @property(readonly) long long scopedToLOI; // @synthesize scopedToLOI=_scopedToLOI;
 @property(readonly) long long version; // @synthesize version=_version;
@@ -45,7 +46,6 @@
 @property(readonly) BOOL isBuiltin; // @synthesize isBuiltin=_isBuiltin;
 @property(readonly) BOOL isAny; // @synthesize isAny=_isAny;
 @property(readonly) long long interface; // @synthesize interface=_interface;
-- (void).cxx_destruct;
 - (id)invitesHourlyDistribution;
 - (id)trainingProgress;
 - (id)dayOfWeekGrouping;

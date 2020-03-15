@@ -41,6 +41,7 @@
     NSDictionary *_environment;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *environment; // @synthesize environment=_environment;
 @property(retain) NSDictionary *sourceForm; // @synthesize sourceForm=_sourceForm;
 @property(retain) NSDate *beganUsingAt; // @synthesize beganUsingAt=_beganUsingAt;
@@ -65,7 +66,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *_replyQueue; // @synthesize _replyQueue=__replyQueue;
 @property(retain) NSXPCConnection *pluginConnection; // @synthesize pluginConnection=_pluginConnection;
 @property(copy) CDUnknownBlockType notificationBlock; // @synthesize notificationBlock=_notificationBlock;
-- (void).cxx_destruct;
 - (void)changeState:(unsigned long long)arg1;
 - (void)messageTraceUsage;
 - (void)unwind:(unsigned long long)arg1 force:(BOOL)arg2;

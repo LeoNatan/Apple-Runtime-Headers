@@ -18,11 +18,11 @@
     NSArray *_toolchainIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *toolchainIdentifiers; // @synthesize toolchainIdentifiers=_toolchainIdentifiers;
 @property(readonly, nonatomic) NSString *targetName; // @synthesize targetName=_targetName;
 @property(readonly, nonatomic) NSString *projectSourceDirectory; // @synthesize projectSourceDirectory=_projectSourceDirectory;
 @property(readonly, nonatomic) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithBuiltPath:(id)arg1 projectSourceDirectory:(id)arg2 targetName:(id)arg3 toolchainIdentifiers:(id)arg4;

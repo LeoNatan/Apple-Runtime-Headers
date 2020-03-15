@@ -32,6 +32,7 @@
     id <PGGraphUpdateHealthRecording> _updateHealthRecorder;
 }
 
+- (void).cxx_destruct;
 @property BOOL libraryBecameUnavailable; // @synthesize libraryBecameUnavailable=_libraryBecameUnavailable;
 @property(readonly, nonatomic) id <PGGraphUpdateHealthRecording> updateHealthRecorder; // @synthesize updateHealthRecorder=_updateHealthRecorder;
 @property(retain, nonatomic) PHPersistentChangeToken *lastReadToken; // @synthesize lastReadToken=_lastReadToken;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) PGLibraryChangeListenerStateStore *stateStore; // @synthesize stateStore=_stateStore;
 @property(readonly, nonatomic) __weak PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (BOOL)_distributeChangesInFetchResult:(id)arg1;
 - (void)_clearConsumerTokenState;
 - (id)_consumer:(id)arg1 withChangeTokens:(id)arg2 processedChangeTokens:(id)arg3 consumedTokens:(BOOL)arg4;

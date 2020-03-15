@@ -12,7 +12,7 @@
 #import <HomeKitDaemon/NSXPCListenerDelegate-Protocol.h>
 
 @class HMDApplicationRegistry, NSArray, NSMutableSet, NSObject, NSString, NSXPCListener;
-@protocol HMFLocking, OS_dispatch_group, OS_dispatch_queue;
+@protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMDXPCMessageTransport : HMFMessageTransport <NSXPCListenerDelegate, HMDApplicationMonitorDelegate, HMFLogging, HMFMessageTransportDelegate>
 {
@@ -21,15 +21,13 @@
     NSMutableSet *_connections;
     HMDApplicationRegistry *_applicationRegistry;
     NSXPCListener *_listener;
-    NSObject<OS_dispatch_group> *_activeMessageTracker;
 }
 
 + (id)logCategory;
 + (id)defaultTransport;
-@property(retain, nonatomic) NSObject<OS_dispatch_group> *activeMessageTracker; // @synthesize activeMessageTracker=_activeMessageTracker;
+- (void).cxx_destruct;
 @property(readonly) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(readonly) HMDApplicationRegistry *applicationRegistry; // @synthesize applicationRegistry=_applicationRegistry;
-- (void).cxx_destruct;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)messageTransport:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)applicationMonitorDidChangeActiveHomeKitAppStatus:(BOOL)arg1;

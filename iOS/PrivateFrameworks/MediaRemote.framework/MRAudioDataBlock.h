@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     float _gain;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float gain; // @synthesize gain=_gain;
 @property(readonly, nonatomic) CDStruct_ace97b7a time; // @synthesize time=_time;
 @property(readonly, nonatomic) MRAudioBuffer *buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 - (void)_parseGain:(id)arg1;
 - (void)_parseTimestamp:(id)arg1;
 - (void)_parseBuffer:(id)arg1;

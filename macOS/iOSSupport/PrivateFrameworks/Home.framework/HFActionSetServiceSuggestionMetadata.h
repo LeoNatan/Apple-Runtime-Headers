@@ -16,10 +16,10 @@
 }
 
 + (id)metadataForServiceType:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *secondaryCharacteristicTypes; // @synthesize secondaryCharacteristicTypes=_secondaryCharacteristicTypes;
 @property(readonly, nonatomic) NSString *primaryCharacteristicType; // @synthesize primaryCharacteristicType=_primaryCharacteristicType;
 @property(readonly, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
-- (void).cxx_destruct;
 - (id)initWithServiceType:(id)arg1 primaryCharacteristicType:(id)arg2 secondaryCharacteristicTypes:(id)arg3;
 
 @end

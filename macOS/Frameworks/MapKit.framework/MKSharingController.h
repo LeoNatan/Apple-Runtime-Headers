@@ -26,11 +26,11 @@
 
 + (void)addMapItemToContacts:(id)arg1;
 + (id)sharingControllerForPlaceItem:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSURL *mapsURL; // @synthesize mapsURL=_mapsURL;
 @property(nonatomic) __weak id <NSSharingServiceDelegate><NSSharingServicePickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_exportVCard;
 @property(copy, nonatomic) NSString *vCardTemporaryPath;
 - (id)sharingService:(id)arg1 optionsForItems:(id)arg2;

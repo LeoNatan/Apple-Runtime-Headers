@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDReselectedStreamConfigurationWrite *reselectedStreamConfigurationWrite; // @synthesize reselectedStreamConfigurationWrite=_reselectedStreamConfigurationWrite;
 @property(retain, nonatomic) HMDSelectedStreamConfigurationWrite *selectedStreamConfigurationWrite; // @synthesize selectedStreamConfigurationWrite=_selectedStreamConfigurationWrite;
 @property(retain, nonatomic) HMDSetupEndPointWrite *setupEndPointWrite; // @synthesize setupEndPointWrite=_setupEndPointWrite;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) HMDSupportedRTPConfiguration *supportedRTPConfiguration; // @synthesize supportedRTPConfiguration=_supportedRTPConfiguration;
 @property(retain, nonatomic) HMDSupportedAudioStreamConfiguration *supportedAudioStreamConfiguration; // @synthesize supportedAudioStreamConfiguration=_supportedAudioStreamConfiguration;
 @property(retain, nonatomic) HMDSupportedVideoStreamConfiguration *supportedVideoStreamConfiguration; // @synthesize supportedVideoStreamConfiguration=_supportedVideoStreamConfiguration;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

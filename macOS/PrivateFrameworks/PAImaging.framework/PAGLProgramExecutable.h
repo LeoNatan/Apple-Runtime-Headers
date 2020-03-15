@@ -22,8 +22,8 @@
 }
 
 + (void)deleteWithContext:(id)arg1 objectID:(unsigned int)arg2;
-@property(readonly, nonatomic) __weak PAOpenGLProgram *program; // @synthesize program=_program;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PAOpenGLProgram *program; // @synthesize program=_program;
 - (void)_end;
 - (void)_begin;
 - (BOOL)_run:(CDUnknownBlockType)arg1;

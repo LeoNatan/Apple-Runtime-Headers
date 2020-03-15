@@ -13,8 +13,8 @@
     CKStoreAccount *_storeAccount;
 }
 
-@property(readonly, nonatomic) CKStoreAccount *storeAccount; // @synthesize storeAccount=_storeAccount;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKStoreAccount *storeAccount; // @synthesize storeAccount=_storeAccount;
 - (id)callFunction:(id)arg1 withArguments:(id)arg2;
 - (id)initWithStoreAccount:(id)arg1;
 

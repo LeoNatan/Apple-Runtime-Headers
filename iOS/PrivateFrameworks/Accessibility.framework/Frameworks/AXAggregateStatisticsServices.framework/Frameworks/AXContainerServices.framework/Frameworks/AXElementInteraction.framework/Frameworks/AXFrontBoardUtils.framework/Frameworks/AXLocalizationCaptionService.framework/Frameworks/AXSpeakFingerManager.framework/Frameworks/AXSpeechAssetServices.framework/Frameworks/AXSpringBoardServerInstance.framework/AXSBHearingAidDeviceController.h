@@ -26,6 +26,7 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mediaUpdateQueue; // @synthesize mediaUpdateQueue=_mediaUpdateQueue;
 @property(retain, nonatomic) NSTimer *preferredRouteTimer; // @synthesize preferredRouteTimer=_preferredRouteTimer;
 @property(retain, nonatomic) NSDictionary *preferredRoute; // @synthesize preferredRoute=_preferredRoute;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool hearingAidIsConnected; // @synthesize hearingAidIsConnected=_hearingAidIsConnected;
 @property(nonatomic) _Bool shouldIgnoreRouteChanges; // @synthesize shouldIgnoreRouteChanges=_shouldIgnoreRouteChanges;
 @property(nonatomic) _Bool isShowingHearingAidControl; // @synthesize isShowingHearingAidControl;
-- (void).cxx_destruct;
 - (id)userInterfaceClient:(id)arg1 processMessageFromServer:(id)arg2 withIdentifier:(unsigned long long)arg3 error:(id *)arg4;
 - (void)connectionWithServiceWasInterruptedForUserInterfaceClient:(id)arg1;
 - (void)liveListenStatusBarActivated:(id)arg1;

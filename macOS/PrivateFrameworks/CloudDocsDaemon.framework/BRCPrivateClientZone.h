@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSMapTable *_pcsChainFolderOperations;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BRCServerZoneHealthState *zoneHealthState; // @synthesize zoneHealthState=_zoneHealthState;
 @property(readonly, nonatomic) NSSet *appLibraries; // @synthesize appLibraries=_appLibraries;
-- (void).cxx_destruct;
 - (BOOL)validateItemsLoggingToFile:(struct __sFILE *)arg1 db:(id)arg2;
 - (BOOL)validateStructureLoggingToFile:(struct __sFILE *)arg1 db:(id)arg2;
 - (void)_checkResultSetIsEmpty:(id)arg1 logToFile:(struct __sFILE *)arg2 reason:(id)arg3 result:(char *)arg4;
@@ -55,12 +55,12 @@ __attribute__((visibility("hidden")))
 - (void)registerPCSChainingOperation:(id)arg1;
 @property(readonly, nonatomic) BOOL hasDefaultAppLibrary;
 @property(readonly, nonatomic) BRCAppLibrary *defaultAppLibrary; // @synthesize defaultAppLibrary=_defaultAppLibrary;
-- (struct BRCDirectoryItem *)fetchZoneRootItemInDB:(id)arg1;
+- (id)fetchZoneRootItemInDB:(id)arg1;
 - (id)rootItemID;
 @property(readonly, nonatomic) BRCPrivateServerZone *privateServerZone;
 - (id)asPrivateClientZone;
 @property(readonly, nonatomic) BOOL isPrivateZone;
-- (struct PQLResultSet *)unchainedItemInfoInServerTruthEnumeratorParentedTo:(id)arg1;
+- (id)unchainedItemInfoInServerTruthEnumeratorParentedTo:(id)arg1;
 - (BOOL)parentIDHasLiveUnchainedChildren:(id)arg1;
 - (unsigned int)pcsChainStateForItem:(id)arg1;
 

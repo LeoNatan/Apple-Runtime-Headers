@@ -17,11 +17,11 @@
 }
 
 + (id)loadCoordinatorForContext:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double timeoutDelay; // @synthesize timeoutDelay=_timeoutDelay;
 @property(readonly, nonatomic) NSMutableArray *_suggestionsBlocks; // @synthesize _suggestionsBlocks=__suggestionsBlocks;
 @property(readonly, nonatomic) NSMutableArray *_relatedBlocks; // @synthesize _relatedBlocks=__relatedBlocks;
 @property(readonly, nonatomic) NSHashTable *_tokens; // @synthesize _tokens=__tokens;
-- (void).cxx_destruct;
 - (_Bool)_canPerformSuggestionsFetch;
 - (_Bool)_canPerformRelatedFetch;
 - (void)_tokenDidComplete:(id)arg1;

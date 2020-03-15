@@ -46,9 +46,9 @@
     _Bool _faceTrackingPaused;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=faceTrackingIsPaused) _Bool faceTrackingPaused; // @synthesize faceTrackingPaused=_faceTrackingPaused;
 @property(nonatomic) _Bool enableReticle; // @synthesize enableReticle=_enableReticle;
-- (void).cxx_destruct;
 - (void)_renderer:(id)arg1 didBuildSubdivDataForHash:(id)arg2 dataProvider:(CDUnknownBlockType)arg3;
 - (id)_renderer:(id)arg1 subdivDataForHash:(id)arg2;
 - (void)layoutSubviews;
@@ -59,8 +59,9 @@
 - (_Bool)showPerfHUD;
 - (double)currentlyRenderedTrackingDate;
 - (void)_renderer:(id)arg1 willRenderScene:(id)arg2 atTime:(double)arg3;
-- (struct UIImage *)snapshotWithSize:(struct CGSize)arg1 scaleFactor:(float)arg2;
-- (struct UIImage *)snapshotWithSize:(struct CGSize)arg1;
+- (id)snapshotWithSize:(struct CGSize)arg1 scaleFactor:(float)arg2 options:(id)arg3;
+- (id)snapshotWithSize:(struct CGSize)arg1 scaleFactor:(float)arg2;
+- (id)snapshotWithSize:(struct CGSize)arg1;
 - (id)transitionTexture;
 - (void)warmupMemoji;
 - (void)setDirectRetargetingMode:(_Bool)arg1;

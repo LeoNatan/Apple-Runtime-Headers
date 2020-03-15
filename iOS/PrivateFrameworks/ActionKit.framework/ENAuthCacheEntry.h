@@ -15,9 +15,9 @@
 }
 
 + (id)entryWithResult:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *cachedDate; // @synthesize cachedDate=_cachedDate;
 @property(retain, nonatomic) EDAMAuthenticationResult *authResult; // @synthesize authResult=_authResult;
-- (void).cxx_destruct;
 - (_Bool)isValid;
 
 @end

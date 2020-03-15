@@ -17,9 +17,9 @@
 }
 
 + (id)featureWithRect:(struct CGRect)arg1 onPage:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak AKPageController *page; // @synthesize page=_page;
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRect:(struct CGRect)arg1 onPage:(id)arg2;

@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSArray *availableBookings; // @synthesize availableBookings=_availableBookings;
 @property(copy) INTermsAndConditions *termsAndConditions; // @synthesize termsAndConditions=_termsAndConditions;
 @property(copy) NSString *localizedBookingAdvisementText; // @synthesize localizedBookingAdvisementText=_localizedBookingAdvisementText;
 @property(copy) NSString *localizedRestaurantDescriptionText; // @synthesize localizedRestaurantDescriptionText=_localizedRestaurantDescriptionText;
-- (void).cxx_destruct;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_dictionaryRepresentation;
 @property(readonly) long long code;

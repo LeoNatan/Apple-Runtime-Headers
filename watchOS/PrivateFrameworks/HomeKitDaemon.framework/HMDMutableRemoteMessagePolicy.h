@@ -10,6 +10,8 @@
 {
 }
 
++ (id)remoteMessagePolicyWithRequiresSecureMessage:(_Bool)arg1 allowsAnonymousMessage:(_Bool)arg2 requiresAccountMessage:(_Bool)arg3 transportRestriction:(unsigned int)arg4 roles:(unsigned int)arg5;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property unsigned int roles; // @dynamic roles;
 @property unsigned int transportRestriction; // @dynamic transportRestriction;
 @property _Bool requiresAccountMessage; // @dynamic requiresAccountMessage;

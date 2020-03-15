@@ -32,6 +32,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)cplAdditionalSecureClassesForProperty:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *originatingScopeIdentifier; // @synthesize originatingScopeIdentifier=_originatingScopeIdentifier;
 @property(copy, nonatomic) NSURL *shareURL; // @synthesize shareURL=_shareURL;
 @property(copy, nonatomic) NSArray *participants; // @synthesize participants=_participants;
@@ -47,7 +48,6 @@
 @property(nonatomic) short mode; // @synthesize mode=_mode;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

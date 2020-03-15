@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
-@property(nonatomic) long long elementSpacing; // @synthesize elementSpacing=_elementSpacing;
 - (void).cxx_destruct;
+@property(nonatomic) long long elementSpacing; // @synthesize elementSpacing=_elementSpacing;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)viewForElementIdentifier:(id)arg1;

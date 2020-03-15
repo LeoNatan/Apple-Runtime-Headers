@@ -59,6 +59,7 @@
     double _timingTest_ApplicationReceiveTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *timingTest_queue; // @synthesize timingTest_queue=_timingTest_queue;
 @property(retain, nonatomic) NSArray *timingTest_lastClientIdentifier; // @synthesize timingTest_lastClientIdentifier=_timingTest_lastClientIdentifier;
 @property(retain, nonatomic) NSString *timingTest_lastServerIdentifier; // @synthesize timingTest_lastServerIdentifier=_timingTest_lastServerIdentifier;
@@ -101,7 +102,6 @@
 @property(nonatomic) __weak id <SPExtensionConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(copy, nonatomic) NSString *serverIdentifier; // @synthesize serverIdentifier=_serverIdentifier;
-- (void).cxx_destruct;
 - (id)extendLaunchTest;
 - (void)runTest:(id)arg1 options:(id)arg2;
 - (void)_postMetricsForEstablishExtensionConnection;

@@ -17,12 +17,12 @@
     UIViewController *_presentationViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIViewController *presentationViewController; // @synthesize presentationViewController=_presentationViewController;
 @property long long serviceType; // @synthesize serviceType=_serviceType;
 @property(retain) NSTimer *registrationTimer; // @synthesize registrationTimer=_registrationTimer;
 @property(retain) IMAccount *account; // @synthesize account=_account;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (void)_accountRegistrationStatusChanged:(id)arg1;
 - (void)_registrationTimerFired:(id)arg1;
 - (void)registerAccountWithUsername:(id)arg1 password:(id)arg2 service:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

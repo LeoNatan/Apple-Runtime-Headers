@@ -13,8 +13,8 @@
     PKPaymentTransaction *_transaction;
 }
 
-@property(readonly, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (id)eventType;
 - (_Bool)isEqualToActivityEvent:(id)arg1;
 - (unsigned int)hash;

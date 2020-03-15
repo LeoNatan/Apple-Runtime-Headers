@@ -16,9 +16,9 @@
     NotesTextureView *_textureView;
 }
 
+- (void).cxx_destruct;
 @property _Bool scrollsTexture; // @synthesize scrollsTexture=_scrollsTexture;
 @property(readonly, nonatomic) NotesTextureView *textureView; // @synthesize textureView=_textureView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setContentOffset:(struct CGPoint)arg1;
 - (void)commonInitWithScrollingTextures:(_Bool)arg1 hasAlpha:(_Bool)arg2;

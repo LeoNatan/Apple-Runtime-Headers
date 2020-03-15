@@ -16,10 +16,10 @@
 }
 
 + (id)requestWithViewController:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
 @property(nonatomic) unsigned long long preferredPresentationType; // @synthesize preferredPresentationType=_preferredPresentationType;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)initWithViewController:(id)arg1;
 
 @end

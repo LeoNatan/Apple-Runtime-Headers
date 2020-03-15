@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     id <NACIDSClientDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NACIDSClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NACIDSClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5;
 - (void)_sendMessage:(id)arg1 type:(int)arg2 timeout:(double)arg3 queueOne:(id)arg4 priority:(int)arg5;
 - (void)pickAudioRouteWithIdentifier:(id)arg1 category:(id)arg2;

@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     AVConferencePreview *_preview;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVConferencePreview *preview; // @synthesize preview=_preview;
 @property(retain, nonatomic) TUVideoEffect *currentVideoEffect; // @synthesize currentVideoEffect=_currentVideoEffect;
 @property(nonatomic) __weak id <TUVideoDeviceControllerProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)captureDevicesChanged:(id)arg1;
 - (id)thumbnailImageForVideoEffectName:(id)arg1;
 @property(readonly, nonatomic) NSArray *availableVideoEffects;

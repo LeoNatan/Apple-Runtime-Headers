@@ -17,12 +17,12 @@
     NSString *_responseDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *responseDescription; // @synthesize responseDescription=_responseDescription;
 @property(retain, nonatomic) CoreDAVErrorItem *topLevelErrorItem; // @synthesize topLevelErrorItem=_topLevelErrorItem;
 @property(retain, nonatomic) ICSDocument *calendarData; // @synthesize calendarData=_calendarData;
 @property(retain, nonatomic) CoreDAVLeafItem *requestStatus; // @synthesize requestStatus=_requestStatus;
 @property(retain, nonatomic) CoreDAVItemWithHrefChildItem *recipientHREF; // @synthesize recipientHREF=_recipientHREF;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSString *recipientString;
 - (id)copyParseRules;

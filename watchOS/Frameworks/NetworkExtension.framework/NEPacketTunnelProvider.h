@@ -15,8 +15,8 @@
     NEPacketTunnelFlow *_packetFlow;
 }
 
-@property(retain) NEPacketTunnelFlow *packetFlow; // @synthesize packetFlow=_packetFlow;
 - (void).cxx_destruct;
+@property(retain) NEPacketTunnelFlow *packetFlow; // @synthesize packetFlow=_packetFlow;
 - (void)requestSocket:(_Bool)arg1 interface:(id)arg2 local:(id)arg3 remote:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)stopTunnelWithReason:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startTunnelWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

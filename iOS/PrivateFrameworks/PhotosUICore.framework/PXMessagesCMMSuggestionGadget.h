@@ -24,20 +24,19 @@
     id <PXMessagesCMMSuggestionGadgetActionDelegate> _actionDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXMessagesCMMSuggestionGadgetActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 @property(retain, nonatomic) id <PXCMMSuggestion> suggestion; // @synthesize suggestion=_suggestion;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType; // @synthesize accessoryButtonType=_accessoryButtonType;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)userDidSelectGadget;
-@property(readonly, nonatomic) _Bool supportsSelection;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
-- (struct NSObject *)contentViewController;
+- (id)contentViewController;
 @property(readonly, nonatomic) NSString *localizedTitle;
 - (void)_updatePosterHeaderView;
 - (void)viewWillLayoutSubviews;
@@ -55,7 +54,6 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) unsigned long long headerStyle;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

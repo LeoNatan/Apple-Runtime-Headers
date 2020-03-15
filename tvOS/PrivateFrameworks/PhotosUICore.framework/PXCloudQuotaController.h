@@ -15,9 +15,9 @@
     id <PXCloudQuotaControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXCloudQuotaControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIView *informationBanner; // @synthesize informationBanner=_informationBanner;
-- (void).cxx_destruct;
 
 @end
 

@@ -32,6 +32,7 @@
 
 + (id)submanagerIdentifier;
 + (id)coachingAlertRequestForAchievement:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *alertedAchievementsToRegisterWhenProtectedDataAvailable; // @synthesize alertedAchievementsToRegisterWhenProtectedDataAvailable=_alertedAchievementsToRegisterWhenProtectedDataAvailable;
 @property(retain, nonatomic) NSSet *achievementsToAlertWhenProtectedDataAvailable; // @synthesize achievementsToAlertWhenProtectedDataAvailable=_achievementsToAlertWhenProtectedDataAvailable;
 @property(retain, nonatomic) NSSet *pendingAlertRequests; // @synthesize pendingAlertRequests=_pendingAlertRequests;
@@ -44,7 +45,6 @@
 @property(nonatomic) __weak ACHAchievementStore *achievementStore; // @synthesize achievementStore=_achievementStore;
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel=_typicalDayModel;
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate=_coachingSubmanagerDelegate;
-- (void).cxx_destruct;
 - (double)_delayAfterWristOnForNextDayScheduledAchievements;
 - (void)privacySettingsDidChange:(id)arg1;
 - (void)settingsDidChange:(id)arg1;

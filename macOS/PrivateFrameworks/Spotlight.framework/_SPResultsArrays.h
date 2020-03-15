@@ -25,6 +25,7 @@
     double _blendingDuration;
 }
 
+- (void).cxx_destruct;
 @property double blendingDuration; // @synthesize blendingDuration=_blendingDuration;
 @property(retain) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 @property(retain) NSArray *results; // @synthesize results=_results;
@@ -38,7 +39,6 @@
 @property BOOL foundLocalResults; // @synthesize foundLocalResults=_foundLocalResults;
 @property unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(retain) SPQueryTask *task; // @synthesize task=_task;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

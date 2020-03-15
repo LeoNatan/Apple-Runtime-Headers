@@ -19,12 +19,12 @@
 }
 
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(readonly, nonatomic) NSMutableDictionary *endpointObservers; // @synthesize endpointObservers=_endpointObservers;
 @property(readonly, nonatomic) NSMutableDictionary *playerPathObservers; // @synthesize playerPathObservers=_playerPathObservers;
 @property(readonly, nonatomic) NSMutableDictionary *playerPathResolutions; // @synthesize playerPathResolutions=_playerPathResolutions;
-- (void).cxx_destruct;
 - (void)_onQueue_registerForEndpointChangeWithUnresolvedPlayerPath:(id)arg1;
 - (void)_onQueue_registerForInvalidationWithUnresolvedPlayerPath:(id)arg1 invalidationPlayerPath:(void *)arg2;
 - (id)resolvedPlayerPathForPlayerPath:(id)arg1;

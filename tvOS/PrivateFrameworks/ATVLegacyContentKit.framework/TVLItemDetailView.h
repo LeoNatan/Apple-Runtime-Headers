@@ -38,6 +38,7 @@
     struct UIEdgeInsets _footerMargins;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *summaryViewContainer; // @synthesize summaryViewContainer=_summaryViewContainer;
 @property(nonatomic) unsigned long long lastHighlightedButtonIndex; // @synthesize lastHighlightedButtonIndex=_lastHighlightedButtonIndex;
 @property(nonatomic) double toolbarInterItemSpacing; // @synthesize toolbarInterItemSpacing=_toolbarInterItemSpacing;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) UIView *artworkView; // @synthesize artworkView=_artworkView;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UIView *bannerView; // @synthesize bannerView=_bannerView;
-- (void).cxx_destruct;
 - (id)_highlightedButtonView;
 - (id)_highlightedButtonItem;
 - (unsigned long long)_highlightedToolbarButtonIndex;

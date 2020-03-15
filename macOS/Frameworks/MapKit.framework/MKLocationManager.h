@@ -67,6 +67,7 @@
 + (id)timeoutError;
 + (id)sharedLocationManager;
 + (void)setCanMonitorWiFiStatus:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL logStartStopLocationUpdates; // @synthesize logStartStopLocationUpdates=_logStartStopLocationUpdates;
 @property(nonatomic) double minimumLocationUpdateInterval; // @synthesize minimumLocationUpdateInterval=_minimumLocationUpdateInterval;
 @property(nonatomic) BOOL allowOldLocations; // @synthesize allowOldLocations=_allowOldLocations;
@@ -82,7 +83,6 @@
 @property(copy, nonatomic) CDUnknownBlockType networkActivity; // @synthesize networkActivity=_networkActivity;
 @property(readonly, nonatomic) NSError *locationError; // @synthesize locationError=_locationError;
 @property(readonly, nonatomic) BOOL isLastLocationStale; // @synthesize isLastLocationStale=_isLastLocationStale;
-- (void).cxx_destruct;
 - (void)stopVehicleHeadingUpdate;
 - (void)startVehicleHeadingUpdate;
 - (void)stopVehicleSpeedUpdate;
@@ -95,7 +95,7 @@
 - (id)singleLocationUpdateWithDesiredAccuracy:(double)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)singleLocationUpdateWithHandler:(CDUnknownBlockType)arg1;
 - (void)_waitForAccurateLocationsTimerFired:(id)arg1;
-- (void)waitForAccurateLocationWithHandler:(CDUnknownBlockType)arg1;
+- (void)waitForAccurateLocationWithTimeout:(double)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)observersDescription;
 - (void)stopLocationUpdateWithObserver:(id)arg1;
 - (void)startLocationUpdateWithObserver:(id)arg1;

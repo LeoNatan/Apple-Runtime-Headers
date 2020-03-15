@@ -25,6 +25,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needToCheckForNewActions; // @synthesize needToCheckForNewActions=_needToCheckForNewActions;
 @property(readonly, nonatomic) id <EFScheduler> replayScheduler; // @synthesize replayScheduler=_replayScheduler;
 @property(retain, nonatomic) NSMutableArray *actionsToReplay; // @synthesize actionsToReplay=_actionsToReplay;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) EDMessageChangeManager *messageChangeManager; // @synthesize messageChangeManager=_messageChangeManager;
 @property(retain, nonatomic) MFMailMessageLibrary *library; // @synthesize library=_library;
 @property _Bool replayingActions; // @synthesize replayingActions=_replayingActions;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 - (void)_checkForNewActions;
 - (void)_replayAllActions;

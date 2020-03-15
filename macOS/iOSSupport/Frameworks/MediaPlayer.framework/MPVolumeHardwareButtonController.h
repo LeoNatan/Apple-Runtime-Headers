@@ -17,8 +17,8 @@
 }
 
 + (id)sharedController;
-@property(retain, nonatomic) id <MPVolumeControllerDataSource> activeDataSource; // @synthesize activeDataSource=_activeDataSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <MPVolumeControllerDataSource> activeDataSource; // @synthesize activeDataSource=_activeDataSource;
 - (void)_unregisterForButtonNotificationsIfNeeded;
 - (void)_registerForButtonNotificationsIfNeeded;
 - (void)_applicationWillResignActiveNotification;

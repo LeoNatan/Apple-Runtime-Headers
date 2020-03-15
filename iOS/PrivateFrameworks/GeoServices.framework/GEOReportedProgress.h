@@ -17,8 +17,8 @@
 }
 
 + (id)progressWithTotalUnitCount:(long long)arg1;
-@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void)cancel;
 @property(readonly, getter=isCancelled) _Bool cancelled;
 @property(copy) CDUnknownBlockType cancellationHandler;

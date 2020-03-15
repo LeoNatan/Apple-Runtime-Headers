@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _block;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)dealloc;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 

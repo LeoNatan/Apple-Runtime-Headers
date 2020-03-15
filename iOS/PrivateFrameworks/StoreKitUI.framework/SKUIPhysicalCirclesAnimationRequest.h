@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionBlock;
 }
 
-@property(nonatomic) long long animationType; // @synthesize animationType=_animationType;
 - (void).cxx_destruct;
+@property(nonatomic) long long animationType; // @synthesize animationType=_animationType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_setCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)finishAnimation;

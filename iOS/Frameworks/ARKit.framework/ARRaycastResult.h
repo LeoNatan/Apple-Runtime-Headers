@@ -18,6 +18,7 @@
     // Error parsing type: {?="columns"[4]}, name: _localTransform
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *anchorIdentifier; // @synthesize anchorIdentifier=_anchorIdentifier;
 // Error parsing type for property localTransform:
 // Property attributes: T{?=[4]},N,V_localTransform
@@ -28,7 +29,6 @@
 // Error parsing type for property worldTransform:
 // Property attributes: T{?=[4]},R,N,V_worldTransform
 
-- (void).cxx_destruct;
 - (id)description;
 - (id)_description:(_Bool)arg1;
 -     // Error parsing type: @96@0:8{?=[4]}16q80q88, name: initWithWorldTransform:target:targetAlignment:

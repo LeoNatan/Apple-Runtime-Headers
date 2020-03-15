@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIScene *__scene;
 }
 
-@property(nonatomic) __weak UIScene *_scene; // @synthesize _scene=__scene;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIScene *_scene; // @synthesize _scene=__scene;
 - (void)didDisonnect;
 - (void)willDisonnect;
 - (void)didEnterBackground;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     long long _userInterfaceIdiom;
 }
 
+- (void).cxx_destruct;
 @property long long userInterfaceIdiom; // @synthesize userInterfaceIdiom=_userInterfaceIdiom;
 @property(retain, nonatomic) PUSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
-- (void).cxx_destruct;
 - (id)_assetCollectionToAssetsMapForAssets:(id)arg1;
 - (id)createPhotosPickerViewControllerWithSelectedAssets:(id)arg1 anchorAtAsset:(id)arg2 inAssetCollection:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic, getter=_isRunningInPhotoPicker) _Bool _isRunningInPhotoPicker;

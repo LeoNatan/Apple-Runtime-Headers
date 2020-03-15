@@ -15,8 +15,8 @@
     NSMutableSet *_delegates;
 }
 
-@property(retain, nonatomic) NSMutableSet *delegates; // @synthesize delegates=_delegates;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *delegates; // @synthesize delegates=_delegates;
 - (void)didReceiveRegistrationIdentityUpdateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)didReceiveDecryptionFailureForGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)didUpdateGroup:(id)arg1 withNewGroup:(id)arg2 completion:(CDUnknownBlockType)arg3;

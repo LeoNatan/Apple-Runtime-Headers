@@ -72,6 +72,7 @@
 + (id)rtfContentTypes;
 + (id)webContentTypes;
 + (id)supportedContentTypes;
+- (void).cxx_destruct;
 @property _Bool needsAccessToExternalResources; // @synthesize needsAccessToExternalResources=_needsAccessToExternalResources;
 @property(copy, nonatomic) NSDictionary *clientPreviewOptions; // @synthesize clientPreviewOptions=_clientPreviewOptions;
 @property(retain, nonatomic) FPSandboxingURLWrapper *sandboxingURLWrapper; // @synthesize sandboxingURLWrapper=_sandboxingURLWrapper;
@@ -116,7 +117,6 @@
 @property(nonatomic) _Bool useLoadingTimeout; // @synthesize useLoadingTimeout=_useLoadingTimeout;
 @property(nonatomic) _Bool useFullPDFTransition; // @synthesize useFullPDFTransition=_useFullPDFTransition;
 @property _Bool useAVPlayerViewController; // @synthesize useAVPlayerViewController=_useAVPlayerViewController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *editedFileURL;
 - (void)_removeEditedCopyIfExists;
 - (id)saveURL;

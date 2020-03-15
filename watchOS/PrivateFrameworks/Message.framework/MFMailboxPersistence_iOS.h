@@ -14,9 +14,9 @@
     MFMailMessageLibrary *_library;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak MFMailMessageLibrary *library; // @synthesize library=_library;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)serverCountsForMailboxScope:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (_Bool)renameMailbox:(id)arg1 newName:(id)arg2;
 - (_Bool)moveMailbox:(id)arg1 newParentMailboxID:(id)arg2;

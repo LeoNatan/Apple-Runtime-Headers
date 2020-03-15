@@ -36,13 +36,13 @@
 + (id)newDoppelgangerMatchingRequestPattern:(id)arg1;
 + (void)setTestHarness:(id)arg1;
 + (void)hookIntoYQLRequestIfNeeded;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NSURLSessionDataDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long responseChunkInitialDelay; // @synthesize responseChunkInitialDelay=_responseChunkInitialDelay;
 @property(nonatomic) unsigned long long responseChunkDelay; // @synthesize responseChunkDelay=_responseChunkDelay;
 @property(nonatomic) unsigned long long responseChunkSize; // @synthesize responseChunkSize=_responseChunkSize;
 @property(retain, nonatomic) NSData *response; // @synthesize response=_response;
 @property(retain, nonatomic) NSString *expectedRequestPattern; // @synthesize expectedRequestPattern=_expectedRequestPattern;
-- (void).cxx_destruct;
 - (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)cancel;

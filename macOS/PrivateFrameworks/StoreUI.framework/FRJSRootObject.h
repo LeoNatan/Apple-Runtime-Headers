@@ -21,13 +21,13 @@
     id _accountStoreObserverToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id accountStoreObserverToken; // @synthesize accountStoreObserverToken=_accountStoreObserverToken;
 @property(nonatomic) BOOL startedProgressSpinner; // @synthesize startedProgressSpinner=_startedProgressSpinner;
 @property(readonly, nonatomic) FRJSCodeRedeemer *jsCodeRedeemer; // @synthesize jsCodeRedeemer=_jsCodeRedeemer;
 @property(readonly, nonatomic) FRJSAppleAccountStore *jsAccountStore; // @synthesize jsAccountStore=_jsAccountStore;
 @property(retain, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 @property(readonly, nonatomic) __weak FRWKView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)_triggerDownloadQueueCheck;
 - (void)_signTouchIDChallenge:(id)arg1;
 - (id)_signStorePlatformRequestData:(id)arg1;

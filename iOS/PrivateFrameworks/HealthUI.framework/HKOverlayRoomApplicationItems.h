@@ -21,6 +21,7 @@
     HKDisplayCategoryController *_categoryController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKDisplayCategoryController *categoryController; // @synthesize categoryController=_categoryController;
 @property(retain, nonatomic) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
 @property(retain, nonatomic) HKSampleTypeDateRangeController *sampleDateRangeController; // @synthesize sampleDateRangeController=_sampleDateRangeController;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
 @property(retain, nonatomic) HKSelectedTimeScopeController *timeScopeController; // @synthesize timeScopeController=_timeScopeController;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 
 @end
 

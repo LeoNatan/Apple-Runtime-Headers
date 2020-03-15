@@ -14,9 +14,9 @@
     NSArray *_elements;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *elements; // @synthesize elements=_elements;
 @property(readonly, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMeContact:(id)arg1 elements:(id)arg2;
 - (id)init;

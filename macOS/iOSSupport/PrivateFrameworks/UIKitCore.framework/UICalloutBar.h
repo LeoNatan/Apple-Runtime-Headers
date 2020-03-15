@@ -39,6 +39,7 @@
     NSMutableArray *m_rectsToEvade;
     UICalloutBarBackground *m_overlay;
     double m_fadedTime;
+    BOOL m_fadedDueToCommand;
     NSDictionary *m_currentAppearOrFadeContext;
     id m_responderTarget;
     CDUnknownBlockType m_responderTargetCompletionHandler;
@@ -52,7 +53,8 @@
     BOOL m_isDisplayingVertically;
     UIScrollView *m_verticalScrollView;
     UIStackView *m_verticalStackView;
-    NSMutableArray *m_axSeparatorViews;
+    NSMutableArray *m_separatorViews;
+    UIView *m_buttonView;
     RVItem *_rvItem;
 }
 
@@ -65,6 +67,7 @@
 + (id)activeCalloutBar;
 + (id)sharedCalloutBar;
 + (void)performWithoutAffectingSharedCalloutBar:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak RVItem *rvItem; // @synthesize rvItem=_rvItem;
 @property(readonly, nonatomic) UIStackView *verticalStackView; // @synthesize verticalStackView=m_verticalStackView;
 @property(readonly, nonatomic) UIScrollView *verticalScrollView; // @synthesize verticalScrollView=m_verticalScrollView;
@@ -89,7 +92,6 @@
 @property(nonatomic) struct CGPoint pointLeftOfControls; // @synthesize pointLeftOfControls=m_pointLeftOfControls;
 @property(nonatomic) struct CGPoint pointBelowControls; // @synthesize pointBelowControls=m_pointBelowControls;
 @property(nonatomic) struct CGPoint pointAboveControls; // @synthesize pointAboveControls=m_pointAboveControls;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isDisplayingVertically; // @synthesize isDisplayingVertically=m_isDisplayingVertically;
 - (void)clearSupressesHorizontalMovementFrame;
 - (void)clearReplacements;
@@ -98,6 +100,7 @@
 - (void)addRectToEvade:(struct CGRect)arg1;
 - (void)fadeAnimationDidStopWithContext:(id)arg1 finished:(BOOL)arg2;
 - (void)appearAnimationDidStopWithContext:(id)arg1;
+- (BOOL)fadedDueToCommand;
 - (BOOL)recentlyFaded;
 - (void)updateAnimated:(BOOL)arg1;
 - (void)update;
@@ -121,7 +124,7 @@
 - (id)_visibleButtons;
 - (BOOL)_updateVisibleItemsAnimated:(BOOL)arg1;
 - (void)adjustFrameToAvoidDividerOnArrow;
-- (void)addVerticalSeparatorAfterButton:(id)arg1;
+- (void)addVerticalSeparatorAfterButton:(id)arg1 usingLargeText:(BOOL)arg2;
 - (void)updateForCurrentVerticalPage;
 - (void)updateForCurrentHorizontalPage;
 - (void)updateForCurrentPage;

@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class CUAppleIDClient, CUPairedPeer, NSArray, NSData, NSDictionary, NSString;
+@class CUAppleIDClient, CUPairedPeer, NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CUPairingSession : NSObject
 {
     struct PairingSessionPrivate *_pairingSession;
-    struct NSMutableDictionary *_pairingStreams;
+    NSMutableDictionary *_pairingStreams;
     struct LogCategory *_ucat;
     NSDictionary *_acl;
     NSDictionary *_aclActual;
@@ -46,6 +46,7 @@
     unsigned long long _selfAppFlags;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType verifySignatureHandler; // @synthesize verifySignatureHandler=_verifySignatureHandler;
 @property(copy, nonatomic) CDUnknownBlockType signDataHandler; // @synthesize signDataHandler=_signDataHandler;
 @property(copy, nonatomic) CDUnknownBlockType sendDataHandler; // @synthesize sendDataHandler=_sendDataHandler;
@@ -76,7 +77,6 @@
 @property(copy, nonatomic) NSDictionary *additionalPeerInfo; // @synthesize additionalPeerInfo=_additionalPeerInfo;
 @property(readonly, copy, nonatomic) NSDictionary *aclActual; // @synthesize aclActual=_aclActual;
 @property(copy, nonatomic) NSDictionary *acl; // @synthesize acl=_acl;
-- (void).cxx_destruct;
 - (long)deriveKeyWithSaltPtr:(const void *)arg1 saltLen:(unsigned long)arg2 infoPtr:(const void *)arg3 infoLen:(unsigned long)arg4 keyLen:(unsigned long)arg5 outputKeyPtr:(void *)arg6;
 - (void)closeStream:(id)arg1;
 - (id)openStreamWithName:(id)arg1 type:(int)arg2 error:(id *)arg3;

@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     struct CGPoint _currentCollapsedStackCenter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint currentCollapsedStackCenter; // @synthesize currentCollapsedStackCenter=_currentCollapsedStackCenter;
 @property(nonatomic) struct CGPoint finalCollapsedStackCenter; // @synthesize finalCollapsedStackCenter=_finalCollapsedStackCenter;
 @property(nonatomic) struct CGPoint initialCollapsedStackCenter; // @synthesize initialCollapsedStackCenter=_initialCollapsedStackCenter;
 @property(nonatomic) struct CGPoint interactionOffset; // @synthesize interactionOffset=_interactionOffset;
 @property(readonly, nonatomic) struct CGPoint expandedStackFinalDelta; // @synthesize expandedStackFinalDelta=_expandedStackFinalDelta;
 @property(readonly, nonatomic) _Bool isExpanding; // @synthesize isExpanding=_isExpanding;
-- (void).cxx_destruct;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

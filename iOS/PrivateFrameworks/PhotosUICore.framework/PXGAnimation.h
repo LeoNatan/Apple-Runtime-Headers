@@ -25,6 +25,7 @@
     PXGTransition *_transition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PXGTransition *transition; // @synthesize transition=_transition;
 @property(readonly, nonatomic) __weak PXGLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) NSDictionary *userData; // @synthesize userData=_userData;
@@ -37,7 +38,6 @@
 @property(nonatomic) float dampingRatio; // @synthesize dampingRatio=_dampingRatio;
 @property(nonatomic) long long curve; // @synthesize curve=_curve;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)noteDidComplete;
 @property(readonly, nonatomic) double effectiveDuration;
 - (id)description;

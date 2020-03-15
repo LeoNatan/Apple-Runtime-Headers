@@ -16,8 +16,8 @@
     id <PMLPlanProtocol> _plan;
 }
 
-@property(readonly, nonatomic) id <PMLPlanProtocol> plan; // @synthesize plan=_plan;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PMLPlanProtocol> plan; // @synthesize plan=_plan;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;
 - (id)initWithPlan:(id)arg1;

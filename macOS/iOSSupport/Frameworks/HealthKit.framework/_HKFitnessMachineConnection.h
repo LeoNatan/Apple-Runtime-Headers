@@ -25,11 +25,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_HKFitnessMachineConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long connectionState; // @synthesize connectionState=_connectionState;
 @property(readonly, nonatomic) unsigned long long machineState; // @synthesize machineState=_machineState;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)_simulateDisconnect;
 - (void)_simulateAccept;
 - (void)_simulateTapWithFitnessMachineType:(unsigned long long)arg1;

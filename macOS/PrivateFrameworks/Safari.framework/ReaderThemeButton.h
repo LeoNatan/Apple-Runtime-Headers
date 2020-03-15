@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     BOOL _checked;
 }
 
-@property(nonatomic, getter=isChecked) BOOL checked; // @synthesize checked=_checked;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isChecked) BOOL checked; // @synthesize checked=_checked;
 - (id)_themeButtonImage;
 - (void)_updateImage;
 - (void)setFillColor:(id)arg1 checkColor:(id)arg2;

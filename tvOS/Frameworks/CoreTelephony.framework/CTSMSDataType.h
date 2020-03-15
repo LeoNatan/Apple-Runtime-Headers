@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *hexPdu; // @synthesize hexPdu=_hexPdu;
 @property(nonatomic) _Bool waitForAck; // @synthesize waitForAck=_waitForAck;
 @property(nonatomic) _Bool parseSMSC; // @synthesize parseSMSC=_parseSMSC;
 @property(nonatomic) NSNumber *ctFormat; // @synthesize ctFormat=_ctFormat;
 @property(nonatomic) NSNumber *transport; // @synthesize transport=_transport;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

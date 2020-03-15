@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     MUPDFViewBase *_preloadedView;
 }
 
+- (void).cxx_destruct;
 @property(retain) MUPDFViewBase *preloadedView; // @synthesize preloadedView=_preloadedView;
 @property __weak NSClipView *pdfScrollViewContentView; // @synthesize pdfScrollViewContentView=_pdfScrollViewContentView;
 @property(retain) id frameChangedObserver; // @synthesize frameChangedObserver=_frameChangedObserver;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSMutableSet *currentlyObservedCropAnnotations; // @synthesize currentlyObservedCropAnnotations=_currentlyObservedCropAnnotations;
 @property(retain) NSCursor *annotationCursor; // @synthesize annotationCursor=_annotationCursor;
 @property BOOL contentViewControllerCropEnabled; // @synthesize contentViewControllerCropEnabled;
-- (void).cxx_destruct;
 - (struct CGSize)_medianSizeForCurrentDocumentInPDFViewWithGetter:(CDUnknownBlockType)arg1;
 - (void)_warnThatPDFOcclusionIsNonDestructive;
 - (void)_warnThatPDFCroppingIsNonDestructive;

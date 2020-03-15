@@ -13,8 +13,8 @@
     ACAccountStore *_accountStore;
 }
 
-@property(readonly) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (void).cxx_destruct;
+@property(readonly) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (id)initWithAccountStore:(id)arg1;
 - (id)init;
 

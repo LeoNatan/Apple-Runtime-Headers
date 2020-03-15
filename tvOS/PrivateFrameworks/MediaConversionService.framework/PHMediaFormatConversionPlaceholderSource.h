@@ -15,8 +15,8 @@
 
 + (id)videoSourceForFileType:(id)arg1;
 + (id)imageSourceForFileType:(id)arg1;
-@property(copy, nonatomic) NSString *fileType; // @synthesize fileType=_fileType;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *fileType; // @synthesize fileType=_fileType;
 - (struct CGSize)imageDimensions;
 - (unsigned long long)length;
 - (id)fileURL;

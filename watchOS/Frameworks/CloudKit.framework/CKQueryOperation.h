@@ -24,6 +24,7 @@
     NSDictionary *_assetTransferOptionsByKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *assetTransferOptionsByKey; // @synthesize assetTransferOptionsByKey=_assetTransferOptionsByKey;
 @property(nonatomic) _Bool fetchAllResults; // @synthesize fetchAllResults=_fetchAllResults;
 @property(nonatomic) _Bool shouldFetchAssetContent; // @synthesize shouldFetchAssetContent=_shouldFetchAssetContent;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
 @property(copy, nonatomic) CKQueryCursor *cursor; // @synthesize cursor=_cursor;
 @property(copy, nonatomic) CKQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;

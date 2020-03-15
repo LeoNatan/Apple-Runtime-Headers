@@ -35,10 +35,10 @@
 + (long long)getSensorPatchVersion;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)manager;
+- (void).cxx_destruct;
 @property(nonatomic) int enrollProgressConfigRenderMode; // @synthesize enrollProgressConfigRenderMode=_enrollProgressConfigRenderMode;
 @property BOOL inUse; // @synthesize inUse=_inUse;
 @property(nonatomic) id <BiometricKitDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)logEventOrCode:(unsigned long long)arg1;
 - (void)appDidBecomeActive:(id)arg1;
 - (void)appWillResignActive:(id)arg1;

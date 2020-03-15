@@ -16,8 +16,8 @@
 }
 
 + (Class)viewClass;
-@property(nonatomic) __weak KHCanvasViewController *layoutController; // @synthesize layoutController=_layoutController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak KHCanvasViewController *layoutController; // @synthesize layoutController=_layoutController;
 - (void)selectionViewController:(id)arg1 didClickOnRelatedPhotosButtonWithFrame:(struct CGRect)arg2 selection:(id)arg3;
 - (void)selectionViewController:(id)arg1 didClickOnSimilarPhotosButtonWithFrame:(struct CGRect)arg2 selection:(id)arg3;
 - (void)selectionViewController:(id)arg1 willApplyRotation:(double)arg2 toSelection:(id)arg3;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSView<ReadingListItemViewThumbnailImageView> *_thumbnailView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSView<ReadingListItemViewThumbnailImageView> *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 @property(readonly, nonatomic) NSTextField *domainTextField; // @synthesize domainTextField=_domainTextField;
 @property(readonly, nonatomic) NSTextField *previewTextField; // @synthesize previewTextField=_previewTextField;
 @property(readonly, nonatomic) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
-- (void).cxx_destruct;
 - (void)_cancelFallbackIconRequestForReadingListItem:(id)arg1;
 - (id)_createLabelTextField;
 - (void)getThumbnailImageForReadingListItem:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

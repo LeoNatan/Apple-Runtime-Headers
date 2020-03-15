@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_filePaths;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *filePaths; // @synthesize filePaths=_filePaths;
 @property(retain, nonatomic) HKHealthRecordsStore *healthRecordsStore; // @synthesize healthRecordsStore=_healthRecordsStore;
-- (void).cxx_destruct;
 - (id)description;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

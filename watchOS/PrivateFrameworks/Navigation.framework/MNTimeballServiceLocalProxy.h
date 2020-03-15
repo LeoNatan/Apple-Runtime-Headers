@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
     id <MNTimeballServiceProxyDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MNTimeballServicePeer *peer; // @synthesize peer=_peer;
 @property(nonatomic) id <MNTimeballServiceProxyDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)unsubscribeFromAllDestinations;
 - (void)subscribeToAllDestinations;
 - (void)unsubscribeFromDestination:(id)arg1;

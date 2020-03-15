@@ -26,6 +26,7 @@
     int _entryCapacity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int entryCapacity; // @synthesize entryCapacity=_entryCapacity;
 @property(nonatomic) int descriptor; // @synthesize descriptor=_descriptor;
 @property(readonly, nonatomic) PLImageFormat *format; // @synthesize format=_format;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned long entryLength; // @synthesize entryLength=_entryLength;
 @property(nonatomic) _Bool flushAfterWrite; // @synthesize flushAfterWrite=_flushAfterWrite;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)flush;
 - (void)endThumbnailSafePropertyUpdatesOnAssetThumbnailIdentifier:(id)arg1 withToken:(id)arg2;
 - (id)beginThumbnailSafePropertyUpdatesOnAssetThumbnailIdentifier:(id)arg1;

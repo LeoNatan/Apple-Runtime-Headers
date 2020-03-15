@@ -24,11 +24,11 @@
     int _responseOptions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int responseOptions; // @synthesize responseOptions=_responseOptions;
 @property(nonatomic) int scrollBehavior; // @synthesize scrollBehavior=_scrollBehavior;
 @property(nonatomic) __weak id <NLBulletinClientFactoryViewControllerDelegate> factoryDelegate; // @synthesize factoryDelegate=_factoryDelegate;
 @property(nonatomic) _Bool allowOrbUserFeedback; // @synthesize allowOrbUserFeedback;
-- (void).cxx_destruct;
 - (_Bool)shouldPerformDefaultActionOnView:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

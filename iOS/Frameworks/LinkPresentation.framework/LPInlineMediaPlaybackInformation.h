@@ -19,6 +19,7 @@
     LPAudio *_audio;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPAudio *audio; // @synthesize audio=_audio;
 @property(copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(copy, nonatomic) NSURL *previewURL; // @synthesize previewURL=_previewURL;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSString *storefrontIdentifier; // @synthesize storefrontIdentifier=_storefrontIdentifier;
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAvailableForAnonymousDownload;
 - (unsigned long long)availability;
 - (id)initWithType:(unsigned long long)arg1;

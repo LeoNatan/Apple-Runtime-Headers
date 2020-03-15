@@ -15,12 +15,12 @@
     PASampleThreadDataKPerf *previousSampleThread;
 }
 
+- (void).cxx_destruct;
 @property BOOL hasEmptyKernelStack; // @synthesize hasEmptyKernelStack;
 @property BOOL filledThreadSnapshotInfo; // @synthesize filledThreadSnapshotInfo;
 @property BOOL filledDispatchQueue; // @synthesize filledDispatchQueue;
 @property BOOL isSentinel; // @synthesize isSentinel;
 @property __weak PASampleThreadDataKPerf *previousSampleThread; // @synthesize previousSampleThread;
-- (void).cxx_destruct;
 - (BOOL)hasAnyInfo;
 
 @end

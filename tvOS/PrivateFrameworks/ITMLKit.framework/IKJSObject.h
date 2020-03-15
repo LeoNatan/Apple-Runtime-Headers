@@ -15,9 +15,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *managedProperties; // @synthesize managedProperties=_managedProperties;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (id)invokeMethod:(id)arg1 withArguments:(id)arg2;
 - (id)jsValueForProperty:(id)arg1;
 - (void)setJSValue:(id)arg1 forProperty:(id)arg2;

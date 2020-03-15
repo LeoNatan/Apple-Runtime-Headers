@@ -49,11 +49,9 @@
 - (BOOL)ams_addCookies:(id)arg1;
 - (id)ams_storefrontForMediaType:(id)arg1;
 - (void)ams_setStorefront:(id)arg1 forMediaType:(id)arg2;
-- (void)ams_setPrivateListeningEnabled:(BOOL)arg1 forHomeUserIdentifier:(id)arg2;
 - (void)ams_setActive:(BOOL)arg1 forMediaType:(id)arg2;
 - (void)ams_setAccountFlagValue:(id)arg1 forAccountFlag:(id)arg2;
 - (long long)ams_mergePrivacyAcknowledgement:(id)arg1;
-- (BOOL)ams_isPrivateListeningEnabledForHomeUserIdentifier:(id)arg1;
 - (BOOL)ams_isDuplicate:(id)arg1;
 - (BOOL)ams_isActiveForMediaType:(id)arg1;
 - (id)ams_delta:(id)arg1;
@@ -70,9 +68,9 @@
 - (void)ams_setLastName:(id)arg1;
 - (void)ams_setInGoodStanding:(BOOL)arg1;
 - (void)ams_setiCloudFamily:(BOOL)arg1;
-- (void)ams_setHomeIdentifier:(id)arg1;
 - (void)ams_setFirstName:(id)arg1;
 - (void)ams_setDSID:(id)arg1;
+- (void)ams_setDemoAccount:(BOOL)arg1;
 - (void)ams_setCreditsString:(id)arg1;
 - (void)ams_setBiometricsState:(long long)arg1;
 - (void)ams_setAltDSID:(id)arg1;
@@ -89,7 +87,6 @@
 @property(readonly) NSString *ams_lastName;
 - (BOOL)ams_isValidPayment;
 @property(readonly, getter=ams_isSandboxAccount) BOOL ams_sandboxAccount;
-@property(readonly, getter=ams_isPrivateListeningEnabled) BOOL ams_privateListeningEnabled;
 @property(readonly, getter=ams_isManagedAppleID) BOOL ams_managedAppleID;
 @property(readonly, getter=ams_isLocalAccount) BOOL ams_localAccount;
 @property(readonly, getter=ams_isiTunesAccount) BOOL ams_iTunesAccount;
@@ -99,8 +96,6 @@
 @property(readonly, getter=ams_isiCloudAccount) BOOL ams_iCloudAccount;
 @property(readonly, getter=ams_isHSA2) BOOL ams_HSA2;
 @property(readonly, getter=ams_isDemoAccount) BOOL ams_demoAccount;
-- (id)ams_homeUserIdentifiers;
-- (id)ams_homeIdentifier;
 @property(readonly) NSString *ams_fullName;
 @property(setter=ams_setFreePasswordPromptSetting:) unsigned long long ams_freePasswordPromptSetting;
 @property(readonly) NSString *ams_firstName;
@@ -114,6 +109,7 @@
 - (id)ams_accountFlags;
 
 // Remaining properties
+@property(readonly, getter=ams_isPrivateListeningEnabled) BOOL ams_privateListeningEnabled;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

@@ -19,10 +19,10 @@
     UIColor *_regularTextColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEditable) _Bool editable; // @synthesize editable=_editable;
 @property(retain, nonatomic) UIColor *regularTextColor; // @synthesize regularTextColor=_regularTextColor;
 @property(nonatomic) __weak id <TKVibrationPickerTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;

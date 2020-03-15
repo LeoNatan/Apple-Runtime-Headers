@@ -16,9 +16,9 @@
 
 + (id)stringForActionSignal:(unsigned int)arg1;
 + (id)signalWithType:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *subActions; // @synthesize subActions=_subActions;
 @property(nonatomic) unsigned int topSignal; // @synthesize topSignal=_topSignal;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 

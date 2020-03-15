@@ -28,6 +28,7 @@
 
 + (id)contextWithPersonSuggestion:(id)arg1;
 + (id)contextWithPerson:(id)arg1 type:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PXCMMPersonSuggestion> personSuggestion; // @synthesize personSuggestion=_personSuggestion;
 @property(retain, nonatomic) id <PXPeopleSuggestionManagerDataSource> prefetchedDataSource; // @synthesize prefetchedDataSource=_prefetchedDataSource;
 @property(nonatomic) _Bool wantsPostNaming; // @synthesize wantsPostNaming=_wantsPostNaming;
@@ -41,7 +42,6 @@
 @property unsigned long long bootstrapType; // @synthesize bootstrapType=_bootstrapType;
 @property(retain) id <PXPerson> targetPerson; // @synthesize targetPerson=_targetPerson;
 @property(retain) id <PXPerson> sourcePerson; // @synthesize sourcePerson=_sourcePerson;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedName;
 - (id)init;
 

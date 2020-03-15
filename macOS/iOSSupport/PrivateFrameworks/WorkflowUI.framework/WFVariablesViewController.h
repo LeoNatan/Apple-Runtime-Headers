@@ -27,6 +27,7 @@
     NSMutableDictionary *_cellWidthCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *cellWidthCache; // @synthesize cellWidthCache=_cellWidthCache;
 @property(nonatomic) __weak UICollectionViewFlowLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -38,7 +39,6 @@
 @property(nonatomic) BOOL showsUserDefinedVariables; // @synthesize showsUserDefinedVariables=_showsUserDefinedVariables;
 @property(nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(nonatomic) __weak id <WFVariablesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)variableAtIndexPath:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;

@@ -15,10 +15,10 @@
     unsigned long long _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long brightness; // @synthesize brightness=_brightness;
 @property(copy, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
-- (void).cxx_destruct;
 
 @end
 

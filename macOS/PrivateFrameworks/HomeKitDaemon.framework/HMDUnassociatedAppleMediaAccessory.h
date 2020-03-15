@@ -23,8 +23,8 @@
 + (id)logCategory;
 + (id)namespace;
 + (Class)modelClass;
-@property(nonatomic, getter=isCurrentAccessory) BOOL currentAccessory; // @synthesize currentAccessory=_currentAccessory;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isCurrentAccessory) BOOL currentAccessory; // @synthesize currentAccessory=_currentAccessory;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)logIdentifier;

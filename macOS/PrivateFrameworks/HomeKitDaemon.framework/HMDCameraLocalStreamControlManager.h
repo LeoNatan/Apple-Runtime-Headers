@@ -21,10 +21,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDCameraSupportedConfigurationCache *supportedConfigCache; // @synthesize supportedConfigCache=_supportedConfigCache;
 @property(retain, nonatomic) HMDCameraMediaConfigGenerator *configGenerator; // @synthesize configGenerator=_configGenerator;
 @property(retain, nonatomic) HMDLocalStreamSession *streamSession; // @synthesize streamSession=_streamSession;
-- (void).cxx_destruct;
 - (void)_sendUpdatedConfiguration;
 - (void)_reconfigureStreams;
 - (void)streamingManagerDidUpdateConfiguration:(id)arg1;

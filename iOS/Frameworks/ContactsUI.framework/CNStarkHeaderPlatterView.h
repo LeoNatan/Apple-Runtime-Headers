@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIImageView *_accessory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIImage *accessoryImage; // @synthesize accessoryImage=_accessoryImage;
 @property(copy, nonatomic) NSString *labelText; // @synthesize labelText=_labelText;
-- (void).cxx_destruct;
 - (void)_updateForFocusedState:(_Bool)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)canBecomeFocused;

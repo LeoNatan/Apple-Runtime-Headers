@@ -20,11 +20,11 @@
 }
 
 + (BOOL)isValidModelDescriptorInPlistMetadata:(id)arg1 withErrorDescription:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) PMLModelLearningRates *learningRates; // @synthesize learningRates=_learningRates;
 @property(retain) PMLModelWeights *weights; // @synthesize weights=_weights;
 @property(retain) NSNumber *version; // @synthesize version=_version;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initFromDictionary:(id)arg1;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;

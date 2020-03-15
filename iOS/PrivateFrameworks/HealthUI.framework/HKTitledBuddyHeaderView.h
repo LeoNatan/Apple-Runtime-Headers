@@ -27,9 +27,9 @@
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <HKTitledBuddyHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_attributedBodyTextWithString:(id)arg1 alignment:(long long)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)deactivateDefaultTitleLabelBaselineConstraint;

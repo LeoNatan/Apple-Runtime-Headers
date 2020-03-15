@@ -19,10 +19,10 @@
     NSMutableOrderedSet *_observerProxies;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableOrderedSet *observerProxies; // @synthesize observerProxies=_observerProxies;
 @property(readonly, nonatomic) NSMutableArray *mutableRunningTransactions; // @synthesize mutableRunningTransactions=_mutableRunningTransactions;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (void)transactionDidComplete:(id)arg1;
 - (void)transactionWillBegin:(id)arg1;
 @property(readonly, copy) NSString *description;

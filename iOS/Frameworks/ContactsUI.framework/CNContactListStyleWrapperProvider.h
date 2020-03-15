@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CNContactStyle *_contactStyle;
 }
 
-@property(readonly, nonatomic) CNContactStyle *contactStyle; // @synthesize contactStyle=_contactStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContactStyle *contactStyle; // @synthesize contactStyle=_contactStyle;
 - (_Bool)navigationBarIsTranslucent;
 - (long long)navigationBarStyle;
 - (_Bool)searchBarIsTranslucent;

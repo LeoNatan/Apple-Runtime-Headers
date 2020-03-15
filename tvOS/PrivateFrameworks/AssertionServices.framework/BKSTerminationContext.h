@@ -19,10 +19,10 @@
 
 + (id)context;
 + (id)terminationAssertionContext;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *explanation; // @synthesize explanation=_explanation;
 @property(nonatomic) unsigned long long reportType; // @synthesize reportType=_reportType;
 @property(nonatomic) long long exceptionCode; // @synthesize exceptionCode=_exceptionCode;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToTerminationContext:(id)arg1;

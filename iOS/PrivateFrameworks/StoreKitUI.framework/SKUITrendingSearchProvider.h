@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSOperation *_runningRequestOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *runningRequestOperation; // @synthesize runningRequestOperation=_runningRequestOperation;
 @property(readonly, nonatomic) NSMutableArray *pendingCompletionBlocks; // @synthesize pendingCompletionBlocks=_pendingCompletionBlocks;
 @property(retain, nonatomic) SKUITrendingSearchPage *cachedSearchPage; // @synthesize cachedSearchPage=_cachedSearchPage;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) __weak SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)clearCache;
 - (void)trendingSearchPageWithURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)requestTrendingSearchPageWithURL:(id)arg1;

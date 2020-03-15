@@ -28,7 +28,7 @@
     NSDictionary *_parameterCombinations;
     NSDictionary *_configurableParameterCombinations;
     INParameterContexts *_parameterContexts;
-    unsigned long long _indexingHash;
+    long long _indexingHash;
     INIntentKeyParameter *_keyParameter;
     NSString *_identifier;
     PBCodable *_backingStore;
@@ -47,6 +47,7 @@
 + (id)_ignoredParameters;
 + (void)_setSharedExtensionContextUUID:(id)arg1 forIntentClassName:(id)arg2;
 + (id)_sharedExtensionContextUUIDForIntentClassName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long _preferredInteractionDirection; // @synthesize _preferredInteractionDirection=__preferredInteractionDirection;
 @property(retain, nonatomic, setter=_setRecordDeviceIdentifier:) NSString *recordDeviceIdentifier; // @synthesize recordDeviceIdentifier=_recordDeviceIdentifier;
 @property(retain, nonatomic, setter=_setRecordDeviceUID:) NSUUID *recordDeviceUID; // @synthesize recordDeviceUID=_recordDeviceUID;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic, setter=_setParameterContexts:) INParameterContexts *_parameterContexts; // @synthesize _parameterContexts;
 @property(retain, nonatomic, setter=_setConfigurableParameterCombinations:) NSDictionary *_configurableParameterCombinations; // @synthesize _configurableParameterCombinations;
 @property(retain, nonatomic, setter=_setParameterCombinations:) NSDictionary *_parameterCombinations; // @synthesize _parameterCombinations;
-- (void).cxx_destruct;
 - (id)_spotlightContentType;
 - (_Bool)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
@@ -98,7 +98,7 @@
 - (void)trimDataAgainstTCCForAuditToken:(CDStruct_6ad76789)arg1 bundle:(id)arg2;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData;
 @property(nonatomic, getter=_isUserConfirmationRequired, setter=_setUserConfirmationRequired:) _Bool _userConfirmationRequired;
-@property(readonly, nonatomic) unsigned long long _indexingHash; // @synthesize _indexingHash;
+@property(readonly, nonatomic) long long _indexingHash; // @synthesize _indexingHash;
 @property(readonly, nonatomic) long long _type;
 - (id)_displayOrderedNonNilParameters;
 - (id)_nonNilParameters;
@@ -153,14 +153,14 @@
 - (void)_injectProxyForDefaultImage:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_injectProxiesForImagesUsingCustomCodableStrategy:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly) long long _intents_toggleState;
-- (id)localizeValueOfSlotDescription:(id)arg1 forLanguage:(id)arg2;
+- (id)localizeValueOfSlotDescription:(id)arg1 withLocalizer:(id)arg2;
 - (id)intentSlotDescriptions;
-- (id)_localizedCombinationStringForKey:(id)arg1 value:(id)arg2 localizationTable:(id)arg3 bundleURL:(id)arg4 language:(id)arg5;
+- (id)_localizedCombinationStringForKey:(id)arg1 value:(id)arg2 localizationTable:(id)arg3 bundleURL:(id)arg4 localizer:(id)arg5;
 @property(readonly, copy, nonatomic) NSString *_localizedVerb;
-- (id)_subtitleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
+- (id)_subtitleWithLocalizer:(id)arg1 fromBundleURL:(id)arg2;
 - (id)_subtitleForLanguage:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *_subtitle;
-- (id)_titleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
+- (id)_titleWithLocalizer:(id)arg1 fromBundleURL:(id)arg2;
 - (id)_titleForLanguage:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *_title;
 @property(readonly, nonatomic) _Bool _hasTitle;

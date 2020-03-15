@@ -16,8 +16,8 @@
     PDDeviceRegistrationServiceCoordinator *_deviceRegistrationServiceCoordinator;
 }
 
-@property(retain, nonatomic) PDDeviceRegistrationServiceCoordinator *deviceRegistrationServiceCoordinator; // @synthesize deviceRegistrationServiceCoordinator=_deviceRegistrationServiceCoordinator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PDDeviceRegistrationServiceCoordinator *deviceRegistrationServiceCoordinator; // @synthesize deviceRegistrationServiceCoordinator=_deviceRegistrationServiceCoordinator;
 - (void)performDeviceRegistrationForReason:(id)arg1 actionType:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithConnection:(id)arg1;
 

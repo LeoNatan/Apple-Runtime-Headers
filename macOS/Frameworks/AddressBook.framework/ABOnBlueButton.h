@@ -21,12 +21,12 @@
 + (void)applyVibrantLightStyleToButton:(id)arg1;
 + (void)applyVibrantDarkStyleToButton:(id)arg1;
 + (void)applyStylingToButton:(id)arg1 usingCacheKey:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastAppearanceName; // @synthesize lastAppearanceName=_lastAppearanceName;
 @property(retain, nonatomic) NSString *tintedImageCacheKey; // @synthesize tintedImageCacheKey=_tintedImageCacheKey;
 @property(nonatomic, getter=isRoundPlatterStyle) BOOL roundPlatterStyle; // @synthesize roundPlatterStyle=_roundPlatterStyle;
 @property SEL privateAction; // @synthesize privateAction=_privateAction;
 @property __weak id privateTarget; // @synthesize privateTarget=_privateTarget;
-- (void).cxx_destruct;
 - (void)setNamedImageWrapper:(id)arg1;
 - (void)buttonWasClicked:(id)arg1;
 - (void)performPrivateAction;

@@ -24,11 +24,11 @@
     unsigned int _featureIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
 @property(copy, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(nonatomic) _Bool onHold; // @synthesize onHold=_onHold;
 @property(nonatomic) __weak PKAccountPayment *payment; // @synthesize payment=_payment;
-- (void).cxx_destruct;
 - (id)_dateString;
 - (id)_amountAttributedString;
 - (id)_amountString;

@@ -38,6 +38,7 @@
 + (void)beginMonitoringSiriAvailability;
 + (unsigned long long)availabilityState;
 + (void)forceAvailabilityStateAvailable:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_currentSpeechRequestGroup, setter=_setCurrentSpeechRequestGroup:) NSObject<OS_dispatch_group> *currentSpeechRequestGroup; // @synthesize currentSpeechRequestGroup=_currentSpeechRequestGroup;
 @property(readonly, nonatomic, getter=_connection) AFConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) BOOL isProcessingAcousticIdRequest; // @synthesize isProcessingAcousticIdRequest=_isProcessingAcousticIdRequest;
@@ -45,7 +46,6 @@
 @property(nonatomic) __weak id <AFUISiriSessionLocalDelegate> localDelegate; // @synthesize localDelegate=_localDelegate;
 @property(nonatomic) __weak id <AFUISiriSessionLocalDataSource> localDataSource; // @synthesize localDataSource=_localDataSource;
 @property(nonatomic) __weak id <AFUISiriSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)underlyingConnection;
 - (float)recordingPowerLevel;
 - (BOOL)isListening;

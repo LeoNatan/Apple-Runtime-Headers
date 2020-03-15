@@ -25,12 +25,12 @@
 + (Class)configurationClass;
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
 @property(nonatomic) BOOL orderByDateAscending; // @synthesize orderByDateAscending=_orderByDateAscending;
 @property(nonatomic) BOOL shouldIncludeActivitySummaryStatistics; // @synthesize shouldIncludeActivitySummaryStatistics=_shouldIncludeActivitySummaryStatistics;
 @property(nonatomic) BOOL shouldIncludeActivitySummaryPrivateProperties; // @synthesize shouldIncludeActivitySummaryPrivateProperties=_shouldIncludeActivitySummaryPrivateProperties;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
-- (void).cxx_destruct;
 - (BOOL)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_validate;

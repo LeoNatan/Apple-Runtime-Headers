@@ -15,9 +15,9 @@
 }
 
 + (id)regionWithName:(id)arg1 code:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *regionCode; // @synthesize regionCode=_regionCode;
 @property(retain, nonatomic) NSString *regionName; // @synthesize regionName=_regionName;
-- (void).cxx_destruct;
 
 @end
 

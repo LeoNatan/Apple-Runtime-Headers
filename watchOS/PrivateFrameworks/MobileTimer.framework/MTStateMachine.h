@@ -18,10 +18,10 @@
     id <MTStateMachineInfoProvider> _infoProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MTStateMachineInfoProvider> infoProvider; // @synthesize infoProvider=_infoProvider;
 @property(nonatomic) __weak id <MTStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MTStateMachineState *currentState; // @synthesize currentState=_currentState;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)stateMachineName;
 - (id)stateMachineLog;

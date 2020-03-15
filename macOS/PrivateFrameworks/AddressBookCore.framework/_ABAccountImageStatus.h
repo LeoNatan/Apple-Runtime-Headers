@@ -13,8 +13,8 @@
     NSString *_imageName;
 }
 
-@property(readonly) NSString *imageName; // @synthesize imageName=_imageName;
 - (void).cxx_destruct;
+@property(readonly) NSString *imageName; // @synthesize imageName=_imageName;
 - (id)description;
 - (id)initWithState:(unsigned long long)arg1 imageName:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 

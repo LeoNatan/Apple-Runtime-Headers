@@ -35,15 +35,16 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)instantiateWithExtension:(id)arg1 componentDescription:(struct AudioComponentDescription)arg2 instance:(struct OpaqueAudioComponentInstance *)arg3 options:(unsigned int)arg4 completionHandler:(CDUnknownBlockType)arg5;
-@property __weak NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-@property(retain) AUAudioUnit_XH *strongInstance; // @synthesize strongInstance=_strongInstance;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property __weak NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(retain) AUAudioUnit_XH *strongInstance; // @synthesize strongInstance=_strongInstance;
 - (BOOL)isLoadedInProcess;
 - (id)userPresets;
 - (id)presetStateFor:(id)arg1 error:(id *)arg2;
 - (BOOL)deleteUserPreset:(id)arg1 error:(id *)arg2;
 - (BOOL)saveUserPreset:(id)arg1 error:(id *)arg2;
+- (void)setCurrentPreset:(id)arg1;
 - (void)setFullStateForDocument:(id)arg1;
 - (void)setFullState:(id)arg1;
 - (void)invalidateAllParameters;
@@ -80,6 +81,8 @@ __attribute__((visibility("hidden")))
 - (void)internalInitWithExtension:(id)arg1 componentDescription:(struct AudioComponentDescription)arg2 instance:(struct OpaqueAudioComponentInstance *)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)didCrash;
 - (void)doOpen:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)removeParameterTreeObserver;
+- (void)addParameterTreeObserver;
 
 @end
 

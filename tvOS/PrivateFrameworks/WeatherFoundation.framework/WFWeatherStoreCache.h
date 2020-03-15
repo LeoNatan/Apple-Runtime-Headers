@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 + (_Bool)removeObjectsFromCache:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
 + (id)createCacheIfNecessary:(id)arg1 error:(id *)arg2;
 + (id)wf_masterDomains;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *dirtyCacheDomains; // @synthesize dirtyCacheDomains=_dirtyCacheDomains;
 @property(retain) NSMutableDictionary *cacheForDomain; // @synthesize cacheForDomain=_cacheForDomain;
 @property(retain) NSObject<OS_dispatch_queue> *cacheConcurrentQueue; // @synthesize cacheConcurrentQueue=_cacheConcurrentQueue;
 @property(retain, nonatomic) NSTimer *cacheStoreTimer; // @synthesize cacheStoreTimer=_cacheStoreTimer;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)_concurrentQueue_barrier_removeObjectWithinDomain:(id)arg1 forKey:(id)arg2;
 - (void)_concurrentQueue_barrier_deleteOldDataFromCache:(id)arg1 allowedStaleness:(unsigned long long)arg2;
 - (void)_concurrentQueue_barrier_deleteOldDataFromCache;

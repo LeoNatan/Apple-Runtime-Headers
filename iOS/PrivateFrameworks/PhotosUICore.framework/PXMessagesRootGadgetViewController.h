@@ -14,8 +14,8 @@
 }
 
 + (Class)gadgetSpecClass;
-@property(readonly, nonatomic) PXMessagesGadgetDataSourceManager *messagesDataSourceManager; // @synthesize messagesDataSourceManager=_messagesDataSourceManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXMessagesGadgetDataSourceManager *messagesDataSourceManager; // @synthesize messagesDataSourceManager=_messagesDataSourceManager;
 - (void)prepareForPresentationStyle:(long long)arg1;
 @property(nonatomic) double recentPhotosHeight;
 - (void)viewDidLoad;

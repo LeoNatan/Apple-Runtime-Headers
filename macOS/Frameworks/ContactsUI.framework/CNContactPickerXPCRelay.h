@@ -18,9 +18,9 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain) id <CNContactPickerInternalSetup> setupController; // @synthesize setupController=_setupController;
-- (void).cxx_destruct;
 - (void)didShowSectionWithIdentifier:(id)arg1;
 - (void)didSearchForString:(id)arg1;
 - (void)didSelectContact:(id)arg1 key:(id)arg2 value:(id)arg3 identifier:(id)arg4;

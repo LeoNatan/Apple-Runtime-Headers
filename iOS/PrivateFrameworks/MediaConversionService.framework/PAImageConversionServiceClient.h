@@ -13,8 +13,8 @@
     NSXPCConnection *_serviceConnection;
 }
 
-@property(retain) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 - (void).cxx_destruct;
+@property(retain) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 - (void)convertImageAtSourceURLCollection:(id)arg1 toDestinationURLCollection:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)convertImageAtSourceURL:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setupServiceConnection;

@@ -22,9 +22,9 @@
     CDUnknownBlockType __t_filePresenterStarted;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType _t_filePresenterStarted; // @synthesize _t_filePresenterStarted=__t_filePresenterStarted;
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionBlock; // @synthesize fetchCompletionBlock=_fetchCompletionBlock;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)actionMain;
 - (void)cancel;

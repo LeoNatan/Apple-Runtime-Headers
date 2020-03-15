@@ -89,6 +89,7 @@
     UIViewController *_contentViewControllerForAlertController;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIViewController *contentViewControllerForAlertController; // @synthesize contentViewControllerForAlertController=_contentViewControllerForAlertController;
 @property(retain) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
 @property(retain) NSString *remoteServiceBundleIdentifier; // @synthesize remoteServiceBundleIdentifier=_remoteServiceBundleIdentifier;
@@ -115,7 +116,6 @@
 @property(retain) id autocorrectionTypes; // @synthesize autocorrectionTypes=_autocorrectionTypes;
 @property(retain) id autocapitalizationTypes; // @synthesize autocapitalizationTypes=_autocapitalizationTypes;
 @property(retain) id keyboardTypes; // @synthesize keyboardTypes=_keyboardTypes;
-- (void).cxx_destruct;
 - (id)_imageDescriptorForPath:(id)arg1 catalogPath:(id)arg2 catalogImageKey:(id)arg3;
 - (long long)_uiAlertActionStyleFromSBUserNotificationButtonPresentationStyle:(int)arg1;
 - (id)_parseCustomButtonDefinitions:(id)arg1 locBundle:(id)arg2;

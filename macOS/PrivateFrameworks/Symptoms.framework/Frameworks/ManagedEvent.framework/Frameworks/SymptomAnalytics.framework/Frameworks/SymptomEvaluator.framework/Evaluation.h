@@ -11,8 +11,8 @@
     CDUnknownBlockType _callback;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (id)description;
 
 @end

@@ -20,6 +20,7 @@
     FCFeedGroup *_inflatedGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCFeedGroup *inflatedGroup; // @synthesize inflatedGroup=_inflatedGroup;
 @property(copy, nonatomic) CDUnknownBlockType inflationCompletionHandler; // @synthesize inflationCompletionHandler=_inflationCompletionHandler;
 @property(nonatomic) _Bool cachedOnly; // @synthesize cachedOnly=_cachedOnly;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) FCFeedDescriptor *feedDescriptor; // @synthesize feedDescriptor=_feedDescriptor;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_fetchTagsForPBGroup:(id)arg1 sharedStrings:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_fetchHeadlinesWithDeflatedHeadlines:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_fetchHeadlinesWithCompletionHandler:(CDUnknownBlockType)arg1;

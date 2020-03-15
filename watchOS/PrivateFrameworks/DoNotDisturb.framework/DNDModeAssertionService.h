@@ -23,8 +23,8 @@
 
 + (id)serviceForClientIdentifier:(id)arg1;
 + (void)initialize;
-@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void)_handleXPCInterruption;
 - (void)_registerForAssertionUpdatesIfRequiredWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_handleChangeActiveModeAssertion:(id)arg1 invalidation:(id)arg2;

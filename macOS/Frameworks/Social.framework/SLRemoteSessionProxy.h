@@ -21,10 +21,10 @@
     CDUnknownBlockType _connectionResetBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType connectionResetBlock; // @synthesize connectionResetBlock=_connectionResetBlock;
 @property(retain) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
 @property __weak NSObject *exportedObject; // @synthesize exportedObject=_exportedObject;
-- (void).cxx_destruct;
 - (void)dropGuaraneteedRemoteCall:(id)arg1;
 - (void)registerGuaranteedRemoteCall:(id)arg1;
 - (void)forwardInvocation:(id)arg1;

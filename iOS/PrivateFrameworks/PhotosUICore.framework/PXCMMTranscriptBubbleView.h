@@ -27,6 +27,7 @@
 }
 
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 withSpec:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(readonly, nonatomic) id <PXUIImageProvider> mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *imageTitleText; // @synthesize imageTitleText=_imageTitleText;
 @property(nonatomic) struct UIEdgeInsets bubbleSafeAreaInsets; // @synthesize bubbleSafeAreaInsets=_bubbleSafeAreaInsets;
 @property(retain, nonatomic) PXCMMSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (void)setAsset:(id)arg1 mediaProvider:(id)arg2;
 - (void)_updateHighlightView;
 - (void)_updateFooterView;

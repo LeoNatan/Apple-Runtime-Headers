@@ -27,6 +27,7 @@
 + (id)unpackProtobuf:(id)arg1;
 + (id)packPayload:(id)arg1;
 + (id)archivedClasses;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType deviceStatusCallback; // @synthesize deviceStatusCallback=_deviceStatusCallback;
 @property(retain) id <IDSServiceDelegate> incomingDelegate; // @synthesize incomingDelegate=_incomingDelegate;
 @property(retain) NSObject<OS_dispatch_queue> *discovery_queue; // @synthesize discovery_queue=_discovery_queue;
@@ -35,7 +36,6 @@
 @property(retain) IDSService *service; // @synthesize service=_service;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property __weak id <DEDClientProtocol> remoteSideDelegate; // @synthesize remoteSideDelegate=_remoteSideDelegate;
-- (void).cxx_destruct;
 - (void)incomingDeviceReceived:(id)arg1;
 - (void)discoverDevicesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)didStartBugSessionWithInfo:(id)arg1 forID:(id)arg2;

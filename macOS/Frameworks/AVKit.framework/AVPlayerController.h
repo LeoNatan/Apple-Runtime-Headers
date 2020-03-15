@@ -170,6 +170,7 @@
 + (id)keyPathsForValuesAffectingCurrentAudioTouchBarMediaSelectionOption;
 + (id)keyPathsForValuesAffectingHasAudioTouchBarMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasTouchBarMediaSelectionOptions;
+- (void).cxx_destruct;
 @property BOOL touchBarRequiresLinearPlayback; // @synthesize touchBarRequiresLinearPlayback=_touchBarRequiresLinearPlayback;
 @property double defaultPlaybackRate; // @synthesize defaultPlaybackRate=_defaultPlaybackRate;
 @property(readonly) AVOutputContextController *outputContextController; // @synthesize outputContextController=_outputContextController;
@@ -207,7 +208,6 @@
 @property(getter=isAtMaxTime) BOOL atMaxTime; // @synthesize atMaxTime=_atMaxTime;
 @property long long status; // @synthesize status=_status;
 @property(retain) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)_prepareAssetForInspectionIfNeeded;
 - (id)scanningDelays;

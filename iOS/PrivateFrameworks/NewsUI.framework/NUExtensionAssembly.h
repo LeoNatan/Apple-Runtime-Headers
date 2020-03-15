@@ -16,8 +16,8 @@
     id <NUExtensionContextProvider> _extensionContextProvider;
 }
 
-@property(readonly, nonatomic) __weak id <NUExtensionContextProvider> extensionContextProvider; // @synthesize extensionContextProvider=_extensionContextProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <NUExtensionContextProvider> extensionContextProvider; // @synthesize extensionContextProvider=_extensionContextProvider;
 - (void)loadInRegistry:(id)arg1;
 - (id)initWithExtensionContextProvider:(id)arg1;
 

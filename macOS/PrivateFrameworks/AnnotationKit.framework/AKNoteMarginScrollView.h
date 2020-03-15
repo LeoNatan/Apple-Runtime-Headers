@@ -14,8 +14,8 @@
     BOOL _wantsOnlyOverlayScrollers;
 }
 
-@property(nonatomic) BOOL wantsOnlyOverlayScrollers; // @synthesize wantsOnlyOverlayScrollers=_wantsOnlyOverlayScrollers;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL wantsOnlyOverlayScrollers; // @synthesize wantsOnlyOverlayScrollers=_wantsOnlyOverlayScrollers;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreas;

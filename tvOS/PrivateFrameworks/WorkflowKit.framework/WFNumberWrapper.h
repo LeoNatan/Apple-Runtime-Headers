@@ -14,8 +14,8 @@
 }
 
 + (id)wrapperWithNumber:(id)arg1;
-@property(readonly, nonatomic) NSNumber *number; // @synthesize number=_number;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *number; // @synthesize number=_number;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 

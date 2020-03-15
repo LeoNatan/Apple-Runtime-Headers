@@ -47,13 +47,13 @@ __attribute__((visibility("hidden")))
 + (id)_defaultCellStyle;
 + (id)_fontAttributesForTextStyle:(id)arg1;
 + (id)keyPathsForValuesAffectingContentScrollView;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isShelfStyle) _Bool shelfStyle; // @synthesize shelfStyle=_shelfStyle;
 @property(retain, nonatomic) VideosExtrasGridViewControllerStyle *wideStyle; // @synthesize wideStyle=_wideStyle;
 @property(retain, nonatomic) VideosExtrasGridViewControllerStyle *extraLargeStyle; // @synthesize extraLargeStyle=_extraLargeStyle;
 @property(retain, nonatomic) VideosExtrasGridViewControllerStyle *largeStyle; // @synthesize largeStyle=_largeStyle;
 @property(retain, nonatomic) VideosExtrasGridViewControllerStyle *mediumStyle; // @synthesize mediumStyle=_mediumStyle;
 @property(retain, nonatomic) VideosExtrasGridViewControllerStyle *smallStyle; // @synthesize smallStyle=_smallStyle;
-- (void).cxx_destruct;
 - (void)_prepareLayout;
 - (void)_dynamicTypeDidChange;
 - (id)_narrowStyle;

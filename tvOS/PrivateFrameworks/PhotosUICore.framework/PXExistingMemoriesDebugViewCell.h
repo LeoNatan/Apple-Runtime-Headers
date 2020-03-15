@@ -13,8 +13,8 @@
     PHMemory *_memory;
 }
 
-@property(retain) PHMemory *memory; // @synthesize memory=_memory;
 - (void).cxx_destruct;
+@property(retain) PHMemory *memory; // @synthesize memory=_memory;
 
 @end
 

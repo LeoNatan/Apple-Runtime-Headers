@@ -14,8 +14,8 @@
     NSDictionary *_cloudStoreSpecificKeys;
 }
 
-@property(copy, nonatomic) NSDictionary *cloudStoreSpecificKeys; // @synthesize cloudStoreSpecificKeys=_cloudStoreSpecificKeys;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *cloudStoreSpecificKeys; // @synthesize cloudStoreSpecificKeys=_cloudStoreSpecificKeys;
 - (id)description;
 - (void)addRecord:(id)arg1;
 @property(readonly, nonatomic) NSArray *records;

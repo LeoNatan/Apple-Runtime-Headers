@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface SFNavigationBarMetrics : NSObject
 {
+    _Bool _usesNavigationBarHeightForSheetPresentation;
     UITraitCollection *_traitCollectionForFontMetrics;
     double _minimumBarHeight;
     UIFont *_defaultLabelFont;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
     double _distanceFromLabelBaselineToURLOutlineBottom;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double distanceFromLabelBaselineToURLOutlineBottom; // @synthesize distanceFromLabelBaselineToURLOutlineBottom=_distanceFromLabelBaselineToURLOutlineBottom;
 @property(readonly, nonatomic) double urlLabelAccessoryLockItemVerticalOffset; // @synthesize urlLabelAccessoryLockItemVerticalOffset=_urlLabelAccessoryLockItemVerticalOffset;
 @property(readonly, nonatomic) double urlLabelAccessoryItemSquishedVerticalOffset; // @synthesize urlLabelAccessoryItemSquishedVerticalOffset=_urlLabelAccessoryItemSquishedVerticalOffset;
@@ -46,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double defaultBarHeight; // @synthesize defaultBarHeight=_defaultBarHeight;
 @property(readonly, nonatomic) double urlOutlineCornerRadius; // @synthesize urlOutlineCornerRadius=_urlOutlineCornerRadius;
 @property(readonly, nonatomic) double accessibilityImageScale; // @synthesize accessibilityImageScale=_accessibilityImageScale;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageSymbolConfiguration *squishedAccessoryImageSymbolConfiguration;
 @property(readonly, nonatomic) UIImageSymbolConfiguration *accessoryImageSymbolConfiguration;
 @property(readonly, nonatomic) double narrowEditingScaleFactor;
@@ -57,7 +58,9 @@ __attribute__((visibility("hidden")))
 - (double)barHeightWithBarMetricsCategory:(long long)arg1;
 - (void)_updateMetrics;
 - (_Bool)updateForStatusBarHeight:(double)arg1;
-- (_Bool)updateForContentSizeCategory:(id)arg1;
+- (_Bool)_updateForContentSizeCategory:(id)arg1;
+- (_Bool)_updateForPresentationSemanticContext:(long long)arg1;
+- (_Bool)updateForTraitCollection:(id)arg1;
 - (id)init;
 - (id)_contentSizeCategoryWithPreferredCategory:(id)arg1;
 

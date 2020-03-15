@@ -79,6 +79,7 @@
     long long _storeItemInt64ID;
     long long _storeSubscriptionAdamID;
     MPMediaItem *_mediaItem;
+    NSString *_explicitBadge;
     MPModelGenericObject *_modelGenericObject;
     NSString *_aggregateDictionaryItemIdentifier;
     NSString *_storeFrontIdentifier;
@@ -96,6 +97,7 @@
 + (BOOL)hasNominalAmountBeenPlayedForElapsedTime:(double)arg1 startTime:(double)arg2 stopTime:(double)arg3;
 + (void)setDefaultScaleMode:(long long)arg1;
 + (long long)defaultScaleMode;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *contentItemID; // @synthesize contentItemID=_contentItemID;
 @property(readonly, copy, nonatomic) ICMusicSubscriptionLeaseStatus *leaseStatus; // @synthesize leaseStatus=_leaseStatus;
 @property(readonly, nonatomic) long long leasePlaybackPreventionState; // @synthesize leasePlaybackPreventionState=_leasePlaybackPreventionState;
@@ -114,6 +116,7 @@
 @property(readonly, nonatomic) BOOL shouldPreventPlayback; // @synthesize shouldPreventPlayback=_shouldPreventPlayback;
 @property(nonatomic, getter=isStartItem) BOOL startItem; // @synthesize startItem=_startItem;
 @property(readonly, nonatomic, getter=isTailPlaceholder) BOOL tailPlaceholder; // @synthesize tailPlaceholder=_tailPlaceholder;
+@property(copy, nonatomic) NSString *explicitBadge; // @synthesize explicitBadge=_explicitBadge;
 @property(readonly, nonatomic) BOOL hasProtectedContent; // @synthesize hasProtectedContent=_hasProtectedContent;
 @property(readonly, nonatomic) BOOL prefersSeekOverSkip; // @synthesize prefersSeekOverSkip=_prefersSeekOverSkip;
 @property(nonatomic) float loudnessInfoVolumeNormalization; // @synthesize loudnessInfoVolumeNormalization=_loudnessInfoVolumeNormalization;
@@ -142,7 +145,6 @@
 @property(retain, nonatomic) NSArray *chapterTimeMarkers; // @synthesize chapterTimeMarkers=_chapterTimeMarkers;
 @property(retain, nonatomic) NSArray *artworkTimeMarkers; // @synthesize artworkTimeMarkers=_artworkTimeMarkers;
 @property(readonly, nonatomic) MPAlternateTracks *alternateTracks; // @synthesize alternateTracks=_alternateTracks;
-- (void).cxx_destruct;
 - (void)_willResignActivePlayerItem;
 - (void)_willBecomeActivePlayerItem;
 - (void)_updateHasFinishedDownloading;
@@ -222,6 +224,7 @@
 - (void)_loadTimeMarkersBlocking;
 @property(readonly, nonatomic) BOOL useEmbeddedChapterData;
 @property(readonly, nonatomic) BOOL supportsRadioTrackActions;
+@property(readonly, nonatomic) long long stationProviderID;
 @property(readonly, copy, nonatomic) NSString *stationStringID;
 @property(readonly, copy, nonatomic) NSString *stationName;
 @property(readonly, copy, nonatomic) NSString *stationHash;

@@ -15,8 +15,8 @@
     NSString *_bundleIdentifier;
 }
 
-- (id)bundleIdentifier;
 - (void).cxx_destruct;
+- (id)bundleIdentifier;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;

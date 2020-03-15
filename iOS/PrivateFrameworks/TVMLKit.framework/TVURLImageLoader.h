@@ -24,13 +24,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(readonly, nonatomic) NSMutableDictionary *taskOptionsByURL; // @synthesize taskOptionsByURL=_taskOptionsByURL;
 @property(readonly, nonatomic) NSMutableDictionary *loadIDsByURL; // @synthesize loadIDsByURL=_loadIDsByURL;
 @property(readonly, nonatomic) NSMutableDictionary *loadOptionsByID; // @synthesize loadOptionsByID=_loadOptionsByID;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(nonatomic, getter=isImageRotationEnabled) _Bool imageRotationEnabled; // @synthesize imageRotationEnabled=_imageRotationEnabled;
-- (void).cxx_destruct;
 - (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3 imageDirection:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;

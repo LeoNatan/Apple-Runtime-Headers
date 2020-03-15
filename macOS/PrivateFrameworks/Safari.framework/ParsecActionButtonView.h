@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_imageViewTopConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewTopConstraint; // @synthesize imageViewTopConstraint=_imageViewTopConstraint;
 @property(nonatomic) __weak NSBox *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) __weak NSTextField *captionLabel; // @synthesize captionLabel=_captionLabel;
 @property(nonatomic) __weak NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
-- (void).cxx_destruct;
 - (void)_updateSeparatorAppearance;
 - (void)_updateCaptionLabelAppearance;
 - (void)_updateImageViewAppearance;

@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     id <WKKeyboardScrollViewAnimatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <WKKeyboardScrollViewAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WKKeyboardScrollViewAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didFinishScrolling;
 - (RectEdges_76d77e37)rubberbandableDirections;
 - (RectEdges_76d77e37)scrollableDirectionsFromOffset:(struct CGPoint)arg1;

@@ -37,6 +37,7 @@
 + (id)workspaceWithName:(id)arg1 atPath:(id)arg2 objectModelName:(id)arg3 objectModelBundle:(id)arg4 useReadOnly:(BOOL)arg5;
 + (id)workspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(BOOL)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *persistentStoreError; // @synthesize persistentStoreError=_persistentStoreError;
 @property(readonly, nonatomic) BOOL integrityCheckFailed; // @synthesize integrityCheckFailed=_integrityCheckFailed;
 @property(retain, nonatomic) NSBundle *objectModelResidentBundle; // @synthesize objectModelResidentBundle=_objectModelResidentBundle;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) id <AnalyticsWorkspaceHealthDelegate> healthDelegate; // @synthesize healthDelegate=_healthDelegate;
 @property(readonly, retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=__connection;
 @property(readonly, nonatomic) BOOL persistent; // @synthesize persistent=__persistent;
-- (void).cxx_destruct;
 - (BOOL)_primePath:(id)arg1;
 - (id)_cloneInternal:(id)arg1 intoWorkspace:(id)arg2 ancestry:(id)arg3 iteration:(unsigned long long)arg4 mustFail:(char *)arg5;
 - (id)cloneObject:(id)arg1 intoWorkspace:(id)arg2;

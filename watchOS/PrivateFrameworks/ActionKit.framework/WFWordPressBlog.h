@@ -25,12 +25,12 @@
 + (id)endpointURLJSONTransformer;
 + (id)urlJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAdmin; // @synthesize isAdmin=_isAdmin;
 @property(readonly, copy, nonatomic) NSString *blogName; // @synthesize blogName=_blogName;
 @property(readonly, copy, nonatomic) NSNumber *blogId; // @synthesize blogId=_blogId;
 @property(readonly, copy, nonatomic) NSURL *endpointURL; // @synthesize endpointURL=_endpointURL;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)initWithEndpointURL:(id)arg1;
 
 // Remaining properties

@@ -23,6 +23,7 @@
     void *_swiftTyperef;
 }
 
+- (void).cxx_destruct;
 @property(readonly) void *swiftTyperef; // @synthesize swiftTyperef=_swiftTyperef;
 @property(readonly, nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(readonly) unsigned int stride; // @synthesize stride=_stride;
@@ -32,7 +33,6 @@
 @property(readonly) unsigned int scanType; // @synthesize scanType=_scanType;
 @property(readonly, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
 @property(readonly, nonatomic) NSString *ivarName; // @synthesize ivarName=_ivarName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)descriptionOfFieldValueInObjectMemory:(void *)arg1 scanner:(id)arg2;
 @property(readonly, nonatomic) VMUClassInfo *destinationLayout;

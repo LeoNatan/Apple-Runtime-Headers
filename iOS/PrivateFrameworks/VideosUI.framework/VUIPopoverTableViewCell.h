@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     _TVLabel *_tvLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVLabel *tvLabel; // @synthesize tvLabel=_tvLabel;
 @property(retain, nonatomic) _TVImageView *tvImageView; // @synthesize tvImageView=_tvImageView;
 @property(retain, nonatomic) UIView *cardView; // @synthesize cardView=_cardView;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) IKTextElement *textElement; // @synthesize textElement=_textElement;
 @property(retain, nonatomic) IKViewElement *cardElement; // @synthesize cardElement=_cardElement;
 @property(retain, nonatomic) UIView *dimmingView; // @synthesize dimmingView=_dimmingView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;

@@ -42,6 +42,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSArray *URLs; // @synthesize URLs=_URLs;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *suffix; // @synthesize suffix=_suffix;
@@ -71,7 +72,6 @@
 @property(retain) NSArray *calendarURIs; // @synthesize calendarURIs=_calendarURIs;
 @property(retain, nonatomic) NSDateComponents *birthdayComponents; // @synthesize birthdayComponents=_birthdayComponents;
 @property(retain) NSDateComponents *alternateBirthdayComponents; // @synthesize alternateBirthdayComponents=_alternateBirthdayComponents;
-- (void).cxx_destruct;
 - (void)_validateDateComponents:(id)arg1;
 - (void)_setInstantMessageAddresses:(id)arg1 forServiceType:(id)arg2;
 - (id)_instantMessageAddressesForServiceType:(id)arg1;

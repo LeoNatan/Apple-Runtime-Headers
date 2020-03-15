@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     BOOL _didConsumeFreebie;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didConsumeFreebie; // @synthesize didConsumeFreebie=_didConsumeFreebie;
 @property(nonatomic, getter=shouldSuppress) BOOL suppress; // @synthesize suppress=_suppress;
 @property(nonatomic, getter=isShowingSheet) BOOL showingSheet; // @synthesize showingSheet=_showingSheet;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *requestQueue;
 - (id)dequeueRequest;
 - (void)enqueueRequest:(id)arg1;

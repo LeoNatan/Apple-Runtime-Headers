@@ -7,23 +7,20 @@
 #import <Photos/PHAvailabilityRequest.h>
 
 @class PHResourceAvailabilityDataStoreManager, PHVideoRequestBehaviorSpec;
-@protocol PHVideoChoosingAndAvailabilityRequestDelegate;
 
 @interface PHVideoChoosingAndAvailabilityRequest : PHAvailabilityRequest
 {
     PHResourceAvailabilityDataStoreManager *_dataStoreManager;
     struct os_unfair_lock_s _lock;
     _Bool _wantsProgress;
-    id <PHVideoChoosingAndAvailabilityRequestDelegate> _delegate;
     PHVideoRequestBehaviorSpec *_behaviorSpec;
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsProgress; // @synthesize wantsProgress=_wantsProgress;
 @property(readonly, nonatomic) PHVideoRequestBehaviorSpec *behaviorSpec; // @synthesize behaviorSpec=_behaviorSpec;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-@property(nonatomic) id <PHVideoChoosingAndAvailabilityRequestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_loadAdjustmentInfoFromPath:(id)arg1 intoAdditionalInfo:(id)arg2;
 - (void)_resourceURLReceivedNotification:(id)arg1;
 - (void)_cplDownloadStatusNotification:(id)arg1;

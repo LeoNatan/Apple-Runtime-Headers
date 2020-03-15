@@ -13,8 +13,8 @@
     EKUICalendarPopUpButton *_uiButton;
 }
 
-@property __weak EKUICalendarPopUpButton *uiButton; // @synthesize uiButton=_uiButton;
 - (void).cxx_destruct;
+@property __weak EKUICalendarPopUpButton *uiButton; // @synthesize uiButton=_uiButton;
 - (void)drawTitle:(id)arg1 inFrame:(struct CGRect)arg2 deemphasizedString:(id)arg3 inView:(id)arg4;
 - (id)titleFont;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;

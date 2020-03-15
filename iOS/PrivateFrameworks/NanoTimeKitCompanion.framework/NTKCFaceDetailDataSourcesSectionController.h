@@ -21,11 +21,11 @@
 }
 
 + (_Bool)hasDataSourcesSectionForFace:(id)arg1 inGallery:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NTKCFaceDetailDataSourcesSectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool showsTitleWhenEmpty; // @synthesize showsTitleWhenEmpty=_showsTitleWhenEmpty;
 @property(copy, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
 @property(retain, nonatomic) NTKCUpNextDataSourcesManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (id)_getDisabledDataSources;
 - (void)_buildRowsWithDataSourceEntries:(id)arg1;
 - (void)manager:(id)arg1 didUpdateDataSourceEntries:(id)arg2;

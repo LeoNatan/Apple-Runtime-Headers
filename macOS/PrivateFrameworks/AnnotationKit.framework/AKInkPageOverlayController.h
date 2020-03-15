@@ -23,13 +23,13 @@
 }
 
 + (id)newInkOverlayDrawingUndoTargetWithPageController:(id)arg1;
+- (void).cxx_destruct;
 @property double lastStrokeEndTime; // @synthesize lastStrokeEndTime=_lastStrokeEndTime;
 @property(copy) CDUnknownBlockType delayedShapeDetectionBlock; // @synthesize delayedShapeDetectionBlock=_delayedShapeDetectionBlock;
 @property BOOL onlyPencilDraws; // @synthesize onlyPencilDraws=_onlyPencilDraws;
 @property BOOL ignoreAnnotationAndSelectionKVO; // @synthesize ignoreAnnotationAndSelectionKVO=_ignoreAnnotationAndSelectionKVO;
 @property(retain) AKShapeDetectionController *shapeDetectionController; // @synthesize shapeDetectionController=_shapeDetectionController;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
-- (void).cxx_destruct;
 - (id)_convertCHDrawing:(id)arg1 fromDrawingInCanvasView:(id)arg2 toInkOverlayView:(id)arg3;
 - (struct CGRect)_convertRect:(struct CGRect)arg1 fromDrawingInCanvasView:(id)arg2 toPageControllerModelSpace:(id)arg3;
 - (struct CGSize)scaleFromDrawingInCanvasView:(id)arg1 toPageControllerModelSpace:(id)arg2;

@@ -23,11 +23,11 @@
     id <SBSwitcherAppSuggestionViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBSwitcherAppSuggestionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=_isSuggestionQueueSuspended, setter=_setSuggestionQueueSuspended:) _Bool suggestionQueueSuspended; // @synthesize suggestionQueueSuspended=_suggestionQueueSuspended;
 @property(nonatomic) _Bool showSuggestions; // @synthesize showSuggestions=_showSuggestions;
 @property(retain, nonatomic) SBBestAppSuggestion *bestAppSuggestion; // @synthesize bestAppSuggestion=_bestAppSuggestion;
-- (void).cxx_destruct;
 - (void)_activateCurrentSuggestion;
 - (_Bool)_hasSuggestionBannerView;
 - (void)_activateBestAppSuggestion;

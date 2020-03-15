@@ -33,6 +33,7 @@
     unsigned long long _deactivationReasons;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long deactivationReasons; // @synthesize deactivationReasons=_deactivationReasons;
 @property(nonatomic) _Bool inactiveExtrasPlaybackTimeoutKicked; // @synthesize inactiveExtrasPlaybackTimeoutKicked=_inactiveExtrasPlaybackTimeoutKicked;
 @property(nonatomic) _Bool deactivatedBySomethingOtherThanSiri; // @synthesize deactivatedBySomethingOtherThanSiri=_deactivatedBySomethingOtherThanSiri;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSArray *bgImageProxies; // @synthesize bgImageProxies=_bgImageProxies;
 @property(copy, nonatomic) NSArray *menuItemElements; // @synthesize menuItemElements=_menuItemElements;
 @property(copy, nonatomic) CDUnknownBlockType loadCompletionHandler; // @synthesize loadCompletionHandler=_loadCompletionHandler;
-- (void).cxx_destruct;
 - (void)_displayIntervalTimerFired:(id)arg1;
 - (void)_updateBackgroundImageWithIndex:(unsigned long long)arg1;
 - (void)_fetchNext;

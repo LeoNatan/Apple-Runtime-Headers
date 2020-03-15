@@ -18,10 +18,10 @@
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
+- (void).cxx_destruct;
 @property __weak QLPreviewExtensionViewController *viewService; // @synthesize viewService=_viewService;
 @property(retain) QLExtensionPreview *preview; // @synthesize preview=_preview;
 @property BOOL hostIsAnimating; // @synthesize hostIsAnimating=_hostIsAnimating;
-- (void).cxx_destruct;
 @property(readonly) NSURL *previewContentURL;
 - (void)loadWithPreview:(id)arg1 isAnimating:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly) NSViewController<QLPreviewingController> *previewViewController;

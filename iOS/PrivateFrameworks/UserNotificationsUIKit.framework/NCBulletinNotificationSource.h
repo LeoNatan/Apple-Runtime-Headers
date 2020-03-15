@@ -23,12 +23,12 @@
     NSMutableDictionary *_bulletinFeeds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *bulletinFeeds; // @synthesize bulletinFeeds=_bulletinFeeds;
 @property(retain, nonatomic) NSMutableDictionary *sectionInfoById; // @synthesize sectionInfoById=_sectionInfoById;
 @property(retain, nonatomic) NCNotificationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(retain, nonatomic) BBSettingsGateway *settingsGateway; // @synthesize settingsGateway=_settingsGateway;
 @property(retain, nonatomic) BBObserver *observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (unsigned long long)_updateFeedForCoverSheetDestination:(unsigned long long)arg1 storedFeed:(unsigned long long)arg2;
 - (id)_bulletinsToClearPerSectionIdForNotificationRequests:(id)arg1 removingDestinations:(id)arg2;
 - (id)_bulletinsPerSectionIdForNotificationRequests:(id)arg1;

@@ -16,9 +16,9 @@
     NUAdBannerView *_bannerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUAdBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewDidLoadAd:(id)arg1;
 - (void)finishedLoadingBannerView:(id)arg1 error:(id)arg2;

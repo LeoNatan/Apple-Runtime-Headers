@@ -14,8 +14,8 @@
     NSDictionary *_highlightEstimatesDictionary;
 }
 
-@property(retain) PGManager *manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
+@property(retain) PGManager *manager; // @synthesize manager=_manager;
 - (id)_stringDescriptionForMomentsDetails:(id)arg1;
 - (id)_stringDescriptionForHomeWorkAggregations:(id)arg1;
 - (id)_stringDescriptionForTripWeekendDetails:(id)arg1;

@@ -39,10 +39,10 @@
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showReceiveRelayCalls; // @synthesize showReceiveRelayCalls=_showReceiveRelayCalls;
 @property(nonatomic) _Bool hideAppleIDLogin; // @synthesize hideAppleIDLogin=_hideAppleIDLogin;
 @property(nonatomic) _Bool showDeviceAliases; // @synthesize showDeviceAliases=_showDeviceAliases;
-- (void).cxx_destruct;
 - (void)_handleAccountRegistrarChanged;
 - (void)_handleOutgoingRelayCallerIDChanged;
 - (void)_handleThumperCapabilitiesChanged;

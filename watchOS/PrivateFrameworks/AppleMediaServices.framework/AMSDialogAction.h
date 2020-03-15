@@ -27,6 +27,7 @@
 + (id)actionWithTitle:(id)arg1 identifier:(id)arg2;
 + (id)actionWithTitle:(id)arg1 style:(int)arg2;
 + (id)actionWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRetry; // @synthesize shouldRetry=_shouldRetry;
 @property(copy, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool inferLinkDestination; // @synthesize inferLinkDestination=_inferLinkDestination;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSURL *deepLink; // @synthesize deepLink=_deepLink;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

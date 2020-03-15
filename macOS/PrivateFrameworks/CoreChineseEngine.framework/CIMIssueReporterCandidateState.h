@@ -19,6 +19,7 @@
     NSDictionary *_showCharsInScriptSetting;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *showCharsInScriptSetting; // @synthesize showCharsInScriptSetting=_showCharsInScriptSetting;
 @property(nonatomic) int shuangpinLayout; // @synthesize shuangpinLayout=_shuangpinLayout;
 @property(nonatomic) BOOL fuzzyPinyinEnabled; // @synthesize fuzzyPinyinEnabled=_fuzzyPinyinEnabled;
@@ -26,7 +27,6 @@
 @property(copy) NSArray *candidates; // @synthesize candidates=_candidates;
 @property(copy) NSString *markedText; // @synthesize markedText=_markedText;
 @property(copy) NSString *inputModeName; // @synthesize inputModeName=_inputModeName;
-- (void).cxx_destruct;
 @property(readonly, retain) NSString *topCandidatesText;
 @property(readonly, retain) NSArray *textOnlyCandidates;
 

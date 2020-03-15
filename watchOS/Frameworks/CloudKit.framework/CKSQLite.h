@@ -28,6 +28,7 @@
     NSDateFormatter *_dateFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(readonly, nonatomic) NSMutableDictionary *statementsBySQL; // @synthesize statementsBySQL=_statementsBySQL;
 @property(nonatomic) _Bool corrupt; // @synthesize corrupt=_corrupt;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) NSString *schemaVersion; // @synthesize schemaVersion=_schemaVersion;
 @property(readonly, nonatomic) NSString *schema; // @synthesize schema=_schema;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (long)dbUserVersion;
 - (id)_boxedValue:(id)arg1 forObjcCProperty:(id)arg2;
 - (id)_boxedPropertyDictionary:(id)arg1 forObjCClass:(id)arg2;

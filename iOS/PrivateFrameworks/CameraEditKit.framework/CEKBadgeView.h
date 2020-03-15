@@ -17,11 +17,11 @@
     UIColor *__contentColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setContentColor:) UIColor *_contentColor; // @synthesize _contentColor=__contentColor;
 @property(retain, nonatomic, setter=_setFillColor:) UIColor *_fillColor; // @synthesize _fillColor=__fillColor;
 @property(nonatomic, setter=_setFillCornerRadius:) double _fillCornerRadius; // @synthesize _fillCornerRadius=__fillCornerRadius;
 @property(nonatomic) __weak id <CEKBadgeViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_maskImage;
 - (id)_invertMaskImage:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

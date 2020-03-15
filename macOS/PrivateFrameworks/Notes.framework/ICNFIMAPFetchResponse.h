@@ -15,9 +15,9 @@
 }
 
 + (BOOL)handlesResponseWithName:(const char *)arg1 ofLength:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *fetchResults; // @synthesize fetchResults=_fetchResults;
 @property(nonatomic) BOOL isValid; // @synthesize isValid=_isValid;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)_fetchResultOfClass:(Class)arg1;

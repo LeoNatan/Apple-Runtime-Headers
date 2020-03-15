@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     MLModelConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MLModelConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) int scenePrintRequestRevision; // @synthesize scenePrintRequestRevision=_scenePrintRequestRevision;
 @property(readonly, nonatomic) MLModelDescription *modelDescription; // @synthesize modelDescription=_modelDescription;
-- (void).cxx_destruct;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)featureValueFromScenePrint:(id)arg1 elementSize:(unsigned int)arg2;
 - (id)initWithModelDescription:(id)arg1 parameterDictionary:(id)arg2 error:(id *)arg3;

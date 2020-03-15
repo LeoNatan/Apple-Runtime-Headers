@@ -21,6 +21,7 @@
     RTMapItemProviderBluePOIParameters *_parameters;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) RTMapItemProviderBluePOIParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) RTLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) RTFingerprintManager *fingerprintManager; // @synthesize fingerprintManager=_fingerprintManager;
 @property(readonly, nonatomic) RTInferredMapItemDeduper *inferredMapItemDeduper; // @synthesize inferredMapItemDeduper=_inferredMapItemDeduper;
-- (void).cxx_destruct;
 - (_Bool)harvestVisits:(id)arg1 mapItem:(id)arg2 error:(id *)arg3;
 - (_Bool)submitHarvest:(id)arg1 error:(id *)arg2;
 - (id)poiHarvestForFingerprint:(id)arg1 mapItem:(id)arg2 referenceLocation:(id)arg3 endDate:(id)arg4 error:(id *)arg5;
@@ -41,7 +41,7 @@
 - (id)mapItemsFromLocations:(id)arg1 accessPoints:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 options:(id)arg5 error:(id *)arg6;
 - (id)bestQueryFromAggregatedQueries:(id)arg1 error:(id *)arg2;
 - (id)bestQueryFromSortedQueryResults:(id)arg1 bestAoiInferredMapItem:(id)arg2 bestPoiInferredMapItem:(id)arg3 error:(id *)arg4;
-- (_Bool)sortedQueryResult:(struct RTPair *)arg1 correspondsToAoi:(id)arg2 poi:(id)arg3;
+- (_Bool)sortedQueryResult:(id)arg1 correspondsToAoi:(id)arg2 poi:(id)arg3;
 - (id)bestQueryFromSortedQueryResults:(id)arg1 bestInferredMapItem:(id)arg2 error:(id *)arg3;
 - (id)sortQueryResults:(id)arg1 error:(id *)arg2;
 - (_Bool)chooseBestAoiInferredMapItem:(id *)arg1 PoiInferredMapItem:(id *)arg2 fromSortedAveragedResults:(id)arg3 error:(id *)arg4;

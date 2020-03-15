@@ -16,8 +16,8 @@
     UIView *mWatchView;
 }
 
-@property(nonatomic) __weak UIView *watchView; // @synthesize watchView=mWatchView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *watchView; // @synthesize watchView=mWatchView;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;

@@ -15,8 +15,8 @@
 }
 
 + (Class)cellClass;
-@property(nonatomic) __weak NSView *parentAddressField; // @synthesize parentAddressField=_parentAddressField;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSView *parentAddressField; // @synthesize parentAddressField=_parentAddressField;
 - (id)accessibilityParent;
 - (id)designatedFocusRingView;
 - (struct CGSize)intrinsicContentSize;

@@ -16,11 +16,11 @@
     CDUnknownBlockType _keepAction;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType keepAction; // @synthesize keepAction=_keepAction;
 @property(retain) NSButton *choosePhotoButton; // @synthesize choosePhotoButton=_choosePhotoButton;
 @property(retain) NSButton *keepExistingPhotoButton; // @synthesize keepExistingPhotoButton=_keepExistingPhotoButton;
 @property(retain) NSImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (void)setExistingUserImage:(id)arg1 withKeepAction:(CDUnknownBlockType)arg2;
 - (void)dontLetGo:(id)arg1;
 - (void)setBuddyControlsHidden:(BOOL)arg1;

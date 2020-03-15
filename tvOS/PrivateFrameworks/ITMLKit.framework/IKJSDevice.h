@@ -20,8 +20,8 @@
 }
 
 + (id)getMobileGestaltString:(struct __CFString *)arg1;
-@property(nonatomic) __weak id <IKAppDeviceConfig> deviceConfig; // @synthesize deviceConfig=_deviceConfig;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IKAppDeviceConfig> deviceConfig; // @synthesize deviceConfig=_deviceConfig;
 - (id)osBuildNumber;
 - (id)capacity:(id)arg1;
 - (_Bool)isSeedBuild;

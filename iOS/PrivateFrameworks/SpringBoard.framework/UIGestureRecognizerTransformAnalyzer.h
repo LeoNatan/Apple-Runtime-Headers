@@ -17,12 +17,12 @@
     int _dominantComponent;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIGestureRecognizerTransformAnalyzerInfo *smoothedInfo; // @synthesize smoothedInfo=_smoothedInfo;
 @property(readonly, nonatomic) int dominantComponent; // @synthesize dominantComponent=_dominantComponent;
 @property(nonatomic) double rotationWeight; // @synthesize rotationWeight=_rotationWeight;
 @property(nonatomic) double pinchingWeight; // @synthesize pinchingWeight=_pinchingWeight;
 @property(nonatomic) double translationWeight; // @synthesize translationWeight=_translationWeight;
-- (void).cxx_destruct;
 - (id)analyzeTouches:(id)arg1;
 - (void)reset;
 - (id)init;

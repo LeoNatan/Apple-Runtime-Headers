@@ -17,10 +17,10 @@
     id _token;
 }
 
+- (void).cxx_destruct;
 @property(retain) id token; // @synthesize token=_token;
 @property(retain) NSMutableDictionary *observers; // @synthesize observers=_observers;
 @property(readonly) CKStoreDAAPLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (void)storeDAAPLibrary:(id)arg1 addedItems:(id)arg2 removedItems:(id)arg3;
 - (id)_purchaseFromDAAPItem:(id)arg1;
 - (void)pollForPurchasedItems:(BOOL)arg1;

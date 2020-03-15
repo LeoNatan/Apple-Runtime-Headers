@@ -25,6 +25,7 @@
 }
 
 + (void)enumerateTokensForString:(id)arg1 locale:(id)arg2 options:(unsigned int)arg3 withHandler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) NSMutableArray *tokenizedQueryTerms; // @synthesize tokenizedQueryTerms=_tokenizedQueryTerms;
@@ -37,7 +38,6 @@
 @property(nonatomic) unsigned int attributeTokenCount; // @synthesize attributeTokenCount=_attributeTokenCount;
 @property(nonatomic) _Bool matchOncePerTerm; // @synthesize matchOncePerTerm=_matchOncePerTerm;
 @property(readonly, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
-- (void).cxx_destruct;
 - (unsigned int)evaluateAttribute:(id)arg1 ignoreSubtokens:(_Bool)arg2 skipTranscriptions:(_Bool)arg3 withFuzzyHandler:(CDUnknownBlockType)arg4;
 - (unsigned int)evaluateAttribute:(id)arg1 ignoreSubtokens:(_Bool)arg2 skipTranscriptions:(_Bool)arg3 withHandler:(CDUnknownBlockType)arg4;
 - (unsigned int)evaluateAttribute:(id)arg1 ignoreSubtokens:(_Bool)arg2 withHandler:(CDUnknownBlockType)arg3;

@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     SKUIResourceLoader *_resourceLoader;
 }
 
-@property(retain, nonatomic) SKUIResourceLoader *resourceLoader; // @synthesize resourceLoader=_resourceLoader;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIResourceLoader *resourceLoader; // @synthesize resourceLoader=_resourceLoader;
 - (id)_productImageForItem:(id)arg1;
 - (id)_missingItemLoader;
 - (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;

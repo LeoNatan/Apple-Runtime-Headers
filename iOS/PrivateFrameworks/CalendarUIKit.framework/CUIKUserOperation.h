@@ -19,6 +19,7 @@
     CUIKUserOperation *_precomputedInverseOperation;
 }
 
+- (void).cxx_destruct;
 @property _Bool inverseOperationPrecomputed; // @synthesize inverseOperationPrecomputed=_inverseOperationPrecomputed;
 @property(retain) CUIKUserOperation *precomputedInverseOperation; // @synthesize precomputedInverseOperation=_precomputedInverseOperation;
 @property(retain) NSString *precomputedActionName; // @synthesize precomputedActionName=_precomputedActionName;
@@ -26,7 +27,6 @@
 @property(retain) NSArray *originalObjects; // @synthesize originalObjects=_originalObjects;
 @property long long span; // @synthesize span=_span;
 @property(retain) NSArray *objects; // @synthesize objects=_objects;
-- (void).cxx_destruct;
 
 @end
 

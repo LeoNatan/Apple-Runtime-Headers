@@ -16,8 +16,8 @@
     id <SVInteractionContextFactory> _interactionContextFactory;
 }
 
-@property(readonly, nonatomic) id <SVInteractionContextFactory> interactionContextFactory; // @synthesize interactionContextFactory=_interactionContextFactory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVInteractionContextFactory> interactionContextFactory; // @synthesize interactionContextFactory=_interactionContextFactory;
 - (id)createInteractionWithControlItem:(id)arg1;
 - (id)initWithInteractionContextFactory:(id)arg1;
 

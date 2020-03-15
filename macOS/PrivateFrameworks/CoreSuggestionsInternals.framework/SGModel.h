@@ -29,10 +29,10 @@
 + (Class)modelClassForObjective:(unsigned long long)arg1;
 + (id)transformerInstanceForLanguage:(id)arg1 withObjective:(unsigned long long)arg2;
 + (id)transformerInstanceForLanguage:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *locale; // @synthesize locale=_locale;
 @property(readonly) double threshold; // @synthesize threshold=_threshold;
 @property(readonly) id <PMLRegressionModelProtocol><PMLPlistAndChunksSerializableProtocol> model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (id)serialize;
 - (struct SGMSelfIdModelType_)metricsSelfIdModelType;
 - (struct SGMFoundInMailModelType_)metricsFoundInMailModelType;

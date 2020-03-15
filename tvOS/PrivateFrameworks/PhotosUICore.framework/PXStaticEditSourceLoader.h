@@ -21,6 +21,7 @@
     NSString *_livePhotoPairingIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *livePhotoPairingIdentifier; // @synthesize livePhotoPairingIdentifier=_livePhotoPairingIdentifier;
 @property(readonly, copy, nonatomic) NSString *contentIdentifier; // @synthesize contentIdentifier=_contentIdentifier;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) long long baseVersion; // @synthesize baseVersion=_baseVersion;
 @property(readonly, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *loadDuration;
 - (void)beginLoading;
 - (id)initWithEditSource:(id)arg1 compositionController:(id)arg2 baseVersion:(long long)arg3 contentIdentifier:(id)arg4;

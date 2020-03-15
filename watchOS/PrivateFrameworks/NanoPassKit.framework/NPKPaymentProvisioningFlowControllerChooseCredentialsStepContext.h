@@ -17,12 +17,15 @@
     PKPaymentSetupProduct *_product;
 }
 
++ (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 @property(nonatomic) _Bool allowsManualEntry; // @synthesize allowsManualEntry=_allowsManualEntry;
 @property(copy, nonatomic) NSArray *credentials; // @synthesize credentials=_credentials;
 @property(retain, nonatomic) NSArray *flowIdentifiers; // @synthesize flowIdentifiers=_flowIdentifiers;
 @property(retain, nonatomic) NSDictionary *flowIdentifierToCredential; // @synthesize flowIdentifierToCredential=_flowIdentifierToCredential;
-- (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

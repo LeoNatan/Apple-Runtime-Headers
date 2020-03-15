@@ -19,9 +19,9 @@
 
 + (Class)changeClass;
 + (int)messageType;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSHashTable *servicesTable; // @synthesize servicesTable=_servicesTable;
-- (void).cxx_destruct;
 - (void)deregisterSyncService:(id)arg1;
 - (void)registerSyncService:(id)arg1;
 - (_Bool)deleteSyncedData:(id *)arg1;

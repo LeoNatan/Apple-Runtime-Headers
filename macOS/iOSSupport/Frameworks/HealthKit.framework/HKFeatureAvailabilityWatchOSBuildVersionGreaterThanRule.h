@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ruleIdentifier;
-@property(retain, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 - (BOOL)evaluate;
 - (void)processUserInfo:(id)arg1;
 

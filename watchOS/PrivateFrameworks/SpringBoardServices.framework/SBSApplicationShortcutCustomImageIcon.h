@@ -15,10 +15,10 @@
     int _dataType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isTemplate; // @synthesize isTemplate=_isTemplate;
 @property(readonly, nonatomic) int dataType; // @synthesize dataType=_dataType;
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *imagePNGData;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

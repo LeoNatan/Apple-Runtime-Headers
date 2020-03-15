@@ -37,6 +37,7 @@
 + (id)assetCacheWithApplicationBundleID:(id)arg1 assetDirectoryContext:(id)arg2 didInit:(_Bool *)arg3 error:(id *)arg4;
 + (id)_sharedCachesByPath;
 + (id)_sharedCachesQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *deferredLastUsedTimeByTrackingUUID; // @synthesize deferredLastUsedTimeByTrackingUUID=_deferredLastUsedTimeByTrackingUUID;
 @property(retain, nonatomic) NSMutableSet *deferredDeletedAssetHandles; // @synthesize deferredDeletedAssetHandles=_deferredDeletedAssetHandles;
 @property(retain, nonatomic) NSMutableDictionary *volumeIndexByVolumeUUID; // @synthesize volumeIndexByVolumeUUID=_volumeIndexByVolumeUUID;
@@ -56,7 +57,6 @@
 @property(nonatomic) _Bool isUnitTestingAccount; // @synthesize isUnitTestingAccount=_isUnitTestingAccount;
 @property(readonly, nonatomic) CKSQLitePool *dbPool; // @synthesize dbPool=_dbPool;
 @property(nonatomic) __weak CKDMMCS *MMCS; // @synthesize MMCS=_MMCS;
-- (void).cxx_destruct;
 - (void)setupPersistentStateAtStartup;
 - (void)_resetAssetInflightUsingDB:(id)arg1;
 - (_Bool)initDatabaseWithError:(id *)arg1;

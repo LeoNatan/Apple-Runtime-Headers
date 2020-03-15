@@ -20,9 +20,9 @@
 + (_Bool)supportsSecureCoding;
 + (int)version;
 + (id)shippingMethodWithProtobuf:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1 error:(id *)arg2;
 - (id)formattedString;

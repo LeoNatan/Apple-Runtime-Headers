@@ -18,10 +18,10 @@
     NSArray *_allAccountsImpl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *allAccountsImpl; // @synthesize allAccountsImpl=_allAccountsImpl;
 @property(readonly, nonatomic) id <CNAccountCollection> accountCollection; // @synthesize accountCollection=_accountCollection;
 @property(readonly, copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 @property(copy) NSString *tag;
 @property(readonly) BOOL includeLocalAccount;
 @property(readonly) CNObservable *enabledPersistentAccountsObservable;

@@ -22,10 +22,10 @@
     NSObject<OS_dispatch_queue> *_storageQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *storageQueue; // @synthesize storageQueue=_storageQueue;
 @property(retain, nonatomic) NSMutableDictionary *storageDict; // @synthesize storageDict=_storageDict;
 @property(readonly, nonatomic) __weak id <IKAppDataStoring> appStorage; // @synthesize appStorage=_appStorage;
-- (void).cxx_destruct;
 - (void)_verifyExternalDataStoreForKey:(id)arg1;
 - (id)keysAndValues;
 - (void)clear;

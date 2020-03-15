@@ -32,12 +32,12 @@
     long long _enumeratedSummaryCount;
 }
 
+- (void).cxx_destruct;
 @property(setter=_setEnumeratedSummaryCount:) long long enumeratedSummaryCount; // @synthesize enumeratedSummaryCount=_enumeratedSummaryCount;
 @property(readonly, copy, nonatomic) CDUnknownBlockType batchedUpdateHandler; // @synthesize batchedUpdateHandler=_batchedUpdateHandler;
 @property(readonly, copy, nonatomic) CDUnknownBlockType batchedInitialResultsHandler; // @synthesize batchedInitialResultsHandler=_batchedInitialResultsHandler;
 @property(readonly, copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(readonly, copy, nonatomic) CDUnknownBlockType initialResultsHandler; // @synthesize initialResultsHandler=_initialResultsHandler;
-- (void).cxx_destruct;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (id)_queue_filterActivityCaches:(id)arg1;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;

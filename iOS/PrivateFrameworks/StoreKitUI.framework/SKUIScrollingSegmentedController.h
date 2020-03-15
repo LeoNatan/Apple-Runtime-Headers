@@ -39,6 +39,7 @@
     unsigned long long _focusedViewControllerIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_titlesSegmentedControl) SKUIInteractiveSegmentedControl *titlesSegmentedControl; // @synthesize titlesSegmentedControl=_titlesSegmentedControl;
 @property(nonatomic) _Bool wantsWhiteBackgroundBeyondRightEdgeWhenBouncing; // @synthesize wantsWhiteBackgroundBeyondRightEdgeWhenBouncing=_wantsWhiteBackgroundBeyondRightEdgeWhenBouncing;
 @property(nonatomic) _Bool wantsWhiteBackgroundBeyondLeftEdgeWhenBouncing; // @synthesize wantsWhiteBackgroundBeyondLeftEdgeWhenBouncing=_wantsWhiteBackgroundBeyondLeftEdgeWhenBouncing;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(nonatomic) double maximumContentWidth; // @synthesize maximumContentWidth=_maximumContentWidth;
 @property(nonatomic) __weak id <SKUIScrollingSegmentedControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_viewControllerNeedsContentScrollViewUpdates:(id)arg1;
 - (struct UIEdgeInsets)_viewControllerContentScrollViewContentInset;
 - (void)_updateViewBackgroundColor;

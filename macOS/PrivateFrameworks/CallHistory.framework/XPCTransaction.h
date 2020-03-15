@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *reason; // @synthesize reason=_reason;
 @property BOOL tranactionCreated; // @synthesize tranactionCreated=_tranactionCreated;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithReason:(id)arg1;
 - (id)init;

@@ -19,8 +19,8 @@
     id <SASBulletinManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SASBulletinManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SASBulletinManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)observer:(id)arg1 noteInvalidatedBulletinIDs:(id)arg2;
 - (void)observer:(id)arg1 purgeReferencesToBulletinID:(id)arg2;
 - (void)observer:(id)arg1 removeBulletin:(id)arg2 forFeed:(unsigned long long)arg3;

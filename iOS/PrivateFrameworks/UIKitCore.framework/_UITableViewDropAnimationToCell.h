@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIDragPreviewParameters *_previewParameters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDragPreviewParameters *previewParameters; // @synthesize previewParameters=_previewParameters;
 @property(nonatomic) __weak UITableViewCell *cell; // @synthesize cell=_cell;
-- (void).cxx_destruct;
 - (id)initWithDragItem:(id)arg1 cell:(id)arg2 previewParameters:(id)arg3;
 
 @end

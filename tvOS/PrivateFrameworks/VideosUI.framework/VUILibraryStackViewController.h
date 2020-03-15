@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <VideosUI/VUILibraryFetchControllerViewController.h>
+#import <UIKit/UIViewController.h>
 
 #import <VideosUI/UICollectionViewDelegate-Protocol.h>
 
 @class NSIndexPath, NSString, UICollectionView, VUILibraryStackView;
 
 __attribute__((visibility("hidden")))
-@interface VUILibraryStackViewController : VUILibraryFetchControllerViewController <UICollectionViewDelegate>
+@interface VUILibraryStackViewController : UIViewController <UICollectionViewDelegate>
 {
     _Bool _requiresRelayout;
     NSIndexPath *_focusedIndexPath;
@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     UICollectionView *_stackCollectionView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UICollectionView *stackCollectionView; // @synthesize stackCollectionView=_stackCollectionView;
 @property(readonly, nonatomic) VUILibraryStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)_updateNavigationBarPadding;
 - (void)_invalidateLayouts;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (long long)preferredStatusBarStyle;
+- (void)configureWithCollectionView:(id)arg1;
 - (void)viewDidLoad;
 - (void)scrollToTop;
 

@@ -15,9 +15,9 @@
     PHConcurrentMapTable *__mediaRequests;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHConcurrentMapTable *_mediaRequests; // @synthesize _mediaRequests=__mediaRequests;
 @property(readonly, nonatomic) double _screenScale; // @synthesize _screenScale=__screenScale;
-- (void).cxx_destruct;
 - (void)cancelImageRequest:(int)arg1;
 - (int)requestAnimatedImageForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (int)requestLivePhotoForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;

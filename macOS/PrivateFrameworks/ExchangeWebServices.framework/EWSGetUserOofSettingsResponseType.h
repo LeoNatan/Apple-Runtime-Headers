@@ -18,10 +18,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long AllowExternalOof; // @synthesize AllowExternalOof=_AllowExternalOof;
 @property(retain, nonatomic) EWSUserOofSettingsType *OofSettings; // @synthesize OofSettings=_OofSettings;
 @property(retain, nonatomic) EWSResponseMessageType *ResponseMessage; // @synthesize ResponseMessage=_ResponseMessage;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -29,6 +29,7 @@
     NSOperationQueue *_backgroundSessionQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *backgroundSessionQueue; // @synthesize backgroundSessionQueue=_backgroundSessionQueue;
 @property(retain, nonatomic) UIActivityIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
 @property(retain, nonatomic) id queuePlayerObserver; // @synthesize queuePlayerObserver=_queuePlayerObserver;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSURL *exportURL; // @synthesize exportURL=_exportURL;
 @property(nonatomic) __weak HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(nonatomic) __weak HMCameraClip *cameraClip; // @synthesize cameraClip=_cameraClip;
-- (void).cxx_destruct;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)prepareRecordingForExport;
 - (void)_stripAndTruncateRecording;

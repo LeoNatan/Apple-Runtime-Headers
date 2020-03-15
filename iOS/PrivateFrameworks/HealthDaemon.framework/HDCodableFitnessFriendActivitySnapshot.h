@@ -54,6 +54,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long amm; // @synthesize amm=_amm;
 @property(nonatomic) double mmg; // @synthesize mmg=_mmg;
 @property(nonatomic) double mmv; // @synthesize mmv=_mmv;
@@ -74,7 +75,6 @@
 @property(retain, nonatomic) NSData *sourceUUID; // @synthesize sourceUUID=_sourceUUID;
 @property(retain, nonatomic) NSData *friendUUID; // @synthesize friendUUID=_friendUUID;
 @property(retain, nonatomic) HDCodableSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

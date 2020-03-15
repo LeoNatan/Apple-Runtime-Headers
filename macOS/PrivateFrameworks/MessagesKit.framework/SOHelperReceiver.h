@@ -16,9 +16,9 @@
     NSMutableDictionary *_controllerProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *controllerProperties; // @synthesize controllerProperties=_controllerProperties;
 @property __weak SOHelper *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)suspendConnectionWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

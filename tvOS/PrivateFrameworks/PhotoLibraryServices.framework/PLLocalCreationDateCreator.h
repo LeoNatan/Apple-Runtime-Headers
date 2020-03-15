@@ -15,8 +15,8 @@
 
 + (void)initialize;
 + (id)_gmtTranslationDictionary;
-@property(readonly, nonatomic) PFTimeZoneLookup *timeZoneLookup; // @synthesize timeZoneLookup=_timeZoneLookup;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PFTimeZoneLookup *timeZoneLookup; // @synthesize timeZoneLookup=_timeZoneLookup;
 - (id)generateInferredTimeZoneOffsetForAsset:(id)arg1;
 - (id)init;
 

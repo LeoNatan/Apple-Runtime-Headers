@@ -30,6 +30,7 @@
 + (id)keyPathsForValuesAffectingLocalizedDescription;
 + (_Bool)supportsSecureCoding;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly) EMActivityObjectID *objectID; // @synthesize objectID=_objectID;
 @property(nonatomic) double fractionCompleted; // @synthesize fractionCompleted=_fractionCompleted;
 @property(readonly) NSError *error; // @synthesize error=_error;
@@ -38,7 +39,6 @@
 @property(readonly) NSDate *started; // @synthesize started=_started;
 @property(readonly) long long activityType; // @synthesize activityType=_activityType;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (id)_localizedDescriptionForFetchState:(long long)arg1;
 @property(readonly, copy) NSString *localizedDescription;
 @property(readonly, copy) NSString *description;

@@ -14,9 +14,9 @@
     CDUnknownBlockType _updateBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(retain) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)initWithUpdateBlock:(CDUnknownBlockType)arg1;
 
 @end

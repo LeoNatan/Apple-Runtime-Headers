@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *wordTimings; // @synthesize wordTimings=_wordTimings;
 @property(readonly, copy, nonatomic) NSString *utterance; // @synthesize utterance=_utterance;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -18,9 +18,9 @@
     id <CSTimerViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <CSTimerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateNextTimer;
 - (void)_nextTimerChanged:(id)arg1;
 - (void)_updateTimerLabelView;

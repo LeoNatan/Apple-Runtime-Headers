@@ -15,13 +15,6 @@ struct CGSize {
     double height;
 };
 
-struct NSCache {
-    Class _field1;
-    id _field2;
-    void *_field3[5];
-    void *_field4;
-};
-
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;

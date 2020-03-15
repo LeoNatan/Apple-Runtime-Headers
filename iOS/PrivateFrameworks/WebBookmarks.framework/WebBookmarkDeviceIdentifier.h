@@ -21,8 +21,8 @@
 
 + (void)_postWebBookmarkMetaDataChangeDistributedNotification:(id)arg1;
 + (void)clearDeviceIdentifierWithPlistURL:(id)arg1;
-@property(nonatomic, getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
 - (id)description;
 - (void)stopObservingChanges;
 @property(readonly, nonatomic) _Bool encounteredErrorWhileObtainingUUID;

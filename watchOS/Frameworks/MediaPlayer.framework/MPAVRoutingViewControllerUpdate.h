@@ -20,6 +20,7 @@
     NSArray *_volumeCapableRoutes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldReload; // @synthesize shouldReload=_shouldReload;
 @property(nonatomic) _Bool hasPendingPickedRoutes; // @synthesize hasPendingPickedRoutes=_hasPendingPickedRoutes;
 @property(nonatomic) _Bool canGroup; // @synthesize canGroup=_canGroup;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSArray *displayableAvailableRoutes; // @synthesize displayableAvailableRoutes=_displayableAvailableRoutes;
 @property(copy, nonatomic) NSArray *pendingPickedRoutes; // @synthesize pendingPickedRoutes=_pendingPickedRoutes;
 @property(copy, nonatomic) NSArray *pickedRoutes; // @synthesize pickedRoutes=_pickedRoutes;
-- (void).cxx_destruct;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <PowerlogCore/PLAgent.h>
 
-@class BrightnessSystemClient, CBAdaptationClient, CBTrueToneClient, DisplayServicesClient, KeyboardBrightnessClient, NSDate, NSDictionary, NSMutableArray, NSString, PLDisplayIOReportStats, PLEntry, PLEntryNotificationOperatorComposition, PLEventForwardDisplayEntry, PLIOKitOperatorComposition, PLMonotonicTimer, PLTimer, PLXPCListenerOperatorComposition;
+@class BrightnessSystemClient, CBAdaptationClient, CBTrueToneClient, DisplayServicesClient, KeyboardBrightnessClient, NSDate, NSDictionary, NSMutableArray, NSNumber, NSString, PLDisplayIOReportStats, PLEntry, PLEntryNotificationOperatorComposition, PLEventForwardDisplayEntry, PLIOKitOperatorComposition, PLMonotonicTimer, PLStateTrackingComposition, PLTimer, PLXPCListenerOperatorComposition;
 
 @interface PLDisplayAgent : PLAgent
 {
@@ -57,6 +57,10 @@
     NSString *_lastForegroundAppAPL;
     DisplayServicesClient *_displayServiceClient;
     long long _builtInDisplayID;
+    NSDate *_lastLinearBrightnessSampleTime;
+    NSNumber *_lastLinearBrightness;
+    NSNumber *_lastUserBrightness;
+    PLStateTrackingComposition *_stateTracker;
     CBTrueToneClient *_cbTrueToneClient;
     KeyboardBrightnessClient *_kbClient;
 }
@@ -98,8 +102,13 @@
 + (id)entryEventNoneDefinitionPanelStats;
 + (id)entryEventNoneDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) KeyboardBrightnessClient *kbClient; // @synthesize kbClient=_kbClient;
 @property(retain) CBTrueToneClient *cbTrueToneClient; // @synthesize cbTrueToneClient=_cbTrueToneClient;
+@property(retain) PLStateTrackingComposition *stateTracker; // @synthesize stateTracker=_stateTracker;
+@property(retain) NSNumber *lastUserBrightness; // @synthesize lastUserBrightness=_lastUserBrightness;
+@property(retain) NSNumber *lastLinearBrightness; // @synthesize lastLinearBrightness=_lastLinearBrightness;
+@property(retain) NSDate *lastLinearBrightnessSampleTime; // @synthesize lastLinearBrightnessSampleTime=_lastLinearBrightnessSampleTime;
 @property long long builtInDisplayID; // @synthesize builtInDisplayID=_builtInDisplayID;
 @property(retain) DisplayServicesClient *displayServiceClient; // @synthesize displayServiceClient=_displayServiceClient;
 @property(retain) NSString *lastForegroundAppAPL; // @synthesize lastForegroundAppAPL=_lastForegroundAppAPL;
@@ -147,7 +156,6 @@
 @property(readonly) PLIOKitOperatorComposition *iokitDisplay; // @synthesize iokitDisplay=_iokitDisplay;
 @property(readonly) PLIOKitOperatorComposition *iokitBacklightControl; // @synthesize iokitBacklightControl=_iokitBacklightControl;
 @property(readonly) PLIOKitOperatorComposition *iokitBacklight; // @synthesize iokitBacklight=_iokitBacklight;
-- (void).cxx_destruct;
 - (void)modelDynamicDisplayPowerFromAPL:(id)arg1;
 - (void)modelDisplayPowerFromIOMFB:(id)arg1;
 - (double)calculatePowerFromAPL:(double)arg1 withAvgRed:(double)arg2 withAvgGreen:(double)arg3 withAvgBlue:(double)arg4;
@@ -184,16 +192,21 @@
 - (void)logEventPointKeyboardBrightness:(double)arg1;
 - (void)logEventPointUserBrightnessCommitted:(double)arg1;
 - (void)logEventPointDisplayForBlock:(id)arg1 isActive:(BOOL)arg2;
+- (void)logEventPointDisplayForBlock:(id)arg1 isActive:(BOOL)arg2 withEntryDate:(id)arg3;
 - (void)logEventPointDisplayMIE;
 - (void)logEventPointDisplayBacklight;
 - (void)logEventPointDisplay;
 - (void)logEventNonePanelStats;
 - (void)log;
+- (void)initializeBrightnessState;
+- (void)logBrightnessToCAForDate:(id)arg1;
+- (void)handleStateChangeForBrightnessStats;
 - (void)registerForBuiltInDisplayNotifications:(id)arg1 withNewBuiltInDisplayID:(long long)arg2;
 - (long long)getBuiltInDisplayID:(id)arg1;
 - (BOOL)isAlsEnabled;
 - (void)dealloc;
 - (void)logEventPointMultitouchWithPayload:(id)arg1;
+- (id)getLcdEntryDate:(unsigned long long)arg1;
 - (void)initOperatorDependancies;
 - (id)init;
 

@@ -32,6 +32,7 @@
     UIView *_secureCandidateLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *secureCandidateLabel; // @synthesize secureCandidateLabel=_secureCandidateLabel;
 @property(retain, nonatomic) UIMorphingLabel *morphingLabel; // @synthesize morphingLabel=_morphingLabel;
 @property(retain, nonatomic) UILabel *normalLabel; // @synthesize normalLabel=_normalLabel;
@@ -50,7 +51,6 @@
 @property(nonatomic) unsigned long long visibleSeparatorEdges; // @synthesize visibleSeparatorEdges=_visibleSeparatorEdges;
 @property(nonatomic) double highlightMargin; // @synthesize highlightMargin=_highlightMargin;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
-- (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_updateColorsForRenderConfig:(id)arg1 highlighted:(_Bool)arg2;
 - (_Bool)_renderConfigUsesDarkStyle:(id)arg1;

@@ -16,8 +16,8 @@
 
 + (id)genericSharedProxy;
 + (void)initialize;
-@property(retain, nonatomic) ISStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ISStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void)uiServiceSynchronousBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id <ISUIService> uiService;
 - (id)uiServiceWithErrorHandler:(CDUnknownBlockType)arg1;

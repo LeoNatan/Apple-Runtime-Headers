@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SKUISearchBarViewElement *_searchHeader;
 }
 
-@property(readonly, nonatomic) SKUISearchBarViewElement *searchHeader; // @synthesize searchHeader=_searchHeader;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUISearchBarViewElement *searchHeader; // @synthesize searchHeader=_searchHeader;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

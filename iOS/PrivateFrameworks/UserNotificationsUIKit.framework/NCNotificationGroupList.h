@@ -46,6 +46,7 @@
     NCNotificationListCell *_cellRecycledWhilePresentingLongLook;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool longLookDismissalFinalFrameCalculatedWithoutWindow; // @synthesize longLookDismissalFinalFrameCalculatedWithoutWindow=_longLookDismissalFinalFrameCalculatedWithoutWindow;
 @property(retain, nonatomic) NCNotificationListCell *cellRecycledWhilePresentingLongLook; // @synthesize cellRecycledWhilePresentingLongLook=_cellRecycledWhilePresentingLongLook;
 @property(copy, nonatomic) NSString *backgroundGroupNameBase; // @synthesize backgroundGroupNameBase=_backgroundGroupNameBase;
@@ -71,7 +72,6 @@
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 @property(nonatomic, getter=isDeviceAuthenticated) _Bool deviceAuthenticated; // @synthesize deviceAuthenticated=_deviceAuthenticated;
 @property(copy, nonatomic) NSString *logDescription; // @synthesize logDescription=_logDescription;
-- (void).cxx_destruct;
 - (void)_reloadRecycledNotificationCellForRequest:(id)arg1;
 - (void)_reloadRecycledGroupedNotificationCells;
 - (void)_reloadNotificationCellAtIndex:(unsigned long long)arg1;
@@ -124,6 +124,7 @@
 - (void)notificationManagementContentProvider:(id)arg1 requestsPresentingNotificationManagementViewType:(unsigned long long)arg2 forNotificationRequest:(id)arg3 withPresentingView:(id)arg4;
 - (id)notificationViewController:(id)arg1 auxiliaryOptionsContentProviderForNotificationRequest:(id)arg2 withLongLook:(_Bool)arg3;
 - (id)notificationViewController:(id)arg1 staticContentProviderForNotificationRequest:(id)arg2;
+- (_Bool)notificationViewControllerShouldPerformHoverHighlighting:(id)arg1;
 - (_Bool)notificationViewControllerShouldAllowLongPressGesture:(id)arg1;
 - (id)settleHomeAffordanceAnimationBehaviorDescriptionForNotificationViewController:(id)arg1;
 - (id)unhideHomeAffordanceAnimationSettingsForNotificationViewController:(id)arg1;

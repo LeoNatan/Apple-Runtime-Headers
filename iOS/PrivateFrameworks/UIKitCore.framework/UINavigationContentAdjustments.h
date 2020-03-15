@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _insetAdjustment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets insetAdjustment; // @synthesize insetAdjustment=_insetAdjustment;
 @property(nonatomic) __weak UIScrollView *adjustedScrollView; // @synthesize adjustedScrollView=_adjustedScrollView;
-- (void).cxx_destruct;
 
 @end
 

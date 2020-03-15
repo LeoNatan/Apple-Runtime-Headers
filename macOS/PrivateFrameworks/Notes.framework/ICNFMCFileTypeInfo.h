@@ -15,10 +15,10 @@
     NSString *_pathExtension;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int osType; // @synthesize osType=_osType;
 @property(copy, nonatomic) NSString *pathExtension; // @synthesize pathExtension=_pathExtension;
 @property(copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *pedigree;
 - (void)_getTypeInfoFromFallbackFields:(unsigned long long *)arg1;
 - (void)_getTypeInfoBasedOnFields:(unsigned long long *)arg1 inputClass:(struct __CFString *)arg2 inputValue:(struct __CFString *)arg3;

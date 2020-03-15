@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) UIRemoteTextEditingAttributes *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 
 @end
 

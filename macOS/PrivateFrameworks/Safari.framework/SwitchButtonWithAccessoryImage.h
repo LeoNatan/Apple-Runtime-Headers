@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
-@property(copy, nonatomic) NSImage *accessoryImage; // @synthesize accessoryImage=_accessoryImage;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSImage *accessoryImage; // @synthesize accessoryImage=_accessoryImage;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithTitle:(id)arg1 accessoryImage:(id)arg2;
 

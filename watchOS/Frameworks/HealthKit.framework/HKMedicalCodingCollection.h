@@ -9,7 +9,7 @@
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSDictionary, NSSet;
 
 @interface HKMedicalCodingCollection : NSObject <NSSecureCoding, NSCopying>
 {
@@ -19,13 +19,16 @@
 + (_Bool)supportsSecureCoding;
 + (id)collectionWithCoding:(id)arg1;
 + (id)collectionWithCodings:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *codings; // @synthesize codings=_codings;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *codings; // @synthesize codings=_codings;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+@property(readonly, copy, nonatomic) NSDictionary *codingsBySystem;
+- (id)codingsForCodingSystem:(id)arg1;
+@property(readonly, copy, nonatomic) NSSet *uniqueCodings;
 - (id)description;
 - (id)initWithCodings:(id)arg1;
 - (id)init;

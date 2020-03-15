@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _UIStatusBarStringView *_nameView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarStringView *nameView; // @synthesize nameView=_nameView;
 @property(readonly, nonatomic) NSString *nameEntryKey; // @synthesize nameEntryKey=_nameEntryKey;
-- (void).cxx_destruct;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)viewForIdentifier:(id)arg1;
 - (void)_create_nameView;

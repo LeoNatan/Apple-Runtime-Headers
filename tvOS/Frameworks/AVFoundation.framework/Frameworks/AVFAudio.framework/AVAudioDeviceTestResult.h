@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double correlationValue; // @synthesize correlationValue=_correlationValue;
 @property(nonatomic) double sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) long long outputID; // @synthesize outputID=_outputID;
 @property(nonatomic) long long inputID; // @synthesize inputID=_inputID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 inputID:(long long)arg2 outputID:(long long)arg3 sampleRate:(double)arg4 correlationValue:(double)arg5;

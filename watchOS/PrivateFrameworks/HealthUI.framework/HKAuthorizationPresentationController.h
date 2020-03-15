@@ -21,13 +21,13 @@
     UIWindow *_window;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didPresent; // @synthesize didPresent=_didPresent;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(retain, nonatomic) UIWindow *savedKeyWindow; // @synthesize savedKeyWindow=_savedKeyWindow;
 @property(retain, nonatomic) HKNanoHostAuthorizationController *nanoAuthorizationController; // @synthesize nanoAuthorizationController=_nanoAuthorizationController;
 @property(retain, nonatomic) HKHealthPrivacyHostAuthorizationViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 @property(retain, nonatomic) _UIAsyncInvocation *requestCancellationInvocation; // @synthesize requestCancellationInvocation=_requestCancellationInvocation;
-- (void).cxx_destruct;
 - (void)healthPrivacyHostAuthorizationControllerDidFinishWithError:(id)arg1;
 - (void)_dismissRemoteViewController;
 - (void)_makeRemoteViewControllerKeyAndVisible:(id)arg1;

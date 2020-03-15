@@ -32,6 +32,7 @@
     struct CGSize _cellSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double targetPrefetchWidth; // @synthesize targetPrefetchWidth=_targetPrefetchWidth;
 @property(nonatomic) double cellMinLineSpacing; // @synthesize cellMinLineSpacing=_cellMinLineSpacing;
 @property(nonatomic) double cellMinInteritemSpacing; // @synthesize cellMinInteritemSpacing=_cellMinInteritemSpacing;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) PXWidgetSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) PXPhotosDetailsContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <PXWidgetDelegate> widgetDelegate; // @synthesize widgetDelegate=_widgetDelegate;
-- (void).cxx_destruct;
 - (void)_resetControllerLayoutInfosForWidth:(double)arg1;
 - (unsigned long long)_numberOfVisibleFacesForWidth:(double)arg1;
 - (id)traitCollection;

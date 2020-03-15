@@ -13,8 +13,8 @@
     PETScalarEventTracker *_tracker;
 }
 
-@property(readonly, nonatomic) PETScalarEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PETScalarEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void)trackEventWithScalar:(unsigned int)arg1 client_id:(id)arg2 variant_name:(id)arg3 type:(struct PPMPortraitFeedbackType_)arg4 component:(struct PPMPortraitComponent_)arg5 mapping_id:(id)arg6 from_portrait:(struct PPMTypeSafeBool_)arg7;
 - (id)init;
 

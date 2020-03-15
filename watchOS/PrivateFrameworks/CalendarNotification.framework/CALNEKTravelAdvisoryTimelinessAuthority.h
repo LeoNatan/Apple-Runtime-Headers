@@ -15,8 +15,8 @@
     EKTravelAdvisoryTimelinessAuthority *_travelAdvisoryTimelinessAuthority;
 }
 
-@property(readonly, nonatomic) EKTravelAdvisoryTimelinessAuthority *travelAdvisoryTimelinessAuthority; // @synthesize travelAdvisoryTimelinessAuthority=_travelAdvisoryTimelinessAuthority;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EKTravelAdvisoryTimelinessAuthority *travelAdvisoryTimelinessAuthority; // @synthesize travelAdvisoryTimelinessAuthority=_travelAdvisoryTimelinessAuthority;
 - (id)startOfRunningLatePeriodForHypothesis:(id)arg1;
 - (id)startOfLeaveNowPeriodForHypothesis:(id)arg1;
 - (unsigned int)periodForHypothesis:(id)arg1;

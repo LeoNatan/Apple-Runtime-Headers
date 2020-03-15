@@ -20,12 +20,12 @@
 + (id)_sanitizedImageNameFromName:(id)arg1 withExtension:(id)arg2 actualExtension:(out id *)arg3;
 + (id)validInfoPlistOrientationKeys;
 + (id)launchImageParametersFromLaunchImagesInfo:(id)arg1 withBundleIdentifier:(id)arg2 isMonarchLinked:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, copy, nonatomic) NSString *minOSVersionString; // @synthesize minOSVersionString=_minOSVersionString;
 @property(readonly, copy, nonatomic) NSString *extension; // @synthesize extension=_extension;
 @property(readonly, copy, nonatomic) NSString *defaultPNGName; // @synthesize defaultPNGName=_defaultPNGName;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

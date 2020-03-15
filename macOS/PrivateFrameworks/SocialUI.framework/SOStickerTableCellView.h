@@ -14,9 +14,9 @@
     NSTextField *_timeLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain) NSTextField *nameLabel; // @synthesize nameLabel=_nameLabel;
-- (void).cxx_destruct;
 - (void)setObjectValue:(id)arg1;
 - (id)imageForTransferGuid:(id)arg1;
 

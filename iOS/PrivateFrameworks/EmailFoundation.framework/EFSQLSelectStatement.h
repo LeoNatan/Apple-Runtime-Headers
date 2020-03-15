@@ -24,6 +24,7 @@
     NSMutableArray *_orderExpressions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *orderExpressions; // @synthesize orderExpressions=_orderExpressions;
 @property(retain, nonatomic) NSArray *groupExpressions; // @synthesize groupExpressions=_groupExpressions;
 @property(readonly, nonatomic) NSMutableArray *joinExpressions; // @synthesize joinExpressions=_joinExpressions;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
 @property(retain, nonatomic) id <EFSQLExpressable> where; // @synthesize where=_where;
 @property(nonatomic) _Bool distinct; // @synthesize distinct=_distinct;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;
 @property(readonly, copy, nonatomic) NSString *queryString;
 - (void)orderByColumn:(id)arg1 fromTable:(id)arg2 ascending:(_Bool)arg3;

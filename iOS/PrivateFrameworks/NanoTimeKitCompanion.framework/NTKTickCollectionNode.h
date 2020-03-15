@@ -22,6 +22,7 @@
     struct CGSize _largeSizeInPoints;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int l2mod; // @synthesize l2mod=_l2mod;
 @property(nonatomic) unsigned int l1mod; // @synthesize l1mod=_l1mod;
 @property(nonatomic) double largeFilterWidth; // @synthesize largeFilterWidth=_largeFilterWidth;
@@ -31,7 +32,6 @@
 @property(nonatomic) double largeColor; // @synthesize largeColor=_largeColor;
 @property(nonatomic) double smallColor; // @synthesize smallColor=_smallColor;
 @property(nonatomic) unsigned int ticks; // @synthesize ticks=_ticks;
-- (void).cxx_destruct;
 - (id)largeTickColor;
 - (id)smallTickColor;
 - (void)colorizeBackground:(id)arg1;

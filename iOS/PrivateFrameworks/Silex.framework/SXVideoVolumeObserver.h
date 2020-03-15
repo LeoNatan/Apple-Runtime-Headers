@@ -22,6 +22,7 @@
     SVKeyValueObserver *_outputVolumeObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVKeyValueObserver *outputVolumeObserver; // @synthesize outputVolumeObserver=_outputVolumeObserver;
 @property(readonly, nonatomic) __weak AVAudioSession *audioSession; // @synthesize audioSession=_audioSession;
 @property(readonly, nonatomic) __weak SXPlaybackCoordinator *playbackCoordinator; // @synthesize playbackCoordinator=_playbackCoordinator;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic, setter=onVolumeChange:) CDUnknownBlockType volumeChangeBlock; // @synthesize volumeChangeBlock=_volumeChangeBlock;
 @property(readonly, nonatomic) float volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) _Bool muted; // @synthesize muted=_muted;
-- (void).cxx_destruct;
 - (void)updateWithVolume:(float)arg1 muted:(_Bool)arg2;
 - (void)volumeChanged:(float)arg1;
 - (void)playbackCoordinatorMuteStateChanged:(id)arg1;

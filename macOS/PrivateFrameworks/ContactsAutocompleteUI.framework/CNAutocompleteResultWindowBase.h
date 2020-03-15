@@ -29,6 +29,7 @@
     long long _maxResults;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long maxResults; // @synthesize maxResults=_maxResults;
 @property(nonatomic) long long maxDisplayedRows; // @synthesize maxDisplayedRows=_maxDisplayedRows;
 @property(retain, nonatomic) NSLayoutConstraint *maxWindowWidth; // @synthesize maxWindowWidth=_maxWindowWidth;
@@ -41,7 +42,6 @@
 @property(nonatomic) BOOL allowsEmptySelection; // @synthesize allowsEmptySelection=_allowsEmptySelection;
 @property(retain, nonatomic) CNAutocompleteStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (long long)numberOfRowsInTableView:(id)arg1;

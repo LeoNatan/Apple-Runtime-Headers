@@ -51,6 +51,7 @@
 + (BOOL)shouldConfigureAdditionalTable:(id)arg1 withType:(id)arg2 withName:(id)arg3;
 + (void)addPLEntryKeyStringToTasking:(id)arg1;
 + (void)addPLEntryKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct _PLTimeIntervalRange timeIntervalRange; // @synthesize timeIntervalRange=_timeIntervalRange;
 @property(nonatomic) BOOL isDynamic; // @synthesize isDynamic=_isDynamic;
 @property(copy, nonatomic) NSString *wildCardName; // @synthesize wildCardName=_wildCardName;
@@ -60,7 +61,6 @@
 @property(readonly, retain) NSString *operatorName; // @synthesize operatorName=_operatorName;
 @property __weak PLEntryKey *baseEntryKey; // @synthesize baseEntryKey=_baseEntryKey;
 @property(readonly, retain) NSString *entryKey; // @synthesize entryKey=_entryKey;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)copyWithTimeIntervalRange:(struct _PLTimeIntervalRange)arg1;

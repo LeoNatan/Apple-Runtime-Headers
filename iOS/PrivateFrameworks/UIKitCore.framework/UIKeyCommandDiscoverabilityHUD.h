@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)_presentHUDWithKeyCommands:(id)arg1;
 - (id)_performableKeyCommandsWithResponder:(id)arg1;
 - (void)_HUDPopTimerFired:(id)arg1;
+- (_Bool)_HUDAllowedForWindow:(id)arg1;
 - (void)_applicationWillResignActive;
 - (void)_didTakeScreenshot;
 - (void)_scheduleHUDPresentation;

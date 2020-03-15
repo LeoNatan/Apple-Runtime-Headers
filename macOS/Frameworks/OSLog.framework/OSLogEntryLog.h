@@ -25,6 +25,7 @@
     long long _level;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long level; // @synthesize level=_level;
 @property(readonly, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
 @property(readonly, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(readonly, nonatomic) NSString *process; // @synthesize process=_process;
 @property(readonly, nonatomic) unsigned long long activityIdentifier; // @synthesize activityIdentifier=_activityIdentifier;
-- (void).cxx_destruct;
 - (id)initWithEventProxy:(id)arg1;
 
 @end

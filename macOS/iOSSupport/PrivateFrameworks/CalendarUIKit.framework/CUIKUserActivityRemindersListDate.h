@@ -13,8 +13,8 @@
     NSDate *_date;
 }
 
-@property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithDate:(id)arg1;

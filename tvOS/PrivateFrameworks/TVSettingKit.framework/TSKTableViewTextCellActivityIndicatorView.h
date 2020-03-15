@@ -13,8 +13,8 @@
     UIActivityIndicatorView *_activityIndicatorView;
 }
 
-@property(readonly, nonatomic, getter=_activityIndicatorView) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_activityIndicatorView) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 - (void)startAnimating;
 - (void)setColor:(id)arg1;
 - (void)layoutSubviews;

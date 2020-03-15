@@ -29,6 +29,7 @@
 + (id)describeReminderDueLocationTrigger:(unsigned char)arg1;
 + (id)describeReminderStatus:(unsigned char)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char reminderStatus; // @synthesize reminderStatus=_reminderStatus;
 @property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(readonly, nonatomic) NSString *uniqueKey; // @synthesize uniqueKey=_uniqueKey;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) unsigned char dueLocationType; // @synthesize dueLocationType=_dueLocationType;
 @property(readonly, nonatomic) NSDateComponents *dueDateComponents; // @synthesize dueDateComponents=_dueDateComponents;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (BOOL)isEqualToReminder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

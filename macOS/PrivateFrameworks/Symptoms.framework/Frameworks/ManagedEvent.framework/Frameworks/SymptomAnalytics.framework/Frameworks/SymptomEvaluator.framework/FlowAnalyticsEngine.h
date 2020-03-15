@@ -65,11 +65,11 @@
 + (BOOL)hasAnyForegroundApp;
 + (void)workspaceSaveWithCallback:(CDUnknownBlockType)arg1;
 + (id)queue;
+- (void).cxx_destruct;
 @property(retain) NetworkAnalyticsStateRelay *mostRecentPrimaryRelay; // @synthesize mostRecentPrimaryRelay=_mostRecentPrimaryRelay;
 @property(retain) NetworkAnalyticsStateRelay *wifiRelay; // @synthesize wifiRelay=_wifiRelay;
 @property(retain) NetworkAnalyticsStateRelay *cellRelay; // @synthesize cellRelay=_cellRelay;
 @property(retain, nonatomic) NSMutableDictionary *flowWatchers; // @synthesize flowWatchers=_flowWatchers;
-- (void).cxx_destruct;
 - (void)identifierForUUID:(id)arg1 queue:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)identifierForUUID:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)resetDataFor:(id)arg1 nameKind:(id)arg2;

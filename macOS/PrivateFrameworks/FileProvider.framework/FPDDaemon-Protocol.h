@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class FPActionOperationInfo, FPItem, FPItemID, FPSandboxingURLWrapper, NSArray, NSData, NSDate, NSFileHandle, NSFileProviderDomain, NSNumber, NSProgress, NSString, NSURL;
+@class FPActionOperationInfo, FPItem, FPItemID, FPSandboxingURLWrapper, NSArray, NSDate, NSFileHandle, NSFileProviderDomain, NSNumber, NSProgress, NSString, NSURL;
 @protocol FPOperationClient;
 
 @protocol FPDDaemon
@@ -13,13 +13,11 @@
 - (void)_test_callRemoveTrashedItemsOlderThanDate:(NSDate *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)_test_callFileProviderManagerAPIs:(void (^)(NSError *))arg1;
 - (void)_test_retrieveItemWithName:(NSString *)arg1 completionHandler:(void (^)(FPSandboxingURLWrapper *, NSError *))arg2;
-- (void)ingestFromCacheItemWithID:(FPItemID *)arg1 requestedFields:(unsigned long long)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)waitForStabilizationOfDomainWithID:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)startAccessingServiceForItemURL:(NSURL *)arg1 completionHandler:(void (^)(NSXPCListenerEndpoint *, id <FPDLifetimeServicing>, NSString *, NSArray *, NSError *))arg2;
 - (void)startAccessingServiceForItemID:(FPItemID *)arg1 completionHandler:(void (^)(NSXPCListenerEndpoint *, id <FPDLifetimeServicing>, NSString *, NSArray *, NSError *))arg2;
 - (void)startAccessingOperationServiceForProviderDomainID:(NSString *)arg1 handler:(void (^)(id <FPXOperationService>, NSXPCListenerEndpoint *, id <FPDLifetimeServicing>, NSString *, NSError *))arg2;
 - (void)startAccessingExtensionForProviderDomainID:(NSString *)arg1 handler:(void (^)(NSXPCListenerEndpoint *, id <FPDLifetimeServicing>, NSString *, NSError *))arg2;
-- (void)currentMaterializedSetSyncAnchorForDomain:(NSFileProviderDomain *)arg1 completionHandler:(void (^)(NSData *))arg2;
-- (void)enumerateMaterializedSetForDomain:(NSFileProviderDomain *)arg1 inProvider:(NSString *)arg2 syncAnchor:(NSData *)arg3 completionHandler:(void (^)(NSArray *, NSArray *, BOOL, NSData *, NSError *))arg4;
 - (void)didUpdateAlternateContentsDocumentForDocumentAtURL:(NSURL *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)fetchAlternateContentsURLForDocumentURL:(NSURL *)arg1 completionHandler:(void (^)(NSURL *, NSError *))arg2;
 - (void)setAlternateContentsURL:(FPSandboxingURLWrapper *)arg1 onDocumentURL:(NSURL *)arg2 completionHandler:(void (^)(NSError *))arg3;
@@ -35,6 +33,7 @@
 - (void)reindexAllSearchableItemsForBundleIDs:(NSArray *)arg1 acknowledgementHandler:(void (^)(void))arg2;
 - (void)reindexAllSearchableItemsWithAcknowledgementHandler:(void (^)(void))arg1;
 - (void)providerDomainForURL:(NSURL *)arg1 completionHandler:(void (^)(FPProviderDomain *, NSError *))arg2;
+- (void)copyDatabaseForFPCKStartingAtPath:(NSString *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)dumpStateTo:(NSFileHandle *)arg1 limitNumberOfItems:(BOOL)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)getURLForContainerWithItemID:(NSString *)arg1 inDataScopeDomainWithIdentifier:(NSString *)arg2 documentsScopeDomainIdentifier:(NSString *)arg3 documentsFolderItemIdentifier:(NSString *)arg4 completionHandler:(void (^)(FPSandboxingURLWrapper *, FPSandboxingURLWrapper *, NSError *))arg5;
 - (void)makeTopologicallySortedItemsOnDisk:(NSArray *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
@@ -64,7 +63,6 @@
 - (void)providerDomainsCompletionHandler:(void (^)(NSError *, NSDictionary *))arg1;
 - (void)unpinItemWithID:(FPItemID *)arg1 completionHandler:(void (^)(FPItem *, NSError *))arg2;
 - (void)pinItemWithID:(FPItemID *)arg1 completionHandler:(void (^)(FPItem *, NSError *))arg2;
-- (void)setDownloadPolicy:(unsigned long long)arg1 forItemWithID:(FPItemID *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)evictItemWithID:(FPItemID *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (NSProgress *)evictItemAtURL:(NSURL *)arg1 evenIfEnumeratingFP:(BOOL)arg2 andClearACLForConsumer:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)startProvidingItemAtURL:(NSURL *)arg1 fromProviderID:(NSString *)arg2 forConsumerID:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;

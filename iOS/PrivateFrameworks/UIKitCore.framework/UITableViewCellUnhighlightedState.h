@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIColor *_backgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property _Bool opaque; // @synthesize opaque=_opaque;
-- (void).cxx_destruct;
 
 @end
 

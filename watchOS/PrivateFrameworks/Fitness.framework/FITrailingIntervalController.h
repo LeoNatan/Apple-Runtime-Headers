@@ -18,10 +18,10 @@
     NSArray *_pauseResumeEvents;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *pauseResumeEvents; // @synthesize pauseResumeEvents=_pauseResumeEvents;
 @property(readonly, nonatomic) _Bool thresholdReached; // @synthesize thresholdReached=_thresholdReached;
 @property(retain, nonatomic) HKQuantity *threshold; // @synthesize threshold=_threshold;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) HKQuantity *quantity;
 - (double)idleDurationUntilDate:(id)arg1;
 - (double)activeDurationUntilDate:(id)arg1;

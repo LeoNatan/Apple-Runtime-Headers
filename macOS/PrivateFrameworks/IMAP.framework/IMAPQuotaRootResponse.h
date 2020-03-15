@@ -15,9 +15,9 @@
 }
 
 + (BOOL)handlesResponseWithName:(const char *)arg1 ofLength:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *quotaRootNames; // @synthesize quotaRootNames=_quotaRootNames;
 @property(copy, nonatomic) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

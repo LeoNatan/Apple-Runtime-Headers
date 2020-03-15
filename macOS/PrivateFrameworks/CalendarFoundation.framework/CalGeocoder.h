@@ -16,10 +16,10 @@
 }
 
 + (void)geocodeLocationString:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKLocalSearch *search; // @synthesize search=_search;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) NSString *locationString; // @synthesize locationString=_locationString;
-- (void).cxx_destruct;
 - (void)_callCompletionBlockWithResult:(id)arg1 error:(id)arg2;
 - (void)cancel;
 - (void)startGeocoding;

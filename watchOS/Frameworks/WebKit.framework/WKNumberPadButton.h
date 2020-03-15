@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     int _alternateKey;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) int alternateKey; // @synthesize alternateKey=_alternateKey;
 @property(nonatomic) int defaultKey; // @synthesize defaultKey=_defaultKey;
 @property(nonatomic) int buttonPosition; // @synthesize buttonPosition=_buttonPosition;
 @property(nonatomic) int buttonMode; // @synthesize buttonMode=_buttonMode;
 @property(nonatomic) float backgroundInsetAmount; // @synthesize backgroundInsetAmount=_backgroundInsetAmount;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setEnabled:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;

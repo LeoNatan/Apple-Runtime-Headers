@@ -64,6 +64,7 @@
 + (id)_archiveDecompressQueue;
 + (id)_UTIForFileURL:(id)arg1;
 + (id)interactionControllerWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool excludeDotFilesFromArchiveListings; // @synthesize excludeDotFilesFromArchiveListings=_excludeDotFilesFromArchiveListings;
 @property(nonatomic) _Bool previewsPresentWithMarkup; // @synthesize previewsPresentWithMarkup=_previewsPresentWithMarkup;
 @property(nonatomic) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
@@ -74,7 +75,6 @@
 @property(copy, nonatomic, getter=_completionWithItemsHandler, setter=_setCompletionWithItemsHandler:) CDUnknownBlockType _completionWithItemsHandler; // @synthesize _completionWithItemsHandler;
 @property(retain, nonatomic) id annotation; // @synthesize annotation=_annotation;
 @property(nonatomic) __weak id <UIDocumentInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_fixupFileExtensionIfNeeded;
 - (id)activityViewController:(id)arg1 mailSubjectForActivityType:(id)arg2;
 - (void)activityViewController:(id)arg1 didFinishPerformingActivityType:(id)arg2 completed:(_Bool)arg3 items:(id)arg4 error:(id)arg5;

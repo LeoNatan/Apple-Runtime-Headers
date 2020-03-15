@@ -19,9 +19,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)profileModeWithStringValue:(id)arg1;
 + (id)profileModeWitMode:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *commands; // @synthesize commands=_commands;
 @property(retain, nonatomic) VOSScreenreaderMode *mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)addCommand:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

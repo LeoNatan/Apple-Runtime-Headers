@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)requestWithIdentifier:(id)arg1 content:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CALNNotificationContent *content; // @synthesize content=_content;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

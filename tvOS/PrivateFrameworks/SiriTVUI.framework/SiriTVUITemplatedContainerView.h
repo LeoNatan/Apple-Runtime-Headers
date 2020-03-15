@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     id <SiriTVUITemplatedContainerViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriTVUITemplatedContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) UIView *annotationView; // @synthesize annotationView=_annotationView;
 @property(copy, nonatomic) NSMutableArray *templateItemViews; // @synthesize templateItemViews=_templateItemViews;
-- (void).cxx_destruct;
 - (id)_templateItemAncestorOfView:(id)arg1;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

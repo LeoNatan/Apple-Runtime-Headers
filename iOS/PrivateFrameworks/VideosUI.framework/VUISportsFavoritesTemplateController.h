@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     VUISportsFavoritesContainerView *_containerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUISportsFavoritesContainerView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) VUICollectionFooterView *computationFooterView; // @synthesize computationFooterView=_computationFooterView;
 @property(retain, nonatomic) VUICollectionHeaderView *computationHeaderView; // @synthesize computationHeaderView=_computationHeaderView;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *sectionElements; // @synthesize sectionElements=_sectionElements;
 @property(retain, nonatomic) IKViewElement *templateElement; // @synthesize templateElement=_templateElement;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)didCancel;
 - (struct CGSize)_expectedCellSizeForElement:(id)arg1 collectionView:(id)arg2 atIndexPath:(id)arg3;
 - (void)_animateSectionElementsChanges;

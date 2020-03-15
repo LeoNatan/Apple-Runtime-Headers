@@ -25,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_memberQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSString *headerVersion; // @synthesize headerVersion=_headerVersion;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *pendingConnectionsGroup; // @synthesize pendingConnectionsGroup=_pendingConnectionsGroup;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *pendingConnectionsQueue; // @synthesize pendingConnectionsQueue=_pendingConnectionsQueue;
 @property(retain, nonatomic) MSASPConnectionGate *gate; // @synthesize gate=_gate;
-- (void).cxx_destruct;
 - (void)getAlbumURLForAlbumWithGUID:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)getServerSideConfigCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)setAlbumSyncedState:(id)arg1 forAlbum:(id)arg2 albumStateCtag:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

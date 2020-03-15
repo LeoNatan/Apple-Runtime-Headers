@@ -17,10 +17,10 @@
     NSDictionary *_attributesByName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *attributesByName; // @synthesize attributesByName=_attributesByName;
 @property(copy, nonatomic) NSDictionary *attributesByCode; // @synthesize attributesByCode=_attributesByCode;
 @property(copy, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)attributeForName:(id)arg1;
 - (id)attributeForCode:(id)arg1;

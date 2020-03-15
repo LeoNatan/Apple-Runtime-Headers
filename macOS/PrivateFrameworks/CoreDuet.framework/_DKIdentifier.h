@@ -22,11 +22,11 @@
 + (id)identifierWithString:(id)arg1 type:(id)arg2;
 + (id)fromPBCodable:(id)arg1;
 + (id)_identifierFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 excludedMetadataKeys:(id)arg3 cache:(id)arg4;
 + (id)entityName;
+- (void).cxx_destruct;
 @property(retain) _DKIdentifierType *identifierType; // @synthesize identifierType=_identifierType;
 @property(retain) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (long long)integerValue;
 - (double)doubleValue;

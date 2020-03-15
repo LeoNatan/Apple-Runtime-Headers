@@ -26,6 +26,7 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *arrivalPlatform; // @synthesize arrivalPlatform=_arrivalPlatform;
 @property(readonly, copy, nonatomic) CLPlacemark *arrivalStationLocation; // @synthesize arrivalStationLocation=_arrivalStationLocation;
 @property(readonly, copy, nonatomic) NSString *departurePlatform; // @synthesize departurePlatform=_departurePlatform;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSString *trainNumber; // @synthesize trainNumber=_trainNumber;
 @property(readonly, copy, nonatomic) NSString *trainName; // @synthesize trainName=_trainName;
 @property(readonly, copy, nonatomic) NSString *provider; // @synthesize provider=_provider;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

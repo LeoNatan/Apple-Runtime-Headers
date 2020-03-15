@@ -17,11 +17,11 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int timingCurve; // @synthesize timingCurve=_timingCurve;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double beginTime; // @synthesize beginTime=_beginTime;
 @property(retain, nonatomic) id fromValue; // @synthesize fromValue=_fromValue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double endTime;
 - (double)fractionForTime:(double)arg1;
 - (id)init;

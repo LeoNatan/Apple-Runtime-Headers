@@ -21,9 +21,9 @@
     FBScene *_transitionScene;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBScene *transitionScene; // @synthesize transitionScene=_transitionScene;
 @property(retain, nonatomic) FBScene *contentScene; // @synthesize contentScene=_contentScene;
-- (void).cxx_destruct;
 - (void)animationCoordinator:(id)arg1 updateBlankingViewScale:(float)arg2 blankingViewAlpha:(float)arg3 contentViewAlpha:(float)arg4 contentViewScale:(float)arg5;
 - (void)animationCoordinator:(id)arg1 prepareAnimationIsOn:(_Bool)arg2;
 - (void)_cleanUpContentContainerView;

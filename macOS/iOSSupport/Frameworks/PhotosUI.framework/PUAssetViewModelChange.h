@@ -32,6 +32,7 @@
     PUBrowsingAnimatedImagePlayerChange *_animatedImageChange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setFlippingFullSizeRenderStateChanged:) BOOL flippingFullSizeRenderStateChanged; // @synthesize flippingFullSizeRenderStateChanged=_flippingFullSizeRenderStateChanged;
 @property(nonatomic, setter=_setToggleCTMChanged:) BOOL toggleCTMChanged; // @synthesize toggleCTMChanged=_toggleCTMChanged;
 @property(nonatomic, setter=_setIsInEditModeChanged:) BOOL isInEditModeChanged; // @synthesize isInEditModeChanged=_isInEditModeChanged;
@@ -52,7 +53,6 @@
 @property(nonatomic, setter=_setUserTransformingTileDidChange:) BOOL isUserTransformingTileDidChange; // @synthesize isUserTransformingTileDidChange=_isUserTransformingTileDidChange;
 @property(nonatomic, setter=_setModelTileTransformChanged:) BOOL modelTileTransformChanged; // @synthesize modelTileTransformChanged=_modelTileTransformChanged;
 @property(nonatomic, setter=_setAssetChanged:) BOOL assetChanged; // @synthesize assetChanged=_assetChanged;
-- (void).cxx_destruct;
 - (BOOL)hasChanges;
 
 @end

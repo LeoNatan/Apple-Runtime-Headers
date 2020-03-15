@@ -28,6 +28,7 @@
     GKTurnBasedMatchDetailViewController *_detailViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) GKTurnBasedMatchDetailViewController *detailViewController; // @synthesize detailViewController=_detailViewController;
 @property(retain) GKTurnBasedInviteViewController *inviteController; // @synthesize inviteController=_inviteController;
 @property(retain) NSString *matchIDWaitingForTurnEvent; // @synthesize matchIDWaitingForTurnEvent=_matchIDWaitingForTurnEvent;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
 @property(retain, nonatomic) GKGame *game; // @synthesize game=_game;
 @property(nonatomic) __weak id <GKTurnBasedMatchesViewControllerDelegate> delegate; // @synthesize delegate=_delegateWeak;
-- (void).cxx_destruct;
 - (void)detailViewControllerHasBeenDismissed;
 - (void)handleTurnBasedEvent:(id)arg1;
 - (void)turnBasedMatchDetailViewControllerDidFinish:(id)arg1;

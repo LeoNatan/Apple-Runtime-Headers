@@ -16,11 +16,11 @@
     MTAlarm *_sleepAlarm;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTAlarm *sleepAlarm; // @synthesize sleepAlarm=_sleepAlarm;
 @property(retain, nonatomic) NSMutableArray *alarms; // @synthesize alarms=_alarms;
 @property(retain, nonatomic) MTObserverStore *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
-- (void).cxx_destruct;
 - (id)removeAlarm:(id)arg1;
 - (id)updateAlarm:(id)arg1;
 - (id)addAlarm:(id)arg1;

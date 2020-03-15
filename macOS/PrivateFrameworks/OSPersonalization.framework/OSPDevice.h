@@ -35,6 +35,7 @@
 + (id)deviceWithVolumeMountPoint:(id)arg1;
 + (id)deviceWithTDMBackedVolumeMountPoint:(id)arg1;
 + (id)deviceWithRunningSystem;
+- (void).cxx_destruct;
 @property(retain) NSURL *mountPointURL; // @synthesize mountPointURL=_mountPointURL;
 @property BOOL internalUseOnlyUnit; // @synthesize internalUseOnlyUnit=_internalUseOnlyUnit;
 @property(retain) NSString *bridgeVersion; // @synthesize bridgeVersion=_bridgeVersion;
@@ -51,7 +52,6 @@
 @property BOOL supportsImage4; // @synthesize supportsImage4=_supportsImage4;
 @property BOOL globalSigningEnabled; // @synthesize globalSigningEnabled=_globalSigningEnabled;
 @property BOOL personalizationEnabled; // @synthesize personalizationEnabled=_personalizationEnabled;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)_getBridgeVersion;

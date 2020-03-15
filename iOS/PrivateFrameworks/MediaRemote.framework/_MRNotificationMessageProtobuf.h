@@ -20,10 +20,10 @@
 + (Class)playerPathType;
 + (Class)userInfoType;
 + (Class)notificationType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *playerPaths; // @synthesize playerPaths=_playerPaths;
 @property(retain, nonatomic) NSMutableArray *userInfos; // @synthesize userInfos=_userInfos;
 @property(retain, nonatomic) NSMutableArray *notifications; // @synthesize notifications=_notifications;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

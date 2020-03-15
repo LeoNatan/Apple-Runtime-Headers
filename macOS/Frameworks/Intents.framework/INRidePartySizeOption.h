@@ -20,10 +20,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) INPriceRange *priceRange; // @synthesize priceRange=_priceRange;
 @property(readonly) NSString *sizeDescription; // @synthesize sizeDescription=_sizeDescription;
 @property(readonly) struct _NSRange partySizeRange; // @synthesize partySizeRange=_partySizeRange;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

@@ -16,8 +16,8 @@
     DAMailMessage *_DAMailMessage;
 }
 
-@property(readonly, nonatomic) DAMailMessage *DAMailMessage; // @synthesize DAMailMessage=_DAMailMessage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DAMailMessage *DAMailMessage; // @synthesize DAMailMessage=_DAMailMessage;
 - (unsigned int)messageSize;
 - (id)remoteMailboxURL;
 - (_Bool)messageDataHolder:(id *)arg1 messageSize:(unsigned int *)arg2 isComplete:(_Bool *)arg3 downloadIfNecessary:(_Bool)arg4;

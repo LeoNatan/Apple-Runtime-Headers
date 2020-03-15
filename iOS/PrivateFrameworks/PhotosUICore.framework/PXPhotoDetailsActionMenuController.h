@@ -18,10 +18,10 @@
     PXPhotoKitAssetCollectionActionManager *_assetActionManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXPhotoKitAssetCollectionActionManager *assetActionManager; // @synthesize assetActionManager=_assetActionManager;
 @property(retain, nonatomic) PHFetchResult *people; // @synthesize people=_people;
 @property(retain, nonatomic) PXCMMSendBackSuggestionSource *sendBackSuggestionSource; // @synthesize sendBackSuggestionSource=_sendBackSuggestionSource;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)assetCollectionActionPerformer:(id)arg1 playMovieForAssetCollection:(id)arg2;
 - (_Bool)shouldAllowPerformanceOfActionType:(id)arg1;

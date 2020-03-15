@@ -15,10 +15,10 @@
     NSDate *_lastAutoPollDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *lastAutoPollDate; // @synthesize lastAutoPollDate=_lastAutoPollDate;
 @property(readonly, nonatomic) NSArray *metrics; // @synthesize metrics=_metrics;
 @property(readonly, nonatomic) double averagePollTime; // @synthesize averagePollTime=_averagePollTime;
-- (void).cxx_destruct;
 - (void)synchronize;
 - (void)addPoll:(id)arg1;
 - (id)init;

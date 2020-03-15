@@ -16,8 +16,8 @@
     BOOL _nullTerminated;
 }
 
-@property(readonly) NSArray *argumentTypes; // @synthesize argumentTypes=_argumentTypes;
 - (void).cxx_destruct;
+@property(readonly) NSArray *argumentTypes; // @synthesize argumentTypes=_argumentTypes;
 - (BOOL)nullTerminated;
 - (BOOL)variadic;
 - (long long)numberOfArguments;

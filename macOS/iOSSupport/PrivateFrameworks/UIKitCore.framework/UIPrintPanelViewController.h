@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
     NSArray *_lastUsedPrinterArray;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *lastUsedPrinterArray; // @synthesize lastUsedPrinterArray=_lastUsedPrinterArray;
 @property(readonly, nonatomic) BOOL showAnnotationSwitch; // @synthesize showAnnotationSwitch=_showAnnotationSwitch;
 @property(readonly, nonatomic) BOOL hasJobAccountID; // @synthesize hasJobAccountID=_hasJobAccountID;
@@ -79,7 +80,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *pageRanges; // @synthesize pageRanges=_pageRanges;
 @property(readonly, nonatomic) long long pageCount; // @synthesize pageCount=_pageCount;
 @property(retain, nonatomic) PKPrinter *printer; // @synthesize printer=_printer;
-- (void).cxx_destruct;
 - (void)_dismissParentControllerUIIfPresent;
 - (void)_dismissMacOSPrintPanelWithoutPrinting;
 - (void)_presentPrintPanelMacOS;

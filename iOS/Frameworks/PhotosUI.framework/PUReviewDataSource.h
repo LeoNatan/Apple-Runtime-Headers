@@ -20,6 +20,7 @@
     NSMutableSet *__updatedAssetIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *_updatedAssetIdentifiers; // @synthesize _updatedAssetIdentifiers=__updatedAssetIdentifiers;
 @property(nonatomic, setter=_setNestedPerformChanges:) long long _nestedPerformChanges; // @synthesize _nestedPerformChanges=__nestedPerformChanges;
 @property(readonly, nonatomic) NSMutableDictionary *_enqueuedBurstAssetsByAssetIdentifier; // @synthesize _enqueuedBurstAssetsByAssetIdentifier=__enqueuedBurstAssetsByAssetIdentifier;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSMutableDictionary *_assetsByIdentifier; // @synthesize _assetsByIdentifier=__assetsByIdentifier;
 @property(readonly, nonatomic) NSMutableArray *_assetIdentifiers; // @synthesize _assetIdentifiers=__assetIdentifiers;
 @property(readonly, nonatomic) NSHashTable *_observers; // @synthesize _observers=__observers;
-- (void).cxx_destruct;
 - (id)description;
 - (id)orderedIdentifiers;
 - (id)assetsByIdentifier;

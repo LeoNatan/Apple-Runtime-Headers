@@ -25,10 +25,10 @@
     UIView *_alphaContainerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) _SBFVibrantSettings *vibrantSettings; // @synthesize vibrantSettings=_vibrantSettings;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)setBackgroundView:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)setState:(long long)arg1 animated:(_Bool)arg2;

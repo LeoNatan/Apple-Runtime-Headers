@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 + (id)_numberForString:(id)arg1;
 + (id)_stringForNumber:(id)arg1;
 + (_Bool)parseIdentifier:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPMediaEntity *mediaEntity; // @synthesize mediaEntity=_mediaEntity;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) VUIJSMediaEntityType *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)valuesForProperties:(id)arg1;
 - (id)initWithMediaEntity:(id)arg1 appContext:(id)arg2 mediaCategory:(id)arg3 mediaCollectionType:(id)arg4;

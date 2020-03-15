@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)requestViewControllerFromServiceWithBundleIdentifier:(id)arg1 withConnectionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property __weak NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property __weak SHKRemoteWindowController *remoteWindowController; // @synthesize remoteWindowController=_remoteWindowController;
-- (void).cxx_destruct;
 - (void)cancelServiceUI;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)setPreferredContentSize:(struct CGSize)arg1;

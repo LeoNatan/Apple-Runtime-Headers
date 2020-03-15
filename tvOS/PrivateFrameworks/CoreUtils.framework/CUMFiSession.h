@@ -36,13 +36,13 @@
     NSString *_protocolString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *protocolString; // @synthesize protocolString=_protocolString;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain, nonatomic) EAAccessory *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)_processWriteRequests;
 - (void)writeData:(id)arg1 completion:(CDUnknownBlockType)arg2;

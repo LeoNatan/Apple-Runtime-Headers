@@ -25,6 +25,7 @@
     HFCameraClipQueuePlayer *_queuePlayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFCameraClipQueuePlayer *queuePlayer; // @synthesize queuePlayer=_queuePlayer;
 @property(nonatomic) __weak HFCameraClipPlayerItem *lastPlayerItem; // @synthesize lastPlayerItem=_lastPlayerItem;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -34,7 +35,6 @@
 @property(nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic) __weak id <HFCameraClipScrubbing> scrubber; // @synthesize scrubber=_scrubber;
 @property(nonatomic) __weak id <HFCameraClipPlayerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)seekToOffset:(double)arg1 inItem:(id)arg2;
 - (void)removeQueueableItem:(id)arg1;
 - (void)insertQueueableItem:(id)arg1 afterItem:(id)arg2;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(readonly, nonatomic) struct _NSRange originalRange; // @synthesize originalRange=_originalRange;
 @property(readonly, copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAttributedString:(id)arg1 range:(struct _NSRange)arg2;
 

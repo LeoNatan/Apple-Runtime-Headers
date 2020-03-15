@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
     id <NSObject> _transaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> transaction; // @synthesize transaction=_transaction;
 @property(retain, nonatomic) GEOActiveTileGroupMigrationTaskOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)removeOldData:(id)arg1;
 - (void)populateTileGroup:(id)arg1;
 - (void)cancel;

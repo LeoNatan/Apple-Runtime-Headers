@@ -75,6 +75,7 @@
     NSArray *__crossTabViewConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *_crossTabViewConstraints; // @synthesize _crossTabViewConstraints=__crossTabViewConstraints;
 @property __weak NSTextField *_shellScriptLabelTextField; // @synthesize _shellScriptLabelTextField=__shellScriptLabelTextField;
 @property __weak NSTextField *_appleScriptLabelTextField; // @synthesize _appleScriptLabelTextField=__appleScriptLabelTextField;
@@ -136,7 +137,6 @@
 @property BOOL didSwitchToCustomDateFormat; // @synthesize didSwitchToCustomDateFormat=_didSwitchToCustomDateFormat;
 @property(nonatomic) BOOL useCustomTimeFormat; // @synthesize useCustomTimeFormat=_useCustomTimeFormat;
 @property(nonatomic) __weak AMVariablesEditorController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)reLayout;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

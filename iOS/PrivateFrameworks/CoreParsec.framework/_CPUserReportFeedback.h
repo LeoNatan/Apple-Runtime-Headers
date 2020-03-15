@@ -21,12 +21,12 @@
     NSData *_uuidBytes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *uuidBytes; // @synthesize uuidBytes=_uuidBytes;
 @property(retain, nonatomic) _CPCardSectionForFeedback *cardSection; // @synthesize cardSection=_cardSection;
 @property(retain, nonatomic) _CPPunchoutForFeedback *userSelection; // @synthesize userSelection=_userSelection;
 @property(retain, nonatomic) _CPSearchResultForFeedback *result; // @synthesize result=_result;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

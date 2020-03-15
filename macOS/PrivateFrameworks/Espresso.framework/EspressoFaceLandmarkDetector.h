@@ -16,9 +16,9 @@
     struct CGRect _newface;
 }
 
-@property struct CGRect newface; // @synthesize newface=_newface;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property struct CGRect newface; // @synthesize newface=_newface;
 - (void)dealloc;
 - (void)commonInit:(id)arg1 context:(shared_ptr_ae8b808b)arg2 platform:(int)arg3 computePath:(int)arg4;
 - (id)init;

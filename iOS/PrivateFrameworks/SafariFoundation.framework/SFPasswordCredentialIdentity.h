@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFCredentialProviderExtensionState *owningExtensionState; // @synthesize owningExtensionState=_owningExtensionState;
 @property(readonly, nonatomic) long long rank; // @synthesize rank=_rank;
 @property(readonly, copy, nonatomic) NSString *user; // @synthesize user=_user;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(readonly, nonatomic) long long serviceIdentifierType; // @synthesize serviceIdentifierType=_serviceIdentifierType;
 @property(nonatomic) long long rowIdentifier; // @synthesize rowIdentifier=_rowIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isExternal) _Bool external;
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, copy, nonatomic) NSString *password;

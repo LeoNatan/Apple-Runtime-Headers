@@ -26,6 +26,7 @@
     NWKLocationForecast *_locked_selectedLocationForecast;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NWKLocationForecast *locked_selectedLocationForecast; // @synthesize locked_selectedLocationForecast=_locked_selectedLocationForecast;
 @property(nonatomic) unsigned int locked_forecastTypes; // @synthesize locked_forecastTypes=_locked_forecastTypes;
 @property(retain, nonatomic) NSHashTable *locked_observers; // @synthesize locked_observers=_locked_observers;
@@ -36,7 +37,6 @@
 @property(getter=isWaitingOnData) _Bool waitingOnData; // @synthesize waitingOnData=_waitingOnData;
 @property(readonly, nonatomic) NWKForecastManager *forecastManager; // @synthesize forecastManager=_forecastManager;
 @property(retain, nonatomic) WFLocation *locked_selectedLocation; // @synthesize locked_selectedLocation=_locked_selectedLocation;
-- (void).cxx_destruct;
 - (void)resume;
 - (void)pause;
 - (void)manager:(id)arg1 updatedTimeZone:(id)arg2 forLocation:(id)arg3;

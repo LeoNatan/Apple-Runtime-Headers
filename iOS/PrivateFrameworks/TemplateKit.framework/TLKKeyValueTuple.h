@@ -17,9 +17,9 @@
 + (id)tuplesForKeys:(id)arg1 values:(id)arg2;
 + (id)tuplesForDictionary:(id)arg1;
 + (id)tupleWithKey:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

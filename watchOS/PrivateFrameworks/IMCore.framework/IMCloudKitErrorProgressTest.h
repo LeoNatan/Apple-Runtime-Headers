@@ -13,8 +13,8 @@
     NSError *_error;
 }
 
-@property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 - (void)willUpdateSyncState:(id)arg1;
 - (id)initWithErrorCode:(int)arg1;
 

@@ -23,12 +23,12 @@
 + (id)interpolationFrom:(id)arg1 to:(id)arg2 fraction:(float)arg3;
 + (id)colorSchemeForDevice:(id)arg1 withFaceColor:(unsigned int)arg2 foregroundColor:(id)arg3 units:(unsigned int)arg4 alternateHighlight:(_Bool)arg5;
 + (id)colorSchemeForDevice:(id)arg1 withFaceColor:(unsigned int)arg2 units:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) float siriAlpha; // @synthesize siriAlpha=_siriAlpha;
 @property(nonatomic) float multicolorAlpha; // @synthesize multicolorAlpha=_multicolorAlpha;
 @property(retain, nonatomic) NSArray *faceColors; // @synthesize faceColors=_faceColors;
 @property(nonatomic) _Bool containsOverrideFaceColor; // @synthesize containsOverrideFaceColor=_containsOverrideFaceColor;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)_colorForUnit:(unsigned int)arg1;
 - (void)_setColor:(id)arg1 forUnit:(unsigned int)arg2;
 - (_Bool)isEqual:(id)arg1;

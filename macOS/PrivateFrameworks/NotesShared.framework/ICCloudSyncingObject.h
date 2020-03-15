@@ -58,9 +58,9 @@
 + (id)objectsWithRecordID:(id)arg1 context:(id)arg2;
 + (id)objectWithRecordID:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 + (id)keyPathsForValuesAffectingCloudAccount;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isMergingUnappliedEncryptedRecord) BOOL mergingUnappliedEncryptedRecord; // @synthesize mergingUnappliedEncryptedRecord;
 @property(nonatomic) BOOL needsToLoadDecryptedValues; // @synthesize needsToLoadDecryptedValues=_needsToLoadDecryptedValues;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isVisible;
 - (id)ic_loggingValues;
 - (id)ic_loggingIdentifier;

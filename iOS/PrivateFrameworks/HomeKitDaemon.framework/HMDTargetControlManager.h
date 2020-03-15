@@ -24,12 +24,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDSiriServer *siriServer; // @synthesize siriServer=_siriServer;
 @property(readonly, nonatomic) NSString *logID; // @synthesize logID=_logID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) __weak HMDAccessory *targetAccessory; // @synthesize targetAccessory=_targetAccessory;
-- (void).cxx_destruct;
 - (void)__activeSelectionReset:(id)arg1;
 - (void)__activeSelectionChanged:(id)arg1;
 - (void)_handleTargetControlServiceDeselection:(id)arg1;

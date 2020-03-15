@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) ARReferenceObject *referenceObject; // @synthesize referenceObject=_referenceObject;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ARReferenceObject *referenceObject; // @synthesize referenceObject=_referenceObject;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAnchor:(id)arg1;

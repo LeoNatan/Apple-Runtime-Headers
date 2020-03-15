@@ -38,6 +38,7 @@
 + (id)testMessage;
 + (id)log;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <EWSExchangeServiceBindingDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
@@ -45,7 +46,6 @@
 @property(readonly) BOOL isRefreshingOAuthToken; // @synthesize isRefreshingOAuthToken=_isRefreshingOAuthToken;
 @property BOOL logsActivity; // @synthesize logsActivity=_logsActivity;
 @property(retain) EWSServerVersionInfo *serverInfo; // @synthesize serverInfo=_serverInfo;
-- (void).cxx_destruct;
 - (void)_clearRequestIfNeeded:(id)arg1;
 - (id)_exchangeServiceErrorFromSOAPError:(id)arg1 dataTask:(id)arg2;
 - (void)_continuePendingOAuthTasks;

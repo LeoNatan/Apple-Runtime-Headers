@@ -17,11 +17,11 @@
     WFGradient *_buttonGradient;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFGradient *buttonGradient; // @synthesize buttonGradient=_buttonGradient;
 @property(readonly, nonatomic) NSError *resourceError; // @synthesize resourceError=_resourceError;
 @property(readonly, nonatomic) id <WFParameterState> state; // @synthesize state=_state;
 @property(readonly, nonatomic) WFParameter *parameter; // @synthesize parameter=_parameter;
-- (void).cxx_destruct;
 - (id)initWithResourceError:(id)arg1 buttonGradient:(id)arg2;
 - (id)initWithParameter:(id)arg1 state:(id)arg2;
 

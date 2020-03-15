@@ -27,12 +27,12 @@
 + (id)loadAllStoredSessions;
 + (id)pathForTimeTaggedFileName:(id)arg1;
 + (id)temporaryKeyboardsDirectory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIKeyboardLayout *currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(retain, nonatomic) NSPointerArray *aggregateEventsObservers; // @synthesize aggregateEventsObservers=_aggregateEventsObservers;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(retain, nonatomic) TITypingDESRecordWriter *desRecordWriter; // @synthesize desRecordWriter=_desRecordWriter;
 @property(retain, nonatomic) TITypingSession *currentTypingSession; // @synthesize currentTypingSession=_currentTypingSession;
-- (void).cxx_destruct;
 - (void)addAggregatedEventObserver:(id)arg1;
 - (void)keyboardDidSuspend;
 - (id)forwardingTargetForSelector:(SEL)arg1;

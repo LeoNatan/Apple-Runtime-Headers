@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 + (id)replaceCommandTagsInString:(id)arg1;
 + (id)displayStringForCommand:(id)arg1 userDefaults:(id)arg2;
 + (id)displayStringForCommand:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(retain, nonatomic) NSLock *_variableLock; // @synthesize _variableLock=__variableLock;
 @property(retain, nonatomic, setter=_setShouldOutputContextualHelpTagObserver:) id _shouldOutputContextualHelpTagObserver; // @synthesize _shouldOutputContextualHelpTagObserver=__shouldOutputContextualHelpTagObserver;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldOutputContextualHelp; // @synthesize shouldOutputContextualHelp=_shouldOutputContextualHelp;
 @property(retain, nonatomic) SCRCTargetSelectorTimer *_outputTimer; // @synthesize _outputTimer=__outputTimer;
 @property(nonatomic) __weak id <SCRContextualHelpHandlerProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)outputContextualHelpWithSpokenString:(id)arg1 helpTagString:(id)arg2 forceOutput:(BOOL)arg3;
 - (void)cancelTimer;
 - (BOOL)isHelpPending;

@@ -14,9 +14,9 @@
     UIImage *_microphoneImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *microphoneImage; // @synthesize microphoneImage=_microphoneImage;
 @property(nonatomic, getter=isOn) _Bool on; // @synthesize on=_on;
-- (void).cxx_destruct;
 - (id)_circleColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGSize)intrinsicContentSize;

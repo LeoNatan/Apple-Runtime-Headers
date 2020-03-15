@@ -25,6 +25,7 @@
 }
 
 + (struct CGSize)_itemSizeForCategory:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) _TVCKErrorViewController *errorViewController; // @synthesize errorViewController=_errorViewController;
 @property(retain, nonatomic) UIViewController *activityIndicatorViewController; // @synthesize activityIndicatorViewController=_activityIndicatorViewController;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) TVCKStoreFavoritesController *favoritesController; // @synthesize favoritesController=_favoritesController;
 @property(nonatomic) __weak id <TVCKStoreFavoritesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

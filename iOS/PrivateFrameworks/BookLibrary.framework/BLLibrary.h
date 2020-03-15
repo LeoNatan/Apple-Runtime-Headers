@@ -22,12 +22,12 @@
 + (id)_bookItemsFromPlist:(id)arg1 sharedPlist:(id)arg2;
 + (id)defaultBookLibrary;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain, nonatomic) IMLibraryPlist *sharedPlist; // @synthesize sharedPlist=_sharedPlist;
 @property(retain, nonatomic) IMLibraryPlist *managedPlist; // @synthesize managedPlist=_managedPlist;
 @property(retain, nonatomic) IMLibraryPlist *purchasedPlist; // @synthesize purchasedPlist=_purchasedPlist;
 @property(retain, nonatomic) IMLibraryPlist *booksPlist; // @synthesize booksPlist=_booksPlist;
-- (void).cxx_destruct;
 - (void)_bookWasOpenedWithStoreID:(id)arg1 permlink:(id)arg2 date:(id)arg3;
 - (_Bool)_bookItemIsShared:(id)arg1;
 - (_Bool)_addSharedBookToPurchasesPlistWithPermlink:(id)arg1 error:(id *)arg2;

@@ -14,8 +14,8 @@
     MFComposeDisplayMetrics *_displayMetrics;
 }
 
-@property(retain, nonatomic) MFComposeDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MFComposeDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
 - (void)_textInputDidChange:(id)arg1;
 - (void)_displayMetricsDidChange;
 - (void)layoutMarginsDidChange;

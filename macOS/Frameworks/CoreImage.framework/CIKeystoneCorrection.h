@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)customAttributes;
+- (id).cxx_construct;
 @property(copy, nonatomic) CIVector *inputBottomLeft; // @synthesize inputBottomLeft;
 @property(copy, nonatomic) CIVector *inputBottomRight; // @synthesize inputBottomRight;
 @property(copy, nonatomic) CIVector *inputTopRight; // @synthesize inputTopRight;
 @property(copy, nonatomic) CIVector *inputTopLeft; // @synthesize inputTopLeft;
 @property(copy, nonatomic) NSNumber *inputFocalLength; // @synthesize inputFocalLength;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage;
-- (id).cxx_construct;
 - (id)outputImage;
 @property(readonly, nonatomic) CIFilter *outputRotationFilter;
 // Error parsing type for property outputTransform:

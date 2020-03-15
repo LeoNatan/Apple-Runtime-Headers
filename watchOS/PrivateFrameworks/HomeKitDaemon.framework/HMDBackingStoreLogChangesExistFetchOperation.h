@@ -13,10 +13,10 @@
     long long _compareValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long compareValue; // @synthesize compareValue=_compareValue;
 @property(nonatomic) long long maskValue; // @synthesize maskValue=_maskValue;
 @property(copy, nonatomic) CDUnknownBlockType fetchBlock; // @synthesize fetchBlock=_fetchBlock;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithNeedsPushTo:(unsigned int)arg1 result:(CDUnknownBlockType)arg2;
 

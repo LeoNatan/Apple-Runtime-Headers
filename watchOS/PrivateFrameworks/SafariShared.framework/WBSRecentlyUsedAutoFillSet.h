@@ -15,10 +15,10 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, copy, nonatomic) NSArray *skipMatches; // @synthesize skipMatches=_skipMatches;
 @property(readonly, copy, nonatomic) NSArray *fillMatches; // @synthesize fillMatches=_fillMatches;
-- (void).cxx_destruct;
 - (id)initWithFillMatches:(id)arg1 skipMatches:(id)arg2 label:(id)arg3;
 
 @end

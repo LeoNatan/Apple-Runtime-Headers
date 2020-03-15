@@ -16,10 +16,10 @@
     UILabel *_summaryLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) UILabel *summaryLabel; // @synthesize summaryLabel=_summaryLabel;
 @property(retain) NSLayoutConstraint *labelSpacingConstraint; // @synthesize labelSpacingConstraint=_labelSpacingConstraint;
 @property __weak id <PXPeopleSummaryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateDynamicTypeSpacing;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;

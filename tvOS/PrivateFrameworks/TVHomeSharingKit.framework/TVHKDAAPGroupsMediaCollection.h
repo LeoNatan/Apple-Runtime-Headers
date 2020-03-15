@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     TVHKMediaEntityIdentifier *_artistIdentifier;
 }
 
-- (id)type;
 - (void).cxx_destruct;
+- (id)type;
 - (id)artistIdentifier;
 - (id)imageIdentifier;
 - (id)initWithMediaCategoryType:(unsigned long long)arg1 mediaCollectionType:(unsigned long long)arg2 mediaEntityServer:(id)arg3 requestedProperties:(id)arg4 entity:(id)arg5;

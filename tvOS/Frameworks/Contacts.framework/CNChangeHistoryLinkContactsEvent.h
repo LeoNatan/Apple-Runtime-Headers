@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContact *toContact; // @synthesize toContact=_toContact;
 @property(readonly, nonatomic) CNContact *fromContact; // @synthesize fromContact=_fromContact;
-- (void).cxx_destruct;
 - (void)acceptEventVisitor:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

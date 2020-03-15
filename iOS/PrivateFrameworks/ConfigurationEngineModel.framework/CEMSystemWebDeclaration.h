@@ -28,6 +28,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadForceAuthenticationBeforeAutoFill; // @synthesize payloadForceAuthenticationBeforeAutoFill=_payloadForceAuthenticationBeforeAutoFill;
 @property(copy, nonatomic) NSNumber *payloadSafariAcceptCookies; // @synthesize payloadSafariAcceptCookies=_payloadSafariAcceptCookies;
 @property(copy, nonatomic) NSNumber *payloadSafariAllowPopups; // @synthesize payloadSafariAllowPopups=_payloadSafariAllowPopups;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSNumber *payloadSafariForceFraudWarning; // @synthesize payloadSafariForceFraudWarning=_payloadSafariForceFraudWarning;
 @property(copy, nonatomic) NSNumber *payloadSafariAllowAutoFill; // @synthesize payloadSafariAllowAutoFill=_payloadSafariAllowAutoFill;
 @property(copy, nonatomic) NSNumber *payloadForceLimitAdTracking; // @synthesize payloadForceLimitAdTracking=_payloadForceLimitAdTracking;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

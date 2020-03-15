@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *unauthenticatedAccountServices; // @synthesize unauthenticatedAccountServices=_unauthenticatedAccountServices;
 @property(nonatomic) _Bool needsNetwork; // @synthesize needsNetwork=_needsNetwork;
-- (void).cxx_destruct;
 - (id)_stringFromAccountServices:(id)arg1;
 - (id)description;
 - (id)initWithCoder:(id)arg1;

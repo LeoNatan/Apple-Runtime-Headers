@@ -13,8 +13,8 @@
     _AVTAvatarRecordImageProvider *_backingProvider;
 }
 
-@property(readonly, nonatomic) _AVTAvatarRecordImageProvider *backingProvider; // @synthesize backingProvider=_backingProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _AVTAvatarRecordImageProvider *backingProvider; // @synthesize backingProvider=_backingProvider;
 - (void)imageForRecord:(id)arg1 scope:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)imageForRecord:(id)arg1 scope:(id)arg2;
 - (id)initWithBackingProvider:(id)arg1;

@@ -15,10 +15,10 @@
     PHPerson *_person;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool confirmed; // @synthesize confirmed=_confirmed;
 @property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
 @property(readonly, nonatomic) PHFace *keyFace; // @synthesize keyFace=_keyFace;
-- (void).cxx_destruct;
 - (id)initWithKeyFace:(id)arg1 person:(id)arg2 confirmed:(_Bool)arg3;
 
 @end

@@ -16,10 +16,10 @@
     UXLabel *_summaryLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) UXLabel *summaryLabel; // @synthesize summaryLabel=_summaryLabel;
 @property(retain) NSLayoutConstraint *labelSpacingConstraint; // @synthesize labelSpacingConstraint=_labelSpacingConstraint;
 @property __weak id <PXPeopleSummaryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;

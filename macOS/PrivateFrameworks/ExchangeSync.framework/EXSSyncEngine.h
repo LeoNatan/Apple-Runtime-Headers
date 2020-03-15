@@ -19,12 +19,12 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *syncEngineInstances; // @synthesize syncEngineInstances=_syncEngineInstances;
 @property(retain, nonatomic) NSArray *dataConsumerPlugins; // @synthesize dataConsumerPlugins=_dataConsumerPlugins;
 @property(retain, nonatomic) EXSAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_workloop> *dispatchWorkloop; // @synthesize dispatchWorkloop=_dispatchWorkloop;
 @property(retain, nonatomic) EXSDataManager *dataManager; // @synthesize dataManager=_dataManager;
-- (void).cxx_destruct;
 - (void)loadDataConsumerPlugins;
 - (void)immediatelySync;
 - (void)evaluateOurNeedToRun;

@@ -41,6 +41,7 @@
 + (id)loggingDelegate;
 + (BOOL)_defaultsToBackground;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSFileHandle *logFile; // @synthesize logFile=_logFile;
 @property BOOL isBackground; // @synthesize isBackground=_isBackground;
 @property(nonatomic) double readWriteTimeout; // @synthesize readWriteTimeout=_readWriteTimeout;
@@ -52,7 +53,6 @@
 @property(nonatomic) unsigned long long bufferStart; // @synthesize bufferStart=_bufferStart;
 @property(nonatomic) long long bufferRemainingBytes; // @synthesize bufferRemainingBytes=_bufferRemainingBytes;
 @property(nonatomic) void *buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 - (void)_resetLogHeaderWithPort:(long long)arg1;
 - (void)_logToFileDidChange:(id)arg1;
 - (void)_loggingDidChange:(id)arg1;

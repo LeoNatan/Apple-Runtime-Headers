@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (double)animationDuration;
 + (id)undimmedBackgroundColor;
 + (id)dimmedBackgroundColor;
-@property(nonatomic) __weak id <DimmingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DimmingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)smartMagnifyWithEvent:(id)arg1;
 - (void)swipeWithEvent:(id)arg1;
 - (void)rotateWithEvent:(id)arg1;

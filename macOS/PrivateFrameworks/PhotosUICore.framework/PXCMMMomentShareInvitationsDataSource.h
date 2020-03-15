@@ -14,8 +14,8 @@
 }
 
 + (id)new;
-@property(readonly, nonatomic) PXCMMMomentShareInvitationsDataSourceState *state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXCMMMomentShareInvitationsDataSourceState *state; // @synthesize state=_state;
 - (struct PXSimpleIndexPath)indexPathForObjectReference:(id)arg1;
 - (id)invitationForObjectID:(id)arg1;
 - (id)objectIDAtItemIndexPath:(struct PXSimpleIndexPath)arg1;

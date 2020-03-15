@@ -17,12 +17,12 @@
     NSArray *_postalAddresses;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *postalAddresses; // @synthesize postalAddresses=_postalAddresses;
 @property(readonly, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(readonly, nonatomic) NSString *middleName; // @synthesize middleName=_middleName;
 @property(readonly, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 givenName:(id)arg2 middleName:(id)arg3 familyName:(id)arg4 postalAddresses:(id)arg5;
 - (id)init;

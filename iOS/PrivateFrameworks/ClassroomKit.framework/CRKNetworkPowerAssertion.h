@@ -18,9 +18,9 @@
 + (void)decrement;
 + (void)increment;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)decrement;
 - (void)increment;
 - (id)init;

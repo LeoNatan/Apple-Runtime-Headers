@@ -12,8 +12,8 @@
     UIViewController *_wrappedViewController;
 }
 
-@property(readonly, nonatomic) UIViewController *wrappedViewController; // @synthesize wrappedViewController=_wrappedViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIViewController *wrappedViewController; // @synthesize wrappedViewController=_wrappedViewController;
 - (id)childViewControllerForWhitePointAdaptivityStyle;
 - (id)childViewControllerForScreenEdgesDeferringSystemGestures;
 - (id)childViewControllerForHomeIndicatorAutoHidden;

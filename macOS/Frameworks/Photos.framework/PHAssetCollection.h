@@ -101,6 +101,7 @@
 + (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 photoLibrary:(id)arg2 includeTrash:(BOOL)arg3;
 + (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 photoLibrary:(id)arg2;
 + (id)fetchAssetCollectionsForReferences:(id)arg1 photoLibrary:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
 @property(readonly, nonatomic) BOOL canContributeToCloudSharedAlbum; // @synthesize canContributeToCloudSharedAlbum=_canContributeToCloudSharedAlbum;
 @property(readonly, nonatomic) BOOL hasUnseenContentBoolValue; // @synthesize hasUnseenContentBoolValue=_hasUnseenContentBoolValue;
@@ -136,7 +137,6 @@
 @property(readonly, nonatomic) PHQuery *query; // @synthesize query=_query;
 @property(readonly, nonatomic) long long assetCollectionSubtype; // @synthesize assetCollectionSubtype=_assetCollectionSubtype;
 @property(readonly, nonatomic) long long assetCollectionType; // @synthesize assetCollectionType=_assetCollectionType;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) unsigned long long titleFontNameHash;
 @property(readonly, nonatomic) NSString *titleFontName; // @synthesize titleFontName=_titleFontName;

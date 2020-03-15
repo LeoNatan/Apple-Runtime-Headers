@@ -19,8 +19,8 @@
     NSString *_name;
 }
 
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)canWalkieTalkieChanged:(id)arg1;
 - (void)canCallPossiblyChanged:(id)arg1;
 - (void)quickCellDidSelectWalkieTalkie:(id)arg1;

@@ -37,13 +37,13 @@
 + (_Bool)drivenByUserInteraction;
 + (_Bool)wantsPrivateQueue;
 + (id)contentAttributes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=hasUnlockedSinceBoot) _Bool unlockedSinceBoot; // @synthesize unlockedSinceBoot=_unlockedSinceBoot;
 @property(readonly, nonatomic) NSString *logHeader; // @synthesize logHeader=_logHeader;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) _Bool allowsLocationUse; // @synthesize allowsLocationUse=_allowsLocationUse;
 @property(readonly, nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(nonatomic) __weak id <REElementDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *dataSourceProperties;
 @property(readonly, nonatomic) NSString *name;
 - (void)loadLoggingHeader;
@@ -56,7 +56,6 @@
 - (id)complicationDescriptor;
 - (void)setUnlockedSinceBoot:(_Bool)arg1;
 - (void)setRunning:(_Bool)arg1;
-- (_Bool)isWhitelisted;
 - (void)elementWithIdentifierDidBecomeHidden:(id)arg1;
 - (void)elementWithIdentifierWillBecomeVisible:(id)arg1;
 - (void)resume;

@@ -13,8 +13,8 @@
     NSData *tokenData;
 }
 
-@property(copy, nonatomic) NSData *tokenData; // @synthesize tokenData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *tokenData; // @synthesize tokenData;
 
 @end
 

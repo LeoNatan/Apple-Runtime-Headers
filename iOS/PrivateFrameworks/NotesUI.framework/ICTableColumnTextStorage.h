@@ -23,6 +23,7 @@
     unsigned long long _preventEditingUpdatesCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long preventEditingUpdatesCount; // @synthesize preventEditingUpdatesCount=_preventEditingUpdatesCount;
 @property(readonly, nonatomic) NSMutableIndexSet *rowStartIndexes; // @synthesize rowStartIndexes=_rowStartIndexes;
 @property(readonly, nonatomic) NSMutableDictionary *mergeableStringDelegates; // @synthesize mergeableStringDelegates=_mergeableStringDelegates;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool shouldPreventUndoCommands; // @synthesize shouldPreventUndoCommands=_shouldPreventUndoCommands;
 @property(nonatomic) __weak id <ICTableUndoHelping> undoHelper; // @synthesize undoHelper=_undoHelper;
 @property(readonly) NSUUID *columnID; // @synthesize columnID=_columnID;
-- (void).cxx_destruct;
 - (void)tableCellWasEditedAtColumnID:(id)arg1 rowID:(id)arg2 edited:(unsigned long long)arg3 range:(struct _NSRange)arg4 changeInLength:(long long)arg5;
 - (void)restoreSelection:(id)arg1;
 - (id)savedSelectionWithSelectionAffinity:(unsigned long long)arg1;

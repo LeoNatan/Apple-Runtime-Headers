@@ -12,11 +12,11 @@
 
 + (id)logger;
 + (id)databasePath;
-- (id)dateOfLastSuccessForEvent:(struct NSString *)arg1;
-- (void)noteEvent:(struct NSString *)arg1;
-- (void)logUnrecoverableError:(id)arg1 forEvent:(struct NSString *)arg2 withAttributes:(id)arg3;
-- (void)logRecoverableError:(id)arg1 forEvent:(struct NSString *)arg2 withAttributes:(id)arg3;
-- (void)logSuccessForEvent:(struct NSString *)arg1;
+- (id)dateOfLastSuccessForEvent:(id)arg1;
+- (void)noteEvent:(id)arg1;
+- (void)logUnrecoverableError:(id)arg1 forEvent:(id)arg2 withAttributes:(id)arg3;
+- (void)logRecoverableError:(id)arg1 forEvent:(id)arg2 withAttributes:(id)arg3;
+- (void)logSuccessForEvent:(id)arg1;
 
 @end
 

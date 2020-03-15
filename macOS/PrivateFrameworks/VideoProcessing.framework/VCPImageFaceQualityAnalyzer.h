@@ -13,8 +13,8 @@
     NSMutableArray *_faceQualityScores;
 }
 
-@property(retain) NSMutableArray *faceQualityScores; // @synthesize faceQualityScores=_faceQualityScores;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *faceQualityScores; // @synthesize faceQualityScores=_faceQualityScores;
 - (void)dealloc;
 - (int)analyzeDetectedFaces:(struct __CVBuffer *)arg1 faceResults:(id)arg2 cancel:(CDUnknownBlockType)arg3;
 

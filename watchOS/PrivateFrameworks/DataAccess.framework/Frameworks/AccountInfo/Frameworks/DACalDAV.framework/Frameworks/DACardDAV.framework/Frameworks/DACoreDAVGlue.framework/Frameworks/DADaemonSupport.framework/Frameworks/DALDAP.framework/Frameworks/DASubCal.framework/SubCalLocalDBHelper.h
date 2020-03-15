@@ -10,6 +10,7 @@
 {
 }
 
++ (void)_setEventStoreProvider:(id)arg1;
 + (id)_makeCalendarWithExternalId:(id)arg1 inStore:(id)arg2 error:(id *)arg3;
 + (id)_relativePathFromCalDAVExternalID:(id)arg1;
 + (id)_existingCalendarInCalDAVSourceWithExternalID:(id)arg1 inSource:(id)arg2;

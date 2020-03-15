@@ -18,11 +18,11 @@
     NSSet *_unwantedEnglishWords;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *unwantedEnglishWords; // @synthesize unwantedEnglishWords=_unwantedEnglishWords;
 @property(retain, nonatomic) NSMutableDictionary *stringCache; // @synthesize stringCache=_stringCache;
 @property(retain, nonatomic) NSCharacterSet *tokenizationCharacterSetWithoutUpperCase; // @synthesize tokenizationCharacterSetWithoutUpperCase=_tokenizationCharacterSetWithoutUpperCase;
 @property(retain, nonatomic) NSCharacterSet *tokenizationCharacterSet; // @synthesize tokenizationCharacterSet=_tokenizationCharacterSet;
-- (void).cxx_destruct;
 - (id)_tokenizeStringForSpecialCharacters:(id)arg1;
 - (BOOL)stringContainsUnwantedWords:(id)arg1;
 - (id)init;

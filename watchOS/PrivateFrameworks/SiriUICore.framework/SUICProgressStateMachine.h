@@ -17,8 +17,8 @@
     NSPointerArray *_stateMachineObservers;
 }
 
-@property(retain, nonatomic, getter=_stateMachineObservers, setter=_setStateMachineObservers:) NSPointerArray *stateMachineObservers; // @synthesize stateMachineObservers=_stateMachineObservers;
 - (void).cxx_destruct;
+@property(retain, nonatomic, getter=_stateMachineObservers, setter=_setStateMachineObservers:) NSPointerArray *stateMachineObservers; // @synthesize stateMachineObservers=_stateMachineObservers;
 - (void)_ignoreEvent:(unsigned int)arg1;
 - (void)_transitionToState:(unsigned int)arg1 forEvent:(unsigned int)arg2;
 - (void)addObservers:(id)arg1;

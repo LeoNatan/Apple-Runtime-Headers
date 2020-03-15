@@ -13,6 +13,8 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (_Bool)_accessibilityIsVerticalAdjustableElement;
+- (_Bool)_accessibilityInTopLevelTabLoop;
 - (void)accessibilityDecrement;
 - (void)accessibilityIncrement;
 - (void)_axChangeToLightingEffectAtIndex:(long long)arg1;

@@ -53,6 +53,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsOverlap; // @synthesize allowsOverlap=_allowsOverlap;
 @property(nonatomic) _Bool defaultAnimate; // @synthesize defaultAnimate=_defaultAnimate;
 @property(nonatomic) double defaultDuration; // @synthesize defaultDuration=_defaultDuration;
@@ -90,7 +91,6 @@
 @property(nonatomic) _Bool clipsContentsVertically; // @synthesize clipsContentsVertically=_clipsContentsVertically;
 @property(nonatomic) int groupViewLayout; // @synthesize groupViewLayout=_groupViewLayout;
 @property(nonatomic) __weak id <SPInterfaceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_addGestureRecognizerData:(id)arg1 viewToAssociate:(id)arg2;
 - (void)_setStaticNotificationImageAttachmentURL:(id)arg1;
 - (void)setStaticNotificationAttachmentURL:(id)arg1 ofType:(int)arg2;

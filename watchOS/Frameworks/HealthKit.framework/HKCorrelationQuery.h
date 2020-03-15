@@ -22,10 +22,10 @@
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
 + (_Bool)shouldApplyAdditionalPredicateForObjectType:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *filterDictionary; // @synthesize filterDictionary=_filterDictionary;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, copy) NSDictionary *samplePredicates; // @synthesize samplePredicates=_samplePredicates;
-- (void).cxx_destruct;
 - (id)_predicateFilterClasses;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_deliverError:(id)arg1;

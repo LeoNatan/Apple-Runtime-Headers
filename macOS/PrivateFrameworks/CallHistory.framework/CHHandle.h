@@ -23,10 +23,10 @@
 + (id)normalizedGenericHandleForValue:(id)arg1;
 + (id)normalizedEmailAddressHandleForValue:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *normalizedValue; // @synthesize normalizedValue=_normalizedValue;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)isEqualToHandle:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

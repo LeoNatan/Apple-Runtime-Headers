@@ -22,8 +22,8 @@
     id <SBBiometricUnlockBehaviorDelegate> _biometricUnlockBehaviorDelegate;
 }
 
-@property(nonatomic) __weak id <SBBiometricUnlockBehaviorDelegate> biometricUnlockBehaviorDelegate; // @synthesize biometricUnlockBehaviorDelegate=_biometricUnlockBehaviorDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBBiometricUnlockBehaviorDelegate> biometricUnlockBehaviorDelegate; // @synthesize biometricUnlockBehaviorDelegate=_biometricUnlockBehaviorDelegate;
 - (_Bool)isLockScreenShowingDefaultContent;
 - (void)biometricUnlockBehaviorConfigurationDidChange:(id)arg1;
 - (_Bool)handleEvent:(id)arg1;

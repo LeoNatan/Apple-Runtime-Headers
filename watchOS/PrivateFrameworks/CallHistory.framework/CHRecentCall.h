@@ -102,6 +102,7 @@
 + (id)predicateForCallsWithMediaType:(int)arg1;
 + (id)predicateForCallsWithCategory:(unsigned int)arg1;
 + (id)predicateForCallsBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (void).cxx_destruct;
 @property _Bool mobileOriginated; // @synthesize mobileOriginated=_mobileOriginated;
 @property _Bool answered; // @synthesize answered=_answered;
 @property(retain) id <CHPhoneBookManagerProtocol> phoneBookManager; // @synthesize phoneBookManager=_phoneBookManager;
@@ -142,7 +143,6 @@
 @property(copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
 @property(retain, nonatomic) CHHandle *localParticipantHandle; // @synthesize localParticipantHandle=_localParticipantHandle;
 @property(nonatomic) int verificationStatus; // @synthesize verificationStatus=_verificationStatus;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)executeSyncWithResult:(CDUnknownBlockType)arg1;
 - (void)executeSync:(CDUnknownBlockType)arg1;

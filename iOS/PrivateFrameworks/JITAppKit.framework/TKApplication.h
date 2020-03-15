@@ -21,12 +21,12 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)shared;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *overrideCachesDirectoryPath; // @synthesize overrideCachesDirectoryPath=_overrideCachesDirectoryPath;
 @property(copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(nonatomic) __weak id <TKApplicationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) TKRepository *repository; // @synthesize repository=_repository;
 @property(readonly, nonatomic) _Bool ready; // @synthesize ready=_ready;
-- (void).cxx_destruct;
 - (id)viewPathForName:(id)arg1;
 - (id)absoluteURL:(id)arg1;
 - (id)newErrorViewController:(id)arg1;

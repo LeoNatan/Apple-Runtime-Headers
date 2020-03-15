@@ -61,6 +61,7 @@
 + (id)locationWithLocationDetails:(id)arg1 route:(id)arg2;
 + (id)locationWithLocationDetails:(id)arg1;
 + (id)locationDetailsWithLocation:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long speedLimitShieldType; // @synthesize speedLimitShieldType=_speedLimitShieldType;
 @property(nonatomic) _Bool isTunnelProjection; // @synthesize isTunnelProjection=_isTunnelProjection;
 @property(nonatomic) unsigned long long transitID; // @synthesize transitID=_transitID;
@@ -84,7 +85,6 @@
 @property(nonatomic) unsigned int stepIndex; // @synthesize stepIndex=_stepIndex;
 @property(retain, nonatomic) NSData *routeIDData; // @synthesize routeIDData=_routeIDData;
 @property(retain, nonatomic) GEOLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

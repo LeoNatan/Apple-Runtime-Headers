@@ -31,9 +31,9 @@
 + (id)overrideDate;
 + (id)defaultConfiguration;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) SBHClockIconVisualConfiguration *visualConfiguration; // @synthesize visualConfiguration=_visualConfiguration;
 @property(copy, nonatomic) NSString *currentNumberingSystem; // @synthesize currentNumberingSystem=_currentNumberingSystem;
-- (void).cxx_destruct;
 - (void)localeDidChange:(id)arg1;
 - (void)_timerFiredWithComponents:(id)arg1 flags:(unsigned long long)arg2;
 - (void)updateUnanimated;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _scopeBarLayoutFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float scopeBarOpacity; // @synthesize scopeBarOpacity=_scopeBarOpacity;
 @property(nonatomic) unsigned int numberOfScopeTitles; // @synthesize numberOfScopeTitles=_numberOfScopeTitles;
 @property(nonatomic) _Bool hasScopeBar; // @synthesize hasScopeBar=_hasScopeBar;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UISearchBarSearchContainerLayout *neighboringSearchLayout; // @synthesize neighboringSearchLayout=_neighboringSearchLayout;
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic) __weak id <_UISearchBarContainerSublayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)applyLayout;
 - (void)updateLayout;
 - (id)copyWithZone:(struct _NSZone *)arg1;

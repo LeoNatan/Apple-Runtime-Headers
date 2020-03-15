@@ -34,13 +34,13 @@
 
 + (_Bool)_isPrioritizedDataSourceClass:(Class)arg1;
 + (id)_prioritizedDataSourceClasses;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=hasCompletedFirstElementLoad) _Bool completedFirstElementLoad; // @synthesize completedFirstElementLoad=_completedFirstElementLoad;
 @property(readonly, nonatomic) __weak id <REDataSourceManagerObserver> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSArray *currentDataSources; // @synthesize currentDataSources=_currentDataSources;
 @property(retain) NSSet *currentDataSourceIdentifiers; // @synthesize currentDataSourceIdentifiers=_currentDataSourceIdentifiers;
 @property(retain) NSSet *availableDataSourceIdentifiers; // @synthesize availableDataSourceIdentifiers=_availableDataSourceIdentifiers;
 @property(readonly, nonatomic) REDataSourceLoader *loader; // @synthesize loader=_loader;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *disabledDataSources;
 @property(readonly, nonatomic) NSArray *dataSourceControllers;
 @property(readonly, nonatomic) NSSet *unrestirctedDataSourceIdentifiers;

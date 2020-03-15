@@ -16,8 +16,8 @@
     NSOrderedSet *_blueprintItems;
 }
 
-@property(retain, nonatomic) NSOrderedSet *blueprintItems; // @synthesize blueprintItems=_blueprintItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOrderedSet *blueprintItems; // @synthesize blueprintItems=_blueprintItems;
 @property(readonly, nonatomic) NSArray *allPages;
 @property(readonly, nonatomic) id <NUPage> lastPage;
 @property(readonly, nonatomic) id <NUPage> firstPage;

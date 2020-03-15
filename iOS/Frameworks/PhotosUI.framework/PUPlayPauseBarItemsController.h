@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _playbackDuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTimeObservationToken:) id _timeObservationToken; // @synthesize _timeObservationToken=__timeObservationToken;
 @property(retain, nonatomic, setter=_setAVPlayer:) ISWrappedAVPlayer *_avPlayer; // @synthesize _avPlayer=__avPlayer;
 @property(retain, nonatomic, setter=_setVideoPlayer:) PUBrowsingVideoPlayer *_videoPlayer; // @synthesize _videoPlayer=__videoPlayer;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setCurrentPlaybackTime:) CDStruct_1b6d18a9 currentPlaybackTime; // @synthesize currentPlaybackTime=_currentPlaybackTime;
 @property(nonatomic, setter=_setPlayPauseState:) long long playPauseState; // @synthesize playPauseState=_playPauseState;
 @property(retain, nonatomic) PUBrowsingViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)_handleVideoPlayer:(id)arg1 didChange:(id)arg2;
 - (void)_handleViewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;

@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (void)setPressed:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)_updateCornerRadius;

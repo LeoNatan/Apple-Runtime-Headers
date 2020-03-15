@@ -14,9 +14,9 @@
     CalUIDelayedHoverButtonTableCellView *_view;
 }
 
+- (void).cxx_destruct;
 @property BOOL isHovered; // @synthesize isHovered=_isHovered;
 @property __weak CalUIDelayedHoverButtonTableCellView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)updateIsHovered:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 view:(id)arg2;
 

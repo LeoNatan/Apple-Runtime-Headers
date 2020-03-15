@@ -18,13 +18,13 @@
     long long _shareID;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *users; // @synthesize users=_users;
 @property(readonly) CKShare *share; // @synthesize share=_share;
 @property(readonly) NSString *targetOwner; // @synthesize targetOwner=_targetOwner;
 @property(readonly) NSString *rootRecordName; // @synthesize rootRecordName=_rootRecordName;
 @property(readonly) __weak HMDBackingStoreCacheGroup *group; // @synthesize group=_group;
 @property long long shareID; // @synthesize shareID=_shareID;
-- (void).cxx_destruct;
 - (id)dumpDebug;
 - (id)initWithShareID:(long long)arg1 group:(id)arg2 rootRecord:(id)arg3 targetOwner:(id)arg4 share:(id)arg5 users:(id)arg6;
 

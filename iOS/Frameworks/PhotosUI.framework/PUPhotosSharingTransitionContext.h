@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_keyAssetIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *keyAssetIndexPath; // @synthesize keyAssetIndexPath=_keyAssetIndexPath;
 @property(retain, nonatomic) id <PHAssetCollectionDataSource> assetCollectionsDataSource; // @synthesize assetCollectionsDataSource=_assetCollectionsDataSource;
-- (void).cxx_destruct;
 
 @end
 

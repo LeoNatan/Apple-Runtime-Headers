@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     UICellAccessoryManager *_accessoryManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICellAccessoryManager *accessoryManager; // @synthesize accessoryManager=_accessoryManager;
 @property(copy, nonatomic) NSString *badgeText; // @synthesize badgeText=_badgeText;
 @property(nonatomic) unsigned int editingStyle; // @synthesize editingStyle=_editingStyle;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int accessoryTypes; // @synthesize accessoryTypes=_accessoryTypes;
 @property(nonatomic) _Bool editing; // @synthesize editing=_editing;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_updateAccessories;
 - (void)_updateAccessoryMetrics;

@@ -26,8 +26,8 @@
 
 + (void)_registerBlockForWorkspaceCreation:(CDUnknownBlockType)arg1;
 + (id)_sharedWorkspaceIfExists;
-@property(readonly, nonatomic) BSServiceConnectionEndpoint *defaultShellEndpoint; // @synthesize defaultShellEndpoint=_defaultShellEndpoint;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BSServiceConnectionEndpoint *defaultShellEndpoint; // @synthesize defaultShellEndpoint=_defaultShellEndpoint;
 - (id)_queue_scenesClientForEndpoint:(id)arg1 creatingIfNecessary:(_Bool)arg2;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;

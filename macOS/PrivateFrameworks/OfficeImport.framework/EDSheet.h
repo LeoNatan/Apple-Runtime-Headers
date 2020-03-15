@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sheetWithWorkbook:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) __weak EDWorkbook *workbook; // @synthesize workbook=mWorkbook;
 @property(nonatomic) _Bool isDialogSheet; // @synthesize isDialogSheet=mIsDialogSheet;
-- (void).cxx_destruct;
 - (id)description;
 - (id)warnings;
 - (void)applyProcessors;

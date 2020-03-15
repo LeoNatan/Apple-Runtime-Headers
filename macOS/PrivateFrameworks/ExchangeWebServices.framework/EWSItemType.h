@@ -57,6 +57,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSEffectiveRightsType *EffectiveRights; // @synthesize EffectiveRights=_EffectiveRights;
 @property(retain, nonatomic) NSDateComponents *LastModifiedTime; // @synthesize LastModifiedTime=_LastModifiedTime;
 @property(copy, nonatomic) NSString *LastModifiedName; // @synthesize LastModifiedName=_LastModifiedName;
@@ -99,7 +100,6 @@
 @property(retain, nonatomic) EWSFolderIdType *ParentFolderId; // @synthesize ParentFolderId=_ParentFolderId;
 @property(retain, nonatomic) EWSItemIdType *ItemId; // @synthesize ItemId=_ItemId;
 @property(retain, nonatomic) EWSMimeContentType *MimeContent; // @synthesize MimeContent=_MimeContent;
-- (void).cxx_destruct;
 - (void)setValue:(id)arg1 forUnindexedFieldURI:(long long)arg2;
 @property(readonly, copy) NSString *description;
 

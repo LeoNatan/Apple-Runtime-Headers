@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingShowsScrollViewWithButtons;
 + (id)keyPathsForValuesAffectingShowsSegmentedControl;
 + (id)keyPathsForValuesAffectingSelectionWithSegmentedControlPossible;
+- (void).cxx_destruct;
 @property long long controlsType; // @synthesize controlsType=_controlsType;
 @property(nonatomic) __weak id <AVFunctionBarCaptureInputSourceSelectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) id <AVFunctionBarRecordingControlsControllingInternal> captureController; // @synthesize captureController=_captureController;
-- (void).cxx_destruct;
 - (void)_unbindAllObjects;
 - (void)_bindObject:(id)arg1 withBinding:(id)arg2 toObject:(id)arg3 withKeyPath:(id)arg4 options:(id)arg5;
 - (void)_updateSourceSelectionControlStates;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     Class _targetClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class targetClass; // @synthesize targetClass=_targetClass;
 @property(retain, nonatomic) IMWeakReference *weakReference; // @synthesize weakReference=_weakReference;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isKindOfClass:(Class)arg1;
 - (Class)class;

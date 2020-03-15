@@ -40,6 +40,7 @@
 }
 
 + (id)sharedQueue;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *blockQueue; // @synthesize blockQueue=_blockQueue;
 @property(retain) NSObject<OS_dispatch_queue> *progressQueue; // @synthesize progressQueue=_progressQueue;
 @property(retain) NSObject<OS_dispatch_queue> *observationQueue; // @synthesize observationQueue=_observationQueue;
@@ -66,7 +67,6 @@
 @property(retain) NSNumber *downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(retain) NSString *uniqueString; // @synthesize uniqueString=_uniqueString;
 @property __weak NSObject<JXHTTPOperationQueueDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (CDUnknownBlockType)blockForSelector:(SEL)arg1;
 - (void)performDelegateMethod:(SEL)arg1;

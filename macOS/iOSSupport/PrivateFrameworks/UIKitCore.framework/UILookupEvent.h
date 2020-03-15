@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface UILookupEvent : UIEvent
 {
     NSMapTable *_gestureRecognizersByWindow;
-    struct CGPoint _screenLocation;
+    struct CGPoint _sceneReferenceLocation;
 }
 
 - (void).cxx_destruct;

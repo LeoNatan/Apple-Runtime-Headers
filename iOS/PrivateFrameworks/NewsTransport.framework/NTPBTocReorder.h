@@ -24,11 +24,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
 @property(nonatomic) int tocNewIndex; // @synthesize tocNewIndex=_tocNewIndex;
 @property(nonatomic) int tocOldIndex; // @synthesize tocOldIndex=_tocOldIndex;
 @property(retain, nonatomic) NSData *tocExposureId; // @synthesize tocExposureId=_tocExposureId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

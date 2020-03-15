@@ -20,6 +20,8 @@
     _WKActivatedElementInfo *_sourceElementInfo;
 }
 
++ (long long)defaultTabOrder;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRelateToSourceTab; // @synthesize shouldRelateToSourceTab=_shouldRelateToSourceTab;
 @property(retain, nonatomic) _WKActivatedElementInfo *sourceElementInfo; // @synthesize sourceElementInfo=_sourceElementInfo;
 @property(retain, nonatomic) NSUUID *sourceWindowUUID; // @synthesize sourceWindowUUID=_sourceWindowUUID;
@@ -27,7 +29,6 @@
 @property(nonatomic) _Bool isUnifiedFieldNavigation; // @synthesize isUnifiedFieldNavigation=_isUnifiedFieldNavigation;
 @property(nonatomic) long long policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *privacyPreservingDescription;
 @property(readonly, nonatomic) _Bool canUseExistingBlankTab;
 @property(readonly, nonatomic) _Bool opensInNewWindow;

@@ -18,10 +18,10 @@
     id <WBSPerSitePreferenceManagerDefaultsDelegate> _defaultsDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <WBSPerSitePreferenceManagerDefaultsDelegate> defaultsDelegate; // @synthesize defaultsDelegate=_defaultsDelegate;
 @property(nonatomic) __weak id <WBSPerSitePreferenceManagerStorageDelegate> storageDelegate; // @synthesize storageDelegate=_storageDelegate;
 @property(nonatomic) __weak id <WBSPerSitePreferenceManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_validatePreferenceValue:(id)arg1 inPreference:(id)arg2;
 - (void)didUpdatePreference:(id)arg1 toValue:(id)arg2 forDomain:(id)arg3;
 - (void)removePreferenceValuesForDomains:(id)arg1 fromPreference:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

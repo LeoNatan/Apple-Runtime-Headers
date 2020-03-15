@@ -16,11 +16,11 @@
     NSMutableDictionary *_passUniqueIDToUnavailablePaymentApplicationsMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *passUniqueIDToUnavailablePaymentApplicationsMap; // @synthesize passUniqueIDToUnavailablePaymentApplicationsMap=_passUniqueIDToUnavailablePaymentApplicationsMap;
 @property(retain, nonatomic) NSMutableDictionary *passUniqueIDToAcceptedPaymentApplicationsMap; // @synthesize passUniqueIDToAcceptedPaymentApplicationsMap=_passUniqueIDToAcceptedPaymentApplicationsMap;
 @property(retain, nonatomic) NSMutableDictionary *passUniqueIDToCardEntryMap; // @synthesize passUniqueIDToCardEntryMap=_passUniqueIDToCardEntryMap;
 @property(retain, nonatomic) PKPaymentPreferenceContact *billingPreference; // @synthesize billingPreference=_billingPreference;
-- (void).cxx_destruct;
 - (BOOL)_shouldDisplayPaymentApplicationWithAcceptedApplicationsCount:(long long)arg1 unavailableApplicationsCount:(long long)arg2;
 - (id)_unavailablePaymentApplicationsForPass:(id)arg1;
 - (id)_acceptedPaymentApplicationsForPass:(id)arg1;

@@ -15,10 +15,10 @@
     NSMutableSet *_homeItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *homeItems; // @synthesize homeItems=_homeItems;
 @property(retain, nonatomic) HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

@@ -34,6 +34,7 @@
     CDStruct_1b6d18a9 __avPlayerDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAvPlayerDuration:) CDStruct_1b6d18a9 _avPlayerDuration; // @synthesize _avPlayerDuration=__avPlayerDuration;
 @property(nonatomic, setter=_setAvPlayerCurrentTime:) CDStruct_1b6d18a9 _avPlayerCurrentTime; // @synthesize _avPlayerCurrentTime=__avPlayerCurrentTime;
 @property(retain, nonatomic, setter=_setActiveSeekRequest:) PXScrubberSeekRequest *_activeSeekRequest; // @synthesize _activeSeekRequest=__activeSeekRequest;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) double estimatedDuration; // @synthesize estimatedDuration=_estimatedDuration;
 @property(readonly, nonatomic) id <PXVideoScrubberControllerTarget> target; // @synthesize target=_target;
 @property(nonatomic) __weak id <PXVideoScrubberControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateAvPlayerDurationIfNeeded;
 - (void)_invalidateAvPlayerDuration;
 - (void)_updateAvPlayerCurrentTimeIfNeeded;

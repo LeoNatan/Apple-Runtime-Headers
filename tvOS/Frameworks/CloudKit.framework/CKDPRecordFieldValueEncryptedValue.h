@@ -40,6 +40,7 @@
 + (Class)locationListValueType;
 + (Class)stringListValueType;
 + (Class)dateListValueType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *locationListValues; // @synthesize locationListValues=_locationListValues;
 @property(retain, nonatomic) NSMutableArray *stringListValues; // @synthesize stringListValues=_stringListValues;
 @property(retain, nonatomic) NSMutableArray *dateListValues; // @synthesize dateListValues=_dateListValues;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) CKDPDate *dateValue; // @synthesize dateValue=_dateValue;
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(nonatomic) long long signedValue; // @synthesize signedValue=_signedValue;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

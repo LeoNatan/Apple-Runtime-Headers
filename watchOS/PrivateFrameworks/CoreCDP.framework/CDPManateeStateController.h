@@ -17,8 +17,8 @@
     id <CDPDCircleProxy> _circleProxy;
 }
 
-@property(retain, nonatomic) id <CDPDCircleProxy> circleProxy; // @synthesize circleProxy=_circleProxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CDPDCircleProxy> circleProxy; // @synthesize circleProxy=_circleProxy;
 - (_Bool)_checkCircleStatusWithContext:(id)arg1 error:(id *)arg2;
 - (void)_sendNotification:(const char *)arg1 withValue:(unsigned long long)arg2;
 - (void)_didCreateCircleProxy;

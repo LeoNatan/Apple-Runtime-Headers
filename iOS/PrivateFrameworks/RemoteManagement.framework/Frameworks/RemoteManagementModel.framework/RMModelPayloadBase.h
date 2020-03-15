@@ -19,8 +19,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)loadData:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 + (id)load:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
-@property(copy, nonatomic) NSSet *unknownPayloadKeys; // @synthesize unknownPayloadKeys=_unknownPayloadKeys;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *unknownPayloadKeys; // @synthesize unknownPayloadKeys=_unknownPayloadKeys;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -33,7 +33,6 @@
 - (void)serializeIntegerIntoDictionary:(id)arg1 usingKey:(id)arg2 value:(id)arg3 isRequired:(_Bool)arg4 defaultValue:(id)arg5;
 - (void)serializeStringIntoDictionary:(id)arg1 usingKey:(id)arg2 value:(id)arg3 isRequired:(_Bool)arg4 defaultValue:(id)arg5;
 - (void)_serializeItemIntoDictionary:(id)arg1 usingKey:(id)arg2 value:(id)arg3 isRequired:(_Bool)arg4 isDefaultValue:(_Bool)arg5;
-- (id)serializePayloadWithType:(short)arg1;
 - (_Bool)getModelObjectFromDictionary:(id)arg1 usingKey:(id)arg2 classType:(Class)arg3 isRequired:(_Bool)arg4 defaultValue:(id)arg5 serializationType:(short)arg6 payloadValue:(id *)arg7 error:(id *)arg8;
 - (_Bool)loadDictionaryFromDictionary:(id)arg1 usingKey:(id)arg2 forKeyPath:(id)arg3 classType:(Class)arg4 isRequired:(_Bool)arg5 defaultValue:(id)arg6 serializationType:(short)arg7 error:(id *)arg8;
 - (_Bool)loadArrayFromDictionary:(id)arg1 usingKey:(id)arg2 forKeyPath:(id)arg3 classType:(Class)arg4 nested:(_Bool)arg5 isRequired:(_Bool)arg6 defaultValue:(id)arg7 serializationType:(short)arg8 error:(id *)arg9;
@@ -45,9 +44,9 @@
 - (_Bool)loadIntegerFromDictionary:(id)arg1 usingKey:(id)arg2 forKeyPath:(id)arg3 isRequired:(_Bool)arg4 defaultValue:(id)arg5 error:(id *)arg6;
 - (_Bool)loadStringFromDictionary:(id)arg1 usingKey:(id)arg2 forKeyPath:(id)arg3 isRequired:(_Bool)arg4 defaultValue:(id)arg5 error:(id *)arg6;
 - (_Bool)_loadObjectOfClass:(Class)arg1 fromDictionary:(id)arg2 usingKey:(id)arg3 isRequired:(_Bool)arg4 defaultValue:(id)arg5 payloadValue:(id *)arg6 error:(id *)arg7;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 - (id)serializeAsDataWithType:(short)arg1 error:(id *)arg2;
 - (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 - (id)createNestedObjectWithClass:(Class)arg1 serializationType:(short)arg2 parentKey:(id)arg3 payload:(id)arg4 error:(id *)arg5;
 - (void)mergeUnknownKeysFrom:(id)arg1 parentKey:(id)arg2;
 

@@ -20,12 +20,12 @@
 + (id)buildRequiredOnlyWithOrganizationName:(id)arg1;
 + (id)buildWithOrganizationName:(id)arg1 withOrganizationAddress:(id)arg2 withOrganizationPhone:(id)arg3 withOrganizationEmail:(id)arg4 withOrganizationMagic:(id)arg5;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *statusOrganizationMagic; // @synthesize statusOrganizationMagic=_statusOrganizationMagic;
 @property(copy, nonatomic) NSString *statusOrganizationEmail; // @synthesize statusOrganizationEmail=_statusOrganizationEmail;
 @property(copy, nonatomic) NSString *statusOrganizationPhone; // @synthesize statusOrganizationPhone=_statusOrganizationPhone;
 @property(copy, nonatomic) NSString *statusOrganizationAddress; // @synthesize statusOrganizationAddress=_statusOrganizationAddress;
 @property(copy, nonatomic) NSString *statusOrganizationName; // @synthesize statusOrganizationName=_statusOrganizationName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

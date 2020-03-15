@@ -17,10 +17,10 @@
 }
 
 + (struct CGSize)performLayoutWithLayoutInput:(CDStruct_8c65c4f4)arg1 layoutOutput:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets layoutInsets; // @synthesize layoutInsets=_layoutInsets;
 - (void)setChildren:(id)arg1;
 @property(readonly, nonatomic) NSArray *children;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (struct CGSize)performLayout;
 

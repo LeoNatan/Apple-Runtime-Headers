@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WBSHistoryVisit *associatedHistoryVisit; // @synthesize associatedHistoryVisit=_associatedHistoryVisit;
 @property(retain, nonatomic) WBSHistoryItem *associatedHistoryItem; // @synthesize associatedHistoryItem=_associatedHistoryItem;
 @property(readonly, nonatomic) double visitTime; // @synthesize visitTime=_visitTime;
 @property(readonly, copy, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
 - (unsigned long long)hash;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

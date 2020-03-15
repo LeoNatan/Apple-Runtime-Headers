@@ -16,9 +16,9 @@
 }
 
 + (_Bool)isItemNotFoundError:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) IDSCKDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)_recordID;
 - (id)_recordFromItem:(id)arg1;
 - (id)_itemFromRecord:(id)arg1 error:(id *)arg2;

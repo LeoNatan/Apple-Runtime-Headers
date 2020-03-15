@@ -14,9 +14,9 @@
     NSMutableArray *_iconViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *iconViews; // @synthesize iconViews=_iconViews;
 @property(retain, nonatomic) NSArray *iconDescriptors; // @synthesize iconDescriptors=_iconDescriptors;
-- (void).cxx_destruct;
 - (void)_prepareIconArray;
 - (void)_addIconWithDescriptor:(id)arg1;
 - (void)_addIconNamed:(id)arg1;

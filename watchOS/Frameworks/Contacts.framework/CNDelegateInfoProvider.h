@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     FAFamilyCircle *_familyCircle;
 }
 
-@property(readonly, nonatomic) FAFamilyCircle *familyCircle; // @synthesize familyCircle=_familyCircle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FAFamilyCircle *familyCircle; // @synthesize familyCircle=_familyCircle;
 - (id)contactStoreWithScope:(id)arg1 error:(id *)arg2;
 @property(readonly, copy) NSArray *availableScopes;
 - (id)description;

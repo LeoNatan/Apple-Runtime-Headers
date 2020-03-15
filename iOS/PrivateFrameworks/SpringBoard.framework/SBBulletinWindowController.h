@@ -23,11 +23,11 @@
 
 + (_Bool)_isSecure;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_wantsKeyWindow, setter=_setWantsKeyWindow:) _Bool wantsKeyWindow; // @synthesize wantsKeyWindow=_wantsKeyWindow;
 @property(nonatomic, getter=isWindowAboveAssistant) _Bool windowAboveAssistant; // @synthesize windowAboveAssistant=_aboveAssistant;
 @property(readonly, nonatomic) UIWindow *window; // @synthesize window=_bulletinWindow;
 @property(readonly, nonatomic) UIViewController *rootViewController; // @synthesize rootViewController=_rootVC;
-- (void).cxx_destruct;
 - (_Bool)_hasKeyWindowClients;
 - (void)updateKeyWindowStatusIfNecessary;
 - (void)removeBusyClient:(id)arg1;

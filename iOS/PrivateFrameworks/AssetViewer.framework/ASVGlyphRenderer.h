@@ -40,9 +40,9 @@
     float _a_vel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float a_vel; // @synthesize a_vel=_a_vel;
 @property(nonatomic) float rotationAngleY; // @synthesize rotationAngleY=_rotationAngleY;
-- (void).cxx_destruct;
 - (void)resetData;
 - (void)setOrientationAngle:(float)arg1;
 - (void)drawWithTimeDelta:(double)arg1 drawable:(id)arg2 commandBuffer:(id)arg3;

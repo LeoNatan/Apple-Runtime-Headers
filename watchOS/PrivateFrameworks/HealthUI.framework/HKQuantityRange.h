@@ -14,9 +14,9 @@
     HKQuantity *_maximum;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKQuantity *maximum; // @synthesize maximum=_maximum;
 @property(readonly, nonatomic) HKQuantity *minimum; // @synthesize minimum=_minimum;
-- (void).cxx_destruct;
 - (_Bool)containsQuantityInclusive:(id)arg1;
 - (id)init;
 - (id)initWithMinimum:(id)arg1 maximum:(id)arg2;

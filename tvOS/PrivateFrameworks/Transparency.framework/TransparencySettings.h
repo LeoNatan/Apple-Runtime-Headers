@@ -18,8 +18,8 @@
 + (double)defaultNetworkTimeout;
 + (_Bool)allowsInternalSecurityPolicies;
 + (_Bool)getBool:(id)arg1;
-@property(retain) NSDictionary *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *settings; // @synthesize settings=_settings;
 
 @end
 

@@ -15,10 +15,10 @@
     NSArray *_columnWidths;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *columnWidths; // @synthesize columnWidths=_columnWidths;
 @property(copy, nonatomic) NSArray *templateViewPaddings; // @synthesize templateViewPaddings=_templateViewPaddings;
 @property(copy, nonatomic) NSArray *templateViews; // @synthesize templateViews=_templateViews;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)_paddingForTemplateViewAtIndex:(unsigned long long)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

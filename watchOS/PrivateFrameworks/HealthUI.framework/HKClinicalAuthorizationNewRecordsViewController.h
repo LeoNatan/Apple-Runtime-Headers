@@ -22,12 +22,12 @@
     int _authorizationMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int authorizationMode; // @synthesize authorizationMode=_authorizationMode;
 @property(readonly, nonatomic) HKClinicalAuthorizationDisplayController *displayController; // @synthesize displayController=_displayController;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <HKHealthPrivacyServicePromptControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HKClinicalAuthorizationSequenceContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentContentSizeCategory;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

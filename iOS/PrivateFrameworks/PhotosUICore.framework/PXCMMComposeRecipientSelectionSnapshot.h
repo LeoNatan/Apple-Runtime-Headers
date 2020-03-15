@@ -15,9 +15,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *selectedRecipients; // @synthesize selectedRecipients=_selectedRecipients;
 @property(readonly, copy, nonatomic) NSArray *selectedComposeRecipients; // @synthesize selectedComposeRecipients=_selectedComposeRecipients;
-- (void).cxx_destruct;
 - (id)initWithSelectedComposeRecipients:(id)arg1 selectedRecipients:(id)arg2;
 - (id)init;
 

@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 
 + (id)timePeriodWithSample:(id)arg1;
 + (id)timePeriodWithStartDate:(id)arg1 endDate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;

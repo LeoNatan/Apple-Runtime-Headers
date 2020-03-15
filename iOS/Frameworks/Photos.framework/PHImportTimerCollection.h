@@ -17,8 +17,8 @@
     unsigned char _aspectRatio;
 }
 
-@property unsigned char aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 - (void).cxx_destruct;
+@property unsigned char aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 - (double)duration:(unsigned char)arg1;
 - (void)processTimesOfType:(unsigned char)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)stopTiming:(id)arg1;

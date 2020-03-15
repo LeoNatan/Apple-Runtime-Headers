@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     VSRemoteNotifier *_remoteNotifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSRemoteNotifier *remoteNotifier; // @synthesize remoteNotifier=_remoteNotifier;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
-- (void).cxx_destruct;
 - (void)removeAllVouchers;
 @property(readonly, copy, nonatomic) NSArray *unredeemedVouchers;
 - (void)setUnredeemedVouchers:(id)arg1;

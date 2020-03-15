@@ -13,8 +13,8 @@
     id <NSCopying> value;
 }
 
-@property(copy, nonatomic) id <NSCopying> value; // @synthesize value;
 - (void).cxx_destruct;
+@property(copy, nonatomic) id <NSCopying> value; // @synthesize value;
 - (id)initWithName:(id)arg1 value:(id)arg2;
 
 @end

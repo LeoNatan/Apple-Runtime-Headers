@@ -25,13 +25,13 @@
     NSString *_provisionalEnrollmentText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *provisionalEnrollmentText; // @synthesize provisionalEnrollmentText=_provisionalEnrollmentText;
 @property(copy, nonatomic) NSArray *deviceInformationText; // @synthesize deviceInformationText=_deviceInformationText;
 @property(copy, nonatomic) NSString *supervisionText; // @synthesize supervisionText=_supervisionText;
 @property(copy, nonatomic) NSString *internalLegalText; // @synthesize internalLegalText=_internalLegalText;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings;
 @property(nonatomic) double strength; // @synthesize strength=_strength;
-- (void).cxx_destruct;
 - (double)_spacingBetweenNonLegalLabels;
 - (double)_lineHeightOfNonLegalLabels;
 - (double)_nonLegalTextParagraphSpacing;

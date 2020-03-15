@@ -239,6 +239,7 @@
 - (void)_enableItem:(id)arg1;
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (void)_setAllowsKeyboardAdjustedShortcuts:(BOOL)arg1;
+- (void)recordKeyboardShortcutEvent:(id)arg1 withKeyEquivalent:(id)arg2 modifierMask:(unsigned long long)arg3 title:(id)arg4;
 - (BOOL)_allowsKeyboardAdjustedShortcuts;
 - (void)_setAvoidUsingCache:(BOOL)arg1;
 - (void)_performActionWithHighlightingForItemAtIndex:(long long)arg1;

@@ -14,9 +14,9 @@
     ABCardViewStyleProvider *_styleProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(readonly, nonatomic) ABCardViewStyle *style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)targetForSelector:(SEL)arg1;

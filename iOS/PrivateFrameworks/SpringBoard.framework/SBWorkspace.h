@@ -18,9 +18,9 @@
 }
 
 + (id)mainWorkspace;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBWorkspaceTransaction *currentTransaction; // @synthesize currentTransaction=_currentTransaction;
 @property(readonly, nonatomic) FBWorkspaceEventQueue *eventQueue; // @synthesize eventQueue=_eventQueue;
-- (void).cxx_destruct;
 - (_Bool)_executeTransitionRequest:(id)arg1 options:(unsigned long long)arg2 validator:(CDUnknownBlockType)arg3;
 - (id)idleTimerProvider:(id)arg1 didProposeBehavior:(id)arg2 forReason:(id)arg3;
 - (id)coordinatorRequestedIdleTimerBehavior:(id)arg1;

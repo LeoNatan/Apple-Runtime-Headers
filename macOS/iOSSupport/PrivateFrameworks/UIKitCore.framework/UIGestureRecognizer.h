@@ -13,17 +13,19 @@
 #import <UIKitCore/_UILookupable-Protocol.h>
 #import <UIKitCore/_UIScrollable-Protocol.h>
 #import <UIKitCore/_UITouchable-Protocol.h>
+#import <UIKitCore/_UITransformable-Protocol.h>
 
 @class NSArray, NSMutableArray, NSMutableSet, NSObservation, NSObservationSource, NSSet, NSString, UIGestureEnvironment, UIView, _UIForceLevelClassifier, _UITouchForceObservable;
 @protocol UIGestureRecognizerDelegate;
 
-@interface UIGestureRecognizer : NSObject <_UIForceLevelClassifierDelegate, _UIExcludable, _UIScrollable, _UIHoverable, _UILookupable, _UITouchable, _UIDraggable>
+@interface UIGestureRecognizer : NSObject <_UIForceLevelClassifierDelegate, _UIExcludable, _UILookupable, _UIScrollable, _UIHoverable, _UITransformable, _UITouchable, _UIDraggable>
 {
     struct {
         unsigned int delegateShouldBegin:1;
         unsigned int delegateCanPrevent:1;
         unsigned int delegateCanBePrevented:1;
         unsigned int delegateShouldRecognizeSimultaneously:1;
+        unsigned int delegateShouldReceiveEvent:1;
         unsigned int delegateShouldReceiveTouch:1;
         unsigned int delegateShouldReceivePress:1;
         unsigned int delegateShouldRequireFailure:1;
@@ -33,6 +35,7 @@
         unsigned int privateDelegateCanPrevent:1;
         unsigned int privateDelegateCanBePrevented:1;
         unsigned int privateDelegateShouldRecognizeSimultaneously:1;
+        unsigned int privateDelegateShouldReceiveEvent:1;
         unsigned int privateDelegateShouldReceiveTouch:1;
         unsigned int privateDelegateShouldReceivePress:1;
         unsigned int privateDelegateShouldRequireFailure:1;
@@ -64,6 +67,14 @@
         unsigned int isObservingGesture:1;
         unsigned int didCheckForcePressShouldBegin:1;
         unsigned int canSendForcePressAction:1;
+        unsigned int queriedShouldReceiveTouchesEvent:1;
+        unsigned int shouldReceiveTouchesEvent:1;
+        unsigned int queriedDelegateShouldReceiveTouchesEvent:1;
+        unsigned int delegateShouldReceiveTouchesEvent:1;
+        unsigned int queriedShouldReceivePressesEvent:1;
+        unsigned int shouldReceivePressesEvent:1;
+        unsigned int queriedDelegateShouldReceivePressesEvent:1;
+        unsigned int delegateShouldReceivePressesEvent:1;
     } _gestureFlags;
     NSMutableArray *_targets;
     NSMutableArray *_delayedTouches;
@@ -85,6 +96,7 @@
     NSMutableSet *_failureRequirements;
     NSMutableSet *_failureDependents;
     NSMutableSet *_activeEvents;
+    unsigned long long _inputPrecision;
     BOOL _analyticsGestureHandled;
     BOOL _keepTouchesOnContinuation;
     id <UIGestureRecognizerDelegate> _delegate;
@@ -98,23 +110,27 @@
 + (BOOL)_shouldUseLinearForceLevelClassifier;
 + (BOOL)_shouldSupportStylusTouches;
 + (BOOL)_shouldDefaultToTouches;
+- (void).cxx_destruct;
 @property(nonatomic) UIGestureEnvironment *gestureEnvironment; // @synthesize gestureEnvironment=_gestureEnvironment;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSArray *allowedPressTypes; // @synthesize allowedPressTypes=_allowedPressTypes;
 @property(nonatomic) __weak id <UIGestureRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setKeepTouchesOnContinuation:) BOOL _keepTouchesOnContinuation; // @synthesize _keepTouchesOnContinuation;
-- (void).cxx_destruct;
 - (BOOL)_analyticsIsGestureHandled;
 - (void)_setAnalyticsGestureHandled:(BOOL)arg1;
 - (id)_defaultAllowedPressTypes;
 - (id)_defaultAllowedTouchTypes;
+- (BOOL)_hasAllowedPressTypes;
 @property(copy, nonatomic) NSArray *allowedTouchTypes;
+- (BOOL)_hasAllowedTouchTypes;
 - (void)_invalidateInitialTouchType;
 - (void)_setInitialTouchType:(long long)arg1;
 - (BOOL)_touchTypeIsAllowed:(id)arg1;
 - (struct CGPoint)locationOfTouch:(unsigned long long)arg1 inView:(id)arg2;
 @property(readonly, nonatomic) unsigned long long numberOfTouches;
 - (struct CGPoint)locationInView:(id)arg1;
+- (struct CGPoint)_convertPoint:(struct CGPoint)arg1 toSceneReferenceCoordinatesFromView:(id)arg2;
+- (struct CGPoint)_convertPoint:(struct CGPoint)arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
 - (BOOL)_affectedByGesture:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2 includingDependencies:(BOOL)arg3;
@@ -144,6 +160,7 @@
 - (BOOL)_forceRequirementSatisfied;
 - (BOOL)_shouldDelayUntilForceLevelRequirementIsMet;
 - (BOOL)_inForceCapableEnvironment;
+- (unsigned long long)_inputPrecision;
 - (void)_setEventObserving:(BOOL)arg1;
 - (BOOL)_isEventObserving;
 - (BOOL)_canExcludeWithActiveRequirements;
@@ -167,26 +184,45 @@
 - (BOOL)_delegateCanPreventGestureRecognizer:(id)arg1;
 - (BOOL)_delegateCanBePreventedByGestureRecognizer:(id)arg1;
 - (void)_addActiveEvent:(id)arg1;
+- (void)_removeActiveTouches:(id)arg1;
+- (void)_addActiveTouches:(id)arg1;
 - (id)_beganObservable;
+- (void)_updateInputPrecision;
+- (unsigned long long)_inputPrecisionForEvents:(id)arg1;
 - (BOOL)_shouldBegin;
-- (BOOL)_shouldReceivePress:(id)arg1;
 - (BOOL)_delegateShouldReceivePress:(id)arg1;
+- (BOOL)_delegateShouldReceivePressesEvent:(id)arg1;
 - (BOOL)_delegateShouldReceiveTouch:(id)arg1;
+- (BOOL)_delegateShouldReceiveTouchesEvent:(id)arg1;
+- (BOOL)_delegateShouldReceiveEvent:(id)arg1;
 - (id)_gatherViewsToQueryForDelegateCall;
 - (void)_hoverCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_hoverExited:(id)arg1 withEvent:(id)arg2;
 - (void)_hoverMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_hoverEntered:(id)arg1 withEvent:(id)arg2;
+- (void)__hoverCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)__hoverExited:(id)arg1 withEvent:(id)arg2;
+- (void)__hoverMoved:(id)arg1 withEvent:(id)arg2;
+- (void)__hoverEntered:(id)arg1 withEvent:(id)arg2;
 - (long long)_defaultAllowedMouseButtons;
 - (BOOL)_shouldReceiveTouch:(id)arg1 forEvent:(id)arg2 recognizerView:(id)arg3;
-@property(readonly, nonatomic, getter=_modifierFlags) long long modifierFlags;
+- (long long)_modifierFlags;
+@property(readonly, nonatomic) long long modifierFlags;
 - (void)_lookupChangedWithEvent:(id)arg1;
 - (BOOL)_shouldReceiveLookupEvent:(id)arg1;
 - (BOOL)_wantsHoverEvents;
+- (void)_transformChangedWithEvent:(id)arg1;
+- (BOOL)_shouldReceiveTransformEvent:(id)arg1;
 - (void)_scrollingChangedWithEvent:(id)arg1;
 - (BOOL)_shouldReceiveScrollEvent:(id)arg1;
 - (BOOL)_shouldReceiveDragEvent:(id)arg1;
+- (BOOL)_shouldReceivePress:(id)arg1;
+- (BOOL)_shouldReceivePress:(id)arg1 forPressesEvent:(id)arg2;
+- (BOOL)_shouldReceivePressesEvent:(id)arg1;
 - (BOOL)_shouldReceiveTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)_shouldReceiveTouchesEvent:(id)arg1;
+- (BOOL)_shouldReceiveEvent:(id)arg1;
+- (BOOL)shouldReceiveEvent:(id)arg1;
 - (long long)_depthFirstViewCompare:(id)arg1;
 - (BOOL)_isActive;
 - (BOOL)_isRecognized;
@@ -214,6 +250,7 @@
 - (id)_activeTouchesForEvent:(id)arg1;
 - (id)_activePressesEvent;
 - (id)_activeTouchesEvent;
+- (id)_activeEventOfType:(long long)arg1;
 - (id)_activeEvents;
 - (id)_allActiveTouches;
 - (void)ignorePress:(id)arg1 forEvent:(id)arg2;
@@ -263,6 +300,8 @@
 @property(readonly, nonatomic) UIView *view;
 - (id)stringValue;
 - (void)_resetGestureRecognizer;
+- (void)_resetShouldReceivePressesEvent;
+- (void)_resetShouldReceiveTouchesEvent;
 - (void)reset;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;

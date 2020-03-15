@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     NSArray *adjustedPhotoFilters;
     unsigned long shutterSound;
     unsigned long long userInitiatedPhotoRequestTime;
+    _Bool autoDeferredProcessingEnabled;
     NSURL *HEICSFileURL;
     NSURL *videoFileURL;
     NSDictionary *videoFormat;

@@ -18,11 +18,11 @@
 
 + (id)fromProto:(id)arg1;
 + (id)toProto:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double accessDate; // @synthesize accessDate=_accessDate;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 size:(unsigned long long)arg2 state:(unsigned long long)arg3 accessDate:(id)arg4;
 
 @end

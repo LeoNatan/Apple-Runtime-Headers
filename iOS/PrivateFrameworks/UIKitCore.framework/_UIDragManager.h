@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initializeDraggingSystem;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIScreen *screen; // @synthesize screen=_screen;
 @property(copy, nonatomic) NSArray *dragSessionDestinations; // @synthesize dragSessionDestinations=_dragSessionDestinations;
 @property(copy, nonatomic) NSArray *dragSessionSources; // @synthesize dragSessionSources=_dragSessionSources;
-- (void).cxx_destruct;
 - (void)sessionDestinationDidEnd:(id)arg1;
 - (id)dragDestinationWithEvent:(id)arg1;
 - (id)sessionSourceWithIdentifier:(unsigned int)arg1;

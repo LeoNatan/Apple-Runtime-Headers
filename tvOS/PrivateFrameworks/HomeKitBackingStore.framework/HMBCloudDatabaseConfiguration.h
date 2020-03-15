@@ -20,12 +20,12 @@
     HMFScheduler *_apsRegistrationScheduler;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFScheduler *apsRegistrationScheduler; // @synthesize apsRegistrationScheduler=_apsRegistrationScheduler;
 @property(copy) CKOperationConfiguration *defaultOperationConfiguration; // @synthesize defaultOperationConfiguration=_defaultOperationConfiguration;
 @property(getter=isManateeContainer) _Bool manateeContainer; // @synthesize manateeContainer=_manateeContainer;
 @property(copy) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(readonly, copy) CKContainerID *containerID; // @synthesize containerID=_containerID;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)attributeDescriptions;

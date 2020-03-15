@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)log;
 - (void)migrateOrphanPropertiesForEntityNamed:(id)arg1;
 - (void)migrateOrphanProperties;
 - (void)migrate;

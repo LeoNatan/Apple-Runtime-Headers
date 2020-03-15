@@ -15,8 +15,8 @@
     CRTimestamp *_timestamp;
 }
 
-@property(retain, nonatomic) CRTimestamp *timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CRTimestamp *timestamp; // @synthesize timestamp=_timestamp;
 - (id)description;
 - (void)walkGraph:(CDUnknownBlockType)arg1;
 - (id)deltaSince:(id)arg1 in:(id)arg2;

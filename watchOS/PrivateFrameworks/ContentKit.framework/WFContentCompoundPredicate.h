@@ -19,9 +19,9 @@
 + (id)notPredicateWithSubpredicate:(id)arg1;
 + (id)orPredicateWithSubpredicates:(id)arg1;
 + (id)andPredicateWithSubpredicates:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *subpredicates; // @synthesize subpredicates=_subpredicates;
 @property(readonly) unsigned int compoundPredicateType; // @synthesize compoundPredicateType=_compoundPredicateType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *containedProperties;
 - (void)evaluateWithObject:(id)arg1 propertySubstitutor:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)description;

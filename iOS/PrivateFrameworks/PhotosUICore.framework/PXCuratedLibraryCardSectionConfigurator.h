@@ -13,8 +13,8 @@
     PXCuratedLibraryCardSectionBodyLayoutSpec *_cardSpec;
 }
 
-@property(readonly, nonatomic) PXCuratedLibraryCardSectionBodyLayoutSpec *cardSpec; // @synthesize cardSpec=_cardSpec;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXCuratedLibraryCardSectionBodyLayoutSpec *cardSpec; // @synthesize cardSpec=_cardSpec;
 - (void)configureAssetSectionLayout:(id)arg1;
 - (struct UIEdgeInsets)containerInsets;
 - (id)createCardSpecWithExtendedTraitCollection:(id)arg1;

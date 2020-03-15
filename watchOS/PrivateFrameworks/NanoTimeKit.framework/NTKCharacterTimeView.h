@@ -30,8 +30,8 @@
     _Bool _frozen;
 }
 
-@property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 - (void)_setTritiumProgress:(float)arg1 updateHandPositions:(_Bool)arg2 goingIntoTritium:(_Bool)arg3;
 - (void)tritium_setBoneDampingMultiplier:(float)arg1;
 - (void)tritium_setNumbersDimmedFraction:(float)arg1;

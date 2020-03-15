@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) AMSDeviceMessengerFilter *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 
 @end
 

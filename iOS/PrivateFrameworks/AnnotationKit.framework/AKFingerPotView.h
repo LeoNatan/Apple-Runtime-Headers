@@ -14,9 +14,9 @@
     UIImageView *_highlight;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *highlight; // @synthesize highlight=_highlight;
 @property(retain, nonatomic) UIImageView *selectedOutline; // @synthesize selectedOutline=_selectedOutline;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;

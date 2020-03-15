@@ -19,10 +19,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *scrollTestActiveSubtest; // @synthesize scrollTestActiveSubtest=_scrollTestActiveSubtest;
 @property(copy, nonatomic) NSString *currentTestName; // @synthesize currentTestName=_currentTestName;
 @property(readonly, nonatomic, getter=_idleTimerDisableAssertions) NSMutableDictionary *idleTimerDisableAssertions; // @synthesize idleTimerDisableAssertions=_idleTimerDisableAssertions;
-- (void).cxx_destruct;
 - (void)_installTestEndedHandler:(CDUnknownBlockType)arg1;
 - (void)_handleTestEnded;
 - (void)_prepareForTestStartup:(id)arg1;

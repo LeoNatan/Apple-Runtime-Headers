@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     id <SFReaderContext> _readerContext;
 }
 
-@property(readonly, nonatomic) id <SFReaderContext> readerContext; // @synthesize readerContext=_readerContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SFReaderContext> readerContext; // @synthesize readerContext=_readerContext;
 - (void)_fontDownloadProgressDidChange:(id)arg1;
 - (void)_fontDownloadDidFail:(id)arg1;
 - (void)_fontDownloadDidFinish:(id)arg1;

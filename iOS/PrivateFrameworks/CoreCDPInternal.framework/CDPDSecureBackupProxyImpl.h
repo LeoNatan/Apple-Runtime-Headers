@@ -15,8 +15,8 @@
     CDPContext *_cdpContext;
 }
 
-@property(retain, nonatomic) CDPContext *cdpContext; // @synthesize cdpContext=_cdpContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CDPContext *cdpContext; // @synthesize cdpContext=_cdpContext;
 - (void)uncacheAllSecrets;
 - (void)cacheRecoveryKey:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (_Bool)disableWithInfo:(id)arg1 error:(id *)arg2;

@@ -48,12 +48,12 @@
 + (id)hd_currentDeviceSourceName;
 + (id)hd_getNameForSource:(id)arg1;
 + (id)hd_sourceForClient:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_options, setter=_setOptions:) unsigned long long options; // @synthesize options=_options;
 @property(copy, nonatomic, getter=_productType, setter=_setProductType:) NSString *productType; // @synthesize productType=_productType;
 @property(nonatomic, getter=_isLocalDevice, setter=_setLocalDevice:) BOOL localDevice; // @synthesize localDevice=_localDevice;
 @property(retain, nonatomic, getter=_sourceID, setter=_setSourceID:) NSNumber *sourceID; // @synthesize sourceID=_sourceID;
 @property(copy, nonatomic, getter=_owningAppBundleIdentifier, setter=_setOwningAppBundleIdentifier:) NSString *owningAppBundleIdentifier; // @synthesize owningAppBundleIdentifier=_owningAppBundleIdentifier;
-- (void).cxx_destruct;
 - (BOOL)_isConnectedGymSource;
 - (BOOL)_hasFirstPartyBundleID;
 - (BOOL)_isAppleDevice;

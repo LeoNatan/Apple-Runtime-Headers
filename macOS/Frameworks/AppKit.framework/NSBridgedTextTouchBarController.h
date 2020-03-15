@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSString *_lastCandidateString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *lastCandidateString; // @synthesize lastCandidateString=_lastCandidateString;
 @property unsigned long long candidateSequenceNumber; // @synthesize candidateSequenceNumber=_candidateSequenceNumber;
 @property BOOL pendingCandidateUpdate; // @synthesize pendingCandidateUpdate=_pendingCandidateUpdate;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak NSView<NSTextInputClient> *inputView; // @synthesize inputView=_inputView;
 @property __weak NSTextInputContext *textInputContext; // @synthesize textInputContext=_textInputContext;
-- (void).cxx_destruct;
 - (void)removeTextTouchBar;
 - (void)displayTextTouchBar;
 - (void)_quickTypeDidChange:(id)arg1;

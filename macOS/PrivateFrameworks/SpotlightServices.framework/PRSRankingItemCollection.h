@@ -16,11 +16,11 @@
     NSDictionary *_mapResultIdToProtectionClass;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *mapResultIdToProtectionClass; // @synthesize mapResultIdToProtectionClass=_mapResultIdToProtectionClass;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property unsigned long long countOfVisibleResults; // @synthesize countOfVisibleResults=_countOfVisibleResults;
 @property(retain) NSArray *arrayOfRankingItems; // @synthesize arrayOfRankingItems=_arrayOfRankingItems;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

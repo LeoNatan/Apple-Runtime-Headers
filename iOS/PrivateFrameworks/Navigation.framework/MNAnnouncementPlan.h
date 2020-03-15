@@ -18,12 +18,12 @@
 }
 
 + (double)desiredTimeGapBetweenEvent:(id)arg1 andEvent:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double speed; // @synthesize speed=_speed;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
 @property(retain, nonatomic) NSArray *events; // @synthesize events=_events;
 @property(nonatomic) __weak MNGuidanceEventManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) NSMutableArray *plannedEvents; // @synthesize plannedEvents=_plannedEvents;
-- (void).cxx_destruct;
 - (void)sortEvents;
 - (id)nextConflict;
 - (id)description;

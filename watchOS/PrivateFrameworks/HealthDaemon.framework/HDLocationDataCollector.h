@@ -13,17 +13,17 @@
 
 @interface HDLocationDataCollector : NSObject <HDLocationManagerObserver>
 {
-    NSObject<OS_dispatch_queue> *_queue;
     HDProfile *_profile;
-    int _state;
+    NSUUID *_workoutUUID;
+    unsigned int _activityType;
     id <HDSampleSaving> _sampleSavingDelegate;
+    NSObject<OS_dispatch_queue> *_queue;
+    int _state;
     int _lastStatus;
     HKWorkoutRoute *_route;
     _Bool _didSaveLocationData;
     double _lastPausedTime;
     unsigned int _elevationGain;
-    unsigned int _activityType;
-    NSUUID *_workoutUUID;
     HDAssertion *_locationUpdatingAssertion;
     unsigned int _validLocationsCount;
     unsigned int _skippedLocationsCount;
@@ -31,9 +31,9 @@
     CMElevation *_elevation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CMElevation *elevation; // @synthesize elevation=_elevation;
 @property(nonatomic) __weak id <HDLocationEventDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)healthLocationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)healthLocationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)healthLocationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;

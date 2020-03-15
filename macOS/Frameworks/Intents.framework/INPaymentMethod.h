@@ -26,11 +26,11 @@
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
 + (id)applePayPaymentMethod;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *identificationHint; // @synthesize identificationHint=_identificationHint;
 @property(copy) INImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

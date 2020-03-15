@@ -25,6 +25,7 @@
     CDStruct_e99c65f7 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOLatLng *locationHint; // @synthesize locationHint=_locationHint;
 @property(retain, nonatomic) MSPTransitStorageArtwork *alternateArtwork; // @synthesize alternateArtwork=_alternateArtwork;
 @property(retain, nonatomic) MSPTransitStorageSystem *system; // @synthesize system=_system;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSString *lineColorString; // @synthesize lineColorString=_lineColorString;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;

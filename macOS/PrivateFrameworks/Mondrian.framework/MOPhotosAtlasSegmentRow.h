@@ -14,9 +14,9 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(readonly, retain, nonatomic) MOPhotosAtlasSegment *segment; // @synthesize segment=_segment;
-- (void).cxx_destruct;
 - (struct CGRect)imageContentsRect;
 - (id)imageRef;
 - (id)invalidIndexes;

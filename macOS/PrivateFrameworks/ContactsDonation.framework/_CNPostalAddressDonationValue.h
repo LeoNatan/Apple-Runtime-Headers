@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, copy, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
-- (void).cxx_destruct;
 - (void)updatePropertyListRepresentation:(id)arg1;
 - (void)acceptDonationValueVisitor:(id)arg1;
 - (unsigned long long)hash;

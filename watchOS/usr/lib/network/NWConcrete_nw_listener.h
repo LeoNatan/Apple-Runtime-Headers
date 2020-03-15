@@ -37,6 +37,8 @@ __attribute__((visibility("hidden")))
     NSObject<OS_xpc_object> *inactive_agent_dictionaries;
     NSObject<OS_xpc_object> *triggered_agents;
     NSObject<OS_nw_parameters> *current_derived_parameters;
+    NSObject<OS_nw_path_evaluator> *advertise_evaluator;
+    NSObject<OS_nw_path> *advertise_path;
     NSObject<OS_nw_advertise_descriptor> *advertise_descriptor;
     CDUnknownBlockType advertised_endpoint_changed_handler;
     struct _DNSServiceRef_t *dnsref;

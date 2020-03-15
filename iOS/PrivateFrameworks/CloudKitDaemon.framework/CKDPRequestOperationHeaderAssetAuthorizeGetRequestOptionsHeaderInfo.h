@@ -16,9 +16,9 @@
     NSString *_headerValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *headerValue; // @synthesize headerValue=_headerValue;
 @property(retain, nonatomic) NSString *headerKey; // @synthesize headerKey=_headerKey;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

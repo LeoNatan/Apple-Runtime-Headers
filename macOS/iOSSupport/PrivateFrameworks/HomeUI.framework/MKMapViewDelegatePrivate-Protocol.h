@@ -14,6 +14,7 @@
 - (void)mapView:(MKMapView *)arg1 didStopRespondingToGesture:(long long)arg2 zoomDirection:(long long)arg3 didDecelerate:(BOOL)arg4 tiltDirection:(long long)arg5;
 - (void)mapView:(MKMapView *)arg1 didUpdateYaw:(double)arg2;
 - (void)mapView:(MKMapView *)arg1 didChangeDisplayedFloorOrdinal:(short)arg2 forVenue:(VKVenueFeatureMarker *)arg3;
+- (void)mapView:(MKMapView *)arg1 venueCreated:(VKVenueFeatureMarker *)arg2 venueCreatedBuilding:(VKVenueBuildingFeatureMarker *)arg3;
 - (void)mapView:(MKMapView *)arg1 didChangeFocusedVenue:(VKVenueFeatureMarker *)arg2 focusedBuilding:(VKVenueBuildingFeatureMarker *)arg3;
 - (void)mapView:(MKMapView *)arg1 calloutPrimaryActionTriggeredForAnnotationView:(MKAnnotationView *)arg2;
 - (void)mapView:(MKMapView *)arg1 calloutPrimaryActionTriggeredForLabelMarker:(VKLabelMarker *)arg2;

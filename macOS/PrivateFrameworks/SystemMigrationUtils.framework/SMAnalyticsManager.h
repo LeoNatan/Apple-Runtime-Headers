@@ -20,6 +20,7 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) NSString *yaaAtSourceErrorDescription; // @synthesize yaaAtSourceErrorDescription=_yaaAtSourceErrorDescription;
 @property(retain, nonatomic) NSMutableDictionary *yaaCallbackErrors; // @synthesize yaaCallbackErrors=_yaaCallbackErrors;
 @property(retain, nonatomic) NSMutableDictionary *events; // @synthesize events=_events;
@@ -27,7 +28,6 @@
 @property(retain) NSString *fatalErrorDescription; // @synthesize fatalErrorDescription=_fatalErrorDescription;
 @property(retain) NSNumber *finalMigrationResult; // @synthesize finalMigrationResult=_finalMigrationResult;
 @property(retain) NSNumber *hadAtleastOneBrokenSymlink; // @synthesize hadAtleastOneBrokenSymlink=_hadAtleastOneBrokenSymlink;
-- (void).cxx_destruct;
 - (void)organizeAnalyticsData;
 - (void)reportAllPendingAnalytics;
 - (void)traceODTokenIssuingSuccess:(BOOL)arg1 afterRetries:(unsigned long long)arg2;

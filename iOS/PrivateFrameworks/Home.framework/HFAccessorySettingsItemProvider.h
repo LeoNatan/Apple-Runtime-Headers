@@ -21,6 +21,7 @@
 }
 
 + (id)buildItemTuplesForHomeKitSettings:(id)arg1 usageOptions:(id)arg2 settingGroup:(id)arg3 underNode:(id)arg4 cache:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NATreeNode *parentNode; // @synthesize parentNode=_parentNode;
 @property(retain, nonatomic) NSMutableSet *settingItems; // @synthesize settingItems=_settingItems;
 @property(retain, nonatomic) NSMutableDictionary *settingToItemCache; // @synthesize settingToItemCache=_settingToItemCache;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(retain, nonatomic) HMSettingGroup *settingGroup; // @synthesize settingGroup=_settingGroup;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

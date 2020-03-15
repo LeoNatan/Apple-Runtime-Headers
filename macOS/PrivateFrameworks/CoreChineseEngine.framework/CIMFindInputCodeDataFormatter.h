@@ -18,13 +18,13 @@
     PrettyPinyin *_pinyinFormatter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL zhuyinChabaiMode; // @synthesize zhuyinChabaiMode=_zhuyinChabaiMode;
 @property(retain, nonatomic) PrettyPinyin *pinyinFormatter; // @synthesize pinyinFormatter=_pinyinFormatter;
 @property(retain, nonatomic) NSMutableArray *formattedData; // @synthesize formattedData=_formattedData;
 @property(retain, nonatomic) NSArray *originalArray; // @synthesize originalArray=_originalArray;
 @property(nonatomic) unsigned long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(nonatomic, getter=isSimplifiedChinese) BOOL simplifiedChinese; // @synthesize simplifiedChinese=_simplifiedChinese;
-- (void).cxx_destruct;
 - (double)heightOfRow:(unsigned long long)arg1;
 - (id)stringForRow:(unsigned long long)arg1 column:(id)arg2;
 @property(readonly, nonatomic) unsigned long long numberOfRows;

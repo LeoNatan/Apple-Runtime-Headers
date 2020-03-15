@@ -20,6 +20,7 @@
     NSArray *_rootNodeEnergyRows;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *rootNodeEnergyRows; // @synthesize rootNodeEnergyRows=_rootNodeEnergyRows;
 @property double bgLocationTime; // @synthesize bgLocationTime=_bgLocationTime;
 @property double bgAudioTime; // @synthesize bgAudioTime=_bgAudioTime;
@@ -28,7 +29,6 @@
 @property double bgEnergy; // @synthesize bgEnergy=_bgEnergy;
 @property double fgEnergy; // @synthesize fgEnergy=_fgEnergy;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)serialize;
 - (id)time;
 - (id)energy;

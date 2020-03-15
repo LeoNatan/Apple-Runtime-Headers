@@ -18,11 +18,11 @@
 }
 
 + (id)entryWithObservable:(id)arg1 token:(id)arg2 contacts:(id)arg3 scope:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNUILikenessRenderingScope *scope; // @synthesize scope=_scope;
 @property(readonly, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(readonly, nonatomic) CNObservable *imageObservable; // @synthesize imageObservable=_imageObservable;
 @property(readonly, nonatomic) id <CNCancelable> token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithObservable:(id)arg1 token:(id)arg2 contacts:(id)arg3 scope:(id)arg4;
 

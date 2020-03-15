@@ -17,8 +17,8 @@
 }
 
 + (id)formatterForCodableCondensedWorkouts;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)stringFromTimeInterval:(double)arg1;
 - (id)stringFromDate:(id)arg1 fallback:(id)arg2;
 - (id)stringFromDate:(id)arg1;

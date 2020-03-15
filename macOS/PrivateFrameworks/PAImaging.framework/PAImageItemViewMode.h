@@ -34,10 +34,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak PAImageItemViewController *controllerImpl; // @synthesize controllerImpl=_controllerImpl;
 @property(readonly) BOOL willNotLoadImage; // @synthesize willNotLoadImage=_willNotLoadImage;
 @property(readonly) NSSet *clientKeys; // @synthesize clientKeys=_clientKeys;
-- (void).cxx_destruct;
 - (void)_notifyDidRenderForKey:(id)arg1 updateNumber:(unsigned long long)arg2 region:(id)arg3;
 - (void)_notifyWillRenderForKey:(id)arg1 updateNumber:(unsigned long long)arg2;
 - (void)_notifyDidUpdateImageForKey:(id)arg1 region:(id)arg2 type:(id)arg3;

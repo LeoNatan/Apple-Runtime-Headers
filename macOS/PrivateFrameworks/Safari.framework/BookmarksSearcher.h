@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     NSString *_searchString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasPerformedSearch; // @synthesize hasPerformedSearch=_hasPerformedSearch;
 @property(nonatomic) BOOL canMatchContainers; // @synthesize canMatchContainers=_canMatchContainers;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain, nonatomic) WebBookmark *targetCollection; // @synthesize targetCollection=_targetCollection;
 @property(nonatomic) int searchDomain; // @synthesize searchDomain=_searchDomain;
 @property(nonatomic) unsigned long long searchCriteria; // @synthesize searchCriteria=_searchCriteria;
-- (void).cxx_destruct;
 - (void)_resetResults;
 - (void)_collectSearchResultsMatchingStrings:(id)arg1 orWithAddressInSet:(id)arg2 inCollection:(id)arg3;
 - (void)reset;

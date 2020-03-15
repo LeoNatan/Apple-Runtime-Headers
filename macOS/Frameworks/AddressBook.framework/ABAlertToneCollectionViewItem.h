@@ -15,8 +15,8 @@
     TKTonePickerViewController *_tonePickerViewController;
 }
 
-@property(retain, nonatomic) TKTonePickerViewController *tonePickerViewController; // @synthesize tonePickerViewController=_tonePickerViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TKTonePickerViewController *tonePickerViewController; // @synthesize tonePickerViewController=_tonePickerViewController;
 - (BOOL)supportsClickToEdit;
 - (void)tonePickerViewController:(id)arg1 selectedToneWithIdentifier:(id)arg2;
 - (BOOL)shouldEnableEditPopupButton;

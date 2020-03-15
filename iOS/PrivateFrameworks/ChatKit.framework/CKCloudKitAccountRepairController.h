@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     AAUIDeviceToDeviceEncryptionHelper *_encryptionHelper;
 }
 
-@property(retain, nonatomic) AAUIDeviceToDeviceEncryptionHelper *encryptionHelper; // @synthesize encryptionHelper=_encryptionHelper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AAUIDeviceToDeviceEncryptionHelper *encryptionHelper; // @synthesize encryptionHelper=_encryptionHelper;
 - (void)deviceToDeviceEncryptionHelper:(id)arg1 shouldContinueUpgradingUserToHSA2WithCompletion:(CDUnknownBlockType)arg2;
 - (void)beginRepairWithPresentingViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)authenticationContext;

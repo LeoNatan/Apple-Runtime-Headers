@@ -23,6 +23,7 @@
     unsigned long long _nominatedItemSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *indexesToBeRemoved; // @synthesize indexesToBeRemoved=_indexesToBeRemoved;
 @property(retain, nonatomic) NSMutableOrderedSet *mutableItemListOverQuota; // @synthesize mutableItemListOverQuota=_mutableItemListOverQuota;
 @property(retain, nonatomic) NSMutableOrderedSet *mutableItemListWithinQuota; // @synthesize mutableItemListWithinQuota=_mutableItemListWithinQuota;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned long long nominatedItemSize; // @synthesize nominatedItemSize=_nominatedItemSize;
 @property(nonatomic) unsigned long long sizeForItemListOverQuota; // @synthesize sizeForItemListOverQuota=_sizeForItemListOverQuota;
 @property(nonatomic) unsigned long long sizeForItemListWithinQuota; // @synthesize sizeForItemListWithinQuota=_sizeForItemListWithinQuota;
-- (void).cxx_destruct;
 - (void)_markToBeRemoved;
 - (id)mediaContainersAboveQuota;
 - (id)identifiersForContainersOfType:(unsigned int)arg1;

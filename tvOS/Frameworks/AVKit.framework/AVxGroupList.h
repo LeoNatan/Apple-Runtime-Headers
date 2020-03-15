@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)groupsFromBarButtonItems:(id)arg1;
-@property(retain, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 - (struct CGPoint)originForItemAtIndex:(unsigned long long)arg1;
 - (id)itemForIndex:(unsigned long long)arg1;
 - (id)groupForItemIndex:(unsigned long long)arg1;

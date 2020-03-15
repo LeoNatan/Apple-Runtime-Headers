@@ -20,13 +20,13 @@
     FCAsyncSerialQueue *_accessSynchronizationQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCAsyncSerialQueue *accessSynchronizationQueue; // @synthesize accessSynchronizationQueue=_accessSynchronizationQueue;
 @property(readonly, nonatomic) NSOperationQueue *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(readonly, copy, nonatomic) NSSet *allowedClasses; // @synthesize allowedClasses=_allowedClasses;
 @property(readonly, copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
 @property(readonly, copy) NSURL *presentedItemURL; // @synthesize presentedItemURL=_presentedItemURL;
-- (void).cxx_destruct;
 - (void)writeWithAccessor:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)readWithAccessor:(CDUnknownBlockType)arg1;
 - (id)initWithFileURL:(id)arg1 allowedClasses:(id)arg2;

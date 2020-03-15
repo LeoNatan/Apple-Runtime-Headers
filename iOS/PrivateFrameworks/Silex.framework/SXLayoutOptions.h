@@ -21,6 +21,7 @@
     double _contentScaleFactor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double contentScaleFactor; // @synthesize contentScaleFactor=_contentScaleFactor;
 @property(readonly, nonatomic) unsigned long long viewingLocation; // @synthesize viewingLocation=_viewingLocation;
 @property(readonly, nonatomic) _Bool testing; // @synthesize testing=_testing;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) struct CGSize viewportSize; // @synthesize viewportSize=_viewportSize;
 @property(readonly, nonatomic) SXColumnLayout *columnLayout; // @synthesize columnLayout=_columnLayout;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (unsigned long long)diffWithLayoutOptions:(id)arg1;

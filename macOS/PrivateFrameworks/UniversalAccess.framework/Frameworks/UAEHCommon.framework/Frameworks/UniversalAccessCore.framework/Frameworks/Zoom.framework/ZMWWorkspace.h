@@ -35,6 +35,7 @@
 
 + (id)shared;
 + (void)initializeWorkspaceEvents;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _systemTriggeredZoomIn; // @synthesize _systemTriggeredZoomIn=__systemTriggeredZoomIn;
 @property(nonatomic) BOOL _windowStyle; // @synthesize _windowStyle=__windowStyle;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_refreshQueue; // @synthesize _refreshQueue=__refreshQueue;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) NSThread *mainThread; // @synthesize mainThread=_mainThread;
 @property(retain, nonatomic) ZMWMainWindow *mainWindow; // @synthesize mainWindow=_mainWindow;
 @property(readonly, nonatomic) ZMOutputManager *outputManager; // @synthesize outputManager=_outputManager;
-- (void).cxx_destruct;
 - (void)_updateSwipeDirection;
 - (void)_registerNotifications;
 - (void)_unregisterNotifications;

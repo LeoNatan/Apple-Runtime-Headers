@@ -17,10 +17,10 @@
     unsigned long long _limit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
 @property(copy, nonatomic) NSOrderedSet *personalizedArticleIDs; // @synthesize personalizedArticleIDs=_personalizedArticleIDs;
 @property(copy, nonatomic) NSOrderedSet *mandatoryArticleIDs; // @synthesize mandatoryArticleIDs=_mandatoryArticleIDs;
-- (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1;
 - (id)initWithMandatoryArticleIDs:(id)arg1 personalizedArticleIDs:(id)arg2 limit:(unsigned long long)arg3;
 - (id)init;

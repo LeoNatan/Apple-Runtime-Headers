@@ -58,6 +58,7 @@
 + (id)twoColumnsPortraitLayoutForSize:(struct CGSize)arg1;
 + (id)singleColumnPortraitLayoutForSize:(struct CGSize)arg1;
 + (id)layoutForSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFullScreenChart; // @synthesize isFullScreenChart=_isFullScreenChart;
 @property(nonatomic) _Bool hasBlackView; // @synthesize hasBlackView=_hasBlackView;
 @property(retain, nonatomic) StockChartDisplayMode *chartDisplayMode; // @synthesize chartDisplayMode=_chartDisplayMode;
@@ -97,7 +98,6 @@
 @property(nonatomic) struct CGRect chartViewFrame; // @synthesize chartViewFrame=_chartViewFrame;
 @property(nonatomic) struct CGRect infoViewFrame; // @synthesize infoViewFrame=_infoViewFrame;
 @property(nonatomic) struct CGRect listViewFrame; // @synthesize listViewFrame=_listViewFrame;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

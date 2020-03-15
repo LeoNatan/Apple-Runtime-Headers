@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     CDStruct_88b945db _fillRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAShapeLayer *fillMask; // @synthesize fillMask=_fillMask;
 @property(readonly, nonatomic) CAShapeLayer *fillLayer; // @synthesize fillLayer=_fillLayer;
 @property(readonly, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 @property(nonatomic) CDStruct_88b945db fillRange; // @synthesize fillRange=_fillRange;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) unsigned long long roundedCorners; // @synthesize roundedCorners=_roundedCorners;
-- (void).cxx_destruct;
 - (void)_updateMask;
 - (void)_updateShapes;
 @property(nonatomic) double borderWidth;

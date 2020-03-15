@@ -21,6 +21,7 @@
 
 + (void)animateWithDuration:(double)arg1 timingFunction:(id)arg2 applier:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)animateWithDuration:(double)arg1 curve:(int)arg2 applier:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) double lastFireTime; // @synthesize lastFireTime=_lastFireTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) int frameInterval; // @synthesize frameInterval=_frameInterval;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) CDUnknownBlockType applier; // @synthesize applier=_applier;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (float)_solveForInput:(float)arg1;
 - (void)_reset;
 - (void)_getEffectiveElapsedTime:(double *)arg1 finished:(_Bool *)arg2;

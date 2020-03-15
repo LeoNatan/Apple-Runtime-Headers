@@ -23,13 +23,13 @@
     CDUnknownBlockType _doneButtonAction;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType doneButtonAction; // @synthesize doneButtonAction=_doneButtonAction;
 @property(copy, nonatomic) CDUnknownBlockType cancelButtonAction; // @synthesize cancelButtonAction=_cancelButtonAction;
 @property(copy, nonatomic) CDUnknownBlockType bodyButtonAction; // @synthesize bodyButtonAction=_bodyButtonAction;
 @property(copy, nonatomic) CDUnknownBlockType secondaryButtonAction; // @synthesize secondaryButtonAction=_secondaryButtonAction;
 @property(copy, nonatomic) CDUnknownBlockType primaryButtonAction; // @synthesize primaryButtonAction=_primaryButtonAction;
 @property(readonly, nonatomic) PKDynamicProvisioningPageContent *page; // @synthesize page=_page;
-- (void).cxx_destruct;
 - (void)explanationViewDidSelectBodyButton:(id)arg1;
 - (void)explanationViewControllerDidSelectDone:(id)arg1;
 - (void)explanationViewControllerDidSelectCancel:(id)arg1;

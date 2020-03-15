@@ -25,6 +25,7 @@
 + (_Bool)fetchRequestCriteriaSupported:(long long)arg1;
 + (id)cdFetchRequestForAvatarFetchRequest:(id)arg1 recordTransformer:(id)arg2;
 + (id)cdFetchRequestWithPredicate:(id)arg1 fetchLimit:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localProcessName; // @synthesize localProcessName=_localProcessName;
 @property(readonly, nonatomic) id <AVTCoreDataRemoteChangesObserver> remoteChangesObserver; // @synthesize remoteChangesObserver=_remoteChangesObserver;
 @property(readonly, nonatomic) id <AVTAvatarManagedRecordTransformer> recordTransformer; // @synthesize recordTransformer=_recordTransformer;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) id <AVTCoreDataPersistentStoreConfiguration> configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) id <AVTAvatarRecordChangeTracker> recordChangeTracker; // @synthesize recordChangeTracker=_recordChangeTracker;
 @property(nonatomic) __weak id <AVTStoreBackendDelegate> backendDelegate; // @synthesize backendDelegate;
-- (void).cxx_destruct;
 - (void)contentDidChangeWithIdentifiers:(id)arg1;
 - (_Bool)canCreateAvatarWithError:(id *)arg1;
 - (unsigned long long)nts_avatarCountWithManagedObjectContext:(id)arg1 error:(id *)arg2;

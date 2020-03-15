@@ -19,13 +19,13 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) _Bool isRichSlot; // @synthesize isRichSlot=_isRichSlot;
 @property(readonly, nonatomic) _Bool dateSlot; // @synthesize dateSlot=_dateSlot;
 @property(retain, nonatomic) NTKComplication *complication; // @synthesize complication=_complication;
 @property(readonly, nonatomic) NSString *slot; // @synthesize slot=_slot;
-- (void).cxx_destruct;
 - (id)_activeColor;
 - (id)_inactiveColor;
 - (id)_disabledColor;

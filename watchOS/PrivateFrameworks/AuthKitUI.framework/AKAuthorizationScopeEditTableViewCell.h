@@ -13,8 +13,8 @@
     PUICTextField *_detailTextField;
 }
 
-@property(readonly, nonatomic) PUICTextField *detailTextField; // @synthesize detailTextField=_detailTextField;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PUICTextField *detailTextField; // @synthesize detailTextField=_detailTextField;
 - (void)_setupDetailTextField;
 - (void)_setup;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

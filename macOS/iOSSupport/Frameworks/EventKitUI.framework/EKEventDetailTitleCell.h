@@ -39,11 +39,11 @@
 + (id)_titleFont;
 + (void)_invalidateCachedFonts;
 + (void)_registerForInvalidation;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfTitleLines; // @synthesize numberOfTitleLines=_numberOfTitleLines;
 @property(nonatomic) BOOL showingInlineDayView; // @synthesize showingInlineDayView=_showingInlineDayView;
 @property(nonatomic) BOOL hasMapItemLaunchOptionFromTimeToLeaveNotification; // @synthesize hasMapItemLaunchOptionFromTimeToLeaveNotification=_hasMapItemLaunchOptionFromTimeToLeaveNotification;
 @property(nonatomic) __weak NSObject<EKEventDetailTitleCellDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_saveEventWithSpan:(long long)arg1;
 - (void)eventDetailPredictedLocationCellRejectedPrediction:(id)arg1;
 - (void)eventDetailPredictedLocationCellAcceptedPrediction:(id)arg1 disambiguatedLocation:(id)arg2;

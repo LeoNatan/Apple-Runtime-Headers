@@ -14,9 +14,9 @@
     NSArray *_mappedMeaningNodes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *mappedMeaningNodes; // @synthesize mappedMeaningNodes=_mappedMeaningNodes;
 @property(readonly, nonatomic) PGGraphMeaningNode *displayNode; // @synthesize displayNode=_displayNode;
-- (void).cxx_destruct;
 - (id)initWithDisplayNode:(id)arg1 mappedMeaningNodes:(id)arg2;
 
 @end

@@ -20,12 +20,12 @@
 + (unsigned long long)recencyRankedTargetResultCount;
 + (_Bool)useRecencyRankedSearchForMode:(unsigned long long)arg1;
 + (id)timeRankedQueries;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMTimingCollection *timingCollection; // @synthesize timingCollection=_timingCollection;
 @property(retain, nonatomic) NSArray *resultsToCheck; // @synthesize resultsToCheck=_resultsToCheck;
 @property(nonatomic) _Bool gotResults; // @synthesize gotResults=_gotResults;
 @property(retain, nonatomic) NSSet *intermediaryResults; // @synthesize intermediaryResults=_intermediaryResults;
 @property(nonatomic) _Bool searchTerminated; // @synthesize searchTerminated=_searchTerminated;
-- (void).cxx_destruct;
 - (void)_IMSPIQueryMessageItemsWithGUIDs:(id)arg1 results:(CDUnknownBlockType)arg2;
 - (void)deleteAttachmentForResult:(id)arg1;
 - (id)menuActionsForResult:(id)arg1 atRect:(struct CGRect)arg2;

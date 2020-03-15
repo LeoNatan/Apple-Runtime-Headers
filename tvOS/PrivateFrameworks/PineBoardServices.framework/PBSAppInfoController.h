@@ -22,13 +22,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PBSAppInfoConfiguration *queue_appInfoConfiguration; // @synthesize queue_appInfoConfiguration=_queue_appInfoConfiguration;
 @property(readonly, nonatomic) NSHashTable *queue_observers; // @synthesize queue_observers=_queue_observers;
 @property(readonly, nonatomic) NSDictionary *queue_appInfos; // @synthesize queue_appInfos=_queue_appInfos;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(readonly, nonatomic) PBSAppInfoServiceProxy *appInfoServiceProxy; // @synthesize appInfoServiceProxy=_appInfoServiceProxy;
-- (void).cxx_destruct;
 - (void)_handleUpdate:(id)arg1;
 - (void)appInfoServiceDidUpdateAppInfo:(id)arg1;
 @property(readonly, copy) NSString *debugDescription;

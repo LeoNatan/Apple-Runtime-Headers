@@ -16,9 +16,9 @@
     NSString *_workflowID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long spotlightHash; // @synthesize spotlightHash=_spotlightHash;
 @property(retain, nonatomic) NSString *workflowID; // @synthesize workflowID=_workflowID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

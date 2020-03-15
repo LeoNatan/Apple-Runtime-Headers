@@ -20,9 +20,9 @@
     NSSet *_addressBookPropertiesThatCanBeFilled;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *addressBookPropertiesThatCanBeFilled; // @synthesize addressBookPropertiesThatCanBeFilled=_addressBookPropertiesThatCanBeFilled;
 @property(copy, nonatomic) NSString *addressSetLabelUsedDuringFirstAutoFillPass; // @synthesize addressSetLabelUsedDuringFirstAutoFillPass=_addressSetLabelUsedDuringFirstAutoFillPass;
-- (void).cxx_destruct;
 - (_Bool)shouldControlBeIgnoredByFollowUpAutoFill:(id)arg1;
 - (void)addControlUniqueIDsIgnoredByFollowUpAutoFill:(id)arg1;
 - (void)addControlUniqueIDIgnoredByFollowUpAutoFill:(id)arg1;

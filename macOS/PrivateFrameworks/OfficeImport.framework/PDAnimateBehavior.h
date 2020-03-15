@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mAttributeNames;
 }
 
-@property(retain, nonatomic) NSMutableArray *attributeNames; // @synthesize attributeNames=mAttributeNames;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *attributeNames; // @synthesize attributeNames=mAttributeNames;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

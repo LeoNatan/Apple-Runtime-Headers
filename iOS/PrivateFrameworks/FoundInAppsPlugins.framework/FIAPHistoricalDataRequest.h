@@ -21,12 +21,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)historicalDataRequestWithPersonHandle:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) NSString *personHandle; // @synthesize personHandle=_personHandle;
 @property(readonly, nonatomic) NSString *pluginIdentifier; // @synthesize pluginIdentifier=_pluginIdentifier;
 @property(readonly, nonatomic) unsigned long long requestId; // @synthesize requestId=_requestId;
-- (void).cxx_destruct;
 - (_Bool)subsetOfHistoricalDataRequest:(id)arg1;
 - (_Bool)_dateRangeIsSubsetOfHistoricalDataRequest:(id)arg1;
 - (_Bool)isEqualToHistoricalDataRequest:(id)arg1;

@@ -43,9 +43,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)deviceContextWithDriver:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool clippingIsRestarted; // @synthesize clippingIsRestarted=m_clippingIsRestarted;
 @property(readonly, nonatomic) NSMutableArray *clippingPaths; // @synthesize clippingPaths=m_clippingPaths;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setRop2:(int)arg1;
 - (int)getRop2;

@@ -21,8 +21,8 @@
 + (id)debugDescriptionForChangesFromAppInfo:(id)arg1 toAppInfo:(id)arg2;
 + (id)changesFromAppInfo:(id)arg1 toAppInfo:(id)arg2;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) BSSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BSSettings *settings; // @synthesize settings=_settings;
 @property(readonly, copy, nonatomic) NSString *topShelfStaticImageName;
 @property(readonly, nonatomic) long long installFailureReason;
 @property(readonly, nonatomic) long long installType;
@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) unsigned long long disabledReasons;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled;
 @property(readonly, nonatomic, getter=isHidden) _Bool hidden;
+@property(readonly, nonatomic, getter=isSignatureTrusted) _Bool signatureTrusted;
 @property(readonly, nonatomic, getter=isRestricted) _Bool restricted;
 @property(readonly, nonatomic, getter=isCacheDeleting) _Bool cacheDeleting;
 @property(readonly, nonatomic, getter=isRecentlyUpdated) _Bool recentlyUpdated;

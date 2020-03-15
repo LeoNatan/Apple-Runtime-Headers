@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_mutableRelatedElements;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableSet *mutableRelatedElements; // @synthesize mutableRelatedElements=_mutableRelatedElements;
 @property(readonly) _Bool hasMatched; // @synthesize hasMatched=_hasMatched;
 @property unsigned long long count; // @synthesize count=_count;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain) XCElementSnapshot *currentMatch; // @synthesize currentMatch=_currentMatch;
 @property(readonly) id <XCTElementSetTransformer> transformer; // @synthesize transformer=_transformer;
 @property(retain) XCElementSnapshot *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 @property(readonly) NSSet *currentRelatedElements;
 - (id)nextMatch;
 - (id)initWithInput:(id)arg1 filteringTransformer:(id)arg2;

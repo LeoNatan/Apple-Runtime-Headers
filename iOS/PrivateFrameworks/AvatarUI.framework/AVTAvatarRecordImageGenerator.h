@@ -20,13 +20,13 @@
 }
 
 + (id)supportedScopesForScale:(double)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, copy, nonatomic) NSArray *scopes; // @synthesize scopes=_scopes;
 @property(readonly, nonatomic) AVTCoreModel *coreModel; // @synthesize coreModel=_coreModel;
 @property(readonly, nonatomic) AVTAvatarConfigurationImageRenderer *renderer; // @synthesize renderer=_renderer;
 @property(readonly, nonatomic) AVTImageStore *imageStore; // @synthesize imageStore=_imageStore;
-- (void).cxx_destruct;
 - (void)updateThumbnailsForChangesWithTracker:(id)arg1 recordProvider:(CDUnknownBlockType)arg2;
 - (_Bool)generateThumbnailsForDuplicateAvatarRecord:(id)arg1 originalRecord:(id)arg2 error:(id *)arg3;
 - (_Bool)deleteThumbnailsForAvatarRecordsWithIdentifiers:(id)arg1 error:(id *)arg2;

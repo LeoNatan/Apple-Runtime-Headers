@@ -42,10 +42,6 @@
 - (void)dealloc;
 - (id)initWithName:(id)arg1 webFrameView:(id)arg2 webView:(id)arg3;
 - (id)init;
-- (void)printToCGContext:(struct CGContext *)arg1 pageWidth:(float)arg2 pageHeight:(float)arg3;
-- (int)numberOfPagesWithPageWidth:(float)arg1 pageHeight:(float)arg2;
-- (id)renderTreeAsExternalRepresentationWithOptions:(unsigned long long)arg1;
-- (id)renderTreeAsExternalRepresentationForPrinting;
 - (void)_commitData:(id)arg1;
 - (BOOL)_canSaveAsWebArchive;
 - (BOOL)_canProvideDocumentSource;
@@ -77,7 +73,7 @@
 - (OptionSet_8e32cbf3)_paintBehaviorForDestinationContext:(struct CGContext *)arg1;
 - (id)_stringForRange:(id)arg1;
 - (id)_selectedString;
-- (id)_nodesFromList:(Vector_1d266cd7 *)arg1;
+- (id)_nodesFromList:(Vector_ac56241c *)arg1;
 - (id)_dataSource;
 - (void)_clearSelectionInOtherFrames;
 - (id)_findFrameWithSelection;
@@ -133,6 +129,10 @@
 - (id)_bodyBackgroundColor;
 - (void)_setShouldCreateRenderers:(BOOL)arg1;
 - (BOOL)_isDescendantOfFrame:(id)arg1;
+- (void)printToCGContext:(struct CGContext *)arg1 pageWidth:(float)arg2 pageHeight:(float)arg3;
+- (int)numberOfPagesWithPageWidth:(float)arg1 pageHeight:(float)arg2;
+- (id)renderTreeAsExternalRepresentationWithOptions:(unsigned long long)arg1;
+- (id)renderTreeAsExternalRepresentationForPrinting;
 
 @end
 

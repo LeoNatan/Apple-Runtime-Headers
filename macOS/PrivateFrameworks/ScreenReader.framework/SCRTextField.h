@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     unsigned char __isTextFieldWithIncrementor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char _isTextFieldWithIncrementor; // @synthesize _isTextFieldWithIncrementor=__isTextFieldWithIncrementor;
 @property(nonatomic) BOOL isSecureTextField; // @synthesize isSecureTextField=_isSecureTextField;
-- (void).cxx_destruct;
 - (void)addValueToRequest:(id)arg1;
 - (id)getIncrementorChild;
 - (BOOL)isTextFieldWithIncrementor;

@@ -22,6 +22,7 @@
     long long _blendMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long blendMode; // @synthesize blendMode=_blendMode;
 @property(readonly, nonatomic) WFColor *endColor; // @synthesize endColor=_endColor;
 @property(readonly, nonatomic) WFColor *startColor; // @synthesize startColor=_startColor;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) WFColor *accessibilityBaseColor; // @synthesize accessibilityBaseColor=_accessibilityBaseColor;
 @property(readonly, nonatomic) WFColor *darkBaseColor; // @synthesize darkBaseColor=_darkBaseColor;
 @property(readonly, nonatomic) WFColor *baseColor; // @synthesize baseColor=_baseColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;

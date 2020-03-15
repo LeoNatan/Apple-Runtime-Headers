@@ -15,10 +15,10 @@
     NSObject *_value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)durationString;
 - (double)duration;
 - (id)description;

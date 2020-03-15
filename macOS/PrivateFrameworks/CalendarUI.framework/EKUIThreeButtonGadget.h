@@ -17,12 +17,12 @@
     NSArray *_buttonConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *buttonConstraints; // @synthesize buttonConstraints=_buttonConstraints;
 @property(retain) NSView *control; // @synthesize control=_control;
 @property(retain) EKUIButton *thirdButton; // @synthesize thirdButton=_thirdButton;
 @property(retain) EKUIButton *secondButton; // @synthesize secondButton=_secondButton;
 @property(retain) EKUIButton *firstButton; // @synthesize firstButton=_firstButton;
-- (void).cxx_destruct;
 - (double)preferredWidth;
 - (id)longestStringFromArray:(id)arg1;
 - (id)thirdButtonTitles;

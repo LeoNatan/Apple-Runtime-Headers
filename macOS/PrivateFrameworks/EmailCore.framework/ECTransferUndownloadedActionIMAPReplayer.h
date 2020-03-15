@@ -16,9 +16,9 @@
     id <ECIMAPLocalActionReplayerDelegate> delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ECIMAPLocalActionReplayerDelegate> delegate; // @synthesize delegate;
 @property(retain, nonatomic) id <ECIMAPServerInterface> serverInterface; // @synthesize serverInterface;
-- (void).cxx_destruct;
 - (id)_uidIndexSet;
 - (BOOL)_deleteUIDs:(id)arg1;
 - (id)_copyAllMessages:(BOOL)arg1;

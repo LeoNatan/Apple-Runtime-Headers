@@ -17,6 +17,7 @@
     FCDateRange *_dateRange;
     CDUnknownBlockType _feedItemsChangedHandler;
     NSArray *_feedItems;
+    NSArray *_sortedNonEditorialFeedItems;
     NSMapTable *_nonEditorialScoreProfiles;
     NSDictionary *_feedContextByFeedID;
     NSError *_error;
@@ -26,6 +27,7 @@
     unsigned long long _perFeedLimit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long perFeedLimit; // @synthesize perFeedLimit=_perFeedLimit;
 @property(nonatomic) unsigned long long maxNumberOfFeedsToQuery; // @synthesize maxNumberOfFeedsToQuery=_maxNumberOfFeedsToQuery;
 @property(copy, nonatomic) CDUnknownBlockType feedItemCompletionBlock; // @synthesize feedItemCompletionBlock=_feedItemCompletionBlock;
@@ -33,13 +35,13 @@
 @property(copy) NSError *error; // @synthesize error=_error;
 @property(copy) NSDictionary *feedContextByFeedID; // @synthesize feedContextByFeedID=_feedContextByFeedID;
 @property(retain) NSMapTable *nonEditorialScoreProfiles; // @synthesize nonEditorialScoreProfiles=_nonEditorialScoreProfiles;
+@property(copy) NSArray *sortedNonEditorialFeedItems; // @synthesize sortedNonEditorialFeedItems=_sortedNonEditorialFeedItems;
 @property(copy) NSArray *feedItems; // @synthesize feedItems=_feedItems;
 @property(copy, nonatomic) CDUnknownBlockType feedItemsChangedHandler; // @synthesize feedItemsChangedHandler=_feedItemsChangedHandler;
 @property(nonatomic) _Bool streamFeedItems; // @synthesize streamFeedItems=_streamFeedItems;
 @property(copy, nonatomic) FCDateRange *dateRange; // @synthesize dateRange=_dateRange;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_appendFeedItems:(id)arg1;
 - (void)_fetchTagsForQueryingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)operationWillFinishWithError:(id)arg1;

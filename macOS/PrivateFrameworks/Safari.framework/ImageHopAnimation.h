@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     ImageHopAnimationController *_animationController;
 }
 
-@property __weak ImageHopAnimationController *animationController; // @synthesize animationController=_animationController;
 - (void).cxx_destruct;
+@property __weak ImageHopAnimationController *animationController; // @synthesize animationController=_animationController;
 - (void)setCurrentProgress:(float)arg1;
 - (struct CGPoint)_centerPointForProgress:(double)arg1;
 

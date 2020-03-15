@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_toKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFaultable) _Bool faultable; // @synthesize faultable=_faultable;
 @property(readonly, nonatomic) NSString *toKey; // @synthesize toKey=_toKey;
 @property(readonly, nonatomic) Class toEntity; // @synthesize toEntity=_toEntity;
 @property(readonly, nonatomic) NSString *fromKey; // @synthesize fromKey=_fromKey;
 @property(readonly, nonatomic) Class fromEntity; // @synthesize fromEntity=_fromEntity;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEquivalentToRelation:(id)arg1;
 - (_Bool)isInverseOfRelation:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy) NSString *password; // @synthesize password=_password;
 - (void).cxx_destruct;
+@property(copy) NSString *password; // @synthesize password=_password;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

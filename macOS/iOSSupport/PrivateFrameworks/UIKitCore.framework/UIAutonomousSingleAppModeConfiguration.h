@@ -18,8 +18,8 @@
 
 + (id)defaultConfigurationForStyle:(unsigned long long)arg1;
 + (id)defaultConfiguration;
-@property(nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long style; // @synthesize style=_style;
 - (BOOL)__gaxTrampoline_defaultBoolValueForFeatureKey:(id)arg1;
 - (void)_setBoolValue:(BOOL)arg1 forFeatureKey:(id)arg2;
 - (BOOL)_boolValueForFeatureKey:(id)arg1;

@@ -13,8 +13,8 @@
     NSObject<PSURLControllerHandlerDelegate> *_delegate;
 }
 
-@property(nonatomic) __weak NSObject<PSURLControllerHandlerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<PSURLControllerHandlerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)handleURL:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 
 @end

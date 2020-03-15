@@ -19,12 +19,12 @@
 }
 
 + (id)localizedStringForDate:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *link; // @synthesize link=_link;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) NSString *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(retain, nonatomic) NSString *headline; // @synthesize headline=_headline;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, retain, nonatomic) NSString *localizedDateString;
 - (long long)chronologicalComparisonWithNewsItem:(id)arg1;

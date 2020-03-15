@@ -18,10 +18,10 @@
     IDSDaemonRequestTimer *_daemonRequestTimer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDSDaemonRequestTimer *daemonRequestTimer; // @synthesize daemonRequestTimer=_daemonRequestTimer;
 @property(retain, nonatomic) IDSPhoneCertificateVendor *strongSelfReference; // @synthesize strongSelfReference=_strongSelfReference;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)_scheduleTimeoutForCarrierTokenCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)_scheduleTimeoutForPhoneAuthenticationCertificateRequestCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)_scheduleTimeoutForPhoneAuthenticationSignatureRequestCompletionBlock:(CDUnknownBlockType)arg1;

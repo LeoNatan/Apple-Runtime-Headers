@@ -9,7 +9,7 @@
 #import <SpringBoard/SBHomeGestureDockSwitcherModifierDelegate-Protocol.h>
 #import <SpringBoard/SBHomeGestureFinalDestinationSwitcherModifierDelegate-Protocol.h>
 
-@class NSString, SBAppLayout, SBHomeGestureDockSwitcherModifier, SBHomeGestureFinalDestinationSwitcherModifier, SBStackedFloatingSwitcherModifier;
+@class NSString, SBAppLayout, SBHomeGestureDockSwitcherModifier, SBHomeGestureFinalDestinationSwitcherModifier, SBStackedFloatingSwitcherModifier, UIViewFloatAnimatableProperty;
 
 @interface SBHomeGestureFloatingSwitcherModifier : SBGestureSwitcherModifier <SBHomeGestureDockSwitcherModifierDelegate, SBHomeGestureFinalDestinationSwitcherModifierDelegate>
 {
@@ -24,6 +24,7 @@
     double _rubberbandedYTranslation;
     double _scaleProgress;
     double _multitaskingHintProgress;
+    UIViewFloatAnimatableProperty *_rampingProperty;
     _Bool _gestureHasBegun;
     _Bool _gestureHasEnded;
 }
@@ -34,9 +35,10 @@
 - (long long)keyboardSuppressionMode;
 - (long long)sceneDeactivationReason;
 - (_Bool)wantsResignActiveAssertion;
-- (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
-- (unsigned long long)numberOfAppLayoutsToCacheSnapshots;
 - (id)topMostAppLayouts;
+- (id)layoutSettingsForIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfAppLayoutsToCacheSnapshots;
+- (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
 - (double)shadowOffsetForIndex:(unsigned long long)arg1;
 - (double)shadowOpacityForIndex:(unsigned long long)arg1;
 - (double)darkeningAlphaForIndex:(unsigned long long)arg1;
@@ -49,6 +51,7 @@
 - (id)_actionForActivatingFinalDestination:(long long)arg1;
 - (double)unconditionalDistanceThresholdForHome;
 - (long long)currentFinalDestination;
+- (void)_beginAnimatingRampingPropertyWithSettings:(id)arg1;
 - (void)_updateGestureTranslationAndVelocityWithEvent:(id)arg1;
 - (id)_updateForGestureDidEndWithEvent:(id)arg1;
 - (id)_updateForGestureDidChangeWithEvent:(id)arg1;

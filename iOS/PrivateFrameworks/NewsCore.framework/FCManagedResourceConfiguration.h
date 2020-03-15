@@ -16,9 +16,9 @@
     long long _refreshRate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long refreshRate; // @synthesize refreshRate=_refreshRate;
 @property(readonly, copy, nonatomic) NSString *resourceID; // @synthesize resourceID=_resourceID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithResourceID:(id)arg1 refreshRate:(long long)arg2;
 - (id)init;

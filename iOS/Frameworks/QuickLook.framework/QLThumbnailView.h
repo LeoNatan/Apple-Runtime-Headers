@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _unselectedFrame;
 }
 
+- (void).cxx_destruct;
 @property struct CGRect unselectedFrame; // @synthesize unselectedFrame=_unselectedFrame;
 @property _Bool alwaysVisible; // @synthesize alwaysVisible=_alwaysVisible;
 @property long long pageNumber; // @synthesize pageNumber=_pageNumber;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -43,6 +43,7 @@
 + (id)_getAlmanacWithLocation:(id)arg1;
 + (id)bundleForLocationManager;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) double batchLocationsFetchInterval; // @synthesize batchLocationsFetchInterval=_batchLocationsFetchInterval;
 @property(retain, nonatomic) NSDate *lastFetchBatchLocationsTime; // @synthesize lastFetchBatchLocationsTime=_lastFetchBatchLocationsTime;
 @property(retain, nonatomic) HMFTimer *extractBatchLocationsTimer; // @synthesize extractBatchLocationsTimer=_extractBatchLocationsTimer;
@@ -59,7 +60,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
 @property(nonatomic) int locationAuthorized; // @synthesize locationAuthorized=_locationAuthorized;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
-- (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didDetermineState:(long long)arg2 forRegion:(id)arg3;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;

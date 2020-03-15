@@ -15,8 +15,8 @@
     _Bool _hasAppeared;
 }
 
-@property(nonatomic) _Bool hasAppeared; // @synthesize hasAppeared=_hasAppeared;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool hasAppeared; // @synthesize hasAppeared=_hasAppeared;
 - (void)_updateImageWithTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

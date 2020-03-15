@@ -24,8 +24,8 @@
 + (id)integerFieldSpecWithName:(id)arg1;
 + (id)stringFieldSpecWithName:(id)arg1 allowedValues:(id)arg2;
 + (id)stringFieldSpecWithName:(id)arg1;
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)errorFromValue:(id)arg1 code:(long long)arg2 message:(id)arg3;
 - (id)errorFromNil;
 - (_Bool)validate:(id)arg1 error:(id *)arg2;

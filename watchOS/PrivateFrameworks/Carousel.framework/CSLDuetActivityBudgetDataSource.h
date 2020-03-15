@@ -22,6 +22,7 @@
     struct _opaque_pthread_mutex_t _lock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *bundleIDsByClass; // @synthesize bundleIDsByClass=_bundleIDsByClass;
 @property(nonatomic) struct _opaque_pthread_mutex_t lock; // @synthesize lock=_lock;
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *callQueue; // @synthesize callQueue=_callQueue;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSMutableSet *privilegedClients; // @synthesize privilegedClients=_privilegedClients;
 @property(nonatomic) __weak CSLComplicationMonitor *complicationMonitor; // @synthesize complicationMonitor=_complicationMonitor;
 @property(nonatomic) __weak CSLAppSwitcherItemModel *switcherModel; // @synthesize switcherModel=_switcherModel;
-- (void).cxx_destruct;
 - (void)removePrivilegedClient:(id)arg1;
 - (void)addPrivilegedClient:(id)arg1;
 - (void)complicationMonitorComplicationsDidChange:(id)arg1 addedBundleIDs:(id)arg2 removedBundleIDs:(id)arg3;

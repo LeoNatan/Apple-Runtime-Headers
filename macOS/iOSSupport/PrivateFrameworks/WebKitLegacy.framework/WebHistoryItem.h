@@ -37,7 +37,7 @@
 - (id)initWithURLString:(id)arg1 title:(id)arg2 lastVisitedTimeInterval:(double)arg3;
 - (id)init;
 - (BOOL)_hasCachedPageExpired;
-- (BOOL)_isInPageCache;
+- (BOOL)_isInBackForwardCache;
 - (void)_setScrollPoint:(struct CGPoint)arg1;
 - (struct CGPoint)_scrollPoint;
 - (void)_setViewportArguments:(id)arg1;

@@ -24,6 +24,7 @@
     ISTouchIDDialog *_touchIDDialog;
 }
 
+- (void).cxx_destruct;
 @property(retain) ISTouchIDDialog *touchIDDialog; // @synthesize touchIDDialog=_touchIDDialog;
 @property(retain) ISDialog *fallbackDialog; // @synthesize fallbackDialog=_fallbackDialog;
 @property(copy) NSString *userAgent; // @synthesize userAgent=_userAgent;
@@ -33,7 +34,6 @@
 @property(readonly) NSURL *redirectURL; // @synthesize redirectURL=_redirectURL;
 @property(readonly) ISDialog *dialog; // @synthesize dialog=_dialog;
 @property(retain) SSBiometricAuthenticationContext *biometricAuthenticationContext; // @synthesize biometricAuthenticationContext=_context;
-- (void).cxx_destruct;
 - (_Bool)_shouldFallbackToAuthKitForError:(id)arg1;
 - (_Bool)_runSignatureOperationReturningError:(id *)arg1;
 - (_Bool)_runAuthkitOperationWithError:(id)arg1 returningError:(id *)arg2;

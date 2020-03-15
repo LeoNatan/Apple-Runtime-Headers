@@ -28,10 +28,10 @@
     id <CLKMediaAssetViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CLKMediaAssetViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) CLKMediaAsset *mediaAsset; // @synthesize mediaAsset=_mediaAsset;
-- (void).cxx_destruct;
 - (void)fadeFromCurtainViewWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fadeToCurtainViewWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hideCurtainView;

@@ -41,6 +41,7 @@
 }
 
 + (struct CGSize)annotationImageSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FMFTitleViewMac *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) BOOL wasToolbarPreviouslyHidden; // @synthesize wasToolbarPreviouslyHidden=_wasToolbarPreviouslyHidden;
 @property(nonatomic) BOOL alwaysShowAccuracy; // @synthesize alwaysShowAccuracy=_alwaysShowAccuracy;
@@ -62,7 +63,6 @@
 @property BOOL shouldZoomToFitMeAndLocations; // @synthesize shouldZoomToFitMeAndLocations=_shouldZoomToFitMeAndLocations;
 @property BOOL shouldZoomToFitNewLocations; // @synthesize shouldZoomToFitNewLocations=_shouldZoomToFitNewLocations;
 @property __weak id <FMFMapViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)fmfAppearanceChanged:(id)arg1;
 - (void)updateAllAnnotationsDueToAddressBookUpdate;
 - (id)_internalAnnotationTintColor;

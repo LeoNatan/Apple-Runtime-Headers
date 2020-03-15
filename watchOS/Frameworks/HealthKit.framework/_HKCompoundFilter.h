@@ -16,9 +16,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)filterWithSubfilters:(id)arg1 compoundType:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int compoundType; // @synthesize compoundType=_compoundType;
 @property(readonly, copy, nonatomic) NSArray *subfilters; // @synthesize subfilters=_subfilters;
-- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone *)arg1 subfilters:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

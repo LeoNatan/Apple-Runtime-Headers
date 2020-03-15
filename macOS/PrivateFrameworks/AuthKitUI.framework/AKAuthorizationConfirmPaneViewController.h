@@ -31,6 +31,7 @@
     AKAuthorizationEmailScopeViewController *_emailScopeViewController;
 }
 
+- (void).cxx_destruct;
 @property __weak AKAuthorizationEmailScopeViewController *emailScopeViewController; // @synthesize emailScopeViewController=_emailScopeViewController;
 @property __weak AKAuthorizationNameScopeViewController *nameScopeViewController; // @synthesize nameScopeViewController=_nameScopeViewController;
 @property(readonly) NSArray *validatedScopes; // @synthesize validatedScopes=_validatedScopes;
@@ -43,7 +44,6 @@
 @property(readonly) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property BOOL editableScopeChoicesChanged; // @synthesize editableScopeChoicesChanged=_editableScopeChoicesChanged;
 @property(readonly) AKAuthorizationScopeChoices *editableScopeChoices; // @synthesize editableScopeChoices=_editableScopeChoices;
-- (void).cxx_destruct;
 - (id)init;
 - (void)emailScopeViewController:(id)arg1 didSelectEmail:(id)arg2 protected:(BOOL)arg3;
 - (void)scopeViewController:(id)arg1 didEndEditingField:(id)arg2 atIndex:(unsigned long long)arg3;

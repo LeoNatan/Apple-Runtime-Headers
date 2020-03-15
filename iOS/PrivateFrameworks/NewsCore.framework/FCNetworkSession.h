@@ -19,12 +19,12 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) NSArray *eventGroups; // @synthesize eventGroups=_eventGroups;
 @property(nonatomic) long long cellularRadioAccessTechnology; // @synthesize cellularRadioAccessTechnology=_cellularRadioAccessTechnology;
 @property(nonatomic) _Bool wifiReachable; // @synthesize wifiReachable=_wifiReachable;
-- (void).cxx_destruct;
 - (void)addEventGroup:(id)arg1;
 - (id)generateSessionJSONDataWithOptions:(unsigned long long)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) unsigned long long totalFailureCount;

@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appBundleId; // @synthesize appBundleId=_appBundleId;
 @property(copy, nonatomic) NSString *flightQuery; // @synthesize flightQuery=_flightQuery;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (unsigned int)nwActivityLabel;
 - (Class)responseClass;
 - (id)initWithCoder:(id)arg1;

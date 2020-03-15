@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_allowedDomains;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *allowedDomains; // @synthesize allowedDomains=_allowedDomains;
 @property(readonly, nonatomic) NSString *deviceToken; // @synthesize deviceToken=_deviceToken;
 @property(readonly, nonatomic) NSString *websiteIdentifier; // @synthesize websiteIdentifier=_websiteIdentifier;
-- (void).cxx_destruct;
 - (void)updatePermission:(int)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithWebsiteIdentifier:(id)arg1 displayName:(id)arg2 icon:(id)arg3 policy:(int)arg4 deviceToken:(id)arg5 allowedDomains:(id)arg6;

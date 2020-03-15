@@ -35,6 +35,7 @@
     _Bool _shouldAdjustContentOffsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAdjustContentOffsets; // @synthesize shouldAdjustContentOffsets=_shouldAdjustContentOffsets;
 @property(nonatomic, getter=isSkLoading) _Bool skLoading; // @synthesize skLoading=_skLoading;
 @property(nonatomic) _Bool showsLibraryButton; // @synthesize showsLibraryButton=_showsLibraryButton;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) SUClientInterface *clientInterface; // @synthesize clientInterface=_clientInterface;
 @property(readonly, nonatomic, getter=_isEnteringForeground) _Bool _enteringForeground; // @synthesize _enteringForeground=_isEnteringForeground;
 @property(readonly, nonatomic, getter=_cachedScriptProperties) SUViewControllerScriptProperties *_cachedScriptProperties; // @synthesize _cachedScriptProperties;
-- (void).cxx_destruct;
 - (void)_reloadExitStoreButtonWithParentViewController:(id)arg1;
 - (void)_invalidateForMemoryPurge;
 - (void)_reloadLibraryButton;

@@ -24,12 +24,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (double)timeout;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CXActionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDate *commitDate; // @synthesize commitDate=_commitDate;
 @property(nonatomic) int failureReason; // @synthesize failureReason=_failureReason;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

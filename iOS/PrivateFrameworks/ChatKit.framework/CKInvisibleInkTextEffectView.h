@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     CAEmitterLayer *_dustDrawEmitterLayer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool blendingEnabled; // @synthesize blendingEnabled=_blendingEnabled;
 @property(retain, nonatomic) CAEmitterLayer *dustDrawEmitterLayer; // @synthesize dustDrawEmitterLayer=_dustDrawEmitterLayer;
 @property(retain, nonatomic) NSArray *dustEmitterLayers; // @synthesize dustEmitterLayers=_dustEmitterLayers;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CAEmitterLayer *textDrawEmitterLayer; // @synthesize textDrawEmitterLayer=_textDrawEmitterLayer;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) __weak CKTextBalloonView *balloonView; // @synthesize balloonView=_balloonView;
-- (void).cxx_destruct;
 - (void)setSuspended:(_Bool)arg1;
 - (void)setPaused:(_Bool)arg1;
 - (void)cullSubviewsWithVisibleBounds:(struct CGRect)arg1;

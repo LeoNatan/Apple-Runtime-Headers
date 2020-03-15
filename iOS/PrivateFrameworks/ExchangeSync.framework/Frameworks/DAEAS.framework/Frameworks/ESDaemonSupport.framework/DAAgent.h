@@ -18,13 +18,13 @@
     CDUnknownBlockType _networkReachableBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isWaitingForPassword; // @synthesize isWaitingForPassword=_isWaitingForPassword;
 @property(copy, nonatomic) CDUnknownBlockType networkReachableBlock; // @synthesize networkReachableBlock=_networkReachableBlock;
 @property(nonatomic) _Bool syncWhenReachable; // @synthesize syncWhenReachable=_syncWhenReachable;
 @property(nonatomic) double lastRetryTimeout; // @synthesize lastRetryTimeout=_lastRetryTimeout;
 @property(retain, nonatomic) DAAccount *account; // @synthesize account=_account;
 @property(nonatomic) _Bool isMonitoring; // @synthesize isMonitoring=_isMonitoring;
-- (void).cxx_destruct;
 - (id)getDAAccount;
 - (void)processMeetingRequestDatas:(id)arg1 deliveryIdsToClear:(id)arg2 deliveryIdsToSoftClear:(id)arg3 inFolderWithId:(id)arg4 callback:(CDUnknownBlockType)arg5;
 - (void)syncFolderIDs:(id)arg1 forDataclasses:(long long)arg2 isUserRequested:(_Bool)arg3;

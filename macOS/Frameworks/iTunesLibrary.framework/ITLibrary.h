@@ -29,6 +29,7 @@
 + (id)libraryWithDeviceID:(id)arg1 error:(id *)arg2;
 + (id)libraryWithAPIVersion:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 + (id)libraryWithAPIVersion:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *cachedMigratedPodcastSettings; // @synthesize cachedMigratedPodcastSettings=_cachedMigratedPodcastSettings;
 @property(retain, nonatomic) NSDictionary *cachedItemMap; // @synthesize cachedItemMap=_cachedItemMap;
 @property(retain, nonatomic) NSArray *cachedGenres; // @synthesize cachedGenres=_cachedGenres;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned long long mediaDomains; // @synthesize mediaDomains=_mediaDomains;
 @property(retain, nonatomic) AMPArtworkClient *artworkClient; // @synthesize artworkClient=_artworkClient;
 @property(retain, nonatomic) AMPLFrameworkClient *libraryClient; // @synthesize libraryClient=_libraryClient;
-- (void).cxx_destruct;
 - (id)itemsForIDs:(id)arg1;
 - (id)artworkForMediaFile:(id)arg1;
 - (id)artworkForMediaItem:(id)arg1;

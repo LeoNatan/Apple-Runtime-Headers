@@ -23,9 +23,9 @@
 
 + (id)supportedThumbnailFormatIDsForDeviceConfiguration:(id)arg1;
 + (id)supportedThumbnailFormatIDs;
+- (void).cxx_destruct;
 @property(readonly) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 @property(readonly) NSMutableDictionary *thumbManagersByFormat; // @synthesize thumbManagersByFormat=_thumbManagersByFormat;
-- (void).cxx_destruct;
 - (void)stampThumbnailConfigurationToFile:(_Bool)arg1;
 - (int)thumbnailVersionCurrent;
 - (id)thumbnailConfigurationDict;

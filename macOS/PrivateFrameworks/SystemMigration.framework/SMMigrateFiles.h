@@ -20,11 +20,11 @@
 
 + (BOOL)shouldCopyNonSystemReceiptsForUpgrade;
 + (unsigned long long)finalSizeWithEngine:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long prelimFileCount; // @synthesize prelimFileCount=_prelimFileCount;
 @property BOOL kextCacheNeedsUpdate; // @synthesize kextCacheNeedsUpdate=_kextCacheNeedsUpdate;
 @property(retain) SMPreflightEngine *preflightEngine; // @synthesize preflightEngine=_preflightEngine;
 @property(retain) SMCopyEngine *fileCopyEngine; // @synthesize fileCopyEngine=_fileCopyEngine;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)estimatedTimeRemainingChanged:(double)arg1;
 - (void)transferRateChanged:(double)arg1;

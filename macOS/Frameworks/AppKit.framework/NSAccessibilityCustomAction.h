@@ -17,10 +17,10 @@
     SEL _selector;
 }
 
+- (void).cxx_destruct;
 @property SEL selector; // @synthesize selector=_selector;
 @property(copy) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_accessibilityCustomActionIdentifier;
 @property __weak id <NSObject> target;

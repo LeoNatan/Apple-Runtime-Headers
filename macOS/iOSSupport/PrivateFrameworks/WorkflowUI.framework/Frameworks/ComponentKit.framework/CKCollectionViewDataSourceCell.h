@@ -13,8 +13,8 @@
     CKComponentRootView *_rootView;
 }
 
-@property(readonly, nonatomic) CKComponentRootView *rootView; // @synthesize rootView=_rootView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKComponentRootView *rootView; // @synthesize rootView=_rootView;
 - (void)setAlpha:(double)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

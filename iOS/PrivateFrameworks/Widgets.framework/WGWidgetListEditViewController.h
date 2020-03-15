@@ -32,6 +32,7 @@
     id _statusBarColorAssertion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=areWidgetsPinned) _Bool widgetsPinned; // @synthesize widgetsPinned=_widgetsPinned;
 @property(nonatomic, getter=wereWidgetsPinnedOriginally) _Bool widgetsPinnedOriginally; // @synthesize widgetsPinnedOriginally=_widgetsPinnedOriginally;
 @property(nonatomic) _Bool showsFavorites; // @synthesize showsFavorites=_showsFavorites;
@@ -40,7 +41,6 @@
 @property(nonatomic, getter=_isDismissingDueToInterfaceAction, setter=_setDismissingDueToInterfaceAction:) _Bool dismissingDueToInterfaceAction; // @synthesize dismissingDueToInterfaceAction=_dismissingDueToInterfaceAction;
 @property(nonatomic) __weak id <WGWidgetListEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <WGWidgetListEditViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)pinSwitchChanaged:(id)arg1;
 - (id)_widgetListEditViewTableHeaderView;
 - (long long)_compareItemWithIdentifier:(id)arg1 andItemWithIdentifierConsideringIsNew:(id)arg2;

@@ -21,9 +21,9 @@
 }
 
 + (id)contactHeaderViewWithContact:(id)arg1 editingGroups:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CNPropertyCellDelegate> namePropertyDelegate; // @synthesize namePropertyDelegate=_namePropertyDelegate;
 @property(retain, nonatomic) NSArray *editingGroups; // @synthesize editingGroups=_editingGroups;
-- (void).cxx_destruct;
 - (id)_phoneticNameForValue:(id)arg1 isFamilyName:(_Bool)arg2;
 - (void)propertyItem:(id)arg1 willChangeValue:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

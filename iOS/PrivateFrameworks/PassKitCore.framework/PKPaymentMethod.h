@@ -9,14 +9,15 @@
 #import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class CNContact, NSString, PKDisbursementVoucher, PKPaymentPass, PKRemotePaymentInstrument;
+@class CNContact, NSString, PKDisbursementVoucher, PKPaymentPass, PKRemotePaymentInstrument, PKSecureElementPass;
 
 @interface PKPaymentMethod : NSObject <NSSecureCoding, NSCopying>
 {
+    _Bool _usePeerPaymentBalance;
     NSString *_displayName;
     NSString *_network;
     unsigned long long _type;
-    PKPaymentPass *_paymentPass;
+    PKSecureElementPass *_secureElementPass;
     CNContact *_billingAddress;
     PKRemotePaymentInstrument *_remoteInstrument;
     NSString *_peerPaymentQuoteIdentifier;
@@ -27,20 +28,22 @@
 + (_Bool)supportsSecureCoding;
 + (long long)version;
 + (id)paymentMethodWithProtobuf:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bindToken; // @synthesize bindToken=_bindToken;
 @property(retain, nonatomic) PKDisbursementVoucher *disbursementVoucher; // @synthesize disbursementVoucher=_disbursementVoucher;
+@property(nonatomic) _Bool usePeerPaymentBalance; // @synthesize usePeerPaymentBalance=_usePeerPaymentBalance;
 @property(copy, nonatomic) NSString *peerPaymentQuoteIdentifier; // @synthesize peerPaymentQuoteIdentifier=_peerPaymentQuoteIdentifier;
 @property(retain, nonatomic) PKRemotePaymentInstrument *remoteInstrument; // @synthesize remoteInstrument=_remoteInstrument;
 @property(copy, nonatomic) CNContact *billingAddress; // @synthesize billingAddress=_billingAddress;
-@property(copy, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
+@property(copy, nonatomic) PKSecureElementPass *secureElementPass; // @synthesize secureElementPass=_secureElementPass;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *network; // @synthesize network=_network;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+@property(copy, nonatomic) PKPaymentPass *paymentPass;
 - (id)initWithBindToken:(id)arg1;
 - (id)initWithDisbursementVoucher:(id)arg1;
 - (id)initWithPeerPaymentQuote:(id)arg1;

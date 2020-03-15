@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *_headerView;
 }
 
-@property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 - (id)headerViewForTableView:(id)arg1;
 
 @end

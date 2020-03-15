@@ -28,6 +28,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)_shouldDefaultToTouches;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int direction; // @synthesize direction=_direction;
 @property(nonatomic) unsigned int numberOfTouchesRequired; // @synthesize numberOfTouchesRequired=_numberOfTouchesRequired;
 @property(nonatomic) float rateOfMaximumMovementDecay; // @synthesize rateOfMaximumMovementDecay=_rateOfMaximumMovementDecay;
@@ -37,7 +38,6 @@
 @property(nonatomic) float maximumPrimaryMovement; // @synthesize maximumPrimaryMovement=_maximumPrimaryMovement;
 @property(nonatomic) float minimumPrimaryMovement; // @synthesize minimumPrimaryMovement=_minimumPrimaryMovement;
 @property(nonatomic) double maximumDuration; // @synthesize maximumDuration=_maximumDuration;
-- (void).cxx_destruct;
 - (void)_appendSubclassDescription:(id)arg1;
 - (struct CGPoint)locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (unsigned int)numberOfTouches;

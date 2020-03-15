@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool activationForMms; // @synthesize activationForMms=_activationForMms;
 @property(nonatomic) _Bool isDataAttached; // @synthesize isDataAttached=_isDataAttached;
 @property(nonatomic) _Bool dataActive; // @synthesize dataActive=_dataActive;
 @property(retain, nonatomic) NSNumber *pdpContextId; // @synthesize pdpContextId=_pdpContextId;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

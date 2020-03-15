@@ -18,9 +18,9 @@
 }
 
 + (struct UIEdgeInsets)adjustedSafeAreaInsetsForView:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTViewLayoutInfo> avtViewLayoutInfo; // @synthesize avtViewLayoutInfo=_avtViewLayoutInfo;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (double)transitionDuration:(id)arg1;
 - (void)animateTransition:(id)arg1;
 - (id)initWithAVTViewLayoutInfo:(id)arg1 environment:(id)arg2;

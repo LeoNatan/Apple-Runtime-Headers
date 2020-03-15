@@ -27,8 +27,8 @@
 + (const char *)messageTypeKey;
 + (id)messageWithPayload:(id)arg1;
 + (id)messageWithPacker:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) NSObject<OS_xpc_object> *payload; // @synthesize payload=_message;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_xpc_object> *payload; // @synthesize payload=_message;
 - (void)forcefullyInvokeReplyHandler:(id)arg1;
 - (id)_errorForXPCMessageReply:(id)arg1;
 - (id)sendSynchronouslyToConnection:(id)arg1 error:(id *)arg2;

@@ -17,9 +17,9 @@
     NSArray *_toggleControls;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *toggleControls; // @synthesize toggleControls=_toggleControls;
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
-- (void).cxx_destruct;
 - (void)_handleTouchUpInside:(id)arg1 withEvent:(id)arg2;
 - (double)_effectiveInterControlPadding;
 - (double)_effectiveValueForMinValue:(double)arg1 withFont:(id)arg2;

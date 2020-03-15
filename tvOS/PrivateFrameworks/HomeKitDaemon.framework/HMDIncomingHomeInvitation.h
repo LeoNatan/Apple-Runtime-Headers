@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) HMFPairingIdentity *inviterIdentity; // @synthesize inviterIdentity=_inviterIdentity;
 @property(readonly) HMDAccount *inviterAccount; // @synthesize inviterAccount=_inviterAccount;
-- (void).cxx_destruct;
 - (id)describeWithFormat;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

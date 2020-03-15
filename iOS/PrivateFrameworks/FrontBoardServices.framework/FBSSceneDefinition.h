@@ -20,10 +20,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) FBSSceneSpecification *specification; // @synthesize specification=_specification;
 @property(copy, nonatomic) FBSSceneClientIdentity *clientIdentity; // @synthesize clientIdentity=_clientIdentity;
 @property(copy, nonatomic) FBSSceneIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

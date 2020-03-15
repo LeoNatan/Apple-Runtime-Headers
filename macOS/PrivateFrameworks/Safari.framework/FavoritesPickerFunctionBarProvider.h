@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
     id <FunctionBarFavoritesVending> _favoritesVendor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FunctionBarFavoritesVending> favoritesVendor; // @synthesize favoritesVendor=_favoritesVendor;
 @property(nonatomic) __weak id <FavoritesPickerFunctionBarProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSTouchBar *touchBar; // @synthesize touchBar=_functionBar;
-- (void).cxx_destruct;
 - (void)_openFolder:(id)arg1;
 - (id)_favoriteAtIndex:(unsigned long long)arg1;
 - (unsigned long long)_numberOfFavorites;

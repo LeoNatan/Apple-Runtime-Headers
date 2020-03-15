@@ -29,6 +29,7 @@
 + (id)suggestionWithAssetCollection:(id)arg1;
 + (id)sharedCachingImageManager;
 + (id)fastSuggestionWithAssetCollection:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHFetchResult *peopleSuggestionsFetchResult; // @synthesize peopleSuggestionsFetchResult=_peopleSuggestionsFetchResult;
 @property(readonly, nonatomic) PHFetchResult *previewAssetsFetchResult; // @synthesize previewAssetsFetchResult=_previewAssetsFetchResult;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) id <PXDisplayAsset> posterAsset; // @synthesize posterAsset=_posterAsset;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)diagnosticsItem;
 - (void)decline;

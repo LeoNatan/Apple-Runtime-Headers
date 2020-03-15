@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)extendedAttributeFromPath:(id)arg1 name:(id)arg2 options:(int)arg3 error:(id *)arg4;
 + (id)extendedAttributeWithName:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

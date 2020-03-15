@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)diffContainer:(id)arg1 to:(id)arg2;
-@property(retain, nonatomic) NSArray *updates; // @synthesize updates=_updates;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *updates; // @synthesize updates=_updates;
 - (id)description;
 - (id)initWithUpdates:(id)arg1;
 

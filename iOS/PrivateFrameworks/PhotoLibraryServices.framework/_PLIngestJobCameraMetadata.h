@@ -22,9 +22,9 @@
     PFCameraMetadata *_overCaptureCameraMetadata;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PFCameraMetadata *overCaptureCameraMetadata; // @synthesize overCaptureCameraMetadata=_overCaptureCameraMetadata;
 @property(readonly, nonatomic) PFCameraMetadata *cameraMetadata; // @synthesize cameraMetadata=_cameraMetadata;
-- (void).cxx_destruct;
 - (void)applyCameraMetadataToSpacialOverCaptureAsset:(id)arg1;
 - (void)applyCameraMetadataToAsset:(id)arg1;
 - (void)_deserializeCameraMetadata;

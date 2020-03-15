@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_customPropertyStorage;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *customPropertyStorage; // @synthesize customPropertyStorage=_customPropertyStorage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *customPropertyStorage; // @synthesize customPropertyStorage=_customPropertyStorage;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

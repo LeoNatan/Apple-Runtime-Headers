@@ -36,6 +36,7 @@
     WFActionDrawerAppsViewController *_appsViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFActionDrawerAppsViewController *appsViewController; // @synthesize appsViewController=_appsViewController;
 @property(retain, nonatomic) WFActionDrawerResultsController *actionDrawerResultsController; // @synthesize actionDrawerResultsController=_actionDrawerResultsController;
 @property(nonatomic) __weak UIViewController *documentationPopoverViewController; // @synthesize documentationPopoverViewController=_documentationPopoverViewController;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(readonly, nonatomic) WFActionDrawerViewController *actionsViewController; // @synthesize actionsViewController=_actionsViewController;
 @property(readonly, nonatomic) __weak WFComposeViewController *composeViewController; // @synthesize composeViewController=_composeViewController;
-- (void).cxx_destruct;
 - (void)appViewController:(id)arg1 didSelectAppWithBundleIdentifier:(id)arg2;
 - (void)appDetailsViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
 - (void)appDetailsViewController:(id)arg1 didSelectAction:(id)arg2;

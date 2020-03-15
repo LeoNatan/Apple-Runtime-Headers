@@ -16,8 +16,8 @@
     NSExtensionContext *_extensionContext;
 }
 
-@property(retain, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (id)photoWithURL:(id)arg1;
 - (void)executeHydration;
 - (id)allPhotos;

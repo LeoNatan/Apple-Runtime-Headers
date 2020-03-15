@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *pages; // @synthesize pages=_pages;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *pages; // @synthesize pages=_pages;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

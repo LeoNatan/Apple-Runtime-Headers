@@ -16,9 +16,9 @@
     NSColor *_previousFontColor;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSColor *previousFontColor; // @synthesize previousFontColor=_previousFontColor;
 @property(retain) EKUIResizingTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (BOOL)performDragOperation:(id)arg1;
 - (void)setActiveKeyboardHover:(BOOL)arg1;

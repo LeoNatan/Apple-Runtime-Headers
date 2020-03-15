@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     HKDataMetadataDetailSection *_metadataSection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKDataMetadataDetailSection *metadataSection; // @synthesize metadataSection=_metadataSection;
 @property(readonly, nonatomic) HKInteractiveChartViewController *chartController; // @synthesize chartController=_chartController;
 @property(readonly, nonatomic) HKValueRange *fixedRange; // @synthesize fixedRange=_fixedRange;
-- (void).cxx_destruct;
 - (id)applyTransitionActivity:(id)arg1;
 - (void)applyChangeActivity:(id)arg1;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;

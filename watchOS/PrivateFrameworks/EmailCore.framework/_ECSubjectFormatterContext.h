@@ -15,10 +15,10 @@
     NSString *_localizedPrefix;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool prefixLastStrongDirectionalityIsLeftToRight; // @synthesize prefixLastStrongDirectionalityIsLeftToRight=_prefixLastStrongDirectionalityIsLeftToRight;
 @property(readonly, copy, nonatomic) NSString *localizedPrefix; // @synthesize localizedPrefix=_localizedPrefix;
 @property(readonly, nonatomic) NSRegularExpression *regex; // @synthesize regex=_regex;
-- (void).cxx_destruct;
 - (id)initWithRegex:(id)arg1 localizedPrefix:(id)arg2;
 
 @end

@@ -16,22 +16,26 @@
     _Bool _parallelExecution;
     NSObject<OS_dispatch_queue> *_queue;
     ARTechniqueParallelGatherContext *_previousContext;
+    struct os_unfair_lock_s _previousContext_lock;
     NSArray *__internalTechniques;
 }
 
 + (id)techniquesByForceReplacingTechniques:(id)arg1 withMatchingClassTechniques:(id)arg2;
 + (id)techniquesByReplacingOriginalTechniques:(id)arg1 withReplacementTechniques:(id)arg2 passingTest:(CDUnknownBlockType)arg3;
 + (id)techinqueInArray:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
-@property(copy) NSArray *_internalTechniques; // @synthesize _internalTechniques=__internalTechniques;
++ (id)parentTechniqueOfClass:(Class)arg1 inArray:(id)arg2;
 - (void).cxx_destruct;
+@property(copy) NSArray *_internalTechniques; // @synthesize _internalTechniques=__internalTechniques;
 - (void)_submitResultsForTimestamp:(double)arg1 context:(id)arg2;
 - (void)technique:(id)arg1 didFailWithError:(id)arg2;
 - (void)technique:(id)arg1 didOutputResultData:(id)arg2 timestamp:(double)arg3 context:(id)arg4;
+- (id)_fullDescription;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)processResultData:(id)arg1 timestamp:(double)arg2 context:(id)arg3;
-- (void)prepare;
+- (void)prepare:(_Bool)arg1;
 - (void)setBonusLatency:(double)arg1;
+- (id)techniqueMatchingPredicate:(id)arg1;
 - (id)techniqueOfClass:(Class)arg1;
 - (void)siblingTechniquesDidChange:(id)arg1;
 - (void)reconfigureFrom:(id)arg1;
@@ -44,10 +48,12 @@
 - (id)predictedResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (void)requestResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (id)processData:(id)arg1;
+@property(readonly) _Bool isParallel;
 - (void)reuseTechniques:(id)arg1;
 - (id)initWithParallelTechniques:(id)arg1;
 - (id)initWithTechniques:(id)arg1;
 - (id)initWithTechniques:(id)arg1 delegate:(id)arg2;
+- (id)recursiveChildTechniques;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

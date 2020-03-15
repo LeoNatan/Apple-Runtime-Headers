@@ -20,10 +20,10 @@
     NSXPCConnection *_currentConnection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *currentConnection; // @synthesize currentConnection=_currentConnection;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property id <OSSystemExtensionPointListenerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)terminateExtension:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)startExtension:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)willReplaceExtension:(id)arg1 withExtension:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;

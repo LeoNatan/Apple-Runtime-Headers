@@ -17,8 +17,8 @@
 
 + (_Bool)supportsInvalidation;
 + (id)functionName;
-@property(nonatomic) unsigned long value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long value; // @synthesize value=_value;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

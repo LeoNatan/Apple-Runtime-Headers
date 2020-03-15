@@ -16,11 +16,11 @@
     NSMutableSet *_invalidDescriptorCache;
 }
 
+- (void).cxx_destruct;
 @property BOOL streamsEnabled; // @synthesize streamsEnabled=_streamsEnabled;
 @property(retain) NSMutableSet *invalidDescriptorCache; // @synthesize invalidDescriptorCache=_invalidDescriptorCache;
 @property(retain) NSData *currentDescriptorsCache; // @synthesize currentDescriptorsCache=_currentDescriptorsCache;
 @property(retain) NSData *originalDescriptorsCache; // @synthesize originalDescriptorsCache=_originalDescriptorsCache;
-- (void).cxx_destruct;
 - (id)copyStreamWithStreamID:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)disableStreamsWithError:(id *)arg1;
 - (BOOL)enableStreamsWithError:(id *)arg1;

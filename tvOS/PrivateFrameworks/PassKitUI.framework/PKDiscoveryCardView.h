@@ -39,6 +39,7 @@
 + (struct CGSize)expandedSize;
 + (double)expandedHeight;
 + (double)expandedWidth;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissAction; // @synthesize dismissAction=_dismissAction;
 @property(copy, nonatomic) CDUnknownBlockType callToActionTappedOverride; // @synthesize callToActionTappedOverride=_callToActionTappedOverride;
 @property(nonatomic) struct UIEdgeInsets safeAreaOverrideInsets; // @synthesize safeAreaOverrideInsets=_safeAreaOverrideInsets;
@@ -48,7 +49,6 @@
 @property(nonatomic) __weak id <PKDiscoveryCardViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) PKDiscoveryArticleLayout *articleLayout; // @synthesize articleLayout=_articleLayout;
-- (void).cxx_destruct;
 - (id)_dismissButtonTintColor;
 - (id)_headingLabelTextColor;
 - (id)_titleLabelTextColor;

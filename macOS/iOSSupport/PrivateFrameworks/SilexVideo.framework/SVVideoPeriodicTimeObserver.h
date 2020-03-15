@@ -21,13 +21,13 @@
     double _time;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double time; // @synthesize time=_time;
 @property(retain, nonatomic) id timeObserverToken; // @synthesize timeObserverToken=_timeObserverToken;
 @property(readonly, nonatomic) id <SVTimeConverting> timeConverter; // @synthesize timeConverter=_timeConverter;
 @property(readonly, nonatomic) id <SVVideoPlaybackStateObserving> playbackStateObserver; // @synthesize playbackStateObserver=_playbackStateObserver;
 @property(readonly, nonatomic) SVPlayer *player; // @synthesize player=_player;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock;
-- (void).cxx_destruct;
 - (void)updateTime:(CDStruct_198678f7)arg1;
 - (void)stopPeriodicTimeObserverForPlayer:(id)arg1;
 - (void)startPeriodicTimeObserverForPlayer:(id)arg1;

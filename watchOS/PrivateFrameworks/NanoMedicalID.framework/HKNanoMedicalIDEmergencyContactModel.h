@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *relationship; // @synthesize relationship=_relationship;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 phoneNumber:(id)arg2 relationship:(id)arg3;
 
 @end

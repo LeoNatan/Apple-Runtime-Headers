@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     TVHKDPAPMediaItem *_keyImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKDPAPMediaItem *keyImage; // @synthesize keyImage=_keyImage;
 @property(copy, nonatomic) TVHKDMAPPlaylistIdentifier *playlistIdentifier; // @synthesize playlistIdentifier=_playlistIdentifier;
 - (id)type;
-- (void).cxx_destruct;
 - (id)_fakeKeyImage;
 - (id)_keyImageFaces;
 - (unsigned long long)_keyImageID;

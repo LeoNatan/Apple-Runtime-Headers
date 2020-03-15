@@ -13,8 +13,8 @@
     UIPrintPageRenderer *_pageRenderer;
 }
 
-@property(retain, nonatomic) UIPrintPageRenderer *pageRenderer; // @synthesize pageRenderer=_pageRenderer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIPrintPageRenderer *pageRenderer; // @synthesize pageRenderer=_pageRenderer;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)activityImage;

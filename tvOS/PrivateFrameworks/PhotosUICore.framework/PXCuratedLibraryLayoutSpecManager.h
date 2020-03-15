@@ -13,8 +13,8 @@
     NSArray *_availableThumbnailSizes;
 }
 
-@property(retain, nonatomic) NSArray *availableThumbnailSizes; // @synthesize availableThumbnailSizes=_availableThumbnailSizes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *availableThumbnailSizes; // @synthesize availableThumbnailSizes=_availableThumbnailSizes;
 - (_Bool)shouldUpdateSpecForExtendedTraitCollection:(id)arg1 change:(unsigned long long)arg2;
 - (id)createSpec;
 - (Class)specClass;

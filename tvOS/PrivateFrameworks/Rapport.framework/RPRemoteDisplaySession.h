@@ -11,16 +11,16 @@
 #import <Rapport/RPMessageable-Protocol.h>
 #import <Rapport/RPRemoteDisplayXPCClientInterface-Protocol.h>
 
-@class CUBonjourDevice, NSNumber, NSString, NSXPCConnection, RPRemoteDisplayDevice, RPRemoteDisplayServer;
+@class CUBonjourDevice, NSMutableDictionary, NSNumber, NSString, NSXPCConnection, RPRemoteDisplayDevice, RPRemoteDisplayServer;
 @protocol OS_dispatch_queue;
 
 @interface RPRemoteDisplaySession : NSObject <NSSecureCoding, RPRemoteDisplayXPCClientInterface, RPAuthenticatable, RPMessageable>
 {
     _Bool _activateCalled;
-    struct NSMutableDictionary *_eventRegistrations;
+    NSMutableDictionary *_eventRegistrations;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
-    struct NSMutableDictionary *_requestRegistrations;
+    NSMutableDictionary *_requestRegistrations;
     _Bool _needsAWDL;
     unsigned int _pairSetupFlags;
     unsigned int _pairVerifyFlags;
@@ -46,6 +46,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *xpcCnx; // @synthesize xpcCnx=_xpcCnx;
 @property(copy, nonatomic) NSNumber *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic) RPRemoteDisplayServer *server; // @synthesize server=_server;
@@ -68,7 +69,6 @@
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(nonatomic) unsigned int pairVerifyFlags; // @synthesize pairVerifyFlags=_pairVerifyFlags;
 @property(nonatomic) unsigned int pairSetupFlags; // @synthesize pairSetupFlags=_pairSetupFlags;
-- (void).cxx_destruct;
 - (void)remoteDisplayReceivedRequestID:(id)arg1 request:(id)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)_sendRequestID:(id)arg1 request:(id)arg2 destinationID:(id)arg3 options:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
 - (void)sendRequestID:(id)arg1 request:(id)arg2 destinationID:(id)arg3 options:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;

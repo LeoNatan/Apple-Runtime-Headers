@@ -17,10 +17,10 @@
     NSDictionary *_favoriteTranslationMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *favoriteTranslationMap; // @synthesize favoriteTranslationMap=_favoriteTranslationMap;
 @property(retain, nonatomic) NSDictionary *topicTranslationMap; // @synthesize topicTranslationMap=_topicTranslationMap;
 @property(retain, nonatomic) NSString *resourceID; // @synthesize resourceID=_resourceID;
-- (void).cxx_destruct;
 - (id)favoriteTranslationForTagID:(id)arg1;
 - (id)topicTranslationForTagID:(id)arg1;
 - (id)initWithPBTranslationMap:(id)arg1 resourceID:(id)arg2;

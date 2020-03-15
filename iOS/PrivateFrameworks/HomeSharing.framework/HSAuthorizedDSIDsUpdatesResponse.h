@@ -13,8 +13,8 @@
     NSArray *authorizedDSIDs;
 }
 
-@property(copy, nonatomic) NSArray *authorizedDSIDs; // @synthesize authorizedDSIDs;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *authorizedDSIDs; // @synthesize authorizedDSIDs;
 
 @end
 

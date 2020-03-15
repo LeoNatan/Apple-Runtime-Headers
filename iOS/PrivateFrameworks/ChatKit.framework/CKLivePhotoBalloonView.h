@@ -15,10 +15,10 @@
     PHLivePhoto *_livePhoto;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHLivePhoto *livePhoto; // @synthesize livePhoto=_livePhoto;
 @property(retain, nonatomic) PHLivePhotoView *livePhotoView; // @synthesize livePhotoView=_livePhotoView;
 - (_Bool)isIrisAsset;
-- (void).cxx_destruct;
 - (void)setIsIrisAsset:(_Bool)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

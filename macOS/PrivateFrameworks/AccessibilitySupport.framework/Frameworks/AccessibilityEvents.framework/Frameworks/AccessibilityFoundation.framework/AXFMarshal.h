@@ -18,12 +18,12 @@
     NSMutableArray *__results;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *_results; // @synthesize _results=__results;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *_width; // @synthesize _width=__width;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_widthQueue; // @synthesize _widthQueue=__widthQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_syncQueue; // @synthesize _syncQueue=__syncQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *_group; // @synthesize _group=__group;
-- (void).cxx_destruct;
 - (void)notify:(CDUnknownBlockType)arg1;
 - (id)waitForResults:(long long)arg1;
 - (void)addExecutionBlock:(CDUnknownBlockType)arg1;

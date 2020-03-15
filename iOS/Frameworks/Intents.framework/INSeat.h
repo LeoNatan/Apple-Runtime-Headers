@@ -22,11 +22,11 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *seatingType; // @synthesize seatingType=_seatingType;
 @property(readonly, copy, nonatomic) NSString *seatNumber; // @synthesize seatNumber=_seatNumber;
 @property(readonly, copy, nonatomic) NSString *seatRow; // @synthesize seatRow=_seatRow;
 @property(readonly, copy, nonatomic) NSString *seatSection; // @synthesize seatSection=_seatSection;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

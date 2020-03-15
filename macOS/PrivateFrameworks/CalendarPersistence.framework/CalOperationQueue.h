@@ -20,9 +20,9 @@
     NSString *_sessionID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, retain) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (void)processChangeRequests;
 - (void)managedObjectContextDidSave:(id)arg1;
 - (void)_mergeChangesFromContextDidSaveNotificationInvokedByQueue:(id)arg1;

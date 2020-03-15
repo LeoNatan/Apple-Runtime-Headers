@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIStatusBar_Modern *_statusBar;
 }
 
-@property(retain, nonatomic) UIStatusBar_Modern *statusBar; // @synthesize statusBar=_statusBar;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIStatusBar_Modern *statusBar; // @synthesize statusBar=_statusBar;
 - (void)willMoveToWindow:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

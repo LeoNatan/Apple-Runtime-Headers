@@ -19,11 +19,11 @@
     VUIDebugViewDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIDebugViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) _Bool requiresRelayout; // @synthesize requiresRelayout=_requiresRelayout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) VUIDebugContainerView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)_dismissViewController;
 - (void)collectionView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
 - (_Bool)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;
@@ -38,6 +38,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)dealloc;
 - (void)viewDidLoad;
 - (void)loadView;
 - (long long)preferredStatusBarStyle;

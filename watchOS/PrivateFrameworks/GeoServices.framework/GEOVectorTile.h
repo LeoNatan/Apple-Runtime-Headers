@@ -84,6 +84,7 @@
         char *_field3;
     } *_labelPoolLanguages;
     unsigned int _labelPoolLanguagesLength;
+    NSData *_localizedLabelLanguagePool;
     NSData *_localizedLabelPool;
     NSString *_preferredLocalizedLabelLanguage;
     char *_localizedLabelsLanguage;
@@ -174,6 +175,7 @@
     NSMutableDictionary *_debugByteCountPerChapter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *debugByteCountPerChapter; // @synthesize debugByteCountPerChapter=_debugByteCountPerChapter;
 @property(readonly, nonatomic) unsigned int debugByteCount; // @synthesize debugByteCount=_debugByteCount;
 @property(readonly, nonatomic) struct GEOLabelLineAttribute *labelLineAttributes; // @synthesize labelLineAttributes=_labelLineAttributes;
@@ -266,7 +268,6 @@
 @property(readonly, nonatomic) CDStruct_361566eb *linesLabelAnnotations; // @synthesize linesLabelAnnotations=_linesLabelAnnotations;
 @property(readonly, nonatomic) unsigned int linesCount; // @synthesize linesCount=_linesCount;
 @property(readonly, nonatomic) CDStruct_91c84281 *lines; // @synthesize lines=_lines;
-- (void).cxx_destruct;
 - (struct GEOTileLabelLine *)tileLabelLineforLabelLineID:(unsigned long long)arg1;
 - (CDStruct_7364068e *)transitSystemInfoForFeatureID:(unsigned long long)arg1;
 - (CDStruct_fd961fc6 *)transitAccessPointForFeatureID:(unsigned long long)arg1;

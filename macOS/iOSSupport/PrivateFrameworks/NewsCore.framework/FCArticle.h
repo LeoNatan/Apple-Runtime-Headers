@@ -19,13 +19,13 @@
     FCFetchOperation *_headlineFetchOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCFetchOperation *headlineFetchOperation; // @synthesize headlineFetchOperation=_headlineFetchOperation;
 @property(retain, nonatomic) NSError *fetchError; // @synthesize fetchError=_fetchError;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *fetchGroup; // @synthesize fetchGroup=_fetchGroup;
 @property(retain, nonatomic) FCArticleContentManifest *contentManifest; // @synthesize contentManifest=_contentManifest;
 @property(retain, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 @property(readonly, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-- (void).cxx_destruct;
 - (void)performBlockWhenContentManifestIsLoaded:(CDUnknownBlockType)arg1;
 - (void)performBlockWhenFullyLoaded:(CDUnknownBlockType)arg1;
 - (void)dealloc;

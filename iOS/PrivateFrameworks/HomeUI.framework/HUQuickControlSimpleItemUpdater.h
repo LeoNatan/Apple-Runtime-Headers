@@ -18,9 +18,9 @@
     HFSimpleItemManager *_itemManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFSimpleItemManager *itemManager; // @synthesize itemManager=_itemManager;
 @property(readonly, nonatomic) __weak id <HUQuickControlItemHosting> itemHost; // @synthesize itemHost=_itemHost;
-- (void).cxx_destruct;
 - (void)quickControlItemHost:(id)arg1 didUpdateVisibility:(_Bool)arg2;
 - (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;
 - (void)_setExternalItemManagerUpdatesDisabled:(_Bool)arg1;

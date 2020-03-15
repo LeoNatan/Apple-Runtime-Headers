@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *latestSampleStartDate; // @synthesize latestSampleStartDate=_latestSampleStartDate;
 @property(copy, nonatomic) NSUUID *latestUUID; // @synthesize latestUUID=_latestUUID;
 @property(copy, nonatomic) NSDate *maximumStartDate; // @synthesize maximumStartDate=_maximumStartDate;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int mode; // @synthesize mode=_mode;
 @property(nonatomic) int seriesAnchor; // @synthesize seriesAnchor=_seriesAnchor;
 @property(copy, nonatomic) HKQuantitySample *quantitySample; // @synthesize quantitySample=_quantitySample;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

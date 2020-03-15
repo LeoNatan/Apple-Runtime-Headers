@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *privilegedClients; // @synthesize privilegedClients=_privilegedClients;
 @property(nonatomic) struct _opaque_pthread_mutex_t lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (_Bool)duetLaunchRequestIsAllowed:(id)arg1 reasons:(id)arg2;
 - (_Bool)_reasonIsAllowed:(id)arg1;
 - (_Bool)isPrivileged:(id)arg1;

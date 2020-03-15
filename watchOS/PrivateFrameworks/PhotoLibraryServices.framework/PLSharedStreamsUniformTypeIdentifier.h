@@ -18,11 +18,11 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool conformsToMovie; // @synthesize conformsToMovie=_conformsToMovie;
 @property(nonatomic) _Bool conformsToImage; // @synthesize conformsToImage=_conformsToImage;
 @property(nonatomic) _Bool conformsToRawImage; // @synthesize conformsToRawImage=_conformsToRawImage;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPlayableVideo;
 @property(readonly, nonatomic, getter=isPrimaryImageFormat) _Bool primaryImageFormat;
 

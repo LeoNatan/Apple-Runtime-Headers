@@ -27,8 +27,8 @@
     CDStruct_ef5fcbe6 _activeDayRange;
 }
 
-@property(nonatomic) CDStruct_ef5fcbe6 activeDayRange; // @synthesize activeDayRange=_activeDayRange;
 - (void).cxx_destruct;
+@property(nonatomic) CDStruct_ef5fcbe6 activeDayRange; // @synthesize activeDayRange=_activeDayRange;
 - (_Bool)_ppt_didFetchDaySummaries;
 - (_Bool)_ppt_didFetchAnalysis;
 - (CDStruct_ef5fcbe6)_test_managedDayRange;

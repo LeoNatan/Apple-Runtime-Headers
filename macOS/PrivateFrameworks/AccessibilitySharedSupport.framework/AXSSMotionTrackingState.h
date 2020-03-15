@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *expressions; // @synthesize expressions=_expressions;
 @property(nonatomic) struct CGPoint lookAtPoint; // @synthesize lookAtPoint=_lookAtPoint;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *debugString;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

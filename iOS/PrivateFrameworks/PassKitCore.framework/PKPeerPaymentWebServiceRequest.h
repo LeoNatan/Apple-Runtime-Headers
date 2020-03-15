@@ -13,8 +13,8 @@
     id <PKPeerPaymentWebServiceTargetDeviceProtocol> _targetDevice;
 }
 
-@property(retain, nonatomic) id <PKPeerPaymentWebServiceTargetDeviceProtocol> targetDevice; // @synthesize targetDevice=_targetDevice;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <PKPeerPaymentWebServiceTargetDeviceProtocol> targetDevice; // @synthesize targetDevice=_targetDevice;
 - (id)_murlRequestWithURL:(id)arg1;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2 deviceIdentifier:(id)arg3;

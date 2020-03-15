@@ -25,9 +25,9 @@
 + (void)unregisterForFactory:(id)arg1;
 + (id)registerForFactoryWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint)arg3 scale:(struct CGSize)arg4 allowCaching:(_Bool)arg5;
 + (id)keyForBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint)arg3 scale:(struct CGSize)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long registeredClientsCount; // @synthesize registeredClientsCount=_registeredClientsCount;
 @property(readonly, nonatomic) _Bool allowCaching; // @synthesize allowCaching=_allowCaching;
-- (void).cxx_destruct;
 - (void)flushCache;
 - (id)imageForAngle:(double)arg1 viewSize:(struct CGSize)arg2;
 - (id)renderImageForAngle:(double)arg1 viewSize:(struct CGSize)arg2;

@@ -23,6 +23,7 @@
     struct UIEdgeInsets _tileInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableIndexSet *indexesToReload; // @synthesize indexesToReload=_indexesToReload;
 @property(readonly, nonatomic) struct UIEdgeInsets tileInsets; // @synthesize tileInsets=_tileInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets sectionInsets; // @synthesize sectionInsets=_sectionInsets;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned int tilesPerRow; // @synthesize tilesPerRow=_tilesPerRow;
 @property(nonatomic) struct CGSize pageSize; // @synthesize pageSize=_pageSize;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
-- (void).cxx_destruct;
 - (struct CGRect)frameForTileAtIndex:(unsigned int)arg1;
 - (void)configureIfNeededWithLayoutView:(id)arg1 sectionNumber:(unsigned int)arg2;
 - (void)resetConfiguration;

@@ -21,10 +21,10 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASResolveRecipientsAvailabilityItem *availability; // @synthesize availability=_availability;
 @property(retain, nonatomic) ASResolveRecipientsCertificatesItem *certificates; // @synthesize certificates=_certificates;
 @property(retain, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -12,9 +12,9 @@
     CDUnknownBlockType _cancellationHandler;
 }
 
+- (void).cxx_destruct;
 @property(getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(copy, nonatomic) CDUnknownBlockType cancellationHandler; // @synthesize cancellationHandler=_cancellationHandler;
-- (void).cxx_destruct;
 - (void)cancel;
 
 @end

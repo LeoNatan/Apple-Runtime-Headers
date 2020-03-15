@@ -23,6 +23,7 @@
     IDSMessageContext *_idsContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSMessageContext *idsContext; // @synthesize idsContext=_idsContext;
 @property(nonatomic) unsigned long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) id pbHeaderInfo; // @synthesize pbHeaderInfo=_pbHeaderInfo;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
 @property(nonatomic) __weak NMSMessageCenter *messageCenter; // @synthesize messageCenter=_messageCenter;
 @property(retain, nonatomic) NSString *sourceDeviceID; // @synthesize sourceDeviceID;
-- (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;
 @property(readonly, copy) NSString *description;
 

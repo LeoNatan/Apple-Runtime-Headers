@@ -17,7 +17,7 @@
 @property(readonly) CDStruct_912cb5d2 targetScale; // @synthesize targetScale=_targetScale;
 - (id)_evaluateImageGeometry:(out id *)arg1;
 - (id)_evaluateImage:(out id *)arg1;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (id)_settingsWithTargetScale:(CDStruct_912cb5d2)arg1 effectiveScale:(CDStruct_912cb5d2)arg2 sampleMode:(long long)arg3;
 - (id)initWithPipelineState:(id)arg1 input:(id)arg2;
 - (id)initWithTargetScale:(CDStruct_912cb5d2)arg1 effectiveScale:(CDStruct_912cb5d2)arg2 sampleMode:(long long)arg3 input:(id)arg4;

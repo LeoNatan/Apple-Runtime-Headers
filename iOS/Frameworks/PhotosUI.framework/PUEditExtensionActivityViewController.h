@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <PUEditExtensionActivityViewControllerDelegate> _editExtensionActivityViewControllerDelegate;
 }
 
-@property(nonatomic) __weak id <PUEditExtensionActivityViewControllerDelegate> editExtensionActivityViewControllerDelegate; // @synthesize editExtensionActivityViewControllerDelegate=_editExtensionActivityViewControllerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUEditExtensionActivityViewControllerDelegate> editExtensionActivityViewControllerDelegate; // @synthesize editExtensionActivityViewControllerDelegate=_editExtensionActivityViewControllerDelegate;
 - (void)_performActivity:(id)arg1;
 - (_Bool)appWantsLargePreview;
 - (_Bool)isPhotosOrCamera;

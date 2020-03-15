@@ -14,8 +14,8 @@
     UIViewController *_controlCenterViewController;
 }
 
-@property(readonly) UIViewController *controlCenterViewController; // @synthesize controlCenterViewController=_controlCenterViewController;
 - (void).cxx_destruct;
+@property(readonly) UIViewController *controlCenterViewController; // @synthesize controlCenterViewController=_controlCenterViewController;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

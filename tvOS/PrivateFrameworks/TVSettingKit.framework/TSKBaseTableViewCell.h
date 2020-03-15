@@ -16,11 +16,11 @@
     NSMapTable *_titleAccessoriesAndSelectors;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *titleAccessoriesAndSelectors; // @synthesize titleAccessoriesAndSelectors=_titleAccessoriesAndSelectors;
 @property(readonly, nonatomic) NSMapTable *accessoriesAndSelectors; // @synthesize accessoriesAndSelectors=_accessoriesAndSelectors;
 @property(readonly, nonatomic) NSHashTable *detailLabels; // @synthesize detailLabels=_detailLabels;
 @property(readonly, nonatomic) NSHashTable *textLabels; // @synthesize textLabels=_textLabels;
-- (void).cxx_destruct;
 - (id)_accessoryColor;
 - (id)_detailColor;
 - (id)_textColor;

@@ -44,23 +44,11 @@ struct CGSize {
     float _field2;
 };
 
-struct UIColor {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     float top;
     float left;
     float bottom;
     float right;
-};
-
-struct UIImageView {
-    Class _field1;
-};
-
-struct UIView {
-    Class _field1;
 };
 
 struct os_unfair_lock_s {

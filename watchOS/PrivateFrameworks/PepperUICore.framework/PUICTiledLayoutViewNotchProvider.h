@@ -16,11 +16,11 @@
     float _firstNotchOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float firstNotchOffset; // @synthesize firstNotchOffset=_firstNotchOffset;
 @property(retain, nonatomic) NSSet *viewFrames; // @synthesize viewFrames=_viewFrames;
 @property(nonatomic) __weak PUICTiledLayoutView *tiledLayoutView; // @synthesize tiledLayoutView=_tiledLayoutView;
 @property(retain, nonatomic) NSMutableSet *notches; // @synthesize notches=_notches;
-- (void).cxx_destruct;
 - (void)updateNotchProviderOffsetsIfNecessary;
 - (void)reloadData;
 - (void)configureMinorDetentsBasedOnResultingNotches;

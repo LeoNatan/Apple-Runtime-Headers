@@ -6,11 +6,11 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-@class MTTimerManager, NTKTimerTimelineEntry;
+@class MTTimerManager, NSNumber, NTKTimerTimelineEntry;
 
 @interface NTKTimerComplicationDataSource : NTKComplicationDataSource
 {
-    struct NSNumber *_timerToken;
+    NSNumber *_timerToken;
     NTKTimerTimelineEntry *_currentTimerEntry;
     _Bool _listeningForNotifications;
     MTTimerManager *_timerManager;
@@ -18,8 +18,8 @@
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
-@property(retain, nonatomic) MTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
 - (void)_handleTimeFormatChange;
 - (void)_handleLocaleChange;
 - (void)_timerDidChange:(id)arg1;

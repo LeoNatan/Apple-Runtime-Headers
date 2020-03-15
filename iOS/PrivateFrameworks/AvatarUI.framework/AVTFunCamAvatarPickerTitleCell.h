@@ -14,8 +14,8 @@
 }
 
 + (id)cellIdentifier;
-@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)prepareForReuse;
 - (void)updateWithTitle:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

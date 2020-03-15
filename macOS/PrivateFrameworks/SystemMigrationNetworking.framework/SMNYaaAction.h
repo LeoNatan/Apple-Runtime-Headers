@@ -38,6 +38,7 @@
 + (BOOL)shouldCloseOutboundStreamWhenDone;
 + (BOOL)streamsResults;
 + (int)actionID;
+- (void).cxx_destruct;
 @property void *compressionStream; // @synthesize compressionStream=_compressionStream;
 @property(retain) NSObject<OS_dispatch_queue> *resumeQueue; // @synthesize resumeQueue=_resumeQueue;
 @property(retain) NSObject<OS_dispatch_source> *watchdogSource; // @synthesize watchdogSource=_watchdogSource;
@@ -58,7 +59,6 @@
 @property __weak NSObject<SMYaaActionDelegate> *callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
 @property(retain) NSString *lastPathReceived; // @synthesize lastPathReceived=_lastPathReceived;
 @property(retain) NSString *errorPath; // @synthesize errorPath=_errorPath;
-- (void).cxx_destruct;
 - (void)receivedEOA;
 - (void)extractEntryProgressCallback:(const CDStruct_743dcad3 *)arg1;
 - (void)extractEntryBeginCallback:(const CDStruct_743dcad3 *)arg1 overrides:(CDStruct_1210889d *)arg2;

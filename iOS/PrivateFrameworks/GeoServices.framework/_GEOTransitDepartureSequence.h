@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (id)firstDepartureAfterDate:(id)arg1;
 - (void)_enumerateDeparturesValidForDate:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (_Bool)isValidForDate:(id)arg1 inTimeZone:(id)arg2;
+- (_Bool)areOperatingHours:(id)arg1 activeForDate:(id)arg2;
 @property(readonly, nonatomic) long long displayStyle;
 @property(readonly, nonatomic) _Bool isLowFrequency;
 @property(readonly, nonatomic) NSArray *operatingHours;

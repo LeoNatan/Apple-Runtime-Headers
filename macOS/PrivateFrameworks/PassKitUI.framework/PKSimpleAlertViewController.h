@@ -14,9 +14,9 @@
     NSTextField *_messageTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *messageTextField; // @synthesize messageTextField=_messageTextField;
 @property(copy, nonatomic) NSString *messageText; // @synthesize messageText=_messageText;
-- (void).cxx_destruct;
 - (void)okButtonClicked:(id)arg1;
 - (void)awakeFromNib;
 - (id)nibName;

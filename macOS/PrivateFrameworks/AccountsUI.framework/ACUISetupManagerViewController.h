@@ -35,6 +35,7 @@
 + (void)_setDefaultToSkipSetupForAccountType:(id)arg1;
 + (id)_readDefaultForSkipAccountSetup;
 + (BOOL)shouldOfferAccountSetupForAccountType:(id)arg1 username:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) ACUISetupManagerViewController *strongSelf; // @synthesize strongSelf=_strongSelf;
 @property(retain) NSString *password; // @synthesize password=_password;
 @property(retain) NSWindow *safariConfirmSheet; // @synthesize safariConfirmSheet=_safariConfirmSheet;
@@ -53,7 +54,6 @@
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property BOOL cancelWillQuit; // @synthesize cancelWillQuit=_cancelWillQuit;
 @property(retain) NSString *dataclassFilter; // @synthesize dataclassFilter=_dataclassFilter;
-- (void).cxx_destruct;
 - (void)_notNowAction:(id)arg1;
 - (void)_allowAction:(id)arg1;
 - (void)startSetupInWindow:(id)arg1 accountType:(id)arg2 username:(id)arg3 password:(id)arg4 completion:(CDUnknownBlockType)arg5;

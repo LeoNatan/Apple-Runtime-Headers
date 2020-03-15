@@ -17,12 +17,12 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic) int _style; // @synthesize _style=__style;
 @property(retain, nonatomic) NSString *_clientName; // @synthesize _clientName=__clientName;
 @property(retain, nonatomic) NSArray *_additionalPhotoStreamAssets; // @synthesize _additionalPhotoStreamAssets=__additionalPhotoStreamAssets;
 @property(retain, nonatomic) NSArray *_assets; // @synthesize _assets=__assets;
-- (void).cxx_destruct;
 - (id)allWarningMessageCombinations;
 - (void)getDeletionWarningTitle:(id *)arg1 message:(id *)arg2 buttonTitle:(id *)arg3 forAlbums:(id)arg4 folders:(id)arg5 clientName:(id)arg6 style:(int)arg7;
 - (id)_usedElsewhereWarningTextForAssetCount:(int)arg1 inPhotoStreamCount:(int)arg2 iniPhotoCount:(int)arg3 inSomeAlbumCount:(int)arg4 affectedLocalAlbumsCount:(int)arg5 itemKindSuffix:(id)arg6 actualDeletionCount:(int)arg7;

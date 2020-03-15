@@ -17,8 +17,8 @@
     id <NSFetchedResultsControllerDelegate> _defaultDelegate;
 }
 
-@property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(readonly, nonatomic) NSArray *fetchedRecordings;
 - (void)setDelegate:(id)arg1;
 - (void)setDefaultDelegate:(id)arg1;

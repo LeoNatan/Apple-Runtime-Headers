@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <Photos/PHAssetResourceRequest-Protocol.h>
-#import <Photos/PHResourceAvailabilityChangeRequestDelegate-Protocol.h>
+#import <Photos/PLTrackableRequestDelegate-Protocol.h>
 
 @class NSDictionary, NSProgress, NSString, PHAssetResource, PHAssetResourceRequestOptions, PHResourceAvailabilityJob;
 @protocol PHAssetResourceRequestDelegate;
 
-@interface PHAssetResourceRequest : NSObject <PHResourceAvailabilityChangeRequestDelegate, PHAssetResourceRequest>
+@interface PHAssetResourceRequest : NSObject <PLTrackableRequestDelegate, PHAssetResourceRequest>
 {
     PHResourceAvailabilityJob *_availabilityJob;
     struct os_unfair_lock_s _lock;
@@ -21,6 +21,7 @@
     NSProgress *_fileStreamProgress;
     NSProgress *_totalProgress;
     BOOL _loadURLOnly;
+    BOOL _synchronous;
     int _requestID;
     PHAssetResource *_assetResource;
     PHAssetResourceRequestOptions *_options;
@@ -33,7 +34,9 @@
 }
 
 + (id)_globalFileIOQueue;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dataHandler; // @synthesize dataHandler=_dataHandler;
+@property(nonatomic, getter=isSynchronous) BOOL synchronous; // @synthesize synchronous=_synchronous;
 @property(nonatomic) BOOL loadURLOnly; // @synthesize loadURLOnly=_loadURLOnly;
 @property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 @property(readonly, nonatomic) NSDictionary *info; // @synthesize info=_info;
@@ -43,12 +46,14 @@
 @property(readonly, nonatomic) int requestID; // @synthesize requestID=_requestID;
 @property(readonly, nonatomic) PHAssetResourceRequestOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) PHAssetResource *assetResource; // @synthesize assetResource=_assetResource;
-- (void).cxx_destruct;
-- (void)resourceAvailabilityChangeRequest:(id)arg1 didFinishWithSuccess:(BOOL)arg2 url:(id)arg3 data:(id)arg4 info:(id)arg5 error:(id)arg6;
-- (void)resourceAvailabilityChangeRequest:(id)arg1 didReportProgress:(double)arg2 completed:(BOOL)arg3 error:(id)arg4;
+- (void)trackableResourceRepairRequest:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)trackableVideoChoosingAndAvailabilityRequest:(id)arg1 didFinishWithVideoURL:(id)arg2 info:(id)arg3 error:(id)arg4;
+- (void)trackableDownloadRequest:(id)arg1 didFinishWithSuccess:(BOOL)arg2 url:(id)arg3 data:(id)arg4 info:(id)arg5 error:(id)arg6;
+- (void)trackableRequest:(id)arg1 didReportProgress:(double)arg2 completed:(BOOL)arg3 error:(id)arg4;
 - (void)_updateAssetResourceWithLocallyAvailable:(BOOL)arg1 fileURL:(id)arg2;
 - (void)_streamDataAtURL:(id)arg1 dataHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_finishAsyncWithLocallyAvailableResourceAtURL:(id)arg1;
+- (void)_finishAsyncWithFileURL:(id)arg1;
+- (void)_finishWithFileURL:(id)arg1;
 - (void)_reportProgress;
 - (void)_setupProgressIfNeeded;
 - (id)_initialValidationError;

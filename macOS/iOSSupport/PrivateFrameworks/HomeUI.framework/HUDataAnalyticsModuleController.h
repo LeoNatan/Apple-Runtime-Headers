@@ -13,8 +13,8 @@
     id <HUDataAnalyticsModuleControllerDelegate> _dataAnalyticsModuleControllerDelegate;
 }
 
-@property(nonatomic) __weak id <HUDataAnalyticsModuleControllerDelegate> dataAnalyticsModuleControllerDelegate; // @synthesize dataAnalyticsModuleControllerDelegate=_dataAnalyticsModuleControllerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HUDataAnalyticsModuleControllerDelegate> dataAnalyticsModuleControllerDelegate; // @synthesize dataAnalyticsModuleControllerDelegate=_dataAnalyticsModuleControllerDelegate;
 - (unsigned long long)didSelectItem:(id)arg1;
 - (BOOL)canSelectItem:(id)arg1;
 - (void)setupCell:(id)arg1 forItem:(id)arg2;

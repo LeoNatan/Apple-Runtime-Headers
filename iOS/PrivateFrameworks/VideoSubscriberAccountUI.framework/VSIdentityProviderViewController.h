@@ -28,6 +28,7 @@
     UIViewController *_currentlyPresentedIdentityProviderAlert;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *currentlyPresentedIdentityProviderAlert; // @synthesize currentlyPresentedIdentityProviderAlert=_currentlyPresentedIdentityProviderAlert;
 @property(retain, nonatomic) UIBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *signInButtonItem; // @synthesize signInButtonItem=_signInButtonItem;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) VSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(nonatomic) __weak id <VSIdentityProviderViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;
-- (void).cxx_destruct;
 - (void)viewDidLayoutSubviews;
 - (_Bool)identityProviderRequestManager:(id)arg1 requestsAlert:(id)arg2;
 - (void)identityProviderRequestManager:(id)arg1 didAuthenticateAccount:(id)arg2 forRequest:(id)arg3;

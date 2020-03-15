@@ -17,11 +17,12 @@
     UIView *_caAnimationContainerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreFrameUpdates; // @synthesize ignoreFrameUpdates=_ignoreFrameUpdates;
 @property(readonly, nonatomic) UIView *caAnimationContainerView; // @synthesize caAnimationContainerView=_caAnimationContainerView;
 @property(readonly, nonatomic) UIView *c2AnimationContainerView; // @synthesize c2AnimationContainerView=_c2AnimationContainerView;
 @property(readonly, copy, nonatomic) NSString *moduleIdentifier; // @synthesize moduleIdentifier=_moduleIdentifier;
-- (void).cxx_destruct;
+- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) UIView *containerView; // @dynamic containerView;
 - (id)initWithModuleIdentifier:(id)arg1 options:(unsigned long long)arg2;

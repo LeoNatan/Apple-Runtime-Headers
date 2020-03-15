@@ -21,6 +21,7 @@
     NSMutableArray *_resultRecordIDsEligibleForDeletion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *resultRecordIDsEligibleForDeletion; // @synthesize resultRecordIDsEligibleForDeletion=_resultRecordIDsEligibleForDeletion;
 @property(retain, nonatomic) NSMutableArray *resultZoneIDsEligibleForDeletion; // @synthesize resultZoneIDsEligibleForDeletion=_resultZoneIDsEligibleForDeletion;
 @property(retain, nonatomic) NSMutableSet *createdZones; // @synthesize createdZones=_createdZones;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) id <FCCKDatabaseMigrator> migrator; // @synthesize migrator=_migrator;
 @property(copy, nonatomic) CKRecordZoneID *recordZoneID; // @synthesize recordZoneID=_recordZoneID;
 @property(retain, nonatomic) FCCKPrivateDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)_createZones:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_uncreatedZonesInRecords:(id)arg1;
 - (id)_migratedRecord:(id)arg1 error:(id *)arg2;

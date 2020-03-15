@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, NSURL;
 
 @interface ICQLink : NSObject
 {
@@ -14,16 +14,18 @@
     long long _options;
     long long _action;
     NSDictionary *_parameters;
+    NSURL *_remoteUIURL;
 }
 
 + (_Bool)performAction:(long long)arg1 parameters:(id)arg2 options:(long long)arg3;
 + (id)linkWithText:(id)arg1 options:(long long)arg2 action:(long long)arg3 parameters:(id)arg4;
 + (id)linkWithText:(id)arg1 action:(long long)arg2 parameters:(id)arg3;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *remoteUIURL; // @synthesize remoteUIURL=_remoteUIURL;
 @property(readonly, copy, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) long long action; // @synthesize action=_action;
 @property(readonly, nonatomic) long long options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (_Bool)performActionWithOptions:(long long)arg1;
 - (_Bool)performAction;
 - (id)debugDescription;

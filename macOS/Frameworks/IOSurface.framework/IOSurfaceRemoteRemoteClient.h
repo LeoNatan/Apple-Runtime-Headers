@@ -6,28 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSMapTable;
+@class NSMutableDictionary;
 @protocol OS_dispatch_queue, OS_xpc_object;
 
 @interface IOSurfaceRemoteRemoteClient : NSObject
 {
     int _pid;
-    NSMapTable *_ioSurfaceClients;
+    NSMutableDictionary *_surfaceStates;
     NSObject<OS_xpc_object> *_remoteConnection;
     NSObject<OS_dispatch_queue> *_disconnectedQueue;
     CDUnknownBlockType _disconnectedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType disconnectedHandler; // @synthesize disconnectedHandler=_disconnectedHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *disconnectedQueue; // @synthesize disconnectedQueue=_disconnectedQueue;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *remoteConnection; // @synthesize remoteConnection=_remoteConnection;
-@property(retain, nonatomic) NSMapTable *ioSurfaceClients; // @synthesize ioSurfaceClients=_ioSurfaceClients;
+@property(retain, nonatomic) NSMutableDictionary *surfaceStates; // @synthesize surfaceStates=_surfaceStates;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (void)_handleMessage:(id)arg1;
 - (struct __IOSurfaceClient *)_getClient:(unsigned int)arg1 inboundExtradata:(id)arg2 outboundExtraData:(id *)arg3;
-- (BOOL)_removeClient:(unsigned int)arg1;
-- (void)_addClient:(struct __IOSurfaceClient *)arg1 extraData:(id)arg2;
+- (BOOL)_removeSurface:(unsigned int)arg1;
+- (void)_addSurface:(struct __IOSurfaceClient *)arg1 mappedAddress:(void *)arg2 mappedSize:(unsigned long long)arg3 extraData:(id)arg4;
 - (void)_handleError:(id)arg1;
 - (id)description;
 - (void)dealloc;

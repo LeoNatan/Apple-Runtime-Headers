@@ -10,8 +10,8 @@
 #import <CloudDocsDaemon/BRCAppLibraryDelegate-Protocol.h>
 #import <CloudDocsDaemon/BRCClientZoneDelegate-Protocol.h>
 
-@class APSConnection, BRCAccountSession, BRCContainerMetadataSyncPersistedState, BRCDeadlineScheduler, BRCDeadlineSource, BRCFairSource, BRCMigrateZonePCSOperation, BRCSideCarSyncPersistedState, BRCSyncBudgetThrottle, BRCSyncOperationThrottle, BRCZoneHealthSyncPersistedState, NSData, NSDate, NSMutableArray, NSString;
-@protocol OS_dispatch_group, OS_dispatch_queue;
+@class APSConnection, BRCAccountSession, BRCContainerMetadataSyncPersistedState, BRCDeadlineScheduler, BRCDeadlineSource, BRCFairSource, BRCMigrateZonePCSOperation, BRCSideCarSyncPersistedState, BRCSyncBudgetThrottle, BRCSyncOperationThrottle, BRCZoneHealthSyncPersistedState, NSData, NSDate, NSMutableArray, NSString, _BRCOperation;
+@protocol BRCOperationSubclass, OS_dispatch_group, OS_dispatch_queue;
 
 @interface BRCContainerScheduler : NSObject <APSConnectionDelegate, BRCClientZoneDelegate, BRCAppLibraryDelegate>
 {
@@ -27,18 +27,18 @@
     NSObject<OS_dispatch_queue> *_pushQueue;
     BRCContainerMetadataSyncPersistedState *_containerMetadataPersistedState;
     unsigned int _containerMetadataSyncState;
-    struct _BRCOperation *_containerMetadataSyncOperation;
+    _BRCOperation<BRCOperationSubclass> *_containerMetadataSyncOperation;
     unsigned int _sharedDBSyncState;
-    struct _BRCOperation *_sharedDatabaseSyncOperation;
+    _BRCOperation<BRCOperationSubclass> *_sharedDatabaseSyncOperation;
     BRCZoneHealthSyncPersistedState *_zoneHealthPersistedState;
     unsigned int _zoneHealthSyncState;
-    struct _BRCOperation *_zoneHealthSyncOperation;
+    _BRCOperation<BRCOperationSubclass> *_zoneHealthSyncOperation;
     BRCSideCarSyncPersistedState *_sideCarSyncPersistedState;
     unsigned int _sideCarSyncState;
-    struct _BRCOperation *_sideCarSyncOperation;
+    _BRCOperation<BRCOperationSubclass> *_sideCarSyncOperation;
     BRCSyncOperationThrottle *_sideCarSyncDownThrottle;
     BRCSyncOperationThrottle *_sideCarSyncUpThrottle;
-    struct _BRCOperation *_periodicSyncOperation;
+    _BRCOperation<BRCOperationSubclass> *_periodicSyncOperation;
     NSDate *_lastPeriodicSyncDate;
     BRCMigrateZonePCSOperation *_migrateZonePCSOperation;
     BRCDeadlineSource *_migrateZonePCSSource;
@@ -49,6 +49,7 @@
     BRCDeadlineScheduler *_syncScheduler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BRCSideCarSyncPersistedState *sideCarSyncPersistedState; // @synthesize sideCarSyncPersistedState=_sideCarSyncPersistedState;
 @property(readonly, nonatomic) BRCZoneHealthSyncPersistedState *zoneHealthSyncPersistedState; // @synthesize zoneHealthSyncPersistedState=_zoneHealthPersistedState;
 @property(readonly, nonatomic) BRCDeadlineScheduler *syncScheduler; // @synthesize syncScheduler=_syncScheduler;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) BRCSyncBudgetThrottle *syncUpBudget; // @synthesize syncUpBudget=_syncUpBudget;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *syncGroup; // @synthesize syncGroup=_syncGroup;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *initialSyncDownGroup; // @synthesize initialSyncDownGroup=_initialSyncDownGroup;
-- (void).cxx_destruct;
 - (void)notifyAfterNextZoneHealthSyncDown:(CDUnknownBlockType)arg1;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;

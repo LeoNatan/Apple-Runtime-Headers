@@ -14,8 +14,8 @@
     HFItemBuilder<HFServiceLikeBuilder> *_serviceLikeBuilder;
 }
 
-@property(readonly, nonatomic) HFItemBuilder<HFServiceLikeBuilder> *serviceLikeBuilder; // @synthesize serviceLikeBuilder=_serviceLikeBuilder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFItemBuilder<HFServiceLikeBuilder> *serviceLikeBuilder; // @synthesize serviceLikeBuilder=_serviceLikeBuilder;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithSourceServiceItem:(id)arg1 home:(id)arg2 serviceLikeBuilder:(id)arg3;
 

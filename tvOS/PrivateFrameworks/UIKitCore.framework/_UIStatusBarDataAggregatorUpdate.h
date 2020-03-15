@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)updateWithEntry:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
 @property(retain, nonatomic) _UIStatusBarDataEntry *entry; // @synthesize entry=_entry;
-- (void).cxx_destruct;
 
 @end
 

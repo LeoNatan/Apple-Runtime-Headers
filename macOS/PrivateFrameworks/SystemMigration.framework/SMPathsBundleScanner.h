@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_scanQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *scanQueue; // @synthesize scanQueue=_scanQueue;
 @property BOOL scanned; // @synthesize scanned=_scanned;
 @property(retain) NSMutableSet *appStoreBundles; // @synthesize appStoreBundles=_appStoreBundles;
@@ -29,7 +30,6 @@
 @property(retain) NSURL *rootURL; // @synthesize rootURL=_rootURL;
 @property __weak SMPaths *pather; // @synthesize pather=_pather;
 @property(retain) NSMutableArray *decisionLog; // @synthesize decisionLog=_decisionLog;
-- (void).cxx_destruct;
 - (BOOL)shouldMigrateBundle:(id)arg1 withVersion:(id)arg2 andSourceLocation:(id)arg3 presentInLocation:(id *)arg4 relocateToLocation:(id *)arg5;
 - (BOOL)shouldMigrateApplicationBundle:(id)arg1 withVersion:(id)arg2 andSourceLocation:(id)arg3 presentInLocation:(id *)arg4 relocateToLocation:(id *)arg5;
 - (long long)compareRemoteBundleVersion:(id)arg1 toLocalBundleVersion:(id)arg2;

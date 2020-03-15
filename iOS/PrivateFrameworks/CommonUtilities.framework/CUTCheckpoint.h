@@ -23,11 +23,11 @@
 + (id)_reportDateFormatter;
 + (id)_whitelistedClasses;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldLogTouches; // @synthesize shouldLogTouches=_shouldLogTouches;
 @property(nonatomic) _Bool assertsUseAfterFreeze; // @synthesize assertsUseAfterFreeze=_assertsUseAfterFreeze;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_reportEndDate;
 - (id)_reportStartDate;
 - (id)_reportName;

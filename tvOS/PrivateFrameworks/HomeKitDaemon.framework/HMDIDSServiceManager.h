@@ -19,12 +19,12 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property __weak _HMDIDSProxyLinkPreferenceAssertion *proxyLinkPreferenceAssertion; // @synthesize proxyLinkPreferenceAssertion=_proxyLinkPreferenceAssertion;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) IDSService *streamService; // @synthesize streamService=_streamService;
 @property(readonly) IDSService *proxyService; // @synthesize proxyService=_proxyService;
 @property(readonly) IDSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)setProxyServiceLinkPreferences:(id)arg1;
 - (id)init;
 

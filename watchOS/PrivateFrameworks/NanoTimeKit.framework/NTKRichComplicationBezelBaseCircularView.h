@@ -29,9 +29,9 @@
 
 + (void)updateCustomDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 isForward:(_Bool)arg3 animationType:(unsigned int)arg4 animationDuration:(double)arg5 animationFraction:(float)arg6 bezelTextUpdateHandler:(CDUnknownBlockType)arg7;
 + (void)prepareCustomDataAnimation:(id)arg1 fromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NTKRichComplicationView *circularView; // @synthesize circularView=_circularView;
 @property(nonatomic) float bezelLabelCircularRadius; // @synthesize bezelLabelCircularRadius=_bezelLabelCircularRadius;
-- (void).cxx_destruct;
 - (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
 - (void)_updateNewDataAnimationFinalAlpha:(float)arg1 finalBezelLabelScale:(float)arg2 finalCircularViewScale:(float)arg3 animationApplierBlock:(CDUnknownBlockType)arg4 animationFraction:(float)arg5;

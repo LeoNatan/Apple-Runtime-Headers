@@ -21,6 +21,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFingerResting; // @synthesize isFingerResting=_isFingerResting;
 @property(nonatomic) long long mediaItemIdentifier; // @synthesize mediaItemIdentifier=_mediaItemIdentifier;
 @property(retain, nonatomic) id <TVPAVFPlayback> player; // @synthesize player=_player;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) TVPMusicVideoTitleCardView *titleCardView; // @synthesize titleCardView=_titleCardView;
 @property(nonatomic) __weak id <TVPMusicVideoTitleControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIView *musicVideoView; // @synthesize musicVideoView=_musicVideoView;
-- (void).cxx_destruct;
 - (void)_playbackStateDidChange:(id)arg1;
 - (void)_mediaItemDidChange:(id)arg1;
 - (void)_handleSelectButton:(id)arg1;

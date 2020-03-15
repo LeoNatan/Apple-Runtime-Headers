@@ -23,13 +23,13 @@
 
 + (id)resourceURLForItem:(id)arg1 scope:(id)arg2 baseURL:(id)arg3 encoder:(id)arg4;
 + (void)clearContentAtLocation:(id)arg1 logger:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool validateImages; // @synthesize validateImages=_validateImages;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateLock; // @synthesize stateLock=_stateLock;
 @property(readonly, nonatomic) id <AVTImageEncoder> imageEncoder; // @synthesize imageEncoder=_imageEncoder;
 @property(readonly, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(readonly, copy, nonatomic) NSURL *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)resourceForItem:(id)arg1 scope:(id)arg2 cacheMissHandler:(CDUnknownBlockType)arg3;
 - (id)resourceForItem:(id)arg1 scope:(id)arg2;
 - (id)_imageForItem:(id)arg1 scope:(id)arg2 cacheMissHandler:(CDUnknownBlockType)arg3;

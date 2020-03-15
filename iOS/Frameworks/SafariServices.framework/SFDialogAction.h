@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)actionWithTitle:(id)arg1 activatingKeyboardShortcut:(long long)arg2 type:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long actionType; // @synthesize actionType=_actionType;
 @property(readonly, nonatomic) long long activatingKeyboardShortcut; // @synthesize activatingKeyboardShortcut=_activatingKeyboardShortcut;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 activatingKeyboardShortcut:(long long)arg2 type:(long long)arg3;
 
 @end

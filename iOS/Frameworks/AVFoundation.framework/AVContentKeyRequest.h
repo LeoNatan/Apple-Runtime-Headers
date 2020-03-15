@@ -52,10 +52,11 @@
 - (id)_keySystem;
 - (id)description;
 - (void)dealloc;
-- (id)initWithContentKeySession:(id)arg1 customURLHandler:(struct OpaqueFigCustomURLHandler *)arg2 identifier:(id)arg3 requestInfo:(struct __CFDictionary *)arg4 requestID:(unsigned long long)arg5 providesPersistableKey:(_Bool)arg6 isRenewalRequest:(_Bool)arg7;
+- (id)initWithContentKeySession:(id)arg1 reportGroup:(id)arg2 customURLHandler:(struct OpaqueFigCustomURLHandler *)arg3 identifier:(id)arg4 requestInfo:(struct __CFDictionary *)arg5 requestID:(unsigned long long)arg6 providesPersistableKey:(_Bool)arg7 isRenewalRequest:(_Bool)arg8;
 - (void)_copyAndStoreCryptorUUID;
-- (id)initWithContentKeySession:(id)arg1 identifier:(id)arg2 initializationData:(id)arg3 preloadingRequestOptions:(id)arg4 providesPersistableKey:(_Bool)arg5;
+- (id)initWithContentKeySession:(id)arg1 reportGroup:(id)arg2 identifier:(id)arg3 initializationData:(id)arg4 preloadingRequestOptions:(id)arg5 providesPersistableKey:(_Bool)arg6;
 - (int)_extractAndStoreKeyIDFromInitializationData:(id)arg1;
+- (_Bool)setReportGroup:(id)arg1;
 
 @end
 

@@ -31,6 +31,7 @@
 + (BOOL)isProvisionedForLocationSharing;
 + (BOOL)FMFRestricted;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property BOOL isModelInitialized; // @synthesize isModelInitialized=_isModelInitialized;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *handlesQueue; // @synthesize handlesQueue=_handlesQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
@@ -43,7 +44,6 @@
 @property(retain) NSMutableSet *internalHandles; // @synthesize internalHandles=_internalHandles;
 @property(retain) NSOperationQueue *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property __weak id <FMFSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleIncomingAirDropURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)mappingPacketSendFailed:(id)arg1 toHandle:(id)arg2 withError:(id)arg3;
 - (void)receivedMappingPacket:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -18,9 +18,9 @@
     long long _auxiliaryImageType;
 }
 
+- (void).cxx_destruct;
 @property long long auxiliaryImageType; // @synthesize auxiliaryImageType=_auxiliaryImageType;
 @property(retain) id <NUAuxiliaryImage> auxiliaryImage; // @synthesize auxiliaryImage=_auxiliaryImage;
-- (void).cxx_destruct;
 - (id)result;
 - (void)cleanUp;
 - (_Bool)complete:(out id *)arg1;

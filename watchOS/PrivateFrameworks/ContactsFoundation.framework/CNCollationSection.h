@@ -14,9 +14,9 @@
     NSString *_localizedName;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 localizedName:(id)arg2;
 
 @end

@@ -37,11 +37,11 @@ __attribute__((visibility("hidden")))
 + (id)volume;
 + (id)length;
 + (id)mass;
+- (void).cxx_destruct;
 @property(nonatomic) double reductionCoefficient; // @synthesize reductionCoefficient=_reductionCoefficient;
 @property(retain, nonatomic) HKUnit *reducedUnit; // @synthesize reducedUnit=_reducedUnit;
 @property(retain, nonatomic) HKBaseUnit *reducibleBaseUnit; // @synthesize reducibleBaseUnit=_reducibleBaseUnit;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_baseDimensions;
 - (id)_initWithName:(id)arg1;
 - (id)unitString;

@@ -18,10 +18,10 @@
     id <SXFullscreenCaptionDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <SXFullscreenCaptionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) SXFormattedText *caption; // @synthesize caption=_caption;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)contentSizeCategoryForTextSource:(id)arg1;
 - (id)textStyleForIdentifier:(id)arg1;
 - (id)linkStyleForTextSource:(id)arg1;

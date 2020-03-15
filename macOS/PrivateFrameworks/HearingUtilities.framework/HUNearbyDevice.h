@@ -19,6 +19,7 @@
     NSSet *_cachableKeys;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *cachableKeys; // @synthesize cachableKeys=_cachableKeys;
 @property(retain, nonatomic) NSMutableDictionary *previousMessageCache; // @synthesize previousMessageCache=_previousMessageCache;
 @property(nonatomic) BOOL shouldTrack; // @synthesize shouldTrack=_shouldTrack;
@@ -26,7 +27,6 @@
 @property(retain) RPCompanionLinkClient *client; // @synthesize client=_client;
 @property(nonatomic) unsigned long long connectionStatus; // @synthesize connectionStatus=_connectionStatus;
 @property(retain, nonatomic) RPCompanionLinkDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 
 @end
 

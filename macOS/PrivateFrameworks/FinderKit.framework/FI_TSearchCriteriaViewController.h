@@ -52,9 +52,9 @@ __attribute__((visibility("hidden")))
 + (id)labelMatchSlice:(short)arg1;
 + (id)tagNameMatchSlice:(id)arg1;
 + (id)displayValueForCriterion:(id)arg1;
-@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (id)criterionWithSuggestion:(id)arg1;
 - (id)criteriaWithSearchString:(id)arg1 nameOnly:(_Bool)arg2;
 - (void)showCriteria:(id)arg1;

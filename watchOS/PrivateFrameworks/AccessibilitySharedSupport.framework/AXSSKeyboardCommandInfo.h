@@ -16,11 +16,11 @@
 
 + (id)infoWithDownHandler:(CDUnknownBlockType)arg1 upHandler:(CDUnknownBlockType)arg2;
 + (id)infoWithHandler:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType upHandler; // @synthesize upHandler=_upHandler;
 @property(readonly, nonatomic) CDUnknownBlockType downHandler; // @synthesize downHandler=_downHandler;
 @property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) _Bool handlesBothDownAndUp; // @synthesize handlesBothDownAndUp=_handlesBothDownAndUp;
-- (void).cxx_destruct;
 - (id)_initWithHandler:(CDUnknownBlockType)arg1 downHandler:(CDUnknownBlockType)arg2 upHandler:(CDUnknownBlockType)arg3 handlesBothDownAndUp:(_Bool)arg4;
 
 @end

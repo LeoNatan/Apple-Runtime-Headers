@@ -47,6 +47,7 @@
 }
 
 + (unsigned long long)_defaultMaxRetryCountForReason:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) double lastProgressUpdateTime; // @synthesize lastProgressUpdateTime=_lastProgressUpdateTime;
 @property(nonatomic) double lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
@@ -73,7 +74,6 @@
 @property(nonatomic) _Bool cancelOnHTTPErrors; // @synthesize cancelOnHTTPErrors=_cancelOnHTTPErrors;
 @property(nonatomic) _Bool prioritize; // @synthesize prioritize=_prioritize;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)_ensureValidRetryReason:(id)arg1;
 - (void)_incrementRetryCountForReason:(id)arg1;
 - (unsigned long long)_retryCountForReason:(id)arg1;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)detailDisplayIdentifier;
-@property(retain, nonatomic) _UIStatusBarStringView *detailStringView; // @synthesize detailStringView=_detailStringView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIStatusBarStringView *detailStringView; // @synthesize detailStringView=_detailStringView;
 - (id)removalAnimationForDisplayItemWithIdentifier:(id)arg1;
 - (id)additionAnimationForDisplayItemWithIdentifier:(id)arg1;
 - (id)viewForIdentifier:(id)arg1;

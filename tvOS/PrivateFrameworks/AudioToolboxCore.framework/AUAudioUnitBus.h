@@ -25,6 +25,8 @@
     vector_e102d759 _observers;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) vector_e102d759 observers; // @synthesize observers=_observers;
 @property(nonatomic) double contextPresentationLatency; // @synthesize contextPresentationLatency=_contextPresentationLatency;
 @property(readonly, copy, nonatomic) NSArray *supportedChannelLayoutTags; // @synthesize supportedChannelLayoutTags=_supportedChannelLayoutTags;
@@ -33,8 +35,6 @@
 @property(readonly, nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) _Bool shouldAllocateBuffer; // @synthesize shouldAllocateBuffer=_shouldAllocateBuffer;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void *)arg3;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;

@@ -21,11 +21,11 @@
 
 + (id)intentDescription;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSDate *earliestBookingDateForResults; // @synthesize earliestBookingDateForResults=_earliestBookingDateForResults;
 @property(copy) NSNumber *maximumNumberOfResults; // @synthesize maximumNumberOfResults=_maximumNumberOfResults;
 @property(copy) NSString *reservationIdentifier; // @synthesize reservationIdentifier=_reservationIdentifier;
 @property(copy) INRestaurant *restaurant; // @synthesize restaurant=_restaurant;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

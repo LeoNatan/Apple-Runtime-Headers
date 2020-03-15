@@ -18,10 +18,10 @@
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly, nonatomic) NSString *errorTitle; // @synthesize errorTitle=_errorTitle;
 @property(readonly, nonatomic) unsigned long long policy; // @synthesize policy=_policy;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

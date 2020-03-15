@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     BOOL _animates;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL animates; // @synthesize animates=_animates;
 @property(nonatomic) BOOL performOnViewLoad; // @synthesize performOnViewLoad=_performOnViewLoad;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)perform:(id)arg1;
 - (id)_performWithDestinationViewController:(id)arg1 sender:(id)arg2;
 - (id)_perform:(id)arg1;

@@ -21,12 +21,12 @@
 }
 
 + (id)sharedNotificationCenterServiceServer;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int pendingNotificationCount; // @synthesize pendingNotificationCount=_pendingNotificationCount;
 @property(retain, nonatomic) NSTimer *resetTimer; // @synthesize resetTimer=_resetTimer;
 @property(retain, nonatomic) NSArray *settings; // @synthesize settings=_settings;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) CSLSafeMutableSet *clientConnections; // @synthesize clientConnections=_clientConnections;
-- (void).cxx_destruct;
 - (id)_loadDefaultSettings;
 - (id)_loadSettingsFromPath:(id)arg1;
 - (id)_loadOverrideSettings;

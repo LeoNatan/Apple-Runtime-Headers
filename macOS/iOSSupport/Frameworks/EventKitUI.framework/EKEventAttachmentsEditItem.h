@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     EKEvent *_eventToModify;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKEvent *eventToModify; // @synthesize eventToModify=_eventToModify;
 @property BOOL attachmentsModified; // @synthesize attachmentsModified=_attachmentsModified;
-- (void).cxx_destruct;
 - (void)_loadAndAddDataAttachmentFromItem:(id)arg1;
 - (void)dropInteraction:(id)arg1 sessionDidEnd:(id)arg2;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;

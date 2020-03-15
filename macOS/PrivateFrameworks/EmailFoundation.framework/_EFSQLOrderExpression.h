@@ -17,9 +17,9 @@
     id <EFSQLExpressable> _expression;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isAscending; // @synthesize isAscending=_isAscending;
 @property(readonly, nonatomic) id <EFSQLExpressable> expression; // @synthesize expression=_expression;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;
 - (id)initWithExpression:(id)arg1 ascending:(BOOL)arg2;
 

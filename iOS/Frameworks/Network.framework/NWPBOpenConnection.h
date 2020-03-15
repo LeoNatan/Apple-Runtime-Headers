@@ -17,10 +17,10 @@
     NWPBParameters *_parameters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *clientUUID; // @synthesize clientUUID=_clientUUID;
 @property(retain, nonatomic) NWPBParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) NWPBEndpoint *endpoint; // @synthesize endpoint=_endpoint;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

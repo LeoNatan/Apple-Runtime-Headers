@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)updateConstraints;
 - (BOOL)presentsFullScreen;
 - (id)largeTitle;
 - (id)initWithKeyboardAppearance:(long long)arg1;

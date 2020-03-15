@@ -30,6 +30,7 @@
 + (id)_allKeys;
 + (_Bool)supportsSecureCoding;
 + (id)_requiredAttributesForContentType:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasKnownKeysDictionary; // @synthesize hasKnownKeysDictionary=_hasKnownKeysDictionary;
 @property(readonly, nonatomic) _Bool hasCodedCustomAttributes; // @synthesize hasCodedCustomAttributes=_hasCodedCustomAttributes;
 @property(readonly, nonatomic) CDStruct_b7fac349 contentObj; // @synthesize contentObj=_contentObj;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) CSDecoder *contentDecoder; // @synthesize contentDecoder=_contentDecoder;
 @property(readonly, nonatomic) CSDecoder *decoder; // @synthesize decoder=_decoder;
 @property int searchableItemFlags; // @synthesize searchableItemFlags=_searchableItemFlags;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (unsigned int)hash;

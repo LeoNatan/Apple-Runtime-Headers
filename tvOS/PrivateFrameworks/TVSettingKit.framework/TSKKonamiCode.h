@@ -16,9 +16,9 @@
 }
 
 + (id)codeWithSequence:(id)arg1 action:(SEL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(copy, nonatomic) NSArray *sequence; // @synthesize sequence=_sequence;
-- (void).cxx_destruct;
 - (void)resetSequence;
 - (long long)nextPressType;
 - (_Bool)validateSequenceWithNextPressType:(long long)arg1;

@@ -34,6 +34,7 @@
     NSDictionary *userInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo;
 @property(copy, nonatomic) NSDictionary *contextMenuData; // @synthesize contextMenuData;
 @property(readonly, nonatomic) NSArray *currentMediaItemErrorLogs; // @synthesize currentMediaItemErrorLogs;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) id <IKAppPlaylist> playlist; // @synthesize playlist;
 @property(readonly, nonatomic) long long state; // @synthesize state;
 @property(readonly, nonatomic) IKAppPlayerBridge *bridge; // @synthesize bridge;
-- (void).cxx_destruct;
 - (void)cleanup;
 - (void)stopObservingEvent:(id)arg1;
 - (void)startObservingEvent:(id)arg1 extraInfo:(id)arg2;

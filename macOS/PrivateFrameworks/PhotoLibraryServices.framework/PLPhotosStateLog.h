@@ -15,8 +15,8 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 - (void)createSnapshot;
 - (BOOL)copyFilesMatching:(id)arg1 andExcluding:(id)arg2 fromPath:(id)arg3 toPath:(id)arg4 usingCompression:(BOOL)arg5;
 - (BOOL)compressFileFromPath:(id)arg1 toPath:(id)arg2;

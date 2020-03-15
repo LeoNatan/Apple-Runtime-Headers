@@ -24,13 +24,13 @@
 
 + (BOOL)_checkSettingGroupForSettingsThatNeedToBeDisplayed:(id)arg1 usageOptions:(id)arg2 settingGroup:(id)arg3;
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *usageOptions; // @synthesize usageOptions=_usageOptions;
 @property(readonly, nonatomic) HFAccessorySettingsEntity *accessoryGroupEntity; // @synthesize accessoryGroupEntity=_accessoryGroupEntity;
 @property(readonly, nonatomic) HMAccessorySelectionSettingItem *optionItem; // @synthesize optionItem=_optionItem;
 @property(readonly, nonatomic) HMSettingGroup *settingGroup; // @synthesize settingGroup=_settingGroup;
 @property(readonly, nonatomic) HMSetting *singleSetting; // @synthesize singleSetting=_singleSetting;
 @property(readonly, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) HFItem *outputItem; // @synthesize outputItem=_outputItem;
 - (BOOL)shouldBeDisplayed;
 @property(readonly) unsigned long long hash;

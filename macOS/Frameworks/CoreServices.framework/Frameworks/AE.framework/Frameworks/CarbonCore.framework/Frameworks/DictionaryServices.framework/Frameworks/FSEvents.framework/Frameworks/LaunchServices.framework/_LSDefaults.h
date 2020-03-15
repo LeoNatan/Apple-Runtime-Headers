@@ -38,13 +38,13 @@
 + (id)systemGroupContainerURL;
 + (id)systemContainerURL;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly) BOOL hasPersistentPreferences; // @synthesize hasPersistentPreferences=_hasPersistentPreferences;
 @property(readonly, getter=isInEducationMode) BOOL inEducationMode; // @synthesize inEducationMode=_inEducationMode;
 @property(getter=isServer) BOOL server; // @synthesize server=_isServer;
 @property(readonly, nonatomic, getter=isAppleInternal) BOOL appleInternal; // @synthesize appleInternal=_appleInternal;
 @property(readonly, nonatomic, getter=isInXCTestRigInsecure) BOOL inXCTestRigInsecure; // @synthesize inXCTestRigInsecure=_inXCTestRigInsecure;
 @property(readonly, getter=isInSyncBubble) BOOL inSyncBubble; // @synthesize inSyncBubble=_inSyncBubble;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) NSURL *trustedSignatureDatabaseURL;
 - (id)dataVaultURLWithUID:(unsigned int)arg1;

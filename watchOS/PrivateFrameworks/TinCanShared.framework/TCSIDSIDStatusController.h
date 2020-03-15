@@ -23,12 +23,12 @@
 }
 
 + (id)stringForDestinationToStatus:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *destinationToStatus; // @synthesize destinationToStatus=_destinationToStatus;
 @property(readonly, nonatomic) NSArray *destinations; // @synthesize destinations=_destinations;
 @property(retain, nonatomic) IDSBatchIDQueryController *queryController; // @synthesize queryController=_queryController;
 @property(readonly, nonatomic) __weak id <TCSIDSIDStatusControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <TUIDSLookup> item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)batchQueryController:(id)arg1 updatedDestinationsStatus:(id)arg2 onService:(id)arg3 error:(id)arg4;
 @property(readonly, nonatomic) NSString *tinCanHandle;
 @property(readonly, nonatomic) NSNumber *status;

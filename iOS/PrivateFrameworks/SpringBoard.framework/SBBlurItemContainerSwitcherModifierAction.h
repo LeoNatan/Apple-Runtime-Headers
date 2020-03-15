@@ -14,9 +14,9 @@
     SBAppLayout *_appLayout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldBlur; // @synthesize shouldBlur=_shouldBlur;
 @property(readonly, nonatomic) SBAppLayout *appLayout; // @synthesize appLayout=_appLayout;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)type;
 - (id)initWithAppLayout:(id)arg1 shouldBlur:(_Bool)arg2;

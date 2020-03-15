@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     PSSpecifier *_parentSpecifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PSSpecifier *parentSpecifier; // @synthesize parentSpecifier=_parentSpecifier;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
-- (void).cxx_destruct;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2;
 - (id)specifiers;
 - (id)initWithHostController:(id)arg1 parentSpecifier:(id)arg2;

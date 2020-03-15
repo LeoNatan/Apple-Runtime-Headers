@@ -15,9 +15,9 @@
 }
 
 + (id)sharedCLSAggregate;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool allowWeeklyUpdates; // @synthesize allowWeeklyUpdates=_allowWeeklyUpdates;
 @property(retain, nonatomic) NSString *primaryDomain; // @synthesize primaryDomain=_primaryDomain;
-- (void).cxx_destruct;
 - (id)_keysForWeeklyReporting;
 - (id)_truncateToSignificantFigureForValue:(id)arg1 numOfSignificantDigits:(int)arg2;
 - (id)_messageTracerMethodConstructionHintsForKey:(id)arg1;

@@ -26,6 +26,7 @@
     NSNumber *_seekTargetTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *seekTargetTime; // @synthesize seekTargetTime=_seekTargetTime;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 @property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
@@ -35,7 +36,6 @@
 @property(nonatomic) BOOL showsSkipItemButtons; // @synthesize showsSkipItemButtons=_showsSkipItemButtons;
 @property(nonatomic) __weak AVMusicAppBehavior *behavior; // @synthesize behavior=_behavior;
 @property(readonly, nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
-- (void).cxx_destruct;
 - (void)_updateSkipItemButtonsEnabled;
 - (void)playerViewController:(id)arg1 didCollectMetricsEvent:(long long)arg2;
 - (void)viewDidLoad;

@@ -33,6 +33,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *allowedFileTypes; // @synthesize allowedFileTypes=_allowedFileTypes;
 @property(retain, nonatomic) NSArray *customPaths; // @synthesize customPaths=_customPaths;
 @property(nonatomic) BOOL shouldUpdateItems; // @synthesize shouldUpdateItems=_shouldUpdateItems;
@@ -47,7 +48,6 @@
 @property(nonatomic) BOOL canChooseExistingPaths; // @synthesize canChooseExistingPaths=_canChooseExistingPaths;
 @property(nonatomic) BOOL canChooseNewPaths; // @synthesize canChooseNewPaths=_canChooseNewPaths;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)removeVariableWithUUID:(id)arg1;
 - (id)defaultNewVariable;
 - (void)chooseItem:(id)arg1;

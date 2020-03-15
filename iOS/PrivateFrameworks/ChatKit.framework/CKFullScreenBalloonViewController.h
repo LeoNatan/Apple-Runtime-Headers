@@ -25,6 +25,7 @@
     struct CGRect _gradientFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showActionMenu; // @synthesize showActionMenu=_showActionMenu;
 @property(readonly, nonatomic) _Bool isGroupConversation; // @synthesize isGroupConversation=_isGroupConversation;
 @property(readonly, nonatomic) struct CGRect gradientFrame; // @synthesize gradientFrame=_gradientFrame;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) __weak id <CKFullScreenBalloonViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 @property(readonly, nonatomic) CKMessagePartChatItem *chatItem; // @synthesize chatItem=_chatItem;
-- (void).cxx_destruct;
 - (_Bool)shouldAutorotate;
 - (void)removeTapRecogonizer;
 - (void)addTapRecognizerWithTarget:(id)arg1 action:(SEL)arg2;

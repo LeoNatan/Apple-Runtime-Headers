@@ -24,6 +24,7 @@
     HDFitnessMachineStateTimer *_mfaTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDFitnessMachineStateTimer *mfaTimer; // @synthesize mfaTimer=_mfaTimer;
 @property(retain, nonatomic) HDFitnessMachineStateTimer *retryConnectionTimer; // @synthesize retryConnectionTimer=_retryConnectionTimer;
 @property(retain, nonatomic) HDFitnessMachineStateTimer *disconnectTimer; // @synthesize disconnectTimer=_disconnectTimer;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) HDFitnessMachineStateTimer *fieldDetectTimer; // @synthesize fieldDetectTimer=_fieldDetectTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <HDFitnessMachineStateTimersDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)isMfaTimerValid;
 - (void)cancelMfaTimeout;
 - (void)beginMfaTimeout;

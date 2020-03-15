@@ -9,6 +9,7 @@
 @class HKConceptStore, HKHealthRecordsStore, HKInspectableValueCollection, NSArray, NSDate, NSString;
 
 @protocol HRWDDisplayable <NSObject>
+@property(readonly, nonatomic) _Bool isRemovedFromRemote;
 @property(readonly, nonatomic) NSArray *conceptNameItems;
 @property(readonly, nonatomic) NSString *titleDisplayStringForDetailViewController;
 @property(readonly, nonatomic) long long recordCategoryType;

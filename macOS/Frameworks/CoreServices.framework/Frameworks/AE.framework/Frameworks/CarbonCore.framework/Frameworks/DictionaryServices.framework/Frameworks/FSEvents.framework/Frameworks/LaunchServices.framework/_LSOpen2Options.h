@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *overrideApplicationType; // @synthesize overrideApplicationType=_overrideApplicationType;
 @property(copy, nonatomic) NSNumber *launchSessionID; // @synthesize launchSessionID=_launchSessionID;
 @property(copy, nonatomic) NSNumber *launchUID; // @synthesize launchUID=_launchUID;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL allowErrorUI; // @synthesize allowErrorUI=_allowErrorUI;
 @property(nonatomic) BOOL captureDiagnostics; // @synthesize captureDiagnostics=_captureDiagnostics;
 @property(nonatomic) unsigned char preferRunningInstance; // @synthesize preferRunningInstance=_preferRunningInstance;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -13,8 +13,8 @@
     NSString *_quotaRoot;
 }
 
-@property(readonly, copy, nonatomic) NSString *quotaRoot; // @synthesize quotaRoot=_quotaRoot;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *quotaRoot; // @synthesize quotaRoot=_quotaRoot;
 - (long long)maxAllowedConnectionState;
 - (long long)minRequiredConnectionState;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;

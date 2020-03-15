@@ -24,9 +24,9 @@
     CDUnknownBlockType _testHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType testHandler; // @synthesize testHandler=_testHandler;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (_Bool)_computeAndSubmitSleepAlarmStatistics:(_Bool)arg1;
 - (id)_sleepConsistencyEventForMonthPriorToDate:(id)arg1 calendar:(id)arg2;
 - (id)_statisticsForTimeDeltas:(id)arg1;

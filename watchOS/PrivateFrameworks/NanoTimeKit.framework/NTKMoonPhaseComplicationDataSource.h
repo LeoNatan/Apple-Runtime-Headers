@@ -13,15 +13,15 @@
 @interface NTKMoonPhaseComplicationDataSource : NTKComplicationDataSource <NTKTimelineEntryModelCacheDataSource>
 {
     NTKTimelineEntryModelCache *_entryModelCache;
-    struct NSString *_token;
+    NSString *_token;
     CLLocation *_location;
 }
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)_animationGroupForDate:(id)arg1 event:(int)arg2 haveLocation:(_Bool)arg3;
 - (id)_animationGroupForNoLocation;
 - (id)_animationForDate:(id)arg1 event:(int)arg2;

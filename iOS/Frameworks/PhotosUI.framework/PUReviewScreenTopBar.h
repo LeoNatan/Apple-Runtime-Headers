@@ -19,13 +19,13 @@
 }
 
 + (id)supportedButtons;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *retakeButton; // @synthesize retakeButton=_retakeButton;
 @property(readonly, nonatomic) PUReviewScreenDoneButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(nonatomic) struct CGPoint doneButtonCenterAlignmentPoint; // @synthesize doneButtonCenterAlignmentPoint=_doneButtonCenterAlignmentPoint;
 @property(nonatomic) unsigned long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(copy, nonatomic) NSSet *enabledButtons; // @synthesize enabledButtons=_enabledButtons;
 @property(copy, nonatomic) NSSet *availableButtons; // @synthesize availableButtons=_availableButtons;
-- (void).cxx_destruct;
 - (void)_updateBackgroundColor;
 - (void)_updateButtonVisibility;
 - (id)_buttonForButtonType:(long long)arg1;

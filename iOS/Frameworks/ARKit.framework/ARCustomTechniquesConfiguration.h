@@ -16,14 +16,14 @@
 
 + (id)supportedVideoFormats;
 + (id)new;
+- (void).cxx_destruct;
 @property(copy, nonatomic) ARConfiguration *templateConfiguration; // @synthesize templateConfiguration=_templateConfiguration;
 @property(copy, nonatomic) NSArray *techniques; // @synthesize techniques=_techniques;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)configureRecordingTechnique;
-- (id)imageSensorSettingsForSuperWide;
+- (id)imageSensorSettingsForUltraWide;
 - (void)ensureTechniqueAndCustomSensorCompatibility;
 - (void)_updateCaptureSettings;
 - (void)setProvidesAudioData:(_Bool)arg1;

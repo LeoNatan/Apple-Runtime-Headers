@@ -14,9 +14,9 @@
     CRCameraReader *_cameraReader;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CRCameraReader *cameraReader; // @synthesize cameraReader=_cameraReader;
 @property(retain, nonatomic) NSMutableDictionary *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;

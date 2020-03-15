@@ -18,12 +18,12 @@
     NSError *_lastError;
 }
 
+- (void).cxx_destruct;
 @property BOOL isOffline; // @synthesize isOffline=_isOffline;
 @property(retain) NSError *lastError; // @synthesize lastError=_lastError;
 @property(retain, nonatomic) id <MFEWSErrorHandler> errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) MFEWSGateway *gateway; // @synthesize gateway=_gateway;
 @property(retain) id response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)handleResponseMessage:(id)arg1 withObject:(id)arg2;
 - (BOOL)handleResponseMessage:(id)arg1;

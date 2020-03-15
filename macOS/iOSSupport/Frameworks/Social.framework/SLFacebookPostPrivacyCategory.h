@@ -14,9 +14,9 @@
     NSArray *_audiencePrivacySettings;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *audiencePrivacySettings; // @synthesize audiencePrivacySettings=_audiencePrivacySettings;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

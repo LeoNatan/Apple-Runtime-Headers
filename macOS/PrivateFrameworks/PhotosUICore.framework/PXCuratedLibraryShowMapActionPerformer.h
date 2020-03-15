@@ -14,8 +14,8 @@
 }
 
 + (BOOL)canPerformWithFetchResult:(id)arg1;
-@property(readonly, nonatomic) PHFetchResult *assetsFetchResult; // @synthesize assetsFetchResult=_assetsFetchResult;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHFetchResult *assetsFetchResult; // @synthesize assetsFetchResult=_assetsFetchResult;
 - (void)performUserInteractionTask;
 - (id)initWithActionType:(id)arg1 viewModel:(id)arg2 assetCollectionReference:(id)arg3;
 - (id)initWithViewModel:(id)arg1 assetCollectionReference:(id)arg2 assetsFetchResult:(id)arg3;

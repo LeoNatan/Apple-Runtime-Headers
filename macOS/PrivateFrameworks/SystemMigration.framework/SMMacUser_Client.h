@@ -23,6 +23,7 @@
 + (id)keyPathsForValuesAffectingDisplayExtraInfo;
 + (id)interestedDaemonKeysLimitedToMigratableUsers;
 + (id)interestedDaemonKeys;
+- (void).cxx_destruct;
 @property(readonly, getter=isSecureTokenAuth) BOOL secureTokenAuth; // @synthesize secureTokenAuth=_secureTokenAuth;
 @property BOOL extraInfoIncludeFileVaultWarning; // @synthesize extraInfoIncludeFileVaultWarning=_extraInfoIncludeFileVaultWarning;
 @property BOOL isSecureTokenAuth; // @synthesize isSecureTokenAuth;
@@ -30,7 +31,6 @@
 @property BOOL isAdminUser; // @synthesize isAdminUser;
 @property(retain) SMSystem_Client *sourceSystem; // @synthesize sourceSystem;
 @property(retain) NSString *relativeHomeDir; // @synthesize relativeHomeDir;
-- (void).cxx_destruct;
 - (BOOL)validatePassword:(id)arg1;
 - (id)extraInfoColor;
 - (id)displayExtraInfo;

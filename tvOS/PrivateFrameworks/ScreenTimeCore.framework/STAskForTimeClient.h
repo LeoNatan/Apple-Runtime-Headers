@@ -15,8 +15,8 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)_asynchronousProxyWithHandler:(CDUnknownBlockType)arg1;
 - (void)_synchronousProxyWithHandler:(CDUnknownBlockType)arg1;
 - (void)handleAnswer:(long long)arg1 requestIdentifier:(id)arg2 timeApproved:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

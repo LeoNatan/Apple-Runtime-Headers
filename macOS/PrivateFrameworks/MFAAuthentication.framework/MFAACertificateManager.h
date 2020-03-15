@@ -16,9 +16,9 @@
 
 + (id)anchorCertificatesForTypes:(int)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (int)_getCachedCertStatus:(id)arg1 issuerSeq:(id)arg2 ppid:(id)arg3;
 - (int)_validateCertificateWithServer:(id)arg1 issuerSeq:(id)arg2 ppid:(id)arg3 error:(id *)arg4;
 - (int)_validateCertificateChain:(id)arg1 realtime:(BOOL)arg2 error:(id *)arg3;

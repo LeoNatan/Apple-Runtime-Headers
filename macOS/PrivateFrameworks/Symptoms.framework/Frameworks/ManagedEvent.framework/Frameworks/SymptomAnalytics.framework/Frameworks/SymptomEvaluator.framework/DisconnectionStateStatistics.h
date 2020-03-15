@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long averageDisconnectionLength; // @synthesize averageDisconnectionLength=_averageDisconnectionLength;
 @property(readonly) NSMutableArray *networkStateRecords; // @synthesize networkStateRecords=_networkStateRecords;
 @property(readonly) NSString *connectToNetworkId; // @synthesize connectToNetworkId=_connectToNetworkId;
 @property(readonly) NSString *disconnectedFromNetworkId; // @synthesize disconnectedFromNetworkId=_disconnectedFromNetworkId;
 @property(readonly) unsigned long long periodId; // @synthesize periodId=_periodId;
 @property(readonly) NSSet *daysOfWeek; // @synthesize daysOfWeek=_daysOfWeek;
-- (void).cxx_destruct;
 - (void)calculateAverageLength;
 - (void)mergeDisconnectionStateStatistics:(id)arg1;
 - (id)description;

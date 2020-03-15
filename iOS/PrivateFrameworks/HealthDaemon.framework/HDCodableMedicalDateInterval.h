@@ -16,9 +16,9 @@
     HDCodableMedicalDate *_startDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) HDCodableMedicalDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

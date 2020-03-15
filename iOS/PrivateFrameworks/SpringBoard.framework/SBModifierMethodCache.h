@@ -22,9 +22,9 @@
     CDUnknownFunctionPointerType _nextFunc;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBModifierCacheCoordinator *cacheCoordinator; // @synthesize cacheCoordinator=_cacheCoordinator;
 @property(nonatomic) SBChainableModifier *modifier; // @synthesize modifier=_modifier;
-- (void).cxx_destruct;
 - (id)unimplementedMethods;
 @property(readonly, nonatomic) _Bool hasNonTrampolineIMPs;
 - (void)dealloc;

@@ -26,12 +26,12 @@
 + (id)overQuotaStrategyWithStorage:(id)arg1 coveringScopeIdentifier:(id)arg2;
 + (id)usualStrategyWithStorage:(id)arg1 coveringScopeIdentifier:(id)arg2;
 + (void)setMaximumRecordCountPerBatch:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long maximumRecordCountPerBatch; // @synthesize maximumRecordCountPerBatch=_maximumRecordCountPerBatch;
 @property(readonly, nonatomic) NSString *scopeIdentifier; // @synthesize scopeIdentifier=_scopeIdentifier;
 @property(readonly, nonatomic) __weak id <CPLBatchExtractionStrategyStorage> storage; // @synthesize storage=_storage;
 @property(readonly, copy, nonatomic) NSString *strategyName; // @synthesize strategyName=_strategyName;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *currentStepDescription;
 - (void)resetConditionallyFromNewIncomingChange:(id)arg1;
 - (void)reset;

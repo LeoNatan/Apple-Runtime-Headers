@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(nonatomic) unsigned short messageType; // @synthesize messageType=_messageType;
-- (void).cxx_destruct;
 
 @end
 

@@ -37,10 +37,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *options; // @synthesize options=_options;
 @property(copy) NSDictionary *testOptions; // @synthesize testOptions=_testOptions;
 @property __weak PUTabbedLibraryViewController *tabbedLibraryViewController; // @synthesize tabbedLibraryViewController=_tabbedLibraryViewController;
-- (void).cxx_destruct;
 - (void)actionCoordinatorDidEndDelete:(id)arg1;
 - (void)actionCoordinatorDidBeginDelete:(id)arg1;
 - (void)actionCoordinatorWillBeginDelete:(id)arg1;

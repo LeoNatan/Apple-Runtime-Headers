@@ -32,6 +32,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long schemaVersion; // @synthesize schemaVersion=_schemaVersion;
 @property(retain, nonatomic) NSDate *birthdate; // @synthesize birthdate=_birthdate;
 @property(retain, nonatomic) NSDate *dateSaved; // @synthesize dateSaved=_dateSaved;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSData *pictureData; // @synthesize pictureData=_pictureData;
 @property(nonatomic) _Bool isDisabled; // @synthesize isDisabled=_isDisabled;
-- (void).cxx_destruct;
 - (id)_gregorianUtcCalendar;
 - (void)recordFieldPresenceStatistics;
 - (_Bool)isEmpty;

@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)prefersCancelsTouchesInView;
 + (BOOL)requiresForceCapability;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL reachedClickDownThreshold; // @synthesize reachedClickDownThreshold=_reachedClickDownThreshold;
 @property(nonatomic) double forceMultiplier; // @synthesize forceMultiplier=_forceMultiplier;
 @property(nonatomic) double clickDownDuration; // @synthesize clickDownDuration=_clickDownDuration;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL cancelsTouchesInView; // @synthesize cancelsTouchesInView=_cancelsTouchesInView;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <_UIClickInteractionDriverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)_asyncGestureBegan;
 - (void)_handleGestureRecognizer:(id)arg1;
 @property(readonly, nonatomic) double clickTimeoutDuration;
+@property(readonly, nonatomic) unsigned long long inputPrecision;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)cancelInteraction;
 @property(readonly, nonatomic) BOOL isCurrentlyAcceleratedByForce;

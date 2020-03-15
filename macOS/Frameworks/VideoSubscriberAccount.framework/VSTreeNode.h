@@ -18,10 +18,10 @@
 + (id)keyPathsForValuesAffectingLeaf;
 + (id)keyPathsForValuesAffectingIndexPath;
 + (id)treeNodeWithRepresentedObject:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 @property(nonatomic) __weak VSTreeNode *parentNode; // @synthesize parentNode=_parentNode;
 @property(readonly, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (id)descendantNodeAtIndexPath:(id)arg1;
 @property(readonly, nonatomic) NSMutableArray *mutableChildNodes;
 @property(readonly, copy, nonatomic) NSArray *childNodes;

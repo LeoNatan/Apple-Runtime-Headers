@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *destAddr; // @synthesize destAddr=_destAddr;
 @property(retain, nonatomic) NSString *svcCenterAddr; // @synthesize svcCenterAddr=_svcCenterAddr;
 @property(nonatomic) long long pnrMechanism; // @synthesize pnrMechanism=_pnrMechanism;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

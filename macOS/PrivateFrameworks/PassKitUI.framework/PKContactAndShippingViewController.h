@@ -24,6 +24,7 @@
     PKPaymentPreferenceContact *_emailPreference;
 }
 
+- (void).cxx_destruct;
 @property(retain) PKPaymentPreferenceContact *emailPreference; // @synthesize emailPreference=_emailPreference;
 @property(retain) PKPaymentPreferenceContact *phonePreference; // @synthesize phonePreference=_phonePreference;
 @property(retain) PKPaymentPreferenceContact *addressPreference; // @synthesize addressPreference=_addressPreference;
@@ -33,7 +34,6 @@
 @property(retain) NSPopUpButton *telephonePopup; // @synthesize telephonePopup=_telephonePopup;
 @property(retain) NSPopUpButton *emailPopup; // @synthesize emailPopup=_emailPopup;
 @property(retain) NSPopUpButton *addressPopup; // @synthesize addressPopup=_addressPopup;
-- (void).cxx_destruct;
 - (void)contactEditorViewController:(id)arg1 didFinishEditingContact:(id)arg2;
 - (void)contactEditorViewControllerDidCancel:(id)arg1;
 - (void)postalAddressEditorViewController:(id)arg1 didFinishEditingContact:(id)arg2;

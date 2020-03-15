@@ -14,8 +14,8 @@
 }
 
 + (id)_richDisplayTextForSuggestion:(id)arg1 forQuery:(id)arg2;
-@property(readonly, nonatomic) SFSearchSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SFSearchSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 - (id)initWithSearchSuggestion:(id)arg1 forQuery:(id)arg2;
 
 @end

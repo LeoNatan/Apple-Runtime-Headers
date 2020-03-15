@@ -16,9 +16,9 @@
     NSString *_messageId;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDMailMessageBody *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

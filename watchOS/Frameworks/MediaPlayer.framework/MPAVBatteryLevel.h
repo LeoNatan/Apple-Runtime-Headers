@@ -16,11 +16,11 @@
     NSNumber *_casePercentage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *casePercentage; // @synthesize casePercentage=_casePercentage;
 @property(readonly, nonatomic) NSNumber *singlePercentage; // @synthesize singlePercentage=_singlePercentage;
 @property(readonly, nonatomic) NSNumber *rightPercentage; // @synthesize rightPercentage=_rightPercentage;
 @property(readonly, nonatomic) NSNumber *leftPercentage; // @synthesize leftPercentage=_leftPercentage;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithOutputDevice:(void *)arg1;

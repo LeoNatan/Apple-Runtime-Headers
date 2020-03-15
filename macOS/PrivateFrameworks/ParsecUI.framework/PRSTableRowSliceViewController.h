@@ -27,6 +27,7 @@
 + (id)imageViewForView:(id)arg1;
 + (id)labelForView:(id)arg1;
 + (unsigned long long)imageAlignmentForTextAlignment:(long long)arg1;
+- (void).cxx_destruct;
 @property BOOL hasHeaderContent; // @synthesize hasHeaderContent=_hasHeaderContent;
 @property long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property BOOL isReducedHeight; // @synthesize isReducedHeight=_isReducedHeight;
@@ -34,7 +35,6 @@
 @property(retain) PRSTableRowCardSection *section; // @synthesize section=_section;
 @property(retain) NSArray *itemViews; // @synthesize itemViews=_itemViews;
 @property(retain) NSArray *itemWidths; // @synthesize itemWidths=_itemWidths;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (double)height;
 - (BOOL)labelsAreVibrant;

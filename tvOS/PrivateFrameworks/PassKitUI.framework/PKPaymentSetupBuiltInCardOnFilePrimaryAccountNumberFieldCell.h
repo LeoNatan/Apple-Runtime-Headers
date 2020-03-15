@@ -15,9 +15,9 @@
     long long _paymentCredentialType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasDarkAppearance; // @synthesize hasDarkAppearance=_hasDarkAppearance;
 @property(nonatomic) long long paymentCredentialType; // @synthesize paymentCredentialType=_paymentCredentialType;
-- (void).cxx_destruct;
 - (id)_networkImage;
 - (_Bool)textFieldShouldClear:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;

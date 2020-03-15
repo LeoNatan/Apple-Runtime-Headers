@@ -20,9 +20,9 @@
     NSURL *_baseURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(nonatomic) __weak id <RUIHeaderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)webContainerView:(id)arg1 didClickLinkWithURL:(id)arg2;
 - (void)layoutSubviews;
 - (void)setSectionIsFirst:(_Bool)arg1;

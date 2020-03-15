@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _delegate;
 }
 
-@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void)layoutSubviews;
 
 @end

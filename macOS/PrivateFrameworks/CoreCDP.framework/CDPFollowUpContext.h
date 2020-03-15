@@ -19,14 +19,15 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)contextForSettingUpBiometrics;
 + (id)contextForRecoveryKeyRepair;
 + (id)contextForOfflinePasscodeChange;
 + (id)contextWithType:(id)arg1;
 + (id)contextForStateRepair;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *followUpType; // @synthesize followUpType=_followUpType;
 @property(nonatomic) BOOL force; // @synthesize force=_force;
 @property(nonatomic) BOOL shouldNotify; // @synthesize shouldNotify=_shouldNotify;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

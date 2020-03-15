@@ -22,9 +22,9 @@
 
 + (_Bool)isAvailableForConfiguration;
 + (unsigned long long)requiredCapabilities;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSTodayContentViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(retain, nonatomic) CSLayoutStrategy *layoutStrategy; // @synthesize layoutStrategy=_layoutStrategy;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CSTodayViewController *todayViewController; // @dynamic todayViewController;
 - (void)coronaAnimationController:(id)arg1 willAnimateCoronaTransitionWithAnimator:(id)arg2;
 - (void)coverSheetTodayViewControllerDidFocusSearchView:(id)arg1;

@@ -16,11 +16,11 @@
     NSArray *_codeMapIndex;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *codeMapIndex; // @synthesize codeMapIndex=_codeMapIndex;
 @property(retain) NSDictionary *codeMap; // @synthesize codeMap=_codeMap;
 @property(retain) NSArray *activations; // @synthesize activations=_activations;
 @property(retain) CRImage *cutImage; // @synthesize cutImage=_cutImage;
-- (void).cxx_destruct;
 - (id)initWithActivation:(id)arg1 codeMapIndex:(id)arg2 codeMap:(int *)arg3 codeMapSize:(int)arg4 blankIndex:(unsigned short)arg5 cutImage:(id)arg6;
 
 @end

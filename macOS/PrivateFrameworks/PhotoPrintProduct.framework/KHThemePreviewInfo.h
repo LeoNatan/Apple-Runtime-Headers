@@ -22,6 +22,7 @@
 }
 
 + (id)infoKey;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *catalogVersion; // @synthesize catalogVersion=_catalogVersion;
 @property(retain, nonatomic) NSArray *productCodes; // @synthesize productCodes=_productCodes;
 @property(retain, nonatomic) NSMutableSet *languages; // @synthesize languages=_languages;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSString *themeIdentifier; // @synthesize themeIdentifier=_themeIdentifier;
 @property(retain, nonatomic) NSString *themePreviewIdentifier; // @synthesize themePreviewIdentifier=_themePreviewIdentifier;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initFromDictionary:(id)arg1;
 
 // Remaining properties

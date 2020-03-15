@@ -20,12 +20,12 @@
     id <SXUnitConverterFactory> _unitConverterFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXUnitConverterFactory> unitConverterFactory; // @synthesize unitConverterFactory=_unitConverterFactory;
 @property(readonly, nonatomic) id <SXLayoutContextFactory> layoutContextFactory; // @synthesize layoutContextFactory=_layoutContextFactory;
 @property(readonly, nonatomic) NSMutableDictionary *intersectionCache; // @synthesize intersectionCache=_intersectionCache;
 @property(readonly, nonatomic) SXLayouterFactory *layouterFactory; // @synthesize layouterFactory=_layouterFactory;
 @property(nonatomic) __weak id <SXLayouterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (int)layoutAttributeForAnchor:(long long)arg1;
 - (double)factorForLayoutAttribute:(int)arg1;
 - (_Bool)componentBlueprint:(id)arg1 shouldIntersectWithComponentBlueprint:(id)arg2;

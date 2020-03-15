@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 
 + (id)typeLabelStringFromContactType:(long long)arg1;
 + (id)familyMemberContactItemFromCoreFamilyMemberContactItem:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(readonly, nonatomic, getter=isUnreachable) _Bool unreachable; // @synthesize unreachable=_unreachable;
 @property(readonly, nonatomic) NSString *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -92,6 +92,7 @@
 + (void)_sortStateChangeArraysOfSampleStore:(id)arg1;
 + (BOOL)canOpenFileAsKTraceFile:(const char *)arg1 errorOut:(id *)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) double lastWakeTime; // @synthesize lastWakeTime=_lastWakeTime;
 @property double timeWhenTransitionedToSamplingAllProcesses; // @synthesize timeWhenTransitionedToSamplingAllProcesses=_timeWhenTransitionedToSamplingAllProcesses;
 @property BOOL shouldGatherKextStat; // @synthesize shouldGatherKextStat=_shouldGatherKextStat;
@@ -143,7 +144,6 @@
 @property(readonly) double startMachTimestamp; // @synthesize startMachTimestamp=_startMachTimestamp;
 @property(copy) NSString *reason; // @synthesize reason=_reason;
 @property(readonly) unsigned long long dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)gatherBootArgs;
 - (void)gatherNumActiveCPUs;
 - (void)gatherHardwareModel;

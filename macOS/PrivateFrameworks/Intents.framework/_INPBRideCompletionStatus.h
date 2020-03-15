@@ -35,6 +35,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)defaultTippingOptionsType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBCurrencyAmountValue *paymentAmount; // @synthesize paymentAmount=_paymentAmount;
 @property(nonatomic) BOOL outstanding; // @synthesize outstanding=_outstanding;
@@ -44,7 +45,6 @@
 @property(nonatomic) BOOL completed; // @synthesize completed=_completed;
 @property(nonatomic) BOOL canceledByService; // @synthesize canceledByService=_canceledByService;
 @property(nonatomic) BOOL canceled; // @synthesize canceled=_canceled;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

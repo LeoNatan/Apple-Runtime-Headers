@@ -17,9 +17,9 @@
     _Bool _isVisible;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_isVisible;
 @property(nonatomic) __weak id <SBUIPluginControllerHost> host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (id)viewControllerForActivationContext:(id)arg1;
 - (_Bool)handledButtonTapFromSource:(int)arg1;
 - (_Bool)handledButtonUpEventFromSource:(int)arg1;

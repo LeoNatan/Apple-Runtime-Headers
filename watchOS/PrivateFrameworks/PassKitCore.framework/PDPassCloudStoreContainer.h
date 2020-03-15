@@ -6,9 +6,12 @@
 
 #import <PassKitCore/PDCloudStoreContainer.h>
 
+#import <PassKitCore/PDCloudStoreZoneManagerDataSource-Protocol.h>
+
+@class NSString;
 @protocol PDCloudStorePassManager;
 
-@interface PDPassCloudStoreContainer : PDCloudStoreContainer
+@interface PDPassCloudStoreContainer : PDCloudStoreContainer <PDCloudStoreZoneManagerDataSource>
 {
     id <PDCloudStorePassManager> _passManager;
     _Bool _canInitializeContainer;
@@ -22,16 +25,26 @@
 - (_Bool)_isPassItemFromRecordType:(id)arg1;
 - (_Bool)_canInitializeContainer;
 - (void)cloudStoreAccountChanged:(id)arg1;
-- (void)invalidateServerChangeTokens;
-- (void)readCachedContainerValues;
-- (void)saveCachedContainerValues;
-- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 groupName:(id)arg3 groupNameSuffix:(id)arg4 qualityOfService:(int)arg5 completion:(CDUnknownBlockType)arg6;
+- (id)cloudStoreZonesForCloudStoreItem:(id)arg1;
+- (id)cloudStoreZonesForCloudStoreItemType:(unsigned int)arg1 recordName:(id)arg2;
+- (id)cloudStoreZonesForCloudStoreItemType:(unsigned int)arg1;
+- (id)zoneNameForSubscriptionIdentifier:(id)arg1;
+- (id)subscriptionIdentifierForZoneName:(id)arg1;
+- (id)containerName;
+- (id)allPossibleSubscriptionIdentifiers;
+- (id)allPossibleZoneNames;
+- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 includeServerData:(_Bool)arg3 groupName:(id)arg4 groupNameSuffix:(id)arg5 qualityOfService:(int)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)processFetchedCloudStoreDataWithModifiedRecords:(id)arg1 deletedRecords:(id)arg2 request:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setContainerState:(unsigned int)arg1 operationGroupNameSuffix:(id)arg2 retryCount:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)recordTypeForRecordID:(id)arg1;
 - (void)shouldFetchAndStoreCloudDataAtStartupWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)canInitializeContainer;
 - (id)initWithDataSource:(id)arg1 passManager:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

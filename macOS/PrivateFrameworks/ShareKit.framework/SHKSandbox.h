@@ -10,6 +10,9 @@
 {
 }
 
++ (void)releaseExtensionTokens:(id)arg1;
++ (id)consumeExtensions:(id)arg1;
++ (id)extensionsForSharingItems:(id)arg1;
 + (id)safeUnarchiveObjectWithData:(id)arg1;
 + (id)safeClassNamesForArchiving;
 + (id)filteredItemsFromItems:(id)arg1 processWithPID:(int)arg2;

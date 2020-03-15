@@ -17,10 +17,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *rootPath; // @synthesize rootPath=_rootPath;
 @property(readonly, nonatomic) NSURL *mobileHome; // @synthesize mobileHome=_mobileHome;
 @property(readonly, nonatomic) NSURL *systemContainerPath; // @synthesize systemContainerPath=_systemContainerPath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *userVolumeURL;
 @property(readonly, nonatomic) NSURL *frameworkURL;
 - (id)promiseStagingRootDirectoryAbortingOnError;

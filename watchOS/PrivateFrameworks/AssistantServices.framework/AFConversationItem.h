@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)associatedDataStore;
+- (_Bool)isTransient;
 - (_Bool)isVirgin;
 - (int)presentationState;
 - (id)aceCommandIdentifier;
@@ -28,8 +29,8 @@
 - (id)identifier;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithType:(int)arg1 aceObject:(id)arg2 dialogPhase:(id)arg3 presentationState:(int)arg4 aceCommandIdentifier:(id)arg5 virgin:(_Bool)arg6 associatedDataStore:(id)arg7;
-- (id)initWithIdentifier:(id)arg1 revisionIdentifier:(id)arg2 type:(int)arg3 aceObject:(id)arg4 dialogPhase:(id)arg5 presentationState:(int)arg6 aceCommandIdentifier:(id)arg7 virgin:(_Bool)arg8 associatedDataStore:(id)arg9;
+- (id)initWithType:(int)arg1 aceObject:(id)arg2 dialogPhase:(id)arg3 presentationState:(int)arg4 aceCommandIdentifier:(id)arg5 virgin:(_Bool)arg6 transient:(_Bool)arg7 associatedDataStore:(id)arg8;
+- (id)initWithIdentifier:(id)arg1 revisionIdentifier:(id)arg2 type:(int)arg3 aceObject:(id)arg4 dialogPhase:(id)arg5 presentationState:(int)arg6 aceCommandIdentifier:(id)arg7 virgin:(_Bool)arg8 transient:(_Bool)arg9 associatedDataStore:(id)arg10;
 - (id)initWithDelegateItem:(id)arg1;
 
 // Remaining properties

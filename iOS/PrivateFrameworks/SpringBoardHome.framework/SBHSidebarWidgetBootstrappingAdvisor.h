@@ -19,11 +19,11 @@
     unsigned long long _learningEpoch;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long learningEpoch; // @synthesize learningEpoch=_learningEpoch;
 @property(readonly, nonatomic) double learningDuration; // @synthesize learningDuration=_learningDuration;
 @property(nonatomic) _Bool shouldSidebarWidgetsBeInLearningMode; // @synthesize shouldSidebarWidgetsBeInLearningMode=_shouldSidebarWidgetsBeInLearningMode;
 @property(readonly, nonatomic) id <SBHSidebarWidgetLearningDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (_Bool)_requiresLearningCadenceForFavoriteWidgets:(_Bool *)arg1;
 - (void)_updateSidebarWidgetsCommenceDateIfEmpty;
 - (void)_updateSidebarWidgetsEpoch;

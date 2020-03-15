@@ -15,10 +15,10 @@
     NSString *_assetID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *assetID; // @synthesize assetID=_assetID;
 @property(readonly, copy, nonatomic) NSString *programID; // @synthesize programID=_programID;
 @property(readonly, copy, nonatomic) NSString *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

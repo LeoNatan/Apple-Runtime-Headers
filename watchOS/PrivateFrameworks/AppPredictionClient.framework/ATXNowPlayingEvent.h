@@ -14,9 +14,9 @@
     int _nowPlayingState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int nowPlayingState; // @synthesize nowPlayingState=_nowPlayingState;
 @property(readonly, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (id)initWithContextInfo:(id)arg1;
 
 @end

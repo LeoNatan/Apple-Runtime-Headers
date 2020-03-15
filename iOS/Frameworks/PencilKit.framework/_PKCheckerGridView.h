@@ -16,11 +16,11 @@
     UIImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIColor *colorB; // @synthesize colorB=_colorB;
 @property(retain, nonatomic) UIColor *colorA; // @synthesize colorA=_colorA;
 @property(nonatomic) double gridSize; // @synthesize gridSize=_gridSize;
-- (void).cxx_destruct;
 - (id)gridTileImage;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

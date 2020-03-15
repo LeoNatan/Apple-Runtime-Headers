@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     long long _titlePosition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long titlePosition; // @synthesize titlePosition=_titlePosition;
 @property(nonatomic) double minimumDiameter; // @synthesize minimumDiameter=_minimumDiameter;
 @property(copy, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)description;

@@ -20,11 +20,11 @@
 
 + (void)addEvent:(int)arg1 for:(id)arg2 toHistory:(id)arg3;
 + (void)addEvent:(int)arg1 for:(id)arg2 scheduled:(id)arg3 toHistory:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int event; // @synthesize event=_event;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) NSDate *scheduled; // @synthesize scheduled=_scheduled;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithEvent:(int)arg1 for:(id)arg2 at:(id)arg3 scheduled:(id)arg4;
 - (id)initWithEvent:(int)arg1 for:(id)arg2 scheduled:(id)arg3;

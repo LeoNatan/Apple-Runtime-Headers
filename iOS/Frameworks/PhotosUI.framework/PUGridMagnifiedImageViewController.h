@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _magnifiedDragEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint lastLocation; // @synthesize lastLocation=_lastLocation;
 @property(nonatomic) double shadowOpacity; // @synthesize shadowOpacity=_shadowOpacity;
 @property(nonatomic) double shadowRadius; // @synthesize shadowRadius=_shadowRadius;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSIndexPath *itemIndexPath; // @synthesize itemIndexPath=_itemIndexPath;
 @property(nonatomic) struct CGPoint gestureWindLocation; // @synthesize gestureWindLocation=_gestureWindLocation;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGRect)magnifiedImageWindFrame;
 - (id)imageForIndexPath:(id)arg1;
 - (id)imageForMagnifyLocation:(struct CGPoint)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_stuckToBackViews;
 }
 
-@property(readonly, nonatomic) NSArray *stuckToBackViews; // @synthesize stuckToBackViews=_stuckToBackViews;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *stuckToBackViews; // @synthesize stuckToBackViews=_stuckToBackViews;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (BOOL)_forwardsToParentScroller;
 - (void)setBounds:(struct CGRect)arg1;

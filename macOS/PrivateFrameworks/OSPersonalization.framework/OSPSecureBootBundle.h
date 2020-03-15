@@ -18,12 +18,12 @@
 }
 
 + (id)recommendedBundleForVolumeMountPoint:(id)arg1 variant:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *buildTrain; // @synthesize buildTrain=_buildTrain;
 @property(retain) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(retain) NSArray *devices; // @synthesize devices=_devices;
 @property(retain) NSArray *variants; // @synthesize variants=_variants;
 @property(retain) NSURL *restoreBundleURL; // @synthesize restoreBundleURL=_restoreBundleURL;
-- (void).cxx_destruct;
 - (struct __AMAuthInstall *)_amaiFromDevice:(id)arg1;
 - (id)_manifestForVariant:(id)arg1 device:(id)arg2;
 - (BOOL)_loadManifestInfo;

@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)proxyWithDelegate:(id)arg1;
-@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 

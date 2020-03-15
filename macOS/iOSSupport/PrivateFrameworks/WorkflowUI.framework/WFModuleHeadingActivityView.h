@@ -15,8 +15,8 @@
     WFAction *_action;
 }
 
-@property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
 - (void)actionRunningStateDidChange:(id)arg1;
 
 // Remaining properties

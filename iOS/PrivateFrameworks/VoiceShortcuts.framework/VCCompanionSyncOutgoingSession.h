@@ -18,11 +18,11 @@
 }
 
 + (long long)direction;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *syncedChanges; // @synthesize syncedChanges=_syncedChanges;
 @property(readonly, nonatomic) NSMutableArray *sentChanges; // @synthesize sentChanges=_sentChanges;
 @property(readonly, copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSMutableArray *pendingChanges; // @synthesize pendingChanges=_pendingChanges;
-- (void).cxx_destruct;
 - (void)syncSession:(id)arg1 successfullySynced:(id)arg2;
 - (long long)syncSession:(id)arg1 enqueueChanges:(CDUnknownBlockType)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) double progress;

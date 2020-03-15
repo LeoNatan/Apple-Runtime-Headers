@@ -27,13 +27,13 @@
 + (id)channelStringFromSenderIdentity:(id)arg1;
 + (id)descriptorForRequiredKeys;
 + (_Bool)deviceSupportsGemini;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int dataSourceExclusions; // @synthesize dataSourceExclusions=_dataSourceExclusions;
 @property(retain, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) TUCallProviderManager *callProviderManager; // @synthesize callProviderManager=_callProviderManager;
 @property(retain, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
 @property(retain, nonatomic) CNContactsEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (id)badgeLabelForSubscription:(id)arg1 error:(id *)arg2;
 - (id)fetchedSubscriptionForSenderIdentity:(id)arg1;
 - (id)fetchedSubscriptionsWithError:(id *)arg1;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)sessionStateForType:(int)arg1;
 - (id)_emptyUserSessionState;
 - (id)stateForType:(int)arg1;
+- (id)mapLaunch;
 - (id)mapRestore;
 - (id)suggestions;
 - (id)placeRequest;

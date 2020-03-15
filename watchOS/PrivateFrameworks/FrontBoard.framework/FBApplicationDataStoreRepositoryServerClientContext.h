@@ -22,11 +22,11 @@
     id <FBApplicationDataStoreRepositoryServerClientContextDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FBApplicationDataStoreRepositoryServerClientContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool interestedInAllChanges; // @synthesize interestedInAllChanges=_interestedInAllChanges;
 @property(copy, nonatomic) NSSet *prefetchedKeys; // @synthesize prefetchedKeys=_prefetchedKeys;
 @property(nonatomic) __weak id <FBSServiceFacilityClientHandle> clientHandle; // @synthesize clientHandle=_client;
-- (void).cxx_destruct;
 - (void)_repositoryInvalidated:(id)arg1;
 - (void)_valueChanged:(id)arg1;
 - (void)_queue_updateObservers;

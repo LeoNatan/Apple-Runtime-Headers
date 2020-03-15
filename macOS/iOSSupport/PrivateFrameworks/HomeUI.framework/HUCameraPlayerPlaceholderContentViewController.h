@@ -19,11 +19,11 @@
     HMCameraClip *_lastRequestedClip;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMCameraClip *lastRequestedClip; // @synthesize lastRequestedClip=_lastRequestedClip;
 @property(retain, nonatomic) UIImageView *placeholderImageView; // @synthesize placeholderImageView=_placeholderImageView;
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(nonatomic) BOOL cameraPlayerHasContentToShow; // @synthesize cameraPlayerHasContentToShow=_cameraPlayerHasContentToShow;
-- (void).cxx_destruct;
 - (void)manager:(id)arg1 didFindImage:(id)arg2 atTimeOffset:(double)arg3 forClip:(id)arg4;
 - (BOOL)_shouldHidePlaceholderContentForCurrentAccessMode;
 - (void)_animateState:(BOOL)arg1 placeholderImage:(id)arg2;

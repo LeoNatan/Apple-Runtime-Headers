@@ -20,10 +20,10 @@
 + (BOOL)isClient;
 + (id)sharedSearchManager;
 + (id)new;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain) NSMapTable *clientMap; // @synthesize clientMap=_clientMap;
 @property(retain) HPDClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (id)bookContainingFileAtPath:(id)arg1;
 - (BOOL)registerBookWithIdentifier:(id)arg1 appBundleURL:(id)arg2 bookVersion:(id)arg3 bookURL:(id)arg4;
 - (id)cachedBookList;

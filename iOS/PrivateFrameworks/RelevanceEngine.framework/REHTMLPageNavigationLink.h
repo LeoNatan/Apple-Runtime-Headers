@@ -14,9 +14,9 @@
     NSString *_location;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithLocation:(id)arg1 title:(id)arg2;
 
 @end

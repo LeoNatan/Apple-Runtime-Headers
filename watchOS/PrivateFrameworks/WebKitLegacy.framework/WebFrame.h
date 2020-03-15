@@ -44,10 +44,6 @@
 - (void)dealloc;
 - (id)initWithName:(id)arg1 webFrameView:(id)arg2 webView:(id)arg3;
 - (id)init;
-- (void)printToCGContext:(struct CGContext *)arg1 pageWidth:(float)arg2 pageHeight:(float)arg3;
-- (int)numberOfPagesWithPageWidth:(float)arg1 pageHeight:(float)arg2;
-- (id)renderTreeAsExternalRepresentationWithOptions:(unsigned int)arg1;
-- (id)renderTreeAsExternalRepresentationForPrinting;
 - (void)_commitData:(id)arg1;
 - (_Bool)_canSaveAsWebArchive;
 - (_Bool)_canProvideDocumentSource;
@@ -70,7 +66,7 @@
 - (void)_scrollDOMRangeToVisible:(id)arg1 withInset:(float)arg2;
 - (void)_scrollDOMRangeToVisible:(id)arg1;
 - (struct CGRect)_firstRectForDOMRange:(id)arg1;
-- (struct CGRect)_caretRectAtPosition:(const struct Position *)arg1 affinity:(int)arg2;
+- (struct CGRect)_caretRectAtPosition:(const struct Position *)arg1 affinity:(unsigned int)arg2;
 - (id)_stringByEvaluatingJavaScriptFromString:(id)arg1 forceUserGesture:(_Bool)arg2;
 - (id)_stringByEvaluatingJavaScriptFromString:(id)arg1;
 - (_Bool)_getVisibleRect:(struct CGRect *)arg1;
@@ -78,7 +74,7 @@
 - (OptionSet_8e32cbf3)_paintBehaviorForDestinationContext:(struct CGContext *)arg1;
 - (id)_stringForRange:(id)arg1;
 - (id)_selectedString;
-- (id)_nodesFromList:(Vector_1d266cd7 *)arg1;
+- (id)_nodesFromList:(Vector_ac56241c *)arg1;
 - (void)_setIsCommitting:(_Bool)arg1;
 - (_Bool)_isCommitting;
 - (id)_dataSource;
@@ -137,7 +133,7 @@
 - (id)convertNSRangeToDOMRange:(struct _NSRange)arg1;
 - (struct _NSRange)convertDOMRangeToNSRange:(id)arg1;
 - (id)characterRangeAtPoint:(struct CGPoint)arg1;
-- (struct CGRect)caretRectAtNode:(id)arg1 offset:(int)arg2 affinity:(int)arg3;
+- (struct CGRect)caretRectAtNode:(id)arg1 offset:(int)arg2 affinity:(unsigned int)arg3;
 - (void)recursiveSetUpdateAppearanceEnabled:(_Bool)arg1;
 - (id)dictationResultMetadataForRange:(id)arg1;
 - (void)getDictationResultRanges:(id *)arg1 andMetadatas:(id *)arg2;
@@ -166,8 +162,8 @@
 - (void)expandSelectionToWordContainingCaretSelection;
 - (id)elementRangeContainingCaretSelection;
 - (void)expandSelectionToElementContainingCaretSelection;
-- (int)selectionAffinity;
-- (void)setSelectedDOMRange:(id)arg1 affinity:(int)arg2 closeTyping:(_Bool)arg3;
+- (unsigned int)selectionAffinity;
+- (void)setSelectedDOMRange:(id)arg1 affinity:(unsigned int)arg2 closeTyping:(_Bool)arg3;
 - (id)selectedDOMRange;
 - (_Bool)isTelephoneNumberParsingEnabled;
 - (_Bool)isTelephoneNumberParsingAllowed;
@@ -223,6 +219,10 @@
 - (struct CGColor *)_bodyBackgroundColor;
 - (void)_setShouldCreateRenderers:(_Bool)arg1;
 - (_Bool)_isDescendantOfFrame:(id)arg1;
+- (void)printToCGContext:(struct CGContext *)arg1 pageWidth:(float)arg2 pageHeight:(float)arg3;
+- (int)numberOfPagesWithPageWidth:(float)arg1 pageHeight:(float)arg2;
+- (id)renderTreeAsExternalRepresentationWithOptions:(unsigned int)arg1;
+- (id)renderTreeAsExternalRepresentationForPrinting;
 - (struct CGRect)elementRectAtPoint:(struct CGPoint)arg1;
 - (id)nextUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (id)previousUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
@@ -265,7 +265,7 @@
 - (void)clearSelection;
 - (struct VisiblePosition)closestWordBoundary:(struct VisiblePosition)arg1;
 - (struct VisiblePosition)visiblePositionForPoint:(struct CGPoint)arg1;
--     // Error parsing type: ^{Frame=^^?{atomic<unsigned int>=AI}{Ref<WebCore::WindowProxy, WTF::DumbPtrTraits<WebCore::WindowProxy> >=^{WindowProxy}}{HashSet<WebCore::FrameDestructionObserver *, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> >={HashTable<WebCore::FrameDestructionObserver *, WebCore::FrameDestructionObserver *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> >=^^{FrameDestructionObserver}IIII}}^{Frame}^{Page}{RefPtr<WebCore::Settings, WTF::DumbPtrTraits<WebCore::Settings> >=^{Settings}}{FrameTree=^{Frame}^{Frame}{AtomString={String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}}{AtomString={String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}}{RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> >=^{Frame}}^{Frame}{RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> >=^{Frame}}^{Frame}IQ}{UniqueRef<WebCore::FrameLoader>={unique_ptr<WebCore::FrameLoader, std::__1::default_delete<WebCore::FrameLoader> >={__compressed_pair<WebCore::FrameLoader *, std::__1::default_delete<WebCore::FrameLoader> >=^{FrameLoader}}}}{UniqueRef<WebCore::NavigationScheduler>={unique_ptr<WebCore::NavigationScheduler, std::__1::default_delete<WebCore::NavigationScheduler> >={__compressed_pair<WebCore::NavigationScheduler *, std::__1::default_delete<WebCore::NavigationScheduler> >=^{NavigationScheduler}}}}^{HTMLFrameOwnerElement}{RefPtr<WebCore::FrameView, WTF::DumbPtrTraits<WebCore::FrameView> >=^{FrameView}}{RefPtr<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document> >=^{Document}}{UniqueRef<WebCore::ScriptController>={unique_ptr<WebCore::ScriptController, std::__1::default_delete<WebCore::ScriptController> >={__compressed_pair<WebCore::ScriptController *, std::__1::default_delete<WebCore::ScriptController> >=^{ScriptController}}}}{UniqueRef<WebCore::Editor>={unique_ptr<WebCore::Editor, std::__1::default_delete<WebCore::Editor> >={__compressed_pair<WebCore::Editor *, std::__1::default_delete<WebCore::Editor> >=^{Editor}}}}{UniqueRef<WebCore::FrameSelection>={unique_ptr<WebCore::FrameSelection, std::__1::default_delete<WebCore::FrameSelection> >={__compressed_pair<WebCore::FrameSelection *, std::__1::default_delete<WebCore::FrameSelection> >=^{FrameSelection}}}}{UniqueRef<WebCore::CSSAnimationController>={unique_ptr<WebCore::CSSAnimationController, std::__1::default_delete<WebCore::CSSAnimationController> >={__compressed_pair<WebCore::CSSAnimationController *, std::__1::default_delete<WebCore::CSSAnimationController> >=^{CSSAnimationController}}}}{ViewportArguments=iffffffffffffiB}B{VisibleSelection={Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}iib1b1}{VisibleSelection={Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}iib1b1}ffiBIIBI{UniqueRef<WebCore::EventHandler>={unique_ptr<WebCore::EventHandler, std::__1::default_delete<WebCore::EventHandler> >={__compressed_pair<WebCore::EventHandler *, std::__1::default_delete<WebCore::EventHandler> >=^{EventHandler}}}}}8@0:4, name: coreFrame
+-     // Error parsing type: ^{Frame=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}{Ref<WebCore::WindowProxy, WTF::DumbPtrTraits<WebCore::WindowProxy> >=^{WindowProxy}}{HashSet<WebCore::FrameDestructionObserver *, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> >={HashTable<WebCore::FrameDestructionObserver *, WebCore::FrameDestructionObserver *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> >=^^{FrameDestructionObserver}}}^{Frame}^{Page}{RefPtr<WebCore::Settings, WTF::DumbPtrTraits<WebCore::Settings> >=^{Settings}}{FrameTree=^{Frame}^{Frame}{AtomString={String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}}{AtomString={String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}}{RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> >=^{Frame}}^{Frame}{RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> >=^{Frame}}^{Frame}IQ}{UniqueRef<WebCore::FrameLoader>={unique_ptr<WebCore::FrameLoader, std::__1::default_delete<WebCore::FrameLoader> >={__compressed_pair<WebCore::FrameLoader *, std::__1::default_delete<WebCore::FrameLoader> >=^{FrameLoader}}}}{UniqueRef<WebCore::NavigationScheduler>={unique_ptr<WebCore::NavigationScheduler, std::__1::default_delete<WebCore::NavigationScheduler> >={__compressed_pair<WebCore::NavigationScheduler *, std::__1::default_delete<WebCore::NavigationScheduler> >=^{NavigationScheduler}}}}^{HTMLFrameOwnerElement}{RefPtr<WebCore::FrameView, WTF::DumbPtrTraits<WebCore::FrameView> >=^{FrameView}}{RefPtr<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document> >=^{Document}}{UniqueRef<WebCore::ScriptController>={unique_ptr<WebCore::ScriptController, std::__1::default_delete<WebCore::ScriptController> >={__compressed_pair<WebCore::ScriptController *, std::__1::default_delete<WebCore::ScriptController> >=^{ScriptController}}}}{UniqueRef<WebCore::Editor>={unique_ptr<WebCore::Editor, std::__1::default_delete<WebCore::Editor> >={__compressed_pair<WebCore::Editor *, std::__1::default_delete<WebCore::Editor> >=^{Editor}}}}{UniqueRef<WebCore::FrameSelection>={unique_ptr<WebCore::FrameSelection, std::__1::default_delete<WebCore::FrameSelection> >={__compressed_pair<WebCore::FrameSelection *, std::__1::default_delete<WebCore::FrameSelection> >=^{FrameSelection}}}}{UniqueRef<WebCore::CSSAnimationController>={unique_ptr<WebCore::CSSAnimationController, std::__1::default_delete<WebCore::CSSAnimationController> >={__compressed_pair<WebCore::CSSAnimationController *, std::__1::default_delete<WebCore::CSSAnimationController> >=^{CSSAnimationController}}}}{ViewportArguments=iffffffffffffiB}B{VisibleSelection={Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}iib1b1}{VisibleSelection={Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}{Position={RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}ib3b1}iib1b1}ffiBIIBI{UniqueRef<WebCore::EventHandler>={unique_ptr<WebCore::EventHandler, std::__1::default_delete<WebCore::EventHandler> >={__compressed_pair<WebCore::EventHandler *, std::__1::default_delete<WebCore::EventHandler> >=^{EventHandler}}}}}8@0:4, name: coreFrame
 
 @end
 

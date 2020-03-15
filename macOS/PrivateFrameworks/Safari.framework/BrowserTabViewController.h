@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSViewController *_contentViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(readonly, nonatomic) __weak BrowserTabViewItem *tabViewItem; // @synthesize tabViewItem=_tabViewItem;
-- (void).cxx_destruct;
 - (void)_updateViewHierarchy;
 - (void)viewDidLoad;
 - (void)loadView;

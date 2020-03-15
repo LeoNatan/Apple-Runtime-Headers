@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _keySize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rowYEdgesRight; // @synthesize rowYEdgesRight=_rowYEdgesRight;
 @property(retain, nonatomic) NSArray *rowYEdgesLeft; // @synthesize rowYEdgesLeft=_rowYEdgesLeft;
 @property(retain, nonatomic) NSArray *rowXEdges; // @synthesize rowXEdges=_rowXEdges;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize keySize; // @synthesize keySize=_keySize;
 @property(nonatomic) struct CGPoint jCenter; // @synthesize jCenter=_jCenter;
 @property(nonatomic) struct CGPoint fCenter; // @synthesize fCenter=_fCenter;
-- (void).cxx_destruct;
 - (void)removeTouchWithIdentifier:(id)arg1 touchCancelled:(_Bool)arg2;
 - (void)removeTouchWithIdentifier:(id)arg1;
 - (void)moveTouchWithIdentifier:(id)arg1 toLocation:(struct CGPoint)arg2 withRadius:(double)arg3 atTouchTime:(double)arg4;

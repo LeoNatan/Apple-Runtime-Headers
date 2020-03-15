@@ -13,8 +13,8 @@
     SFContactImage *_contactImage;
 }
 
-@property(retain, nonatomic) SFContactImage *contactImage; // @synthesize contactImage=_contactImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SFContactImage *contactImage; // @synthesize contactImage=_contactImage;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (id)init;
 

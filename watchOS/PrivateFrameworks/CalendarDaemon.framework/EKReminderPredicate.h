@@ -28,6 +28,7 @@
 
 + (id)predicateWithCalendars:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *defaultPropertiesToLoad; // @synthesize defaultPropertiesToLoad=_defaultPropertiesToLoad;
 @property(nonatomic) _Bool shouldLoadDefaultProperties; // @synthesize shouldLoadDefaultProperties=_shouldLoadDefaultProperties;
 @property(nonatomic) unsigned int maxResults; // @synthesize maxResults=_maxResults;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool completed; // @synthesize completed=_completed;
 @property(nonatomic) _Bool limitToCompletedOrIncomplete; // @synthesize limitToCompletedOrIncomplete=_limitToCompletedOrIncomplete;
 @property(retain, nonatomic) NSString *listTitle; // @synthesize listTitle=_listTitle;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

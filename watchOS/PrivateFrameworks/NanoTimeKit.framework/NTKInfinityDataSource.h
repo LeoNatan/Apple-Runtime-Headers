@@ -27,9 +27,9 @@
 + (id)jessieColor;
 + (id)woodyColor;
 + (id)buzzColor;
+- (void).cxx_destruct;
 @property(nonatomic) int numberOfTotalMagicMoments; // @synthesize numberOfTotalMagicMoments=_numberOfTotalMagicMoments;
 @property(nonatomic) int numberOfTotalActions; // @synthesize numberOfTotalActions=_numberOfTotalActions;
-- (void).cxx_destruct;
 - (id)_listingsForSupportingCast;
 - (id)_listingsForJessie;
 - (id)_listingsForWoody;

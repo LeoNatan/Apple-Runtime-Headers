@@ -22,11 +22,11 @@
 + (int)keyValuePairType;
 + (id)faultableRecordWithRecordData:(id)arg1;
 + (id)faultableRecordWithRecord:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s recordLock; // @synthesize recordLock=_recordLock;
 @property(retain, nonatomic) NTPBRecordBase *recordBase; // @synthesize recordBase=_recordBase;
 @property(retain, nonatomic) NSData *recordData; // @synthesize recordData=_recordData;
 @property(retain, nonatomic) PBCodable *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (void)writeToKeyValuePair:(id)arg1;
 - (id)init;
 

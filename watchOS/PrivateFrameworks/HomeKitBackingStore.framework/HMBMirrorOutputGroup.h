@@ -14,9 +14,9 @@
     unsigned int _blockRow;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int blockRow; // @synthesize blockRow=_blockRow;
 @property(readonly, nonatomic) HMBProcessingOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithBlockRow:(unsigned int)arg1 options:(id)arg2;
 

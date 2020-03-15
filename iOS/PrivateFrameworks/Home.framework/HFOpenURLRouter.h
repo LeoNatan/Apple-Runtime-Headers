@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <HFApplicationURLHandling> applicationURLHandler; // @synthesize applicationURLHandler=_applicationURLHandler;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HFApplicationURLHandling> applicationURLHandler; // @synthesize applicationURLHandler=_applicationURLHandler;
 - (id)openURL:(id)arg1;
 
 @end

@@ -18,13 +18,13 @@
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIImageView *starImageView; // @synthesize starImageView=_starImageView;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
 @property(nonatomic) double ratingValue; // @synthesize ratingValue=_ratingValue;
 @property(nonatomic) double starSize; // @synthesize starSize=_starSize;
 @property(copy, nonatomic) UIColor *starColor; // @synthesize starColor=_starColor;
-- (void).cxx_destruct;
 - (id)_starImage;
 @property(copy, nonatomic) NSAttributedString *attributedText;
 - (void)layoutSubviews;

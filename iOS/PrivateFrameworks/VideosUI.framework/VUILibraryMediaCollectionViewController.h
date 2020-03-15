@@ -7,64 +7,79 @@
 #import <VideosUI/VUILibraryStackViewController.h>
 
 #import <VideosUI/TVShelfViewLayoutDelegate-Protocol.h>
-#import <VideosUI/UICollectionViewDataSource-Protocol.h>
 #import <VideosUI/UICollectionViewDelegate-Protocol.h>
+#import <VideosUI/VUILibraryDataSourceDelegate-Protocol.h>
 #import <VideosUI/VUILibraryEpisodeFooterCellDelegate-Protocol.h>
 #import <VideosUI/VUILibraryEpisodeShelfViewControllerDelegate-Protocol.h>
-#import <VideosUI/VUIMediaEntitiesFetchControllerDelegate-Protocol.h>
 #import <VideosUI/VUIProductLockupViewDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, VUILibraryMediaCollectionViewModel, VUIMediaCollection;
+@class NSArray, NSMutableDictionary, NSString, UICollectionViewDiffableDataSource, VUILibraryMediaCollectionViewModel, VUIMediaCollection, VUIMediaEntitiesDataSource, VUIViewControllerContentPresenter;
 
 __attribute__((visibility("hidden")))
-@interface VUILibraryMediaCollectionViewController : VUILibraryStackViewController <UICollectionViewDataSource, UICollectionViewDelegate, VUIMediaEntitiesFetchControllerDelegate, VUIProductLockupViewDelegate, TVShelfViewLayoutDelegate, VUILibraryEpisodeFooterCellDelegate, VUILibraryEpisodeShelfViewControllerDelegate>
+@interface VUILibraryMediaCollectionViewController : VUILibraryStackViewController <UICollectionViewDelegate, VUIProductLockupViewDelegate, TVShelfViewLayoutDelegate, VUILibraryEpisodeFooterCellDelegate, VUILibraryEpisodeShelfViewControllerDelegate, VUILibraryDataSourceDelegate>
 {
     _Bool _canShowMultipleSeasons;
+    _Bool _seasonsFetchHasCompleted;
+    _Bool _episodesFetchHasCompleted;
     VUIMediaCollection *_mediaCollection;
+    VUIViewControllerContentPresenter *_contentPresenter;
     NSArray *_seasons;
     NSArray *_episodes;
     NSArray *_episodeGroups;
     VUILibraryMediaCollectionViewModel *_mediaCollectionViewModel;
     NSMutableDictionary *_downloadButtonBySeasonIdentifier;
     NSString *_showTitle;
+    VUIMediaEntitiesDataSource *_seasonsDataSource;
+    VUIMediaEntitiesDataSource *_episodesDataSource;
+    UICollectionViewDiffableDataSource *_diffableDataSource;
 }
 
-@property(nonatomic) _Bool canShowMultipleSeasons; // @synthesize canShowMultipleSeasons=_canShowMultipleSeasons;
+- (void).cxx_destruct;
+@property(retain, nonatomic) UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
+@property(nonatomic) _Bool episodesFetchHasCompleted; // @synthesize episodesFetchHasCompleted=_episodesFetchHasCompleted;
+@property(nonatomic) _Bool seasonsFetchHasCompleted; // @synthesize seasonsFetchHasCompleted=_seasonsFetchHasCompleted;
+@property(retain, nonatomic) VUIMediaEntitiesDataSource *episodesDataSource; // @synthesize episodesDataSource=_episodesDataSource;
+@property(retain, nonatomic) VUIMediaEntitiesDataSource *seasonsDataSource; // @synthesize seasonsDataSource=_seasonsDataSource;
 @property(retain, nonatomic) NSString *showTitle; // @synthesize showTitle=_showTitle;
 @property(retain, nonatomic) NSMutableDictionary *downloadButtonBySeasonIdentifier; // @synthesize downloadButtonBySeasonIdentifier=_downloadButtonBySeasonIdentifier;
 @property(retain, nonatomic) VUILibraryMediaCollectionViewModel *mediaCollectionViewModel; // @synthesize mediaCollectionViewModel=_mediaCollectionViewModel;
 @property(retain, nonatomic) NSArray *episodeGroups; // @synthesize episodeGroups=_episodeGroups;
 @property(retain, nonatomic) NSArray *episodes; // @synthesize episodes=_episodes;
 @property(retain, nonatomic) NSArray *seasons; // @synthesize seasons=_seasons;
-@property(readonly, nonatomic) VUIMediaCollection *mediaCollection; // @synthesize mediaCollection=_mediaCollection;
-- (void).cxx_destruct;
+@property(retain, nonatomic) VUIViewControllerContentPresenter *contentPresenter; // @synthesize contentPresenter=_contentPresenter;
+@property(retain, nonatomic) VUIMediaCollection *mediaCollection; // @synthesize mediaCollection=_mediaCollection;
+@property(nonatomic) _Bool canShowMultipleSeasons; // @synthesize canShowMultipleSeasons=_canShowMultipleSeasons;
+- (_Bool)_allFetchesHaveCompleted;
 - (void)addDownloadButtonToProductLockupView:(id)arg1 forSeason:(id)arg2;
 - (id)_episodeShelfViewControllerWithSeason:(id)arg1 episodes:(id)arg2;
 - (void)_updateProductLockupView:(id)arg1 withSeason:(id)arg2;
 - (void)_updateProductLockupViewWithSeasonIdentifier:(id)arg1;
 - (id)_productLockupViewWithSeason:(id)arg1;
-- (id)_episodesChangeSetMapWithEpisodeGroups:(id)arg1 changeSet:(id)arg2;
 - (id)_seasonViewModelsWithSeasons:(id)arg1;
 - (void)_updateMediaCollectionViewModelWithSeasonViewModels:(id)arg1;
 - (void)_buildMediaCollectionViewModel;
 - (_Bool)_usingEpisodesGroupFetch;
 - (id)_episodesBySeasonIdentifier;
 - (void)_updateDeletedContentErrorMessage;
+- (void)_updateAfterContentWasManuallyDeleted:(_Bool)arg1;
+- (void)_updateEpisodeShelvesWithLatestEpisodes;
+- (id)_createDiffableDataSourceSnapshot;
+- (id)_createDiffableDataSourceForCollectionView:(id)arg1;
 - (void)titleButtonPressedForStoreId:(id)arg1;
 - (void)libraryEpisodesShelfViewController:(id)arg1 didRemoveDownloadForAssetController:(id)arg2;
 - (void)contentDescriptionExpanded;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)controller:(id)arg1 fetchRequests:(id)arg2 didFailWithError:(id)arg3;
-- (void)controller:(id)arg1 fetchRequests:(id)arg2 didCompleteWithResult:(id)arg3;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)dataSourceDidFinishFetching:(id)arg1;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)start;
 - (void)configureWithCollectionView:(id)arg1;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)loadView;
 - (void)viewDidAppear:(_Bool)arg1;
-- (id)initWithMediaCollection:(id)arg1 showMultipleSeasons:(_Bool)arg2;
+- (id)initWithTitle:(id)arg1 withSeasonsDataSource:(id)arg2 withEpisodesDataSource:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

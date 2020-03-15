@@ -17,12 +17,12 @@
     UILabel *_expiryDetailLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *expiryDetailLabel; // @synthesize expiryDetailLabel=_expiryDetailLabel;
 @property(readonly, nonatomic) UILabel *expiryHeaderLabel; // @synthesize expiryHeaderLabel=_expiryHeaderLabel;
 @property(retain, nonatomic) NSNumberFormatter *currencyFormatter; // @synthesize currencyFormatter=_currencyFormatter;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) PKSelectedItemActionItem *actionItem; // @synthesize actionItem=_actionItem;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(readonly, nonatomic) UILabel *costDetailLabel;

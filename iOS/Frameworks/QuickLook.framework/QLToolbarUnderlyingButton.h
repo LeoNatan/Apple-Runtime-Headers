@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGRect _selectedIndicatorBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool offsetRoundedSelectedIndicator; // @synthesize offsetRoundedSelectedIndicator=_offsetRoundedSelectedIndicator;
 @property struct CGRect selectedIndicatorBounds; // @synthesize selectedIndicatorBounds=_selectedIndicatorBounds;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (struct CGRect)_selectedIndicatorBounds;
 
 @end

@@ -15,6 +15,7 @@
     CDStruct_57821370 _preferredIntervals;
     CDStruct_56d48c16 _supportedInsertionPositions;
     CDStruct_56d48c16 _supportedPlaybackQueueTypes;
+    CDStruct_56d48c16 _supportedQueueEndActions;
     struct {
         float *list;
         unsigned int count;
@@ -23,6 +24,7 @@
     int _canScrub;
     int _command;
     NSMutableArray *_currentPlaybackSessionTypes;
+    int _currentQueueEndAction;
     NSString *_localizedShortTitle;
     NSString *_localizedTitle;
     float _maximumRating;
@@ -44,6 +46,7 @@
     struct {
         unsigned int canScrub:1;
         unsigned int command:1;
+        unsigned int currentQueueEndAction:1;
         unsigned int maximumRating:1;
         unsigned int minimumRating:1;
         unsigned int numAvailableSkips:1;
@@ -63,6 +66,8 @@
 + (Class)currentPlaybackSessionTypesType;
 + (Class)supportedPlaybackSessionTypesType;
 + (Class)supportedCustomQueueIdentifierType;
+- (void).cxx_destruct;
+@property(nonatomic) int currentQueueEndAction; // @synthesize currentQueueEndAction=_currentQueueEndAction;
 @property(retain, nonatomic) NSString *playbackSessionIdentifier; // @synthesize playbackSessionIdentifier=_playbackSessionIdentifier;
 @property(retain, nonatomic) NSMutableArray *currentPlaybackSessionTypes; // @synthesize currentPlaybackSessionTypes=_currentPlaybackSessionTypes;
 @property(retain, nonatomic) NSMutableArray *supportedPlaybackSessionTypes; // @synthesize supportedPlaybackSessionTypes=_supportedPlaybackSessionTypes;
@@ -81,7 +86,6 @@
 @property(retain, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -91,6 +95,13 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (void)setSupportedQueueEndActions:(int *)arg1 count:(unsigned int)arg2;
+- (int)supportedQueueEndActionsAtIndex:(unsigned int)arg1;
+- (void)addSupportedQueueEndActions:(int)arg1;
+- (void)clearSupportedQueueEndActions;
+@property(readonly, nonatomic) int *supportedQueueEndActions;
+@property(readonly, nonatomic) unsigned int supportedQueueEndActionsCount;
+@property(nonatomic) _Bool hasCurrentQueueEndAction;
 @property(readonly, nonatomic) _Bool hasPlaybackSessionIdentifier;
 - (id)currentPlaybackSessionTypesAtIndex:(unsigned int)arg1;
 - (unsigned int)currentPlaybackSessionTypesCount;

@@ -16,10 +16,10 @@
 }
 
 + (id)defaultTourList;
+- (void).cxx_destruct;
 @property(retain) NSURL *configURL; // @synthesize configURL=_configURL;
 @property(retain) NSArray *tours; // @synthesize tours=_tours;
 @property(retain) APDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)mtLogQuickTourWithCampID:(id)arg1 tourID:(id)arg2 locale:(id)arg3 isOnline:(BOOL)arg4 seenBefore:(BOOL)arg5;
 - (void)logFinderMenuForTour:(id)arg1;
 - (void)userDidSelectTourMenuItem:(id)arg1;

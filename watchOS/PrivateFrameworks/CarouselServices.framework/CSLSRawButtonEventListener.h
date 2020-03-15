@@ -13,8 +13,8 @@
     id <CSLSRawButtonEventListenerDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <CSLSRawButtonEventListenerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <CSLSRawButtonEventListenerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_sendEvent:(unsigned int)arg1 forButton:(unsigned int)arg2;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;

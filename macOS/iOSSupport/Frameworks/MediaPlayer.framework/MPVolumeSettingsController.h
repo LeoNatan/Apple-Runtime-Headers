@@ -16,9 +16,9 @@
     UIWindow *_previousWindow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIWindow *previousWindow; // @synthesize previousWindow=_previousWindow;
 @property(nonatomic) __weak UIWindow *hostingWindow; // @synthesize hostingWindow=_hostingWindow;
-- (void).cxx_destruct;
 - (void)_flip;
 - (void)_keyWindowDidChange:(id)arg1;
 - (void)dismissAlertController;

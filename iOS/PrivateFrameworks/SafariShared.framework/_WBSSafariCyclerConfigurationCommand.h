@@ -19,6 +19,7 @@
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(nonatomic) unsigned long long maximumArgumentCount; // @synthesize maximumArgumentCount=_maximumArgumentCount;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSString *usage; // @synthesize usage=_usage;
 @property(readonly, copy, nonatomic) NSString *help; // @synthesize help=_help;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)invokeWithParameters:(id)arg1;
 - (void)setArgumentCount:(unsigned long long)arg1;
 - (id)initWithName:(id)arg1 help:(id)arg2;

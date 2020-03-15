@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _lastAccess;
 }
 
+- (void).cxx_destruct;
 @property double lastAccess; // @synthesize lastAccess=_lastAccess;
 @property(retain, nonatomic) CKDPCSData *pcsData; // @synthesize pcsData=_pcsData;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (id)init;

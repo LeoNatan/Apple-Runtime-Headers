@@ -12,9 +12,9 @@
     id _proxy;
 }
 
+- (void).cxx_destruct;
 @property(retain) id proxy; // @synthesize proxy=_proxy;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 
 @end
 

@@ -54,6 +54,7 @@
     unsigned long long _circularBufferStartHostTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int circularBufferStartSampleCount; // @synthesize circularBufferStartSampleCount=_circularBufferStartSampleCount;
 @property(nonatomic) unsigned long long circularBufferStartHostTime; // @synthesize circularBufferStartHostTime=_circularBufferStartHostTime;
 @property(retain, nonatomic) NSUUID *stopRecordingWatchDogToken; // @synthesize stopRecordingWatchDogToken=_stopRecordingWatchDogToken;
@@ -85,7 +86,6 @@
 @property(retain, nonatomic) CSAudioRecorder *audioRecorder; // @synthesize audioRecorder=_audioRecorder;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *recordQueue; // @synthesize recordQueue=_recordQueue;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (_Bool)_shouldHandleStartPendingOnStopping:(unsigned int)arg1 withStopReason:(int)arg2;
 - (void)_clearDidStopRecordingDelegateWatchDog;
 - (void)_scheduleDidStopRecordingDelegateWatchDog:(id)arg1;

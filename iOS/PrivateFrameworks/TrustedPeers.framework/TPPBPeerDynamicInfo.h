@@ -26,12 +26,12 @@
 + (Class)dispositionsType;
 + (Class)excludedType;
 + (Class)includedType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *preapprovals; // @synthesize preapprovals=_preapprovals;
 @property(retain, nonatomic) NSMutableArray *dispositions; // @synthesize dispositions=_dispositions;
 @property(retain, nonatomic) NSMutableArray *excludeds; // @synthesize excludeds=_excludeds;
 @property(retain, nonatomic) NSMutableArray *includeds; // @synthesize includeds=_includeds;
 @property(nonatomic) unsigned long long clock; // @synthesize clock=_clock;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -19,13 +19,13 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(retain) NSImage *mouseDownImage; // @synthesize mouseDownImage=_mouseDownImage;
 @property(retain) NSImage *hoverImage; // @synthesize hoverImage=_hoverImage;
 @property(retain) NSImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(retain) NSImage *defaultImage; // @synthesize defaultImage=_defaultImage;
 @property(retain) NSColor *dotColor; // @synthesize dotColor=_dotColor;
 @property(retain) NSString *symbolicColor; // @synthesize symbolicColor=_symbolicColor;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 - (void)isHovered:(BOOL)arg1;
 - (void)resetButton;

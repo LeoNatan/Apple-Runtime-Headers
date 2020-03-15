@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint __previousElementLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *_horizontallyOrderedChildren; // @synthesize _horizontallyOrderedChildren=__horizontallyOrderedChildren;
 @property(readonly, nonatomic) long long previousImageMappingLevel; // @synthesize previousImageMappingLevel=_previousImageMappingLevel;
 @property(readonly, nonatomic) id <SCRLocaleInfoProviding> _currentLocale; // @synthesize _currentLocale=__currentLocale;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setFocusedChildIndex:) unsigned long long _focusedChildIndex; // @synthesize _focusedChildIndex=__focusedChildIndex;
 @property(nonatomic, setter=_setPreviousElementLocation:) struct CGPoint _previousElementLocation; // @synthesize _previousElementLocation=__previousElementLocation;
 @property(retain, nonatomic, setter=_setLastNavKey:) SCRKeyboardKey *_lastNavKey; // @synthesize _lastNavKey=__lastNavKey;
-- (void).cxx_destruct;
 - (BOOL)handleLayoutChangeWithInfo:(id)arg1;
 - (id)children:(BOOL)arg1;
 - (unsigned long long)numberOfChildren:(BOOL)arg1;

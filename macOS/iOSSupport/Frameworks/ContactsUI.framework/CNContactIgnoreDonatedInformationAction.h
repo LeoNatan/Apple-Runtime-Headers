@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CNDonationStore *_donationStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNDonationStore *donationStore; // @synthesize donationStore=_donationStore;
 @property(readonly, nonatomic) CNUIExternalComponentsFactory *componentsFactory; // @synthesize componentsFactory=_componentsFactory;
-- (void).cxx_destruct;
 - (void)showRejectionFailureAlert;
 - (BOOL)rejectAllDonations;
 - (void)performActionWithSender:(id)arg1;

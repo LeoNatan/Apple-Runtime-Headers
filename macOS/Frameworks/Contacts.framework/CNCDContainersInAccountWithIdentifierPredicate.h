@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_accountIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL includeDisabledContainers; // @synthesize includeDisabledContainers=_includeDisabledContainers;
 @property(readonly, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)cn_persistenceFilterRequest;

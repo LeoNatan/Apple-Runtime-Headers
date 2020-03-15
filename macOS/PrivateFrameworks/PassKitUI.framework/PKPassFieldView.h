@@ -15,10 +15,10 @@
     PKPassTextField *_valueField;
 }
 
+- (void).cxx_destruct;
 @property(readonly) PKPassTextField *valueField; // @synthesize valueField=_valueField;
 @property(readonly) PKPassTextField *labelField; // @synthesize labelField=_labelField;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithFieldType:(int)arg1 key:(id)arg2 label:(id)arg3 value:(id)arg4;
 - (id)_textFieldWithValue:(id)arg1;

@@ -17,11 +17,11 @@
     VideoAccessRand *accessRand;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain) VideoAccessRand *accessRand; // @synthesize accessRand;
 @property(readonly) AVAsset *asset; // @synthesize asset;
 @property(readonly) AVAssetTrack *videoTrack; // @synthesize videoTrack;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (int)getFrameAtIndex:(unsigned int)arg1 pixBuf:(struct __CVBuffer **)arg2;
 - (id)initFromFile:(id)arg1 pixelFormat:(unsigned int)arg2 frameTimes:(const vector_0821a7d5 *)arg3;
 

@@ -16,9 +16,9 @@
 
 + (id)_textForMRCResults:(id)arg1 devicePosition:(long long)arg2;
 + (_Bool)shouldDisplayInstructionForMRCResults:(id)arg1 devicePosition:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=setMRCResults:) NSArray *mrcResults; // @synthesize mrcResults=_mrcResults;
 @property(nonatomic) long long devicePosition; // @synthesize devicePosition=_devicePosition;
-- (void).cxx_destruct;
 - (void)_updateTextWithPriorMRCResults:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 

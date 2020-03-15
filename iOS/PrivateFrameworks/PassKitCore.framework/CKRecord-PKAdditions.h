@@ -9,6 +9,9 @@
 @interface CKRecord (PKAdditions)
 - (id)_dictionaryFromStringValue:(id)arg1;
 - (id)_arrayFromStringValue:(id)arg1;
+- (id)_copyArray:(id)arg1 forNewRecordZone:(id)arg2;
+- (id)_copyReference:(id)arg1 forNewRecordZone:(id)arg2;
+- (id)pk_copyRecordForNewRecordZone:(id)arg1;
 - (id)description;
 - (id)pk_description;
 - (id)pk_objectForKey:(id)arg1 ofClass:(Class)arg2;

@@ -16,10 +16,10 @@
 }
 
 + (Class)responseClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *serverCacheTag; // @synthesize serverCacheTag=_serverCacheTag;
 @property(retain, nonatomic, setter=setiTunesAccount:) SSAccount *iTunesAccount; // @synthesize iTunesAccount=_iTunesAccount;
 @property(copy, nonatomic) NSNumber *familyMemberDSID; // @synthesize familyMemberDSID=_familyMemberDSID;
-- (void).cxx_destruct;
 - (id)urlRequest;
 - (id)urlString;
 

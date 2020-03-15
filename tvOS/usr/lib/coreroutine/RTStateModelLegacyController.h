@@ -19,9 +19,9 @@
 + (unsigned long long)crcFromData:(id)arg1;
 + (id)pathToChecksumFor:(long long)arg1;
 + (id)pathToArchiveFor:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) RTLearnedLocationStore *learnedLocationStore; // @synthesize learnedLocationStore=_learnedLocationStore;
-- (void).cxx_destruct;
 - (_Bool)migrateStateModelLegacyWithError:(id *)arg1;
 - (_Bool)_migrateStateModelLegacy:(id)arg1 error:(id *)arg2;
 - (_Bool)removeStateModelLegacyWithError:(id *)arg1;

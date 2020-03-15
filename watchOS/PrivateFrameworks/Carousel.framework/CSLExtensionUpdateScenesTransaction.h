@@ -25,6 +25,7 @@
     double _execTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBProcessExecutionContext *executionContext; // @synthesize executionContext=_executionContext;
 @property(nonatomic) double execTime; // @synthesize execTime=_execTime;
 @property(retain, nonatomic) NSMutableArray *pendingUpdateSceneBlocks; // @synthesize pendingUpdateSceneBlocks=_pendingUpdateSceneBlocks;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 @property(readonly, nonatomic) id <PKPlugIn> plugin; // @synthesize plugin=_plugin;
 @property(nonatomic) _Bool waitsForSceneCommits; // @synthesize waitsForSceneCommits=_waitsForSceneCommits;
-- (void).cxx_destruct;
 - (void)transactionDidFailToLaunchProcess:(id)arg1;
 - (void)transaction:(id)arg1 didLaunchProcess:(id)arg2;
 - (void)transactionWillLaunchProcess:(id)arg1;

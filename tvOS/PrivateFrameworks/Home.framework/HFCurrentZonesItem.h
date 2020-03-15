@@ -13,8 +13,8 @@
     HMRoom *_room;
 }
 
-@property(readonly, nonatomic) HMRoom *room; // @synthesize room=_room;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMRoom *room; // @synthesize room=_room;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)init;
 - (id)initWithRoom:(id)arg1;

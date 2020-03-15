@@ -16,8 +16,8 @@
     id <AAUIServerHookDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AAUIServerHookDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AAUIServerHookDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)generateLoginCodeWithPresenter:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_generateLoginCode:(CDUnknownBlockType)arg1;
 - (void)processObjectModel:(id)arg1 completion:(CDUnknownBlockType)arg2;

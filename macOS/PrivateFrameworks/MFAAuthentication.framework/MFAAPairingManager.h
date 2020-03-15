@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)verifyPairingWithToken:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removePairingWithToken:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addPairingWithToken:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

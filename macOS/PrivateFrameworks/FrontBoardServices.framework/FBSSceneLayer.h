@@ -16,8 +16,8 @@
     double _level;
 }
 
-@property(readonly, nonatomic, getter=_context) CAContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_context) CAContext *context; // @synthesize context=_context;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 @property(readonly, nonatomic) long long alignment;

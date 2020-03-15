@@ -812,6 +812,7 @@
 
 + (Class)realTimeUserFeedbackTagCoefficientsType;
 + (Class)portraitTagThresholdsType;
+- (void).cxx_destruct;
 @property(nonatomic) double topicFeedCtrWithSubscribedChannel; // @synthesize topicFeedCtrWithSubscribedChannel=_topicFeedCtrWithSubscribedChannel;
 @property(nonatomic) double ctrWithSubscribedChannel; // @synthesize ctrWithSubscribedChannel=_ctrWithSubscribedChannel;
 @property(nonatomic) double topicFeedChannelTopicDiversificationPenaltyHalfLife; // @synthesize topicFeedChannelTopicDiversificationPenaltyHalfLife=_topicFeedChannelTopicDiversificationPenaltyHalfLife;
@@ -1204,7 +1205,6 @@
 @property(nonatomic) double baselineImpressionPrior; // @synthesize baselineImpressionPrior=_baselineImpressionPrior;
 @property(nonatomic) double decayFactor; // @synthesize decayFactor=_decayFactor;
 @property(nonatomic) long long treatmentId; // @synthesize treatmentId=_treatmentId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

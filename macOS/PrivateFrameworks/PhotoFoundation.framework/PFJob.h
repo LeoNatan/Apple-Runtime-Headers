@@ -25,6 +25,7 @@
     NSMutableDictionary *_results;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *stop; // @synthesize stop=_stop;
 @property(retain) NSDate *start; // @synthesize start=_start;
 @property(retain) NSMutableDictionary *results; // @synthesize results=_results;
@@ -38,7 +39,6 @@
 @property(retain) id item; // @synthesize item=_item;
 @property(retain) id uuid; // @synthesize uuid=_uuid;
 @property unsigned long long jobId; // @synthesize jobId=_jobId;
-- (void).cxx_destruct;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;
 - (double)runTime;

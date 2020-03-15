@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     struct CGPoint _initialPinchCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VideosExtrasBorderedImageView *zoomingImageView; // @synthesize zoomingImageView=_zoomingImageView;
 @property(nonatomic) double initialPinchScale; // @synthesize initialPinchScale=_initialPinchScale;
 @property(nonatomic) struct CGPoint initialPinchCenter; // @synthesize initialPinchCenter=_initialPinchCenter;
 @property(nonatomic) _Bool shouldUseSpringAnimation; // @synthesize shouldUseSpringAnimation=_shouldUseSpringAnimation;
 @property(nonatomic, getter=isInteractive) _Bool interactive; // @synthesize interactive=_interactive;
 @property(nonatomic) unsigned long long itemIndex; // @synthesize itemIndex=_itemIndex;
-- (void).cxx_destruct;
 - (double)_maximumDistanceTravelledForPoints:(struct CGPoint *)arg1 count:(unsigned long long)arg2 currentTransform:(struct CGAffineTransform)arg3 finalTransform:(struct CGAffineTransform)arg4;
 - (double)_destinationScale;
 - (float)_desiredSpeedForNonInteractiveAnimationWithDuration:(double)arg1 deferredTransform:(struct CGAffineTransform)arg2 finalTransform:(struct CGAffineTransform)arg3;

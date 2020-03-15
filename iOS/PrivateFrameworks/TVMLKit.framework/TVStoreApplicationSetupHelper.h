@@ -24,9 +24,9 @@
 + (id)launchContextWithLaunchOptions:(id)arg1 bootURL:(id)arg2 useCache:(_Bool)arg3;
 + (id)launchContextWithLaunchOptions:(id)arg1 bagBootURLKey:(id)arg2 useCache:(_Bool)arg3;
 + (id)defaultBagBootLaunchContextWithOptions:(id)arg1 useCache:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IKURLBagCache *bagCache; // @synthesize bagCache=_bagCache;
 @property(copy, nonatomic) NSURL *defaultBootURL; // @synthesize defaultBootURL=_defaultBootURL;
-- (void).cxx_destruct;
 - (void)obtainBootURLWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithDefaultBootURL:(id)arg1 bagCache:(id)arg2;
 - (id)initWithDefaultBootURL:(id)arg1;

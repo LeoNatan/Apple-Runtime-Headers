@@ -14,9 +14,9 @@
     int _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) __weak id <NLSedentaryTimerStateEngineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)failedToStopTimer;
 - (void)failedToStartTimer;
 - (void)didStopTimer;

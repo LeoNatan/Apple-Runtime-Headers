@@ -29,6 +29,7 @@
 + (double)sectionHeaderTitleHeightForStyle:(unsigned long long)arg1 dividerHidden:(BOOL)arg2;
 + (double)sectionHeaderHeightForStyle:(unsigned long long)arg1 dividerHidden:(BOOL)arg2;
 + (id)horizontalContentInsetsInterpolator;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct NSEdgeInsets accessoryViewInset; // @synthesize accessoryViewInset=_accessoryViewInset;
 @property(readonly, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) BOOL shouldUseAccessibilityLayout; // @synthesize shouldUseAccessibilityLayout=_shouldUseAccessibilityLayout;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) BOOL shouldInsetAllContent; // @synthesize shouldInsetAllContent=_shouldInsetAllContent;
 @property(readonly, nonatomic) long long scrollAxis; // @synthesize scrollAxis=_scrollAxis;
 @property(readonly, nonatomic) struct NSEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (double)columnSpacingForColumnSpan:(long long)arg1;
 - (double)columnWidthForColumnSpan:(long long)arg1;
 - (BOOL)isEqualToGadgetSpec:(id)arg1;

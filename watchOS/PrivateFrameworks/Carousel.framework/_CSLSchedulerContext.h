@@ -16,9 +16,9 @@
     NSLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     UILabel *_subtitleLabel;
 }
 
-@property(readonly, nonatomic) long long giftConfirmLabelStyle; // @synthesize giftConfirmLabelStyle=_style;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long giftConfirmLabelStyle; // @synthesize giftConfirmLabelStyle=_style;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 @property(copy, nonatomic) NSString *value;

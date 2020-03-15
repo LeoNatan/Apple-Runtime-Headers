@@ -38,6 +38,7 @@
 
 + (id)_pinImage;
 + (id)_homeImage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *localSearchResults; // @synthesize localSearchResults=_localSearchResults;
 @property(retain, nonatomic) MKLocalSearch *localSearch; // @synthesize localSearch=_localSearch;
 @property(retain, nonatomic) NSArray *recents; // @synthesize recents=_recents;
@@ -52,7 +53,6 @@
 @property(nonatomic) __weak id <HULocationTriggerRegionEditorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HULocationTriggerRegion *region; // @synthesize region=_region;
-- (void).cxx_destruct;
 - (id)hu_preloadContent;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)_resetSearchResults;

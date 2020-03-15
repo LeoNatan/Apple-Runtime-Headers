@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     SCRUIElement *_uiElement;
 }
 
-@property(retain, nonatomic) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
 - (unsigned int)elementRetainCount;
 - (void)releaseUIElement;
 - (void)retainUIElement;

@@ -18,13 +18,13 @@
     struct CGRect _endValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TUAnimationSizeFunction *sizeFunction; // @synthesize sizeFunction=_sizeFunction;
 @property(retain, nonatomic) TUAnimationPointFunction *originFunction; // @synthesize originFunction=_originFunction;
 @property(nonatomic) double speed; // @synthesize speed=_speed;
 @property(nonatomic) struct CGRect endValue; // @synthesize endValue=_endValue;
 @property(nonatomic) struct CGRect startValue; // @synthesize startValue=_startValue;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
-- (void).cxx_destruct;
 - (void)_reloadFunctions;
 - (struct CGRect)solveForTime:(double)arg1;
 - (id)initWithTimingFunction:(id)arg1 startRect:(struct CGRect)arg2 endRect:(struct CGRect)arg3 speed:(double)arg4;

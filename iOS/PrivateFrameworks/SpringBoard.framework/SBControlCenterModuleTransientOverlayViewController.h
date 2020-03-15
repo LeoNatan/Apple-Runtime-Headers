@@ -17,8 +17,8 @@
     id <SBControlCenterModuleTransientOverlayViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBControlCenterModuleTransientOverlayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBControlCenterModuleTransientOverlayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_animateTransitionFromViewController:(id)arg1 toViewController:(id)arg2 containerView:(id)arg3 isAnimated:(_Bool)arg4 otherAnimations:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
 - (_Bool)_shouldBlurBackground;
 - (_Bool)handleHomeButtonPress;

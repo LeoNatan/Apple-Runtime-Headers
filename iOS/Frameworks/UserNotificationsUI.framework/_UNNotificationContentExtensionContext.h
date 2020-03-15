@@ -15,9 +15,9 @@
     NSArray *_notificationActions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *notificationActions; // @synthesize notificationActions=_notificationActions;
 @property(nonatomic) __weak id <_UNNotificationExtensionHostInterface> hostService; // @synthesize hostService=_hostService;
-- (void).cxx_destruct;
 - (void)requestDismiss;
 - (void)dismissNotificationContentExtension;
 - (void)performNotificationDefaultAction;

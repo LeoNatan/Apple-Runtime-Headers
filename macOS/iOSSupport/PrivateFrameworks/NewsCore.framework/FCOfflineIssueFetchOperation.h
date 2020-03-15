@@ -23,6 +23,7 @@
     FCCachePolicy *_issueRecordCachePolicy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCCachePolicy *issueRecordCachePolicy; // @synthesize issueRecordCachePolicy=_issueRecordCachePolicy;
 @property(retain, nonatomic) id resultHoldToken; // @synthesize resultHoldToken=_resultHoldToken;
 @property(copy, nonatomic) NSString *issueID; // @synthesize issueID=_issueID;
@@ -33,7 +34,6 @@
 @property double progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) CDUnknownBlockType layeredCoverHandlesProvider; // @synthesize layeredCoverHandlesProvider=_layeredCoverHandlesProvider;
 @property(nonatomic) BOOL cachedOnly; // @synthesize cachedOnly=_cachedOnly;
-- (void).cxx_destruct;
 - (id)_pdfArchiveURLForIssue:(id)arg1;
 - (void)_updateProgress:(double)arg1;
 - (id)_resourceIDsFromMetadataJSONData:(id)arg1;

@@ -37,6 +37,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)describePlayer:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dataSources; // @synthesize dataSources=_dataSources;
 @property(retain, nonatomic) MPShuffleableSectionedIdentifierList *identifierList; // @synthesize identifierList=_identifierList;
 @property(nonatomic) int state; // @synthesize state=_state;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) MPAVItem *currentItem; // @synthesize currentItem=_currentItem;
 @property(nonatomic) _Bool allowsQueueModifications; // @synthesize allowsQueueModifications=_allowsQueueModifications;
 @property(readonly, nonatomic) _Bool hasUserMutations; // @synthesize hasUserMutations=_hasUserMutations;
-- (void).cxx_destruct;
 - (id)_stateDictionaryIncludingIdentifierList:(_Bool)arg1;
 - (void)_soundCheckEnabledChangedNotification:(id)arg1;
 - (id)_nextValidIdentifierPairStartingAtContentItemID:(id)arg1 wasInvalid:(_Bool *)arg2;
@@ -92,10 +92,10 @@
 - (_Bool)isPlaceholderItemForContentItemID:(id)arg1;
 - (int)displayIndexForContentItemID:(id)arg1;
 @property(readonly, nonatomic) int displayCount;
-- (void)handlePlaybackFailureForItem:(id)arg1;
 - (void)finalizeStateRestorationWithAccountManager:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)contentItemIDsFromOffset:(int)arg1 toOffset:(int)arg2 nowPlayingIndex:(int *)arg3;
 - (id)contentItemIDWithCurrentItemOffset:(int)arg1 mode:(int)arg2 didReachEnd:(_Bool *)arg3;
+- (id)contentItemIDAtIndex:(int)arg1;
 - (_Bool)canSkipItem:(id)arg1;
 - (void)addPlaybackContext:(id)arg1 atPosition:(int)arg2 jumpToIt:(_Bool)arg3 userModification:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)addPlaybackContext:(id)arg1 atPosition:(int)arg2 jumpToIt:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

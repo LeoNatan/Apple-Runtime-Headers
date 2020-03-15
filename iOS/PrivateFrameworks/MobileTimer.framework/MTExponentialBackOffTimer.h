@@ -21,13 +21,13 @@
 + (id)timerWithInitialTime:(double)arg1 backoffFactor:(unsigned long long)arg2 fireBlock:(CDUnknownBlockType)arg3 queue:(id)arg4;
 + (id)timerWithInitialTime:(double)arg1 backoffFactor:(unsigned long long)arg2 fireBlock:(CDUnknownBlockType)arg3;
 + (id)timerWithInitialTime:(double)arg1 fireBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long backoffFactor; // @synthesize backoffFactor=_backoffFactor;
 @property(nonatomic) unsigned long long currentBackoff; // @synthesize currentBackoff=_currentBackoff;
 @property(nonatomic) double initialTime; // @synthesize initialTime=_initialTime;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_cancel;
 - (void)reset;

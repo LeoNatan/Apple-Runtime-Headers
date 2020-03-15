@@ -14,9 +14,9 @@
     NSArray *_summaryViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *summaryViews; // @synthesize summaryViews=_summaryViews;
 @property(retain, nonatomic) UIView *buttonView; // @synthesize buttonView=_buttonView;
-- (void).cxx_destruct;
 
 @end
 

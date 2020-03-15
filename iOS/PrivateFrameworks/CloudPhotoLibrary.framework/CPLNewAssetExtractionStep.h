@@ -14,8 +14,8 @@
     unsigned long long _maximumCount;
 }
 
-@property(readonly, nonatomic) unsigned long long maximumCount; // @synthesize maximumCount=_maximumCount;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long maximumCount; // @synthesize maximumCount=_maximumCount;
 - (id)shortDescription;
 - (_Bool)shouldResetFromThisStepWithIncomingChange:(id)arg1;
 - (void)reset;

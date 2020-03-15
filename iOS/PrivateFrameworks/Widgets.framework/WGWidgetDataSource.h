@@ -17,9 +17,9 @@
     _WGConcreteDataSource *_concreteDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_concreteDataSource, setter=_setConcreteDataSource:) _WGConcreteDataSource *concreteDataSource; // @synthesize concreteDataSource=_concreteDataSource;
 @property(readonly, nonatomic) NSString *dataSourceIdentifier; // @synthesize dataSourceIdentifier=_dataSourceIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)removeDatumWithIdentifier:(id)arg1;
 - (void)replaceWithDatum:(id)arg1;

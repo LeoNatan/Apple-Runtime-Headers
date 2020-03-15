@@ -28,10 +28,10 @@
     SBAppStatusBarSettingsAssertion *_statusBarSettingsAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(copy, nonatomic) NSArray *pendingApplications; // @synthesize pendingApplications=_pendingApplications;
 @property(retain, nonatomic) CNContact *userContact; // @synthesize userContact=_userContact;
-- (void).cxx_destruct;
 - (void)_updateBlame;
 - (void)_updateUserAvatar;
 - (void)_updateGoodbye;

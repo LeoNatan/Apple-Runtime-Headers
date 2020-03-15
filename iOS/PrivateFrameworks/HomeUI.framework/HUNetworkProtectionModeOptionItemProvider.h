@@ -14,9 +14,9 @@
     NSMutableSet *_networkProtectionModeOptionItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *networkProtectionModeOptionItems; // @synthesize networkProtectionModeOptionItems=_networkProtectionModeOptionItems;
 @property(readonly, copy, nonatomic) HMAccessoryNetworkProtectionGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)items;
 - (id)reloadItems;
 - (id)copyWithZone:(struct _NSZone *)arg1;

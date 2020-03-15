@@ -32,11 +32,11 @@
     NSObject<OS_dispatch_group> *_outstandingTasksGroup;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forceClearCalendarHomeSyncToken; // @synthesize forceClearCalendarHomeSyncToken=_forceClearCalendarHomeSyncToken;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *outstandingTasksGroup; // @synthesize outstandingTasksGroup=_outstandingTasksGroup;
 @property(retain, nonatomic) NSString *calendarHomeSyncToken; // @synthesize calendarHomeSyncToken=_calendarHomeSyncToken;
 @property(nonatomic) BOOL useCalendarHomeSyncReport; // @synthesize useCalendarHomeSyncReport=_useCalendarHomeSyncReport;
-- (void).cxx_destruct;
 - (void)containerInfoSyncTask:(id)arg1 completedWithNewSyncToken:(id)arg2 error:(id)arg3;
 - (void)containerInfoSyncTask:(id)arg1 retrievedAddedOrModifiedContainers:(id)arg2 removedContainerURLs:(id)arg3;
 - (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;

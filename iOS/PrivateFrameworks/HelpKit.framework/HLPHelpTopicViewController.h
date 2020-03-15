@@ -44,6 +44,7 @@
     NSMutableDictionary *_webViewRequestsMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *webViewRequestsMap; // @synthesize webViewRequestsMap=_webViewRequestsMap;
 @property(retain, nonatomic) NSArray *searchTerms; // @synthesize searchTerms=_searchTerms;
 @property(retain, nonatomic) NSCache *topicCache; // @synthesize topicCache=_topicCache;
@@ -60,7 +61,6 @@
 @property(nonatomic) _Bool displayHelpTopicsOnly; // @synthesize displayHelpTopicsOnly=_displayHelpTopicsOnly;
 @property(nonatomic) _Bool supportsDarkMode; // @synthesize supportsDarkMode=_supportsDarkMode;
 @property(nonatomic) __weak id <HLPHelpTopicViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 startURLSchemeTask:(id)arg2;
 - (void)webView:(id)arg1 stopURLSchemeTask:(id)arg2;
 - (void)showHelpBookInfo:(id)arg1;

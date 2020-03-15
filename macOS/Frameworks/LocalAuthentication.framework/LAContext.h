@@ -15,19 +15,23 @@
 {
     LAClient *_client;
     id <LAPrearmContextXPC> _prearmContext;
+    unsigned int _instanceId;
     NSNumber *_maxBiometryFailures;
     NSData *_evaluatedPolicyDomainState;
-    long long _biometryType;
     NSData *_externalizedContext;
+    long long _biometryType;
 }
 
++ (unsigned int)newCommandId;
++ (unsigned int)newInstanceId;
 + (BOOL)supportsSecureCoding;
 + (void)notifyEvent:(long long)arg1;
-@property(retain, nonatomic) NSData *externalizedContext; // @synthesize externalizedContext=_externalizedContext;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int instanceId; // @synthesize instanceId=_instanceId;
 @property(nonatomic) long long biometryType; // @synthesize biometryType=_biometryType;
+@property(retain, nonatomic) NSData *externalizedContext; // @synthesize externalizedContext=_externalizedContext;
 @property(retain, nonatomic) NSData *evaluatedPolicyDomainState; // @synthesize evaluatedPolicyDomainState=_evaluatedPolicyDomainState;
 @property(retain, nonatomic) NSNumber *maxBiometryFailures; // @synthesize maxBiometryFailures=_maxBiometryFailures;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL interactionNotAllowed;
 - (void)setOptionAuthenticationTitle:(id)arg1;
 - (id)optionAuthenticationTitle;
@@ -113,7 +117,9 @@
 @property(retain, nonatomic) NSNumber *touchIDAuthenticationRetryLimit;
 @property(copy, nonatomic) NSString *localizedCancelTitle;
 @property(copy, nonatomic) NSString *localizedFallbackTitle;
+- (void)_setServerPropertyForOption:(long long)arg1 value:(id)arg2 log:(long long)arg3;
 - (void)_setServerPropertyForOption:(long long)arg1 value:(id)arg2;
+- (id)_serverPropertyValueForOption:(long long)arg1 log:(long long)arg2;
 - (id)_serverPropertyValueForOption:(long long)arg1;
 - (void)setShowingCoachingHint:(BOOL)arg1 event:(long long)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)authMethodWithReply:(CDUnknownBlockType)arg1;
@@ -124,13 +130,15 @@
 - (BOOL)isCredentialSet:(long long)arg1;
 - (id)credentialOfType:(long long)arg1 error:(id *)arg2;
 - (void)credentialOfType:(long long)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)_setCredential:(id)arg1 type:(long long)arg2 log:(long long)arg3 cid:(unsigned int)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)setCredential:(id)arg1 type:(long long)arg2 reply:(CDUnknownBlockType)arg3;
+- (BOOL)_setCredential:(id)arg1 type:(long long)arg2 log:(long long)arg3 cid:(unsigned long long)arg4 error:(id *)arg5;
 - (BOOL)setCredential:(id)arg1 type:(long long)arg2 error:(id *)arg3;
 - (BOOL)setCredential:(id)arg1 type:(long long)arg2;
 - (id)evaluateAccessControl:(struct __SecAccessControl *)arg1 aksOperation:(void *)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(long long)arg2 options:(id)arg3 error:(id *)arg4;
 - (void)evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(long long)arg2 localizedReason:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)_evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(id)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)_evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(id)arg2 options:(id)arg3 log:(long long)arg4 cid:(unsigned int)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)evaluateAccessControl:(struct __SecAccessControl *)arg1 aksOperation:(void *)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(long long)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)setCredential:(id)arg1 forProcessedEvent:(long long)arg2 credentialType:(long long)arg3 reply:(CDUnknownBlockType)arg4;
@@ -143,13 +151,16 @@
 - (id)_evaluationMechanismsFromReturnedError:(id)arg1 error:(id *)arg2;
 - (void)evaluatePolicy:(long long)arg1 localizedReason:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)_publicErrorFromInternalError:(id)arg1 options:(id)arg2;
+- (id)_evaluatePolicy:(long long)arg1 options:(id)arg2 log:(long long)arg3 cid:(unsigned int)arg4 error:(id *)arg5;
 - (id)evaluatePolicy:(long long)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)_hashWithBundleIdentifier:(id)arg1;
+- (void)_evaluatePolicy:(long long)arg1 options:(id)arg2 log:(long long)arg3 cid:(unsigned int)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)evaluatePolicy:(long long)arg1 options:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)invalidate;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)description;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2;

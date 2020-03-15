@@ -31,13 +31,13 @@
 }
 
 + (id)sharedUserInitiatedQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXMomentShareStatusPresentation *momentShareStatusPresentation; // @synthesize momentShareStatusPresentation=_momentShareStatusPresentation;
 @property(nonatomic) __weak id <PXCMMInvitationGadgetDelegate> invitationGadgetDelegate; // @synthesize invitationGadgetDelegate=_invitationGadgetDelegate;
 @property(retain, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) id <PXCMMWorkflowPresenting> workflowPresenter; // @synthesize workflowPresenter=_workflowPresenter;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
-- (void).cxx_destruct;
 - (id)contextMenuForInvitationView:(id)arg1;
 - (void)presentDetailViewForInvitationView:(id)arg1 animated:(BOOL)arg2;
 - (void)invitationViewSizeThatFitsDidChange:(id)arg1;
@@ -52,11 +52,12 @@
 @property(retain, nonatomic) id <PXCMMInvitation> invitation;
 - (void)contentHasBeenSeen;
 - (id)uniqueGadgetIdentifier;
-@property(readonly, nonatomic) BOOL supportsHighlighting;
-- (void)prepareCollectionViewItem:(struct NSCollectionViewItem *)arg1;
+- (BOOL)supportsHighlighting;
+- (void)prepareCollectionViewItem:(id)arg1;
 @property(readonly, nonatomic) Class collectionViewItemClass;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(readonly, nonatomic) BOOL hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (void)presentDetailViewAnimated:(BOOL)arg1;
 - (id)initWithWorkflowPresenter:(id)arg1;
@@ -72,8 +73,6 @@
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(nonatomic) long long priority;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) BOOL supportsAssetsDrop;
-@property(readonly, nonatomic) BOOL supportsSelection;
 
 @end
 

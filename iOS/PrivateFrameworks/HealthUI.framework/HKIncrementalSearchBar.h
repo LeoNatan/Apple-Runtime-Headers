@@ -18,9 +18,9 @@
 + (id)regularExpressionFromString:(id)arg1 quoteForJavascript:(_Bool)arg2 caseless:(_Bool *)arg3;
 + (id)_patternFromSearchString:(id)arg1 quoteForJavascript:(_Bool)arg2;
 + (_Bool)_hasUppercaseCharacters:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _SearchBarContent *searchBarContent; // @synthesize searchBarContent=_searchBarContent;
 @property(retain, nonatomic) NSString *matchDisplayText; // @synthesize matchDisplayText=_matchDisplayText;
-- (void).cxx_destruct;
 - (void)doneAction:(id)arg1;
 - (void)_lowerKeyboard;
 - (void)activateSearch:(_Bool)arg1;

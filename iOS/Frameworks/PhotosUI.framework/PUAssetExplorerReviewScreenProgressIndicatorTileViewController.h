@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_loadErrorIcon;
 + (struct CGSize)progressIndicatorTileSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setDebugProgressLabel:) UILabel *_debugProgressLabel; // @synthesize _debugProgressLabel=__debugProgressLabel;
 @property(retain, nonatomic, setter=_setErrorButton:) UIButton *_errorButton; // @synthesize _errorButton=__errorButton;
 @property(nonatomic, setter=_setProgressViewVisible:) _Bool _isProgressViewVisible; // @synthesize _isProgressViewVisible=__isProgressViewVisible;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setNeedsUpdateProgressViewStyle:) _Bool _needsUpdateProgressViewStyle; // @synthesize _needsUpdateProgressViewStyle=__needsUpdateProgressViewStyle;
 @property(retain, nonatomic) PUBrowsingVideoPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 @property(retain, nonatomic) PUAssetSharedViewModel *assetSharedViewModel; // @synthesize assetSharedViewModel=_assetSharedViewModel;
-- (void).cxx_destruct;
 - (void)_handleVideoPlayer:(id)arg1 didChange:(id)arg2;
 - (void)_handleAssetSharedViewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;

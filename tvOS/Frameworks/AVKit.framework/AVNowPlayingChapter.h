@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)initWithStartTime:(double)arg1 title:(id)arg2 image:(id)arg3;
 
 @end

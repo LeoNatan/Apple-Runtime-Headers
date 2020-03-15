@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _buildDirection;
 }
 
-@property(nonatomic) unsigned long long buildDirection; // @synthesize buildDirection=_buildDirection;
-@property(copy, nonatomic) CDUnknownBlockType edgeHandler; // @synthesize edgeHandler=_edgeHandler;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long buildDirection; // @synthesize buildDirection=_buildDirection;
+@property(copy, nonatomic) CDUnknownBlockType edgeHandler; // @synthesize edgeHandler=_edgeHandler;
 - (id)_tileFinderForMap:(id)arg1 center:(CDStruct_c3b9c2ee)arg2 radius:(double)arg3;
 - (id)_lastTile;
 - (id)_firstTile;

@@ -22,13 +22,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BSServiceConnectionEndpoint *targetConnectionEndpoint; // @synthesize targetConnectionEndpoint=_targetConnectionEndpoint;
 @property(nonatomic) BOOL allowURLOverrides; // @synthesize allowURLOverrides=_allowURLOverrides;
 @property(nonatomic, getter=isSensitive) BOOL sensitive; // @synthesize sensitive=_sensitive;
 @property(copy, nonatomic) NSURL *referrerURL; // @synthesize referrerURL=_referrerURL;
 @property(nonatomic) BOOL ignoreAppLinkEnabledProperty; // @synthesize ignoreAppLinkEnabledProperty=_ignoreAppLinkEnabledProperty;
 @property(copy, nonatomic) NSDictionary *frontBoardOptions; // @synthesize frontBoardOptions=_frontBoardOptions;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

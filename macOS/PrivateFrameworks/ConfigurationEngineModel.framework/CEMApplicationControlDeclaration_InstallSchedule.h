@@ -19,11 +19,11 @@
 + (id)buildRequiredOnlyWithMode:(id)arg1;
 + (id)buildWithMode:(id)arg1 withDuration:(id)arg2 withStartTime:(id)arg3 withEndTime:(id)arg4;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadEndTime; // @synthesize payloadEndTime=_payloadEndTime;
 @property(copy, nonatomic) NSString *payloadStartTime; // @synthesize payloadStartTime=_payloadStartTime;
 @property(copy, nonatomic) NSNumber *payloadDuration; // @synthesize payloadDuration=_payloadDuration;
 @property(copy, nonatomic) NSString *payloadMode; // @synthesize payloadMode=_payloadMode;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

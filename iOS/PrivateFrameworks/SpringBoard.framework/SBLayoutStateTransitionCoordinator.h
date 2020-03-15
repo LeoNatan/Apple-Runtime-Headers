@@ -19,10 +19,10 @@
     id <SBLayoutStateTransitionSceneEntityFrameProvider> _sceneEntityFrameProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBLayoutStateTransitionSceneEntityFrameProvider> sceneEntityFrameProvider; // @synthesize sceneEntityFrameProvider=_sceneEntityFrameProvider;
 @property(readonly, nonatomic) __weak SBSceneManager *sceneManager; // @synthesize sceneManager=_sceneManager;
 @property(readonly, nonatomic) SBLayoutStateTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)endTransitionWithError:(id)arg1;

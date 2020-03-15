@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     UILabel *_dateLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) PXSharedAlbumInvitationView *invitationView; // @synthesize invitationView=_invitationView;
 @property(retain, nonatomic) PXSharedAlbumHeaderView *headerView; // @synthesize headerView=_headerView;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showHeader; // @synthesize showHeader=_showHeader;
 @property(nonatomic) _Bool useInPopover; // @synthesize useInPopover=_useInPopover;
 @property(retain, nonatomic) PXFeedInvitationSectionInfo *invitationSectionInfo; // @synthesize invitationSectionInfo=_invitationSectionInfo;
-- (void).cxx_destruct;
 - (void)sharedAlbumInvitationView:(id)arg1 presentViewController:(id)arg2;
 - (void)sharedAlbumInvitationViewDidReportAsJunk:(id)arg1;
 - (void)sharedAlbumInvitationView:(id)arg1 didAccept:(_Bool)arg2;

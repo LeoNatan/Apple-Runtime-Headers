@@ -19,6 +19,7 @@
     ICDrawingUndoCheckPoint *_initialCheckPoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSMutableArray *checkPointCommands; // @synthesize checkPointCommands=_checkPointCommands;
 @property(retain, nonatomic) NSMutableArray *redoStack; // @synthesize redoStack=_redoStack;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) ICDrawingUndoCheckPoint *initialCheckPoint; // @synthesize initialCheckPoint=_initialCheckPoint;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 @property(readonly, nonatomic) __weak ICDrawingAttachmentController *drawingController; // @synthesize drawingController=_drawingController;
-- (void).cxx_destruct;
 - (void)didUndoOrRedo:(id)arg1;
 - (void)finishRedo:(id)arg1;
 - (void)performRedo;

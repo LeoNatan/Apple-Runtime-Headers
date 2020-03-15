@@ -19,8 +19,8 @@
     unsigned int _showsDoneButton:1;
 }
 
-@property(nonatomic) __weak id <CertInfoTrustSummaryControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CertInfoTrustSummaryControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (id)_descriptionCell;
 - (id)_headerCell;

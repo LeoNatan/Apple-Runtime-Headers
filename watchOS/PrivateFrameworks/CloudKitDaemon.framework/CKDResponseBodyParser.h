@@ -18,10 +18,10 @@
     int _qualityOfService;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(copy, nonatomic) CDUnknownBlockType objectParsedBlock; // @synthesize objectParsedBlock=_objectParsedBlock;
 @property(retain, nonatomic) NSError *parserError; // @synthesize parserError=_parserError;
-- (void).cxx_destruct;
 - (void)finishWithCompletion:(CDUnknownBlockType)arg1;
 - (void)processData:(id)arg1;
 @property(retain, nonatomic) NSMutableData *parserData;

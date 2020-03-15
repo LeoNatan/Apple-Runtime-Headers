@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSURL *_attachedDatabaseURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *attachedDatabaseURL; // @synthesize attachedDatabaseURL=_attachedDatabaseURL;
 @property(retain, nonatomic) NSArray *urlPropertiesToFetch; // @synthesize urlPropertiesToFetch=_urlPropertiesToFetch;
 @property(retain, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 @property(retain, nonatomic) PQLConnection *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (BOOL)fixUpClientState:(id)arg1;
 - (BOOL)fixUpBackupDetector:(id)arg1;
 - (BOOL)clearStagedIDs:(id)arg1;
@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)attachDatabase:(id)arg1 error:(id *)arg2;
 - (void)populateNewColumnsInDatabase:(id)arg1 forRecord:(id)arg2 basePath:(id)arg3;
 - (void)populateNewColumnsWithBasePath:(id)arg1;
-- (struct PQLResultSet *)backupManifestEnumerator:(id)arg1;
+- (id)backupManifestEnumerator:(id)arg1;
 - (void)flushAndClose;
 - (BOOL)addRecord:(id)arg1;
 - (BOOL)setUpDatabaseWithError:(id *)arg1;

@@ -17,9 +17,9 @@
 }
 
 + (id)editionWithKeyDate:(id)arg1 feedDateRange:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) FCDateRange *feedDateRange; // @synthesize feedDateRange=_feedDateRange;
 @property(copy, nonatomic) NSDate *keyDate; // @synthesize keyDate=_keyDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -24,13 +24,13 @@
     unsigned int _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned int offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) unsigned int glBufferName; // @synthesize glBufferName=_glBufferName;
 @property(readonly, nonatomic) GLKMeshBufferAllocator *allocator; // @synthesize allocator=_allocator;
 @property(readonly, nonatomic) unsigned int length; // @synthesize length=_length;
 @property(readonly, nonatomic) id <MDLMeshBufferZone> zone; // @synthesize zone=_zone;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)map;

@@ -8,7 +8,7 @@
 
 #import <WatchKit/CSLSWaterLockDelegate-Protocol.h>
 
-@class CSLSWaterLock, NSString;
+@class CSLSWaterLock, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface WKInterfaceDevice : NSObject <CSLSWaterLockDelegate>
@@ -30,6 +30,7 @@
 
 + (int)interfaceLayoutDirectionForSemanticContentAttribute:(int)arg1;
 + (id)currentDevice;
+- (void).cxx_destruct;
 @property _Bool receivedFirstWaterLockEnabledValue; // @synthesize receivedFirstWaterLockEnabledValue=_receivedFirstWaterLockEnabledValue;
 @property _Bool cachedWaterLockEnabled; // @synthesize cachedWaterLockEnabled=_cachedWaterLockEnabled;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *waterLockReadQueue; // @synthesize waterLockReadQueue=_waterLockReadQueue;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSString *preferredContentSizeCategory; // @synthesize preferredContentSizeCategory=_preferredContentSizeCategory;
 @property(nonatomic) float screenScale; // @synthesize screenScale=_screenScale;
 @property(nonatomic) struct CGRect screenBounds; // @synthesize screenBounds=_screenBounds;
-- (void).cxx_destruct;
 - (void)waterLockDidChange:(id)arg1;
 - (void)_queryInitialWaterLockState;
 - (void)_updateWaterLockEnabledPropertyValue:(_Bool)arg1;
@@ -52,6 +52,7 @@
 - (void)playHaptic:(int)arg1;
 @property(readonly, nonatomic) int batteryState;
 @property(nonatomic, getter=isBatteryMonitoringEnabled) _Bool batteryMonitoringEnabled;
+@property(readonly, nonatomic) NSUUID *identifierForVendor;
 @property(readonly, nonatomic) float batteryLevel;
 @property(readonly, nonatomic) _Bool supportsAudioStreaming;
 @property(readonly, nonatomic) int waterResistanceRating;

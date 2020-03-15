@@ -24,10 +24,10 @@
     NSArray *_searchResults;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *searchResults; // @synthesize searchResults=_searchResults;
 @property(retain) UISearchDisplayController *searchDisplayController; // @synthesize searchDisplayController=_searchDisplayController;
 @property(retain) NSObject<SLPlaceDataSource> *placeDataSource; // @synthesize placeDataSource=_placeDataSource;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)placeManager:(id)arg1 failedWithError:(id)arg2;

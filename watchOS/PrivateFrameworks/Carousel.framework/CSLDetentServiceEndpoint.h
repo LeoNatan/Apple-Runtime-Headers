@@ -20,10 +20,10 @@
     CSLClientConnections *_clients;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLClientConnections *clients; // @synthesize clients=_clients;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(nonatomic) __weak id <CSLDetentServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)recordMetrics:(id)arg1;
 - (void)detentsChanged:(id)arg1;
 - (void)flashDetentsChanged:(_Bool)arg1;

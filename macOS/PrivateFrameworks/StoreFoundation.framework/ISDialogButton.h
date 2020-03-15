@@ -21,12 +21,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)buttonWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSNumber *state; // @synthesize state=_state;
 @property long long urlType; // @synthesize urlType=_urlType;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) id parameter; // @synthesize parameter=_parameter;
 @property int actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (long long)_urlTypeForString:(id)arg1;
 - (int)_actionTypeForString:(id)arg1;
 - (id)initWithCoder:(id)arg1;

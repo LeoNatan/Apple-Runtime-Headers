@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)canHandleArtworkFormat:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *servedArtworks; // @synthesize servedArtworks=_servedArtworks;
 @property(readonly, nonatomic) NSString *urlTemplateString; // @synthesize urlTemplateString=_urlTemplateString;
 @property(readonly, nonatomic) long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) long long height; // @synthesize height=_height;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *cacheRepresentation;
 - (id)initWithCacheRepresentation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

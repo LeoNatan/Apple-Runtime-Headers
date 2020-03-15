@@ -18,12 +18,12 @@
     NSTimer *_hysteresisTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool stabilizedIsBusy; // @synthesize stabilizedIsBusy=_stabilizedIsBusy;
 @property(retain, nonatomic) NSTimer *hysteresisTimer; // @synthesize hysteresisTimer=_hysteresisTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *idleCountQueue; // @synthesize idleCountQueue=_idleCountQueue;
 @property(nonatomic) int UIBusyCount; // @synthesize UIBusyCount=_UIBusyCount;
 @property(nonatomic) int busyCount; // @synthesize busyCount=_busyCount;
-- (void).cxx_destruct;
 - (void)stabilizedDidUnidle;
 - (void)stabilizedDidIdle;
 - (void)_hysteresisTimerDidFire:(id)arg1;

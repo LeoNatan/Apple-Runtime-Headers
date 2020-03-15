@@ -12,13 +12,17 @@
 {
     ABBookGroupCopyCommand *_copyCommand;
     ABBookGroupDeleteCommand *_deleteCommand;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void).cxx_destruct;
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 - (void)executeRedo;
 - (void)executeUndo;
 - (void)execute;
 - (id)actionName;
-- (void)dealloc;
+- (BOOL)groupBelongsToGuardianRestrictedContainer;
 - (id)initWithCopyCommand:(id)arg1 deleteCommand:(id)arg2;
 
 @end

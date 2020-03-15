@@ -20,9 +20,9 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
 @property(retain, nonatomic) ASSettingsTaskAccountEmailAddresses *emailAddressList; // @synthesize emailAddressList=_emailAddressList;
-- (void).cxx_destruct;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (id)description;
 

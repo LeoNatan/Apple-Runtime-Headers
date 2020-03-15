@@ -15,7 +15,7 @@
 }
 
 - (void).cxx_destruct;
--     // Error parsing type: v132@0:8@16@24{?=[4]}32f96{?=ffff}100d124, name: encode:renderCommandEncoder:mvp:visible:renderParams:time:
+-     // Error parsing type: v132@0:8@16@24{?=[4]}32f96{?=ffff}100d124, name: encode:renderCommandEncoder:mvp:visibility:renderParams:time:
 - (id)init:(id)arg1 pixelFormat:(unsigned long long)arg2 metalLibrary:(id)arg3 sampleCount:(int)arg4;
 
 @end

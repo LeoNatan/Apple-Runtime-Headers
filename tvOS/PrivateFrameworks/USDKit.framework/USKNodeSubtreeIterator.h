@@ -17,6 +17,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)nextObject;
+- (id)initWithPrim:(const struct UsdPrim *)arg1 withPredicate:(struct Usd_PrimFlagsPredicate)arg2;
+- (id)initWithScene:(const TfWeakPtr_db1cbf17 *)arg1 withPredicate:(struct Usd_PrimFlagsPredicate)arg2;
 - (id)initWithPrim:(const struct UsdPrim *)arg1;
 - (id)initWithScene:(const TfWeakPtr_db1cbf17 *)arg1;
 - (id)initWithSubtreeRange:(const struct UsdPrimRange *)arg1;

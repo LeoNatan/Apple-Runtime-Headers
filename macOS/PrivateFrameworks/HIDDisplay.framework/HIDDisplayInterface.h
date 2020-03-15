@@ -16,9 +16,9 @@
     unsigned long long _registryID;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long registryID; // @synthesize registryID=_registryID;
 @property(readonly) NSString *containerID; // @synthesize containerID=_containerID;
-- (void).cxx_destruct;
 @property(readonly) NSArray *capabilities;
 - (BOOL)extract:(id)arg1 error:(id *)arg2;
 - (BOOL)commit:(id)arg1 error:(id *)arg2;

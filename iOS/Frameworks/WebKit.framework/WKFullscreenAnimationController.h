@@ -32,12 +32,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _finalFrame;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAnimatingIn) _Bool animatingIn; // @synthesize animatingIn=_animatingIn;
 @property(nonatomic) struct CGRect finalFrame; // @synthesize finalFrame=_finalFrame;
 @property(nonatomic) struct CGRect initialFrame; // @synthesize initialFrame=_initialFrame;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)end:(_Bool)arg1;
 - (void)updateWithProgress:(double)arg1 translation:(struct CGSize)arg2 anchor:(struct CGPoint)arg3;
 - (void)updateWithProgress:(double)arg1 scale:(double)arg2 translation:(struct CGSize)arg3 anchor:(struct CGPoint)arg4;

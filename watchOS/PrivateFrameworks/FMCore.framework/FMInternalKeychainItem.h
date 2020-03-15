@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSData *_rawData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *rawData; // @synthesize rawData=_rawData;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSDate *lastModifyDate; // @synthesize lastModifyDate=_lastModifyDate;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
-- (void).cxx_destruct;
 - (id)initWithResults:(id)arg1;
 
 // Remaining properties

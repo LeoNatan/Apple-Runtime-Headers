@@ -40,6 +40,7 @@
     HMCameraClipFetchVideoAssetContextOperation *_exportDownloadOperation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMCameraClipFetchVideoAssetContextOperation *exportDownloadOperation; // @synthesize exportDownloadOperation=_exportDownloadOperation;
 @property(nonatomic) unsigned long long lastEngineMode; // @synthesize lastEngineMode=_lastEngineMode;
 @property(nonatomic) BOOL isVisible; // @synthesize isVisible=_isVisible;
@@ -63,7 +64,6 @@
 @property(copy, nonatomic) CDUnknownBlockType endEditingHandler; // @synthesize endEditingHandler=_endEditingHandler;
 @property(copy, nonatomic) CDUnknownBlockType beginEditingHandler; // @synthesize beginEditingHandler=_beginEditingHandler;
 @property(copy, nonatomic) CDUnknownBlockType accessoryButtonHandler; // @synthesize accessoryButtonHandler=_accessoryButtonHandler;
-- (void).cxx_destruct;
 - (void)_presentAlertWithTitle:(id)arg1 message:(id)arg2;
 - (void)showEditInterface;
 - (void)dismissEditInterface;

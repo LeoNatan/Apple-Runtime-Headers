@@ -70,12 +70,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CSLAssertionCoverGestureProvider> assertionCoverGestureProvider; // @synthesize assertionCoverGestureProvider=_assertionCoverGestureProvider;
 @property(retain, nonatomic) id <CSLAssertionWakeGestureProvider> assertionWakeGestureProvider; // @synthesize assertionWakeGestureProvider=_assertionWakeGestureProvider;
 @property(readonly, nonatomic) CSLDisplayBlankingService *blankingService; // @synthesize blankingService=_blankingService;
 @property(readonly, nonatomic) id <CSLSScreenWakeProvider> blurScreenWakeProvider; // @synthesize blurScreenWakeProvider=_blurScreenWakeProvider;
 @property(nonatomic, getter=isStealthMode) _Bool stealthMode; // @synthesize stealthMode=_stealthMode;
-- (void).cxx_destruct;
 - (void)backlight:(id)arg1 didEnableAOT:(_Bool)arg2 forConfiguration:(id)arg3;
 - (void)backlight:(id)arg1 didCompleteRequest:(id)arg2 wasCancelled:(_Bool)arg3;
 - (void)backlight:(id)arg1 willBeOn:(_Bool)arg2 forRequest:(id)arg3;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct map<md::Anchor *, float, std::__1::less<md::Anchor *>, std::__1::allocator<std::__1::pair<md::Anchor *const, float>>> _anchorToHeight;
 }
 
-@property(nonatomic) id <VKMercatorTerrainHeightProvider> heightProvider; // @synthesize heightProvider=_heightProvider;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) id <VKMercatorTerrainHeightProvider> heightProvider; // @synthesize heightProvider=_heightProvider;
 - (void)invalidateRect:(const Box_3d7e3c2c *)arg1;
 - (void)removeCachedValueForAnchor:(struct Anchor *)arg1;
 - (double)heightForAnchor:(struct Anchor *)arg1;

@@ -32,12 +32,6 @@ struct FCEdgeInsets {
     double right;
 };
 
-struct FCShallowCopyPair {
-    Class _field1;
-    id _field2;
-    id _field3;
-};
-
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;

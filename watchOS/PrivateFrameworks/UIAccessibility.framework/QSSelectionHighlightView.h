@@ -16,11 +16,11 @@
     UIColor *_underlineColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sentenceHighlight; // @synthesize sentenceHighlight=_sentenceHighlight;
 @property(retain, nonatomic) UIColor *underlineColor; // @synthesize underlineColor=_underlineColor;
 @property(retain, nonatomic) UIColor *selectionColor; // @synthesize selectionColor=_selectionColor;
 @property(retain, nonatomic) NSArray *highlightSelectionRects; // @synthesize highlightSelectionRects=_highlightSelectionRects;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

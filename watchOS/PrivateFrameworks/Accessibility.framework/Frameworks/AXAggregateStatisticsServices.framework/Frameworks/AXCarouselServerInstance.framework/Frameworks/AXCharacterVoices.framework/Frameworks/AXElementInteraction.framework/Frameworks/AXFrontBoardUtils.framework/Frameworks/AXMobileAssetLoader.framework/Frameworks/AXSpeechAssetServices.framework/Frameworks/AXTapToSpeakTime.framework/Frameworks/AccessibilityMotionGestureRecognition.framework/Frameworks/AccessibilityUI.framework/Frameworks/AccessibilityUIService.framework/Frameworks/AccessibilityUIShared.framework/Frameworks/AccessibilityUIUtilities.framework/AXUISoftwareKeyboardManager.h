@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <AXUISoftwareKeyboardManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AXUISoftwareKeyboardManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)removeReasonToDisableSoftwareKeyboard:(id)arg1;
 - (void)addReasonToDisableSoftwareKeyboard:(id)arg1;
 - (void)removeReasonToEnableSoftwareKeyboard:(id)arg1;

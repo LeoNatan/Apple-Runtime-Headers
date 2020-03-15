@@ -20,9 +20,9 @@
 + (id)remoteMessageFromMessage:(id)arg1 secure:(_Bool)arg2 accountRegistry:(id)arg3;
 + (unsigned long long)restriction;
 + (id)remoteMessageTransportsForProductInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(readonly, nonatomic) HMDAccountRegistry *accountRegistry; // @synthesize accountRegistry=_accountRegistry;
-- (void).cxx_destruct;
 - (long long)compareCapability:(id)arg1 key:(id)arg2 withCapability:(id)arg3;
 - (_Bool)doesResponse:(id)arg1 matchAllCapabilities:(id)arg2;
 - (id)matchResponse:(id)arg1 requestedCapabilities:(id)arg2;

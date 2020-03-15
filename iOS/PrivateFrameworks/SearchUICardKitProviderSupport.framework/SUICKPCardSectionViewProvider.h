@@ -19,9 +19,9 @@
     id <CRKCardSectionViewProviderDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CRKCardSectionViewProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <CRCard> card; // @synthesize card=_card;
-- (void).cxx_destruct;
 - (unsigned long long)displayPriorityForCardSection:(id)arg1;
 @property(readonly, nonatomic) NSArray *viewConfigurations; // @synthesize viewConfigurations=_viewConfigurations;
 @property(readonly, copy, nonatomic) NSString *providerIdentifier;

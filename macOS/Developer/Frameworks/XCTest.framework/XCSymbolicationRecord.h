@@ -19,11 +19,11 @@
 + (id)symbolicationRecordForAddress:(unsigned long long)arg1;
 + (struct _CSTypeRef)symbolicator;
 + (id)failureRecord;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *symbolOwner; // @synthesize symbolOwner=_symbolOwner;
 @property(readonly, copy) NSString *symbolName; // @synthesize symbolName=_symbolName;
 @property(readonly, copy) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly) unsigned long long lineNumber; // @synthesize lineNumber=_lineNumber;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithFilePath:(id)arg1 lineNumber:(unsigned long long)arg2 symbolName:(id)arg3 symbolOwner:(id)arg4;
 

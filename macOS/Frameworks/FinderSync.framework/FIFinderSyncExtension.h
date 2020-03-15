@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (id)singleton;
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
-@property(retain, nonatomic) id <FIFinderSyncExtensionHostProtocol> host; // @synthesize host=_host;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <FIFinderSyncExtensionHostProtocol> host; // @synthesize host=_host;
 - (void)valuesForAttributes:(id)arg1 forItemWithURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)fetchEndpointCreatingProxyForURL:(id)arg1;
 - (void)supportedServiceNamesForItemWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

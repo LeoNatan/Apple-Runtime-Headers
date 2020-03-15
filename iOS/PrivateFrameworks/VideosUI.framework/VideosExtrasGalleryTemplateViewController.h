@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _selectedItemIndex;
 }
 
-@property(nonatomic) unsigned long long selectedItemIndex; // @synthesize selectedItemIndex=_selectedItemIndex;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long selectedItemIndex; // @synthesize selectedItemIndex=_selectedItemIndex;
 - (void)_prepareLayout;
 - (void)viewDidLoad;
 - (id)templateElement;

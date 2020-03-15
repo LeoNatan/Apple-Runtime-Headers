@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double initialDirectionsResponseTimestamp; // @synthesize initialDirectionsResponseTimestamp=_initialDirectionsResponseTimestamp;
 @property(nonatomic) double initialDirectionsRequestTimestamp; // @synthesize initialDirectionsRequestTimestamp=_initialDirectionsRequestTimestamp;
 @property(retain, nonatomic) NSError *initialDirectionsRequestError; // @synthesize initialDirectionsRequestError=_initialDirectionsRequestError;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) GEODirectionsRequest *initialDirectionsRequest; // @synthesize initialDirectionsRequest=_initialDirectionsRequest;
 @property(retain, nonatomic) NSArray *waypoints; // @synthesize waypoints=_waypoints;
 @property(retain, nonatomic) MNLocationDetails *initialUserLocationDetails; // @synthesize initialUserLocationDetails=_initialUserLocationDetails;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

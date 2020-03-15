@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _rank;
 }
 
-@property(nonatomic) unsigned long long rank; // @synthesize rank=_rank;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long rank; // @synthesize rank=_rank;
 - (void)listItems:(CDUnknownBlockType)arg1;
 - (id)description;
 - (unsigned long long)batchCount;

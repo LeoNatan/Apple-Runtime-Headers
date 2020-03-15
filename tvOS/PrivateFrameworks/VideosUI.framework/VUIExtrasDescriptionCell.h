@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureViewWithElement:(id)arg1 existingCell:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIExtrasDescriptionView *descriptionView; // @synthesize descriptionView=_descriptionView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)_updateBackgroundAndHighlightColor;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

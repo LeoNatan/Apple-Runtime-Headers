@@ -18,10 +18,10 @@
 }
 
 + (id)subscribedCalendarPropertiesWithDisplayName:(id)arg1 color:(id)arg2 symbolicColorName:(id)arg3 order:(unsigned long long)arg4 notes:(id)arg5 subscriptionURLString:(id)arg6 refreshInterval:(unsigned long long)arg7 hasAlarmFilter:(BOOL)arg8 hasAttachmentFilter:(BOOL)arg9 hasTaskFilter:(BOOL)arg10 locationCode:(id)arg11 languageCode:(id)arg12 isAutoProvisioned:(BOOL)arg13 fallbackProperties:(id)arg14;
+- (void).cxx_destruct;
 @property(retain) NSSet *fallbackProperties; // @synthesize fallbackProperties=_fallbackProperties;
 @property(retain) NSSet *propertiesToSet; // @synthesize propertiesToSet=_propertiesToSet;
 @property(retain) NSURL *calendarURL; // @synthesize calendarURL=_calendarURL;
-- (void).cxx_destruct;
 - (void)performOperation;
 - (id)initWithChangeRequest:(id)arg1 andSession:(id)arg2;
 

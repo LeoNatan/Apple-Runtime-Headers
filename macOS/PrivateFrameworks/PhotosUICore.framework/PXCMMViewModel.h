@@ -43,6 +43,7 @@
     PXPhotosGlobalFooterViewModel *_footerViewModel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isLoadingPeopleSuggestions) BOOL loadingPeopleSuggestions; // @synthesize loadingPeopleSuggestions=_loadingPeopleSuggestions;
 @property(readonly, nonatomic) PXPhotosGlobalFooterViewModel *footerViewModel; // @synthesize footerViewModel=_footerViewModel;
 @property(readonly, nonatomic) BOOL containsUnverifiedPersons; // @synthesize containsUnverifiedPersons=_containsUnverifiedPersons;
@@ -69,7 +70,6 @@
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *originalTitle; // @synthesize originalTitle=_originalTitle;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)setDisabledActionTypes:(id)arg1;
 - (void)setContainsUnverifiedPersons:(BOOL)arg1;

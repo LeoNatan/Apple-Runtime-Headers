@@ -26,6 +26,7 @@
     id <AVTTransition> _currentTransition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AVTTransition> currentTransition; // @synthesize currentTransition=_currentTransition;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) AVTRenderingScope *renderingScope; // @synthesize renderingScope=_renderingScope;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) AVTAdaptativeLayoutView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <AVTPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate;
 @property(nonatomic) __weak id <AVTAvatarDisplayingControllerDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)applyFullAlpha;
 - (void)applyBaseAlpha;
 - (id)liveView;

@@ -26,6 +26,7 @@
 - (void)presentIdentityVerificationFlowWithResponseData:(NSData *)arg1 orientation:(NSNumber *)arg2 completion:(void (^)(BOOL))arg3;
 - (void)registrationStatusWithCompletion:(void (^)(unsigned long long))arg1;
 - (void)unregisterDeviceWithCompletion:(void (^)(BOOL, NSError *))arg1;
+- (void)registerDeviceWithRegistrationURL:(NSURL *)arg1 pushToken:(NSString *)arg2 forceReregister:(BOOL)arg3 completion:(void (^)(BOOL, NSError *))arg4;
 - (void)registerDeviceWithForceReregister:(BOOL)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)registerDeviceWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)deleteAccountWithCompletion:(void (^)(void))arg1;

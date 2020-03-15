@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *permissionsByFeature; // @synthesize permissionsByFeature=_permissionsByFeature;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *permissionsByFeature; // @synthesize permissionsByFeature=_permissionsByFeature;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

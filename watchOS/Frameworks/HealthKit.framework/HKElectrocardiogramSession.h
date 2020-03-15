@@ -23,9 +23,9 @@
 + (id)serverInterface;
 + (id)clientInterface;
 + (_Bool)isElectrocardiogramSessionAvailable;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HKElectrocardiogramSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) HKElectrocardiogramSessionConfiguration *sessionConfiguration; // @synthesize sessionConfiguration=_sessionConfiguration;
-- (void).cxx_destruct;
 - (void)connectionInterrupted;
 - (void)connectionInvalidated;
 - (id)remoteInterface;

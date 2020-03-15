@@ -16,11 +16,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layerWithContentMode:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *layerB; // @synthesize layerB=_layerB;
 @property(retain, nonatomic) CALayer *layerA; // @synthesize layerA=_layerA;
 @property(readonly, nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(nonatomic) long long anchorPosition; // @synthesize anchorPosition=_anchorPosition;
-- (void).cxx_destruct;
 - (id)imageNameWithPartFragment:(id)arg1;
 - (void)layoutSublayers;
 - (void)updateSublayerContent:(BOOL)arg1;

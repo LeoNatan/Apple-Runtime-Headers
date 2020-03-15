@@ -11,14 +11,14 @@
 @interface PPCoalescedScoredNamedEntity : NSObject
 {
     unsigned short _occurrencesInSource;
-    struct PPScoredItem *_scoredNamedEntity;
+    PPScoredItem *_scoredNamedEntity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned short occurrencesInSource; // @synthesize occurrencesInSource=_occurrencesInSource;
 @property(readonly, nonatomic) PPScoredItem *scoredNamedEntity; // @synthesize scoredNamedEntity=_scoredNamedEntity;
-- (void).cxx_destruct;
 - (id)init;
-- (id)initWithScoredNamedEntity:(struct PPScoredItem *)arg1 occurrencesInSource:(unsigned short)arg2;
+- (id)initWithScoredNamedEntity:(id)arg1 occurrencesInSource:(unsigned short)arg2;
 
 @end
 

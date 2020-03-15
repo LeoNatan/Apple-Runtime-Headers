@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 - (void)updatePropertyListRepresentation:(id)arg1;
 - (void)acceptDonationValueVisitor:(id)arg1;
 - (unsigned long long)hash;

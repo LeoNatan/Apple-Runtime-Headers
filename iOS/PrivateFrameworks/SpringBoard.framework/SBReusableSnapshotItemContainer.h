@@ -15,8 +15,8 @@
     SBAppLayout *_snapshotAppLayout;
 }
 
-@property(retain, nonatomic) SBAppLayout *snapshotAppLayout; // @synthesize snapshotAppLayout=_snapshotAppLayout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBAppLayout *snapshotAppLayout; // @synthesize snapshotAppLayout=_snapshotAppLayout;
 - (id)_snapshotView;
 - (void)setContentView:(id)arg1;
 - (void)prepareForReuse;

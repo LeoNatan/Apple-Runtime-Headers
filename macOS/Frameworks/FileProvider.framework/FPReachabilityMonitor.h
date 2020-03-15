@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedReachabilityMonitor;
 + (BOOL)isNetworkReachableForFlags:(unsigned int)arg1;
-@property(nonatomic) unsigned int reachabilityFlags; // @synthesize reachabilityFlags=_reachabilityFlags;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int reachabilityFlags; // @synthesize reachabilityFlags=_reachabilityFlags;
 - (void)invalidate;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

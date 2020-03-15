@@ -13,8 +13,8 @@
     NSOrderedSet *_relationshipCandidateIDs;
 }
 
-@property(readonly, copy, nonatomic) NSOrderedSet *relationshipCandidateIDs; // @synthesize relationshipCandidateIDs=_relationshipCandidateIDs;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSOrderedSet *relationshipCandidateIDs; // @synthesize relationshipCandidateIDs=_relationshipCandidateIDs;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (id)uiTraitStorageWithObjectIDTable:(id)arg1;
 - (void)addObjectIDs:(id)arg1 andRemoveObjectIDs:(id)arg2 forTraits:(id)arg3;

@@ -28,6 +28,7 @@
     NSTimer *_lastUserDismissedIdentifierResetTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *lastUserDismissedIdentifierResetTimer; // @synthesize lastUserDismissedIdentifierResetTimer=_lastUserDismissedIdentifierResetTimer;
 @property(retain, nonatomic) NSUUID *lastUserDismissedIdentifier; // @synthesize lastUserDismissedIdentifier=_lastUserDismissedIdentifier;
 @property(nonatomic, getter=isRateLimited) _Bool rateLimited; // @synthesize rateLimited=_rateLimited;
@@ -37,7 +38,6 @@
 @property(nonatomic) __weak id <SBUIBannerTarget> bannerTarget; // @synthesize bannerTarget=_bannerTarget;
 @property(retain, nonatomic) NSMutableArray *queuedItems; // @synthesize queuedItems=_queuedItems;
 @property(nonatomic) __weak id <CPSBannerSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)sceneActivationStateChangedTo:(id)arg1;
 - (void)_resetLastUserDismissedIdentifierTimerFired:(id)arg1;
 - (void)_resetLastUserDismissedIdentifierTimer;

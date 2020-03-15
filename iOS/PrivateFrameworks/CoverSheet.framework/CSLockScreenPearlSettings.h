@@ -26,6 +26,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long overrideCoachingBiometricEvent; // @synthesize overrideCoachingBiometricEvent=_overrideCoachingBiometricEvent;
 @property(nonatomic) _Bool overrideCoachingConditionEnabled; // @synthesize overrideCoachingConditionEnabled=_overrideCoachingConditionEnabled;
 @property(nonatomic) _Bool spinBeforeCoaching; // @synthesize spinBeforeCoaching=_spinBeforeCoaching;
@@ -39,7 +40,6 @@
 @property(nonatomic) _Bool showScanningStateOnLockScreen; // @synthesize showScanningStateOnLockScreen=_showScanningStateOnLockScreen;
 @property(retain, nonatomic) CSLockScreenBiometricFailureSettings *failureSettings; // @synthesize failureSettings=_failureSettings;
 @property(nonatomic) _Bool pearlDebugUIEnabled; // @synthesize pearlDebugUIEnabled=_pearlDebugUIEnabled;
-- (void).cxx_destruct;
 - (CDStruct_2960579e)proudLockControllerViewControllerConfiguration;
 - (void)setDefaultValues;
 

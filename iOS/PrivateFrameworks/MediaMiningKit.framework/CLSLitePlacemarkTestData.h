@@ -26,6 +26,7 @@
     NSString *_administrativeAreaCode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isIsland; // @synthesize isIsland=_isIsland;
 @property(retain, nonatomic) NSString *administrativeAreaCode; // @synthesize administrativeAreaCode=_administrativeAreaCode;
 @property(retain, nonatomic) NSArray *areasOfInterest; // @synthesize areasOfInterest=_areasOfInterest;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSString *thoroughfare; // @synthesize thoroughfare=_thoroughfare;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) CLCircularRegion *region; // @synthesize region=_region;
-- (void).cxx_destruct;
 
 @end
 

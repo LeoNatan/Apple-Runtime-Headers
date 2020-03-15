@@ -14,8 +14,8 @@
     id <MKVariableDelayTapRecognizerDelegate> tapDelayDelegate;
 }
 
-@property(nonatomic) __weak id <MKVariableDelayTapRecognizerDelegate> tapDelayDelegate; // @synthesize tapDelayDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MKVariableDelayTapRecognizerDelegate> tapDelayDelegate; // @synthesize tapDelayDelegate;
 - (void)reset;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

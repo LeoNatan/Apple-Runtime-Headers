@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     UILabel *_ageRatingLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *ageRatingLabel; // @synthesize ageRatingLabel=_ageRatingLabel;
 @property(retain, nonatomic) VUITextBadge *ageRatingBadge; // @synthesize ageRatingBadge=_ageRatingBadge;
 @property(nonatomic) _Bool canFocus; // @synthesize canFocus=_canFocus;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *ageRating; // @synthesize ageRating=_ageRating;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (id)_textColorForDarkMode;
 - (void)_configureLabels;
 - (void)_configureAgeRatingBadge;

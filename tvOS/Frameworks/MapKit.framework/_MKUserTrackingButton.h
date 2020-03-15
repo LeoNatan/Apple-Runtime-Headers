@@ -30,10 +30,10 @@
 + (id)buttonWithUserTrackingView:(id)arg1;
 + (id)buttonWithMapView:(id)arg1 applyDefaultImageIfNeeded:(_Bool)arg2;
 + (id)buttonWithMapView:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool inMiniBar; // @synthesize inMiniBar=_inMiniBar;
 @property(nonatomic, getter=_selectsWhenTracking, setter=_setSelectsWhenTracking:) _Bool selectsWhenTracking; // @synthesize selectsWhenTracking=_selectsWhenTracking;
 @property(readonly, nonatomic) _MKUserTrackingButtonController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_setInternallyEnabled:(_Bool)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (struct CGRect)_selectedIndicatorBounds;

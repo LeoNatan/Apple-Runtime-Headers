@@ -19,6 +19,7 @@
     NSArray *_monthNumbers;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *monthNumbers; // @synthesize monthNumbers=_monthNumbers;
 @property int ordinalValue; // @synthesize ordinalValue=_ordinalValue;
 @property int days; // @synthesize days=_days;
@@ -26,7 +27,6 @@
 @property unsigned int count; // @synthesize count=_count;
 @property int interval; // @synthesize interval=_interval;
 @property int frequency; // @synthesize frequency=_frequency;
-- (void).cxx_destruct;
 - (id)description;
 - (id)setPositions;
 - (id)daysOfTheWeekWithWeek:(int)arg1;

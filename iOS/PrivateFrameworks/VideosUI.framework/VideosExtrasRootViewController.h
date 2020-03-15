@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)currentController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VideosExtrasArtworkDataSource *artworkDataSource; // @synthesize artworkDataSource=_artworkDataSource;
 @property(retain, nonatomic) id <IKAppUserDefaultsStoring> userDefaultsStorage; // @synthesize userDefaultsStorage=_userDefaultsStorage;
 @property(retain, nonatomic) id <IKAppDataStoring> vendorStorage; // @synthesize vendorStorage=_vendorStorage;
@@ -61,7 +62,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *extrasMenuBarView; // @synthesize extrasMenuBarView=_extrasMenuBarView;
 @property(retain, nonatomic) VideosExtrasMainTemplateViewController *mainTemplateViewController; // @synthesize mainTemplateViewController=_mainTemplateViewController;
 @property(readonly, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (void)_showExtrasBar:(_Bool)arg1;
 - (_Bool)shouldExtrasBeVisibleForViewSize:(struct CGSize)arg1;
 - (void)_playbackWillEndNotification:(id)arg1;

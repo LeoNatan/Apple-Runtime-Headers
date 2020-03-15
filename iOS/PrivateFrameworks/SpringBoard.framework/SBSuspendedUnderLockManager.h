@@ -14,9 +14,9 @@
     _Bool _suspendedUnderLock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBSuspendedUnderLockManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isSuspendedUnderLock) _Bool suspendedUnderLock; // @synthesize suspendedUnderLock=_suspendedUnderLock;
-- (void).cxx_destruct;
 - (_Bool)_sceneShouldBeBackgroundUnderLockWithSceneSettings:(id)arg1;
 - (void)interceptUpdateForScene:(id)arg1 withNewSettings:(id)arg2;
 - (id)initWithDelegate:(id)arg1;

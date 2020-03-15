@@ -11,8 +11,8 @@
     CDUnknownBlockType _layoutSubviewsHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType layoutSubviewsHandler; // @synthesize layoutSubviewsHandler=_layoutSubviewsHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType layoutSubviewsHandler; // @synthesize layoutSubviewsHandler=_layoutSubviewsHandler;
 - (void)layoutSubviews;
 
 @end

@@ -13,8 +13,8 @@
     NSDate *_updateDate;
 }
 
-@property(readonly, nonatomic) NSDate *updateDate; // @synthesize updateDate=_updateDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *updateDate; // @synthesize updateDate=_updateDate;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

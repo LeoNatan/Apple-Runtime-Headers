@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     IKJSDataSourceView *_dataSourceView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKJSDataSourceView *dataSourceView; // @synthesize dataSourceView=_dataSourceView;
 @property(retain, nonatomic) IKChangeSet *filteredChangeSet; // @synthesize filteredChangeSet=_filteredChangeSet;
 @property(retain, nonatomic) NSMutableSet *updatedItemIDs; // @synthesize updatedItemIDs=_updatedItemIDs;
 @property(retain, nonatomic) IKChangeSet *sourceItemsChangeSet; // @synthesize sourceItemsChangeSet=_sourceItemsChangeSet;
 @property(readonly, copy, nonatomic) NSString *itemsBindingKey; // @synthesize itemsBindingKey=_itemsBindingKey;
 @property(readonly, nonatomic) __weak IKDOMBindingController *domBindingController; // @synthesize domBindingController=_domBindingController;
-- (void).cxx_destruct;
 - (id)_adjustedIndexTitlesFromDataSource:(id)arg1 filteredItems:(id)arg2 filteredChangeSet:(id)arg3;
 - (void)_applyItemsValueWithDataSource:(id)arg1;
 - (struct _NSRange)visibleItemsRange;

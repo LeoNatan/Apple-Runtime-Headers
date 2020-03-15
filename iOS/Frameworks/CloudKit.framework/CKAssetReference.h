@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *fileSignature; // @synthesize fileSignature=_fileSignature;
 @property(readonly, copy, nonatomic) NSString *fieldName; // @synthesize fieldName=_fieldName;
 @property(nonatomic) long long databaseScope; // @synthesize databaseScope=_databaseScope;
 @property(readonly, copy, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
 - (id)initWithCoder:(id)arg1;

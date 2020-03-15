@@ -24,9 +24,9 @@
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *bundleIDToVersionMap; // @synthesize bundleIDToVersionMap=_bundleIDToVersionMap;
 @property void *lsAppNotifications; // @synthesize lsAppNotifications=_lsAppNotifications;
-- (void).cxx_destruct;
 - (id)getAppInfoForASN:(struct __LSASN *)arg1 ForSessionID:(int)arg2;
 - (unsigned long long)getApplicationType:(id)arg1;
 - (id)getVersionInfo:(id)arg1;

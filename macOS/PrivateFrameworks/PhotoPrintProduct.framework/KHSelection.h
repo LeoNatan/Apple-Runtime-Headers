@@ -27,6 +27,7 @@
 + (id)framesInSelections:(id)arg1;
 + (id)frameSelectionsInSelections:(id)arg1;
 + (id)selectionWithObject:(id)arg1 type:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL viewShowsRelatedPhotosButton; // @synthesize viewShowsRelatedPhotosButton=_viewShowsRelatedPhotosButton;
 @property(nonatomic) BOOL viewShowsSimilarPhotosButton; // @synthesize viewShowsSimilarPhotosButton=_viewShowsSimilarPhotosButton;
 @property(nonatomic) struct CGAffineTransform viewTransform; // @synthesize viewTransform=_viewTransform;
@@ -35,7 +36,6 @@
 @property(nonatomic) double viewScale; // @synthesize viewScale=_viewScale;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) id <KHSelectable> object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) KHMapMarker *mapMarker;
 @property(readonly, nonatomic) KHLayout *layout;

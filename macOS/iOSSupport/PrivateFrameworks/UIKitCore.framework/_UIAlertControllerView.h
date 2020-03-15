@@ -110,6 +110,7 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)requiresConstraintBasedLayout;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *discreteCancelActionViewHeightConstraint; // @synthesize discreteCancelActionViewHeightConstraint=_discreteCancelActionViewHeightConstraint;
 @property(retain) NSLayoutConstraint *discreteCancelActionViewWidthConstraint; // @synthesize discreteCancelActionViewWidthConstraint=_discreteCancelActionViewWidthConstraint;
 @property(retain) NSLayoutConstraint *discreteCancelActionViewLeadingConstraint; // @synthesize discreteCancelActionViewLeadingConstraint=_discreteCancelActionViewLeadingConstraint;
@@ -157,7 +158,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isSpringLoaded) BOOL springLoaded; // @synthesize springLoaded=_springLoaded;
 @property(readonly) UIView *_dimmingView; // @synthesize _dimmingView;
 @property(readonly) UIView *_contentView; // @synthesize _contentView;
-- (void).cxx_destruct;
 - (BOOL)_forceLayoutEngineSolutionInRationalEdges;
 - (BOOL)shouldUpdateFocusInContext:(id)arg1;
 - (id)preferredFocusedView;

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 - (void)addDelay:(double)arg1;
 - (void)onExpire;
 - (void)stopTimer;

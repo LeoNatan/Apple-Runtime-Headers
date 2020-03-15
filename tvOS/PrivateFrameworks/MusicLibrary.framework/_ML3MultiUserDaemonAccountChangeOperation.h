@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     id <MLMediaLibraryAccountChangeObserver> _accountChangeObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MLMediaLibraryAccountChangeObserver> accountChangeObserver; // @synthesize accountChangeObserver=_accountChangeObserver;
 @property(nonatomic) __weak id <_ML3MultiUserDaemonAccountChangeOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *finalDSID; // @synthesize finalDSID=_finalDSID;
 @property(readonly, copy, nonatomic) NSString *initialDSID; // @synthesize initialDSID=_initialDSID;
-- (void).cxx_destruct;
 - (void)execute;
 - (id)initWithInitialDSID:(id)arg1 finalDSID:(id)arg2 accountChangeObserver:(id)arg3;
 

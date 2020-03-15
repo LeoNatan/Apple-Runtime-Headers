@@ -17,6 +17,7 @@
 
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
+- (id)allRecordsWithRecordType:(id)arg1;
 - (void)addValuesFromCloudRecordArray:(id)arg1;
 - (id)allRecordNames;
 - (id)allItems;

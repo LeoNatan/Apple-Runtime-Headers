@@ -19,8 +19,8 @@
 + (void)fetchAttendeeChangesInSource:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)fetchAttendeeChangesInStore:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (int)entityType;
-@property(readonly, nonatomic) EKObjectID *ownerID; // @synthesize ownerID=_ownerID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EKObjectID *ownerID; // @synthesize ownerID=_ownerID;
 - (id)initWithChangeProperties:(id)arg1;
 
 @end

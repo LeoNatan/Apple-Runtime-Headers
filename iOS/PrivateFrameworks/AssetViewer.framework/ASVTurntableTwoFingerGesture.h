@@ -13,8 +13,8 @@
     id <ASVTurntableTwoFingerGestureDelegate> _turntableDelegate;
 }
 
-@property(nonatomic) __weak id <ASVTurntableTwoFingerGestureDelegate> turntableDelegate; // @synthesize turntableDelegate=_turntableDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ASVTurntableTwoFingerGestureDelegate> turntableDelegate; // @synthesize turntableDelegate=_turntableDelegate;
 - (void)finishGesture;
 - (void)updatePanWithFirstTouchLocation:secondTouchLocation:midPoint: /* Error: Ran out of types for this method. */;
 - (id)initWithFirstTouch:(id)arg1 secondTouch:(id)arg2 dataSource:(id)arg3 turntableDelegate:(id)arg4;

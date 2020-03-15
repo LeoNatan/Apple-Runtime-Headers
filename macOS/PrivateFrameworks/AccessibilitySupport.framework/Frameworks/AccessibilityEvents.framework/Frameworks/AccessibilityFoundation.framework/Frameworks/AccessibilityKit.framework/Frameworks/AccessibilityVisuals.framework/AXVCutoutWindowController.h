@@ -18,13 +18,13 @@
     AXKElementController *__backdropUIElementWindowElementController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXKElementController *_backdropUIElementWindowElementController; // @synthesize _backdropUIElementWindowElementController=__backdropUIElementWindowElementController;
 @property(retain, nonatomic) NSMutableArray *_windowElementControllers; // @synthesize _windowElementControllers=__windowElementControllers;
 @property(retain, nonatomic) NSMutableArray *_elementControllers; // @synthesize _elementControllers=__elementControllers;
 @property(retain, nonatomic) AXVCutoutWindow *_cutoutWindow; // @synthesize _cutoutWindow=__cutoutWindow;
 @property(copy, nonatomic) NSArray *uiElements; // @synthesize uiElements=_uiElements;
 @property(retain, nonatomic) AXFUIElement *backdropUIElement; // @synthesize backdropUIElement=_backdropUIElement;
-- (void).cxx_destruct;
 - (void)_updateCutouts;
 - (void)_handleElementDestroyed:(id)arg1;
 - (void)_handleElementValueChanged:(id)arg1;

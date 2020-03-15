@@ -21,9 +21,9 @@
     CDUnknownBlockType _finishBackgroundTaskAssertionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finishBackgroundTaskAssertionBlock; // @synthesize finishBackgroundTaskAssertionBlock=_finishBackgroundTaskAssertionBlock;
 @property(copy, nonatomic) CDUnknownBlockType startBackgroundTaskAssertionBlock; // @synthesize startBackgroundTaskAssertionBlock=_startBackgroundTaskAssertionBlock;
-- (void).cxx_destruct;
 - (void)_currentTaskAttemptDidFinishWithError:(id)arg1;
 - (void)_finishCurrentTask;
 - (void)_attemptCurrentTask;

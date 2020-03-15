@@ -24,11 +24,11 @@
     id <MKCustomFeatureStoreDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKCustomFeatureStoreDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned char sceneID; // @synthesize sceneID=_sceneID;
 @property(copy, nonatomic) GEOFeatureStyleAttributes *clusterStyleAttributes; // @synthesize clusterStyleAttributes=_clusterStyleAttributes;
 @property(readonly, nonatomic) _Bool isClusteringEnabled; // @synthesize isClusteringEnabled=_isClusteringEnabled;
-- (void).cxx_destruct;
 - (unsigned char)sceneState;
 - (void)getClusterAnnotationTextForClusterFeatureCount:(unsigned long long)arg1 text:(id *)arg2 locale:(id *)arg3;
 - (void)getClusterImageTextForClusterFeatureCount:(unsigned long long)arg1 text:(id *)arg2 locale:(id *)arg3;

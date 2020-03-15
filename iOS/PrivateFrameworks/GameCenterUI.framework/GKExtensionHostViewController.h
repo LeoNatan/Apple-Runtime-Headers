@@ -19,10 +19,10 @@
     NSMapTable *_targetForSelector;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *targetForSelector; // @synthesize targetForSelector=_targetForSelector;
 @property(nonatomic) __weak UIViewController<GKSocialGamingHostInterface> *hostViewController; // @synthesize hostViewController=_hostViewController;
 @property(nonatomic) __weak id <GKExtensionHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)methodSignatureForProtocol:(id)arg1 selector:(SEL)arg2;

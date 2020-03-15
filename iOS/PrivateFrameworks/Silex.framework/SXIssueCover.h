@@ -13,8 +13,8 @@
     NSString *_issueIdentifier;
 }
 
-@property(readonly, nonatomic) NSString *issueIdentifier; // @synthesize issueIdentifier=_issueIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *issueIdentifier; // @synthesize issueIdentifier=_issueIdentifier;
 - (id)initWithIssueIdentifier:(id)arg1;
 
 @end

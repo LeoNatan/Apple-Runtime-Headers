@@ -36,9 +36,9 @@
 + (void)initialize;
 + (_Bool)_removeThreadFromRegisteredThreads:(id)arg1 withThreadKey:(id)arg2;
 + (_Bool)_addThreadToRegisteredThreads:(id)arg1 withThreadKey:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setLastStartTime:) double lastStartTime; // @synthesize lastStartTime=_lastStartTime;
 @property(retain, nonatomic, setter=_setKey:) id _key; // @synthesize _key=__key;
-- (void).cxx_destruct;
 - (void)_processQueue;
 - (void)_processQueueFromTimer;
 - (void)_enqueueTask:(id)arg1 cancelMask:(unsigned long)arg2 lastStartTime:(double *)arg3;

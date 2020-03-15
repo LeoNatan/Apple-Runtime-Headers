@@ -18,10 +18,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSSerializableTimeZoneTime *DaylightTime; // @synthesize DaylightTime=_DaylightTime;
 @property(retain, nonatomic) EWSSerializableTimeZoneTime *StandardTime; // @synthesize StandardTime=_StandardTime;
 @property(nonatomic) long long Bias; // @synthesize Bias=_Bias;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *StandardTimeZoneName;
 - (BOOL)isEqualToSerializableTimeZone:(id)arg1;
 

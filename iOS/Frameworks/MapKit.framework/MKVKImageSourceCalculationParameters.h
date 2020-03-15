@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _scale;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, copy, nonatomic) NSArray *imageSourceKeys; // @synthesize imageSourceKeys=_imageSourceKeys;
-- (void).cxx_destruct;
 - (id)initWithImageSourceKeys:(id)arg1 scale:(double)arg2;
 
 @end

@@ -16,10 +16,10 @@
 }
 
 + (id)addressBookForFamilyMember:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ABAddressBook *familyMemberScopedAddressBook; // @synthesize familyMemberScopedAddressBook=_familyMemberScopedAddressBook;
 @property(readonly, nonatomic) CNContactStore *familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
-- (void).cxx_destruct;
 - (id)initWithFamilyMember:(id)arg1;
 
 @end

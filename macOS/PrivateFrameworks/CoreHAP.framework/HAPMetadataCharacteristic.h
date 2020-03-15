@@ -19,6 +19,7 @@
     HAPMetadataCharacteristicValue *_valueMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HAPMetadataCharacteristicValue *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(retain, nonatomic) NSString *units; // @synthesize units=_units;
 @property(retain, nonatomic) NSString *format; // @synthesize format=_format;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *uuidStr; // @synthesize uuidStr=_uuidStr;
 @property(retain, nonatomic) NSString *chrDescription; // @synthesize chrDescription=_chrDescription;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)dump;
 - (id)description;
 - (id)generateDictionary:(id)arg1;

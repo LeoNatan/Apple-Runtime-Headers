@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableArray *dynamicBundleIdentifierToClientInfo; // @synthesize dynamicBundleIdentifierToClientInfo=_dynamicBundleIdentifierToClientInfo;
 @property(retain, nonatomic) NSMutableDictionary *universalApplicationIdentifierToClientInfo; // @synthesize universalApplicationIdentifierToClientInfo=_universalApplicationIdentifierToClientInfo;
 @property(retain, nonatomic) NSMutableDictionary *bundleIdentifierToClientInfo; // @synthesize bundleIdentifierToClientInfo=_bundleIdentifierToClientInfo;
-- (void).cxx_destruct;
 - (id)_queue_bundleInfoForNotification:(id)arg1 bundleIdentifier:(id)arg2;
 - (id)bundleInfoForNotification:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)_queue_loadBundles;

@@ -26,6 +26,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType remoteExtensionProxyProvider; // @synthesize remoteExtensionProxyProvider=_remoteExtensionProxyProvider;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) CDUnknownBlockType timeoutHandler; // @synthesize timeoutHandler=_timeoutHandler;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) INCExtensionTransaction *_transaction; // @synthesize _transaction;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue;
 @property(nonatomic, setter=_setShouldObserveLayout:) BOOL _shouldObserveLayout; // @synthesize _shouldObserveLayout;
-- (void).cxx_destruct;
 - (void)_invalidateInUseAssertion;
 - (void)_takeInUseAssertionForBundleIdentifier:(id)arg1 withReason:(id)arg2;
 - (BOOL)_cancelRequestTimer;

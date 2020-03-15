@@ -23,6 +23,7 @@
 + (_Bool)debugDumpIntermediateImages;
 + (void)loadFusionTuningParameters;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CIVector *inputAlignmentTransform; // @synthesize inputAlignmentTransform=_inputAlignmentTransform;
 @property(retain, nonatomic) CIVector *inputAlignmentExtent; // @synthesize inputAlignmentExtent=_inputAlignmentExtent;
 @property(retain, nonatomic) NSNumber *inputVideoScale; // @synthesize inputVideoScale=_inputVideoScale;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) CIImage *inputMaskImage; // @synthesize inputMaskImage=_inputMaskImage;
 @property(retain, nonatomic) CIImage *inputStillImage; // @synthesize inputStillImage=_inputStillImage;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)_fuseImage:(id)arg1 withGuideImage:(id)arg2 weightImage:(id)arg3 maskImage:(id)arg4;
 - (id)_refineMaskImage:(id)arg1 guideImage:(id)arg2 scale:(double)arg3;
 - (id)_computeNCCMapFromImage:(id)arg1 toImage:(id)arg2 scale:(double)arg3;

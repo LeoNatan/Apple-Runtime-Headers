@@ -17,12 +17,12 @@
     SBFolderIcon *_folderIcon;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SBFolderIcon *folderIcon; // @synthesize folderIcon=_folderIcon;
 @property(nonatomic) unsigned long long pageIndex; // @synthesize pageIndex=_pageIndex;
 @property(nonatomic) unsigned long long visibleRow; // @synthesize visibleRow=_visibleRow;
 @property(nonatomic, getter=isGridImagePossible) _Bool gridImagePossible; // @synthesize gridImagePossible=_gridImagePossible;
 @property(retain, nonatomic) SBIconGridImage *gridImage; // @synthesize gridImage=_gridImage;
-- (void).cxx_destruct;
 - (unsigned long long)firstVisibleRowForGap;
 - (unsigned long long)firstVisibleMiniIconIndex;
 

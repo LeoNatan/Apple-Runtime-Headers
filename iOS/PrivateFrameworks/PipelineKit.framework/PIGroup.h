@@ -31,10 +31,10 @@
 
 + (id)groupWithConcurrencyLimit:(long long)arg1 priority:(unsigned long long)arg2;
 + (id)group;
+- (void).cxx_destruct;
 @property _Bool removeOnCompletion; // @synthesize removeOnCompletion=_removeOnCompletion;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak PIPipeline *pipeline; // @synthesize pipeline=_pipeline;
-- (void).cxx_destruct;
 - (id)description;
 - (double)wallTime;
 - (double)executionTime;

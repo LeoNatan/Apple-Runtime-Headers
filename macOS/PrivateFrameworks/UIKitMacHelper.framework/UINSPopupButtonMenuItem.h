@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <UINSAccessibilityInfo> _accessibilityInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) id <UINSAccessibilityInfo> accessibilityInfo; // @synthesize accessibilityInfo=_accessibilityInfo;
 @property(retain, nonatomic) id <NSUIImage> helperImage; // @synthesize helperImage=_helperImage;
 @property(nonatomic, getter=isChecked) BOOL checked; // @synthesize checked=_checked;
-- (void).cxx_destruct;
 - (id)init;
 
 // Remaining properties

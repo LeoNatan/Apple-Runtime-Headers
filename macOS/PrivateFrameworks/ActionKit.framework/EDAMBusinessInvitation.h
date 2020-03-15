@@ -21,6 +21,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *created; // @synthesize created=_created;
 @property(retain, nonatomic) NSNumber *fromWorkChat; // @synthesize fromWorkChat=_fromWorkChat;
 @property(retain, nonatomic) NSNumber *requesterId; // @synthesize requesterId=_requesterId;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSNumber *role; // @synthesize role=_role;
 @property(retain, nonatomic) NSString *email; // @synthesize email=_email;
 @property(retain, nonatomic) NSNumber *businessId; // @synthesize businessId=_businessId;
-- (void).cxx_destruct;
 
 @end
 

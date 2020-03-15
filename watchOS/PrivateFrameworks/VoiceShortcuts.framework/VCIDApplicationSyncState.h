@@ -17,9 +17,9 @@
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *registeredDate; // @synthesize registeredDate=_registeredDate;
 @property(copy, nonatomic) NSString *checksum; // @synthesize checksum=_checksum;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

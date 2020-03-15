@@ -14,9 +14,9 @@
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(readonly) int confidenceLevel; // @synthesize confidenceLevel=_confidenceLevel;
 @property(readonly) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)initWithText:(id)arg1 confidenceLevel:(int)arg2;
 
 @end

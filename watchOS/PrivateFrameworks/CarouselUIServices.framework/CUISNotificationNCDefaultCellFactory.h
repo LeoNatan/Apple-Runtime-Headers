@@ -16,8 +16,8 @@
     id <CUISNotificationNCCellFactoryDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CUISNotificationNCCellFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CUISNotificationNCCellFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)willReconfigureCellWhenModifyingNotification:(id)arg1 withNotification:(id)arg2;
 - (void)configureCell:(id)arg1 withNotification:(id)arg2 appName:(id)arg3 icon:(id)arg4;
 - (void)configureCell:(id)arg1 withNotification:(id)arg2 appName:(id)arg3 icon:(id)arg4 iconStyle:(unsigned int)arg5;

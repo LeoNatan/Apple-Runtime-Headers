@@ -23,6 +23,7 @@
     double _tickMarkWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double tickMarkWidth; // @synthesize tickMarkWidth=_tickMarkWidth;
 @property(nonatomic) __weak id <CEKSliderTickMarksDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIColor *secondaryTickMarkColor; // @synthesize secondaryTickMarkColor=_secondaryTickMarkColor;
@@ -31,7 +32,6 @@
 @property(nonatomic) long long mainTickMarkOffset; // @synthesize mainTickMarkOffset=_mainTickMarkOffset;
 @property(nonatomic) long long mainTickMarkInterval; // @synthesize mainTickMarkInterval=_mainTickMarkInterval;
 @property(nonatomic) double tickMarkSpacing; // @synthesize tickMarkSpacing=_tickMarkSpacing;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)_colorForSecondaryTickMarks;
 - (id)_colorForMainTickMarks;

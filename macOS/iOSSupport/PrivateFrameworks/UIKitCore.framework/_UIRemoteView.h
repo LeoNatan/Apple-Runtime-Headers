@@ -16,9 +16,9 @@
 
 + (id)viewWithHostedWindowHostingHandle:(id)arg1;
 + (BOOL)_requiresWindowTouches;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tintColorDidChangeHandler; // @synthesize tintColorDidChangeHandler=_tintColorDidChangeHandler;
 @property(retain, nonatomic) _UIHostedWindowHostingHandle *hostedWindowHostingHandle; // @synthesize hostedWindowHostingHandle=_hostedWindowHostingHandle;
-- (void).cxx_destruct;
 @property(nonatomic, setter=_setInheritsSecurity:) BOOL _inheritsSecurity;
 - (void)tintColorDidChange;
 - (id)_hitTest:(struct CGPoint)arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;

@@ -16,8 +16,8 @@
     id <CAMPanoramaCaptureRequestDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <CAMPanoramaCaptureRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <CAMPanoramaCaptureRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequest:(id)arg1 distinctPersistence:(_Bool)arg2;

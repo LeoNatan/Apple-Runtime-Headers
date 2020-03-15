@@ -17,9 +17,9 @@
     CDUnknownBlockType _sendBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sendBlock; // @synthesize sendBlock=_sendBlock;
 @property(retain, nonatomic) UIView *pillContainerView; // @synthesize pillContainerView=_pillContainerView;
-- (void).cxx_destruct;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (id)_handlesForRecipients:(id)arg1;
 - (_Bool)recipientIsiMessagable:(id)arg1;

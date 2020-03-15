@@ -22,13 +22,13 @@
     UIImageView *__selectionIndicatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *_selectionIndicatorView; // @synthesize _selectionIndicatorView=__selectionIndicatorView;
 @property(retain, nonatomic) ArouetScrollWheelView *_pickerWheelView; // @synthesize _pickerWheelView=__pickerWheelView;
 @property(nonatomic) __weak id <ArouetCandidateViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setSelectedCandidateIndex:) int selectedCandidateIndex; // @synthesize selectedCandidateIndex=_selectedCandidateIndex;
 @property(copy, nonatomic) NSArray *candidateStrings; // @synthesize candidateStrings=_candidateStrings;
 @property(readonly, nonatomic) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
-- (void).cxx_destruct;
 - (void)scrollWheelDidFinishScrolling:(id)arg1;
 - (_Bool)scrollWheelShouldBecomeFirstResponder:(id)arg1;
 - (void)scrollWheel:(id)arg1 didTapItemAtIndex:(unsigned int)arg2;

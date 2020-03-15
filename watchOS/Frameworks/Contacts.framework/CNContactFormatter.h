@@ -30,13 +30,13 @@
 + (id)descriptorForRequiredKeysForStyle:(int)arg1;
 + (id)attributedStringFromContact:(id)arg1 style:(int)arg2 defaultAttributes:(id)arg3;
 + (id)stringFromContact:(id)arg1 style:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(nonatomic) _Bool emphasizesPrimaryNameComponent; // @synthesize emphasizesPrimaryNameComponent=_emphasizesPrimaryNameComponent;
 @property(nonatomic) unsigned int fallbackStyle; // @synthesize fallbackStyle=_fallbackStyle;
 @property(nonatomic) _Bool ignoresNickname; // @synthesize ignoresNickname=_ignoresNickname;
 @property(nonatomic) _Bool ignoresOrganization; // @synthesize ignoresOrganization=_ignoresOrganization;
 @property(nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (_Bool)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (id)stringForObjectValue:(id)arg1;

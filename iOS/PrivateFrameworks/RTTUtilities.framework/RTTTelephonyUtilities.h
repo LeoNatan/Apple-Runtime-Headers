@@ -16,6 +16,7 @@
 @interface RTTTelephonyUtilities : NSObject <CoreTelephonyClientCarrierBundleDelegate, TUCallCapabilitiesDelegatePrivate, TUCallCapabilitiesDelegate>
 {
     ACAccountStore *_accountStore;
+    NSNumber *_callCapabilitiesSupportsTelephonyCalls;
     AXDispatchTimer *_icloudAccountConsolidator;
     AXDispatchTimer *_icloudRelayConsolidator;
     _Bool _headphoneJackSupportsTTY;
@@ -26,7 +27,6 @@
     CoreTelephonyClient *_telephonyClient;
     NSObject<OS_dispatch_queue> *_telephonyUpdateQueue;
     NSObject<OS_dispatch_queue> *_accountStoreQueue;
-    NSNumber *_callCapabilitiesSupportsTelephonyCalls;
 }
 
 + (id)relayPhoneNumberForContext:(id)arg1;
@@ -51,16 +51,15 @@
 + (void)performCallCenterTask:(CDUnknownBlockType)arg1;
 + (id)sharedCallCenter;
 + (id)sharedUtilityProvider;
-@property(retain, nonatomic) NSNumber *callCapabilitiesSupportsTelephonyCalls; // @synthesize callCapabilitiesSupportsTelephonyCalls=_callCapabilitiesSupportsTelephonyCalls;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accountStoreQueue; // @synthesize accountStoreQueue=_accountStoreQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *telephonyUpdateQueue; // @synthesize telephonyUpdateQueue=_telephonyUpdateQueue;
 @property(retain, nonatomic) CoreTelephonyClient *telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 @property(nonatomic) _Bool headphoneJackSupportsTTY; // @synthesize headphoneJackSupportsTTY=_headphoneJackSupportsTTY;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-@property(retain, nonatomic) NSSet *allVoiceContexts; // @synthesize allVoiceContexts=_allVoiceContexts;
-@property(nonatomic) unsigned long long activeContextCount; // @synthesize activeContextCount=_activeContextCount;
-@property(retain, nonatomic) CTXPCServiceSubscriptionContext *defaultVoiceContext; // @synthesize defaultVoiceContext=_defaultVoiceContext;
-- (void).cxx_destruct;
+@property(retain) NSSet *allVoiceContexts; // @synthesize allVoiceContexts=_allVoiceContexts;
+@property unsigned long long activeContextCount; // @synthesize activeContextCount=_activeContextCount;
+@property(retain) CTXPCServiceSubscriptionContext *defaultVoiceContext; // @synthesize defaultVoiceContext=_defaultVoiceContext;
 - (_Bool)relayRTTIsSupported;
 - (void)_icloudAccountChanged;
 - (void)iCloudAccountDidChange:(id)arg1;
@@ -90,6 +89,7 @@
 - (_Bool)relayIsSupported;
 - (_Bool)contactIsTTYContact:(id)arg1;
 - (unsigned long long)currentPreferredTransportMethodForContext:(id)arg1;
+@property(retain) NSNumber *callCapabilitiesSupportsTelephonyCalls;
 - (unsigned long long)currentPreferredTransportMethod;
 - (void)mediaServerDied;
 - (void)registerNotifications;

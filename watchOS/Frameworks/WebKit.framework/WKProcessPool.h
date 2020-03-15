@@ -9,7 +9,7 @@
 #import <WebKit/NSSecureCoding-Protocol.h>
 #import <WebKit/WKObject-Protocol.h>
 
-@class NSString, WKGeolocationProviderIOS, _WKProcessPoolConfiguration;
+@class NSString, NSURL, WKGeolocationProviderIOS, _WKProcessPoolConfiguration;
 @protocol _WKAutomationDelegate, _WKDownloadDelegate, _WKGeolocationCoreLocationProvider;
 
 @interface WKProcessPool : NSObject <WKObject, NSSecureCoding>
@@ -39,9 +39,13 @@
 - (void)dealloc;
 - (id)init;
 - (id)_initWithConfiguration:(id)arg1;
-- (void)_clearPermanentCredentialsForProtectionSpace:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_seedResourceLoadStatisticsForTestingWithFirstParty:(id)arg1 thirdParty:(id)arg2 shouldScheduleNotification:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_allowAnyTLSCertificateForWebSocketTesting;
+- (void)_clearPermanentCredentialsForProtectionSpace:(id)arg1;
 - (_Bool)_networkProcessHasEntitlementForTesting:(id)arg1;
 - (void)_getActivePagesOriginsInWebProcessForTesting:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_resumeDownloadFromData:(id)arg1 websiteDataStore:(id)arg2 path:(id)arg3 originatingWebView:(id)arg4;
+- (id)_downloadURLRequest:(id)arg1 websiteDataStore:(id)arg2 originatingWebView:(id)arg3;
 - (id)_resumeDownloadFromData:(id)arg1 path:(id)arg2 originatingWebView:(id)arg3;
 - (id)_downloadURLRequest:(id)arg1 originatingWebView:(id)arg2;
 @property(nonatomic, setter=_setCoreLocationProvider:) id <_WKGeolocationCoreLocationProvider> _coreLocationProvider;
@@ -62,16 +66,18 @@
 - (void)_makeNextNetworkProcessLaunchFailForTesting;
 - (void)_makeNextWebProcessLaunchFailForTesting;
 - (unsigned long)_webProcessCount;
+- (void)_clearWebProcessCache;
 - (void)_syncNetworkProcessCookies;
 - (int)_prewarmedProcessIdentifier;
 - (int)_networkProcessIdentifier;
-- (void)_disableServiceWorkerProcessTerminationDelay;
-- (void)_terminateServiceWorkerProcesses;
+- (void)_setUseSeparateServiceWorkerProcess:(_Bool)arg1;
+- (void)_terminateServiceWorkers;
 - (void)_sendNetworkProcessDidResume;
 - (void)_sendNetworkProcessWillSuspendImminently;
 - (void)_terminateNetworkProcess;
 - (void)_clearSupportedPlugins;
 - (void)_addSupportedPlugin:(id)arg1 named:(id)arg2 withMimeTypes:(id)arg3 withExtensions:(id)arg4;
+@property(copy, nonatomic, setter=_setJavaScriptConfigurationDirectory:) NSURL *_javaScriptConfigurationDirectory;
 - (void)_setAutomationSession:(id)arg1;
 - (void)_automationCapabilitiesDidChange;
 - (void)_warmInitialProcess;
@@ -83,7 +89,6 @@
 - (void)_setCookieAcceptPolicy:(unsigned int)arg1;
 - (void)_setCanHandleHTTPSServerTrustEvaluation:(_Bool)arg1;
 - (void)_registerURLSchemeAsCanDisplayOnlyIfCanRequest:(id)arg1;
-- (void)_registerURLSchemeServiceWorkersCanHandle:(id)arg1;
 - (void)_setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 
 // Remaining properties

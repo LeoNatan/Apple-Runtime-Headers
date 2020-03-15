@@ -13,8 +13,8 @@
     NSDictionary *_payload;
 }
 
-@property(readonly, copy) NSDictionary *payload; // @synthesize payload=_payload;
 - (void).cxx_destruct;
+@property(readonly, copy) NSDictionary *payload; // @synthesize payload=_payload;
 - (void)startRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithPayload:(id)arg1;
 

@@ -22,13 +22,13 @@
     NSArray *__availableTrackpadInfos;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *_availableTrackpadInfos; // @synthesize _availableTrackpadInfos=__availableTrackpadInfos;
 @property(retain, nonatomic) AXETrackingGestureEvent *_previousGestureEvent; // @synthesize _previousGestureEvent=__previousGestureEvent;
 @property(retain, nonatomic) AXFThrottler *_throttler; // @synthesize _throttler=__throttler;
 @property(nonatomic) BOOL _eventCaptureStarted; // @synthesize _eventCaptureStarted=__eventCaptureStarted;
 @property(nonatomic) BOOL swallowAllGestureEvents; // @synthesize swallowAllGestureEvents=_swallowAllGestureEvents;
 @property(nonatomic) __weak id <AXETrackingTouchInputDeviceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_processNonSyntheticGestureEvent:(id)arg1;
 - (id)_nonSyntheticGestureEventFromCGEvent:(struct __CGEvent *)arg1;
 - (struct __CGEvent *)eventTapManager:(id)arg1 activelyTappedMouseEvent:(id)arg2 cgEvent:(struct __CGEvent *)arg3 withProxy:(struct __CGEventTapProxy *)arg4;

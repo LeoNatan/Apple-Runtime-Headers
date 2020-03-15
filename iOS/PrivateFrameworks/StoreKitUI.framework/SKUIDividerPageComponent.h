@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
-@property(readonly, nonatomic) NSString *dividerTitle; // @synthesize dividerTitle=_title;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *dividerTitle; // @synthesize dividerTitle=_title;
 - (long long)componentType;
 - (id)initWithViewElement:(id)arg1;
 - (id)initWithDividerTitle:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     WKFullScreenWindowController *_parent;
 }
 
-@property(nonatomic) __weak WKFullScreenWindowController *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WKFullScreenWindowController *parent; // @synthesize parent=_parent;
 - (void)willMoveToSuperview:(id)arg1;
 
 @end

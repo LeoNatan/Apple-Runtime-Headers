@@ -25,10 +25,10 @@
     id <MDRenderTarget> _displayLayer;
 }
 
-@property(nonatomic) id <MDRenderTarget> displayLayer; // @synthesize displayLayer=_displayLayer;
-@property(nonatomic) BOOL followsTerrain; // @synthesize followsTerrain=_followsTerrain;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) id <MDRenderTarget> displayLayer; // @synthesize displayLayer=_displayLayer;
+@property(nonatomic) BOOL followsTerrain; // @synthesize followsTerrain=_followsTerrain;
 - (void)anchorWorldPointDidChange:(void *)arg1;
 - (void)updateIfNeeded;
 - (void)layoutWithContext:(const struct LayoutContext *)arg1;

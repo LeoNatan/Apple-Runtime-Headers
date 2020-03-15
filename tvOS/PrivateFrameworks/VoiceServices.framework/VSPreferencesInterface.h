@@ -14,8 +14,8 @@
 }
 
 + (id)defaultInstance;
-@property(retain, nonatomic) NSUserDefaults *defaults; // @synthesize defaults=_defaults;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSUserDefaults *defaults; // @synthesize defaults=_defaults;
 @property(readonly, nonatomic) NSString *deviceUUID;
 @property(retain, nonatomic) NSDate *lastTTSRequestDate;
 - (id)autoDownloadedVoicesForClientID:(id)arg1;

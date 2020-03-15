@@ -34,6 +34,7 @@
 }
 
 + (BOOL)doneButtonNeededForInputTraits:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL rejectBecomingFirstResponder; // @synthesize rejectBecomingFirstResponder=_rejectBecomingFirstResponder;
 @property(retain, nonatomic) WFTextAttachmentInteraction *attachmentInteraction; // @synthesize attachmentInteraction=_attachmentInteraction;
 @property(retain, nonatomic) WFVariableConfigurationResponder *variableResponder; // @synthesize variableResponder=_variableResponder;
@@ -47,7 +48,6 @@
 @property(nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(nonatomic) BOOL variablesDisabled; // @synthesize variablesDisabled=_variablesDisabled;
 @property(copy, nonatomic) WFVariableString *variableString; // @synthesize variableString=_variableString;
-- (void).cxx_destruct;
 - (void)defaultPaste:(id)arg1;
 - (void)defaultCopy:(id)arg1;
 - (void)defaultCut:(id)arg1;

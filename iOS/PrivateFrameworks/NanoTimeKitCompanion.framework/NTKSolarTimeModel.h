@@ -22,6 +22,7 @@
     GEOAlmanac *_dawnDuskSolarAlmanac;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOAlmanac *dawnDuskSolarAlmanac; // @synthesize dawnDuskSolarAlmanac=_dawnDuskSolarAlmanac;
 @property(retain, nonatomic) GEOAlmanac *sunriseSunsetSolarAlmanac; // @synthesize sunriseSunsetSolarAlmanac=_sunriseSunsetSolarAlmanac;
 @property(nonatomic) _Bool dependentValuesNeedUpdate; // @synthesize dependentValuesNeedUpdate=_dependentValuesNeedUpdate;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
 @property(nonatomic) _Bool usePlaceholderData; // @synthesize usePlaceholderData=_usePlaceholderData;
 @property(retain, nonatomic) CLLocation *referenceLocation; // @synthesize referenceLocation=_referenceLocation;
-- (void).cxx_destruct;
 - (id)ntkCacheableKey;
 - (void)updateForTimeZoneChange;
 - (void)updateModelWithDate:(id)arg1;

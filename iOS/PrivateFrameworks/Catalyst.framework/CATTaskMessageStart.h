@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) CATTaskRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CATTaskRequest *request; // @synthesize request=_request;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTaskUUID:(id)arg1 request:(id)arg2;

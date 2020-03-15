@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) CNInstantMessageAddress *imAddress; // @synthesize imAddress=_imAddress;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CNInstantMessageAddress *imAddress; // @synthesize imAddress=_imAddress;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

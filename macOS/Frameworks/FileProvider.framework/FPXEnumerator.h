@@ -21,8 +21,8 @@
     id <FPXEnumeratorObserver> _observer;
 }
 
-@property(readonly) id <FPXEnumeratorObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(readonly) id <FPXEnumeratorObserver> observer; // @synthesize observer=_observer;
 - (void)enumeratorBecameFrontmost:(BOOL)arg1 inWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)keepAliveConnectionForRegisteredObserver:(CDUnknownBlockType)arg1;
 - (void)alternateContentsWereUpdatedAtURL:(id)arg1 forItem:(id)arg2;

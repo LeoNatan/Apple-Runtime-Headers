@@ -39,9 +39,10 @@
 + (id)dpKeyBasePrefix;
 + (id)colorPresetDescriptionForAvatarConfiguration:(id)arg1;
 + (void)getPresetDescription:(out id *)arg1 usedCategoriesDescription:(out id *)arg2 forAvatarConfiguration:(id)arg3 defaultConfiguration:(id)arg4;
-+ (id)keyContentForAvatarRecord:(id)arg1 action:(id)arg2 includingPuppetName:(_Bool)arg3;
++ (id)keyContentForAvatarRecord:(id)arg1 action:(id)arg2 includingPuppetName:(_Bool)arg3 avatarTypeAsSuffix:(_Bool)arg4;
 + (CDUnknownBlockType)defaultTimeProvider;
 + (CDUnknownBlockType)defaultRecordTransformerForCoreModel:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AVTAvatarStoreInternal> avatarStore; // @synthesize avatarStore=_avatarStore;
 @property(retain, nonatomic) AVTUsageTrackingRecordTimedEvent *faceTrackingEvent; // @synthesize faceTrackingEvent=_faceTrackingEvent;
 @property(retain, nonatomic) NSDate *editorEnterDate; // @synthesize editorEnterDate=_editorEnterDate;
@@ -57,7 +58,6 @@
 @property(readonly, nonatomic) id <AVTAggDClient> ntsAggDClient; // @synthesize ntsAggDClient=_ntsAggDClient;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)nts_reportExpandedModeWithClient:(id)arg1;
 - (void)nts_reportAvatarComplexity:(id)arg1 withClient:(id)arg2;
 - (void)nts_reportAvatarLikenessClustersWithClient:(id)arg1;

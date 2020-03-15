@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIViewController *_viewController;
 }
 
-@property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void)animateContentForEndPointType:(long long)arg1 withZoomAnimationContext:(id)arg2;
 - (void)animateContentForEndPointType:(long long)arg1 inView:(id)arg2 withLayerType:(long long)arg3 zoomAnimationContext:(id)arg4;
 - (id)initWithViewController:(id)arg1;

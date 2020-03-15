@@ -26,8 +26,8 @@
 
 + (void)powerlog:(id)arg1 eventData:(id)arg2;
 + (id)sharedInstance;
-@property(readonly, nonatomic) float batteryLevel; // @synthesize batteryLevel=_batteryLevel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) float batteryLevel; // @synthesize batteryLevel=_batteryLevel;
 - (id)copyDiagnosticInformation;
 @property(readonly, nonatomic) EFObservable *batteryLevelObservable;
 - (id)batteryLevelStateChangeNotificationObservable;

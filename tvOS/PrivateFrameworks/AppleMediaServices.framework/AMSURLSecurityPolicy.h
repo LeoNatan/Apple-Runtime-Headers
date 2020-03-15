@@ -15,9 +15,9 @@
 }
 
 + (id)defaultPolicy;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *pinnedCertificates; // @synthesize pinnedCertificates=_pinnedCertificates;
 @property(nonatomic) long long trustMode; // @synthesize trustMode=_trustMode;
-- (void).cxx_destruct;
 - (_Bool)_shouldSkipValidation;
 - (_Bool)_evaluatePinnedCertificatesWithTrust:(struct __SecTrust *)arg1 forTask:(id)arg2;
 - (_Bool)_evaluateExtendedValidationWithTrust:(struct __SecTrust *)arg1 forTask:(id)arg2;

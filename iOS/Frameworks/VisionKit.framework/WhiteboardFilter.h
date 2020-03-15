@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)customAttributes;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *stride; // @synthesize stride=_stride;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 - (id)whiteboardFilterKernel;
 

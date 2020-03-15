@@ -17,8 +17,8 @@
 }
 
 + (id)defaultEKStore;
-@property(nonatomic) __weak SGSqlEntityStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SGSqlEntityStore *store; // @synthesize store=_store;
 - (void)_removeEKEvent:(id)arg1 store:(id)arg2 commit:(_Bool)arg3;
 - (void)_updateEventMetadataInModifiedEvent:(id)arg1 withExistingCheckInShortcutInOriginalEvent:(id)arg2 ifTeamIdentifierIsDifferentInStorageEvent:(id)arg3;
 - (void)_removeEvent:(id)arg1 commit:(_Bool)arg2;

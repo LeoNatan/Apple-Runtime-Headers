@@ -18,13 +18,13 @@
     double _density;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double density; // @synthesize density=_density;
 @property(retain, nonatomic) NSMutableArray *visitHist; // @synthesize visitHist=_visitHist;
 @property(nonatomic) double earliestVisitTime_s; // @synthesize earliestVisitTime_s=_earliestVisitTime_s;
 @property(nonatomic) double latestVisitTime_s; // @synthesize latestVisitTime_s=_latestVisitTime_s;
 @property(nonatomic) double aggregateTime_s; // @synthesize aggregateTime_s=_aggregateTime_s;
 @property(nonatomic) int numOfClustEntries; // @synthesize numOfClustEntries=_numOfClustEntries;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

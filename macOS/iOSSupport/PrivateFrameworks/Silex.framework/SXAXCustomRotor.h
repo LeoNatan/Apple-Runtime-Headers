@@ -14,8 +14,8 @@
 }
 
 + (id)rotorWithName:(id)arg1;
-@property(copy, nonatomic) NSOrderedSet *rotorItems; // @synthesize rotorItems=_rotorItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSOrderedSet *rotorItems; // @synthesize rotorItems=_rotorItems;
 - (id)description;
 - (long long)indexOfRotorItem:(id)arg1;
 - (id)rotorItemAfter:(id)arg1;

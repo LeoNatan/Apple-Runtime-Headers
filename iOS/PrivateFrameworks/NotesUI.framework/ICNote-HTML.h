@@ -9,8 +9,8 @@
 @class ICCollaborationColorManager, NSArray, PKInk, TTTextStorage;
 
 @interface ICNote (HTML)
-+ (id)hexStringForColor:(struct UIColor *)arg1;
-+ (_Bool)isDefaultColor:(struct UIColor *)arg1;
++ (id)hexStringForColor:(id)arg1;
++ (_Bool)isDefaultColor:(id)arg1;
 + (id)tagDictionariesForAttributes:(id)arg1 attachmentConversionHandler:(CDUnknownBlockType)arg2;
 + (id)tagDictionaryForWrapperAroundParagraphStyle:(id)arg1;
 + (id)htmlStringFromAttributedString:(id)arg1 attachmentConversionHandler:(CDUnknownBlockType)arg2;
@@ -45,6 +45,7 @@
 - (void)filterAttachmentsInTextStorage:(id)arg1 range:(struct _NSRange)arg2;
 - (void)createMissingAttachmentsInTextStorage;
 - (void)textStorageWillProcessEditing:(id)arg1;
+@property(nonatomic) _Bool isDrawingStroke;
 - (void)updateModificationDateAndChangeCountAndSaveImmediately;
 - (void)updateModificationDateAndChangeCountAndSaveAfterDelay;
 - (void)updateModificationDateAndChangeCount;
@@ -52,8 +53,8 @@
 - (void)save;
 - (id)thumbnailImageCacheKeyWithItemSize:(struct CGSize)arg1 appearanceType:(unsigned long long)arg2;
 - (void)fetchThumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 cache:(id)arg3 appearanceInfo:(id)arg4 cacheKey:(id)arg5 processingBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
-- (struct UIImage *)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 requireAppearance:(_Bool)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(_Bool *)arg6 isMovie:(_Bool *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8 attachment:(id *)arg9;
-- (struct UIImage *)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 requireAppearance:(_Bool)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(_Bool *)arg6 isMovie:(_Bool *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8;
+- (id)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 requireAppearance:(_Bool)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(_Bool *)arg6 isMovie:(_Bool *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8 attachment:(id *)arg9;
+- (id)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 requireAppearance:(_Bool)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(_Bool *)arg6 isMovie:(_Bool *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8;
 - (id)attachmentFromRemoteFileWrapper:(id)arg1;
 - (id)attachmentFromLegacyAttachmentFileWrapper:(id)arg1;
 - (id)attachmentFromStandardFileWrapper:(id)arg1;

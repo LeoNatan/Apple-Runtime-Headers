@@ -18,8 +18,8 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (id)_localizedNameForComplication:(id)arg1;
 - (unsigned long long)_numberOfActiveComplications;
 - (void)loadSettings;

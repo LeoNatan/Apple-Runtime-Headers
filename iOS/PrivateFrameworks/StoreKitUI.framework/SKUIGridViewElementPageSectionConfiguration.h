@@ -44,13 +44,13 @@ __attribute__((visibility("hidden")))
     id <SKUIGridViewElementPageSectionConfigurationDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIGridViewElementPageSectionConfigurationDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) _Bool showsEditMode; // @synthesize showsEditMode=_showsEditMode;
 @property(nonatomic) _Bool rendersWithPerspective; // @synthesize rendersWithPerspective=_rendersWithPerspective;
 @property(retain, nonatomic) SKUIStorePageSectionContext *pageSectionContext; // @synthesize pageSectionContext=_pageSectionContext;
 @property(nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(retain, nonatomic) SKUIViewElementLayoutContext *cellLayoutContext; // @synthesize cellLayoutContext=_cellLayoutContext;
-- (void).cxx_destruct;
 - (_Bool)_useOrdinalPadding;
 - (void)_reloadCellPaddingIfNeeded;
 - (long long)_numberOfColumnsForWidth:(double)arg1 style:(id)arg2;

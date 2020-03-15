@@ -14,9 +14,9 @@
     NSArray *_EWSItemIdsRequested;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *EWSItemIdsRequested; // @synthesize EWSItemIdsRequested=_EWSItemIdsRequested;
 @property(retain) NSMutableArray *EWSItems; // @synthesize EWSItems=_EWSItems;
-- (void).cxx_destruct;
 - (void)executeOperation;
 - (void)prepareToExecuteWithResponse:(id)arg1 forRequestOperation:(id)arg2;
 @property(retain) EWSGetItemResponseType *response;

@@ -29,13 +29,13 @@
     id <NSObject> _modalPresenterObserverToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> modalPresenterObserverToken; // @synthesize modalPresenterObserverToken=_modalPresenterObserverToken;
 @property(retain, nonatomic) UIViewController *presentedModalViewController; // @synthesize presentedModalViewController=_presentedModalViewController;
 @property(retain, nonatomic) UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
 @property(nonatomic) unsigned long long maxNavControllerStackDepth; // @synthesize maxNavControllerStackDepth=_maxNavControllerStackDepth;
 @property(nonatomic) __weak id <_TVAppNavigationControllerDelegate> appNavigationControllerDelegate; // @synthesize appNavigationControllerDelegate=_appNavigationControllerDelegate;
 @property(readonly, nonatomic) __weak TVApplicationController *appController; // @synthesize appController=_appController;
-- (void).cxx_destruct;
 - (void)_doWillLoadAppDocumentWithController:(id)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;

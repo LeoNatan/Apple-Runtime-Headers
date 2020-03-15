@@ -16,9 +16,9 @@
     INImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) INImage *image; // @synthesize image=_image;
 @property(readonly, copy) INParameter *parameter; // @synthesize parameter=_parameter;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithParameter:(id)arg1 image:(id)arg2;
 

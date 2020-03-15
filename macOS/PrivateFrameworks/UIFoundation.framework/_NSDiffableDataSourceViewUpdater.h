@@ -19,11 +19,11 @@
     _NSDataSourceSnapshotter *_dataSourceSnapshotter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _NSDataSourceSnapshotter *dataSourceSnapshotter; // @synthesize dataSourceSnapshotter=_dataSourceSnapshotter;
 @property(nonatomic) __weak NSCollectionView *nsCollectionView; // @synthesize nsCollectionView=_nsCollectionView;
 @property(nonatomic) __weak id <_NSCollectionViewUpdateItemApplying> updatesSink; // @synthesize updatesSink=_updatesSink;
 @property(nonatomic) long long sinkKind; // @synthesize sinkKind=_sinkKind;
-- (void).cxx_destruct;
 - (void)_performNSCollectionViewMoveUpdate:(id)arg1;
 - (void)_performNSCollectionViewDeleteUpdate:(id)arg1;
 - (void)_performNSCollectionViewReloadUpdate:(id)arg1;

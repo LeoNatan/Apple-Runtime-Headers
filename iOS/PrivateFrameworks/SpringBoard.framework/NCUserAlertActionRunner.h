@@ -16,9 +16,9 @@
     SBAlertItem *_alertItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak SBAlertItem *alertItem; // @synthesize alertItem=_alertItem;
 @property(nonatomic) _Bool shouldForwardAction; // @synthesize shouldForwardAction=_shouldForwardAction;
-- (void).cxx_destruct;
 - (void)executeAction:(id)arg1 fromOrigin:(id)arg2 endpoint:(id)arg3 withParameters:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)initWithSBAlertItem:(id)arg1;
 

@@ -21,8 +21,8 @@
 + (BOOL)writeReassembleAdjustmentsPropertyListAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 + (id)dataForOverflowDataReassembledAdjustmentsPropertyListAtURL:(id)arg1 error:(id *)arg2;
 + (BOOL)adjustmentsPropertyListFileRequiresOverflowDataReassemblyAtURL:(id)arg1 predictedSize:(long long *)arg2;
-@property(retain, nonatomic) NSDictionary *propertyListDictionary; // @synthesize propertyListDictionary=_propertyListDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *propertyListDictionary; // @synthesize propertyListDictionary=_propertyListDictionary;
 - (id)description;
 - (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

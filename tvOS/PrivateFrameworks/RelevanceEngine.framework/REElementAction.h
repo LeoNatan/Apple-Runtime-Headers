@@ -17,8 +17,8 @@
     _Bool _forceExecution;
 }
 
-@property(nonatomic) _Bool forceExecution; // @synthesize forceExecution=_forceExecution;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool forceExecution; // @synthesize forceExecution=_forceExecution;
 - (void)_didFinish:(_Bool)arg1;
 - (void)_performWithContext:(id)arg1;
 @property(nonatomic) __weak id <REElementActionDelegate> delegate;

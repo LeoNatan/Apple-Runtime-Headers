@@ -14,9 +14,9 @@
     FMReadWriteLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FMReadWriteLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableArray *underlyingArray; // @synthesize underlyingArray=_underlyingArray;
-- (void).cxx_destruct;
 - (id)nativeArray;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeObjectAtIndex:(unsigned long long)arg1;

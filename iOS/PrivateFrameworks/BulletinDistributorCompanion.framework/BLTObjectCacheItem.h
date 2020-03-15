@@ -15,9 +15,9 @@
 }
 
 + (id)cacheItemWithObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double lastAccessedDate; // @synthesize lastAccessedDate=_lastAccessedDate;
 @property(readonly, nonatomic) id <NSSecureCoding> object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)description;
 - (void)touch;
 - (id)initWithObject:(id)arg1;

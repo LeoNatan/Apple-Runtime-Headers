@@ -16,9 +16,9 @@
     NSDate *_fireDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isValid;
 - (void)invalidate;
 - (id)initWithFireDate:(id)arg1 queue:(id)arg2 target:(id)arg3 selector:(SEL)arg4;

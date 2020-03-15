@@ -31,14 +31,14 @@ __attribute__((visibility("hidden")))
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUsingUbiquity; // @synthesize isUsingUbiquity=_isUsingUbiquity;
 @property(retain, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) _Bool dieOnInvalidate; // @synthesize dieOnInvalidate=_dieOnInvalidate;
 @property(readonly, nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) BRCClientPrivilegesDescriptor *clientPriviledgesDescriptor; // @synthesize clientPriviledgesDescriptor=_clientPriviledgesDescriptor;
-- (void).cxx_destruct;
 - (void)_t_resetAllZones:(id)arg1 waitUntilIdle:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)_startSharingOperationAfterAcceptation:(struct _BRCFrameworkOperation *)arg1 client:(id)arg2 item:(id)arg3;
+- (void)_startSharingOperationAfterAcceptation:(id)arg1 client:(id)arg2 item:(id)arg3;
 - (id)_sharingOperationItemFromLookup:(id)arg1 url:(id)arg2 allowDirectory:(_Bool)arg3 error:(id *)arg4;
 - (void)setupNonSandboxedAccessForUbiquityContainers:(id)arg1 forBundleID:(id)arg2;
 - (void)_setupAppLibraryAndZoneWithID:(id)arg1 recreateDocumentsIfNeeded:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;

@@ -16,9 +16,9 @@
     float _preferredPlaybackRate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float preferredPlaybackRate; // @synthesize preferredPlaybackRate=_preferredPlaybackRate;
 @property(copy, nonatomic) NSArray *supportedPlaybackRates; // @synthesize supportedPlaybackRates=_supportedPlaybackRates;
-- (void).cxx_destruct;
 - (id)setPlaybackRate:(float)arg1;
 
 // Remaining properties

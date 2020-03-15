@@ -15,10 +15,10 @@
     NSButton *_deleteButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property BOOL eventsCurrentlyInside; // @synthesize eventsCurrentlyInside=_eventsCurrentlyInside;
 @property(retain) id viewEventMonitor; // @synthesize viewEventMonitor=_viewEventMonitor;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

@@ -51,7 +51,8 @@
         unsigned int globalAutomaticTextReplacementEnabled:1;
         unsigned int globalAutomaticTextCompletionEnabled:1;
         unsigned int clientIsAsynchronous:1;
-        unsigned int reserved:11;
+        unsigned int usesStringAnnotations:1;
+        unsigned int reserved:10;
     } _tccFlags;
     struct __tccClientFlags {
         unsigned int respondsToAutocorrectionType:1;
@@ -198,6 +199,8 @@
 - (void)annotatedSubstringForProposedRange:(struct _NSRange)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)annotatedSubstringForProposedRange:(struct _NSRange)arg1 wrap:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3 failureHandler:(CDUnknownBlockType)arg4;
 - (void)removeAnnotation:(id)arg1;
+- (void)removeAnnotation:(id)arg1 range:(struct _NSRange)arg2 offset:(unsigned long long)arg3;
+- (void)setTextCheckedAnnotationForRange:(struct _NSRange)arg1 offset:(unsigned long long)arg2;
 - (void)selectedRangesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)selectedRangeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)recordResponse:(long long)arg1 toCorrection:(id)arg2 forWord:(id)arg3;
@@ -253,10 +256,11 @@
 - (BOOL)needsLinkAnnotations;
 - (id)convertFromStringAnnotatedString:(id)arg1;
 - (id)convertToStringAnnotatedString:(id)arg1;
-- (id)convertFromStringAnnotationDictionary:(id)arg1 excludingKeys:(id)arg2;
 - (id)convertFromStringAnnotationDictionary:(id)arg1;
 - (id)convertToStringAnnotationDictionary:(id)arg1;
 - (id)validAnnotations;
+- (void)setUsesStringAnnotations:(BOOL)arg1;
+- (BOOL)usesStringAnnotations;
 @property(readonly) id <NSTextCheckingClient> client;
 - (void)dealloc;
 - (void)invalidate;

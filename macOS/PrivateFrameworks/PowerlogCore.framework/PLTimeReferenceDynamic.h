@@ -20,6 +20,7 @@
 }
 
 + (double)nearestDistanceFromDate:(id)arg1 toRegionWithStartDate:(id)arg2 andEndDate:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) PLTimer *periodicCurrentTime; // @synthesize periodicCurrentTime=_periodicCurrentTime;
 @property int offsetHistoryHead; // @synthesize offsetHistoryHead=_offsetHistoryHead;
 @property(retain) NSMutableArray *offsetHistory; // @synthesize offsetHistory=_offsetHistory;
@@ -27,7 +28,6 @@
 @property double tooFarInPastDistance; // @synthesize tooFarInPastDistance=_tooFarInPastDistance;
 @property double tooFarInFutureDistance; // @synthesize tooFarInFutureDistance=_tooFarInFutureDistance;
 @property(retain) NSMutableDictionary *timeChangeBlocks; // @synthesize timeChangeBlocks=_timeChangeBlocks;
-- (void).cxx_destruct;
 - (void)notifyTimeChange:(double)arg1;
 - (void)unregisterForTimeChangedCallbackWithIdentifier:(id)arg1;
 - (void)registerForTimeChangedCallbackWithIdentifier:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

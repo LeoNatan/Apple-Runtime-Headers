@@ -21,6 +21,7 @@
 }
 
 + (struct CGSize)sizeWithUserNameDescription:(id)arg1 origin:(id)arg2 showsBiometricPrompt:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *stackViewTrailingConstraint; // @synthesize stackViewTrailingConstraint=_stackViewTrailingConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *stackViewLeadingConstraint; // @synthesize stackViewLeadingConstraint=_stackViewLeadingConstraint;
 @property(nonatomic) __weak NSView *trailingView; // @synthesize trailingView=_trailingView;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak NSTextField *userNameDescriptionLabel; // @synthesize userNameDescriptionLabel=_userNameDescriptionLabel;
 @property(copy, nonatomic) NSString *credentialOriginDescription; // @synthesize credentialOriginDescription=_credentialOriginDescription;
 @property(copy, nonatomic) NSString *userNameDescription; // @synthesize userNameDescription=_userNameDescription;
-- (void).cxx_destruct;
 - (void)_setUpBiometricPrompt;
 - (void)performBiometricPromptShakeAnimation;
 - (void)_updateBiometricPrompt;

@@ -14,17 +14,17 @@
 {
     NSString *_clientID;
     WFOAuth2Credential *_credential;
-    NSURLSession *_session;
     NSURL *_baseURL;
+    NSURLSession *_session;
     NSMapTable *_progressTable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *progressTable; // @synthesize progressTable=_progressTable;
-@property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
+@property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) WFOAuth2Credential *credential; // @synthesize credential=_credential;
 @property(readonly, copy, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)sendRequest:(id)arg1 progress:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getAlbumLinkFromID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -19,12 +19,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool deferredDismissal; // @synthesize deferredDismissal=_deferredDismissal;
 @property(retain, nonatomic) NSMutableArray *deferredPosts; // @synthesize deferredPosts=_deferredPosts;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(nonatomic) __weak id <NCEBulletinsLiaisonPostDelegate> postDelegate; // @synthesize postDelegate=_postDelegate;
 @property(nonatomic) __weak id <NCEBulletinsLiaisonTriggerDelegate> triggerDelegate; // @synthesize triggerDelegate=_triggerDelegate;
-- (void).cxx_destruct;
 - (id)celebrationNameForNotificationName:(struct __CFString *)arg1;
 - (struct __CFString *)darwinNotificationNameForCelebrationName:(id)arg1;
 - (void)registerForDarwinNotifications;

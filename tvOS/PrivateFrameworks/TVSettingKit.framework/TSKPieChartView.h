@@ -16,8 +16,8 @@
     NSArray *_sliceIdentifiers;
 }
 
-@property(readonly, copy, nonatomic) NSArray *sliceIdentifiers; // @synthesize sliceIdentifiers=_sliceIdentifiers;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *sliceIdentifiers; // @synthesize sliceIdentifiers=_sliceIdentifiers;
 - (void)_updateSlices:(_Bool)arg1;
 - (void)updateValues:(id)arg1 forSlicesWithIdentifiers:(id)arg2 animated:(_Bool)arg3;
 - (id)initWithFrame:(struct CGRect)arg1 sliceIdentifiers:(id)arg2 colors:(id)arg3 values:(id)arg4;

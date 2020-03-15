@@ -28,11 +28,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)nativeSafariSearchForEvent:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *_currentURL; // @synthesize _currentURL=__currentURL;
 @property(copy, nonatomic) SCRUIElement *_currentFocusedTabOrWindow; // @synthesize _currentFocusedTabOrWindow=__currentFocusedTabOrWindow;
 @property(retain, nonatomic) SCRTextMarkerRange *lastSearchMarkerRangeForElement; // @synthesize lastSearchMarkerRangeForElement=_lastSearchMarkerRangeForElement;
 @property(retain, nonatomic) SCRTextMarkerRange *lastSearchSelectedMarkerRange; // @synthesize lastSearchSelectedMarkerRange=_lastSearchSelectedMarkerRange;
-- (void).cxx_destruct;
 - (void)_didFinishShowingModalDialog:(id)arg1;
 - (void)_didShowModalDialog:(id)arg1;
 - (id)_findDialog;

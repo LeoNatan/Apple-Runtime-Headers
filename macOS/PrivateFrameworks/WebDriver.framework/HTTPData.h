@@ -14,9 +14,9 @@
     NSData *data;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *data; // @synthesize data;
 @property unsigned long long length; // @synthesize length;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

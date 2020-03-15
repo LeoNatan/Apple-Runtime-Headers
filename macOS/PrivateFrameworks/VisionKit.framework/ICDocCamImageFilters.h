@@ -10,21 +10,21 @@
 {
 }
 
-+ (struct NSImage *)perspectiveCorrectedImageFromImage:(struct NSImage *)arg1 normalizedImageQuad:(id)arg2;
-+ (struct NSImage *)perspectiveCorrectedImageFromImage:(struct NSImage *)arg1 imageQuad:(id)arg2;
++ (id)perspectiveCorrectedImageFromImage:(id)arg1 normalizedImageQuad:(id)arg2;
++ (id)perspectiveCorrectedImageFromImage:(id)arg1 imageQuad:(id)arg2;
 + (id)perspectiveCorrectedCIImageFromCIImage:(id)arg1 imageQuad:(id)arg2;
-+ (struct NSImage *)imageWithRGBColorspaceFromImage:(struct NSImage *)arg1;
-+ (struct NSImage *)filteredImage:(struct NSImage *)arg1 orientation:(long long)arg2 imageFilterType:(short)arg3;
-+ (struct NSImage *)filteredImage:(struct NSImage *)arg1 imageFilterType:(short)arg2;
-+ (struct NSImage *)grayscaleDocument:(struct NSImage *)arg1 orientation:(long long)arg2;
-+ (struct NSImage *)colorDocument:(struct NSImage *)arg1 orientation:(long long)arg2;
-+ (struct NSImage *)bradleyAdaptiveThresholdWithBlur:(struct NSImage *)arg1 orientation:(long long)arg2;
-+ (struct NSImage *)bradleyAdaptiveThreshold:(struct NSImage *)arg1 orientation:(long long)arg2;
-+ (struct NSImage *)grayscale:(struct NSImage *)arg1 orientation:(long long)arg2;
-+ (struct NSImage *)whiteboardAndSaturation:(struct NSImage *)arg1 orientation:(long long)arg2;
-+ (struct NSImage *)whiteboardFilter:(struct NSImage *)arg1 orientation:(long long)arg2;
-+ (struct NSImage *)convertImageToGrayScale:(struct NSImage *)arg1;
-+ (struct NSImage *)bradleyAdaptiveThreshold:(struct NSImage *)arg1;
++ (id)imageWithRGBColorspaceFromImage:(id)arg1;
++ (id)filteredImage:(id)arg1 orientation:(long long)arg2 imageFilterType:(short)arg3;
++ (id)filteredImage:(id)arg1 imageFilterType:(short)arg2;
++ (id)grayscaleDocument:(id)arg1 orientation:(long long)arg2;
++ (id)colorDocument:(id)arg1 orientation:(long long)arg2;
++ (id)bradleyAdaptiveThresholdWithBlur:(id)arg1 orientation:(long long)arg2;
++ (id)bradleyAdaptiveThreshold:(id)arg1 orientation:(long long)arg2;
++ (id)grayscale:(id)arg1 orientation:(long long)arg2;
++ (id)whiteboardAndSaturation:(id)arg1 orientation:(long long)arg2;
++ (id)whiteboardFilter:(id)arg1 orientation:(long long)arg2;
++ (id)convertImageToGrayScale:(id)arg1;
++ (id)bradleyAdaptiveThreshold:(id)arg1;
 + (id)sharedCoreImageContext;
 + (id)nonLocalizedImageFilterNameForType:(short)arg1;
 + (id)localizedImageFilterNameForType:(short)arg1;

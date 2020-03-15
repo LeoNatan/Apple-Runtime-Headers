@@ -35,6 +35,7 @@
 }
 
 + (id)interestedDragTypes;
+- (void).cxx_destruct;
 @property(retain) NSArray *weekDayTitles; // @synthesize weekDayTitles=_weekDayTitles;
 @property long long widthPerDay; // @synthesize widthPerDay=_widthPerDay;
 @property(retain) NSCalendar *calendar; // @synthesize calendar=_calendar;
@@ -52,7 +53,6 @@
 @property(retain) CalUIMiniMonthViewFormatter *formatter; // @synthesize formatter=_formatter;
 @property __weak id <CalUIMiniMonthViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSDate *month; // @synthesize month=_month;
-- (void).cxx_destruct;
 - (id)axColumnCount;
 - (id)axRowCount;
 - (struct CGRect)axFrame;

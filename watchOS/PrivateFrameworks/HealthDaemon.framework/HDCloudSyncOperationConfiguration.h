@@ -19,6 +19,7 @@
     HDAssertion *_accessibilityAssertion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDAssertion *accessibilityAssertion; // @synthesize accessibilityAssertion=_accessibilityAssertion;
 @property(readonly, copy, nonatomic) NSUUID *syncIdentifier; // @synthesize syncIdentifier=_syncIdentifier;
 @property(readonly, nonatomic) int reason; // @synthesize reason=_reason;
@@ -26,7 +27,6 @@
 @property(readonly, copy, nonatomic) NSString *syncContainerPrefix; // @synthesize syncContainerPrefix=_syncContainerPrefix;
 @property(readonly, nonatomic) CKOperationGroup *operationGroup; // @synthesize operationGroup=_operationGroup;
 @property(readonly, nonatomic) HDCloudSyncRepository *repository; // @synthesize repository=_repository;
-- (void).cxx_destruct;
 - (id)descriptionForSignpost;
 - (id)databaseForContainer:(id)arg1;
 - (id)pushStoreWithIdentifier:(id)arg1 container:(id)arg2 error:(id *)arg3;

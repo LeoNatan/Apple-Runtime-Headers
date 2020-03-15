@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (double)minimumWidthForLabelItem;
 + (void)setFontValues;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKRichText *richText; // @synthesize richText=_richText;
 @property(retain, nonatomic) NUISizeCache *sizeCache; // @synthesize sizeCache;
 @property(nonatomic) double horizontalCompressionResistance; // @synthesize horizontalCompressionResistance;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long row; // @synthesize row;
 @property(nonatomic) struct _NSRange columnRange; // @synthesize columnRange;
 @property(nonatomic) struct CGRect frame;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)attributedString;
 - (struct CGSize)sizeForTargetSize:(struct CGSize)arg1;

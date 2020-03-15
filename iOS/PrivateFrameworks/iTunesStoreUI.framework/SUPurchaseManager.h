@@ -7,16 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <iTunesStoreUI/SSDownloadManagerObserver-Protocol.h>
+#import <iTunesStoreUI/SSEventMonitorDelegate-Protocol.h>
 #import <iTunesStoreUI/SSPurchaseRequestDelegate-Protocol.h>
 #import <iTunesStoreUI/SSPurchaseRequestDelegatePrivate-Protocol.h>
 #import <iTunesStoreUI/SUContinuationDelegate-Protocol.h>
 
-@class NSDictionary, NSMutableArray, NSMutableSet, NSNumber, NSSet, NSString, SUQueueSessionManager;
+@class NSDictionary, NSMutableArray, NSMutableSet, NSNumber, NSSet, NSString, SSEventMonitor, SUQueueSessionManager;
 @protocol SUPurchaseManagerDelegate;
 
-@interface SUPurchaseManager : NSObject <SSPurchaseRequestDelegatePrivate, SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate>
+@interface SUPurchaseManager : NSObject <SSPurchaseRequestDelegatePrivate, SSEventMonitorDelegate, SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate>
 {
     id <SUPurchaseManagerDelegate> _delegate;
+    SSEventMonitor *_eventMonitor;
     NSMutableSet *_futurePurchases;
     NSMutableSet *_inflightContinuations;
     NSMutableArray *_observedDownloadManagers;
@@ -61,6 +63,7 @@
 - (void)continuationFinished:(id)arg1;
 - (void)continuation:(id)arg1 failedWithError:(id)arg2;
 - (void)_dialogDidFinish:(id)arg1;
+- (void)eventMonitor:(id)arg1 receivedEventWithName:(id)arg2 userInfo:(id)arg3;
 - (void)removePurchasedItemIdentifier:(unsigned long long)arg1;
 @property(readonly, nonatomic) long long numberOfPendingPurchases;
 - (id)newPurchaseBatchForItems:(id)arg1 offers:(id)arg2;

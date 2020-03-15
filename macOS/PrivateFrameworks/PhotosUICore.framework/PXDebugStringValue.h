@@ -14,9 +14,9 @@
     NSString *_string;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
 - (unsigned long long)highlightStyle;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1 highlightedScore:(double)arg2;
 - (id)initWithLabel:(id)arg1 doubleValue:(double)arg2;
 - (id)initWithLabel:(id)arg1 integerValue:(long long)arg2;

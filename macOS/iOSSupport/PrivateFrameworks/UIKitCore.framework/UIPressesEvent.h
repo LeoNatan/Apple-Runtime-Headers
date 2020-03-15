@@ -15,8 +15,8 @@
     UIPress *_triggeringPhysicalButton;
 }
 
-@property(retain, nonatomic) UIPress *_triggeringPhysicalButton; // @synthesize _triggeringPhysicalButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIPress *_triggeringPhysicalButton; // @synthesize _triggeringPhysicalButton;
 - (BOOL)_sendEventToGestureRecognizer:(id)arg1;
 - (id)_terminalRegistrantsForPressType:(long long)arg1;
 - (void)_unregisterForTerminalEvent:(id)arg1;

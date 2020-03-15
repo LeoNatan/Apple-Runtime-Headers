@@ -15,7 +15,8 @@
     BOOL _showCMMInvitations;
     BOOL _showEditSuggestions;
     BOOL _showRecentInterestSuggestions;
-    BOOL _showQuestions;
+    BOOL _showPeopleQuestions;
+    BOOL _showSurveyQuestions;
     BOOL _showFooter;
     BOOL _showSampleSuggestionGadgets;
     BOOL _showVerticalSampleGadgets;
@@ -25,7 +26,6 @@
     BOOL _allowGIFPlayback;
     BOOL _useMockData;
     BOOL _forceDisplayReportJunk;
-    BOOL _navigateToActivityPost;
     BOOL _forcePortraitBias;
     BOOL _useSquareSharedAlbumActivity;
     BOOL _disableSharedAlbumTopMargin;
@@ -48,7 +48,6 @@
 @property(nonatomic) BOOL disableSharedAlbumTopMargin; // @synthesize disableSharedAlbumTopMargin=_disableSharedAlbumTopMargin;
 @property(nonatomic) BOOL useSquareSharedAlbumActivity; // @synthesize useSquareSharedAlbumActivity=_useSquareSharedAlbumActivity;
 @property(nonatomic) BOOL forcePortraitBias; // @synthesize forcePortraitBias=_forcePortraitBias;
-@property(nonatomic) BOOL navigateToActivityPost; // @synthesize navigateToActivityPost=_navigateToActivityPost;
 @property(nonatomic) BOOL forceDisplayReportJunk; // @synthesize forceDisplayReportJunk=_forceDisplayReportJunk;
 @property(nonatomic) BOOL useMockData; // @synthesize useMockData=_useMockData;
 @property(nonatomic) double minimumVisibilityForVideoPlayback; // @synthesize minimumVisibilityForVideoPlayback=_minimumVisibilityForVideoPlayback;
@@ -60,7 +59,8 @@
 @property(nonatomic) BOOL showVerticalSampleGadgets; // @synthesize showVerticalSampleGadgets=_showVerticalSampleGadgets;
 @property(nonatomic) BOOL showSampleSuggestionGadgets; // @synthesize showSampleSuggestionGadgets=_showSampleSuggestionGadgets;
 @property(nonatomic) BOOL showFooter; // @synthesize showFooter=_showFooter;
-@property(nonatomic) BOOL showQuestions; // @synthesize showQuestions=_showQuestions;
+@property(nonatomic) BOOL showSurveyQuestions; // @synthesize showSurveyQuestions=_showSurveyQuestions;
+@property(nonatomic) BOOL showPeopleQuestions; // @synthesize showPeopleQuestions=_showPeopleQuestions;
 @property(nonatomic) BOOL showRecentInterestSuggestions; // @synthesize showRecentInterestSuggestions=_showRecentInterestSuggestions;
 @property(nonatomic) BOOL showEditSuggestions; // @synthesize showEditSuggestions=_showEditSuggestions;
 @property(nonatomic) BOOL showCMMInvitations; // @synthesize showCMMInvitations=_showCMMInvitations;

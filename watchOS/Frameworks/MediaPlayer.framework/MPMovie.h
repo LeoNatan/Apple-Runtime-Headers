@@ -25,8 +25,8 @@
 + (id)movieWithPlayerItem:(id)arg1 error:(id *)arg2;
 + (id)movieWithAsset:(id)arg1 error:(id *)arg2;
 + (id)movieWithURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) MPAVItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MPAVItem *item; // @synthesize item=_item;
 - (void)_determineMediaType;
 - (void)_typeAvailableNotification:(id)arg1;
 - (void)_naturalSizeAvailableNotification:(id)arg1;

@@ -19,12 +19,12 @@
     id <HPDAuthClientProtocol> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HPDAuthenticationClient *authClient; // @synthesize authClient=_authClient;
 @property __weak id <HPDAuthClientProtocol> delegate; // @synthesize delegate=_delegate;
 @property long long resourceType; // @synthesize resourceType=_resourceType;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(copy) NSData *trustExceptions; // @synthesize trustExceptions=_trustExceptions;
-- (void).cxx_destruct;
 - (id)envConfigClient;
 - (void)authenticateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_resolveServerTrustChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

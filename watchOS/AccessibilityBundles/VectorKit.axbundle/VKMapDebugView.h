@@ -22,6 +22,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXVKExplorationVertexElement *currentExplorationElement; // @synthesize currentExplorationElement=_currentExplorationElement;
 @property(retain, nonatomic) NSMutableArray *roadPoints; // @synthesize roadPoints=_roadPoints;
 @property(retain, nonatomic) NSMutableArray *roadPaths; // @synthesize roadPaths=_roadPaths;
@@ -31,7 +32,6 @@
 @property(nonatomic) struct CGPoint currentPoint; // @synthesize currentPoint=_currentPoint;
 @property(retain, nonatomic) NSMutableArray *buildingPaths; // @synthesize buildingPaths=_buildingPaths;
 @property(copy, nonatomic) NSString *debugMessage; // @synthesize debugMessage=_debugMessage;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;

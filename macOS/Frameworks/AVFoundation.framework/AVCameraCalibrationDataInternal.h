@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData;
+@class NSData, NSDictionary;
 
 __attribute__((visibility("hidden")))
 @interface AVCameraCalibrationDataInternal : NSObject
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint lensDistortionCenter;
     NSData *lensDistortionLookupTable;
     NSData *inverseLensDistortionLookupTable;
+    NSDictionary *cameraCalibrationDataDictionary;
 }
 
 @end

@@ -39,11 +39,11 @@
 + (id)deviceWithHandle:(id)arg1;
 + (id)deviceWithDestination:(id)arg1;
 + (id)destinationForDevice:(id)arg1 service:(id)arg2;
+- (void).cxx_destruct;
 @property(getter=isCloudTracked) _Bool cloudTracked; // @synthesize cloudTracked=_cloudTracked;
 @property(getter=isLocallyTracked) _Bool locallyTracked; // @synthesize locallyTracked=_locallyTracked;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSUUID *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isBackingStorageEqual:(id)arg1;
 - (id)modelBackedObjects;
 - (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;

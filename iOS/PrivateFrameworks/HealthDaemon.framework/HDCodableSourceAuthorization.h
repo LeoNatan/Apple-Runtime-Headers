@@ -19,11 +19,11 @@
 }
 
 + (Class)authorizationsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableSource *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSData *backupUUID; // @synthesize backupUUID=_backupUUID;
 @property(retain, nonatomic) NSMutableArray *authorizations; // @synthesize authorizations=_authorizations;
 @property(retain, nonatomic) NSData *sourceUUID; // @synthesize sourceUUID=_sourceUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

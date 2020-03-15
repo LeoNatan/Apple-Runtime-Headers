@@ -22,12 +22,12 @@
 }
 
 + (id)unspecifiedConfiguration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUIFontDescription *fontDescription; // @synthesize fontDescription=_fontDescription;
 @property(nonatomic) long long scale; // @synthesize scale=_scale;
 @property(nonatomic) long long weight; // @synthesize weight=_weight;
 @property(nonatomic) double pointSize; // @synthesize pointSize=_pointSize;
 @property(nonatomic) long long configurationType; // @synthesize configurationType=_configurationType;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)transformAfterMarshalling;

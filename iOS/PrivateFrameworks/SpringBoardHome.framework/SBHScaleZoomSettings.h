@@ -18,12 +18,12 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFAnimationSettings *iconGridFadeSettings; // @synthesize iconGridFadeSettings=_iconGridFadeSettings;
 @property(nonatomic) _Bool fadesIconGrid; // @synthesize fadesIconGrid=_fadesIconGrid;
 @property(retain, nonatomic) SBFAnimationSettings *crossfadeSettings; // @synthesize crossfadeSettings=_crossfadeSettings;
 @property(nonatomic) _Bool crossfadeWithZoom; // @synthesize crossfadeWithZoom=_crossfadeWithZoom;
 @property(retain, nonatomic) SBFAnimationSettings *outerFolderFadeSettings; // @synthesize outerFolderFadeSettings=_outerFolderFadeSettings;
-- (void).cxx_destruct;
 - (id)effectiveCrossfadeAnimationSettings;
 - (void)setDefaultValues;
 

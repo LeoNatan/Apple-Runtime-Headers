@@ -26,12 +26,12 @@
 + (id)tapBackFilter;
 + (id)bigEmojiFilter;
 + (id)_monochromeDimmingFilterWithType:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CKFullScreenEffectDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CKMessagePartChatItem *triggeringChatItem; // @synthesize triggeringChatItem=_triggeringChatItem;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) _Bool triggeredByResponseKit; // @synthesize triggeredByResponseKit=_triggeredByResponseKit;
 @property(nonatomic) BOOL messageOrientation; // @synthesize messageOrientation;
-- (void).cxx_destruct;
 - (_Bool)effectIsDark;
 - (_Bool)_supportsSoundEffects;
 - (void)_audioSessionOptionsWillChange:(id)arg1;

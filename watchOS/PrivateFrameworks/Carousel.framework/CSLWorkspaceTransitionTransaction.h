@@ -15,9 +15,9 @@
     CSLPIBacklightAssertion *_backlightAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLPIBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
 @property(readonly, nonatomic) CSLWorkspaceTransitionRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)_customizedDescriptionProperties;
 - (_Bool)isReturningToClockOrLauncher;
 - (_Bool)isReturningToCarousel;

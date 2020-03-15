@@ -42,6 +42,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long listenAfterSpeakingOriginalRequestSource; // @synthesize listenAfterSpeakingOriginalRequestSource=_listenAfterSpeakingOriginalRequestSource;
 @property(nonatomic) BOOL forListenAfterSpeaking; // @synthesize forListenAfterSpeaking=_forListenAfterSpeaking;
 @property(nonatomic) BOOL releaseAudioSessionOnRecordingCompletion; // @synthesize releaseAudioSessionOnRecordingCompletion=_releaseAudioSessionOnRecordingCompletion;
@@ -68,7 +69,6 @@
 @property(retain, nonatomic) AFBulletin *bulletin; // @synthesize bulletin=_bulletin;
 @property(copy, nonatomic) NSString *activationDeviceIdentifier; // @synthesize activationDeviceIdentifier=_activationDeviceIdentifier;
 @property(nonatomic) long long requestSource; // @synthesize requestSource=_requestSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isForStark) BOOL forStark;
 @property(readonly, nonatomic, getter=isForSpeechRequest) BOOL forSpeechRequest;
 - (id)description;

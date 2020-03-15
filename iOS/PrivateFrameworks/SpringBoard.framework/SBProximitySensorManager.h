@@ -24,11 +24,11 @@
     SpringBoard *_interfaceOrientationProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_interfaceOrientationProvider, setter=_setInterfaceOrientationProvider:) SpringBoard *interfaceOrientationProvider; // @synthesize interfaceOrientationProvider=_interfaceOrientationProvider;
 @property(nonatomic, getter=isProximityDetectionPermitted, setter=_setProximityDetectionPermitted:) _Bool proximityDetectionPermitted; // @synthesize proximityDetectionPermitted=_proximityDetectionPermitted;
 @property(nonatomic, getter=isProximityDetectionEnabled, setter=_setProximityDetectionEnabled:) _Bool proximityDetectionEnabled; // @synthesize proximityDetectionEnabled=_proximityDetectionEnabled;
 @property(nonatomic, getter=isObjectInProximity, setter=_setObjectInProximity:) _Bool objectInProximity; // @synthesize objectInProximity=_objectInProximity;
-- (void).cxx_destruct;
 - (void)_proximityDidChange:(id)arg1;
 - (void)_updateProxState;
 - (_Bool)_clientsWantDetectionEnabled;

@@ -16,10 +16,10 @@
 }
 
 + (id)appearanceWithBackgroundStyle:(long long)arg1 selected:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain) NSColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(retain) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain) NSColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
-- (void).cxx_destruct;
 
 @end
 

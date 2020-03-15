@@ -25,6 +25,7 @@
     MCBook *_previousVersion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MCBook *previousVersion; // @synthesize previousVersion=_previousVersion;
 @property(retain, nonatomic) NSNumber *downloadIdentifier; // @synthesize downloadIdentifier=_downloadIdentifier;
 @property(retain, nonatomic) NSString *state; // @synthesize state=_state;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *kind; // @synthesize kind=_kind;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *author; // @synthesize author=_author;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateBookAttributesByCopyingFromBook:(id)arg1;
 - (id)friendlyName;

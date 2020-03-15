@@ -16,10 +16,10 @@
 }
 
 + (id)clientWithConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestedUpdates; // @synthesize requestedUpdates=_requestedUpdates;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (BOOL)sendMessage:(id)arg1 errorBlock:(CDUnknownBlockType)arg2;
 - (BOOL)wantsUpdatesForIdentifier:(unsigned long long)arg1;
 - (void)setWantsUpdates:(BOOL)arg1 forIdentifier:(unsigned long long)arg2;

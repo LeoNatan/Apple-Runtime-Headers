@@ -18,8 +18,8 @@
     WBSPerSitePreference *_readerPreference;
 }
 
-@property(readonly, nonatomic) WBSPerSitePreference *readerPreference; // @synthesize readerPreference=_readerPreference;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WBSPerSitePreference *readerPreference; // @synthesize readerPreference=_readerPreference;
 - (void)_submitOptInOutStateForAnalyticsGivenAutomaticReaderIsNotGloballyEnabled;
 - (void)submitOptInOutStateForAnalytics;
 - (void)setAutomaticReaderEnabledByDefault:(_Bool)arg1 removingExistingPreferencesForSites:(_Bool)arg2;

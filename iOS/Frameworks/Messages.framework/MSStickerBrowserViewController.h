@@ -19,11 +19,11 @@
     struct CGRect _initialFrameBeforeAppearance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(readonly, nonatomic) long long stickerSize; // @synthesize stickerSize=_stickerSize;
 @property(retain, nonatomic) MSStickerBrowserView *stickerBrowserView; // @synthesize stickerBrowserView=_stickerBrowserView;
 @property(nonatomic) struct CGRect initialFrameBeforeAppearance; // @synthesize initialFrameBeforeAppearance=_initialFrameBeforeAppearance;
-- (void).cxx_destruct;
 - (void)disableUserInteraction;
 - (void)enableUserInteraction;
 - (void)updateSnapshotWithCompletionBlock:(CDUnknownBlockType)arg1;

@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_constraintsForTitleLabelAndSiriButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool siriButtonSelected; // @synthesize siriButtonSelected=_siriButtonSelected;
 @property(retain) NSMutableArray *constraintsForTitleLabelAndSiriButton; // @synthesize constraintsForTitleLabelAndSiriButton=_constraintsForTitleLabelAndSiriButton;
 @property(retain) NSMutableArray *constraintsForTitleLabel; // @synthesize constraintsForTitleLabel=_constraintsForTitleLabel;
 @property(retain) UIButton *siriButton; // @synthesize siriButton=_siriButton;
 @property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) _Bool siriButtonEnabled; // @synthesize siriButtonEnabled=_siriButtonEnabled;
-- (void).cxx_destruct;
 - (void)stateUpdated;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)choose;

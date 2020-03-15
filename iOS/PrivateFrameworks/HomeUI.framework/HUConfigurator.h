@@ -17,9 +17,9 @@
     id <HUConfiguratorDelegate> _configuratorDelegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *displayedViewControllers; // @synthesize displayedViewControllers=_displayedViewControllers;
 @property(nonatomic) __weak id <HUConfiguratorDelegate> configuratorDelegate; // @synthesize configuratorDelegate=_configuratorDelegate;
-- (void).cxx_destruct;
 - (void)_removeDisplayedViewController;
 - (void)_addViewControllerToDisplay:(id)arg1;
 - (id)_nextViewControllerForResults:(id)arg1;

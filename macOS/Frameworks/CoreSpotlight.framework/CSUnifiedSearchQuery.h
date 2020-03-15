@@ -13,8 +13,8 @@
     CSSearchQuery *_csQuery;
 }
 
-@property(retain, nonatomic) CSSearchQuery *csQuery; // @synthesize csQuery=_csQuery;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSSearchQuery *csQuery; // @synthesize csQuery=_csQuery;
 - (void)cancel;
 - (void)start;
 - (void)setCompletionHandler:(CDUnknownBlockType)arg1;

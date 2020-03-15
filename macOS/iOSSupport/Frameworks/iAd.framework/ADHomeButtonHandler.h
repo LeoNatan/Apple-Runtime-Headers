@@ -12,8 +12,8 @@
 }
 
 + (id)handlerWithCompletion:(CDUnknownBlockType)arg1;
-@property(copy, nonatomic) CDUnknownBlockType homeButtonHandlerCallback; // @synthesize homeButtonHandlerCallback=_homeButtonHandlerCallback;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType homeButtonHandlerCallback; // @synthesize homeButtonHandlerCallback=_homeButtonHandlerCallback;
 - (void)stopConsumingHardwarePresses;
 - (void)startConsumingHardwarePresses:(CDUnknownBlockType)arg1;
 - (id)initWithCompletion:(CDUnknownBlockType)arg1;

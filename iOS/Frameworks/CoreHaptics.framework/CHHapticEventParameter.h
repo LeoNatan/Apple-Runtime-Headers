@@ -14,9 +14,9 @@
     float _value;
 }
 
+- (void).cxx_destruct;
 @property float value; // @synthesize value=_value;
 @property(readonly) NSString *parameterID; // @synthesize parameterID=_param;
-- (void).cxx_destruct;
 - (id)initWithParameterID:(id)arg1 value:(float)arg2;
 - (id)init;
 

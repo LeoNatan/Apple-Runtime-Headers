@@ -21,6 +21,7 @@
 }
 
 + (id)alarmOccurrenceWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 ownerURI:(id)arg5 fireDate:(id)arg6 externalID:(id)arg7 acknowledgedDate:(id)arg8;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *acknowledgedDate; // @synthesize acknowledgedDate=_acknowledgedDate;
 @property(readonly, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(readonly, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSDate *ownerDate; // @synthesize ownerDate=_ownerDate;
 @property(readonly, nonatomic) CADObjectID *ownerID; // @synthesize ownerID=_ownerID;
 @property(readonly, nonatomic) CADObjectID *alarmID; // @synthesize alarmID=_alarmID;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

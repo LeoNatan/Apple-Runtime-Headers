@@ -15,9 +15,9 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(nonatomic) __weak EKUIGadget *compositeParent; // @synthesize compositeParent=_compositeParent;
 @property(retain) EKUICalendarPopUpButton *calendarPicker; // @synthesize calendarPicker=_calendarPicker;
-- (void).cxx_destruct;
 - (double)horizontalPadding;
 - (void)calendarSelected:(id)arg1;
 - (BOOL)shouldDisplay;

@@ -29,6 +29,7 @@
     NoteDateLabel *_dateLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool updatedTitleRange; // @synthesize updatedTitleRange=_updatedTitleRange;
 @property(retain, nonatomic) NoteDateLabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) NSArray *horizontalConstraints; // @synthesize horizontalConstraints=_horizontalConstraints;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool containsCJK; // @synthesize containsCJK=_containsCJK;
 @property(nonatomic) __weak id <NoteContentLayerAttachmentPresentationDelegate> attachmentPresentationDelegate; // @synthesize attachmentPresentationDelegate=_attachmentPresentationDelegate;
 @property(nonatomic) __weak id <NoteContentLayerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)processMapAttachmentItemProvider:(id)arg1;
 - (void)processAttachmentItemProviders:(id)arg1;
 - (void)chosenUTI:(id *)arg1 andChosenMIMEType:(id *)arg2 forItemProvider:(id)arg3;

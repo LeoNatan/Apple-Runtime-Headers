@@ -24,6 +24,7 @@
 }
 
 + (id)_asyncOperationQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isAutoArchiveAttachment; // @synthesize isAutoArchiveAttachment=_isAutoArchiveAttachment;
 @property(readonly, nonatomic) BOOL isMailDropImageThumbnail; // @synthesize isMailDropImageThumbnail=_isMailDropImageThumbnail;
 @property(readonly, nonatomic) BOOL isMailDropImageArchive; // @synthesize isMailDropImageArchive=_isMailDropImageArchive;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) NSString *mimePartNumber; // @synthesize mimePartNumber=_mimePartNumber;
 @property(readonly, nonatomic) long long messageID; // @synthesize messageID=_messageID;
 @property(readonly, nonatomic) id <MCRemoteAttachmentDataSource> remoteDataSource; // @synthesize remoteDataSource=_remoteDataSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isDirectory;
 @property(readonly, nonatomic) BOOL canResultsBeCached;
 @property(readonly, nonatomic) BOOL dataIsLocallyAvailable;

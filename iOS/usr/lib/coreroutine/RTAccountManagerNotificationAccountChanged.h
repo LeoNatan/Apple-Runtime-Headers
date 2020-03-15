@@ -14,9 +14,9 @@
     RTAccount *_oldAccount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTAccount *oldAccount; // @synthesize oldAccount=_oldAccount;
 @property(readonly, nonatomic) RTAccount *latestAccount; // @synthesize latestAccount=_latestAccount;
-- (void).cxx_destruct;
 - (id)initWithLatestAccount:(id)arg1 oldAccount:(id)arg2;
 - (id)init;
 

@@ -19,20 +19,16 @@
     UIBarButtonItem *_plusButtonItem;
 }
 
++ (id)_supportedActionsByKeyCommands;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *plusButtonItem; // @synthesize plusButtonItem=_plusButtonItem;
 @property(retain, nonatomic) PUSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 @property(retain, nonatomic) UIBarButtonItem *navigationDisplayModeButtonItem; // @synthesize navigationDisplayModeButtonItem=_navigationDisplayModeButtonItem;
-- (void).cxx_destruct;
-- (void)_pushViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handlePlusButtonLongPress:(id)arg1;
 - (void)_handlePlusButton:(id)arg1;
-- (void)_presentNewActionAlertControllerIncludeNewFolderAction:(_Bool)arg1;
-- (id)_newSharedAlbumActionWithSpec:(id)arg1;
-- (id)_newFolderActionWithSpec:(id)arg1;
-- (id)_newSmartAlbumActionWithSpec:(id)arg1;
-- (id)_newAlbumActionWithSpec:(id)arg1;
 - (void)_handleDoneButton:(id)arg1;
 - (void)_updateNavigationBar;
+- (void)pushViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)selectNavigationListItem:(id)arg1 hintIndex:(long long)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) PXNavigationListDataSectionManager *navigationListDataSourceManager; // @synthesize navigationListDataSourceManager=_navigationListDataSourceManager;
 @property(readonly, nonatomic) NSString *navigationIdentifier;
@@ -49,6 +45,18 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithLayout:(id)arg1 dataSourceManager:(id)arg2;
+- (void)_performKeyCommand:(id)arg1;
+- (id)keyCommands;
+- (id)_newSharedAlbumActionWithSpec:(id)arg1;
+- (id)_newFolderActionWithSpec:(id)arg1;
+- (id)_newSmartAlbumActionWithSpec:(id)arg1;
+- (id)_newAlbumActionWithSpec:(id)arg1;
+- (void)presentNewActionAlertControllerWithOptions:(unsigned long long)arg1;
+- (void)_performCreateNewSmartAlbum;
+- (void)_performCreateNewFolder;
+- (void)_performCreateNewSharedAlbum;
+- (void)_performCreateNewAlbum;
+- (void)_performActionOfActionType:(long long)arg1;
 - (id)px_gridPresentation;
 
 // Remaining properties

@@ -17,12 +17,12 @@
     HKInteractiveChartDataFormatter *_specifiedValueFormatter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKInteractiveChartDataFormatter *specifiedValueFormatter; // @synthesize specifiedValueFormatter=_specifiedValueFormatter;
 @property(readonly, nonatomic) NSString *specifiedUnitName; // @synthesize specifiedUnitName=_specifiedUnitName;
 @property(readonly, nonatomic) NSString *specifiedDisplayName; // @synthesize specifiedDisplayName=_specifiedDisplayName;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) HKGraphSeries *graphSeries; // @synthesize graphSeries=_graphSeries;
-- (void).cxx_destruct;
 - (long long)_internalDisplayTypeIdentifier;
 - (id)description;
 - (id)hk_interactiveChartsFormatterForTimeScope:(long long)arg1;

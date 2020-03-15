@@ -13,8 +13,8 @@
     NSString *_emailAddress;
 }
 
-@property(copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 
 @end

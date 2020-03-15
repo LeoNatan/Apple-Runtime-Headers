@@ -22,9 +22,10 @@
 
 + (id)attachmentsFileURL:(id)arg1 sectionID:(id)arg2;
 + (id)_attachmentsFileURL:(id)arg1;
++ (id)_sanitizeFilename:(id)arg1;
 + (id)_attachmentsFileURLFromFullPath:(id)arg1;
-@property(nonatomic) __weak id <BLTRemoteCompanionServerClient> client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BLTRemoteCompanionServerClient> client; // @synthesize client=_client;
 - (void)handleHandlePairedDeviceReady:(id)arg1;
 - (void)sendRepliesNow;
 - (void)handleFileURL:(id)arg1 extraMetadata:(id)arg2;

@@ -13,8 +13,8 @@
     REMListChangeItem *_listChangeItem;
 }
 
-@property(retain, nonatomic) REMListChangeItem *listChangeItem; // @synthesize listChangeItem=_listChangeItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMListChangeItem *listChangeItem; // @synthesize listChangeItem=_listChangeItem;
 - (void)removeAllSharees;
 - (void)removeSharee:(id)arg1;
 - (id)addShareeWithPersonNameComponents:(id)arg1 address:(id)arg2 status:(long long)arg3 accessLevel:(long long)arg4;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)_setHiddenForReuse:(_Bool)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+@property(nonatomic) long long focusStyle;
 
 @end
 

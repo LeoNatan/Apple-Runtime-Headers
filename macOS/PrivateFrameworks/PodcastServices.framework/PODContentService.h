@@ -18,9 +18,9 @@
     NSMutableArray *_observers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
-- (void).cxx_destruct;
 - (void)removeContentObserver:(id)arg1;
 - (void)addContentObserver:(id)arg1;
 - (void)withEachObserver:(CDUnknownBlockType)arg1;

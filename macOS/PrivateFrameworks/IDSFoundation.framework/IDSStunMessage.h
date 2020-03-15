@@ -22,12 +22,12 @@
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
 @property(copy, nonatomic) NSData *key; // @synthesize key=_key;
 @property(readonly, nonatomic) NSData *transactionID; // @synthesize transactionID=_transactionID;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)decryptAES128CTRStunAttributes:(id)arg1;
 - (BOOL)initAES128CTR:(id)arg1;
 - (BOOL)read:(char *)arg1 inputLength:(unsigned long long)arg2 internal:(BOOL)arg3;

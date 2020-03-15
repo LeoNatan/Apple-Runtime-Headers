@@ -26,6 +26,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)textProviderWithDate:(id)arg1 units:(unsigned long long)arg2 timeZone:(id)arg3;
 + (id)textProviderWithDate:(id)arg1 units:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long formattingContext; // @synthesize formattingContext=_formattingContext;
 @property(copy, nonatomic) NSString *alternateCalendarLocaleID; // @synthesize alternateCalendarLocaleID=_alternateCalendarLocaleID;
 @property(nonatomic) _Bool narrowStandaloneWeekdayDay; // @synthesize narrowStandaloneWeekdayDay=_narrowStandaloneWeekdayDay;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) unsigned long long calendarUnits; // @synthesize calendarUnits=_calendarUnits;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)_partialDateTemplateSeriesForUnits:(unsigned long long)arg1;
 - (id)_completeDateTemplateSeries;
 - (id)JSONObjectRepresentation;

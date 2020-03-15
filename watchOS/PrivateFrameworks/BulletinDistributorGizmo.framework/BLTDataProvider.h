@@ -30,6 +30,7 @@
     id <BLTBulletinActionResponder> _responseDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <BLTBulletinActionResponder> responseDelegate; // @synthesize responseDelegate=_responseDelegate;
 @property(retain, nonatomic) BBDataProviderProxy *proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) BLTDataProviderConnection *connection; // @synthesize connection=_connection;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSMutableArray *bulletins; // @synthesize bulletins=_bulletins;
 @property(copy, nonatomic) NSString *universalSectionIdentifier; // @synthesize universalSectionIdentifier=_universalSectionIdentifier;
 @property(copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
-- (void).cxx_destruct;
 - (void)_dpqueue_cleanupCachesForBulletin:(id)arg1;
 - (void)_dpqueue_removeAndWithdrawBulletinRequest:(id)arg1;
 - (void)_dpqueue_withdrawBulletinsNotInIdentifierList:(id)arg1;

@@ -16,11 +16,11 @@
     NSEntityDescription *_seenMessageEntity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSEntityDescription *seenMessageEntity; // @synthesize seenMessageEntity=_seenMessageEntity;
 @property(retain, nonatomic) NSEntityDescription *accountEntity; // @synthesize accountEntity=_accountEntity;
 @property(readonly, copy, nonatomic) NSString *persistentStorePath; // @synthesize persistentStorePath=_persistentStorePath;
 @property(readonly, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
-- (void).cxx_destruct;
 - (id)_managedObjectModel;
 - (id)init;
 

@@ -21,9 +21,9 @@
 }
 
 + (id)interactionRecorder;
+- (void).cxx_destruct;
 @property _Bool enforcePrivacy; // @synthesize enforcePrivacy=_enforcePrivacy;
 @property _Bool enforceDataLimits; // @synthesize enforceDataLimits=_enforceDataLimits;
-- (void).cxx_destruct;
 - (unsigned long long)deleteInteractionsWithBundleId:(id)arg1 domainIdentifier:(id)arg2 error:(id *)arg3;
 - (void)deleteInteractionsWithBundleId:(id)arg1 domainIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteInteractionsWithBundleId:(id)arg1 synchronous:(_Bool)arg2 domainIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

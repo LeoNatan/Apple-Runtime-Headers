@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _drawingHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType drawingHandler; // @synthesize drawingHandler=_drawingHandler;
 @property(retain) NSFormatter *formatter; // @synthesize formatter=_formatter;
 @property long long mode; // @synthesize mode=_mode;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)_scrubberDidChangeSelectedIndex:(long long)arg1;
 - (void)_didTriggerScrollGestureRecognizer:(id)arg1;
 @property double increment; // @synthesize increment=_increment;

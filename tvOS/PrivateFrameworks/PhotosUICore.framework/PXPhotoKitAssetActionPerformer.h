@@ -24,10 +24,10 @@
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2 person:(id)arg3;
 + (_Bool)canPerformOnSubsetOfSelection;
 + (_Bool)canPerformWithActionManager:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldSkipUserConfirmation; // @synthesize shouldSkipUserConfirmation=_shouldSkipUserConfirmation;
 @property(retain, nonatomic) PHPerson *person; // @synthesize person=_person;
 @property(retain, nonatomic) PXPhotoKitAssetsDataSourceManager *photoKitDataSourceManager; // @synthesize photoKitDataSourceManager=_photoKitDataSourceManager;
-- (void).cxx_destruct;
 - (id)createPerformerWithClass:(Class)arg1 actionType:(id)arg2;
 @property(readonly, nonatomic) NSDictionary *assetsByAssetCollection; // @synthesize assetsByAssetCollection=_assetsByAssetCollection;
 @property(readonly, nonatomic) NSArray *assets; // @synthesize assets=_assets;

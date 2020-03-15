@@ -14,9 +14,9 @@
     NSMutableDictionary *_bundleIDToDateMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *bundleIDToDateMap; // @synthesize bundleIDToDateMap=_bundleIDToDateMap;
 @property(readonly) NSMutableArray *history; // @synthesize history=_history;
-- (void).cxx_destruct;
 - (void)clearHistoryBeforeDate:(id)arg1;
 - (id)lastActivityDate;
 - (id)lastActivityDateForBundleID:(id)arg1;

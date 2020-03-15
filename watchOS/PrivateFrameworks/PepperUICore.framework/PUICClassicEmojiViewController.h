@@ -19,10 +19,10 @@
     id <PUICRecentEmojiViewDelegate> _emojiViewDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUICRecentEmojiViewDelegate> emojiViewDelegate; // @synthesize emojiViewDelegate=_emojiViewDelegate;
 @property(nonatomic) _Bool withHeader; // @synthesize withHeader=_withHeader;
 @property(copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
-- (void).cxx_destruct;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

@@ -15,7 +15,7 @@
 @class FPItemID, FPSandboxingURLWrapper, NSArray, NSData, NSDate, NSDictionary, NSError, NSFileProviderItemVersion, NSNumber, NSPersonNameComponents, NSProgress, NSSet, NSString, NSURL;
 @protocol NSFileProviderItemFlags;
 
-@interface FPItem : NSObject <NSFileProviderItem_Private, NSFileProviderItemDecorating, NSFileProviderItem, NSCopying, NSSecureCoding>
+@interface FPItem : NSObject <NSFileProviderItemDecorating, NSFileProviderItem_Private, NSFileProviderItem, NSCopying, NSSecureCoding>
 {
     NSProgress *_progress;
     NSArray *_tags;
@@ -37,6 +37,7 @@
     BOOL _topLevelSharedItem;
     BOOL _inPinnedFolder;
     BOOL _pinned;
+    BOOL _isSyncRoot;
     BOOL _recursivelyDownloaded;
     BOOL _dataless;
     BOOL _downloaded;
@@ -66,6 +67,8 @@
     NSString *_fp_parentDomainIdentifier;
     NSURL *_fileURL;
     NSArray *_decorations;
+    NSData *_quarantineBlob;
+    NSString *_symlinkTargetPath;
     NSString *_filename;
     NSString *_fp_appContainerBundleIdentifier;
     NSString *_preformattedOwnerName;
@@ -98,6 +101,7 @@
 + (id)placeholderWithCopyOfExistingItem:(id)arg1 lastUsageUpdatePolicy:(unsigned long long)arg2 underParent:(id)arg3 inProviderDomainID:(id)arg4;
 + (id)generatePlaceholderIdentifierWithOriginalID:(id)arg1;
 + (id)generatePlaceholderIdentifier;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fileSystemFilename; // @synthesize fileSystemFilename=_fileSystemFilename;
 @property(retain, nonatomic) NSData *fsID; // @synthesize fsID=_fsID;
 @property(readonly, nonatomic) NSString *providerID; // @synthesize providerID=_providerID;
@@ -114,7 +118,7 @@
 @property(nonatomic) NSString *placeholdIdentifier; // @synthesize placeholdIdentifier=_placeholdIdentifier;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSString *spotlightSubDomainIdentifier; // @synthesize spotlightSubDomainIdentifier=_spotlightSubDomainIdentifier;
-@property(retain, nonatomic) NSNumber *hasUnresolvedConflicts; // @synthesize hasUnresolvedConflicts=_hasUnresolvedConflicts;
+@property(copy, nonatomic) NSNumber *hasUnresolvedConflicts; // @synthesize hasUnresolvedConflicts=_hasUnresolvedConflicts;
 @property(retain, nonatomic) NSString *formerIdentifier; // @synthesize formerIdentifier=_formerIdentifier;
 @property(retain, nonatomic) NSString *preformattedMostRecentEditorName; // @synthesize preformattedMostRecentEditorName=_preformattedMostRecentEditorName;
 @property(retain, nonatomic) NSString *preformattedOwnerName; // @synthesize preformattedOwnerName=_preformattedOwnerName;
@@ -122,6 +126,10 @@
 @property(nonatomic, getter=isRecursivelyDownloaded) BOOL recursivelyDownloaded; // @synthesize recursivelyDownloaded=_recursivelyDownloaded;
 @property(copy, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
+@property(copy, nonatomic) NSString *symlinkTargetPath; // @synthesize symlinkTargetPath=_symlinkTargetPath;
+@property(nonatomic) BOOL isSyncRoot; // @synthesize isSyncRoot=_isSyncRoot;
+@property(getter=isSyncRoot) BOOL syncRoot;
+@property(retain, nonatomic) NSData *quarantineBlob; // @synthesize quarantineBlob=_quarantineBlob;
 @property(nonatomic, getter=isPinned) BOOL pinned; // @synthesize pinned=_pinned;
 @property(nonatomic, getter=isInPinnedFolder) BOOL inPinnedFolder; // @synthesize inPinnedFolder=_inPinnedFolder;
 @property(retain, nonatomic) NSArray *decorations; // @synthesize decorations=_decorations;
@@ -134,8 +142,8 @@
 @property(nonatomic, getter=isUbiquitous) BOOL ubiquitous; // @synthesize ubiquitous=_isUbiquitous;
 @property(nonatomic, getter=isOffline) BOOL offline; // @synthesize offline=_offline;
 @property(nonatomic) BOOL supportsMostRecentVersionDownloaded; // @synthesize supportsMostRecentVersionDownloaded=_supportsMostRecentVersionDownloaded;
-@property(retain, nonatomic) NSString *containerDisplayName; // @synthesize containerDisplayName=_containerDisplayName;
-@property(retain, nonatomic) NSString *sharingPermissions; // @synthesize sharingPermissions=_sharingPermissions;
+@property(copy, nonatomic) NSString *containerDisplayName; // @synthesize containerDisplayName=_containerDisplayName;
+@property(copy, nonatomic) NSString *sharingPermissions; // @synthesize sharingPermissions=_sharingPermissions;
 @property(readonly, copy, getter=isDownloadRequested) NSNumber *downloadRequested;
 @property(retain, nonatomic) NSPersonNameComponents *mostRecentEditorNameComponents; // @synthesize mostRecentEditorNameComponents=_mostRecentEditorNameComponents;
 @property(retain, nonatomic) NSPersonNameComponents *ownerNameComponents; // @synthesize ownerNameComponents=_ownerNameComponents;
@@ -163,7 +171,7 @@
 @property(readonly, copy, nonatomic) NSString *parentItemIdentifier; // @synthesize parentItemIdentifier=_parentItemIdentifier;
 @property(readonly, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
 @property(readonly, copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isKnownByTheProvider) BOOL knownByTheProvider;
 @property(copy, nonatomic) NSString *fp_displayName;
 - (id)_downloadingStatus;
 - (id)ubiquitousResourceKeysDiffAgainstItem:(id)arg1;
@@ -177,10 +185,10 @@
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, copy, nonatomic) NSString *appContainerBundleIdentifier;
 - (void)setFp_SpotlightDomainIdentifier:(id)arg1;
-@property(readonly, nonatomic) NSString *fp_spotlightDomainIdentifier;
+@property(readonly, copy) NSString *fp_spotlightDomainIdentifier;
 - (long long)localizedStandardTagsCompare:(id)arg1;
 @property(readonly, copy, nonatomic) NSData *tagData;
-- (id)description:(BOOL)arg1;
+- (id)descriptionForFPCTL:(BOOL)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToItem:(id)arg1;

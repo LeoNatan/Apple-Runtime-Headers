@@ -17,11 +17,11 @@
 }
 
 + (id)groupsForNetworkConfigurationProfiles:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableSet *mutableAllowedHosts; // @synthesize mutableAllowedHosts=_mutableAllowedHosts;
 @property(copy, nonatomic) NSMutableSet *mutableAddresses; // @synthesize mutableAddresses=_mutableAddresses;
 @property(nonatomic) unsigned long long purpose; // @synthesize purpose=_purpose;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)addAllowedHost:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *purposeLocalizedDescription;
 @property(readonly, copy, nonatomic) NSSet *allowedHosts;

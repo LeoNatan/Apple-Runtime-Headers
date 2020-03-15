@@ -15,10 +15,10 @@
     NSString *_query;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *query; // @synthesize query=_query;
 @property(retain) NSString *definitionId; // @synthesize definitionId=_definitionId;
 @property(retain) NSString *dictionaryId; // @synthesize dictionaryId=_dictionaryId;
-- (void).cxx_destruct;
 - (id)groupName;
 - (id)category;
 - (unsigned long long)resultOpenOptions;

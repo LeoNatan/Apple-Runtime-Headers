@@ -20,9 +20,9 @@
 }
 
 + (id)_deriveOutgoingMessageContentFromLibraryMessageContent:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MFMessageRewriterPlaceholderResolver> placeholderResolver; // @synthesize placeholderResolver=_placeholderResolver;
 @property(readonly, nonatomic) MFOutgoingMessageContent *originalMessageContent; // @synthesize originalMessageContent=_originalMessageContent;
-- (void).cxx_destruct;
 - (id)shouldCreateRichTextRepresentation;
 - (id)attachments;
 - (id)sendingAccountProxy;

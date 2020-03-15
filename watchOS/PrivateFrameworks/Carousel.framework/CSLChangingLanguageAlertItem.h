@@ -14,8 +14,8 @@
     NSString *_overrideLanguage;
 }
 
-@property(copy, nonatomic) NSString *overrideLanguage; // @synthesize overrideLanguage=_overrideLanguage;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *overrideLanguage; // @synthesize overrideLanguage=_overrideLanguage;
 - (void)didAppear;
 - (void)willAppear;
 - (void)configureAlert;

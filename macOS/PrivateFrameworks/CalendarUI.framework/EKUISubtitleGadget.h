@@ -14,9 +14,9 @@
     NSLayoutConstraint *_zeroHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *zeroHeightConstraint; // @synthesize zeroHeightConstraint=_zeroHeightConstraint;
 @property(retain) CalUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
-- (void).cxx_destruct;
 - (BOOL)shouldDisplay;
 
 @end

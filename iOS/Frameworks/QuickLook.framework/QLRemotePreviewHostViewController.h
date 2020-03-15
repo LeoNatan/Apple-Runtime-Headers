@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     id _request;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id request; // @synthesize request=_request;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property __weak QLRemoteItemViewController *remoteItemViewController; // @synthesize remoteItemViewController=_remoteItemViewController;
-- (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

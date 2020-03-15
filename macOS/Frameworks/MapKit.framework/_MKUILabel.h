@@ -22,9 +22,9 @@
 + (id)keyPathsForValuesAffectingAttributedText;
 + (id)keyPathsForValuesAffectingText;
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType _mapkit_themeColorProvider; // @synthesize _mapkit_themeColorProvider=__mapkit_themeColorProvider;
 @property(nonatomic) BOOL collapsesWhenEmpty; // @synthesize collapsesWhenEmpty=_collapsesWhenEmpty;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 @property(nonatomic) long long textAlignment;

@@ -15,8 +15,8 @@
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 - (id)reuseIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

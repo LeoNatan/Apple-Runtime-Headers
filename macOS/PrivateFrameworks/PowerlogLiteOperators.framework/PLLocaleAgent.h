@@ -20,8 +20,8 @@
 + (id)accountingGroupDefinitions;
 + (id)railDefinitions;
 + (void)load;
-@property(retain) PLNSNotificationOperatorComposition *timeNotification; // @synthesize timeNotification=_timeNotification;
 - (void).cxx_destruct;
+@property(retain) PLNSNotificationOperatorComposition *timeNotification; // @synthesize timeNotification=_timeNotification;
 - (void)logEventForwardTimeZoneWithTrigger:(id)arg1;
 - (void)logEventForwardTimeZone;
 - (void)log;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSArray *_subfeatures;
 }
 
-@property(readonly, nonatomic) NSArray *subfeatures; // @synthesize subfeatures=_subfeatures;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *subfeatures; // @synthesize subfeatures=_subfeatures;
 - (void)_incorporateSample:(const struct _UISEGestureFeatureSample *)arg1;
 - (id)debugDictionary;
 - (void)featureDidChangeState:(id)arg1;

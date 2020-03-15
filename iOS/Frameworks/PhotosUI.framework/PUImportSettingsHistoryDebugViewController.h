@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)_updateFlowLayout:(id)arg1 withBounds:(struct CGRect)arg2 traitCollection:(id)arg3;
-@property(retain, nonatomic) PHFetchResult *importSessions; // @synthesize importSessions=_importSessions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PHFetchResult *importSessions; // @synthesize importSessions=_importSessions;
 - (id)_assetsForSection:(long long)arg1;
 - (id)_assetForIndexPath:(id)arg1;
 - (void)_scrollToBottom:(id)arg1;

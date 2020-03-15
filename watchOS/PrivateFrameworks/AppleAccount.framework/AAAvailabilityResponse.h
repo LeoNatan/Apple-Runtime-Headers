@@ -15,10 +15,10 @@
     NSString *_feature;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *feature; // @synthesize feature=_feature;
 @property(readonly, nonatomic) NSString *eta; // @synthesize eta=_eta;
 @property(readonly, nonatomic) NSString *status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 
 @end

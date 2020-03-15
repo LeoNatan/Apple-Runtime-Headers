@@ -18,11 +18,11 @@
     BOOL _isCollapsing;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *breadthConstraint; // @synthesize breadthConstraint=_breadthConstraint;
 @property BOOL isCollapsing; // @synthesize isCollapsing=_isCollapsing;
 @property(nonatomic) double expandedPosition; // @synthesize expandedPosition=_expandedPosition;
 @property BOOL collapsesToRightOrBottom; // @synthesize collapsesToRightOrBottom=_collapsesToRightBottom;
-- (void).cxx_destruct;
 - (void)collapseWithAnimation:(BOOL)arg1;
 - (void)collapse;
 - (void)expandWithAnimation:(BOOL)arg1;

@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
     struct CGSize _titlePreferredSize;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize titlePreferredSize; // @synthesize titlePreferredSize=_titlePreferredSize;
 @property(nonatomic, getter=isInFloatingHeader) _Bool inFloatingHeader; // @synthesize inFloatingHeader=_isInFloatingHeader;
 @property(nonatomic, getter=isNextCellViewPressed) _Bool nextCellViewPressed; // @synthesize nextCellViewPressed=_isNextCellViewPressed;
@@ -32,8 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isSortAscending) _Bool sortAscending; // @synthesize sortAscending=_isSortAscending;
 @property(nonatomic) double leftTextMargin; // @synthesize leftTextMargin=_leftTextMargin;
 @property(nonatomic) double rightTextMargin; // @synthesize rightTextMargin=_rightTextMargin;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)updateLayer;
 - (_Bool)hitTestInSeparator:(const struct CGPoint *)arg1;

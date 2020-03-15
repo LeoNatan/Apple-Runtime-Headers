@@ -16,18 +16,18 @@ __attribute__((visibility("hidden")))
 {
     struct os_unfair_lock_s _propertiesLock;
     NSObject<OS_dispatch_queue> *_serialQueue;
-    struct NSMutableDictionary *_connMap;
-    struct NSMutableDictionary *_opMap;
-    struct NSMutableSet *_evaluations;
+    NSMutableDictionary *_connMap;
+    NSMutableDictionary *_opMap;
+    NSMutableSet *_evaluations;
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property struct os_unfair_lock_s propertiesLock; // @synthesize propertiesLock=_propertiesLock;
 @property(retain) NSMutableSet *evaluations; // @synthesize evaluations=_evaluations;
 @property(retain) NSMutableDictionary *opMap; // @synthesize opMap=_opMap;
 @property(retain) NSMutableDictionary *connMap; // @synthesize connMap=_connMap;
 @property(retain) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-- (void).cxx_destruct;
 - (void)handleProgressCancelForIdentifier:(id)arg1;
 - (void)handlePromptResponse:(long long)arg1 info:(id)arg2 identifier:(id)arg3;
 - (void)showSecurityPreferencesForInfo:(id)arg1 anchor:(id)arg2;
@@ -47,10 +47,10 @@ __attribute__((visibility("hidden")))
 - (void)unregisterEvaluation:(id)arg1;
 - (void)registerEvaluation:(id)arg1;
 - (void)_unregisterConnectionForUID:(unsigned int)arg1;
-- (struct NSXPCConnection *)connectionForUID:(unsigned int)arg1;
+- (id)connectionForUID:(unsigned int)arg1;
 - (void)_cleanUpConnectionForUID:(unsigned int)arg1;
 - (BOOL)getUIDForSystemProcessAlerts:(unsigned int *)arg1;
-- (struct NSMutableDictionary *)opMapCopy;
+- (id)opMapCopy;
 - (void)unlockProperties;
 - (void)lockProperties;
 - (void)dealloc;

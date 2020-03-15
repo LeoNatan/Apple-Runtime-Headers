@@ -22,6 +22,7 @@
 + (id)wlk_JSmovieProperties;
 + (id)wlk_JSgenericProperties;
 + (id)wlk_mediaItemForStoreIdentifier:(id)arg1;
++ (id)wlk_mediaItemForStoreIdentifierString:(id)arg1;
 + (id)wlk_mediaItemForPersistentIdentifier:(id)arg1;
 - (id)_vui_imageIdentifierWithImageType:(unsigned long long)arg1;
 - (id)vui_imageLoadParamsWithImageType:(unsigned long long)arg1;

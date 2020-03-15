@@ -23,13 +23,13 @@
     UIBarButtonItem *_nextButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *nextButtonItem; // @synthesize nextButtonItem=_nextButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *backButtonItem; // @synthesize backButtonItem=_backButtonItem;
 @property(retain, nonatomic) NAFuture *finishFuture; // @synthesize finishFuture=_finishFuture;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) _Bool isFinalStep; // @synthesize isFinalStep=_isFinalStep;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_nextAction:(id)arg1;
 - (void)_backAction:(id)arg1;
 - (void)_updateNextButton;

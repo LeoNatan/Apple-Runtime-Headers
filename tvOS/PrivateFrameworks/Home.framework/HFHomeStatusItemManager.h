@@ -17,12 +17,12 @@
     unsigned long long _latestOverallLoadingState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long latestOverallLoadingState; // @synthesize latestOverallLoadingState=_latestOverallLoadingState;
 @property(nonatomic) long long latestOverallPriority; // @synthesize latestOverallPriority=_latestOverallPriority;
 @property(retain, nonatomic) HFStatusItemProvider *statusItemProvider; // @synthesize statusItemProvider=_statusItemProvider;
 @property(nonatomic) unsigned long long maxStatusItemCount; // @synthesize maxStatusItemCount=_maxStatusItemCount;
 @property(retain, nonatomic) HFStaticItem *showDetailsItem; // @synthesize showDetailsItem=_showDetailsItem;
-- (void).cxx_destruct;
 - (id)_showDetailsItemTitle;
 - (unsigned long long)_overflowStatusItemCount;
 - (long long)_overallPriority;

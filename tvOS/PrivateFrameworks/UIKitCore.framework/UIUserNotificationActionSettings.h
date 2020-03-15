@@ -19,9 +19,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *actionsByContext; // @synthesize actionsByContext=_actionsByContext;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (unsigned long long)_maximumActionsForContext:(unsigned long long)arg1;
 - (id)validatedSettings;
 - (id)actionsForContext:(unsigned long long)arg1;

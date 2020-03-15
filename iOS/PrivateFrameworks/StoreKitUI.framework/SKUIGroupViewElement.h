@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_type;
 }
 
-@property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

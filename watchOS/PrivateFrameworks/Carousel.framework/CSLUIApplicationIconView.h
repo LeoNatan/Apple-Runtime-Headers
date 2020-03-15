@@ -21,8 +21,8 @@
     _Bool _isDeletable;
 }
 
-@property(nonatomic) _Bool isDeletable; // @synthesize isDeletable=_isDeletable;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isDeletable; // @synthesize isDeletable=_isDeletable;
 - (void)setupDowntimeMaskViewForParentView:(id)arg1;
 - (void)setDowntimeRestricted:(_Bool)arg1;
 - (void)setAlpha:(float)arg1;

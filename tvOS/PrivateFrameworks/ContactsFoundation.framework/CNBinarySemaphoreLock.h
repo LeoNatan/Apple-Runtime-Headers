@@ -17,8 +17,8 @@
     NSString *_name;
 }
 
-@property(copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy) NSString *name; // @synthesize name=_name;
 - (id)description;
 - (void)unlock;
 - (void)lock;

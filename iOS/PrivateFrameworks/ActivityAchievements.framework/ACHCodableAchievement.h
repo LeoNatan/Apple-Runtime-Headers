@@ -49,6 +49,7 @@
 
 + (Class)customPlaceholderValuesType;
 + (Class)earnedInstancesType;
+- (void).cxx_destruct;
 @property(nonatomic) long long badgeModelVersion; // @synthesize badgeModelVersion=_badgeModelVersion;
 @property(retain, nonatomic) ACHCodableColor *enamelTriColor3; // @synthesize enamelTriColor3=_enamelTriColor3;
 @property(retain, nonatomic) ACHCodableColor *enamelTriColor2; // @synthesize enamelTriColor2=_enamelTriColor2;
@@ -73,7 +74,6 @@
 @property(retain, nonatomic) NSString *localizationBundleURL; // @synthesize localizationBundleURL=_localizationBundleURL;
 @property(retain, nonatomic) NSMutableArray *earnedInstances; // @synthesize earnedInstances=_earnedInstances;
 @property(retain, nonatomic) ACHCodableTemplate *achievementTemplate; // @synthesize achievementTemplate=_achievementTemplate;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) RTMapsSupportManager *mapsSupportManager; // @synthesize mapsSupportManager=_mapsSupportManager;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 @property(retain, nonatomic) RTLearnedLocationAlgorithmMetricCalculator *algorithmMetricCalculator; // @synthesize algorithmMetricCalculator=_algorithmMetricCalculator;
 @property(retain, nonatomic) RTContactsManager *contactsManager; // @synthesize contactsManager=_contactsManager;
-- (void).cxx_destruct;
 - (_Bool)classifyWithError:(id *)arg1;
 - (_Bool)processExpertClassifications:(id)arg1 error:(id *)arg2;
 - (id)getClassificationsFromExperts:(id)arg1 error:(id *)arg2;

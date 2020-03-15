@@ -16,9 +16,9 @@
 
 + (id)nextArrowImage;
 + (id)titleLabelFont;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *nextArrowImageView; // @synthesize nextArrowImageView=_nextArrowImageView;
 @property(readonly, nonatomic) UILabel *nextTitleLabel; // @synthesize nextTitleLabel=_nextTitleLabel;
-- (void).cxx_destruct;
 - (void)setNextLabelTitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;

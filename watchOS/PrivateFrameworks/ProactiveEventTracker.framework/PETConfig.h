@@ -15,8 +15,8 @@
     NSDictionary *_messageGroups;
 }
 
-@property(readonly) unsigned int version; // @synthesize version=_version;
 - (void).cxx_destruct;
+@property(readonly) unsigned int version; // @synthesize version=_version;
 - (_Bool)isAggregatedForMessageName:(id)arg1;
 - (unsigned int)sigFigsForMessageName:(id)arg1;
 - (id)bucketsForMessageName:(id)arg1;

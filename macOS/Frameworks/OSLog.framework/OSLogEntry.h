@@ -15,10 +15,10 @@
     long long _storeCategory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long storeCategory; // @synthesize storeCategory=_storeCategory;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSString *composedMessage; // @synthesize composedMessage=_composedMessage;
-- (void).cxx_destruct;
 - (id)initWithEventProxy:(id)arg1;
 
 @end

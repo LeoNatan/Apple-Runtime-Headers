@@ -33,6 +33,7 @@
     WFVariableShortcutsBarButtonCell *_variablesButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFVariableShortcutsBarButtonCell *variablesButton; // @synthesize variablesButton=_variablesButton;
 @property(readonly, nonatomic) NSMutableDictionary *cellWidthCache; // @synthesize cellWidthCache=_cellWidthCache;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -50,7 +51,6 @@
 @property(nonatomic) BOOL showsDoneButton; // @synthesize showsDoneButton=_showsDoneButton;
 @property(nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(nonatomic) __weak id <WFVariableShortcutsBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(long long)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

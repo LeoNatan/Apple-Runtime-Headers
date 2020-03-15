@@ -14,9 +14,9 @@
     NSString *_taskDescription;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *taskDescription; // @synthesize taskDescription=_taskDescription;
 @property float percent; // @synthesize percent=_percent;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,9 +16,9 @@
     NSDictionary *_acousticFeatures;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *acousticFeatures; // @synthesize acousticFeatures=_acousticFeatures;
 @property(readonly, copy, nonatomic) NSDictionary *speechRecognitionFeatures; // @synthesize speechRecognitionFeatures=_speechRecognitionFeatures;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithSpeechRecognitionFeatures:(id)arg1 acousticFeatures:(id)arg2;
 

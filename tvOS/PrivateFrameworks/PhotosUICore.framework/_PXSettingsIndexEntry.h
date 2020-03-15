@@ -18,11 +18,11 @@
 
 + (id)_titleForRowAtIndexPath:(id)arg1 inTableView:(id)arg2;
 + (id)_cellForRowAtIndexPath:(id)arg1 inTableView:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *rowTitle; // @synthesize rowTitle=_rowTitle;
 @property(readonly, nonatomic) NSString *sectionTitle; // @synthesize sectionTitle=_sectionTitle;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(nonatomic) __weak _PXSettingsIndexEntry *parentEntry; // @synthesize parentEntry=_parentEntry;
-- (void).cxx_destruct;
 - (void)_revealInTopOfSettingsController:(id)arg1 drillIn:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_revealInSettingsController:(id)arg1 drillIn:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)revealInSettingsController:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

@@ -48,6 +48,7 @@
 
 + (void)setDefaultDataType:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool loggedHLSPerfIssue; // @synthesize loggedHLSPerfIssue=_loggedHLSPerfIssue;
 @property(retain, nonatomic) TVPBumperConfig *bumperConfig; // @synthesize bumperConfig=_bumperConfig;
 @property(retain, nonatomic) NSOperationQueue *rottenTomatoesOperationQueue; // @synthesize rottenTomatoesOperationQueue=_rottenTomatoesOperationQueue;
@@ -77,7 +78,6 @@
 @property(nonatomic) _Bool bookmarksDisabled; // @synthesize bookmarksDisabled=_bookmarksDisabled;
 @property(copy, nonatomic) NSString *rentalID; // @synthesize rentalID=_rentalID;
 @property(copy, nonatomic) NSString *actionParams; // @synthesize actionParams=_actionParams;
-- (void).cxx_destruct;
 - (_Bool)_useBumper;
 - (id)_bumperConfigFromStoreBumperConfig:(id)arg1 logoImage:(id)arg2;
 - (void)_loadBumperConfigWithCompletion:(CDUnknownBlockType)arg1;

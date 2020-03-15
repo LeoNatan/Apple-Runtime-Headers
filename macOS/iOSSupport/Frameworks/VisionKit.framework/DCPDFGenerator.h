@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _pageRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;
 @property(nonatomic) struct CGRect pageRect; // @synthesize pageRect=_pageRect;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (void)finishGenerating;
 - (void)addPageWithPageRect:(struct CGRect)arg1 renderBlock:(CDUnknownBlockType)arg2;
 - (void)addPageWithRenderBlock:(CDUnknownBlockType)arg1;

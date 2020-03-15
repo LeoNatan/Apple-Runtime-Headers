@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "CATOperation.h"
+#import <DeviceManagement/CATOperation.h>
 
 @interface CRKBlockOperation : CATOperation
 {
@@ -12,8 +12,8 @@
 }
 
 + (id)blockOperationWithBlock:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) CDUnknownBlockType operationBlock; // @synthesize operationBlock=_operationBlock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType operationBlock; // @synthesize operationBlock=_operationBlock;
 - (void)main;
 - (void)cancel;
 - (_Bool)isAsynchronous;

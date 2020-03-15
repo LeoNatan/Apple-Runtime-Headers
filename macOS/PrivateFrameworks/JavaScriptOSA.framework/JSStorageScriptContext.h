@@ -17,12 +17,12 @@
     NSMutableDictionary *_info;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *info; // @synthesize info=_info;
 @property BOOL scriptHasBeenExecuted; // @synthesize scriptHasBeenExecuted=_scriptHasBeenExecuted;
 @property BOOL isEvaluating; // @synthesize isEvaluating=_isEvaluating;
 @property(retain) JSContext *context; // @synthesize context=_context;
 @property(retain) NSString *script; // @synthesize script=_script;
-- (void).cxx_destruct;
 - (long long)getValueForInfoSelector:(unsigned int)arg1;
 - (void)setValue:(long long)arg1 forInfoSelector:(unsigned int)arg2;
 - (id)initWithContext:(id)arg1;

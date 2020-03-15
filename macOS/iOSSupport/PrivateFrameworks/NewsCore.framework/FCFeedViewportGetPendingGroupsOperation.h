@@ -19,6 +19,7 @@
     FCFeedRefreshSession *_resultRefreshSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCFeedRefreshSession *resultRefreshSession; // @synthesize resultRefreshSession=_resultRefreshSession;
 @property(copy, nonatomic) CDUnknownBlockType emitGroupsCompletionHandler; // @synthesize emitGroupsCompletionHandler=_emitGroupsCompletionHandler;
 @property BOOL lightweightOnly; // @synthesize lightweightOnly=_lightweightOnly;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) FCFeedGroupEmittingContext *groupEmittingContext; // @synthesize groupEmittingContext=_groupEmittingContext;
 @property(retain, nonatomic) NSArray *feedGroupEmitters; // @synthesize feedGroupEmitters=_feedGroupEmitters;
 @property(retain, nonatomic) FCFeedRefreshSession *refreshSession; // @synthesize refreshSession=_refreshSession;
-- (void).cxx_destruct;
 - (BOOL)_isErrorTransient:(id)arg1;
 - (id)_exhaustGroupEmitter:(id)arg1 inRefreshSession:(id)arg2;
 - (id)_advanceRefreshSessionToNextInterestedEmitter:(id)arg1;

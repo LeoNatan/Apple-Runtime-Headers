@@ -18,8 +18,8 @@
 
 + (id)arrayOfEncryptedRecordsFromArray:(id)arg1;
 + (id)arrayOfCKRecordsFromArray:(id)arg1;
-@property(readonly, nonatomic) CKRecord *record; // @synthesize record=_record;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKRecord *record; // @synthesize record=_record;
 @property(readonly, copy) NSString *description;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;

@@ -20,9 +20,9 @@
 
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_activity> *indexVerificationActivity; // @synthesize indexVerificationActivity=_indexVerificationActivity;
 @property(nonatomic) __weak id <EDSearchableIndexVerifierDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_verifyDataSamples:(id)arg1;
 - (void)verifyDataSamplesWithCompletionHandler:(CDUnknownBlockType)arg1 queue:(id)arg2;
 - (id)_verifySamples:(id)arg1;

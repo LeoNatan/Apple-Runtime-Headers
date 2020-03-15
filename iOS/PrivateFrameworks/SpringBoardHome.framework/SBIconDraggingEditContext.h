@@ -13,10 +13,10 @@
     struct CGPoint _enteredScreenLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enteredScreenLocationNeedsUpdate; // @synthesize enteredScreenLocationNeedsUpdate=_enteredScreenLocationNeedsUpdate;
 @property(nonatomic) struct CGPoint enteredScreenLocation; // @synthesize enteredScreenLocation=_enteredScreenLocation;
 @property(retain, nonatomic) id draggingUniqueIdentifier; // @synthesize draggingUniqueIdentifier=_draggingUniqueIdentifier;
-- (void).cxx_destruct;
 
 @end
 

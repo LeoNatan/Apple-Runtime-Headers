@@ -17,12 +17,12 @@
     MKBlurBackingView *_blurView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKBlurBackingView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) CAPortalLayer *maskPortal; // @synthesize maskPortal=_maskPortal;
 @property(retain, nonatomic) MKBlurBackedControlProxy *proxyControl; // @synthesize proxyControl=_proxyControl;
 @property(retain, nonatomic) NSView *maskControl; // @synthesize maskControl=_maskControl;
 @property(retain, nonatomic) NSView *displayControl; // @synthesize displayControl=_displayControl;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id control;
 - (double)baselineOffsetFromBottom;
 - (struct NSEdgeInsets)alignmentRectInsets;

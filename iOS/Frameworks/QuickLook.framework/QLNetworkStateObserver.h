@@ -35,9 +35,9 @@
 + (_Bool)networkAccessShouldGoThroughCloudDocsDaemon;
 + (_Bool)usingRemoteNetworkObserver;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <QLNetworkStateListener> remoteObserver; // @synthesize remoteObserver=_remoteObserver;
 @property(readonly, nonatomic) unsigned long long networkState; // @synthesize networkState=_networkState;
-- (void).cxx_destruct;
 - (void)_updateRemoteObserver;
 - (void)updateState:(unsigned long long)arg1;
 - (void)airplaneModeChanged;

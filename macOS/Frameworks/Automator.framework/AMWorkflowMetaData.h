@@ -18,11 +18,11 @@
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)workflowMetaDataForPersonality:(id)arg1 dictionary:(id)arg2;
+- (void).cxx_destruct;
 @property __weak AMWorkflowPersonality *personality; // @synthesize personality=_personality;
 @property(copy) NSDictionary *metaDataFromDisk; // @synthesize metaDataFromDisk=_metaDataFromDisk;
 @property(copy) NSDictionary *infoPlistFromDisk; // @synthesize infoPlistFromDisk=_infoPlistFromDisk;
 @property(copy) NSString *documentSaveName; // @synthesize documentSaveName=_documentSaveName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) AMType *outputType;
 @property(readonly, nonatomic) AMType *inputType;
 - (id)valueForUndefinedKey:(id)arg1;

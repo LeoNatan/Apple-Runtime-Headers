@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 + (CDUnknownBlockType)emergencyContactMatchingContact:(id)arg1;
 + (_Bool)shouldShowEmergencyContacts;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(readonly, nonatomic) id <CNScheduler> stateLock; // @synthesize stateLock=_stateLock;
 @property(readonly, nonatomic) NSMutableDictionary *medicalIDDataHandlers; // @synthesize medicalIDDataHandlers=_medicalIDDataHandlers;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <CNScheduler> workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) _HKMedicalIDData *medicalIDData; // @synthesize medicalIDData=_medicalIDData;
 @property(retain, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (id)createMedicalIDFromContact:(id)arg1;
 - (void)startListeningForChanges;
 - (void)updateAndDispatchMedicalIDData;

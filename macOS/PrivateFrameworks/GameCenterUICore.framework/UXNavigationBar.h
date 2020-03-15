@@ -31,6 +31,7 @@
 + (id)keyPathsForValuesAffectingCurrentInnerLeftBarButtonView;
 + (id)keyPathsForValuesAffectingCurrentLeftBarButtonView;
 + (id)keyPathsForValuesAffectingTopItem;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) NSView *emptyCenterView; // @synthesize emptyCenterView=_emptyCenterView;
 @property(retain, nonatomic) NSView *emptyInnerRightView; // @synthesize emptyInnerRightView=_emptyInnerRightView;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) UXNavigationItem *topItem; // @synthesize topItem=_topItem;
 @property(retain, nonatomic) UXNavigationItem *defaultItem; // @synthesize defaultItem=_defaultItem;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_invalidateConstraints;
 - (void)popToNavigationItem:(id)arg1 animated:(BOOL)arg2;

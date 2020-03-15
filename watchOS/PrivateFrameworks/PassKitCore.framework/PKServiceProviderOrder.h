@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *appletValue; // @synthesize appletValue=_appletValue;
 @property(nonatomic) unsigned int paymentInstrumentType; // @synthesize paymentInstrumentType=_paymentInstrumentType;
 @property(copy, nonatomic) NSDictionary *serviceProviderData; // @synthesize serviceProviderData=_serviceProviderData;
 @property(copy, nonatomic) NSString *serviceProviderIdentifier; // @synthesize serviceProviderIdentifier=_serviceProviderIdentifier;
 @property(copy, nonatomic) NSString *itemDescription; // @synthesize itemDescription=_itemDescription;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_paymentInstrumentDictionary;
 - (id)_itemDictionary;
 - (id)dictionaryRepresentation;

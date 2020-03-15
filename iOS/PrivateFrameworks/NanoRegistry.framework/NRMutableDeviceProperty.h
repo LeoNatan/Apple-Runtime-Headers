@@ -18,8 +18,8 @@
 + (id)diffFrom:(id)arg1 to:(id)arg2;
 + (id)enclosedClassTypes;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NRPBMutableDeviceProperty *protobuf; // @synthesize protobuf=_protobuf;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NRPBMutableDeviceProperty *protobuf; // @synthesize protobuf=_protobuf;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

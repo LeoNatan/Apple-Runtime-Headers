@@ -23,9 +23,9 @@
     CDUnknownBlockType _unarchiveCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unarchiveCompletionBlock; // @synthesize unarchiveCompletionBlock=_unarchiveCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType passphraseRequestBlock; // @synthesize passphraseRequestBlock=_passphraseRequestBlock;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 didReceiveArchivedItemsDescriptors:(id)arg2;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)__completeWithItem:(id)arg1 service:(id)arg2 resultURL:(id)arg3 error:(id)arg4;

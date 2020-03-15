@@ -31,6 +31,7 @@
     NSDate *_firstSeenDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *firstSeenDate; // @synthesize firstSeenDate=_firstSeenDate;
 @property(retain, nonatomic) NSDate *lastSeenDate; // @synthesize lastSeenDate=_lastSeenDate;
 @property(nonatomic) _Bool quarantined; // @synthesize quarantined=_quarantined;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) id <PVFaceGroupProtocol> sourceFaceGroup; // @synthesize sourceFaceGroup=_sourceFaceGroup;
 @property(retain, nonatomic) id <PVPersonProtocol> sourcePerson; // @synthesize sourcePerson=_sourcePerson;
 @property(nonatomic) __weak id <PVPhotoLibraryProtocol> photoLibrary; // @synthesize photoLibrary=_photoLibrary;
-- (void).cxx_destruct;
 - (void)invalidateCaches;
 - (void)_cacheDates;
 @property(readonly, nonatomic) double libraryTimespan;

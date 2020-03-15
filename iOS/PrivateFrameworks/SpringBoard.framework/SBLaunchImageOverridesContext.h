@@ -17,12 +17,12 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *launchImageName; // @synthesize launchImageName=_launchImageName;
 @property(readonly, nonatomic) _Bool ignoreSnapshots; // @synthesize ignoreSnapshots=_ignoreSnapshots;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) SBActivationSettings *activationSettings; // @synthesize activationSettings=_settings;
 @property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
-- (void).cxx_destruct;
 - (id)initWithSceneID:(id)arg1 activationSettings:(id)arg2;
 
 @end

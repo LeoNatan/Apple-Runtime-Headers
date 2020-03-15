@@ -20,8 +20,8 @@
     PXCuratedLibraryLayout *_curatedLibraryLayout;
 }
 
-@property(retain, nonatomic) PXCuratedLibraryLayout *curatedLibraryLayout; // @synthesize curatedLibraryLayout=_curatedLibraryLayout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PXCuratedLibraryLayout *curatedLibraryLayout; // @synthesize curatedLibraryLayout=_curatedLibraryLayout;
 - (void)enumerateRectDiagnosticsForLayout:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (BOOL)_canPlayVideosInZoomLevel:(long long)arg1;
 - (BOOL)canPlayAsset:(id)arg1;

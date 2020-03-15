@@ -19,10 +19,10 @@
 + (struct sqlite3_stmt *)sqlStatementForContext:(id)arg1 statement:(id)arg2;
 + (void)setExplainStatements:(_Bool)arg1;
 + (_Bool)explainStatements;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *queryPlans; // @synthesize queryPlans=_queryPlans;
 @property(nonatomic) struct sqlite3_stmt *statement; // @synthesize statement=_statement;
 @property(readonly, nonatomic) __weak HMBSQLContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)finalize;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1 statement:(id)arg2;

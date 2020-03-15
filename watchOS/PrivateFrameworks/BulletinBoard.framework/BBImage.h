@@ -24,11 +24,11 @@
 + (id)imageWithName:(id)arg1 inBundle:(id)arg2;
 + (id)imageWithPath:(id)arg1;
 + (id)imageWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

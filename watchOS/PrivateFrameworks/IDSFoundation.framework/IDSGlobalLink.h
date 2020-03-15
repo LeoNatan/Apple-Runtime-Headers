@@ -107,12 +107,12 @@
     _Bool _reduceRelayLinkCreation;
 }
 
+- (void).cxx_destruct;
 @property __weak id <IDSLinkDelegate> alternateDelegate; // @synthesize alternateDelegate=_alternateDelegate;
 @property __weak id <IDSLinkDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) unsigned int state; // @synthesize state=_state;
 @property(retain) NSString *deviceUniqueID; // @synthesize deviceUniqueID=_deviceUniqueID;
 @property(retain) NSString *cbuuid; // @synthesize cbuuid=_cbuuid;
-- (void).cxx_destruct;
 - (void)sendAllocbindRequest:(id)arg1 isRealloc:(_Bool)arg2 inResponseToNoSessionState:(_Bool)arg3;
 - (void)candidatePair:(id)arg1 didAddQREvent:(id)arg2;
 - (void)disconnectCandidatePair:(id)arg1;

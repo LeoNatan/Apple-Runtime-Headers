@@ -20,9 +20,9 @@
     SBTouchHistory *_touchHistory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBTouchHistory *touchHistory; // @synthesize touchHistory=_touchHistory;
 @property(readonly, nonatomic) double forcePercent; // @synthesize forcePercent=_forcePercent;
-- (void).cxx_destruct;
 - (double)peakSpeed;
 - (double)averageTouchPathAngleOverTimeDuration:(double)arg1;
 - (struct CGPoint)averageTouchVelocityOverTimeDuration:(double)arg1;

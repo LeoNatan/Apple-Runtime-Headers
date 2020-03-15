@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _MKPlaceViewController *infoCardController;
 }
 
-@property(nonatomic) __weak _MKPlaceViewController *infoCardController; // @synthesize infoCardController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak _MKPlaceViewController *infoCardController; // @synthesize infoCardController;
 - (void)reset;
 - (void)refreshContent;
 

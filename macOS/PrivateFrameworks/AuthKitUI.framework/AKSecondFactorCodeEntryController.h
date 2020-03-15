@@ -39,6 +39,7 @@
     AKTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(retain) AKNoCodeReceivedController *noCodeRecievedController; // @synthesize noCodeRecievedController=_noCodeRecievedController;
 @property(retain) NSNumber *pinCodeLength; // @synthesize pinCodeLength=_pinCodeLength;
@@ -62,7 +63,6 @@
 @property(retain) NSView *pinContainerView; // @synthesize pinContainerView=_pinContainerView;
 @property(retain) NSObject<AKSecondFactorCodeEntryDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSView *mainView; // @synthesize mainView=_mainView;
-- (void).cxx_destruct;
 - (void)doneButtonPressed:(id)arg1;
 - (void)cancelButtonPressed:(id)arg1;
 - (void)noCodeButtonPressed:(id)arg1;

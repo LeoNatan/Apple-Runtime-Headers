@@ -18,10 +18,10 @@
     ARQuickLookPreviewItem *_previewItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ARQuickLookPreviewItem *previewItem; // @synthesize previewItem=_previewItem;
 @property(copy, nonatomic) NSDictionary *additionalParameters; // @synthesize additionalParameters=_additionalParameters;
 @property(nonatomic) __weak id <ARQuickLookWebKitItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleMessageFromCustomExtension:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)previewOptions;
 - (id)initWithPreviewItemProvider:(id)arg1 contentType:(id)arg2 previewTitle:(id)arg3 fileSize:(id)arg4 previewItem:(id)arg5;

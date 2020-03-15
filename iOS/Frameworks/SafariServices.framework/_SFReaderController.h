@@ -34,6 +34,7 @@
     NSString *_articleText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *articleText; // @synthesize articleText=_articleText;
 @property(nonatomic) __weak id <WKUIDelegatePrivate> webViewUIDelegate; // @synthesize webViewUIDelegate=_webViewUIDelegate;
 @property(nonatomic) _Bool contentIsReady; // @synthesize contentIsReady=_contentIsReady;
@@ -41,15 +42,16 @@
 @property __weak id <_SFReaderControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) __weak WKWebView *readerWebView; // @synthesize readerWebView=_readerWebView;
 @property(readonly) __weak WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_webView:(id)arg1 dataInteractionOperationWasHandled:(_Bool)arg2 forSession:(id)arg3 itemProviders:(id)arg4;
 - (_Bool)_webView:(id)arg1 performDataInteractionOperationWithItemProviders:(id)arg2;
 - (unsigned long long)_webView:(id)arg1 willUpdateDataInteractionOperationToOperation:(unsigned long long)arg2 forSession:(id)arg3;
 - (void)_webView:(id)arg1 dataInteraction:(id)arg2 session:(id)arg3 didEndWithOperation:(unsigned long long)arg4;
 - (void)_webView:(id)arg1 dataInteraction:(id)arg2 sessionWillBegin:(id)arg3;
-- (void)_webView:(id)arg1 commitPreviewedViewController:(id)arg2;
-- (id)_webView:(id)arg1 previewViewControllerForURL:(id)arg2 defaultActions:(id)arg3 elementInfo:(id)arg4;
+- (void)_webView:(id)arg1 contextMenuDidEndForElement:(id)arg2;
+- (void)_webView:(id)arg1 contextMenuForElement:(id)arg2 willCommitWithAnimator:(id)arg3;
+- (void)_webView:(id)arg1 contextMenuWillPresentForElement:(id)arg2;
+- (void)_webView:(id)arg1 contextMenuConfigurationForElement:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_webView:(id)arg1 actionsForElement:(id)arg2 defaultActions:(id)arg3;
 - (void)_webView:(id)arg1 getAlternateURLFromImage:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;

@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     PUSwipedDownTileTracker *__swipedDownTileTracker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSwipedDownTileTracker:) PUSwipedDownTileTracker *_swipedDownTileTracker; // @synthesize _swipedDownTileTracker=__swipedDownTileTracker;
 @property(retain, nonatomic, setter=_setDismissGestureDirectionValueFilter:) PUChangeDirectionValueFilter *_dismissGestureDirectionValueFilter; // @synthesize _dismissGestureDirectionValueFilter=__dismissGestureDirectionValueFilter;
 @property(nonatomic, getter=_isHandlingPanGestureRecognizer, setter=_setHandlingPanGestureRecognizer:) _Bool handlingPanGestureRecognizer; // @synthesize handlingPanGestureRecognizer=_handlingPanGestureRecognizer;
 @property(readonly, nonatomic) PXVerticalSwipeGestureRecognizerHelper *verticalSwipeGestureRecognzierHelper; // @synthesize verticalSwipeGestureRecognzierHelper=_verticalSwipeGestureRecognzierHelper;
 @property(retain, nonatomic, setter=_setPanGestureRecognizer:) UIPanGestureRecognizer *_panGestureRecognizer; // @synthesize _panGestureRecognizer=__panGestureRecognizer;
-- (void).cxx_destruct;
 - (_Bool)verticalSwipeGestureRecognizerHelper:(id)arg1 shouldRecognizeSwipeDownGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

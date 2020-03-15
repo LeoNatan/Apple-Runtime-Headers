@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)setSessionUIContexts:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchSessionEchoContextsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSessionUIContextsWithCompletion:(CDUnknownBlockType)arg1;

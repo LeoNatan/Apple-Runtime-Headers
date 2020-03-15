@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
 
 + (void)setAnimationBlockDelegateWithDuration:(double)arg1 options:(unsigned long long)arg2 start:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)animationBlockDelegateWithDuration:(double)arg1 options:(unsigned long long)arg2 start:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setForcingImmediateCompletion:) BOOL _forcingImmediateCompletion; // @synthesize _forcingImmediateCompletion=__forcingImmediateCompletion;
 @property(nonatomic) __weak UIViewAnimationState *_animationState; // @synthesize _animationState;
 @property(readonly, nonatomic) BOOL _allowsUserInteraction; // @synthesize _allowsUserInteraction=_allowUserInteraction;
-- (void).cxx_destruct;
 - (BOOL)_allowsHitTesting;
 - (BOOL)_allowsUserInteractionToCutOffEndOfAnimation;
 - (void)_sendDeferredCompletion:(id)arg1;

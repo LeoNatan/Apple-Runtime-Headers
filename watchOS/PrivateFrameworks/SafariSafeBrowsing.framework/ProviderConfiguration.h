@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     _Bool _unwantedSoftwareThreatTypeOff;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool unwantedSoftwareThreatTypeOff; // @synthesize unwantedSoftwareThreatTypeOff=_unwantedSoftwareThreatTypeOff;
 @property(readonly, nonatomic) _Bool malwareThreatTypeOff; // @synthesize malwareThreatTypeOff=_malwareThreatTypeOff;
 @property(readonly, nonatomic) _Bool socialEngineeringThreatTypeOff; // @synthesize socialEngineeringThreatTypeOff=_socialEngineeringThreatTypeOff;
 @property(nonatomic) _Bool providerOff; // @synthesize providerOff=_providerOff;
-- (void).cxx_destruct;
 - (_Bool)isEqualToConfiguration:(id)arg1;
 - (void)_parseConfiguration:(id)arg1;
 - (id)_currentRegionCode;

@@ -12,7 +12,6 @@
 @interface VUIStoreFPSKeyLoader : NSObject
 {
     _Bool _didSkipRentalCheckout;
-    _Bool _hasLoadedAnyStreamingKeyRequests;
     _Bool _usesKeyIdentifierPenaltyBox;
     NSURL *_secureInvalidationNonceURL;
     NSNumber *_secureInvalidationDSID;
@@ -24,7 +23,7 @@
     long long _state;
     NSData *_certificateData;
     NSMutableArray *_requestsAwaitingCertFetch;
-    TVPContentKeyRequest *_savedRequestToUseForStopping;
+    TVPContentKeyRequest *_savedStreamingKeyRequestToUseForStopping;
     NSDate *_keyExpirationDate;
     NSDate *_rentalPlaybackStartDate;
     TVPContentKeySession *_contentKeySession;
@@ -35,25 +34,24 @@
 + (void)_loadFPSURLsFromStoreBagWithCompletion:(CDUnknownBlockType)arg1;
 + (void)preFetchFPSCertificate;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *keyIdentifierPenaltyBox; // @synthesize keyIdentifierPenaltyBox=_keyIdentifierPenaltyBox;
 @property(retain, nonatomic) TVPContentKeySession *contentKeySession; // @synthesize contentKeySession=_contentKeySession;
 @property(retain, nonatomic) NSDate *rentalPlaybackStartDate; // @synthesize rentalPlaybackStartDate=_rentalPlaybackStartDate;
 @property(retain, nonatomic) NSDate *keyExpirationDate; // @synthesize keyExpirationDate=_keyExpirationDate;
-@property(retain, nonatomic) TVPContentKeyRequest *savedRequestToUseForStopping; // @synthesize savedRequestToUseForStopping=_savedRequestToUseForStopping;
+@property(retain, nonatomic) TVPContentKeyRequest *savedStreamingKeyRequestToUseForStopping; // @synthesize savedStreamingKeyRequestToUseForStopping=_savedStreamingKeyRequestToUseForStopping;
 @property(retain, nonatomic) NSMutableArray *requestsAwaitingCertFetch; // @synthesize requestsAwaitingCertFetch=_requestsAwaitingCertFetch;
 @property(retain, nonatomic) NSData *certificateData; // @synthesize certificateData=_certificateData;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(copy, nonatomic) NSURL *keyServerURL; // @synthesize keyServerURL=_keyServerURL;
 @property(copy, nonatomic) NSURL *certificateURL; // @synthesize certificateURL=_certificateURL;
 @property(nonatomic) _Bool usesKeyIdentifierPenaltyBox; // @synthesize usesKeyIdentifierPenaltyBox=_usesKeyIdentifierPenaltyBox;
-@property(nonatomic) _Bool hasLoadedAnyStreamingKeyRequests; // @synthesize hasLoadedAnyStreamingKeyRequests=_hasLoadedAnyStreamingKeyRequests;
 @property(nonatomic) _Bool didSkipRentalCheckout; // @synthesize didSkipRentalCheckout=_didSkipRentalCheckout;
 @property(retain, nonatomic) NSNumber *rentalID; // @synthesize rentalID=_rentalID;
 @property(retain, nonatomic) TVPPlaybackReportingEventCollection *eventCollection; // @synthesize eventCollection=_eventCollection;
 @property(nonatomic) __weak NSObject<VUIStoreFPSKeyLoaderDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSNumber *secureInvalidationDSID; // @synthesize secureInvalidationDSID=_secureInvalidationDSID;
 @property(retain, nonatomic) NSURL *secureInvalidationNonceURL; // @synthesize secureInvalidationNonceURL=_secureInvalidationNonceURL;
-- (void).cxx_destruct;
 - (id)_jsonDictionaryForRequest:(id)arg1 isStopRequest:(_Bool)arg2;
 - (id)_bodyJSONDataForRequests:(id)arg1 isStopRequest:(_Bool)arg2;
 - (void)_failKeyRequests:(id)arg1 withError:(id)arg2;
@@ -67,7 +65,7 @@
 - (void)_startKeyRequestsInBatches:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_loadCertificateDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeAllEntriesFromKeyIdentifierPenaltyBox;
-- (void)sendStopRequest;
+- (void)sendStreamingStopRequestIfNecessary;
 - (void)loadFairPlayStreamingKeyRequests:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithCertificateURL:(id)arg1 keyServerURL:(id)arg2;
 

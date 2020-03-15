@@ -13,8 +13,8 @@
     NSString *_sceneID;
 }
 
-@property(copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 
 @end
 

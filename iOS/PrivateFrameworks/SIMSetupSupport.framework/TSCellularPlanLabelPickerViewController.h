@@ -19,12 +19,12 @@
     CTUserLabel *_customLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) CTUserLabel *customLabel; // @synthesize customLabel=_customLabel;
 @property(retain) NSIndexPath *chosenLabelIndexPath; // @synthesize chosenLabelIndexPath=_chosenLabelIndexPath;
 @property(retain) NSArray *predefinedUserLabels; // @synthesize predefinedUserLabels=_predefinedUserLabels;
 @property(retain) CTUserLabel *initialLabel; // @synthesize initialLabel=_initialLabel;
 @property(retain) CTCellularPlanItem *associatedPlanItem; // @synthesize associatedPlanItem=_associatedPlanItem;
-- (void).cxx_destruct;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

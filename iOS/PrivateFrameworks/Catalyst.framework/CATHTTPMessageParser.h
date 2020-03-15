@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 
 + (id)responseHeaderForContentWithLength:(unsigned long long)arg1;
 + (id)encodeRequestData:(id)arg1;
-@property(nonatomic) __weak id <CATHTTPMessageParserDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CATHTTPMessageParserDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)delegateDidReceiveRequestWithURL:(id)arg1;
 - (void)delegateDidReceiveResponseData:(id)arg1 moreComing:(_Bool)arg2;
 - (void)delegateDidReceiveRequestData:(id)arg1;

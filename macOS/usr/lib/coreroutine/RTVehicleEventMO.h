@@ -14,8 +14,8 @@
 }
 
 + (id)managedObjectWithVehicleEvent:(id)arg1 inManagedObjectContext:(id)arg2;
-@property(retain, nonatomic) RTMapItemMO *cachedMapItem; // @synthesize cachedMapItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RTMapItemMO *cachedMapItem; // @synthesize cachedMapItem;
 - (void)setMapItem:(id)arg1;
 - (id)mapItem;
 

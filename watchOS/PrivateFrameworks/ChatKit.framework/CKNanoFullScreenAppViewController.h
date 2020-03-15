@@ -22,6 +22,7 @@
     IMBalloonPlugin *_plugin;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMBalloonPlugin *plugin; // @synthesize plugin=_plugin;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UIViewController<CKBrowserViewControllerProtocol> *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) _Bool wantsHeaderView; // @synthesize wantsHeaderView=_wantsHeaderView;
-- (void).cxx_destruct;
 - (void)_dismiss:(id)arg1;
 - (struct CGRect)finalContentViewFrame;
 - (void)updateButtonLayout;

@@ -16,11 +16,11 @@
     NSString *_nextButtonTitle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hideToolbar; // @synthesize hideToolbar=_hideToolbar;
 @property(copy, nonatomic) NSString *nextButtonTitle; // @synthesize nextButtonTitle=_nextButtonTitle;
 @property(retain, nonatomic) UIImage *titleImage; // @synthesize titleImage=_titleImage;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)init;
 

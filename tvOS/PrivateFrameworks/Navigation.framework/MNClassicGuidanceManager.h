@@ -53,13 +53,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _countLocationUpdates;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_61a83fd4 currentInstructionOptions; // @synthesize currentInstructionOptions=_currentInstructionOptions;
 @property(retain, nonatomic) NSString *currentShieldText; // @synthesize currentShieldText=_currentShieldText;
 @property(retain, nonatomic) NSString *currentRoadName; // @synthesize currentRoadName=_currentRoadName;
 @property(nonatomic) __weak id <MNGuidanceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) GEOComposedRoute *route; // @synthesize route=_route;
 @property(readonly, nonatomic) int guidanceState; // @synthesize guidanceState=_guidanceState;
-- (void).cxx_destruct;
 - (void)updateDestination:(id)arg1;
 - (void)updateForReturnToRoute;
 - (void)updateForReroute:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)fetchValueForContext:(struct sqlite3_context *)arg1 row:(unsigned long long)arg2 column:(unsigned long long)arg3;
 @property(readonly, nonatomic) unsigned long long rowCount;
 @property(readonly, nonatomic) NSString *columnDefinitions;

@@ -15,7 +15,7 @@
 {
 }
 
-+ (_Bool)_parseIconIdentifier:(id)arg1 intoDate:(id *)arg2 calendar:(id *)arg3 type:(long long *)arg4;
++ (_Bool)_parseIconIdentifier:(id)arg1 intoDateComponents:(id *)arg2 calendar:(id *)arg3 type:(long long *)arg4;
 + (id)sharedInstance;
 + (id)_identifierEncodingAllowedCharacters;
 - (id)identifierForIconWithDate:(id)arg1 inCalendar:(id)arg2;

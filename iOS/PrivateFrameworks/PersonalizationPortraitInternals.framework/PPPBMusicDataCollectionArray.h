@@ -23,11 +23,11 @@
 
 + (Class)experimentalGroupsType;
 + (Class)recordsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *assetVersion; // @synthesize assetVersion=_assetVersion;
 @property(retain, nonatomic) NSMutableArray *experimentalGroups; // @synthesize experimentalGroups=_experimentalGroups;
 @property(nonatomic) _Bool hasMusicSubscription; // @synthesize hasMusicSubscription=_hasMusicSubscription;
 @property(retain, nonatomic) NSMutableArray *records; // @synthesize records=_records;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

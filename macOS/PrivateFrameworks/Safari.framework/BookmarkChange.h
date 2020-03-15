@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 + (id)_bookmarkChangeWithBookmark:(id)arg1 changeType:(int)arg2;
 + (void)sortChangesInArray:(id)arg1 inBookmarkGroup:(id)arg2;
 + (void)removeRedundantChangesInArray:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *deletedBookmarkSyncData; // @synthesize deletedBookmarkSyncData=_deletedBookmarkSyncData;
 @property(readonly, copy, nonatomic) NSSet *changedAttributes; // @synthesize changedAttributes=_changedAttributes;
 @property(readonly, nonatomic, getter=isMove) BOOL move; // @synthesize move=_move;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *bookmarkUUID; // @synthesize bookmarkUUID=_bookmarkUUID;
 @property(readonly, copy, nonatomic) NSString *token; // @synthesize token=_token;
 @property(readonly, nonatomic) int changeType; // @synthesize changeType=_changeType;
-- (void).cxx_destruct;
 - (id)bookmarkModifyChangeWithChangedAttributes:(id)arg1;
 - (id)bookmarkMoveChangeWithChangedAttributes:(id)arg1;
 - (id)description;

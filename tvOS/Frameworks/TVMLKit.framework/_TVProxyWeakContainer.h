@@ -12,8 +12,8 @@
 }
 
 + (id)weakContainerWithObject:(id)arg1;
-@property(nonatomic) __weak id object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id object; // @synthesize object=_object;
 
 @end
 

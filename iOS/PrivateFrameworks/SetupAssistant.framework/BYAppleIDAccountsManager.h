@@ -16,8 +16,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic, setter=setAAService:) AASetupAssistantService *aaService; // @synthesize aaService=_aaService;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=setAAService:) AASetupAssistantService *aaService; // @synthesize aaService=_aaService;
 - (void)clearStoredLoginContext;
 - (id)storedLoginContext;
 - (void)performSilentICDPUpgrade;

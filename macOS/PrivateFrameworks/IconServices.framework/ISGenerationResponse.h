@@ -14,17 +14,17 @@
 {
     NSData *_data;
     NSUUID *_uuid;
-    struct NSData *_validationToken;
+    NSData *_validationToken;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSData *validationToken; // @synthesize validationToken=_validationToken;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithData:(id)arg1 uuid:(id)arg2 validationToken:(struct NSData *)arg3;
+- (id)initWithData:(id)arg1 uuid:(id)arg2 validationToken:(id)arg3;
 
 @end
 

@@ -19,6 +19,7 @@
     NSString *_providerControllerName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *providerControllerName; // @synthesize providerControllerName=_providerControllerName;
 @property(readonly, copy, nonatomic) NSArray *supportedComplicationFamilies; // @synthesize supportedComplicationFamilies=_supportedComplicationFamilies;
 @property(readonly, copy, nonatomic) NSString *localizedAppName; // @synthesize localizedAppName=_localizedAppName;
@@ -26,7 +27,6 @@
 @property(readonly, copy, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 @property(readonly, nonatomic) NSDate *registeredDate; // @synthesize registeredDate=_registeredDate;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)supportedComplicationFamlies;
 - (id)initWithAppBundleIdentifier:(id)arg1 extensionBundleIdentifier:(id)arg2 localizedAppName:(id)arg3 supportedComplicationFamilies:(id)arg4 providerControllerName:(id)arg5 registeredDate:(id)arg6 active:(_Bool)arg7;

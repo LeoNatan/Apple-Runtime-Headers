@@ -22,15 +22,15 @@
     BBObserver *_observer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BBObserver *observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) BLTSpokenSettingSync *spokenSettingSync; // @synthesize spokenSettingSync=_spokenSettingSync;
 @property(readonly, nonatomic) BLTSectionConfiguration *sectionConfiguration; // @synthesize sectionConfiguration=_sectionConfiguration;
 @property(retain, nonatomic) BLTSettingSyncServer *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) BLTMuteSync *muteSync; // @synthesize muteSync=_muteSync;
 @property(retain, nonatomic) BBSettingsGateway *settingsGateway; // @synthesize settingsGateway=_settingsGateway;
-- (void).cxx_destruct;
 - (void)observer:(id)arg1 updateGlobalSettings:(id)arg2;
-- (unsigned int)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(int)arg3 category:(id)arg4;
+- (unsigned int)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(int)arg3 category:(id)arg4 ignoresDowntime:(_Bool)arg5;
 - (unsigned int)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(int)arg3;
 @property(readonly, nonatomic) _Bool isWristDetectDisabled;
 - (id)_overriddenSectionInfoForSectionID:(id)arg1;

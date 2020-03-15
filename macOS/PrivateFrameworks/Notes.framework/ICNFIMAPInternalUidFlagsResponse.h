@@ -15,10 +15,10 @@
     ICNFIMAPFlagsFetchResult *_flagsFetchResult;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL flagChangeType; // @synthesize flagChangeType=_flagChangeType;
 @property(retain, nonatomic) ICNFIMAPFlagsFetchResult *flagsFetchResult; // @synthesize flagsFetchResult=_flagsFetchResult;
 @property(copy, nonatomic) NSIndexSet *uids; // @synthesize uids=_uids;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

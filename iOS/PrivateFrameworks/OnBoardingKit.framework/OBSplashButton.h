@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _action;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType action; // @synthesize action=_action;
 @property long long style; // @synthesize style=_style;
 @property(retain) UIButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 
 @end
 

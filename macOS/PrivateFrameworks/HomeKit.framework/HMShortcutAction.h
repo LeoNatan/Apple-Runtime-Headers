@@ -16,8 +16,8 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)isSupportedForHome:(id)arg1;
 + (id)_actionWithInfo:(id)arg1 home:(id)arg2;
-@property(readonly) WFHomeWorkflow *shortcut; // @synthesize shortcut=_shortcut;
 - (void).cxx_destruct;
+@property(readonly) WFHomeWorkflow *shortcut; // @synthesize shortcut=_shortcut;
 - (id)initWithCoder:(id)arg1;
 - (id)_serializeForAdd;
 - (BOOL)requiresDeviceUnlock;

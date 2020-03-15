@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     CloudConfigClassicAuthWindowController *_authController;
 }
 
+- (void).cxx_destruct;
 @property(retain) CloudConfigClassicAuthWindowController *authController; // @synthesize authController=_authController;
 @property(retain) NSData *profileDataToInstall; // @synthesize profileDataToInstall=_profileDataToInstall;
 @property(retain) NSString *credentialsPrompt; // @synthesize credentialsPrompt=_credentialsPrompt;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain) CPUI_ProgressWindowController *progress; // @synthesize progress=_progress;
 @property(retain) CPUI_EnrollmentHostWindowInfo *hostWindowInfo; // @synthesize hostWindowInfo=_hostWindowInfo;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)startForWindowInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)tryDownload;
 - (void)promptForAuth;

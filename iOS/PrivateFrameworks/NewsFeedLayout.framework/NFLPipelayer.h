@@ -17,11 +17,11 @@
     NSObject<NFLPipeSegment> *_nextPipeSegment;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<NFLPipeSegment> *nextPipeSegment; // @synthesize nextPipeSegment=_nextPipeSegment;
 @property(retain, nonatomic) NSObject<NFLPipeSegment> *previousPipeSegment; // @synthesize previousPipeSegment=_previousPipeSegment;
 @property(copy, nonatomic) NSArray *pipeUnits; // @synthesize pipeUnits=_pipeUnits;
 @property(nonatomic) __weak id <NFLPipelayerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)layPipeWithWallTime:(double)arg1 qualityOfService:(long long)arg2;
 - (id)initWithPipe:(id)arg1 previousPipeSegment:(id)arg2 nextPipeSegment:(id)arg3;
 - (id)init;

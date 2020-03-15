@@ -23,6 +23,7 @@
     TVSUser *_userToldToApp;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSUser *userToldToApp; // @synthesize userToldToApp=_userToldToApp;
 @property(copy, nonatomic) NSArray *pseudonymIDsForCurrentProfile; // @synthesize pseudonymIDsForCurrentProfile=_pseudonymIDsForCurrentProfile;
 @property(readonly, nonatomic, getter=isApplication) _Bool application; // @synthesize application=_application;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSString *containingID; // @synthesize containingID=_containingID;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)presentDefaultMappingPanel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentMappingPanel:(id)arg1 allProfiles:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)thirdPartySetUserIdentifiersForCurrentProfile:(id)arg1;

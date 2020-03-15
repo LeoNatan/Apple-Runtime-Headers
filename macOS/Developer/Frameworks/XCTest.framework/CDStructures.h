@@ -107,6 +107,21 @@ struct time_value {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    CDUnknownFunctionPointerType elementSetMessagingTimeout;
+    CDUnknownFunctionPointerType isProcessTrusted;
+    CDUnknownFunctionPointerType createSystemWideElement;
+    CDUnknownFunctionPointerType elementGetPID;
+    CDUnknownFunctionPointerType createObserver;
+    CDUnknownFunctionPointerType getRunLoopSourceForObserver;
+    CDUnknownFunctionPointerType addNotificationForObserver;
+    CDUnknownFunctionPointerType copyElementAtPosition;
+    CDUnknownFunctionPointerType createApplication;
+    CDUnknownFunctionPointerType copyAttributeValueForElement;
+    CDUnknownFunctionPointerType elementGetWindow;
+    CDUnknownFunctionPointerType elementPerformAction;
+} CDStruct_0aeaffe8;
+
+typedef struct {
     long long _field1;
     long long _field2;
     long long _field3;

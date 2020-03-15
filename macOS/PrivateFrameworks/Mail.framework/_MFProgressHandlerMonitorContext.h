@@ -17,9 +17,9 @@
     MCActivityMonitor *_activityMonitor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MCActivityMonitor *activityMonitor; // @synthesize activityMonitor=_activityMonitor;
 @property(nonatomic) __weak id <MFQueryProgressMonitor> progressMonitor; // @synthesize progressMonitor=_progressMonitor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldCancel;
 
 // Remaining properties

@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_withDisabledAppearanceTransitions:(BOOL)arg1 forVisibleDescendantsOf:(id)arg2 perform:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setChangingViewControllerParentage:) BOOL _changingViewControllerParentage; // @synthesize _changingViewControllerParentage=__changingViewControllerParentage;
 @property(nonatomic, setter=_setNeedsFirstTimeUpdateForTraitCollection:) BOOL _needsFirstTimeUpdateForTraitCollection; // @synthesize _needsFirstTimeUpdateForTraitCollection=__needsFirstTimeUpdateForTraitCollection;
 @property(nonatomic, setter=_setHasUpdatedForTraitCollection:) BOOL _hasUpdatedForTraitCollection; // @synthesize _hasUpdatedForTraitCollection=__hasUpdatedForTraitCollection;
@@ -70,7 +71,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILayoutContainerView *view; // @synthesize view=_view;
 @property(retain, nonatomic) UIView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(nonatomic) __weak UIViewController *owningViewController; // @synthesize owningViewController=_owningViewController;
-- (void).cxx_destruct;
 - (double)_preferredThicknessFraction;
 - (void)_doubleClickGestureRecognizerChanged:(id)arg1;
 - (void)_dragGestureRecognizerChanged:(id)arg1;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)queue:(id)arg1 remoteDesktopPictureForDisplay:(unsigned int)arg2 callback:(function_63706baa)arg3;
-@property(retain, nonatomic) CALayerHost *desktopPictureLayer; // @synthesize desktopPictureLayer;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CALayerHost *desktopPictureLayer; // @synthesize desktopPictureLayer;
 - (void)invalidate;
 - (void)dealloc;
 - (_Bool)finishHostLayerSetup;

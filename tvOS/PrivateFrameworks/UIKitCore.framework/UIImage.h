@@ -143,8 +143,8 @@
 + (id)_tintedImageForSize:(struct CGSize)arg1 withTint:(id)arg2 maskImage:(id)arg3 effectsImage:(id)arg4 style:(int)arg5;
 + (id)_tintedImageForSize:(struct CGSize)arg1 withTint:(id)arg2 effectsImage:(id)arg3 maskImage:(id)arg4 style:(int)arg5;
 + (struct CGSize)_legibilityImageSizeForSize:(struct CGSize)arg1 style:(long long)arg2;
-@property(retain, nonatomic, setter=_setImageAsset:) UIImageAsset *imageAsset; // @synthesize imageAsset=_imageAsset;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setImageAsset:) UIImageAsset *imageAsset; // @synthesize imageAsset=_imageAsset;
 - (_Bool)_suppressesAccessibilityHairlineThickening;
 - (id)_imageThatSuppressesAccessibilityHairlineThickening;
 - (id)_imageWithSize:(struct CGSize)arg1;

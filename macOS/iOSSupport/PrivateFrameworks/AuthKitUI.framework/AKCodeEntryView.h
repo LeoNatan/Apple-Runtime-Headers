@@ -20,9 +20,9 @@
 }
 
 + (id)generatorFieldFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
 @property(retain, nonatomic) NSArray *generatorFields; // @synthesize generatorFields=_generatorFields;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry;
 - (void)setPasscodeFieldDisabled:(BOOL)arg1;
 - (void)passcodeFieldTapped:(id)arg1;

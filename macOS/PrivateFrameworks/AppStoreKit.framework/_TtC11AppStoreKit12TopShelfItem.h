@@ -9,6 +9,7 @@
 @interface _TtC11AppStoreKit12TopShelfItem : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: identifier
+    // Error parsing type: , name: title
     // Error parsing type: , name: playAction
     // Error parsing type: , name: displayAction
     // Error parsing type: , name: image

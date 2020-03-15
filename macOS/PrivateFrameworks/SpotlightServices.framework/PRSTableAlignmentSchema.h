@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *columnsWithEqualWidths; // @synthesize columnsWithEqualWidths=_columnsWithEqualWidths;
 @property(retain, nonatomic) NSArray *externalAlignments; // @synthesize externalAlignments=_externalAlignments;
 @property(retain, nonatomic) NSArray *internalAlignments; // @synthesize internalAlignments=_internalAlignments;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDecodedColumnAlignments:(id)arg1 dataAlignments:(id)arg2 columnEqualWidths:(id)arg3;

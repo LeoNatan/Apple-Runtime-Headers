@@ -18,13 +18,13 @@
     UIView *_tileContainerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL contentHidden; // @synthesize contentHidden=_contentHidden;
 @property(retain, nonatomic) UIView *tileContainerView; // @synthesize tileContainerView=_tileContainerView;
 @property(retain, nonatomic) NSArray *additionalStrokes; // @synthesize additionalStrokes=_additionalStrokes;
 @property(readonly, nonatomic) NSMutableDictionary *offscreenTiles; // @synthesize offscreenTiles=_offscreenTiles;
 @property(readonly, nonatomic) NSMutableDictionary *tiles; // @synthesize tiles=_tiles;
 @property(copy, nonatomic) PKDrawing *drawing; // @synthesize drawing=_drawing;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)updateTileContainerViewFrame;

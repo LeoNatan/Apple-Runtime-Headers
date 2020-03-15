@@ -53,6 +53,7 @@
     struct CGPoint _overridingContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUAssetSharedViewModel *assetSharedViewModel; // @synthesize assetSharedViewModel=_assetSharedViewModel;
 @property(retain, nonatomic) PUAssetReference *assetReference; // @synthesize assetReference=_assetReference;
 @property(copy, nonatomic) NSNumber *isFavoriteOverride; // @synthesize isFavoriteOverride=_isFavoriteOverride;
@@ -82,7 +83,6 @@
 @property(nonatomic, setter=setUserTransformingTile:) _Bool isUserTransformingTile; // @synthesize isUserTransformingTile=_isUserTransformingTile;
 @property(copy, nonatomic) PUModelTileTransform *modelTileTransform; // @synthesize modelTileTransform=_modelTileTransform;
 @property(retain, nonatomic) id <PUDisplayAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)debugDetailedDescription;
 - (void)_handleBrowsingAnimatedImage:(id)arg1 didChange:(id)arg2;
 - (void)_handleBrowsingIrisPlayer:(id)arg1 didChange:(id)arg2;

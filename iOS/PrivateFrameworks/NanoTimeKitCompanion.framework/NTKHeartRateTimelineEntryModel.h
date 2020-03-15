@@ -21,6 +21,7 @@
     NSArray *_chartPoints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *chartPoints; // @synthesize chartPoints=_chartPoints;
 @property(nonatomic) long long dailyHighBPM; // @synthesize dailyHighBPM=_dailyHighBPM;
 @property(nonatomic) long long dailyLowBPM; // @synthesize dailyLowBPM=_dailyLowBPM;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool hasBPM; // @synthesize hasBPM=_hasBPM;
 @property(nonatomic) long long BPM; // @synthesize BPM=_BPM;
 @property(retain, nonatomic) NSDate *measurementDate; // @synthesize measurementDate=_measurementDate;
-- (void).cxx_destruct;
 - (id)_bpmString;
 - (id)_heartrateString;
 - (id)_newSignatureRectangularTemplate;

@@ -22,12 +22,12 @@
 + (void)generateMissingOrOutdatedHandwritingSummariesInContext:(id)arg1;
 + (id)missingOrOutdatedHandwritingSummaryAttachmentsInContext:(id)arg1;
 + (id)handwritingSummaryAttachmentsInContext:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mergeQueue; // @synthesize mergeQueue=_mergeQueue;
 @property(nonatomic) unsigned long long numberOfChanges; // @synthesize numberOfChanges=_numberOfChanges;
 @property(retain, nonatomic) PKDrawing *latestDrawing; // @synthesize latestDrawing=_latestDrawing;
 @property(retain, nonatomic) ICSelectorDelayer *processChangesSelectorDelayer; // @synthesize processChangesSelectorDelayer=_processChangesSelectorDelayer;
 @property(retain, nonatomic) ICAttachment *attachment; // @synthesize attachment=_attachment;
-- (void).cxx_destruct;
 - (void)updateVersionIfNeededForAttachment:(id)arg1 withDrawing:(id)arg2;
 - (void)processIndexableContentWithCompletion:(CDUnknownBlockType)arg1;
 - (void)mergeDrawingWithDrawing:(id)arg1;

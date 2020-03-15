@@ -11,7 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface _UISegmentedControlCacheKey : NSObject <NSCopying>
 {
-    float _size;
+    struct CGSize _size;
+    float _cornerRadius;
     unsigned int _state;
     struct CGColor *_primaryColor;
 }
@@ -21,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithCornerRadius:(float)arg1 state:(unsigned int)arg2 primaryColor:(struct CGColor *)arg3;
+- (id)initWithCornerRadius:(float)arg1 capSize:(struct CGSize)arg2 state:(unsigned int)arg3 primaryColor:(struct CGColor *)arg4;
 - (id)initWithSize:(int)arg1 primaryColor:(struct CGColor *)arg2 background:(_Bool)arg3;
 
 @end

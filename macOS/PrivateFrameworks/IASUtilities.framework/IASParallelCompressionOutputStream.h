@@ -22,6 +22,7 @@
     NSData *_partialData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *partialData; // @synthesize partialData=_partialData;
 @property(retain) NSLock *partialDataLock; // @synthesize partialDataLock=_partialDataLock;
 @property(retain) NSLock *stateLock; // @synthesize stateLock=_stateLock;
@@ -29,7 +30,6 @@
 @property(retain) IASStreamFIFOQueue *filteredDataQueue; // @synthesize filteredDataQueue=_filteredDataQueue;
 @property(nonatomic) int compressionLevel; // @synthesize compressionLevel=_compressionLevel;
 @property unsigned long long streamStatus; // @synthesize streamStatus=_streamStatus;
-- (void).cxx_destruct;
 - (long long)write:(const char *)arg1 maxLength:(unsigned long long)arg2;
 - (long long)write:(const char *)arg1 maxLength:(unsigned long long)arg2 shouldChangeCloseBehavior:(BOOL)arg3;
 - (void)close;

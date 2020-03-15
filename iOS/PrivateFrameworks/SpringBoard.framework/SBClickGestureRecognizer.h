@@ -23,12 +23,12 @@
     NSMutableSet *_receivedPressEndedTypes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double maximumBetweenClicksDelay; // @synthesize maximumBetweenClicksDelay=_maximumBetweenClicksDelay;
 @property(nonatomic) double maximumClickDownDuration; // @synthesize maximumClickDownDuration=_maximumClickDownDuration;
 @property(nonatomic) double maximumClickFormationDuration; // @synthesize maximumClickFormationDuration=_maximumClickFormationDuration;
 @property(nonatomic) _Bool allPressesUpRequired; // @synthesize allPressesUpRequired=_allPressesUpRequired;
 @property(nonatomic) unsigned long long numberOfClicksRequired; // @synthesize numberOfClicksRequired=_numberOfClicksRequired;
-- (void).cxx_destruct;
 - (_Bool)didReceiveRequiredPressEndedCount;
 - (_Bool)didReceiveRequiredPressBeganCount;
 - (void)resetShortcutsTracking;

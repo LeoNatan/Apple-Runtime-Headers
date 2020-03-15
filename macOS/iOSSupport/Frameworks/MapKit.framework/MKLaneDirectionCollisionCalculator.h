@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     BOOL _hasCollisions;
 }
 
-@property(readonly, nonatomic) BOOL hasCollisions; // @synthesize hasCollisions=_hasCollisions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL hasCollisions; // @synthesize hasCollisions=_hasCollisions;
 - (void)removeDirectionWithCollisionsLeastSimilarToDirection:(int)arg1;
 - (void)removeNextDirectionWithCollisions;
 @property(readonly, nonatomic) BOOL hasDirectionWithMaxCollisions;

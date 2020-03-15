@@ -15,10 +15,10 @@
     double _time;
 }
 
+- (void).cxx_destruct;
 @property double relativeTime; // @synthesize relativeTime=_time;
 @property float value; // @synthesize value=_value;
 @property(readonly) NSString *parameterID; // @synthesize parameterID=_param;
-- (void).cxx_destruct;
 - (id)initWithParameterID:(id)arg1 value:(float)arg2 relativeTime:(double)arg3;
 - (id)init;
 

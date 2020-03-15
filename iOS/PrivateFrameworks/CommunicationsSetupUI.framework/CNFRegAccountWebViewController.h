@@ -15,8 +15,8 @@
     NSTimer *_bagLoadTimer;
 }
 
-@property(nonatomic) _Bool failedBagLoad; // @synthesize failedBagLoad=_failedBagLoad;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool failedBagLoad; // @synthesize failedBagLoad=_failedBagLoad;
 - (id)authTokenHeaderValue;
 - (id)authIdHeaderValue;
 - (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;

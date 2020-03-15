@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     id <MTLBuffer> _waveFragmentUniforms;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MTLBuffer> waveFragmentUniforms; // @synthesize waveFragmentUniforms=_waveFragmentUniforms;
 @property(readonly, nonatomic) id <MTLBuffer> wavePoints; // @synthesize wavePoints=_wavePoints;
 @property(readonly, nonatomic) unsigned int computeCount; // @synthesize computeCount=_computeCount;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int numWaveIndicies; // @synthesize numWaveIndicies=_numWaveIndicies;
 @property(readonly, nonatomic) id <MTLBuffer> waveIndexBuffer; // @synthesize waveIndexBuffer=_waveIndexBuffer;
 @property(readonly, nonatomic) id <MTLBuffer> waveVertexBuffer; // @synthesize waveVertexBuffer=_waveVertexBuffer;
-- (void).cxx_destruct;
 - (void)storeCelebration:(id)arg1 withRing:(id)arg2;
 - (void)setContrastColor: /* Error: Ran out of types for this method. */;
 - (void)setBottomColor: /* Error: Ran out of types for this method. */;

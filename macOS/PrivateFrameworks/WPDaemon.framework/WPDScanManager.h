@@ -30,6 +30,7 @@
 }
 
 + (long long)zonesAvailableForType:(unsigned char)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *centralQueue; // @synthesize centralQueue=_centralQueue;
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *serverQueue; // @synthesize serverQueue=_serverQueue;
 @property(retain) NSSet *scanRuleHashes; // @synthesize scanRuleHashes=_scanRuleHashes;
@@ -44,7 +45,6 @@
 @property(retain) NSMutableDictionary *scanRequests; // @synthesize scanRequests=_scanRequests;
 @property BOOL scanningDisabled; // @synthesize scanningDisabled=_scanningDisabled;
 @property BOOL scanning; // @synthesize scanning=_scanning;
-- (void).cxx_destruct;
 - (void)removePeripheralConnectionsForClient:(id)arg1;
 - (void)removePeripheralConnection:(id)arg1 forClient:(id)arg2;
 - (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
@@ -61,6 +61,7 @@
 - (void)removeAllPeerTrackingRequestsForClient:(id)arg1;
 - (id)removePeerTrackingRequest:(id)arg1 checkZonesAvailable:(BOOL)arg2 forClient:(id)arg3;
 - (id)addPeerTrackingRequest:(id)arg1 forClient:(id)arg2;
+- (void)centralManager:(id)arg1 didFailToScanWithError:(id)arg2;
 - (void)centralManager:(id)arg1 didDiscoverMultiplePeripherals:(id)arg2;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)updateScanner;

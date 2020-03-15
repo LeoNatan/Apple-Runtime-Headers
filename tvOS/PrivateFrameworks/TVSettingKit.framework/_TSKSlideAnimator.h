@@ -18,9 +18,9 @@
     id <_TSKAnimatorDelegate> _animatorDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_TSKAnimatorDelegate> animatorDelegate; // @synthesize animatorDelegate=_animatorDelegate;
 @property(nonatomic) long long operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (id)_maskViewForFrame:(struct CGRect)arg1 layoutDirection:(long long)arg2;
 - (void)_animatePopWithContext:(id)arg1;
 - (void)_animatePushWithContext:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSUUID *voicemailUUID; // @synthesize voicemailUUID=_voicemailUUID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSUUID *voicemailUUID; // @synthesize voicemailUUID=_voicemailUUID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)_shouldDefaultToTouches;
-@property(copy, nonatomic) NSSet *touches; // @synthesize touches=_touches;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *touches; // @synthesize touches=_touches;
 - (BOOL)_wantsPartialTouchSequences;
 - (BOOL)_affectedByGesture:(id)arg1;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;

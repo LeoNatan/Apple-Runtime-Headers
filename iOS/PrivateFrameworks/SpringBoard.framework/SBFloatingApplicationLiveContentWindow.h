@@ -15,8 +15,8 @@
 }
 
 + (_Bool)sb_autorotates;
-@property(nonatomic) __weak UIView *effectiveCoordinateSpace; // @synthesize effectiveCoordinateSpace=_effectiveCoordinateSpace;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *effectiveCoordinateSpace; // @synthesize effectiveCoordinateSpace=_effectiveCoordinateSpace;
 - (struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2;
 - (struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2;

@@ -27,6 +27,7 @@
     CCUICAPackageView *_glyphPackageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CCUICAPackageView *glyphPackageView; // @synthesize glyphPackageView=_glyphPackageView;
 @property(retain, nonatomic) UIImageView *selectedGlyphView; // @synthesize selectedGlyphView=_selectedGlyphView;
 @property(retain, nonatomic) UIImageView *glyphImageView; // @synthesize glyphImageView=_glyphImageView;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *glyphState; // @synthesize glyphState=_glyphState;
 @property(retain, nonatomic) UIImage *glyphImage; // @synthesize glyphImage=_glyphImage;
 @property(retain, nonatomic) CCUICAPackageDescription *glyphPackageDescription; // @synthesize glyphPackageDescription=_glyphPackageDescription;
-- (void).cxx_destruct;
 - (void)_updateVisualStylingOfGlyphView:(id)arg1;
 - (void)_updateForStateChange;
 - (void)_deactivateReachability:(id)arg1;

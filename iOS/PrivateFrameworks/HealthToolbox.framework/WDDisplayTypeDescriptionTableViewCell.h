@@ -17,9 +17,9 @@
 
 + (double)minimumHeight;
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showAttributionText; // @synthesize showAttributionText=_showAttributionText;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
-- (void).cxx_destruct;
 - (void)setupSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

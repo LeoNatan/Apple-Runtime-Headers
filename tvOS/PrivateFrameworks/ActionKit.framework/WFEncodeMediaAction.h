@@ -13,8 +13,9 @@
     NSMutableArray *_exportSessions;
 }
 
-@property(retain, nonatomic) NSMutableArray *exportSessions; // @synthesize exportSessions=_exportSessions;
++ (_Bool)outputIsExemptFromTaintTrackingInheritance;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *exportSessions; // @synthesize exportSessions=_exportSessions;
 - (void)updateSpeedVisibility;
 - (_Bool)setParameterState:(id)arg1 forKey:(id)arg2;
 - (void)initializeParameters;

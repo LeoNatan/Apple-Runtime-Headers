@@ -13,8 +13,8 @@
     id <SiriAppsFooterViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SiriAppsFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SiriAppsFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didTapLearnMore:(id)arg1;
 - (id)initWithSpecifier:(id)arg1;
 

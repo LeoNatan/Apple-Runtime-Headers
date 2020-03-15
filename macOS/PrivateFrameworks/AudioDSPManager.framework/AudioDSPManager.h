@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DSPModuleFactory *dspModuleFactory; // @synthesize dspModuleFactory=_dspModuleFactory;
 @property(readonly, nonatomic) ConfigurationChangeRequestTransaction *pendingConfigRequestTransaction; // @synthesize pendingConfigRequestTransaction=_pendingConfigRequestTransaction;
 @property(readonly, nonatomic) ConfigurationChangeRequestParser *configChangeRequestParser; // @synthesize configChangeRequestParser=_configChangeRequestParser;
@@ -34,8 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VolumeManager *volumeManager; // @synthesize volumeManager=_volumeManager;
 @property(readonly, nonatomic) SystemStateManager *systemStateManager; // @synthesize systemStateManager=_systemStateManager;
 @property(readonly, nonatomic) GraphManager *graphManager; // @synthesize graphManager=_graphManager;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (struct error_code)setGraphVolumeDelegate:(id)arg1;

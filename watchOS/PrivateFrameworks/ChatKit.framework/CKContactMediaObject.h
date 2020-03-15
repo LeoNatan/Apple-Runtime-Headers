@@ -19,10 +19,10 @@
 + (id)attachmentSummary:(unsigned int)arg1;
 + (id)fallbackFilenamePrefix;
 + (id)UTITypes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *vCardImage; // @synthesize vCardImage=_vCardImage;
 @property(nonatomic) _Bool vCardParsingFailed; // @synthesize vCardParsingFailed=_vCardParsingFailed;
 @property(retain, nonatomic) CNContactVCardSummary *vCardSummary; // @synthesize vCardSummary=_vCardSummary;
-- (void).cxx_destruct;
 - (id)vCardImageOfSize:(struct CGSize)arg1;
 - (id)generateThumbnailFillToSize:(struct CGSize)arg1 contentAlignmentInsets:(struct UIEdgeInsets)arg2;
 - (struct CGSize)bbSize;

@@ -14,6 +14,7 @@
 
 @interface AXEventPointerInfoRepresentation : NSObject <AXEventRepresentationDescription, NSSecureCoding, NSCopying>
 {
+    _Bool _pointerIsAbsolute;
     float _pointerX;
     float _pointerY;
     float _pointerZ;
@@ -27,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool pointerIsAbsolute; // @synthesize pointerIsAbsolute=_pointerIsAbsolute;
 @property(nonatomic) float pointerButtonPressure; // @synthesize pointerButtonPressure=_pointerButtonPressure;
 @property(nonatomic) float pointerButtonClickCount; // @synthesize pointerButtonClickCount=_pointerButtonClickCount;
 @property(nonatomic) float pointerButtonNumber; // @synthesize pointerButtonNumber=_pointerButtonNumber;

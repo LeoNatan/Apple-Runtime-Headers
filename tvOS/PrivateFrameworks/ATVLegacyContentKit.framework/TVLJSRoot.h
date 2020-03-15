@@ -21,11 +21,11 @@
     NSLock *_timersLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *timersLock; // @synthesize timersLock=_timersLock;
 @property(retain, nonatomic) NSMutableDictionary *timers; // @synthesize timers=_timers;
 @property(nonatomic) __weak id <TVLJSRootDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct OpaqueJSValue *jsObjectRef; // @synthesize jsObjectRef=_jsObjectRef;
-- (void).cxx_destruct;
 - (id)_localtime:(id)arg1 context:(struct OpaqueJSContext *)arg2 exception:(const struct OpaqueJSValue **)arg3;
 - (void)_timerFired:(id)arg1;
 - (void)_jsFinalize;

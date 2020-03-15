@@ -18,9 +18,9 @@
     WFDailyRoutineShortcutSetupActionsQuestion *_question;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFDailyRoutineShortcutSetupActionsQuestion *question; // @synthesize question=_question;
 @property(nonatomic) __weak id <WFDailyRoutineShortcutSetupQuestionChildViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
 - (void)didSelectSkipButton;
 - (void)didSelectAddButton;

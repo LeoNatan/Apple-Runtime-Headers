@@ -9,13 +9,13 @@
 #import <Rapport/NSSecureCoding-Protocol.h>
 #import <Rapport/RPRemoteDisplayXPCClientInterface-Protocol.h>
 
-@class NSArray, NSXPCConnection;
+@class NSArray, NSMutableDictionary, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
 @interface RPRemoteDisplayDiscovery : NSObject <NSSecureCoding, RPRemoteDisplayXPCClientInterface>
 {
     _Bool _activateCalled;
-    struct NSMutableDictionary *_discoveredDevices;
+    NSMutableDictionary *_discoveredDevices;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     NSXPCConnection *_xpcCnx;
@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType errorFlagsChangedHandler; // @synthesize errorFlagsChangedHandler=_errorFlagsChangedHandler;
 @property(nonatomic) unsigned long long errorFlags; // @synthesize errorFlags=_errorFlags;
 @property(copy, nonatomic) CDUnknownBlockType deviceChangedHandler; // @synthesize deviceChangedHandler=_deviceChangedHandler;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (_Bool)shouldReportDevice:(id)arg1;
 - (void)_lostAllDevices;
 - (void)remoteDisplayUpdateErrorFlags:(unsigned long long)arg1;

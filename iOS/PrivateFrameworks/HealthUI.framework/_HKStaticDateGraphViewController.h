@@ -14,9 +14,9 @@
     HKValueRange *_fixedRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKValueRange *fixedRange; // @synthesize fixedRange=_fixedRange;
 @property(retain, nonatomic) NSMutableArray *allStackedSeries; // @synthesize allStackedSeries=_allStackedSeries;
-- (void).cxx_destruct;
 - (id)graphView:(id)arg1 graphSeriesForZoom:(long long)arg2 stackOffset:(long long)arg3;
 - (void)graphView:(id)arg1 didUpdateSeries:(id)arg2 newDataArrived:(_Bool)arg3;
 - (long long)stackCountForGraphView:(id)arg1;

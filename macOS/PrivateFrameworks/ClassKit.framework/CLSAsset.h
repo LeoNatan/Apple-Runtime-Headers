@@ -8,16 +8,23 @@
 
 #import <ClassKit/CLSRelationable-Protocol.h>
 
-@class NSObject, NSString, NSURL;
-@protocol OS_dispatch_queue;
+@class NSError, NSMetadataQuery, NSMutableArray, NSString, NSURL;
 
 @interface CLSAsset : CLSObject <CLSRelationable>
 {
     NSURL *_url;
     BOOL _uploaded;
-    NSObject<OS_dispatch_queue> *_shareQueue;
+    unsigned long long _uploadState;
+    BOOL _observingUploadProgress;
+    NSMutableArray *_uploadObservers;
+    long long _totalUnitCount;
+    long long _completedUnitCount;
+    NSError *_sharingError;
+    NSMetadataQuery *_query;
     BOOL _original;
     NSString *_ownerPersonID;
+    double _fractionUploaded;
+    NSError *_uploadError;
     NSString *_brItemID;
     NSString *_brOwnerName;
     NSString *_brZoneName;
@@ -28,23 +35,36 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)relations;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *relativePathWithinContainer; // @synthesize relativePathWithinContainer=_relativePathWithinContainer;
 @property(retain, nonatomic) NSString *ubiquitousContainerName; // @synthesize ubiquitousContainerName=_ubiquitousContainerName;
 @property(retain, nonatomic) NSString *brShareName; // @synthesize brShareName=_brShareName;
 @property(retain, nonatomic) NSString *brZoneName; // @synthesize brZoneName=_brZoneName;
 @property(retain, nonatomic) NSString *brOwnerName; // @synthesize brOwnerName=_brOwnerName;
 @property(retain, nonatomic) NSString *brItemID; // @synthesize brItemID=_brItemID;
+@property(readonly, nonatomic) NSError *uploadError; // @synthesize uploadError=_uploadError;
+@property(readonly, nonatomic) double fractionUploaded; // @synthesize fractionUploaded=_fractionUploaded;
 @property(nonatomic, getter=isOriginal) BOOL original; // @synthesize original=_original;
 @property(retain, nonatomic) NSString *ownerPersonID; // @synthesize ownerPersonID=_ownerPersonID;
-- (void).cxx_destruct;
-- (void)urlSuitableForOpeningWithCompletion:(CDUnknownBlockType)arg1;
-- (void)deleteFileWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)deleteFile:(id *)arg1;
-- (BOOL)_deleteFileAtURL:(id)arg1 error:(id *)arg2;
-- (void)_createShareIfNeeded:(CDUnknownBlockType)arg1;
-- (void)createShareIfNeeded:(CDUnknownBlockType)arg1;
+- (void)deleteFileWithCompletion:(CDUnknownBlockType)arg1;
+- (BOOL)deleteFileAtURL:(id)arg1 error:(id *)arg2;
+- (void)urlSuitableForOpeningWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchUsersAndAddToShare:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)createShareIfNeeded_Imp:(CDUnknownBlockType)arg1;
+- (void)createShareIfNeeded:(CDUnknownBlockType)arg1;
+- (void)processItems:(id)arg1;
+- (void)queryUpdated:(id)arg1;
+- (void)queryGatheredData:(id)arg1;
+- (void)queued_stopObservingUploadProgress;
+- (void)queued_startObservingUploadProgress;
+- (void)uploadStateChanged:(unsigned long long)arg1;
 - (id)uploadFileIfNeeded:(id *)arg1;
+- (void)queued_notifyUploadCompletion;
+- (void)queued_notifyUploadProgress;
+- (id)uploadObservers;
+- (void)removeUploadObserver:(id)arg1;
+- (void)addUploadObserver:(id)arg1;
 - (void)willSaveObject;
 - (BOOL)validateObject:(id *)arg1;
 @property(nonatomic, getter=isUploaded) BOOL uploaded;

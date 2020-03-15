@@ -17,8 +17,8 @@
     MPModelLibraryRequest *_request;
 }
 
-@property(readonly, nonatomic) MPModelLibraryRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MPModelLibraryRequest *request; // @synthesize request=_request;
 - (BOOL)_allowedEntityIdentifiersContainsAllPersistentIDs;
 - (unsigned long long)_adjustedIndexForSectionIndex:(long long)arg1;
 - (void)_populateIndexMap;

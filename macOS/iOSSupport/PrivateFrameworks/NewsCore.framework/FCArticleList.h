@@ -19,6 +19,7 @@
     FCInterestToken *_interestToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCInterestToken *interestToken; // @synthesize interestToken=_interestToken;
 @property(readonly, nonatomic) NTPBArticleListRecord *record; // @synthesize record=_record;
 @property(readonly, copy, nonatomic) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSArray *articleIDs; // @synthesize articleIDs=_articleIDs;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithRecord:(id)arg1 interestToken:(id)arg2;
 
 @end

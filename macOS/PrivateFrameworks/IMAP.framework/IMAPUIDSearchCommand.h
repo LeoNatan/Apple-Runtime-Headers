@@ -14,9 +14,9 @@
     NSMutableIndexSet *_matchingUIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableIndexSet *matchingUIDs; // @synthesize matchingUIDs=_matchingUIDs;
 @property(copy) NSArray *terms; // @synthesize terms=_terms;
-- (void).cxx_destruct;
 - (BOOL)executeOnConnection:(id)arg1;
 - (id)_newArgumentForSearchTerm:(id)arg1 isLiteral:(char *)arg2;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;

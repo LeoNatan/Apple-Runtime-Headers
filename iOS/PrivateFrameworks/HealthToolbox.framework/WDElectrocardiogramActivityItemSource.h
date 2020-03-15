@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSURL *_pdfTemporaryFileURL;
 }
 
-@property(readonly, nonatomic) NSURL *pdfTemporaryFileURL; // @synthesize pdfTemporaryFileURL=_pdfTemporaryFileURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *pdfTemporaryFileURL; // @synthesize pdfTemporaryFileURL=_pdfTemporaryFileURL;
 - (void)dealloc;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;

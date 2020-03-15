@@ -16,9 +16,9 @@
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
-- (void).cxx_destruct;
 - (void)loadingViewStopAnimating;
 - (void)loadingViewStartAnimating;
 - (void)layoutSubviews;

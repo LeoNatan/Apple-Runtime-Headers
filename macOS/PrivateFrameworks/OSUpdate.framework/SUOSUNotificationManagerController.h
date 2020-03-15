@@ -21,13 +21,13 @@
     NSMutableArray *_restartCountdownDownloadCompletionHandlers;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *restartCountdownDownloadCompletionHandlers; // @synthesize restartCountdownDownloadCompletionHandlers=_restartCountdownDownloadCompletionHandlers;
 @property(retain) NSMutableArray *restartCountdownDownloadProgressHandlers; // @synthesize restartCountdownDownloadProgressHandlers=_restartCountdownDownloadProgressHandlers;
 @property(retain) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain) NSLock *serviceConnectionLock; // @synthesize serviceConnectionLock=_serviceConnectionLock;
 @property(retain) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 @property(copy) CDUnknownBlockType customInterruptionHandler; // @synthesize customInterruptionHandler=_customInterruptionHandler;
-- (void).cxx_destruct;
 - (void)restartCountdownDownloadFinishedWithError:(id)arg1;
 - (void)restartCountdownDownloadProgress:(float)arg1 status:(id)arg2;
 - (BOOL)_authorizeServiceForInstall;

@@ -19,8 +19,8 @@
 + (id)keyPathFromPrimaryObject;
 + (id)entityName;
 + (id)propertySetName;
-@property(readonly, copy, nonatomic) NSSet *keywordTitles; // @synthesize keywordTitles=_keywordTitles;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSSet *keywordTitles; // @synthesize keywordTitles=_keywordTitles;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
 
 @end

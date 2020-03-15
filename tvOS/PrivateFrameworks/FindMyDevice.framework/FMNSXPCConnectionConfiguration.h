@@ -26,12 +26,12 @@
 + (id)userNotificationConfiguration;
 + (id)emergencyCallInfoPublisherConfiguration;
 + (id)identityConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool machService; // @synthesize machService=_machService;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(retain, nonatomic) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
 @property(retain, nonatomic) NSXPCInterface *remoteInterface; // @synthesize remoteInterface=_remoteInterface;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     BOOL _allowed;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowed; // @synthesize allowed=_allowed;
 @property(retain, nonatomic) NSString *virutalPortUID; // @synthesize virutalPortUID=_virutalPortUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

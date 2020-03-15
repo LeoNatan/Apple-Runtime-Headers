@@ -21,6 +21,7 @@
     double _wifiOut;
 }
 
+- (void).cxx_destruct;
 @property int refCount; // @synthesize refCount=_refCount;
 @property double wifiOut; // @synthesize wifiOut=_wifiOut;
 @property double wifiIn; // @synthesize wifiIn=_wifiIn;
@@ -30,7 +31,6 @@
 @property double startTime; // @synthesize startTime=_startTime;
 @property(retain) NSDictionary *stopArgs; // @synthesize stopArgs=_stopArgs;
 @property(retain) NSDictionary *startArgs; // @synthesize startArgs=_startArgs;
-- (void).cxx_destruct;
 - (void)updateDataStats:(id)arg1;
 - (void)addStopEvent:(double)arg1 withArgs:(id)arg2;
 - (void)addStartEvent:(double)arg1 withArgs:(id)arg2;

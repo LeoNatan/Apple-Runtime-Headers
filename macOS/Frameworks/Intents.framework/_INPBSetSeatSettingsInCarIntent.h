@@ -33,6 +33,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int seat; // @synthesize seat=_seat;
 @property(nonatomic) int relativeLevelSetting; // @synthesize relativeLevelSetting=_relativeLevelSetting;
@@ -42,7 +43,6 @@
 @property(nonatomic) BOOL enableHeating; // @synthesize enableHeating=_enableHeating;
 @property(nonatomic) BOOL enableCooling; // @synthesize enableCooling=_enableCooling;
 @property(retain, nonatomic) _INPBDataString *carName; // @synthesize carName=_carName;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

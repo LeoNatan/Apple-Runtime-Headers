@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 + (id)layoutAttributesForBuddy;
 + (id)settingsHeaderFont;
 + (id)buddyHeaderFont;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) double avatarViewToNamePadding; // @synthesize avatarViewToNamePadding=_avatarViewToNamePadding;
 @property(readonly, nonatomic) struct CGSize avatarViewSize; // @synthesize avatarViewSize=_avatarViewSize;
 @property(readonly, nonatomic) UIFont *headerFont; // @synthesize headerFont=_headerFont;
 @property(readonly, nonatomic) double topToAvatarPadding; // @synthesize topToAvatarPadding=_topToAvatarPadding;
-- (void).cxx_destruct;
 - (id)initWithTopToAvatarPadding:(double)arg1 headerFont:(id)arg2 avatarViewSize:(struct CGSize)arg3 avatarViewToNamePadding:(double)arg4 backgroundColor:(id)arg5;
 
 @end

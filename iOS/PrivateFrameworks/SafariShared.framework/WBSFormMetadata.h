@@ -39,6 +39,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *passwordRequirements; // @synthesize passwordRequirements=_passwordRequirements;
 @property(readonly, nonatomic) _Bool isSearchForm; // @synthesize isSearchForm=_isSearchForm;
 @property(readonly, nonatomic) unsigned long long requestType; // @synthesize requestType=_requestType;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSDictionary *annotations; // @synthesize annotations=_annotations;
 @property(readonly, nonatomic) _Bool allowsAutocomplete; // @synthesize allowsAutocomplete=_allowsAutocomplete;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool containsAtLeastOneSecureTextField;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

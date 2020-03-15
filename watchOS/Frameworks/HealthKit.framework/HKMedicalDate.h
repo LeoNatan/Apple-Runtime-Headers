@@ -31,10 +31,10 @@
 + (id)medicalDateWithYear:(int)arg1 error:(out id *)arg2;
 + (id)referenceCalendarWithLocalTimezone;
 + (id)referenceCalendar;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *underlyingDate; // @synthesize underlyingDate=_underlyingDate;
 @property(readonly, copy, nonatomic) NSString *originalTimeZoneString; // @synthesize originalTimeZoneString=_originalTimeZoneString;
 @property(readonly, nonatomic) int form; // @synthesize form=_form;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

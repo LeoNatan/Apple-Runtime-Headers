@@ -47,6 +47,7 @@
 + (id)monogramWithScope:(unsigned long long)arg1 recipe:(id)arg2 staticRepresentation:(struct CGImage *)arg3;
 + (id)monogramWithRecipe:(id)arg1 staticRepresentation:(struct CGImage *)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *dirtyProperties; // @synthesize dirtyProperties=_dirtyProperties;
 @property(retain, nonatomic) NSDate *insertionDate; // @synthesize insertionDate=_insertionDate;
 @property(nonatomic) long long source; // @synthesize source=_source;
@@ -62,7 +63,6 @@
 @property(nonatomic, setter=setCurrent:) _Bool isCurrent; // @synthesize isCurrent=_isCurrent;
 @property(nonatomic) unsigned long long scope; // @synthesize scope=_scope;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)clearDirtyProperties;
 @property(readonly, nonatomic) _Bool isDirty;
 - (id)description;

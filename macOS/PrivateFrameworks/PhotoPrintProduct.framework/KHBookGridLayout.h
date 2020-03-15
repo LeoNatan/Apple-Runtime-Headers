@@ -32,6 +32,7 @@
 
 + (Class)layoutAccessibilityClass;
 + (Class)invalidationContextClass;
+- (void).cxx_destruct;
 @property(nonatomic) double contentHeightCache; // @synthesize contentHeightCache=_contentHeightCache;
 @property(nonatomic) struct CGSize referenceItemSize; // @synthesize referenceItemSize=_referenceItemSize;
 @property(nonatomic) long long currentNumberOfColumns; // @synthesize currentNumberOfColumns=_currentNumberOfColumns;
@@ -42,7 +43,6 @@
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 @property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_minimumInteritemSpacing;
 @property(nonatomic) double minimumLineSpacing; // @synthesize minimumLineSpacing=_minimumLineSpacing;
-- (void).cxx_destruct;
 - (id)indexPathOfItemBelow:(id)arg1;
 - (id)indexPathOfItemAbove:(id)arg1;
 - (id)indexPathOfItemAfter:(id)arg1;

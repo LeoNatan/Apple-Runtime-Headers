@@ -16,9 +16,9 @@
     CNMutableGroup *_group;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool markedForDeletion; // @synthesize markedForDeletion=_markedForDeletion;
 @property(readonly, nonatomic) CNMutableGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (void *)asABGroup;
 - (id)asGroup;
 - (void)updateSaveRequest:(id)arg1;

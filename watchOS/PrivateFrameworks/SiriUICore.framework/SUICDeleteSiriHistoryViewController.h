@@ -14,8 +14,8 @@
     CDUnknownBlockType _deleteSiriHistoryCompletion;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType deleteSiriHistoryCompletion; // @synthesize deleteSiriHistoryCompletion=_deleteSiriHistoryCompletion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType deleteSiriHistoryCompletion; // @synthesize deleteSiriHistoryCompletion=_deleteSiriHistoryCompletion;
 - (void)_deleteSiriHistory;
 - (void)_dismiss;
 - (void)_callDeleteSiriHistoryCompletionIfSafe;

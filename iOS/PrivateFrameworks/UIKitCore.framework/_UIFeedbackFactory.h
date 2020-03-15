@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedFactory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
 @property(retain, nonatomic) NSDictionary *customContinuousFeedbacks; // @synthesize customContinuousFeedbacks=_customContinuousFeedbacks;
 @property(retain, nonatomic) NSDictionary *customDiscreteFeedbacks; // @synthesize customDiscreteFeedbacks=_customDiscreteFeedbacks;
 @property(readonly, nonatomic) NSDictionary *customFeedbacksArchiveContents; // @synthesize customFeedbacksArchiveContents=_customFeedbacksArchiveContents;
-- (void).cxx_destruct;
 - (void)addLocalPatterns:(id)arg1;
 - (void)performWithLocalIdentifier:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)feedbackWithIdentifier:(id)arg1;

@@ -15,10 +15,10 @@
     NSArray *_confidences;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *confidences; // @synthesize confidences=_confidences;
 @property(copy, nonatomic) NSArray *nBestIndexes; // @synthesize nBestIndexes=_nBestIndexes;
 @property(copy, nonatomic) NSArray *sausage; // @synthesize sausage=_sausage;
-- (void).cxx_destruct;
 
 @end
 

@@ -14,8 +14,8 @@
 }
 
 + (id)copyTypeDescription;
-@property(retain) NSArray *trafficSelectors; // @synthesize trafficSelectors=_trafficSelectors;
 - (void).cxx_destruct;
+@property(retain) NSArray *trafficSelectors; // @synthesize trafficSelectors=_trafficSelectors;
 - (_Bool)parsePayloadData;
 - (_Bool)generatePayloadData;
 - (_Bool)hasRequiredFields;

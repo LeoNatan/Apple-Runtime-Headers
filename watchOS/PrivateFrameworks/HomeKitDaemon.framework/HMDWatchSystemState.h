@@ -17,8 +17,8 @@
 }
 
 + (id)sharedState;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void)_callDidUpdateReachabilityChangeForCompanion:(_Bool)arg1 forDelegate:(id)arg2;
 - (void)_callDidReceiveNewIncomingMessageForDelegate:(id)arg1;
 - (void)registerDelegate:(id)arg1;

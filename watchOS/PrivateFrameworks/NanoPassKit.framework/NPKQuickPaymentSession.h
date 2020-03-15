@@ -36,6 +36,7 @@
 + (void)_handleNewContactlessSession:(id)arg1;
 + (_Bool)hasOutstandingSessions;
 + (id)_outstandingSessionHashTable;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKFieldDetector *fieldDetector; // @synthesize fieldDetector=_fieldDetector;
 @property(retain, nonatomic) NSMutableArray *deactivationCompletionBlocks; // @synthesize deactivationCompletionBlocks=_deactivationCompletionBlocks;
 @property(nonatomic, getter=isDeactivated) _Bool deactivated; // @synthesize deactivated=_deactivated;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *paymentSessionQueue; // @synthesize paymentSessionQueue=_paymentSessionQueue;
 @property(nonatomic) _Bool inServiceMode; // @synthesize inServiceMode=_inServiceMode;
 @property(nonatomic) __weak id <NPKQuickPaymentSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_internalQueue_invokeDeactivationCompletionBlocks;
 - (void)_loyaltyEngineConfigurationChanged:(id)arg1;
 - (void)_handleConventionalTransactionWithContext:(id)arg1;

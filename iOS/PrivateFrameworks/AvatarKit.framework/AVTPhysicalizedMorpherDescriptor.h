@@ -25,6 +25,7 @@
     unsigned long long _extraSimulationFactorTargetIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool mirrored; // @synthesize mirrored=_mirrored;
 @property(nonatomic) unsigned long long extraSimulationFactorTargetIndex; // @synthesize extraSimulationFactorTargetIndex=_extraSimulationFactorTargetIndex;
 @property(retain, nonatomic) SCNNode *extraSimulationFactorReadMorpherNode; // @synthesize extraSimulationFactorReadMorpherNode=_extraSimulationFactorReadMorpherNode;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) SCNNode *drivingNode; // @synthesize drivingNode=_drivingNode;
 @property(retain, nonatomic) SCNNode *referenceNode; // @synthesize referenceNode=_referenceNode;
 @property(nonatomic) float simulationFactor; // @synthesize simulationFactor=_simulationFactor;
-- (void).cxx_destruct;
 
 @end
 

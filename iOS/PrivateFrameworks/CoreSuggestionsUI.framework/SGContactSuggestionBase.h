@@ -21,8 +21,8 @@
 
 + (void)confirm:(_Bool)arg1 suggestion:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)contactImage;
-@property(nonatomic) __weak id <SGSuggestionDelegate> suggestionDelegate; // @synthesize suggestionDelegate=_suggestionDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SGSuggestionDelegate> suggestionDelegate; // @synthesize suggestionDelegate=_suggestionDelegate;
 - (id)suggestionCategoryLocalizedCountOfItems:(id)arg1;
 - (id)suggestionCategorySubtitleForItems:(id)arg1;
 - (id)suggestionCategoryTitleForItems:(id)arg1;

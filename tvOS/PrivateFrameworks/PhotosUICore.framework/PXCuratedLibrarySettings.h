@@ -177,6 +177,7 @@
 + (id)sharedInstance;
 + (id)_printAccessibilityElementsRow;
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceShowAllButtonsVisible; // @synthesize forceShowAllButtonsVisible=_forceShowAllButtonsVisible;
 @property(nonatomic) _Bool forceBadgesOnAllAssets; // @synthesize forceBadgesOnAllAssets=_forceBadgesOnAllAssets;
 @property(nonatomic) _Bool exaggerateContrast; // @synthesize exaggerateContrast=_exaggerateContrast;
@@ -332,7 +333,6 @@
 @property(nonatomic) _Bool enablePlayMovieInYears; // @synthesize enablePlayMovieInYears=_enablePlayMovieInYears;
 @property(nonatomic) _Bool showPhotosLibrarySettingsAtTopLevel; // @synthesize showPhotosLibrarySettingsAtTopLevel=_showPhotosLibrarySettingsAtTopLevel;
 @property(nonatomic) double recentHighlightsTimeInterval; // @synthesize recentHighlightsTimeInterval=_recentHighlightsTimeInterval;
-- (void).cxx_destruct;
 - (long long)version;
 - (_Bool)allowsModularLayoutForZoomLevel:(long long)arg1 sizeClass:(long long)arg2 orientation:(long long)arg3;
 - (CDUnknownBlockType)acceptableLargeHeroPredicate;

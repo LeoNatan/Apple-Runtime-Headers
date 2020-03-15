@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     SCRUIElement *__titleUIElement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setRegisteredFocusedTabChangedNotification:) BOOL _registeredFocusedTabChangedNotification; // @synthesize _registeredFocusedTabChangedNotification=__registeredFocusedTabChangedNotification;
 @property(retain, nonatomic, setter=_setTitleUIElement:) SCRUIElement *_titleUIElement; // @synthesize _titleUIElement=__titleUIElement;
 @property(retain, nonatomic, setter=_setProxyUIElement:) SCRUIElement *_proxyUIElement; // @synthesize _proxyUIElement=__proxyUIElement;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setMinimizeUIElement:) SCRUIElement *_minimizeUIElement; // @synthesize _minimizeUIElement=__minimizeUIElement;
 @property(readonly, nonatomic) BOOL isFocusingIntoWindow; // @synthesize isFocusingIntoWindow=_isFocusingIntoWindow;
 @property(retain, nonatomic, setter=setCloseUIElement:) SCRUIElement *closeUIElement; // @synthesize closeUIElement=_closeUIElement;
-- (void).cxx_destruct;
 - (void)_removeTrackedElementsForKey:(id)arg1;
 - (void)setTrackedElement:(id)arg1 key:(id)arg2;
 - (id)trackedElementsForKey:(id)arg1;

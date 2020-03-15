@@ -6,11 +6,13 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class SFPasswordDetailViewController;
+@class SFPasswordDetailViewController, WBSPasswordEvaluator, WBSSavedPasswordAuditor;
 
 @protocol SFPasswordDetailViewControllerDelegate <NSObject>
 
 @optional
+- (WBSPasswordEvaluator *)passwordEvaluatorForPasswordDetailViewController:(SFPasswordDetailViewController *)arg1;
+- (WBSSavedPasswordAuditor *)passwordAuditorForPasswordDetailViewController:(SFPasswordDetailViewController *)arg1;
 - (void)passwordDetailViewControllerDidUpdate:(SFPasswordDetailViewController *)arg1;
 @end
 

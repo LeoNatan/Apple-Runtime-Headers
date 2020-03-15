@@ -29,6 +29,7 @@
 + (id)entitlements;
 + (id)eventStream;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) int siriToken; // @synthesize siriToken=_siriToken;
 @property(nonatomic) unsigned long long userActivityNotificationHandle; // @synthesize userActivityNotificationHandle=_userActivityNotificationHandle;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *debounceTimer; // @synthesize debounceTimer=_debounceTimer;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned long long lastInUseStatus; // @synthesize lastInUseStatus=_lastInUseStatus;
 @property(nonatomic) BOOL initialized; // @synthesize initialized=_initialized;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)updatePerformanceThrottleStatusWithLevel:(unsigned long long)arg1;
 - (void)updateActivityDateAndInUseState:(unsigned long long)arg1;
 - (void)updateActivityInUseState:(unsigned long long)arg1;

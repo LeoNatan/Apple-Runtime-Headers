@@ -13,8 +13,8 @@
     MFEWSAccount *_account;
 }
 
-@property(nonatomic) __weak MFEWSAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MFEWSAccount *account; // @synthesize account=_account;
 - (void)kickOffReautodiscovery:(id)arg1;
 
 @end

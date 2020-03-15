@@ -15,7 +15,7 @@
 {
     BOOL _handoffRequiresUserInteraction;
     unsigned long long _timestamp;
-    struct NSUUID *_turnIdentifier;
+    NSUUID *_turnIdentifier;
     AFRequestCompletionOptions *_requestCompletionOptions;
     NSUUID *_uuid;
     unsigned long long _options;
@@ -41,9 +41,16 @@
     NSString *_previousUtterance;
     NSString *_sessionId;
     NSString *_utteranceSource;
+    NSString *_expectedSpeakerSharedUserID;
+    unsigned long long _expectedSpeakerConfidenceScore;
+    NSDictionary *_nonspeakerConfidenceScores;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *nonspeakerConfidenceScores; // @synthesize nonspeakerConfidenceScores=_nonspeakerConfidenceScores;
+@property(nonatomic) unsigned long long expectedSpeakerConfidenceScore; // @synthesize expectedSpeakerConfidenceScore=_expectedSpeakerConfidenceScore;
+@property(copy, nonatomic) NSString *expectedSpeakerSharedUserID; // @synthesize expectedSpeakerSharedUserID=_expectedSpeakerSharedUserID;
 @property(copy, nonatomic) NSString *utteranceSource; // @synthesize utteranceSource=_utteranceSource;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(copy, nonatomic) NSString *previousUtterance; // @synthesize previousUtterance=_previousUtterance;
@@ -72,7 +79,6 @@
 @property(copy, nonatomic) AFRequestCompletionOptions *requestCompletionOptions; // @synthesize requestCompletionOptions=_requestCompletionOptions;
 @property(copy, nonatomic) NSUUID *turnIdentifier; // @synthesize turnIdentifier=_turnIdentifier;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

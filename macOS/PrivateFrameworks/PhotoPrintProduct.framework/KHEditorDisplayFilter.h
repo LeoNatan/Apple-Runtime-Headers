@@ -18,12 +18,12 @@
 }
 
 + (id)filterWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *accessibilityHelp; // @synthesize accessibilityHelp=_accessibilityHelp;
 @property long long tag; // @synthesize tag=_tag;
 @property BOOL isDefault; // @synthesize isDefault=_isDefault;
 @property(retain) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, copy) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithTitle:(id)arg1;
 

@@ -33,11 +33,11 @@
 + (id)observerWithQueue:(id)arg1 calloutQueue:(id)arg2 forGatewayName:(id)arg3;
 + (id)gatewayWithQueue:(id)arg1 calloutQueue:(id)arg2 name:(id)arg3 priority:(unsigned int)arg4;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int gatewayPriority; // @synthesize gatewayPriority=_gatewayPriority;
 @property(readonly, copy, nonatomic) NSString *gatewayName; // @synthesize gatewayName=_gatewayName;
 @property(nonatomic) unsigned int observerFeed; // @synthesize observerFeed=_observerFeed;
 @property(nonatomic) __weak id <BBObserverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)noteServerReceivedResponseForBulletin:(id)arg1;
 - (void)updateGlobalSettings:(id)arg1;
 - (void)removeSection:(id)arg1;

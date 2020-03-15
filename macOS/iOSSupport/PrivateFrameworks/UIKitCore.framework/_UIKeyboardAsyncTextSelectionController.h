@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
 - (void)showSelectionCommands;
 - (void)setRangedSelectionShouldShowGrabbers:(BOOL)arg1;
 - (void)selectPositionAtBoundary:(long long)arg1 inDirection:(long long)arg2 relativeToSelection:(id)arg3 executionContext:(id)arg4;
+- (void)selectPositionAtPoint:(struct CGPoint)arg1 granularity:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)selectPositionAtPoint:(struct CGPoint)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)selectPositionAtPoint:(struct CGPoint)arg1 executionContext:(id)arg2;
 - (BOOL)shouldAllowSelectionGestureWithTouchType:(long long)arg1 atPoint:(struct CGPoint)arg2 toProgressToState:(long long)arg3;
 - (struct CGRect)caretRectForRightmostSelectedPosition;

@@ -31,6 +31,7 @@
 
 + (double)minimumNaturalHeightForPrimaryTextUsingSmallText:(_Bool)arg1 sizeClass:(long long)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property _Bool animatingAlpha; // @synthesize animatingAlpha=_animatingAlpha;
 @property(retain) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain) NSLayoutConstraint *trailingHorizontalPad; // @synthesize trailingHorizontalPad=_trailingHorizontalPad;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(retain, nonatomic) UIColor *elementColor; // @synthesize elementColor=_elementColor;
 @property(nonatomic) __weak id <EKDayOccurrenceTravelTimeViewMetricsDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (double)alphaForElements;
 - (struct UIEdgeInsets)_parentPadding;

@@ -23,6 +23,7 @@
     MFAttachmentManager *_attachmentManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFAttachmentManager *attachmentManager; // @synthesize attachmentManager=_attachmentManager;
 @property(getter=isVisuallyEmpty) _Bool visuallyEmpty; // @synthesize visuallyEmpty=_visuallyEmpty;
 @property unsigned long preferredEncoding; // @synthesize preferredEncoding=_preferredEncoding;
@@ -30,7 +31,6 @@
 @property(readonly) MFMimePart *mimePart; // @synthesize mimePart=_htmlPart;
 @property(readonly) MFMimeBody *mimeBody; // @synthesize mimeBody=_mimeBody;
 @property(readonly) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-- (void).cxx_destruct;
 - (id)fileWrapper;
 - (id)preferredCharacterSet;
 - (id)attachmentsInDocument;

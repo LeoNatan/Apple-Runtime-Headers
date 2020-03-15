@@ -13,8 +13,8 @@
     id <_SFActivityDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_SFActivityDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SFActivityDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)activityDidFinish:(_Bool)arg1;
 
 @end

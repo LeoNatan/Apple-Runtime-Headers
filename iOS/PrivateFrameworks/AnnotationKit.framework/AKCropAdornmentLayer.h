@@ -13,8 +13,8 @@
     CAShapeLayer *_handlesLayer;
 }
 
-@property(retain) CAShapeLayer *handlesLayer; // @synthesize handlesLayer=_handlesLayer;
 - (void).cxx_destruct;
+@property(retain) CAShapeLayer *handlesLayer; // @synthesize handlesLayer=_handlesLayer;
 - (void)_removeHandles;
 - (void)_updateHandles;
 - (void)_addHandles;

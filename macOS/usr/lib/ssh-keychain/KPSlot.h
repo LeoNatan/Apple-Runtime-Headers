@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     LAContext *_authenticationContext;
 }
 
+- (void).cxx_destruct;
 @property(retain) LAContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
 @property BOOL unlocked; // @synthesize unlocked=_unlocked;
 @property(retain) NSString *ID; // @synthesize ID=_ID;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSObject *keychain; // @synthesize keychain=_keychain;
 @property(retain) NSMutableArray *certificates; // @synthesize certificates=_certificates;
-- (void).cxx_destruct;
 
 @end
 

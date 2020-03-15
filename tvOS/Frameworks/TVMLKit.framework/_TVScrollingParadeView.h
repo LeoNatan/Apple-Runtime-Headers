@@ -22,9 +22,9 @@
     NSArray *_imageProxies;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(copy, nonatomic) NSArray *imageProxies; // @synthesize imageProxies=_imageProxies;
-- (void).cxx_destruct;
 - (void)_stopAnimations;
 - (void)_startAnimations;
 - (void)_addImageToAnimationContainer:(id)arg1;

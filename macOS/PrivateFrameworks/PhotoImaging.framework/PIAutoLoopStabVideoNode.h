@@ -14,8 +14,8 @@
 }
 
 + (id)nodeWithInput:(id)arg1 recipe:(id)arg2 error:(out id *)arg3;
-@property(readonly, nonatomic) NSDictionary *bakedRecipe; // @synthesize bakedRecipe=_bakedRecipe;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *bakedRecipe; // @synthesize bakedRecipe=_bakedRecipe;
 - (BOOL)requiresAudioMix;
 - (id)_evaluateVideoComposition:(out id *)arg1;
 - (BOOL)requiresVideoComposition;
@@ -23,10 +23,10 @@
 - (id)_evaluateVideoProperties:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
 - (id)nodeByReplayingAgainstCache:(id)arg1 pipelineState:(id)arg2 error:(out id *)arg3;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;
 - (id)initWithInput:(id)arg1 settings:(id)arg2 bakedRecipe:(id)arg3;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 
 @end
 

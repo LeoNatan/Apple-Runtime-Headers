@@ -15,9 +15,9 @@
 }
 
 + (Class)responseClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *heartbeatToken; // @synthesize heartbeatToken=_heartbeatToken;
 @property(copy, nonatomic) NSString *secondaryAuthToken; // @synthesize secondaryAuthToken=_secondaryAuthToken;
-- (void).cxx_destruct;
 - (id)urlRequest;
 - (_Bool)forceGSToken;
 - (id)urlString;

@@ -17,12 +17,12 @@
     ICNFMCMimePart *_mimePart;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICNFMCMimePart *mimePart; // @synthesize mimePart=_mimePart;
 @property(retain, nonatomic) NSMutableData *dataBuf; // @synthesize dataBuf=_dataBuf;
 @property(nonatomic) unsigned long long encodingHint; // @synthesize encodingHint=_encodingHint;
 @property(nonatomic) const char *end; // @synthesize end=_end;
 @property(nonatomic) const char *current; // @synthesize current=_current;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescription;
 

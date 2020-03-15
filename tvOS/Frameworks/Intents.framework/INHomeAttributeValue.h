@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) INHomeAttributeRange *rangeValue; // @synthesize rangeValue=_rangeValue;
 @property(readonly, nonatomic) long long unit; // @synthesize unit=_unit;
 @property(readonly, nonatomic) long long limitValue; // @synthesize limitValue=_limitValue;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(readonly, nonatomic) _Bool boolValue; // @synthesize boolValue=_boolValue;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

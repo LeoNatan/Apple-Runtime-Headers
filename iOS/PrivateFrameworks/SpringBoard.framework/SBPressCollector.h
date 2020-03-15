@@ -22,10 +22,10 @@
 }
 
 + (double)currentTimeStamp;
+- (void).cxx_destruct;
 @property(nonatomic) double maxPressUpDuration; // @synthesize maxPressUpDuration=_maxPressUpDuration;
 @property(nonatomic) double maxPressDownDuration; // @synthesize maxPressDownDuration=_maxPressDownDuration;
 @property(nonatomic) __weak id <SBPressCollectorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_reset;
 - (void)_end;
 - (void)_fireEndTimerWithDelay:(double)arg1 isButtonDown:(_Bool)arg2;

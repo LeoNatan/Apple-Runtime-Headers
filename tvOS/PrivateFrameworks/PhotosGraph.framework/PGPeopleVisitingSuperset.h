@@ -20,13 +20,13 @@
     struct CLLocationCoordinate2D _coordinates;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *visits; // @synthesize visits=_visits;
 @property(readonly) unsigned long long totalNumberOfMoments; // @synthesize totalNumberOfMoments=_totalNumberOfMoments;
 @property(readonly) unsigned long long numberOfMatchingMoments; // @synthesize numberOfMatchingMoments=_numberOfMatchingMoments;
 @property(readonly) NSDateInterval *localDateInterval; // @synthesize localDateInterval=_localDateInterval;
 @property(readonly) struct CLLocationCoordinate2D coordinates; // @synthesize coordinates=_coordinates;
 @property(readonly) PGGraphAddressNode *addressNode; // @synthesize addressNode=_addressNode;
-- (void).cxx_destruct;
 - (id)description;
 - (void)resetVisitFindingSession;
 - (void)closeVisitFindingSession;

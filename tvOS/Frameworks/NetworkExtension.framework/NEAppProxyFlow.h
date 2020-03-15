@@ -7,22 +7,26 @@
 #import <objc/NSObject.h>
 
 @class NEFlowMetaData, NSData;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_nw_interface;
 
 @interface NEAppProxyFlow : NSObject
 {
     NEFlowMetaData *_metaData;
     struct _NEFlow *_flow;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_nw_interface> *__networkInterface;
 }
 
 + (id)copyRemoteEndpointFromFlow:(struct _NEFlow *)arg1;
 + (struct __CFError *)copyVPNFlowErrorFromFlowError:(id)arg1;
 + (id)flowErrorForVPNFlowError:(long long)arg1;
+- (void).cxx_destruct;
+@property(retain) NSObject<OS_nw_interface> *_networkInterface; // @synthesize _networkInterface=__networkInterface;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property struct _NEFlow *flow; // @synthesize flow=_flow;
 @property(readonly) NEFlowMetaData *metaData; // @synthesize metaData=_metaData;
-- (void).cxx_destruct;
+- (void)setMetadata:(id)arg1;
+@property(copy) NSObject<OS_nw_interface> *networkInterface;
 @property(retain) NSData *applicationData;
 - (void)closeWriteWithError:(id)arg1;
 - (void)closeReadWithError:(id)arg1;

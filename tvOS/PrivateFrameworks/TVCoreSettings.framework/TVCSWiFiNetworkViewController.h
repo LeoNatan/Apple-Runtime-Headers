@@ -17,11 +17,11 @@
     Class _networkDetailsViewControllerClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class networkDetailsViewControllerClass; // @synthesize networkDetailsViewControllerClass=_networkDetailsViewControllerClass;
 @property(nonatomic) _Bool showsCurrentNetwork; // @synthesize showsCurrentNetwork=_showsCurrentNetwork;
 @property(nonatomic) __weak id <TVCSWiFiNetworkDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (id)initWithTableView:(id)arg1;
 
 @end

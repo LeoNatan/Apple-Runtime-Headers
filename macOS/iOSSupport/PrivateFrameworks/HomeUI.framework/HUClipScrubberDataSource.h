@@ -30,6 +30,7 @@
     double _lastGestureScale;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastGestureScale; // @synthesize lastGestureScale=_lastGestureScale;
 @property(retain, nonatomic) HUClipScrubberSelectionView *selectionView; // @synthesize selectionView=_selectionView;
 @property(nonatomic) double startingPinchDeltaX; // @synthesize startingPinchDeltaX=_startingPinchDeltaX;
@@ -45,7 +46,6 @@
 @property(nonatomic) __weak HMCameraClip *currentClip; // @synthesize currentClip=_currentClip;
 @property(retain, nonatomic) HUClipScrubberTimeController *timeController; // @synthesize timeController=_timeController;
 @property(readonly, nonatomic) NSArray *clips; // @synthesize clips=_clips;
-- (void).cxx_destruct;
 - (void)updateSelectionViewIfNeeded;
 - (void)updateMostRecentClipIndex;
 - (id)_indexPathsForClip:(id)arg1;

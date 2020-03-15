@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain) NSSet *managedCellDataAppCache; // @synthesize managedCellDataAppCache=_managedCellDataAppCache;
 - (void).cxx_destruct;
+@property(retain) NSSet *managedCellDataAppCache; // @synthesize managedCellDataAppCache=_managedCellDataAppCache;
 - (_Bool)isManaged:(id)arg1;
 @property(readonly, nonatomic) _Bool hasManagedCellularData;
 - (id)managedCellDataAppBundleIDs;

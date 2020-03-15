@@ -13,39 +13,40 @@
 
 @interface XCActivityRecord : NSObject <NSSecureCoding, XCTActivity>
 {
+    _Bool _valid;
+    _Bool _isTopLevel;
+    _Bool _useLegacySerializationFormat;
     NSString *_title;
     NSString *_activityType;
     NSUUID *_uuid;
     NSDate *_start;
     NSDate *_finish;
-    NSMutableArray *_attachments;
-    _Bool _valid;
-    _Bool _useLegacySerializationFormat;
     NSString *_aggregationIdentifier;
     double _subactivitiesDuration;
-    _Bool _isTopLevel;
+    NSMutableArray *_mutableAttachments;
 }
 
 + (_Bool)_shouldSaveAttachmentWithName:(id)arg1 lifetime:(long long)arg2;
 + (_Bool)supportsSecureCoding;
-@property _Bool isTopLevel; // @synthesize isTopLevel=_isTopLevel;
-@property(readonly, getter=isValid) _Bool valid; // @synthesize valid=_valid;
+- (void).cxx_destruct;
+@property(readonly) NSMutableArray *mutableAttachments; // @synthesize mutableAttachments=_mutableAttachments;
 @property(readonly) double subactivitiesDuration; // @synthesize subactivitiesDuration=_subactivitiesDuration;
 @property(copy) NSString *aggregationIdentifier; // @synthesize aggregationIdentifier=_aggregationIdentifier;
 @property _Bool useLegacySerializationFormat; // @synthesize useLegacySerializationFormat=_useLegacySerializationFormat;
-@property(copy) NSDate *start; // @synthesize start=_start;
+@property _Bool isTopLevel; // @synthesize isTopLevel=_isTopLevel;
+@property(readonly, getter=isValid) _Bool valid; // @synthesize valid=_valid;
 @property(copy) NSDate *finish; // @synthesize finish=_finish;
+@property(copy) NSDate *start; // @synthesize start=_start;
 @property(copy) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(copy) NSString *activityType; // @synthesize activityType=_activityType;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)subactivityCompletedWithDuration:(double)arg1;
 - (void)_synchronized_ensureValid;
 - (void)invalidate;
 @property(readonly) double duration;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly, copy) NSArray *attachments; // @synthesize attachments=_attachments;
+@property(readonly, copy) NSArray *attachments;
 - (void)addAttachment:(id)arg1;
 - (void)_synchronized_addAttachment:(id)arg1;
 - (void)removeAttachmentsWithName:(id)arg1;

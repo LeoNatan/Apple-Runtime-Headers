@@ -16,9 +16,9 @@
     SBSceneLayoutAnimationWrapperView *_animationWrapperView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBSceneLayoutAnimationWrapperView *animationWrapperView; // @synthesize animationWrapperView=_animationWrapperView;
 @property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
-- (void).cxx_destruct;
 - (void)disableAsynchronousRenderingForNextCommit;
 - (long long)rasterizationStyle;
 - (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;

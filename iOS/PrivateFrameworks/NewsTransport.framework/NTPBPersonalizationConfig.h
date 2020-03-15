@@ -22,12 +22,12 @@
 
 + (Class)personalizationTreatmentsType;
 + (Class)personalizationBucketsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *personalizationTreatments; // @synthesize personalizationTreatments=_personalizationTreatments;
 @property(retain, nonatomic) NSMutableArray *personalizationBuckets; // @synthesize personalizationBuckets=_personalizationBuckets;
 @property(retain, nonatomic) NTPBPersonalizationTreatment *defaultPersonalizationTreatment; // @synthesize defaultPersonalizationTreatment=_defaultPersonalizationTreatment;
 @property(nonatomic) long long moduloForHashing; // @synthesize moduloForHashing=_moduloForHashing;
 @property(retain, nonatomic) NTPBBinningConfig *binningConfig; // @synthesize binningConfig=_binningConfig;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,10 +17,10 @@
     unsigned long long _bucketingPolicy;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long bucketingPolicy; // @synthesize bucketingPolicy=_bucketingPolicy;
 @property(readonly, nonatomic) id normalStateValue; // @synthesize normalStateValue=_normalStateValue;
 @property(readonly, copy, nonatomic) NSString *characteristicType; // @synthesize characteristicType=_characteristicType;
-- (void).cxx_destruct;
 - (id)_bucketingValueForAction:(id)arg1;
 - (id)suggestedActionForCharacteristic:(id)arg1 candidateActions:(id)arg2;
 - (id)initWithCharacteristicType:(id)arg1 normalStateValue:(id)arg2 bucketingPolicy:(unsigned long long)arg3;

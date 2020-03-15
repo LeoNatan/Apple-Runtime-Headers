@@ -20,12 +20,12 @@
 + (unsigned int)changeTypeFromDescription:(id)arg1;
 + (id)descriptionForChangeType:(unsigned int)arg1;
 + (id)changeForLikeness:(id)arg1 withType:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *dirtyLikenessProperties; // @synthesize dirtyLikenessProperties=_dirtyLikenessProperties;
 @property(copy, nonatomic) NSNumber *changedLikenessVersion; // @synthesize changedLikenessVersion=_changedLikenessVersion;
 @property(copy, nonatomic) NSString *changedLikenessID; // @synthesize changedLikenessID=_changedLikenessID;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

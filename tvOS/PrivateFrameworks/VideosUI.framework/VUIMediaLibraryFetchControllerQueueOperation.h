@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _mediaLibraryRevision;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mediaLibraryRevision; // @synthesize mediaLibraryRevision=_mediaLibraryRevision;
 @property(copy, nonatomic) NSArray *fetchControllers; // @synthesize fetchControllers=_fetchControllers;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithFetchControllers:(id)arg1 mediaLibraryRevision:(unsigned long long)arg2;
 - (id)init;

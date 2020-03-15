@@ -34,12 +34,12 @@
 + (double)defaultCornerRadius;
 + (id)defaultIconLocation;
 + (Class)_scrollViewClass;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAnimatingRotation) _Bool animatingRotation; // @synthesize animatingRotation=_animatingRotation;
 @property(nonatomic, getter=isConvertingIconListStyle) _Bool convertingIconListStyle; // @synthesize convertingIconListStyle=_convertingIconListStyle;
 @property(readonly, nonatomic) _Bool displaysMultipleIconListsInLandscapeOrientation; // @synthesize displaysMultipleIconListsInLandscapeOrientation=_displaysMultipleIconListsInLandscapeOrientation;
 @property(nonatomic, getter=isDisplayingMultipleIconLists) _Bool displayingMultipleIconLists; // @synthesize displayingMultipleIconLists=_displayingMultipleIconLists;
 @property(nonatomic) unsigned long long backgroundEffect; // @synthesize backgroundEffect=_backgroundEffect;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)accessibilityTintColorForBackgroundView:(id)arg1;
 - (void)accessibilityReduceTransparencyDidChange:(id)arg1;

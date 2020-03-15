@@ -28,6 +28,7 @@
     UIButton *_submitButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *submitButton; // @synthesize submitButton=_submitButton;
 @property(retain, nonatomic) NSArray *dataEntryItems; // @synthesize dataEntryItems=_dataEntryItems;
 @property(retain, nonatomic) _HKMedicalIDData *medicalIDData; // @synthesize medicalIDData=_medicalIDData;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) CDUnknownBlockType registrationCompletionHandler; // @synthesize registrationCompletionHandler=_registrationCompletionHandler;
 @property(retain, nonatomic) NSString *completionButtonTitle; // @synthesize completionButtonTitle=_completionButtonTitle;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)titledBuddyHeaderViewDidTapLinkButton:(id)arg1;
 - (void)confirmSubmissionIfNecessaryWithConfirmHandler:(CDUnknownBlockType)arg1 andCancelHandler:(CDUnknownBlockType)arg2;

@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 - (id)initWithCoder:(id)arg1;
 - (id)unarchiver:(id)arg1 didDecodeObject:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

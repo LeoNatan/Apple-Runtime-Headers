@@ -19,11 +19,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) __weak id <_MCBatchingTimerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) double minimumTimeout; // @synthesize minimumTimeout=_minimumTimeout;
 @property(readonly, nonatomic) NSDate *targetDate; // @synthesize targetDate=_targetDate;
-- (void).cxx_destruct;
 - (void)_scheduleTimerForTimeInterval:(double)arg1;
 - (BOOL)update;
 - (void)dealloc;

@@ -24,6 +24,7 @@
     HFZoneSuggestionItemProvider *_zoneSuggestionItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFZoneSuggestionItemProvider *zoneSuggestionItemProvider; // @synthesize zoneSuggestionItemProvider=_zoneSuggestionItemProvider;
 @property(retain, nonatomic) HFZoneItemProvider *zoneItemProvider; // @synthesize zoneItemProvider=_zoneItemProvider;
 @property(retain, nonatomic) HFStaticItemProvider *currentZoneItemProvider; // @synthesize currentZoneItemProvider=_currentZoneItemProvider;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) HFCurrentZonesItem *currentZoneItem; // @synthesize currentZoneItem=_currentZoneItem;
 @property(readonly, nonatomic) HMRoom *room; // @synthesize room=_room;
 @property(retain, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
-- (void).cxx_destruct;
 - (void)home:(id)arg1 didRemoveRoom:(id)arg2 fromZone:(id)arg3;
 - (void)home:(id)arg1 didAddRoom:(id)arg2 toZone:(id)arg3;
 - (void)home:(id)arg1 didUpdateNameForZone:(id)arg2;

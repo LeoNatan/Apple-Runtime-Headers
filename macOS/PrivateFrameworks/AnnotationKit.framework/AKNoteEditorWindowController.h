@@ -22,13 +22,13 @@
 }
 
 + (id)newNoteWindowController;
+- (void).cxx_destruct;
 @property(retain) id eventMonitor; // @synthesize eventMonitor=_eventMonitor;
 @property(nonatomic) BOOL hasClosed; // @synthesize hasClosed=_hasClosed;
 @property(nonatomic) BOOL isOpening; // @synthesize isOpening=_isOpening;
 @property(nonatomic) unsigned long long presentedEdge; // @synthesize presentedEdge=_presentedEdge;
 @property(retain, nonatomic) BKMutableNoteMarginView *mutableMarginView; // @synthesize mutableMarginView=_mutableMarginView;
 @property(nonatomic) __weak id <AKNoteEditorWindowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mutableMarginViewTextDidChange:(id)arg1;
 - (void)marginViewWasClicked:(id)arg1;
 - (double)p_windowHeightForWidth:(double)arg1;

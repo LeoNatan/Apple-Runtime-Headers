@@ -34,6 +34,7 @@
     SXShapeLayer *_leftBorderLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXShapeLayer *leftBorderLayer; // @synthesize leftBorderLayer=_leftBorderLayer;
 @property(retain, nonatomic) SXShapeLayer *bottomBorderLayer; // @synthesize bottomBorderLayer=_bottomBorderLayer;
 @property(retain, nonatomic) SXShapeLayer *rightBorderLayer; // @synthesize rightBorderLayer=_rightBorderLayer;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) id <SXVideoFillViewFactory> videoFillViewFactory; // @synthesize videoFillViewFactory=_videoFillViewFactory;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 @property(readonly, nonatomic) id <SXComponentStyle> componentStyle; // @synthesize componentStyle=_componentStyle;
-- (void).cxx_destruct;
 - (id)repeatableImageFillViewForFill:(id)arg1;
 - (id)videoPlayerViewForFill:(id)arg1;
 - (id)imageViewForFill:(id)arg1;

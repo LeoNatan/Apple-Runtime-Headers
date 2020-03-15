@@ -27,10 +27,6 @@ struct CGSize {
     double height;
 };
 
-struct UIColor {
-    Class _field1;
-};
-
 struct UIOffset {
     double horizontal;
     double vertical;

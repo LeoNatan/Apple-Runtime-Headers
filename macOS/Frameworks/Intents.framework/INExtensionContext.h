@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setAirPlayRouteIdentifiers:) NSArray *_airPlayRouteIdentifiers; // @synthesize _airPlayRouteIdentifiers;
 @property(copy, nonatomic, setter=_setRecordDeviceIdentifier:) NSString *_recordDeviceIdentifier; // @synthesize _recordDeviceIdentifier;
 @property(copy, nonatomic, setter=_setRecordDeviceUID:) NSUUID *_recordDeviceUID; // @synthesize _recordDeviceUID;
 @property(copy, nonatomic, setter=_setRecordRoute:) NSString *_recordRoute; // @synthesize _recordRoute;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

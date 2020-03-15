@@ -18,11 +18,11 @@
     unsigned long long _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSString *fileExtension; // @synthesize fileExtension=_fileExtension;
 @property(readonly, nonatomic) NSData *versionIdentifier; // @synthesize versionIdentifier=_versionIdentifier;
 @property(readonly, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initFromPQLResultSet:(id)arg1 error:(id *)arg2;

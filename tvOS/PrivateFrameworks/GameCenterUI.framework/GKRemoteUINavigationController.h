@@ -15,8 +15,8 @@
     GKRemoteUIController *_remoteUIController;
 }
 
-@property(readonly, nonatomic) GKRemoteUIController *remoteUIController; // @synthesize remoteUIController=_remoteUIController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) GKRemoteUIController *remoteUIController; // @synthesize remoteUIController=_remoteUIController;
 - (_Bool)_gkCanBeRemovedFromParentWhenCovered;
 - (_Bool)_gkUsesBubbleFlowModalPresentation;
 - (unsigned long long)supportedInterfaceOrientations;

@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int cancelSearchEvent; // @synthesize cancelSearchEvent=_cancelSearchEvent;
 @property(nonatomic) _Bool isCanceled; // @synthesize isCanceled=_isCanceled;
 @property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStartSearch:(id)arg1;

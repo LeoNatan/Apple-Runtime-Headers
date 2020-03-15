@@ -18,10 +18,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSEmailAddressType *Mailbox; // @synthesize Mailbox=_Mailbox;
 @property(copy, nonatomic) NSString *ChangeKey; // @synthesize ChangeKey=_ChangeKey;
 @property(nonatomic) long long Id; // @synthesize Id=_Id;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

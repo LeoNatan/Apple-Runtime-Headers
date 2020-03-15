@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     Class _parentClass;
 }
 
-@property(retain, nonatomic) Class parentClass; // @synthesize parentClass=_parentClass;
 - (void).cxx_destruct;
+@property(retain, nonatomic) Class parentClass; // @synthesize parentClass=_parentClass;
 - (id)CKPropertiesDescription;
 - (_Bool)validate:(id)arg1 error:(id *)arg2;
 - (id)initWithClass:(Class)arg1;

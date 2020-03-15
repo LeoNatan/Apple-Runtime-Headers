@@ -17,11 +17,11 @@
     SFSearchResult *_searchResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 @property(retain, nonatomic) id <FCHeadlineProviding> inflatedHeadline; // @synthesize inflatedHeadline=_inflatedHeadline;
 @property(readonly, nonatomic) id <FCHeadlineProviding> deflatedHeadline; // @synthesize deflatedHeadline=_deflatedHeadline;
 @property(readonly, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-- (void).cxx_destruct;
 - (id)initWithParsecSearchResult:(id)arg1 cloudContext:(id)arg2;
 
 @end

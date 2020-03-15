@@ -19,8 +19,8 @@
     id <_ASWebAuthenticationSessionRequestServerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_ASWebAuthenticationSessionRequestServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_ASWebAuthenticationSessionRequestServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_dispatchRequest:(id)arg1;
 - (void)_dispatchNextRequest;
 - (id)_requestHandlerProxy;

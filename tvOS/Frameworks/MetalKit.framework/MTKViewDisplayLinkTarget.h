@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     MTKView *_target;
 }
 
-@property(nonatomic) __weak MTKView *target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MTKView *target; // @synthesize target=_target;
 - (void)draw;
 - (id)initWithTarget:(id)arg1;
 

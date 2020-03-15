@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _allowance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double allowance; // @synthesize allowance=_allowance;
 @property(retain, nonatomic) NSDate *lastCheckedAt; // @synthesize lastCheckedAt=_lastCheckedAt;
-- (void).cxx_destruct;
 
 @end
 

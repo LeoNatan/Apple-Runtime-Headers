@@ -27,6 +27,7 @@
     struct CGSize _parameterEditorSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFAction *retainedAction; // @synthesize retainedAction=_retainedAction;
 @property(readonly, nonatomic) WFParameter *retainedParameter; // @synthesize retainedParameter=_retainedParameter;
 @property(nonatomic) __weak UITextView *textView; // @synthesize textView=_textView;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) WFWorkflowSettingsLayoutMetrics *layoutMetrics; // @synthesize layoutMetrics=_layoutMetrics;
 @property(readonly, nonatomic) WFGradient *workflowGradient; // @synthesize workflowGradient=_workflowGradient;
 @property(nonatomic) __weak id <WFImportQuestionDetailsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dismissKeyboard;
 - (void)textViewDidChange:(id)arg1;
 - (void)parameterEditorCellDidInvalidateSize:(id)arg1;

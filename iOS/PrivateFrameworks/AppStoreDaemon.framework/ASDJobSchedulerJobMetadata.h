@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSNumber *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy) NSNumber *softFailureTimeout; // @synthesize softFailureTimeout=_softFailureTimeout;
 @property(nonatomic) long long softFailureCount; // @synthesize softFailureCount=_softFailureCount;
@@ -44,7 +45,6 @@
 @property(copy) NSNumber *externalPriority; // @synthesize externalPriority=_externalPriority;
 @property(copy) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy) NSNumber *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

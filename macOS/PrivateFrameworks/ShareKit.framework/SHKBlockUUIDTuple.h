@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, copy) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithBlock:(CDUnknownBlockType)arg1 UUID:(id)arg2;
 

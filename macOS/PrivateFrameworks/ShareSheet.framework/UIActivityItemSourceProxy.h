@@ -18,10 +18,10 @@
     UIActivityViewController *_avc;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isItemProvider; // @synthesize isItemProvider=_isItemProvider;
 @property(readonly, nonatomic) __weak UIActivityViewController *avc; // @synthesize avc=_avc;
 @property(readonly, nonatomic) id <UIActivityItemSource> activityItem; // @synthesize activityItem=_activityItem;
-- (void).cxx_destruct;
 - (id)thumbnailImageForActivityType:(id)arg1 suggestedSize:(struct CGSize)arg2;
 - (id)dataTypeIdentifierForActivityType:(id)arg1;
 - (id)subjectForActivityType:(id)arg1;

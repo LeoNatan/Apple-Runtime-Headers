@@ -16,9 +16,9 @@
     unsigned int _selectionAffinity;
 }
 
-@property(nonatomic) unsigned int selectionAffinity; // @synthesize selectionAffinity=_selectionAffinity;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int selectionAffinity; // @synthesize selectionAffinity=_selectionAffinity;
 @property(readonly, copy) NSString *description;
 - (id)serialize;
 - (void)saveToArchive:(struct Selection *)arg1;

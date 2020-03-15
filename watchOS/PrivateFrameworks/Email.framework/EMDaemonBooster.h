@@ -18,10 +18,10 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *remoteBoost; // @synthesize remoteBoost=_remoteBoost;
 @property(copy, nonatomic) NSString *loggingDescription; // @synthesize loggingDescription=_loggingDescription;
 @property(retain, nonatomic) EMRemoteConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)_newRemoteBoost;
 - (id)initWithConnection:(id)arg1 description:(id)arg2;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     SKUniform *uniform;
 }
 
+- (void).cxx_destruct;
 @property(retain) SKUniform *uniform; // @synthesize uniform;
 @property unsigned long long textureTarget; // @synthesize textureTarget;
 @property unsigned long long seed; // @synthesize seed;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

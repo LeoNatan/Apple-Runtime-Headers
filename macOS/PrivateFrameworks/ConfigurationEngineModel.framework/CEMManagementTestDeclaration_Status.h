@@ -17,8 +17,8 @@
 + (id)buildWithEcho:(id)arg1;
 + (id)allowedReasons;
 + (id)allowedStatusKeys;
-@property(copy, nonatomic) NSString *statusEcho; // @synthesize statusEcho=_statusEcho;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *statusEcho; // @synthesize statusEcho=_statusEcho;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 

@@ -30,9 +30,9 @@
     HDProfile *_profile;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) HDQuantitySeriesManager *quantitySeriesManager; // @synthesize quantitySeriesManager=_quantitySeriesManager;
-- (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)setBackgroundObserverFrequency:(id)arg1 forDataType:(id)arg2 frequency:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)synchronouslyCloseObserverTransactionAndNotify;

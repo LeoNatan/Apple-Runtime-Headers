@@ -28,6 +28,7 @@
 }
 
 + (id)_intervalToCheckForTimersToFireBeforeDate:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTPersistence> defaults; // @synthesize defaults=_defaults;
 @property(readonly, nonatomic) id <MTTaskScheduler> taskScheduler; // @synthesize taskScheduler=_taskScheduler;
 @property(readonly, nonatomic) id <MTSchedulingDelegate> schedulingDelegate; // @synthesize schedulingDelegate=_schedulingDelegate;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) id <MTNotificationCenter> notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) id <MTTimerStorage> storage; // @synthesize storage=_storage;
 @property(nonatomic) __weak id <MTTimerSchedulerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)sourceIdentifier;
 - (void)nextTimerDidChange:(id)arg1;
 - (void)source:(id)arg1 didDismissTimer:(id)arg2;

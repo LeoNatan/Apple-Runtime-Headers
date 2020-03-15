@@ -23,8 +23,8 @@
     id <HDGymKitSettingsDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <HDGymKitSettingsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HDGymKitSettingsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_setConnectedGymPreferencesDefaultNFCAlwaysOnEnabled:(_Bool)arg1;
 - (void)_enableNFCAlwaysOnIfWatchWorkout;
 - (void)_stopObservingWatchWorkouts;

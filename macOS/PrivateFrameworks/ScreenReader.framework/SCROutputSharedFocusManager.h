@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     SCRCWeakReferenceContainer *__application;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRCWeakReferenceContainer *_application; // @synthesize _application=__application;
 @property(copy, nonatomic, setter=_setPreviousSelectionChangeOutput:) NSString *_previousSelectionChangeOutput; // @synthesize _previousSelectionChangeOutput=__previousSelectionChangeOutput;
 @property(nonatomic, setter=_setNotificationsAreQueuedForOutput:) BOOL _notificationsAreQueuedForOutput; // @synthesize _notificationsAreQueuedForOutput=__notificationsAreQueuedForOutput;
 @property(retain, nonatomic) AXFDispatchQueue *_sharedFocusManagerDispatchQueue; // @synthesize _sharedFocusManagerDispatchQueue=__sharedFocusManagerDispatchQueue;
 @property(retain, nonatomic) NSMutableDictionary *_notificationsForOutput; // @synthesize _notificationsForOutput=__notificationsForOutput;
 @property(retain, nonatomic) NSDictionary *sharedFocusUIElementJumpingInfo; // @synthesize sharedFocusUIElementJumpingInfo=_sharedFocusUIElementJumpingInfo;
-- (void).cxx_destruct;
 - (id)_descriptionForNotificationType:(long long)arg1;
 - (id)sharedFocusQueueDescription;
 - (id)_removeDuplicateOutputToRequest:(id)arg1 forNotificationKey:(long long)arg2;

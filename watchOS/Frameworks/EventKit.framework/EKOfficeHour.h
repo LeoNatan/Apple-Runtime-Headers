@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSTimeZone *_timeZone;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) int weekday; // @synthesize weekday=_weekday;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithEnabled:(_Bool)arg1 weekday:(int)arg2 startTime:(id)arg3 endTime:(id)arg4 timeZone:(id)arg5;
 

@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *captureTouchesRecognizer; // @synthesize captureTouchesRecognizer=_captureTouchesRecognizer;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) __weak id <_UIPreviewActionSheetViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (void)_performActionForPreviewAction:(id)arg1 interfaceAction:(id)arg2;
 - (void)_setupViewHierarchy;
 - (id)initWithCoder:(id)arg1;

@@ -17,10 +17,10 @@
     HKInteractiveChartAudioData *_overviewData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKInteractiveChartAudioData *overviewData; // @synthesize overviewData=_overviewData;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double averageLEQ; // @synthesize averageLEQ=_averageLEQ;
-- (void).cxx_destruct;
 - (id)_durationString:(double)arg1;
 @property(readonly, copy) NSString *description;
 

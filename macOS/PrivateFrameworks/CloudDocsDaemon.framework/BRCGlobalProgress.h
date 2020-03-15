@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_keyPathsToObserve;
-@property(readonly, nonatomic) __weak BRCAccountSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak BRCAccountSession *session; // @synthesize session=_session;
 - (void)_deleteDocument:(id)arg1 reason:(BOOL)arg2;
 - (void)_updateDocument:(id)arg1;
 - (void)_updateAppLibraryID:(id)arg1;

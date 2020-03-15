@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsBSXPCSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(copy, nonatomic) NSString *explanation; // @synthesize explanation=_explanation;
 @property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) unsigned char type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

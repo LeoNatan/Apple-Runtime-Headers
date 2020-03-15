@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     DYDesktopDevice *_device;
 }
 
-@property(readonly, nonatomic) DYDesktopDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DYDesktopDevice *device; // @synthesize device=_device;
 - (id)connect;
 - (void)invalidate;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;

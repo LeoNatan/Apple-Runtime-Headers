@@ -41,6 +41,7 @@
 + (double)topPadding;
 + (id)buddyStackedButtonViewWithTitles:(id)arg1 footerText:(id)arg2 boldFooterText:(id)arg3 footerTextAlignment:(long long)arg4 delegate:(id)arg5;
 + (id)buddyStackedButtonViewWithTitles:(id)arg1 footerText:(id)arg2 boldFooterText:(id)arg3 delegate:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HRStackedButtonViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(nonatomic) double firstTopConstant; // @synthesize firstTopConstant=_firstTopConstant;
@@ -61,7 +62,6 @@
 @property(nonatomic) _Bool bottomAdjustsForHomeButtonlessScreen; // @synthesize bottomAdjustsForHomeButtonlessScreen=_bottomAdjustsForHomeButtonlessScreen;
 @property(nonatomic) long long lastButtonMode; // @synthesize lastButtonMode=_lastButtonMode;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
-- (void).cxx_destruct;
 - (id)lastBaselineAnchor;
 - (id)firstBaselineAnchor;
 - (id)_attributedFooterText;

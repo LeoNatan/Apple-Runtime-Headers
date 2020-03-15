@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     _Bool _inlineDisclosureExpanded;
 }
 
-@property(nonatomic) _Bool inlineDisclosureExpanded; // @synthesize inlineDisclosureExpanded=_inlineDisclosureExpanded;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool inlineDisclosureExpanded; // @synthesize inlineDisclosureExpanded=_inlineDisclosureExpanded;
 - (void)layoutSubviews;
 @property(nonatomic) _Bool inlineDisclosureEnabled;
 

@@ -19,12 +19,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *q; // @synthesize q=_q;
 @property(retain) NSFileHandle *deviceLog; // @synthesize deviceLog=_deviceLog;
 @property(retain) NSFileHandle *hostLog; // @synthesize hostLog=_hostLog;
 @property(retain) NSString *deviceLogPath; // @synthesize deviceLogPath=_deviceLogPath;
 @property(retain) NSString *hostLogPath; // @synthesize hostLogPath=_hostLogPath;
-- (void).cxx_destruct;
 - (id)_additionalRegexesToScrub;
 - (id)_scrubStringForDiagnostics:(id)arg1;
 - (id)_readStringFromFile:(id)arg1 withMaximumByteLength:(unsigned long long)arg2;

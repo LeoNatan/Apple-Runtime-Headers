@@ -24,12 +24,12 @@
 }
 
 + (Class)appleLanguagesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(retain, nonatomic) NSString *appleLocale; // @synthesize appleLocale=_appleLocale;
 @property(retain, nonatomic) NSMutableArray *appleLanguages; // @synthesize appleLanguages=_appleLanguages;
 @property(nonatomic) _Bool removeSentinel; // @synthesize removeSentinel=_removeSentinel;
 @property(nonatomic) _Bool sentinelExists; // @synthesize sentinelExists=_sentinelExists;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

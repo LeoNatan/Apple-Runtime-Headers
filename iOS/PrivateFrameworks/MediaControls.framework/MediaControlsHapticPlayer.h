@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     AVHapticPlayer *_player;
 }
 
-@property(retain, nonatomic) AVHapticPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVHapticPlayer *player; // @synthesize player=_player;
 - (void)checkError:(id)arg1;
 - (void)expandedButtonChanged;
 - (void)dealloc;

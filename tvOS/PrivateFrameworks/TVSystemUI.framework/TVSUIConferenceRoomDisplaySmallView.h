@@ -31,12 +31,12 @@
 + (id)defaultLabelWithFont:(id)arg1;
 + (id)defaultTextColor;
 + (id)defaultLightTextColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *instructions2TitleWirelessTopConstraint; // @synthesize instructions2TitleWirelessTopConstraint=_instructions2TitleWirelessTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *instructions2TitleWiredTopConstraint; // @synthesize instructions2TitleWiredTopConstraint=_instructions2TitleWiredTopConstraint;
 @property(copy, nonatomic) NSString *customText; // @synthesize customText=_customText;
 @property(copy, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(copy, nonatomic) NSString *networkName; // @synthesize networkName=_networkName;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 

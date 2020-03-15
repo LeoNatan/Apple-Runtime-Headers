@@ -16,11 +16,11 @@
     ACHActivitySummaryUtility *_activitySummaryUtility;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak ACHActivitySummaryUtility *activitySummaryUtility; // @synthesize activitySummaryUtility=_activitySummaryUtility;
 @property(nonatomic) __weak ACHWorkoutUtility *workoutUtility; // @synthesize workoutUtility=_workoutUtility;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(copy, nonatomic) HDDatabaseTransactionContext *databaseContext; // @synthesize databaseContext=_databaseContext;
-- (void).cxx_destruct;
 - (int)numberOfWorkoutsCompletedDuringDateInterval:(id)arg1;
 - (int)numberOfDaysDoublingMoveGoalDuringDateComponentInterval:(id)arg1;
 - (int)numberOfAllRingsClosedDuringDateComponentInterval:(id)arg1;

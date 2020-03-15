@@ -13,8 +13,8 @@
     ASDDSPConfiguration *_hardwareDSP;
 }
 
-@property(readonly, nonatomic) ASDDSPConfiguration *hardwareDSP; // @synthesize hardwareDSP=_hardwareDSP;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ASDDSPConfiguration *hardwareDSP; // @synthesize hardwareDSP=_hardwareDSP;
 - (id)initWithDictionary:(id)arg1 resourcePath:(id)arg2;
 
 @end

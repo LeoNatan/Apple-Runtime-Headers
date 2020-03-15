@@ -34,6 +34,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalCodingListList *reasonsNotGivenCodings; // @synthesize reasonsNotGivenCodings=_reasonsNotGivenCodings;
 @property(retain, nonatomic) HDCodableMedicalCodingListList *reasonsCodings; // @synthesize reasonsCodings=_reasonsCodings;
 @property(retain, nonatomic) HDCodableMedicalCodingList *routeCodings; // @synthesize routeCodings=_routeCodings;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSData *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) HDCodableMedicalCodingList *vaccinationCodings; // @synthesize vaccinationCodings=_vaccinationCodings;
 @property(retain, nonatomic) HDCodableMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

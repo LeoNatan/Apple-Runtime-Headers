@@ -16,11 +16,11 @@
     NSData *_classDist;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *classDist; // @synthesize classDist=_classDist;
 @property(retain) NSData *pixels; // @synthesize pixels=_pixels;
 @property(retain) NSData *oneHot; // @synthesize oneHot=_oneHot;
 @property unsigned int label; // @synthesize label=_label;
-- (void).cxx_destruct;
 
 @end
 

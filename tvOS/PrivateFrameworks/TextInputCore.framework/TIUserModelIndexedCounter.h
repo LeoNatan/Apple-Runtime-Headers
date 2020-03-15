@@ -15,8 +15,8 @@
     NSString *_name;
 }
 
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)updateWithLoadedNumber:(id)arg1 forIndex:(int)arg2;
 - (void)updateWithLoadedValue:(int)arg1 forIndex:(int)arg2;
 - (void)updateWithNumber:(id)arg1 forIndex:(int)arg2;

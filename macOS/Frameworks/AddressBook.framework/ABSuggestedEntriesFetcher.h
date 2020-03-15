@@ -21,11 +21,11 @@
 + (id)abInstantMessageAddressFromInstantMessageAddress:(id)arg1;
 + (id)sanitizedLabelFromLabel:(id)arg1;
 + (id)keyDescriptor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ABPersonEntry *meEntry; // @synthesize meEntry=_meEntry;
 @property(retain, nonatomic) NSMutableDictionary *entries; // @synthesize entries=_entries;
 @property(retain, nonatomic) NSString *filterTerms; // @synthesize filterTerms=_filterTerms;
 @property(retain, nonatomic) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
-- (void).cxx_destruct;
 - (id)multiValueWithLabeledValues:(id)arg1;
 - (id)multiValueWithInstantMessageAddresses:(id)arg1;
 - (id)multiValueWithSocialProfiles:(id)arg1;

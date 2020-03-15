@@ -17,12 +17,12 @@
     NSString *_serverID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int maxSize; // @synthesize maxSize=_maxSize;
 @property(nonatomic) int bodyFormat; // @synthesize bodyFormat=_bodyFormat;
 @property(copy, nonatomic) NSString *serverID; // @synthesize serverID=_serverID;
 @property(copy, nonatomic) NSString *folderID; // @synthesize folderID=_folderID;
 @property(copy, nonatomic) NSString *longID; // @synthesize longID=_longID;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

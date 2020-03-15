@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) SKUIProductPageItem *incompatibleItem; // @synthesize incompatibleItem=_incompatibleItem;
 @property(retain, nonatomic) SKUIProductPageHeaderViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
 @property(nonatomic) __weak id <SKUIProductPageChildViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setArtworkWithImage:(id)arg1 error:(id)arg2;
 - (id)_artworkContext;
 - (void)_learnMoreAboutIPad:(id)arg1;

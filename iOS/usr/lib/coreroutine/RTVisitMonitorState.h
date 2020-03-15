@@ -14,9 +14,9 @@
     RTVisit *_lastLowConfidenceVisitIncident;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTVisit *lastLowConfidenceVisitIncident; // @synthesize lastLowConfidenceVisitIncident=_lastLowConfidenceVisitIncident;
 @property(retain, nonatomic) RTVisit *lastVisitIncident; // @synthesize lastVisitIncident=_lastVisitIncident;
-- (void).cxx_destruct;
 - (void)dump;
 - (id)initWithLastVisit:(id)arg1 lastLowConfidenceVisit:(id)arg2;
 - (id)init;

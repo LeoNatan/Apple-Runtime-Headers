@@ -14,8 +14,8 @@
 }
 
 + (id)responseWithTileItems:(id)arg1;
-@property(retain, nonatomic) GEOWiFiQualityLocationSearchResult *locationSearchResult; // @synthesize locationSearchResult=_locationSearchResult;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOWiFiQualityLocationSearchResult *locationSearchResult; // @synthesize locationSearchResult=_locationSearchResult;
 - (id)initWithTileItems:(id)arg1;
 
 @end

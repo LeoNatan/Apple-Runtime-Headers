@@ -17,11 +17,11 @@
     SOContentAttachmentsViewController *_fileAttachmentsViewController;
 }
 
+- (void).cxx_destruct;
 @property BOOL hasUpdatedAttachments; // @synthesize hasUpdatedAttachments=_hasUpdatedAttachments;
 @property(retain) SOContentAttachmentsViewController *fileAttachmentsViewController; // @synthesize fileAttachmentsViewController=_fileAttachmentsViewController;
 @property(retain) SOPhotoAttachmentsViewController *photoAttachmentsViewController; // @synthesize photoAttachmentsViewController=_photoAttachmentsViewController;
 @property __weak id <SOAttachmentsTabViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setRepresentedObject:(id)arg1;
 - (void)chatDisplayControllerDidChange:(id)arg1;
 - (void)chatDisplayControllerWillChange:(id)arg1;

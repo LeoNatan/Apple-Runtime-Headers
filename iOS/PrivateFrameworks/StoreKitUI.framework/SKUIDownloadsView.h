@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     UIView *_overlayView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

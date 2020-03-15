@@ -26,6 +26,7 @@
     PHFetchResult *_singleAssetFetchResult;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLibraryEmpty) _Bool libraryEmpty; // @synthesize libraryEmpty=_libraryEmpty;
 @property(nonatomic, getter=isDataSourceEmpty) _Bool dataSourceEmpty; // @synthesize dataSourceEmpty=_dataSourceEmpty;
 @property(retain, nonatomic) PHFetchResult *singleAssetFetchResult; // @synthesize singleAssetFetchResult=_singleAssetFetchResult;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSString *customMessage; // @synthesize customMessage=_customMessage;
 @property(readonly, nonatomic) NSString *customTitle; // @synthesize customTitle=_customTitle;
 @property(nonatomic) __weak id <PXContentUnavailablePlaceholderManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_invalidate;

@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)controller;
-@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 - (void)nodeMDAttributeChanged:(const struct TFENode *)arg1 attributes:(id)arg2 isDisplayAttributes:(_Bool)arg3;
 - (void)nodesGoingAway:(const struct TFENodeVector *)arg1;
 - (void)bulkNodesDeleted:(const map_27534541 *)arg1;

@@ -19,6 +19,6 @@
 - (UITargetedDragPreview *)_clickPresentationInteraction:(_UIClickPresentationInteraction *)arg1 previewForCancellingDragItem:(UIDragItem *)arg2;
 - (_Bool)_clickPresentationInteractionShouldAllowDragAfterDismiss:(_UIClickPresentationInteraction *)arg1;
 - (_Bool)_clickPresentationInteractionShouldAllowRapidRestart:(_UIClickPresentationInteraction *)arg1;
-- (void)_clickPresentationInteraction:(_UIClickPresentationInteraction *)arg1 shouldBegin:(void (^)(_Bool))arg2;
+- (void)_clickPresentationInteraction:(_UIClickPresentationInteraction *)arg1 shouldBegin:(void (^)(unsigned long long))arg2;
 @end
 

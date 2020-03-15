@@ -13,8 +13,8 @@
     NSDictionary *_imageIdentifiersKeyedByPrimaryState;
 }
 
-@property(retain, nonatomic) NSDictionary *imageIdentifiersKeyedByPrimaryState; // @synthesize imageIdentifiersKeyedByPrimaryState=_imageIdentifiersKeyedByPrimaryState;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *imageIdentifiersKeyedByPrimaryState; // @synthesize imageIdentifiersKeyedByPrimaryState=_imageIdentifiersKeyedByPrimaryState;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)imageIdentifierForPrimaryState:(long long)arg1;

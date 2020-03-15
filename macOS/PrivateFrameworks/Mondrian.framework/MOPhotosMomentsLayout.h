@@ -24,8 +24,8 @@
 
 + (Class)layoutAccessibilityClass;
 + (Class)invalidationContextClass;
-@property(nonatomic) BOOL showsCaptions; // @synthesize showsCaptions=_showsCaptions;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL showsCaptions; // @synthesize showsCaptions=_showsCaptions;
 - (id)debuggingLayoutOptionsDescriptions;
 - (id)indexPathOfItemBelow:(id)arg1;
 - (id)indexPathOfItemAbove:(id)arg1;

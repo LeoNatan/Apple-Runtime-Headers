@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) INSeat *reservedSeat; // @synthesize reservedSeat=_reservedSeat;
 @property(readonly, copy) INTicketedEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

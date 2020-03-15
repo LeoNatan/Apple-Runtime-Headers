@@ -15,9 +15,9 @@
     FCThreadSafeMutableDictionary *_remoteDefaults;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCThreadSafeMutableDictionary *remoteDefaults; // @synthesize remoteDefaults=_remoteDefaults;
 @property(readonly, nonatomic) __weak id <FCBackgroundTaskable> backgroundTaskable; // @synthesize backgroundTaskable=_backgroundTaskable;
-- (void).cxx_destruct;
 - (void)processResponse:(id)arg1 data:(id)arg2 error:(id)arg3;
 - (id)URLRequest;
 - (void)updateRemoteDefaults;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _mode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSArray *fileTypes; // @synthesize fileTypes=_fileTypes;
 @property(retain, nonatomic) NSArray *allPickers; // @synthesize allPickers=_allPickers;
-- (void).cxx_destruct;
 - (_Bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;

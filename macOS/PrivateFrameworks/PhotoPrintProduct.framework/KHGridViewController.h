@@ -31,13 +31,13 @@
 + (id)editorCollectionViewLayout;
 + (long long)displayMode;
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) KHGridPageTransitionController *transitionController; // @synthesize transitionController=_transitionController;
 @property(retain, nonatomic) NSIndexPath *menuIndexPath; // @synthesize menuIndexPath=_menuIndexPath;
 @property(nonatomic) long long transitioningIndex; // @synthesize transitioningIndex=_transitioningIndex;
 @property(retain, nonatomic) NSArray *transitioningIndexPaths; // @synthesize transitioningIndexPaths=_transitioningIndexPaths;
 @property(nonatomic) struct CGPoint interactionPoint; // @synthesize interactionPoint=_interactionPoint;
 @property(nonatomic) BOOL isTransitioning; // @synthesize isTransitioning=_isTransitioning;
-- (void).cxx_destruct;
 - (void)_showSelectionManagerDebugWindow:(id)arg1;
 - (void)selectionManager:(id)arg1 didRemoveSelections:(id)arg2;
 - (void)selectionManager:(id)arg1 didAddSelections:(id)arg2;

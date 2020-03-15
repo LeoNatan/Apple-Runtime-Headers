@@ -28,6 +28,7 @@
 + (unsigned long long)subjectDirectionForImageOrientation:(long long)arg1;
 + (id)keyForSubjectWithIndex:(unsigned long long)arg1 prefix:(id)arg2;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL sceneContainsMultipleSubjects; // @synthesize sceneContainsMultipleSubjects=_sceneContainsMultipleSubjects;
 @property(nonatomic) BOOL sceneContainsHuman; // @synthesize sceneContainsHuman=_sceneContainsHuman;
 @property(nonatomic) BOOL sceneContainsPet; // @synthesize sceneContainsPet=_sceneContainsPet;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) struct CGRect viewBounds; // @synthesize viewBounds=_viewBounds;
 @property(readonly, nonatomic) struct CGRect overscanBounds; // @synthesize overscanBounds=_overscanBounds;
 @property(readonly, nonatomic) PIStillReframerConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (double)confidenceWithBounds:(struct CGRect)arg1;
 - (BOOL)shouldAllowCandidateRect:(struct CGRect)arg1 forUnwantedSubjects:(id)arg2;
 - (double)amountOfOverscanUsedByRect:(struct CGRect)arg1;

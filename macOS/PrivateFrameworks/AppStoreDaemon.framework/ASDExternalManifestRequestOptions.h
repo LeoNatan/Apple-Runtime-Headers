@@ -14,9 +14,9 @@
     NSURL *_manifestURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldHideUserPrompts; // @synthesize shouldHideUserPrompts=_shouldHideUserPrompts;
 @property(readonly, nonatomic) NSURL *manifestURL; // @synthesize manifestURL=_manifestURL;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

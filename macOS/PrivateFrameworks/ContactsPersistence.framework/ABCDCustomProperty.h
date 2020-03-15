@@ -6,7 +6,7 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class NSNumber, NSString;
+@class NSNumber, NSSet, NSString;
 
 @interface ABCDCustomProperty : NSManagedObject
 {
@@ -17,6 +17,7 @@
 + (id)customPropertyFromDescription:(id)arg1 inContext:(id)arg2;
 
 // Remaining properties
+@property(retain, nonatomic) NSSet *customPropertyValues; // @dynamic customPropertyValues;
 @property(retain, nonatomic) NSString *propertyName; // @dynamic propertyName;
 @property(retain, nonatomic) NSString *recordType; // @dynamic recordType;
 @property(retain, nonatomic) NSNumber *valueType; // @dynamic valueType;

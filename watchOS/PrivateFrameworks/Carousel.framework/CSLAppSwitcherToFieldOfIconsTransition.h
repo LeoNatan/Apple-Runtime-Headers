@@ -17,8 +17,8 @@
     CSLNavigationTransactionAnimatorHelper *_helper;
 }
 
-@property(readonly, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
 - (void)_willComplete;
 - (void)_beginAnimation;
 - (void)_configureAnimation:(id)arg1;

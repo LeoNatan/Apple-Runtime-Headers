@@ -14,10 +14,9 @@
 }
 
 + (Class)_contentViewClass;
-@property(retain, nonatomic) UIView *gadgetContentView; // @synthesize gadgetContentView=_gadgetContentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *gadgetContentView; // @synthesize gadgetContentView=_gadgetContentView;
 - (void)prepareForReuse;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

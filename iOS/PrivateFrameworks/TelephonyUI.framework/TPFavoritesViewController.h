@@ -19,13 +19,13 @@
 }
 
 + (id)avatarViewControllerSettings;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexSet *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(copy, nonatomic) NSArray *favoritesEntries; // @synthesize favoritesEntries=_favoritesEntries;
 @property(retain, nonatomic) UIView *contentUnavailableView; // @synthesize contentUnavailableView=_contentUnavailableView;
 @property(nonatomic) _Bool contentUnavailable; // @synthesize contentUnavailable=_contentUnavailable;
 @property(readonly, nonatomic) TPFavoritesController *favoritesController; // @synthesize favoritesController=_favoritesController;
-- (void).cxx_destruct;
 - (void)relayoutCollectionView;
 - (void)refreshViewAnimated:(_Bool)arg1;
 - (void)refreshView;

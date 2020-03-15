@@ -18,12 +18,12 @@
     TVSDocumentLoader *_webVTTStylesDocumentLoader;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSDocumentLoader *webVTTStylesDocumentLoader; // @synthesize webVTTStylesDocumentLoader=_webVTTStylesDocumentLoader;
 @property(retain, nonatomic) NSMutableArray *chapterCollectionRefreshTimers; // @synthesize chapterCollectionRefreshTimers=_chapterCollectionRefreshTimers;
 @property(nonatomic) unsigned long long loadingContext; // @synthesize loadingContext=_loadingContext;
 @property(retain, nonatomic) TVLEventGroupUpdater *eventGroupUpdater; // @synthesize eventGroupUpdater=_eventGroupUpdater;
 @property(retain, nonatomic) TVLVideoAssetElement *videoAssetElement; // @synthesize videoAssetElement=_videoAssetElement;
-- (void).cxx_destruct;
 - (_Bool)_preparationCancelled:(unsigned long long)arg1;
 - (void)_chapterRefreshTimerFired:(id)arg1;
 - (void)_setupAutoRefreshForChapterCollection:(id)arg1;

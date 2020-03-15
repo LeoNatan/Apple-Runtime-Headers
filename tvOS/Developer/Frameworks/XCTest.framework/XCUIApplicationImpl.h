@@ -29,6 +29,7 @@
 + (id)keyPathsForValuesAffectingRunning;
 + (id)keyPathsForValuesAffectingState;
 + (id)keyPathsForValuesAffectingHasCurrentProcess;
+- (void).cxx_destruct;
 @property _Bool previousOnDemandAutomationSessionRequestFailed; // @synthesize previousOnDemandAutomationSessionRequestFailed=_previousOnDemandAutomationSessionRequestFailed;
 @property _Bool hasValidAlertCount; // @synthesize hasValidAlertCount=_hasValidAlertCount;
 @property _Bool codeCoverageEnabled; // @synthesize codeCoverageEnabled=_codeCoverageEnabled;
@@ -36,7 +37,7 @@
 @property(retain, nonatomic) XCUIApplicationProcess *currentProcess; // @synthesize currentProcess=_currentProcess;
 @property(readonly, copy) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, copy) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
+- (void)resetAuthorizationStatusForResource:(long long)arg1;
 - (void)handleCrashUnderSymbol:(id)arg1;
 - (void)terminate;
 - (void)_waitOnActivationExpectation:(id)arg1;

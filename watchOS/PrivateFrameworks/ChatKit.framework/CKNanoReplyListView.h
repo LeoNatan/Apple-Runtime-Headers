@@ -22,10 +22,10 @@
 + (struct CGSize)_sizeForReply:(id)arg1 width:(float)arg2;
 + (struct CGSize)replySizeForReplies:(id)arg1 width:(float)arg2;
 + (struct CGSize)replySizeForReplies:(id)arg1 width:(float)arg2 frames:(out id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *replyFrames; // @synthesize replyFrames=_replyFrames;
 @property(retain, nonatomic) NSArray *replies; // @synthesize replies=_replies;
 @property(nonatomic) __weak id <CKNanoReplyListViewDelegate> replyDelegate; // @synthesize replyDelegate=_replyDelegate;
-- (void).cxx_destruct;
 - (id)textReplyButtonForTesting:(unsigned int)arg1;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

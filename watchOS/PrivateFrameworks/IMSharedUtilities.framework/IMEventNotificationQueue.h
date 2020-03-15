@@ -18,9 +18,9 @@
     IMDoubleLinkedList *_eventNotificationList;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IMDoubleLinkedList *eventNotificationList; // @synthesize eventNotificationList=_eventNotificationList;
 @property __weak id <IMEventNotificationQueueDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)containsNotificationTarget:(id)arg1;
 @property(readonly) int count;
 @property(getter=isPaused) _Bool paused; // @synthesize paused=_paused;

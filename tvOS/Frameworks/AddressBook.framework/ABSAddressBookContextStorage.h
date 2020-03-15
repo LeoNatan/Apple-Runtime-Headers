@@ -20,6 +20,7 @@
     NSMutableDictionary *_revertedRecords;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *revertedRecords; // @synthesize revertedRecords=_revertedRecords;
 @property(readonly, nonatomic) NSMutableDictionary *addedMemberships; // @synthesize addedMemberships=_addedMemberships;
 @property(readonly, nonatomic) NSMutableDictionary *deletedMemberships; // @synthesize deletedMemberships=_deletedMemberships;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSMutableArray *insertedRecords; // @synthesize insertedRecords=_insertedRecords;
 @property(readonly, nonatomic) NSMutableDictionary *deletedRecords; // @synthesize deletedRecords=_deletedRecords;
 @property(readonly, nonatomic) NSMutableDictionary *records; // @synthesize records=_records;
-- (void).cxx_destruct;
 - (void)revert;
 - (void)commitPendingChanges;
 - (void)_resetIncludingLivingRecords:(_Bool)arg1;

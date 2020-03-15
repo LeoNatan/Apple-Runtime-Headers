@@ -21,9 +21,9 @@
 }
 
 + (id)_videoSessionQueue;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pixelBufferDidChangeHandler; // @synthesize pixelBufferDidChangeHandler=_pixelBufferDidChangeHandler;
 - (long long)desiredPlayState;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGAffineTransform videoRotationTransform;
 @property(readonly, nonatomic) struct __CVBuffer *currentPixelBuffer;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

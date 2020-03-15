@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
-- (void).cxx_destruct;
 - (void)invalidateActivity;
 - (void)setWithActivityType:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
 - (void)setWithActivityType:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3 teamID:(id)arg4 completion:(CDUnknownBlockType)arg5;

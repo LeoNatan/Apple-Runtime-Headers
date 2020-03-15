@@ -21,8 +21,8 @@
     id <SKStoreProductActivityViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SKStoreProductActivityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKStoreProductActivityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (void)_viewTapped:(id)arg1;
 - (void)_addRemoteView;

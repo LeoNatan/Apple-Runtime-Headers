@@ -14,8 +14,8 @@
 }
 
 + (id)newGeneratorNode:(id)arg1;
-@property(retain, nonatomic) PVEffect *generatorEffect; // @synthesize generatorEffect=_generatorEffect;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PVEffect *generatorEffect; // @synthesize generatorEffect=_generatorEffect;
 - (id)instructionGraphNodeDescription;
 - (id)dotTreeLabel:(HGRef_6bae45d3)arg1;
 - (PCMatrix44Tmpl_93ed1289)pixelTransformForPVEffect:(id)arg1 igContext:(HGRef_6bae45d3)arg2;

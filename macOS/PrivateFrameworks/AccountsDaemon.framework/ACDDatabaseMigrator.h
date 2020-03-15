@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *storeOptions; // @synthesize storeOptions=_storeOptions;
 @property(readonly, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
 @property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
-- (void).cxx_destruct;
 - (void)_postProcessMigrationFromVersion:(long long)arg1 migrationData:(id)arg2;
 - (long long)_versionForModel:(id)arg1;
 - (id)_compatibleModelForStoreAtURL:(id)arg1;

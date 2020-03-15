@@ -16,8 +16,8 @@
 }
 
 + (id)sharedDetentMetricCollector;
-@property(retain, nonatomic) PUICDetentMetrics *currentMetrics; // @synthesize currentMetrics=_currentMetrics;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUICDetentMetrics *currentMetrics; // @synthesize currentMetrics=_currentMetrics;
 - (void)_queue_incrementScalarKey:(id)arg1 reason:(id)arg2;
 - (void)userScrolled:(_Bool)arg1;
 - (void)crownRotated:(double)arg1;

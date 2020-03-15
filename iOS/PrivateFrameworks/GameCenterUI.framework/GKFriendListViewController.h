@@ -29,6 +29,7 @@
     UIActivityIndicatorView *_activityIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsShowMoreFooter; // @synthesize needsShowMoreFooter=_needsShowMoreFooter;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSMutableArray *recentPlayers; // @synthesize recentPlayers=_recentPlayers;
 @property(retain, nonatomic) NSMutableArray *friendPlayers; // @synthesize friendPlayers=_friendPlayers;
 @property(nonatomic) id <GKFriendListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addFriends:(id)arg1;
 - (void)reportPlayerAtIndexPath:(id)arg1;
 - (void)deletePlayerAtIndexPath:(id)arg1;

@@ -16,10 +16,10 @@
 + (id)methodNotFoundSentinal;
 + (void)methodDoesNotExistSentinal;
 + (id)trampolineWithCaller:(id)arg1 targetClass:(Class)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool warnAboutUnknownSelectors; // @synthesize warnAboutUnknownSelectors=_warnAboutUnknownSelectors;
 @property(nonatomic) __weak Class targetClass; // @synthesize targetClass=_targetClass;
 @property(nonatomic) __weak id caller; // @synthesize caller=_caller;
-- (void).cxx_destruct;
 - (CDUnknownFunctionPointerType)_findIMPForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

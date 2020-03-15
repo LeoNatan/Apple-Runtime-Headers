@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 + (id)_startPiPControlItem;
 + (id)_stopPiPControlItem;
 + (id)_cancelPiPControlItem;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isPrivate, setter=_setPrivate:) _Bool _private; // @synthesize _private=__private;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *accessibilityIdentifier; // @synthesize accessibilityIdentifier=_accessibilityIdentifier;
-- (void).cxx_destruct;
 - (void)__pipDummy:(id)arg1;
 @property(retain, nonatomic, getter=_privateImage, setter=_setPrivateImage:) UIImage *_privateImage;
 - (void)_blockAction:(id)arg1;

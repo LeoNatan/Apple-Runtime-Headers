@@ -26,10 +26,10 @@
 }
 
 + (id)createContextForBindable:(id)arg1 withSubstrate:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UIContextBinderContextCreationPolicyHolding> contextCreationPolicyHolder; // @synthesize contextCreationPolicyHolder=_contextCreationPolicyHolder;
 @property(nonatomic) long long contextManagementPolicy; // @synthesize contextManagementPolicy=_contextManagementPolicy;
 @property(readonly, nonatomic) id <_UIContextBinding> substrate; // @synthesize substrate=_substrate;
-- (void).cxx_destruct;
 - (void)_synchronizeDrawingWithFence:(id)arg1 preCommitHandler:(CDUnknownBlockType)arg2;
 - (void)_synchronizeDrawingAcrossProcessesOverPort:(unsigned int)arg1 withPreCommitHandler:(CDUnknownBlockType)arg2;
 - (void)_synchronizeDrawingAcrossProcessesOverPort:(unsigned int)arg1;

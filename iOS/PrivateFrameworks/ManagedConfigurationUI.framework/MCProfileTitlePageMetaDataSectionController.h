@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     MCProfileTitlePageOrganizationCell *_orgCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MCProfileTitlePageOrganizationCell *orgCell; // @synthesize orgCell=_orgCell;
 @property(retain, nonatomic) MCProfileTitlePageSubtitleCell *subtitleCell; // @synthesize subtitleCell=_subtitleCell;
 @property(retain, nonatomic) MCProfileTitlePageTitleCell *titleCell; // @synthesize titleCell=_titleCell;
 @property(retain, nonatomic) MCProfileTitlePageSettingsIconCell *iconCell; // @synthesize iconCell=_iconCell;
 @property(retain, nonatomic) MCProfile *profile; // @synthesize profile=_profile;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (unsigned long long)numberOfRows;
 - (double)heightForRowAtIndex:(unsigned long long)arg1;
 - (double)heightForHeader;

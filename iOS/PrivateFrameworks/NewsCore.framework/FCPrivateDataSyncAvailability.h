@@ -17,8 +17,8 @@
 
 + (id)notAvailable;
 + (id)defaultAvailability;
-@property(readonly, copy, nonatomic) NSArray *conditions; // @synthesize conditions=_conditions;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *conditions; // @synthesize conditions=_conditions;
 @property(readonly, nonatomic, getter=isPrivateDataSyncingAllowed) _Bool privateDataSyncingAllowed;
 - (id)initWithConditions:(id)arg1;
 

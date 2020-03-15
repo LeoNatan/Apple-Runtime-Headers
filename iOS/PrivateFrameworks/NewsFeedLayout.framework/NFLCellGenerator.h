@@ -16,11 +16,11 @@
     NFLAbstractCellPropertyProvider *_propertyProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NFLAbstractCellPropertyProvider *propertyProvider; // @synthesize propertyProvider=_propertyProvider;
 @property(readonly, nonatomic) NFLAbstractCellSizer *sizer; // @synthesize sizer=_sizer;
 @property(readonly, nonatomic) NFLAbstractRanker *ranker; // @synthesize ranker=_ranker;
 @property(nonatomic) Class headlineTemplateClass; // @synthesize headlineTemplateClass=_headlineTemplateClass;
-- (void).cxx_destruct;
 - (id)rankedLayoutsForTileInfo:(id)arg1 feedTemplate:(id)arg2 columnSpan:(unsigned long long)arg3 showAccessoryText:(_Bool)arg4;
 - (id)initWithSizer:(id)arg1 ranker:(id)arg2 propertyProvider:(id)arg3;
 

@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *machineName; // @synthesize machineName=_machineName;
 @property(retain) NSDate *date; // @synthesize date=_date;
 @property(retain) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

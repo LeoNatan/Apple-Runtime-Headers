@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     long long _iconType;
 }
 
-@property(nonatomic) long long iconType; // @synthesize iconType=_iconType;
 - (void).cxx_destruct;
+@property(nonatomic) long long iconType; // @synthesize iconType=_iconType;
 - (void)_updateAppearance;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

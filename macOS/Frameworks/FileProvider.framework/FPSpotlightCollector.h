@@ -26,6 +26,7 @@
 }
 
 + (id)processingQueue;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isGathering) BOOL gathering; // @synthesize gathering=_gathering;
 @property(retain, nonatomic) NSMutableArray *queries; // @synthesize queries=_queries;
 @property(retain, nonatomic) NSMutableSet *observers; // @synthesize observers=_observers;
@@ -33,7 +34,6 @@
 @property(nonatomic) unsigned long long itemsOrigin; // @synthesize itemsOrigin=_itemsOrigin;
 @property(readonly, nonatomic) FPSpotlightQueryDescriptor *queryDescriptor; // @synthesize queryDescriptor=_queryDescriptor;
 @property(nonatomic) __weak id <FPSpotlightCollectorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_areItemsTransientFromBundleIdentifier:(id)arg1;
 - (unsigned long long)_itemsOriginForItems:(id)arg1;
 - (void)_regather;

@@ -30,8 +30,8 @@
 + (id)surrogateWithQueue:(id)arg1 calloutQueue:(id)arg2 client:(id)arg3;
 + (id)surrogateGatewayWithQueue:(id)arg1 calloutQueue:(id)arg2 name:(id)arg3 priority:(unsigned int)arg4;
 + (id)surrogateWithQueue:(id)arg1 calloutQueue:(id)arg2;
-@property(retain, nonatomic) BLTBulletinDistributorClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BLTBulletinDistributorClient *client; // @synthesize client=_client;
 - (void)removeBulletins:(id)arg1 inSection:(id)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (_Bool)isKindOfClass:(Class)arg1;

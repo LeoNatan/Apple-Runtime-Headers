@@ -13,8 +13,8 @@
     PASampleFrame *_sampleFrame;
 }
 
-@property(readonly) PASampleFrame *sampleFrame; // @synthesize sampleFrame=_sampleFrame;
 - (void).cxx_destruct;
+@property(readonly) PASampleFrame *sampleFrame; // @synthesize sampleFrame=_sampleFrame;
 - (id)debugDescription;
 - (id)initWithSampleFrame:(id)arg1;
 

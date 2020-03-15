@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class WKWebView, _SFBrowserToolbar, _SFCrashBanner, _SFLinkPreviewHeader, _SFNavigationBar;
+@class SFNanoDomainContainerView, WKWebView, _SFCrashBanner, _SFLinkPreviewHeader, _SFNavigationBar, _SFToolbar;
 @protocol SFBrowserViewDelegate;
 
 @interface _SFBrowserView : UIView
@@ -15,7 +15,7 @@
     _Bool _shouldUseScrollToTopView;
     _Bool _hasReceivedTouchEvents;
     UIView *_contentContainerView;
-    _SFBrowserToolbar *_toolbar;
+    _SFToolbar *_toolbar;
     _SFNavigationBar *_navigationBar;
     double _bottomBarOffset;
     double _topBarHeight;
@@ -29,8 +29,11 @@
     UIView *_quickLookDocumentView;
     double _minimalUITopOffset;
     id <SFBrowserViewDelegate> _delegate;
+    SFNanoDomainContainerView *_nanoDomainContainerView;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) SFNanoDomainContainerView *nanoDomainContainerView; // @synthesize nanoDomainContainerView=_nanoDomainContainerView;
 @property(nonatomic) __weak id <SFBrowserViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double minimalUITopOffset; // @synthesize minimalUITopOffset=_minimalUITopOffset;
 @property(retain, nonatomic) UIView *quickLookDocumentView; // @synthesize quickLookDocumentView=_quickLookDocumentView;
@@ -46,9 +49,9 @@
 @property(nonatomic) double topBarHeight; // @synthesize topBarHeight=_topBarHeight;
 @property(nonatomic) double bottomBarOffset; // @synthesize bottomBarOffset=_bottomBarOffset;
 @property(retain, nonatomic) _SFNavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
-@property(retain, nonatomic) _SFBrowserToolbar *toolbar; // @synthesize toolbar=_toolbar;
+@property(retain, nonatomic) _SFToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property(readonly, nonatomic) UIView *contentContainerView; // @synthesize contentContainerView=_contentContainerView;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isContentReadyForDisplay; // @synthesize isContentReadyForDisplay=_contentReadyForDisplay;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)updatePreviewHeader;
 - (void)addWebView:(id)arg1;

@@ -43,6 +43,7 @@
     long long _numberOfUnselectReasonUpdateInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long numberOfUnselectReasonUpdateInfo; // @synthesize numberOfUnselectReasonUpdateInfo=_numberOfUnselectReasonUpdateInfo;
 @property(readonly, nonatomic) long long numberOfUnselectReasonBadAlias; // @synthesize numberOfUnselectReasonBadAlias=_numberOfUnselectReasonBadAlias;
 @property(readonly, nonatomic) long long numberOfUnselectReasonClientCall; // @synthesize numberOfUnselectReasonClientCall=_numberOfUnselectReasonClientCall;
@@ -70,7 +71,6 @@
 @property(readonly, nonatomic) _Bool doesExist; // @synthesize doesExist=_doesExist;
 @property(readonly, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(readonly, nonatomic) int accountType; // @synthesize accountType=_accountType;
-- (void).cxx_destruct;
 @property(readonly) PBCodable<NSCopying> *awdRepresentation;
 @property(readonly) unsigned int awdIdentifier;
 @property(readonly, nonatomic) unsigned short rtcType;

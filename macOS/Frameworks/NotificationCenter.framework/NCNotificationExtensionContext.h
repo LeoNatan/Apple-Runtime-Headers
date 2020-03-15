@@ -20,9 +20,9 @@
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)serviceInterface;
 + (id)hostInterface;
+- (void).cxx_destruct;
 @property(readonly) NSUserNotification *notification; // @synthesize notification=_notification;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)closeNotificationWithActivation:(long long)arg1 actionIdentifier:(id)arg2;
 - (void)setNotification:(id)arg1;
 - (void)forwardInvocation:(id)arg1;

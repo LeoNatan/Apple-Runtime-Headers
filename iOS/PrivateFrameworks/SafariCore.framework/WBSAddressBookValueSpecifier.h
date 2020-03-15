@@ -17,12 +17,12 @@
     NSString *_parentProperty;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *parentProperty; // @synthesize parentProperty=_parentProperty;
 @property(readonly, nonatomic) NSString *category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) NSString *component; // @synthesize component=_component;
 @property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

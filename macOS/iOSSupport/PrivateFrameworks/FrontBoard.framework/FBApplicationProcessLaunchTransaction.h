@@ -21,10 +21,10 @@
     BOOL _exited;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL exited; // @synthesize exited=_exited;
 @property(readonly, nonatomic) BOOL failedLaunch; // @synthesize failedLaunch=_failedLaunch;
 @property(readonly, nonatomic) FBProcess *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (void)_queue_finishProcessLaunch:(BOOL)arg1;
 - (void)_queue_processWillLaunch:(id)arg1;
 - (void)_queue_launchProcess:(id)arg1;

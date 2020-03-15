@@ -21,6 +21,7 @@
     HKQuantity *_goal;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) HKQuantity *goal; // @synthesize goal=_goal;
 @property(nonatomic) unsigned int goalType; // @synthesize goalType=_goalType;
 @property(retain, nonatomic) HDDeviceEntity *deviceEntity; // @synthesize deviceEntity=_deviceEntity;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) HDSourceEntity *sourceEntity; // @synthesize sourceEntity=_sourceEntity;
 @property(copy, nonatomic) HKWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
 @property(copy, nonatomic) NSUUID *builderIdentifier; // @synthesize builderIdentifier=_builderIdentifier;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

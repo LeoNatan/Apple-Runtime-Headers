@@ -8,13 +8,12 @@
 
 #import <FileProvider/NSFileProviderEnumerator-Protocol.h>
 
-@class NSFileProviderDomain, NSString;
+@class NSFileProviderManager, NSString;
 
 __attribute__((visibility("hidden")))
 @interface FPMaterializedSetEnumerator : NSObject <NSFileProviderEnumerator>
 {
-    NSFileProviderDomain *_domain;
-    NSString *_provider;
+    NSFileProviderManager *_manager;
 }
 
 - (void).cxx_destruct;
@@ -22,8 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)currentSyncAnchorWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)enumerateChangesForObserver:(id)arg1 fromSyncAnchor:(id)arg2;
 - (void)enumerateItemsForObserver:(id)arg1 startingAtPage:(id)arg2;
-- (id)initWithDomain:(id)arg1 provider:(id)arg2;
-- (id)initWithDomain:(id)arg1;
+- (id)initWithManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

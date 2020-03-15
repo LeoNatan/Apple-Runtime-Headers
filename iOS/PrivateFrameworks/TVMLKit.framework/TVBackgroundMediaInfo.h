@@ -13,8 +13,8 @@
     IKAppPlayerBridge *_playerBridge;
 }
 
-@property(retain, nonatomic) IKAppPlayerBridge *playerBridge; // @synthesize playerBridge=_playerBridge;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKAppPlayerBridge *playerBridge; // @synthesize playerBridge=_playerBridge;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

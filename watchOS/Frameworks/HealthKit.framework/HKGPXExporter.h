@@ -19,9 +19,9 @@
 
 + (id)_displayNameForRoute:(id)arg1;
 + (id)fileNameForRoute:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (_Bool)_appendString:(id)arg1 error:(id *)arg2;
 - (_Bool)_appendGPXHeaderWithError:(id *)arg1;
 - (id)_trackpointEntryForLocation:(id)arg1;

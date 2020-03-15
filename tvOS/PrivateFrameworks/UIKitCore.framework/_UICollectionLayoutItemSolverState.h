@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _solvedFittingFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect solvedFittingFrame; // @synthesize solvedFittingFrame=_solvedFittingFrame;
 @property(readonly, nonatomic) NSArray *availableLayoutSpaces; // @synthesize availableLayoutSpaces=_availableLayoutSpaces;
 @property(readonly, nonatomic) long long supplementaryFrameCount; // @synthesize supplementaryFrameCount=_supplementaryFrameCount;
 @property(readonly, nonatomic) long long itemFrameCount; // @synthesize itemFrameCount=_itemFrameCount;
 @property(readonly, nonatomic) NSArray *solutionFrames; // @synthesize solutionFrames=_solutionFrames;
-- (void).cxx_destruct;
 - (void)_generateMemoizedSolutionFramesBasedData;
 @property(readonly, nonatomic) id <_UICollectionLayoutAuxillaryOffsets> supplementaryFrameOffsets; // @synthesize supplementaryFrameOffsets=_supplementaryFrameOffsets;
 @property(readonly, nonatomic) NSDictionary *supplementaryDictByKindIndex; // @synthesize supplementaryDictByKindIndex=_supplementaryDictByKindIndex;

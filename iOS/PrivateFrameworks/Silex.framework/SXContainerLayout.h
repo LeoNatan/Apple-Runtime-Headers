@@ -18,8 +18,8 @@
     NSMutableArray *_oldchildLayouts;
 }
 
-@property(retain, nonatomic) NSMutableArray *oldchildLayouts; // @synthesize oldchildLayouts=_oldchildLayouts;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *oldchildLayouts; // @synthesize oldchildLayouts=_oldchildLayouts;
 - (_Bool)supportsInspectorPositioning;
 - (void)invalidateParentForWrap;
 - (void)i_invalidateWrap;

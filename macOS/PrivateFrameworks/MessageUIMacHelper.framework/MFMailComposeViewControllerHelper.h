@@ -21,11 +21,11 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSMutableDictionary *parameters; // @synthesize parameters=_parameters;
 @property(nonatomic) __weak NSWindow *appNSWindow; // @synthesize appNSWindow=_appNSWindow;
 @property(nonatomic) __weak id <MFMailComposeViewControllerHelperDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)sharingService:(id)arg1 didShareItems:(id)arg2;
 - (void)sharingService:(id)arg1 didFailToShareItems:(id)arg2 error:(id)arg3;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;

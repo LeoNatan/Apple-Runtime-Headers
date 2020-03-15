@@ -28,11 +28,11 @@
     ICMZoomController *_zoomController;
     ICAttachment *_attachment;
     ICSearchResult *_searchResult;
-    struct NSView *_accessoryView;
+    NSView *_accessoryView;
     NSRegularExpression *_highlightPatternRegex;
     unsigned long long _defaultBrickSize;
     unsigned long long _brickSize;
-    struct NSView *_backgroundView;
+    NSView *_backgroundView;
     ICAttachmentBrickFrostedView *_frostedView;
     NSLayoutConstraint *_widthConstraint;
     NSLayoutConstraint *_heightConstraint;
@@ -48,7 +48,7 @@
     unsigned long long _brickType;
     unsigned long long _accessoryType;
     unsigned long long _imageScaling;
-    struct NSImage *_image;
+    NSImage *_image;
     struct CGSize _imageSize;
 }
 
@@ -58,6 +58,7 @@
 + (struct CGSize)brickSizeWithSize:(unsigned long long)arg1;
 + (unsigned long long)maximumBrickSizeForAttachment:(id)arg1 defaultSize:(unsigned long long)arg2;
 + (unsigned long long)brickTypeForAttachment:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disableVibrancy; // @synthesize disableVibrancy=_disableVibrancy;
 @property(nonatomic) BOOL disableTextUpdates; // @synthesize disableTextUpdates=_disableTextUpdates;
 @property(nonatomic) BOOL disableImageUpdates; // @synthesize disableImageUpdates=_disableImageUpdates;
@@ -95,7 +96,6 @@
 @property(nonatomic) __weak ICSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 @property(nonatomic) __weak ICAttachment *attachment; // @synthesize attachment=_attachment;
 @property(retain, nonatomic) ICMZoomController *zoomController; // @synthesize zoomController=_zoomController;
-- (void).cxx_destruct;
 - (BOOL)accessibilityIgnoresInvertColors;
 - (void)updateAccessoryViewForAccessibilityInvertColors;
 @property(readonly, nonatomic) NSString *typeDescriptionForAccessibility;
@@ -128,7 +128,7 @@
 - (id)thumbnailCache;
 - (void)viewDidChangeBackingProperties;
 - (void)viewDidMoveToWindow;
-- (struct NSColor *)backgroundColorForCurrentVibrancy;
+- (id)backgroundColorForCurrentVibrancy;
 - (void)updateVibrancyIfNecessary;
 - (void)audioPlayerViewStopped:(id)arg1;
 - (void)audioPlayerView:(id)arg1 updateTime:(double)arg2;

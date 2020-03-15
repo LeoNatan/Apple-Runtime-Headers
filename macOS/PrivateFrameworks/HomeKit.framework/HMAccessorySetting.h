@@ -20,9 +20,9 @@
 + (id)logCategory;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)settingForInternal:(id)arg1;
+- (void).cxx_destruct;
 @property __weak HMAccessorySettingGroup *group; // @synthesize group=_group;
 @property(readonly) _HMAccessorySetting *internal; // @synthesize internal=_internal;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)_settingDidUpdateReflected:(id)arg1;
 - (void)_settingWillUpdateReflected:(id)arg1;

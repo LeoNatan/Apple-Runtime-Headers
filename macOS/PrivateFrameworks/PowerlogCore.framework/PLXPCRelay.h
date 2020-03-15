@@ -17,13 +17,14 @@
     NSObject<OS_dispatch_queue> *_crashMoverQueue;
 }
 
++ (BOOL)allowQueryFromPeer:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *crashMoverQueue; // @synthesize crashMoverQueue=_crashMoverQueue;
 @property(retain) NSObject<OS_xpc_object> *xpcCrashMoverConn; // @synthesize xpcCrashMoverConn=_xpcCrashMoverConn;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *relayConnection; // @synthesize relayConnection=_relayConnection;
 @property(retain) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property BOOL relayActive; // @synthesize relayActive=_relayActive;
-- (void).cxx_destruct;
 - (void)resetRelayConnection;
 - (void)handlePeer:(id)arg1 forEvent:(id)arg2;
 - (BOOL)isDebugEnabled;

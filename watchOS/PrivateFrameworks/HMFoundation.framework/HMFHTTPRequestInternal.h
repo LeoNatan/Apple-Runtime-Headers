@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     HMFActivity *_activity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 @property(retain, nonatomic) NSData *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSDictionary *headerFields; // @synthesize headerFields=_headerFields;
 @property(copy, nonatomic) NSString *method; // @synthesize method=_method;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)responseWithStatusCode:(int)arg1;
 - (void)setHeaderValue:(id)arg1 forHeaderKey:(id)arg2;
 - (id)init;

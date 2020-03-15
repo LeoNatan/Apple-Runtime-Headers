@@ -33,6 +33,7 @@
 }
 
 + (id)_descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *suggestedDestinations; // @synthesize suggestedDestinations=_suggestedDestinations;
 @property(retain, nonatomic) NSMutableDictionary *suggestions; // @synthesize suggestions=_suggestions;
 @property(nonatomic) _Bool shouldObserveSuggestionsDefaultChanges; // @synthesize shouldObserveSuggestionsDefaultChanges=_shouldObserveSuggestionsDefaultChanges;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool generationTimerEnabled; // @synthesize generationTimerEnabled=_generationTimerEnabled;
 @property(retain, nonatomic) TCSContacts *contacts; // @synthesize contacts=_contacts;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (void)_notifyObserversSuggestionsChanged;
 - (void)_performIDQueryForSuggestions:(id)arg1;
 - (id)_destinationsFromCallHistory;

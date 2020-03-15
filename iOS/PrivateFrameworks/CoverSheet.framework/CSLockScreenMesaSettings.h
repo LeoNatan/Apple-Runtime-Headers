@@ -22,6 +22,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(nonatomic) double slowPressDuration; // @synthesize slowPressDuration=_slowPressDuration;
 @property(nonatomic) _Bool successFeedbackWaitsUntilButtonUp; // @synthesize successFeedbackWaitsUntilButtonUp=_successFeedbackWaitsUntilButtonUp;
 @property(nonatomic) _Bool flashRedOnPasscodeRequiredEvents; // @synthesize flashRedOnPasscodeRequiredEvents=_flashRedOnPasscodeRequiredEvents;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) CSLockScreenBiometricFailureSettings *thirdFailureSettings; // @synthesize thirdFailureSettings=_thirdFailureSettings;
 @property(retain, nonatomic) CSLockScreenBiometricFailureSettings *secondFailureSettings; // @synthesize secondFailureSettings=_secondFailureSettings;
 @property(retain, nonatomic) CSLockScreenBiometricFailureSettings *firstFailureSettings; // @synthesize firstFailureSettings=_firstFailureSettings;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

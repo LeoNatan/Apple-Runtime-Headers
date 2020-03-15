@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GCExtendedGamepad, GCGamepad, GCMicroGamepad, GCMotion, GCStereoAR, NSMutableArray, NSString;
+@class GCExtendedGamepad, GCGamepad, GCMicroGamepad, GCMotion, NSMutableArray, NSString;
 @protocol GCNamedProfile, OS_dispatch_queue;
 
 @interface GCController : NSObject
@@ -31,7 +31,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)controllerWithStereoAR;
 + (id)controllerWithExtendedGamepad;
 + (id)controllerWithMicroGamepad;
 + (void)stopWirelessControllerDiscovery;
@@ -50,6 +49,7 @@
 + (void)__openXPC_and_CBApplicationDidBecomeActive__;
 + (void)__openXPC__;
 + (void)__open__;
+- (void).cxx_destruct;
 @property(getter=isPublished) _Bool published; // @synthesize published=_published;
 @property(nonatomic) unsigned long long deviceHash; // @synthesize deviceHash=_deviceHash;
 @property(nonatomic) _Bool physicalDeviceUsesCompass; // @synthesize physicalDeviceUsesCompass=_physicalDeviceUsesCompass;
@@ -63,7 +63,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
 @property(copy, nonatomic) CDUnknownBlockType controllerPausedHandler; // @synthesize controllerPausedHandler=_controllerPausedHandler;
 @property(copy, nonatomic) NSString *debugName; // @synthesize debugName=_debugName;
-- (void).cxx_destruct;
 - (void)clearServiceRef;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
@@ -71,7 +70,6 @@
 - (id)capture;
 - (id)description;
 @property(readonly, retain, nonatomic) GCMotion *motion;
-@property(readonly, retain, nonatomic) GCStereoAR *stereoAR;
 @property(readonly, retain, nonatomic) GCExtendedGamepad *extendedGamepad;
 @property(readonly, retain, nonatomic) GCMicroGamepad *microGamepad;
 @property(readonly, retain, nonatomic) GCGamepad *gamepad;

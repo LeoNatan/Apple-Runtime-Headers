@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     VEKProduction *_production;
 }
 
-@property(nonatomic) __weak VEKProduction *production; // @synthesize production=_production;
 - (void).cxx_destruct;
+@property(nonatomic) __weak VEKProduction *production; // @synthesize production=_production;
 - (id)runStageWithInput:(id)arg1;
 
 @end

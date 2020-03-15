@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     long long __rotorKnobCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setRotorKnobCount:) long long _rotorKnobCount; // @synthesize _rotorKnobCount=__rotorKnobCount;
 @property(copy, nonatomic, setter=_setRotorTitle:) NSString *_rotorTitle; // @synthesize _rotorTitle=__rotorTitle;
 @property(retain, nonatomic, setter=_setRotorWindow:) AXVRotorWindow *_rotorWindow; // @synthesize _rotorWindow=__rotorWindow;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)selectRotorKnobAtIndex:(long long)arg1;
 - (void)updateRotorWindowWithRotorTitle:(id)arg1 rotorKnobCount:(long long)arg2;
 - (void)setBaseFontSize:(double)arg1;

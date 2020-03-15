@@ -14,8 +14,8 @@
 }
 
 + (id)paramWithPeerPaymentTransactionMetadata:(id)arg1;
-@property(retain, nonatomic) PKPeerPaymentTransactionMetadata *peerPaymentTransactionMetadata; // @synthesize peerPaymentTransactionMetadata=_peerPaymentTransactionMetadata;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPeerPaymentTransactionMetadata *peerPaymentTransactionMetadata; // @synthesize peerPaymentTransactionMetadata=_peerPaymentTransactionMetadata;
 - (id)description;
 
 @end

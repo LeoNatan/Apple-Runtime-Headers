@@ -19,10 +19,10 @@
     CDStruct_73a5d3ca _sourceTimeRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_73a5d3ca sourceTimeRange; // @synthesize sourceTimeRange=_sourceTimeRange;
 @property(nonatomic) double destinationBeginTime; // @synthesize destinationBeginTime=_destinationBeginTime;
 @property(readonly, copy, nonatomic) NSURL *AVFileURL; // @synthesize AVFileURL=_AVFileURL;
-- (void).cxx_destruct;
 - (BOOL)shouldMergeLiveWaveform;
 - (double)duration;
 - (void)saveGeneratedWaveformIfNecessary;

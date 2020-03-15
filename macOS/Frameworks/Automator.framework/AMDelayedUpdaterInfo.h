@@ -13,10 +13,10 @@
     id _argument;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id argument; // @synthesize argument=_argument;
 @property(readonly) SEL selector; // @synthesize selector=_selector;
 @property(readonly) id updater; // @synthesize updater=_updater;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithUpdater:(id)arg1 selector:(SEL)arg2 object:(id)arg3;

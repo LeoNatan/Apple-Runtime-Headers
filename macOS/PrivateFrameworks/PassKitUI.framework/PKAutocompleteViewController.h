@@ -23,6 +23,7 @@
     id _eventMonitor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRegisteredForNotifications) BOOL registeredForNotifications; // @synthesize registeredForNotifications=_registeredForNotifications;
 @property(retain, nonatomic) id eventMonitor; // @synthesize eventMonitor=_eventMonitor;
 @property(nonatomic) __weak NSView *autocompletingView; // @synthesize autocompletingView=_autocompletingView;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) PKAutocompleteTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) PKAutocompleteWindow *window; // @synthesize window=_window;
 @property(nonatomic) __weak id <PKAutocompleteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateWindowFrame;
 - (id)_separatorView;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;

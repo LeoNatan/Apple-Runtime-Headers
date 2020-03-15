@@ -14,8 +14,8 @@
     int _contentBackdropOverlayBlendMode;
 }
 
-@property(nonatomic) int contentBackdropOverlayBlendMode; // @synthesize contentBackdropOverlayBlendMode=_contentBackdropOverlayBlendMode;
 - (void).cxx_destruct;
+@property(nonatomic) int contentBackdropOverlayBlendMode; // @synthesize contentBackdropOverlayBlendMode=_contentBackdropOverlayBlendMode;
 - (struct CGRect)_dividerViewFrame;
 - (void)layoutSubviews;
 - (void)setSeparatorStyle:(int)arg1;

@@ -15,10 +15,10 @@
     TVLTableElement *_table;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLTableElement *table; // @synthesize table=_table;
 @property(retain, nonatomic) TVLImageElement *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

@@ -22,11 +22,11 @@
 
 + (id)_assetOptionsForClip:(id)arg1;
 + (id)_playlistURL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFCameraClipVideoAssetContextProvider *videoContextProvider; // @synthesize videoContextProvider=_videoContextProvider;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resourceLoaderQueue; // @synthesize resourceLoaderQueue=_resourceLoaderQueue;
 @property(readonly, nonatomic) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
 @property(readonly, nonatomic) HMCameraClip *clip; // @synthesize clip=_clip;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 @property(readonly, nonatomic, getter=isPlayable) _Bool playable;

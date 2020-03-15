@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SKUIEditorialLockupCellLayout *_layout;
 }
 
-@property(readonly, nonatomic) SKUIEditorialLockupCellLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIEditorialLockupCellLayout *layout; // @synthesize layout=_layout;
 - (void)configureForItem:(id)arg1 clientContext:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 

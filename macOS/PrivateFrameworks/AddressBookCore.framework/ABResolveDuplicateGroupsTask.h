@@ -15,10 +15,10 @@
     ABAddressBook *_addressBook;
 }
 
+- (void).cxx_destruct;
 @property(readonly) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 @property(readonly) unsigned long long strategy; // @synthesize strategy=_strategy;
 @property(readonly, copy) NSArray *duplicateGroups; // @synthesize duplicateGroups=_duplicateGroups;
-- (void).cxx_destruct;
 - (void)doMergeIntoOne;
 - (void)doRemoveAll;
 - (id)run:(id *)arg1;

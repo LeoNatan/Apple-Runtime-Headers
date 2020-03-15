@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/FCForYouBridgedFeedGroup-Protocol.h>
-
 @class NSArray, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _TtC7NewsUI223ForYouMagazineFeedGroup : NSObject <FCForYouBridgedFeedGroup>
+@interface _TtC7NewsUI223ForYouMagazineFeedGroup : NSObject
 {
     // Error parsing type: , name: group
     // Error parsing type: , name: identifier

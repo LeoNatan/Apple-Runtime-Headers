@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     UILabel *_destinationLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *destinationLabel; // @synthesize destinationLabel=_destinationLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <PUImportAddToAlbumsToolbarViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIButton *destinationButton; // @synthesize destinationButton=_destinationButton;
 @property(retain, nonatomic) NSString *destinationCollectionTitle; // @synthesize destinationCollectionTitle=_destinationCollectionTitle;
-- (void).cxx_destruct;
 - (struct CGRect)accessibilityFrame;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;

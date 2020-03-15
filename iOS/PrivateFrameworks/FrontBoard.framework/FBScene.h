@@ -39,6 +39,7 @@
     unsigned long long _lastForegroundingTransitionID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long contentState; // @synthesize contentState=_contentState;
 @property(readonly, nonatomic, getter=_isInTransaction) _Bool _inTransaction; // @synthesize _inTransaction;
 @property(readonly, nonatomic) unsigned long long _transactionID; // @synthesize _transactionID;
@@ -55,7 +56,6 @@
 @property(readonly, copy, nonatomic) FBSSceneDefinition *definition; // @synthesize definition=_definition;
 @property(readonly, copy, nonatomic) NSString *workspaceIdentifier; // @synthesize workspaceIdentifier=_workspaceIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_dispatchClientMessageWithBlock:(CDUnknownBlockType)arg1;
 - (void)clientWillInvalidate:(id)arg1;
 - (void)client:(id)arg1 didReceiveActions:(id)arg2;

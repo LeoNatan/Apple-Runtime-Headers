@@ -24,9 +24,9 @@
 + (id)handlesForContactProperties:(id)arg1;
 + (id)allHandlesToSearchForFromContact:(id)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) CRRecentContactsLibrary *recentsLibrary; // @synthesize recentsLibrary=_recentsLibrary;
-- (void).cxx_destruct;
 - (void)removeRecentsWithIdentifiers:(id)arg1 domain:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)removeRecents:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)recentsContactsMatchingHandles:(id)arg1;

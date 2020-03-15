@@ -38,7 +38,9 @@
 - (void)willRemoveSubview:(id)arg1;
 - (void)addSubview:(id)arg1;
 - (void)_accessibilityClearInternalCaches;
+- (id)_accessibilityCachedChildren;
 - (id)_accessibilityChildren;
+- (id)_accessibilityUserTestingChildren;
 - (_Bool)shouldGroupAccessibilityChildren;
 - (void)accessibilityReuseChildren:(id)arg1 forMockParent:(id)arg2;
 - (id)_accessibilityHitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

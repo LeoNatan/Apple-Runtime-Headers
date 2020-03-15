@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_action;
 }
 
-@property(copy, nonatomic) NSString *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *action; // @synthesize action=_action;
 - (CDUnknownBlockType)newDefaultPerformHandlerForSegue:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

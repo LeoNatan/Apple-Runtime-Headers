@@ -26,6 +26,7 @@
     NSArray *_labelNames;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *labelNames; // @synthesize labelNames=_labelNames;
 @property(retain) NSString *coordinatesOutputFeatureName; // @synthesize coordinatesOutputFeatureName=_coordinatesOutputFeatureName;
 @property(retain) NSString *confidenceOutputFeatureName; // @synthesize confidenceOutputFeatureName=_confidenceOutputFeatureName;
@@ -40,7 +41,6 @@
 @property double confidenceThreshold; // @synthesize confidenceThreshold=_confidenceThreshold;
 @property double iouThreshold; // @synthesize iouThreshold=_iouThreshold;
 @property int suppressionMethod; // @synthesize suppressionMethod=_suppressionMethod;
-- (void).cxx_destruct;
 - (id)objectBoundingBoxOutputDescription;
 
 @end

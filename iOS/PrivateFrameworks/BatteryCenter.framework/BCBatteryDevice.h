@@ -40,6 +40,7 @@
 
 + (id)batteryDeviceWithIdentifier:(id)arg1 vendor:(long long)arg2 productIdentifier:(long long)arg3 parts:(unsigned long long)arg4 matchIdentifier:(id)arg5;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFake) _Bool fake; // @synthesize fake=_fake;
 @property(nonatomic) long long transportType; // @synthesize transportType=_transportType;
 @property(readonly, copy, nonatomic) NSString *matchIdentifier; // @synthesize matchIdentifier=_matchIdentifier;
@@ -62,7 +63,6 @@
 @property(nonatomic) long long powerSourceState; // @synthesize powerSourceState=_powerSourceState;
 @property(readonly, nonatomic) long long vendor; // @synthesize vendor=_vendor;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) UIImage *glyph;

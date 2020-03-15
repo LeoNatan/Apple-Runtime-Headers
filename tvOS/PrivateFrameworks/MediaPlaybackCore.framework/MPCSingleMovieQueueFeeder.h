@@ -19,11 +19,11 @@
     id <MPMutableIdentifierListSection> _section;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MPMutableIdentifierListSection> section; // @synthesize section=_section;
 @property(retain, nonatomic) NSString *movieIdentifier; // @synthesize movieIdentifier=_movieIdentifier;
 @property(retain, nonatomic) MPMovie *movie; // @synthesize movie=_movie;
 - (id)uniqueIdentifier;
-- (void).cxx_destruct;
 - (_Bool)section:(id)arg1 supportsShuffleType:(long long)arg2;
 - (void)reloadSection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)itemForItem:(id)arg1 inSection:(id)arg2;

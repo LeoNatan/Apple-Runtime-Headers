@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct PUDisplayVelocity _initialVelocity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSynchronizedWithTransition) _Bool synchronizedWithTransition; // @synthesize synchronizedWithTransition=_synchronizedWithTransition;
 @property(nonatomic) _Bool shouldFadeOutSnapshotAfterCompletionGroup; // @synthesize shouldFadeOutSnapshotAfterCompletionGroup=_shouldFadeOutSnapshotAfterCompletionGroup;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *completionGroup; // @synthesize completionGroup=_completionGroup;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
 @property(nonatomic) long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 
 @end
 

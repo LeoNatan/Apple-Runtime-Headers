@@ -19,13 +19,13 @@
     CNAutocompleteUserSession *_userSession;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNAutocompleteUserSession *userSession; // @synthesize userSession=_userSession;
 @property(readonly, nonatomic) id <CNAutocompleteProbeProvider> probeProvider; // @synthesize probeProvider=_probeProvider;
 @property(readonly, nonatomic) CNAutocompleteStoreQueryContext *queryContext; // @synthesize queryContext=_queryContext;
 @property(readonly, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) __weak id <CNAutocompleteFetchDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <CNAutocompleteSearchProvider> searchProvider; // @synthesize searchProvider=_searchProvider;
-- (void).cxx_destruct;
 - (id)executeFetchRequest:(id)arg1 delegate:(id)arg2 delegateToken:(id)arg3;
 - (id)initWithSearchProvider:(id)arg1 delegate:(id)arg2 probeProvider:(id)arg3 scheduler:(id)arg4 userSession:(id)arg5;
 

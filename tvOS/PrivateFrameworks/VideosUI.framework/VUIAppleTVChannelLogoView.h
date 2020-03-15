@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)logoViewWithChannelImageElement:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUILabel *channelsLabel; // @synthesize channelsLabel=_channelsLabel;
 @property(retain, nonatomic) _TVImageView *appleTVImageView; // @synthesize appleTVImageView=_appleTVImageView;
 @property(retain, nonatomic) VUIAppleTVChannelLogoLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) _TVImageView *channelLogoView; // @synthesize channelLogoView=_channelLogoView;
-- (void).cxx_destruct;
 - (struct CGSize)_layoutSubviewsWithSize:(struct CGSize)arg1 computationOnly:(_Bool)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

@@ -17,6 +17,7 @@
 - (_Bool)_accessibilityIsAccessibilityUIServer;
 - (_Bool)_shouldAllowKeyboardArbiter;
 - (id)accessibilityLabel;
+- (void)sendEvent:(id)arg1;
 - (void)_run;
 - (void)dealloc;
 @property(readonly, nonatomic) int _expectedViewOrientation; // @dynamic _expectedViewOrientation;

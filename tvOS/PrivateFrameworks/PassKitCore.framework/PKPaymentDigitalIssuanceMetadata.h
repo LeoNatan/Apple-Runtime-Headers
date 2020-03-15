@@ -20,6 +20,7 @@
     NSArray *_defaultSuggestions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *defaultSuggestions; // @synthesize defaultSuggestions=_defaultSuggestions;
 @property(readonly, copy, nonatomic) NSString *merchantID; // @synthesize merchantID=_merchantID;
 @property(readonly, copy, nonatomic) NSString *action; // @synthesize action=_action;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSArray *serviceProviderSupportedNetworks; // @synthesize serviceProviderSupportedNetworks=_serviceProviderSupportedNetworks;
 @property(readonly, copy, nonatomic) NSString *serviceProviderCountryCode; // @synthesize serviceProviderCountryCode=_serviceProviderCountryCode;
 @property(readonly, copy, nonatomic) NSString *serviceProviderIdentifier; // @synthesize serviceProviderIdentifier=_serviceProviderIdentifier;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

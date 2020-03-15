@@ -14,9 +14,9 @@
     NSOrderedSet *_subscriptions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *subscriptions; // @synthesize subscriptions=_subscriptions;
 @property(retain, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
-- (void).cxx_destruct;
 - (void)setSpecifier:(id)arg1;
 
 @end

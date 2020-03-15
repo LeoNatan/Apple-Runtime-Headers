@@ -17,11 +17,11 @@
 }
 
 + (id)choosableItemsFromCloudResources:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) long long width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (long long)compareUsingWidth:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <TVDragPlaybackProgressAnimationDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <TVDragPlaybackProgressAnimationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVDragPlaybackProgressAnimationDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)isFinished;
 - (double)currentPlaybackTime;
 

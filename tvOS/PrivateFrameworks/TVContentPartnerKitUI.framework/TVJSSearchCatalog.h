@@ -15,8 +15,8 @@
     PSSSSubscriptionManagerInternal *_subscriptionManager;
 }
 
-@property(retain, nonatomic) PSSSSubscriptionManagerInternal *subscriptionManager; // @synthesize subscriptionManager=_subscriptionManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PSSSSubscriptionManagerInternal *subscriptionManager; // @synthesize subscriptionManager=_subscriptionManager;
 - (id)entitlementForAppWithBundleID:(id)arg1:(id)arg2;
 - (_Bool)canSubscribeInAppWithBundleID:(id)arg1;
 - (void)fetchActiveSubscriptionServices:(id)arg1:(id)arg2:(id)arg3:(id)arg4;

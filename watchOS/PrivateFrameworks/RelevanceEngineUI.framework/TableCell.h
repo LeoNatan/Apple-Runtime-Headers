@@ -13,8 +13,8 @@
     REUpNextBaseCell *_contentCell;
 }
 
-@property(retain, nonatomic) REUpNextBaseCell *contentCell; // @synthesize contentCell=_contentCell;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REUpNextBaseCell *contentCell; // @synthesize contentCell=_contentCell;
 - (void)layoutSubviews;
 - (void)configureWithContent:(id)arg1;
 - (void)prepareForReuse;

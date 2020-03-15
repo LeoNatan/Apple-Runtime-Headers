@@ -26,6 +26,7 @@
 + (id)commandEventWithStartTime:(unsigned long long)arg1 actionType:(id)arg2 outcome:(id)arg3 numberOfEntities:(unsigned int)arg4 numberOfFailures:(unsigned int)arg5 numberOfIncompletions:(unsigned int)arg6 serverConfigurationVersion:(unsigned int)arg7 configurationVersion:(unsigned int)arg8 lastSyncedConfigurationVersion:(unsigned int)arg9;
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int serverConfigurationVersion; // @synthesize serverConfigurationVersion=_serverConfigurationVersion;
 @property(readonly, nonatomic) unsigned int lastSyncedConfigurationVersion; // @synthesize lastSyncedConfigurationVersion=_lastSyncedConfigurationVersion;
 @property(readonly, nonatomic) unsigned int configurationVersion; // @synthesize configurationVersion=_configurationVersion;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSString *outcome; // @synthesize outcome=_outcome;
 @property(readonly, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
 @property(readonly, nonatomic) unsigned int duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (id)initWithStartTime:(unsigned long long)arg1 actionType:(id)arg2 outcome:(id)arg3 numberOfEntities:(unsigned int)arg4 numberOfFailures:(unsigned int)arg5 numberOfIncompletions:(unsigned int)arg6 serverConfigurationVersion:(unsigned int)arg7 configurationVersion:(unsigned int)arg8 lastSyncedConfigurationVersion:(unsigned int)arg9;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;

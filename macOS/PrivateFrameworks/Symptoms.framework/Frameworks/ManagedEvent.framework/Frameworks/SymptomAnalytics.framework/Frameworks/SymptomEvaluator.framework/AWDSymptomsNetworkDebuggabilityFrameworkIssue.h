@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)ndfSignatureType;
 + (Class)ndfAppNameType;
+- (void).cxx_destruct;
 @property(nonatomic) long long ndfSymptomPoint; // @synthesize ndfSymptomPoint=_ndfSymptomPoint;
 @property(retain, nonatomic) NSMutableArray *ndfSignatures; // @synthesize ndfSignatures=_ndfSignatures;
 @property(nonatomic) long long ndfLQM; // @synthesize ndfLQM=_ndfLQM;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long ndfDuration; // @synthesize ndfDuration=_ndfDuration;
 @property(nonatomic) unsigned long long ndfCount; // @synthesize ndfCount=_ndfCount;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

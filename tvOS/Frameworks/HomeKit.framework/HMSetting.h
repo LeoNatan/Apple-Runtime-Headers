@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long properties; // @synthesize properties=_properties;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
@@ -32,7 +33,6 @@
 @property(retain) Class valueClass; // @synthesize valueClass=_valueClass;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(copy) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)merge:(id)arg1;

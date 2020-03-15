@@ -29,6 +29,7 @@
     double _viewRequiringExtendedTimeoutStartTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double viewRequiringExtendedTimeoutStartTime; // @synthesize viewRequiringExtendedTimeoutStartTime=_viewRequiringExtendedTimeoutStartTime;
 @property(readonly, nonatomic) _Bool deviceSupportsRaiseGestureDetection; // @synthesize deviceSupportsRaiseGestureDetection=_deviceSupportsRaiseGestureDetection;
 @property(readonly, nonatomic) _Bool deviceSupportsFaceDetection; // @synthesize deviceSupportsFaceDetection=_deviceSupportsFaceDetection;
@@ -44,7 +45,6 @@
 @property(nonatomic) _Bool userInteractedWithTouchIDSensor; // @synthesize userInteractedWithTouchIDSensor=_userInteractedWithTouchIDSensor;
 @property(nonatomic) _Bool userInteractedWithTouchScreen; // @synthesize userInteractedWithTouchScreen=_userInteractedWithTouchScreen;
 @property(nonatomic) __weak id <SUICAutoDismissalStrategyDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyDelegateOfAutoDismissalDecisionChangeIfNeededPermanent:(_Bool)arg1;
 - (void)_notifyDelegateOfAutoDismissalDecisionChangeIfNeeded;
 - (void)setViewRequiringExtendedTimeoutStartTime:(double)arg1;

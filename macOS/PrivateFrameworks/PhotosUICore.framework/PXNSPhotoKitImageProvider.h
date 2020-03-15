@@ -23,6 +23,7 @@
 }
 
 + (id)operationQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setCurrentOperation:) _PXNSPhotoKitImageProviderOperation *_currentOperation; // @synthesize _currentOperation=__currentOperation;
 @property(nonatomic, setter=_setShouldPrepareImage:) BOOL _shouldPrepareImage; // @synthesize _shouldPrepareImage=__shouldPrepareImage;
 @property(nonatomic, setter=_setLastRequestedTargetSize:) struct CGSize _lastRequestedTargetSize; // @synthesize _lastRequestedTargetSize=__lastRequestedTargetSize;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) PHAssetResourceManager *assetResourceManager; // @synthesize assetResourceManager=_assetResourceManager;
-- (void).cxx_destruct;
 - (void)_targetSizeDidChange;
 - (void)_cancelCurrentRequest;
 - (void)_requestNewImageIfNeeded;

@@ -38,6 +38,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isInternalCarry; // @synthesize isInternalCarry=_isInternalCarry;
 @property(nonatomic) BOOL isTrialUpload; // @synthesize isTrialUpload=_isTrialUpload;
 @property(retain, nonatomic) NSString *pseudoDeviceId; // @synthesize pseudoDeviceId=_pseudoDeviceId;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) NSString *device; // @synthesize device=_device;
 @property(retain, nonatomic) NSString *platform; // @synthesize platform=_platform;
 @property(nonatomic) unsigned long long uploadTime; // @synthesize uploadTime=_uploadTime;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

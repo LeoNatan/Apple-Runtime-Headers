@@ -39,6 +39,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *hlsPlaylistURL; // @synthesize hlsPlaylistURL=_hlsPlaylistURL;
 @property(nonatomic) int lyricsChecksum; // @synthesize lyricsChecksum=_lyricsChecksum;
 @property(retain, nonatomic) MIPPlaybackInfo *playbackInfo; // @synthesize playbackInfo=_playbackInfo;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) MIPArtist *composer; // @synthesize composer=_composer;
 @property(retain, nonatomic) MIPArtist *artist; // @synthesize artist=_artist;
 @property(retain, nonatomic) MIPAlbum *album; // @synthesize album=_album;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

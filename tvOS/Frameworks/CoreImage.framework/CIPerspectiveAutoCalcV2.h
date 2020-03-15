@@ -40,11 +40,11 @@ __attribute__((visibility("hidden")))
     double unlimitedRoll;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) double unlimitedRoll; // @synthesize unlimitedRoll;
 @property(readonly) double unlimitedYaw; // @synthesize unlimitedYaw;
 @property(readonly) double unlimitedPitch; // @synthesize unlimitedPitch;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)computeConfidence;
 - (void)runOptimization;
 - (float)evaluateCostYZ: /* Error: Ran out of types for this method. */;

@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _originalRegionFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *occludingFrames; // @synthesize occludingFrames=_occludingFrames;
 @property(retain, nonatomic) _UIFocusRegionMapEntry *parentEntry; // @synthesize parentEntry=_parentEntry;
 @property(retain, nonatomic) _UIFocusRegionMapEntry *originalEntry; // @synthesize originalEntry=_originalEntry;
 @property(nonatomic) struct CGRect originalRegionFrame; // @synthesize originalRegionFrame=_originalRegionFrame;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) long long visualRepresentationPatternType;
 @property(readonly, copy, nonatomic) UIColor *visualRepresentationColor;

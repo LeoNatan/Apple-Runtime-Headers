@@ -23,12 +23,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) int environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) SBPBDisplayItem *secondaryDisplayItem; // @synthesize secondaryDisplayItem=_secondaryDisplayItem;
 @property(retain, nonatomic) SBPBDisplayItem *primaryDisplayItem; // @synthesize primaryDisplayItem=_primaryDisplayItem;
 @property(nonatomic) int layoutConfiguration; // @synthesize layoutConfiguration=_layoutConfiguration;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

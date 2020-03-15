@@ -32,9 +32,9 @@ __attribute__((visibility("hidden")))
     _Bool _updatingLocations;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool updatingLocations; // @synthesize updatingLocations=_updatingLocations;
 @property(nonatomic) __weak id <MNLocationProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic) long long activityType;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(id)arg2;

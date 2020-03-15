@@ -20,12 +20,12 @@
     id <PXZoomAnimationContext> _context;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PXZoomAnimationContext> context; // @synthesize context=_context;
 @property(readonly, nonatomic) PXNonuniformTransform *toTransform; // @synthesize toTransform=_toTransform;
 @property(readonly, nonatomic) double toAlpha; // @synthesize toAlpha=_toAlpha;
 @property(readonly, nonatomic) PXNonuniformTransform *fromTransform; // @synthesize fromTransform=_fromTransform;
 @property(readonly, nonatomic) double fromAlpha; // @synthesize fromAlpha=_fromAlpha;
-- (void).cxx_destruct;
 - (void)registerCleanupHandler:(CDUnknownBlockType)arg1;
 - (void)didEndAnimation:(long long)arg1;
 - (long long)willBeginAnimation;

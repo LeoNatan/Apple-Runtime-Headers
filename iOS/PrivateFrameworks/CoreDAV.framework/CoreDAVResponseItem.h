@@ -21,6 +21,7 @@
 }
 
 + (id)copyParseRules;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVMatchResultsItem *matchResults; // @synthesize matchResults=_matchResults;
 @property(retain, nonatomic) CoreDAVLeafItem *serverUID; // @synthesize serverUID=_serverUID;
 @property(retain, nonatomic) CoreDAVItemWithHrefChildItem *location; // @synthesize location=_location;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSMutableSet *propStats; // @synthesize propStats=_propStats;
 @property(retain, nonatomic) CoreDAVLeafItem *status; // @synthesize status=_status;
 @property(retain, nonatomic) NSMutableArray *hrefs; // @synthesize hrefs=_hrefs;
-- (void).cxx_destruct;
 - (_Bool)hasPropertyError;
 - (id)successfulPropertiesToValues;
 - (id)firstHref;

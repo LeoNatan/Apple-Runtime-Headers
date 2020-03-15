@@ -21,13 +21,13 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSURL *iconURL; // @synthesize iconURL=_iconURL;
 @property(nonatomic) long long level; // @synthesize level=_level;
 @property(nonatomic) long long serverType; // @synthesize serverType=_serverType;
 @property(nonatomic) __weak HLPHelpItem *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) NSString *decodedName;
 - (id)initWithDictionary:(id)arg1 helpBookURL:(id)arg2 serverType:(long long)arg3;

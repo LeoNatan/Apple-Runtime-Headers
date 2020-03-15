@@ -14,8 +14,8 @@
     NSArray *_zoneIDs;
 }
 
-@property(retain, nonatomic) NSArray *zoneIDs; // @synthesize zoneIDs=_zoneIDs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *zoneIDs; // @synthesize zoneIDs=_zoneIDs;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)performCKOperation;
 - (_Bool)hasCKOperationCallbacksSet;

@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_changeSetFromCurrentMediaEntities:(id)arg1 toLatestMediaEntities:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *currentFetchResponses; // @synthesize currentFetchResponses=_currentFetchResponses;
 @property(copy, nonatomic) NSArray *latestFetchResponses; // @synthesize latestFetchResponses=_latestFetchResponses;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSArray *fetchResponseChanges; // @synthesize fetchResponseChanges=_fetchResponseChanges;
-- (void).cxx_destruct;
 - (id)_groupingChangeSetWithCurrentGrouping:(id)arg1 latestGrouping:(id)arg2;
 - (id)_groupingChangeSetWithLatestFetchResponse:(id)arg1 currentFetchResponse:(id)arg2;
 - (id)_mediaEntitiesChangeSetWithLatestFetchResponse:(id)arg1 currentFetchResponse:(id)arg2;

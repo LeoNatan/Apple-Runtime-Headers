@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)inheritedPlaceholderType:(int)arg1;
-@property(nonatomic) unsigned int slideId; // @synthesize slideId=mSlideId;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int slideId; // @synthesize slideId=mSlideId;
 - (id)description;
 - (void)removeUnnecessaryOverrides;
 - (void)generatePpt9Animations:(id)arg1;

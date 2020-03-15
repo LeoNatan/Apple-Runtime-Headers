@@ -16,10 +16,10 @@
 }
 
 + (id)storeTracklistQueueWithContextID:(id)arg1 storeItemIDs:(id)arg2 collectionIdentifierSet:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPIdentifierSet *collectionIdentifierSet; // @synthesize collectionIdentifierSet=_collectionIdentifierSet;
 @property(nonatomic) long long shuffleType; // @synthesize shuffleType=_shuffleType;
 @property(readonly, nonatomic) NSArray *storeItemIDs; // @synthesize storeItemIDs=_storeItemIDs;
-- (void).cxx_destruct;
 - (struct _MRSystemAppPlaybackQueue *)createRemotePlaybackQueue;
 - (id)description;
 - (id)initWithContextID:(id)arg1 storeItemIDs:(id)arg2 collectionIdentifierSet:(id)arg3;

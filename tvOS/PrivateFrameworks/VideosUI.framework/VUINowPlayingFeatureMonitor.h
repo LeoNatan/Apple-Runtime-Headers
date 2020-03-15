@@ -9,7 +9,7 @@
 #import <VideosUI/TVMediaPlaybackManagerDelegate-Protocol.h>
 
 @class NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TVMediaPlaybackManager;
-@protocol OS_dispatch_queue, TVPAVFPlayback, VUINowPlayingFeature, VUINowPlayingFeatureMonitorDelegate;
+@protocol TVPAVFPlayback, VUINowPlayingFeature, VUINowPlayingFeatureMonitorDelegate;
 
 __attribute__((visibility("hidden")))
 @interface VUINowPlayingFeatureMonitor : NSObject <TVMediaPlaybackManagerDelegate>
@@ -32,12 +32,11 @@ __attribute__((visibility("hidden")))
     double _lastProcessedElapsedTime;
     NSMutableDictionary *_boundaryTimeObserverInfos;
     id _elapsedTimeObserverToken;
-    NSObject<OS_dispatch_queue> *_elapsedTimeProcessingQueue;
     NSMutableArray *_elapsedTimes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *elapsedTimes; // @synthesize elapsedTimes=_elapsedTimes;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *elapsedTimeProcessingQueue; // @synthesize elapsedTimeProcessingQueue=_elapsedTimeProcessingQueue;
 @property(retain, nonatomic) id elapsedTimeObserverToken; // @synthesize elapsedTimeObserverToken=_elapsedTimeObserverToken;
 @property(retain, nonatomic) NSMutableDictionary *boundaryTimeObserverInfos; // @synthesize boundaryTimeObserverInfos=_boundaryTimeObserverInfos;
 @property(nonatomic) double lastProcessedElapsedTime; // @synthesize lastProcessedElapsedTime=_lastProcessedElapsedTime;
@@ -52,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TVMediaPlaybackManager *playbackManager; // @synthesize playbackManager=_playbackManager;
 @property(retain, nonatomic) NSObject<TVPAVFPlayback> *player; // @synthesize player=_player;
 @property(nonatomic) __weak id <VUINowPlayingFeatureMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_cleanUpEverything;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
@@ -73,7 +71,6 @@ __attribute__((visibility("hidden")))
 - (void)_scheduleDeactivationOfTimeBoundFeature:(id)arg1;
 - (_Bool)_shouldActivateTimeBoundFeatureInitially:(id)arg1;
 - (void)_processTimeBoundFeature:(id)arg1;
-- (void)_processElapsedTimeOnInternalQueue:(double)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_processLastElapsedTime;
 - (void)_processElapsedTime:(double)arg1;
 - (void)_startObservingElapsedTime;

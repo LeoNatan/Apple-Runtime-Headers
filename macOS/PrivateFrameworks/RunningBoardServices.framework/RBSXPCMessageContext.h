@@ -15,8 +15,8 @@
 }
 
 + (id)currentContext;
-@property(readonly, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 - (void)_unset;
 - (void)_set;
 - (void)handoffToQueue:(id)arg1 block:(CDUnknownBlockType)arg2;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     id <AutoFillCandidateListBarItemControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AutoFillCandidateListBarItemControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AutoFillCandidateListBarItemControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)candidateListTouchBarItem:(id)arg1 endSelectingCandidateAtIndex:(long long)arg2;
 - (void)refreshCandidates;
 @property(readonly, nonatomic) NSTouchBarItem *barItem;

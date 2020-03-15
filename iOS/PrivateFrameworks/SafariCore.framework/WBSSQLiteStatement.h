@@ -16,9 +16,9 @@
     NSArray *_columnNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSSQLiteDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) struct sqlite3_stmt *handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 - (_Bool)_isValid;
 @property(readonly, nonatomic) NSArray *columnNames;
 @property(readonly, nonatomic) NSDictionary *columnNamesToIndexes;

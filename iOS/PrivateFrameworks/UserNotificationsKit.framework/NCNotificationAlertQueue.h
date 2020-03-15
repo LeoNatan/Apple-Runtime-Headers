@@ -21,12 +21,12 @@
     NCNotificationRequest *_coalescingRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NCNotificationRequest *coalescingRequest; // @synthesize coalescingRequest=_coalescingRequest;
 @property(retain, nonatomic) NCNotificationStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) NCNotificationCollapsingQueue *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NCNotificationDestinationsRegistry *destinationsRegistry; // @synthesize destinationsRegistry=_destinationsRegistry;
 @property(nonatomic) __weak id <NCNotificationDestinationDelegate> delegate;
-- (void).cxx_destruct;
 - (void)_prepareDestinationsToReceiveCriticalNotificationRequest:(id)arg1;
 - (_Bool)_readyToReceiveForNotificationRequest:(id)arg1;
 - (_Bool)_destinations:(id)arg1 canReceiveNotificationRequest:(id)arg2;

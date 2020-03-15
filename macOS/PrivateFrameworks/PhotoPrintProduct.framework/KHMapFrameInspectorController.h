@@ -18,13 +18,13 @@
     KHInspectorTileViewController *_mapZoomTileController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHInspectorTileViewController *mapZoomTileController; // @synthesize mapZoomTileController=_mapZoomTileController;
 @property(retain, nonatomic) KHInspectorTileViewController *mapPlacesTileController; // @synthesize mapPlacesTileController=_mapPlacesTileController;
 @property(retain, nonatomic) KHInspectorTileViewController *mapTypeTileController; // @synthesize mapTypeTileController=_mapTypeTileController;
 @property(retain) NSSlider *mapZoomSlider; // @synthesize mapZoomSlider=_mapZoomSlider;
 @property(retain) KHMapPlacesPickerController *mapPlacesPicker; // @synthesize mapPlacesPicker=_mapPlacesPicker;
 @property(retain) KHMapTypePickerController *mapTypePicker; // @synthesize mapTypePicker=_mapTypePicker;
-- (void).cxx_destruct;
 - (void)mapZoomUpdated:(id)arg1;
 - (void)setFrames:(id)arg1;
 - (id)viewForPresentationMode:(int)arg1;

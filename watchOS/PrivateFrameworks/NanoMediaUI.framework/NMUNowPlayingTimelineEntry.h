@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float playbackRate; // @synthesize playbackRate=_playbackRate;
 @property(readonly, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(readonly, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) NSString *contentItemID; // @synthesize contentItemID=_contentItemID;
 @property(readonly, nonatomic) NSNumber *storeAdamID; // @synthesize storeAdamID=_storeAdamID;
 @property(readonly, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
-- (void).cxx_destruct;
 - (_Bool)isEqualToEntry:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -13,8 +13,8 @@
     UIFont *_fontForAlignment;
 }
 
-@property(retain, nonatomic) UIFont *fontForAlignment; // @synthesize fontForAlignment=_fontForAlignment;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIFont *fontForAlignment; // @synthesize fontForAlignment=_fontForAlignment;
 - (struct CGRect)attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned long long)arg4;
 
 @end

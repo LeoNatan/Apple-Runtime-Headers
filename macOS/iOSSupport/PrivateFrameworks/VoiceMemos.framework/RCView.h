@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     RCWaveformRenderer *_renderer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak RCWaveformRenderer *renderer; // @synthesize renderer=_renderer;
 @property(readonly, nonatomic) CALayer *waveformLayer; // @synthesize waveformLayer=_waveformLayer;
 @property(readonly, nonatomic) BOOL isCreatingSnapshot; // @synthesize isCreatingSnapshot=_isCreatingSnapshot;
-- (void).cxx_destruct;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)snapshot;

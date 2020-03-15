@@ -18,12 +18,12 @@
     HFWallpaperEditCollection *_updatedEditCollection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFWallpaperEditCollection *updatedEditCollection; // @synthesize updatedEditCollection=_updatedEditCollection;
 @property(retain, nonatomic) NAFuture *initialEditCollectionFuture; // @synthesize initialEditCollectionFuture=_initialEditCollectionFuture;
 @property(nonatomic) _Bool hkObjectNewlyCreated; // @synthesize hkObjectNewlyCreated=_hkObjectNewlyCreated;
 @property(nonatomic) long long namedWallpaperCollectionType; // @synthesize namedWallpaperCollectionType=_namedWallpaperCollectionType;
 @property(retain, nonatomic) id <HFHomeKitObject><HMApplicationData> hkObject; // @synthesize hkObject=_hkObject;
-- (void).cxx_destruct;
 - (id)editCollectionForWallpaper:(id)arg1 image:(id)arg2;
 - (id)commitWallpaper;
 - (void)setWallpaper:(id)arg1 image:(id)arg2;

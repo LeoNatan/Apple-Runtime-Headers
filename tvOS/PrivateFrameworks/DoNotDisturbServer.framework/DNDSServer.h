@@ -45,9 +45,9 @@
     unsigned long long _lostModeState;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long lostModeState; // @synthesize lostModeState=_lostModeState;
 @property unsigned long long lockState; // @synthesize lockState=_lockState;
-- (void).cxx_destruct;
 - (void)_queue_handlePairedDeviceAndSyncSettingsChange;
 - (id)_updateModeAssertionManagerAndRefreshLifetimesAndStateWithHandler:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)_activeDateIntervalForModeAssertion:(id)arg1;

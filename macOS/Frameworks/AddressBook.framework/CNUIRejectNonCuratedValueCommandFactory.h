@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)commandWithContactStore:(id)arg1 donationStore:(id)arg2 nonCuratedValueToReject:(id)arg3;
++ (id)commandWithContactStore:(id)arg1 donationStore:(id)arg2 nonCuratedValueToReject:(id)arg3 ignoresGuardianRestrictions:(BOOL)arg4;
 
 @end
 

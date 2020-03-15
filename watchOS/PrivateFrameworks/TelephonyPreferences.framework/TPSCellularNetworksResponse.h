@@ -15,8 +15,8 @@
 
 + (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
 + (id)unarchivedObjectClasses;
-@property(readonly, copy, nonatomic) NSArray *cellularNetworks; // @synthesize cellularNetworks=_cellularNetworks;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *cellularNetworks; // @synthesize cellularNetworks=_cellularNetworks;
 - (id)archivedDataWithError:(id *)arg1;
 - (_Bool)isEqualToResponse:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

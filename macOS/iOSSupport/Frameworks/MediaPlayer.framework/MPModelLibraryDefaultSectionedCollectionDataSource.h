@@ -17,9 +17,9 @@
     NSDictionary *_indexPathToContainerUniqueIDMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *indexPathToContainerUniqueIDMap; // @synthesize indexPathToContainerUniqueIDMap=_indexPathToContainerUniqueIDMap;
 @property(readonly, nonatomic) MPModelLibraryRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (BOOL)_allowedEntityIdentifiersContainsAllPersistentIDs;
 - (unsigned long long)_adjustedGlobalIndexForIndexPath:(id)arg1;
 - (void)_populateIndexMap;

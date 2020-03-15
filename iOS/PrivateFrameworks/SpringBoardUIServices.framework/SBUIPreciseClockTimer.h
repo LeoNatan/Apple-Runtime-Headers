@@ -25,8 +25,8 @@
 - (void)_handleTimePassed;
 - (void)_onDisplayLink:(id)arg1;
 - (void)_updateDisplayLink;
-- (void)stopMinuteUpdatesForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)startMinuteUpdatesWithHandler:(CDUnknownBlockType)arg1;
+- (void)stopMinuteUpdatesForToken:(id)arg1;
+- (id)startMinuteUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
 

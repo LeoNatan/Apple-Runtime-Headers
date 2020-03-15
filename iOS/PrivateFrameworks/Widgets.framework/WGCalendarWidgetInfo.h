@@ -14,8 +14,8 @@
 }
 
 + (_Bool)isCalendarExtension:(id)arg1;
-@property(retain, nonatomic, setter=_setDate:) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setDate:) NSDate *date; // @synthesize date=_date;
 - (void)_handleSignificantTimeChange:(id)arg1;
 - (void)_resetIconsImpl;
 - (id)_queue_iconWithOutlineForWidgetWithIdentifier:(id)arg1 extension:(id)arg2;

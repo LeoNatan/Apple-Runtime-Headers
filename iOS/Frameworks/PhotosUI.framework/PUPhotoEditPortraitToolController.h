@@ -11,20 +11,19 @@
 #import <PhotosUI/PUPhotoEditApertureToolbarDelegate-Protocol.h>
 #import <PhotosUI/PXChangeObserver-Protocol.h>
 
-@class CEKApertureButton, CEKLightingControl, CEKLightingNameBadge, CEKSlider, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PFCoalescer, PUPhotoEditApertureToolbar, UIButton, UIView, _PULightingGradientView;
+@class CEKApertureButton, CEKLightingControl, CEKLightingNameBadge, CEKSlider, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PFCoalescer, PUPhotoEditApertureToolbar, PXUIButton, UIView, _PULightingGradientView;
 
 __attribute__((visibility("hidden")))
 @interface PUPhotoEditPortraitToolController : PUPhotoEditToolController <PUPhotoEditApertureToolbarDelegate, CEKLightingControlDelegate, CEKSliderDelegate, PXChangeObserver>
 {
     CEKApertureButton *_apertureButton;
-    UIView *_apertureButtonContainer;
-    UIButton *_lightingIntensityButton;
+    PXUIButton *_lightingIntensityButton;
     UIView *_lightingContainer;
     UIView *_apertureContainer;
     NSMutableArray *_containerConstraints;
     long long _initialLightingType;
     double _initialLightingIntensity;
-    UIButton *_depthToolbarButton;
+    PXUIButton *_depthToolbarButton;
     _PULightingGradientView *_lightingGradient;
     CEKLightingNameBadge *_lightingNameBadge;
     NSArray *_lightingNameBadgeConstraints;
@@ -42,10 +41,10 @@ __attribute__((visibility("hidden")))
     long long _toolSelection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long toolSelection; // @synthesize toolSelection=_toolSelection;
 @property(readonly, nonatomic) CEKLightingControl *lightingControl; // @synthesize lightingControl=_lightingControl;
 @property(readonly, nonatomic) PUPhotoEditApertureToolbar *apertureToolbar; // @synthesize apertureToolbar=_apertureToolbar;
-- (void).cxx_destruct;
 - (_Bool)apertureToolbarShouldRotateLabelsWithOrientation:(id)arg1;
 - (void)apertureToolbar:(id)arg1 didChangeValue:(double)arg2;
 - (void)_updateLightingIntensityCache;

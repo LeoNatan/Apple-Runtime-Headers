@@ -24,11 +24,11 @@
 + (id)contentWith:(long long)arg1 charactersAfter:(long long)arg2 from:(id)arg3;
 + (id)contentWithSelectedTextOf:(id)arg1;
 + (id)contentWithComposingTextOf:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) unsigned long long direction; // @synthesize direction=_direction;
 @property(readonly, nonatomic) long long baseElement; // @synthesize baseElement=_baseElement;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWith:(long long)arg1 direction:(unsigned long long)arg2 offset:(unsigned long long)arg3 text:(id)arg4;

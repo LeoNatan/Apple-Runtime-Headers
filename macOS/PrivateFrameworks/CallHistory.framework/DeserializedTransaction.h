@@ -14,9 +14,9 @@
     unsigned long long _type;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) CHRecentCall *call; // @synthesize call=_call;
-- (void).cxx_destruct;
 - (id)initWithCall:(id)arg1 andType:(unsigned long long)arg2;
 
 @end

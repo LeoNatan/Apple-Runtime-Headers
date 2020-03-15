@@ -18,12 +18,12 @@
     BOOL _clientAppIsInactive;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL clientAppIsInactive; // @synthesize clientAppIsInactive=_clientAppIsInactive;
 @property(readonly, nonatomic) BOOL clientAppIsBackground; // @synthesize clientAppIsBackground=_clientAppIsBackground;
 @property(readonly, nonatomic) BOOL delegateRegistered; // @synthesize delegateRegistered=_delegateRegistered;
 @property(readonly, copy, nonatomic) NSDictionary *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(readonly, nonatomic) unsigned long long clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 - (void)taskResumeStatus:(int)arg1;
 - (void)templateUpdate:(id)arg1 details:(id)arg2;
 - (void)touchIDButtonPressed:(BOOL)arg1;

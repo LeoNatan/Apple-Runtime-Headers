@@ -14,8 +14,8 @@
     NSArray *_subitems;
 }
 
-@property(retain, nonatomic) NSArray *subitems; // @synthesize subitems=_subitems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *subitems; // @synthesize subitems=_subitems;
 - (void)commitEditing;
 - (void)didCommitEditingStyle:(long long)arg1 forRowAtIndex:(long long)arg2;
 - (long long)commitEditingStyle:(long long)arg1 forRowAtIndex:(long long)arg2;

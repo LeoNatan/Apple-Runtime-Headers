@@ -17,11 +17,11 @@
     unsigned long long _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSMutableSet *selectedContacts; // @synthesize selectedContacts=_selectedContacts;
 @property(retain, nonatomic) NSSet *allContacts; // @synthesize allContacts=_allContacts;
 @property(nonatomic) __weak id <WFEmailContactsTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

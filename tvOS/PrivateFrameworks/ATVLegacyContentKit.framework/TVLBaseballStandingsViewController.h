@@ -20,11 +20,11 @@
     UIPageControl *_pageControl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(retain, nonatomic) TVCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) TVLStandingsElement *standingsElement; // @synthesize standingsElement=_standingsElement;
-- (void).cxx_destruct;
 - (id)standingsItemAtIndex:(long long)arg1;
 - (long long)numberOfStandingItems;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

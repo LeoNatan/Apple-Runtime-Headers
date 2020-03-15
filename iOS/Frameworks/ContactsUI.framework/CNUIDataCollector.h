@@ -17,10 +17,10 @@
 
 + (id)sharedCollector;
 + (_Bool)isEnabled;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNUIDataCollectorSGLogger *sgLogger; // @synthesize sgLogger=_sgLogger;
 @property(readonly, nonatomic) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
 @property(readonly, nonatomic) CNUIDataCollectorAggDLogger *aggDLogger; // @synthesize aggDLogger=_aggDLogger;
-- (void).cxx_destruct;
 - (void)logContactCreated:(id)arg1 originalContact:(id)arg2;
 - (void)logContactShown:(id)arg1;
 - (void)logAddProperty:(id)arg1 contact:(id)arg2;

@@ -21,6 +21,7 @@
     CLLocation *_transactionLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *transactionLocation; // @synthesize transactionLocation=_transactionLocation;
 @property(retain, nonatomic) NSDate *transactionDate; // @synthesize transactionDate=_transactionDate;
 @property(retain, nonatomic) NSNumber *industryCode; // @synthesize industryCode=_industryCode;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *paymentNetwork; // @synthesize paymentNetwork=_paymentNetwork;
 @property(copy, nonatomic) NSString *rawMerchantCode; // @synthesize rawMerchantCode=_rawMerchantCode;
 @property(copy, nonatomic) NSString *merchantCode; // @synthesize merchantCode=_merchantCode;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

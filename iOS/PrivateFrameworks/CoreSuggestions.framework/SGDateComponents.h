@@ -15,8 +15,8 @@
 
 + (id)dateComponents:(id)arg1 label:(id)arg2 extractionInfo:(id)arg3 withRecordId:(id)arg4;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSDateComponents *dateComponents; // @synthesize dateComponents=_dateComponents;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDateComponents *dateComponents; // @synthesize dateComponents=_dateComponents;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqualToDateComponents:(id)arg1;

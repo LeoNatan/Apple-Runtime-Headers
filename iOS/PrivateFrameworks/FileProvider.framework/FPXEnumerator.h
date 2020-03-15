@@ -21,8 +21,8 @@
     id <FPXEnumeratorObserver> _observer;
 }
 
-@property(readonly) id <FPXEnumeratorObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(readonly) id <FPXEnumeratorObserver> observer; // @synthesize observer=_observer;
 - (void)keepAliveConnectionForRegisteredObserver:(CDUnknownBlockType)arg1;
 - (void)alternateContentsWereUpdatedAtURL:(id)arg1 forItem:(id)arg2;
 @property(readonly) FPItemID *observedItemID;

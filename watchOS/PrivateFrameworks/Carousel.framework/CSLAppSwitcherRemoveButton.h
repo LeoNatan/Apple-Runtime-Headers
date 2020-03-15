@@ -14,8 +14,8 @@
     UIImageView *_iconView;
 }
 
-@property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

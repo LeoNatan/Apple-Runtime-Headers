@@ -17,12 +17,12 @@
     unsigned long long _objectPointer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long objectPointer; // @synthesize objectPointer=_objectPointer;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) NSString *entityDescription; // @synthesize entityDescription=_entityDescription;
 @property(retain, nonatomic) NSString *logType; // @synthesize logType=_logType;
 @property(nonatomic) long long context; // @synthesize context=_context;
-- (void).cxx_destruct;
 
 @end
 

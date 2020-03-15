@@ -25,6 +25,7 @@
     struct _NSRange _messageListVisibleRows;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) EDMailboxPersistence *mailboxPersistence; // @synthesize mailboxPersistence=_mailboxPersistence;
 @property(retain, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
@@ -33,7 +34,6 @@
 @property(nonatomic) struct _NSRange _messageListVisibleRows; // @synthesize _messageListVisibleRows;
 @property(retain, nonatomic) NSMutableDictionary *_messageListMessages; // @synthesize _messageListMessages;
 @property(retain, nonatomic) NSMutableDictionary *_viewedMessages; // @synthesize _viewedMessages;
-- (void).cxx_destruct;
 - (void)waitForPendingStateChanges;
 - (void)deliveredMessage:(id)arg1 account:(id)arg2;
 - (void)persistenceWillTransferMessages:(id)arg1 transferType:(long long)arg2 destinationMailboxURL:(id)arg3 userInitiated:(_Bool)arg4;

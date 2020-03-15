@@ -26,6 +26,7 @@
     KHProduct *_product;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHProduct *product; // @synthesize product=_product;
 @property(nonatomic) __weak id <KHProductViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak NSButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
@@ -37,7 +38,6 @@
 @property __weak NSImageView *productImageView; // @synthesize productImageView=_productImageView;
 @property __weak NSTextField *productDescriptionLabel; // @synthesize productDescriptionLabel=_productDescriptionLabel;
 @property __weak NSTextField *productTitleLabel; // @synthesize productTitleLabel=_productTitleLabel;
-- (void).cxx_destruct;
 - (void)productButtonHit:(id)arg1;
 - (void)_showPricesLabel:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)hidePrices;

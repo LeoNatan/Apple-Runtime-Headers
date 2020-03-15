@@ -24,12 +24,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *metricSendEvents; // @synthesize metricSendEvents=_metricSendEvents;
 @property(retain, nonatomic) HomeKitEventTriggerUserConfirmationReceiverSessionEvent *metricEvent; // @synthesize metricEvent=_metricEvent;
 @property(retain, nonatomic) HMDTriggerConfirmationTimer *userResponseTimer; // @synthesize userResponseTimer=_userResponseTimer;
 @property(readonly, nonatomic) HMDEventTriggerDevice *requestingDevice; // @synthesize requestingDevice=_requestingDevice;
 @property(nonatomic) __weak HMDEventTriggerExecutionSession *executionSession; // @synthesize executionSession=_executionSession;
-- (void).cxx_destruct;
 - (void)_sessionComplete;
 - (void)_handleUserPermissionRemoveDialogRequest:(id)arg1;
 - (void)_removeUserDialog:(id)arg1;

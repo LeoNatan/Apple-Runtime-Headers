@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)arrowsRecognizerWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)pressType:(long long)arg1 withTarget:(id)arg2 action:(SEL)arg3;
-@property(readonly, nonatomic) UIPress *recognizedPress; // @synthesize recognizedPress=_recognizedPress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIPress *recognizedPress; // @synthesize recognizedPress=_recognizedPress;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;

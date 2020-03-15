@@ -21,12 +21,12 @@
     NSMutableArray *_pendingWriters;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *pendingWriters; // @synthesize pendingWriters=_pendingWriters;
 @property(readonly, nonatomic) NSMutableArray *activeWriters; // @synthesize activeWriters=_activeWriters;
 @property(readonly, nonatomic) NSMutableArray *pendingReaders; // @synthesize pendingReaders=_pendingReaders;
 @property(readonly, nonatomic) NSMutableArray *activeReaders; // @synthesize activeReaders=_activeReaders;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)removeWriter:(id)arg1;
 - (void)activateWriter:(id)arg1;
 - (void)addWriterWithIdentifier:(id)arg1;

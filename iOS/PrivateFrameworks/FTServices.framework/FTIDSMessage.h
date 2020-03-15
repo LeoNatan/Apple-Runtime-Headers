@@ -28,6 +28,7 @@
     NSNumber *_serverTimestampReceivedDate;
 }
 
+- (void).cxx_destruct;
 - (void)setServerTimestampReceivedDate:(id)arg1;
 - (id)serverTimestampReceivedDate;
 - (void)setServerTimestamp:(id)arg1;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSData *IDCertificate; // @synthesize IDCertificate=_identityCert;
 @property(nonatomic) struct __SecKey *identityPrivateKey; // @synthesize identityPrivateKey=_identityKey;
 @property(copy, nonatomic) NSData *pushCertificate; // @synthesize pushCertificate=_pushCert;
-- (void).cxx_destruct;
 - (id)additionalMessageHeadersForOutgoingPush;
 - (id)additionalMessageHeaders;
 - (id)retryCountKey;

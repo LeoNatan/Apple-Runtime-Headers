@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresPhoneNumber; // @synthesize requiresPhoneNumber=_requiresPhoneNumber;
 @property(nonatomic) _Bool requiresName; // @synthesize requiresName=_requiresName;
 @property(nonatomic) _Bool requiresEmailAddress; // @synthesize requiresEmailAddress=_requiresEmailAddress;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSDate *bookingDate; // @synthesize bookingDate=_bookingDate;
 @property(copy, nonatomic) NSString *bookingDescription; // @synthesize bookingDescription=_bookingDescription;
 @property(copy, nonatomic) INRestaurant *restaurant; // @synthesize restaurant=_restaurant;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

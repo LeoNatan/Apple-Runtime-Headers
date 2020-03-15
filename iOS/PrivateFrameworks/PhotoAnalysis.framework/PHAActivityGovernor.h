@@ -31,6 +31,7 @@
     NSObject<OS_dispatch_source> *_backgroundDeferCheckTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool simulatedNeverHasAccess; // @synthesize simulatedNeverHasAccess=_simulatedNeverHasAccess;
 @property(nonatomic) _Bool simulatedWantsDefer; // @synthesize simulatedWantsDefer=_simulatedWantsDefer;
 @property(retain) NSObject<OS_dispatch_source> *backgroundDeferCheckTimer; // @synthesize backgroundDeferCheckTimer=_backgroundDeferCheckTimer;
@@ -46,7 +47,6 @@
 @property(nonatomic) _Bool overrideAccess; // @synthesize overrideAccess=_overrideAccess;
 @property(nonatomic) _Bool wantsForegroundAccess; // @synthesize wantsForegroundAccess=_wantsForegroundAccess;
 @property(nonatomic) _Bool wantsBackgroundAccess; // @synthesize wantsBackgroundAccess=_wantsBackgroundAccess;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasForegroundAccess; // @synthesize hasForegroundAccess=_hasForegroundAccess;
 @property(nonatomic) _Bool hasBackgroundAccess; // @synthesize hasBackgroundAccess=_hasBackgroundAccess;
 - (void)dealloc;

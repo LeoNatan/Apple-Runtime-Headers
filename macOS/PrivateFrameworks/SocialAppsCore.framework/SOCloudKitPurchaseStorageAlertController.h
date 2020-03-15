@@ -17,10 +17,10 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property __weak NSWindow *window; // @synthesize window=_window;
 @property(readonly) iCloudPurchaseStorageController *purchaseStorageController; // @synthesize purchaseStorageController=_purchaseStorageController;
-- (void).cxx_destruct;
 - (void)cloudKitEventNotificationManager:(id)arg1 didPerformAdditionalStorageRequiredCheck:(BOOL)arg2 additionalStorageRequired:(unsigned long long)arg3 forAccountId:(id)arg4 error:(id)arg5;
 - (void)presentFetchingAccountIDFailedAlertWithError:(id)arg1;
 - (void)presentUserNeedsMoreStorageAlertWithAccountID:(id)arg1;

@@ -16,10 +16,10 @@
 }
 
 + (id)convertToXPC:(id)arg1 version:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property long long protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(retain) NSObject<OS_dispatch_queue> *replyQueue; // @synthesize replyQueue=_replyQueue;
 @property(retain) NSObject<OS_xpc_object> *pkd; // @synthesize pkd=_pkd;
-- (void).cxx_destruct;
 - (id)convertFromXPC:(id)arg1;
 - (void)set:(id)arg1 uuids:(id)arg2;
 - (void)set:(id)arg1 plugins:(id)arg2;

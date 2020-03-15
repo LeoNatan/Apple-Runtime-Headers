@@ -73,6 +73,7 @@
     UIFont *_labelFont;
     SBHRecentsDocumentExtensionProvider *_recentsDocumentExtensionProvider;
     _UIStatesFeedbackGenerator *_feedbackGenerator;
+    _Bool _allIconElementsButLabelHidden;
     _Bool _enabled;
     _Bool _paused;
     id <SBIconViewDelegate> _delegate;
@@ -99,7 +100,6 @@
     UIContextMenuConfiguration *_activeContextMenuConfiguration;
     NSString *_presentedWidgetBundleIdentifier;
     id <BSInvalidatable> _homeButtonPressConsumingAssertion;
-    SBIconView *_activePreviewIcon;
     NSMapTable *_pendingAnimatorCompletionsTable;
 }
 
@@ -139,8 +139,8 @@
 + (double)defaultIconImageScale;
 + (struct CGSize)defaultIconImageSize;
 + (id)defaultIconLocation;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *pendingAnimatorCompletionsTable; // @synthesize pendingAnimatorCompletionsTable=_pendingAnimatorCompletionsTable;
-@property(nonatomic) __weak SBIconView *activePreviewIcon; // @synthesize activePreviewIcon=_activePreviewIcon;
 @property(retain, nonatomic) id <BSInvalidatable> homeButtonPressConsumingAssertion; // @synthesize homeButtonPressConsumingAssertion=_homeButtonPressConsumingAssertion;
 @property(copy, nonatomic) NSString *presentedWidgetBundleIdentifier; // @synthesize presentedWidgetBundleIdentifier=_presentedWidgetBundleIdentifier;
 @property(retain, nonatomic) UIContextMenuConfiguration *activeContextMenuConfiguration; // @synthesize activeContextMenuConfiguration=_activeContextMenuConfiguration;
@@ -162,6 +162,7 @@
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSArray *applicationShortcutItems; // @synthesize applicationShortcutItems=_applicationShortcutItems;
+@property(nonatomic) _Bool allIconElementsButLabelHidden; // @synthesize allIconElementsButLabelHidden=_allIconElementsButLabelHidden;
 @property(nonatomic) double iconLabelAlpha; // @synthesize iconLabelAlpha=_iconLabelAlpha;
 @property(nonatomic) double iconAccessoryAlpha; // @synthesize iconAccessoryAlpha=_iconAccessoryAlpha;
 @property(nonatomic) double iconImageAlpha; // @synthesize iconImageAlpha=_iconImageAlpha;
@@ -169,7 +170,6 @@
 @property(copy, nonatomic) CDUnknownBlockType contextMenuInteractionPendingCompletion; // @synthesize contextMenuInteractionPendingCompletion=_contextMenuInteractionPendingCompletion;
 @property(copy, nonatomic) NSString *location; // @synthesize location=_iconLocation;
 @property(nonatomic) __weak id <SBIconViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)endForbiddingEditingModeWithReason:(id)arg1;
 - (void)startForbiddingEditingModeWithReason:(id)arg1;
 - (void)iconImageDidUpdate:(id)arg1;
@@ -245,6 +245,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)consumeSinglePressUpForButtonKind:(long long)arg1;
 - (void)editingModeGestureRecognizerDidFire:(id)arg1;
+- (void)_handleTap;
 - (void)tapGestureDidChange:(id)arg1;
 - (void)setTouchDownInIcon:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isTouchDownInIcon) _Bool touchDownInIcon;
@@ -345,7 +346,6 @@
 @property(readonly, nonatomic) UIView<SBIconLabelView> *labelView;
 @property(readonly, nonatomic) struct CGSize maxLabelSize;
 - (id)labelConfiguration;
-- (void)setAllIconElementsButLabelToHidden:(_Bool)arg1;
 - (id)_labelImage;
 - (id)_iconImageView;
 - (struct CGPoint)_centerForCloseBox;
@@ -361,7 +361,6 @@
 @property(readonly, nonatomic) _Bool allowsLabelAccessoryView;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (void)hideActivatingOrDismissingPreview;
 @property(readonly, copy, nonatomic) NSArray *effectiveApplicationShortcutItems;
 - (void)dismissContextMenuWithCompletion:(CDUnknownBlockType)arg1;
 - (void)earlyTerminateContextMenuDismissAnimation;
@@ -372,6 +371,7 @@
 - (id)applicationShortcutWidgetBundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *applicationBundleIdentifierForShortcuts;
 @property(readonly, copy, nonatomic) NSURL *applicationBundleURLForShortcuts;
+- (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
 - (void)contextMenuInteraction:(id)arg1 willEndForConfiguration:(id)arg2 animator:(id)arg3;
 - (void)contextMenuInteraction:(id)arg1 willDisplayMenuForConfiguration:(id)arg2 animator:(id)arg3;
 - (id)_contextMenuInteraction:(id)arg1 previewForIconWithConfigurationOptions:(unsigned long long)arg2 highlighted:(_Bool)arg3;

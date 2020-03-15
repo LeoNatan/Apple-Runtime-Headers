@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _userCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long userCount; // @synthesize userCount=_userCount;
 @property(nonatomic) unsigned long long userIndex; // @synthesize userIndex=_userIndex;
 @property(retain, nonatomic) NSArray *users; // @synthesize users=_users;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 
 @end
 

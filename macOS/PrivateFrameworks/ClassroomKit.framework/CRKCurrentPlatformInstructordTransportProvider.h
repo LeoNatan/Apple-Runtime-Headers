@@ -17,8 +17,8 @@
     NSURL *_classroomAppBundleURL;
 }
 
-@property(retain, nonatomic) NSURL *classroomAppBundleURL; // @synthesize classroomAppBundleURL=_classroomAppBundleURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *classroomAppBundleURL; // @synthesize classroomAppBundleURL=_classroomAppBundleURL;
 - (void)fetchTransportWithCompletion:(CDUnknownBlockType)arg1;
 - (id)makeProviderForCurrentPlatformWithStudentDaemonProxy:(id)arg1;
 - (id)initWithStudentDaemonProxy:(id)arg1 classroomAppBundleURL:(id)arg2;

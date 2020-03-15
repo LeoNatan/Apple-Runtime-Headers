@@ -26,6 +26,7 @@
 }
 
 + (id)predicateWithCalendars:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasContactIdentifier; // @synthesize hasContactIdentifier=_hasContactIdentifier;
 @property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(nonatomic) BOOL useCompletionDateAsAlternate; // @synthesize useCompletionDateAsAlternate=_useCompletionDateAsAlternate;
@@ -43,7 +44,6 @@
 - (id)calendarTitle;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (void).cxx_destruct;
 - (id)mdQueryString;
 - (BOOL)evaluateWithObject:(id)arg1;
 - (BOOL)_includeCalendarTitleInSearchTerm;

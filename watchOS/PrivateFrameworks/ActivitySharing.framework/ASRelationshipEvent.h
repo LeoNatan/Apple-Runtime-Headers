@@ -17,10 +17,10 @@
 
 + (id)relationshipEventWithRecord:(id)arg1;
 + (id)_relationshipEventWithCodable:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) unsigned short anchor; // @synthesize anchor=_anchor;
 @property(readonly, nonatomic) unsigned short type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToRelationshipEvent:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

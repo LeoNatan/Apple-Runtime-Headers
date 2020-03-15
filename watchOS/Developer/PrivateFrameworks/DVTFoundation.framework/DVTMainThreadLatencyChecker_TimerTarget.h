@@ -18,8 +18,8 @@
 @property SEL realSelector; // @synthesize realSelector=_realSelector;
 @property(retain) id realTarget; // @synthesize realTarget=_realTarget;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
-- (void).cxx_destruct;
 - (void)timerFireMethod:(id)arg1;
+- (void)dealloc;
 
 @end
 

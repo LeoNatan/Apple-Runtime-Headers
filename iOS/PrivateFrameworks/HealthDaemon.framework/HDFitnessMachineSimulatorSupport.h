@@ -14,9 +14,9 @@
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) unsigned long long fitnessMachineType; // @synthesize fitnessMachineType=_fitnessMachineType;
-- (void).cxx_destruct;
 - (void)updateAdvertisementDataForSimulation:(id)arg1;
 @property(readonly, nonatomic) NSString *btIdentifier;
 @property(readonly, nonatomic) NSData *btIdentifierData;

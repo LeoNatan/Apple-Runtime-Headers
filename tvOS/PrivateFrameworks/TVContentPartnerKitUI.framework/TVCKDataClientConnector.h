@@ -14,9 +14,9 @@
     NSMutableArray *_blocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *blocks; // @synthesize blocks=_blocks;
 @property(readonly, nonatomic) TVCKDataClient *dataClient; // @synthesize dataClient=_dataClient;
-- (void).cxx_destruct;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 - (void)_enqueueBlock:(CDUnknownBlockType)arg1;
 - (void)_flushBlocks;

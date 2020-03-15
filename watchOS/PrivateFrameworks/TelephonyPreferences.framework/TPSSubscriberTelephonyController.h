@@ -18,8 +18,8 @@
     CTXPCServiceSubscriptionContext *_subscriptionContext;
 }
 
-@property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 - (void)simPinChangeRequestDidComplete:(id)arg1 success:(_Bool)arg2;
 - (void)simPukEntryErrorDidOccur:(id)arg1 status:(id)arg2;
 - (void)simPinEntryErrorDidOccur:(id)arg1 status:(id)arg2;

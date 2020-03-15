@@ -15,8 +15,8 @@
     NSString *_markupText;
 }
 
-@property(copy, nonatomic) NSString *markupText; // @synthesize markupText=_markupText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *markupText; // @synthesize markupText=_markupText;
 - (void)drawInRect:(struct CGRect)arg1 forPageAtIndex:(long long)arg2;
 - (struct CGRect)rectForPageAtIndex:(long long)arg1;
 - (long long)_recalcPageCount;

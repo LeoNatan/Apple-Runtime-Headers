@@ -39,6 +39,7 @@
 + (id)ambiguousDefaults;
 + (id)ambiguousPinyinSet;
 + (Class)wordSearchClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool skipSetMarkedTextDuringInput; // @synthesize skipSetMarkedTextDuringInput=_skipSetMarkedTextDuringInput;
 @property(nonatomic) _Bool shouldClearBeforeContinuousPath; // @synthesize shouldClearBeforeContinuousPath=_shouldClearBeforeContinuousPath;
 @property(retain, nonatomic) TIKeyboardCandidateResultSet *mostRecentCandidateResultSetPendingDisplay; // @synthesize mostRecentCandidateResultSetPendingDisplay=_mostRecentCandidateResultSetPendingDisplay;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSString *replacedAmbiguousPinyinSyllable; // @synthesize replacedAmbiguousPinyinSyllable=_replacedAmbiguousPinyinSyllable;
 @property(copy, nonatomic) NSString *remainingInput; // @synthesize remainingInput=_remainingInput;
 @property(retain, nonatomic) TIConversionHistory *conversionHistory; // @synthesize conversionHistory=_conversionHistory;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool usesGeometryModelData;
 - (_Bool)generateReanalysisCandidatesIfAppropriate;
 - (id)locale;

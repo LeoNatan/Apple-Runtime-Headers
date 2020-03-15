@@ -18,8 +18,8 @@
     long long _settingsUIVisible;
 }
 
-@property(nonatomic) long long settingsUIVisible; // @synthesize settingsUIVisible=_settingsUIVisible;
 - (void).cxx_destruct;
+@property(nonatomic) long long settingsUIVisible; // @synthesize settingsUIVisible=_settingsUIVisible;
 - (void)settingsUIVisibleDidChange:(_Bool)arg1;
 - (void)taskOperation:(id)arg1 didPostNotificationWithName:(id)arg2 userInfo:(id)arg3;
 - (_Bool)isCurrentSubscriptionOperation:(id)arg1;

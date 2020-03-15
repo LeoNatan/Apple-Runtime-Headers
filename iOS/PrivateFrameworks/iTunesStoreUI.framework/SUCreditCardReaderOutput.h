@@ -27,6 +27,7 @@
 + (void)initialize;
 + (_Bool)supportsSecureCoding;
 + (id)webScriptNameForKeyName:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool manualEntrySelected; // @synthesize manualEntrySelected=_manualEntrySelected;
 @property(copy, nonatomic) NSString *cardNumber; // @synthesize cardNumber=_cardNumber;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSNumber *cardExpirationDay; // @synthesize cardExpirationDay=_cardExpirationDay;
 @property(copy, nonatomic) NSString *cardCardholderName; // @synthesize cardCardholderName=_cardCardholderName;
 @property(nonatomic) _Bool cancelled; // @synthesize cancelled=_cancelled;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;

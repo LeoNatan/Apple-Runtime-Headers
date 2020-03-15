@@ -27,10 +27,6 @@ struct CGSize {
     double height;
 };
 
-struct NSData {
-    Class _field1;
-};
-
 struct __va_list_tag {
     unsigned int _field1;
     unsigned int _field2;

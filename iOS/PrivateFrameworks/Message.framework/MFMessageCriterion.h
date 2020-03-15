@@ -77,6 +77,7 @@
 + (id)criteriaFromDefaultsArray:(id)arg1 removingRecognizedKeys:(_Bool)arg2;
 + (id)criteriaFromDefaultsArray:(id)arg1;
 + (id)criterionForMailboxPredictionMessageQuery:(unsigned long long)arg1 variable:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) _Bool includeRemoteBodyContent; // @synthesize includeRemoteBodyContent=_includeRemoteBodyContent;
 @property(nonatomic) _Bool expressionIsSanitized; // @synthesize expressionIsSanitized=_expressionIsSanitized;
@@ -86,7 +87,6 @@
 @property(retain, nonatomic) EFMutableInt64Set *libraryIdentifiers; // @synthesize libraryIdentifiers=_libraryIdentifiers;
 @property(copy, nonatomic) NSArray *expressionLanguages; // @synthesize expressionLanguages=_expressionLanguages;
 @property(nonatomic) int qualifier; // @synthesize qualifier=_qualifier;
-- (void).cxx_destruct;
 - (_Bool)isVIPCriterion;
 - (id)simplifiedCriterion;
 - (id)simplifyOnce;

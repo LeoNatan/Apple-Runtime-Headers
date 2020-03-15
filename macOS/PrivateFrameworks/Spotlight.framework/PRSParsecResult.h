@@ -62,6 +62,7 @@
 + (id)convertCardSectionsForSFSearchResult:(id)arg1;
 + (id)convertSFSearchResult:(id)arg1 cardSection:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fbr; // @synthesize fbr=_fbr;
 @property(retain, nonatomic) NSString *headerDisplayName; // @synthesize headerDisplayName=_headerDisplayName;
 @property BOOL enablePlayButton; // @synthesize enablePlayButton=_enablePlayButton;
@@ -100,7 +101,6 @@
 @property(retain, nonatomic) NSString *title_note; // @synthesize title_note;
 @property(retain, nonatomic) NSString *title;
 @property(retain, nonatomic) NSString *type;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *resultURL;
 - (BOOL)utiTypeConformsTo:(id)arg1;
 - (id)rows;

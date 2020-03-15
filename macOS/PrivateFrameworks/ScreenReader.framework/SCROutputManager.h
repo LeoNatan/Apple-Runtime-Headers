@@ -61,6 +61,7 @@
 + (id)_supportedSynthesizerCharactersForVoice:(id)arg1;
 + (void)_setCachedSupportedSynthesizerCharacters:(id)arg1 forVoice:(id)arg2;
 + (id)_getCachedSupportedSynthesizerCharactersForVoice:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(nonatomic, setter=_setInitializationState:) unsigned char _initializationState; // @synthesize _initializationState=__initializationState;
 @property(nonatomic, setter=_setSavedOutputLeftInQueue:) long long _savedOutputLeftInQueue; // @synthesize _savedOutputLeftInQueue=__savedOutputLeftInQueue;
@@ -70,7 +71,6 @@
 @property(retain, nonatomic, setter=_setRequestRunners:) NSMutableDictionary *_requestRunners; // @synthesize _requestRunners=__requestRunners;
 @property(retain, nonatomic, setter=_setComponentsLock:) NSLock *_componentsLock; // @synthesize _componentsLock=__componentsLock;
 @property(retain, nonatomic, setter=_setComponents:) NSMutableDictionary *_components; // @synthesize _components=__components;
-- (void).cxx_destruct;
 - (void)_logRecentOutputRequestFailed;
 - (void)_compressAndMoveLogOutput;
 - (void)_logRecentOutputRequestsFinished;

@@ -14,8 +14,8 @@
 }
 
 + (id)copyTypeDescription;
-@property(retain) NWAddressEndpoint *address; // @synthesize address=_address;
 - (void).cxx_destruct;
+@property(retain) NWAddressEndpoint *address; // @synthesize address=_address;
 - (id)stringValue;
 - (id)identifierData;
 - (unsigned long long)identifierType;

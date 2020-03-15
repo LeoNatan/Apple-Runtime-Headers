@@ -33,14 +33,17 @@
     long long _mode;
 }
 
-@property(readonly, nonatomic) long long mode; // @synthesize mode=_mode;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long mode; // @synthesize mode=_mode;
 - (void)requestTextureForProbe:(id)arg1;
 - (_Bool)addProbeWithAnchor:(id)arg1 timestamp:(double)arg2 textureImmediately:(_Bool)arg3;
 - (void)updateProbesFromExistingAnchors:(id)arg1;
 - (id)updateProbesForTimestamp:(double)arg1 planes:(vector_f1799d67)arg2 imageData:(id)arg3 pose:(id)arg4 enableDirectTexturingForProbesWithIdentifier:(id)arg5;
 - (void)insertIntoQueue:(id)arg1;
+- (id)_fullDescription;
+- (_Bool)isBusy;
+- (_Bool)_textureDataIsBusy;
 - (id)initWithMode:(long long)arg1;
 
 @end

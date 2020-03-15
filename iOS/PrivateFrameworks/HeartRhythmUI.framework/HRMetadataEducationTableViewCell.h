@@ -20,6 +20,7 @@
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bodyBottomAnchorToBottomConstraint; // @synthesize bodyBottomAnchorToBottomConstraint=_bodyBottomAnchorToBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleBaselineToBodyBaselineConstraint; // @synthesize titleBaselineToBodyBaselineConstraint=_titleBaselineToBodyBaselineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *topToTitleBaselineConstraint; // @synthesize topToTitleBaselineConstraint=_topToTitleBaselineConstraint;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *bodyText; // @synthesize bodyText=_bodyText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (double)_bodyBottomAnchorToBottom;
 - (double)_titleBaselineToBodyBaseline;
 - (double)_topToTitleBaseline;

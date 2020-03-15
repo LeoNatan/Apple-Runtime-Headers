@@ -7,10 +7,11 @@
 #import <PassKitUI/PKExplanationViewController.h>
 
 #import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
+#import <PassKitUI/PKFieldDetectSuppressor-Protocol.h>
 
 @class AVPlayer, AVPlayerItem, AVPlayerLayer, NSString, PKMobileAssetManager, PKPaymentHeroImageController, PKPaymentPass, PKPaymentSetupHeroView, PKPaymentSetupInitialCardEducationIconsView, UIImageView, UILabel, UIView;
 
-@interface PKEducationViewController : PKExplanationViewController <PKExplanationViewDelegate>
+@interface PKEducationViewController : PKExplanationViewController <PKExplanationViewDelegate, PKFieldDetectSuppressor>
 {
     UIImageView *_heroPhone;
     UIView *_heroPhoneBackground;
@@ -40,11 +41,11 @@
 + (id)assetBackgroundColorPad;
 + (id)assetBackgroundColor;
 + (_Bool)shouldPresentForPass:(id)arg1 inEducationContext:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bodyAddition; // @synthesize bodyAddition=_bodyAddition;
 @property(copy, nonatomic) NSString *titleOverride; // @synthesize titleOverride=_titleOverride;
 @property(nonatomic) _Bool offerAddToWatch; // @synthesize offerAddToWatch=_offerAddToWatch;
 @property(copy, nonatomic) CDUnknownBlockType continueHandler; // @synthesize continueHandler=_continueHandler;
-- (void).cxx_destruct;
 - (void)_showAddToWatchOfferForPass:(id)arg1;
 - (void)_performAddToWatchFlow;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -54,6 +55,7 @@
 - (void)performContinue;
 - (void)startPlayingVideo;
 - (void)explanationViewDidSelectContinue:(id)arg1;
+@property(readonly, nonatomic) _Bool suppressFieldDetect;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;

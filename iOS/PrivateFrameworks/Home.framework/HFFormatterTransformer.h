@@ -12,9 +12,9 @@
     CDUnknownBlockType _transformBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType transformBlock; // @synthesize transformBlock=_transformBlock;
 @property(copy, nonatomic) NSFormatter *sourceFormatter; // @synthesize sourceFormatter=_sourceFormatter;
-- (void).cxx_destruct;
 - (id)stringForObjectValue:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

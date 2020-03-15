@@ -18,12 +18,12 @@
     _Bool _forVariableForcePresses;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isForVariableForcePresses) _Bool forVariableForcePresses; // @synthesize forVariableForcePresses=_forVariableForcePresses;
 @property(readonly, nonatomic) double verticalForce; // @synthesize verticalForce=_verticalForce;
 @property(readonly, nonatomic) long long verticalDirection; // @synthesize verticalDirection=_verticalDirection;
 @property(readonly, nonatomic) double horizontalForce; // @synthesize horizontalForce=_horizontalForce;
 @property(readonly, nonatomic) long long horizontalDirection; // @synthesize horizontalDirection=_horizontalDirection;
-- (void).cxx_destruct;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;

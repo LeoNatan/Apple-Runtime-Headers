@@ -20,6 +20,7 @@
     struct CGSize _scaledFittingSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesExactFittingSizeAsDestinationSize; // @synthesize usesExactFittingSizeAsDestinationSize=_usesExactFittingSizeAsDestinationSize;
 @property(nonatomic) struct CGSize scaledFittingSize; // @synthesize scaledFittingSize=_scaledFittingSize;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) UIImage *resizedImage; // @synthesize resizedImage=_resizedImage;
-- (void).cxx_destruct;
 - (struct CGSize)_resizedScaledSizeForScaledImageSize:(struct CGSize)arg1 scaledFittingSize:(struct CGSize)arg2;
 - (void)main;
 - (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize)arg2 useExactFittingSizeAsDestinationSize:(_Bool)arg3 destinationURL:(id)arg4;

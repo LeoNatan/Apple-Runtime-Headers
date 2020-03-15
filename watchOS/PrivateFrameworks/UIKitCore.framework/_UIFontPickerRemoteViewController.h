@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-@property(nonatomic) __weak id <_UIFontPickerRemoteViewControllerHost> _delegate; // @synthesize _delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_UIFontPickerRemoteViewControllerHost> _delegate; // @synthesize _delegate;
 - (void)_pickerDidCancel;
 - (void)_pickerDidSelectFont:(id)arg1;
 

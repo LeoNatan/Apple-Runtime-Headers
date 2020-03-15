@@ -36,6 +36,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *companionSimLabelId; // @synthesize companionSimLabelId=_companionSimLabelId;
 @property(copy, nonatomic) NSUUID *companionSlotUuid; // @synthesize companionSlotUuid=_companionSlotUuid;
 @property(nonatomic) _Bool isSelectable; // @synthesize isSelectable=_isSelectable;
@@ -54,7 +55,6 @@
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) CTCellularPlan *plan; // @synthesize plan=_plan;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (id)typeAsString:(long long)arg1;
 @property(readonly, nonatomic) NSString *carrierName;

@@ -25,6 +25,7 @@
 
 + (CDUnknownBlockType)sortComparatorForValveEditorSections;
 + (id)preferredSectionSortArray;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFStaticItemProvider *staticItemProvider; // @synthesize staticItemProvider=_staticItemProvider;
 @property(retain, nonatomic) HFControlPanelItemProvider *controlPanelItemProvider; // @synthesize controlPanelItemProvider=_controlPanelItemProvider;
 @property(retain, nonatomic) HFItem *nameItem; // @synthesize nameItem=_nameItem;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) HUControlPanelController *controlPanelController; // @synthesize controlPanelController=_controlPanelController;
 @property(retain, nonatomic) HFStaticItem *identifyItem; // @synthesize identifyItem=_identifyItem;
 @property(retain, nonatomic) HUNameItemModule *nameModule; // @synthesize nameModule=_nameModule;
-- (void).cxx_destruct;
 - (void)controlPanelController:(id)arg1 didEndPossibleWritesForControlItem:(id)arg2;
 - (void)controlPanelController:(id)arg1 willBeginPossibleWritesForControlItem:(id)arg2;
 - (id)_characteristicsAffectedByControlItem:(id)arg1;

@@ -28,6 +28,7 @@
 + (id)contextWithServiceDescriptor:(id)arg1;
 + (id)contextWithUUID:(id)arg1;
 + (id)contextWithSlot:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isSimGood; // @synthesize isSimGood=_isSimGood;
 @property(nonatomic) _Bool isSimPresent; // @synthesize isSimPresent=_isSimPresent;
 @property(retain, nonatomic) NSNumber *userDefaultVoice; // @synthesize userDefaultVoice=_userDefaultVoice;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *labelID; // @synthesize labelID=_labelID;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) long long slotID; // @synthesize slotID=_slotID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

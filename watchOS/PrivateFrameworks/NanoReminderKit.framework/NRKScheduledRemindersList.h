@@ -14,25 +14,25 @@
     unsigned int _completedCount;
     int _earlierTodayIndex;
     int _todayIndex;
-    struct NSArray *_days;
+    NSArray *_days;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *days; // @synthesize days=_days;
 @property(nonatomic) int todayIndex; // @synthesize todayIndex=_todayIndex;
 @property(nonatomic) int earlierTodayIndex; // @synthesize earlierTodayIndex=_earlierTodayIndex;
-- (void).cxx_destruct;
 - (int)_dateRelativeToToday:(id)arg1;
 - (int)_dateComponentsRelativeToToday:(id)arg1;
 - (id)_todayDate;
-- (void)_setupDaysArrayFromUncompletedNRKReminderList:(struct NSArray *)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (struct NSMutableArray *)_setupDaysArrayFromCompletedNRKReminderList:(struct NSArray *)arg1;
-- (void)_setupDaysArrayFromNRKReminderListsUncompleted:(struct NSArray *)arg1 andCompletedList:(struct NSArray *)arg2;
-- (void)moveReminder:(id)arg1 fromUncompletedToCompleted:(_Bool)arg2 uncompletedArray:(struct NSMutableArray *)arg3 completedArray:(struct NSMutableArray *)arg4 forChangedState:(id)arg5;
+- (void)_setupDaysArrayFromUncompletedNRKReminderList:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)_setupDaysArrayFromCompletedNRKReminderList:(id)arg1;
+- (void)_setupDaysArrayFromNRKReminderListsUncompleted:(id)arg1 andCompletedList:(id)arg2;
+- (void)moveReminder:(id)arg1 fromUncompletedToCompleted:(_Bool)arg2 uncompletedArray:(id)arg3 completedArray:(id)arg4 forChangedState:(id)arg5;
 - (void)adjustListForChangedRemindersUnlocked:(_Bool)arg1;
 - (id)getFirstReminderDueAfterDate:(id)arg1;
 - (id)ungatedReminderParentObjectID:(id)arg1 andDueDate:(id)arg2;
 - (id)ungatedReminderByIdentifier:(id)arg1;
-- (struct NSMutableArray *)getMutableRemindersWithCompletedState:(unsigned int)arg1;
+- (id)getMutableRemindersWithCompletedState:(unsigned int)arg1;
 - (id)reminderByIndex:(unsigned int)arg1;
 - (id)reminderAtIndexPath:(id)arg1;
 - (id)reminderListForDayByIndex:(unsigned int)arg1;

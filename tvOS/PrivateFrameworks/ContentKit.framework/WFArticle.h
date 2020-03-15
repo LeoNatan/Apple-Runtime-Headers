@@ -29,6 +29,7 @@
 + (id)summaryOfParagraph:(id)arg1;
 + (unsigned long long)numberOfWordsInString:(id)arg1;
 + (void)fetchArticleFromURL:(id)arg1 pageHTML:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *mainImageURL; // @synthesize mainImageURL=_mainImageURL;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) unsigned long long numberOfWords; // @synthesize numberOfWords=_numberOfWords;
@@ -37,7 +38,6 @@
 @property(readonly, copy, nonatomic) NSDate *publishedDate; // @synthesize publishedDate=_publishedDate;
 @property(readonly, copy, nonatomic) NSString *author; // @synthesize author=_author;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)wfSerializedRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

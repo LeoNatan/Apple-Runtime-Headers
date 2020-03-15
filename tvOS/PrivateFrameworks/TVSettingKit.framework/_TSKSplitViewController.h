@@ -22,12 +22,12 @@
     UIViewController<TSKPreviewing> *_previewProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController<TSKPreviewing> *previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(readonly, nonatomic) UIView *previewContainerView; // @synthesize previewContainerView=_previewContainerView;
 @property(nonatomic) _Bool isAnimatingTransition; // @synthesize isAnimatingTransition=_isAnimatingTransition;
 @property(readonly, nonatomic) UIViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
 @property(readonly, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (void)_updatePreviewingWithViewController:(id)arg1;
 - (void)animatorDidCompleteTransition:(id)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
 - (void)animatorWillBeginTransition:(id)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;

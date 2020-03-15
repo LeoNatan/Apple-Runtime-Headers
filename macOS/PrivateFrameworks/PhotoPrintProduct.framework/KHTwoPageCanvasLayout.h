@@ -13,8 +13,8 @@
     NSMapTable *_sizeConstraintsByLayout;
 }
 
-@property(retain, nonatomic) NSMapTable *sizeConstraintsByLayout; // @synthesize sizeConstraintsByLayout=_sizeConstraintsByLayout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMapTable *sizeConstraintsByLayout; // @synthesize sizeConstraintsByLayout=_sizeConstraintsByLayout;
 - (void)cleanupConstraints;
 - (id)constraintsForCanvasView:(id)arg1;
 - (void)setLayouts:(id)arg1;

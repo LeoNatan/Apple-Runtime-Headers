@@ -20,11 +20,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)capability;
+- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *accessibilityAttributes; // @synthesize accessibilityAttributes=_accessibilityAttributes;
 @property(readonly) unsigned long long elementTypeFromAutomationType; // @synthesize elementTypeFromAutomationType=_elementTypeFromAutomationType;
 @property(readonly) unsigned long long legacyElementType; // @synthesize legacyElementType=_legacyElementType;
 @property(readonly, copy) XCAccessibilityElement *accessibilityElement; // @synthesize accessibilityElement=_accessibilityElement;
-- (void).cxx_destruct;
 - (BOOL)isEqualForAggregationWith:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long aggregationHash;

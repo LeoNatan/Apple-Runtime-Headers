@@ -15,8 +15,8 @@
     id <FCNewsAppConfigurationManager> _appConfigurationManager;
 }
 
-@property(retain, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 - (void)fetchConfigWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithAppConfigurationManager:(id)arg1;
 - (id)init;

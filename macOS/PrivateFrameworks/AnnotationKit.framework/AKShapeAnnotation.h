@@ -19,8 +19,8 @@
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
-@property(retain) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 - (void).cxx_destruct;
+@property(retain) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)keysForValuesToObserveForRedrawing;

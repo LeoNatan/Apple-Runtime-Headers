@@ -18,10 +18,10 @@
     GKGameSessionSharingRemoteViewController *_remoteViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKGameSessionSharingRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak id <GKGameSessionSharingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) GKGameSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)remoteViewController:(id)arg1 didFinishWithError:(id)arg2;
 - (void)viewWillAppear:(_Bool)arg1;

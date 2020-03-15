@@ -23,13 +23,13 @@
     HUControlPanelController *_controlPanelController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUControlPanelController *controlPanelController; // @synthesize controlPanelController=_controlPanelController;
 @property(nonatomic) __weak id <HUServiceActionControlsViewControllerDelegate> serviceActionControlsDelegate; // @synthesize serviceActionControlsDelegate=_serviceActionControlsDelegate;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) HFServiceActionItem *serviceActionItem; // @synthesize serviceActionItem=_serviceActionItem;
 @property(nonatomic) BOOL requiresPresentingViewControllerDismissal; // @synthesize requiresPresentingViewControllerDismissal=_requiresPresentingViewControllerDismissal;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (BOOL)itemManager:(id)arg1 shouldShowSectionTitleForControlPanelItem:(id)arg2;
 - (BOOL)itemManager:(id)arg1 shouldShowControlPanelItem:(id)arg2;
 - (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;

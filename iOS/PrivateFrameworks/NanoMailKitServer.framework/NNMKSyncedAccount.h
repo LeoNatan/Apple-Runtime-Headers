@@ -21,6 +21,7 @@
     NSString *_localId;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localId; // @synthesize localId=_localId;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool shouldArchive; // @synthesize shouldArchive=_shouldArchive;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
-- (void).cxx_destruct;
 - (id)account;
 - (id)init;
 - (id)initWithAccount:(id)arg1;

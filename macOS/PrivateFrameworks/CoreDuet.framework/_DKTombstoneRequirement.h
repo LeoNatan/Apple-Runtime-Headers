@@ -14,8 +14,8 @@
 }
 
 + (id)requirement;
-@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)assignPropertiesToTombstone:(id)arg1 extractedFromPartialEvent:(id)arg2;
 - (void)assignPropertiesToTombstone:(id)arg1 extractedFromEvent:(id)arg2;
 @property(readonly) NSArray *propertiesToFetch;

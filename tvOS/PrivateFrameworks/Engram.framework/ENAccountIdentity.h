@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ENDeviceKey> deviceKey; // @synthesize deviceKey=_deviceKey;
 @property(retain, nonatomic) id <ENAccountKey> accountKey; // @synthesize accountKey=_accountKey;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAccountKey:(id)arg1 deviceKey:(id)arg2;

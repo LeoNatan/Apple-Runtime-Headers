@@ -13,8 +13,8 @@
     NSDictionary *_contextDataDict;
 }
 
-@property(copy, nonatomic) NSDictionary *contextDataDict; // @synthesize contextDataDict=_contextDataDict;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *contextDataDict; // @synthesize contextDataDict=_contextDataDict;
 - (id)jsonData;
 - (id)initWithDictionary:(id)arg1;
 

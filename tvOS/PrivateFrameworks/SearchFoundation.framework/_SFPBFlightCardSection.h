@@ -26,6 +26,7 @@
     _SFPBFlight *_flight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int selectedLegIndex; // @synthesize selectedLegIndex=_selectedLegIndex;
 @property(retain, nonatomic) _SFPBFlight *flight; // @synthesize flight=_flight;
 @property(retain, nonatomic) _SFPBColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *punchoutPickerDismissText; // @synthesize punchoutPickerDismissText=_punchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerTitle; // @synthesize punchoutPickerTitle=_punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions; // @synthesize punchoutOptions=_punchoutOptions;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

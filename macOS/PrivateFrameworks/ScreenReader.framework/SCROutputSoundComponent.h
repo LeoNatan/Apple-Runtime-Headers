@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 + (id)soundPathWithIdentifier:(id)arg1 preferences:(id)arg2;
 + (id)alertSoundPath;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSoundsArrayLock:) NSLock *_soundsArrayLock; // @synthesize _soundsArrayLock=__soundsArrayLock;
 @property(retain, nonatomic, setter=_setSounds:) NSMutableDictionary *_sounds; // @synthesize _sounds=__sounds;
-- (void).cxx_destruct;
 - (void)sound:(id)arg1 didFinishPlaying:(BOOL)arg2;
 - (void)playSoundIdentifier:(id)arg1 category:(id)arg2;
 - (id)findSoundForAction:(id)arg1 owner:(id)arg2 soundIdentifier:(id)arg3 category:(id)arg4 preferences:(id)arg5;

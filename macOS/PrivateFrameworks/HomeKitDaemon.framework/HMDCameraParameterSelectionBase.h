@@ -16,8 +16,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) HMDCameraStreamSessionID *sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMDCameraStreamSessionID *sessionID; // @synthesize sessionID=_sessionID;
 - (id)_selectSRTPParameters:(id)arg1;
 - (id)_selectCryptoSuite:(id)arg1;
 - (id)_filterFor:(id)arg1 preferenceList:(id)arg2 deviceSupportedTypes:(id)arg3 cameraSupportedTypes:(id)arg4 localPreferences:(id)arg5;

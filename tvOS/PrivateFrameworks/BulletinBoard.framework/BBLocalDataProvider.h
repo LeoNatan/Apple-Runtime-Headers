@@ -21,8 +21,8 @@
 
 + (id)dataProviderWithDataProvider:(id)arg1 serverQueue:(id)arg2;
 + (id)dataProviderWithPrincipalClass:(Class)arg1 serverQueue:(id)arg2 initializationCompletion:(CDUnknownBlockType)arg3;
-@property(retain, nonatomic) id <BBDataProvider> dataProvider; // @synthesize dataProvider=_dataProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <BBDataProvider> dataProvider; // @synthesize dataProvider=_dataProvider;
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)noteSectionInfoDidChange:(id)arg1;
 - (void)reloadIdentityWithCompletion:(CDUnknownBlockType)arg1;

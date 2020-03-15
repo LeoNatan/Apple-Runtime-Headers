@@ -13,8 +13,8 @@
     id <CSLSnapshotServiceAppProtocol> _snapshotService;
 }
 
-@property(nonatomic) __weak id <CSLSnapshotServiceAppProtocol> snapshotService; // @synthesize snapshotService=_snapshotService;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSnapshotServiceAppProtocol> snapshotService; // @synthesize snapshotService=_snapshotService;
 - (void)removeSnapshotContextForBundleID:(id)arg1;
 - (void)snapshotContextForBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setSnapshotContext:(id)arg1 forBundleID:(id)arg2 fromPid:(int)arg3 mechanism:(int)arg4;

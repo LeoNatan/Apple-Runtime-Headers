@@ -23,12 +23,12 @@
 + (double)idleDurationAfterEffectWithIdentifier:(id)arg1;
 + (double)delayBeforeEffectWithIdentifier:(id)arg1;
 + (id)localizedMaskStringForEffectWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKScheduledUpdater *triggerUpdater; // @synthesize triggerUpdater=_triggerUpdater;
 @property(retain, nonatomic) NSTimer *effectDurationTimer; // @synthesize effectDurationTimer=_effectDurationTimer;
 @property(retain, nonatomic) NSMutableArray *effectQueue; // @synthesize effectQueue=_effectQueue;
 @property(nonatomic) __weak NSObject<CKFullScreenEffectManagerDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CKFullScreenEffect *currentEffect; // @synthesize currentEffect=_currentEffect;
-- (void).cxx_destruct;
 - (void)endHoldingUpdatesForKey:(id)arg1;
 - (void)beginHoldingUpdatesForKey:(id)arg1;
 - (void)stopFullscreenEffect;

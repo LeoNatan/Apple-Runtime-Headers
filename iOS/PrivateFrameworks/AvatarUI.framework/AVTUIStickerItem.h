@@ -20,13 +20,13 @@
     struct CGRect _clippingRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resourceProvider; // @synthesize resourceProvider=_resourceProvider;
 @property(nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
 @property(nonatomic) _Bool hasBeenRendered; // @synthesize hasBeenRendered=_hasBeenRendered;
 @property(retain, nonatomic) MSSticker *cachedMSSticker; // @synthesize cachedMSSticker=_cachedMSSticker;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(copy, nonatomic) CDUnknownBlockType discardableContentHandler; // @synthesize discardableContentHandler;
-- (void).cxx_destruct;
 - (void)discardContent;
 @property(readonly, copy) NSString *description;
 - (void)clearCachedItems;

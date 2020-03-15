@@ -18,8 +18,8 @@
 
 + (id)localIdentifierFromRecord:(id)arg1;
 + (id)propertyIDKey;
-@property(nonatomic) __weak id <BCCloudDataPrivacyDelegate> privacyDelegate; // @synthesize privacyDelegate=_privacyDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BCCloudDataPrivacyDelegate> privacyDelegate; // @synthesize privacyDelegate=_privacyDelegate;
 - (id)zoneName;
 - (id)identifier;
 - (id)recordType;

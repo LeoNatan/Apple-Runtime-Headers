@@ -29,6 +29,7 @@
     struct UIEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXGLayoutGuide *headerLayoutGuide; // @synthesize headerLayoutGuide=_headerLayoutGuide;
 @property(nonatomic) long long keyItemSpriteTag; // @synthesize keyItemSpriteTag=_keyItemSpriteTag;
 @property(nonatomic) long long defaultSpriteTag; // @synthesize defaultSpriteTag=_defaultSpriteTag;
@@ -38,8 +39,8 @@
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) int mediaKind; // @synthesize mediaKind=_mediaKind;
 @property(nonatomic) long long keyItemIndex; // @synthesize keyItemIndex=_keyItemIndex;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
+- (struct CGSize)sizeForItem:(long long)arg1;
 - (void)spritesDidUpdate;
 - (void)_updateSprites;
 - (void)_resizeGeometryBufferForSpriteCount:(long long)arg1;

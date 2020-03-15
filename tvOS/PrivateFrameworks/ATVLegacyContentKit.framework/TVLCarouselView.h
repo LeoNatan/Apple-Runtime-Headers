@@ -30,13 +30,13 @@
     struct CGPoint _focusDirection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint focusDirection; // @synthesize focusDirection=_focusDirection;
 @property(nonatomic) double autoScrollInterval; // @synthesize autoScrollInterval=_autoScrollInterval;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 @property(nonatomic) __weak id <TVLCarouselViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <TVLCarouselViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_stopAutoScrollTimer;
 - (void)_startAutoScrollTimer;
 - (void)_updateAutoScrollTimer;

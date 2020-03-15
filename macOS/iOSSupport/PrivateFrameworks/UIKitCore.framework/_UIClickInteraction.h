@@ -7,15 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/UIInteraction-Protocol.h>
+#import <UIKitCore/UIInteraction_Internal-Protocol.h>
 #import <UIKitCore/UIInteraction_Private-Protocol.h>
 #import <UIKitCore/_UIClickInteractionDriverDelegate-Protocol.h>
 
-@class NSString, UIGestureRecognizer, UIView;
+@class NSString, UIView;
 @protocol UIInteractionEffect, _UIClickInteractionDelegate, _UIClickInteractionDriving;
 
-@interface _UIClickInteraction : NSObject <_UIClickInteractionDriverDelegate, UIInteraction_Private, UIInteraction>
+@interface _UIClickInteraction : NSObject <_UIClickInteractionDriverDelegate, UIInteraction_Private, UIInteraction_Internal, UIInteraction>
 {
-    BOOL _delaysOtherPanRecognizers;
     BOOL _hapticsEnabled;
     UIView *_view;
     id <UIInteractionEffect> _interactionEffect;
@@ -25,26 +25,19 @@
     Class _overrideDriverClass;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hapticsEnabled; // @synthesize hapticsEnabled=_hapticsEnabled;
-@property(nonatomic) BOOL delaysOtherPanRecognizers; // @synthesize delaysOtherPanRecognizers=_delaysOtherPanRecognizers;
 @property(nonatomic, setter=_setOverrideDriverClass:) Class overrideDriverClass; // @synthesize overrideDriverClass=_overrideDriverClass;
 @property(retain, nonatomic) id <_UIClickInteractionDriving> driver; // @synthesize driver=_driver;
 @property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
 @property(nonatomic) __weak id <_UIClickInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <UIInteractionEffect> interactionEffect; // @synthesize interactionEffect=_interactionEffect;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
-- (BOOL)clickDriver:(id)arg1 shouldDelayGestureRecognizer:(id)arg2;
 - (void)clickDriver:(id)arg1 didUpdateHighlightProgress:(double)arg2;
 - (void)clickDriver:(id)arg1 didPerformEvent:(unsigned long long)arg2;
 - (void)clickDriver:(id)arg1 shouldBegin:(CDUnknownBlockType)arg2;
 - (void)_viewTraitCollectionDidChange:(id)arg1;
 @property(nonatomic) BOOL driverCancelsTouchesInView;
-@property(readonly, nonatomic) BOOL isDriverCurrentlyAcceleratedByForce;
-@property(readonly, nonatomic) BOOL hasDriverExceededAllowableMovement;
-@property(readonly, nonatomic) double touchDuration;
-@property(readonly, nonatomic) BOOL driverPrefersCancelsTouchesInView;
-@property(readonly, nonatomic) UIGestureRecognizer *driverPrimaryGestureRecognizer;
 - (void)_createFeedbackGenerator;
 - (Class)_driverClass;
 - (void)_updateDriver;

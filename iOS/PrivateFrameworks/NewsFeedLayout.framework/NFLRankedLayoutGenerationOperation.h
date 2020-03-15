@@ -15,10 +15,10 @@
     NFLFeedSettings *_feedSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFLFeedSettings *feedSettings; // @synthesize feedSettings=_feedSettings;
 @property(copy) NFLRankedLayoutRequest *request; // @synthesize request=_request;
 @property(copy) CDUnknownBlockType rankedLayoutGenerationCompletion; // @synthesize rankedLayoutGenerationCompletion=_rankedLayoutGenerationCompletion;
-- (void).cxx_destruct;
 - (void)main;
 - (void)cancel;
 - (id)initWithRequest:(id)arg1 feedSettings:(id)arg2;

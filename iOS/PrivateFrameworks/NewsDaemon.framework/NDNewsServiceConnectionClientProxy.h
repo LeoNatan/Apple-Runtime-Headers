@@ -16,8 +16,8 @@
     id <NDNewsServiceClient> _client;
 }
 
-@property(nonatomic) __weak id <NDNewsServiceClient> client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NDNewsServiceClient> client; // @synthesize client=_client;
 - (void)serviceHasNewTodayResults;
 
 // Remaining properties

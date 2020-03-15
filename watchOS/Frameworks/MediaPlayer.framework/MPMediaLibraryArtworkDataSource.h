@@ -17,10 +17,10 @@
     MPArtworkResizeUtility *_artworkResizeUtility;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPArtworkResizeUtility *artworkResizeUtility; // @synthesize artworkResizeUtility=_artworkResizeUtility;
 @property(retain, nonatomic) NSCache *fallbackCache; // @synthesize fallbackCache=_fallbackCache;
 @property(nonatomic) _Bool usesFallbackCache; // @synthesize usesFallbackCache=_usesFallbackCache;
-- (void).cxx_destruct;
 - (id)_resizeArtwork:(id)arg1 forCatalog:(id)arg2 toSize:(struct CGSize)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)_representationAtSize:(struct CGSize)arg1 forCatalog:(id)arg2;
 - (_Bool)_isRepresentationSize:(struct CGSize)arg1 validForFittingSize:(struct CGSize)arg2;

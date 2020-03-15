@@ -26,11 +26,11 @@
 }
 
 + (id)sharedSizer;
+- (void).cxx_destruct;
 @property(retain) STMAppPurgeableSizer *purgeableSizer; // @synthesize purgeableSizer=_purgeableSizer;
 @property(retain) STMAppDynamicSizer *dynamicSizer; // @synthesize dynamicSizer=_dynamicSizer;
 @property(retain) STMAppStaticSizer *staticSizer; // @synthesize staticSizer=_staticSizer;
 @property __weak id <STMAppSizerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addProxy:(id)arg1;
 - (id)calcAppPurgeableSize:(id)arg1;
 - (id)calcAppDynamicSize:(id)arg1;

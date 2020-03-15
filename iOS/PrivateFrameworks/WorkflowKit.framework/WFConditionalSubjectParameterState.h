@@ -29,6 +29,7 @@
 + (Class)processingValueClass;
 + (id)subjectType;
 + (id)subjectClasses;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
 @property(readonly, nonatomic, getter=isEnumeration) _Bool enumeration; // @synthesize enumeration=_enumeration;
 @property(readonly, nonatomic) NSString *unitType; // @synthesize unitType=_unitType;
@@ -41,13 +42,12 @@
 @property(readonly, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(readonly, nonatomic, getter=isCaseInsensitive) _Bool caseInsensitive; // @synthesize caseInsensitive=_caseInsensitive;
 @property(readonly, nonatomic) NSNumber *maximumLength; // @synthesize maximumLength=_maximumLength;
-- (void).cxx_destruct;
 - (id)localizedLabelForEnumerationPossibleState:(id)arg1;
 - (void)getEnumerationPossibleStatesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)supportedComparisonOperators;
 @property(readonly, nonatomic) long long contentType;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
-- (void)getContentWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
+- (void)getContentWithContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)containedVariables;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

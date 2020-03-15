@@ -22,8 +22,8 @@
     id <REActivityTrackerDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <REActivityTrackerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <REActivityTrackerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)outstandingActivitiesForObject:(id)arg1;
 @property(readonly, nonatomic) NSSet *outstandingActivities;
 - (void)endActivity:(id)arg1 forObject:(id)arg2;

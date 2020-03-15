@@ -32,9 +32,9 @@
 }
 
 + (id)supportedCharacterSet;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) unsigned long long renderStyle; // @synthesize renderStyle=_renderStyle;
-- (void).cxx_destruct;
 - (void)renderer:(id)arg1 didRenderScene:(id)arg2 atTime:(double)arg3;
 - (void)performPostRender:(CDUnknownBlockType)arg1;
 - (void)setMotionEffectEnabled:(BOOL)arg1 animated:(BOOL)arg2;

@@ -25,6 +25,7 @@
 
 + (id)initializeAdvertiser;
 + (id)sharedAdvertiser;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) HMDAccessoryQueues *powerOnQueues; // @synthesize powerOnQueues;
 @property(retain, nonatomic) HAPBTLECentralManager *centralManager; // @synthesize centralManager;
@@ -32,7 +33,7 @@
 @property(retain, nonatomic) HMFTimer *advertisementTimer; // @synthesize advertisementTimer;
 @property(retain, nonatomic) CUBLEAdvertiser *leAdvertiser; // @synthesize leAdvertiser;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue;
-- (void).cxx_destruct;
+@property(readonly, getter=isReady) BOOL isReady;
 - (BOOL)isAdvertisingForAccessory:(id)arg1;
 - (void)timerDidFire:(id)arg1;
 - (void)_advertisementTimeout;

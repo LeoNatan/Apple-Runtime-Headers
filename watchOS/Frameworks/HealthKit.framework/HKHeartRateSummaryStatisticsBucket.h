@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexSet *heartRatesInBeatsPerMinute; // @synthesize heartRatesInBeatsPerMinute=_heartRatesInBeatsPerMinute;
 @property(readonly, nonatomic) int bucketIndex; // @synthesize bucketIndex=_bucketIndex;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

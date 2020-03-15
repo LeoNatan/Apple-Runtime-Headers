@@ -15,8 +15,8 @@
     NSMutableArray *_mutableInserters;
 }
 
-@property(readonly, nonatomic) NSMutableArray *mutableInserters; // @synthesize mutableInserters=_mutableInserters;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *mutableInserters; // @synthesize mutableInserters=_mutableInserters;
 - (void)removeInserter:(id)arg1;
 - (void)addInserter:(id)arg1;
 @property(readonly, nonatomic) NSArray *inserters;

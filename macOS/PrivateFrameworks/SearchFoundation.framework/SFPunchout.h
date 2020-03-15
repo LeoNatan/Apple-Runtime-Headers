@@ -29,6 +29,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)punchoutWithURLs:(id)arg1;
 + (id)punchoutWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isRunnableInBackground; // @synthesize isRunnableInBackground=_isRunnableInBackground;
 @property(copy, nonatomic) NSString *actionTarget; // @synthesize actionTarget=_actionTarget;
 @property(retain, nonatomic) SFUserActivityData *userActivityData; // @synthesize userActivityData=_userActivityData;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

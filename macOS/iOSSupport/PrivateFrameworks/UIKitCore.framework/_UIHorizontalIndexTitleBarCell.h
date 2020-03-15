@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cellFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *roundedCornersBackground; // @synthesize roundedCornersBackground=_roundedCornersBackground;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) _UIFocusFastScrollingIndexBarEntry *entry; // @synthesize entry=_entry;
-- (void).cxx_destruct;
 - (void)_updateColors;
 - (BOOL)_isAnotherIndexTitleCellFocused;
 - (void)updateForEntry:(id)arg1;

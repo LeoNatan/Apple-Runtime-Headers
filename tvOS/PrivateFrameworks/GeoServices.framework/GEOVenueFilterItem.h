@@ -17,10 +17,10 @@
     _Bool _describesParentVenue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool describesParentVenue; // @synthesize describesParentVenue=_describesParentVenue;
 @property(readonly, nonatomic) id <GEOVenueLabel> label; // @synthesize label=_label;
 @property(readonly, nonatomic) id <GEOVenueIdentifier> filterID; // @synthesize filterID=_filterID;
-- (void).cxx_destruct;
 - (id)initWithFilterElementInfo:(id)arg1;
 - (id)initWithLabel:(id)arg1 filterID:(id)arg2;
 - (id)init;

@@ -13,8 +13,8 @@
     NSArray *_pathsToImport;
 }
 
-@property(readonly, copy, nonatomic) NSArray *pathsToImport; // @synthesize pathsToImport=_pathsToImport;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *pathsToImport; // @synthesize pathsToImport=_pathsToImport;
 @property(readonly, nonatomic) unsigned long long approximateMessageCount;
 - (BOOL)importMessagesWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSArray *messagesForImporter;

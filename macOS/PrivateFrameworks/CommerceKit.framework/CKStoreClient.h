@@ -35,11 +35,11 @@
 + (id)storeClientForIdentifier:(id)arg1 serverType:(long long)arg2;
 + (id)storeClientForIdentifier:(id)arg1;
 + (id)storeClientForAccount:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *_appName; // @synthesize _appName=__appName;
 @property(readonly, nonatomic) CKStoreAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) long long serverType; // @synthesize serverType=_serverType;
 @property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (id)_acAccount;
 - (unsigned long long)hash;
 - (id)description;

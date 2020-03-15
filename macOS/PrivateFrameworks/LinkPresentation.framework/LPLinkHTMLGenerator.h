@@ -46,6 +46,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) BOOL isPreliminary; // @synthesize isPreliminary=_isPreliminary;
 @property(readonly, nonatomic) LPTheme *theme; // @synthesize theme=_theme;
@@ -62,7 +63,6 @@
 @property(nonatomic, setter=_setIncludeDarkInterfaceInlineStyles:) BOOL _includeDarkInterfaceInlineStyles; // @synthesize _includeDarkInterfaceInlineStyles;
 @property(nonatomic, setter=_setIncludeClassNamesWhenUsingInlineStyles:) BOOL _includeClassNamesWhenUsingInlineStyles; // @synthesize _includeClassNamesWhenUsingInlineStyles;
 @property(nonatomic, setter=_setUseVariablesWhenUsingInlineStyles:) BOOL _useVariablesWhenUsingInlineStyles; // @synthesize _useVariablesWhenUsingInlineStyles;
-- (void).cxx_destruct;
 - (void)_didFollowLink;
 @property(readonly, nonatomic) BOOL _canTapToLoad;
 - (void)_rebuildView;

@@ -21,9 +21,9 @@
     TDreamFramebuffer *_lookUpBuffer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TDreamFramebuffer *lookUpBuffer; // @synthesize lookUpBuffer=_lookUpBuffer;
 @property(retain, nonatomic) TDreamFramebuffer *outputBufferAndTexture; // @synthesize outputBufferAndTexture=_outputBufferAndTexture;
-- (void).cxx_destruct;
 - (unsigned int)getOutputBufferNamer;
 - (void)deleteAllFramebuffers;
 - (void)clearFrameBuffers;

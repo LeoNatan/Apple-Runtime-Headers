@@ -21,9 +21,9 @@
     NSMutableDictionary *_replacements;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long maxQueueLength; // @synthesize maxQueueLength=_maxQueueLength;
 @property unsigned long long minQueueLength; // @synthesize minQueueLength=_minQueueLength;
-- (void).cxx_destruct;
 - (void)willRemoveFromLogger:(id)arg1;
 - (void)didAddToLogger:(id)arg1;
 - (id)formatLogMessage:(id)arg1;

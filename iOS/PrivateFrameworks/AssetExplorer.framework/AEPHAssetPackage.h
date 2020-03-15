@@ -11,8 +11,8 @@
     id _resourcePinningHandle;
 }
 
-@property(readonly, nonatomic) id resourcePinningHandle; // @synthesize resourcePinningHandle=_resourcePinningHandle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id resourcePinningHandle; // @synthesize resourcePinningHandle=_resourcePinningHandle;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithAssetIdentifier:(id)arg1 durableURLs:(id)arg2 suppressedTypes:(id)arg3 sidecar:(id)arg4 resourcePinningHandle:(id)arg5;

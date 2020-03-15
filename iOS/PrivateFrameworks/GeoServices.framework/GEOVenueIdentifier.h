@@ -23,6 +23,7 @@
 }
 
 + (id)componentIdentifiersFromVenueIdentifiers:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *componentIdentifiers; // @synthesize componentIdentifiers=_componentIdentifiers;
 @property(readonly, nonatomic) unsigned long long businessID; // @synthesize businessID=_businessID;
 @property(readonly, nonatomic, getter=_hasBusinessID) _Bool hasBusinessID; // @synthesize hasBusinessID=_hasBusinessID;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic, getter=_hasFeatureID) _Bool hasFeatureID; // @synthesize hasFeatureID=_hasFeatureID;
 @property(readonly, nonatomic) unsigned long long venueID; // @synthesize venueID=_venueID;
 @property(readonly, nonatomic, getter=_hasVenueID) _Bool hasVenueID; // @synthesize hasVenueID=_hasVenueID;
-- (void).cxx_destruct;
 - (id)placeDataVenueIdentifierForVenue;
 - (id)placeDataVenueIdentifier;
 - (id)initWithVenueID:(unsigned long long)arg1 featureID:(unsigned long long)arg2 businessID:(unsigned long long)arg3;

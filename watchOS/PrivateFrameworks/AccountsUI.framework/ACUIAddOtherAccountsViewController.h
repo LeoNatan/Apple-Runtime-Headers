@@ -4,33 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Preferences/PSListController.h>
-
-#import <AccountsUI/ACUISetupViewControllerDelegate-Protocol.h>
-#import <AccountsUI/ACUISignInControllerDelegate-Protocol.h>
-
-@class NSString;
+#import <AccountsUI/ACUIAddAccountViewController.h>
 
 __attribute__((visibility("hidden")))
-@interface ACUIAddOtherAccountsViewController : PSListController <ACUISetupViewControllerDelegate, ACUISignInControllerDelegate>
+@interface ACUIAddOtherAccountsViewController : ACUIAddAccountViewController
 {
-    NSString *_filteredDataclass;
 }
 
-- (void).cxx_destruct;
-- (void)setupViewControllerDidDismiss:(id)arg1;
+- (id)_specifiersForRemoteManagmentAccount;
 - (id)_specifiersForOtherCalendarAccounts;
 - (id)_specifiersForOtherContactsAccounts;
 - (id)_specifiersForOtherMailAccounts;
 - (id)specifiers;
-- (id)_viewProvidersManager;
-- (void)setSpecifier:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

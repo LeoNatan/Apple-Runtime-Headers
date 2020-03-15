@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     struct CGSize _proxySize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize proxySize; // @synthesize proxySize=_proxySize;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithImage:(id)arg1;
 
 // Remaining properties

@@ -18,12 +18,12 @@
     NSMutableDictionary *_intendedColumnWidths;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *intendedColumnWidths; // @synthesize intendedColumnWidths=_intendedColumnWidths;
 @property(retain, nonatomic) NSMutableDictionary *minimumColumnWidths; // @synthesize minimumColumnWidths=_minimumColumnWidths;
 @property(retain, nonatomic) SXDataTableBlueprint *blueprint; // @synthesize blueprint=_blueprint;
 @property(readonly, nonatomic) double currentWidth; // @synthesize currentWidth=_currentWidth;
 @property(readonly, nonatomic) id <SXDataTableDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)tableInsets;
 - (double)minimumWidthForColumnAtIndex:(unsigned long long)arg1;
 - (double)intendedPercentualWidthForColumnAtIndex:(unsigned long long)arg1;

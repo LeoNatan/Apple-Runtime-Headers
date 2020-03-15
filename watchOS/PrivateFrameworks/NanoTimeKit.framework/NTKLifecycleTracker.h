@@ -22,9 +22,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property __weak NTKFaceLibraryViewController *faceLibraryViewController; // @synthesize faceLibraryViewController=_faceLibraryViewController;
 @property __weak NTKClockViewController *clockViewController; // @synthesize clockViewController=_clockViewController;
-- (void).cxx_destruct;
 - (id)_descriptionForFaceView:(id)arg1;
 - (id)_descriptionFaceViewController:(id)arg1;
 - (void)printFaceViewState;

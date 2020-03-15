@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _footerMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets footerMargin; // @synthesize footerMargin=_footerMargin;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) struct UIEdgeInsets headerMargin; // @synthesize headerMargin=_headerMargin;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *normalizedGroupedInfos; // @synthesize normalizedGroupedInfos=_normalizedGroupedInfos;
 @property(copy, nonatomic) NSArray *groupedInfos; // @synthesize groupedInfos=_groupedInfos;
 @property(copy, nonatomic) NSArray *infos; // @synthesize infos=_infos;
-- (void).cxx_destruct;
 - (unsigned long long)_columnCount;
 @property(readonly, nonatomic) struct UIEdgeInsets padding;
 @property(readonly, nonatomic) long long maxLineCount;

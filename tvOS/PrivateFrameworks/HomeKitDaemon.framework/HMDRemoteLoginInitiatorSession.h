@@ -15,9 +15,9 @@
     HMDLogEvent<HomeKitEventRemoteLoginMetricProtocol> *_metric;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDLogEvent<HomeKitEventRemoteLoginMetricProtocol> *metric; // @synthesize metric=_metric;
 @property(readonly, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (id)initWithSessionID:(id)arg1;

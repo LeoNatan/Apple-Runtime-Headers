@@ -9,7 +9,5 @@
 @interface NSThread (PKURLConnectionThreadCategory)
 + (void)__runBlock:(CDUnknownBlockType)arg1;
 + (void)runBlockOnThread:(id)arg1 withBlock:(CDUnknownBlockType)arg2 waitUntilDone:(BOOL)arg3;
-+ (void)__runBlock:(CDUnknownBlockType)arg1;
-+ (void)runBlockOnThread:(id)arg1 withBlock:(CDUnknownBlockType)arg2 waitUntilDone:(BOOL)arg3;
 @end
 

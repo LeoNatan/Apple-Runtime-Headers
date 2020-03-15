@@ -23,6 +23,7 @@
     NSLock *_fdLock;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLock *fdLock; // @synthesize fdLock=_fdLock;
 @property(retain) NSThread *fileHandleMultiplexThread; // @synthesize fileHandleMultiplexThread=_fileHandleMultiplexThread;
 @property(retain) NSMutableArray *failedSysdiagnoseFilenames; // @synthesize failedSysdiagnoseFilenames=_failedSysdiagnoseFilenames;
@@ -33,7 +34,6 @@
 @property(retain) NSMutableDictionary *filenameToUUIDMap; // @synthesize filenameToUUIDMap=_filenameToUUIDMap;
 @property __weak NSObject<ILCConnectionDelegate> *delegate; // @synthesize delegate=_delegate;
 @property int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)goodByeReasonToString:(int)arg1;
 - (void)sendGoodbyeWithReason:(int)arg1;
 - (BOOL)beginFile:(id)arg1 forFilename:(id)arg2 flags:(int)arg3 isSysdiagnose:(BOOL)arg4;

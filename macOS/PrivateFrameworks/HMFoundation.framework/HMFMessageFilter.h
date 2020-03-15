@@ -19,8 +19,8 @@
 + (id)logCategory;
 + (id)policyClasses;
 + (BOOL)canInitWithMessage:(id)arg1;
-@property(readonly, copy) HMFMessage *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(readonly, copy) HMFMessage *message; // @synthesize message=_message;
 - (id)logIdentifier;
 @property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 - (id)initWithMessage:(id)arg1;

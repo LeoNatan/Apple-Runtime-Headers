@@ -17,11 +17,11 @@
 }
 
 + (id)parameterFromPayload:(id)arg1 usingTypeDictionary:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isArray) BOOL array; // @synthesize array=_array;
 @property(readonly, nonatomic, getter=isOptional) BOOL optional; // @synthesize optional=_optional;
 @property(readonly, nonatomic) WDProtocolType *type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqualToParameter:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

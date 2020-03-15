@@ -20,6 +20,7 @@
     UIImage *_placeholderImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSDate *latestAssetDate; // @synthesize latestAssetDate=_latestAssetDate;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long videoCount; // @synthesize videoCount=_videoCount;
 @property(nonatomic) unsigned long long photoCount; // @synthesize photoCount=_photoCount;
 @property(retain, nonatomic) PHAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
-- (void).cxx_destruct;
 - (id)initWithKeyAsset:(id)arg1;
 
 @end

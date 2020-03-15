@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     TFLaunchScreen *_launchScreen;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TFLaunchScreen *launchScreen; // @synthesize launchScreen=_launchScreen;
 @property(readonly, nonatomic) TFImageFetcher *imageFetcher; // @synthesize imageFetcher=_imageFetcher;
 @property(readonly, nonatomic) id <TFBetaAppLaunchDataProvider> launchDataProvider; // @synthesize launchDataProvider=_launchDataProvider;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <TFBetaAppLaunchPresenterView> presenterView; // @synthesize presenterView=_presenterView;
-- (void).cxx_destruct;
 - (void)_abortLaunchScreenLoadWithError:(id)arg1;
 - (void)_showHowToViewWithLaunchScreen:(id)arg1;
 - (void)_showTestNotesViewWithLaunchScreen:(id)arg1;

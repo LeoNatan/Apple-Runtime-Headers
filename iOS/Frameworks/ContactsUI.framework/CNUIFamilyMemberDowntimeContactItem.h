@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)initWithContact:(id)arg1 label:(id)arg2;
 
 @end

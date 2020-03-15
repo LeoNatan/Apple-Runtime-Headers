@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     VSExpressionEvaluator *_buttonExpressionEvaluator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSExpressionEvaluator *buttonExpressionEvaluator; // @synthesize buttonExpressionEvaluator=_buttonExpressionEvaluator;
 @property(copy, nonatomic) NSString *originalTwoFacorCode; // @synthesize originalTwoFacorCode=_originalTwoFacorCode;
 @property(copy, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(copy, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
 @property(retain, nonatomic) VSTwoFactorEntryTextField *twoFactorTextField; // @synthesize twoFactorTextField=_twoFactorTextField;
 @property(nonatomic) __weak id <VSTwoFactorEntryViewModelDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)buttonAtIndexWasPressed:(unsigned long long)arg1;
 - (void)configureWithRequest:(id)arg1;
 - (id)init;

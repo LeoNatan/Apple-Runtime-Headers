@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
-@property(nonatomic) __weak SKStoreProductActivityViewController *productActivityViewController; // @synthesize productActivityViewController=_productActivityViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SKStoreProductActivityViewController *productActivityViewController; // @synthesize productActivityViewController=_productActivityViewController;
 - (void)didFinishWithResult:(id)arg1 error:(id)arg2;
 
 // Remaining properties

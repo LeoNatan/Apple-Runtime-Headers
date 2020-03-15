@@ -18,8 +18,8 @@
 }
 
 + (id)staticDataSourceWithSections:(id)arg1;
-@property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (long long)tableView:(id)arg1 indentationLevelForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;

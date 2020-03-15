@@ -21,11 +21,11 @@
 + (id)mapError:(id)arg1;
 + (id)sharedManager;
 + (id)loadedManagers;
+- (void).cxx_destruct;
 @property BOOL notificationSent; // @synthesize notificationSent=_notificationSent;
 @property BOOL hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 @property(copy) NEConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly) NEVPNConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 @property(copy) NSString *localizedDescription;

@@ -13,8 +13,8 @@
     WFAction *_accessibilityAnnouncementAction;
 }
 
-@property(nonatomic) __weak WFAction *accessibilityAnnouncementAction; // @synthesize accessibilityAnnouncementAction=_accessibilityAnnouncementAction;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFAction *accessibilityAnnouncementAction; // @synthesize accessibilityAnnouncementAction=_accessibilityAnnouncementAction;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;
 - (BOOL)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

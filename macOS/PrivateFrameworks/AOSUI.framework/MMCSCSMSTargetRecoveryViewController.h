@@ -33,6 +33,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(copy) NSString *smsVerificationToken; // @synthesize smsVerificationToken=_smsVerificationToken;
 @property(copy) NSString *smsTarget; // @synthesize smsTarget=_smsTarget;
@@ -48,7 +49,6 @@
 @property __weak NSTextField *smsTargetTitle; // @synthesize smsTargetTitle=_smsTargetTitle;
 @property __weak NSImageView *smsTargetImageView; // @synthesize smsTargetImageView=_smsTargetImageView;
 @property id <MMCSCSMSTargetRecoveryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)clickedOnLink:(id)arg1;
 - (void)pinFieldViewTextDidChange:(id)arg1;
 - (id)_countryPrefixForCountryCode:(id)arg1;

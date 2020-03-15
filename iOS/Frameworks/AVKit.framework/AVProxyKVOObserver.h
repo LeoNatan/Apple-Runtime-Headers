@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _changesBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType changesBlock; // @synthesize changesBlock=_changesBlock;
 @property(readonly, nonatomic) NSSet *keyPaths; // @synthesize keyPaths=_keyPaths;
 @property(readonly, nonatomic) _Bool includeChanges; // @synthesize includeChanges=_includeChanges;
 @property(readonly, nonatomic) _Bool includeInitialValue; // @synthesize includeInitialValue=_includeInitialValue;
 @property(readonly, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)_handleValueChangeForKeyPath:(id)arg1 ofObject:(id)arg2 oldValue:(id)arg3 newValue:(id)arg4 context:(void *)arg5;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stopObserving;

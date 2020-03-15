@@ -101,6 +101,19 @@ struct NMFactorState {
     float rampLength;
 };
 
+struct Ramp {
+    float start;
+    float target;
+    float current;
+    double startTime;
+    double duration;
+};
+
+struct mach_timebase_info {
+    unsigned int numer;
+    unsigned int denom;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

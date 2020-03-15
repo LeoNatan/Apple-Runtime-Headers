@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     id <CKTrimControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKUIVideoEditorController *editVideoVC; // @synthesize editVideoVC=_editVideoVC;
 @property(nonatomic) __weak id <CKTrimControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CKMediaObject *trimmedMediaObject; // @synthesize trimmedMediaObject=_trimmedMediaObject;
 @property(retain, nonatomic) CKMediaObject *originalMediaObject; // @synthesize originalMediaObject=_originalMediaObject;
-- (void).cxx_destruct;
 - (void)videoEditorController:(id)arg1 didFailWithError:(id)arg2;
 - (void)videoEditorControllerDidCancel:(id)arg1;
 - (void)videoEditorController:(id)arg1 didSaveEditedVideoToPath:(id)arg2;

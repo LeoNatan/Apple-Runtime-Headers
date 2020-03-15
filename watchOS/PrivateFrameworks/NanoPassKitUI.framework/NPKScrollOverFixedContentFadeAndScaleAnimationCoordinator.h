@@ -20,12 +20,12 @@
     UIScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) float scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) float otherContentAlpha; // @synthesize otherContentAlpha=_otherContentAlpha;
 @property(readonly, nonatomic) float sideButtonAlignedAlpha; // @synthesize sideButtonAlignedAlpha=_sideButtonAlignedAlpha;
 @property(nonatomic) __weak id <NPKScrollOverFixedContentFadeAndScaleAnimationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_updateContentOverlap;

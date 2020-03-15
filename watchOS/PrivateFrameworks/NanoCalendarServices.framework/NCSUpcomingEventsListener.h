@@ -30,6 +30,7 @@
 + (id)splitDateBetweenEvent:(id)arg1 andEvent:(id)arg2;
 + (id)nanoCalendarLaunchURLForDate:(id)arg1;
 + (id)nanoCalendarLaunchURLForEvent:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(readonly, nonatomic) NSMutableArray *todayEvents; // @synthesize todayEvents=_todayEvents;
 @property(readonly, nonatomic) NSMutableArray *tomorrowEvents; // @synthesize tomorrowEvents=_tomorrowEvents;
@@ -40,7 +41,6 @@
 @property(nonatomic, getter=isFirstInDay) _Bool firstInDay; // @synthesize firstInDay=_firstInDay;
 @property(retain, nonatomic) NSURL *launchURL; // @synthesize launchURL=_launchURL;
 @property(retain, nonatomic) NSArray *upcomingEvents; // @synthesize upcomingEvents=_upcomingEvents;
-- (void).cxx_destruct;
 - (id)_dateForBeginningOfTomorrow;
 - (id)_dateForEndOfToday;
 - (id)_dateForBeginningOfToday;

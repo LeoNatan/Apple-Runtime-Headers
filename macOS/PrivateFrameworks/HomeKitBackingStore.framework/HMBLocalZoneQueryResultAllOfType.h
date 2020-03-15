@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_modelClassName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *modelClassName; // @synthesize modelClassName=_modelClassName;
 @property(readonly, nonatomic) int modelClassNameOffset; // @synthesize modelClassNameOffset=_modelClassNameOffset;
-- (void).cxx_destruct;
 - (BOOL)bindPropertiesToStatement:(struct sqlite3_stmt *)arg1 error:(id *)arg2;
 - (id)initWithLocalZone:(id)arg1 modelClassName:(id)arg2;
 

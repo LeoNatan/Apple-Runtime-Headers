@@ -22,11 +22,11 @@
 + (id)conditionsForQuery:(id)arg1 editingContext:(id)arg2 error:(id *)arg3;
 + (id)_conditionWithSingleQuery:(id)arg1 editingContext:(id)arg2;
 + (id)conditionWithConditionType:(long long)arg1 editingContext:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXSmartAlbumConditionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PLSingleQuery *singleQuery; // @synthesize singleQuery=_singleQuery;
 @property(readonly, nonatomic) id <PXSmartAlbumEditingContext> editingContext; // @synthesize editingContext=_editingContext;
 @property(readonly, nonatomic) long long conditionType; // @synthesize conditionType=_conditionType;
-- (void).cxx_destruct;
 - (int)_comparatorType;
 - (long long)comparatorMode;
 @property(readonly, nonatomic) long long comparatorParameterType;

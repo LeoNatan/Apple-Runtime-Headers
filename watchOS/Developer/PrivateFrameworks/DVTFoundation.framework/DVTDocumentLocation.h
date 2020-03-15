@@ -23,9 +23,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)dvt_documentLocationFromPersistableStringRepresentation:(id)arg1 error:(id *)arg2;
 + (id)documentLocationWithURLScheme:(id)arg1 path:(id)arg2 documentParameters:(id)arg3 locationParameters:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly) NSNumber *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
-- (void).cxx_destruct;
 - (id)locationParameters;
 - (id)documentParameters;
 - (id)documentPath;

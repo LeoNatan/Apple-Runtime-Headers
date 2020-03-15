@@ -15,10 +15,10 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) HMFMessageDestination *destination; // @synthesize destination=_destination;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 destination:(id)arg2 userInfo:(id)arg3;
 - (id)init;
 

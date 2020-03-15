@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     VSMessageQueue *_messagesFromWeb;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VSMessageQueue *messagesFromWeb; // @synthesize messagesFromWeb=_messagesFromWeb;
 @property(readonly, nonatomic) VSMessageQueue *messagesToWeb; // @synthesize messagesToWeb=_messagesToWeb;
 @property(copy, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

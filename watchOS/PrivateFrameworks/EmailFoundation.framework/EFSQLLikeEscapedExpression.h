@@ -17,10 +17,10 @@
     unsigned int _pattern;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int pattern; // @synthesize pattern=_pattern;
 @property(readonly, nonatomic) unsigned short escapeCharacter; // @synthesize escapeCharacter=_escapeCharacter;
 @property(readonly, nonatomic) NSString *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)_stringForPattern:(unsigned int)arg1 literal:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;
 - (id)initWithValue:(id)arg1 pattern:(unsigned int)arg2 escapeCharacter:(unsigned short)arg3;

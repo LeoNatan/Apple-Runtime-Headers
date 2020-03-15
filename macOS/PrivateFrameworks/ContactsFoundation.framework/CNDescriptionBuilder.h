@@ -17,8 +17,8 @@
 
 + (id)descriptionForObject:(id)arg1 withNamesAndObjects:(id)arg2;
 + (id)descriptionBuilderWithObject:(id)arg1;
-@property(copy, nonatomic) NSString *separator; // @synthesize separator=_separator;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *separator; // @synthesize separator=_separator;
 - (id)build;
 - (void)tryAppendKey:(id)arg1;
 - (id)appendKeys:(id)arg1;

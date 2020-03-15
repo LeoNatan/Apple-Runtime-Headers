@@ -41,6 +41,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDAWDHealthKitConcurrentCalendarItem *firstCalendarItemOfDay; // @synthesize firstCalendarItemOfDay=_firstCalendarItemOfDay;
 @property(nonatomic) _Bool wellnessComplicationOnWatchFace; // @synthesize wellnessComplicationOnWatchFace=_wellnessComplicationOnWatchFace;
 @property(retain, nonatomic) HDAWDHealthKitAchievementStatistics *achievementStatistics; // @synthesize achievementStatistics=_achievementStatistics;
@@ -55,7 +56,6 @@
 @property(nonatomic) long long progressUpdateFrequency; // @synthesize progressUpdateFrequency=_progressUpdateFrequency;
 @property(nonatomic) _Bool enableStandReminders; // @synthesize enableStandReminders=_enableStandReminders;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

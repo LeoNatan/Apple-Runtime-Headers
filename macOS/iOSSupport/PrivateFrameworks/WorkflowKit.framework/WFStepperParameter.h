@@ -16,11 +16,11 @@
     NSString *_pluralNoun;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *pluralNoun; // @synthesize pluralNoun=_pluralNoun;
 @property(readonly, copy, nonatomic) NSString *singularNoun; // @synthesize singularNoun=_singularNoun;
 @property(readonly, nonatomic) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(readonly, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
-- (void).cxx_destruct;
 - (id)localizedLabelWithState:(id)arg1 includingPrefix:(BOOL)arg2;
 - (id)localizedLabel;
 - (id)defaultSerializedRepresentation;

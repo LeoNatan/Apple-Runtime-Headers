@@ -15,9 +15,9 @@
     id <_SBIdleTimerGlobalSettingMonitorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_SBIdleTimerGlobalSettingMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (_Bool)_updateCache;
 - (id)formattedValue;
 - (id)initWithLabel:(id)arg1 delegate:(id)arg2;

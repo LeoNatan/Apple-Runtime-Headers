@@ -17,6 +17,7 @@
     _Bool _shouldPostNotification;
     NSArray *_actions;
     long long _displayStyle;
+    NSString *_footer;
     NSString *_informativeText;
     AMSMetricsEvent *_metricsEvent;
     NSString *_title;
@@ -26,15 +27,16 @@
 
 + (id)componentsFromBackingIdentifier:(id)arg1;
 + (id)backingIdentifierForIdentifier:(id)arg1 account:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *metricsQueue; // @synthesize metricsQueue=_metricsQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool shouldPostNotification; // @synthesize shouldPostNotification=_shouldPostNotification;
 @property(retain, nonatomic) AMSMetricsEvent *metricsEvent; // @synthesize metricsEvent=_metricsEvent;
 @property(retain, nonatomic) NSString *informativeText; // @synthesize informativeText=_informativeText;
+@property(retain, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(nonatomic) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)postMetricsWithBagContract:(id)arg1;
 - (_Bool)shouldOverwriteItem:(id)arg1;
 - (id)postMetricsWithBag:(id)arg1;

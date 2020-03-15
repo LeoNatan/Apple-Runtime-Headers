@@ -32,6 +32,7 @@
     NSString *_productType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomConstraint; // @synthesize contentViewBottomConstraint=_contentViewBottomConstraint;
 @property(retain, nonatomic) HRStackedButtonView *stackedButtonView; // @synthesize stackedButtonView=_stackedButtonView;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *heroView; // @synthesize heroView=_heroView;
 @property(retain, nonatomic) HKHeartRhythmAvailability *availability; // @synthesize availability=_availability;
-- (void).cxx_destruct;
 - (id)watchOSVersionTooLowBodyString;
 - (id)deviceNotSupportedBodyString;
 - (id)featureDisabledBodyString;

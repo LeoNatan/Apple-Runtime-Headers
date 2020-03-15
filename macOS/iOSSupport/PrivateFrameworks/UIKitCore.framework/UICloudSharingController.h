@@ -42,6 +42,7 @@
     id <_UICloudSharingControllerDelegate_Internal> _internalDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UICloudSharingControllerDelegate_Internal> internalDelegate; // @synthesize internalDelegate=_internalDelegate;
 @property(retain, nonatomic) id <UINSCloudSharingController> bridgedCloudSharingController; // @synthesize bridgedCloudSharingController=_bridgedCloudSharingController;
 @property(retain, nonatomic, getter=_headerSecondaryImage, setter=_setHeaderSecondaryImage:) UIImage *headerSecondaryImage; // @synthesize headerSecondaryImage=_headerSecondaryImage;
@@ -63,17 +64,18 @@
 @property(nonatomic) unsigned long long availablePermissions; // @synthesize availablePermissions=_availablePermissions;
 @property(retain, nonatomic) CKShare *share; // @synthesize share=_share;
 @property(nonatomic) __weak id <UICloudSharingControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cloudSharingControllerDidStopSharing:(id)arg1;
 - (void)cloudSharingControllerDidSaveShare:(id)arg1;
 - (id)itemTypeForCloudSharingController:(id)arg1;
 - (id)itemThumbnailDataForCloudSharingController:(id)arg1;
 - (id)itemTitleForCloudSharingController:(id)arg1;
 - (void)cloudSharingController:(id)arg1 failedToSaveShareWithError:(id)arg2;
+- (void)cloudSharingControllerDidCompleteShare:(id)arg1;
 - (void)dismissalTransitionWillBeginNotification:(id)arg1;
 - (void)presentationTransitionWillBeginNotification:(id)arg1;
 - (BOOL)_bridgeCloudSharingControllerToHostIfPossible:(id)arg1;
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
+- (long long)modalPresentationStyle;
 - (id)activityItemSource;
 - (void)dealloc;
 - (id)initWithPreparationHandler:(CDUnknownBlockType)arg1;

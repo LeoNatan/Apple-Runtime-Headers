@@ -17,10 +17,10 @@
     CDUnknownBlockType _backgroundTaskResponsibilityHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType backgroundTaskResponsibilityHandler; // @synthesize backgroundTaskResponsibilityHandler=_backgroundTaskResponsibilityHandler;
 @property(copy, nonatomic) CDUnknownBlockType needsToQueryBackgroundTaskResponsibilityHandler; // @synthesize needsToQueryBackgroundTaskResponsibilityHandler=_needsToQueryBackgroundTaskResponsibilityHandler;
 @property(copy, nonatomic) CDUnknownBlockType imageFetchHandler; // @synthesize imageFetchHandler=_imageFetchHandler;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (int)blacklistPolicy;

@@ -18,11 +18,11 @@
     unsigned long long _mediaCategoryType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDirty) _Bool dirty; // @synthesize dirty=_dirty;
 @property(nonatomic) unsigned long long mediaCategoryType; // @synthesize mediaCategoryType=_mediaCategoryType;
 @property(copy, nonatomic) NSDate *modifiedDate; // @synthesize modifiedDate=_modifiedDate;
 @property(readonly, copy, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

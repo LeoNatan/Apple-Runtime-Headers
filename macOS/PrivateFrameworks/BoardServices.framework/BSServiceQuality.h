@@ -27,9 +27,9 @@
 + (id)utility;
 + (id)background;
 + (id)_serviceWithClass:(unsigned int)arg1 relativePriority:(int)arg2 main:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int relativePriority; // @synthesize relativePriority=_relativePriority;
 @property(readonly, nonatomic) unsigned int serviceClass; // @synthesize serviceClass=_serviceClass;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

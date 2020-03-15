@@ -6,19 +6,19 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class GEOAutomobileOptions, GEOComposedWaypoint, GEOLocation, NSString;
+@class GEOAutomobileOptions, GEOComposedWaypoint, GEOLocation, NSArray, NSData, NSString;
 @protocol GEOMapItem, GEOVenueIdentifier;
 
 @protocol MapsSuggestionsNetworkRequester <MapsSuggestionsObject>
-- (_Bool)ETAsFromHereWaypoint:(GEOComposedWaypoint *)arg1 destinationWaypoints:(struct NSArray *)arg2 transportType:(int)arg3 automobileOptions:(GEOAutomobileOptions *)arg4 completion:(void (^)(NSArray *, NSError *))arg5;
+- (_Bool)ETAsFromHereWaypoint:(GEOComposedWaypoint *)arg1 destinationWaypoints:(NSArray *)arg2 transportType:(int)arg3 automobileOptions:(GEOAutomobileOptions *)arg4 completion:(void (^)(NSArray *, NSError *))arg5;
 - (_Bool)composedWaypointForAddressString:(NSString *)arg1 completion:(void (^)(GEOComposedWaypoint *, NSError *))arg2;
 - (_Bool)composedWaypointForLocation:(GEOLocation *)arg1 completion:(void (^)(GEOComposedWaypoint *, NSError *))arg2;
 - (_Bool)composedWaypointForMapItem:(id <GEOMapItem>)arg1 completion:(void (^)(GEOComposedWaypoint *, NSError *))arg2;
-- (_Bool)searchPOIWithName:(NSString *)arg1 ofPOICategory:(NSString *)arg2 withinVenue:(id <GEOVenueIdentifier>)arg3 maxResults:(unsigned int)arg4 completion:(void (^)(struct NSArray *, NSError *))arg5;
-- (_Bool)searchString:(NSString *)arg1 maxResults:(unsigned int)arg2 completion:(void (^)(struct NSArray *, NSError *))arg3;
-- (_Bool)resolveMapItemHandleData:(struct NSData *)arg1 completion:(void (^)(struct NSArray *, NSError *))arg2;
-- (_Bool)reverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1 completion:(void (^)(struct NSArray *, NSError *))arg2;
-- (_Bool)forwardGeocodeAddressString:(NSString *)arg1 completion:(void (^)(struct NSArray *, NSError *))arg2;
-- (_Bool)forwardGeocodePostalAddress:(id)arg1 completion:(void (^)(struct NSArray *, NSError *))arg2;
+- (_Bool)searchPOIWithName:(NSString *)arg1 ofPOICategory:(NSString *)arg2 withinVenue:(id <GEOVenueIdentifier>)arg3 maxResults:(unsigned int)arg4 completion:(void (^)(NSArray *, NSError *))arg5;
+- (_Bool)searchString:(NSString *)arg1 maxResults:(unsigned int)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
+- (_Bool)resolveMapItemHandleData:(NSData *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
+- (_Bool)reverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
+- (_Bool)forwardGeocodeAddressString:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
+- (_Bool)forwardGeocodePostalAddress:(id)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 @end
 

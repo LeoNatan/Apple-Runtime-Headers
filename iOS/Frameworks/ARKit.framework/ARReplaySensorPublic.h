@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <ARKit/ARReplaySensorProtocol-Protocol.h>
+#import <ARKit/ARReplaySensorProtocolInternal-Protocol.h>
 
-@class ARImageCroppingTechnique, ARParentImageSensorSettings, NSArray, NSMutableDictionary, NSSet, NSString, NSURL;
+@class ARImageCroppingTechnique, ARParentImageSensorSettings, ARSession, NSArray, NSMutableDictionary, NSSet, NSString, NSURL;
 @protocol ARReplaySensorDelegate, ARSensorDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface ARReplaySensorPublic : NSObject <ARReplaySensorProtocol>
+@interface ARReplaySensorPublic : NSObject <ARReplaySensorProtocolInternal, ARReplaySensorProtocol>
 {
     _Bool _manualCommandLineMode;
     NSMutableDictionary *_nextWrappedImageDataForStreamIdentifierMap;
@@ -21,9 +22,6 @@
     NSObject<OS_dispatch_source> *_timer;
     double _startTime;
     long long _tick;
-    double _frameRateScale;
-    double _timestampWhenFramerateChanged;
-    NSMutableDictionary *_imageTimestampOfStreamWhenFramerateChanged;
     _Bool _running;
     _Bool _interrupted;
     _Bool _replayStarted;
@@ -37,8 +35,9 @@
     NSSet *_availableVideoStreams;
     NSSet *_availableMetadataStreams;
     NSSet *_videoStreamsToReplay;
-    _Bool _isReplayingManually;
-    _Bool _synchronousMode;
+    id <ARReplaySensorDelegate> _traceReplaySensorDelegate;
+    // Error parsing type: {?="columns"[4]}, name: _extrinsicsFromUltrawideToWide
+    _Bool _usingST2Recording;
     _Bool _recordingTimeToReplayTimeOffsetReset;
     float _advanceFramesPerSecondMultiplier;
     int _imageIndex;
@@ -51,29 +50,30 @@
     double _nominalFrameRate;
     unsigned long long _recordedSensorTypes;
     NSSet *_recordedResultClasses;
-    unsigned long long _forcePlaybackFramesPerSecond;
+    long long _replayMode;
     long long _nextFrameIndex;
     NSSet *_customDataClasses;
     ARParentImageSensorSettings *_parentImageSensorSettings;
     NSString *_mainVideoStreamIdentifier;
+    ARSession *_session;
     long long _targetFrameIndex;
     double _recordingTimeToReplayTimeOffset;
     struct CGSize _imageResolution;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool recordingTimeToReplayTimeOffsetReset; // @synthesize recordingTimeToReplayTimeOffsetReset=_recordingTimeToReplayTimeOffsetReset;
 @property(nonatomic) double recordingTimeToReplayTimeOffset; // @synthesize recordingTimeToReplayTimeOffset=_recordingTimeToReplayTimeOffset;
 @property long long targetFrameIndex; // @synthesize targetFrameIndex=_targetFrameIndex;
 @property(nonatomic) int imageIndex; // @synthesize imageIndex=_imageIndex;
 @property(readonly, nonatomic) _Bool interrupted; // @synthesize interrupted=_interrupted;
+@property(nonatomic) __weak ARSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSString *mainVideoStreamIdentifier; // @synthesize mainVideoStreamIdentifier=_mainVideoStreamIdentifier;
 @property(retain, nonatomic) ARParentImageSensorSettings *parentImageSensorSettings; // @synthesize parentImageSensorSettings=_parentImageSensorSettings;
 @property(copy, nonatomic) NSSet *customDataClasses; // @synthesize customDataClasses=_customDataClasses;
 @property float advanceFramesPerSecondMultiplier; // @synthesize advanceFramesPerSecondMultiplier=_advanceFramesPerSecondMultiplier;
 @property long long nextFrameIndex; // @synthesize nextFrameIndex=_nextFrameIndex;
-@property(nonatomic) unsigned long long forcePlaybackFramesPerSecond; // @synthesize forcePlaybackFramesPerSecond=_forcePlaybackFramesPerSecond;
-@property(readonly, nonatomic, getter=isSynchronousMode) _Bool synchronousMode; // @synthesize synchronousMode=_synchronousMode;
-@property(readonly, nonatomic) _Bool isReplayingManually; // @synthesize isReplayingManually=_isReplayingManually;
+@property(readonly, nonatomic) long long replayMode; // @synthesize replayMode=_replayMode;
 @property(readonly, nonatomic) NSSet *recordedResultClasses; // @synthesize recordedResultClasses=_recordedResultClasses;
 @property(readonly, nonatomic) unsigned long long recordedSensorTypes; // @synthesize recordedSensorTypes=_recordedSensorTypes;
 @property(readonly, nonatomic) double nominalFrameRate; // @synthesize nominalFrameRate=_nominalFrameRate;
@@ -84,7 +84,8 @@
 @property(readonly, nonatomic) NSURL *sequenceURL; // @synthesize sequenceURL=_sequenceURL;
 @property __weak id <ARReplaySensorDelegate> replaySensorDelegate; // @synthesize replaySensorDelegate=_replaySensorDelegate;
 @property(nonatomic) __weak id <ARSensorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+@property __weak id <ARReplaySensorDelegate> traceReplaySensorDelegate;
+- (id)_streamIdentifierForCaptureDeviceType:(id)arg1 position:(long long)arg2;
 - (void)_replaySensorFinishedReplayingData;
 - (void)readFileMetadata;
 - (id)imageDataToReplayForTimestamp:(double)arg1;
@@ -92,12 +93,14 @@
 - (void)failWithError:(id)arg1;
 - (id)getNextWrappedItemsFromStream:(id)arg1 converter:(CDUnknownBlockType)arg2;
 - (id)getWrappedItemsFromStream:(id)arg1 upToMovieTime:(double)arg2 converter:(CDUnknownBlockType)arg3;
+- (id)getWrappedItemsFromPixelBufferStream:(id)arg1 upToMovieTime:(double)arg2 converter:(CDUnknownBlockType)arg3;
+- (double)_getMinFrameDurationForStream:(id)arg1;
+- (_Bool)readNextFrameFromStream:(id)arg1 forWrapper:(id)arg2;
 - (id)getItemsFromStream:(id)arg1 upToMovieTime:(double)arg2 converter:(CDUnknownBlockType)arg3;
 - (id)getResultDataForClasses:(id)arg1 upToRecordTime:(double)arg2;
 - (id)getNextWrappedImageDataForReplay;
 - (id)peekNextWrappedImageDataForStreamIdentifier:(id)arg1;
 - (id)peekNextWrappedImageDataForAllRequiredStreams;
-- (CDUnknownBlockType)starDataConverter;
 - (CDUnknownBlockType)metadataWrapperConverter:(Class)arg1;
 - (CDUnknownBlockType)keyedArchiveConverterForClasses:(id)arg1;
 - (CDUnknownBlockType)keyedArchiveConverter:(Class)arg1;
@@ -108,10 +111,12 @@
 - (CDStruct_1b6d18a9)currentCMTime;
 - (double)currentTime;
 - (void)startReplayIfNeeded;
+- (_Bool)_allStreamsAreAvailable:(id)arg1;
 - (void)prepareForReplay;
 - (_Bool)isEqual:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly, nonatomic) _Bool finishedReplaying;
+- (double)sourceTimestampForMovieTimestamp:(double)arg1;
 - (id)customDataForTimestamp:(double)arg1;
 - (id)replayTechniqueForResultDataClasses:(id)arg1;
 - (void)advanceToFrameIndex:(long long)arg1;
@@ -123,7 +128,11 @@
 - (id)availableVideoFormatForDeviceType:(id)arg1 position:(long long)arg2;
 @property(readonly, nonatomic) NSArray *recordedResultClassList;
 - (unsigned long long)providedDataTypes;
+- (id)_mainVideoStringID:(id)arg1;
+@property(readonly, nonatomic) _Bool isReplayingManually;
 - (void)dealloc;
+- (id)initWithSequenceURL:(id)arg1 replayMode:(long long)arg2;
+@property(readonly, nonatomic, getter=isSynchronousMode) _Bool synchronousMode;
 - (id)initWithSequenceURL:(id)arg1 manualReplay:(_Bool)arg2 synchronousMode:(_Bool)arg3;
 - (id)initWithSequenceURL:(id)arg1 manualReplay:(_Bool)arg2;
 - (id)initWithDataFromFile:(id)arg1;

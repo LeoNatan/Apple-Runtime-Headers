@@ -16,11 +16,11 @@
     CDUnknownBlockType _deactivationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deactivationBlock; // @synthesize deactivationBlock=_deactivationBlock;
 @property(copy, nonatomic) CDUnknownBlockType activationBlock; // @synthesize activationBlock=_activationBlock;
 @property(readonly, nonatomic) unsigned long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) SBLockOverlayViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)initWithOverlayViewController:(id)arg1 priority:(unsigned long long)arg2;
 
 @end

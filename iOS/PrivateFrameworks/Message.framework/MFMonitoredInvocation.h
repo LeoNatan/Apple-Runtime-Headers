@@ -19,9 +19,9 @@
 + (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3 taskName:(id)arg4 priority:(int)arg5 canBeCancelled:(_Bool)arg6;
 + (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 taskName:(id)arg3 priority:(int)arg4 canBeCancelled:(_Bool)arg5;
 + (id)invocationWithMethodSignature:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *powerAssertionId; // @synthesize powerAssertionId=_powerAssertionId;
 @property(readonly, nonatomic) MFActivityMonitor *monitor; // @synthesize monitor=_monitor;
-- (void).cxx_destruct;
 - (id)description;
 - (void)invoke;
 - (void)setShouldLogInvocation:(_Bool)arg1;

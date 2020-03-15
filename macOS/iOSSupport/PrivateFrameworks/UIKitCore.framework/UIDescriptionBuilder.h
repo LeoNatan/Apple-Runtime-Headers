@@ -18,10 +18,10 @@
 + (id)descriptionForObject:(id)arg1 keys:(id)arg2;
 + (id)descriptionForObject:(id)arg1 namesAndObjects:(id)arg2;
 + (id)descriptionBuilderWithObject:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *descriptionString; // @synthesize descriptionString=_descriptionString;
 @property(nonatomic) NSObject *object; // @synthesize object=_object;
 @property(copy, nonatomic) NSString *separator; // @synthesize separator=_separator;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *string;
 - (void)tryAppendKey:(id)arg1;
 - (id)appendKeys:(id)arg1;

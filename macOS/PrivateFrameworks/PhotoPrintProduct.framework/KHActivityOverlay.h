@@ -20,12 +20,12 @@
 
 + (void)showInView:(id)arg1 withTimeThreshold:(double)arg2 workBlock:(CDUnknownBlockType)arg3;
 + (long long)indicatorViewStyleForOverlayStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long showCount; // @synthesize showCount=_showCount;
 @property(readonly, nonatomic) UXView *bezelView; // @synthesize bezelView=_bezelView;
 @property(readonly, nonatomic) NSLayoutConstraint *verticalBezelConstraint; // @synthesize verticalBezelConstraint=_verticalBezelConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *horizontalBezelConstraint; // @synthesize horizontalBezelConstraint=_horizontalBezelConstraint;
 @property(readonly, nonatomic) NSProgressIndicator *indicatorView; // @synthesize indicatorView=_indicatorView;
-- (void).cxx_destruct;
 - (BOOL)isVisible;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)showInView:(id)arg1 withOffset:(struct CGPoint)arg2 animated:(BOOL)arg3;

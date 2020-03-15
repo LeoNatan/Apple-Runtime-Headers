@@ -22,8 +22,8 @@
 
 + (void)clearSharedPreferences;
 + (id)sharedPreferences;
-@property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (id)signedRequestForURL:(id)arg1 parameters:(id)arg2;
 - (id)stocksYQLBaseURL;
 - (id)serviceDebuggingPath;

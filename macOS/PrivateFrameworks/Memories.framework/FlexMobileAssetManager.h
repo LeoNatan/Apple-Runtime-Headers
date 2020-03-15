@@ -24,9 +24,9 @@
 
 + (id)compatibilityFilterPredicate;
 + (id)assetWithNewestContentVersionInAssets:(id)arg1 preferInstalled:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *downloadQueue; // @synthesize downloadQueue=_downloadQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *purgeQueue; // @synthesize purgeQueue=_purgeQueue;
-- (void).cxx_destruct;
 - (long long)_responseForError:(id)arg1;
 - (unsigned long long)_statusForAssetState:(long long)arg1;
 - (unsigned long long)assetStatus:(id)arg1;

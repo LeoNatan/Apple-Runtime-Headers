@@ -37,6 +37,7 @@
 + (id)downloadPath;
 + (BOOL)canExportToPhotos;
 + (id)archiveLocalURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *livePhoto; // @synthesize livePhoto=_livePhoto;
 @property(retain, nonatomic) NSNumber *animatedEmoji; // @synthesize animatedEmoji=_animatedEmoji;
 @property(retain, nonatomic) NSNumber *movie; // @synthesize movie=_movie;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSNumber *map; // @synthesize map=_map;
 @property(nonatomic) BOOL isCopying; // @synthesize isCopying=_isCopying;
 @property(retain, nonatomic) IMServiceImpl *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (id)menuItemsGivenQuickLookSelector:(SEL)arg1 target:(id)arg2;
 - (id)newSetDesktopPictureMenuItemForScreen:(id)arg1;
 - (id)newSaveToLibraryMenuItem;

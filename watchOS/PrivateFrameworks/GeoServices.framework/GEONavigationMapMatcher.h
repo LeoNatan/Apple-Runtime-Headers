@@ -18,13 +18,13 @@
     GEOLocationShifter *_locationShifter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOLocationShifter *locationShifter; // @synthesize locationShifter=_locationShifter;
 @property(retain, nonatomic) GEORoadMatcher *roadMatcher; // @synthesize roadMatcher=_roadMatcher;
 @property(retain, nonatomic) GEORouteMatcher *routeMatcher; // @synthesize routeMatcher=_routeMatcher;
 @property(nonatomic) _Bool isSimulation; // @synthesize isSimulation=_isSimulation;
 @property(retain, nonatomic) GEONavigationMatchResult *previousMatchResult; // @synthesize previousMatchResult=_previousMatchResult;
 @property(retain, nonatomic) GEOComposedRoute *route; // @synthesize route=_route;
-- (void).cxx_destruct;
 - (id)_routeMatcherForRoute:(id)arg1;
 - (void)setShouldSnapRouteMatchToRoute:(_Bool)arg1;
 - (void)resetToLocation:(id)arg1;

@@ -18,10 +18,10 @@
 }
 
 + (id)uuid;
+- (void).cxx_destruct;
 @property int recordingReason; // @synthesize recordingReason=_recordingReason;
 @property(retain) NSUUID *clipModelID; // @synthesize clipModelID=_clipModelID;
 @property long long analysisResultCode; // @synthesize analysisResultCode=_analysisResultCode;
-- (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (id)initWithSessionID:(id)arg1 cameraID:(id)arg2 sequenceNumber:(unsigned long long)arg3;
 - (id)metricForAWD;

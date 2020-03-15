@@ -80,6 +80,7 @@
 + (id)displayableCountdowDepartureDatesFromDates:(id)arg1 withReferenceDate:(id)arg2;
 + (id)_attributedStringForCountdownDepartures:(id)arg1 referenceDate:(id)arg2 isShowingNoConnectionEmDash:(BOOL)arg3;
 + (id)_stringFromTimestampDate:(id)arg1 departureTimeZone:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *departureCutoffDate; // @synthesize departureCutoffDate=_departureCutoffDate;
 @property(nonatomic) BOOL useCompressedLeading; // @synthesize useCompressedLeading=_useCompressedLeading;
 @property(nonatomic) BOOL useCompressedGutter; // @synthesize useCompressedGutter=_useCompressedGutter;
@@ -93,7 +94,6 @@
 @property(nonatomic) unsigned long long departureStyle; // @synthesize departureStyle=_departureStyle;
 @property(retain, nonatomic) NSArray *departures; // @synthesize departures=_departures;
 @property(nonatomic) double lineImageViewSize; // @synthesize lineImageViewSize=_lineImageViewSize;
-- (void).cxx_destruct;
 - (void)setSeparatorHidden:(BOOL)arg1;
 @property(readonly, nonatomic) double labelMargin;
 - (void)setIncidentButtonHidden:(BOOL)arg1;

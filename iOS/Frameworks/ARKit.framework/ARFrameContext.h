@@ -31,6 +31,7 @@
     // Error parsing type: {?="columns"[4]}, name: _sessionTransform
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *collaborationData; // @synthesize collaborationData=_collaborationData;
 @property(readonly, nonatomic) _Bool shouldRemoveExistingAnchors; // @synthesize shouldRemoveExistingAnchors=_shouldRemoveExistingAnchors;
 @property(readonly, nonatomic) _Bool sessionTransformShouldResumeCameraPosition; // @synthesize sessionTransformShouldResumeCameraPosition=_sessionTransformShouldResumeCameraPosition;
@@ -50,7 +51,7 @@
 @property(retain, nonatomic) ARLocationData *locationData; // @synthesize locationData=_locationData;
 @property(retain, nonatomic) ARDeviceOrientationData *orientationData; // @synthesize orientationData=_orientationData;
 @property(retain, nonatomic) ARImageData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (id)resultDataOfClass:(Class)arg1;
 - (long long)cameraPosition;
 - (void)removeAnchor:(id)arg1;
@@ -65,7 +66,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

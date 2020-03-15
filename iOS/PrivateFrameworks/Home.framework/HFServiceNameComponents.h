@@ -15,10 +15,10 @@
     NSString *_roomName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *roomName; // @synthesize roomName=_roomName;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSString *rawServiceName; // @synthesize rawServiceName=_rawServiceName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *composedString;

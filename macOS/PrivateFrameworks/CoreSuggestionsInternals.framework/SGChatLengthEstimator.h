@@ -20,8 +20,8 @@
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
-@property(readonly) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly) NSString *path; // @synthesize path=_path;
 - (unsigned long long)estimateMessagesInChat:(id)arg1;
 - (void)recordMessageInChat:(id)arg1;
 @property(readonly) unsigned long long count;

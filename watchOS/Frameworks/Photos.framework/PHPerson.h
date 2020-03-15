@@ -11,6 +11,7 @@
 @interface PHPerson : PHObject
 {
     _Bool _inPersonNamingModel;
+    unsigned short _questionType;
     unsigned short _ageType;
     unsigned short _genderType;
     NSString *_name;
@@ -21,7 +22,6 @@
     int _faceCount;
     NSDictionary *_contactMatchingDictionary;
     int _verifiedType;
-    int _questionType;
 }
 
 + (id)inferredContactByPersonLocalIdentifierForPersons:(id)arg1;
@@ -52,7 +52,7 @@
 + (id)fetchPersonsForAssetCollection:(id)arg1 options:(id)arg2;
 + (id)fetchPersonsInAsset:(id)arg1 options:(id)arg2;
 + (id)fetchPersonsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
-+ (id)fetchPersonsWithQuestionType:(int)arg1 options:(id)arg2;
++ (id)fetchPersonsWithQuestionType:(unsigned short)arg1 options:(id)arg2;
 + (id)fetchPersonsWithType:(int)arg1 options:(id)arg2;
 + (id)fetchPersonsWithOptions:(id)arg1;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
@@ -76,9 +76,10 @@
 + (int)_personSuggestionsForPerson:(id)arg1 confirmedPersonSuggestions:(id)arg2 rejectedPersonSuggestions:(id)arg3 fromClient:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (int)personSuggestionsForPerson:(id)arg1 confirmedPersonSuggestions:(id)arg2 rejectedPersonSuggestions:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)personSuggestionsForPerson:(id)arg1 confirmedPersonSuggestions:(id)arg2 rejectedPersonSuggestions:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned short genderType; // @synthesize genderType=_genderType;
 @property(readonly, nonatomic) unsigned short ageType; // @synthesize ageType=_ageType;
-@property(readonly, nonatomic) int questionType; // @synthesize questionType=_questionType;
+@property(readonly, nonatomic) unsigned short questionType; // @synthesize questionType=_questionType;
 @property(readonly, nonatomic) int verifiedType; // @synthesize verifiedType=_verifiedType;
 @property(readonly, nonatomic) NSDictionary *contactMatchingDictionary; // @synthesize contactMatchingDictionary=_contactMatchingDictionary;
 @property(readonly, nonatomic) int faceCount; // @synthesize faceCount=_faceCount;
@@ -88,7 +89,6 @@
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)suggestedContacts;
 - (id)inferredContact;

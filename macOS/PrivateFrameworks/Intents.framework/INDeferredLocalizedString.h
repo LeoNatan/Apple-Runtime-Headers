@@ -20,13 +20,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *_cachedLocalization; // @synthesize _cachedLocalization;
 @property(readonly, copy) NSURL *_bundleURL; // @synthesize _bundleURL;
 @property(readonly, copy) NSString *_bundleIdentifier; // @synthesize _bundleIdentifier;
 @property(readonly, copy) NSArray *_arguments; // @synthesize _arguments;
 @property(readonly, copy) NSString *_table; // @synthesize _table;
 @property(readonly, copy) NSString *_formatKey; // @synthesize _formatKey;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

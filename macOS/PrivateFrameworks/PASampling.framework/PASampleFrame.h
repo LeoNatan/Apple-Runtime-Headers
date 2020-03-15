@@ -22,10 +22,10 @@
 + (id)_newSampleFrameFromSerializedSampleFrame:(const CDStruct_a7511cde *)arg1;
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) NSSet *childFrames; // @synthesize childFrames=_childFrames;
 @property(readonly) __weak PASampleFrame *parentFrame; // @synthesize parentFrame=_parentFrame;
 @property unsigned long long address; // @synthesize address=_address;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)querySymbolInformationForSelfAndChildrenUsingTask:(id)arg1 andKernelTask:(id)arg2 andSampleTimeSeriesDataStore:(id)arg3;
 - (void)_addChildFrame:(id)arg1;
@@ -40,10 +40,10 @@
 - (id)copyWithNewParent:(id)arg1;
 @property(readonly) BOOL isKernel;
 @property(readonly) unsigned long long symbolicationAddress;
-- (void)populateReferencesUsingBufferPosition:(const void *)arg1 andDeserializationDictionary:(struct NSMutableDictionary *)arg2 andDataBufferDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBufferPosition:(const void *)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (id)_initWithSerializedSampleFrame:(const CDStruct_a7511cde *)arg1;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg2;
+- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

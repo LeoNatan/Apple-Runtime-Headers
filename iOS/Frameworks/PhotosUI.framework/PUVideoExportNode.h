@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _renderedVideoSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *exportProgress; // @synthesize exportProgress=_exportProgress;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(readonly, copy, nonatomic) NSString *livePhotoPairingIdentifier; // @synthesize livePhotoPairingIdentifier=_livePhotoPairingIdentifier;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <PUImageInfoNode> imageInfoNode; // @synthesize imageInfoNode=_imageInfoNode;
 @property(readonly, nonatomic) id <PUVideoURLNode> videoURLNode; // @synthesize videoURLNode=_videoURLNode;
 @property(readonly, nonatomic) struct CGSize renderedVideoSize; // @synthesize renderedVideoSize=_renderedVideoSize;
-- (void).cxx_destruct;
 - (void)_handleExportCompletedWithSuccess:(_Bool)arg1 editedSize:(struct CGSize)arg2 error:(id)arg3;
 - (void)didCancel;
 @property(readonly, nonatomic) double progress;

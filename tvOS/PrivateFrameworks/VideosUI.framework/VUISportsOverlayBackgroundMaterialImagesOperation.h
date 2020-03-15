@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct CGSize _resizedBackgroundImageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *sourceBackgroundImage; // @synthesize sourceBackgroundImage=_sourceBackgroundImage;
 @property(copy, nonatomic) NSDictionary *overlayMaterialImageByIdentifier; // @synthesize overlayMaterialImageByIdentifier=_overlayMaterialImageByIdentifier;
 @property(retain, nonatomic) UIImage *resizedSourceBackgroundImage; // @synthesize resizedSourceBackgroundImage=_resizedSourceBackgroundImage;
 @property(copy, nonatomic) NSArray *overlayMaterialRequests; // @synthesize overlayMaterialRequests=_overlayMaterialRequests;
 @property(nonatomic) struct CGSize resizedBackgroundImageSize; // @synthesize resizedBackgroundImageSize=_resizedBackgroundImageSize;
-- (void).cxx_destruct;
 - (id)_blurredMaterialImageWithSourceBackgroundImage:(id)arg1 forRect:(struct CGRect)arg2;
 - (void)main;
 - (id)init;

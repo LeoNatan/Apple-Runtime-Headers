@@ -29,7 +29,7 @@
     struct CGPoint _preciseLocationInWindow;
     struct CGPoint _precisePreviousLocationInWindow;
     float _previousPressure;
-    unsigned char _pathIndex;
+    long _pathIndex;
     unsigned char _pathIdentity;
     float _pathMajorRadius;
     float _majorRadiusTolerance;
@@ -67,6 +67,7 @@
 }
 
 + (id)_createTouchesWithGSEvent:(struct __GSEvent *)arg1 phase:(int)arg2 view:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double initialTouchTimestamp; // @synthesize initialTouchTimestamp=_initialTouchTimestamp;
 @property(readonly, nonatomic) float azimuthAngleInWindow; // @synthesize azimuthAngleInWindow=_azimuthAngleInWindow;
 @property(nonatomic, setter=_setAzimuthAngleInCADisplay:) float azimuthAngleInCADisplay; // @synthesize azimuthAngleInCADisplay=_azimuthAngleInCADisplay;
@@ -88,9 +89,9 @@
 @property(nonatomic, setter=_setDisplacement:) struct CGSize _displacement; // @synthesize _displacement;
 @property(readonly, nonatomic) float _pressure; // @synthesize _pressure;
 @property(nonatomic, setter=_setPathIdentity:) unsigned char _pathIdentity; // @synthesize _pathIdentity;
-@property(nonatomic, setter=_setPathIndex:) unsigned char _pathIndex; // @synthesize _pathIndex;
+@property(nonatomic, setter=_setPathIndex:) long _pathIndex; // @synthesize _pathIndex;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
+- (id)_rehitTestWithEvent:(id)arg1 constrainingToCurrentWindow:(_Bool)arg2;
 - (id)_rehitTest;
 - (void)_willBeDispatchedAsEnded;
 - (_Bool)_isStationaryRelativeToTouches:(id)arg1;

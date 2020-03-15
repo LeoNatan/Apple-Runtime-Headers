@@ -17,8 +17,8 @@
     double _distanceToClosestWalkingSegment;
 }
 
-@property(readonly, nonatomic) double distanceToClosestWalkingSegment; // @synthesize distanceToClosestWalkingSegment=_distanceToClosestWalkingSegment;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double distanceToClosestWalkingSegment; // @synthesize distanceToClosestWalkingSegment=_distanceToClosestWalkingSegment;
 - (void)_insertUpdater:(id)arg1 into:(id)arg2;
 - (_Bool)_shouldConsiderCourseForLocation:(id)arg1;
 - (double)_scoreModifierForStep:(id)arg1 previousStep:(id)arg2;

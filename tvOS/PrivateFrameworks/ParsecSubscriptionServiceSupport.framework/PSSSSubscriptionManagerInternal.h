@@ -13,8 +13,8 @@
     VSSubscriptionRegistrationCenter *_registrationCenter;
 }
 
-@property(retain, nonatomic) VSSubscriptionRegistrationCenter *registrationCenter; // @synthesize registrationCenter=_registrationCenter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VSSubscriptionRegistrationCenter *registrationCenter; // @synthesize registrationCenter=_registrationCenter;
 - (void)removeWebSubscriptionServicesCreatedAfterDate:(id)arg1;
 - (void)removeSubscriptionServiceForURL:(id)arg1;
 - (void)registerSubscriptionServiceForURL:(id)arg1 withSubscriptionInfo:(id)arg2 expirationDate:(id)arg3;

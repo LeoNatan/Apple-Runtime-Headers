@@ -23,9 +23,9 @@
 }
 
 + (_Bool)isProblemReportingEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *improveSiriSpecifiers; // @synthesize improveSiriSpecifiers=_improveSiriSpecifiers;
 @property(nonatomic) _Bool shouldShareHealthRecordsData; // @synthesize shouldShareHealthRecordsData=_shouldShareHealthRecordsData;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)setShouldShareAppActivityWithAppDevelopers:(id)arg1 specifier:(id)arg2;
 - (id)shouldShareAppActivityWithAppDevelopers;

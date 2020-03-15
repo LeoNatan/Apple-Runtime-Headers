@@ -22,6 +22,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *bluetoothSessionSetupGroup; // @synthesize bluetoothSessionSetupGroup=_bluetoothSessionSetupGroup;
 @property(retain, nonatomic) NSArray *connectedDeviceAddresses; // @synthesize connectedDeviceAddresses=_connectedDeviceAddresses;
 @property(retain, nonatomic) NSArray *pairedDeviceAddresses; // @synthesize pairedDeviceAddresses=_pairedDeviceAddresses;
@@ -30,7 +31,6 @@
 @property(nonatomic) struct BTSessionImpl *bluetoothSession; // @synthesize bluetoothSession=_bluetoothSession;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)localDevice:(struct BTLocalDeviceImpl *)arg1 event:(int)arg2 result:(int)arg3;
 - (void)_tearDownLocalDevice;
 - (void)_setUpLocalDevice;

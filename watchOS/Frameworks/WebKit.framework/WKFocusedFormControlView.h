@@ -34,14 +34,14 @@ __attribute__((visibility("hidden")))
     struct CGRect _highlightedFrame;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPreviousNode; // @synthesize hasPreviousNode=_hasPreviousNode;
 @property(nonatomic) _Bool hasNextNode; // @synthesize hasNextNode=_hasNextNode;
 @property(nonatomic) struct CGRect highlightedFrame; // @synthesize highlightedFrame=_highlightedFrame;
 @property(nonatomic) struct CGRect nextHighlightedFrame; // @synthesize nextHighlightedFrame=_nextHighlightedFrame;
 @property(nonatomic) struct CGRect previousHighlightedFrame; // @synthesize previousHighlightedFrame=_previousHighlightedFrame;
 @property(readonly, nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)textDidChange:(id)arg1;
 - (void)textWillChange:(id)arg1;
 - (void)selectionDidChange:(id)arg1;

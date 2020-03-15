@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     double *_rowHeights;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(readonly, nonatomic) long long numberOfRows; // @synthesize numberOfRows=_numberOfRows;
 @property(readonly, nonatomic) double columnSpacing; // @synthesize columnSpacing=_columnSpacing;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize totalContentSize;
 - (struct CGSize)sizeForItemAtIndex:(long long)arg1;
 - (double)rowHeightForIndex:(long long)arg1;

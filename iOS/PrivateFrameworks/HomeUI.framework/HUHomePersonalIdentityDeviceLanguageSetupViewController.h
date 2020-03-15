@@ -24,6 +24,7 @@
     NSDictionary *_languageToHomePodsMapping;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *languageToHomePodsMapping; // @synthesize languageToHomePodsMapping=_languageToHomePodsMapping;
 @property(retain, nonatomic) NSArray *supportedMultiUserLanguages; // @synthesize supportedMultiUserLanguages=_supportedMultiUserLanguages;
 @property(retain, nonatomic) OBLinkTrayButton *customizeButton; // @synthesize customizeButton=_customizeButton;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) NSString *overrideTargetLanguage; // @synthesize overrideTargetLanguage=_overrideTargetLanguage;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)hu_preloadContent;

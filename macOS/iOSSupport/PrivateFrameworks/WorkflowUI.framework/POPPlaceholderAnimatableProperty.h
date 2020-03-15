@@ -16,11 +16,11 @@
     double threshold;
 }
 
+- (void).cxx_destruct;
 - (double)threshold;
 - (CDUnknownBlockType)writeBlock;
 - (CDUnknownBlockType)readBlock;
 - (id)name;
-- (void).cxx_destruct;
 
 @end
 

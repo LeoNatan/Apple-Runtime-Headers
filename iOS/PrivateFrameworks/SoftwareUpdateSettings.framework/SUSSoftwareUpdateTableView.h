@@ -18,13 +18,13 @@
     UIActivityIndicatorView *_checkingForUpdateSpinner;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) UIActivityIndicatorView *checkingForUpdateSpinner; // @synthesize checkingForUpdateSpinner=_checkingForUpdateSpinner;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *checkingStatusLabel; // @synthesize checkingStatusLabel=_checkingStatusLabel;
 @property _Bool updatesDeferred; // @synthesize updatesDeferred=_updatesDeferred;
 @property(retain, nonatomic) NSString *currentVersion; // @synthesize currentVersion=_currentVersion;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)preferredContentSizeChanged:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 style:(long long)arg2;

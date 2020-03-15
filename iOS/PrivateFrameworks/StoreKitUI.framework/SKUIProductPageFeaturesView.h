@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     UIView *_topBorderView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long gameCenterFeatures; // @synthesize gameCenterFeatures=_gameCenterFeatures;
 @property(nonatomic) long long features; // @synthesize features=_features;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
-- (void).cxx_destruct;
 - (id)_gameCenterStringWithFeatures:(unsigned long long)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBackgroundColor:(id)arg1;

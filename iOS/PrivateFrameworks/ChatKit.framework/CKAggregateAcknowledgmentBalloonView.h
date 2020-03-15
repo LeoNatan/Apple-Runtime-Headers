@@ -21,10 +21,10 @@
 
 + (id)_middleBubbleSquareImage;
 + (id)_topBubbleSquareImage;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL solidColor; // @synthesize solidColor=_solidColor;
 @property(nonatomic) BOOL gradientColor; // @synthesize gradientColor=_gradientColor;
 @property(nonatomic) __weak UIView<CKGradientReferenceView> *gradientReferenceView; // @synthesize gradientReferenceView=_gradientReferenceView;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)prepareForDisplay;
 - (void)layoutSubviews;

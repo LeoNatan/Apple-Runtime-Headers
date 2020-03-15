@@ -25,8 +25,8 @@
     id <PXNSScrollViewControllerAccessibilityDelegate> _accessibilityDelegate;
 }
 
-@property(nonatomic) __weak id <PXNSScrollViewControllerAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXNSScrollViewControllerAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 @property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedCells;
 @property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedChildren;
 @property(readonly, nonatomic) NSArray *axDelegateAccessibilityVisibleChildren;
@@ -65,7 +65,7 @@
 - (void)setVisibleOrigin:(struct CGPoint)arg1;
 - (BOOL)isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
 - (void)scrollToEdge:(unsigned int)arg1;
-- (void)addSubviewToScrollView:(struct NSObject *)arg1;
+- (void)addSubviewToScrollView:(id)arg1;
 - (void)addSubview:(id)arg1;
 - (BOOL)hasWindow;
 @property(nonatomic) BOOL layoutOnBoundsChanges;

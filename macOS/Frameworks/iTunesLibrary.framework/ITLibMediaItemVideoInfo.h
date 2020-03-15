@@ -20,6 +20,7 @@
     unsigned long long _videoHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long videoHeight; // @synthesize videoHeight=_videoHeight;
 @property(nonatomic) unsigned long long videoWidth; // @synthesize videoWidth=_videoWidth;
 @property(nonatomic, getter=isHD) BOOL hd; // @synthesize hd=_hd;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long season; // @synthesize season=_season;
 @property(copy, nonatomic) NSString *sortSeries; // @synthesize sortSeries=_sortSeries;
 @property(copy, nonatomic) NSString *series; // @synthesize series=_series;
-- (void).cxx_destruct;
 
 @end
 

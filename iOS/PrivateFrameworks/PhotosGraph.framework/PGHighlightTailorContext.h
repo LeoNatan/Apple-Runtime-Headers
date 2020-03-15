@@ -25,6 +25,7 @@
     NSSet *_verifiedPersonLocalIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *verifiedPersonLocalIdentifiers; // @synthesize verifiedPersonLocalIdentifiers=_verifiedPersonLocalIdentifiers;
 @property(retain, nonatomic) NSArray *childHighlights; // @synthesize childHighlights=_childHighlights;
 @property(nonatomic) unsigned long long numberOfExtendedAssets; // @synthesize numberOfExtendedAssets;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSSet *meaningLabels; // @synthesize meaningLabels=_meaningLabels;
 @property(readonly, nonatomic) PGGraphHighlightNode *highlightNode; // @synthesize highlightNode=_highlightNode;
 @property(readonly, nonatomic) id <PGHighlightModel> highlight; // @synthesize highlight=_highlight;
-- (void).cxx_destruct;
 - (id)initForTestingWithHighlight:(id)arg1;
 - (id)initWithHighlight:(id)arg1 forManager:(id)arg2;
 

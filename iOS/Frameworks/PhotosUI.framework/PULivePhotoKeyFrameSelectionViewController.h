@@ -16,10 +16,10 @@
     UIButton *_makeKeyPhotoBtn;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *makeKeyPhotoBtn; // @synthesize makeKeyPhotoBtn=_makeKeyPhotoBtn;
 @property(copy, nonatomic) NSString *selectionTitle; // @synthesize selectionTitle=_selectionTitle;
 @property(nonatomic) __weak id <PULivePhotoKeyFrameSelectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateButtonTitle;
 - (void)tapMakeKeyPhoto:(id)arg1;
 - (struct CGSize)preferredContentSize;

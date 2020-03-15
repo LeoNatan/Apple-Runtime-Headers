@@ -16,9 +16,9 @@
     NSString *_selectedVerificationChannelIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *selectedVerificationChannelIdentifier; // @synthesize selectedVerificationChannelIdentifier=_selectedVerificationChannelIdentifier;
 @property(retain, nonatomic) NPKProtoStandaloneRequestHeader *requestHeader; // @synthesize requestHeader=_requestHeader;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

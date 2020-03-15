@@ -14,9 +14,9 @@
     LPLinkMetadata *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPLinkMetadata *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) id payload; // @synthesize payload=_payload;
-- (void).cxx_destruct;
 - (id)activityViewControllerLinkMetadata:(id)arg1;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;

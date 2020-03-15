@@ -25,11 +25,11 @@
 + (id)systemBuildVersion;
 + (id)currentSoftwareVersion;
 + (id)softwareVersionFromArchivalRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property long long schemaRevision; // @synthesize schemaRevision=_schemaRevision;
 @property(copy) NSString *appVersion; // @synthesize appVersion=_appVersion;
 @property(copy) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(copy) NSString *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (_Bool)isEqualToSoftwareVersion:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

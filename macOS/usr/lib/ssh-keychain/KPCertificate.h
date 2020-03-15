@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSData *_objId;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *objId; // @synthesize objId=_objId;
 @property(retain) NSData *exponent; // @synthesize exponent=_exponent;
 @property(retain) NSData *modulus; // @synthesize modulus=_modulus;
 @property(retain) id privateKeyAcl; // @synthesize privateKeyAcl=_privateKeyAcl;
 @property(retain) id privateKey; // @synthesize privateKey=_privateKey;
-- (void).cxx_destruct;
 
 @end
 

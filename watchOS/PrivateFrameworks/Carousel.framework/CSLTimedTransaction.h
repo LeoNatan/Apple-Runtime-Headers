@@ -17,11 +17,11 @@
     double _completionTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldBlueScreen; // @synthesize shouldBlueScreen=_shouldBlueScreen;
 @property(readonly, nonatomic) int stackshotCount; // @synthesize stackshotCount=_stackshotCount;
 @property(readonly, nonatomic) double completionTime; // @synthesize completionTime=_completionTime;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_didComplete;
 - (void)_begin;
 - (id)debugDescription;

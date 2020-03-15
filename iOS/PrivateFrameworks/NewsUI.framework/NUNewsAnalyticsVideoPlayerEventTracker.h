@@ -26,6 +26,7 @@
     NTPBEvent *_articleHostViewExposureEvent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVideoPlayerVisible) _Bool videoPlayerIsVisible; // @synthesize videoPlayerIsVisible=_videoPlayerIsVisible;
 @property(retain, nonatomic) NTPBEvent *articleHostViewExposureEvent; // @synthesize articleHostViewExposureEvent=_articleHostViewExposureEvent;
 @property(nonatomic) int currentVideoPlayMethod; // @synthesize currentVideoPlayMethod=_currentVideoPlayMethod;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSSNewsAnalyticsEventAnnotator *eventAnnotator; // @synthesize eventAnnotator=_eventAnnotator;
 @property(readonly, copy, nonatomic) NUNewsAnalyticsVideoPlayerEventTrackerConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) __weak id <NSSNewsAnalyticsPBEventStreamObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)_currentArticleViewingSessionID;
 - (id)_currentArticleID;
 - (id)_articleViewingSessionIDForVideoItem:(id)arg1;

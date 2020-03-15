@@ -22,8 +22,8 @@
 }
 
 + (id)sharedLocket;
-@property(retain) NPTOLocketReader *reader; // @synthesize reader=_reader;
 - (void).cxx_destruct;
+@property(retain) NPTOLocketReader *reader; // @synthesize reader=_reader;
 - (void)_mainqueue_collectionsChanged:(id)arg1;
 - (void)collectionsChanged:(id)arg1;
 - (void)_handleSyncInfoSyncStatusChangedNotification:(id)arg1;

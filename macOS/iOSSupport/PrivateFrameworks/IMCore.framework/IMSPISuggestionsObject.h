@@ -15,10 +15,10 @@
     NSArray *_participants;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *participants; // @synthesize participants=_participants;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) NSString *chatGUID; // @synthesize chatGUID=_chatGUID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithChatGuid:(id)arg1 displayName:(id)arg2 participants:(id)arg3;
 

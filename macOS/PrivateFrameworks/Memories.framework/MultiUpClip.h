@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSString *_sequentialEffectID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sequentialEffectID; // @synthesize sequentialEffectID=_sequentialEffectID;
 @property(retain, nonatomic) NSArray *containedClips; // @synthesize containedClips=_containedClips;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSMutableDictionary *multiUpEffectSettings; // @synthesize multiUpEffectSettings=_multiUpEffectSettings;
-- (void).cxx_destruct;
 - (void)setContentsFromPlist:(id)arg1 inProject:(id)arg2;
 - (id)plistRepresentationFromProject:(id)arg1;
 - (void)validateEffectRange:(CDStruct_e83c9415)arg1 inProject:(id)arg2;

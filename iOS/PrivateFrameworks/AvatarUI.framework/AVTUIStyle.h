@@ -16,9 +16,9 @@
 
 + (id)darkStyle;
 + (id)lightStyle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 
 @end
 

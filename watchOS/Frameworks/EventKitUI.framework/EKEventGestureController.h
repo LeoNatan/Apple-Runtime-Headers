@@ -61,6 +61,7 @@
     EKDayOccurrenceView *_draggingViewSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKDayOccurrenceView *draggingViewSource; // @synthesize draggingViewSource=_draggingViewSource;
 @property(retain, nonatomic) NSString *sessionIdentifierForDebug; // @synthesize sessionIdentifierForDebug=_sessionIdentifierForDebug;
 @property(readonly, nonatomic) EKDayOccurrenceView *draggingView; // @synthesize draggingView=_draggingView;
@@ -73,7 +74,6 @@
 @property(nonatomic) _Bool usesXDragOffsetInCancelRegion; // @synthesize usesXDragOffsetInCancelRegion=_usesXDragOffsetInCancelRegion;
 @property(nonatomic) __weak id <EKEventGestureControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <EKEventGestureControllerUntimedDelegate> untimedDelegate; // @synthesize untimedDelegate=_untimedDelegate;
-- (void).cxx_destruct;
 - (float)_Debug_HoursSinceStartOfDay:(double)arg1;
 - (_Bool)_isPointInCancelRegion:(struct CGPoint)arg1;
 - (float)_cancelRegionMargin;
@@ -129,6 +129,7 @@
 - (void)_longPress:(id)arg1;
 - (void)_tapGesture:(id)arg1;
 - (void)_cleanUpForcedStart;
+- (void)liftUpOccurrenceForEditingEvent:(id)arg1;
 - (void)endForcedStart;
 - (void)forceStartWithOccurrence:(id)arg1 shouldUpdateViewSource:(_Bool)arg2 shouldUpdateOrigin:(_Bool)arg3;
 - (void)updateDraggingOccurrenceFrameFromSource;

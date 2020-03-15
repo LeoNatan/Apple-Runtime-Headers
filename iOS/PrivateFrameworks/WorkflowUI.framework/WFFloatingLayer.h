@@ -19,6 +19,7 @@
     UITraitCollection *_traitCollection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(nonatomic) __weak CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
@@ -26,7 +27,6 @@
 @property(nonatomic) _Bool colorizesShadow; // @synthesize colorizesShadow=_colorizesShadow;
 @property(nonatomic, getter=isPressed) _Bool pressed; // @synthesize pressed=_pressed;
 @property(copy, nonatomic) WFGradient *gradient; // @synthesize gradient=_gradient;
-- (void).cxx_destruct;
 - (void)layoutSublayers;
 - (void)setPressed:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)updateShadowColor;

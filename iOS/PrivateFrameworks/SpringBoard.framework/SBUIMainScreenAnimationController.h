@@ -15,9 +15,9 @@
     id <BSInvalidatable> _wallpaperRequiredAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> wallpaperRequiredAssertion; // @synthesize wallpaperRequiredAssertion=_wallpaperRequiredAssertion;
 @property(retain, nonatomic) id <BSInvalidatable> colorSamplingAssertion; // @synthesize colorSamplingAssertion=_colorSamplingAssertion;
-- (void).cxx_destruct;
 - (void)_cleanupAnimation;
 - (void)_begin;
 - (void)_dismissBannerAnimated:(_Bool)arg1;

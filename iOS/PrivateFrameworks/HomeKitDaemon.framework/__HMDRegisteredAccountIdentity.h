@@ -13,8 +13,8 @@
     HMDAccount *_account;
 }
 
-@property(readonly) HMDAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(readonly) HMDAccount *account; // @synthesize account=_account;
 - (id)initWithIdentity:(id)arg1 account:(id)arg2;
 - (id)initWithIdentity:(id)arg1;
 

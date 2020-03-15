@@ -14,9 +14,9 @@
     NSArray *_generators;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool ascending; // @synthesize ascending=_ascending;
 @property(readonly, nonatomic) NSArray *generators; // @synthesize generators=_generators;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqualToEFSQLOrderByExpressionGenerator:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

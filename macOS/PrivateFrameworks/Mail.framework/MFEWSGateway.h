@@ -22,10 +22,10 @@
 + (id)keyPathsForValuesAffectingRequestResponseQueue;
 + (BOOL)supportsSecureCoding;
 + (id)operationActivityLog;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *savedOfflineToRealEWSIdStrings; // @synthesize savedOfflineToRealEWSIdStrings=_savedOfflineToRealEWSIdStrings;
 @property(readonly, nonatomic) NSOperationQueue *syncOperationQueue; // @synthesize syncOperationQueue=_syncOperationQueue;
 @property(readonly, nonatomic) __weak MFEWSAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long maxRequestsToSend;
 - (void)_chunkItemsToSend:(id)arg1 applyToBlock:(CDUnknownBlockType)arg2;
 - (void)setOofState:(long long)arg1 internalReply:(id)arg2 externalReply:(id)arg3 startTime:(id)arg4 endTime:(id)arg5 externalAudienceType:(long long)arg6;

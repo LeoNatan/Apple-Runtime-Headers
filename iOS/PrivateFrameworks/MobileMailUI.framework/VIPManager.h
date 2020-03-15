@@ -22,8 +22,8 @@
 + (id)defaultInstance;
 + (void)setBackingManager:(id)arg1;
 + (struct os_unfair_lock_s *)defaultInstanceLock;
-@property(readonly, nonatomic) id <EMVIPManager> backingManager; // @synthesize backingManager=_backingManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <EMVIPManager> backingManager; // @synthesize backingManager=_backingManager;
 - (id)allVIPEmailAddressesCriterion;
 - (id)vipCriteria;
 - (id)criterionForEmailAddresses:(id)arg1;

@@ -19,8 +19,8 @@
     _MKPlaceReservationInfo *_reservationInfo;
 }
 
-@property(readonly, nonatomic) _MKPlaceReservationInfo *reservationInfo; // @synthesize reservationInfo=_reservationInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _MKPlaceReservationInfo *reservationInfo; // @synthesize reservationInfo=_reservationInfo;
 - (void)_mapkit_tintColorDidChange;
 - (void)_updateTintColor;
 - (void)_updateButtonTitleAttributes;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <P256PublicKeyProtocol> _key;
 }
 
-@property(retain) id <P256PublicKeyProtocol> key; // @synthesize key=_key;
 - (void).cxx_destruct;
+@property(retain) id <P256PublicKeyProtocol> key; // @synthesize key=_key;
 - (id)description;
 - (id)dataRepresentation;
 - (id)initWithData:(id)arg1 error:(id *)arg2;

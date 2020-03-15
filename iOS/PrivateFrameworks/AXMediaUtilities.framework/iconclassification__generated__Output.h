@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_classLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *classLabel; // @synthesize classLabel=_classLabel;
 @property(retain, nonatomic) NSDictionary *output1; // @synthesize output1=_output1;
-- (void).cxx_destruct;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
 - (id)initWithOutput1:(id)arg1 classLabel:(id)arg2;

@@ -26,8 +26,8 @@
     ASDAudioDevice *_underlyingDevice;
 }
 
-@property(readonly, nonatomic) ASDAudioDevice *underlyingDevice; // @synthesize underlyingDevice=_underlyingDevice;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ASDAudioDevice *underlyingDevice; // @synthesize underlyingDevice=_underlyingDevice;
 - (void)changedProperty:(const struct AudioObjectPropertyAddress *)arg1 forObject:(id)arg2;
 - (BOOL)requestConfigurationChangeForDevice:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (CDUnknownBlockType)willDoWriteMixBlock;

@@ -19,8 +19,8 @@
 }
 
 + (double)defaultCentimeterValue;
-@property(retain, nonatomic) NSNumber *centimeterValue; // @synthesize centimeterValue=_centimeterValue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *centimeterValue; // @synthesize centimeterValue=_centimeterValue;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (double)pickerView:(id)arg1 widthForComponent:(long long)arg2;

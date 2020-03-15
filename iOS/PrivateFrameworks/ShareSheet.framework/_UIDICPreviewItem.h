@@ -21,12 +21,12 @@
     NSURL *_previewItemURLForDisplay;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *previewItemURLForDisplay; // @synthesize previewItemURLForDisplay=_previewItemURLForDisplay;
 @property(retain, nonatomic) NSURL *URLToDeleteOnDealloc; // @synthesize URLToDeleteOnDealloc=_URLToDeleteOnDealloc;
 @property(retain, nonatomic) NSString *previewItemTitle; // @synthesize previewItemTitle=_name;
 @property(retain, nonatomic) NSURL *previewItemURLOverride; // @synthesize previewItemURLOverride=_previewURLOverride;
 @property(retain, nonatomic) NSURL *previewItemURL; // @synthesize previewItemURL=_URL;
-- (void).cxx_destruct;
 - (id)_primitive_previewItemContentType;
 @property(retain, nonatomic) NSString *previewItemContentType;
 - (void)dealloc;

@@ -18,9 +18,9 @@
 + (id)sanitizedUpgradeFlowServerDict:(id)arg1;
 + (id)_upgradePageIdentifierForError:(id)arg1;
 + (id)upgradeFlowSpecificationSampleForLevel:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsWiFi; // @synthesize needsWiFi=_needsWiFi;
 @property(nonatomic) long long offerType; // @synthesize offerType=_offerType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *serverDict;
 - (id)initWithServerDictionary:(id)arg1;
 - (id)upgradePageForError:(id)arg1;

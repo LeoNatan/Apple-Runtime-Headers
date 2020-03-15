@@ -25,6 +25,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tracePath; // @synthesize tracePath=_tracePath;
 @property(retain, nonatomic) GEODirectionsRequestFeedback *directionsRequestFeedback; // @synthesize directionsRequestFeedback=_directionsRequestFeedback;
 @property(retain, nonatomic) GEOMapRegion *currentMapRegion; // @synthesize currentMapRegion=_currentMapRegion;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) GEORouteAttributes *routeAttributes; // @synthesize routeAttributes=_routeAttributes;
 @property(retain, nonatomic) GEOComposedWaypoint *destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) GEOComposedWaypoint *origin; // @synthesize origin=_origin;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

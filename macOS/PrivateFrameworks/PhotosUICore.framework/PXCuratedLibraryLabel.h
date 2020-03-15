@@ -18,9 +18,9 @@
 }
 
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 withConfiguration:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) PXCuratedLibraryLabelConfiguration *userData; // @synthesize userData=_userData;
 @property(nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *accessibilityRole;
 @property(readonly, copy, nonatomic) NSString *accessibilityLabel;
 @property(readonly, nonatomic) BOOL isContainedInAsset;

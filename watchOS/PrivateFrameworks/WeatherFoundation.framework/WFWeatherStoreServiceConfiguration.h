@@ -26,6 +26,7 @@
 + (id)generateUserAgent;
 + (id)defaultConfiguration;
 + (id)defaultConfigurationWithSourceBundleIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFSettingsManager *settingsManager; // @synthesize settingsManager=_settingsManager;
 @property(retain, nonatomic) Class cacheClass; // @synthesize cacheClass=_cacheClass;
 @property(nonatomic) struct os_unfair_lock_s serviceConnectivityEvaluatorLock; // @synthesize serviceConnectivityEvaluatorLock=_serviceConnectivityEvaluatorLock;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) NWPathEvaluator *serviceConnectivityEvaluator; // @synthesize serviceConnectivityEvaluator=_serviceConnectivityEvaluator;
-- (void).cxx_destruct;
 - (id)parseForecast:(unsigned int)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 apiVersion:(id)arg6 error:(id *)arg7;
 - (id)parseForecast:(unsigned int)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
 - (id)forecastRequestForTypes:(unsigned int)arg1 location:(id)arg2 date:(id)arg3 apiVersion:(id)arg4 error:(id *)arg5;
@@ -47,6 +47,7 @@
 - (id)apiConfiguration;
 @property(readonly, nonatomic) NSString *apiVersion;
 - (void)URLSession:(id)arg1 task:(id)arg2 didFinishCollectingMetrics:(id)arg3;
+- (void)invalidate;
 - (id)init;
 
 // Remaining properties

@@ -16,9 +16,9 @@
     NSMutableDictionary *_CNIDToAliasesMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *CNIDToAliasesMap; // @synthesize CNIDToAliasesMap=_CNIDToAliasesMap;
 @property(retain, nonatomic) NSMutableDictionary *aliasToCNIDMap; // @synthesize aliasToCNIDMap=_aliasToCNIDMap;
-- (void).cxx_destruct;
 - (id)matchAliasesFromCacheForCNContact:(id)arg1;
 - (void)handleAddOrUpdateEventForCNContact:(id)arg1;
 - (void)visitDeleteContactEvent:(id)arg1;

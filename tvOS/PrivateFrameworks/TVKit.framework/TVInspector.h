@@ -22,6 +22,7 @@
 
 + (id)toggleKeyCommandWithAction:(SEL)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) long long gestureMode; // @synthesize gestureMode=_gestureMode;
 @property(retain, nonatomic) NSDictionary *moveKeyToPoint; // @synthesize moveKeyToPoint=_moveKeyToPoint;
 @property(nonatomic) struct CGRect targetRect; // @synthesize targetRect=_targetRect;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UIView *targetView; // @synthesize targetView=_targetView;
 @property(retain, nonatomic) UIWindow *previousKeyWindow; // @synthesize previousKeyWindow=_previousKeyWindow;
 @property(nonatomic, getter=isInspecting) _Bool inspecting; // @synthesize inspecting=_inspecting;
-- (void).cxx_destruct;
 - (long long)_gestureTypeForDigitizerLocation:(struct CGPoint)arg1;
 - (id)_debugTextForTargetView;
 - (void)_centerTarget;

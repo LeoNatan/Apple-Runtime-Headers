@@ -67,6 +67,7 @@
 - (void)ams_setiCloudFamily:(_Bool)arg1;
 - (void)ams_setFirstName:(id)arg1;
 - (void)ams_setDSID:(id)arg1;
+- (void)ams_setDemoAccount:(_Bool)arg1;
 - (void)ams_setCreditsString:(id)arg1;
 - (void)ams_setBiometricsState:(int)arg1;
 - (void)ams_setAltDSID:(id)arg1;

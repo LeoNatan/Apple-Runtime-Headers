@@ -20,9 +20,9 @@
 }
 
 + (Class)resultsType;
+- (void).cxx_destruct;
 @property(nonatomic) double latestSampleStartTime; // @synthesize latestSampleStartTime=_latestSampleStartTime;
 @property(retain, nonatomic) NSMutableArray *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

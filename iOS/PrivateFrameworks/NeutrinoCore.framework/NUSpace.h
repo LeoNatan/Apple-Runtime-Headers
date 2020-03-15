@@ -10,11 +10,11 @@
 
 @interface NUSpace : NSObject
 {
-    struct NSArray *_transformStack;
+    NSArray *_transformStack;
 }
 
-@property(retain) NSArray *transformStack; // @synthesize transformStack=_transformStack;
 - (void).cxx_destruct;
+@property(retain) NSArray *transformStack; // @synthesize transformStack=_transformStack;
 - (_Bool)isEqualToSpace:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -27,7 +27,7 @@
 - (id)description;
 - (void)appendTransform:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithTransformStack:(struct NSArray *)arg1;
+- (id)initWithTransformStack:(id)arg1;
 - (id)init;
 
 @end

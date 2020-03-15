@@ -17,8 +17,6 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedUIDelegate;
 - (void)webViewSupportedOrientationsUpdated:(id)arg1;
-- (id)webView:(id)arg1 generateReplacementFile:(id)arg2;
-- (_Bool)webView:(id)arg1 shouldReplaceUploadFile:(id)arg2 usingGeneratedFilename:(id *)arg3;
 - (void)webView:(id)arg1 exceededApplicationCacheOriginQuotaForSecurityOrigin:(id)arg2 totalSpaceNeeded:(unsigned int)arg3;
 - (void)webView:(id)arg1 didScrollDocumentInFrameView:(id)arg2;
 - (void)webView:(id)arg1 didDrawRect:(struct CGRect)arg2;

@@ -32,11 +32,11 @@
 + (_Bool)isPhotosCloudEnabled;
 + (_Bool)isDeviceStorageAlmostFull;
 + (id)currentConditions;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *photosLibrarySize; // @synthesize photosLibrarySize=_photosLibrarySize;
 @property(nonatomic, getter=isPhotosOptimizeEnabled) _Bool photosOptimizeEnabled; // @synthesize photosOptimizeEnabled=_photosOptimizeEnabled;
 @property(nonatomic, getter=isPhotosCloudEnabled) _Bool photosCloudEnabled; // @synthesize photosCloudEnabled=_photosCloudEnabled;
 @property(nonatomic, getter=isDeviceStorageAlmostFull) _Bool deviceStorageAlmostFull; // @synthesize deviceStorageAlmostFull=_deviceStorageAlmostFull;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCurrentConditions;
 

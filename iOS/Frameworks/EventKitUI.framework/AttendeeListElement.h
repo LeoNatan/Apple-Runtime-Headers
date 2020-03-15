@@ -14,9 +14,9 @@
     NSMutableAttributedString *_string;
 }
 
+- (void).cxx_destruct;
 @property _Bool xMore; // @synthesize xMore=_xMore;
 @property(retain) NSMutableAttributedString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 
 @end
 

@@ -25,6 +25,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)serviceFromAuthorData:(id)arg1;
 + (id)serviceFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSNumber *nsxpcVersion; // @synthesize nsxpcVersion=_nsxpcVersion;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSString *ipAddress; // @synthesize ipAddress=_ipAddress;
@@ -32,7 +33,6 @@
 @property(copy) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(copy) NSString *deviceName; // @synthesize deviceName=_deviceName;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqualToService:(id)arg1;

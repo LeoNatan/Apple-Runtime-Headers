@@ -29,12 +29,12 @@ __attribute__((visibility("hidden")))
 + (BOOL)shouldEnableAPNS;
 + (BOOL)apnsEnabled;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL apsDevEnvironment; // @synthesize apsDevEnvironment=_apsDevEnvironment;
 @property(readonly, nonatomic) BOOL apsEnabled; // @synthesize apsEnabled=_apsEnabled;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSData *apsToken; // @synthesize apsToken=_apsToken;
 @property(retain, nonatomic) APSConnection *apsConnection; // @synthesize apsConnection=_apsConnection;
-- (void).cxx_destruct;
 - (void)connectionDidReconnect:(id)arg1;
 - (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
 - (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;

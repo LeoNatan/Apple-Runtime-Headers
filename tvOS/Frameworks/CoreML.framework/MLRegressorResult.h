@@ -17,9 +17,9 @@
 
 + (id)resultWithValue:(id)arg1 additionalFeatures:(id)arg2;
 + (id)resultWithValue:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) id <MLFeatureProvider> additionalFeatures; // @synthesize additionalFeatures=_additionalFeatures;
 @property(readonly) MLMultiArray *predictedValue; // @synthesize predictedValue=_predictedValue;
-- (void).cxx_destruct;
 - (id)initWithValue:(id)arg1 additionalFeatures:(id)arg2;
 - (id)asFeatureDictionaryWithPredictedValueDescription:(id)arg1;
 

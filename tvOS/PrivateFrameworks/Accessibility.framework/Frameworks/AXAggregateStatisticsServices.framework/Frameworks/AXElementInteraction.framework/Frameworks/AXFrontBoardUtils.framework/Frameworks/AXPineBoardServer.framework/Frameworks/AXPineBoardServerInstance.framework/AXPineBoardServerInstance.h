@@ -21,13 +21,13 @@
 
 + (id)sharedInstance;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXFrontBoardProcessWatcher *processWatcher; // @synthesize processWatcher=_processWatcher;
 @property(retain, nonatomic) AXIPCClient *client; // @synthesize client=_client;
 @property(retain, nonatomic) AXIPCServer *server; // @synthesize server=_server;
 @property(retain, nonatomic) id axEnabledNotificationObserverToken; // @synthesize axEnabledNotificationObserverToken=_axEnabledNotificationObserverToken;
 @property(nonatomic, getter=isSystemAppServerRunning) _Bool systemAppServerRunning; // @synthesize systemAppServerRunning=_systemAppServerRunning;
 @property(retain, nonatomic) AXPineBoardServiceProvider *serviceProvider; // @synthesize serviceProvider=_serviceProvider;
-- (void).cxx_destruct;
 - (id)_rebootDevice:(id)arg1;
 - (id)_isSystemSleeping:(id)arg1;
 - (id)_wakeUpDeviceIfNecessary:(id)arg1;

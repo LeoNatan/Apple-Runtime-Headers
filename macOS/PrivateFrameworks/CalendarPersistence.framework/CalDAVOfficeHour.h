@@ -27,11 +27,11 @@
 + (void)getOfficeHoursForAccountInfoProvider:(id)arg1 principal:(id)arg2 inboxURL:(id)arg3 taskManager:(id)arg4 andCompletionBlock:(CDUnknownBlockType)arg5;
 + (void)getOfficeHoursForPrincipalObjectIDString:(id)arg1 andCompletionBlock:(CDUnknownBlockType)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) CALDate *endDate; // @synthesize endDate=_endDate;
 @property(copy) CALDate *startDate; // @synthesize startDate=_startDate;
 @property unsigned long long weekday; // @synthesize weekday=_weekday;
 @property BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

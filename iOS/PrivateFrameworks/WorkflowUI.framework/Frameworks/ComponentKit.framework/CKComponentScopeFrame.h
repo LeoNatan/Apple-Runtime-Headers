@@ -15,9 +15,9 @@
 }
 
 + (struct CKComponentScopeFramePair)childPairForPair:(const struct CKComponentScopeFramePair *)arg1 newRoot:(id)arg2 componentClass:(Class)arg3 identifier:(id)arg4 initialStateCreator:(CDUnknownBlockType)arg5 stateUpdates:(const unordered_multimap_8347d0c8 *)arg6;
-@property(readonly, nonatomic) CKComponentScopeHandle *handle; // @synthesize handle=_handle;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKComponentScopeHandle *handle; // @synthesize handle=_handle;
 - (id)initWithHandle:(id)arg1;
 
 @end

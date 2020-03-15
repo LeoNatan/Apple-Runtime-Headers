@@ -17,9 +17,9 @@
 }
 
 + (BOOL)isSupported;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType currentRequestCompletionBlock; // @synthesize currentRequestCompletionBlock=_currentRequestCompletionBlock;
 @property(retain, nonatomic) AVSpeechSynthesizer *synthesizer; // @synthesize synthesizer=_synthesizer;
-- (void).cxx_destruct;
 - (void)speechSynthesizer:(id)arg1 didContinueSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didPauseSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didCancelSpeechUtterance:(id)arg2;

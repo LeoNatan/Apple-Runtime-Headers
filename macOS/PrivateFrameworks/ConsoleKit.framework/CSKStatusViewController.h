@@ -13,8 +13,8 @@
     NSStackView *_stackView;
 }
 
-@property(nonatomic) __weak NSStackView *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSStackView *stackView; // @synthesize stackView=_stackView;
 - (void)removeTrailingView;
 - (void)addTrailingView:(id)arg1;
 - (void)viewDidLoad;

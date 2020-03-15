@@ -17,10 +17,10 @@
 
 + (id)intentDescription;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) INCurrencyAmount *tip; // @synthesize tip=_tip;
 @property(copy, nonatomic) NSNumber *rating; // @synthesize rating=_rating;
 @property(readonly, copy, nonatomic) NSString *rideIdentifier; // @synthesize rideIdentifier=_rideIdentifier;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

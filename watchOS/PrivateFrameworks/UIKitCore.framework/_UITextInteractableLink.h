@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSURL *_link;
 }
 
-@property(retain, nonatomic) NSURL *link; // @synthesize link=_link;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *link; // @synthesize link=_link;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isLink;
 

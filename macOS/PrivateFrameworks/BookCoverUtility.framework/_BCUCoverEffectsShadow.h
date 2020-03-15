@@ -15,10 +15,10 @@
     struct NSEdgeInsets _insets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *blendMode; // @synthesize blendMode=_blendMode;
 @property(readonly, nonatomic) struct CGImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) struct NSEdgeInsets insets; // @synthesize insets=_insets;
-- (void).cxx_destruct;
 - (struct NSEdgeInsets)roundedInsetsWithSize:(struct CGSize)arg1;
 - (struct CGRect)contentsCenter;
 - (struct CGSize)size;

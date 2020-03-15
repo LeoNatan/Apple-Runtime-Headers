@@ -47,9 +47,9 @@
     WDProfileEditableTableViewCell *_lastNameCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WDProfileEditableTableViewCell *lastNameCell; // @synthesize lastNameCell=_lastNameCell;
 @property(retain, nonatomic) WDProfileEditableTableViewCell *firstNameCell; // @synthesize firstNameCell=_firstNameCell;
-- (void).cxx_destruct;
 - (id)_birthdayCalendar;
 - (void)_timeZoneDidChange:(id)arg1;
 - (id)_displayStringForWheelchairUse:(long long)arg1;

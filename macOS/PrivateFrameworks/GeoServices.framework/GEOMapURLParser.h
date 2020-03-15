@@ -55,6 +55,7 @@
 + (BOOL)isValidMapsURLForAppendingSharedSessionID:(id)arg1;
 + (BOOL)isValidMapsCategoryURL:(id)arg1;
 + (BOOL)isValidMapURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL showCarDestinations; // @synthesize showCarDestinations=_showCarDestinations;
 @property(readonly, nonatomic) GEOURLExtraStorage *extraStorage; // @synthesize extraStorage=_extraStorage;
 @property(readonly, nonatomic) GEOURLCollectionStorage *collectionStorage; // @synthesize collectionStorage=_collectionStorage;
@@ -90,7 +91,6 @@
 @property(readonly, nonatomic) int trackingMode; // @synthesize trackingMode=_trackingMode;
 @property(readonly, nonatomic) int transportType; // @synthesize transportType=_transportType;
 @property(readonly, nonatomic) int mapType; // @synthesize mapType=_mapType;
-- (void).cxx_destruct;
 - (id)restoreCodableOfClass:(Class)arg1 queryItem:(id)arg2 key:(id)arg3 compressedKey:(id)arg4;
 - (BOOL)parseIncludingCustomParameters:(BOOL)arg1;
 - (id)initWithURL:(id)arg1;

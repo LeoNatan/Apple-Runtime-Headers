@@ -38,6 +38,9 @@
     CDUnknownBlockType _targetInUIResponderChainFromUIApplication;
     CDUnknownBlockType _sendFlagsChangedKeyEvent;
     CDUnknownBlockType _sendKeyEvent;
+    CDUnknownBlockType _handleEventByInputMethod;
+    CDUnknownBlockType _performDefaultBehaviorForEvent;
+    CDUnknownBlockType _keyboardDelegateRequiresKeyEvents;
     CDUnknownBlockType _receivedTestURLCallback;
     CDUnknownBlockType _sceneIdentifierForOpenURLCallback;
     NSArray *_pendingOpenURLs;
@@ -74,6 +77,7 @@
 
 + (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)sharedDelegate;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UINSApplicationLifecycleController *appLifecycleController; // @synthesize appLifecycleController=_appLifecycleController;
 @property(retain, nonatomic) UINSPrintingController *printingController; // @synthesize printingController=_printingController;
 @property(retain, nonatomic) USSBackgroundLaunchRequest *pendingBackgroundLaunchRequest; // @synthesize pendingBackgroundLaunchRequest=_pendingBackgroundLaunchRequest;
@@ -108,6 +112,9 @@
 @property(retain, nonatomic) NSArray *pendingOpenURLs; // @synthesize pendingOpenURLs=_pendingOpenURLs;
 @property(copy, nonatomic) CDUnknownBlockType sceneIdentifierForOpenURLCallback; // @synthesize sceneIdentifierForOpenURLCallback=_sceneIdentifierForOpenURLCallback;
 @property(copy, nonatomic) CDUnknownBlockType receivedTestURLCallback; // @synthesize receivedTestURLCallback=_receivedTestURLCallback;
+@property(copy, nonatomic) CDUnknownBlockType keyboardDelegateRequiresKeyEvents; // @synthesize keyboardDelegateRequiresKeyEvents=_keyboardDelegateRequiresKeyEvents;
+@property(copy, nonatomic) CDUnknownBlockType performDefaultBehaviorForEvent; // @synthesize performDefaultBehaviorForEvent=_performDefaultBehaviorForEvent;
+@property(copy, nonatomic) CDUnknownBlockType handleEventByInputMethod; // @synthesize handleEventByInputMethod=_handleEventByInputMethod;
 @property(copy, nonatomic) CDUnknownBlockType sendKeyEvent; // @synthesize sendKeyEvent=_sendKeyEvent;
 @property(copy, nonatomic) CDUnknownBlockType sendFlagsChangedKeyEvent; // @synthesize sendFlagsChangedKeyEvent=_sendFlagsChangedKeyEvent;
 @property(retain, nonatomic) NSDictionary *sceneWindowControllers; // @synthesize sceneWindowControllers=_sceneWindowControllers;
@@ -125,10 +132,8 @@
 @property(copy, nonatomic) CDUnknownBlockType hasValidRequestorForReturnType; // @synthesize hasValidRequestorForReturnType=_hasValidRequestorForReturnType;
 @property(copy, nonatomic) CDUnknownBlockType becomeFirstResponderHandler; // @synthesize becomeFirstResponderHandler=_becomeFirstResponderHandler;
 @property(retain, nonatomic) id <NSObject> appearanceObserver; // @synthesize appearanceObserver=_appearanceObserver;
-- (void).cxx_destruct;
 - (void)installIsUIKeyCommandEventHandler:(CDUnknownBlockType)arg1;
 - (void)installHandleUIKeyCommandEventHandler:(CDUnknownBlockType)arg1;
-- (id)convertKeyCodeToUIKeyInput:(id)arg1;
 - (void)_sendSystemAppRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_activateAppAndSendSystemAppRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)activateIgnoringOtherApps:(BOOL)arg1;
@@ -174,6 +179,7 @@
 @property(readonly, nonatomic) int pid;
 @property(readonly, nonatomic) NSBundle *bundle;
 - (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_revealSceneWithIdentifier:(id)arg1;
 - (void)_createNewSceneInForegroundWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_createNewSceneWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_createNewSceneOfSize:(struct CGSize)arg1 persistenceIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

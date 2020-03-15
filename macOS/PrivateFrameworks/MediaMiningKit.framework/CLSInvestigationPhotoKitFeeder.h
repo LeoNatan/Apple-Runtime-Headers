@@ -20,10 +20,10 @@
 }
 
 + (id)feederForAssetCollection:(id)arg1 options:(id)arg2 feederPrefetchOptions:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CLSFeederPrefetchOptions *prefetchOptions; // @synthesize prefetchOptions=_prefetchOptions;
 @property(readonly, copy, nonatomic) PHFetchOptions *assetFetchOptions; // @synthesize assetFetchOptions=_assetFetchOptions;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double behavioralScore;
 @property(readonly, nonatomic) unsigned long long numberOfRegularGemItems;
 @property(readonly, nonatomic) unsigned long long numberOfShinyGemItems;

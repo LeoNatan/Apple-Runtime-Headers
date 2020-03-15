@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     UIColor *_normalColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *normalColor; // @synthesize normalColor=_normalColor;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
-- (void).cxx_destruct;
 - (id)BIUImageForBold:(BOOL)arg1 italic:(BOOL)arg2 underline:(BOOL)arg3;
 - (void)_drawBIUAtSize:(struct CGSize)arg1 bold:(BOOL)arg2 italic:(BOOL)arg3 underline:(BOOL)arg4;
 - (void)_accessibilitySettingsChanged:(id)arg1;

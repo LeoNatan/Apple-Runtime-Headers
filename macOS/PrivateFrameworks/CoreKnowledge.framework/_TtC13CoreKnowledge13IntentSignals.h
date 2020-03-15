@@ -14,9 +14,9 @@
     // Error parsing type: , name: direction
     // Error parsing type: , name: modifiedAt
     // Error parsing type: , name: recencyOrder
-    // Error parsing type: , name: ftsRankings
-    // Error parsing type: , name: requestEntityMatchRates
-    // Error parsing type: , name: intentEntityMatchRates
+    // Error parsing type: , name: ftsRankSum
+    // Error parsing type: , name: requestEntityMatchRate
+    // Error parsing type: , name: intentEntityMatchRate
     // Error parsing type: , name: maxEntityMatchRate
 }
 

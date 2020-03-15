@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     _UIBarBackButtonItemAppearanceStorage *backButtonAppearance;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *miniTitlePositionOffset; // @synthesize miniTitlePositionOffset;
 @property(retain, nonatomic) NSValue *titlePositionOffset; // @synthesize titlePositionOffset;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *miniBackButtonTitlePositionOffset;
 @property(retain, nonatomic) NSValue *backButtonTitlePositionOffset;
 - (id)anyBackButtonBackgroundImage;

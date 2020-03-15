@@ -15,10 +15,10 @@
     IMUnitTestLogger *_logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IMUnitTestLogger *logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) IMUnitTestBundleLoader *bundleLoader; // @synthesize bundleLoader=_bundleLoader;
 @property BOOL xctestFrameworkLoaded; // @synthesize xctestFrameworkLoaded=_xctestFrameworkLoaded;
-- (void).cxx_destruct;
 - (BOOL)loadTestFrameworks:(id *)arg1;
 - (BOOL)loadXCTestFramework:(id *)arg1;
 - (BOOL)loadXCTestFrameworkFromSDK:(id *)arg1;

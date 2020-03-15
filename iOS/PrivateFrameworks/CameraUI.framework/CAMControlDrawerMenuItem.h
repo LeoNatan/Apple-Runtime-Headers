@@ -15,10 +15,10 @@
     NSNumber *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *selectedTitle; // @synthesize selectedTitle=_selectedTitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 selectedTitle:(id)arg2 value:(id)arg3;
 - (id)initWithTitle:(id)arg1 value:(id)arg2;
 

@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 
 + (Class)_viewClassForSettingDescription:(id)arg1;
 + (_Bool)allowsEdit;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isHandleValid) _Bool handleValid; // @synthesize handleValid=_handleValid;
 @property(readonly, nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
-- (void).cxx_destruct;
 - (id)_valueStore;
 - (_Bool)_validateName:(id)arg1;
 - (_Bool)_validateHandle:(id)arg1;

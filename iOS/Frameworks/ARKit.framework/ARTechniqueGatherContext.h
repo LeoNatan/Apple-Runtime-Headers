@@ -15,8 +15,9 @@
     id _parentContext;
 }
 
-@property(readonly, nonatomic) id parentContext; // @synthesize parentContext=_parentContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id parentContext; // @synthesize parentContext=_parentContext;
+@property(readonly, copy) NSString *description;
 - (id)anchorsToRemove;
 - (id)anchorsToAdd;
 - (id)resultDataOfClass:(Class)arg1;
@@ -28,7 +29,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

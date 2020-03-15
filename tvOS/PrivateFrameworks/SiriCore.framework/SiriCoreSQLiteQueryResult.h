@@ -23,6 +23,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, copy, nonatomic) NSArray *records; // @synthesize records=_records;
 @property(readonly, copy, nonatomic) NSArray *rowValueMaps; // @synthesize rowValueMaps=_rowValueMaps;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) unsigned long long endMachTime; // @synthesize endMachTime=_endMachTime;
 @property(readonly, nonatomic) unsigned long long beginMachTime; // @synthesize beginMachTime=_beginMachTime;
 @property(readonly, copy, nonatomic) SiriCoreSQLiteQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithQuery:(id)arg1 beginMachTime:(unsigned long long)arg2 endMachTime:(unsigned long long)arg3 statement:(id)arg4 columnNameTuple:(id)arg5 columnValueTuples:(id)arg6 columnValuesMap:(id)arg7 rowValueTuples:(id)arg8 rowValueMaps:(id)arg9 records:(id)arg10 error:(id)arg11;
 

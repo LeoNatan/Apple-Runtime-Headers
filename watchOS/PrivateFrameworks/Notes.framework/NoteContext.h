@@ -55,11 +55,11 @@
 + (_Bool)databaseIsCorrupt:(id)arg1;
 + (_Bool)shouldLogIndexing;
 + (id)newLegacyContext;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICManagedObjectContextUpdater *mocUpdater; // @synthesize mocUpdater=_mocUpdater;
 @property(nonatomic) _Bool usePrivateQueue; // @synthesize usePrivateQueue=_usePrivateQueue;
 @property(nonatomic) _Bool isMainContext; // @synthesize isMainContext=_isMainContext;
 @property(retain, nonatomic) AccountUtilities *accountUtilities; // @synthesize accountUtilities=_accountUtilities;
-- (void).cxx_destruct;
 - (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (void)updateForRecentChanges;
 - (void)cleanUpLocks;

@@ -20,8 +20,8 @@
     HDDataCollectionManager *_dataCollectionManager;
 }
 
-@property(readonly, nonatomic) __weak HDDataCollectionManager *dataCollectionManager; // @synthesize dataCollectionManager=_dataCollectionManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak HDDataCollectionManager *dataCollectionManager; // @synthesize dataCollectionManager=_dataCollectionManager;
 - (id)diagnosticDescription;
 - (void)daemonReady:(id)arg1;
 - (id)configurationForCollector:(id)arg1;

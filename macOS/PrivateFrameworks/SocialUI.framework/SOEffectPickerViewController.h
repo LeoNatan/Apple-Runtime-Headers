@@ -21,10 +21,10 @@
     SOEffectPickerUnsentMessage *_unsentMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain) SOEffectPickerUnsentMessage *unsentMessage; // @synthesize unsentMessage=_unsentMessage;
 @property(retain, nonatomic) SOEffectPickerButtonController *selectedDescriptor; // @synthesize selectedDescriptor=_selectedDescriptor;
 @property(nonatomic) __weak id <SOEffectPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateTextForDarkBackground:(BOOL)arg1;
 - (void)effectDescriptorWillSend:(id)arg1;
 - (void)effectDescriptorWillActivate:(id)arg1;

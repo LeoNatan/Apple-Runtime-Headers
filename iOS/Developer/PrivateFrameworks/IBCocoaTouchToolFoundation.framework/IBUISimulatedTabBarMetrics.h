@@ -17,10 +17,10 @@
 
 + (id)simulatedTabBarMetricsWithStyle:(long long)arg1 translucent:(_Bool)arg2 tintColor:(id)arg3 barTintColor:(id)arg4;
 + (id)defaultMetrics;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
 @property(readonly, copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic, getter=isTranslucent) _Bool translucent; // @synthesize translucent=_translucent;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

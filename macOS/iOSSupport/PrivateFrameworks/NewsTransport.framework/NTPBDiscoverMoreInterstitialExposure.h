@@ -23,9 +23,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tappedNextArticleAffordanceFeedId; // @synthesize tappedNextArticleAffordanceFeedId=_tappedNextArticleAffordanceFeedId;
 @property(nonatomic) BOOL withNextArticleAffordance; // @synthesize withNextArticleAffordance=_withNextArticleAffordance;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -18,10 +18,10 @@
     EKUIRecurrenceAlertController *_recurrenceAlertController;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKUIRecurrenceAlertController *recurrenceAlertController; // @synthesize recurrenceAlertController=_recurrenceAlertController;
 @property(retain) EKCalendarEventInvitationNotificationAttendee *proposedTimeAttendee; // @synthesize proposedTimeAttendee=_proposedTimeAttendee;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (void)invokeAction:(int)arg1 eventStatusButtonsView:(id)arg2;
 - (id)_statusButtons;
 - (id)items;

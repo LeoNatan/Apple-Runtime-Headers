@@ -15,9 +15,9 @@
     NSArray *_header;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sortable; // @synthesize sortable=_sortable;
 @property(retain, nonatomic) NSArray *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (void)addRow:(id)arg1;
 - (id)rowAtIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int rowsCount;

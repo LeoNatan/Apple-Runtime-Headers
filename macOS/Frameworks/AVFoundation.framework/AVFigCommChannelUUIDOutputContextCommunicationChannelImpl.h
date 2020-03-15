@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     struct __CFString *_commChannelUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __CFString *commChannelUUID; // @synthesize commChannelUUID=_commChannelUUID;
 @property __weak AVOutputContextCommunicationChannel *parentCommunicationChannel; // @synthesize parentCommunicationChannel=_parentChannel;
-- (void).cxx_destruct;
 - (void)sendData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)initWithRoutingContext:(struct OpaqueFigRoutingContext *)arg1 commChannelUUID:(struct __CFString *)arg2;

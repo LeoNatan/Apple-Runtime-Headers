@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     unsigned long long capabilities;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long capabilities; // @synthesize capabilities;
 @property(readonly, copy, nonatomic) NSString *typeIdentifier; // @synthesize typeIdentifier;
 @property(readonly, copy, nonatomic) NSString *filename; // @synthesize filename;
 @property(readonly, copy, nonatomic) NSString *parentItemIdentifier; // @synthesize parentItemIdentifier;
 @property(readonly, copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier;
-- (void).cxx_destruct;
 - (id)fp_sharingCurrentUserPermissions;
 - (id)fp_sharingCurrentUserRole;
 - (BOOL)fp_isWritable;
@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isShared) BOOL shared;
 @property(readonly, nonatomic, getter=isSharedByCurrentUser) BOOL sharedByCurrentUser;
 @property(readonly) Class superclass;
+@property(readonly, copy, nonatomic) NSString *symlinkTargetPath;
 @property(readonly, copy, nonatomic) NSData *tagData;
 @property(readonly, nonatomic, getter=isTrashed) BOOL trashed;
 @property(readonly, nonatomic, getter=isUploaded) BOOL uploaded;

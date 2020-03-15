@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     id <TCCancelDelegate> mCancelDelegate;
 }
 
-@property(readonly, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancelDelegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancelDelegate;
 - (_Bool)isCancelled;
 - (void)setResources:(id)arg1;
 - (id)resources;

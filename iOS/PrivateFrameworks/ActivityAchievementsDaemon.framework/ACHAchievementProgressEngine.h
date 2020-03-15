@@ -19,23 +19,23 @@
     NSNumber *_overrideDelay;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *overrideDelay; // @synthesize overrideDelay=_overrideDelay;
 @property(retain, nonatomic) _HKDelayedOperation *delayedOperation; // @synthesize delayedOperation=_delayedOperation;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *providerQueue; // @synthesize providerQueue=_providerQueue;
 @property(retain, nonatomic) NSHashTable *providers; // @synthesize providers=_providers;
-- (void).cxx_destruct;
 - (unsigned long long)providerCount;
 - (_Bool)populateProgressAndGoalForAchievement:(id)arg1;
 - (_Bool)shouldPopulateProgressForAchievement:(id)arg1;
-- (struct NSObject *)_queue_providerForTemplate:(id)arg1;
-- (void)requestProgressUpdateForProgressProvider:(struct NSObject *)arg1;
-- (void)deregisterProgressProvider:(struct NSObject *)arg1;
-- (void)registerProgressProvider:(struct NSObject *)arg1;
+- (id)_queue_providerForTemplate:(id)arg1;
+- (void)requestProgressUpdateForProgressProvider:(id)arg1;
+- (void)deregisterProgressProvider:(id)arg1;
+- (void)registerProgressProvider:(id)arg1;
 - (void)_notifyObserversOfProgressUpdate;
-- (void)removeObserver:(struct NSObject *)arg1;
-- (void)addObserver:(struct NSObject *)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (id)init;
 
 @end

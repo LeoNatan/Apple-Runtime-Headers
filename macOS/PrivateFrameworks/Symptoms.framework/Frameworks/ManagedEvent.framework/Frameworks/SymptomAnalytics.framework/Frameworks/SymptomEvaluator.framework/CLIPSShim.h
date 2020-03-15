@@ -35,6 +35,7 @@
 + (id)decodeAndInflateCLIPSString:(id)arg1;
 + (struct _CCCryptor *)cryptor;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pendingOTAUpdates; // @synthesize pendingOTAUpdates=_pendingOTAUpdates;
 @property(retain, nonatomic) NSMutableDictionary *invocationMap; // @synthesize invocationMap=_invocationMap;
 @property(retain, nonatomic) NSMutableSet *clipsHeldObjects; // @synthesize clipsHeldObjects=_clipsHeldObjects;
@@ -48,7 +49,6 @@
 @property(nonatomic) unsigned int strongAddressType; // @synthesize strongAddressType=_strongAddressType;
 @property(readonly, nonatomic) NSMutableDictionary *modules; // @synthesize modules=_modules;
 @property(nonatomic) __weak id <CLIPSShimDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)slotsStringForTemplate:(id)arg1 fromDictionary:(id)arg2 moduleName:(id)arg3;
 - (id)deftemplatesMatchingPrefix:(id)arg1;
 - (void *)deftemplateNamed:(id)arg1 moduleName:(id)arg2;

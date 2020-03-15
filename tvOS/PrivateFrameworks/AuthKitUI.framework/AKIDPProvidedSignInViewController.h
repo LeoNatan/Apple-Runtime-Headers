@@ -20,12 +20,12 @@
     UIStackView *_titleStackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *titleStackView; // @synthesize titleStackView=_titleStackView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *secureIconView; // @synthesize secureIconView=_secureIconView;
 @property(retain, nonatomic) AKIDPHandler *idpHandler; // @synthesize idpHandler=_idpHandler;
 @property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)IDPHandler:(id)arg1 didStartLoadingPageInWebView:(id)arg2;
 - (void)IDPHandler:(id)arg1 didFinishLoadingPageInWebView:(id)arg2;
 - (void)_setNavigationTitle:(id)arg1;

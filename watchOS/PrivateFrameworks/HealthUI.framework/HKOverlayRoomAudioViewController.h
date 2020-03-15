@@ -19,11 +19,11 @@
     HKAudioExposureDevicesDataSource *_audioExposureDevicesDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKAudioExposureDevicesDataSource *audioExposureDevicesDataSource; // @synthesize audioExposureDevicesDataSource=_audioExposureDevicesDataSource;
 @property(retain, nonatomic) NSMutableArray *contextDelegates; // @synthesize contextDelegates=_contextDelegates;
 @property(readonly, copy, nonatomic) NSString *secondaryIdentifier; // @synthesize secondaryIdentifier=_secondaryIdentifier;
 @property(nonatomic) NSString *quantityTypeIdentifier; // @synthesize quantityTypeIdentifier=_quantityTypeIdentifier;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_userInfoCreationBlockForLEQ;
 - (CDUnknownBlockType)_buildGranularAverageDataSourceTitleFromTimeScope;
 - (CDUnknownBlockType)_buildAverageDataSourceTitleFromTimeScope;

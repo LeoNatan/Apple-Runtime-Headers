@@ -12,6 +12,7 @@
 __attribute__((visibility("hidden")))
 @interface AMSMediaTaskURLBuilder : NSObject
 {
+    BOOL _charts;
     NSArray *_additionalPlatforms;
     id <AMSBagProtocol> _bag;
     NSArray *_bundleIdentifiers;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSString *_searchTerm;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 @property(retain) NSString *logKey; // @synthesize logKey=_logKey;
 @property(retain) NSArray *itemIdentifiers; // @synthesize itemIdentifiers=_itemIdentifiers;
@@ -31,13 +33,14 @@ __attribute__((visibility("hidden")))
 @property(retain) NSDictionary *filters; // @synthesize filters=_filters;
 @property(readonly) AMSMediaTaskTypeConfig *config; // @synthesize config=_config;
 @property(readonly) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
+@property BOOL charts; // @synthesize charts=_charts;
 @property(retain) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(retain) NSArray *additionalPlatforms; // @synthesize additionalPlatforms=_additionalPlatforms;
-- (void).cxx_destruct;
 - (id)_devicePlatform;
-- (void)_addSearchIdentifiers:(id)arg1;
+- (void)_addSearchTerm:(id)arg1;
 - (void)_addItemIdentifiers:(id)arg1;
+- (void)_addCharts:(id)arg1;
 - (void)_addBundleIdentifiers:(id)arg1;
 - (id)_queryItems;
 - (id)_pathPromise;

@@ -28,6 +28,7 @@
 
 + (id)defaultOptions;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FLFollowUpAction *dismissAction; // @synthesize dismissAction=_dismissAction;
 @property(retain, nonatomic) NSDate *previousNotificationActionDate; // @synthesize previousNotificationActionDate=_previousNotificationActionDate;
 @property(nonatomic) unsigned long long sqlID; // @synthesize sqlID=_sqlID;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy, nonatomic) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (void)recalculateActionDateToAccountForDelay;
 - (double)_creationDateAugmentedRepeatTimer;

@@ -18,8 +18,8 @@
     id <NDNewsService> _daemon;
 }
 
-@property(retain, nonatomic) id <NDNewsService> daemon; // @synthesize daemon=_daemon;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <NDNewsService> daemon; // @synthesize daemon=_daemon;
 - (id)_queue;
 - (void)markAnalyticsElement:(id)arg1 asReadAtDate:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)markAnalyticsElements:(id)arg1 asSeenAtDate:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;

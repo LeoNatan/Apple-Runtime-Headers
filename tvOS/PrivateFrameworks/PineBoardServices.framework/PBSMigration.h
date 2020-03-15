@@ -17,10 +17,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)executeMigrationWithContext:(id)arg1;
 - (id)initWithName:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)initWithHandlingClass:(Class)arg1;

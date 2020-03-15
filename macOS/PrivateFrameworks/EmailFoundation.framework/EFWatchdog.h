@@ -13,8 +13,8 @@
     NSString *_monitoredBundleIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *monitoredBundleIdentifier; // @synthesize monitoredBundleIdentifier=_monitoredBundleIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *monitoredBundleIdentifier; // @synthesize monitoredBundleIdentifier=_monitoredBundleIdentifier;
 - (void)invalidate;
 - (void)start;
 - (id)initWithMonitoredBundleIdentifier:(id)arg1;

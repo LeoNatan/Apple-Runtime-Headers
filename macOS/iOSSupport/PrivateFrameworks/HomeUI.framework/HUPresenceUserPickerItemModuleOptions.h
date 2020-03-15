@@ -14,9 +14,9 @@
     HUPresenceCurrentUserLocationDevice *_locationDevice;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL customLocationSelected; // @synthesize customLocationSelected=_customLocationSelected;
 @property(readonly, nonatomic) HUPresenceCurrentUserLocationDevice *locationDevice; // @synthesize locationDevice=_locationDevice;
-- (void).cxx_destruct;
 - (id)initWithLocationDevice:(id)arg1 customLocationSelected:(BOOL)arg2;
 
 @end

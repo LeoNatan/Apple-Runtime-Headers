@@ -23,6 +23,7 @@
     PKExpressTransactionState *_expressState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKExpressTransactionState *expressState; // @synthesize expressState=_expressState;
 @property(readonly, nonatomic) PKFelicaAppletHistory *felicaHistory; // @synthesize felicaHistory=_felicaHistory;
 @property(retain, nonatomic) PKTransitAppletHistory *transitHistory; // @synthesize transitHistory=_transitHistory;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic, getter=isIncompatible) _Bool incompatible; // @synthesize incompatible=_incompatible;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
-- (void).cxx_destruct;
 
 @end
 

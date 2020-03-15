@@ -134,12 +134,6 @@ typedef struct {
     float restingPosition;
 } CDStruct_b31d0695;
 
-typedef struct {
-    float _field1;
-    float _field2;
-    float _field3;
-} CDStruct_869f9c67;
-
 typedef struct CDStruct_183601bc;
 
 typedef struct {

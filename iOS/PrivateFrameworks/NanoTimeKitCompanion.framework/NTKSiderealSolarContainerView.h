@@ -26,6 +26,7 @@
     UIView *_nightAccessoryContainerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *nightAccessoryContainerView; // @synthesize nightAccessoryContainerView=_nightAccessoryContainerView;
 @property(retain, nonatomic) UIView *nightRing; // @synthesize nightRing=_nightRing;
 @property(retain, nonatomic) UIView *nightDisk; // @synthesize nightDisk=_nightDisk;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UIView *dayDisk; // @synthesize dayDisk=_dayDisk;
 @property(retain, nonatomic) UIView *nightContainerView; // @synthesize nightContainerView=_nightContainerView;
 @property(retain, nonatomic) UIView *dayContainerView; // @synthesize dayContainerView=_dayContainerView;
-- (void).cxx_destruct;
 - (id)_newGnomonView;
 - (void)setSolarDayProgress:(double)arg1;
 - (double)poseForNightRingImage;

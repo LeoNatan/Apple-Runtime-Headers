@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property int stateToken; // @synthesize stateToken=_stateToken;
 @property BOOL isStateRequired; // @synthesize isStateRequired=_isStateRequired;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -27,7 +28,6 @@
 @property BOOL listeningForNotifications; // @synthesize listeningForNotifications=_listeningForNotifications;
 @property(copy, nonatomic) CDUnknownBlockType operatorBlock; // @synthesize operatorBlock=_operatorBlock;
 @property(retain) NSString *notificationName; // @synthesize notificationName=_notificationName;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)listenForNotifications:(BOOL)arg1;
 - (id)initWithOperator:(id)arg1 forNotification:(id)arg2 requireState:(BOOL)arg3 withBlock:(CDUnknownBlockType)arg4;

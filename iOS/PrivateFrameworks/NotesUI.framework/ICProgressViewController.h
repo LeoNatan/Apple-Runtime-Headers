@@ -19,13 +19,13 @@
     ICCircularProgressView *_circularProgressView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICCircularProgressView *circularProgressView; // @synthesize circularProgressView=_circularProgressView;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) __weak id <ICProgressViewControllerDelegate> progressDelegate; // @synthesize progressDelegate=_progressDelegate;
 @property(nonatomic) _Bool showsCancel; // @synthesize showsCancel=_showsCancel;
 @property(retain, nonatomic) NSProgress *observedProgress; // @synthesize observedProgress=_observedProgress;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

@@ -22,6 +22,7 @@
     struct CGRect _crop;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) NSURL *outputURL; // @synthesize outputURL=_outputURL;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) struct CGSize outputSize; // @synthesize outputSize=_outputSize;
 @property(readonly, nonatomic) struct CGRect crop; // @synthesize crop=_crop;
 @property(readonly, nonatomic) AVAsset *video; // @synthesize video=_video;
-- (void).cxx_destruct;
 - (id)_makeWriter;
 - (id)_makeReader;
 - (void)exportAsynchronouslyWithCompletion:(CDUnknownBlockType)arg1;

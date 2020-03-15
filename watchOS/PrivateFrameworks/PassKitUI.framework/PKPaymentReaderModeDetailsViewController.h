@@ -19,8 +19,8 @@
 }
 
 + (_Bool)readerModeProvisioningIsSupported;
-@property(readonly, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 - (id)footerView;
 - (id)defaultHeaderViewSubTitle;
 - (id)defaultHeaderViewTitle;

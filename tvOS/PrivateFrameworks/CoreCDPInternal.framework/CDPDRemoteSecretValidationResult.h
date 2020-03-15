@@ -19,6 +19,7 @@
     OTClique *_recoveredClique;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OTClique *recoveredClique; // @synthesize recoveredClique=_recoveredClique;
 @property(copy, nonatomic) NSDictionary *recoveredInfo; // @synthesize recoveredInfo=_recoveredInfo;
 @property(copy, nonatomic) NSString *validSecret; // @synthesize validSecret=_validSecret;
@@ -26,7 +27,6 @@
 @property(nonatomic) _Bool userDidReset; // @synthesize userDidReset=_userDidReset;
 @property(nonatomic) _Bool userDidCancel; // @synthesize userDidCancel=_userDidCancel;
 @property(nonatomic) unsigned long long secretType; // @synthesize secretType=_secretType;
-- (void).cxx_destruct;
 
 @end
 

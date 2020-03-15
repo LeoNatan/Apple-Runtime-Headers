@@ -18,8 +18,8 @@
 + (_Bool)validateJSONObject:(id)arg1 withSchemaNamed:(id)arg2 bundle:(id)arg3 error:(out id *)arg4;
 + (id)searchPaths;
 + (void)registerSearchPath:(id)arg1;
-@property(readonly, copy, nonatomic) id <NSCopying> schema; // @synthesize schema=_schema;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) id <NSCopying> schema; // @synthesize schema=_schema;
 - (id)_mismatchErrorFromKeyStack:(id)arg1;
 - (id)_loadSubschemaNamed:(id)arg1;
 - (_Bool)_validateValue:(id)arg1 subschemaNamed:(id)arg2 keyStack:(id)arg3;

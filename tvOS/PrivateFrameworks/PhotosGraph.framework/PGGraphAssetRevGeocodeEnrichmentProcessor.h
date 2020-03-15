@@ -30,6 +30,7 @@
 + (id)backgroundJobName;
 + (double)backgroundJobTimeout;
 + (_Bool)supportsBackgroundJob;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numberOfAssetClustersRevGeocoded; // @synthesize numberOfAssetClustersRevGeocoded=_numberOfAssetClustersRevGeocoded;
 @property(readonly, nonatomic) unsigned long long numberOfMomentsRevGeocoded; // @synthesize numberOfMomentsRevGeocoded=_numberOfMomentsRevGeocoded;
 @property(readonly, nonatomic) double numberOfAssetClusters100mPlusFromCenter; // @synthesize numberOfAssetClusters100mPlusFromCenter=_numberOfAssetClusters100mPlusFromCenter;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) double sumSquareNumberOfAssetClustersPerMoment; // @synthesize sumSquareNumberOfAssetClustersPerMoment=_sumSquareNumberOfAssetClustersPerMoment;
 @property(readonly, nonatomic) double sumNumberOfAssetClustersPerMoment; // @synthesize sumNumberOfAssetClustersPerMoment=_sumNumberOfAssetClustersPerMoment;
 @property(retain, nonatomic) NSArray *homeLocations; // @synthesize homeLocations=_homeLocations;
-- (void).cxx_destruct;
 - (_Bool)_regionIsHome:(id)arg1;
 - (_Bool)_setRevGeoLocationData:(id)arg1 onAssets:(id)arg2 withPhotoLibrary:(id)arg3;
 - (id)_revGeoLocationDataForRegion:(id)arg1 manager:(id)arg2;

@@ -13,8 +13,8 @@
     NSObject<OS_dispatch_source> *_source;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_source> *source; // @synthesize source=_source;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_source> *source; // @synthesize source=_source;
 - (void)cancel;
 - (void)start;
 - (_Bool)isCancelled;

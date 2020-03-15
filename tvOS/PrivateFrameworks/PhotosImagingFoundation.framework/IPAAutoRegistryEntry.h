@@ -12,9 +12,9 @@
     Class _autoSettingsClass;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool persistable; // @synthesize persistable=_persistable;
 @property(retain, nonatomic) Class autoSettingsClass; // @synthesize autoSettingsClass=_autoSettingsClass;
-- (void).cxx_destruct;
 
 @end
 

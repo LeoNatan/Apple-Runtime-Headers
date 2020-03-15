@@ -40,6 +40,7 @@
     _Bool _hasPearl;
     float _minimumHeight;
     unsigned int _emphasizedEdge;
+    _Bool _occludesBodyView;
     int _state;
     PKPaymentAuthorizationLayout *_layout;
     unsigned int _requestType;
@@ -49,14 +50,15 @@
     id <PKPaymentAuthorizationFooterViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPaymentAuthorizationFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool occludesBodyView; // @synthesize occludesBodyView=_occludesBodyView;
 @property(retain, nonatomic) NSString *confirmationTitle; // @synthesize confirmationTitle=_confirmationTitle;
 @property(retain, nonatomic) NSString *biometricConfirmationTitle; // @synthesize biometricConfirmationTitle=_biometricConfirmationTitle;
 @property(nonatomic) unsigned int confirmationStyle; // @synthesize confirmationStyle=_confirmationStyle;
 @property(nonatomic) unsigned int requestType; // @synthesize requestType=_requestType;
 @property(retain, nonatomic) PKPaymentAuthorizationLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_payWithPasscodePressed;
 - (void)glyphViewUserIntentEdgeDidChange:(id)arg1;
 - (void)glyphView:(id)arg1 revealingCheckmark:(_Bool)arg2;

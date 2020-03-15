@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     UIGestureRecognizer *_expandedAccessoryTapRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIGestureRecognizer *expandedAccessoryTapRecognizer; // @synthesize expandedAccessoryTapRecognizer=_expandedAccessoryTapRecognizer;
 @property(retain, nonatomic) UIPrinterAccessoryView *printerAccessoryView; // @synthesize printerAccessoryView=_printerAccessoryView;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak PKPrinter *printer; // @synthesize printer=_printer;
-- (void).cxx_destruct;
 - (void)expandedAccessoryAreaTapped;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)layoutSubviews;

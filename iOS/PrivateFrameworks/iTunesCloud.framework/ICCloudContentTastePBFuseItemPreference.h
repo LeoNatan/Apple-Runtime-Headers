@@ -24,11 +24,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long createdOffsetMillis; // @synthesize createdOffsetMillis=_createdOffsetMillis;
 @property(retain, nonatomic) NSString *externalId; // @synthesize externalId=_externalId;
 @property(nonatomic) long long adamId; // @synthesize adamId=_adamId;
 @property(nonatomic) int preference; // @synthesize preference=_preference;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

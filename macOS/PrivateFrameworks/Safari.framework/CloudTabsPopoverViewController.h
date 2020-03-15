@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
     BrowserWindowController *_controller;
 }
 
-@property(retain, nonatomic) BrowserWindowController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BrowserWindowController *controller; // @synthesize controller=_controller;
 - (BOOL)tableView:(id)arg1 isGroupRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;

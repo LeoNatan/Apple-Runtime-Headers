@@ -6,19 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSArray, NSString;
 @protocol _WKWebAuthenticationPanelDelegate;
 
 @interface _WKWebAuthenticationPanel : NSObject
 {
-    id <_WKWebAuthenticationPanelDelegate> _delegate;
     NSString *_relyingPartyID;
+    NSArray *_transports;
+    int _type;
 }
 
+@property(readonly, nonatomic) int type; // @synthesize type=_type;
+@property(readonly, copy, nonatomic) NSArray *transports; // @synthesize transports=_transports;
 @property(readonly, copy, nonatomic) NSString *relyingPartyID; // @synthesize relyingPartyID=_relyingPartyID;
-@property(nonatomic) __weak id <_WKWebAuthenticationPanelDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cancel;
+@property(nonatomic) __weak id <_WKWebAuthenticationPanelDelegate> delegate;
 
 @end
 

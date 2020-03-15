@@ -18,8 +18,8 @@
     NSString *_folderIdString;
 }
 
-@property(copy) NSString *folderIdString; // @synthesize folderIdString=_folderIdString;
 - (void).cxx_destruct;
+@property(copy) NSString *folderIdString; // @synthesize folderIdString=_folderIdString;
 - (void)handleEWSError:(id)arg1;
 - (BOOL)_loadFolderId;
 - (void)_setSyncState:(id)arg1 persistToLibrary:(BOOL)arg2;

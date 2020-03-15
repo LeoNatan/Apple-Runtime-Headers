@@ -26,11 +26,11 @@
     } _channelGuarded;
 }
 
+- (void).cxx_destruct;
 @property int compressionTypeHint; // @synthesize compressionTypeHint=_compressionTypeHint;
 @property(readonly, nonatomic) unsigned int channelCode; // @synthesize channelCode=_channelCode;
 @property BOOL isCanceled; // @synthesize isCanceled=_canceled;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)sendMessageSync:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)sendMessage:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (BOOL)sendMessageAsync:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;

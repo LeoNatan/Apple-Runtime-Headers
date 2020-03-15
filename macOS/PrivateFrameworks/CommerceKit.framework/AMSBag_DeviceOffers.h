@@ -15,8 +15,8 @@
     CKStoreClient *_storeClient;
 }
 
-@property(retain, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 @property(readonly) AMSBagValue *iCloudDeviceOfferDeepLink;
 @property(readonly) AMSBagValue *appleMusicDeviceOfferDeepLink;
 - (id)initWithStoreClient:(id)arg1;

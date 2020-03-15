@@ -13,8 +13,8 @@
     NSString *_groupIdentifier;
 }
 
-@property(retain) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 - (void).cxx_destruct;
+@property(retain) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 - (id)readableDescription;
 - (void)performOperation;
 - (id)initWithChangeRequest:(id)arg1 forSession:(id)arg2;

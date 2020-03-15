@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *connectionToService; // @synthesize connectionToService=_connectionToService;
 @property(retain) TZFileSystemInterface *fileSystemInterface; // @synthesize fileSystemInterface=_fileSystemInterface;
-- (void).cxx_destruct;
 - (BOOL)isUpdateWaiting;
 - (id)updateTZDataVersion;
 - (BOOL)alertForAllZones;

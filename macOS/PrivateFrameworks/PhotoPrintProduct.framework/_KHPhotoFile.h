@@ -15,10 +15,10 @@
     KHImageProperties *_imageProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHImageProperties *imageProperties; // @synthesize imageProperties=_imageProperties;
 @property(readonly, nonatomic) NSDictionary *fileAttributes; // @synthesize fileAttributes=_fileAttributes;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (id)pageLayoutImageSuitableForSize:(struct CGSize)arg1 quality:(unsigned long long)arg2;
 - (id)pageLayoutImageSuitableForSize:(struct CGSize)arg1;
 - (id)pageLayoutImage;

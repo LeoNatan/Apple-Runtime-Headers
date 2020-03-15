@@ -20,11 +20,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)nullChangeSetForDomain:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *libraryStationSyncDictionaries; // @synthesize libraryStationSyncDictionaries=_libraryStationSyncDictionaries;
 @property(retain, nonatomic) PODLibrarySettings *librarySettings; // @synthesize librarySettings=_librarySettings;
 @property(retain, nonatomic) PODContentAnchor *anchor; // @synthesize anchor=_anchor;
 @property(readonly, nonatomic) NSArray *changes; // @synthesize changes=_changes;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isNull;

@@ -57,9 +57,9 @@
 }
 
 + (Class)tritium_frameSpecifierClass;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentStyle; // @synthesize currentStyle=_currentStyle;
 @property(nonatomic) unsigned int currentAsset; // @synthesize currentAsset=_currentAsset;
-- (void).cxx_destruct;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_transitionToFrameSpecifier:(id)arg1;
 - (void)tritium_synchronizeWithActiveFaceView:(id)arg1;

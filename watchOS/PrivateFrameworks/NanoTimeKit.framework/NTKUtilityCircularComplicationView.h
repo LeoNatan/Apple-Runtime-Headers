@@ -15,8 +15,8 @@
     NTKContainerView *_contentView;
 }
 
-@property(readonly, nonatomic) NTKContainerView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NTKContainerView *contentView; // @synthesize contentView=_contentView;
 - (int)layoutOverride;
 - (void)_updateEditingRotationAngle;
 - (void)setEditingRotationAngle:(float)arg1;

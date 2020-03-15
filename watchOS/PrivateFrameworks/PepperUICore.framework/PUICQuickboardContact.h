@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, UIImage;
 
 @interface PUICQuickboardContact : NSObject
 {
@@ -14,16 +14,18 @@
     NSString *_rawAddress;
     NSString *_addressLabel;
     int _color;
+    UIImage *_image;
 }
 
 + (id)contactFromDictionary:(id)arg1;
 + (id)contactWithName:(id)arg1 address:(id)arg2 label:(id)arg3;
 + (id)contactWithName:(id)arg1 address:(id)arg2;
+- (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) int color; // @synthesize color=_color;
 @property(copy, nonatomic) NSString *addressLabel; // @synthesize addressLabel=_addressLabel;
 @property(copy, nonatomic) NSString *rawAddress; // @synthesize rawAddress=_rawAddress;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 

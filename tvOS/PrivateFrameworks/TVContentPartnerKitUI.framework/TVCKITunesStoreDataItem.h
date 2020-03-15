@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
 + (id)storeKeyForATVDataProperty:(id)arg1;
 + (id)storeFlavorKeyForATVDataProperty:(id)arg1;
 + (_Bool)systemSupportsDolbyDigitalPlus;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowedToUseHLSURL; // @synthesize allowedToUseHLSURL=_allowedToUseHLSURL;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSNumber *storeItemID; // @synthesize storeItemID=_storeItemID;
 @property(retain, nonatomic) TVCKDataType *mediaType; // @synthesize mediaType=_mediaType;
 @property(retain, nonatomic) NSDictionary *storeDict; // @synthesize storeDict=_storeDict;
-- (void).cxx_destruct;
 - (_Bool)_useHLSInsteadOfSpecificFlavor;
 - (id)_dateFromString:(id)arg1;
 - (id)_flavoredDict;

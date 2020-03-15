@@ -16,8 +16,8 @@
     NSArray *_keyValuePairs;
 }
 
-@property(readonly, copy, nonatomic) NSArray *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
 - (id)tableString;
 @property(readonly, nonatomic) CRKTable *table; // @synthesize table=_table;
 - (id)crk_JSONRepresentationWithPrettyPrinting:(_Bool)arg1 sortKeys:(_Bool)arg2;

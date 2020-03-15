@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
 @property(retain, nonatomic) NSString *baseToken; // @synthesize baseToken=_baseToken;
 @property(retain, nonatomic) NSData *encryptedKey; // @synthesize encryptedKey=_encryptedKey;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSString *vettingPhone; // @synthesize vettingPhone=_vettingPhone;
 @property(retain, nonatomic) NSString *vettingEmail; // @synthesize vettingEmail=_vettingEmail;
 @property(copy, nonatomic) NSString *vettingToken; // @synthesize vettingToken=_vettingToken;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

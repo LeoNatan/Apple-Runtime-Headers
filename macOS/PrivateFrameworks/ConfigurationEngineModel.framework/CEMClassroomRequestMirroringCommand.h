@@ -23,11 +23,11 @@
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadPassword; // @synthesize payloadPassword=_payloadPassword;
 @property(copy, nonatomic) NSNumber *payloadScanTime; // @synthesize payloadScanTime=_payloadScanTime;
 @property(copy, nonatomic) NSString *payloadDestinationDeviceID; // @synthesize payloadDestinationDeviceID=_payloadDestinationDeviceID;
 @property(copy, nonatomic) NSString *payloadDestinationName; // @synthesize payloadDestinationName=_payloadDestinationName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -33,6 +33,7 @@
 + (id)encodeAsOPACK:(id)arg1 error:(id *)arg2;
 + (id)internalAllowedTypes;
 + (id)allowedTypes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *classUnavailableVersionCache; // @synthesize classUnavailableVersionCache=_classUnavailableVersionCache;
 @property(retain, nonatomic) NSMapTable *classReadOnlyVersionCache; // @synthesize classReadOnlyVersionCache=_classReadOnlyVersionCache;
 @property(retain, nonatomic) NSMapTable *objectPropertyHashLookup; // @synthesize objectPropertyHashLookup=_objectPropertyHashLookup;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) HMFUnfairLock *propertyLock; // @synthesize propertyLock=_propertyLock;
 @property(readonly, copy, nonatomic) HMFVersion *dataVersion; // @synthesize dataVersion=_dataVersion;
 @property(readonly, copy, nonatomic) HMFVersion *legacyDataVersion; // @synthesize legacyDataVersion=_legacyDataVersion;
-- (void).cxx_destruct;
 - (void)updateMirror:(id)arg1;
 - (void)updateLocalZone:(id)arg1;
 - (id)schemaHashForModel:(id)arg1;

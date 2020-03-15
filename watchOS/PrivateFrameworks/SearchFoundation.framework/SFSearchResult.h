@@ -70,9 +70,6 @@
     int _type;
     unsigned int _minimumRankOfTopHitToSuppressResult;
     NSString *_mediaType;
-    NSDictionary *_topicDistribution;
-    NSDictionary *_featureScaling;
-    unsigned int _origRank;
     SFCustom *_customProperties;
     NSString *_resultType;
     NSString *_resultTemplate;
@@ -84,6 +81,7 @@
     NSString *_resultBundleId;
     SFImage *_icon;
     NSDictionary *_localFeatures;
+    NSDictionary *_serverFeatures;
     NSString *_intendedQuery;
     NSString *_correctedQuery;
     NSString *_completedQuery;
@@ -105,6 +103,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *entityData; // @synthesize entityData=_entityData;
 @property(nonatomic) unsigned long long blockId; // @synthesize blockId=_blockId;
 @property(nonatomic) _Bool doNotFold; // @synthesize doNotFold=_doNotFold;
@@ -123,6 +122,7 @@
 @property(copy, nonatomic) NSString *completedQuery; // @synthesize completedQuery=_completedQuery;
 @property(copy, nonatomic) NSString *correctedQuery; // @synthesize correctedQuery=_correctedQuery;
 @property(copy, nonatomic) NSString *intendedQuery; // @synthesize intendedQuery=_intendedQuery;
+@property(copy, nonatomic) NSDictionary *serverFeatures; // @synthesize serverFeatures=_serverFeatures;
 @property(copy, nonatomic) NSDictionary *localFeatures; // @synthesize localFeatures=_localFeatures;
 @property(nonatomic) _Bool isFuzzyMatch; // @synthesize isFuzzyMatch=_isFuzzyMatch;
 @property(nonatomic) _Bool isStaticCorrection; // @synthesize isStaticCorrection=_isStaticCorrection;
@@ -138,10 +138,7 @@
 @property(copy, nonatomic) NSString *resultTemplate; // @synthesize resultTemplate=_resultTemplate;
 @property(copy, nonatomic) NSString *resultType; // @synthesize resultType=_resultType;
 @property(retain, nonatomic) SFCustom *customProperties; // @synthesize customProperties=_customProperties;
-@property(nonatomic) unsigned int origRank; // @synthesize origRank=_origRank;
 @property(nonatomic) double personalizationScore; // @synthesize personalizationScore=_personalizationScore;
-@property(copy, nonatomic) NSDictionary *featureScaling; // @synthesize featureScaling=_featureScaling;
-@property(copy, nonatomic) NSDictionary *topicDistribution; // @synthesize topicDistribution=_topicDistribution;
 @property(nonatomic) double serverScore; // @synthesize serverScore=_serverScore;
 @property(copy, nonatomic) NSString *mediaType; // @synthesize mediaType=_mediaType;
 @property(nonatomic) unsigned int minimumRankOfTopHitToSuppressResult; // @synthesize minimumRankOfTopHitToSuppressResult=_minimumRankOfTopHitToSuppressResult;
@@ -192,7 +189,6 @@
 @property(nonatomic) _Bool preventThumbnailImageScaling; // @synthesize preventThumbnailImageScaling=_preventThumbnailImageScaling;
 @property(retain, nonatomic) SFImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

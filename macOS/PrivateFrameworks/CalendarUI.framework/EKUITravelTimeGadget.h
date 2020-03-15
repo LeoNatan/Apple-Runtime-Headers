@@ -27,6 +27,7 @@
 
 + (void)_messageTraceTravelTimeDurationSelected:(long long)arg1;
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) NSMenuItem *routesSectionBottomSeparator; // @synthesize routesSectionBottomSeparator=_routesSectionBottomSeparator;
 @property(retain) NSMenuItem *routesSectionTopSeparator; // @synthesize routesSectionTopSeparator=_routesSectionTopSeparator;
 @property(retain) NSMenuItem *calculatingRoutesPlaceholderMenuItem; // @synthesize calculatingRoutesPlaceholderMenuItem=_calculatingRoutesPlaceholderMenuItem;
@@ -40,7 +41,6 @@
 @property(retain) NSMutableSet *currentlyCalculatingRoutes; // @synthesize currentlyCalculatingRoutes=_currentlyCalculatingRoutes;
 @property(retain) NSMutableDictionary *validRoutes; // @synthesize validRoutes=_validRoutes;
 @property(retain) EKUIPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
-- (void).cxx_destruct;
 - (id)_findEventStartLocation;
 - (id)_localizeTravelTimeChoiceStringWithDuration:(double)arg1 fromLocation:(id)arg2 includeLocationDescription:(BOOL)arg3;
 - (BOOL)startingCountryEqualsEndingCountry;

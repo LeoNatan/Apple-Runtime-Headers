@@ -17,12 +17,12 @@
     NSProgressIndicator *_progressIndicator;
 }
 
+- (void).cxx_destruct;
 @property __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain) NSString *statusMessage; // @synthesize statusMessage=_statusMessage;
 @property(readonly, nonatomic) KHThemeProvider *themeProvider; // @synthesize themeProvider=_themeProvider;
 @property(readonly, nonatomic) NSString *productCode; // @synthesize productCode=_productCode;
 @property(readonly, nonatomic) KHProjectBundle *projectBundle; // @synthesize projectBundle=_projectBundle;
-- (void).cxx_destruct;
 - (void)windowDidLoad;
 - (id)initWithProjectBundle:(id)arg1 productCode:(id)arg2 themeProvider:(id)arg3;
 

@@ -20,6 +20,7 @@
 {
     _Bool _allowsPeel;
     _Bool _isPageVisible;
+    _Bool _showPrereleaseSticker;
     id <AVTPresenterDelegate> presenterDelegate;
     id <AVTStickerSheetControllerDelegate> _delegate;
     id <AVTStickerDisclosureValidationDelegate> _disclosureValidationDelegate;
@@ -30,6 +31,8 @@
     struct UIEdgeInsets _sectionInsets;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) _Bool showPrereleaseSticker; // @synthesize showPrereleaseSticker=_showPrereleaseSticker;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(retain, nonatomic) AVTStickerSheetModel *model; // @synthesize model=_model;
 @property(nonatomic) _Bool isPageVisible; // @synthesize isPageVisible=_isPageVisible;
@@ -40,7 +43,6 @@
 @property(nonatomic) __weak id <AVTStickerSheetControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct UIEdgeInsets sectionInsets; // @synthesize sectionInsets=_sectionInsets;
 @property(nonatomic) __weak id <AVTPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate;
-- (void).cxx_destruct;
 - (void)notifyingContainerViewDidChangeSize:(struct CGSize)arg1;
 - (void)notifyingContainerViewWillChangeSize:(struct CGSize)arg1;
 - (void)stickerCellDidPeelSticker:(id)arg1;

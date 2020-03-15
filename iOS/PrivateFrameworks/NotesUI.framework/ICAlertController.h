@@ -16,11 +16,11 @@
     UIAlertAction *_dismissAction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didDismissWithDissmissWithoutActionBlock; // @synthesize didDismissWithDissmissWithoutActionBlock=_didDismissWithDissmissWithoutActionBlock;
 @property(retain, nonatomic) UIAlertAction *dismissAction; // @synthesize dismissAction=_dismissAction;
 @property(copy, nonatomic) CDUnknownBlockType dissmissWithoutActionBlock; // @synthesize dissmissWithoutActionBlock=_dissmissWithoutActionBlock;
 @property(nonatomic) _Bool didPerformAction; // @synthesize didPerformAction=_didPerformAction;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)dismissWhenPossible;
 - (void)dealloc;

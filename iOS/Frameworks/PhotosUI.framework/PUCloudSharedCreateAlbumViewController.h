@@ -18,10 +18,10 @@
     NSArray *__albumRecipients;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAlbumRecipients:) NSArray *_albumRecipients; // @synthesize _albumRecipients=__albumRecipients;
 @property(retain, nonatomic) NSString *nextButtonTitle; // @synthesize nextButtonTitle=_nextButtonTitle;
 @property(nonatomic) __weak id <PUCloudSharedCreateAlbumViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)contentSizeForViewInPopover;
 - (id)navigationItem;
 - (_Bool)_validateRecipientsToAdd:(id)arg1;

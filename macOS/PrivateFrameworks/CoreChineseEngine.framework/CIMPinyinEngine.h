@@ -24,6 +24,7 @@
 }
 
 + (id)contextualVariantMapping;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesStandardPinyinKeyboardLayout; // @synthesize usesStandardPinyinKeyboardLayout=_usesStandardPinyinKeyboardLayout;
 @property(nonatomic) BOOL previousInputSelectedTone; // @synthesize previousInputSelectedTone=_previousInputSelectedTone;
 @property(retain, nonatomic) NSViewController *strokeInformationViewController; // @synthesize strokeInformationViewController=_strokeInformationViewController;
@@ -34,7 +35,6 @@
 @property(nonatomic) BOOL leftDoubleQuotationMarkInserted; // @synthesize leftDoubleQuotationMarkInserted=_leftDoubleQuotationMarkInserted;
 @property(nonatomic) BOOL leftSingleQuotationMarkInserted; // @synthesize leftSingleQuotationMarkInserted=_leftSingleQuotationMarkInserted;
 @property(nonatomic) BOOL lastCharacterWasNumber; // @synthesize lastCharacterWasNumber=_lastCharacterWasNumber;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL capsLockEnabled; // @synthesize capsLockEnabled=_capsLockEnabled;
 - (void)updateTextReplacementEntries;
 - (id)mecabraEnvironment;

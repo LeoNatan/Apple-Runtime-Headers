@@ -22,6 +22,7 @@
     NSArray *_editorialSectionGroups;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *editorialSectionGroups; // @synthesize editorialSectionGroups=_editorialSectionGroups;
 @property(copy) CDUnknownBlockType catchUpCompletionHandler; // @synthesize catchUpCompletionHandler=_catchUpCompletionHandler;
 @property(retain) NSError *error; // @synthesize error=_error;
@@ -31,7 +32,6 @@
 @property(copy) NSArray *trendingHeadlines; // @synthesize trendingHeadlines=_trendingHeadlines;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

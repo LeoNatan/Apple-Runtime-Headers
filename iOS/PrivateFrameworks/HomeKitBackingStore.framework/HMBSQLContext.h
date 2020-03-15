@@ -26,6 +26,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mutation; // @synthesize mutation=_mutation;
 @property(nonatomic) _Bool finalized; // @synthesize finalized=_finalized;
 @property(retain, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
@@ -34,7 +35,6 @@
 @property(nonatomic) struct sqlite3 *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
-- (void).cxx_destruct;
 - (_Bool)fetchSQLite3One:(struct sqlite3_stmt *)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)fetchSQLite3:(struct sqlite3_stmt *)arg1 limit:(unsigned long long)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
 - (_Bool)fetchSQLite3:(struct sqlite3_stmt *)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;

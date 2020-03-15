@@ -48,6 +48,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPDate *inviteTimestampDate; // @synthesize inviteTimestampDate=_inviteTimestampDate;
 @property(retain, nonatomic) NSData *protectionInfoPublicKey; // @synthesize protectionInfoPublicKey=_protectionInfoPublicKey;
 @property(nonatomic) _Bool isOrgUser; // @synthesize isOrgUser=_isOrgUser;
@@ -64,7 +65,6 @@
 @property(retain, nonatomic) CKDPContactInformation *contactInformation; // @synthesize contactInformation=_contactInformation;
 @property(retain, nonatomic) CKDPIdentifier *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) CKDPIdentifier *participantId; // @synthesize participantId=_participantId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

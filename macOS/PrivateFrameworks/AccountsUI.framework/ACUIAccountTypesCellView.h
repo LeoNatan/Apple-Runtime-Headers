@@ -15,10 +15,10 @@
     ACUIAccountTypesViewController *_accountTypesVC;
 }
 
+- (void).cxx_destruct;
 @property __weak ACUIAccountTypesViewController *accountTypesVC; // @synthesize accountTypesVC=_accountTypesVC;
 @property BOOL isHovered; // @synthesize isHovered=_isHovered;
 @property BOOL isLastRow; // @synthesize isLastRow=_isLastRow;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)click:(id)arg1;

@@ -24,8 +24,8 @@
 
 + (id)componentsWithEmailAddress:(id)arg1;
 + (id)componentsWithString:(id)arg1;
-@property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
+@property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) NSString *stringValue;
 @property(readonly) ECEmailAddress *emailAddressValue;
 @property(readonly) NSString *simpleAddress; // @synthesize simpleAddress=_simpleAddress;

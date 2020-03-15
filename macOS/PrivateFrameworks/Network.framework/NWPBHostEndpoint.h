@@ -16,9 +16,9 @@
     NSString *_port;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *port; // @synthesize port=_port;
 @property(retain, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

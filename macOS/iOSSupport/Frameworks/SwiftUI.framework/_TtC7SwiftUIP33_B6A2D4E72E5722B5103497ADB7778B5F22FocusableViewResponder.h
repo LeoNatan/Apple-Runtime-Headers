@@ -12,6 +12,7 @@
     // Error parsing type: , name: baseItem
     // Error parsing type: , name: transform
     // Error parsing type: , name: size
+    // Error parsing type: , name: _uikitFocusItem
 }
 
 @end

@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 + (void)mediaserverdCrashed;
 + (void)replaceURL:(id)arg1 withURL:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak Project *weakProject; // @synthesize weakProject=_weakProject;
 @property(retain, nonatomic) PHAssetRepresentation *phAssetRepresentation; // @synthesize phAssetRepresentation=_phAssetRepresentation;
 @property(retain, nonatomic) PHAsset *phAsset; // @synthesize phAsset=_phAsset;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSURL *identifierURL; // @synthesize identifierURL=_identifierURL;
-- (void).cxx_destruct;
 - (BOOL)isUnsupportedFormat;
 - (int)duration;
 - (struct CGAffineTransform)transform;

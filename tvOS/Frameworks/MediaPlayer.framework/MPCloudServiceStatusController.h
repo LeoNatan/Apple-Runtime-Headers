@@ -8,8 +8,8 @@
 
 #import <MediaPlayer/ICEnvironmentMonitorObserver-Protocol.h>
 
-@class ICMusicSubscriptionFairPlayKeyStatus, ICMusicSubscriptionStatus, ICUserIdentity, NSString, SSVFairPlaySubscriptionStatus, SSVSubscriptionStatus;
-@protocol OS_dispatch_queue;
+@class ICMusicSubscriptionFairPlayKeyStatus, ICMusicSubscriptionStatus, ICMusicSubscriptionStatusMonitor, ICUserIdentity, NSString, SSVFairPlaySubscriptionStatus, SSVSubscriptionStatus;
+@protocol NSCopying, OS_dispatch_queue;
 
 @interface MPCloudServiceStatusController : NSObject <ICEnvironmentMonitorObserver>
 {
@@ -20,7 +20,8 @@
     unsigned long long _cloudLibraryObservationCount;
     _Bool _hasLoadedMatchStatus;
     _Bool _hasLoadedSubscriptionAvailability;
-    ICMusicSubscriptionStatus *_lastKnownMusicSubscriptionStatus;
+    ICMusicSubscriptionStatusMonitor *_subscriptionStatusMonitor;
+    id <NSCopying> _subscriptionStatusObservationToken;
     unsigned long long _matchStatusObservationCount;
     unsigned long long _matchStatus;
     _Bool _observingNetworkReachability;
@@ -40,10 +41,10 @@
 + (id)sharedController;
 + (id)controllers;
 + (id)globalSerialQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(readonly, copy, nonatomic) SSVSubscriptionStatus *subscriptionStatus; // @synthesize subscriptionStatus=_subscriptionStatus;
 @property(readonly, nonatomic) ICMusicSubscriptionFairPlayKeyStatus *lastKnownSubscriptionFairPlayKeyStatus; // @synthesize lastKnownSubscriptionFairPlayKeyStatus=_lastKnownSubscriptionFairPlayKeyStatus;
-- (void).cxx_destruct;
 - (void)_performBlockOnControllerHandlingTheSameAccount:(CDUnknownBlockType)arg1;
 - (_Bool)_handlesSameAccountAs:(id)arg1;
 - (void)_copyObservationStateFrom:(id)arg1;
@@ -51,7 +52,6 @@
 - (void)_beginObservingMatchStatus;
 - (void)_endObservingCloudLibraryEnabled;
 - (void)_beginObservingCloudLibraryEnabled;
-- (void)_updateSubscriptionStatusWithIgnoreCachePolicy:(_Bool)arg1;
 - (void)_updateSubscriptionAvailabilityWithValue:(_Bool)arg1;
 - (void)_updateSubscriptionAvailability;
 - (void)_updateMatchStatus;
@@ -78,7 +78,6 @@
 @property(readonly, nonatomic, getter=isCloudLibraryEnabled) _Bool cloudLibraryEnabled;
 @property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void)_enableICMLErrorReasonChange:(id)arg1;
-- (void)_subscriptionStatusDidChange:(id)arg1;
 - (void)_userIdentityStoreDidChange:(id)arg1;
 - (void)_cloudClientAuthenticationDidChange;
 - (void)_allowsMusicSubscriptionDidChange:(id)arg1;

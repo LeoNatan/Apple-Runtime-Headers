@@ -20,13 +20,13 @@
     unsigned long long _gradientState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long gradientState; // @synthesize gradientState=_gradientState;
 @property(retain, nonatomic) CAGradientLayer *textGradientMask; // @synthesize textGradientMask=_textGradientMask;
 @property(retain, nonatomic) UILabel *expandedTextLabel; // @synthesize expandedTextLabel=_expandedTextLabel;
 @property(retain, nonatomic) UIView *maskedContainerView; // @synthesize maskedContainerView=_maskedContainerView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) NSAttributedString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (void)viewDidLayoutSubviews;

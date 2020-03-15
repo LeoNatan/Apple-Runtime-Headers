@@ -17,11 +17,11 @@
     NSObject<HFIconDescriptor> *_iconDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<HFIconDescriptor> *iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;
 @property(retain, nonatomic) NSString *supplementaryString; // @synthesize supplementaryString=_supplementaryString;
 @property(retain, nonatomic) UIColor *statusTextColor; // @synthesize statusTextColor=_statusTextColor;
 @property(retain, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

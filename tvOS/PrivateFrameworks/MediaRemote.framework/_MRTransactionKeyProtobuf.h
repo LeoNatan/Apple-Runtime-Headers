@@ -16,9 +16,9 @@
     NSData *_userData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *userData; // @synthesize userData=_userData;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

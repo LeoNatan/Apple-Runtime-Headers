@@ -24,6 +24,7 @@
 }
 
 + (void)clearImageCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool representsToday; // @synthesize representsToday=_representsToday;
 @property(readonly, nonatomic) long long dayOfMonth; // @synthesize dayOfMonth=_dayOfMonth;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) CALayer *dayLabel; // @synthesize dayLabel=_dayLabel;
 @property(readonly, nonatomic) CALayer *circle; // @synthesize circle=_circle;
 @property(readonly, nonatomic) HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (struct CGSize)_roundedRectSizeForDayNumberString:(id)arg1;
 - (struct CGSize)circleSize;

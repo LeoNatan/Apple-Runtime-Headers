@@ -24,10 +24,10 @@
     CDUnknownBlockType _selectionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selectionBlock; // @synthesize selectionBlock=_selectionBlock;
 @property(readonly, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) NMRNowPlayingController *nowPlayingController; // @synthesize nowPlayingController=_nowPlayingController;
-- (void).cxx_destruct;
 - (void)_handleICAgeVerificationStateDidChangeNotification:(id)arg1;
 - (void)actionContentControllerCancel:(id)arg1;
 - (void)_handleRepeatButtonTapped:(id)arg1;

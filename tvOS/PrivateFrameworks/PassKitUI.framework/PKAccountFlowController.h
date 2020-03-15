@@ -34,12 +34,12 @@
 }
 
 + (id)displayableErrorForError:(id)arg1 featureIdentifier:(unsigned long long)arg2 genericErrorTitle:(id)arg3 genericErrorMessage:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKAccountFlowControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <PKSetupFlowControllerProtocol> parentFlowController; // @synthesize parentFlowController=_parentFlowController;
 @property(readonly, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
 @property(readonly, nonatomic) PKAccountCredential *accountCredential; // @synthesize accountCredential=_accountCredential;
 @property(readonly, nonatomic) unsigned long long operations; // @synthesize operations=_operations;
-- (void).cxx_destruct;
 - (void)authAndDecryptWithVirtualCard:(id)arg1 authenticationReason:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_invalidateAssertion;
 - (void)_acquireAssertion;

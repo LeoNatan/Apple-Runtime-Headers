@@ -21,13 +21,15 @@ __attribute__((visibility("hidden")))
     BookmarkMergeDriver *_mergeDriver;
     BOOL _hasBegunBookmarkTransaction;
     id <BrowserBookmarkImporterDelegate> _delegate;
+    CDUnknownBlockType _completionHandler;
     BookmarksUndoController *_bookmarksUndoController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BookmarksUndoController *bookmarksUndoController; // @synthesize bookmarksUndoController=_bookmarksUndoController;
 @property(nonatomic) BOOL hasBegunBookmarkTransaction; // @synthesize hasBegunBookmarkTransaction=_hasBegunBookmarkTransaction;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) __weak id <BrowserBookmarkImporterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)bookmarkMergeDriver:(id)arg1 shouldMergeTitlesOfBookmark:(id)arg2 existingBookmark:(id)arg3;
 - (void)_updateReimportedBookmarks;
 - (void)_adoptChangesFromReimportedBookmark:(id)arg1 existingBookmark:(id)arg2;

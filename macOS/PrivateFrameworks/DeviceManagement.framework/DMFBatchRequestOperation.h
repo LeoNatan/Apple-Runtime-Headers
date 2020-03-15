@@ -15,10 +15,10 @@
     NSArray *_subOperations;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *subOperations; // @synthesize subOperations=_subOperations;
 @property(retain, nonatomic) CATRemoteTaskOperation *activityTransactionOperation; // @synthesize activityTransactionOperation=_activityTransactionOperation;
 @property(retain, nonatomic) CATOperationQueue *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)activityTransactionOperationDidFinish:(id)arg1;
 - (void)activityTransactionOperationDidStart:(id)arg1;
 - (void)main;

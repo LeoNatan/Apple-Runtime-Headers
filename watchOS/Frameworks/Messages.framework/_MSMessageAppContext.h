@@ -21,9 +21,9 @@
 }
 
 + (id)activeExtensionContext;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MSConversation *activeConversation; // @synthesize activeConversation=_activeConversation;
 @property(retain, nonatomic) id <_MSMessageComposeExtensionImplProtocol> containingContext; // @synthesize containingContext=_containingContext;
-- (void).cxx_destruct;
 - (void)_volumeButtonPressed:(_Bool)arg1;
 - (void)_prepareForPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_didRemoveAssetArchiveWithIdentifier:(id)arg1;

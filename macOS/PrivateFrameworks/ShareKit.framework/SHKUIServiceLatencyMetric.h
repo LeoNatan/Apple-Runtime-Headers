@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     SHKLatencyMeasurement *_totalLatencyMeasurement;
 }
 
+- (void).cxx_destruct;
 @property(retain) SHKLatencyMeasurement *totalLatencyMeasurement; // @synthesize totalLatencyMeasurement=_totalLatencyMeasurement;
 @property(retain) SHKLatencyMeasurement *remoteViewControllerRequestMeasurement; // @synthesize remoteViewControllerRequestMeasurement=_remoteViewControllerRequestMeasurement;
 @property(retain) SHKLatencyMeasurement *sendOptionsRequestMeasurement; // @synthesize sendOptionsRequestMeasurement=_sendOptionsRequestMeasurement;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(retain) NSNumber *sharedItemsCount; // @synthesize sharedItemsCount=_sharedItemsCount;
 @property(retain) NSNumber *launchCount; // @synthesize launchCount=_launchCount;
-- (void).cxx_destruct;
 - (void)report;
 - (BOOL)shouldReport;
 - (id)initWithServiceIdentifier:(id)arg1;

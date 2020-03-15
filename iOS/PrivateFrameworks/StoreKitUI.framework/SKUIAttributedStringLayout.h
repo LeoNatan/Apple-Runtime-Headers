@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSShadow *_shadow;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double topInset; // @synthesize topInset=_topInset;
 @property(readonly, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsetsForShadow; // @synthesize edgeInsetsForShadow=_edgeInsetsForShadow;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSStringDrawingContext *stringDrawingContext; // @synthesize stringDrawingContext=_context;
 @property(readonly, nonatomic) struct CGSize boundingSize; // @synthesize boundingSize=_boundingSize;
 @property(readonly, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long numberOfLines;
 @property(readonly, nonatomic) double firstBaselineOffset;
 @property(readonly, nonatomic) double baselineOffset;

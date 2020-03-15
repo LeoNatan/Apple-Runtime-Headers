@@ -17,9 +17,9 @@
 }
 
 + (Class)passIDsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *passIDs; // @synthesize passIDs=_passIDs;
 @property(nonatomic) int failedPrecondition; // @synthesize failedPrecondition=_failedPrecondition;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

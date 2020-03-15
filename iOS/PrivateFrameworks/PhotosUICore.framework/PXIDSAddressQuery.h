@@ -17,8 +17,8 @@
     CDUnknownBlockType _resultHandler;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, nonatomic) _Bool isComplete;
 @property(readonly, copy, nonatomic) NSSet *remainingDestinations;
 - (id)popStashedResults;

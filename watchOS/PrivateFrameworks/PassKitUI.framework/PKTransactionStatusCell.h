@@ -22,14 +22,13 @@
     UIColor *_secondaryTextOverrideColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isBridge; // @synthesize isBridge=_isBridge;
 @property(retain, nonatomic) UIColor *secondaryTextOverrideColor; // @synthesize secondaryTextOverrideColor=_secondaryTextOverrideColor;
 @property(retain, nonatomic) UIColor *primaryTextOverrideColor; // @synthesize primaryTextOverrideColor=_primaryTextOverrideColor;
 @property(copy, nonatomic) NSString *secondaryValue; // @synthesize secondaryValue=_secondaryValue;
 @property(copy, nonatomic) NSString *secondaryTitle; // @synthesize secondaryTitle=_secondaryTitle;
 @property(copy, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
-- (void).cxx_destruct;
-- (struct UIEdgeInsets)_effectiveLayoutMargins;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (void)_updateTextColors;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

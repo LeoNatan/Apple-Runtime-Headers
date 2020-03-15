@@ -8,10 +8,11 @@
 
 #import <NanoPassKit/NSCopying-Protocol.h>
 
-@class NSString;
+@class NPKProtoStandalonePaymentSetupProduct, NSString;
 
 @interface NPKProtoStandalonePaymentProvisioningFlowTermsAndConditionsStepContext : PBCodable <NSCopying>
 {
+    NPKProtoStandalonePaymentSetupProduct *_product;
     NSString *_termsURL;
     _Bool _allowNonSecureHTTP;
     struct {
@@ -19,9 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NPKProtoStandalonePaymentSetupProduct *product; // @synthesize product=_product;
 @property(nonatomic) _Bool allowNonSecureHTTP; // @synthesize allowNonSecureHTTP=_allowNonSecureHTTP;
 @property(retain, nonatomic) NSString *termsURL; // @synthesize termsURL=_termsURL;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -31,6 +33,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasProduct;
 @property(nonatomic) _Bool hasAllowNonSecureHTTP;
 @property(readonly, nonatomic) _Bool hasTermsURL;
 

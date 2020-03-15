@@ -19,11 +19,11 @@
     struct CGRect _attributesContentViewFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTAvatarAttributeEditorLayout> backingLayout; // @synthesize backingLayout=_backingLayout;
 @property(nonatomic) struct CGRect attributesContentViewFrame; // @synthesize attributesContentViewFrame=_attributesContentViewFrame;
 @property(nonatomic) double avatarContainerAlpha; // @synthesize avatarContainerAlpha=_avatarContainerAlpha;
 @property(nonatomic) struct CGRect avatarContainerFrame; // @synthesize avatarContainerFrame=_avatarContainerFrame;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long supportedLayoutOrientation;
 @property(readonly, nonatomic) struct UIEdgeInsets attributesContentViewScrollIndicatorInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets attributesContentViewInsets;

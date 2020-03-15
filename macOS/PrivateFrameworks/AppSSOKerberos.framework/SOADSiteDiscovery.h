@@ -14,9 +14,9 @@
     NSOperationQueue *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSString *realm; // @synthesize realm=_realm;
-- (void).cxx_destruct;
 - (void)discoverADInfoUsingSourceAppBundleIdentifier:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)initWithRealm:(id)arg1;
 

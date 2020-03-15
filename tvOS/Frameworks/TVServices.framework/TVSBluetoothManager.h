@@ -25,11 +25,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TVSBluetoothManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSSet *discoveredDevices; // @synthesize discoveredDevices=_discoveredDevices;
 @property(copy, nonatomic) NSSet *pairedDevices; // @synthesize pairedDevices=_pairedDevices;
 @property(copy, nonatomic) NSSet *connectedDevices; // @synthesize connectedDevices=_connectedDevices;
-- (void).cxx_destruct;
 - (void)_stopBluetoothDeviceDiscovery;
 - (void)_startBluetoothDeviceDiscovery;
 - (unsigned long long)_pairingDeviceCount;

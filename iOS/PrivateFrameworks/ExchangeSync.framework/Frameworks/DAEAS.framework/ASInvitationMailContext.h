@@ -17,12 +17,12 @@
     NSArray *_attendeeUUIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attendeeUUIDs; // @synthesize attendeeUUIDs=_attendeeUUIDs;
 @property(nonatomic) int emailResponse; // @synthesize emailResponse=_emailResponse;
 @property(nonatomic) _Bool isMyInvite; // @synthesize isMyInvite=_isMyInvite;
 @property(retain, nonatomic) NSString *serverID; // @synthesize serverID=_serverID;
 @property(retain, nonatomic) NSString *eventUID; // @synthesize eventUID=_eventUID;
-- (void).cxx_destruct;
 
 @end
 

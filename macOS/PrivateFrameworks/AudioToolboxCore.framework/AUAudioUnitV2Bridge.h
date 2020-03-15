@@ -25,9 +25,10 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-@property(readonly, nonatomic) struct OpaqueAudioComponentInstance *audioUnit; // @synthesize audioUnit=_audioUnit;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct OpaqueAudioComponentInstance *audioUnit; // @synthesize audioUnit=_audioUnit;
+- (void)setCurrentPreset:(id)arg1;
 - (void)setFullStateForDocument:(id)arg1;
 - (void)setFullState:(id)arg1;
 - (BOOL)providesUserInterface;

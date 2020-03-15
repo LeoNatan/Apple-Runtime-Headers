@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     UITouchForceGestureRecognizer *_gestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) UITouchForceGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
-- (void).cxx_destruct;
 - (void)_handleGestureRecognizer:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)cancelInteraction;

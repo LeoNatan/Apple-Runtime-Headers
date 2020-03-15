@@ -20,9 +20,9 @@
     id <ABAccountPersistenceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <ABAccountPersistenceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(getter=isInvalidated) BOOL invalidated; // @synthesize invalidated=_invalidated;
-- (void).cxx_destruct;
 - (void)_sourceShouldRefreshImmediately;
 - (unsigned long long)unsignedIntegerForKey:(id)arg1;
 - (void)setUnsignedInteger:(unsigned long long)arg1 forKey:(id)arg2;

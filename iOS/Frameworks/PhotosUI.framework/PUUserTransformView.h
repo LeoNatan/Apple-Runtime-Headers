@@ -59,6 +59,7 @@
     struct CGAffineTransform _userAffineTransform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *debugScrollViewContentImage; // @synthesize debugScrollViewContentImage=_debugScrollViewContentImage;
 @property(nonatomic, setter=_setNeedsUpdateScrollView:) _Bool _needsUpdateScrollView; // @synthesize _needsUpdateScrollView=__needsUpdateScrollView;
 @property(nonatomic, setter=_setNeedsUpdateZoomAndScroll:) _Bool _needsUpdateZoomAndScroll; // @synthesize _needsUpdateZoomAndScroll=__needsUpdateZoomAndScroll;
@@ -99,7 +100,6 @@
 @property(nonatomic) struct CGRect untransformedContentFrame; // @synthesize untransformedContentFrame=_untransformedContentFrame;
 @property(nonatomic) struct CGSize contentPixelSize; // @synthesize contentPixelSize=_contentPixelSize;
 @property(nonatomic) __weak id <PUUserTransformViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

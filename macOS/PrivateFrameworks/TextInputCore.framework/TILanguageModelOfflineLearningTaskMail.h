@@ -17,8 +17,8 @@
 }
 
 + (id)dataSourceForTask;
-- (id)dataSource;
 - (void).cxx_destruct;
+- (id)dataSource;
 - (id)forwardedMessageSeparators;
 - (id)linePaddingCharacters;
 - (id)initWithClientIdentifier:(id)arg1 oneTimeTask:(BOOL)arg2;

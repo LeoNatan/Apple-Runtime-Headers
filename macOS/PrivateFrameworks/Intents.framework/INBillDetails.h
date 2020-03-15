@@ -26,6 +26,7 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long paymentStatus; // @synthesize paymentStatus=_paymentStatus;
 @property long long billType; // @synthesize billType=_billType;
 @property(copy) NSDateComponents *paymentDate; // @synthesize paymentDate=_paymentDate;
@@ -34,7 +35,6 @@
 @property(copy) INCurrencyAmount *minimumDue; // @synthesize minimumDue=_minimumDue;
 @property(copy) INCurrencyAmount *amountDue; // @synthesize amountDue=_amountDue;
 @property(copy) INBillPayee *billPayee; // @synthesize billPayee=_billPayee;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

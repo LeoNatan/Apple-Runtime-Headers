@@ -23,8 +23,8 @@
 
 + (id)logCategory;
 + (double)defaultTimeout;
-@property(readonly, copy) NSString *accessoryIdentifier; // @synthesize accessoryIdentifier=_accessoryIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *accessoryIdentifier; // @synthesize accessoryIdentifier=_accessoryIdentifier;
 - (void)cancel;
 - (void)main;
 @property(readonly) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;

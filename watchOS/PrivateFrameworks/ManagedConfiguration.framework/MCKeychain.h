@@ -35,6 +35,7 @@
 + (id)saveItem:(void *)arg1 withLabel:(id)arg2 group:(id)arg3 useSystemKeychain:(_Bool)arg4;
 + (struct __SecIdentity *)copyIdentityWithPersistentID:(id)arg1 useSystemKeychain:(_Bool)arg2 enforcePersonalPersona:(_Bool)arg3;
 + (struct __SecIdentity *)copyIdentityWithPersistentID:(id)arg1 useSystemKeychain:(_Bool)arg2;
++ (id)copyCertificatesWithPersistentIDs:(id)arg1 useSystemKeychain:(_Bool)arg2;
 + (struct __SecCertificate *)copyCertificateWithPersistentID:(id)arg1 useSystemKeychain:(_Bool)arg2 enforcePersonalPersona:(_Bool)arg3;
 + (struct __SecCertificate *)copyCertificateWithPersistentID:(id)arg1 useSystemKeychain:(_Bool)arg2;
 + (const void *)copyItemWithPersistentID:(id)arg1 useSystemKeychain:(_Bool)arg2 enforcePersonalPersona:(_Bool)arg3;

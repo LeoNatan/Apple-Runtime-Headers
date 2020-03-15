@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     id <UINSFontPickerControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <UINSFontPickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UINSFontPickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setSelectedFont:(struct __CTFontDescriptor *)arg1;
 - (void)presentAtLocation:(struct CGPoint)arg1 inWindow:(id)arg2;
 - (void)_selectFont:(id)arg1;

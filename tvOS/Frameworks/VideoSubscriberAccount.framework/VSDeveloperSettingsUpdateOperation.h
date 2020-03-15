@@ -15,10 +15,10 @@
     VSDeveloperServiceConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSDeveloperServiceConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) VSDeveloperSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)init;
 - (id)initWithSettings:(id)arg1;

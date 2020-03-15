@@ -28,6 +28,7 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *itemDescription; // @synthesize itemDescription=_itemDescription;
 @property(retain, nonatomic) UIView *containedView; // @synthesize containedView=_containedView;
 @property(readonly, nonatomic) struct CGSize interfacePlistSize; // @synthesize interfacePlistSize=_interfacePlistSize;
@@ -39,7 +40,6 @@
 @property(nonatomic) int interfaceAlignment; // @synthesize interfaceAlignment=_interfaceAlignment;
 @property(retain, nonatomic) NSDictionary *companionProperty; // @synthesize companionProperty=_companionProperty;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

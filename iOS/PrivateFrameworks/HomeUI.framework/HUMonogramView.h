@@ -19,13 +19,13 @@
 }
 
 + (unsigned long long)desiredStyleForString:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *labelLayoutConstraints; // @synthesize labelLayoutConstraints=_labelLayoutConstraints;
 @property(nonatomic) struct UIEdgeInsets bubbleEdgeOutsets; // @synthesize bubbleEdgeOutsets=_bubbleEdgeOutsets;
 @property(nonatomic) _Bool needsComputeLayoutMetrics; // @synthesize needsComputeLayoutMetrics=_needsComputeLayoutMetrics;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) UILabel *monogramLabel; // @synthesize monogramLabel=_monogramLabel;
-- (void).cxx_destruct;
 - (void)_computeLayoutMetrics;
 - (void)setNeedsComputeLayoutMetrics;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;

@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *namedAttributes; // @synthesize namedAttributes=_namedAttributes;
 @property(copy, nonatomic) NSURL *cinemagraphURL; // @synthesize cinemagraphURL=_cinemagraphURL;
 @property(copy, nonatomic) NSURL *previewVideoURL; // @synthesize previewVideoURL=_previewVideoURL;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic, setter=_setCommonSenseRecommendedAge:) NSNumber *_commonSenseRecommendedAge; // @synthesize _commonSenseRecommendedAge;
 @property(retain, nonatomic, setter=_setRottenTomatoesRating:) TVTopShelfRottenTomatoesRating *_rottenTomatoesRating; // @synthesize _rottenTomatoesRating;
 @property(copy, nonatomic, setter=_setITunesContentRating:) NSString *_iTunesContentRating; // @synthesize _iTunesContentRating;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

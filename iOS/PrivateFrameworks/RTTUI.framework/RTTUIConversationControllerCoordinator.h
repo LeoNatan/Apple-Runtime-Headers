@@ -22,11 +22,11 @@
 }
 
 + (id)coordinator;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool processingUtteranceBuffer; // @synthesize processingUtteranceBuffer=_processingUtteranceBuffer;
 @property(retain, nonatomic) NSMutableArray *utteranceBuffer; // @synthesize utteranceBuffer=_utteranceBuffer;
 @property(readonly, nonatomic) RTTUtterance *inProgressRealTimeUtterance; // @synthesize inProgressRealTimeUtterance=_inProgressRealTimeUtterance;
 @property(readonly, nonatomic) NSIndexPath *inProgressRealTimeIndexPath; // @synthesize inProgressRealTimeIndexPath=_inProgressRealTimeIndexPath;
-- (void).cxx_destruct;
 - (void)processUtteranceQueue;
 - (void)_sendNewUtteranceString:(id)arg1 atIndex:(unsigned long long)arg2 forCellPath:(id)arg3 call:(id)arg4;
 - (_Bool)realtimeTextDidChange:(id)arg1 forUtterance:(id)arg2 lastRowPath:(id)arg3;

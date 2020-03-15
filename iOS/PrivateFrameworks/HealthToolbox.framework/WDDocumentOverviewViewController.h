@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     UIFont *_bodyFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *bodyFont; // @synthesize bodyFont=_bodyFont;
 @property(nonatomic) long long totalReportCount; // @synthesize totalReportCount=_totalReportCount;
 @property(retain, nonatomic) WDAppSwooshTableViewCell *recommendedAppsCell; // @synthesize recommendedAppsCell=_recommendedAppsCell;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) WDDocumentListDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(readonly, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
-- (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_updateActivityForViewDidAppear;
 - (id)applyTransitionActivity:(id)arg1;

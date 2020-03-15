@@ -31,6 +31,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)fitnessFriendWorkoutFromHKWorkout:(id)arg1;
 + (id)fitnessFriendworkoutWithActivityType:(unsigned int)arg1 friendUUID:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 goalType:(unsigned int)arg9 goal:(id)arg10 bundleID:(id)arg11 isWatchWorkout:(_Bool)arg12 isIndoorWorkout:(_Bool)arg13 deviceManufacturer:(id)arg14 deviceModel:(id)arg15 amm:(int)arg16;
+- (void).cxx_destruct;
 @property(nonatomic) int amm; // @synthesize amm=_amm;
 @property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(retain, nonatomic) NSString *deviceManufacturer; // @synthesize deviceManufacturer=_deviceManufacturer;
@@ -45,7 +46,6 @@
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned int workoutActivityType; // @synthesize workoutActivityType=_workoutActivityType;
 @property(retain, nonatomic) NSUUID *friendUUID; // @synthesize friendUUID=_friendUUID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

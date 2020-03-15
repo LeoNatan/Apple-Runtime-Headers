@@ -16,10 +16,10 @@
 }
 
 + (id)sharedServiceConnection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) _Bool requiresResponse; // @synthesize requiresResponse=_requiresResponse;
 @property(readonly, nonatomic) WFTaskIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)cancel;
 @property(readonly, nonatomic) _Bool isCancelled;
 - (void)cleanup;

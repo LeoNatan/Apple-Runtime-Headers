@@ -22,6 +22,7 @@
     UIView *_lockoutView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lockoutView; // @synthesize lockoutView=_lockoutView;
 @property(retain, nonatomic) STConversationContext *conversationContext; // @synthesize conversationContext=_conversationContext;
 @property(retain, nonatomic) STLockoutViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UITextView *headerTextView; // @synthesize headerTextView=_headerTextView;
 @property(retain, nonatomic) NSMutableArray *messages; // @synthesize messages=_messages;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
-- (void).cxx_destruct;
 - (id)generateHeader;
 - (id)_handleIDsForCurrentConversation;
 - (void)showScreenTimeShieldIfNeeded;

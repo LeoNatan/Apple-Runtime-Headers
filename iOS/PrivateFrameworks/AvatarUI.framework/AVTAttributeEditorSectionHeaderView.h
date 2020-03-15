@@ -18,11 +18,11 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) id <AVTAvatarAttributeEditorHeaderPicker> accessoryPicker; // @synthesize accessoryPicker=_accessoryPicker;
 @property(nonatomic) __weak id <AVTAttributeEditorSectionHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)pickerButtonTapped;
 - (void)updateButtonForSelectedSectionItem;
 - (void)layoutSubviews;

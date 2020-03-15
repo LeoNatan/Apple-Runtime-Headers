@@ -19,6 +19,7 @@
     NSSet *_conflictDates;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSet *conflictDates; // @synthesize conflictDates=_conflictDates;
 @property(retain) NSSet *nonAcceptedEvents; // @synthesize nonAcceptedEvents=_nonAcceptedEvents;
 @property(retain) NSSet *eventsConflictedWith; // @synthesize eventsConflictedWith=_eventsConflictedWith;
@@ -26,7 +27,6 @@
 @property(retain) CalDateRange *scanRange; // @synthesize scanRange=_scanRange;
 @property(retain) NSArray *calendarIdentifiers; // @synthesize calendarIdentifiers=_calendarIdentifiers;
 @property(retain) EKEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 
 @end
 

@@ -29,6 +29,7 @@
     NSMutableDictionary *_scoreboardAwayRowValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *scoreboardAwayRowValues; // @synthesize scoreboardAwayRowValues=_scoreboardAwayRowValues;
 @property(retain, nonatomic) NSMutableDictionary *scoreboardHomeRowValues; // @synthesize scoreboardHomeRowValues=_scoreboardHomeRowValues;
 @property(retain, nonatomic) NSMutableDictionary *scoreboardHeaderTitles; // @synthesize scoreboardHeaderTitles=_scoreboardHeaderTitles;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) UILabel *homeNameLabel; // @synthesize homeNameLabel=_homeNameLabel;
 @property(retain, nonatomic) UILabel *gameStateLabel; // @synthesize gameStateLabel=_gameStateLabel;
 @property(retain, nonatomic) UILabel *clockLabel; // @synthesize clockLabel=_clockLabel;
-- (void).cxx_destruct;
 - (double)columnRowView:(id)arg1 heightForRow:(long long)arg2;
 - (double)columnRowView:(id)arg1 widthForColumn:(long long)arg2;
 - (double)headerHeightForColumnRowView:(id)arg1;

@@ -39,6 +39,7 @@
 + (id)classInfoWithClassName:(id)arg1 binaryPath:(id)arg2 type:(unsigned int)arg3;
 + (id)_genericBlockByrefInfo;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int ivarCount; // @synthesize ivarCount=_ivarCount;
 @property(readonly, nonatomic) _Bool usesSwiftRefcounting; // @synthesize usesSwiftRefcounting=_usesSwiftRefcounting;
 @property(readonly, nonatomic) unsigned int pointerSize; // @synthesize pointerSize=_remotePointerSize;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) NSString *binaryPath; // @synthesize binaryPath=_remoteBinaryPath;
 @property(readonly) unsigned long long remoteIsa; // @synthesize remoteIsa=_remoteIsa;
 @property(readonly) unsigned int instanceSize; // @synthesize instanceSize=_instanceSize;
-- (void).cxx_destruct;
 @property(readonly) _Bool hasCppConstructorOrDestructor;
 @property(readonly) _Bool isRootClass;
 @property(readonly) _Bool isMetaClass;
@@ -100,6 +100,7 @@
 - (id)initWithRealizedClass:(unsigned long long)arg1 type:(unsigned int)arg2 infoMap:(id)arg3 objectIdentifier:(id)arg4 reader:(CDUnknownBlockType)arg5;
 - (id)initWithClass:(unsigned long long)arg1 type:(unsigned int)arg2 infoMap:(id)arg3 objectIdentifier:(id)arg4 reader:(CDUnknownBlockType)arg5;
 - (id)_initWithClass:(unsigned long long)arg1 type:(unsigned int)arg2 realizedOnly:(_Bool)arg3 infoMap:(id)arg4 objectIdentifier:(id)arg5 reader:(CDUnknownBlockType)arg6;
+- (unsigned int)_objcABIFromObjectIdentifier:(id)arg1;
 - (id)initSwiftClassWithName:(id)arg1 classInfoType:(unsigned int)arg2 size:(unsigned int)arg3;
 - (id)initWithClosureContext:(unsigned long long)arg1 typeInfo:(struct swift_typeinfo)arg2 infoMap:(id)arg3 swiftFieldMetadataContext:(struct libSwiftRemoteMirrorWrapper *)arg4;
 - (id)initWithClassName:(id)arg1 binaryPath:(id)arg2 type:(unsigned int)arg3;

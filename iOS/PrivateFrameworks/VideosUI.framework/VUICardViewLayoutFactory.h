@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cardViewFactoryForType:(long long)arg1 gridStyle:(long long)arg2 gridType:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long gridType; // @synthesize gridType=_gridType;
 @property(readonly, nonatomic) long long gridStyle; // @synthesize gridStyle=_gridStyle;
 @property(readonly, nonatomic) long long cardLayoutType; // @synthesize cardLayoutType=_cardLayoutType;
-- (void).cxx_destruct;
 - (id)videoLockupCardViewLayout;
 - (id)editorialCardViewLayout;
 - (id)upnextCardViewLayoutForIdiom:(long long)arg1;

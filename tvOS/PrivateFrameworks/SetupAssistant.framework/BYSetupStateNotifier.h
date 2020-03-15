@@ -24,6 +24,7 @@
 }
 
 + (id)sharedNotifier;
+- (void).cxx_destruct;
 @property(nonatomic) int exclusiveNotificationToken; // @synthesize exclusiveNotificationToken=_exclusiveNotificationToken;
 @property(nonatomic) int shouldRemainAliveNotificationToken; // @synthesize shouldRemainAliveNotificationToken=_shouldRemainAliveNotificationToken;
 @property(nonatomic) int stateNotificationToken; // @synthesize stateNotificationToken=_stateNotificationToken;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSMutableDictionary *specificStateNotificationBlocks; // @synthesize specificStateNotificationBlocks=_specificStateNotificationBlocks;
 @property(retain, nonatomic) NSMutableArray *generalStateNotificationBlocks; // @synthesize generalStateNotificationBlocks=_generalStateNotificationBlocks;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_shouldRemainAliveNotificationFired;
 - (void)_noLongerExclusiveNotificationFired;
 - (void)_stateChangedTo:(unsigned long long)arg1;

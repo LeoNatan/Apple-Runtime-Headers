@@ -16,11 +16,11 @@
     NSDictionary *_footerAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *footerAttributes; // @synthesize footerAttributes=_footerAttributes;
 @property(retain, nonatomic) NSDictionary *decorationAttributes; // @synthesize decorationAttributes=_decorationAttributes;
 @property(retain, nonatomic) NSDictionary *headerAttributes; // @synthesize headerAttributes=_headerAttributes;
 @property(retain, nonatomic) NSDictionary *itemAttributes; // @synthesize itemAttributes=_itemAttributes;
-- (void).cxx_destruct;
 - (struct CGSize)collectionViewContentSize;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

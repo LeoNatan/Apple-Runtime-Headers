@@ -16,8 +16,8 @@
     id <CKAlertControllerDelegate> _alertDelegate;
 }
 
-@property(nonatomic) __weak id <CKAlertControllerDelegate> alertDelegate; // @synthesize alertDelegate=_alertDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CKAlertControllerDelegate> alertDelegate; // @synthesize alertDelegate=_alertDelegate;
 - (_Bool)preserveModalPresentationStyle;
 - (_Bool)wantsWindowedPresentation;
 - (void)addAction:(id)arg1;

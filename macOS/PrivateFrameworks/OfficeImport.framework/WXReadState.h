@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
     BOOL mIsThumbnail;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancelDelegate;
 @property(nonatomic) int currentOfficeArtTextType; // @synthesize currentOfficeArtTextType=mCurrentOfficeArtTextType;
 @property(nonatomic) BOOL readingMath; // @synthesize readingMath=mReadingMath;
@@ -65,7 +66,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CXNamespace *WXShapeNamespace; // @synthesize WXShapeNamespace=mWXShapeNamespace;
 @property(retain, nonatomic) CXNamespace *WXDrawingNamespace; // @synthesize WXDrawingNamespace=mWXDrawingNamespace;
 @property(retain, nonatomic) CXNamespace *WXMainNamespace; // @synthesize WXMainNamespace=mWXMainNamespace;
-- (void).cxx_destruct;
 - (BOOL)isThumbnail;
 - (void)setIsThumbnail:(BOOL)arg1;
 - (void)setupNSForXMLFormat:(int)arg1;

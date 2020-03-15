@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) PARSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PARSession *session; // @synthesize session=_session;
 - (void)setPARSession:(id)arg1;
 - (void)setFeedbackDelegate:(id)arg1;
 - (void)sendCustomFeedback:(id)arg1;

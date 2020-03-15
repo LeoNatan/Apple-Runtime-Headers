@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     CUPairedPeer *_pairedPeer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUPairedPeer *pairedPeer; // @synthesize pairedPeer=_pairedPeer;
 @property(nonatomic) BOOL paired; // @synthesize paired=_paired;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSImage *deviceImage; // @synthesize deviceImage=_deviceImage;
 @property(nonatomic) BOOL connected; // @synthesize connected=_connected;
 @property(copy, nonatomic) NSString *bestName; // @synthesize bestName=_bestName;
-- (void).cxx_destruct;
 
 @end
 

@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_preventsAppearanceProxyCustomization;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedSubtitleOptionIndex; // @synthesize selectedSubtitleOptionIndex=_selectedSubtitleOptionIndex;
 @property(nonatomic) __weak id <AVInfoPanelSubtitlesDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_createOrUpdateSubtitleCollectionViewWidthConstraint;
 - (id)_subtitleFlowLayout;
 - (void)mediaOptionCollectionViewController:(id)arg1 didSelectMediaOption:(id)arg2;

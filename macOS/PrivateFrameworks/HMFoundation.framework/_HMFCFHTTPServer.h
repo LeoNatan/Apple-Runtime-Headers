@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *connections; // @synthesize connections=_connections;
 @property(readonly, nonatomic) struct _CFHTTPServer *internal; // @synthesize internal=_internal;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) unsigned long long port; // @synthesize port=_port;
 @property __weak id <_HMFCFHTTPServerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 - (void)invalidate;

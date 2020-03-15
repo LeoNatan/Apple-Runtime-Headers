@@ -20,8 +20,8 @@
 
 + (id)_distributionBucketsFromConfiguration:(id)arg1;
 + (_Bool)policyStringRepresentsValidPolicy:(id)arg1;
-@property(nonatomic) __weak id <WBSCloudKitThrottlerDataStore> dataStore; // @synthesize dataStore=_dataStore;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WBSCloudKitThrottlerDataStore> dataStore; // @synthesize dataStore=_dataStore;
 - (unsigned long long)_test_maximumNumberOfOperationWithinMonitoredPeriod;
 - (double)_test_numberOfSecondsToMonitor;
 - (void)reloadRecordOfPastOperations;

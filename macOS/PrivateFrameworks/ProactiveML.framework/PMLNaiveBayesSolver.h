@@ -20,6 +20,7 @@
     PMLModelRegressor *_objective;
 }
 
+- (void).cxx_destruct;
 @property(retain) PMLModelRegressor *objective; // @synthesize objective=_objective;
 @property(retain) PMLSparseMatrix *covariates; // @synthesize covariates=_covariates;
 @property(retain) PMLModelWeights *counts; // @synthesize counts=_counts;
@@ -28,7 +29,6 @@
 @property(retain) PMLModelWeights *probabilities; // @synthesize probabilities=_probabilities;
 @property(retain) PMLModelWeights *negativeConditionalProbabilities; // @synthesize negativeConditionalProbabilities=_negativeConditionalProbabilities;
 @property(retain) PMLModelWeights *positiveConditionalProbabilities; // @synthesize positiveConditionalProbabilities=_positiveConditionalProbabilities;
-- (void).cxx_destruct;
 - (float)predict:(id)arg1;
 - (void)solve;
 - (void)solveForCovariates:(id)arg1 objectives:(id)arg2;

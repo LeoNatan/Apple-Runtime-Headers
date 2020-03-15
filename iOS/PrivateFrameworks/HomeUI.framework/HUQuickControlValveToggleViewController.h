@@ -16,8 +16,8 @@
 
 + (Class)controlItemClass;
 + (id)controlItemPredicate;
-@property(retain, nonatomic) HUQuickControlValveToggleView *controlView; // @synthesize controlView=_controlView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUQuickControlValveToggleView *controlView; // @synthesize controlView=_controlView;
 - (id)controlToViewValueTransformer;
 - (id)createViewProfile;
 - (id)createInteractionCoordinator;

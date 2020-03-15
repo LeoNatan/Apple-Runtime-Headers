@@ -20,10 +20,10 @@
     id <AVTUILogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(nonatomic) __weak id <AVTAvatarsDaemonServerDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)checkIn;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)startListening;

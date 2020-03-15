@@ -22,6 +22,7 @@
     struct CGSize __framerateSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize _framerateSize; // @synthesize _framerateSize=__framerateSize;
 @property(nonatomic) struct CGSize _separatorSize; // @synthesize _separatorSize=__separatorSize;
 @property(nonatomic) struct CGSize _resolutionSize; // @synthesize _resolutionSize=__resolutionSize;
@@ -31,7 +32,6 @@
 @property(nonatomic) long long framerate; // @synthesize framerate=_framerate;
 @property(nonatomic) long long resolution; // @synthesize resolution=_resolution;
 @property(nonatomic) __weak id <CAMVideoConfigurationStatusIndicatorDelegate> touchDelegate; // @synthesize touchDelegate=_touchDelegate;
-- (void).cxx_destruct;
 - (void)selectedByAccessibilityHUDManager:(id)arg1;
 - (id)hudItemForAccessibilityHUDManager:(id)arg1;
 - (void)_handleTouchAtLocation:(struct CGPoint)arg1;

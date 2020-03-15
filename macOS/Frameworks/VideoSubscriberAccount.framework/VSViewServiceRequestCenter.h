@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedViewServiceRequestCenter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(retain, nonatomic) NSOperationQueue *requestQueue; // @synthesize requestQueue=_requestQueue;
-- (void).cxx_destruct;
 - (id)enqueueRequest:(id)arg1 withAccountManagerDelegate:(id)arg2 operationDelegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)enqueueCompletionHandlerBlock:(CDUnknownBlockType)arg1;
 - (id)init;

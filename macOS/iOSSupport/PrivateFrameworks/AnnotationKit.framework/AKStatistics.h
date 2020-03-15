@@ -17,10 +17,10 @@
 
 + (id)nameForAnnotation:(id)arg1;
 + (id)nameForClassName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCountedSet *annotationsCounts; // @synthesize annotationsCounts=_annotationsCounts;
 @property(retain, nonatomic) NSString *clientPrefix; // @synthesize clientPrefix=_clientPrefix;
 @property(retain, nonatomic) NSString *documentType; // @synthesize documentType=_documentType;
-- (void).cxx_destruct;
 - (void)logDocumentSaved;
 - (void)logShapeDetectionHUDPickedShape:(id)arg1;
 - (void)logShapeDetectionHUDShown;

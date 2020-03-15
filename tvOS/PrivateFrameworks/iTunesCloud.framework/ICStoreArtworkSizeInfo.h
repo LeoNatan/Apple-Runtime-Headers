@@ -16,11 +16,11 @@
     struct CGSize _maxSupportedSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize maxSupportedSize; // @synthesize maxSupportedSize=_maxSupportedSize;
 @property(nonatomic) _Bool hasMaxSupportedSize; // @synthesize hasMaxSupportedSize=_hasMaxSupportedSize;
 @property(copy, nonatomic) NSArray *supportedSizes; // @synthesize supportedSizes=_supportedSizes;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,12 +17,12 @@
     NSArray *_activityItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activityItems; // @synthesize activityItems=_activityItems;
 @property(readonly, copy, nonatomic) CDUnknownBlockType performBlock; // @synthesize performBlock=_performBlock;
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (void).cxx_destruct;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;

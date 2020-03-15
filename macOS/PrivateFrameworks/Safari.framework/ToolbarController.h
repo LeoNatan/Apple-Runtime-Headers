@@ -64,6 +64,7 @@ __attribute__((visibility("hidden")))
 + (void)insertTabPickerButtonIfNeeded;
 + (void)removeDuplicateShareButtonsIfNeeded;
 + (void)insertShareButtonIfNeeded;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ButtonPlus *contextFeedbackButton; // @synthesize contextFeedbackButton=_contextFeedbackButton;
 @property(readonly, nonatomic) BrowserToolbarItem *shareItem; // @synthesize shareItem=_shareItem;
 @property(readonly, nonatomic) BrowserToolbarItem *cloudTabsItem; // @synthesize cloudTabsItem=_cloudTabsItem;
@@ -73,7 +74,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak SafariAppExtensionsController *extensionsController; // @synthesize extensionsController=_extensionsController;
 @property(readonly, nonatomic) __weak CloudTabStore *cloudTabStore; // @synthesize cloudTabStore=_cloudTabStore;
 @property(nonatomic) __weak id <ToolbarControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_zoomTextLabel;
 - (void)_parentalControlsDidChange;
 - (void)_updateZoomTextLabel;
@@ -123,7 +123,7 @@ __attribute__((visibility("hidden")))
 - (void)toolbarDidRemoveItem:(id)arg1;
 - (void)toolbarWillAddItem:(id)arg1;
 - (void)toolbarDidReorderItem:(id)arg1;
-- (void)_saveAppExtensionsToolbarConfiguration;
+- (void)_saveExtensionsToolbarConfiguration;
 - (void)_updateTemporaryDownloadsButtonVisibility;
 - (void)_removeTemporaryDownloadsButtonIfAppropriate;
 - (void)_addTemporaryDownloadsButtonIfAppropriate;
@@ -139,12 +139,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)_toolbarContainsFlexibleSpaceItem;
 @property(readonly, nonatomic) BrowserToolbarItem *firstVisibleItemWithView;
 @property(readonly, nonatomic) BrowserToolbarItem *lastVisibleItemWithView;
-- (void)insertAppExtensionToolbarItem:(id)arg1;
+- (void)insertExtensionToolbarItemWithIdentifier:(id)arg1;
 - (void)validateExtensionToolbarItemsSoon;
 - (void)validateExtensionToolbarItems;
-- (void)_extensionWasDisabled:(id)arg1;
 - (unsigned long long)_proposedToolbarItemIndexForAddedExtension;
-- (void)_extensionWasEnabled:(id)arg1;
 - (void)_migrateOldSafariToolbarConfiguration;
 @property(readonly, nonatomic, getter=isTabPickerButtonVisible) BOOL tabPickerButtonVisible;
 - (id)toolbarWindow;

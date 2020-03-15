@@ -28,13 +28,13 @@
     _Bool _needsAdditionalMinimumLifetimeCleanup;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canReplaceMapContent; // @synthesize canReplaceMapContent=_canReplaceMapContent;
 @property int maximumZ; // @synthesize maximumZ=_maximumZ;
 @property int minimumZ; // @synthesize minimumZ=_minimumZ;
 @property(getter=isGeometryFlipped) _Bool geometryFlipped; // @synthesize geometryFlipped=_geometryFlipped;
 @property(readonly) NSString *URLTemplate; // @synthesize URLTemplate=_URLTemplate;
 @property struct CGSize tileSize; // @synthesize tileSize=_tileSize;
-- (void).cxx_destruct;
 - (void)_flushCaches;
 - (id)_tilesInMapRect:(CDStruct_02837cd9)arg1 zoomScale:(float)arg2 contentScale:(float)arg3;
 - (int)_zoomLevelForScale:(float)arg1;

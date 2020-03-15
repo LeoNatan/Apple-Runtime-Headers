@@ -44,12 +44,12 @@
 }
 
 + (id)_appearanceBlindViewClasses;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTintColor:) UIColor *_tintColor; // @synthesize _tintColor=__tintColor;
 @property(nonatomic, setter=_setImageStyle:) long long _imageStyle; // @synthesize _imageStyle=__imageStyle;
 @property(nonatomic, setter=_setBarMetrics:) long long _barMetrics; // @synthesize _barMetrics=__barMetrics;
 @property(copy, nonatomic) UITabBarAppearance *standardAppearance; // @synthesize standardAppearance=_standardAppearance;
 @property(copy, nonatomic) NSString *badgeValue; // @synthesize badgeValue=_badgeValue;
-- (void).cxx_destruct;
 - (void)appearance:(id)arg1 categoriesChanged:(long long)arg2;
 - (void)setSpringLoaded:(BOOL)arg1;
 - (BOOL)isSpringLoaded;

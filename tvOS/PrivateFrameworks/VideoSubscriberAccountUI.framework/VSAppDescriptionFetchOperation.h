@@ -21,6 +21,7 @@
     struct CGSize _preferredArtworkSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *imageLoadingQueue; // @synthesize imageLoadingQueue=_imageLoadingQueue;
 @property(retain, nonatomic) SSLookupRequest *lookupRequest; // @synthesize lookupRequest=_lookupRequest;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool needsProductProfile; // @synthesize needsProductProfile=_needsProductProfile;
 @property(nonatomic) struct CGSize preferredArtworkSize; // @synthesize preferredArtworkSize=_preferredArtworkSize;
 @property(copy, nonatomic) NSSet *appAdamIDs; // @synthesize appAdamIDs=_appAdamIDs;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (id)_appDescriptionFromLookupResponse:(id)arg1 appAdamID:(id)arg2;

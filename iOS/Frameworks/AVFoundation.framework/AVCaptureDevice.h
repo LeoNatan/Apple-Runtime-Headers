@@ -44,6 +44,7 @@
 - (_Bool)isNonDestructiveCropEnabled;
 - (void)setSpatialOverCaptureEnabled:(_Bool)arg1;
 - (_Bool)isSpatialOverCaptureEnabled;
+- (void)_setCameraCalibrationDataDeliveryEnabled:(_Bool)arg1;
 - (void)_setDepthDataDeliveryEnabled:(_Bool)arg1;
 - (_Bool)_isDepthDataDeliveryEnabled;
 - (void)setBravoCameraSelectionBehavior:(id)arg1;

@@ -20,6 +20,7 @@
     NSData *_relayIPv6;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSData *relayIPv6; // @synthesize relayIPv6=_relayIPv6;
 @property(copy) NSData *appleID; // @synthesize appleID=_appleID;
 @property(copy) NSNumber *relayCombinedSoftwareID; // @synthesize relayCombinedSoftwareID=_relayCombinedSoftwareID;
@@ -28,7 +29,6 @@
 @property(copy) NSData *relaySessionKey; // @synthesize relaySessionKey=_relaySessionKey;
 @property(copy) NSNumber *relayPort; // @synthesize relayPort=_relayPort;
 @property(copy) NSData *relayIP; // @synthesize relayIP=_relayIP;
-- (void).cxx_destruct;
 - (id)_parseQuickRelayDefaults;
 - (_Bool)_isSessionInfoValid:(id)arg1;
 - (void)_setAllValuesFromDictionary:(id)arg1;

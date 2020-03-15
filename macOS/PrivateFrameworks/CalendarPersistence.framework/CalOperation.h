@@ -14,9 +14,9 @@
     NSManagedObjectID *_sessionIDAsObjectID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSManagedObjectID *sessionIDAsObjectID; // @synthesize sessionIDAsObjectID=_sessionIDAsObjectID;
 @property(retain) NSString *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (id)session;
 - (id)debugDescription;
 - (id)debugTitle;

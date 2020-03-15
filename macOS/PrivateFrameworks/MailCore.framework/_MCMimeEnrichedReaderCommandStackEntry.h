@@ -12,9 +12,9 @@
     id _parameter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id parameter; // @synthesize parameter=_parameter;
 @property(nonatomic) const CDStruct_8e792ae2 *commandTableEntry; // @synthesize commandTableEntry=_commandTableEntry;
-- (void).cxx_destruct;
 
 @end
 

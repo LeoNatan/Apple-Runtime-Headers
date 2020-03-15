@@ -14,9 +14,9 @@
     NSString *_footer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(retain, nonatomic) NTKCFaceDetailDescriptionCell *footerCell; // @synthesize footerCell=_footerCell;
-- (void).cxx_destruct;
 - (void)_refreshOverrideTexts;
 - (id)_overrideTextForOption:(id)arg1;
 - (double)heightForRow:(long long)arg1;

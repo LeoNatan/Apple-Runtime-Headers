@@ -25,6 +25,7 @@
     double _viewWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double viewWidth; // @synthesize viewWidth=_viewWidth;
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UIStackView *hourlyBeltView; // @synthesize hourlyBeltView=_hourlyBeltView;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) WFURLComponents *URLComponents; // @synthesize URLComponents=_URLComponents;
 @property(copy, nonatomic) NSURL *commitURL; // @synthesize commitURL=_commitURL;
 @property(nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)_updateStatus:(long long)arg1;
 - (void)_buildModelForLocation:(id)arg1;
 - (void)_kickoffLoadingWithLocation:(id)arg1 orPerhapsALocationString:(id)arg2;

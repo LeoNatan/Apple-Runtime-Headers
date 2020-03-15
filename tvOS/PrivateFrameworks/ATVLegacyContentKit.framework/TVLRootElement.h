@@ -18,12 +18,12 @@
     NSString *_onRefresh;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *onRefresh; // @synthesize onRefresh=_onRefresh;
 @property(nonatomic) float refreshInterval; // @synthesize refreshInterval=_refreshInterval;
 @property(retain, nonatomic) NSURL *originalURL; // @synthesize originalURL=_originalURL;
 @property(copy, nonatomic) NSString *onVolatileReload; // @synthesize onVolatileReload=_onVolatileReload;
 @property(nonatomic) _Bool isVolatile; // @synthesize isVolatile=_isVolatile;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)feedDocument;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;

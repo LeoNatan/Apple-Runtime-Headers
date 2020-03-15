@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)_initializeConnections;
+- (void).cxx_destruct;
 @property(readonly) BOOL _isFirstResponder; // @synthesize _isFirstResponder;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UITraitCollection *_traitOverrides;
 - (void)_overrideDisplayGamut:(long long)arg1;
 - (void)_overrideDisplayScale:(double)arg1;

@@ -15,8 +15,8 @@
 
 + (id)standardSSLPorts;
 + (id)standardPorts;
-@property(copy, nonatomic) NSDate *dateOfLastSync; // @synthesize dateOfLastSync=_dateOfLastSync;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDate *dateOfLastSync; // @synthesize dateOfLastSync=_dateOfLastSync;
 - (id)usesSSLObject;
 - (id)portNumberObject;
 - (id)_hostnameFromParentAccount:(id)arg1;

@@ -29,6 +29,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long xattrIndex; // @synthesize xattrIndex=_xattrIndex;
 @property(retain, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSData *quarantineInfo; // @synthesize quarantineInfo=_quarantineInfo;
@@ -38,7 +39,6 @@
 @property(nonatomic) long long mtime; // @synthesize mtime=_mtime;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

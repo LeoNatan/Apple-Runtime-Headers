@@ -13,8 +13,8 @@
     NSString *_displayFormat;
 }
 
-@property(readonly, copy, nonatomic) NSString *displayFormat; // @synthesize displayFormat=_displayFormat;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *displayFormat; // @synthesize displayFormat=_displayFormat;
 - (id)displayString;
 - (id)initWithConfiguration:(id)arg1;
 

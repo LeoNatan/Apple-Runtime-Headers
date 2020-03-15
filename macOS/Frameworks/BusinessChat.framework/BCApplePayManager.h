@@ -15,8 +15,8 @@
     id <BCApplePayManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BCApplePayManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BCApplePayManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)presentApplePayWithWindow:(id)arg1;
 - (id)message;
 - (long long)applePayStatus;

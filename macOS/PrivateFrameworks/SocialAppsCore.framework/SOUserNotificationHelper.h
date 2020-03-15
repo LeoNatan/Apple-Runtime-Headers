@@ -14,8 +14,8 @@
 }
 
 + (id)sharedHelper;
-@property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (id)subtitleForChatRoom:(id)arg1;
 - (void)postAlertNotificationMentioningMeInChat:(id)arg1 message:(id)arg2;
 - (void)clearAllUserNotificationsForGuid:(id)arg1;

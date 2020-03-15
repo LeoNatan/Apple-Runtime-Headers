@@ -17,8 +17,8 @@
 + (id)buildWithEcho:(id)arg1;
 + (id)allowedReasons;
 + (id)allowedEventMessageKeys;
-@property(copy, nonatomic) NSString *eventmessageEcho; // @synthesize eventmessageEcho=_eventmessageEcho;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *eventmessageEcho; // @synthesize eventmessageEcho=_eventmessageEcho;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 

@@ -16,10 +16,10 @@
     id <FCChannelProviding> _channel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCChannelProviding> channel; // @synthesize channel=_channel;
 @property(retain, nonatomic) id <FCFeedTheming> feedTheme; // @synthesize feedTheme=_feedTheme;
 @property(readonly, nonatomic) NSArray *paths; // @synthesize paths=_paths;
-- (void).cxx_destruct;
 - (_Bool)isSubscribedTo;
 - (_Bool)isSubscribable;
 - (id)fetchOperationForHeadlinesWithIDs:(id)arg1;

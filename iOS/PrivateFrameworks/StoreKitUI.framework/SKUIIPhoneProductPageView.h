@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     double _bannerOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double bannerOffset; // @synthesize bannerOffset=_bannerOffset;
 @property(retain, nonatomic) UIView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)animateYPosition:(double)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

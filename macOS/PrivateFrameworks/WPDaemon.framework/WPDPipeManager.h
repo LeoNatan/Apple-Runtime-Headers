@@ -21,12 +21,12 @@
     NSMutableDictionary *_connectionInitiators;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *connectionInitiators; // @synthesize connectionInitiators=_connectionInitiators;
 @property(retain) NSMutableDictionary *peerPipesDict; // @synthesize peerPipesDict=_peerPipesDict;
 @property(retain) NSMutableDictionary *endpointsDict; // @synthesize endpointsDict=_endpointsDict;
 @property(retain) CBScalablePipeManager *pipeManager; // @synthesize pipeManager=_pipeManager;
 @property __weak NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)invalidatePipeInfo:(id)arg1 forPeer:(id)arg2;
 - (void)scalablePipeManager:(id)arg1 pipeDidDisconnect:(id)arg2 error:(id)arg3;
 - (void)channelHasData:(id)arg1;

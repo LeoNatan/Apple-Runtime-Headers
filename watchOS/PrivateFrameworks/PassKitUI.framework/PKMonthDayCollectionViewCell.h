@@ -18,9 +18,9 @@
     int _dayNumber;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) int dayNumber; // @synthesize dayNumber=_dayNumber;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1;
 - (void)setDayNumber:(int)arg1 withTitle:(id)arg2;
 - (void)layoutSubviews;

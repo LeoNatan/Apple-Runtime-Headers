@@ -16,11 +16,11 @@
     long long _indentationLevel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long indentationLevel; // @synthesize indentationLevel=_indentationLevel;
 @property(readonly, nonatomic) PHAssetCollection *collection; // @synthesize collection=_collection;
 - (_Bool)isRenamable;
 - (_Bool)isDraggable;
-- (void).cxx_destruct;
 - (id)representedObject;
 - (id)glyphImageName;
 - (id)imageNameForIdentifier;

@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     id _userData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) id userData; // @synthesize userData=_userData;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)initWithState:(long long)arg1 fetcher:(id)arg2;
 
 @end

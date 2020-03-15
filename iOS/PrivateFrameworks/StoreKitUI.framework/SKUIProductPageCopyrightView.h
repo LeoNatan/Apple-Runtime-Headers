@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     SKUIColorScheme *_colorScheme;
 }
 
-@property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 @property(retain, nonatomic) NSString *copyrightString;

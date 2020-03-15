@@ -16,8 +16,8 @@
     WFAppInstalledResource *_appInstalledResource;
 }
 
-@property(retain, nonatomic) WFAppInstalledResource *appInstalledResource; // @synthesize appInstalledResource=_appInstalledResource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFAppInstalledResource *appInstalledResource; // @synthesize appInstalledResource=_appInstalledResource;
 - (id)inputContentClasses;
 - (_Bool)inputsMultipleItems;
 - (id)enumeration:(id)arg1 localizedLabelForPossibleState:(id)arg2;

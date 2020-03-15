@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _touchesEndedCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType touchesEndedCallback; // @synthesize touchesEndedCallback=_touchesEndedCallback;
 @property(copy, nonatomic) CDUnknownBlockType touchesBeganCallback; // @synthesize touchesBeganCallback=_touchesBeganCallback;
 @property(copy, nonatomic) CDUnknownBlockType pressureCallback; // @synthesize pressureCallback=_pressureCallback;
-- (void).cxx_destruct;
 - (void)pressureChangeWithEvent:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;

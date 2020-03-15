@@ -15,8 +15,8 @@
     CDPContext *_context;
 }
 
-@property(readonly, nonatomic) CDPContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDPContext *context; // @synthesize context=_context;
 - (void)userDidCancelWithError:(id)arg1;
 - (void)userDidEnterValidSecret:(id)arg1 type:(unsigned long long)arg2;
 - (id)initWithContext:(id)arg1 handler:(id)arg2;

@@ -28,9 +28,9 @@
 }
 
 + (void)updateCustomDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 isForward:(_Bool)arg3 animationType:(unsigned long long)arg4 animationDuration:(double)arg5 animationFraction:(float)arg6 bezelTextUpdateHandler:(CDUnknownBlockType)arg7;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NTKRichComplicationView *circularView; // @synthesize circularView=_circularView;
 @property(nonatomic) double bezelLabelCircularRadius; // @synthesize bezelLabelCircularRadius=_bezelLabelCircularRadius;
-- (void).cxx_destruct;
 - (void)_updateNewDataAnimationFinalAlpha:(double)arg1 finalBezelLabelScale:(double)arg2 finalCircularViewScale:(double)arg3 animationApplierBlock:(CDUnknownBlockType)arg4 animationFraction:(float)arg5;
 - (void)_setWhistlerAnalogEditingTransitonFraction:(double)arg1 direction:(long long)arg2 position:(long long)arg3;
 - (void)_createBezelLabel;

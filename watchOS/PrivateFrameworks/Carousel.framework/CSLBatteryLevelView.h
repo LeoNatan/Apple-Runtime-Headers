@@ -32,8 +32,8 @@
     float _level;
 }
 
-@property(nonatomic) float level; // @synthesize level=_level;
 - (void).cxx_destruct;
+@property(nonatomic) float level; // @synthesize level=_level;
 @property(readonly, nonatomic) UIImage *image;
 - (void)_updateArc;
 - (void)_updateLabel;

@@ -16,9 +16,9 @@
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithItemList:(id)arg1;
 - (id)initWithTitle:(id)arg1 items:(id)arg2;
 - (id)init;

@@ -29,6 +29,7 @@
     MPAVRoute *_outputDeviceRoute;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPAVRoute *outputDeviceRoute; // @synthesize outputDeviceRoute=_outputDeviceRoute;
 @property(retain, nonatomic) MPAVRoute *groupRoute; // @synthesize groupRoute=_groupRoute;
 @property(readonly, nonatomic) long long volumeWarningState; // @synthesize volumeWarningState=_volumeWarningState;
@@ -38,7 +39,6 @@
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
 @property(nonatomic) __weak id <MPVolumeControllerDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_routeVolumeControlCapabilitiesDidChangeNotification:(id)arg1;
 - (void)_routeVolumeDidChangeNotification:(id)arg1;
 - (void)getVolumeValueWithCompletion:(CDUnknownBlockType)arg1;

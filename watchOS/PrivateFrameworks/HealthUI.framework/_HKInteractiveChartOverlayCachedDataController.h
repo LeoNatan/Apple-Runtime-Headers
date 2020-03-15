@@ -20,13 +20,13 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) int timeScope; // @synthesize timeScope=_timeScope;
 @property(retain, nonatomic) HKGraphSeriesDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak HKInteractiveChartOverlayViewController *overlayViewController; // @synthesize overlayViewController=_overlayViewController;
-- (void).cxx_destruct;
 - (void)dataSourceDidUpdateCache:(id)arg1;
 - (void)requestAndWaitForData;
 - (id)initWithOverlayViewController:(id)arg1 dataSource:(id)arg2 timeScope:(int)arg3 startDate:(id)arg4 endDate:(id)arg5 completion:(CDUnknownBlockType)arg6;

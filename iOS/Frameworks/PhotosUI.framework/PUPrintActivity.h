@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <PXActivityItemSourceController> _itemSourceController;
 }
 
-@property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController; // @synthesize itemSourceController=_itemSourceController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController; // @synthesize itemSourceController=_itemSourceController;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 
 // Remaining properties

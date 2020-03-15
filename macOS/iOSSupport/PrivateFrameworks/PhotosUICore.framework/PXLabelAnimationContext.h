@@ -14,9 +14,9 @@
     struct CGRect _destinationRect;
 }
 
+- (void).cxx_destruct;
 @property struct CGRect destinationRect; // @synthesize destinationRect=_destinationRect;
 @property(retain) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1 andDestinationRect:(struct CGRect)arg2;
 
 @end

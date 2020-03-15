@@ -16,10 +16,10 @@
     TVSSContentItem *_contentItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool playTrailer; // @synthesize playTrailer=_playTrailer;
 @property(nonatomic) _Bool userDriven; // @synthesize userDriven=_userDriven;
 @property(retain, nonatomic) TVSSContentItem *contentItem; // @synthesize contentItem=_contentItem;
-- (void).cxx_destruct;
 - (id)_launchOptions;
 - (void)viewDidLoad;
 - (id)siriContext;

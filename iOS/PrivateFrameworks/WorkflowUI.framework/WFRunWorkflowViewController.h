@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <WorkflowUI/QLPreviewControllerDelegate-Protocol.h>
+#import <WorkflowUI/QLPreviewControllerPrivateDelegate-Protocol.h>
 #import <WorkflowUI/UIDropInteractionDelegate-Protocol.h>
 #import <WorkflowUI/UIScrollViewDelegate-Protocol.h>
 #import <WorkflowUI/WFActionParameterInputProvider-Protocol.h>
@@ -21,7 +21,7 @@
 @class NSIndexPath, NSString, WFAction, WFContentCollection, WFDatabase, WFModulesQuickLookView, WFRunWorkflowFooterView, WFRunWorkflowToolbar, WFWorkflow, WFWorkflowController, WFWorkflowRunEvent, WFWorkflowViewController;
 @protocol WFRunWorkflowViewControllerDelegate;
 
-@interface WFRunWorkflowViewController : UIViewController <WFModuleModelProvider, WFWorkflowControllerDelegate, WFParameterInputViewControllerDelegate, WFActionParameterInputProvider, WFModulesSupplementaryViewDataSource, WFModulesQuickLookViewDelegate, QLPreviewControllerDelegate, UIScrollViewDelegate, UIDropInteractionDelegate, WFRunWorkflowFooterViewDelegate, WFRunWorkflowToolbarDelegate>
+@interface WFRunWorkflowViewController : UIViewController <WFModuleModelProvider, WFWorkflowControllerDelegate, WFParameterInputViewControllerDelegate, WFActionParameterInputProvider, WFModulesSupplementaryViewDataSource, WFModulesQuickLookViewDelegate, QLPreviewControllerPrivateDelegate, UIScrollViewDelegate, UIDropInteractionDelegate, WFRunWorkflowFooterViewDelegate, WFRunWorkflowToolbarDelegate>
 {
     _Bool _clearsWorkflowSettings;
     _Bool _indicatesLoadingBeforeRunning;
@@ -45,6 +45,7 @@
     WFWorkflowViewController *_workflowViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak WFWorkflowViewController *workflowViewController; // @synthesize workflowViewController=_workflowViewController;
 @property(retain, nonatomic) WFAction *currentlyRunningAction; // @synthesize currentlyRunningAction=_currentlyRunningAction;
 @property(retain, nonatomic) WFWorkflowRunEvent *runEvent; // @synthesize runEvent=_runEvent;
@@ -65,7 +66,6 @@
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) __weak id <WFRunWorkflowViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)runWorkflowFooterViewDidSelectAddButton:(id)arg1;
 - (void)dropInteraction:(id)arg1 sessionDidEnd:(id)arg2;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
@@ -74,6 +74,7 @@
 - (_Bool)accessibilityPerformMagicTap;
 - (void)runWorkflowFromKeyPress;
 - (id)keyCommands;
+- (_Bool)previewController:(id)arg1 canShareItem:(id)arg2;
 - (void)previewControllerWillDismiss:(id)arg1;
 - (struct CGRect)previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id *)arg3;
 - (void)quickLookView:(id)arg1 clickedShare:(id)arg2 forContentItem:(id)arg3;

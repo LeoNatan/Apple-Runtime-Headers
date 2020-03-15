@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     UILabel *_longWaitingWarningLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isInProgress; // @synthesize isInProgress=_isInProgress;
 @property(retain, nonatomic) UILabel *longWaitingWarningLabel; // @synthesize longWaitingWarningLabel=_longWaitingWarningLabel;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *longWaitingWarningText; // @synthesize longWaitingWarningText=_longWaitingWarningText;
 @property(retain, nonatomic) NSString *completionText; // @synthesize completionText=_completionText;
 @property(retain, nonatomic) NSString *inProgresText; // @synthesize inProgresText=_inProgresText;
-- (void).cxx_destruct;
 - (void)_scheduleLongWaitingWarning;
 - (void)completeActivityAnimated:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;

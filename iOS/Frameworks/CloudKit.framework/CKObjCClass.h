@@ -18,11 +18,11 @@
 
 + (id)classForObject:(id)arg1;
 + (id)classForHandle:(Class)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *sortedProperties; // @synthesize sortedProperties=_sortedProperties;
 @property(readonly, nonatomic) NSDictionary *propertiesByName; // @synthesize propertiesByName=_propertiesByName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) Class handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 - (id)propertyForName:(id)arg1;
 - (id)allProperties;
 - (id)initWithHandle:(Class)arg1;

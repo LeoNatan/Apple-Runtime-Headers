@@ -16,9 +16,9 @@
 }
 
 + (id)makeImplForDiscoveryStrategy:(unsigned long long)arg1 addressBook:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly) id <ABFindDuplicateGroupsTaskStrategyImpl> discoveryStrategyImpl; // @synthesize discoveryStrategyImpl=_discoveryStrategyImpl;
-- (void).cxx_destruct;
 - (id)partitionCollectionsByGroupName:(id)arg1;
 - (id)partitionGroupsByCollection:(id)arg1;
 - (id)run:(id *)arg1;

@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 
 + (id)buttonDescriptionWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3;
 + (id)buttonDescriptionWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType configurationBlock; // @synthesize configurationBlock=m_configurationBlock;
 @property(readonly, nonatomic) SEL action; // @synthesize action=m_action;
-- (void).cxx_destruct;
 - (id)materializeButtonInView:(id)arg1;
 - (id)initWithTitle:(id)arg1 orImage:(id)arg2 action:(SEL)arg3 type:(int)arg4;
 

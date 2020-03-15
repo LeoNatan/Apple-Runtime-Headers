@@ -13,8 +13,8 @@
     NSMutableDictionary *_actionsByGroupingIdentifier;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *actionsByGroupingIdentifier; // @synthesize actionsByGroupingIdentifier=_actionsByGroupingIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *actionsByGroupingIdentifier; // @synthesize actionsByGroupingIdentifier=_actionsByGroupingIdentifier;
 - (id)actionsForGroupingIdentifier:(id)arg1;
 - (void)sortActionsForGroupingIdentifier:(id)arg1 withWorkflowActions:(id)arg2;
 - (void)removeAction:(id)arg1;

@@ -61,6 +61,7 @@
 + (id)undoButtonImage;
 + (id)redoButtonImageWithStyle:(unsigned long long)arg1;
 + (id)undoButtonImageWithStyle:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsClearBackgroundColorInCompactSize; // @synthesize wantsClearBackgroundColorInCompactSize=_wantsClearBackgroundColorInCompactSize;
 @property(nonatomic) __weak id <AKToolbarViewOpacityEditingDelegate> opacityEditingDelegate; // @synthesize opacityEditingDelegate=_opacityEditingDelegate;
 @property(nonatomic) _Bool contentsHidden; // @synthesize contentsHidden=_contentsHidden;
@@ -69,7 +70,6 @@
 @property(nonatomic) _Bool alwaysShowUndoButton; // @synthesize alwaysShowUndoButton=_alwaysShowUndoButton;
 @property(nonatomic) _Bool undoRedoButtonsHidden; // @synthesize undoRedoButtonsHidden=_undoRedoButtonsHidden;
 @property(nonatomic) __weak AKController *annotationController; // @synthesize annotationController=_annotationController;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (struct CGRect)frameObscuredInView:(id)arg1;
 - (id)inkPicker;
@@ -157,8 +157,9 @@
 - (void)setAlpha:(double)arg1;
 - (void)setHidden:(_Bool)arg1;
 - (_Bool)_setToolPickerVisible:(_Bool)arg1 forResponder:(id)arg2;
+- (id)_selectedToolInk;
 - (_Bool)canBecomeFirstResponder;
-- (void)_forceToolPickerVisible:(_Bool)arg1;
+- (void)_forceToolPickerVisibleForViewStateChange:(_Bool)arg1;
 - (_Bool)setToolPickerVisible:(_Bool)arg1 forFirstResponder:(id)arg2;
 - (void)_setupPaletteViewIfNecessary;
 - (void)hideModernToolbarView;

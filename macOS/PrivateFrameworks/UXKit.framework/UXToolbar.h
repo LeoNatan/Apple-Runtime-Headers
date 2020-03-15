@@ -15,9 +15,9 @@
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak id <UXToolbarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)barPosition;
 - (void)_beginInteractiveTransitionForItems:(id)arg1;
 - (void)_setItems:(id)arg1 animated:(BOOL)arg2 duration:(double)arg3;

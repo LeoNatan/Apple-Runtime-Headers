@@ -4,13 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class AXSSMotionTrackingInputConfiguration;
+@class AXSSMotionTrackingInputConfiguration, AXSSMotionTrackingVideoFileInput, NSURL;
 
 @protocol AXSSMotionTrackingDaemonProtocol
+- (void)playVideoAtURL:(NSURL *)arg1 onMotionTrackingVideoFileInput:(AXSSMotionTrackingVideoFileInput *)arg2 completionHandler:(void (^)(BOOL, NSError *))arg3;
 - (void)hideDebugOverlay;
 - (void)showDebugOverlay;
 - (void)stopTracking;
 - (void)startTracking;
+- (void)setLookAtPoint:(struct CGPoint)arg1;
 - (void)setJoystickModeMovementThreshold:(double)arg1;
 - (void)setInputConfiguration:(AXSSMotionTrackingInputConfiguration *)arg1;
 - (void)setSensitivity:(double)arg1;

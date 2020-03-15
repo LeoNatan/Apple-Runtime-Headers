@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *topicRecords; // @synthesize topicRecords=_topicRecords;
 @property(readonly, nonatomic) NSArray *namedEntityRecords; // @synthesize namedEntityRecords=_namedEntityRecords;
-- (void).cxx_destruct;
 - (BOOL)isEmpty;
 - (id)merge:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

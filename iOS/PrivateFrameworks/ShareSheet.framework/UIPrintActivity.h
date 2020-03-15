@@ -9,26 +9,27 @@
 #import <ShareSheet/UIManagedConfigurationRestrictableActivity-Protocol.h>
 #import <ShareSheet/UIPrintInteractionControllerActivityDelegate-Protocol.h>
 
-@class NSString, UIViewController, UIWindow;
+@class NSString, UIPrintInteractionController, UIViewController, UIWindow;
 
 @interface UIPrintActivity : UIActivity <UIManagedConfigurationRestrictableActivity, UIPrintInteractionControllerActivityDelegate>
 {
     _Bool _isContentManaged;
     NSString *_sourceApplicationBundleID;
     UIViewController *_wrapperViewController;
+    UIPrintInteractionController *_printInteractionController;
     UIWindow *_windowHoldingActivityViewController;
 }
 
 + (unsigned long long)_xpcAttributes;
+- (void).cxx_destruct;
 @property(retain) UIWindow *windowHoldingActivityViewController; // @synthesize windowHoldingActivityViewController=_windowHoldingActivityViewController;
+@property(retain, nonatomic) UIPrintInteractionController *printInteractionController; // @synthesize printInteractionController=_printInteractionController;
 @property(retain) UIViewController *wrapperViewController; // @synthesize wrapperViewController=_wrapperViewController;
 @property(copy, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
 @property(nonatomic) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
-- (void).cxx_destruct;
 - (id)printInteractionControllerWindowForPresentation:(id)arg1;
 - (id)printInteractionControllerParentViewController:(id)arg1;
 - (void)activityDidFinish:(_Bool)arg1;
-- (id)printInteractionController;
 - (void)cancelPrintOptions;
 - (void)performActivity;
 - (id)_embeddedActivityViewController;

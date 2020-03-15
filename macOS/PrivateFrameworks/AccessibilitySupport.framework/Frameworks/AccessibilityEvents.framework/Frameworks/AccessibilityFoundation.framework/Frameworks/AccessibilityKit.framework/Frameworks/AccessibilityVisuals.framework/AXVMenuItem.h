@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
 @property(nonatomic) BOOL hasSubmenu; // @synthesize hasSubmenu=_hasSubmenu;
 @property(copy, nonatomic) NSString *keyboardShortcut; // @synthesize keyboardShortcut=_keyboardShortcut;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)_isEqualToMenuItem:(id)arg1;
 - (unsigned long long)hash;

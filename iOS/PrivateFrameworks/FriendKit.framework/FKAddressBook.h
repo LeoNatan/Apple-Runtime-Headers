@@ -16,9 +16,9 @@
 
 + (void)performBlock:(CDUnknownBlockType)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

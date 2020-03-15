@@ -17,9 +17,9 @@
     NSString *_objectID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *objectID; // @synthesize objectID=_objectID;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (id)uiTraitStorageWithObjectIDTable:(id)arg1;

@@ -6,10 +6,8 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsArticles/SXIssueCoverLayoutAttributesFactory-Protocol.h>
-
 __attribute__((visibility("hidden")))
-@interface _TtC12NewsArticles36ANFIssueCoverLayoutAttributesFactory : NSObject <SXIssueCoverLayoutAttributesFactory>
+@interface _TtC12NewsArticles36ANFIssueCoverLayoutAttributesFactory : NSObject
 {
     // Error parsing type: , name: issue
     // Error parsing type: , name: headline

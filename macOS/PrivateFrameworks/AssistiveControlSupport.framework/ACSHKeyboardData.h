@@ -34,13 +34,13 @@
 + (id)_keyboardDataForKeyboardID:(unsigned char)arg1;
 + (id)keyboardDataForSystemPanelUUID:(id)arg1;
 + (id)allKeyboardData;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *_cachedKeyCodesFoundInFunctionKeyboardPanel; // @synthesize _cachedKeyCodesFoundInFunctionKeyboardPanel=__cachedKeyCodesFoundInFunctionKeyboardPanel;
 @property(retain, nonatomic) NSSet *_cachedKeyCodesFoundInSystemKeyboardPanel; // @synthesize _cachedKeyCodesFoundInSystemKeyboardPanel=__cachedKeyCodesFoundInSystemKeyboardPanel;
 @property(retain, nonatomic) NSMutableDictionary *_cachedKeyboardPanelDictionariesByFunctionKeyMode; // @synthesize _cachedKeyboardPanelDictionariesByFunctionKeyMode=__cachedKeyboardPanelDictionariesByFunctionKeyMode;
 @property(retain, nonatomic) id _metadata; // @synthesize _metadata=__metadata;
 @property(retain, nonatomic) id _propertyListObject; // @synthesize _propertyListObject=__propertyListObject;
 @property(nonatomic) unsigned long long keyboardType; // @synthesize keyboardType=_keyboardType;
-- (void).cxx_destruct;
 - (BOOL)panelHasFunctionKeys:(id)arg1;
 - (BOOL)_panelHasMostOfKeyCodesInSystemKeyboardPanel:(id)arg1;
 - (id)templateKeyboardPanelWithUndoManager:(id)arg1 functionKeyMode:(unsigned long long)arg2;

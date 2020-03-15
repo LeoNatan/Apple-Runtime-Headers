@@ -18,10 +18,10 @@
 }
 
 + (struct CGSize)performLayoutWithLayoutInput:(CDStruct_392cfed4)arg1 layoutOutput:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_392cfed4 layoutInput; // @synthesize layoutInput;
 @property(retain, nonatomic) PXLayoutPerformerOutput *layoutOutput; // @synthesize layoutOutput;
 @property(readonly, nonatomic) NSArray *children; // @synthesize children;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (struct CGSize)performLayout;
 

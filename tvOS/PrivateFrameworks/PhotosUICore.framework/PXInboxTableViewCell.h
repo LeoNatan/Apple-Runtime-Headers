@@ -26,6 +26,7 @@
 + (id)thumbnailBadgeImageForTintColor:(id)arg1;
 + (id)unseenHighlightColor;
 + (id)placeholderEmptyImage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) PXBadgedThumbnailView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
@@ -35,7 +36,6 @@
 @property(nonatomic, getter=isUnseen) _Bool unseen; // @synthesize unseen=_unseen;
 @property(retain, nonatomic) NSAttributedString *title; // @synthesize title=_title;
 @property(copy, nonatomic) id <PXInboxModel> model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)_updateTitleLabel;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;

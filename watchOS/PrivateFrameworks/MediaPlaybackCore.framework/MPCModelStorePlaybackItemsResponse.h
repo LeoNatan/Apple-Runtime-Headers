@@ -23,12 +23,12 @@
     NSDate *_invalidationDate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *invalidationDate; // @synthesize invalidationDate=_invalidationDate;
 @property(copy, nonatomic) NSDictionary *localStoreAdamIDToEquivalencySourceStoreAdamIDMap; // @synthesize localStoreAdamIDToEquivalencySourceStoreAdamIDMap=_localStoreAdamIDToEquivalencySourceStoreAdamIDMap;
 @property(readonly, nonatomic, getter=isInvalidForPersonalization) _Bool invalidForPersonalization; // @synthesize invalidForPersonalization=_invalidForPersonalization;
 @property(nonatomic, getter=isFinalResponse) _Bool finalResponse; // @synthesize finalResponse=_finalResponse;
 @property(readonly, nonatomic) MPStoreLibraryPersonalizationResponse *_personalizationResponse; // @synthesize _personalizationResponse;
-- (void).cxx_destruct;
 - (void)_activeUserDidChangeNotification:(id)arg1;
 - (void)_personalizationResponseDidInvalidateNotification:(id)arg1;
 - (void)_allowsExplicitContentDidChangeNotification:(id)arg1;

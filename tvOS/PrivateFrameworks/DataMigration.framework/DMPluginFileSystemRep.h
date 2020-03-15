@@ -17,10 +17,10 @@
 }
 
 + (id)allReps;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)isBundleValid;
 - (id)initWithName:(id)arg1 atEnclosingPath:(id)arg2;
 

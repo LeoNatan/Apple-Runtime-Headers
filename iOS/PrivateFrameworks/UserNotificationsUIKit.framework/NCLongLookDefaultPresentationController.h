@@ -16,8 +16,8 @@
     _Bool _presenting;
 }
 
-@property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 - (_Bool)_shouldPresentInCurrentContext;
 - (void)viewControllerAnimator:(id)arg1 willBeginDismissalAnimationWithTransitionContext:(id)arg2;
 - (void)viewControllerAnimator:(id)arg1 willBeginPresentationAnimationWithTransitionContext:(id)arg2;

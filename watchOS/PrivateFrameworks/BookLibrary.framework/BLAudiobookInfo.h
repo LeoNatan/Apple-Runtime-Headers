@@ -18,13 +18,13 @@
     NSDictionary *_additionalProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *additionalProperties; // @synthesize additionalProperties=_additionalProperties;
 @property(nonatomic) _Bool canUseCellularData; // @synthesize canUseCellularData=_canUseCellularData;
 @property(nonatomic) _Bool powerRequired; // @synthesize powerRequired=_powerRequired;
 @property(retain, nonatomic) NSNumber *length; // @synthesize length=_length;
 @property(retain, nonatomic) NSNumber *startingOffset; // @synthesize startingOffset=_startingOffset;
 @property(retain, nonatomic) NSNumber *adamID; // @synthesize adamID=_adamID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)lengthInSecondsWithBitrate:(unsigned long long)arg1;
 

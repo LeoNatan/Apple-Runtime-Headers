@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _parentSafeAreaInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_parentSafeAreaInsets, setter=_setParentSafeAreaInsets:) struct UIEdgeInsets parentSafeAreaInsets; // @synthesize parentSafeAreaInsets=_parentSafeAreaInsets;
 @property(nonatomic) __weak id <_UIHorizontalIndexTitleBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIFocusGuide *horizontalIndexTitleBarFocusGuide; // @synthesize horizontalIndexTitleBarFocusGuide=_horizontalIndexTitleBarFocusGuide;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) struct UIEdgeInsets sectionInset; // @synthesize sectionInset=_sectionInset;
 @property(retain, nonatomic) NSArray *entries; // @synthesize entries=_entries;
-- (void).cxx_destruct;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

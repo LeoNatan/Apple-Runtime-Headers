@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <MouseEventBlockingViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MouseEventBlockingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MouseEventBlockingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_notifyDelegateAboutEventBlocked:(id)arg1;
 - (void)otherMouseUp:(id)arg1;
 - (void)otherMouseDragged:(id)arg1;

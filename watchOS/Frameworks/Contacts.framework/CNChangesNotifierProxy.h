@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     double _externalNotificationCoalescingDelay;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *coalescingNotificationName; // @synthesize coalescingNotificationName=_coalescingNotificationName;
 @property(retain, nonatomic) CNCoalescingTimer *coalescingTimer; // @synthesize coalescingTimer=_coalescingTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *notifierQueue; // @synthesize notifierQueue=_notifierQueue;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMapTable *removalBlocks; // @synthesize removalBlocks=_removalBlocks;
 @property(nonatomic) double externalNotificationCoalescingDelay; // @synthesize externalNotificationCoalescingDelay=_externalNotificationCoalescingDelay;
 @property(nonatomic) _Bool forwardsSelfGeneratedDistributedSaveNotifications; // @synthesize forwardsSelfGeneratedDistributedSaveNotifications;
-- (void).cxx_destruct;
 - (void)waitForCurrentTasksToFinish;
 - (CDUnknownBlockType)receiveNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 userInfo:(id)arg4 calledFromNotifierQueue:(_Bool)arg5 isFromExternalProcess:(_Bool)arg6;
 - (void)receiveNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 userInfo:(id)arg4 isFromExternalProcess:(_Bool)arg5;

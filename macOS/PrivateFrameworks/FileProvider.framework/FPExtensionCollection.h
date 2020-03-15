@@ -16,8 +16,8 @@
 
 + (BOOL)_item:(id)arg1 isCollectionRootForObservedItemID:(id)arg2;
 + (BOOL)item:(id)arg1 isValidForObservedItemID:(id)arg2;
-@property(copy) FPExtensionEnumerationSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(copy) FPExtensionEnumerationSettings *settings; // @synthesize settings=_settings;
 - (id)description;
 @property(readonly) FPItemID *enumeratedItemID;
 - (id)scopedSearchQuery;

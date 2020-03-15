@@ -15,19 +15,19 @@
 {
     _Bool _hasLoadedContentData;
     PXPhotosDetailsContext *_context;
-    struct NSObject *_contentView;
+    NSObject<PXAnonymousView> *_contentView;
     id <PXWidgetDelegate> _widgetDelegate;
     NSArray *_features;
     NSArray *_featureViews;
     PHMemory *_memory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHMemory *memory; // @synthesize memory=_memory;
 @property(retain, nonatomic) NSArray *featureViews; // @synthesize featureViews=_featureViews;
 @property(retain, nonatomic) NSArray *features; // @synthesize features=_features;
 @property(nonatomic) __weak id <PXWidgetDelegate> widgetDelegate; // @synthesize widgetDelegate=_widgetDelegate;
 @property(retain, nonatomic) PXPhotosDetailsContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_showReportFeedback;
 - (void)userDidSelectDisclosureControl;
 @property(readonly, nonatomic) _Bool allowUserInteractionWithSubtitle;
@@ -37,9 +37,9 @@
 @property(readonly, nonatomic) long long contentLayoutStyle;
 @property(readonly, nonatomic) long long contentViewAnchoringType;
 - (struct CGSize)_layoutTokenViewsWithWidth:(double)arg1;
-- (id)_tokenViewsWithSuperview:(struct NSObject *)arg1;
+- (id)_tokenViewsWithSuperview:(id)arg1;
 - (void)_loadFeaturesFromPhotosGraphProperties:(id)arg1;
-- (struct NSObject *)_loadContentView;
+- (id)_loadContentView;
 @property(readonly, nonatomic) NSObject<PXAnonymousView> *contentView; // @synthesize contentView=_contentView;
 - (double)preferredContentHeightForWidth:(double)arg1;
 @property(readonly, nonatomic) _Bool hasLoadedContentData; // @synthesize hasLoadedContentData=_hasLoadedContentData;

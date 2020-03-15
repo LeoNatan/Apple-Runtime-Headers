@@ -21,13 +21,13 @@
     struct CGRect _visibleBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double maximumVisibleY; // @synthesize maximumVisibleY=_maximumVisibleY;
 @property(nonatomic) double minimumVisibleY; // @synthesize minimumVisibleY=_minimumVisibleY;
 @property(retain, nonatomic) SXMediaExposureEvent *mediaExposureEvent; // @synthesize mediaExposureEvent=_mediaExposureEvent;
 @property(nonatomic) struct CGRect visibleBounds; // @synthesize visibleBounds=_visibleBounds;
 @property(nonatomic) _Bool isDisplayingMedia; // @synthesize isDisplayingMedia=_isDisplayingMedia;
 @property(readonly, nonatomic) id <SXAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
-- (void).cxx_destruct;
 - (void)visibleBoundsChanged;
 - (void)calculateVisibleBounds;
 - (void)viewport:(id)arg1 dynamicBoundsDidChangeFromBounds:(struct CGRect)arg2;

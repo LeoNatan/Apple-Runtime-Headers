@@ -6,24 +6,22 @@
 
 #import <AppKit/NSTableRowView.h>
 
-@class NSColor;
+@class NSView, NSVisualEffectView;
 
 @interface CNContactListRowView : NSTableRowView
 {
-    BOOL _shouldDrawBackground;
-    BOOL _shouldDrawBottomGridLine;
-    NSColor *_bottomGridLineColor;
+    NSVisualEffectView *_visualEffectView;
+    NSView *_separatorView;
 }
 
 + (id)postHeaderRowView;
 + (id)headerRowView;
 + (id)rowView;
-@property(copy) NSColor *bottomGridLineColor; // @synthesize bottomGridLineColor=_bottomGridLineColor;
-@property BOOL shouldDrawBottomGridLine; // @synthesize shouldDrawBottomGridLine=_shouldDrawBottomGridLine;
-@property BOOL shouldDrawBackground; // @synthesize shouldDrawBackground=_shouldDrawBackground;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSView *separatorView; // @synthesize separatorView=_separatorView;
+@property(retain, nonatomic) NSVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
+- (void)viewDidMoveToWindow;
 - (BOOL)allowsVibrancy;
-- (void)drawSeparatorInRect:(struct CGRect)arg1;
 
 @end
 

@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_assetTransferOptionsByKey;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasCalledQueryCursorUpdatedBlock; // @synthesize hasCalledQueryCursorUpdatedBlock=_hasCalledQueryCursorUpdatedBlock;
 @property(retain, nonatomic) NSDictionary *assetTransferOptionsByKey; // @synthesize assetTransferOptionsByKey=_assetTransferOptionsByKey;
 @property(retain, nonatomic) NSMutableArray *requestInfos; // @synthesize requestInfos=_requestInfos;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long resultsLimit; // @synthesize resultsLimit=_resultsLimit;
 @property(readonly, nonatomic) CKQueryCursor *cursor; // @synthesize cursor=_cursor;
 @property(readonly, nonatomic) CKQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)fillOutOperationResult:(id)arg1;
 - (Class)operationResultClass;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;

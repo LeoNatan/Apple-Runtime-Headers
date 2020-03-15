@@ -18,10 +18,10 @@
     id <SXAdvertisingSettings> _debugAdvertisementSettings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXAdvertisingSettings> debugAdvertisementSettings; // @synthesize debugAdvertisementSettings=_debugAdvertisementSettings;
 @property(readonly, nonatomic) BOOL debugInteractivityEnabled; // @synthesize debugInteractivityEnabled=_debugInteractivityEnabled;
 @property(readonly, nonatomic) BOOL debugAdSlotsEnabled; // @synthesize debugAdSlotsEnabled=_debugAdSlotsEnabled;
-- (void).cxx_destruct;
 - (id)initWithDebugAdSlotsEnabled:(BOOL)arg1 debugInteractivityEnabled:(BOOL)arg2 debugAdvertisementSettings:(id)arg3;
 
 // Remaining properties

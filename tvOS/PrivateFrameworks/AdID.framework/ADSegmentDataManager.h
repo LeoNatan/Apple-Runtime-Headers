@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *pendingJingleRequestToken; // @synthesize pendingJingleRequestToken=_pendingJingleRequestToken;
 @property(nonatomic) _Bool segmentUpdateInProgress; // @synthesize segmentUpdateInProgress=_segmentUpdateInProgress;
-- (void).cxx_destruct;
 - (void)handleSegmentUpdateResponse:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)sendSegmentDataToAdPlatforms:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)shouldSendSegmentDataToAdPlatforms:(id)arg1;

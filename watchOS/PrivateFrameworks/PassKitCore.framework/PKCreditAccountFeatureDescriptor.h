@@ -19,13 +19,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fundingSourceTermsIdentifier; // @synthesize fundingSourceTermsIdentifier=_fundingSourceTermsIdentifier;
 @property(copy, nonatomic) NSString *paymentTermsIdentifier; // @synthesize paymentTermsIdentifier=_paymentTermsIdentifier;
 @property(copy, nonatomic) NSArray *supportedFileFormatsForTransactionData; // @synthesize supportedFileFormatsForTransactionData=_supportedFileFormatsForTransactionData;
 @property(nonatomic) unsigned int paymentFrequencies; // @synthesize paymentFrequencies=_paymentFrequencies;
 @property(nonatomic) unsigned int paymentPresets; // @synthesize paymentPresets=_paymentPresets;
 @property(nonatomic) unsigned int paymentFundingSourceTypes; // @synthesize paymentFundingSourceTypes=_paymentFundingSourceTypes;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToCreditAccountFeatureDescriptor:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

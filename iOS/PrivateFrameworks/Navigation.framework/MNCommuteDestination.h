@@ -32,6 +32,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MNObserverHashTable *observers; // @synthesize observers=_observers;
 @property(copy, nonatomic) NSDictionary *scores; // @synthesize scores=_scores;
 @property(nonatomic) long long score; // @synthesize score=_score;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) GEOComposedRoute *route; // @synthesize route=_route;
 @property(retain, nonatomic) MNCommuteDestinationSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 @property(nonatomic) _Bool invalid; // @synthesize invalid=_invalid;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)updateFrom:(id)arg1;

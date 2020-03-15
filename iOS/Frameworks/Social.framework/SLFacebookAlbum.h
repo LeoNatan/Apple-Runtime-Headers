@@ -23,13 +23,13 @@
 + (id)albumsWithAlbumDataDictionaries:(id)arg1;
 + (id)albumWithDataDictionary:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool isDefaultAlbum; // @synthesize isDefaultAlbum=_isDefaultAlbum;
 @property _Bool canUpload; // @synthesize canUpload=_canUpload;
 @property long long count; // @synthesize count=_count;
 @property(retain) NSString *coverPhotoIdentifier; // @synthesize coverPhotoIdentifier=_coverPhotoIdentifier;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

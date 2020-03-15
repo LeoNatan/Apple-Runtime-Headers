@@ -28,6 +28,7 @@
     SVVideoAccessoryBarDisplayState *_displayState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SVVideoAccessoryBarDisplayState *displayState; // @synthesize displayState=_displayState;
 @property(retain, nonatomic) id <SVAccessoryItem> expandedItem; // @synthesize expandedItem=_expandedItem;
 @property(retain, nonatomic) id <SVAccessoryItem> trailingItem; // @synthesize trailingItem=_trailingItem;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) id <SVVideoAccessoryItemDisplayModeTransitionCoordinatorProviding> displayModeTransitionCoordinatorProvider; // @synthesize displayModeTransitionCoordinatorProvider=_displayModeTransitionCoordinatorProvider;
 @property(readonly, nonatomic) id <SVVideoAccessoryItemSizing> itemSizer; // @synthesize itemSizer=_itemSizer;
 @property(readonly, nonatomic) id <SVVideoAccessoryBarSizing> barSizer; // @synthesize barSizer=_barSizer;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;

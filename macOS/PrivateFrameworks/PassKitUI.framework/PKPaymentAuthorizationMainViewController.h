@@ -30,6 +30,7 @@
     CNContact *_lastSelectedShippingContact;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *lastSelectedShippingContact; // @synthesize lastSelectedShippingContact=_lastSelectedShippingContact;
 @property(nonatomic) long long authenticationState; // @synthesize authenticationState=_authenticationState;
 @property(retain, nonatomic) PKAuthenticator *authenticator; // @synthesize authenticator=_authenticator;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) PKPaymentAuthorizationItemsView *paymentItemsView; // @synthesize paymentItemsView=_paymentItemsView;
 @property(retain, nonatomic) PKPaymentAuthorizationFooterViewController *footerViewController; // @synthesize footerViewController=_footerViewController;
 @property(nonatomic) __weak id <PKPaymentAuthorizationMainViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_prepareConstraints;
 - (void)_cancelMenuTracking;
 - (void)_createSubviews;
@@ -54,10 +54,10 @@
 - (void)_suspendAuthenticationUpdatingFooter:(BOOL)arg1;
 - (void)_resumeAuthenticationWithPreviousError:(id)arg1;
 - (void)dismissPassphraseViewController;
-- (void)presentPassphraseViewController:(struct NSViewController *)arg1 completionHandler:(CDUnknownBlockType)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)presentPassphraseViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)passphraseViewController;
 - (void)dismissPasscodeViewController;
-- (void)presentPasscodeViewController:(struct NSViewController *)arg1 completionHandler:(CDUnknownBlockType)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)presentPasscodeViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)passcodeViewController;
 - (void)authenticatorDidDeactivateTouchID:(id)arg1 status:(long long)arg2;
 - (void)authenticatorDidEncounterMatchMiss:(id)arg1;

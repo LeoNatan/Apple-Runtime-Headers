@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id <FormTextStatusWatcherDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <FormTextStatusWatcherDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <FormTextStatusWatcherDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_tabWasVerified:(id)arg1;
 - (void)stopWatchingTab:(id)arg1;
 - (void)startWatchingAllUnverifiedTabsForWindowController:(id)arg1;

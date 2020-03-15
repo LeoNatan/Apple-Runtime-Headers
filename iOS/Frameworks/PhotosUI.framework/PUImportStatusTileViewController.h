@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
     PUAssetViewModel *_assetViewModel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _isPerformingChanges; // @synthesize _isPerformingChanges=__isPerformingChanges;
 @property(retain, nonatomic) PUAssetViewModel *assetViewModel; // @synthesize assetViewModel=_assetViewModel;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)_updateStatusView;
 - (void)_updateIfNeeded;

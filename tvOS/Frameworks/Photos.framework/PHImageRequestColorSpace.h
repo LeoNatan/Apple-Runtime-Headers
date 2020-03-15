@@ -13,8 +13,8 @@
     NSString *_colorSpaceName;
 }
 
-@property(copy, nonatomic) NSString *colorSpaceName; // @synthesize colorSpaceName=_colorSpaceName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *colorSpaceName; // @synthesize colorSpaceName=_colorSpaceName;
 
 @end
 

@@ -14,9 +14,9 @@
     id <PLActivityCriterionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <PLActivityCriterionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL satisfied; // @synthesize satisfied=_satisfied;
-- (void).cxx_destruct;
 - (void)didDisableActivity:(id)arg1;
 - (void)didInterruptActivity:(id)arg1;
 - (void)didCompleteActivity:(id)arg1;

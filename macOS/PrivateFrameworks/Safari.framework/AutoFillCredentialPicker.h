@@ -11,11 +11,11 @@
 #import <Safari/NSTableViewDelegate-Protocol.h>
 #import <Safari/SecureWindow-Protocol.h>
 
-@class AuthorizationSheetViewController, NSArray, NSButton, NSSearchField, NSString, NSTextField, NSView, NSWindow, SecureWindowLockPolicyEnforcer, WBSAutoFillQuirksManager, WBSFaviconRequestsController, WBSSavedPasswordStore, WBSSiteMetadataManager;
+@class AuthorizationSheetViewController, NSButton, NSMutableArray, NSSearchField, NSString, NSTextField, NSView, NSWindow, SecureWindowLockPolicyEnforcer, WBSAutoFillQuirksManager, WBSFaviconRequestsController, WBSSavedPasswordStore, WBSSiteMetadataManager;
 
 @interface AutoFillCredentialPicker : SheetWithTableController <AuthorizationSheetViewControllerDelegate, NSTableViewDataSource, NSTableViewDelegate, SecureWindow>
 {
-    NSArray *_displayedPasswords;
+    NSMutableArray *_allPasswords;
     WBSFaviconRequestsController *_iconRequestsController;
     WBSSavedPasswordStore *_savedPasswordStore;
     WBSSiteMetadataManager *_siteMetadataManager;
@@ -34,13 +34,13 @@
     CDUnknownBlockType _didSelectCredentialToFillHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didSelectCredentialToFillHandler; // @synthesize didSelectCredentialToFillHandler=_didSelectCredentialToFillHandler;
 @property(retain, nonatomic) NSView *otherPasswordsWindowContentView; // @synthesize otherPasswordsWindowContentView=_otherPasswordsWindowContentView;
 @property(nonatomic) __weak NSTextField *promptTextField; // @synthesize promptTextField=_promptTextField;
 @property(nonatomic) __weak NSSearchField *searchField; // @synthesize searchField=_searchField;
 @property(nonatomic) __weak NSButton *fillButton; // @synthesize fillButton=_fillButton;
 @property(nonatomic) __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
-- (void).cxx_destruct;
 - (void)_installView:(id)arg1;
 @property(readonly, nonatomic) NSWindow *windowToSecure;
 - (void)lockFromPolicyEnforcer:(id)arg1;
@@ -49,6 +49,7 @@
 @property(readonly, nonatomic) AuthorizationSheetViewController *authorizationSheetViewController; // @synthesize authorizationSheetViewController=_authorizationSheetViewController;
 @property(readonly, nonatomic) SecureWindowLockPolicyEnforcer *lockPolicyEnforcer; // @synthesize lockPolicyEnforcer=_lockPolicyEnforcer;
 - (void)controlTextDidChange:(id)arg1;
+- (id)_passwordForRowIndex:(long long)arg1;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

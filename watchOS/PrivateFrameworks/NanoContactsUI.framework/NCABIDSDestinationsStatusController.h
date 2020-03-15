@@ -19,10 +19,10 @@
 }
 
 + (id)_idsDestinationsForContact:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *destinationToStatus; // @synthesize destinationToStatus=_destinationToStatus;
 @property(readonly, nonatomic) __weak id <NCABIDSDestinationsStatusControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *idsService; // @synthesize idsService=_idsService;
-- (void).cxx_destruct;
 - (id)_destinationToStatusAllUnknown;
 @property(readonly, nonatomic) NSString *listenerID;
 - (void)_mapWasUpdated:(id)arg1;

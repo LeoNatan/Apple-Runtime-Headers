@@ -24,6 +24,7 @@
     NSArray *_tagWidthConstraints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *tagWidthConstraints; // @synthesize tagWidthConstraints=_tagWidthConstraints;
 @property(readonly, nonatomic) DOCVisualEffectLabel *tagSummaryLabel; // @synthesize tagSummaryLabel=_tagSummaryLabel;
 @property(readonly, nonatomic) DOCTagDotView *dot3View; // @synthesize dot3View=_dot3View;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NUIContainerStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic) __weak id <DOCTagViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *tags; // @synthesize tags=_tags;
-- (void).cxx_destruct;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (id)viewForLastBaselineLayout;

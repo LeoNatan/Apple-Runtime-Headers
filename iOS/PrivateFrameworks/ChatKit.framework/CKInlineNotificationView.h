@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     UIView *_bottomLineView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool animatingVisibility; // @synthesize animatingVisibility=_animatingVisibility;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
 @property(retain, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIView *clippingView; // @synthesize clippingView=_clippingView;
 @property(nonatomic) __weak id <CKInlineNotificationViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setVisible:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 @property(nonatomic) _Bool visible;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

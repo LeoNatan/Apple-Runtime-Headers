@@ -16,8 +16,8 @@
     _SFPBReferentialCommand *_referentialCommand;
 }
 
-@property(retain, nonatomic) _SFPBReferentialCommand *referentialCommand; // @synthesize referentialCommand=_referentialCommand;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _SFPBReferentialCommand *referentialCommand; // @synthesize referentialCommand=_referentialCommand;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

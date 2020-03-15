@@ -18,8 +18,8 @@
 + (id)remoteInterface;
 + (id)signpostLog;
 + (id)log;
-@property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (unsigned long long)numberOfPendingMessages;
 - (_Bool)isProcessing;
 - (void)processAllQueuedMessages;

@@ -17,11 +17,11 @@
 }
 
 + (id)imageWithCGImageRef:(struct CGImage *)arg1;
+- (void).cxx_destruct;
 @property(retain) PACGImageMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly) struct CGRect logicalExtent; // @synthesize logicalExtent=_logicalExtent;
 @property(readonly) long long orientation; // @synthesize orientation=_orientation;
 @property(readonly) struct CGImage *CGImageRef; // @synthesize CGImageRef=_CGImageRef;
-- (void).cxx_destruct;
 @property(readonly) IPAColorProfile *colorProfile;
 @property(readonly) struct CGColorSpace *colorSpace;
 @property(readonly) struct CGRect bounds;

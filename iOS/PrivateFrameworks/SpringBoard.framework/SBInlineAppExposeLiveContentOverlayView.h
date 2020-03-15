@@ -17,10 +17,10 @@
     SBSceneViewStatusBarAssertion *_statusBarAssertion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(readonly, nonatomic) SBSceneViewStatusBarAssertion *statusBarAssertion; // @synthesize statusBarAssertion=_statusBarAssertion;
 @property(readonly, nonatomic) SBDeviceApplicationSceneViewController *deviceApplicationSceneViewController; // @synthesize deviceApplicationSceneViewController=_deviceApplicationSceneViewController;
-- (void).cxx_destruct;
 - (void)disableAsynchronousRenderingForNextCommit;
 - (void)setRasterizationStyle:(long long)arg1 withMinificationFilterEnabled:(_Bool)arg2;
 - (long long)rasterizationStyle;

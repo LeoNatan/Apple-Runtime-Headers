@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_inlineTitle;
 }
 
-@property(copy, nonatomic) NSString *inlineTitle; // @synthesize inlineTitle=_inlineTitle;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *inlineTitle; // @synthesize inlineTitle=_inlineTitle;
 - (id)decorate:(id)arg1 scaledWithSize:(struct CGSize)arg2 croppedToFit:(_Bool)arg3;
 - (id)decoratorIdentifier;
 - (id)initWithInlineTitle:(id)arg1;

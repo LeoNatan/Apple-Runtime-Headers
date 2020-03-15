@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)specifiersForBlockedApps:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int provisioningProfileRemovedToken; // @synthesize provisioningProfileRemovedToken=_provisioningProfileRemovedToken;
 @property(nonatomic) int provisioningProfileInstalledToken; // @synthesize provisioningProfileInstalledToken=_provisioningProfileInstalledToken;
 @property(nonatomic) _Bool hasFailedFetchingProfilesInfo; // @synthesize hasFailedFetchingProfilesInfo=_hasFailedFetchingProfilesInfo;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSSManager *nssManager; // @synthesize nssManager=_nssManager;
 @property(retain, nonatomic) UIImage *profileListIcon; // @synthesize profileListIcon=_profileListIcon;
 @property(retain, nonatomic) NSMutableDictionary *dataDictionary; // @synthesize dataDictionary=_dataDictionary;
-- (void).cxx_destruct;
 - (void)_hideProgressIndicatorAndShowBackButton:(_Bool)arg1;
 - (void)_showProgressIndicator;
 - (void)handleProfilesInfoResponse:(id)arg1 error:(id)arg2;

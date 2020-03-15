@@ -21,11 +21,11 @@
 + (id)recordProperties;
 + (Class)recordClass;
 + (int)messageType;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(copy, nonatomic) WFRecord *record; // @synthesize record=_record;
 @property(readonly, nonatomic) long long changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) NSString *objectIdentifier; // @synthesize objectIdentifier=_objectIdentifier;
-- (void).cxx_destruct;
 - (id)recordWithError:(id *)arg1;
 @property(readonly, nonatomic) unsigned long long estimatedSize;
 @property(readonly, copy, nonatomic) WFDatabaseObjectDescriptor *descriptor;

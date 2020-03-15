@@ -38,6 +38,7 @@
 }
 
 + (BOOL)isBeingInstalledInternally;
+- (void).cxx_destruct;
 @property(retain) NSString *alternateBlessVolumePath; // @synthesize alternateBlessVolumePath=_alternateBlessVolumePath;
 @property(retain) NSURL *appleDiagnosticsURL; // @synthesize appleDiagnosticsURL=_appleDiagnosticsURL;
 @property(retain) NSURL *payloadImageURL; // @synthesize payloadImageURL=_payloadImageURL;
@@ -63,7 +64,6 @@
 @property(retain) NSString *payloadImageMountPoint; // @synthesize payloadImageMountPoint=_payloadImageMountPoint;
 @property(retain) NSString *baseSystemMountPoint; // @synthesize baseSystemMountPoint=_baseSystemMountPoint;
 @property(retain) NSString *alternateBlessVolumeUUID; // @synthesize alternateBlessVolumeUUID=_alternateBlessVolumeUUID;
-- (void).cxx_destruct;
 - (id)_fileDiskURLForPath:(id)arg1;
 - (id)_mountPointForDiskWithUUID:(id)arg1;
 - (id)_pathFromFileDiskURL:(id)arg1;

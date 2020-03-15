@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *algorithmName; // @synthesize algorithmName=_algorithmName;
 @property(nonatomic) long long numChannels; // @synthesize numChannels=_numChannels;
 @property(nonatomic) long long sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(nonatomic) long long payloadLengthBytes; // @synthesize payloadLengthBytes=_payloadLengthBytes;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCommandLineArgs:(id)arg1;
 - (id)commandLineOptions;

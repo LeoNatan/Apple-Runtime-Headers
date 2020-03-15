@@ -18,9 +18,9 @@
     NSArray *_tabItems;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *tabItems; // @synthesize tabItems=_tabItems;
 @property(readonly, nonatomic) __weak IKAppTabBar *appTabBar; // @synthesize appTabBar=_appTabBar;
-- (void).cxx_destruct;
 - (void)_setSelectedTabNavigationDocumentOnJSContext:(id)arg1;
 - (void)_onSelectSync;
 - (void)onSelect;

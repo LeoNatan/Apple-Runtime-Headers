@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     LPiTunesMediaAsset *_artwork;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPiTunesMediaAsset *artwork; // @synthesize artwork=_artwork;
 @property(copy, nonatomic) NSString *genre; // @synthesize genre=_genre;
 @property(copy, nonatomic) NSString *seasonName; // @synthesize seasonName=_seasonName;
 @property(copy, nonatomic) NSString *episodeName; // @synthesize episodeName=_episodeName;
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(copy, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
-- (void).cxx_destruct;
 - (id)assetsToFetch;
 - (id)resolve;
 

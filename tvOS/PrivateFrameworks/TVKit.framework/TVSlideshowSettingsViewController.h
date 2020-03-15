@@ -26,6 +26,7 @@
     UILabel *_transitionLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *transitionLabel; // @synthesize transitionLabel=_transitionLabel;
 @property(retain, nonatomic) UILabel *slideshowLabel; // @synthesize slideshowLabel=_slideshowLabel;
 @property(retain, nonatomic) UITableView *slideshowTransitionStyleView; // @synthesize slideshowTransitionStyleView=_slideshowTransitionStyleView;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSDictionary *slideshowThemeSettings; // @synthesize slideshowThemeSettings=_slideshowThemeSettings;
 @property(retain, nonatomic) NSArray *slideshowSettings; // @synthesize slideshowSettings=_slideshowSettings;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)_initializeSlideshowSettings;
 - (void)dealloc;
 - (void)loadView;

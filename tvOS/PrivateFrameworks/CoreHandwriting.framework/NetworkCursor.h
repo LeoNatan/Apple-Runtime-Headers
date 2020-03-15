@@ -13,9 +13,9 @@
 }
 
 + (id)cursorByAddingNodeIndex:(unsigned long long)arg1 toCursor:(id)arg2;
-@property(nonatomic) unsigned long long stateType; // @synthesize stateType=_stateType;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long stateType; // @synthesize stateType=_stateType;
 - (_Bool)isCompletePattern;
 - (unsigned long long)nodeIndexAtPosition:(unsigned long long)arg1;
 - (unsigned long long)nodeIndexCount;

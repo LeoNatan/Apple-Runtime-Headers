@@ -21,10 +21,10 @@
 + (void)resizeDrawing:(id)arg1 toFitInBounds:(struct CGRect)arg2;
 + (id)copyOfDrawing:(id)arg1 toFitInBounds:(struct CGRect)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect strokesFrame; // @synthesize strokesFrame=_strokesFrame;
 @property(nonatomic) struct CGRect canvasBounds; // @synthesize canvasBounds=_canvasBounds;
 @property(retain, nonatomic) NSArray *strokes; // @synthesize strokes=_strokes;
-- (void).cxx_destruct;
 - (void)removeLastBrushStroke;
 - (void)addBrushStroke:(id)arg1;
 - (id)mutableStrokes;

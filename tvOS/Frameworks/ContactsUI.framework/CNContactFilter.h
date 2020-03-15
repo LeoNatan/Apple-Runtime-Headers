@@ -16,9 +16,9 @@
     NSString *_fullTextString;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool rankSortedResults; // @synthesize rankSortedResults=_rankSortedResults;
 @property(copy, nonatomic) NSString *fullTextString; // @synthesize fullTextString=_fullTextString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSPredicate *predicate;
 @property(readonly, nonatomic) _Bool supportsSections;
 - (id)description;

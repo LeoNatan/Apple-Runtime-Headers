@@ -16,8 +16,8 @@
 }
 
 + (id)animationWithKeyPath:(id)arg1;
-@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 
 // Remaining properties

@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSData *clientDataVRFOutput; // @synthesize clientDataVRFOutput=_clientDataVRFOutput;
 @property(retain) NSData *deviceVRFOutput; // @synthesize deviceVRFOutput=_deviceVRFOutput;
 @property BOOL marked; // @synthesize marked=_marked;
 @property BOOL successfulSync; // @synthesize successfulSync=_successfulSync;
 @property(retain) NSData *clientData; // @synthesize clientData=_clientData;
 @property(copy) NSData *deviceID; // @synthesize deviceID=_deviceID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescription;
 - (BOOL)isEqual:(id)arg1;

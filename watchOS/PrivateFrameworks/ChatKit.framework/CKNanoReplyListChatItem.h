@@ -13,8 +13,8 @@
     CKNanoReplyLoader *_replyLoader;
 }
 
-@property(retain, nonatomic) CKNanoReplyLoader *replyLoader; // @synthesize replyLoader=_replyLoader;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKNanoReplyLoader *replyLoader; // @synthesize replyLoader=_replyLoader;
 - (struct CGSize)loadSizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(out struct UIEdgeInsets *)arg2;
 - (_Bool)displayDuringSend;
 - (Class)cellClass;

@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timestampTicks; // @synthesize timestampTicks=_timestampTicks;
 @property(nonatomic) double ptsScore; // @synthesize ptsScore=_ptsScore;
 @property(nonatomic) double verticalError; // @synthesize verticalError=_verticalError;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) double distanceError; // @synthesize distanceError=_distanceError;
 @property(nonatomic) double distanceMeters; // @synthesize distanceMeters=_distanceMeters;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -57,6 +57,7 @@
 }
 
 + (id)controllerForServiceType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *cachedCallerIDMap; // @synthesize cachedCallerIDMap=_cachedCallerIDMap;
 @property(retain, nonatomic) IDSPhoneSubscriptionSelector *phoneSubscriptionSelector; // @synthesize phoneSubscriptionSelector=_phoneSubscriptionSelector;
 @property(copy, nonatomic) CDUnknownBlockType willLaunchURLBlock; // @synthesize willLaunchURLBlock=_willLaunchURLBlock;
@@ -76,7 +77,6 @@
 @property(copy, nonatomic) CDUnknownBlockType accountRemovedBlock; // @synthesize accountRemovedBlock=_accountRemovedBlock;
 @property(copy, nonatomic) CDUnknownBlockType accountAddedBlock; // @synthesize accountAddedBlock=_accountAddedBlock;
 @property(copy, nonatomic) CDUnknownBlockType accountRegistrationBlock; // @synthesize accountRegistrationBlock=_accountRegistrationBlock;
-- (void).cxx_destruct;
 - (void)_decrementLogIndent;
 - (void)_incrementLogIndent;
 - (id)_logSpace;

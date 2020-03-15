@@ -18,13 +18,13 @@
     NSMutableArray *_visits;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *visits; // @synthesize visits=_visits;
 @property(readonly, nonatomic) PLLocationOfInterestLocation *mapItemLocation; // @synthesize mapItemLocation=_mapItemLocation;
 @property(readonly, nonatomic) PLLocationOfInterestLocation *routineLocation; // @synthesize routineLocation=_routineLocation;
 @property(readonly, nonatomic) double typeRadius; // @synthesize typeRadius=_typeRadius;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

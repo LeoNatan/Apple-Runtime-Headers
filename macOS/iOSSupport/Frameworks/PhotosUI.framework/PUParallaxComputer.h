@@ -8,12 +8,12 @@
 
 @interface PUParallaxComputer : NSObject
 {
-    int _axis;
     long long _model;
     double _parallaxFactor;
+    unsigned long long _axis;
 }
 
-@property(nonatomic) int axis; // @synthesize axis=_axis;
+@property(nonatomic) unsigned long long axis; // @synthesize axis=_axis;
 @property(nonatomic) double parallaxFactor; // @synthesize parallaxFactor=_parallaxFactor;
 @property(nonatomic) long long model; // @synthesize model=_model;
 - (struct CGPoint)contentParallaxOffsetForViewFrame:(struct CGRect)arg1 visibleRect:(struct CGRect)arg2;

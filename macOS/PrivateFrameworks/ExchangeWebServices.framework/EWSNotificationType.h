@@ -19,11 +19,11 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *Events; // @synthesize Events=_Events;
 @property(nonatomic) BOOL MoreEvents; // @synthesize MoreEvents=_MoreEvents;
 @property(copy, nonatomic) NSString *PreviousWatermark; // @synthesize PreviousWatermark=_PreviousWatermark;
 @property(copy, nonatomic) NSString *SubscriptionId; // @synthesize SubscriptionId=_SubscriptionId;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

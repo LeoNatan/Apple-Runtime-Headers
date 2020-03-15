@@ -18,13 +18,13 @@
     double _doubleValue;
 }
 
+- (void).cxx_destruct;
 @property double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(retain, nonatomic) NSString *mediaType; // @synthesize mediaType=_mediaType;
 @property(retain, nonatomic) NSString *dimension; // @synthesize dimension=_dimension;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)valueAsString;
 - (id)expressionAsString;

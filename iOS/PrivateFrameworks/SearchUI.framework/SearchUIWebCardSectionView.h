@@ -18,9 +18,9 @@
     WKWebView *_webView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(nonatomic) double contentHeight; // @synthesize contentHeight=_contentHeight;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (id)setupContentView;

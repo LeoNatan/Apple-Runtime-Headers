@@ -24,6 +24,7 @@
 + (id)fullScreenTraitsWithScreen:(id)arg1 orientation:(int)arg2;
 + (id)traitsWithScreen:(id)arg1 orientation:(int)arg2 ignoreRemoteKeyboard:(_Bool)arg3;
 + (id)traitsWithScreen:(id)arg1 orientation:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) float keyboardBarHeight; // @synthesize keyboardBarHeight=_keyboardBarHeight;
 @property(readonly, nonatomic) _Bool isKeyboardMinorEdgeWidth; // @synthesize isKeyboardMinorEdgeWidth=_isKeyboardMinorEdgeWidth;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) _Bool knobInput; // @synthesize knobInput=_knobInput;
 @property(nonatomic) int orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateForTextInputTraits:(id)arg1 supportedInteractionModel:(unsigned int)arg2;
 @property(readonly, nonatomic) int idiom;

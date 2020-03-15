@@ -18,12 +18,12 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *headerCellConstraints; // @synthesize headerCellConstraints=_headerCellConstraints;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) HUGridLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) NSString *sectionTitle; // @synthesize sectionTitle=_sectionTitle;
-- (void).cxx_destruct;
 - (void)_updateTitleLabel;
 - (void)updateConstraints;
 - (void)_invalidateConstraints;

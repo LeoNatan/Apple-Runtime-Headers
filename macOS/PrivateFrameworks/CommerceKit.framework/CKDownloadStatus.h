@@ -23,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) CKDownloadAsset *downloadedAsset; // @synthesize downloadedAsset=_downloadedAsset;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property BOOL isAssetCached; // @synthesize isAssetCached=_isAssetCached;
@@ -30,7 +31,6 @@
 @property unsigned long long bytesExpected; // @synthesize bytesExpected=_bytesExpected;
 @property unsigned long long bytesDownloaded; // @synthesize bytesDownloaded=_bytesDownloaded;
 @property unsigned char state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *batteryImage; // @synthesize batteryImage=_batteryImage;
 @property(nonatomic) long long batteryCurrentCapacity; // @synthesize batteryCurrentCapacity=_batteryCurrentCapacity;
 @property(nonatomic) BOOL batteryGasGaugeCapability; // @synthesize batteryGasGaugeCapability=_batteryGasGaugeCapability;
 @property(nonatomic) BOOL batteryIsFullyCharged; // @synthesize batteryIsFullyCharged=_batteryIsFullyCharged;
 @property(nonatomic) BOOL batteryIsCharging; // @synthesize batteryIsCharging=_batteryIsCharging;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

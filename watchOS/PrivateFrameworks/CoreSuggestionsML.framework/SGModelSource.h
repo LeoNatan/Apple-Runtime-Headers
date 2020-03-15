@@ -14,9 +14,9 @@
     Class _modelClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
 @property(retain, nonatomic) PMLSessionDescriptor *sessionDescriptor; // @synthesize sessionDescriptor=_sessionDescriptor;
-- (void).cxx_destruct;
 - (id)initWithSessionDescriptor:(id)arg1 modelClass:(Class)arg2;
 
 @end

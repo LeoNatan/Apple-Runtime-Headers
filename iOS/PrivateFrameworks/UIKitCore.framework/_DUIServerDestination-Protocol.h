@@ -7,6 +7,6 @@
 @protocol _DUIClientSessionDestination;
 
 @protocol _DUIServerDestination
-- (oneway void)sawFirstDragEventWithSessionID:(unsigned int)arg1 systemPolicy:(_Bool)arg2 destination:(id <_DUIClientSessionDestination>)arg3 reply:(void (^)(id <_DUIServerSessionDestination>, PBItemCollection *, unsigned long long, _Bool))arg4;
+- (oneway void)sawFirstDragEventWithSessionID:(unsigned int)arg1 systemPolicy:(_Bool)arg2 destination:(id <_DUIClientSessionDestination>)arg3 reply:(void (^)(id <_DUIServerSessionDestination>, PBItemCollection *, unsigned long long, unsigned long long))arg4;
 @end
 

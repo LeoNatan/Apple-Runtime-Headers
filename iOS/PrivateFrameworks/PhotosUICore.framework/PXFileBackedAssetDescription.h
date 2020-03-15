@@ -15,8 +15,8 @@
 }
 
 + (id)simpleImageDescriptionWithURL:(id)arg1;
-@property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)description;

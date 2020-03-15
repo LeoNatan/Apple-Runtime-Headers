@@ -16,7 +16,7 @@
 {
     NSString *_serviceName;
     int _defaultPriority;
-    struct NSDictionary *_defaultOptions;
+    NSDictionary *_defaultOptions;
     NSDictionary *_customIDSOptions;
     SYSession *_currentSession;
     id <SYServiceDelegate> _delegate;
@@ -58,6 +58,7 @@
     double _sessionStalenessInterval;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *generationID; // @synthesize generationID=_generationID;
 @property(nonatomic) int engineType; // @synthesize engineType=_engineType;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -71,7 +72,6 @@
 @property(retain, nonatomic) NSDictionary *options; // @synthesize options=_defaultOptions;
 @property(nonatomic) int priority; // @synthesize priority=_defaultPriority;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_serviceName;
-- (void).cxx_destruct;
 - (void)_swapSessionForVersionChange;
 - (void)_peerRejectedVersion:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleError:(id)arg1;
@@ -149,13 +149,13 @@
 - (void)_setProtocolVersionForRemoteOSVersion:(id)arg1 build:(id)arg2 remoteIsWatch:(_Bool)arg3 switchingEngines:(_Bool)arg4;
 - (void)_setupPairingNotifications;
 - (void)dealloc;
-- (id)initWithService:(id)arg1 priority:(int)arg2 qos:(unsigned int)arg3 asMasterStore:(_Bool)arg4 options:(struct NSDictionary *)arg5;
-- (id)initWithService:(id)arg1 priority:(int)arg2 asMasterStore:(_Bool)arg3 options:(struct NSDictionary *)arg4;
+- (id)initWithService:(id)arg1 priority:(int)arg2 qos:(unsigned int)arg3 asMasterStore:(_Bool)arg4 options:(id)arg5;
+- (id)initWithService:(id)arg1 priority:(int)arg2 asMasterStore:(_Bool)arg3 options:(id)arg4;
 - (id)init;
-- (id)dataStreamWithMetadata:(id)arg1 options:(struct NSDictionary *)arg2 identifier:(id *)arg3 error:(id *)arg4;
-- (void)dataStreamWithMetadata:(id)arg1 options:(struct NSDictionary *)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)sendData:(id)arg1 options:(struct NSDictionary *)arg2 identifier:(id *)arg3 error:(id *)arg4;
-- (void)sendData:(id)arg1 options:(struct NSDictionary *)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)dataStreamWithMetadata:(id)arg1 options:(id)arg2 identifier:(id *)arg3 error:(id *)arg4;
+- (void)dataStreamWithMetadata:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)sendData:(id)arg1 options:(id)arg2 identifier:(id *)arg3 error:(id *)arg4;
+- (void)sendData:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) _Bool hasPairingStore;
 @property(copy, nonatomic) NSDictionary *customIDSOptions;
 - (_Bool)_v1_handleBatchEndResponse:(id)arg1 error:(id *)arg2;

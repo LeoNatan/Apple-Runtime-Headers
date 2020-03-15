@@ -22,11 +22,11 @@
 + (id)copySavedPathEvaluatorForEndpoint:(id)arg1 parameters:(id)arg2;
 + (void)initialize;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NWParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain) NWPath *internalPath; // @synthesize internalPath=_internalPath;
 @property(readonly) NSObject<OS_nw_path_evaluator> *internalEvaluator; // @synthesize internalEvaluator=_internalEvaluator;
 @property(readonly, nonatomic) NWEndpoint *endpoint; // @synthesize endpoint=_endpoint;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)matchesEndpoint:(id)arg1 parameters:(id)arg2;

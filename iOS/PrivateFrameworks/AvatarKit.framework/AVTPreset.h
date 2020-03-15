@@ -31,9 +31,9 @@
 + (id)findPresetWithIdentifier:(id)arg1 inPresets:(id)arg2;
 + (id)availablePresetsForCategory:(long long)arg1;
 + (void)loadPresets;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *specializationSettings; // @synthesize specializationSettings=_specializationSettings;
 @property(readonly, nonatomic) NSDictionary *tags; // @synthesize tags=_tags;
-- (void).cxx_destruct;
 - (void)rebuildSpecializationSettings;
 - (id)cache;
 - (void)applyPresetOnAvatar:(id)arg1;
@@ -44,7 +44,7 @@
 - (float)intensity;
 - (id)assets;
 @property(readonly, nonatomic) _Bool hasComponent;
-- (struct UIImage *)maskImage;
+- (id)maskImage;
 @property(readonly, nonatomic) UIImage *thumbnail;
 @property(readonly, nonatomic) NSString *localizedName;
 @property(readonly, nonatomic) NSString *displayableName;

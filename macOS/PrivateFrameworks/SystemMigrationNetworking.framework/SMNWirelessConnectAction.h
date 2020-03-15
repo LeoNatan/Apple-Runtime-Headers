@@ -18,11 +18,11 @@
 
 + (id)actionWithPayload:(id)arg1;
 + (int)actionID;
+- (void).cxx_destruct;
 @property unsigned long long retryDelay; // @synthesize retryDelay=_retryDelay;
 @property unsigned long long timeout; // @synthesize timeout=_timeout;
 @property(retain) NSString *password; // @synthesize password=_password;
 @property(retain) NSString *wirelessSSID; // @synthesize wirelessSSID=_wirelessSSID;
-- (void).cxx_destruct;
 - (BOOL)success;
 - (id)setOfClassesToDecodeInTheResult;
 - (BOOL)returnsData;

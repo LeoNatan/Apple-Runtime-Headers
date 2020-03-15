@@ -15,10 +15,10 @@
     unsigned int _minuteGranularity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int minuteGranularity; // @synthesize minuteGranularity=_minuteGranularity;
 @property(retain, nonatomic) NSDate *endingDate; // @synthesize endingDate=_endingDate;
 @property(retain, nonatomic) NSDate *startingDate; // @synthesize startingDate=_startingDate;
-- (void).cxx_destruct;
 - (id)roundDate:(id)arg1;
 
 @end

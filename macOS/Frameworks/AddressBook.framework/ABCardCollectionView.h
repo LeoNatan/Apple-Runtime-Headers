@@ -30,12 +30,12 @@
 
 + (id)sortedCollectionViewProperties;
 + (id)relationships;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) BOOL reloadEnabled; // @synthesize reloadEnabled=_reloadEnabled;
 @property(nonatomic) __weak id <ABCardCollectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <ABCardCollectionViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(getter=isLoaded) BOOL loaded; // @synthesize loaded;
-- (void).cxx_destruct;
 - (id)instantMessageServiceKeys;
 - (id)labelsByProperty;
 - (void)saveTemplatePreferences;

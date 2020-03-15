@@ -16,9 +16,9 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic, getter=isConnectedToPower) _Bool connectedToPower; // @synthesize connectedToPower=_connectedToPower;
-- (void).cxx_destruct;
 - (void)setIsConnectedToPower:(_Bool)arg1;
 - (void)update;
 - (void)dealloc;

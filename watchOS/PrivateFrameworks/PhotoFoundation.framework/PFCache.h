@@ -18,8 +18,8 @@
     CDUnknownBlockType _willBeRemovedFromCacheHandler;
 }
 
-@property(copy) CDUnknownBlockType willBeRemovedFromCacheHandler; // @synthesize willBeRemovedFromCacheHandler=_willBeRemovedFromCacheHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType willBeRemovedFromCacheHandler; // @synthesize willBeRemovedFromCacheHandler=_willBeRemovedFromCacheHandler;
 - (id)description;
 - (void)enumerateCacheEntriesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)setObject:(id)arg1 forKeyIfNotPresent:(id)arg2;

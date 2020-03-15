@@ -20,11 +20,11 @@
 + (id)cnnDataWithGPUContext:(id)arg1;
 + (id)cnnData;
 + (Class)cnnDataClass;
+- (void).cxx_destruct;
 @property __weak VCPCNNMetalContext *context; // @synthesize context=_context;
 @property BOOL isInputOutput; // @synthesize isInputOutput=_isInputOutput;
 @property float *data; // @synthesize data=_data;
 @property(retain) NSMutableArray *size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (int)softmax;
 - (int)normalization;
 - (int)readFromDisk:(struct __sFILE *)arg1 quantFactor:(short)arg2;

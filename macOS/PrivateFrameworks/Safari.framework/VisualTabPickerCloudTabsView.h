@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <VisualTabPickerCloudTabsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <VisualTabPickerCloudTabsViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_reloadData;
 - (void)didRemoveAllCloudTabsForVisualTabPickerCloudDeviceView:(id)arg1;
 - (void)visualTabPickerCloudDeviceView:(id)arg1 didRemoveCloudTabAtIndex:(unsigned long long)arg2;

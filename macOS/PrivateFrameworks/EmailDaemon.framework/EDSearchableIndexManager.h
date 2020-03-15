@@ -19,10 +19,10 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 @property(nonatomic) BOOL needsToScheduleRecurringActivity; // @synthesize needsToScheduleRecurringActivity=_needsToScheduleRecurringActivity;
 @property(nonatomic) BOOL needsReindex; // @synthesize needsReindex=_needsReindex;
-- (void).cxx_destruct;
 - (id)_filterInMessagesWithValidPersistentIDsFromMessages:(id)arg1;
 - (void)_removeItemsForIndexableMessages:(id)arg1;
 - (void)persistenceDidAddLabels:(id)arg1 removeLabels:(id)arg2 messages:(id)arg3 generationWindow:(id)arg4;

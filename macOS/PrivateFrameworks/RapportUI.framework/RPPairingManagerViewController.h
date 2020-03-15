@@ -9,7 +9,7 @@
 #import <RapportUI/NSTableViewDataSource-Protocol.h>
 #import <RapportUI/NSTableViewDelegate-Protocol.h>
 
-@class CUPairingManager, NSButton, NSProgressIndicator, NSString, NSTableView, NSTextField, RPDevice, RPLegacyDeviceDiscovery, RPLegacySession, RPPairingManagerRemoveViewController, RPPairingManagerUIController, RPPairingUIController;
+@class CUPairingManager, NSButton, NSMutableArray, NSProgressIndicator, NSString, NSTableView, NSTextField, RPDevice, RPLegacyDeviceDiscovery, RPLegacySession, RPPairingManagerRemoveViewController, RPPairingManagerUIController, RPPairingUIController;
 
 __attribute__((visibility("hidden")))
 @interface RPPairingManagerViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSTextField *_progressLabel;
     NSButton *_doneButton;
     RPLegacyDeviceDiscovery *_deviceDiscovery;
-    struct NSMutableArray *_devices;
+    NSMutableArray *_devices;
     RPDevice *_pairingDevice;
     RPLegacySession *_pairingSession;
     BOOL _pairingStarted;
@@ -31,9 +31,9 @@ __attribute__((visibility("hidden")))
     RPPairingManagerUIController *_mainController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RPPairingManagerUIController *mainController; // @synthesize mainController=_mainController;
 @property(nonatomic) BOOL allowManualIP; // @synthesize allowManualIP=_allowManualIP;
-- (void).cxx_destruct;
 - (void)_unpairDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateDeviceInfo:(id)arg1;
 - (void)_startPairSetup;

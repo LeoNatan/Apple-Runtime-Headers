@@ -26,6 +26,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)biometricKitIdentity;
+- (void).cxx_destruct;
 @property(nonatomic) long long updateCount; // @synthesize updateCount=_updateCount;
 @property(nonatomic) long long matchCount; // @synthesize matchCount=_matchCount;
 @property(retain, nonatomic) NSDate *creationTime; // @synthesize creationTime=_creationTime;
@@ -35,7 +36,6 @@
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) unsigned int userID; // @synthesize userID=_userID;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

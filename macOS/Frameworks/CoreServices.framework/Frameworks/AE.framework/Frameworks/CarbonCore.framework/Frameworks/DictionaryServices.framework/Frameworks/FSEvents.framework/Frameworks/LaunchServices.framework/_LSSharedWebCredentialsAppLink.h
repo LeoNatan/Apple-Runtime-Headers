@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsSecureCoding;
 + (BOOL)removeAllSettingsReturningError:(id *)arg1;
 + (void)initialize;
-@property(retain, nonatomic) _SWCServiceDetails *serviceDetails; // @synthesize serviceDetails=_serviceDetails;
-@property(readonly) struct LSBinding binding; // @synthesize binding=_binding;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _SWCServiceDetails *serviceDetails; // @synthesize serviceDetails=_serviceDetails;
+@property(readonly) struct LSBinding binding; // @synthesize binding=_binding;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)removeSettingsReturningError:(id *)arg1;

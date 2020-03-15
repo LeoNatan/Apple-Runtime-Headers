@@ -13,8 +13,8 @@
     NSMutableDictionary *_fileURLsBySection;
 }
 
-@property(readonly, nonatomic) NSDictionary *fileURLsBySection; // @synthesize fileURLsBySection=_fileURLsBySection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *fileURLsBySection; // @synthesize fileURLsBySection=_fileURLsBySection;
 - (void)insertFileURL:(id)arg1 atIndex:(long long)arg2 inSection:(long long)arg3;
 - (void)removeFileURLsAtIndexes:(id)arg1 inSection:(long long)arg2;
 - (void)_createDataSource;

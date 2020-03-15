@@ -25,13 +25,13 @@
 + (id)changeRequestForPhotosHighlight:(id)arg1;
 + (_Bool)canGenerateUUIDWithoutEntitlements;
 + (id)creationRequestForPhotosHighlight;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *curationHelpersByCurationType; // @synthesize curationHelpersByCurationType=_curationHelpersByCurationType;
 @property(retain, nonatomic) PHPhotosHighlight *originalHighlight; // @synthesize originalHighlight=_originalHighlight;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *dayGroupKeyAssetHelper; // @synthesize dayGroupKeyAssetHelper=_dayGroupKeyAssetHelper;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *yearKeyAssetHelper; // @synthesize yearKeyAssetHelper=_yearKeyAssetHelper;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *monthKeyAssetHelper; // @synthesize monthKeyAssetHelper=_monthKeyAssetHelper;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *dayKeyAssetHelper; // @synthesize dayKeyAssetHelper=_dayKeyAssetHelper;
-- (void).cxx_destruct;
 - (id)_existentCuratedAssetObjectIDsForCurationType:(unsigned short)arg1;
 - (id)_existentAssetObjectIDs;
 - (id)_mutableAssetObjectIDsAndUUIDsForCurationType:(unsigned short)arg1;

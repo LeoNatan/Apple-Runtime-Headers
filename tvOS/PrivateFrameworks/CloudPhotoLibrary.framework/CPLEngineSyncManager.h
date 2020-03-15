@@ -54,11 +54,11 @@
 + (unsigned int)qualityOfServiceForSyncSessions;
 + (id)shortDescriptionForState:(unsigned long long)arg1;
 + (id)descriptionForState:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldTryToMingleImmediately; // @synthesize shouldTryToMingleImmediately=_shouldTryToMingleImmediately;
 @property(nonatomic, setter=_setState:) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 @property(readonly, nonatomic) CPLPlatformObject *platformObject; // @synthesize platformObject=_platformObject;
-- (void).cxx_destruct;
 - (void)getStatusDictionaryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)componentName;

@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long behavior; // @synthesize behavior=_behavior;
 @property(readonly, copy, nonatomic) NSString *scheduleIdentifier; // @synthesize scheduleIdentifier=_scheduleIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)lifetimeType;

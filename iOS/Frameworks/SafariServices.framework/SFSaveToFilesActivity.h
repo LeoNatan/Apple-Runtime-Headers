@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     _Bool _supportsDownloads;
 }
 
-@property(nonatomic) _Bool supportsDownloads; // @synthesize supportsDownloads=_supportsDownloads;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool supportsDownloads; // @synthesize supportsDownloads=_supportsDownloads;
 - (id)customizationControllerForSaveToFilesOperation:(id)arg1;
 - (_Bool)saveToFilesOperationSupportsDownloads:(id)arg1;
 - (void)saveToFilesOperation:(id)arg1 didFinishWithSuccess:(_Bool)arg2;

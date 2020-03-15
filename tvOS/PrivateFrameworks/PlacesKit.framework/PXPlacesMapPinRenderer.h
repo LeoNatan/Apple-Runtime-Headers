@@ -16,8 +16,8 @@
     id <PXPlacesMapPipelineComponentProvider> pipelineComponentProvider;
 }
 
-@property(nonatomic) __weak id <PXPlacesMapPipelineComponentProvider> pipelineComponentProvider; // @synthesize pipelineComponentProvider;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXPlacesMapPipelineComponentProvider> pipelineComponentProvider; // @synthesize pipelineComponentProvider;
 - (void)reset;
 - (id)viewForAnnotation:(id)arg1 andMapView:(id)arg2;
 - (id)annotationForGeotaggables:(id)arg1 initialCoordinate:(struct CLLocationCoordinate2D)arg2;

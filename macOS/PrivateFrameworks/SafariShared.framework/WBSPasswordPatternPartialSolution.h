@@ -15,10 +15,10 @@
     double _guessesRequiredWithPatternCountPenalty;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double guessesRequiredWithPatternCountPenalty; // @synthesize guessesRequiredWithPatternCountPenalty=_guessesRequiredWithPatternCountPenalty;
 @property(readonly, nonatomic) double guessesRequiredWithoutPatternCountPenalty; // @synthesize guessesRequiredWithoutPatternCountPenalty=_guessesRequiredWithoutPatternCountPenalty;
 @property(readonly, nonatomic) WBSPasswordPatternMatch *patternMatch; // @synthesize patternMatch=_patternMatch;
-- (void).cxx_destruct;
 - (id)initWithPatternMatch:(id)arg1 guessesRequiredWithoutPatternCountPenalty:(double)arg2 withPatternCountPenalty:(double)arg3;
 
 @end

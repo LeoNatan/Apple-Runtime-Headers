@@ -20,13 +20,13 @@
 }
 
 + (id)keyPathsForValuesAffectingIsSyncing;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *remoteFetchQueue; // @synthesize remoteFetchQueue=_remoteFetchQueue;
 @property(readonly, nonatomic) NSOperationQueue *remoteTaskQueue; // @synthesize remoteTaskQueue=_remoteTaskQueue;
 @property(retain) NSError *certificateError; // @synthesize certificateError=_certificateError;
 @property(copy) NSString *certificateHostname; // @synthesize certificateHostname=_certificateHostname;
 @property(retain) NSError *webAuthenticationError; // @synthesize webAuthenticationError=_webAuthenticationError;
 @property long long accountState; // @synthesize accountState=_accountState;
-- (void).cxx_destruct;
 - (void)setHighPriorityMailbox:(id)arg1;
 @property(readonly, nonatomic) ICNFMCMailboxProxy *defaultHighPriorityMailbox;
 @property BOOL enabled;

@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) IDSCKServerChangeToken *ckToken; // @synthesize ckToken=_ckToken;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDSCKServerChangeToken *ckToken; // @synthesize ckToken=_ckToken;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCKToken:(id)arg1;

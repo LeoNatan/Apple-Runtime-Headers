@@ -28,6 +28,7 @@
     NSHashTable *_propertyProviders;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *propertyProviders; // @synthesize propertyProviders=_propertyProviders;
 @property(copy, nonatomic) CDUnknownBlockType populationCompleteBlock; // @synthesize populationCompleteBlock=_populationCompleteBlock;
 @property(retain, nonatomic) NSError *injectedError; // @synthesize injectedError=_injectedError;
@@ -38,8 +39,7 @@
 @property(nonatomic) _Bool hasCompletedFirstPopulateFromDatabase; // @synthesize hasCompletedFirstPopulateFromDatabase=_hasCompletedFirstPopulateFromDatabase;
 @property(nonatomic) _Bool needsPopulationWhenProtectedDataAvailable; // @synthesize needsPopulationWhenProtectedDataAvailable=_needsPopulationWhenProtectedDataAvailable;
 @property(retain, nonatomic) HDKeyValueDomain *defaultsDomain; // @synthesize defaultsDomain=_defaultsDomain;
-@property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
+@property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (_Bool)_forceDatabasePopulate;
 - (void)_injectError:(id)arg1;
 - (void)removeObserver:(id)arg1;

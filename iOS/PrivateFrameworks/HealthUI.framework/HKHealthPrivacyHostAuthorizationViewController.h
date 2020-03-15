@@ -19,8 +19,8 @@
 + (id)serviceViewControllerInterface;
 + (_Bool)shouldPropagateAppearanceCustomizations;
 + (id)requestRemoteViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak id <HKHealthPrivacyHostAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HKHealthPrivacyHostAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 @property(readonly, nonatomic) id <HKHealthPrivacyServiceRemoteAuthorizationViewController> _healthPrivacyServiceViewControllerProxy;
 - (void)didFinishWithError:(id)arg1;

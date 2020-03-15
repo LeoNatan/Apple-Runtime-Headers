@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool limitOne; // @synthesize limitOne=_limitOne;
 @property(copy, nonatomic) NSString *preferredChannel; // @synthesize preferredChannel=_preferredChannel;
-- (void).cxx_destruct;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)shortDebugDescription;

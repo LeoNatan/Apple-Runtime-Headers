@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     long long _backdropStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long backdropStyle; // @synthesize backdropStyle=_backdropStyle;
 @property(nonatomic, getter=isTranslucent) _Bool translucent; // @synthesize translucent;
 @property(retain, nonatomic, setter=_setShadowView:) UIView *_shadowView; // @synthesize _shadowView;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *barTintColor; // @synthesize barTintColor;
 @property(nonatomic) long long barStyle; // @synthesize barStyle;
 @property(retain, nonatomic) _UINavigationBarAppearanceStorage *appearanceStorage; // @synthesize appearanceStorage;
-- (void).cxx_destruct;
 - (void)updateBackgroundImage;
 - (void)_setIsContainedInPopover:(_Bool)arg1;
 - (void)_setFrame:(struct CGRect)arg1 forceUpdateBackgroundImage:(_Bool)arg2;

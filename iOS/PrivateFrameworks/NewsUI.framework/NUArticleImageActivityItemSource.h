@@ -13,8 +13,8 @@
     UIImage *_articleImage;
 }
 
-@property(readonly, nonatomic) UIImage *articleImage; // @synthesize articleImage=_articleImage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImage *articleImage; // @synthesize articleImage=_articleImage;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)initWithHeadline:(id)arg1;

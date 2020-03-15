@@ -19,8 +19,8 @@
     id <IKJSPlayerAppBridge> _appBridge;
 }
 
-@property(nonatomic) __weak id <IKJSPlayerAppBridge> appBridge; // @synthesize appBridge=_appBridge;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IKJSPlayerAppBridge> appBridge; // @synthesize appBridge=_appBridge;
 @property(readonly, nonatomic) __weak IKDOMElement *currentAVMediaElement;
 - (id)asPrivateIKJSLegacyPlayer;
 

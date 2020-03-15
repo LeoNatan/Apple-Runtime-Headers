@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _secondChoiceAssociationPosition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long secondChoiceAssociationPosition; // @synthesize secondChoiceAssociationPosition=_secondChoiceAssociationPosition;
 @property(nonatomic) unsigned long long firstChoiceAssociationPosition; // @synthesize firstChoiceAssociationPosition=_firstChoiceAssociationPosition;
 @property(nonatomic) double secondBestDistance; // @synthesize secondBestDistance=_secondBestDistance;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak PDFAccessibilityNode *firstChoiceAssociationNode; // @synthesize firstChoiceAssociationNode=_firstChoiceAssociationNode;
 @property(nonatomic) __weak PDFAccessibilityNode *parentNode; // @synthesize parentNode=_parentNode;
 @property(nonatomic) __weak PDFAccessibilityNode *annotationNode; // @synthesize annotationNode=_annotationNode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _frame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(readonly, copy, nonatomic) NSArray *types; // @synthesize types=_types;
-- (void).cxx_destruct;
 - (id)initWithTypes:(id)arg1 frame:(struct CGRect)arg2;
 
 @end

@@ -14,9 +14,9 @@
     NSByteCountFormatter *_numberFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSByteCountFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
 @property(retain) NSString *formatString; // @synthesize formatString=_formatString;
-- (void).cxx_destruct;
 - (id)stringForObjectValue:(id)arg1;
 - (id)initWithPrefixString:(id)arg1 localeIdentifier:(id)arg2;
 

@@ -21,12 +21,12 @@
     NFMultiDelegate *_multiScrollDelegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NFMultiDelegate *multiScrollDelegate; // @synthesize multiScrollDelegate=_multiScrollDelegate;
 @property(readonly, nonatomic) NSMutableSet *visibleViewControllers; // @synthesize visibleViewControllers=_visibleViewControllers;
 @property(readonly, nonatomic) NSMutableDictionary *blueprints; // @synthesize blueprints=_blueprints;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 @property(readonly, nonatomic) __weak id <SXDocumentSectionHosting> hosting; // @synthesize hosting=_hosting;
-- (void).cxx_destruct;
 - (id)view;
 - (id)viewController;
 - (double)heightForBlueprint:(id)arg1 canvasSize:(struct CGSize)arg2 traitCollection:(id)arg3;

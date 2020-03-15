@@ -23,13 +23,13 @@
     unsigned long long _currentDataSourceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasGeneratedGadgets; // @synthesize hasGeneratedGadgets=_hasGeneratedGadgets;
 @property(nonatomic) unsigned long long currentDataSourceIdentifier; // @synthesize currentDataSourceIdentifier=_currentDataSourceIdentifier;
 @property(readonly, nonatomic) PXExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
 @property(readonly, nonatomic) unsigned long long albumListType; // @synthesize albumListType=_albumListType;
 @property(retain, nonatomic) PUAlbumListCellContentViewHelper *contentViewHelper; // @synthesize contentViewHelper=_contentViewHelper;
 @property(readonly, nonatomic) PXPhotoKitCollectionsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)_updateDataSourceWithChangeDetails:(id)arg1;
 - (Class)_albumGadgetClassForCollection:(id)arg1;
 - (id)_newGadgetForCollection:(id)arg1;

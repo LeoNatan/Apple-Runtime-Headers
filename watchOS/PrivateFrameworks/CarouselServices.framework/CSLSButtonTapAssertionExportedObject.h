@@ -16,8 +16,8 @@
     id <CSLSButtonTapAssertionClientInterface> _realClient;
 }
 
-@property(nonatomic) __weak id <CSLSButtonTapAssertionClientInterface> realClient; // @synthesize realClient=_realClient;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSButtonTapAssertionClientInterface> realClient; // @synthesize realClient=_realClient;
 - (void)deactivate:(_Bool)arg1;
 
 // Remaining properties

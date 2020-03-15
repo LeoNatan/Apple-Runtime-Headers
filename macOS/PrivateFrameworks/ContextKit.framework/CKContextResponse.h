@@ -36,6 +36,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *responseDate; // @synthesize responseDate=_responseDate;
 @property(retain, nonatomic) NSDate *hideCompletionsAfterDate; // @synthesize hideCompletionsAfterDate=_hideCompletionsAfterDate;
 @property(nonatomic) unsigned long long mustPrefixMatchLength; // @synthesize mustPrefixMatchLength=_mustPrefixMatchLength;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)discardCompleter:(id)arg1;
 - (void)logTransactionSuccessfulForInput:(id)arg1 completion:(id)arg2;
 - (void)logEngagement:(id)arg1 forInput:(id)arg2 completion:(id)arg3;

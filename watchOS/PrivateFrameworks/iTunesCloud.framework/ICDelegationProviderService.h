@@ -37,8 +37,8 @@
 
 + (id)systemServiceWithRequestContext:(id)arg1;
 + (id)sharedService;
-@property(readonly, copy, nonatomic) ICRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) ICRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 - (id)_xpcConnection;
 - (void)_updateSupportedDelegationAccountUUIDs;
 - (void)_updateDelegationForDiscoveredServices;

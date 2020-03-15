@@ -16,11 +16,11 @@
     NSImageView *_acknowledgementTypeIcon;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSImageView *acknowledgementTypeIcon; // @synthesize acknowledgementTypeIcon=_acknowledgementTypeIcon;
 @property(nonatomic) __weak NSTextField *talliedCountLabel; // @synthesize talliedCountLabel=_talliedCountLabel;
 @property(copy) NSString *acknowledgmentImageFormat; // @synthesize acknowledgmentImageFormat=_acknowledgmentImageFormat;
 @property(nonatomic) unsigned long long acknowledgementType; // @synthesize acknowledgementType=_acknowledgementType;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long talliedCount;
 
 @end

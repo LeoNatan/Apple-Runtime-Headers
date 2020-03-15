@@ -6,7 +6,15 @@
 
 #import <WebCore/__UIKitWebAccessibilityObjectWrapper_super.h>
 
-@interface UIKitWebAccessibilityObjectWrapper : __UIKitWebAccessibilityObjectWrapper_super
+#import <WebCore/UIFocusItem-Protocol.h>
+#import <WebCore/UIFocusItemContainer-Protocol.h>
+#import <WebCore/_UIFocusEnvironmentPrivate-Protocol.h>
+#import <WebCore/_UIFocusRegionContainer-Protocol.h>
+
+@class NSArray, NSString, UIView;
+@protocol UICoordinateSpace, UIFocusEnvironment, UIFocusItemContainer;
+
+@interface UIKitWebAccessibilityObjectWrapper : __UIKitWebAccessibilityObjectWrapper_super <UIFocusItem, UIFocusItemContainer, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer>
 {
 }
 
@@ -15,7 +23,9 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (id)_accessibilityNextElementsWithHeading:(unsigned long long)arg1 queryString:(id)arg2;
+- (_Bool)_accessibilityHandlesArrowKeys;
+- (_Bool)_accessibilitySetNativeFocus;
+- (id)_accessibilityNextElementsWithHeading:(unsigned long long)arg1 queryString:(id)arg2 startingFrom:(id)arg3;
 - (_Bool)_accessibilityMoveFocusWithHeading:(unsigned long long)arg1 toElementMatchingQuery:(id)arg2;
 - (unsigned long long)_axUpdatesFrequentlyTrait;
 - (unsigned long long)_axTextAreaTrait;
@@ -111,7 +121,7 @@
 - (_Bool)_accessibilityHasOtherAccessibleChildElements:(id)arg1;
 - (id)_accessibilityParentLinkContainer;
 - (id)ariaLandmarkRoleDescription;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)accessibilityValue;
 - (id)accessibilityHint;
 - (id)_accessibilityHeaderElementsForRow:(unsigned long long)arg1;
@@ -222,6 +232,39 @@
 - (_Bool)_prepareAccessibilityCall;
 - (void)_axSetWebAreaURL:(id)arg1;
 - (id)_axWebAreaURL;
+- (_Bool)conformsToProtocol:(id)arg1;
+@property(readonly, nonatomic) id <UICoordinateSpace> coordinateSpace;
+- (id)focusItemsInRect:(struct CGRect)arg1;
+- (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
+- (id)_preferredFocusRegionCoordinateSpace;
+- (void)_searchForFocusRegionsInContext:(id)arg1;
+@property(readonly, nonatomic) _Bool canBecomeFocused;
+- (void)_updateFocusLayerFrame;
+- (void)_destroyFocusLayer;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (_Bool)shouldUpdateFocusInContext:(id)arg1;
+- (void)updateFocusIfNeeded;
+- (void)setNeedsFocusUpdate;
+@property(readonly, nonatomic) id <UIFocusItemContainer> focusItemContainer;
+- (id)_focusGroupDescriptor;
+- (id)_axDefaultFocusGroupDescriptor;
+- (void)_axSetStoredDefaultFocusGroupDescriptor:(id)arg1;
+- (id)_axGetStoredDefaultFocusGroupDescriptor;
+@property(readonly, nonatomic) __weak id <UIFocusEnvironment> parentFocusEnvironment;
+@property(readonly, copy, nonatomic) NSArray *preferredFocusEnvironments;
+@property(nonatomic) _Bool areChildrenFocused;
+- (void)_axSetAreChildrenFocused:(_Bool)arg1;
+- (_Bool)_axAreChildrenFocused;
+@property(readonly, nonatomic) struct CGRect frame; // @dynamic frame;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic, getter=_isEligibleForFocusInteraction) _Bool eligibleForFocusInteraction;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic, getter=_linearFocusMovementSequences) NSArray *linearFocusMovementSequences;
+@property(readonly, nonatomic, getter=_preferredFocusMovementStyle) long long preferredFocusMovementStyle;
+@property(readonly, nonatomic) __weak UIView *preferredFocusedView;
+@property(readonly) Class superclass;
 
 @end
 

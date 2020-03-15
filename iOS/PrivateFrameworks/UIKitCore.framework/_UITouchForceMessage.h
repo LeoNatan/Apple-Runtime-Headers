@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 
 + (id)reset;
 + (id)observe:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldFilterDueToSystemGestures; // @synthesize shouldFilterDueToSystemGestures=_shouldFilterDueToSystemGestures;
 @property(nonatomic) struct CGPoint centroid; // @synthesize centroid=_centroid;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) double maximumPossibleForce; // @synthesize maximumPossibleForce=_maximumPossibleForce;
 @property(nonatomic) double unclampedTouchForce; // @synthesize unclampedTouchForce=_unclampedTouchForce;
-- (void).cxx_destruct;
 - (void)ifObservationUnclamped:(CDUnknownBlockType)arg1 ifReset:(CDUnknownBlockType)arg2;
 - (void)ifObservation:(CDUnknownBlockType)arg1 ifReset:(CDUnknownBlockType)arg2;
 

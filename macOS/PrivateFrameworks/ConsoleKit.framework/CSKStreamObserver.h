@@ -18,13 +18,13 @@
     CSKEntity *_anchorEntity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL anchorEntityDidSelect; // @synthesize anchorEntityDidSelect=_anchorEntityDidSelect;
 @property(retain, nonatomic) CSKEntity *anchorEntity; // @synthesize anchorEntity=_anchorEntity;
 @property(retain, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(nonatomic) BOOL invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic) unsigned long long dataType; // @synthesize dataType=_dataType;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)handleRemovalDataBatch:(id)arg1;
 - (void)handleAdditionDataBatch:(id)arg1;
 - (void)resetWorkingStateWithDataBatch:(id)arg1;

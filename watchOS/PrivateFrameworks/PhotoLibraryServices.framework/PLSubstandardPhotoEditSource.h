@@ -10,9 +10,9 @@
 {
 }
 
-+ (id)_imageWithImage:(struct NSObject *)arg1 orientation:(int)arg2;
-- (id)initWithImage:(struct NSObject *)arg1 orientation:(int)arg2 size:(struct CGSize)arg3;
-- (id)initWithImage:(struct NSObject *)arg1 orientation:(int)arg2;
++ (id)_imageWithImage:(id)arg1 orientation:(int)arg2;
+- (id)initWithImage:(id)arg1 orientation:(int)arg2 size:(struct CGSize)arg3;
+- (id)initWithImage:(id)arg1 orientation:(int)arg2;
 
 @end
 

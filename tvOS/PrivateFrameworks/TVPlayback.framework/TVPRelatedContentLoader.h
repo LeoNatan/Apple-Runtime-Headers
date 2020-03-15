@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     id _elapsedTimeObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id elapsedTimeObserver; // @synthesize elapsedTimeObserver=_elapsedTimeObserver;
 @property(retain, nonatomic) id endingBoundaryTimeObserver; // @synthesize endingBoundaryTimeObserver=_endingBoundaryTimeObserver;
 @property(retain, nonatomic) id beginningBoundaryTimeObserver; // @synthesize beginningBoundaryTimeObserver=_beginningBoundaryTimeObserver;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <TVPRelatedContentLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TVPRelatedContentViewController *relatedContentViewController; // @synthesize relatedContentViewController=_relatedContentViewController;
 @property(retain, nonatomic) NSObject<TVPPlayback> *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_updateDurationUntilPlaybackWillAdvance;
 - (id)_durationUntilPlaybackWillAdvance;
 - (void)_updateBoundaryTimeObserversForPlayer:(id)arg1;

@@ -14,9 +14,9 @@
     NSDateInterval *_supersetDateInterval;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDateInterval *supersetDateInterval; // @synthesize supersetDateInterval=_supersetDateInterval;
 @property(readonly) PGGraphLocationNode *supersetLocationNode; // @synthesize supersetLocationNode=_supersetLocationNode;
-- (void).cxx_destruct;
 - (id)_timeTitle;
 - (id)_locationTitle;
 - (void)_generateTitleAndSubtitleWithResult:(CDUnknownBlockType)arg1;

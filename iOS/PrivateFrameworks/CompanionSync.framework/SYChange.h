@@ -23,12 +23,12 @@
 + (id)changeWithObject:(id)arg1 updateType:(int)arg2 store:(id)arg3;
 + (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2 encodeUsingVersion:(long long)arg3;
 + (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sequencer; // @synthesize sequencer=_sequencer;
 @property(retain, nonatomic) NSData *changeData; // @synthesize changeData=_changeData;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *objectId; // @synthesize objectId=_objectId;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

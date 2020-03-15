@@ -18,13 +18,13 @@
     NSDate *_datePreflighted;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *datePreflighted; // @synthesize datePreflighted=_datePreflighted;
 @property(retain) NSData *apNonce; // @synthesize apNonce=_apNonce;
 @property(retain) NSURL *fdrDataURL; // @synthesize fdrDataURL=_fdrDataURL;
 @property(retain) NSString *tag; // @synthesize tag=_tag;
 @property(retain) EOSRestoreBundle *restoreBundle; // @synthesize restoreBundle=_restoreBundle;
 @property(retain) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

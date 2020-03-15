@@ -17,12 +17,12 @@
     NSOutputStream *_outputStream;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int socketFD; // @synthesize socketFD=_socketFD;
 @property(readonly, nonatomic) unsigned short PSM; // @synthesize PSM=_PSM;
 @property(readonly, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(readonly, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
 @property(readonly, nonatomic) CBPeer *peer; // @synthesize peer=_peer;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (id)initWithPeer:(id)arg1 info:(id)arg2;

@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _captionPadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldStop; // @synthesize shouldStop=_shouldStop;
 @property(nonatomic) long long scanSpecialSequenceCount; // @synthesize scanSpecialSequenceCount=_scanSpecialSequenceCount;
 @property(nonatomic) _Bool scannedBatchHasCaption; // @synthesize scannedBatchHasCaption=_scannedBatchHasCaption;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType tileImageSizeBlock; // @synthesize tileImageSizeBlock=_tileImageSizeBlock;
 @property(nonatomic) struct CGSize interTileSpacing; // @synthesize interTileSpacing=_interTileSpacing;
 @property(nonatomic) long long tileCount; // @synthesize tileCount=_tileCount;
-- (void).cxx_destruct;
 - (double)valueByRounding:(double)arg1 usingMagneticGuidelines:(_Bool)arg2;
 - (void)parsedFrame:(struct CGRect)arg1 type:(long long)arg2 forTileAtIndex:(long long)arg3;
 - (struct CGSize)captionSizeForTileAtIndex:(long long)arg1 proposedSize:(struct CGSize)arg2;

@@ -22,6 +22,7 @@
     id <MBSecondPartyHost> _assistant;
 }
 
+- (void).cxx_destruct;
 @property id <MBSecondPartyHost> assistant; // @synthesize assistant=_assistant;
 @property id <AKiCDPRecoveryKeyDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL noRecoveryKeyButtonEnabled; // @synthesize noRecoveryKeyButtonEnabled=_noRecoveryKeyButtonEnabled;
@@ -31,7 +32,6 @@
 @property(retain) NSString *recoveryKey; // @synthesize recoveryKey=_recoveryKey;
 @property(retain) NSView *progressView; // @synthesize progressView=_progressView;
 @property(retain) NSTextField *recoveryKeyTextField; // @synthesize recoveryKeyTextField=_recoveryKeyTextField;
-- (void).cxx_destruct;
 - (void)validateRecoveryKey;
 - (void)noRecoveryKeyButtonPressed:(id)arg1;
 - (void)recoveryTextFieldAction:(id)arg1;

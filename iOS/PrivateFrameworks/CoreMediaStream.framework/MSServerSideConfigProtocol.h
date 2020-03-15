@@ -21,9 +21,9 @@
     } _context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <MSServerSideConfigProtocolDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *personID; // @synthesize personID=_personID;
-- (void).cxx_destruct;
 - (void)_didFailAuthenticationWithError:(id)arg1;
 - (void)_didFinishWithResponse:(id)arg1 error:(id)arg2;
 - (void)abort;

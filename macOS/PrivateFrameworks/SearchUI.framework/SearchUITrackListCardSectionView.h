@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsRecyclingForCardSection:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL observing; // @synthesize observing=_observing;
 @property(nonatomic) BOOL mouseEntered; // @synthesize mouseEntered=_mouseEntered;
 @property(retain, nonatomic) NSSound *sound; // @synthesize sound=_sound;
 @property(retain, nonatomic) SFTrack *track; // @synthesize track=_track;
 @property(retain, nonatomic) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 @property(retain, nonatomic) SearchUIButton *playButton; // @synthesize playButton=_playButton;
-- (void).cxx_destruct;
 - (void)sound:(id)arg1 didFinishPlaying:(BOOL)arg2;
 - (void)viewClosed;
 - (void)togglePlaying:(id)arg1;

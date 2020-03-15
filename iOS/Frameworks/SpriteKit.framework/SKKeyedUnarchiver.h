@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *searchPaths;
 }
 
-@property(retain, nonatomic) NSArray *searchPaths; // @synthesize searchPaths;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *searchPaths; // @synthesize searchPaths;
 
 @end
 

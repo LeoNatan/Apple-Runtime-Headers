@@ -17,11 +17,11 @@
     double _minimumScale;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disableInPlaceFiltering; // @synthesize disableInPlaceFiltering=_disableInPlaceFiltering;
 @property(nonatomic) double minimumScale; // @synthesize minimumScale=_minimumScale;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)allowInPlaceFiltering;
 - (void)applyScaleHint:(double)arg1;

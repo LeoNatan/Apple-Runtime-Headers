@@ -13,8 +13,8 @@
     PKPeerPaymentQuote *_quote;
 }
 
-@property(readonly, nonatomic) PKPeerPaymentQuote *quote; // @synthesize quote=_quote;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPeerPaymentQuote *quote; // @synthesize quote=_quote;
 - (id)initWithData:(id)arg1;
 
 @end

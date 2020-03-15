@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_createViewControllerWithItemIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_navigationTransitionTimer, setter=_setNavigationTransitionTimer:) NSTimer *navigationTransitionTimer; // @synthesize navigationTransitionTimer=_navigationTransitionTimer;
 @property(retain, nonatomic, getter=_navigationTransitionQueue, setter=_navigationTransitionQueue:) NSMutableArray *navigationTransitionQueue; // @synthesize navigationTransitionQueue=_navigationTransitionQueue;
 @property(readonly, nonatomic, getter=_navigationController) SiriUINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) __weak id <SVSTranscriptStackViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SVSTranscriptStackViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)navigationController:(id)arg1 didLayoutViewController:(id)arg2;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;

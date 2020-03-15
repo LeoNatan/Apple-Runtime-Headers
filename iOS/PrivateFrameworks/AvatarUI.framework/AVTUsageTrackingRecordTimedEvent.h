@@ -17,11 +17,11 @@
     double _totalTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) double totalTime; // @synthesize totalTime=_totalTime;
 @property(retain, nonatomic) NSDate *currentStartTime; // @synthesize currentStartTime=_currentStartTime;
 @property(readonly, nonatomic) id <AVTAvatarRecord> record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (double)totalElapsedTimeAtTime:(id)arg1;
 - (void)resumeAtTime:(id)arg1;
 - (void)pauseAtTime:(id)arg1;

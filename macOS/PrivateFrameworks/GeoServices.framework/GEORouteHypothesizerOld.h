@@ -36,6 +36,7 @@
     NSData *_usualRouteData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long etaUpdateFrequency; // @synthesize etaUpdateFrequency=_etaUpdateFrequency;
 @property(readonly, nonatomic) NSDate *suggestedNextUpdateDate; // @synthesize suggestedNextUpdateDate=_suggestedNextUpdateDate;
 @property(readonly, nonatomic) NSDate *arrivalDate; // @synthesize arrivalDate=_arrivalDate;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) GEOComposedWaypoint *source; // @synthesize source=_source;
 @property(retain, nonatomic) GEODirectionsRequestFeedback *feedback; // @synthesize feedback=_feedback;
 @property(nonatomic) __weak id <GEORouteHypothesizerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)etaUpdaterReceivedInvalidRoute:(id)arg1 newRoute:(id)arg2 incidentsOnRoute:(id)arg3 incidentsOffRoute:(id)arg4;
 - (void)etaUpdaterUpdatedETA:(id)arg1;
 - (void)etaUpdater:(id)arg1 receivedError:(id)arg2;

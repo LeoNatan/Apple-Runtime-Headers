@@ -20,12 +20,12 @@
     CDStruct_1b6d18a9 _photoTime;
 }
 
+- (void).cxx_destruct;
 @property(retain) NUImageGeometry *videoGeometry; // @synthesize videoGeometry=_videoGeometry;
 @property CDStruct_1b6d18a9 photoTime; // @synthesize photoTime=_photoTime;
 @property(retain) struct CGImage *photo; // @synthesize photo=_photo;
 @property(retain) AVVideoComposition *videoComposition; // @synthesize videoComposition=_videoComposition;
 @property(retain) AVAsset *video; // @synthesize video=_video;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 // Remaining properties

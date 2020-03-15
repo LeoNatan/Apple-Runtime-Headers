@@ -46,6 +46,7 @@
     double _currentTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(readonly, nonatomic) unsigned long long creationStamp; // @synthesize creationStamp=_creationStamp;
 @property(nonatomic) long long contentFilters; // @synthesize contentFilters=_contentFilters;
@@ -74,7 +75,6 @@
 @property(readonly, nonatomic) NSString *keyboardPrimaryLanguage; // @synthesize keyboardPrimaryLanguage=_keyboardPrimaryLanguage;
 @property(readonly, nonatomic) NSString *keyboardLanguage; // @synthesize keyboardLanguage=_keyboardLanguage;
 @property(readonly, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasMarkedText;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

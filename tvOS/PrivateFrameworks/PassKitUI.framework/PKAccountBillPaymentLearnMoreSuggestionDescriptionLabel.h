@@ -14,9 +14,9 @@
     UILabel *_messageLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 
 @end
 

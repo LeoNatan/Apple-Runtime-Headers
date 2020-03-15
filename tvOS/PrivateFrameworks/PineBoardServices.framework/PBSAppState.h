@@ -30,13 +30,13 @@
 + (id)badgeValueForApplicationWithIdentifier:(id)arg1;
 + (id)iconNameForApplicationWithIdentifier:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic, getter=isRecentlyUpdated) _Bool recentlyUpdated; // @synthesize recentlyUpdated=_recentlyUpdated;
 @property(readonly, nonatomic, getter=isBadgeEnabled) _Bool badgeEnabled; // @synthesize badgeEnabled=_badgeEnabled;
 @property(readonly, copy, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;
 @property(readonly, copy, nonatomic) PBSBadgeValue *badgeValue; // @synthesize badgeValue=_badgeValue;
 @property(readonly, copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

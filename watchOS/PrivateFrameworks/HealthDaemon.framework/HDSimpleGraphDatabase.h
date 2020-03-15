@@ -20,10 +20,10 @@
 + (id)indexDropSQL;
 + (id)indexCreateSQL;
 + (id)tableCreateSQL;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, copy, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
 @property(retain, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (_Bool)_work_openDatabaseAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)_openDatabaseError:(id *)arg1;
 - (void)_work_close;
@@ -39,7 +39,6 @@
 - (id)work_metadataValueForKey:(id)arg1;
 - (_Bool)work_deleteAllAttributesFromNodeNamed:(id)arg1 error:(id *)arg2;
 - (_Bool)work_deleteAttributesFromNodeNamed:(id)arg1 forKey:(id)arg2 error:(id *)arg3;
-- (_Bool)work_doesNodeExistWithTwoMatchingAttributesFirstKey:(long long)arg1 firstValue:(id)arg2 secondKey:(long long)arg3 secondValue:(id)arg4 exists:(_Bool *)arg5 error:(id *)arg6;
 - (id)work_attributesForNodeWithID:(long long)arg1 matchingKey:(id)arg2 error:(id *)arg3;
 - (id)work_attributesForNodeWithID:(long long)arg1 error:(id *)arg2;
 - (_Bool)_work_addAttributeToNodeWithID:(long long)arg1 key:(id)arg2 value:(id)arg3 valueType:(id)arg4 error:(id *)arg5;

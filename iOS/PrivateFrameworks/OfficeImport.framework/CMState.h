@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
     long long _textLevel;
 }
 
+- (void).cxx_destruct;
 @property(retain) OCDDocument *document; // @synthesize document=_document;
 @property unsigned long long sourceFormat; // @synthesize sourceFormat=mSourceFormat;
 @property(retain) id resources; // @synthesize resources=mResources;
 @property(retain) OADColorScheme *colorScheme; // @synthesize colorScheme=mColorScheme;
 @property(retain) OADColorMap *colorMap; // @synthesize colorMap=mColorMap;
-- (void).cxx_destruct;
 - (long long)textLevel;
 - (void)popTextLevel;
 - (void)pushTextLevel;

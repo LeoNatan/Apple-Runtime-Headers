@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property BOOL success; // @synthesize success=_success;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)serialize;
 - (id)initWithName:(id)arg1;
 

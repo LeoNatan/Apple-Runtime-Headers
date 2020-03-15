@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canAutosaveToFiles; // @synthesize canAutosaveToFiles=_canAutosaveToFiles;
 @property(copy, nonatomic) NSString *betaApplicationName; // @synthesize betaApplicationName=_betaApplicationName;
 @property(copy, nonatomic) NSString *betaApplicationBundleID; // @synthesize betaApplicationBundleID=_betaApplicationBundleID;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) SSImageSurface *imageSurface; // @synthesize imageSurface=_imageSurface;
 @property(readonly, nonatomic) NSArray *elements; // @synthesize elements=_elements;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BSSettings *bsSettings;
 @property(readonly, nonatomic) struct CGSize imagePointSize;
 @property(readonly, nonatomic) NSString *loggableDescription;

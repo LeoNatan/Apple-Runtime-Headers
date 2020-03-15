@@ -18,9 +18,9 @@
     struct CGPoint _max;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint max; // @synthesize max=_max;
 @property(readonly, nonatomic) struct CGPoint min; // @synthesize min=_min;
-- (void).cxx_destruct;
 - (_Bool)isVisibleInChartRect:(struct CGRect)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo;

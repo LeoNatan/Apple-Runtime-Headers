@@ -33,6 +33,7 @@
 + (BOOL)registerSubclass:(Class)arg1 forFormat:(id)arg2;
 + (Class)inputStreamSubclassForFormat:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldManageInputStreamLifecycle; // @synthesize shouldManageInputStreamLifecycle=_shouldManageInputStreamLifecycle;
 @property(nonatomic) BOOL isEndOfFile; // @synthesize isEndOfFile=_isEndOfFile;
 @property(nonatomic) BOOL isReadingFromFileDescriptor; // @synthesize isReadingFromFileDescriptor=_isReadingFromFileDescriptor;
@@ -47,7 +48,6 @@
 @property(nonatomic) BOOL isOpen; // @synthesize isOpen=_isOpen;
 @property(nonatomic) unsigned long long bytesOut; // @synthesize bytesOut=_bytesOut;
 @property(nonatomic) unsigned long long bytesIn; // @synthesize bytesIn=_bytesIn;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *outputDigestData;
 @property(readonly, nonatomic) NSData *inputDigestData;
 @property(copy, nonatomic) NSString *digestAlgorithm;

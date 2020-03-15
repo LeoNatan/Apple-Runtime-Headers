@@ -16,8 +16,8 @@
 }
 
 + (id)strategy;
-@property(retain) NSPopover *popover; // @synthesize popover=_popover;
 - (void).cxx_destruct;
+@property(retain) NSPopover *popover; // @synthesize popover=_popover;
 - (void)close;
 - (void)presentController:(id)arg1 onView:(id)arg2;
 - (id)init;

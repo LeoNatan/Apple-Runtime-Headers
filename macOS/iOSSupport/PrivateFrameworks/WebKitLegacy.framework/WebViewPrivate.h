@@ -72,7 +72,7 @@ __attribute__((visibility("hidden")))
     struct CGSize fixedLayoutSize;
     BOOL mainViewIsScrollingOrZooming;
     int didDrawTiles;
-    // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}, name: pendingFixedPositionLayoutRectMutex
+    // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"{__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >="__a_value"AC}}}}, name: pendingFixedPositionLayoutRectMutex
     struct CGRect pendingFixedPositionLayoutRect;
     struct RetainPtr<WebUITextIndicatorData> textIndicatorData;
     struct RetainPtr<WebUITextIndicatorData> dataOperationTextIndicator;

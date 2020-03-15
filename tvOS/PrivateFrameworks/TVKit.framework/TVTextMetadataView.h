@@ -15,10 +15,10 @@
     NSMutableArray *_valueLabels;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *valueLabels; // @synthesize valueLabels=_valueLabels;
 @property(retain, nonatomic) NSMutableArray *titleLabels; // @synthesize titleLabels=_titleLabels;
 @property(copy, nonatomic) NSArray *metadataItems; // @synthesize metadataItems=_metadataItems;
-- (void).cxx_destruct;
 - (void)_updateColors;
 - (id)_colorForValueLabel:(id)arg1;
 - (id)_colorForTitleLabel:(id)arg1;

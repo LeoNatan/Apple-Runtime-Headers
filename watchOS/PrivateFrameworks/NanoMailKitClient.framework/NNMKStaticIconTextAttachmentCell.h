@@ -15,8 +15,8 @@
     NNMKStaticIconTextAttachment *_attachment;
 }
 
-@property(nonatomic) __weak NNMKStaticIconTextAttachment *attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NNMKStaticIconTextAttachment *attachment; // @synthesize attachment=_attachment;
 - (id)_imageForNanoAttachmentType:(unsigned int)arg1;
 - (struct CGRect)cellFrameForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned int)arg4;
 - (struct CGPoint)cellBaselineOffset;

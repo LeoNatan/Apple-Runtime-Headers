@@ -19,11 +19,11 @@
 }
 
 + (id)getSharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *hapCategoryMap; // @synthesize hapCategoryMap=_hapCategoryMap;
 @property(retain, nonatomic) NSDictionary *hapSvcMap; // @synthesize hapSvcMap=_hapSvcMap;
 @property(retain, nonatomic) NSDictionary *hapChrMap; // @synthesize hapChrMap=_hapChrMap;
 @property(retain, nonatomic) NSNumber *version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (BOOL)shouldNotCacheCharacteristicOfType:(id)arg1;
 - (BOOL)applyProtoBufData:(id)arg1 callbackOperations:(id)arg2;
 - (id)categoryForCategoryType:(id)arg1;

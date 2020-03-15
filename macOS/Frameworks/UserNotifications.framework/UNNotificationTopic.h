@@ -21,11 +21,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)topicWithIdentifier:(id)arg1 displayName:(id)arg2 priority:(unsigned long long)arg3 sortIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *sortIdentifier; // @synthesize sortIdentifier=_sortIdentifier;
 @property(readonly) unsigned long long priority; // @synthesize priority=_priority;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

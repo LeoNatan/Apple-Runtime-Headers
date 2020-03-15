@@ -39,6 +39,7 @@
 + (id)standardOverlayView;
 + (id)overlayViewForMemojiCreation;
 + (id)stickerButtonImage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *hideSubtitleConstraint; // @synthesize hideSubtitleConstraint=_hideSubtitleConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleToSubtitleConstraint; // @synthesize titleToSubtitleConstraint=_titleToSubtitleConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageToTitleConstraint; // @synthesize imageToTitleConstraint=_imageToTitleConstraint;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)dismissAnimatedWithDuration:(double)arg1;
 - (void)layoutSubviews;
 - (void)updateConstraints;

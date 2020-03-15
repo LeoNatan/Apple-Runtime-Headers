@@ -48,6 +48,7 @@
     unsigned long long _whichApplicationbundleid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long whichApplicationbundleid; // @synthesize whichApplicationbundleid=_whichApplicationbundleid;
 @property(readonly, nonatomic) unsigned long long whichSectionbundleid; // @synthesize whichSectionbundleid=_whichSectionbundleid;
 @property(readonly, nonatomic) unsigned long long whichResultbundleidentifier; // @synthesize whichResultbundleidentifier=_whichResultbundleidentifier;
@@ -74,7 +75,6 @@
 @property(retain, nonatomic) _CPActionItemForFeedback *action; // @synthesize action=_action;
 @property(nonatomic) int topHit; // @synthesize topHit=_topHit;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -25,6 +25,7 @@
     double _renderingTime;
 }
 
+- (void).cxx_destruct;
 @property BOOL generatorCanceled; // @synthesize generatorCanceled=_generatorCanceled;
 @property BOOL generatorRunning; // @synthesize generatorRunning=_generatorRunning;
 @property BOOL generatorStarted; // @synthesize generatorStarted=_generatorStarted;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *filePrefix; // @synthesize filePrefix=_filePrefix;
 @property(nonatomic) BOOL createProductionFile; // @synthesize createProductionFile=_createProductionFile;
 @property(copy, nonatomic) NSURL *destinationFileURL; // @synthesize destinationFileURL=_destinationFileURL;
-- (void).cxx_destruct;
 - (void)keepModalResponsive;
 - (BOOL)pdfShouldAbort;
 - (void)pdfProgress:(double)arg1 page:(long long)arg2 maxPage:(long long)arg3 project:(id)arg4;

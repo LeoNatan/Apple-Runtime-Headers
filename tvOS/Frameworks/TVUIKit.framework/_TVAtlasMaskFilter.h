@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_kernel;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CIImage *maskImage; // @synthesize maskImage=_maskImage;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 
 @end

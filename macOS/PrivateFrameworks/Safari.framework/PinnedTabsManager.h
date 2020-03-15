@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *privatePinnedTabs; // @synthesize privatePinnedTabs=_privatePinnedTabs;
 @property(readonly, nonatomic) NSArray *pinnedTabs; // @synthesize pinnedTabs=_pinnedTabs;
-- (void).cxx_destruct;
 - (unsigned long long)_pinnedTabCount;
 - (BOOL)isTabIndexWithinRangeOfCurrentPinnedTabs:(unsigned long long)arg1;
 - (void)_releaseTemplateIconsInTabs:(id)arg1;
@@ -43,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (void)_closePlaceholdersAndDetachPinnedTabsInBrowserWindowController:(id)arg1;
 - (void)updatePinnedTabSiteIconsNow;
 - (id)findPinnedTabMatchingURL:(id)arg1 inBrowserWindowController:(id)arg2;
-- (void)enumeratePlaceholderTabsForPinnedTab:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)pinnedTabContentDidMoveFromBrowserTabViewItem:(id)arg1 toBrowserTabViewItem:(id)arg2;
 @property(readonly, copy, nonatomic) NSArray *currentPinnedTabsStates;
 - (void)applicationDidLaunchWithPinnedTabsToRestore:(id)arg1;

@@ -14,7 +14,7 @@
 @interface PHLivePhoto : NSObject <NSCopying, NSSecureCoding>
 {
     PHAsset *_asset;
-    struct NSObject *_plImage;
+    NSObject *_plImage;
     float _audioVolume;
     NSString *_uniqueIdentifier;
     NSString *_assetUUID;
@@ -46,6 +46,7 @@
 + (id)livePhotoWithResourceFileURLs:(id)arg1 error:(id *)arg2;
 + (void)cancelLivePhotoRequestWithRequestID:(int)arg1;
 + (int)requestLivePhotoWithResourceFileURLs:(id)arg1 placeholderImage:(id)arg2 targetSize:(struct CGSize)arg3 contentMode:(long long)arg4 resultHandler:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) __weak PHImageManager *imageManager; // @synthesize imageManager=_imageManager;
 @property(nonatomic) float audioVolume; // @synthesize audioVolume=_audioVolume;
 @property(readonly, nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) AVAsset *videoAsset; // @synthesize videoAsset=_videoAsset;
 @property(readonly, copy, nonatomic) NSString *assetUUID; // @synthesize assetUUID=_assetUUID;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)saveToPhotoLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)videoComplement;
 - (void)_loadConstituentURLsWithNetworkAccessAllowed:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;

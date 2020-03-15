@@ -33,6 +33,7 @@
     UXBarButtonItem *__widthConstrainingItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setWidthConstrainingItem:) __weak UXBarButtonItem *_widthConstrainingItem; // @synthesize _widthConstrainingItem=__widthConstrainingItem;
 @property(nonatomic) float visibilityPriority; // @synthesize visibilityPriority=_visibilityPriority;
 @property(nonatomic, getter=isCondensed) BOOL condensed; // @synthesize condensed=_condensed;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSView *customView; // @synthesize customView=_customView;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSView *_view;
 - (id)_viewOfClass:(Class)arg1;
 @property(readonly, copy) NSString *description;

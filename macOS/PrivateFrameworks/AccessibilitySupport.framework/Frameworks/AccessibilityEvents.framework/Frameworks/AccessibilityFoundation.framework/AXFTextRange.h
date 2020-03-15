@@ -23,9 +23,9 @@
 + (id)rangeWithLocation:(unsigned long long)arg1 length:(unsigned long long)arg2;
 + (id)rangeWithStartPosition:(id)arg1 endPosition:(id)arg2;
 + (id)invalidRange;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AXFTextPosition *end; // @synthesize end=_end;
 @property(readonly, nonatomic) AXFTextPosition *start; // @synthesize start=_start;
-- (void).cxx_destruct;
 - (BOOL)_isCompatibleWithRange:(id)arg1;
 - (id)_initInvalidRange;
 - (unsigned long long)hash;

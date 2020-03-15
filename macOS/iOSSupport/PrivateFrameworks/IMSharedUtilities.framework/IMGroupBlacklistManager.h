@@ -15,8 +15,8 @@
 
 + (id)sharedInstance;
 + (id)groupsBlacklistFilename;
-@property(retain) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
 - (void).cxx_destruct;
+@property(retain) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
 - (void)reloadIfNeeded;
 - (void)_updateLastModifiedDate:(id)arg1;
 - (void)loadFromFile:(id)arg1;

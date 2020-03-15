@@ -9,11 +9,16 @@
 @interface BKSHIDEventDigitizerAttributes : BKSHIDEventBaseAttributes
 {
     float _maximumForce;
+    float _digitizerSurfaceWidth;
+    float _digitizerSurfaceHeight;
 }
 
 + (id)protobufSchema;
+@property(nonatomic) float digitizerSurfaceHeight; // @synthesize digitizerSurfaceHeight=_digitizerSurfaceHeight;
+@property(nonatomic) float digitizerSurfaceWidth; // @synthesize digitizerSurfaceWidth=_digitizerSurfaceWidth;
 @property(nonatomic) float maximumForce; // @synthesize maximumForce=_maximumForce;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

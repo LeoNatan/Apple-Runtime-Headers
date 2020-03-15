@@ -18,10 +18,10 @@
 + (long long)currentExternalConnectionState;
 + (id)externalConnectionStateToString:(long long)arg1;
 + (BOOL)_ioDrawingUnlimitedPower;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTDarwinNotificationHelper *notificationHelper; // @synthesize notificationHelper=_notificationHelper;
 @property(nonatomic) long long externalConnectionState; // @synthesize externalConnectionState=_externalConnectionState;
 @property(nonatomic) BOOL monitorBatteryStatusChanges; // @synthesize monitorBatteryStatusChanges=_monitorBatteryStatusChanges;
-- (void).cxx_destruct;
 - (void)fetchCurrentChargerConnectionState:(CDUnknownBlockType)arg1;
 - (void)updateBatteryStatus:(long long)arg1;
 - (void)stopMonitoringBatteryStatusChanges;

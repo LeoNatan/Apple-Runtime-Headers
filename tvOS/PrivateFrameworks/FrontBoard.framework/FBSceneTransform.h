@@ -16,9 +16,9 @@
 }
 
 + (struct CGAffineTransform)concatenateTransforms:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool appliesToSystemGestureView; // @synthesize appliesToSystemGestureView=_appliesToSystemGestureView;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
-- (void).cxx_destruct;
 - (void)_notifyTargetsTransformDidUpdate;
 - (void)removeTransformTarget:(id)arg1;
 - (void)addTransformTarget:(id)arg1;

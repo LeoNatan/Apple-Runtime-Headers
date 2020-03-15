@@ -20,11 +20,11 @@
 }
 
 + (struct CGSize)fileIconSize;
+- (void).cxx_destruct;
 @property __weak EKUIAttachmentGadget *gadget; // @synthesize gadget=_gadget;
 @property(retain, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(retain) EKUITokenField *tokenField; // @synthesize tokenField=_tokenField;
 @property(retain, nonatomic) EKAttachment *attachment; // @synthesize attachment=_attachment;
-- (void).cxx_destruct;
 - (void)spaceBarPressed;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)doubleClickOnTokenCell:(id)arg1;

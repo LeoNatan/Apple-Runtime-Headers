@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 
 + (id)mappingWithCoreDataKeyPath:(id)arg1 valueClass:(Class)arg2 subProperties:(id)arg3;
 + (id)mappingWithCoreDataKeyPath:(id)arg1 valueClass:(Class)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *coreDataBitMaskedValuesMap; // @synthesize coreDataBitMaskedValuesMap=_coreDataBitMaskedValuesMap;
 @property(readonly, nonatomic) long long coreDataBitMask; // @synthesize coreDataBitMask=_coreDataBitMask;
 @property(readonly, nonatomic) Class valueClass; // @synthesize valueClass=_valueClass;
 @property(readonly, nonatomic) NSDictionary *subCoreDataPredicatePropertiesByKey; // @synthesize subCoreDataPredicatePropertiesByKey=_subCoreDataPredicatePropertiesByKey;
 @property(readonly, copy, nonatomic) NSString *coreDataPredicateKeyPath; // @synthesize coreDataPredicateKeyPath=_coreDataPredicateKeyPath;
-- (void).cxx_destruct;
 - (id)coreDataRelationshipKeyPathsToFetch;
 @property(readonly, nonatomic) BOOL isRelationship;
 @property(readonly, nonatomic) BOOL isMultiValue;

@@ -17,9 +17,9 @@
 }
 
 + (Class)paymentPassesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *paymentPasses; // @synthesize paymentPasses=_paymentPasses;
 @property(retain, nonatomic) NPKProtoStandaloneResponseHeader *responseHeader; // @synthesize responseHeader=_responseHeader;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

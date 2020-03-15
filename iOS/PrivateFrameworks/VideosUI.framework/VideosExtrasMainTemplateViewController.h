@@ -26,9 +26,9 @@ __attribute__((visibility("hidden")))
     id <UICollectionViewDelegate> _didSelectDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UICollectionViewDelegate> didSelectDelegate; // @synthesize didSelectDelegate=_didSelectDelegate;
 @property(readonly, nonatomic) UIView *menuBarView; // @synthesize menuBarView=_menuBarView;
-- (void).cxx_destruct;
 - (void)_startBackgroundAudio;
 - (void)_recalculateSizes;
 @property(readonly, nonatomic) NSIndexPath *indexPathOfFeaturedItem;

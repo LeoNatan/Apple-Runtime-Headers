@@ -24,11 +24,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) double requestInterval; // @synthesize requestInterval=_requestInterval;
 @property(nonatomic) double initialDelay; // @synthesize initialDelay=_initialDelay;
 @property(readonly, nonatomic) NSMutableSet *processedRequests; // @synthesize processedRequests=_processedRequests;
 @property(readonly, nonatomic) NSHashTable *updaters; // @synthesize updaters=_updaters;
-- (void).cxx_destruct;
 - (void)_removeRequestsIfApplicable:(id)arg1;
 - (void)_handleResponse:(id)arg1 andError:(id)arg2 forRequest:(id)arg3;
 - (id)_uuidsForRequests:(id)arg1;

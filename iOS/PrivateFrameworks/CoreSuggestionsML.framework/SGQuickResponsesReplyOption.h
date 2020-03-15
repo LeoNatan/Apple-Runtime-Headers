@@ -21,9 +21,9 @@
 + (double)ucbCombinedWithMeanA:(double)arg1 meanB:(double)arg2 varianceA:(double)arg3 varianceB:(double)arg4 explorationFactor:(double)arg5;
 + (double)ucbWithMean:(double)arg1 varianceOfMean:(double)arg2 explorationFactor:(double)arg3;
 + (double)ucbTunedVarianceForMean:(double)arg1 displayed:(double)arg2 totalDisplayed:(double)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *ucb; // @synthesize ucb=_ucb;
 @property(readonly, nonatomic) NSNumber *position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)initWithPosition:(unsigned long long)arg1 records:(id)arg2 actualOptionsDisplayedCount:(double)arg3 imputedOptionsDisplayedCount:(double)arg4 imputedOptionsDisplayed:(id)arg5 config:(id)arg6;
 

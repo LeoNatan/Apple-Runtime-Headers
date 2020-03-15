@@ -23,12 +23,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *xattrs; // @synthesize xattrs=_xattrs;
 @property(nonatomic) long long size; // @synthesize size=_size;
 @property(nonatomic) unsigned int generationID; // @synthesize generationID=_generationID;
 @property(nonatomic) long long fileID; // @synthesize fileID=_fileID;
 @property(retain, nonatomic) BRFieldPkgItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint __pointToMoveFocusTo;
 }
 
+- (void).cxx_destruct;
 @property struct CGPoint _pointToMoveFocusTo; // @synthesize _pointToMoveFocusTo=__pointToMoveFocusTo;
 @property(retain, nonatomic) SCRThrottler *_passthruFeedbackThrottler; // @synthesize _passthruFeedbackThrottler=__passthruFeedbackThrottler;
 @property(nonatomic) struct CGSize _passthruTouchOffset; // @synthesize _passthruTouchOffset=__passthruTouchOffset;
@@ -71,7 +72,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SCRDFRFocusManager *_dfrFocusManager; // @synthesize _dfrFocusManager=__dfrFocusManager;
 @property(retain, nonatomic) SCRCThreadKey *_threadKey; // @synthesize _threadKey=__threadKey;
 @property(nonatomic) BOOL isProcessingDFRGestureEvents; // @synthesize isProcessingDFRGestureEvents=_isProcessingDFRGestureEvents;
-- (void).cxx_destruct;
 - (void)_sendDFRBrailleLine;
 - (void)_drawFocusRingAroundAndAnnounceElement:(id)arg1;
 - (void)_drawFocusRingAroundElement:(id)arg1;

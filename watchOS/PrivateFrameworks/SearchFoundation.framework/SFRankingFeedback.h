@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *l2ShadowModelVersion; // @synthesize l2ShadowModelVersion=_l2ShadowModelVersion;
 @property(copy, nonatomic) NSString *l3ModelVersion; // @synthesize l3ModelVersion=_l3ModelVersion;
 @property(copy, nonatomic) NSString *l2ModelVersion; // @synthesize l2ModelVersion=_l2ModelVersion;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(nonatomic) double blendingDuration; // @synthesize blendingDuration=_blendingDuration;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

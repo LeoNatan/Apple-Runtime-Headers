@@ -16,9 +16,9 @@
     NSDictionary *_layers;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *assetImage; // @synthesize assetImage=_assetImage;
 @property(readonly) SCNNode *assetNode; // @synthesize assetNode=_assetNode;
-- (void).cxx_destruct;
 - (id)assetImageForAsset:(id)arg1;
 - (_Bool)has3DAsset;
 - (_Bool)has2DAsset;

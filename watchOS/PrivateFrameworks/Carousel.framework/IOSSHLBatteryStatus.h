@@ -26,6 +26,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) int chargerFamilyKey; // @synthesize chargerFamilyKey=_chargerFamilyKey;
 @property long lowBatteryLevel; // @synthesize lowBatteryLevel=_lowBatteryLevel;
 @property _Bool hideACPower; // @synthesize hideACPower=_hideACPower;
@@ -37,7 +38,6 @@
 @property(nonatomic) _Bool isBatteryCharging; // @synthesize isBatteryCharging=_isBatteryCharging;
 @property(nonatomic) _Bool isOnACForUI; // @synthesize isOnACForUI=_isOnACForUI;
 @property(nonatomic) _Bool isOnAC; // @synthesize isOnAC=_isOnAC;
-- (void).cxx_destruct;
 - (int)batteryCapacityAsPercentage;
 - (void)logAWDMetric;
 - (void)updateBatteryState:(id)arg1;

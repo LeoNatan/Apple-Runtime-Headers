@@ -34,6 +34,7 @@
 + (_Bool)searchTypeSupportsSuppressionOfAlreadyChosenAddresses:(unsigned long long)arg1;
 + (_Bool)shouldSuppressAddressesAlreadyChosenForRequest:(id)arg1;
 + (id)queryWithRequest:(id)arg1 searchProvider:(id)arg2 delegate:(id)arg3 probeProvider:(id)arg4 scheduler:(id)arg5 userSession:(id)arg6 delegateToken:(id)arg7;
+- (void).cxx_destruct;
 @property(retain) id <CNAutocompleteSourceInclusionPolicy> sourceInclusionPolicy; // @synthesize sourceInclusionPolicy=_sourceInclusionPolicy;
 @property __weak id <CNCancelable> delegateToken; // @synthesize delegateToken=_delegateToken;
 @property(retain) CNAutocompleteUserSession *userSession; // @synthesize userSession=_userSession;
@@ -43,7 +44,6 @@
 @property(retain) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(retain) CNAutocompleteDelegateWrapper *delegate; // @synthesize delegate=_delegate;
 @property(copy) CNAutocompleteFetchRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)searchOperationsHaveFinished;
 - (void)searchOperationsHaveEndedNetworkActivity;

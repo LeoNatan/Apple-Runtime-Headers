@@ -22,9 +22,9 @@
     id <KHProductChooserWorkflowDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <KHProductChooserWorkflowDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long projectType; // @synthesize projectType=_projectType;
-- (void).cxx_destruct;
 - (void)themeChooserViewController:(id)arg1 choseThemeProvider:(id)arg2;
 - (id)_productCodesForCardProductFamily:(unsigned long long)arg1;
 - (void)userSelectedProduct:(id)arg1 configuredWithOptions:(id)arg2 inViewController:(id)arg3;

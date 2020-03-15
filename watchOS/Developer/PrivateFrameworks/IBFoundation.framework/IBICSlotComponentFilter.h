@@ -16,8 +16,8 @@
     Class _slotComponentClass;
 }
 
-@property(readonly) Class slotComponentClass; // @synthesize slotComponentClass=_slotComponentClass;
 - (void).cxx_destruct;
+@property(readonly) Class slotComponentClass; // @synthesize slotComponentClass=_slotComponentClass;
 - (void)ibic_generateSubNodes:(CDUnknownBlockType)arg1;
 - (void)ibic_generateAttributes:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;

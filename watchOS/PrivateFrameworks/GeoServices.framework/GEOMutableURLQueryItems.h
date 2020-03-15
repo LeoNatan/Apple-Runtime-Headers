@@ -13,8 +13,8 @@
     NSMutableArray *_items;
 }
 
-@property(readonly, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 - (void)addItemWithName:(id)arg1 uint64Value:(unsigned long long)arg2;
 - (void)addItemWithName:(id)arg1 uintValue:(unsigned int)arg2;
 - (void)addItemWithName:(id)arg1 intValue:(int)arg2;

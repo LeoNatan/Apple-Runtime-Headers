@@ -24,6 +24,7 @@
 
 + (struct CGRect)layerFrameForLevel:(long long)arg1 offset:(struct CGPoint)arg2;
 + (double)tileSizeForLevel:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long currentlyRenderingCount; // @synthesize currentlyRenderingCount=_currentlyRenderingCount;
 @property _Bool outOfDate; // @synthesize outOfDate=_outOfDate;
 @property(copy, nonatomic) NSArray *renderedStrokes; // @synthesize renderedStrokes=_renderedStrokes;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) long long level; // @synthesize level=_level;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) struct CGRect drawingFrame; // @synthesize drawingFrame=_drawingFrame;
-- (void).cxx_destruct;
 - (void)updateLastUsedTimestamp;
 @property(readonly, nonatomic) double lastUsedTimestamp; // @dynamic lastUsedTimestamp;
 @property(readonly, nonatomic) double drawingContentsScale; // @dynamic drawingContentsScale;

@@ -17,8 +17,8 @@
 
 + (id)_powerStateTargetValues;
 + (Class)valueClass;
-@property(readonly, nonatomic) NSSet *auxiliaryTargetValueTuples; // @synthesize auxiliaryTargetValueTuples=_auxiliaryTargetValueTuples;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *auxiliaryTargetValueTuples; // @synthesize auxiliaryTargetValueTuples=_auxiliaryTargetValueTuples;
 - (id)_allTargetValues;
 - (BOOL)supportsItemRepresentingServices:(id)arg1;
 - (id)characteristicValuesForValue:(id)arg1;

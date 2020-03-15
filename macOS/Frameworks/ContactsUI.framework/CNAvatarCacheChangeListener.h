@@ -18,12 +18,12 @@
     NSData *_currentHistoryToken;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *currentHistoryToken; // @synthesize currentHistoryToken=_currentHistoryToken;
 @property(readonly, nonatomic) id <CNScheduler> preprocessor; // @synthesize preprocessor=_preprocessor;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(readonly, nonatomic) __weak id <CNAvatarCacheChangeListenerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CNContactStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (id)makeReportingTaskWithIdentifiers:(id)arg1;
 - (id)makeAnalysisTask;
 - (id)makeDatabaseChangedTask;

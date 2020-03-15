@@ -17,11 +17,11 @@
     NSDate *_endTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) _Bool retrieveAvailability; // @synthesize retrieveAvailability=_retrieveAvailability;
 @property(nonatomic) _Bool retrieveCertificates; // @synthesize retrieveCertificates=_retrieveCertificates;
-- (void).cxx_destruct;
 - (long long)availabilityStatusForExchangeStatus:(int)arg1;
 - (long long)certStatusForExchangeStatus:(int)arg1;
 - (long long)responseStatusForExchangeStatus:(int)arg1;

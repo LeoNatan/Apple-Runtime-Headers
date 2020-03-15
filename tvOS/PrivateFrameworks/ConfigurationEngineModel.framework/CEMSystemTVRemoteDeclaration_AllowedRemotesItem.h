@@ -16,8 +16,8 @@
 + (id)buildRequiredOnlyWithRemoteDeviceID:(id)arg1;
 + (id)buildWithRemoteDeviceID:(id)arg1;
 + (id)allowedPayloadKeys;
-@property(copy, nonatomic) NSString *payloadRemoteDeviceID; // @synthesize payloadRemoteDeviceID=_payloadRemoteDeviceID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *payloadRemoteDeviceID; // @synthesize payloadRemoteDeviceID=_payloadRemoteDeviceID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

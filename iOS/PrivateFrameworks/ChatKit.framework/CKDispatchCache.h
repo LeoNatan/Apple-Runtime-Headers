@@ -21,13 +21,13 @@
     long long _dispatchPriority;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long dispatchPriority; // @synthesize dispatchPriority=_dispatchPriority;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *lockQueue; // @synthesize lockQueue=_lockQueue;
 @property(retain, nonatomic) CKDispatchQueue *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain, nonatomic) NSMutableDictionary *pendingGroups; // @synthesize pendingGroups=_pendingGroups;
 @property(retain, nonatomic) NSCountedSet *pendingKeys; // @synthesize pendingKeys=_pendingKeys;
 @property(retain, nonatomic) NSCache *objectCache; // @synthesize objectCache=_objectCache;
-- (void).cxx_destruct;
 - (void)systemApplicationDidSuspend;
 - (void)emptyCache;
 - (void)clearQueue;

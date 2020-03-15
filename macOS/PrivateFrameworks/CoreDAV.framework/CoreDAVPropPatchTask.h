@@ -19,12 +19,12 @@
     NSURL *_priorOrderedURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *priorOrderedURL; // @synthesize priorOrderedURL=_priorOrderedURL;
 @property(nonatomic) int absoluteOrder; // @synthesize absoluteOrder=_absoluteOrder;
 @property(retain, nonatomic) CoreDAVResponseItem *responseItem; // @synthesize responseItem=_responseItem;
 @property(retain, nonatomic) NSSet *propPatchSetElements; // @synthesize propPatchSetElements=_propPatchSetElements;
 @property(retain, nonatomic) NSSet *propPatchRemoveElements; // @synthesize propPatchRemoveElements=_propPatchRemoveElements;
-- (void).cxx_destruct;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (id)requestBody;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPersonNameComponentsFormatter *nameFormatter; // @synthesize nameFormatter=_nameFormatter;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) UIView *avatarView; // @synthesize avatarView=_avatarView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(nonatomic, getter=isNameHidden) _Bool nameHidden;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2;

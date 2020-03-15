@@ -13,8 +13,8 @@
     NSString *_notificationPath;
 }
 
-@property(retain) NSString *notificationPath; // @synthesize notificationPath=_notificationPath;
 - (void).cxx_destruct;
+@property(retain) NSString *notificationPath; // @synthesize notificationPath=_notificationPath;
 - (id)etagObjectsForServerFilenames:(id)arg1;
 - (id)containerPath;
 - (void)setSyncToken:(id)arg1;

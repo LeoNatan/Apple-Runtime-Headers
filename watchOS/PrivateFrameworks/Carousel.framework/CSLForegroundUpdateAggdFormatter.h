@@ -13,7 +13,7 @@
 - (id)visibilityForEvent:(id)arg1;
 - (id)stringForScreenState:(_Bool)arg1;
 - (id)activationReasonForEvent:(id)arg1;
-- (id)stringFromExitContext:(struct FBProcessExitContext *)arg1;
+- (id)stringFromExitContext:(id)arg1;
 - (id)stringFromEvent:(id)arg1 eventType:(unsigned int)arg2;
 
 @end

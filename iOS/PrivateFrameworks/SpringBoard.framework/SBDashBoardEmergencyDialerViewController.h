@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CoverSheet/CSCoverSheetViewControllerBase.h>
+#import <SpringBoard/SBHomeGestureDismissableCoverSheetViewController.h>
 
 #import <SpringBoard/SBLockScreenEmergencyDialerDelegate-Protocol.h>
 
 @class NSString, SBLockScreenEmergencyDialerController, TUCallCenter;
 
-@interface SBDashBoardEmergencyDialerViewController : CSCoverSheetViewControllerBase <SBLockScreenEmergencyDialerDelegate>
+@interface SBDashBoardEmergencyDialerViewController : SBHomeGestureDismissableCoverSheetViewController <SBLockScreenEmergencyDialerDelegate>
 {
     TUCallCenter *_callCenter;
     SBLockScreenEmergencyDialerController *_controller;

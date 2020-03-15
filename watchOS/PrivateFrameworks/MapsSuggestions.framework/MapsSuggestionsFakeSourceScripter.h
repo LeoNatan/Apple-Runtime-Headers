@@ -19,14 +19,14 @@
     MapsSuggestionsFakePullSource *_fakeSource;
 }
 
-@property(retain, nonatomic) MapsSuggestionsFakePullSource *fakeSource; // @synthesize fakeSource=_fakeSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MapsSuggestionsFakePullSource *fakeSource; // @synthesize fakeSource=_fakeSource;
 - (void)resendSameAfterSeconds:(double)arg1;
 - (void)resendSameNow;
 - (void)sendNextAfterSeconds:(double)arg1;
 - (void)sendNextNow;
 - (void)_sendStep:(id)arg1;
-- (void)addEntriesToAdd:(struct NSArray *)arg1;
+- (void)addEntriesToAdd:(id)arg1;
 - (id)initWithFakeSource:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
 

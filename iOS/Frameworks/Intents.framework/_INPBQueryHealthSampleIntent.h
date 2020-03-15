@@ -32,6 +32,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)thresholdValuesType;
 + (Class)recordDateType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBWellnessUnitType *unit; // @synthesize unit=_unit;
 @property(copy, nonatomic) NSArray *thresholdValues; // @synthesize thresholdValues=_thresholdValues;
@@ -40,7 +41,6 @@
 @property(nonatomic) int objectType; // @synthesize objectType=_objectType;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(nonatomic) int expectedResultType; // @synthesize expectedResultType=_expectedResultType;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

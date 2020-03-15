@@ -31,12 +31,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fromPersonalizeNews; // @synthesize fromPersonalizeNews=_fromPersonalizeNews;
 @property(nonatomic) int countOfNotificationsSelected; // @synthesize countOfNotificationsSelected=_countOfNotificationsSelected;
 @property(retain, nonatomic) NSString *userActivityType; // @synthesize userActivityType=_userActivityType;
 @property(retain, nonatomic) NSString *referringUrl; // @synthesize referringUrl=_referringUrl;
 @property(retain, nonatomic) NSString *referringSourceApplication; // @synthesize referringSourceApplication=_referringSourceApplication;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

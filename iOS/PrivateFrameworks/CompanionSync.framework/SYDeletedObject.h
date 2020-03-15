@@ -16,9 +16,9 @@
     NSString *_syncId;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *syncId; // @synthesize syncId=_syncId;
 @property(readonly, nonatomic) NSString *sequencer; // @synthesize sequencer=_sequencer;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long changeType;
 @property(readonly, nonatomic) NSString *objectIdentifier;
 - (id)initWithObjectID:(id)arg1 sequencer:(id)arg2;

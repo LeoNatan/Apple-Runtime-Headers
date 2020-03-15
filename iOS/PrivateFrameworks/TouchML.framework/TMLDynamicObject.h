@@ -15,8 +15,8 @@
 
 + (_Bool)resolveInstanceMethod:(SEL)arg1;
 + (id)dynamicPropertyType:(id)arg1;
-@property(readonly, nonatomic) NSMutableDictionary *properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *properties; // @synthesize properties=_properties;
 - (id)init;
 
 @end

@@ -20,6 +20,7 @@
     id <NWTCPListenerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <NWTCPListenerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSString *launchdKey; // @synthesize launchdKey=_launchdKey;
 @property(retain) NWEndpoint *endpoint; // @synthesize endpoint=_endpoint;
@@ -27,7 +28,6 @@
 @property(retain) NSObject<OS_nw_listener> *internalListener; // @synthesize internalListener=_internalListener;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NWEndpoint *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithBonjourServiceEndpoint:(id)arg1 parameters:(id)arg2 delegate:(id)arg3;
 - (id)initWithParameters:(id)arg1 delegate:(id)arg2;

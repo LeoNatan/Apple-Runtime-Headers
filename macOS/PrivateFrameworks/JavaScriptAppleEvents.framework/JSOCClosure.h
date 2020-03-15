@@ -15,9 +15,9 @@
 }
 
 + (void *)staticPointerValueWithType:(id)arg1 invocationBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain) NSInvocation *invocation; // @synthesize invocation=_invocation;
 @property(readonly, retain) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithType:(id)arg1 invocationBlock:(CDUnknownBlockType)arg2;
 - (id)initWithThunk:(CDUnknownFunctionPointerType)arg1 type:(id)arg2;

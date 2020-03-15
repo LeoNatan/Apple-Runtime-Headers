@@ -13,8 +13,8 @@
     NSArray *_undoBlocks;
 }
 
-@property(readonly, nonatomic) NSArray *undoBlocks; // @synthesize undoBlocks=_undoBlocks;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *undoBlocks; // @synthesize undoBlocks=_undoBlocks;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUndoBlocks:(id)arg1;
 - (id)init;

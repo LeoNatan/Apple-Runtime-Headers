@@ -17,12 +17,12 @@
     CDDebug *_debug;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CDDebug *debug; // @synthesize debug=_debug;
 @property(readonly) CDDXPCConnection *connection; // @synthesize connection=_connection;
 @property BOOL admissionResult; // @synthesize admissionResult=_admissionResult;
 @property BOOL admissionOverride; // @synthesize admissionOverride=_admissionOverride;
 @property(readonly) NSString *clientName; // @synthesize clientName=_clientName;
-- (void).cxx_destruct;
 - (BOOL)admissionCheckAndStartedForAttributes:(id)arg1 admissionId:(id)arg2 options:(id)arg3 error:(id *)arg4 replyHandler:(CDUnknownBlockType)arg5;
 - (BOOL)activitySignal:(id)arg1 error:(id *)arg2 replyHandler:(CDUnknownBlockType)arg3;
 - (BOOL)admissionSignoffForAttributes:(id)arg1 admissionId:(id)arg2 options:(id)arg3 error:(id *)arg4 replyHandler:(CDUnknownBlockType)arg5;

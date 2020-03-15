@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 + (void)cacheGlyphView:(id)arg1;
 + (id)glyphViewForAcknowledgmentType:(long long)arg1 glyphColor:(BOOL)arg2;
 + (id)viewCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *glyphColor; // @synthesize glyphColor=_glyphColor;
 @property(readonly, nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(readonly, nonatomic) struct CGPoint glyphOffset; // @synthesize glyphOffset=_glyphOffset;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long acknowledgmentType; // @dynamic acknowledgmentType;
 - (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithFrame:(struct CGRect)arg1 color:(BOOL)arg2;

@@ -19,10 +19,10 @@
 
 + (BOOL)isSupportedEntityType:(long long)arg1;
 + (id)prefixForForIdentityKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) SGIdentityKey *identityKey; // @synthesize identityKey=_identityKey;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToContactDetailKey:(id)arg1;

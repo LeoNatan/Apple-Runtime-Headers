@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     CALayer *_inactiveMaterialLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *inactiveMaterialLayer; // @synthesize inactiveMaterialLayer=_inactiveMaterialLayer;
 @property(retain, nonatomic) CALayer *activeMaterialLayer; // @synthesize activeMaterialLayer=_activeMaterialLayer;
 @property(copy, nonatomic) NSString *materialName; // @synthesize materialName=_materialName;
 @property(nonatomic) int blurStyle; // @synthesize blurStyle=_blurStyle;
-- (void).cxx_destruct;
 - (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(int)arg3;
 - (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(int)arg3;
 - (void)appendDescriptionTo:(id)arg1;

@@ -20,6 +20,7 @@
     _HKExpiringCompletionTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _HKExpiringCompletionTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(nonatomic) long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
-- (void).cxx_destruct;
 - (void)scheduleTimeoutWithInterval:(double)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)addCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_finishWithError:(id)arg1;

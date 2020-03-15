@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasClearedLegacyStorage; // @synthesize hasClearedLegacyStorage=_hasClearedLegacyStorage;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)deleteStorageAtURLs:(id)arg1;
 - (void)clearLegacyStorageIfNecessary;
 - (id)urlsForLegacyFileSystem;

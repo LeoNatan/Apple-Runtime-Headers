@@ -18,10 +18,10 @@
     unsigned long long _state;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) NSURL *assetURL; // @synthesize assetURL=_assetURL;
 @property(readonly) AVAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (void)_failRequest:(id)arg1 withError:(id)arg2;

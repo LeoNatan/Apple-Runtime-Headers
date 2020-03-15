@@ -21,13 +21,13 @@
     struct UIEdgeInsets _contentEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *commands; // @synthesize commands=_commands;
 @property(retain, nonatomic) UIColor *backgroundImageDividerColor; // @synthesize backgroundImageDividerColor=_backgroundImageDividerColor;
 @property(nonatomic) unsigned long long backgroundImageStyle; // @synthesize backgroundImageStyle=_backgroundImageStyle;
 @property(nonatomic) struct CGSize backgroundImagePointSize; // @synthesize backgroundImagePointSize=_backgroundImagePointSize;
 @property(copy, nonatomic) NSDictionary *backgroundImages; // @synthesize backgroundImages=_backgroundImages;
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
-- (void).cxx_destruct;
 - (id)backgroundColorForUserInterfaceStyle:(long long)arg1;
 - (id)highlightedTitleForUserInterfaceStyle:(long long)arg1;
 - (id)titleForUserInterfaceStyle:(long long)arg1;

@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)resourceWithURL:(id)arg1 resourceInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly) struct CGPDFDocument *pdfDocument; // @synthesize pdfDocument=_pdfDocument;
 @property(readonly) unsigned long long flags; // @synthesize flags=_flags;
 @property(readonly) NSString *variantName; // @synthesize variantName=_variantName;
-- (void).cxx_destruct;
 - (struct CGImage *)imageForSize:(unsigned long long)arg1 scale:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

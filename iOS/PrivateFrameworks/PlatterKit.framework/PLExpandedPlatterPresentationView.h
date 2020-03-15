@@ -20,9 +20,9 @@
     id <PLExpandedPlatterPresentationViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PLExpandedPlatterPresentationViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController<PLClickPresentationInteractionPresentable> *presentableViewController; // @synthesize presentableViewController=_presentableViewController;
-- (void).cxx_destruct;
 - (void)_handleDismissButton:(id)arg1;
 - (void)_configureExpandedPlatterViewIfNecessary;
 - (void)_configureScrollViewIfNecessary;

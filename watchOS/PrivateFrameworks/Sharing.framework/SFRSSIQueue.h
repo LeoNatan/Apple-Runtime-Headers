@@ -6,11 +6,13 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableArray;
+
 __attribute__((visibility("hidden")))
 @interface SFRSSIQueue : NSObject
 {
-    struct NSMutableArray *_rssiValues;
-    struct NSMutableArray *_tickValues;
+    NSMutableArray *_rssiValues;
+    NSMutableArray *_tickValues;
 }
 
 - (void).cxx_destruct;

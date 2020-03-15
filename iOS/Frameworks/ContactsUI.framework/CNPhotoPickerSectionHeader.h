@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 + (id)reusableIdentifier;
 + (id)actionButtonFont;
 + (id)titleLabelFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(readonly, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)prepareForReuse;
 - (void)actionButtonPressed:(id)arg1;

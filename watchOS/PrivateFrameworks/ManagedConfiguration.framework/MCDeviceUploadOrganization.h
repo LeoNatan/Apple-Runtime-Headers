@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *deviceAdditionGbiEnabledNum; // @synthesize deviceAdditionGbiEnabledNum=_deviceAdditionGbiEnabledNum;
 @property(retain, nonatomic) NSNumber *idmsRemoveDeviceEnabledNum; // @synthesize idmsRemoveDeviceEnabledNum=_idmsRemoveDeviceEnabledNum;
 @property(retain, nonatomic) NSNumber *idmsWhitelistingEnabledNum; // @synthesize idmsWhitelistingEnabledNum=_idmsWhitelistingEnabledNum;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSArray *approvers; // @synthesize approvers=_approvers;
 @property(readonly, nonatomic) NSString *orgName; // @synthesize orgName=_orgName;
 @property(readonly, nonatomic) NSString *orgId; // @synthesize orgId=_orgId;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool deviceAdditionGbiEnabled;
 @property(readonly, nonatomic) _Bool idmsRemoveDeviceEnabled;
 @property(readonly, nonatomic) _Bool idmsWhitelistingEnabled;

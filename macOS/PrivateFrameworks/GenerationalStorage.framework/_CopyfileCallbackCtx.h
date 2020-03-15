@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _generationSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic) unsigned long long generationSize; // @synthesize generationSize=_generationSize;
 @property(nonatomic) BOOL doUnarchive; // @synthesize doUnarchive=_doUnarchive;
 @property(nonatomic) BOOL doArchive; // @synthesize doArchive=_doArchive;
-- (void).cxx_destruct;
 - (id)initWithPath:(const char *)arg1 error:(id *)arg2;
 
 @end

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly) float chicletCurvePower; // @synthesize chicletCurvePower=_chicletCurvePower;
 @property(readonly) float chicletCurveCoefficient; // @synthesize chicletCurveCoefficient=_chicletCurveCoefficient;
+- (float)perceptualBrightnessForLevel:(float)arg1;
 @property(readonly) float minCapableNits;
 @property(readonly) float maxCapableNits;
 - (void)calculateLevelPercentageAtAmbient:(float)arg1;
@@ -25,12 +26,15 @@ __attribute__((visibility("hidden")))
 - (float)convertPWMPercentageToNits:(float)arg1;
 - (float)convertNitsToLevelPercentage:(float)arg1;
 - (float)currentLuxToNits;
+- (void)setBrightness:(float)arg1 withFadeSpeed:(int)arg2 commit:(BOOL)arg3;
 - (void)setBrightness:(float)arg1;
 - (float)brightness;
 @property(readonly) float level;
 - (void)updateLuxToNitsCurve;
-- (void)getALSPreferences;
-- (void)setALSPreferenceBacklightMaxUser;
+- (void)storeKeyboardBacklightCurveToPreferences;
+- (void)storeKeyboardBacklightPreferences;
+- (void)getKeyboardBacklightPreferences;
+- (float)maxUserLevel;
 @property(readonly) float maxLevelPercentage;
 @property(readonly) float maxCurveNits;
 @property(readonly) NSDictionary *brightnessCurve;

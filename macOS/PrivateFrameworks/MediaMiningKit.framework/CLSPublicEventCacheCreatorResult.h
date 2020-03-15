@@ -15,10 +15,10 @@
     unsigned long long _numberOfRequests;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfRequests; // @synthesize numberOfRequests=_numberOfRequests;
 @property(retain, nonatomic) NSDictionary *invalidationTokenByTimeLocationIdentifier; // @synthesize invalidationTokenByTimeLocationIdentifier=_invalidationTokenByTimeLocationIdentifier;
 @property(retain, nonatomic) NSDictionary *resolvedPublicEventsByTimeLocationIdentifier; // @synthesize resolvedPublicEventsByTimeLocationIdentifier=_resolvedPublicEventsByTimeLocationIdentifier;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -17,11 +17,11 @@
 }
 
 + (void)test_setForceZipEntriesRecalculationOnRead:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long endOfLastEntry; // @synthesize endOfLastEntry=_endOfLastEntry;
 @property(retain, nonatomic) NSMutableOrderedSet *entries; // @synthesize entries=_entries;
 @property(retain, nonatomic) NSMutableDictionary *entriesMap; // @synthesize entriesMap=_entriesMap;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) _Bool isValid;
 - (id)newArchiveReadChannel;

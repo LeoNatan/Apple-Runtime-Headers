@@ -17,11 +17,11 @@
     NSArray *_responses;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *responses; // @synthesize responses=_responses;
 @property(readonly, nonatomic) VUIMediaEntityFetchResponse *response; // @synthesize response=_response;
 @property(copy, nonatomic) NSArray *requests; // @synthesize requests=_requests;
 @property(nonatomic) __weak id <VUIMediaEntitiesFetchControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyFetchRequests:(id)arg1 didFailWithError:(id)arg2;
 - (void)_notifyFetchRequests:(id)arg1 didCompleteWithResult:(id)arg2;
 - (void)_notifyDelegateWithBlock:(CDUnknownBlockType)arg1;

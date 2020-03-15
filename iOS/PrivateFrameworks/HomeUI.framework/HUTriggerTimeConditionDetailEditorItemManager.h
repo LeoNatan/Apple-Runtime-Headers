@@ -15,10 +15,10 @@
     HFTimeRangeCondition *_rangeCondition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFTimeRangeCondition *rangeCondition; // @synthesize rangeCondition=_rangeCondition;
 @property(retain, nonatomic) HFItem *endConditionPickerItem; // @synthesize endConditionPickerItem=_endConditionPickerItem;
 @property(retain, nonatomic) HFItem *startConditionPickerItem; // @synthesize startConditionPickerItem=_startConditionPickerItem;
-- (void).cxx_destruct;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (void)setPrimitiveCondition:(id)arg1 forPickerItem:(id)arg2;

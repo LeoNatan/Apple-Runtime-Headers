@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *scanDate; // @synthesize scanDate=_scanDate;
 @property(nonatomic) int rssi; // @synthesize rssi=_rssi;
 @property(copy, nonatomic) NSData *reserved; // @synthesize reserved=_reserved;
 @property(nonatomic) unsigned char status; // @synthesize status=_status;
 @property(copy, nonatomic) NSData *advertisementData; // @synthesize advertisementData=_advertisementData;
 @property(copy, nonatomic) NSData *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

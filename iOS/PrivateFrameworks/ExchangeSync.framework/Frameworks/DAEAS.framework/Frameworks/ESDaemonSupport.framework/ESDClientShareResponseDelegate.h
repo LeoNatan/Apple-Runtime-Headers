@@ -16,9 +16,9 @@
     NSString *_shareID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *shareID; // @synthesize shareID=_shareID;
 @property(retain, nonatomic) NSString *calendarID; // @synthesize calendarID=_calendarID;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)shareResponseFinishedWithError:(id)arg1;
 - (void)_doResponseWithBlock:(CDUnknownBlockType)arg1;

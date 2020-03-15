@@ -15,9 +15,9 @@
 }
 
 + (id)logAspectWithName:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long logLevel; // @synthesize logLevel=_logLevel;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1;
 
 @end

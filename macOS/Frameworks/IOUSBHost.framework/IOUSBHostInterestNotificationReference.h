@@ -15,10 +15,10 @@
     NSRecursiveLock *_interestNotificationLock;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSRecursiveLock *interestNotificationLock; // @synthesize interestNotificationLock=_interestNotificationLock;
 @property BOOL interestNotificationPortDestroyed; // @synthesize interestNotificationPortDestroyed=_interestNotificationPortDestroyed;
 @property __weak IOUSBHostObject *hostObject; // @synthesize hostObject=_hostObject;
-- (void).cxx_destruct;
 - (id)initWithHostObject:(id)arg1;
 
 @end

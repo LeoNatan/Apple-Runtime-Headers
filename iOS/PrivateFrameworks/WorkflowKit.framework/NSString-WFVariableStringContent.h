@@ -10,7 +10,7 @@
 
 @interface NSString (WFVariableStringContent) <WFVariableStringContent>
 - (unsigned long long)wf_lengthInVariableString;
-- (void)wf_getContentItemsWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)wf_getContentItemsWithContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)wf_isEmpty;
 - (id)wf_trimmedString;
 

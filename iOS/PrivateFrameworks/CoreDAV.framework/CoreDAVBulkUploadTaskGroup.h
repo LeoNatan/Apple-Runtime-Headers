@@ -27,6 +27,7 @@
     NSMutableDictionary *_hrefToStatus;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *hrefToStatus; // @synthesize hrefToStatus=_hrefToStatus;
 @property(readonly, nonatomic) NSDictionary *uuidToStatus; // @synthesize uuidToStatus=_uuidToStatus;
 @property(readonly, nonatomic) NSDictionary *hrefToErrorItems; // @synthesize hrefToErrorItems=_hrefToErrorItems;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSURL *folderURL; // @synthesize folderURL=_folderURL;
 @property(nonatomic) unsigned long long multiPutBatchMaxSize; // @synthesize multiPutBatchMaxSize=_multiPutBatchMaxSize;
 @property(nonatomic) unsigned long long multiPutBatchMaxNumResources; // @synthesize multiPutBatchMaxNumResources=_multiPutBatchMaxNumResources;
-- (void).cxx_destruct;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)syncAway;
 - (void)startTaskGroup;

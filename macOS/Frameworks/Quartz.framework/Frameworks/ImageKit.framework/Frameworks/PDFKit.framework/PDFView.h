@@ -51,6 +51,7 @@
 - (BOOL)handleTabInTextWidget:(id)arg1;
 - (void)interactWithAnnotation:(id)arg1;
 - (void)addMarkupWithStyle:(unsigned long long)arg1 fromSelection:(id)arg2;
+- (BOOL)isUpdatingSelectionMarkups;
 - (unsigned long long)activeMarkupStyle;
 - (void)setActiveMarkupStyle:(unsigned long long)arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;

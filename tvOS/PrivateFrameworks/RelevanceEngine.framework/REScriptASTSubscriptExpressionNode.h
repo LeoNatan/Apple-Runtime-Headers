@@ -14,10 +14,10 @@
 }
 
 + (id)parseBuffer:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REScriptASTNode *endIndex; // @synthesize endIndex=_endIndex;
 @property(readonly, nonatomic) REScriptASTNode *startIndex; // @synthesize startIndex=_startIndex;
 @property(readonly, nonatomic) REScriptASTNode *expression; // @synthesize expression=_expression;
-- (void).cxx_destruct;
 - (id)dependencies;
 - (id)initWithExpression:(id)arg1 startIndex:(id)arg2 endIndex:(id)arg3;
 

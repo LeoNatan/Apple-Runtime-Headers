@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *favoriteLocations; // @synthesize favoriteLocations=_favoriteLocations;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *favoriteLocations; // @synthesize favoriteLocations=_favoriteLocations;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

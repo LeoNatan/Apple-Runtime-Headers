@@ -14,9 +14,9 @@
     NSSet *_prioritizedRooms;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *prioritizedRooms; // @synthesize prioritizedRooms=_prioritizedRooms;
 @property(readonly, nonatomic) HFServiceGroupBuilder *serviceGroupBuilder; // @synthesize serviceGroupBuilder=_serviceGroupBuilder;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_roomComparator;
 - (BOOL)_shouldHideServiceItem:(id)arg1 containedInServiceGroupItem:(id)arg2;
 - (id)_itemsToHideInSet:(id)arg1;

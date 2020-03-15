@@ -13,8 +13,8 @@
     HFMediaAccessControlEditorItemModule *_accessControlEditorItemModule;
 }
 
-@property(readonly, nonatomic) HFMediaAccessControlEditorItemModule *accessControlEditorItemModule; // @synthesize accessControlEditorItemModule=_accessControlEditorItemModule;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFMediaAccessControlEditorItemModule *accessControlEditorItemModule; // @synthesize accessControlEditorItemModule=_accessControlEditorItemModule;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (id)initWithDelegate:(id)arg1 home:(id)arg2;

@@ -22,12 +22,12 @@
 
 + (void)flushLayoutForDisplayType:(long long)arg1;
 + (id)layoutForDisplayType:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long backlightLevel; // @synthesize backlightLevel=_backlightLevel;
 @property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(copy, nonatomic) NSString *transitionReason; // @synthesize transitionReason=_transitionReason;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) long long displayType; // @synthesize displayType=_displayType;
-- (void).cxx_destruct;
 - (void)endTransition;
 - (void)beginTransition;
 - (id)description;

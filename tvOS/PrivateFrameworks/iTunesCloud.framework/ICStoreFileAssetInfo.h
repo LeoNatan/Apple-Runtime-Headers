@@ -22,6 +22,7 @@
     long long _expectedProtectionType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long expectedProtectionType; // @synthesize expectedProtectionType=_expectedProtectionType;
 @property(copy, nonatomic) NSData *md5; // @synthesize md5=_md5;
 @property(copy, nonatomic) ICStoreFinanceItemMetadata *metadata; // @synthesize metadata=_metadata;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSArray *fairPlayInfoList; // @synthesize fairPlayInfoList=_fairPlayInfoList;
 @property(copy, nonatomic) NSString *downloadKey; // @synthesize downloadKey=_downloadKey;
 @property(copy, nonatomic) NSURL *assetURL; // @synthesize assetURL=_assetURL;
-- (void).cxx_destruct;
 - (id)_metadataDictionary;
 @property(readonly, nonatomic) long long protectionType;
 @property(readonly, copy, nonatomic) NSDictionary *responseDictionary;

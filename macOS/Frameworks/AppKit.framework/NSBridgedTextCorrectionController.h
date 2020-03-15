@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     long long textReplacementType;
 }
 
+- (void).cxx_destruct;
 @property long long textReplacementType; // @synthesize textReplacementType;
 @property long long smartDashesType; // @synthesize smartDashesType;
 @property long long smartQuotesType; // @synthesize smartQuotesType;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property int grammarCheckingEnabledUserSetting; // @synthesize grammarCheckingEnabledUserSetting;
 @property BOOL secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
 @property __weak NSTextInputContext *textInputContext; // @synthesize textInputContext=_textInputContext;
-- (void).cxx_destruct;
 - (id)candidateListTouchBarItem;
 - (id)viewForRange:(struct _NSRange)arg1 firstRect:(struct CGRect *)arg2 actualRange:(struct _NSRange *)arg3;
 - (void)selectAndShowRange:(struct _NSRange)arg1;

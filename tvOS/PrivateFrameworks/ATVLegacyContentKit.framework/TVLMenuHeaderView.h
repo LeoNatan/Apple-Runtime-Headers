@@ -21,10 +21,10 @@
 
 + (id)subtitleFont;
 + (id)titleFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
-- (void).cxx_destruct;
 - (void)_createTitleLabel;
 - (void)layoutSubviews;
 - (void)_setHeaderImage:(id)arg1;

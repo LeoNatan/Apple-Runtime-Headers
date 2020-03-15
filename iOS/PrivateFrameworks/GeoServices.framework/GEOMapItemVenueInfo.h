@@ -20,12 +20,12 @@
     id <GEOMapItemVenueContents> _contents;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <GEOVenueIdentifier> venueIdentifier; // @synthesize venueIdentifier=_venueIdentifier;
 @property(readonly, nonatomic) int venueFeatureType; // @synthesize venueFeatureType=_venueFeatureType;
 @property(readonly, nonatomic) GEOMapItemParentVenue *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) id <GEOMapItemVenueContents> contents; // @synthesize contents=_contents;
 @property(readonly, nonatomic) NSArray *filters; // @synthesize filters=_filters;
-- (void).cxx_destruct;
 - (id)_filtersFromVenueInfo:(id)arg1;
 - (id)initWithVenueInfo:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 featureType:(int)arg2 filters:(id)arg3 parent:(id)arg4 contents:(id)arg5;

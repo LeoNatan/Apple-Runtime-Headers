@@ -18,11 +18,11 @@
 }
 
 + (id)pinyinCharacterSetWithTones;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *fuzzyPinyinPairs; // @synthesize fuzzyPinyinPairs=_fuzzyPinyinPairs;
 @property(nonatomic) int shuangpinType; // @synthesize shuangpinType=_shuangpinType;
 @property(nonatomic) _Bool tenKeyPinyinEnabled; // @synthesize tenKeyPinyinEnabled=_tenKeyPinyinEnabled;
 @property(nonatomic) _Bool fuzzyPinyinEnabled; // @synthesize fuzzyPinyinEnabled=_fuzzyPinyinEnabled;
-- (void).cxx_destruct;
 - (void)updateAddressBook;
 - (void)addContact:(id)arg1 toVocabulary:(void *)arg2 toReadingPairs:(id)arg3;
 - (id)transLiterateReading:(id)arg1 withName:(id)arg2;

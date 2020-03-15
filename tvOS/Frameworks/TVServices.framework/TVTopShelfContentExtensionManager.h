@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVTopShelfModernContentExtensionFinder *privateModernExtensionFinder; // @synthesize privateModernExtensionFinder=_privateModernExtensionFinder;
 @property(retain, nonatomic) TVTopShelfModernContentExtensionFinder *pubicModernExtensionFinder; // @synthesize pubicModernExtensionFinder=_pubicModernExtensionFinder;
-- (void).cxx_destruct;
 - (id)_legacyExtensionControllerForApplicationBundleIdentifier:(id)arg1;
 - (id)topShelfContentExtensionControllerForApplicationBundleIdentifier:(id)arg1 allowModernExtensions:(_Bool)arg2;
 - (id)topShelfContentExtensionControllerForApplicationBundleIdentifier:(id)arg1;

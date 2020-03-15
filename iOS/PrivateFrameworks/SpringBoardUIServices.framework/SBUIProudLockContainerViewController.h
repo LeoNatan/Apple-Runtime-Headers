@@ -37,6 +37,7 @@
     CDStruct_29b32c11 _configuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long forceCount; // @synthesize forceCount=_forceCount;
 @property(copy, nonatomic) CDUnknownBlockType unlockCompletion; // @synthesize unlockCompletion=_unlockCompletion;
 @property(nonatomic) _Bool canShowCameraCovered; // @synthesize canShowCameraCovered=_canShowCameraCovered;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) __weak id <SBUIProudLockContainerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) CDStruct_29b32c11 configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_performForcedUpdate:(CDUnknownBlockType)arg1;
 - (long long)_iconViewStateForCoachingCondition:(unsigned long long)arg1;
 - (_Bool)_isShowingCoachingCondition:(unsigned long long)arg1;

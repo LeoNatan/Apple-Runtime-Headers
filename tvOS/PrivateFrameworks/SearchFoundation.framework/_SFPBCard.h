@@ -33,6 +33,7 @@
     NSArray *_entityProtobufMessages;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *entityProtobufMessages; // @synthesize entityProtobufMessages=_entityProtobufMessages;
 @property(nonatomic) _Bool flexibleSectionOrder; // @synthesize flexibleSectionOrder=_flexibleSectionOrder;
 @property(copy, nonatomic) NSString *fbr; // @synthesize fbr=_fbr;
@@ -51,7 +52,6 @@
 @property(copy) NSArray *cardSections; // @synthesize cardSections=_cardSections;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
@@ -72,7 +72,6 @@
 - (unsigned long long)cardSectionsCount;
 - (void)addCardSections:(id)arg1;
 - (void)clearCardSections;
-- (void)recursiveSetQueryId:(unsigned long long)arg1;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

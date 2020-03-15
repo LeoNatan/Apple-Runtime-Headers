@@ -40,6 +40,7 @@
 }
 
 + (long long)_initialMode;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAllowsTearOff:) BOOL _allowsTearOff; // @synthesize _allowsTearOff=__allowsTearOff;
 @property(nonatomic, setter=_setPresentsAtStandardHalfHeight:) BOOL _presentsAtStandardHalfHeight; // @synthesize _presentsAtStandardHalfHeight=__presentsAtStandardHalfHeight;
 @property(nonatomic, setter=_setIsRemote:) BOOL _isRemote; // @synthesize _isRemote=__isRemote;
@@ -62,7 +63,6 @@
 @property(readonly, nonatomic) UIDimmingView *_confinedDimmingView; // @synthesize _confinedDimmingView=__confinedDimmingView;
 @property(readonly, nonatomic) _UISheetLayoutInfo *_layoutInfo; // @synthesize _layoutInfo=__layoutInfo;
 @property(nonatomic) struct CGRect frameOfPresentedViewInContainerView; // @synthesize frameOfPresentedViewInContainerView=_frameOfPresentedViewInContainerView;
-- (void).cxx_destruct;
 - (id)dragInteraction:(id)arg1 previewForCancellingItem:(id)arg2 withDefault:(id)arg3;
 - (void)dragInteraction:(id)arg1 item:(id)arg2 willAnimateCancelWithAnimator:(id)arg3;
 - (void)dragInteraction:(id)arg1 session:(id)arg2 didEndWithOperation:(unsigned long long)arg3;
@@ -70,7 +70,8 @@
 - (void)dragInteraction:(id)arg1 sessionWillBegin:(id)arg2;
 - (BOOL)dragInteraction:(id)arg1 prefersFullSizePreviewsForSession:(id)arg2;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
-- (BOOL)sheetInteraction:(id)arg1 shouldBeginHorizontalRubberBandingAtPoint:(struct CGPoint)arg2;
+- (BOOL)sheetInteraction:(id)arg1 shouldAllowVerticalRubberBandingWithEvent:(id)arg2;
+- (BOOL)sheetInteraction:(id)arg1 shouldBeginHorizontalRubberBandingWithGestureRecognizer:(id)arg2;
 - (void)_completeInteractiveTransitionFromRemote:(BOOL)arg1 offset:(double)arg2 duration:(double)arg3 timingCurve:(id)arg4;
 - (void)_updateInteractiveTransitionFromRemoteWithProgress:(double)arg1 offset:(double)arg2;
 - (void)_startInteractiveTransitionFromRemoteWithProgress:(double)arg1 offset:(double)arg2;

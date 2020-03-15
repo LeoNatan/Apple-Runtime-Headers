@@ -18,10 +18,10 @@
     id <PBSUserPresentationServiceInterface> _remoteProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PBSUserPresentationServiceInterface> remoteProxy; // @synthesize remoteProxy=_remoteProxy;
 @property(readonly, nonatomic) NSHashTable *pendingMessageReplies; // @synthesize pendingMessageReplies=_pendingMessageReplies;
 @property(readonly, nonatomic) NSMapTable *pendingCompletionHandlers; // @synthesize pendingCompletionHandlers=_pendingCompletionHandlers;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_removePendingReplyHandler:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_removeCompletionHandlerForRequest:(id)arg1;
 - (void)dismissUIWithRequest:(id)arg1;

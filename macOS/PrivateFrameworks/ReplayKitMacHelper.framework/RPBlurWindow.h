@@ -14,9 +14,9 @@
     BOOL animatesTransitions;
 }
 
+- (void).cxx_destruct;
 @property BOOL animatesTransitions; // @synthesize animatesTransitions;
 @property(retain) CALayer *blurLayer; // @synthesize blurLayer;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)animateBlurLayerToFrame:(struct CGRect)arg1 oldFrame:(struct CGRect)arg2;
 - (void)startTransitionOut;

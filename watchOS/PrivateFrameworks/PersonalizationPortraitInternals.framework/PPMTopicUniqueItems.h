@@ -13,8 +13,8 @@
     PETDistributionEventTracker *_tracker;
 }
 
-@property(readonly, nonatomic) PETDistributionEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PETDistributionEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void)trackEventWithScalar:(double)arg1;
 - (id)init;
 

@@ -27,6 +27,7 @@
     NSNumber *mChoicePopupAlignment;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL hasChoices; // @synthesize hasChoices=mHasChoices;
 @property(readonly) NSString *movieChapterName; // @synthesize movieChapterName=mMovieChapterName;
 @property(readonly) NSNumber *choicePopupAlignment; // @synthesize choicePopupAlignment=mChoicePopupAlignment;
@@ -39,7 +40,6 @@
 @property(retain) NSString *label; // @synthesize label=mLabel;
 @property(readonly) NSString *note; // @synthesize note=mNote;
 @property(readonly) NSString *name; // @synthesize name=mName;
-- (void).cxx_destruct;
 @property(readonly) __weak NSArray *movieChapterNames; // @dynamic movieChapterNames;
 - (id)description;
 - (void)adjustUI;

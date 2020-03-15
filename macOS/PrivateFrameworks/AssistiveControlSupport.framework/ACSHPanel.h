@@ -46,6 +46,7 @@
 + (struct CGSize)windowPaddingForZoomScale:(double)arg1 nonProportionalScaleFactor:(double)arg2 isHorizontal:(BOOL)arg3;
 + (double)windowPaddingZoomScaleFactor;
 + (Class)classForDict:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *_observedThemeKeyForACPE; // @synthesize _observedThemeKeyForACPE=__observedThemeKeyForACPE;
 @property(nonatomic) BOOL _didRegisterForDisplayTheme; // @synthesize _didRegisterForDisplayTheme=__didRegisterForDisplayTheme;
 @property(nonatomic) struct CGRect postContextButtonRect; // @synthesize postContextButtonRect=_postContextButtonRect;
@@ -72,7 +73,6 @@
 @property(retain, nonatomic) NSArray *associatedApplications; // @synthesize associatedApplications=_associatedApplications;
 @property(nonatomic) BOOL hidesAssistiveDock; // @synthesize hidesAssistiveDock=_hidesAssistiveDock;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)resolvedDisplayColor;
 - (unsigned long long)resolvedDisplayTheme;

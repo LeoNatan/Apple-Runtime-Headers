@@ -16,9 +16,9 @@
 
 + (id)sharedCSUserFSConnection;
 + (id)sharedSearchConnection;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool previouslyInitialized; // @synthesize previouslyInitialized=_previouslyInitialized;
 @property(retain, nonatomic) NSMutableDictionary *queries; // @synthesize queries=_queries;
-- (void).cxx_destruct;
 - (void)sendMessageAsync:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelQuery:(unsigned int)arg1;
 - (void)startQuery:(id)arg1 context:(id)arg2;

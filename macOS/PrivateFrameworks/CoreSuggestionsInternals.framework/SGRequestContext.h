@@ -14,9 +14,9 @@
     SGServiceContext *_serviceContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int concurrencyBehavior; // @synthesize concurrencyBehavior=_concurrencyBehavior;
 @property(readonly, nonatomic) SGServiceContext *serviceContext; // @synthesize serviceContext=_serviceContext;
-- (void).cxx_destruct;
 - (id)initWithServiceContext:(id)arg1 concurrencyBehavior:(int)arg2;
 - (id)init;
 @property(readonly, nonatomic) NSOperationQueue *storageQueue;

@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     long long _mode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSColor *bottomSecondaryLabelColor; // @synthesize bottomSecondaryLabelColor=_bottomSecondaryLabelColor;
 @property(readonly, nonatomic) NSTextField *bottomSecondaryLabel; // @synthesize bottomSecondaryLabel=_bottomSecondaryLabel;
 @property(readonly, nonatomic) NSTextField *topSecondaryLabel; // @synthesize topSecondaryLabel=_topSecondaryLabel;
 @property(readonly, nonatomic) NSTextField *primaryLabel; // @synthesize primaryLabel=_primaryLabel;
-- (void).cxx_destruct;
 - (void)_reconfigureLabels;
 - (void)_removeSecondaryLabels;
 - (void)_removePrimaryLabel;

@@ -23,9 +23,9 @@
     id <PKDiscoveryCardViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showActivityIndicator; // @synthesize showActivityIndicator=_showActivityIndicator;
 @property(nonatomic) __weak id <PKDiscoveryCardViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)_iconSize;
 - (struct CGSize)_sizeForMedia;
 - (float)_leadingEditorialTextSpace;

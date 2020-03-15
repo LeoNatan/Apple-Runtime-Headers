@@ -37,6 +37,7 @@
     struct NSEdgeInsets _captionPadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldStop; // @synthesize shouldStop=_shouldStop;
 @property(nonatomic) long long scanSpecialSequenceCount; // @synthesize scanSpecialSequenceCount=_scanSpecialSequenceCount;
 @property(nonatomic) BOOL scannedBatchHasCaption; // @synthesize scannedBatchHasCaption=_scannedBatchHasCaption;
@@ -58,7 +59,6 @@
 @property(copy, nonatomic) CDUnknownBlockType tileImageSizeBlock; // @synthesize tileImageSizeBlock=_tileImageSizeBlock;
 @property(nonatomic) struct CGSize interTileSpacing; // @synthesize interTileSpacing=_interTileSpacing;
 @property(nonatomic) long long tileCount; // @synthesize tileCount=_tileCount;
-- (void).cxx_destruct;
 - (double)valueByRounding:(double)arg1 usingMagneticGuidelines:(BOOL)arg2;
 - (void)parsedFrame:(struct CGRect)arg1 type:(long long)arg2 forCommentAtIndex:(long long)arg3;
 - (void)parsedFrame:(struct CGRect)arg1 type:(long long)arg2 forLikesAtIndex:(long long)arg3;

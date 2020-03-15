@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 + (id)constraintOrientingToNode:(id)arg1 offset:(id)arg2;
 + (id)constraintOrientingToPoint:(struct CGPoint)arg1 inNode:(id)arg2 offset:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) SKRange *offset; // @synthesize offset=_offset;
 @property struct CGPoint point; // @synthesize point=_point;
 @property __weak SKNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (BOOL)isEqualToOrientationConstraint:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

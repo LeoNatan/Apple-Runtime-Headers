@@ -23,9 +23,9 @@
 }
 
 + (id)backgroundQueue;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBApplicationPlaceholderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) FBSApplicationPlaceholder *placeholderProxy; // @synthesize placeholderProxy=_placeholderProxy;
-- (void).cxx_destruct;
 - (_Bool)icon:(id)arg1 launchFromLocation:(id)arg2 context:(id)arg3;
 - (_Bool)iconCompleteUninstall:(id)arg1;
 - (_Bool)iconSupportsUninstall:(id)arg1;

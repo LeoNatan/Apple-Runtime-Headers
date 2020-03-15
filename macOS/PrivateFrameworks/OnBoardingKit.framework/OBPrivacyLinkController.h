@@ -26,6 +26,7 @@
 + (id)linkWithBundleIdentifier:(id)arg1;
 + (id)linkWithBundleIdentifiers:(id)arg1;
 + (Class)_platformSpecificClass;
+- (void).cxx_destruct;
 @property BOOL allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
 @property unsigned long long displayDeviceType; // @synthesize displayDeviceType=_displayDeviceType;
 @property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
@@ -34,7 +35,6 @@
 @property BOOL displayIcon; // @synthesize displayIcon=_displayIcon;
 @property(retain) NSColor *textTintColor; // @synthesize textTintColor=_textTintColor;
 @property(retain) NSColor *iconTintColor; // @synthesize iconTintColor=_iconTintColor;
-- (void).cxx_destruct;
 - (void)linkPressed;
 - (void)setLinkEnabled:(BOOL)arg1;
 @property(readonly) OBPrivacyFlow *flow;

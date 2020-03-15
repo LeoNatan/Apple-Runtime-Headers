@@ -20,8 +20,8 @@
 + (_Bool)_isSecureForRemoteViewService;
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
-@property(retain, nonatomic) UIViewController<SBSUIUserNotificationContentProviding> *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController<SBSUIUserNotificationContentProviding> *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
 - (void)_updatePreferredContentSize;
 - (void)_trackChildViewController:(id)arg1;
 - (id)userNotificationContentExtensionContext;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_array;
 }
 
-@property(retain, nonatomic) NSMutableArray *array; // @synthesize array=_array;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *array; // @synthesize array=_array;
 - (long long)size;
 - (void)apply:(CDUnknownBlockType)arg1 fromIndex:(long long)arg2 toIndex:(unsigned long long)arg3;
 - (void)apply:(CDUnknownBlockType)arg1 atIndex:(long long)arg2;

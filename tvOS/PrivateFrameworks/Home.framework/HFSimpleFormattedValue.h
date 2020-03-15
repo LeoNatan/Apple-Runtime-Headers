@@ -16,8 +16,8 @@
     id <HFStringGenerator> _currentFormattedValue;
 }
 
-@property(readonly, nonatomic) id <HFStringGenerator> currentFormattedValue; // @synthesize currentFormattedValue=_currentFormattedValue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <HFStringGenerator> currentFormattedValue; // @synthesize currentFormattedValue=_currentFormattedValue;
 - (id)observeFormattedValueChangesWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id value;
 - (id)initWithFormattedValue:(id)arg1;

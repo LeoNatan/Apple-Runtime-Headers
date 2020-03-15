@@ -14,9 +14,9 @@
     PKRulerLayer *_rulerLayer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL rulerHidden; // @synthesize rulerHidden=_rulerHidden;
 @property(retain, nonatomic) PKRulerLayer *rulerLayer; // @synthesize rulerLayer=_rulerLayer;
-- (void).cxx_destruct;
 
 @end
 

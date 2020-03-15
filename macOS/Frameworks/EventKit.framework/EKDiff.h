@@ -38,6 +38,7 @@
 + (void)_populateSingleValueKeysForDiff:(id)arg1;
 + (id)_keysToIgnoreForComputingDiff;
 + (id)diffBetweenObject:(id)arg1 andObject:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *relationshipSingleValueModifies; // @synthesize relationshipSingleValueModifies=_relationshipSingleValueModifies;
 @property(retain, nonatomic) NSDictionary *relationshipMultiValueModifies; // @synthesize relationshipMultiValueModifies=_relationshipMultiValueModifies;
 @property(retain, nonatomic) NSDictionary *relationshipMultiValueRemoves; // @synthesize relationshipMultiValueRemoves=_relationshipMultiValueRemoves;
@@ -50,7 +51,6 @@
 @property(nonatomic) int result; // @synthesize result=_result;
 @property(retain, nonatomic) EKObject *secondObject; // @synthesize secondObject=_secondObject;
 @property(retain, nonatomic) EKObject *firstObject; // @synthesize firstObject=_firstObject;
-- (void).cxx_destruct;
 - (id)changeSetForDiff;
 - (void)_summarizeDiffsBetweenFirstObject:(id)arg1 secondObject:(id)arg2 mutableString:(id)arg3 depth:(long long)arg4;
 - (id)summaryString;

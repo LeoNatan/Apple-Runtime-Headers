@@ -9,20 +9,21 @@
 #import <CompanionSync/SYStreamTransaction-Protocol.h>
 
 @class NSDictionary, NSOutputStream, NSProgress, NSString, NSURL;
+@protocol SYStreamEventHandlerBlocks><SYStreamThroughputCounter;
 
 @interface SYOutputStreamTransaction : NSObject <SYStreamTransaction>
 {
     NSDictionary *_metadata;
     NSURL *_fileURL;
-    struct NSOutputStream *_stream;
+    NSOutputStream<SYStreamEventHandlerBlocks><SYStreamThroughputCounter> *_stream;
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_stream;
 @property(readonly, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (id)finalizeOutput:(id *)arg1;
 - (_Bool)prepare:(id *)arg1;
 @property(readonly, nonatomic) long long type;

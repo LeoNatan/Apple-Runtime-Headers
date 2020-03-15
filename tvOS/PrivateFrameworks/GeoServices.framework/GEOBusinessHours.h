@@ -18,10 +18,10 @@
 
 + (void)divideBusinessHoursBasedOnTodaysDate:(id)arg1 compareDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)prioritizeBusinessHours:(id)arg1 compareDate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isBrandTypeHours; // @synthesize isBrandTypeHours=_isBrandTypeHours;
 @property(readonly, nonatomic) NSArray *placeDailyNormalizedHours; // @synthesize placeDailyNormalizedHours=_placeDailyNormalizedHours;
 @property(readonly, nonatomic) NSArray *placeDailyHours; // @synthesize placeDailyHours=_placeDailyHours;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate;
 @property(readonly, nonatomic) NSDate *startDate;
 @property(readonly, nonatomic) NSString *localizedMessage;

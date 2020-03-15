@@ -44,6 +44,7 @@
 + (id)visibilityUnit;
 + (id)temperatureUnit;
 + (_Bool)usesMetricSystem;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *pollutants; // @synthesize pollutants=_pollutants;
 @property(readonly, copy, nonatomic) NSString *localizedAirQualityCategory; // @synthesize localizedAirQualityCategory=_localizedAirQualityCategory;
 @property(readonly, copy, nonatomic) NSNumber *localizedAirQualityIndex; // @synthesize localizedAirQualityIndex=_localizedAirQualityIndex;
@@ -65,7 +66,6 @@
 @property(readonly, nonatomic) NSMeasurement *temperature; // @synthesize temperature=_temperature;
 @property(readonly, copy, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

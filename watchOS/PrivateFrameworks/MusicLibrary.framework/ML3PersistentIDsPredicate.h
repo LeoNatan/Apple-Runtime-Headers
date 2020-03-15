@@ -17,8 +17,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)predicateWithPersistentIDs:(id)arg1 shouldContain:(_Bool)arg2;
 + (id)predicateWithPersistentIDs:(const long long *)arg1 count:(unsigned int)arg2 shouldContain:(_Bool)arg3;
-@property(readonly, nonatomic) _Bool shouldContain; // @synthesize shouldContain=_shouldContain;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool shouldContain; // @synthesize shouldContain=_shouldContain;
 - (id)databaseStatementParameters;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 - (_Bool)isEqual:(id)arg1;

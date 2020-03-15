@@ -17,10 +17,10 @@
 }
 
 + (id)batteryTemplateWithFamily:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool charging; // @synthesize charging=_charging;
 @property(nonatomic) double level; // @synthesize level=_level;
 @property(copy, nonatomic) CLKTextProvider *textProvider; // @synthesize textProvider=_textProvider;
-- (void).cxx_destruct;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateBOOLKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateFloatKeysWithBlock:(CDUnknownBlockType)arg1;

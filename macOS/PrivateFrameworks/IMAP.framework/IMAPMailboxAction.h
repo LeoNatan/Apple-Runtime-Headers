@@ -15,10 +15,10 @@
     NSString *_mailboxName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
 @property(nonatomic) long long actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) long long actionID; // @synthesize actionID=_actionID;
-- (void).cxx_destruct;
 
 @end
 

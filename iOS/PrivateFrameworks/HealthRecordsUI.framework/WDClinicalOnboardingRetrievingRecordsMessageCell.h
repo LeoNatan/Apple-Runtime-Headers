@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bottomLayoutConstraint; // @synthesize bottomLayoutConstraint=_bottomLayoutConstraint;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 @property(nonatomic) double bottomPadding;
 - (void)_setupConstraints;
 - (void)_setupSubviews;

@@ -16,9 +16,9 @@
     ICPBDGSResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICPBDGSResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) ICPBDGSRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

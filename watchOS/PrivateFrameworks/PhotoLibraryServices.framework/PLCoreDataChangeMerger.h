@@ -13,13 +13,14 @@
 {
     PLManagedObjectContextList *_contextsToReceiveNotifications;
     NSObject<OS_dispatch_queue> *_mergeChangesQueue;
+    _Bool _invalidated;
     _Bool _isMergingCoalescedSaveNotification;
     NSDictionary *_allDidSaveObjectIDsUserInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *allDidSaveObjectIDsUserInfo; // @synthesize allDidSaveObjectIDsUserInfo=_allDidSaveObjectIDsUserInfo;
 @property(nonatomic) _Bool isMergingCoalescedSaveNotification; // @synthesize isMergingCoalescedSaveNotification=_isMergingCoalescedSaveNotification;
-- (void).cxx_destruct;
 - (id)allContexts;
 - (id)allContextsNotIdenticalTo:(id)arg1;
 - (void)refreshAllObjects;
@@ -27,6 +28,8 @@
 - (void)mergeChangesFromRemoteContextSave:(id)arg1 intoAllContextsNotIdenticalTo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)mergeIntoAllContextsChangesFromRemoteContextSave:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)registerToReceiveCoreDataChanges:(id)arg1;
+- (void)dealloc;
+- (void)invalidate;
 - (id)init;
 
 @end

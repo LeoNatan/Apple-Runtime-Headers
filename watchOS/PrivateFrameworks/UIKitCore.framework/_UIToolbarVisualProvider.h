@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     UIView *_currentBackgroundView;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(readonly, nonatomic) UIView *currentBackgroundView; // @synthesize currentBackgroundView=_currentBackgroundView;
 @property(retain, nonatomic) UIView *customBackgroundView; // @synthesize customBackgroundView=_customBackgroundView;
 @property(readonly, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
-- (void).cxx_destruct;
 - (void)updateArchivedSubviews:(id)arg1;
 @property(nonatomic) int itemDistribution;
 @property(readonly, nonatomic) _Bool toolbarIsSmall;

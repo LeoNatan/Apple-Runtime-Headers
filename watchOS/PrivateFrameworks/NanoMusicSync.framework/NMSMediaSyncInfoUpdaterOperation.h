@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedLibraryRequestQueue;
-@property(readonly, nonatomic) NSDictionary *syncInfo; // @synthesize syncInfo=_syncInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *syncInfo; // @synthesize syncInfo=_syncInfo;
 - (void)execute;
 
 @end

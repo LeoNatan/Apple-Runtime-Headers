@@ -15,10 +15,10 @@
     MFIMAPAccount *_account;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFIMAPAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) NSArray *paths; // @synthesize paths=_paths;
 @property(retain, nonatomic) NSArray *urls; // @synthesize urls=_urls;
-- (void).cxx_destruct;
 
 @end
 

@@ -44,6 +44,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long eventFlags; // @synthesize eventFlags=_eventFlags;
 @property(readonly) unsigned long long networkActivityMapPart2; // @synthesize networkActivityMapPart2=_networkActivityMapPart2;
 @property(readonly) unsigned long long networkActivityMapPart1; // @synthesize networkActivityMapPart1=_networkActivityMapPart1;
@@ -75,7 +76,6 @@
 @property(readonly) unsigned long long flowStartContinuousTime; // @synthesize flowStartContinuousTime=_flowStartContinuousTime;
 @property(readonly) double flowDuration; // @synthesize flowDuration=_flowDuration;
 @property(readonly) NSDate *flowStartTimestamp; // @synthesize flowStartTimestamp=_flowStartTimestamp;
-- (void).cxx_destruct;
 - (id)_dateWithContinuousTime:(unsigned long long)arg1;
 - (double)_referenceIntervalWithContinuousTime:(unsigned long long)arg1;
 - (double)_intervalWithContinuousTime:(unsigned long long)arg1;

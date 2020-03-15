@@ -19,12 +19,12 @@
     long long _subtitleInterfaceStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long subtitleInterfaceStyle; // @synthesize subtitleInterfaceStyle=_subtitleInterfaceStyle;
 @property(retain, nonatomic) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

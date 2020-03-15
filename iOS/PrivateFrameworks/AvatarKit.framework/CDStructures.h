@@ -57,19 +57,11 @@ struct SCNVector4 {
     float _field4;
 };
 
-struct UIColor {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double _field1;
     double _field2;
     double _field3;
     double _field4;
-};
-
-struct UIImage {
-    Class _field1;
 };
 
 struct os_unfair_lock_s {

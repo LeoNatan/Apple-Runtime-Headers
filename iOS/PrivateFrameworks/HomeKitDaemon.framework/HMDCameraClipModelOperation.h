@@ -28,6 +28,7 @@
 + (id)logCategory;
 + (id)shortDescription;
 + (double)clipModelOperationTimeout;
+- (void).cxx_destruct;
 @property(readonly) id <HMDCameraRecordingUploaderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
@@ -37,7 +38,6 @@
 @property(readonly) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
 @property(readonly) NSUUID *clipModelID; // @synthesize clipModelID=_clipModelID;
 @property(readonly, copy) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *privateDescription;

@@ -20,6 +20,7 @@
 }
 
 + (long long)estimatedEncodedSize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDEntityEncoder *superclassEncoder; // @synthesize superclassEncoder=_superclassEncoder;
 @property(readonly, nonatomic) long long purpose; // @synthesize purpose=_purpose;
 @property(readonly, copy, nonatomic) CDUnknownBlockType authorizationFilter; // @synthesize authorizationFilter=_authorizationFilter;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) Class entityClass; // @synthesize entityClass=_entityClass;
 @property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)finish;
 - (_Bool)applyPropertiesToObject:(id)arg1 persistentID:(long long)arg2 row:(struct HDSQLiteRow *)arg3 error:(id *)arg4;
 - (void)applyPropertiesToObject:(id)arg1 persistentID:(long long)arg2 row:(struct HDSQLiteRow *)arg3;

@@ -28,6 +28,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)maintenanceActivityCriteriaWithStartDate:(id)arg1;
 + (id)priorityActivityCriteriaWithStartDate:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) double repeatInterval; // @synthesize repeatInterval=_repeatInterval;
 @property(nonatomic, getter=isRepeating) _Bool repeating; // @synthesize repeating=_repeating;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool requireMainsPower; // @synthesize requireMainsPower=_requireMainsPower;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)xpcActivityCriteria;
 - (_Bool)isEqualToScheduledAcivityCriteria:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -21,12 +21,13 @@
 }
 
 + (double)preferredHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDetailsViewAddGroupNameViewUITextField *inputField; // @synthesize inputField=_inputField;
 @property(retain, nonatomic) UILabel *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 @property(nonatomic) __weak id <CKDetailsAddGroupNameViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;

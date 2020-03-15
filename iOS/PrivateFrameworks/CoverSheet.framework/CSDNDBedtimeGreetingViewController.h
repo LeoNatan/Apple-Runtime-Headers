@@ -19,8 +19,8 @@
     id <CSDNDBedtimeGreetingDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSDNDBedtimeGreetingDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSDNDBedtimeGreetingDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_greetingString;
 - (void)handleTouchEventForView:(id)arg1;
 - (void)handleSecondaryActionForView:(id)arg1;

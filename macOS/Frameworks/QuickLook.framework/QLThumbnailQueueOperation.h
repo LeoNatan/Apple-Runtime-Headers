@@ -16,10 +16,10 @@
     BOOL _executing;
 }
 
+- (void).cxx_destruct;
 @property __weak QLThumbnailQueue *delegate; // @synthesize delegate=_delegate;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
-- (void).cxx_destruct;
 - (void)cancel;
 @property struct __QLThumbnail *thumbnail; // @synthesize thumbnail=_thumbnail;
 - (void)main;

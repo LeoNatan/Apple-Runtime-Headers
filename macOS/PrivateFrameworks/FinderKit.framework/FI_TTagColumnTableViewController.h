@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
     _Bool tornDown;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 @property(nonatomic) struct TFENode selectedNode; // @synthesize selectedNode=_selectedNode;
 @property(nonatomic) struct TFENode editedNode; // @synthesize editedNode=_editedNode;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (long long)rowForNode:(const struct TFENode *)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;

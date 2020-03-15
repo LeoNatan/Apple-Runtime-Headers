@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)savedResizingOffset;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIPanGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(readonly, nonatomic) double resizingOffset; // @synthesize resizingOffset=_resizingOffset;
 @property(nonatomic) __weak id <UIKBResizingKeyplaneCoordinatorCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)resizeKeyplaneWithOffset:(double)arg1 andRedraw:(_Bool)arg2;
 - (void)handleResizeGesture:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

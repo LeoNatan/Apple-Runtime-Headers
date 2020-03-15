@@ -15,9 +15,9 @@
     id <EFSQLExpressable> _whereClause;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <EFSQLExpressable> whereClause; // @synthesize whereClause=_whereClause;
 @property(readonly, copy, nonatomic) NSString *table; // @synthesize table=_table;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *queryString;
 - (id)initWithTable:(id)arg1 where:(id)arg2;
 - (id)initWithTable:(id)arg1;

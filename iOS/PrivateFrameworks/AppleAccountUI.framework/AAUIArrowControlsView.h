@@ -19,11 +19,11 @@
 
 + (double)defaultWidthForOrientation:(long long)arg1;
 + (double)defaultHeightForOrientation:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(readonly, nonatomic) UIButton *upButton; // @synthesize upButton=_upButton;
 @property(readonly, nonatomic) UIButton *downButton; // @synthesize downButton=_downButton;
 @property(nonatomic) id <AAUIArrowControlsViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (void)_arrowButtonWasTapped:(id)arg1;

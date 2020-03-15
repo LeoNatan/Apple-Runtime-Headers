@@ -21,10 +21,10 @@
     _Bool _isOLEDDisplay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isOLEDDisplay; // @synthesize isOLEDDisplay=_isOLEDDisplay;
 @property(nonatomic) _Bool darkModeEnabled; // @synthesize darkModeEnabled=_darkModeEnabled;
 @property(nonatomic) _Bool javaScriptEnabled; // @synthesize javaScriptEnabled=_javaScriptEnabled;
-- (void).cxx_destruct;
 - (void)_migrateToVersion5IfNecessary;
 - (long long)_effectiveTextZoomIndex;
 - (long long)_defaultThemeForAppearance:(long long)arg1;

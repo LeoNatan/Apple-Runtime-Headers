@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     BCSecureLabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BCSecureLabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSView *rightSpacer; // @synthesize rightSpacer=_rightSpacer;
 @property(retain, nonatomic) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) BCAuthenticationManager *authenticationManager; // @synthesize authenticationManager=_authenticationManager;
 @property(retain, nonatomic) BCMessage *message; // @synthesize message=_message;
 @property(nonatomic) __weak id <BCAuthenticationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didChangeSecureStatus:(BOOL)arg1;
 - (void)didReceiveCallbackURL:(id)arg1;
 - (void)sendAuthenticationResponse:(id)arg1;

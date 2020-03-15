@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) __weak HMDHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (void)handleObjectUpdate:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)handleObjectRemove:(id)arg1 message:(id)arg2;
 - (void)handleObjectAdd:(id)arg1 message:(id)arg2;

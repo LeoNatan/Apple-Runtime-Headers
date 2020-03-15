@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)_waveformLayer;
 - (CDStruct_e83c9415)_displayTimeRange;
 - (void)updatePreviewLayerContent;
+- (struct CGSize)sizeForPreviewLayerWithIndex:(long long)arg1;
 - (struct CGPoint)positionForPreviewLayerWithIndex:(long long)arg1;
 - (long long)numberOfPreviewLayersForWidth:(double)arg1;
 - (BOOL)allPreviewLayersHaveContent;

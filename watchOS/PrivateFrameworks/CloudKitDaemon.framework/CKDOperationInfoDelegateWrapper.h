@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *_personaID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(nonatomic) __weak id <CKDOperationInfoDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)performWithDelegate:(CDUnknownBlockType)arg1;
 - (id)initWithDelegate:(id)arg1;
 

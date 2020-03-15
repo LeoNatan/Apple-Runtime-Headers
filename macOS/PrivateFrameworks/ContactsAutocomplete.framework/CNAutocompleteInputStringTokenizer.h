@@ -15,8 +15,8 @@
 
 + (id)lazyNameStringTokenizerWithLocale:(id)arg1;
 + (id)tokensFromString:(id)arg1;
-@property(retain) CNFuture *nameStringTokenizer; // @synthesize nameStringTokenizer=_nameStringTokenizer;
 - (void).cxx_destruct;
+@property(retain) CNFuture *nameStringTokenizer; // @synthesize nameStringTokenizer=_nameStringTokenizer;
 - (CDUnknownBlockType)expandCJKNames;
 - (id)tokensFromString:(id)arg1;
 - (id)initWithLocale:(id)arg1;

@@ -28,6 +28,7 @@
     struct CGSize _layerShadowOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double layerShadowRadius; // @synthesize layerShadowRadius=_layerShadowRadius;
 @property(nonatomic) struct CGSize layerShadowOffset; // @synthesize layerShadowOffset=_layerShadowOffset;
 @property(nonatomic) float layerShadowOpacity; // @synthesize layerShadowOpacity=_layerShadowOpacity;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(nonatomic) double shadowRadius; // @synthesize shadowRadius=_shadowRadius;
 @property(nonatomic) struct CGSize shadowOffset; // @synthesize shadowOffset=_shadowOffset;
-- (void).cxx_destruct;
 - (void)_loadEntityValuesIfNeeded;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_url;
 @property(readonly, nonatomic) NSString *resourceName;

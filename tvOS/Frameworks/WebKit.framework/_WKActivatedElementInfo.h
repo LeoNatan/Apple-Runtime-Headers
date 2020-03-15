@@ -23,11 +23,11 @@
     struct CGRect _boundingRect;
 }
 
-+ (id)activatedElementInfoWithInteractionInformationAtPosition:(const struct InteractionInformationAtPosition *)arg1;
-@property(readonly, nonatomic) struct CGRect boundingRect; // @synthesize boundingRect=_boundingRect;
-@property(readonly, nonatomic) long long type; // @synthesize type=_type;
++ (id)activatedElementInfoWithInteractionInformationAtPosition:(const struct InteractionInformationAtPosition *)arg1 userInfo:(id)arg2;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGRect boundingRect; // @synthesize boundingRect=_boundingRect;
+@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) UIImage *image;
 @property(readonly, nonatomic) NSDictionary *userInfo;
 @property(readonly, nonatomic) _Bool isAnimatedImage;
@@ -38,7 +38,7 @@
 @property(readonly, nonatomic) NSURL *URL;
 - (id)_initWithType:(long long)arg1 URL:(id)arg2 imageURL:(id)arg3 location:(const struct IntPoint *)arg4 title:(id)arg5 ID:(id)arg6 rect:(struct CGRect)arg7 image:(struct ShareableBitmap *)arg8 userInfo:(id)arg9;
 - (id)_initWithType:(long long)arg1 URL:(id)arg2 imageURL:(id)arg3 location:(const struct IntPoint *)arg4 title:(id)arg5 ID:(id)arg6 rect:(struct CGRect)arg7 image:(struct ShareableBitmap *)arg8;
-- (id)_initWithInteractionInformationAtPosition:(const struct InteractionInformationAtPosition *)arg1;
+- (id)_initWithInteractionInformationAtPosition:(const struct InteractionInformationAtPosition *)arg1 userInfo:(id)arg2;
 
 @end
 

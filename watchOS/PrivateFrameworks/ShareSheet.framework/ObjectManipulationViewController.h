@@ -23,6 +23,7 @@
     UIVisualEffectView *_backgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) NSMutableDictionary *sectionHeaders; // @synthesize sectionHeaders=_sectionHeaders;
 @property(retain, nonatomic) NSArray *customizations; // @synthesize customizations=_customizations;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIViewController *itemPreviewViewController; // @synthesize itemPreviewViewController=_itemPreviewViewController;
 @property(nonatomic) __weak id <ObjectManipulationDelegate> refreshDelegate; // @synthesize refreshDelegate=_refreshDelegate;
-- (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_reloadCustomizations;
 - (void)didToggleSwitch:(id)arg1;

@@ -22,13 +22,13 @@
 }
 
 + (void)shareThroughServiceNamed:(id)arg1 withSharingInfo:(id)arg2 customServiceHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType serviceHandler; // @synthesize serviceHandler=_serviceHandler;
 @property(readonly, nonatomic) NSOperation *iconOperation; // @synthesize iconOperation=_iconOperation;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(readonly, nonatomic) NSDictionary *sharingInfo; // @synthesize sharingInfo=_sharingInfo;
 @property(readonly, nonatomic) NSSharingService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)sharingService:(id)arg1 didFailToShareItems:(id)arg2 error:(id)arg3;
 - (id)sharingService:(id)arg1 imageForShareItem:(id)arg2 size:(struct CGSize)arg3 contentRect:(struct CGRect *)arg4;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;

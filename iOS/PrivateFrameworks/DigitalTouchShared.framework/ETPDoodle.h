@@ -21,11 +21,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *pointTimeDeltaData; // @synthesize pointTimeDeltaData=_pointTimeDeltaData;
 @property(retain, nonatomic) NSData *colorData; // @synthesize colorData=_colorData;
 @property(retain, nonatomic) NSData *doodleData; // @synthesize doodleData=_doodleData;
 @property(nonatomic) unsigned int doodleCount; // @synthesize doodleCount=_doodleCount;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

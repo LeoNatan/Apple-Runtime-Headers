@@ -16,8 +16,8 @@
     NSMutableArray *_validators;
 }
 
-@property(readonly, nonatomic) NSMutableArray *validators; // @synthesize validators=_validators;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *validators; // @synthesize validators=_validators;
 - (_Bool)validateCondition:(id)arg1 context:(id)arg2;
 - (void)addConditionValidator:(id)arg1;
 - (id)init;

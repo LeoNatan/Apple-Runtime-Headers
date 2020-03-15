@@ -38,6 +38,7 @@
     struct UIEdgeInsets _initialInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *composeController; // @synthesize composeController=_composeController;
 @property(nonatomic) double segmentControlHeight; // @synthesize segmentControlHeight=_segmentControlHeight;
 @property(nonatomic, getter=isSearching) _Bool searching; // @synthesize searching=_searching;
@@ -59,7 +60,6 @@
 @property(nonatomic) _Bool supportsNearby; // @synthesize supportsNearby=_supportsNearby;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)_updateCollectionView;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)viewSafeAreaInsetsDidChange;

@@ -16,11 +16,11 @@
     NSArray *_missingMemoConstrains;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *missingMemoConstrains; // @synthesize missingMemoConstrains=_missingMemoConstrains;
 @property(readonly, nonatomic) NSArray *constrainsWithMemo; // @synthesize constrainsWithMemo=_constrainsWithMemo;
 @property(readonly, nonatomic) UILabel *memoLabel; // @synthesize memoLabel=_memoLabel;
 @property(readonly, nonatomic) UILabel *amountLabel; // @synthesize amountLabel=_amountLabel;
-- (void).cxx_destruct;
 - (void)didUpdateWithTransactionSummary:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

@@ -23,6 +23,7 @@
     struct _NSRange _replacementRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUserSubstitution; // @synthesize isUserSubstitution=_isUserSubstitution;
 @property(copy, nonatomic) NSSet *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(nonatomic) _Bool appliesToAllApps; // @synthesize appliesToAllApps=_appliesToAllApps;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *phonemes; // @synthesize phonemes=_phonemes;
 @property(copy, nonatomic) NSString *replacementString; // @synthesize replacementString=_replacementString;
 @property(copy, nonatomic) NSString *originalString; // @synthesize originalString=_originalString;
-- (void).cxx_destruct;
 - (_Bool)isEqualToSubstitution:(id)arg1;
 
 @end

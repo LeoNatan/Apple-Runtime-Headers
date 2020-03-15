@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)textReplacementCandidateForTextReplacement:(id)arg1;
-@property(readonly, nonatomic) UITextReplacement *replacement; // @synthesize replacement=_replacement;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITextReplacement *replacement; // @synthesize replacement=_replacement;
 - (id)label;
 - (id)_initWithTextReplacement:(id)arg1;
 

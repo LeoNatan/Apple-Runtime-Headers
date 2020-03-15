@@ -17,8 +17,8 @@
     _TVAppDocumentController *_searchDC;
 }
 
-@property(readonly, nonatomic, getter=isPartialModeEnabled) _Bool partialModeEnabled; // @synthesize partialModeEnabled=_partialModeEnabled;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isPartialModeEnabled) _Bool partialModeEnabled; // @synthesize partialModeEnabled=_partialModeEnabled;
 - (void)_togglePartialModeWithProgress:(double)arg1 duration:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_findSearchDocumentController;
 - (id)mediaQueryEvaluatorForAppDocumentController:(id)arg1;

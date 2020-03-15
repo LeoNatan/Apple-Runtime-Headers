@@ -17,10 +17,10 @@
 
 + (id)reuseIdentifier;
 + (id)supplementryViewKind;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperatorView; // @synthesize seperatorView=_seperatorView;
 @property(nonatomic) double maxHeight; // @synthesize maxHeight=_maxHeight;
 @property(nonatomic) double minHeight; // @synthesize minHeight=_minHeight;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

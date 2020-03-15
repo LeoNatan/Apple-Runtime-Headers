@@ -39,6 +39,7 @@
 + (CDUnknownBlockType)rem_DA_fetchByObjectIDBlock;
 + (BOOL)rem_DA_supportsLazyDelete;
 + (BOOL)rem_DA_supportsFetching;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMObjectID *listID; // @synthesize listID=_listID;
 @property(readonly, nonatomic) REMObjectID *accountID; // @synthesize accountID=_accountID;
 @property(readonly, nonatomic) REMObjectID *objectID; // @synthesize objectID=_objectID;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *daPushKey; // @synthesize daPushKey;
 @property(copy, nonatomic) NSString *externalModificationTag; // @synthesize externalModificationTag;
 @property(copy, nonatomic) NSString *externalIdentifier; // @synthesize externalIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *externalIdentifierForMarkedForDeletionObject;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 @property(readonly, copy) NSString *description;

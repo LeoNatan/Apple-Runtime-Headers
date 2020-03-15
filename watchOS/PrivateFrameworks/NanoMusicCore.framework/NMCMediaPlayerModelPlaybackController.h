@@ -29,10 +29,10 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NMRNowPlayingController *nowPlayingController; // @synthesize nowPlayingController=_nowPlayingController;
 @property(nonatomic) _Bool wantsDefaultMusicFallbackPlaybackIntent; // @synthesize wantsDefaultMusicFallbackPlaybackIntent=_wantsDefaultMusicFallbackPlaybackIntent;
 @property(nonatomic) _Bool wantsRadioSupport; // @synthesize wantsRadioSupport=_wantsRadioSupport;
-- (void).cxx_destruct;
 - (void)performMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)performMediaRemoteCommand:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_configureDefaultFallbackPlaybackIntentIfNeededWithPlaybackEngine:(id)arg1;

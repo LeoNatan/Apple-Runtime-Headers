@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSString *_preferredDomesticCarrierCode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *preferredDomesticCarrierCode; // @synthesize preferredDomesticCarrierCode=_preferredDomesticCarrierCode;
 @property(retain, nonatomic) NSNumber *countryCodeSource; // @synthesize countryCodeSource=_countryCodeSource;
 @property(retain, nonatomic) NSString *rawInput; // @synthesize rawInput=_rawInput;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *extension; // @synthesize extension=_extension;
 @property(retain, nonatomic) NSNumber *nationalNumber; // @synthesize nationalNumber=_nationalNumber;
 @property(retain, nonatomic) NSNumber *countryCode; // @synthesize countryCode=_countryCode;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

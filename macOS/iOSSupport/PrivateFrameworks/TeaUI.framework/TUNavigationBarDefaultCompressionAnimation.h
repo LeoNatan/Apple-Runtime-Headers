@@ -23,6 +23,7 @@
     TUAnimationFloatFunction *_translateFunction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL compressTitleView; // @synthesize compressTitleView=_compressTitleView;
 @property(retain, nonatomic) TUAnimationFloatFunction *translateFunction; // @synthesize translateFunction=_translateFunction;
 @property(retain, nonatomic) TUAnimationFloatFunction *scaleFunction; // @synthesize scaleFunction=_scaleFunction;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) BOOL hideTitleOnTop; // @synthesize hideTitleOnTop=_hideTitleOnTop;
 @property(nonatomic) double topOffset; // @synthesize topOffset;
-- (void).cxx_destruct;
 - (id)fetchRegularTitleView;
 - (id)fetchCustomTitleView;
 - (void)reloadWithTraitCollection:(id)arg1;

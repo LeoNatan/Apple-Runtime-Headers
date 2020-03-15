@@ -20,12 +20,12 @@
 + (struct CGSize)platformSizeForTitle:(id)arg1 withFont:(id)arg2;
 + (double)widthForTitle:(id)arg1 withFont:(id)arg2;
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(nonatomic) NSLayoutConstraint *rightMarginConstraint; // @synthesize rightMarginConstraint=_rightMarginConstraint;
 @property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(nonatomic) _Bool onDarkBackground; // @synthesize onDarkBackground=_onDarkBackground;
 @property(nonatomic) NSLayoutConstraint *leftMarginConstraint; // @synthesize leftMarginConstraint=_leftMarginConstraint;
 @property(nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 @property(copy, nonatomic) UIFont *font; // @dynamic font;
 @property(copy, nonatomic) NSString *title; // @dynamic title;

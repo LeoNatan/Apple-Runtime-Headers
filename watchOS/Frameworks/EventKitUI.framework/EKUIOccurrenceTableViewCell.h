@@ -104,6 +104,7 @@
 + (id)reuseIdentifierForTemplate;
 + (void)_clearCaches;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffect *secondaryVisualEffect; // @synthesize secondaryVisualEffect=_secondaryVisualEffect;
 @property(retain, nonatomic) UIVisualEffect *primaryVisualEffect; // @synthesize primaryVisualEffect=_primaryVisualEffect;
 @property(nonatomic) _Bool isFakeInvitation; // @synthesize isFakeInvitation=_isFakeInvitation;
@@ -111,7 +112,6 @@
 @property(retain, nonatomic) UIColor *eventCalendarColor; // @synthesize eventCalendarColor=_eventCalendarColor;
 @property(nonatomic) _Bool isTemplateCell; // @synthesize isTemplateCell=_isTemplateCell;
 @property(nonatomic) _Bool doesNotUseTemplate; // @synthesize doesNotUseTemplate=_doesNotUseTemplate;
-- (void).cxx_destruct;
 - (id)_textForDepartureTimeLabel;
 - (id)_textForBottomTimeLabel;
 - (id)_textForTopTimeLabel;

@@ -36,11 +36,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *extrasContentRating; // @synthesize extrasContentRating=_extrasContentRating;
 @property(copy, nonatomic) NSDate *backgroundedDate; // @synthesize backgroundedDate=_backgroundedDate;
 @property(nonatomic) __weak TVJSITunesStore *extrasOriginalJSITunesStore; // @synthesize extrasOriginalJSITunesStore=_extrasOriginalJSITunesStore;
 @property(retain, nonatomic) TVCKRemoteNotifier *remoteAcquisitionNotifier; // @synthesize remoteAcquisitionNotifier=_remoteAcquisitionNotifier;
-- (void).cxx_destruct;
 - (_Bool)shouldPreventActionForStoreDemoModeWithMessage:(id)arg1;
 - (void)_showAlertWithTitle:(id)arg1 message:(id)arg2;
 - (void)_showStoreDemoModeRestrictionMessage:(id)arg1;

@@ -19,12 +19,12 @@
     float _previousZoomLevel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsEarlyTileInteraction; // @synthesize allowsEarlyTileInteraction=_allowsEarlyTileInteraction;
 @property(nonatomic) float previousZoomLevel; // @synthesize previousZoomLevel=_previousZoomLevel;
 @property(retain, nonatomic) CSLIconZoomCoordinationContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) CSLUITileNavigationController *tileNavigationController; // @synthesize tileNavigationController=_tileNavigationController;
 @property(readonly, nonatomic) CSLClockViewController *clockViewController; // @synthesize clockViewController=_clockViewController;
-- (void).cxx_destruct;
 - (id)iconView;
 - (void)borrowAndReparentClockWithIcon:(id)arg1;
 - (id)bundleIdentifierForIcon;

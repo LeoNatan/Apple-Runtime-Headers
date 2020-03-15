@@ -16,11 +16,11 @@
     NSString *_agentClassName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *agentClassName; // @synthesize agentClassName=_agentClassName;
 @property(retain, nonatomic) NSString *daemonAccountClassName; // @synthesize daemonAccountClassName=_daemonAccountClassName;
 @property(retain, nonatomic) NSString *clientAccountClassName; // @synthesize clientAccountClassName=_clientAccountClassName;
 @property(retain, nonatomic) NSString *accountClassName; // @synthesize accountClassName=_accountClassName;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

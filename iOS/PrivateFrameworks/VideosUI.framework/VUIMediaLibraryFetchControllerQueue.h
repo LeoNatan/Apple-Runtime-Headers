@@ -27,6 +27,7 @@
 }
 
 + (id)defaultQueueWithMediaLibrary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUINowPlayingObserver *nowPlayingObserver; // @synthesize nowPlayingObserver=_nowPlayingObserver;
 @property(retain, nonatomic) NSOperationQueue *serialFetchOperationQueue; // @synthesize serialFetchOperationQueue=_serialFetchOperationQueue;
 @property(retain, nonatomic) VUIDelayOperation *delayContentsChangeOperation; // @synthesize delayContentsChangeOperation=_delayContentsChangeOperation;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
 @property(retain, nonatomic) NSMutableArray *mutableFetchControllers; // @synthesize mutableFetchControllers=_mutableFetchControllers;
 @property(nonatomic) __weak id <VUIMediaLibraryFetchControllerQueueDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyDelegateFetchDidComplete;
 - (void)_enqueueSyncProcessingQueueBlock:(CDUnknownBlockType)arg1;
 - (void)_enqueueAsyncProcessingQueueBlock:(CDUnknownBlockType)arg1;

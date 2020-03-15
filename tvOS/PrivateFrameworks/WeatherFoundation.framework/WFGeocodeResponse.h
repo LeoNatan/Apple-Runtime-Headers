@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) WFLocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
+@property(readonly) WFLocation *location; // @synthesize location=_location;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
